@@ -5,17 +5,20 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 09/13/2018
+ms.date: 04/08/2020
 ms.author: dsindona
-ms.openlocfilehash: b96dcfa6a140d5c16208fd8183003a7462b1aa56
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 487e66b39bc63363497cb3497d32158efd0c6c8a
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280445"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255895"
 ---
 <a name="pricing-for-virtual-machine-offers"></a>Цены на предложения виртуальных машин
 ==================================
+
+> [!NOTE]
+> AA-аДИ облачного partner Portal интегрированы с Партнерским центром и продолжат работать после того, как ваши предложения будут перенесены в Партнерский центр. Интеграция вносит небольшие изменения. Просмотрите изменения, перечисленные в [Справочнике API портала Cloud Partner,](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview) чтобы убедиться, что ваш код продолжает работать после миграции в Центр Партнеров.
 
 Существует три способа выбрать политику ценообразования для предложений виртуальных машин: настроить цену за ядро, цены на каждое ядро и цены на электронную таблицу.
 
@@ -111,7 +114,7 @@ ms.locfileid: "80280445"
 
 В следующей таблице показаны разные регионы, которые можно указать для настраиваемых цен за ядро, и их соответствующие коды валют.
 
-| **Регионе** | **Название**             | **Код валюты** |
+| **Регион** | **имя**;             | **Код валюты** |
 |------------|----------------------|-------------------|
 | DZ         | Алжир              | DZD               |
 | AR         | Аргентина            | ARS               |

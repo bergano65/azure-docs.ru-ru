@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: robinsh
-ms.openlocfilehash: 2b200692610302bb135982e5419dcda36d5cfe60
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9ccfaa57b8e8fdea325bed908ffe8815b09d0d15
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79271165"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257799"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -25,7 +25,7 @@ ms.locfileid: "79271165"
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
-Весь обмен данными Центра Интернета вещей с устройствами защищен с помощью протокола TLS/SSL. Таким образом Центр Интернета вещей не поддерживает небезопасные подключения через порт 1883.
+Весь обмен данными Центра Интернета вещей с устройствами защищен с помощью протокола TLS/SSL. Таким образом, IoT Hub не поддерживает небезопасные соединения по порту 1883.
 
 ## <a name="connecting-to-iot-hub"></a>Подключение к Центру Интернета вещей
 
@@ -49,7 +49,7 @@ ms.locfileid: "79271165"
 | [Node.js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js) | лазурно-йот-устройство-mqtt. Mqtt | лазурно-йот-устройство-mqtt. MqttWs |
 | [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |[IotHubКлиентПротокол](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.iothubclientprotocol?view=azure-java-stable). МЗТТ | IotHubClientProtocol.MQTT_WS |
 | [C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt_dm) | [MQTT_Protocol](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothubtransportmqtt-h/mqtt-protocol) | [MQTT_WebSocket_Protocol](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothubtransportmqtt-websockets-h/mqtt-websocket-protocol) |
-| [C #](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/device/samples) | [ТранспортТип](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.transporttype?view=azure-dotnet). Mqtt | TransportType.Mqtt возвращается к МЗТТ по веб-разъемам, если МЗТТ терпит неудачу. Чтобы указать МЗТТ только по веб-разъемам, используйте TransportType.Mqtt_WebSocket_Only |
+| [C#](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/device/samples) | [ТранспортТип](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.transporttype?view=azure-dotnet). Mqtt | TransportType.Mqtt возвращается к МЗТТ по веб-разъемам, если МЗТТ терпит неудачу. Чтобы указать МЗТТ только по веб-разъемам, используйте TransportType.Mqtt_WebSocket_Only |
 | [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples) | Поддерживает МЗТТ по умолчанию | Добавление `websockets=True` вызова для создания клиента |
 
 В следующем фрагменте показано, как указать протокол МЗТТ по веб-разъемам при использовании Azure IoT Node.js SDK:
@@ -118,7 +118,7 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 
   Дополнительные сведения о способах создания маркеров SAS см. в соответствующем разделе статьи [Управление доступом к Центру Интернета вещей](iot-hub-devguide-security.md#use-sas-tokens-in-a-device-app).
 
-  При тестировании вы можете также использовать кроссплатформенное [расширение Azure IoT для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или средство [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer) для быстрого создания маркера SAS, который можно скопировать и вставить в собственный код:
+  При тестировании можно также использовать кроссплатформенные [инструменты Azure IoT для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или команду расширения CLI az [iot, генерируемую-сас-токен,](/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token) чтобы быстро создать токен SAS, который можно скопировать и вставить в свой собственный код:
 
 ### <a name="for-azure-iot-tools"></a>Для инструментов Azure IoT
 
@@ -129,16 +129,6 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 3. Задайте **время истечения срока действия** и нажмите клавишу "ВВОД".
   
 4. Маркер SAS создается и копируется в буфер обмена.
-
-### <a name="for-device-explorer"></a>Для проводника устройств
-
-1. Перейдите на вкладку **управления** в **Device Explorer.**
-
-2. Щелкните **Маркер SAS** (вверху справа).
-
-3. В разделе **SASTokenForm** выберите свое устройство в раскрывающемся списке **DeviceID**. Задайте значение **срока жизни**.
-
-4. Щелкните **Создать** , чтобы создать маркер.
 
    Созданный маркер SAS имеет следующую структуру.
 
@@ -359,7 +349,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом сообщении отклика используется тот же **идентификатор запроса,** что и запрос.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Пример:
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый участник документа JSON обновляет или добавляет соответствующий участник в документ близнеца устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Пример:
 
 ```json
 {

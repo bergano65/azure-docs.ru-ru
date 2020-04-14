@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: dsindona
-ms.openlocfilehash: d2a18d0fee4352cd88e4c64ab99a7dfc1b08ed75
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 25d678ad7b8c2b786239b294de873bc1d98fa5cb
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280088"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81270338"
 ---
 # <a name="create-a-new-container-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение контейнеров с помощью Портала Cloud Partner.
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления предложениями Azure Container в партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [предложении Create an Azure Container](https://aka.ms/CreateContainerOffer) для управления мигрированными предложениями.
 
 В этой статье описывается, как создать и опубликовать запись предложения контейнеров для Azure Marketplace. Каждое предложение отображается в виде отдельной сущности в Azure Marketplace и связывается с одним или несколькими номерами SKU.  Предложение контейнеров включает следующие группы ресурсов и вспомогательные службы.
 
@@ -35,7 +38,7 @@ ms.locfileid: "80280088"
 
 Страница **Новое предложение** для предложения контейнеров предоставляет набор вкладок и полей форм, которые будут использоваться для создания нового предложения. В каждой из перечисленных ниже статей описано, как использовать вкладку, чтобы определить группы ресурсов и вспомогательные службы для нового предложения контейнеров.
 
-- [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
+- [Вкладка "Параметры предложения"](./cpp-offer-settings-tab.md)
 - [Вкладка "Номера SKU"](./cpp-skus-tab.md)
 - [Вкладка "Marketplace"](./cpp-marketplace-tab.md)
 - [Вкладка "Поддержка"](./cpp-support-tab.md)

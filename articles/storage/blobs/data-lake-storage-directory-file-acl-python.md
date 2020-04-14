@@ -3,17 +3,17 @@ title: Лазурное хранилище озер Gen2 Python SDK для фа�
 description: Используйте Python управлять каталогами и списками управления доступом файлов и каталогов (ACL) в учетных записях хранения с включенным иерархическим пространством имен (HNS).
 author: normesta
 ms.service: storage
-ms.date: 03/20/2020
+ms.date: 04/10/2020
 ms.author: normesta
 ms.topic: article
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: a00713df2cdda626a76cc648826f7e56df214232
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: a79f3110206a01b9b974952f0ec0d299644be11f
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80668725"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262355"
 ---
 # <a name="use-python-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Используйте Python для управления каталогами, файлами и ACL в Azure Data Lake Storage 2
 
@@ -32,7 +32,7 @@ ms.locfileid: "80668725"
 Установите клиентскую библиотеку Azure Data Lake Storage для Python с помощью [пипсов.](https://pypi.org/project/pip/)
 
 ```
-pip install azure-storage-file-datalake --pre
+pip install azure-storage-file-datalake
 ```
 
 Добавьте эти инструкции по импорту в верхнюю часть файла кода.
@@ -330,7 +330,7 @@ def list_directory_contents():
      print(e) 
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Справочная документация по API](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-storage-file-datalake/12.0.0b5/index.html)
 * [Пакет (Индекс упаковки Python)](https://pypi.org/project/azure-storage-file-datalake/)

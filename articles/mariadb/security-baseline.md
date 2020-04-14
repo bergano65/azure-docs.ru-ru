@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: ca3a79b0d31cc18b8ff77f02ce4ce3d517d7a638
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: bca9c0e4c0695b6180775051d8b018930f8b808f
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548698"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81256473"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mariadb"></a>Базовый унизел безопасности Azure для базы данных Azure для MariaDB
 
@@ -138,7 +138,7 @@ ms.locfileid: "80548698"
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Образцы политики Azure для сетей:https://docs.microsoft.com/azure/governance/policy/samples/#network
+Образцы политики Azure для сетей:https://docs.microsoft.com/azure/governance/policy/samples/
 
 Как создать план Azure:https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 

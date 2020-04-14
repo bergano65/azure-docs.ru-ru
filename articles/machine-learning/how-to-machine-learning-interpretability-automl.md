@@ -1,5 +1,5 @@
 ---
-title: Интерпретируемость моделей в автоматизированном машинном обучении
+title: Выслаживаемость в автоматизированном машинном обучении
 titleSuffix: Azure Machine Learning
 description: Узнайте, как получить объяснения того, как автоматизированная модель ML определяет важность функции и делает прогнозы при использовании SDK Azure Machine Learning.
 services: machine-learning
@@ -8,20 +8,19 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: mesameki
 author: mesameki
-ms.reviewer: trbye
 ms.date: 03/11/2020
-ms.openlocfilehash: e2465a2df3fab736c8f118911da14ef23c8aec86
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: ecf7cde1a7f804ef1c43b21ac5c1d2a488660590
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437277"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257170"
 ---
-# <a name="model-interpretability-in-automated-machine-learning"></a>Интерпретируемость моделей в автоматизированном машинном обучении
+# <a name="interpretability-model-explanations-in-automated-machine-learning"></a>Интерпретация: модельные объяснения в автоматизированном машинном обучении
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье вы узнаете, как включить функции интерпретации для автоматизированного машинного обучения (ML) в Azure Machine Learning. Автоматизированный ML поможет вам понять важность инженерных функций. 
+В этой статье вы узнаете, как получить объяснения для автоматизированного машинного обучения (ML) в Azure Machine Learning. Автоматизированный ML поможет вам понять важность инженерных функций. 
 
 Все версии SDK после 1.0.85 установлены `model_explainability=True` по умолчанию. В версии SDK 1.0.85 и `model_explainability=True` более `AutoMLConfig` ранних версиях пользователи должны установить в объекте для того, чтобы использовать интерпретацию модели. 
 
@@ -212,6 +211,6 @@ if service.state == 'Healthy':
 
 [![Архитектура интерпретации машинного обучения](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительной информации о том, как можно включить объяснения моделей и важность функций в [concept article on interpretability](how-to-machine-learning-interpretability.md)областях SDK машинного обучения Azure, помимо автоматизированного машинного обучения, см.

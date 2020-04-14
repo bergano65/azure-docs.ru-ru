@@ -5,44 +5,45 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-ms.date: 09/13/2018
+ms.date: 04/08/2020
 ms.author: dsindona
-ms.openlocfilehash: 4163bf5727c327d559b81db42f99684aa0cc8d5b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 960d5facb53f20719045c5fdbe2179f549aca3f2
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280530"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255946"
 ---
-<a name="publish-an-offer"></a>Публикация предложения
-================
+# <a name="publish-an-offer"></a>Публикация предложения
+
+> [!NOTE]
+> AA-аДИ облачного partner Portal интегрированы с Партнерским центром и продолжат работать после того, как ваши предложения будут перенесены в Партнерский центр. Интеграция вносит небольшие изменения. Просмотрите изменения, перечисленные в [Справочнике API портала Cloud Partner,](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview) чтобы убедиться, что ваш код продолжает работать после миграции в Центр Партнеров.
 
 Запускает процесс публикации для указанного предложения. Этот вызов является длительной операцией.
 
   `POST  https://cloudpartner.azure.com/api/publishers/<publisherId>/offers/<offerId>/publish?api-version=2017-10-31`
 
-<a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
+## <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 --------------
 
-|  **Название**      |    **Описание**                               |  **Тип данных** |
+|  **имя**;      |    **Описание**                               |  **Тип данных** |
 |  ------------- |  ------------------------------------            |   -----------  |
 |  publisherid   | Идентификатор издателя, например `contoso`      |   Строка       |
 |  offerId       | Идентификатор предложения                                 |   Строка       |
 |  api-version   | Последняя версия API                        |   Дата         |
 |  |  |
 
-
-<a name="header"></a>Заголовок
+## <a name="header"></a>Заголовок
 ------
 
-|  **Название**        |    **Значение**          |
+|  **имя**;        |    **Значение**          |
 |  --------        |    ---------          |
 |  Content-Type    | `application/json`    |
 |  Авторизация   |  `Bearer YOUR_TOKEN`  |
 |  |  |
 
 
-<a name="body-example"></a>Пример текста запроса
+## <a name="body-example"></a>Пример текста запроса
 ------------
 
 ### <a name="request"></a>Запрос
@@ -58,7 +59,7 @@ ms.locfileid: "80280530"
 
 ### <a name="request-body-properties"></a>Свойства текста запроса
 
-|  **Название**               |   **Описание**                                                                                 |
+|  **имя**;               |   **Описание**                                                                                 |
 |  ---------------------  | ------------------------------------------------------------------------------------------------- |
 |  электронные уведомления    | Список адресов электронной почты, разделенных запятыми, для получения уведомлений о ходе публикации. |
 |  |  |
@@ -66,14 +67,20 @@ ms.locfileid: "80280530"
 
 ### <a name="response"></a>Ответ
 
-   `Operation-Location: /api/operations/contoso$56615b67-2185-49fe-80d2-c4ddf77bb2e8$2$preview?api-version=2017-10-31`
+#### <a name="migrated-offers"></a>Миграционные предложения
+
+`Location: /api/publishers/contoso/offers/contoso-offer/operations/56615b67-2185-49fe-80d2-c4ddf77bb2e8?api-version=2017-10-31`
+
+#### <a name="non-migrated-offers"></a>Предложения, не связанные с миграцией
+
+`Location: /api/operations/contoso$contoso-offer$2$preview?api-version=2017-10-31`
 
 
 ### <a name="response-header"></a>Заголовок ответа
 
-|  **Название**             |    **Значение**                                                                 |
+|  **имя**;             |    **Значение**                                                                 |
 |  -------------------- | ---------------------------------------------------------------------------- |
-| Operation-Location    | URL-адрес, который можно запросить для определения текущего состояния операции.    |
+| Расположение    | Относительный путь для получения статуса этой операции     |
 |  |  |
 
 

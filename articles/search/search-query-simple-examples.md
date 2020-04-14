@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 42ace2444c7d8e790c7575a7c1a7b3b1219d090a
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 3a801af7b97954510139a009a6d1344b281cf056
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656423"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261811"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в когнитивном поиске Azure
 
 В Azure Cognitive Search [простой синтаксис запроса](query-simple-syntax.md) вызывает парсер запроса запроса по умолчанию для выполнения запросов полного текста с индексом. Этот парсер быстро обрабатывает общие сценарии, включая полный поиск текста, отфильтрованный и граненый поиск, а также гео-поиск. 
 
-В этой статье мы используем примеры для иллюстрации простого синтаксиса.
+В этой статье мы используем примеры для иллюстрации `search=` простого синтаксиса, заполняющего параметр операции [Поисковых документов.](https://docs.microsoft.com/rest/api/searchservice/search-documents)
 
 Альтернативным синтаксисом запроса является [Full Lucene,](query-lucene-syntax.md)поддерживающий более сложные структуры запросов, такие как нечеткий и поиск подстановочных знаков, что может занять дополнительное время для обработки. Для получения дополнительной информации и примеров, демонстрирующих полный синтаксис, [см.](search-query-lucene-examples.md)
 

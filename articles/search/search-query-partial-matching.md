@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/09/2020
-ms.openlocfilehash: db60a864ff29ff9eccdcfbdc0bd63587375d4bbd
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.openlocfilehash: 5a05f2973ac17460250fb3e80eb7bc0da9849940
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81114967"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262882"
 ---
 # <a name="partial-term-search-and-patterns-with-special-characters-wildcard-regex-patterns"></a>Частичный поиск термина и шаблоны со специальными символами (wildcard, regex, шаблоны)
 
@@ -22,6 +22,9 @@ ms.locfileid: "81114967"
 Частичный поиск шаблонов может быть проблематичным, если индекс не имеет терминов в ожидаемом формате. Во время [фазы лексического анализа](search-lucene-query-architecture.md#stage-2-lexical-analysis) индексирования (при условии анализа стандарта по умолчанию) специальные символы отбрасываются, составные и составные строки расщепляются, а белое пространство удаляется; все это может привести к сбою запросов шаблонов, когда не найдено совпадений. Например, такой номер `+1 (425) 703-6214` `"1"`телефона (токенизированный как , `"425"` `"703"`, ) `"3-62"` `"6214"`не будет отображаться в запросе, потому что это содержимое на самом деле не существует в индексе. 
 
 Решение состоит в том, чтобы вызвать анализатор, который сохраняет полную строку, включая пробелы и специальные символы, если это необходимо, так что вы можете соответствовать на частичных условиях и шаблонах. Создание дополнительного поля для нетронутой строки, а также использование контент-сохраняющего анализатора, является основой решения.
+
+> [!TIP]
+> Знакомы с Почтальоном и REST AIS? [Загрузите коллекцию примеров запросов](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/full-syntax-examples) на запрос о частичных терминах и специальных символах, описанных в этой статье.
 
 ## <a name="what-is-partial-search-in-azure-cognitive-search"></a>Что такое частичный поиск в Azure Cognitive Search
 
@@ -74,6 +77,7 @@ ms.locfileid: "81114967"
 
 | Анализатор | Расширения функциональности |
 |----------|-----------|
+| [языковые анализаторы](index-add-language-analyzers.md) | Сохраняет дефисы в сложных словах или струнах, гласных мутациях и глагольных формах. Если шаблоны запроса включают тире, использование анализатора языка может быть достаточным. |
 | [keyword](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) | Содержимое всего поля токенизировано как единый термин. |
 | [whitespace](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/WhitespaceAnalyzer.html) | Отделяется только на белых пространствах. Термины, включающие тире или другие символы, рассматриваются как единый маркер. |
 | [пользовательский анализатор](index-add-custom-analyzers.md) | (рекомендуется) Создание пользовательского анализатора позволяет указать как маркеризатор, так и фильтр маркеров. Предыдущие анализаторы должны использоваться как есть. Пользовательский анализатор позволяет выбрать токенизаторы и маркерные фильтры для использования. <br><br>Рекомендуемая комбинация — [это токенизатор ключевых слов](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordTokenizer.html) с [фильтром токенов нижнего корпуса.](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/LowerCaseFilter.html) Сам по себе предопределенный [анализатор ключевых слов](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) не имеет нижнего случая какого-либо верхнего текста, что может привести к сбою запросов. Пользовательский анализатор дает вам механизм для добавления нижнего маркерного фильтра. |
@@ -151,7 +155,9 @@ ms.locfileid: "81114967"
 
 ### <a name="use-built-in-analyzers"></a>Использование встроенных анализаторов
 
-Встроенные или предопределенные анализаторы могут `analyzer` быть указаны по имени на свойстве определения поля, без дополнительной конфигурации, необходимой в индексе. Следующий пример показывает, как `whitespace` вы бы установить анализатор на поле. Для получения дополнительной информации о доступных встроенных анализаторов, [см.](https://docs.microsoft.com/azure/search/index-add-custom-analyzers#predefined-analyzers-reference) 
+Встроенные или предопределенные анализаторы могут `analyzer` быть указаны по имени на свойстве определения поля, без дополнительной конфигурации, необходимой в индексе. Следующий пример показывает, как `whitespace` вы бы установить анализатор на поле. 
+
+Для других сценариев и узнать больше о других встроенных анализаторов, [см.](https://docs.microsoft.com/azure/search/index-add-custom-analyzers#predefined-analyzers-reference) 
 
 ```json
     {

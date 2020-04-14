@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: c6062ec008a7a12c720cf28c2d79531e805ebba0
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 9398820c88120400d97fbaf8cb0da100c2bdbf81
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80984441"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261760"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -217,7 +217,7 @@ ms.locfileid: "80984441"
 * <a id="ad-aad-smb-files"></a>
 **Как проверить, включил ли я аутентификацию AD в своей учетной записи хранения и информацию о домене AD?**
 
-    Вы можете сослаться на инструкции, представленные [здесь,](https://docs.microsoft.com/azure/storage/files/storage-files-identity-auth-active-directory-enable#enable-ad-authentication-for-your-account) чтобы проверить, включена ли аутентификация AD Файлов Azure в вашей учетной записи хранения и получить информацию о домене AD.
+    Вы можете сослаться на инструкции, представленные [здесь,](https://docs.microsoft.com/azure/storage/files/storage-files-identity-auth-active-directory-enable#1-enable-ad-authentication-for-your-account) чтобы проверить, включена ли аутентификация AD Файлов Azure в вашей учетной записи хранения и получить информацию о домене AD.
     
 * <a id="encryption-at-rest"></a>
 **Как обеспечить шифрование неактивных данных файлового ресурса Azure?**  
@@ -393,7 +393,7 @@ ms.locfileid: "80984441"
 **Как использовать службу файлов Azure с IBM MQ?**  
     Компания IBM выпустила руководство по настройке службы файлов Azure в службе, которую используют пользователи IBM MQ. Дополнительные сведения см. в статье [How to setup IBM MQ Multi instance queue manager with Microsoft Azure File Service](https://github.com/ibm-messaging/mq-azure/wiki/How-to-setup-IBM-MQ-Multi-instance-queue-manager-with-Microsoft-Azure-File-Service) (Настройка службы файлов Microsoft Azure в многоэкземплярном диспетчере очередей IBM MQ).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Устранение неполадок службы файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 * [Устранение неполадок службы файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)
 * [Устранение неполадок службы "Синхронизация файлов Azure"](storage-sync-files-troubleshoot.md)

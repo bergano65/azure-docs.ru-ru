@@ -10,12 +10,12 @@ ms.author: sgilley
 author: sdgilley
 ms.date: 12/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: f38b0895b0d6eddcf63c082d3df205f4d9de9d50
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4b4b64bcca57e1dc98cdba10626597532ae1461c
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80297065"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81269740"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание и управление рабочими пространствами машин Azure на портале Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "80297065"
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
 
-Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных вашей подписки Azure. 
 
@@ -51,7 +51,7 @@ ms.locfileid: "80297065"
     ![Настройка рабочей области.](./media/how-to-manage-workspace/select-edition.png)
 
 1. Когда вы закончите настройку рабочего пространства, выберите **Обзор и Создайте**.
-2. Просмотрите настройки и внедните дополнительные изменения или исправления. Когда вы удовлетворены настройками, выберите **Создать.**
+2. Просмотрите настройки и внедните дополнительные изменения или исправления. Если вы удовлетворены настройками, выберите **Создать**.
 
    > [!Warning] 
    > Создание рабочей области в облаке может занять несколько минут.
@@ -90,6 +90,8 @@ ms.locfileid: "80297065"
 
 ## <a name="find-a-workspace"></a><a name="view"></a>Найти рабочее пространство
 
+1. Войдите на [портал Azure](https://portal.azure.com/).
+
 1. В верхнем поле поиска введите **машинное обучение.**  
 
 1. Выберите **Машинное обучение**.
@@ -102,9 +104,9 @@ ms.locfileid: "80297065"
 
 ## <a name="delete-a-workspace"></a>Удаление рабочей области
 
-Используйте кнопку "Удалить" в верхней части рабочей области, которую нужно удалить.
+На [портале Azure](https://portal.azure.com/)выберите **Удалить** в верхней части рабочего пространства, который вы хотите удалить.
 
-  ![Кнопка "Удалить"](./media/how-to-manage-workspace/delete-workspace.png)
+:::image type="content" source="./media/how-to-manage-workspace/delete-workspace.png" alt-text="Удаление рабочей области Azure Log Analytics на портале Azure":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

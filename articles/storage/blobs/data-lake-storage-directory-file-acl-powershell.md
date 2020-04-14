@@ -6,15 +6,15 @@ author: normesta
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.topic: conceptual
-ms.date: 04/02/2020
+ms.date: 04/10/2020
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 9b0e0b39b7ac7d7834c9cdcbd79ba45b024c823a
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.openlocfilehash: b59c68e3f2edc0fbe5eee3c3861a3e5116d4fac6
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80992017"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262389"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Используйте PowerShell для управления каталогами, файлами и ACL в Azure Data Lake Storage 2 (предварительный просмотр)
 
@@ -270,15 +270,14 @@ Remove-AzDataLakeGen2Item  -Context $ctx -FileSystem $filesystemName -Path $file
 
 ## <a name="manage-access-permissions"></a>Управление разрешениями доступа
 
-Вы можете получить, установить и обновить разрешения доступа файловых систем, каталогов и файлов.
+Вы можете получить, установить и обновить разрешения доступа файловых систем, каталогов и файлов. Эти разрешения фиксируются в списках управления доступом (ACL).
 
 > [!NOTE]
 > Если вы используете Active Directory Azure (Azure AD) для авторизации команд, убедитесь, что директору безопасности была назначена [роль владельца данных Хранилища.](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) Чтобы узнать больше о том, как применяются разрешения [Access control in Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)ACL и о последствиях их изменения, см.
 
-### <a name="get-permissions"></a>Получение разрешений
+### <a name="get-an-acl"></a>Получить ACL
 
 Получите ACL каталога или файла `Get-AzDataLakeGen2Item`с помощью cmdlet.
-
 
 Этот пример получает ACL **файловой системы,** а затем печатает ACL на консоль.
 
@@ -311,7 +310,7 @@ $file.ACL
 
 В этом примере пользователь-владелик прочитал, написал и выполнил разрешения. Группа владельцев только читала и выполняла разрешения. Для получения дополнительной информации о списках управления доступом смотрите [элемент управления доступом в Azure Data Lake Storage Gen2](data-lake-storage-access-control.md).
 
-### <a name="set-or-update-permissions"></a>Установка или обновление разрешений
+### <a name="set-an-acl"></a>Установка ACL
 
 Используйте `set-AzDataLakeGen2ItemAclObject` cmdlet для создания ACL для пользователя-владелеца, владеющего группой или другими пользователями. Затем используйте `Update-AzDataLakeGen2Item` cmdlet для фиксации ACL.
 
@@ -359,7 +358,7 @@ $file.ACL
 В этом примере пользователь-владелик и группа владельцев только читают и пишут разрешения. Все остальные пользователи имеют разрешение на запись и выполнение. Для получения дополнительной информации о списках управления доступом смотрите [элемент управления доступом в Azure Data Lake Storage Gen2](data-lake-storage-access-control.md).
 
 
-### <a name="set-permissions-on-all-items-in-a-file-system"></a>Установка разрешений на все элементы файловой системы
+### <a name="set-acls-on-all-items-in-a-file-system"></a>Установите ACL на все элементы файловой системы
 
 Вы можете `Get-AzDataLakeGen2Item` использовать `-Recurse` параметр вместе `Update-AzDataLakeGen2Item` с cmdlet, чтобы повторно установить ACL всех каталогов и файлов в файловой системе. 
 
@@ -370,6 +369,41 @@ $acl = set-AzDataLakeGen2ItemAclObject -AccessControlType group -Permission rw- 
 $acl = set-AzDataLakeGen2ItemAclObject -AccessControlType other -Permission -wx -InputObject $acl
 Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $filesystemName -Recurse | Update-AzDataLakeGen2Item -Acl $acl
 ```
+### <a name="add-or-update-an-acl-entry"></a>Добавление или обновление ввода ACL
+
+Во-первых, получить ACL. Затем используйте `set-AzDataLakeGen2ItemAclObject` cmdlet для добавления или обновления ввода ACL. Используйте `Update-AzDataLakeGen2Item` cmdlet для фиксации ACL.
+
+Этот пример создает или обновляет ACL в **каталоге** для пользователя.
+
+```powershell
+$filesystemName = "my-file-system"
+$dirname = "my-directory/"
+$acl = (Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname).ACL
+$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityID xxxxxxxx-xxxx-xxxxxxxxxxx -Permission r-x -InputObject $acl 
+Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
+```
+
+### <a name="remove-an-acl-entry"></a>Удалить запись ACL
+
+Этот пример удаляет запись из существующего ACL.
+
+```powershell
+$id = "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
+# Create the new ACL object.
+[Collections.Generic.List[System.Object]]$aclnew =$acl
+
+foreach ($a in $aclnew)
+{
+    if ($a.AccessControlType -eq "User"-and $a.DefaultScope -eq $false -and $a.EntityId -eq $id)
+    {
+        $aclnew.Remove($a);
+        break;
+    }
+}
+Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $aclnew
+```
+
 <a id="gen1-gen2-map" />
 
 ## <a name="gen1-to-gen2-mapping"></a>Gen1 в Gen2 Картпинг
@@ -389,7 +423,7 @@ Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $filesystemName -Recurse |
 
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
 * [Использование Azure PowerShell с лазурным хранилищем.](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

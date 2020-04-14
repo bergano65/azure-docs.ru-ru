@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/02/2019
-ms.openlocfilehash: c9c69bb475c943003f78a69df1142653c3d5249e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c6a3ac701442fb30e471bcc2c8f317e3988980f7
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288382"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261981"
 ---
 # <a name="microsoft-commercial-marketplace-roadmap"></a>Дорожная карта коммерческого рынка Майкрософт
 
@@ -29,7 +29,7 @@ ms.locfileid: "80288382"
 
 * [Маркетплейс - Блог обновления CSP](https://aka.ms/marketplacemarchupdateblog)
 * [Публикация предложений в канале CSP (ISV)](https://aka.ms/publishtocsp)
-* [Перепродавать предложения Marketplace (CSP)](hhttps://aka.ms/marketplaceincsp)
+* [Перепродавать предложения Marketplace (CSP)](https://aka.ms/marketplaceincsp)
 * [Стандартный контракт](https://aka.ms/standardcontract)
 * [SaaS Выполнение API](https://aka.ms/saasapiv2)
 * [Рынок Геос и Валюты](https://aka.ms/marketplacegeos)

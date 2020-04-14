@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/2/2019
 ms.author: mayg
-ms.openlocfilehash: 7237bb7e0538ba1a9b6333ccb6589efe657a247d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f91ee5654b4add37d3cce4f875be1f9c2b398ab9
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74423961"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81259499"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
@@ -30,7 +30,7 @@ ms.locfileid: "74423961"
 
 ## <a name="step-2-troubleshoot-connectivity-and-replication-issues"></a>Шаг 2: Проблемы подключения и репликации проблем с устранением неполадок
 
-Первоначальные и текущие сбои репликации часто вызваны проблемами подключения между сервером-источником и сервером процесса или между сервером процесса и Azure. 
+Первоначальные и текущие сбои репликации часто вызваны проблемами подключения между сервером-источником и сервером процесса или между сервером процесса и Azure.
 
 Для решения этих проблем, [устранение неполадок подключения и репликации.](vmware-physical-azure-troubleshoot-process-server.md#check-connectivity-and-replication)
 
@@ -96,7 +96,7 @@ ms.locfileid: "74423961"
 4. На Машине Источника изучите журналы на месте для получения сведений об ошибках:
 
        C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
-    
+
 ### <a name="process-server-with-no-heartbeat-error-806"></a>Процесс сервера без сердцебиения (ошибка 806)
 В случае, если нет сердцебиения от process Server (PS, проверьте, что:
 1. PS VM запущен и работает
@@ -116,7 +116,7 @@ ms.locfileid: "74423961"
 2. Войти на Master Target VM с помощью учетной записи с привилегиями администратора.
     - Убедитесь, что служба svagents работает. Если он запущен, перезапустите службу
     - Проверьте журналы на месте для получения информации об ошибках:
-        
+
           C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
 3. Чтобы зарегистрировать master target с сервером конфигурации, перейдите в папку **%PROGRAMDATA%-ASR-Agent**и запустите следующий запрос команды:
    ```
@@ -132,38 +132,38 @@ ms.locfileid: "74423961"
 
 ## <a name="error-id-78144---no-app-consistent-recovery-point-available-for-the-vm-in-the-last-xxx-minutes"></a>Id ошибки 78144 - Нет приложения последовательной точки восстановления доступны для VM в последние 'XXX' минут
 
-Были внесены улучшения в версиях агента мобильности [9.23](vmware-physical-mobility-service-overview.md#from-923-version-onwards) & [9.27](site-recovery-whats-new.md#update-rollup-39) для обработки поведения сбоя установки VSS. Убедитесь, что вы находитесь на последних версиях для лучшего руководства по устранению неполадок VSS сбоев.
+Были внесены улучшения в версиях агента мобильности [9.23](vmware-physical-mobility-service-overview.md#mobility-service-agent-version-923-and-higher) & [9.27](site-recovery-whats-new.md#update-rollup-39) для обработки поведения сбоя установки VSS. Убедитесь, что вы находитесь на последних версиях для лучшего руководства по устранению неполадок VSS сбоев.
 
 Ниже приведены некоторые из наиболее распространенных проблем,
 
-#### <a name="cause-1-known-issue-in-sql-server-20082008-r2"></a>Причина 1: Известная проблема на сервере S'L 2008/2008 R2 
+#### <a name="cause-1-known-issue-in-sql-server-20082008-r2"></a>Причина 1: Известная проблема на сервере S'L 2008/2008 R2
 **Как исправить** : Существует известная проблема с сервером S'L 2008/2008 R2. Пожалуйста, назови эту статью KB [Azure Site Recovery Agent или другой некомпонентный резервную систему VSS, не имеющем стаи для сервера, хозяйничающего S'L Server 2008 R2](https://support.microsoft.com/help/4504103/non-component-vss-backup-fails-for-server-hosting-sql-server-2008-r2)
 
-#### <a name="cause-2-azure-site-recovery-jobs-fail-on-servers-hosting-any-version-of-sql-server-instances-with-auto_close-dbs"></a>Причина 2: Задания по восстановлению сайта Azure не сбой на серверах, где размещается любая версия экземпляров S'L Server с AUTO_CLOSE DB 
-**Как исправить** : Ссылка Kb [статьи](https://support.microsoft.com/help/4504104/non-component-vss-backups-such-as-azure-site-recovery-jobs-fail-on-ser) 
+#### <a name="cause-2-azure-site-recovery-jobs-fail-on-servers-hosting-any-version-of-sql-server-instances-with-auto_close-dbs"></a>Причина 2: Задания по восстановлению сайта Azure не сбой на серверах, где размещается любая версия экземпляров S'L Server с AUTO_CLOSE DB
+**Как исправить** : Ссылка Kb [статьи](https://support.microsoft.com/help/4504104/non-component-vss-backups-such-as-azure-site-recovery-jobs-fail-on-ser)
 
 
 #### <a name="cause-3-known-issue-in-sql-server-2016-and-2017"></a>Причина 3: Известная проблема в сервере S'L 2016 и 2017
-**Как исправить** : Ссылка Kb [статьи](https://support.microsoft.com/help/4493364/fix-error-occurs-when-you-back-up-a-virtual-machine-with-non-component) 
+**Как исправить** : Ссылка Kb [статьи](https://support.microsoft.com/help/4493364/fix-error-occurs-when-you-back-up-a-virtual-machine-with-non-component)
 
 
 ### <a name="more-causes-due-to-vss-related-issues"></a>Другие причины из-за проблем, связанных с VSS:
 
 Чтобы устранить неполадки, Проверьте файлы на исходной машине, чтобы получить точный код ошибки для сбоя:
-    
+
     C:\Program Files (x86)\Microsoft Azure Site Recovery\agent\Application Data\ApplicationPolicyLogs\vacp.log
 
 Как найти ошибки в файле?
 Поиск строки "vacpError", открыв файл vacp.log в редакторе
-        
+
     Ex: vacpError:220#Following disks are in FilteringStopped state [\\.\PHYSICALDRIVE1=5, ]#220|^|224#FAILED: CheckWriterStatus().#2147754994|^|226#FAILED to revoke tags.FAILED: CheckWriterStatus().#2147754994|^|
 
 В приведенном выше примере **2147754994** код ошибки, который говорит вам о сбое, как показано ниже
 
-#### <a name="vss-writer-is-not-installed---error-2147221164"></a>Писатель VSS не установлен - Огонек No 2147221164 
+#### <a name="vss-writer-is-not-installed---error-2147221164"></a>Писатель VSS не установлен - Огонек No 2147221164
 
 *Как исправить*: Для создания тега согласованности приложений Azure Site Recovery использует службу копирования Microsoft Volume Shadow (VSS). Он устанавливает vsS Provider для своей работы, чтобы сделать снимки согласованности приложений. Этот поставщик VSS устанавливается как услуга. В случае, если услуга VSS Provider не установлена, создание моментального снимка согласованности приложения завершается неудачей с идентификатором ошибки 0x80040154 "Класс не зарегистрирован". </br>
-Refer [article for VSS writer installation troubleshooting](https://docs.microsoft.com/azure/site-recovery/vmware-azure-troubleshoot-push-install#vss-installation-failures) 
+Refer [article for VSS writer installation troubleshooting](https://docs.microsoft.com/azure/site-recovery/vmware-azure-troubleshoot-push-install#vss-installation-failures)
 
 #### <a name="vss-writer-is-disabled---error-2147943458"></a>Писатель VSS отключен - Огонек No 2147943458
 
@@ -178,12 +178,13 @@ Refer [article for VSS writer installation troubleshooting](https://docs.microso
 
 ####  <a name="vss-provider-not_registered---error-2147754756"></a>VSS PROVIDER NOT_REGISTERED - Ошибка 2147754756
 
-**Как исправить**: Для создания тега согласованности приложений Azure Site Recovery использует службу копирования Microsoft Volume Shadow (VSS). Проверьте, установлена ли служба Azure Site Recovery VSS Provider или нет. </br>
+**Как исправить**: Для создания тега согласованности приложений Azure Site Recovery использует службу копирования Microsoft Volume Shadow (VSS).
+Проверьте, установлена ли служба Azure Site Recovery VSS Provider или нет. </br>
 
 - Повторите установку поставщика, используя следующие команды:
 - Неустановимый существующий провайдер: C:'Программные файлы (x86)»Microsoft Azure Site Recovery-InMageVSSProvider_Uninstall.cmd
 - Переустановка: C:'Файлы программы (x86)»Microsoft Azure Восстановление сайта»-агентInMageVSSProvider_Install.cmd
- 
+
 Убедитесь, что тип запуска службы VSS Provider настроен на **автоматическое.**
     - Перезапустите следующие службы:
         - Услуга VSS

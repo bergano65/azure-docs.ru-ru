@@ -5,14 +5,14 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 03/30/2020
 ms.author: dsindona
-ms.openlocfilehash: 9b59181f7c1b24a7bc00ab579bbe67a70f499c92
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 087cdafe8b819e4929e1608ed7e00be2c1169414
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80755378"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81263100"
 ---
 # <a name="configure-lead-management-for-salesforce"></a>Настройка управления интересами для Salesforce
 
@@ -64,11 +64,15 @@ ms.locfileid: "80755378"
 
 1. На всплывающем окне подключения выберите **Salesforce** для **ведущего** назначения `oid` и вставьте в созданной из веб-формы, созданной вами, следуя более ранним шагам в поле **идентификатора Организации.**
 
-1. Щелкните **Сохранить**. 
+1. **Контактная почта** - Предоставьте электронные письма для людей в вашей компании, которые должны получать уведомления по электронной почте, когда новый свинец получен. Вы можете предоставить несколько писем, разделив их с запятой.
 
-    >[!Note]
-    >Вы должны закончить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить приводит для предложения.
+1. Выберите **Ok**.
 
-    ![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/choose-lead-destination.png)
+Чтобы убедиться, что вы успешно подключены к месту назначения, нажмите на кнопку проверки. В случае успеха, вы будете иметь тест свинца в главной цели.
 
-    ![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/connection-details.png)
+>[!Note]
+>Вы должны закончить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить приводит для предложения.
+
+![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/choose-lead-destination.png)
+
+![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-connection-details.png)

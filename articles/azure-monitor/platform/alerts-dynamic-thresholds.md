@@ -5,12 +5,12 @@ author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
 ms.date: 02/16/2020
-ms.openlocfilehash: 9345138e948d84e0ea3c804dbd7a4b3c21daca2f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1d21c7ed93ac2ce2ab61282707d57fbf43e0b71a
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77668151"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261080"
 ---
 # <a name="metric-alerts-with-dynamic-thresholds-in-azure-monitor"></a>Метрические оповещения с динамическими порогами в Azure Monitor
 
@@ -93,7 +93,8 @@ ms.locfileid: "77668151"
 
 ## <a name="how-much-data-is-needed-to-trigger-an-alert"></a>Сколько данных необходимо для запуска оповещения?
 
-Если у вас есть новый ресурс или отсутствуют метрические данные, динамические пороги не будут вызывать оповещения раньше трех дней или 30 образцов метрических данных доступны для обеспечения точных пороговых значений.
+Если у вас есть новый ресурс или отсутствуют метрические данные, динамические пороги не будут вызывать оповещения до трех дней и по крайней мере 30 образцов метрических данных доступны, чтобы обеспечить точные пороги.
+Для существующих ресурсов с достаточным количеством метрических данных динамические пороги могут немедленно вызывать оповещения.
 
 ## <a name="dynamic-thresholds-best-practices"></a>Рекомендации по динамическим порогам
 

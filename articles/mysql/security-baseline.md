@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 362b35af191c1caebeb30149ce060a5366182ec4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cffefb294aaeeb4d66358ceae72c98becd04cc58
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80289424"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261964"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mysql"></a>Базовый универсаль безопасности Azure для базы данных Azure для MyS'L
 
@@ -134,7 +134,7 @@ ms.locfileid: "80289424"
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Образцы политики Azure для сетей:https://docs.microsoft.com/azure/governance/policy/samples/#network
+Образцы политики Azure для сетей:https://docs.microsoft.com/azure/governance/policy/samples/
 
 Как создать план Azure:https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
@@ -904,7 +904,7 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Руководство**: База данных Azure для экземпляра MyS'L поддерживает аутентификацию активного каталога Azure (в предварительном просмотре) для доступа к базам данных.  При создании базы данных Azure для экземпляра MyS'L вы предоставляете учетные данные для пользователя администратора. Этот администратор может быть использован для создания дополнительных пользователей баз данных.  
 
-Для того чтобы виртуальные машины Azure или веб-приложения, работающие в службе приложений Azure, использовались для доступа к базе данных Azure для экземпляров MyS'L, используйте идентификатор управляемой службы совместно с Azure Key Vault для хранения и получения учетных данных для базы данных Azure для MyS'L Экземпляр. Убедитесь, что Key Vault Soft Delete включен.
+Для виртуальных машин Azure или веб-приложений, работающих в службе приложений Azure, используемых для доступа к базе данных Azure для экземпляров MyS'L, используйте идентификатор управляемой службы совместно с Azure Key Vault для хранения и получения учетных данных для базы данных Azure для экземпляра MyS'L. Убедитесь, что Key Vault Soft Delete включен.
 
 Используйте управляемые идентификаторы для предоставления службам Azure автоматического управляемого идентификатора в Active Directory (AD). Управляемые идентификаторы позволяют аутентифицировать проверку любой службы, которая поддерживает аутентификацию Azure AD, включая Key Vault, без каких-либо учетных данных в коде.
 

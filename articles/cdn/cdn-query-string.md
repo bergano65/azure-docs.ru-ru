@@ -3,7 +3,7 @@ title: Управление режимом кэширования Azure CDN с �
 description: Функция кэширования строк запросов в Azure CDN позволяет управлять режимом кэширования файлов, когда веб-запрос содержит строку запроса. В этой статье описывается кэширование строк запросов в продуктах Azure CDN ценовой категории "Стандартный".
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: 17410e4f-130e-489c-834e-7ca6d6f9778d
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/11/2018
-ms.author: magattus
-ms.openlocfilehash: 6471241527dd9b594eaaca20ebc75cacb27f8f72
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: allensu
+ms.openlocfilehash: a0df9cecc4ccd09db3f6b07fa6fd4c5283753aa2
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74083045"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81260213"
 ---
 # <a name="control-azure-cdn-caching-behavior-with-query-strings---standard-tier"></a>Управление режимом кэширования Azure CDN с помощью строк запросов (ценовая категория "Стандартный")
 > [!div class="op_single_selector"]

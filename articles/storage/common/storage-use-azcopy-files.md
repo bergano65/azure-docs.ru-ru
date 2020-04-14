@@ -4,15 +4,15 @@ description: Передача данных с помощью AzCopy и хран�
 author: normesta
 ms.service: storage
 ms.topic: conceptual
-ms.date: 10/16/2019
+ms.date: 04/10/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 8aa0e5304825b3f016694a40b3fc1e176518237a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 59f5733009424c60f2b9c48e68d70bbc29ad7095
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77526694"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81263375"
 ---
 # <a name="transfer-data-with-azcopy-and-file-storage"></a>Transfer data with AzCopy and file storage (Передача данных с помощью AzCopy и хранилища файлов) 
 
@@ -20,16 +20,16 @@ AzCopy — это утилита командной строки, которую
 
 Прежде чем начать, смотрите статью [Get started с AzCopy,](storage-use-azcopy-v10.md) чтобы загрузить AzCopy и ознакомиться с инструментом.
 
+> [!TIP]
+> Примеры в этой статье приложить аргументы пути с одними цитатами ('). Используйте одиночные кавычки во всех командных оболочках, за исключением оболочки командования Windows (cmd.exe). Если вы используете оболочку командования Windows (cmd.exe), приложить аргументы пути с двойными кавычками ("") вместо отдельных котировок (').
+
 ## <a name="create-file-shares"></a>Создание файлов
 
 Для создания общего файла можно использовать команду [azcopy make.](storage-ref-azcopy-make.md) Пример в этом разделе создает `myfileshare`раздел файла с именем .
 
-> [!TIP]
-> Примеры в этом разделе приложить аргументы пути с отдельными цитатами ('). Используйте одиночные кавычки во всех командных оболочках, за исключением оболочки командования Windows (cmd.exe). Если вы используете оболочку командования Windows (cmd.exe), приложить аргументы пути с двойными кавычками ("") вместо отдельных котировок (').
-
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy make 'https://<storage-account-name>.file.core.windows.net/<file-share-name>?<SAS-token>'` |
+| **Синтаксис** | `azcopy make 'https://<storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>'` |
 | **Пример** | `azcopy make 'https://mystorageaccount.file.core.windows.net/myfileshare?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D'` |
 
 Для подробных справочных документов, см [azcopy сделать](storage-ref-azcopy-make.md).
@@ -46,13 +46,20 @@ AzCopy — это утилита командной строки, которую
 > * Отправка содержимого каталога
 > * Загрузить определенный файл
 
+> [!TIP]
+> Вы можете настроить операцию загрузки с помощью дополнительных флагов. Вот несколько примеров.
+>
+> |Сценарий|Флаг|
+> |---|---|
+> |Копирование списков управления доступом (ACLs) вместе с файлами.|**--заповедник-smb-разрешения**=\[истинное\|ложное\]|
+> |Копирование информации о собственности малого и среднего бизнеса вместе с файлами.|**--Сохранить-smb-info**=\[\|истинное ложное\]|
+> |Загружайте файлы в виде append Blobs или Page Blobs.|**--blob типа**=\[BlockBlob PageBlob\|\|ПриложениеBlob\]|
+> |Загрузка на определенный уровень доступа (например, уровень архива).|**--блок-blob-уровня**=\[\|None\|\|Hot Cool Архив\]|
+> 
+> Для полного списка [см.](storage-ref-azcopy-copy.md#options)
+
 > [!NOTE]
 > AzCopy автоматически не вычисляет и не хранит хэш-код md5 файла. Если вы хотите, чтобы AzCopy сделал `--put-md5` это, а затем привяжите флаг к каждой команде копии. Таким образом, при загрузке файла AzCopy вычисляет хэш MD5 для скачанных данных и проверяет, что хэш MD5, хранящийся в свойстве файла, `Content-md5` соответствует расчетливому хэшу.
-
-Для подробных справочных документов [см.](storage-ref-azcopy-copy.md)
-
-> [!TIP]
-> Примеры в этом разделе приложить аргументы пути с отдельными цитатами ('). Используйте одиночные кавычки во всех командных оболочках, за исключением оболочки командования Windows (cmd.exe). Если вы используете оболочку командования Windows (cmd.exe), приложить аргументы пути с двойными кавычками ("") вместо отдельных котировок (').
 
 ### <a name="upload-a-file"></a>Отправка файла
 
@@ -134,13 +141,19 @@ AzCopy — это утилита командной строки, которую
 > * Загрузка содержимого каталога
 > * Скачать определенные файлы
 
+> [!TIP]
+> Вы можете настроить операцию загрузки с помощью дополнительных флагов. Вот несколько примеров.
+>
+> |Сценарий|Флаг|
+> |---|---|
+> |Копирование списков управления доступом (ACLs) вместе с файлами.|**--заповедник-smb-разрешения**=\[истинное\|ложное\]|
+> |Копирование информации о собственности малого и среднего бизнеса вместе с файлами.|**--Сохранить-smb-info**=\[\|истинное ложное\]|
+> |Автоматически декомпрессии файлов.|**--декомпресс**=\[Gzip\|сдуваться\]|
+> 
+> Для полного списка [см.](storage-ref-azcopy-copy.md#options)
+
 > [!NOTE]
 > Если `Content-md5` значение свойства файла содержит хэш, AzCopy вычисляет хэш MD5 для скачанных данных и проверяет, что хэш MD5, хранящийся в свойстве файла, `Content-md5` соответствует расчетным хэшам. Если эти значения не совпадают, загрузка не удается, `--check-md5=NoCheck` если `--check-md5=LogOnly` вы не переопределить это поведение, подопяв или к команде копирования.
-
-Для подробных справочных документов [см.](storage-ref-azcopy-copy.md)
-
-> [!TIP]
-> Примеры в этом разделе приложить аргументы пути с отдельными цитатами ('). Используйте одиночные кавычки во всех командных оболочках, за исключением оболочки командования Windows (cmd.exe). Если вы используете оболочку командования Windows (cmd.exe), приложить аргументы пути с двойными кавычками ("") вместо отдельных котировок (').
 
 ### <a name="download-a-file"></a>скачать файл;
 
@@ -214,37 +227,44 @@ AzCopy использует [AA,](https://docs.microsoft.com/rest/api/storageser
 > * Копирование общего файла на другую учетную запись хранения
 > * Копирование всех файлов, каталогов и файлов на другую учетную запись хранения
 
-Для подробных справочных документов, см [azcopy копию](storage-ref-azcopy-copy.md).
-
 > [!TIP]
-> Примеры в этом разделе приложить аргументы пути с отдельными цитатами ('). Используйте одиночные кавычки во всех командных оболочках, за исключением оболочки командования Windows (cmd.exe). Если вы используете оболочку командования Windows (cmd.exe), приложить аргументы пути с двойными кавычками ("") вместо отдельных котировок (').
+> Вы можете настроить операцию копирования с помощью дополнительных флагов. Вот несколько примеров.
+>
+> |Сценарий|Флаг|
+> |---|---|
+> |Копирование списков управления доступом (ACLs) вместе с файлами.|**--заповедник-smb-разрешения**=\[истинное\|ложное\]|
+> |Копирование информации о собственности малого и среднего бизнеса вместе с файлами.|**--Сохранить-smb-info**=\[\|истинное ложное\]|
+> |Копирование файлов в виде приложения Blobs или Page Blobs.|**--blob типа**=\[BlockBlob PageBlob\|\|ПриложениеBlob\]|
+> |Копирование на определенный уровень доступа (например, уровень архива).|**--блок-blob-уровня**=\[\|None\|\|Hot Cool Архив\]|
+> 
+> Для полного списка [см.](storage-ref-azcopy-copy.md#options)
 
 ### <a name="copy-a-file-to-another-storage-account"></a>Копирование файла на другую учетную запись хранения
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<file-path>?<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name>/<file-path><SAS-token>'` |
+| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<file-path><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name>/<file-path><SAS-token>'` |
 | **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D'` |
 
 ### <a name="copy-a-directory-to-another-storage-account"></a>Копирование каталога на другую учетную запись хранения
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<directory-path>?<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
+| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<directory-path><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
 | **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer/myBlobDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
 
 ### <a name="copy-a-file-share-to-another-storage-account"></a>Копирование общего файла на другую учетную запись хранения
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>?<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
+| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
 | **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
 
 ### <a name="copy-all-file-shares-directories-and-files-to-another-storage-account"></a>Копирование всех файлов, каталогов и файлов на другую учетную запись хранения
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/?<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<SAS-token>' --recursive'` |
+| **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<SAS-token>' --recursive'` |
 | **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
 
 ## <a name="synchronize-files"></a>Синхронизация файлов
@@ -258,10 +278,16 @@ AzCopy использует [AA,](https://docs.microsoft.com/rest/api/storageser
 
 При установке `--delete-destination` флага `true` AzCopy файлы удаляются без предоставления запроса. Если вы хотите, чтобы запрос появился до того, как AzCopy удалил файл, установите `--delete-destination` флаг. `prompt`
 
-Для подробных справочных документов [см.](storage-ref-azcopy-sync.md)
-
 > [!TIP]
-> Примеры в этом разделе приложить аргументы пути с отдельными цитатами ('). Используйте одиночные кавычки во всех командных оболочках, за исключением оболочки командования Windows (cmd.exe). Если вы используете оболочку командования Windows (cmd.exe), приложить аргументы пути с двойными кавычками ("") вместо отдельных котировок (').
+> Вы можете настроить операцию синхронизации с помощью дополнительных флагов. Вот несколько примеров.
+>
+> |Сценарий|Флаг|
+> |---|---|
+> |Укажите, как строго следует проверять хэши MD5 при загрузке.|**--Check-md5**=\[NoCheck\|\|Logonly\|FailIfDifferent FailIfDifferentOrMissing\]|
+> |Исключить файлы на основе шаблона.|**--исключить-путь**|
+> |Укажите, насколько подробными вы хотите, чтобы записи журнала, связанные с синхронизацией, были.|**--Лог-уровня**=\[\|ВНИМАНИЕ\|\|ERROR INFO НЕТ\]|
+> 
+> Для полного списка [см.](storage-ref-azcopy-sync.md#options)
 
 ### <a name="update-a-file-share-with-changes-to-another-file-share"></a>Обновление общего файла с изменениями в другой доле файла
 
@@ -269,7 +295,7 @@ AzCopy использует [AA,](https://docs.microsoft.com/rest/api/storageser
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>?<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
+| **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
 | **Пример** | `azcopy sync 'https://mysourceaccount.file.core.windows.net/myfileShare?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/myfileshare?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
 
 ### <a name="update-a-directory-with-changes-to-a-directory-in-another-file-share"></a>Обновление каталога с изменениями в каталоге в другом файле
@@ -278,8 +304,19 @@ AzCopy использует [AA,](https://docs.microsoft.com/rest/api/storageser
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<directory-name>?<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name>/<directory-name><SAS-token>' --recursive` |
+| **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<directory-name><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name>/<directory-name><SAS-token>' --recursive` |
 | **Пример** | `azcopy sync 'https://mysourceaccount.file.core.windows.net/myFileShare/myDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/myFileShare/myDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+
+### <a name="update-a-file-share-to-match-the-contents-of-a-share-snapshot"></a>Обновление общего файла в соответствии с содержимым снимка общего обмена
+
+Первая доля файлов, которая отображается в этой команде, является источником. В конце URI придатите `&sharesnapshot=` строку, за которой следует значение **снимка DateTime.** 
+
+|    |     |
+|--------|-----------|
+| **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>&sharesnapsot<snapshot-ID>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
+| **Пример** | `azcopy sync 'https://mysourceaccount.file.core.windows.net/myfileShare?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D&sharesnapshot=2020-03-03T20%3A24%3A13.0000000Z' 'https://mydestinationaccount.file.core.windows.net/myfileshare?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+
+Чтобы узнать больше о снимках общего обмена, смотрите [Обзор снимков общего обмена для файлов Azure.](https://docs.microsoft.com/azure/storage/files/storage-snapshots-files)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

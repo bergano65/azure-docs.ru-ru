@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: juliako
-ms.openlocfilehash: 6ed5c509cf310b743e4ef52f411dfa34e5db09c1
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: 5134a262397676aa9b59de9b0c6de61c26d21523
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80411615"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262916"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Встраивайте виджеты видеоиндекса в ваши приложения
 
@@ -33,7 +33,7 @@ ms.locfileid: "80411615"
 |---|---|---|
 |`widgets` | Строки, разделенные запятыми. | Позволяет управлять информацией, которую вы хотите сделать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords` отображает только пользователи и ключевые слова uI идеи.<br/>Доступные варианты: люди, анимированныеПерсонажи, ключевые слова, этикетки, настроения, эмоции, темы, ключевые кадры, транскрипт, ocr, динамики, сцены и namedEntities.|
 |`controls`|Строки, разделенные запятыми.|Позволяет управлять элементами управления, которые вы хотите сделать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?controls=search,download` отображает только опцию поиска и кнопку загрузки.<br/>Доступные варианты: поиск, загрузка, пресеты, язык.|
-|`language`|Код короткого языка (имя языка)|Контролирует язык проницательности.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es` <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
+|`language`|Код короткого языка (имя языка)|Контролирует язык проницательности.<br/>Например, `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es`. <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
 |`locale` | Короткий языковой код | Контролирует язык uI. Значение по умолчанию — `en`. <br/>Например, `locale=de`.|
 |`tab` | Выбранная вкладка по умолчанию | Контролирует вкладку **Insights,** отображаемую по умолчанию. <br/>Пример: `tab=timeline` отображаются идеи с выбранной вкладкой **Хронология.**|
 
@@ -265,7 +265,7 @@ URL-адрес внедрения будет выглядеть так:
 
 ## <a name="code-samples"></a>Примеры кода
 
-Смотрите репо [образцов кода,](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/Widgets) содержащее образцы для Video Indexer API и виджетов:
+Смотрите репо [образцов кода,](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/Embedding%20widgets) содержащее образцы для Video Indexer API и виджетов:
 
 | Файл или папка                       | Описание                                |
 |-----------------------------------|--------------------------------------------|
@@ -280,7 +280,7 @@ URL-адрес внедрения будет выглядеть так:
 | `url-generator`                   | Генерирует виджеты пользовательских встраиваемый URL на основе пользовательских параметров.             |
 | `html5-player`                    | Встраивай VI Insights с помощью видеоплеера HTML5 по умолчанию.                           |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения информации о том, как просматривать и отсылать данные Video Indexer, [просмотрите и отодвинете информацию о видеоиндексе.](video-indexer-view-edit.md)
 

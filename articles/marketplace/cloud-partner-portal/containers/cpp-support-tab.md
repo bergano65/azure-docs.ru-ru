@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: dsindona
-ms.openlocfilehash: 8124828c565f344387ae946a1fa6e61a84675b81
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 58845401fc14950b9c446d1481b8ac6f8ecc5523
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80279969"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81269930"
 ---
 # <a name="container-support-tab"></a>Вкладка "Поддержка контейнеров"
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления предложениями Azure Container в партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [предложении Create an Azure Container](https://aka.ms/CreateContainerOffer) для управления мигрированными предложениями.
 
 Используйте вкладку **Поддержка** на странице **Новое предложение**, чтобы предоставить технические ресурсы и пользовательскую поддержку для предложения.  В форме поддержки представлены три области для ввода данных: **Engineering Contact** (Контакт по техническим вопросам), **Customer Support** (Поддержка клиентов) и **Support URLs** (URL-адреса для получения поддержки). Символ звездочки (*) после имени поля указывает, что оно является обязательным.
 

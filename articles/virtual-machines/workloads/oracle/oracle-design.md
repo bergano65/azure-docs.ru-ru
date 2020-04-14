@@ -3,7 +3,7 @@ title: Разработка базы данных Oracle и ее реализа�
 description: Разработка базы данных Oracle и ее реализация в среду Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: romitgirdhar
+author: mimckitt
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: rogirdh
-ms.openlocfilehash: c2c2d1a9affe13d485bfeef52c781ed259b53bc8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: mimckitt
+ms.openlocfilehash: 41e1720dfeaa98a9d0bc2227c58083ce769b06e0
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "70100125"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81263409"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -51,9 +51,9 @@ ms.locfileid: "70100125"
 > | **Устойчивости** |MTBF (среднее время безотказной работы) |MTTR (среднее время восстановления)|
 > | **Запланированное техническое обслуживание** |Установка исправлений и обновлений|[Группы доступности](https://docs.microsoft.com/azure/virtual-machines/windows/infrastructure-availability-sets-guidelines) (установка исправлений и обновлений, управляемая Azure) |
 > | **Ресурсов** |Выделенные  |Совместное использование с другими клиентами|
-> | **Регионах** |Центры обработки данных |[Пары регионов](https://docs.microsoft.com/azure/virtual-machines/windows/regions#region-pairs)|
-> | **Хранилище** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
-> | **Масштаб** |Вертикальное масштабирование |Горизонтальное масштабирование|
+> | **Регионы** |Центры обработки данных |[Пары регионов](https://docs.microsoft.com/azure/virtual-machines/windows/regions#region-pairs)|
+> | **Память** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
+> | **Масштабирование** |Вертикальное масштабирование |Горизонтальное масштабирование|
 
 
 ### <a name="requirements"></a>Требования

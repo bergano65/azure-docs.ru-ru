@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: apimpm
-ms.openlocfilehash: f9758678708338a284a35b45f7f9dd43b9a9017c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e74d7dcf8764d167e0080c9d7cca5573bd69ef1d
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80335954"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261012"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -131,7 +131,7 @@ namespace GetTokenResourceManagerRequests
 
 ## <a name="calling-the-backup-and-restore-operations"></a>Вызов операций резервного копирования и восстановления
 
-Интерфейсы REST API: [служба управления API — резервное копирование](/rest/api/apimanagement/2019-01-01/apimanagementservice/backup) и [служба управления API — восстановление](/rest/api/apimanagement/2019-01-01/apimanagementservice/restore).
+Интерфейсы REST API: [служба управления API — резервное копирование](/rest/api/apimanagement/2019-12-01/apimanagementservice/backup) и [служба управления API — восстановление](/rest/api/apimanagement/2019-12-01/apimanagementservice/restore).
 
 Прежде чем выполнять операции резервного копирования и восстановления, описанные в следующих разделах, задайте заголовок запроса авторизации для вызова REST.
 

@@ -4,12 +4,12 @@ description: Сведения о том, как с помощью портала
 services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 696821e12e963292107cad5b22f00a9816a94b25
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 7b9127c016fff78a8867dcecbe3260becdf02c65
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80616411"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81259125"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов на портале Azure
 
@@ -66,7 +66,7 @@ az provider register --namespace Microsoft.ContainerInstance
 * [Хост псевдонимы](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
 * [Аргументы](../container-instances/container-instances-exec.md#restrictions) для Exec в ACI
 * [DaemonSets](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет развертывать стручки в виртуальный узел
-* [Узлы Windows Server (в настоящее время в предварительном просмотре в AKS)](windows-container-cli.md) не поддерживаются наряду с виртуальными узлами. Можно использовать виртуальные узлы для планирования контейнеров Windows Server без необходимости использования узлов Windows Server в кластере AKS.
+* Виртуальные узлы поддерживают планирование стручков Linux. Вы можете вручную установить с открытым исходным кодом виртуальный поставщик [Kubelet ACI](https://github.com/virtual-kubelet/azure-aci) для планирования контейнеров Windows Server для ACI. 
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -93,7 +93,7 @@ az provider register --namespace Microsoft.ContainerInstance
 
 Также для кластера настраивается расширенная поддержка сети. Для виртуальных узлов настраивается отдельная подсеть виртуальной сети Azure. Эта подсеть получает делегированные права для подключения ресурсов Azure из кластеров AKS. Если у вас еще нет делегированной подсети, портал Azure создаст и настроит виртуальную сеть Azure и подсеть для использования с виртуальными узлами.
 
-Выберите **Обзор и создайте**. После завершения проверки щелкните **Создать**.
+Выберите **Review + create** (Просмотреть и создать). После завершения проверки щелкните **Создать**.
 
 Для создания кластера AKS и его подготовки к использованию потребуется несколько минут.
 
@@ -212,7 +212,7 @@ curl -L http://10.241.0.4
 
 Закройте сеанс подключения терминала к проверяемой группе pod, выполнив `exit`. Когда сеанс завершится, группа pod автоматически удаляется.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье мы назначили выполнение группы pod в виртуальном узле и присвоили частный внутренний IP-адрес. В качестве альтернативы вы можете создать развертывание службы и направлять трафик в группу pod через подсистему балансировки нагрузки или контроллер входящего трафика. Дополнительные сведения см. в статье [Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)][aks-basic-ingress].
 

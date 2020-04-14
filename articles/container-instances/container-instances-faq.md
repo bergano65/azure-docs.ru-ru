@@ -3,13 +3,13 @@ title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные с службой обслуживания контейнерных инстанций Azure
 author: dkkapur
 ms.topic: article
-ms.date: 01/07/2020
-ms.openlocfilehash: 4a3fb4c1818d86f7fe2913790fd9e573c630cbfd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/10/2020
+ms.openlocfilehash: 8730dcb24af61730d7f93ea37a53cf87435eb9f9
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79247180"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261624"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о инстанциях контейнеров Azure
 
@@ -43,9 +43,9 @@ ms.locfileid: "79247180"
 
 #### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 и изображения клиентской базы (предварительный просмотр)
 
-* [Нано-сервер](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809`,`10.0.17763.x`
-* [Ядро сервера Windows](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809``10.0.17763.x`
-* [Windows](https://hub.docker.com/_/microsoft-windows) `1809`:`10.0.17763.x` 
+* [Nano](https://hub.docker.com/_/microsoft-windows-nanoserver)Server `1809` `10.0.17763.914` : , или раньше
+* [Ядро сервера](https://hub.docker.com/_/microsoft-windows-servercore) `1809`Windows `10.0.17763.914` : `ltsc2019`, или раньше
+* [Windows](https://hub.docker.com/_/microsoft-windows) `1809`: `10.0.17763.914` , или раньше
 
 ### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Какой уровень изображения .NET или .NET Core следует использовать в контейнере? 
 

@@ -5,12 +5,12 @@ ms.date: 03/17/2020
 ms.topic: conceptual
 description: Описывает сетевые требования для выполнения пробелов Azure Dev в службах Azure Kubernetes
 keywords: Пространства Azure Dev, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, контейнеры, CNI, kubenet, SDN, сеть
-ms.openlocfilehash: 82d046aa36fe9caf6337aa7f58ca0db525062283
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3e344576caf276ae7cb5fe00395c84810a4e7d32
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80240572"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262049"
 ---
 # <a name="configure-networking-for-azure-dev-spaces-in-different-network-topologies"></a>Настройка сетей для Azure Dev Spaces в различных сетевых топологиях
 
@@ -20,15 +20,15 @@ ms.locfileid: "80240572"
 
 ## <a name="virtual-network-or-subnet-configurations"></a>Конфигурации виртуальной сети или подсети
 
-Ваш кластер AKS может иметь другую виртуальную конфигурацию сети или подсети, чтобы ограничить трафик входа или выход для вашего кластера AKS. Например, кластер может находиться за брандмауэром, например брандмауэром, например, Брандмауэром Azure, или можно использовать группы сетевой безопасности или пользовательские роли для ограничения сетевого трафика.
+Ваш кластер AKS может иметь другую виртуальную конфигурацию сети или подсети, чтобы ограничить трафик входа или выход для вашего кластера AKS. Например, кластер может находиться за брандмауэром, например брандмауэром, например, Брандмауэром Azure, или можно использовать группы сетевой безопасности или пользовательские роли для ограничения сетевого трафика. Пример конфигурации сети можно найти в [репозитории образца пространства Azure Dev на GitHub.][sample-repo]
 
-Azure Dev Spaces имеет определенные требования к сетевому трафику *Ingress и Egress,* а также *к трафику Ingress.* Если вы используете Пространства Azure Dev в кластере AKS с виртуальной конфигурацией сети или подсети, которая ограничивает трафик для вашего кластера AKS, вы должны следовать только следующим требованиям входа и вытекающего трафика для того, чтобы пространства Azure Dev функции должным образом.
+Azure Dev Spaces имеет определенные требования к сетевому трафику *Ingress и Egress,* а также *к трафику Ingress.* Если вы используете Пространства Azure Dev spaces в кластере AKS с виртуальной конфигурацией сети или подсети, которая ограничивает трафик для кластера AKS, необходимо следовать только следующим требованиям входа и выдвижения трафика, чтобы Azure Dev Spaces функционировал должным образом.
 
 ### <a name="ingress-and-egress-network-traffic-requirements"></a>Требования к проникновению и выходу сетевого трафика
 
 Пространства Azure Dev нуждаются в проникновении и трафике для следующих F-DN:
 
-| Полное доменное имя.                       | Порт       | Использование      |
+| Полное доменное имя.                       | Порт       | Использовать      |
 |----------------------------|------------|----------|
 | cloudflare.docker.com      | HTTPS: 443 | Для получения изображений докеров для пространства Azure Dev |
 | gcr.io                     | HTTPS: 443 | Чтобы вытащить изображения руля для пространства Azure Dev |
@@ -76,7 +76,7 @@ Azure Dev Spaces имеет возможность разоблачать кон
 Чтобы настроить опцию конечных точек, используйте *-e* или *--конечную точку* при включении пространства Azure Dev в кластере. Пример:
 
 > [!NOTE]
-> Конечная точка опции требует, чтобы вы запускали версию Azure CLI 2.2.0 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.][azure-cli-install]
+> Конечная точка опции требует, чтобы вы запускали версию Azure CLI 2.2.0 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ```azurecli
 az aks use-dev-spaces -g MyResourceGroup -n MyAKS -e private
@@ -109,4 +109,5 @@ Azure Dev Spaces использует инструменты на стороне
 [endpoint-options]: #using-different-endpoint-options
 [traefik-ingress]: how-to/ingress-https-traefik.md
 [nginx-ingress]: how-to/ingress-https-nginx.md
+[sample-repo]: https://github.com/Azure/dev-spaces/tree/master/advanced%20networking
 [team-quickstart]: quickstart-team-development.md

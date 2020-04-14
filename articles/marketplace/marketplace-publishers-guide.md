@@ -1,20 +1,20 @@
 ---
-title: Руководство по публикации в Azure Marketplace и AppSource
-description: Обзор Azure Marketplace и Microsoft AppSource для издателей приложений и служб.
+title: Коммерческий рынок издательское руководство
+description: Обзор коммерческого рынка для издателей приложений и сервисов.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 06/05/2018
+ms.date: 04/12/2020
 ms.author: dsindona
-ms.openlocfilehash: 368cb4fdce23e695c074b4893dcdc314c974dd54
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c41a24ecb3e12618ac8cfcdfb756a33114f0f8a2
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288399"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261998"
 ---
-# <a name="azure-marketplace-and-appsource-publishing-guide"></a>Руководство по публикации в Azure Marketplace и AppSource
+# <a name="commercial-marketplace-publishing-guide"></a>Коммерческий рынок издательское руководство
 
 Руководство по публикации в Marketplace призвано помочь новым и существующим издателям узнать, как использовать онлайн-магазины в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [Microsoft AppSource](https://appsource.microsoft.com) для развития бизнеса в партнерстве с корпорацией Майкрософт, публикуя приложения и службы.
 
@@ -62,7 +62,7 @@ Marketplace — это стартовая площадка для маркети
 
 *   Совместные продажи. Marketplace — это отправная точка, с которой можно не только начать свой путь к продажам совместно с Майкрософт, но и ускорить этот процесс. Доступ к программам и поддержке позволит создать возможности для совместных продаж с Майкрософт.
 
-Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  [Узнайте, как создать учетную запись Центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) для получения дополнительной информации.
+Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  [Узнайте, как создать учетную запись Центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) для получения дополнительной информации.
 
 Узнайте больше о [преимуществах коммерческого рынка.](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits)
 

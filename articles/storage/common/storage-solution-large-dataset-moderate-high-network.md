@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: f7177a95bdd585ff2822c9ac8c94a85d12f9259b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cfe450972acda3affbea6cbe3d262bc4b1956dc9
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "69900363"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262865"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Передача больших наборов данных со средней или высокой пропускной способностью сети
  
@@ -73,7 +73,7 @@ ms.locfileid: "69900363"
 |    Шифрование                       |    AES, 128-битное                  |    AES, 256-битное                                   |    AES, 256-битное                           |    AES, 128-битное                         |
 |    Оборудование                         |     Предоставляется корпорацией Майкрософт          |    Предоставляется корпорацией Майкрософт                            |    Предоставляется корпорацией Майкрософт                    |    Предоставляется пользователем                   |
 |    сетевому интерфейсу                |    USB 3.1 или SATA                 |    RJ 45, SFP+                                   |    RJ45, QSFP+                           |    SATA II или SATA III                    |
-|    Интеграция партнеров              |    Некоторые                         |    [Высокой](https://azuremarketplace.microsoft.com/campaigns/databox/azure-data-box)                                          |    [Высокой](https://azuremarketplace.microsoft.com/campaigns/databox/azure-data-box)                                  |    Некоторые                                |
+|    Интеграция партнеров              |    Некоторые                         |    [Высокой](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureExpressPod)                                          |    [Высокой](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureExpressPod)                                  |    Некоторые                                |
 |    Отправка                         |    Организуется корпорацией Майкрософт            |    Организуется корпорацией Майкрософт                             |    Организуется корпорацией Майкрософт                     |    Организуется пользователем                    |
 | Используется при перемещении данных         |В пределах коммерческого региона|В пределах коммерческого региона|В пределах коммерческого региона|Между любыми географическими регионами, например из США в ЕС|
 |    Цены                          |    [Цены](https://azure.microsoft.com/pricing/details/databox/disk/)                    |   [Цены](https://azure.microsoft.com/pricing/details/storage/databox/)                                      |  [Цены](https://azure.microsoft.com/pricing/details/storage/databox/heavy/)                               |   [Цены](https://azure.microsoft.com/pricing/details/storage-import-export/)                            |

@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 03/13/2020
-ms.openlocfilehash: ca4bf1b0043a2c73851eab48ff8b9b6b7a987b72
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.openlocfilehash: ea65956a73874b717ecab25d83ed25b59f2ada55
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81115299"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257255"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Безопасные задания по экспериментам и выводу Azure ML в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -546,7 +546,7 @@ az rest --method put --uri https://management.azure.com"/subscriptions/<subscrip
     > [!IMPORTANT]
     > Ваша учетная запись хранения, вычислительный кластер и реестр контейнеров Azure должны находиться в одной подсети виртуальной сети.
     
-    Для получения дополнительной [информации](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#update-friendly-name-none--description-none--tags-none--image-build-compute-none-) см.
+    Для получения дополнительной [информации](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#update-friendly-name-none--description-none--tags-none--image-build-compute-none--enable-data-actions-none-) см.
 
 1. Если вы используете Private Link для рабочего пространства Azure Machine Learning и размещаете реестр контейнеров Azure для рабочего пространства в виртуальной сети, необходимо также применить следующий шаблон менеджера ресурсов Azure. Этот шаблон позволяет вашему рабочему пространству общаться с ACR по частной ссылке.
 

@@ -1,22 +1,22 @@
 ---
 title: Географическая доступность и валютная поддержка Azure
-description: Географическая доступность в Azure Marketplace и AppSource
+description: Географическая доступность на коммерческом рынке
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/29/2020
 ms.author: dsindona
-ms.openlocfilehash: 79965180d897b91afc1fb1a27e777e385108d2c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 82c3ed79bbcc566a91f9f249ec2df747bbc01cac
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288433"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262015"
 ---
 # <a name="geographic-availability-and-currency-support"></a>Географическая доступность и валютная поддержка
 
-Предложения Azure Marketplace и AppSource можно приобрести в 141 географии, как это определено по счету клиента, а транзакции могут быть завершены в 17 валютах. В таблице ниже перечислены каждое поддерживаемое географическое местоположение, его [двузначный альфа-код ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)и назначенная валюта.
+Предложения на коммерческом рынке можно приобрести в 141 географии, как это определено по счету клиента, а транзакции могут быть завершены в 17 валютах. В таблице ниже перечислены каждое поддерживаемое географическое местоположение, его [двузначный альфа-код ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)и назначенная валюта.
 
 |   Название страны/региона               |   ISO-2   |   Валюта   |
 |-------------------------------------|-----------|--------------|
@@ -48,7 +48,7 @@ ms.locfileid: "80288433"
 | Кабо-Верде                          | CV        | USD          |
 | Каймановы о-ва                      | KY        | USD          |
 | Чили                               | CL        | USD          |
-| Китай\**                            | CN        | Недоступно          |
+| Китай\**                            | CN        | Н/Д          |
 | Колумбия                            | CO        | USD          |
 | Коста-Рика                          | CR        | USD          |
 | Кот д'Ивуар                       | CI        | USD          |

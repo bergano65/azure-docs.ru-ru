@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: enewman
-ms.openlocfilehash: 371c2186d44469a22b138255fb513761a9be4437
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 222f5647248d27c3bdfabd0feaeb66dd9f543652
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80478218"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257731"
 ---
 # <a name="set-up-a-lab-to-teach-data-science-with-python-and-jupyter-notebooks"></a>Настройка лаборатории для обучения науке данных с Python и Jupyter ноутбуков
 
@@ -26,7 +26,7 @@ ms.locfileid: "80478218"
 
 ## <a name="lab-configuration"></a>Настройка лаборатории
 
-Чтобы настроить эту лабораторию, вам нужна подписка Azure и лабораторный учет, чтобы начать работу. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом. Получив подписку Azure, можно создать новую учетную запись лаборатории в лабораторных службах Azure. Для получения дополнительной информации о [tutorial to setup a lab account](tutorial-setup-lab-account.md)создании новой учетной записи лаборатории, см.  Вы также можете использовать существующую учетную запись лаборатории.
+Чтобы настроить эту лабораторию, вам нужна подписка Azure и лабораторный учет, чтобы начать работу. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. Получив подписку Azure, можно создать новую учетную запись лаборатории в лабораторных службах Azure. Для получения дополнительной информации о [tutorial to setup a lab account](tutorial-setup-lab-account.md)создании новой учетной записи лаборатории, см.  Вы также можете использовать существующую учетную запись лаборатории.
 
 ### <a name="lab-account-settings"></a>Настройки учетной записи лаборатории
 
@@ -37,7 +37,7 @@ ms.locfileid: "80478218"
 | Изображение рынка | Включите [виртуальную машину Data Science - Изображение Windows 2019](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-win-2019) для использования в вашей лабораторной учетной записи. |
 
 >[!TIP]
->В этой статье основное внимание будет уделено настройке шаблонной машины, использующей операционную систему Windows Server.  Также можно настроить класс науки о данных с помощью ноутбуков Python и Jupyter с помощью изображений Data [Science Virtual Machine for Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.linux-data-science-vm-ubuntu) из Azure Marketplace.
+>В этой статье основное внимание будет уделено настройке шаблонной машины, использующей операционную систему Windows Server.  Также можно настроить класс науки о данных с помощью ноутбуков Python и Jupyter с помощью изображений Data [Science Virtual Machine for Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804) из Azure Marketplace.
 
 ### <a name="lab-settings"></a>Настройки лаборатории
 
@@ -68,7 +68,7 @@ ms.locfileid: "80478218"
 
 В этой статье мы прошли сью-то по шагам по созданию лаборатории для класса Jupyter Notebooks. Аналогичную настройку можно использовать для других классов машинного обучения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующие шаги являются общими для создания любой лаборатории.
 

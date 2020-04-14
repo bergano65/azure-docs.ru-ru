@@ -3,7 +3,7 @@ title: Расположения POP в Azure CDN, упорядоченные п�
 description: В этой статье перечислены расположения POP в Azure CDN от Verizon, отсортированные по аббревиатурам POP.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2018
-ms.author: magattus
-ms.openlocfilehash: 488f7bc4cb715e9cdb99b7a7c79407b9bbc0d29c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: allensu
+ms.openlocfilehash: a5f3f8dbb83b23fc16fd1225e5a9cbeab16b9576
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67593599"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81260247"
 ---
 # <a name="azure-cdn-pop-locations-by-abbreviation"></a>Расположения POP в Azure CDN, упорядоченные по аббревиатурам
 > [!div class="op_single_selector"]

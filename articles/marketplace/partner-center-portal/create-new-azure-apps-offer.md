@@ -1,5 +1,5 @@
 ---
-title: Создание нового предложения приложений Azure на коммерческом рынке
+title: Создание нового предложения Приложений Azure на коммерческом рынке
 description: Как создать новое предложение Azure Apps для листинга или продажи в Azure Marketplace, AppSource или через программу Cloud Solution Provider (CSP) с помощью портала Commercial Marketplace в партнерской центре Майкрософт.
 author: dsindona
 ms.author: dsindona
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.openlocfilehash: 0ff1bbd976273a7d0cbfb22effebdf45c84d2f41
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 260193b3c71e29a32e0589f50864ffcca2e9a67c
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80277246"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262270"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -68,8 +68,8 @@ ms.locfileid: "80277246"
 
 * Примеры:
 
-    * [Лазурный CLI](https://docs.microsoft.com/azure/managed-applications/cli-samples)
-    * [Лазурная силаШелл](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
+    * [Azure CLI](https://docs.microsoft.com/azure/managed-applications/cli-samples)
+    * [Azure PowerShell](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
     * [Решения для управляемых приложений](https://docs.microsoft.com/azure/managed-applications/sample-projects)
 
 ### <a name="fundamentals-in-technical-knowledge"></a>Основы технических знаний
@@ -88,12 +88,12 @@ ms.locfileid: "80277246"
 
 Выберите одну или обе следующие среды создания скриптов, которые понадобятся вам при управлении приложением Azure:
 
-* [Лазурная силаШелл](https://docs.microsoft.com/powershell/azure/overview)
-* [Лазурный CLI](https://docs.microsoft.com/cli/azure)
+* [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
+* [Azure CLI](https://docs.microsoft.com/cli/azure)
 
 Мы рекомендуем добавить следующие инструменты в среду разработки:
 
-* [Исследователь хранения azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+* [Обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
 * [Visual Studio Code](https://code.visualstudio.com/) со следующими расширениями:
     * Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
     * Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).
@@ -103,7 +103,7 @@ ms.locfileid: "80277246"
 
 ## <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
-Прежде чем создать предложение приложения Azure, необходимо сначала [создать учетную запись «Центр-партнер»](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) и открыть [панель мониторинга Commercial Marketplace](https://partner.microsoft.com/dashboard/commercial-marketplace/offers)с выбранной вкладкой **«Обзор».**
+Прежде чем создать предложение приложения Azure, необходимо сначала [создать учетную запись «Центр-партнер»](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) и открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/commercial-marketplace/offers)с выбранной вкладкой **«Обзор».**
 
 >[!Note]
 >После публикации предложения, внеочередное предложение, сделанное в Partner Center, будет обновляться только в системе и витринах магазинов после повторного опубликования.  Пожалуйста, убедитесь, что вы отправляете предложение для публикации после внесения изменений.
@@ -168,7 +168,7 @@ ms.locfileid: "80277246"
 > [!NOTE]
 > Содержание предложения (например, описание, документы, скриншоты, условия использования и т.д.) не обязательно будет на английском языке, пока описание предложения начинается с фразы: "Это приложение доступно только на языке, не на английском языке". Также допустимо предоставлять *URL-адрес Полезной ссылки* для предложения контента на языке, отличном от того, который используется в содержимом листинга Предложения.
 
-### <a name="name"></a>name
+### <a name="name"></a>Имя
 
 Имя, которое вы вводите здесь, будет показано клиентам в качестве названия вашего предложения. Это поле предварительно заполнено текстом, который вы ввели для **псевдонима Offer** при создании предложения, но вы можете изменить это значение. Это название может быть товарным знаком (и вы можете включать товарный знак или символы авторского права). Имя не может быть более 50 символов и не может включать в себя любые смайлики.
 
@@ -308,7 +308,7 @@ ms.locfileid: "80277246"
 
 Вкладка **списка плана** отображает информацию о включении списка, которая может отличаться между различными планами для одного и того же предложения.
 
-### <a name="name"></a>name
+### <a name="name"></a>Имя
 
 Предварительно заселенный на основе вашего имени вы назначили свой план, когда вы создали его.  Это имя будет отображаться как название этого "Программного плана", отображаемого на рынке.  Может содержать до 100 символов.
 

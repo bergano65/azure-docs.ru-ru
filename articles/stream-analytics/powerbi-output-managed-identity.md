@@ -6,12 +6,12 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 3/10/2020
-ms.openlocfilehash: 8a7dfd7c690d79d8430f7c33a25b38949dbd06c4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 31a5195038ef25acadc08e2acbedf8471b25833c
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79086326"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261420"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi"></a>Используйте управляемую идентификацию для аутентификации задания Analytics потоков Azure в Power BI
 
@@ -160,7 +160,7 @@ ms.locfileid: "79086326"
 ### <a name="use-the-power-bi-ui"></a>Используйте uI Power BI
 
    > [!Note]
-   > Для добавления задания Stream Analytics в рабочее пространство Power BI с помощью uI также необходимо включить основной доступ к службе в **настройках разработчика** на портале админ-амин.Power BI. Для получения более подробной информации смотрите начало [работы с директором службы.](https://docs.microsoft.com/power-bi/developer/embed-service-principal#get-started-with-a-service-principal)
+   > Для добавления задания Stream Analytics в рабочее пространство Power BI с помощью uI также необходимо включить основной доступ к службе в **настройках разработчика** на портале админ-амин.Power BI. Для получения более подробной информации смотрите начало [работы с директором службы.](https://docs.microsoft.com/power-bi/developer/embed-service-principal)
 
 1. Перейдите к настройкам доступа рабочего пространства. Подробнее о работе читайте в этой статье: [Предоставьте доступ к рабочему пространству.](https://docs.microsoft.com/power-bi/service-create-the-new-workspaces#give-access-to-your-workspace)
 

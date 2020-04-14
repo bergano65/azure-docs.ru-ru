@@ -1,5 +1,5 @@
 ---
-title: Интерпретация модели для локальных и удаленных трасс
+title: Объясните модели и прогнозы машинного обучения
 titleSuffix: Azure Machine Learning
 description: Узнайте, как получить объяснения того, как модель машинного обучения определяет важность функции и делает прогнозы при использовании SDK Для машинного обучения Azure.
 services: machine-learning
@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.author: mesameki
 author: mesameki
 ms.reviewer: Luis.Quintanilla
-ms.date: 04/02/2020
-ms.openlocfilehash: 1ff42149ccb629a0a7094e6dfede422d4dd7f61f
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.date: 04/12/2020
+ms.openlocfilehash: c1282ed16c9e3b92e7d5ec3f9969bee6fc3d917f
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632029"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257209"
 ---
-# <a name="model-interpretability-for-local-and-remote-runs"></a>Интерпретация модели для локальных и удаленных трасс
+# <a name="explain-machine-learning-models-and-predictions"></a>Объясните модели и прогнозы машинного обучения
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
@@ -30,7 +30,6 @@ ms.locfileid: "80632029"
 
 * Объясните поведение всей модели и индивидуальных прогнозов в Azure.
 
- 
 * Используйте панель мониторинга визуализации для взаимодействия с объяснениями модели.
 
 * Развертывание скоринга объяснить вместе с вашей моделью для наблюдения объяснений во время выводов.

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 12aeea8393a00d7d2662c826f847265bdbdc0119
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 48a83fad3395f6ecf06fb1f1ba95aa1b06a53431
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75442718"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81259142"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Интеграция управления API Azure в Azure Application Insights
 
@@ -51,7 +51,7 @@ ms.locfileid: "75442718"
     ![Средство ведения журнала App Insights](media/api-management-howto-app-insights/apim-app-insights-logger-2.png)  
 
 > [!NOTE]
-> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
+> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
 
 ## <a name="enable-application-insights-logging-for-your-api"></a>Включение ведения Application Insights для вашего API
 
@@ -64,13 +64,13 @@ ms.locfileid: "75442718"
 6. Установите флажок **Включить**.
 7. Выберите подключенное средство ведения журнала в раскрывающемся списке **Назначение**.
 8. Укажите значение **100** в поле **Выборка (%)** и установите флажок **Всегда записывать ошибки в журнал**.
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 > [!WARNING]
 > Если переопределить значение **0** по умолчанию в поле **First bytes of body** (Первые байты тела запроса), можно существенно снизить производительность интерфейсов API.
 
 > [!NOTE]
-> Фактически сущность [Диагностика](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
+> Фактически сущность [Диагностика](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
 
 | Имя параметра                        | Тип значения                        | Описание                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

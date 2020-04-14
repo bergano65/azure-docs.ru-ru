@@ -9,18 +9,18 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: dapine
-ms.openlocfilehash: 5f9ad827fa947e645f7eb4850f90a73c61a45cd3
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.openlocfilehash: 00e966dbee6c1993256a94d734bcc6261aea00af
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80637113"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81258439"
 ---
 # <a name="azure-cognitive-services-support-and-feedback-options"></a>Поддержка когнитивных служб Azure и варианты обратной связи
 
 Вы только начинаете изучать функциональность когнитивных служб Azure? Возможно, вы внедряете новую функцию в приложение. Или после использования службы, есть ли у вас предложения о том, как ее улучшить? Ниже приведены варианты, где вы можете получить поддержку, оставаться в курсе событий, давать обратную связь и сообщать об ошибках для Cognitive Services.
 
-## <a name="get-support"></a>Техническая поддержка
+## <a name="get-support"></a>Получение поддержки
 
 ### <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
@@ -59,10 +59,7 @@ ms.locfileid: "80637113"
 
 Если вы не можете найти ответ на вашу проблему с полем поиска на стек переполнения, отправить новый вопрос. Stack Overflow — это идеальное место для вопросов, связанных с разработкой. Это место, где члены сообщества Stack Overflow и члены команды Майкрософт принимают непосредственное участие в оказании помощи в решении ваших проблем.
 
- При формулировании вопроса используйте один из следующих тегов:
-
- - [Microsoft Cognitive](https://stackoverflow.com/questions/tagged/microsoft-cognitive)
- - [Azure Cognitive Services](https://stackoverflow.com/questions/tagged/azure-cognitive-services)
+Опубликовать вопрос [здесь](https://go.microsoft.com/fwlink/?linkid=2126464). Используйте соответствующий тег для вашего вопроса, поэтому мы обязательно увидим вопрос.
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:
@@ -86,7 +83,7 @@ ms.locfileid: "80637113"
  - [Распознавание речи (LUIS)](LUIS/whats-new.md)
  - [Службы "Речь"](speech-service/releasenotes.md)
  - [Речевые услуги SDK](speech-service/devices-sdk-release-notes.md)
- - [Анализ текста](text-analytics/whats-new.md)
+ - [Текстовая аналитика](text-analytics/whats-new.md)
  - [Индексатор видео](../media-services/video-indexer/release-notes.md)
 
 ### <a name="azure-blog"></a>Блог Azure

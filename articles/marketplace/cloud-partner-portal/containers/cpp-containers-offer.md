@@ -7,14 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/02/2018
 ms.author: dsindona
-ms.openlocfilehash: 9c0b4ca6e9a26f13d1539845ca9fb43f31a1a9dd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cd9f98d42efcb35dbab4f3c0a06c5a11360e36b6
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281720"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81270355"
 ---
 # <a name="containers"></a>Контейнеры
+
+> [!IMPORTANT]
+> С 13 апреля 2020 года мы начнем перемещение управления предложениями Azure Container в партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [предложении Create an Azure Container](https://aka.ms/CreateContainerOffer) для управления мигрированными предложениями.
 
 <table> <tr> <td>В этом разделе объясняется, как опубликовать образ контейнера в <a href="https://azuremarketplace.microsoft.com">Azure Marketplace</a>.  
 Тип предложения контейнера поддерживает образы контейнера Docker, подготовленные в качестве экземпляров <a href="https://docs.microsoft.com/azure/aks/index">Azure Kubernetes Service</a> или <a href="https://docs.microsoft.com/azure/container-instances/container-instances-overview">экземпляров контейнера Azure</a> и размещенные в репозитории <a href="https://docs.microsoft.com/azure/container-registry">Azure Container Registry</a>. </td> <td><img src="./media/container-icon.png"  alt="Azure container icon" /></td> </tr> </table>

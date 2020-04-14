@@ -9,12 +9,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 04/02/2020
-ms.openlocfilehash: 1298d5fe1d7407e836f454c2130a913dde6f8eec
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 38088503fee016651a8c1c9a1f57ad4bbe102456
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80755141"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81257153"
 ---
 # <a name="data-science-with-a-linux-data-science-virtual-machine-in-azure"></a>Наука о данных с виртуальной машиной Linux Data Science в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "80755141"
 Прежде чем использовать Linux DSVM, необходимо иметь следующие предпосылки:
 
 * **Подписка Azure**. Чтобы получить подписку Azure, смотрите [Создать бесплатную учетную запись Azure сегодня.](https://azure.microsoft.com/free/)
-* [**Linux Data Science Виртуальная машина**](https://azure.microsoft.com/marketplace/apps/microsoft-dsvm.linux-data-science-vm-ubuntu). Для получения информации о подготовке виртуальной машины, [см.](linux-dsvm-intro.md)
+* [**Linux Data Science Виртуальная машина**](https://azure.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804). Для получения информации о подготовке виртуальной машины, [см.](linux-dsvm-intro.md)
 * [**X2Go**](https://wiki.x2go.org/doku.php) установлен на вашем компьютере с открытой сессией XFCE. Для получения дополнительной информации [см.](linux-dsvm-intro.md#x2go)
 * Для более плавного прокрутки, в веб-браузере Firefox DSVM, переключать `gfx.xrender.enabled` флаг в `about:config`. [Подробнее](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). Также рассмотреть `False`вопрос об установке `mousewheel.enable_pixel_scrolling` . [Подробнее](https://support.mozilla.org/questions/981140).
 * **Учетная запись машинного обучения Azure**. Если у вас его еще нет, зарегистрируйтесь на новой учетной записи на [главной странице Azure Machine Learning.](https://azure.microsoft.com/free/services/machine-learning//)
@@ -508,7 +508,7 @@ CREATE TABLE data (word_freq_make real, word_freq_address real, word_freq_all re
 1. Введите имя пользователя и пароль.
 1. Щелкните **ОК**.
 1. Чтобы открыть окно **Подключение**, дважды щелкните псевдоним **База данных нежелательной почты**.
-1. Выберите **Подключите**.
+1. Выберите **Подключиться**.
 
 Чтобы выполнить запросы:
 

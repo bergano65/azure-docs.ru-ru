@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/05/2018
 ms.author: dsindona
-ms.openlocfilehash: bd6c375231facc3d7afb35df74210d26b5f50ba8
-ms.sourcegitcommit: d0fd35f4f0f3ec71159e9fb43fcd8e89d653f3f2
+ms.openlocfilehash: 9d2f4b02dd2b009e96abb65d4c42ef3a281e6ce1
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80387790"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262831"
 ---
 # <a name="comparing-appsource-and-the-azure-marketplace"></a>Сравнение AppSource и Azure Marketplace
 Онлайн-магазины в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [Microsoft AppSource](https://appsource.microsoft.com) удовлетворяют уникальным требованиям клиентов. В онлайн-магазинах можно определять целевую аудиторию в соответствии с ролями клиентов. Вы можете предложить подходящее решение или службу с учетом требований клиента.
@@ -35,5 +35,5 @@ ms.locfileid: "80387790"
 | **Презентация в контексте для клиентов** | Сделайте свое решение доступным для контекстного поиска с использованием интерфейса Azure. Используйте возможности публикации шаблонов решений для виртуальных машин и приложений Azure. | Привлекайте большее количество клиентов через взаимодействие в приложении для продуктов Майкрософт, таких как Dynamics 365, Power BI и Office 365. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-*   Просмотрите [Руководство по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).
+*   Просмотрите [коммерческий рынок издательского руководства](./marketplace-publishers-guide.md).
 

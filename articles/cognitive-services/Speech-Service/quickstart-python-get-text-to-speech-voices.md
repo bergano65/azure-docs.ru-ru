@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: how-to
-ms.date: 02/10/2020
+ms.date: 04/13/2020
 ms.author: dapine
-ms.openlocfilehash: 51fe6cea80e097f34432ab8dc7293c758bd8d720
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e55030144bcabbf192b4095a5a2e6ed565cedf83
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77119810"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81258607"
 ---
 # <a name="get-the-list-of-text-to-speech-voices-using-python"></a>Получение списка голосовых моделей для преобразований текста в речь с использованием Python
 
@@ -26,7 +26,7 @@ ms.locfileid: "77119810"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Python 2.7.x или 3.x;
-* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
+* <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Визуальная студия <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>, <a href="https://code.visualstudio.com/download" target="_blank">Визуальный код <span class="docon docon-navigate-external x-hidden-focus"> </span>студии </a>, или ваш любимый текстовый редактор
 * ключ подписки Azure для службы "Речь".
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
@@ -132,7 +132,7 @@ python get-voices.py
 > [!div class="nextstepaction"]
 > [Ознакомиться с примерами на Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
