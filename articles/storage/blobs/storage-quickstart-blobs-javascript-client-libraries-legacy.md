@@ -9,12 +9,12 @@ ms.author: mhopkins
 ms.date: 01/24/2020
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: da5db7d956b1ba8aa1ac245b77fe0d4cb31909c1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 5219af0ec343a6e7f87a07e4a7280ac5f4e85cd3
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80061465"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619114"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -90,7 +90,7 @@ az storage account generate-sas \
 Теперь, когда подписанный URL-адрес создан, скопируйте возвращаемое значение и сохраните его, чтобы использовать на последующем шаге. Если вы создали подписанный URL-адрес не с помощью Azure CLI, необходимо будет удалить начальный знак `?`, если он имеется. Этот знак является разделителем URL-адреса, который уже содержится в шаблоне URL-адреса, приведенном далее в этом разделе, где используется подписанный URL-адрес.
 
 > [!IMPORTANT]
-> В рабочей среде всегда передавайте маркеры SAS с помощью SSL. Кроме того, маркеры SAS должны создаваться на сервере и отправляться на страницу HTML, чтобы вернуться обратно в хранилище BLOB-объектов Azure. Как вариант, для создания маркеров SAS можно использовать бессерверные функции. Портал Azure содержит шаблоны функций, которые могут создавать SAS с помощью функции JavaScript.
+> В рабочей среде всегда передавайте маркеры SAS с помощью TLS. Кроме того, маркеры SAS должны создаваться на сервере и отправляться на страницу HTML, чтобы вернуться обратно в хранилище BLOB-объектов Azure. Как вариант, для создания маркеров SAS можно использовать бессерверные функции. Портал Azure содержит шаблоны функций, которые могут создавать SAS с помощью функции JavaScript.
 
 ## <a name="implement-the-html-page"></a>Реализация страницы HTML
 

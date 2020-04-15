@@ -2,19 +2,19 @@
 title: Краткое руководство. Создание индекса поиска в Python с помощью интерфейсов REST API
 titleSuffix: Azure Cognitive Search
 description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Python, Jupyter Notebook и REST API службы "Когнитивный поиск Azure".
-author: tchristiani
+author: HeidiSteen
 manager: nitinme
-ms.author: terrychr
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 02/10/2020
-ms.openlocfilehash: 93fb9ec735de1abf89eb217d0f4096fcfc0afe94
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 04/01/2020
+ms.openlocfilehash: fd87dbe125e84c171cc35a2b242879c44bc50fd9
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78227110"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80585926"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter
 
@@ -197,7 +197,7 @@ ms.locfileid: "78227110"
         "@search.action": "upload",
         "HotelId": "3",
         "HotelName": "Triple Landscape Hotel",
-        "Description": "The Hotel stands out for its gastronomic excellence under the management of William Dough, who advises on and oversees all of the Hotel’s restaurant services.",
+        "Description": "The Hotel stands out for its gastronomic excellence under the management of William Dough, who advises on and oversees all of the Hotel's restaurant services.",
         "Description_fr": "L'hôtel est situé dans une place du XIXe siècle, qui a été agrandie et rénovée aux plus hautes normes architecturales pour créer un hôtel moderne, fonctionnel et de première classe dans lequel l'art et les éléments historiques uniques coexistent avec le confort le plus moderne.",
         "Category": "Resort and Spa",
         "Tags": [ "air conditioning", "bar", "continental breakfast" ],
@@ -256,45 +256,59 @@ ms.locfileid: "78227110"
 
    ```python
    searchstring = '&search=*&$count=true'
-   ```
 
-1. В новой ячейке укажите следующий пример для поиска по терминам hotels и wifi. Добавьте $select, чтобы указать, какие поля следует включить в результаты поиска.
-
-   ```python
-   searchstring = '&search=hotels wifi&$count=true&$select=HotelId,HotelName'
-   ```
-
-1. В другой ячейке сформулируйте запрос. Этот запрос GET поступает в коллекцию документов индекса hotels-quickstart и присоединяет запрос, указанный на предыдущем шаге.
-
-   ```python
    url = endpoint + "indexes/hotels-quickstart/docs" + api_version + searchstring
    response  = requests.get(url, headers=headers, json=searchstring)
    query = response.json()
    pprint(query)
    ```
 
-1. Выполните каждый шаг. Результаты должны выглядеть следующим образом. 
+1. В новой ячейке укажите следующий пример для поиска по терминам hotels и wifi. Добавьте $select, чтобы указать, какие поля следует включить в результаты поиска.
+
+   ```python
+   searchstring = '&search=hotels wifi&$count=true&$select=HotelId,HotelName'
+
+   url = endpoint + "indexes/hotels-quickstart/docs" + api_version + searchstring
+   response  = requests.get(url, headers=headers, json=searchstring)
+   query = response.json()
+   pprint(query)   
+   ```
+
+   Результаты должны выглядеть следующим образом. 
 
     ![Поиск в индексе](media/search-get-started-python/search-index.png "Поиск в индексе")
 
-1. Выполните еще несколько примеров запросов, чтобы ознакомиться с синтаксисом. Вы можете заменить `searchstring` приведенными ниже примерами, а затем повторно выполнить запрос на поиск. 
-
-   Примените фильтр: 
+1. Затем примените выражение $filter, которое позволяет выбрать только гостиницы с рейтингом выше 4. 
 
    ```python
    searchstring = '&search=*&$filter=Rating gt 4&$select=HotelId,HotelName,Description,Rating'
+
+   url = endpoint + "indexes/hotels-quickstart/docs" + api_version + searchstring
+   response  = requests.get(url, headers=headers, json=searchstring)
+   query = response.json()
+   pprint(query)     
    ```
 
-   Возьмите два лучших результата:
+1. По умолчанию поисковая система возвращает первые 50 документов, но с помощью top и skip вы можете добавить разбивку на страницы и выбрать количество документов, отображаемых в каждом результате. Этот запрос возвращает два документа в каждом результирующем наборе.
 
    ```python
-   searchstring = '&search=boutique&$top=2&$select=HotelId,HotelName,Description,Category'
+   searchstring = '&search=boutique&$top=2&$select=HotelId,HotelName,Description'
+
+   url = endpoint + "indexes/hotels-quickstart/docs" + api_version + searchstring
+   response  = requests.get(url, headers=headers, json=searchstring)
+   query = response.json()
+   pprint(query)
    ```
 
-    Упорядочите по определенному полю:
+1. В этом последнем примере используйте $orderby, чтобы отсортировать результаты по городу. В этом примере содержатся поля из коллекции адресов.
 
    ```python
-   searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince, Tags'
+   searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince'
+
+   url = endpoint + "indexes/hotels-quickstart/docs" + api_version + searchstring
+   response  = requests.get(url, headers=headers, json=searchstring)
+   query = response.json()
+   pprint(query)
    ```
 
 ## <a name="clean-up"></a>Очистка

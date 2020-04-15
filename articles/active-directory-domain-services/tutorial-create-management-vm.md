@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/30/2019
+ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 63c5f068adab58c901acf5fd26261d57e1183f0d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 09fcf88c6dfe90380f387c6d72c751634f5b1606
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79481523"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475739"
 ---
 # <a name="tutorial-create-a-management-vm-to-configure-and-administer-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по Создание виртуальной машины управления для настройки и администрирования управляемого домена доменных служб Azure Active Directory
 
@@ -29,14 +29,14 @@ ms.locfileid: "79481523"
 > * установка средств администрирования Active Directory на виртуальной машине Windows Server;
 > * использование центра администрирования Active Directory для выполнения типичных задач.
 
-Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
 * Активная подписка Azure.
-    * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
@@ -89,7 +89,6 @@ Azure AD DS предоставляет управляемый домен, кот
 
     ![Подключение к виртуальной машине Windows с помощью Бастиона на портале Azure](./media/join-windows-vm/connect-to-vm.png)
 
-    Вы также можете [создать и использовать узел-бастион Azure (предоставляется в предварительной версии)][azure-bastion], чтобы разрешить доступ только через портал Azure по протоколу TLS.
 1. Введите учетные данные для виртуальной машины, а затем выберите **Подключить**.
 
    ![Подключение через узел-бастион на портале Azure](./media/join-windows-vm/connect-to-bastion.png)

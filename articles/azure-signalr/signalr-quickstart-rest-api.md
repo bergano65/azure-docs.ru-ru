@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: quickstart
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 17371e3bd426ea81b5e7e07610aac0073ea972c9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 70053fbc47a5ba85e7bb18ab762868973d014beb
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74157681"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548125"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 
@@ -131,10 +131,17 @@ API | `1.0-preview` | `1.0`
 [Отправка всем](#broadcast) | **&#x2713;** | **&#x2713;**
 [Отправка группе](#broadcast-group) | **&#x2713;** | **&#x2713;**
 Широковещательная передача для некоторых групп | **&#x2713;** (Устарел) | `N / A`
-[Отправка определенным пользователям](#send-user) | **&#x2713;** | **&#x2713;**
+[Отправка пользователю](#send-user) | **&#x2713;** | **&#x2713;**
 Отправка некоторым пользователям | **&#x2713;** (Устарел) | `N / A`
 [Добавление пользователя в группу](#add-user-to-group) | `N / A` | **&#x2713;**
 [Удаление пользователя из группы](#remove-user-from-group) | `N / A` | **&#x2713;**
+[Проверка существования пользователя](#check-user-existence) | `N / A` | **&#x2713;**
+[Удаление пользователя из всех групп](#remove-user-from-all-groups) | `N / A` | **&#x2713;**
+[Отправка сообщения в ответ на подключение](#send-connection) | `N / A` | **&#x2713;**
+[Добавление подключения в группу](#add-connection-to-group) | `N / A` | **&#x2713;**
+[Удаление подключения из группы](#remove-connection-from-group) | `N / A` | **&#x2713;**
+[Закрытие подключения клиента](#close-connection) | `N / A` | **&#x2713;**
+[Работоспособность служб](#service-health) | `N / A` | **&#x2713;**
 
 <a name="broadcast"> </a>
 ### <a name="broadcast-to-everyone"></a>Широковещательная передача для всех
@@ -153,7 +160,7 @@ API | `1.0-preview` | `1.0`
 `1.0` | `POST` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>` | То же, что и выше
 
 <a name="send-user"> </a>
-### <a name="sending-to-specific-users"></a>Отправка для определенных пользователей
+### <a name="sending-to-a-user"></a>Отправка пользователю
 
 Версия | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
 --- | --- | --- | ---
@@ -165,14 +172,77 @@ API | `1.0-preview` | `1.0`
 
 Версия | Метод HTTP для API | Request URL (URL-адрес запроса)
 --- | --- | ---
-`1.0` | `PUT` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<userid>`
+`1.0` | `PUT` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<user-id>`
 
 <a name="remove-user-from-group"> </a>
 ### <a name="removing-a-user-from-a-group"></a>Удаление пользователя из группы
 
 Версия | Метод HTTP для API | Request URL (URL-адрес запроса)
 --- | --- | ---
-`1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<userid>`
+`1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<user-id>`
+
+<a name="check-user-existence"> </a>
+### <a name="check-user-existence-in-a-group"></a>Проверка существования пользователя в группе
+
+Версия API | Метод HTTP для API | Request URL (URL-адрес запроса)
+---|---|---
+`1.0` | `GET` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/users/<user-id>/groups/<group-name>`
+`1.0` | `GET` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<user-id>` 
+
+Код состояния отклика | Описание
+---|---
+`200` | Пользователь существует
+`404` | Пользователь не существует
+
+<a name="remove-user-from-all-groups"> </a>
+### <a name="remove-a-user-from-all-groups"></a>Удаление пользователя из всех групп
+
+Версия API | Метод HTTP для API | Request URL (URL-адрес запроса)
+---|---|---
+`1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/users/<user-id>/groups`
+
+<a name="send-connection"> </a>
+### <a name="send-message-to-a-connection"></a>Отправка сообщения в ответ на подключение
+
+Версия API | Метод HTTP для API | Request URL (URL-адрес запроса) | Текст запроса
+---|---|---|---
+`1.0` | `POST` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/connections/<connection-id>` | `{ "target":"<method-name>", "arguments":[ ... ] }`
+
+<a name="add-connection-to-group"> </a>
+### <a name="add-a-connection-to-a-group"></a>Добавление подключения в группу
+
+Версия API | Метод HTTP для API | Request URL (URL-адрес запроса)
+---|---|---
+`1.0` | `PUT` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/connections/<connection-id>`
+`1.0` | `PUT` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/connections/<connection-id>/groups/<group-name>`
+
+<a name="remove-connection-from-group"> </a>
+### <a name="remove-a-connection-from-a-group"></a>Удаление подключения из группы
+
+Версия API | Метод HTTP для API | Request URL (URL-адрес запроса)
+---|---|---
+`1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/connections/<connection-id>`
+`1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/connections/<connection-id>/groups/<group-name>`
+
+<a name="close-connection"> </a>
+### <a name="close-a-client-connection"></a>Закрытие подключения клиента
+
+Версия API | Метод HTTP для API | Request URL (URL-адрес запроса)
+---|---|---
+`1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/connections/<connection-id>`
+`1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/connections/<connection-id>?reason=<close-reason>`
+
+<a name="service-health"> </a>
+### <a name="service-health"></a>Работоспособность служб
+
+Версия API | Метод HTTP для API | Request URL (URL-адрес запроса)
+---|---|---                             
+`1.0` | `GET` | `https://<instance-name>.service.signalr.net/api/v1/health`
+
+Код состояния отклика | Описание
+---|---
+`200` | Служба работает
+`503` | Служба недоступна
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 

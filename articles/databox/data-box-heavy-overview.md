@@ -9,12 +9,12 @@ ms.subservice: heavy
 ms.topic: overview
 ms.date: 08/28/2019
 ms.author: alkohli
-ms.openlocfilehash: 362b7457538a16d389c3cc40fc44da19b073c0b0
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 2f1f01a8cfa25c222848e7cc5c86dc3532eba348
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "70142920"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437776"
 ---
 # <a name="what-is-azure-data-box-heavy"></a>Что такое Azure Data Box Heavy?
 
@@ -116,7 +116,7 @@ Data Box Heavy передает данные на основе региона, �
 
 Чтобы зарегистрироваться для получения Data Box Heavy, сделайте следующее:
 
-1. Войдите на портал Azure по адресу https://portal.azure.com.
+1. [Войдите на портал Azure](https://portal.azure.com).
 2. Щелкните **+ Создать ресурс**, чтобы создать ресурс. Выполните поиск по запросу **Azure Data Box**. Выберите службу **Azure Data Box**.
 3. Нажмите кнопку **Создать**.
 4. Выберите подписку, которую нужно использовать для Data Box Heavy. Выберите регион, в котором нужно развернуть ресурс Data Box Heavy. Выберите параметр **Data Box Heavy** и нажмите кнопку **Зарегистрироваться**.

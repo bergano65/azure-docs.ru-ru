@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 456fc2a736b3213a14e5704f89a808c120c45b33
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1848610250e696807acef118384f43d2a51442ca
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73158665"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984492"
 ---
 # <a name="tutorial-integrate-bynder-with-azure-active-directory"></a>Руководство по Интеграция Azure Active Directory с Bynder
 
@@ -84,13 +84,25 @@ ms.locfileid: "73158665"
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<company name>.getbynder.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    
+    Для домена по умолчанию: `https://<company name>.getbynder.com`
+    
+    Для личного домена: `https;//<subdomain>.<domain>.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company name>.getbynder.com/sso/SAML/authenticate/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+    
+     Для домена по умолчанию: `https://<company name>.getbynder.com/sso/SAML/authenticate/`
+    
+    Для личного домена: `https://<subdomain>.<domain>.com/sso/SAML/authenticate/`
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<company name>.getbynder.com/login/`.
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    
+     Для домена по умолчанию: `https://<company name>.getbynder.com/login/`
+    
+     Для личного домена: ` https://<subdomain>.<domain>.com/login/`
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Bynder](https://www.bynder.com/en/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

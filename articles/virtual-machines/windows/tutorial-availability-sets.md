@@ -15,18 +15,18 @@ ms.topic: tutorial
 ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 0f94f4d312cefec80a0f294e256ee1ad908b903c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 59bf06d2b279bad792bdc42a7c3b6acc2bc304b8
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74068131"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985717"
 ---
-# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-azure-powershell"></a>Руководство. Создание и развертывание высокодоступных виртуальных машин с помощью Azure PowerShell
+# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-azure-powershell"></a>Руководство по Создание и развертывание виртуальных машин высокого уровня доступности с помощью Azure PowerShell
 
 В этом руководстве показано, как повысить доступность и надежность виртуальных машин с помощью групп доступности. Группы доступности распределяют развернутые в Azure виртуальные машины между несколькими изолированными аппаратными узлами в кластере. 
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * "Создать группу доступности"
@@ -113,7 +113,7 @@ for ($i=1; $i -le 2; $i++)
 
 ## <a name="check-for-available-vm-sizes"></a>Знакомство с доступными размерами виртуальной машины 
 
-Позднее вы можете добавить в группу доступности другие виртуальные машины, но следует понимать, какие размеры виртуальных машин доступны на оборудовании. Выполните командлет [Get-AzVMSize](https://docs.microsoft.com/powershell/module/az.compute/get-azvmsize) для получения списка всех доступных размеров в аппаратном кластере для группы доступности.
+При добавлении виртуальной машины в группу доступности следует знать, какие размеры виртуальных машин доступны на оборудовании. Используйте команду [Get-AzVMSize](https://docs.microsoft.com/powershell/module/az.compute/get-azvmsize), чтобы получить все доступные размеры для виртуальных машин, которые можно развернуть в группе доступности.
 
 ```azurepowershell-interactive
 Get-AzVMSize `

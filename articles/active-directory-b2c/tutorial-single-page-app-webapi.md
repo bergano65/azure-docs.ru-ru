@@ -1,41 +1,44 @@
 ---
-title: Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения
+title: Руководство по Защита веб-API Node.js с помощью Azure AD B2C и предоставление доступа к одностраничному приложению (SPA)
 titleSuffix: Azure AD B2C
-description: В этом учебнике вы узнаете, как с помощью Active Directory B2C обеспечить защиту веб-API .NET Core и выполнить вызов API из одностраничного приложения Node.js.
+description: В этом учебнике показано, как с помощью Active Directory B2C обеспечить защиту веб-API Node.js и выполнить его вызов из одностраничного приложения.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.author: mimart
-ms.date: 07/24/2019
+ms.date: 04/04/2020
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: f6f9ff7bb0d504ecc163f6ce1f87477b1ea9c2d1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 50524159186987b7a30015c878fa3fac949afc79
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78186154"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80875703"
 ---
-# <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
+# <a name="tutorial-protect-and-grant-access-to-a-nodejs-web-api-from-a-single-page-application-with-azure-ad-b2c"></a>Руководство по Защита веб-API Node.js и предоставление доступа к нему из одностраничного приложения с помощью Azure AD B2C
 
-В этом руководстве показано, как вызывать защищенный с помощью Azure Active Directory (Azure AD) B2C ресурс веб-API ASP.NET Core из одностраничного приложения.
+В этом руководстве показано, как вызывать защищенный с помощью Azure Active Directory B2C (Azure AD B2C) веб-API Node.js из одностраничного приложения.
 
-В этом руководстве описано следующее:
+В этом руководстве, который представляет собой вторую часть серии, состоящей из двух частей, рассматриваются следующие темы:
 
 > [!div class="checklist"]
-> * Добавление приложения веб-API
+> * Создание регистрации приложения веб-API в клиенте Azure AD B2C.
 > * Настройка областей для веб-API.
 > * Предоставление разрешения на использование веб-API.
-> * настройка примера для использования приложения;
+> * Изменение примера кода веб-API для работы с вашим клиентом.
+
+Выполнив инструкции из [первого руководства](tutorial-single-page-app.md) этой серии, вы скачали пример кода и изменили его для выполнения входа пользователей с помощью потока пользователя в своем арендаторе Azure AD B2C.
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Выполните действия и необходимые условия в статье [Руководство. Включение в одностраничном приложении аутентификации с помощью Azure Active Directory B2C](tutorial-single-page-app.md).
-* Visual Studio 2019 или более поздней версии либо Visual Studio Code
-* .NET Core 2.2 или более поздней версии
-* Node.js
+* Выполните действия и необходимые условия в статье [Руководство. Включение аутентификации в одностраничном приложении с помощью Azure AD B2C](tutorial-single-page-app.md)
+* [Visual Studio Code](https://code.visualstudio.com/) или любой другой редактор кода.
+* [Node.js](https://nodejs.org/en/download/)
 
 ## <a name="add-a-web-api-application"></a>Добавление приложения веб-API
 
@@ -57,135 +60,109 @@ ms.locfileid: "78186154"
 
 [!INCLUDE [active-directory-b2c-permissions-api](../../includes/active-directory-b2c-permissions-api.md)]
 
-Одностраничное веб-приложение зарегистрировано для вызова защищенного веб-API. Пользователь выполняет проверку подлинности в Azure AD B2C для использования одностраничного приложения. Одностраничное приложение получает предоставление авторизации из Azure AD B2C для доступа к защищенному веб-API.
+Вашему одностраничному приложению теперь предоставлены разрешения на доступ к защищенному веб-API для указанных областей. Пользователь выполняет проверку подлинности в Azure AD B2C для использования одностраничного приложения. Одностраничное приложение использует поток предоставления авторизации для получения доступа к защищенному веб-API с маркером доступа, возвращаемым Azure AD B2C.
 
 ## <a name="configure-the-sample"></a>Настройка примера
 
-Теперь, когда веб-API зарегистрирован и определены области, необходимо настроить код веб-API для использования клиента Azure AD B2C. В рамках этого учебника вы настроите пример веб-приложения .NET Core, который можно скачать из репозитория GitHub.
+Теперь, когда веб-API зарегистрирован и вы определили области, настройте код веб-API для работы с арендатором Azure AD B2C. В этом руководстве показано, как настроить пример веб-API Node.js, который можно скачать из репозитория GitHub.
 
-[Скачайте \*архив ZIP](https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapi/archive/master.zip) или клонируйте пример проекта веб-API с GitHub.
+[Скачайте \*архив ZIP](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi/archive/master.zip) или клонируйте пример проекта веб-API с GitHub. Вы также можете перейти непосредственно к проекту [Azure-Samples/active-directory-b2c-javascript-nodejs-webapi](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi) на сайте GitHub.
 
 ```console
-git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapi.git
+git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi.git
 ```
 
 ### <a name="configure-the-web-api"></a>Настройка веб-API
 
-1. Откройте файл <em>B2C-WebApi/**appsettings.json**</em> в Visual Studio или Visual Studio Code.
-1. Измените блок `AzureAdB2C`, чтобы он отражал имя клиента, идентификатор приложения веб-API, имя политики входа или регистрации, а также определенные ранее области. Блок должен выглядеть следующим образом (с соответствующими значениями `Tenant` и `ClientId`):
+1. Откройте файл *config.js* в редакторе кода.
+1. Измените значения переменных, указав значения из созданной ранее регистрации приложения. Также обновите `policyName`, указав поток пользователя, созданный в рамках предварительных требований (например, *B2C_1_signupsignin1*).
 
-    ```json
-    "AzureAdB2C": {
-      "Tenant": "<your-tenant-name>.onmicrosoft.com",
-      "ClientId": "<webapi-application-ID>",
-      "Policy": "B2C_1_signupsignin1",
-
-      "ScopeRead": "demo.read",
-      "ScopeWrite": "demo.write"
-    },
+    ```javascript
+    const clientID = "<your-webapi-application-ID>"; // Application (client) ID
+    const b2cDomainHost = "<your-tenant-name>.b2clogin.com";
+    const tenantId = "<your-tenant-ID>.onmicrosoft.com"; // Alternatively, you can use your Directory (tenant) ID (a GUID)
+    const policyName = "B2C_1_signupsignin1";
     ```
 
 #### <a name="enable-cors"></a>Включение CORS
 
-Чтобы разрешить одностраничному приложению вызывать веб-API ASP.NET Core, необходимо включить [CORS](https://docs.microsoft.com/aspnet/core/security/cors) в веб-API.
+Чтобы разрешить одностраничному приложению вызывать веб-API Node.js, необходимо включить [CORS](https://expressjs.com/en/resources/middleware/cors.html) в веб-API. В рабочем приложении следует проявлять осторожность в отношении того, какой домен отправляет запрос, но при работе с этим руководством вы можете разрешить запросы от любого домена.
 
-1. В файле *Startup.cs* добавьте CORS в метод `ConfigureServices()`.
+Чтобы включить CORS, используйте следующее ПО промежуточного слоя. В примере кода веб-API Node.js в этом руководстве оно уже добавлено в файл *index.js*.
 
-    ```csharp
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddCors();
-    ```
-
-1. Кроме того, в методе `ConfigureServices()` задайте значение `jwtOptions.Authority` для следующего URI поставщика токенов.
-
-    Замените `<your-tenant-name>` именем клиента B2C.
-
-    ```csharp
-    jwtOptions.Authority = $"https://<your-tenant-name>.b2clogin.com/{Configuration["AzureAdB2C:Tenant"]}/{Configuration["AzureAdB2C:Policy"]}/v2.0";
-    ```
-
-1. Настройте CORS в методе `Configure()`.
-
-    ```csharp
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-    {
-        app.UseCors(builder =>
-            builder.WithOrigins("http://localhost:6420").AllowAnyHeader().AllowAnyMethod());
-    ```
-
-1. (Только Visual Studio) В обозревателе решений в разделе **Свойства** откройте файл *launchSettings.json* и найдите блок `iisExpress`.
-1. (Только Visual Studio) Замените значение `applicationURL` номером порта, указанным при регистрации приложения *webapi1* на предыдущем шаге. Пример:
-
-    ```json
-    "iisExpress": {
-      "applicationUrl": "http://localhost:5000/",
-      "sslPort": 0
-    }
-    ```
+```javascript
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+```
 
 ### <a name="configure-the-single-page-application"></a>Настройка одностраничного приложения
 
-Одностраничное приложение (SPA) из [предыдущего учебника](tutorial-single-page-app.md) этой серии использует Azure AD B2C для регистрации и входа пользователя, а также вызывает веб-API ASP.NET Core, защищенный демонстрационным клиентом *frabrikamb2c*.
+Одностраничное приложение (SPA) из [предыдущего руководства](tutorial-single-page-app.md) этой серии использует Azure AD B2C для регистрации и выполнения входа пользователя, а также по умолчанию вызывает веб-API Node.js, защищенный примером арендатора *fabrikamb2c*.
 
-В этом разделе вы обновите одностраничное приложение для вызова веб-API ASP.NET Core, защищенного *вашим* клиентом Azure AD B2C и запущенного на локальном компьютере.
+В этом разделе показано, как обновить одностраничное приложение для вызова веб-API Node.js, защищенного *вашим* арендатором Azure AD B2C и запущенного на локальном компьютере.
 
 Чтобы изменить параметры в SPA, выполните приведенные ниже действия.
 
-1. Откройте файл *index.html* в проекте [active-directory-b2c-javascript-msal-singlepageapp][github-js-spa], скачанном или клонированном в предыдущем учебнике.
+1. В проекте [active-directory-b2c-javascript-msal-singlepageapp][github-js-spa], который вы скачали или клонировали при выполнении инструкций из предыдущего руководства, откройте файл *apiConfig.js* в папке *JavaScriptSPA*.
 1. Настройте пример с помощью URI для области *demo.read*, созданной ранее, а также URL-адрес веб-API.
-    1. В определении `appConfig` замените значение `b2cScopes` полным URI для области (значение **SCOPE**, записанное ранее).
-    1. Измените значение `webApi` на URI перенаправления, добавленный при регистрации приложения веб-API на предыдущем шаге.
+    1. В определении `apiConfig` замените значение `b2cScopes` полным URI для области *demo.read* (значение **Область**, записанное ранее).
+    1. Измените домен в значении `webApi` на URI перенаправления, добавленный при регистрации приложения веб-API на предыдущем шаге.
 
-    Определение `appConfig` должно выглядеть как следующий блок кода (с именем клиента вместо `<your-tenant-name>`):
+    Так как API доступен на конечной точке `/hello`, не удаляйте */hello* из URI.
+
+    Определение `apiConfig` должно выглядеть как следующий блок кода, но с именем арендатора B2C вместо `<your-tenant-name>`:
 
     ```javascript
     // The current application coordinates were pre-registered in a B2C tenant.
-    var appConfig = {
+    const apiConfig = {
       b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/api/demo.read"],
-      webApi: "http://localhost:5000/"
+      webApi: "http://localhost:5000/hello" // '/hello' should remain in the URI
     };
     ```
 
 ## <a name="run-the-spa-and-web-api"></a>Запуск SPA и веб-API
 
-Наконец, вы запускаете веб-API ASP.NET Core и одностраничное приложение Node.js на локальном компьютере. Затем войдите в одностраничное приложение и нажмите кнопку, чтобы инициировать запрос к защищенному API.
+Теперь вы готовы протестировать ограниченный областью доступ одностраничного приложения к API. Запустите веб-API Node.js и пример одностраничного приложения JavaScript на локальном компьютере. Затем войдите в одностраничное приложение и нажмите кнопку **Вызов API**, чтобы инициировать запрос к защищенному API.
 
-Хотя в этом учебнике оба приложения запущены локально, они используют Azure AD B2C для безопасной регистрации и входа, а также для предоставления доступа к защищенному веб-API.
+Хотя в нашем примере оба приложения запущены локально, вы настроили их для использования Azure AD B2C для безопасных операций регистрации и входа, а также для предоставления доступа к защищенному веб-API.
 
-### <a name="run-the-aspnet-core-web-api"></a>Запуск веб-API ASP.NET Core
+### <a name="run-the-nodejs-web-api"></a>Запуск веб-API для Node.js
 
-Нажмите клавишу **F5** для создания и отладки решения *B2C-WebAPI.sln* в Visual Studio. При запуске проекта в браузере, используемом по умолчанию, откроется веб-страница с объявлением о том, что веб-API доступен для запросов.
-
-Если вы предпочитаете использовать CLI `dotnet` вместо Visual Studio, выполните приведенные ниже действия.
-
-1. Откройте окно консоли и перейдите в каталог, содержащий файл *\*.csproj*. Пример:
-
-    `cd active-directory-b2c-dotnetcore-webapi/B2C-WebApi`
-
-1. Создайте и запустите веб-API, выполнив `dotnet run`.
-
-    Когда API запущен и работает, должен появиться результат, аналогичный следующему (для данного учебника любые предупреждения `NETSDK1059` можно игнорировать):
+1. Откройте окно консоли и перейдите в каталог, содержащий пример веб-API Node.js. Пример:
 
     ```console
-    $ dotnet run
-    Hosting environment: Production
-    Content root path: /home/user/active-directory-b2c-dotnetcore-webapi/B2C-WebApi
-    Now listening on: http://localhost:5000
-    Application started. Press Ctrl+C to shut down.
+    cd active-directory-b2c-javascript-nodejs-webapi
     ```
-
-### <a name="run-the-single-page-app"></a>Запуск одностраничного приложения
-
-1. Откройте окно консоли и перейдите в каталог, содержащий пример Node.js. Пример:
-
-    `cd active-directory-b2c-javascript-msal-singlepageapp`
 
 1. Выполните следующие команды:
 
     ```console
     npm install && npm update
-    node server.js
+    node index.js
+    ```
+
+    В окне консоли отобразится номер порта, на котором размещено приложение.
+
+    ```console
+    Listening on port 5000...
+    ```
+
+### <a name="run-the-single-page-app"></a>Запуск одностраничного приложения
+
+1. Откройте еще одно окно консоли и перейдите в каталог, содержащий пример одностраничного приложения JavaScript. Пример:
+
+    ```console
+    cd active-directory-b2c-javascript-msal-singlepageapp
+    ```
+
+1. Выполните следующие команды:
+
+    ```console
+    npm install && npm update
+    npm start
     ```
 
     В окне консоли отобразится номер порта, связанный с размещаемым приложением.
@@ -195,23 +172,23 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
     ```
 
 1. Перейдите к `http://localhost:6420` в браузере для просмотра приложения.
-1. Выполните вход с помощью адреса электронной почты и пароля, которые вы использовали в [предыдущем учебнике](tutorial-single-page-app.md). После успешного входа отобразится сообщение `User 'Your Username' logged-in`.
-1. Нажмите кнопку **Call Web API** (Вызов веб-API). SPA получает предоставление авторизации из Azure AD B2C, а затем — доступ к защищенному веб-API для отображения содержимого своей страницы индексов:
 
-    ```Output
-    Web APi returned:
-    "<html>\r\n<head>\r\n  <title>Azure AD B2C API Sample</title>\r\n ...
-    ```
+    ![Пример открытого в браузере одностраничного приложения](./media/tutorial-single-page-app-webapi/tutorial-01-sample-app-browser.png)
+
+1. Выполните вход с помощью адреса электронной почты и пароля, которые вы использовали в [предыдущем учебнике](tutorial-single-page-app.md). После успешного входа отобразится сообщение `User 'Your Username' logged-in`.
+1. Нажмите кнопку **вызова API**. Одностраничное приложение получает предоставление авторизации из Azure AD B2C, а затем — доступ к защищенному веб-API для отображения имени выполнившего вход пользователя.
+
+    ![Одностраничное приложение в браузере с отображением результата JSON с именем пользователя, возвращаемого API](./media/tutorial-single-page-app-webapi/tutorial-02-call-api.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как выполнять следующие задачи:
+Изучив это руководство, вы:
 
 > [!div class="checklist"]
-> * Добавление приложения веб-API
-> * Настройка областей для веб-API.
-> * Предоставление разрешения на использование веб-API.
-> * настройка примера для использования приложения;
+> * создали регистрацию приложения веб-API в арендаторе Azure AD B2C;
+> * настроили области для веб-API;
+> * предоставили разрешения на использование веб-API;
+> * изменили пример кода веб-API для работы с вашим арендатором.
 
 Теперь, когда вы узнали, как SPA выполняет запрос ресурса из защищенного веб-API, вы можете получить более глубокое представление о том, как эти типы приложений взаимодействуют друг с другом и с Azure AD B2C.
 

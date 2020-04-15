@@ -1,19 +1,19 @@
 ---
-title: Использование справочной документации по шаблонам
+title: Использование справочника по шаблонам
 description: Для создания шаблона используйте справочник по шаблонам Azure Resource Manager.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: b742982121a20a2b057eba4211584b0386dde411
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b713d508a5e28291778d3727c15e12972eea3a77
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80373180"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878521"
 ---
-# <a name="tutorial-utilize-the-arm-template-reference"></a>Руководство по использованию справочной документации по шаблонам Resource Manager
+# <a name="tutorial-utilize-the-resource-manager-template-reference"></a>Руководство по использованию справочника по шаблонам Resource Manager
 
 Узнайте, как найти сведения о схеме шаблона и использовать их для создания шаблонов Azure Resource Manager (ARM).
 
@@ -65,9 +65,13 @@ ms.locfileid: "80373180"
     * Параметр **resources** указывает типы ресурсов, которые развертываются или обновляются в группе ресурсов.
     * Параметр **outputs** указывает значения, возвращаемые после развертывания.
 
-1. Разверните раздел **resources**. Вы увидите определенный ресурс `Microsoft.Storage/storageAccounts`.
+1. Разверните раздел **resources**. Вы увидите определенный ресурс `Microsoft.Storage/storageAccounts`. В качестве имени SKU используется значение параметра.  Имя параметра — **storageAccountType**.
 
     ![Определение учетной записи хранения в шаблоне Resource Manager](./media/template-tutorial-use-template-reference/resource-manager-template-storage-resource.png)
+
+1. Разверните раздел **parameters**, чтобы увидеть, как определен **storageAccountType**. Параметр имеет четыре допустимых значения. Вы увидите остальные допустимые значения, а потом проверите определение параметра.
+
+    ![Номера SKU ресурсов учетной записи хранения в шаблоне Resource Manager](./media/template-tutorial-use-template-reference/resource-manager-template-storage-resources-skus-old.png)
 
 ## <a name="find-the-template-reference"></a>Поиск ссылки на шаблон
 
@@ -84,7 +88,7 @@ ms.locfileid: "80373180"
 
     ![Справочные материалы по шаблону Resource Manager: версии типов учетной записи хранения](./media/template-tutorial-use-template-reference/resource-manager-template-resources-reference-storage-accounts-types-versions.png)
 
-1. Выберите последнюю версию типа ресурса **storageAccount**.  Номер последней версии на момент написании этой статьи — **2019-06-01**.
+1. Выберите последнюю версию типа ресурса **storageAccount**. Номер последней версии на момент написании этой статьи — **2019-06-01**. Убедитесь, что эта версия соответствует версии, используемой для ресурса учетной записи хранения в шаблоне. При обновлении версии API убедитесь, что определение ресурса соответствует, указанному в справочнике по шаблонам.
 
 1. На этой странице приведены сведения о типе ресурса storageAccount.  Например, на ней перечислены допустимые значения для объекта **SKU**. Есть больше номеров SKU, чем указано в шаблоне быстрого запуска, который вы открыли ранее. Вы можете настроить шаблон быстрого запуска, включив в него все доступные типы хранилища.
 
@@ -98,7 +102,21 @@ ms.locfileid: "80373180"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Дополнительные сведения о [развертывании шаблона](quickstart-create-templates-use-visual-studio-code.md#deploy-the-template) см. в кратком руководстве по Visual Studio Code. При развертывании шаблона укажите параметр **storageAccountType** с новым значением, например **Premium_ZRS**. Если вы используете исходный шаблон быстрого запуска, при развертывании произойдет сбой, так как **Premium_ZRS** не является допустимым значением.
+Дополнительные сведения о [развертывании шаблона](quickstart-create-templates-use-visual-studio-code.md#deploy-the-template) см. в кратком руководстве по Visual Studio Code. При развертывании шаблона укажите параметр **storageAccountType** с новым значением, например **Premium_ZRS**. Если вы используете исходный шаблон быстрого запуска, при развертывании произойдет сбой, так как **Premium_ZRS** не является допустимым значением.  Чтобы передать значение параметра, добавьте следующий параметр в команду развертывания:
+
+# <a name="cli"></a>[CLI](#tab/CLI)
+
+```azurecli
+--parameters storageAccountType='Premium_ZRS'
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
+
+```azurepowershell
+-storageAccountType "Premium_ZRS"
+```
+
+---
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -3,16 +3,16 @@ title: Начало работы с порталом Azure Enterprise Portal
 description: В этой статье объясняется, как клиенты Соглашения Azure Enterprise (Azure EA) используют портал Azure Enterprise Portal.
 author: bandersmsft
 ms.author: banders
-ms.date: 03/03/2020
+ms.date: 04/01/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: boalcsva
-ms.openlocfilehash: 5b84cbf4ae7065f13442852cfbf646aa49771e1f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: da63960b312bde6ae8aafb659ef08ef2f52600cc
+ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78272429"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80586302"
 ---
 # <a name="get-started-with-the-azure-enterprise-portal"></a>Начало работы с порталом Azure Enterprise Portal
 
@@ -111,7 +111,7 @@ ms.locfileid: "78272429"
 
 Чтобы активировать службу, первоначальный администратор предприятия должен открыть [EA Portal](https://ea.azure.com) и войти на него с тем адресом электронной почты, который указан в сообщении с приглашением.
 
-Если вы настроены в качестве администратора предприятия, не ждите получения сообщения для активации. Перейдите на [EA Portal](https://ea.azure.com) и войдите на него, используя адрес электронной почты и пароль своей рабочей, учебной учетной записи или учетной записи Майкрософт.
+Если для вашей учетной записи настроены права администратора предприятия, вам не нужно ждать получения сообщения для активации. Перейдите на [EA Portal](https://ea.azure.com) и войдите на него, используя адрес электронной почты и пароль своей рабочей, учебной учетной записи или учетной записи Майкрософт.
 
 Если у вас есть несколько соглашений о регистраций, выберите то, которое вы намерены активировать. По умолчанию отображаются только активные соглашения о регистрации. Чтобы просмотреть журнал регистрации, снимите флажок **Активно** в правом верхнем углу EA Portal.
 

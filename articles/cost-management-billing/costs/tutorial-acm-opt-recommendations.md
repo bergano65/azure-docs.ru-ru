@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: de558ddad37e1621c633d26fff51d1506c237577
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 030ae5dcac85a88309b317be1edfab11d0da051a
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80155925"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878465"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>Руководство по Рекомендации по оптимизации затрат
 
 Управление затратами Azure работает с Помощником по Azure, чтобы обеспечить рекомендации по оптимизации затрат. Помощник по Azure помогает повысить эффективность работы благодаря выявлению незадействованных или недостаточно используемых ресурсов. В этом руководстве показан пример, где вы определяете недостаточно используемые ресурсы Azure, и затем принимаете меры по сокращению затрат.
 
-Просмотрите видео об [оптимизации инвестиций в облако с помощью службы "Управление затратами Azure"](https://www.youtube.com/watch?v=cSNPoAb-TNc), чтобы узнать больше об использовании Помощника по Azure для оптимизации затрат.
+Просмотрите видео об [оптимизации инвестиций в облако с помощью службы "Управление затратами Azure"](https://www.youtube.com/watch?v=cSNPoAb-TNc), чтобы узнать больше об использовании Помощника по Azure для оптимизации затрат. Чтобы просмотреть другие видео, посетите канал YouTube, посвященный [службе "Управление затратами"](https://www.youtube.com/c/AzureCostManagement).
 
 >[!VIDEO https://www.youtube.com/embed/cSNPoAb-TNc]
 

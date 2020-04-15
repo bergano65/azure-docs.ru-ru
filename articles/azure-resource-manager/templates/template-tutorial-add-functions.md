@@ -2,19 +2,19 @@
 title: Учебник по добавлению функций шаблона
 description: Добавьте функции шаблона в шаблон Azure Resource Manager для создания значений.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 1db391f42aeb4fdf80baf001150f845daef3bf4f
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: e4984b286bf031b66272919a487d09a90f972ce0
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773226"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80410976"
 ---
-# <a name="tutorial-add-template-functions-to-your-resource-manager-template"></a>Руководство. добавлению функций шаблона в шаблон Azure Resource Manager
+# <a name="tutorial-add-template-functions-to-your-arm-template"></a>Руководство по добавлению функций шаблона в шаблон ARM
 
-В этом учебнике вы узнаете, как добавить в шаблон [функции шаблона](template-functions.md). Функции используются для динамического создания значений. Помимо этих системных функций шаблонов можно также создать [функции, определяемые пользователем](./template-user-defined-functions.md). Для выполнения инструкций из этого учебника требуется **7 минут**.
+Из этого руководства вы узнаете, как добавлять [функции шаблона](template-functions.md) в шаблон Azure Resource Manager (ARM). Функции используются для динамического создания значений. Помимо этих системных функций шаблонов можно также создать [функции, определяемые пользователем](./template-user-defined-functions.md). Для выполнения инструкций из этого учебника требуется **7 минут**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ ms.locfileid: "76773226"
 
 Если вы еще не создали группу ресурсов, см. [этот раздел](template-tutorial-create-first-template.md#create-resource-group). В этом примере предполагается, что для переменной **templateFile** указан путь к файлу шаблона, как показано в [первом учебнике](template-tutorial-create-first-template.md#deploy-template).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -58,10 +58,12 @@ New-AzResourceGroupDeployment `
   -storageName "{new-unique-name}"
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы выполнить эту команду развертывания, необходимо иметь [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
 
 ```azurecli
-az group deployment create \
+az deployment group create \
   --name addlocationparameter \
   --resource-group myResourceGroup \
   --template-file $templateFile \
@@ -69,6 +71,9 @@ az group deployment create \
 ```
 
 ---
+
+> [!NOTE]
+> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
 
 ## <a name="verify-deployment"></a>Проверка развертывания
 

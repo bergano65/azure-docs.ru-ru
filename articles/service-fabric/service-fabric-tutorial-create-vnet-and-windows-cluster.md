@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 086379e788966b300f988e06ec42c94b880b8281
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2d170057a85a8e223fa9d1bc2bfc17e0c284afcd
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75551732"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756037"
 ---
 # <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -156,7 +156,7 @@ ms.locfileid: "75551732"
 ## <a name="set-up-azure-active-directory-client-authentication"></a>Настройка проверки подлинности клиента Azure Active Directory
 Для кластеров Service Fabric, развернутых в общедоступной сети, размещенной в Azure, для взаимной проверки подлинности между клиентом и узлом рекомендуется:
 * использование Azure Active Directory для удостоверения клиента;
-* сертификат для удостоверения сервера и SSL-шифрования HTTP-подключений.
+* использование сертификата для удостоверения сервера и TLS-шифрования HTTP-подключений.
 
 Настройку Azure Active Directory (AAD) для проверки подлинности клиентов для кластера Service Fabric нужно сделать перед [созданием кластера](#createvaultandcert). Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям. 
 

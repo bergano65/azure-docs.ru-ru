@@ -8,21 +8,15 @@ ms.topic: overview
 ms.date: 02/27/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 710c5a780841135344d92e93a02f97963b36b09e
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 1bef4e5f4129ddc8300d61d609392ce0b07b74b8
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77921396"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656250"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
-Приватный канал Azure предоставляет доступ к службам PaaS Azure, таким как:
- 
- - **Хранилище Azure**
- - **Azure Cosmos DB**
- - **База данных SQL Azure**
-
-Приватный канал предоставляет доступ к размещенным в Azure службам клиентов или партнеров через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
+Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
 
 Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт. Предоставление доступа к службе через общедоступный Интернет больше не требуется. Вы можете создать собственную [службу приватного канала](private-link-service-overview.md) в виртуальной сети и предоставлять ее клиентам. Настройка и потребление с использованием Приватного канала Azure согласованы между службами Azure PaaS, клиентскими и общими партнерскими службами.
 
@@ -48,16 +42,27 @@ ms.locfileid: "77921396"
 
 |Сценарий  |Поддерживаемые службы  |Доступные регионы | Состояние  |
 |:---------|:-------------------|:-----------------|:--------|
-|Приватный канал для служб, принадлежащих потребителю|Службы Приватного канала за Azure Load Balancer (цен. категория "Стандартный") | Все общедоступные регионы  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/private-link/private-link-service-overview) |
-|Приватный канал для служб PaaS Azure   | Хранилище Azure        |  Все общедоступные регионы      | Preview (Предварительный просмотр) <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
-|  | Azure Data Lake Storage 2-го поколения        |  Все общедоступные регионы      | Preview (Предварительный просмотр) <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
-|  |  База данных SQL Azure         | Все общедоступные регионы      |   Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)      |
-||Хранилище данных SQL Azure| Все общедоступные регионы |Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)|
-||Azure Cosmos DB| Центрально-западная часть США, западная часть США, центрально-северная часть США |Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints)|
-|  |  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы      |   Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-private-link)      |
-|  |  База данных Azure для MySQL         | Все общедоступные регионы      |   Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link)     |
-|  |  База данных Azure для MariaDB         | Все общедоступные регионы      |   Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link)      |
-|  |  Azure Key Vault         | Все общедоступные регионы      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/key-vault/private-link-service)   |
+|Приватный канал для служб, принадлежащих потребителю |Службы Приватного канала за Azure Load Balancer (цен. категория "Стандартный") | Все общедоступные регионы  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/private-link/private-link-service-overview) |
+|Приватный канал для служб PaaS Azure   | Хранилище Azure        |  Все общедоступные регионы      | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
+|  | Azure Data Lake Storage 2-го поколения        |  Все общедоступные регионы      | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
+|  |  База данных SQL Azure         | Все общедоступные регионы      |   GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)      |
+|  |Azure Synapse Analytics (Хранилище данных SQL)| Все общедоступные регионы |GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)|
+|  |Azure Cosmos DB|  Все общедоступные регионы |GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints)|
+|  |  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы      |   GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-private-link)      |
+|  |  База данных Azure для MySQL         | Все общедоступные регионы      |   GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link)     |
+|  |  База данных Azure для MariaDB         | Все общедоступные регионы      |   GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link)      |
+|  |  Azure Key Vault         | Все общедоступные регионы      |   GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/key-vault/private-link-service)   |
+|  |Служба Azure Kubernetes — API Kubernetes | Все общедоступные регионы      |   GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/aks/private-clusters)   |
+|  |Поиск Azure | Восточная часть США, западная часть США 2, центрально-южная часть США |   Preview (Предварительный просмотр)    |
+|  |Реестр контейнеров Azure | Все общедоступные регионы      |   Preview (Предварительный просмотр)   |
+|  |Конфигурация приложений Azure | Все общедоступные регионы      |   Preview (Предварительный просмотр)   |
+|  |Azure Backup | Восточная часть США, западная часть США 2, центрально-южная часть США     |   Preview (Предварительный просмотр)   |
+|  |концентратору событий Azure | Все общедоступные регионы      |   Preview (Предварительный просмотр)    |
+|  |Служебная шина Azure | Все общедоступные регионы      |   Preview (Предварительный просмотр)   |
+|  |Ретранслятор Azure | Все общедоступные регионы      |   Preview (Предварительный просмотр)   |
+|  |Сетка событий Azure| Восточная часть США, западная часть США 2, центрально-южная часть США      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/event-grid/network-security)   |
+|  |Веб-приложения Azure | Восточная часть США, западная часть США 2, центрально-южная часть США      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/app-service/networking/private-endpoint)   |
+|  |Машинное обучение Azure | Восточная часть США, западная часть США 2, центрально-южная часть США      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

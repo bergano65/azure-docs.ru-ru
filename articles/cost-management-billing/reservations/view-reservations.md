@@ -5,77 +5,53 @@ author: yashesvi
 ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 03/31/2020
 ms.author: banders
-ms.openlocfilehash: 5c9d9074e4b8d0d9e36417daee4d58c1d9b28b64
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0635c21ee30a40344281f31c8f9aedf9d74a1284
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199251"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633853"
 ---
-# <a name="view-azure-reservations-in-the-azure-portal"></a>Просмотр резервирований Azure на портале Azure
+# <a name="view-azure-reservations"></a>Просмотр резервирований Azure
 
-В зависимости от вашей подписки и разрешений существует несколько способов просматривать резервирования Azure.
+Вы можете просматривать приобретенное резервирование на портале Azure и управлять им.   
 
-## <a name="view-purchased-reservations"></a>Просмотр приобретенных резервирований
+## <a name="permissions-to-view-a-reservation"></a>Разрешения на просмотр резервирования
 
-Если вы покупаете резервирование, вы и администратор можете просматривать резервирование по умолчанию. Вместе с администратором учетной записи вы можете получить роль владельца заказа на резервирование и самого резервирования. Чтобы разрешить другим просматривать резервирование, назначьте им роль **владельца** или **читателя** в заказе на резервирование или самом резервировании.
+Для просмотра резервирования и управления им необходимо иметь соответствующее разрешение читателя или владельца. По умолчанию при покупке резервирования вы вместе с администратором учетной записи можете получить роль владельца заказа на резервирование и самого резервирования. Чтобы разрешить другим просматривать резервирование, назначьте им роль **владельца** или **читателя** в заказе на резервирование или самом резервировании. Если добавить пользователя в подписку, которая предоставляется для выставления счетов за резервирование, его не будет автоматически добавлено в резервирование. 
 
 Дополнительные сведения см. в разделе [Добавление или изменение пользователей, которые могут управлять резервированием](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
 
-Чтобы просмотреть резервирование как владелец или читатель, выполните следующие действия.
+## <a name="view-reservation-and-utilization-in-azure-portal"></a>Просмотр сведений о резервировании и использовании на портале Azure
+
+Чтобы просмотреть сведения о резервировании как владелец или читатель, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выполните поиск по слову **резервирования**.
-    ![Снимок экрана: поиск на портале Azure](./media/view-reservations/portal-reservation-search.png)  
-3. Появится список резервирований, в котором можно выбрать роль владельца или читателя. Каждое резервирование показывает последний известный показатель использования в процентах.  
-    ![Пример: список резервирований](./media/view-reservations/view-reservations.png)
-4. Выберите резервирование и просмотрите тенденцию использования за последние пять дней.  
-    ![Пример: тенденция использования резервирования](./media/view-reservations/reservation-utilization.png)
-5. Вы также можете получить сведения об [использовании резервирования](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage) с помощью API использования зарезервированного экземпляра или [пакета содержимого Microsoft Azure Consumption Insights Power BI](/power-bi/service-connect-to-azure-consumption-insights).
+2. Перейдите в раздел [Резервирования](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade).
+3. Появится список резервирований, в котором можно выбрать роль владельца или читателя. Каждое резервирование показывает последний известный показатель использования в процентах.
+4. Щелкните процент использования, чтобы просмотреть журнал использования и дополнительные сведения. Чтобы получить дополнительные сведения, просмотрите видео ниже.
+   > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4sYwk] 
 
-Если вам нужно изменить область резервирования, разделить резервирование или изменить тех, кто могут управлять резервированием, см. статью [Управление резервированиями для ресурсов Azure](manage-reserved-vm-instance.md).
+## <a name="get-reservations-and-utilization-using-apis-powershell-cli"></a>Получение резервирований и показателей использования с помощью API, PowerShell и CLI
 
-## <a name="view-reservation-transactions-for-enterprise-enrollments"></a>Просмотр транзакций резервирования для Соглашений о регистрации Enterprise
+Чтобы получить список всех резервирований, используйте следующие ресурсы:
+- [API: список заказов на резервирование](/rest/api/reserved-vm-instances/reservationorder/list);
+- [PowerShell: список заказов на резервирование](/powershell/module/azurerm.reservations/get-azurermreservationorder);
+- [CLI: список заказов на резервирование](/cli/azure/reservations/reservation-order#az-reservations-reservation-order-list).
 
- Если у вас есть партнерские соглашения о регистрации Enterprise, просматривайте резервирования, перейдя к**отчетам** на портале EA. Для других соглашений о регистрации Enterprise можно просмотреть резервирования на портале EA и на портале Azure. Только администраторы EA могут просматривать транзакции резервирований.
+Вы также можете получить [сведения об использовании резервирования](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage) с помощью API использования зарезервированных экземпляров. 
 
-Чтобы просмотреть транзакции резервирования на портале Azure, выполните следующие действия.
+## <a name="see-reservations-and-utilization-in-power-bi"></a>Просмотр резервирований и показателей использования в Power BI
 
-1. Войдите на [портал Azure](https://portal.azure.com).
-1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
-
-    ![Снимок экрана, показывающий поиск на портале Azure](./media/view-reservations/portal-cm-billing-search.png)
-
-1. Выберите **Транзакции резервирования**.
-1. Чтобы отфильтровать результаты, выберите **Временной диапазон**, **Тип** или **Описание**.
-1. Нажмите кнопку **Применить**.
-
-    ![Снимок экрана, показывающий результаты в окне "Транзакции резервирования"](./media/view-reservations/portal-billing-reservation-transaction-results.png)
-
-Чтобы получить данные с помощью API, см. статью [Get Reserved Instance transaction charges for enterprise customers](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-charges) (Получение сведений о расходах по транзакциям зарезервированных экземпляров для корпоративных клиентов).
+Для пользователей Power BI существует две возможности просмотра.
+- Пакет содержимого. Данные о покупках и использовании резервирований доступны в [пакете содержимого Power BI Consumption Insights](/power-bi/desktop-connect-azure-cost-management). Создайте необходимые отчеты с помощью этого пакета содержимого. 
+- Приложение для управления затратами. Используйте приложение [Управление затратами](https://appsource.microsoft.com/product/power-bi/costmanagement.azurecostmanagementapp) для предварительно созданных отчетов, которые можно дополнительно настраивать.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о резервировании в Azure см. в следующих статьях:
-
-- [Сведения о резервированиях для Azure](save-compute-costs-reservations.md)
-- [Управление резервированиями для Azure](manage-reserved-vm-instance.md)
-
-Приобретение плана обслуживания:
-
-- [Предоплата ресурсов Azure Cosmos DB с резервной мощностью](../../cosmos-db/cosmos-db-reserved-capacity.md)
-- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../sql-database/sql-database-reserved-capacity.md)
-- [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
-
-Приобретение плана программного обеспечения:
-
-- [Предварительная оплата планов программного обеспечения Red Hat в резервированиях Azure](../../virtual-machines/linux/prepay-rhel-software-charges.md)
-- [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../../virtual-machines/linux/prepay-suse-software-charges.md)
-
-Основные сведения об использовании:
-
+- [Управление резервированиями для ресурсов Azure](manage-reserved-vm-instance.md).
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)
 - [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)

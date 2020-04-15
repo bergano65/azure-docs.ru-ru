@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2019
 ms.author: anavin
-ms.openlocfilehash: 3b908406c8717d2fa8834bc4dff1bcd27ec4761f
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 967d391d4ac9a9704688dce9636d9a71b2002549
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79290202"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879366"
 ---
 # <a name="what-is-azure-virtual-network"></a>Что такое виртуальная сеть Azure?
 
@@ -76,6 +76,15 @@ ms.locfileid: "79290202"
 
 - **Таблицы маршрутов.** Вы можете создать пользовательские таблицы с маршрутами, которые определяют направление передачи трафика для каждой подсети. Подробнее о [таблицах маршрутов](virtual-networks-udr-overview.md#user-defined).
 - **Маршруты протокола BGP.** При подключении виртуальной сети к локальной сети с помощью VPN-шлюза или канала ExpressRoute Azure можно распространить локальные маршруты BGP в виртуальных сетях. Подробнее об использовании протокола BGP с [VPN-шлюзом Azure](../vpn-gateway/vpn-gateway-bgp-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [ExpressRoute](../expressroute/expressroute-routing.md?toc=%2fazure%2fvirtual-network%2ftoc.json#dynamic-route-exchange).
+
+## <a name="virtual-network-integration-for-azure-services"></a>Интеграция виртуальной сети для служб Azure
+
+Интеграция служб Azure с виртуальной сетью Azure обеспечивает закрытый доступ к службе из виртуальных машин или вычислительных ресурсов в виртуальной сети.
+Службы Azure можно интегрировать с виртуальной сетью такими способами:
+- Развертывание [выделенных экземпляров службы](virtual-network-for-azure-services.md) в виртуальной сети. В этом случае закрытый доступ к этим службам сможет осуществляться в виртуальной сети и из локальных сетей.
+- Использование [Приватного канала](../private-link/private-link-overview.md) для частного доступа к конкретному экземпляру службы из виртуальной сети и из локальных сетей.
+- Вы также можете получить доступ к службе с помощью общедоступных конечных точек, расширив виртуальную сеть за счет добавления службы с помощью [конечных точек службы](virtual-network-service-endpoints-overview.md). Конечные точки службы позволяют защитить ресурсы службы в виртуальной сети.
+ 
 
 ## <a name="azure-vnet-limits"></a>Ограничения виртуальной сети Azure
 

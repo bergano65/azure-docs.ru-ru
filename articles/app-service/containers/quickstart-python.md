@@ -2,20 +2,20 @@
 title: Краткое руководство. Создание приложения Python для Linux
 description: Начните работу с приложениями Linux в Службе приложений Azure, развернув первое приложение Python в контейнере Linux в Службе приложений.
 ms.topic: quickstart
-ms.date: 10/22/2019
+ms.date: 04/03/2020
 ms.custom: seo-python-october2019, cli-validate
 experimental: true
 experiment_id: 01a9132f-eaab-4c
-ms.openlocfilehash: 9cc314edf35d6a327522ed49fcc0c7798c7dcf63
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 63daecca710e0e4d7b3326cea59c0c025c24f619
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80045669"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80811152"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
-В этом кратком руководстве описывается процесс развертывания веб-приложения Python для [службы приложений на платформе Linux](app-service-linux-intro.md), высокомасштабируемой службы веб-размещения Azure с самостоятельной установкой исправлений. Вы используете локальный [интерфейс командной строки Azure (CLI)](/cli/azure/install-azure-cli) на компьютере Mac, Linux или Windows. Веб-приложение, которое вы настраиваете, использует бесплатный уровень Службы приложений, поэтому в рамках этой статьи затраты не изменяются.
+В этом кратком руководстве описывается процесс развертывания веб-приложения Python для [службы приложений на платформе Linux](app-service-linux-intro.md), высокомасштабируемой службы веб-размещения Azure с самостоятельной установкой исправлений. Вы используете локальный [интерфейс командной строки Azure (CLI)](/cli/azure/install-azure-cli) на компьютере Mac, Linux или Windows. Веб-приложение, которое вы настраиваете, использует бесплатный уровень Службы приложений, поэтому в процессе выполнения этого руководства затраты на ресурсы Azure не изменяются.
 
 Если вы предпочитаете развертывать приложения с помощью интегрированной среды разработки, см. статью [Развертывание приложений Python в службе приложений из Visual Studio Code](/azure/python/tutorial-deploy-app-service-on-linux-01).
 
@@ -24,7 +24,7 @@ ms.locfileid: "80045669"
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - <a href="https://www.python.org/downloads/" target="_blank">Python 3.7</a> (также поддерживается Python 3.6)
 - <a href="https://git-scm.com/downloads" target="_blank">Git</a>;
-- <a href="https://docs.microsoft.com/cli/azure/install-azure-cli" target="_blank">Azure CLI</a>
+- <a href="https://docs.microsoft.com/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> 2.0.80 или последующей версии. Выполните команду `az --version`, чтобы узнать номер версии.
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -98,39 +98,44 @@ az login
 
 Команда [`az webapp up`](/cli/azure/webapp#az-webapp-up) создает веб-приложение в Службе приложений и развертывает ваш код.
 
-В папке *python-docs-hello-world*, содержащей пример кода, выполните следующую команду `az webapp up`. Замените `<app-name>` глобальным уникальным именем приложения (*допустимые символы: `a-z`, `0-9` и `-`* ). Также замените `<location-name>` на регион Azure, например **centralus**, **eastasia**, **westeurope**, **koreasouth**, **brazilsouth**, **centralindia** и т. д. (Список допустимых регионов для учетной записи Azure можно получить, выполнив команду [`az account list-locations`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations).)
+В папке *python-docs-hello-world*, содержащей пример кода, выполните следующую команду `az webapp up`. Замените `<app-name>` глобальным уникальным именем приложения (*допустимые символы: `a-z`, `0-9` и `-`* ).
 
 
 ```azurecli
-az webapp up --sku F1 -n <app-name> -l <location-name>
+az webapp up --sku F1 -n <app-name>
 ```
 
-Выполнение этой команды может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения:
+Аргумент `--sku F1` создает веб-приложение в ценовой категории "Бесплатный". Этот аргумент можно опустить, чтобы использовать ценовую категорию "Премиум" с почасовой стоимостью.
 
-```output
-The behavior of this command has been altered by the following extension: webapp
+Вы также можете добавить аргумент `-l <location-name>`, где `<location_name>` — это регион Azure, например **centralus**, **eastasia**, **westeurope**, **koreasouth**, **brazilsouth**, **centralindia** и т. д. Список допустимых регионов для учетной записи Azure можно получить, выполнив команду [`az account list-locations`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations).
+
+Выполнение команды `az webapp up` может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения, где `<app_name>` — это указанное вами ранее имя:
+
+<pre>
 Creating Resource group 'appsvc_rg_Linux_centralus' ...
 Resource group creation complete
 Creating App service plan 'appsvc_asp_Linux_centralus' ...
 App service plan creation complete
 Creating app '<app-name>' ....
-Webapp creation complete
-Creating zip with contents of dir /home/username/quickstart/python-docs-hello-world ...
-Preparing to deploy contents to app.
-All done.
+Configuring default logging for the app, if not already enabled
+Creating zip with contents of dir D:\Examples\python-docs-hello-world ...
+Getting scm site credentials for zip deployment
+Starting zip deployment. This operation can take a while to complete ...
+Deployment endpoint responded with status code 202
+You can launch the app at http://<app-name>.azurewebsites.net
 {
-  "app_url": "https:/<app-name>.azurewebsites.net",
-  "location": "Central US",
+  "URL": "http://<app-name>.net",
+  "appserviceplan": "appsvc_asp_Linux_centralus",
+  "location": "eastus",
   "name": "<app-name>",
   "os": "Linux",
-  "resourcegroup": "appsvc_rg_Linux_centralus ",
-  "serverfarm": "appsvc_asp_Linux_centralus",
-  "sku": "BASIC",
-  "src_path": "/home/username/quickstart/python-docs-hello-world ",
-  "version_detected": "-",
-  "version_to_create": "python|3.7"
+  "resourcegroup": "appsvc_rg_Linux_centralus",
+  "runtime_version": "python|3.7",
+  "runtime_version_detected": "-",
+  "sku": "FREE",
+  "src_path": "D:\\Examples\\python-docs-hello-world"
 }
-```
+</pre>
 
 [!INCLUDE [AZ Webapp Up Note](../../../includes/app-service-web-az-webapp-up-note.md)]
 
@@ -146,20 +151,23 @@ All done.
 
 ## <a name="redeploy-updates"></a>Повторное развертывание обновлений
 
-В любом редакторе кода откройте *application.py* и измените инструкцию `return` в последней строке, чтобы она соответствовала следующему коду. Инструкция `print` здесь добавлена для создания выходных данных журнала, которые понадобятся в следующем разделе. 
+Откройте в редакторе файл *application.py* и измените функцию `hello` следующим образом. Будет добавлена инструкция `print` для создания выходных данных журнала, которые понадобятся в следующем разделе. 
 
 ```python
-print("Handling request to home page.")
-return "Hello Azure!"
+def hello():
+    print("Handling request to home page.")
+    return "Hello Azure!"
 ```
 
 Сохраните изменения и выйдите из редактора. 
 
-Повторно разверните приложение с помощью следующей команды `az webapp up`, используя ту же команду, которая использовалась для развертывания приложения в первый раз, заменив `<app-name>` и `<location-name>` именами, которые использовались ранее. 
+Повторно разверните приложение с помощью команды `az webapp up`.
 
 ```azurecli
-az webapp up --sku F1 -n <app-name> -l <location-name>
+az webapp up
 ```
+
+Эта команда использует значения, которые кэшируются в файле *.azure/config*, включая имя приложения, группу ресурсов и план службы приложений.
 
 После завершения развертывания вернитесь в окно браузера, откройте `http://<app-name>.azurewebsites.net` и обновите страницу, на которой должно отобразиться измененное сообщение:
 
@@ -172,24 +180,18 @@ az webapp up --sku F1 -n <app-name> -l <location-name>
 
 Вы можете получить доступ к журналам консоли, созданным в приложении, и контейнеру, в котором он выполняется. Журналы содержат все выходные данные, созданные с помощью инструкций `print`.
 
-Сначала включите ведение журнала контейнера, выполнив следующую команду в терминале, заменив `<app-name>` именем приложения, а `<resource-group-name>` — именем группы ресурсов, показанной в выходных данных используемой команды `az webapp up` (например, "appsvc_rg_Linux_centralus"):
+Чтобы включить потоковую передачу журналов, выполните следующую команду:
 
 ```azurecli
-az webapp log config --name <app-name> --resource-group <resource-group-name> --docker-container-logging filesystem
-```
-
-После включения ведения журнала контейнера, выполните следующую команду, чтобы просмотреть поток данных журнала.
-
-```azurecli
-az webapp log tail --name <app-name> --resource-group <resource-group-name>
+az webapp log tail
 ```
 
 Обновите приложение в браузере, чтобы сгенерировать журналы консоли, которые должны содержать строки, аналогичные приведенным ниже. Если выходные данные не отображаются немедленно, повторите попытку через 30 секунд.
 
-```output
-2019-10-23T12:40:03.815574424Z Handling request to home page.
-2019-10-23T12:40:03.815602424Z 172.16.0.1 - - [23/Oct/2019:12:40:03 +0000] "GET / HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.63 Safari/537.36 Edg/78.0.276.19"
-```
+<pre>
+2020-04-03T22:54:04.236405938Z Handling request to home page.
+2020-04-03T22:54:04.236497641Z 172.16.0.1 - - [03/Apr/2020:22:54:04 +0000] "GET / HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.83 Safari/537.36 Edg/81.0.416.41"
+</pre>
 
 Вы также можете проверить файлы журнала в браузере на странице `https://<app-name>.scm.azurewebsites.net/api/logs/docker`.
 
@@ -213,7 +215,7 @@ az webapp log tail --name <app-name> --resource-group <resource-group-name>
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-На предыдущем шаге вы создали ресурсы Azure в группе ресурсов. Группа ресурсов имеет имя, такое как "appsvc_rg_Linux_CentralUS", в зависимости от расположения. Если вы используете номер SKU Службы приложений, отличный от бесплатного уровня F1, эти ресурсы потребуют постоянных расходов.
+На предыдущем шаге вы создали ресурсы Azure в группе ресурсов. Группа ресурсов имеет имя, такое как "appsvc_rg_Linux_CentralUS", в зависимости от расположения. Если вы используете номер SKU Службы приложений, отличающийся от бесплатного уровня F1, за эти ресурсы будет взиматься плата (см. сведения о [ценах на Службу приложений](https://azure.microsoft.com/pricing/details/app-service/linux/)).
 
 Если вы не планируете использовать эти ресурсы в будущем, удалите группу ресурсов, выполнив следующую команду, заменив `<resource-group-name>` на имя группы ресурсов, показанное в выходных данных команды `az webapp up`, например "appsvc_rg_Linux_centralus". Выполнение этой команды может занять около минуты.
 

@@ -5,16 +5,16 @@ author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8e65ebbfa0971bf2156165b55ca18eee3cc74bc9
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: 83108c056035b16d26343d82c721b275ebcad0c5
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80239273"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80754322"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-arm-templates"></a>Руководство по Импорт BACPAC-файлов SQL с помощью шаблонов ARM
 
-Узнайте, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager (ARM). Артефакты развертывания — это любые файлы, которые помимо файлов основного шаблона необходимы для выполнения развертывания. BACPAC-файл является артефактом. 
+Узнайте, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager (ARM). Артефакты развертывания — это любые файлы, которые помимо файлов основного шаблона необходимы для выполнения развертывания. BACPAC-файл является артефактом.
 
 В этом учебнике вы создадите шаблон для развертывания Azure SQL Server, Базы данных SQL и импорта BACPAC-файла. См. сведения о развертывании расширений виртуальной машины Azure с помощью шаблонов ARM в руководстве по [ развертыванию расширений виртуальной машины с помощью шаблонов ARM](./template-tutorial-deploy-vm-extensions.md).
 
@@ -255,7 +255,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы развернули SQL Server, Базу данных SQL и импортированный BACPAC-файл. BACPAC-файл хранится в учетной записи хранения Azure. К нему может получить доступ любой пользователь, у которого есть URL-адрес. Сведения о защите BACPAC-файла (артефакта) см. в следующем ресурсе:
+В этом учебнике вы развернули SQL Server, Базу данных SQL и импортированный BACPAC-файл. Инструкции по устранению неполадок при развертывании шаблонов см. в руководстве по
 
 > [!div class="nextstepaction"]
-> [Защита артефактов](./template-tutorial-secure-artifacts.md)
+> [устранению неполадок при развертывании шаблонов Resource Manager](./template-tutorial-troubleshoot.md).

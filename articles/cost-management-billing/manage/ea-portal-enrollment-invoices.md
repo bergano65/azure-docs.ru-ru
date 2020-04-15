@@ -3,16 +3,16 @@ title: Счета по Соглашению о регистрации Azure Ente
 description: В этой статье описано, как управлять счетами Azure Enterprise и работать с ними.
 author: bandersmsft
 ms.author: banders
-ms.date: 03/03/2020
+ms.date: 04/06/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: boalcsva
-ms.openlocfilehash: 9fbc2ffcf1158f436c060817f8f25152f839c3e0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d8d189d2ee67e3f98fec5d7d4cd295879e8689c9
+ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79037255"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80743891"
 ---
 # <a name="azure-enterprise-enrollment-invoices"></a>Счета по Соглашению о регистрации Azure Enterprise
 
@@ -494,6 +494,12 @@ ms.locfileid: "79037255"
 - Visual Studio Enterprise — ежегодно
 - Visual Studio Professional — ежемесячно
 - Visual Studio Professional — ежегодно
+
+## <a name="what-to-expect-after-change-of-channel-partner"></a>Чего ожидать после изменения партнера по сбыту
+
+Если изменение партнера по сбыту происходит в середине месяца, клиент получит один счет за использование в сотрудничестве с предыдущим партнером и другой счет за использование в сотрудничестве с новым партнером.
+
+Эти счета будут выставлены в течение месяца после окончания периода выставления счетов. Если счета выставляются ежемесячно, то счета за сентябрь для обоих партнеров будут выставлены в октябре. Если счета выставляются ежеквартально или ежегодно, клиент может ожидать счет за использование в сотрудничестве с предыдущим партнером в течение этого периода, а остальные счета будут выставлены в следующий период выставления счетов.
 
 ## <a name="azure-marketplace-for-ea-customers"></a>Azure Marketplace для клиентов EA
 

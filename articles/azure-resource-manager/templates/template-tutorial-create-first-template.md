@@ -2,21 +2,21 @@
 title: Учебник. Создание шаблона и его развертывание
 description: Создайте свой первый шаблон Azure Resource Manager. В этом учебнике вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e31d4a5f513355e61cb53a6548b3091637bfe9a4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8b05bccf10ef5f273a74ca49e02162fd0408230f
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471509"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411725"
 ---
-# <a name="tutorial-create-and-deploy-your-first-azure-resource-manager-template"></a>Руководство. Создание и развертывание первого шаблона Azure Resource Manager
+# <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Руководство по Создание и развертывание шаблона ARM
 
-В этом учебнике рассматриваются шаблоны Azure Resource Manager. В нем показано, как создать изначальный шаблон и развернуть его в Azure. Вы узнаете о структуре шаблона и средствах, необходимых для работы с шаблонами. Для работы с этим учебником требуется около **12 минут**, но фактическое время зависит от того, сколько средств необходимо установить.
+В этом руководстве рассматриваются шаблоны Azure Resource Manager (ARM). В нем показано, как создать изначальный шаблон и развернуть его в Azure. Вы узнаете о структуре шаблона и средствах, необходимых для работы с шаблонами. Для работы с этим учебником требуется около **12 минут**, но фактическое время зависит от того, сколько средств необходимо установить.
 
-Этот учебник первый в серии. По мере продвижения вы измените изначальный шаблон пошагово, пока не изучите все основные части шаблона Resource Manager. Эти элементы являются стандартными блоками для более сложных шаблонов. Мы надеемся, что в конце серии вы сможете уверенно создавать собственные шаблоны и будете готовы к автоматизации развертываний с помощью шаблонов.
+Этот учебник первый в серии. Работая с этой серией, вы будете пошагово изменять исходный шаблон, пока не изучите основные компоненты шаблона ARM. Эти элементы являются стандартными блоками для более сложных шаблонов. Мы надеемся, что в конце серии вы сможете уверенно создавать собственные шаблоны и будете готовы к автоматизации развертываний с помощью шаблонов.
 
 Если вы хотите узнать о преимуществах использования шаблонов и о том, почему следует автоматизировать развертывание с их помощью, ознакомьтесь со статьей [Azure Resource Manager templates](overview.md) (Шаблоны Azure Resource Manager).
 
@@ -28,11 +28,11 @@ ms.locfileid: "75471509"
 
 ### <a name="editor"></a>Редактор
 
-Шаблоны — это файлы JSON. Для создания шаблонов нужен редактор JSON. Советуем использовать Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения об установке см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md)(Создание шаблонов Azure Resource Manager c помощью Visual Studio Code).
+Шаблоны — это файлы JSON. Для создания шаблонов нужен редактор JSON. Советуем использовать Visual Studio Code с расширением средств Resource Manager. Чтобы установить эти средства, см. руководство по [использованию Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
 
 ### <a name="command-line-deployment"></a>Развертывание из командной строки
 
-Для развертывания шаблона используйте либо Azure CLI, либо Azure PowerShell. Ознакомьтесь с инструкциями по установке:
+Для развертывания шаблона используйте либо Azure CLI, либо Azure PowerShell. При использовании Azure CLI необходимо иметь последнюю версию. Ознакомьтесь с инструкциями по установке:
 
 - [Установка Azure PowerShell](/powershell/azure/install-az-ps)
 - [Установка Azure CLI в Windows](/cli/azure/install-azure-cli-windows)
@@ -53,7 +53,7 @@ ms.locfileid: "75471509"
 
     ```json
     {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
       "contentVersion": "1.0.0.0",
       "resources": []
     }
@@ -67,7 +67,7 @@ ms.locfileid: "75471509"
 
     Файл JSON содержит следующие элементы:
 
-    - **$schema**: расположение файла схемы JSON. В файле схемы описываются свойства, доступные в шаблоне. Например, схема определяет **resources** как одно из допустимых свойств шаблона. Не беспокойтесь, что указана дата схемы 2015-01-01. Эта версия схемы обновлена и включает все новейшие функции. Дата схемы не изменилась, так как в ней отсутствуют критические изменения.
+    - **$schema**: расположение файла схемы JSON. В файле схемы описываются свойства, доступные в шаблоне. Например, схема определяет **resources** как одно из допустимых свойств шаблона. Не беспокойтесь, что для схемы указана дата 2019-04-01. Эта версия схемы обновлена и включает все новейшие функции. Дата схемы не изменилась, так как в ней отсутствуют критические изменения.
     - **contentVersion**: версия шаблона (например, 1.0.0.0). Для этого элемента можно предоставить любое значение. Это значение позволяет задокументировать важные изменения в шаблоне. При развертывании ресурсов с помощью шаблона это значение позволяет убедиться в том, что используется нужный шаблон.
     - **resources:** Содержит ресурсы, которые требуется развернуть или обновить. В настоящее время элемент пуст, но вы добавите ресурсы позже.
 
@@ -79,13 +79,13 @@ ms.locfileid: "75471509"
 
 Чтобы начать работу с Azure PowerShell или Azure CLI, выполните вход, используя данные своей учетной записи в Azure.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 Connect-AzAccount
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az login
@@ -96,7 +96,7 @@ az login
 
 При развертывании шаблона необходимо указать группу ресурсов, которая будет содержать развернутые ресурсы. Перед выполнением команды развертывания создайте группу ресурсов с помощью Azure CLI или Azure PowerShell. Выберите вкладки в следующем разделе кода, чтобы выбрать между Azure PowerShell и Azure CLI. Примеры интерфейса командной строки в этой статье написаны для оболочки bash.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroup `
@@ -104,7 +104,7 @@ New-AzResourceGroup `
   -Location "Central US"
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az group create \
@@ -118,21 +118,23 @@ az group create \
 
 Для развертывания шаблона используйте либо Azure CLI, либо Azure PowerShell. Используйте группу ресурсов, созданную ранее. Присвойте имя развертыванию, чтобы его можно было легко найти в журнале развертываний. Для удобства также создайте переменную, в которой хранится путь к файлу шаблона. Эта переменная упрощает выполнение команд развертывания, так как вам не нужно повторно вводить путь при каждом развертывании.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 $templateFile = "{provide-the-path-to-the-template-file}"
 New-AzResourceGroupDeployment `
   -Name blanktemplate `
   -ResourceGroupName myResourceGroup `
-  -TemplateFile $templateFile
+  -TemplateFile $templateFile 
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы выполнить эту команду развертывания, необходимо иметь [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
 
 ```azurecli
 templateFile="{provide-the-path-to-the-template-file}"
-az group deployment create \
+az deployment group create \
   --name blanktemplate \
   --resource-group myResourceGroup \
   --template-file $templateFile
@@ -142,15 +144,18 @@ az group deployment create \
 
 Результаты выполнения команды развертывания выглядят так: Найдите `ProvisioningState`, чтобы определить успешность развертывания.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ![Состояние подготовки развертывания PowerShell](./media/template-tutorial-create-first-template/resource-manager-deployment-provisioningstate.png)
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ![Состояние подготовки развертывания Azure CLI](./media/template-tutorial-create-first-template/azure-cli-provisioning-state.png)
 
 ---
+
+> [!NOTE]
+> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
 
 ## <a name="verify-deployment"></a>Проверка развертывания
 

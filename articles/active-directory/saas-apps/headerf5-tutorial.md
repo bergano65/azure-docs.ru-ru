@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ad6b7150a43a286a4bec39a0482e08f50d95c06
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 352f52a2a6d84d352bb46e09f104efde303307f5
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77048066"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478051"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство по Интеграция единого входа Azure Active Directory с F5
 
@@ -281,7 +281,7 @@ ms.locfileid: "77048066"
 
 ## <a name="advanced-configuration"></a>Расширенная настройка
 
-Этот раздел следует использовать в том случае, если вы не можете применить интерактивную конфигурацию либо вам нужно добавить или изменить дополнительные параметры. Для имени узла приложения потребуется SSL-сертификат.
+Этот раздел следует использовать в том случае, если вы не можете применить интерактивную конфигурацию либо вам нужно добавить или изменить дополнительные параметры. Для имени узла приложения потребуется TLS/SSL-сертификат.
 
 1. Выберите **System > Certificate Management > Traffic Certificate Management > SSL Certificate List** (Система > Управление сертификатами > Управление сертификатами трафика > Список SSL-сертификатов). В правом верхнем углу нажмите кнопку **Import** (Импортировать). Выберите в качестве **типа импорта** **PKCS 12(IIS)** . Укажите **имя ключа** (понадобится позднее в конфигурации) и PFX-файл. Введите **пароль** для PFX-файла. Щелкните **Импорт**.
 
@@ -298,7 +298,7 @@ ms.locfileid: "77048066"
  
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure18.png)
 
-1. Мы опубликуем наш HeaderApp2 внешне (с использованием HTTPS в этом случае). Для параметра **how should the BIG-IP system handle SSL Traffic?** (Как система BIG-IP должна обрабатывать трафик SSL?) укажите **Terminate SSL from Client, Plaintext to servers (SSL Offload)** (Завершение SSL-трафика открытого текста от клиента к серверам (разгрузка SSL)). Укажите сертификат и ключ в разделах Which SSL certificate do you want to use? (Какой сертификат SSL следует использовать?) и **Which SSL private key do you want to use?** (Какой закрытый ключ SSL следует использовать?) соответственно. Укажите IP-адрес виртуального сервера в разделе **What IP Address do you want to use for the Virtual Server?** (Какой IP-адрес использовать для виртуального сервера?). 
+1. Мы опубликуем наш HeaderApp2 внешне (с использованием HTTPS в этом случае). Для параметра **how should the BIG-IP system handle SSL Traffic?** (Как система BIG-IP должна обрабатывать трафик SSL?) укажите **Terminate SSL from Client, Plaintext to servers (SSL Offload)** (Завершение SSL-трафика открытого текста от клиента к серверам (разгрузка SSL)). Укажите сертификат и ключ в разделах **Which SSL certificate do you want to use?** (Какой SSL-сертификат следует использовать?) и **Which SSL private key do you want to use?** (Какой закрытый ключ SSL следует использовать?) соответственно. Укажите IP-адрес виртуального сервера в разделе **What IP Address do you want to use for the Virtual Server?** (Какой IP-адрес использовать для виртуального сервера?). 
 
     * **Укажите другие сведения**:
 

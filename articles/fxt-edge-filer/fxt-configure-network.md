@@ -6,12 +6,12 @@ ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: a40ff50dcb0934cbf1ea5222675bd75948ac1d03
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9b0154889544e0054e309cc5f43851b73b4396b4
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79223971"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80754693"
 ---
 # <a name="tutorial-configure-the-clusters-network-settings"></a>Руководство по настройке параметров сети кластера
 
@@ -76,7 +76,7 @@ ms.locfileid: "79223971"
 
 Если необходимо отправить сертификаты в кластер, используйте страницу параметров **Cluster** > **Certificates** (Кластер > Сертификаты). Дополнительные сведения см. на странице [Cluster > Certificates](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_certificates.html) (Кластер > Сертификаты) в руководстве по настройке кластера.
 
-Для шифрования данных об управлении кластером используйте страницу параметров **Cluster** > **General Setup** (Кластер >Общая настройка), чтобы выбрать, какой сертификат использовать для SSL администрирования.
+Для шифрования данных об управлении кластером используйте страницу параметров **Кластер** > **Общая настройка**, чтобы выбрать, какой сертификат использовать для TLS администрирования.
 
 > [!Note] 
 > Ключи доступа облачной службы хранятся с помощью страницы конфигурации **Cloud Credentials** (Учетные данные облака). В предыдущем разделе [Add a core filer](fxt-add-storage.md#add-a-core-filer) (Добавление основного файлового хранилища) приведен пример. Дополнительные сведения см. в разделе [Cloud Credentials](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_cloud_credentials.html) (Учетные данные облака) в руководстве по настройке кластера. 

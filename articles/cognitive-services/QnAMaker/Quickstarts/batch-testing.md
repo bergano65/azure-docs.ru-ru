@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/08/2020
 ms.author: diberry
-ms.openlocfilehash: e16166c741b99c1af5b36f2c7ccd25b01f7544ba
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 3bc095d8949f177ccb6c4cc111ba4b272027904e
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77108992"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756702"
 ---
 # <a name="quickstart-test-knowledge-base-with-batch-questions-and-expected-answers"></a>Краткое руководство. Тестирование базы знаний с использованием пакетных вопросов и ожидаемых ответов
 
@@ -149,7 +149,7 @@ batchtesting.exe batch-test-data-1.tsv https://YOUR-RESOURCE-NAME.azurewebsites.
     |Charge your Surface Pro 4|
     |Check the battery level|
 
-    Два набора QnA с указанными метаданными.
+    Две пары "вопрос — ответ" с указанными метаданными.
 
     > [!TIP]
     > Чтобы получить метаданные и идентификаторы QnA для каждого набора, экспортируйте базу знаний. Перейдите на страницу **Settings** (Параметры), а затем щелкните **Export** (Экспортировать), чтобы получить файл `.xls`. Найдите этот скачанный файл и откройте его в Excel для просмотра метаданных и идентификатора.
@@ -169,7 +169,7 @@ batchtesting.exe batch-test-data-1.tsv https://YOUR-RESOURCE-NAME.azurewebsites.
 
 В следующей процедуре предполагается, что мы обрабатываем журналы разговора
 
-1. Создайте новый файл пакетного теста и включите в него необязательные данные `batch-test-data-2.tsv`. Добавьте шесть строк из исходного входного файла пакетного теста, а затем добавьте метаданные, наилучший ответ и идентификатор набора QnA для каждой строки.
+1. Создайте новый файл пакетного теста и включите в него необязательные данные `batch-test-data-2.tsv`. Добавьте шесть строк из исходного входного файла пакетного теста, а затем добавьте метаданные, наилучший ответ и идентификатор пары "вопрос — ответ" для каждой строки.
 
     Чтобы имитировать автоматическую проверку нового текста из журналов разговора на соответствие с базой знаний, для метаданных в каждом столбце задайте одно и то же значение `topic:power`.
 

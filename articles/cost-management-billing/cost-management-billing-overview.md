@@ -8,12 +8,12 @@ ms.date: 01/24/2020
 ms.topic: overview
 ms.service: cost-management-billing
 ms.custom: ''
-ms.openlocfilehash: 3314d00651fc5e0473d84710803671f2ad45f005
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2f96208ff3f9664d82bfc1d9ddf9bc5b9aec37c3
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79474532"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80879094"
 ---
 # <a name="what-is-azure-cost-management-and-billing"></a>Что собой представляет "Управление затратами и выставление счетов Azure"?
 
@@ -67,7 +67,7 @@ ms.locfileid: "79474532"
 ## <a name="understand-azure-cost-management"></a>Общие сведения о службе "Управление затратами Azure"
 Управление затратами — это процесс эффективного планирования и контроля затрат, связанных с вашим бизнесом. Обычно задачи по управлению затратами выполняют финансовый отдел, руководство или разработчики приложений. Служба "Управление затратами и выставление счетов Azure" помогает организациям планировать затраты. Она позволяет эффективно анализировать затраты и принимать меры для оптимизации расходов на облако. Дополнительные сведения об управлении затратами в организации см. в статье [Рекомендации по работе со службой управления затратами Azure](./costs/cost-mgt-best-practices.md).
 
-См. подробнее об экономии в Azure в [видео с общими сведениями об Управлении затратами Azure](https://www.youtube.com/watch?v=el4yN5cHsJ0).
+См. подробнее об экономии в Azure в [видео с общими сведениями об Управлении затратами Azure](https://www.youtube.com/watch?v=el4yN5cHsJ0). Чтобы просмотреть другие видео, посетите канал YouTube, посвященный [службе "Управление затратами"](https://www.youtube.com/c/AzureCostManagement).
 
 >[!VIDEO https://www.youtube.com/embed/el4yN5cHsJ0]
 
@@ -93,7 +93,7 @@ ms.locfileid: "79474532"
 
 [Cloudyn](./cloudyn/overview.md) — это служба Azure по управлению затратами, поддержка которой прекратится в конце 2020 года. Существующие функции Cloudyn переносятся непосредственно на портал Azure по мере возможности. Сейчас новые клиенты не добавляются, но поддержка продукта продолжает предоставляться до тех пор, пока он не будет окончательно объявлен нерекомендуемым.
  
-Чтобы узнать, какую службу следует выбирать в той или иной ситуации с учетом бизнес-потребностей, см. [видео об Управлении затратами Azure и Cloudyn](https://www.youtube.com/watch?v=15DzKPMBRxM).
+Чтобы узнать, какую службу следует выбирать в той или иной ситуации с учетом бизнес-потребностей, см. [видео об Управлении затратами Azure и Cloudyn](https://www.youtube.com/watch?v=15DzKPMBRxM). Чтобы просмотреть другие видео, посетите канал YouTube, посвященный [службе "Управление затратами"](https://www.youtube.com/c/AzureCostManagement).
  
 >[!VIDEO https://www.youtube.com/embed/15DzKPMBRxM]
 
