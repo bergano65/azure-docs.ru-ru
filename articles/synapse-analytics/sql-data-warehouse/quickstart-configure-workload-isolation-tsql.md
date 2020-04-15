@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 555d437fb0ee898473b37febb1774924b55bfa1d
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: d3d1b9af0b26fa775beb78b313937890cb9287b3
+ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350851"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80633764"
 ---
 # <a name="quickstart-configure-workload-isolation-using-t-sql"></a>Краткое руководство. Настройка изоляции рабочих нагрузок с помощью T-SQL
 
@@ -26,11 +26,9 @@ ms.locfileid: "80350851"
 
 > [!NOTE]
 > Создание экземпляра SQL Analytics в Azure Synapse Analytics может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
->
->
 
 ## <a name="prerequisites"></a>Предварительные требования
- 
+
 В этом кратком руководстве предполагается, что у вас уже есть экземпляр SQL Analytics в Azure Synapse и права доступа к системе управления базой данных. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
@@ -39,7 +37,7 @@ ms.locfileid: "80350851"
 
 ## <a name="create-login-for-dataloads"></a>Создание имени для входа для DataLoads
 
-Создайте имя для входа с аутентификацией SQL Server в базе данных `master`, используя оператор [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql) для ELTLogin.
+Создайте имя для входа с аутентификацией SQL Server в базе данных `master`, используя оператор [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для ELTLogin.
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.sql_logins WHERE name = 'ELTLogin')
@@ -51,7 +49,7 @@ END
 
 ## <a name="create-user"></a>Создать пользователя
 
-[Создайте пользователя](/sql/t-sql/statements/create-user-transact-sql?view=azure-sqldw-latest) ELTLogin в mySampleDataWarehouse.
+[Создайте пользователя](/sql/t-sql/statements/create-user-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) ELTLogin в mySampleDataWarehouse.
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'ELTLogin')
@@ -62,18 +60,20 @@ END
 ```
 
 ## <a name="create-a-workload-group"></a>Создание группы рабочей нагрузки
-Создайте [группу рабочей нагрузки](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest) для DataLoads с уровнем изоляции в 20 %.
+
+Создайте [группу рабочей нагрузки](/sql/t-sql/statements/create-workload-group-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для DataLoads с уровнем изоляции в 20 %.
+
 ```sql
 CREATE WORKLOAD GROUP DataLoads
-WITH ( MIN_PERCENTAGE_RESOURCE = 20   
+WITH ( MIN_PERCENTAGE_RESOURCE = 20
       ,CAP_PERCENTAGE_RESOURCE = 100
-      ,REQUEST_MIN_RESOURCE_GRANT_PERCENT = 5) 
+      ,REQUEST_MIN_RESOURCE_GRANT_PERCENT = 5)
 ;
 ```
 
 ## <a name="create-a-workload-classifier"></a>Создание классификатора рабочих нагрузок
 
-Создайте [классификатор рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest), чтобы связать ELTLogin с группой рабочей нагрузки DataLoads.
+Создайте [классификатор рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы связать ELTLogin с группой рабочей нагрузки DataLoads.
 
 ```sql
 CREATE WORKLOAD CLASSIFIER [wgcELTLogin]
@@ -86,15 +86,15 @@ WITH (WORKLOAD_GROUP = 'DataLoads'
 
 ```sql
 --Workload groups
-SELECT * FROM 
+SELECT * FROM
 sys.workload_management_workload_groups
 
 --Workload classifiers
-SELECT * FROM 
+SELECT * FROM
 sys.workload_management_workload_classifiers
 
 --Run-time values
-SELECT * FROM 
+SELECT * FROM
 sys.dm_workload_management_workload_groups_stats
 ```
 
@@ -128,5 +128,5 @@ DROP USER [ELTLogin]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Вы создали группу рабочей нагрузки. Теперь выполните несколько запросов как ELTLogin, чтобы проверить, как они работают. Запросы и назначенную группу рабочей нагрузки можно просмотреть в представлении [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
-- Дополнительные сведения об управлении рабочими нагрузками SQL Analytics см. в статьях [Что такое управление рабочей нагрузкой?](sql-data-warehouse-workload-management.md) и [Изоляция группы рабочей нагрузки хранилища данных SQL (предварительная версия)](sql-data-warehouse-workload-isolation.md).
+- Вы создали группу рабочей нагрузки. Теперь выполните несколько запросов как ELTLogin, чтобы проверить, как они работают. Запросы и назначенную группу рабочей нагрузки можно просмотреть в представлении [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Дополнительные сведения об управлении рабочими нагрузками SQL Synapse см. в статьях [Что такое управление рабочей нагрузкой?](sql-data-warehouse-workload-management.md) и [Изоляция группы рабочей нагрузки Azure Synapse Analytics (предварительная версия)](sql-data-warehouse-workload-isolation.md).

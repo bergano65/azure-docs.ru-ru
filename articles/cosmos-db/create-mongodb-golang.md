@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: quickstart
 ms.date: 12/26/2018
-ms.openlocfilehash: c717a8d5baa57ce780fbbc0d25e67c2509ca86fc
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 94be0ec16aedc317f1be41998356bc52b66f7e86
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75441944"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80619211"
 ---
 # <a name="quickstart-build-a-console-app-using-azure-cosmos-dbs-api-for-mongodb-and-golang-sdk"></a>Краткое руководство. Создание консольного приложения с помощью API для MongoDB (Azure Cosmos DB) и пакета SDK Golang
 
@@ -93,7 +93,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ### <a name="connecting-the-go-app-to-cosmos-db"></a>Подключение приложения Go к Cosmos DB
 
-API Azure Cosmos DB для MongoDB поддерживает подключение по протоколу SSL. Чтобы подключиться, необходимо определить функцию **DialServer** в разделе [mgo.DialInfo](https://godoc.org/gopkg.in/mgo.v2#DialInfo) и использовать функцию [tls.*Dial*](https://golang.org/pkg/crypto/tls#Dial) для установки подключения.
+API Azure Cosmos DB для MongoDB поддерживает подключение по протоколу TLS. Чтобы подключиться, необходимо определить функцию **DialServer** в разделе [mgo.DialInfo](https://godoc.org/gopkg.in/mgo.v2#DialInfo) и использовать функцию [tls.*Dial*](https://golang.org/pkg/crypto/tls#Dial) для установки подключения.
 
 Следующий фрагмент кода Golang подключается к приложению Go с помощью API Azure Cosmos DB для MongoDB. Класс *DialInfo* содержит параметры для установки сеанса подключения.
 
@@ -129,7 +129,7 @@ defer session.Close()
 session.SetSafe(&mgo.Safe{})
 ```
 
-Метод **mgo.Dial()** используется, когда отсутствует подключение SSL. Для подключения SSL требуется метод **mgo.DialWithInfo()** .
+Метод **mgo.Dial()** используется, когда отсутствует TLS-подключение. Для TLS-подключения требуется метод **mgo.DialWithInfo()** .
 
 Для создания объекта сеанса используется экземпляр объекта **DialWIthInfo{}** . После установки сеанса можно получить доступ к коллекции, используя следующий фрагмент кода:
 

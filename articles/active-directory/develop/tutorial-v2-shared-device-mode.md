@@ -2,25 +2,22 @@
 title: Использование режима общего устройства с MSAL Android | Azure
 description: Сведения о том, как подготовить устройство Android для работы в режиме общего доступа и запустить приложение для сотрудников, взаимодействующих с клиентами.
 services: active-directory
-documentationcenter: dev-center-name
 author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 1/15/2020
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: bf7e6bb22ce89d6be3f79efad1f1a3679e8780e7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b2f74d2d441007f195abd38ca26ca7fa73605318
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77086061"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80886438"
 ---
 # <a name="tutorial-use-shared-device-mode-in-your-android-application"></a>Руководство по Использование режима общего устройства в приложении Android
 
@@ -96,9 +93,9 @@ deviceModeTextView.setText(mSingleAccountApp.isSharedDevice() ?"Shared" :"Non-Sh
 ```java
 private ISingleAccountPublicClientApplication mSingleAccountApp;
 
-/*Configure your sample app and save state for this activity*/ 
+/*Configure your sample app and save state for this activity*/
 PublicClientApplication.create(this.getApplicationCOntext(),
-  R.raw.auth_config, 
+  R.raw.auth_config,
   new PublicClientApplication.ApplicationCreatedListener(){
   @Override
   public void onCreated(IPublicClientApplication application){
@@ -109,12 +106,12 @@ PublicClientApplication.create(this.getApplicationCOntext(),
   public void onError(MsalException exception{
   /*Fail to initialize PublicClientApplication */
   }
-});  
+});
 ```
 
 ### <a name="detect-single-vs-multiple-account-mode"></a>Различение режимов одной и нескольких учетных записей
 
-Если вы создаете приложение, которое будет использоваться только на общем устройстве и только сотрудниками, взаимодействующими с клиентами, мы рекомендуем поддерживать в этом приложении только режим одной учетной записи. Это относится к большинству приложений, ориентированных на задачи, например к приложениям для учета медицинских записей и выставления счетов, а также к большинству бизнес-приложений. Это упростит разработку, так как не придется поддерживать многие функции пакета SDK.
+Если вы создаете приложение, которое будет использоваться только на общем устройстве и только сотрудниками, взаимодействующими с клиентами, мы рекомендуем поддерживать в этом приложении только режим одной учетной записи. Это относится к большинству приложений, ориентированных на задачи, например к приложениям для учета медицинских записей и выставления счетов, а также к большинству бизнес-приложений. Это упростит разработку, так как вам не придется применять многие функции пакета SDK.
 
 Если приложение поддерживает не только несколько учетных записей, но и режим общего устройства, вам нужно будет выполнять проверку типа и приводить его к соответствующему интерфейсу, как показано ниже.
 
@@ -134,7 +131,7 @@ private IPublicClientApplication mApplication;
 
 Метод `loadAccount` позволяет извлечь учетную запись пользователя, выполнившего вход. Метод `onAccountChanged` определяет, изменился ли пользователь, выполнивший вход, и если да, выполняет очистку.
 
-```java 
+```java
 private void loadAccount()
 {
   mSingleAccountApp.getCurrentAccountAsync(new ISingleAccountPublicClientApplication.CurrentAccountCallback()
@@ -157,12 +154,12 @@ private void loadAccount()
         updateSingedOutUI();
       }
     }
-    @Override 
-    public void onError(@NonNull Exception exception) 
+    @Override
+    public void onError(@NonNull Exception exception)
     {
     }
   }
-}  
+}
 ```
 
 ### <a name="globally-sign-in-a-user"></a>Глобальный вход пользователя
@@ -228,15 +225,15 @@ private void onSignOutClicked()
 
 ### <a name="authenticator-app-settings--registering-the-device-in-the-cloud"></a>Параметры приложения Authenticator и регистрации устройства в облаке
 
-Запустите приложение Authenticator и перейдите на главную страницу учетной записи. На странице **Добавить учетную запись** вы можете сразу перевести устройство в режим общего доступа.
+Запустите приложение Authenticator и перейдите на главную страницу учетной записи. На странице **Добавление учетной записи** вы можете сразу перевести устройство в режим общего доступа.
 
 ![Экран добавления учетной записи в Authenticator](media/tutorial-v2-shared-device-mode/authenticator-add-account.png)
 
  Перейдите на панель **Параметры**, используя панель меню справа. Щелкните **Регистрации устройства** в разделе **Work & School accounts** (Рабочие и учебные учетные записи).
- 
+
  ![Экран добавления учетной записи в Authenticator](media/tutorial-v2-shared-device-mode/authenticator-settings.png)
 
- При нажатии этой кнопки вам будет предложено авторизовать доступ к контактам устройства. Это требования интеграции учетных записей на устройстве Android. Выберите **разрешить**.
+ При нажатии этой кнопки вам будет предложено авторизовать доступ к контактам устройства. Это требования к интеграции учетных записей на устройстве Android. Выберите **разрешить**.
 
  ![Экран добавления учетной записи в Authenticator](media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png)
 
@@ -254,7 +251,7 @@ private void onSignOutClicked()
 
 ## <a name="view-the-shared-device-in-the-azure-portal"></a>Просмотр сведений об общем устройстве на портале Azure
 
-Когда вы переводите устройство в режим общего доступа, оно регистрируется для вашей организации и отслеживается в ее клиенте. Чтобы просмотреть сведения о своих общих устройствах, найдите раздел **Тип соединение** в колонке Azure Active Directory на портале Azure.
+Когда вы переводите устройство в режим общего доступа, оно регистрируется для вашей организации и отслеживается в ее арендаторе. Чтобы просмотреть сведения о своих общих устройствах, найдите раздел **Тип соединение** в колонке Azure Active Directory на портале Azure.
 
 ![Колонка с полным списком устройств на портале Azure](media/tutorial-v2-shared-device-mode/registered-device-screen.png)
 
@@ -266,4 +263,4 @@ private void onSignOutClicked()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье о [режиме общего доступа к устройству Android](shared-device-mode.md).
+Дополнительные сведения см. в статье о [режиме общего доступа к устройству Android](msal-android-shared-devices.md).

@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 01/21/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f6684df42971b91975f6a7f5aeded9326cef3f5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d2324343a31c3f3930975eea47659d023b9bbb94
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72969716"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80667561"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-paylocity"></a>Руководство по Интеграция единого входа Azure Active Directory с Paylocity
 
@@ -45,6 +44,8 @@ ms.locfileid: "72969716"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Paylocity поддерживает единый вход, инициируемый **поставщиком услуг и поставщиком удостоверений**
+
+* После настройки Paylocity можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-paylocity-from-the-gallery"></a>Добавление Paylocity из коллекции
 
@@ -82,8 +83,6 @@ ms.locfileid: "72969716"
 
 1. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Paylocity](common/preintegrated.png)
-
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://access.paylocity.com/`.
@@ -98,13 +97,24 @@ ms.locfileid: "72969716"
 
     | Имя |  Исходный атрибут|
     | ---------------| --------------- |
-    | PartnerId | <"PartnerID"> |
-    | PaylocityUser | <"PaylocityUser"> |
-    | PaylocityEntity | <"PaylocityEntity"> |
+    | PartnerId | `P8000010` |
+    | PaylocityUser | `user.mail`|
+    | PaylocityEntity | < `PaylocityEntity` > |
+
+    > [!NOTE]
+    > PaylocityEntity — идентификатор компании Paylocity.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Изменить значок**.
+
+    ![Изменение сертификата для подписи SAML](./media/paylocity-tutorial/edit-samlassertion.png)
+
+1. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение** и нажмите кнопку **Сохранить**.
+
+    ![Изменение сертификата для подписи SAML](./media/paylocity-tutorial/saml-assertion.png)
 
 1. Требуемые URL-адреса вы можете скопировать из раздела **Настройка Paylocity**.
 
@@ -163,3 +173,7 @@ ms.locfileid: "72969716"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Пробное использование Paylocity с помощью Azure AD](https://aad.portal.azure.com/)
+
+* [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+* [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

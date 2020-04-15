@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: markjbrown
 ms.author: mjbrown
 ms.date: 01/31/2020
-ms.openlocfilehash: 287933de6403d680c5aa5b6c78df49abe5f2ac56
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9650bb3214c22926427717569f718ca0426ed729
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79222131"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618746"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -99,7 +99,7 @@ Account key: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZ
 > [!NOTE]
 > Если вы запустили эмулятор с параметром /Key, вместо `C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==` следует использовать сгенерированный ключ. Дополнительные сведения о параметре /Key см. в [справочнике по программе командной строки](#command-line).
 
-Как и Azure Cosmos DB, эмулятор Azure Cosmos поддерживает только безопасное подключение по протоколу SSL.
+Как и Azure Cosmos DB, эмулятор Azure Cosmos поддерживает только безопасное подключение по протоколу TLS.
 
 ## <a name="running-on-a-local-network"></a>Запуск в локальной сети
 
@@ -183,7 +183,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 * [Установите apache-tinkerpop-gremlin-console-3.3.4.](https://archive.apache.org/dist/tinkerpop/3.3.4)
 
-* В обозревателе данных эмулятора создайте базу данных db1 и коллекцию coll1, указав параметр /name для ключа раздела
+* В обозревателе данных эмулятора создайте базу данных db1 и коллекцию coll1, указав параметр /name для ключа раздела.
 
 * Выполните следующие команды в обычном окне командной строки:
 
@@ -215,17 +215,17 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
   :> g.V()
   ```
 
-## <a name="export-the-ssl-certificate"></a>Экспорт SSL-сертификата
+## <a name="export-the-tlsssl-certificate"></a>Экспорт TLS/SSL-сертификата
 
 Языки и среда выполнения .NET используют хранилище сертификатов Windows для безопасного подключения к локальному эмулятору Azure Cosmos DB. Другие языки используют собственные методы для управления сертификатами и использования сертификатов. Java поддерживает собственное [хранилище сертификатов](https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/index.html), а Python применяет [оболочки сокетов](https://docs.python.org/2/library/ssl.html).
 
 Чтобы получить сертификат, используемый с языками и средами выполнения, которые не интегрируются с хранилищем сертификатов Windows, необходимо экспортировать сертификат с помощью диспетчера сертификатов Windows. Чтобы открыть его, запустите файл certlm.msc или выполните пошаговые инструкции по [экспорту сертификатов в эмуляторе Azure Cosmos](./local-emulator-export-ssl-certificates.md). Когда откроется диспетчер сертификатов, откройте в нем "Личные сертификаты", как показано ниже, и экспортируйте сертификат с понятным именем DocumentDBEmulatorCertificate в формате X.509 с кодировкой BASE-64 (CER-файл).
 
-![Сертификат SSL для эмулятора Azure Cosmos DB](./media/local-emulator/database-local-emulator-ssl_certificate.png)
+![TLS/SSL-сертификат для локального эмулятора Azure Cosmos DB](./media/local-emulator/database-local-emulator-ssl_certificate.png)
 
 Чтобы импортировать сертификат X.509 в хранилище сертификатов Java, выполните инструкции из статьи [Добавление сертификата в хранилище сертификатов ЦС Java](https://docs.microsoft.com/azure/java-add-certificate-ca-store). После импорта сертификата в хранилище сертификатов клиенты для SQL и API Azure Cosmos DB для MongoDB смогут подключаться к эмулятору Azure Cosmos.
 
-При подключении к эмулятору с помощью пакетов SDK для Python и Node.js проверка SSL отключена.
+При подключении к эмулятору с помощью пакетов SDK для Python и Node.js проверка TLS отключена.
 
 ## <a name="command-line-tool-reference"></a><a id="command-line"></a>Справочник по программе командной строки
 С помощью командной строки из папки установки можно запускать и останавливать эмулятор, настраивать параметры и выполнять другие операции.
@@ -260,8 +260,8 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 | StopTraces     | Завершает сбор журналов трассировки для отладки с помощью LOGMAN. | Microsoft.Azure.Cosmos.Emulator.exe /StopTraces  | |
 | StartWprTraces  |  Начинает сбор журналов трассировки для отладки с помощью средства записи производительности Windows. | Microsoft.Azure.Cosmos.Emulator.exe /StartWprTraces | |
 | StopWprTraces     | Останавливает сбор журналов трассировки для отладки с помощью средства записи производительности Windows. | Microsoft.Azure.Cosmos.Emulator.exe /StopWprTraces  | |
-|FailOnSslCertificateNameMismatch | По умолчанию эмулятор повторно создает собственный самозаверяющий SSL-сертификат, если альтернативное имя субъекта этого сертификата не содержит одно из следующих значений: доменное имя узла, локальный адрес IPv4, localhost или 127.0.0.1. С таким параметром эмулятор завершится ошибкой при запуске. В этом случае следует применить параметр /GenCert, чтобы создать и установить новый самозаверяющий сертификат SSL. | Microsoft.Azure.Cosmos.Emulator.exe /FailOnSslCertificateNameMismatch  | |
-| GenCert | Создает и устанавливает новый самозаверяющий сертификат SSL. Можно добавить необязательный список дополнительны DNS-имен, разделенных запятыми, для доступа к эмулятору по сети. | Microsoft.Azure.Cosmos.Emulator.exe /GenCert=\<dns-names\> |\<dns-names\>: необязательный список дополнительны DNS-имен, разделенных запятыми  |
+|FailOnSslCertificateNameMismatch | По умолчанию эмулятор повторно создает собственный самозаверяющий TLS/SSL-сертификат, если альтернативное имя субъекта этого сертификата не содержит одно из следующих значений: доменное имя узла, локальный адрес IPv4, localhost или 127.0.0.1. С таким параметром эмулятор завершится ошибкой при запуске. В этом случае следует применить параметр /GenCert, чтобы создать и установить новый самозаверяющий TLS/SSL-сертификат. | Microsoft.Azure.Cosmos.Emulator.exe /FailOnSslCertificateNameMismatch  | |
+| GenCert | Создает и устанавливает новый самозаверяющий сертификат TLS/SSL-сертификат. Можно добавить необязательный список дополнительны DNS-имен, разделенных запятыми, для доступа к эмулятору по сети. | Microsoft.Azure.Cosmos.Emulator.exe /GenCert=\<dns-names\> |\<dns-names\>: необязательный список дополнительны DNS-имен, разделенных запятыми  |
 | DirectPorts |Указывает порты, которые нужно использовать для прямого подключения. По умолчанию это порты 10251, 10252, 10253, 10254. | Microsoft.Azure.Cosmos.Emulator.exe /DirectPorts:\<directports\> | \<directports:\> разделенный запятыми список из 4 портов. |
 | Клавиши |Ключ проверки подлинности для эмулятора. Ключ должен иметь формат 64-разрядного вектора в кодировке Base-64. | Microsoft.Azure.Cosmos.Emulator.exe /Key:\<key\> | \<key:\> Ключ должен иметь формат 64-разрядного вектора в кодировке base-64|
 | EnableRateLimiting | Указывает, что ограничение частоты запросов включено. |Microsoft.Azure.Cosmos.Emulator.exe /EnableRateLimiting | |
@@ -398,7 +398,7 @@ powershell .\importcert.ps1
 Starting interactive shell
 ```
 
-Теперь воспользуйтесь конечной точкой и главным ключом из ответа в клиенте и импортируйте SSL-сертификат на узел. Чтобы импортировать SSL-сертификат, выполните следующие действия из командной строки с правами администратора.
+Теперь воспользуйтесь конечной точкой и главным ключом из ответа в клиенте и импортируйте TLS/SSL-сертификат на узел. Чтобы импортировать TLS/SSL-сертификат, выполните следующие действия из командной строки, используя права администратора:
 
 Из командной строки:
 
@@ -445,7 +445,7 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
 
 При работе в Linux для выполнения проверки .NET полагается на OpenSSL:
 
-1. выполните действие раздела [Как экспортировать SSL-сертификаты эмулятора Azure Cosmos DB](./local-emulator-export-ssl-certificates.md#how-to-export-the-azure-cosmos-db-ssl-certificate) (PFX-файл доступен при выборе экспорта закрытого ключа). 
+1. выполните действие раздела [Как экспортировать SSL-сертификаты эмулятора Azure Cosmos DB](./local-emulator-export-ssl-certificates.md#how-to-export-the-azure-cosmos-db-tlsssl-certificate) (PFX-файл доступен при выборе экспорта закрытого ключа). 
 
 1. Скопируйте этот PFX-файл в среду Linux.
 
@@ -471,7 +471,7 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
 
 При работе на компьютере Mac выполните следующие действия.
 
-1. выполните действие раздела [Как экспортировать SSL-сертификаты эмулятора Azure Cosmos DB](./local-emulator-export-ssl-certificates.md#how-to-export-the-azure-cosmos-db-ssl-certificate) (PFX-файл доступен при выборе экспорта закрытого ключа).
+1. выполните действие раздела [Как экспортировать SSL-сертификаты эмулятора Azure Cosmos DB](./local-emulator-export-ssl-certificates.md#how-to-export-the-azure-cosmos-db-tlsssl-certificate) (PFX-файл доступен при выборе экспорта закрытого ключа).
 
 1. Скопируйте этот PFX-файл в среду Mac.
 
@@ -527,7 +527,7 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы также узнали, как использовать локальный эмулятор для бесплатной разработки в локальной среде. Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как экспортировать SSL-сертификаты эмулятора.
+Из этого руководства вы также узнали, как использовать локальный эмулятор для бесплатной разработки в локальной среде. Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как экспортировать TLS/SSL-сертификаты эмулятора.
 
 > [!div class="nextstepaction"]
 > [Экспорт сертификатов эмулятора Azure Cosmos](local-emulator-export-ssl-certificates.md)

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 06/27/2019
 ms.author: jeedes
-ms.openlocfilehash: c733873a5545bb01f03abd8178ed2f371e2dd3aa
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 60fdd9b0a8fb272da885df97e39804a98e48de67
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74074084"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478868"
 ---
 # <a name="tutorial-integrate-myworkdrive-with-azure-active-directory"></a>Руководство по Интеграция MyWorkDrive с Azure Active Directory
 
@@ -92,7 +92,7 @@ ms.locfileid: "74074084"
     > 
     > URL-адрес для входа: `https://yourserver.yourdomain.com/Account/Login-saml`.
     > 
-    > Если вы не знаете, как указать в этих параметрах имя узла и SSL-сертификат, обратитесь к [группе поддержки MyWorkDrive](mailto:support@myworkdrive.com).
+    > Если вы не знаете, как указать в этих параметрах имя узла и TLS/SSL-сертификат, обратитесь в [службу поддержки MyWorkDrive](mailto:support@myworkdrive.com).
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** в буфер обмена.
 

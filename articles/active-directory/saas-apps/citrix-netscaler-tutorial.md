@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/13/2019
+ms.date: 03/27/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 785242a2cf51571a6d13b2b4691d33e46369bf94
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6771060f05a03c82879738dc5e8caccb67e55abc
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75977908"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478002"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-citrix-netscaler-kerberos-based-authentication"></a>Учебник. Интеграция единого входа Azure Active Directory с Citrix NetScaler (проверка подлинности Kerberos)
 
@@ -31,7 +30,7 @@ ms.locfileid: "75977908"
 * Автоматический вход пользователей на платформу Citrix NetScaler с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -51,6 +50,8 @@ ms.locfileid: "75977908"
 * [Проверка подлинности на основе Kerberos для Citrix NetScaler](#publish-the-web-server).
 
 * [Проверка подлинности на основе заголовка для Citrix NetScaler](header-citrix-netscaler-tutorial.md#publish-the-web-server).
+
+* После настройки Citrix NetScaler вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="add-citrix-netscaler-from-the-gallery"></a>Добавление Citrix NetScaler из коллекции
 
@@ -102,7 +103,7 @@ ms.locfileid: "75977908"
 
     1. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<Your FQDN>`
 
-    1. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<Your FQDN>/CitrixAuthService/AuthService.asmx`
+    1. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `http(s)://<Your FQDN>.of.vserver/cgi/samlauth`
 
 1. Если вы хотите настроить приложение для работы в режиме, **инициируемом поставщиком услуг**, выберите **Задать дополнительные URL-адреса** и выполните следующие действия:
 
@@ -218,7 +219,7 @@ ms.locfileid: "75977908"
 
 ### <a name="bind-the-certificate"></a>Привязка сертификата
 
-Чтобы опубликовать эту службу как SSL, привяжите сертификат сервера, а затем протестируйте приложение.
+Чтобы опубликовать эту службу как службу TLS, привяжите сертификат сервера, а затем протестируйте приложение.
 
 1. В разделе **Certificate** (Сертификат) выберите **No Server Certificate** (Без сертификата сервера).
 
@@ -456,10 +457,14 @@ ms.locfileid: "75977908"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Тестирование работы Citrix NetScaler с Azure AD](https://aad.portal.azure.com/)
 
 - [Настройка единого входа Citrix NetScaler для проверки подлинности на основе заголовка](header-citrix-netscaler-tutorial.md)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложения Citrix NetScaler с помощью функции управления настройками условного доступа](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

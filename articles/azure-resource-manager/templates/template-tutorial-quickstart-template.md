@@ -2,15 +2,15 @@
 title: Учебник. Использование шаблонов быстрого запуска
 description: Узнайте, как использовать шаблоны быстрого запуска Azure для разработки шаблонов.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 1e110bb4711490f53da7628f608f150a2bc3186c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4b82e02ecc009e587b89d1fd151fd13f75a4bcf8
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79368882"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80408508"
 ---
 # <a name="tutorial-use-azure-quickstart-templates"></a>Руководство по Tutorial: Use Azure Quickstart templates (Учебник. Использование шаблонов быстрого запуска)
 
@@ -77,6 +77,8 @@ New-AzResourceGroupDeployment `
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
+Чтобы выполнить эту команду развертывания, необходимо иметь [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
+
 ```azurecli
 az deployment group create \
   --name addwebapp \
@@ -86,6 +88,9 @@ az deployment group create \
 ```
 
 ---
+
+> [!NOTE]
+> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

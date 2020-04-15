@@ -4,14 +4,14 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 077c2ab67efa51542baa3048eb678fa22b0bc2eb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0e8b79a88fc173674caa0ca65e394e21d58d5f2f
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79222731"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756096"
 ---
-# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство. Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
+# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
 Это руководство представляет собой первую часть цикла.  Вы узнаете, как включить HTTPS в службе ASP.NET Core, работающей в Service Fabric. Когда вы закончите, у вас будет приложение для голосования с внешним веб-интерфейсом ASP.NET Core с поддержкой HTTPS, прослушивающего порт 443. Если вы не хотите вручную создавать приложение для голосования в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md), вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
@@ -20,7 +20,7 @@ ms.locfileid: "79222731"
 > [!div class="checklist"]
 > * Определение конечной точки HTTPS в службе.
 > * Настройка Kestrel для использования HTTPS
-> * Настройка SSL-сертификата на узлах удаленного кластера.
+> * Настройка TLS/SSL-сертификата на узлах удаленного кластера
 > * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
 > * Развертывание приложения в удаленном кластере.
@@ -36,7 +36,7 @@ ms.locfileid: "79222731"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -396,7 +396,7 @@ $slb | Set-AzLoadBalancer
 > [!div class="checklist"]
 > * Определение конечной точки HTTPS в службе.
 > * Настройка Kestrel для использования HTTPS
-> * Настройка SSL-сертификата на узлах удаленного кластера.
+> * Настройка TLS/SSL-сертификата на узлах удаленного кластера
 > * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
 > * Развертывание приложения в удаленном кластере.

@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 03/26/2020
+ms.date: 03/30/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1497b757d77d12cb5b963953224fa8929e987853
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: 4af7dc5d55e451e4f6873df42e2b740fd1e5cd56
+ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80385306"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80891753"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-anyconnect"></a>Руководство по интеграции единого входа Azure Active Directory с Cisco AnyConnect
 
@@ -96,6 +96,9 @@ ms.locfileid: "80385306"
 1. Скопируйте нужные URL-адреса в разделе **Настройка Cisco AnyConnect**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+> [!NOTE]
+> Если вы хотите подключить несколько TGT сервера, необходимо добавить несколько экземпляров приложения Cisco AnyConnect из коллекции. Кроме того, вы можете отправить собственный сертификат в Azure AD для всех этих экземпляров приложения. Таким образом, у вас может быть один и тот же сертификат для приложений, но для каждого приложения можно настроить разные идентификаторы и URL-адреса ответа.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

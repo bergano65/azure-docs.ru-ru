@@ -1,21 +1,15 @@
 ---
-title: Краткое руководство. Настройка платформы для использования пакета SDK службы "Речь" для Python — служба "Речь"
-titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как настроить платформу для использования Python с пакетом SDK службы "Речь".
-services: cognitive-services
-author: markamos
-manager: nitinme
+author: IEvangelist
 ms.service: cognitive-services
-ms.subservice: speech-service
 ms.topic: include
-ms.date: 10/09/2019
-ms.author: erhopf
-ms.openlocfilehash: 458a6940ce214ef1931a2cc9ee95f2cb5ca16779
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 04/04/2020
+ms.author: dapine
+ms.openlocfilehash: 327000173b4c5c378f60c76eb1a24bd155901671
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78925285"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80666913"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Python. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `pip install azure-cognitiveservices-speech`.
 
@@ -26,7 +20,7 @@ ms.locfileid: "78925285"
 - Пакет SDK службы "Речь" для Python доступен для таких операционных систем:
   - Windows: x64 и x86.
   - MAC: macOS X версии 10.12 или более поздней.
-  - Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8, 64-разрядная версия.
+  - Linux: Ubuntu 16.04/18.04, Debian 9, RHEL 7/8, CentOS 7/8 (64-разрядная версия).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

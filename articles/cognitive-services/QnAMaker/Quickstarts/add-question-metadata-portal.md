@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/08/2020
 ms.author: diberry
-ms.openlocfilehash: 25c0fe549dfc850a53b06f79f348a87cba3b70a1
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: f067bae55c38fc783c12bf9d0bc6fbcdf881e4e4
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77109930"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756689"
 ---
 # <a name="quickstart-add-questions-and-answer-with-qna-maker-portal"></a>Краткое руководство. Добавление вопросов и ответов с помощью портала QnA Maker
 
@@ -27,7 +27,7 @@ ms.locfileid: "77109930"
 |1|`How large a knowledge base can I create?`<br><br>`What is the max size of a knowledge base?`<br><br>`How many GB of data can a knowledge base hold?` |`The size of the knowledge base depends on the SKU of Azure search you choose when creating the QnA Maker service. Read [here](https://docs.microsoft.com/azure/cognitive-services/qnamaker/tutorials/choosing-capacity-qnamaker-deployment) for more details.`|`service=qna_maker`<br>`link_in_answer=true`|
 |2|`How many knowledge bases can I have for my QnA Maker service?`<br><br>`I selected a Azure Cognitive Search tier that holds 15 knowledge bases, but I can only create 14 - what is going on?`<br><br>`What is the connection between the number of knowledge bases in my QnA Maker service and the Azure Cognitive Search service size?` |`Each knowledge base uses 1 index, and all the knowledge bases share a test index. You can have N-1 knowledge bases where N is the number of indexes your Azure Cognitive Search tier supports.`|`service=search`<br>`link_in_answer=false`|
 
-После добавления метаданных в набор вопросов и ответов клиентское приложение получит следующие возможности:
+После добавления метаданных в пару вопросов и ответов клиентское приложение получит следующие возможности:
 
 * запрашивать ответы с определенными значениями метаданных;
 * получать все ответы и дополнительно обрабатывать их с учетом метаданных каждого ответа.
@@ -45,7 +45,7 @@ ms.locfileid: "77109930"
 
 ## <a name="add-additional-alternatively-phrased-questions"></a>Добавление дополнительных вопросов с другими формулировками
 
-В текущей базе знаний есть наборы вопросов и ответов по устранению неполадок в QnA Maker. Эти наборы были созданы при добавлении URL-адреса в базу знаний в процессе создания.
+В текущей базе знаний есть пары вопросов и ответов по устранению неполадок в QnA Maker. Эти наборы были созданы при добавлении URL-адреса в базу знаний в процессе создания.
 
 При импорте этого URL-адреса был создан только один вопрос с одним ответом. В этой процедуре вы добавите дополнительные вопросы.
 
@@ -82,7 +82,7 @@ ms.locfileid: "77109930"
 
 1. Щелкните **Параметры просмотра**, а затем **Показать метаданные**.
 
-1. Для набора вопросов и ответов, который вы только что добавили, выберите команду **Add metadata tags** (Добавить теги метаданных), а затем укажите имя `service` и значение `search`. Это выглядит следующим образом: `service:search`.
+1. Для пары вопросов и ответов, которую вы только что добавили, выберите команду **Добавить теги метаданных**, а затем укажите имя `service` и значение `search`. Это выглядит следующим образом: `service:search`.
 
 1. Добавьте еще один тег метаданных с именем `link_in_answer` и значением `false`. Это выглядит следующим образом: `link_in_answer:false`.
 

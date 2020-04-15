@@ -2,19 +2,19 @@
 title: Учебник. Развертывание шаблона с помощью файла параметров
 description: Используйте файлы параметров, которые содержат значения, используемые для развертывания шаблона Azure Resource Manager.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 6a12d92c0cfb9d86ebf4c335c351944997f79b4e
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: b91041b96a3819dbace3898d92226f0351f0f973
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773146"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411519"
 ---
-# <a name="tutorial-use-parameter-files-to-deploy-your-resource-manager-template"></a>Руководство. использованию файлов параметров для развертывания шаблона Resource Manager
+# <a name="tutorial-use-parameter-files-to-deploy-your-arm-template"></a>Руководство по Использование файлов параметров для развертывания шаблона ARM
 
-В этом учебнике вы узнаете, как использовать [файлы параметров](parameter-files.md) для хранения значений, передаваемых во время развертывания. В предыдущих учебниках вы использовали встроенные параметры с помощью команды развертывания. Этот подход сработал для тестирования шаблона, но при автоматизации развертываний может быть проще передать набор значений для вашей среды. Файлы параметров упрощают упаковку значений параметров для конкретной среды. В этом учебнике вы создадите файлы параметров для среды разработки и рабочей среды. Это занимает около **12 минут**.
+В этом учебнике вы узнаете, как использовать [файлы параметров](parameter-files.md) для хранения значений, передаваемых во время развертывания. В предыдущих учебниках вы использовали встроенные параметры с помощью команды развертывания. Этот подход использовался для тестирования шаблона Azure Resource Manager (ARM), но при автоматизации развертываний может быть проще передать набор значений для вашей среды. Файлы параметров упрощают упаковку значений параметров для конкретной среды. В этом учебнике вы создадите файлы параметров для среды разработки и рабочей среды. Это занимает около **12 минут**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -54,10 +54,10 @@ ms.locfileid: "76773146"
 
 Сначала мы выполним развертывание в среде разработки.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
-$templateFile = "{provide-the-path-to-the-template-file}"
+$templateFile = "{path-to-the-template-file}"
 $parameterFile="{path-to-azuredeploy.parameters.dev.json}"
 New-AzResourceGroup `
   -Name myResourceGroupDev `
@@ -69,25 +69,28 @@ New-AzResourceGroupDeployment `
   -TemplateParameterFile $parameterFile
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы выполнить эту команду развертывания, необходимо иметь [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
 
 ```azurecli
-templateFile="{provide-the-path-to-the-template-file}"
+templateFile="{path-to-the-template-file}"
+devParameterFile="{path-to-azuredeploy.parameters.dev.json}"
 az group create \
   --name myResourceGroupDev \
   --location "East US"
-az group deployment create \
+az deployment group create \
   --name devenvironment \
   --resource-group myResourceGroupDev \
   --template-file $templateFile \
-  --parameters azuredeploy.parameters.dev.json
+  --parameters $devParameterFile
 ```
 
 ---
 
 Теперь мы выполним развертывание в рабочей среде.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 $parameterFile="{path-to-azuredeploy.parameters.prod.json}"
@@ -101,20 +104,24 @@ New-AzResourceGroupDeployment `
   -TemplateParameterFile $parameterFile
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
+prodParameterFile="{path-to-azuredeploy.parameters.prod.json}"
 az group create \
   --name myResourceGroupProd \
   --location "West US"
-az group deployment create \
+az deployment group create \
   --name prodenvironment \
   --resource-group myResourceGroupProd \
   --template-file $templateFile \
-  --parameters azuredeploy.parameters.prod.json
+  --parameters $prodParameterFile
 ```
 
 ---
+
+> [!NOTE]
+> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
 
 ## <a name="verify-deployment"></a>Проверка развертывания
 
@@ -136,7 +143,7 @@ az group deployment create \
 
 Поздравляем, вы завершили ознакомление с развертыванием шаблонов в Azure. Оставьте комментарии и предложения для нас в разделе отзывов. Спасибо!
 
-Вы можете перейти к более сложным понятиям шаблонов. В следующем учебнике подробно рассматривается использование справочной документации по шаблонам для определения развертываемых ресурсов.
+В следующей серии руководств подробно рассматривается развертывание шаблонов.
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](template-tutorial-create-encrypted-storage-accounts.md)
+> [Развертывание шаблона в локальной среде](./deployment-tutorial-local-template.md)

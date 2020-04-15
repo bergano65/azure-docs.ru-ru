@@ -1,22 +1,14 @@
 ---
 title: Руководство по Сущность регулярного выражения — LUIS
-titleSuffix: Azure Cognitive Services
 description: Извлечение согласованно отформатированных данных из речевого фрагмента с помощью сущности регулярного выражения.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/17/2019
-ms.author: diberry
-ms.openlocfilehash: 0ca6f2a67e01e4c604c2dcc8f8eaa9ffe8bad045
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 04/01/2020
+ms.openlocfilehash: 5b585ee52880c474d3f2736b34a267012b390aad
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75381534"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80545836"
 ---
 # <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Руководство по Получение данных правильного формата из высказывания
 В этом учебнике вы создадите сущность регулярного выражения для извлечения согласованно отформатированных данных из речевого фрагмента.
@@ -100,11 +92,9 @@ ms.locfileid: "75381534"
 
 1. [!INCLUDE [LUIS How to get endpoint first step](includes/howto-get-endpoint.md)]
 
-2. В конце URL-адреса введите такое высказывание:
+1. Перейдите в конец URL-адреса в адресной строке и замените _YOUR_QUERY_HERE_ на следующее:
 
     `Text my pizza delivery to x23456 x234567 x12345`
-
-    Последний параметр строки запроса — `query`. Это **запрос** фразы.
 
     ```json
     {

@@ -1,19 +1,19 @@
 ---
-title: Добавление SSL-сертификатов и управление ими
+title: Добавление TLS/SSL-сертификатов и управление ими
 description: Создайте бесплатный сертификат, импортируйте сертификат Службы приложений, сертификат Key Vault или купите сертификат Службы приложений в Службе приложений Azure.
 tags: buy-ssl-certificates
 ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 120caf459a7a8ca4e60d5e447a1e4130c0bce389
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4edf710e575bbb26fb0e247e59ff5c796f16226e
+ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79223921"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80810594"
 ---
-# <a name="add-an-ssl-certificate-in-azure-app-service"></a>Добавление SSL-сертификата в Службу приложений Azure
+# <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Добавление TLS/SSL-сертификата в Службу приложений Azure
 
 [Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этой статье показано, как создать, передать или импортировать закрытый или общедоступный сертификат в Службу приложений. 
 
@@ -47,7 +47,7 @@ ms.locfileid: "79223921"
 * должен содержать закрытый ключ длиной не менее 2048 битов;
 * должен содержать все промежуточные сертификаты из цепочки сертификатов.
 
-Чтобы защитить личный домен в привязке SSL, сертификат должен соответствовать дополнительным требованиям. Он:
+Чтобы защитить личный домен в привязке TLS, сертификат должен соответствовать дополнительным требованиям:
 
 * должен содержать данные [расширенного использования ключа](https://en.wikipedia.org/w/index.php?title=X.509&section=4#Extensions_informing_a_specific_usage_of_a_certificate) для аутентификации сервера (OID = 1.3.6.1.5.5.7.3.1);
 * должен быть подписан доверенным центром сертификации;
@@ -59,7 +59,7 @@ ms.locfileid: "79223921"
 
 ## <a name="create-a-free-certificate-preview"></a>Создание бесплатного сертификата (предварительная версия)
 
-Бесплатный управляемый сертификат Службы приложений — это полноценное решение для защиты настраиваемого DNS-имени в Службе приложений. Это полностью функциональный SSL-сертификат, который управляется Службой приложений и обновляется автоматически. Бесплатный сертификат имеет следующие ограничения:
+Бесплатный управляемый сертификат Службы приложений — это полноценное решение для защиты настраиваемого DNS-имени в Службе приложений. Это полностью функциональный TLS/SSL-сертификат, который управляется Службой приложений и обновляется автоматически. Бесплатный сертификат имеет следующие ограничения:
 
 - не поддерживает групповые сертификаты;
 - не поддерживает незащищенные домены;
@@ -237,7 +237,7 @@ ms.locfileid: "79223921"
 
 ### <a name="export-certificate-to-pfx"></a>Экспорт сертификата в PFX-файл
 
-Экспортируйте объединенный SSL-сертификат с закрытым ключом, с помощью которого был создан запрос сертификата.
+Экспортируйте объединенный TLS/SSL-сертификат с закрытым ключом, с помощью которого был создан запрос сертификата.
 
 Если запрос сертификата был создан с помощью OpenSSL, то вы создали файл закрытого ключа. Чтобы экспортировать сертификат в PFX-файл, выполните следующую команду. Замените заполнители _&lt;private-key-file>_ и _&lt;merged-certificate-file>_ путями к закрытому ключу и объединенному файлу сертификатов.
 
@@ -245,7 +245,7 @@ ms.locfileid: "79223921"
 openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-certificate-file>  
 ```
 
-При появлении запроса определите пароль для экспорта. Позже этот пароль потребуется при передаче SSL-сертификата в службу приложений.
+При появлении запроса определите пароль для экспорта. Позже этот пароль потребуется при передаче TLS/SSL-сертификата в службу приложений.
 
 Если вы создали запрос на сертификат с помощью IIS или _Certreq.exe_, установите сертификат на локальный компьютер, а затем [экспортируйте его в PFX](https://technet.microsoft.com/library/cc754329(v=ws.11).aspx).
 
@@ -363,16 +363,16 @@ az keyvault secret download \
 
 ### <a name="azure-cli"></a>Azure CLI
 
-[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom SSL certificate to a web app")] 
+[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to a web app")] 
 
 ### <a name="powershell"></a>PowerShell
 
-[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom SSL certificate to a web app")]
+[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom TLS/SSL certificate to a web app")]
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-* [Защита настраиваемого DNS-имени с помощью привязки SSL](configure-ssl-bindings.md)
+* [Защита пользовательского доменного имени с помощью привязки TLS/SSL в Службе приложений Azure](configure-ssl-bindings.md)
 * [Принудительное использование HTTPS](configure-ssl-bindings.md#enforce-https)
 * [Принудительное применение TLS 1.1/1.2](configure-ssl-bindings.md#enforce-tls-versions)
-* [Использование SSL-сертификата в коде приложения Службы приложений Azure](configure-ssl-certificate-in-code.md)
+* [Использование TLS/SSL-сертификата в коде в Службе приложений Azure](configure-ssl-certificate-in-code.md)
 * [FAQ: Configuration and management FAQs for Web Apps in Azure](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure)

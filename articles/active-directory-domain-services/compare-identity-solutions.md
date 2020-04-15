@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: overview
-ms.date: 01/22/2020
+ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: d2495605cccf658b15e812fd85fd65671e84d15b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 5925e3374634dd4db4bdc6855949dc3880d8de7c
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76544282"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80655513"
 ---
 # <a name="compare-self-managed-active-directory-domain-services-azure-active-directory-and-managed-azure-active-directory-domain-services"></a>Сравнение самостоятельно управляемых доменных служб Active Directory, Azure Active Directory и управляемых доменных служб Azure Active Directory.
 
@@ -25,12 +25,16 @@ ms.locfileid: "76544282"
 
 * **Доменные службы Active Directory (AD DS**) — это сервер корпоративного уровня с поддержкой протокола LDAP, который предоставляет такие функции, как идентификация и проверка подлинности, управление объектами компьютеров, групповая политика и доверие.
     * AD DS является центральным компонентом во многих организациях с локальной ИТ-средой, обеспечивая основные функции для проверки подлинности учетных записей пользователей и управления компьютерами.
+    * Дополнительные сведения см. в статье [Обзор доменных служб Active Directory][overview-adds] в документации по Windows Server.
 * **Azure Active Directory (Azure AD)**  — это облачная платформа для управления удостоверениями и мобильными устройствами, которая предоставляет службы управления учетными записями и проверки подлинности для таких ресурсов, как Office 365, портал Azure и приложения SaaS.
     * Azure AD можно синхронизировать с локальной средой AD DS, чтобы поддерживать единые удостоверения для пользователей, которые работают в основном в облаке.
+    * Дополнительные сведения об Azure AD см. в статье [Что такое Azure Active Directory][whatis-azuread].
 * **Доменные службы Azure Active Directory (Azure AD DS)** предоставляют управляемые доменные службы с подмножеством традиционных функций, полностью совместимых с AD DS, таких как присоединение к домену, применение групповой политики, использование протокола LDAP, выполнение аутентификации Kerberos или NTLM.
     * Azure AD DS интегрируется с Azure AD, которая сама может синхронизироваться с локальной средой AD DS. Эта возможность расширяет случаи использования центрального удостоверения для традиционных веб-приложений, которые работают в Azure в рамках стратегии "lift-and-shift".
 
 В этой статье собраны сравнительные сведения о том, как эти решения идентификации могут работать вместе или порознь в зависимости от потребностей конкретной организации.
+
+Для начала работы [создайте управляемый домен Azure AD DS на портале Azure][tutorial-create].
 
 ## <a name="azure-ad-ds-and-self-managed-ad-ds"></a>Azure AD DS и самостоятельно управляемая AD DS
 
@@ -118,3 +122,5 @@ Azure AD позволяет управлять идентификаторами 
 [manage-gpos]: manage-group-policy.md
 [tutorial-ldaps]: tutorial-configure-ldaps.md
 [tutorial-create]: tutorial-create-instance.md
+[whatis-azuread]: ../active-directory/fundamentals/active-directory-whatis.md
+[overview-adds]: /windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview

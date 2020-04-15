@@ -6,12 +6,12 @@ ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
 ms.date: 03/24/2020
-ms.openlocfilehash: cc0feff48e7da35535e30c6741994f48750d931a
-ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
+ms.openlocfilehash: a4f9d48934bcb08147de4c6487629d552c252282
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80293506"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80668701"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
@@ -92,6 +92,8 @@ ms.locfileid: "80293506"
 [Partition your files in the data lake](https://youtu.be/VNWv-MvLQ_0) (Разбиение файлов на разделы в озере данных)
 
 [Data warehouse loading pattern](https://www.youtube.com/watch?v=7mLqwtmeQFg) (Шаблон загрузки данных в хранилище данных)
+
+[Параметры вывода данных в файле озера данных](https://www.youtube.com/watch?v=NAPSbjvSQA8)
 
 ## <a name="optimizing-mapping-data-flows"></a>Оптимизация потоков данных для сопоставления
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2020
 ms.author: spelluru
-ms.openlocfilehash: d7d697e3ea4b1b683275d53f6e407396f474b37b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 40d291ee17f1fdaf819d70daade735e152df8f71
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77462026"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548517"
 ---
 # <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-core-azuremessagingeventhubs"></a>Отправка и получение событий с помощью .NET Core в Центрах событий Azure (Azure.Messaging.EventHubs) 
 В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью библиотеки .NET Core **Azure.Messaging.EventHubs**. 
@@ -34,7 +34,7 @@ ms.locfileid: "77462026"
 Для работы с данным руководством необходимо следующее:
 
 - **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
-- **Microsoft Visual Studio 2019**. Клиентская библиотека для Центров событий Azure использует новые возможности, реализованные в C# версии 8.0.  Вы можете применять эту библиотеку и с более старыми версиями C#, но тогда некоторые функции будут недоступны.  Чтобы включить эти возможности, настройте [нацеливание на .NET Core 3.0](/dotnet/standard/frameworks#how-to-specify-target-frameworks) или [укажите требуемую версию языка](/dotnet/csharp/language-reference/configure-language-version#override-a-default) (не ниже 8.0). Если вы используете Visual Studio, учитывайте, что версии старше Visual Studio 2019 несовместимы со средствами, необходимыми для сборки проектов C# 8.0. Скачать Visual Studio 2019, в том числе выпуск Community, можно [здесь](https://visualstudio.microsoft.com/vs/).
+- **Microsoft Visual Studio 2019**. Клиентская библиотека для Центров событий Azure использует новые возможности, реализованные в C# версии 8.0.  Вы можете применять эту библиотеку и с более старыми версиями C#, но тогда некоторые функции будут недоступны.  Чтобы включить эти возможности, настройте [нацеливание на .NET Core 3.0](/dotnet/standard/frameworks#how-to-specify-target-frameworks) или [укажите требуемую версию языка](/dotnet/csharp/language-reference/configure-language-version#override-a-default) (не ниже 8.0). Если вы используете Visual Studio, учитывайте, что версии до Visual Studio 2019 несовместимы со средствами, необходимыми для сборки проектов C# 8.0. Скачать Visual Studio 2019, в том числе выпуск Community, можно [здесь](https://visualstudio.microsoft.com/vs/).
 - **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий 
@@ -117,6 +117,9 @@ ms.locfileid: "77462026"
 ## <a name="receive-events"></a>Получение событий
 В этом разделе показано, как создать консольное приложение .NET Core для получения сообщений из концентратора событий с помощью обработчика событий. Обработчик событий упрощает прием событий от концентраторов событий, позволяя управлять постоянными контрольными точками и принимать сообщения от этих концентраторов событий в параллельном режиме. Обработчик событий связывается с определенным концентратором событий и группой потребителей. Он получает события от нескольких платформ концентратора событий и передает их делегату обработчика для применения к ним предоставленного вами кода. 
 
+
+> [!NOTE]
+> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличную от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для нацеливания на API службы хранилища версии 2017-11-09. Пример нацеливания на определенную версию API службы хранилища см. [на сайте GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). Дополнительные сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, см. в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](https://docs.microsoft.com/azure-stack/user/azure-stack-acs-differences).
 
 ### <a name="create-an-azure-storage-and-a-blob-container"></a>Создание службы хранилища Azure и контейнера больших двоичных объектов
 В рамках этого краткого руководства вы настроите Службу хранилища Azure в качестве хранилища контрольных точек. Выполните указанные ниже действия, чтобы создать учетную запись хранения Azure. 
@@ -202,7 +205,7 @@ ms.locfileid: "77462026"
         static Task ProcessEventHandler(ProcessEventArgs eventArgs)
         { 
             // Write the body of the event to the console window
-            Console.WriteLine("\tRecevied event: {0}", Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray())); 
+            Console.WriteLine("\tReceived event: {0}", Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray())); 
             return Task.CompletedTask; 
         }
 

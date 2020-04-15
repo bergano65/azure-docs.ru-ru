@@ -1,22 +1,15 @@
 ---
 title: Руководство по Проверка речевых фрагментов конечной точки — LUIS
-titleSuffix: Azure Cognitive Services
 description: Из этого руководства вы узнаете, как повысить точность прогнозирования в приложении, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP службы распознавания речи. Некоторые высказывания могут быть проверены на наличие намерений, а другие — на наличие сущностей.
 services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/17/2019
-ms.author: diberry
-ms.openlocfilehash: 06f51ca83449b39861e7565cc9accc29efbece3f
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 04/01/2020
+ms.openlocfilehash: 307c18d3326cb1a64b884463a571985a015834ed
+ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76843979"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80548725"
 ---
 # <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство по Исправление неточных прогнозов с помощью проверки высказываний конечной точки
 Из этого учебника вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Речевые фрагменты конечных точек необходимо проверять в рамках планового обслуживания LUIS.
@@ -46,15 +39,11 @@ ms.locfileid: "76843979"
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-sentiment-HumanResources.json?raw=true).
 
-1. В [предварительной версии портала LUIS](https://preview.luis.ai) импортируйте JSON-файл в новое приложение.
+[!INCLUDE [Import app steps](includes/import-app-steps.md)]
 
-1. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `review`.
+## <a name="train-the-app-to-apply-the-entity-changes-to-the-app"></a>Обучение приложения для внесения изменений сущности в приложение
 
-    > [!TIP]
-    > Мы рекомендуем клонировать версию перед изменением приложения. Завершив работу с новой версией, экспортируйте ее (в файл с расширением JSON или LU) и зарегистрируйте файл в системе управления версиями.
-
-
-1. Чтобы обучить приложение, щелкните **Обучение**.
+[!INCLUDE [LUIS How to Train steps](includes/howto-train.md)]
 
 ## <a name="publish-the-app-to-access-it-from-the-http-endpoint"></a>Публикация приложения для доступа к нему через конечную точку HTTP
 
@@ -66,7 +55,7 @@ ms.locfileid: "76843979"
 
 1. [!INCLUDE [LUIS How to get endpoint first step](includes/howto-get-endpoint.md)]
 
-1. Используйте конечную точку, чтобы добавить следующие фрагменты речи.
+1. Перейдите в конец URL-адреса в адресной строке и замените _YOUR_QUERY_HERE_ на речевые фрагменты из приведенной ниже таблицы. Для каждого речевого фрагмента отправьте такой фрагмент и получите результат. Затем замените речевой фрагмент в конце строки на следующий речевой фрагмент.
 
     |Речевой фрагмент конечной точки|Сопоставленное намерение|
     |--|--|
@@ -110,9 +99,9 @@ ms.locfileid: "76843979"
 
 Чтобы проверить, что правильно сопоставленные примеры речевых фрагментов улучшили прогнозирование в приложении, попробуйте использовать фрагмент речи, близкий к исправленному.
 
-1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
+1. [!INCLUDE [LUIS How to get endpoint first step](includes/howto-get-endpoint.md)]
 
-1. Перейдите в конец URL-адреса и введите `Are there any natural language processing jobs in my department right now?`. Последний параметр строки запроса — `q`. Это **запрос** фразы.
+1. Перейдите в конец URL-адреса в адресной строке и замените _YOUR_QUERY_HERE_ на `Are there any natural language processing jobs in my department right now?`.
 
    ```json
     {

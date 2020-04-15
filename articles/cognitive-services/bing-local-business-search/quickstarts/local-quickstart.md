@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Отправка запроса в API Поиска местных компаний Bing с помощью C#
+title: Краткое руководство. Отправка запроса в API "Поиск местных компаний Bing" с помощью C#
 titleSuffix: Azure Cognitive Services
 description: С помощью этого краткого руководства вы сможете начать отправку запросов в Bing Local Business Search API в Cognitive Services.
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-local-business
 ms.topic: quickstart
-ms.date: 11/29/2019
+ms.date: 03/24/2020
 ms.author: aahi
-ms.openlocfilehash: 2265471001896652a4ce35dbf8bd84aca50000fb
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 62e975121c05bd4fde2438480f7042b0957a9c82
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74665685"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80475596"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-c"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#
 
@@ -23,7 +23,7 @@ ms.locfileid: "74665685"
 
 В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Любой выпуск [Visual Studio 2019](https://www.visualstudio.com/downloads/).
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).

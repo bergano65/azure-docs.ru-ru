@@ -6,13 +6,13 @@ tags: azure-service-management
 ms.topic: sample
 ms.date: 01/04/2019
 ms.author: tomfitz
-ms.custom: mvc
-ms.openlocfilehash: b1d5f20ccd2f2c637d7db668af10ef331947d018
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: mvc, fasttrack-edit
+ms.openlocfilehash: 2d77dcbd07a67e3ba50d70770515416b45fbc7a3
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74971202"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80637908"
 ---
 # <a name="azure-resource-manager-templates-for-app-service"></a>Шаблоны Azure Resource Manager для Службы приложений
 
@@ -28,11 +28,12 @@ ms.locfileid: "74971202"
 | [Приложение, связанное с репозиторием GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-github-deploy)| Развертывает приложение Службы приложений Azure, которое вытягивает код из GitHub. |
 | [Приложение с пользовательскими слотами развертывания](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-custom-deployment-slots)| Развертывает приложение Службы приложений с пользовательскими слотами развертывания или средами. |
 |**Настройка приложения**||
-| [Сертификат приложения из Key Vault](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault)| Развертывает сертификат приложения Службы приложений из секрета Azure Key Vault и использует его для привязки SSL. |
+| [Сертификат приложения из Key Vault](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault)| Позволяет развернуть сертификат приложения Службы приложений из секрета Azure Key Vault и использует его для привязки TLS/SSL. |
 | [Приложение с личным доменом](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-custom-domain)| Развертывает приложение Службы приложений с пользовательским именем узла. |
-| [Приложение с личным доменом и SSL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-custom-domain-and-ssl)| Развертывает приложение Службы приложений с пользовательским именем узла и получает сертификат приложения из Key Vault для привязки SSL. |
+| [Приложение с личным доменом и SSL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-custom-domain-and-ssl)| Позволяет развернуть приложение Службы приложений с пользовательским именем узла и получает сертификат приложения из Key Vault для привязки TLS/SSL. |
 | [Приложение с расширением GoLang](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-with-golang)| Развертывает приложение Службы приложений с расширением сайта Golang. Вы сможете запускать веб-приложения, разработанные на Golang в Azure. |
 | [Приложения с Java 8 и Tomcat 8](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-java-tomcat)| Развертывает приложение Службы приложений с поддержкой Java 8 и Tomcat 8. Вы сможете запускать приложения Java в Azure. |
+| [Приложение с поддержкой интеграции с региональной виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-app-service-regional-vnet-integration)| Позволяет развернуть приложение Службы приложений с поддержкой интеграции с региональной виртуальной сетью. |
 |**Защита приложения**||
 | [Приложение, интегрированное с Шлюзом приложений Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-with-app-gateway-v2)| Развертывает приложение Службы приложений и Шлюз приложений, а также изолирует трафик, используя конечную точку службы и ограничения доступа. |
 |**Приложение с подключенными ресурсами**||
@@ -47,5 +48,5 @@ ms.locfileid: "74971202"
 |**Среда службы приложений**||
 | [Создание среды службы приложений версии 2](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-asev2-create) | Позволяет создать среду службы приложений версии 2 в виртуальной сети. |
 | [Создание среды службы приложений версии 2 с адресом ILB](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-asev2-ilb-create/) | Позволяет создать среду службы приложений версии 2 в виртуальной сети с адресом частной внутренней подсистемы балансировки нагрузки. |
-| [Настройка SSL-сертификата по умолчанию для среды службы приложений ILB версии 1 или 2](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-ase-ilb-configure-default-ssl) | Позволяет настроить SSL-сертификат по умолчанию для среды службы приложений ILB версии 1 или 2. |
+| [Настройка SSL-сертификата по умолчанию для среды службы приложений ILB версии 1 или 2](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-ase-ilb-configure-default-ssl) | Позволяет настроить TLS/SSL-сертификат по умолчанию для среды службы приложений ILB версии 1 или 2. |
 | | |

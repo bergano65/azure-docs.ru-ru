@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 03/26/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 1d07bc12f33df7253a849b605fdaff1f2f0123dd
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 2485794d9ec1ce78a8916014dc1117ed59c34e44
+ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74974552"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80656067"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-rest-api-and-javascript"></a>Краткое руководство. Создание эскиза с помощью REST API "Компьютерное зрение" и JavaScript
 
@@ -26,18 +26,18 @@ ms.locfileid: "74974552"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Сохраните ключ подписки и URL-адрес конечной точки во временном расположении.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
 Чтобы создать и запустить пример, сделайте следующее.
 
-1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости замените значение атрибута `value` для элемента управления `inputImage` URL-адресом другого изображения, анализ которого следует выполнить.
-1. Сохраните код как файл с расширением `.html`. Например, `get-thumbnail.html`.
+1. Создайте файл с именем _get-thumbnail.html_, откройте его в текстовом редакторе и скопируйте в него приведенный ниже код.
+1. При необходимости замените значение атрибута `value` элемента управления `inputImage` URL-адресом другого изображения, анализ которого следует выполнить.
 1. Откройте окно браузера.
 1. В браузере перетащите файл в окно браузера.
-1. При отображении веб-страницы в браузере нажмите кнопку **Generate thumbnail** (Создать эскиз).
+1. Когда веб-страница отобразится в браузере, вставьте ключ подписки и URL-адрес конечной точки в соответствующие поля ввода.
+1. В конце нажмите кнопку **Generate thumbnail** (Создать эскиз).
 
 ```html
 <!DOCTYPE html>
@@ -53,9 +53,8 @@ ms.locfileid: "74974552"
         // *** Update or verify the following values. ***
         // **********************************************
 
-        let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
-        let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
-        if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+        var subscriptionKey = document.getElementById("subscriptionKey").value;
+        var endpoint = document.getElementById("endpointUrl").value;
         
         var uriBase = endpoint + "vision/v2.1/generateThumbnail";
 
@@ -122,6 +121,13 @@ ms.locfileid: "74974552"
 <h1>Generate thumbnail image:</h1>
 Enter the URL to an image to use in creating a thumbnail image,
 then click the <strong>Generate thumbnail</strong> button.
+<br><br>
+Subscription key: 
+<input type="text" name="subscriptionKey" id="subscriptionKey"
+    value="" /> 
+Endpoint URL:
+<input type="text" name="endpointUrl" id="endpointUrl"
+    value="" />
 <br><br>
 Image for thumbnail:
 <input type="text" name="inputImage" id="inputImage"

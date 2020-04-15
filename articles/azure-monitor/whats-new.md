@@ -6,15 +6,79 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 03/05/2020
-ms.openlocfilehash: c29790035ec4e971957784e826a1e8bd8e0c9329
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: a2e6d2a459a6713aa9372496fc3a933c0a886ed9
+ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79500499"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80802610"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="march-2020"></a>Март 2020 г.
+
+### <a name="general"></a>Общие сведения
+- [Общие сведения о службе Azure Monitor](overview.md) — добавлен видеообзор Azure Monitor.
+- [Конфигурация ключей, управляемых клиентом, в Azure Monitor](platform/customer-managed-keys.md) — общие обновления.
+- [Ссылка на данные Azure Monitor](/azure/azure-monitor/reference) — новый сайт.
+
+### <a name="alerts"></a>видны узлы
+
+- [Создание, просмотр и управление оповещениями журнала действий в Azure Monitor](platform/alerts-activity-log.md) — дополнительные пояснения к шаблону Resource Manager.
+- [Сведения о работе оповещений о метриках в Azure Monitor](platform/alerts-metric-overview.md) — обновлены для поддержки государственных организаций.
+- [Устранение неполадок оповещений и уведомлений Azure Monitor](platform/alerts-troubleshoot.md) — новая статья.
+
+### <a name="application-insights"></a>Application Insights
+- [Автоматизация Azure Application Insights с помощью PowerShell](app/powershell.md) — добавлены примеры ARMClient.
+- [Непрерывный экспорт данных телеметрии из Application Insights](app/export-telemetry.md) — добавлена таблица со сведениями о структуре экспорта.
+- [Включение Snapshot Debugger для приложений .NET в Службе приложений Azure](app/snapshot-debugger-appservice.md) — добавлен пример шаблона Resource Manager.
+- [Управление использованием и затратами для Azure Application Insights](app/pricing.md) — добавлена информация об оповещениях об ограничениях данных.
+- [Мониторинг приложений Python с помощью Azure Monitor (предварительная версия)](app/opencensus-python.md) — добавлены стандартные метрики.
+- [Поддержка сопоставителя с исходным кодом для приложений JavaScript — Azure Monitor Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/source-map-support) — новая статья.
+
+
+### <a name="containers"></a>Контейнеры
+- [Часто задаваемые вопросы Azure Monitor](faq.md) — обновление для контейнеров Azure Monitor.
+- [Настройка мониторинга GPU с помощью Azure Monitor для контейнеров](insights/container-insights-gpu-monitoring.md) — новая статья.
+
+### <a name="insights"></a>Аналитика
+- [Решение для управления Office 365 в Azure](insights/solution-office-365.md) — обновленная дата устаревания.
+
+### <a name="logs"></a>Журналы
+- [Оптимизация запросов журналов в Azure Monitor](log-query/query-optimization.md) — добавлено условие ЦП для разбора XML и JSON.
+- [Удаление и восстановление рабочей области Azure Log Analytics](platform/delete-workspace.md) — добавлено устранение неполадок.
+- [Использование журналов Azure Monitor с Azure Logic Apps и Power Automate](platform/logicapp-flow-connector.md) — обновлено для нового соединителя Azure Monitor.
+
+### <a name="metrics"></a>Метрики
+- [Устаревшие метрики диска на портале Azure](https://docs.microsoft.com/azure/azure-monitor/platform/portal-disk-metrics-deprecation) — новая статья.
+- [Учебник. Создание диаграммы метрик в Azure Monitor](learn/tutorial-metrics-explorer.md) — добавлено видео.
+
+### <a name="platform-logs"></a>Журналы платформы
+- [Сбор и анализ журнала действий Azure в Azure Monitor](platform/activity-log-collect.md) — перезапись для лучшего объяснения сбора журнала активности с помощью параметров диагностики.
+
+### <a name="virtual-machines"></a>Виртуальные машины
+- [Мониторинг виртуальной машины Azure с помощью Azure Monitor](insights/monitor-vm-azure.md) — новая статья.
+- [Краткое руководство. Мониторинг виртуальных машин Azure с помощью Azure Monitor](learn/quick-monitor-azure-vm.md) — обновлен для добавления Azure Monitor для виртуальных машин.
+- [Оповещения от Azure Monitor для виртуальных машин](insights/vminsights-alerts.md) — новая статья.
+- [Общие сведения о включении Azure Monitor для виртуальных машин](insights/vminsights-enable-overview.md) — обновлены ссылки для скачивания агентов.
+
+
+Общие обновления для общей доступности Azure Monitor для виртуальных машин
+- [Общие сведения об Azure Monitor для виртуальных машин](insights/vminsights-overview.md)
+- [Azure Monitor для виртуальных машин (GA): вопросы и ответы](insights/vminsights-ga-release-faq.md) 
+- [Включение Azure Monitor для виртуальных машин с помощью Политики Azure](insights/vminsights-enable-at-scale-policy.md) 
+- [Создание диаграммы производительности с помощью службы "Azure Monitor для виртуальных машин"](insights/vminsights-performance.md)
+- [Как запрашивать журналы из Azure Monitor для виртуальных машин](insights/vminsights-log-search.md)
+- [Просмотр зависимостей приложений с помощью службы "Azure Monitor для виртуальных машин"](insights/vminsights-maps.md) 
+
+
+### <a name="visualizations"></a>Визуализации
+- [Визуализация данных из Azure Monitor](visualizations.md) — обновлена для запланированных уведомлений о нерекомендуемой версии конструктора представлений.
+
+
+
+
 
 ## <a name="february-2020"></a>Февраль 2020 г.
 

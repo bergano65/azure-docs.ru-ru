@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 keywords: Azure DevOps, Terraform, AKS, Kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 0a193c8da6441a04f742894797521fe92f26b2e1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b7a84d7562e99e53ff7be75b7d40795cd3f9e203
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78945295"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618940"
 ---
 # <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Руководство по созданию кластера Kubernetes с помощью Службы Azure Kubernetes и Terraform
 
@@ -28,7 +28,7 @@ ms.locfileid: "78945295"
 
 - **Настройка Terraform.** Следуйте указаниям в статье [Terraform и настройка доступа к Azure](terraform-install-configure.md).
 
-- **Субъект-служба Azure.** Следуйте указаниям, приведенным в разделе **Создание субъекта-службы** статьи [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Запишите значения appId (идентификатор приложения), displayName (отображаемое имя), password (пароль) и tenant (клиент).
+- **Субъект-служба Azure.** Следуйте инструкциям по **созданию субъекта-службы** в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Запишите значения appId (идентификатор приложения), displayName (отображаемое имя), password (пароль) и tenant (клиент).
 
 ## <a name="create-the-directory-structure"></a>Создание структуры каталога
 
@@ -303,7 +303,7 @@ Terraform отслеживает состояние локально через 
 
 ## <a name="create-the-kubernetes-cluster"></a>Создание кластера Kubernetes
 
-В этом разделе описывается использование команды `terraform init` для создания ресурсов, определяемых файлами конфигурации, которые вы создали в предыдущих разделах.
+В этом разделе показано, как использовать команду `terraform init` для создания ресурсов, определяемых файлами конфигурации, которые вы создали в предыдущих разделах.
 
 1. Инициализируйте Terraform в Cloud Shell. Замените заполнители на соответствующие значения для вашей среды.
 
