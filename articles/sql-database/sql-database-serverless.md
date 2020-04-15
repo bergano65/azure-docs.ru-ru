@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 4/3/2020
-ms.openlocfilehash: 07f29a01ae0128ba0a35504dea54ba1ae2dde944
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 6a1d2f6079280002c868702a6547c8fd359a7c21
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80657063"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81310125"
 ---
 # <a name="azure-sql-database-serverless"></a>База данных Azure S'L без сервера
 
@@ -138,6 +138,8 @@ ms.locfileid: "80657063"
 |Синхронизация данных SQL|Синхронизация между центральной и рядовыми базами данных, которая запускается по настраиваемому расписанию или вручную.|
 |Изменение некоторых метаданных базы данных|Добавление новых тегов базы данных.<br>Изменение макс vCores, мин vCores, или автоматическая задержка паузы.|
 |SQL Server Management Studio (SSMS)|Использование версий SSMS раньше 18.1 и открытие нового окна запроса для любой базы данных на сервере возобновит любую базу данных с автоматической паузой на том же сервере. Такое поведение не происходит при использовании SSMS версии 18.1 или позже.|
+
+Мониторинг, управление или другие решения, выполняющие любые из перечисленных выше операций, вызовут автоматическое возобновление.
 
 Автоматизация также срабатывает во время развертывания некоторых обновлений служб, которые требуют, чтобы база данных была в режиме онлайн.
 
@@ -356,7 +358,7 @@ Azure Hybrid Benefit (AHB) и скидки на зарезервированны
 
 Уровень без серверов доступен по всему миру, за исключением следующих регионов: China East, China North, Germany Central, Germany Northeast, UK North, UK South 2, West Central US и US Gov Central (Айова).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Для начала [см. см.](sql-database-single-database-get-started.md)
 - См. подробнее об [ограничениях ресурсов уровня бессерверных вычислений](sql-database-vCore-resource-limits-single-databases.md#general-purpose---serverless-compute---gen5).

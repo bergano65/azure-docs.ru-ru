@@ -1,7 +1,7 @@
 ---
-title: Прекращение SSL с использованием PowerShell
+title: Прекращение TLS с помощью PowerShell
 titleSuffix: Azure Application Gateway
-description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения SSL-запросов с помощью Azure PowerShell.
+description: Узнайте, как создать шлюз приложения и добавьте сертификат для прекращения TLS с помощью Azure PowerShell.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -9,16 +9,16 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 2ce5b8472fe10b51cff34677c9ce5a89888bdc01
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2bd625982ebd051b92df2f66515fd5b0d0612303
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74075061"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81311916"
 ---
-# <a name="create-an-application-gateway-with-ssl-termination-using-azure-powershell"></a>Создание шлюза приложений с завершением SSL-запросов с помощью Azure PowerShell
+# <a name="create-an-application-gateway-with-tls-termination-using-azure-powershell"></a>Создание шлюза приложения с окончанием TLS с помощью Azure PowerShell
 
-С помощью Azure PowerShell можно создать [шлюз приложений](overview.md) с сертификатом для [завершения SSL-запросов](ssl-overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию. 
+Можно использовать Azure PowerShell для создания [шлюза приложения](overview.md) с сертификатом для [прекращения TLS/SSL,](ssl-overview.md) который использует [виртуальный набор масштабов машины](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для серверов бэкэнда. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -297,6 +297,6 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-powershell.md)

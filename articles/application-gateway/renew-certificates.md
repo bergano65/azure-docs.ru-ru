@@ -7,16 +7,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 8/15/2018
 ms.author: victorh
-ms.openlocfilehash: c7c27f00b9f8b4fdcd8f735f842edb8f66803c6a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4c0c0ab84e60335f58ac075459b95cfabb9135ac
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76277999"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81311964"
 ---
 # <a name="renew-application-gateway-certificates"></a>Обновление сертификатов шлюза приложений
 
-Если вы настроили в шлюзе приложений SSL-шифрование, рано или поздно вам придется обновить сертификаты.
+В какой-то момент вам нужно будет обновить сертификаты, если вы настроили шлюз приложения для шифрования TLS/SSL.
 
 Сертификат, связанный с прослушивателем, можно обновить с помощью портала Azure, Azure PowerShell или Azure CLI:
 
@@ -60,6 +60,6 @@ az network application-gateway ssl-cert update \
   --cert-password "<password>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Сведения по настройке разгрузки SSL с использованием шлюза приложений Azure см. в статье [Настройка шлюза приложений для разгрузки SSL с помощью портала](application-gateway-ssl-portal.md)
+Чтобы узнать, как настроить разгрузку TLS с помощью шлюза приложения Azure, [см.](application-gateway-ssl-portal.md)

@@ -3,12 +3,12 @@ title: Концепция блокировки ресурсов
 description: Узнайте о вариантах блокировки в чертежах Azure для защиты ресурсов при назначении чертежа.
 ms.date: 03/25/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9c4e2f4c6fd8f5fb574002217ca71d1e7d130ff7
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 94ed8efd0d6c654cba129dfc69fbfe5add7a0824
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80676751"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383588"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
 
@@ -103,7 +103,7 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 
 Действие [запрета назначений](../../../role-based-access-control/deny-assignments.md) RBAC применяется к ресурсам артефактов во время назначения схемы, если для назначения выбрано состояние **Только чтение** или **Do Not Delete** (Не удалять). Запрещающее действие добавляется управляемым удостоверением назначения схемы и может быть удалено из ресурсов артефактов только тем же управляемым удостоверением. Эта мера безопасности обеспечивает соблюдение механизма блокировки и предотвращает удаление блокировки чертежа за пределами чертежей Azure.
 
-![Проект отказать в назначении в группе ресурсов](../media/resource-locking/blueprint-deny-assignment.png)
+:::image type="content" source="../media/resource-locking/blueprint-deny-assignment.png" alt-text="Проект отказать в назначении в группе ресурсов" border="false":::
 
 Свойства [назначения в](../../../role-based-access-control/deny-assignments.md#deny-assignment-properties) каждом режиме являются следующими:
 
@@ -179,7 +179,7 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 
 В то время как **исключенные Принципы** должны `*` быть явными, **исключенные** позиции действия могут использоваться для сопоставления подстановочных карт операций RBAC.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Следуйте за учебником [по защите новых ресурсов.](../tutorials/protect-new-resources.md)
 - Узнайте о [жизненном цикле чертежей.](lifecycle.md)

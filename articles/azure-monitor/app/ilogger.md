@@ -4,12 +4,12 @@ description: Образцы использования поставщика Azur
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 0f40c1c1a8ee7f20c769a62e9746da43face4cc7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 33effe9cfec6d766d573617ff03b58564e5b34d1
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80276382"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313658"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>ApplicationInsightsLoggerProvider для журналов .NET Core ILogger
 
@@ -213,7 +213,7 @@ public class Startup
 - В ASP.NET Core (2.0 и более поздний срок) рекомендуемый способ [включения поставщиков журнальных данных](https://github.com/aspnet/Announcements/issues/255) — это использование методов расширения на ILoggingBuilder **в** Program.cs себя.
 
 > [!Note]
-> Новый поставщик доступен для приложений, ориентированных на NETSTANDARD2.0 или позже. Если приложение нацелено на старые версии .NET Core, такие как .NET Core 1.1, или если оно нацелено на рамочную систему .NET, продолжайте использовать старый провайдер.
+> Новый поставщик доступен для приложений, ориентированных на NETSTANDARD2.0 или позже. С версии 2.14.0 [Microsoft.ApplicationInsights.AspNet SDK](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) новый поставщик также доступен для приложений, ориентированных на .NET Framework NET461 или позже. Если приложение нацелено на старые версии .NET Core, такие как .NET Core 1.1, или если оно нацелено на рамку .NET меньше, чем NET46, продолжайте использовать старый провайдер.
 
 ## <a name="console-application"></a>Консольное приложение
 
@@ -494,7 +494,7 @@ ApplicationInsightsLoggerProvider фиксирует журналы ILogger и �
    }
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. также:
 

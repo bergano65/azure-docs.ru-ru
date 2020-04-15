@@ -9,16 +9,16 @@ ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/16/2020
-ms.author: ryanwi
+ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 3ede70719c124caebc541df8578ab2720fc68cd5
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 23ff71bf24c3acbce3d27276981739305e1d074a
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80885520"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309538"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Токены идентификационной платформы Майкрософт
 
@@ -101,7 +101,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 * Аудитория. Утверждение `aud` должно соответствовать идентификатору вашего приложения.
 * Nonce. Утверждение `nonce` в полезных данных должно соответствовать параметру nonce, переданному в конечную точку, или авторизации конечной точки во время первоначального запроса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте о [токенах доступа](access-tokens.md)
 * Настройка претензий в id_token с помощью [дополнительных требований.](active-directory-optional-claims.md)

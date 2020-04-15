@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: f06480767b697dca8fe41e484c02aefc58f040bf
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 3a885f071c89ff6d9bb79d908b19c9451b4ed735
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81261336"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383302"
 ---
 # <a name="create-a-standalone-azure-automation-account"></a>Создание автономной учетной записи службы автоматизации Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "81261336"
 Чтобы проверить роли пользователей, сделайте следующее:
 
 1. На портале Azure перейдите на панель **Azure Active Directory**.
-1. Выберите **пользователей и группы.**
+1. Выберите **Пользователи и группы**.
 1. Выберите **всех пользователей.**
 1. После выбора конкретного пользователя выберите **Профиль**. Значение атрибута **Тип пользователя** в профиле пользователя не должно соответствовать значению **Гость**.
 
@@ -92,18 +92,19 @@ ms.locfileid: "81261336"
 | AzureRunAsCertificate |Ресурс сертификатов, создаваемый автоматически во время создания учетной записи службы автоматизации или с помощью приведенного ниже сценария PowerShell для имеющейся учетной записи. Этот сертификат позволяет пройти проверку подлинности в Azure, что дает возможность управлять ресурсами Azure Resource Manager с помощью модулей Runbook. Срок действия этого сертификата — один год. |
 | AzureRunAsConnection |Ресурс подключений, создаваемый автоматически во время создания учетной записи службы автоматизации или с помощью сценария PowerShell для имеющейся учетной записи. |
 
-## <a name="create-a-classic-run-as-account"></a>Создание классической учетной записи Run-As
+## <a name="create-a-classic-run-as-account"></a>Создание классического запуска как учетная запись
 
-Классические учетные записи Run-As по умолчанию не создаются при создании учетной записи Azure Automation. Если вам по-прежнему требуется учетная запись Classic Run-As, пожалуйста, выполните следующие шаги.
+Учетные записи Classic Run As больше не создаются по умолчанию при создании учетной записи Azure Automation. Если вам все еще требуется классический запуск как учетная запись:
 
-1. На странице **учетной записи автоматизации** выберите **«Выполнить как учетные записи»** в **настройках учетных записей.**
+1. Из учетной записи Автоматизация выберите **«Выполнить как учетные** **записи» в настройках учетных записей.**
 2. Выберите **Azure Classic Run в качестве учетной записи.**
 3. Нажмите **Создать,** чтобы продолжить с классическим Run Как создание учетной записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать больше о графическом авторизации, смотрите [Графическое авторство в Azure Automation](automation-graphical-authoring-intro.md).
 * Чтобы начать работу с PowerShell runbooks, [см.](automation-first-runbook-textual-powershell.md)
 * Чтобы начать работу с runbooks рабочего процесса PowerShell, [см.](automation-first-runbook-textual.md)
-* Чтобы начать работу с Python2 runbooks, смотрите [мой первый Python2 runbook](automation-first-runbook-textual-python2.md).
-
+* Чтобы начать работу с Python 2 runbooks, смотрите [мой первый Python2 runbook](automation-first-runbook-textual-python2.md).
+* Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+)

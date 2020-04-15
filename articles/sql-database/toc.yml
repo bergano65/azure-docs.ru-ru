@@ -708,6 +708,8 @@
               href: sql-database-managed-instance-configure-vm.md
             - name: Подключение типа "точка — сеть"
               href: sql-database-managed-instance-configure-p2s.md
+            - name: Долгосрочное хранение резервных копий
+              href: sql-database-managed-instance-long-term-backup-retention-configure.md
         - name: Загрузка данных
           items:
             - name: Восстановление резервной копии базы данных

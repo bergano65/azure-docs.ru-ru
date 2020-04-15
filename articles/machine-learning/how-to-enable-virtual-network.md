@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 03/13/2020
-ms.openlocfilehash: ea65956a73874b717ecab25d83ed25b59f2ada55
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: f70c24c91e048270696b244bb9775cb24f0ef30d
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81257255"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383475"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Безопасные задания по экспериментам и выводу Azure ML в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -485,6 +485,21 @@ az rest --method put --uri https://management.azure.com"/subscriptions/<subscrip
 
 Для получения дополнительной информации об использовании внутреннего баланса нагрузки с AKS, [см.](/azure/aks/internal-lb)
 
+## <a name="use-azure-container-instances-aci"></a>Используйте экземпляры контейнеров Azure (ACI)
+
+При развертывании модели динамически создаются контейнерные экземпляры Azure. Чтобы включить Машинное обучение Azure в виртуальной сети, необходимо включить __делегацию подсети__ для подсети, используемой развертыванием.
+
+Чтобы использовать ACI в виртуальной сети в рабочем пространстве, используйте следующие шаги:
+
+1. Чтобы включить делегацию подсети в вашей виртуальной сети, используйте информацию в добавлении [или удалите статью делегации подсети.](../virtual-network/manage-subnet-delegation.md) Можно включить делегирование при создании виртуальной сети или добавить ее в существующую сеть.
+
+    > [!IMPORTANT]
+    > При включении `Microsoft.ContainerInstance/containerGroups` делегирования используйте в качестве __подсети Делегата значение обслуживания.__
+
+2. Развертывайте модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-)используйте `vnet_name` и `subnet_name` параметры. Установите эти параметры в виртуальное имя сети и подсеть, где вы включили делегирование.
+
+
+
 ## <a name="use-azure-firewall"></a>Используйте брандмауэр Azure
 
 При использовании Azure Firewall необходимо настроить сетевое правило, чтобы трафик на следующие адреса и из следующих адресов:
@@ -600,7 +615,7 @@ az rest --method put --uri https://management.azure.com"/subscriptions/<subscrip
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка сред обучения](how-to-set-up-training-targets.md)
 * [Где следует развертывать модели](how-to-deploy-and-where.md)

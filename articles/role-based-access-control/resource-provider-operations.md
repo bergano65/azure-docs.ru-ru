@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 03/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: c56e6729307a1cad998a060202f51cb8f29bf94a
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 16fa33999a38b21fd2016c986dd2db81f7d84051
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548320"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383746"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -2392,7 +2392,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Consumption/reservationSummaries/read | Вывод сводки использования зарезервированных экземпляров по порядку резервирования или группам управления. Сводка формируется на ежемесячном или ежедневном уровне. |
 > |  | **ОговоркиПристы** |  |
 > | Действие | Microsoft.Consumption/reservationTransactions/read | Вывод журнала транзакций для зарезервированных экземпляров по группам управления. |
-> |  | **теги** |  |
+> |  | **Теги** |  |
 > | Действие | Microsoft.Consumption/tags/read | Вывод списка тегов для EA и подписок. |
 > |  | **Арендаторов** |  |
 > | Действие | Microsoft.Consumption/tenants/register/action | Регистрация действия для области Microsoft.Consumption клиентом. |
@@ -4262,7 +4262,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.EventGrid/systemTopics/providers/Microsoft.Insights/logDefinitions/read | Позволяет получить доступ к диагностическим журналам |
 > |  | **systemTopics/providers/Microsoft.Insights/metricDefinitions** |  |
 > | Действие | Microsoft.EventGrid/systemTopics/providers/Microsoft.Insights/metricDefinitions/read | Получает доступные метрики для системных тем |
-> |  | **topics** |  |
+> |  | **Темы** |  |
 > | Действие | Microsoft.EventGrid/topics/write | Создание или обновление раздела. |
 > | Действие | Microsoft.EventGrid/topics/read | Чтение раздела. |
 > | Действие | Microsoft.EventGrid/topics/delete | Удаление раздела |
@@ -4562,7 +4562,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Insights/Baseline/Read | Прочитайте базовый упор метрики (предварительный просмотр) |
 > |  | **РассчитатьБазовый** |  |
 > | Действие | Microsoft.Insights/CalculateBaseline/Read | Рассчитать базовый упор для значений метрики (предварительный просмотр) |
-> |  | **Компоненты** |  |
+> |  | **Components** |  |
 > | Действие | Microsoft.Insights/Components/AnalyticsTables/Action | Действие таблицы аналитики Application Insights. |
 > | Действие | Microsoft.Insights/Components/ApiKeys/Action | Создание ключа API Application Insights. |
 > | Действие | Microsoft.Insights/Components/Purge/Action | Очистка данных Application Insights. |
@@ -5040,7 +5040,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Insights/Webtests/MetricDefinitions/Read | Чтение определений метрик веб-теста. |
 > |  | **Вебтесты/Метрика** |  |
 > | Действие | Microsoft.Insights/Webtests/Metrics/Read | Чтение метрик веб-теста. |
-> |  | **книги** |  |
+> |  | **Workbooks** |  |
 > | Действие | Microsoft.Insights/Workbooks/Write | Создание или обновление трудовой книжки |
 > | Действие | Microsoft.Insights/Рабочие книги/Удалить | Удаление книги |
 > | Действие | Microsoft.Insights/Workbooks/Read | Читать трудовую книжку |
@@ -5180,7 +5180,7 @@ Microsoft Мониторинг Исследования
 
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
 
-Служба Azure: [Исследователь данных Azure](../data-explorer/index.yml)
+Служба Azure: [Исследователь данных Azure](/azure/data-explorer/)
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | Описание |
@@ -8324,7 +8324,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Resources/subscriptions/tagNames/tagValues/read | Возвращает значения тегов подписки или выводит их список. |
 > | Действие | Microsoft.Resources/subscriptions/tagNames/tagValues/write | Добавляет значение тега подписки. |
 > | Действие | Microsoft.Resources/subscriptions/tagNames/tagValues/delete | Удаляет значение тега подписки. |
-> |  | **теги** |  |
+> |  | **Теги** |  |
 > | Действие | Microsoft.Ресурсы/теги/читать | Получает все теги на ресурсе. |
 > | Действие | Microsoft.Ресурсы/теги/запись | Обновляет теги на ресурсе, заменяя или объединяя существующие теги с новым набором тегов или удаляя существующие теги. |
 > | Действие | Microsoft.Ресурсы/теги/удаление | Удаляет все теги на ресурсе. |
@@ -10732,7 +10732,7 @@ Microsoft Мониторинг Исследования
 > |  | **Операций** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Соответствие поставщику ресурсов для обслуживания](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли Azure](custom-roles.md)

@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 48d98d6fef896f9288be88824a62fa1c8179217f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7155a3fa9481ef5f2da62d85d4a932ad5e8e8ab1
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79276898"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382523"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -30,10 +30,10 @@ ms.locfileid: "79276898"
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
 | Приложение-функция.                                                                     | Обязательно    | [Microsoft.Web/сайты](/azure/templates/microsoft.web/sites)                             |   |
 | Учетная запись [хранения Azure](../storage/index.yml)                                   | Обязательно    | [Учетные записи Microsoft.Storage/Storage](/azure/templates/microsoft.storage/storageaccounts) |   |
-| Компонент [исследования приложений](../azure-monitor/app/app-insights-overview.md) | Необязательный    | [Microsoft.Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
+| Компонент [исследования приложений](../azure-monitor/app/app-insights-overview.md) | Необязательно    | [Microsoft.Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
 | [План хостинга](./functions-scale.md)                                             | Дополнительно<sup>1</sup>    | [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |   |
 
-<sup>1</sup> План хостинга требуется только при выборе приложения функции в [плане Premium](./functions-premium-plan.md) (в предварительном просмотре) или в [плане службы app.](../app-service/overview-hosting-plans.md)
+<sup>1</sup> План хостинга требуется только при выборе приложения функции в [плане Premium](./functions-premium-plan.md) или в [плане Службы Приложения.](../app-service/overview-hosting-plans.md)
 
 > [!TIP]
 > Хотя это и не требуется, настоятельно рекомендуется настроить Application Insights для вашего приложения.
@@ -111,7 +111,7 @@ ms.locfileid: "79276898"
 
 Определение плана хостинга варьируется и может быть одним из следующих:
 * [План потребления](#consumption) (по умолчанию)
-* [Премиум-план](#premium) (в предварительном просмотре)
+* [План "Премиум"](#premium)
 * [План обслуживания приложений](#app-service-plan)
 
 ### <a name="function-app"></a>Приложение-функция
@@ -648,7 +648,7 @@ Linux приложения должны `linuxFxVersion` также `siteConfig`
 Для развертывания шаблона можно использовать любой из следующих способов:
 
 * [PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
-* [Лазурный CLI](../azure-resource-manager/templates/deploy-cli.md)
+* [Azure CLI](../azure-resource-manager/templates/deploy-cli.md)
 * [Портал Azure](../azure-resource-manager/templates/deploy-portal.md)
 * [REST API](../azure-resource-manager/templates/deploy-rest.md)
 
@@ -689,7 +689,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 Чтобы проверить это развертывание, можно использовать [шаблон, подобный этому,](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) который создает функциональное приложение на Windows в плане потребления. Замените `<function-app-name>` уникальное имя для приложения функции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о разработке и настройке Функций Azure:
 

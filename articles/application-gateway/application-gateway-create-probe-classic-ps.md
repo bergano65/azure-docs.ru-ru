@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: e01a1cad98ded9d7ce8683b6adf38b5d53959774
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0ba3e9ae7b5075d1f5457cb2960423ad1c737e94
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75966799"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312553"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-classic-by-using-powershell"></a>Создание пользовательской проверки для шлюза приложений (классического) Azure с помощью PowerShell
 
@@ -142,7 +142,7 @@ Get-AzureApplicationGateway AppGwTest
 
 |Параметр|Описание|
 |---|---|
-|**Название** |Имя пользовательской пробы. |
+|**имя**; |Имя пользовательской пробы. |
 | **Протокол** | Используемый протокол (возможные значения: HTTP или HTTPS).|
 | **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас\/есть веб-сайт http: /contoso.com/, то\/пользовательский зонд может быть настроен для "http: /contoso.com/path/custompath.htm" для проверки зонда, чтобы иметь успешный ответ HTTP.|
 | **Интервал** | Задает интервал между пробами в секундах.|
@@ -198,9 +198,9 @@ Get-AzureApplicationGateway AppGwTest
 Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Указания по настройке разгрузки SSL см. в статье о [настройке шлюза приложений для разгрузки SSL](application-gateway-ssl.md).
+Если вы хотите настроить систему безопасности транспортного слоя (TLS), ранее известную как [Configure an application gateway for TLS offload](application-gateway-ssl.md)разгрузка Безопасных разновидностя sockets layer (SSL), см.
 
 Указания по настройке шлюза приложений для использования с внутренним балансировщиком нагрузки см. в статье [Создание шлюза приложений с внутренней подсистемой балансировщика нагрузки (ILB)](application-gateway-ilb.md).
 

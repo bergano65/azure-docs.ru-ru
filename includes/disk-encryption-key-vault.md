@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file
-ms.openlocfilehash: f2133524f57576c4646de9d4bf7f37b573a77e6d
-ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
+ms.openlocfilehash: 6f7f319d2ebb4cd39933addf04f249df02d7819f
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80813757"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81314093"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -40,7 +40,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 Создайте хранилище ключей, используя команду [Az keyvault,](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) команду Azure CLI, команду [New-AzKeyvault](/powershell/module/az.keyvault/new-azkeyvault) Azure Powershell, [портал Azure](https://portal.azure.com)или [шаблон менеджера ресурсов.](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create)
 
 >[!WARNING]
-> Для обеспечения того, чтобы секреты шифрования не пересекали региональные границы, Шифрование дисков Azure требует, чтобы Key Vault и VMs были расположены в одном регионе и в той же подписке. Создайте и используйте Key Vault, который находится в том же регионе, что и вшивки в использовании ввода-нора. 
+> Хранилище ключей и вм- свис должны быть в одной подписке. Кроме того, чтобы секреты шифрования не пересекали региональные границы, Azure Disk Encryption требует, чтобы Key Vault и VMs были расположены в одном регионе. Создайте и используйте Key Vault, который находится в той же подписке и регионе, что и вшивки в видео, которые будут зашифрованы. 
 
 Каждый Key Vault должен иметь уникальное имя. В следующих примерах замените <your-unique-keyvault-name> именем своего хранилища ключей.
 

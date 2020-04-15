@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 12/12/2019
+ms.date: 04/11/2019
 ms.author: rogara
 ms.custom: include file
-ms.openlocfilehash: c88f5a4dd4f2997ce01b1f6a3ae192c62f530e76
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: b6a8bc083b589463b67f2e25e262b15456355d05
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81011432"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383836"
 ---
 ## <a name="2-assign-access-permissions-to-an-identity"></a>2. Назначить разрешения на доступ к удостоверению личности
 
@@ -98,7 +98,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 
 ### <a name="mount-a-file-share-from-the-command-prompt"></a>Подключение файлового ресурса Azure из командной строки
 
-Используйте команду Windows **net use** для подключения файлового ресурса Azure. Не забудьте заменить значения заполнителя в следующем примере своими собственными значениями. Для получения дополнительной информации о сборе файлов [см.](../articles/storage/files/storage-how-to-use-files-windows.md)
+Используйте команду Windows **net use** для подключения файлового ресурса Azure. Не забудьте заменить значения заполнителя в следующем примере своими собственными значениями. Для получения дополнительной информации о сборе файлов [см.](../articles/storage/files/storage-how-to-use-files-windows.md) 
 
 ```
 net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> <storage-account-key> /user:Azure\<storage-account-name>
@@ -123,7 +123,7 @@ net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<
 
 ![Снимок экрана с окном входа в Azure AD для выполнения аутентификации пользователя](media/storage-files-aad-permissions-and-mounting/azure-active-directory-authentication-dialog.png)
 
-Используйте следующую команду для установки общего файла Azure. Не забудьте заменить значения заполнителей собственными значениями. Поскольку вы прошли аутентификации, вам не нужно предоставлять ключ учетной записи хранилища, учетные данные AD или учетные данные Azure AD. Единый опыт регистрации поддерживается для проверки подлинности с помощью AD или Azure AD DS.
+Используйте следующую команду для установки общего файла Azure. Не забудьте заменить значения заполнителей собственными значениями. Поскольку вы прошли аутентификации, вам не нужно предоставлять ключ учетной записи хранилища, учетные данные AD или учетные данные Azure AD. Единый опыт регистрации поддерживается для проверки подлинности с помощью AD или Azure AD DS. Если вы столкнулись с проблемами при монтаже с учетными данными AD, проверьте [проблемы Troubleshoot Azure Files в Windows](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) для самостоятельного диагностического руководства.
 
 ```
 net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>

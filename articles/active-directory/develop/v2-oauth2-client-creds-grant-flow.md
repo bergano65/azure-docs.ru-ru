@@ -9,15 +9,15 @@ ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.author: ryanwi
+ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: a03f8cb412b6d6ae95165331ae836bdfde5d670d
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: c6113490cf7d754a9e45638e4a0bfa588f1942ca
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886302"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309431"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-client-credentials-flow"></a>Платформа идентификации Майкрософт и поток учетных данных клиентов OAuth 2.0
 
@@ -272,7 +272,7 @@ curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...." 'https://graph
 
 Чтобы получить дополнительные сведения об учетных данных клиента, прочтите [эту статью](https://aka.ms/msal-net-client-credentials) из библиотеки проверки подлинности Майкрософт.
 
-| Образец | Платформа |Описание |
+| Пример | Платформа |Описание |
 |--------|----------|------------|
 |[active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) | Консоль .NET Core 2.1 | Простое приложение .NET Core, которое отображает пользователей клиента, которые делают запрос в Microsoft Graph не от имени пользователя, а используя удостоверение приложения. В примере также показаны различные варианты проверки подлинности с помощью сертификатов. |
 |[active-directory-dotnet-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2)|ASP.NET MVC 3 | Веб-приложение, которое синхронизирует данные из Microsoft Graph на основе удостоверения приложения, а не имени пользователя. |

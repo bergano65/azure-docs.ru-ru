@@ -5,12 +5,12 @@ author: suhuruli
 ms.topic: conceptual
 ms.date: 11/20/2017
 ms.author: suhuruli
-ms.openlocfilehash: 806e77a928d25e30aed24147525f74507bc32795
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9f60b9d9b919a72250038ede2a2bd53278df79cb
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75462994"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81308999"
 ---
 # <a name="set-up-a-linux-service-fabric-cluster-on-your-windows-developer-machine"></a>Установка кластера Service Fabric на платформе Linux на компьютере разработчики Windows
 
@@ -45,7 +45,7 @@ ms.locfileid: "75462994"
 2. В новом каталоге создайте файл с именем `Dockerfile` для создания образа Service Fabric.
 
     ```Dockerfile
-    FROM microsoft/service-fabric-onebox
+    FROM mcr.microsoft.com/service-fabric/onebox:latest
     WORKDIR /home/ClusterDeployer
     RUN ./setup.sh
     #Generate the local
@@ -86,7 +86,7 @@ ms.locfileid: "75462994"
     >
     >Если приложение ожидает передачи данных через определенные порты, их необходимо указать с помощью дополнительных тегов `-p`. Например, если приложение ожидает передачи данных через порт 8080, добавьте следующий тег `-p`:
     >
-    >`docker run -itd -p 19080:19080 -p 8080:8080 --name sfonebox microsoft/service-fabric-onebox`
+    >`docker run -itd -p 19080:19080 -p 8080:8080 --name sfonebox mcr.microsoft.com/service-fabric/onebox:latest`
     >
 
 5. Кластер займет короткое время, чтобы начать, вы можете просмотреть журналы, используя следующую команду [http://localhost:19080](http://localhost:19080)или перейти на панель мониторинга для просмотра кластеров работоспособности:
@@ -112,7 +112,7 @@ ms.locfileid: "75462994"
  
  * Служба DNS не работает и не поддерживается ([проблема № 132](https://github.com/Microsoft/service-fabric/issues/132))
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Приступите к работе с [Eclipse](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-eclipse).
 * Просмотрите другие [примеры Java](https://github.com/Azure-Samples/service-fabric-java-getting-started).
 

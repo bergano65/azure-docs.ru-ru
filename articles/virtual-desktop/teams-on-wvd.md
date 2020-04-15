@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: cfec30e56b0fd523896cbc1a7e84e92f639075a8
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 15a4c9b16b102310fd02f8db3a4fb93cff84882b
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80879060"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81314073"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Используйте команды Майкрософт на виртуальном рабочем столе Windows
 
@@ -67,3 +67,7 @@ ms.locfileid: "80879060"
 
       > [!NOTE]
       > Если вы установите команды с настройкой MSI ALLUSER-1, автоматические обновления будут отключены. Мы рекомендуем вам не забудьте обновлять команды по крайней мере один раз в месяц.
+      
+### <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настройка свойств удаленного протокола рабочего стола для пула хоста
+Настройка свойств удаленного настольного протокола пула (RDP), таких как мультимонитор, включение микрофона и перенаправления звука, позволяет обеспечить оптимальный опыт для пользователей в зависимости от их потребностей. Вы можете настроить свойства RDP в Windows Virtual Desktop с помощью параметра **-CustomRdpProperty** в cmdlet **Set-RdsHostPool.**
+Смотрите [поддерживаемые настройки файлов RDP](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context) для полного списка поддерживаемых свойств и значений их значения по умолчанию.

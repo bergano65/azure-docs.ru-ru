@@ -6,13 +6,13 @@ ms.author: nimoolen
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 03/24/2020
-ms.openlocfilehash: 92421125ecb5f4336922c6e6b4508fcdaf92be6e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/13/2020
+ms.openlocfilehash: 251507c5740af69bd0818391dd2e8f857338b6cf
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80246404"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313914"
 ---
 # <a name="data-flow-script-dfs"></a>Скрипт потока данных (DFS)
 
@@ -140,6 +140,11 @@ derive1 sink(allowSchemaDrift: true,
 
 ## <a name="script-snippets"></a>Фрагменты сценария
 
+Фрагменты скрипта являются кодом совместного использования сценария Data Flow, который можно использовать для обмена между потоками данных. В этом видео ниже рассказывается о том, как использовать фрагменты скриптов и использовать сценарий Data Flow для копирования и вставки фрагментов скрипта за графиками потока данных:
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4tA9b]
+
+
 ### <a name="aggregated-summary-stats"></a>Агрегированная сводная статистика
 Добавьте агрегированную трансформацию в поток данных под названием "SummaryStats", а затем вставьте в этот код ниже для агрегированной функции в скрипте, заменив существующие SummaryStats. Это обеспечит общий шаблон для сводной статистики профиля данных.
 
@@ -172,6 +177,6 @@ aggregate(groupBy(movie),
 derive(DWhash = sha1(Name,ProductNumber,Color))
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Изучите потоки данных, начав со [статьи обзора потоков данных](concepts-data-flow-overview.md)

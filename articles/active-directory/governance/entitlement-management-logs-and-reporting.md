@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 03/22/2020
+ms.date: 04/14/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 070b7c5e0fef7d50f84271190432a65d29699bdf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d59a508d03730a51e793a5e30e2c99a91af77ce8
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80128628"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81380196"
 ---
 # <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Архивные журналы и отчеты об управлении правами Azure AD в Azure Monitor
 
@@ -49,6 +49,38 @@ Azure AD хранит события аудита на срок до 30 дней
 1. Выберите **Использование и сметные затраты** и нажмите **на хранение данных.** Измените ползунок на количество дней, которые вы хотите сохранить, чтобы данные соответствовали вашим требованиям аудита.
 
     ![Панель рабочих пространств журнала Analytics](./media/entitlement-management-logs-and-reporting/log-analytics-workspaces.png)
+
+1. Позже, чтобы увидеть диапазон дат, храняихся в вашем рабочем пространстве, вы можете использовать архивную книгу *журнала Дата Диапазона:*  
+    
+    1. Выберите **активный каталог Azure,** а затем нажмите **На рабочие книги.** 
+    
+    1. Расширьте раздел **Azure Active Directory Troubleshooting**и нажмите на **архивный диапазон дат журнала.** 
+
+
+## <a name="view-events-for-an-access-package"></a>Просмотр событий для пакета доступа  
+
+Для просмотра событий для пакета доступа необходимо иметь доступ к базовому рабочему пространству монитора Azure (см. [Управление доступом к данным журнала и рабочим областям в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions) для получения информации) и в одной из следующих ролей: 
+
+- Глобальный администратор.  
+- администратор безопасности;  
+- Читатель сведений о безопасности  
+- Читатель отчетов  
+- администратор приложений;  
+
+Используйте следующую процедуру для просмотра событий: 
+
+1. На портале Azure выберите **Active Directory Azure,** а затем нажмите **«Рабочие книги».** Если у вас есть только одна подписка, перейдите к шагу 3. 
+
+1. Если у вас несколько подписок, выберите подписку, содержащую рабочее пространство.  
+
+1. Выберите трудовую книгу под названием *Активность пакета доступа.* 
+
+1. В этой рабочей книге выберите временной диапазон (изменить **все,** если не уверен), и выберите идентификатор пакета доступа из списка выпадающих пакетов всех пакетов доступа, которые имели активность в течение этого диапазона времени. Будут отображаться события, связанные с пакетом доступа, произошедшим в выбранном временном диапазоне.  
+
+    ![Просмотр событий пакета доступа](./media/entitlement-management-logs-and-reporting/view-events-access-package.png) 
+
+    Каждая строка включает в себя время, идентификатор пакета доступа, имя операции, идентификатор объекта, UPN и имя отображения пользователя, который начал операцию.  Дополнительная информация включена в JSON.   
+
 
 ## <a name="create-custom-azure-monitor-queries-using-the-azure-portal"></a>Создание пользовательских запросов Azure Monitor с помощью портала Azure
 Вы можете создавать собственные запросы на событиях аудита Azure AD, включая события управления правами.  
@@ -86,6 +118,7 @@ AuditLogs | where TimeGenerated > ago(3653d) | summarize OldestAuditEvent=min(Ti
 Убедитесь, что вы, пользователь или директор службы, которые будут аутентифицироваться до Azure AD, в соответствующей роли Azure в рабочей области журнала Analytics. Варианты роли являются либо журнала Analytics Reader или журнал Analytics вкладчика. Если вы уже в одной из этих ролей, то перейдите к [retrieve Log Analytics ID с одной подпиской Azure.](#retrieve-log-analytics-id-with-one-azure-subscription)
 
 Чтобы установить назначение ролей и создать запрос, сделайте следующие шаги:
+
 1. На портале Azure найдите [рабочее пространство Log Analytics.](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.OperationalInsights%2Fworkspaces
 )
 
@@ -117,7 +150,7 @@ $wks = Get-AzOperationalInsightsWorkspace
 
  [Get-AzOperationalInsightsWorkspace](/powershell/module/Az.OperationalInsights/Get-AzOperationalInsightsWorkspace) работает по одной подписке за один раз. Таким образом, если у вас есть несколько подписок Azure, вы хотите, чтобы убедиться, что вы подключитесь к той, которая имеет рабочее пространство журнала Analytics с журналами Azure AD. 
  
- Следующие cmdlets отображают список подписок и находят идентификатор подписки, в который имеется рабочее пространство Log Analytics:
+ Следующие cmdlets отображают список подписок и находят идентификатор подписки с рабочим пространством Log Analytics:
  
 ```azurepowershell
 Connect-AzAccount
@@ -128,7 +161,7 @@ $subs | ft
 Вы можете повторно подтвердить подлинность и связать сеанс PowerShell `Connect-AzAccount –Subscription $subs[0].id`с этой подпиской, используя такую команду, как . Подробнее о том, как проверить подлинность Azure от PowerShell, втомимого в неинтерактивном количестве, можно узнать в [Azure PowerShell.](/powershell/azure/authenticate-azureps?view=azps-3.3.0&viewFallbackFrom=azps-2.5.0
 )
 
-Если в этой подписке есть несколько рабочих областей анализа журналов, то cmdlet [Get-AzOperationalInsightsWorkspace](/powershell/module/Az.OperationalInsights/Get-AzOperationalInsightsWorkspace) возвращает список рабочих областей. Затем вы можете найти тот, который имеет журналы Azure AD. Поле, `CustomerId` возвращенное этим cmdlet, такое же, как и значение "Идента рабочего пространства", отображаемый на портале Azure в обзоре рабочего пространства журнала Analytics.
+Если в этой подписке есть несколько рабочих областей анализа журналов, то cmdlet [Get-AzOperationalInsightsWorkspace](/powershell/module/Az.OperationalInsights/Get-AzOperationalInsightsWorkspace) возвращает список рабочих областей. Затем вы можете найти тот, который имеет журналы Azure AD. Поле, `CustomerId` возвращенное этим cmdlet, такое же, как и значение "Workspace Id", отображаемый на портале Azure в обзоре рабочего пространства журнала Analytics.
  
 ```powershell
 $wks = Get-AzOperationalInsightsWorkspace
@@ -150,7 +183,7 @@ $aResponse.Results |ft
 Вы также можете получить события управления правами с помощью запроса, например:
 
 ```azurepowershell
-$bQuery = = 'AuditLogs | where Category == "EntitlementManagement"'
+$bQuery = 'AuditLogs | where Category == "EntitlementManagement"'
 $bResponse = Invoke-AzOperationalInsightsQuery -WorkspaceId $wks[0].CustomerId -Query $Query
 $bResponse.Results |ft 
 ```

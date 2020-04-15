@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 04/14/2020
 ms.author: aahi
-ms.openlocfilehash: 4d597b872cf31a823f314d9f3c67c9f45201c542
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 17582244aef173da6ac700c980f7bd7fb0fec307
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81258479"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383086"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Контейнеры для речевых услуг часто задают вопросы (ВСЗ)
 
@@ -379,7 +379,7 @@ https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/6805d96bf69d
 <b>Как я могу получить непакетные &lt;AIS для обработки аудио длиной 15 секунд?</b>
 </summary>
 
-**Ответ:** Это в интерактивном режиме. Если вы используете диктовку или разговор, это не проблема.
+**Ответ:** `RecognizeOnce()` в интерактивном режиме обрабатывает только до 15 секунд аудио, так как режим предназначен для командовании речи, где высказывания, как ожидается, будут короткими. Если вы `StartContinuousRecognition()` используете для диктовки или разговора, нет 15 второй предел.
 
 
 <br>
@@ -609,7 +609,7 @@ speech_config = speechsdk.SpeechConfig(host="ws://localhost:5000")
 <br>
 </details>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Контейнеры cognitive Services](speech-container-howto.md)

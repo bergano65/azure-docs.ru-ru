@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/30/2019
-ms.author: ryanwi
+ms.date: 04/13/2020
+ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 4847bddcbcfbc27502965efa221a3707fa453457
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: bc635addc2a5cd7d3c698f6885bec0399e28743a
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80885673"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309657"
 ---
 # <a name="oauth-20-and-openid-connect-protocols-on-the-microsoft-identity-platform"></a>Протоколы OAuth 2.0 и OpenID Connect на платформе майкрософт
 
@@ -63,7 +63,7 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 | `common` | Позволяет пользователям с личными учетными записями Майкрософт и рабочими учетными записями Azure AD выполнять вход в приложение. |
 | `organizations` | Позволяет выполнять вход в приложение только пользователям с рабочими учетными записями Azure AD. |
 | `consumers` | Позволяет выполнять вход в приложение только пользователям с личными учетными записями Майкрософт. |
-| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` либо `contoso.onmicrosoft.com` | Позволяет выполнять вход в приложение только пользователям с рабочими учетными записями определенного клиента Azure AD. Можно использовать понятное доменное имя клиента Azure AD или идентификатор GUID клиента. |
+| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` или `contoso.onmicrosoft.com` | Позволяет выполнять вход в приложение только пользователям с рабочими учетными записями определенного клиента Azure AD. Можно использовать понятное доменное имя клиента Azure AD или идентификатор GUID клиента. |
 
 Чтобы узнать, как взаимодействовать с этими конечными точками, выберите определенный тип приложения в разделе [Протоколы](#protocols) и перейдите по ссылкам для получения дополнительной информации.
 

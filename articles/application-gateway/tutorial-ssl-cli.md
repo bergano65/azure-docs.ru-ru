@@ -1,6 +1,6 @@
 ---
-title: Прекращение SSL с помощью CLI - Шлюз приложений Azure
-description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения SSL-запросов с помощью интерфейса командной строки Azure.
+title: Прекращение TLS с помощью CLI - Шлюз приложений Azure
+description: Узнайте, как создать шлюз приложения и добавить сертификат для прекращения TLS с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -8,16 +8,16 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: c297a7d34e8b85420329abaca0e15029ce207861
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6cd8cca65762de3da6a0e69e93c8d79bbe498dde
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78246614"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81311973"
 ---
-# <a name="create-an-application-gateway-with-ssl-termination-using-the-azure-cli"></a>Создание шлюза приложений с завершением SSL-запросов с помощью Azure CLI
+# <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Создание шлюза приложений с окончанием TLS с помощью Azure CLI
 
-Вы можете использовать Azure CLI для создания [шлюза приложения](overview.md) с сертификатом для [прекращения SSL.](ssl-overview.md) Для серверов бэкэнда можно использовать [набор виртуального масштаба машины.](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
+Вы можете использовать Azure CLI для создания [шлюза приложения](overview.md) с сертификатом для [прекращения TLS.](ssl-overview.md) Для серверов бэкэнда можно использовать [набор виртуального масштаба машины.](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -33,7 +33,7 @@ ms.locfileid: "78246614"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
@@ -181,6 +181,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG --location eastus
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-cli.md)

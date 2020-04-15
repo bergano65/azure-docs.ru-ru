@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2019
 ms.author: victorh
-ms.openlocfilehash: c40210f3a6f0fb10be1f20deef87b2acfa076a4c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fefbb038cec0c061f1fd191a77164880372555a0
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79460642"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81314326"
 ---
 # <a name="frequently-asked-questions-for-azure-web-application-firewall-on-azure-front-door-service"></a>Часто задаваемые вопросы для брандмауэра веб-приложений Azure на службе передних дверей Azure
 
@@ -31,7 +31,7 @@ Azure Front Door — это высокомасштабируемая, глоба
 
 ## <a name="does-azure-waf-support-https"></a>Поддерживает ли Azure WAF HTTPS?
 
-Передняя дверь предлагает SSL разгрузки. WAF интегрируется с Front Door и может проверить запрос после его расшифровки.
+Передняя дверь предлагает Разгрузку TLS. WAF интегрируется с Front Door и может проверить запрос после его расшифровки.
 
 ## <a name="does-azure-waf-support-ipv6"></a>Поддерживает ли Azure WAF IPv6?
 
@@ -74,7 +74,7 @@ Azure Front Door — это высокомасштабируемая, глоба
 
 Тем не менее, вполне возможно, что запросы от одного и того же клиента могут поступать на другой сервер Front Door, который еще не обновил счетчик лимита ставок. Например, клиент может открыть новое соединение для каждого запроса, и порог низкий. В этом случае первый запрос на новый сервер Front Door пройдет проверку лимита скорости. Порог ограничения скорости обычно устанавливается высоким для защиты от атак отказа в обслуживании с любого IP-адреса клиента. Для очень низкого порога, вы можете увидеть дополнительные запросы выше порога пройти.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [брандмауэре веб-приложений Azure](../overview.md).
 - Узнайте больше о [передней двери Azure](../../frontdoor/front-door-overview.md).

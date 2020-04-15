@@ -204,6 +204,8 @@
           items:
             - name: Портал Azure
               href: howto-configure-audit-logs-portal.md
+            - name: Azure CLI
+              href: howto-configure-audit-logs-cli.md
     - name: Монитор
       items:
         - name: Создание оповещений на основе метрик

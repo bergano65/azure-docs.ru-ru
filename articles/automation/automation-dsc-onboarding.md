@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.topic: conceptual
 ms.date: 12/10/2019
 manager: carmonm
-ms.openlocfilehash: 554a4c64700bb189b4b9f085bd7c259312a36b4b
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: c718b9a66b378044618c8c52eec3a1a498ace83c
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80410933"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383205"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"
 
@@ -39,6 +39,9 @@ Azure Automation State Configuration — это служба управлени�
 > Управление VMs-мизантами Azure с конфигурацией Azure Automation State включено без дополнительной платы, если установленная версия расширения Azure VM Desired State Configuration превышает 2,70. Для получения дополнительной информации [**см.**](https://azure.microsoft.com/pricing/details/automation/)
 
 В следующих разделах этой статьи описано, как можно на борту машин, перечисленных выше, в Azure Automation State Configuration.
+
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](automation-update-azure-modules.md)
 
 ## <a name="onboarding-azure-vms"></a>На борту Azure VMs
 
@@ -280,15 +283,15 @@ Azure Automation State Configuration — это служба управлени�
 Если по умолчанию PowerShell DSC LCM соответствует вашему примеру использования и вы хотите, чтобы бортовые машины как вытащить из и сообщить в Azure Automation State Configuration, вы можете создать необходимые метаконфигурации DSC более просто с помощью cmdlets Azure Automation.
 
 1. Откройте консоль PowerShell или VSCode в качестве администратора на машине в локальной среде.
-2. Подключитесь к Azure Resource Manager с помощью `Connect-AzAccount`.
+2. Подключитесь к менеджеру ресурсов Azure с помощью [Connect-AzAccount](https://docs.microsoft.com/powershell/module/Az.Accounts/Connect-AzAccount?view=azps-3.7.0).
 3. Скачать метаконфигурации PowerShell DSC для машин, которые вы хотите на борту, из учетной записи Автоматизации, в которой вы настраиваете узлы.
 
    ```powershell
    # Define the parameters for Get-AzAutomationDscOnboardingMetaconfig using PowerShell Splatting
    $Params = @{
-       ResourceGroupName = 'ContosoResources'; # The name of the Resource Group that contains your Azure Automation Account
-       AutomationAccountName = 'ContosoAutomation'; # The name of the Azure Automation Account where you want a node on-boarded to
-       ComputerName = @('web01', 'web02', 'sql01'); # The names of the computers that the meta configuration will be generated for
+       ResourceGroupName = 'ContosoResources'; # The name of the Resource Group that contains your Azure Automation account
+       AutomationAccountName = 'ContosoAutomation'; # The name of the Azure Automation account where you want a node on-boarded to
+       ComputerName = @('web01', 'web02', 'sql01'); # The names of the computers that the metaconfiguration will be generated for
        OutputFolder = "$env:UserProfile\Desktop\";
    }
    # Use PowerShell splatting to pass parameters to the Azure Automation cmdlet being invoked
@@ -296,7 +299,7 @@ Azure Automation State Configuration — это служба управлени�
    Get-AzAutomationDscOnboardingMetaconfig @Params
    ```
 
-1. Теперь у вас должна быть папка под названием **DscMetaConfigs,** содержащая метаконфигурации PowerShell DSC для машин на борту (в качестве администратора).
+1. Теперь у вас должна быть папка **DscMetaConfigs,** содержащая метаконфигурации PowerShell DSC для машин на борту (в качестве администратора).
 
     ```powershell
     Set-DscLocalConfigurationManager -Path $env:UserProfile\Desktop\DscMetaConfigs
@@ -325,7 +328,7 @@ Azure Automation State Configuration — это служба управлени�
 
 - **Изменения значений DSC LCM.** Возможно, потребуется изменить [значения PowerShell DSC LCM,](/powershell/scripting/dsc/managing-nodes/metaConfig4) установленные, например, `ConfigurationMode`при первоначальной регистрации узла. В настоящее время изменить эти значения агента DSC можно только путем перерегистрации. Единственным исключением является значение конфигурации узлов, назначенное узлам. Вы можете изменить это непосредственно в DSC Azure Automation DSC.
 
-Вы можете перерегистрировать узла так же, как изначально зарегистрировали узла, используя любой из методов посадки, описанных в этом документе. Вам не нужно отменять узел из конфигурации состояния автоматизации Azure перед его перерегистрацией.
+Вы можете перерегистрировать узла так же, как вы зарегистрировали узла на начальном этапе, используя любой из методов посадки, описанных в этом документе. Вам не нужно отменять узел из конфигурации состояния автоматизации Azure перед его перерегистрацией.
 
 ## <a name="troubleshooting-azure-virtual-machine-onboarding"></a>Устранение неполадок при подключении виртуальной машины Azure
 
@@ -347,6 +350,7 @@ Azure Automation State Configuration — это служба управлени�
 
 - Для начала см. [Начало работы с конфигурацией состояния автоматизации Azure.](automation-dsc-getting-started.md)
 - Чтобы узнать о компиляции конфигураций DSC, чтобы можно было назначить их целевым узлам, см. [Конфигурации компиляции в конфигурации состояния azure Automation.](automation-dsc-compile.md)
-- Для справки PowerShell cmdlet [см.](/powershell/module/az.automation#automation)
+- Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+)
 - Для получения информации о ценах на цены [см.](https://azure.microsoft.com/pricing/details/automation/)
 - Например, использование конфигурации состояния azure Automation в непрерывном конвейере развертывания см. Пример [использования: непрерывное развертывание виртуальных машин с использованием конфигурации состояния Azure Automation и Chocolatey.](automation-dsc-cd-chocolatey.md)

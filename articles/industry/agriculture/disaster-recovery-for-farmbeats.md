@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 04/13/2020
 ms.author: v-umha
-ms.openlocfilehash: fbda28ce588aad5f6bc0d89de60069c4220fa523
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: d64735e683ba1133e7d381a68611d204c4068026
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266179"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313065"
 ---
 # <a name="disaster-recovery-for-farmbeats"></a>Аварийное восстановление для FarmBeats
 
@@ -34,7 +34,7 @@ FarmBeats хранит данные в трех службах первой па
 
 ## <a name="restore-service-from-online-backup"></a>Восстановление сервиса из резервного копирования в режиме онлайн
 
-Вы можете инициировать сбой и восстановление хранящихся данных, для которых каждый из вышеупомянутых хранилий данных для развертывания FarmBeats. После восстановления данных для хранения данных Azure и Cosmos DB создайте еще одно развертывание FarmBeats в парном регионе Azure, а затем направите новое развертывание для использования данных из восстановленных хранилищ данных (т.е. Azure Storage и Cosmos DB) с помощью нижеприведенных шагов:
+Можно инициировать сбой и восстановление хранящихся данных, для которых каждый из вышеупомянутых хранилий данных для развертывания FarmBeats. После восстановления данных для хранения данных Azure и Cosmos DB создайте еще одно развертывание FarmBeats в парном регионе Azure, а затем направите новое развертывание для использования данных из восстановленных хранилищ данных (т.е. Azure Storage и Cosmos DB) с помощью нижеприведенных шагов:
 
 1. [Настройка Cosmos DB](#configure-cosmos-db)
 2. [Настройка учетной записи хранения](#configure-storage-account)
@@ -45,18 +45,18 @@ FarmBeats хранит данные в трех службах первой па
 Копируйте ключ доступа восстановленного Cosmos DB и обновите новый ключевой vault FarmBeats Datahub.
 
 
-  ![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/keyvault-secrets.png)
+  ![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/key-vault-secrets.png)
 
 > [!NOTE]
 > Копируйте URL восстановленного Cosmos DB и обновляйте его в новой конфигурации приложения FarmBeats Datahub. Теперь вы можете удалить учетную запись Cosmos DB в новом развертывании FarmBeats.
 
-  ![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/northeu-ehub-api-configuration.png)
+  ![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/configuration.png)
 
 ### <a name="configure-storage-account"></a>Настройка учетной записи хранения
 
 Копируйте ключ доступа восстановленной учетной записи хранилища и обновляйте его в новом хранилище ключей FarmBeats Datahub.
 
-![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/keyvault-7udqm-secrets.png)
+![Аварийное восстановление](./media/disaster-recovery-for-farmbeats/key-vault-7-secrets.png)
 
 >[!NOTE]
 > Убедитесь в обновлении имени учетной записи хранилища в новом файле конфигурации FarmBeats Batch VM.

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
-ms.openlocfilehash: 31e85876d60ae6fcd8f3b29633506d698a323acb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a53037b5f6c43de0e08bb1c5143f27d14600ca62
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79272439"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81381416"
 ---
 # <a name="connect-to-hdinsight-apache-hadoop-using-ssh"></a>Подключение к HDInsight (Apache Hadoop) с помощью SSH
 
@@ -108,7 +108,7 @@ SSH-ключи используют [криптографию с открыты�
 | --------------- | ---------------- |
 | Портал Azure | По умолчанию учетная запись пользователя SSH содержит тот же пароль, что и учетная запись входа кластера. Чтобы использовать другой пароль, отоверьте __используйте кластерный пароль для входа в SSH,__ а затем введите пароль в поле __паролей SSH.__</br>![Диалоговое окно пароля SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-password.png)|
 | Azure PowerShell | Используйте `--SshCredential` параметр смдлета [New-AzHdinsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) и передайте `PSCredential` объект, содержащий имя учетной записи sSH и пароль. |
-| Azure CLI | Используйте `--sshPassword` параметр [az hdinsight создать](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) команду и обеспечить значение пароля. |
+| Azure CLI | Используйте `--ssh-password` параметр [az hdinsight создать](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) команду и обеспечить значение пароля. |
 | Шаблон Resource Manager | Пример использования пароля с помощью шаблона см. на странице [Deploy HDInsight cluster with Storage and SSH password](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/) (Развертывание HDInsight с использованием службы хранилища и пароля SSH). Элемент `linuxOperatingSystemProfile` в файле [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-password/azuredeploy.json) используется для передачи имени учетной записи SSH и пароля в Azure при создании кластера.|
 
 ### <a name="change-the-ssh-password"></a>Изменение пароля SSH
@@ -178,7 +178,7 @@ sudo service sshd restart
     ssh sshuser@wn0-myhdi
     ```
 
-    Чтобы получить список имен узлов, обратитесь к разделу [Пример. Получение полного доменного имени для узлов кластера](hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes).
+    Чтобы получить список имен узлов, обратитесь к разделу [Пример. Получение полного доменного имени для узлов кластера](hdinsight-hadoop-manage-ambari-rest-api.md#get-the-fqdn-of-cluster-nodes).
 
 Если учетная запись SSH защищена __паролем__, при подключении введите пароль.
 
@@ -256,7 +256,7 @@ scp sshuser@clustername-ssh.azurehdinsight.net:test.txt .
 >
 > * [Использование HDInsight и Azure Data Lake Storage](hdinsight-hadoop-use-data-lake-store.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md)
 * [Запланируйте виртуальную сеть с помощью HDInsight](hdinsight-plan-virtual-network-deployment.md)

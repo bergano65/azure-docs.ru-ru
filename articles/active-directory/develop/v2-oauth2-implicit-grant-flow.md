@@ -9,15 +9,15 @@ ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.author: ryanwi
+ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 4ef8ca9e116328e14182ca77c787befa837041d0
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 0a884850d57418e9daafba980d0a08dc86fc0974
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886234"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309390"
 ---
 # <a name="microsoft-identity-platform-and-implicit-grant-flow"></a>Платформа идентификации Майкрософт и неявный поток грантов
 
@@ -239,6 +239,6 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/logout?post_logout_redire
 | `tenant` |обязательно |Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Дополнительные сведения см. в [описании протоколов](active-directory-v2-protocols.md#endpoints). |
 | `post_logout_redirect_uri` | рекомендуется | URL-адрес, на который следует возвратить пользователя после выхода. Это значение должно соответствовать одному из универсальных кодов ресурсов (URI) перенаправления, зарегистрированных для приложения. Если пользователь не включен, он будет показан общий текст сообщения конечным пунктом платформы идентификации Майкрософт. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Перейдите на страницу [примеров MSAL JS](sample-v2-code.md), чтобы приступить к созданию кода.

@@ -1,5 +1,5 @@
 ---
-title: Налажить sSL-окончание с помощью сертификатов Key Vault - PowerShell
+title: Настройка прекращения TLS с сертификатами Key Vault - PowerShell
 titleSuffix: Azure Application Gateway
 description: Узнайте, как можно интегрировать шлюз приложений Azure с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS.
 services: application-gateway
@@ -8,20 +8,20 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 02/27/2020
 ms.author: victorh
-ms.openlocfilehash: 15e10d34120ab5475f241235bbebeb0c7689ca14
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1979f759f5a1b037adfd7b67a7be50cbba0f596f
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80371225"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312216"
 ---
-# <a name="configure-ssl-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Нанастройка SSL-прекращения с помощью сертификатов Key Vault с помощью Azure PowerShell
+# <a name="configure-tls-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Налажить окончание TLS с помощью key Vault с помощью Сертификатов Ключей PowerShell
 
-[Azure Key Vault](../key-vault/key-vault-overview.md) — это секретный магазин, управляемый платформой, который можно использовать для защиты секретов, ключей и SSL-сертификатов. Azure Application Gateway поддерживает интеграцию с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS. Эта поддержка ограничена Application Gateway v2 SKU.
+[Azure Key Vault](../key-vault/key-vault-overview.md) — это секретный магазин, управляемый платформой, который можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Azure Application Gateway поддерживает интеграцию с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS. Эта поддержка ограничена Application Gateway v2 SKU.
 
-Для получения дополнительной [SSL termination with Key Vault certificates](key-vault-certs.md)информации см.
+Для получения дополнительной [TLS termination with Key Vault certificates](key-vault-certs.md)информации см.
 
-В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложения для сертификатов прекращения SSL.
+В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложения для сертификатов прекращения TLS/SSL.
 
 Эта статья требует версии модуля Azure PowerShell версии 1.0.0 или позже. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Для выполнения команд в этой статье необходимо создать соединение с Azure, запустив `Connect-AzAccount`вас.
 
@@ -71,7 +71,7 @@ $certificate = Get-AzKeyVaultCertificate -VaultName $kv -Name "cert1"
 $secretId = $certificate.SecretId.Replace($certificate.Version, "")
 ```
 > [!NOTE]
-> Флаг -EnableSoftDelete должен использоваться для правильного функционирования SSL-прекращения. При настройке [мягкого удаления Key Vault через Portal](../key-vault/key-vault-ovw-soft-delete.md#soft-delete-behavior)период хранения должен быть сохранен на уровне 90 дней, значение по умолчанию. Приложение Gateway еще не поддерживает другой период хранения. 
+> Флаг -EnableSoftDelete должен использоваться для правильного функционирования прекращения TLS. При настройке [мягкого удаления Key Vault через Portal](../key-vault/key-vault-ovw-soft-delete.md#soft-delete-behavior)период хранения должен быть сохранен на уровне 90 дней, значение по умолчанию. Приложение Gateway еще не поддерживает другой период хранения. 
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -102,7 +102,7 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port1" -Port 443
 $fp02 = New-AzApplicationGatewayFrontendPort -Name "port2" -Port 80
 ```
 
-### <a name="point-the-ssl-certificate-to-your-key-vault"></a>Направьте сертификат SSL на хранилище ключей
+### <a name="point-the-tlsssl-certificate-to-your-key-vault"></a>Направьте сертификат TLS/SSL на хранилище ключей
 
 ```azurepowershell
 $sslCert01 = New-AzApplicationGatewaySslCertificate -Name "SSLCert1" -KeyVaultSecretId $secretId
@@ -142,6 +142,6 @@ $appgw = New-AzApplicationGateway -Name $appgwName -Identity $appgwIdentity -Res
   -SslCertificates $sslCert01 -AutoscaleConfiguration $autoscaleConfig
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Подробнее о прекращении SSL](ssl-overview.md)
+[Подробнее о прекращении TLS](ssl-overview.md)

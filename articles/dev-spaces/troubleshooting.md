@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранить неполадки и решить общие проблемы при включении и использовании пространства Azure Dev
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: c12dfd385962d8dd7de8239a0d4ecd46746499c0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9fcf14bf42fc843a126fea269038087ee7fb0c6c
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80239770"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382045"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок Azure Dev Spaces
 
@@ -95,7 +95,7 @@ azure-cli                         2.0.60 *
 
 ### <a name="error-unable-to-reach-kube-apiserver"></a>Ошибка "Не удается достичь kube-apiserver"
 
-Эта ошибка может быть допущена, когда Пробелы Azure Dev не могут подключиться к серверу API кластера AKS. 
+Эта ошибка может быть допущена, когда Пробелы Azure Dev не могут подключиться к серверу API кластера AKS.
 
 Если доступ к серверу API кластера AKS заблокирован или если для кластера AKS [включены диапазоны авторизованных IP-адресов сервера API,](../aks/api-server-authorized-ip-ranges.md) необходимо также [создать](../aks/api-server-authorized-ip-ranges.md#create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled) или [обновить](../aks/api-server-authorized-ip-ranges.md#update-a-clusters-api-server-authorized-ip-ranges) кластер, чтобы [обеспечить дополнительные диапазоны в зависимости от региона.](https://github.com/Azure/dev-spaces/tree/master/public-ips)
 
@@ -272,6 +272,113 @@ Service cannot be started.
 * Дополнительно вы можете отключить его, установив *тип запуска* для *инвалидов.*
 * Нажмите кнопку *ОК*.
 
+### <a name="error-no-azureassignedidentity-found-for-podazdsazds-webhook-deployment-id-in-assigned-state"></a>Ошибка "нет AzureAssignedIdentity найдено для стручка:azds/azds-webhook-развертывание-id\<\> в назначенном состоянии"
+
+При запуске службы с Azure Dev Spaces в кластере AKS с установленными [управляемыми идентификаторами и](../aks/use-managed-identity.md) [идентификационными данными стручка](../aks/developer-best-practices-pod-security.md#use-pod-managed-identities) может зависнуть после шага *установки диаграммы.* Если вы проинспектируете *azds-injector-webhook* в пространстве имени *azds,* вы можете увидеть эту ошибку.
+
+Службы Azure Dev Spaces, запускаемые в кластере, используют управляемый идентатор кластера для связи с бэкэнд-сервисами Azure Dev Spaces за пределами кластера. При установке управляемого идентификатора стручка сетевые правила настраиваются на узлы кластера для перенаправления всех вызовов управляемых учетных данных на [установленный на кластере управляемый identity forii (NMI) DaemonSet.](https://github.com/Azure/aad-pod-identity#node-managed-identity) Это NMI DaemonSet определяет вызов стручка и гарантирует, что стручок был помечен надлежащим образом для доступа к запрошенной управляемой идентификации. Пространства Azure Dev не могут определить, установлен ли кластер управляемым идентификатором и не может выполнить необходимую конфигурацию, чтобы позволить службам Azure Dev Spaces получить доступ к управляемому идентификатору кластера. Поскольку службы Azure Dev Spaces не настроены для доступа к управляемому идентификатору кластера, NMI DaemonSet не позволит им получить токен AAD для управляемого идентификатора и не сможет связаться с бэкэнд-сервисами Azure Dev Spaces.
+
+Чтобы устранить эту проблему, примените [AzurePodIdentityException](https://github.com/Azure/aad-pod-identity/blob/master/docs/readmes/README.app-exception.md) для *azds-injector-webhook* и обновите стручки, спомощьив Azure Dev Spaces, для доступа к управляемому идентификатору.
+
+Создайте файл под названием *webhookException.yaml* и скопируйте следующее определение YAML:
+
+```yaml
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzurePodIdentityException
+metadata:
+  name: azds-infrastructure-exception
+  namespace: azds
+spec:
+  PodLabels:
+    azds.io/uses-cluster-identity: "true"
+```
+
+Вышеуказанный файл создает объект *AzurePodIdentityException* для *azds-injector-webhook.* Для развертывания этого `kubectl`объекта используйте:
+
+```cmd
+kubectl apply -f webhookException.yaml
+```
+
+Чтобы обновить стручки, инструментированные Azure Dev Spaces для доступа к управляемому идентификатору, обновите *пространство имен* в приведенном ниже определении YAML и используйте `kubectl` для его применения для каждого пространства разработчиков.
+
+```yaml
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzurePodIdentityException
+metadata:
+  name: azds-infrastructure-exception
+  namespace: myNamespace
+spec:
+  PodLabels:
+    azds.io/instrumented: "true"
+```
+
+Кроме того, можно создать объекты *AzureIdentity* и *AzureIdentityBinding* и обновить метки стручков для рабочих нагрузок, работающих в пространствах, управляемых пространствами Azure Dev spaces, для доступа к управляемому идентификатору, созданному кластером AKS.
+
+Чтобы перечислить сведения об управляемом интактируется, запустите следующую команду для кластера AKS:
+
+```azurecli
+az aks show -g <resourcegroup> -n <cluster> -o json --query "{clientId: identityProfile.kubeletidentity.clientId, resourceId: identityProfile.kubeletidentity.resourceId}"
+```
+
+Вышеупомянутая команда выводит *clientId* и *resourceId* для управляемого удостоверения личности. Пример:
+
+```json
+{
+  "clientId": "<clientId>",
+  "resourceId": "/subscriptions/<subid>/resourcegroups/<resourcegroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<name>"
+}
+```
+
+Чтобы создать объект *AzureIdentity,* создайте файл под названием *clusteridentity.yaml* и используйте следующее определение YAML, дополненное деталями управляемой идентификации из предыдущей команды:
+
+```yaml
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: my-cluster-mi
+spec:
+  type: 0
+  ResourceID: /subscriptions/<subid>/resourcegroups/<resourcegroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<name>
+  ClientID: <clientId>
+```
+
+Для создания объекта *AzureIdentityBinding* создайте файл под названием *clusteridentitybinding.yaml* и используйте следующее определение YAML:
+
+```yaml
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: my-cluster-mi-binding
+spec:
+  AzureIdentity: my-cluster-mi
+  Selector: my-label-value
+```
+
+Для развертывания объектов *AzureIdentity* и *AzureIdentityBinding* и используйте: `kubectl`
+
+```cmd
+kubectl apply -f clusteridentity.yaml
+kubectl apply -f clusteridentitybinding.yaml
+```
+
+После развертывания объектов *AzureIdentity* и *AzureIdentityBinding* любая рабочая нагрузка с *aadpodidbinding:* метка значения моей метки может получить доступ к управляемому идентификатору кластера. Добавьте эту метку и передислоците все рабочие нагрузки, работающие в любом пространстве разработчиков. Пример:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sample
+        aadpodidbinding: my-label-value
+    spec:
+      [...]
+```
+
 ## <a name="common-issues-using-visual-studio-and-visual-studio-code-with-azure-dev-spaces"></a>Общие проблемы с использованием Visual Studio и visual Studio Code с Azure Dev Spaces
 
 ### <a name="error-required-tools-and-configurations-are-missing"></a>Ошибка "Обязательные инструменты и конфигурации отсутствуют"
@@ -397,7 +504,7 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
     * Для *роли*выберите *участника* или *владельца.*
     * В поле *Назначение доступа к* выберите *Пользователь, группа или субъект-служба Azure AD*.
     * Для *выбора*, поиск пользователя вы хотите дать разрешения.
-1. Нажмите *Сохранить*.
+1. Выберите команду *Сохранить*.
 
 ### <a name="dns-name-resolution-fails-for-a-public-url-associated-with-a-dev-spaces-service"></a>Сбой разрешения DNS-имен для общедоступных URL-адресов, связанных со службой Dev Spaces
 
@@ -477,7 +584,7 @@ kubectl -n my-namespace delete pod --all
 
 Для включения пространства Azure Dev в кластере AKS, для которого ограничен трафик из кластерных узлов, необходимо разрешить следующие F-DN:
 
-| Полное доменное имя.                                    | Порт      | Использование      |
+| Полное доменное имя.                                    | Порт      | Использовать      |
 |-----------------------------------------|-----------|----------|
 | cloudflare.docker.com | HTTPS:443 | Чтобы вытащить linux альпийских и других Azure Dev Пространства изображения |
 | gcr.io | HTTP:443 | Чтобы вытащить руль / тиллер изображения|

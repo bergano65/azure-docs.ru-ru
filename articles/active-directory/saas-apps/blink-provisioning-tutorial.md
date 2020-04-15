@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: b19052b8a71b582b47308c41d170f50352d643e2
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 314445275f99898913bd91eb8abc2a5acdab098a
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80618362"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81381021"
 ---
 # <a name="tutorial-configure-blink-for-automatic-user-provisioning"></a>Учебник: Настройка Blink для автоматического подготовки пользователя
 
@@ -113,7 +113,7 @@ ms.locfileid: "80618362"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **Картпинги** выберите **синхронизацию активных пользователей каталога Azure для blink.**
 
@@ -121,7 +121,7 @@ ms.locfileid: "80618362"
 
 9. Просмотрите атрибуты пользователя, синхронизированные с Azure AD на Blink в разделе **Атрибута Mapping.** Атрибуты, выбранные в качестве свойств **соответствия,** используются для сопоставления учетных записей пользователей в Blink для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Мигать атрибуты пользователя](media/blink-provisioning-tutorial/User_attributes.png)
+    ![Мигать атрибуты пользователя](media/blink-provisioning-tutorial/user-attributes.png)
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

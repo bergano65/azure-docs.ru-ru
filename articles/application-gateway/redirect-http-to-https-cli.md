@@ -1,23 +1,23 @@
 ---
 title: HTTP TO HTTPS перенаправление с помощью CLI
 titleSuffix: Azure Application Gateway
-description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения SSL-запросов с помощью интерфейса командной строки Azure.
+description: Узнайте, как создать шлюз приложения и добавить сертификат для прекращения TLS с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
 ms.date: 11/15/2019
 ms.author: victorh
-ms.openlocfilehash: 41b2fb754f1d6ead3a7475ca146ab99758aa8134
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6bf8f3b7bfb446db78f0c97a246977fec6cd54cb
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78246876"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312139"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-cli"></a>Создание шлюза приложений с сертификатом с помощью Azure CLI
 
-Вы можете создать [шлюз приложений](overview.md) с сертификатом для выполнения функций моста SSL с помощью Azure CLI. Правило маршрутизации используется для перенаправления трафика HTTP в HTTPS-порт в шлюзе приложений. В этом примере также создается [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) с двумя экземплярами виртуальных машин, предназначенный для внутреннего пула шлюза приложений.
+Вы можете использовать Azure CLI для создания [шлюза приложения](overview.md) с сертификатом для прекращения TLS/SSL. Правило маршрутизации используется для перенаправления трафика HTTP в HTTPS-порт в шлюзе приложений. В этом примере также создается [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) с двумя экземплярами виртуальных машин, предназначенный для внутреннего пула шлюза приложений.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -32,7 +32,7 @@ ms.locfileid: "78246876"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
+Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 

@@ -3,20 +3,20 @@ title: Лазурная передняя дверь - Часто задавае�
 description: Эта страница дает ответы на часто задаваемые вопросы о передней двери Azure
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: sohamnchatterjee
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/08/2019
-ms.author: sharadag
-ms.openlocfilehash: 0fe5d245d629c731a47ca5441afd2a3388a22de4
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.date: 04/13/2020
+ms.author: sohamnc
+ms.openlocfilehash: e2785baab27f5bfc996b57607816062195a19b2b
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80878023"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313757"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Часто задаваемые вопросы для передней двери Azure
 
@@ -159,7 +159,11 @@ Front Door управляемый вариант положения станда
 
 ### <a name="what-are-the-current-cipher-suites-supported-by-azure-front-door"></a>Какие текущие наборы шифров поддерживаются Azure Front Door?
 
-Ниже приведены текущие наборы шифров, поддерживаемые Azure Front Door:
+Для TLS1.2 поддерживаются следующие наборы шифров
+
+TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+
+При использовании пользовательских доменов с включенными TLS1.0/1.1 поддерживаются следующие наборы шифров:
 
 - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
 - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
@@ -231,7 +235,7 @@ Front Door управляемый вариант положения станда
 
 Да, Azure Front Door поддерживает оповещения. Оповещения настраиваются на основе метрик. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).
 - Дополнительные сведения о том, [как работает Front Door](front-door-routing-architecture.md).

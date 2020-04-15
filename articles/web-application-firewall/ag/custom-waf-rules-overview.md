@@ -5,14 +5,14 @@ services: web-application-firewall
 ms.topic: article
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 01/30/2020
+ms.date: 04/14/2020
 ms.author: victorh
-ms.openlocfilehash: 072c7bd5b5b292ca4f0e53c59fcb7e9771331a94
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c0f802f5113e38e811c110ee913099e76fa7be0b
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77031737"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383813"
 ---
 # <a name="custom-rules-for-web-application-firewall-v2-on-azure-application-gateway"></a>Пользовательские правила для веб-приложений Firewall v2 на портале приложений Azure
 
@@ -125,7 +125,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 Должен быть одним из следующих операторов:
 
 - IPMatch - используется только тогда, когда переменный матч является *RemoteAddr*
-- Равные - вход такой же, как MatchValue
+- Равный - вход такой же, как MatchValue
 - Содержит
 - LessThan;
 - GreaterThan
@@ -165,6 +165,6 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 
 Пользовательские правила позволяют создавать индивидуальные правила в соответствии с точными потребностями приложений и политики безопасности. Вы можете ограничить доступ к веб-приложениям по странам/регионам. Для получения дополнительной информации [см.](geomatch-custom-rules.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После того как вы узнаете об пользовательских правилах, [создайте свои собственные пользовательские правила.](create-custom-waf-rules.md)

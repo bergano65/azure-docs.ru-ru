@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о State Configuration
+title: Обзор службы "Настройка состояния службы автоматизации Azure"
 description: Обзор конфигурации состояния автоматизации Azure (DSC), ее условий и известных проблем
 keywords: PowerShell DSC, настройка требуемого состояния, PowerShell DSC для Azure
 services: automation
@@ -10,12 +10,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 02e540c9ac2654be97ff247749d1ed18573cfc24
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: afceb11180662416aa4953b8b58ef03ffaa70eec
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81010262"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383189"
 ---
 # <a name="state-configuration-overview"></a>Общие сведения о State Configuration
 
@@ -123,6 +123,7 @@ ms.locfileid: "81010262"
 - Чтобы начать использовать DSC в конфигурации состояния автоматизации Azure, см. [Начало работы с конфигурацией состояния azure Automation State Configuration.](automation-dsc-getting-started.md)
 - Чтобы узнать, как на [Onboarding machines for management by Azure Automation State Configuration](automation-dsc-onboarding.md)бортовых узлах, см.
 - Чтобы узнать о компиляции конфигураций DSC, чтобы можно было назначить их целевым узлам, см. [Конфигурации компиляции в конфигурации состояния azure Automation.](automation-dsc-compile.md)
-- Для справки PowerShell cmdlet [см.](/powershell/module/azurerm.automation/#automation)
+- Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+)
 - Для получения информации о ценах на цены [см.](https://azure.microsoft.com/pricing/details/automation/)
 - Чтобы увидеть пример использования конфигурации состояния автоматизации Azure в непрерывном конвейере развертывания, [см. Непрерывное развертывание с помощью конфигурации состояния azure Automation и Chocolatey.](automation-dsc-cd-chocolatey.md)

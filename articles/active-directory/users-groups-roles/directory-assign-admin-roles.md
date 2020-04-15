@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: reference
-ms.date: 04/07/2020
+ms.date: 04/14/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e097173712693754baab99912301c98ee336f64f
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: bfe8aa088538663ac3e64f5913ff031e6160b045
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80877921"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382643"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -228,12 +228,11 @@ ms.locfileid: "80877921"
 
 ### <a name="global-reader"></a>[Глобальный читатель](#global-reader-permissions)
 
-Пользователи в этой роли могут читать настройки и административную информацию в службах Microsoft 365, но не могут принимать меры управления. Глобальный читатель является только для администратора, который читает сяпом. Назначить глобального читателя вместо глобального администратора для планирования, аудита или расследований. Используйте Global Reader в сочетании с другими ограниченными ролями администратора, такими как Exchange Administrator, чтобы облегчить работу без назначения роли Глобального администратора. Глобальный читатель работает с центром управления Microsoft 365, центром управления обменом, центром админ-центров команд, центром безопасности, центром комплаенса, центром админ-аналитика Azure AD и центром управления устройствами.
+Пользователи в этой роли могут читать настройки и административную информацию в службах Microsoft 365, но не могут принимать меры управления. Глобальный читатель является только для администратора, который читает сяпом. Назначить глобального читателя вместо глобального администратора для планирования, аудита или расследований. Используйте Global Reader в сочетании с другими ограниченными ролями администратора, такими как Exchange Administrator, чтобы облегчить работу без назначения роли Глобального администратора. Глобальный читатель работает с центром управления Microsoft 365, центром управления обменом, центром админ-центра SharePoint, центром админ-центров команд, центром безопасности, центром комплаенса, центром админ-аналитика Azure AD и центром управления устройствами.
 
 > [!NOTE]
 > Глобальная роль читателя имеет несколько ограничений прямо сейчас -
 >
->- Центр админ-аналитики SharePoint - Центр админ-аналитики SharePoint не поддерживает роль глобального читателя. Вы не увидите 'SharePoint' в левом стекле под центрами админирования в [центре Microsoft 365.](https://admin.microsoft.com/Adminportal/Home#/homepage)
 >- [Admin Center OneDrive](https://admin.onedrive.com/) - Центр админ-центра OneDrive не поддерживает роль глобального читателя.
 >- [Портал Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) - Глобальный читатель не может прочитать режим подготовки корпоративного приложения.
 >- [M365 Admin Center](https://admin.microsoft.com/Adminportal/Home#/homepage) - Глобальный читатель не может читать запросы на блокировку клиентов. Вы не найдете вкладку **запросов на блокировку клиентов** под **поддержкой** в левом стекле Admin Center M365.
@@ -1785,7 +1784,7 @@ Device Users (Пользователи устройства) | Не рекоме
 Пользователь | Не отображается, потому что он не может быть использован | Н/Д
 Присоединение устройства к рабочей области | Не рекомендуется | [Документация о депрепромированных ролей](directory-assign-admin-roles.md#deprecated-roles)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать больше о том, как назначить пользователя в качестве администратора подписки Azure, [см. Управление доступом с помощью ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md)
 * Подробнее о том, как контролируется доступ к ресурсам в Microsoft Azure, можно узнать о [различных ролях](../../role-based-access-control/rbac-and-directory-admin-roles.md)

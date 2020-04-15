@@ -1,22 +1,26 @@
 ---
-title: Депрекатация TLS 1.0 и 1.1 в IoT концентраторе и службе обеспечения устройств (DPS) Документы Майкрософт
-description: Руководящие принципы по амортизацию TLS 1.0 и 1.1 и поддерживаемые шифры в IoT Hub и DPS.
-author: rezasherafat
-ms.author: rezas
+title: Удручающий TLS 1.0 и 1.1 в концентраторе IoT Документы Майкрософт
+description: Руководящие принципы по амортизацию TLS 1.0 и 1.1 и поддерживаемые шифры в IoT Hub.
+author: jlian
+ms.author: jlian
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 12/16/2019
-ms.openlocfilehash: d61ca8fe7c6f5e7cc400714d7c31a0a7e50b8a88
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/14/2020
+ms.openlocfilehash: a887dd4df44ba58b0e6646ffb1c10eb21edf3e69
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78402789"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81381301"
 ---
-# <a name="deprecation-of-tls-10-and-11-in-iot-hub-and-device-provisioning-service"></a>Изуза TLS 1.0 и 1.1 в IoT концентраторе и службе обеспечения устройств
+# <a name="deprecation-of-tls-10-and-11-in-iot-hub"></a>Изуза TLS 1.0 и 1.1 в концентраторе IoT
 
-Чтобы обеспечить лучшее в своем классе шифрование, IoT Hub и Служба обеспечения устройств (DPS) переходят на Transport Layer Security (TLS) 1.2 в качестве механизма шифрования для устройств и служб IoT. 
+Чтобы обеспечить лучшее в своем классе шифрование, IoT Hub переходит на Transport Layer Security (TLS) 1.2 в качестве механизма шифрования для устройств и служб IoT. 
+
+## <a name="timeline"></a>Временная шкала
+
+IoT Концентратор будет поддерживать TLS 1.0/1.1 до дальнейшего уведомления. Тем не менее, мы рекомендуем всем клиентам мигрировать в TLS 1.2 как можно скорее.
 
 ## <a name="supported-ciphers"></a>Поддерживаемые шифры
 
@@ -26,7 +30,6 @@ ms.locfileid: "78402789"
 * TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (будет поддержанво во второй половине 2020 года)
 * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (будет поддержан во второй половине 2020 года)
 * TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (будет поддержан во второй половине 2020 года)
-
 
 ## <a name="customer-feedback"></a>Отзывы пользователей
 

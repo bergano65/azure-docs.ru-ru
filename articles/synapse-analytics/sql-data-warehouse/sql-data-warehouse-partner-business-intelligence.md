@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 1a026cc241eb372e15f2600e52ec53a46efb1024
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 75020b0dd58a80f989bd03eb92031d904ebf4c82
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81256014"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313691"
 ---
 # <a name="azure-synapse-analytics-business-intelligence-partners"></a>Партнеры по бизнес-аналитике Azure Synapse Analytics
 
@@ -38,6 +38,7 @@ ms.locfileid: "81256014"
 | ![SiSense](./media/sql-data-warehouse-partner-business-intelligence/sisense_logo.png) |**SiSense**<br>SiSense — полноценное программное обеспечение бизнес-аналитики с инструментами, которые нужны компании для анализа и визуализации данных: эффективная база данных, возможность подключаться к разным источникам, простое извлечение данных и визуализация данных в браузере. Начните анализировать и визуализировать большие объемы данных с помощью SiSense BI and Analytics уже сегодня. |[Страница продукта](https://www.sisense.com/product/)<br> |
 | ![Tableau](./media/sql-data-warehouse-partner-business-intelligence/tableau_sparkle_logo.png) |**Tableau**<br>Аналитика самообслуживания Tableau помогает любому человеку видеть и понимать их данные по многим видам данных, от плоских файлов до баз данных. Tableau имеет наиболее, оптимизированный разъем для пула Synapse S'L, который поддерживает как живые данные, так и аналитику в памяти. |[Страница продукта](https://www.tableau.com/)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/tableau/tableau-server/)<br>|
 | ![Targit](./media/sql-data-warehouse-partner-business-intelligence/targit_logo.png) |**Таргит (Сюита решений)**<br>Targit Decision Suite — это платформа бизнес-аналитики, которая объединяет актуальные панели мониторинга, аналитику, понятные отчеты, превосходные мобильные возможности и простые технологии работы с данными в одном, связанном решении. Targit дает компаниям мужество для действия. |[Страница продукта](https://www.targit.com/targit-decision-suite/analytics)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/targit/targit-decision-suite/)<br> |
+| ![ThoughtSpot](./media/sql-data-warehouse-partner-business-intelligence/thoughtspot-logo.png) |**ThoughtSpot**<br>Самые инновационные предприятия мира используют ThoughtSpot для расширения прав и возможностей каждого сотрудника в своей организации, от руководителя C-suite до фронтового сотрудника, с возможностью быстро раскрыть информацию, управляемую данными. С ThoughtSpot, деловые люди могут ввести простой поиск, чтобы мгновенно проанализировать миллиарды строк данных, и использовать искусственный интеллект, чтобы получить доверие, соответствующие идеи толкаемых к ним в качестве ответов на тысячи вопросов, которые они, возможно, не думал, чтобы спросить. ThoughtSpot достаточно прост для любого делового человека в использовании, но достаточно мощный, чтобы обрабатывать даже самые крупные, самые сложные корпоративные данные без ущерба для скорости, безопасности или управления. Вот почему клиенты, как Walmart, 7-11, BT, Daimler, Exxon, Hulu, Королевский банк Канады, Банк Запада, и общенациональное строительное общество обратились к ThoughtSpot преобразовать свои решения культуры и аналитик фирмы Gartner имени ThoughtSpot лидером в 2020 Magic квадрант. Делая понимание частью каждого разговора и каждого решения, ThoughtSpot переосмысливает роль данных в создании более факта управляемого мира. |[Страница продукта](https://www.thoughtspot.com)<br>|
 | ![Yellowfin](./media/sql-data-warehouse-partner-business-intelligence/yellowfin_logo.png) |**Yellowfin**<br>Yellowfin является самым рейтингу поставщика Cloud BI для специальной отчетности и панелей мониторинга ОТ BARC; Обзор BI. Подключайтесь к пулу Synapse S'L, а затем создавайте и делитесь красивыми отчетами и панелями мониторинга с наградами в области совместной bi и функций разведки местоположения. |[Страница продукта](https://www.yellowfinbi.com/)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/yellowfin/yellowfin-for-azure-byol/) |
 
 <!--https://img.youtube.com/vi/0b8sPW2UHrU/0.jpg-->

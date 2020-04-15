@@ -8,16 +8,16 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 11/27/2019
+ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c5d0efe8e662544dc69356c6b17dd7eca6f3a50
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 75b127f8429650d46af9f171ed7ff03692f1499e
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74786458"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81379907"
 ---
 # <a name="azure-ad-pass-through-authentication-agent-version-release-history"></a>Агент azure AD Pass-through Authentication: история выпуска версии 
  
@@ -27,6 +27,14 @@ ms.locfileid: "74786458"
 
 - [Пользователь входе в систему с Azure AD Pass-through Authentication](how-to-connect-pta.md) 
 - [Установка агента Azure AD Pass-through Authentication](how-to-connect-pta-quick-start.md) 
+
+## <a name="1517420"></a>1.5.1742.0
+### <a name="release-status"></a>Статус релиза: 
+04/09/2020: Выпущен для скачивания
+
+### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
+
+- Добавлена поддержка таргетинга облачных сред при установке. Пакет можно прикрепить к заданной облачной среде.
 
 
 
@@ -76,6 +84,6 @@ ms.locfileid: "74786458"
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения 
 - GA версия агента проверки подлинности Azure AD 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory](how-to-connect-pta.md)

@@ -1,5 +1,5 @@
 ---
-title: Понимание Центра безопасности Azure для локального файла конфигурации агента Безопасности IoT для C Документы Майкрософт
+title: Локальная конфигурация агента безопасности (C)
 description: Узнайте больше о Центре безопасности Azure для службы безопасности IoT, локальном файле конфигурации агента безопасности для C'.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -15,15 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/26/2019
 ms.author: mlottner
-ms.openlocfilehash: 0172ada68ffa652fb0c301c89238beca4f4ce2f9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: adf0d72763e0cb1892d64c68a6dce05abbf6f582
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74664204"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81311665"
 ---
 # <a name="understanding-the-local-configuration-file-c-agent"></a>Понимание локального файла конфигурации (агент C')
-
 
 Центр безопасности Azure для агента безопасности IoT использует конфигурации из локального файла конфигурации.
 
@@ -35,18 +34,21 @@ ms.locfileid: "74664204"
 - **Authentication.config** - Конфигурация, связанная с аутентификацией (включая данные аутентификации).
 - **SecurityIotInterface.config** - Конфигурации, связанные с IoT.
 
-Файлы конфигурации содержат конфигурацию по умолчанию. Конфигурация аутентификации заполняется во время установки агента, и при перезапущени агенте вносятся изменения в файл конфигурации. 
+Файлы конфигурации содержат конфигурацию по умолчанию. Конфигурация аутентификации заполняется во время установки агента, и при перезапущени агенте вносятся изменения в файл конфигурации.
 
 ## <a name="configuration-file-location"></a>Расположение файла конфигурации
+
 Для Linux:
+
 - Файлы конфигурации операционной системы расположены в `/var/ASCIoTAgent`.
 
 Для Windows:
-- Файлы конфигурации операционной системы находятся в каталоге агента безопасности. 
+
+- Файлы конфигурации операционной системы находятся в каталоге агента безопасности.
 
 ### <a name="generalconfig-configurations"></a>Конфигурации General.config
 
-| Имя конфигурации | Возможные значения | Сведения | 
+| Имя конфигурации | Возможные значения | Сведения |
 |:-----------|:---------------|:--------|
 | agentId | GUID | Уникальный идентификатор агента |
 | readRemoteConfigurationTimeout | TimeSpan | Период времени для получения удаленной конфигурации из Концентратора IoT. Если агент не может получить конфигурацию в течение указанного времени, операция будет тайм-аутом.|
@@ -61,6 +63,7 @@ ms.locfileid: "74664204"
 | defaultEventPriority | "Высокий", "Низкий", "Off" | Приоритет события по умолчанию. |
 
 ### <a name="generalconfig-example"></a>Пример General.config
+
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <General>
@@ -80,7 +83,7 @@ ms.locfileid: "74664204"
 
 ### <a name="authenticationconfig"></a>Authentication.config
 
-| Имя конфигурации | Возможные значения | Сведения | 
+| Имя конфигурации | Возможные значения | Сведения |
 |:-----------|:---------------|:--------|
 | moduleName | строка | Имя иждивежающего модуля безопасности. Это имя должно соответствовать названию модуля в устройстве. |
 | deviceId | строка | Идентификатор устройства (зарегистрирован в Azure IoT Hub). || планировщикInterval | Строка TimeSpan | Внутренний интервал планировщика. |
@@ -94,6 +97,7 @@ ms.locfileid: "74664204"
 |
 
 ### <a name="authenticationconfig-example"></a>Пример аутентификации.конфигурация
+
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <Authentication>
@@ -108,14 +112,16 @@ ms.locfileid: "74664204"
   <add key="registrationId" value="d1"/>
 </Authentication>
 ```
+
 ### <a name="securityiotinterfaceconfig"></a>SecurityIotInterface.config
 
-| Имя конфигурации | Возможные значения | Сведения | 
+| Имя конфигурации | Возможные значения | Сведения |
 |:-----------|:---------------|:--------|
 | транспортТип | "Ampq" "Mqtt" | Тип транспорта Концентраторio. |
 |
 
 ### <a name="securityiotinterfaceconfig-example"></a>Пример SecurityIotInterface.config
+
 ```XML
 <ExternalInterface>
   <add key="facadeType"  value="Microsoft.Azure.Security.IoT.Agent.Common.SecurityIoTHubInterface, Security.Common" />
@@ -123,7 +129,8 @@ ms.locfileid: "74664204"
 </ExternalInterface>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
+
 - Прочтите [обзор](overview.md) службы безопасности Azure для обслуживания IoT
 - Узнайте больше о Центре безопасности Azure для [IoT-архитектуры](architecture.md)
 - Включить Центр безопасности Azure для [службы](quickstart-onboard-iot-hub.md) IoT

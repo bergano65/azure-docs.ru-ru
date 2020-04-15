@@ -1,19 +1,19 @@
 ---
 title: Создание кластеров Apache Hadoop с помощью веб-браузера, Azure HDInsight
-description: Узнайте, как создать кластеры Apache Hadoop, Apache HBase, Apache Storm или Apache Spark на Linux для HDInsight с помощью веб-браузера и портала Azure.
+description: Научитесь создавать кластеры Apache Hadoop, Apache HBase, Apache Storm или Apache Spark на HDInsight. Используйте веб-браузер и портал Azure.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 02/19/2020
-ms.openlocfilehash: bcc71b7244ba3498b2fcde023d372e67f41d6117
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/13/2020
+ms.openlocfilehash: a5f6ac76d509a0a63c2d641f91cd91cdb2e0d19d
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77623203"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313805"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Создание кластеров под управлением Linux в HDInsight с помощью портала Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "77623203"
 
 Портал Azure предоставляет большую часть свойств кластера. С помощью шаблонов Azure Resource Manager можно скрыть множество сведений. Дополнительные сведения см. в статье [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-clusters"></a>Создание кластеров
 
@@ -51,8 +51,8 @@ ms.locfileid: "77623203"
 |Группа ресурсов|Из списка выпадающих списков выберите существующую группу ресурсов или выберите **Создание нового.**|
 |Имя кластера|Введите глобально уникальное имя|
 |Регион|Из списка выпадающих списков выберите область, в которой создается кластер.|
-|Тип кластера|Выберите **тип кластера,** чтобы открыть список. Из списка выберите нужный тип кластера. Кластеры HDInsight бывают разных типов. Они соответствуют рабочей нагрузке или технологии, для которой предназначен кластер. Создать кластер, в котором бы объединились несколько типов, нельзя.|
-|Версия|Из списка выпадающих, выберите **версию**. Используйте версию по умолчанию, если не уверены, что именно нужно выбрать. Дополнительные сведения см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md)|
+|Тип кластера|Нажмите **Выберите тип кластера,** чтобы открыть список. Из списка выберите нужный тип кластера. Кластеры HDInsight бывают разных типов. Они соответствуют рабочей нагрузке или технологии, для которой предназначен кластер. Создать кластер, в котором бы объединились несколько типов, нельзя.|
+|Version|Из списка выпадающих, выберите **версию**. Используйте версию по умолчанию, если не уверены, что именно нужно выбрать. Дополнительные сведения см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md)|
 |Имя пользователя для входа в кластер|Укажите имя пользователя, по умолчанию является **админ.**|
 |Пароль для входа в кластер|Предоставьте пароль.|
 |Подтверждение кластерного пароля входа|Повторное ввод пароля|
@@ -61,13 +61,13 @@ ms.locfileid: "77623203"
 
 Выберите **далее: >>хранения,** чтобы перейти к следующей вкладке.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 ![HDInsight создает кластерное хранилище](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-storage.png "Создание нового кластера на портале Azure -")
 
 ### <a name="primary-storage"></a>Первичное хранилище
 
-Из списка выпадающих данных для **типа первичного хранилища**выберите тип хранилища по умолчанию. Последующие поля для завершения будут варьироваться в зависимости от вашего выбора. Для **хранения Azure**:
+Из списка выпадающих данных для **типа первичного хранилища**выберите тип хранилища по умолчанию. Более поздние поля для завершения будут варьироваться в зависимости от вашего выбора. Для **хранения Azure**:
 
 1. Для **метода выбора**выберите либо **выберите из списка,** либо **используйте ключ доступа.**
     * Для **выбора из списка**выберите **учетную запись первичного хранилища** из списка выпадающих или выберите Создать **новый.**
@@ -81,7 +81,7 @@ ms.locfileid: "77623203"
 
 ### <a name="metastore-settings"></a>Настройки метастора
 
-Дополнительно: Укажите существующую базу данных S'L для сохранения метаданных Apache Hive, Apache Oozie и/или метаданных Apache Ambari за пределами кластера. База данных Azure S'L, используемая для метахранилища, должна обеспечить подключение к другим службам Azure, включая Azure HDInsight. При создании хранилища метаданных не следует использовать в названиях базы данных тире или дефисы. Это может привести к сбою при создании кластера.
+Дополнительно: Укажите существующую базу данных S'L для сохранения Apache Hive, Apache Oozie и метаданных Apache Ambari за пределами кластера. База данных Azure S'L, используемая для метахранилища, должна обеспечить подключение к другим службам Azure, включая Azure HDInsight. При создании хранилища метаданных не следует использовать в названиях базы данных тире или дефисы. Это может привести к сбою при создании кластера.
 
 Выберите **Далее: Безопасность и сетевые >>,** чтобы перейти к следующей вкладке.
 
@@ -98,7 +98,7 @@ ms.locfileid: "77623203"
 |Виртуальная сеть|Дополнительно: Выберите существующую виртуальную сеть и подсеть из списка выпадающих. Для получения информации [см.](hdinsight-plan-virtual-network-deployment.md) Статья содержит конкретные требования к конфигурации виртуальной сети.|
 |Настройки шифрования дисков|Дополнительно: Выберите флажок для использования шифрования. Для получения дополнительной [Customer-managed key disk encryption](./disk-encryption.md)информации см.|
 |Прокси-сервер REST для Kafka|Эта настройка доступна только для типа кластера Kafka. Для получения дополнительной информации [см.](./kafka/rest-proxy.md)|
-|идентификации|Необязательный вариант: Выберите существующую итог службы, назначенную пользователем, из списка выпадающих. Для получения дополнительной информации смотрите [Управляемые идентификаторы в Azure HDInsight](./hdinsight-managed-identities.md).|
+|Идентификация|Необязательный вариант: Выберите существующую итог службы, назначенную пользователем, из списка выпадающих. Для получения дополнительной информации смотрите [Управляемые идентификаторы в Azure HDInsight](./hdinsight-managed-identities.md).|
 
 Выберите **Далее: Конфигурация и цены >>,** чтобы перейти к следующей вкладке.
 
@@ -150,33 +150,15 @@ ms.locfileid: "77623203"
 
 [Узнайте, что кластер HDInsight — с помощью браузера, PowerShell или Azure CLI.](./hdinsight-delete-cluster.md)
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](./hdinsight-hadoop-customize-cluster-linux.md#access-control).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы успешно создали кластер HDInsight. Теперь узнайте, как работать с кластером.
 
-### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
-
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
-* [Использование MapReduce в Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
-
-### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase
-
 * [Начало работы с Apache HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md)
-* [Разработка приложений Java для Apache HBase в HDInsight](hbase/apache-hbase-build-java-maven-linux.md)
-
-### <a name="apache-storm-clusters"></a>Кластеры Apache Storm
-
 * [Создание топологий для Apache Storm в HDInsight на языке Java](storm/apache-storm-develop-java-topology.md)
-* [Использование компонентов Python в Apache Storm в HDInsight](storm/apache-storm-develop-python-topology.md)
-* [Развертывание и мониторинг топологии с помощью Apache Storm в HDInsight.](storm/apache-storm-deploy-monitor-topology-linux.md)
-
-### <a name="apache-spark-clusters"></a>Кластеры Apache Spark
-
 * [Руководство. Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ](spark/apache-spark-create-standalone-application.md)
-* [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](spark/apache-spark-livy-rest-interface.md)
-* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](spark/apache-spark-use-bi-tools.md)
-* [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](spark/apache-spark-machine-learning-mllib-ipython.md)

@@ -8,19 +8,19 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: d860b557c5c2d6b73fad53cdf84ee8b32182d1ee
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 6b60ccc7a635e4b6071b43d7ff75e182aa96cd08
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985462"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313624"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Azure Disk Encryption scenarios on Linux VMs (Сценарии шифрования дисков Azure для виртуальных машин Linux)
 
 
 Лазурное шифрование дисков для виртуальных машин Linux (VMs) использует функцию DM-Crypt Linux для обеспечения полного шифрования диска диска и дисков данных. Кроме того, он обеспечивает шифрование эфемерного ресурсного диска при использовании функции EncryptFormatAll.
 
-Шифрование azure Disk [интегрировано с Azure Key Vault,](disk-encryption-key-vault.md) чтобы помочь вам управлять ключами и секретами шифрования дисков и управлять ими. Для обзора службы [см.](disk-encryption-overview.md)
+Шифрование azure Disk [интегрировано с Azure Key Vault,](disk-encryption-key-vault.md) чтобы помочь вам управлять ключами и секретами шифрования дисков и управлять ими. Для получения обзора службы [см.](disk-encryption-overview.md)
 
 Вы можете применять шифрование диска только к виртуальным машинам [поддерживаемых размеров VM и операционным системам.](disk-encryption-overview.md#supported-vms-and-operating-systems) Вы также должны выполнить следующие предпосылки:
 
@@ -412,7 +412,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - VMs Gen2 (см.: [Поддержка поколения 2 VMs на Azure](generation-2.md#generation-1-vs-generation-2-capabilities))
 - VMs серии Lsv2 (см.: [Lsv2-серия](../lsv2-series.md))
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
 - [Примеры скриптов шифрования дисков Azure](disk-encryption-sample-scripts.md)

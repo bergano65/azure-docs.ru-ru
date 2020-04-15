@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: 0b8c8a0baba5a80c6a383e6f8f14e29b482dbc82
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 0133322eab9a554cf28c0a90fbadf9afe6fbcd64
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80878618"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81314264"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -137,7 +137,7 @@ ms.locfileid: "80878618"
 | **Токио** | [Эквийс TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Восточная Япония | 10G, 100G | Aryaka Networks, AT&T NetBond, BBIX, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, Megaport, NTT Communications, NTT EAST, Orange, Softbank, Verizon |
 | **Токио2** | [В ТОКИО](https://www.attokyo.com/) | 2 | Восточная Япония | 10G, 100G | В ТОКИО |
 | **Торонто** | [Cologix TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | 1 | Центральная Канада | 10G, 100G | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Reach Megaport, Telus, Verizon, Zayo |
-| **Ванкувер** | [Кельникс ВАН1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | Недоступно | 10G, 100G | |
+| **Ванкувер** | [Кельникс ВАН1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | Cologix | 10G, 100G | |
 | **Вашингтон, округ Колумбия** | [Эквиникс DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | 1 | Восток США, Восток США 2 | 10G, 100G | Арьяка Сети, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Cologix, Colt, Comcast, Coresite, Equinix, Internet2, InterCloud, IX Reach, Уровень 3 Коммуникации, Мегапорт, Neutrona Сети, NTT Связи, Оранжевый, PacketFabric, SES, Sprint, Tata Communications, Telia Carrier, Verizon |
 | **Вашингтон, округ Колумбия 2** | [Основной Рестон](https://www.coresite.com/data-centers/locations/northern-virginia-washington-dc/reston-campus) | 1 | Восток США, Восток США 2 | 10G, 100G | CenturyLink Облако Connect, Coresite, Intelsat, Viasat, Зайо | 
 | **Цюрих** | [Интерксион ЦУР2](https://www.interxion.com/Locations/zurich/) | 1 | Швейцария Север | 10G, 100G | Интероблако, Интерксион, Мегапорт, Swisscom |
@@ -241,7 +241,7 @@ ms.locfileid: "80878618"
 | **Европа** |Avanade Inc., Altogee, Bright Skies GmbH, Inframon, MSG Services, New Signature, Nelite, Orange Networks, sol-tec |
 | **Северная Америка** |Avanade Inc., Equinix Professional Services, FlexManage, Lightstream, Perficient, Presidio |
 | **Южная Америка** |Avanade Inc., Venha Pra Nuvem |
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

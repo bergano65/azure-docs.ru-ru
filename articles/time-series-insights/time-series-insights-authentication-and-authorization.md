@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 04/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: 373fc2829e599d0989b59c6386757c8f5f3e1d66
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: beefad41a270233336bb9134268c98341e81a7cd
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81251730"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81380805"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -159,7 +159,7 @@ ms.locfileid: "81251730"
 | `timeout=<timeout>` | Тайм-аут на стороне сервера для выполнения запроса HTTP. Применяется только к [событиям Get Environment](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) и Get Environment [Aggregates](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) AA. Значение тайм-аута должно быть в формате Продолжительности ISO 8601, например, `"PT20S"` и должно быть в диапазоне `1-30 s`. Значение по умолчанию — `30 s`. | GA |
 | `storeType=<storeType>` | Для сред предварительного просмотра с включенным теплым магазином `WarmStore` `ColdStore`запрос может быть выполнен либо на . Этот параметр в запросе определяет, на каком хранении должен быть выполнен запрос. Если не определено, запрос будет выполнен в холодном магазине. Чтобы задать запрос в теплом магазине, **storeType** должен быть установлен на `WarmStore`. Если не определено, запрос будет выполнен против холодного магазина. | Preview (Предварительный просмотр) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Для примера кода, который вызывает GA Time Series Insights API, прочитайте [данные запроса с помощью C .](./time-series-insights-query-data-csharp.md)
 

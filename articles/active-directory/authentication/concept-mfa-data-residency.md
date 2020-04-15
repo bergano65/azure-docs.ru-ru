@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/16/2019
+ms.date: 04/13/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c4556ece7faaacb8657a1012344f2263ee84214
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 29ce7631c0ce8ab83edc7b9cd31dfe0db3be5d7e
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75480142"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309801"
 ---
 # <a name="data-residency-and-customer-data-for-azure-multi-factor-authentication"></a>Резидентство данных и данные клиентов для многофакторной аутентификации Azure
 
@@ -105,6 +105,6 @@ Multi-Factor Authentication не регистрирует персональны
 
 Некоторые основные данные журнала аутентификации хранятся только в США. Microsoft Azure Германия и Microsoft Azure, работающие 21Vianet, всегда хранятся в соответствующем облаке. Данные журнала Microsoft Government Cloud всегда хранятся в США.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительной информации о том, какая информация о пользователе собирается облачными azure [Azure Multi-Factor Authentication user data collection](howto-mfa-reporting-datacollection.md)Multi-Factor Authentication и Azure Multi-Factor Authentication Server, см.

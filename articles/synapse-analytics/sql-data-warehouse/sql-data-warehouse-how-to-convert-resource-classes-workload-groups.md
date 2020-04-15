@@ -7,20 +7,23 @@ manager: craigg
 ms.service: synapse-analytics
 ms.subservice: ''
 ms.topic: conceptual
-ms.date: 11/4/2019
+ms.date: 04/14/2020
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 8cee874106598c7d81b923d7dd32ba91902d9326
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: 5d73ba8f21fe7731fb751d42a8497ff8e1ebba7d
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80745185"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383626"
 ---
 # <a name="convert-resource-classes-to-workload-groups"></a>Преобразование классов ресурсов в группы рабочей нагрузки
 
 Группы рабочей нагрузки обеспечивают механизм изоляции и сдерживания системных ресурсов.  Кроме того, группы рабочей нагрузки позволяют устанавливать правила выполнения для запросов, работающих в них.  Правило тайм-аута запроса позволяет отменять запросы без вмешательства пользователя.  В этой статье объясняется, как взять существующий класс ресурсов и создать рабочую группу с аналогичной конфигурацией.  Кроме того, добавляется дополнительное правило тайм-аута запроса.
+
+> [!NOTE]
+> [См. раздел «Смешивание заданий класса ресурсов с классификаторами»](sql-data-warehouse-workload-classification.md#mixing-resource-class-assignments-with-classifiers) в концептуательном документе [классификации рабочей нагрузки,](sql-data-warehouse-workload-classification.md) чтобы руководствось использовать группы рабочей нагрузки и классы ресурсов одновременно.
 
 ## <a name="understanding-the-existing-resource-class-configuration"></a>Понимание существующей конфигурации класса ресурсов
 
@@ -83,7 +86,9 @@ SELECT request_id, [label], classifier_name, group_name, command
   ORDER BY submit_time DESC
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md)
-- [Как создать рабочую группу-ссылку](quickstart-configure-workload-isolation-tsql.md)
+- [Как создать рабочую группу](quickstart-configure-workload-isolation-tsql.md)
+- [Классификатор CREATE WORKLOAD (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?&view=azure-sqldw-latest)
+- [CREATE WORKLOAD GROUP (Transact-SQL)](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)

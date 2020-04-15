@@ -1,5 +1,5 @@
 ---
-title: Понимание Центра безопасности Azure для архитектуры агентов безопасности IoT Документы Майкрософт
+title: Архитектура агента безопасности
 description: Понимание архитектуры агента безопасности для агентов, используемых в Центре безопасности Azure для службы IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/26/2019
 ms.author: mlottner
-ms.openlocfilehash: 998aeab197931a75579fc39b28e3a248b85fc57b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9029ece923b7cda09c7a57d07736791e241c9e70
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "68596908"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81310688"
 ---
 # <a name="security-agent-reference-architecture"></a>Архитектура ссылки агента безопасности
 
@@ -38,9 +38,9 @@ ms.locfileid: "68596908"
 
 - Настройка удаленно с помощью двойного модуля **azureiotsecurity.** Чтобы узнать больше, [см.](how-to-agent-configuration.md)
 
-Центр безопасности Azure для агентов IoT Security разработан как проекты с открытым исходным кодом и доступны на GitHub: 
+Центр безопасности Azure для агентов IoT Security разработан как проекты с открытым исходным кодом и доступны на GitHub:
 
-- [Центр безопасности Azure для агента на основе IoT C](https://github.com/Azure/Azure-IoT-Security-Agent-C) 
+- [Центр безопасности Azure для агента на основе IoT C](https://github.com/Azure/Azure-IoT-Security-Agent-C)
 - [Центр безопасности Azure для агента на основе IoT C](https://github.com/Azure/Azure-IoT-Security-Agent-CS)
 
 ## <a name="agent-supported-platforms"></a>Поддерживаемые агентом платформы
@@ -53,7 +53,7 @@ ms.locfileid: "68596908"
 | 64-разрядная версия  | Силий или C           | C#      | Мы рекомендуем использовать c-агент для устройств с более ограниченными или минимальными ресурсами устройства.|
 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали об архитектуре агента безопасности Azure security Center для архитектуры ioT-агентов безопасности и доступных инсталляторов.
 

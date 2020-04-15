@@ -7,16 +7,16 @@ ms.subservice: data-movement
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: allenwux
-ms.author: xiwu
+author: stevestein
+ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 12/20/2018
-ms.openlocfilehash: 6d0a728401ac9f0156cc8fa913ce486bb577c6dd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 39471ebded6280e7d394ee69c2d732b779c9ea50
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73825174"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81380907"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Агент синхронизации данных для синхронизации данных SQL Azure
 
@@ -193,7 +193,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
   1. Откройте приложение SqlAzureDataSyncAgent.
   1. Щелкните **Submit Agent Key** (Отправить ключ агента).
   1. Вставьте ключ из буфера обмена в соответствующем поле.
-  1. Нажмите кнопку **ОК**.
+  1. Щелкните **ОК**.
   1. Закройте программу.
 
 ### <a name="the-client-agent-cant-be-deleted-from-the-portal-if-its-associated-on-premises-database-is-unreachable"></a><a name="agent-delete"></a> Агент клиента невозможно удалить с портала, если связанная с ним локальная база данных недоступна
@@ -314,7 +314,7 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -databaseName testdb -authentication windows -encryption true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 

@@ -3,12 +3,12 @@ title: Сведения о структуре определения полит�
 description: Описывает, как определения политик используются для создания конвенций для ресурсов Azure в вашей организации.
 ms.date: 04/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: e6b1d5c43f290fc2dd953492440670608a15faca
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.openlocfilehash: 017878c4c47a5645ea8815580d2176c7a2ff5d66
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80638081"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81314015"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -252,11 +252,13 @@ ms.locfileid: "80638081"
 - `"notIn": ["stringValue1","stringValue2"]`
 - `"containsKey": "keyName"`
 - `"notContainsKey": "keyName"`
-- `"less": "value"`
-- `"lessOrEquals": "value"`
-- `"greater": "value"`
-- `"greaterOrEquals": "value"`
+- `"less": "dateValue"` | `"less": "stringValue"` | `"less": intValue`
+- `"lessOrEquals": "dateValue"` | `"lessOrEquals": "stringValue"` | `"lessOrEquals": intValue`
+- `"greater": "dateValue"` | `"greater": "stringValue"` | `"greater": intValue`
+- `"greaterOrEquals": "dateValue"` | `"greaterOrEquals": "stringValue"` | `"greaterOrEquals": intValue`
 - `"exists": "bool"`
+
+Для **менее,** **lessOrEquals,** **больше,** и **большеOrEquals**, если тип свойства не соответствует типу состояния, ошибка брошена. Строка сравнения сделаны с помощью `InvariantCultureIgnoreCase`.
 
 При использовании условий **like** и **notLike** можно указать в значении подстановочный знак `*`.
 Значение не должно содержать более одного подстановочного знака `*`.
@@ -792,7 +794,7 @@ ms.locfileid: "80638081"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Просмотрите [примеры на примерах политики Azure](../samples/index.md).
 - Изучите [сведения о действии политик](effects.md).

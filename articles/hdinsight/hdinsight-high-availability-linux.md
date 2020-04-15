@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.openlocfilehash: 085933f9a74ee37779ce63ce499d89ea53a9f7d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 767d87efcf94d720159dcf3b9dc42981ec957ef0
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77198945"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81381399"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -33,7 +33,7 @@ ms.locfileid: "77198945"
 
 Для обеспечения высокого уровня доступности службы Hadoop HDInsight предоставляет два головных узла. Оба головных узла активны и работают в кластере HDInsight одновременно. Некоторые службы, например Apache HDFS или Apache Hadoop YARN, в любой момент времени активны только на одном головном узле. Другие службы, например HiveServer2 или Hive MetaStore, активны одновременно на обоих головных узлах.
 
-Для получения имен узлов для различных типов узлов в кластере, пожалуйста, используйте [API Ambari REST.](hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes)
+Для получения имен узлов для различных типов узлов в кластере, пожалуйста, используйте [API Ambari REST.](hdinsight-hadoop-manage-ambari-rest-api.md#get-the-fqdn-of-cluster-nodes)
 
 > [!IMPORTANT]  
 > Не воспринимайте это числовое значение как обозначение приоритета узла (первичный или вторичный). Единственная функция этого значения — обеспечение уникальности имен для каждого узла.
@@ -276,7 +276,7 @@ curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CL
 
 * **Azure PowerShell:** При использовании cmdlet [New-AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) можно установить размер узла головы, рабочего `-WorkerNodeSize`и `-ZookeeperNodeSize` зоозащитника с помощью `-HeadNodeSize`узлов и параметров.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать больше о пунктах, обсуждаемых в этой статье, см.:
 

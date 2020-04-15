@@ -5,12 +5,12 @@ author: suhuruli
 ms.topic: conceptual
 ms.date: 11/17/2017
 ms.author: suhuruli
-ms.openlocfilehash: f2ca1566358fad45f6ec2860fcca96b887c54adb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e278bcedc48226a59f258ad7d7064fa224737496
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76722583"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81308984"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Настройка среды разработки для Mac OS X
 > [!div class="op_single_selector"]
@@ -57,7 +57,7 @@ ms.locfileid: "76722583"
 2. В новом каталоге создайте файл с именем `Dockerfile` для создания образа Service Fabric.
 
     ```Dockerfile
-    FROM microsoft/service-fabric-onebox
+    FROM mcr.microsoft.com/service-fabric/onebox:latest
     WORKDIR /home/ClusterDeployer
     RUN ./setup.sh
     #Generate the local
@@ -98,7 +98,7 @@ ms.locfileid: "76722583"
     >
     >Если приложение ожидает передачи данных через определенные порты, их необходимо указать с помощью дополнительных тегов `-p`. Например, если приложение ожидает передачи данных через порт 8080, добавьте следующий тег `-p`:
     >
-    >`docker run -itd -p 19080:19080 -p 8080:8080 --name sfonebox microsoft/service-fabric-onebox`
+    >`docker run -itd -p 19080:19080 -p 8080:8080 --name sfonebox mcr.microsoft.com/service-fabric/onebox:latest`
     >
 
 5. Для запуска кластера потребуется некоторое время. При запуске журналы можно просматривать следующие команды или переходить на панель [http://localhost:19080](http://localhost:19080)мониторинга для просмотра работоспособности кластеров:
@@ -197,7 +197,7 @@ Azure Service Fabric предоставляет подключаемый мод�
 На последнем шаге создается экземпляр контейнера с тем же путем, что и для узла. Для подключаемого модуля требуется, чтобы экземпляр этого типа работал в контейнере Docker на компьютере Mac. Пример:
 
 ```bash
-docker run -itd -p 19080:19080 -v /Users/sayantan/work/workspaces/mySFWorkspace:/tmp/mySFWorkspace --name sfonebox microsoft/service-fabric-onebox
+docker run -itd -p 19080:19080 -v /Users/sayantan/work/workspaces/mySFWorkspace:/tmp/mySFWorkspace --name sfonebox mcr.microsoft.com/service-fabric/onebox:latest
 ```
 
 Атрибуты определяются следующим образом:
@@ -211,7 +211,7 @@ docker run -itd -p 19080:19080 -v /Users/sayantan/work/workspaces/mySFWorkspace:
 >Если вы запускаете контейнер с именем, отличающимся от `sfonebox`, обновите его в файле testclient.sh в приложении Java субъекта Service Fabric.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 <!-- Links -->
 * [Создание первого приложения Azure Service Fabric](service-fabric-create-your-first-linux-application-with-java.md)
 * [Создание и развертывание первого приложения Service Fabric Java в Linux с использованием подключаемого модуля Service Fabric для Eclipse](service-fabric-get-started-eclipse.md).

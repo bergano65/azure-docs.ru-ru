@@ -8,12 +8,12 @@ ms.custom: vs-azure
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: feacd463a10bae66dc8fa88a99b9ea60f399e9ec
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 75e1f5fbfa41ac310d2a737dcfe28199715a094b
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74684169"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312877"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -225,18 +225,18 @@ WebJobs использует те же выражения CRON для плани
 
 [!INCLUDE [webjobs-cron-timezone-note](../../includes/webjobs-cron-timezone-note.md)]
 
-### <a name="settingjob-reference"></a>ссылка на работу setting.job
+### <a name="settingsjob-reference"></a>ссылка на работу на настройках.job
 
 Следующие настройки поддерживаются WebJobs:
 
-| **Параметр** | **Тип**  | **Описание** |
+| **Параметр** | **Type**  | **Описание** |
 | ----------- | --------- | --------------- |
-| `is_in_place` | All | Позволяет выполнять задание без предварительного копирования в папку temp. Чтобы узнать больше, смотрите [каталог работы WebJobs](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory). |
+| `is_in_place` | Все | Позволяет выполнять задание без предварительного копирования в папку temp. Чтобы узнать больше, смотрите [каталог работы WebJobs](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory). |
 | `is_singleton` | Непрерывные | Только запустить WebJobs на одном экземпляре при масштабировании. Чтобы узнать больше, см [Установить непрерывную работу в качестве синглтона](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
 | `schedule` | Активируемые | Запустите WebJob по графику, основанному на CRON. Чтобы узнать больше, [см.](../azure-functions/functions-bindings-timer.md#ncrontab-expressions) |
-| `stopping_wait_time`| All | Позволяет контролировать поведение выключения. Чтобы узнать больше, см [Изящный выключения](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
+| `stopping_wait_time`| Все | Позволяет контролировать поведение выключения. Чтобы узнать больше, см [Изящный выключения](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Подробнее о пакете SDK веб-заданий](webjobs-sdk-how-to.md)

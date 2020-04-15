@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: 11f52df683b7a85a8ad5163bbede33d786897452
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: c8997f5cd1bed06fab8ca90e7b1cdfcb3e5ec6b3
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81257272"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313780"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Configure automated ML experiments in Python (Настройка экспериментов автоматизированного машинного обучения на Python)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -453,7 +453,7 @@ featurization_config.add_transformer_params('HashOneHotEncoder', [], {"number_of
 [('RobustScaler', RobustScaler(copy=True, quantile_range=[10, 90], with_centering=True, with_scaling=True)), ('LogisticRegression', LogisticRegression(C=0.18420699693267145, class_weight='balanced', dual=False, fit_intercept=True, intercept_scaling=1, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='newton-cg', tol=0.0001, verbose=0, warm_start=False))
 ```
 
-Чтобы получить более подробную информацию, используйте эту функцию помощника, показанную в [этом образце ноутбука.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification/auto-ml-classification.ipynb)
+Чтобы получить более подробную информацию, используйте эту функцию помощника: 
 
 ```python
 from pprint import pprint
@@ -473,7 +473,7 @@ def print_model(model, prefix=""):
             print()
 
 
-print_model(fitted_model)
+print_model(model)
 ```
 
 Следующий выход образца предназначен для конвейера с использованием определенного алгоритма (LogisticRegression with RobustScalar, в данном случае).
@@ -525,7 +525,7 @@ class_prob = fitted_model.predict_proba(X_test)
 
 Для получения общей информации о том, как объяснения модели и важность функций могут быть [concept](how-to-machine-learning-interpretability.md) включены в других областях SDK за пределами автоматизированного машинного обучения, см.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, [как и где можно развернуть модель](how-to-deploy-and-where.md).
 

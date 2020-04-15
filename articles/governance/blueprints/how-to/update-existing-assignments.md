@@ -1,14 +1,14 @@
 ---
 title: Обновление существующего задания с портала
 description: Узнайте о механизме обновления существующего назначения чертежа с портала в проектах Azure Blueprint.
-ms.date: 11/21/2019
+ms.date: 04/15/2020
 ms.topic: how-to
-ms.openlocfilehash: 2c1a24399d8fa1529665bfa60d1b889a84a29a60
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a00a8bcc10b37af576777e3816a794225a3832f7
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79264665"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81381795"
 ---
 # <a name="how-to-update-an-existing-blueprint-assignment"></a>Обновление существующего назначения схемы
 
@@ -26,18 +26,18 @@ ms.locfileid: "79264665"
 
 1. В списке схем щелкните левой кнопкой мыши назначение схемы. Затем нажмите кнопку **назначения обновления** или правой щелкните назначение чертежа и выберите **назначение обновления.**
 
-   ![Обновление существующего назначения чертежа](../media/update-existing-assignments/update-assignment.png)
+   :::image type="content" source="../media/update-existing-assignments/update-assignment.png" alt-text="Обновление существующего назначения чертежа" border="false":::
 
 1. Страница **назначать чертеж** будет загружаться предварительно заполненными всеми значениями из исходного назначения.
    Вы можете изменить **версию определения схемы**, состояние **блокировки назначения** и любые динамические параметры в определении схемы. Внеся необходимые изменения, нажмите кнопку **Назначить**.
 
 1. Просмотрите новое состояние на странице сведений об обновленном назначении. В этом примере мы добавили в назначение **блокировку**.
 
-   ![Обновлено существующее назначение чертежа - режим блокировки изменен](../media/update-existing-assignments/updated-assignment.png)
+   :::image type="content" source="../media/update-existing-assignments/updated-assignment.png" alt-text="Обновлено существующее назначение чертежа - режим блокировки изменен" border="false":::
 
 1. Исследуйте сведения о других **операциях назначения,** используя выпадение. Таблица **Управляемых ресурсов** обновляется выбранной операцией назначения.
 
-   ![Операции назначения назначения назначения чертежа](../media/update-existing-assignments/assignment-operations.png)
+   :::image type="content" source="../media/update-existing-assignments/assignment-operations.png" alt-text="Операции назначения назначения назначения чертежа" border="false":::
 
 ## <a name="rules-for-updating-assignments"></a>Правила обновления назначений
 
@@ -63,9 +63,9 @@ ms.locfileid: "79264665"
 - объект уже существует;
 - Azure Resource Manager не поддерживает запрошенное изменение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
+- Узнайте о [жизненном цикле чертежей.](../concepts/lifecycle.md)
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../concepts/resource-locking.md).

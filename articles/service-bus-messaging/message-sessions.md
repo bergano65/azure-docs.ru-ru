@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 4df6396d156c3fe1b75e3cac3d3f4aad7f23553a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1e22641e9d4f9959c26cd2043ea2acd7e260e0f0
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77660671"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81314046"
 ---
 # <a name="message-sessions"></a>Сеансы обмена сообщениями
 Сеансы службы "Служебная шина Microsoft Azure" обеспечивают согласованную и упорядоченную обработку несвязанных последовательностей связанных сообщений. Сеансы могут быть использованы в первую очередь в, первый из (FIFO) и запрос-ответ моделей. В этой статье показано, как использовать сеансы для реализации этих шаблонов при использовании Service Bus. 
@@ -68,7 +68,7 @@ ms.locfileid: "77660671"
 
 ### <a name="message-session-state"></a>Состояние сеанса обмена сообщениями
 
-Когда рабочие процессы обрабатываются в высокомасштабных облачных системах с высокой доступностью, обработчик рабочего процесса, связанный с определенным сеансом, должен быть в состоянии восстановиться после непредвиденных сбоев и может частично возобновить работу над другим процессом или машиной из где началась работа.
+Когда рабочие процессы обрабатываются в высококлассных облачных системах с высокой доступностью, обработчик рабочего процесса, связанный с определенным сеансом, должен быть в состоянии восстановиться после непредвиденных сбоев и может частично возобновить работу над другим процессом или машиной, с которой началась работа.
 
 Функция состояния сеанса позволяет добавлять определяемые приложением заметки для сеанса обмена сообщениями внутри брокера, чтобы записанное состояние обработки, относящееся к этому сеансу, становилось мгновенно доступным при получении этого сеанса новым обработчиком.
 
@@ -78,7 +78,7 @@ ms.locfileid: "77660671"
 
 Состояние сеанса сохраняется до тех пор, пока оно не будет устранено (возвращение **нулевой),** даже если все сообщения в сеансе потребляются.
 
-Все существующие сеансы в очереди или подписке могут быть перечислены с помощью метода **SessionBrowser** в интерфейсе API Java и с помощью метода [GetMessageSessions](/dotnet/api/microsoft.servicebus.messaging.queueclient.getmessagesessions#Microsoft_ServiceBus_Messaging_QueueClient_GetMessageSessions) в интерфейсах API [QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient) и [SubscriptionClient](/dotnet/api/microsoft.azure.servicebus.subscriptionclient) в клиенте .NET.
+Все существующие сеансы в очереди или подписке можно перечислить методом **SessionBrowser** в Java API и [с Помощью GetMessageSessions](/dotnet/api/microsoft.servicebus.messaging.queueclient.getmessagesessions#Microsoft_ServiceBus_Messaging_QueueClient_GetMessageSessions) на [очередиКлиентов](/dotnet/api/microsoft.servicebus.messaging.queueclient) и [подписчиков](/dotnet/api/microsoft.servicebus.messaging.subscriptionclient) в клиенте .NET Framework.
 
 Состояние сеанса, хранящееся в очереди или подписке, учитывается при подсчете квоты хранилища этой сущности. Поэтому, когда приложение завершает работу с сеансом, рекомендуется очищать его сохраненное состояние, чтобы избежать затрат на внешнее управление.
 
@@ -100,7 +100,7 @@ ms.locfileid: "77660671"
 > [!NOTE]
 > Приложение, отправляя исходные запросы, должно `SessionClient.AcceptMessageSession(SessionID)` знать об идентификаторе сеанса и использовать его для блокировки сеанса, на котором он ожидает ответа. Рекомендуется использовать GUID, который однозначно идентифицирует экземпляр приложения как идентификатор сеанса. Не должно быть обработчика сеансов или `AcceptMessageSession(timeout)` в очереди, чтобы гарантировать, что ответы доступны для блокировки и обработки определенными приемниками.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Например, пример, который использует клиент .NET Framework для обработки сообщений с пониманием от сеанса, можно ознакомиться с [образцами Microsoft.Azure.ServiceBus](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/Sessions) или [примерами Microsoft.ServiceBus.Messaging.](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions) 
 
