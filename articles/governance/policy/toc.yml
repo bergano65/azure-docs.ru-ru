@@ -31,9 +31,6 @@
     - name: Администрирование системы управления тегами
       displayName: 'modify, append, effects'
       href: ./tutorials/govern-tags.md
-    - name: Практические занятия. Изучение службы "Политика Azure"
-      displayName: 'create, policy, training, learn'
-      href: 'https://handsonlabs.microsoft.com/handsonlabs/SelfPacedLabs?storyId=story://content-private/content/sp-azuregovernance/1-azpolicy/a-policy'
 - name: Примеры
   items:
     - name: Индекс
