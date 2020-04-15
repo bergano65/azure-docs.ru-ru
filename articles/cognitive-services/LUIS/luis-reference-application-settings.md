@@ -1,26 +1,20 @@
 ---
 title: Настройки приложения - LUIS
-titleSuffix: Azure Cognitive Services
 description: Настройки приложений для приложений для понимания языка Azure Cognitive Services хранятся в приложении и портале.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 11/12/2019
-ms.author: diberry
-ms.openlocfilehash: d1ead09f6248a6ad14646371aa70b42b57cf8e3f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/14/2020
+ms.openlocfilehash: 9e17736cd6ff5074a6eab76a6cf5bdb8acedc185
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78270804"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382200"
 ---
 # <a name="application-settings"></a>Параметры приложения
 
 Эти настройки приложения хранятся в [экспортируемом](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) приложении и [обновляются](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с помощью APIs REST. Изменение настроек версии приложения сбрасывает статус обучения приложения на неподготовленный.
+
+[Изучите концепции](luis-concept-utterance.md#utterance-normalization-for-diacritics-and-punctuation) диакритики и пунктуации.
 
 |Параметр|Значение по умолчанию|Примечания|
 |--|--|--|
@@ -183,3 +177,7 @@ ms.locfileid: "78270804"
 |`}`|
 |`+`|
 |`¡`|
+
+## <a name="next-steps"></a>Следующие шаги
+
+* [Изучите концепции](luis-concept-utterance.md#utterance-normalization-for-diacritics-and-punctuation) диакритики и пунктуации.

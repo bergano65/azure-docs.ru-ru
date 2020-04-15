@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: victorh
-ms.openlocfilehash: af66da115e228efe39e4cd5dda3c494b71428676
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.openlocfilehash: ea94e452b463fffc1800e09fa1302abacdf015cc
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81113557"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383076"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -72,9 +72,9 @@ ms.locfileid: "81113557"
 
 Служба "Брандмауэр Azure" дополняет функции группы безопасности сети. Вместе эти два компонента обеспечивают эшелонированную защиту сети. Группы безопасности сети предоставляют распределенную фильтрацию трафика сетевого уровня для ограничения отправки трафика на ресурсы в виртуальных сетях в каждой подписке. Служба "Брандмауэр Azure" — это полностью автономный, централизованный сетевой брандмауэр как услуга, обеспечивающий защиту на уровне сети и приложений в различных подписках и виртуальных сетях.
 
-## <a name="are-network-security-groups-nsgs-supported-on-the-azure-firewall-subnet"></a>Поддерживаются ли группы сетевой безопасности (НСГ) в подсети Azure Firewall?
+## <a name="are-network-security-groups-nsgs-supported-on-the-azurefirewallsubnet"></a>Поддерживаются ли группы сетевой безопасности (НСГ) в AzureFirewallSubnet?
 
-Azure Firewall — это управляемая служба с несколькими защитными слоями, включая защиту платформы с НСУ уровня NIC (не видимые).  НСУ уровня подсети не требуются в подсети Azure Firewall и отключены, чтобы обеспечить отсутствие прерывания работы службы.
+Azure Firewall — это управляемая служба с несколькими защитными слоями, включая защиту платформы с НСУ уровня NIC (не видимые).  NsG уровня подсети не требуются в AzureFirewallSubnet и отключены, чтобы обеспечить отсутствие прерывания службы.
 
 ## <a name="how-do-i-set-up-azure-firewall-with-my-service-endpoints"></a>Как настроить службу "Брандмауэр Azure" для использования с конечными точками служб?
 

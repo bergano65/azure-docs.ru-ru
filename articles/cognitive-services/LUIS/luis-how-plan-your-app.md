@@ -1,22 +1,14 @@
 ---
 title: Планируйте свое приложение - LUIS
-titleSuffix: Azure Cognitive Services
 description: Определяйте соответствующие приложению намерения и сущности, а затем создавайте планы приложений в Интеллектуальной службе распознавания речи (LUIS).
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 11/20/2019
-ms.author: diberry
-ms.openlocfilehash: 6a155f4c43da03ccdc40d289742918973aa6da7b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/14/2020
+ms.openlocfilehash: dfed27a05973a2ea2e9a97eaa1c233b847b33d87
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "74326772"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382307"
 ---
 # <a name="plan-your-luis-app-schema-with-subject-domain-and-data-extraction"></a>Планируйте схему приложения LUIS с помощью домена и извлечения данных
 
@@ -44,7 +36,7 @@ ms.locfileid: "74326772"
 
 ## <a name="create-example-utterances-for-each-intent"></a>Создание примера высказывания для каждого намерения
 
-Начнем с того, избегайте создания слишком много высказываний для каждого намерения. После того как вы определили намерения, создайте от 15 до 30 примеров высказываний в цель. Каждое высказывание должно отличаться от ранее представленных высказываний. Хорошее разнообразие высказываний включает общее количество слов, выбор слов, глагол напряженной, и пунктуации.
+Начнем с того, избегайте создания слишком много высказываний для каждого намерения. После того как вы определили намерения, создайте от 15 до 30 примеров высказываний в цель. Каждое высказывание должно отличаться от ранее представленных высказываний. Хорошее разнообразие в высказываниях включают общее количество слов, выбор слов, глагол напряженной, и [пунктуации](luis-reference-application-settings.md#punctuation-normalization).
 
 Для получения дополнительной информации, увидеть [понимание хороших высказываний для приложений LUIS](luis-concept-utterance.md).
 
@@ -57,7 +49,7 @@ ms.locfileid: "74326772"
 > [!TIP]
 > LUIS предлагает [заранее построенные объекты](luis-prebuilt-entities.md) для общих, разговорных сценариев пользователей. Рассмотрите возможность использования предварительно построенных объектов в качестве отправной точки для разработки приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Изучение lifecylce развития LUIS](luis-concept-app-iteration.md)

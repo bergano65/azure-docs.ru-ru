@@ -1,22 +1,15 @@
 ---
 title: Часто задаваемые вопросы (Часто) - LUIS
-titleSuffix: Azure Cognitive Services
 description: В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-services: cognitive-services
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 11/08/2019
+ms.date: 04/14/2020
 ms.author: diberry
-ms.openlocfilehash: a2472064720af0a25568a2f173b971898b1f2e25
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 235eba7f80778b8a60ba880616cf80f2c14ccba1
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79219712"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382184"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -59,7 +52,10 @@ ms.locfileid: "79219712"
 Ознакомьтесь со сведениями о [сущностях](luis-concept-entity-types.md) и [извлечении данных](luis-concept-data-extraction.md).
 
 ### <a name="should-variations-of-an-example-utterance-include-punctuation"></a>Должны ли вариации примерного высказывания включать пунктуацию?
-Добавьте в намерение либо различные варианты в качестве примерных высказываний, либо образец примерного высказывания с [синтаксисом для игнорирования](luis-concept-patterns.md#pattern-syntax) пунктуации.
+Используйте одно из следующих решений:
+* Игнорировать [знаки препинания](luis-reference-application-settings.md#punctuation-normalization)
+* Добавьте различные вариации в качестве примера высказывания к намерениям
+* Добавьте шаблон примера высказывания [синтаксисом, чтобы проигнорировать](luis-concept-patterns.md#pattern-syntax) пунктуацию.
 
 ### <a name="does-luis-currently-support-cortana"></a>Осуществляется ли поддержка Cortana в LUIS в данный момент?
 
@@ -68,11 +64,11 @@ ms.locfileid: "79219712"
 ### <a name="how-do-i-transfer-ownership-of-a-luis-app"></a>Как передавать права владельца приложения LUIS?
 Чтобы переместить приложение LUIS в другую подписку Azure, экспортируйте приложение LUIS и импортируйте его, используя новую учетную запись. Обновите идентификатор приложения LUIS в клиентском приложении, которое его вызывает. Возвращаемые новым приложением оценки LUIS могут немного отличаться от оценок исходного приложения.
 
-### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Заранее построенная сущность помечена в примере высказывания вместо моей пользовательской сущности. Как устранить эту проблему? 
+### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Заранее построенная сущность помечена в примере высказывания вместо моей пользовательской сущности. Как устранить эту проблему?
 
-На портале LUIS можно пометить текст для точной сущности, которая вам интересна для извлечения. Если портал LUIS не показывает правильное предсказание сущности, возможно, потребуется добавить больше высказываний и пометить сущность в тексте или добавить дескриптор (например, функцию). 
+На портале LUIS можно пометить текст для точной сущности, которая вам интересна для извлечения. Если портал LUIS не показывает правильное предсказание сущности, возможно, потребуется добавить больше высказываний и пометить сущность в тексте или добавить дескриптор (например, функцию).
 
-### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Я попытался импортировать приложение или файл версии, но я получил ошибку, что случилось? 
+### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Я попытался импортировать приложение или файл версии, но я получил ошибку, что случилось?
 
 Подробнее об [ошибках импорта версий.](luis-how-to-manage-versions.md#import-errors)
 
@@ -82,7 +78,7 @@ ms.locfileid: "79219712"
 
 ### <a name="how-do-i-give-collaborators-access-to-luis-with-azure-active-directory-azure-ad-or-role-based-access-control-rbac"></a>Как предоставить доступ для участников совместной работы LUIS с Azure Active Directory (Azure AD) или управлять доступом на основе ролей (RBAC)?
 
-Дополнительные сведения о том, как предоставить доступ для участников совместной работы, см. в разделах [Ресурсы Azure Active Directory](luis-how-to-collaborate.md#azure-active-directory-resources) и [Пользователь клиента Azure Active Directory](luis-how-to-collaborate.md#azure-active-directory-tenant-user). 
+Дополнительные сведения о том, как предоставить доступ для участников совместной работы, см. в разделах [Ресурсы Azure Active Directory](luis-how-to-collaborate.md#azure-active-directory-resources) и [Пользователь клиента Azure Active Directory](luis-how-to-collaborate.md#azure-active-directory-tenant-user).
 
 <a name="luis-endpoint"></a>
 
@@ -92,7 +88,7 @@ ms.locfileid: "79219712"
 
 Вы получаете 403 и 429 кодов статуса ошибок, когда вы превышаете транзакции в секунду или транзакции в месяц для вашего ценового уровня. Увеличьте свой ценовой уровень или используйте [контейнеры](luis-container-howto.md)Language Understanding.
 
-Когда вы используете все эти бесплатные 1000 запросов конечных точек или превышаете ежемесячную квоту транзакций вашего ценового уровня, вы получаете код состояния ошибки HTTP 403. 
+Когда вы используете все эти бесплатные 1000 запросов конечных точек или превышаете ежемесячную квоту транзакций вашего ценового уровня, вы получаете код состояния ошибки HTTP 403.
 
 Чтобы исправить эту ошибку, необходимо либо [изменить свой ценовой уровень](luis-how-to-azure-subscription.md#change-pricing-tier) на более высокий уровень, либо [создать новый ресурс](get-started-portal-deploy-app.md#create-the-endpoint-resource) и [назначить его приложению.](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal)
 
@@ -105,23 +101,23 @@ ms.locfileid: "79219712"
 
 Вы получаете 403 и 429 кодов статуса ошибок, когда вы превышаете транзакции в секунду или транзакции в месяц для вашего ценового уровня. Увеличьте свой ценовой уровень или используйте [контейнеры](luis-container-howto.md)Language Understanding.
 
-Этот код состояния возвращается, когда транзакции в секунду превышают ваш ценовой уровень.  
+Этот код состояния возвращается, когда транзакции в секунду превышают ваш ценовой уровень.
 
 Решения включают в себя:
 
 * Вы можете [увеличить свой ценовой уровень,](luis-how-to-azure-subscription.md#change-pricing-tier)если вы не на самом высоком уровне.
 * Если ваше использование превышает самый высокий ценовой уровень, добавьте больше ресурсов Language Understanding с балансером нагрузки перед ними. Контейнер [Language Understanding](luis-container-howto.md) с Kubernetes или Docker Compose может помочь в этом.
-* Вы можете выполнить запросы клиентского приложения с [помощью политики повторной попытки,](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) которая вы реализуете самостоятельно, когда получите этот код статуса. 
+* Вы можете выполнить запросы клиентского приложения с [помощью политики повторной попытки,](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) которая вы реализуете самостоятельно, когда получите этот код статуса.
 
-### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Запрос конечной точки вернул непредвиденные результаты. Что делать?
+### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Запрос конечной точки вернул непредвиденные результаты.   Что следует делать?
 
-Непредвиденные результаты прогнозирования, полученные при запросе, основаны на состоянии опубликованной модели. Чтобы скорректировать модель, потребуется изменить ее, обучить и опубликовать повторно. 
+Непредвиденные результаты прогнозирования, полученные при запросе, основаны на состоянии опубликованной модели. Чтобы скорректировать модель, потребуется изменить ее, обучить и опубликовать повторно.
 
 Начните корректировку модели с [активного обучения](luis-how-to-review-endpoint-utterances.md).
 
 Можно удалить результаты недетерминированного обучения. Для этого настройте [API параметров версии приложения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) для использования всех данных обучения.
 
-Другие советы см. в [статье с рекомендациями](luis-concept-best-practices.md). 
+Другие советы см. в [статье с рекомендациями](luis-concept-best-practices.md).
 
 ### <a name="why-does-luis-add-spaces-to-the-query-around-or-in-the-middle-of-words"></a>Почему LUIS добавляет пробелы вокруг или между словами запроса?
 LUIS [помечает](luis-glossary.md#token) высказывание на основе [языка и региональных параметров](luis-language-support.md#tokenization). Исходное и помеченное значения можно использовать для [извлечения данных](luis-concept-data-extraction.md#tokenized-entity-returned).
@@ -145,7 +141,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 ```powershell
 Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Name <your-resource-name>
-``` 
+```
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>Вчера приложение LUIS работало, но сейчас отображаются ошибки 403. Я не изменял приложение. Как ее исправить?
 Следуйте этим [инструкциям,](#how-do-i-create-and-assign-a-luis-endpoint-key) чтобы создать ключ endpoint LUIS и назначить его приложению. Затем необходимо изменить запрос HTTP клиента на конечную точку, чтобы [использовать новый ключ конечных точек.](luis-concept-keys.md) Если вы создали новый ресурс в другом регионе, измените и область запроса клиента HTTP.
@@ -158,11 +154,11 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ### <a name="what-is-the-maximum-number-of-intents-and-entities-that-a-luis-app-can-support"></a>Какое максимальное число намерений и сущностей, поддерживаемых приложением LUIS?
 Подробные сведения см. в разделе по [этой](luis-boundaries.md) ссылке.
 
-### <a name="i-want-to-build-a-luis-app-with-more-than-the-maximum-number-of-intents-what-should-i-do"></a>Я хочу создать приложение LUIS с количеством намерений, которое превышает допустимое количество. Что делать?
+### <a name="i-want-to-build-a-luis-app-with-more-than-the-maximum-number-of-intents-what-should-i-do"></a>Я хочу создать приложение LUIS с количеством намерений, которое превышает допустимое количество.   Что следует делать?
 
 Подробнее см. в [этом](luis-concept-intent.md#if-you-need-more-than-the-maximum-number-of-intents) разделе с рекомендациями.
 
-### <a name="i-want-to-build-an-app-in-luis-with-more-than-the-maximum-number-of-entities-what-should-i-do"></a>Я хочу создать в LUIS приложение с количеством сущностей, которое превышает допустимое количество. Что делать?
+### <a name="i-want-to-build-an-app-in-luis-with-more-than-the-maximum-number-of-entities-what-should-i-do"></a>Я хочу создать в LUIS приложение с количеством сущностей, которое превышает допустимое количество.   Что следует делать?
 
 Подробнее см. в [этом](luis-concept-entity-types.md#if-you-need-more-than-the-maximum-number-of-entities) разделе с рекомендациями.
 
@@ -186,7 +182,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 Дополнительные сведения см. в разделе, посвященном [прогнозированию различий между копиями одного приложения](luis-concept-prediction-score.md#review-intents-with-similar-scores).
 
-### <a name="some-utterances-go-to-the-wrong-intent-after-i-made-changes-to-my-app-the-issue-seems-to-disappear-at-random-how-do-i-fix-it"></a>После внесения изменений в приложение некоторые высказывания отправляются в неправильное намерение. Проблема периодически исчезает. Как ее исправить? 
+### <a name="some-utterances-go-to-the-wrong-intent-after-i-made-changes-to-my-app-the-issue-seems-to-disappear-at-random-how-do-i-fix-it"></a>После внесения изменений в приложение некоторые высказывания отправляются в неправильное намерение. Проблема периодически исчезает. Как ее исправить?
 
 См. раздел [Обучение на основе всех данных](luis-how-to-train.md#train-with-all-data).
 
@@ -202,27 +198,27 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 
 ### <a name="why-are-there-more-endpoint-keys-assigned-to-my-app-than-i-assigned"></a>Почему приложению назначено больше ключей конечной точки, чем назначено мной?
-Из соображений удобства для каждого приложения LUIS в списке конечных точек указывается ключ разработки (начальный ключ). Этот ключ позволяет выполнить только несколько обращений к конечной точке для пробного использования LUIS.  
+Из соображений удобства для каждого приложения LUIS в списке конечных точек указывается ключ разработки (начальный ключ). Этот ключ позволяет выполнить только несколько обращений к конечной точке для пробного использования LUIS.
 
 Если приложение было создано до выхода общедоступной версии LUIS, ключи конечных точек LUIS в подписке назначаются автоматически. Это упрощает процесс миграции GA. Все новые ключи конечных точек LUIS на портале Azure _не_ назначаются в LUIS автоматически.
 
 ## <a name="key-management"></a>Управление ключами
 
-### <a name="how-do-i-know-what-key-i-need-where-i-get-it-and-what-i-do-with-it"></a>Как я узнаю, какой ключ мне нужен, где его получить и что мне с ним делать? 
+### <a name="how-do-i-know-what-key-i-need-where-i-get-it-and-what-i-do-with-it"></a>Как я узнаю, какой ключ мне нужен, где его получить и что мне с ним делать?
 
-Смотрите [клавиши конечных точек авторизации и запроса в LUIS,](luis-concept-keys.md) чтобы узнать о различиях между ключом авторизации и ключом выполнения прогноза. 
+Смотрите [клавиши конечных точек авторизации и запроса в LUIS,](luis-concept-keys.md) чтобы узнать о различиях между ключом авторизации и ключом выполнения прогноза.
 
-### <a name="i-got-an-error-about-being-out-of-quota-how-do-i-fix-it"></a>Я получил ошибку с сообщением об отсутствии квоты. Как ее исправить? 
+### <a name="i-got-an-error-about-being-out-of-quota-how-do-i-fix-it"></a>Я получил ошибку с сообщением об отсутствии квоты. Как ее исправить?
 
 Смотрите, исправить код статуса HTTP [403](#i-received-an-http-403-error-status-code-how-do-i-fix-it) и [429,](#i-received-an-http-429-error-status-code-how-do-i-fix-it) чтобы узнать больше.
 
-### <a name="i-need-to-handle-more-endpoint-queries-how-do-i-do-that"></a>Мне нужно обрабатывать больше запросов конечной точки. Как это сделать? 
+### <a name="i-need-to-handle-more-endpoint-queries-how-do-i-do-that"></a>Мне нужно обрабатывать больше запросов конечной точки. Как это сделать?
 
 Смотрите, исправить код статуса HTTP [403](#i-received-an-http-403-error-status-code-how-do-i-fix-it) и [429,](#i-received-an-http-429-error-status-code-how-do-i-fix-it) чтобы узнать больше.
 
 ### <a name="i-created-an-authoring-key-but-it-isnt-showing-in-the-luis-portal-what-happened"></a>Я создал авторский ключ, но он не отображается на портале LUIS. Что произошло?
 
-Авторские ключи доступны на портале LUIS после [перехода к автору ключевого опыта.](luis-migration-authoring.md)  
+Авторские ключи доступны на портале LUIS после [перехода к автору ключевого опыта.](luis-migration-authoring.md)
 
 ## <a name="app-management"></a>Управление приложениями
 
@@ -266,28 +262,28 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 ### <a name="my-luis-bot-isnt-working-what-do-i-do"></a>Бот LUIS не работает. Что делать?
 
-Первая трудность состоит в изоляции ошибки, которая связана с LUIS или случилась за пределами ПО промежуточного слоя LUIS. 
+Первая трудность состоит в изоляции ошибки, которая связана с LUIS или случилась за пределами ПО промежуточного слоя LUIS.
 
 #### <a name="resolve-issue-in-luis"></a>Устранение проблемы в LUIS
 Выполните передачу требуемого речевого фрагмента в LUIS из [конечной точки LUIS ](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint). Если произошла ошибка, устраните ее в LUIS таким образом, чтобы предотвратить ее повторное появление. Ниже перечислены распространенные ошибки.
 
-* `Out of call volume quota. Quota will be replenished in <time>.`. Данная ошибка указывает о необходимости изменения ключа разработки на [ключ конечной точки](luis-how-to-azure-subscription.md) или изменения [уровней служб](luis-how-to-azure-subscription.md#change-pricing-tier). 
+* `Out of call volume quota. Quota will be replenished in <time>.`. Данная ошибка указывает о необходимости изменения ключа разработки на [ключ конечной точки](luis-how-to-azure-subscription.md) или изменения [уровней служб](luis-how-to-azure-subscription.md#change-pricing-tier).
 
 #### <a name="resolve-issue-in-azure-bot-service"></a>Устранение ошибок в службе Azure Bot
 
 Когда при использовании службы Azure Bot возникает ошибка в которой **тестирование в веб-чате** возвращает сообщение `Sorry, my bot code is having an issue`, проверьте свои журналы.
 
 1. Для своего бота, на портале Azure, в разделе **Bot management** (Управление ботом), выберите **Сборка**.
-1. Откройте сетевой редактор кода. 
+1. Откройте сетевой редактор кода.
 1. Выберите имя бота в верхней части синей панели навигации (второй элемент справа).
 1. В раскрывающемся итоговом списке выберите **Open Kudu Console** (Открыть консоль Kudu).
-1. Последовательно выберите **LogFiles**, а затем **Приложение**. Просмотр всех файлов журналов. Если в папке приложения не появляется ошибка, просмотрите файлы журнала в **LogFiles**. 
+1. Последовательно выберите **LogFiles**, а затем **Приложение**. Просмотр всех файлов журналов. Если в папке приложения не появляется ошибка, просмотрите файлы журнала в **LogFiles**.
 1. Обязательно перестраивайте проект при использовании компилируемого языка, например C#.
 
-> [!Tip] 
-> Установку пакетов также можно выполнять с помощью консоли. 
+> [!Tip]
+> Установку пакетов также можно выполнять с помощью консоли.
 
-#### <a name="resolve-issue-while-debugging-on-local-machine-with-bot-framework"></a>Во время отладки на локальной машине устраняйте проблему с помощью Bot Framework. 
+#### <a name="resolve-issue-while-debugging-on-local-machine-with-bot-framework"></a>Во время отладки на локальной машине устраняйте проблему с помощью Bot Framework.
 
 Дополнительные сведения о локальной отладке бота см. в статье [Отладка бота](https://docs.microsoft.com/azure/bot-service/bot-service-debug-bot?view=azure-bot-service-4.0).
 
@@ -303,19 +299,19 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 ## <a name="api-programming-strategies"></a>Стратегии программирования API
 
-### <a name="how-do-i-programmatically-get-the-luis-region-of-a-resource"></a>Как с помощью программных средств узнать регион для ресурса LUIS? 
+### <a name="how-do-i-programmatically-get-the-luis-region-of-a-resource"></a>Как с помощью программных средств узнать регион для ресурса LUIS?
 
-Используйте пример LUIS, чтобы [узнать регион](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/find-region) с помощью программных средств для C# или Node.Js. 
+Используйте пример LUIS, чтобы [узнать регион](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/find-region) с помощью программных средств для C# или Node.Js.
 
 ## <a name="luis-service"></a>Служба LUIS
 
 ### <a name="is-language-understanding-luis-available-on-premises-or-in-private-cloud"></a>Доступна ли служба "Распознавание речи" (LUIS) в локальной среде или в частном облаке?
 
-Да. Вы можете использовать [контейнер](luis-container-howto.md) LUIS в таких сценариях, если у вас есть подключение для измерения использования. 
+Да. Вы можете использовать [контейнер](luis-container-howto.md) LUIS в таких сценариях, если у вас есть подключение для измерения использования.
 
 ## <a name="migrating-to-the-next-version"></a>Переход на следующую версию
 
-### <a name="how-do-i-migrate-to-preview-v3-api"></a>Как перенести для просмотра API V3? 
+### <a name="how-do-i-migrate-to-preview-v3-api"></a>Как перенести для просмотра API V3?
 
 Смотрите [API v2 для v3 Миграция Руководство для приложений LUIS](luis-migration-api-v3.md)
 
@@ -325,7 +321,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 * [Предварительный просмотр руководства по миграции API V3](luis-migration-api-v3.md)
 * [Улучшенная панель мониторинга аналитики](luis-how-to-use-dashboard.md)
-* [Улучшенные предварительно построенные домены](luis-reference-prebuilt-domains.md) 
+* [Улучшенные предварительно построенные домены](luis-reference-prebuilt-domains.md)
 * [Объекты динамического списка](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
 * [Внешние субъекты](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
 
@@ -333,7 +329,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 * [Как использовать Azure Conversational AI для масштабирования бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)

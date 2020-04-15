@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/18/2020
-ms.openlocfilehash: 4c265cb0cdc665ef52f4dc6e69440e83c22db449
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5f0eada5184f2c8e36b0deb5a9d27a8a9230776d
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77460983"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382766"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-by-using-azure-data-factory"></a>Копирование данных в Explorer данных Azure с помощью Azure Data Factory
 
-В этой статье описывается, как использовать активность копирования на фабрике данных Azure для копирования данных в [Azure Data Explorer](../data-explorer/data-explorer-overview.md)или из. Он основывается на статье [обзора активности копирования,](copy-activity-overview.md) которая предлагает общий обзор активности копирования.
+В этой статье описывается, как использовать активность копирования на фабрике данных Azure для копирования данных в [Azure Data Explorer](/azure/data-explorer/data-explorer-overview)или из. Он основывается на статье [обзора активности копирования,](copy-activity-overview.md) которая предлагает общий обзор активности копирования.
 
 >[!TIP]
->Для интеграции Azure Data Factory и Интеграции Azure Data Explorer в целом узнайте больше из [интеграции Azure Data Explorer с Azure Data Factory.](../data-explorer/data-factory-integration.md)
+>Для интеграции Azure Data Factory и Интеграции Azure Data Explorer в целом узнайте больше из [интеграции Azure Data Explorer с Azure Data Factory.](/azure/data-explorer/data-factory-integration)
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -47,7 +47,7 @@ ms.locfileid: "77460983"
 ## <a name="getting-started"></a>Начало работы
 
 >[!TIP]
->Для получения пошагового промеля лазурного разъема Explorer Данных смотрите [копирование данных в/из Azure Data Explorer с помощью Azure Data Factory](../data-explorer/data-factory-load-data.md) и [массовой копии из базы данных в Azure Data Explorer.](../data-explorer/data-factory-template.md)
+>Для получения пошагового промеля лазурного разъема Explorer Данных смотрите [копирование данных в/из Azure Data Explorer с помощью Azure Data Factory](/azure/data-explorer/data-factory-load-data) и [массовой копии из базы данных в Azure Data Explorer.](/azure/data-explorer/data-factory-template)
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -63,7 +63,7 @@ ms.locfileid: "77460983"
     - Ключ приложения
     - Tenant ID
 
-2. Предоставьте директору службы правильные разрешения в Azure Data Explorer. Просрнять [разрешения базы данных Manage Azure Data Explorer](../data-explorer/manage-database-permissions.md) для получения подробной информации о ролях и разрешениях и об управлении разрешениями. В общем, вы должны:
+2. Предоставьте директору службы правильные разрешения в Azure Data Explorer. Просрнять [разрешения базы данных Manage Azure Data Explorer](/azure/data-explorer/manage-database-permissions) для получения подробной информации о ролях и разрешениях и об управлении разрешениями. В общем, вы должны:
 
     - **В качестве источника**, предоставить по крайней мере роль **просмотра базы данных** в базу данных
     - **Как раковина**, предоставить по крайней мере роль **глотателя базы данных** в вашу базу данных
@@ -233,7 +233,7 @@ ms.locfileid: "77460983"
 
 Для получения дополнительной информации [Lookup activity](control-flow-lookup-activity.md)о свойствах см.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для списка хранилищ данных, которые активность копирования в Azure Data Factory поддерживается в качестве источников и поглотителей, [см.](copy-activity-overview.md#supported-data-stores-and-formats)
 

@@ -7,14 +7,14 @@ ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/09/2020
+ms.date: 04/14/2020
 ms.author: sstein
-ms.openlocfilehash: b677fd7fe2b14e1c42443478a887ddfa2481dfbf
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: 7d922aa0727ad28054d050a29039951d3f04985f
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81011452"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383371"
 ---
 # <a name="sql-database-release-notes"></a>Примечания к выпуску базы данных S'L
 
@@ -49,6 +49,7 @@ ms.locfileid: "81011452"
 | <a href="https://aka.ms/managed-instance-aadlogins">Принципы серверов Azure AD уровня инстанций (логины)</a> | Создавайте логины на уровне сервера с помощью заявления <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN FROM EXTERNAL PROVIDER.</a> |
 | [репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Воспроизвести изменения из таблиц в другие базы данных, размещенные в управляемых инстанциях, единичных базах данных или в экземплярах сервера S'L, или обновите таблицы, когда некоторые строки изменены в других управляемых инстанциях или экземпляре сервера S'L. Для получения информации [см. Репликацию настройки в управляемой базой данных данных данных azure S'L.](replication-with-sql-database-managed-instance.md) |
 | Обнаружение угроз |Для получения информации [см. Наверждем обнаружение угроз в управляемом экземпляре базы данных Azure S'L Database.](sql-database-managed-instance-threat-detection.md)|
+| Долгосрочное хранение резервных копий | Для получения информации [см. Нафотось о долгосрочном резервном копировании в управляемом экземпляре базы данных Azure S'L](sql-database-managed-instance-long-term-backup-retention-configure.md)Database. | 
 
 ---
 
@@ -167,7 +168,7 @@ GRANT EXECUTE ON master.dbo.xp_sqlagent_notify TO [login_name]
 ### <a name="impersonification-of-azure-ad-login-types-is-not-supported"></a>Олицетворение типов входа Azure AD не поддерживается
 
 Олицетворение `EXECUTE AS USER` `EXECUTE AS LOGIN` с использованием или следующих принципов AAD не поддерживается:
--   Псевдоним AAD пользователей. В этом случае `15517`возвращается следующая ошибка.
+-    Псевдоним AAD пользователей. В этом случае `15517`возвращается следующая ошибка.
 - AAD логины и пользователи на основе aAD приложений или основ услуг. В этом случае `15517` возвращаются `15406`следующие ошибки и .
 
 ### <a name="query-parameter-not-supported-in-sp_send_db_mail"></a>@queryпараметр не поддерживается в sp_send_db_mail

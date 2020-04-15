@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 9f33dc9528d5f7043dda2c6fad207a9a51347a2b
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 8e0b874e0ce56d7b4ed9fce15b2d88503d6c49b7
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80631490"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309145"
 ---
 # <a name="troubleshoot-issues-with-azure-automation-desired-state-configuration-dsc"></a>Проблемы устранения проблем с конфигурацией Azure Automation Desired State (DSC)
 
@@ -62,7 +62,7 @@ DSC зависит от модулей, установленных на удел
 An error occurred while deleting the DSC configuration '<name>'.  Error-details: The argument configurationName with the value <name> is not valid.  Valid configuration names can contain only letters,  numbers, and underscores.  The name must start with a letter.  The length of the name must be between 1 and 64 characters.
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка является временной проблемой, которую планируется решить.
 
@@ -89,7 +89,7 @@ ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-
     + PSComputerName        : <computerName>
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка обычно вызвана брандмауэром, машиной, намиевшей прокси-сервером, или другими сетевыми ошибками.
 
@@ -111,9 +111,11 @@ The attempt to send status report to the server https://{your Automation account
 VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / Registration of the Dsc Agent with the server failed.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта проблема вызвана плохим или просроченным сертификатом.  Для получения дополнительной информации [см.](../automation-dsc-onboarding.md#re-registering-a-node)
+
+Эта проблема также может быть вызвана конфигурацией прокси, не позволяющей получить доступ к**q .azure-automation.net**. Для получения дополнительной информации [см.](../automation-dsc-overview.md#network-planning) 
 
 ### <a name="resolution"></a>Решение
 
@@ -169,7 +171,7 @@ If (($certs.Count) -gt 0)
 The attempt to get the action from server https://<url>//accounts/<account-id>/Nodes(AgentId=<agent-id>)/GetDscAction failed because a valid configuration <guid> cannot be found.
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка обычно возникает из-за того, что узлу назначается имя конфигурации (например, ABC) вместо имени конфигурации узла (например, ABC.WebServer).
 
@@ -191,7 +193,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 Compilation completed successfully, but no node configuration.mofs were generated.
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Если выражение, указанное в конфигурации DSC рядом с ключевым словом **Node**, возвращает результат `$null`, конфигурация узла не создается.
 
@@ -212,7 +214,7 @@ Compilation completed successfully, but no node configuration.mofs were generate
 No instance found with given property values
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Вы обновили версию WMF, что привело к повреждению WMI.
 
@@ -230,7 +232,7 @@ No instance found with given property values
 System.InvalidOperationException error processing property 'Credential' of type <some resource name>: Converting and storing an encrypted password as plaintext is allowed only if PSDscAllowPlainTextPassword is set to true.
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Вы использовали учетные данные в конфигурации, но не предоставили надлежащих **ConfigurationData** для установки **PSDscAllowPlainTextPassword** для каждой конфигурации узлов.
 
@@ -248,7 +250,7 @@ System.InvalidOperationException error processing property 'Credential' of type 
 VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. Error message: \"DSC COnfiguration 'RegistrationMetaConfigV2' completed with error(s). Following are the first few: Registration of the Dsc Agent with the server <url> failed. The underlying error is: The attempt to register Dsc Agent with Agent Id <ID> with the server <url> return unexpected response code BadRequest. .\".
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка обычно возникает, когда узла присваивается имя конфигурации узла, которое не существует в службе.
 
@@ -267,7 +269,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 One or more errors occurred.
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка возникает при попытке зарегистрировать узла, который живет в отдельной подписке, чем учетная запись Автоматизации.
 
@@ -290,7 +292,7 @@ One or more errors occurred.
 Provisioning has failed
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Это сообщение возникает, когда между узелом и Azure возникает проблема подключения.
 
@@ -310,7 +312,7 @@ Provisioning has failed
 This event indicates that failure happens when LCM is processing the configuration. ErrorId is 1. ErrorDetail is The SendConfigurationApply function did not succeed.. ResourceId is [resource]name and SourceInfo is ::nnn::n::resource. ErrorMessage is A general error occurred, not covered by a more specific error code..
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Клиенты определили, `/tmp` что если `noexec`местоположение настроено на, текущая версия DSC не будет применять конфигурации.
 
@@ -326,7 +328,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Например, если один сценарий конфигурации используется для генерации конфигураций на основе данных узлов, переданных как хэш-таблица с использованием cmdlets, а данные узлов включают сервер под названием "сервер" и "1server".
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Известная проблема с службой компиляции.
 
@@ -340,7 +342,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Вы получаете ошибку `GatewayTimeout` при загрузке конфигурации DSC. 
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Настройки DSC, на компиляцию которого требуется много времени, могут привести к этой ошибке.
 
@@ -348,7 +350,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Конфигурации DSC можно разбирать быстрее, явно `ModuleName` включив `Import-DscResource` параметр для любых вызовов. Для получения дополнительной информации [см.](https://docs.microsoft.com/powershell/scripting/dsc/configurations/import-dscresource?view=powershell-5.1)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

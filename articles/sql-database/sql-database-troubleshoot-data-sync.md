@@ -7,16 +7,16 @@ ms.subservice: data-movement
 ms.custom: data sync
 ms.devlang: ''
 ms.topic: conceptual
-author: allenwux
-ms.author: xiwu
+author: stevestein
+ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 12/20/2018
-ms.openlocfilehash: 8e223d0c6243bfddc1e5a56867c4c69de5e2a62e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d6ea604446cb9d56bb699685d24c81992bcac3a2
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73822452"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382893"
 ---
 # <a name="troubleshoot-issues-with-sql-data-sync"></a>Устранение неполадок с синхронизацией данных SQL
 
@@ -110,7 +110,7 @@ ms.locfileid: "73822452"
 -  В инструкции CREATE INDEX присутствует предложение WHERE. Служба синхронизации данных не может обработать такое условие. Чтобы устранить эту проблему, удалите предложение WHERE или вручную внесите изменения во все базы данных. 
  
 ### <a name="how-does-data-sync-handle-circular-references-that-is-when-the-same-data-is-synced-in-multiple-sync-groups-and-keeps-changing-as-a-result"></a><a name="sync-circ"></a> Как синхронизация данных обрабатывает циклические ссылки? То есть, когда одни и те же данные синхронизируются в нескольких группах синхронизации и в результате постоянно изменяются?
-Синхронизация данных не обрабатывает циклические ссылки. Не используйте их. 
+Синхронизация данных не обрабатывает круговые ссылки. Не используйте их. 
 
 ## <a name="client-agent-issues"></a>Проблемы в работе агента клиента
 
@@ -238,7 +238,7 @@ ms.locfileid: "73822452"
 
 Если вы восстанавливаете потерянную или поврежденную базу данных из резервной копии, могут быть несогласованности в данных групп синхронизации к которой принадлежит база данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о синхронизации данных SQL см. в следующих материалах:
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).

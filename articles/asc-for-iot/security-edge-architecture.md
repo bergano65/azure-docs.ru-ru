@@ -1,5 +1,5 @@
 ---
-title: Понимание Центра безопасности Azure для модуля безопасности IoT для IoT Edge Документы Майкрософт
+title: Модуль безопасности для IoT Edge
 description: Поймите архитектуру и возможности модуля безопасности Azure Security Center для IoT-модуля безопасности для IoT Edge.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 148c68234a937efde554ef00a6014cdc1a350f34
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0eb68f517c4c5b04dd4f92dd1a804dcf5ad24362
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71315891"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81310624"
 ---
 # <a name="azure-iot-edge-security-module"></a>Модуль безопасности Azure IoT Edge
 
@@ -36,7 +36,7 @@ ms.locfileid: "71315891"
 Центр безопасности Azure для модуля безопасности IoT для IoT Edge предлагает следующие функции:
 
 - Собирает необработанные события безопасности из базовой операционной системы (Linux) и систем контейнеров IoT Edge.
-  
+
   Ознакомиться с [конфигурацией агента Azure для IoT](how-to-agent-configuration.md) можно узнать больше о доступных сборщиках данных безопасности.
 
 - Анализ манифестов развертывания IoT Edge.
@@ -52,9 +52,9 @@ ms.locfileid: "71315891"
 
 ## <a name="module-supported-platforms"></a>Модуль поддерживает платформы
 
-Центр безопасности Azure для модуля безопасности IoT для IoT Edge в настоящее время доступен только для Linux. 
+Центр безопасности Azure для модуля безопасности IoT для IoT Edge в настоящее время доступен только для Linux.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали об архитектуре и возможностях Центра безопасности Azure для модуля безопасности IoT для IoT Edge.
 

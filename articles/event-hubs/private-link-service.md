@@ -7,19 +7,19 @@ ms.author: spelluru
 ms.date: 03/12/2020
 ms.service: event-hubs
 ms.topic: article
-ms.openlocfilehash: cff1b3b79b34d3f0bed27a2ea50799185958a8ba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bcc360bbe4dd58200993b9377317ccb608b3529d
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79477854"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383649"
 ---
 # <a name="integrate-azure-event-hubs-with-azure-private-link-preview"></a>Интеграция концентраторов Azure event с помощью частной ссылки Azure (Предварительный просмотр)
 Служба частных ссылок Azure позволяет получить доступ к службам Azure (например, концентраторы событий Azure, Azure Storage и DB Azure Cosmos) и Azure размещает услуги клиентов/партнеров через **частную конечную точку** в виртуальной сети.
 
 Частная конечная точка — это сетевой интерфейс, который соединяет вас в частном порядке и надежно к службе, работающей на Azure Private Link. Частная конечная точка использует частный IP-адрес из виртуальной сети, по сути перемещая службу в виртуальную сеть. Весь трафик к службе может маршрутизироваться через частную конечную точку, поэтому шлюзы, устройства преобразования сетевых адресов (NAT), подключения ExpressRoute и VPN, а также общедоступные IP-адреса не требуются. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Вы можете подключиться к экземпляру ресурса Azure, обеспечивая наивысшую степень детализации в управлении доступом.
 
-Для получения дополнительной [What is Azure Private Link?](../private-link/private-link-overview.md) информации см.
+Дополнительные сведения см. в статье [Что такое Приватный канал Azure](../private-link/private-link-overview.md).
 
 > [!NOTE]
 > Эта функция поддерживается только **с выделенным** уровнем. Для получения дополнительной информации [Overview of Event Hubs Dedicated](event-hubs-dedicated-overview.md)об выделенном уровне см. 
@@ -52,7 +52,7 @@ ms.locfileid: "79477854"
 5. Выберите вкладку **Приватные конечные точки (предварительный просмотр)** в верхней части страницы. Если вы не используете выделенный уровень концентраторов событий, вы увидите сообщение: **Приватные соединения конечных точек в концентрах событий поддерживаются только пространствами имен, созданными в специальном кластере.**
 6. Выберите кнопку **«Частная конечная точка»** в верхней части страницы.
 
-    ![Изображение](./media/private-link-service/private-link-service-3.png)
+    ![Образ —](./media/private-link-service/private-link-service-3.png)
 7. На странице **Основы** выполните следующие действия: 
     1. Выберите **подписку Azure,** в которой требуется создать частную конечную точку. 
     2. Выберите **группу ресурсов** для частного ресурса конечных точек.
@@ -153,6 +153,32 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName  `
 
 ```
 
+### <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS
+Создайте частную зону DNS для домена Event Hubs и создайте связь с виртуальной сетью:
+
+```azurepowershell-interactive
+$zone = New-AzPrivateDnsZone -ResourceGroupName $rgName `
+                            -Name "privatelink.servicebus.windows.net" 
+ 
+$link  = New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName $rgName `
+                                            -ZoneName "privatelink.servicebus.windows.net" `
+                                            -Name "mylink" `
+                                            -VirtualNetworkId $virtualNetwork.Id  
+ 
+$networkInterface = Get-AzResource -ResourceId $privateEndpoint.NetworkInterfaces[0].Id -ApiVersion "2019-04-01" 
+ 
+foreach ($ipconfig in $networkInterface.properties.ipConfigurations) { 
+    foreach ($fqdn in $ipconfig.properties.privateLinkConnectionProperties.fqdns) { 
+        Write-Host "$($ipconfig.properties.privateIPAddress) $($fqdn)"  
+        $recordName = $fqdn.split('.',2)[0] 
+        $dnsZone = $fqdn.split('.',2)[1] 
+        New-AzPrivateDnsRecordSet -Name $recordName -RecordType A -ZoneName "privatelink.servicebus.windows.net"  `
+                                -ResourceGroupName $rgName -Ttl 600 `
+                                -PrivateDnsRecords (New-AzPrivateDnsRecordConfig -IPv4Address $ipconfig.properties.privateIPAddress)  
+    } 
+}
+```
+
 ## <a name="manage-private-endpoints-using-azure-portal"></a>Управление частными конечными точками с помощью портала Azure
 
 При создании частной конечной точки подключение должно быть утверждено. Если ресурс, для которого вы создаете частную конечную точку, находится в каталоге, вы можете утвердить запрос на подключение при условии наличия достаточных разрешений. Если вы подключаетесь к ресурсу Azure в другом каталоге, необходимо дождаться, когда владелец этого ресурса утвердит запрос на подключение.
@@ -179,7 +205,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName  `
 2. Выберите **частную конечную точку,** которая вы хотите утвердить
 3. Выберите кнопку **«Утвердить».**
 
-    ![Изображение](./media/private-link-service/approve-private-endpoint.png)
+    ![Образ —](./media/private-link-service/approve-private-endpoint.png)
 4. На странице **подключения Утверждение** добавьте комментарий (необязательно) и выберите **«Да».** Если вы выберете **Нет,** ничего не происходит. 
 5. Следует увидеть, что статус закрытого соединения конечной точки в списке изменен на **Утвержденный**. 
 
@@ -187,7 +213,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName  `
 
 1. Если есть какие-либо частные соединения конечных точек, которые вы хотите отклонить, будь то ожидающий запрос или существующее соединение, выберите соединение и нажмите кнопку **Отклонить.**
 
-    ![Изображение](./media/private-link-service/private-endpoint-reject-button.png)
+    ![Образ —](./media/private-link-service/private-endpoint-reject-button.png)
 2. На странице **соединения Reject** введите комментарий (необязательно) и выберите **«Да».** Если вы выберете **Нет,** ничего не происходит. 
 3. Следует увидеть, что статус закрытого соединения конечной точки в списке изменен на **Отклоненный**. 
 
@@ -240,15 +266,15 @@ Aliases:  <your-event-hub-name>.servicebus.windows.net
 
 ## <a name="limitations-and-design-considerations"></a>Ограничения и соображения дизайна
 
-**Ценообразование**: Для получения информации о ценах [на](https://azure.microsoft.com/pricing/details/private-link/)цены см.
+**Цены**. Сведения о ценах на службу "Приватный канал Azure" см. [здесь](https://azure.microsoft.com/pricing/details/private-link/).
 
 **Ограничения**: Частная конечная точка для концентраторов Azure находится в открытом доступе. Эта возможность есть во всех общедоступных регионах Azure.
 
 **Максимальное количество частных конечных точек в пространстве имен Event Hubs**: 120.
 
-Для получения [Azure Private Link service: Limitations](../private-link/private-link-service-overview.md#limitations) дополнительной информации см.
+Дополнительные сведения см. в разделе [Azure Private Link service: Limitations](../private-link/private-link-service-overview.md#limitations) (Служба "Приватный канал Azure". Ограничения)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о службе [Приватный канал Azure](../private-link/private-link-service-overview.md)
 - Узнайте больше о [концентрах событий Azure](event-hubs-about.md)

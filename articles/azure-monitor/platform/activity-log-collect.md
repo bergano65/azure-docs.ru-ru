@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/24/2020
-ms.openlocfilehash: 4265f6050b237cb40afeddfc228ade9be06be039
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.date: 04/14/2020
+ms.openlocfilehash: 098aeaa06a26c57744402722aa3eacc51ea85fb7
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80396787"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382868"
 ---
 # <a name="collect-and-analyze-azure-activity-log-in-azure-monitor"></a>Сбор и анализ деятельности Azure в Azure Monitor
 [Журнал деятельности Azure](platform-logs-overview.md) — это [журнал платформы,](platform-logs-overview.md) который позволяет получить представление о событиях уровня подписки, произошедших в Azure. Во время просмотра журнала activity на портале Azure следует настроить его для отправки в рабочее пространство analytics для включения дополнительных функций Azure Monitor. В этой статье описывается, как выполнять эту конфигурацию и как отправить журнал активности в хранилища и концентраторы событий Azure.
@@ -25,7 +25,8 @@ ms.locfileid: "80396787"
 - Храните записи журналов активности более 90 дней.
 - Консолидируйте записи журналов из нескольких подписок Azure и арендаторов в одном месте для совместного анализа.
 
-
+> [!IMPORTANT]
+> Сбор журналов между арендаторами требует [Azure Маяк](/azure/lighthouse).
 
 ## <a name="collecting-activity-log"></a>Сбор журнала активности
 Регистрация активности собирается автоматически для [просмотра на портале Azure.](activity-log-view.md) Чтобы собрать его в рабочей области Log Analytics или отправить его в хранилище или концентраторы событий Azure, создайте [диагностическую настройку.](diagnostic-settings.md) Это тот же метод, используемый журналами ресурсов, что делает его последовательным для всех [журналов платформы.](platform-logs-overview.md)  

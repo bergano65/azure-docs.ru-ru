@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
-ms.date: 08/26/2019
-ms.openlocfilehash: 1e13c7ef8eae81ef2a12a8761b0596f6329f94dc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/14/2020
+ms.openlocfilehash: a95c4d654650276c815c5b23fb2c6f8a6d06bc2e
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76937910"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383452"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Сбои создания кластеров с Azure HDInsight
 
@@ -80,7 +80,7 @@ ms.locfileid: "76937910"
 
 Проверьте [состояние Azure](https://status.azure.com) на наличие возможных сбоев или проблем с обслуживанием.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Расширяйте Azure HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
 * [Используйте хранилище данных Azure Data Lake Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  

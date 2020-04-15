@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.openlocfilehash: a2eade6c5a9c826d28d435a09861ba58463ae8c4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f6c4fb5caf746650f95872d50afe31e5693422be
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79280538"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382916"
 ---
 # <a name="azure-active-directory-integration-for-azure-red-hat-openshift"></a>Интеграция Active Directory Azure для Azure Red Hat OpenShift
 
@@ -25,13 +25,13 @@ Microsoft Azure Red Hat OpenShift требуется разрешение для
 
 ![Скриншот портала с арендатором,](./media/howto-create-tenant/tenant-callout.png) указанным в правом верхнем положении, если отображается неправильный арендатор, щелкните имя пользователя в правом верхнем ряде, затем нажмите **Switch Directory**и выберите правильного арендатора из списка **All Directories.**
 
-Создайте новый глобальный администратор Azure Active Directory для вхотливки в кластер Azure Red Hat OpenShift.
+Создайте новый пользователь Azure Active Directory 'Owner' для вхотвора в кластер Azure Red Hat OpenShift.
 
 1. Перейти к лезвию [пользователей - Все пользователи.](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers)
 2. Нажмите **кнопку «Новый пользователь»,** чтобы открыть панель **пользователя.**
 3. Введите **имя** для этого пользователя.
 4. Создайте **имя пользователя** на основе имени созданного `.onmicrosoft.com` вами арендатора с приложением в конце. Например, `yourUserName@yourTenantName.onmicrosoft.com`. Запишите это имя пользователя. Он понадобится для входиный в кластер.
-5. Нажмите **роль каталога,** чтобы открыть панель роли каталога, и выберите **глобального администратора,** а затем нажмите **Ok** в нижней части панели.
+5. Нажмите **каталог роль,** чтобы открыть панель роли каталога, и выберите **владельца,** а затем нажмите **Ok** в нижней части панели.
 6. В панели **пользователя** нажмите **Show Password** и запишите временный пароль. После того, как вы впишете в первый раз, вам будет предложено сбросить его.
 7. В нижней части панели нажмите **Создать** для создания пользователя.
 
@@ -117,7 +117,7 @@ Microsoft Azure Red Hat OpenShift требуется разрешение для
 * [Основные объекты приложений и служб в Active Directory Azure](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)
 * [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы выполнили все [предпосылки Azure Red Hat OpenShift,](howto-setup-environment.md)вы готовы создать свой первый кластер!
 

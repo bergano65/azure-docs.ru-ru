@@ -8,12 +8,12 @@ ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 07/17/2017
 ms.author: mimckitt
-ms.openlocfilehash: 7e6b8ea702d28fcd2747115710a8b1a8ec2bb1b2
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 9f048c7d89da0ab75c321cd8e3932ea97c7ed09c
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/14/2020
-ms.locfileid: "81270525"
+ms.locfileid: "81310014"
 ---
 # <a name="networking-for-azure-virtual-machine-scale-sets"></a>Сеть для масштабируемых наборов виртуальных машин Azure
 
@@ -69,6 +69,14 @@ az vmss create \
 
 >[!NOTE]
 > После создания набора масштабов порт бэкэнда не может быть изменен для правила балансировки нагрузки, используемого зондом работоспособности балансоилира нагрузки. Чтобы изменить порт, можно удалить зонд работоспособности, обновив набор виртуальной машины Azure, обновить порт, а затем настроить зонд работоспособности снова. 
+
+Для получения дополнительной информации о балансе и виртуальных наборах масштабов машин [см.](../../articles/virtual-machines/windows/network-overview.md)
+
+Следующие методы могут быть использованы для развертывания виртуального набора масштабов машин с существующим балансистом нагрузки Azure.
+
+* [Настроили виртуальный набор масштабов машины с существующим балансом загрузки Azure с помощью портала Azure.](../../articles/load-balancer/configure-vm-scale-set-portal.md)
+* [Настроили виртуальный набор масштабов машины с существующим балансом загрузки Azure с помощью Azure PowerShell.](../../articles/load-balancer/configure-vm-scale-set-powershell.md)
+* [Настроили виртуальный набор масштабов машины с существующим балансом загрузки Azure с помощью Azure CLI.](../../articles/load-balancer/configure-vm-scale-set-cli.md)
 
 ## <a name="create-a-scale-set-that-references-an-application-gateway"></a>Создание масштабируемого набора, который ссылается на шлюз приложений
 Чтобы создать масштабируемый набор, который использует шлюз приложений, создайте ссылку на серверный пул адресов шлюза приложений в разделе ipConfigurations в масштабируемом наборе, как в этой конфигурации шаблона ARM:
@@ -409,5 +417,5 @@ az vmss show \
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о виртуальных сетях Azure см. в [этой статье](../virtual-network/virtual-networks-overview.md).

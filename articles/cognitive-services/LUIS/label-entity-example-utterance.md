@@ -1,21 +1,14 @@
 ---
 title: Добавление метки к сущности в речевом фрагменте
-titleSuffix: Azure Cognitive Services
 description: Узнайте, как добавить метку к сущности с подкомпонентами, по которой выполнено машинное обучение, в примере речевого фрагмента на странице сведений о намерениях на портале LUIS.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 12/16/2019
-ms.author: diberry
-ms.openlocfilehash: 5499e8362e1107a18b997a6a485e11343c328d0d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/14/2020
+ms.openlocfilehash: ea5fbea902c9694d9a8a6a8a5bffcf5e7234bbbd
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78898375"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382404"
 ---
 # <a name="label-machine-learned-entity-in-an-example-utterance"></a>Добавление метки к сущности, по которой выполнено машинное обучение, в примере речевого фрагмента
 
@@ -88,6 +81,10 @@ ms.locfileid: "78898375"
 1. Перейдите в **инспектор сущностей** и либо выберите существующую роль, либо создайте новую роль.
 1. В примере текста речевого фрагмента пометьте текст с помощью роли сущности.
 
+## <a name="labeling-for-punctuation"></a>Маркировка для знаков препинания
+
+Вам не нужно маркировать для пунктуации. Используйте [настройки приложений](luis-reference-application-settings.md) для контроля, если знаки препинания влияют на прогнозы высказываний.
+
 ## <a name="unlabel-entities"></a>Отмена меток сущностей
 
 Чтобы отменить метку сущности, выберите имя сущности под текстом и щелкните **Unlabel** (Отмена метки). Если сущность, для которой вы пытаетесь отменить метку, имеет метки подкомпонентов, то необходимо сначала отменить метки подкомпонентов.
@@ -119,6 +116,6 @@ ms.locfileid: "78898375"
 > [!div class="mx-imgBorder"]
 > ![Палитра сущностей для сущности, по которой выполнено машинное обучение](media/label-utterances/example-utterance-indicates-prediction-error.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы повысить качество прогнозирования в приложении, используйте [панель мониторинга](luis-how-to-use-dashboard.md) и [просматривайте речевые фрагменты конечной точки](luis-how-to-review-endpoint-utterances.md).

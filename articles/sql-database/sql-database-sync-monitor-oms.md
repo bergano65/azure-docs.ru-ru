@@ -7,16 +7,16 @@ ms.subservice: data-movement
 ms.custom: data sync
 ms.devlang: ''
 ms.topic: conceptual
-author: allenwux
-ms.author: xiwu
+author: stevestein
+ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 12/20/2018
-ms.openlocfilehash: 0ed0bd3544fff89c8230267e3d6d8826c5ae3c7c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5f5980f74b24cd972d43e9b05d4a5d623e6e3d2f
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74114616"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383705"
 ---
 # <a name="monitor-sql-data-sync-with-azure-monitor-logs"></a>Мониторинг синхронизации данных SQL с помощью журналов Azure Monitor 
 
@@ -85,7 +85,7 @@ ms.locfileid: "74114616"
 
 4.  В разделе **Runbook file** (Файл runbook) используйте данный файл `DataSyncLogPowerShellRunbook`. Задайте **тип runbook** как `PowerShell`. Присвойте имя модулю runbook.
 
-5.  Выберите **Создать**. Теперь у вас есть модуль runbook.
+5.  Нажмите кнопку **создания**. Теперь у вас есть модуль runbook.
 
 6.  В рамках учетной записи службы автоматизации Azure в разделе "Общие ресурсы" выберите вкладку **Переменные**.
 
@@ -123,7 +123,7 @@ ms.locfileid: "74114616"
 
 5.  Задайте **повторение** и установите необходимый интервал. Используйте тот же интервал здесь, в скрипте и в журналах Azure Monitor.
 
-6.  Выберите **Создать**.
+6.  Нажмите кнопку **создания**.
 
 ### <a name="check-the-automation"></a>Проверка автоматизации
 
@@ -149,7 +149,7 @@ ms.locfileid: "74114616"
 
 5.  В **соответствии с действиями,** установить **уведомление по электронной почте** "Да". Введите необходимые электронные адреса получателей.
 
-6.  Нажмите **Сохранить**. Теперь при возникновении ошибок заданные получатели будут получать уведомления по электронной почте.
+6.  Выберите команду **Сохранить**. Теперь при возникновении ошибок заданные получатели будут получать уведомления по электронной почте.
 
 ## <a name="create-an-azure-monitor-view-for-monitoring"></a>Создание представления монитора Azure для мониторинга
 
@@ -197,7 +197,7 @@ ms.locfileid: "74114616"
 
 -   [Представление монитора синхронизации данных Azure](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/DataSyncLogOmsView.omsview)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о синхронизации данных SQL:
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).

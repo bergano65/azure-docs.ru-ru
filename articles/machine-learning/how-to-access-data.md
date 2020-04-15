@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 03/24/2020
 ms.custom: seodec18
-ms.openlocfilehash: 97aa446636ea3131246a06f69f74b5868abff608
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: ca892b5f360f523ee2b5ff875dfb0707136a5ab5
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80668646"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383439"
 ---
 # <a name="connect-to-azure-storage-services"></a>Подключение к службам хранения данных Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -73,7 +73,7 @@ Databricks поддерживается только для конвейера [
 При создании рабочего пространства контейнер Azure blob и доля файлов Azure автоматически регистрируются в рабочем пространстве. Они названы `workspaceblobstore` `workspacefilestore`и, соответственно. `workspaceblobstore`используется для хранения артефактов рабочего пространства и журналов экспериментов машинного обучения. `workspacefilestore`используется для хранения ноутбуков и R скриптов, авторизованных через [вычисляемый экземпляр.](https://docs.microsoft.com/azure/machine-learning/concept-compute-instance#accessing-files) Контейнер `workspaceblobstore` устанавливается как хранилище данных по умолчанию.
 
 > [!IMPORTANT]
-> Дизайнер машинного обучения Azure (предварительный просмотр) создаст хранилище данных под названием **azureml_globaldatasets** автоматически при открытии образца на главной странице дизайнера. Этот хранилище данных содержит только наборы выборочных данных. Пожалуйста, **не** используйте этот хранилище данных для доступа к конфиденциальным данным!
+> Дизайнер машинного обучения Azure (предварительный просмотр) создаст хранилище данных под названием **azureml_globaldatasets** автоматически при открытии образца на главной странице дизайнера. Этот хранилище данных содержит только наборы выборочных данных. Пожалуйста, **не** используйте этот хранилище данных для доступа к конфиденциальным данным.
 > ![Автоматически созданный магазин данных для наборов данных выборки конструкторов](media/how-to-access-data/datastore-designer-sample.png)
 
 <a name="access"></a>
@@ -94,7 +94,7 @@ Databricks поддерживается только для конвейера [
 Информацию, необходимую для заполнения `register()` метода, можно найти на [портале Azure.](https://portal.azure.com)
 Выберите **учетные записи хранения** на левом стеле и выберите учетную запись хранения, которую вы хотите зарегистрировать. Страница **«Обзор»** содержит такие сведения, как имя учетной записи, контейнер и имя файла. 
 
-* Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите в **ключи к учетной записи** на панели **настроек.** 
+* Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите к **клавишам доступа** на панели **настроек.** 
 
 * Для основных элементов обслуживания, таких как идентификатор клиента и идентификатор клиента, перейдите на **регистрацию приложений** и выберите, какое приложение вы хотите использовать. Соответствующая страница **Обзора** будет содержать эти элементы.
 
@@ -107,13 +107,13 @@ Databricks поддерживается только для конвейера [
 
 Чтобы зарегистрировать контейнер Azure blob в [`register_azure_blob-container()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-)качестве хранилища данных, используйте:
 
-Следующий код создает и `blob_datastore_name` регистрирует хранилище `ws` данных в рабочее пространство. Этот хранилище данных `my-container-name` получает доступ `my-account-name` к контейнеру blob на учетной записи хранилища, используя предоставленный ключ учетной записи.
+Следующий код создает и `blob_datastore_name` регистрирует хранилище `ws` данных в рабочее пространство. Этот хранилище данных `my-container-name` получает доступ `my-account-name` к контейнеру blob на учетной записи хранилища, используя предоставленный ключ доступа к учетной записи.
 
 ```Python
 blob_datastore_name='azblobsdk' # Name of the datastore to workspace
 container_name=os.getenv("BLOB_CONTAINER", "<my-container-name>") # Name of Azure blob container
 account_name=os.getenv("BLOB_ACCOUNTNAME", "<my-account-name>") # Storage account name
-account_key=os.getenv("BLOB_ACCOUNT_KEY", "<my-account-key>") # Storage account key
+account_key=os.getenv("BLOB_ACCOUNT_KEY", "<my-account-key>") # Storage account access key
 
 blob_datastore = Datastore.register_azure_blob_container(workspace=ws, 
                                                          datastore_name=blob_datastore_name, 
@@ -126,13 +126,13 @@ blob_datastore = Datastore.register_azure_blob_container(workspace=ws,
 
 Чтобы зарегистрировать общий доступ к файлам Azure в качестве хранилища данных, используйте: [`register_azure_file_share()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-file-share-workspace--datastore-name--file-share-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false-) 
 
-Следующий код создает и `file_datastore_name` регистрирует хранилище `ws` данных в рабочее пространство. Этот хранилище данных `my-fileshare-name` получает доступ `my-account-name` к доле файла в учетной записи хранилища, используя предоставленный ключ учетной записи.
+Следующий код создает и `file_datastore_name` регистрирует хранилище `ws` данных в рабочее пространство. Этот хранилище данных `my-fileshare-name` получает доступ `my-account-name` к доле файла в учетной записи хранилища, используя предоставленный ключ доступа к учетной записи.
 
 ```Python
 file_datastore_name='azfilesharesdk' # Name of the datastore to workspace
 file_share_name=os.getenv("FILE_SHARE_CONTAINER", "<my-fileshare-name>") # Name of Azure file share container
 account_name=os.getenv("FILE_SHARE_ACCOUNTNAME", "<my-account-name>") # Storage account name
-account_key=os.getenv("FILE_SHARE_ACCOUNT_KEY", "<my-account-key>") # Storage account key
+account_key=os.getenv("FILE_SHARE_ACCOUNT_KEY", "<my-account-key>") # Storage account access key
 
 file_datastore = Datastore.register_azure_file_share(workspace=ws,
                                                      datastore_name=file_datastore_name, 
@@ -181,7 +181,7 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
   
 Информацию, необходимую для заполнения формы, можно найти на [портале Azure.](https://portal.azure.com) Выберите **учетные записи хранения** на левом стеле и выберите учетную запись хранения, которую вы хотите зарегистрировать. Страница **«Обзор»** содержит такие сведения, как имя учетной записи, контейнер и имя файла. 
 
-* Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите в **ключи к учетной записи** на панели **настроек.** 
+* Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите к **клавишам доступа** на панели **настроек.** 
 
 * Для основных элементов обслуживания, таких как идентификатор клиента и идентификатор клиента, перейдите на **регистрацию приложений** и выберите, какое приложение вы хотите использовать. Соответствующая страница **Обзора** будет содержать эти элементы. 
 
@@ -235,7 +235,7 @@ datastore.upload(src_dir='your source directory',
 
 Вы также можете загрузить список отдельных файлов `upload_files()` в хранилище данных с помощью метода.
 
-### <a name="download"></a>Скачивание
+### <a name="download"></a>Скачать
 
 Скачать данные из хранилища данных в локальную файловую систему:
 
