@@ -1,11 +1,11 @@
-- name: Документация по Azure Marketplace и AppSource
+- name: Документация по коммерческой платформе
   href: index.yml
   items:
-    - name: Стратегия развития Azure Marketplace и AppSource
+    - name: Стратегия развития коммерческой платформы
       href: ./marketplace-roadmap.md
-    - name: Политики и условия Azure Marketplace
+    - name: Политики и условия коммерческой платформы
       href: ./policies-terms.md
-    - name: 'Общие сведения об Azure Marketplace и AppSource, а также преимуществах их использования'
+    - name: 'Коммерческая платформа: общие сведения и преимущества'
       href: ./marketplace-publishers-guide.md
       items:
         - name: Два онлайн-магазина на одной площадке Marketplace
@@ -15,7 +15,7 @@
           items:
             - name: Управление потенциальными клиентами
               href: ./lead-management-for-cloud-marketplace.md
-            - name: Транзакции в Azure Marketplace
+            - name: Транзакции на коммерческой платформе
               href: ./marketplace-commercial-transaction-capabilities-and-considerations.md
             - name: Частные предложения
               href: ./private-offers.md
@@ -66,7 +66,7 @@
               href: ./preferred-solutions.md
             - name: Интегрированные решения
               href: ./integrated-solutions.md
-        - name: Поддержка Azure Marketplace и AppSource
+        - name: Поддержка коммерческой платформы
           href: ./support-azure-marketplace.md
           items:
             - name: Вопросы и ответы о Marketplace
@@ -78,6 +78,8 @@
   items:
     - name: Миграция Портала Cloud Partner в Центр партнеров
       href: ./cloud-partner-portal-orig/cloud-partner-portal-migration-to-partner-center.md
+    - name: Вопросы и ответы по миграции
+      href: ./cloud-partner-portal-orig/cloud-partner-portal-migration-faq.md
     - name: Знакомство с порталом
       href: ./cloud-partner-portal/portal-tour/cpp-portal-tour.md
       items:
@@ -427,12 +429,10 @@
           href: ./cloud-partner-portal-orig/cloud-partner-portal-api-troubleshooting-authentication-errors.md
     - name: Получение поддержки
       href: ./cloud-partner-portal-orig/cloud-partner-portal-support-for-cloud-partner-portal.md
-- name: Портал Commercial Marketplace в Центре партнеров
+- name: Коммерческая платформа в Центре партнеров
   items:
-    - name: Обзор
-      items:
-        - name: Что такое Commercial Marketplace?
-          href: ./partner-center-portal/commercial-marketplace-overview.md
+    - name: Обзор коммерческой платформы
+      href: ./partner-center-portal/commercial-marketplace-overview.md
     - name: Управление учетными записями
       items:
         - name: Создание учетной записи Центра партнеров
@@ -453,6 +453,30 @@
               href: ./partner-center-portal/azure-apps-review-feedback.md
             - name: Использование API для подключения
               href: ./partner-center-portal/azure-app-apis.md
+        - name: Предложения по контейнерам Azure
+          items:
+            - name: Подготовка технических ресурсов
+              href: ./partner-center-portal/create-azure-container-technical-assets.md
+            - name: Создание предложения по контейнерам Azure
+              href: ./partner-center-portal/create-azure-container-offer.md
+        - name: Предложение по виртуальным машинам
+          items:
+            - name: Создание предложения по виртуальным машинам Azure
+              href: ./partner-center-portal/azure-vm-create-offer.md
+            - name: Создание технического ресурса виртуальной машины Azure
+              items:
+                - name: Создание технического ресурса виртуальной машины Azure
+                  href: ./partner-center-portal/create-azure-vm-technical-asset.md
+                - name: 'Технические ресурсы виртуальных машин Azure: вопросы и ответы'
+                  href: ./partner-center-portal/common-issues-during-vhd-creation.md
+                - name: Сертификация образа виртуальной машины Azure
+                  href: ./partner-center-portal/azure-vm-image-certification.md
+                - name: Универсальный код ресурса SAS
+                  items:
+                    - name: Получение URI SAS
+                      href: ./partner-center-portal/get-sas-uri.md
+                    - name: 'Универсальный код ресурса SAS: вопросы и ответы'
+                      href: ./partner-center-portal/common-sas-uri-issues.md
         - name: Консультационные услуги
           items:
             - name: Предварительные требования

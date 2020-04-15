@@ -29,12 +29,16 @@
       href: manage-farms-in-azure-farmbeats.md
     - name: Получение данных от датчиков
       href: get-sensor-data-from-sensor-partner.md
+    - name: Получение сведений о погоде
+      href: get-weather-data-from-weather-partner.md
     - name: Создание карт
       href: generate-maps-in-azure-farmbeats.md
     - name: Настройка правил и управление оповещениями
       href: configure-rules-alerts-in-azure-farmbeats.md
     - name: Получение изображений от дронов
       href: get-drone-imagery-in-azure-farmbeats.md
+    - name: Аварийное восстановление
+      href: disaster-recovery-for-farmbeats.md
 - name: Диагностика
   items:
     - name: Устранение неполадок в Azure FarmBeats

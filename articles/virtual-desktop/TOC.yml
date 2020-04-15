@@ -50,6 +50,8 @@
           href: create-host-pools-user-profile.md
         - name: Использование Azure NetApp Files
           href: create-fslogix-profile-container.md
+        - name: "Использование служб \"Файлы Azure\" и Azure AD\_DS"
+          href: create-profile-container-adds.md
     - name: Настройка параметров пула узлов
       items:
         - name: Свойства RDP

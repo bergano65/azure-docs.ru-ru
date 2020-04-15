@@ -42,17 +42,13 @@
       items:
         - name: Принципы работы MFA
           href: concept-mfa-howitworks.md
-        - name: Лицензирование пользователей
-          href: concept-mfa-licensing.md
-        - name: Управление поставщиком аутентификации
-          href: concept-mfa-authprovider.md
-        - name: Руководство по безопасности
-          href: multi-factor-authentication-security-best-practices.md
         - name: Местонахождение данных
           href: concept-mfa-data-residency.md
+        - name: Лицензии
+          href: concept-mfa-licensing.md
         - name: MFA для Office 365
           href: 'https://docs.microsoft.com/office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide'
-        - name: 'MFA: вопросы и ответы'
+        - name: ВОПРОСЫ И ОТВЕТЫ
           href: multi-factor-authentication-faq.md
     - name: Защита паролей Azure AD
       items:
@@ -72,16 +68,18 @@
           href: howto-sspr-authenticationdata.md
         - name: Самостоятельный сброс пароля для клиентов Windows
           href: howto-sspr-windows.md
-    - name: MFA в облаке
+    - name: Многофакторная идентификация Azure
       items:
         - name: Руководство по развертыванию
           href: howto-mfa-getstarted.md
-        - name: MFA для отдельных пользователей
-          href: howto-mfa-userstates.md
-        - name: Параметры пользователя и устройства
-          href: howto-mfa-userdevicesettings.md
         - name: Настройка параметров
           href: howto-mfa-mfasettings.md
+        - name: Настройка пользователей
+          href: howto-mfa-userdevicesettings.md
+        - name: Включение MFA для каждого пользователя
+          href: howto-mfa-userstates.md
+        - name: Настройка поставщиков проверки подлинности
+          href: concept-mfa-authprovider.md
         - name: Федерация Active Directory
           items:
             - name: Адаптер AD FS для Windows Server 2016
@@ -140,6 +138,8 @@
           href: howto-authentication-passwordless-phone.md
         - name: Windows Hello для бизнеса
           href: 'https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification'
+    - name: Использование проверки подлинности с помощью SMS (предварительная версия)
+      href: howto-authentication-sms-signin.md
     - name: Аутентификация на основе сертификата
       items:
         - name: Начало работы с проверкой подлинности на основе сертификатов

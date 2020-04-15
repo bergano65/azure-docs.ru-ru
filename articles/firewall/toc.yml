@@ -20,6 +20,9 @@
     - name: Развертывание с помощью групп IP-адресов
       displayName: Resource Manager
       href: quick-create-ipgroup-template.md
+    - name: Развертывание с несколькими адресами
+      displayName: Resource Manager
+      href: quick-create-multiple-ip-template.md
 - name: Примеры
   items:
     - name: Azure PowerShell

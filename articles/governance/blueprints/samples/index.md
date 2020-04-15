@@ -3,12 +3,12 @@ title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
 ms.date: 02/26/2020
 ms.topic: sample
-ms.openlocfilehash: 703c383f41cd833fb47ca489682258158f9fe179
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: 745b16f8aff8fe003ec65449cdf3dc0d629ba6ff
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "78196830"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383529"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -38,7 +38,7 @@ ms.locfileid: "78196830"
 
 ## <a name="samples-strategy"></a>Стратегия использования примеров
 
-![Стратегия использования примеров схем](../media/blueprint-samples-strategy.png)
+:::image type="content" source="../media/blueprint-samples-strategy.png" alt-text="Стратегия использования примеров схем" border="false":::
 
 При использовании схемы платформы CAF и схемы зоны размещения для миграции в соответствии с CAF предполагается, что клиент подготавливает существующую чистую подписку для переноса локальных ресурсов и рабочих нагрузок в Azure
 (области А и Б на рисунке).  

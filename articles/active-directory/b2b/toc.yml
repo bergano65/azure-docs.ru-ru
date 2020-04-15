@@ -63,6 +63,8 @@
               href: add-users-administrator.md
             - name: Добавление B2B-пользователей информационными работниками
               href: add-users-information-worker.md
+            - name: Приглашение внутренних пользователей в B2B
+              href: invite-internal-users.md
             - name: Федерация Google
               href: google-federation.md
             - name: Аутентификация с использованием одноразового секретного кода

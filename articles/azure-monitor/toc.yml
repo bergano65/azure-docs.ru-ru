@@ -1075,6 +1075,8 @@
               href: platform/itsmc-connections.md
             - name: Создание веб-приложения Service Manager
               href: platform/itsmc-service-manager-script.md
+            - name: Исправление проблем с синхронизацией ServiceNow ITSM
+              href: platform/itsmc-resync-servicenow.md
     - name: Автоматизация
       items:
         - name: Автомасштабирование

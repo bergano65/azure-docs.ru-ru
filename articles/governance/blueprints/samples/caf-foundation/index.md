@@ -1,14 +1,14 @@
 ---
 title: Краткое описание примера схемы CAF Foundation
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы для Azure Foundation.
-ms.date: 08/20/2019
+ms.date: 04/15/2020
 ms.topic: sample
-ms.openlocfilehash: 79b47127b81caf148054f4223e5fa7ad9fbf86fe
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: a5616667ae909b63f406e399a23bdf568089bf52
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "75562567"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383577"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы CAF Foundation
 
@@ -18,7 +18,7 @@ ms.locfileid: "75562567"
 
 Пример схемы CAF Foundation развертывает рекомендуемые ресурсы инфраструктуры в Azure, которые организации могут использовать для настройки базовых элементов управления, требуемых для администрирования облачной инфраструктуры. В примере будут развернуты и применены ресурсы, политики и шаблоны, позволяющие организации уверенно приступить к работе с Azure.
 
-![CAF Foundation: на рисунке показаны компоненты, которые устанавливаются при работе с руководством CAF для создания базовой среды и начала работы с Azure](../../media/caf-blueprints/caf-foundation-architecture.png)
+:::image type="content" source="../../media/caf-blueprints/caf-foundation-architecture.png" alt-text="CAF Foundation: на рисунке показаны компоненты, которые устанавливаются при работе с руководством CAF для создания базовой среды и начала работы с Azure" border="false":::
 
 Эта реализация содержит несколько служб Azure, которые обеспечивают защищенную, полностью отслеживаемую базовую среду корпоративного уровня. Эта среда включает следующие компоненты:
 

@@ -74,6 +74,8 @@
           href: security-info-setup-text-msg.md
         - name: Настройка телефонных звонков
           href: security-info-setup-phone-number.md
+        - name: Настройка входа с помощью SMS
+          href: sms-sign-in-explainer.md
         - name: Настройка ключа безопасности
           href: security-info-setup-security-key.md
         - name: Настройка адреса электронной почты

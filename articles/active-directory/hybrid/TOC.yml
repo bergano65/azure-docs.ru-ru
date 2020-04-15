@@ -336,6 +336,8 @@
       href: reference-connect-faq.md
     - name: Часто задаваемые вопросы об Azure AD Connect Health
       href: reference-connect-health-faq.md
+    - name: Рекомендации по гибридной идентификации для Azure для государственных организаций
+      href: reference-connect-government-cloud.md
     - name: "Конфиденциальность пользователей в Azure\_AD Connect"
       href: reference-connect-user-privacy.md
     - name: "Конфиденциальность пользователей в Azure\_AD Connect Health"

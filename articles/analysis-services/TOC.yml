@@ -10,6 +10,9 @@
       href: analysis-services-create-server.md
     - name: Создание сервера с помощью PowerShell
       href: analysis-services-create-powershell.md
+    - name: "Создание сервера\_— шаблон ARM"
+      displayName: Resource Manager
+      href: analysis-services-create-template.md
     - name: Настройка брандмауэра сервера с помощью портала
       href: analysis-services-qs-firewall.md
 - name: Учебники
@@ -76,7 +79,7 @@
           href: analysis-services-refresh-logic-app.md
         - name: Обновление с помощью службы автоматизации Azure
           href: analysis-services-refresh-azure-automation.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Управление пользователями баз данных
           href: analysis-services-database-users.md
