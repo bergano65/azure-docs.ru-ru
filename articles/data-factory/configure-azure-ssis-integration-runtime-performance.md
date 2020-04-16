@@ -10,14 +10,17 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: ''
 manager: anandsub
-ms.openlocfilehash: 15aac35a7ebc505e76ddfd0c538c4fddb7b2d9ff
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ca88e42438c7cb48b062aa67d82053afbb9244bf
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74930545"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81418292"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-for-high-performance"></a>Настройка среды выполнения интеграции Azure-SSIS для высокой производительности
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 
 В этой статье описывается настройка среды выполнения интеграции Azure-SSIS для высокой производительности. Azure SSIS IR можно использовать для развертывания и запуска пакетов SQL Server Integration Services (SSIS) в Azure. Дополнительные сведения о среде выполнения интеграции Azure-SSIS IR см. в [этом разделе](concepts-integration-runtime.md#azure-ssis-integration-runtime). Сведения о развертывании и запуске пакетов SQL Server Integration Services (SSIS) в Azure см. в статье [Lift and shift SQL Server Integration Services workloads to the cloud](/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview) (Перенос рабочих нагрузок SQL Server Integration Services в облако).
 

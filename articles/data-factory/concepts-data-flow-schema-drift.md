@@ -8,14 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/12/2019
-ms.openlocfilehash: 9daf7973a2e48f866a8d0b93a682851d31dc3af7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a6b3b1d11242434088c138460d968f39d5273e4f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74928556"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81418428"
 ---
 # <a name="schema-drift-in-mapping-data-flow"></a>Дрейф схемы в потоке картданных данных
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Schema дрейф является тот случай, когда ваши источники часто меняют метаданные. Поля, столбцы и типы могут быть добавлены, удалены или изменены на лету. Без обработки для дрейфа схемы поток данных становится уязвимым для изменений источника данных вверх по течению. Типичные шаблоны ETL терпят неудачу при изменении входящих столбцов и полей, поскольку они, как правило, привязаны к этим именам источников.
 

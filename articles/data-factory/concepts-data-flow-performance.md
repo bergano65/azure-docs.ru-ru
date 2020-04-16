@@ -7,14 +7,16 @@ ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
 ms.date: 04/14/2020
-ms.openlocfilehash: 18f8b0732e4af0229ff225d9c3b423e27bf342a8
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: c09a035c8994118b0fb116f357485766e05883ac
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81382801"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81418445"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Руководство по картированию потоков данных и настройке
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Картирование потоков данных в Azure Data Factory обеспечивает без кодовый интерфейс для проектирования, развертывания и организации преобразований данных в масштабе. Если вы не знакомы с картографическими [Mapping Data Flow Overview](concepts-data-flow-overview.md)потоками данных, см.
 
@@ -153,7 +155,7 @@ ms.locfileid: "81382801"
 
 Еще одна оптимизация Join заключается в том, чтобы построить соединения таким образом, чтобы избежать тенденции Spark к реализации кросс-соединений. Например, когда вы включаете буквальные значения в условия соединения, Spark может рассматривать это как требование сначала выполнять полный декартовый продукт, а затем отфильтровать объединенные значения. Но если вы гарантируете, что у вас есть значения столбцов по обе стороны от состояния соединения, вы можете избежать этого индуцированного искрятся spark декартового продукта и улучшить производительность ваших соединений и потоков данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Смотрите другие статьи Data Flow, связанные с производительностью:
 

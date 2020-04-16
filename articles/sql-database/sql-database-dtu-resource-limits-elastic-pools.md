@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: carlrab
 ms.date: 03/14/2019
-ms.openlocfilehash: 7b7ef3b6f2d400dafb28cfb7a15cf95cbbe2c457
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 76085dc29d40944cf704dbc5efc578b3314f499a
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351007"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81419244"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-purchasing-model"></a>Ограничения ресурсов для эластичных бассейнов с использованием модели закупок DTU
 
@@ -32,6 +32,9 @@ ms.locfileid: "80351007"
 > Для руководства и соображений масштабирования [см.](sql-database-elastic-pool-scale.md)
 > [!NOTE]
 > Ограничения ресурсов отдельных баз данных в эластичных пулах обычно такие же, как и у отдельных баз данных за их пределами, и основаны на DTU и уровне служб. Например, максимальное количество одновременных рабочих экземпляров для базы данных S2 — 120. Таким образом, максимальное количество одновременных рабочих экземпляров в базе данных в стандартном пуле также составляет 120, если максимальное значение DTU для одной базы данных в пуле равно 50 (что эквивалентно уровню S2).
+
+> [!NOTE]
+> Ограничение объема ресурсов пула в каждой из следующих таблиц не включает хранилище tempdb и журналов.
 
 ### <a name="basic-elastic-pool-limits"></a>Ограничения пула эластичных БД на уровне "Базовый"
 

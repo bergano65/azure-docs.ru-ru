@@ -9,14 +9,15 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
-ms.openlocfilehash: 6855eea5939419c9a0a867de4e0621b4d4ae02b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dbcfad3dd3db9f5c9431e07d85d77a77a10283c4
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75439574"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81419040"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 *Эта статья относится к следующим разъемым: [Amazon S3](connector-amazon-simple-storage-service.md), [Azure Blob](connector-azure-blob-storage.md), [Azure Data Lake Storage Gen1](connector-azure-data-lake-store.md), [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md), [Azure File Storage](connector-azure-file-storage.md), File [System,](connector-file-system.md) [FTP,](connector-ftp.md) [Google Cloud Storage](connector-google-cloud-storage.md), [HDFS,](connector-hdfs.md) [HTTP](connector-http.md), и [SFTP](connector-sftp.md).*
 
@@ -37,4 +38,4 @@ ms.locfileid: "75439574"
 См. другие статьи о действиях копирования:
 
 - [Общие сведения о действии копирования](copy-activity-overview.md)
-- [Руководство по настройке производительности действия копирования](copy-activity-performance.md)
+- [Производительность действия копирования](copy-activity-performance.md)
