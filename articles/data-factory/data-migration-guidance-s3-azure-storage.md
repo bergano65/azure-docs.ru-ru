@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 8/04/2019
-ms.openlocfilehash: 6f2db91a35573bc2cbdd0df2cb1ac09914cc956b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3f40ad7346219b48a38ade38b2a75ddf71940875
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76122650"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416419"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-amazon-s3-to-azure-storage"></a>Используйте фабрику данных Azure для переноса данных из Amazon S3 в хранилище Azure 
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Azure Data Factory предоставляет эффективный, надежный и экономичный механизм для переноса данных в масштабе с Amazon S3 в Azure Blob Storage или Azure Data Lake Storage Gen2.  В этой статье содержится следующая информация для разработчиков данных и разработчиков: 
 
@@ -143,7 +145,7 @@ ADF предлагает бессерверную архитектуру, кот
 - [Создание и настройка автономной интеграции Runtime](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
 - [Самохонугированная интеграция времени выполнения HA и масштабируемость](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
 - [Вопросы безопасности при перемещении данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
-- [Храните учетные данные в Хранилище ключей Azure](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
+- [Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
 - [Копирование файла постепенно на основе времени разделенного имени файла](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-partitioned-file-name-copy-data-tool)
 - [Копирование новых и измененных файлов на основе LastModifiedDate](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-lastmodified-copy-data-tool)
 - [Страница ценообразования ADF](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)

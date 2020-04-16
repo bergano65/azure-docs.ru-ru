@@ -11,18 +11,20 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
-ms.openlocfilehash: 4a05d955be88f68b3c0db1f4a29b3f6e1155aa0d
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.openlocfilehash: 730efb552ef218cc5a5ce6a984d20b4e23b364ac
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80992187"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416941"
 ---
 # <a name="copy-data-from-an-http-endpoint-by-using-azure-data-factory"></a>Копирование данных с источника HTTP с помощью фабрики данных Azure
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-http-connector.md)
 > * [Текущая версия](connector-http.md)
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из конечной точки HTTP. Это продолжение статьи о [действии копирования в Фабрике данных Azure](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
@@ -68,7 +70,7 @@ ms.locfileid: "80992187"
 |:--- |:--- |:--- |
 | type | Для свойства **type** необходимо задать значение **HttpServer**. | Да |
 | url | Базовый URL-адрес веб-сервера. | Да |
-| enableServerCertificateValidation | Укажите, следует ли включить проверку сертификата сертификата TLS/SSL при подключении к конечному пункту HTTP. Если ваш сервер HTTPS использует самозаверенный сертификат, установите свойство **false**. | нет<br /> (значение по умолчанию **true**) |
+| enableServerCertificateValidation | Укажите, следует ли включить проверку сертификата сертификата TLS/SSL при подключении к конечному пункту HTTP. Если ваш сервер HTTPS использует самозаверенный сертификат, установите свойство **false**. | нет<br /> (по умолчанию **это правда)** |
 | authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic **, **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой таблицы. | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Узнайте больше из [раздела Prerequisites.](#prerequisites) Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |нет |
 
@@ -372,6 +374,6 @@ ms.locfileid: "80992187"
 ]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

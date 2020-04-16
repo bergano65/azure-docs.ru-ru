@@ -9,14 +9,15 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: jingwang
-ms.openlocfilehash: 47d26ad452b8494e591ee919076e5ade8bf19cd7
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: 696c175f55ecdb09b1b88f9766c4c678afe2c4ec
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81011401"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417093"
 ---
 # <a name="delimited-text-format-in-azure-data-factory"></a>Делимитированный формат текста в Azure Data Factory
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Следуйте этой статье, когда вы хотите **разобрать делимитированные текстовые файлы или написать данные в формате делимитированных текстов.** 
 
@@ -110,7 +111,7 @@ ms.locfileid: "81011401"
 
 Узнайте подробности из [преобразования источника](data-flow-source.md) и [преобразования раковины](data-flow-sink.md) в потоке данных отображения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о действии копирования](copy-activity-overview.md)
 - [Картирование потока данных](concepts-data-flow-overview.md)

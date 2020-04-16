@@ -10,18 +10,19 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/25/2019
-ms.openlocfilehash: 9ef4b569fd8413d2825374c963fb272dd450cf0e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c456e486217886510a1fd2ef1aeabae47d35b53c
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74533143"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417196"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Выражения и функции в фабрике данных Azure
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-functions-variables.md)
 > * [Текущая версия](control-flow-expression-language-functions.md)
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье содержатся сведения о выражениях и функциях, поддерживаемых службой "Фабрика данных Azure". 
 
@@ -33,7 +34,7 @@ ms.locfileid: "74533143"
 "name": "value"
 ```
 
- или диспетчер конфигурации служб  
+ or  
   
 ```json
 "name": "@pipeline().parameters.password"
@@ -153,7 +154,7 @@ ms.locfileid: "74533143"
 
 | Строковая функция | Задача |
 | --------------- | ---- |
-| [concat](control-flow-expression-language-functions.md#concat) | Объединяет две или более строк и возвращает объединенную строку. |
+| [Concat](control-flow-expression-language-functions.md#concat) | Объединяет две или более строк и возвращает объединенную строку. |
 | [концыС](control-flow-expression-language-functions.md#endswith) | Проверяет, заканчивается ли строка определенной подстрокой. |
 | [Guid](control-flow-expression-language-functions.md#guid) | Создает глобально уникальный идентификатор (GUID) в виде строки. |
 | [Indexof](control-flow-expression-language-functions.md#indexof) | Возвращает начальную позицию подстроки. |
@@ -178,7 +179,7 @@ ms.locfileid: "74533143"
 | [Пересечения](control-flow-expression-language-functions.md#intersection) | Возвращает коллекцию, которая содержит *только* общие элементы в указанных коллекциях. |
 | [Присоединиться к](control-flow-expression-language-functions.md#join) | Возвращает строку, содержащую *все* элементы из массива, в которой каждый символ отделен разделителем. |
 | [Последний](control-flow-expression-language-functions.md#last) | Возвращает последний элемент из коллекции. |
-| [длина](control-flow-expression-language-functions.md#length) | Возвращает число элементов в строке или массиве. |
+| [length](control-flow-expression-language-functions.md#length) | Возвращает число элементов в строке или массиве. |
 | [Пропустить](control-flow-expression-language-functions.md#skip) | Удаляет элементы из начала коллекции и возвращает *все другие элементы*. |
 | [Принять](control-flow-expression-language-functions.md#take) | Возвращает элементы, расположенные в начале коллекции. |
 | [Союза](control-flow-expression-language-functions.md#union) | Возвращает коллекцию, которая содержит *все* элементы из указанных коллекций. | 
@@ -189,7 +190,7 @@ ms.locfileid: "74533143"
   
 | Функция логического сравнения | Задача |
 | --------------------------- | ---- |
-| [И](control-flow-expression-language-functions.md#and) | Проверяет, истинны ли все выражения. |
+| [и](control-flow-expression-language-functions.md#and) | Проверяет, истинны ли все выражения. |
 | [equals](control-flow-expression-language-functions.md#equals) | Проверяет, эквивалентны ли оба значения. |
 | [greater](control-flow-expression-language-functions.md#greater) | Проверяет, является ли первое значение большим, чем второе. |
 | [greaterOrEquals](control-flow-expression-language-functions.md#greaterOrEquals) | Проверяет, является ли первое значение большим, чем второе, или равным ему. |
@@ -215,9 +216,9 @@ ms.locfileid: "74533143"
 | [base64](control-flow-expression-language-functions.md#base64) | Возвращает версию строки с кодировкой base64 для заданной строки. |
 | [base64ToBinary](control-flow-expression-language-functions.md#base64ToBinary) | Возвращает двоичную версию строки с кодировкой base64. |
 | [base64ToString](control-flow-expression-language-functions.md#base64ToString) | Возвращает строковую версию строки с кодировкой base64. |
-| [Двоичном](control-flow-expression-language-functions.md#binary) | Возвращает двоичную версию входного значения. |
+| [binary](control-flow-expression-language-functions.md#binary) | Возвращает двоичную версию входного значения. |
 | [bool](control-flow-expression-language-functions.md#bool) | Возвращает логическую версию входного значения. |
-| [coalesce](control-flow-expression-language-functions.md#coalesce) | Возвращает первое ненулевое значение из одного или нескольких параметров. |
+| [Coalesce](control-flow-expression-language-functions.md#coalesce) | Возвращает первое ненулевое значение из одного или нескольких параметров. |
 | [createArray](control-flow-expression-language-functions.md#createArray) | Возвращает массив из нескольких экземпляров входных данных. |
 | [dataUri](control-flow-expression-language-functions.md#dataUri) | Возвращает URI данных входного значения. |
 | [dataUriToBinary](control-flow-expression-language-functions.md#dataUriToBinary) | Возвращает двоичную версию строки URI данных. |
@@ -226,10 +227,10 @@ ms.locfileid: "74533143"
 | [decodeDataUri](control-flow-expression-language-functions.md#decodeDataUri) | Возвращает двоичную версию строки URI данных. |
 | [decodeUriComponent](control-flow-expression-language-functions.md#decodeUriComponent) | Возвращает строку, которая заменяет escape-символы декодированными версиями. |
 | [encodeUriComponent](control-flow-expression-language-functions.md#encodeUriComponent) | Возвращает строку, которая заменяет символы, опасные для URL-адреса, escape-символами. |
-| [Плавать](control-flow-expression-language-functions.md#float) | Возвращает значение с плавающей запятой в качестве входного значения. |
-| [Int](control-flow-expression-language-functions.md#int) | Возвращает целочисленную версию строки. |
+| [float](control-flow-expression-language-functions.md#float) | Возвращает значение с плавающей запятой в качестве входного значения. |
+| [int](control-flow-expression-language-functions.md#int) | Возвращает целочисленную версию строки. |
 | [Json](control-flow-expression-language-functions.md#json) | Возвращает значение типа JSON либо объект для строки или XML. |
-| [Строка](control-flow-expression-language-functions.md#string) | Возвращает строковую версию входного значения. |
+| [строка](control-flow-expression-language-functions.md#string) | Возвращает строковую версию входного значения. |
 | [uriComponent](control-flow-expression-language-functions.md#uriComponent) | Возвращает кодированную версию URI для входного значения, заменив символы, опасные для URL-адреса, на escape-символы. |
 | [uriComponentToBinary](control-flow-expression-language-functions.md#uriComponentToBinary) | Возвращает двоичную версию строки с закодированным URI. |
 | [uriComponentToString](control-flow-expression-language-functions.md#uriComponentToString) | Возвращает строковую версию строки с закодированным URI. |
@@ -246,7 +247,7 @@ ms.locfileid: "74533143"
 | [max](control-flow-expression-language-functions.md#max) | Возвращает наибольшее значение из набора чисел или массива. |
 | [Мин](control-flow-expression-language-functions.md#min) | Возвращает наименьшее значение из набора чисел или массива. |
 | [Мод](control-flow-expression-language-functions.md#mod) | Возвращает остаток результата деления двух чисел. |
-| [mul](control-flow-expression-language-functions.md#mul) | Возвращает результат умножения двух чисел. |
+| [Mul](control-flow-expression-language-functions.md#mul) | Возвращает результат умножения двух чисел. |
 | [Рэнд](control-flow-expression-language-functions.md#rand) | Возвращает случайное целое число из указанного диапазона. |
 | [Диапазон](control-flow-expression-language-functions.md#range) | Возвращает массив целых чисел, который начинается с заданного целого числа. |
 | [Sub](control-flow-expression-language-functions.md#sub) | Вычитает второе число из первого числа и возвращает результат. |
@@ -2380,7 +2381,7 @@ not(equals(1, 1))
 
 <a name="or"></a>
 
-### <a name="or"></a>или диспетчер конфигурации служб
+### <a name="or"></a>or
 
 Проверяет, является ли хотя бы одно выражение истинным.
 Возвращает значение true, если хотя бы одно выражение истинно, или значение false, когда все являются ложными.

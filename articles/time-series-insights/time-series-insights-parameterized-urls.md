@@ -8,14 +8,14 @@ ms.author: dpalled
 manager: cshankar
 ms.topic: conceptual
 ms.workload: big-data
-ms.date: 02/04/2020
+ms.date: 04/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9dfe499a7d6084a23fd71ab98db472befe71fc04
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 10616c8003d9bbbe42cb70bd1bac4193044907c0
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77024370"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416992"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
@@ -29,7 +29,7 @@ Time Series Insights Explorer поддерживает параметры зап
 
 ## <a name="environment-id"></a>Идентификатор среды
 
-Параметр `environmentId=<guid>` указывает идентификатор целевой среды. Это компонент доступа к данным F'DN, и вы можете найти его в правом верхнем углу обзора среды на портале Azure. Это все символы, которые предшествуют `env.timeseries.azure.com`.
+Параметр `environmentId=<guid>` указывает идентификатор целевой среды. Это компонент доступа к данным F'DN, и вы можете найти его в правом верхнем углу обзора среды на портале Azure. Это все, что предшествует `env.timeseries.azure.com`.
 
 Пример параметра идентификатора среды: `?environmentId=10000000-0000-0000-0000-100000000108`.
 

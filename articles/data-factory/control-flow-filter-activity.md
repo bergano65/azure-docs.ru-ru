@@ -11,15 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/04/2018
-ms.openlocfilehash: 5794a2c754e2082fdf45ad689bdb89ea494541c2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2c8ada22b4492bef0239b6f811d5a7bd58e58510
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73679861"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417210"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Действие Filter в фабрике данных Azure
 Вы можете использовать действие Filter в конвейере для применения выражения фильтра к входному массиву. 
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -119,5 +120,5 @@ items | Входной массив, к которому должен приме
 - [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
-- [Веб-активность](control-flow-web-activity.md)
+- [Веб-действие](control-flow-web-activity.md)
 - [Действие Until](control-flow-until-activity.md)

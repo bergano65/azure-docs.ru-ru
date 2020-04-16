@@ -8,18 +8,20 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/16/2019
-ms.openlocfilehash: d7e2af6c98951e685192656b37226716e4340bfe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 20def8ca51f21d914e7090999e8284244c5f3ec7
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74930446"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416496"
 ---
 # <a name="conditional-split-transformation-in-mapping-data-flow"></a>Условная трансформация разделения в потоке данных отображения
 
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 Условное разделение маршрутов преобразования строк данных в различные потоки на основе условий соответствия. Условная трансформация разделения аналогична структуре принятия решений CASE на языке программирования. Преобразование вычисляет выражения, и на основе результатов направляет строку данных в указанный поток.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 **Сплит на** настроеопределяет, перетекает ли строка данных в первый соответствующий поток или каждый поток, к который он совпадает.
 

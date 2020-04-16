@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 8/30/2019
-ms.openlocfilehash: afccbdbbfd5b8ddeefa621448d6170d937b518f0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 63b657e77172282225a9bc890b2f185b0f4d42a1
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74931452"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417132"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-hadoop-cluster-to-azure-storage"></a>Используйте фабрику данных Azure для переноса данных из кластера Hadoop в хранилище Azure 
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Azure Data Factory предоставляет эффективный, надежный и экономичный механизм для переноса данных по шкале от находной HDFS к хранению Azure Blob или хранилищам Azure Data Lake Storage Gen2. 
 
@@ -146,7 +148,7 @@ DistCp использует MapReduce для осуществления свое
 - [Создание и настройка локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
 - [Самохонугистом интеграции время выполнения высокая доступность и масштабируемость](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
 - [Вопросы безопасности при перемещении данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
-- [Храните учетные данные в Хранилище ключей Azure](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
+- [Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
 - [Копирование файла постепенно на основе времени разделенного имени файла](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-partitioned-file-name-copy-data-tool)
 - [Копирование новых и измененных файлов на основе LastModifiedDate](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-lastmodified-copy-data-tool)
 - [Страница ценообразования Data Factory](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)

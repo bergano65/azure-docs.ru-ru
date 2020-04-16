@@ -11,14 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: ced2279878ee2eb361ec7338647418658e411513
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4056550ae0a71138d136878fc7e3aa5f6f8f4180
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79213004"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417884"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Активность Webhook на фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Активность webhook может контролировать выполнение конвейеров через пользовательский код. С помощью активности webhook код клиентов может вызвать конечную точку и передать ей URL-адрес обратного вызова. Запуск конвейера ждет вызова вызова обратного вызова до его переступления в следующее действие.
 
@@ -63,7 +65,7 @@ ms.locfileid: "79213004"
 **Времени ожидания** | Как долго будет ждать сякобратно, указанное **callBackUri.** Значение по умолчанию составляет 10 минут (00:10:00). Значения имеют формат TimeSpan *d*. *hh*:*мм*:*ss*. | Строка | нет |
 **Отчет о состоянии обратного вызова** | Позволяет пользователю сообщить о неисправном состоянии действия веб-крючка. | Логическое | нет |
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Активность webhook поддерживает следующие типы аутентификации.
 
@@ -147,5 +149,5 @@ Data Factory передает дополнительное свойство **ca
 - [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
-- [Веб-активность](control-flow-web-activity.md)
+- [Веб-действие](control-flow-web-activity.md)
 - [Действие Until](control-flow-until-activity.md)

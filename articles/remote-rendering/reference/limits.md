@@ -5,16 +5,16 @@ author: erscorms
 ms.author: erscor
 ms.date: 02/11/2020
 ms.topic: reference
-ms.openlocfilehash: 6e23c716a965cdf178c9f847900e66c141d5d7eb
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: b6e501cdc1d5091a27d86406c6919587bedb261a
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80680340"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417697"
 ---
-# <a name="limits"></a>Ограничения
+# <a name="limitations"></a>Ограничения
 
-Ряд функций имеют ограничения по размеру или количеству из-за внутренних деталей запущенной системы.
+Ряд функций имеют размер, количество или другие ограничения.
 
 ## <a name="azure-frontend"></a>Лазурный фронтенд
 
@@ -40,4 +40,13 @@ ms.locfileid: "80680340"
 |Премиум| без ограничений |
 
 
+## <a name="platform-limitations"></a>Ограничения платформы
 
+**Windows 10 настольный компьютер**
+
+* Развертывание "PC Standalone" от Unity не поддерживается. Вместо этого используйте UWP.
+* UWP/x86 является единственной поддерживаемой платформой UWP. UWP/x64 не поддерживается.
+
+**Голеленс 2**
+
+* [Рендер с функции фотокамеры](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-capture-for-developers#render-from-the-pv-camera-opt-in) не поддерживается.

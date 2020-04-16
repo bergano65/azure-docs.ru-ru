@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/30/2019
-ms.openlocfilehash: fa34def67d91332a00bf0ee92b365957a47f9616
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 67e966e3b3dd274e993797ed37e17c5490d632c0
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74931482"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416489"
 ---
 # <a name="azure-data-factory-window-transformation"></a>Преобразование оконной фабрики лазурных данных
 
-
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Преобразование окна позволяет определять агрегирования столбцов на основе окон в ваших потоках данных. В построителе выражений вы можете определить различные типы объединений на основе данных или временных окон (предложение SQL OVER, например LEAD, LAG, NTILE, CUMEDIST, RANK и т. д.). В ваших выходных данных будет сгенерировано новое поле, которое будет включать такие агрегаты. Вы также можете включить дополнительные поля "Группировать по".
 

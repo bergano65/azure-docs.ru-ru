@@ -11,18 +11,20 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/12/2020
-ms.openlocfilehash: 3a16a8263c80852127ca61db3c666ebf0f7f1e4c
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: db55e685fb50c89eb850e1b9ee9dcf13d20fb614
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81011707"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417540"
 ---
 # <a name="copy-and-transform-data-in-azure-sql-database-by-using-azure-data-factory"></a>Копирование и преобразование данных в базе данных Azure S'L с помощью Azure Data Factory
 
 > [!div class="op_single_selector" title1="Выберите используемую версию фабрики данных Azure:"]
 > * [Версия 1](v1/data-factory-azure-sql-connector.md)
 > * [Текущая версия](connector-azure-sql-database.md)
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье излагается, как использовать активность копирования в фабрике данных Azure для копирования данных из базы данных Azure S'L и использования потока данных для преобразования данных в базу данных Azure S'L. Дополнительные сведения о Фабрике данных Azure см. во [вводной статье](introduction.md).
 
@@ -653,5 +655,5 @@ END
 
 Чтобы узнать подробности о свойствах, проверьте [активность GetMetadata](control-flow-get-metadata-activity.md) 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Для списка хранилищ данных, поддерживаемых в качестве источников и поглотителей в результате активности копирования на фабрике данных Azure, [см.](copy-activity-overview.md#supported-data-stores-and-formats)

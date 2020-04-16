@@ -11,14 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/23/2019
-ms.openlocfilehash: 71528385563b29ce70edf396434be0174beac105
-ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
+ms.openlocfilehash: 35d61e896a395c3044a51780fef72d54c211a31f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80804849"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417181"
 ---
 # <a name="foreach-activity-in-azure-data-factory"></a>Действие ForEach в фабрике данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 Действие ForEach определяет повторяющийся поток управления в конвейере. Это действие используется для выполнения итерации коллекции и выполняет указанные в цикле действия. Реализация цикла этого действия аналогична структуре цикла Foreach на языках программирования.
 
 ## <a name="syntax"></a>Синтаксис
@@ -493,4 +495,4 @@ Items | Выражение, возвращающее массив JSON для и
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
-- [Веб-активность](control-flow-web-activity.md)
+- [Веб-действие](control-flow-web-activity.md)

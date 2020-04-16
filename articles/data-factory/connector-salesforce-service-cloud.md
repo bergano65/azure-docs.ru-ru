@@ -11,14 +11,15 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/24/2020
-ms.openlocfilehash: 4540b27a9241a14b3d1a153d11bf43900e8ae0ec
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ec2aa5b1492534908adb55544623110242717609
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80153864"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416672"
 ---
 # <a name="copy-data-from-and-to-salesforce-service-cloud-by-using-azure-data-factory"></a>Копирование данных из и в облако службы Salesforce с помощью Azure Data Factory
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье излагается, как использовать активность копирования на фабрике данных Azure для копирования данных из и в облако службы Salesforce. Это продолжение [статьи с обзором действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
@@ -325,7 +326,7 @@ ms.locfileid: "80153864"
 | Процент |Decimal |
 | Номер телефона |Строка |
 | Список выбора |Строка |
-| Text |Строка |
+| текст |Строка |
 | Текстовое поле |Строка |
 | Текстовое поле (длинное) |Строка |
 | Текстовое поле (расширенное) |Строка |

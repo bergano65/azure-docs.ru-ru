@@ -11,17 +11,19 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/26/2018
 ms.author: yexu
-ms.openlocfilehash: 42c637839172dab09a8721a93a67785a748afd2f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 766520fe44047eee76029adf8ee1683c7b8008a1
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75708908"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417867"
 ---
 #  <a name="fault-tolerance-of-copy-activity-in-azure-data-factory"></a>Отказоустойчивость действия копирования в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-copy-activity-fault-tolerance.md)
 > * [Текущая версия](copy-activity-fault-tolerance.md)
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Для действия копирования фабрики данных Azure предусмотрены разные способы устранения несовместимых строк при копировании данных между хранилищами данных источника и приемника.
 
@@ -48,7 +50,7 @@ ms.locfileid: "75708908"
 >- Эта функция не применяется, когда действие копирования настроено на вызов [Amazon Redshift Unload](connector-amazon-redshift.md#use-unload-to-copy-data-from-amazon-redshift).
 >- Эта функция не применяется, когда активность копирования настроена для вывоза [сохраненной процедуры из раковины S'L.](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#invoke-a-stored-procedure-from-a-sql-sink)
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 В следующем примере приводится определение JSON для настройки пропуска несовместимых строк в действии копирования:
 
 ```json
@@ -108,6 +110,6 @@ data4, data5, data6, "2627", "Violation of PRIMARY KEY constraint 'PK_tblintstrd
 См. другие статьи о действиях копирования:
 
 - [Общие сведения о действии копирования](copy-activity-overview.md)
-- [Руководство по настройке производительности действия копирования](copy-activity-performance.md)
+- [Производительность действия копирования](copy-activity-performance.md)
 
 

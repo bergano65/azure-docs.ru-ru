@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 02/25/2020
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: ee463f573fcc1c8affe3966d58ca2bb1f6636495
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2cc2085df8db80e1212364195cdb55131fe5e002
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80334837"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81422286"
 ---
 Следующие ограничения применяются только при выполнении операций управления с помощью менеджера ресурсов Azure с Azure Storage.
 
 | Ресурс | Ограничение |
 | --- | --- |
 | Операций управления учетными записями хранения (чтение) |800 за 5 минут |
-| Операций управления учетными записями хранения (запись) |1200 в час |
+| Операций управления учетными записями хранения (запись) |10 в секунду |
 | Операции управления учетными записями хранения (список) |100 за 5 минут |

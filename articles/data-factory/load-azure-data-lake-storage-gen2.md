@@ -12,14 +12,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/13/2019
-ms.openlocfilehash: 90573f77c77d614923f882053145d2f84598953d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 96674f059e9cbc21c5c8c64eff8c94c810c4aa32
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75440233"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417782"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen2-with-azure-data-factory"></a>Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Azure Data Lake Storage 2-го поколения — это набор возможностей аналитики больших данных, созданных на основе [хранилища BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md). Она позволяет работать с данными с использованием как файловой системы, так и парадигмы хранения объектов.
 
@@ -34,7 +36,7 @@ Azure Data Factory (ADF) — это полностью управляемый о
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Подписка Azure: Если у вас нет подписки Нацу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
 * Учетная запись хранения Azure с включенным data Lake Storage Gen2: Если у вас нет учетной записи хранилища, [создайте учетную запись.](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM)
 * Учетная запись AWS с контейнером S3, в котором содержатся данные. В этой статье показано, как скопировать данные из Amazon S3. Вы можете использовать другие хранилища данных, выполнив аналогичные действия.
 
@@ -54,7 +56,7 @@ Azure Data Factory (ADF) — это полностью управляемый о
     * **Версия.** Выберите значение **V2**.
     * **Расположение.** Выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных, используемые в фабрике данных, могут находиться в других расположениях и регионах. 
 
-3. Выберите **Создать**.
+3. Нажмите кнопку **создания**.
 4. После создания перейдите к фабрике данных. Вы увидите домашнюю страницу **фабрики данных**, как показано на следующем изображении: 
    
    ![Домашняя страница фабрики данных](./media/load-azure-data-lake-storage-gen2/data-factory-home-page.png)
@@ -82,7 +84,7 @@ Azure Data Factory (ADF) — это полностью управляемый о
    1. Укажите **идентификатор ключа доступа**.
    2. Укажите **секретный ключ доступа**.
    3. Щелкните **Проверить подключение**, чтобы проверить настройки, а затем нажмите кнопку **Готово**.
-   4. Появится новое соединение. Нажмите кнопку **Далее**.
+   4. Появится новое соединение. Выберите **Далее**.
    
       ![Указать учетную запись Amazon S3](./media/load-azure-data-lake-storage-gen2/specify-amazon-s3-account.png)
       
@@ -101,7 +103,7 @@ Azure Data Factory (ADF) — это полностью управляемый о
 8. На странице **Specify Azure Data Lake Storage connection** (Указать подключение Azure Data Lake Storage) выполните следующие действия.
 
    1. Из раскрывающегося списка "Имя учетной записи хранения" выберите соответствующую учетную запись Data Lake Storage Gen2.
-   2. Выберите **Готово**, чтобы создать подключение. Затем выберите **Следующий**.
+   2. Выберите **Готово**, чтобы создать подключение. Выберите **Далее**.
    
    ![Выбор учетной записи Data Lake Storage 2-го поколения](./media/load-azure-data-lake-storage-gen2/specify-adls.png)
 

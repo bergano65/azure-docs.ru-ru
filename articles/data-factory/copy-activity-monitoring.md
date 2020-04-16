@@ -1,5 +1,5 @@
 ---
-title: Мониторинг активности копирования
+title: Мониторинг действия копирования
 description: Узнайте о том, как контролировать выполнение действия копирования на фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: jingwang
-ms.openlocfilehash: 6494352bf957af83b45488493bf12a094c730c09
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 47824095e892ca3c919d2d871feb612758ab2308
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79125762"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417850"
 ---
-# <a name="monitor-copy-activity"></a>Мониторинг активности копирования
+# <a name="monitor-copy-activity"></a>Мониторинг действия копирования
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как контролировать выполнение действия копирования на фабрике данных Azure. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
@@ -153,4 +155,4 @@ ms.locfileid: "79125762"
 
 \- [Общие сведения о действии копирования](copy-activity-overview.md)
 
-\-[Копирование производительности](copy-activity-performance.md)
+\- [Производительность действия копирования](copy-activity-performance.md)

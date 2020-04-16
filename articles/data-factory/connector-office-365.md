@@ -11,14 +11,15 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/20/2019
 ms.author: jingwang
-ms.openlocfilehash: d97b3caccc92f0fdfeb229d94e30ee6499c26181
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ea68fa8d9326e6d9ebb4f475d16ac83959cae6e5
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74912411"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416876"
 ---
 # <a name="copy-data-from-office-365-into-azure-using-azure-data-factory"></a>Копирование данных из Office 365 в Azure с помощью Azure Data Factory
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Azure Data Factory интегрируется с [данными Microsoft Graph,](https://docs.microsoft.com/graph/data-connect-concept-overview)что позволяет выносить богатые организационные данные в вашем арендаторе Office 365 в Azure масштабируемым способом и создавать аналитические приложения и извлекать информацию на основе этих ценных ресурсов данных. Интеграция с Privileged Access Management обеспечивает безопасное управление доступом к ценным и проверенным данным в Office 365.  Пожалуйста, обратитесь к [этой ссылке](https://docs.microsoft.com/graph/data-connect-concept-overview) для обзора данных Microsoft Graph, которые подключаются к [этой ссылке](https://docs.microsoft.com/graph/data-connect-policies#licensing) для получения информации о лицензировании.
 
@@ -65,8 +66,8 @@ Azure Data Factory интегрируется с [данными Microsoft Graph
 
 - [Портал Azure](quickstart-create-data-factory-portal.md)
 - [Пакет SDK для .NET](quickstart-create-data-factory-dot-net.md)
-- [Питон SDK](quickstart-create-data-factory-python.md)
-- [Лазурная силаШелл](quickstart-create-data-factory-powershell.md)
+- [Пакет SDK для Python](quickstart-create-data-factory-python.md)
+- [Azure PowerShell](quickstart-create-data-factory-powershell.md)
 - [REST API](quickstart-create-data-factory-rest-api.md)
 - [Шаблон менеджера ресурсов Azure](quickstart-create-data-factory-resource-manager-template.md). 
 

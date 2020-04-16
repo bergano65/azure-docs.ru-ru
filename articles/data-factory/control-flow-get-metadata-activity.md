@@ -10,16 +10,17 @@ ms.assetid: 1c46ed69-4049-44ec-9b46-e90e964a4a8e
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 03/02/2020
+ms.date: 04/15/2020
 ms.author: jingwang
-ms.openlocfilehash: a0c07aaf27825254f776a03b9b9ca2cbeddca02d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 344ad8e106c119c1de59570d1ec4e3df5e1cc8af
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78250271"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417107"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Получите активность Метаданных на фабрике данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Для получения метаданных на фабрике данных Azure можно использовать действие Get Metadata. Вы можете использовать это действие в следующих сценариях:
 
@@ -40,20 +41,21 @@ ms.locfileid: "78250271"
 
 ### <a name="supported-connectors"></a>Поддерживаемые соединители
 
-**Хранилище файлов**
+**Хранение файлов**
 
 | Соединитель и метаданные | itemName<br>(файл или папка) | itemType<br>(файл или папка) | size<br>(файл) | created<br>(файл или папка) | lastModified<br>(файл или папка) |childItems<br>(папка) |contentMD5<br>(файл) | structure<br/>(файл) | columnCount<br>(файл) | exists (существует)<br>(файл или папка) |
 |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |
 | [Amazon S3](connector-amazon-simple-storage-service.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
-| [Google Cloud Storage](connector-google-cloud-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
+| [Google Cloud Storage](connector-google-cloud-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
 | [Хранение Azure Blob](connector-azure-blob-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | √ | √ | √ | √/√ |
 | [Хранилище Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
-| [Лазурное хранилище озер данных Gen2](connector-azure-data-lake-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
+| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
 | [Файлы Azure](connector-azure-file-storage.md) | √/√ | √/√ | √ | √/√ | √/√ | √ | x | √ | √ | √/√ |
 | [Файловая система](connector-file-system.md) | √/√ | √/√ | √ | √/√ | √/√ | √ | x | √ | √ | √/√ |
 | [SFTP](connector-sftp.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
 | [FTP](connector-ftp.md) | √/√ | √/√ | √ | x/x | x/x | √ | x | √ | √ | √/√ |
 
+- При использовании действия Get Metadata в отношении папки убедитесь, что у вас есть разрешение LIST/EXECUTE на данную папку.
 - Для Amazon S3 и `lastModified` Google Cloud Storage применяется к веру и `exists` ключу, но не к виртуальной папке, и относится к ведре и ключу, но не к приставке или виртуальной папке.
 - Для хранения Azure `lastModified` Blob применяется к контейнеру и каплей, но не к виртуальной папке.
 - `lastModified`фильтр в настоящее время применяется для фильтрации элементов ребенка, но не указанная папка / файл себя.
@@ -64,9 +66,9 @@ ms.locfileid: "78250271"
 | Соединитель и метаданные | structure | columnCount | exists (существует) |
 |:--- |:--- |:--- |:--- |
 | [База данных SQL Azure](connector-azure-sql-database.md) | √ | √ | √ |
-| [Управляемый экземпляр базы данных Azure S'L](connector-azure-sql-database-managed-instance.md) | √ | √ | √ |
+| [Управляемый экземпляр Базы данных SQL Azure](connector-azure-sql-database-managed-instance.md) | √ | √ | √ |
 | [Хранилище данных SQL Azure](connector-azure-sql-data-warehouse.md) | √ | √ | √ |
-| [SQL Server](connector-sql-server.md) | √ | √ | √ |
+| [SQL Server](connector-sql-server.md) | √ | √ | √ |
 
 ### <a name="metadata-options"></a>Параметры метаданных
 
@@ -109,7 +111,7 @@ ms.locfileid: "78250271"
 }
 ```
 
-**Набор данных**
+**Dataset**
 
 ```json
 {
@@ -199,4 +201,4 @@ storeSettings | При использовании набора данных ти
 - [Выполнение деятельности трубопровода](control-flow-execute-pipeline-activity.md)
 - [Действие ForEach](control-flow-for-each-activity.md)
 - [Активность поиска](control-flow-lookup-activity.md)
-- [Веб-действие](control-flow-web-activity.md)
+- [Веб-активность](control-flow-web-activity.md)

@@ -11,15 +11,18 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/12/2018
-ms.openlocfilehash: f9dd53fded06eec169219d00993620a0f2aa2bf0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e6158938d01b6e5da74ed046d2a74e0dfd827f47
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73678243"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417918"
 ---
 # <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнение действия ожидания на фабрике данных Azure
 Если в конвейере используется действие Wait, он приостанавливает обработку на указанный период, прежде чем возобновить выполнение последующих действий. 
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -106,5 +109,5 @@ waitTimeInSeconds | Период ожидания в секундах перед
 - [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
-- [Веб-активность](control-flow-web-activity.md)
+- [Веб-действие](control-flow-web-activity.md)
 - [Действие Until](control-flow-until-activity.md)

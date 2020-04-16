@@ -3,19 +3,23 @@ title: Уточнение конечных точек службы Service Fabri
 description: В этой статье поясняется, как описать ресурсы конечной точки в манифесте служб, включая настройку конечных точек HTTPS.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: cc4eedf5e5fee0bbfa0a763e9b9ec0dd25409afa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 88e71d15829e68bde635f5b4d40224b8fa914f40
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79282163"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417597"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
-Манифест служб позволяет объявлять и изменять ресурсы, используемые в службе, не меняя скомпилированный код. Azure Service Fabric поддерживает настройку ресурсов конечных точек для службы. Доступ к ресурсам, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента SecurityGroup. Объявление ресурсов позволяет изменять их при развертывании, т. е. службе не нужно внедрять новый механизм настройки. Определение схемы для файла ServiceManifest.xml устанавливается с пакетом SDK и средствами для Service Fabric в расположении *C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd*.
+Манифест службы позволяет объявлять или изменять ресурсы, используемые службой, без изменения компилированного кода. Service Fabric поддерживает конфигурацию ресурсов конечных точек службы. Доступ к ресурсам, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента SecurityGroup. Объявление ресурсов позволяет изменять их при развертывании, т. е. службе не нужно внедрять новый механизм настройки. Определение схемы для файла ServiceManifest.xml устанавливается с пакетом SDK и средствами для Service Fabric в расположении *C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd*.
 
 ## <a name="endpoints"></a>Конечные точки
 Если ресурс конечной точки определен в манифесте службы, Service Fabric назначает порты из диапазона зарезервированных портов приложений, если порт не указан явным образом. Например, рассмотрим конечную точку *ServiceEndpoint1* , которая указана во фрагменте кода манифеста, приведенном после абзаца. Кроме того, службы также могут запрашивать наличие в ресурсе конкретного порта. Репликам службы, которые выполняются на различных узлах кластера, можно назначить разные номера портов, а реплики службы, выполняющиеся на одном и том же узле, будут совместно используют один порт. Реплики службы при необходимости могут использовать эти порты для репликации и прослушивания клиентских запросов.
+
+После активации службы, которая определяет конечную точку https, Service Fabric установит вход управления доступом для порта, привяжет указанный сертификат сервера к порту, а также предоставит удостоверение, которое служба работает в качестве разрешения на личный ключ сертификата. Поток активации вызывается каждый раз, когда служба ткани начинается, или когда объявление сертификата приложения изменяется с помощью обновления. Сертификат конечных точек также будет контролироваться на необходимость внесения изменений/продлений, а разрешения будут периодически повторно применяться по мере необходимости.
+
+После прекращения службы Service Fabric очистит вход в контроль доступа конечной точки и удалит привязку сертификата. Однако любые разрешения, применяемые к личному ключу сертификата, не будут очищены.
 
 > [!WARNING] 
 > По конструкции статические порты не должны пересекаться с диапазоном портов приложений, указанным в ClusterManifest. Если вы укажете статический порт, назначайте его вне диапазона портов приложения, в противном случае это приведет к конфликтам в портах. С выпуском 6.5CU2 мы выпустим **Предупреждение о состоянии здоровья,** когда обнаружим такой конфликт, но позволим развертыванию продолжаться в синхронизации с отгруженым поведением 6.5. Тем не менее, мы можем предотвратить развертывание приложения из следующих крупных релизов.
@@ -85,6 +89,7 @@ Service Fabric автоматически создает список управ
       <Endpoint Name="ServiceEndpoint1" Protocol="http"/>
       <Endpoint Name="ServiceEndpoint2" Protocol="http" Port="80"/>
       <Endpoint Name="ServiceEndpoint3" Protocol="https"/>
+      <Endpoint Name="ServiceEndpoint4" Protocol="https" Port="14023"/>
 
       <!-- This endpoint is used by the replicator for replicating the state of your service.
            This endpoint is configured through the ReplicatorSettings config section in the Settings.xml
@@ -106,7 +111,7 @@ Service Fabric автоматически создает список управ
 > При использовании HTTPS не используйте тот же порт и сертификат для разных экземпляров службы (независимо от приложения), развернутых на одном узле. Обновление двух разных служб, использующих один порт в разных экземплярах приложения, приведет к сбою обновлений. Дополнительные сведения. см в статье [Обновление нескольких приложений с помощью конечных точек HTTPS](service-fabric-application-upgrade.md#upgrading-multiple-applications-with-https-endpoints).
 >
 
-Ниже приведен пример ApplicationManifest, который необходимо задать для HTTPS. Требуется предоставить отпечаток для сертификата. EndpointRef является ссылкой на EndpointResource в ServiceManifest, для которого задается протокол HTTPS. Можно добавить несколько элементов Endpointcertificate.  
+Вот пример ApplicationManifest, демонстрирующий конфигурацию, необходимую для конечных точек HTTPS. Сертификат сервера/конечная точка может быть объявлен отпечатком пальца или общим именем субъекта, и необходимо предоставить значение. EndpointRef является отсылкой к EndpointResource в ServiceManifest, протокол которого должен быть установлен в протоколе «https». Можно добавить несколько элементов Endpointcertificate.  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,7 +132,8 @@ Service Fabric автоматически создает список управ
     <ServiceManifestRef ServiceManifestName="Stateful1Pkg" ServiceManifestVersion="1.0.0" />
     <ConfigOverrides />
     <Policies>
-      <EndpointBindingPolicy CertificateRef="TestCert1" EndpointRef="ServiceEndpoint3"/>
+      <EndpointBindingPolicy CertificateRef="SslCertByTP" EndpointRef="ServiceEndpoint3"/>
+      <EndpointBindingPolicy CertificateRef="SslCertByCN" EndpointRef="ServiceEndpoint4"/>
     </Policies>
   </ServiceManifestImport>
   <DefaultServices>
@@ -143,7 +149,8 @@ Service Fabric автоматически создает список управ
     </Service>
   </DefaultServices>
   <Certificates>
-    <EndpointCertificate Name="TestCert1" X509FindValue="FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF F0" X509StoreName="MY" />  
+    <EndpointCertificate Name="SslCertByTP" X509FindValue="FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF F0" X509StoreName="MY" />  
+    <EndpointCertificate Name="SslCertByCN" X509FindType="FindBySubjectName" X509FindValue="ServiceFabric-EndpointCertificateBinding-Test" X509StoreName="MY" />  
   </Certificates>
 </ApplicationManifest>
 ```
@@ -170,7 +177,7 @@ Service Fabric автоматически создает список управ
       </Endpoints>
     </ResourceOverrides>
         <Policies>
-           <EndpointBindingPolicy CertificateRef="TestCert1" EndpointRef="ServiceEndpoint"/>
+           <EndpointBindingPolicy CertificateRef="SslCertByTP" EndpointRef="ServiceEndpoint"/>
         </Policies>
   </ServiceManifestImport>
 ```

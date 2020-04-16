@@ -12,14 +12,16 @@ ms.workload: data-services
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: f265cdc955becd53ae7ba61ad827b2be69b92907
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: d90f38f83bd4d2d5311f277fcc928e442d7ea793
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80618263"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416384"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 
 Для удаления файлов или папок из наемных хранилищ или облачных хранилищ можно использовать действие Delete Activity in Azure Data Factory. Это действие используется для очистки или архивации ненужных файлов.
 
@@ -40,10 +42,10 @@ ms.locfileid: "80618263"
 
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
--   [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md)
+-   [Хранение Azure Blob](connector-azure-blob-storage.md)
 -   [Хранилище Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md)
 -   [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)
--   [Хранение файлов Azure](connector-azure-file-storage.md)
+-   [Хранилище файлов Azure](connector-azure-file-storage.md)
 
 ### <a name="file-system-data-stores"></a>Хранилища данных файловых систем
 
@@ -51,7 +53,7 @@ ms.locfileid: "80618263"
 -   [FTP](connector-ftp.md)
 -   [SFTP](connector-sftp.md)
 -   [Amazon S3](connector-amazon-simple-storage-service.md)
--   [Google Cloud Storage](connector-google-cloud-storage.md)
+-   [Google Cloud Storage](connector-google-cloud-storage.md)
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -80,7 +82,7 @@ ms.locfileid: "80618263"
 
 ## <a name="type-properties"></a>Свойства типа
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | набор данных | Предоставляет ссылку на набор данных, чтобы определить, какие файлы или папки должны быть удалены. | Да |
 | recursive | Указывает, откуда файлы удаляются рекурсивно: из вложенных папок или только из указанной папки.  | Нет. Значение по умолчанию — `false`. |
@@ -116,7 +118,7 @@ ms.locfileid: "80618263"
 
 ### <a name="sample-log-file-of-the-delete-activity"></a>Пример файла журнала действия Delete
 
-| name | Категория | Состояние | Error |
+| Имя | Категория | Состояние | Error |
 |:--- |:--- |:--- |:--- |
 | test1/yyy.json | Файл | Deleted |  |
 | test2/hello789.txt | Файл | Deleted |  |
@@ -573,7 +575,7 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 -   При использовании фильтра атрибутов файлов: модифицированныйDatetimeStart и модифицированныйDatetimeEnd для выбора файлов, которые будут удалены, убедитесь, что установить "fileName": "Я" в наборе данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о перемещении файлов на фабрике данных Azure.
 

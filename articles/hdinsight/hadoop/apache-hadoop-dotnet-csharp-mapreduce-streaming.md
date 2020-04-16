@@ -7,19 +7,19 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 11/22/2019
-ms.openlocfilehash: 025b5c5c1e3b8543111e112202906ef6f1fdb482
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/15/2020
+ms.openlocfilehash: 7a299ce16f6e9c7292cebf198c9c3077f8e05fcb
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74561801"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417606"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
 Узнайте, как использовать C# для создания решения MapReduce в HDInsight.
 
-Потоковая передача Apache Hadoop выполняется служебной программой, которая позволяет запускать задания MapReduce с помощью скрипта или исполняемого файла. В этом примере .NET используется для реализации модулей сопоставления и редукции для решения для подсчета слов.
+Потоковая передача Apache Hadoop позволяет выполнять задания MapReduce с помощью сценария или исполняемой. Здесь .NET используется для реализации картографа и редуктора для решения подсчета слов.
 
 ## <a name="net-on-hdinsight"></a>.NET в HDInsight
 
@@ -49,12 +49,9 @@ ms.locfileid: "74561801"
 
 * При использовании PowerShell вам понадобится [модуль Az.](https://docs.microsoft.com/powershell/azure/overview)
 
-* Клиент SSH (необязательно). Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
-
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-* [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Для службы хранилища Azure это будет `wasb://`, для Azure Data Lake Storage 2-го поколения — `abfs://` или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure или Azure Data Lake Storage 2-го поколения включена безопасная передача, URI будет `wasbs://` или `abfss://` соответственно (см. также сведения о [безопасной передаче](../../storage/common/storage-require-secure-transfer.md)).
-
+* [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Эта схема `wasb://` будет для хранения `abfs://` Azure, для хранения `adl://` данных Azure Data Lake Gen2 или для хранилища озер Azure Gen1. Если для службы хранилища Azure или Azure Data Lake Storage 2-го поколения включена безопасная передача, URI будет `wasbs://` или `abfss://` соответственно (см. также сведения о [безопасной передаче](../../storage/common/storage-require-secure-transfer.md)).
 
 ## <a name="create-the-mapper"></a>Создание модуля сопоставления
 
@@ -221,14 +218,16 @@ namespace reducer
 
    В следующем списке описывается, что представляет собой каждый параметр и опцион:
 
-   * *hadoop-streaming.jar*: Определяет файл банки, который содержит функцию потоковой передачи MapReduce.
-   * `-files`: Определяет файлы *mapper.exe* и *reducer.exe* для этой работы. Объявление, `wasbs:///`или `abfs:///` объявление протокола перед каждым файлом — это путь к корню хранилища по умолчанию для кластера. `adl:///`
-   * `-mapper`: Определяет файл, который реализует картограф.
-   * `-reducer`: Определяет файл, который реализует редуктор.
-   * `-input`: Определяет входные данные.
-   * `-output`: Определяет каталог вывода.
+   |Параметр | Описание |
+   |---|---|
+   |hadoop-streaming.jar|Определяет файл банки, содержащий функцию потоковой передачи MapReduce.|
+   |-файлы|Специфика *mapper.exe* и *reducer.exe* файлов для этой работы. Объявление, `wasbs:///`или `abfs:///` объявление протокола перед каждым файлом — это путь к корню хранилища по умолчанию для кластера. `adl:///`|
+   |-картограф|Определяет файл, реализуемый картографом.|
+   |-Редуктор|Определяет файл, реализуемый в редукторе.|
+   |-Ввод|Определяет входные данные.|
+   |-выход|Определяет каталог вывода.|
 
-3. Как только задание MapReduce завершится, используйте следующую команду для просмотра результатов:
+1. Как только задание MapReduce завершится, используйте следующую команду для просмотра результатов:
 
    ```bash
    hdfs dfs -text /example/wordcountout/part-00000

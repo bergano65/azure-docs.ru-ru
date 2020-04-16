@@ -11,17 +11,18 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/17/2020
-ms.openlocfilehash: e1a3ff32956e8a8530684ba7f300f06d0c032227
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: 74462b68bea38e4d84219adeedb7c3bb0893bbb4
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80421118"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417239"
 ---
 # <a name="copy-data-from-sap-hana-using-azure-data-factory"></a>Копирование данных из SAP HANA с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-sap-hana-connector.md)
 > * [Текущая версия](connector-sap-hana.md)
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных SAP HANA. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
@@ -68,8 +69,8 @@ ms.locfileid: "80421118"
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **SapHana** | Да |
 | connectionString | Укажите информацию, необходимую для подключения к SAP HANA, используя либо **базовую аутентификацию,** либо **проверку подлинности Windows.** Ознакомьтесь с приведенными ниже примерами.<br>В связи строка сервера/порта является обязательной (порт по умолчанию 30015), а имя пользователя и пароль обязательны при использовании базовой аутентификации. Для получения дополнительных расширенных параметров обратитесь к [SAP HANA ODBC Connection Properties](<https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html>)<br/>Вы также можете поместить пароль в Хранилище ключей Azure и вытащить конфигурацию пароля из строки соединения. С более подробной информацией обратитесь к учетным данным Магазина в статье [Azure Key Vault.](store-credentials-in-key-vault.md) | Да |
-| userName | Укажите имя пользователя при использовании аутентификации Windows. Пример: `user@domain.com` | Нет |
-| password | Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
+| userName | Укажите имя пользователя при использовании аутентификации Windows. Например, `user@domain.com`. | нет |
+| password | Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | нет |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
 
 **Пример: использование базовой аутентификации**
@@ -302,5 +303,5 @@ ms.locfileid: "80421118"
 
 Чтобы узнать подробности о свойствах, проверьте [активность поиска.](control-flow-lookup-activity.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

@@ -1,16 +1,16 @@
 ---
-author: IEvangelist
+author: trevorbye
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
 ms.date: 01/27/2020
-ms.author: dapine
-ms.openlocfilehash: 11091c7efb127ba597cabf9be5ac43fd23facec6
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.author: trbye
+ms.openlocfilehash: 6364507b630b5b16fc00e2c6e38037425435299b
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76900578"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81422089"
 ---
 > [!div class="nextstepaction"]
 > [Примеры для C# на сайте GitHub](https://aka.ms/speech/github-csharp)

@@ -1,5 +1,5 @@
 ---
-title: Замечания по безопасности
+title: Вопросы безопасности
 description: В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для помощи в защите информации.
 services: data-factory
 ms.author: abnarain
@@ -11,18 +11,20 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/11/2020
-ms.openlocfilehash: bee627ade4f66206cd5254fc32bc7aa9973c7bee
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bb3f22223bd64c06cfa4a5f6ffabe7b128dff1d5
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131315"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416465"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 >
 > * [Версия 1](v1/data-factory-data-movement-security-considerations.md)
 > * [Текущая версия](data-movement-security-considerations.md)
+
+ [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для помощи в защите данных. Ресурсы управления фабрики данных созданы на основе инфраструктуры безопасности Azure и используют все возможные меры безопасности, предлагаемые Azure.
 
@@ -59,7 +61,7 @@ ms.locfileid: "80131315"
 ### <a name="securing-data-store-credentials"></a>Защита учетных данных хранилища данных
 
 - **Хранение зашифрованных учетных данных в управляемом хранилище фабрики данных Azure**. Фабрика данных помогает защитить учетные данные хранилища данных, выполняя их шифрование с помощью сертификатов, управляемых корпорацией Майкрософт. Эти сертификаты меняются каждые два года. Изменения включают продление сертификата и перемещение учетных данных. Дополнительные сведения о безопасности службы хранилища Azure см. в [этой статье](../security/fundamentals/storage-overview.md).
-- **Хранение учетных данных в Azure Key Vault**. Учетные данные хранилища также можно хранить в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). Фабрика данных получает учетные данные во время выполнения действия. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md).
+- **Храните учетные данные в Хранилище ключей Azure**. Учетные данные хранилища также можно хранить в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). Фабрика данных получает учетные данные во время выполнения действия. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md).
 
 ### <a name="data-encryption-in-transit"></a>Шифрование данных при передаче
 Если облачное хранилище данных поддерживает протоколы HTTPS или TLS, то передача всех данных между службами перемещения данных в Фабрике данных и облачным хранилищем данных выполняется через эти защищенные каналы.
@@ -111,7 +113,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
  
 - **Хранение учетных данных в локальной среде**. Если вы непосредственно используете **cmdlet Set-AzDataFactoryV2LinkedService** со строками соединения и учетными данными, сотым в JSON, связанная служба шифруется и хранится на автономном времени выполнения интеграции.  В этом случае учетные данные перетекают через службу резервного копирования azure, которая является чрезвычайно безопасной, к самохпарнюстой интеграционной машине, где она, наконец, зашифрована и сохранена. Локальная среда выполнения интеграции использует Windows [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx) для шифрования конфиденциальных данных и учетных данных.
 
-- **Хранение учетных данных в Azure Key Vault**. Учетные данные хранилища также можно хранить в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). Фабрика данных получает учетные данные во время выполнения действия. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md).
+- **Храните учетные данные в Хранилище ключей Azure**. Учетные данные хранилища также можно хранить в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). Фабрика данных получает учетные данные во время выполнения действия. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md).
 
 - **Храните учетные данные локально, не пропуская учетные данные через бэкэнд Azure в автономное время выполнения интеграции.** Если вы хотите шифровать и хранить учетные данные локально на автономном времени выполнения интеграции без необходимости передавать учетные данные через бэкэнд фабрики данных, выполните последующие действия в [учетных данных Encrypt для локальных хранилищ данных в Azure Data Factory.](encrypt-credentials-self-hosted-integration-runtime.md) Этот вариант поддерживают все соединители. Локальная среда выполнения интеграции использует Windows [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx) для шифрования конфиденциальных данных и учетных данных. 
 
@@ -143,7 +145,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 
 На изображениях ниже показано, как использовать локальную среду выполнения интеграции для перемещения данных между локальной базой данных и службами Azure с помощью ExpressRoute и VPN-подключения IPSec (с помощью виртуальной сети Azure).
 
-**Expressroute**
+**ExpressRoute**
 
 ![Использование ExpressRoute со шлюзом](media/data-movement-security-considerations/express-route-for-gateway.png) 
 
@@ -179,8 +181,8 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 - [База данных SQL Azure](../sql-database/sql-database-firewall-configure.md) 
 - [Хранилище данных SQL Azure](../sql-data-warehouse/sql-data-warehouse-get-started-provision.md)
 - [Azure Data Lake Store](../data-lake-store/data-lake-store-secure-data.md#set-ip-address-range-for-data-access)
-- [Azure Космос DB](../cosmos-db/firewall-support.md)
-- [Амазонка Редсифт](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
+- [Azure Cosmos DB](../cosmos-db/firewall-support.md)
+- [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

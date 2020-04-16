@@ -12,18 +12,19 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/12/2020
-ms.openlocfilehash: e7f91d60a0e181690859da64e491c4c0fa1e1a3e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 063ac32c98d4eb64b676247c0a16f98fa7d1702d
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80238718"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416686"
 ---
 # <a name="copy-data-to-and-from-sql-server-by-using-azure-data-factory"></a>Копирование данных на сервер и из сервера S'L с помощью Azure Data Factory
 
 > [!div class="op_single_selector" title1="Выберите используемую версию фабрики данных Azure:"]
 > * [Версия 1](v1/data-factory-sqlserver-connector.md)
 > * [Текущая версия](connector-sql-server.md)
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье излагается, как использовать активность копирования на фабрике данных Azure для копирования данных из базы данных сервера S'L Server. Он основывается на статье [обзора активности копирования,](copy-activity-overview.md) в ней представлен общий обзор действия копирования.
 

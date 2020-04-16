@@ -11,12 +11,12 @@ ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 2113e5ac3563a22c5f2c6b755230b05fb9a2cb35
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 088a0d10b96a30ef830b4e8a8dc12c19127141db
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80583870"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81417042"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Performance tuning with result set caching (Настройка производительности с помощью упорядоченного кластеризованного индекса columnstore)  
 
@@ -28,7 +28,7 @@ ms.locfileid: "80583870"
 
 При создании заказавшегоCC движок Synapse S'L сортирует существующие данные в памяти по ключу заказа (ы) до того, как строитель индекса сжимает их в сегменты индексов.  С помощью отсортированных данных перекрытие сегмента уменьшается, позволяя запросам иметь более эффективную ликвидацию сегмента и, таким образом, более высокую производительность, поскольку количество сегментов, считывающих сяслук с диска, меньше.  Если все данные могут быть отсортированы в памяти сразу, то перекрытия сегмента можно избежать.  Из-за больших таблиц в хранилищах данных такой сценарий происходит не часто.  
 
-Чтобы проверить диапазоны сегментов для столбца, запустите эту команду с именем таблицы и именем столбца:
+Чтобы проверить диапазоны сегментов для столбца, запустите следующую команду с именем таблицы и именем столбца:
 
 ```sql
 SELECT o.name, pnp.index_id, 
@@ -153,6 +153,6 @@ ORDER (ProductKey, SalesAmount)
 WITH (DROP_EXISTING = ON)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).

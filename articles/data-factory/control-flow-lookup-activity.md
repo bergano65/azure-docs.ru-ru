@@ -11,14 +11,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 08cc7ce8f306095a66bc0f8cf74dff8c8b551ecf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 02abdaf46ca2af6c96d3b5e8d4ce5876831bd415
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75440490"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81418007"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Действие поиска в фабрике данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Действие поиска можно использовать для получения набора данных из любых источников данных, поддерживаемых Фабрикой данных Azure. Используйте его в следующих сценариях:
 - Динамическое определение объектов для обработки в последующем действии вместо жесткого программирования имени объекта. Примерами объектов могут быть файлы и таблицы.
@@ -53,7 +54,7 @@ ms.locfileid: "75440490"
 
 ## <a name="type-properties"></a>Свойства типа
 
-name | Описание | Тип | Обязательно?
+Имя | Описание | Тип | Обязательно?
 ---- | ----------- | ---- | --------
 набор данных | Предоставляет ссылку на набор данных для поиска. Дополнительные сведения можно найти в разделе **Свойства набора данных** в каждой соответствующей статье о соединителе. | Пара "ключ — значение" | Да
 source | Содержит свойства источника конкретного набора данных, аналогичные источнику действия копирования. Получите подробную информацию из раздела **свойств копирования активности** в каждой соответствующей статье разъема. | Пара "ключ — значение" | Да
@@ -306,4 +307,4 @@ firstRowOnly | Указывает, следует ли возвращать то
 - [Выполнение деятельности трубопровода](control-flow-execute-pipeline-activity.md)
 - [Действие ForEach](control-flow-for-each-activity.md)
 - [Действие получения метаданных в Фабрике данных Azure](control-flow-get-metadata-activity.md)
-- [Веб-действие](control-flow-web-activity.md)
+- [Веб-активность](control-flow-web-activity.md)
