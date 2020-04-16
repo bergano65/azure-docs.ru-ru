@@ -11,12 +11,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 11/26/2019
 ms.author: shvija
-ms.openlocfilehash: abd7940551f7a8182364475b0cf50b60afb5e1b7
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 91b08d6130da640adc28a3b7d85bd33f0e876caf
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81313792"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81390283"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-event-hubs"></a>Использование конечных точек служб для виртуальной сети с Центрами событий Azure
 
@@ -32,6 +32,7 @@ ms.locfileid: "81313792"
 > Доверенные службы Майкрософт не поддерживаются, если реализованы виртуальные сети.
 >
 > Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
+> - Azure Monitor (диагностическая настройка)
 > - Azure Stream Analytics
 > - Интеграция со службой "Сетка событий Azure".
 > - Маршруты Центра Интернета вещей Azure.
@@ -212,7 +213,7 @@ ms.locfileid: "81313792"
 
 Инструкции по развертыванию шаблона см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][lnk-deploy].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о виртуальных сетях см. по следующим ссылкам:
 

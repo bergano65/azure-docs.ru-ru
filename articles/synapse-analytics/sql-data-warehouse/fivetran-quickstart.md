@@ -11,12 +11,12 @@ ms.date: 10/12/2018
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: b4742f48ee9ad0db60e21dd53c5c0f447c1ded67
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 8f164232a3b1782511758f93a9e9b8d17d3714d5
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80348920"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414269"
 ---
 # <a name="quickstart-fivetran-with-data-warehouse"></a>Быстрый запуск: Fivetran со складом данных 
 
@@ -26,7 +26,7 @@ ms.locfileid: "80348920"
 
 1. Найдите полностью квалифицированное имя сервера и имя базы данных, которые вы используете для подключения к вашему складу данных.
     
-    Если вам нужна помощь в поиске этой информации, [переимите подключение к вашему складу данных.](sql-data-warehouse-connect-overview.md)
+    Если вам нужна помощь в поиске этой информации, [переимите подключение к вашему складу данных.](../sql/connect-overview.md)
 
 2. В мастере установки выберите подключение к базе данных напрямую или через туннель SSH.
 
@@ -75,9 +75,9 @@ ms.locfileid: "80348920"
     Дополнительные сведения об [ограничениях параллелизма и памяти](memory-concurrency-limits.md) и [классах ресурсов](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md#ways-to-allocate-more-memory).
 
 
-## <a name="sign-in-to-fivetran"></a>Вход в Fivetran
+## <a name="connect-from-fivetran"></a>Подключение из Пятитран
 
-Чтобы войти в Fivetran, введите учетные данные, которые используются для доступа к вашему складу данных: 
+Чтобы подключиться к складу данных из учетной записи Fivetran, введите учетные данные, которые используются для доступа к вашему складу данных: 
 
 * узел (имя вашего сервера);
 * порт;

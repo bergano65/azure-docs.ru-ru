@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 06/22/2018
-ms.openlocfilehash: dc6d8c9da749e7ee60713f4357dc6d46051d89f2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1943c16c678d0783b99a0f16c25fa72137defc8a
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131276"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415893"
 ---
 # <a name="load-data-into-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Загрузка данных в службу "Хранилище данных SQL Azure" с помощью службы "Фабрика данных Azure"
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 [Хранилище данных SQL Azure](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) — это развернутая в облаке база данных, способная обрабатывать большие объемы реляционных и нереляционных данных. Хранилище данных SQL создано на основе реализованной архитектуры вычислений с массовым параллелизмом (MPP), оптимизированной для рабочих нагрузок хранилища корпоративных данных. Оно предоставляет эластичность облака и гибкие возможности масштабирования хранилища и вычислительной мощности независимо друг от друга.
 
@@ -38,7 +40,7 @@ ms.locfileid: "80131276"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Подписка Azure: Если у вас нет подписки Нацу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
 * Хранилище данных SQL Azure. В этом хранилище данных содержатся данные, копируемые из базы данных SQL. Если у вас нет хранилища данных SQL Azure, см. руководство [Загрузка данных из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase](../sql-data-warehouse/sql-data-warehouse-get-started-tutorial.md).
 * База данных SQL Azure. В этом руководстве демонстрационные данные Adventure Works LT копируются из базы данных SQL Azure. Вы можете создать базу данных SQL, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
 * Учетная запись хранения Azure. Учетная запись хранения Azure используется в качестве _промежуточного_ хранилища больших двоичных объектов в операции массового копирования. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-account-create.md).
@@ -59,7 +61,7 @@ ms.locfileid: "80131276"
     * **Версия.** Выберите значение **V2**.
     * **Расположение.** Выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных, используемые в фабрике данных, могут находиться в других расположениях и регионах. К этим хранилищам относятся Azure Data Lake Store, служба хранилища Azure, база данных SQL Azure и т. д.
 
-3. Выберите **Создать**.
+3. Нажмите кнопку **создания**.
 4. После создания перейдите к фабрике данных. Вы увидите домашнюю страницу **фабрики данных**, как показано на следующем изображении:
 
    ![Домашняя страница фабрики данных](./media/load-azure-sql-data-warehouse/data-factory-home-page.png)

@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 03/13/2020
-ms.openlocfilehash: 4f39ff5726c23db32c7b039335f406641ee090cb
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 8140fc4286ac97260e0b23ea700a70303ec69e2e
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80754260"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81411200"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace-preview"></a>Напередите частную ссылку Azure для рабочего пространства для обучения машин Azure (Предварительный просмотр)
 
@@ -47,8 +47,7 @@ ms.locfileid: "80754260"
 * Рабочее издание (Основное или пределение)
 * Если следует ввести высокие параметры конфиденциальности рабочего пространства
 * Если шифрование рабочего пространства с ключом, управляемым клиентом, должно быть включено, а связанные значения для ключа
-* Название и подсеть виртуальной сети
-* Имя подсети
+* Виртуальная сеть и название Subnet, шаблон создаст новую виртуальную сеть и подсеть
 
 После того, как шаблон был представлен и подготовка завершена, группа ресурсов, содержащая рабочее пространство, будет содержать три новых типа артефактов, связанных с Private Link:
 

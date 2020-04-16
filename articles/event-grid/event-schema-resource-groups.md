@@ -1,20 +1,20 @@
 ---
-title: Схема событий группы ресурсов службы "Сетка событий Azure"
+title: Группа ресурсов Azure как источник сетки событий
 description: Описание свойств для событий группы ресурсов, используемых со службой "Сетка событий Azure"
 services: event-grid
 author: spelluru
 ms.service: event-grid
-ms.topic: reference
-ms.date: 01/12/2019
+ms.topic: conceptual
+ms.date: 04/09/2020
 ms.author: spelluru
-ms.openlocfilehash: 6cbfc06f380d7c4818ca82e858c23bb18849fb7c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fb52b54eb32a119a463b59e4d4f2ab30096886fa
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60561699"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393250"
 ---
-# <a name="azure-event-grid-event-schema-for-resource-groups"></a>Схема событий службы "Сетка событий Azure" для групп ресурсов
+# <a name="azure-resource-group-as-an-event-grid-source"></a>Группа ресурсов Azure как источник сетки событий
 
 В этой статье описаны свойства и схема для событий группы ресурсов.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
@@ -28,9 +28,10 @@ ms.locfileid: "60561699"
 
 Тема события — это идентификатор ресурса, который является целевым объектом операции. Для фильтрации событий ресурса укажите идентификатор ресурса при создании подписки на события.  Чтобы выполнить фильтрацию по типу ресурсов, используйте значение в следующем формате: `/subscriptions/<subscription-id>/resourcegroups/<resource-group>/providers/Microsoft.Compute/virtualMachines`
 
-Список примеров сценариев и руководства см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#resource-groups).
 
-## <a name="available-event-types"></a>Доступные типы событий
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
+
+### <a name="available-event-types"></a>Доступные типы событий
 
 Группы ресурсов выдают события управления из Azure Resource Manager, например при создании виртуальной машины или удалении учетной записи хранения.
 
@@ -46,7 +47,7 @@ ms.locfileid: "60561699"
 | Microsoft.Resources.ResourceWriteFailure | Возникает при неудачном создании или обновлении. |
 | Microsoft.Resources.ResourceWriteSuccess | Возникает при успешном создании или обновлении. |
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 В следующем примере показана схема события **ResourceWriteSuccess**. Та же схема используется для событий **ResourceWriteFailure** и **ResourceWriteCancel** с разными значениями для `eventType`.
 
@@ -230,7 +231,7 @@ ms.locfileid: "60561699"
 }]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -259,6 +260,16 @@ ms.locfileid: "60561699"
 | status | строка | Состояние операции. |
 | subscriptionId | строка | Идентификатор подписки ресурса. |
 | tenantId | строка | Идентификатор клиента ресурса. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title  |Описание  |
+|---------|---------|
+| [Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md) | Приложение логики отслеживает изменения в виртуальной машине и отправляет сообщения электронной почты об этих изменениях. |
+| [Создание подписки на события, связанные с группой ресурсов, с использованием Azure CLI](./scripts/event-grid-cli-resource-group.md)| Пример сценария, позволяющий подписаться на события, связанные с группой ресурсов. Он отправляет события в веб-перехватчик. |
+| [Подписка на события группы ресурсов и фильтрация событий для ресурса с использованием Azure CLI](./scripts/event-grid-cli-resource-group-filter.md) | Пример сценария, позволяющий подписаться на события группы ресурсов и отфильтровать события для ресурса. |
+| [Создание подписки на события, связанные с группой ресурсов, с использованием PowerShell](./scripts/event-grid-powershell-resource-group.md) | Пример сценария, позволяющий подписаться на события, связанные с группой ресурсов. Он отправляет события в веб-перехватчик. |
+| [Подписка на события группы ресурсов и фильтрация по ресурсу с использованием PowerShell](./scripts/event-grid-powershell-resource-group-filter.md) | Пример сценария, позволяющий подписаться на события группы ресурсов и отфильтровать события для ресурса. |
+| [Шаблон Resource Manager: подписка на ресурсы](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-resource-events-to-webhook) | Подписывается на события для группы ресурсов или подписки Azure. Он отправляет события в веб-перехватчик. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

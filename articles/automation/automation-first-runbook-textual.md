@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 09/24/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5a1cad3179063f75a5d9a19567624180b5793a1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8b103437ab30c05ddab88b7a8a723cd2b4b1d5f6
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79367267"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81405891"
 ---
 # <a name="my-first-powershell-workflow-runbook"></a>Первый Runbook рабочего процесса PowerShell
 
@@ -79,7 +79,7 @@ ms.locfileid: "79367267"
 1. Нажмите **Кнопка Начало,** чтобы начать тест, с тестированием единственной включенной опции.
 1. Обратите внимание, что [создается задание runbook](automation-runbook-execution.md) и отображается его статус в панели.
 
-   Статус задания `Queued`начинается как, указывая, что задание ждет сотрудника runbook в облаке, чтобы стать доступным. Статус меняется `Starting` на время выполнения требования работника. Наконец, статус `Running` становится, когда запуск фактически начинает работать.
+   Статус задания начинается как очередь, что указывает на то, что задание ждет сотрудника runbook в облаке, чтобы стать доступным. Статус изменяется в запуске, когда работник претендует на задание. Наконец, статус становится Запущенный, когда запуск фактически начинает работать.
 
 1. Когда задание runbook завершается, панель test отображает его выход. В этом случае, `Hello World`вы видите .
 
@@ -107,7 +107,7 @@ ms.locfileid: "79367267"
 
    ![Сводные данные задания](media/automation-first-runbook-textual/job-pane-status-blade-jobsummary.png)
 
-1. Как только состояние `Completed`runbook показывает, щелкните **выход**. Открывается страница вывода, где можно `Hello World` увидеть ваше сообщение.
+1. Как только статус runbook показывает Завершено, нажмите **выход**. Открывается страница вывода, где можно `Hello World` увидеть ваше сообщение.
 
    ![Сводные данные задания](media/automation-first-runbook-textual/job-pane-status-blade-outputtile.png)
 
@@ -117,7 +117,7 @@ ms.locfileid: "79367267"
 
    ![Сводные данные задания](media/automation-first-runbook-textual/job-pane-status-blade-alllogstile.png)
 
-1. Закройте панель потоков и панель вакансий, чтобы вернуться на страницу **MyFirstRunbook.**
+1. Закройте панель потоков и панель вакансий, чтобы вернуться на страницу MyFirstRunbook.
 1. Нажмите **"Вакансии** под **ресурсами",** чтобы открыть страницу "Вакансии" для этого сборника. На этой странице перечислены все задания, созданные вашего runbook. Вы должны видеть только одну работу в списке, так как вы завели задание только один раз.
 
    ![Задания](media/automation-first-runbook-textual/runbook-control-job-tile.png)
@@ -126,12 +126,12 @@ ms.locfileid: "79367267"
 
 ## <a name="step-5---add-authentication-to-manage-azure-resources"></a>Шаг 5. Добавление проверки подлинности для управления ресурсами Azure
 
-Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Он не может этого сделать, если он не проверяет подлинность с помощью учетных данных для подписки. Аутентификация использует `Connect-AzAccount` cmdlet.
+Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Он не может этого сделать, если он не проверяет подлинность с помощью учетных данных для подписки. Аутентификация использует [cmdlet Connect-AzAccount.](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.7.0)
 
 >[!NOTE]
 >Для PowerShell runbooks, `Add-AzAccount` и `Add-AzureRMAccount` псевдонимы для `Connect-AzAccount`. Вы можете использовать эти cmdlets или вы можете [обновить свои модули](automation-update-azure-modules.md) в вашей учетной записи автоматизации до последних версий. Возможно, потребуется обновить модули, даже если вы только что создали новую учетную запись Automation.
 
-1. Перейдите на страницу **MyFirstRunbook-Workflow** и откройте текстовый редактор, нажав **на Edit**.
+1. Перейдите на страницу MyFirstRunbook-Workflow и откройте текстовый редактор, нажав **на Edit**.
 2. Удалите строку. `Write-Output`
 3. Поместите курсор в пустую строку между фигурными скобками.
 4. Введите или скопируйте и вставьте следующий код, который обрабатывает аутентификацию с помощью учетной записи Automation Run As.
@@ -213,6 +213,8 @@ ms.locfileid: "79367267"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Для получения дополнительной информации о PowerShell, включая языковые справочные и учебные модули, обратитесь к [документам PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+* Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+)
 * Чтобы начать работу с графических runbooks, [см.](automation-first-runbook-graphical.md)
 * Чтобы начать работу с PowerShell runbooks, [см.](automation-first-runbook-textual-powershell.md)
 * Чтобы узнать больше о типах runbook [Azure Automation runbook types](automation-runbook-types.md)и их преимуществах и ограничениях, см.

@@ -5,20 +5,20 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 04/07/2020
+ms.date: 04/14/2020
 ms.author: cherylmc
-ms.openlocfilehash: 0133322eab9a554cf28c0a90fbadf9afe6fbcd64
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 3b45c20e2d3e8829913c9e566516f85866ee80d4
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81314264"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81390321"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
 > [!div class="op_single_selector"]
 > * [Расположение по провайдеру](expressroute-locations.md)
-> * [Поставщики по расположению](expressroute-locations-providers.md)
+> * [Поставщики по местоположению](expressroute-locations-providers.md)
 
 
 Таблицы в этой статье предоставляют информацию о географическом охвате и местоположении ExpressRoute, поставщиках услуг подключения ExpressRoute и интеграторах системы ExpressRoute (SIs).
@@ -95,7 +95,7 @@ ms.locfileid: "81314264"
 | **Дубай** | [PCCS](https://www.pacificcontrols.net/cloudservices/index.html) | 3 | Северная часть ОАЭ; | Недоступно | Этисалат ОАЭ |
 | **Дубай2** | [du datamena](http://datamena.com/solutions/data-centre) | 3 | Северная часть ОАЭ; | Недоступно | du Datamena, Мегапорт, Оранжевый, Orixcom |
 | **Дублин** | [Equinix DB3](https://www.equinix.com/locations/europe-colocation/ireland-colocation/dublin-data-centers/db3/) | 1 | Северная Европа | 10G, 100G | Кольт, Эйр, Эквиникс, euNetworks, Интерксион, Мегапорт |
-| **Франкфурт** | [Интерксион FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Германия Западно-Центральная | 10G, 100G | CenturyLink Облако Connect, Кольт, DE-CIX, Equinix, GEANT, Интерксион, Мегапорт, Оранжевый, Telia Carrier |
+| **Франкфурт** | [Интерксион FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Германия Западно-Центральная | 10G, 100G | AT&T NetBond, CenturyLink Cloud Connect, Colt, DE-CIX, Equinix, GEANT, Interxion, Megaport, Orange, Telia Carrier |
 | **Женева** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Швейцария Запад | 10G, 100G | Equinix, Megaport |
 | **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | Недоступно | Арьяк Сети, Британский Телеком, CenturyLink Cloud Connect, Главный Телеком, China Telecom Global, Equinix, InterCloud, Мегапорт, NTT Связи, Оранжевый, PCCW Global Limited, Tata Communications, Telia Carrier, Verizon |
 | **Гонконг2** | [МЕГА-и](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Недоступно | 10G | |
@@ -128,7 +128,7 @@ ms.locfileid: "81314264"
 | **Кремниевая долина** | [Equinix SV1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv1/) | 1 | западная часть США | 10G, 100G | Арьяка Сети, AT&T NetBond, Британский Телеком, CenturyLink Облако Connect, Colt, Comcast, Coresite, Equinix, InterCloud, Internet2, IX Reach, Пакет, PacketFabric, Уровень 3 Связи, Мегапорт, Оранжевый, Спринт, Тата связи, Telia Carrier, Verizon, Зайо |
 | **Силиконовая долина2** | [Coresite SV7](https://www.coresite.com/data-centers/locations/silicon-valley/sv7) | 1 | западная часть США | 10G, 100G | Кольт, Coresite | 
 | **Сингапур** | [Equinix SG1](https://www.equinix.com/locations/asia-colocation/singapore-colocation/singapore-data-center/sg1/) | 2 | Юго-Восточная Азия | 10G, 100G | Арьяка Сети, AT&T NetBond, British Telecom, China Mobile International, Epsilon Global Communications, Equinix, InterCloud, Уровень 3 Коммуникации, Мегапорт, NTT Связи, Оранжевый, SingTel, Tata Communications, Telstra Corporation, Verizon, Vodafone |
-| **Сингапур 2** | [Глобальный коммутатор Тай Сенг](https://www.globalswitch.com/locations/singapore-data-centres/) | 2 | Юго-Восточная Азия | 10G, 100G | China Unicom Global, Colt, Epsilon Global Communications, Megaport, SingTel |
+| **Сингапур 2** | [Глобальный коммутатор Тай Сенг](https://www.globalswitch.com/locations/singapore-data-centres/) | 2 | Юго-Восточная Азия | 10G, 100G | China Unicom Global, Colt, Epsilon Global Communications, Megaport, PCCW Global Limited, SingTel |
 | **Ставангер** | [Зеленая гора DC1](https://greenmountain.no/dc1-stavanger/) | 1 | Норвегия Запад | 10G, 100G | |
 | **Стокгольм** | [Equinix SK1](https://www.equinix.com/locations/europe-colocation/sweden-colocation/stockholm-data-centers/sk1/) | 1 | Недоступно | 10G | Эквиникс, Telia Carrier |
 | **Сидней** | [Equinix SY2](https://www.equinix.com/locations/asia-colocation/australia-colocation/sydney-data-centers/sy2/) | 2 | Восточная Австралия | 10G, 100G | AARNet, AT&T NetBond, British Telecom, Devoli, Equinix, Kordia, Megaport, NEXTDC, NTT Communications, Optus, Orange, Spark N, Telstra Corporation, TPG Telecom, Verizon, Vocus Group N |
@@ -241,7 +241,7 @@ ms.locfileid: "81314264"
 | **Европа** |Avanade Inc., Altogee, Bright Skies GmbH, Inframon, MSG Services, New Signature, Nelite, Orange Networks, sol-tec |
 | **Северная Америка** |Avanade Inc., Equinix Professional Services, FlexManage, Lightstream, Perficient, Presidio |
 | **Южная Америка** |Avanade Inc., Venha Pra Nuvem |
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

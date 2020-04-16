@@ -1,19 +1,18 @@
 ---
 title: Контроль безопасности Azure - Журналирование и мониторинг
-description: Регистрация и мониторинг контроля безопасности
+description: Регистрация и мониторинг контроля безопасности Azure
 author: msmbaldwin
-manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 12/30/2019
+ms.date: 04/14/2020
 ms.author: mbaldwin
-ms.custom: security-recommendations
-ms.openlocfilehash: ae9c678d9dfca895ec74ed92bcb1b541db6b134e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: security-benchmark
+ms.openlocfilehash: e58df0997c62a131a3c9987369f8e076a62d6654
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76545506"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81408348"
 ---
 # <a name="security-control-logging-and-monitoring"></a>Контроль безопасности: ведение и мониторинг
 
@@ -27,9 +26,9 @@ ms.locfileid: "76545506"
 
 Microsoft поддерживает источники времени для ресурсов Azure, однако у вас есть возможность управлять настройками синхронизации времени для вычислительных ресурсов.
 
-Как настроить синхронизацию времени для вычислительных ресурсов Azure:
+- [Как настроить синхронизацию времени для вычислительных ресурсов Azure Windows](https://docs.microsoft.com/azure/virtual-machines/windows/time-sync)
 
-https://docs.microsoft.com/azure/virtual-machines/windows/time-sync
+- [Как настроить синхронизацию времени для вычислительных ресурсов Azure Linux](https://docs.microsoft.com/azure/virtual-machines/linux/time-sync)
 
 ## <a name="22-configure-central-security-log-management"></a>2.2: Настройка централизованного управления журналами безопасности
 
@@ -39,21 +38,15 @@ https://docs.microsoft.com/azure/virtual-machines/windows/time-sync
 
 Записи журналов через Azure Monitor для агрегирования данных безопасности, генерируемых устройствами конечных точек, сетевыми ресурсами и другими системами безопасности. В Azure Monitor используйте рабочее пространство журналов Analytics Workspace (ы) для запроса и выполнения аналитики, а также используйте учетные записи хранения Azure для долгосрочного/архивного хранения.
 
-Кроме того, вы можете включить и на борт данных Azure Sentinel или сторонних SIEM. Как на борту Azure Sentinel:
+Кроме того, вы можете включить и на борт данных Azure Sentinel или сторонних SIEM. 
 
-https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+- [Как на борту Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
 
-Как собирать журналы и метрики платформы с помощью Azure Monitor:
+- [Как собирать журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
 
-https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings
+- [Как собрать внутренние журналы хоста Azure Virtual Machine с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm)
 
-Как собрать внутренние журналы хоста Azure Virtual Machine с помощью Azure Monitor:
-
-https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm
-
-Как начать работу с Azure Monitor и сторонней интеграцией SIEM:
-
-https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/
+- [Как начать работу с Azure Monitor и сторонней интеграцией SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
 ## <a name="23-enable-audit-logging-for-azure-resources"></a>2.3: Включить журнал аудита для ресурсов Azure
 
@@ -63,13 +56,9 @@ https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/
 
 Включить диагностические настройки на ресурсах Azure для доступа к аудиторским, безопасности и диагностическим журналам. В журналы активности, которые автоматически доступны, входят источник событий, дата, пользователь, метка времени, адреса источников, адреса назначения и другие полезные элементы.
 
-Как собирать журналы и метрики платформы с помощью Azure Monitor:
+- [Как собирать журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
 
-https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings
-
-Понимание журналов и различных типов журналов в Azure:
-
-https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
+- [Понимание журналов и различных типов журналов в Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview)
 
 ## <a name="24-collect-security-logs-from-operating-systems"></a>2.4: Сбор журналов безопасности из операционных систем
 
@@ -77,15 +66,11 @@ https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
 |--|--|--|
 | 2.4 | 6.2, 6.3 | Customer |
 
-Если вычислительный ресурс принадлежит корпорации Майкрософт, то корпорация Майкрософт отвечает за его мониторинг. Если вычислительный ресурс принадлежит вашей организации, вы несете ответственность за его мониторинг. Для мониторинга ОС можно использовать Центр безопасности Azure. Данные, собранные Центром безопасности с операционной системы, включают тип и версию ОС, журналы ОС (журналы событий Windows), ходовые процессы, имя машины, IP-адреса и регистрацию в пользователя. Агент аналитики журнала также собирает файлы сбоя дампа.
+Если вычислительный ресурс принадлежит корпорации Майкрософт, то корпорация Майкрософт отвечает за его мониторинг. Если вычислительный ресурс принадлежит вашей организации, вы несете ответственность за его мониторинг. Для мониторинга ОС можно использовать Центр безопасности Azure. Данные, собранные Центром безопасности с операционной системы, включают тип и версию ОС, ОС (журналы событий Windows), процессы выполнения, имя машины, IP-адреса и зарегистрированные в пользователя. Агент аналитики журнала также собирает файлы сбоя дампа.
 
-Как собрать внутренние журналы хоста Azure Virtual Machine с помощью Azure Monitor:
+- [Как собрать внутренние журналы хоста Azure Virtual Machine с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm)
 
-https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm
-
-Поймите сбор данных Центра безопасности Azure:
-
-https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection
+- [Понимание сбора данных Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection)
 
 ## <a name="25-configure-security-log-storage-retention"></a>2.5: Настройка хранения журналов безопасности
 
@@ -95,9 +80,9 @@ https://docs.microsoft.com/azure/security-center/security-center-enable-data-col
 
 В Azure Monitor установите период хранения рабочего пространства аналитики журналов в соответствии с правилами соответствия организации. Используйте учетные записи хранения Azure для долгосрочного/архивного хранения.
 
-Как установить параметры удержания журнала для рабочих областей анализа журналов:
+- [Изменение периода хранения данных в журнале Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
 
-https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+- [Как настроить политику удержания для журналов учетных записей хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging)
 
 ## <a name="26-monitor-and-review-logs"></a>2.6: Мониторинг и обзор журналы
 
@@ -109,19 +94,13 @@ https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#chan
 
 Кроме того, вы можете включить и на борт данных Azure Sentinel или третьей стороной SIEM. 
 
-Как на борту Azure Sentinel:
+- [Как на борту Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
 
-https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+- [Понять рабочее пространство аналитики журнала](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
 
-Понять рабочее пространство аналитики журнала:
+- [Как выполнять пользовательские запросы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
 
-https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
-
-Как выполнять пользовательские запросы в Azure Monitor:
-
-https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
-
-## <a name="27-enable-alerts-for-anomalous-activity"></a>2.7: Включить оповещения об аномальной активности
+## <a name="27-enable-alerts-for-anomalous-activities"></a>2.7: Включить оповещения для аномальных действий
 
 | Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
@@ -131,17 +110,11 @@ https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
 
 Кроме того, вы можете включить и на борт данных Azure Sentinel.
 
-Как на борту Azure Sentinel:
+- [Как на борту Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
 
-https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+- [Как управлять оповещениями в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
 
-Как управлять оповещениями в Центре безопасности Azure:
-
-https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts
-
-Как упомяните данные журнала аналитики:
-
-https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
+- [Как оповестить данные журнала аналитики](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
 
 ## <a name="28-centralize-anti-malware-logging"></a>2.8: Централизованное заготовку от вредоносных программ
 
@@ -151,17 +124,11 @@ https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
 
 Включите сбор антивредоносных событий для виртуальных машин Azure и облачных служб.
 
-Как настроить Microsoft Antimalware для виртуальных машин:
+- [Как настроить Microsoft Antimalware для виртуальных машин](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmmicrosoftantimalwareextension?view=azuresmps-4.0.0)
 
-https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmmicrosoftantimalwareextension?view=azuresmps-4.0.0
+- [Как настроить Microsoft Antimalware для облачных служб](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureserviceantimalwareextension?view=azuresmps-4.0.0)
 
-Как настроить Microsoft Antimalware для облачных служб:
-
-https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureserviceantimalwareextension?view=azuresmps-4.0.0
-
-Поймите Microsoft Antimalware:
-
-https://docs.microsoft.com/azure/security/fundamentals/antimalware
+- [Понять Microsoft Antimalware](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
 
 ## <a name="29-enable-dns-query-logging"></a>2.9: Включить журнал запросов DNS
 
@@ -169,16 +136,23 @@ https://docs.microsoft.com/azure/security/fundamentals/antimalware
 |--|--|--|
 | 2,9 | 8,7 | Customer |
 
-Реализация стороннего решения для регистрации DNS.
+Внедрить стороннее решение из Azure Marketplace для решения для регистрации DNS в рамках потребностей организаций.  
 
 ## <a name="210-enable-command-line-audit-logging"></a>2.10: Включить журнал аудита командной строки
 
 | Идентификатор Azure | Идоты СНГ | Ответственность |
 |--|--|--|
-| 2.1 | 8,8 | Customer |
+| 2,10 | 8,8 | Customer |
 
-Вручную настраивать журнал консолей и транскрипцию PowerShell на основе одного узла.
+Используйте агент мониторинга Майкрософт на всех поддерживаемых виртуальных компьютерах Azure Windows для регистрации события создания процесса и поля CommandLine.   Для поддерживаемых виртуальных машин Azure Linux можно вручную настроить систему регистрации консолей на узели и использовать Syslog для хранения данных.  Кроме того, используйте рабочее пространство аналитики журналов Azure Monitor для просмотра журналов и выполнения запросов на зарегистрированных данных с виртуальных машин Azure. 
+
+- [Сбор данных в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
+
+- [Как выполнять пользовательские запросы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+
+- [Источники данных системного журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-syslog)
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Смотрите следующий контроль безопасности: [Identity и контроль доступа](security-control-identity-access-control.md)
+- Смотрите следующий контроль безопасности: [Identity и контроль доступа](security-control-identity-access-control.md)

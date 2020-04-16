@@ -3,14 +3,14 @@ title: Развертывание приложения с назначенным
 description: В этой статье показано, как развертывать приложение Service Fabric с помощью управляемого удостоверения, назначенного пользователем
 ms.topic: article
 ms.date: 12/09/2019
-ms.openlocfilehash: a5eeaf0d6420fa36c0a78f7553ddfd82197d8ec4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9aef81db7a455b72c83cf96898a0c228f1c382fd
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75610341"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415627"
 ---
-# <a name="deploy-service-fabric-application-with-a-user-assigned-managed-identity-preview"></a>Развертывание приложения Service Fabric с управляемой итогоми, назначенным пользователем (предварительный просмотр)
+# <a name="deploy-service-fabric-application-with-a-user-assigned-managed-identity"></a>Развертывание приложения Service Fabric с управляемой итогоми, назначенной пользователем
 
 Для развертывания приложения Service Fabric с управляемым имитатором необходимо развертывание через azure Resource Manager, обычно с шаблоном управления ресурсами Azure. Для получения дополнительной информации о том, как развертывать приложение Service Fabric через менеджер ресурсов Azure, смотрите в приложениях [и службах Управления как ресурсы менеджера ресурсов Azure.](service-fabric-application-arm-resource.md)
 

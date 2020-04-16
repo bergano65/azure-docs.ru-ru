@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: dsindona
-ms.openlocfilehash: 524ae203a311d538431205bf8c6498de45aeb4d1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d64c8460f5653f28b96396025f29ea13af15c8c3
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80280309"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416321"
 ---
 # <a name="configure-lead-management-for-dynamics-crm-online"></a>Настройка управления потенциальными клиентами в Dynamics CRM Online
 
@@ -63,7 +63,7 @@ ms.locfileid: "80280309"
 4.  Введите имя приложения.
 5.  В поле "Тип" выберите **Веб-приложение или API**.
 6.  Укажите URL-адрес. Это поле не требуется для работы с потенциальными клиентами, но необходимо для создания приложения.
-7. Выберите **Создать**.
+7. Нажмите кнопку **создания**.
 8.  Теперь, когда ваше приложение зарегистрировано, выберите **Свойства,** а затем выберите **копию Ид приложения.** Эту информацию о связи вы будете использовать на портале Cloud Partner.
 9.  В разделе "Свойства" настройте приложение как мультитенантное и нажмите **Сохранить**.
 
@@ -142,4 +142,4 @@ ms.locfileid: "80280309"
 Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Пример:
 
 -   **Azure Active Directory** - **идентификатор приложения** (например, *23456052-aaaa-bbbb-8662-1234df56788f*), **идентификатор каталога** (например, *12345678-8af1-4asf-1234-12234d01db47*) и **ключ приложения** (например, *1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=*).
--   **Office 365** - **URL-адрес** (например, *https://contoso.crm4.dynamics.com*), **имя пользователя** (например, *contoso\@contoso.onmicrosoft.com*) и **пароль** (например, *P\@ssw0rd*).
+-   **Office 365** - **Url** **`https://contoso.crm4.dynamics.com`**(пример: ), **`contoso\@contoso.onmicrosoft.com`** Имя **пользователя** (пример: ), и **пароль** (пример: *P\@ssw0rd*).

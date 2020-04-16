@@ -12,14 +12,17 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 07/31/2019
-ms.openlocfilehash: 5f21623af9b89bbb020063dfb72f7b60e65a6ebe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 11e76fea87c60ae2b56cc15d5827be6e1b2b5a01
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74927709"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399426"
 ---
 # <a name="execute-ssis-packages-in-azure-from-ssdt"></a>Выполнение пакетов SSIS в Azure из SSDT
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 В этой статье описывается особенность проектов интеграции серверов с поддержкой Azure s'L Server -SSIS на инструментах данных серверов S'L Server Tools (SSDT), которые позволяют запускать пакеты на Azure-SSIS Integration Runtime (IR) на фабрике данных Azure (ADF).  Эту функцию можно использовать для тестирования существующих пакетов SSIS перед тем, как снять & сдвиг/перенести их в Azure, или разработать новые пакеты SSIS для запуска в Azure.
 
 С помощью этой функции можно создать новый ИК Azure-SSIS или прикрепить существующий объект к проектам SSIS, а затем выполнить пакеты на нем.  Мы поддерживаем запуск пакетов, которые будут развернуты в каталоге SSIS (SSISDB) в модели развертывания проекта и пакеты, которые будут развернуты в файловых системах/файловых долях/файлах в модели развертывания пакетов. 

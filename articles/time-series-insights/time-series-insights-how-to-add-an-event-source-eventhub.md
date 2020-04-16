@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/30/2020
+ms.date: 04/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: c3b06289ba6ce98d4307a8255981ecdba069fdfa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 021ac5fccf4d694895ab9941bd46dd2388f49af9
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76905408"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81407460"
 ---
 # <a name="add-an-event-hub-event-source-to-your-time-series-insights-environment"></a>Добавление источника событий концентратора событий в среду "Аналитика временных рядов Azure"
 
@@ -50,7 +50,7 @@ ms.locfileid: "76905408"
 
 1. На странице **Группы потребителей** введите новое уникальное значение для параметра **Имя**.  Используйте это же имя при создании источника событий в среде "Аналитика временных рядов Azure".
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ## <a name="add-a-new-event-source"></a>Добавление нового источника событий
 
@@ -107,7 +107,7 @@ ms.locfileid: "76905408"
 
 1. Добавьте имя отдельной группы объектов-получателей Аналитики временных рядов, которое вы добавили в концентратор событий.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
    После создания источника событий Time Series Insights автоматически запускает потоковую передачу данных в среду.
 

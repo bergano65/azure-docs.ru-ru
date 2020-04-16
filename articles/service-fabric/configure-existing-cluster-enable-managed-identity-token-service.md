@@ -2,16 +2,16 @@
 title: Настройка управляемой идентификации в существующем кластере Service Fabric
 description: Вот как включить управляемую поддержку идентификаторов в существующем кластере Azure Service Fabric
 ms.topic: article
-ms.date: 12/09/2019
+ms.date: 03/11/2019
 ms.custom: sfrev
-ms.openlocfilehash: 396978546b301884087c4ea51e242258d64a6b0b
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 73c890e960f26b8e0e3fa924d9ff6b7a4cd4a4dc
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80983812"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415690"
 ---
-# <a name="configure-managed-identity-support-in-an-existing-service-fabric-cluster-preview"></a>Настройка управляемой идентификации в существующем кластере Service Fabric (предварительный просмотр)
+# <a name="configure-managed-identity-support-in-an-existing-service-fabric-cluster"></a>Настройка управляемой идентификации в существующем кластере Service Fabric
 
 Чтобы использовать [управляемые идентификаторы для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) в приложениях Service Fabric, сначала включите *службу управляемых токенов* в кластере. Эта служба отвечает за аутентификацию приложений Service Fabric с использованием управляемых идентификаторов, а также за получение токенов доступа от их имени. После включения сервиса вы можете увидеть ее в Service Fabric Explorer под разделом **System** в левом стеле, работая под **названием ткани:/System/ManagedIdentityTokenService.**
 

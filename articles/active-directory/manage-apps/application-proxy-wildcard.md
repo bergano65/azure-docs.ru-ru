@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ad2032497b4b01476389428f5a2ef4a3961a1c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e17cc4bf6f70901e3bb5d250f0a55f073ad8d99e
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79481251"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81406730"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory
 
@@ -116,7 +116,7 @@ ms.locfileid: "79481251"
 
 ### <a name="kerberos-constrained-delegation"></a>Ограниченное делегирование Kerberos
 
-Для приложений, использующих [ограниченное делегирование Kerberos в качестве метода единого входа](application-proxy-configure-single-sign-on-with-kcd.md), имя субъекта-службы, указанное для метода единого входа, также может потребовать использования подстановочного знака. Например, может именем субъекта-службы может быть `HTTP/*.adventure-works.com`. Вам по-прежнему нужно настроить отдельные имена субъектов-служб на внутренних серверах (например, `http://expenses.adventure-works.com and HTTP/travel.adventure-works.com`).
+Для приложений, использующих [ограниченное делегирование Kerberos в качестве метода единого входа](application-proxy-configure-single-sign-on-with-kcd.md), имя субъекта-службы, указанное для метода единого входа, также может потребовать использования подстановочного знака. Например, может именем субъекта-службы может быть `HTTP/*.adventure-works.com`. Вам по-прежнему нужно настроить отдельные имена субъектов-служб на внутренних серверах (например, `HTTP/expenses.adventure-works.com and HTTP/travel.adventure-works.com`).
 
 ## <a name="scenario-1-general-wildcard-application"></a>Сценарий 1. Общее приложение с подстановочным знаком
 

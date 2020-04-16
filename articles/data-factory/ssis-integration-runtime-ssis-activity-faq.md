@@ -11,14 +11,16 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 1c2db107302e4851641ef430db61ec9b29ee151f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8c85a652cde840336c51e1a5b5459f9dc591e0be
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77187481"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414685"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Выполнение пакета Troubleshoot во время выполнения интеграции SSIS
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Эта статья содержит наиболее распространенные ошибки, которые можно найти при запуске пакетов интеграции серверов S'L Server (SSIS) в момент выполнения интеграции SSIS. В нем описаны потенциальные причины и действия по устранению ошибок.
 
@@ -144,7 +146,7 @@ ms.locfileid: "77187481"
 
 Убедитесь, что соответствующий поставщик, используемый разъемами OLE DB в вашем пакете, установлен на самохотваченной интеграционной машине. Более подробную информацию можно найти на [Configure Self-Hosted IR в качестве прокси для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir)
 
-### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>Сообщение об ошибке: "Ошибка задачи: Ошибка: 2906, ErrorMessage: Выполнение пакета не удалось., Выход: "ОперацияОшибкаСообщения": "Ошибка: System.IO.FileLoadException: Не может загрузить файл или сборку 'Microsoft.WindowsAzure.Storage, Версия..., Культура-нейтральная, PublicKeyToken-31bf3856ad364e3' или одна из его зависимостей. Явное определение расположенной сборки не соответствует ссылке сборки. ..."
+### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>Сообщение об ошибке: "Ошибка задачи: Ошибка: 2906, ErrorMessage: Выполнение пакета не удалось., Выход: "ОперацияОшибодыСообщения": "Ошибка: System.IO.FileLoadException: Не может загрузить файл или сборку 'Microsoft.WindowsAzure.Storage, Версия ..., Культура-нейтральная, PublicKeyToken-31bf3856ad364e35' или один из его зависимостей. Явное определение расположенной сборки не соответствует ссылке сборки. ..."
 
 Одной из потенциальных причин является то, что время автономной интеграции не устанавливается или не обновляется должным образом. Предложите загрузить и переустановить последнюю самохозню время запуска интеграции. Более подробную информацию можно найти на [создание и настройка автономной интеграции](create-self-hosted-integration-runtime.md#installation-best-practices)
 

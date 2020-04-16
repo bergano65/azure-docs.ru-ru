@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/07/2020
 ms.author: rochakm
-ms.openlocfilehash: 243fea8fae071368a91bf482190442f15c372fc1
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 9f95677211a89c1bb2a18076741dec08e76c5d70
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81271307"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81390378"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Ошибки, связанные с ошибками Azure-to-Azure VM, ошибки репликации VM
 
@@ -404,21 +404,20 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
 ### <a name="issue-1-vm-is-attached-to-a-network-thats-already-mapped-to-a-target-network"></a>Выпуск 1: VM присоединен к сети, которая уже отображена в целевой сети
 
-Если исходный VM является частью виртуальной сети, а другой VM из той же виртуальной сети уже отображен с сетью в целевой группе ресурсов, окно списка выпадающих сетей по умолчанию недоступно (появляется затемненным).
+Во время конфигурации аварийного восстановления, если исходный VM является частью виртуальной сети, а другой VM из той же виртуальной сети уже отображен с сетью в группе целевых ресурсов, окно списка выпадающих списков выбора сети недоступно (появляется затемненным) по умолчанию.
 
 :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/unabletoselectnw.png" alt-text="Список выбора сети недоступен.":::
 
 ### <a name="issue-2-you-previously-protected-the-vm-and-then-you-disabled-the-replication"></a>Выпуск 2: Вы ранее защищали VM, а затем отключили репликацию
 
-Отключение репликации VM не удаляет сетевое отображение. Отображение должно быть удалено из хранилища служб восстановления, где был защищен VM. Перейти к **восстановлению Услуги хранилище** > **инфраструктуры инфраструктуры инфраструктуры** > **отображение инфраструктуры.**
+Отключение репликации VM не удаляет сетевое отображение. Отображение должно быть удалено из хранилища служб восстановления, где был защищен VM. Выберите **хранилище служб восстановления** и перейдите к **управлению** > **инфраструктурой** > восстановления сайта для**картирования виртуальных**машин > **Azure.**
 
 :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/delete_nw_mapping.png" alt-text="Удалить сетевое отображение.":::
 
-Целевая сеть, настроенная во время установки аварийного восстановления, может быть изменена после первоначальной настройки и после защиты VM:
+Целевая сеть, настроенная во время установки аварийного восстановления, может быть изменена после первоначальной настройки и после защиты VM. Чтобы **изменить сетевое отображение,** выберите имя сети:
 
 :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/modify_nw_mapping.png" alt-text="Измените сетевое отображение.":::
 
-Изменение картирования сети влияет на все защищенные VMs, которые используют тот же отображение сети.
 
 ## <a name="com-or-vss-error-code-151025"></a>КОМЗ или VSS (код ошибки 151025)
 

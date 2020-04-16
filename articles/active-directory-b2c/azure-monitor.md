@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 02/10/2020
-ms.openlocfilehash: acba378badb41324b2124b84833407da920a0e00
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 99e04c95156e40eed8c2b9aa88a2bee6f39e90c9
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78190064"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81392879"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
@@ -84,8 +84,8 @@ Azure AD B2C использует [мониторинг активного ка�
 
 Загрузите шаблон и файлы параметров менеджера ресурсов Azure:
 
-- [rgDelegatedResourceManagement.json](https://raw.githubusercontent.com/Azure/Azure-Lighthouse-samples/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)
-- [rgDelegatedResourceManagement.parameters.json](https://raw.githubusercontent.com/Azure/Azure-Lighthouse-samples/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)
+- [rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)
+- [rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)
 
 Затем обновите файл параметров с значениями, записанными ранее. На следующем фрагменте JSON показан пример файла параметров параметров шаблона ресурсов Azure Manager. Для `authorizations.value.roleDefinitionId`использования [встроенного значения роли](../role-based-access-control/built-in-roles.md) для `b24988ac-6180-42a0-ab88-20f7382dd24c`роли *вкладчика*.
 
@@ -213,7 +213,7 @@ Parameters              :
 
 - [Учетная запись хранения Azure](../azure-monitor/platform/resource-logs-collect-storage.md)
 - [Решения концентратов событий.](../azure-monitor/platform/resource-logs-stream-event-hubs.md)
-- [Рабочее пространство аналитики журналов](../azure-monitor/platform/resource-logs-collect-workspace.md)
+- [Рабочая область Log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md)
 
 Если вы еще не сделали этого, создайте экземпляр выбранного типа назначения в группе ресурсов, указанной в [шаблоне управления ресурсами Azure.](#create-an-azure-resource-manager-template)
 
@@ -241,7 +241,7 @@ Parameters              :
     | Отправка в Log Analytics | Название рабочего пространства. |
 
 1. Выберите **AuditLogs** и **SignInLogs**.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

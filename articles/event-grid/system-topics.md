@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 35025bf1592f1293b9326d643f76322b4af590c8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 46bceeb31fa38068c6c4f9f3a86ed556ad39effb
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79501189"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393151"
 ---
 # <a name="system-topics-in-azure-event-grid"></a>Темы системы в Azure Event Grid
 Служба Azure Event Grid создает системные темы при создании первой подписки на события для источника событий Azure. В настоящее время Event Grid не создает системные темы для тематических источников, которые были созданы до 15 марта 2020 года. Для всех источников темы, созданных в течение этой даты или после нее, Event Grid автоматически создает системные темы. В этой статье **описаны темы системы** в Azure Event Grid.
@@ -38,5 +38,5 @@ ms.locfileid: "79501189"
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи: 
 
-- [Пользовательские разделы](event-sources.md#custom-topics)
+- [Пользовательские разделы](custom-topics.md)
 - [Домены](event-domains.md)

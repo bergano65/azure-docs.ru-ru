@@ -4,14 +4,14 @@ description: Узнайте о концепциях и методах Функц
 ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
-ms.openlocfilehash: 7dd7ef3c4833fb9ffa3781f06faba4f40cd40cfb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b6af3d7ab1fdd35391c9a189162c57dfb259f2d4
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79276625"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81405354"
 ---
-# <a name="azure-functions-developers-guide"></a>Руководство для разработчиков по Функциям Azure
+# <a name="azure-functions-developer-guide"></a>Руководство разработчиков Функций Azure
 Некоторые из Функций Azure имеют ряд общих технических особенностей и компонентов вне зависимости от используемого языка или привязки. Прежде чем приступать к детальному изучению особенностей, характерных для определенного языка или привязки, ознакомьтесь с этими общими сведениями.
 
 В этой статье предполагается, что вы уже прочли статью [Общие сведения о Функциях Azure](functions-overview.md).
@@ -78,7 +78,7 @@ ms.locfileid: "79276625"
 ## <a name="repositories"></a>Репозитории
 Код функций Azure имеет вид открытого исходного кода и хранится в репозиториях GitHub:
 
-* [Проверка](https://github.com/Azure/Azure-Functions)
+* [Функции Azure](https://github.com/Azure/Azure-Functions)
 * [Хост функций Azure](https://github.com/Azure/azure-functions-host/)
 * [портал функций Azure;](https://github.com/azure/azure-functions-ux)
 * [шаблоны функций Azure;](https://github.com/azure/azure-functions-templates)
@@ -98,7 +98,7 @@ ms.locfileid: "79276625"
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в следующих ресурсах:
 
-* [Триггеры и привязки функций Azure](functions-triggers-bindings.md)
+* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
 * [Как программировать и тестировать функции Azure в локальной среде](./functions-develop-local.md)
 * [Лучшие практики для функций Azure](functions-best-practices.md)
 * [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md)

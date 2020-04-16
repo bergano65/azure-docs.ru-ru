@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 08/29/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 933a175213afd81c81eb237a2b2dd4c3e24e3315
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 12f91633834ee98582eaad886b48eb8619378265
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633155"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81411675"
 ---
 # <a name="design-decisions-and-coding-techniques-for-a-synapse-sql-pool-in-azure-synapse-analytics"></a>Проектные решения и методы кодирования для пула Synapse S'L в Azure Synapse Analytics 
  В этой статье вы найдете дополнительные ресурсы, которые помогут вам лучше понять ключевые проектные решения, рекомендации и методы кодирования для пула S'L в Azure Synapse.
@@ -23,7 +23,7 @@ ms.locfileid: "80633155"
 ## <a name="key-design-decisions"></a>Основные проектные решения
 В следующих статьях освещаются концепции и проектные решения по созданию распределенного хранилища данных с использованием возможностей пула S'L в Azure Synapse:
 
-* [Соединения](sql-data-warehouse-connect-overview.md)
+* [Соединения](../sql/connect-overview.md)
 * [Параллелизма](resource-classes-for-workload-management.md)
 * [Операций](sql-data-warehouse-develop-transactions.md)
 * [пользовательские схемы](sql-data-warehouse-develop-user-defined-schemas.md)

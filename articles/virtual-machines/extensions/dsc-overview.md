@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: dcb63031e6c033ce2372dc05e588b0f54cb1609f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c61ba0840b75bff10af1d802a9b90c922ef1f12f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294818"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415874"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "80294818"
 - RegistrationKey - общая тайна, используемая для регистрации узлов в сервисе
 - NodeConfigurationName - название конфигурации узлов (MOF), чтобы вытащить из службы для настройки роли сервера
 
-Эту информацию можно увидеть на [портале Azure](../../automation/automation-dsc-onboarding.md#onboard-a-vm-using-azure-portal) или вы можете использовать PowerShell.
+Эту информацию можно увидеть на [портале Azure](../../automation/automation-dsc-onboarding.md#onboard-vms-by-using-the-azure-portal) или вы можете использовать PowerShell.
 
 ```powershell
 (Get-AzAutomationRegistrationInfo -ResourceGroupName <resourcegroupname> -AutomationAccountName <accountname>).Endpoint

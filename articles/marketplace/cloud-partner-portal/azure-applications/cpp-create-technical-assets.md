@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dsindona
-ms.openlocfilehash: 041b2133ed63a906d3fea3ab67890a0057151b9b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 59f9fecb3d949d9cdf48719e6329b066d9eb3fc5
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80285271"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393535"
 ---
 # <a name="prepare-your-azure-application-technical-assets"></a>Подготовка технических ресурсов для приложения Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "80285271"
 
   - [Шаблоны Azure кикстарт](https://azure.microsoft.com/documentation/templates/)
   - [Шаблоны быстрого запуска Azure в GitHub](https://github.com/azure/azure-quickstart-templates)
-  - [Публикация определения приложения](https://docs.microsoft.com/azure/managed-applications/publish-managed-app-definition-quickstart)
+  - [Публикация определения приложения](https://docs.microsoft.com/azure/managed-applications/publish-service-catalog-app)
   - [Развертывание приложения из каталога служб](https://docs.microsoft.com/azure/managed-applications/deploy-service-catalog-quickstart)
 
   
@@ -43,8 +43,8 @@ ms.locfileid: "80285271"
 
   - Примеры:
 
-    - [Лазурный CLI](https://docs.microsoft.com/azure/managed-applications/cli-samples)
-    - [Лазурная силаШелл](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
+    - [Azure CLI](https://docs.microsoft.com/azure/managed-applications/cli-samples)
+    - [Azure PowerShell](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
     - [Решения для управляемых приложений](https://docs.microsoft.com/azure/managed-applications/sample-projects)
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
@@ -63,12 +63,12 @@ ms.locfileid: "80285271"
 
 Выберите одну или обе следующие среды создания скриптов, которые понадобятся вам при управлении приложением Azure:
 
-- [Лазурная силаШелл](https://docs.microsoft.com/powershell/azure/overview)
-- [Лазурный CLI](https://docs.microsoft.com/cli/azure)
+- [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
+- [Azure CLI](https://docs.microsoft.com/cli/azure)
 
 Мы рекомендуем добавить следующие инструменты в среду разработки:
 
-- [Исследователь хранения azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+- [Обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
 - [Visual Studio Code](https://code.visualstudio.com/) со следующими расширениями:
 
   - Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).

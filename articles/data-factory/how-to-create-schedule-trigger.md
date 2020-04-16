@@ -11,14 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/23/2018
-ms.openlocfilehash: 127db8a484b9624586dea70c44af3bc84b3fc84e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 100f95c20743f70bb4a9f2ac7e74853eab80f3e9
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73673771"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414486"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Создание триггера, который запускает конвейер по расписанию
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 В этой статье описан триггер расписания и шаги по его созданию, запуску и мониторингу. Сведения о других типах триггеров см. в статье [Выполнение конвейера и триггеры в фабрике данных Azure](concepts-pipeline-execution-triggers.md).
 
 При создании триггера расписания нужно указать для него расписание (дату начала, интервал повторения, дату окончания и т. д.) и связать его с конвейером. Конвейеры и триггеры имеют связь "многие ко многим". Несколько триггеров могут запускать один конвейер. Один триггер может запускать несколько конвейеров.
@@ -401,4 +403,4 @@ ms.locfileid: "73673771"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#triggers).
+Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#trigger-execution).

@@ -11,19 +11,19 @@ ms.date: 08/15/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e986515a911cf1bbd88dfc73c56efcc6e81826d6
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 174ee07e389e598fed6ed8487e60303fbce81f77
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351401"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416046"
 ---
 # <a name="connect-to-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Подключение к аналитике Azure Synapse с помощью Visual Studio и SSDT
 > [!div class="op_single_selector"]
-> * [Мощность BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
+> * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Машинное обучение Azure](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
 > * [Visual Studio](sql-data-warehouse-query-visual-studio.md)
-> * [Sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 
+> * [Sqlcmd](../sql/get-started-connect-sqlcmd.md) 
 > * [SSMS](sql-data-warehouse-query-ssms.md)
 > 
 > 
@@ -35,7 +35,7 @@ ms.locfileid: "80351401"
 
 * Существующий пул S'L. Чтобы создать его, [см.](create-data-warehouse-portal.md)
 * Расширение SSDT для Visual Studio. Если у вас есть Visual Studio, вы, вероятно, уже SSDT для визуальной студии. Инструкции по установке и доступные варианты установки см. в статье [Установка Visual Studio 2015 и SSDT для хранилища данных SQL](sql-data-warehouse-install-visual-studio.md).
-* Полное имя сервера SQL Server. Чтобы найти эту информацию, [перейдите на номер Connect to s-L.](sql-data-warehouse-connect-overview.md)
+* Полное имя сервера SQL Server. Чтобы найти эту информацию, [перейдите на номер Connect to s-L.](../sql/connect-overview.md)
 
 ## <a name="1-connect-to-your-sql-pool"></a>1. Подключитесь к пулу S'L
 1. Откройте Visual Studio 2019.

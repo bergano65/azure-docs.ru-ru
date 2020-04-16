@@ -1,20 +1,20 @@
 ---
-title: Схема событий подписки для службы "Сетка событий Azure"
+title: Подписка Azure как источник Event Grid
 description: Описание свойств для событий подписки, используемых со службой "Сетка событий Azure"
 services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: reference
-ms.date: 01/12/2019
+ms.date: 04/09/2020
 ms.author: spelluru
-ms.openlocfilehash: 4994063dfc3bce88489f70969c06bf36b591f907
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fa88fe4e05ac968588a65d67a2f075bcae48ba7a
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60561682"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393232"
 ---
-# <a name="azure-event-grid-event-schema-for-subscriptions"></a>Схема событий службы "Сетка событий Azure" для подписок
+# <a name="azure-subscription-as-an-event-grid-source"></a>Подписка Azure как источник сетки событий
 
 В этой статье описаны свойства и схема для событий подписки Azure.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
@@ -28,9 +28,10 @@ ms.locfileid: "60561682"
 
 Тема события — это идентификатор ресурса, который является целевым объектом операции. Для фильтрации событий ресурса укажите идентификатор ресурса при создании подписки на события. Чтобы выполнить фильтрацию по типу ресурсов, используйте значение в следующем формате: `/subscriptions/<subscription-id>/resourcegroups/<resource-group>/providers/Microsoft.Compute/virtualMachines`
 
-Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#azure-subscriptions).
 
-## <a name="available-event-types"></a>Доступные типы событий
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
+
+### <a name="available-event-types"></a>Доступные типы событий
 
 Подписки Azure создают события управления из Azure Resource Manager, например при создании виртуальной машины или удалении учетной записи хранения.
 
@@ -46,7 +47,7 @@ ms.locfileid: "60561682"
 | Microsoft.Resources.ResourceWriteFailure | Возникает при неудачном создании или обновлении. |
 | Microsoft.Resources.ResourceWriteSuccess | Возникает при успешном создании или обновлении. |
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 В следующем примере показана схема события **ResourceWriteSuccess**. Та же схема используется для событий **ResourceWriteFailure** и **ResourceWriteCancel** с разными значениями для `eventType`.
 
@@ -230,7 +231,7 @@ ms.locfileid: "60561682"
 }]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -259,6 +260,14 @@ ms.locfileid: "60561682"
 | status | строка | Состояние операции. |
 | subscriptionId | строка | Идентификатор подписки ресурса. |
 | tenantId | строка | Идентификатор клиента ресурса. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title |Описание  |
+|---------|---------|
+| [Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams](ensure-tags-exists-on-new-virtual-machines.md) |Создайте виртуальную машину, которая отправляет событие. Это событие вызывает модуль runbook службы автоматизации, который присваивает виртуальной машине тег и отправляет сообщение в канал Microsoft Teams. |
+| [Подписка на события через портал](subscribe-through-portal.md) | Использование портала для создания подписки на события, связанные с подпиской Azure. |
+| [Создание подписки на события, связанные с подпиской Azure, с использованием Azure CLI](./scripts/event-grid-cli-azure-subscription.md) |Пример сценария, который создает подписку Сетки событий для подписки Azure и отправляет события в веб-перехватчик. |
+| [Создание подписки на события, связанные с подпиской Azure, с помощью PowerShell](./scripts/event-grid-powershell-azure-subscription.md)| Пример сценария, который создает подписку Сетки событий для подписки Azure и отправляет события в веб-перехватчик. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,25 +1,27 @@
 ---
-title: Схема Реестра контейнеров Сетки событий Azure
+title: Реестр контейнеров Azure как источник сетки событий
 description: Описывает свойства, которые предоставляются для событий реестра контейнеров с помощью Azure Event Grid
 services: event-grid
 author: spelluru
 manager: timlt
 ms.service: event-grid
-ms.topic: reference
-ms.date: 03/12/2019
+ms.topic: conceptual
+ms.date: 04/09/2020
 ms.author: spelluru
-ms.openlocfilehash: c5998ff428c4b6f4c1f7a4087c6ccb27d93773eb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7e33feb04edf42f1e2a32b9b8c8e2fd214692f31
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60345470"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393364"
 ---
-# <a name="azure-event-grid-event-schema-for-container-registry"></a>Схема событий службы "Сетка событий Azure" для Реестра контейнеров
+# <a name="azure-container-registry-as-an-event-grid-source"></a>Реестр контейнеров Azure как источник сетки событий
 
 В этой статье описаны свойства и схема для событий Реестра контейнеров.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
-## <a name="available-event-types"></a>Доступные типы событий
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
+
+### <a name="available-event-types"></a>Доступные типы событий
 
 Реестр контейнеров Azure излучает следующие типы событий:
 
@@ -30,7 +32,7 @@ ms.locfileid: "60345470"
 | Microsoft.containerregistry.ChartPushed | Поднят при нажатии диаграммы Helm. |
 | Microsoft.containerregistry.ChartDeleted | Поднятпри штурвал удаляется. |
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 В примере ниже показана схема события передачи образа. 
 
@@ -151,7 +153,7 @@ ms.locfileid: "60345470"
 }]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -198,6 +200,12 @@ ms.locfileid: "60345470"
 | host | строка | Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах. |
 | method | строка | Метод запроса, который создал событие. |
 | useragent | строка | Заголовок user agent из запроса. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title |Описание  |
+|---------|---------|
+| [Быстрое руководство по отправке событий реестра контейнеров](../container-registry/container-registry-event-grid-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Содержит сведения об отправке событий Реестра контейнеров с помощью Azure CLI. |
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,12 +3,12 @@ title: Диаграммы хелт магазина
 description: Узнайте, как хранить диаграммы Helm для приложений Kubernetes с помощью репозиториев в реестре контейнеров Azure
 ms.topic: article
 ms.date: 03/20/2020
-ms.openlocfilehash: 6304486ac493e235ed74f26ab4be4f843ef52513
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3f1a68258b758380a66b63e3c3137f1d460d288c
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131480"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399377"
 ---
 # <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Нажмите и потяните диаграммы Helm в реестр контейнеров Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "80131480"
 - **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портала Azure](container-registry-get-started-portal.md) или [Azure CLI.](container-registry-get-started-azure-cli.md)
 - **Версия клиента helm 3.1.0** `helm version` или более поздно - Бегите для того чтобы найти вашу в настоящее время версию. Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install].
 - **Кластер Kubernetes,** где вы установите диаграмму Helm. При необходимости создайте [кластер службы Azure Kubernetes.][aks-quickstart] 
-- **Версия Azure CLI 2.0.71 или позже** - Запуск, `az --version` чтобы найти версию. Если вам нужно установить или обновить, [см.][azure-cli-install]
+- **Версия Azure CLI 2.0.71 или позже** - Запуск, `az --version` чтобы найти версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ### <a name="high-level-workflow"></a>Рабочий процесс высокого уровня
 
@@ -77,18 +77,21 @@ helm create hello-world
 В качестве основного примера `templates` извинайте каталог в папку и сначала удалите содержимое:
 
 ```console
+cd hello-world/templates
 rm -rf *
 ```
 
 В `templates` папке создайте `configmap.yaml` файл, вызванный следующим содержимым:
 
-```yml
+```console
+cat <<EOF > configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: hello-world-configmap
 data:
   myvalue: "Hello World"
+EOF
 ```
 
 Подробнее о создании и запуске этого примера [можно](https://helm.sh/docs/chart_template_guide/getting_started/) узнать в документах Helm.
@@ -282,7 +285,7 @@ az acr repository delete --name mycontainerregistry --image helm/hello-world:v1
 
 - **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портала Azure](container-registry-get-started-portal.md) или [Azure CLI.](container-registry-get-started-azure-cli.md)
 - **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)**. Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости создайте [кластер службы Azure Kubernetes.][aks-quickstart] Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install-v2].
-- **Azure CLI версии 2.0.46 или более поздней.** Выполните команду `az --version`, чтобы получить сведения о версии. Если вам нужно установить или обновить, [см.][azure-cli-install]
+- **Azure CLI версии 2.0.46 или более поздней.** Выполните команду `az --version`, чтобы получить сведения о версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ### <a name="high-level-workflow"></a>Рабочий процесс высокого уровня
 

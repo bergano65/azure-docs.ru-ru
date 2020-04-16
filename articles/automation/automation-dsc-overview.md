@@ -1,27 +1,27 @@
 ---
 title: Обзор службы "Настройка состояния службы автоматизации Azure"
-description: Обзор конфигурации состояния автоматизации Azure (DSC), ее условий и известных проблем
+description: Данная статья представляет собой обзор конфигурации состояния автоматизации Azure (DSC), ее терминов и известных проблем.
 keywords: PowerShell DSC, настройка требуемого состояния, PowerShell DSC для Azure
 services: automation
 ms.service: automation
 ms.subservice: dsc
 author: mgoedtel
 ms.author: magoedte
-ms.date: 11/06/2018
+ms.date: 04/15/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: afceb11180662416aa4953b8b58ef03ffaa70eec
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 1166f5a1d7586c54255120a656b060c93f842fd9
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383189"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81406179"
 ---
 # <a name="state-configuration-overview"></a>Общие сведения о State Configuration
 
-Система Azure Automation State Configuration — это служба Azure, которая позволяет писать, управлять и компилировать [конфигурации](/powershell/scripting/dsc/configurations/configurations)PowerShell Desired State Configuration (DSC). Служба также импортирует [DSC Ресурсы](/powershell/scripting/dsc/resources/resources)и назначает конфигурации для целевых узлов, все в облаке.
+Система Azure Automation State Configuration — это служба Azure, которая позволяет писать, управлять и компилировать [конфигурации](/powershell/scripting/dsc/configurations/configurations)PowerShell Desired State Configuration (DSC). Служба также импортирует [ресурсы DSC](/powershell/scripting/dsc/resources/resources) и присваивает конфигурации целевым узлам, все в облаке.
 
-## <a name="why-use-azure-automation-state-configuration"></a>Преимущества службы "Настройка состояния службы автоматизации Azure"
+## <a name="why-use-azure-automation-state-configuration"></a>Для чего используется State Configuration службы автоматизации Azure?
 
 Служба "Настройка состояния службы автоматизации Azure" предоставляет ряд преимуществ по сравнению с использованием DSC за пределами Azure.
 
@@ -29,19 +29,19 @@ ms.locfileid: "81383189"
 
 Конфигурация состояния автоматизации Azure обеспечивает сервер DSC pull, похожий на [Функцию Windows DSC-Service.](/powershell/scripting/dsc/pull-server/pullserver) Целевые узлы могут автоматически получать конфигурации, соответствовать желаемому состоянию и сообщать об их соответствии. Встроенный опрашивающий сервер в службе автоматизации Azure избавляет от необходимости устанавливать и обслуживать собственный опрашивающий сервер. Служба автоматизации Azure может работать с виртуальными и физическими машинами под управлением Windows или Linux, размещенными в облаке или локально.
 
-### <a name="management-of-all-your-dsc-artifacts"></a>Управление всеми артефактами DSC
+### <a name="manage-all-your-dsc-artifacts"></a>Управление всеми артефактами DSC
 
 Конфигурация состояния автоматизации Azure приносит тот же уровень управления [в конфигурацию состояния PowerShell Desired,](/powershell/scripting/dsc/overview/overview) что и для скриптов PowerShell. С портала Azure или от PowerShell вы можете управлять всеми конфигурациями, ресурсами и целевыми узлами DSC.
 
 ![Снимок экрана со страницей службы автоматизации Azure](./media/automation-dsc-overview/azure-automation-blade.png)
 
-### <a name="import-of-reporting-data-into-azure-monitor-logs"></a>Импорт отчетных данных в журналы Azure Monitor
+### <a name="import-reporting-data-into-azure-monitor-logs"></a>Данные об отчетности об импорте в журналах Мониторинга Azure
 
-Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Смотрите [данные о конфигурации состояния forward Azure Automation в журналах Azure Monitor.](automation-dsc-diagnostics.md)
+Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Для получения дополнительной информации смотрите [в журнале «Передний лазурный автомат автоматизация»](automation-dsc-diagnostics.md)—отчетные данные о состоянии автоматизации azure — в журналах Azure Monitor.
 
-## <a name="prerequisites-for-using-azure-automation-state-configuration"></a>Предпосылки для использования конфигурации состояния автоматизации Azure
+## <a name="prerequisites"></a>Предварительные требования
 
-Пожалуйста, обратите сьязание следующих требований при использовании конфигурации состояния автоматизации Azure для DSC.
+Рассмотрим следующие требования при использовании конфигурации состояния автоматизации Azure для DSC.
 
 ### <a name="operating-system-requirements"></a>Требования к операционной системе
 
@@ -57,13 +57,13 @@ ms.locfileid: "81383189"
 - Windows 7
 
 >[!NOTE]
->Автономный продукт [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) SKU не содержит реализации DSC. Таким образом, им не может управлять PowerShell DSC или Azure Automation State Configuration.
+>Поскольку автономный продукт [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) SKU не содержит реализации DSC, им не может управлять Сяодартовая система управления PowerShell DSC или Azure Automation State Configuration.
 
 Для узлов под управлением Linux расширение DSC Linux поддерживает все дистрибутивы Linux, перечисленные в [поддерживаемых дистрибутивах Linux.](https://github.com/Azure/azure-linux-extensions/tree/master/DSC#4-supported-linux-distributions)
 
 ### <a name="dsc-requirements"></a>Требования DSC
 
-Для всех узлов Windows, работающих в Azure, [WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) устанавливается во время посадки. Для узлов под управлением Windows Server 2012 и Windows 7 [включен WinRM.](https://docs.microsoft.com/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency)
+Для всех узлов Windows, работающих в Azure, во время посадки установлена [платформа управления Windows 5.1.](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) Для узлов под управлением Windows Server 2012 и Windows 7 [включен WinRM.](https://docs.microsoft.com/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency)
 
 Для всех узлов Linux, работающих в Azure, [PowerShell DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) устанавливается во время посадки.
 
@@ -76,20 +76,20 @@ ms.locfileid: "81383189"
 * Глобальный URL-адрес губернатора США Вирджинии:**.azure-automation.us**
 * Служба агента: **https://\<\>workspaceId .agentsvc.azure-automation.net**
 
-Если вы используете ресурсы DSC, которые взаимодействуют между узлами, такие как [ресурсы WaitFor,](https://docs.microsoft.com/powershell/scripting/dsc/reference/resources/windows/waitForAllResource)необходимо также разрешить трафик между узлами. Ознакомьтесь с документацией для каждого ресурса DSC, чтобы понять эти сетевые требования.
+Если вы используете ресурсы DSC, которые взаимодействуют между узлами, такие как [ресурсы WaitFor,](https://docs.microsoft.com/powershell/scripting/dsc/reference/resources/windows/waitForAllResource)необходимо также разрешить связь между узлами. Чтобы понять эти сетевые требования, см.
 
 #### <a name="proxy-support"></a>Поддержка прокси
 
-Прокси-поддержка агента DSC доступна в версии Windows 1809 и позже. Эта опция включена путем `ProxyURL` `ProxyCredential` установки значений для и в [сценарии метаконфигурации,](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) используемого для регистрации узлов.
+Прокси-поддержка агента DSC доступна в версии Windows 1809 и позже. Эту опцию можно включить, `ProxyURL` установив `ProxyCredential` значения для сценария [метаконфигурации,](automation-dsc-onboarding.md#generate-dsc-metaconfigurations) который используется для регистрации узлов.
 
 >[!NOTE]
->Конфигурация состояния автоматизации Azure не обеспечивает поддержку прокси-серверов DSC для предыдущих версий Windows.
+>Конфигурация состояния автоматизации Azure не предоставляет прокси-поддержку DSC для более ранних версий Windows.
 
-Для узлов Linux агент DSC поддерживает прокси `http_proxy` и использует переменную для определения URL.
+Для узлов Linux агент DSC поддерживает прокси-сервер `http_proxy` и использует переменную для указания URL.
 
 #### <a name="azure-automation-state-configuration-network-ranges-and-namespace"></a>Диапазоны и пространство имен Azure Automation Автоматизация состояния
 
-При определении исключений рекомендуется использовать указанные ниже адреса. Для IP-адресов можно загрузить [IP Ranges Ip Ranges Центра обработки данных Microsoft Azure.](https://www.microsoft.com/download/details.aspx?id=41653) Файл обновляется еженедельно и содержит развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
+При определении исключений мы рекомендуем использовать IP-адреса, перечисленные в следующей таблице. Для IP-адресов можно загрузить файл XML Центра [загрузки Данных Microsoft Azure Datacenter В](https://www.microsoft.com/download/details.aspx?id=41653) Центре загрузки. Этот файл содержит развернутые в настоящее время диапазоны и любые предстоящие изменения в диапазонах IP. Он обновляется еженедельно.
 
 При наличии учетной записи службы автоматизации, определенной для конкретного региона, можно ограничить обмен данными с таким региональным центром обработки данных. В таблице ниже содержатся записи DNS для каждого региона.
 
@@ -109,21 +109,18 @@ ms.locfileid: "81383189"
 | южная часть Соединенного Королевства | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
 | US Gov (Вирджиния) | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
 
-Для списка IP-адресов региона вместо его имен скачайте XML-файл [IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653) из Центра загрузки Майкрософт и ознакомьтесь с ним.
-
 > [!NOTE]
 > В XML-файле IP-адресов центра обработки данных Azure приводится список диапазонов IP-адресов, используемых в центрах обработки данных Microsoft Azure. Этот файл включает диапазоны вычисления, хранения и SQL.
 >
->Обновленный файл публикуется еженедельно. Он отражает развернутые в настоящее время диапазоны и все предстоящие изменения IP-адресов. Новые диапазоны, появившиеся в файле, не будут использоваться в центрах обработки данных по крайней мере одну неделю. Скачивайте новый XML-файл каждую неделю Затем обновите свой сайт, чтобы правильно идентифицировать службы, работающие в Azure. 
+>Обновленный файл публикуется еженедельно. Он отражает развернутые в настоящее время диапазоны и все предстоящие изменения IP-адресов. Новые диапазоны, появившиеся в файле, не будут использоваться в центрах обработки данных по крайней мере одну неделю. Это хорошая идея, чтобы загрузить новый файл XML каждую неделю. Затем можно обновить свой сайт, чтобы правильно идентифицировать службы, работающие в Azure. 
 
-Пользователям Azure ExpressRoute следует обратить внимание, что этот файл используется для того, чтобы обновлять протокол BGP в пространстве Azure в первую неделю каждого месяца.
+Если вы являетесь пользователем Azure ExpressRoute, обратите внимание, что этот файл используется для обновления рекламы пространства Azure Border Gateway Protocol (BGP) в первую неделю каждого месяца.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы начать использовать DSC в конфигурации состояния автоматизации Azure, см. [Начало работы с конфигурацией состояния azure Automation State Configuration.](automation-dsc-getting-started.md)
-- Чтобы узнать, как на [Onboarding machines for management by Azure Automation State Configuration](automation-dsc-onboarding.md)бортовых узлах, см.
-- Чтобы узнать о компиляции конфигураций DSC, чтобы можно было назначить их целевым узлам, см. [Конфигурации компиляции в конфигурации состояния azure Automation.](automation-dsc-compile.md)
-- Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-)
+- Чтобы начать использовать DSC в конфигурации состояния автоматизации Azure, [см.](automation-dsc-getting-started.md)
+- Чтобы узнать, как на бортовых узлах, см [бортовые машины для управления Azure Automation State Configuration.](automation-dsc-onboarding.md)
+- Чтобы узнать о компиляции конфигураций DSC, чтобы можно было назначить их целевым узлам, см. [конфигурации компиляции в конфигурации состояния azure Automation State Configuration.](automation-dsc-compile.md)
+- Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation)
 - Для получения информации о ценах на цены [см.](https://azure.microsoft.com/pricing/details/automation/)
-- Чтобы увидеть пример использования конфигурации состояния автоматизации Azure в непрерывном конвейере развертывания, [см. Непрерывное развертывание с помощью конфигурации состояния azure Automation и Chocolatey.](automation-dsc-cd-chocolatey.md)
+- Например, использование конфигурации состояния azure Automation в [Continuous deployment to virtual machines using Azure Automation State Configuration and Chocolatey](automation-dsc-cd-chocolatey.md)непрерывном конвейере развертывания см.

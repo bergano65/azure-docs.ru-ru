@@ -16,12 +16,12 @@ ms.date: 05/21/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 466e1ce0efbdec3f5475634f3857d02554d93d98
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4d773e6302edf0b799e6dfccc702750a9cc74f60
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80049127"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81406700"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Проблема при установке соединителя агента прокси приложения
 
@@ -50,20 +50,69 @@ ms.locfileid: "80049127"
 
 3.  Откройте браузер (отдельную вкладку), перейдите к веб-странице `https://login.microsoftonline.com` и убедитесь, что можете войти на эту страницу.
 
-## <a name="verify-machine-and-backend-components-support-for-application-proxy-trust-cert"></a>Проверка того, поддерживают ли внутренние компоненты и компьютер сертификат доверия прокси приложения
+## <a name="verify-machine-and-backend-components-support-for-application-proxy-trust-certificate"></a>Поддержка компонентов машины и бэкэнда для сертификата доверия приложения Proxy
 
-**Цель:** убедитесь, что компьютер соединителя, внутренний прокси-сервер и брандмауэр поддерживают сертификат, созданный соединителем для будущих отношений доверия.
+**Цель:** Убедитесь, что разъем машины, бэкэнд прокси и брандмауэр может поддерживать сертификат, созданный разъем для будущего доверия и что сертификат действителен.
 
 >[!NOTE]
 >Соединитель пытается создать сертификат SHA512, поддерживаемый TLS1.2. Если машина или бэкэнд брандмауэр и прокси-сервер не поддерживают TLS1.2, установка завершается сбой.
 >
 >
 
-**Для решения проблемы:**
+**Просмотрите необходимые предварительные требования:**
 
 1.  Убедитесь, что компьютер поддерживает TLS1.2. Для этого требуется версия Windows после 2012 R2. Если на компьютере соединителя используется версия 2012 R2 или более ранняя, убедитесь, что на нем установлены следующие пакеты обновления: <https://support.microsoft.com/help/2973337/sha512-is-disabled-in-windows-when-you-use-tls-1.2>
 
 2.  Обратитесь к администратору сети и попросите убедиться, что внутренний прокси-сервер и брандмауэр не блокируют SHA512 для исходящего трафика.
+
+**Для проверки сертификата клиента:**
+
+Проверьте отпечаток пальца текущего сертификата клиента. Хранилище сертификатов можно найти в %ProgramData% -Microsoft AAD Приложение Прокси-коннектор
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<ConnectorTrustSettingsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CloudProxyTrust>
+    <Thumbprint>4905CC64B2D81BBED60962ECC5DCF63F643CCD55</Thumbprint>
+    <IsInUserStore>false</IsInUserStore>
+  </CloudProxyTrust>
+</ConnectorTrustSettingsFile>
+```
+
+Вот возможные значения и значения **IsInUserStore:**
+
+- **ложное** - Сертификат клиента был создан во время установки или регистрации, инициированной командой Register-AppProxyConnector. Хранится в личном контейнере в магазине сертификатов местной машины. 
+
+Выполните действия по проверке сертификата:
+
+1. Выполнить **certlm.msc**
+2. В консоли управления расширить личный контейнер и нажмите на сертификаты
+3. Найдите сертификат, выданный **connectorregistrationca.msappproxy.net**
+
+- **правда** - Автоматически обновленный сертификат хранится в личном контейнере в магазине сертификатов пользователя Сетевой службы. 
+
+Выполните действия по проверке сертификата:
+
+1. Скачать [PsTools.zip](https://docs.microsoft.com/sysinternals/downloads/pstools)
+2. Извлеките [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec) из пакета и запустите **psexec -i -u "nt authority'network service" cmd.exe** из повышенной командной подсказки.
+3. Выполнить **certmgr.msc** в недавно появившейся командной подсказке
+2. В консоли управления расширить личный контейнер и нажмите на сертификаты
+3. Найдите сертификат, выданный «connectorregistrationca.msappproxy.ne
+
+**Для продления сертификата клиента:**
+
+Если соединитель несколько месяцев не подключается к службе, возможно, его сертификаты устарели. Сбой в продлении сертификата приводит к просроченной сертификации. Это делает службу разъема, чтобы остановить работу. Событие 1000 записано в админ-журнале разъема:
+
+"Перерегистрация коннектора не удалась: истек срок действия сертификата доверия Connector. Запустите PowerShell cmdlet Register-AppProxyConnectconnector на компьютере, на котором работает коннектор для перерегистрации вашего разъема".
+
+В этом случае, удалить и переустановить разъем, чтобы вызвать регистрацию или вы можете запустить следующие команды PowerShell:
+
+```
+Import-module AppProxyPSModule
+Register-AppProxyConnector
+```
+
+Чтобы узнать больше о команде Register-AppProxyConnector, пожалуйста, смотрите [Создать без присмотра сценарий установки для разъема прокси-сервера Приложения Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-register-connector-powershell)
 
 ## <a name="verify-admin-is-used-to-install-the-connector"></a>Проверка прав администратора у пользователя, устанавливающего соединитель
 

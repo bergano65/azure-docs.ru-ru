@@ -11,15 +11,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: ffb610634399594788afcb9b600ba00c6803dfdd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ee2e59e794cf34a8fd5043a56867a81c2537f1ae
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77207031"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415310"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
-
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 Действие функции Azure позволяет запускать [Функции Azure](../azure-functions/functions-overview.md) в конвейере Фабрики данных. Чтобы запустить функцию Azure, необходимо создать подключение к связанной службе и действие, определяющее функцию Azure, которую вы планируете выполнить.
 
 Общие сведения об этой функции и ее демонстрацию см. в следующем 8-минутном видео:
@@ -39,7 +39,7 @@ ms.locfileid: "77207031"
 
 ## <a name="azure-function-activity"></a>Действие функции Azure
 
-| **Свойство**  | **Описание** | **Допустимые значения** | **Обязательно** |
+| **Свойство**  | **Описание** | **Разрешенные значения** | **Обязательно** |
 | --- | --- | --- | --- |
 | name  | Имя действия в конвейере.  | Строка | да |
 | type  | Тип действия – "AzureFunctionActivity" | Строка | да |

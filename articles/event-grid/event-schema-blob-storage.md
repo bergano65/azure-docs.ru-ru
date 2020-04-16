@@ -1,29 +1,30 @@
 ---
-title: Схема событий службы "Сетка событий Azure" для хранилища больших двоичных объектов
+title: Хранение Azure Blob как источник сетки событий
 description: Описание свойств событий хранилища больших двоичных объектов в службе "Сетка событий Azure"
 services: event-grid
 author: spelluru
 ms.service: event-grid
-ms.topic: reference
-ms.date: 01/17/2019
+ms.topic: conceptual
+ms.date: 04/09/2020
 ms.author: spelluru
-ms.openlocfilehash: 71aa937536f35c9af44adb5822ce7a2bb8f3a9eb
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: cfc6e4790b67137b423cc90d93874d4914f81251
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80756004"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393378"
 ---
-# <a name="azure-event-grid-event-schema-for-blob-storage"></a>Схема событий службы "Сетка событий Azure" для хранилища BLOB-объектов
+# <a name="azure-blob-storage-as-an-event-grid-source"></a>Хранение Azure Blob как источник сетки событий
 
-В этой статье описаны свойства и схема событий хранилища BLOB-объектов.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+В этой статье описаны свойства и схема событий хранилища BLOB-объектов.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). Он также дает вам список быстрых стартов и учебников для использования Azure Blob Storage в качестве источника событий.
 
-Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#storage).
 
 >[!NOTE]
 > Только учетные записи хранения рода **StorageV2 (общая цель v2)**, **BlockBlobStorage**, и **BlobStorage** поддержки событий интеграции. **Хранилище (версия 1, общего назначения)***не* поддерживает интеграцию со службой "Сетка событий".
 
-## <a name="list-of-events-for-blob-rest-apis"></a>Список мероприятий для APIs Blob REST
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
+
+### <a name="list-of-events-for-blob-rest-apis"></a>Список мероприятий для APIs Blob REST
 
 Эти события срабатывают, когда клиент создает, заменяет или удаляет blob, вызывая APIs Blob REST.
 
@@ -35,7 +36,7 @@ ms.locfileid: "80756004"
 > [!NOTE]
 > Если вы хотите убедиться, что событие **Microsoft.Storage.BlobCreated** срабатывает только тогда, когда `CopyBlob` `PutBlob`Block `PutBlockList` Blob полностью зафиксирован, отфильтруйте событие для вызовов , и REST API. Эти вызовы API вызывают событие **Microsoft.Storage.BlobCreated** только после того, как данные полностью зафиксированы в Block Blob. Чтобы узнать, как создать фильтр, [см.](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)
 
-## <a name="list-of-the-events-for-azure-data-lake-storage-gen-2-rest-apis"></a>Список событий для Azure Data Lake Storage Gen 2 REST AIS
+### <a name="list-of-the-events-for-azure-data-lake-storage-gen-2-rest-apis"></a>Список событий для Azure Data Lake Storage Gen 2 REST AIS
 
 Эти события срабатывают, если вы включите иерархическое пространство имен в учетной записи хранилища, а клиенты вызывают ApIs Azure Data Lake Storage Gen2 REST. Для получения дополнительной информации о бое Azure Data Lake Storage Gen2 [см.](../storage/blobs/data-lake-storage-introduction.md)
 
@@ -53,7 +54,7 @@ ms.locfileid: "80756004"
 
 <a id="example-event" />
 
-## <a name="the-contents-of-an-event-response"></a>Содержание ответа на события
+### <a name="the-contents-of-an-event-response"></a>Содержание ответа на события
 
 При срабатывании события служба Event Grid отправляет данные об этом событии в конечную точку.
 
@@ -288,7 +289,7 @@ ms.locfileid: "80756004"
 }]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -321,6 +322,17 @@ ms.locfileid: "80756004"
 | recursive | строка | `True`для выполнения операции во всех каталогах детей; в `False`противном случае . <br>Отображается только для событий, срабатывающих на учетных записях хранения blob, которые имеют иерархическое пространство имен. |
 | sequencer | строка | Значение непрозрачной строки, представляющее логическую последовательность событий для любого отдельного имени большого двоичного объекта.  Пользователи могут использовать стандартное сравнение строк для понимания относительной последовательности двух событий в одном имени большого двоичного объекта. |
 | storageDiagnostics | объект | Диагностические данные, которые иногда включаются службой хранилища Azure. Если они присутствуют, то должны игнорироваться потребителями события. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title  |Описание  |
+|---------|---------|
+| [Перенаправление событий хранилища BLOB-объектов в пользовательскую конечную веб-точку с помощью Azure CLI](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Содержит сведения об отправке событий хранилища BLOB-объектов в веб-перехватчик с помощью Azure CLI. |
+| [Перенаправление событий хранилища BLOB-объектов в пользовательскую конечную веб-точку с помощью PowerShell](../storage/blobs/storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Содержит сведения об отправке событий хранилища BLOB-объектов в веб-перехватчик с помощью Azure PowerShell. |
+| [Создание и перенаправление событий хранилища BLOB-объектов с помощью службы "Сетка событий Azure" и портала Azure](blob-event-quickstart-portal.md) | Содержит сведения об отправке событий хранилища BLOB-объектов в веб-перехватчик с помощью портала. |
+| [Создание подписки на события, связанные с учетной записью хранения больших двоичных объектов, с использованием Azure CLI](./scripts/event-grid-cli-blob.md) | Пример сценария, позволяющий подписаться на события, связанные с учетной записью хранения больших двоичных объектов. Он отправляет событие в веб-перехватчик. |
+| [Создание подписки на события, связанные с учетной записью хранения больших двоичных объектов, с помощью PowerShell](./scripts/event-grid-powershell-blob.md) | Пример сценария, позволяющий подписаться на события, связанные с учетной записью хранения больших двоичных объектов. Он отправляет событие в веб-перехватчик. |
+| [Шаблон Resource Manager для создания хранилища BLOB-объектов и подписки](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-subscription-and-storage) | Развертывает учетную запись службы хранилища больших двоичных объектов Azure и создает подписку на события для этой учетной записи хранения. Он отправляет события в веб-перехватчик. |
+| [Реагирование на события хранилища BLOB-объектов](../storage/blobs/storage-blob-event-overview.md) | Общие сведения об интеграции хранилища BLOB-объектов со службой "Сетка событий". |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

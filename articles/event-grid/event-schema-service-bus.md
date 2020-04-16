@@ -1,27 +1,26 @@
 ---
-title: Схема событий служебной шины в службе "Сетка событий Azure"
+title: Автобус службы Azure — источник Event Grid
 description: Описание свойств для событий служебной шины, используемых со службой "Сетка событий Azure"
 services: event-grid
 author: banisadr
-manager: darosa
 ms.service: event-grid
-ms.topic: reference
-ms.date: 01/17/2019
+ms.topic: conceptual
+ms.date: 04/09/2020
 ms.author: babanisa
-ms.openlocfilehash: f44d2c1c5be6ac895b6f5ea9feca29c0f8ed09f3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 141a0e96071014dc3705d30f72b1a9257737298a
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60561767"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393240"
 ---
-# <a name="azure-event-grid-event-schema-for-service-bus"></a>Схема событий службы "Сетка событий Azure" для служебной шины
+# <a name="azure-service-bus-as-an-event-grid-source"></a>Автобус службы Azure как источник сетки событий
 
 В этой статье описаны свойства и схема для событий служебной шины.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
-Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#service-bus).
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
-## <a name="available-event-types"></a>Доступные типы событий
+### <a name="available-event-types"></a>Доступные типы событий
 
 Служебная шина выдает следующие типы событий:
 
@@ -30,7 +29,7 @@ ms.locfileid: "60561767"
 | Microsoft.ServiceBus.ActiveMessagesAvailableWithNoListeners | Возникает, если в очереди или подписке присутствуют активные сообщения, а получатели отсутствуют. |
 | Microsoft.ServiceBus.DeadletterMessagesAvailableWithNoListener | Возникает, если в очереди недоставленных сообщений присутствуют активные сообщения, а активные прослушиватели отсутствуют. |
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 В следующем примере показана схема события активных сообщений без прослушивателей:
 
@@ -76,7 +75,7 @@ ms.locfileid: "60561767"
 }]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -101,6 +100,12 @@ ms.locfileid: "60561767"
 | queueName | строка | Очередь с активными сообщениями при подписке на очередь. Значение null, если используются разделы и подписки. |
 | topicName | строка | Раздел, к которому принадлежит подписка служебной шины с активными сообщениями. Значение null, если используется очередь. |
 | subscriptionName | строка | Подписка служебной шины с активными сообщениями. Значение null, если используется очередь. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title  |Описание  |
+|---------|---------|
+| [Примеры интеграции служебной шины Azure со службой "Сетка событий Azure"](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Служба "Сетка событий" отправляет сообщения из раздела служебной шины в приложение-функцию и приложение логики. |
+| [Интеграция службы Azure в интеграцию Event Grid](../service-bus-messaging/service-bus-to-event-grid-integration-concept.md) | Общие сведения об интеграции служебной шины со службой "Сетка событий". |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

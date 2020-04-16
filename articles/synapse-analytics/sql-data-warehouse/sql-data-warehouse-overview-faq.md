@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: dcefe6a6144c9a8f9c6ab7daf5b34b2d81a73c3f
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: 260086d186f7e2b2d6f76c437057f5fbc8af39b5
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80742997"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416077"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-frequently-asked-questions"></a>Лазурная синапсная аналитика (ранее S'L DW) Часто задаваемые вопросы
 
@@ -48,7 +48,7 @@ A. На странице [соответствия требованиям кор
 
 У. Могу ли я подключить Power BI?
 
-A.  Да! Хотя Power BI поддерживает прямой запрос с Azure Synapse, он не предназначен для большого числа пользователей или данных в режиме реального времени. Для дальнейшего оптимизации производительности Power BI рассмотрите возможность использования Power BI поверх служб анализа Azure или аналитической службы IaaS.
+A. Да! Хотя Power BI поддерживает прямой запрос с Azure Synapse, он не предназначен для большого числа пользователей или данных в режиме реального времени. Для дальнейшего оптимизации производительности Power BI рассмотрите возможность использования Power BI поверх служб анализа Azure или аналитической службы IaaS.
 
 У. Каковы ограничения в емкости пула Synapse S'L?
 
@@ -92,7 +92,7 @@ A. Да. Большая часть функциональности REST, кот
 
 У. Какие драйверы клиента поддерживаются?
 
-A. Поддержка драйверов для пула Synapse S'L можно найти на странице [строк соединения](sql-data-warehouse-connection-strings.md)
+A. Поддержка драйверов для пула Synapse S'L можно найти на странице [строк соединения](../sql/connection-strings.md)
 
 В: Какие форматы файлов поддерживаются PolyBase?
 

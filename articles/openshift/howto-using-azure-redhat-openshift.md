@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/06/2020
 keywords: аро, openshift, аз-аро, красная шляпа, кли
-ms.openlocfilehash: 9488ef593cf4ec8600dcb42ea4a2cefa4fcb1446
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: f909c5870be6e394e457ad8f44ea5a253054ffe6
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80998803"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81398893"
 ---
 # <a name="create-access-and-manage-an-azure-red-hat-openshift-43-cluster"></a>Создание, доступ и управление кластером Azure Red Hat OpenShift 4.3
 
@@ -68,7 +68,19 @@ ms.locfileid: "80998803"
    aro                                0.3.0
    ...
    ```
-  
+
+### <a name="get-a-red-hat-pull-secret-optional"></a>Получить Секрет притяжения Red Hat (по желанию)
+
+Секрет притяжения Red Hat позволяет вашему кластеру получить доступ к реестрам контейнеров Red Hat и дополнительному контенту. Использование тайны тянуть является необязательным, но рекомендуется.
+
+Чтобы получить ваш тянуть секрет:
+
+1. Перейдите к https://cloud.redhat.com/openshift/install/azure/aro-provisioned.
+1. Войдите в учетную запись Red Hat или создайте новую учетную запись Red Hat, используя свою деловую электронную почту; принять условия.
+1. Выберите **Скачать тянуть секрет**.
+
+Сохранить *файл pull-secret.txt где-нибудь* безопасно; вы будете использовать файл каждый раз, когда вы создаете кластер.
+
 ### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Создание виртуальной сети, содержащей две пустые подсети
 
 Выполните следующие действия, чтобы создать виртуальную сеть, содержащую две пустые подсети.
@@ -79,15 +91,7 @@ ms.locfileid: "80998803"
    LOCATION=eastus        #the location of your cluster
    RESOURCEGROUP="v4-$LOCATION"    #the name of the resource group where you want to create your cluster
    CLUSTER=cluster        #the name of your cluster
-   PULL_SECRET="<optional-pull-secret>"
    ```
-   >[!NOTE]
-   > Дополнительный секрет притяжения позволяет кластеру получить доступ к реестрам контейнеров Red Hat вместе с дополнительным контентом.
-   >
-   > Доступ к тайне секрет, https://cloud.redhat.com/openshift/install/azure/installer-provisioned перемещаясь и нажав *Copy Pull Secret*.
-   >
-   > Вам нужно будет войти в свой аккаунт Red Hat или создать новую учетную запись Red Hat с вашей деловой электронной почтой и принять условия.
- 
 
 2. Создайте группу ресурсов для кластера.
 
@@ -143,7 +147,7 @@ az aro create \
   --worker-subnet "$CLUSTER-worker" \
   --cluster-resource-group "aro-$CLUSTER" \
   --domain "$CLUSTER" \
-  --pull-secret "$PULL_SECRET"
+  --pull-secret @pull-secret.txt
 ```
 
 >[!NOTE]

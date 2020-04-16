@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6bd360b2075c337e3ed3d69d84368d16571a9335
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bcef0574e16e0b4d28755716c32670b00c65af14
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79536060"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81406090"
 ---
 # <a name="my-first-graphical-runbook"></a>Первый графический Runbook
 
@@ -100,7 +100,7 @@ ms.locfileid: "79536060"
 1. Щелкните **Все журналы** , чтобы открыть область "Потоки" для задания Runbook. Вы должны `Hello World` видеть только в потоке вывода. 
 
     Обратите внимание, что панель потоков может отображать другие потоки для выполнения задания, такие как Verbose и Ошибка потоков, если runbook пишет им.
-1. Закройте панель потоков и панель вакансий, чтобы вернуться на страницу **MyFirstRunbook-Graphical.**
+1. Закройте панель потоков и панель вакансий, чтобы вернуться на страницу MyFirstRunbook-Graphical.
 1. Чтобы просмотреть все задания для runbook, выберите **Вакансии** под **ресурсами.** Страница Вакансии перечисляет все задания, созданные в вашем runbook. Вы должны увидеть только одну работу в списке, так как вы только запустить работу один раз.
 1. Нажмите на имя задания, чтобы открыть ту же панель вакансий, что вы просматривали при запуске. Используйте эту панель для просмотра деталей любого задания, созданного для runbook.
 
@@ -126,7 +126,7 @@ ms.locfileid: "79536060"
 >[!NOTE]
 >Для PowerShell runbooks, `Add-AzAccount` и `Add-AzureRMAccount` псевдонимы для `Connect-AzAccount`. Обратите внимание, что эти псевдонимы не доступны для графических runbooks. Графический runbook может `Connect-AzAccount`использовать только себя.
 
-1. Перейдите к своему runbook и выберите **Edit** на странице **MyFirstRunbook-Graphical.**
+1. Перейдите к своему runbook и выберите **Edit** на странице MyFirstRunbook-Graphical.
 1. Вам больше не `Write Hello World to output` нужна запись. Просто нажмите эллипсис и выберите **Удалить**.
 1. В управлении библиотекой расширьте **ASSETS**, затем **соединения**. Добавьте `AzureRunAsConnection` к холсту, выбрав **Добавить в холст.**
 1. Переименуйте `AzureRunAsConnection` в `Get Run As Connection`.
@@ -185,7 +185,7 @@ ms.locfileid: "79536060"
 
 В настоящее время в вашем runbook запускается `Start-AzVM` VM в группе ресурсов, указанной для cmdlet. Runbook будет более полезным, если вы укажете как имя, так и группу ресурсов при запуске. Давайте добавим параметры ввода в книгу, чтобы обеспечить эту функциональность.
 
-1. Откройте графический редактор, щелкнув **Изменить** в области **MyFirstRunbook-Graphical**.
+1. Откройте графический редактор, нажав на **страницу** MyFirstRunbook-Graphical.
 1. Выберите **Входные и выходные данные**, а затем выберите **Добавить входные данные**, чтобы открыть область входных параметров для runbook.
 1. Сделайте следующие настройки в предоставленных полях, а затем нажмите **OK**.
    * **Имя** -- `VMName`укажите .
@@ -243,7 +243,7 @@ ms.locfileid: "79536060"
 1. Для `Write-Output` первого элемента управления щелкните **параметры** и измените значение **меток,** чтобы **уведомить VM Started.**
 1. Для **InputObject**измените **источник данных** на выражение `$VMName successfully started.` **PowerShell**и введите выражение.
 1. На втором `Write-Output` элементе управления щелкните **параметры** и измените значение **меток,** чтобы **уведомить VM Start Failed.**
-1. Для **InputObject**измените **источник данных** на выражение `$VMName could not start.` **PowerShell**и введите выражение.
+1. Для **InputObject**измените **источник данных** на выражение `$VMName could not start` **PowerShell**и введите выражение.
 1. Создание ссылок `Notify VM Started` `Notify VM Start Failed`от `Start-AzVM` к и .
 1. Выберите ссылку `Notify VM Started` и измените **условие Применить** к истине.
 1. Для **выражения условия,** введите `$ActivityOutput['Start-AzVM'].IsSuccessStatusCode -eq $true`. Этот `Write-Output` элемент управления теперь работает только в том случае, если VM успешно запускается.
@@ -259,3 +259,5 @@ ms.locfileid: "79536060"
 * Чтобы узнать больше о графическом авторизации, смотрите [Графическое авторство в Azure Automation](automation-graphical-authoring-intro.md).
 * Чтобы начать работу с PowerShell runbooks, [см.](automation-first-runbook-textual-powershell.md)
 * Чтобы начать работу с runbooks PowerShell Workflow, [см.](automation-first-runbook-textual.md)
+* Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+)

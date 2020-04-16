@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/17/2020
-ms.openlocfilehash: e0e98b87cf3612bf01f90f806ea64ef06d08c60a
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 27503defa23b2a35e767156139228aa2e177652f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81255334"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81405182"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые контролируются Azure Monitor. 
@@ -205,7 +205,6 @@ ms.locfileid: "81255334"
 | [Оценки по требованию](https://docs.microsoft.com/services-hub/health/getting_started_with_on_demand_assessments) | Оцените и оптимизируете доступность, безопасность и производительность ваших штатных, гибридных и облачных технологических сред Майкрософт. |
 | [Проверка здоровья СЗЛ](insights/sql-assessment.md) | Оцените риск и работоспособность сред ы s'L Server.  |
 | [Wire Data](insights/wire-data.md) | Консолидированная сеть и данные о производительности, собранные с компьютеров, подключенных к Windows и Linux, с помощью агента Log Analytics. |
-
 
 ## <a name="third-party-integration"></a>Интеграция третьих сторон
 

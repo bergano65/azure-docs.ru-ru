@@ -1,26 +1,25 @@
 ---
-title: Схема события Azure Event Grid Azure
-description: Описывает свойства, которые предусмотрены для событий конфигурации приложений Azure с помощью Azure Event Grid
+title: Конфигурация приложения Azure как источник сетки событий
+description: В этой статье описывается, как использовать конфигурацию приложения Azure в качестве источника событийeventной сети событий. Он предоставляет схему и ссылки на учебник и как к статьям.
 services: event-grid
-author: jimmyca
+author: banisadr
 ms.service: event-grid
-ms.topic: reference
-ms.date: 05/30/2019
-ms.author: jimmyca
-ms.openlocfilehash: fe0274f723692eea3cfd25cc0e9e146b35dce2ae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.topic: conceptual
+ms.date: 04/09/2020
+ms.author: babanisa
+ms.openlocfilehash: adb548ef8531698a2cb075fbc742bb20a02a434b
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "66735786"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393429"
 ---
-# <a name="azure-event-grid-event-schema-for-azure-app-configuration"></a>Схема событий Azure Event Grid для конфигурации приложений Azure
+# <a name="azure-app-configuration-as-an-event-grid-source"></a>Конфигурация приложения Azure как источник сетки событий
+В этой статье приведены свойства и схема для событий конфигурации приложений Azure. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). Он также дает вам список быстрых стартов и учебников для использования конфигурации приложений Azure в качестве источника событий.
 
-В этой статье приведены свойства и схема для событий конфигурации приложений Azure. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
-Список примеров скриптов и учебников можно найти [в источнике событий Azure App Configuration.](event-sources.md#app-configuration)
-
-## <a name="available-event-types"></a>Доступные типы событий
+### <a name="available-event-types"></a>Доступные типы событий
 
 Конфигурация приложения Azure излучает следующие типы событий:
 
@@ -29,7 +28,7 @@ ms.locfileid: "66735786"
 | Microsoft.AppConfiguration.KeyValueМодифицировано | Поднят оцениваемый при создании или замене ключевой стоимости. |
 | Microsoft.AppConfiguration.KeyValueDeleted | Поднято при удалении значения ключа. |
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 Следующий пример показывает схему измененного события с ключевой стоимостью: 
 
@@ -69,7 +68,7 @@ ms.locfileid: "66735786"
 }]
 ```
  
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -79,7 +78,7 @@ ms.locfileid: "66735786"
 | subject | строка | Определенный издателем путь к субъекту событий. |
 | eventType | строка | Один из зарегистрированных типов событий для этого источника событий. |
 | eventTime | строка | Время создания события с учетом времени поставщика в формате UTC. |
-| идентификатор | строка | Уникальный идентификатор события. |
+| ID | строка | Уникальный идентификатор события. |
 | . | объект | Данные о событиях конфигурации приложения. |
 | dataVersion | строка | Версия схемы для объекта данных. Версию схемы определяет издатель. |
 | metadataVersion | строка | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
@@ -91,7 +90,14 @@ ms.locfileid: "66735786"
 | ключ | строка | Ключ ключевой значения, который был изменен или удален. |
 | label | строка | Метка, если таковая имеется, из ключевой значения, которая была изменена или удалена. |
 | etag | строка | Для `KeyValueModified` etag нового ключевого значения. Для `KeyValueDeleted` etag ключевой значения, которая была удалена. |
- 
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+
+|Title | Описание |
+|---------|---------|
+| [Реагируйте на события конфигурации приложений Azure с помощью Event Grid](../azure-app-configuration/concept-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Обзор интеграции конфигурации приложений Azure с Event Grid. |
+| [Быстрый запуск: маршрут событий конфигурации приложения Azure к пользовательской веб-конечной точке с Azure CLI](../azure-app-configuration/howto-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Показывает, как использовать Azure CLI для отправки событий конфигурации приложений Azure в WebHook. |
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. общие сведения о [службе "Сетка событий Azure"](overview.md).

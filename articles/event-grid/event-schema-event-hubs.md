@@ -1,30 +1,30 @@
 ---
-title: Схема событий концентраторов в службе &quot;Сетка событий Azure&quot;
+title: Концентраторы событий Azure — источник event Grid
 description: Описание свойств для событий концентраторов, используемых со службой &quot;Сетка событий Azure&quot;
 services: event-grid
 author: spelluru
 ms.service: event-grid
-ms.topic: reference
-ms.date: 01/17/2019
+ms.topic: conceptual
+ms.date: 04/09/2020
 ms.author: spelluru
-ms.openlocfilehash: 9c0113687d27bf43375f298057129a5594ec0a06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fd65c20f07a091fa1fc8a6cbf003986e1096ebe3
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60561834"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393337"
 ---
-# <a name="azure-event-grid-event-schema-for-event-hubs"></a>Схема событий службы "Сетка событий Azure" для концентраторов событий
+# <a name="azure-event-hubs-as-an-event-grid-source"></a>Концентраторы событий Azure как источник сетки событий
 
 В этой статье описаны свойства и схема для событий концентраторов.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
-Список примеров сценариев и руководства см. в статье [Центры событий в службе &quot;Сетка событий Azure&quot;](event-sources.md#event-hubs).
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
 ### <a name="available-event-types"></a>Доступные типы событий
 
 Тип события **Microsoft.EventHub.CaptureFileCreated** возникает в службе "Центры событий" при создании файла записи.
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 Этот пример события демонстрирует схему события в Центрах событий, возникающего, когда файл сохраняется при помощи функции Сбора: 
 
@@ -53,7 +53,7 @@ ms.locfileid: "60561834"
 ]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -81,6 +81,12 @@ ms.locfileid: "60561834"
 | lastSequenceNumber | Целое число | Последний порядковый номер в очереди. |
 | firstEnqueueTime | строка | Первые данные времени в очереди. |
 | lastEnqueueTime | строка | Последние данные времени в очереди. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+
+|Title  |Описание  |
+|---------|---------|
+| [Потоковая передача больших данных в хранилище данных](event-grid-event-hubs-integration.md) | Когда Центры событий создают файл сбора, служба "Сетка событий" отправляет событие приложению-функции. Это приложение извлекает файл сбора и переносит данные в хранилище данных. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

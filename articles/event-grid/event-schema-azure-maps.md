@@ -1,24 +1,26 @@
 ---
-title: Схема событий Azure Maps в службе "Сетка событий Azure"
+title: Azure Maps — источник событийной сетки
 description: Описание свойств и схемы для событий Azure Maps в службе "Сетка событий Azure"
 services: event-grid
-author: femila
+author: banisadr
 ms.service: event-grid
-ms.topic: reference
-ms.date: 02/08/2019
-ms.author: femila
-ms.openlocfilehash: 9acef524521e8fac6ce6f8f61e5ff3fbbb81d18d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.topic: conceptual
+ms.date: 04/09/2020
+ms.author: babanisa
+ms.openlocfilehash: e879ec3442f2e7912acb450a97079d80d7d95a01
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77486365"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393407"
 ---
-# <a name="azure-event-grid-event-schema-for-azure-maps"></a>Схема событий службы "Сетка событий Azure" для Azure Maps
+# <a name="azure-maps-as-an-event-grid-source"></a>Карты Azure как источник сетки событий
 
-В этой статье описаны свойства и схема для событий Azure Maps. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/event-schema).
+В этой статье описаны свойства и схема для событий Azure Maps. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/event-schema). Он также дает вам список быстрых стартов и учебников для использования Azure Maps в качестве источника событий.
 
-## <a name="available-event-types"></a>Доступные типы событий
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
+
+### <a name="available-event-types"></a>Доступные типы событий
 
 Учетная запись Azure Maps выводит следующие типы событий.
 
@@ -28,7 +30,7 @@ ms.locfileid: "77486365"
 | Microsoft.Maps.GeofenceExited | Создается, когда полученные координаты переходят из заданной геозоны наружу |
 | Microsoft.Maps.GeofenceResult | Создается каждый раз, когда запрос геозоны возвращает результат с любым состоянием. |
 
-## <a name="event-examples"></a>Примеры событий
+### <a name="event-examples"></a>Примеры событий
 
 В следующем примере показана схема события **GeofenceEntered**.
 
@@ -98,7 +100,7 @@ ms.locfileid: "77486365"
 }
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -162,6 +164,12 @@ ms.locfileid: "77486365"
 | geometries | geometries[] |Перечисляет геометрические объекты границ, которые содержат координаты позиции или перекрытие searchBuffer вокруг этой позиции. |
 | invalidPeriodGeofenceGeometryId | string[]  | Список идентификаторов геометрических объектов геозоны, в период действия которых не попадает время, указанное в запросе пользователя. |
 | isEventPublished | Логическое | Имеет значение truе, если хотя бы одно событие опубликовано в подписчике событий Azure Maps, или false в противном случае. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title  |Описание  |
+|---------|---------|
+| [Реагирование на события Azure Maps c помощью Сетки событий](../azure-maps/azure-maps-event-grid-integration.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Общие сведения об интеграции Azure Maps со службой "Сетка событий". |
+| [Учебник: Настройка геозабора](../azure-maps/tutorial-geofence.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Это руководство поможет выполнить основные действия по настройке геозоны с помощью Azure Maps. Используйте Сетку событий Azure для выполнения потоковой передачи результатов геозоны и на их основе создавайте уведомления. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

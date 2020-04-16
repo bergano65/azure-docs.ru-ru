@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: lazinnat
 author: lazinnat
 ms.date: 06/12/2019
-ms.openlocfilehash: d0c60f5738bf634f9d43d6d4f0d78c1239b7ff3c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7a3d2234a140d1fb2eede50e3fe2eef5575da648
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75650699"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81391693"
 ---
 # <a name="view-definition-artifact-in-azure-managed-applications"></a>Просмотр артефакта определения в управляемых приложениях Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "75650699"
 
 ## <a name="view-definition-artifact"></a>Просмотр артефакта определения
 
-Артефакт определения представления должен быть назван **viewDefinition.json** и помещен на том же уровне, что и **createUiDefinition.json** и **mainTemplate.json** в пакете .zip, который создает управляемое определение приложения. Чтобы узнать, как создать пакет .zip и опубликовать определение управляемого приложения, смотрите [Опубликовать определение управляемого приложения Azure](publish-managed-app-definition-quickstart.md)
+Артефакт определения представления должен быть назван **viewDefinition.json** и помещен на том же уровне, что и **createUiDefinition.json** и **mainTemplate.json** в пакете .zip, который создает управляемое определение приложения. Чтобы узнать, как создать пакет .zip и опубликовать определение управляемого приложения, смотрите [Опубликовать определение управляемого приложения Azure](publish-service-catalog-app.md)
 
 ## <a name="view-definition-schema"></a>Просмотр схемы определения
 
@@ -184,7 +184,7 @@ ms.locfileid: "75650699"
 |---------|---------|---------|
 |name|Да|Имя метрики.|
 |агрегацияТип|Да|Тип агрегации для использования для этой метрики. Поддерживаемые типы агрегирования:`none, sum, min, max, avg, unique, percentile, count`|
-|namespace|нет|Дополнительная информация для использования при определении правильного поставщика метрик.|
+|пространство имен|нет|Дополнительная информация для использования при определении правильного поставщика метрик.|
 |resourceTagFilter|нет|Массив тегов ресурсов (будет `or` отделен словом), для которого будут отображаться метрики. Применяется поверх фильтра типа ресурса.|
 |тип_ресурса|Да|Тип ресурса, для которого будут отображаться метрики.|
 

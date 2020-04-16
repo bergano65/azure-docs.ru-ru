@@ -3,17 +3,17 @@ title: Субъект-службы для служб Azure Kubernetes (AKS)
 description: Создание субъект-службы Azure Active Directory для кластера в службе Azure Kubernetes (AKS) и управление ей
 services: container-service
 ms.topic: conceptual
-ms.date: 04/25/2019
-ms.openlocfilehash: 523f08ddbf22e175af5b0604b04d4a2460ffd634
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/02/2020
+ms.openlocfilehash: 2c792eb4dc060e3f5d7fa2d8f2176bdd51538c43
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79259426"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81392727"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
-Для взаимодействия с API-интерфейсами Azure кластеру AKS требуется [субъект-служба Azure Active Directory][aad-service-principal]. Субъект-служба необходима для динамического создания и управления другими ресурсами Azure, например балансировщиком нагрузки Azure или реестром контейнеров (ACR).
+Для взаимодействия с ApIs Azure кластеру AKS требуется либо [принцип службы Active Directory (AD),][aad-service-principal] либо [управляемый интактируется.](use-managed-identity.md) Для динамического создания и управления другими ресурсами Azure, такими как балансобалансер нагрузки Azure или реестр контейнеров (ACR), необходима основная или управляемая идентификация службы.
 
 В этой статье показано как создать и использовать субъект-службу для кластеров AKS.
 
@@ -95,7 +95,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 
 Если вы используете реестр контейнеров Azure (ACR) в качестве хранилища изображений контейнеров, вам необходимо предоставить разрешения директору службы для кластера AKS для чтения и вытягивания изображений. В настоящее время рекомендуемая конфигурация заключается в использовании команды обновления [az aks][az-aks-create] или [az aks][az-aks-update] для интеграции с реестром и присвоения соответствующей роли для основного обслуживания. Подробные шаги можно узнать в [реестре контейнеров Azure от службы Azure Kubernetes.][aks-to-acr]
 
-### <a name="networking"></a>Сети
+### <a name="networking"></a>Сеть
 
 Вы можете использовать расширенное сетевое взаимодействие, где виртуальная сеть и подсеть или общедоступные IP-адреса находятся в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
 
@@ -108,7 +108,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
   - *Microsoft.Network/publicIPAddresses/write*
 - Или назначьте встроенную роль [Участник сетей][rbac-network-contributor] в подсети виртуальной сети.
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 
 Вам может потребоваться доступ к существующим дисковым ресурсам в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
 
@@ -140,7 +140,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Основные учетные данные службы для кластера AKS консируются Azure CLI. Если срок действия этих учетных данных истек, вы сталкиваетесь с ошибками развертывания кластеров AKS. Следующее сообщение об ошибке при [запуске az aks][az-aks-create] может указывать на проблему с основными учетными данными кэшированных служб:
 

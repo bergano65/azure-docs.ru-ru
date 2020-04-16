@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.openlocfilehash: 6e0c98cffef06fb6d6345fc2b23bbc22715909b4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3432f981df3f666d6276eee4564ef33000faa6b1
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79370191"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81410891"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall"></a>Накончать исходящий сетевой трафик для кластеров Azure HDInsight с помощью брандмауэра
 
@@ -62,19 +62,19 @@ ms.locfileid: "79370191"
 
     | Свойство|  Значение|
     |---|---|
-    |name| FwAppRule|
+    |Имя| FwAppRule|
     |Приоритет|200|
     |Действие|Allow|
 
     **Раздел тегов ФЗДН**
 
-    | name | Адрес источника | Тег FQDN | Примечания |
+    | Имя | Адрес источника | Тег FQDN | Примечания |
     | --- | --- | --- | --- |
     | Rule_1 | * | WindowsUpdate и HDInsight | Требуется для услуг ИРЧП |
 
     **Целевой раздел ФЗН**
 
-    | name | Адреса исходных источников | Протокол:Порт | Целевая ПЗДНС | Примечания |
+    | Имя | Адреса исходных источников | Протокол:Порт | Целевая ПЗДНС | Примечания |
     | --- | --- | --- | --- | --- |
     | Rule_2 | * | https:443 | login.windows.net | Позволяет активность входа в Windows |
     | Rule_3 | * | https:443 | login.microsoftonline.com | Позволяет активность входа в Windows |
@@ -82,7 +82,7 @@ ms.locfileid: "79370191"
 
    ![Название: Введите сведения о сборе правил приложения](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png)
 
-1. Нажмите кнопку **Добавить**.
+1. Выберите **Добавить**.
 
 ### <a name="configure-the-firewall-with-network-rules"></a>Настройка брандмауэра с помощью сетевых правил
 
@@ -96,13 +96,13 @@ ms.locfileid: "79370191"
 
     | Свойство|  Значение|
     |---|---|
-    |name| FwNetRule|
+    |Имя| FwNetRule|
     |Приоритет|200|
     |Действие|Allow|
 
     **Раздел IP-адресов**
 
-    | name | Протокол | Адреса исходных источников | Адреса назначения | Конечные порты | Примечания |
+    | Имя | Протокол | Адреса исходных источников | Адреса назначения | Конечные порты | Примечания |
     | --- | --- | --- | --- | --- | --- |
     | Rule_1 | UDP | * | * | 123 | Обслуживание времени |
     | Rule_2 | Любой | * | DC_IP_Address_1, DC_IP_Address_2 | * | Если вы используете пакет корпоративной безопасности (ESP), затем добавьте сетевое правило в раздел IP-адресов, которое позволяет общаться с AAD-DS для кластеров ESP. На портале можно найти IP-адреса контроллеров доменов в разделе AAD-DS |
@@ -111,13 +111,13 @@ ms.locfileid: "79370191"
 
     **Раздел "Теги обслуживания"**
 
-    | name | Протокол | Исходные адреса | Теги служб | Порты назначения | Примечания |
+    | Имя | Протокол | Исходные адреса | Теги служб | Порты назначения | Примечания |
     | --- | --- | --- | --- | --- | --- |
     | Rule_7 | TCP | * | SQL | 1433 | Настройте сетевое правило в разделе «Теги обслуживания» для S'L, которое позволит вам регистрировать и проверять трафик S'L, если только вы не настроили конечные точки обслуживания для сервера S'L в подсети HDInsight, которая обойдет брандмауэр. |
 
    ![Название: Введите сбор правил приложения](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
 
-1. Нажмите кнопку **Добавить**.
+1. Выберите **Добавить**.
 
 ### <a name="create-and-configure-a-route-table"></a>Создание и настройка таблицы маршрутов
 
@@ -155,7 +155,7 @@ ms.locfileid: "79370191"
 
 1. На экране **подсети Associate** выберите виртуальную сеть, в которую был создан кластер, и **подсеть, которую** вы использовали для кластера HDInsight.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ## <a name="edge-node-or-custom-application-traffic"></a>Трафик узлов оговора или пользовательского приложения
 
@@ -210,7 +210,7 @@ AzureDiagnostics | where msg_s contains "Deny" | where TimeGenerated >= ago(1h)
 
 #### <a name="ip-address-dependencies"></a>Зависимости IP-адреса
 
-| **Конечная точка** | **Подробно** |
+| **Конечная точка** | **Сведения** |
 |---|---|
 | \*:123 | Проверка часов NTP. Трафик проверяется в нескольких конечных точках на порте 123. |
 | IPs, [опубликованные здесь](hdinsight-management-ip-addresses.md) | Это сервис HDInsight |
@@ -221,7 +221,7 @@ AzureDiagnostics | where msg_s contains "Deny" | where TimeGenerated >= ago(1h)
 #### <a name="fqdn-httphttps-dependencies"></a>Зависимости FQDN протокола HTTP/HTTPS
 
 > [!Important]
-> В приведенном ниже списке приводятся лишь некоторые из наиболее важных ФЗН. Вы можете получить полный список F-DN для настройки ВСВ [в этом файле.](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json)
+> В приведенном ниже списке приводятся лишь некоторые из наиболее важных ФЗН. Вы можете получить дополнительные F-DNs (в основном Azure Storage и Azure Service Bus) для настройки NVA [в этом файле.](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json)
 
 | **Конечная точка**                                                          |
 |---|

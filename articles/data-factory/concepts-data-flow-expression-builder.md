@@ -7,14 +7,16 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.openlocfilehash: 196d917d31eb08af80587bba30d9f7e67bf8cbea
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.openlocfilehash: c28305cc55fcc561863670a15480782ce63e75b4
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80991711"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415516"
 ---
 # <a name="build-expressions-in-mapping-data-flow"></a>Создание выражений в картировании потока данных
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 При картировании потока данных многие свойства преобразования вводятся в виде выражений. Эти выражения состоят из значений столбца, параметров, функций, операторов и буквальных значений, которые оценивают тип данных Spark во время выполнения.
 
@@ -24,7 +26,7 @@ ms.locfileid: "80991711"
 
 Интерфейс редактирования выражений в пользовательском интерфейсе Azure Data Factory известен как Expression Builder. При вводе логики выражения Data Factory использует завершение кода [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense?view=vs-2019) для выделения, проверки синтаксиса и автоматического завершения.
 
-![Построитель выражений](media/data-flow/xpb1.png "Построитель выражений")
+![Строитель выражения](media/data-flow/xpb1.png "Построитель выражений")
 
 В преобразованиях, таких как производный столбец и фильтр, где выражения являются обязательными, откройте Builder выражения, выбрав синий ящик выражения.
 
@@ -132,6 +134,6 @@ regex_replace('100 and 200', '(\\d+)', 'digits')
 
 Задняя часть "l" в конце предыдущего выражения означает преобразование в длинный тип как inline syntax.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Начало создания выражений преобразования данных](data-flow-expression-functions.md)

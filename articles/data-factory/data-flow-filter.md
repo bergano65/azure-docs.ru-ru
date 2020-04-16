@@ -8,18 +8,20 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/16/2019
-ms.openlocfilehash: 84b935d1646ea4f13d5926fc68797fd8efd03dea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3460c789909c6acd0537ef89a9ec8509bf6e135d
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74930351"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81413733"
 ---
 # <a name="filter-transformation-in-mapping-data-flow"></a>Преобразование фильтра в потоке данных отображения
 
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 Фильтр преобразует позволяет фильтровать строки на основе состояния. Выходной поток включает в себя все строки, соответствующие состоянию фильтрации. Преобразование фильтра аналогично положению WHERE в S'L.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 Используйте builder выражения потока данных, чтобы ввести выражение для состояния фильтра. Чтобы открыть коммивояжера, нажмите на синюю коробку. Состояние фильтра должно быть типа булеана. Для получения дополнительной информации о том, как создать выражение, [см.](concepts-data-flow-expression-builder.md)
 

@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: e0c48137f5eecc96b6e7b1cbce5f0c683b2a976a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0df2680a9f17fc0af950b0ce744a655348b4cbf7
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79367318"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81406064"
 ---
 # <a name="my-first-powershell-runbook"></a>Мой первый модуль Runbook PowerShell
 
@@ -77,7 +77,7 @@ Runbooks PowerShell имеют тот же жизненный цикл, возм
 2. Щелкните **Пуск** , чтобы начать тестирование. Активным должен быть только этот параметр.
 3. Обратите внимание, что [создается задание runbook](automation-runbook-execution.md) и отображается его статус в панели.
 
-   Статус задания `Queued`начинается как, указывая, что задание ждет сотрудника runbook в облаке, чтобы стать доступным. Статус меняется `Starting` на время выполнения требования работника. Наконец, статус `Running` становится, когда запуск фактически начинает работать.
+   Статус задания начинается как очередь, что указывает на то, что задание ждет сотрудника runbook в облаке, чтобы стать доступным. Статус изменяется в запуске, когда работник претендует на задание. Наконец, статус становится Запущенный, когда запуск фактически начинает работать.
 
 4. Когда задание runbook завершается, панель test отображает его выход. В этом случае, `Hello World`вы видите .
 
@@ -91,7 +91,7 @@ Runbooks PowerShell имеют тот же жизненный цикл, возм
 
 1. Щелкните **Опубликовать**, чтобы опубликовать модуль Runbook, а затем нажмите кнопку **Да** в появившемся запросе.
 1. Прокрутите влево, чтобы просмотреть книгу на странице Runbooks, и обратите внимание, что значение **статуса автора** настроено на **опубликовано.**
-1. Прокрутите экран вправо до области **MyFirstRunbook-PowerShell**.
+1. Прокрутите назад вправо, чтобы просмотреть страницу **MyFirstRunbook-PowerShell**.
    
    Параметры в верхней части позволяют начать runbook сейчас, запланировать будущее время начала, или создать [веб-крюк,](automation-webhooks.md) так что runbook может быть запущен через http вызова.
 1. Чтобы запустить runbook, выберите **Запуск** и нажмите кнопку **Да** в появившемся запросе. 
@@ -99,7 +99,7 @@ Runbooks PowerShell имеют тот же жизненный цикл, возм
 
    ![Сводные данные задания](media/automation-first-runbook-textual-powershell/job-pane-status-blade-jobsummary.png)
 
-1. Как только состояние `Completed`runbook показывает, щелкните **выход,** чтобы открыть страницу вывода, где вы можете увидеть `Hello World` отображаемые.
+1. После того, как статус runbook показывает Завершено, нажмите `Hello World` **выход,** чтобы открыть страницу вывода, где вы можете увидеть отображается.
 
    ![Выходные данные задания](media/automation-first-runbook-textual-powershell/job-pane-status-blade-outputtile.png)
 
@@ -110,7 +110,7 @@ Runbooks PowerShell имеют тот же жизненный цикл, возм
 
    ![Все журналы](media/automation-first-runbook-textual-powershell/job-pane-status-blade-alllogstile.png)
 
-1. Закройте панель потоков и панель вакансий, чтобы вернуться на страницу **MyFirstRunbook-PowerShell.**
+1. Закройте панель потоков и панель вакансий, чтобы вернуться на страницу MyFirstRunbook-PowerShell.
 1. Под **подробная информация,** нажмите **Вакансии,** чтобы открыть страницу Вакансии для этого runbook. На этой странице перечислены все задания, созданные вашего runbook. Вы должны видеть только одну работу в списке, так как вы только запустить работу один раз.
 
    ![Список заданий](media/automation-first-runbook-textual-powershell/runbook-control-job-tile.png)
@@ -151,7 +151,7 @@ Runbooks PowerShell имеют тот же жизненный цикл, возм
 
    Get-AzVM -ResourceGroupName myResourceGroup -AzContext $AzureContext
    ```
-1. Откройте текстовый редактор, **нажав** на страницу **MyFirstRunbook-PowerShell.**
+1. Откройте текстовый редактор, щелкнув **Изменить** на странице MyFirstRunbook-PowerShell.
 1. Вам больше не `Write-Output` нужна линия. Просто идите вперед и удалите его.
 1. Введите или скопируйте и вставьте следующий код, который обрабатывает аутентификацию с помощью учетной записи Automation Run As.
 
@@ -212,7 +212,7 @@ Runbooks PowerShell имеют тот же жизненный цикл, возм
 
 ## <a name="step-7---add-an-input-parameter"></a>Шаг 7 - Добавить параметр ввода
 
-В настоящее время в вашем runbook запускается виртуальная машина, которую вы закодировали в runbook. Runbook будет более полезным, если вы укажете виртуальную машину, когда запуск запущен. Давайте добавим параметры ввода в книгу, чтобы обеспечить эту функциональность.
+В настоящее время в вашем runbook запускается виртуальная машина, которую вы жестко закодировали в runbook. Runbook более полезен, если указать виртуальную машину при запуске. Давайте добавим параметры ввода в книгу, чтобы обеспечить эту функциональность.
 
 1. В текстовом редакторе `Start-AzVM` изменяйте cmdlet, чтобы `VMName` `ResourceGroupName`использовать переменные для параметров и . 
 
@@ -252,6 +252,8 @@ Runbooks PowerShell имеют тот же жизненный цикл, возм
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Для получения дополнительной информации о PowerShell, включая [PowerShell Docs](/powershell/scripting/overview)языковые справочные и учебные модули, см.
+* Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+)
 * Чтобы начать работу с графических runbooks, [см.](automation-first-runbook-graphical.md)
 * Сведения о том, как начать работу с модулями Runbook рабочих процессов PowerShell, см. в статье [Первый Runbook рабочего процесса PowerShell](automation-first-runbook-textual.md).
 * Чтобы узнать больше о типах runbook [Azure Automation runbook types](automation-runbook-types.md)и их преимуществах и ограничениях, см.

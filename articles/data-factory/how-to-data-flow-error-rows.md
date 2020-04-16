@@ -8,14 +8,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/28/2019
 ms.author: makromer
-ms.openlocfilehash: 3fe3403ad06d82ba5ccd33d2718bf0e5eff64490
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4f65421a6457d4bf4d438ce9d035d46476829da2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73166542"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414358"
 ---
 # <a name="handle-sql-truncation-error-rows-in-data-factory-mapping-data-flows"></a>Обработка строк усечения S'L в потоках картографических данных Data
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Распространенным сценарием на фабрике данных при использовании картографических потоков данных является запись преобразованных данных в базу данных Azure S'L. В этом случае обычное условие ошибки, которое необходимо предотвратить, возможно усечение столбца. Выполните следующие действия, чтобы обеспечить журнал столбцов, которые не вписываются в столбец целевой строки, что позволяет потоку данных продолжаться в этих сценариях.
 

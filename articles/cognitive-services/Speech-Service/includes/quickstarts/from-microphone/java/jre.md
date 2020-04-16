@@ -1,53 +1,49 @@
 ---
-author: erhopf
+author: trevorbye
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/06/2019
-ms.author: erhopf
-ms.openlocfilehash: 95e8a30eaa59762ad7cf5b388326c9d3c9723d8e
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 04/02/2020
+ms.author: trbye
+ms.openlocfilehash: c2b844b3b1aa7a848e2668b3dca5a1cac5b5baaf
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78925728"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81400767"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=jre).
+> * <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Создайте ресурс службы "Речь" в Azure <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=jre&pivots=programming-language-java).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
-## <a name="add-sample-code"></a>Добавление примеров кода
+## <a name="source-code"></a>Исходный код
 
-1. Выберите **Файл** > **Создать** > **Класс**, чтобы добавить пустой класс в проект Java.
+Выберите **Файл** > **Создать** > **Класс**, чтобы добавить пустой класс в проект Java. В окне **New Java Class** (Новый класс Java) введите **speechsdk.quickstart** в поле **Пакет** и **Main** в поле **Имя**.
 
-1. В окне **New Java Class** (Новый класс Java) введите **speechsdk.quickstart** в поле **Пакет** и **Main** в поле **Имя**.
+![Снимок экрана окна "Новый класс Java"](~/articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-06-create-main-java.png)
 
-   ![Снимок экрана окна "Новый класс Java"](~/articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-06-create-main-java.png)
+Замените содержимое файла *Main.java* приведенным ниже фрагментом кода:
 
-1. Замените весь код в файле `Main.java` на следующий фрагмент:
+[!code-java[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/from-microphone/src/speechsdk/quickstart/Main.java#code)]
 
-   [!code-java[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/from-microphone/src/speechsdk/quickstart/Main.java#code)]
+[!INCLUDE [replace key and region](../replace-key-and-region.md)]
 
-1. Замените строку `YourSubscriptionKey` своим ключом подписки.
+## <a name="code-explanation"></a>Пояснение к коду
 
-1. Замените строку `YourServiceRegion` **идентификатором региона** на основе [региона](https://aka.ms/speech/sdkregion), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+[!INCLUDE [code explanation](../code-explanation.md)]
 
-1. Сохраните внесенные в проект изменения.
+## <a name="build-and-run-app"></a>Компиляция и запуск приложения
 
-> [!NOTE]
-> Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
-
-## <a name="build-and-run-the-app"></a>Создание и запуск приложения
-
-Нажмите клавишу F11 или выберите **Запустить** > **Отладка**.
+Нажмите клавишу <kbd>F11</kbd> или выберите **Запустить** > **Отладка**.
 Слова, произносимые в микрофон, в течение следующих 15 секунд будут распознаны и записаны в окне консоли.
 
 ![Снимок экрана выходных данных консоли после успешного распознавания](~/articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-07-console-output.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
+[!INCLUDE [Speech recognition basics](../../speech-to-text-next-steps.md)]
+

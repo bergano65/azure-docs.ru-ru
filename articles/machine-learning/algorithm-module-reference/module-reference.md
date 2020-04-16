@@ -9,12 +9,12 @@ ms.topic: reference
 author: peterclu
 ms.author: peterlu
 ms.date: 02/22/2020
-ms.openlocfilehash: c24c7ce1d47a4734d79d7e17e9fb4b3a2d4d70e0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7fcfc7c15f94d7b569629e53534d731126172260
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064144"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399059"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer-preview"></a>Ссылка на модуль «Алгоритм &» для дизайнера машинного обучения Azure (предварительный просмотр)
 
@@ -24,7 +24,7 @@ ms.locfileid: "80064144"
 
 Для помощи в выборе алгоритмов см. 
 * [Выбор алгоритмов](../how-to-select-algorithms.md)
-* [Лазурный алгоритм машинного обучения Чит лист](../../synapse-analytics/sql-data-warehouse/cheat-sheet.md)
+* [Лазурный алгоритм машинного обучения Чит лист](../algorithm-cheat-sheet.md)
 
 > [!TIP]
 > В любом конвейере в конструкторе можно получить информацию о конкретном модуле. Выберите модуль, а затем щелкните ссылку **more help** (дополнительная помощь) в области **Quick Help** (Экспресс-справка).
@@ -34,7 +34,7 @@ ms.locfileid: "80064144"
 
 | Функциональность | Описание | Module |
 | --- |--- | --- |
-| Входные и выходные данные | Перемещение данных из облачных источников в конвейер. Запишите свои результаты или промежуточные данные в Azure Storage, базу данных S'L или Hive во время запуска конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Ввод данных вручную](enter-data-manually.md) <br/> [Экспорт данных](export-data.md) <br/> [Данные по импорту](import-data.md) |
+| Входные и выходные данные | Перемещение данных из облачных источников в конвейер. Запишите свои результаты или промежуточные данные в Azure Storage, базу данных S'L или Hive во время запуска конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Ввод данных вручную](enter-data-manually.md) <br/> [Экспорт данных](export-data.md) <br/> [Импорт данных](import-data.md) |
 | Преобразование данных. | Операции на данных, которые являются уникальными для машинного обучения, такие как нормализация или связывание данных, уменьшение размерности и преобразование данных в различные форматы файлов.| [Добавление столбцов](add-columns.md) <br/> [Добавление строк](add-rows.md) <br/> [Применение математической операции](apply-math-operation.md) <br/> [Применение преобразования SQL](apply-sql-transformation.md) <br/> [Чистые отсутствующие данные](clean-missing-data.md) <br/> [Обрезка значений](clip-values.md) <br/> [Преобразование в CSV-файл](convert-to-csv.md) <br/> [Преобразование в набор данных](convert-to-dataset.md) <br/> [Преобразование в значения индикатора](convert-to-indicator-values.md) <br/> [Правка метаданных](edit-metadata.md) <br/> [Объединение данных](join-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Раздел и образец](partition-and-sample.md)  <br/> [Удаление дублирующихся строк](remove-duplicate-rows.md) <br/> [SMOTE](smote.md) <br/> [Преобразование "Выбор столбцов"](select-columns-transform.md) <br/> [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Разделение данных](split-data.md) |
 | Выбор компонентов | Выберите подмножество релевантных, полезных функций для использования в создании аналитической модели. | [Выбор признаков с помощью фильтра](filter-based-feature-selection.md) <br/> [Значение функции перестановки](permutation-feature-importance.md) |
 | Статистические функции | Предоставить широкий спектр статистических методов, связанных с наукой о данных. | [Сведение данных](summarize-data.md)|

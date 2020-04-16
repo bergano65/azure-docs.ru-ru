@@ -11,12 +11,12 @@ ms.date: 11/22/2019
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 62cf1f369cbde372e82e7c3ffe26473f09668bc7
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: db282bae92ec14c1cb4f6a61b61d435814b0f13c
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80742544"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81408054"
 ---
 # <a name="data-warehouse-units-dwus"></a>Единицы хранилища данных (DWUs)
 
@@ -32,7 +32,7 @@ ms.locfileid: "80742544"
 
 Для повышения производительности можно увеличить количество единиц хранилища данных. Для снижения производительности сократите единицы хранилища данных. Использование хранилища и операции вычисления оплачиваются отдельно, независимо от изменений количества единиц использования хранилища данных.
 
-Производительность для единиц хранилища данных основана на следующих метриках рабочей нагрузки:
+Производительность единиц DWU основана на следующих метриках рабочей нагрузки хранилища данных:
 
 - Как быстро стандартный запрос пула S'L может сканировать большое количество строк, а затем выполнять сложную агрегацию. Это требует интенсивного использования операций ввода-вывода и ресурсов ЦП.
 - Как быстро пул S'L может глотать данные из Azure Storage Blobs или Azure Data Lake. Это сетевая операция, которая требует интенсивного использования ресурсов ЦП.
@@ -46,21 +46,37 @@ ms.locfileid: "80742544"
 
 ## <a name="service-level-objective"></a>Целевой уровень обслуживания
 
+Цель уровня обслуживания (SLO) — это параметр масштабируемости, который определяет уровень затрат и производительности хранилища данных. Уровни обслуживания для поколения 2 измеряются в вычислительных единицах использования хранилища данных (cDWU). Пример: DW2000c. Уровни обслуживания поколения 1 измеряются в DWU. Пример: DW2000.
+
 Цель уровня обслуживания (SLO) — это параметр масштабируемости, определяющий стоимость и уровень производительности пула S'L. Уровни обслуживания для пула Gen2 S'L измеряются в единицах хранилища данных (DWU), например DW2000c.
 
-В t-S'L настройки SERVICE_OBJECTIVE определяют уровень обслуживания вашего пула S'L.
+> [!NOTE]
+> Недавно для Хранилища данных SQL Azure 2-го поколения были расширены возможности масштабирования, и теперь оно поддерживает низкие уровни вычислительных ресурсов от 100 cDWU. Существующие хранилища данных 1-го поколения, которым необходима поддержка более низких уровней вычислительных ресурсов, можно обновить до 2-го поколения в регионах, где оно сейчас доступно, без дополнительной платы.  Если эта возможность пока не доступна для вашего региона, можно обновить хранилище, выполнив геовосстановление в поддерживаемый регион. Дополнительные сведения см. в статье [Оптимизация производительности путем обновления хранилища данных SQL](../sql-data-warehouse/upgrade-to-latest-generation.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+
+В SERVICE_OBJECTIVE настройки t-S'L определяют уровень обслуживания и уровень производительности для вашего пула S'L.
 
 ```sql
 CREATE DATABASE mySQLDW
-( EDITION = 'Datawarehouse'
+(Edition = 'Datawarehouse'
  ,SERVICE_OBJECTIVE = 'DW1000c'
 )
 ;
 ```
 
-## <a name="capacity-limits"></a>Ограничения емкости
+## <a name="performance-tiers-and-data-warehouse-units"></a>Уровни производительности и единицы использования хранилища данных
+
+Для каждого уровня производительности используются единицы измерения DWU с незначительными различиями. В счете эта разница представлена как единица масштабирования, преобразованная непосредственно в сумму к оплате.
+
+- Хранилища данных поколения 1 измеряются в единицах использования хранилища данных (DWU).
+- Хранилища данных поколения 2 измеряются в вычислительных единицах использования хранилища данных (cDWU).
+
+Эти единицы поддерживают масштабирование вверх или вниз вычислительных ресурсов, а также приостановку вычислений, когда не нужно использовать хранилище данных. Все эти операции можно использовать по запросу. Чтобы улучшить уровень производительности, на вычислительных узлах поколения 2 используется локальный кэш на основе диска. При масштабировании или остановке системы кэш становится недействительным. Это значит, что для достижения оптимальной производительности требуется период подготовки кэша.  
 
 Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../../sql-database/sql-database-service-tiers-dtu.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](sql-data-warehouse-service-capacity-limits.md#workload-management).
+
+## <a name="capacity-limits"></a>Ограничения емкости
+
+Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../../sql-database/sql-database-what-is-a-dtu.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management).
 
 ## <a name="how-many-data-warehouse-units-do-i-need"></a>Сколько единиц хранилища данных мне нужно
 
@@ -115,21 +131,21 @@ JOIN    sys.databases                     AS db ON ds.database_id = db.database_
 
 3. Выберите команду **Сохранить**. Появится окно подтверждения. Щелкните **Да** для подтверждения или **Нет** для отмены.
 
-### <a name="powershell"></a>PowerShell
+#### <a name="powershell"></a>PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Чтобы изменить DWUs, используйте [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) PowerShell cmdlet. В следующем примере приводится цель уровня обслуживания DW1000c для базы данных MyS'LDW, размещенной на сервере MyServer.
+Чтобы изменить DWUs, используйте [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) PowerShell cmdlet. В приведенном ниже примере для базы данных MySQLDW, размещенной на сервере MyServer, устанавливается цель уровня обслуживания DW1000.
 
 ```Powershell
 Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServiceObjectiveName "DW1000c"
 ```
 
-Дополнительные сведения см. в статье [Использование командлетов PowerShell и интерфейсов REST API при работе с хранилищем данных SQL](sql-data-warehouse-reference-powershell-cmdlets.md).
+Дополнительные сведения см. в статье [Использование командлетов PowerShell и интерфейсов REST API при работе с хранилищем данных SQL](../sql-data-warehouse/sql-data-warehouse-reference-powershell-cmdlets.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 ### <a name="t-sql"></a>T-SQL
 
-С помощью T-S'L вы можете просматривать текущие настройки DWU, изменять настройки и проверять ход выполнения.
+С помощью T-S'L вы можете просматривать текущие DWUsettings, изменять настройки и проверять ход выполнения.
 
 Изменение DWU:
 
@@ -152,12 +168,12 @@ Content-Type: application/json; charset=UTF-8
 
 {
     "properties": {
-        "requestedServiceObjectiveName": DW1000c
+        "requestedServiceObjectiveName": DW1000
     }
 }
 ```
 
-Дополнительные примеры REST API см. в статье [REST API для хранилища данных Azure SQL](sql-data-warehouse-manage-compute-rest-api.md).
+Дополнительные примеры REST API см. в статье [REST API для хранилища данных Azure SQL](../sql-data-warehouse/sql-data-warehouse-manage-compute-rest-api.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 ## <a name="check-status-of-dwu-changes"></a>Проверка состояния изменений единиц DWU
 
@@ -170,14 +186,13 @@ Content-Type: application/json; charset=UTF-8
 Чтобы проверить состояние изменений DWU, сделайте следующее:
 
 1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
+2. Отправьте запрос ниже, чтобы проверить состояние базы данных.
 
-1. Отправьте запрос ниже, чтобы проверить состояние базы данных.
-
-    ```sql
-    SELECT    *
-    FROM      sys.databases
-    ;
-    ```
+```sql
+SELECT    *
+FROM      sys.databases
+;
+```
 
 1. Отправьте запрос ниже, чтобы проверить состояние операции.
 

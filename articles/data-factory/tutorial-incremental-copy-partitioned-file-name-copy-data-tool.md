@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 3/17/2020
-ms.openlocfilehash: 50e82362f39da2d3f3ecfad2de1ed07b68f8a6a1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6cc089a1efc3f5960a8bca8a36063bb1019bbcc6
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79501654"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81409396"
 ---
 # <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Постепенно копируйте новые файлы на основе времени, разделенного именем файла, с помощью инструмента Copy Data
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом руководстве вы создадите фабрику данных с помощью портала Azure. Затем используется инструмент Copy Data для создания конвейера, который постепенно копирует новые файлы на основе раздела времени имени файла из хранилища Azure Blob в хранилище Azure Blob.
 
@@ -36,7 +38,7 @@ ms.locfileid: "79501654"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure:** Если у вас нет подписки Нацу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
+* **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * **Учетная запись хранения Azure**: Используйте хранилище Blob в качестве _хранилища исходных_ данных и _данных раковины._ Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-account-create.md).
 
 ### <a name="create-two-containers-in-blob-storage"></a>Создание двух контейнеров в хранилище Blob
@@ -76,7 +78,7 @@ ms.locfileid: "79501654"
 
 5. В качестве **версии** выберите **V2**.
 6. В **соответствии с местоположением**выберите место для фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных (например, служба хранилища Azure и база данных SQL) и вычислительные ресурсы (например, Azure HDInsight), используемые фабрикой данных, могут располагаться в других регионах или расположениях.
-7. Выберите **Создать**.
+7. Нажмите кнопку **создания**.
 8. Когда создание завершится, откроется домашняя страница **Фабрика данных**.
 9. Щелкните плитку **Author & Monitor** (Создание и мониторинг), чтобы запустить на отдельной вкладке пользовательский интерфейс фабрики данных Azure.
 
@@ -99,7 +101,7 @@ ms.locfileid: "79501654"
 
     d. Под **повторением,** введите **1 час (ы)**.
 
-    д) Нажмите кнопку **Далее**.
+    д) Выберите **Далее**.
 
     Пользовательский интерфейс фабрики данных создаст конвейер с указанным именем задачи.
 
@@ -139,7 +141,7 @@ ms.locfileid: "79501654"
 
     ![Выбор целевого файла или папки](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/output-file-name.png)
 
-    c. Нажмите кнопку **Далее**.
+    c. Щелкните **Далее**.
 
     ![Выбор целевого файла или папки](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/click-next-after-output-folder.png)
 7. На странице **Параметры** выберите **Далее**.

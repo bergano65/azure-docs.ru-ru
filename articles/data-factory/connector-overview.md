@@ -9,14 +9,15 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: 7b01e9936189a40fcf1400d3e6ee948032786d3a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 623ee15c5071fdc7a36677481e98872b8c2bd562
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75444178"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81410411"
 ---
 # <a name="azure-data-factory-connector-overview"></a>Обзор разъема системы данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Фабрика данных Azure поддерживает следующие хранилища и форматы данных через мероприятия Copy, Data Flow, Look-up, Get Metadata и Delete. Нажмите на каждый хранилище данных, чтобы узнать поддерживаемые возможности и соответствующие конфигурации в деталях.
 

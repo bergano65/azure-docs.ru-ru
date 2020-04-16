@@ -1,16 +1,16 @@
 ---
 title: Используйте управляемый итог с помощью приложения
-description: Как использовать управляемые идентификаторы в коде приложения Azure Service Fabric для доступа к службам Azure. Эта функция предоставляется в общедоступной предварительной версии.
+description: Как использовать управляемые идентификаторы в коде приложения Azure Service Fabric для доступа к службам Azure.
 ms.topic: article
 ms.date: 10/09/2019
-ms.openlocfilehash: 59680ec7911f55c3dc49d8834b410a039aa435dc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cbdb1190ec3238a6accd34db3025e08c194d60b8
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75610324"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415622"
 ---
-# <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services-preview"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure (предварительный просмотр)
+# <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure
 
 Приложения Service Fabric могут использовать управляемые идентификаторы для доступа к другим ресурсам Azure, которые поддерживают аутентификацию на основе Azure Active Directory. Приложение может получить [токен доступа,](../active-directory/develop/developer-glossary.md#access-token) представляющий его личность, который может быть назначен системой или назначен пользователем, и использовать его в качестве маркера "носителя", чтобы проверить подлинность другой службы, также известной как [защищенный сервер ресурсов.](../active-directory/develop/developer-glossary.md#resource-server) Токен представляет идентификацию, назначенную приложению Service Fabric, и будет выдаваться только ресурсам Azure (включая приложения SF), которые разделяют эту идентификацию. Обратитесь к управляемой документации [обзора идентификации](../active-directory/managed-identities-azure-resources/overview.md) для подробного описания управляемых идентификационных данных, а также к различию между системными и назначенными пользователями идентификаторами. Мы будем ссылаться на приложение Service Fabric с поддержкой управляемой идентификации в качестве [клиентского приложения](../active-directory/develop/developer-glossary.md#client-application) на протяжении всей этой статьи.
 
@@ -24,19 +24,18 @@ ms.locfileid: "75610324"
 В кластерах, включенных для управляемых идел, время выполнения Service Fabric предоставляет конечную точку локального поставщика, которую приложения могут использовать для получения токенов доступа. Конечная точка доступна на каждом узлах кластера и доступна для всех сущностей этого узла. Авторизованные абоненты могут получить токены доступа, позвонив по этой конечной точке и представив код аутентификации; код генерируется временем выполнения Service Fabric для каждой активации определенного пакета услуг и привязан к сроку службы, хулящему этот пакет кода обслуживания.
 
 В частности, среда службы service Fabric с управляемой идентичностью будет посеяна со следующими переменными:
-- 'MSI_ENDPOINT': конечная точка локального хоста, в комплекте с траекторией, версией API и параметрами, соответствующими управляемой идентификации этой службы
-- 'MSI_SECRET': код аутентификации, который является непрозрачной строкой и однозначно представляет службу на текущем узлах
-
-> [!NOTE]
-> Названия "MSI_ENDPOINT" и "MSI_SECRET" относятся к предыдущему обозначению управляемых идентификационных данных ("Управляется сервисная идентичность"), и которые в настоящее время унижаются. Имена также согласуются с эквивалентными переменными именами среды, используемыми другими службами Azure, которые поддерживают управляемые идентификаторы.
+- 'IDENTITY_ENDPOINT': конечная точка localhost, соответствующая управляемой идентичности службы
+- «IDENTITY_HEADER»: уникальный код проверки подлинности, представляющий службу на текущем узлах
+- 'IDENTITY_SERVER_THUMBPRINT': Thumbprint сервера управляемых идентификационных данных сервисной ткани
 
 > [!IMPORTANT]
-> В коде приложения следует рассматривать значение переменной среды "MSI_SECRET" как конфиденциальные данные - она не должна быть зарегистрирована или иным образом распространена. Код проверки подлинности не имеет значения за пределами локального узла или после завершения процесса хостинга службы, но он представляет личность службы Service Fabric, и поэтому следует относиться с теми же мерами предосторожности, что и сам токен доступа.
+> В коде приложения следует рассматривать значение переменной среды "IDENTITY_HEADER" как конфиденциальные данные - она не должна быть зарегистрирована или иным образом распространена. Код проверки подлинности не имеет значения за пределами локального узла или после завершения процесса хостинга службы, но он представляет личность службы Service Fabric, и поэтому следует относиться с теми же мерами предосторожности, что и сам токен доступа.
 
 Чтобы получить токен, клиент выполняет следующие действия:
-- формирует URI путем совместимость управляемой точки идентификации (MSI_ENDPOINT значение) с версией API и ресурсом (аудиторией), необходимым для маркера
-- создает запрос GET http для указанного URI
-- добавляет код проверки подлинности (MSI_SECRET значение) в качестве заголовка в запрос
+- формирует URI путем совместимость управляемой точки идентификации (IDENTITY_ENDPOINT значение) с версией API и ресурсом (аудиторией), необходимым для маркера
+- создает запрос GET http(s) для указанного URI
+- добавляет соответствующую логику проверки серверного сертификата
+- добавляет код проверки подлинности (IDENTITY_HEADER значение) в качестве заголовка в запрос
 - отправляет запрос
 
 Успешный ответ будет содержать полезную нагрузку JSON, представляющую полученный токен доступа, а также метаданные, описывающие его. Неудачный ответ будет также включать объяснение сбоя. Ниже приведены дополнительные сведения об обработке ошибок.
@@ -44,19 +43,22 @@ ms.locfileid: "75610324"
 Токены доступа будут кэшироваться Service Fabric на различных уровнях (узел, кластер, служба поставщика ресурсов), поэтому успешный ответ не обязательно означает, что токен был выпущен непосредственно в ответ на запрос приложения пользователя. Токены будут кэшироваться меньше срока их службы, и поэтому приложение гарантированно получит действительный токен. Рекомендуется, чтобы код приложения кэшировал любые приобретаемые им токены доступа; ключ кэширования должен включать (производ) аудиторию. 
 
 
+> [!NOTE]
+> Единственная принятая версия API в настоящее время, `2019-07-01-preview`и может быть изменена.
+
 Пример запроса:
 ```http
-GET 'http://localhost:2377/metadata/identity/oauth2/token?api-version=2019-07-01-preview&resource=https://keyvault.azure.com/' HTTP/1.1 Secret: 912e4af7-77ba-4fa5-a737-56c8e3ace132
+GET 'https://localhost:2377/metadata/identity/oauth2/token?api-version=2019-07-01-preview&resource=https://vault.azure.net/' HTTP/1.1 Secret: 912e4af7-77ba-4fa5-a737-56c8e3ace132
 ```
 где:
 
 | Элемент | Описание |
 | ------- | ----------- |
 | `GET` | HTTP-команда, указывающая, что необходимо извлечь данные из конечной точки. В этом случае используется маркер доступа OAuth. | 
-| `http://localhost:2377/metadata/identity/oauth2/token` | Управляемая конечная точка идентификации для приложений Service Fabric, предоставляемая через MSI_ENDPOINT переменной среды. |
+| `https://localhost:2377/metadata/identity/oauth2/token` | Управляемая конечная точка идентификации для приложений Service Fabric, предоставляемая через IDENTITY_ENDPOINT переменной среды. |
 | `api-version` | Параметр строки запроса, определяющий версию API службы управляемых токенов идентификации; в настоящее время `2019-07-01-preview`единственное принятое значение является и может быть изменено. |
-| `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Это будет отражено `aud` как (аудитория) претензии выданного токена. Этот пример запрашивает маркер для доступа к Убежище ключа Azure,\/которое URI App ID — https: /keyvault.azure.com/. |
-| `Secret` | Поле заголовка запроса HTTP, требуемое службой управляемых токенов токенов Service Fabric для службы обслуживания Fabric для проверки подлинности вызывающего абонента. Это значение обеспечивается временем выполнения SF через MSI_SECRET переменной среды. |
+| `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Это будет отражено `aud` как (аудитория) претензии выданного токена. Этот пример запрашивает маркер для доступа к Убежище ключа Azure,\/uri которого является App ID https: /vault.azure.net/. |
+| `Secret` | Поле заголовка запроса HTTP, требуемое службой управляемых токенов токенов Service Fabric для службы обслуживания Fabric для проверки подлинности вызывающего абонента. Это значение обеспечивается временем выполнения SF через IDENTITY_HEADER переменной среды. |
 
 
 Пример ответа:
@@ -67,7 +69,7 @@ Content-Type: application/json
     "token_type":  "Bearer",
     "access_token":  "eyJ0eXAiO...",
     "expires_on":  1565244611,
-    "resource":  "https://keyvault.azure.com/"
+    "resource":  "https://vault.azure.net/"
 }
 ```
 где:
@@ -124,20 +126,33 @@ namespace Azure.ServiceFabric.ManagedIdentity.Samples
         /// <returns>Access token</returns>
         public static async Task<string> AcquireAccessTokenAsync()
         {
-            var managedIdentityEndpoint = Environment.GetEnvironmentVariable("MSI_ENDPOINT");
-            var managedIdentityAuthenticationCode = Environment.GetEnvironmentVariable("MSI_SECRET");
+            var managedIdentityEndpoint = Environment.GetEnvironmentVariable("IDENTITY_ENDPOINT");
+            var managedIdentityAuthenticationCode = Environment.GetEnvironmentVariable("IDENTITY_HEADER");
+            var managedIdentityServerThumbprint = Environment.GetEnvironmentVariable("IDENTITY_SERVER_THUMBPRINT");
+            // Latest api version, 2019-07-01-preview is still supported.
+            var managedIdentityApiVersion = Environment.GetEnvironmentVariable("IDENTITY_API_VERSION");
             var managedIdentityAuthenticationHeader = "secret";
-            var managedIdentityApiVersion = "2019-07-01-preview";
             var resource = "https://management.azure.com/";
 
             var requestUri = $"{managedIdentityEndpoint}?api-version={managedIdentityApiVersion}&resource={HttpUtility.UrlEncode(resource)}";
 
             var requestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri);
             requestMessage.Headers.Add(managedIdentityAuthenticationHeader, managedIdentityAuthenticationCode);
+            
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, certChain, policyErrors) =>
+            {
+                // Do any additional validation here
+                if (policyErrors == SslPolicyErrors.None)
+                {
+                    return true;
+                }
+                return 0 == string.Compare(cert.GetCertHashString(), managedIdentityServerThumbprint, StringComparison.OrdinalIgnoreCase);
+            };
 
             try
             {
-                var response = await new HttpClient().SendAsync(requestMessage)
+                var response = await new HttpClient(handler).SendAsync(requestMessage)
                     .ConfigureAwait(false);
 
                 response.EnsureSuccessStatusCode();

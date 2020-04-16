@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a042897ecbe35935c1832a53f523eb0597ebafc
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 6fd8a0c3688e5056c7941d334da8caee9f21ba82
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80654241"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81407265"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве iOS
 
@@ -27,7 +27,7 @@ ms.locfileid: "80654241"
 
 Настройка данной функции избавляет от необходимости ввода имени пользователя и пароля в определенных почтовых клиентах и приложениях Microsoft Office на мобильных устройствах.
 
-В этой статье приведены требования и поддерживаемые сценарии для настройки CBA на устройстве iOS (Android) для пользователей клиентов в тарифных планах Office 365 корпоративный, бизнес, для образования, для US Gov организаций, Китая и Германии.
+Эта тема предоставляет вам требования и поддерживаемые сценарии настройки CBA на устройстве iOS для пользователей арендаторов в планах Office 365 Enterprise, Business, Education, Government US, China и Germany.
 
 В тарифных планах Office 365 US Government Defense и Federal доступна предварительная версия этой функции.
 

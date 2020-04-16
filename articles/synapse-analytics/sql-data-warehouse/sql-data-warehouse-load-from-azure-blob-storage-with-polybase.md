@@ -11,14 +11,14 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c93dab2f6086b10e1e8d75c4fc3334a95c3fcafa
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 118653efc8829ac5ef6287bb36fb5595cff1147b
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633272"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416124"
 ---
-# <a name="load-contoso-retail-data-to-a-synapse-sql-data-warehouse"></a>Загрузка розничных данных Contoso на хранилище данных Synapse S'L
+# <a name="load-contoso-retail-data-to-synapse-sql"></a>Загрузка данных о розничной торговле Contoso в Synapse S'L 
 
 В этом уроке вы научитесь использовать команды PolyBase и T-S'L для загрузки двух таблиц из розничных данных Contoso в хранилище данных Synapse S'L.
 
@@ -28,7 +28,7 @@ ms.locfileid: "80633272"
 2. загружать общедоступные данные в базу данных;
 3. выполнять оптимизацию после завершения загрузки.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для запуска этого учебника требуется учетная запись Azure, которая уже имеет хранилище данных Synapse s'L. Если у вас нет подготовленного хранилища данных, [см.](create-data-warehouse-portal.md)
 
@@ -221,7 +221,7 @@ GO
 
 ### <a name="load-the-data-into-new-tables"></a>Загрузка данных в новые таблицы
 
-Для загрузки данных из хранилища Azure blob в таблицу хранилища данных используйте выписку [CREATE TABLE AS SELECT (Transact-S'L).](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) Загрузка [с помощью CTAS](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md) использует созданные вами сильно набранные внешние таблицы. Для загрузки данных в новые таблицы используйте одну выписку CTAS на таблицу.
+Для загрузки данных из хранилища Azure blob в таблицу хранилища данных используйте выписку [CREATE TABLE AS SELECT (Transact-S'L).](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) Загрузка [с помощью CTAS](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) использует созданные вами сильно набранные внешние таблицы. Для загрузки данных в новые таблицы используйте одну выписку CTAS на таблицу.
 
 Компонент CTAS создает новую таблицу и заполняет ее результатам инструкции Select. CTAS определяет новую таблицу так, чтобы в ней содержались те же столбцы и типы данных, которые были выведены инструкцией Select. Если выбрать все столбцы из внешней таблицы, новая таблица будет репликой столбцов и типов данных такой внешней таблицы.
 

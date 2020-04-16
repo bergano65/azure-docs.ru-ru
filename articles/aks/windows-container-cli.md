@@ -4,12 +4,12 @@ description: Узнайте, как быстро создать кластер K
 services: container-service
 ms.topic: article
 ms.date: 01/27/2020
-ms.openlocfilehash: 8d2a91f63815e7ba4bcbe4084b80a06fa7779099
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 2aecebcc45cb24c9ab3a594aa4d74b1584c7ffa7
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886727"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81392662"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр - Создание контейнера Windows Server в кластере службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -27,7 +27,7 @@ ms.locfileid: "80886727"
 
 Если вы решили установить и использовать CLI локально, эта статья требует, чтобы вы запускали версию Azure CLI 2.0.61 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 После создания кластера, который может запускать контейнеры Windows Server, необходимо добавить дополнительный пул узлов. Добавление дополнительного пула узлов покрыто более поздним шагом, но сначала необходимо включить несколько функций предварительного просмотра.
 
@@ -196,7 +196,7 @@ aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.15.7
 aksnpwin987654                      Ready    agent   108s   v1.15.7
 ```
 
-## <a name="run-the-application"></a>Запуск приложения
+## <a name="run-the-application"></a>Выполнение приложения
 
 Файл манифеста Kubernetes определяет требуемое состояние для кластера, включая образы контейнеров, которые нужно запустить. В этой статье используется манифест для создания всех объектов, необходимых для запуска ASP.NET примерприложения в контейнере Windows Server. Этот манифест включает в себя [развертывание Kubernetes][kubernetes-deployment] для ASP.NET примерприложения и внешнюю [службу Kubernetes][kubernetes-service] для доступа к приложению из Интернета.
 
@@ -302,7 +302,7 @@ az group delete --name myResourceGroup --yes --no-wait
 ```
 
 > [!NOTE]
-> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе [Дополнительные замечания][sp-delete].
+> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе [Дополнительные замечания][sp-delete]. Если вы использовали управляемую идентификацию, идентификация управляется платформой и не требует удаления.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

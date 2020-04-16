@@ -2,13 +2,13 @@
 title: Определение нескольких экземпляров свойства
 description: Используйте операцию копирования в шаблоне управления ресурсами Azure для итерации несколько раз при создании свойства на ресурсе.
 ms.topic: conceptual
-ms.date: 02/13/2020
-ms.openlocfilehash: e86d38b0e5d2e39d54b3c419b6eebdcda74022db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/14/2020
+ms.openlocfilehash: 831ae1af202a1cdf52bdd2bdf0d9a042a97ba52f
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80258113"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81391338"
 ---
 # <a name="property-iteration-in-arm-templates"></a>Итерация свойств в шаблонах ARM
 
@@ -30,7 +30,9 @@ ms.locfileid: "80258113"
 ]
 ```
 
-Для **имени**укажите имя ресурса, которое вы хотите создать. Свойство **подсчета** определяет количество итераций, которые вы хотите для свойства.
+Для **имени**укажите имя ресурса, которое вы хотите создать.
+
+Свойство **подсчета** определяет количество итераций, которые вы хотите для свойства.
 
 Свойство **ввода** определяет свойства, которые вы хотите повторить. Создается массив элементов, построенных из значения **в входно-свойстве.**
 
@@ -78,11 +80,7 @@ ms.locfileid: "80258113"
 }
 ```
 
-Обратите внимание, что при использовании `copyIndex` в итерации свойства, необходимо указать имя итерации.
-
-> [!NOTE]
-> Итерация свойств также поддерживает смещенный аргумент. Смещение должно прийти после названия итерации, например, copyIndex ('dataDisks', 1).
->
+Обратите внимание, что при использовании `copyIndex` в итерации свойства, необходимо указать имя итерации. Итерация свойств также поддерживает смещенный аргумент. Смещение должно прийти после названия итерации, например, copyIndex ('dataDisks', 1).
 
 Диспетчер ресурсов разворачивает массив `copy` во время развертывания. Имя массива становится именем свойства. Входные значения становятся свойствами объекта. Развернутый шаблон выглядит так:
 
@@ -111,6 +109,66 @@ ms.locfileid: "80258113"
         }
       ],
       ...
+```
+
+Операция копирования удобна при работе с массивами, так как позволяет выполнить итерацию по каждому элементу в массиве. Используйте функцию `length` в массиве, чтобы указать число итераций, а также функцию `copyIndex` для получения текущего индекса в массиве.
+
+Следующий пример шаблона создает группу failover для баз данных, которые передаются в качестве массива.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "primaryServerName": {
+            "type": "string"
+        },
+        "secondaryServerName": {
+            "type": "string"
+        },
+        "databaseNames": {
+            "type": "array",
+            "defaultValue": [
+                "mydb1",
+                "mydb2",
+                "mydb3"
+            ]
+        }
+    },
+    "variables": {
+        "failoverName": "[concat(parameters('primaryServerName'),'/', parameters('primaryServerName'),'failovergroups')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers/failoverGroups",
+            "apiVersion": "2015-05-01-preview",
+            "name": "[variables('failoverName')]",
+            "properties": {
+                "readWriteEndpoint": {
+                    "failoverPolicy": "Automatic",
+                    "failoverWithDataLossGracePeriodMinutes": 60
+                },
+                "readOnlyEndpoint": {
+                    "failoverPolicy": "Disabled"
+                },
+                "partnerServers": [
+                    {
+                        "id": "[resourceId('Microsoft.Sql/servers', parameters('secondaryServerName'))]"
+                    }
+                ],
+                "copy": [
+                    {
+                        "name": "databases",
+                        "count": "[length(parameters('databaseNames'))]",
+                        "input": "[resourceId('Microsoft.Sql/servers/databases', parameters('primaryServerName'), parameters('databaseNames')[copyIndex('databases')])]"
+                    }
+                ]
+            }
+        }
+    ],
+    "outputs": {
+    }
+}
 ```
 
 Элемент копирования представляет собой массив, поэтому вы можете указать несколько свойств для ресурса.

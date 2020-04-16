@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fba4dae66b5adcea6cc33e61d8cf88946e29546e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5f5987bee82dc22d3742cb5d87040930e5d2c52d
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80051170"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393036"
 ---
 # <a name="self-service-password-reset-policies-and-restrictions-in-azure-active-directory"></a>Политики сбросить пароли самообслуживания и ограничения в active-каталоге Azure
 
@@ -160,16 +160,6 @@ ms.locfileid: "80051170"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о сбросе пароля с помощью Azure AD см. в следующих статьях:
+Чтобы начать работу с SSPR, см. [Tutorial: Возможность пользователям разблокировать свою учетную запись или сбросить пароли с помощью сбросить пароля самообслуживания Azure Active Directory.](tutorial-enable-sspr.md)
 
-* [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
-* [У вас есть вопрос лицензирования?](concept-sspr-licensing.md)
-* [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
-* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
-* [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
-* [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
-* [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Я думаю, что-то сломано. Как устранить неполадки SSPR?](active-directory-passwords-troubleshoot.md)
-* [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
+Если у вас или пользователей возникли проблемы с SSPR, см. [сбросить пароль самообслуживания Troubleshoot](active-directory-passwords-troubleshoot.md)

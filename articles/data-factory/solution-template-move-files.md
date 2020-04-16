@@ -11,14 +11,15 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 7/12/2019
-ms.openlocfilehash: b3165daa06ed975df9ccb677699d3ceb449327ab
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b36eb2615e98ee8ea7751c836fd43e81a5a0f4e2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74941954"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414746"
 ---
 # <a name="move-files-with-azure-data-factory"></a>Перемещение файлов с помощью фабрики данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается шаблон решения, который можно использовать для перемещения файлов из одной папки в другую между файлами. Один из распространенных сценариев использования этого шаблона: Файлы постоянно сбрасываются в папку посадки вашего исходного магазина. Создавая триггер расписания, конвейер ADF может периодически перемещать эти файлы из источника в хранилище назначения.  Способ, которым конвейер ADF достигает "движущихся файлов", получает файлы из папки посадки, копируя каждую из них в другую папку в магазине назначения, а затем удаляя те же файлы из папки посадки в хранилище исходного кода.
 

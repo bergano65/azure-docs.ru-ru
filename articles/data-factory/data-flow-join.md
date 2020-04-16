@@ -8,14 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/02/2020
-ms.openlocfilehash: 32100e9cad86f12dc8111ee8a0282a515540a4db
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 0c0e35f7f06afd0cafa4a1e353b7eda84ed226f2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80346608"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81413666"
 ---
 # <a name="join-transformation-in-mapping-data-flow"></a>Присоединиться к преобразованию в картографии потока данных
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Используйте преобразование соединения для объединения данных из двух источников или потоков в потоке данных отображения. Поток вывода будет включать в себя все столбцы из обоих источников, совпадающие с условием соединения. 
 
@@ -53,7 +55,7 @@ ms.locfileid: "80346608"
 > [!NOTE]
 > Убедитесь в том, чтобы включить по крайней мере один столбец с каждой стороны от левой и правой отношения в пользовательских крест присоединиться. Выполнение кросса со статическими значениями вместо столбцов с каждой стороны приводит к полному сканированию всего набора данных, в результате чего поток данных работает плохо.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 1. Выберите, с каким потоком данных вы присоединяетесь в **падении правого потока.**
 1. Выберите **тип соединения**

@@ -9,16 +9,17 @@ ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 04/15/2020
 ms.author: jingwang
-ms.openlocfilehash: 9ae07e2a471cc417b467092a2616a5a0cdafb1fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9f04955fb910a6159dc09ac40a87a398e67d59d6
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79260817"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414115"
 ---
 # <a name="schema-mapping-in-copy-activity"></a>Сопоставление схем в действии копирования
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как деятельность копирования Фабрики данных Azure делает схему картирования и отображения типа данных от исходных данных для потопа данных при выполнения копии данных.
 
@@ -278,11 +279,7 @@ ms.locfileid: "79260817"
 1. Преобразование собственных типов источников в промежуточные типы данных фабрики данных Azure.
 2. Преобразование промежуточных типов данных фабрики данных Azure в собственный тип приемника.
 
-Вы можете найти сопоставление собственного типа с промежуточным типом данных в разделе "Сопоставление типов данных" каждой статьи о соединителях.
-
-### <a name="supported-data-types"></a>Поддерживаемые типы данных
-
-Фабрика данных поддерживает следующие промежуточные типы данных: можно указать ниже значения при настройке информации типа в конфигурации [структуры набора данных:](concepts-datasets-linked-services.md#dataset-structure-or-schema)
+Копирование активности поддерживает следующие промежуточные типы данных: 
 
 * Byte[]
 * Логическое

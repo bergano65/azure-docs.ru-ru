@@ -1,25 +1,26 @@
 ---
-title: Схема события Azure Event Grid Azure SignalR
+title: Azure SingnalR — источник event Grid
 description: Описывает свойства, которые предусмотрены для событий Azure SignalR с помощью Azure Event Grid
 services: event-grid
-author: chenyl
+author: banisadr
 ms.service: event-grid
-ms.topic: reference
-ms.date: 06/11/2019
-ms.author: chenyl
-ms.openlocfilehash: 3b072ff2b680ad6d144c7441190ab2df9870f5d0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.topic: conceptual
+ms.date: 04/09/2020
+ms.author: babanisa
+ms.openlocfilehash: 730d1a7a053ab636c45313dd0c35a537434eb782
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67789076"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393390"
 ---
 # <a name="azure-event-grid-event-schema-for-signalr-service"></a>Схема событий Azure Event Grid для службы SignalR
 
-В этой статье приведены свойства и схема для событий службы SignalR.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+В этой статье приведены свойства и схема для событий службы SignalR.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). Он также дает вам список быстрых стартов и учебников для использования Azure SignalR в качестве источника событий.
 
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
-## <a name="available-event-types"></a>Доступные типы событий
+### <a name="available-event-types"></a>Доступные типы событий
 
 Служба SignalR излучает следующие типы событий:
 
@@ -28,7 +29,7 @@ ms.locfileid: "67789076"
 | Microsoft.SignalRService.КлиентПодключено | Поднят оподключено при подключении клиентского соединения. |
 | Microsoft.SignalRService.ClientConnectionDisconnected | Поднят при отключении клиентского соединения. |
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 Следующий пример показывает схему события, связанного с подключением к клиенту: 
 
@@ -71,7 +72,7 @@ ms.locfileid: "67789076"
 }]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -95,6 +96,12 @@ ms.locfileid: "67789076"
 | connectionId | строка | Уникальный идентификатор для клиентского соединения. |
 | userId | строка | Идентификатор пользователя, определенный в претензии. |
 | Errormessage | строка | Ошибка, которая приводит к отключению соединения. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title | Описание |
+|---------|---------|
+| [Реагируйте на события службы Azure SignalR с помощью Event Grid](../azure-signalr/signalr-concept-event-grid-integration.md) | Обзор интеграции службы Azure SignalR с Event Grid. |
+| [Как отправить события службы Azure SignalR в сетку событий](../azure-signalr/signalr-howto-event-grid-integration.md) | Показывает, как отправлять события службы Azure SignalR в приложение через Event Grid. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

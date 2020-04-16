@@ -1,18 +1,18 @@
 ---
-title: Объекты и компоненты Unity
+title: Игровые объекты и компоненты Unity
 description: Описывает специфические методы Unity для работы с объектами и компонентами удаленного рендеринга.
 author: jakrams
 ms.author: jakras
 ms.date: 02/28/2020
 ms.topic: how-to
-ms.openlocfilehash: 872f0e60943a674e5febf269dcb5b09fd08d77c9
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: a34276c73211c1d9bea291f449cbc7041a3e78a2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80681159"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81409858"
 ---
-# <a name="interact-with-unity-game-objects-and-components"></a>Взаимодействие с игровыми объектами и компонентами Unity
+# <a name="interact-with-unity-game-objects-and-components"></a>Взаимодействие с объектами и компонентами игр Unity
 
 Удаленное рендерирование Azure (ARR) оптимизировано для огромного количества объектов (см. [Ограничения).](../../reference/limits.md) Хотя управление большими и сложными иерархиями на узлах возможно, их воспроизведение всех в Unity на маломощных устройствах невозможно.
 
@@ -121,5 +121,5 @@ if (cutplane != null)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка удаленного рендеринга для Unity](unity-setup.md)
-* [Учебник: Работа с удаленными объектами в Unity](../../tutorials/unity/working-with-remote-entities.md)
+* [Настройка Удаленной отрисовки для Unity](unity-setup.md)
+* [Руководство. Работа с удаленными сущностями в Unity](../../tutorials/unity/working-with-remote-entities.md)

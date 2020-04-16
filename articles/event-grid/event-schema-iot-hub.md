@@ -1,29 +1,27 @@
 ---
-title: Схема службы "Сетка событий Azure" для Центра Интернета вещей | Документация Майкрософт
+title: Azure IoT концентратор как источник сетки событий
 description: В этой статье описаны свойства и схема для событий Центра Интернета вещей Azure. В нем перечислены доступные типы событий, пример события и свойства событий.
 services: iot-hub
 documentationcenter: ''
-author: kgremban
-manager: timlt
+author: spelluru
 editor: ''
 ms.service: event-grid
-ms.topic: reference
-ms.date: 01/21/2020
-ms.author: kgremban
-ms.openlocfilehash: cfbd46ad961bd1dc914bae98e761cd83d445ff88
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.topic: conceptual
+ms.date: 04/09/2020
+ms.author: spelluru
+ms.openlocfilehash: f9bf807884ab5592fa320532f3ca10a223081263
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76513037"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393330"
 ---
-# <a name="azure-event-grid-event-schema-for-iot-hub"></a>Схема событий службы "Сетка событий Azure" для Центра Интернета вещей
-
+# <a name="azure-iot-hub-as-an-event-grid-source"></a>Концентратор Azure IoT как источник сетки событий
 В этой статье описаны свойства и схема для событий Центра Интернета вещей Azure. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). 
 
-Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#iot-hub).
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
-## <a name="available-event-types"></a>Доступные типы событий
+### <a name="available-event-types"></a>Доступные типы событий
 
 Центр Интернета вещей выдает следующие типы событий:
 
@@ -37,7 +35,7 @@ ms.locfileid: "76513037"
 
 Все события устройства, за исключением телеметрии устройств, как правило, доступны во всех регионах, поддерживаемых Event Grid. Событие телеметрии устройства находится в открытом доступе и доступно во всех регионах, кроме Восточной США, Западной США, Западной Европы, [Правительства Лазурного,](../azure-government/documentation-government-welcome.md) [Azure China 21Vianet](/azure/china/china-welcome)и [Azure Germany.](https://azure.microsoft.com/global-infrastructure/germany/)
 
-## <a name="example-event"></a>Пример события
+### <a name="example-event"></a>Пример события
 
 Структура схемы для событий DeviceConnected и DeviceDisconnected идентична. Этот пример демонстрирует схему события, возникающего при подключении устройства в Центре Интернета вещей:
 
@@ -205,6 +203,13 @@ ms.locfileid: "76513037"
 | desired | объект | Часть свойств, которые могут быть записаны только серверной частью приложения и считаны устройством. | 
 | reported | объект | Часть свойств, которые могут быть записаны только устройством и считаны серверной частью приложения. |
 | lastUpdated | строка | Метка времени последнего обновления свойств для двойника устройства в формате ISO8601. | 
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title  |Описание  |
+|---------|---------|
+| [Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps](publish-iot-hub-events-to-logic-apps.md) | Приложение логики отправляет уведомление по электронной почте каждый раз, когда добавляется устройство в Центр Интернета вещей. |
+| [Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий](../iot-hub/iot-hub-event-grid.md) | Общие сведения об интеграции Центра Интернета вещей со службой "Сетка событий". |
+| [Order device connection events from Azure IoT Hub using Azure Cosmos DB](../iot-hub/iot-hub-how-to-order-connection-state-events.md) (Упорядочение событий подключения устройств из Центра Интернета вещей с помощью Azure Cosmos DB) | Сведения об упорядочении событий изменения состояния подключения устройства. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

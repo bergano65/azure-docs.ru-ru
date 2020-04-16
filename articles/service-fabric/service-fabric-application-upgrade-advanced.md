@@ -2,13 +2,13 @@
 title: Расширенные темы обновления приложений
 description: В этой статье рассматриваются некоторые дополнительные темы, относящиеся к обновлению приложения Service Fabric.
 ms.topic: conceptual
-ms.date: 1/28/2020
-ms.openlocfilehash: 182ab6dc1663e160561b8941ebf3a36b5af3d950
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.date: 03/11/2020
+ms.openlocfilehash: a12d2ec55bda95c1c61d4a73c76f4a777f4237f2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80422808"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414503"
 ---
 # <a name="service-fabric-application-upgrade-advanced-topics"></a>Обновление приложения Service Fabric: Расширенные темы
 
@@ -18,13 +18,13 @@ ms.locfileid: "80422808"
 
 Точно так же типы служб могут быть удалены из приложения. Но в этом случае перед продолжением обновления все текущие экземпляры удаляемой службы должны быть удалены (см. статью о командлете [Remove-ServiceFabricService](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricservice?view=azureservicefabricps)).
 
-## <a name="avoid-connection-drops-during-stateless-service-planned-downtime-preview"></a>Избегайте перепадов соединения во время запланированного простоя службы без состояния (предварительный просмотр)
+## <a name="avoid-connection-drops-during-stateless-service-planned-downtime"></a>Избегайте перепадов соединения во время запланированного простоя службы без состояния
 
 Для запланированных простоев экземпляров без состояния, таких как обновление приложения/кластера или деактивация узлов, соединения могут быть удалены из-за того, что экспонируемая конечная точка удаляется после того, как экземпляр выходит из-под задней линии, что приводит к принудительному замыкну.
 
 Чтобы избежать этого, настройте функцию *RequestDrain* (предварительный просмотр), добавив в конфигурацию службы *задержку закрытия экземпляра,* чтобы позволить слить при получении запросов от других служб в кластере и использовать Обратный прокси или использовать API-извещение с моделью уведомлений для обновления конечных точек. Это гарантирует, что конечная точка, рекламируемая экземпляром без состояния, удаляется *до* начала задержки до закрытия экземпляра. Эта задержка позволяет существующим запросам слить изящно до того, как экземпляр фактически выходит из системы. Клиенты уведомляются об изменении конечной точки функцией обратного вызова во время начала задержки, чтобы они могли повторно разрешить конечную точку и избежать отправки новых запросов в экземпляр, который идет вниз.
 
-### <a name="service-configuration"></a>Конфигурация сервиса
+### <a name="service-configuration"></a>Конфигурация службы
 
 Существует несколько способов настройки задержки на стороне службы.
 
@@ -182,7 +182,7 @@ ApplicationParameters  : { "ImportantParameter" = "2"; "NewParameter" = "testAft
 
 Во время отката все еще можно изменить значение *UpgradeReplicaSetCheckTimeout*. Режим также можно изменить в любое время с помощью командлета [Update-ServiceFabricApplicationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/update-servicefabricapplicationupgrade?view=azureservicefabricps).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 [Обновление приложения с помощью Powershell](service-fabric-application-upgrade-tutorial-powershell.md) проведке приложения с помощью PowerShell.

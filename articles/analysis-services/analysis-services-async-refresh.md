@@ -4,19 +4,19 @@ description: Описывает, как использовать API для ан
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/14/2020
+ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 6457f062a40e60a491220fcf977585e8b07445b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c5f6cec8b7fd1169a4f04649fcaf7bb7ada33833
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78273718"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81406283"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
-Вы можете задать асинхронное обновление данных в табличных моделях Azure Analysis Services, используя любой язык программирования, с помощью которого можно вызвать REST. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
+Используя любой язык программирования, поддерживающий вызовы REST, можно выполнять асинхронные операции обновления данных на табулярных моделях Azure Analysis Services. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
 
 Операции по обновлению данных могут занять некоторое время в зависимости от ряда факторов, включая объем данных, уровень оптимизации с помощью разделов и т.д. Эти операции традиционно использовались с помощью существующих методов, таких как использование [TOM](https://docs.microsoft.com/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) (Tabular Object Model), [PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) cmdlets или [TMSL](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (язык сценариев табулярной модели). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
 
@@ -56,7 +56,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/
 https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refreshes
 ```
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны проходить проверку подлинности, для чего нужен допустимый токен Azure Active Directory (OAuth 2) в заголовке авторизации, и соответствовать следующим требованиям:
 
@@ -97,7 +97,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-| name             | Тип  | Описание  |Значение по умолчанию  |
+| Имя             | Тип  | Описание  |По умолчанию  |
 |------------------|-------|--------------|---------|
 | `Type`           | Перечисление.  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/analysis-services/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
 | `CommitMode`     | Перечисление.  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
@@ -208,8 +208,8 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 ### <a name="to-use-the-code-sample"></a>Как пользоваться примером кода
 
-1.  Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
-2.  Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
+1.    Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
+2.    Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
 
 В образце кода используется основная аутентификация [службы.](#service-principal)
 
@@ -217,12 +217,12 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Дополнительные сведения о том, как настроить субъект-службу и назначить необходимые разрешения в Azure AS, см. в статьях [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md) и [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md). Выполнив эти шаги, сделайте дополнительно следующее:
 
-1.  В примере кода найдите фрагмент **string authority = …** и замените **стандартный** идентификатор на код клиента своей организации.
-2.  Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, что доступ к значениям \<App ID> и \<App Key> осуществляется безопасно, или настройте для субъектов-служб проверку подлинности.
-3.  Запустите образец.
+1.    В примере кода найдите **строку authority s ...,** замените **общий** идентификатор арендатора вашей организации.
+2.    Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, что доступ к значениям \<App ID> и \<App Key> осуществляется безопасно, или настройте для субъектов-служб проверку подлинности.
+3.    Запустите образец.
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Образцы](analysis-services-samples.md)   
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)   

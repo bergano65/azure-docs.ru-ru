@@ -8,18 +8,20 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/16/2019
-ms.openlocfilehash: efcc45dcf3565b70305323701810c49c4a720394
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 512d9a688d7f808056a91b5bc0484c378af33948
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74930412"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81413817"
 ---
 # <a name="exists-transformation-in-mapping-data-flow"></a>Существует трансформация в картировании потока данных
 
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 Преобразование существует — это преобразование фильтрации строк, которое проверяет наличие данных в другом источнике или потоке. Поток вывода включает в себя все строки в левом потоке, которые либо существуют, либо не существуют в правом потоке. Существующие преобразования похож ```SQL WHERE EXISTS``` ```SQL WHERE NOT EXISTS```на и .
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 1. Выберите, какой поток данных вы проверяете на наличие в **правильном потоке.**
 1. Укажите, ищите ли вы данные для существования или нет в настройках **типа Exist.**

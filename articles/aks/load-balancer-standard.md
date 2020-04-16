@@ -7,12 +7,12 @@ author: zr-msft
 ms.topic: article
 ms.date: 09/27/2019
 ms.author: zarhoads
-ms.openlocfilehash: 17e474de9c221126d67cc2982ba11c6ff75e7aa3
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: c1d2c0e48394fbde1b595ae4b405d84f437dc5e4
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80668492"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81392809"
 ---
 # <a name="use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Используйте балансиватор нагрузки Standard SKU в службе Azure Kubernetes (AKS)
 
@@ -28,11 +28,11 @@ ms.locfileid: "80668492"
 
 Если вы решили установить и использовать CLI локально, эта статья требует, чтобы вы запускали версию Azure CLI 2.0.81 или позже. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS со *стандартным* балансом загрузки SKU Azure. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Директору кластерного обслуживания AKS также требуется разрешение на управление сетевыми ресурсами, если вы используете существующую подсеть или группу ресурсов. Как правило, назначьте роль *вкладчика Сети* доверию службы на делегированных ресурсах. Для получения дополнительной информации [Delegate AKS access to other Azure resources][aks-sp]о разрешениях см.
+Директору кластерного обслуживания AKS также требуется разрешение на управление сетевыми ресурсами, если вы используете существующую подсеть или группу ресурсов. Как правило, назначьте роль *вкладчика Сети* доверию службы на делегированных ресурсах. Вместо принципа службы можно также использовать систему, назначенную управляемой идентаторской системой, для получения разрешений. Для получения дополнительной информации [см.](use-managed-identity.md) Для получения дополнительной информации [Delegate AKS access to other Azure resources][aks-sp]о разрешениях см.
 
 ### <a name="moving-from-a-basic-sku-load-balancer-to-standard-sku"></a>Переход от базового балансировора нагрузки SKU к стандартному SKU
 
@@ -249,7 +249,7 @@ spec:
 
 Вышеприведенный пример обновляет правило, чтобы разрешить входящий внешний трафик только из *диапазона MY_EXTERNAL_IP_RANGE.* Более подробная информация об использовании этого метода для ограничения доступа к службе балансо-баланса нагрузки доступна в [документации Kubernetes.][kubernetes-cloud-provider-firewall]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о службах Kubernetes в [документации по службам Kubernetes][kubernetes-services].
 

@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 8e0b874e0ce56d7b4ed9fce15b2d88503d6c49b7
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: aeffa0bb736f03403bf483b22775ef468bbcb2bd
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81309145"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81405465"
 ---
 # <a name="troubleshoot-issues-with-azure-automation-desired-state-configuration-dsc"></a>Проблемы устранения проблем с конфигурацией Azure Automation Desired State (DSC)
 
@@ -113,7 +113,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / 
 
 ### <a name="cause"></a>Причина:
 
-Эта проблема вызвана плохим или просроченным сертификатом.  Для получения дополнительной информации [см.](../automation-dsc-onboarding.md#re-registering-a-node)
+Эта проблема вызвана плохим или просроченным сертификатом.  Для получения дополнительной информации [см.](../automation-dsc-onboarding.md#re-register-a-node)
 
 Эта проблема также может быть вызвана конфигурацией прокси, не позволяющей получить доступ к**q .azure-automation.net**. Для получения дополнительной информации [см.](../automation-dsc-overview.md#network-planning) 
 
@@ -279,8 +279,8 @@ One or more errors occurred.
 
 Выполните ниже шаги, чтобы зарегистрировать узла.
 
-* Windows - [Физические/виртуальные windows-машины на месте или в облаке, кроме Azure/AWS.](../automation-dsc-onboarding.md#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances)
-* Linux - [Физические/виртуальные машины Linux на месте, или в облаке, кроме Azure](../automation-dsc-onboarding.md#onboarding-physicalvirtual-linux-machines-on-premises-or-in-a-cloud-other-than-azure).
+* Windows - [Физические/виртуальные windows-машины на месте или в облаке, кроме Azure/AWS.](../automation-dsc-onboarding.md#onboard-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure)
+* Linux - [Физические/виртуальные машины Linux на месте, или в облаке, кроме Azure](../automation-dsc-onboarding.md#onboard-physicalvirtual-linux-machines-on-premises-or-in-a-cloud-other-than-azure).
 
 ### <a name="scenario-error-message---provisioning-failed"></a><a name="agent-has-a-problem"></a>Сценарий: Сообщение об ошибке - "Обеспечение не удалось"
 
@@ -350,7 +350,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Конфигурации DSC можно разбирать быстрее, явно `ModuleName` включив `Import-DscResource` параметр для любых вызовов. Для получения дополнительной информации [см.](https://docs.microsoft.com/powershell/scripting/dsc/configurations/import-dscresource?view=powershell-5.1)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

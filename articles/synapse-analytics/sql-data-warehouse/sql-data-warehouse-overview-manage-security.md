@@ -11,19 +11,19 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 0c30294f2ca139a602074a980810e7c6737c4e2d
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: 27d3a242d91a79ea00974748f4a8b5460d2dd247
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80742992"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416054"
 ---
 # <a name="secure-a-database-in-azure-synapse"></a>Безопасность базы данных в Azure Synapse
 
 > [!div class="op_single_selector"]
 >
 > * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Проверка подлинности](sql-data-warehouse-authentication.md)
+> * [Аутентификация](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 
@@ -104,4 +104,4 @@ GRANT SELECT ON SCHEMA::Test to ApplicationUser
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Подробнее и примерах при подключении к складу с различными протоколами можно найти в [пуле Connect to s-L.](sql-data-warehouse-connect-overview.md)
+Подробнее и примерах при подключении к складу с различными протоколами можно найти в [пуле Connect to s-L.](../sql/connect-overview.md)

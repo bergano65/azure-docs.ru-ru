@@ -11,14 +11,15 @@ manager: jroth
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 10/18/2018
-ms.openlocfilehash: e4301afafb48fb9a1b0c9e36dde9800e2b8390f1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d697fb8afe3e92dfe54eb5d89a2ef59425cb0cde
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75443926"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414915"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-an-event"></a>Создание триггера, запускающего конвейер в ответ на событие
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описаны триггеры на основе событий, создаваемые в конвейерах Фабрики данных.
 
@@ -78,7 +79,7 @@ ms.locfileid: "75443926"
 
 В таблице ниже приводится обзор элементов схемы, относящихся к триггерам на основе событий:
 
-| **Элемент JSON** | **Описание** | **Тип** | **Разрешенные значения** | **Обязательно** |
+| **Элемент JSON** | **Описание** | **Тип** | **Допустимые значения** | **Обязательно** |
 | ---------------- | --------------- | -------- | ------------------ | ------------ |
 | **область действия** | Идентификатор ресурса Azure Resource Manager учетной записи хранения. | Строка | Идентификатор Azure Resource Manager | Да |
 | **События** | Тип событий, вызывающих срабатывание триггера. | Array    | Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobDeleted | Да, любое сочетание этих значений. |
@@ -104,4 +105,4 @@ ms.locfileid: "75443926"
 | **Большой двоичный объект оканчивается на** | `foldername/file.txt` | Получает события для большого двоичного объекта с именем `file.txt` в папке `foldername` в любом контейнере. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#triggers).
+Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#trigger-execution).

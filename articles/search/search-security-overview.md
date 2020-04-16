@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/25/2020
-ms.openlocfilehash: 6de6f23fe9564b28a5d436ac00999dbb3e9183e1
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.date: 04/15/2020
+ms.openlocfilehash: fe7d076fab6a70736843fc644cd56bef44a55df2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548963"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415130"
 ---
 # <a name="security-and-data-privacy-in-azure-cognitive-search"></a>Безопасность и конфиденциальность данных в Azure Cognitive Search
 
@@ -31,7 +31,6 @@ Azure Cognitive Search сертифицирован по следующим ст
 + [GxP (21 CFR, ч. 11)](https://en.wikipedia.org/wiki/Title_21_CFR_Part_11).
 + [HITRUST](https://en.wikipedia.org/wiki/HITRUST).
 + [PCI DSS, уровень 1](https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard).
-+ [Программа IRAP австралийского правительства (без грифа секретности)](https://asd.gov.au/infosec/irap/certified_clouds.htm).
 
 Соответствие стандартам относится к общедоступным функциям. Функции в предварительной версии будут сертифицированы, когда станут общедоступными. Не следует их использовать в решениях со строгими требованиями к соответствию стандартам. Сведения о сертификатах соответствия см. в документе [Overview of Microsoft Azure compliance](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) (Общие сведения о соответствии требованиям Microsoft Azure) и в [центре управления безопасностью](https://www.microsoft.com/en-us/trustcenter). 
 
@@ -132,7 +131,7 @@ Azure Cognitive Search наследует гарантии безопаснос�
 > [!VIDEO https://www.youtube.com/embed/r1cyTL8JqRg]
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](search-create-index-dotnet.md)
 + [Создание индекса службы поиска Azure с помощью REST API](search-create-index-rest-api.md)

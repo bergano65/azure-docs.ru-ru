@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/24/2020
 ms.author: jingwang
-ms.openlocfilehash: b73cd73a18d286f221c7be2c624719e1d23d7c06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5ce1b85394a7bb604841f7fb941bdebf12c0bca2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80153834"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414150"
 ---
 #  <a name="preserve-metadata-and-acls-using-copy-activity-in-azure-data-factory"></a>Сохранение метаданных и ACL с помощью копирования на фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 При использовании активности копирования Azure Data Factory для копирования данных из источника в раковину в следующих сценариях можно также сохранить метаданные и АКЛ.
 
@@ -146,4 +148,4 @@ ms.locfileid: "80153834"
 См. другие статьи о действиях копирования:
 
 - [Общие сведения о действии копирования](copy-activity-overview.md)
-- [Руководство по настройке производительности действия копирования](copy-activity-performance.md)
+- [Производительность действия копирования](copy-activity-performance.md)

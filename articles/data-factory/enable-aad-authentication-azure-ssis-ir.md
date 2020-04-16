@@ -11,14 +11,16 @@ ms.author: sawinark
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 5/14/2019
-ms.openlocfilehash: 70367a38fbf7b59486e2eaaf6c05634aa7575869
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2359b378b1f54cf6e03218f819b3a7c5740ba596
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79260713"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81416401"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье показано, как включить активную каталог Azure (Azure AD) аутентификацию с управляемой идентификацией для вашей фабрики данных Azure (ADF) и использовать ее вместо обычных методов аутентификации (например, проверки подлинности S'L) для:
 
@@ -26,7 +28,7 @@ ms.locfileid: "79260713"
 
 - Подключение к различным ресурсам Azure при запуске пакетов SSIS на ИК Azure-SSIS.
 
-Для получения дополнительной информации об управляемой идентификации для вашего ADF, [см.](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity)
+Для получения дополнительной информации об управляемой идентификации для ADF [см.](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity)
 
 > [!NOTE]
 >-  В этом сценарии аутентификация Azure AD с управляемой идентификацией для ADF используется только при создании и последующем запуске ИК SSIS, которая, в свою очередь, будет предоставлять и подключаться к SSISDB. Для выполнения пакетов SSIS ваш ИК SSIS по-прежнему будет подключаться к SSISDB с помощью проверки подлинности S'L с полностью управляемыми учетными записями, которые создаются во время подготовки SSISDB.
@@ -63,7 +65,7 @@ ms.locfileid: "79260713"
     6de75f3c-8b2f-4bf4-b9f8-78cc60a18050 SSISIrGroup
     ```
 
-3.  Добавьте в группу управляемое удостоверение службы "Фабрика данных Azure". Вы можете следить за статьей [Managed identiy для Data Factory,](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) чтобы получить основной идентификатор управляемого объекта идентификации (например, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, но не использовать управляемый идентификационный идентификатор для этой цели).
+3.  Добавьте в группу управляемое удостоверение службы "Фабрика данных Azure". Вы можете следить за статьей [Managed identity для Data Factory,](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) чтобы получить основной идентификатор управляемого объекта идентификации (например, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, но не используйте идентификатор управляемого identityi приложения для этой цели).
 
     ```powershell
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
@@ -225,6 +227,6 @@ ms.locfileid: "79260713"
 
 - [диспетчер соединений OLE DB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager#managed-identities-for-azure-resources-authentication)
 
-- [ADO.NET менеджер подключения](https://docs.microsoft.com/sql/integration-services/connection-manager/ado-net-connection-manager#managed-identities-for-azure-resources-authentication)
+- [Диспетчер соединений ADO.NET](https://docs.microsoft.com/sql/integration-services/connection-manager/ado-net-connection-manager#managed-identities-for-azure-resources-authentication)
 
-- [Менеджер подключения к хранилищам Azure](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager#managed-identities-for-azure-resources-authentication)
+- [Диспетчер подключений службы хранилища Azure](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager#managed-identities-for-azure-resources-authentication)

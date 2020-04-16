@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/17/2018
-ms.openlocfilehash: 1325910877d1e030b3bf4114e16d0f81ecea8cf7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1b1b19814709451bdbbea97462c459149484e71f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75443979"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415861"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Загрузка данных в Azure Data Lake Storage 1-го поколения c помощью службы "Фабрика данных Azure"
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md) (ранее известный как Azure Data Lake Store) — это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Data Lake Storage 1-го поколения позволяет собирать данные любого размера, типа и с любой скоростью приема. Данные эксплуатационной и исследовательской аналитики хранятся в одном месте.
 
@@ -38,7 +40,7 @@ ms.locfileid: "75443979"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Подписка Azure: Если у вас нет подписки Нацу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
 * Учетная запись в хранилище Data Lake Storage 1-го поколения. Если у вас нет учетной записи Data Lake Storage 1-го поколения, см. раздел [Создание учетной записи Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-get-started-portal.md#create-a-data-lake-storage-gen1-account), чтобы узнать, как создать ее.
 * Amazon S3. В этой статье показано, как скопировать данные из Amazon S3. Вы можете использовать другие хранилища данных, выполнив аналогичные действия.
 
@@ -58,7 +60,7 @@ ms.locfileid: "75443979"
     * **Версия.** Выберите значение **V2**.
     * **Расположение.** Выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных, используемые в фабрике данных, могут находиться в других расположениях и регионах. К этим хранилищам данных относятся Data Lake Storage 1-го поколения, Служба хранилища Azure, База данных SQL Azure и т. д.
 
-3. Выберите **Создать**.
+3. Нажмите кнопку **создания**.
 4. После создания перейдите к фабрике данных. Вы увидите домашнюю страницу **фабрики данных**, как показано на следующем изображении: 
    
    ![Домашняя страница фабрики данных](./media/load-data-into-azure-data-lake-store/data-factory-home-page.png)
@@ -88,7 +90,7 @@ ms.locfileid: "75443979"
    
       ![Указать учетную запись Amazon S3](./media/load-data-into-azure-data-lake-store/specify-amazon-s3-account.png)
    
-   4. Вы увидите новое подключение. Нажмите кнопку **Далее**.
+   4. Вы увидите новое подключение. Выберите **Далее**.
    
    ![Указать учетную запись Amazon S3](./media/load-data-into-azure-data-lake-store/specify-amazon-s3-account-created.png)
    
@@ -108,7 +110,7 @@ ms.locfileid: "75443979"
 
    1. Выберите вашу учетную запись Azure Data Lake Storage 1-го поколения для **имени учетной записи Data Lake Store**.
    2. Укажите **клиента** и щелкните "Готово".
-   3. Нажмите кнопку **Далее**.
+   3. Выберите **Далее**.
    
    > [!IMPORTANT]
    > В этом пошаговом руководстве для аутентификации учетной записи Data Lake Storage 1-го поколения используется управляемое удостоверение для ресурсов Azure. Не забудьте предоставить Управляемому удостоверению службы соответствующие разрешения в Azure Data Lake Storage 1-го поколения, выполнив [эти инструкции](connector-azure-data-lake-store.md#managed-identity).

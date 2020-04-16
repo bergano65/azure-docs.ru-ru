@@ -7,14 +7,16 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 8f91ed926c733b211443805722b6817b1ce005b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 71df574602518fdc252d9d86859ed772a17be443
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77048359"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81408977"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое споры потоков данных?
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Организациям необходимо проводить подготовку данных и бороться за точный анализ сложных данных, которые продолжают расти с каждым днем. Требуется подготовка данных, чтобы организации могли использовать данные в различных бизнес-процессах и сокращать время для оценки.
 
@@ -42,9 +44,9 @@ ms.locfileid: "77048359"
 
 | Соединитель | Формат данных | Authentication type (Тип проверки подлинности) |
 | -- | -- | --|
-| [Хранение Azure Blob](connector-azure-blob-storage.md) | CSV, Паркет | Ключ учетной записи |
+| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | CSV, Паркет | Ключ учетной записи |
 | [Хранилище Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
-| [Лазурное хранилище озер данных Gen2](connector-azure-data-lake-storage.md) | CSV, Паркет | Ключ к счету, директор службы |
+| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | CSV, Паркет | Ключ к счету, директор службы |
 | [База данных SQL Azure](connector-azure-sql-database.md) | - | Проверка подлинности SQL |
 | [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md) | - | Проверка подлинности SQL |
 

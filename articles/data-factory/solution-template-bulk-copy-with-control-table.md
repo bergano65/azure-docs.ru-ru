@@ -11,14 +11,15 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/14/2018
-ms.openlocfilehash: 3a42d7da21cfb2e3066fbdd81b27c82155d8456f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d6d634d9a32ae1728e1122d863ddabd94f73ee27
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75439927"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414832"
 ---
 # <a name="bulk-copy-from-a-database-with-a-control-table"></a>Массовая копия из базы данных с таблицей управления
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Чтобы скопировать данные со склада данных в Oracle Server, Netezza, Teradata или s'L Server в хранилище данных Azure S'L, необходимо загрузить огромные объемы данных из нескольких таблиц. Обычно данные должны быть разделены в каждой таблице, так что вы можете загружать строки с несколькими потоками параллельно из одной таблицы. В этой статье описывается шаблон для использования в этих сценариях.
 

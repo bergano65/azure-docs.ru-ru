@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: thweiss
 ROBOTS: noindex, nofollow
-ms.openlocfilehash: 6e2a90b8f81b9b945905ee98beb1686c54a62e8a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 733a85e492185e7e83922a3cc91d53c848b939a1
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80063758"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81411146"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Налаживайте ключи, управляемые клиентом, для учетной записи Azure Cosmos с помощью Azure Key Vault
 
@@ -231,7 +231,7 @@ az cosmosdb create \
 
 ### <a name="how-do-customer-managed-keys-affect-a-backup"></a>Как ключи, управляемые клиентом, влияют на резервную поддержку?
 
-Azure Cosmos DB занимает [регулярное и автоматическое резервное копирование](../synapse-analytics/sql-data-warehouse/backup-and-restore.md) данных, хранящихся в вашей учетной записи. Эта операция резервное копирование зашифрованных данных. Для использования восстановленного резервного копирования требуется ключ шифрования, который использовался во время резервного копирования. Это означает, что отзыв не был сделан, и версия ключа, который использовался во время резервного копирования, будет по-прежнему включена.
+Azure Cosmos DB занимает [регулярное и автоматическое резервное копирование](./online-backup-and-restore.md) данных, хранящихся в вашей учетной записи. Эта операция резервное копирование зашифрованных данных. Для использования восстановленного резервного копирования требуется ключ шифрования, который использовался во время резервного копирования. Это означает, что отзыв не был сделан, и версия ключа, который использовался во время резервного копирования, будет по-прежнему включена.
 
 ### <a name="how-do-i-revoke-an-encryption-key"></a>Как отменить ключ шифрования?
 

@@ -11,15 +11,17 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 03/27/2020
-ms.openlocfilehash: d6252b7a0ecce553bc3a1519055375fd4cd034f7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/15/2020
+ms.openlocfilehash: 3aabf68b6763e5815a03021cb02683d509c26190
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80336211"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415055"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка настройки для runtime интеграции Azure-SSIS
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Пользовательская настройка для интеграции служб интеграции серверов Azure-S'L (Azure-SSIS IR) обеспечивает интерфейс для добавления собственных шагов во время настройки или перенастройки ИК Azure-SSIS. 
 
@@ -32,7 +34,7 @@ ms.locfileid: "80336211"
 Вы можете установить как бесплатные, нелицензированные компоненты, так и платные, лицензированные компоненты с экспресс- и стандартными пользовательскими установками. Если вы независимый поставщик программного обеспечения (ISV), [см.](how-to-develop-azure-ssis-ir-licensed-components.md)
 
 > [!IMPORTANT]
-> Поскольку узлы серии v2 из ИК Azure-SSIS не подходят для пользовательских настройк, вместо этого используйте узлы серии v3. Если вы уже используете узлы серии v2, переключитесь на узлы серии v3 как можно скорее.
+> Чтобы воспользоваться будущими усовершенствованиями, мы рекомендуем использовать v3 или более поздние серии узлов для вашего ИК Azure-SSIS с пользовательской настройкой.
 
 ## <a name="current-limitations"></a>Текущие ограничения
 

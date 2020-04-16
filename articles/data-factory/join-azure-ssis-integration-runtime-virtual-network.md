@@ -11,14 +11,16 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: e94eef3072b9636c8022a5949b05519c1554cb9e
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: cf13dbe17738ca1ae658c73bb0092a219b4823d1
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80585788"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415903"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 При использовании служб интеграции серверов Сервера (SSIS) в Azure Data Factory необходимо присоединиться к моменту выполнения интеграции Azure-SSIS (IR) в виртуальную сеть Azure в следующих сценариях:
 
@@ -595,7 +597,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 Выполнение этой команды занимает от 20 до 30 минут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительной информации об ИК Azure-SSIS смотрите следующие статьи: 
 - [Azure-SSIS ИК](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье приводится общая концептуальная информация об ИР, включая ИК Azure-SSIS. 

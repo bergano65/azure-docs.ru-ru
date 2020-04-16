@@ -1,14 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов менеджера ресурсов
 description: Укажите список типов ресурсов «Менеджер ресурсов ресурса», поддерживаемый графиком ресурсов Azure и историей изменений.
-ms.date: 04/06/2020
+ms.date: 04/15/2020
 ms.topic: reference
-ms.openlocfilehash: 85cab92981568f5ea3770e1102c3480ae4f3e638
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 99cb2176e4b0642be1fc31d49528ebf915ea440a
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80677056"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415144"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица график ресурсов Azure и ссылка на тип ресурса
 
@@ -392,7 +392,6 @@ Graph ресурсAzры поддерживает следующие **типы 
 - microsoft.storagesyncint/storagesyncservices
 - microsoft.storsimple/менеджеры
 - microsoft.streamanalytics/streamingjobs
-- microsoft.support/supporttickets
 - microsoft.synapse/workspaces
 - microsoft.synapse/workspaces/bigdatapools
 - microsoft.synapse/workspaces/sqlpools
@@ -472,6 +471,6 @@ Graph ресурсAzры поддерживает следующие **типы 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Подробнее о [языке запроса.](../concepts/query-language.md)
+- Узнайте больше о [языке запросов](../concepts/query-language.md).
 - Узнайте больше о том, как [изучать ресурсы](../concepts/explore-resources.md).
 - Ознакомьтесь с примерами [начальных запросов](../samples/starter.md).

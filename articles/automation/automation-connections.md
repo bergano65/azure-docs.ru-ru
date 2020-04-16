@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 01/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4840b135587ae776cfb80258ce513a48a79efa43
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 7a6fc2bd5cb6f5c7ae5bef9e9741fae92518d885
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383332"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81392393"
 ---
 # <a name="connection-assets-in-azure-automation"></a>Ресурсы подключений в службе автоматизации Azure
 
@@ -89,7 +89,7 @@ $ConnectionFieldValues = @{"ApplicationId" = $Application.ApplicationId; "Tenant
 New-AzAutomationConnection -ResourceGroupName $ResourceGroup -AutomationAccountName $AutomationAccountName -Name $ConnectionAssetName -ConnectionTypeName AzureServicePrincipal -ConnectionFieldValues $ConnectionFieldValues
 ```
 
-Вы можете использовать скрипт для создания актива подключения, потому что при создании учетной записи `AzureServicePrincipal` Автоматизации `AzureRunAsConnection` он автоматически включает в себя несколько глобальных модулей по умолчанию вместе с типом соединения для создания актива соединения. Важно помнить о том, что при попытке использовать другой метод аутентификации вы не сможете создать ресурс подключения для подключения к службе или приложению, так как другие типы подключения не определены в учетной записи службы автоматизации. Для получения дополнительной информации о том, как создать свой собственный тип соединения для вашего пользовательского или модуля из [галереи PowerShell](https://www.powershellgallery.com), см [Интеграция Модули](automation-integration-modules.md)
+Вы можете использовать скрипт для создания актива подключения, потому что при создании учетной записи `AzureServicePrincipal` Автоматизации `AzureRunAsConnection` он автоматически включает в себя несколько глобальных модулей по умолчанию вместе с типом соединения для создания актива соединения. Важно помнить о том, что при попытке использовать другой метод аутентификации вы не сможете создать ресурс подключения для подключения к службе или приложению, так как другие типы подключения не определены в учетной записи службы автоматизации. Для получения дополнительной информации о том, как создать свой собственный тип соединения для вашего пользовательского или модуля из [галереи PowerShell,](https://www.powershellgallery.com)см. [Integration Modules](automation-integration-modules.md)
 
 ## <a name="using-a-connection-in-a-runbook-or-dsc-configuration"></a>Использование подключения в модуле Runbook или конфигурации DSC
 
@@ -113,7 +113,7 @@ Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.
 
 ![Добавление на холст](media/automation-connections/connection-add-canvas.png)
 
-На следующем рисунке показан пример использования подключения в графическом Runbook. Это тот же пример, который представлен выше. Он выполняет аутентификацию с помощью учетной записи запуска от имени с текстовым Runbook. В этом `Constant value` примере используется `Get RunAs Connection` набор данных для действия, использующему объект соединения для проверки подлинности. Здесь используется [соединение конвейера,](automation-graphical-authoring-intro.md#links-and-workflow) поскольку набор `ServicePrincipalCertificate` параметров ожидает один объект.
+На следующем рисунке показан пример использования подключения в графическом Runbook. Это тот же пример, что показано выше для проверки подлинности с помощью учетной записи Run As с текстовой runbook. В этом `Constant value` примере используется `Get RunAs Connection` набор данных для действия, использующему объект соединения для проверки подлинности. Здесь используется [соединение конвейера,](automation-graphical-authoring-intro.md#links-and-workflow) поскольку набор `ServicePrincipalCertificate` параметров ожидает один объект.
 
 ![Установление подключений](media/automation-connections/automation-get-connection-object.png)
 
@@ -162,7 +162,7 @@ runas_connection = automationassets.get_automation_connection(
 azure_credential = get_automation_runas_credential(runas_connection)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите, как использовать [связи в графическом редакторе](automation-graphical-authoring-intro.md#links-and-workflow), которые позволяют направлять и контролировать поток логики в Runbook.
 * Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation

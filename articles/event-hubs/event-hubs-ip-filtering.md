@@ -11,12 +11,12 @@ ms.custom: seodec18
 ms.topic: article
 ms.date: 12/20/2019
 ms.author: spelluru
-ms.openlocfilehash: e0116c1cfe61b49f2d5aff46fab9cadc0e423ecc
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 18212726f0ab921a05a3b640a32754c62958d047
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81310176"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393147"
 ---
 # <a name="configure-ip-firewall-rules-for-an-azure-event-hubs-namespace"></a>Налаживание правил IP-брандмауэра для пространства имен Azure Event Hubs
 По умолчанию пространства имен Event Hubs доступны из интернета до тех пор, пока запрос поступает с достоверной проверкой подлинности и авторизацией. С помощью IP-брандмауэра его можно ограничить только набором адресов IPv4 или диапазонов адресов IPv4 в обозначении [CIDR (Classless Inter-Domain Routing).](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -29,6 +29,7 @@ ms.locfileid: "81310176"
 > Доверенные службы Майкрософт не поддерживаются, если реализованы виртуальные сети.
 >
 > Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
+> - Azure Monitor (диагностическая настройка)
 > - Azure Stream Analytics
 > - Интеграция со службой "Сетка событий Azure".
 > - Маршруты Центра Интернета вещей Azure.
@@ -147,7 +148,7 @@ ms.locfileid: "81310176"
 
 Инструкции по развертыванию шаблона см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][lnk-deploy].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по ограничению доступа к Центрам событий из виртуальных сетей Azure, см. по следующей ссылке:
 

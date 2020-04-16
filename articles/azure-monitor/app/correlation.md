@@ -6,12 +6,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
-ms.openlocfilehash: 6ceace1ee93fab8c0a46ed4a67850fc87a5cdad2
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.openlocfilehash: 2e862410e2bf12e09e1a6388bbb6f7105b5b2edf
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80991234"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81405264"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -314,7 +314,7 @@ logger.warning('After the span')
 
 Но эти методы не позволяют автоматически распределить поддержку трассировки. `DiagnosticSource`поддерживает автоматическую кросс-машинную корреляцию. Библиотеки .NET поддерживают `DiagnosticSource` и позволяют автоматически распространять контекст корреляции через транспорт, например HTTP.
 
-[Руководство пользователя](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) активности `DiagnosticSource` в объясняет основы отслеживания деятельности.
+[Руководство пользователя](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) активности `DiagnosticSource` в объясняет основы отслеживания деятельности.
 
 ASP.NET Core 2.0 поддерживает извлечение заголовков HTTP и начало новых действий.
 
@@ -369,7 +369,7 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк�
 
   Стартер Весенней загрузки `cloudRoleName` автоматически присваивает значение, вписанное для `spring.application.name` свойства.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Напишите [пользовательские телеметрии](../../azure-monitor/app/api-custom-events-metrics.md).
 - Для продвинутых сценариев корреляции [Track custom operations](custom-operations-tracking.md)в ASP.NET Core и ASP.NET см.

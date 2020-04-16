@@ -8,22 +8,24 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/23/2020
-ms.openlocfilehash: 78c6c1363af011a90865770d88c0037e50e958c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 08ad231b462e21fefebacd4e280bfb2b13bc0eef
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80240417"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81413648"
 ---
 # <a name="lookup-transformation-in-mapping-data-flow"></a>Преобразование поиска в картографии потока данных
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Используйте преобразование поиска для ссылки данных из другого источника в потоке потока данных. Преобразование поиска прикрепляет столбцы от совпадающих данных к исходным данным.
 
 Преобразование поиска похоже на левое внешнее соединение. Все строки из основного потока будут существовать в потоке вывода с дополнительными столбцов из потока поиска. 
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
-![Преобразование «Уточняющий запрос»](media/data-flow/lookup1.png "Поиск")
+![Трансформация поиска](media/data-flow/lookup1.png "Поиск")
 
 **Первичный поток:** Входящий поток данных. Этот поток эквивалентен левой стороне соединения.
 
@@ -75,7 +77,7 @@ ms.locfileid: "80240417"
 ```
 ### <a name="example"></a>Пример
 
-![Преобразование «Уточняющий запрос»](media/data-flow/lookup-dsl-example.png "Поиск")
+![Трансформация поиска](media/data-flow/lookup-dsl-example.png "Поиск")
 
 Скрипт потока данных для вышеуказанной конфигурации поиска находится в фрагменте кода ниже.
 

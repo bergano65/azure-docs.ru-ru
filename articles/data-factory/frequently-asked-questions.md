@@ -9,14 +9,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: 34972e70039fef17161bdef66f64278cbabf908f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8d0b49b73ef6b67653fbf32db1174880a51d432d
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80130800"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81412946"
 ---
 # <a name="azure-data-factory-faq"></a>Часто задаваемые вопросы о фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 Эта статья содержит ответы на часто задаваемые вопросы о фабрике данных Azure.  
 
 ## <a name="what-is-azure-data-factory"></a>Что такое фабрика данных Azure? 
@@ -146,7 +149,7 @@ Data Factory V2 предоставляет богатый набор SDK, кот
 Дополнительные сведения о понятиях фабрики данных см. в следующих статьях:
 
 - [Datasets and linked services in Azure Data Factory](concepts-datasets-linked-services.md) (Наборы данных и связанные службы в фабрике данных Azure)
-- [Трубопроводы и мероприятия](concepts-pipelines-activities.md)
+- [Конвейеры и действия](concepts-pipelines-activities.md)
 - [Среда выполнения интеграции в фабрике данных Azure](concepts-integration-runtime.md)
 
 ## <a name="what-is-the-pricing-model-for-data-factory"></a>Какая модель ценообразования применяется для фабрики данных?

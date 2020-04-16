@@ -5,17 +5,17 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
-ms.openlocfilehash: c239f7062dc39492a0cf63ac3aadbaf94acbf032
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 8573a88d5371bbde07a541c789f52e6c44f1e279
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80680444"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81411127"
 ---
 # <a name="system-requirements"></a>Требования к системе
 
 > [!IMPORTANT]
-> В настоящее время **удаленная рендеринг Azure** находится в открытом доступе.
+> **Удаленная отрисовка Azure** в настоящее время находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой главе перечислены минимальные системные требования для работы с *удаленным отжимацией Azure* (ARR).
@@ -45,7 +45,7 @@ ms.locfileid: "80680444"
 
 ## <a name="devices"></a>Устройства
 
-В настоящее время Azure Remote Rendering поддерживает только **HoloLens 2** и Windows desktop UWP в качестве целевого устройства.
+В настоящее время Azure Remote Rendering поддерживает только **holoLens 2** и рабочий стол Windows в качестве целевого устройства. Смотрите раздел [ограничений платформы.](../reference/limits.md#platform-limitations)
 
 Важно использовать новейший кодек HEVC, так как новые версии имеют значительные улучшения в задержке. Чтобы проверить, какая версия установлена на вашем устройстве:
 
@@ -77,11 +77,11 @@ ms.locfileid: "80680444"
 
 Для развития с Unity, установите
 
-* Единство 2019.3.1 [(загрузка)](https://unity3d.com/get-unity/download)
-* Установите эти модули в Unity:
-  * **UWP** - Поддержка создания универсальной платформы Windows
-  * **IL2CPP** - Поддержка сборки Windows (IL2CPP)
+* Unity 2019.3.1 [(скачать)](https://unity3d.com/get-unity/download).
+* Установите следующие модули в Unity:
+  * **UWP** — обеспечивает поддержку для создания приложений универсальной платформы Windows;
+  * **IL2CPP** — обеспечивает поддержку сборки для Windows (IL2CPP).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Быстрый запуск: Рендеринг модель с единством](../quickstarts/render-model.md)
+* [Краткое руководство. Отрисовка модели с помощью Unity](../quickstarts/render-model.md)

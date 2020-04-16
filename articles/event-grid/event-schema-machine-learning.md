@@ -1,26 +1,26 @@
 ---
-title: Схема событийного события Azure Event Grid
+title: Машинное обучение Azure — источник событийной сетки
 description: Описывает свойства, которые предусмотрены для событий рабочего пространства машинного обучения с помощью Azure Event Grid
 services: event-grid
-author: jenns
+author: spelluru
 ms.service: event-grid
-ms.topic: reference
-ms.date: 10/18/2019
-ms.author: jenns
-ms.openlocfilehash: 4051598a9abd787f6707e67a8c4dab12fc6d626a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.topic: conceptual
+ms.date: 04/09/2020
+ms.author: spelluru
+ms.openlocfilehash: 7d9af420c7e2b47d2aeb4a8bf42ee138a605b305
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79202150"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393274"
 ---
-# <a name="azure-event-grid-event-schema-for-azure-machine-learning"></a>Схема событий Azure Event Grid для машинного обучения Azure
+# <a name="azure-machine-learning-as-an-event-grid-source"></a>Машинное обучение Azure как источник сетки событий
 
 В этой статье представлены свойства и схема для событий рабочего пространства машинного обучения. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
-Список примеров скриптов и учебников можно найти [в источнике событий AzureML.](event-sources.md#azure-machine-learning)
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
-## <a name="available-event-types"></a>Доступные типы событий
+### <a name="available-event-types"></a>Доступные типы событий
 
 Azure Machine Learning излучает следующие типы событий:
 
@@ -32,7 +32,7 @@ Azure Machine Learning излучает следующие типы событи
 | Microsoft.MachineLearningServices.DatasetDriftDetected | Поднятый, когда монитор дрейфа dataset обнаруживает дрейф. |
 | Microsoft.MachineLearningServices.RunStatusChanged | Поднят при изменении статуса запуска на 'неудавшийся'. |
 
-## <a name="the-contents-of-an-event-response"></a>Содержание ответа на события
+### <a name="the-contents-of-an-event-response"></a>Содержание ответа на события
 
 При срабатывании события служба Event Grid отправляет данные об этом событии в конечную точку.
 
@@ -186,10 +186,7 @@ Azure Machine Learning излучает следующие типы событи
 }]
 ```
 
-
-
-
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -260,6 +257,11 @@ Azure Machine Learning излучает следующие типы событи
 | RunTags | объект | Теги завершенного запуска. |
 | RunProperties | объект | Свойства завершенного запуска. |
 | РунСтатус | строка | Статус бега. |
+
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+| Title | Описание |
+| ----- | ----- |
+| [Потребление событий машинного обучения Azure](../machine-learning/concept-event-grid-integration.md) | Обзор интеграции машинного обучения Azure с Event Grid. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

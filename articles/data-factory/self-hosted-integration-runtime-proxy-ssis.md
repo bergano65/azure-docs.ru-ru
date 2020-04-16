@@ -11,15 +11,17 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 03/27/2020
-ms.openlocfilehash: 9a1923057bc318869f491791520aacb4d0d17591
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.date: 04/15/2020
+ms.openlocfilehash: ecfdf2a11f31c18064be9a607f2bb3938d26e661
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80346619"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81414899"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Налажить самостоятельно ещёхательную ИК-улику в качестве прокси-сервера для ИК Azure-SSIS на фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается, как запускать пакеты интеграции серверов S'L Server (SSIS) на runtime интеграции Azure-SSIS (Azure-SSIS IR) в Azure Data Factory с самоходном время выполнения интеграции (самоходном ИК), настроенным в качестве прокси. 
 
@@ -52,7 +54,7 @@ ms.locfileid: "80346619"
 
 Если вы еще этого не сделали, создайте службу хранения, связанную с Azure Blob, на той же фабрике данных, где настроена иСБ Azure-SSIS. Для этого см. [Создать сервис, связанный с фабрикой данных Azure, подобие данных.](https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-portal#create-a-linked-service) Обязательно сделайте следующее:
 - Для **хранилища данных**выберите **хранилище Azure Blob.**  
-- Для **подключения через время выполнения интеграции**выберите **AutoResolveIntegrationRuntime** (не ваш ИК Azure-SSIS, ни ваш самостоятельно размещенный ИК), потому что мы используем ИК по умолчанию Azure для получения учетных данных доступа для вашего хранилища Azure Blob  
+- Для **подключения через время выполнения интеграции**выберите **AutoResolveIntegrationRuntime** (не ваш ИК Azure-SSIS, ни ваш самостоятельно размещенный ИК), потому что мы используем ИК по умолчанию Azure для получения учетных данных доступа для вашего хранилища Azure Blob.
 - Для **метода аутентификации**выберите **ключ учетной записи,** **SAS URI**или директор **службы.**  
 
     >[!TIP]
@@ -76,7 +78,7 @@ ms.locfileid: "80346619"
 
    1. В поле **траектории постановки** укажите контейнер blob в выбранной учетной записи хранения Azure Blob или оставьте его пустым для использования по умолчанию для постановки.
 
-   1. Выберите **Продолжить**.
+   1. Выберите **Continue** (Продолжить).
 
    ![Расширенные настройки с самостоятельной ИК](./media/tutorial-create-azure-ssis-runtime-portal/advanced-settings-shir.png)
 
@@ -171,7 +173,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-- В настоящее время поддерживаются только задачи потока данных с источниками Open Database Connectivity (ODBC)/OLEDB/Flat File. 
+- В настоящее время поддерживаются только задачи потока данных с Open Database Connectivity (ODBC)/OLEDB/Flat File или назначением OLEDB. 
 - В настоящее время поддерживаются только службы хранения, связанные с Системой хранения Azure Blob, настроенные с *ключом учетной записи,* *URI —общая подпись доступа (SAS)* или проверка подлинности *основного сервиса.*
 - *Параметрирование* в OLEDB Source пока не поддерживается. В качестве обходного пути, пожалуйста, используйте *команду S'L From Variable* в качестве *AccessMode* и используйте *Expression* для вставки переменных/параметров в команду S'L. В качестве иллюстрации см. пакет *ParameterMappingSample.dtsx,* который можно найти в папке *SelfHostedIRProxy/Limitations* нашего публичного контейнера предварительного просмотра. Используя Azure Storage Explorer, вы можете подключиться к нашему общедоступному контейнеру предварительного просмотра, введя вышеуказанный SAS URI.
 

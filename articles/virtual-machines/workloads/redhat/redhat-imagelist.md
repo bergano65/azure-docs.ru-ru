@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: e6109a87750e588b12bfc9836c5db3db55420ec2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 40a715ea27be161f09dea59e57799b08406e8ca7
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77133805"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393773"
 ---
 # <a name="red-hat-enterprise-linux-rhel-images-available-in-azure"></a>Изображения Red Hat Enterprise Linux (RHEL) доступны в Azure
 Azure предлагает различные изображения RHEL для различных случаев использования.
@@ -76,6 +76,9 @@ rhel-byos     |rhel-lvm74| Диспетчер логических томов   
 |             |rhel-lvm76| Диспетчер логических томов    | Агент Linux | RHEL 7.6 BYOS изображения, не прилагается к любому источнику обновлений, не будет взимать премию RHEL.
 |             |rhel-lvm77| Диспетчер логических томов    | Агент Linux | RHEL 7.7 BYOS изображения, не прилагается к любому источнику обновлений, не будет взимать премию RHEL.
 |             |rhel-lvm8 | Диспетчер логических томов    | Агент Linux | RHEL 8 BYOS изображения (RHEL незначительные версии показано в значении версии изображения), не прилагается к любому источнику обновлений, не будет взимать премию RHEL.
+
+> [!NOTE]
+> Предложение продукции RHEL-SAP-HANA считается окончанием срока службы Red Hat. Существующие развертывания будут продолжать работать в обычном режиме, но Red Hat рекомендует клиентам перейти от изображений RHEL-SAP-HANA к изображениям RHEL-SAP-HA, которые включают в себя репозитории SAP HANA, а также надстройку HA. Более подробная информация о предложениях облаков SAP От Red Hat доступна [здесь.](https://access.redhat.com/articles/3751271)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [изображениях Red Hat в Azure](./redhat-images.md).

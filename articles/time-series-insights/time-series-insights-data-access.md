@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 04/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1c8f14bb1bca082a9d887e5d6d88aec213448c3e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1735daf66483df496141a642ac6633973aa0abf0
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79254356"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81407548"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Предоставление доступа к данным в среде
 
@@ -28,7 +28,7 @@ ms.locfileid: "79254356"
 ## <a name="sign-in-to-time-series-insights"></a>Войти на Time Series Исследования
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-1. Найдите среду "Аналитика временных рядов". Введите `Time Series` в поле **Поиск**. Выберите **Среда временных рядов** в результатах поиска.
+1. Найдите среду "Аналитика временных рядов". Введите `Time Series` в поле **Поиск**. Выберите **среды временных рядов** в результатах поиска.
 1. Выберите среду Time Series Insights в списке.
 
 ## <a name="grant-data-access"></a>Предоставление доступа к данным

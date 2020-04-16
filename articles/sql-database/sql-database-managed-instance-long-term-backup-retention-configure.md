@@ -12,16 +12,16 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 04/14/2020
-ms.openlocfilehash: 0af322d589efd48cc224c69cef8e96fb887d9868
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: c9edbbf54696a817d0495f6890e0d796e482231f
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81384224"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393715"
 ---
 # <a name="manage-azure-sql-database-managed-instance-long-term-backup-retention-powershell"></a>Управление базой данных Azure S'L управляемого долгосрочного резервного удержания (PowerShell)
 
-В управляемом экземпляре базы данных Azure S'L можно настроить долгосрочную политику [хранения резервного копирования](sql-database-long-term-retention.md#managed-instance-support) (LTR) в качестве ограниченной общедоступной функции предварительного просмотра. Это позволяет автоматически сохранять резервные копии баз данных в отдельных контейнерах для хранения Azure Blob на срок до 10 лет. Затем можно восстановить базу данных с помощью этих резервных данных с помощью PowerShell.
+В управляемом экземпляре базы данных Azure S'L можно настроить долгосрочную политику [хранения резервного копирования](sql-database-long-term-retention.md#managed-instance-support) (LTR) в качестве ограниченной общедоступной функции предварительного просмотра. Это позволяет автоматически сохранять резервные копии баз данных в отдельных контейнерах для хранения Azure Blob на срок до 10 лет. Затем можно восстановить базу данных, используя эти резервные данные с помощью PowerShell.
 
    > [!IMPORTANT]
    > LTR для управляемых экземпляров в настоящее время находится в ограниченном предварительном просмотре и доступен для подписок EA и CSP на индивидуальной основе. Чтобы запросить регистрацию, пожалуйста, создайте [билет поддержки Azure](https://azure.microsoft.com/support/create-ticket/) под темой поддержки **Резервное копирование, восстановление и непрерывность бизнеса/долгосрочное сохранение резервного копирования.** 
@@ -34,7 +34,7 @@ ms.locfileid: "81384224"
 Для **Get-AzSqlInstanceDatabaseLongTermRetentionBackup** и **Restore-AzSqlInstanceDatabase**, вам нужно будет иметь одну из следующих ролей:
 
 - Роль владельца подписки или
-- Роль SManaged Instance Contributor или
+- Роль автора управляемых экземпляров или
 - Пользовательская роль со следующими разрешениями:
 
    ```Microsoft.Sql/locations/longTermRetentionManagedInstanceBackups/read``` ```Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionManagedInstanceBackups/read```
@@ -48,7 +48,7 @@ ms.locfileid: "81384224"
    ```Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/delete```
 
 > [!NOTE]
-> Роль SManaged Instance Contributor не имеет разрешения на удаление резервных копий LTR.
+> Роль автора управляемых экземпляров не имеет разрешения на удаление резервных копий LTR.
 
 Разрешения RBAC могут быть предоставлены в области *подписки* или *ресурсной группы.* Однако для доступа к резервным кажам LTR, которые относятся к упавшей экземпляру, разрешение должно быть предоставлено в области *подписки* этого экземпляра.
 
@@ -151,7 +151,7 @@ Restore-AzSqlInstanceDatabase -FromLongTermRetentionBackup -ResourceId $ltrBacku
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания, например извлечь часть данных из восстановленной базы данных, чтобы скопировать их в имеющуюся базу данных или удалить имеющуюся базу данных и присвоить ее имя восстановленной базе данных. Ознакомьтесь с [восстановлением до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о резервных копиях базы данных, создаваемых автоматически службой, см. в [этой статье](sql-database-automated-backups.md).
 - Дополнительные сведения о долгосрочном хранении резервных копий см. в статье [Хранение резервных копий базы данных SQL Azure до 10 лет](sql-database-long-term-retention.md).

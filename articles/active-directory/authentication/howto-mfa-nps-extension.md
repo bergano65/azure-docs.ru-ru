@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f884f4c0ea3a610f28a8fdbb34b081f0b0a64d08
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 2c8606f0b7ab47d624ec66c8cda539e571cec6ce
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80666951"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393058"
 ---
 # <a name="integrate-your-existing-nps-infrastructure-with-azure-multi-factor-authentication"></a>Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure
 
@@ -239,7 +239,7 @@ NPS-сервер подключается к Azure Active Directory и ауте�
 
 Если у вас есть пользователи, не зарегистрированные для MFA, вы можете выбрать действие, которое будет выполняться при попытке проверки подлинности. Для управления этим поведением используйте параметр реестра *REQUIRE_USER_MATCH*, расположенный в пути *HKLM\Software\Microsoft\AzureMFA*. Здесь есть только один параметр конфигурации:
 
-| Клавиши | Значение | Значение по умолчанию |
+| Клавиши | Значение | По умолчанию |
 | --- | ----- | ------- |
 | REQUIRE_USER_MATCH | True или false | Не задано (эквивалентно значению True) |
 
@@ -282,7 +282,7 @@ Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b0
 ``` PowerShell
 import-module MSOnline
 Connect-MsolService
-Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b09b8cd720" -ReturnKeyValues 1 | select -ExpandProperty "value" | out-file c:\npscertficicate.cer
+Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b09b8cd720" -ReturnKeyValues 1 | select -ExpandProperty "value" | out-file c:\npscertificate.cer
 ```
 
 После запуска этой команды перейдите на диск C, найдите файл и дважды нажмите на него. Перейдите к подробным сведениям и прокрутите вниз до раздела thumbprint. Сравните отпечаток сертификата, установленного на сервере, с этим отпечатком. Отпечатки сертификатов должны совпадать.
@@ -334,7 +334,7 @@ Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b0
 
 Дополнительные рекомендации по устранению неполадок и возможные решения можно найти в [статье Разрешить сообщения об ошибках из расширения NPS для Azure Multi-фактор аутентификации](howto-mfa-nps-extension-errors.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор и конфигурация сервера сетевой политики на сервере Windows](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top)
 

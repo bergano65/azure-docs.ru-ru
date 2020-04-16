@@ -12,14 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/18/2020
-ms.openlocfilehash: 5f0eada5184f2c8e36b0deb5a9d27a8a9230776d
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 12bf807f5866567508b644105f377cfde1494250
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81382766"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81410780"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-by-using-azure-data-factory"></a>Копирование данных в Explorer данных Azure с помощью Azure Data Factory
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как использовать активность копирования на фабрике данных Azure для копирования данных в [Azure Data Explorer](/azure/data-explorer/data-explorer-overview)или из. Он основывается на статье [обзора активности копирования,](copy-activity-overview.md) которая предлагает общий обзор активности копирования.
 
@@ -233,7 +235,7 @@ ms.locfileid: "81382766"
 
 Для получения дополнительной информации [Lookup activity](control-flow-lookup-activity.md)о свойствах см.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Для списка хранилищ данных, которые активность копирования в Azure Data Factory поддерживается в качестве источников и поглотителей, [см.](copy-activity-overview.md#supported-data-stores-and-formats)
 

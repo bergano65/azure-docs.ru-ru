@@ -1,24 +1,26 @@
 ---
-title: Схема событий Azure Event Grid для Убежища ключей Azure
+title: Убежище ключей Azure — источник событийной сетки
 description: Описывает свойства и схему, предусмотренные для событий Azure Key Vault с помощью Azure Event Grid
 services: event-grid
-author: msmbaldwin
+author: spelluru
 ms.service: event-grid
-ms.topic: reference
-ms.date: 10/25/2019
-ms.author: mbaldwin
-ms.openlocfilehash: fe186e2ba8f3cafeb4d186066ba65ae036302f70
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.topic: conceptual
+ms.date: 04/09/2020
+ms.author: spelluru
+ms.openlocfilehash: 36b7b81a18c8725929ab5676b844e1ee319e287f
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81010517"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393316"
 ---
-# <a name="azure-event-grid-event-schema-for-azure-key-vault-preview"></a>Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)
+# <a name="azure-key-vault-as-event-grid-source"></a>Убежище ключей Azure — источник событийной сетки
 
 В этой статье представлены свойства и схема для событий в [Azure Key Vault](../key-vault/index.yml), в настоящее время в предварительном просмотре. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
-## <a name="available-event-types"></a>Доступные типы событий
+## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
+
+### <a name="available-event-types"></a>Доступные типы событий
 
 Учетная запись Azure Key Vault генерирует следующие типы событий:
 
@@ -34,7 +36,7 @@ ms.locfileid: "81010517"
 | Microsoft.KeyVault.SecretNearExpiry | Секрет почти срок годности | Срабатывает, когда текущая версия секрета вот-вот истечет. (Событие срабатывает за 30 дней до истечения срока действия.) |
 | Microsoft.KeyVault.SecretExpired | Секретный истек | Срабатывает, когда срок действия секрета истек. |
 
-## <a name="event-examples"></a>Примеры событий
+### <a name="event-examples"></a>Примеры событий
 
 Следующий пример показать схему для **Microsoft.KeyVault.SecretNewVersionCreated**:
 
@@ -61,7 +63,7 @@ ms.locfileid: "81010517"
 ]
 ```
 
-## <a name="event-properties"></a>Свойства события
+### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
@@ -75,8 +77,14 @@ ms.locfileid: "81010517"
 | nbf | number | Не-до даты в секундах с 1970-01-01T00:00 "объекта, который вызвал это событие |
 | exp | number | Срок годности в секундах с 1970-01-01T00:00 "объекта, который вызвал это событие |
 
+## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
+|Title  |Описание  |
+|---------|---------|
+| [Мониторинг событий Key Vault с помощью Azure Event Grid](../key-vault/event-grid-overview.md) | Обзор интеграции Key Vault с Event Grid. |
+| [Учебник: Создание и мониторинг событий Key Vault с помощью Event Grid](../key-vault/event-grid-tutorial.md) | Узнайте, как настроить уведомления Event Grid для Key Vault. |
 
-## <a name="next-steps"></a>Следующие шаги
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Для введения в Azure Event [What is Event Grid?](overview.md)Grid см.
 * Для получения дополнительной информации о том, как [Event Grid subscription schema](subscription-creation-schema.md)создать подписку Azure Event Grid, см.

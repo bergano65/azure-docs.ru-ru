@@ -5,12 +5,12 @@ services: automation
 ms.subservice: dsc
 ms.date: 08/08/2018
 ms.topic: conceptual
-ms.openlocfilehash: 706ab128af4379a56223ff65fb12f29d37b524f7
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 0c61a431b985e494148500ed0a7aeb106534ed2c
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383276"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81392117"
 ---
 # <a name="provide-continuous-deployment-to-virtual-machines-using-automation-state-configuration-and-chocolatey"></a>Обеспечить непрерывное развертывание виртуальных машин с использованием конфигурации состояния автоматизации и шоколадной
 
@@ -95,7 +95,7 @@ New-AzAutomationAccount –ResourceGroupName MY-AUTOMATION-RG –Location MY-RG-
 
 Другой метод, недавно добавленный на портал Azure, позволяет использовать новые модули или обновлять существующие модули. Нажмите на ресурс учетной записи Automation, плитку активов и, наконец, плитку модулей. Значок Browse Gallery позволяет увидеть список модулей в галерее, просверлить детали и в конечном итоге импортировать в свой аккаунт Автоматизации. Это отличный способ периодически обновлять модули. Кроме того, во время импорта проверяется наличие зависимостей от других модулей, чтобы обеспечить полную синхронизацию.
 
-Вы также можете сделать это вручную. Этот подход используется только один раз на ресурс, если вы не хотите обновить его позже. Для получения дополнительной информации об авторстве интеграционных модулей PowerShell [см.](https://azure.microsoft.com/blog/authoring-integration-modules-for-azure-automation/)
+Существует также ручной подход, используемый только один раз на ресурс, если вы не хотите обновить его позже. Для получения дополнительной информации об авторстве интеграционных модулей PowerShell [см.](https://azure.microsoft.com/blog/authoring-integration-modules-for-azure-automation/)
 
 >[!NOTE]
 >Структура папок интеграционного модуля PowerShell для компьютера Windows немного отличается от структуры папок, ожидаемой Azure Automation. 
@@ -121,7 +121,7 @@ New-AzAutomationAccount –ResourceGroupName MY-AUTOMATION-RG –Location MY-RG-
     ```azurepowershell-interactive
     New-AzAutomationModule `
       -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT `
-      -Name MODULE-NAME –ContentLink 'https://STORAGE-URI/CONTAINERNAME/MODULE-NAME.zip'
+      -Name MODULE-NAME –ContentLinkUri 'https://STORAGE-URI/CONTAINERNAME/MODULE-NAME.zip'
     ```
 
 Включенный пример реализует эти шаги для cChoco и xNetworking. 
@@ -196,21 +196,21 @@ Get-AzAutomationDscCompilationJob `
 
 ## <a name="step-5-create-and-maintain-package-metadata"></a>Шаг 5: Создание и обслуживание метаданных пакетов
 
-Для описания каждого пакета, который помещается в репозиторий пакетов, необходимы метаданные Nuspec.
-Эти метаданные Nuspec следует компилировать и хранить на сервере NuGet. Этот процесс описан [здесь](https://docs.nuget.org/create/creating-and-publishing-a-package). В качестве сервера NuGet можно использовать сайт MyGet.org. Это платная служба, но начальные единицы хранения предоставляются бесплатно. В NuGet.org вы найдете инструкции по установке собственного сервера NuGet для ваших частных пакетов.
+Для каждого пакета, который вы положили в репозиторий пакета, вам нужен Nuspec, который описывает его. Он должен быть компилирован и храниться на сервере NuGet. Этот процесс описан [здесь](https://docs.nuget.org/create/creating-and-publishing-a-package). 
+
+Вы можете использовать **MyGet.org** в качестве сервера NuGet. Вы можете купить эту услугу, но вы бесплатный стартер SKU. В [NuGet](https://www.nuget.org/)вы найдете инструкции по установке собственного сервера NuGet для ваших частных пакетов.
 
 ## <a name="step-6-tie-it-all-together"></a>Шаг 6: Свяжите все это вместе
 
-Каждый раз, когда версия проходит qA и утверждается для развертывания, пакет создается, и nuspec и nupkg обновляются и развертываются на сервере NuGet. Конфигурация (Шаг 4 выше) также должна быть обновлена, чтобы согласиться с новым номером версии. Затем он должен быть отправлен на сервер вытягивания и компилирован.
+Каждый раз, когда версия проходит qA и утверждается для развертывания, пакет создается, и nuspec и nupkg обновляются и развертываются на сервере NuGet. Конфигурация (шаг 4) также должна быть обновлена, чтобы согласиться с новым номером версии. Затем он должен быть отправлен на сервер вытягивания и компилирован.
 
 С этого момента именно виртуальные машины, зависящие от этой конфигурации, отвечают за получение обновления и его установку. Каждое из этих обновлений просто - просто линия или два PowerShell. Для Azure DevOps некоторые из них инкапсулированы в задачах сборки, которые могут быть прикованы друг к другу в сборке. Дополнительные сведения см. в [этой статье](https://www.visualstudio.com/docs/alm-devops-feature-index#continuous-delivery). Это [репо GitHub](https://github.com/Microsoft/vso-agent-tasks) детализирует доступные задачи сборки.
 
 ## <a name="related-articles"></a>Связанные статьи
-* [Обзор DSC службы автоматизации Azure](automation-dsc-overview.md)
-* [Командлеты Automation DSC Azure](https://docs.microsoft.com/powershell/module/azurerm.automation#automation)
+* [Обзор DSC автоматизации Azure](automation-dsc-overview.md)
 * [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Для обзора [см.](automation-dsc-overview.md)
 - Для начала см. [Начало работы с конфигурацией состояния автоматизации Azure.](automation-dsc-getting-started.md)

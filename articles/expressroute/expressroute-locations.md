@@ -6,20 +6,20 @@ author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 03/25/2020
+ms.date: 04/14/2020
 ms.author: cherylmc
-ms.openlocfilehash: 913bc16f7408acebb0e65359e8845ce0f6a3a2f4
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: b99bd20b9b9e18bbc09edd5bb49f34147ccfaabd
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81314253"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81390250"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
 > [!div class="op_single_selector"]
 > * [Расположение по провайдеру](expressroute-locations.md)
-> * [Поставщики по расположению](expressroute-locations-providers.md)
+> * [Поставщики по местоположению](expressroute-locations-providers.md)
 
 
 Таблицы в этой статье предоставляют информацию о географическом охвате и местоположении ExpressRoute, поставщиках услуг подключения ExpressRoute и интеграторах системы ExpressRoute (SIs).
@@ -74,14 +74,14 @@ ms.locfileid: "81314253"
 
 ### <a name="global-commercial-azure"></a>Глобальный коммерческий Azure
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365**  | **Расположения** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365**  | **Местах** |
 | --- | --- | --- | --- |
 | **[AARNet](https://www.aarnet.edu.au/network-and-services/connectivity-services/azure-expressroute)** |Поддерживается |Поддерживается |Мельбурн, Сидней |
 | **[Airtel](https://www.airtel.in/business/#/)** | Поддерживается | Поддерживается | Ченнаи 2, Мумбаи 2 |
 | **[AIS](https://business.ais.co.th/solution/en/azure-expressroute.html)** | Поддерживается | Поддерживается | Бангкок |
 | **[Aryaka Networks](https://www.aryaka.com/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Даллас, Гонконг SAR, Сан-Паулу, Сиэтл, Силиконовая долина, Сингапур, Токио, Вашингтон |
 | **[Ascenty Data Centers](https://www.ascenty.com/en/cloud/microsoft-express-route)** |Поддерживается |Поддерживается |Сан-Паулу |
-| **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживается |Поддерживается |Амстердам, Вашингтон (округ Колумбия), Даллас, Кремниевая долина, Лондон, Сидней, Сингапур, Токио, Торонто, Чикаго |
+| **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Даллас, Франкфурт, Лондон, Силиконовая долина, Сингапур, Сидней, Токио, Торонто, Вашингтон |
 | **[В ТОКИО](https://www.attokyo.com/service/cloudsconnection/forazure.html)** | Поддерживается | Поддерживается | Токио2 |
 | **[ББИКС](https://www.bbix.net/en/service/ix/)** | Поддерживается | Поддерживается | Токио |
 | **[BCX](https://www.bcx.co.za/solutions)** |Поддерживается |Поддерживается |Кейптаун|
@@ -138,7 +138,7 @@ ms.locfileid: "81314253"
 | **[Оранжевый](https://www.orange-business.com/en/products/business-vpn-galerie)** |Поддерживается |Поддерживается |Амстердам, Амстердам2, Дубай2, Франкфурт, Гонконг SAR, Иоганнесбург, Лондон, Париж, Сан-Паулу, Силиконовая долина, Сингапур, Сидней, Токио, Вашингтон |
 | **[Орикском](https://www.orixcom.com/cloud-solutions/)** | Поддерживается | Поддерживается | Дубай2 |
 | **[PacketFabric](https://www.packetfabric.com/cloud-connectivity/microsoft-azure)** |Поддерживается |Поддерживается |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
-| **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Поддерживается |Поддерживается |Чикаго, Гонконг SAR, Лондон |
+| **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Поддерживается |Поддерживается |Чикаго, Гонконг SAR, Лондон, Сингапур2 |
 | **[Седжон Телеком](https://www.sejongtelecom.net/en/pages/service/cloud_ms)** |Поддерживается |Поддерживается |Сеул |
 | **[Ses](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)** | Поддерживается |Поддерживается | Вашингтон, округ Колумбия |
 | **[SIFY](http://telecom.sify.com/azure-expressroute.html)** |Поддерживается |Поддерживается |Ченнаи, Мумбаи 2 |
@@ -174,7 +174,7 @@ ms.locfileid: "81314253"
 
 ### <a name="us-government-cloud"></a>Облако US Gov 
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Местах** |
 | --- | --- | --- | --- |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживается |Поддерживается |Чикаго, Финикс, Силиконовая долина, Вашингтон |
 | **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Нью-йорк, Финикс, Сан-Антонио, Вашингтон, округ Колумбия |
@@ -185,7 +185,7 @@ ms.locfileid: "81314253"
 
 ### <a name="china"></a>Китай
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Местах** |
 | --- | --- | --- | --- |
 | **China Telecom** |Поддерживается |Не поддерживается |Пекин, Пекин2, Шанхай, Шанхай2 |
 | **Китай Unicom** | Поддерживается | Не поддерживается | Пекин 2 |
@@ -195,7 +195,7 @@ ms.locfileid: "81314253"
 
 ### <a name="germany"></a>Германия
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Местах** |
 | --- | --- | --- | --- |
 | **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Поддерживается |Не поддерживается |Франкфурт |
 | **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Не поддерживается |Франкфурт |
@@ -233,7 +233,7 @@ ms.locfileid: "81314253"
 
 ## <a name="connectivity-through-additional-service-providers"></a>Связь с дополнительными поставщиками услуг
 
-| **Поставщик услуг подключения** | **Exchange** | **Расположения** |
+| **Поставщик услуг подключения** | **Exchange** | **Местах** |
 | --- | --- | --- |
 | **[1CLOUDSTAR](https://www.1cloudstar.com/service/cloudconnect-azure-expressroute/)** |Equinix |Сингапур |
 | **[Airgate Technologies, Inc.](https://www.airgate.ca/expressroute)** | Equinix, Cologix | Торонто, Монреаль |
@@ -353,7 +353,7 @@ ms.locfileid: "81314253"
 | **[Venha Pra Nuvem](https://venhapranuvem.com.br/)** | Южная Америка |
 | **[Vigilant.IT](https://vigilant.it/expressroute)** | Австралия |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

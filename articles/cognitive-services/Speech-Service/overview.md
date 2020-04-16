@@ -3,19 +3,19 @@ title: Что собой представляет служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Служба "Речь" — это средства преобразования речи в текст, текста в речь и перевода речи, предоставляемые в рамках одной подписки Azure. Используя пакет SDK службы "Речь", пакет SDK для устройств, подключаемых к службе "Речь", или REST API, добавьте в свои приложения, инструменты и устройства функции для работы с речью.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: overview
 ms.date: 03/12/2020
-ms.author: dapine
-ms.openlocfilehash: 353e66c2d4ebb288244866b12a32e9acb7c765e2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: trbye
+ms.openlocfilehash: 464e21caf3105b12f0fbf44dc2aa3674a252d3c6
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80371572"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81401037"
 ---
 # <a name="what-is-the-speech-service"></a>Что собой представляет служба "Речь"
 

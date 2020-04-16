@@ -15,12 +15,12 @@ ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e56d4d94e38e5095ef2223d0cc2875cbf1dcd46
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6e10d00ed90248319801974c7c1e7fadf835024b
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "64919116"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81407015"
 ---
 # <a name="troubleshoot-object-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации объектов с помощью службы синхронизации Azure AD Connect
 В этой статье приводятся пошаговые инструкции по устранению неполадок, связанных с синхронизацией объектов, с помощью задач устранения неполадок. Ознакомиться с устранением неполадок в Azure Active Directory Connect (Azure AD) можно [в этом коротком видео](https://aka.ms/AADCTSVideo).
@@ -61,11 +61,6 @@ ms.locfileid: "64919116"
 Если имя субъекта-пользователя (UserPrincipalName) и суффикс альтернативного имени пользователя не проверены клиентом Azure AD Tenant, тогда Azure Active Directory заменяет суффиксы имени участника-пользователя на стандартное доменное имя onmicrosoft.com.
 
 ![Azure AD заменяет UPN](media/tshoot-connect-objectsync/objsynch2.png)
-
-### <a name="changing-upn-suffix-from-one-federated-domain-to-another-federated-domain"></a>Изменение суффикса имени участника-пользователя при переходе из одного федеративного домена в другой
-Azure Active Directory не позволяет выполнить синхронизацию имени участника-пользователя (UserPrincipalName) или суффикса альтернативного имени пользователя, который изменился при переходе из одного федеративного домена в другой. Это относится к доменам, которые проверяются с помощью клиента Azure AD и имеют федеративный тип аутентификации.
-
-![Нет синхронизации UPN от одного федеративного домена к другому](media/tshoot-connect-objectsync/objsynch3.png) 
 
 ### <a name="azure-ad-tenant-dirsync-feature-synchronizeupnformanagedusers-is-disabled"></a>Компонент DirSync клиента Azure AD SynchronizeUpnForManagedUsers отключен
 Если компонент DirSync клиента Azure AD SynchronizeUpnForManagedUsers отключен, Azure Active Directory не позволяет выполнить обновление синхронизации атрибута UserPrincipalName и альтернативного имени пользователя для учетных записей лицензированных пользователей с помощью управляемой аутентификации.

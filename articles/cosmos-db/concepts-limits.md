@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: 343e94fe681d398b695e0e24c22544bca470d75a
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: b24d7db679bb9cb9dacd5e1db8e6410b883548cc
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80652190"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415707"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты службы Azure Cosmos DB
 
@@ -70,7 +70,7 @@ Cosmos DB поддерживает эластичное масштабирова
 > [!NOTE]
 > Региональные сбой применяется только к одному региону, записавом учетные записи. Учетные записи мультирегиона не требуют и не имеют каких-либо ограничений на изменение региона записи.
 
-Cosmos DB автоматически принимает резервные данные через регулярные промежутки времени. Для получения подробной информации о интервалах хранения резервного копирования и окнах [см.](../synapse-analytics/sql-data-warehouse/backup-and-restore.md)
+Cosmos DB автоматически принимает резервные данные через регулярные промежутки времени. Для получения подробной информации о интервалах хранения резервного копирования и окнах [см.](online-backup-and-restore.md)
 
 ## <a name="per-account-limits"></a>Лимиты по счету
 
@@ -207,11 +207,11 @@ Try Cosmos DB поддерживает глобальное распростра
 
 Приступая к работе с Azure Cosmos DB, ознакомьтесь с одним из наших кратких руководств:
 
-* [Краткое руководство. Создание веб-приложения .NET с помощью учетной записи API SQL для Azure Cosmos DB](create-sql-api-dotnet.md)
-* [Краткое руководство. Перенос имеющегося веб-приложения MongoDB на Node.js в Azure Cosmos DB](create-mongodb-nodejs.md)
-* [Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB](create-cassandra-dotnet.md)
-* [Краткое руководство. Создание приложения .NET Framework или Core с помощью учетной записи API Gremlin для Azure Cosmos DB](create-graph-dotnet.md)
-* [Краткое руководство. Создание приложения API таблиц с помощью пакета SDK .NET и Azure Cosmos DB](create-table-dotnet.md)
+* [Azure Cosmos DB. Создание веб-приложения API SQL с использованием языка .NET и портала Azure](create-sql-api-dotnet.md)
+* [Начало работы с API Azure Cosmos DB для MongoDB](create-mongodb-nodejs.md)
+* [Краткое руководство. Создание приложения Cassandra с помощью .NET и Azure Cosmos DB](create-cassandra-dotnet.md)
+* [Начало работы с API Gremlin в Azure Cosmos DB](create-graph-dotnet.md)
+* [Краткое руководство. Создание приложения API таблицы с помощью .NET и Azure Cosmos DB](create-table-dotnet.md)
 
 > [!div class="nextstepaction"]
-> [Попробуйте Azure Космос DB бесплатно](https://azure.microsoft.com/try/cosmosdb/)
+> [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/)
