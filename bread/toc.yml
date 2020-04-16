@@ -105,6 +105,9 @@
     - name: Шлюз приложений
       tocHref: /azure/application-gateway/
       topicHref: /azure/application-gateway/
+    - name: Synapse Analytics
+      tocHref: /azure/synapse-analytics/
+      topicHref: /azure/synapse-analytics/
     - name: ASC для Интернета вещей
       tocHref: /azure/asc-for-iot/
       topicHref: /azure/asc-for-iot/
@@ -525,7 +528,20 @@
       topicHref: /azure/jenkins/
     - name: Key Vault
       tocHref: /azure/key-vault/
-      topicHref: /azure/key-vault/
+      topicHref: /azure/key-vault
+      items:
+        - name: Общие сведения
+          tocHref: /azure/key-vault/general/
+          topicHref: /azure/key-vault/general/
+        - name: Сертификаты
+          tocHref: /azure/key-vault/certificates/
+          topicHref: /azure/key-vault/certificates/
+        - name: Ключи
+          tocHref: /azure/key-vault/keys/
+          topicHref: /azure/key-vault/keys/
+        - name: Секреты
+          tocHref: /azure/key-vault/secrets/
+          topicHref: /azure/key-vault/secrets/
     - name: Azure Kinect DK
       tocHref: /azure/kinect-dk/
       topicHref: /azure/kinect-dk/

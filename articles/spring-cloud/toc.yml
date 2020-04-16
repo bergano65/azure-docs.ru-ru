@@ -18,8 +18,6 @@
       href: spring-cloud-quickstart-launch-app-maven.md
 - name: Учебники
   items:
-    - name: Подготовка приложения Java Spring к развертыванию
-      href: spring-cloud-tutorial-prepare-app-deployment.md
     - name: Настройка сервера конфигурации
       href: spring-cloud-tutorial-config-server.md
     - name: Масштабирование приложения вручную
@@ -44,6 +42,8 @@
       href: disaster-recovery.md
 - name: Практические руководства
   items:
+    - name: Подготовка приложения Java Spring к развертыванию
+      href: spring-cloud-tutorial-prepare-app-deployment.md
     - name: 'Как запустить, приостановить или удалить приложение Azure Spring Cloud'
       href: spring-cloud-howto-start-stop-delete.md
     - name: Настройка промежуточной среды
