@@ -1,23 +1,23 @@
 ---
-author: IEvangelist
+author: trevorbye
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/13/2020
-ms.author: dapine
-ms.openlocfilehash: 7c57952d0b78271bbcc45bd282385524772f0f9e
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.author: trbye
+ms.openlocfilehash: 09f08e314a634de13a683440ad9fead97ad8a260
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266650"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399601"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас есть учетная запись Azure и подписка на услуги speech. Если у вас нет учетной записи и подписки, [попробуйте услугу Speech бесплатно.](../../../get-started.md)
+В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](../../../get-started.md).
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Прежде чем вы можете сделать что-нибудь, вам нужно установить речь SDK. В зависимости от вашей платформы, следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получить речь <span class="docon docon-navigate-external x-hidden-focus"></span> SDK</a> статьи речи SDK.
+Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от вашей платформы, следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получить речь <span class="docon docon-navigate-external x-hidden-focus"></span> SDK</a> статьи речи SDK.
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
@@ -48,19 +48,19 @@ auto SPEECH__SERVICE__REGION = getenv("SPEECH__SERVICE__REGION");
 
 ## <a name="create-a-speech-translation-configuration"></a>Создание конфигурации речевого перевода
 
-Чтобы вызвать службу speech с помощью Speech [`SpeechTranslationConfig`][config]SDK, необходимо создать . Этот класс включает информацию о вашей подписке, например, ваш ключ и связанный с ним регион, конечную точку, узла или токен авторизации.
+Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechTranslationConfig`][config]. Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
 > [!TIP]
-> Независимо от того, выполняете ли вы распознавание речи, синтез речи, перевод или распознавание намерений, вы всегда будете создавать конфигурацию.
+> Независимо от того, используете ли вы распознавание речи, синтез речи, перевод или распознавание намерения, вы всегда создаете конфигурацию.
 
-Есть несколько способов, которые [`SpeechTranslationConfig`][config]можно инициализировать:
+Существует несколько способов инициализации [`SpeechTranslationConfig`][config].
 
-* С подпиской: пройти в ключе и связанном с ним регионе.
-* С конечней точкой: пройти в конечную точку службы речи. Токен ключа или авторизации не является обязательным.
-* С хостом: пройдите по адресу хозяина. Токен ключа или авторизации не является обязательным.
-* С токеном авторизации: пройти в токенавторизации и связанном с ним регионе.
+* С помощью подписки: передайте ключ и связанный с ним регион.
+* С помощью конечной точки: передайте конечную точку службы "Речь". Ключ или маркер авторизации являются необязательными.
+* С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
+* С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-Давайте взглянем на [`SpeechTranslationConfig`][config] то, как создается создается с помощью ключа и региона. Просмотрите страницу [поддержки региона,](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-sdk) чтобы найти идентификатор региона.
+Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Идентификатор региона можно узнать в разделе о [поддержке регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-sdk).
 
 ```cpp
 auto SPEECH__SUBSCRIPTION__KEY = getenv("SPEECH__SUBSCRIPTION__KEY");
@@ -78,9 +78,9 @@ int main(int argc, char** argv) {
 }
 ```
 
-## <a name="change-source-language"></a>Изменение языка исходного кода
+## <a name="change-source-language"></a>Изменение исходного языка
 
-Одной из распространенных задач речевого перевода является определение языка ввода (или источника). Давайте взглянем на то, как вы бы изменить язык ввода на итальянский. В коде взаимодействуйте с [`SpeechTranslationConfig`][config] `SetSpeechRecognitionLanguage` экземпляром, вызывая метод.
+Одной из распространенных задач речевого перевода является определение языка ввода (или источника). Давайте посмотрим, как изменить язык ввода на итальянский. В коде взаимодействуйте с [`SpeechTranslationConfig`][config] `SetSpeechRecognitionLanguage` экземпляром, вызывая метод.
 
 ```cpp
 void translateSpeech() {
@@ -92,7 +92,7 @@ void translateSpeech() {
 }
 ```
 
-Свойство [`SpeechRecognitionLanguage`][recognitionlang] ожидает строку формата языкового локализации. Вы можете предоставить любое значение в столбце **Locale** в списке поддерживаемых [языков/языков.](../../../language-support.md)
+Свойство [`SpeechRecognitionLanguage`][recognitionlang] принимает строку формата языкового стандарта. Вы можете указать любое значение в столбце **Языковой стандарт** в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
 
 ## <a name="add-translation-language"></a>Добавление языка перевода
 
@@ -115,9 +115,9 @@ void translateSpeech() {
 
 ## <a name="initialize-a-translation-recognizer"></a>Инициализация распознавания перевода
 
-После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. Когда вы [`TranslationRecognizer`][recognizer]инициализировать, вам нужно `translationConfig`будет передать его ваш . Объект конфигурации предоставляет учетные данные, необходимые службе речи для проверки запроса.
+После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. При инициализации [`TranslationRecognizer`][recognizer]ему необходимо передать `translationConfig`. Объект конфигурации предоставляет учетные данные, необходимые службе речи для проверки запроса.
 
-Если вы распознаете речь с помощью микрофона по [`TranslationRecognizer`][recognizer] умолчанию устройства, вот как должно выглядеть:
+Если вы распознаете речь с помощью стандартного микрофона вашего устройства, вот как должен выглядеть [`TranslationRecognizer`][recognizer]:
 
 ```cpp
 void translateSpeech() {
@@ -135,10 +135,10 @@ void translateSpeech() {
 }
 ```
 
-Если вы хотите указать устройство ввода звука, то [`AudioConfig`][audioconfig] вам нужно `audioConfig` создать и [`TranslationRecognizer`][recognizer]обеспечить параметр при инициализации вашего .
+Если вы хотите указать входное аудиоустройство, необходимо создать [`AudioConfig`][audioconfig] и указать параметр `audioConfig` при инициализации [`TranslationRecognizer`][recognizer].
 
 > [!TIP]
-> [Узнайте, как получить идентификатор устройства для ввода звука.](../../../how-to-select-audio-input-devices.md)
+> [Узнайте, как получить идентификатор устройства для входного аудиоустройства](../../../how-to-select-audio-input-devices.md).
 
 Во-первых, вы `AudioConfig` будете ссылаться на объект следующим образом:
 
@@ -159,7 +159,7 @@ void translateSpeech() {
 }
 ```
 
-Если вы хотите предоставить аудио файл вместо использования микрофона, вам `audioConfig`все равно нужно будет предоставить . Однако, когда [`AudioConfig`][audioconfig]вы создаете, вместо вызова, `FromDefaultMicrophoneInput`вы будете звонить `FromWavFileInput` и передавать `filename` параметр.
+Если вы хотите предоставить звуковой файл, а не использовать микрофон, вам по-прежнему потребуется предоставить `audioConfig`. Однако при создании [`AudioConfig`][audioconfig] вместо вызова `FromDefaultMicrophoneInput`необходимо вызвать `FromWavFileInput` и передать параметр `filename`.
 
 ```cpp
 void translateSpeech() {

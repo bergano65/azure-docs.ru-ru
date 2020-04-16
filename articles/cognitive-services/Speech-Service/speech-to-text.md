@@ -3,19 +3,19 @@ title: Речевой текст - Речевой сервис
 titleSuffix: Azure Cognitive Services
 description: Функция «речи к тексту» позволяет в режиме реального времени транскрипции аудиопотоков в текст. Ваши приложения, инструменты или устройства могут потреблять, отображать и принимать меры по ввоза этого текста. Эта служба работает бесшовно с текстом к речи (синтез речи), и функции перевода речи.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/12/2020
-ms.author: dapine
-ms.openlocfilehash: 2854f4e8d91164c8ae1f35761d6f605cae725245
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: trbye
+ms.openlocfilehash: e0aea7e55381e9571b156701699f5f45315bb384
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80052634"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399707"
 ---
 # <a name="what-is-speech-to-text"></a>Что такое преобразование речи в текст?
 
@@ -48,7 +48,7 @@ ms.locfileid: "80052634"
 Пример кода для речи SDK доступен на GitHub. В этих примерах рассматриваются сценарии общего характера, такие как чтение аудио из файла или потока, непрерывное и одиночное распознавание, а также работа с пользовательскими моделями.
 
 - [Образцы речи к тексту (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
-- [Примеры транскрибирования с помощью пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
+- [Примеры транскрибирования с помощью Пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
 
 ## <a name="customization"></a>Настройка
 

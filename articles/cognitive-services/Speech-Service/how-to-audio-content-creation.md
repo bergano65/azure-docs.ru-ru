@@ -3,19 +3,19 @@ title: Создание аудиоконтента - Речевой сервис
 titleSuffix: Azure Cognitive Services
 description: Audio Content Creation — это онлайн-инструмент, позволяющий настраивать и дорабатывать текстовое представление корпорации Майкрософт для ваших приложений и продуктов.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/31/2020
-ms.author: dapine
-ms.openlocfilehash: 8184d30471b4d9171a23c8d03e17b2a54dca2ece
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.author: trbye
+ms.openlocfilehash: a263e7e17cda64a8519bab215f97fdf26e88d9d2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80397822"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402244"
 ---
 # <a name="improve-synthesis-with-audio-content-creation"></a>Улучшение синтеза с созданием аудиоконтента
 
@@ -95,7 +95,7 @@ Welcome to use Audio Content Creation to customize audio output for your product
 2. Выберите формат вывода для настроенного звука. Список поддерживаемых форматов и выборочных ставок приведен ниже.
 3. Можно просмотреть состояние задачи на вкладке **«Экспортная задача».** Если задача не выполнена, смотрите подробную страницу информации для полного отчета.
 4. Когда задача будет выполнена, звук будет доступен для скачивания на вкладке **Аудио Библиотеки.**
-5. Нажмите кнопку **Загрузить**. Теперь вы готовы использовать настраиваемый звук на заказ в приложениях или продуктах.
+5. Нажмите **Загрузить**. Теперь вы готовы использовать настраиваемый звук на заказ в приложениях или продуктах.
 
 ### <a name="supported-audio-formats"></a>Поддерживаемые аудиоформаты
 
@@ -104,11 +104,11 @@ Welcome to use Audio Content Creation to customize audio output for your product
 | WAV | рифф-16хз-16бит-моно-пкм | рифф-24khz-16bit-моно-пкм |
 | MP3 | аудио-16khz-128kbitrate-моно-mp3 | аудио-24khz-160kbitrate-моно-mp3 |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Длинный аудио API](https://aka.ms/long-audio-api)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Speech Studio](https://speech.microsoft.com)

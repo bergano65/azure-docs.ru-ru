@@ -10,19 +10,25 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: cbasoglu
-ms.openlocfilehash: 6f8f892e7ca81881b0cc00e1708e3f05052c573c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a72e5055a3b0f858a732ec28eeab511b09dd450c
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "76264209"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81400146"
 ---
 # <a name="scenario-availability"></a>Доступность сценариев
 
 Speech SDK содержит множество сценариев в самых разных языках и средах программирования. Пока не все сценарии доступны на всех языках программирования или во всех средах. Ниже приводится доступность каждого сценария.
 
 - **Распознавание речи (SR), Список фраз, намерения, перевод и контейнеры на территории**
-  - Все языки программирования/среды, где есть ссылка на стрелки <img src="media/index/link.jpg" height="15" width="15"></img> в таблице quickstart [здесь](https://aka.ms/csspeech).
+  - СЗ/Windows & Linux & macOS
+  - СЗ (Рамочное & .NET Core)/Windows & UWP & Unity & Xamarin & Linux & macOS
+  - Java (Jre и Android)
+  - JavaScript (Брауэр и NodeJS)
+  - Python
+  - Swift
+  - Objective-C  
 - **Текст к речи (TTS)**
   - СЗ/Windows & Linux
   - C/Windows & UWP & unity

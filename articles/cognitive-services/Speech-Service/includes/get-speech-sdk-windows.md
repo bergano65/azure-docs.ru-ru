@@ -1,15 +1,15 @@
 ---
-author: IEvangelist
+author: trevorbye
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/27/2020
-ms.author: dapine
-ms.openlocfilehash: dea6a1afaa2348fc5054bee20c534936dcafe5b5
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.author: trbye
+ms.openlocfilehash: 138a9ef9d483ca0d460bab7185d646669650f83e
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656582"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81400033"
 ---
 :::row:::
     :::column span="3":::
@@ -39,7 +39,7 @@ ms.locfileid: "80656582"
 
 Необходимые файлы пакета SDK для службы "Речь" можно развернуть в том же каталоге, что и приложение. Таким образом, приложение сможет получать прямой доступ к библиотекам. Убедитесь, что вы выберите правильную версию (x86/x64), которая соответствует вашему приложению.
 
-| name                                            | Функция                                             |
+| Имя                                            | Компонент                                             |
 |-------------------------------------------------|------------------------------------------------------|
 | `Microsoft.CognitiveServices.Speech.core.dll`   | Основной пакет SDK, необходимый для развертывания управляемого и машинного кода |
 | `Microsoft.CognitiveServices.Speech.csharp.dll` | Требуется для развертывания управляемого кода                      |

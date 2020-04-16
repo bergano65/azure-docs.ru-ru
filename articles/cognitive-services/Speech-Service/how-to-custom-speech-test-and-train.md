@@ -3,21 +3,21 @@ title: Подготовка данных для пользовательской
 titleSuffix: Azure Cognitive Services
 description: При проверке точности распознавания речи корпорации Майкрософт или обучении пользовательских моделей вам понадобятся аудио- и текстовые данные. На этой странице мы рассмотрим типы данных, как использовать и управлять ими.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/27/2020
-ms.author: dapine
-ms.openlocfilehash: d6e377ca4f33c0160267b23daaaaef5e07c271bb
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.author: trbye
+ms.openlocfilehash: 78857709447f99895c36f23d8760f44f8468ba7c
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80398692"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402145"
 ---
-# <a name="prepare-data-for-custom-speech"></a>Подготовка данных для пользовательской речи
+# <a name="prepare-data-for-custom-speech"></a>Подготовка данных для службы пользовательского распознавания речи
 
 При проверке точности распознавания речи корпорации Майкрософт или обучении пользовательских моделей вам понадобятся аудио- и текстовые данные. На этой странице мы рассмотрим типы данных, как использовать и управлять ими.
 
@@ -27,9 +27,9 @@ ms.locfileid: "80398692"
 
 | Тип данных | Используется для тестирования | Рекомендуемое количество | Используется для обучения | Рекомендуемое количество |
 |-----------|-----------------|----------|-------------------|----------|
-| [Звук:](#audio-data-for-testing) | Да<br>Используется для визуального осмотра | Аудиофайлы 5 | Нет | Недоступно |
+| [Звук:](#audio-data-for-testing) | Да<br>Используется для визуального осмотра | Аудиофайлы 5 | нет | Недоступно |
 | [Аудио- и теканочные транскрипты](#audio--human-labeled-transcript-data-for-testingtraining) | Да<br>Используется для оценки точности | 0,5-5 часов аудио | Да | 1-1,000 часов аудио |
-| [Похожий текст](#related-text-data-for-training) | Нет | Недоступно | Да | 1-200 МБ соответствующего текста |
+| [Похожий текст](#related-text-data-for-training) | нет | Недоступно | Да | 1-200 МБ соответствующего текста |
 
 Файлы должны быть сгруппированы по типу в набор данных и загружены в виде файла .zip. Каждый набор данных может содержать только один тип данных.
 
@@ -178,7 +178,7 @@ ms.locfileid: "80398692"
 | - произношения на строку | 1 |
 | Максимальный размер файла | 1 МБ (1 КБ за бесплатный уровень) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Проверка данных](how-to-custom-speech-inspect-data.md)
 * [Оценка данных](how-to-custom-speech-evaluate-data.md)

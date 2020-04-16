@@ -3,19 +3,19 @@ title: Прямая линия речи - Речевая служба
 titleSuffix: Azure Cognitive Services
 description: Обзор функций, возможностей и ограничений для голосовых помощников, использующих прямую речь с набором для разработки программного обеспечения для речевой речи (SDK).
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.author: dapine
-ms.openlocfilehash: 714cdefa7100160a510d1922a2547ae53692d76c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: trbye
+ms.openlocfilehash: 6dc125b68af8f9a07731aaae9d858c19c51f934f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79367811"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402390"
 ---
 # <a name="what-is-direct-line-speech"></a>Что такое Direct Line Speech?
 
@@ -35,7 +35,7 @@ ms.locfileid: "79367811"
 
 Мы также предлагаем quickstarts разработан, чтобы вы работаете код и изучение AA быстро. Эта таблица включает в себя список голосовых помощников quickstarts организован ы языка и платформы.
 
-| Краткое руководство | Платформа | Справочник по интерфейсам API |
+| Краткое руководство | Платформа | Справочник по API |
 |------------|----------|---------------|
 | СЗ, UWP | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
 | Java | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
@@ -59,8 +59,8 @@ ms.locfileid: "79367811"
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [Пакет SDK для службы "Речь"](speech-sdk-reference.md)
-* [Служба лазурного бота](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
+* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
+* [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

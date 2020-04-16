@@ -3,20 +3,20 @@ title: Выберите режим распознавания речи с пом
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как выбрать оптимальный режим распознавания при использовании Speech SDK.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.author: dapine
+ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: d997cb592d9d648998f2b44d9f61f465f05faeb0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5fdca371e9188ef69068ddbcaa416cbb2b44054c
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79079814"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402157"
 ---
 # <a name="choose-a-speech-recognition-mode"></a>Выберите режим распознавания речи
 
@@ -160,7 +160,7 @@ speech_recognizer.stop_continuous_recognition()
 
 ## <a name="dictation"></a>Диктовка
 
-При использовании непрерывного распознавания можно включить обработку диктовки, используя соответствующую функцию «включить диктовку». Этот режим заставит экземпляр речевой конфигурации интерпретировать описания слов структур предложения, такие как пунктуация. Например, высказывание "Вы живете в городском знаке вопроса" будет истолковано как текст "Вы живете в городе?".
+При использовании непрерывного распознавания вы можете включить обработку диктовки с помощью соответствующей функции "Включить диктовку". Этот режим приведет к тому, что экземпляр конфигурации речи будет интерпретировать словесные описания структуры предложения, например, пунктуацию. Например, речевой фрагмент "Живете ли вы в городе вопросительный знак" будет интерпретироваться как текст "Живете ли вы в городе?".
 
 ::: zone pivot="programming-language-csharp"
 

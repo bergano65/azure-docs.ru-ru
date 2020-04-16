@@ -3,20 +3,20 @@ title: Языковая поддержка - Речевая служба
 titleSuffix: Azure Cognitive Services
 description: Служба речевых сообщений поддерживает многочисленные языки для преобразования речи в текст и текст к речи, наряду с переводом речи. В этой статье приводится полный список языковой поддержки по функции службы.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.author: dapine
+ms.author: trbye
 ms.custom: seodec18
-ms.openlocfilehash: d01ab60790311649e424a98d5a08c6af0bca90f7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2a876349af2bd53a46737dda82961afe442bae05
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80336041"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81401085"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Языковая и голосовая поддержка службы речевой речи
 
@@ -170,7 +170,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | `ko-KR` | Корейский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ko-KR, HeamiRUS)" | "ко-КР-Хеамирус" |
 | `ms-MY` | Малайский | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ms-MY, Rizwan)" | "мс-MY-Ризван" |
 | `nb-NO` | Норвежский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (nb-NO, HuldaRUS)" | "nb-NO-HuldaRUS" |
-| `nl-NL` | Нидерландский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (nl-NL, HannaRUS)" | "nl-NL-HannaRUS" |
+| `nl-NL` | Голландский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (nl-NL, HannaRUS)" | "nl-NL-HannaRUS" |
 | `pl-PL` | Польский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (pl-PL, PaulinaRUS)" | "pl-PL-PaulinaRUS" |
 | `pt-BR` | Португальский (Бразилия) | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (pt-BR, HeloisaRUS)" | "pt-BR-HeloisaRUS" |
 |  |  | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (pt-BR, Daniel, Apollo)" | "pt-BR-Daniel-Apollo" |
@@ -232,7 +232,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Хорватский                | `hr`          |
 | Чешский                   | `cs`          |
 | Датский                  | `da`          |
-| Нидерландский                   | `nl`          |
+| Голландский                   | `nl`          |
 | Английский                 | `en`          |
 | Эстонский                | `et`          |
 | Фиджийский                  | `fj`          |

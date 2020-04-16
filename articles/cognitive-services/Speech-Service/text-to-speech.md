@@ -3,19 +3,19 @@ title: Текст к речи - Речевая служба
 titleSuffix: Azure Cognitive Services
 description: Функция «текст к речи» в службе речевого сообщения позволяет приложениям, инструментам или устройствам преобразовывать текст в естественную синтезированную речь, похожую на человека. Выберите предустановленные голоса или создайте свой собственный пользовательский голос.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
-ms.author: dapine
-ms.openlocfilehash: 7c7574ee4e9f75b9b650ff63a10666c5e379fca8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: trbye
+ms.openlocfilehash: 1a8b458eb004b44d0045f36b18d88e11e019c4d2
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131564"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399504"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразование текста в речь?
 
@@ -76,8 +76,8 @@ ms.locfileid: "80131564"
 
 ## <a name="reference-docs"></a>Справочная документация
 
-- [Пакет SDK для службы "Речь"](speech-sdk.md)
-- [REST API: Текст к речи](rest-text-to-speech.md)
+- [пакет SDK для службы "Речь"](speech-sdk.md);
+- [REST API: Преобразование текста в речь](rest-text-to-speech.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

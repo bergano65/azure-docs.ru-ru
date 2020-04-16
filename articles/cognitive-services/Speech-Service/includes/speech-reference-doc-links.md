@@ -2,19 +2,19 @@
 title: Служба "Речь"
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/06/2019
-ms.author: dapine
-ms.openlocfilehash: b24918f377e0d0744331974993cbb94f963e521e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: trbye
+ms.openlocfilehash: 50dd7ddb636658ec6d29c2669d02320c73167fde
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "75379966"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399696"
 ---
 ## <a name="reference-docs"></a>Справочная документация
 
@@ -27,7 +27,7 @@ ms.locfileid: "75379966"
 - <a href="https://aka.ms/csspeech/csharpref" target="_blank" rel="noopener">СДК СДК<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://aka.ms/csspeech/cppref" target="_blank" rel="noopener">СДК СДК<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://aka.ms/csspeech/javaref" target="_blank" rel="noopener">Java SDK<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/pythonref" target="_blank" rel="noopener">Питон SDK<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/pythonref" target="_blank" rel="noopener">Пакет SDK для Python<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://aka.ms/csspeech/javascriptref" target="_blank" rel="noopener">Пакет SDK для JavaScript<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://aka.ms/csspeech/objectivecref" target="_blank" rel="noopener">Объективно-C SDK<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 
@@ -42,6 +42,6 @@ ms.locfileid: "75379966"
 
 Для ссылки на различные услуги речи REST AIS, обратитесь к списку ниже:
 
-- [REST API: От речи к тексту](../rest-speech-to-text.md)
-- [REST API: Текст к речи](../rest-text-to-speech.md)
+- [REST API: Преобразование речи в текст](../rest-speech-to-text.md)
+- [REST API: Преобразование текста в речь](../rest-text-to-speech.md)
 - <a href="https://cris.ai/swagger/ui/index" target="_blank" rel="noopener">REST API: Транскрипция и настройка пакета<span class="docon docon-navigate-external x-hidden-focus"></span></a>

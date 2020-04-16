@@ -3,19 +3,19 @@ title: Ссылка API текстового слова (REST) - Служба р
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать aPI REST текст-речевой текст. Из этой статьи вы узнаете о вариантах авторизации, параметрах запроса, структуре запроса и получении ответа.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
-ms.author: dapine
-ms.openlocfilehash: 977c6ec9aa1cd6a8b8a545d123c5308bb8c51651
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.author: trbye
+ms.openlocfilehash: 77bba9433052c00df671caf73198ff75356b1c9a
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80409022"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81400167"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API преобразования текста в речь.
 
@@ -239,8 +239,8 @@ Authorization: Bearer [Base64 access_token]
 
 Если состояние HTTP — `200 OK`, текст ответа содержит звуковой файл в затребованном формате. Этот файл можно воспроизводить при передаче, сохранении в буфер или сохранении в файл.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services)
 - [Асинхронный синтез для звуков длинной формы](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
-- [Начало работы с настраиваемыми голосовыми моделями](how-to-custom-voice.md)
+- [Начало работы с набором средств "Пользовательский голос"](how-to-custom-voice.md)

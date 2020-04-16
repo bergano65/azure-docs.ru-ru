@@ -3,19 +3,19 @@ title: Преобразование текста в речь на Python в сл
 titleSuffix: Azure Cognitive Services
 description: В этой статье описано, как преобразовать текст в речь с помощью Python и REST API "Преобразование текста в речь". В это руководство включен пример текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: how-to
 ms.date: 04/13/2020
-ms.author: dapine
-ms.openlocfilehash: 6ea3f63bea0701dcd0f4b38f6584816d9a1bfbc7
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.author: trbye
+ms.openlocfilehash: 171fdb033cba422d8ba580da3ab54db88ca20872
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81258443"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81400830"
 ---
 # <a name="convert-text-to-speech-using-python"></a>Преобразование текста в речь с использованием Python
 

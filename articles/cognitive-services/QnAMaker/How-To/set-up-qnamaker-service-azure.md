@@ -3,12 +3,12 @@ title: Настройка сервиса для создателей - NA Maker
 description: Перед созданием базы знаний службы QnA Maker необходимо настроить эту службу в Azure. Настроить службу QnA Maker может любой пользователь с правами на создание ресурсов в подписке.
 ms.topic: conceptual
 ms.date: 03/19/2020
-ms.openlocfilehash: 8ec57f441ba58227e45398c35c7931dc75fa658f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 563a56fdb288568e7fe667fa54658400064a560f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131708"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402989"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами компании «NA Maker»
 
@@ -89,7 +89,7 @@ ms.locfileid: "80131708"
     >[!NOTE]
     >Освежите ключи, если вы думаете, что они были скомпрометированы. Для этого может потребоваться внести соответствующие изменения в код клиентского приложения или бота.
 
-### <a name="upgrade-qna-maker-sku"></a>Обновление ЗНА Maker SKU
+## <a name="upgrade-qna-maker-sku"></a>Обновление ЗНА Maker SKU
 
 Если вы хотите иметь больше вопросов и ответов в вашей базе знаний, за пределами текущего уровня, обновить ваш уровень ценообразования на услуги NA Maker.
 
@@ -103,7 +103,7 @@ ms.locfileid: "80131708"
 
     ![Цены на QnA Maker](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-pricing-page.png)
 
-### <a name="upgrade-app-service"></a>Обновление службы приложений
+## <a name="upgrade-app-service"></a>Обновление службы приложений
 
  Когда вашей базе знаний необходимо обслуживать больше запросов от клиентского приложения, обновите уровень ценообразования Службы App Service.
 
@@ -113,7 +113,7 @@ ms.locfileid: "80131708"
 
 ![Шкала app-услуг создателя NA](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-appservice-scale.png)
 
-### <a name="upgrade-the-azure-cognitive-search-service"></a>Обновление службы когнитивного поиска Azure
+## <a name="upgrade-the-azure-cognitive-search-service"></a>Обновление службы когнитивного поиска Azure
 
 Если вы планируете иметь много баз знаний, обновите уровень ценообразования службы Azure Cognitive Search.
 
@@ -206,7 +206,7 @@ ms.locfileid: "80131708"
     > ![На панели конфигурации выберите «Общие настройки», затем найдите «Всегда на» и выберите в качестве значения значение.](../media/qnamaker-how-to-upgrade-qnamaker/configure-app-service-idle-timeout.png)
 
 1. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.
-1. Вас спрашивают, хотите ли вы перезапустить приложение для использования новой настройки. Выберите **Продолжить**.
+1. Вас спрашивают, хотите ли вы перезапустить приложение для использования новой настройки. Выберите **Continue** (Продолжить).
 
 Узнайте больше о том, как настроить [общие настройки службы](../../../app-service/configure-common.md#configure-general-settings)приложений.
 

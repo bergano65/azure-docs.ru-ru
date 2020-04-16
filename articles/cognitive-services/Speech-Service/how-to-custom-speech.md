@@ -3,19 +3,19 @@ title: Начало работы с пользовательской речи - 
 titleSuffix: Azure Cognitive Services
 description: Custom Speech — это набор онлайн-инструментов, которые позволяют вам оценивать и улучшать точность речи к тексту для ваших приложений, инструментов и продуктов. Все, что нужно, чтобы начать работу являются несколько тестовых аудио файлов. Следуйте ссылкам ниже, чтобы начать создавать пользовательские речи к тексту опыт.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.author: dapine
-ms.openlocfilehash: e30587ed4d09ba792516ebc7b16529a6ee5ac57c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: trbye
+ms.openlocfilehash: a52735ee62f564a5dc536fd2b7d3539406388341
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77918960"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402067"
 ---
 # <a name="what-is-custom-speech"></a>Что такое пользовательская речь?
 

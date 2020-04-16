@@ -1,25 +1,25 @@
 ---
 title: Модерация видео с помощью пользовательских проверок — Content Moderator
 titleSuffix: Azure Cognitive Services
-description: Использование машинной модерации видео и инструментов пользовательской проверки для модерации неуместного содержимого.
+description: Используйте режим видеосотечная помощь с помощью машины и инструмент «Обзор» для умерить неуместный контент
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: a4e7b079367a4b4dec1d2b3d6c0afde1d8276766
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0c031a890efc7fad7e5d9caefce3b0e66c515d90
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "72754169"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81404238"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
 
-Используйте аппаратную [модерацию и](video-moderation-api.md) [инструмент человеческого обзора](Review-Tool-User-Guide/human-in-the-loop.md) для модерации человека, чтобы умерить видео и стенограммы для взрослых (явных) и колоритных (предлагательных) контента, чтобы получить наилучшие результаты для вашего бизнеса.
+Используйте инструмент [модератора с](video-moderation-api.md) помощью машины и [обзора](Review-Tool-User-Guide/human-in-the-loop.md) контента, чтобы умерить видео и стенограммы для взрослых (явных) и колоритный (предлагательный) контент, чтобы получить наилучшие результаты для вашего бизнеса.
 
 ## <a name="video-trained-classifier-preview"></a>Классификатор, обученный с помощью видео, (предварительная версия)
 
