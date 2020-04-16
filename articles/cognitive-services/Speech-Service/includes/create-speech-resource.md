@@ -2,28 +2,28 @@
 title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 7/5/2019
-ms.author: dapine
-ms.openlocfilehash: 3c42bf2b2acc2472741bd603ea9d653a314ecc40
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: trbye
+ms.openlocfilehash: 8abd520a7bb80f1f9a2d8ebcbe46b90fe59a96ec
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "73523755"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81422325"
 ---
 ## <a name="create-a-speech-resource"></a>Создание ресурса речи
 
 1. Войти на [портал Azure](https://portal.azure.com)
 1. Нажмите Создать ресурс [ **речи** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices)
-1. Введите все необходимые настройки:
+1. Введите все необходимые параметры:
 
     |Параметр|Значение|
     |--|--|
-    |name|Требуемое имя (от 2 до 64 символов)|
+    |Имя|Требуемое имя (от 2 до 64 символов)|
     |Подписка|Выберите соответствующую подписку|
     |Расположение|Выберите доступное поблизости расположение|
     |Ценовая категория|`F0` — минимальная ценовая категория|

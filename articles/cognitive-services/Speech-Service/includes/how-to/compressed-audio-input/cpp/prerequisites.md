@@ -1,15 +1,15 @@
 ---
-author: IEvangelist
+author: trevorbye
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
-ms.author: dapine
-ms.openlocfilehash: 590e5494a8c8f9d4e06b69af0708e83d53be72b5
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.author: trbye
+ms.openlocfilehash: 5ff25155529b9a763bcf5af6cfb15593e9da9853
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80409573"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81421740"
 ---
 Обработка сжатого звука осуществляется с помощью [GStreamer.](https://gstreamer.freedesktop.org) По причинам лицензирования бинарные файлы GStreamer не компилируются и не связаны с Speech SDK. Разработчикам необходимо установить несколько зависимостей и плагинов.
 
