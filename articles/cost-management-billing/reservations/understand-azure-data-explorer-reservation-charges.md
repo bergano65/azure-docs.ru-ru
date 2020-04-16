@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/12/2020
-ms.openlocfilehash: ab107a0afe8be1d95de8dafb21f239e6da733271
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a418841d91ab6b8fe5457f3fd64d91306fe08dfe
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199336"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383113"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-data-explorer"></a>Общие сведения о применении скидки на резервирование в Azure Data Explorer
 
@@ -65,7 +65,7 @@ ms.locfileid: "77199336"
 
 Дополнительные сведения о резервировании в Azure см. в следующих статьях:
 
-* [Prepay for Azure Data Explorer markup units with Azure Data Explorer reserved capacity](../../data-explorer/pricing-reserved-capacity.md) (Предоплата за единицы наценки Azure Data Explorer при использовании зарезервированной емкости Azure Data Explorer)  
+* [Prepay for Azure Data Explorer markup units with Azure Data Explorer reserved capacity](/azure/data-explorer/pricing-reserved-capacity) (Предоплата за единицы наценки Azure Data Explorer при использовании зарезервированной емкости Azure Data Explorer)  
 * [Общие сведения об Azure Reserved VM Instances](save-compute-costs-reservations.md)  
 * [Управление зарезервированными экземплярами в Azure](manage-reserved-vm-instance.md)  
 * [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)

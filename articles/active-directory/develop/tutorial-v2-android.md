@@ -12,12 +12,12 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5c8bd5accefceee042601c3cf7d71f5e9131e04e
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: b899e1d651f41c9c1e1e54af1b5ec19162dfc28d
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80880828"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81380062"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-application"></a>Руководство по Вход пользователей и вызов Microsoft Graph из приложения Android 
 
@@ -91,7 +91,7 @@ ms.locfileid: "80880828"
 
 1. На панели проекта Android Studio перейдите к **app\src\main\res**.
 2. Щелкните правой кнопкой мыши **res** и выберите **New** (Создать)  > **Directory** (Каталог). Введите `raw` в качестве имени каталога и нажмите кнопку **ОК**.
-3. В расположении**app** > **src** > **main** > **res** > **raw** создайте файл JSON с именем `auth_configbn_single_account.json` и вставьте в него ранее сохраненную конфигурацию MSAL. 
+3. В расположении**app** > **src** > **main** > **res** > **raw** создайте файл JSON с именем `auth_config_single_account.json` и вставьте в него ранее сохраненную конфигурацию MSAL. 
 
     Поместите следующие данные под URI перенаправления: 
     ```json
@@ -190,7 +190,7 @@ import com.microsoft.identity.client.exception.*;
 ## <a name="instantiate-publicclientapplication"></a>Создание экземпляра PublicClientApplication
 #### <a name="initialize-variables"></a>Инициализация переменных 
 ```java
-private final static String[] SCOPES = {"File.Read"};
+private final static String[] SCOPES = {"Files.Read"};
 /* Azure AD v2 Configs */
 final static String AUTHORITY = "https://login.microsoftonline.com/common";
 private ISingleAccountPublicClientApplication mSingleAccountApp;
@@ -583,8 +583,3 @@ private void performOperationOnSignOut() {
 ## <a name="get-help"></a>Получить справку
 
 Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options).
-
-Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
-
-> [!div class="nextstepaction"]
-> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

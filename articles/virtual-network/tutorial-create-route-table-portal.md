@@ -13,12 +13,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: a565aba12f1b10f215d8f6cc7fc0b7247a0441d2
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 854bf2d1ed2155290c2ecebd17695049fdd0c8bb
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80066370"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81314283"
 ---
 # <a name="tutorial-route-network-traffic-with-a-route-table-using-the-azure-portal"></a>Руководство по Маршрутизация сетевого трафика с помощью таблицы маршрутов с использованием портала Azure
 
@@ -208,7 +208,7 @@ ms.locfileid: "80066370"
 | Основы | Группа ресурсов | **myResourceGroup** |
 | | Имя виртуальной машины | *myVmPublic* |
 | | Общедоступные входящие порты | **Разрешить выбранные порты** |
-| | Выбрать входящие порты | **HTTP** и **RDP** |
+| | Выбрать входящие порты | **RDP** |
 | Сеть | Виртуальная сеть | **myVirtualNetwork** |
 | | Подсеть | **Public (10.0.0.0/24)** (Общедоступная (10.0.0.0/24)) |
 | | Общедоступный IP-адрес | По умолчанию |
@@ -221,7 +221,7 @@ ms.locfileid: "80066370"
 | Основы | Группа ресурсов | **myResourceGroup** |
 | | Имя виртуальной машины | *myVmPrivate* |
 | | Общедоступные входящие порты | **Разрешить выбранные порты** |
-| | Выбрать входящие порты | **HTTP** и **RDP** |
+| | Выбрать входящие порты | **RDP** |
 | Сеть | Виртуальная сеть | **myVirtualNetwork** |
 | | Подсеть | **Private (10.0.1.0/24)** (Частная (10.0.1.0/24)) |
 | | Общедоступный IP-адрес | По умолчанию |

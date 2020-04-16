@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 01/15/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: cde731f9d9e673446bc4d08117004b028db2a7f9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 5df21b2c1926803a65eca911c66b059f36ee18aa
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77462468"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393621"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.6) — поддержка возможностей и синтаксиса
 
@@ -44,7 +44,7 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 |getPrevError | нет  |
 |insert  |   Да  |
 |parallelCollectionScan  | Да   |
-|resetError |   нет  |
+|resetError |    нет  |
 |обновить  |   Да  |
 |[Потоки изменений](mongodb-change-streams.md)  |  Да  |
 |GridFS |   Да  |
@@ -88,18 +88,18 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|buildInfo       |   Да      |
+|buildInfo         |   Да      |
 |collStats    |  Да       |
 |connPoolStats     |  нет       |
 |connectionStatus     |  нет       |
 |dataSize     |   нет      |
 |dbHash    |    нет     |
 |dbStats     |   Да      |
-|explain     | нет        |
-|explain: executionStats     |     нет    |
+|explain     |   Да      |
+|explain: executionStats     |   Да      |
 |features     |    нет     |
 |hostInfo     |   нет      |
-|listDatabases       |   Да      |
+|listDatabases         |   Да      |
 |listCommands     |  нет       |
 |профилировщик     |  нет       |
 |serverStatus     |  нет       |
@@ -123,31 +123,31 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$collStats |нет|
-|$project   |Да|
-|$match |Да|
-|$redact|   Да|
-|$limit |Да|
-|$skip  |Да|
-|$unwind|   Да|
-|$group |   Да|
-|$sample|       Да|
-|$sort  |Да|
-|$geoNear|  нет|
-|$lookup    |   Да|
-|$out       |Да|
-|$indexStats|       нет|
-|$facet |нет|
-|$bucket|   нет|
-|$bucketAuto|   нет|
-|$sortByCount|  Да|
-|$addFields |Да|
-|$replaceRoot|  Да|
-|$count |Да|
+|$collStats    |нет|
+|$project    |Да|
+|$match    |Да|
+|$redact|    Да|
+|$limit    |Да|
+|$skip    |Да|
+|$unwind|    Да|
+|$group    |    Да|
+|$sample|        Да|
+|$sort    |Да|
+|$geoNear|    нет|
+|$lookup    |    Да|
+|$out        |Да|
+|$indexStats|        нет|
+|$facet    |нет|
+|$bucket|    нет|
+|$bucketAuto|    нет|
+|$sortByCount|    Да|
+|$addFields    |Да|
+|$replaceRoot|    Да|
+|$count    |Да|
 |$currentOp|    нет|
-|$listLocalSessions |нет|
-|$listSessions  |нет|
-|$graphLookup   |нет|
+|$listLocalSessions    |нет|
+|$listSessions    |нет|
+|$graphLookup    |нет|
 
 ### <a name="boolean-expressions"></a>Логические выражения
 
@@ -174,14 +174,14 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 |Get-Help  |Поддерживается |
 |---------|---------|
 |$cmp     |  Да       |
-|$eq|   Да| 
-|$gt |  Да| 
-|$gte|  Да| 
+|$eq|    Да| 
+|$gt |    Да| 
+|$gte|    Да| 
 |$lt    |Да|
-|$lte|  Да| 
-|$ne    |   Да| 
-|$in    |   Да| 
-|$nin   |   Да| 
+|$lte|    Да| 
+|$ne    |    Да| 
+|$in    |    Да| 
+|$nin    |    Да| 
 
 ### <a name="arithmetic-expressions"></a>Арифметические выражения
 
@@ -230,66 +230,66 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$arrayElemAt   |   Да|
+|$arrayElemAt    |    Да|
 |$arrayToObject|    Да|
-|$concatArrays  |   Да|
-|$filter    |   Да|
-|$indexOfArray  |Да|
-|$isArray   |   Да|
-|$objectToArray |Да|
-|$range |Да|
-|$reverseArray  |   Да|
-|$reduce|   Да|
-|$size  |   Да|
-|$slice |   Да|
-|$zip   |   Да|
-|$in    |   Да|
+|$concatArrays    |    Да|
+|$filter    |    Да|
+|$indexOfArray    |Да|
+|$isArray    |    Да|
+|$objectToArray    |Да|
+|$range    |Да|
+|$reverseArray    |    Да|
+|$reduce|    Да|
+|$size    |    Да|
+|$slice    |    Да|
+|$zip    |    Да|
+|$in    |    Да|
 
 ### <a name="variable-operators"></a>Операторы переменных
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$map   |нет|
-|$let   |Да|
+|$map    |нет|
+|$let    |Да|
 
 ### <a name="system-variables"></a>Системные переменные
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$$CURRENT| Да|
-|$$DESCEND|     Да|
-|$$KEEP     |Да|
-|$$PRUNE    |   Да|
-|$$REMOVE   |Да|
-|$$ROOT     |Да|
+|$$CURRENT|    Да|
+|$$DESCEND|        Да|
+|$$KEEP        |Да|
+|$$PRUNE    |    Да|
+|$$REMOVE    |Да|
+|$$ROOT        |Да|
 
 ### <a name="literal-operator"></a>Литеральный оператор
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$literal   |Да|
+|$literal    |Да|
 
 ### <a name="date-expressions"></a>Выражения для дат
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$dayOfYear |Да    |
-|$dayOfMonth|   Да |
-|$dayOfWeek |Да    |
-|$year  |Да    |
-|$month |Да|   
-|$week  |Да    |
-|$hour  |Да    |
-|$minute|   Да|    
+|$dayOfYear    |Да    |
+|$dayOfMonth|    Да    |
+|$dayOfWeek    |Да    |
+|$year    |Да    |
+|$month    |Да|    
+|$week    |Да    |
+|$hour    |Да    |
+|$minute|    Да|    
 |$second    |Да    |
-|$millisecond|  Да|    
-|$dateToString  |Да    |
-|$isoDayOfWeek  |Да    |
-|$isoWeek   |Да    |
-|$dateFromParts|    нет| 
-|$dateToParts   |нет |
-|$dateFromString|   нет|
-|$isoWeekYear   |Да    |
+|$millisecond|    Да|    
+|$dateToString    |Да    |
+|$isoDayOfWeek    |Да    |
+|$isoWeek    |Да    |
+|$dateFromParts|    нет|    
+|$dateToParts    |нет    |
+|$dateFromString|    нет|
+|$isoWeekYear    |Да    |
 
 ### <a name="conditional-expressions"></a>Условные выражения
 
@@ -309,16 +309,16 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$sum   |Да    |
-|$avg   |Да    |
+|$sum    |Да    |
+|$avg    |Да    |
 |$first|    Да|
-|$last  |Да    |
-|$max   |Да    |
-|$min   |Да    |
-|$push| Да|
-|$addToSet| Да|
-|$stdDevPop|    нет  |
-|$stdDevSamp|   нет|
+|$last    |Да    |
+|$max    |Да    |
+|$min    |Да    |
+|$push|    Да|
+|$addToSet|    Да|
+|$stdDevPop|    нет    |
+|$stdDevSamp|    нет|
 
 ### <a name="merge-operator"></a>Оператор объединения
 
@@ -330,25 +330,25 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|Double |Да    |
-|Строка |Да    |
-|Объект |Да    |
-|Array  |Да    |
-|Binary Data    |Да|   
-|ObjectId   |Да    |
+|Double    |Да    |
+|Строка    |Да    |
+|Объект    |Да    |
+|Array    |Да    |
+|Binary Data    |Да|    
+|ObjectId    |Да    |
 |Логическое    |Да    |
-|Дата   |Да    |
-|NULL   |Да    |
-|32-разрядное целое число (цч)   |Да    |
-|Отметка времени  |Да    |
-|64-разрядное целое число (длинное)  |Да    |
-|MinKey |Да    |
-|MaxKey |Да    |
-|Decimal128 |Да|   
-|Регулярное выражение |Да|
-|JavaScript |Да|
-|JavaScript (с инструкциями SCOPE)|   Да |
-|Не определено.  |Да    |
+|Дата    |Да    |
+|NULL    |Да    |
+|32-разрядное целое число (цч)    |Да    |
+|Отметка времени    |Да    |
+|64-разрядное целое число (длинное)    |Да    |
+|MinKey    |Да    |
+|MaxKey    |Да    |
+|Decimal128    |Да|    
+|Регулярное выражение    |Да|
+|JavaScript    |Да|
+|JavaScript (с инструкциями SCOPE)|    Да    |
+|Не определено.    |Да    |
 
 ## <a name="indexes-and-index-properties"></a>Индексы и свойства индекса
 
@@ -356,23 +356,23 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|Индекс одного поля |Да    |
-|Составной индекс |Да    |
-|Многоключевой индекс |Да    |
-|Текстовый индекс |нет|
-|2dsphere   |Да    |
-|Двухмерный индекс   |нет |
-|Хэшированный индекс   | Да|
+|Индекс одного поля    |Да    |
+|Составной индекс    |Да    |
+|Многоключевой индекс    |Да    |
+|Текстовый индекс    |нет|
+|2dsphere    |Да    |
+|Двухмерный индекс    |нет    |
+|Хэшированный индекс    | Да|
 
 ### <a name="index-properties"></a>Свойства индекса
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|Срок жизни|   Да |
-|Уникальная идентификация |Да|
-|Частично|   нет|
-|Без учета регистра   |нет|
-|разреженные; |нет |
+|Срок жизни|    Да    |
+|Уникальная идентификация    |Да|
+|Частично|    нет|
+|Без учета регистра    |нет|
+|разреженные;    |нет |
 |Историческая справка|    Да |
 
 ## <a name="operators"></a>Операторы
@@ -381,28 +381,28 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$or    |   Да|
-|$and   |   Да|
-|$not   |   Да|
-|$nor   |   Да| 
+|$or    |    Да|
+|$and    |    Да|
+|$not    |    Да|
+|$nor    |    Да| 
 
 ### <a name="element-operators"></a>Операторы элементов
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$exists|   Да|
-|$type  |   Да|
+|$exists|    Да|
+|$type    |    Да|
 
 ### <a name="evaluation-query-operators"></a>Операторы запросов вычисления
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$expr  |   нет|
-|$jsonSchema    |   нет|
-|$mod   |   Да|
-|$regex |   Да|
-|$text  | Нет (не поддерживается. Вместо этого используйте $regex.)| 
-|$where |нет| 
+|$expr    |    нет|
+|$jsonSchema    |    нет|
+|$mod    |    Да|
+|$regex |    Да|
+|$text    | Нет (не поддерживается. Вместо этого используйте $regex.)| 
+|$where    |нет| 
 
 В запросах $regex выражения, привязанные слева, поддерживают поиск по индексу. Но если добавить модификатор i (отключение учета регистра) и m (многостроковое выражение), коллекция будет проверяться во всех выражениях.
 
@@ -430,9 +430,9 @@ $comment |Да|
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$elemMatch |Да|
-|$meta| нет|
-|$slice | Да|
+|$elemMatch    |Да|
+|$meta|    нет|
+|$slice    | Да|
 
 ### <a name="update-operators"></a>Обновление операторов
 
@@ -440,28 +440,28 @@ $comment |Да|
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$inc   |   Да|
-|$mul   |   Да|
-|$rename    |   Да|
-|$setOnInsert|  Да|
-|$set   |Да|
+|$inc    |    Да|
+|$mul    |    Да|
+|$rename    |    Да|
+|$setOnInsert|    Да|
+|$set    |Да|
 |$ не задано| Да|
-|$min   |Да|
-|$max   |Да|
-|$currentDate   | Да|
+|$min    |Да|
+|$max    |Да|
+|$currentDate    | Да|
 
 #### <a name="array-update-operators"></a>Операторы обновления массивов
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$  |Да|
-|$[]|   Да|
-|$[<identifier>]|   Да|
-|$addToSet  |Да|
-|$pop   |Да|
-|$pullAll|  Да|
-|$pull  |Да|
-|$push  |Да|
+|$    |Да|
+|$[]|    Да|
+|$[<identifier>]|    Да|
+|$addToSet    |Да|
+|$pop    |Да|
+|$pullAll|    Да|
+|$pull    |Да|
+|$push    |Да|
 |$pushAll| Да|
 
 
@@ -469,20 +469,20 @@ $comment |Да|
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|$each  |   Да|
-|$slice |Да|
-|$sort  |Да|
-|$position  |Да|
+|$each    |    Да|
+|$slice    |Да|
+|$sort    |Да|
+|$position    |Да|
 
 #### <a name="bitwise-update-operator"></a>Оператор побитового обновления
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-| $bit  |   Да|    
-|$bitsAllSet    |   нет|
-|$bitsAnySet    |   нет|
-|$bitsAllClear  |нет|
-|$bitsAnyClear  |нет|
+| $bit    |    Да|    
+|$bitsAllSet    |    нет|
+|$bitsAnySet    |    нет|
+|$bitsAllClear    |нет|
+|$bitsAnyClear    |нет|
 
 ### <a name="geospatial-operators"></a>Геопространственные операторы
 
@@ -504,37 +504,37 @@ $polygon |  Да |
 
 |Get-Help  |Поддерживается |
 |---------|---------|
-|cursor.batchSize() |   Да|
-|cursor.close() |Да|
-|cursor.isClosed()|     Да|
+|cursor.batchSize()    |    Да|
+|cursor.close()    |Да|
+|cursor.isClosed()|        Да|
 |cursor.collation()|    нет|
-|cursor.comment()   |Да|
-|cursor.count() |Да|
-|cursor.explain()|  нет|
-|cursor.forEach()   |Да|
-|cursor.hasNext()   |Да|
-|cursor.hint()  |Да|
-|cursor.isExhausted()|  Да|
-|cursor.itcount()   |Да|
-|cursor.limit() |Да|
-|cursor.map()   |Да|
-|cursor.maxScan()   |Да|
+|cursor.comment()    |Да|
+|cursor.count()    |Да|
+|cursor.explain()|    нет|
+|cursor.forEach()    |Да|
+|cursor.hasNext()    |Да|
+|cursor.hint()    |Да|
+|cursor.isExhausted()|    Да|
+|cursor.itcount()    |Да|
+|cursor.limit()    |Да|
+|cursor.map()    |Да|
+|cursor.maxScan()    |Да|
 |cursor.maxTimeMS()|    Да|
-|cursor.max()   |Да|
-|cursor.min()   |Да|
-|cursor.next()| Да|
-|cursor.noCursorTimeout()   |нет|
-|cursor.objsLeftInBatch()   |Да|
-|cursor.pretty()|   Да|
-|cursor.readConcern()|  Да|
-|cursor.readPref()      |Да|
-|cursor.returnKey() |нет|
-|cursor.showRecordId()| нет|
-|cursor.size()  |Nes|
-|cursor.skip()  |Да|
-|cursor.sort()  |   Да|
-|cursor.tailable()| нет|
-|cursor.toArray()   |Да|
+|cursor.max()    |Да|
+|cursor.min()    |Да|
+|cursor.next()|    Да|
+|cursor.noCursorTimeout()    |нет|
+|cursor.objsLeftInBatch()    |Да|
+|cursor.pretty()|    Да|
+|cursor.readConcern()|    Да|
+|cursor.readPref()        |Да|
+|cursor.returnKey()    |нет|
+|cursor.showRecordId()|    нет|
+|cursor.size()    |Да|
+|cursor.skip()    |Да|
+|cursor.sort()    |    Да|
+|cursor.tailable()|    нет|
+|cursor.toArray()    |Да|
 
 ## <a name="sort-operations"></a>Сортирование операций
 

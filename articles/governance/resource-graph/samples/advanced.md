@@ -3,16 +3,16 @@ title: Примеры расширенных запросов
 description: С помощью Azure Resource Graph можно выполнять расширенные запросы, такие как работа со столбцами, вывод списка используемых тегов и сопоставление ресурсов с регулярными выражениями.
 ms.date: 03/20/2020
 ms.topic: sample
-ms.openlocfilehash: 98e80d0977ec23cba8b8c497373b6e89b52d430e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3d0e7a9be37f9baf471584ee3fe26c52d13b3084
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80130513"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81381509"
 ---
 # <a name="advanced-resource-graph-query-samples"></a>Примеры расширенных запросов к Resource Graph
 
-Первым шагом на пути к пониманию запросов к Azure Resource Graph является общее понимание [языка запросов](../concepts/query-language.md). Если вы еще не знакомы с [обозревателем данных Azure](../../../data-explorer/data-explorer-overview.md), рекомендуется просмотреть основные сведения, чтобы понять, как составлять запросы к ресурсам, которые вы ищете.
+Первым шагом на пути к пониманию запросов к Azure Resource Graph является общее понимание [языка запросов](../concepts/query-language.md). Если вы еще не знакомы с [обозревателем данных Azure](/azure/data-explorer/data-explorer-overview), рекомендуется просмотреть основные сведения, чтобы понять, как составлять запросы к ресурсам, которые вы ищете.
 
 Мы рассмотрим следующие продвинутые запросы:
 

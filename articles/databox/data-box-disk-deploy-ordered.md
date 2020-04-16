@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: c1626542aba71f971ad96fe9f187ce9f1c1a99f3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7b27f10567816884b14a0a2c69e3bd8e85cb7a76
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70012944"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81398699"
 ---
 # <a name="tutorial-order-an-azure-data-box-disk"></a>Руководство по Заказ Диска Azure Data Box
 
@@ -33,12 +33,7 @@ ms.locfileid: "70012944"
 
 ### <a name="for-service"></a>Для службы
 
-Перед тем как начать, убедитесь в следующем.
-- Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
-- Убедитесь, что тип подписки, которую вы используете для службы Data Box, является одним из следующих:
-    - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
-    - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
-- Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.
+[!INCLUDE [Data Box service prerequisites](../../includes/data-box-supported-subscriptions.md)]
 
 ### <a name="for-device"></a>Для устройств
 
