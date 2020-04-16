@@ -8,13 +8,11 @@
   expanded: true
   items:
     - name: Публикация определения приложения
-      href: publish-managed-app-definition-quickstart.md
+      href: publish-service-catalog-app.md
     - name: Развертывание приложения из каталога служб
       href: deploy-service-catalog-quickstart.md
 - name: Учебники
   items:
-    - name: Создание файлов определений
-      href: publish-service-catalog-app.md
     - name: Публикация приложения из marketplace
       href: publish-marketplace-app.md
     - name: Создание управляемого приложения с настраиваемого поставщика

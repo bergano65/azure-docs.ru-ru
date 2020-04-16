@@ -740,6 +740,8 @@
           href: insights/containers.md
     - name: Мониторинг других ресурсов
       items:
+        - name: Key Vault
+          href: insights/key-vault-insights-overview.md
         - name: Память
           items:
             - name: Использование Azure Monitor для службы хранилища
