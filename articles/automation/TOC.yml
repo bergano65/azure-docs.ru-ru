@@ -18,17 +18,17 @@
     - name: Управление доступом на основе ролей
       href: automation-role-based-access-control.md
       displayName: RBAC
-    - name: Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure
+    - name: "Аутентификация в Azure с помощью Azure\_AD"
       href: automation-use-azure-ad.md
-    - name: Управление службами Office 365 с помощью службы автоматизации Azure
+    - name: "Управление службами Office\_365"
       href: manage-office-365.md
-    - name: Настройка проверки подлинности с помощью AWS
+    - name: Аутентификация модулей runbook службы автоматизации Azure с помощью Amazon Web Services
       href: automation-config-aws-account.md
     - name: Шифрование защищенных ресурсов в службе автоматизации Azure
       href: automation-secure-asset-encryption.md
     - name: Перемещение учетной записи службы автоматизации в другую подписку
       href: how-to/move-account.md
-    - name: Автоматизация подключения служб автоматизации
+    - name: Автоматическое подключение служб автоматизации
       href: /azure/architecture/cloud-adoption/operations/azure-server-management/onboarding-automation
     - name: Управление данными службы автоматизации Azure
       href: automation-managing-data.md
@@ -42,6 +42,9 @@
           displayName: troubleshoot
 - name: Автоматизация процессов
   items:
+    - name: Выполнение модуля Runbook в службе автоматизации Azure
+      href: automation-runbook-execution.md
+      displayName: 'fair share, activity log'
     - name: Обзор гибридного компонента Runbook Worker
       href: automation-hybrid-runbook-worker.md
     - name: Коллекция Runbook
@@ -111,9 +114,6 @@
             - name: Выходные данные runbook
               href: automation-runbook-output-and-messages.md
               displayName: 'message streams, progress records, preference'
-            - name: Отслеживание задания Runbook
-              href: automation-runbook-execution.md
-              displayName: 'fair share, activity log'
             - name: Обработка ошибок в графических модулях runbook
               href: automation-runbook-graphical-error-handling.md
         - name: Гибридная рабочая роль Runbook

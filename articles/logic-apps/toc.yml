@@ -83,10 +83,12 @@
           href: logic-apps-author-definitions.md
         - name: Обработка типов содержимого
           href: logic-apps-content-type.md
-        - name: Обработка ошибок и исключений
+        - name: Выполните обработку исключений
           href: logic-apps-exception-handling.md
         - name: Обработка больших сообщений
           href: logic-apps-handle-large-messages.md
+        - name: "Обработка ошибок\_429 и устранение проблем с регулированием"
+          href: handle-throttling-problems-429-errors.md
         - name: Безопасность
           items:
             - name: Повышение безопасности для приложений логики

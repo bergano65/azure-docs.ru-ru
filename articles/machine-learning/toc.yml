@@ -264,13 +264,13 @@
           href: how-to-train-keras.md
         - name: PyTorch
           href: how-to-train-pytorch.md
-    - name: Интерпретация моделей
+    - name: Описание моделей
       displayName: interpretability
       items:
-        - name: Интерпретация локальных и удаленных моделей
+        - name: Описание моделей машинного обучения
           displayName: 'SDK, interpret'
           href: how-to-machine-learning-interpretability-aml.md
-        - name: Интерпретация моделей автоматизированного ML
+        - name: Описание автоматизированных моделей машинного обучения
           displayName: 'SDK, interpret, automl'
           href: how-to-machine-learning-interpretability-automl.md
     - name: Автоматизация машинного обучения
@@ -310,34 +310,36 @@
         - name: Где и как развернуть
           displayName: 'publish, web, service, operationalize, aks, kubernetes, aci, container, cli, consume, docker'
           href: how-to-deploy-and-where.md
-        - name: Служба Azure Kubernetes
-          displayName: 'aks, aad, authentication, azure active directory'
-          href: how-to-deploy-azure-kubernetes-service.md
-        - name: Экземпляры контейнеров Azure
-          displayName: aci
-          href: how-to-deploy-azure-container-instance.md
-        - name: IoT Edge
-          href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/service/context/ml-context
-        - name: Вывод ППВМ
-          href: how-to-deploy-fpga-web-service.md
-        - name: Вывод GPU
-          href: how-to-deploy-inferencing-gpus.md
-        - name: Служба приложений Azure
-          displayName: web app
-          href: how-to-deploy-app-service.md
-        - name: Функции Azure
-          displayName: functions app
-          href: how-to-deploy-functions.md
-        - name: Вычислительные операции
-          href: how-to-deploy-local-container-notebook-vm.md
-        - name: Использование пользовательского образа Docker
-          href: how-to-deploy-custom-docker-image.md
-        - name: Использование существующих моделей
-          displayName: publish existing model
-          href: how-to-deploy-existing-model.md
+        - name: Сценарии развертывания
+          items:
+            - name: Вычислительные операции Машинного обучения Azure
+              href: how-to-deploy-local-container-notebook-vm.md
+            - name: Служба Azure Kubernetes
+              displayName: 'aks, aad, authentication, azure active directory'
+              href: how-to-deploy-azure-kubernetes-service.md
+            - name: Экземпляры контейнеров Azure
+              displayName: aci
+              href: how-to-deploy-azure-container-instance.md
+            - name: Вывод GPU
+              href: how-to-deploy-inferencing-gpus.md
+            - name: Служба приложений Azure
+              displayName: web app
+              href: how-to-deploy-app-service.md
+            - name: Функции Azure
+              displayName: functions app
+              href: how-to-deploy-functions.md
+            - name: устройство Azure IoT Edge.
+              href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/service/context/ml-context
+            - name: Вывод ППВМ
+              href: how-to-deploy-fpga-web-service.md
+            - name: Пользовательские образы Docker
+              href: how-to-deploy-custom-docker-image.md
+            - name: 'Модели Машинного обучения, отличающиеся от Azure'
+              displayName: publish existing model
+              href: how-to-deploy-existing-model.md
         - name: Устранение неполадок и отладка
           href: how-to-troubleshoot-deployment.md
-        - name: Создание клиентов
+        - name: Вызов конечной точки службы
           displayName: create client consume request response synchronous
           href: how-to-consume-web-service.md
         - name: Мониторинг моделей
