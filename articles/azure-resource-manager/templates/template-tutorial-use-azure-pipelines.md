@@ -5,12 +5,12 @@ author: mumian
 ms.date: 10/29/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e7d6b23aa3f35c99cf03f855152b2b231a60a965
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b117861a528b6983876d28d5b343ea88c2bcadc0
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75921621"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81260689"
 ---
 # <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines
 
@@ -46,7 +46,7 @@ Azure DevOps предоставляет сервисы для разработч
 
 ## <a name="prepare-a-github-repository"></a>Подготовка репозитория GitHub
 
-GitHub используется для хранения исходного кода вашего проекта, включая шаблоны диспетчера ресурсов. Другие поддерживаемые репозитории доступны в [репозиториях, поддерживаемых Azure DevOps](/azure/devops/pipelines/repos/?view=azure-devops#supported-repository-types).
+GitHub используется для хранения исходного кода вашего проекта, включая шаблоны диспетчера ресурсов. Другие поддерживаемые репозитории доступны в [репозиториях, поддерживаемых Azure DevOps](/azure/devops/pipelines/repos/?view=azure-devops).
 
 ### <a name="create-a-github-repository"></a>Создание репозитория GitHub
 

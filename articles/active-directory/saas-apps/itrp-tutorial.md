@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: d44391624e29d2bdd182bb07452e0e8def2d1407
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c4d0f753e23e42b1064fec3f56957dfe97c30ca4
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67656698"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261199"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itrp"></a>Руководство по Интеграция Azure Active Directory с ITRP
 
@@ -113,7 +113,7 @@ ms.locfileid: "67656698"
        `https://<tenant-name>.itrp.com`
 
     > [!NOTE]
-    > Эти значения представляют собой заполнители. Необходимо указать фактические URL-адрес для входа и идентификатор. Чтобы получить эти значения, обратитесь к [группе поддержки ITRP](https://www.itrp.com/support). Можно также ознакомиться с шаблонами в диалоговом окне **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения представляют собой заполнители. Необходимо указать фактические URL-адрес для входа и идентификатор. Чтобы получить эти значения, обратитесь к [группе поддержки ITRP](https://www.4me.com/support/). Можно также ознакомиться с шаблонами в диалоговом окне **Базовая конфигурация SAML** на портале Azure.
 
 5. В разделе **Сертификат подписи SAML** щелкните значок **Изменить**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 

@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/02/2020
 ms.author: erhopf
-ms.openlocfilehash: 9a3f478604547819162ad13d39a9383263321857
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 1c631f4dea3b182c97f11f3892dff834c7681507
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80671162"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81275071"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -93,4 +93,5 @@ ms.locfileid: "80671162"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](../footer.md)]
+[!INCLUDE [Speech recognition basics](../../speech-to-text-next-steps.md)]
+

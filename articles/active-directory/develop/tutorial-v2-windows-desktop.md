@@ -1,26 +1,22 @@
 ---
-title: Начало работы с классическими приложениями Windows на платформе удостоверений Майкрософт | Документация Майкрософт
+title: Начало работы с классическими приложениями Windows на платформе удостоверений Майкрософт
 description: Из этой статьи вы узнаете, как классическое приложение .NET для Windows (XAML) может получить маркер доступа и вызвать API, защищенный платформой удостоверений Майкрософт.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 422251da25ae0ef911eb723bb0342a84fe99559c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: aa09d06af4706af3ae120f62a897c0bc632fb657
+ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79129928"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80990945"
 ---
 # <a name="call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Вызов API Microsoft Graph из классического приложения для Windows
 
@@ -52,7 +48,7 @@ MSAL управляет кэшированием и обновлением ма�
 
 В этом руководстве используются следующие пакеты NuGet:
 
-|Библиотека|Description|
+|Библиотека|Описание|
 |---|---|
 |[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)|Библиотека аутентификации Майкрософт (MSAL)|
 
@@ -379,8 +375,3 @@ private void DisplayBasicTokenInfo(AuthenticationResult authResult)
 <!--end-collapse-->
 
 [!INCLUDE [5. Test and Validate](../../../includes/active-directory-develop-guidedsetup-windesktop-test.md)]
-
-Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
-
-> [!div class="nextstepaction"]
-> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

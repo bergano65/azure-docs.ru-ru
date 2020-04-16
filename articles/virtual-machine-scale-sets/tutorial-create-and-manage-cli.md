@@ -1,19 +1,19 @@
 ---
 title: Руководство по созданию масштабируемого набора виртуальных машин Azure и управлению им
 description: Сведения об использовании Azure CLI для создания масштабируемого набора виртуальных машин и выполнения некоторых стандартных задач управления, включая запуск и остановку экземпляра или изменение емкости масштабируемого набора.
-author: cynthn
+author: ju-shim
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.topic: tutorial
 ms.date: 03/27/2018
-ms.author: cynthn
+ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: 27f216a3cc101d4241fb8d30d27999a0397356dc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 882ace506ee55f09d1b0eb5227892398a7dd9237
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80062806"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011296"
 ---
 # <a name="tutorial-create-and-manage-a-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство по созданию масштабируемого набора виртуальных машин и управлению им с помощью Azure CLI
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Из этого руководства вы узнаете, как выполнить следующие задачи:

@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 4bbf571d6b73a6f43c1c3b1ce261da6963a74183
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 66c3bd8650d1194d5d753c1dc967ec8e870c8748
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77169514"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998961"
 ---
 # <a name="quickstart-configure-rules-and-actions-for-your-device-in-azure-iot-central"></a>Краткое руководство. Настройка правил и действий для устройства в Azure IoT Central
 
@@ -24,7 +24,7 @@ ms.locfileid: "77169514"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы вам необходимо завершить два предыдущих кратких руководства [Создание приложения Azure IoT Central](./quick-deploy-iot-central.md) и [Quickstart: Add a simulated device to your IoT Central application (preview features)](./quick-create-pnp-device.md) (Краткое руководство. Добавление имитированного устройства в приложение IoT Central), чтобы создать шаблон устройства **MXChip IoT DevKit** и работать с ним.
+Перед началом работы вам необходимо завершить два предыдущих кратких руководства [Создание приложения Azure IoT Central](./quick-deploy-iot-central.md) и [Quickstart: Add a simulated device to your IoT Central application (preview features)](./quick-create-simulated-device.md) (Краткое руководство. Добавление имитированного устройства в приложение IoT Central), чтобы создать шаблон устройства **MXChip IoT DevKit** и работать с ним.
 
 ## <a name="create-a-telemetry-based-rule"></a>Создание правила на основе телеметрии
 

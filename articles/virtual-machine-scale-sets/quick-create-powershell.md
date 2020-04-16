@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание масштабируемого набора виртуальных машин с помощью Azure PowerShell
 description: Начните работу с развертыванием. Узнайте, как быстро создать масштабируемый набор виртуальных машин с помощью Azure PowerShell.
-author: cynthn
+author: ju-shim
 ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/08/2018
-ms.author: cynthn
-ms.openlocfilehash: b3454291a40a1d39b281e28b7d1ebdbcac4020b4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.author: jushiman
+ms.openlocfilehash: ab5efc84ed88ef5ef245bfead2cc709405dc79ea
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76270895"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81008642"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-with-azure-powershell"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин с помощью Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "76270895"
 
 Масштабируемый набор виртуальных машин позволяет развернуть набор одинаковых виртуальных машин с возможностью автомасштабирования и управлять этим набором. Вы можете вручную изменить число виртуальных машин в масштабируемом наборе или определить правила для автоматического масштабирования в зависимости от использования ЦП, объема памяти или сетевого трафика. После этого Azure Load Balancer будет распределять трафик между экземплярами виртуальных машин в масштабируемом наборе. При работе с этим кратким руководством вы создадите масштабируемый набор виртуальных машин и развернете пример приложения с помощью Azure PowerShell.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

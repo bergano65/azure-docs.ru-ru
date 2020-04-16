@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 07/15/2019
 ms.topic: tutorial
-ms.openlocfilehash: 332d7e4cae3b65d794d48d208b54db3809b78a8f
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: f12b5c158025db89dcc64a3be03b263f95a3a64c
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632370"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261365"
 ---
 # <a name="tutorial-send-an-email-from-an-azure-automation-runbook"></a>Руководство по Отправка электронной почты из модуля Runbook службы автоматизации Azure
 
@@ -81,7 +81,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $VaultName -ServicePrincipalName $appID -P
 
 Щелкните <kbd>Развернуть в службе автоматизации Azure</kbd> на вкладке "Служба автоматизации Azure" в разделе "Параметры установки". Портал Azure можно открыть с помощью этого действия. На странице импорта выберите учетную запись службы автоматизации и нажмите кнопку <kbd>ОК</kbd>.
 
-Дополнительные методы для добавления необходимых модулей см. в статье [Импорт модулей](/azure/automation/shared-resources/modules#import-modules).
+Дополнительные методы для добавления необходимых модулей см. в статье [Импорт модулей](/azure/automation/shared-resources/modules#importing-modules).
 
 ## <a name="create-the-runbook-to-send-an-email"></a>Создание модуля Runbook для отправки электронной почты
 

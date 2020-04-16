@@ -1,20 +1,20 @@
 ---
 title: Примеры для Azure CLI. Установка приложений
 description: Этот скрипт создает виртуальную машину Azure под управлением Ubuntu и использует расширение пользовательских скриптов для установки базовых веб-приложений.
-author: cynthn
+author: ju-shim
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 03/27/2018
-ms.author: cynthn
+ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: 12925c06c8b0fbe0e223623584f7496bf34d3618
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 815ed75e9bb8d7018ee8d8b5d72c439dd14da81e
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76278753"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011295"
 ---
 # <a name="install-applications-into-a-virtual-machine-scale-set-with-the-azure-cli"></a>Установка приложений в масштабируемый набор виртуальных машин с помощью Azure CLI
 Этот скрипт создает виртуальную машину Azure под управлением Ubuntu и использует расширение пользовательских скриптов для установки базовых веб-приложений. После выполнения скрипта можно получить доступ к веб-приложению с помощью веб-браузера.

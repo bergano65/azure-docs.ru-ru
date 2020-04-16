@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: e56b733a567c706c2a15f2c30ed93a47c244db11
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 1dec52bbf1435cd7e363edf111f769d3e2cffb6a
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77168741"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998921"
 ---
 # <a name="quickstart-use-azure-iot-central-to-monitor-your-devices"></a>Краткое руководство. Использование Azure IoT Central для мониторинга устройств
 
@@ -24,7 +24,7 @@ ms.locfileid: "77168741"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать, выполните инструкции из руководств по [созданию приложения Azure IoT Central](./quick-deploy-iot-central.md), [добавлению имитированного устройства в приложение IoT Central](./quick-create-pnp-device.md) и [настройке правил и действий для устройства](quick-configure-rules.md).
+Прежде чем начать, выполните инструкции из руководств по [созданию приложения Azure IoT Central](./quick-deploy-iot-central.md), [добавлению имитированного устройства в приложение IoT Central](./quick-create-simulated-device.md) и [настройке правил и действий для устройства](quick-configure-rules.md).
 
 ## <a name="receive-a-notification"></a>Получение уведомления
 

@@ -7,12 +7,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: zhshang
-ms.openlocfilehash: 022780f2b37c8bed49c81774d443b69bae41e5e7
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f87625fe4f56b369f2bf4aade3ef5424084b6fe8
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "73476752"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81254892"
 ---
 # <a name="quickstart-create-a-chat-room-by-using-signalr-service"></a>Краткое руководство. Создание чата с помощью Службы SignalR
 
@@ -95,7 +95,7 @@ Azure SignalR — это служба Azure, которая помогает р�
     Доступ к этому секрету осуществляется через API конфигурации. Двоеточие (:) используется в имени конфигурации при работе с API конфигурации на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0). 
 
 
-4. Откройте файл *Startup.cs* и обновите метод `ConfigureServices` для использования службы Azure SignalR, вызвав метод `services.AddSignalR().AddAzureSignalR()` (только для ASP.NET Core 2):
+4. Откройте файл *Startup.cs* и обновите метод `ConfigureServices` для использования службы Azure SignalR, вызвав метод `services.AddSignalR().AddAzureSignalR()`:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -104,7 +104,6 @@ Azure SignalR — это служба Azure, которая помогает р�
         services.AddSignalR().AddAzureSignalR();
     }
     ```
-    Для ASP.NET Core 3+ не требуется никаких изменений в методе `ConfigureServices`.
 
     В этом коде не указан параметр `AddAzureSignalR()`, а значит в нем для строки подключения к ресурсу SignalR используется ключ конфигурации по умолчанию. По умолчанию используется ключ конфигурации *Azure:SignalR:ConnectionString*.
 

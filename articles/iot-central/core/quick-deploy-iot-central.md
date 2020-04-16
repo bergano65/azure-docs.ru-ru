@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: d69a761df8066b4a84312c0c3ae8be5a79490960
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 0ed32a4c1272c23c9500b35e05c383eac6dea185
+ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77169451"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998951"
 ---
 # <a name="create-an-azure-iot-central-application"></a>Создание приложения Azure IoT Central
 
@@ -62,4 +62,4 @@ ms.locfileid: "77169451"
 В этом кратком руководстве вы создали приложение IoT Central. Ниже приведено предлагаемое дальнейшее действие:
 
 > [!div class="nextstepaction"]
-> [Quickstart: Add a simulated device to your IoT Central application (preview features)](./quick-create-pnp-device.md) (Добавление имитированного устройства в приложение IoT Central (предварительные версии функций))
+> [Quickstart: Add a simulated device to your IoT Central application (preview features)](./quick-create-simulated-device.md) (Добавление имитированного устройства в приложение IoT Central (предварительные версии функций))

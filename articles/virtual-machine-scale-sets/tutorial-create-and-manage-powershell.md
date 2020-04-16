@@ -1,19 +1,19 @@
 ---
 title: Руководство по созданию масштабируемого набора виртуальных машин Azure и управлению им
 description: Сведения об использовании Azure PowerShell для создания масштабируемого набора виртуальных машин и сведения о некоторых стандартных задачах управления, включая запуск и остановку экземпляра или изменение емкости масштабируемого набора.
-author: cynthn
+author: ju-shim
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.topic: tutorial
 ms.date: 05/18/2018
-ms.author: cynthn
+ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: 14616fcc9fd63731c50c5977c88b5030f60664ff
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 938b4e64dd5b67488ae5d061f2ceb29ae4bb7f6e
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76271411"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81011253"
 ---
 # <a name="tutorial-create-and-manage-a-virtual-machine-scale-set-with-azure-powershell"></a>Руководство по созданию масштабируемого набора виртуальных машин с помощью Azure PowerShell
 

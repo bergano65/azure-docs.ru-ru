@@ -3,7 +3,7 @@ title: Краткое руководство по созданию профил�
 description: Из этого краткого руководства вы узнаете, как включить Azure CDN, создав профиль CDN и конечную точку CDN.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: 4ca51224-5423-419b-98cf-89860ef516d2
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
 ms.date: 05/24/2018
-ms.author: magattus
+ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 2a3325217c1ec854e4f6cef3facce5580fb06a57
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e11e6e4cc0194991b322d591049d7156b9979c45
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79215072"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81254059"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Краткое руководство по созданию профиля и конечной точки Azure CDN
 С помощью этого краткого руководства вы включите сеть доставки содержимого (CDN) Azure, создав профиль и конечную точку CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам.

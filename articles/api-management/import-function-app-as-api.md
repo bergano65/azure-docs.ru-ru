@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: apimpm
-ms.openlocfilehash: cec1d3e07800dd3093ca79a87cafcf5fceafbf2f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c393ba081b480408373ed6867624ac6278c1674e
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77209194"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81260961"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -118,7 +118,7 @@ ms.locfileid: "77209194"
 * ключ узла в приложении-функции с именем apim-{*имя экземпляра службы "Управление API Azure"* };
 * именованное значение в экземпляре службы "Управление API Azure" с именем {*имя экземпляра приложения-функции Azure*}-key, которое содержит созданный ключ узла.
 
-При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook-trigger.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/backend/update#backendcredentialscontract)`PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
+При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook-trigger.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/backend/update#backendcredentialscontract)`PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
 
 > [!WARNING]
 > Удаление или изменение значения ключа узла в приложении-функции Azure или именованного значения службы "Управление API Azure" приведет к разрыву подключения между службами. Значения не синхронизируются автоматически.

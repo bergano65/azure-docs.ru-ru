@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 02/10/2020
-ms.openlocfilehash: a6f977c0cdca670b40ccdc01db64a493962e3dda
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 820332b0692c0c863ed23912fe9913c419769155
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79224101"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81273007"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>Руководство по Начало работы по созданию эксперимента Машинного обучения с помощью пакета SDK для Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -86,7 +86,7 @@ ms.locfileid: "79224101"
     
 1. Выберите файл **tutorial-1st-experiment-sdk-train.ipynb** в папке **tutorials/create-first-ml-experiment**.
 
-1. На верхней панели выберите экземпляр для вычислений для запуска записной книжки. Эти виртуальные машины предварительно настроены со [всем необходимым для запуска Машинного обучения Azure](concept-compute-instance.md#contents). Вы можете выбрать виртуальную машину, созданную любым пользователем вашей рабочей области. 
+1. На верхней панели выберите экземпляр для вычислений для запуска записной книжки. Эти виртуальные машины предварительно настроены со [всем необходимым для запуска Машинного обучения Azure](concept-compute-instance.md#contents). 
 
 1. Если виртуальные машины не найдены, выберите **+ Добавить**, чтобы создать виртуальную машину для вычислительных операций. 
 

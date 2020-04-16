@@ -1,20 +1,20 @@
 ---
 title: Примеры Azure CLI. Создание масштабируемого набора виртуальных машин
 description: При помощи этого скрипта создается масштабируемый набор виртуальных машин Azure с операционной системой Ubuntu, а также связанные сетевые ресурсы, включая подсистему балансировки нагрузки.
-author: cynthn
+author: ju-shim
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 03/27/2018
-ms.author: cynthn
+ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: 95ea48b3fc19d58f37a5c727e8f4408643422757
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c7f03d0f6dd31d85de8c3f917895e965585eb6ed
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76278818"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010400"
 ---
 # <a name="create-a-virtual-machine-scale-set-with-the-azure-cli"></a>Создание масштабируемого набора виртуальных машин с помощью Azure CLI
 При помощи этого скрипта создается масштабируемый набор виртуальных машин Azure с операционной системой Ubuntu, а также связанные сетевые ресурсы, включая подсистему балансировки нагрузки. После выполнения сценария можно получить доступ к экземплярам виртуальных машин по протоколу SSH.
