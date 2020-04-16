@@ -11,17 +11,19 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 04/09/2018
-ms.openlocfilehash: 1d8c68550d294534178fd6094b71fd6a7f1d1c46
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6b4df324fec38d08355754146d8be76d225e6cb7
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75977360"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81418598"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage-by-using-the-copy-data-tool"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure с помощью средства копирования данных
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](tutorial-hybrid-copy-data-tool.md)
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом руководстве вы создадите фабрику данных с помощью портала Azure. После этого вы примените средство копирования данных для копирования данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure.
 

@@ -1,16 +1,16 @@
 ---
-author: IEvangelist
+author: trevorbye
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
 ms.date: 01/27/2020
-ms.author: dapine
-ms.openlocfilehash: 58122066e65fbcb02b6b4333985785b219d3dbbd
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.author: trbye
+ms.openlocfilehash: a41c9dc888e85baf021712e3302da7ae6106db47
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76900316"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81422231"
 ---
 Чтобы выполнить инструкции в кратком руководстве по распознаванию намерений, необходимо создать учетную запись LUIS и проект с помощью портала LUIS предварительной версии. В этом кратком руководстве требуется только подписка LUIS. Подписка на службу "Речь" *не* является обязательной.
 

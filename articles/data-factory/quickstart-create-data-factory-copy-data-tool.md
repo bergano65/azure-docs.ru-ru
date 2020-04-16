@@ -11,18 +11,20 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
 ms.date: 03/18/2020
-ms.openlocfilehash: 26169755fbe252a4be2626dae50d40c005c7c6db
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8a05ae29d62a5afacbc0007850266688e989b62b
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80130920"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81419431"
 ---
 # <a name="quickstart-use-the-copy-data-tool-to-copy-data"></a>Краткое руководство. Копирование данных с помощью средства копирования данных
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-copy-data-tool.md)
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом руководстве вы создадите фабрику данных с помощью портала Azure. После этого вы примените средство копирования данных, чтобы создать конвейер для копирования данных из одной папки в другую в хранилище BLOB-объектов Azure. 
 

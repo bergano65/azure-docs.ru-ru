@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 02/27/2020
-ms.openlocfilehash: 5108335c0b5d0a51559653d51bfe6154237731f3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 04469fa1bd0473710d9fa0bf0190c6459f1f8a07
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78162660"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81418785"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этом руководстве показано, как выполнять **копирование нескольких таблиц из базы данных SQL Azure в Azure Synapse Analytics (ранее эта служба называлась "Хранилище данных SQL Azure")** . Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в Базу данных SQL Azure, Azure Synapse Analytics (ранее — Хранилище данных SQL) или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы Базы данных SQL Azure.
 
@@ -79,7 +81,7 @@ ms.locfileid: "78162660"
  
    Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы увидите следующую ошибку для поля имени, введите другое имя фабрики данных (например, ваше_имя_ADFTutorialBulkCopyDF). Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
   
-       `Data factory name “ADFTutorialBulkCopyDF” is not available`
+       `Data factory name "ADFTutorialBulkCopyDF" is not available`
 1. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных. 
 1. Для **группы ресурсов** выполните одно из следующих действий.
      

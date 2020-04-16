@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: dce3549bde4c62245e1d2b1f8ac0c88c0b70260c
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 4e9077d06341ce5ecf6b2238374ce1ac8e13dca3
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "70241389"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415164"
 ---
 # <a name="tutorial-order-azure-data-box-heavy"></a>Руководство по Заказ Azure Data Box Heavy
 
@@ -41,17 +41,9 @@ Azure Data Box Heavy — это гибридное решение, которо
 - Если устройство будет установлено не на первом этаже, то для его перемещения потребуется доступ к лифту или погрузочной платформе. Устройство весит примерно 227 кг.
 - Убедитесь, что в центре обработки данных имеется плоская площадка в непосредственной близости к доступному сетевому подключению, достаточная для размещения устройства.
 
-
 ### <a name="for-service"></a>Для службы
 
-Перед тем как начать, убедитесь в следующем.
-- Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
-- Убедитесь, что тип подписки, которую вы используете для службы Data Box, является одним из следующих:
-    - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
-    - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
-    - Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/).
-
-- Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box Heavy.
+[!INCLUDE [Data Box service prerequisites](../../includes/data-box-supported-subscriptions.md)]
 
 ### <a name="for-device"></a>Для устройств
 

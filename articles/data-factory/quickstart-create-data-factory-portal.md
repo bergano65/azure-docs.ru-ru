@@ -11,18 +11,20 @@ ms.workload: data-services
 ms.topic: quickstart
 ms.date: 02/25/2020
 ms.author: jingwang
-ms.openlocfilehash: 0afb0ddb65a4f27463e2bb5c1b9441d248c34415
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f7a70454e395f5f9d39266e0777749e1fcbef68e
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79215772"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81419363"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Краткое руководство. Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-portal.md)
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом кратком руководстве описано создание и мониторинг фабрики данных Azure с помощью пользовательского интерфейса службы "Фабрика данных Azure". Конвейер, который вы создадите в этой фабрике данных, *копирует* данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по *преобразованию* данных с помощью Фабрики данных Azure см. в статье[ Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-portal.md).
 
