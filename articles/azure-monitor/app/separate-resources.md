@@ -3,12 +3,12 @@ title: Разделение телеметрии в Azure Application Insights
 description: Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации.
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 3580d162f4b3955a04ffcd0f13933221bfef3b65
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 565d51751ad50479f4e227b6855ac63b80bd949e
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77671466"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536783"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -34,7 +34,7 @@ ms.locfileid: "77671466"
 
 Задайте ключ в методе инициализации, таком как global.aspx.cs, в службе ASP.NET:
 
-*C #*
+*C#*
 
     protected void Application_Start()
     {
@@ -69,7 +69,7 @@ iKey также используется на веб-страницах ваше
 
 ![Нажмите "Создать" и "Application Insights"](./media/separate-resources/01-new.png)
 
-* **Тип приложения** определяет содержимое колонки "Обзор" и свойства, доступные в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md). Если тип вашего приложения не отображается, выберите тип веб-ресурса для веб-страниц.
+* **Тип приложения** определяет содержимое колонки "Обзор" и свойства, доступные в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md). Если тип вашего приложения не отображается, выберите тип веб-ресурса для веб-страниц.
 * **Группа ресурсов** — это удобство для управления такими свойствами, как [контроль доступа.](../../azure-monitor/app/resources-roles-access-control.md) Для разработки, тестирования и эксплуатации можно использовать отдельные группы ресурсов.
 * **Подписка** представляет собой учетную запись для оплаты в Azure.
 * **Расположение** – это место, в котором мы храним ваши данные. На данном этапе его нельзя изменить. 
@@ -89,7 +89,7 @@ iKey также используется на веб-страницах ваше
 ## <a name="filter-on-build-number"></a>Фильтрация по номеру сборки
 При публикации новой версии приложения имеет смысл отделить телеметрию от других сборок.
 
-Для этого можно настроить свойство "Версия приложения" для фильтрации результатов [поиска](../../azure-monitor/app/diagnostic-search.md) и [обозревателя метрик](../../azure-monitor/app/metrics-explorer.md).
+Для этого можно настроить свойство "Версия приложения" для фильтрации результатов [поиска](../../azure-monitor/app/diagnostic-search.md) и [обозревателя метрик](../../azure-monitor/platform/metrics-charts.md).
 
 ![Фильтрация по свойству](./media/separate-resources/050-filter.png)
 
@@ -139,7 +139,7 @@ iKey также используется на веб-страницах ваше
     </PropertyGroup>
 ```
 
-При наличии данных сборки веб-модуль Application Insights автоматически добавляет **версию приложения** как свойство для каждого элемента телеметрии. Это позволяет применить фильтр по версии при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md) или [изучении метрик](../../azure-monitor/app/metrics-explorer.md).
+При наличии данных сборки веб-модуль Application Insights автоматически добавляет **версию приложения** как свойство для каждого элемента телеметрии. Это позволяет применить фильтр по версии при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md) или [изучении метрик](../../azure-monitor/platform/metrics-charts.md).
 
 Однако обратите внимание, что номер версии сборки генерируется только Microsoft Build Engine, а не разработчиком, созданным Visual Studio.
 
@@ -147,7 +147,7 @@ iKey также используется на веб-страницах ваше
 Если используется Azure DevOps, можно настроить [добавление маркера заметки](../../azure-monitor/app/annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
 
 ![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](media/separate-resources/release-annotation.png)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Monitor multi-component applications with Application Insights (preview)](../../azure-monitor/app/app-map.md) (Мониторинг приложений с несколькими компонентами с помощью Application Insights (предварительная версия))
 * [Добавление свойств: ITelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#add-properties)

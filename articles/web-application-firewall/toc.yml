@@ -22,6 +22,7 @@
   expanded: true
   items:
     - name: Шлюз приложений
+      expanded: true
       items:
         - name: "Развертывание WAF версии\_2 с помощью шаблона ARM"
           displayName: Resource Manager

@@ -3,12 +3,12 @@ title: Настройка аналитики веб-приложения для 
 description: Настройка средств аналитики производительности, доступности и поведения пользователей для веб-сайта ASP.NET, размещенного локально или в Azure.
 ms.topic: conceptual
 ms.date: 05/08/2019
-ms.openlocfilehash: 0843d6c04bf6fc9bab07207072990fb3fb8f1844
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bdd5b1131a0d2d3e2f53840d21cedce1577fde03
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77665924"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536902"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -23,7 +23,7 @@ ms.locfileid: "77665924"
     - ASP.NET и веб-разработки (Не отощибайте дополнительные компоненты)
     - Разработка Azure.
 
-Если у вас нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись перед началом.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="step-1-add-the-application-insights-sdk"></a><a name="ide"></a> Шаг 1. Добавление пакета SDK Application Insights
 
@@ -40,7 +40,7 @@ ms.locfileid: "77665924"
 
 Экран "Конфигурация Application Insights":
 
-Выберите **Начать**.
+Выберите **Начало работы**.
 
 ![Снимок экрана с окном страницы "Зарегистрировать приложение в Application Insights"](./media/asp-net/00004-start-free.png)
 
@@ -56,7 +56,7 @@ ms.locfileid: "77665924"
 > [!NOTE]
 > Если вы не хотите отправлять данные телеметрии на портал во время отладки, просто добавьте пакет SDK Application Insights в приложение, но не настраивайте ресурс на портале. Во время отладки можно просмотреть данные телеметрии в Visual Studio. Позже вы сможете вернуться на эту страницу настроек или можете дождаться, когда приложение будет развернуто, и [переключиться на данные телеметрии во время выполнения](../../azure-monitor/app/monitor-performance-live-website-now.md).
 
-## <a name="step-2-run-your-app"></a><a name="run"></a> Шаг 2. Запуск приложения
+## <a name="step-2-run-your-app"></a><a name="run"></a>Шаг 2: Запустите приложение
 Запустите приложение, нажав клавишу F5. Откройте разные страницы, чтобы создать некоторый объем данных телеметрии.
 
 В Visual Studio вы увидите число записанных в журнал событий.
@@ -93,7 +93,7 @@ ms.locfileid: "77665924"
 На портале щелкните любую плитку, чтобы просмотреть подробные сведения.
 
 ## <a name="step-4-publish-your-app"></a>Шах 4. Публикация приложения
-Опубликуйте приложение на сервере IIS или в Azure. Просмотрите [динамический поток метрик](../../azure-monitor/app/metrics-explorer.md#live-metrics-stream), чтобы убедиться в бесперебойной работе приложения.
+Опубликуйте приложение на сервере IIS или в Azure. Просмотрите [динамический поток метрик](../../azure-monitor/app/live-stream.md), чтобы убедиться в бесперебойной работе приложения.
 
 Телеметрия накапывается на портале Application Insights, где можно отслеживать метрики, искать телеметрию. Можно также использовать эффективный [язык запросов Kusto](/azure/kusto/query/) для анализа использования и производительности или поиска определенных событий.
 
@@ -120,12 +120,12 @@ ms.locfileid: "77665924"
 
 * Пошаговые видеоинструкции о [настройке Application Insights с помощью приложения .NET](https://www.youtube.com/watch?v=blnGAVgMAfA).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Существуют и другие статьи, к которым можно обратиться, если вас интересуют такие темы, как:
 
 * [инструментирование веб-приложения во время выполнения;](../../azure-monitor/app/monitor-performance-live-website-now.md)
-* [Облачные службы Azure](../../azure-monitor/app/cloudservices.md)
+* [Oблачныe службы Azure](../../azure-monitor/app/cloudservices.md)
 
 ### <a name="more-telemetry"></a>Дополнительные данные телеметрии
 

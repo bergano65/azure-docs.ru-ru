@@ -4,12 +4,12 @@ description: Узнайте, как входящие и исходящие IP-а
 ms.topic: article
 ms.date: 06/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: aebce04fe2f1b055a4d498021dcd25144cd122a9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8bcd80fde95e467513590f3ed09b1dadd2646aee
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79279212"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537633"
 ---
 # <a name="inbound-and-outbound-ip-addresses-in-azure-app-service"></a>Входящие и исходящие IP-адреса в Службе приложений Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "79279212"
 
 - удалите приложение и создадите его заново в другой группе ресурсов;
 - удалите последнее приложение в некотором сочетании группы ресурсов _и_ региона и создадите его заново;
-- Удалите существующую привязку SSL, например, во время обновления сертификата (см. [Сертификат обновления).](configure-ssl-certificate.md#renew-certificate)
+- Удалите существующую привязку TLS, например, во время обновления сертификата (см. [Сертификат обновления).](configure-ssl-certificate.md#renew-certificate)
 
 ## <a name="find-the-inbound-ip"></a>Найти входящий IP
 
@@ -35,7 +35,7 @@ nslookup <app-name>.azurewebsites.net
 
 ## <a name="get-a-static-inbound-ip"></a>Получить статический входящий IP
 
-Для некоторых задач приложениям может потребоваться выделенный статический IP-адрес. Чтобы получить статический входящий IP-адрес, следует настроить [SSL-привязку на основе IP-адреса](configure-ssl-bindings.md#secure-a-custom-domain). Если вам не нужны функциональные возможности SSL для защиты приложения, для этой привязки можно даже передать самозаверяющий сертификат. Привязка SSL на основе IP-адреса сопоставляет сертификат напрямую с IP-адресом, и для этого служба приложений предоставляет ей статический IP-адрес. 
+Для некоторых задач приложениям может потребоваться выделенный статический IP-адрес. Чтобы получить статический входящий IP-адрес, необходимо [обеспечить пользовательский домен.](configure-ssl-bindings.md#secure-a-custom-domain) Если вам на самом деле не нужна функция TLS для защиты вашего приложения, вы даже можете загрузить сертификат, подписанный самостоятельно, для этого привязки. В привязке TLS на основе IP сертификат привязан к самому IP-адресу, поэтому Служба app Service содержит статический IP-адрес, чтобы это произошло. 
 
 ## <a name="when-outbound-ips-change"></a>Если изменяются исходящие IP-адреса
 
@@ -71,7 +71,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 (Get-AzWebApp -ResourceGroup <group_name> -name <app_name>).PossibleOutboundIpAddresses
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как ограничить входящий трафик по IP-адресам источников.
 

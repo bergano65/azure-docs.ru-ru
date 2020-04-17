@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c683e9847864de4e3409fb6dbd533497a5ae3cea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bd7726d2bbf2830d18d78b5f0b0d7202b734124d
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80061001"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537684"
 ---
 # <a name="enable-and-create-large-file-shares"></a>Включить и создать большие файлы
 
@@ -35,7 +35,7 @@ ms.locfileid: "80061001"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. На портале Azure выберите **все сервисы.** 
-1. В списке ресурсов введите **учетные записи хранения.** По мере ввода символов список отфильтруется соответствующим образом. Выберите **Учетные записи хранения**.
+1. В списке ресурсов введите **учетные записи хранения.** По мере ввода символов список отфильтруется соответствующим образом. Выберите **учетные записи хранения данных**.
 1. На появляются окна **учетных записей хранения,** **выберите Добавить**.
 1. Выберите подписку, которую вы будете использовать для создания учетной записи хранилища.
 1. В поле **Группа ресурсов** выберите **Создать**. Введите имя новой группы ресурсов.
@@ -43,7 +43,7 @@ ms.locfileid: "80061001"
     ![Снимок экрана, на котором показано, как создавать группу ресурсов на портале](media/storage-files-how-to-create-large-file-share/create-large-file-share.png)
 
 1. Далее введите имя своей учетной записи хранения. Это имя должно быть уникальным в пределах Azure. Название также должно быть от 3 до 24 символов в длину, и он может иметь только номера и буквы нижнего регистра.
-1. Выберите место для учетной записи хранилища и убедитесь, что это [одна из поддерживаемых репликаций для больших файлов.](storage-files-planning.md#regional-availability)
+1. Выберите расположение для вашей учетной записи хранения.
 1. Установите репликацию либо локально **избыточное хранилище,** либо **хранилище, избыточное зоной.**
 1. Оставьте эти поля в своих значениях по умолчанию:
 
@@ -59,7 +59,7 @@ ms.locfileid: "80061001"
 
     ![Скриншот с кнопкой опции "включена" на новой учетной записи хранилища на портале Azure](media/storage-files-how-to-create-large-file-share/large-file-shares-advanced-enable.png)
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ### <a name="cli"></a>CLI
 
@@ -126,7 +126,7 @@ Set-AzStorageAccount -ResourceGroupName <yourResourceGroup> -Name <yourStorageAc
 
 1. На вашем счете хранения выберите **акции Файла.**
 1. Выберите **+Файловый ресурс**.
-1. Введите имя для своей доли файла. Вы также можете установить размер квоты, который вы хотите, до 100 TiB. Затем выберите **Создать**. 
+1. Введите имя для своей доли файла. Вы также можете установить размер квоты, который вы хотите, до 100 TiB. Щелкните **Создать**. 
 
 ![UI портала Azure, показывающий ящики с именем и квотами](media/storage-files-how-to-create-large-file-share/large-file-shares-create-share.png)
 
@@ -185,7 +185,7 @@ $ctx = New-AzStorageContext -StorageAccountName $storageAccountName -StorageAcco
 Set-AzStorageShareQuota -ShareName $shareName -Context $ctx -Quota 102400
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Подключение и монтаж файла в Windows](storage-how-to-use-files-windows.md)
 * [Подключение и монтаж файла доля на Linux](storage-how-to-use-files-linux.md)

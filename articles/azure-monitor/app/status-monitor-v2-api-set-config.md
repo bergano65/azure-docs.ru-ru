@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 1226b3e10adf786ed3335844a5d3f4e530911705
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c47b9b5f297fa62c474e6c29737d6d11b887130d
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77671245"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537480"
 ---
 # <a name="application-insights-agent-api-set-applicationinsightsmonitoringconfig"></a>Приложение Insights Агент API: Set-ApplicationInsightsMonitoringConfig
 
@@ -35,7 +35,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 ```
 
 ### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключей приборов
-В этом примере:
+В данном примере:
 - `MachineFilter`соответствует текущему компьютеру `'.*'` с помощью подстановочного знака.
 - `AppFilter='WebAppExclude'`обеспечивает `null` ключ приборов. Указанное приложение не будет инструментальным.
 - `AppFilter='WebAppOne'`присваивает указанному приложению уникальный ключ приборов.
@@ -110,10 +110,10 @@ VERBOSE: Config File Path:
 C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\applicationInsights.ikey.config
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   Просмотр телеметрии:
- - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
+ - [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
 - [Используйте Аналитику](../../azure-monitor/app/analytics.md) для более продвинутых запросов.
 - [Создание панелей мониторинга.](../../azure-monitor/app/overview-dashboard.md)

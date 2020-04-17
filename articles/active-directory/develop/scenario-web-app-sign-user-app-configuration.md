@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 3de1edc8560cfc85f52293c095fa824b364d2058
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 3cb51a57baa87849e97f7b05762dc4d6eba787a6
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80881644"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537117"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Веб-приложение, которое подписывает в пользователях: Конфигурация кода
 
@@ -24,14 +24,14 @@ ms.locfileid: "80881644"
 
 ## <a name="libraries-for-protecting-web-apps"></a>Библиотеки для защиты веб-приложений
 
-<!-- This section can be in an include for Web App and Web APIs -->
+<!-- This section can be in an include for web app and web APIs -->
 Библиотеки, используемые для защиты веб-приложения (и веб-API), являются:
 
 | Платформа | Библиотека | Описание |
 |----------|---------|-------------|
 | ![.NET](media/sample-v2-code/logo_net.png) | [Расширение модели идентификации для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | Используется непосредственно ASP.NET и ASP.NET Core, Microsoft Identity Model Extensions для .NET предлагает набор DLLs, работающих как на .NET Framework, так и на .NET Core. Из веб-приложения ASP.NET или ASP.NET Core можно управлять проверкой маркеров с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях партнеров). |
 | ![Java](media/sample-v2-code/small_logo_java.png) | [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | Поддержка веб-приложений Java |
-| ![Python](media/sample-v2-code/small_logo_python.png) | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | Поддержка веб-приложений Python |
+| ![Python](media/sample-v2-code/small_logo_python.png) | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | Поддержка веб-приложений Python |
 
 Выберите вкладку, соответствующую интересуейной платформе:
 
@@ -374,7 +374,7 @@ Session(app)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующей статье вы узнаете, как инициировать регистрацию и входе.
 

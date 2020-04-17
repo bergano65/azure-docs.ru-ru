@@ -98,6 +98,7 @@
           href: live-events-outputs-concept.md
           displayName: 'vanity, ingest'
         - name: Проверенные локальные динамические кодировщики
+          displayName: recommended
           href: recommended-on-premises-live-encoders.md
         - name: Сдвиг по времени и преобразование данных трансляции в VOD
           displayName: 'archive, dvr'

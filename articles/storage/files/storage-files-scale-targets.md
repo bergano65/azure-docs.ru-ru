@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 1a74ec3610367193b5eee53ea0e0818901433e96
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 46c46faf8f7ee52978ae5542ab7ebd72a41b8357
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79255136"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536454"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Целевые показатели масштабируемости и производительности службы файлов Azure
 
@@ -51,8 +51,7 @@ ms.locfileid: "79255136"
 ### <a name="file-share-and-file-scale-targets"></a>Цели обмена файлами и масштабирования файлов
 
 > [!NOTE]
-> Стандартные файлы больше, чем 5 TiB имеют определенные ограничения и региональные ограничения.
-> Для списка ограничений, региональной информации и инструкций, позволяющих увеличить размеры файлов, см. раздел ["Большие файлообменники"](storage-files-planning.md#enable-standard-file-shares-to-span-up-to-100-tib) руководства по планированию.
+> Стандартные файлы больше, чем 5 TiB имеют определенные ограничения. Для списка ограничений и инструкций, позволяющих увеличить размеры файловых долей, см. [enable larger file shares on standard file shares](storage-files-planning.md#enable-standard-file-shares-to-span-up-to-100-tib)
 
 [!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
 
@@ -114,4 +113,4 @@ ms.locfileid: "79255136"
 ## <a name="see-also"></a>См. также
 
 - [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-- [Планирование развертывания синхронизации файлов Azure](storage-sync-files-planning.md)
+- [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)

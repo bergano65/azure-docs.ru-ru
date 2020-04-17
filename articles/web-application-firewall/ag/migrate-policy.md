@@ -5,14 +5,14 @@ services: web-application-firewall
 ms.topic: conceptual
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 11/19/2019
+ms.date: 04/16/2020
 ms.author: ant
-ms.openlocfilehash: 1fac524af4b69f8e35934840643c6d3ad99fe1cd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fb3b922b753b9696aa26ea189597589ecc5772db
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74174607"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536630"
 ---
 # <a name="migrate-web-application-firewall-policies-using-azure-powershell"></a>Мигрируйте политики веб-приложений Firewall с помощью Azure PowerShell
 
@@ -28,6 +28,13 @@ ms.locfileid: "74174607"
 2. Скопируйте скрипт в окно облачной оболочки и запустите его.
 3. В скрипте запрашивается идентификатор подписки, имя группы ресурсов, название шлюза приложения, с которым связан конфигурация WAF, и название новой политики WAF, которую необходимо создать. Как только вы вводите эти входные данные, скрипт запускается и создает новую политику WAF
 4. Связать новую политику WAF с шлюзом приложения. Перейдите к политике WAF на портале и выберите **Associate an Application Gateway** вкладку **«Ассоциированные шлюзы приложений.**
+
+> [!NOTE]
+> Скрипт не завершает миграцию, если существуют следующие условия:
+> - Полное правило отключено. Чтобы завершить миграцию, убедитесь, что вся группа правил не отключена.
+> - Вход исключения (ы) с *Равными любого* оператора. Чтобы завершить миграцию, убедитесь, что записи исключений с *Равными Любой* оператор не присутствует.
+>
+> Для получения дополнительной информации смотрите функцию *ValidateInput* в скрипте.
 
 ```azurepowershell-interactive
 <#PSScriptInfo
@@ -210,6 +217,6 @@ function Main() {
 
 Main
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Подробнее о [группах и правилах Web Application Firewall CRS.](application-gateway-crs-rulegroups-rules.md)

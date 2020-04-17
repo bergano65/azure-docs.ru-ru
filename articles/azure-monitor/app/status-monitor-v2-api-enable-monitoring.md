@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 8bbdc96a49fffc91f80d24a9eb0926766f86ee16
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f5d66c5c21f7491e3bdc6bb70f693c3b98bf62dd
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77671313"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536749"
 ---
 # <a name="application-insights-agent-api-enable-applicationinsightsmonitoring"></a>Приложение Insights Агент API: Включить-ApplicationInsightsMonitoring
 
@@ -45,7 +45,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 ```
 
 ### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключей приборов
-В этом примере:
+В данном примере:
 - `MachineFilter`соответствует текущему компьютеру `'.*'` с помощью подстановочного знака.
 - `AppFilter='WebAppExclude'`обеспечивает `null` ключ приборов. Указанное приложение не будет инструментальным.
 - `AppFilter='WebAppOne'`присваивает указанному приложению уникальный ключ приборов.
@@ -144,10 +144,10 @@ Updating app pool permissions...
 Successfully enabled Application Insights Status Monitor
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   Просмотр телеметрии:
- - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
+ - [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
 - [Используйте Аналитику](../../azure-monitor/app/analytics.md) для более продвинутых запросов.
 - [Создание панелей мониторинга.](../../azure-monitor/app/overview-dashboard.md)

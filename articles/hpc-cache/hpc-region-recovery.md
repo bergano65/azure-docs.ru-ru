@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 4eb203915c8fedbef6af0e5a3bc14eff1835a92b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 21074ae6bc4959da031bc7065cd7d0639ec2a14f
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75982156"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537276"
 ---
 # <a name="use-multiple-caches-for-regional-failover-recovery"></a>Используйте несколько кэшов для регионального восстановления сбоя
 
@@ -58,4 +58,3 @@ ms.locfileid: "75982156"
 ## <a name="learn-more"></a>Дополнительные сведения
 
 Руководство по архитектуре приложений Azure содержит дополнительную информацию о том, как [восстановиться после сбоя в работе службы в регионе.](<https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region>)
-<!-- this should be an internal link instead of a URL but I can't find the tree  -->

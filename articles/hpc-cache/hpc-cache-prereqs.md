@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: rohogue
-ms.openlocfilehash: 6da35cb60dc5f22be01ae25393bd62327db64867
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: ab342dba5c8be2ff3793c0eb36926969b3e364e5
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80655663"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537293"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Предпосылки для кэша Высокой азы
 
@@ -20,9 +20,6 @@ ms.locfileid: "80655663"
 ## <a name="azure-subscription"></a>Подписка Azure.
 
 Рекомендуется платная подписка.
-
-> [!NOTE]
-> В течение первых нескольких месяцев выпуска GA команда Azure HPC Cache должна добавить подписку в список доступа, прежде чем она может быть использована для создания экземпляра кэша. Эта процедура помогает гарантировать, что каждый клиент получает высокое качество отзывчивости от своих кэшов. Заполните [эту форму,](https://aka.ms/onboard-hpc-cache) чтобы запросить доступ.
 
 ## <a name="network-infrastructure"></a>Сетевая инфраструктура
 
@@ -84,11 +81,11 @@ ms.locfileid: "80655663"
 * Уровень доступа (по умолчанию): **Горячий**
 
 Использование учетной записи хранилища в том же месте, что и кэш.
-<!-- clarify location - same region or same resource group or same virtual network? -->
 
 Вы также должны предоставить приложению кэша доступ к учетной записи хранения Azure, как указано в [Разрешении,](#permissions)выше. Следуйте процедуре в [целях хранения добавления,](hpc-cache-add-storage.md#add-the-access-control-roles-to-your-account) чтобы дать кэшу требуемые роли доступа. Если вы не являетесь владельцем учетной записи хранилища, попросите владельца сделать этот шаг.
 
 ### <a name="nfs-storage-requirements"></a>Требования к хранению NFS
+<!-- linked from configuration.md -->
 
 При использовании системы хранения NFS (например, системы нахидного оборудования НАК) убедитесь, что она отвечает этим требованиям. Возможно, вам придется работать с сетевыми администраторами или менеджерами брандмауэров для вашей системы хранения данных (или центра обработки данных) для проверки этих настроек.
 
@@ -144,6 +141,6 @@ ms.locfileid: "80655663"
 
 * Хранение резервного копирования NFS должно быть совместимой аппаратно-программной платформой. Для получения подробной информации обратитесь в группу Azure HPC Cache.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание экземпляра кэша HPC Azure](hpc-cache-create.md) с портала Azure

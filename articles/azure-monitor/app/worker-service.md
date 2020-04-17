@@ -3,12 +3,12 @@ title: Приложения Исследования приложений для
 description: Мониторинг приложений .NET Core/.NET Framework non-HTTP с помощью приложений Azure Monitor.
 ms.topic: conceptual
 ms.date: 12/16/2019
-ms.openlocfilehash: 34a64ffa67b1a43a77391e0d50ddf1bfad0f73ed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f043140e5a342d114f777ad16bba588790b7f8cc
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79501158"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536732"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Анализ приложений для приложений для работы (не-HTTP приложений)
 
@@ -121,7 +121,7 @@ Application Insights выпускает новый SDK, который `Microsof
 ```
 
 Кроме того, укажите ключ приборов в любой из следующих переменных среды.
-`APPINSIGHTS_INSTRUMENTATIONKEY` либо `ApplicationInsights:InstrumentationKey`
+`APPINSIGHTS_INSTRUMENTATIONKEY` или `ApplicationInsights:InstrumentationKey`
 
 Например: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 Или`SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
@@ -207,9 +207,9 @@ Application Insights выпускает новый SDK, который `Microsof
             {
                 _logger.LogWarning("A sample warning message. By default, logs with severity Warning or higher is captured by Application Insights");
                 _logger.LogInformation("Calling bing.com");
-                var res = await httpClient.GetAsync("https://bing.com");
+                var res = httpClient.GetAsync("https://bing.com").GetAwaiter().GetResult();
                 _logger.LogInformation("Calling bing completed with status:" + res.StatusCode);
-                telemetryClient.TrackEvent("Bing call event completed");
+                _telemetryClient.TrackEvent("Bing call event completed");
             }
         }
     }
@@ -351,7 +351,7 @@ Application Insights выпускает новый SDK, который `Microsof
 
 Обычно используемые настройки в`ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | Значение по умолчанию
+|Параметр | Описание | По умолчанию
 |---------------|-------|-------
 |ВключитьКвипулпульсМетрический поток | Функция включить/отключить LiveMetrics | Да
 |ВключитьАдаптивнуювыборную выборку | Включить/отключить адаптивную выборку | Да
@@ -539,7 +539,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 [Читайте и вносите свой вклад в код](https://github.com/Microsoft/ApplicationInsights-aspnetcore#recent-updates).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для детального представления производительности и использования приложения.
 * [Отслеживание дополнительных зависимостей не отслеживается автоматически.](../../azure-monitor/app/auto-collect-dependencies.md)

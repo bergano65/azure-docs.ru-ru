@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b0f60e13ca4bc5115f9a49885c3c659ad1147fcc
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 7f05d33b43df85c49a0c92b60157e2a6448325ac
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80881899"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537140"
 ---
 # <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, которое вызывает web-aIS: конфигурация кода
 
@@ -94,7 +94,7 @@ ms.locfileid: "80881899"
 Ниже приводится код от [Startup.cs'L40-L42](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/bc564d68179c36546770bf4d6264ce72009bc65a/2-WebApp-graph-user/2-1-Call-MSGraph/Startup.cs#L40-L42). Он имеет звонки:
 
 - Метод, `AddMicrosoftIdentityPlatformAuthentication` который добавляет аутентификацию в веб-приложение.
-- Метод, `AddMsal` который добавляет возможность вызова Web AIS.
+- Метод, `AddMsal` который добавляет возможность вызова веб-AIS.
 - Метод, `AddInMemoryTokenCaches` который заключается в выборе реализации кэша маркеров.
 
 ```csharp
@@ -253,7 +253,7 @@ public class TokenAcquisition : ITokenAcquisition
 
 ### <a name="the-tokenacquisitionbuildconfidentialclientapplication-method"></a>Метод tokenAcquisition.BuildConfidentialClientApplication
 
-В ASP.NET Core, здание конфиденциального клиентского приложения `HttpContext`использует информацию, которая в . Доступ `HttpContext` к запросу осуществляется с `CurrentHttpContext` помощью свойства. `HttpContext`имеет информацию о URL для веб-приложения и о `ClaimsPrincipal`вписав в пользователя (в ). 
+В ASP.NET Core, здание конфиденциального клиентского приложения `HttpContext`использует информацию, которая в . Доступ `HttpContext` к запросу осуществляется с `CurrentHttpContext` помощью свойства. `HttpContext`имеет информацию о URL для веб-приложения и о `ClaimsPrincipal`вписав в пользователя (в ).
 
 Метод `BuildConfidentialClientApplication` также использует конфигурацию ASP.NET Core. Конфигурация имеет раздел "AzureAD", а также связана с обоими следующими элементами:
 
@@ -630,7 +630,7 @@ def _build_msal_app(cache=None):
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этот момент, когда пользователь впишется, маркер хранится в кэше маркера. Давайте посмотрим, как он затем используется в других частях веб-приложения.
 

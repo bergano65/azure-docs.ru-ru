@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/30/2020
+ms.date: 04/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3ea73e2ca20faea30294bc5d5e1788415095c39f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a0a2f703d9224b8b9dd77c80b2b6a7faee70f5bb
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76905370"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81538109"
 ---
 # <a name="add-an-iot-hub-event-source-to-your-time-series-insights-environment"></a>Добавление в среду службы "Аналитика временных рядов Azure" источник событий центра Интернета вещей
 
@@ -46,7 +46,7 @@ ms.locfileid: "76905370"
 
 1. В разделе **Группы потребителей** введите уникальное имя для группы объектов-получателей. Укажите это же имя при создании нового источника событий в среде службы "Аналитика временных рядов".
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="add-a-new-event-source"></a>Добавление нового источника событий
 
@@ -102,11 +102,11 @@ ms.locfileid: "76905370"
 
 1. Добавьте имя отдельной группы объектов-получателей службы "Аналитика временных рядов", которое вы добавили в центр Интернета вещей.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. После создания источника событий служба "Аналитика временных рядов" автоматически запустит потоковую передачу данных в среду.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md), чтобы защитить ваши данные.
 

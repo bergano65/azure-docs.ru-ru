@@ -3,12 +3,12 @@ title: Экспорт из Azure Application Insights с помощью Stream A
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: b93bc49d005e3e54f1e5db84e6ff1adc49e25a65
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 15d1efa3a632024429d41f27fc23c569cd85bec2
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77664020"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536885"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -55,7 +55,7 @@ ms.locfileid: "77664020"
 
     ![Выберите типы событий.](./media/export-stream-analytics/080.png)
 
-1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
+1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
    
     Данные также будут экспортированы в хранилище. 
 2. Проверьте экспортированные данные. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". (Если этой команды нет в меню, установите пакет SDK Azure: откройте диалоговое окно "Создание проекта", разверните узел "Visual C#/облако" и выберите "Получить Microsoft Azure SDK для .NET".)
@@ -95,7 +95,7 @@ ms.locfileid: "77664020"
 
     webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
-В этом примере:
+В данном примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**).
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 
@@ -211,7 +211,7 @@ ms.locfileid: "77664020"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Непрерывный экспорт](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)

@@ -10,101 +10,18 @@ ms.tgt_pltfrm: vm
 ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: avverma
-ms.openlocfilehash: f335b0fb3396103c321d740bcf6d125e60e95086
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8e73ef75b3313656b45d29270d9996c3ad17c630
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78274818"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81538075"
 ---
-# <a name="preview-automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Предварительный просмотр: Автоматическое обновление экземпляров для наборов виртуальных машин Azure
+# <a name="automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Автоматическое ремонт экземпляров для наборов виртуальной шкалы смазано Azure
 
 Включение автоматического ремонта экземпляров для виртуальных наборов машин Azure помогает достичь высокой доступности приложений, поддерживая набор полезных экземпляров. Если экземпляр в наборе масштабов признан неработоспособным, как сообщается в зондах [работоспособности Health Application](./virtual-machine-scale-sets-health-extension.md) или [Зонды здоровья балансоровой нагрузки,](../load-balancer/load-balancer-custom-probe-overview.md)то эта функция автоматически выполняет ремонт экземпляра, удаляя неработоспособный экземпляр и создавая новый, чтобы заменить его.
 
-> [!NOTE]
-> Эта функция предварительного просмотра предоставляется без соглашения об уровне обслуживания, и она не рекомендуется для производственных нагрузок.
-
 ## <a name="requirements-for-using-automatic-instance-repairs"></a>Требования к использованию автоматического ремонта экземпляров
-
-**Выберите для автоматического просмотра ремонта экземпляра**
-
-Используйте либо REST API, либо Azure PowerShell, чтобы выбрать автоматический предварительный просмотр ремонта экземпляра. Эти шаги будут регистрировать подписку на функцию предварительного просмотра. Обратите внимание, что это только одноразовая настройка, необходимая для использования этой функции. Если ваша подписка уже зарегистрирована для автоматического просмотра ремонта экземпляра, то вам не нужно регистрироваться снова. 
-
-Использование REST API 
-
-1. Зарегистрируйтесь для получения функции с помощью [функций - Регистрация](/rest/api/resources/features/register) 
-
-```
-POST on '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/Microsoft.Compute/features/RepairVMScaleSetInstancesPreview/register?api-version=2015-12-01'
-```
-
-```json
-{
-  "properties": {
-    "state": "Registering"
-  },
-  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/Microsoft.Compute/features/RepairVMScaleSetInstancesPreview",
-  "type": "Microsoft.Features/providers/features",
-  "name": "Microsoft.Compute/RepairVMScaleSetInstancesPreview"
-}
-```
-
-2. Подождите несколько минут, пока *государство* изменится на *зарегистрированное.* Вы можете использовать следующий API, чтобы подтвердить это.
-
-```
-GET on '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/Microsoft.Compute/features/RepairVMScaleSetInstancesPreview?api-version=2015-12-01'
-```
-
-```json
-{
-  "properties": {
-    "state": "Registered"
-  },
-  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/Microsoft.Compute/features/RepairVMScaleSetInstancesPreview",
-  "type": "Microsoft.Features/providers/features",
-  "name": "Microsoft.Compute/RepairVMScaleSetInstancesPreview"
-}
-```
-
-3. После того, как *государство* изменилось на *зарегистрированных*, а затем запустить следующее.
-
-```
-POST on '/subscriptions/{subscriptionId}/providers/Microsoft.Compute/register?api-version=2015-12-01'
-```
-
-Использование Azure PowerShell
-
-1. Зарегистрируйтесь на эту функцию с помощью cmdlet [Register-AzureRmResourceProvider](/powershell/module/azurerm.resources/register-azurermresourceprovider) с последующим [регистрацией-AzureRmProviderFeature](/powershell/module/azurerm.resources/register-azurermproviderfeature)
-
-```azurepowershell-interactive
-Register-AzureRmResourceProvider `
- -ProviderNamespace Microsoft.Compute
-
-Register-AzureRmProviderFeature `
- -ProviderNamespace Microsoft.Compute `
- -FeatureName RepairVMScaleSetInstancesPreview
-```
-
-2. Подождите несколько минут, пока *Регистрационная государство* изменится на *зарегистрированный.* Вы можете использовать следующие cmdlet, чтобы подтвердить это.
-
-```azurepowershell-interactive
-Get-AzureRmProviderFeature `
- -ProviderNamespace Microsoft.Compute `
- -FeatureName RepairVMScaleSetInstancesPreview
- ```
-
- Ответ должен быть следующим.
-
-| Характеристика                           | ProviderName            | РегистрацияГосударство       |
-|---------------------------------------|-------------------------|-------------------------|
-| RepairVMScaleSetInstancesПредварительный      | Microsoft.Compute;       | Зарегистрировано              |
-
-3. После *регистрациигосударство* изменить на *зарегистрированный,* а затем запустить следующий cmdlet.
-
-```azurepowershell-interactive
-Register-AzureRmResourceProvider `
- -ProviderNamespace Microsoft.Compute
-```
 
 **Включить мониторинг работоспособности приложений для набора масштаба**
 
@@ -122,7 +39,7 @@ Register-AzureRmResourceProvider `
 
 **Включить одну группу размещения**
 
-Этот предварительный просмотр в настоящее время доступен только для наборов масштабов, развернутых как единая группа размещения. Свойство *singlePlacementGroup* должно быть установлено в *истинном* для вашего набора масштаба использовать функцию автоматического ремонта экземпляра. Подробнее о [группах размещения.](./virtual-machine-scale-sets-placement-groups.md#placement-groups)
+Эта функция в настоящее время доступна только для наборов масштабов, развернутых в качестве единой группы размещения. Свойство *singlePlacementGroup* должно быть установлено в *истинном* для вашего набора масштаба использовать функцию автоматического ремонта экземпляра. Подробнее о [группах размещения.](./virtual-machine-scale-sets-placement-groups.md#placement-groups)
 
 **Версия API**
 
@@ -130,15 +47,15 @@ Register-AzureRmResourceProvider `
 
 **Ограничения на перемещение ресурсов или подписки**
 
-В рамках этого предварительного просмотра перемещения ресурсов или подписки в настоящее время не поддерживаются для наборов масштабов при включении политики автоматического ремонта.
+Перемещение ресурсов или подписки в настоящее время не поддерживается для наборов масштабов при включении функции автоматического ремонта.
 
 **Ограничение для наборов масштабов тканей обслуживания**
 
-Эта функция предварительного просмотра в настоящее время не поддерживается для наборов масштабов ткани обслуживания.
+Эта функция в настоящее время не поддерживается для набораов масштабов ткани обслуживания.
 
 ## <a name="how-do-automatic-instance-repairs-work"></a>Как работает автоматический ремонт экземпляра?
 
-Функция автоматического ремонта экземпляров опирается на мониторинг работоспособности отдельных экземпляров в наборе масштабов. Экземпляры VM в наборе масштабов могут быть настроены для испускаемого состояния работоспособности приложения с помощью [либо расширения работоспособности приложения,](./virtual-machine-scale-sets-health-extension.md) либо [зондов работоспособности баланса нагрузки.](../load-balancer/load-balancer-custom-probe-overview.md) Если экземпляр признан неработоспособным, то набор масштабов выполняет действие ремонта, удаляя неработоспособный экземпляр и создавая новый, чтобы заменить его. Эта функция может быть включена в виртуальной модели набора масштабов машины с помощью *объекта automaticRepairsPolicy.*
+Функция автоматического ремонта экземпляров опирается на мониторинг работоспособности отдельных экземпляров в наборе масштабов. Экземпляры VM в наборе масштабов могут быть настроены для испускаемого состояния работоспособности приложения с помощью [либо расширения работоспособности приложения,](./virtual-machine-scale-sets-health-extension.md) либо [зондов работоспособности баланса нагрузки.](../load-balancer/load-balancer-custom-probe-overview.md) Если экземпляр признан неработоспособным, то набор масштабов выполняет действие ремонта, удаляя неработоспособный экземпляр и создавая новый, чтобы заменить его. Для создания нового экземпляра используется новейшая модель набора виртуальной шкалы машин. Эта функция может быть включена в виртуальной модели набора масштабов машины с помощью *объекта automaticRepairsPolicy.*
 
 ### <a name="batching"></a>Пакетная обработка
 
@@ -147,6 +64,12 @@ Register-AzureRmResourceProvider `
 ### <a name="grace-period"></a>Льготный период
 
 Когда экземпляр проходит операцию изменения состояния из-за действия PUT, PATCH или POST, выполняемого в наборе масштабов (например, reimage, reimage, update, update и т.д.), то любое действие по ремонту в этом экземпляре выполняется только после ожидания льготного периода. Период благодати — это количество времени, позволяющее экземпляру вернуться в здоровое состояние. Льготный период начинается после завершения изменения состояния. Это помогает избежать любых преждевременных или случайных ремонтных работ. Льготный период чествуется для любого вновь созданного экземпляра в наборе масштаба (включая тот, который был создан в результате ремонта). Льготный период указан в минутах в формате ISO 8601 и может быть установлен с помощью свойства *automaticRepairs.gracePeriod*. Льготный период может варьироваться от 30 минут до 90 минут, и имеет значение по умолчанию 30 минут.
+
+### <a name="suspension-of-repairs"></a>Приостановка ремонта 
+
+Виртуальные наборы масштабов машин обеспечивают возможность временно приостанавливать автоматическое ремонт экземпляра при необходимости. *СервисГосударство* автоматического ремонта под *управлением имущественной организацииУслуги,* например, с учетом виртуального набора масштабов машины показывает текущее состояние автоматического ремонта. При выборе набора масштабов для автоматического ремонта значение *параметра serviceState* устанавливается для *запуска.* Когда автоматический ремонт приостанавливается для набора масштаба, *параметр службыСостояние* устанавливается *для приостановления.* Если *автоматическаяRepairsPolicy* определена на наборе масштаба, но функция автоматического ремонта не включена, то *параметр службыState* настроен *не работает.*
+
+Если вновь созданные экземпляры для замены нездоровых в наборе масштабов продолжают оставаться нездоровыми даже после неоднократного выполнения ремонтных операций, то в качестве меры безопасности платформа обновляет *сервисдля* автоматического ремонта *приостановлено.* Вы можете возобновить автоматический ремонт снова, установив значение *serviceState* для автоматического ремонта *Running.* Подробные инструкции приведены в разделе о [просмотре и обновлении состояния службы автоматического ремонта политики](#viewing-and-updating-the-service-state-of-automatic-instance-repairs-policy) для набора шкалы. 
 
 Процесс автоматического ремонта экземпляра работает следующим образом:
 
@@ -158,11 +81,29 @@ Register-AzureRmResourceProvider `
 
 ## <a name="instance-protection-and-automatic-repairs"></a>Защита экземпляров и автоматический ремонт
 
-Если экземпляр в наборе масштабов защищен, применяя *[политику защиты от действия, установленную в масштабе,](./virtual-machine-scale-sets-instance-protection.md#protect-from-scale-set-actions)* то автоматический ремонт в этом случае не выполняется.
+Если экземпляр в наборе масштабов защищен одним из [политик защиты,](./virtual-machine-scale-sets-instance-protection.md)то автоматический ремонт в этом случае не выполняется. Это относится как к политикам защиты: *Защита от масштабирования* и *защита от масштабированных действий.* 
+
+## <a name="terminatenotificationandautomaticrepairs"></a>Прекращение уведомления и автоматического ремонта
+
+Если функция [уведомления о завершении](./virtual-machine-scale-sets-terminate-notification.md) включена в наборе масштабов, то во время автоматической операции по ремонту удаление неработоспособного экземпляра следует конфигурации уведомления о завершении. Уведомление о завершении отправляется через службу метаданных Azure - запланированные события - и удаление экземпляра задерживается на время настроенного тайм-аута задержки. Однако создание нового экземпляра для замены неработоспособного не дожидаясь завершения тайм-аута задержки.
 
 ## <a name="enabling-automatic-repairs-policy-when-creating-a-new-scale-set"></a>Включение политики автоматического ремонта при создании нового набора масштабов
 
 Для включения политики автоматического ремонта при создании нового набора масштабов убедитесь, что все [требования для](#requirements-for-using-automatic-instance-repairs) выбора этой функции будут выполнены. Конечная точка приложения должна быть правильно настроена для экземпляров набора масштаба, чтобы избежать запуска непреднамеренных ремонтов во время настройки конечной точки. Для вновь созданных наборов масштабов любой экземпляр ремонт выполняется только после ожидания в течение льготного периода. Для автоматического ремонта экземпляра в масштабе, используйте *объект automaticRepairPolicy* в модели набора виртуальной шкалы машины.
+
+### <a name="azure-portal"></a>Портал Azure
+ 
+Следующие шаги, позволяющие автоматический ремонт политики при создании нового набора масштаба.
+ 
+1. Перейти к **виртуальным наборам масштабов машины.**
+1. Выберите **и добавьте,** чтобы создать новый набор масштабов.
+1. Перейдите на вкладку **Здоровье.** 
+1. Найдите раздел **Здоровье.**
+1. Включить опцию **работоспособности приложения Monitor.**
+1. Найдите раздел **политики автоматического ремонта.**
+1. **Включите** опцию **автоматического ремонта.**
+1. В **период благодати (мин)**, указать льготный период в минутах, разрешенные значения между 30 и 90 минут. 
+1. Когда вы закончите создание нового набора шкалы, выберите кнопку **«Обзор» и «Создайте».**
 
 ### <a name="rest-api"></a>REST API
 
@@ -197,9 +138,42 @@ New-AzVmssConfig `
  -AutomaticRepairGracePeriod "PT30M"
 ```
 
+### <a name="azure-cli-20"></a>Azure CLI 2.0
+
+Следующий пример позволяет автоматической политики ремонта при создании нового набора масштаба с использованием *[az vmss создать.](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-create)* Сначала создайте группу ресурсов, а затем создайте новый набор шкалы с льготным периодом политики автоматического ремонта, установленным до 30 минут.
+
+```azurecli-interactive
+az group create --name <myResourceGroup> --location <VMSSLocation>
+az vmss create \
+  --resource-group <myResourceGroup> \
+  --name <myVMScaleSet> \
+  --image UbuntuLTS \
+  --admin-username <azureuser> \
+  --generate-ssh-keys \
+  --load-balancer <existingLoadBalancer> \
+  --health-probe <existingHealthProbeUnderLoaderBalancer> \
+  --automatic-repairs-period 30
+```
+
+The above example uses an existing load balancer and health probe for monitoring application health status of instances. Если вместо этого вы предпочитаете использовать расширение работоспособности приложения для мониторинга, можно создать набор масштабов, настроить расширение работоспособности приложения, а затем включить политику автоматического ремонта экземпляра с помощью *обновления az vmss,* как это объясняется в следующем разделе.
+
 ## <a name="enabling-automatic-repairs-policy-when-updating-an-existing-scale-set"></a>Включение политики автоматического ремонта при обновлении существующего набора масштабов
 
 Прежде чем включить политику автоматического ремонта в существующий набор масштабов, убедитесь, что все [требования](#requirements-for-using-automatic-instance-repairs) для выбора этой функции будут выполнены. Конечная точка приложения должна быть правильно настроена для экземпляров набора масштаба, чтобы избежать запуска непреднамеренных ремонтов во время настройки конечной точки. Для автоматического ремонта экземпляра в масштабе, используйте *объект automaticRepairPolicy* в модели набора виртуальной шкалы машины.
+
+После обновления модели существующего набора масштабов убедитесь, что последняя модель применяется ко всем экземплярам шкалы. Обратитесь к инструкции о [том, как привести ВМ в актуальном состоянии с последней моделью набора масштаба.](./virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model)
+
+### <a name="azure-portal"></a>Портал Azure
+
+Можно изменить политику автоматического ремонта существующей шкалы, установленной через портал Azure. 
+ 
+1. Перейдите к существующему набору виртуальной шкалы машин.
+1. В **соответствии** с настройками в меню слева, выберите **Здоровье и ремонт.**
+1. Включить опцию **работоспособности приложения Monitor.**
+1. Найдите раздел **политики автоматического ремонта.**
+1. **Включите** опцию **автоматического ремонта.**
+1. В **период благодати (мин)**, указать льготный период в минутах, разрешенные значения между 30 и 90 минут. 
+1. По завершении нажмите кнопку **Сохранить**. 
 
 ### <a name="rest-api"></a>REST API
 
@@ -232,7 +206,97 @@ Update-AzVmss `
  -AutomaticRepairGracePeriod "PT40M"
 ```
 
-## <a name="troubleshoot"></a>Устранение неполадок
+### <a name="azure-cli-20"></a>Azure CLI 2.0
+
+Ниже приводится пример для обновления политики автоматического ремонта экземпляра существующего набора масштабов с использованием *[обновления az vmss.](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-update)*
+
+```azurecli-interactive
+az vmss update \  
+  --resource-group <myResourceGroup> \
+  --name <myVMScaleSet> \
+  --enable-automatic-repairs true \
+  --automatic-repairs-period 30
+```
+
+## <a name="viewing-and-updating-the-service-state-of-automatic-instance-repairs-policy"></a>Просмотр и обновление состояния службы политики автоматического ремонта экземпляров
+
+### <a name="rest-api"></a>REST API 
+
+Используйте [Get Instance View](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/getinstanceview) с версией API 2019-12-01 или выше для виртуального набора машин для просмотра *сервисаДля* автоматического ремонта в рамках системы *свойств.* 
+
+```http
+GET '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/instanceView?api-version=2019-12-01'
+```
+
+```json
+{
+  "orchestrationServices": [
+    {
+      "serviceName": "AutomaticRepairs",
+      "serviceState": "Running"
+    }
+  ]
+}
+```
+
+Используйте *setOrchestrationServiceState* API с версией API 2019-12-01 или выше по виртуальной шкале машины, установленной для настройки состояния автоматического ремонта. После того, как набор масштабов будет выбран в функцию автоматического ремонта, вы можете использовать этот API для приостановки или возобновления автоматического ремонта для набора масштабов. 
+
+ ```http
+ POST '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/setOrchestrationServiceState?api-version=2019-12-01'
+ ```
+
+```json
+{
+  "orchestrationServices": [
+    {
+      "serviceName": "AutomaticRepairs",
+      "serviceState": "Suspend"
+    }
+  ]
+}
+```
+
+### <a name="azure-cli"></a>Azure CLI 
+
+Используйте cmdlet [get-instance-view](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-get-instance-view) для просмотра *сервисаДля* автоматического ремонта экземпляров. 
+
+```azurecli-interactive
+az vmss get-instance-view \
+    --name MyScaleSet \
+    --resource-group MyResourceGroup
+```
+
+Используйте [сет-оркестр-сервис-состояние](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-set-orchestration-service-state) cmdlet для обновления *сервисаДля* автоматического ремонта экземпляров. После того, как набор масштаба выбран в функцию автоматического ремонта, то вы можете использовать этот cmdlet приостановить или возобновить автоматический ремонт для вас набор масштаба. 
+
+```azurecli-interactive
+az vmss set-orchestration-service-state \
+    --service-name AutomaticRepairs \
+    --action Resume \
+    --name MyScaleSet \
+    --resource-group MyResourceGroup
+```
+### <a name="azure-powershell"></a>Azure PowerShell
+
+Используйте [Get-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/get-azvmss?view=azps-3.7.0) cmdlet с параметром *InstanceView* для просмотра *ServiceState* для автоматического ремонта экземпляров.
+
+```azurepowershell-interactive
+Get-AzVmss `
+    -ResourceGroupName "myResourceGroup" `
+    -VMScaleSetName "myScaleSet" `
+    -InstanceView
+```
+
+Используйте Set-AzVmssOrchestrationServiceState cmdlet для обновления *сервисаДля* автоматического ремонта экземпляров. После того, как набор масштабов выбран в функцию автоматического ремонта, вы можете использовать этот cmdlet для приостановки или возобновления автоматического ремонта для набора масштабов.
+
+```azurepowershell-interactive
+Set-AzVmssOrchestrationServiceState `
+    -ResourceGroupName "myResourceGroup" `
+    -VMScaleSetName "myScaleSet" `
+    -ServiceName "AutomaticRepairs" `
+    -Action "Suspend"
+```
+
+## <a name="troubleshoot"></a>Диагностика
 
 **Невключение политики автоматического ремонта**
 
@@ -246,6 +310,8 @@ Update-AzVmss `
 
 Для просмотра состояния работоспособности приложения можно использовать [API просмотра экземпляров Get Instance](/rest/api/compute/virtualmachinescalesetvms/getinstanceview) View для экземпляров в виртуальном наборе машин. С Azure PowerShell вы можете использовать cmdlet [Get-AzVmssVM](/powershell/module/az.compute/get-azvmssvm) с флагом *-InstanceView.* Состояние здоровья приложения предоставляется в соответствии с собственностью *vmHealth*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+На портале Azure также можно увидеть состояние работоспособности. Перейдите к существующему набору **масштабов,** выберите Instances из меню слева и посмотрите на столбец **состояния работоспособности** для состояния работоспособности каждого набора экземпляра шкалы. 
+
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как настроить [расширение работоспособности приложения](./virtual-machine-scale-sets-health-extension.md) или [зонды работоспособности баланса нагрузки](../load-balancer/load-balancer-custom-probe-overview.md) для наборов масштабов.

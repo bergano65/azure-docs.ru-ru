@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 04/03/2020
+ms.date: 04/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a6ab13dea1a1db96cbb2f2ac70b9779eca60591
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 5310c999cc44f0cf35f129751da7472031e6c57a
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80885389"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537089"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws-legacy-tutorial"></a>Учебник: Активная интеграция каталога Azure с веб-службами Amazon (AWS) (Наследие)
 
@@ -37,7 +37,7 @@ ms.locfileid: "80885389"
 ![Amazon Web Services (AWS) в списке результатов](./media/aws-multi-accounts-tutorial/amazonwebservice.png)
 
 > [!NOTE]
-> Учтите, что подключение одного приложения AWS ко всем учетным записям AWS не рекомендуется. Вместо этого мы рекомендуем использовать [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход, чтобы настроить несколько экземпляров учетной записи AWS для нескольких экземпляров приложений AWS в Azure AD. Этот [подход](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) следует использовать только в том случае, если в нем очень меньше учетных записей и ролей AWS. [эта](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) модель не масштабируется по мере роста учетных записей и ролей AWS в этих учетных записях. Кроме того, [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход не использует функциональность импорта aWS Role с помощью обеспечения пользователей Azure AD, поэтому вам придется вручную добавлять/обновлять/удалять роли. Для других ограничений на [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход, пожалуйста, смотрите подробности ниже.
+> Учтите, что подключение одного приложения AWS ко всем учетным записям AWS не рекомендуется. Вместо этого мы рекомендуем использовать [этот](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) подход, чтобы настроить несколько экземпляров учетной записи AWS для нескольких экземпляров приложений AWS в Azure AD. Этот подход следует использовать только в том случае, если в нем очень меньше учетных записей и ролей AWS, эта модель не масштабируется по мере роста учетных записей и ролей ВСУ в этих учетных записях. Кроме того, этот подход не использует функциональность импорта aWS Role с помощью обеспечения пользователей Azure AD, поэтому вам придется вручную добавлять/обновлять/удалять роли. Для других ограничений на этот подход, пожалуйста, смотрите подробности ниже.
 
 **Обратите внимание на то, что мы не рекомендуем использовать этот подход по следующим причинам.**
 

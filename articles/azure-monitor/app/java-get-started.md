@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: 2355cb7ab995cab3060c7a94c9e7ea344bd9e92b
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: e56ba304d197984110de5127a0f163ac0accf1aa
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80984646"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537514"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Быстрый запуск: Начните с Application Insights в веб-проекте Java
 
@@ -303,7 +303,7 @@ Application Insights может тестировать ваш веб-сайт ч
 ## <a name="questions-problems"></a>Вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
@@ -318,5 +318,5 @@ Application Insights может тестировать ваш веб-сайт ч
 [availability]: ../../azure-monitor/app/monitor-web-app-availability.md
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md
 [javalogs]: java-trace-logs.md
-[metrics]: ../../azure-monitor/app/metrics-explorer.md
+[metrics]: ../../azure-monitor/platform/metrics-charts.md
 [usage]: javascript.md

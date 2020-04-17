@@ -2,13 +2,13 @@
 title: Анализ зависимостей при оценке миграционных серверов Azure
 description: Описывает, как использовать анализ зависимостей для оценки с помощью оценки Azure Migrate Server.
 ms.topic: conceptual
-ms.date: 03/11/2020
-ms.openlocfilehash: f96496b66d6bcfd397fb0a7303d3dbfb4fd6f6b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/15/2020
+ms.openlocfilehash: b11796f2c5d7c1d87f383e6780444e572352eff5
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79455644"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537752"
 ---
 # <a name="dependency-analysis"></a>Анализ зависимостей
 
@@ -30,7 +30,7 @@ ms.locfileid: "79455644"
 - **Без агента**: С безагентным анализом, вам не нужно устанавливать агенты на машины, которые вы хотите перепроверить. Эта опция в настоящее время находится в предварительном просмотре и доступна только для VMware VMs.
 
 > [!NOTE]
-> Анализ зависимостей недоступен в правительстве Azure.
+> Анализ зависимости на основе агента недоступен в правительстве Azure. Можно использовать анализ зависимости без агента.
 
 ## <a name="agentless-analysis"></a>Безагентный анализ
 
@@ -74,7 +74,7 @@ Log Analytics | Необязательно. | Azure Migrate использует
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Просмотрите требования к настройке анализа на основе агентов для [VMware VMs,](migrate-support-matrix-vmware.md#agent-based-dependency-analysis-requirements) [физических серверов](migrate-support-matrix-physical.md#agent-based-dependency-analysis-requirements)и [VMs-технологий Hyper-V.](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements)
 - [Просмотрите](migrate-support-matrix-vmware.md#agentless-dependency-analysis-requirements) требования к безагентного анализа VMware VMs.
 - [Настройка](how-to-create-group-machine-dependencies.md) визуализации зависимостей на основе агента

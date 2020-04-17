@@ -2,13 +2,13 @@
 title: Поддержка миграции VMware в Azure Migrate
 description: Узнайте о поддержке миграции VMware VM в Azure Migrate.
 ms.topic: conceptual
-ms.date: 01/07/2020
-ms.openlocfilehash: bf9cc471eef31edd513358a97d2ece17015ba781
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.date: 04/15/2020
+ms.openlocfilehash: eee16b244ae4f9d517bdd42a0b7f37b1494ac480
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81313995"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81538143"
 ---
 # <a name="support-matrix-for-vmware-migration"></a>Матрица поддержки для миграции VMware
 
@@ -64,14 +64,16 @@ ms.locfileid: "81313995"
 
 
 ## <a name="agentless-azure-migrate-appliance"></a>Прибор "Агент-Лазурный миграция" 
-Без агентская миграция использует прибор Azure Migrate, развернутый на VMware VM.
+
+Безагентная миграция использует [прибор Azure Migrate.](migrate-appliance.md) Развертывание прибора в качестве VMWare VM можно с помощью шаблона OVA, импортируемого в vCenter Server или с помощью [скрипта PowerShell.](deploy-appliance-script.md)
 
 - Узнайте о требованиях к [приборам](migrate-appliance.md#appliance---vmware) для VMware.
-- Узнайте о [URL-адресах,](migrate-appliance.md#url-access) к ним необходимо получить доступ к прибору.
+- Узнайте об URL-адресах, которые необходимо получить в [общедоступных](migrate-appliance.md#public-cloud-urls) и [правительственных](migrate-appliance.md#government-cloud-urls) облаках.
+- В правительстве Azure необходимо развернуть прибор с помощью скрипта.
 
 ## <a name="agentless-ports"></a>Беспризатые порты
 
-**Устройство** | **Подключения**
+**Устройство** | **Соединение**
 --- | ---
 прибор. | Исходящие соединения в порту 443 для загрузки реплицированных данных в Azure и связи с службами Azure Migrate, организующие репликацию и миграцию.
 Сервер vCenter | Входящие соединения на порту 443 позволяют прибору организовать репликацию - создавать снимки, копировать данные, выпускать снимки
@@ -123,11 +125,12 @@ vSphere/EXSI хост | Вход на порт TCP 902 для воспроизв
 
 - Узнайте о требованиях к [приборам репликации](migrate-replication-appliance.md#appliance-requirements) для VMware.
 - MyS'L должен быть установлен на приборе. Узнайте о [вариантах установки.](migrate-replication-appliance.md#mysql-installation)
-- Узнайте о [URL-адресах](migrate-replication-appliance.md#url-access) и [портах,](migrate-replication-appliance.md#port-access) к ним нужно получить доступ к прибору репликации.
+- Узнайте об URL-адресах, которые необходимо получить в [общедоступных](migrate-replication-appliance.md#url-access) и [правительственных](migrate-replication-appliance.md#azure-government-url-access) облаках.
+- Просмотрите [порты,](migrate-replication-appliance.md#port-access) к ним нужно доступ к прибору репликации.
 
 ## <a name="agent-based-ports"></a>Порты на основе агента
 
-**Устройство** | **Подключения**
+**Устройство** | **Соединение**
 --- | ---
 Виртуальные машины | Служба мобильности, работающая на VMs, общается с прибором репликации (сервер конфигурации) на входящих порте HTTPS 443 для управления репликацией.<br/><br/> Виртуальные машины отправляют данные репликации на сервер обработки (запущенный на компьютере сервера конфигурации) через HTTPS-порт 9443 для входящих подключений. Этот порт можно изменить.
 Репликационный прибор | Прибор репликации оркеструет репликацию с Azure над исходящим портом HTTPS 443.

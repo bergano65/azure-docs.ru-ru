@@ -8,12 +8,12 @@ ms.date: 05/22/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: c949556949e0c187d7c23c4dd32436e245bfbb95
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ae359e5210a9a11c33dd3ff9b474e28aa2548c57
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75889333"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536970"
 ---
 # <a name="troubleshoot-errors-when-onboarding-update-management-change-tracking-and-inventory"></a>Ошибки при посадке на управление обновлением, отслеживание изменений и инвентаризации
 
@@ -23,11 +23,11 @@ ms.locfileid: "75889333"
 
 ### <a name="scenario-renaming-a-registered-node-requires-unregister--register-again"></a><a name="node-rename"></a>Сценарий: Переименование зарегистрированного узла требует нерегистрации / регистрации снова
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Узел регистрируется в Azure Automation, а затем имя компьютера операционной системы меняется.  Отчеты из узла продолжают отображаться с исходным именем.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Переименование зарегистрированных узлов не обновляет имя узла в Azure Automation.
 
@@ -38,11 +38,11 @@ ms.locfileid: "75889333"
 
 ### <a name="scenario-re-signing-certificates-via-https-proxy-is-not-supported"></a><a name="resigning-cert"></a>Сценарий: Переподпись сертификатов через прокси https не поддерживается
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Клиенты сообщили, что при подключении через прокси-решение, которое завершает трафик https, а затем повторно шифрует трафик с помощью нового сертификата, служба не позволяет подключение.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Azure Automation не поддерживает переподписи сертификатов, используемых для шифрования трафика.
 
@@ -54,7 +54,7 @@ Azure Automation не поддерживает переподписи серти
 
 ### <a name="scenario-onboarding-fails-with-the-message---the-solution-cannot-be-enabled"></a><a name="missing-write-permissions"></a>Сценарий: Посадка не справляется с сообщением - решение не может быть включено
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Вы получаете одно из следующих сообщений при попытке на борт виртуальной машины к решению:
 
@@ -66,17 +66,17 @@ The solution cannot be enabled due to missing permissions for the virtual machin
 The solution cannot be enabled on this VM because the permission to read the workspace is missing
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка вызвана неправильными или отсутствующими разрешениями на виртуальной машине, рабочем пространстве или для пользователя.
 
 #### <a name="resolution"></a>Решение
 
-Убедитесь, что у вас есть разрешение на подключение виртуальной машины. Просмотрите [разрешения, необходимые для подключения компьютеров](../automation-role-based-access-control.md#onboarding), и попробуйте еще раз подключить решение. Если вы получили `The solution cannot be enabled on this VM because the permission to read the workspace is missing`ошибку, `Microsoft.OperationalInsights/workspaces/read` убедитесь, что у вас есть разрешение, чтобы иметь возможность найти, если VM находится на борту в рабочее пространство.
+Убедитесь, что у вас есть разрешение на подключение виртуальной машины. Просмотрите [разрешения, необходимые для подключения компьютеров](../automation-role-based-access-control.md#onboarding-permissions), и попробуйте еще раз подключить решение. Если вы получили `The solution cannot be enabled on this VM because the permission to read the workspace is missing`ошибку, убедитесь, что у вас есть `Microsoft.OperationalInsights/workspaces/read` разрешение, чтобы иметь возможность найти, если VM находится на борту в рабочее пространство.
 
 ### <a name="scenario-onboarding-fails-with-the-message---failed-to-configure-automation-account-for-diagnostic-logging"></a><a name="diagnostic-logging"></a>Сценарий: Посадка не справляется с сообщением - Не удалось настроить учетную запись автоматизации для диагностической регистрации
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При попытке подключить виртуальную машину к решению вы получаете следующее сообщение:
 
@@ -84,7 +84,7 @@ The solution cannot be enabled on this VM because the permission to read the wor
 Failed to configure automation account for diagnostic logging
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка может быть вызвана, если уровень ценообразования не соответствует модели выставления счетов подписки. Для получения дополнительной информации [см.](https://aka.ms/PricingTierWarning)
 
@@ -94,11 +94,11 @@ Failed to configure automation account for diagnostic logging
 
 ### <a name="scenario-computergroupqueryformaterror"></a><a name="computer-group-query-format-error"></a>Сценарий: ComputerGroupQueryFormatError
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Этот код ошибки означает, что сохраненный запрос на поиск группы компьютеров, который используется в этом решении, имеет неправильный формат. 
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Возможно, вы неудачно изменили запрос или автоматическое изменение внесено системой.
 
@@ -108,11 +108,11 @@ Failed to configure automation account for diagnostic logging
 
 ### <a name="scenario-policyviolation"></a><a name="policy-violation"></a>Сценарий: PolicyViolation
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Этот код ошибки означает, что развертывание завершилось неудачей из-за нарушения одной или нескольких политик.
 
-#### <a name="cause"></a>Причина 
+#### <a name="cause"></a>Причина: 
 
 Политика находится в таком месте, из которого выполнение операции невозможно.
 
@@ -130,7 +130,7 @@ Failed to configure automation account for diagnostic logging
 
 ### <a name="scenario-errors-trying-to-unlink-a-workspace"></a><a name="unlink"></a>Сценарий: Ошибки, пытающиеся отсоединить рабочее пространство
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Вы получаете следующую ошибку при попытке отсоединить рабочее пространство:
 
@@ -138,7 +138,7 @@ Failed to configure automation account for diagnostic logging
 The link cannot be updated or deleted because it is linked to Update Management and/or ChangeTracking Solutions.
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка возникает, когда в рабочем пространстве Log Analytics по-прежнему имеются решения, зависят от связи рабочего пространства с учетной записью автоматизации и анализа журналов.
 
@@ -162,7 +162,7 @@ The link cannot be updated or deleted because it is linked to Update Management 
 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)] 
 
-При развертывании решения, также развертывается множество связанных ресурсов. Одним из этих ресурсов является расширение Microsoft Monitoring Agent или агент Log Analytics для Linux. Это виртуальные расширения машины, установленные гостевой агент виртуальной машины, который отвечает за связь с настроенным рабочим пространством Log Analytics, с целью последующей координации загрузки бинарных файлов и других файлов, которые решение, от того, что вы будете двигаться, зависит от того, как оно начнет исполнение.
+При развертывании решения, также развертывается множество связанных ресурсов. Одним из этих ресурсов является расширение Microsoft Monitoring Agent или агент Log Analytics для Linux. Это виртуальные расширения машины, установленные гостевом агентом виртуальной машины, который отвечает за связь с настроенным рабочим пространством Log Analytics, с целью последующей координации загрузки бинарных файлов и других файлов, от чего зависит решение, от которого вы будете зависеть после его начала выполнения.
 Обычно об ошибках установки MMA или агента Log Analytics для Linux можно узнать из уведомления, которое появляется в центре уведомлений. Щелкнув уведомление, можно получить дополнительные сведения о конкретной ошибке. Дополнительные сведения о произошедших сбоях развертывания можно получить, перейдя к элементу "Развертывания" в разделе "Группы ресурсов".
 К неудачной установке MMA или агента Log Analytics для Linux могут привести множество причин, а шаги, которые необходимо предпринять для их устранения, в каждом случае отличаются. Действия по устранению неполадок подробнее описываются далее.
 
@@ -172,7 +172,7 @@ The link cannot be updated or deleted because it is linked to Update Management 
 
 Расширению MMA виртуальной машины не удается установить связь с внешними ресурсами, что приводит к ошибке развертывания.
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Ниже приведены примеры возвращаемых сообщений об ошибках.
 
@@ -184,7 +184,7 @@ Please verify the VM has a running VM agent, and can establish outbound connecti
 'Manifest download error from https://<endpoint>/<endpointId>/Microsoft.EnterpriseCloud.Monitoring_MicrosoftMonitoringAgent_australiaeast_manifest.xml. Error: UnknownError. An exception occurred during a WebClient request.
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Возможные причины возникновения этой ошибки перечислены ниже.
 
@@ -200,7 +200,7 @@ Please verify the VM has a running VM agent, and can establish outbound connecti
 
 Установка расширения агента мониторинга Майкрософт не удалась во время развертывания из-за другой установки или действия, блокирующей установку
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Ниже приведены примеры сообщений об ошибках, которые могут отображаться на экране.
 
@@ -216,7 +216,7 @@ The Microsoft Monitoring Agent failed to install on this machine. Please try to 
 'Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent, version 1.0.11081.2) with exception Command C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\1.0.11081.2\MMAExtensionInstall.exe of Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent has exited with Exit code: 1601'
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Возможные причины возникновения этой ошибки перечислены ниже.
 
@@ -231,7 +231,7 @@ The Microsoft Monitoring Agent failed to install on this machine. Please try to 
 
 Установка расширения ММА не завершена из-за тайм-аута.
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Следующим примером является сообщение об ошибке, которое может быть возвращено:
 
@@ -239,7 +239,7 @@ The Microsoft Monitoring Agent failed to install on this machine. Please try to 
 Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent, version 1.0.11081.4) with exception Command C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\1.0.11081.4\MMAExtensionInstall.exe of Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent has exited with Exit code: 15614
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта ошибка возникает из-за того, что виртуальная машина находилась под большой нагрузкой во время установки.
 
@@ -247,7 +247,7 @@ Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftM
 
 Попытайтесь установить расширение MMA при низкой загруженности виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

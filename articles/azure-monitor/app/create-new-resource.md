@@ -3,12 +3,12 @@ title: Создание ресурса Azure Application Insights | Докуме
 description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: c1b3a6920723ad59b714cce4bd69e1b95fe1995f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0c8b9ccaa70a2fd1bf46c6f4537f54d702ecc48f
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80132420"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537582"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
@@ -16,7 +16,7 @@ ms.locfileid: "80132420"
 
 ## <a name="sign-in-to-microsoft-azure"></a>Войти на связь в Microsoft Azure
 
-Если у вас нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись перед началом.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
@@ -26,7 +26,7 @@ ms.locfileid: "80132420"
 
    | Параметры        |  Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Название**      | Уникальное значение | Имя, идентифицирует приложение, которое вы контролируете. |
+   | **имя**;      | Уникальное значение | Имя, идентифицирует приложение, которое вы контролируете. |
    | **Ресурсная группа**     | myResourceGroup      | Название новой или существующей группы ресурсов для размещения данных App Insights. |
    | **Расположение** | Восточная часть США | Выберите место рядом с вами или рядом с местом размещения приложения. |
 
@@ -151,14 +151,14 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 
 Для получения полной документации Azure CLI для этой команды и узнать, как получить ключ приборов, обратитесь к [документации Azure CLI.](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Диагностический поиск](../../azure-monitor/app/diagnostic-search.md)
-* [Изучение метрик](../../azure-monitor/app/metrics-explorer.md)
+* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
 * [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
 
 <!--Link references-->
 
 [api]: ../../azure-monitor/app/api-custom-events-metrics.md
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md
-[metrics]: ../../azure-monitor/app/metrics-explorer.md
+[metrics]: ../../azure-monitor/platform/metrics-charts.md
 [start]: ../../azure-monitor/app/app-insights-overview.md

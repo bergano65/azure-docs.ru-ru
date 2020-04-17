@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: a5625341e3dd279d93a59c57cd3325245351723e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fd21a78d0271f91d334bba5aba748f3770ad38cf
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79271880"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537939"
 ---
 # <a name="move-data-to-azure-blob-storage"></a>Перемещение данных в хранилище Azure Blob
 
@@ -21,7 +21,7 @@ ms.locfileid: "79271880"
 
 Имейте в виду эти факты:
 
-* Azure HPC Cache использует специализированный формат хранения для организации данных в хранилище Blob. Поэтому целью хранения Blob должен быть либо новый, пустой контейнер, либо контейнер Blob, который ранее использовался для данных Azure HPC Cache. <!--([Avere vFXT for Azure](https://azure.microsoft.com/services/storage/avere-vfxt/) also uses this cloud file system.)-->
+* Azure HPC Cache использует специализированный формат хранения для организации данных в хранилище Blob. Поэтому целью хранения Blob должен быть либо новый, пустой контейнер, либо контейнер Blob, который ранее использовался для данных Azure HPC Cache.
 
 * Копирование данных через кэш Azure HPC для целевой системы хранения данных более эффективно при использовании нескольких клиентов и параллельных операций. Простая команда копирования от одного клиента будет медленно перемещать данные.
 
@@ -31,13 +31,13 @@ ms.locfileid: "79271880"
 
 ## <a name="pre-load-data-in-blob-storage-with-clfsload"></a>Предварительная загрузка данных в хранилище Blob с помощью CLFSLoad
 
-Параметры <!--[Avere CLFSLoad](https://aka.ms/avere-clfsload)--> Утилита Avere CLFSLoad для копирования данных в новый контейнер для хранения данных Blob перед добавлением их в качестве цели хранения. Эта утилита работает на единой системе Linux и записывает данные в запатентованный формат, необходимый для Azure HPC Cache. CLFSLoad является наиболее эффективным способом заполнения контейнера для хранения Blob для использования с кэшем.
+Вы можете использовать утилиту Avere CLFSLoad для копирования данных в новый контейнер для хранения blob, прежде чем добавить их в качестве цели хранения. Эта утилита работает на единой системе Linux и записывает данные в запатентованный формат, необходимый для Azure HPC Cache. CLFSLoad является наиболее эффективным способом заполнения контейнера для хранения Blob для использования с кэшем.
 
 Утилита Avere CLFSLoad доступна по запросу вашей команды Azure HPC Cache. Попросите свою команду связаться с ней или открыть [билет поддержки,](hpc-cache-support-ticket.md) чтобы запросить помощь.
 
 Эта опция работает только с новыми пустыми контейнерами. Создайте контейнер перед использованием Avere CLFSLoad.
 
-Подробная информация включена в дистрибутив Avere CLFSLoad, который доступен по запросу команды Azure HPC Cache. <!-- [Avere CLFSLoad readme](https://github.com/microsoft/Avere-CLFSLoad/blob/master/README.md). --><!-- caution literal link -->
+Подробная информация включена в дистрибутив Avere CLFSLoad, который доступен по запросу команды Azure HPC Cache.
 
 Общий обзор процесса:
 
@@ -51,8 +51,6 @@ ms.locfileid: "79271880"
 * Название пустого контейнера для хранения Blob
 * Токен общей подписи доступа (SAS), позволяющий утилите записываться в контейнер
 * Локальный путь к источнику данных - либо локальный каталог, содержащий данные для копирования, либо локальный путь к установленной удаленной системе с данными
-
-<!-- The requirements are explained in detail in the [Avere CLFSLoad readme](https://aka.ms/avere-clfsload). -->
 
 ## <a name="copy-data-through-the-azure-hpc-cache"></a>Копирование данных через кэш HPC Azure
 
@@ -83,7 +81,7 @@ ms.locfileid: "79271880"
 
 * Копирование по ``parallelcp`` сценарию с помощью - Узнайте, как создать и запустить параллельный сценарий копирования в [данных Azure HPC Cache ingest - параллельный метод сценария копирования.](hpc-cache-ingest-parallelcp.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После настройки хранилища узнайте, как клиенты могут смонтировать кэш.
 

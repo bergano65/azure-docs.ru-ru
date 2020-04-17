@@ -3,12 +3,12 @@ title: Мониторинг использования и производите
 description: Анализ использования и производительности классического приложения для Windows с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 10/29/2019
-ms.openlocfilehash: 8234b9ba2c92fc64cfa8f598db99954e00caab45
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eb9e0fc480098478a3a68265ac85e0d5450e27fe
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77670837"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537395"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
 
@@ -106,9 +106,9 @@ namespace CustomInitializer.Telemetry
         }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Создание панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
 * [Диагностический поиск](../../azure-monitor/app/diagnostic-search.md)
-* [Изучение метрик](../../azure-monitor/app/metrics-explorer.md)
+* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
 * [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
 

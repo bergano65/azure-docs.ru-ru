@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: 4a240bc62816a46bc37108777a8b081b74047738
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4042fc05f278915fe72bf8fc4e6afd69a5bbb4b9
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79275715"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537429"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента по анализу приложений Azure Monitor для наемных серверов
 
@@ -50,7 +50,7 @@ ms.locfileid: "79275715"
 - [Известные проблемы](status-monitor-v2-troubleshoot.md#known-issues)
 
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 - Поддерживает ли агент Application Insights прокси-установки?
 
@@ -72,11 +72,11 @@ ms.locfileid: "79275715"
       union * | summarize count() by cloud_RoleName, cloud_RoleInstance
       ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
+* [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
 * [Используйте Аналитику](../../azure-monitor/app/analytics.md) для более продвинутых запросов.
 * [Создание панелей мониторинга.](../../azure-monitor/app/overview-dashboard.md)

@@ -3,17 +3,17 @@ title: Модель данных Azure Application Insights | Документа
 description: Описание свойств, экспортируемых с помощью непрерывного экспорта в формате JSON и используемых в качестве фильтров.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: e4dd2310169476e54c06083fee11b2e4cccecd8d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9891bea1d52c61197fa32fa5c0764df5450b563c
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77663881"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536851"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
 В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](../../azure-monitor/app/app-insights-overview.md) на портал.
 Вы увидите эти свойства в выходных данных [непрерывного экспорта](export-telemetry.md).
-Они также отображаются в фильтрах свойств в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) и при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md).
+Они также отображаются в фильтрах свойств в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) и при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md).
 
 Примечания:
 
@@ -127,16 +127,16 @@ ms.locfileid: "77663881"
 | context.device.roleName |строка | |
 | context.device.screenResolution |строка | |
 | context.device.type |строка |ПК, браузер… |
-| context.location |объект |На основе значения clientip. |
-| context.location.city |строка |На основе значения clientip (если известно) |
+| context.location |объект |Производное от `clientip`. |
+| context.location.city |строка |Произведено `clientip`из , если известно |
 | context.location.clientip |строка |Последний восьмиугольник анонимизирован и имеет значение 0. |
 | context.location.continent |строка | |
 | context.location.country |строка | |
 | context.location.province |строка |Страна или область |
-| context.operation.id |строка |Элементы с одинаковым идентификатором операций отображаются на портале как связанные элементы. Как правило, это идентификатор запроса. |
+| context.operation.id |строка |Элементы, имеющие `operation id` те же элементы, отображаются на портале. Обычно `request id`. |
 | context.operation.name |строка |URL-адрес или имя запроса |
 | context.operation.parentId |строка |Разрешает использование вложенных связанных элементов. |
-| context.session.id |строка |Идентификатор группы операций из одного источника. 30-минутный период без операций указывает на завершение сеанса. |
+| context.session.id |строка |`Id`группы операций из того же источника. 30-минутный период без операций указывает на завершение сеанса. |
 | context.session.isFirst |Логическое | |
 | context.user.accountAcquisitionDate |строка | |
 | context.user.accountId |строка | |
@@ -147,7 +147,7 @@ ms.locfileid: "77663881"
 | context.user.isAuthenticated |Логическое | |
 | context.user.storeRegion |строка | |
 | internal.data.documentVersion |строка | |
-| internal.data.id |строка | Уникальный идентификатор, присваиваемый при передаче элемента в Application Insights |
+| internal.data.id |строка | `Unique id`который назначается при пойме элемента в Application Insights |
 
 ## <a name="events"></a>События
 Пользовательские события, создаваемые элементом [TrackEvent()](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
@@ -173,7 +173,7 @@ ms.locfileid: "77663881"
 | basicException [0] failedUserCodeAssembly |строка | |
 | basicException [0] handledAt |строка | |
 | basicException [0] hasFullStack |Логическое | |
-| basicException [0] id |строка | |
+| basicException`id` |строка | |
 | basicException [0] method |строка | |
 | basicException [0] message |строка |Сообщение об исключении. Максимальная длина: 10 000 |
 | basicException [0] outerExceptionMessage |строка | |
@@ -210,7 +210,7 @@ ms.locfileid: "77663881"
 | remoteDependency [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | remoteDependency [0] dependencyTypeName |строка |HTTP, SQL, … |
 | remoteDependency [0] durationMetric.value |number |Время от вызова до завершения отклика зависимостью. |
-| remoteDependency [0] id |строка | |
+| удаленнаяЗависимость`id` |строка | |
 | remoteDependency [0] name |строка |URL-адрес. Максимальная длина: 250 |
 | remoteDependency [0] resultCode |строка |Из зависимости HTTP. |
 | remoteDependency [0] success |Логическое | |
@@ -227,7 +227,7 @@ ms.locfileid: "77663881"
 | --- | --- | --- |
 | request [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например: 4 =&gt; 25 %. |
 | request [0] durationMetric.value |number |Время от поступления запроса до отклика. 1e7 = 1 с. |
-| request [0] id |строка |Идентификатор операции |
+| запрос`id` |строка |`Operation id` |
 | request [0] name |строка |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
 | request [0] responseCode |Целое число |HTTP-отклик, отправленный клиенту. |
 | request [0] success |Логическое |Значение по умолчанию == (responseCode &lt; 400) |

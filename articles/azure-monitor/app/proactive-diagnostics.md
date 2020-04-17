@@ -3,12 +3,12 @@ title: Интеллектуальное обнаружение в Azure Applicat
 description: Служба Application Insights автоматически выполняет углубленный анализ телеметрии вашего приложения и предупреждает о потенциальных проблемах.
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.openlocfilehash: e232295f9da2a2ae8f3c6fafdd1dc33a42e92e69
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ff9f88e1d2e643d04c4417283420217e7d496caf
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77671806"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536800"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Smart Detection автоматически предупреждает вас о потенциальных проблемах с производительностью и аномалиях сбоев в вашем веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](../../azure-monitor/app/app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -34,7 +34,7 @@ Smart Detection обнаруживает и уведомляет о различ
 
 * [Интеллектуальное обнаружение. Аномальные сбои.](../../azure-monitor/app/proactive-failure-diagnostics.md) С помощью машинного обучения мы настраиваем для вашего приложения ожидаемое количество неудачно завершенных запросов, сопоставляя его с нагрузкой и другими факторами. Если частота сбоев превысит ожидаемое ограничение, вам будет отправлено предупреждение.
 * [Интеллектуальное обнаружение. Аномалии производительности.](../../azure-monitor/app/proactive-performance-diagnostics.md) Если время ответа операции или продолжительность зависимости длиннее по сравнению с базовым показателем за предыдущие периоды, или если обнаружен аномальный шаблон времени отклика и времени загрузки страницы, выводится уведомление.   
-* Общие деградации и проблемы, как [след дегрегации](https://docs.microsoft.com/azure/azure-monitor/app/proactive-trace-severity), [утечка памяти](https://docs.microsoft.com/azure/azure-monitor/app/proactive-potential-memory-leak), [Аномальный рост объема исключения](https://docs.microsoft.com/azure/azure-monitor/app/proactive-exception-volume) и [безопасности анти-шаблоны](https://docs.microsoft.com/azure/azure-monitor/app/proactive-application-security-detection-pack).
+* Общие деградации и проблемы, как [деградация трассировки](https://docs.microsoft.com/azure/azure-monitor/app/proactive-trace-severity), [утечка памяти](https://docs.microsoft.com/azure/azure-monitor/app/proactive-potential-memory-leak), [Аномальный рост объема исключения](https://docs.microsoft.com/azure/azure-monitor/app/proactive-exception-volume) и [безопасности анти-шаблоны](https://docs.microsoft.com/azure/azure-monitor/app/proactive-application-security-detection-pack).
 
 (Каждое уведомление содержит ссылки на материалы соответствующих статей.)
 
@@ -50,10 +50,10 @@ Smart Detection обнаруживает и уведомляет о различ
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Эти диагностические средства позволяют проверять данные телеметрии из приложения:
 
-* [Обозреватель метрик](../../azure-monitor/app/metrics-explorer.md)
+* [Обозреватель метрик](../../azure-monitor/platform/metrics-charts.md)
 * [Исследователь поиска](../../azure-monitor/app/diagnostic-search.md)
 * [Аналитика, мощный язык запросов](../../azure-monitor/log-query/get-started-portal.md)
 

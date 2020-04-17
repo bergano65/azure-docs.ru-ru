@@ -3,12 +3,12 @@ title: Мониторинг производительности веб-прил
 description: Расширенный мониторинг производительности и использования веб-сайта Java с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: b29618179d22eac97a07bf41906465aba1fd7929
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b047a8dd8c67679a5cc8a45e8be82f9ab5227aa4
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77657033"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537548"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, пойманных исключений и времени выполнения методов в веб-приложениях Java
 
@@ -135,4 +135,4 @@ ms.locfileid: "77657033"
 [eclipse]: app-insights-java-eclipse.md
 [java]: java-get-started.md
 [javalogs]: java-trace-logs.md
-[metrics]: ../../azure-monitor/app/metrics-explorer.md
+[metrics]: ../../azure-monitor/platform/metrics-charts.md

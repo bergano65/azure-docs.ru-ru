@@ -30,6 +30,11 @@
     - name: Индекс
       displayName: 'list, examples'
       href: ./samples/index.md
+    - name: Тестирование безопасности Azure
+      items:
+        - name: Сопоставление элементов управления
+          displayName: 'standards, azure, benchmark'
+          href: ./samples/azure-security-benchmark/control-mapping.md
     - name: Canada Federal PBMM
       items:
         - name: Обзор

@@ -3,12 +3,12 @@ title: API Application Insights для пользовательских собы
 description: Вставьте несколько строк кода в свое устройство или классическое приложение, на веб-страницу или в службу, чтобы отслеживать использование приложения и диагностировать неполадки.
 ms.topic: conceptual
 ms.date: 03/27/2019
-ms.openlocfilehash: 06bd8bd0958afd26e1256a010b08c908c59aaf7d
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: d6cb2f5ab418e8d3b5935fef535565ccf55a3906
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80585877"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536953"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -107,7 +107,7 @@ telemetry.getContext().getDevice().setId("...");
 
 ## <a name="trackevent"></a>TrackEvent (Отслеживание событий)
 
-В Application Insights *пользовательское событие* — это точка данных, которую можно отобразить как суммарное значение в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md), а также как отдельные значения на вкладке [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md). (Оно не связано с MVC и другими "событиями" платформы.)
+В Application Insights *пользовательское событие* — это точка данных, которую можно отобразить как суммарное значение в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md), а также как отдельные значения на вкладке [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md). (Оно не связано с MVC и другими "событиями" платформы.)
 
 Вставьте вызовы `TrackEvent` в код для подсчета различных событий: как часто пользователи выбирают определенный компонент, как часто они достигают определенных целей, а также как часто возникают те или иные ошибки.
 
@@ -443,7 +443,7 @@ requests
 
 Отправляйте исключения в Application Insights, чтобы:
 
-* [определить их количество](../../azure-monitor/app/metrics-explorer.md) (для указания на частоту возникновения проблемы);
+* [определить их количество](../../azure-monitor/platform/metrics-charts.md) (для указания на частоту возникновения проблемы);
 * [проверить отдельные значения.](../../azure-monitor/app/diagnostic-search.md)
 
 Отчеты содержат данные по трассировкам стеков.
@@ -774,7 +774,7 @@ function Authenticated(signInId) {
 appInsights.setAuthenticatedUserContext(validatedId, accountId);
 ```
 
-В [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) можно создать диаграмму для отображения количества **пользователей, прошедших проверку подлинности**, а также **учетных записей пользователей**.
+В [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) можно создать диаграмму для отображения количества **пользователей, прошедших проверку подлинности**, а также **учетных записей пользователей**.
 
 Кроме того, можно [выполнить поиск](../../azure-monitor/app/diagnostic-search.md) точек данных клиентов с определенными именами пользователей и учетными записями.
 

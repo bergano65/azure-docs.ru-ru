@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 317ca55adb9f680dc93343a185395abad08889da
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 2ab5697ceff612e65174fdb7f9ef6137e2c8b9a5
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80881321"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537072"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Веб-приложение, которое вписывается в пользователей: Восподписание и выход из системы
 
@@ -205,7 +205,7 @@ def _get_token_from_cache(scope=None):
 ## <a name="sign-out"></a>Функция выхода
 
 Выход из веб-приложения включает в себя нечто большее, чем удаление информации о вписавшем аккаунте из состояния веб-приложения.
-Веб-приложение также должно перенаправить пользователя на `logout` конечную точку платформы Майкрософт, чтобы выйти из системы. 
+Веб-приложение также должно перенаправить пользователя на `logout` конечную точку платформы Майкрософт, чтобы выйти из системы.
 
 Когда веб-приложение перенаправляет пользователя `logout` в конечную точку, эта конечная точка очищает сеанс пользователя от браузера. Если приложение не перешел `logout` в конечную точку, пользователь повторно подключит подлинность к вашему приложению, не введя свои учетные данные снова. Причина в том, что они будут иметь действительный один сеанс ввода с конечным пунктом платформы идентификации Майкрософт.
 
@@ -306,7 +306,7 @@ else
     <meta charset="UTF-8">
 </head>
 <body>
-    <h1>Microsoft Identity Python Web App</h1>
+    <h1>Microsoft Identity Python web app</h1>
     Welcome {{ user.get("name") }}!
     <li><a href='/graphcall'>Call Microsoft Graph API</a></li>
     <li><a href="/logout">Logout</a></li>
@@ -431,7 +431,7 @@ public class AccountController : Controller
 
 Если вы хотите узнать больше о регистрации, прочитайте протокольную документацию, доступную из [Open ID Connect.](./v2-protocols-oidc.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Перенос в рабочую среду](scenario-web-app-sign-user-production.md)

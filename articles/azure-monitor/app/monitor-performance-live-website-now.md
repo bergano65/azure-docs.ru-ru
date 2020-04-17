@@ -3,12 +3,12 @@ title: Мониторинг активного веб-приложения ASP.N
 description: Мониторинг производительности веб-сайта без необходимости его повторного развертывания. Работает с веб-приложениями ASP.NET, размещенными локально или в виртуальных машинах.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 63d632df61548d15a1e0a606cf2e198207faf341
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ba17ee275a744b88f2c76e7e3f99a1ac9cc8e758
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77670055"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536834"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструмент веб-приложений во время выполнения с application Insights Codeless Attach
 
@@ -310,11 +310,11 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 - Скачать и запустить [установщик status Monitor](https://go.microsoft.com/fwlink/?LinkId=506648)
 - Как альтернативный вариант, запустите [установщик веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx) и найдите в нем монитор состояний Application Insights.
 
-## <a name="next-steps"></a><a name="next"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
+* [Изучите метрики](../../azure-monitor/platform/metrics-charts.md), чтобы отслеживать производительность и использование.
 * [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
 * [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
 

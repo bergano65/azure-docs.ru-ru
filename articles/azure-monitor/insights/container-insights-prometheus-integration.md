@@ -2,13 +2,13 @@
 title: Наконфигурните azure Monitor для контейнеров Prometheus Интеграция (ru) Документы Майкрософт
 description: В этой статье описывается, как можно настроить Azure Monitor для агента контейнеров для скобливания метрик из Прометея с вашим кластером Kubernetes.
 ms.topic: conceptual
-ms.date: 01/13/2020
-ms.openlocfilehash: b774bf042778ca9118a7bc9f051655b200d87659
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/16/2020
+ms.openlocfilehash: 7fcf52cceb69834f68f8e4ce7a2674972a6430fd
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75931425"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537378"
 ---
 # <a name="configure-scraping-of-prometheus-metrics-with-azure-monitor-for-containers"></a>Настроить налаживание метрик Prometheus с помощью Azure Monitor для контейнеров
 
@@ -22,7 +22,6 @@ ms.locfileid: "75931425"
 Очистка метрик Prometheus поддерживается кластерами Kubernetes, размещенными на:
 
 - Служба Azure Kubernetes (AKS)
-- Экземпляры контейнеров Azure
 - Лазурный стек или на территории
 - Azure Red Hat OpenShift
 
@@ -73,7 +72,7 @@ container-azm-ms-agentconfig   4         56m
 
 Когда URL указан, Azure Monitor для контейнеров только царапает конечную точку. Когда указансервис Kubernetes, имя службы решается с кластерным DNS-сервером, чтобы получить IP-адрес, а затем разрешитая служба соскребита.
 
-|Область | Ключ | Тип данных | Значение | Описание |
+|Область | Клавиши | Тип данных | Значение | Описание |
 |------|-----|-----------|-------|-------------|
 | Кластерный | | | | Укажите любой из следующих трех методов, чтобы очистить конечные точки для метрик. |
 | | `urls` | Строка | Блок, разделенный запятой | Конечная точка HTTP (либо IP-адрес, либо указанный определенный путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE IP является специфическим azure Monitor для параметров контейнеров и может использоваться вместо IP-адреса узлов. Должно быть все верхние части.) |
@@ -268,6 +267,6 @@ InsightsMetrics
 
 Более подробная информация о том, как контролировать использование данных и анализировать затраты, доступна в [журнале Manage и costs с помощью журналов Azure Monitor.](../platform/manage-cost-storage.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Подробнее о настройке параметров сбора агентов для stdout, stderr и экологических переменных из контейнерных нагрузок [можно ознакомиться здесь.](container-insights-agent-config.md) 

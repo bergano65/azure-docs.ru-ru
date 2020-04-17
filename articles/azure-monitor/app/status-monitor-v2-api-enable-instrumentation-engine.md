@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: b3f298ac31cc584cd16553186359c87f69f27aad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 70102395b94c89d4ce0edfddeda1df0be0e2f216
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77671364"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536766"
 ---
 # <a name="application-insights-agent-api-enable-instrumentationengine"></a>Приложение Insights Agent API: Enable-InstrumentationEngine
 
@@ -59,10 +59,10 @@ Configuring IIS Environment for instrumentation engine...
 Configuring registry for instrumentation engine...
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   Просмотр телеметрии:
- - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
+ - [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
 - Используйте [аналитику](../../azure-monitor/app/analytics.md) для более продвинутых запросов.
 - [Создание панелей мониторинга.](../../azure-monitor/app/overview-dashboard.md)

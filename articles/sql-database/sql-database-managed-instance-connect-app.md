@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: 9f592c345b7cfcf5f21d816fde1fae6b8e6b98c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8d920fb7815e5a9fe30d8f3b4e40f36133d83222
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73823385"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81538092"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Connect your application to Azure SQL Database managed instance (Подключение приложения к управляемому экземпляру Базы данных SQL Azure)
 
@@ -133,6 +133,8 @@ ms.locfileid: "73823385"
 
 - Если используете пиринговую связь между виртуальными сетями, убедитесь, что вы следовали инструкциям по настройке [разрешения транзитов шлюзов и использования удаленных шлюзов](#connect-from-on-premises-with-vnet-peering).
 
+- При использовании VNet для подключения приложения Azure App Service и управляемой инстанции VNet имеет общедоступный диапазон IP-адресов, убедитесь, что настройки размещенных приложений позволяют направлять исходящий трафик в общедоступные IP-сети. Следуйте инструкциям в [региональной интеграции VNet](../app-service/web-sites-integrate-with-vnet.md#regional-vnet-integration).
+
 ## <a name="required-versions-of-drivers-and-tools"></a>Необходимые версии драйверов и средств
 
 Ниже приведены рекомендуемые минимальные версии средств и драйверов, необходимые, чтобы подключиться к Управляемому экземпляру.
@@ -146,9 +148,9 @@ ms.locfileid: "73823385"
 |Драйвер Node.js| 2.1.1 |
 |Драйвер OLEDB| 18.0.2.0 |
 |SSMS| 18.0 или [выше](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
-|[Smo](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или выше |
+|[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или выше |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об Управляемом экземпляре см. в [обзоре Управляемого экземпляра](sql-database-managed-instance.md).
 - См. инструкцию по [созданию Управляемого экземпляра](sql-database-managed-instance-get-started.md).

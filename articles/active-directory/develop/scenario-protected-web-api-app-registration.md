@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 2cdf3ff45a400d4b8d0b2605bf7ddc364aff1fe6
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 997dd98d35b74effe5d195f9a781fa0935286ee9
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80882392"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537225"
 ---
 # <a name="protected-web-api-app-registration"></a>Защищенный веб-aPI: Регистрация приложений
 
@@ -82,9 +82,9 @@ ms.locfileid: "80882392"
     - Выберите **имя области** и введите **access_as_user**.
     - **Выберите, кто может дать согласие,** и убедитесь, что **выбраны админы и пользователи.**
     - Выберите **имя отображения согласия админа** и введите **Access TodoListService в качестве пользователя.**
-    - Выберите **описание согласия админа** и введите **доступ к Web API TodoListService в качестве пользователя.**
+    - Выберите **описание согласия админа** и введите **доступ к веб-API TodoListService в качестве пользователя.**
     - Выберите **имя отображения согласия пользователя** и введите Access **TodoListService в качестве пользователя.**
-    - Выберите **описание согласия пользователя** и введите доступ к Web **API TodoListService в качестве пользователя.**
+    - Выберите **описание согласия пользователя** и введите доступ к **веб-API TodoListService в качестве пользователя.**
     - Держите **значение состояния** для **включено.**
  1. Выберите **область добавления.**
 
@@ -149,7 +149,7 @@ ms.locfileid: "80882392"
 
 1. Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Конфигурация кода приложения](scenario-protected-web-api-app-configuration.md)

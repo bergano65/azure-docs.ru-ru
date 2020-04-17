@@ -318,8 +318,6 @@
               href: app/pre-aggregated-metrics-log-metrics.md
             - name: Определения метрик на основе журнала
               href: platform/app-insights-metrics.md
-            - name: Классический обозреватель метрик
-              href: app/metrics-explorer.md
         - name: Поиск
           href: app/diagnostic-search.md
         - name: Profiler

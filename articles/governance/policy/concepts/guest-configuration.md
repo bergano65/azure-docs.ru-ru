@@ -3,12 +3,12 @@ title: Научитесь проверять содержимое виртуал
 description: Узнайте, как Azure Policy использует агента конфигурации гостей для проверки настроек внутри виртуальных машин.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4a2989badc099a199bf21f7e020ca8e6256ddaf0
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.openlocfilehash: e4899f6b3108cabb4e9cdd36e4b2bc5cd2f1cbd4
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81113438"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81538041"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -59,7 +59,7 @@ ms.locfileid: "81113438"
 |Microsoft|Windows Server|2012 Центр обработки данных, 2012 R2 Центр обработки данных, 2016 Центр обработки данных, 2019 Центр обработки данных|
 |Microsoft|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|7.3, 7.4, 7.5, 7.6, 7.7|
-|Red Hat|Red Hat Enterprise Linux|7.4, 7.5, 7.6, 7.7|
+|Red Hat|Red Hat Enterprise Linux|7.4, 7.5, 7.6, 7.7, 7.8|
 |Suse|SLES|12 с пакетом обновления 3|
 
 ### <a name="unsupported-client-types"></a>Неподдерживаемые типы клиентов
@@ -169,7 +169,7 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 - [Встроенные инициативы - Конфигурация гостей](../samples/built-in-initiatives.md#guest-configuration)
 - [Образцы политики Azure GitHub репо](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policySetDefinitions/Guest%20Configuration)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как просматривать сведения о каждом параметре из [представления о соответствии конфигурации гостей](../how-to/determine-non-compliance.md#compliance-details-for-guest-configuration)
 - Просмотрите [примеры на примерах политики Azure](../samples/index.md).
