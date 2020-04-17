@@ -6,14 +6,14 @@ services: application-gateway
 author: abshamsft
 ms.service: application-gateway
 ms.topic: article
-ms.date: 01/30/2020
+ms.date: 04/16/2020
 ms.author: victorh
-ms.openlocfilehash: 809274aba35e9607aeacf7c6483ec3d10f899667
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: df21a2c40dd532ac1ff321638099ceee8a2b3e53
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81312374"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535610"
 ---
 # <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>Настройка шлюза приложения с помощью внутренней точки балансировора нагрузки (ILB)
 
@@ -95,8 +95,8 @@ ms.locfileid: "81312374"
    - выберите *myResourceGroupAG* для **группы ресурсов**.
    - *myVM* - для **виртуальной машины имя**.
    - Выберите **Windows Server 2019 Центр обработки данных** для **изображения.**
-   - *azureadmin* - для **имени пользователя**.
-   - *Azure123456!* для **пароля**.
+   - действительное **имя пользователя**.
+   - действительный **пароль**.
 5. Примите оставшиеся по умолчанию и выберите **Следующий : Диски**.
 6. Примите по умолчанию и выберите **Следующую : Сеть**.
 7. Убедитесь, что выбрана виртуальная сеть **myVNet** и подсеть **myBackendSubnet**.

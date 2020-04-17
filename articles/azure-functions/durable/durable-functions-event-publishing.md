@@ -3,12 +3,12 @@ title: Публикации устойчивых функций в службе 
 description: Узнайте, как настроить автоматическую публикацию в службе "Сетка событий Azure" для устойчивых функций.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 52ffcd4eb81936ffcfa61580288c60bd59ffb744
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 671f7bd5221a936ea9dad0f0cece895bdbe9512f
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78249758"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535491"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
@@ -68,14 +68,36 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 Найдите файл `host.json` в вашем проекте устойчивых функций.
 
+### <a name="durable-functions-1x"></a>Долгосрочные функции 1.x
+
 Добавьте `eventGridTopicEndpoint` и `eventGridKeySettingName` в свойство `durableTask`.
 
 ```json
 {
+  "durableTask": {
+    "eventGridTopicEndpoint": "https://<topic_name>.westus2-1.eventgrid.azure.net/api/events",
+    "eventGridKeySettingName": "EventGridKey"
+  }
+}
+```
+
+### <a name="durable-functions-2x"></a>Долгосрочные функции 2.x
+
+Добавьте `notifications` раздел `durableTask` к свойству файла, заменив `<topic_name>` имя, которое вы выбрали. Если `durableTask` или `extensions` свойства не существуют, создайте их следующим образом:
+
+```json
+{
+  "version": "2.0",
+  "extensions": {
     "durableTask": {
-        "eventGridTopicEndpoint": "https://<topic_name>.westus2-1.eventgrid.azure.net/api/events",
-        "eventGridKeySettingName": "EventGridKey"
+      "notifications": {
+        "eventGrid": {
+          "topicEndpoint": "https://<topic_name>.westus2-1.eventgrid.azure.net/api/events",
+          "keySettingName": "EventGridKey"
+        }
+      }
     }
+  }
 }
 ```
 
@@ -132,7 +154,7 @@ public static void Run(JObject eventGridEvent, ILogger log)
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 module.exports = async function(context, eventGridEvent) {
@@ -219,7 +241,7 @@ module.exports = async function(context, eventGridEvent) {
 
 Чтобы протестировать локально, прочитайте [локальный отладку Azure Function Event Grid Trigger.](../functions-debug-event-grid-trigger-local.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Управление экземплярами в устойчивых функциях (Функции Azure)](durable-functions-instance-management.md)

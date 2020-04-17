@@ -10,16 +10,16 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
-ms.openlocfilehash: b3d068a8100cf78ccffac6d537fe71942239f383
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: d5b6452684757aead684356fd9bb032b90c58c4a
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886166"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535831"
 ---
 # <a name="add-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавьте активный каталог Azure, используя подключенные службы в Visual Studio
 
-Azure Active Directory (Azure AD) позволяет обеспечить единый вход для веб-приложений ASP.NET MVC или проверку подлинности Active Directory в службах веб-API. Благодаря аутентификации Azure AD пользователи смогут подключаться к вашим веб-приложениям, используя свои учетные записи Azure Active Directory. В число преимуществ проверки подлинности Azure AD с веб-API входит усиленная защита данных при использовании API из веб-приложения. С Azure AD вам не придется управлять отдельной системой проверки подлинности с отдельным управлением пользователями и учетными записями.
+Используя Active Directory Azure (Azure AD), можно поддерживать единый знак (SSO) для ASP.NET веб-приложений MVC или active Directory Authentication в службах Web API. Благодаря аутентификации Azure AD пользователи смогут подключаться к вашим веб-приложениям, используя свои учетные записи Azure Active Directory. Преимущества azure AD Authentication с веб-API включают повышенную безопасность данных при разоблачении API из веб-приложения. С Azure AD вам не придется управлять отдельной системой проверки подлинности с отдельным управлением пользователями и учетными записями.
 
 В этой статье и других статьях этой серии приводятся сведения об использовании подключенной службы Visual Studio в Active Directory. Возможность доступна в Visual Studio 2015 и позже.
 
@@ -70,7 +70,7 @@ Azure Active Directory (Azure AD) позволяет обеспечить еди
 - [Что произошло с моим проектом .NET MVC?](vs-active-directory-dotnet-what-happened.md)
 - [Что произошло с моим проектом веб-API?](vs-active-directory-webapi-what-happened.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сценарии аутентификации для активного каталога Azure](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

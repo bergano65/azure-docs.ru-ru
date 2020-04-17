@@ -6,16 +6,19 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 05/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8caf502db91ab09eea48fc8a902dacf6bf40f24c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a49f2596df91c44deafa1be83483f8972e223742
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79278640"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535576"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
 Контроль доступа на основе ролей (RBAC) Azure обеспечивает управление доступом к ресурсам Azure. С помощью [RBAC](../role-based-access-control/overview.md) вы сможете распределить обязанности внутри своей команды и предоставить доступ пользователям, группам и приложениям на том уровне, который им необходим для выполнения поставленных задач. Вы можете предоставить ролевой доступ пользователям с помощью портала Azure, инструментов командной строки Azure или ApIs Управления Управлением Azure.
+
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](automation-update-azure-modules.md)
 
 ## <a name="roles-in-automation-accounts"></a>Роли в учетных записях службы автоматизации
 
@@ -204,11 +207,11 @@ ms.locfileid: "79278640"
 |Microsoft.Authorization/*|Управление авторизацией|
 |Microsoft.Support/*|Создание запросов в службу поддержки и управление ими|
 
-## <a name="onboarding"></a>Переход
+## <a name="onboarding-permissions"></a>Разрешения на посадку
 
-В следующих таблицах показаны минимальные требуемые разрешения, необходимые для подключения виртуальных машин к решениям по отслеживанию изменений или управлению обновлениями.
+В следующих разделах описаны минимальные необходимые разрешения, необходимые для посадки виртуальных машин для отслеживания изменений или решений управления обновлениями.
 
-### <a name="onboarding-from-a-virtual-machine"></a>Подключение из виртуальной машины
+### <a name="permissions-for-onboarding-from-a-vm"></a>Разрешения на посадку от VM
 
 |**Действие**  |**Разрешение**  |**Минимальный объем**  |
 |---------|---------|---------|
@@ -230,7 +233,7 @@ ms.locfileid: "79278640"
 
 <sup>1</sup> Это разрешение необходимо для посадки на борт через опыт портала VM.
 
-### <a name="onboarding-from-automation-account"></a>Подключение из учетной записи службы автоматизации
+### <a name="permissions-for-onboarding-from-automation-account"></a>Разрешения на посадку с аккаунта Automation
 
 |**Действие**  |**Разрешение** |**Минимальная область**  |
 |---------|---------|---------|
@@ -250,11 +253,11 @@ ms.locfileid: "79278640"
 |Создание или изменение сохраненного поискового запроса     | Microsoft.OperationalInsights/workspaces/write           | Рабочая область        |
 |Создание или изменение конфигурации области  | Microsoft.OperationalInsights/workspaces/write   | Рабочая область|
 
-## <a name="update-management"></a>Управление обновлениями
+## <a name="update-management-permissions"></a>Разрешения управления обновлением
 
 Управление обновлениями действует между несколькими службами для обеспечения их обслуживания. В следующей таблице показаны разрешения, необходимые для развертываний управления обновлениями.
 
-|**Ресурсов**  |**Role**  |**Область**  |
+|**Ресурс**  |**Role**  |**Область действия**  |
 |---------|---------|---------|
 |Учетная запись службы автоматизации     | участник Log Analytics.       | Учетная запись службы автоматизации        |
 |Учетная запись службы автоматизации    | Участник виртуальной машины        | Группа ресурсов для учетной записи        |
@@ -265,12 +268,12 @@ ms.locfileid: "79278640"
 
 ## <a name="configure-rbac-for-your-automation-account"></a>Настройки RBAC для учетной записи службы автоматизации
 
-В следующем разделе показано, как настроить RBAC на свой аккаунт Автоматизации через [портал](#configure-rbac-using-the-azure-portal) и [PowerShell.](#configure-rbac-using-powershell)
+В следующем разделе показано, как настроить RBAC на учетную запись Automation через [портал Azure](#configure-rbac-using-the-azure-portal) и [PowerShell.](#configure-rbac-using-powershell)
 
 ### <a name="configure-rbac-using-the-azure-portal"></a>Настройка RBAC с помощью портала Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com/) и откройте учетную запись службы автоматизации на странице "Учетные записи автоматизации".
-2. Нажмите на элемент **управления доступом (IAM)** в верхнем левом углу, чтобы открыть страницу управления доступом (IAM). Эту страницу можно использовать для добавления новых пользователей, групп и приложений для управления учетной записью автоматизации и просмотра существующих ролей, настраиваемых для учетной записи Автоматизации.
+2. Нажмите на **элемент управления доступом (IAM),** чтобы открыть страницу управления доступом (IAM). Эту страницу можно использовать для добавления новых пользователей, групп и приложений для управления учетной записью автоматизации и просмотра существующих ролей, настраиваемых для учетной записи Автоматизации.
 3. Перейдите на вкладку **Назначения ролей**.
 
    ![Кнопка доступа](media/automation-role-based-access-control/automation-01-access-button.png)
@@ -311,10 +314,10 @@ ms.locfileid: "79278640"
 
 Вы также можете настроить ролевой доступ к учетной записи автоматизации, используя следующие [cmdlets Azure PowerShell:](../role-based-access-control/role-assignments-powershell.md)
 
-Командлет [Get-AzureRmRoleDefinition](/previous-versions/azure/mt603792(v=azure.100)) выводит список всех ролей RBAC, доступных в Azure Active Directory. Вы можете использовать этот cmdlet с параметром *имени,* чтобы перечислить все действия, которые может выполнять определенная роль.
+[Get-AzRoleDefinition](https://docs.microsoft.com/powershell/module/Az.Resources/Get-AzRoleDefinition?view=azps-3.7.0) перечисляет все роли RBAC, которые доступны в Active Directory Azure. Вы можете использовать этот cmdlet с параметром, `Name` чтобы перечислить все действия, которые может выполнять определенная роль.
 
 ```azurepowershell-interactive
-Get-AzureRmRoleDefinition -Name 'Automation Operator'
+Get-AzRoleDefinition -Name 'Automation Operator'
 ```
 
 Ниже приведен пример выходных данных.
@@ -330,12 +333,12 @@ NotActions       : {}
 AssignableScopes : {/}
 ```
 
-Командлет [Get-AzureRmRoleAssignment](/previous-versions/azure/mt619413(v=azure.100)) выводит список назначений ролей RBAC Azure AD в указанной области. Без каких-либо параметров, это cmdlet возвращает все ролевые задания, сделанные в соответствии с подпиской. Используйте параметр *ExpandPrincipalGroups* для списка заданий доступа для указанного пользователя, а также групп, к которым принадлежит пользователь.
+[Get-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/get-azroleassignment?view=azps-3.7.0) перечисляет ролевые назначения Azure AD RBAC в указанной области. Без каких-либо параметров, это cmdlet возвращает все ролевые задания, сделанные в соответствии с подпиской. Используйте `ExpandPrincipalGroups` параметр для списка заданий доступа для указанного пользователя, а также групп, к которым принадлежит пользователь.
 
 **Пример:** Используйте следующие cmdlet, чтобы перечислить всех пользователей и их роли в учетной записи Автоматизации.
 
 ```azurepowershell-interactive
-Get-AzureRMRoleAssignment -scope '/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation account name>'
+Get-AzRoleAssignment -Scope '/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation account name>'
 ```
 
 Ниже приведен пример выходных данных.
@@ -352,12 +355,12 @@ ObjectId           : 15f26a47-812d-489a-8197-3d4853558347
 ObjectType         : User
 ```
 
-Используйте [New-AzureRmRoleAssignment](/previous-versions/azure/mt603580(v=azure.100)) для присвоения доступа к пользователям, группам и приложениям для определенной области.
+Используйте [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzRoleAssignment?view=azps-3.7.0) для придания доступа к пользователям, группам и приложениям к определенной области.
     
 **Пример.** Следующая команда назначает роль оператора службы автоматизации пользователю в области учетной записи службы автоматизации.
 
 ```azurepowershell-interactive
-New-AzureRmRoleAssignment -SignInName <sign-in Id of a user you wish to grant access> -RoleDefinitionName 'Automation operator' -Scope '/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation account name>'
+New-AzRoleAssignment -SignInName <sign-in Id of a user you wish to grant access> -RoleDefinitionName 'Automation operator' -Scope '/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation account name>'
 ```
 
 Ниже приведен пример выходных данных.
@@ -374,17 +377,17 @@ ObjectId           : f5ecbe87-1181-43d2-88d5-a8f5e9d8014e
 ObjectType         : User
 ```
 
-Командлет [Remove-AzureRmRoleAssignment](/previous-versions/azure/mt603781(v=azure.100)) удаляет доступ указанного пользователя, группы или приложения к определенной области.
+Используйте [Remove-AzRoleAssignment](https://docs.microsoft.com/powershell/module/Az.Resources/Remove-AzRoleAssignment?view=azps-3.7.0) для удаления доступа определенного пользователя, группы или приложения из определенной области.
 
-**Пример.** Следующая команда удаляет пользователя из роли оператора службы автоматизации в области учетной записи службы автоматизации.
+**Пример:** Используйте следующую команду, чтобы удалить пользователя из роли оператора автоматизации в области учетной записи Automation.
 
 ```azurepowershell-interactive
-Remove-AzureRmRoleAssignment -SignInName <sign-in Id of a user you wish to remove> -RoleDefinitionName 'Automation Operator' -Scope '/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation account name>'
+Remove-AzRoleAssignment -SignInName <sign-in Id of a user you wish to remove> -RoleDefinitionName 'Automation Operator' -Scope '/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation account name>'
 ```
 
-В предыдущих примерах замените "идентификатор ввески пользователя, который вы хотите удалить", "SubscriptionID", "Имя группы ресурсов" и название учетной записи Automation" с данными учетной записи. Выберите **да,** когда предложено подтвердить, прежде чем продолжать удалять назначения роли пользователя.
+В предыдущем примере `sign-in ID of a user you wish to remove` `SubscriptionID` `Resource Group Name`замените, `Automation account name` и с реквизитами учетной записи. Выберите **да,** когда предложено подтвердить, прежде чем продолжать удалять назначения роли пользователя.
 
-### <a name="user-experience-for-automation-operator-role---automation-account"></a>Опыт пользователя для роли оператора автоматизации - Автоматизация счета
+### <a name="user-experience-for-automation-operator-role---automation-account"></a>Пользовательский опыт для роли оператора автоматизации - Автоматизация счета
 
 Когда пользователь, назначенный на роль оператора автоматизации в области учетной записи Automation, просматривает учетную запись Automation, которой он/она назначены, пользователь может просматривать только список рун, задания и расписания, созданные в учетной записи Automation. Этот пользователь не может просматривать определения этих элементов. Пользователь может запускать, останавливать, приостанавливать, возобновлять или планировать задание runbook. Однако пользователь не имеет доступа к другим ресурсам автоматизации, таким как конфигурации, гибридные группы рабочих или узлов DSC.
 
@@ -392,7 +395,7 @@ Remove-AzureRmRoleAssignment -SignInName <sign-in Id of a user you wish to remov
 
 ## <a name="configure-rbac-for-runbooks"></a>Настройка RBAC для беговых книг
 
-Azure Automation позволяет присваивать RBAC определенным книгам. Для этого запустите следующий сценарий, чтобы добавить пользователя в определенный runbook. Админ-амин автоматизации или админ-арендатор может запустить этот скрипт.
+Azure Automation позволяет присваивать RBAC определенным книгам. Для этого запустите следующий сценарий, чтобы добавить пользователя в определенный runbook. Администратор учетной записи автоматизации или администратор арендатора может запустить этот скрипт.
 
 ```azurepowershell-interactive
 $rgName = "<Resource Group Name>" # Resource Group name for the Automation account
@@ -401,19 +404,19 @@ $rbName = "<Name of Runbook>" # Name of the runbook
 $userId = "<User ObjectId>" # Azure Active Directory (AAD) user's ObjectId from the directory
 
 # Gets the Automation account resource
-$aa = Get-AzureRmResource -ResourceGroupName $rgName -ResourceType "Microsoft.Automation/automationAccounts" -ResourceName $automationAccountName
+$aa = Get-AzResource -ResourceGroupName $rgName -ResourceType "Microsoft.Automation/automationAccounts" -ResourceName $automationAccountName
 
 # Get the Runbook resource
-$rb = Get-AzureRmResource -ResourceGroupName $rgName -ResourceType "Microsoft.Automation/automationAccounts/runbooks" -ResourceName "$automationAccountName/$rbName"
+$rb = Get-AzResource -ResourceGroupName $rgName -ResourceType "Microsoft.Automation/automationAccounts/runbooks" -ResourceName "$automationAccountName/$rbName"
 
 # The Automation Job Operator role only needs to be run once per user.
-New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Job Operator" -Scope $aa.ResourceId
+New-AzRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Job Operator" -Scope $aa.ResourceId
 
 # Adds the user to the Automation Runbook Operator role to the Runbook scope
-New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runbook Operator" -Scope $rb.ResourceId
+New-AzRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runbook Operator" -Scope $rb.ResourceId
 ```
 
-После запуска скрипта войдите в систему пользователя на портал Azure и просмотрите **все ресурсы.** В списке пользователь может увидеть книгу, для которой он/она был добавлен в качестве оператора автоматизации Runbook.
+После запуска скрипта войдите в систему пользователя на портал Azure и выберите **все ресурсы.** В списке пользователь может увидеть книгу, для которой он/она был добавлен в качестве оператора автоматизации Runbook.
 
 ![Роли RBAC для runbook на портале](./media/automation-role-based-access-control/runbook-rbac.png)
 
@@ -423,7 +426,7 @@ New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runb
 
 ![Может только запускать](media/automation-role-based-access-control/automation-only-start.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для получения информации о способах настройки RBAC для автоматизации Azure, обратитесь к [управлению RBAC с Azure PowerShell.](../role-based-access-control/role-assignments-powershell.md)
 * Для получения подробной информации о способах запуска runbook, [см.](automation-starting-a-runbook.md)

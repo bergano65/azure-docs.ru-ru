@@ -6,12 +6,12 @@ author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/01/2020
-ms.openlocfilehash: 3b8c2f6ec33965317d2aaa23a36b6becff11a54a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b1fc4bce988b13a9ff76fd961d524ce945876054
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75725732"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535406"
 ---
 # <a name="troubleshoot-azure-migrate-projects"></a>Устранение неполадок с проектами Миграции Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "75725732"
 
 ## <a name="cant-find-a-geography"></a>Не умудоли
 
-Вы можете создать проект Azure Migrate в [поддерживаемых географических регионах.](migrate-support-matrix.md#supported-geographies) Обратите внимание, что география проекта используется для хранения обнаруженных метаданных машины. Вы можете оценить или перенести машины в других местах тоже.
+Можно создать проект Azure Migrate в поддерживаемых географических регионах для [общедоступных](migrate-support-matrix.md#supported-geographies-public-cloud) и [правительственных облаков.](migrate-support-matrix.md#supported-geographies-azure-government)
 
 ## <a name="what-are-vm-limits"></a>Что такое лимиты VM?
 
@@ -63,6 +63,6 @@ ms.locfileid: "75725732"
 
 Убедитесь, что у вас есть правильный выбранный проект. В концентраторе Azure Migrate > **серверов** или в **базах данных**нажмите на **Изменение** рядом с **проектом «Мигрит» (Изменение)** в правом верхнем углу экрана. Выберите правильную подписку и название проекта > **OK**. Страница должна обновляться с помощью дополнительных инструментов выбранного проекта.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Добавление инструментов [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты Azure Migrate.

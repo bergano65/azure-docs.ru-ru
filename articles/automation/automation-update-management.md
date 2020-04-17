@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 02/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: c76b14e4f08ec930159498da4a35fdad0341929e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eaba4bf7760e150f2477ee743c797f94784b8506
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79278510"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535508"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -127,7 +127,7 @@ ms.locfileid: "79278510"
 
 ## <a name="permissions"></a>Разрешения
 
-Для создания развертываний обновлений и управления ими требуются определенные разрешения. Чтобы узнать об этих [Role-based access – Update Management](automation-role-based-access-control.md#update-management)разрешениях, см.
+Для создания развертываний обновлений и управления ими требуются определенные разрешения. Чтобы узнать об этих [Role-based access – Update Management](automation-role-based-access-control.md#update-management-permissions)разрешениях, см.
 
 ## <a name="solution-components"></a>Компоненты решения
 
@@ -258,6 +258,6 @@ sudo yum -q --security check-update
 
 - [С шаблоном управления ресурсами Azure](automation-update-management-deploy-template.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотрите часто [задаваемые вопросы](automation-faq.md) автоматизации Azure, чтобы просмотреть общие вопросы об этом решении.

@@ -14,12 +14,12 @@ ms.date: 11/04/2019
 ms.author: sagonzal
 ms.reviewer: nacanuma, twhitney
 ms.custom: aaddev
-ms.openlocfilehash: 2929b94a2cb624b96649292714fe93dea09a2085
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 7ba845e79074313f0ccf2c066ba016bd72d46efe
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886506"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81534573"
 ---
 # <a name="adal-to-msal-migration-guide-for-java"></a>ADAL для руководства по миграции MSAL для Java
 
@@ -82,7 +82,7 @@ MSAL для Java добавляет [кэш маркеров](msal-acquire-cache
 
 Конечная точка версии 1.0 (используется в ADAL) выдает только маркеры версии 1.0.
 
-Конечная точка v2.0 (используется MSAL) может излучать токены v1.0 и v2.0. В манифесте приложения веб-API доступно свойство, которое позволяет разработчикам выбрать допустимую версию маркера. Смотрите `accessTokenAcceptedVersion` в [заявке манифест](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) справочной документации.
+Конечная точка v2.0 (используется MSAL) может излучать токены v1.0 и v2.0. Свойство манифеста приложения web API позволяет разработчикам выбирать, какая версия токена принимается. Смотрите `accessTokenAcceptedVersion` в [заявке манифест](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) справочной документации.
 
 Для получения дополнительной информации о токенах v1.0 и v2.0 [см.](https://docs.microsoft.com/azure/active-directory/develop/access-tokens)
 
@@ -109,7 +109,8 @@ PublicClientApplication app = PublicClientApplication.builder(CLIENT_ID) // Clie
 IAuthenticationResult result = app.acquireToken(parameters);
 ```
 
-Возвращает `IAuthenticationResult` токен доступа и токен идентификатор, в то время как новый маркер обновления хранится в кэше. Приложение также теперь будет содержать IAccount:
+Возвращает `IAuthenticationResult` токен доступа и токен идентификатор, в то время как новый маркер обновления хранится в кэше.
+Приложение также теперь будет содержать IAccount:
 
 ```java
 Set<IAccount> accounts =  app.getAccounts().join();
@@ -118,6 +119,6 @@ Set<IAccount> accounts =  app.getAccounts().join();
 Чтобы использовать токены, которые сейчас находятся в кэше, позвоните по телефону:
 
 ```java
-SilentParameters parameters = SilentParameters.builder(scope, accounts.iterator().next()).build(); 
+SilentParameters parameters = SilentParameters.builder(scope, accounts.iterator().next()).build();
 IAuthenticationResult result = app.acquireToken(parameters);
 ```

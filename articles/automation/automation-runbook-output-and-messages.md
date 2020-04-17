@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 457b2d2211ea1ba5fa36cec4b7e9a214f5bcad77
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 92b6378b00e12f618d07798b5ce789cbd9971544
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79367097"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535542"
 ---
 # <a name="runbook-output-and-messages-in-azure-automation"></a>Выходные данные и сообщения Runbook в службе автоматизации Azure
 
@@ -240,7 +240,7 @@ Get-AzAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
 **Для отслеживания уровня активности:**
 
 1. На портале Azure выберите свою учетную запись службы автоматизации.
-2. Выберите **Runbooks** в разделе **Автоматизация процессов,** чтобы открыть список runbooks.
+2. Выберите **Runbooks** под **автоматизацией процессов,** чтобы открыть список runbooks.
 3. На странице Runbooks выберите графический справочник из списка runbooks.
 4. В разделе **Параметры** щелкните **Ведение журналов и трассировка**.
 5. На странице регистрации и отслеживания, под **журналом многословные записи**, нажмите **на,** чтобы включить многословную регистрацию.
@@ -260,7 +260,7 @@ Azure Automation может отправлять статус работы и п
 
 Для получения дополнительной информации о настройке интеграции с журналами Azure Monitor [Forward job status and job streams from Automation to Azure Monitor logs](automation-manage-send-joblogs-log-analytics.md)для сбора, соотношения и действия по данным о работе см.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать больше о выполнении runbook, мониторинге заданий runbook и других технических деталях, [см.](automation-runbook-execution.md)
 * Чтобы понять, как проектировать и использовать детские книги, смотрите [в учебниках «Дети» в Azure Automation.](automation-child-runbooks.md)

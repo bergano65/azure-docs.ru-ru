@@ -5,12 +5,12 @@ keywords: azure app service, web app, mobile app, api app, function app, securit
 ms.topic: article
 ms.date: 08/24/2018
 ms.custom: seodec18
-ms.openlocfilehash: e28935f73511e5ad973929517658cc626b5a6ea2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8a098b1924bf7c2866f6afd7452b8dd3b93f3109
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79475380"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535661"
 ---
 # <a name="security-in-azure-app-service"></a>Безопасность в Службе приложений Azure
 
@@ -31,14 +31,14 @@ ms.locfileid: "79475380"
 
 ## <a name="https-and-certificates"></a>Протокол HTTPS и сертификаты
 
-Служба приложений позволяет защитить приложения с помощью протокола [HTTPS](https://wikipedia.org/wiki/HTTPS). После создания приложения к его доменному имени по умолчанию (\<app_name>.azurewebsites.net) уже можно получить доступ с помощью протокола HTTPS. Если вы [настроили пользовательский домен для вашего приложения,](app-service-web-tutorial-custom-domain.md)вы также должны [обеспечить его с помощью sSL-сертификата,](configure-ssl-bindings.md) чтобы клиентские браузеры могли делать защищенные соединения HTTPS с пользовательским доменом. Существует несколько типов сертификатов, поддерживаемых Службой поддержки приложений:
+Служба приложений позволяет защитить приложения с помощью протокола [HTTPS](https://wikipedia.org/wiki/HTTPS). После создания приложения к его доменному имени по умолчанию (\<app_name>.azurewebsites.net) уже можно получить доступ с помощью протокола HTTPS. Если вы [настроили пользовательский домен для вашего приложения,](app-service-web-tutorial-custom-domain.md)вы также должны [обеспечить его с tLS / SSL сертификат,](configure-ssl-bindings.md) так что клиентские браузеры могут сделать защищенные соединения HTTPS на пользовательский домен. Существует несколько типов сертификатов, поддерживаемых Службой поддержки приложений:
 
 - Бесплатный сертификат службы приложений
 - Сертификат службы приложений
 - Сертификат сторонних токов
 - Сертификат, импортированный из Убежища ключей Azure
 
-Для получения дополнительной информации смотрите [сертификат SSL в службе приложений Azure.](configure-ssl-certificate.md)
+Для получения дополнительной информации в [службе приложений Azure можно добавить сертификат TLS/SSL.](configure-ssl-certificate.md)
 
 ## <a name="insecure-protocols-http-tls-10-ftp"></a>Незащищенные протоколы (HTTP, TLS 1.0, FTP)
 

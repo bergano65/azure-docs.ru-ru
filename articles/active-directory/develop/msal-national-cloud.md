@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: dfca2b1311f1b55f19d5709f7c9ca7c3e366769c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f3bb4dd1c564e5f6c4a8ee1bb5bf7424a74a339e
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76695744"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81533995"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Используйте MSAL в национальной облачной среде
 
@@ -62,16 +62,16 @@ ms.locfileid: "76695744"
 Следующие учебники демонстрируют, как создать web-приложение .NET Core 2.2 MVC. Приложение использует OpenID Connect для регистрации пользователей с рабочей и школьной учетной записью в организации, которая принадлежит к национальному облаку.
 
 - Чтобы войти в число пользователей и приобрести токены, следуйте этому учебнику: [Создайте ASP.NET пользователей Web-приложений Core в суверенных облаках с платформой идентификации Microsoft.](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-4-Sovereign#build-an-aspnet-core-web-app-signing-in-users-in-sovereign-clouds-with-the-microsoft-identity-platform)
-- Чтобы вызвать Microsoft Graph API, следуйте этому учебнику: [Используя идентификационную платформу Майкрософт для вызова API Microsoft Graph от веб-приложения An ASP.NET Core 2.x от имени пользователя, восопданным с помощью своей учетной записи в Microsoft National Cloud.](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-4-Sovereign-Call-MSGraph#using-the-microsoft-identity-platform-to-call-the-microsoft-graph-api-from-an-an-aspnet-core-2x-web-app-on-behalf-of-a-user-signing-in-using-their-work-and-school-account-in-microsoft-national-cloud)
+- Чтобы вызвать Microsoft Graph API, следуйте этому учебнику: [Используя идентификационную платформу Майкрософт для вызова API Microsoft Graph от веб-приложения ASP.NET Core 2.x от имени пользователя, восопданным с помощью своей учетной записи работы и школы в Microsoft National Cloud.](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-4-Sovereign-Call-MSGraph#using-the-microsoft-identity-platform-to-call-the-microsoft-graph-api-from-an-an-aspnet-core-2x-web-app-on-behalf-of-a-user-signing-in-using-their-work-and-school-account-in-microsoft-national-cloud)
 
-## <a name="javascript"></a>[Javascript](#tab/javascript)
+## <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Для включения приложения MSAL.js для суверенных облаков:
 
-### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 
 1. Войдите на [портал Azure](https://portal.azure.us/).
-    
+
    Чтобы найти конечные точки портала Azure для других национальных облаков, смотрите [конечные точки регистрации приложений.](authentication-national-cloud.md#app-registration-endpoints)
 
 1. Если ваша учетная запись предоставляет вам доступ к более чем одному арендатору, выберите учетную запись в правом верхнем углу и установите сеанс портала для желаемого арендатора Azure AD.
@@ -83,13 +83,13 @@ ms.locfileid: "76695744"
 1. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)**.
 1. Этот учебник требует от вас, чтобы включить [неявный поток гранта.](v2-oauth2-implicit-grant-flow.md) В левой области зарегистрированного приложения выберите **Проверка подлинности**.
 1. В окне **Дополнительные параметры** в разделе **Неявное предоставление** установите флажки **Токен идентификатора** и **Маркеры доступа**. Идентификаторы и токены доступа необходимы, потому что это приложение должно войти в пользователя и вызвать API.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="step-2--set-up-your-web-server-or-project"></a>Шаг 2: Настройка веб-сервера или проекта
 
 - [Загрузите файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip) для локального веб-сервера, например Узла.
 
-  или диспетчер конфигурации служб
+  or
 
 - [Скачать проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip).
 
@@ -126,12 +126,12 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 - `Enter_the_Tenant_Info_Here`устанавливается на один из следующих вариантов:
     - Если приложение поддерживает **учетные записи в этом каталоге организации,** замените это значение идентификатором или идентификатором клиента (например, contoso.microsoft.com).
     - Если приложение поддерживает **учетные записи в любом каталоге организации,** замените это значение `organizations`на .
-    
+
     Чтобы найти конечные точки проверки подлинности для всех национальных облаков, смотрите [конечные точки проверки подлинности Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints)
 
     > [!NOTE]
     > Личные учетные записи Майкрософт не поддерживаются в национальных облаках.
-  
+
 - `graphEndpoint`— конечная точка Microsoft Graph для облака Майкрософт для правительства США.
 
    Чтобы найти конечные точки Microsoft Graph [Microsoft Graph endpoints in national clouds](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)для всех национальных облаков, см.
@@ -149,16 +149,16 @@ const myMSALObj = new UserAgentApplication(msalConfig);
     ```json
     "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
     ```
-    
+
 - Для вызова графика Майкрософт требуется определенный URL-адрес точки графика Graph, который зависит от того, какое облако вы используете. Чтобы найти конечные точки Microsoft Graph для всех национальных облаков, обратитесь к [конечным точкам службы Microsoft Graph и Graph Explorer.](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)
 
     Вот пример конечной точки графика с областью охвата:
-    
+
     ```json
     "endpoint" : "https://graph.microsoft.us/v1.0/me"
     "scope": "User.Read"
     ```
-    
+
 ## <a name="java"></a>[Java](#tab/java)
 
 Для включения приложения MSAL для Java для суверенных облаков:
@@ -194,12 +194,12 @@ MSALAADAuthority *aadAuthority =
                                                    audienceType:MSALAzureADMultipleOrgsAudience
                                                       rawTenant:nil
                                                           error:nil];
-                                                          
+
 MSALPublicClientApplicationConfig *config =
                 [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"
                                                                 redirectUri:@"<your-redirect-uri-here>"
                                                                   authority:aadAuthority];
-                                                                  
+
 NSError *applicationError = nil;
 MSALPublicClientApplication *application =
                 [[MSALPublicClientApplication alloc] initWithConfiguration:config error:&applicationError];
@@ -213,18 +213,18 @@ MSAL для iOS и macOS может использоваться для прио
 
 ```swift
 let authority = try? MSALAADAuthority(cloudInstance: .usGovernmentCloudInstance, audienceType: .azureADMultipleOrgsAudience, rawTenant: nil)
-        
+
 let config = MSALPublicClientApplicationConfig(clientId: "<your-client-id-here>", redirectUri: "<your-redirect-uri-here>", authority: authority)
 if let application = try? MSALPublicClientApplication(configuration: config) { /* Use application */}
 ```
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. также:
 
 - [Аутентификация в национальных облаках](authentication-national-cloud.md)
 - [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/)
-- [Лазурный Китай 21Вианет](https://docs.microsoft.com/azure/china/)
+- [Azure China 21Vianet](https://docs.microsoft.com/azure/china/)
 - [Azure для Германии](https://docs.microsoft.com/azure/germany/)

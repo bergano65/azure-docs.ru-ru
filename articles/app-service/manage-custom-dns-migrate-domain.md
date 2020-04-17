@@ -6,12 +6,12 @@ ms.assetid: 10da5b8a-1823-41a3-a2ff-a0717c2b5c2d
 ms.topic: article
 ms.date: 10/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 79bd0a19a9bd8ebd100ed80ca0206656d73ef76c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5c1760c746aca439e19ab5727e5be02f6dbad3cb
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74672358"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535695"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Перенос активного DNS-имени в службу приложений Azure
 
@@ -127,9 +127,9 @@ ms.locfileid: "74672358"
 
 Вы можете найти блок развертывания для вашего приложения, взглянув на `<deployment-unit>.ftp.azurewebsites.windows.net`доменное имя URL FTP/S. Проверьте и убедитесь, что блок развертывания отличается между исходным приложением и целевым приложением. Подразделение развертывания приложения определяется [планом Службы app,](overview-hosting-plans.md) в который оно находится. При создании плана azure он выбирается случайным образом и не может быть изменен. Azure только гарантирует, что два плана находятся в одном блоке развертывания при [создании их в одной и той же группе ресурсов *и* в одном регионе,](app-service-plan-manage.md#create-an-app-service-plan)но у него нет никакой логики, чтобы убедиться, что планы находятся в разных блоках развертывания. Единственный способ создать план в другом подразделении развертывания — это продолжать создавать план в новой группе ресурсов или регионе до тех пор, пока не получится другое подразделение развертывания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Узнайте о том, как привязать настраиваемый SSL-сертификат к службе приложений.
+Узнайте, как связать пользовательский сертификат TLS/SSL с службой приложений.
 
 > [!div class="nextstepaction"]
-> [Привязать sSL-сертификат к службе приложений Azure](configure-ssl-bindings.md)
+> [Защищайте пользовательское имя DNS с привязкой TLS в службе приложений Azure](configure-ssl-bindings.md)

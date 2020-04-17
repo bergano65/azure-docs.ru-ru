@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: bfbae282f9c383c19aae84a70dfc53f754bd9367
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4976be485a9b7609c6e8d23f6b897092217663fc
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77592617"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535678"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -37,28 +37,31 @@ ms.locfileid: "77592617"
 
 ## <a name="webjobs-nuget-packages"></a>Пакеты NuGet веб-заданий
 
-1. Установите последнюю стабильную версию 3.x пакета `Microsoft.Azure.WebJobs.Extensions` NuGet, которая включает в себя. `Microsoft.Azure.WebJobs`
+1. Установите последнюю стабильную версию 3.x `Microsoft.Azure.WebJobs` [ `Microsoft.Azure.WebJobs.Extensions` пакета NuGet,](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions/)которая включает в себя.
 
-     Ниже приведена команда **консоли диспетчера пакетов** для версии 3.0.2:
+     Вот команда **консоли менеджера пакетов:**
 
      ```powershell
-     Install-Package Microsoft.Azure.WebJobs.Extensions -version 3.0.2
+     Install-Package Microsoft.Azure.WebJobs.Extensions -version <3_X_VERSION>
      ```
+
+    В этой команде `<3_X_VERSION>` замените поддерживаемую версию пакета. 
 
 ## <a name="create-the-host"></a>Создание узла
 
 Хост является контейнером времени выполнения для функций, которые слушают триггеры и вызовы функций. Следующие шаги создают [`IHost`](/dotnet/api/microsoft.extensions.hosting.ihost)хост, который реализует, который является общим хостом в ASP.NET Core.
 
-1. В *Program.cs* добавьте инструкцию `using`:
+1. В *Program.cs*добавьте следующие `using` заявления:
 
     ```cs
+    using System.Threading.Tasks;
     using Microsoft.Extensions.Hosting;
     ```
 
 1. Замените метод `Main` следующим кодом:
 
     ```cs
-    static void Main(string[] args)
+    static async Task Main()
     {
         var builder = new HostBuilder();
         builder.ConfigureWebJobs(b =>
@@ -68,7 +71,7 @@ ms.locfileid: "77592617"
         var host = builder.Build();
         using (host)
         {
-            host.Run();
+            await host.RunAsync();
         }
     }
     ```
@@ -79,12 +82,12 @@ ms.locfileid: "77592617"
 
 В этом разделе настроена настройка системы регистрации консолей, используюхую [платформу ASP.NET Core.](/aspnet/core/fundamentals/logging)
 
-1. Установите последнюю стабильную версию `Microsoft.Extensions.Logging.Console` пакета `Microsoft.Extensions.Logging`NuGet, которая включает в себя.
+1. Установите последнюю стабильную версию `Microsoft.Extensions.Logging` [ `Microsoft.Extensions.Logging.Console` пакета NuGet,](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/)которая включает в себя.
 
-   Команда **Консоли диспетчера пакетов** для версии 2.2.0:
+   Вот команда **консоли менеджера пакетов:**
 
    ```powershell
-   Install-Package Microsoft.Extensions.Logging.Console -version 2.2.0
+   Install-Package Microsoft.Extensions.Logging.Console -version <3_X_VERSION>
    ```
 
 1. В *Program.cs* добавьте инструкцию `using`:
@@ -92,6 +95,8 @@ ms.locfileid: "77592617"
    ```cs
    using Microsoft.Extensions.Logging;
    ```
+
+    В этой команде `<3_X_VERSION>` замените поддерживаемую версию пакета 3.x.
 
 1. Вызов [`ConfigureLogging`](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging) метода [`HostBuilder`](/dotnet/api/microsoft.extensions.hosting.hostbuilder)на . Метод [`AddConsole`](/dotnet/api/microsoft.extensions.logging.consoleloggerextensions.addconsole) добавляет журнал консоли в конфигурацию.
 
@@ -105,7 +110,7 @@ ms.locfileid: "77592617"
     Метод `Main` теперь выглядит следующим образом:
 
     ```cs
-    static void Main(string[] args)
+    static async Task Main()
     {
         var builder = new HostBuilder();
         builder.ConfigureWebJobs(b =>
@@ -119,7 +124,7 @@ ms.locfileid: "77592617"
         var host = builder.Build();
         using (host)
         {
-            host.Run();
+            await host.RunAsync();
         }
     }
     ```
@@ -137,11 +142,13 @@ ms.locfileid: "77592617"
 
 1. Установите последнюю стабильную версию пакета NuGet [Microsoft.Azure.WebJobs.Extensions.Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage), версию 3.х. 
 
-    Вот команда **консоли менеджера пакетов** для версии 3.0.4:
+    Вот команда **консоли менеджера пакетов:**
 
     ```powershell
-    Install-Package Microsoft.Azure.WebJobs.Extensions.Storage -Version 3.0.4
+    Install-Package Microsoft.Azure.WebJobs.Extensions.Storage -Version <3_X_VERSION>
     ```
+    
+    В этой команде `<3_X_VERSION>` замените поддерживаемую версию пакета. 
 
 2. В `ConfigureWebJobs` методе расширения `AddAzureStorage` вызовите [`HostBuilder`](/dotnet/api/microsoft.extensions.hosting.hostbuilder) метод в экземпляре, чтобы инициализировать расширение хранилища. На этом этапе метод `ConfigureWebJobs` выглядит следующим образом:
 
@@ -158,22 +165,22 @@ ms.locfileid: "77592617"
 1. Нажмите правой кнопкой мыши проекта, выберите **Добавить** > **новый пункт ...**, выбрать **класс,** назовите новый файл класса Functions.cs, и выберите **Добавить**. *Functions.cs*
 
 1. В сценарии Functions.cs замените созданный шаблон следующим кодом:
-
-   ```cs
-   using Microsoft.Azure.WebJobs;
-   using Microsoft.Extensions.Logging;
-
-   namespace WebJobsSDKSample
-   {
-       public class Functions
-       {
-           public static void ProcessQueueMessage([QueueTrigger("queue")] string message, ILogger logger)
-           {
-               logger.LogInformation(message);
-           }
-       }
-   }
-   ```
+    
+    ```cs
+    using Microsoft.Azure.WebJobs;
+    using Microsoft.Extensions.Logging;
+    
+    namespace WebJobsSDKSample
+    {
+        public class Functions
+        {
+            public static void ProcessQueueMessage([QueueTrigger("queue")] string message, ILogger logger)
+            {
+                logger.LogInformation(message);
+            }
+        }
+    }
+    ```
 
    Атрибут `QueueTrigger` вызывает в среде выполнения эту функцию при записи нового сообщения в очередь службы хранилища Azure с именем `queue`. Содержимое сообщения в очереди передается коду метода в параметре `message`. Тело метода реализуется при обработке данных триггера. В этом примере код просто записывает сообщение в журнал.
 
@@ -195,7 +202,7 @@ ms.locfileid: "77592617"
 
 1. Выберите тот же **Регион**, в котором вы создали приложение службы приложений, или ближайший к вам регион.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
    ![Создание учетной записи хранения](./media/webjobs-sdk-get-started/create-storage-account.png)
 
@@ -332,7 +339,7 @@ ms.locfileid: "77592617"
 
 1. Замените строку *{instrumentation key}* ключом инструментирования с используемого ресурса Application Insights.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 1. Добавьте подключение Application Insights к проекту, чтобы вы могли запустить его локально. В файле *appsettings.json* добавьте поле `APPINSIGHTS_INSTRUMENTATIONKEY`, как показано в следующем примере:
 
@@ -351,21 +358,22 @@ ms.locfileid: "77592617"
 
 Чтобы воспользоваться преимуществами ведения журнала [Application Insights](../azure-monitor/app/app-insights-overview.md), обновите код ведения журнала для следующих целей:
 
-* Добавление поставщика журнала Application Insights с [фильтрацией](webjobs-sdk-how-to.md#log-filtering) по умолчанию; при локальном запуске все сведения и журналы более высокого уровня перемещаются одновременно в Application Insights и в консоль.
+* Добавьте поставщика журналов Application Insights с [фильтрацией](webjobs-sdk-how-to.md#log-filtering)по умолчанию. При локальном запуске вся информация и журналы более высокого уровня записываются как на консоль, так и на исследования приложений.
 * Поместите объект [LoggerFactory](./webjobs-sdk-how-to.md#logging-and-monitoring) в `using` блок, чтобы убедиться, что выход журнала будет промыт при выходе узла.
 
-1. Установите последнюю стабильную версию 3.x пакета NuGet для поставщика журнала Application Insights: `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`.
+1. Установите последнюю стабильную версию 3.x [ `Microsoft.Azure.WebJobs.Logging.ApplicationInsights` пакета NuGet.](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/)
 
-   Ниже приведена команда **консоли диспетчера пакетов** для версии 3.0.2:
+   Вот команда **консоли менеджера пакетов:**
 
    ```powershell
-   Install-Package Microsoft.Azure.WebJobs.Logging.ApplicationInsights -Version 3.0.2
+   Install-Package Microsoft.Azure.WebJobs.Logging.ApplicationInsights -Version <3_X_VERSION>
    ```
+    В этой команде `<3_X_VERSION>` замените поддерживаемую версию пакета.
 
 1. Откройте файл *Program.cs* и замените код в методе `Main` следующим кодом:
 
     ```cs
-    static void Main(string[] args)
+    static async Task Main()
     {
         var builder = new HostBuilder();
         builder.UseEnvironment(EnvironmentName.Development);
@@ -388,7 +396,7 @@ ms.locfileid: "77592617"
         var host = builder.Build();
         using (host)
         {
-            host.Run();
+            await host.RunAsync();
         }
     }
     ```
@@ -538,7 +546,7 @@ ms.locfileid: "77592617"
  
 1. Проверьте функцию в Azure, снова загрузив файл в контейнер с каплями и добавив сообщение в очередь, которая является именем загруженного файла. Вы видите, как сообщение удаляется из очереди и копия файла, созданного в контейнере с каплями. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как создавать, запускать и развертывать проект WebJobs SDK 3.x.
 

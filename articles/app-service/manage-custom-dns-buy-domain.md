@@ -5,12 +5,12 @@ ms.assetid: 70fb0e6e-8727-4cca-ba82-98a4d21586ff
 ms.topic: article
 ms.date: 11/24/2017
 ms.custom: seodec18
-ms.openlocfilehash: afb40d0f3681bc02351e43166fccfaafe7741128
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 47daf4ecd034c390a1460610e78d4fffd9277ac7
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79259283"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535712"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Приобретение личного доменного имени в Службе приложений Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "79259283"
 
 ### <a name="check-the-pricing-tier"></a>Проверка ценовой категории
 
-В левой области навигации страницы приложения перейдите к разделу **Параметры** и выберите **Увеличить масштаб (план службы приложений)**.
+В левой области навигации страницы приложения перейдите к разделу **Параметры** и выберите **Увеличить масштаб (план службы приложений)** .
 
 ![Меню увеличения масштаба](./media/app-service-web-tutorial-custom-domain/scale-up-menu.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "79259283"
 
 Выберите любой платный уровень (**D1**, **B1**, **B2**, **B3** или любой уровень в категории **Рабочие**). Чтобы просмотреть дополнительные параметры, щелкните **См. дополнительные параметры**.
 
-Щелкните **Применить**.
+Нажмите кнопку **Применить**.
 
 ![Проверка ценовой категории](./media/app-service-web-tutorial-custom-domain/choose-pricing-tier.png)
 
@@ -137,7 +137,7 @@ ms.locfileid: "79259283"
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added.png)
 
 > [!NOTE]
-> Метка **Not Secure** для пользовательского домена означает, что она еще не привязана к Сертификату SSL, и любой запрос HTTPS от браузера к пользовательскому домену получит ошибку или предупреждение, в зависимости от браузера. Чтобы настроить привязку SSL, [см.](configure-ssl-bindings.md)
+> Метка **Not Secure** для пользовательского домена означает, что она еще не привязана к сертификату TLS/SSL, и любой запрос HTTPS от браузера к пользовательскому домену получит ошибку или предупреждение, в зависимости от браузера. Для настройки привязки TLS [см.](configure-ssl-bindings.md)
 >
 
 Чтобы проверить имена узлов, перейдите по указанным именам узлов в браузере. В примере в предыдущем скриншоте попробуйте перейти на _kontoso.net_ и _\.www kontoso.net._

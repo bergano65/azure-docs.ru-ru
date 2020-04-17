@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4e8a5d2d168b8f60b7a32a8af358c6097003de60
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 1ac6347bd8e723f356da4803da54a6ea45a4a71a
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81261301"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535525"
 ---
 # <a name="azure-automation-runbook-types"></a>Типы модулей Runbook в службе автоматизации Azure
 
@@ -28,6 +28,9 @@ ms.locfileid: "81261301"
 
 * Вы не можете преобразовать runbooks из графических в текстовый тип, или наоборот.
 * Существуют ограничения при использовании runbooks различных типов, как детские книги. Дополнительные сведения см. в статье [Дочерние модули Runbook в службе автоматизации Azure](automation-child-runbooks.md).
+
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](automation-update-azure-modules.md)
 
 ## <a name="graphical-runbooks"></a>Графические модули Runbook
 
@@ -113,7 +116,7 @@ Runbook рабочих процессов PowerShell представляют с
 * Только Python 2 поддерживается в настоящее время. Любые функции Python 3-специфические сбой.
 * Для использования сторонних библиотек необходимо [импортировать пакеты](python-packages.md) в учетную запись Automation.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать больше об авторе графического runbook, смотрите [графическое авторство в Azure Automation](automation-graphical-authoring-intro.md).
 * Чтобы понять различия между рабочими процессами PowerShell [Learning Windows PowerShell Workflow](automation-powershell-workflow.md)и PowerShell для runbooks, см.
