@@ -11,12 +11,12 @@ metadata:
   ms.author: nitinme
   manager: nitinme
   ms.date: 03/17/2020
-  ms.openlocfilehash: 93bc79f559f124919902fd6d62dd0794bc91bf1a
-  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.openlocfilehash: 734c95524088bf9b4f92e7e1981aabe3f1b963f2
+  ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "80131519"
+  ms.lasthandoff: 04/16/2020
+  ms.locfileid: "81529863"
 highlightedContent:
   items:
   - title: Что такое Cognitive Services?
@@ -93,9 +93,6 @@ conceptualContent:
     - url: ./speaker-recognition/home.md
       itemType: overview
       text: Распознавание говорящего (предварительная версия)
-    - url: ./speech/home.md
-      itemType: overview
-      text: Распознавание речи Bing (предварительная версия)
   - title: Решение
     summary: Создавайте приложения, которые предоставят рекомендации для информированного и эффективного принятия решения.
     links:

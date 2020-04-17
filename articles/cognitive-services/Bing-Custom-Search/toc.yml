@@ -108,7 +108,7 @@
       href: 'https://aka.ms/bingcustomsearchtryit'
     - name: Конечные точки Пользовательского поиска Bing
       href: endpoint-custom.md
-    - name: Поддержка языков и региональных параметров
+    - name: Поддержка языков
       href: language-support.md
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

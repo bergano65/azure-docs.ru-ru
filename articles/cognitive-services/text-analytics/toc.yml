@@ -48,7 +48,7 @@
   items:
     - name: Типы именованных сущностей
       href: named-entity-types.md
-    - name: Поддержка языков и региональных параметров
+    - name: Поддержка языков
       href: language-support.md
     - name: Смещение текста
       href: concepts/text-offsets.md

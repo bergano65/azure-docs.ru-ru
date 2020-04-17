@@ -72,7 +72,7 @@
     - name: Аналитика для API Проверки орфографии Bing
       maintainContext: true
       href: ../bing-web-search/bing-web-stats.md
-    - name: Поддержка языков и региональных параметров
+    - name: Поддержка языков
       href: language-support.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/spellcheck-api/'
