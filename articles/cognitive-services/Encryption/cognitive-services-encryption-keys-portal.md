@@ -8,18 +8,18 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/11/2020
 ms.author: egeaney
-ms.openlocfilehash: 22bd3afcf30b8b8ebce18b22d5419d49ec8c3b4b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 04a8a8d2520376931f2bb7727c1e751b83f6315f
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80053607"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81455263"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-the-azure-portal"></a>Налаживание ключей, управляемых клиентами, с помощью портала Azure Key Vault
 
 Для хранения ключей, управляемых клиентом, необходимо использовать Azure Key Vault. Вы можете создать свои собственные ключи и хранить их в хранилище ключей, либо использовать AA-иносы Azure Key Vault для генерации ключей. Ресурс Когнитивных Служб и хранилище ключей должны находиться в одном регионе и в том же клиенте Azure Active Directory (Azure AD), но они могут быть в разных подписках. Для получения дополнительной информации о [What is Azure Key Vault?](https://docs.microsoft.com/azure/key-vault/key-vault-overview)Убежище ключей Azure см.
 
-В этой статье показано, как настроить Хранилище ключей Azure с помощью ключей, управляемых клиентами, с помощью [портала Azure.](https://portal.azure.com/) Чтобы узнать, как создать хранилище ключей с помощью портала Azure, [см.](../../key-vault/quick-create-portal.md)
+В этой статье показано, как настроить Хранилище ключей Azure с помощью ключей, управляемых клиентами, с помощью [портала Azure.](https://portal.azure.com/) Чтобы узнать, как создать хранилище ключей с помощью портала Azure, [см.](../../key-vault/secrets/quick-create-portal.md)
 
 ## <a name="configure-azure-key-vault"></a>Настройка Azure Key Vault
 
@@ -100,7 +100,7 @@ ms.locfileid: "80053607"
 1. Перейдите на ресурс Cognitive Services и отобразите параметры **шифрования.**
 1. Отменить флажок рядом с настройкой **ключа Используйте свои собственные настройки.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Убежище ключей Azure?](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
 * [Когнитивные услуги Клиент-Управляемые ключевые формы запроса](https://aka.ms/cogsvc-cmk)

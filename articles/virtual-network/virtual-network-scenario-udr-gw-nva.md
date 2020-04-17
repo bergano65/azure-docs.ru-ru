@@ -5,7 +5,6 @@ services: virtual-network
 documentationcenter: na
 author: KumudD
 manager: carmonm
-editor: tysonn
 ms.assetid: 1f509bec-bdd1-470d-8aa4-3cf2bb7f6134
 ms.service: virtual-network
 ms.devlang: na
@@ -14,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/05/2016
 ms.author: kumud
-ms.openlocfilehash: 1bdc485dfb352144e8a8d0fb75965cbb78288e2c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 80a9397838e90a2af504125b2dc4c4ef39251d4e
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "64575583"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81455368"
 ---
 # <a name="virtual-appliance-scenario"></a>Сценарий использования виртуальных устройств
 Среди преимущественного количества клиентов Azure распространен сценарий, в котором нужно предоставить двухуровневое приложение, доступное из Интернета, и при этом также доступ к внутреннему уровню из локального центра данных. В этом документе подробно описан сценарий, где используются определяемые пользователем маршруты, VPN-шлюз и виртуальные сетевые устройства для развертывания двухуровневой среды, отвечающей следующим требованиям:
@@ -39,7 +38,7 @@ ms.locfileid: "64575583"
 
 В приведенном ниже решении используются виртуальные устройства брандмауэра для реализации сетевого сценария по периметру (ДМЗ)/защищенной сети.
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 Вы можете развернуть описанную выше среду в Azure, используя различные современные возможности, указанные ниже.
 
 * **Виртуальная сеть**. Виртуальная сеть Azure работает аналогично локальной сети. Ее можно разделить на одну или несколько подсетей, чтобы изолировать трафик и разделить области распространения проблем.

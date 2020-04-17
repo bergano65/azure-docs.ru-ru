@@ -5,12 +5,12 @@ services: automation
 ms.date: 4/11/2019
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: cf82dddf281e8e6f1348884702e32330dee4781b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 57378005bd668fa9c0f2aea70c411bbf911130db
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79278679"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457660"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 
@@ -18,7 +18,7 @@ ms.locfileid: "79278679"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите в Azure (https://portal.azure.com).
+Войти на лазуру по адресу https://portal.azure.com.
 
 ## <a name="enable-solutions"></a>включение решений;
 
@@ -82,7 +82,7 @@ ms.locfileid: "79278679"
 
 Компьютеры, не зарегистрированные в Azure, необходимо добавлять вручную. Из учетной записи автоматизации выберите **инвентаризации** или **отслеживания изменений** под **управлением конфигурации**, или **управление обновлением** под **управлением обновления.**
 
-Щелкните **Добавить компьютер, не связанный с Azure**. Это действие откроет новое окно браузера с [инструкциями о том, как установить и настроить Microsoft Monitoring Agent на виртуальной машине](../azure-monitor/platform/log-analytics-agent.md), чтобы она начала отправлять отчеты в решение. Для подключения виртуальной машины, управляемой с помощью System Center Operations Manager, новый агент не требуется. Сведения о рабочей области указываются в существующем агенте.
+Щелкните **Добавить компьютер, не связанный с Azure**. Это действие открывает новое окно браузера с [инструкциями по установке и настройке агента Log Analytics для Windows,](../azure-monitor/platform/log-analytics-agent.md) чтобы машина могла начать отчитываться перед решением. Если вы занимаетесь посадкой в машину, которая в настоящее время управляется менеджером по операциям System Center, новый агент не требуется, и информация о рабочей области вводится в существующий агент.
 
 ## <a name="onboard-machines-in-the-workspace"></a>Подключение компьютеров в рабочей области
 
@@ -112,7 +112,7 @@ ms.locfileid: "79278679"
 
 * [Управление обновлениями](automation-update-management.md)
 * [Отслеживание изменений](automation-change-tracking.md)
-* [Запуск и остановка виртуальных машин в нерабочее время](automation-solution-vm-management.md)
+* [Запуск/остановка ВМ в нерабочее время](automation-solution-vm-management.md)
 
 Если вы решите, что больше не хотите интегрировать учетную запись Автоматизации в рабочее пространство Log Analytics, вы можете отсоединить свою учетную запись непосредственно с портала Azure.  Прежде чем продолжить, необходимо удалить описанные выше решения, иначе вы не сможете выполнить эту процедуру. Найдите в статье решение, которое вы импортировали, чтобы узнать, как его удалить.
 
@@ -150,9 +150,9 @@ ms.locfileid: "79278679"
 Чтобы удалить виртуальную машину для Управления обновлениями, необходимо сделать следующее.
 
 * В рабочей области Log Analytics удалите виртуальную машину из сохраненных поисковых запросов конфигурации области `MicrosoftDefaultScopeConfig-Updates`. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
-* Удалите [Microsoft Monitoring Agent](../azure-monitor/learn/quick-collect-windows-computer.md#clean-up-resources) или [Агент Log Analytics для Linux](../azure-monitor/learn/quick-collect-linux-computer.md#clean-up-resources).
+* Удалите [агент log Analytics для Windows](../azure-monitor/learn/quick-collect-windows-computer.md#clean-up-resources) или агента log Analytics для [Linux.](../azure-monitor/learn/quick-collect-linux-computer.md#clean-up-resources)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать, как использовать то или иное решение, ознакомьтесь с соответствующими руководствами.
 

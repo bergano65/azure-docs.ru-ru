@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f69a94e17155ff93510d09f666bce12f628274f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9c8081bb8145a6654c168fb2d664e1666b32dc18
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80295171"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457915"
 ---
 # <a name="conditional-access-securing-security-info-registration"></a>Условный доступ: Обеспечение регистрации информации о безопасности
 
@@ -32,9 +32,9 @@ ms.locfileid: "80295171"
 1. В соответствии с **назначениями**выберите **пользователей и группы**и выберите пользователей и группы, к которых вы хотите применить эту политику.
 
    > [!WARNING]
-   > Пользователи должны быть включены для [комбинированного предварительного просмотра регистрации.](../authentication/howto-registration-mfa-sspr-combined.md)
+   > Пользователи должны быть включены для [комбинированной регистрации.](../authentication/howto-registration-mfa-sspr-combined.md)
 
-1. В **приложениях или действиях Облака**выберите **действия пользователя,** проверьте **информацию о безопасности Регистра (предварительный просмотр).**
+1. В **приложениях или действиях Cloud**выберите **действия пользователя,** проверьте **информацию о безопасности Регистра.**
 1. В **условиях** > **Местоположение**.
    1. Настройка **Да**.
    1. Включите **любое местоположение**.
@@ -62,7 +62,7 @@ ms.locfileid: "80295171"
 > [!WARNING]
 > Если вы используете состояние устройства в качестве условия в вашей политике, это может повлиять на гостевых пользователей в каталоге. [Режим только для отчетов](concept-conditional-access-report-only.md) может помочь определить влияние политических решений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 

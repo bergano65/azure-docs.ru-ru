@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: f7eb63d0bbdce86f4a7195430dc15d6873e9f6e6
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 68341de82ae15df91477947664c500caaa96a09a
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80754313"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81452729"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование дисков, управляемых Azure на стороне сервера
 
@@ -34,7 +34,7 @@ ms.locfileid: "80754313"
 
 ## <a name="customer-managed-keys"></a>Ключи, управляемые клиентом
 
-Вы можете управлять шифрованием на уровне каждого управляемого диска, с вашими собственными ключами. Шифрование на стороне сервера для управляемых дисков с ключами, управляемыми клиентом, предлагает интегрированный опыт работы с Azure Key Vault. Вы можете импортировать [ключи RSA](../../key-vault/key-vault-hsm-protected-keys.md) в Key Vault или создавать новые клавиши RSA в Azure Key Vault. 
+Вы можете управлять шифрованием на уровне каждого управляемого диска, с вашими собственными ключами. Шифрование на стороне сервера для управляемых дисков с ключами, управляемыми клиентом, предлагает интегрированный опыт работы с Azure Key Vault. Вы можете импортировать [ключи RSA](../../key-vault/keys/hsm-protected-keys.md) в Key Vault или создавать новые клавиши RSA в Azure Key Vault. 
 
 Управляемые диски Azure обрабатывают шифрование и расшифровку полностью прозрачным способом с помощью [шифрования конвертов.](../../storage/common/storage-client-side-encryption.md#encryption-and-decryption-via-the-envelope-technique) Он шифрует данные с помощью ключа шифрования данных [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 256 (DEK), который, в свою очередь, защищен с помощью ключей. Служба хранения генерирует ключи шифрования данных и шифрует их ключами, управляемыми клиентами, с помощью шифрования RSA. Шифрование конверта позволяет периодически поворачивать (изменять) ключи в соответствии с вашими правилами соответствия, не влияя на ваши ВМ. При повороте ключей служба хранения повторно шифрует ключи шифрования данных новыми ключами, управляемыми клиентом. 
 
@@ -235,10 +235,10 @@ az disk show -g yourResourceGroupName -n yourDiskName --query [encryption.type] 
 
 [Лазурное шифрование дисков для виртуальных машин и виртуальных наборов машин](../../security/fundamentals/azure-disk-encryption-vms-vmss.md) использует функцию [BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview) Windows и функцию [DM-Crypt](https://en.wikipedia.org/wiki/Dm-crypt) Linux для шифрования управляемых дисков с управляемыми клиентом ключами в гостевом VM.  Шифрование на стороне сервера с ключами, управляемыми клиентом, улучшает ADE, позволяя использовать любые типы ОС и изображения для ви-х годов путем шифрования данных в службе хранения данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Исследуйте шаблоны менеджера ресурсов Azure для создания зашифрованных дисков с ключами, управляемыми клиентом](https://github.com/ramankumarlive/manageddiskscmkpreview)
-- [Что такое хранилище ключей Azure?](../../key-vault/key-vault-overview.md)
+- [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 - [Репликат машины с клиентами-управляемыми ключами с включенными дисками](../../site-recovery/azure-to-azure-how-to-enable-replication-cmk-disks.md)
 - [Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell](../../site-recovery/vmware-azure-disaster-recovery-powershell.md#replicate-vmware-vms)
 - [Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager](../../site-recovery/hyper-v-azure-powershell-resource-manager.md#step-7-enable-vm-protection)

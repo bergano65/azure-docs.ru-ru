@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 02/18/2020
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 50c209483a12adc3545b63fb66685e386d9ad10a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 212624b857d65297830995018603c2627f83369b
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78252142"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81453529"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "78252142"
 
 ### <a name="create-key-vault"></a>Создание хранилища ключей
 
-Если у вас еще нет хранилища в [Azure Key Vault](../key-vault/key-vault-overview.md), создайте его с помощью Azure CLI, используя следующие команды.
+Если у вас еще нет хранилища в [Azure Key Vault](../key-vault/general/overview.md), создайте его с помощью Azure CLI, используя следующие команды.
 
 Обновите переменную `RES_GROUP` именем существующей группы ресурсов, в которой будет создано хранилище ключей, а `ACR_NAME` — именем вашего реестра контейнеров. Для краткости команды в этой статье предполагают, что регистратура, хранилище ключей и экземпляры контейнеров создаются в одной и той же группе ресурсов.
 
@@ -160,7 +160,7 @@ az container create \
 
     ![Представление сведений для группы контейнеров службы "Экземпляры контейнеров Azure"][aci-detailsview]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Более подробные сведения об аутентификации в реестре контейнеров Azure см. в статье [Аутентификация с помощью частного реестра контейнеров Docker](../container-registry/container-registry-authentication.md).
 

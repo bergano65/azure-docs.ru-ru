@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 070574f0eec40c27eb05cec3bf0a84282b85050f
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 8f8af7fab7113e38b91c3f5f1bcc41b4e4fba2c1
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81431804"
+ms.locfileid: "81457371"
 ---
 # <a name="query-folders-and-multiple-csv-files"></a>Папки запросов и несколько файлов CSV  
 
@@ -69,7 +69,7 @@ FROM OPENROWSET(
            trip_distance FLOAT,
         rate_code INT,
         store_and_fwd_flag VARCHAR(100) COLLATE Latin1_General_BIN2,
-           pickup_location_id INT,'
+        pickup_location_id INT,
         dropoff_location_id INT,
            payment_type INT,
         fare_amount FLOAT,
@@ -274,6 +274,6 @@ ORDER BY
 
 Поскольку у вас есть только одна папка, которая соответствует критериям, результат запроса такой же, как [Чтение подмножество файлов в папке](#read-subset-of-files-in-folder) и [Прочитайте все файлы из конкретной папки.](#read-all-files-from-specific-folder) Более сложные сценарии использования подстановочных знаков описаны в [файлах Query Parquet.](query-parquet-files.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Более подробную информацию можно найти в статье [в конкретных файлах запроса.](query-specific-files.md)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/27/2019
-ms.openlocfilehash: 7a2becf8cb43568383c324bb9f4f5b2e7b844268
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7da2fa2ddfbd9c71563dd8bd2e17b14c6dee62b3
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77667149"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81455468"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Аналитическое решение Azure Key Vault в Azure Monitor
 
@@ -94,7 +94,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
     На любой из страниц поиска журналов можно просмотреть результаты по времени, подробные результаты и историю поиска журналов. Для сужения области результатов выполните фильтрацию по аспектам.
 
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
-Решение хранилища ключей Azure анализирует записи типа **KeyVaults**, полученные из [журналов AuditEvent](../../key-vault/key-vault-logging.md) системы диагностики Azure.  Свойства этих записей приведены в таблице ниже.  
+Решение хранилища ключей Azure анализирует записи типа **KeyVaults**, полученные из [журналов AuditEvent](../../key-vault/general/logging.md) системы диагностики Azure.  Свойства этих записей приведены в таблице ниже.  
 
 | Свойство | Описание |
 |:--- |:--- |
@@ -107,7 +107,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 | `httpStatusCode_d` |Код состояния HTTP, возвращаемый запросом (например, *200*) |
 | `id_s` |Уникальный идентификатор запроса. |
 | `identity_claim_appid_g` | GUID для идентификатора приложения |
-| `OperationName` |Имя операции, как описано в статье [Ведение журнала хранилища ключей Azure](../../key-vault/key-vault-logging.md) |
+| `OperationName` |Имя операции, как описано в статье [Ведение журнала хранилища ключей Azure](../../key-vault/general/logging.md) |
 | `OperationVersion` |Запрошенная клиентом версия REST API (например, *2015-06-01*) |
 | `requestUri_s` |URI запроса |
 | `Resource` |Имя хранилища ключей. |
@@ -145,5 +145,5 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="troubleshooting"></a>Устранение неполадок
 [!INCLUDE [log-analytics-troubleshoot-azure-diagnostics](../../../includes/log-analytics-troubleshoot-azure-diagnostics.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Используйте [запросы журнала в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) для просмотра подробных данных Azure Key Vault.

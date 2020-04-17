@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8f44e9a1e43da2b9ce6c817898c1722fba715c4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 104bf51fb03d88ab0e5efd25ebebb0e3060bc264
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79262182"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457932"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -85,13 +85,13 @@ ms.locfileid: "79262182"
 
 После ассоциации подписки с другим каталогом может потребоваться выполнение следующих задач для возобновления работы:
 
-- Если у вас есть хранилища ключей, необходимо изменить идентификатор клиента хранилища ключей. Для получения дополнительной информации [см.](../../key-vault/key-vault-subscription-move-fix.md)
+- Если у вас есть хранилища ключей, необходимо изменить идентификатор клиента хранилища ключей. Для получения дополнительной информации [см.](../../key-vault/general/subscription-move-fix.md)
 
 - Если для ресурсов использовались системные управляемые идентификаторы, необходимо повторно включить эти идентификаторы. Если вы использовали управляемые идентификаторы, назначенные пользователем, необходимо воссоздать эти идентификаторы. После повторного включения или воссоздания управляемых идентификационных данных необходимо восстановить разрешения, назначенные этим идентификаторам. Для получения дополнительной информации [см. Что такое управляемые идентификаторы для ресурсов Azure?.](../managed-identities-azure-resources/overview.md)
 
 - Если вы зарегистрировали Azure Stack с помощью этой подписки, необходимо перерегистрироваться. Для получения дополнительной [Register Azure Stack with Azure](/azure-stack/operator/azure-stack-registration)информации см.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Для создания нового ad-клиента [Quickstart: Create a new tenant in Azure Active Directory](active-directory-access-create-new-tenant.md)Azure AD см.
 

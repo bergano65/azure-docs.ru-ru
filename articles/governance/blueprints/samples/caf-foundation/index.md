@@ -3,12 +3,12 @@ title: Краткое описание примера схемы CAF Foundation
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы для Azure Foundation.
 ms.date: 04/15/2020
 ms.topic: sample
-ms.openlocfilehash: a5616667ae909b63f406e399a23bdf568089bf52
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 1f14b4d4811b9bdcb64f3860b2cf25b82825d5c4
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383577"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458477"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы CAF Foundation
 
@@ -22,7 +22,7 @@ ms.locfileid: "81383577"
 
 Эта реализация содержит несколько служб Azure, которые обеспечивают защищенную, полностью отслеживаемую базовую среду корпоративного уровня. Эта среда включает следующие компоненты:
 
-- Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-overview.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
+- Экземпляр [Azure Key Vault](../../../../key-vault/general/overview.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
 - развернутую службу [Log Analytics](../../../../azure-monitor/overview.md), которая обеспечивает регистрацию всех действий и служб в центральном расположении с момента запуска безопасного развертывания в [учетную запись хранения](../../../../storage/common/storage-introduction.md) для диагностического ведения журналов;
 - развернутый [Центр безопасности Azure](../../../../security-center/security-center-intro.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок.
 - В схеме также определяются и развертываются [политики Azure](../../../policy/overview.md) для выполнения следующих задач: 

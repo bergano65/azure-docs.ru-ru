@@ -4,18 +4,17 @@ description: Описывает журналы в Azure Monitor, которые 
 documentationcenter: ''
 author: bwren
 manager: carmonm
-editor: tysonn
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: dd499a82ba1011d96772d6722e25a434d43a6bf0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0b288bf6d987b9db682c8d1439879cf6b499f213
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79480204"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457337"
 ---
 # <a name="logs-in-azure-monitor"></a>Журналы в Azure Monitor
 
@@ -129,7 +128,7 @@ Azure Monitor может собирать данные журнала из ра�
 | Azure Sentinel | [Azure Sentinel](/azure/sentinel/) хранит данные из источников данных в рабочее пространство Log Analytics. Смотрите [Источники данных Connect](/azure/sentinel/connect-data-sources).  |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [платформе данных Azure Monitor.](data-platform.md)
 - Узнайте о [метриках в Azure Monitor](data-platform-metrics.md).

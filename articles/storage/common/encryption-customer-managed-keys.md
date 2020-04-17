@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 6b5712094b9821dfa041cd5ba8617e86f7231bde
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: b2755d5aa5dbaa669fa2fdd8b84596e040b5dd6b
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80478024"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81456827"
 ---
 # <a name="use-customer-managed-keys-with-azure-key-vault-to-manage-azure-storage-encryption"></a>Используйте управляемые клиентами ключи с Azure Key Vault для управления шифрованием хранилища Azure
 
 Вы можете использовать свой собственный ключ шифрования для защиты данных в вашей учетной записи хранения. Когда вы указываете ключ, управляемый клиентом, этот ключ используется для защиты и контроля доступа к ключу, который шифрует ваши данные. Управляемые клиентами ключи обеспечивают большую гибкость для управления элементами управления доступом.
 
-Для хранения ключей, управляемых клиентом, необходимо использовать Azure Key Vault. Вы можете создать свои собственные ключи и хранить их в хранилище ключей, либо использовать AA-иносы Azure Key Vault для генерации ключей. Учетная запись и хранилище ключей должны находиться в одном регионе и в том же клиенте Azure Active Directory (Azure AD), но они могут быть в разных подписках. Для получения дополнительной информации о [What is Azure Key Vault?](../../key-vault/key-vault-overview.md)Убежище ключей Azure см.
+Для хранения ключей, управляемых клиентом, необходимо использовать Azure Key Vault. Вы можете создать свои собственные ключи и хранить их в хранилище ключей, либо использовать AA-иносы Azure Key Vault для генерации ключей. Учетная запись и хранилище ключей должны находиться в одном регионе и в том же клиенте Azure Active Directory (Azure AD), но они могут быть в разных подписках. Для получения дополнительной информации о [What is Azure Key Vault?](../../key-vault/general/overview.md)Убежище ключей Azure см.
 
 ## <a name="about-customer-managed-keys"></a>О ключах, управляемых клиентами
 

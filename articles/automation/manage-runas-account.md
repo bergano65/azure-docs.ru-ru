@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8d7d0baacd5f702e8f435ab440eaf0338a60f4cb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4a043bcc2f81214b68b166d443baead6cd230184
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79500771"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457507"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -464,7 +464,7 @@ $roleDefinition | Set-AzRoleDefinition
 * Предоставлять разрешения Key Vault.
 * Установите политику доступа.
 
-Вы можете использовать скрипт [Extend-AutomationRunAsAccountRoleAssignmentToKeyVault.ps1](https://aka.ms/AA5hugb) в галерее PowerShell, чтобы дать разрешение на выполнение в качестве учетной записи Key Vault. Для получения более подробной информации о настройке разрешений в Key Vault можно получить [доступ к приложениям Grant к хранилищу ключей.](../key-vault/key-vault-group-permissions-for-apps.md)
+Вы можете использовать скрипт [Extend-AutomationRunAsAccountRoleAssignmentToKeyVault.ps1](https://aka.ms/AA5hugb) в галерее PowerShell, чтобы дать разрешение на выполнение в качестве учетной записи Key Vault. Для получения более подробной информации о настройке разрешений в Key Vault можно получить [доступ к приложениям Grant к хранилищу ключей.](../key-vault/general/group-permissions-for-apps.md)
 
 ## <a name="resolving-misconfiguration-issues-for-run-as-accounts"></a>Устранение проблем неправильной настройки для учетных записей Run As
 
@@ -487,7 +487,7 @@ The Run As account is incomplete. Either one of these was deleted or not created
 
 Эти проблемы с учетной записью запуска от имени можно быстро устранить, удалив и повторно создав ее.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для получения дополнительной информации [Application Objects and Service Principal Objects](../active-directory/develop/app-objects-and-service-principals.md)о принципах обслуживания см.
 * Дополнительные сведения о сертификатах и службах Azure см. в статье [Общие сведения о сертификатах для облачных служб Azure](../cloud-services/cloud-services-certs-create.md).

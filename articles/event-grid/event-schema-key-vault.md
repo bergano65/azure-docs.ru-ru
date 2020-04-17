@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: spelluru
-ms.openlocfilehash: 36b7b81a18c8725929ab5676b844e1ee319e287f
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: 40bff9585e64163039a8847ff868c982ffb20414
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81393316"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458255"
 ---
 # <a name="azure-key-vault-as-event-grid-source"></a>Убежище ключей Azure — источник событийной сетки
 
@@ -80,18 +80,18 @@ ms.locfileid: "81393316"
 ## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
 |Title  |Описание  |
 |---------|---------|
-| [Мониторинг событий Key Vault с помощью Azure Event Grid](../key-vault/event-grid-overview.md) | Обзор интеграции Key Vault с Event Grid. |
-| [Учебник: Создание и мониторинг событий Key Vault с помощью Event Grid](../key-vault/event-grid-tutorial.md) | Узнайте, как настроить уведомления Event Grid для Key Vault. |
+| [Мониторинг событий Key Vault с помощью Azure Event Grid](../key-vault/general/event-grid-overview.md) | Обзор интеграции Key Vault с Event Grid. |
+| [Учебник: Создание и мониторинг событий Key Vault с помощью Event Grid](../key-vault/general/event-grid-tutorial.md) | Узнайте, как настроить уведомления Event Grid для Key Vault. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для введения в Azure Event [What is Event Grid?](overview.md)Grid см.
 * Для получения дополнительной информации о том, как [Event Grid subscription schema](subscription-creation-schema.md)создать подписку Azure Event Grid, см.
-* Чтобы узнать больше об интеграции Key Vault с Event Grid, см. [Мониторинг ключей Vault с Azure Event Grid (предварительный просмотр)](../key-vault/event-grid-overview.md).
-* В учебнике по интеграции Key Vault с Event Grid можно получить уведомления о хранилище ключей с помощью [Azure Event Grid (предварительный просмотр).](../key-vault/event-grid-tutorial.md)
+* Чтобы узнать больше об интеграции Key Vault с Event Grid, см. [Мониторинг ключей Vault с Azure Event Grid (предварительный просмотр)](../key-vault/general/event-grid-overview.md).
+* В учебнике по интеграции Key Vault с Event Grid можно получить уведомления о хранилище ключей с помощью [Azure Event Grid (предварительный просмотр).](../key-vault/general/event-grid-tutorial.md)
 * Дополнительные рекомендации по автоматизации Key Vault и Azure можно посмотреть:
-    - [Что такое хранилище ключей Azure?](../key-vault/key-vault-overview.md)
-    - [мониторингу Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](../key-vault/event-grid-overview.md)
-    - [Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)](../key-vault/event-grid-tutorial.md)
+    - [Что такое хранилище ключей Azure?](../key-vault/general/overview.md)
+    - [мониторингу Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](../key-vault/general/event-grid-overview.md)
+    - [Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)](../key-vault/general/event-grid-tutorial.md)
     - [Обзор автоматизации Azure](../automation/index.yml)

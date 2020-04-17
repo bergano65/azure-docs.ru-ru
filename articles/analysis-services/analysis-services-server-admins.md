@@ -4,21 +4,21 @@ description: В этой статье описывается, как управ�
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/29/2019
+ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f7c57a5751f2ff34abb26b7653070ce4ee5010fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 944a84405bd7e03b72b2610278f9f0e4d3cfaf38
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73572623"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81454243"
 ---
 # <a name="manage-server-administrators"></a>Управление администраторами серверов
 
 Администраторами сервера должны быть допустимые пользователи или группы безопасности в Azure Active Directory (Azure AD) для клиента, в котором размещен сервер. Для управления администраторами сервера можно использовать элемент **Администраторы служб Analysis Services** для сервера на портале Azure или свойств сервера в SSMS, PowerShell или REST API. 
 
-**Группы безопасности** должны быть `MailEnabled` [включены по почте](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups) с набором `True`свойств. При указании группы `obj:groupid@tenantid`по адресу электронной почты используется .
+При добавлении **группы безопасности**используйте `obj:groupid@tenantid`.
 
 ## <a name="to-add-server-administrators-by-using-azure-portal"></a>Добавление администраторов на портале Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "73572623"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 [Аутентификация и разрешения пользователей](analysis-services-manage-users.md)  
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  

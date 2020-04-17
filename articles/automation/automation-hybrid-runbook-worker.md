@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1e4470ce5ac69390cf8d361577b9ebf0013e4e51
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 861c7ffa647c8d2f37b32c359253ca991eeb314f
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81405787"
+ms.locfileid: "81457711"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -68,7 +68,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 ```
 
 > [!NOTE]
-> Этот код не удаляет агента мониторинга Майкрософт с компьютера. Он удаляет только функциональность и конфигурацию роли Hybrid Runbook Worker.
+> Этот код не удаляет агент Log Analytics для Linux с компьютера. Он удаляет только функциональность и конфигурацию роли Hybrid Runbook Worker.
 
 ## <a name="remove-a-hybrid-worker-group"></a>Удаление группы гибридных рабочих ролей
 
@@ -89,7 +89,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 ### <a name="hybrid-worker-role"></a>Гибридная рабочая роль
 
-Для подключения и регистрации в Azure Automation и регистрации в Azure, он должен иметь доступ к номеру порта и URL-адресам, описанным в этом разделе. Этот доступ находится на вершине [портов и URL-адресов, необходимых для подключения агента мониторинга Майкрософт](../azure-monitor/platform/agent-windows.md) к журналам Azure Monitor.
+Для подключения и регистрации в Azure Automation и регистрации в Azure, он должен иметь доступ к номеру порта и URL-адресам, описанным в этом разделе. Этот доступ находится на вершине [портов и URL-адресов, необходимых для подключения агента log Analytics](../azure-monitor/platform/agent-windows.md) к журналам Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -143,7 +143,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 |*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
 |*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Чтобы узнать, как устранить неполадки гибридных работников Runbook, [см.](troubleshoot/hybrid-runbook-worker.md#general)

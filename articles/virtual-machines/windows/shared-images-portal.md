@@ -5,7 +5,6 @@ services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-windows
@@ -15,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 11/06/2019
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 6273b58d9db53cfc4f6647885c70148982f0b950
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 83cdae95d43884647e257cbf1808222a542a212e
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74975505"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458102"
 ---
 # <a name="create-an-azure-shared-image-gallery-using-the-portal"></a>Создание общей галереи изображений Azure с помощью портала
 
@@ -78,11 +77,11 @@ ms.locfileid: "74975505"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выберите группу ресурсов для виртуальной машины, выберите **Удалить,** а затем подтвердить название группы ресурсов для удаления.
+Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выберите группу ресурсов для виртуальной машины, выберите действие **Удалить** и подтвердите имя удаляемой группы ресурсов.
 
 Если вы хотите удалить отдельные ресурсы, необходимо удалить их в обратном порядке. Например, чтобы удалить определение изображения, необходимо удалить все версии изображений, созданные из этого изображения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

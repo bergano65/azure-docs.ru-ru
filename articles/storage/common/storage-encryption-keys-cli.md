@@ -10,18 +10,18 @@ ms.date: 04/02/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: ea944d4cfa3006c33f1dee3dd8e6ee6088681aa7
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 796e3b3f46bc83b776826baf6e078c696eda543b
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80618642"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81456778"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-azure-cli"></a>Настройка ключей, управляемых клиентами, с помощью Azure Key Vault с помощью Azure CLI
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 
-В этой статье показано, как настроить Хранилище ключей Azure с помощью ключей, управляемых клиентами, с помощью Azure CLI. Чтобы узнать, как создать хранилище ключей с помощью Azure CLI, [см.](../../key-vault/quick-create-cli.md)
+В этой статье показано, как настроить Хранилище ключей Azure с помощью ключей, управляемых клиентами, с помощью Azure CLI. Чтобы узнать, как создать хранилище ключей с помощью Azure CLI, [см.](../../key-vault/secrets/quick-create-cli.md)
 
 ## <a name="assign-an-identity-to-the-storage-account"></a>Присвоить удостоверение личности учетной записи хранилища
 
@@ -55,7 +55,7 @@ az keyvault create \
     --enable-purge-protection
 ```
 
-Чтобы узнать, как включить **Soft Delete** и Do **Not Purge** на существующем хранилище ключей с Azure CLI, смотрите разделы под названием **Включение мягкого удаления** и включение защиты от **очистки** в [как использовать мягкое удаление с CLI.](../../key-vault/key-vault-soft-delete-cli.md)
+Чтобы узнать, как включить **Soft Delete** и Do **Not Purge** на существующем хранилище ключей с Azure CLI, смотрите разделы под названием **Включение мягкого удаления** и включение защиты от **очистки** в [как использовать мягкое удаление с CLI.](../../key-vault/general/soft-delete-cli.md)
 
 ## <a name="configure-the-key-vault-access-policy"></a>Настройка политики доступа к хранилищу ключей
 

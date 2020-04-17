@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: peterclu
-ms.author: peterlu
-ms.date: 02/22/2020
-ms.openlocfilehash: 7fcfc7c15f94d7b569629e53534d731126172260
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+author: likebupt
+ms.author: keli19
+ms.date: 04/13/2020
+ms.openlocfilehash: c46c21b5662b924552f850f226a12c7350b4625a
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81399059"
+ms.locfileid: "81458207"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer-preview"></a>Ссылка на модуль «Алгоритм &» для дизайнера машинного обучения Azure (предварительный просмотр)
 
@@ -60,10 +60,14 @@ ms.locfileid: "81399059"
 | Обнаружение аномалий | Создавайте модели обнаружения аномалий. | [Обнаружение аномалий на основе PCA](pca-based-anomaly-detection.md) <br/> [Обучение модели обнаружения аномалий](train-anomaly-detection-model.md) |
 
 
+## <a name="web-service"></a>Веб-служба
+
+Узнайте о [модулях веб-сервисов,](web-service-input-output.md) которые необходимы для выводов в реальном времени в дизайнере машинного обучения Azure.
+
 ## <a name="error-messages"></a>Сообщения об ошибках
 
 Узнайте о [сообщениях об ошибках и кодах исключений,](designer-error-codes.md) с которыми можно столкнуться с помощью модулей в конструкторе машинного обучения Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Учебник: Построить модель в дизайнер для прогнозирования цен на автомобили](../tutorial-designer-automobile-price-train-score.md)

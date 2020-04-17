@@ -9,12 +9,12 @@ manager: barbkess
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: f105eac0f6f21ea3358340a4e2aaec7d1f1a95ad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 569c989e8876bb7213d1469c7a70da99aa0b1e9c
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77190559"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81455348"
 ---
 # <a name="security-controls-for-windows-virtual-machines"></a>Элементы управления безопасностью для виртуальных машин Windows
 
@@ -39,18 +39,18 @@ ms.locfileid: "77190559"
 | Управление и управление самолетом лесозаготовки и аудит| Да |  |
 | Регистрация и аудит плоскости данных | нет |  |
 
-## <a name="identity"></a>идентификации
+## <a name="identity"></a>Идентификация
 
 | Контроль безопасности | Да/нет | Примечания|
 |---|---|--|
-| Проверка подлинности| Да |  |
+| Аутентификация| Да |  |
 | Авторизация| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
 
 | Контроль безопасности | Да/нет | Примечания |
 |---|---|--|
-| Шифрование на стороне сервера в состоянии покоя: клавиши, управляемые Корпорацией Майкрософт | Да | Смотрите [шифрование виртуальных дисков на Windows VM](/azure/virtual-machines/windows/encrypt-disks). |
+| Шифрование на стороне сервера в состоянии покоя: клавиши, управляемые Корпорацией Майкрософт | Да | Смотрите [шифрование виртуальных дисков на Windows VM](/azure/virtual-machines/windows/disk-encryption-overview). |
 | Шифрование в пути (например, шифрование ExpressRoute, шифрование VNet и шифрование VNet-VNet)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и VNet. Смотрите [шифрование в пути в VMs](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
 | Шифрование на стороне сервера в состоянии покоя: ключи, управляемые клиентом (BYOK) | Да | Управляемые клиентами ключи — это поддерживаемый сценарий шифрования Azure; смотрите [обзор шифрования Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms).|
 | Шифрование уровня столбцов (Службы данных Azure)| Недоступно | |
@@ -64,6 +64,6 @@ ms.locfileid: "77190559"
 |---|---|--|
 | Поддержка управления конфигурацией (версия конфигурации и т.д.)| Да |  | 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [встроенных элементах управления безопасностью в службах Azure.](../../security/fundamentals/security-controls.md)

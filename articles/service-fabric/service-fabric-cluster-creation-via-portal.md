@@ -3,12 +3,12 @@ title: Создание кластера Service Fabric в Azure с помощь
 description: Узнайте, как настроить защищенный кластер Service Fabric в Azure с помощью портала Azure и Azure Key Vault.
 ms.topic: conceptual
 ms.date: 09/06/2018
-ms.openlocfilehash: e2de920ce9517e156934a636559a6fd6f5a71eb5
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: e0cd3d5e5a37720134a5bce596bba211b375f19d
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80754108"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458323"
 ---
 # <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal"></a>Создание кластера Service Fabric в Azure с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -198,13 +198,13 @@ ms.locfileid: "80754108"
 ## <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Удаленное подключение к экземпляру из набора масштабирования виртуальных машин или узлу кластера
 Каждый из типов узлов, задаваемый в кластере, отражается на конфигурации масштабируемого набора виртуальных машин. <!--See [Remote connect to a Virtual Machine Scale Set instance][remote-connect-to-a-vm-scale-set] for details. -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 На этом этапе у вас имеется защищенный кластер, использующий сертификаты для аутентификации управления. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).  Кроме того, узнайте [о вариантах поддержки Service Fabric](service-fabric-support.md).
 
 <!-- Links -->
 [azure-powershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
 [azure-portal]: https://portal.azure.com/
-[key-vault-get-started]: ../key-vault/key-vault-overview.md
+[key-vault-get-started]: ../key-vault/general/overview.md
 [create-cluster-arm]: service-fabric-cluster-creation-via-arm.md
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
 [service-fabric-cluster-security-roles]: service-fabric-cluster-security-roles.md

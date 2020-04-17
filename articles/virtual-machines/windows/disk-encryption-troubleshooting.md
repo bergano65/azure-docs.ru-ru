@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0d4e76f4d02b0287770243bfddf995a19f90d232
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fafe4a9ef78a92595eaae942fa5d7cbeb2c07189
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73749451"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458221"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "73749451"
 
 ### <a name="azure-key-vault-behind-a-firewall"></a>Azure Key Vault за брандмауэром
 
-При включении шифрования [учетных данных Azure AD](disk-encryption-windows-aad.md#) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/key-vault-access-behind-firewall.md).
+При включении шифрования [учетных данных Azure AD](disk-encryption-windows-aad.md#) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
 Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляров Azure](../windows/instance-metadata-service.md), использующей известный немаршрутизируемый IP-адрес (`169.254.169.254`), доступ к которому можно получить только из виртуальной машины.  Прокси-конфигурации, изменяющие локальный трафик HTTP на этот адрес (например, добавление X-Forwarded-For заголовка), не поддерживаются.
@@ -83,7 +83,7 @@ DISKPART> list vol
 
 Чтобы отключить шифрование Azure Disk с помощью CLI, используйте [az vm шифрование отключите.](/cli/azure/vm/encryption) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 

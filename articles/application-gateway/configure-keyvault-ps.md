@@ -8,16 +8,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 02/27/2020
 ms.author: victorh
-ms.openlocfilehash: 1979f759f5a1b037adfd7b67a7be50cbba0f596f
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: ffda4b41497a9fd84db5fcee36202eb1c1dca2c0
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81312216"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457847"
 ---
 # <a name="configure-tls-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Налажить окончание TLS с помощью key Vault с помощью Сертификатов Ключей PowerShell
 
-[Azure Key Vault](../key-vault/key-vault-overview.md) — это секретный магазин, управляемый платформой, который можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Azure Application Gateway поддерживает интеграцию с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS. Эта поддержка ограничена Application Gateway v2 SKU.
+[Azure Key Vault](../key-vault/general/overview.md) — это секретный магазин, управляемый платформой, который можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Azure Application Gateway поддерживает интеграцию с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS. Эта поддержка ограничена Application Gateway v2 SKU.
 
 Для получения дополнительной [TLS termination with Key Vault certificates](key-vault-certs.md)информации см.
 
@@ -71,7 +71,7 @@ $certificate = Get-AzKeyVaultCertificate -VaultName $kv -Name "cert1"
 $secretId = $certificate.SecretId.Replace($certificate.Version, "")
 ```
 > [!NOTE]
-> Флаг -EnableSoftDelete должен использоваться для правильного функционирования прекращения TLS. При настройке [мягкого удаления Key Vault через Portal](../key-vault/key-vault-ovw-soft-delete.md#soft-delete-behavior)период хранения должен быть сохранен на уровне 90 дней, значение по умолчанию. Приложение Gateway еще не поддерживает другой период хранения. 
+> Флаг -EnableSoftDelete должен использоваться для правильного функционирования прекращения TLS. При настройке [мягкого удаления Key Vault через Portal](../key-vault/general/overview-soft-delete.md#soft-delete-behavior)период хранения должен быть сохранен на уровне 90 дней, значение по умолчанию. Приложение Gateway еще не поддерживает другой период хранения. 
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 

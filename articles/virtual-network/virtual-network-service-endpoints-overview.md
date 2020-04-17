@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 72c2c90f7a71bd9bf251adb492168fa5d2baa60a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b75e0c1e53f1e00579de73897197cdd2f14d79af
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79244788"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81455416"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
@@ -35,7 +35,7 @@ ms.locfileid: "79244788"
 - **[База данных Azure для сервера MyS'L](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** *(Microsoft.Sql):* Как правило, доступна в регионах Azure, где доступна служба баз данных.
 - **[База данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** *(Microsoft.Sql):* Как правило, доступна в регионах Azure, где доступна служба баз данных.
 - **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** *(Microsoft.AzureCosmosDB):* Как правило, доступны во всех регионах Azure.
-- **[Убежище ключей Azure](../key-vault/key-vault-overview-vnet-service-endpoints.md)** (*Microsoft.KeyVault):* Как правило, доступны во всех регионах Azure.
+- **[Убежище ключей Azure](../key-vault/general/overview-vnet-service-endpoints.md)** (*Microsoft.KeyVault):* Как правило, доступны во всех регионах Azure.
 - **[Автобус службы Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft.ServiceBus):* Как правило, доступен во всех регионах Azure.
 - **[Концентраторы событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft.EventHub):* Обычно доступны во всех регионах Azure.
 - **[Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** *(Microsoft.AzureActiveDirectory):* Как правило, доступен во всех регионах Azure, где доступен ADLS Gen1.
@@ -45,7 +45,7 @@ ms.locfileid: "79244788"
 
 - **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)** (*Microsoft.ContainerRegistry*): Предварительный просмотр доступен во всех регионах Azure, где доступен реестр контейнеров Azure.
 
-Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
+Для получения самых современных уведомлений проверьте страницу [обновлений виртуальной сети Azure.](https://azure.microsoft.com/updates/?product=virtual-network)
 
 ## <a name="key-benefits"></a>Основные преимущества
 
@@ -80,7 +80,7 @@ ms.locfileid: "79244788"
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 - Настройка конечных точек службы в подсети в виртуальной сети. Конечные точки работают с любым типом вычислительных экземпляров, выполняющихся в этой подсети.
 - Можно настроить несколько конечных точек службы для всех поддерживаемых служб Azure (например, база данных Azure Storage или Azure S'L Database).
@@ -88,7 +88,7 @@ ms.locfileid: "79244788"
 - Виртуальная сеть, в которой настраивается конечная точка, может относиться к той же подписке, что и ресурс службы Azure, либо же к другой подписке. Дополнительные сведения о разрешениях, которые требуются для настройки конечных точек и защиты служб Azure, см. в разделе [Подготовка](#provisioning).
 - Вы можете защитить новые или существующие ресурсы в виртуальных сетях с помощью конечных точек служб для поддерживаемых служб.
 
-### <a name="considerations"></a>Рекомендации
+### <a name="considerations"></a>Особенности
 
 - После включения конечной точки службы, исходные IP-адреса виртуальных машин в коммутаторе подсети. Исходные IP-адреса переключаются с использования общедоступных адресов IPv4 на использование их частного адреса IPv4 при общении с службой из этой подсети. Во время этого переключения все открытые TCP-подключения к службе закрываются. Убедитесь, что при включении или отключении конечной точки службы в подсети не выполняются критически важные задачи. Также удостоверьтесь, что приложения могут автоматически подключаться к службам Azure после этого переключения IP-адресов.
 
@@ -143,13 +143,13 @@ ms.locfileid: "79244788"
 
 Для часто задаваемых вопросов, см [Виртуальная сеть службы конечных часто задаваемых вопросов](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Настройка конечных точек виртуального сетевого обслуживания](tutorial-restrict-network-access-to-resources.md)
+- [Настройка конечных точек служб для виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защищайте учетную запись хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Защищайте базу данных Azure S'L для виртуальной сети](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Защищайте хранилище данных Azure S'L в виртуальной сети](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fsql-data-warehouse%2ftoc.json)
 - [Интеграция сервисов Azure в виртуальные сети](virtual-network-for-azure-services.md)
 - [Политики конечных точек служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
-- [Шаблон менеджера ресурсов Azure](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration)
+- [Шаблон Azure Resource Manager](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration)
 

@@ -7,16 +7,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 4/25/2019
 ms.author: victorh
-ms.openlocfilehash: 26093d051da8f2182a40f80837acbd9ef7dd008f
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: be558c3e3a68ce6c194dcf98d8f5ff92c4c14edb
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81312075"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457830"
 ---
 # <a name="tls-termination-with-key-vault-certificates"></a>Прекращение TLS с сертификатами Key Vault
 
-[Azure Key Vault](../key-vault/key-vault-overview.md) — это секретный магазин, управляемый платформой, который можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Azure Application Gateway поддерживает интеграцию с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS. Эта поддержка ограничена v2 SKU Прикладного шлюза.
+[Azure Key Vault](../key-vault/general/overview.md) — это секретный магазин, управляемый платформой, который можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Azure Application Gateway поддерживает интеграцию с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS. Эта поддержка ограничена v2 SKU Прикладного шлюза.
 
 Key Vault интеграции предлагает две модели для прекращения TLS:
 

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8574fcdff12e61f7039174ed6297d0558a66dc4
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 066ab7892bed6e7505e7ee114ff37a7850ef5c9b
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80653936"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450927"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Включить безпарольный ключ безопасности (предварительный просмотр)
 
@@ -48,7 +48,7 @@ Azure AD объединился с устройствами, которые вы
 
 ### <a name="enable-the-combined-registration-experience"></a>Включить опыт комбинированной регистрации
 
-Функции регистрации методов проверки подлинности без паролей опираются на комбинированный предварительный просмотр регистрации. Следуйте шагам в статье [Включить комбинированную регистрацию информации безопасности (предварительный просмотр),](howto-registration-mfa-sspr-combined.md)чтобы включить комбинированный предварительный просмотр регистрации.
+Функции регистрации методов проверки подлинности без паролей полагаются на комбинированную функцию регистрации. Следуйте шагам в статье [Включить комбинированную регистрацию информации безопасности (предварительный просмотр),](howto-registration-mfa-sspr-combined.md)чтобы включить комбинированную регистрацию.
 
 ### <a name="enable-fido2-security-key-method"></a>Включить ключевой метод безопасности FIDO2
 
@@ -99,7 +99,7 @@ Azure AD объединился с устройствами, которые вы
 
 Мы работаем над поддержкой функции, которая позволяет изменять UPN на гибридных устройствах Azure AD и присоединенных к Azure AD устройствах. Если UPN пользователя изменяется, вы больше не можете изменять ключи безопасности FIDO2 для учета изменений. Разрешение заключается в том, чтобы сбросить устройство, и пользователь должен перерегистрироваться.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [FiDO2 ключ безопасности Windows 10 введом](howto-authentication-passwordless-security-key-windows.md)
 

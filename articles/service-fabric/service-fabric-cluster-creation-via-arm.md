@@ -3,12 +3,12 @@ title: Создание кластера Azure Service Fabric
 description: Сведения о настройке защищенного кластера Service Fabric в Azure с помощью Azure Resource Manager.  Вы можете создать кластер с помощью шаблона по умолчанию или собственного шаблона.
 ms.topic: conceptual
 ms.date: 08/16/2018
-ms.openlocfilehash: 8cf14230f3abd37d91f1ec369f597ee594876100
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 24bc80a7ab3ce61b79466cdd943c60efd367ce01
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77624114"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458306"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Создание кластера Service Fabric с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
@@ -251,7 +251,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 ### <a name="use-a-pointer-to-a-secret-uploaded-into-a-key-vault"></a>Использование указателя на секрет, переданный в хранилище ключей
 
-Для использования существующего хранилища ключей необходимо [для развертывания,](../key-vault/key-vault-manage-with-cli2.md#bkmk_KVperCLI) чтобы поставщик вычислительных ресурсов получил от него сертификаты и установил его на кластерные узлы.
+Для использования существующего хранилища ключей необходимо [для развертывания,](../key-vault/general/manage-with-cli2.md#bkmk_KVperCLI) чтобы поставщик вычислительных ресурсов получил от него сертификаты и установил его на кластерные узлы.
 
 Развертывание кластера с помощью PowerShell:
 
@@ -278,7 +278,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
     --template-file $templateFilePath --parameter-file $parameterFilePath 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 На этом этапе у вас есть защищенный кластер, работающий в Azure. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).
 
 Синтаксис и свойства JSON, используемые в шаблоне, доступны в справочнике по шаблону [Microsoft.ServiceFabric/clusters](/azure/templates/microsoft.servicefabric/clusters).

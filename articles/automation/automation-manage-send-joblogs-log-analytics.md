@@ -5,24 +5,27 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 54f77f55a127cd712d43419eb6a85fd5d93a478c
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: a9f4e641e60d6cf1c481c445767422e8b4df683b
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80652174"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457694"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Переработайте статус задания и потоки рабочих мест от журналов автоматизации к мониторингу Azure
 
 Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. Этот процесс не предполагает связывания с рабочей областью и является полностью независимым. На портале Azure или с помощью PowerShell можно просмотреть журналы заданий и потоки заданий для отдельных заданий. Это дает возможность выполнять простые исследования. Теперь с журналами Azure Monitor вы можете:
 
-* получить информацию о заданиях службы автоматизации;
+* Получите представление о состоянии ваших рабочих мест автоматизации.
 * активировать отправку электронного сообщения или оповещения в соответствии с состоянием задания runbook (например, сбой или приостановка);
 * создавать сложные запросы для потоков заданий;
 * коррелировать задания и учетные записи службы автоматизации;
-* визуализировать журнал заданий по прошествии времени.
+* Используйте пользовательские представления и поисковые запросы для визуализации результатов выполнения книги, статуса работы runbook и других ключевых показателей или метрик.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](automation-update-azure-modules.md)
 
 ## <a name="prerequisites-and-deployment-considerations"></a>Предварительные требования и рекомендации по развертыванию
 
@@ -35,7 +38,7 @@ ms.locfileid: "80652174"
 Используйте следующую команду, чтобы найти идентификатор ресурса для учетной записи Azure Automation:
 
 ```powershell-interactive
-# Find the ResourceId for the Automation Account
+# Find the ResourceId for the Automation account
 Get-AzResource -ResourceType "Microsoft.Automation/automationAccounts"
 ```
 
@@ -50,8 +53,9 @@ Get-AzResource -ResourceType "Microsoft.OperationalInsights/workspaces"
 
 1. На портале Azure выберите учетную запись Автоматизации из лезвия **учетной записи Automation** и выберите **все настройки.** 
 2. Из лезвия **всех настроек,** под **настройками учетной записи,** выберите **Свойства.**  
-3. В лезвии **Свойств** обратите внимание на эти значения.<br> ![Автоматизация](media/automation-manage-send-joblogs-log-analytics/automation-account-properties.png)свойств учетной записи.
+3. В лезвии **Свойств** обратите внимание на свойства, показанные ниже.
 
+    ![Свойства счета автоматизации](media/automation-manage-send-joblogs-log-analytics/automation-account-properties.png).
 
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 
@@ -104,7 +108,7 @@ Get-AzResource -ResourceType "Microsoft.OperationalInsights/workspaces"
 ## <a name="setting-up-integration-with-azure-monitor-logs"></a>Настройка интеграции с журналами Azure Monitor
 
 1. На своем компьютере запустите Windows PowerShell на **начальном** экране.
-2. Выполнить следующие команды PowerShell и отсваивать значение для значений `[your resource ID]` и `[resource ID of the log analytics workspace]` значений из предыдущего раздела.
+2. Выполнить следующие команды PowerShell и отсваивать значения для `[your resource ID]` и `[resource ID of the log analytics workspace]` с значениями из предыдущего раздела.
 
    ```powershell-interactive
    $workspaceId = "[resource ID of the log analytics workspace]"
@@ -146,7 +150,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 2. Создайте запрос поиска журнала для оповещения, введя следующий поиск в поле запроса:`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended")`<br><br>Вы также можете группироваться по названию runbook, используя:`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended") | summarize AggregatedValue = count() by RunbookName_s`
 
    Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Название учетной записи `Resource` автоматизации `JobLogs`можно найти в поле в поиске .
-3. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/platform/alerts-unified-log.md).
+3. Чтобы открыть экран **правила «Создание»,** нажмите **«Новое правило оповещения»** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/platform/alerts-unified-log.md).
 
 ### <a name="find-all-jobs-that-have-completed-with-errors"></a>Поиск всех заданий, завершенных с ошибками
 
@@ -178,20 +182,10 @@ $automationAccountId = "[resource ID of your Automation account]"
 
 Remove-AzDiagnosticSetting -ResourceId $automationAccountId
 ```
-
-## <a name="summary"></a>Сводка
-
-Отправив свой статус задания Automation и данные потоковой передачи в журналы Azure Monitor, вы сможете лучше понять состояние заданий автоматизации:
-+ настроить оповещения, уведомляющие вас о проблемах;
-+ с помощью пользовательских представлений и поисковых запросов визуализировать результаты модуля Runbook, состояние задания Runbook и другие связанные ключевые индикаторы или метрики.
-
-Журналы Azure Monitor обеспечивают большую оперативную видимость рабочих мест автоматизации и могут быстрее устрашать инциденты.
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для устранения неполадок в журнале Analytics [см.](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data)
 * Чтобы узнать больше о том, как создавать различные поисковые запросы и просматривать журналы заданий автоматизации с помощью журналов Azure Monitor, смотрите [поиск в журналах Azure Monitor.](../log-analytics/log-analytics-log-searches.md)
 * Чтобы понять, как создавать и извлекать выходные и сообщения об ошибках из runbooks, [см.](automation-runbook-output-and-messages.md)
 * Дополнительные сведения о выполнении модулей Runbook, отслеживании заданий модуля Runbook и других технических деталях см. в статье [Выполнение модуля Runbook в службе автоматизации Azure](automation-runbook-execution.md).
 * Подробнее о журналах и источниках сбора данных Azure Monitor читайте [в обзоре журналов Azure Monitor.](../azure-monitor/platform/collect-azure-metrics-logs.md)
-

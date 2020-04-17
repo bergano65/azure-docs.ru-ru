@@ -10,12 +10,12 @@ ms.date: 11/22/2019
 ms.author: brendm
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 970701606811cbd61a9bfebe39ff82cdc91d5693
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f4f6de807628704051cdddf74bcefbed678f8fcd
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80245843"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457898"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java в Linux для Службы приложений Azure
 
@@ -230,7 +230,7 @@ public int getServerPort()
 
 ### <a name="use-keyvault-references"></a>Использование ссылок KeyVault
 
-[Azure KeyVault](../../key-vault/key-vault-overview.md) предоставляет централизованное секретное управление политиками доступа и историей аудита. Вы можете хранить секреты (например, пароли или строки соединения) в KeyVault и получать доступ к этим секретам в приложении через переменные среды.
+[Azure KeyVault](../../key-vault/general/overview.md) предоставляет централизованное секретное управление политиками доступа и историей аудита. Вы можете хранить секреты (например, пароли или строки соединения) в KeyVault и получать доступ к этим секретам в приложении через переменные среды.
 
 Во-первых, следуйте инструкциям по [предоставлению вашему приложению доступа к Key Vault](../app-service-key-vault-references.md#granting-your-app-access-to-key-vault) и [внесению ссылки на ваш секрет в настройке приложения.](../app-service-key-vault-references.md#reference-syntax) Можно проверить, что ссылка разрешает секрет, печатая переменную среды при удаленном доступе к терминалу Службы приложения.
 
@@ -243,9 +243,9 @@ public int getServerPort()
 Дополнительная конфигурация может потребоваться для шифрования соединения JDBC с сертификатами в Магазине ключей Java. Пожалуйста, обратитесь к документации для выбранного драйвера JDBC.
 
 - [PostgreSQL](https://jdbc.postgresql.org/documentation/head/ssl-client.html)
-- [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/connecting-with-ssl-encryption?view=sql-server-ver15)
-- [Mysql](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-using-ssl.html)
-- [Mongodb](https://mongodb.github.io/mongo-java-driver/3.4/driver/tutorials/ssl/)
+- [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/connecting-with-ssl-encryption?view=sql-server-ver15)
+- [MySQL](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-using-ssl.html)
+- [MongoDB](https://mongodb.github.io/mongo-java-driver/3.4/driver/tutorials/ssl/)
 - [Cassandra](https://docs.datastax.com/en/developer/java-driver/4.3/)
 
 #### <a name="initializing-the-java-key-store"></a>Инициализация магазина java Key
@@ -644,7 +644,7 @@ xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl 
 
 [!INCLUDE [robots933456](../../../includes/app-service-web-configure-robots933456.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Посетите центр [Azure для разработчиков Java](/java/azure/), чтобы найти краткие руководства Azure, руководства и справочную документацию по Java.
 

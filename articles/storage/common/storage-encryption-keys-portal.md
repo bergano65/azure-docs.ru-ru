@@ -10,18 +10,18 @@ ms.date: 03/19/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: e7878cae7bc6aabf1db58bfd63338955b9e830d3
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 192e58b101b824ca0cc0c732e02647838be6dc35
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80478242"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81456487"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-the-azure-portal"></a>Налаживание ключей, управляемых клиентами, с помощью портала Azure Key Vault
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 
-В этой статье показано, как настроить Хранилище ключей Azure с помощью ключей, управляемых клиентами, с помощью [портала Azure.](https://portal.azure.com/) Чтобы узнать, как создать хранилище ключей с помощью портала Azure, [см.](../../key-vault/quick-create-portal.md)
+В этой статье показано, как настроить Хранилище ключей Azure с помощью ключей, управляемых клиентами, с помощью [портала Azure.](https://portal.azure.com/) Чтобы узнать, как создать хранилище ключей с помощью портала Azure, [см.](../../key-vault/secrets/quick-create-portal.md)
 
 ## <a name="configure-azure-key-vault"></a>Настройка Azure Key Vault
 
@@ -29,8 +29,8 @@ ms.locfileid: "80478242"
 
 Чтобы узнать, как включить эти свойства в существующем хранилище ключей, см. разделы под названием **"Включение в мягкое удаление** и **включение защиты от очистки"** в одной из следующих статей:
 
-- [Как использовать мягкое удаление с PowerShell](../../key-vault/key-vault-soft-delete-powershell.md).
-- [Как использовать мягкое удаление с CLI](../../key-vault/key-vault-soft-delete-cli.md).
+- [Как использовать мягкое удаление с PowerShell](../../key-vault/general/soft-delete-powershell.md).
+- [Как использовать мягкое удаление с CLI](../../key-vault/general/soft-delete-cli.md).
 
 Только 2048-разрядные клавиши RSA и RSA-HSM поддерживаются шифрованием Azure Storage. Для получения дополнительной информации о ключах смотрите **ключи Убежища ключей** в [о клавишах, секретах и сертификатах Azure Key Vault.](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys)
 

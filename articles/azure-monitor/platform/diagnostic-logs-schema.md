@@ -4,12 +4,12 @@ description: Понимание поддерживаемых служб и сх�
 ms.subservice: logs
 ms.topic: reference
 ms.date: 10/22/2019
-ms.openlocfilehash: 8abd8767d9bb7e3c4336f6600b94f6b3f4ea48f1
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 352310a6e489a96c38e85b16e9504d8eb9be38b1
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81380518"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81457252"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-resource-logs"></a>Поддерживаемые службы, схемы и категории для журналов ресурсов Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "81380518"
 
 ## <a name="top-level-resource-logs-schema"></a>Схема журналов ресурсов верхнего уровня
 
-| Имя | Обязательный/необязательный | Описание |
+| name | Обязательный/необязательный | Описание |
 |---|---|---|
 | time | Обязательно | Метка времени события (UTC). |
 | resourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
@@ -66,7 +66,7 @@ ms.locfileid: "81380518"
 | ExpressRoute | Схема недоступна. |
 | Брандмауэр Azure | Схема недоступна. |
 | Центр Интернета вещей | [Использование Azure Monitor](../../iot-hub/iot-hub-monitor-resource-health.md#use-azure-monitor) |
-| Key Vault |[Лазурный ключ Vault Регистрация](../../key-vault/key-vault-logging.md) |
+| Key Vault |[Лазурный ключ Vault Регистрация](../../key-vault/general/logging.md) |
 | Служба Kubernetes |[Лазурный Кuberнетлес Лесозаготовки](../../aks/view-master-logs.md#log-event-schema) |
 | Load Balancer |[Служба анализа журналов для балансировщика нагрузки Azure](../../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Настраиваемая схема отслеживания Logic Apps B2B](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |

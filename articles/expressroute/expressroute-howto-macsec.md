@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: 626302845dfb4b19deb921675601818b35ab8edb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 572147ca43e9a4dea9d9601dfa1dac8ba1c97ed0
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74083547"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458238"
 ---
 # <a name="configure-macsec-on-expressroute-direct-ports"></a>Направьте MACsec на прямые порты ExpressRoute
 
@@ -47,7 +47,7 @@ ms.locfileid: "74083547"
     $keyVault = New-AzKeyVault -Name "your_key_vault_name" -ResourceGroupName "your_resource_group" -Location "resource_location" -EnableSoftDelete 
     ```
 
-    Если у вас уже есть хранилище ключей или группа ресурсов, вы можете повторно использовать их. Тем не менее, очень важно включить [функцию **«мягкого удаления»** ](../key-vault/key-vault-ovw-soft-delete.md) в существующем хранилище ключей. Если мягкое удаление не включено, можно использовать следующие команды для включения:
+    Если у вас уже есть хранилище ключей или группа ресурсов, вы можете повторно использовать их. Тем не менее, очень важно включить [функцию **«мягкого удаления»** ](../key-vault/general/overview-soft-delete.md) в существующем хранилище ключей. Если мягкое удаление не включено, можно использовать следующие команды для включения:
 
     ```azurepowershell-interactive
     ($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName "your_existing_keyvault").ResourceId).Properties | Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"
@@ -134,7 +134,7 @@ Set-AzExpressRoutePort -ExpressRoutePort $erDirect
 ### <a name="test-connectivity"></a>Проверка подключения
 После настройки MACsec (включая обновление ключа MACsec) в портах ExpressRoute Direct [проверьте,](expressroute-troubleshooting-expressroute-overview.md) запущены ли и запущены сеансы BGP цепей. Если у вас пока нет схемы в портах, пожалуйста, создайте одну первую и навяжните Azure Private Peering или Microsoft Peering of the circuit. Если MACsec неправильно настроен, включая несоответствие ключа MACsec, между вашими сетевыми устройствами и сетевыми устройствами Майкрософт, вы не увидите разрешение ARP на уровне 2 и создание BGP на уровне 3. Если все настроено правильно, вы должны увидеть маршруты BGP, рекламируемые правильно в обоих направлениях, и поток данных приложения соответственно через ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 1. [Создание схемы ExpressRoute на ЭкспрессРут Прямая](expressroute-howto-erdirect.md)
 2. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).
 3. [Проверить подключение ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)

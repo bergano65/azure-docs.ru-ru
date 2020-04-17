@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 03/31/2020
 ms.author: tamram
-ms.openlocfilehash: b4e91aa59168deb18375bf86ae77f655ca3dab47
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 50c0980800bbc9b2951bf9107114c1a4d9265558
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80521260"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81454668"
 ---
 # <a name="manage-storage-account-access-keys"></a>Управление ключами доступа к учетной записи хранилища
 
@@ -31,8 +31,8 @@ ms.locfileid: "80521260"
 
 Корпорация Майкрософт рекомендует использовать Azure Key Vault для управления и поворота ключей доступа. Приложение может безопасно получить доступ к ключам в Key Vault, чтобы избежать их хранения с кодом приложения. Для получения дополнительной информации об использовании Key Vault для управления ключами см.
 
-- [Управление ключами учетной записи хранилища с помощью Azure Key Vault и PowerShell](../../key-vault/key-vault-overview-storage-keys-powershell.md)
-- [Управление ключами учетной записи хранилища с помощью Azure Key Vault и Azure CLI](../../key-vault/key-vault-ovw-storage-keys.md)
+- [Управление ключами учетной записи хранилища с помощью Azure Key Vault и PowerShell](../../key-vault/secrets/overview-storage-keys-powershell.md)
+- [Управление ключами учетной записи хранилища с помощью Azure Key Vault и Azure CLI](../../key-vault/secrets/overview-storage-keys.md)
 
 ## <a name="manually-rotate-access-keys"></a>Ручно поверните клавиши доступа
 
@@ -55,7 +55,7 @@ ms.locfileid: "80521260"
 
 Чтобы повернуть ключи доступа учетной записи, пользователь должен быть администратором службы, либо должен быть назначен роль RBAC, которая включает в себя **Microsoft.Storage/storageAccounts/regeneratekey/action.** Некоторые встроенные роли RBAC, которые включают **Contributor**это действие, являются ролями **роли функции функции функции функции ключевой службы оператора учетной** **записи**хранилища. Для получения дополнительной информации о роли администратора службы смотрите [роли администратора подписки Classic, роли Azure RBAC и функции Azure AD.](../../role-based-access-control/rbac-and-directory-admin-roles.md) Подробную информацию о встроенных ролях RBAC для Хранения Azure можно узнать в разделе **«Хранение»** в [встроенных ролях Azure rBAC.](../../role-based-access-control/built-in-roles.md#storage)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
 - [Создание учетной записи хранилища](storage-account-create.md)
