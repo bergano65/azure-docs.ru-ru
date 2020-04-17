@@ -50,6 +50,8 @@
           href: class-type-jupyter-notebook.md
         - name: Разработка мобильных приложений с помощью Android Studio
           href: class-type-mobile-dev-android-studio.md
+        - name: Аналитика больших данных
+          href: class-type-big-data-analytics.md
     - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
       items:
         - name: Создание и администрирование учетных записей лаборатории

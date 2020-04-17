@@ -152,5 +152,9 @@
       href: pca-based-anomaly-detection.md
     - name: Обучение модели обнаружения аномалий
       href: train-anomaly-detection-model.md
+- name: Веб-служба
+  items:
+    - name: Входные и выходные данные веб-службы
+      href: web-service-input-output.md
 - name: Ошибки модуля и устранение неполадок
   href: designer-error-codes.md
