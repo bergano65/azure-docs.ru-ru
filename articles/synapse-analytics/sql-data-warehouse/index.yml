@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: 'Azure Synapse Analytics (прежнее название: Хранилище данных SQL Azure)'
+title: Azure Synapse Analytics
 summary: Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе.
 metadata:
   title: Azure Synapse Analytics
@@ -11,28 +11,40 @@ metadata:
   ms.collection: collection
   author: julieMSFT
   ms.author: jrasnick
-  ms.date: 10/03/2019
-  ms.openlocfilehash: 16855697c61bb4b919d4f7dcaa752d3a17f6dbef
-  ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+  ms.date: 04/15/2020
+  ms.openlocfilehash: ea895ce94ed3b1fde574a1753981ac58adcb72b3
+  ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "80998827"
+  ms.lasthandoff: 04/16/2020
+  ms.locfileid: "81414263"
 landingContent:
-- title: About Azure Synapse Analytics
+- title: Сведения об Azure Synapse Analytics (ранее — Хранилище данных SQL Azure)
   linkLists:
   - linkListType: overview
     links:
-    - text: Что такое Azure Synapse?
+    - text: Что такое Azure Synapse? (ранее — Хранилище данных SQL Azure)
       url: sql-data-warehouse-overview-what-is.md
+    - text: Советы и рекомендации
+      url: cheat-sheet.md
   - linkListType: architecture
     links:
     - text: Архитектура Azure Synapse
       url: massively-parallel-processing-mpp-architecture.md
-    - text: Советы и рекомендации
-      url: cheat-sheet.md
     - text: Эталонная архитектура
       url: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/data/enterprise-bi-synapse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
+- title: Сведения об Azure Synapse Analytics (предварительная версия рабочей области)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения об Azure Synapse (предварительная версия рабочей области)
+      url: ../overview-what-is.md
+    - text: Советы и рекомендации
+      url: ../overview-cheat-sheet.md
+    - text: ВОПРОСЫ И ОТВЕТЫ
+      url: ../overview-faq.md
+    - text: Заметки о выпуске
+      url: ../release-notes.md
 - title: Начало работы
   linkLists:
   - linkListType: deploy
@@ -63,12 +75,8 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Рекомендации
-      url: sql-data-warehouse-best-practices.md
     - text: Настройка упорядоченного кластеризованного индекса columnstore
       url: performance-tuning-ordered-cci.md
-    - text: Использование материализованных представлений для настройки рабочей нагрузки
-      url: performance-tuning-materialized-views.md
   - linkListType: how-to-guide
     links:
     - text: Анализ рабочей нагрузки
@@ -99,5 +107,5 @@ landingContent:
   linkLists:
   - linkListType: video
     links:
-    - text: Просмотрите последние видеоматериалы по Хранилищу данных
+    - text: Просмотрите последние видео о Synapse SQL
       url: sql-data-warehouse-videos.md

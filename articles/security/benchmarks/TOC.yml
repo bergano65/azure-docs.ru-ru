@@ -40,6 +40,8 @@
       href: ../../container-registry/security-baseline.md
     - name: "Базовая конфигурация безопасности для Cosmos\_DB"
       href: ../../cosmos-db/security-baseline.md
+    - name: Базовая конфигурация системы безопасности Data Explorer
+      href: /azure/data-explorer/security-baseline
     - name: Базовые показатели безопасности Центров событий
       href: ../../event-hubs/security-baseline.md
     - name: Базовый уровень безопасности HDInsight

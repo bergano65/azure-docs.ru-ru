@@ -24,6 +24,10 @@
       href: active-directory-passwords-reset-register.md
     - name: Сброс пароля
       href: active-directory-passwords-update-your-own-password.md
+- name: "Справка по порталу\_— Мой персонал"
+  items:
+    - name: "Управление пользователями\_— Мой персонал"
+      href: my-staff-team-manager.md
 - name: Справка по приложению Microsoft Authenticator
   items:
     - name: Что такое приложение Microsoft Authenticator?

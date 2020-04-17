@@ -252,7 +252,7 @@
           href: virtual-machine-scale-sets-networking.md
         - name: Автоматические обновления ОС
           href: virtual-machine-scale-sets-automatic-upgrade.md
-        - name: Автоматическое исправление экземпляра (предварительная версия)
+        - name: Автоматические исправления экземпляра
           href: virtual-machine-scale-sets-automatic-instance-repairs.md
         - name: Защита экземпляров
           href: virtual-machine-scale-sets-instance-protection.md

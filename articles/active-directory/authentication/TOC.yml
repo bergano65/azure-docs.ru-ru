@@ -22,22 +22,16 @@
   items:
     - name: Методы проверки подлинности
       href: concept-authentication-methods.md
-    - name: Проверка подлинности без пароля
-      href: concept-authentication-passwordless.md
-    - name: Регистрация сведений о безопасности
-      href: concept-registration-mfa-sspr-combined.md
-    - name: Сброс паролей
+    - name: Самостоятельный сброс пароля
       items:
         - name: Принцип действия сброса пароля
           href: concept-sspr-howitworks.md
-        - name: Параметры сброса пароля
-          href: concept-sspr-customization.md
-        - name: Политики сброса пароля
-          href: concept-sspr-policy.md
-        - name: Какие лицензии нужны?
-          href: concept-sspr-licensing.md
         - name: Интеграция с локальной средой
           href: concept-sspr-writeback.md
+        - name: Политики
+          href: concept-sspr-policy.md
+        - name: Лицензии
+          href: concept-sspr-licensing.md
     - name: Многофакторная идентификация
       items:
         - name: Принципы работы MFA
@@ -50,12 +44,16 @@
           href: 'https://docs.microsoft.com/office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide'
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: multi-factor-authentication-faq.md
-    - name: Защита паролей Azure AD
+    - name: Проверка подлинности без пароля
+      href: concept-authentication-passwordless.md
+    - name: Защита пароля
       items:
         - name: Исключение ненадежных паролей в облаке
           href: concept-password-ban-bad.md
         - name: Исключение ненадежных паролей в локальной среде
           href: concept-password-ban-bad-on-premises.md
+    - name: Регистрация сведений о безопасности
+      href: concept-registration-mfa-sspr-combined.md
     - name: Устойчивые элементы управления доступом
       href: concept-resilient-controls.md
 - name: Практические руководства
@@ -64,6 +62,8 @@
       items:
         - name: Руководство по развертыванию
           href: howto-sspr-deployment.md
+        - name: Параметры настройки пользователя
+          href: howto-sspr-customization.md
         - name: Предварительная регистрация данных проверки подлинности
           href: howto-sspr-authenticationdata.md
         - name: Самостоятельный сброс пароля для клиентов Windows
@@ -100,28 +100,6 @@
               href: howto-mfa-nps-extension-rdg.md
             - name: Виртуальная частная сеть
               href: howto-mfa-nps-extension-vpn.md
-    - name: Регистрация сведений о безопасности
-      items:
-        - name: Включение объединенной регистрации
-          href: howto-registration-mfa-sspr-combined.md
-        - name: Устранение неполадок при объединенной регистрации
-          href: howto-registration-mfa-sspr-combined-troubleshoot.md
-    - name: Защита паролей Azure AD
-      items:
-        - name: Планирование и развертывание в локальной среде
-          href: howto-password-ban-bad-on-premises-deploy.md
-        - name: Включение и настройка в локальной среде
-          href: howto-password-ban-bad-on-premises-operations.md
-        - name: Мониторинг локальных развертываний
-          href: howto-password-ban-bad-on-premises-monitor.md
-        - name: Устранение неполадок с локальными развертываниями
-          href: howto-password-ban-bad-on-premises-troubleshoot.md
-        - name: Вопросы и ответы по локальной среде
-          href: howto-password-ban-bad-on-premises-faq.md
-        - name: Журнал версий локального агента
-          href: howto-password-ban-bad-on-premises-agent-versions.md
-    - name: Смарт-блокировка Azure AD
-      href: howto-password-smart-lockout.md
     - name: Вход без пароля
       items:
         - name: Развертывание без пароля
@@ -138,16 +116,38 @@
           href: howto-authentication-passwordless-phone.md
         - name: Windows Hello для бизнеса
           href: 'https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification'
+    - name: Регистрация сведений о безопасности
+      items:
+        - name: Включение объединенной регистрации
+          href: howto-registration-mfa-sspr-combined.md
+        - name: Устранение неполадок при объединенной регистрации
+          href: howto-registration-mfa-sspr-combined-troubleshoot.md
+    - name: Локальная защита паролем
+      items:
+        - name: Планирование и развертывание
+          href: howto-password-ban-bad-on-premises-deploy.md
+        - name: Включение и настройка
+          href: howto-password-ban-bad-on-premises-operations.md
+        - name: Монитор
+          href: howto-password-ban-bad-on-premises-monitor.md
+        - name: Диагностика
+          href: howto-password-ban-bad-on-premises-troubleshoot.md
+        - name: Часто задаваемые вопросы
+          href: howto-password-ban-bad-on-premises-faq.md
+        - name: Журнал версий агента
+          href: howto-password-ban-bad-on-premises-agent-versions.md
     - name: Использование проверки подлинности с помощью SMS (предварительная версия)
       href: howto-authentication-sms-signin.md
+    - name: Смарт-блокировка Azure AD
+      href: howto-password-smart-lockout.md
     - name: Аутентификация на основе сертификата
       items:
         - name: Начало работы с проверкой подлинности на основе сертификатов
           href: active-directory-certificate-based-authentication-get-started.md
           items:
-            - name: CBA на устройствах Android
+            - name: Использование на устройствах Android
               href: active-directory-certificate-based-authentication-android.md
-            - name: CBA на устройствах iOS
+            - name: Использование на устройствах iOS
               href: active-directory-certificate-based-authentication-ios.md
     - name: Отчеты
       items:

@@ -199,6 +199,8 @@
           href: stream-analytics-tools-for-visual-studio-cicd.md
     - name: Visual Studio Code
       items:
+        - name: Завершение кода с помощью IntelliSense
+          href: vs-code-intellisense.md
         - name: Локальное тестирование с использованием примеров данных
           href: visual-studio-code-local-run.md
         - name: Локальное тестирование с использованием фактических данных
