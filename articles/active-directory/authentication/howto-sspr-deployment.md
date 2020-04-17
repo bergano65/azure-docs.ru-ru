@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c11521ec074b63843b873c39102b68bf185d2821
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 8bec28b98a8d2640b5a8034569d49077ce6b4177
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80676728"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450995"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Планирование развертывания сброса паролей самообслуживания Azure Active Directory
 
@@ -115,7 +115,7 @@ Azure Active Directory лицензируется на каждого польз
 
 Корпорация Майкрософт рекомендует организациям использовать комбинированный опыт регистрации SSPR и многофакторной аутентификации. При включании этого комбинированного опыта регистрации пользователям необходимо выбрать информацию о регистрации только один раз, чтобы включить обе функции.
 
-Совокупный опыт регистрации не требует от организаций возможности как SSPR, так и Многофакторной аутентификации Azure. Комбинированная регистрация обеспечивает организациям лучший пользовательский опыт. Для получения дополнительной информации [см. Комбинированную регистрацию информации о безопасности (предварительный просмотр)](concept-registration-mfa-sspr-combined.md)
+Совокупный опыт регистрации не требует от организаций возможности как SSPR, так и Многофакторной аутентификации Azure. Комбинированная регистрация обеспечивает организациям лучший пользовательский опыт. Для получения дополнительной информации [см.](concept-registration-mfa-sspr-combined.md)
 
 ## <a name="plan-the-deployment-project"></a>Планирование проекта развертывания
 
@@ -341,7 +341,7 @@ Azure AD может предоставить дополнительную инф
 
 * [Что такое компонент обратной записи паролей?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для начала развертывания SSPR см. [Сбросить пароля самообслуживания «Включить Azure AD»](tutorial-enable-sspr.md)
 

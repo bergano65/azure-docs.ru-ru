@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 853e7143834a340b870b71ef1a287dab136e2783
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 3412938cfc2ad3fbec293fd33f64e114e14e6f7e
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80654058"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450978"
 ---
 # <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Включить без пароль войти в приложение Microsoft Authenticator (предварительный просмотр)
 
@@ -41,7 +41,7 @@ ms.locfileid: "80654058"
 
 ### <a name="enable-the-combined-registration-experience"></a>Включить опыт комбинированной регистрации
 
-Функции регистрации методов проверки подлинности без паролей опираются на комбинированный предварительный просмотр регистрации. Следуйте шагам в статье [Включить комбинированную регистрацию информации безопасности (предварительный просмотр),](howto-registration-mfa-sspr-combined.md)чтобы включить комбинированный предварительный просмотр регистрации.
+Функции регистрации методов проверки подлинности без паролей полагаются на комбинированную функцию регистрации. Следуйте шагам в статье [Включить комбинированную регистрацию информации безопасности](howto-registration-mfa-sspr-combined.md), чтобы включить комбинированную регистрацию.
 
 ### <a name="enable-passwordless-phone-sign-in-authentication-methods"></a>Включить методы проверки подлинности без паролей телефона
 
@@ -101,7 +101,7 @@ ms.locfileid: "80654058"
 > [!NOTE]
 > Регистрация устройств не такая же, как управление устройствами или "MDM". Он связывает идентификатор устройства и идентификатор пользователя только вместе в каталоге Azure AD.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Общие сведения о входе без пароля](concept-authentication-passwordless.md)
 

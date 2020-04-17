@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
-ms.openlocfilehash: 102efba5d028eef621f392ef1739ea9ebeca0b44
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: 37e5cb817db2c54a07ab04c4dcc31b1976fdf03d
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80417237"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450060"
 ---
 # <a name="how-to-use-a-system-assigned-managed-identity-to-access-azure-cosmos-db-data"></a>Как использовать назначенную системой управляемую идентификацию для доступа к данным Azure Cosmos DB
 
@@ -112,7 +112,7 @@ namespace Monitor
 }
 ```
 
-Для получения назначенного системы токенов управляемого удостоверения вы будете использовать библиотеку [Microsoft.Azure.Services.AppAuthentication.](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) Чтобы узнать другие способы получения маркера и более подробной информации о библиотеке, `Microsoft.Azure.Service.AppAuthentication` смотрите статью [«Служба аутентификации службы».](../key-vault/service-to-service-authentication.md)
+Для получения назначенного системы токенов управляемого удостоверения вы будете использовать библиотеку [Microsoft.Azure.Services.AppAuthentication.](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) Чтобы узнать другие способы получения маркера и более подробной информации о библиотеке, `Microsoft.Azure.Service.AppAuthentication` смотрите статью [«Служба аутентификации службы».](../key-vault/general/service-to-service-authentication.md)
 
 ```csharp
 using System;

@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/17/2018
-ms.openlocfilehash: c1b48ae8191e2e5313d9037c791eca73c8a55691
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 19a1883685193e80da5f1365ec2a30db0b8754f6
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77191381"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450148"
 ---
 # <a name="improve-security-for-b2b-messages-by-using-certificates"></a>Улучшение безопасности B2B-сообщений с помощью сертификатов
 
@@ -46,7 +46,7 @@ ms.locfileid: "77191381"
 
    | Свойство | Значение | Описание | 
    |----------|-------|-------------|
-   | **Название** | <*имя сертификата*> | Имя сертификата, в этом примере — "publicCert" | 
+   | **имя**; | <*имя сертификата*> | Имя сертификата, в этом примере — "publicCert" | 
    | **Тип сертификата** | Public | Тип вашего сертификата |
    | **Сертификат** | <*имя сертификата-файла*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. |
    ||||
@@ -66,7 +66,7 @@ ms.locfileid: "77191381"
 > [!NOTE]
 > Для частных сертификатов убедитесь, что вы добавите соответствующий общедоступный сертификат, который отображается в настройках **отправки и получения** [соглашения AS2](logic-apps-enterprise-integration-as2.md) для подписания и шифрования сообщений.
 
-1. [Добавьте закрытый ключ в хранилище Azure Key Vault](../key-vault/certificate-scenarios.md#import-a-certificate) и укажите **имя ключа**.
+1. [Добавьте закрытый ключ в хранилище Azure Key Vault](../key-vault/certificates/certificate-scenarios.md#import-a-certificate) и укажите **имя ключа**.
    
 2. Авторизуйте Azure Logic Apps для выполнения операций в Azure Key Vault. Для предоставления доступа субъекту-службе Logic Apps используйте команду PowerShell [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy), например:
 
@@ -85,7 +85,7 @@ ms.locfileid: "77191381"
 
    | Свойство | Значение | Описание | 
    |----------|-------|-------------|
-   | **Название** | <*имя сертификата*> | Имя сертификата, в этом примере — "privateCert" | 
+   | **имя**; | <*имя сертификата*> | Имя сертификата, в этом примере — "privateCert" | 
    | **Тип сертификата** | Private | Тип вашего сертификата |
    | **Сертификат** | <*имя сертификата-файла*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. При использовании хранилища ключей для частного ключа загруженный файл будет общедоступным сертификатом. | 
    | **Ресурсная группа** | <*интеграция-счет-ресурсная группа*> | Группа ресурсов учетной записи интеграции, в этом примере — "MyResourceGroup" | 
@@ -99,6 +99,6 @@ ms.locfileid: "77191381"
 
    ![Отображение нового сертификата в Azure](media/logic-apps-enterprise-integration-certificates/new-private-certificate.png) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание соглашения "бизнес-бизнес"](logic-apps-enterprise-integration-agreements.md)

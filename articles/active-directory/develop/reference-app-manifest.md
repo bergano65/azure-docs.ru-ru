@@ -8,20 +8,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 03/23/2020
+ms.date: 04/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: 487559aaf632a30b7efcda490f92a90d4f59b8f5
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 9f2ed6ea8cc75e2ee72f15c14f3de7bb8bf8cef6
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80883480"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450892"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Манифест приложения Azure Active Directory
 
-Манифест приложения содержит определения всех атрибутов для объекта приложения на платформе удостоверений Майкрософт. Также он служит механизмом для обновления объекта приложения. Для получения дополнительной информации о сущности приложения [Graph API Application entity documentation](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#application-entity)и его схеме см.
+Манифест приложения содержит определения всех атрибутов для объекта приложения на платформе удостоверений Майкрософт. Также он служит механизмом для обновления объекта приложения. Для получения дополнительной информации о сущности приложения [Graph API Application entity documentation](https://docs.microsoft.com/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity)и его схеме см.
 
 Вы можете настроить атрибуты приложения через портал Azure или программно использовать [REST API](https://docs.microsoft.com/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity) или [PowerShell.](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#applications) Но в некоторых сценариях манифест приложения придется редактировать напрямую, чтобы настроить атрибут приложения. Ниже приведены соответствующие сценарии.
 
@@ -40,6 +40,20 @@ ms.locfileid: "80883480"
 ## <a name="manifest-reference"></a>Справка по манифесту
 
 В этом разделе описаны атрибуты, найденные в манифесте приложения.
+
+### <a name="id-attribute"></a>id, атрибут
+
+| Клавиши | Тип значения |
+| :--- | :--- |
+| идентификатор | Строка |
+
+Уникальный идентификатор для приложения в каталоге. Это не тот идентификатор, который используется для идентификации приложения в транзакциях протоколов. Он используется для ссылки на объект в запросах к каталогу.
+
+Пример
+
+```json
+    "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
+```
 
 ### <a name="accesstokenacceptedversion-attribute"></a>accessTokenAcceptedVersion атрибут
 
@@ -230,19 +244,7 @@ URL-адрес домашней страницы приложения.
     "optionalClaims": null,
 ```
 
-### <a name="id-attribute"></a>id, атрибут
 
-| Клавиши | Тип значения |
-| :--- | :--- |
-| идентификатор | Строка |
-
-Уникальный идентификатор для приложения в каталоге. Это не тот идентификатор, который используется для идентификации приложения в транзакциях протоколов. Он используется для ссылки на объект в запросах к каталогу.
-
-Пример
-
-```json
-    "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
-```
 
 ### <a name="identifieruris-attribute"></a>идентификаторUris атрибут
 
@@ -670,7 +672,7 @@ URL-адрес метаданных SAML для приложения.
 1. Отредить атрибуты индивидуально в редакторе манифеста вместо загрузки ранее загруженного манифеста. Используйте [таблицу ссылок,](#manifest-reference) чтобы понять синтаксис и семантику старых и новых атрибутов, чтобы можно было успешно отсеивать интересующие вас атрибуты. 
 1. Если ваш рабочий процесс требует сохранения манифестов в исходном репозитории для последующего использования, мы предлагаем перебазировать сохраненные манифесты в репозитории с тем, который вы видите в опыте **регистрации приложений.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для получения дополнительной информации о взаимосвязи между приложением приложения [Application and service principal objects in Azure AD](app-objects-and-service-principals.md)и основным объектом службы см.
 * Ознакомиться с [глоссарием разработчика платформы идентификации Майкрософт](developer-glossary.md) можно для определения некоторых основных концепций разработчика идентификационных платформ Майкрософт.

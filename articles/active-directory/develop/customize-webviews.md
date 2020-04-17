@@ -13,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: 8552fc8555207c5b6ca59bbd0da0fdebaae2e87b
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 3b4362e4c5e69efddfbc99ef0f98ad3c5966165c
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80546106"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450886"
 ---
 # <a name="how-to-customize-browsers-and-webviews-for-iosmacos"></a>Как настроить браузеры и веб-просмотры для iOS/macOS
 
@@ -75,9 +75,9 @@ MSAL для macOS `WKWebView` поддерживает только на ста�
 | Технология    | Тип браузера  | Доступность iOS | доступность macOS | Обмен файлами cookie и другими данными  | Доступность MSAL | Единый вход |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|-------------:|
 | [ASWebAuthenticationSession](https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession) | Система | iOS12 и вверх | macOS 10.15 и выше | Да | iOS и macOS 10.15 | w/ Экземпляры Safari
-| [SFAuthenticationСессия](https://developer.apple.com/documentation/safariservices/sfauthenticationsession) | Система | iOS11 и вверх | Н/Д | Да | Только iOS |  w/ Экземпляры Safari
-| [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) | Система | iOS11 и вверх | Н/Д | нет | Только iOS | Нет, нет.
-| **SFSafariViewController** | Система | iOS10 | Н/Д | Да | Только iOS |  w/ Экземпляры Safari
+| [SFAuthenticationСессия](https://developer.apple.com/documentation/safariservices/sfauthenticationsession) | Система | iOS11 и вверх | Недоступно | Да | Только iOS |  w/ Экземпляры Safari
+| [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) | Система | iOS11 и вверх | Недоступно | нет | Только iOS | Нет, нет.
+| **SFSafariViewController** | Система | iOS10 | Недоступно | Да | Только iOS |  w/ Экземпляры Safari
 | **WKWebView**  | В приложении | iOS8 и вверх | macOS 10.10 и выше | нет | iOS и macOS | Нет, нет.
 
 Для работы SSO токены должны быть разделены между приложениями. Для этого требуется кэш маркеров или приложение брокера, например Microsoft Authenticator для iOS.
@@ -102,7 +102,7 @@ Objective-C
 ```objc
 UIViewController *myParentController = ...;
 WKWebView *myCustomWebView = ...;
-MSALWebviewParameters *webViewParameters = [[MSALWebviewParameters alloc] initWithParentViewController:myParentController];
+MSALWebviewParameters *webViewParameters = [[MSALWebviewParameters alloc] initWithAuthPresentationViewController:myParentController];
 webViewParameters.webviewType = MSALWebviewTypeWKWebView;
 webViewParameters.customWebview = myCustomWebView;
 MSALInteractiveTokenParameters *interactiveParameters = [[MSALInteractiveTokenParameters alloc] initWithScopes:@[@"myscope"] webviewParameters:webViewParameters];
@@ -113,7 +113,7 @@ Swift
 ```swift
 let myParentController: UIViewController = ...
 let myCustomWebView: WKWebView = ...
-let webViewParameters = MSALWebviewParameters(parentViewController: myParentController)
+let webViewParameters = MSALWebviewParameters(authPresentationViewController: myParentController)
 webViewParameters.webviewType = MSALWebviewType.wkWebView
 webViewParameters.customWebview = myCustomWebView
 let interactiveParameters = MSALInteractiveTokenParameters(scopes: ["myscope"], webviewParameters: webViewParameters)
@@ -171,6 +171,6 @@ typedef NS_ENUM(NSInteger, MSALWebviewType)
 };
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

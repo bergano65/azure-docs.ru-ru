@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: thweiss
 ROBOTS: noindex, nofollow
-ms.openlocfilehash: 733a85e492185e7e83922a3cc91d53c848b939a1
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 8f58887a056c8ca0cd175a44127556562338de38
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81411146"
+ms.locfileid: "81450038"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Налаживайте ключи, управляемые клиентом, для учетной записи Azure Cosmos с помощью Azure Key Vault
 
@@ -23,7 +23,7 @@ ms.locfileid: "81411146"
 
 ![Слои шифрования вокруг данных клиентов](./media/how-to-setup-cmk/cmk-intro.png)
 
-Вы должны хранить управляемые клиентом ключи в [Azure Key Vault](../key-vault/key-vault-overview.md) и предоставить ключ для каждой учетной записи Azure Cosmos, которая включена с ключами, управляемыми клиентом. Этот ключ используется для шифрования всех данных, хранящихся в этой учетной записи.
+Вы должны хранить управляемые клиентом ключи в [Azure Key Vault](../key-vault/general/overview.md) и предоставить ключ для каждой учетной записи Azure Cosmos, которая включена с ключами, управляемыми клиентом. Этот ключ используется для шифрования всех данных, хранящихся в этой учетной записи.
 
 > [!NOTE]
 > В настоящее время ключи, управляемые клиентами, доступны только для новых учетных записей Azure Cosmos. Вы должны настроить их во время создания учетной записи.
@@ -44,8 +44,8 @@ ms.locfileid: "81411146"
 
 Чтобы узнать, как включить эти свойства в существующем экземпляре Azure Key Vault, смотрите разделы "Soft-delete" и "Защита от очистки" в одной из следующих статей:
 
-- [Как использовать мягкое удаление с PowerShell](../key-vault/key-vault-soft-delete-powershell.md)
-- [Как использовать мягкое удаление с Azure CLI](../key-vault/key-vault-soft-delete-cli.md)
+- [Как использовать мягкое удаление с PowerShell](../key-vault/general/soft-delete-powershell.md)
+- [Как использовать мягкое удаление с Azure CLI](../key-vault/general/soft-delete-cli.md)
 
 ## <a name="add-an-access-policy-to-your-azure-key-vault-instance"></a>Добавьте политику доступа в экземпляр Azure Key Vault
 
@@ -247,7 +247,7 @@ Azure Cosmos DB занимает [регулярное и автоматичес
 
 Единственной возможной операцией при отмене ключа шифрования является удаление учетной записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [шифровании данных в Azure Cosmos DB](./database-encryption-at-rest.md).
 - Получите обзор [безопасного доступа к данным в Cosmos DB](secure-access-to-data.md).

@@ -1,31 +1,26 @@
 ---
 title: Совмещение комбинированной регистрации - Активный каталог Azure
-description: Устранение проблем Azure AD Multi-факторная аутентификация и самообслуживание сбросить паролем комбинированной регистрации (предварительный просмотр)
+description: Устранение проблем Azure AD Multi-Фактор аутентификации и самообслуживания сбросить паролем комбинированной регистрации
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 11/21/2019
+ms.date: 04/15/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
-ms.reviewer: sahenry
+ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab7c38d23cb1f05e07488810640aeb791ded3d4a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7c840df2c53554519f62a3d1d7a7d8b305187ffb
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74847394"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81450944"
 ---
-# <a name="troubleshooting-combined-security-information-registration-preview"></a>Устранение проблем комбинированной регистрации информации о безопасности (предварительный просмотр)
+# <a name="troubleshooting-combined-security-information-registration"></a>Устранение проблем комбинированной регистрации информации о безопасности
 
 Информация в этой статье предназначена для руководства управленцев, которые неустановят проблемы, сообщаемые пользователями объединенного опыта регистрации.
-
-|     |
-| --- |
-| Комбинированная регистрация информации о безопасности для Azure Multi-Factor Authentication и Azure Active Directory (Azure AD) сбросить пароля самообслуживания — это общедоступной функцией предварительного просмотра Azure AD. Для получения дополнительной информации о предварительных просмотрах [см.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
-|     |
 
 ## <a name="audit-logs"></a>Журналы аудита
 
@@ -150,16 +145,16 @@ ms.locfileid: "74847394"
 
 `<script location> -path <user file location>`
 
-### <a name="disable-the-preview-experience"></a>Отключить опыт предварительного просмотра
+### <a name="disable-the-updated-experience"></a>Отключить обновленный опыт
 
-Чтобы отключить возможность предварительного просмотра для пользователей, выполните следующие действия:
+Чтобы отключить обновленный опыт для пользователей, выполните следующие действия:
 
 1. Вопиюсь на портал Azure в качестве администратора пользователя.
 2. Перейдите к настройкам **пользователя Azure Active Directory** > Manage**settings** > **для функций предварительного просмотра панели доступа.**
 3. В **рамках пользователи могут использовать функции предварительного просмотра для регистрации и управления информацией о безопасности,** установить селектор **нет,** а затем выбрать **Сохранить**.
 
-Пользователям больше не будет предложено зарегистрироваться с помощью предварительного просмотра.
+Пользователям больше не будет предложено зарегистрироваться с помощью обновленного опыта.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Узнайте больше об общедоступном предварительном просмотре комбинированной регистрации сбросить пароля самообслуживания и многофакторной аутентификации Azure](concept-registration-mfa-sspr-combined.md)
+* [Узнайте больше о комбинированной регистрации для сбона пароля самообслуживания и многофакторной аутентификации Azure](concept-registration-mfa-sspr-combined.md)

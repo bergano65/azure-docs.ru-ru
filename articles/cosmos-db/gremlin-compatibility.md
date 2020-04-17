@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: reference
 ms.date: 09/10/2019
 ms.author: sngun
-ms.openlocfilehash: 581bc813ca27067b1f27ab9866a45df3084dbbcc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 989a033a843b861c34dc9dbdbced50399f8e5cd7
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75644738"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81449890"
 ---
 # <a name="azure-cosmos-db-gremlin-compatibility"></a>Совместимость Azure Cosmos DB Gremlin
 Двигатель Azure Cosmos DB Graph внимательно следит за спецификацией шагов обхода [Apache TinkerPop,](https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps) но есть различия.
@@ -35,11 +35,11 @@ ms.locfileid: "75644738"
 
 * ***Непримитивные типы JSON*** не поддерживаются. `string`Используйте, `number` `true` / `false` или типы. `null`значения не поддерживаются. 
 
-* В настоящее время серизатор ***GraphSONv3*** не поддерживается. Используйте `GraphSONv2` классы Serializer, Reader и Writer в конфигурации соединения.
+* В настоящее время серизатор ***GraphSONv3*** не поддерживается. Используйте `GraphSONv2` классы Serializer, Reader и Writer в конфигурации соединения. Результаты, полученные API Azure Cosmos DB Gremlin, не имеют такого же формата, как формат GraphSON. 
 
 * **Выражения и функции Lambda** в настоящее время не поддерживаются. Это включает `.map{<expression>}`в `.by{<expression>}`себя `.filter{<expression>}` , и функции. Чтобы узнать больше, и узнать, как переписать их с помощью шагов Гремлин, [см.](http://tinkerpop.apache.org/docs/current/reference/#a-note-on-lambdas)
 
 * ***Транзакции*** не поддерживаются из-за распределенного характера системы.  Настроили соответствующую модель согласованности на счетгремлин, чтобы «читать свои собственные записи» и использовать оптимистический параллел для разрешения противоречивых записей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Посетите голосовую страницу [пользователя Cosmos DB,](https://feedback.azure.com/forums/263030-azure-cosmos-db) чтобы поделиться отзывами и помочь команде сосредоточиться на важных для вас функциях.
