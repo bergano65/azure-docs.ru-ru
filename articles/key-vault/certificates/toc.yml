@@ -1,0 +1,68 @@
+- name: Сертификаты
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о сертификатах
+      href: about-certificates.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: CLI
+      href: quick-create-cli.md
+    - name: PowerShell
+      href: quick-create-powershell.md
+    - name: Портал
+      href: quick-create-portal.md
+    - name: Python
+      href: quick-create-python.md
+- name: Учебники
+  items:
+    - name: Импорт сертификата
+      href: tutorial-import-certificate.md
+- name: Основные понятия
+  items:
+    - name: Начало работы с сертификатами Key Vault
+      href: certificate-scenarios.md
+    - name: Мониторинг и администрирование процесса создания сертификатов
+      href: create-certificate-scenarios.md
+    - name: Способы создания сертификатов
+      href: create-certificate.md
+- name: Справочник
+  items:
+    - name: Azure PowerShell
+      href: '/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault'
+    - name: Azure CLI
+      href: /cli/azure/keyvault
+    - name: .NET
+      href: /dotnet/api/overview/azure/key-vault?view=azure-dotnet
+    - name: Java
+      href: /java/api/overview/azure/keyvault?view=azure-java-stable
+    - name: Node.js
+      href: /javascript/api/overview/azure/key-vault?view=azure-node-latest
+    - name: Python
+      href: /python/api/overview/azure/key-vault?view=azure-python
+    - name: REST
+      href: /rest/api/keyvault
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.keyvault/allversions
+      displayName: ARM
+- name: Ресурсы
+  items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-key-vault
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/key-vault/'
+    - name: Доступность по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=key-vault'
+    - name: Соглашение об уровне обслуживания
+      href: 'https://azure.microsoft.com/support/legal/sla/key-vault/'
+    - name: Ограничения службы
+      href: ../general/service-limits.md
+    - name: Состояние службы
+      href: 'https://azure.microsoft.com/status/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=key-vault'
+    - name: Блог
+      href: 'https://blogs.technet.com/b/kv/'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/906355-azure-key-vault'

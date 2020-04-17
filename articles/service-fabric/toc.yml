@@ -133,6 +133,8 @@
           href: service-fabric-cluster-security.md
         - name: Встроенные средства управления безопасностью
           href: service-fabric-security-controls.md
+        - name: Проверка подлинности на основе сертификата в Service Fabric
+          href: cluster-security-certificates.md
     - name: Терминология
       href: service-fabric-technical-overview.md
     - name: Создание приложений
@@ -145,6 +147,8 @@
               href: service-fabric-containers-overview.md
             - name: Docker Compose (предварительная версия)
               href: service-fabric-docker-compose.md
+            - name: Пробы
+              href: probes-codepackage.md
         - name: Надежные службы
           items:
             - name: Обзор надежных служб
@@ -264,6 +268,10 @@
               href: service-fabric-backup-restore-service-trigger-restore.md
             - name: Резервное копирование раздела по запросу
               href: service-fabric-backup-restore-service-ondemand-backup.md
+        - name: Initializer Code Packages
+          href: initializer-codepackages.md
+        - name: RunToCompletion
+          href: run-to-completion.md
     - name: Кластеры
       items:
         - name: Общие сведения о кластерах
@@ -316,6 +324,8 @@
               href: service-fabric-cluster-resource-manager-defragmentation-metrics.md
             - name: Балансировка кластера
               href: service-fabric-cluster-resource-manager-balancing.md
+            - name: Создание подкластеров
+              href: cluster-resource-manager-subclustering.md
             - name: Регулирование
               href: service-fabric-cluster-resource-manager-advanced-throttling.md
             - name: Перемещение служб
@@ -354,7 +364,7 @@
       href: service-fabric-api-management-overview.md
     - name: Модель ресурсов приложения
       href: service-fabric-concept-resource-model.md
-    - name: Управляемое удостоверение (предварительная версия)
+    - name: Управляемое удостоверение
       href: concepts-managed-identity.md
     - name: Настройка учетных данных репозитория контейнеров
       href: configure-container-repository-credentials.md
@@ -751,7 +761,7 @@
           href: service-fabric-reverse-proxy-diagnostics.md
         - name: Устранение неполадок локального кластера
           href: service-fabric-troubleshoot-local-cluster-setup.md
-    - name: Использование управляемого удостоверения для приложений Service Fabric (предварительная версия)
+    - name: Использование управляемого удостоверения для приложений Service Fabric
       items:
         - name: Настройка кластера
           items:
