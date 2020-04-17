@@ -1,11 +1,11 @@
 ---
-title: Массовое восстановление удаленных пользователей (предварительный просмотр) на портале Active Directory Azure Документы Майкрософт
+title: Массовое восстановление удаленных пользователей на портале Active Directory Azure Документы Майкрософт
 description: Восстановление удаленных пользователей оптом в центре админа Azure AD в active-каталоге Azure
 services: active-directory
 author: curtand
 ms.author: curtand
 manager: mtillman
-ms.date: 08/15/2019
+ms.date: 04/16/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d392ae97a8325dd4a56acd807ebfb2b951216eae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f75fe224491c2853f819a45db678e87849dc72d1
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72174252"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81532729"
 ---
-# <a name="bulk-restore-deleted-users-preview-in-azure-active-directory"></a>Массовое восстановление удаленных пользователей (предварительный просмотр) в Active Directory Azure
+# <a name="bulk-restore-deleted-users-in-azure-active-directory"></a>Массовое восстановление удаленных пользователей в active-каталоге Azure
 
 Активный каталог Azure (Azure AD) поддерживает массовые операции пользователей, массовое приглашение гостей и загрузку списков пользователей, групп и членов группы.
 
@@ -36,7 +36,7 @@ ms.locfileid: "72174252"
 
    ![Выберите локальный файл CSV, в котором вы перечисляете пользователей, которых вы хотите добавить](./media/users-bulk-restore/upload-button.png)
 
-1. На странице **Массиввосстановления (Preview)** под **upload ваш файл csv**, просматривать файл. При выборе файла и нажмите **Отправить,** проверка файла CSV начинается.
+1. На странице **восстановления массы,** под **загрузить файл csv**, просматривать файл. При выборе файла и нажмите **Отправить,** проверка файла CSV начинается.
 1. После проверки содержимого файла вы увидите сообщение **Файл успешно передан**. Если будут обнаружены ошибки, их нужно исправить для отправки задания.
 1. Когда файл проходит проверку, выберите **отправку,** чтобы запустить нагромождают операцию Azure, которая восстанавливает пользователей.
 1. Когда операция восстановления завершится, вы увидите уведомление о том, что основная операция выполнена успешно.
@@ -45,9 +45,9 @@ ms.locfileid: "72174252"
 
 ## <a name="check-status"></a>Проверка состояния
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результаты (предварительный просмотр) результатов операции Bulk.**
+Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
 
-   ![Проверка состояния загрузки на странице Результаты массовых операций](./media/users-bulk-restore/bulk-center.png)
+[![](media/users-bulk-restore/bulk-center.png "Check status in the Bulk Operations Results page")](media/users-bulk-restore/bulk-center.png#lightbox)
 
 Далее можно проверить, что восстановленные вами пользователи существуют в организации Azure AD либо на портале Azure, либо с помощью PowerShell.
 
@@ -68,7 +68,7 @@ Get-AzureADUser -Filter "UserType eq 'Member'"
 
 Вы должны видеть, что пользователи, которые вы восстановили перечислены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Массовые пользователи импорта](users-bulk-add.md)
 - [Массовое удаление пользователей](users-bulk-delete.md)

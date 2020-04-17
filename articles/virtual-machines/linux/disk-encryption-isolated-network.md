@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 02/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: aa0dc204a017e2d40eb3952a9ede0755127f8de2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f2b84427b9aad2d18368d808fc618f3bfbe774ec
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78970662"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460126"
 ---
 # <a name="azure-disk-encryption-on-an-isolated-network"></a>Шифрование azure disk в изолированной сети
 
@@ -43,13 +43,13 @@ ms.locfileid: "78970662"
 
 При использовании [Azure Disk Encryption с Azure AD (предыдущая версия)](disk-encryption-overview-aad.md) [библиотека Active Directory Library Должна](../../active-directory/azuread-dev/active-directory-authentication-libraries.md) быть установлена вручную для всех дистрибутивов (в дополнение к пакетам, подходящим для дистрибутива, как [указано выше).](#package-management)
 
-При включении шифрования [учетных данных Azure AD](disk-encryption-linux-aad.md) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/key-vault-access-behind-firewall.md).
+При включении шифрования [учетных данных Azure AD](disk-encryption-linux-aad.md) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
 
 Виртуальная машина должна иметь доступ к конечному пункту [службы Metadata Azure Instance,](instance-metadata-service.md) `169.254.169.254`которая использует известный IP-адрес non-routable , доступ к которому можно получить только из ВМ.  Прокси-конфигурации, изменяющие локальный трафик HTTP на этот адрес (например, добавление X-Forwarded-For заголовка), не поддерживаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть дополнительные шаги для [устранения неполадок шифрования дисков Azure](disk-encryption-troubleshooting.md)
 - [Шифрование неактивных данных в Azure](../../security/fundamentals/encryption-atrest.md)

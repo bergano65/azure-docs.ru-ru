@@ -13,12 +13,12 @@ ms.date: 10/29/2019
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 697b4bc8e3a25085ac6f7d600ea2227dd30a6624
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d31cf3a4e024dc59b865d096cbd0829d50f61a1a
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79262819"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81533961"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Используйте MSAL.NET для регистрации пользователей с социальными удостоверениями
 
@@ -34,7 +34,7 @@ ms.locfileid: "79262819"
 Полномочия по использованию, `https://{azureADB2CHostname}/tfp/{tenant}/{policyName}` где:
 
 - `azureADB2CHostname`— это имя арендатора Azure AD B2C `{your-tenant-name}.b2clogin.com`плюс узел (например),
-- `tenant`— полное имя арендатора Azure AD B2C (например, `{your-tenant-name}.onmicrosoft.com`) или GUID для арендатора, 
+- `tenant`— полное имя арендатора Azure AD B2C (например, `{your-tenant-name}.onmicrosoft.com`) или GUID для арендатора,
 - `policyName`имя политики или поток пользователя для подачи заявки (например, "b2c_1_susi" для регистрации/входе).
 
 Для получения дополнительной информации о органах Azure [documentation](/azure/active-directory-b2c/b2clogin)AD B2C, см.
@@ -121,7 +121,7 @@ private async void EditProfileButton_Click(object sender, RoutedEventArgs e)
 ## <a name="resource-owner-password-credentials-ropc-with-azure-ad-b2c"></a>Учетные данные паролей владельца ресурсов (ROPC) с Azure AD B2C
 Для получения более подробной информации о потоке ROPC, пожалуйста, смотрите эту [документацию](v2-oauth-ropc.md).
 
-Этот поток **не рекомендуется,** потому что ваше приложение просит у пользователя пароль не является безопасным. Для получения дополнительной информации об этой проблеме, [см.](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/) 
+Этот поток **не рекомендуется,** потому что ваше приложение просит у пользователя пароль не является безопасным. Для получения дополнительной информации об этой проблеме, [см.](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/)
 
 Используя имя пользователя /пароль, вы отказываетесь от ряда вещей:
 - Основные принципы современной идентичности: пароль получает ловил, воспроизводил. Потому что у нас есть эта концепция секрета акций, которые могут быть перехвачены. Это несовместимо с безпарочкой.
@@ -155,15 +155,15 @@ AcquireTokenByUsernamePassword(
 
 Мы предоставим обновленную информацию по этой [проблеме,](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/688) если что-то изменится.
 
-## <a name="caching-with-azure-ad-b2c-in-msalnet"></a>Кэширование с Azure AD B2C в MSAL.Net 
+## <a name="caching-with-azure-ad-b2c-in-msalnet"></a>Кэширование с Azure AD B2C в MSAL.Net
 
 ### <a name="known-issue-with-azure-ad-b2c"></a>Известная проблема с Azure AD B2C
 
-MSAL.Net поддерживает [кэш маркеров.](/dotnet/api/microsoft.identity.client.tokencache?view=azure-dotnet) Ключ кэширования маркеров основан на претензиях, возвращенных поставщиком идентификационных данных. В настоящее время MSAL.Net требуется две претензии для создания ключа кэша токенов:  
-- `tid`идентификатор арендатора Azure AD, и 
-- `preferred_username` 
+MSAL.Net поддерживает [кэш маркеров.](/dotnet/api/microsoft.identity.client.tokencache?view=azure-dotnet) Ключ кэширования маркеров основан на претензиях, возвращенных поставщиком идентификационных данных. В настоящее время MSAL.Net требуется две претензии для создания ключа кэша токенов:
+- `tid`идентификатор арендатора Azure AD, и
+- `preferred_username`
 
-Обе эти утверждения отсутствуют во многих сценариях Azure AD B2C. 
+Обе эти утверждения отсутствуют во многих сценариях Azure AD B2C.
 
 Влияние на клиента заключается в том, что при попытке отобразить поле имени пользователя вы получаете значение "Missing from the token response"? Если это так, то это связано с тем, что Azure AD B2C не возвращает значение в IdToken для preferred_username из-за ограничений с социальными учетными записями и внешними поставщиками идентификационных данных (IdPs). Azure AD возвращает значение для preferred_username, потому что он знает, кто пользователь, но для Azure AD B2C, потому что пользователь может войти в локальную учетную запись, Facebook, Google, GitHub и т.д. Нет последовательного значения для Azure AD B2C, чтобы использовать для preferred_username. Чтобы отблокировать MSAL от внедрения совместимости кэша с ADAL, мы решили использовать "Missing from the token response" на нашем конце при работе с учетными записями Azure AD B2C, когда IdToken ничего не возвращает для preferred_username. MSAL должен вернуть значение для preferred_username для поддержания совместимости кэша между библиотеками.
 
@@ -178,10 +178,10 @@ MSAL.Net поддерживает [кэш маркеров.](/dotnet/api/microso
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Смягчение меры для "Пропавших без вести из ответа токенов"
 Один из вариантов заключается в использовании "имя" претензии в качестве предпочтительного имени пользователя. Этот процесс упоминается в этом [B2C doc->](../../active-directory-b2c/user-flow-overview.md) "В столбце претензии return выберите требования, которые вы хотите вернуть в токенах авторизации, отправленных обратно в приложение после успешного опыта редактирования профиля. Например, выберите имя дисплея, почтовый индекс."
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги
 
 Более подробная информация о приобретении токенов в интерактивном режиме с MSAL.NET для приложений Azure AD B2C приведена в следующем примере.
 
 | Пример | Платформа | Описание|
 |------ | -------- | -----------|
-|[активный каталог-b2c-xamarin-родной](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Простое приложение Xamarin Forms, демонстрирующее, как использовать MSAL.NET для проверки подлинности пользователей через Azure AD B2C и получить доступ к Web API с полученными токенами.|
+|[активный каталог-b2c-xamarin-родной](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Простое приложение Xamarin Forms, демонстрирующее, как использовать MSAL.NET для проверки подлинности пользователей через Azure AD B2C и получить доступ к веб-API с полученными токенами.|

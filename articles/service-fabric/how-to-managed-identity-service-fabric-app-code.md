@@ -3,12 +3,12 @@ title: Используйте управляемый итог с помощью 
 description: Как использовать управляемые идентификаторы в коде приложения Azure Service Fabric для доступа к службам Azure.
 ms.topic: article
 ms.date: 10/09/2019
-ms.openlocfilehash: cbdb1190ec3238a6accd34db3025e08c194d60b8
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 8f1f355d6add16f3b3ec25bc569f9b198a8d6778
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81415622"
+ms.locfileid: "81461571"
 ---
 # <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure
 
@@ -41,10 +41,6 @@ ms.locfileid: "81415622"
 Успешный ответ будет содержать полезную нагрузку JSON, представляющую полученный токен доступа, а также метаданные, описывающие его. Неудачный ответ будет также включать объяснение сбоя. Ниже приведены дополнительные сведения об обработке ошибок.
 
 Токены доступа будут кэшироваться Service Fabric на различных уровнях (узел, кластер, служба поставщика ресурсов), поэтому успешный ответ не обязательно означает, что токен был выпущен непосредственно в ответ на запрос приложения пользователя. Токены будут кэшироваться меньше срока их службы, и поэтому приложение гарантированно получит действительный токен. Рекомендуется, чтобы код приложения кэшировал любые приобретаемые им токены доступа; ключ кэширования должен включать (производ) аудиторию. 
-
-
-> [!NOTE]
-> Единственная принятая версия API в настоящее время, `2019-07-01-preview`и может быть изменена.
 
 Пример запроса:
 ```http
@@ -377,7 +373,7 @@ namespace Azure.ServiceFabric.ManagedIdentity.Samples
 ## <a name="resource-ids-for-azure-services"></a>Идентификаторы ресурсов для служб Azure
 В ней можно ознакомиться [с службами Azure, поддерживающими проверку подлинности Azure AD,](../active-directory/managed-identities-azure-resources/services-support-msi.md) для списка ресурсов, поддерживающих Azure AD, и их идентификаций ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Развертывание приложения Azure Service Fabric с системой, назначенной управляемой личностью](./how-to-deploy-service-fabric-application-system-assigned-managed-identity.md)
 * [Развертывание приложения Azure Service Fabric с помощью управляемого удостоверения пользователя](./how-to-deploy-service-fabric-application-user-assigned-managed-identity.md)
 * [Предоставить доступ к другим ресурсам Azure](./how-to-grant-access-other-resources.md)

@@ -1,11 +1,11 @@
 ---
-title: Массовые создания пользователей (предварительный просмотр) на портале Active Directory Azure Документы Майкрософт
+title: Массовые создания пользователей на портале Active Directory Azure Документы Майкрософт
 description: Добавление пользователей оптом в центр админ-аминота Azure в active Directory Azure
 services: active-directory
 author: curtand
 ms.author: curtand
 manager: mtillman
-ms.date: 08/30/2019
+ms.date: 04/16/2020
 ms.topic: article
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a10dfffa69652ee2b75053c04b97f6492c46811e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c3a8b9cb9701288d24534ab08940f6dbd4a698ad
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72174302"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81532951"
 ---
-# <a name="bulk-create-users-preview-in-azure-active-directory"></a>Массовый создание пользователей (предварительный просмотр) в Active Directory Azure
+# <a name="bulk-create-users-in-azure-active-directory"></a>Массовые создания пользователей в Active Directory Azure
 
 Активный каталог Azure (Azure AD) поддерживает массовые операции пользователей, массовое приглашение гостей и загрузку списков пользователей, групп и членов группы.
 
@@ -40,7 +40,7 @@ ms.locfileid: "72174302"
 
    ![Файл CSV содержит имена и идентивы пользователей для создания](./media/users-bulk-add/add-csv-file.png)
 
-1. На странице **Bulk создать пользователя (Preview)** под загрузить файл CSV, просматривать файл. При выборе файла и нажмите **Отправить,** проверка файла CSV начинается.
+1. На странице **массового создания пользователя,** под загрузить файл CSV, просматривать файл. При выборе файла и нажмите **Отправить,** проверка файла CSV начинается.
 1. После проверки содержимого файла вы увидите **успешно загруженный файл.** Если будут обнаружены ошибки, их нужно исправить для отправки задания.
 1. Когда файл проходит проверку, выберите **отправку,** чтобы начать операцию навалом Azure, которая импортирует новых пользователей.
 1. Когда операция импорта завершится, вы увидите уведомление о состоянии задания основной операции.
@@ -49,9 +49,9 @@ ms.locfileid: "72174302"
 
 ## <a name="check-status"></a>Проверка состояния
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результаты (предварительный просмотр) результатов операции Bulk.**
+Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
 
-   ![Проверка состояния загрузки на странице Результаты массовых операций](./media/users-bulk-add/bulk-center.png)
+   [![](media/users-bulk-add/bulk-center.png "Check create status in the Bulk Operations Results page")](media/users-bulk-add/bulk-center.png#lightbox)
 
 Далее можно проверить, что созданные вами пользователи существуют в организации Azure AD либо на портале Azure, либо с помощью PowerShell.
 
@@ -76,7 +76,7 @@ Get-AzureADUser -Filter "UserType eq 'Member'"
 
 Каждое массовое действие для создания пользователей может работать до одного часа. Это позволяет навалом создать не менее 50 000 пользователей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Массовое удаление пользователей](users-bulk-delete.md)
 - [Скачать список пользователей](users-bulk-download.md)

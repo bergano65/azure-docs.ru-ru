@@ -1,11 +1,11 @@
 ---
-title: Загрузите список пользователей (предварительный просмотр) на портале Active Directory Azure (фото) Документы Майкрософт
+title: Загрузите список пользователей на портале Active Directory Azure (ru) Документы Майкрософт
 description: Загружайте записи пользователей оптом в центре управления Azure в Active Directory Azure.
 services: active-directory
 author: curtand
 ms.author: curtand
 manager: daveba
-ms.date: 02/06/2020
+ms.date: 04/16/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,20 +13,20 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4716ff9547f64dc6551b4d4adb0a8578da9fa83e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4b35163387ed4ce71f7a2019835a1d9fdbff3051
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77063838"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81532661"
 ---
-# <a name="download-a-list-of-users-preview-in-azure-active-directory-portal"></a>Загрузите список пользователей (предварительный просмотр) на портале Active Directory Azure
+# <a name="download-a-list-of-users-in-azure-active-directory-portal"></a>Скачать список пользователей на портале Active Directory Azure
 
 Активный каталог Azure (Azure AD) поддерживает операции по импорту (созданию) навалом пользователей.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
-Чтобы загрузить список пользователей из центра ad Azure, необходимо подписаться на пользователя, назначенного на одну или несколько ролей администратора организации в Azure AD. Приглашенный и разработчик приложений не считаются ролями администратора.
+Чтобы загрузить список пользователей из центра ad Azure, необходимо ввести в систему пользователя, назначенного на одну или несколько функций администратора организации в Azure AD (Администратор пользователя — это минимальная необходимая роль). Приглашенный и разработчик приложений не считаются ролями администратора.
 
 ## <a name="to-download-a-list-of-users"></a>Загрузить список пользователей
 
@@ -70,15 +70,15 @@ ms.locfileid: "77063838"
 
 ## <a name="check-status"></a>Проверка состояния
 
-Вы можете увидеть состояние ожидающих навалочных запросов на странице **результаты (предварительный просмотр) результатов операции Bulk.**
+Вы можете увидеть состояние ожидающих навалочных запросов на странице **результатов операции Bulk.**
 
-   ![Проверка состояния загрузки на странице Результаты массовых операций](./media/users-bulk-download/bulk-center.png)
+[![](media/users-bulk-download/bulk-center.png "Check status in the Bulk Operations Results page")](media/users-bulk-download/bulk-center.png#lightbox)
 
 ## <a name="bulk-download-service-limits"></a>Ограничения обслуживания массовых скачиваний
 
 Каждое массовое действие для создания списка пользователей может работать до одного часа. Это позволяет создать и загрузить список не менее 500 000 пользователей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Массовое добавление пользователей](users-bulk-add.md)
 - [Массовое удаление пользователей](users-bulk-delete.md)

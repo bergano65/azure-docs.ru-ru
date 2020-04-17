@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: Описывает, как создать резервную связь и восстановить зашифрованные vMs Azure с помощью службы резервного копирования Azure.
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: a3976cc83f749b1abe00cef3f5bf867ffbc30ab6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 98febe9f91cb4b71d546300d4e65ade073d19e67
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78206696"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81461775"
 ---
 # <a name="back-up-and-restore-encrypted-azure-vm"></a>Резервное копирование и восстановление зашифрованного Azure VM
 
@@ -30,7 +30,7 @@ ms.locfileid: "78206696"
 **Неуправляемые** | Да | Да
 **Управляемых**  | Да | Да
 
-- Узнайте больше о [ADE,](../security/azure-security-disk-encryption-overview.md) [Key Vault](../key-vault/key-vault-overview.md)и [KEK.](https://docs.microsoft.com/azure/virtual-machine-scale-sets/disk-encryption-key-vault#set-up-a-key-encryption-key-kek)
+- Узнайте больше о [ADE,](../security/azure-security-disk-encryption-overview.md) [Key Vault](../key-vault/general/overview.md)и [KEK.](https://docs.microsoft.com/azure/virtual-machine-scale-sets/disk-encryption-key-vault#set-up-a-key-encryption-key-kek)
 - Прочитайте [часто задаваемые вопросы](../security/azure-security-disk-encryption-faq.md) для шифрования vM-диска Azure.
 
 ### <a name="limitations"></a>Ограничения
@@ -136,11 +136,11 @@ Azure VM нуждается в доступном доступе только д
 
 1. [Восстановление VM-диска](backup-azure-arm-restore-vms.md#restore-disks).
 2. Воссоздайте экземпляр виртуальной машины, сделав один из следующих:
-    1. Используйте шаблон, созданный во время операции восстановления, чтобы настроить настройки VM и вызвать развертывание VM. Ознакомьтесь с [дополнительными сведениями](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm).
-    2. Создайте новый VM из восстановленных дисков с помощью PowerShell. Ознакомьтесь с [дополнительными сведениями](backup-azure-vms-automation.md#create-a-vm-from-restored-disks).
+    1. Используйте шаблон, созданный во время операции восстановления, чтобы настроить настройки VM и вызвать развертывание VM. [Подробнее](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm).
+    2. Создайте новый VM из восстановленных дисков с помощью PowerShell. [Подробнее](backup-azure-vms-automation.md#create-a-vm-from-restored-disks).
 3. Для Linux VMs переустановите расширение ADE, чтобы диски данных были открыты и установлены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы столкнулись с какими-либо проблемами, просмотрите следующие статьи:
 

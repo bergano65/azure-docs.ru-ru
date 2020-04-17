@@ -5,7 +5,7 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: mtillman
-ms.date: 09/11/2019
+ms.date: 04/16/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e29aacb1357509e2b000a9d05c5ced8f9a30dce
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3faca8d1a2538ed03a917d6db8d54323fe626369
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72517155"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81533698"
 ---
-# <a name="bulk-download-members-of-a-group-preview-in-azure-active-directory"></a>Массовые загрузки членов группы (предварительный просмотр) в Active Directory Azure
+# <a name="bulk-download-members-of-a-group-in-azure-active-directory"></a>Массовые загрузки членов группы в Active Directory Azure
 
 Используя портал Azure Active Directory (Azure AD), можно сбольшой суммой загрузить членов группы в организации в файл, разделенный на запятую (CSV).
 
@@ -35,15 +35,15 @@ ms.locfileid: "72517155"
 
 ## <a name="check-download-status"></a>Проверка состояния загрузки
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результаты (предварительный просмотр) результатов операции Bulk.**
+Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
 
-   ![Страница результатов результатов массовых операций показывает состояние запроса навалом](./media/groups-bulk-download-members/bulk-center.png)
+[![](media/groups-bulk-download-members/bulk-center.png "Check status in the Bulk Operations Results page")](media/groups-bulk-download-members/bulk-center.png#lightbox)
 
 ## <a name="bulk-download-service-limits"></a>Ограничения обслуживания массовых скачиваний
 
 Каждое массовое мероприятие для загрузки списка членов группы может работать до одного часа. Это позволяет загрузить список не менее 500 000 участников.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Члены группы массовых импорта](groups-bulk-import-members.md)
 - [Массовое удаление членов группы](groups-bulk-download-members.md)

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 08/20/2019
-ms.openlocfilehash: 80afbeb5668d43ac7bb0b12fadb88a93c68e0ddb
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 8708c458e1064e4b9ea7dc67f1a4d4fbce1547b0
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383716"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81481966"
 ---
 # <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync"></a>Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL
 
@@ -134,6 +134,7 @@ ms.locfileid: "81383716"
 - Активная аутентификация каталога Azure не поддерживается.
 - Таблицы с одинаковым названием, но разной схемой (например, dbo.customers и sales.customers) не поддерживаются.
 - Столбцы с определенными типами данных пользователя не поддерживаются
+- Перемещение серверов между различными подписками не поддерживается. 
 
 #### <a name="unsupported-data-types"></a>Неподдерживаемые типы данных
 
@@ -151,7 +152,7 @@ ms.locfileid: "81383716"
 
 #### <a name="limitations-on-service-and-database-dimensions"></a>Ограничения характеристик служб и баз данных
 
-| **Измерения**                                                  | **Ограничение**              | **Решение**              |
+| **Измерения**                                                  | **Предел**              | **Решение**              |
 |-----------------------------------------------------------------|------------------------|-----------------------------|
 | Максимальное количество групп синхронизации, которым может принадлежать любая база данных       | 5                      |                             |
 | Максимальное количество конечных точек в отдельной группе синхронизации              | 30                     |                             |

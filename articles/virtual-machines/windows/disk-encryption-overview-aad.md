@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: cb9d697c11427c7ebbf811f9cc05740347c74452
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 9cd668fcac3751715fbe91c9aeff98583c9d03d5
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81417551"
+ms.locfileid: "81458919"
 ---
 # <a name="azure-disk-encryption-with-azure-ad-previous-release"></a>Шифрование диска Azure с Azure AD (предыдущий релиз)
 
@@ -28,15 +28,16 @@ ms.locfileid: "81417551"
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке службы хранилища Azure, в которой размещен репозиторий расширений Azure, и к учетной записи хранения Azure, в которой размещены VHD-файлы.
   -  Если ваша политика безопасности ограничивает доступ к Интернету с виртуальных машин Azure, можно разрешить указанный выше универсальный код ресурса (URI) и настроить определенное правило, чтобы разрешить исходящие подключения к данным IP-адресам. Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](../../key-vault/key-vault-access-behind-firewall.md).
   - Зашифрованный VM должен быть настроен для использования TLS 1.2 в качестве протокола по умолчанию. Если TLS 1.0 был явно отключен и версия .NET не была обновлена до 4.6 или выше, следующее изменение реестра позволит ADE выбрать более позднюю версию TLS:
-    
-        [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
-        "SystemDefaultTlsVersions"=dword:00000001
-        "SchUseStrongCrypto"=dword:00000001
 
-        [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319]
-        "SystemDefaultTlsVersions"=dword:00000001
-        "SchUseStrongCrypto"=dword:00000001` 
-     
+```console
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+"SystemDefaultTlsVersions"=dword:00000001
+"SchUseStrongCrypto"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319]
+"SystemDefaultTlsVersions"=dword:00000001
+"SchUseStrongCrypto"=dword:00000001` 
+```
 
 **Политика группы:**
  - Решение шифрования дисков Azure использует внешний предохранитель ключа BitLocker для виртуальных машин IaaS под управлением Windows. Если виртуальные машины присоединены к домену, не применяйте групповые политики, требующие использования предохранителей TPM. Сведения о групповой политике "Разрешить использование BitLocker без совместимого TPM" см. в [справке по групповым политикам BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings#bkmk-unlockpol1).
@@ -49,7 +50,7 @@ ms.locfileid: "81417551"
 
 Для получения подробной информации [см. Создание и настройка хранилища ключей для шифрования дисков Azure с Azure AD (предыдущий релиз)](disk-encryption-key-vault-aad.md).
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание и настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий релиз)](disk-encryption-key-vault-aad.md)
 - [Включить шифрование azure disk с Azure AD на Windows VMs (предыдущий релиз)](disk-encryption-windows-aad.md)

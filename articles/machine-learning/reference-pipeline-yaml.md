@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: sanpil
 author: sanpil
 ms.date: 11/11/2019
-ms.openlocfilehash: a677aaa891e21f4c9eeda02eebcb94e9d79a55ad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 40e6d7f3d9c28708c5adec26ddc3c0463e75adc0
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79368831"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81529711"
 ---
 # <a name="define-machine-learning-pipelines-in-yaml"></a>Определение конвейеров машинного обучения в YAML
 
@@ -319,7 +319,6 @@ pipeline:
 
 | Ключ YAML | Описание |
 | ----- | ----- |
-| `compute_target` | Цель вычислений для использования для этого шага. Целью вычислений могут быть вычислительная машина Azure, виртуальная машина (например, Data Science VM) или HDInsight. |
 | `inputs` | Входные данные могут быть [ВводПортобязательным,](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding?view=azure-ml-py) [DataReference](#data-reference), [PortDataReference](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference?view=azure-ml-py), [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py), [Набор данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py), [Определение данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition?view=azure-ml-py), или [PipelineDataset](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset?view=azure-ml-py). |
 | `outputs` | Выходы могут быть либо [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) или [OutputPortBinding](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding?view=azure-ml-py). |
 | `script_name` | Название сценария Python (относительно `source_directory`). |
@@ -361,6 +360,65 @@ pipeline:
                     destination: Output4
                     datastore: workspaceblobstore
                     bind_mode: mount
+```
+
+### <a name="pipeline-with-multiple-steps"></a>Трубопровод с несколькими шагами 
+
+| Ключ YAML | Описание |
+| ----- | ----- |
+| `steps` | Последовательность одного или нескольких определений PipelineStep. Обратите внимание, что `destination` один `outputs` шаг стал `inputs` ключом к .| 
+
+```yaml
+pipeline:
+    name: SamplePipelineFromYAML
+    description: Sample multistep YAML pipeline
+    data_references:
+        TitanicDS:
+            dataset_name: 'titanic_ds'
+            bind_mode: download
+    default_compute: cpu-cluster
+    steps:
+        Dataprep:
+            type: "PythonScriptStep"
+            name: "DataPrep Step"
+            compute: cpu-cluster
+            runconfig: ".\\default_runconfig.yml"
+            script_name: "prep.py"
+            arguments:
+            - '--train_path'
+            - output:train_path
+            - '--test_path'
+            - output:test_path
+            allow_reuse: True
+            inputs:
+                titanic_ds:
+                    source: TitanicDS
+                    bind_mode: download
+            outputs:
+                train_path:
+                    destination: train_csv
+                    datastore: workspaceblobstore
+                test_path:
+                    destination: test_csv
+        Training:
+            type: "PythonScriptStep"
+            name: "Training Step"
+            compute: cpu-cluster
+            runconfig: ".\\default_runconfig.yml"
+            script_name: "train.py"
+            arguments:
+            - "--train_path"
+            - input:train_path
+            - "--test_path"
+            - input:test_path
+            inputs:
+                train_path:
+                    source: train_csv
+                    bind_mode: download
+                test_path:
+                    source: test_csv
+                    bind_mode: download
+
 ```
 
 ## <a name="schedules"></a>Расписания
@@ -437,6 +495,6 @@ Schedule:
     path_on_datastore: ~ 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [использовать расширение CLI для машинного обучения Azure.](reference-azure-machine-learning-cli.md)

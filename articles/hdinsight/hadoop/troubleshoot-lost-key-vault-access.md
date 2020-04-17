@@ -7,22 +7,22 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/30/2020
-ms.openlocfilehash: 2ae389be25cd8633a53a49cf000796c1510733a1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b1d941fbf86d453a56a5157ed988a32173c614fc
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76965168"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81461537"
 ---
 # <a name="scenario-azure-hdinsight-clusters-with-disk-encryption-lose-key-vault-access"></a>Сценарий: кластеры Azure HDInsight с шифрованием дисков теряют доступ к Key Vault
 
 В этой статье описаны шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблема
+## <a name="issue"></a>Проблемы
 
 Предупреждение Центра здоровья `The HDInsight cluster is unable to access the key for BYOK encryption at rest`ресурсов (RHC) отображается для кластеров Bring Your Own Key (BYOK), где кластерные узлы потеряли доступ к клиентам Key Vault (KV). Аналогичные предупреждения также можно увидеть на uI Apache Ambari.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Предупреждение гарантирует доступность KV из кластерных узлов, обеспечивая тем самым сетевое соединение, работоспособность KV и политику доступа для пользователя, назначенного Управляемой идентификацией. Это предупреждение является лишь предупреждением о предстоящем закрытии брокера на последующих перезагрузках узлов, кластер продолжает функционировать до тех пор, пока узлы не перезагрузятся.
 
@@ -32,7 +32,7 @@ ms.locfileid: "76965168"
 
 ### <a name="kvaad-outage"></a>Сбой KV/AAD
 
-Для более подробной информации о [доступности и избыточности](../../key-vault/key-vault-disaster-recovery-guidance.md) и статусе Azure и странице состояния Azurehttps://status.azure.com/
+Для более подробной информации о [доступности и избыточности](../../key-vault/general/disaster-recovery-guidance.md) и статусе Azure и странице состояния Azurehttps://status.azure.com/
 
 ### <a name="kv-accidental-deletion"></a>Случайное удаление КВ
 
@@ -80,7 +80,7 @@ ms.locfileid: "76965168"
 * Используйте ключ без набора истечения срока действия.
 * Если срок действия должен быть установлен, поверните клавиши до истечения срока действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

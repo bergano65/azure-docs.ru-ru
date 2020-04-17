@@ -4,12 +4,12 @@ description: Узнайте об использовании управляемы
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.custom: sfrev
-ms.openlocfilehash: f6f3736bed4d3d59bce08d4df3ee0aa164a0a764
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: a26f188ed2f5e18bdf775cd1fb21001495ffdc89
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81415112"
+ms.locfileid: "81461452"
 ---
 # <a name="using-managed-identities-for-azure-with-service-fabric"></a>Использование управляемых идентификационных данных для Azure с помощью ткани обслуживания
 
@@ -57,9 +57,9 @@ ms.locfileid: "81415112"
 
 - Удалить или изменить идентификаторы, назначенные приложению; если необходимо внести изменения, отправьте отдельные развертывания, чтобы сначала добавить новое назначение идентификации, а затем удалить ранее назначенное. Удаление идентификации из существующего приложения может иметь нежелательные последствия, включая оставление приложения в состоянии, которое не обновляется. Безопасно удалить приложение в целом, если удаление личности необходимо; Обратите внимание, что это удалит установленное системой удостоверение личности (если так определено), связанное с приложением, и удалит любые ассоциации с назначенными пользователем идентификаторами, назначенными приложению.
 
-- Служба Поддержки системы управления идентификаторами в настоящее время не интегрирована в [AzureServiceTokenProvider.](../key-vault/service-to-service-authentication.md)
+- Служба Поддержки системы управления идентификаторами в настоящее время не интегрирована в [AzureServiceTokenProvider.](../key-vault/general/service-to-service-authentication.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Развертывание нового кластера Azure Service Fabric с управляемой поддержкой идентификации](./configure-new-azure-service-fabric-enable-managed-identity.md)
 - [Включить управляемую идентификационную поддержку в существующем кластере Azure Service Fabric](./configure-existing-cluster-enable-managed-identity-token-service.md)

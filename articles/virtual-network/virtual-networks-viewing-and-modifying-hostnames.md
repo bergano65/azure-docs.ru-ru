@@ -5,7 +5,6 @@ services: virtual-network
 documentationcenter: na
 author: genlin
 manager: dcscontentpm
-editor: tysonn
 ms.assetid: c668cd8e-4e43-4d05-acc3-db64fa78d828
 ms.service: virtual-network
 ms.devlang: na
@@ -14,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: cce248e2906f4a36737388e8cc7124b1bb19fbae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 09c911838d34a083de8450145ce849fc966eb0e8
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71058679"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459157"
 ---
 # <a name="viewing-and-modifying-hostnames"></a>Просмотр и изменение имен узлов
 Чтобы позволить ссылаться на экземпляры ролей по имени узла, необходимо задать значение имени узла в файле конфигурации службы для каждой роли. Для этого добавьте нужное имя узла в атрибут **vmName** элемента **Role**. Значение атрибута **vmName** используется в качестве основы для имени узла каждого экземпляра роли. Например, если **vmName** — *webrole* и существует три экземпляра этой роли, имена узлов экземпляров будут следующими: *webrole0*, *webrole1* и *webrole2*. Вам не нужно указывать имя узла для виртуальных машин в файле конфигурации, так как имя узла виртуальной машины заполняется на основе ее имени. Дополнительные сведения о настройке службы Microsoft Azure см. в статье, посвященной [схеме конфигурации службы Azure (файл CSCFG)](https://msdn.microsoft.com/library/azure/ee758710.aspx).
@@ -53,7 +52,7 @@ ms.locfileid: "71058679"
 ## <a name="modifying-a-hostname"></a>Изменение имени узла
 Вы можете изменить имя узла для любой виртуальной машины или экземпляра роли, отправив измененный файл конфигурации службы или переименовав компьютер из сеанса удаленного рабочего стола.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Разрешение имен (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances.md)
 
 [Схема конфигурации службы Azure (CSCFG-файл)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)

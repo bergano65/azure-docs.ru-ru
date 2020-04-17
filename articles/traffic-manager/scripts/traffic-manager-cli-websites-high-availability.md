@@ -5,7 +5,6 @@ services: traffic-manager
 documentationcenter: traffic-manager
 author: rohinkoul
 manager: twooley
-editor: tysonn
 tags: azure-infrastructure
 ms.assetid: ''
 ms.service: traffic-manager
@@ -15,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: traffic-manager
 ms.date: 04/26/2018
 ms.author: rohink
-ms.openlocfilehash: e4912e0e285d41bf2de4cf439788a943251cfae8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e108fbe54ce67d4eb354319450259fc410462c53
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76934789"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460619"
 ---
 # <a name="route-traffic-for-high-availability-of-applications-using-azure-cli"></a>Маршрутизация трафика для обеспечения высокого уровня доступности приложений с помощью Azure CLI
 
@@ -48,7 +47,7 @@ az group delete --name myResourceGroup2 --yes
 
 Для создания группы ресурсов, веб-приложения, профиля диспетчера трафика и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan) | Создает план службы приложений. Это как ферма сервера для веб-приложения Azure. |
@@ -56,7 +55,7 @@ az group delete --name myResourceGroup2 --yes
 | [az network traffic-manager profile create](https://docs.microsoft.com/cli/azure/network/traffic-manager/profile) | Создает профиль диспетчера трафика Azure. |
 | [az network traffic-manager endpoint create](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint) | Добавление конечной точки в профиль диспетчера трафика Azure. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

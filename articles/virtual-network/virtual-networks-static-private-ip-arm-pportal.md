@@ -5,7 +5,6 @@ services: virtual-network
 documentationcenter: na
 author: KumudD
 manager: twooley
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: 11245645-357d-4358-9a14-dd78e367b494
 ms.service: virtual-network
@@ -15,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/07/2020
 ms.author: kumud
-ms.openlocfilehash: b50875105696dc5c556e2a4a9e756078cf995327
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 946926a8a805ec3c53ea3c57dc3eded2462f7673
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80060558"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81461554"
 ---
 # <a name="configure-a-private-ip-address-for-a-vm-using-the-azure-portal"></a>Налажить частный IP-адрес для VM с помощью портала Azure
 
@@ -32,7 +31,7 @@ ms.locfileid: "80060558"
 
 | Параметр | Значение |
 | ------- | ----- |
-| name | *TestVNet* |
+| Имя | *TestVNet* |
 | Пространство адресов | *192.168.0.0/16* |
 | Группа ресурсов | **TestRG** (при необходимости, выберите **Создать новый** для его создания) |
 | Имя подсети | *Frontend* |
@@ -55,11 +54,11 @@ ms.locfileid: "80060558"
     | --- | --- |
     | **Подписка** | Текущая подписка |
     | **Группа ресурсов** | **TestRG** (выберите из списка выпадающих) |
-    | **Название виртуальной машины** | *DNS01* |
-    | **Регионе** | **Восточная часть США (США)** |
+    | **Имя виртуальной машины** | *DNS01* |
+    | **Регион** | **Восточная часть США (США)** |
     | **ОС контейнера** | **Windows Server 2019 Datacenter** |
     | **Размер** | **VM Размер** **B1ls**, **Предложение** **стандартных** |
-    | **Пользователя** | Имя пользователя учетной записи администратора |
+    | **Имя пользователя** | Имя пользователя учетной записи администратора |
     | **Пароль** | Пароль для имени пользователя учетной записи администратора |
     | **Подтверждение пароля** | Пароль снова |
 
@@ -69,7 +68,7 @@ ms.locfileid: "80060558"
     | Item | Значение |
     | --- | --- |
     | **Виртуальная сеть** | **TestVNet** |
-    | **Подсети** | **Frontend** |
+    | **Подсеть** | **Frontend** |
 
     ![Сетевая вкладка, Создание виртуальной машины, портал Azure](./media/virtual-networks-static-ip-arm-pportal/create-a-virtual-machine-networking.png)
 5. В **управлении**, под **диагностической учетной записи хранения,** выбрать **vnetstorage**. Если эта учетная запись хранилища не отображается в списке, выберите **Создать новый,** указать **имя** *vnetstorage*и выбрать **OK.** Наконец, выберите **Обзор&nbsp;+&nbsp;создать**.
@@ -86,7 +85,7 @@ ms.locfileid: "80060558"
 ## <a name="retrieve-private-ip-address-information-for-a-vm"></a>Извлекать информацию о частных IP-адресах для VM
 Для просмотра информации о частном IP-адресе для вашего нового VM:
 
-1. Перейдите на [портал Azure,](https://portal.azure.com) чтобы найти ваш VM. Поиск и выбор **виртуальных машин.**
+1. Перейдите на [портал Azure,](https://portal.azure.com) чтобы найти ваш VM. Найдите и щелкните **Виртуальные машины**.
 
     ![Виртуальные машины, Поисковая коробка, портал Azure](./media/virtual-networks-static-ip-arm-pportal/search-box-virtual-machines.png)
 
@@ -128,6 +127,6 @@ ms.locfileid: "80060558"
 
 Кроме того, вы никогда не должны вручную присваивать *общедоступный* IP-адрес, назначенный виртуальной машине Azure в операционной системе виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с дополнительными сведениями об управлении [параметрами IP-адресов](virtual-network-network-interface-addresses.md).

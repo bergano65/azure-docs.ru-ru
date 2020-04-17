@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: f38fd7c8e14f58052912f68a277f194fd3866f2e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 029743dbb44ab0ebb6ab8f695c0c966137c45107
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78970578"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459803"
 ---
 # <a name="azure-disk-encryption-with-azure-ad-previous-release"></a>Шифрование диска Azure с Azure AD (предыдущий релиз)
 
@@ -35,7 +35,7 @@ ms.locfileid: "78970578"
   - Чтобы получить токен для подключения к хранилищу ключа, IaaS VM должен быть в \[\]состоянии подключиться к точке azure AD, login.microsoftonline.com.
   - Для записи ключей шифрования в ваше хранилище ключей виртуальная машина IaaS должна иметь возможность подключиться к конечной точке хранилища ключей.
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке службы хранилища Azure, в которой размещен репозиторий расширений Azure, и к учетной записи хранения Azure, в которой размещены VHD-файлы.
-  -  Если ваша политика безопасности ограничивает доступ от Пазурова к Vpn, можно решить предыдущее URI и настроить определенное правило, чтобы разрешить исходящие подключения к I-службам. Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](../../key-vault/key-vault-access-behind-firewall.md).
+  -  Если ваша политика безопасности ограничивает доступ от Пазурова к Vpn, можно решить предыдущее URI и настроить определенное правило, чтобы разрешить исходящие подключения к I-службам. Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
   - В Windows, если TLS 1.0 явно отключен и версия .NET не обновляется до 4.6 или выше, следующее изменение реестра позволяет шифрованию azure Disk выбрать более позднюю версию TLS:
     
             [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
@@ -58,7 +58,7 @@ ms.locfileid: "78970578"
 
 Для получения дополнительной информации [см. Создание и настройка хранилища ключей для шифрования дисков Azure с Azure AD (предыдущий релиз)](disk-encryption-key-vault-aad.md).
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание и настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий релиз)](disk-encryption-key-vault-aad.md)
 - [Включить шифрование azure disk с Azure AD на Linux VMs (предыдущий релиз)](disk-encryption-linux-aad.md)

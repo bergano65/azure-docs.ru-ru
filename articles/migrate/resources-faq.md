@@ -1,17 +1,14 @@
 ---
 title: Лазурные мигрирующие часто задаваемые вопросы
 description: Получите ответы на распространенные вопросы об службе Azure Migrate.
-author: snehaamicrosoft
-ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 11/21/2019
-ms.author: snehaa
-ms.openlocfilehash: c85c5c6e11beb0178139dad152f56f420b2ac26f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/15/2020
+ms.openlocfilehash: 9b71888b284fd9cc125def4758d1e3800a92acf2
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78926734"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81530323"
 ---
 # <a name="azure-migrate-common-questions"></a>Лазурный миграция: общие вопросы
 
@@ -22,7 +19,7 @@ ms.locfileid: "78926734"
 
 ## <a name="what-is-azure-migrate"></a>Что представляет собой служба "Миграция Azure"?
 
-Azure Migrate предоставляет центральный концентратор для отслеживания обнаружения, оценки и миграции ваших закрытых приложений и рабочих нагрузок, а также частных и общедоступных облачных вс-карт в Azure. Концентратор предоставляет инструменты Azure Migrate для оценки и миграции и сторонних предложений ISV. Ознакомьтесь с [дополнительными сведениями](migrate-services-overview.md).
+Azure Migrate предоставляет центральный концентратор для отслеживания обнаружения, оценки и миграции ваших закрытых приложений и рабочих нагрузок, а также частных и общедоступных облачных вс-карт в Azure. Концентратор предоставляет инструменты Azure Migrate для оценки и миграции и сторонних предложений ISV. [Подробнее](migrate-services-overview.md).
 
 ## <a name="what-can-i-do-with-azure-migrate"></a>Что я могу сделать с Azure Migrate?
 
@@ -56,8 +53,7 @@ Azure Migrate предоставляет центральный концентр
 
 ## <a name="which-geographies-are-supported"></a>Какие географические регионы поддерживаются?
 
-- **VMware VMs**: Просмотрите поддерживаемые Azure Migrate [географические географии](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware) для VMware VMs.
-- **Hyper-V VMs**: Обзор Azure Migrate [поддерживается географии](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v) для Hyper-V VMs.
+Просмотрите поддерживаемые географические регионы для [общественных](migrate-support-matrix.md#supported-geographies-public-cloud) и [правительственных облаков.](migrate-support-matrix.md#supported-geographies-azure-government)
 
 ## <a name="how-do-i-get-started"></a>Как начать работу?
 
@@ -74,6 +70,6 @@ Azure Migrate предоставляет центральный концентр
 
 Узнайте, как [удалить проект](how-to-delete-project.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Читайте [обзор Azure Migrate](migrate-services-overview.md).

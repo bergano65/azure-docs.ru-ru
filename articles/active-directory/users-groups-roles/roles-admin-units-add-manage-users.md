@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92d96abd343266372984918fd0c942ec1cae865f
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 2b2b901f652564c47ca35cb0f75a69f26fa2fa71
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81428307"
+ms.locfileid: "81533230"
 ---
 # <a name="add-and-manage-users-in-an-administrative-unit-in-azure-active-directory"></a>Добавление и управление пользователями в административном блоке в Active Directory Azure
 
@@ -51,11 +51,11 @@ ms.locfileid: "81428307"
 
 ### <a name="powershell"></a>PowerShell
 
-    $administrative unitObj = Get-AzureADAdministrativeUnit -Filter "displayname eq 'Test administrative unit 2'"
+    $administrativeunitObj = Get-AzureADAdministrativeUnit -Filter "displayname eq 'Test administrative unit 2'"
     $UserObj = Get-AzureADUser -Filter "UserPrincipalName eq 'billjohn@fabidentity.onmicrosoft.com'"
-    Add-AzureADAdministrativeUnitMember -ObjectId $administrative unitObj.ObjectId -RefObjectId $UserObj.ObjectId
+    Add-AzureADAdministrativeUnitMember -ObjectId $administrativeunitObj.ObjectId -RefObjectId $UserObj.ObjectId
 
-В приведенном выше примере для добавления пользователя в административный блок используется cmdlet Add-AzureADAdministrativeUnitMember. Идентификатор объекта Административной единицы, в котором должен быть добавлен пользователь, и идентификатор объекта пользователя, который должен быть добавлен, рассматриваются в качестве аргумента. Выделенный раздел может быть изменен по мере необходимости для конкретной среды.
+В приведенном выше примере для добавления пользователя в административный блок используется cmdlet Add-AzureADAdministrativeUnitMember. Идентификатор объекта административной единицы, в котором должен быть добавлен пользователь, и идентификатор объекта пользователя, который должен быть добавлен, рассматриваются в качестве аргумента. Выделенный раздел может быть изменен по мере необходимости для конкретной среды.
 
 ### <a name="microsoft-graph"></a>Microsoft Graph
 
@@ -124,7 +124,7 @@ ms.locfileid: "81428307"
 
 ![Отправить объемный файл загрузки](./media/roles-admin-units-add-manage-users/bulk-user-remove.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Назначить роль административной единице](roles-admin-units-assign-roles.md)
 - [Добавление групп в административную единицу](roles-admin-units-add-manage-groups.md)

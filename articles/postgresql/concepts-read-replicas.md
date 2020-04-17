@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/23/2020
-ms.openlocfilehash: fd6d3e24adfc22d2f6ea17f09b8dea4638a054b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 545d04bdede76a6ce25c9e4665f39c01ff6caa73
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76769045"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81531989"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql---single-server"></a>Читать реплики в базе данных Azure для PostgreS'L - Единый сервер
 
@@ -98,14 +98,14 @@ EXTRACT (EPOCH FROM now() - pg_last_xact_replay_timestamp());
 В PostgreSQL версии 10:
 
 ```SQL
-select pg_wal_lsn_diff(pg_current_wal_lsn(), stat.replay_lsn) 
+select pg_wal_lsn_diff(pg_current_wal_lsn(), replay_lsn) 
 AS total_log_delay_in_bytes from pg_stat_replication;
 ```
 
 В PostgreSQL 9.6 и более ранних версий:
 
 ```SQL
-select pg_xlog_location_diff(pg_current_xlog_location(), stat.replay_location) 
+select pg_xlog_location_diff(pg_current_xlog_location(), replay_location) 
 AS total_log_delay_in_bytes from pg_stat_replication;
 ```
 
@@ -142,7 +142,7 @@ AS total_log_delay_in_bytes from pg_stat_replication;
 После успешной обработки приложения читает и пишет, вы завершили failover. Количество простоев, которые можно получить в приложении, будет зависеть от того, когда вы обнаружите проблему и выполните шаги 1 и 2 выше.
 
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 В этом разделе приведены рекомендации по использованию компонента "Реплика чтения".
 
@@ -173,6 +173,6 @@ Postgres требует, чтобы параметр `max_connections` на ре
 ### <a name="deleted-master-and-standalone-servers"></a>Удаленные главного и отдельного серверов
 При удалении главного сервера все его реплики чтения становятся отдельными серверами. Чтобы применить такое изменение конфигурации, реплики будут перезапущены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения см. в статье [Создание реплик чтения и управление ими с помощью портала Azure](howto-read-replicas-portal.md).
 * Узнайте, как [создавать и управлять ремиссией чтения в Azure CLI и REST API.](howto-read-replicas-cli.md)

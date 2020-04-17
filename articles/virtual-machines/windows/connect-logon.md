@@ -5,7 +5,6 @@ services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ef62b02e-bf35-468d-b4c3-71b63fe7f409
 ms.service: virtual-machines-windows
@@ -14,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 152df830f11cd5a73235559c5c5d65ced44f22fa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c4f5df4a76792c64ab92bbe8d6e4b84080fbd8fe
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79266771"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459191"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее
 Чтобы запустить сеанс удаленного рабочего стола, на портале Azure нажмите кнопку **Подключиться** на рабочем столе Windows. Сначала подключитесь к виртуальной машине, а затем войдите в систему.
@@ -27,10 +26,10 @@ ms.locfileid: "79266771"
 Чтобы подключиться к виртуальной машине Windows с компьютера Mac, необходимо установить клиент RDP для Mac, например [Удаленный рабочий стол (Майкрософт)](https://aka.ms/rdmac).
 
 ## <a name="connect-to-the-virtual-machine"></a>Подключитесь к виртуальной машине
-1. Перейдите на [портал Azure](https://portal.azure.com/) для подключения к VM. Поиск и выбор **виртуальных машин.**
+1. Перейдите на [портал Azure](https://portal.azure.com/) для подключения к VM. Найдите и щелкните **Виртуальные машины**.
 2. Затем выберите виртуальную машину из списка.
 3. В начале страницы виртуальной машины выберите **Connect**.
-4. На странице **Connect to virtual machine** выберите **RDP,** а затем выберите подходящий **IP-адрес** и **номер порта.** В большинстве случаев следует использовать IP-адрес и порт по умолчанию. Выберите **Скачать RDP файл**. Если на виртуальной машине существует набор политики JIT, сначала нужно нажать кнопку **​​Запросить доступ**, прежде чем вы сможете загрузить RDP-файл. Дополнительные сведения о политике JIT см. в статье [Управление доступом к виртуальным машинам с помощью JIT-доступа](../../security-center/security-center-just-in-time.md).
+4. На странице **Connect to virtual machine** выберите **RDP,** а затем выберите подходящий **IP-адрес** и **номер порта.** В большинстве случаев следует использовать IP-адрес и порт по умолчанию. Щелкните **Скачать RDP-файл**. Если на виртуальной машине существует набор политики JIT, сначала нужно нажать кнопку **​​Запросить доступ**, прежде чем вы сможете загрузить RDP-файл. Дополнительные сведения о политике JIT см. в статье [Управление доступом к виртуальным машинам с помощью JIT-доступа](../../security-center/security-center-just-in-time.md).
 5. Откройте скачанный RDP-файл и при появлении запроса щелкните **Подключиться**. Появится предупреждение о том, что издатель файла `.rdp` неизвестен. Это ожидаемое поведение. Чтобы продолжить, в окне **Remote Desktop Connection** (Подключение к удаленному рабочему столу) выберите **Подключиться**.
    
     ![Снимок экрана с предупреждением о неизвестном издателе.](./media/connect-logon/rdp-warn.png)
@@ -69,6 +68,6 @@ Get-AzRemoteDesktopFile -ResourceGroupName "RgName" -Name "VmName" -Launch
 Get-AzRemoteDesktopFile -ResourceGroupName "RgName" -Name "VmName" -LocalPath "C:\Path\to\folder"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если у вас возникли проблемы с подключением, ознакомьтесь со статьей [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 

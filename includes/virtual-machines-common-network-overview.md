@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/01/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: b5d46caa80f3f0aaeeb18bd919dafccf628c5faf
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 4559a49a64688545e519f6172798997c2d695672
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81384957"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81461950"
 ---
 При создании виртуальной машины Azure вам потребуется [виртуальная сеть](../articles/virtual-network/virtual-networks-overview.md). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как в этой виртуальной сети будет предоставляться доступ к виртуальным машинам. Очень важно [спланировать это перед созданием ресурсов](../articles/virtual-network/virtual-network-vnet-plan-design-arm.md), а также ознакомиться с [ограничениями, применяемыми к сетевым ресурсам](../articles/azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
@@ -148,24 +148,7 @@ ms.locfileid: "81384957"
 
 ### <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин
 
-При работе с виртуальными наборами масштабов машин и балансером нагрузки следует учитывать следующее:
-
-* **Несколько виртуальных наборов шкалы машин не могут использовать один и тот же балансер нагрузки.**
-* **Порт-форвардинг и входящие правила NAT:**
-  * Каждый виртуальный набор масштабов машины должен иметь входявное правило NAT.
-  * При использовании виртуальной шкалы машины, установленной в пуле бэкэнда балансоилира нагрузки, входящие правила NAT по умолчанию создаются автоматически, это делается по замыслу.
-* **Правила балансировки нагрузки**.
-  * При использовании виртуальной шкалы машины, установленной в пуле бэкэнда балансера нагрузки, правило балансировки нагрузки по умолчанию создается автоматически, это по замыслу.
-* **Правила выезда**:
-  *  Чтобы создать исходящие правила для пула бэкэнда, на который уже ссылается правило балансировки нагрузки, необходимо сначала отметить **"Создать неявные правила исходящего"** как **Нет** в портале при создании правила балансировки входящих нагрузок.
-
-  :::image type="content" source="./media/virtual-machines-common-network-overview/vmsslb.png" alt-text="Создание правил балансировки нагрузки" border="true":::
-
-Следующие методы могут быть использованы для развертывания виртуального набора масштабов машин с существующим балансистом нагрузки Azure.
-
-* [Настроили виртуальный набор масштабов машины с существующим балансом загрузки Azure с помощью портала Azure.](../articles/load-balancer/configure-vm-scale-set-portal.md)
-* [Настроили виртуальный набор масштабов машины с существующим балансом загрузки Azure с помощью Azure PowerShell.](../articles/load-balancer/configure-vm-scale-set-powershell.md)
-* [Настроили виртуальный набор масштабов машины с существующим балансом загрузки Azure с помощью Azure CLI.](../articles/load-balancer/configure-vm-scale-set-cli.md)
+Для получения дополнительной информации о наборах [Networking for Azure virtual machine scale sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-networking)сальдо груза и виртуальных наборах машин см.
 
 ## <a name="vms"></a>Виртуальные машины
 

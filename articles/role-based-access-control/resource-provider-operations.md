@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/22/2020
+ms.date: 04/15/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 16fa33999a38b21fd2016c986dd2db81f7d84051
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 274e85a914ebec31a03f1149bc4467ea142e7255
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383746"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81482108"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -157,7 +157,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.ADHybridHealthService/reports/tenantassigneddeployment/read | Получает расположение хранилища клиента на основе идентификатора клиента. |
 > |  | **отчеты/обновлениявыбраннойразвертывания** |  |
 > | Действие | Microsoft.ADHybridHealthService/reports/updateselecteddeployment/read | Возвращает географическое расположение, из которого будет осуществляться доступ к данных. |
-> |  | **Услуги** |  |
+> |  | **services** |  |
 > | Действие | Microsoft.ADHybridHealthService/services/write | Создает экземпляр службы в клиенте. |
 > | Действие | Microsoft.ADHybridHealthService/services/read | Считывает экземпляры службы в клиенте. |
 > | Действие | Microsoft.ADHybridHealthService/services/delete | Удаляет экземпляр службы из клиента. |
@@ -685,7 +685,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Authorization/locks/delete | Удаляет блокировки в указанной области. |
 > |  | **Операций** |  |
 > | Действие | Microsoft.Authorization/operations/read | Получает список операций. |
-> |  | **Разрешения** |  |
+> |  | **разрешения** |  |
 > | Действие | Microsoft.Authorization/permissions/read | Выводит список всех разрешений, которые есть у вызывающего в заданной области. |
 > |  | **Политики** |  |
 > | Действие | Microsoft.Авторизация/политики/аудит/действия | Действия, принятые в результате оценки политики Azure с эффектом «аудита» |
@@ -2198,6 +2198,10 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Compute/locations/logAnalytics/getThrottledRequests/action | Создание журналов, позволяющих показать вычисленное количество регулируемых запросов, сгруппированных по имени ресурса, имени операции или примененной политике регулирования. |
 > |  | **локации/операции** |  |
 > | Действие | Microsoft.Compute/locations/operations/read | Возвращает состояние асинхронной операции. |
+> |  | **локации/частныеEndpointConnectionProxyAzureAsyncOperation** |  |
+> | Действие | Microsoft.Compute/локации/частныйEndpointConnectionProxyAzureAsyncOperation/read | Получить статус асинхронной операции прокси-сервера Private Endpoint |
+> |  | **локации/частныеEndpointConnectionПроксиOperationиРезультаты** |  |
+> | Действие | Microsoft.Compute/локации/частныеEndpointConnectionПроксиОперационныеРезультаты/читай | Получить результаты операции прокси-сервера Private Endpoint |
 > |  | **места/издатели** |  |
 > | Действие | Microsoft.Compute/locations/publishers/read | Получение свойств издателя. |
 > |  | **местоположения/издатели/артефакты/предложения** |  |
@@ -2233,6 +2237,14 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Compute/restorePointCollections/restorePoints/write | Создает точку восстановления. |
 > | Действие | Microsoft.Compute/restorePointCollections/restorePoints/delete | Удаляет точку восстановления. |
 > | Действие | Microsoft.Compute/restorePointCollections/restorePoints/retrieveSasUris/action | Возвращает свойства точки восстановления вместе с универсальными кодами ресурсов (URI) SAS больших двоичных объектов. |
+> |  | **общиеVMExtensions** |  |
+> | Действие | Microsoft.Compute/sharedVMExtensions/read | Получает свойства общего расширения VM |
+> | Действие | Microsoft.Compute/sharedVMExtensions/write | Создает новое совместное расширение VM или обновляет существующее |
+> | Действие | Microsoft.Compute/sharedVMExtensions/delete | Удаляет общее расширение VM |
+> |  | **общие VMExtensions/версии** |  |
+> | Действие | Microsoft.Compute/sharedVMExtensions/версии/read | Получает свойства общей версии расширения VM |
+> | Действие | Microsoft.Compute/sharedVMExtensions/версии/запись | Создает новую общую версию расширения VM или обновляет существующую версию |
+> | Действие | Microsoft.Compute/sharedVMExtensions/версии/удаление | Удаляет общую версию расширения VM |
 > |  | **sharedVMImages** |  |
 > | Действие | Microsoft.Compute/sharedVMImages/read | Получение свойств образа общей виртуальной машины. |
 > | Действие | Microsoft.Compute/sharedVMImages/write | Создание нового образа общей виртуальной машины или обновление существующего. |
@@ -2250,6 +2262,10 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Compute/snapshots/delete | Удаляет моментальный снимок. |
 > | Действие | Microsoft.Compute/snapshots/beginGetAccess/action | Получение универсального кода ресурса (URI) SAS моментального снимка для доступа к большому двоичному объекту. |
 > | Действие | Microsoft.Compute/snapshots/endGetAccess/action | Отмена универсального кода ресурса (URI) SAS моментального снимка. |
+> |  | **sshPublicKeys** |  |
+> | Действие | Microsoft.Compute/sshPublicKeys/read | Получить свойства открытого ключа SSH |
+> | Действие | Microsoft.Compute/sshPublicKeys/write | Создает новый открытый ключ SSH или обновляет существующий открытый ключ SSH |
+> | Действие | Microsoft.Compute/sshPublicKeys/delete | Удаляет общедоступный ключ SSH |
 > |  | **виртуальныемашины** |  |
 > | Действие | Microsoft.Compute/virtualMachines/read | Возвращает свойства виртуальной машины. |
 > | Действие | Microsoft.Compute/virtualMachines/write | Создает новую виртуальную машину или обновляет существующую. |
@@ -3161,7 +3177,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.DataMigration/locations/operationResults/read | Получение состояния длительной операции, связанной с ответом 202 (принято) |
 > |  | **локации/операцииСтатусы** |  |
 > | Действие | Microsoft.DataMigration/locations/operationStatuses/read | Получение состояния длительной операции, связанной с ответом 202 (принято) |
-> |  | **Услуги** |  |
+> |  | **services** |  |
 > | Действие | Microsoft.DataMigration/services/read | Считывание сведений о ресурсах. |
 > | Действие | Microsoft.DataMigration/services/write | Создание или обновление ресурсов и их свойств. |
 > | Действие | Microsoft.DataMigration/services/delete | Удаление ресурса и всех его дочерних элементов. |
@@ -3748,7 +3764,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.DevSpaces/register/action | Создание поставщика ресурсов Microsoft Dev Spaces с подпиской |
-> |  | **controllers** |  |
+> |  | **Контроллеры** |  |
 > | Действие | Microsoft.DevSpaces/controllers/read | Чтение свойств контроллера Azure Dev Spaces |
 > | Действие | Microsoft.DevSpaces/controllers/write | Создание или обновление свойств контроллера Azure Dev Spaces |
 > | Действие | Microsoft.DevSpaces/controllers/delete | Удаление контроллера Azure Dev Spaces Controller и служб плоскости данных |
@@ -3934,6 +3950,83 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.DocumentDB/databaseAccounts/getBackupPolicy/action | Получите политику резервного копирования учетной записи базы данных |
 > | Действие | Microsoft.DocumentDB/databaseAccounts/restore/action | Отправка запроса восстановления |
 > | Действие | Microsoft.DocumentDB/databaseAccounts/backup/action | Отправка запроса на настройку резервного копирования |
+> |  | **базы данныхСчета/апис/базы данных** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/' Создание базы данных. Применяется только к типам API: 'sql', 'mongodb', 'gremlin'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Прочитайте базу данных или перечислите все базы данных. Применяется только к типам API: 'sql', 'mongodb', 'gremlin'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/deletes/delete | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Удалите базу данных. Применяется только к типам API: 'sql', 'mongodb', 'gremlin'. |
+> |  | **база данныхAccounts/apis/databases/collections** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/collections/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Создайте или обновляйте коллекцию. Применяется только к типам API: 'mongodb'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/collections/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Прочитайте коллекцию или перечислите все коллекции. Применяется только к типам API: 'mongodb'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/collections/delete | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Удалите коллекцию. Применяется только к типам API: 'mongodb'. |
+> |  | **база данныхAccounts/apis/databases/collections/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'mongodb'. |
+> |  | **база данныхAccounts/apis/databases/collections/settings** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/settings/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Обновите пропускную выливку коллекции. Применяется только к типам API: 'mongodb'. Применяется только для типов настройки: 'пропускная плата'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/settings/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/', Прочитайте пропускную систему коллекции. Применяется только к типам API: 'mongodb'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/databases/collections/settings/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/settings/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'mongodb'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхСчета/апис/базы данных/контейнеры** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Создание или обновление контейнера. Применяется только к типам API: 'sql'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Прочитайте контейнер или перечислите все контейнеры. Применяется только к типам API: 'sql'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/delete | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Удалите контейнер. Применяется только к типам API: 'sql'. |
+> |  | **база данныхAccounts/apis/databases/containers/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'sql'. |
+> |  | **база данныхAccounts/apis/databases/containers/settings** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/settings/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Обновите пропускную емкость контейнера. Применяется только к типам API: 'sql'. Применяется только для типов настройки: 'пропускная плата'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/settings/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте пропускную емкость контейнера. Применяется только к типам API: 'sql'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/databases/containers/settings/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/settings/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'sql'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхСчета/апис/базы данных/графики** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Создайте или обновляйте график. Применяется только к типам API: 'гремлин'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Прочитайте график или перечислите все графики. Применяется только к типам API: 'гремлин'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/graphs/delete | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Удалите график. Применяется только к типам API: 'гремлин'. |
+> |  | **база данныхAccounts/apis/databases/graphs/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'гремлин'. |
+> |  | **база данныхAccounts/apis/databases/graphs/settings** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Обновите пропускную способности графика. Применяется только к типам API: 'гремлин'. Применяется только для типов настройки: 'пропускная плата'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте пропускную способности графика. Применяется только к типам API: 'гремлин'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/databases/graphs/settings/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'гремлин'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/databases/operationresults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'sql', 'mongodb', 'gremlin'. |
+> |  | **база данныхAccounts/apis/databases/settings** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/settings/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Обновите пропускную систему базы данных. Применяется только к типам API: 'sql', 'mongodb', 'gremlin'. Применяется только для типов настройки: 'пропускная плата'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/settings/sread | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте пропускную систему базы данных. Применяется только к типам API: 'sql', 'mongodb', 'gremlin'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/databases/settings/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/settings/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'sql', 'mongodb', 'gremlin'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **базы данныхСчета/apis/keyspaces** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Создайте ключевое пространство. Применяется только к типам API: 'cassandra'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/', прочитайте ключевое пространство или перечислите все ключевые области. Применяется только к типам API: 'cassandra'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/delete | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Удалите ключевое пространство. Применяется только к типам API: 'cassandra'. |
+> |  | **база данныхСчета/apis/keyspaces/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'cassandra'. |
+> |  | **база данныхСчета/apis/keyspaces/настройки** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Обновите пропускную выливку клавиатуры. Применяется только к типам API: 'cassandra'. Применяется только для типов настройки: 'пропускная плата'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте пропускную способности клавиатуры. Применяется только к типам API: 'cassandra'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/keyspaces/settings/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'cassandra'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхСчета/apis/ключевые пространства/таблицы** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Создайте или обновляйте таблицу. Применяется только к типам API: 'cassandra'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Прочитайте таблицу или перечислите все таблицы. Применяется только к типам API: 'cassandra'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/delete | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Удалите таблицу. Применяется только к типам API: 'cassandra'. |
+> |  | **база данныхAccounts/apis/keyspaces/tables/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'cassandra'. |
+> |  | **база данныхAccounts/apis/keyspaces/tables/settings** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Обновите пропускную таблицу. Применяется только к типам API: 'cassandra'. Применяется только для типов настройки: 'пропускная плата'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте пропускную таблицу. Применяется только к типам API: 'cassandra'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/keyspaces/tables/settings/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'cassandra'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхСчета/apis/таблицы** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Создайте или обновляйте таблицу. Применяется только к типам API: 'таблица'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без сегмента '/apis/') Прочитайте таблицу или перечислите все таблицы. Применяется только к типам API: 'таблица'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/delete | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Удалите таблицу. Применяется только к типам API: 'таблица'. |
+> |  | **база данныхСчета/apis/таблицы/результаты работы** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'таблица'. |
+> |  | **база данныхСчета/apis/таблицы/настройки** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/settings/write | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Обновите пропускную таблицу. Применяется только к типам API: 'таблица'. Применяется только для типов настройки: 'пропускная плата'. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/settings/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте пропускную таблицу. Применяется только к типам API: 'таблица'. Применяется только для типов настройки: 'пропускная плата'. |
+> |  | **база данныхAccounts/apis/tables/settings/operationResults** |  |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/settings/operationResults/read | (Не рекомендуется к использованию. Пожалуйста, используйте пути ресурсов без '/apis/' segment) Прочитайте состояние асинхронной операции. Применяется только к типам API: 'таблица'. Применяется только для типов настройки: 'пропускная плата'. |
 > |  | **база данныхСчета/кассандрыКлючевые пространства** |  |
 > | Действие | Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/write | Создайте пространство ключа Cassandra. |
 > | Действие | Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/read | Прочитайте пространство ключа Cassandra или перечислите все ключевые области Cassandra. |
@@ -4406,7 +4499,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Features/register/action | Регистрирует компонент подписки. |
-> |  | **Функции** |  |
+> |  | **features** |  |
 > | Действие | Microsoft.Features/features/read | Возвращает функции подписки. |
 > |  | **Операций** |  |
 > | Действие | Microsoft.Features/operations/read | Получает список операций. |
@@ -4558,7 +4651,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Insights/AutoscaleSettings/providers/Microsoft.Insights/logDefinitions/Read | Считывает определения журналов. |
 > |  | **AutoscaleSettings/providers/Microsoft.Insights/MetricDefinitions** |  |
 > | Действие | Microsoft.Insights/AutoscaleSettings/providers/Microsoft.Insights/MetricDefinitions/Read | Считывает определения метрик. |
-> |  | **Базовой линии** |  |
+> |  | **Базовый** |  |
 > | Действие | Microsoft.Insights/Baseline/Read | Прочитайте базовый упор метрики (предварительный просмотр) |
 > |  | **РассчитатьБазовый** |  |
 > | Действие | Microsoft.Insights/CalculateBaseline/Read | Рассчитать базовый упор для значений метрики (предварительный просмотр) |
@@ -5239,7 +5332,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Kusto/Кластеры/Основныеназначения/удаление | Удаляет основной ресурс кластерных назначений. |
 > |  | **Кластеры/СКУ** |  |
 > | Действие | Microsoft.Kusto/Кластеры/SKUs/read | Читает кластерный ресурс SKU. |
-> |  | **Расположения** |  |
+> |  | **Местах** |  |
 > | Действие | Microsoft.Kusto/Локации/CheckNameДоступность/действие | Проверка доступности имен ресурса. |
 > | Действие | Microsoft.Kusto/Locations/GetNetworkПолитика/акция | Получает политики намерения сети |
 > |  | **локации/результаты работы** |  |
@@ -5409,7 +5502,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Logic/locations/workflows/recommendOperationGroups/action | Получает рекомендуемые группы операций для рабочего процесса. |
 > |  | **Операций** |  |
 > | Действие | Microsoft.Logic/operations/read | Получение операции. |
-> |  | **workflows** |  |
+> |  | **Рабочие процессы** |  |
 > | Действие | Microsoft.Logic/workflows/read | Считывает рабочий процесс. |
 > | Действие | Microsoft.Logic/workflows/write | Создает или обновляет рабочий процесс. |
 > | Действие | Microsoft.Logic/workflows/delete | Удаляет рабочий процесс. |
@@ -5532,7 +5625,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.MachineLearningServices/workspaces/write | Создает или обновляет рабочие области служб машинного обучения. |
 > | Действие | Microsoft.MachineLearningServices/workspaces/delete | Удаляет рабочие области служб машинного обучения. |
 > | Действие | Microsoft.MachineLearningServices/workspaces/listKeys/action | Выводит список секретов для рабочей области служб машинного обучения. |
-> | Действие | Microsoft.MachineLearningServices/workspaces/PrivateEndpointConnectionsApproval/action | Утвердить или отклонить подключение к ресурсу Private Endpoint поставщика Microsoft.Network |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/privateEndpointConnectionsОдобрение/действие | Утвердить или отклонить подключение к ресурсу Private Endpoint поставщика Microsoft.Network |
 > |  | **workspaces/computes** |  |
 > | Действие | Microsoft.MachineLearningServices/workspaces/computes/read | Получает вычислительные ресурсы в рабочих областях служб машинного обучения. |
 > | Действие | Microsoft.MachineLearningServices/workspaces/computes/write | Создает или обновляет вычислительные ресурсы в рабочих областях служб машинного обучения. |
@@ -5542,10 +5635,90 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.MachineLearningServices/рабочие пространства/вычисления/начало/действие | Запуск вычислительного ресурса в рабочем пространстве служб машинного обучения |
 > | Действие | Microsoft.MachineLearningServices/рабочие пространства/вычисления/остановка/действие | Остановить вычисление ресурса в рабочей области служб машинного обучения |
 > | Действие | Microsoft.MachineLearningServices/рабочие пространства/вычисления/перезагрузка/действие | Перезапуск вычислительного ресурса в рабочем пространстве служб машинного обучения |
+> |  | **рабочие области/детекторы данных** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/datadriftdetectors/read | Получает детекторы дрейфа данных в службах машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/Datadriftdetectors/write | Создает или обновляет детекторы дрейфа данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/datadriftdetectors/delete | Удаляет детекторы дрейфа данных в службах машинного обучения Workspace (ы) |
+> |  | **рабочие области/наборы данных/зарегистрированы** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/прочитайте | Получает зарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/пишут | Создает или обновляет зарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/удаляют | Удаляет зарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/наборы данных/зарегистрированы/предварительный просмотр** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/предварительный просмотр/прочитайте | Просмотр набора данных для зарегистрированных наборов данных в рабочей области служб машинного обучения (s) |
+> |  | **рабочие области/наборы данных/зарегистрированный/профильный** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/профиль/читай | Получает профили наборов данных для зарегистрированных наборов данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/профиль/запись | Создает или обновляет профили наборов данных для зарегистрированных наборов данных в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/наборы данных/зарегистрированные/схемы** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/схема/читать | Получает схему набора данных для зарегистрированных наборов данных в рабочем пространстве служб машинного обучения (ы) |
+> |  | **рабочие области/наборы данных/незарегистрированные** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/наборы данных/незарегистрированные/прочитайте | Получает незарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/записываются | Создает или обновляет незарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/удаленные | Удаляет незарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/наборы данных/незарегистрированный/предварительный просмотр** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированный/предварительный просмотр/чтение | Просмотр набора данных для незарегистрированных наборов данных в рабочей области служб машинного обучения (s) |
+> |  | **рабочие области/наборы данных/незарегистрированные/профильные** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/профильные/прочитайте | Получает профили наборов данных для незарегистрированных наборов данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/профильные/записные | Создает или обновляет профили наборов данных для незарегистрированных наборов данных в рабочем пространстве служб машинного обучения (ы) |
+> |  | **рабочие области/наборы данных/незарегистрированные/схемы** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/схема/чтение | Получает схему набора данных для незарегистрированных наборов данных в рабочем пространстве служб машинного обучения (ы) |
+> |  | **рабочие места/хранилища данных** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/datastores/read | Получает хранилища данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/datastores/write | Создает или обновляет хранилища данных в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/datastores/delete | Удаляет хранилища данных в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/конечные точки/конвейеры** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/конечные точки/трубопроводы/читай | Публикует конвейеры и конечные точки конвейера в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/конечные точки/трубопроводы/запись | Создает или обновляет опубликованные конвейеры и конечные точки конвейера в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие пространства/среды** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/среды/читать | Получает среды в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/среды/readSecrets/action | Получает среды с секретами в службах машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/среды/запись | Создает или обновляет среды в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/среды/сборка/действие | Создает среды в рабочей области служб машинного обучения (ы) |
 > |  | **рабочие области/eventGridFilters** |  |
 > | Действие | Microsoft.MachineLearningServices/workspaces/eventGridFilters/read | Получение фильтра Event Grid для конкретного рабочего пространства |
-> |  | **рабочие области/функции** |  |
-> | Действие | Microsoft.MachineLearningServices/рабочие области/функции/чтение | Получает все включенные функции для рабочего пространства служб машинного обучения |
+> |  | **workspaces/experiments** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/эксперименты/чтение | Получает эксперименты в службе машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/эксперименты/запись | Создает или обновляет эксперименты в рабочем пространстве служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/эксперименты/удаление | Удаляет эксперименты в службах машинного обучения Workspace (ы) |
+> |  | **рабочие области/эксперименты/запуски** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/эксперименты/запуски/отправка/действие | Создает или обновляет скрипт, запуск в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/эксперименты/запуски/чтение | Получает работает в службы машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/эксперименты/запуски/запись | Создает или обновляет в службе машинного обучения Workspace (ы) |
+> |  | **рабочие области/маркировка** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/маркировка/экспорт/действие | Экспортные этикетки проектов маркировки в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/маркировка/метки** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/маркировка/метки/прочитайте | Получает метки проектов маркировки в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/маркировка/метки/запись | Создает метки проектов маркировки в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/маркировка/метки/отклонения/действия | Отклонить этикетки проектов маркировки в службах машинного обучения Workspace (ы) |
+> |  | **рабочие области/маркировка/проекты** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/чтение | Получает проект маркировки в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/запись | Создает или обновляет проект маркировки в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/удаление | Удаляет проект маркировки в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/маркировка/проекты/резюме** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/резюме/прочитайте | Получает сводку проекта по маркировке в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/метаданные/артефакты** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/артефакты/прочитайте | Получает артефакты в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/артефакты/запись | Создает или обновляет артефакты в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/артефакты/удаление | Удаляет артефакты в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/метаданные/секреты** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/секреты/читай | Получает секреты в службе машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/metadata/secrets/write | Создает или обновляет секреты в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/секреты/удаление | Удаляет секреты в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/метаданные/снимки** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/снимки/чтения | Получает снимки в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/снимки/запись | Создает или обновляет снимки в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/метаданные/снимки/удаление | Удаляет снимки в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие области/модели** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/модели/чтение | Получает модели в службах машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/models/write | Создает или обновляет модели в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/модели/удаление | Удаляет модели в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/модели/пакет/действия | Модели пакетов в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие пространства/модули** |  |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/модули/чтение | Получает модули в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие пространства/модули/запись | Создает или обновляет модуль в рабочем пространстве служб машинного обучения (ы) |
+> |  | **рабочие области/конвейерные проекты** |  |
+> | Действие | Microsoft.MachineLearningServices/workspaces/pipelinedrafts/read | Получает проекты конвейеров в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/pipelinedrafts/write | Создает или обновляет проекты конвейеров в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/pipelinedrafts/delete | Удаляет проекты конвейеров в рабочей области служб машинного обучения (ы) |
 > |  | **рабочие области/частныеКонечныеподключения** |  |
 > | Действие | Microsoft.MachineLearningServices/workspaces/privateEndpointConnectionProxies/read | Просмотр состояния прокси-сервера соединения на ресурсprivateия поставщика Microsoft.Network |
 > | Действие | Microsoft.MachineLearningServices/workspaces/privateEndpointConnectionProxies/write | Изменение состояния прокси-сообщения на ресурс Private Endpoint поставщика Microsoft.Network |
@@ -5557,104 +5730,17 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.MachineLearningServices/рабочие области/privateEndpointConnections/delete | Удалить подключение к частному конечному ресурсу поставщика Microsoft.Network |
 > |  | **рабочие места/privateLinkРесурсы** |  |
 > | Действие | Microsoft.MachineLearningServices/workspaces/privateLinkResources/read | Получает доступные частные ресурсы ссылки для указанного экземпляра рабочего пространства служб машинного обучения (ы) |
-> |  | **рабочие области/детекторы данных** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/datadriftdetectors/read | Получает детекторы дрейфа данных в службах машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/Datadriftdetectors/write | Создает или обновляет детекторы дрейфа данных в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/наборы данных/зарегистрированы** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/прочитайте | Получает зарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/пишут | Создает или обновляет зарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/удаляют | Удаляет зарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/наборы данных/зарегистрированы/предварительный просмотр** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/предварительный просмотр/прочитайте | Просмотр набора данных для зарегистрированных наборов данных в рабочей области служб машинного обучения (s) |
-> |  | **рабочие области/наборы данных/зарегистрированный/профильный** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/профиль/читай | Получает профили наборов данных для зарегистрированных наборов данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/профиль/запись | Создает или обновляет профили наборов данных для зарегистрированных наборов данных в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/наборы данных/зарегистрированные/схемы** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/зарегистрированы/схема/читать | Получает схему набора данных для зарегистрированных наборов данных в рабочем пространстве служб машинного обучения (ы) |
-> |  | **рабочие области/наборы данных/незарегистрированные** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/наборы данных/незарегистрированные/прочитайте | Получает незарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/записываются | Создает или обновляет незарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/удаленные | Удаляет незарегистрированные наборы данных в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/наборы данных/незарегистрированный/предварительный просмотр** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированный/предварительный просмотр/чтение | Просмотр набора данных для незарегистрированных наборов данных в рабочей области служб машинного обучения (s) |
-> |  | **рабочие области/наборы данных/незарегистрированные/профильные** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/профильные/прочитайте | Получает профили наборов данных для незарегистрированных наборов данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/профильные/записные | Создает или обновляет профили наборов данных для незарегистрированных наборов данных в рабочем пространстве служб машинного обучения (ы) |
-> |  | **рабочие области/наборы данных/незарегистрированные/схемы** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/наборы данных/незарегистрированные/схема/чтение | Получает схему набора данных для незарегистрированных наборов данных в рабочем пространстве служб машинного обучения (ы) |
-> |  | **рабочие места/хранилища данных** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/datastores/read | Получает хранилища данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/datastores/write | Создает или обновляет хранилища данных в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/datastores/delete | Удаляет хранилища данных в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/конечные точки/конвейеры** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/конечные точки/трубопроводы/читай | Публикует конвейеры и конечные точки конвейера в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/конечные точки/трубопроводы/запись | Создает или обновляет опубликованные конвейеры и конечные точки конвейера в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие пространства/среды** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/среды/читать | Получает среды в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/среды/readSecrets/action | Получает среды с секретами в службах машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/среды/запись | Создает или обновляет среды в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/среды/сборка/действие | Создает среды в рабочей области служб машинного обучения (ы) |
-> |  | **workspaces/experiments** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/эксперименты/чтение | Получает эксперименты в службе машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/эксперименты/запись | Создает или обновляет эксперименты в рабочем пространстве служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/эксперименты/удаление | Удаляет эксперименты в службах машинного обучения Workspace (ы) |
-> |  | **рабочие области/эксперименты/запуски** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/эксперименты/запуски/чтение | Получает работает в службы машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/эксперименты/запуски/запись | Создает или обновляет в службе машинного обучения Workspace (ы) |
-> |  | **рабочие области/эксперименты/запуски/сценарийRun** |  |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/experiments/runs/scriptRun/submit/action | Создает или обновляет скрипт, запуск в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/маркировка** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/маркировка/экспорт/действие | Экспортные этикетки проектов маркировки в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/маркировка/метки** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/маркировка/метки/прочитайте | Получает метки проектов маркировки в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/маркировка/метки/запись | Создает метки проектов маркировки в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/маркировка/метки/отклонения/действия | Отклонить этикетки проектов маркировки в службах машинного обучения Workspace (ы) |
-> |  | **рабочие области/маркировка/проекты** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/чтение | Получает проект маркировки в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/запись | Создает или обновляет проект маркировки в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/удаление | Удаляет проект маркировки в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/маркировка/проекты/резюме** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/маркировка/проекты/резюме/прочитайте | Получает сводку проекта по маркировке в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/метаданные/артефакты** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/артефакты/прочитайте | Получает артефакты в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/артефакты/запись | Создает или обновляет артефакты в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/артефакты/удаление | Удаляет артефакты в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/метаданные/секреты** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/секреты/читай | Получает секреты в службе машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/metadata/secrets/write | Создает или обновляет секреты в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/секреты/удаление | Удаляет секреты в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/метаданные/снимки** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/снимки/чтения | Получает снимки в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/снимки/запись | Создает или обновляет снимки в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/метаданные/снимки/удаление | Удаляет снимки в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие области/модели** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/модели/чтение | Получает модели в службах машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/models/write | Создает или обновляет модели в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/модели/удаление | Удаляет модели в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/модели/пакет/действия | Модели пакетов в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие пространства/модули** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/модули/чтение | Получает модули в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие пространства/модули/запись | Создает или обновляет модуль в рабочем пространстве служб машинного обучения (ы) |
-> |  | **рабочие области/конвейерные проекты** |  |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/pipelinedrafts/read | Получает проекты конвейеров в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/pipelinedrafts/write | Создает или обновляет проекты конвейеров в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/pipelinedrafts/delete | Удаляет проекты конвейеров в рабочей области служб машинного обучения (ы) |
 > |  | **рабочие места/услуги** |  |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/услуги/читать | Получает услуги в службах машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/услуги/читать | Получает услуги в службах машинного обучения Workspace (ы) |
 > |  | **рабочих пространств/услуг/ачи** |  |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aci/write | Создает или обновляет службы ACI в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aci/listkeys/action | Списки ключей для служб ACI в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/рабочие области/услуги/aci/delete | Удаляет службы ACI в рабочей области служб машинного обучения (ы) |
-> |  | **рабочие пространства/услуги/aks/devtest** |  |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/devtest/write | Создает или обновляет devtest AKS услуг в службы машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/devtest/listkeys/action | Списки ключей для devtest AKS услуг в службы машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/devtest/delete | Удаляет devtest службы AKS в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/devtest/score/action | Результаты devtest AKS услуг в службы машинного обучения Workspace (ы) |
-> |  | **рабочие места/услуги/aks/prod** |  |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/prod/write | Создает или обновляет prod AKS услуги в службы машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/prod/listkeys/action | Списки ключей для prod AKS услуг в службы машинного обучения Workspace (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/prod/delete | Удаляет службы prod AKS в рабочей области служб машинного обучения (ы) |
-> | DataAction | Microsoft.MachineLearningServices/workspaces/services/aks/prod/score/action | Результаты prod AKS услуг в службы машинного обучения Workspace (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/services/aci/write | Создает или обновляет службы ACI в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/services/aci/listkeys/action | Списки ключей для служб ACI в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/рабочие области/услуги/aci/delete | Удаляет службы ACI в рабочей области служб машинного обучения (ы) |
+> |  | **рабочие места/услуги/аксы** |  |
+> | Действие | Microsoft.MachineLearningServices/workspaces/services/aks/write | Создает или обновляет службы AKS в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/services/aks/listkeys/action | Списки ключей для служб AKS в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/services/aks/delete | Удаляет службы AKS в рабочей области служб машинного обучения (ы) |
+> | Действие | Microsoft.MachineLearningServices/workspaces/services/aks/score/action | Оценка услуг AKS в службах машинного обучения Workspace (ы) |
 
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 
@@ -5740,6 +5826,10 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Maps/accounts/eventGridFilters/delete | Удаление фильтра сетки событий |
 > | Действие | Microsoft.Maps/accounts/eventGridFilters/read | Получение фильтра сетки событий |
 > | Действие | Microsoft.Maps/accounts/eventGridFilters/write | Создание или изменение фильтра сетки событий |
+> |  | **счета/частныеатласы** |  |
+> | Действие | Microsoft.Maps/accounts/privateAtlases/delete | Удалить частный атлас |
+> | Действие | Microsoft.Maps/accounts/privateAtlases/read | Получить частный атлас |
+> | Действие | Microsoft.Maps/accounts/privateAtlases/write | Создание или обновление частного атласа |
 > |  | **Операций** |  |
 > | Действие | Microsoft.Maps/operations/read | Читать операции поставщика |
 > |  | **учетные записи/данные** |  |
@@ -5998,6 +6088,10 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.MixedReality/spatialAnchorsAccounts/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет диагностическую настройку для Microsoft.MixedReality/spatialAnchorsAccounts |
 > |  | **пространственныеяяяяяяяясчетаСчета/поставщики/Microsoft.Insights/metricDefinitions** |  |
 > | Действие | Microsoft.MixedReality/spatialAnchorsAccounts/providers/Microsoft.Insights/metricDefinitions/read | Получает доступные метрики для Microsoft.MixedReality/spatialAnchorsAccounts |
+> |  | **ОбъектПониманиеСчетов** |  |
+> | DataAction | Microsoft.MixedReality/ObjectUnderstandingAccounts/ingest/action | Создание работы по проглатываниям моделей |
+> |  | **ОбъектПониманиеСчета/ingest** |  |
+> | DataAction | Microsoft.MixedReality/ObjectUnderstandingAccounts/ingest/read | Получить статус работы по типу ingestion |
 > |  | **Дистанционноеучетныесчета** |  |
 > | DataAction | Microsoft.MixedReality/RemoteRenderingAccounts/convert/action | Начало конверсии активов |
 > | DataAction | Microsoft.MixedReality/RemoteRenderingAccounts/managesessions/action | Запуск сеансов |
@@ -6069,6 +6163,10 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/read | Читает резервный ресурс. |
 > | Действие | Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/write | Записывает резервный ресурс. |
 > | Действие | Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/delete | Удаляет резервный ресурс. |
+> |  | **netAppAccounts/capacityPools/volumes/MountTargets** |  |
+> | Действие | Microsoft.NetApp/netAppAccounts/capacityPools/volumes/MountTargets/read | Чтение ресурса цели подключения. |
+> |  | **netAppAccounts/capacityPools/volumes/ReplicationStatus** |  |
+> | Действие | Microsoft.NetApp/netAppAccounts/capacityPools/volumes/ReplicationStatus/read | Читает статусы репликации тома. |
 > |  | **netAppAccounts/capacityPools/volumes/snapshots** |  |
 > | Действие | Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/read | Чтение ресурса моментального снимка. |
 > | Действие | Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/write | Запись ресурса моментального снимка. |
@@ -6341,6 +6439,8 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Network/loadBalancers/delete | Удаляет подсистему балансировки нагрузки. |
 > |  | **loadBalancers/backendAddressPools** |  |
 > | Действие | Microsoft.Network/loadBalancers/backendAddressPools/read | Возвращает определение внутреннего пула адресов подсистемы балансировки нагрузки. |
+> | Действие | Microsoft.Network/loadBalancers/backendAddressPools/write | Создает пул адресов бэкэнда балансиватора нагрузки или обновляет существующий пул адресов бэкэнда нагрузочика |
+> | Действие | Microsoft.Network/loadBalancers/backendAddressPools/delete | Удаляет пул адресов бэкэнда балансиватора нагрузки |
 > | Действие | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Присоединяется к пулу адресного адреса балансера нагрузки. Не оповещенный. |
 > |  | **loadBalancers/frontendIPConfigurations** |  |
 > | Действие | Microsoft.Network/loadBalancers/frontendIPConfigurations/read | Возвращает определение внешней IP-конфигурации подсистемы балансировки нагрузки. |
@@ -6565,6 +6665,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Network/privateEndpointRedirectMaps/read | Получает частную конечную точку RedirectMap |
 > | Действие | Microsoft.Network/privateEndpointRedirectMaps/write | Создает частную конечную точку перенаправления или обновляет существующую частную конечную точку RedirectMap |
 > |  | **privateEndpoints** |  |
+> | Действие | Microsoft.Network/privateendpoints/pushPropertiesToResource/action | Операция по продвижению частных обновлений свойств конечных точек от клиента NRP |
 > | Действие | Microsoft.Network/privateEndpoints/read | Получает частный ресурс конечных точек. |
 > | Действие | Microsoft.Network/privateEndpoints/write | Создает новую частную конечную точку или обновляет существующую частную конечную точку. |
 > | Действие | Microsoft.Network/privateEndpoints/delete | Удаляет частный ресурс конечных точек. |
@@ -6606,6 +6707,13 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Network/routeTables/routes/read | Возвращает определение маршрута. |
 > | Действие | Microsoft.Network/routeTables/routes/write | Создает новый маршрут или обновляет существующий. |
 > | Действие | Microsoft.Network/routeTables/routes/delete | Удаляет определение маршрута. |
+> |  | **securityPartnerProviders** |  |
+> | Действие | Microsoft.Network/securityPartnerProviders/read | Получает поставщика услуг по безопасности |
+> | Действие | Microsoft.Network/securityPartnerProviders/write | Создает SecurityPartnerProvider или обновляет существующий Поставщик Безопасности |
+> | Действие | Microsoft.Network/securityPartnerProviders/validate/action | Проверяет поставщика услуг SecurityPartner |
+> | Действие | Microsoft.Network/securityPartnerProviders/updateСправки/действия | Обновление ссылок в SecurityPartnerProvider |
+> | Действие | Microsoft.Network/securityPartnerProviders/join/action | Присоединяется к SecurityPartnerProvider. Не предупреждаю. |
+> | Действие | Microsoft.Network/securityPartnerProviders/delete | Удаляет поставщика услуг SecurityPartner |
 > |  | **serviceEndpointПолитика** |  |
 > | Действие | Microsoft.Network/serviceEndpointPolicies/read | Получение описания политики конечной точки службы. |
 > | Действие | Microsoft.Network/serviceEndpointPolicies/write | Создание политики конечной точки службы или обновление существующей. |
@@ -6678,6 +6786,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Network/virtualNetworks/read | Возвращает определение виртуальной сети. |
 > | Действие | Microsoft.Network/virtualNetworks/write | Создает новую виртуальную сеть или обновляет существующую. |
 > | Действие | Microsoft.Network/virtualNetworks/delete | Удаляет виртуальную сеть. |
+> | Действие | Microsoft.Network/virtualNetworks/joinLoadBalancer/action | Присоединение балансиватель нагрузки к виртуальным сетям |
 > | Действие | Microsoft.Network/virtualNetworks/peer/action | Создает пиринг между виртуальными сетями. |
 > | Действие | Microsoft.Network/virtualNetworks/join/action | Присоединяется к виртуальной сети. Не оповещенный. |
 > | Действие | Microsoft.Network/virtualNetworks/BastionHosts/action | Получение ссылок узла-бастиона в виртуальной сети. |
@@ -7225,6 +7334,8 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.OperationalInsights/workspaces/query/AppDependencies/read | Чтение данных из таблицы AppDependencies |
 > |  | **рабочие области/запрос/AppEvents** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/AppEvents/read | Читать данные из таблицы AppEvents |
+> |  | **рабочие области/запрос/ПриложенияИсключения** |  |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/AppExceptions/read | Чтение данных из таблицы AppExceptions |
 > |  | **рабочие области/запрос/ApplicationInsights** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/ApplicationInsights/read | Чтение данных из таблицы ApplicationInsights. |
 > |  | **рабочие области/запрос/AppMetrics** |  |
@@ -7693,6 +7804,18 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.OperationalInsights/workspaces/query/WUDOAggregatedStatus/read | Чтение данных из таблицы WUDOAggregatedStatus. |
 > |  | **рабочие области/запрос/WUDOStatus** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/WUDOStatus/read | Чтение данных из таблицы WUDOStatus. |
+> |  | **рабочие области/запрос/WVDCheckpoints** |  |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/WVDCheckpoints/read | Читайте данные из таблицы WVDCheckpoints |
+> |  | **рабочие области/запрос/WVDConnections** |  |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/WVDConnections/read | Чтение данных из таблицы WVDConnections |
+> |  | **рабочие области/запрос/WVDErrors** |  |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/WVDErrors/read | Чтение данных из таблицы WVDErrors |
+> |  | **рабочие области/запрос/WVDFeeds** |  |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/WVDFeeds/read | Читать данные из таблицы WVDFeeds |
+> |  | **рабочие области/запрос/WVDHostРегистрации** |  |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/WVDHostRegistrations/read | Читайте данные из таблицы WVDHostRegistrations |
+> |  | **рабочие области/запрос/WVDManagement** |  |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/WVDManagement/read | Читать данные из таблицы WVDManagement |
 > |  | **рабочие области/правила** |  |
 > | Действие | microsoft.operationalinsights/workspaces/rules/read | Получение всех правил генерации оповещений. |
 > |  | **workspaces/savedSearches** |  |
@@ -7845,7 +7968,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.RecoveryServices/register/action | Регистрация подписки для заданного поставщика ресурсов. |
-> |  | **Расположения** |  |
+> |  | **Местах** |  |
 > | Действие | Microsoft.RecoveryServices/Locations/backupPreValidateProtection/action |  |
 > | Действие | Microsoft.RecoveryServices/Locations/backupStatus/action | Проверка состояния архивации хранилищ служб восстановления. |
 > | Действие | Microsoft.RecoveryServices/Locations/backupValidateFeatures/action | Проверка компонентов. |
@@ -8492,6 +8615,7 @@ Microsoft Мониторинг Исследования
 > | --- | --- | --- |
 > | Действие | Microsoft.SecurityInsights/register/action | Регистрация подписки на Azure Sentinel |
 > | Действие | Microsoft.SecurityInsights/unregister/action | Отменить подписку от Azure Sentinel |
+> | Действие | Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action | Проверка авторизации и лицензии пользователей |
 > |  | **Агрегаты** |  |
 > | Действие | Microsoft.SecurityInsights/Aggregations/read | Получает агрегированную информацию |
 > |  | **alertRules** |  |
@@ -8785,7 +8909,7 @@ Microsoft Мониторинг Исследования
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
 
-Служба Azure: [База данных Azure S'L,](../sql-database/index.yml) [Хранилище данных S'L](../synapse-analytics/sql-data-warehouse/index.yml)
+Служба Azure: [База данных Azure S'L,](../sql-database/index.yml) [Хранилище данных S'L](../sql-data-warehouse/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | Описание |
@@ -9980,21 +10104,21 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Support/register/action | Поставщик поддержки поддержки регистров |
 > | Действие | Microsoft.Support/checkNameAvailability/action | Проверка того, что имя является действительным и не используется для типа ресурса |
 > |  | **операционные результаты** |  |
-> | Действие | Microsoft.Support/operationresults/read | Получение результата операции. |
+> | Действие | Microsoft.Support/operationresults/read | Получает результат асинхронной операции |
 > |  | **Операций** |  |
-> | Действие | Microsoft.Support/operations/read | Списки операций, доступных на сайте поставщика ресурсов Microsoft.Support |
+> | Действие | Microsoft.Support/operations/read | Списки всех операций, доступных на сайте поставщика ресурсов Microsoft.Support |
 > |  | **операционный статус** |  |
-> | Действие | Microsoft.Support/Operationsstatus/read | Получение состояния операции |
-> |  | **Услуги** |  |
-> | Действие | Microsoft.Support/services/read | Список служб Azure, доступных для поддержки |
+> | Действие | Microsoft.Support/Operationsstatus/read | Получает статус асинхронной операции |
+> |  | **services** |  |
+> | Действие | Microsoft.Support/services/read | Списки одного или всех служб Azure, доступных для поддержки |
 > |  | **услуги/проблемныеКлассификации** |  |
-> | Действие | Microsoft.Support/services/problemClassifications/read | Получает список проблемной классификации, доступный для службы Azure |
+> | Действие | Microsoft.Support/services/problemClassifications/read | Списки одной или всех проблемных классификаций для службы Azure |
 > |  | **supportTickets** |  |
-> | Действие | Microsoft.Support/supportTickets/read | Получает список билетов поддержки. |
-> | Действие | Microsoft.Support/supportTickets/write | Создает поддержку билет асинхронно или обновляет его. Можно создавать запросы в службу поддержки по техническим проблемам, а также проблемам, связанным с выставлением счетов, квотами или управлением подписками. Вы можете обновить серьезность и контактные данные для существующих билетов поддержки. |
+> | Действие | Microsoft.Support/supportTickets/read | Перечисляет один или все билеты поддержки |
+> | Действие | Microsoft.Support/supportTickets/write | Позволяет создать и обновить билет поддержки |
 > |  | **поддержкаБилеты/коммуникации** |  |
-> | Действие | Microsoft.Support/supportTickets/communications/read | Получает список поддержки билет абонементов |
-> | Действие | Microsoft.Support/supportTickets/communications/write | Создает поддержку билетной связи |
+> | Действие | Microsoft.Support/supportTickets/communications/read | Списки одного или всех сообщений о билетах поддержки |
+> | Действие | Microsoft.Support/supportTickets/communications/write | Добавлено новое сообщение к билету поддержки |
 
 ## <a name="microsofttimeseriesinsights"></a>Microsoft.TimeSeriesInsights
 

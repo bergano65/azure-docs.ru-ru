@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 09/27/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 8ce949ac997ba7ee38cb057752d89f4b4d22388f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c8578c518ac45bea147790028c2904c7ce36fffb
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73838706"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459038"
 ---
 # <a name="move-an-azure-storage-account-to-another-region"></a>Перемещение учетной записи хранения Azure в другой регион
 
@@ -109,7 +109,7 @@ ms.locfileid: "73838706"
 
     ![Библиотека шаблонов Azure Resource Manager](./media/storage-account-move/azure-resource-manager-template-library.png)
 
-4. Выберите **Создать**.
+4. Нажмите кнопку **создания**.
 
 5. Выберите **Создать собственный шаблон в редакторе**.
 
@@ -186,7 +186,7 @@ ms.locfileid: "73838706"
 
 2. Введите или выберите значения свойств:
 
-- **Подписка**— выберите подписку Azure.
+- **Подписка**: Выберите подписку Azure.
 
 - **Группа ресурсов**: щелкните **Создать** и укажите имя группы ресурсов.
 
@@ -276,14 +276,14 @@ ms.locfileid: "73838706"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Для удаления группы ресурсов и связанных с ней ресурсов, включая новую учетную запись хранения, используйте команду [Удалить-AzStorageAccount:](/powershell/module/az.resources/remove-azstorageaccount)
+Для удаления группы ресурсов и связанных с ней ресурсов, включая новую учетную запись хранения, используйте команду [Удалить-AzStorageAccount:](/powershell/module/az.storage/remove-azstorageaccount)
 
 ```powershell
 Remove-AzStorageAccount -ResourceGroupName  $resourceGroup -AccountName $storageAccount
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом учебнике вы перенесли учетную запись хранения Azure из одного региона в другой и очистили исходные ресурсы.  Чтобы узнать больше о перемещении ресурсов между регионами и аварийном восстановлении в Azure, обратитесь к:
 

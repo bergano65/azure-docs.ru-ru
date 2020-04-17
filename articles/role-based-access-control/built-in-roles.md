@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 03/22/2020
+ms.date: 04/15/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 2fe3b94463da07304f2c853910ac5d2a6771d070
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 14ff86bc47ab6de55d840c4b986c99caf2d4e99c
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80545637"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81482031"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "80545637"
 
 В этой статье перечислены встроенные роли для ресурсов Azure, которые всегда развиваются. Чтобы получить последние роли, используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list). Если вы ищете роли администратора для каталога Azure Active Directory (Azure AD), см. [разрешения ролей администратора в active-каталоге Azure.](../active-directory/users-groups-roles/directory-assign-admin-roles.md)
 
-## <a name="all"></a>All
+## <a name="all"></a>Все
 
 В следующей таблице приводится краткое описание и уникальный идентификатор каждой встроенной роли. Выберите имя роли, чтобы `Actions` `NotActions`увидеть `DataActions`список , и `NotDataActions` для каждой роли. Сведения о значении этих действий и как они применяются в области управления и области данных см. в статье [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md).
 
@@ -36,7 +36,7 @@ ms.locfileid: "80545637"
 > [!div class="mx-tableFixed"]
 > | Встроенные роли | Описание | ID |
 > | --- | --- | --- |
-> | **Общие** |  |  |
+> | **Общие сведения** |  |  |
 > | [Участник](#contributor) | Позволяет управлять всем, кроме предоставления доступа к ресурсам. | b24988ac-6180-42a0-ab88-20f7382dd24c |
 > | [Владелец](#owner) | Позволяет управлять всем, в том числе доступом к ресурсам. | 8e3af657-a8ff-443c-a75c-2fe8c4bcb635 |
 > | [Читатель](#reader) | Может просматривать все элементы, но не вносить изменения. | acdd72a7-3385-48ef-bd42-f606fba81ae7 |
@@ -55,7 +55,7 @@ ms.locfileid: "80545637"
 > | [Участник зоны DNS](#dns-zone-contributor) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. | befefa01-2a29-4197-83a8-272ff33ce314 |
 > | [Участник сети](#network-contributor) | Позволяет управлять сетями, но не доступом к ним. | 4d97b98b-1d4f-4787-a291-c67834d212e7 |
 > | [Участник диспетчера трафика](#traffic-manager-contributor) | Позволяет управлять профилями диспетчера трафика, но не доступом к ним. | a4b10055-b0c7-44c2-b00f-c7b5b3550cf7 |
-> | **Хранилище** |  |  |
+> | **Память** |  |  |
 > | [Авере Вкладчик](#avere-contributor) | Можно создавать и управлять кластером Avere vFXT. | 4f8fab4f-1852-4a58-a46a-8eaf358af14a |
 > | [Оператор Авере](#avere-operator) | Используется кластером Avere vFXT для управления кластером | c025889f-8102-4ebf-b32c-fc0c6f0c6bd9 |
 > | [Участник резервного копирования](#backup-contributor) | Позволяет управлять службой резервного копирования, но не может создавать хранилища и давать доступ к другим | 5e467623-bb1f-42f4-a55d-6e525e11384b |
@@ -94,7 +94,7 @@ ms.locfileid: "80545637"
 > | [AcrQuarantineWriter](#acrquarantinewriter) | Модуль записи данных карантина ACR. | c8d4ff99-41c3-41a8-9f60-21dfdad59608 |
 > | [Роль администратора кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-admin-role) | Список действий, выполненных с помощью учетных данных администратора кластера. | 0ab0b1a8-8aac-4efd-b8c2-3ee1fb270be8 |
 > | [Роль пользователя кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-user-role) | Список действий, выполненных с помощью учетных данных пользователя кластера. | 4abbcc35-e782-43d8-92c5-2d3f1bd2253f |
-> | **Баз данных** |  |  |
+> | **Базы данных** |  |  |
 > | [Роль читателя учетных записей Cosmos DB](#cosmos-db-account-reader-role) | Позволяет считывать данные учетных записей Azure Cosmos DB. Сведения об управлении учетными записями Azure Cosmos DB см. в разделе [Участник учетной записи DocumentDB](#documentdb-account-contributor). | fbdf93bf-df7d-467e-a4d2-9458aa1360c8 |
 > | [Оператор Космос ДБ](#cosmos-db-operator) | Позволяет управлять dB-учетными записями Azure Cosmos, но не получать доступ к данным в них. Предотвращает доступ к ключам учетной записи и строкам подключения. | 230815da-be43-4aae-9cb4-875f7bd000aa |
 > | [CosmosBackupOperator](#cosmosbackupoperator) | Позволяет отправлять запрос на восстановление контейнера или базы данных Cosmos DB для учетной записи. | db7b14f2-5adf-42da-9f96-f2ee17bab5cb |
@@ -104,7 +104,7 @@ ms.locfileid: "80545637"
 > | [Автор управляемых экземпляров S'L](#sql-managed-instance-contributor) | Позволяет управлять управляемыми экземплярами и требуемой конфигурацией сети, но не может предоставить доступ к другим. | 4939a1f6-9ae0-4e48-a1e0-f2cbe897382d |
 > | [Диспетчер безопасности SQL](#sql-security-manager) | Позволяет управлять политиками безопасности серверов SQL Server и баз данных SQL, но не доступом к ним. | 056cd41c-7e88-42e1-933e-88ba6a50c9c3 |
 > | [Участник SQL Server](#sql-server-contributor) | Позволяет управлять серверами и базами данных, но не получать к ним доступ, а не к политикам, связанным с безопасностью. | 6d8ee4ec-f05a-4a1d-8b00-a9b17e38b437 |
-> | **Аналитики** |  |  |
+> | **Analytics** |  |  |
 > | [Владелец концентраторов событий Azure](#azure-event-hubs-data-owner) | Позволяет получить полный доступ к ресурсам Azure Event Hubs. | f526a384-b230-433a-b45c-95f59c4a2dec |
 > | [Получатель данных концентраторов azure event](#azure-event-hubs-data-receiver) | Позволяет получить доступ к ресурсам Azure Event Hubs. | a638d3c7-ab3a-418d-83e6-5f17a39d4fde |
 > | [Отправитель концентраторов событий Azure](#azure-event-hubs-data-sender) | Позволяет отправлять доступ к ресурсам Azure Event Hubs. | 2b629674-e913-4c01-ae53-ef4638d8f975 |
@@ -2071,6 +2071,7 @@ ms.locfileid: "80545637"
 > | **Действия с данными** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Удалить большой двоичный объект. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Верните каплю или список капли. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action | Перемещает каплю с одного пути на другой |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Напиши каплю. |
 > | **NotDataActions** |  |
 > | *отсутствуют* |  |
@@ -2095,6 +2096,7 @@ ms.locfileid: "80545637"
       "dataActions": [
         "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
         "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action",
         "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write"
       ],
       "notDataActions": []
@@ -4099,6 +4101,7 @@ acr удалить
 > | Microsoft.ClassicCompute/virtualMachines/extensions/* |  |
 > | Microsoft.ClassicStorage/storageAccounts/listKeys/action | Отображает ключи доступа для учетных записей хранения. |
 > | Microsoft.Compute/virtualMachines/extensions/* |  |
+> | Microsoft.HybridCompute/машины/расширения/запись | Установка или обновление расширений Azure Arc |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
 > | Microsoft.Insights/diagnosticSettings/* | Создание, обновление или считывание параметра диагностики для сервера анализа данных. |
 > | Microsoft.OperationalInsights/* |  |
@@ -4130,6 +4133,7 @@ acr удалить
         "Microsoft.ClassicCompute/virtualMachines/extensions/*",
         "Microsoft.ClassicStorage/storageAccounts/listKeys/action",
         "Microsoft.Compute/virtualMachines/extensions/*",
+        "Microsoft.HybridCompute/machines/extensions/write",
         "Microsoft.Insights/alertRules/*",
         "Microsoft.Insights/diagnosticSettings/*",
         "Microsoft.OperationalInsights/*",
@@ -5515,6 +5519,7 @@ acr удалить
 > | --- | --- |
 > | **Действия** |  |
 > | Microsoft.SecurityInsights//read |  |
+> | Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action | Проверка авторизации и лицензии пользователей |
 > | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
 > | Microsoft.OperationalInsights/workspaces/*/read | Просмотр данных аналитики журналов |
 > | Microsoft.OperationalInsights/workspaces/LinkedServices/read | Получение связанных служб в заданной рабочей области. |
@@ -5548,6 +5553,7 @@ acr удалить
     {
       "actions": [
         "Microsoft.SecurityInsights/*/read",
+        "Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action",
         "Microsoft.OperationalInsights/workspaces/analytics/query/action",
         "Microsoft.OperationalInsights/workspaces/*/read",
         "Microsoft.OperationalInsights/workspaces/LinkedServices/read",
@@ -5583,6 +5589,7 @@ acr удалить
 > | --- | --- |
 > | **Действия** |  |
 > | Microsoft.SecurityInsights//read |  |
+> | Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action | Проверка авторизации и лицензии пользователей |
 > | Microsoft.SecurityInsights/cases/ |  |
 > | Microsoft.SecurityInsights/инциденты/з. |  |
 > | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
@@ -5618,6 +5625,7 @@ acr удалить
     {
       "actions": [
         "Microsoft.SecurityInsights/*/read",
+        "Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action",
         "Microsoft.SecurityInsights/cases/*",
         "Microsoft.SecurityInsights/incidents/*",
         "Microsoft.OperationalInsights/workspaces/analytics/query/action",
@@ -7867,7 +7875,7 @@ acr удалить
 }
 ```
 
-## <a name="other"></a>Другие
+## <a name="other"></a>Другой
 
 
 ### <a name="biztalk-contributor"></a>Участник BizTalk
@@ -7974,7 +7982,7 @@ acr удалить
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Соответствие поставщику ресурсов для обслуживания](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли Azure](custom-roles.md)

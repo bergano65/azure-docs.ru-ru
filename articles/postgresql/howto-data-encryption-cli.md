@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: c778130a95be1aa0afe81241130b7daf165360c4
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: fcdd7c13c9e0a5f9e858309bea50bb0264b7b301
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80522138"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460687"
 ---
 # <a name="data-encryption-for-azure-database-for-postgresql-single-server-by-using-the-azure-cli"></a>Шифрование данных для базы данных Azure для единого сервера PostgreS'L с помощью Azure CLI
 
@@ -33,13 +33,13 @@ ms.locfileid: "80522138"
     ```
 
 * Для использования существующего хранилища ключей он должен иметь следующие свойства для использования в качестве ключа, управляемого клиентом:
-  * [Мягкое удаление](../key-vault/key-vault-ovw-soft-delete.md)
+  * [Мягкое удаление](../key-vault/general/overview-soft-delete.md)
 
     ```azurecli-interactive
     az resource update --id $(az keyvault show --name \ <key_vault_name> -o tsv | awk '{print $1}') --set \ properties.enableSoftDelete=true
     ```
 
-  * [Очистка защищена](../key-vault/key-vault-ovw-soft-delete.md#purge-protection)
+  * [Очистка защищена](../key-vault/general/overview-soft-delete.md#purge-protection)
 
     ```azurecli-interactive
     az keyvault update --name <key_vault_name> --resource-group <resource_group_name>  --enable-purge-protection true
@@ -242,6 +242,6 @@ ms.locfileid: "80522138"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
  Чтобы узнать больше о [Azure Database for PostgreSQL Single server data encryption with customer-managed key](concepts-data-encryption-postgresql.md)шифровании данных, см.

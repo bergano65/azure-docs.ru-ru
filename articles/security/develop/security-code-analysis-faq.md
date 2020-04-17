@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: de76467cc741a65a851e5f3a7ec424d0326aebb2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cb04a8e5a6d8c982a35cb5c448e4b6d93825bf73
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74851525"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460228"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 Есть вопросы? Ознакомьтесь со следующими часто задаваемыми вопросами для получения дополнительной информации.
@@ -154,12 +154,12 @@ ms.locfileid: "74851525"
 
 Следующие ресурсы помогут вам безопасно управлять секретами и получать доступ к конфиденциальной информации из ваших приложений:
 
- - [Убежище ключей Azure](../../key-vault/index.yml)
+ - [Azure Key Vault](../../key-vault/index.yml)
  - [Активный каталог Azure (Azure AD)](../../sql-database/sql-database-aad-authentication.md)
  - [Идентификация службы Azure AD управляемая (MSI)](https://azure.microsoft.com/blog/keep-credentials-out-of-code-introducing-azure-ad-managed-service-identity/)
- - [Управляемые идентификаторы для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md)
+ - [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md)
  - [Управляемые идентификаторы в службах приложений Azure и функциях Azure](../../app-service/overview-managed-identity.md)
- - [Библиотека AppAuthentication](../../key-vault/service-to-service-authentication.md)
+ - [Библиотека AppAuthentication](../../key-vault/general/service-to-service-authentication.md)
 
 
 Для получения дополнительной информации, смотрите в блоге [Управление секретами безопасно в облаке](https://devblogs.microsoft.com/visualstudio/managing-secrets-securely-in-the-cloud/).
@@ -218,7 +218,7 @@ ms.locfileid: "74851525"
 
 Задача по сборке Roslyn Analyzers должна запросить Azure DevOps для журнала MSBuild из задачи сборки MSBuild. Если задача анализатора выполняется сразу после выполнения задачи MSBuild, журнал еще не будет доступен. Разместите другие задачи между задачей MSBuild и задачей Анализаторов Roslyn. Примеры других задач включают BinSkim и анти-вредоносных сканеров.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вам нужна дополнительная помощь, служба анализа кода безопасности Майкрософт доступна с понедельника по пятницу с 9:00 до 17:00 по тихоокеанскому стандартному времени.
 

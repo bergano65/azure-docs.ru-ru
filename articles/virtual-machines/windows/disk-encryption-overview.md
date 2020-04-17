@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 10/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: e00fee8841a2d5a817a00b942bfe0733a80b2cfc
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: b2fe7e4fbe4830567533053580880315ceface5d
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80546325"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458885"
 ---
 # <a name="azure-disk-encryption-for-windows-vms"></a>Лазурное шифрование дисков для Windows VMs 
 
@@ -54,7 +54,7 @@ Windows VMs доступны в [диапазоне размеров.](sizes-gen
   - Чтобы получить токен для подключения к хранилищу ключей, Windows VM должна быть в \[\]состоянии подключиться к точке предварительного отлавливки Active Directory Azure, login.microsoftonline.com.
   - Чтобы написать ключи шифрования в хранилище ключей, Windows VM должна быть в состоянии подключиться к конечной точке хранилища ключей.
   - VM Windows должен быть в состоянии подключиться к конечной точке хранения Azure, в ней размещается репозиторий расширения Azure и учетная запись хранения Azure, в мещах которого размещаются файлы VHD.
-  -  Если ваша политика безопасности ограничивает доступ к Интернету с виртуальных машин Azure, можно разрешить указанный выше универсальный код ресурса (URI) и настроить определенное правило, чтобы разрешить исходящие подключения к данным IP-адресам. Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](../../key-vault/key-vault-access-behind-firewall.md).    
+  -  Если ваша политика безопасности ограничивает доступ к Интернету с виртуальных машин Azure, можно разрешить указанный выше универсальный код ресурса (URI) и настроить определенное правило, чтобы разрешить исходящие подключения к данным IP-адресам. Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).    
 
 
 ## <a name="group-policy-requirements"></a>Требования к групповой политике
@@ -83,7 +83,7 @@ Windows VMs доступны в [диапазоне размеров.](sizes-gen
 | Командлеты PowerShell | Дополнительные сведения см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview). |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Быстрый запуск - Создание и шифрование Windows VM с Azure CLI](disk-encryption-cli-quickstart.md)
 - [Быстрый запуск - Создание и шифрование Windows VM с Azure Powershell](disk-encryption-powershell-quickstart.md)

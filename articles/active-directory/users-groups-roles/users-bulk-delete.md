@@ -1,11 +1,11 @@
 ---
-title: Массовое удаление пользователей (предварительный просмотр) на портале Active Directory Azure Документы Майкрософт
+title: Массовое удаление пользователей на портале Active Directory Azure Документы Майкрософт
 description: Удалить пользователей оптом в центре админ-центра Azure в Active Directory Azure
 services: active-directory
 author: curtand
 ms.author: curtand
 manager: mtillman
-ms.date: 08/15/2019
+ms.date: 04/16/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7c47887c12c8bf9be7a0c5b11dfb3f099965cb7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: beb8b4f35dc5f02e59cced05a6bcfc235d42f996
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72174383"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81532831"
 ---
-# <a name="bulk-delete-users-preview-in-azure-active-directory"></a>Массовое удаление пользователей (предварительный просмотр) в Active Directory Azure
+# <a name="bulk-delete-users-in-azure-active-directory"></a>Массовое удаление пользователей в Active Directory Azure
 
 Используя портал Azure Active Directory (Azure AD), можно удалить большое количество членов в группу, используя файл, разделенный на запятую (CSV), для массового удаления пользователей.
 
@@ -36,7 +36,7 @@ ms.locfileid: "72174383"
 
    ![Файл CSV содержит имена и идентионы пользователей для удаления](./media/users-bulk-delete/delete-csv-file.png)
 
-1. На странице **«Массовые удалить пользователя» (Preview)** под **upload ваш файл csv**просмотрите файл. При выборе файла и нажмите отправить, проверка файла CSV начинается.
+1. На **странице пользователя Bulk удалить,** под **загрузить ваш файл csv**, просматривать файл. При выборе файла и нажмите отправить, проверка файла CSV начинается.
 1. После проверки содержимого файла вы увидите сообщение **Файл успешно передан**. Если будут обнаружены ошибки, их нужно исправить для отправки задания.
 1. Когда файл проходит проверку, выберите **отправку,** чтобы начать операцию навалом Azure, которая удаляет пользователей.
 1. Когда операция удаления завершится, вы увидите уведомление о том, что основная операция выполнена успешно.
@@ -45,9 +45,9 @@ ms.locfileid: "72174383"
 
 ## <a name="check-status"></a>Проверка состояния
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результаты (предварительный просмотр) результатов операции Bulk.**
+Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
 
-   ![Проверка состояния загрузки на странице Результаты массовых операций](./media/users-bulk-delete/bulk-center.png)
+   [![](media/users-bulk-delete/bulk-center.png "Check delete status in the Bulk Operations Results page")](media/users-bulk-delete/bulk-center.png#lightbox)
 
 Далее можно проверить, что пользователи, которые вы удалили, существуют в организации Azure AD либо на портале Azure, либо с помощью PowerShell.
 
@@ -68,7 +68,7 @@ Get-AzureADUser -Filter "UserType eq 'Member'"
 
 Убедитесь, что пользователи, которые вы удалили, больше не перечислены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Массовое добавление пользователей](users-bulk-add.md)
 - [Скачать список пользователей](users-bulk-download.md)

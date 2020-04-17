@@ -7,12 +7,12 @@ ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mimckitt
-ms.openlocfilehash: ee6a25ac5a4cc7de8b8340afb186d170cc147a38
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: 70810b21def1672758683abd49f92b86776c9d7b
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81393791"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458987"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -158,7 +158,7 @@ az provider register --namespace Microsoft.Compute
 - Новая версия изображения не должна быть исключена из последней версии для этого изображения галереи. Версии изображений, исключенные из последней версии изображения галереи, не выкатываются в масштаб, установленный с помощью автоматического обновления изображения ОС.
 
 > [!NOTE]
->Это может занять до 2 часов для набора масштаба, чтобы получить первое развертывание изображения после набора масштаба настроен для автоматического обновления ОС. Это одноразовая задержка для набора масштабов. Последующие развертывания изображений применяются к набору масштаба без этой задержки.
+>Это может занять до 3 часов для набора масштаба, чтобы вызвать первое развертывание обновления изображения после набора масштаба настроен для автоматического обновления ОС. Это одноразовая задержка для набора масштабов. Последующие развертывания изображений срабатывают на шкале, установленной в течение 30 минут.
 
 
 ## <a name="configure-automatic-os-image-upgrade"></a>Настройка автоматического обновления образа ОС
@@ -355,5 +355,5 @@ az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScale
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные примеры использования автоматических обновлений ОС с масштабируемыми наборами см. в [репозитории GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade).

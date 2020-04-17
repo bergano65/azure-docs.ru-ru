@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 06/25/2019
 ms.author: wesmc
-ms.openlocfilehash: 631a20c7bf73aa2af363fdc0019ef24cccc58f9e
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 0c7566df870b3c41b1f1dd7d4a4129ff9d9d9407
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81258615"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81481738"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -175,9 +175,7 @@ DevKit подключается к конкретной точке устрой�
 
     ![Установка средств Azure IoT](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/install-azure-iot-tools.png)
 
-    Или используйте эту прямую ссылку:
-    > [!div class="nextstepaction"]
-    > [Установка пакета расширения Инструментов Azure IoT](vscode:extension/vsciot-vscode.azure-iot-tools)
+    Или используйте этот прямой URL:`vscode:extension/vsciot-vscode.azure-iot-tools`
 
     > [!NOTE]
     > Пакет расширения Azure IoT Tools содержит [Workbench приборов Azure IoT,](https://aka.ms/iot-workbench) который используется для разработки и отладки на различных устройствах IoT devkit. [Расширение концентратора Azure IoT,](https://aka.ms/iot-toolkit)также включенное в пакет расширений Azure IoT Tools, используется для управления и взаимодействия с концентраторами Azure IoT.
@@ -377,7 +375,7 @@ IoT DevKit содержит богатую галерею образцов, ко
 
 Если вы столкнулись с проблемами, вы можете найти решение в [часто задаваемых вопросах по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или обратиться к нам с помощью [Gitter](https://gitter.im/Microsoft/azure-iot-developer-kit). Вы также можете оставить нам свой отзыв на этой странице.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы успешно подключили плату MXChip IoT DevKit к Центру Интернета вещей и отправили в него собранные данные датчика.
 

@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/27/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 7d8d1505a268976161636abd0ed2d24398978284
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4186a4ed369eb289360b74c0758e5ce3f7eca929
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75374318"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81482154"
 ---
 # <a name="what-is-sql-server-on-azure-virtual-machines-windows"></a>Что собой представляет SQL Server на виртуальных машинах Azure (Windows)
 
@@ -38,6 +38,9 @@ ms.locfileid: "75374318"
 ## <a name="automated-backups"></a>Автоматическое резервное копирование
 
 Виртуальные машины Azure SQL Server поддерживают [автоматическое резервное копирование](virtual-machines-windows-sql-automated-backup-v2.md), при котором в хранилище BLOB-объектов регулярно создаются резервные копии базы данных. Это также можно выполнять вручную. Дополнительные сведения см. в статье [Использование службы хранилища Azure для архивации и восстановления SQL Server](virtual-machines-windows-use-storage-sql-server-backup-restore.md).
+
+Azure также предлагает резервное решение корпоративного класса для сервера S'L, работающего в Azure VMs. Полностью управляемое решение резервного копирования поддерживает всегда на группы доступности, долгосрочное удержание, точечное восстановление, а также центральное управление и мониторинг. Для получения дополнительной информации посетите [резервное копирование Azure для сервера S'L в Azure VM.](https://docs.microsoft.com/azure/backup/backup-azure-sql-database)
+  
 
 ## <a name="high-availability"></a>Высокий уровень доступности
 
@@ -60,7 +63,7 @@ ms.locfileid: "75374318"
 | Версия | Операционная система | Выпуск |
 | --- | --- | --- |
 | **SQL Server 2019** | Windows Server 2019 | [Предприятие](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ws2019enterprise), [Стандарт](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ws2019standard), [Веб](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ws2019web), [Разработчик](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ws2019sqldev) | 
-| **Сервер S'L 2017** |Windows Server 2016 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseWindowsServer2016), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonWindowsServer2016), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonWindowsServer2016), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonWindowsServer2016), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonWindowsServer2016) |
+| **SQL Server 2017** |Windows Server 2016 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseWindowsServer2016), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonWindowsServer2016), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonWindowsServer2016), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonWindowsServer2016), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonWindowsServer2016) |
 | **SQL Server 2016 SP2** |Windows Server 2016 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2016SP2EnterpriseWindowsServer2016), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2016SP2StandardWindowsServer2016), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2016SP2WebWindowsServer2016), [Express](https://portal.azure.com/#create/Microsoft.FreeLicenseSQLServer2016SP2ExpressWindowsServer2016), [Developer](https://portal.azure.com/#create/Microsoft.FreeLicenseSQLServer2016SP2DeveloperWindowsServer2016) |
 | **SQL Server 2014 SP2** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2014SP2EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2014SP2StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2014SP2WebWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2014SP2ExpressWindowsServer2012R2) |
 | **Сервер S'L 2012 SP4** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2012SP4EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2012SP4StandardWindowsServer2012R2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2012SP4WebWindowsServer2012R2), [Express](https://portal.azure.com/#create/Microsoft.SQLServer2012SP4ExpressWindowsServer2012R2) |
@@ -79,7 +82,7 @@ ms.locfileid: "75374318"
 | Версия | Операционная система | Выпуск |
 | --- | --- | --- |
 | **SQL Server 2019** | Windows Server 2019 | [Предприятие BYOL](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ws2019-byolenterprise), [Стандартный BYOL](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ws2019-byolstandard)| 
-| **Сервер S'L 2017** |Windows Server 2016 |[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2017EnterpriseWindowsServer2016), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2017StandardonWindowsServer2016) |
+| **SQL Server 2017** |Windows Server 2016 |[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2017EnterpriseWindowsServer2016), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2017StandardonWindowsServer2016) |
 | **SQL Server 2016 SP2** |Windows Server 2016 |[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2016SP2EnterpriseWindowsServer2016), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2016SP2StandardWindowsServer2016) |
 | **SQL Server 2014 SP2** |Windows Server 2012 R2 |[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP2EnterpriseWindowsServer2012R2), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP2StandardWindowsServer2012R2) |
 | **Сервер S'L 2012 SP4** |Windows Server 2012 R2 |[Предприятие BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2012SP4EnterpriseWindowsServer2012R2), [Стандартный BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2012SP4StandardWindowsServer2012R2) |
@@ -135,10 +138,10 @@ Azure поддерживает только один образ виртуаль
 ### <a name="windows-virtual-machines"></a>Виртуальные машины Windows
 * [Обзор виртуальных машин](../overview.md).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 * [Введение в хранилище Microsoft Azure](../../../storage/common/storage-introduction.md)
 
-### <a name="networking"></a>Сети
+### <a name="networking"></a>Сеть
 * [Обзор виртуальной сети](../../../virtual-network/virtual-networks-overview.md)
 * [IP-адреса в Azure](../../../virtual-network/virtual-network-ip-addresses-overview-arm.md)
 * [Создание полного доменного имени на портале Azure](../portal-create-fqdn.md)
@@ -147,7 +150,7 @@ Azure поддерживает только один образ виртуаль
 * [Документация сервера S'L](https://docs.microsoft.com/sql/index)
 * [Сравнение со службой "База данных SQL"](../../../sql-database/sql-database-paas-vs-sql-server-iaas.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Начало работы с SQL Server на виртуальных машинах Azure:
 

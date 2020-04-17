@@ -7,16 +7,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: how-to
-ms.date: 03/20/2020
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 795d21e05ade652b52c06d597ca4c5fef85e7245
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7ddb4b2cd465b5e9542d777d33b9bd8cb952becd
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80152863"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81531343"
 ---
-# <a name="deploy-the-sample-labeling-tool"></a>Развертывание инструмента маркировки образцов
+# <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
 
 Инструмент маркировки образцов Form Recognizer представляет собой приложение, которое обеспечивает простой пользовательский интерфейс (UI), который можно использовать для ручной маркировки форм (документов) для целей контролируемого обучения. В этой статье мы предоставим ссылки и инструкции, которые научат вас:
 
@@ -76,6 +76,7 @@ ms.locfileid: "80152863"
    * Имя пользователя (необязательно) - Создайте имя пользователя. 
    * Пароль (необязательно) - Создайте безопасный пароль, который вы запомните.
    * Изображение и тег - Установите это`mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest`
+   * Непрерывное развертывание - Установите это **на,** если вы хотите получать автоматические обновления, когда команда разработчиков вносит изменения в инструмент маркировки образцов.
    * Команда запуска - Установите это`./run.sh eula=accept`
 
    > [!div class="mx-imgBorder"]
@@ -120,8 +121,8 @@ az container create \
 
 ## <a name="open-source-on-github"></a>Открытый исходный код на GitHub
 
-Инструмент маркировки форм OCR также доступен в качестве проекта с открытым исходным кодом на GitHub. Инструмент представляет собой веб-приложение, построенное с использованием React и Redux, и написано в TypeScript. Чтобы узнать больше или внести свой вклад, [см.](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md)
+Инструмент маркировки форм OCR также доступен в качестве проекта с открытым исходным кодом на GitHub. Средство — это веб-приложение, созданное с помощью команды React + Redux и написанное в TypeScript. Чтобы узнать больше или внести свой вклад, см. статью [Средство маркировки документов OCR](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте [Поезд с метками](./quickstarts/label-tool.md) quickstart, чтобы узнать, как использовать инструмент для ручной маркировки обучающих данных и выполнения контролируемого обучения.

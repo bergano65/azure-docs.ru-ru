@@ -3,12 +3,12 @@ title: Краткое описание примера схемы зоны раз
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы целевой зоны для службы "Миграция Azure".
 ms.date: 04/15/2020
 ms.topic: sample
-ms.openlocfilehash: d0328a590d86677e098504a7498a696697fc38c8
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: c4720ec3e94ee928553cd62017831e5158ac9b97
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383543"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459871"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-migration-landing-zone-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы зоны размещения для миграции в соответствии с CAF
 
@@ -24,7 +24,7 @@ ms.locfileid: "81383543"
 
 Эта среда содержит несколько служб Azure, которые обеспечивают защищенную, полностью отслеживаемую систему управления корпоративного уровня. Эта среда включает следующие компоненты:
 
-- экземпляр [Azure Key Vault](../../../../key-vault/key-vault-overview.md) для размещения сертификатов, ключей и секретов, используемых для виртуальных машин, которые развернуты в среде общих служб;
+- экземпляр [Azure Key Vault](../../../../key-vault/general/overview.md) для размещения сертификатов, ключей и секретов, используемых для виртуальных машин, которые развернуты в среде общих служб;
 - развернутую службу [Log Analytics](../../../../azure-monitor/overview.md), которая обеспечивает регистрацию всех действий и служб в центральном расположении с момента запуска миграции;
 - развернутый [Центр безопасности Azure](../../../../security-center/security-center-intro.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок;
 - развернутую [виртуальную сеть Azure](../../../../virtual-network/virtual-networks-overview.md), которая предоставляет изолированную сеть и подсети для виртуальной машины;

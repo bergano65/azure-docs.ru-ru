@@ -7,19 +7,19 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7dd9106539b6756d74629ac663241a5b5562cefb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d48f83df4e83fd1d1fe38eea76432e1b1c711b76
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75437040"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81461469"
 ---
 # <a name="expressroute-encryption"></a>Шифрование ExpressRoute
  
 ExpressRoute поддерживает несколько технологий шифрования для обеспечения конфиденциальности и целостности передачи данных между вашей сетью и сетью Microsoft.
 
 ## <a name="point-to-point-encryption-by-macsec-faq"></a>Шифрование по точкам MACsec часто задаваемые вопросы
-MACsec является [стандартом IEEE.](https://1.ieee802.org/security/802-1ae/) Он шифрует данные на уровне управления доступом к СМИ (MAC) или Network Layer 2. Вы можете использовать MACsec для шифрования физических связей между вашими сетевыми устройствами и сетевыми устройствами Майкрософт при подключении к Microsoft через [ExpressRoute Direct.](expressroute-erdirect-about.md) MACsec отключен в портах ExpressRoute Direct по умолчанию. Вы приносите свой собственный ключ MACsec для шифрования и храните его в [Azure Key Vault.](../key-vault/key-vault-overview.md) Вы сами решаете, когда следует повернуть ключ. Смотрите другие часто задаваемые вопросы ниже.
+MACsec является [стандартом IEEE.](https://1.ieee802.org/security/802-1ae/) Он шифрует данные на уровне управления доступом к СМИ (MAC) или Network Layer 2. Вы можете использовать MACsec для шифрования физических связей между вашими сетевыми устройствами и сетевыми устройствами Майкрософт при подключении к Microsoft через [ExpressRoute Direct.](expressroute-erdirect-about.md) MACsec отключен в портах ExpressRoute Direct по умолчанию. Вы приносите свой собственный ключ MACsec для шифрования и храните его в [Azure Key Vault.](../key-vault/general/overview.md) Вы сами решаете, когда следует повернуть ключ. Смотрите другие часто задаваемые вопросы ниже.
 ### <a name="can-i-enable-macsec-on-my-expressroute-circuit-provisioned-by-an-expressroute-provider"></a>Могу ли я включить MACsec на моей трассе ExpressRoute, подготовленной провайдером ExpressRoute?
 Нет. MACsec шифрует весь трафик на физической связи с ключом, принадлежащим одному объекту (т.е. клиенту). Таким образом, он доступен только на ExpressRoute Direct.
 ### <a name="can-i-encrypt-some-of-the-expressroute-circuits-on-my-expressroute-direct-ports-and-leave-other-circuits-on-the-same-ports-unencrypted"></a>Могу ли я зашифровать некоторые схемы ExpressRoute в портах ExpressRoute Direct и оставить другие схемы в тех же портах незашифрованными? 
@@ -44,7 +44,7 @@ IPsec является [стандартом IETF.](https://tools.ietf.org/html/
 ### <a name="what-is-the-throughput-i-will-get-after-enabling-ipsec-on-my-expressroute-connection"></a>Какова пропускная плата, которая я получу после включения IPsec в моем подключении ExpressRoute?
 Если используется VPN шлюз Azure, проверьте [номера производительности здесь.](../vpn-gateway/vpn-gateway-about-vpngateways.md) Если используется сторонний VPN шлюз, обратитесь к поставщику за номерами производительности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительную информацию о конфигурации MACsec можно найти в [Configure MACsec.](expressroute-howto-macsec.md)
 
 Дополнительную информацию о конфигурации IPsec можно найти в [Configure IPsec.](site-to-site-vpn-over-microsoft-peering.md)

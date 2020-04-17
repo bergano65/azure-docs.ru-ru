@@ -5,7 +5,7 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: mtillman
-ms.date: 09/11/2019
+ms.date: 04/16/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b08e807e179270b63ca81d3777c230c3e129c3a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 59983678c1b14d6aa87a7b500605e3abeb6a9b85
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72517150"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81533550"
 ---
-# <a name="bulk-download-a-list-of-groups-preview-in-azure-active-directory"></a>Массовый скачивание списка групп (предварительный просмотр) в Active Directory Azure
+# <a name="bulk-download-a-list-of-groups-in-azure-active-directory"></a>Массовый скачивание списка групп в Active Directory Azure
 
 Используя портал Azure Active Directory (Azure AD), можно загрузить список всех групп в организации в файл, разделенный на запятую (CSV).
 
@@ -34,15 +34,15 @@ ms.locfileid: "72517150"
 
 ## <a name="check-download-status"></a>Проверка состояния загрузки
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результаты (предварительный просмотр) результатов операции Bulk.**
+Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
 
-   ![Страница результатов результатов массовых операций показывает состояние запроса навалом](./media/groups-bulk-download/bulk-center.png)
+[![](media/groups-bulk-download/bulk-center.png "Check status in the Bulk Operations Results page")](media/groups-bulk-download/bulk-center.png#lightbox)
 
 ## <a name="bulk-download-service-limits"></a>Ограничения обслуживания массовых скачиваний
 
 Каждое массовое действие для загрузки списка групп может длиться до одного часа. Это позволяет загрузить список не менее 300 000 групп.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Массовое удаление членов группы](groups-bulk-remove-members.md)
 - [Скачать членов группы](groups-bulk-download-members.md)

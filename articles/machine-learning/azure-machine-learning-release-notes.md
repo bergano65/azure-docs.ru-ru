@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 03/10/2020
-ms.openlocfilehash: ce9919a0b0f614e427c12ee3e3fbda0be46470ea
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 9ed17ed0825e0011d1402efc45155755a1ecbadf
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273313"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459174"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о машинном обучении Azure
 
@@ -691,13 +691,13 @@ Azure Machine Learning теперь является поставщиком ре
   + **azureml-train-core**
     + Добавлена поддержка TensorFlow 2.0 в оценщике TensorFlow
   + **лазурь-поезд-автомл**
-    + Создание объекта [Эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) становится или создает эксперимент в рабочем пространстве Azure Machine Learning для отслеживания истории выполнения. Идентификатор эксперимента и архивируемое время заселены в объекте эксперимента по созданию. Пример.
+    + Создание объекта [Эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) становится или создает эксперимент в рабочем пространстве Azure Machine Learning для отслеживания истории выполнения. Идентификатор эксперимента и архивируемое время заселены в объекте эксперимента по созданию. Пример
 
         ```py
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        [архив ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [реактивация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызвать в эксперименте, чтобы скрыть и восстановить эксперимент от отображаемого в UX или возвращенного по умолчанию в вызове для перечня экспериментов. Если новый эксперимент создан с тем же названием, что и архивный эксперимент, можно переименовать архивный эксперимент при реактивации, передав новое имя. Может быть только один активный эксперимент с заданное имя. Пример.
+        [архив ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [реактивация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызвать в эксперименте, чтобы скрыть и восстановить эксперимент от отображаемого в UX или возвращенного по умолчанию в вызове для перечня экспериментов. Если новый эксперимент создан с тем же названием, что и архивный эксперимент, можно переименовать архивный эксперимент при реактивации, передав новое имя. Может быть только один активный эксперимент с заданное имя. Пример
 
         ```py
         experiment1 = Experiment(workspace, "Active Experiment")
@@ -706,7 +706,7 @@ Azure Machine Learning теперь является поставщиком ре
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) на эксперименте может взять фильтр имени и фильтр ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ВСЕ". Пример.
+        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) на эксперименте может взять фильтр имени и фильтр ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ВСЕ". Пример
 
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
@@ -721,10 +721,10 @@ Azure Machine Learning теперь является поставщиком ре
       + При вводимых конкретных start_time и/или end_time будут возвращены только результаты запланированных запусков;
       + Параметр "daily_latest_only" унипражен.
     + Поддержка поиска выходов dataset на основе Data Drift.
-  + **[azureml-explain-model](https://docs.microsoft.com/python/api/azureml-explain-model)**
+  + **azureml-explain-model**
     + Переименуйте пакет AzureML-объяснитель-модель в интерпретацию AzureML, сохраняя старый пакет для обратной совместимости на данный момент.
     + исправлена ошибка AutoML с необработанными объяснениями, установленными для задачи классификации вместо регрессии по умолчанию при загрузке из ExplanationClient.
-    + Добавить поддержку [для СкорингКонцентратер,](/python/api/azureml-interpret/azureml.interpret.scoring.scoring_explainer.scoringexplainer?view=azure-ml-py) который будет создан непосредственно с помощью [MimicWrapper](https://docs.microsoft.com/python/api/azureml-explain-model/azureml.explain.model.mimic_wrapper.mimicwrapper)
+    + Добавить поддержку [для СкорингКонцентратер,](/python/api/azureml-interpret/azureml.interpret.scoring.scoring_explainer.scoringexplainer?view=azure-ml-py) который будет создан непосредственно с помощью MimicWrapper
   + **[лазурный трубопровод-ядро](https://docs.microsoft.com/python/api/azureml-pipeline-core)**
     + Улучшенная производительность для создания большого трубопровода.
   + **[azureml-train-core](https://docs.microsoft.com/python/api/azureml-train-core)**
@@ -798,7 +798,7 @@ Azure Machine Learning теперь является поставщиком ре
     + Добавлены дополнительные поля размера VM (OS Disk, число графических процессоров) в функцию [supported_vmsizes()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#supported-vmsizes-workspace--location-none-)
     + Добавлены дополнительные поля в [функцию list_nodes()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#list-nodes--) для отображать пробег, частный и публичный IP, порт и т.д.
     + Возможность указать новое поле во время [кластерной](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#provisioning-configuration-vm-size-----vm-priority--dedicated---min-nodes-0--max-nodes-none--idle-seconds-before-scaledown-none--admin-username-none--admin-user-password-none--admin-user-ssh-key-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--tags-none--description-none--remote-login-port-public-access--notspecified--) `--remotelogin_port_public_access` подготовки, которое может быть включено или отключено в зависимости от того, хотите ли вы оставить порт SSH открытым или закрытым во время создания кластера. Если вы не укажете его, служба будет ловко открывать или закрывать порт в зависимости от того, развертываете ли вы кластер внутри VNet.
-  + **[azureml-explain-model](https://docs.microsoft.com/python/api/azureml-explain-model)**
+  + **azureml-explain-model**
     + Улучшенная документация для выводов explanationa в сценарии классификации.
     + Добавлена возможность загрузки прогнозируемых значений y на объяснение примеров оценки. Открывает более полезные визуализации.
     + Добавлено свойство объяснения в MimicWrapper, чтобы получить базовый MimicExplainer.
@@ -1958,6 +1958,6 @@ Azure Machine Learning теперь является поставщиком ре
 Новый обновленный выпуск Azure Machine Learning: Подробнее об этом выпуске:https://azure.microsoft.com/blog/what-s-new-in-azure-machine-learning-service/
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с общими сведениями о службе [Машинное обучение Azure](overview-what-is-azure-ml.md).

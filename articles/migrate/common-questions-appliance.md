@@ -2,13 +2,13 @@
 title: Часто задаваемые вопросы об приборах Azure Migrate
 description: Получите ответы на распространенные вопросы об приборе Azure Migrate.
 ms.topic: conceptual
-ms.date: 03/09/2020
-ms.openlocfilehash: a08423637f255b973f52616f53172ef6e48d0804
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.date: 04/15/2020
+ms.openlocfilehash: 529ead1baa769ee3e71f6fcf77ef7e020ed196a6
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437609"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81529694"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Прибор Azure Migrate: Общие вопросы
 
@@ -31,6 +31,15 @@ ms.locfileid: "80437609"
 
 [Узнайте больше](migrate-appliance.md) об приборе.
 
+## <a name="how-can-i-deploy-the-appliance"></a>Как развернуть прибор?
+
+Прибор может быть развернут следующим образом:
+
+- Использование шаблона для VMware VMs и Hyper-V VMs (шаблон OVA для VMware или VHD для Hyper-V).
+- Если вы не хотите использовать шаблон или находитесь в правительстве Azure, вы можете развернуть прибор для VMware или Hyper-V с помощью скрипта PowerShell.
+- Для физических серверов всегда развертываемый прибор с помощью скрипта.
+
+
 ## <a name="how-does-the-appliance-connect-to-azure"></a>Как прибор подключается к Azure?
 
 Прибор может подключиться через Интернет или с помощью Azure ExpressRoute с публичным/Microsoft.
@@ -45,11 +54,8 @@ ms.locfileid: "80437609"
 
 ## <a name="what-network-connectivity-is-required"></a>Какое подключение к сети требуется?
 
-Ознакомьтесь со следующими статьями о требованиях к подключению к сети для прибора Azure Migrate:
 
-- **Оценка VMware**: [доступ к URL](migrate-appliance.md#url-access) и доступ в [порт](migrate-support-matrix-vmware.md#port-access)
-- **Миграция без агента VMware:** [доступ к URL](migrate-appliance.md#url-access) и доступ к [портам](migrate-support-matrix-vmware-migration.md#agentless-ports)
-- **Оценка Hyper-V**: [доступ к URL](migrate-appliance.md#url-access) и доступ в [порт](migrate-support-matrix-hyper-v.md#port-access)
+Прибору необходим доступ к URL-адресам Azure. [Просмотрите](migrate-appliance.md#url-access) список URL.
 
 ## <a name="what-data-does-the-appliance-collect"></a>Какие данные собирает прибор?
 

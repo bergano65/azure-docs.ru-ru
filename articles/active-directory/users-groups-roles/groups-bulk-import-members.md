@@ -5,7 +5,7 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: mtillman
-ms.date: 09/11/2019
+ms.date: 04/16/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ff4234d9fd28e655e868108e37b09c5afe2767c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 15960caa55274f06159263c1af4a6c8280e83f4e
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72517125"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81533494"
 ---
-# <a name="bulk-import-group-members-preview-in-azure-active-directory"></a>Массовые участники группы импорта (предварительный просмотр) в Active Directory Azure
+# <a name="bulk-import-group-members-in-azure-active-directory"></a>Участники группы массовых импортов в active-каталоге Azure Active
 
 Используя портал Azure Active Directory (Azure AD), можно добавить большое количество членов в группу, используя файл, разделенный на запятую (CSV), для участников группы сыпучих импортных.
 
@@ -30,7 +30,7 @@ ms.locfileid: "72517125"
 1. В Azure AD выберите **группы** > **все группы.**
 1. Откройте группу, в которую вы добавляете участников, а затем выберите **участников.**
 1. На странице **Участников** выберите **участников Импорта**.
-1. На странице **группы Bulk импортной группы (Preview)** выберите **Download,** чтобы получить шаблон файла CSV с требуемыми свойствами членов группы.
+1. На странице **группы группы Bulk,** выберите **Download,** чтобы получить шаблон файла CSV с требуемыми свойствами членов группы.
 
     ![Команда членов импорта находится на странице профиля группы](./media/groups-bulk-import-members/import-panel.png)
 
@@ -38,16 +38,16 @@ ms.locfileid: "72517125"
 
    ![Файл CSV содержит имена и идентионные данные для импорта](./media/groups-bulk-import-members/csv-file.png)
 
-1. На странице **группы Bulk импортной группы (Preview)** под **upload ваш файл csv**просмотрите файл. При выборе файла начинается проверка файла CSV.
+1. На странице **группы группы Bulk,** под **заголовком «Загрузить файл csv»,** просмотрите файл. При выборе файла начинается проверка файла CSV.
 1. Когда содержимое файла проверяется, страница импорта навалом отображает **файл, загруженный успешно.** Если будут обнаружены ошибки, их нужно исправить для отправки задания.
 1. Когда файл проходит проверку, выберите **отправку,** чтобы начать операцию навалом Azure, которая импортирует членов группы в группу.
 1. Когда операция импорта завершится, вы увидите уведомление о том, что основная операция выполнена успешно.
 
 ## <a name="check-import-status"></a>Проверка состояния импорта
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результаты (предварительный просмотр) результатов операции Bulk.**
+Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
 
-   ![Страница результатов результатов массовых операций показывает состояние запроса навалом](./media/groups-bulk-import-members/bulk-center.png)
+[![](media/groups-bulk-import-members/bulk-center.png "Check status in the Bulk Operations Results page")](media/groups-bulk-import-members/bulk-center.png#lightbox)
 
 Для получения подробной информации о каждом элементе строки в ходе основной операции выберите значения в строках **«Успех» («Успех»** или **«Общие запросы».** **# Failure** При возникновении сбоя здесь будут указаны его причины.
 
@@ -55,7 +55,7 @@ ms.locfileid: "72517125"
 
 Каждое массовое мероприятие для импорта списка членов группы может работать до одного часа. Это позволяет импортировать список не менее 40 000 членов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Массовое удаление членов группы](groups-bulk-remove-members.md)
 - [Скачать членов группы](groups-bulk-download-members.md)

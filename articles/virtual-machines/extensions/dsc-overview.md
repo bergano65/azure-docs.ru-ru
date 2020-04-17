@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: c61ba0840b75bff10af1d802a9b90c922ef1f12f
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: adb36e14bb7b772d3e28361bdc48d248bd84f41f
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81415874"
+ms.locfileid: "81458970"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "81415874"
 - RegistrationKey - общая тайна, используемая для регистрации узлов в сервисе
 - NodeConfigurationName - название конфигурации узлов (MOF), чтобы вытащить из службы для настройки роли сервера
 
-Эту информацию можно увидеть на [портале Azure](../../automation/automation-dsc-onboarding.md#onboard-vms-by-using-the-azure-portal) или вы можете использовать PowerShell.
+Эту информацию можно увидеть на портале Azure или вы можете использовать PowerShell.
 
 ```powershell
 (Get-AzAutomationRegistrationInfo -ResourceGroupName <resourcegroupname> -AutomationAccountName <accountname>).Endpoint
@@ -202,7 +202,7 @@ az vm extension set \
 
 Журналы для расширения хранятся в следующем расположении: `C:\WindowsAzure\Logs\Plugins\Microsoft.Powershell.DSC\<version number>`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о PowerShell DSC см. в [центре документации по PowerShell](/powershell/scripting/dsc/overview/overview).
 - Изучите [шаблон Resource Manager для расширения DSC](dsc-template.md).

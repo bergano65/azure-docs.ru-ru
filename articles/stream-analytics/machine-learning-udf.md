@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/19/2020
-ms.openlocfilehash: 354b0eae1620c49006b350371aae38f8867c18b3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 07fa72f086b676723279ee4b8efd927beb2692f0
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80124659"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81481969"
 ---
 # <a name="integrate-azure-stream-analytics-with-azure-machine-learning-preview"></a>Интеграция аналитики потоков Azure с помощью машинного обучения Azure (Предварительный просмотр)
 
@@ -31,7 +31,7 @@ ms.locfileid: "80124659"
 
 3. Убедитесь, что веб-сервис принимает и возвращает серийные данные JSON.
 
-4. Развертывание модели в [службе Azure Kubernetes](../machine-learning/how-to-deploy-and-where.md#choose-a-compute-target) для крупномасштабных производственных развертываний. Если веб-служба не в состоянии обрабатывать количество запросов, поступающих от вашей работы, производительность вашей работы Stream Analytics будет ухудшаться, что влияет на задержку.
+4. Развертывание модели в [службе Azure Kubernetes](../machine-learning/how-to-deploy-and-where.md#choose-a-compute-target) для крупномасштабных производственных развертываний. Если веб-служба не в состоянии обрабатывать количество запросов, поступающих от вашей работы, производительность вашей работы Stream Analytics будет ухудшаться, что влияет на задержку. Модели, развернутые в контейнерных инстанциях Azure, сегодня не поддерживаются, но станут доступны в ближайшие месяцы.
 
 ## <a name="add-a-machine-learning-model-to-your-job"></a>Добавление модели машинного обучения в работу
 
@@ -166,7 +166,7 @@ FROM input
 
 Чтобы предотвратить такую задержку, убедитесь, что кластер Azure Kubernetes Service (AKS) был подготовлен с [нужным числом узлов и реплик.](../machine-learning/how-to-deploy-azure-kubernetes-service.md#using-the-cli) Очень важно, чтобы ваш веб-сервис был очень доступен и возвращал успешные ответы. Если ваша работа получает недоступный ответ службы (503) от вашего веб-сервиса, она будет постоянно try with exponential back off. Любой ответ, кроме успеха (200) и недоступного сервиса (503), приведет к тому, что ваша работа передастся в несостоявшееся состояние.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Руководство. Пользовательские функции JavaScript Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
 * [Масштабируйте работу Stream Analytics с помощью функции Azure Machine Learning Studio (классическая)](stream-analytics-scale-with-machine-learning-functions.md)

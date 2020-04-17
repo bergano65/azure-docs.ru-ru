@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы миграции серв�
 description: Получите ответы на распространенные вопросы об использовании миграции серверов Azure Migrate Для миграции машин.
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: cc78d2087dcaad2922ca6b6d9c090a8decdb6e84
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: bf33c276c721f3be16d75b964c2b223e90c2a560
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81393799"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81529810"
 ---
 # <a name="azure-migrate-server-migration-common-questions"></a>Миграция серверов Azure Migrate: общие вопросы
 
@@ -18,6 +18,10 @@ ms.locfileid: "81393799"
 - Вопросы об [приборе Azure Migrate](common-questions-appliance.md)
 - Вопросы об [открытии, оценке и визуализации зависимостей](common-questions-discovery-assessment.md)
 - Получить ответы на вопросы на [форуме Azure Migrate](https://aka.ms/AzureMigrateForum)
+
+## <a name="what-geographies-are-supported-for-migration-with-azure-migrate"></a>Какие географические регионы поддерживаются для миграции с Azure Migrate?
+
+Просмотрите поддерживаемые географические регионы для [общественных](migrate-support-matrix.md#supported-geographies-public-cloud) и [правительственных облаков.](migrate-support-matrix.md#supported-geographies-azure-government)
 
 ## <a name="how-does-agentless-vmware-replication-work"></a>Как работает репликация без агента VMware?
 
@@ -100,6 +104,6 @@ AppNamePrefix для использования в Net'osPolicy является
 ## <a name="do-i-need-vmware-vcenter-to-migrate-vmware-vms"></a>Нужен ли мне VMware vCenter для миграции VMware VMs?
 Для [миграции VMware VMs](server-migrate-overview.md) с помощью vMware на основе агента или без агента миграции, ESXi хосты, на которых расположены VMs должны управляться vCenter Server. Если у вас нет vCenter Server, вы можете мигрировать VMw, мигрируя их как физические серверы. [Подробнее](migrate-support-matrix-physical-migration.md).
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Читайте [обзор Azure Migrate](migrate-services-overview.md).

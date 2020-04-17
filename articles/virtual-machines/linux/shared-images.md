@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: axayjo
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -16,12 +15,12 @@ ms.date: 05/06/2019
 ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
-ms.openlocfilehash: de1afa2367afcb78e8ca68e518acc93e33f61c43
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ab0a4b98e562cda544800f2938d0b829fb1d6ef7
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74034969"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458647"
 ---
 # <a name="create-a-shared-image-gallery-with-the-azure-cli"></a>Создание коллекции общих образов с помощью Azure CLI
 
@@ -62,7 +61,7 @@ az vm create\
 
 [!INCLUDE [virtual-machines-common-shared-images-update-delete-cli](../../../includes/virtual-machines-common-shared-images-update-delete-cli.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Azure Image Builder (предварительный просмотр)](image-builder-overview.md) может помочь автоматизировать создание версии изображений, вы даже можете использовать его для обновления и [создания новой версии изображения из существующей версии изображения.](image-builder-gallery-update-image-version.md) 
 
 Вы также можете создавать ресурсы общей галереи изображений с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 

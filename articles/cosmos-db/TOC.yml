@@ -759,14 +759,6 @@
           items:
             - name: "1.\_Запрашивание данных"
               href: tutorial-query-graph.md
-        - name: Справочник
-          items:
-            - name: Заголовки откликов
-              href: gremlin-headers.md
-            - name: Ограничения
-              href: gremlin-limits.md
-            - name: Совместимость
-              href: gremlin-compatibility.md
         - name: Практические руководства
           items:
             - name: Моделирование данных графов
@@ -794,6 +786,14 @@
               href: powershell-samples-gremlin.md
             - name: Управление с помощью Azure CLI
               href: cli-samples-gremlin.md
+        - name: Справочник
+          items:
+            - name: Заголовки откликов
+              href: gremlin-headers.md
+            - name: Ограничения
+              href: gremlin-limits.md
+            - name: Совместимость
+              href: gremlin-compatibility.md
     - name: API таблиц
       items:
         - name: Обзор

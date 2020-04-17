@@ -2,13 +2,13 @@
 title: Вопросы об анализе обнаружения, оценки и зависимости в Azure Migrate
 description: Получите ответы на общие вопросы об анализе открытий, оценки и зависимости в Azure Migrate.
 ms.topic: conceptual
-ms.date: 02/17/2020
-ms.openlocfilehash: 7a63271811053ee2da79f134ac117559e31b0fed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/15/2020
+ms.openlocfilehash: 700e5318b66cdf4993a17b1dae85fb43f75ab035
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79460812"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81529779"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Анализ открытий, оценки и зависимости - Общие вопросы
 
@@ -19,9 +19,16 @@ ms.locfileid: "79460812"
 - Вопросы о [миграции серверов](common-questions-server-migration.md)
 - Получить ответы на вопросы на [форуме Azure Migrate](https://aka.ms/AzureMigrateForum)
 
+
+## <a name="what-geographies-are-supported-for-discovery-and-assessment-with-azure-migrate"></a>Какие географические регионы поддерживаются для обнаружения и оценки с Azure Migrate?
+
+Просмотрите поддерживаемые географические регионы для [общественных](migrate-support-matrix.md#supported-geographies-public-cloud) и [правительственных облаков.](migrate-support-matrix.md#supported-geographies-azure-government)
+
+
 ## <a name="how-many-vms-can-i-discover-with-an-appliance"></a>Сколько вм- мы могут обнаружить с помощью прибора?
 
 Вы можете обнаружить до 10 000 VMw, до 5000 V-V-м и до 250 физических серверов с помощью одного прибора. Если у вас больше машин, прочитайте о [масштабировании оценки Hyper-V,](scale-hyper-v-assessment.md) [масштабировании оценки VMware](scale-vmware-assessment.md)или [масштабировании оценки физического сервера.](scale-physical-assessment.md)
+
 
 ## <a name="the-size-of-my-vm-changed-can-i-run-an-assessment-again"></a>Размер моего VM изменился. Могу ли я провести оценку еще раз?
 
@@ -77,7 +84,7 @@ ms.locfileid: "79460812"
 
 ## <a name="what-is-dependency-visualization"></a>Что такое визуализация зависимостей?
 
-Визуализация зависимости может помочь вам оценить группы визм для миграции с большей уверенностью. Визуализация зависимостей перепроверяет зависимости машины перед запуском оценки. Это помогает гарантировать, что ничего не осталось позади, и это помогает избежать непредвиденных отключений при переходе в Azure. Служба "Миграция Azure" использует решение "Сопоставление служб" в Azure Monitor для визуализации зависимостей. Ознакомьтесь с [дополнительными сведениями](concepts-dependency-visualization.md).
+Визуализация зависимости может помочь вам оценить группы визм для миграции с большей уверенностью. Визуализация зависимостей перепроверяет зависимости машины перед запуском оценки. Это помогает гарантировать, что ничего не осталось позади, и это помогает избежать непредвиденных отключений при переходе в Azure. Служба "Миграция Azure" использует решение "Сопоставление служб" в Azure Monitor для визуализации зависимостей. [Подробнее](concepts-dependency-visualization.md).
 
 > [!NOTE]
 > Визуализация зависимостей недоступна в правительстве Azure.
@@ -91,7 +98,7 @@ ms.locfileid: "79460812"
 Поддержка | Эта опция в настоящее время находится в предварительном просмотре и доступна только для VMware VMs. [Обзор](migrate-support-matrix-vmware.md#agentless-dependency-analysis-requirements) поддерживается операционных систем. | В целом доступность (GA).
 Агент | Нет необходимости устанавливать агенты на машины, которые вы хотите перепроверить. | Агенты, которые будут установлены на каждой предварительной машине, которую вы хотите проанализировать: [Агент мониторинга Майкрософт (MMA)](https://docs.microsoft.com/azure/log-analytics/log-analytics-agent-windows)и [агент зависимости.](https://docs.microsoft.com/azure/azure-monitor/platform/agents-overview#dependency-agent) 
 Предварительные требования | [Просмотрите](concepts-dependency-visualization.md#agentless-analysis) предпосылки и требования к развертыванию. | [Просмотрите](concepts-dependency-visualization.md#agent-based-analysis) предпосылки и требования к развертыванию.
-Log Analytics | Необязательно. | Azure Migrate использует решение [карты обслуживания](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-service-map) в [журналах Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) для визуализации зависимостей. Ознакомьтесь с [дополнительными сведениями](concepts-dependency-visualization.md#agent-based-analysis).
+Log Analytics | Необязательно. | Azure Migrate использует решение [карты обслуживания](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-service-map) в [журналах Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) для визуализации зависимостей. [Подробнее](concepts-dependency-visualization.md#agent-based-analysis).
 Принцип работы | Захватывает данные о подключении TCP на машинах, включенных для визуализации зависимостей. После обнаружения он собирает данные с интервалом в пять минут. | Агенты карты обслуживания, установленные на машине, собирают данные о процессах TCP и входящих/исходящих соединениях для каждого процесса.
 Данные | Имя сервера исходного кода, процесс, имя приложения.<br/><br/> Имя сервера назначения, процесс, имя приложения и порт. | Имя сервера исходного кода, процесс, имя приложения.<br/><br/> Имя сервера назначения, процесс, имя приложения и порт.<br/><br/> Количество информации о соединениях, задержках и передаче данных собирается и доступно для запросов Log Analytics. 
 Визуализация: | Карта зависимости одного сервера может просматриваться в течение одного часа до 30 дней. | Карта зависимости одного сервера.<br/><br/> Карту можно просматривать только за час.<br/><br/> Карта зависимости группы серверов.<br/><br/> Добавление и удаление серверов в группе из представления карты.
@@ -142,6 +149,6 @@ Log Analytics | Необязательно. | Azure Migrate использует
 
 Можно [визуализировать зависимости](https://docs.microsoft.com/azure/migrate/how-to-create-group-dependencies) для групп, которые имеют до 10 ВМ. Если у вас есть группа с более чем 10 ВМ, мы рекомендуем разделить группу на более мелкие группы, а затем визуализировать зависимости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Читайте [обзор Azure Migrate](migrate-services-overview.md).

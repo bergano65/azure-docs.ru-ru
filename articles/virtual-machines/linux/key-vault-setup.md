@@ -8,16 +8,16 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 02/24/2017
 ms.author: mimckitt
-ms.openlocfilehash: 59b11d22f054a98fe176e4393843606bd01cc872
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 9ae486ee522982b116af58cfb7cbfbca66a7ef4a
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80879485"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458749"
 ---
 # <a name="how-to-set-up-key-vault-for-virtual-machines-with-the-azure-cli"></a>Настройка Key Vault для виртуальных машин с помощью интерфейса командной строки Azure
 
-В стеке Azure Resource Manager секреты и сертификаты представляют собой ресурсы, которые предоставляются Key Vault. Чтобы больше узнать о хранилище ключей Azure, ознакомьтесь с разделом [Что такое хранилище ключей Azure?](../../key-vault/key-vault-overview.md) Чтобы Key Vault можно было использовать для виртуальных машин Azure Resource Manager, свойству *EnabledForDeployment* в Key Vault должно быть присвоено значение true. В этой статье показано, как с помощью интерфейса командной строки Azure настроить Key Vault для использования с виртуальными машинами Azure. 
+В стеке Azure Resource Manager секреты и сертификаты представляют собой ресурсы, которые предоставляются Key Vault. Чтобы больше узнать о хранилище ключей Azure, ознакомьтесь с разделом [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md) Чтобы Key Vault можно было использовать для виртуальных машин Azure Resource Manager, свойству *EnabledForDeployment* в Key Vault должно быть присвоено значение true. В этой статье показано, как с помощью интерфейса командной строки Azure настроить Key Vault для использования с виртуальными машинами Azure. 
 
 Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
@@ -52,5 +52,5 @@ az keyvault update -n myKeyVault -g myResourceGroup --set properties.enabledForD
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения о других параметрах, которые можно настроить при создании Key Vault с помощью шаблонов, см. в разделе [Create a Key Vault](https://azure.microsoft.com/documentation/templates/101-key-vault-create/) (Создание Key Vault).

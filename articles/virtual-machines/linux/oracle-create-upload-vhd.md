@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: ''
 author: gbowerman
 manager: gwallace
-editor: tysonn
 tags: azure-service-management,azure-resource-manager
 ms.assetid: dd96f771-26eb-4391-9a89-8c8b6d691822
 ms.service: virtual-machines-linux
@@ -14,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: guybo
-ms.openlocfilehash: 784d6c01125a9fd6ec291f32e989e4b22e7607af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6d1e0eacb3d0a2327b8b26ca480b80f957838543
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80066582"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459769"
 ---
 # <a name="prepare-an-oracle-linux-virtual-machine-for-azure"></a>Подготовка виртуальной машины Oracle Linux для Azure
 
@@ -180,6 +179,6 @@ ms.locfileid: "80066582"
         # logout
 15. Нажмите **Action -> Выключите** в Hyper-V Manager. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь вы можете создавать новые виртуальные машины в Azure с помощью VHD-файла системы Oracle Linux. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

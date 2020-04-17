@@ -5,7 +5,6 @@ services: azure-portal
 documentationcenter: ''
 author: adamabmsft
 manager: mtillman
-editor: tysonn
 ms.service: azure-portal
 ms.devlang: NA
 ms.topic: conceptual
@@ -13,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 03/23/2020
 ms.author: mblythe
-ms.openlocfilehash: 5329a7b21aff7ecffc7153c7aa74ddb93bce75cc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9ec9a4daad139a4930174ba9e3445e1cda1f8c54
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80132012"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81461316"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Создание панелей мониторинга Azure программными средствами
 
@@ -127,7 +126,7 @@ id: "[resourceId(parameters('virtualMachineResourceGroup'), 'Microsoft.Compute/v
 
 * [Интерфейсы REST API](/rest/api/resources/deployments)
 * [PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
-* [Лазурный CLI](/cli/azure/group/deployment#az-group-deployment-create)
+* [Azure CLI](/cli/azure/group/deployment#az-group-deployment-create)
 * [Страница развертывания шаблона портала Azure](https://portal.azure.com/#create/Microsoft.Template)
 
 Далее вы увидите две версии нашей примерной панели мониторинга JSON. Первая — версия, экспортированная с портала, которая уже была привязана к ресурсу. Во-вторых, это шаблонная версия, которая может быть программно привязана к любой виртуальной машине и развернута с помощью менеджера ресурсов Azure.

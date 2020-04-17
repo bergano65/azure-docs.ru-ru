@@ -7,15 +7,15 @@ author: tamram
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
-ms.date: 03/31/2020
+ms.date: 04/16/2020
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 4219bb471b92e7ddae72c50403f635498c90080d
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: f390aececdbf9a20f191279892c1856332f2aa8e
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81251696"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81482094"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-storage"></a>Настройка расширенной защиты от угроз для хранения azure
 
@@ -27,9 +27,7 @@ ms.locfileid: "81251696"
 
 ## <a name="availability"></a>Доступность
 
-Расширенная защита от угроз для хранения Azure в настоящее время доступна только для [хранилища Blob.](https://azure.microsoft.com/services/storage/blobs/) 
-
-Эта услуга доступна во всех общедоступных облаках и облаках правительства США, но нет других суверенных или правительственных облачных регионов.
+Расширенная защита от угроз для хранения Azure в настоящее время доступна только для [хранилища Blob.](https://azure.microsoft.com/services/storage/blobs/) Типы учетных записей, поддерживающих расширенную защиту от угроз, включают учетные записи v2 общего назначения, блоки хранения и учетные записи данных blob. Расширенная защита от угроз доступна во всех общедоступных облаках и правительственных облаках США, но не в других суверенных или правительственных облачных регионах.
 
 Подробная информация о ценах, включая бесплатную 30-дневную пробную версию, смотрите [страницу ценообразования Azure Security Center.](https://azure.microsoft.com/pricing/details/security-center/)
 
@@ -127,7 +125,7 @@ ms.locfileid: "81251696"
 
 Оповещения создаются при нестандартных и потенциально вредоносных попытках получить доступ к учетным записям хранения или использовать их. Список оповещений для хранилища Azure можно узнать в разделе **"Хранение"** в [разделе "Защита данных" в Центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurestorage)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Подробнее о [журналах в учетных записях хранилища Azure](/rest/api/storageservices/About-Storage-Analytics-Logging)
 * Узнайте больше о [Центре безопасности Azure](../../security-center/security-center-intro.md)

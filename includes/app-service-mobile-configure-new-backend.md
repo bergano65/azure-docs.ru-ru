@@ -5,15 +5,15 @@ services: app-service\mobile
 author: conceptdev
 ms.service: app-service-mobile
 ms.topic: include
-ms.date: 05/06/2019
+ms.date: 04/15/2020
 ms.author: crdun
 ms.custom: include file
-ms.openlocfilehash: a7e543dcad9ad1b016d1244451cd87cda5ad7492
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b5b6389491fd91b716a05e7c57c98addb6352bd9
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67440217"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81461826"
 ---
 1. Скачать клиент SDK quickstarts для следующих платформ:
     
@@ -69,23 +69,13 @@ ms.locfileid: "67440217"
    - **Серверная часть Node.js**
     
      Если вы собираетесь использовать приложение node.js quickstart, следуйте инструкциям ниже.
-
-     1. На портале Azure перейдите на **простые таблицы,** вы увидите этот экран.
-      
-        ![Легкие таблицы узлов](./media/app-service-mobile-configure-new-backend/node-easy-tables.png)
-
-     2. Убедитесь, что строка подключения S'L уже добавлена во вкладке **Конфигурация.** Затем проверьте поле **я признаю, что это будет переписать все содержимое сайта** и нажмите **кнопку таблицы Создать TodoItem.**
      
-        ![Конфигурация простых таблиц узлов](./media/app-service-mobile-configure-new-backend/node-easy-tables-configuration.png)
-
-     3. В **простых таблицах**щелкните кнопку **«Добавить».**
-    
-        ![Легкие таблицы узла Добавить кнопку](./media/app-service-mobile-configure-new-backend/node-easy-tables-add.png)
-
-     4. Создайте `TodoItem` таблицу с анонимным доступом.
-      
-        ![Легкие таблицы узла Добавить таблицу](./media/app-service-mobile-configure-new-backend/node-easy-tables-table-add.png)
-
+        1. Создать новый API - Вы можете либо вносить изменения прямо на портале Azure, либо изменять код локально в среде разработки, а затем публиковать в Azure. Нажмите `App Service Editor (Preview)` на `Development Tools` меню, которое обеспечивает опыт редактирования в браузере для кода приложения.
+        
+        2. Нажмите `Go` на кнопку, и как только откроется редактор службы приложений, вы будете иметь полный контроль над исходным кодом. Предполагая, что вы уже установили пакет экспресс-и лазурных мобильных приложений с командой установки npm, нажмите на папку api под wwwROOT, чтобы создать или отсеить пользовательский API. Вношите изменения в файл кода, и изменения сохраняются автоматически.
+        
+        3. У вас есть полный контроль над базой данных Azure S'L, используемой для хранения данных приложения. Вы можете легко создавать новые таблицы в базе данных.
+ 
    - **Сервер .NET**
     
         Если вы собираетесь использовать приложение быстрого запуска .NET, следуйте инструкциям ниже.

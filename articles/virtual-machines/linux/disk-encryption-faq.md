@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: ae3743530440c9df9094a0b9784922d2d6a3dfdf
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 753d606e1fc2dc966c970a210cf6fc5066d5ed83
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985411"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460143"
 ---
 # <a name="azure-disk-encryption-for-linux-virtual-machines-faq"></a>Лазурный диск шифрование для Linux виртуальных машин часто задаваемые вопросы
 
@@ -148,7 +148,9 @@ ms.locfileid: "80985411"
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms).        
 
 ## <a name="is-xfs-filesystem-supported"></a>Поддерживается ли файловая система XFS?
-Объемы XFS поддерживаются для шифрования дисков данных только с помощью EncryptFormatAll. Это позволит переформатировать объем, сняв все данные, которые ранее были там. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms).
+Поддержка шифрования дисков XFS OS.
+
+Шифрование дисков данных XFS поддерживается только при использовании параметра EncryptFormatAll. Это позволит переформатировать объем, сняв все данные, которые ранее были там. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms).
 
 ## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Могу ли я создать резервную и восстановить зашифрованный VM? 
 
@@ -158,7 +160,7 @@ ms.locfileid: "80985411"
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Обзор шифрования дисков Azure](disk-encryption-overview.md)
