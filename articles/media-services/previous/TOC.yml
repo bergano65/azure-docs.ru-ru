@@ -257,8 +257,6 @@
           items:
             - name: "Кодировщик Haivision\_KB"
               href: media-services-configure-kb-live-encoder.md
-            - name: Кодировщик NewTek TriCaster
-              href: media-services-configure-tricaster-live-encoder.md
             - name: Кодировщик Wirecast
               href: media-services-configure-wirecast-live-encoder.md
         - name: Обработка длительных операций

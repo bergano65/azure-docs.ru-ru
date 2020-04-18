@@ -9,12 +9,12 @@ ms.author: johndeu
 ms.date: 04/16/2020
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: bbd2929e245fa5fc01245e7bd02e537db8d5ef36
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 0676b6b183c64dcd0fb15b87de48a4afed3a0011
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536341"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81641805"
 ---
 # <a name="tested-on-premises-live-streaming-encoders"></a>Проверенные на месте живые потокового кодеров
 
@@ -57,7 +57,6 @@ ms.locfileid: "81536341"
 - Телестрим Wirecast (версия 13.0.2 или выше из-за требования TLS 1.2)
 - Telestream Wirecast S (поддерживается только RTMP)
 - Teradek Slice 756;
-- TriCaster 8000;
 - VMIX
 - xStream
 - [Ffmpeg](https://www.ffmpeg.org)
@@ -105,10 +104,10 @@ ms.locfileid: "81536341"
 > [!IMPORTANT]
 > Смотреть физическое состояние машины (CPU / Память / и т.д.), как загрузка фрагментов в облако включает в себя процессор и IO операций. Если вы измените какие-либо настройки в кодере, обязательно сбросьте каналы /живое событие для входного изменения.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Потоковая трансляция в Службах мультимедиа Azure версии 3](live-streaming-overview.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Как проверить кодера](become-on-premises-encoder-partner.md)

@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 04/15/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 274e85a914ebec31a03f1149bc4467ea142e7255
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 50a1971fed4cce49eea1922bc9b81f06667f4dd8
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81482108"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81641004"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -1681,7 +1681,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.ClassicStorage/checkStorageAccountAvailability/read | Получает сведения о доступности учетной записи хранения. |
 > |  | **Дисков** |  |
 > | Действие | Microsoft.ClassicStorage/disks/read | Возвращает диск в учетной записи хранения. |
-> |  | **Изображения** |  |
+> |  | **images** |  |
 > | Действие | Microsoft.ClassicStorage/images/read | Возвращает образ. |
 > |  | **изображения/операции** |  |
 > | Действие | Microsoft.ClassicStorage/images/operationstatuses/read | Получает состояние операции создания образа. |
@@ -2185,7 +2185,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Compute/hostGroups/hosts/read | Получить свойства хоста |
 > | Действие | Microsoft.Compute/hostGroups/hosts/write | Создает новый хост или обновляет существующий хост |
 > | Действие | Microsoft.Compute/hostGroups/hosts/delete | Удаляет хост |
-> |  | **Изображения** |  |
+> |  | **images** |  |
 > | Действие | Microsoft.Compute/images/read | Возвращает свойства образа. |
 > | Действие | Microsoft.Compute/images/write | Создает новый образ или обновляет существующий. |
 > | Действие | Microsoft.Compute/images/delete | Удаляет кластер. |
@@ -4499,7 +4499,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Features/register/action | Регистрирует компонент подписки. |
-> |  | **features** |  |
+> |  | **Функции** |  |
 > | Действие | Microsoft.Features/features/read | Возвращает функции подписки. |
 > |  | **Операций** |  |
 > | Действие | Microsoft.Features/operations/read | Получает список операций. |
@@ -4655,7 +4655,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Insights/Baseline/Read | Прочитайте базовый упор метрики (предварительный просмотр) |
 > |  | **РассчитатьБазовый** |  |
 > | Действие | Microsoft.Insights/CalculateBaseline/Read | Рассчитать базовый упор для значений метрики (предварительный просмотр) |
-> |  | **Components** |  |
+> |  | **Компоненты** |  |
 > | Действие | Microsoft.Insights/Components/AnalyticsTables/Action | Действие таблицы аналитики Application Insights. |
 > | Действие | Microsoft.Insights/Components/ApiKeys/Action | Создание ключа API Application Insights. |
 > | Действие | Microsoft.Insights/Components/Purge/Action | Очистка данных Application Insights. |
@@ -5182,7 +5182,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.IoTSpaces/register/action | Регистрация подписки для поставщика ресурсов Graph Microsoft.IoTSpaces, чтобы обеспечить создание ресурсов. |
-> |  | **График** |  |
+> |  | **Graph** |  |
 > | Действие | Microsoft.IoTSpaces/Graph/write | Создает ресурс Graph Microsoft.IoTSpaces |
 > | Действие | Microsoft.IoTSpaces/Graph/read | Получает ресурсы Graph Microsoft.IoTSpaces |
 > | Действие | Microsoft.IoTSpaces/Graph/delete | Удаляет ресурс Graph Microsoft.IoTSpaces |
@@ -5332,7 +5332,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Kusto/Кластеры/Основныеназначения/удаление | Удаляет основной ресурс кластерных назначений. |
 > |  | **Кластеры/СКУ** |  |
 > | Действие | Microsoft.Kusto/Кластеры/SKUs/read | Читает кластерный ресурс SKU. |
-> |  | **Местах** |  |
+> |  | **Расположения** |  |
 > | Действие | Microsoft.Kusto/Локации/CheckNameДоступность/действие | Проверка доступности имен ресурса. |
 > | Действие | Microsoft.Kusto/Locations/GetNetworkПолитика/акция | Получает политики намерения сети |
 > |  | **локации/результаты работы** |  |
@@ -7968,7 +7968,7 @@ Microsoft Мониторинг Исследования
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.RecoveryServices/register/action | Регистрация подписки для заданного поставщика ресурсов. |
-> |  | **Местах** |  |
+> |  | **Расположения** |  |
 > | Действие | Microsoft.RecoveryServices/Locations/backupPreValidateProtection/action |  |
 > | Действие | Microsoft.RecoveryServices/Locations/backupStatus/action | Проверка состояния архивации хранилищ служб восстановления. |
 > | Действие | Microsoft.RecoveryServices/Locations/backupValidateFeatures/action | Проверка компонентов. |
@@ -8410,7 +8410,7 @@ Microsoft Мониторинг Исследования
 > | Действие | Microsoft.Resources/links/delete | Удаляет ссылку на ресурс. |
 > |  | **Рынке** |  |
 > | Действие | Microsoft.Resources/marketplace/purchase/action | Покупка ресурса на Marketplace. |
-> |  | **providers** |  |
+> |  | **Поставщиков** |  |
 > | Действие | Microsoft.Resources/providers/read | Возвращает список поставщиков. |
 > |  | **Ресурсы** |  |
 > | Действие | Microsoft.Resources/resources/read | Возвращает список ресурсов на основе фильтров. |
@@ -10856,8 +10856,8 @@ Microsoft Мониторинг Исследования
 > |  | **Операций** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Соответствие поставщику ресурсов для обслуживания](../azure-resource-manager/management/azure-services-resource-providers.md)
-- [Пользовательские роли Azure](custom-roles.md)
 - [Встроенные роли Azure](built-in-roles.md)
+- [Рамки внедрения облачных технологий: управление доступом к ресурсам в Azure](/azure/cloud-adoption-framework/govern/resource-consistency/resource-access-management)

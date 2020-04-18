@@ -15,18 +15,16 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: cenkdin;anilmur
-ms.openlocfilehash: 1d9d63aa6b3da1b8d8389722bd5af0eeed585d03
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8e3705aaecb0760513f0605aece89b7ffc0044a8
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77134977"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81641644"
 ---
 # <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока 
 > [!div class="op_single_selector"]
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
-> * [Tricaster](media-services-configure-tricaster-live-encoder.md)
->
 >
 
 В этой статье показано, как настроить динамический кодировщик [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) для отправки односкоростного потока в каналы AMS, которые выполняют кодирование в режиме реального времени. Дополнительные сведения можно найти в разделе [Работа с каналами, выполняющими кодирование в реальном времени с помощью служб мультимедиа Azure](media-services-manage-live-encoder-enabled-channels.md).
@@ -37,7 +35,7 @@ ms.locfileid: "77134977"
 > При использовании протоколов RTMPS кодеры должны поддерживать TLS 1.2. Используйте версию Wirecast 13.0.2 или выше из-за требования TLS 1.2.
 
 ## <a name="prerequisites"></a>Предварительные требования
-* [Создайте учетную запись служб мультимедиа Azure](media-services-portal-create-account.md).
+* [Создание учетной записи служб мультимедиа Azure](media-services-portal-create-account.md)
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
 * Установите последнюю версию средства [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) .
 * Запустите его и подключитесь к учетной записи AMS.
