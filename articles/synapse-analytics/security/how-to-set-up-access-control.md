@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 94699f2153fa8d1df3ab85c184f32792c7ae0b59
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: ae8be848b5d12e01865fe6bd3b394b460252aa3e
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81428879"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81606005"
 ---
 # <a name="secure-your-synapse-workspace-preview"></a>Защищайте рабочее пространство Synapse (предварительный просмотр)
 
@@ -51,8 +51,8 @@ ms.locfileid: "81428879"
 - **WS1\_WSAdmins** - для пользователей, которые нуждаются в полном контроле над рабочим пространством
 - **WS1\_SparkAdmins** - для тех пользователей, которые нуждаются в полном контроле над аспектами Spark рабочего пространства
 - **WS1\_S'LAdmins** - для пользователей, которые нуждаются в полном контроле над аспектами рабочего пространства
-- Добавление **WS1\_Админс** в **WS1\_S'LAdmins**
-- Добавление **WS1\_Админс** к **WS1\_SparkAdmins**
+- Добавление **\_WS1 WSAdmins** в **WS1\_S'LAdmins**
+- Добавление **WS1\_WSAdmins** в **WS1\_SparkAdmins**
 
 ## <a name="step-2-prepare-your-data-lake-storage-gen2-account"></a>Шаг 2: Подготовьте учетную запись Data Lake Storage Gen2
 
@@ -89,7 +89,7 @@ ms.locfileid: "81428879"
 - Откройте портал Azure.
 - Найдите STG1
 - Перейдите к CNT1
-- Убедитесь, что MSI для WS1 присваивается роли **вкладчика данных Azure Blob** на CNT1
+- Убедитесь, что MSI (Managed Service Identity) для WS1 присваивается роли **вкладчика данных Azure Blob** на CNT1
   - Если вы не видите его назначенным, назначайте его.
   - MSI имеет то же имя, что и рабочее пространство. В этом случае, &quot;было&quot;бы WS1 .
 

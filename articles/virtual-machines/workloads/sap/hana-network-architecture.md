@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 33684a6292d7e51c04f6bacc7c49ee5986dbec10
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b3bc87b183803c0854542d6925af7429b593d2af
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79502395"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605169"
 ---
 # <a name="sap-hana-large-instances-network-architecture"></a>Сетевая архитектура SAP HANA в Azure (крупные экземпляры)
 
@@ -86,7 +86,7 @@ ms.locfileid: "79502395"
 Чтобы снизить задержку, ExpressRoute Fast Path был представлен и выпущен в мае 2019 года для конкретного подключения HANA Large Instances к виртуальным сетям Azure, в которых размещено приложение SAP VMs. Основное отличие решения, развернутого до сих пор, заключается в том, что потоки данных между ВМ и HANA Large Instances больше не направляются через шлюз ExpressRoute. Вместо этого виртуальные вывеши, назначенные в подсети (ы) виртуальной сети Azure, напрямую взаимодействуют со выделенным маршрутизатором края предприятия. 
 
 > [!IMPORTANT] 
-> Функциональность ExpressRoute Fast Path требует, чтобы подсети под управлением M-приложений SAP были в той же виртуальной сети Azure, которая подключилась к HANA Large Instances. Виртуальные виртуальные сети Azure, которые всматриваются в виртуальную сеть Azure, подключенную непосредственно к подразделениям HANA Large Instance, не получают выгоды от ExpressRoute Fast Path. В результате типичный концентратор и говорил виртуальные сетевые проекты, где схемы ExpressRoute соединяются с концентратором виртуальной сети и виртуальные сети, содержащие слой приложения SAP (спицы) получают заглянул, оптимизация ExpressRoute Быстро Путь не будет работать. В добавлении ExpressRoute Fast Path не поддерживает правила маршрутирования (UDR) пользователя сегодня. Для получения дополнительной [ExpressRoute virtual network gateway and FastPath](https://docs.microsoft.com/azure/expressroute/expressroute-about-virtual-network-gateways)информации см. 
+> Функциональность ExpressRoute Fast Path требует, чтобы подсети под управлением M-приложений SAP были в той же виртуальной сети Azure, которая подключилась к HANA Large Instances. Виртуальные виртуальные сети Azure, которые всматриваются в виртуальную сеть Azure, подключенную непосредственно к подразделениям HANA Large Instance, не получают выгоды от ExpressRoute Fast Path. В результате типичный концентратор и говорил виртуальных сетевых конструкций, где схемы ExpressRoute соединяются с концентратором виртуальной сети и виртуальные сети, содержащие слой приложения SAP (спицы) получают заглянул, оптимизация ExpressRoute Быстрый путь не будет работать. В добавлении ExpressRoute Fast Path не поддерживает правила маршрутирования (UDR) пользователя сегодня. Для получения дополнительной [ExpressRoute virtual network gateway and FastPath](https://docs.microsoft.com/azure/expressroute/expressroute-about-virtual-network-gateways)информации см. 
 
 
 Для получения более подробной информации о том, как настроить ExpressRoute Fast Path, прочитайте документ [Подключите виртуальную сеть к крупным экземплярам HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-connect-vnet-express-route).    
@@ -151,7 +151,7 @@ ms.locfileid: "79502395"
 - Используйте [правила IPTables](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_%3a_Ch14_%3a_Linux_Firewalls_Using_iptables#.Wkv6tI3rtaQ) на виртуальной машине Linux для маршрутизации между локальным расположением и единицами HANA (крупные экземпляры) или между единицами HANA (крупные экземпляры) в разных регионах. VM под управлением IPTables необходимо развертывать в виртуальной сети Azure, которая подключается к HANA Large Instances и к наместным. VM должен быть размер соответствующим образом, так что пропускная информация сети VM достаточно для ожидаемого сетевого трафика. Для получения подробной информации о пропускной способности сети VM, проверьте статью [Размеры Linux виртуальных машин в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Еще одним решением для обеспечения прямого трафика между подразделениями на территории и HANA Large instance будет [брандмауэр Azure Firewall.](https://azure.microsoft.com/services/azure-firewall/) 
 
-Весь трафик этих решений будет направляться через виртуальную сеть Azure и как таковой трафик может быть дополнительно ограничен мягкими приборами, используемыми или группами безопасности сети Azure, так что некоторые IP-адреса или IP-адреса варьируются от на-закрытых может быть заблокирован или явно разрешен доступ к HANA крупных инстанций. 
+Весь трафик этих решений будет направляться через виртуальную сеть Azure, и как таковой трафик может быть дополнительно ограничен мягкими приборами, используемыми или группами безопасности Сети Azure, так что некоторые IP-адреса или IP-адреса варьируются от закрытых помещений, могут быть заблокированы или явно разрешен доступ к HANA Large Instances. 
 
 > [!NOTE]  
 > Имейте в виду, что внедрение и поддержка пользовательских решений с использованием сетевых устройств сторонних производителей или утилиты IPTables не предоставляется корпорацией Майкрософт. Поддержка должна предоставляться поставщиком используемого компонента или интегратором. 
@@ -182,7 +182,7 @@ ms.locfileid: "79502395"
 Крупные экземпляры HANA *не* подключены к Интернету напрямую. Это ограничивает ваши возможности, например зарегистрировать образ ОС напрямую с использованием поставщика ОС. Вам может потребоваться поработать с локальным сервером средства для управления подписками SUSE Linux Enterprise Server или Red Hat Enterprise Linux Subscription Manager.
 
 ## <a name="data-encryption-between-vms-and-hana-large-instance"></a>Шифрование данных между виртуальными машинами и крупными экземплярами HANA
-Данные, передаваемые между виртуальными машинами и крупными экземплярами HANA, не шифруются. Однако исключительно для обмена между СУБД HANA и приложениями на основе JDBC/ODBC вы можете включить шифрование трафика. Дополнительные сведения см. в этой [документации по SAP](http://help-legacy.sap.com/saphelp_hanaplatform/helpdata/en/db/d3d887bb571014bf05ca887f897b99/content.htm?frameset=/en/dd/a2ae94bb571014a48fc3b22f8e919e/frameset.htm&current_toc=/en/de/ec02ebbb57101483bdf3194c301d2e/plain.htm&node_id=20&show_children=false).
+Данные, передаваемые между виртуальными машинами и крупными экземплярами HANA, не шифруются. Однако исключительно для обмена между СУБД HANA и приложениями на основе JDBC/ODBC вы можете включить шифрование трафика. Дополнительные сведения см. в этой [документации по SAP](https://help.sap.com/viewer/102d9916bf77407ea3942fef93a47da8/1.0.11/en-US/dbd3d887bb571014bf05ca887f897b99.html).
 
 ## <a name="use-hana-large-instance-units-in-multiple-regions"></a>Использование единиц крупных экземпляров HANA в нескольких регионах
 

@@ -13,15 +13,15 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/12/2019
 ms.author: cynthn
-ms.openlocfilehash: 2b1b708618c60153b8dbce69b26d832fa18b25aa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2e97442d4104f52c1a76ba8cd1d81c99508bb242
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79476609"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605184"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure
-Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](https://www.xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
+Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](http://xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -105,7 +105,7 @@ az vm open-port --resource-group myResourceGroup --name myVM --port 3389
 Если локальный RDP-клиент использует проверку подлинности на уровне сети (NLA), то может потребоваться отключить эту настройку подключения. В настоящее время XRDP не поддерживает NLA. Вы можете также воспользоваться альтернативными решениями для RDP, которые поддерживают NLA, такими как [FreeRDP](https://www.freerdp.com).
 
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 Если не удается подключиться к виртуальной машине Linux с помощью клиента удаленного рабочего стола, используйте `netstat` на виртуальной машине Linux, чтобы убедиться, что она прослушивает RDP-подключения:
 
 ```bash

@@ -5,44 +5,47 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: 721bb3579fec10df88be471d67f68c0846aa9432
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: ba926ccbb069c8620259514e0a64c56957529a0f
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632111"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617472"
 ---
 # <a name="how-to-update-azure-powershell-modules-in-azure-automation"></a>Как обновить модули Azure PowerShell в службе автоматизации Azure
 
-Для обновления модулей Azure в учетной записи автоматизации необходимо использовать [runbook модулей Обновления Azure,](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update)который доступен в виде открытого исходного кода. Чтобы приступить к использованию модуля runbook **Update-AutomationAzureModulesForAccount** для обновления модулей Azure, скачайте его из [этого репозитория](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) на сайте GitHub. После этого вы сможете импортировать его в свою учетную запись службы автоматизации или выполнить в качестве скрипта. Чтобы узнать, как импортировать книгу в вашем аккаунте автоматизации, [см.](manage-runbooks.md#importing-a-runbook)
+Для обновления модулей Azure в учетной записи Automation необходимо использовать [runbook модулей Обновления Azure,](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update)который доступен в виде открытого исходного кода. Чтобы приступить к использованию модуля runbook **Update-AutomationAzureModulesForAccount** для обновления модулей Azure, скачайте его из [этого репозитория](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) на сайте GitHub. Затем вы можете импортировать его в свою учетную запись Автоматизация или запустить его в качестве сценария. Чтобы узнать, как импортировать книгу в учетной записи Автоматизация, [см.](manage-runbooks.md#importing-a-runbook)
 
-Наиболее распространенные модули AzureRM PowerShell предоставляются по умолчанию в каждой учетной записи автоматизации. Команда Azure регулярно обновляет модули Azure, поэтому для обновления учетных записей [«Обновление-AutomationAzureModulesForAccount»](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) для обновления модулей в учетных записях автоматизации необходимо использовать runbook Update-Automation.
+Наиболее распространенные модули PowerShell предоставляются по умолчанию в каждой учетной записи Автоматизации. Группа разработчиков Azure регулярно обновляет модули Azure. Поэтому, чтобы сохранить модули в ваших учетных записях автоматизации в актуальном состоянии, следует использовать [runbook Update-AutomationAzureModulesForAccount.](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update)
 
-Так как модули регулярно обновляются специалистами группы продуктов, то изменения могут затронуть и входящие в них командлеты. Данное действие может негативно повлиять на работу модулей Runbook. Это зависит от типа изменения. Например, возможно переименование параметра или полное прекращение поддержки командлета.
+Так как модули регулярно обновляются специалистами группы продуктов, то изменения могут затронуть и входящие в них командлеты. Эти изменения, например, переименование параметра или полное обезвреживание cmdlet, могут негативно сказаться на ваших runbooks.
 
-Чтобы избежать негативного влияния на модули Runbook и автоматизируемые ими процессы, выполните предварительное тестирование и проверку. Если у вас нет выделенной учетной записи службы автоматизации, предназначенной для этой цели, то рекомендуется ее создать, чтобы протестировать различные сценарии в процессе разработки модулей Runbook. Тестирование должно включать повторяющиеся изменения, такие как обновление модулей PowerShell.
+Чтобы избежать негативного влияния на модули Runbook и автоматизируемые ими процессы, выполните предварительное тестирование и проверку. Если у вас нет выделенной учетной записи службы автоматизации, предназначенной для этой цели, то рекомендуется ее создать, чтобы протестировать различные сценарии в процессе разработки модулей Runbook. Это тестирование должно включать итеративные изменения, такие как обновление модулей PowerShell.
 
-Если вы разрабатываете скрипты локально, при тестировании рекомендуется хранить локально те же версии модуля, которые доступны в вашей учетной записи службы автоматизации. Так вы гарантированно получите те же результаты. После проверки результатов и применения необходимых изменений можно перейти к процессу переноса их в рабочую среду.
+Если вы разрабатываете свои сценарии локально, рекомендуется иметь те же версии модулей локально, что у вас есть в вашей учетной записи автоматизации при тестировании, чтобы убедиться, что вы получите те же результаты. После проверки результатов и применения необходимых изменений можно перейти к процессу переноса их в рабочую среду.
 
 > [!NOTE]
 > Новая учетная запись службы автоматизации может не содержать последние модули.
 
 > [!NOTE]
-> Вы не сможете удалить глобальные модули - модули, которые автоматизация предоставляет из коробки.
+> Вы не сможете удалить глобальные модули, которые являются модулями, которые автоматизация предоставляет из коробки.
 
-## <a name="considerations"></a>Рекомендации
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) 
 
-Ниже приведены некоторые рекомендации по использованию этого процесса для обновления модулей Azure.
+## <a name="considerations"></a>Особенности
 
-* Этот runbook поддерживает обновление модулей **Azure** и **AzureRm** по умолчанию. Этот runbook поддерживает обновление модулей **Az,** а также. Просмотрите [runbook модулей Обновления Azure,](https://github.com/microsoft/AzureAutomation-Account-Modules-Update/blob/master/README.md) чтобы `Az` узнать больше об обновлении модулей с помощью этого runbook. Есть дополнительные важные факторы, которые необходимо `Az` учитывать при использовании модулей в вашем аккаунте автоматизации, чтобы узнать больше, см. [Using Az modules in your Automation Account](az-modules.md)
+Ниже приведены некоторые соображения, которые следует учитывать при использовании этой статьи для обновления модулей Azure:
+
+* В книге runbook, описанной в этой статье, поддерживается обновление модулей Azure, AzureRM и Az по умолчанию. Просмотрите [runbook модулей Обновления Azure,](https://github.com/microsoft/AzureAutomation-Account-Modules-Update/blob/master/README.md) чтобы узнать больше об обновлении модулей Az.Automation с помощью этого runbook. Есть дополнительные важные факторы, которые необходимо учитывать при использовании модулей Az в вашей учетной записи Автоматизация. Чтобы узнать больше, смотрите [с помощью модулей Az в учетной записи Автоматизация](az-modules.md).
 
 * Перед запуском этого модуля runbook убедитесь, что для вашей учетной записи службы автоматизации созданы [учетные данные для учетной записи запуска от имени Azure](manage-runas-account.md).
 
-* Вы можете использовать этот код в качестве обычного скрипта PowerShell вместо runbook: просто войдите в Azure, используя команду [Connect-AzureRmAccount,](/powershell/module/azurerm.profile/connect-azurermaccount) а затем перейдите `-Login $false` к скрипту.
+* Вы можете использовать этот код в качестве обычного скрипта PowerShell вместо runbook: просто войдите в Azure с помощью cmdlet [Connect-AzAccount,](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.7.0) а затем перейдите `-Login $false` к скрипту.
 
-* Если вы хотите выполнять этот модуль runbook в национальных облаках, используйте параметр `AzureRmEnvironment`, чтобы передать в модуль runbook нужную среду.  Приемлемые значения: **AzureCloud**, **AzureChinaCloud**, **AzureGermanCloud** и **AzureUSGovernment**. Эти значения можно получить с помощью командлета `Get-AzureRmEnvironment | select Name`. Если не передать значение этому параметру, модуль Runbook по умолчанию будет использовать общедоступное облако Azure **AzureCloud**.
+* Если вы хотите выполнять этот модуль runbook в национальных облаках, используйте параметр `AzEnvironment`, чтобы передать в модуль runbook нужную среду.  Приемлемыми значениями являются AzureCloud (облачное облако Azure), AzureChinaCloud, AzureGermanCloud и AzureUSGovernment. Эти значения могут быть `Get-AzEnvironment | select Name`извлечены с помощью . Если вы не передаете значение этому cmdlet, книга выполнения по умолчанию по умолчанию перекладывается на AzureCloud.
 
-* Если нужно использовать конкретную версию модуля Azure PowerShell вместо последней доступной в коллекции PowerShell, передайте эти версии в необязательном параметре `ModuleVersionOverrides` модуля runbook **Update-AutomationAzureModulesForAccount**. Примеры см. в модуле runbook [Update-AutomationAzureModulesForAccount.ps1](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update/blob/master/Update-AutomationAzureModulesForAccount.ps1
+* Если вы хотите использовать конкретную версию модуля Azure PowerShell вместо последнего модуля, доступного в галерее PowerShell, передайте эти версии дополнительному `ModuleVersionOverrides` параметру runbook **Update-AutomationAzureModulesForAccount.** Примеры см. в модуле runbook [Update-AutomationAzureModulesForAccount.ps1](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update/blob/master/Update-AutomationAzureModulesForAccount.ps1
 ). Модули Azure PowerShell, которые не упомянуты в параметре `ModuleVersionOverrides`, обновляются до последних версий из коллекции PowerShell. Если в параметр `ModuleVersionOverrides` не передано ничего, все модули обновляются последними версиями из коллекции PowerShell, как при нажатии кнопки **Обновить модули Azure**.
 
 ## <a name="next-steps"></a>Дальнейшие действия

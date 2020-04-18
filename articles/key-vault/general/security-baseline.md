@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: cb908c4b105324e0866d53463ecd3a8a59e7e651
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 46fa0160dd8b37e89cdd77ba8acdae294fddbefe
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81429893"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81616902"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовый унизел безопасности Azure для Ключевого Убежища
 
@@ -1001,7 +1001,7 @@ https://docs.microsoft.com/azure/security-center/security-center-remediate-recom
 
 ### <a name="711-manage-azure-secrets-securely"></a>7.11: Надежное управление секретами Azure
 
-**Руководство**: Используйте идентификационную систему управляемых служб совместно с Azure Key Vault для упрощения и обеспечения секретного управления для облачных приложений. Убедитесь, что мягкое удаление Azure Key Vault включено.
+**Руководство**: Используйте идентификационную систему управляемых служб совместно с Azure Key Vault для упрощения и обеспечения секретного управления для облачных приложений. Убедитесь, что смягчатся Azure Key Vault.
 
 Как интегрироваться с управляемыми идентификаторами Azure:
 

@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/15/2020
-ms.openlocfilehash: 4c510cae7ba5a952e6dc7f7cb7ae7591fe801560
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 6e361d23860ce8f40abba5c246242cf345bb974c
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81461299"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81606117"
 ---
 # <a name="schema-drift-in-mapping-data-flow"></a>Дрейф схемы в потоке картданных данных
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Schema дрейф является тот случай, когда ваши источники часто меняют метаданные. Поля, столбцы и типы могут быть добавлены, удалены или изменены на лету. Без обработки для дрейфа схемы поток данных становится уязвимым для изменений источника данных вверх по течению. Типичные шаблоны ETL терпят неудачу при изменении входящих столбцов и полей, поскольку они, как правило, привязаны к этим именам источников.
 
@@ -75,5 +75,5 @@ Schema дрейф является тот случай, когда ваши ис
 
 ![Карта дрейфовала](media/data-flow/mapdrifted2.png "Карта дрейфовала")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 На [языке выражения потока данных](data-flow-expression-functions.md)вы найдете дополнительные возможности для шаблонов столбцов и дрейфа схем, включая "byName" и "byPosition".

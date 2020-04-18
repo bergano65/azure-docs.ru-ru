@@ -4,15 +4,15 @@ description: Интегрируйте приложение в службу пр�
 author: ccompy
 ms.assetid: 90bc6ec6-133d-4d87-a867-fcf77da75f5a
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 04/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: cb5747c6780da134dfb2f5ab088348b848c5f04a
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 4866397af244ffb3c6aa9c7547b0a9413b10ccfd
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81312803"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81604858"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Интеграция приложения с виртуальной сетью Azure
 
@@ -41,8 +41,6 @@ ms.locfileid: "81312803"
     ![Выберите Классический VNet][3]
 
 Во время интеграции приложение перезапускается. Когда интеграция будет завершена, вы увидите подробную информацию о VNet, с помощью исвключенного в интеграцию.
-
-После того, как приложение интегрировано с VNet, оно использует тот же DNS-сервер, с которым настроен ваш VNet, если только это не частные зоны Azure DNS. В настоящее время вы не можете использовать интеграцию VNet с частными зонами Azure DNS.
 
 ## <a name="regional-vnet-integration"></a>Региональная интеграция VNet
 
@@ -200,3 +198,4 @@ ms.locfileid: "81312803"
 [setp2saddresses]: https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal#addresspool
 [VNETRouteTables]: https://docs.microsoft.com/azure/virtual-network/manage-route-table/
 [installCLI]: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest/
+[privateendpoints]: networking/private-endpoint.md

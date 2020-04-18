@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/12/2020
 tags: connectors
-ms.openlocfilehash: 8aefe851708c0b8d8780d03e4364e034e783bf4a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6c52f2df34faf441ab70b48b11bbc393ebcecb65
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79297218"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617602"
 ---
 # <a name="call-service-endpoints-over-http-or-https-from-azure-logic-apps"></a>Конечные точки службы вызова по адресу HTTP или HTTPS из приложений логики Azure
 
@@ -140,8 +140,8 @@ ms.locfileid: "79297218"
 Вот тот же пример, который показывает определение JSON действия HTTP в базовом определении рабочего процесса:
 
 ```json
-{
-   "HTTP_action": {
+"HTTP_action": {
+   "inputs": {
       "body": {
          "$content-type": "multipart/form-data",
          "$multipart": [

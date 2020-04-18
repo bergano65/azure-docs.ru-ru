@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 9e1f62dcdb122726fc1c08b7bea4e4c214ce7906
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b1cf1750924ab8ea8afff6ac788683565433866b
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76933367"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81618017"
 ---
 # <a name="built-in-cognitive-skills-for-text-and-image-processing-during-indexing-azure-cognitive-search"></a>Встроенные когнитивные навыки обработки текста и изображения во время индексации (Azure Cognitive Search)
 
@@ -23,6 +23,8 @@ ms.locfileid: "76933367"
 > По мере расширения сферы охвата за счет увеличения частоты обработки, добавления дополнительных документов или добавления большего числа алгоритмов ИИ необходимо [прикрепить ресурс Cognitive Services.](cognitive-search-attach-cognitive-services.md) Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
 >
 > Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на службу "Когнитивный поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400).
+>
+> Функция [постепенного обогащения (предварительного просмотра)](cognitive-search-incremental-indexing-conceptual.md) позволяет предоставить кэш, который позволяет индексатору быть более эффективным при управлении только когнитивными навыками, которые необходимы, если вы измените свой набор навыков в будущем, экономя ваше время и деньги.
 
 
 ## <a name="built-in-skills"></a>Встроенные навыки
@@ -50,7 +52,7 @@ ms.locfileid: "76933367"
 
 Для руководства по созданию [пользовательского навыка,](cognitive-search-custom-skill-web-api.md)см. [Как определить пользовательский интерфейс](cognitive-search-custom-skill-interface.md) и [Пример: Создание пользовательского навыка для обогащения ИИ](cognitive-search-create-custom-skill-example.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Определение интерфейса пользовательских навыков](cognitive-search-custom-skill-interface.md)

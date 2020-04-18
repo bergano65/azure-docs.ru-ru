@@ -7,14 +7,14 @@ ms.topic: article
 ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: a02c099871ce9748f4c5f604900a7c4d57bb96b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 298555da2056bc4c16d4d7b16615604f9798b91b
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79473529"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639270"
 ---
-# <a name="azure-app-service-access-restrictions"></a>Ограничения доступа к службам приложений Azure #
+# <a name="azure-app-service-access-restrictions"></a>Ограничения доступа к службе приложений Azure
 
 Ограничения доступа позволяют определить список предписанных разрешений/отрицаний, который контролирует доступ к приложению. Список может включать IP-адреса или подсети виртуальной сети Azure. Когда есть одна или несколько записей, есть неявное "отказаться от всех", что существует в конце списка.
 
@@ -125,12 +125,12 @@ management.azure.com/subscriptions/**ИД_подписки**/resourceGroups/**г
 }
 ```
 
-## <a name="azure-function-app-access-restrictions"></a>Ограничения доступа к функциям функции Azure
+## <a name="azure-functions-access-restrictions"></a>Ограничения доступа функций Azure
 
-Ограничения доступа также доступны для функциональных приложений с той же функциональностью, что и планы службы приложений. Включение ограничений доступа отключит редактор кода портала для любых запрещенных ИП.
+Ограничения доступа также доступны для функциональных приложений с той же функциональностью, что и планы Службы Приложений. Включение ограничений доступа отключит редактор кода портала для любых запрещенных ИП.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Ограничения доступа для функциональных приложений Azure](../azure-functions/functions-networking-options.md#inbound-ip-restrictions)
+[Ограничения доступа для функций Azure](../azure-functions/functions-networking-options.md#inbound-ip-restrictions)
 
 [Интеграция шлюзов приложений с конечными точками обслуживания](networking/app-gateway-with-service-endpoints.md)
 

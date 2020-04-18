@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: fbcd4ea174d4b6a2a45495c32f178ed1bd01bbe0
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 968e609772e08814a9943734d30c16bf6f5972e8
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81261369"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81604712"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Запуск/остановка ВМ во время работы в нерабочее время в Azure Automation
 
@@ -106,7 +106,7 @@ ms.locfileid: "81261369"
 | --- | --- | ---|
 |AutoStop_CreateAlert_Child | VMObject <br> AlertAction <br> WebHookURI | Вызывается из родительского runbook. Этот runbook создает оповещения на основе ресурсов для сценария Auto-Stop.|
 |AutoStop_CreateAlert_Parent | VMList<br> WhatIf: true или false.  | Создает или обновляет правила генерации оповещений Azure для виртуальных машин в целевой подписке или группах ресурсов. <br> `VMList`— список VM, разделенный запятой. Например, `vm1, vm2, vm3`.<br> `WhatIf`позволяет проверить логику runbook без выполнения.|
-|AutoStop_Disable | Отсутствуют | Отстраняет оповещения Auto-Stop и расписание по умолчанию.|
+|AutoStop_Disable | None | Отстраняет оповещения Auto-Stop и расписание по умолчанию.|
 |AutoStop_VM_Child | WebHookData | Вызывается из родительского runbook. Правила оповещения называют эту книгу, чтобы остановить классический VM.|
 |AutoStop_VM_Child_ARM | WebHookData |Вызывается из родительского runbook. Правила оповещения называют эту книгу, чтобы остановить VM.  |
 |ScheduledStartStop_Base_Classic; | CloudServiceName<br> Действие: Start или Stop<br> VMList  | Выполняет действие старт а установят или останавливают в классической группе VM облачными службами. |
@@ -225,11 +225,11 @@ ms.locfileid: "81261369"
 
 1. Поиск и выбор **рабочих областей анализа журналов.**
 
-2. На странице **рабочих областей анализа журналов** выберите рабочее пространство.
+2. На странице рабочего пространства log Analytics выберите рабочее пространство.
 
 3. В меню, расположенном на странице параметров рабочей области, выберите **Удалить**.
 
-4. Если вы не хотите хранить компоненты учетной записи Azure Automation, вы можете удалить каждый из них вручную. Смотрите [компоненты решения](#solution-components).
+4. Если вы не хотите хранить [компоненты решения для](#solution-components)решения учетной записи Azure Automation, вы можете удалить каждый из них вручную.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

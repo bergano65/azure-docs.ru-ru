@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: trbye
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: d4e36c0d3838af85768453496a51ecd295c22b93
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: be3046a343e14be4a527363751081ba3f2593cd3
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79081851"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605892"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автопоезд модель прогноза временных рядов
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -205,12 +205,7 @@ fitted_model.named_steps['timeseriestransformer'].get_featurization_summary()
 
 Используйте лучшую итерацию модели для прогнозирования значений для набора тестовых данных.
 
-```python
-predict_labels = fitted_model.predict(test_data)
-actual_labels = test_labels.flatten()
-```
-
-Кроме того, вы `forecast()` можете использовать `predict()`функцию вместо, которая позволит спецификации, когда прогнозы должны начаться. В следующем примере вы сначала замените все значения `y_pred` `NaN`на . Прогноз происхождения будет в конце обучения данных в этом случае, `predict()`как это обычно бывает при использовании . Однако, если вы заменили `y_pred` `NaN`только вторую половину с , функция оставит числовые значения `NaN` в первой половине неизменены, но прогноз значения во второй половине. Функция возвращает как прогнозируемые значения, так и выровненные объекты.
+Функция `forecast()` должна использоваться `predict()`вместо, это позволит спецификации, когда прогнозы должны начаться. В следующем примере вы сначала замените все значения `y_pred` `NaN`на . Прогноз происхождения будет в конце обучения данных в этом случае, `predict()`как это обычно бывает при использовании . Однако, если вы заменили `y_pred` `NaN`только вторую половину с , функция оставит числовые значения `NaN` в первой половине неизменены, но прогноз значения во второй половине. Функция возвращает как прогнозируемые значения, так и выровненные объекты.
 
 Можно также использовать `forecast_destination` параметр `forecast()` в функции для прогнозирования значений до указанной даты.
 

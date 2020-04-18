@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7fcfac923da1c0daee58b10d92cbc6a6ad5e7910
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 625efcce7305cd7b1dd415a286e6b1e92682cc0a
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383408"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81616848"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование вычислительных целей для обучения модели 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -231,7 +231,7 @@ Azure HDInsight — это популярная платформа для ан�
 Теперь, когда вы прикрепили вычисление и настроили пробег, следующим шагом будет [отправка обучаемого запуска.](#submit)
 
 
-### <a name="azure-batch"></a><a id="azbatch"></a>Пакетная служба Azure 
+### <a name="azure-batch"></a><a id="azbatch"></a>Пакет Azure 
 
 Azure Batch используется для эффективного запуска крупномасштабных параллельных и высокопроизводительных вычислительных (HPC) приложений в облаке. AzureBatchStep можно использовать в конвейере машин ногой Azure для отправки заданий в пул машин Azure Batch.
 
@@ -425,7 +425,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 Вы можете использовать расширение [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и [машинного обучения CLI](reference-azure-machine-learning-cli.md) для создания конфигураций выполнения и отправки запусков по различным вычислительным целям. Следующие примеры предполагают, что у вас есть существующее рабочее пространство `az login` для обучения машин Azure, и вы вошли в Azure с помощью команды CLI. 
 
-[!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)]
+[!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)] 
 
 ### <a name="create-run-configuration"></a>Создание конфигурации запуска
 
@@ -514,7 +514,7 @@ az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configur
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Учебник: Поезд модель](tutorial-train-models-with-aml.md) использует управляемую цель вычислений для обучения модели.
 * Узнайте, как [эффективно настроить гиперпараметры](how-to-tune-hyperparameters.md) для построения лучших моделей.

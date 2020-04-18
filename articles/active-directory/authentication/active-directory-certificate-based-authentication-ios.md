@@ -1,35 +1,32 @@
 ---
 title: Проверка подлинности на основе сертификатов на iOS - Активный каталог Azure
-description: Узнайте о поддерживаемых сценариях и требованиях к настройке аутентификации на основе сертификата в решениях на устройствах iOS.
+description: Узнайте об поддерживаемых сценариях и требованиях к настройке проверки подлинности на основе сертификатов для Active Directory Azure в решениях с устройствами iOS
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/15/2018
+ms.date: 04/17/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
-ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fd8a0c3688e5056c7941d334da8caee9f21ba82
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 76c5e18a0bf84e96476eafd7ff35398049f1a492
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81407265"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639628"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве iOS
 
-Для устройств iOS можно применять аутентификацию на основе сертификатов (CBA) в Azure Active Directory. При этом на устройстве используется сертификат клиента при подключении к:
+Для повышения безопасности устройства iOS могут использовать проверку подлинности на основе сертификатов (CBA) для проверки подлинности в Active Directory (Azure AD) с помощью сертификата клиента на своем устройстве при подключении к следующим приложениям или службам:
 
 * мобильным приложениям Office, таким как Microsoft Outlook и Microsoft Word;
 * клиентам Exchange ActiveSync (EAS).
 
-Настройка данной функции избавляет от необходимости ввода имени пользователя и пароля в определенных почтовых клиентах и приложениях Microsoft Office на мобильных устройствах.
+Использование сертификатов устраняет необходимость ввода комбинации имени пользователя и паролей в определенные почтовые и приложения Microsoft Office на мобильном устройстве.
 
-Эта тема предоставляет вам требования и поддерживаемые сценарии настройки CBA на устройстве iOS для пользователей арендаторов в планах Office 365 Enterprise, Business, Education, Government US, China и Germany.
-
-В тарифных планах Office 365 US Government Defense и Federal доступна предварительная версия этой функции.
+В этой статье подробно описаны требования и поддерживаемые сценарии настройки ЦБА на устройстве iOS. CBA для iOS доступен в общедоступных облаках Azure, Microsoft Government Cloud, Microsoft Cloud Germany и Microsoft Azure China 21Vianet.
 
 ## <a name="microsoft-mobile-applications-support"></a>Поддержка мобильных приложений Microsoft
 
@@ -48,38 +45,48 @@ ms.locfileid: "81407265"
 
 ## <a name="requirements"></a>Требования
 
-Устройство должно иметь операционную систему iOS 9 и более поздней версии.
+Для использования CBA с iOS применяются следующие требования и соображения:
 
-Необходимо настроить сервер федерации.
+* Версия оС устройства должна быть iOS 9 или выше.
+* Для приложений Office на iOS требуется Microsoft Authenticator.
+* Предпочтение идентификации должно быть создано в macOS Keychain, которые включают URL-адрес проверки подлинности сервера ADFS. Для получения дополнительной информации [см.](https://support.apple.com/guide/keychain-access/create-an-identity-preference-kyca6343b6c9/mac)
 
-Для приложений Office на iOS требуется Microsoft Authenticator.
+Следующие требования и соображения Федерации активных директоров (ADFS):
 
-Чтобы служба Azure Active Directory могла отзывать сертификат клиента, маркер AD FS должен иметь следующие утверждения:
+* Сервер ADFS должен быть включен для проверки подлинности сертификата и использования федеративной аутентификации.
+* Сертификат должен использовать расширенное использование ключей (EKU) и содержать UPN пользователя в *альтернативном имени субъекта (NT Основное имя)*.
 
-* `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>` (серийный номер сертификата клиента);
-* `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>` (строка для издателя сертификата клиента).
+## <a name="configure-adfs"></a>Настройка AD FS
 
-Azure Active Directory добавляет эти утверждения в маркер обновления, если они доступны в маркере AD FS (или любом другом токене SAML). Когда требуется проверить маркер обновления, эта информация используется для проверки отзыва.
+Для отзыва сертификата клиента Azure AD должен иметь следующие претензии. Azure AD добавляет эти утверждения в маркер обновления, если они доступны в токене ADFS (или любом другом токене SAML). Когда маркер обновления должен быть проверен, эта информация используется для проверки отзыва:
 
-Рекомендуем обновить страницы ошибок AD FS вашей организации следующими сведениями:
+* `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`- добавить серийный номер сертификата клиента
+* `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`- добавьте строку для эмитента сертификата клиента
 
-* требованием установки Microsoft Authenticator для iOS;
+В качестве наилучшей практики следует также обновлять страницы ошибок ADFS организации со следующей информацией:
+
+* Требование об установке Microsoft Authenticator на iOS.
 * инструкциями о получении сертификата пользователя.
 
-Дополнительные сведения см. в статье о [настройке страниц входа AD FS](https://technet.microsoft.com/library/dn280950.aspx).
+Для получения дополнительной [информации, см Настройка AD FS знак на странице](https://technet.microsoft.com/library/dn280950.aspx).
 
-Некоторые приложения Office (с помощью современной аутентификации) отправляют *'prompt'login'* в Azure AD в своем запросе. По умолчанию Azure AD переводит *'prompt'login'* в запросе в ADFS как '*wauth'usernamepassworduri'*(просит ADFS сделать U/P Auth) и *'wfresh'0'*(просит ADFS игнорировать состояние SSO и сделать новую аутентификацию). Чтобы включить проверку подлинности на основе сертификатов для этих приложений, необходимо изменить поведение Azure AD по умолчанию. Просто установите '*PromptLoginBehavior*' в ваших федеративных настройках домена на '*Инвалидов'.*
-Для выполнения этой задачи можно использовать командлет [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0):
+## <a name="use-modern-authentication-with-office-apps"></a>Используйте современную аутентификацию с приложениями Office
 
-`Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled`
+Некоторые приложения Office с современной аутентификацией позволили отправить `prompt=login` в Azure AD в своем запросе. По умолчанию Azure AD переводится `prompt=login` в запросе в ADFS как `wauth=usernamepassworduri` (просит ADFS сделать U/P Auth) и `wfresh=0` (просит ADFS игнорировать состояние SSO и сделать новую аутентификацию). Если для этих приложений требуется включить проверку подлинности на основе сертификатов, измените поведение Azure AD по умолчанию.
 
-## <a name="exchange-activesync-clients-support"></a>Поддержка клиентов Exchange ActiveSync
+Чтобы обновить поведение по умолчанию, установите '*PromptLoginBehavior'* в настройках федеративного домена для *инвалидов.* Для выполнения этой задачи можно использовать [cmdlet MSOLDomainFederationSettings,](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) как показано в следующем примере:
 
-В iOS версии 9 и выше поддерживается собственный почтовый клиент iOS. Чтобы определить, поддерживается ли эта функция во всех остальных приложениях Exchange ActiveSync, обратитесь к разработчику приложения.
+```powershell
+Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled
+```
+
+## <a name="support-for-exchange-activesync-clients"></a>Поддержка клиентов Exchange ActiveSync
+
+В iOS версии 9 и выше поддерживается собственный почтовый клиент iOS. Чтобы определить, поддерживается ли эта функция для всех других приложений Exchange ActiveSync, свяжитесь с разработчиком приложения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы настроить аутентификацию на основе сертификата в своей среде, ознакомьтесь с инструкциями в статье [Get started with certificate-based authentication in Azure Active Directory](../authentication/active-directory-certificate-based-authentication-get-started.md) (Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory).
+Чтобы настроить проверку подлинности на основе сертификатов в среде, [см.](active-directory-certificate-based-authentication-get-started.md)
 
 <!--Image references-->
 [1]: ./media/active-directory-certificate-based-authentication-ios/ic195031.png

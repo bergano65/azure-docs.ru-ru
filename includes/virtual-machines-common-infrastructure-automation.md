@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: f2eb503b58f1679d138b6a1dd9304896be098ad6
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: 7c1ad2581d025a9259c5cb2a84e4237f938fc892
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80419158"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81637151"
 ---
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
 
@@ -116,16 +116,16 @@ ms.locfileid: "80419158"
 - [Приступая к работе с DSC службы автоматизации Azure](../articles/automation/automation-dsc-getting-started.md)
 
 
-## <a name="azure-devops-services"></a>Azure DevOps Services
+## <a name="azure-devops-services"></a>Azure DevOps Services
 [Azure DevOps Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки (CI/CD). Azure DevOps Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать код на них.
 
 См. также:
 
-- [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
+- [Услуги Azure DevOps](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
 
 
 ## <a name="jenkins"></a>Jenkins
-[Jenkins](https://www.jenkins.io) — это сервер непрерывной интеграции, который помогает развертывать и тестировать приложения, а также создать автоматизированные конвейеры доставки кода. Базовую платформу Jenkins можно расширить с помощью большого количества подключаемых модулей, а веб-перехватчики позволяют интегрировать ее с другими продуктами. Вы можете вручную установить Jenkins на виртуальной машине Azure, запустить Jenkins в контейнере Docker или использовать готовый образ Azure Marketplace.
+[Jenkins](https://jenkins.io) — это сервер непрерывной интеграции, который помогает развертывать и тестировать приложения, а также создать автоматизированные конвейеры доставки кода. Базовую платформу Jenkins можно расширить с помощью большого количества подключаемых модулей, а веб-перехватчики позволяют интегрировать ее с другими продуктами. Вы можете вручную установить Jenkins на виртуальной машине Azure, запустить Jenkins в контейнере Docker или использовать готовый образ Azure Marketplace.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -143,5 +143,5 @@ ms.locfileid: "80419158"
 - [Скачать шаблон для VM](../articles/virtual-machines/windows/download-template.md).
 - [Создайте шаблон Azure Image Builder.](../articles/virtual-machines/linux/image-builder-json.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](../articles/virtual-machines/linux/tutorial-automate-vm-deployment.md) или [Windows](../articles/virtual-machines/windows/tutorial-automate-vm-deployment.md).

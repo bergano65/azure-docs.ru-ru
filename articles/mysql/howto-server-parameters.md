@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 4/1/2020
-ms.openlocfilehash: 715f1028597d76915d833b0ade66bc03d939030d
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.date: 4/16/2020
+ms.openlocfilehash: bd0a867cce9b2a9ad793b491b9042034ef5810f5
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80546444"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605159"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure
 
@@ -60,7 +60,8 @@ ms.locfileid: "80546444"
 |innodb_file_per_table для уровня "Базовый"|OFF|
 |innodb_flush_log_at_trx_commit|1|
 |sync_binlog|1|
-|innodb_log_file_size|512 МБ|
+|innodb_log_file_size|256MB|
+|innodb_log_files_in_group|2|
 
 Для остальных параметров сервера, которые не перечислены выше, устанавливаются значения MySQL по умолчанию для версий [5.7](https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html) и [5.6](https://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html).
 

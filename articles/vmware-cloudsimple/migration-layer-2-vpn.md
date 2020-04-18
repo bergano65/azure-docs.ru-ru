@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 2ddfa9611143d5c3f823539e018c8afc885c6a46
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1f5ff48f4d5a658a1bbb4e6b9fb4b3f0f3fb190f
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77083230"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81602691"
 ---
 # <a name="migrate-workloads-using-layer-2-stretched-networks"></a>Перенос рабочих нагрузок с помощью растянутых сетей уровня 2
 
@@ -57,10 +57,10 @@ L2VPN на основе растяжения слоя 2 сетей может р
 
 | vСфера версия | Тип исходного кода vSwitch | Виртуальный драйвер NIC | Целевой vSwitch Тип | Поддержка |
 ------------ | ------------- | ------------ | ------------- | ------------- 
-| All | Dvs | All | Dvs | Да |
+| Все | Dvs | Все | Dvs | Да |
 | vСфера 6.7UI или выше, 6.5P03 или выше | Dvs | VMXNET3 | N-VDS | Да |
 | vСфера 6.7UI или выше, 6.5P03 или выше | Dvs | E1000 | N-VDS | [Не поддерживается на VWware](https://kb.vmware.com/s/article/56991) |
-| vSphere 6.7UI или 6.5P03, NSX-V или версии ниже NSX-T2.2, 6.5P03 или выше | All | All | N-VDS | [Не поддерживается на VWware](https://kb.vmware.com/s/article/56991) |
+| vSphere 6.7UI или 6.5P03, NSX-V или версии ниже NSX-T2.2, 6.5P03 или выше | Все | Все | N-VDS | [Не поддерживается на VWware](https://kb.vmware.com/s/article/56991) |
 
 По состоянию на VMware NSX-T 2.3 релиз:
 
@@ -73,7 +73,7 @@ L2VPN на основе растяжения слоя 2 сетей может р
 
 ### <a name="on-premises-network-where-the-standalone-esg-l2-vpn-client-is-deployed"></a>На территории сети, где развернут автономный ESG (L2 VPN клиент)
 
-| **Item** | **Значение** |
+| **Элемент** | **Значение** |
 |------------|-----------------|
 | Сетевое имя | MGMT_NET_VLAN469 |
 | Виртуальная локальная сеть | 469 |
@@ -83,14 +83,14 @@ L2VPN на основе растяжения слоя 2 сетей может р
 
 ### <a name="on-premises-network-to-be-stretched"></a>Локальная сеть будет растянута
 
-| **Item** | **Значение** |
+| **Элемент** | **Значение** |
 |------------|-----------------|
 | Виртуальная локальная сеть | 472 |
 | CIDR| 10.250.3.0/24 |
 
 ### <a name="private-cloud-ip-schema-for-nsx-t-tier0-router-l2-vpn-serve"></a>Схема Private Cloud IP для маршрутизатора NSX-T Tier0 (L2 VPN serve)
 
-| **Item** | **Значение** |
+| **Элемент** | **Значение** |
 |------------|-----------------|
 | Интерфейс Loopback | 192.168.254.254/32 |
 | Интерфейс туннеля | 5.5.5.1/29 |
@@ -99,7 +99,7 @@ L2VPN на основе растяжения слоя 2 сетей может р
 
 ### <a name="private-cloud-network-to-be-mapped-to-the-stretched-network"></a>Сеть private Cloud будет отображаться с растянутой сетью
 
-| **Item** | **Значение** |
+| **Элемент** | **Значение** |
 |------------|-----------------|
 | Виртуальная локальная сеть | 712 |
 | CIDR| 10.200.15.0/24 |
@@ -108,7 +108,7 @@ L2VPN на основе растяжения слоя 2 сетей может р
 
 Следующие шаги показывают, как получить логический идентификатор tier0 DR логический экземпляр маршрутизатора для служб IPsec и L2VPN. Идентификатор логических маршрутизаторов необходим позже при реализации L2VPN.
 
-1. Войти на NSX-T**Overview**Manager https://*nsx-t-manager-ip-адрес* и выберите Обзор поставщика **сетевых** > **маршрутизаторов-** > **LR.** >  Для **режима высокой доступности**выберите **Active-Standby.** Это действие открывает всплывающее окно, которое показывает Edge VM, на котором в настоящее время активен маршрутизатор Tier0.
+1. `https://*nsx-t-manager-ip-address*` Вопийте в NSX-T Manager и выберите**обзор**поставщика **сетевых** > **маршрутизаторов.** > **Provider-LR** >  Для **режима высокой доступности**выберите **Active-Standby.** Это действие открывает всплывающее окно, которое показывает Edge VM, на котором в настоящее время активен маршрутизатор Tier0.
 
     ![Выберите активный режим ожидания](media/l2vpn-fetch01.png)
 
@@ -163,7 +163,7 @@ L2VPN на основе растяжения слоя 2 сетей может р
 
     ![Создание списка префиксов IP](media/l2vpn-routing-security02.png)
 
-4. Вопийте в NSX-T Manager и выберите **сетевые** >  >  > **маршрутизаторы** > **Provider-LR****Маршрутизируя** > **BGP** > **Соседи.****Routing** Выберите первого соседа. Нажмите **Edit** > **Адрес семьи**. Для семейства IPv4 отредагите столбец **«Из вне фильтра»** и выберите созданный список префиксов IP. Нажмите **Сохранить**. Повторите этот шаг для второго соседа.
+4. Вопийте в NSX-T Manager и выберите **сетевые** >  >  > **маршрутизаторы** > **Provider-LR****Маршрутизируя** > **BGP** > **Соседи.****Routing** Выберите первого соседа. Нажмите **Edit** > **Адрес семьи**. Для семейства IPv4 отредагите столбец **«Из вне фильтра»** и выберите созданный список префиксов IP. Выберите команду **Сохранить**. Повторите этот шаг для второго соседа.
 
     ![Прикрепите список](media/l2vpn-routing-security03.png) ![ip префикса 1 Attach IP список префикс 2](media/l2vpn-routing-security04.png)
 
@@ -180,7 +180,7 @@ IP-адреса, выбранные для loopback и туннельного и
 ```
 Loopback interface ip : 192.168.254.254/32
 Tunnel interface subnet : 5.5.5.0/29
-Logical-router ID : UUID of Tier0 DR logical router obtained in section “Steps to fetch Logical-Router ID needed for L2VPN”
+Logical-router ID : UUID of Tier0 DR logical router obtained in section "Steps to fetch Logical-Router ID needed for L2VPN"
 Logical-switch ID(Stretch) : UUID of Stretch Logical Switch obtained earlier
 IPSec Service ID :
 IKE profile ID :
@@ -356,7 +356,7 @@ POST : https://192.168.110.201/api/v1/vpn/l2vpn/services
 
 Для следующей команды POST идентификатор службы L2VPN — это идентификатор, который вы только что получили, а идентификатор сессии IPsec VPN — это идентификатор, полученный в предыдущем разделе.
 
-``` 
+```    
 POST: https://192.168.110.201/api/v1/vpn/l2vpn/sessions
 
 {
@@ -428,7 +428,7 @@ GET https://192.168.110.201/api/v1/vpn/l2vpn/sessions/<session-id>/peer-codes
 
     ![Скачать автономный клиент NSX Edge](media/l2vpn-deploy-client01.png)
 
-2. Перейти к папке со всеми извлеченными файлами. Выберите все vmdks (NSX-l2t-client-large.mf и NSX-l2t-client-large.ovf для большого размера прибора или NSX-l2t-client-Xlarge.mf и NSX-l2t-client-Xlarge.ovf для дополнительного размера прибора большого размера). Нажмите кнопку **Далее**.
+2. Перейти к папке со всеми извлеченными файлами. Выберите все vmdks (NSX-l2t-client-large.mf и NSX-l2t-client-large.ovf для большого размера прибора или NSX-l2t-client-Xlarge.mf и NSX-l2t-client-Xlarge.ovf для дополнительного размера прибора большого размера). Щелкните **Далее**.
 
     ![Выберите](media/l2vpn-deploy-client02.png) ![шаблон шаблона Выберите](media/l2vpn-deploy-client03.png)
 
@@ -440,7 +440,7 @@ GET https://192.168.110.201/api/v1/vpn/l2vpn/sessions/<session-id>/peer-codes
 
     ![Выберите хранилище данных](media/l2vpn-deploy-client06.png)
 
-5. Выберите правильные группы портов для Trunk (Trunk PG), Public (Uplink PG) и интерфейс HA (Uplink PG) для отдельного клиента NSX-T. Нажмите кнопку **Далее**.
+5. Выберите правильные группы портов для Trunk (Trunk PG), Public (Uplink PG) и интерфейс HA (Uplink PG) для отдельного клиента NSX-T. Щелкните **Далее**.
 
     ![Выберите группы портов](media/l2vpn-deploy-client07.png)
 

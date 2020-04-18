@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 213fb6e73ae2fc4314320d0e3e593632d8eb7f85
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7d0ef55f6f5117ffa77052118155afea716125a4
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79266446"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639728"
 ---
 # <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Интеграция журналов Azure AD с журналами Azure Monitor
 
@@ -59,6 +59,10 @@ ms.locfileid: "79266446"
 * Клиент Azure AD.
 * Пользователь, который является *глобальным администратором* или *администратором безопасности* для этого клиента Azure AD.
 * Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
+
+## <a name="licensing-requirements"></a>Требования к лицензированию
+
+Для использования этой функции требуется лицензия Azure AD Premium P1 или P2. Чтобы найти подходящую лицензию, ознакомьтесь с разделом [Сравнение общедоступных функций выпусков Free, Basic и Premium](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ## <a name="send-logs-to-azure-monitor"></a>Отправка журналов на монитор Azure
 

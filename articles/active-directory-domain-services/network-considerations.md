@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 69f8cd0f78a45c6c5e53368edc5902c4b6695701
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: e610bf94dfdee4e2765e4fae4259f18a9f1036b5
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80408838"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639981"
 ---
 # <a name="virtual-network-design-considerations-and-configuration-options-for-azure-ad-domain-services"></a>Соображения виртуального проектирования сети и параметры конфигурации для служб доменов Azure AD
 
@@ -109,10 +109,11 @@ ms.locfileid: "80408838"
 | 443         | TCP      | AzureActiveDirectoryDomainServices | Любой         | Allow  | Да      | Синхронизация с вашим арендатором Azure AD. |
 | 3389        | TCP      | CorpNetSaw                         | Любой         | Allow  | Да      | Управление вашим доменом. |
 | 5986        | TCP      | AzureActiveDirectoryDomainServices | Любой         | Allow  | Да      | Управление вашим доменом. |
-| 636         | TCP      | Любой                                | Любой         | Allow  | Нет       | Включен только при настройке безопасного LDAP (LDAPS). |
 
 > [!WARNING]
 > Не отодевайте вручную эти сетевые ресурсы и конфигурации. При связывании неправильно настроенной группы сетевой безопасности или определенной пользователем таблицы маршрутов с подсетью, в которой развернутА DS Azure AD, вы можете нарушить возможность Microsoft обслуживать и управлять доменом. Синхронизация между вашим арендатором Azure AD и доменом Azure AD DS также нарушена.
+>
+> Если вы используете безопасный LDAP, вы можете добавить требуемое правило TCP port 636, чтобы при необходимости разрешить внешний трафик. Добавление этого правила не размещает правила группы сетевой безопасности в неподдерживаемом состоянии. Для получения дополнительной [информации, см. Блокировка вниз безопасный доступ LDAP через Интернет](tutorial-configure-ldaps.md#lock-down-secure-ldap-access-over-the-internet)
 >
 > По умолчанию правила для *AllowVnetInBound*, *AllowAzureLoadBalancerInBound*, *DenyAllInBound*, *AllowVnetOutBound*, *AllowInternetOutBound*, и *DenyAllOutBound* также существуют для группы сетевой безопасности. Не издавайте и не удаляйте эти правила по умолчанию.
 >
@@ -157,7 +158,7 @@ ms.locfileid: "80408838"
 > [!CAUTION]
 > Эти диапазоны IP-адресов Центра обработки данных Azure могут изменяться без предварительного уведомления. Убедитесь, что у вас есть процессы для проверки последних IP-адресов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительной информации о некоторых сетевых ресурсах и вариантах подключения, используемых Azure AD DS, см.
 

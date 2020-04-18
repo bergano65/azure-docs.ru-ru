@@ -8,12 +8,12 @@ ms.date: 09/23/2019
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 3d5f3ade3ef3b79ddb3996b5bf2d609b11aff8a5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0bbffacc0a8c47950b8637e826d1d5db9fbdb234
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79255968"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605070"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -75,7 +75,7 @@ ms.locfileid: "79255968"
   * [Приложение 4: Использование Excel для просмотра метрик и данных журналов]
   * [Приложение 5: Мониторинг с помощью анализа приложений для Azure DevOps]
 
-## <a name="introduction"></a><a name="introduction"></a>Вступление
+## <a name="introduction"></a><a name="introduction"></a>Введение
 В этом руководстве показано, как с помощью таких функций, как Azure Storage Analytics, ведение журналов на стороне клиента в клиентской библиотеке хранилища Azure и прочих сторонних инструментов, выявлять, диагностировать и устранять неполадки, связанные с хранилищем Azure.
 
 ![][1]
@@ -478,7 +478,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | Microsoft.Azure.Хранение |Предупреждение |2 |85d077ab -… |Во время операции возникло исключение: удаленный сервер вернул ошибку 403 (Запрещено). |
 | Microsoft.Azure.Хранение |Сведения |3 |85d077ab -… |Проверка необходимости в повторной попытке выполнения операции. Число повторных попыток = 0; код состояния HTTP = 403; исключение = удаленный сервер вернул ошибку 403 (Запрещено). |
 | Microsoft.Azure.Хранение |Сведения |3 |85d077ab -… |Следующим установлено расположение «Основное» в соответствием с режимом расположения. |
-| Microsoft.Azure.Хранение |Error |1 |85d077ab -… |Retry policy did not allow for a retry. Failing with The remote server returned an error: (403) Forbidden. (Политика повтора не позволила выполнить повтор. Сбой, при котором удаленный сервер вернул ошибку: (403) — запрещено.) |
+| Microsoft.Azure.Хранение |Ошибка |1 |85d077ab -… |Retry policy did not allow for a retry. Failing with The remote server returned an error: (403) Forbidden. (Политика повтора не позволила выполнить повтор. Сбой, при котором удаленный сервер вернул ошибку: (403) — запрещено.) |
 
 В этой ситуации вам нужно разобраться, почему срок действия маркера SAS истекает, до того как клиент отправит его серверу.
 
@@ -516,24 +516,24 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 | Request ID (ИД запроса) | Operation Text |
 | --- | --- |
-| 07b26a5d-... |Отправка синхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
+| 07b26a5d-... |Отправка синхронного запроса к `https://domemaildist.blob.core.windows.net/azuremmblobcontainer`. |
 | 07b26a5d-... |StringToSign = HEAD............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:11 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | 07b26a5d-... |Waiting for response (Ожидание ответа). |
 | 07b26a5d-... |Response received. Status code = 200, Request ID = eeead849-...Content-MD5 = , ETag =    &quot;0x8D14D2DC63D059B&quot;. |
 | 07b26a5d-... |Response headers were processed successfully, proceeding with the rest of the operation (Заголовки ответа успешно обработаны, продолжается выполнение операции). |
 | 07b26a5d-... |Downloading response body (Загружается тело ответа). |
 | 07b26a5d-... |Operation completed successfully (Операция выполнена успешно). |
-| 07b26a5d-... |Отправка синхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
+| 07b26a5d-... |Отправка синхронного запроса к `https://domemaildist.blob.core.windows.net/azuremmblobcontainer`. |
 | 07b26a5d-... |StringToSign = DELETE............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:12    GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | 07b26a5d-... |Waiting for response (Ожидание ответа). |
 | 07b26a5d-... |Response received. Status code = 202, Request ID = eeead849-...Content-MD5 = , ETag = . (Ответ получен. Код состояния = 202, ИД запроса = eeead849-...Content-MD5 = , ETag = .) |
 | 07b26a5d-... |Response headers were processed successfully, proceeding with the rest of the operation (Заголовки ответа успешно обработаны, продолжается выполнение операции). |
 | 07b26a5d-... |Downloading response body (Загружается тело ответа). |
 | 07b26a5d-... |Operation completed successfully (Операция выполнена успешно). |
-| e2d06d78-... |Отправка асинхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer.</td> |
+| e2d06d78-... |Отправка асинхронного запроса к `https://domemaildist.blob.core.windows.net/azuremmblobcontainer`.</td> |
 | e2d06d78-... |StringToSign = HEAD............x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | e2d06d78-... |Waiting for response (Ожидание ответа). |
-| de8b1c3c-... |Отправка синхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer/blobCreated.txt. |
+| de8b1c3c-... |Отправка синхронного запроса к `https://domemaildist.blob.core.windows.net/azuremmblobcontainer/blobCreated.txt`. |
 | de8b1c3c-... |StringToSign = PUT...64.qCmF+TQLPhq/YYK50mP9ZQ==........x-ms-blob-type:BlockBlob.x-ms-client-request-id:de8b1c3c-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer/blobCreated.txt. |
 | de8b1c3c-... |Preparing to write request data (Подготовка к записи данных запроса). |
 | e2d06d78-... |Exception thrown while waiting for response: The remote server returned an error: (404) Not Found. (Возникло исключение при ожидании ответа. Удаленный сервер вернул ошибку: (404) — не найдено.) |
@@ -541,7 +541,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | e2d06d78-... |Response headers were processed successfully, proceeding with the rest of the operation (Заголовки ответа успешно обработаны, продолжается выполнение операции). |
 | e2d06d78-... |Downloading response body (Загружается тело ответа). |
 | e2d06d78-... |Operation completed successfully (Операция выполнена успешно). |
-| e2d06d78-... |Отправка асинхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
+| e2d06d78-... |Отправка асинхронного запроса к `https://domemaildist.blob.core.windows.net/azuremmblobcontainer`. |
 | e2d06d78-... |StringToSign = PUT...0.........x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | e2d06d78-... |Waiting for response (Ожидание ответа). |
 | de8b1c3c-... |Writing request data (Запись данных запроса). |
@@ -562,15 +562,15 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 В этой таблице показан пример сообщения журнала на стороне сервера из файла журнала хранилища:
 
-| name | Значение |
+| Имя | Значение |
 | --- | --- |
 | Request start time (Время начала запроса) | 2014-05-30T06:17:48.4473697Z |
 | Operation type (Тип операции)     | GetBlobProperties            |
 | Request status (Состояние запроса)     | SASAuthorizationError        |
-| HTTP status code (Код состояния HTTP)   | 404                          |
+| HTTP status code (Код состояния HTTP)   | 404                            |
 | Authentication type (Тип проверки подлинности)| SAS                          |
 | Service type (Тип службы)       | BLOB-объект                         |
-| Request URL (URL-адрес запроса)        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
+| Request URL (URL-адрес запроса)         | `https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt` |
 | &nbsp;                 |   ?sv=2014-02-14&sr=c&si=mypolicy&sig=XXXXX&;api-version=2014-02-14 |
 | Request ID header (Заголовок идентификатора запроса)  | a1f348d5-8032-4912-93ef-b393e5252a3b |
 | Идентификатор запроса клиента  | 2d064953-8436-4ee0-aa0c-65cb874f7929 |
@@ -739,7 +739,7 @@ sqllocaldb create v11.0
 4. В текстовом поле **Capture Filter** (Фильтр захвата) добавьте фильтр. Например, при использовании фильтра **host contosoemaildist.table.core.windows.net** Wireshark будет захватывать только пакеты, отправляемые в конечную точку службы таблиц в учетной записи хранения **contosoemaildist** или из нее. Ознакомьтесь с [полным списком фильтров захвата](https://wiki.wireshark.org/CaptureFilters).
 
    ![][6]
-5. Щелкните **Пуск**. Средство Wireshark будет захватывать все пакеты, отправляемые в конечную точку службы таблиц или из нее в процессе работы клиентского приложения на локальном компьютере.
+5. Нажмите **Запуск**. Средство Wireshark будет захватывать все пакеты, отправляемые в конечную точку службы таблиц или из нее в процессе работы клиентского приложения на локальном компьютере.
 6. По завершении в главном меню выберите пункт **Захват**, а затем пункт **Остановить**.
 7. Чтобы сохранить полученные данные в файл захвата Wireshark, в главном меню выберите пункт **Файл**, а затем пункт **Сохранить**.
 
@@ -814,7 +814,7 @@ contosodata.blob.core.windows.net contosodata.table.core.windows.net contosodata
 Для получения дополнительной информации об аналитике в Хранилище Azure см.
 
 * [Мониторинг учетной записи хранения на портале Azure](storage-monitor-storage-account.md)
-* [Аналитика хранения данных](storage-analytics.md)
+* [Аналитика службы хранилища](storage-analytics.md)
 * [Показатели аналитики хранения данных](storage-analytics-metrics.md)
 * [Схема таблицы аналитики хранения данных](/rest/api/storageservices/storage-analytics-metrics-table-schema)
 * [Журналы решения "Аналитика Службы хранилища"](storage-analytics-logging.md)

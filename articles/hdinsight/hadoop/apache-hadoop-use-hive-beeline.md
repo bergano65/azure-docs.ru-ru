@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 03/09/2020
-ms.openlocfilehash: 426294f20dd51538920182a0e7a2915f6a47ba54
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.date: 04/17/2020
+ms.openlocfilehash: 10e53b6b7b79e7d4581a1843b70b3d02778e8df5
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383560"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617790"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
 
@@ -40,7 +40,8 @@ beeline -u 'jdbc:hive2://headnodehost:10001/;transportMode=http'
 beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/;transportMode=http'
 ```
 
-<a name="replace-headnode-fqdn-with-the-fully-qualified-domain-name-of-a-cluster-headnode-to-find-the-fully-qualified-domain-name-of-a-headnode-use-the-information-in-the-manage-hdinsight-using-the-apache-ambari-rest-api-document"></a>Замените `<headnode-FQDN>` полностью квалифицированное доменное имя кластерного headnode. Чтобы найти полное доменное имя головного узла, используйте сведения из [этого раздела](../hdinsight-hadoop-manage-ambari-rest-api.md#get-the-fqdn-of-cluster-nodes).
+Замените `<headnode-FQDN>` полностью квалифицированное доменное имя кластерного headnode. Чтобы найти полное доменное имя головного узла, используйте сведения из [этого раздела](../hdinsight-hadoop-manage-ambari-rest-api.md#get-the-fqdn-of-cluster-nodes).
+
 ---
 
 ### <a name="to-hdinsight-enterprise-security-package-esp-cluster-using-kerberos"></a>Для кластера HDInsight Enterprise Security Package (ESP) с помощью Kerberos
@@ -84,11 +85,11 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 ### <a name="use-beeline-with-apache-spark"></a>Использование Beeline с Apache Spark
 
-Apache Spark предоставляет собственную реализацию HiveServer2, которая иногда называется сервером Thrift Spark. Для разрешения запросов эта служба использует Spark SQL вместо Hive и может обеспечить более высокую производительность в зависимости от запроса.
+Apache Spark предоставляет собственную реализацию HiveServer2, которая иногда называется сервером Thrift Spark. Эта услуга использует Spark S'L для решения запросов вместо Hive. И может обеспечить лучшую производительность в зависимости от вашего запроса.
 
 #### <a name="through-public-or-private-endpoints"></a>Через государственные или частные конечные точки
 
-Используемая строка соединения немного отличается. Вместо того, чтобы содержать `httpPath=/hive2` его `httpPath/sparkhive2`. Замените `clustername` на имя вашего кластера HDInsight. Замените `admin` учетной записью для входа в кластер. Для кластеров ESP используйте полный UPN (например, user@domain.com). Замените `password` паролем этой учетной записи.
+Используемая строка соединения немного отличается. Вместо того, чтобы содержать `httpPath=/hive2` его использует `httpPath/sparkhive2`. Замените `clustername` на имя вашего кластера HDInsight. Замените `admin` учетной записью для входа в кластер. Для кластеров ESP используйте полный UPN (например, user@domain.com). Замените `password` паролем этой учетной записи.
 
 ```bash
 beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p 'password'
@@ -118,7 +119,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 * Кластер Хадуп на HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
-* Обратите внимание на [схему URI](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для первичного хранилища кластера. Например, `wasb://` для хранилища `abfs://` Azure, для хранения azure `adl://` Data Lake Data Gen2 или для хранилища озер Azure Gen1. Если для хранилища Azure включена безопасная передача, URI — это `wasbs://`. Для получения дополнительной информации [см.](../../storage/common/storage-require-secure-transfer.md)
+* Обратите внимание на схему URI для первичного хранилища кластера. Например, `wasb://` для хранилища `abfs://` Azure, для хранения azure `adl://` Data Lake Data Gen2 или для хранилища озер Azure Gen1. Если для хранилища Azure включена безопасная передача, URI — это `wasbs://`. Для получения дополнительной информации [см.](../../storage/common/storage-require-secure-transfer.md)
 
 * Вариант 1: Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md). Большинство шагов в этом документе предполагают, что вы используете Билайн от сеанса SSH к кластеру.
 
@@ -177,7 +178,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
     Они описывают столбцы в таблице.
 
-5. Введите следующие инструкции для создания таблицы под названием **log4jLogs** с помощью выборочных данных, предоставленных кластером HDInsight: (Пересмотреть по мере необходимости на основе вашей [схемы URI.)](../hdinsight-hadoop-linux-information.md#URI-and-scheme)
+5. Введите следующие инструкции для создания таблицы под названием **log4jLogs,** используя выборочные данные, предоставленные кластером HDInsight: (Пересмотреть по мере необходимости на основе вашей схемы URI.)
 
     ```hiveql
     DROP TABLE log4jLogs;
@@ -244,7 +245,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 ## <a name="run-a-hiveql-file"></a>Запуск файла HiveQL.
 
-Это продолжение из предыдущего примера. Чтобы создать файл, а затем запустить его с помощью Beeline, выполните следующие действия.
+Этот пример является продолжением предыдущего примера. Чтобы создать файл, а затем запустить его с помощью Beeline, выполните следующие действия.
 
 1. Создайте файл **query.hql**, используя следующую команду.
 
@@ -300,7 +301,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 ## <a name="install-beeline-client"></a>Установка "Билайн клиента"
 
-Хотя Билайн включен в головные узлы кластера HDInsight, его можно установить на локальной машине.  Приведенные ниже шаги для установки Beeline на локальной машине основаны на [подсистеме Windows для Linux.](https://docs.microsoft.com/windows/wsl/install-win10)
+Хотя Билайн включен в головные узлы, вы можете установить его локально.  Шаги установки для локальной машины основаны на [подсистеме Windows для Linux.](https://docs.microsoft.com/windows/wsl/install-win10)
 
 1. Обновление списков пакетов. Введите следующую команду в оболочке Bash:
 
@@ -316,7 +317,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
         sudo apt install openjdk-11-jre-headless
         ```
 
-    1. Откройте файл bashrc (обычно можно найти `nano ~/.bashrc`в q/.bashrc): .
+    1. Откройте файл bashrc (часто встречается в `nano ~/.bashrc`q/.bashrc): .
 
     1. Вгоняй файл bashrc. В конце файла добавьте следующую строку:
 
@@ -358,7 +359,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 1. Проверьте соединение. Используйте формат соединения из [более государственных или частных конечных точек,](#over-public-or-private-endpoints)выше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Для получения более подробной информации о Hive в HDInsight, [см.](hdinsight-use-hive.md)
 

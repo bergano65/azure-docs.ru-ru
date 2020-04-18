@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/25/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 7ee219ae5ace0f0da398cc542f410d3c895c8bd4
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: ac7e721a863414cf0617177885e0ff1c9e9a35d4
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80679989"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617867"
 ---
 # <a name="troubleshoot"></a>Диагностика
 
@@ -38,7 +38,7 @@ ms.locfileid: "80679989"
 
 Во-первых, убедитесь, что установить **HEVC видео расширения,** как упоминалось в разделе [программного обеспечения](../overview/system-requirements.md#software) системных требований.
 
-Если вы все еще сталкиваетесь с проблемами, пожалуйста, убедитесь, что ваша видеокарта поддерживает H265 и у вас есть последний графический драйвер установлен. Ознакомьтесь с разделом [разработки ПК](../overview/system-requirements.md#development-pc) системных требований к конкретной информации поставщика.
+Если вы все еще сталкиваетесь с проблемами, убедитесь, что ваша видеокарта поддерживает H265 и у вас есть последний графический драйвер установлен. Ознакомьтесь с разделом [разработки ПК](../overview/system-requirements.md#development-pc) системных требований к информации, конкретной для поставщиков.
 
 **Кодек установлен, но не может быть использован:**
 
@@ -76,6 +76,14 @@ ms.locfileid: "80679989"
 
 * Ознакомьтесь с шагами по [выявлению проблем сети.](#unstable-holograms)
 * Ознакомьтесь с [системными требованиями](../overview/system-requirements.md#development-pc) к установке последнего графического драйвера.
+
+## <a name="video-recorded-with-mrc-does-not-reflect-the-quality-of-the-live-experience"></a>Видео, записанное с ПОМОЩЬю MRC, не отражает качество живого опыта
+
+Видео может быть записано на Hololens через [Смешанная реальность захвата (MRC)](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-capture-for-developers). Однако в результате видео имеет худшее качество, чем живой опыт по двум причинам:
+* Видео кадра ограничен на 30 Гц, в отличие от 60 Гц.
+* Видеоизображения не проходят через [поздний этап репроекции](../overview/features/late-stage-reprojection.md) обработки шаг, так что видео, как представляется, choppier.
+
+Оба являются присущими ограничениям техники записи.
 
 ## <a name="black-screen-after-successful-model-loading"></a>Черный экран после успешной загрузки модели
 
@@ -116,5 +124,5 @@ Azure Remote Rendering подключается к конвейеру визуа
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Системные требования](../overview/system-requirements.md)
+* [Требования к системе](../overview/system-requirements.md)
 * [Требования к сети](../reference/network-requirements.md)

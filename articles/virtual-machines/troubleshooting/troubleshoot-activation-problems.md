@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 11/15/2018
 ms.author: genli
-ms.openlocfilehash: 5c84588290ce769b556002469b6a11c6950bb878
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fd38f646b8dfc58839cd2645f7fadf7332693854
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79476558"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605989"
 ---
 # <a name="troubleshoot-azure-windows-virtual-machine-activation-problems"></a>Устранение неполадок при активации виртуальных машин Windows в Azure
 
@@ -39,7 +39,7 @@ Azure использует различные конечные точки для
 
 **Ошибка: 0xC004F074 Программное обеспечение LicensingService сообщил, что компьютер не может быть активирован. Связаться с Key ManagementService (KMS) не удалось. Для получения дополнительной информации ознакомьтесь с журналом событий приложения.**
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Как правило, неполадки при активации виртуальной машины в Azure возникают, если виртуальная машина Windows не настроена с помощью подходящего ключа установки клиента KMS или если возникает проблема при подключении виртуальной машины Windows к службе Azure KMS (kms.core.windows.net, порт 1688). 
 
@@ -77,7 +77,7 @@ Azure использует различные конечные точки для
 
 ### <a name="step-2-verify-the-connectivity-between-the-vm-and-azure-kms-service"></a>Шаг 2. Проверка сетевого подключения между виртуальной машиной и службой Azure KMS
 
-1. Скачать и извлечь инструмент [PSping](http:/technet.microsoft.com/sysinternals/jj729731.aspx) в локальную папку в VM, которая не активируется. 
+1. Скачать и извлечь инструмент [PSping](https://docs.microsoft.com/sysinternals/downloads/psping) в локальную папку в VM, которая не активируется. 
 
 2. Перейдите в меню "Пуск", найдите и щелкните правой кнопкой мыши Windows PowerShell, а затем выберите "Запуск от имени администратора".
 
@@ -98,7 +98,7 @@ Azure использует различные конечные точки для
 
    Если значение "потеряно" больше ноля, то это значит, что виртуальная машина не имеет подключения к серверу KMS. В такой ситуации, если виртуальная машина находится в виртуальной сети и указан пользовательский DNS-сервер, необходимо убедиться, что DNS-сервер способен разрешать адрес kms.core.windows.net. Или укажите такой DNS-сервер, который точно разрешает kms.core.windows.net.
 
-   Обратите внимание, что при удалении из виртуальной сети всех DNS-серверов виртуальные машины используют внутреннюю службу DNS Azure. Эта служба может разрешать kms.core.windows.net.
+   Обратите внимание, что при удалении всех DNS-серверов из виртуальной сети виртуальные виртуальные виртуальные компании используют внутренний DNS-сервис Azure. Эта служба может разрешать kms.core.windows.net.
   
     Также убедитесь, что исходящий сетевой трафик в конечную точку KMS с портом 1688 не блокируется брандмауэром в VM.
 
@@ -114,7 +114,7 @@ Azure использует различные конечные точки для
     
     **Активация Windows (R), издание ServerDatacenter (12345678-1234-1234-1234-12345678) ...  Продукт активирован успешно.**
 
-## <a name="faq"></a>часто задаваемые вопросы 
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ 
 
 ### <a name="i-created-the-windows-server-2016-from-azure-marketplace-do-i-need-to-configure-kms-key-for-activating-the-windows-server-2016"></a>Я создал Windows Server 2016 из Azure Marketplace. Нужно ли настраивать ключ KMS для активации Windows Server 2016? 
 

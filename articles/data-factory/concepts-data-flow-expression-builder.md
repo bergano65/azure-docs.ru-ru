@@ -7,16 +7,16 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.openlocfilehash: c28305cc55fcc561863670a15480782ce63e75b4
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: dda2812b5e2cc79d53658d568ba0845d593f41d6
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81415516"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605381"
 ---
 # <a name="build-expressions-in-mapping-data-flow"></a>Создание выражений в картировании потока данных
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 При картировании потока данных многие свойства преобразования вводятся в виде выражений. Эти выражения состоят из значений столбца, параметров, функций, операторов и буквальных значений, которые оценивают тип данных Spark во время выполнения.
 
@@ -113,7 +113,7 @@ regex_replace('100 and 200', '(\\d+)', 'digits')
 
 ![Массив «Строитель выражения»](media/data-flow/expb2.png "Предварительный просмотр данных выражения")
 
-## <a name="keyboard-shortcuts"></a>сочетания клавиш
+## <a name="keyboard-shortcuts"></a>Сочетания клавиш
 
 * Ctrl-K Ctrl-C: Комментарий всей линии.
 * Ctrl-K Ctrl-U: Некомментарий.

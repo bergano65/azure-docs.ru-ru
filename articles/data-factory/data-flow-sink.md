@@ -9,16 +9,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/12/2019
-ms.openlocfilehash: a728ec6f261b82d563aeb4a8f5c98bbd546f4400
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 4b10a4c98abd6bec4074bf35764a9cbb85d5b157
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81413215"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605971"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование раковины в потоке данных отображения
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 После преобразования данных можно погрузить данные в набор данных назначения. Каждый поток данных требует, по крайней мере, одного преобразования раковины, но вы можете написать столько раковин, сколько необходимо для завершения процесса преобразования. Чтобы написать на дополнительные раковины, создавайте новые потоки через новые ветви и условные сплиты.
 

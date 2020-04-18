@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 471b26ebc4bd4aecb814ec43c7eba56e3d764fa0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 16f9080487af95e7de5c5f8c91fd5c8d356b7bde
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78402491"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81618062"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning"></a>Используйте расширение CLI для машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -35,11 +35,30 @@ CLI для Машинного обучения Azure является расши
 
 * Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
-* [Лазурный CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+* Для использования команд CLI в этом документе из **локальной среды**необходим [Azure CLI.](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+
+    Если вы используете [облачную оболочку Azure,](https://azure.microsoft.com//features/cloud-shell/)то доступ к CLI осуществляется через браузер и живет в облаке.
 
 ## <a name="full-reference-docs"></a>Полные справочные документы
 
 Найдите [полные справочные документы для расширения Azure-cli-ml Azure CLI.](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/?view=azure-cli-latest)
+
+## <a name="connect-the-cli-to-your-azure-subscription"></a>Подключение интерфейса командной строки к своей подписке Azure
+
+> [!IMPORTANT]
+> Если вы используете оболочку облака Azure, вы можете пропустить этот раздел. Облачная оболочка автоматически проверяет подлинность с помощью учетной записи, вскакиваемых в подписку Azure.
+
+Существует несколько способов проверки подлинности подписки Azure с CLI. Наиболее основным является интерактивная аутентификативная проверка с помощью браузера. Чтобы проверить подлинность в интерактивном режиме, откройте командную строку или терминал и используйте следующую команду:
+
+```azurecli-interactive
+az login
+```
+
+Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. В противном случае вам нужно открыть браузер и следовать инструкциям по командной строке. Инструкции включают просмотр [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и ввод кода авторизации.
+
+[!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)]
+
+Для других методов проверки подлинности, [перепишитесь с Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
 ## <a name="install-the-extension"></a>Установка расширения
 
@@ -87,7 +106,7 @@ az extension remove -n azure-cli-ml
     az group create -n myresourcegroup -l westus2
     ```
 
-+ Создание рабочей области Машинного обучения Azure.
++ Создание рабочего пространства для машинНого обучения Azure:
 
     ```azurecli-interactive
     az ml workspace create -w myworkspace -g myresourcegroup
@@ -313,7 +332,7 @@ az extension remove -n azure-cli-ml
 
 | Поле JSON | Тип | Описание |
 |---|---|---|
-| `name` | `string` | Название окружающей среды. Не начинайте имя с **Microsoft** или **AzureML**. |
+| `name` | `string` | Имя среды. Не начинайте имя с **Microsoft** или **AzureML**. |
 | `version` | `string` | Версия окружающей среды. |
 | `environmentVariables` | `{string: string}` | Хэш-карта переменных имен и значений среды. |
 | `python` | [`PythonSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.pythonsection?view=azure-ml-py) | Объект, определяющий среду Python и интерпретатор для использования в ресурсе целевых вычислений. |

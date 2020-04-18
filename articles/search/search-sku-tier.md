@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: f103db1d0de7a9d538f56b8ade331dc856b26bce
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: eb11a5cc2deef372ca91c23a8b9c82e17143c85b
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80547019"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617704"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Выберите ценовой уровень для когнитивного поиска Azure
 
@@ -89,6 +89,8 @@ ms.locfileid: "80547019"
 | Растрескивание документов, извлечение изображений | Счет в соответствии с количеством изображений, извлеченных из ваших документов. В [конфигурации индекса](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-parameters) **imageAction** — это параметр, который запускает извлечение изображения. Если **imageAction** настроен на "нет" (по умолчанию), вы не будете платить за извлечение изображения. Ставка для извлечения изображений задокументирована на странице [ценовых данных](https://azure.microsoft.com/pricing/details/search/) для Azure Cognitive Search.|
 | [Встроенные когнитивные навыки](cognitive-search-predefined-skills.md) | Счет выставлен с той же скоростью, как если бы вы выполнили задачу с помощью когнитивных служб напрямую. |
 | Пользовательские навыки | Пользовательский навык — это функциональность, которая предоставляется. Стоимость использования пользовательского навыка полностью зависит от того, вызывает ли пользовательский код другие дозированные службы. |
+
+Функция [постепенного обогащения (предварительного просмотра)](cognitive-search-incremental-indexing-conceptual.md) позволяет предоставить кэш, который позволяет индексатору быть более эффективным при управлении только когнитивными навыками, которые необходимы, если вы измените свой набор навыков в будущем, экономя ваше время и деньги.
 
 <a name="search-units"></a>
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 71a31228602ef161158eaa05c80d50f65de98a50
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 82fa5968d004bd4460f2c05ec944f6e568508675
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77133269"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81641134"
 ---
 # <a name="how-to-configure-on-premises-encoders-when-using-azure-media-services-to-create-multi-bitrate-streams"></a>Как настроить локальные кодировщики при использовании служб мультимедиа Azure для создания потоков с несколькими скоростями
 В этом разделе перечислены локальные динамические кодировщики, которые можно использовать для захвата динамических событий и отправки односкоростного динамического потока в каналы AMS (с включенным кодированием в реальном времени) для дальнейшей обработки. Кроме того, этот раздел содержит ссылки на учебники, в которых описывается, как настроить перечисленные кодировщики.
@@ -32,9 +32,6 @@ ms.locfileid: "77133269"
 
 ## <a name="telestream-wirecast"></a>Telestream Wirecast
 Сведения о настройке кодировщика [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока](media-services-configure-wirecast-live-encoder.md).
-
-## <a name="newtek-tricaster"></a>NewTek TriCaster
-Сведения о настройке кодировщика [Tricaster](https://newtek.com/products/tricaster-40.html) для отправки односкоростного динамического потока в канал AMS см. в статье [Использование кодировщика NewTek TriCaster для отправки односкоростного обновляющегося потока](media-services-configure-tricaster-live-encoder.md).
 
 ## <a name="elemental-live"></a>Elemental Live
 Дополнительные сведения см. в разделе [Elemental Live](https://www.elementaltechnologies.com/products/elemental-live).

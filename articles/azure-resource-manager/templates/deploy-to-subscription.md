@@ -3,12 +3,12 @@ title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
 ms.date: 03/23/2020
-ms.openlocfilehash: 65cc220d32d1e1149b7026fc438f5e34262511dd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6bec29a07653ff5ad7d1e2f8317246049e127c8c
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131957"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605010"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -23,17 +23,17 @@ ms.locfileid: "80131957"
 * [Бюджетов](/azure/templates/microsoft.consumption/budgets)
 * [развертывание](/azure/templates/microsoft.resources/deployments) - для вложенных шаблонов, которые развертываются в группы ресурсов.
 * [eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions)
-* [peerAsns](/azure/templates/microsoft.peering/peerasns)
+* [peerAsns](/azure/templates/microsoft.peering/2019-09-01-preview/peerasns)
 * [политикаНазначения](/azure/templates/microsoft.authorization/policyassignments)
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
 * [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions)
-* [восстановительные работы](/azure/templates/microsoft.policyinsights/remediations)
+* [восстановительные работы](/azure/templates/microsoft.policyinsights/2019-07-01/remediations)
 * [ресурсгруппы](/azure/templates/microsoft.resources/resourcegroups)
 * [ролевыеназначения](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 * [сфераНазначения](/azure/templates/microsoft.managednetwork/scopeassignments)
 * [supportPlanTypes](/azure/templates/microsoft.addons/supportproviders/supportplantypes)
-* [теги](/azure/templates/microsoft.resources/tags)
+* [Теги](/azure/templates/microsoft.resources/tags)
 
 ### <a name="schema"></a>схема
 

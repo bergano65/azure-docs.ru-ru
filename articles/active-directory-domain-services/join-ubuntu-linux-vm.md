@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 01/22/2020
 ms.author: iainfou
-ms.openlocfilehash: 95373ab8ff78c5bcb856e6d7e6d67d8525cd3f7e
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 74af841b777494744c72ed219bacd3b3835d41ac
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80655135"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617558"
 ---
 # <a name="join-an-ubuntu-linux-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>Присоединиться к виртуальной машине Ubuntu Linux к домену Azure AD Domain Services, управляемому
 
@@ -29,12 +29,12 @@ ms.locfileid: "80655135"
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
 * Активная подписка Azure.
-    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, по инструкциям из первого учебника [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
-* Учетная запись пользователя, войдя часть домена Azure AD DS.
+* Учетная запись пользователя, входящая в управляемый домен Azure AD DS.
 
 ## <a name="create-and-connect-to-an-ubuntu-linux-vm"></a>Создание и подключение к Ubuntu Linux VM
 
@@ -154,6 +154,12 @@ Successfully enrolled machine in realm
 ```
 
 Если ваш VM не может успешно завершить процесс соединения домена, убедитесь, что группа сетевой безопасности VM позволяет исходящих Kerberos трафика на TCP и UDP порт 464 в виртуальную сеть подсети для вашего Azure AD DS управляемых домена.
+
+Если вы получили ошибку *Неуказанный сбой GSS.  Незначительный код может предоставить дополнительную информацию (сервер не найден в базе данных Kerberos),* открыть файл */etc/krb5.conf* и добавить следующий код в `[libdefaults]` разделе и попробовать еще раз:
+
+```console
+rdns=false
+```
 
 ## <a name="update-the-sssd-configuration"></a>Обновление конфигурации SSSD
 

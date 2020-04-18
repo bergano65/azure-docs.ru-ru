@@ -11,15 +11,15 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/09/2019
-ms.openlocfilehash: 2108f2f9098fe6da8ee4666b30605bed14164484
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 3007865c15ceb03b104282c29179ec59a8196b38
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81414721"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81604590"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Управление исходом на фабрике данных Azure
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Пользовательский интерфейс Azure Data Factory (UX) имеет два интерфейса, доступных для визуального авторизации:
 

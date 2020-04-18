@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/08/2020
-ms.openlocfilehash: 2923e087426ee04c74da629f4e2d2d49a06eb1ef
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 77c58bb8dfa7d21b108d2aa63e90142f66877fb7
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81416538"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81606524"
 ---
 # <a name="alter-row-transformation-in-mapping-data-flow"></a>Изменение преобразования строки в потоке данных отображения
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Используйте преобразование Alter Row для установки политики вставки, удаления, обновления и обновления на строках. В качестве выражений можно добавить условия от одного к немногим. Эти условия должны быть указаны в порядке приоритета, так как каждая строка будет отмечена политикой, соответствующей первому выражению. Каждое из этих условий может привести к вставке, обновлению, удалению или перенаправлению строки (или строк). Alter Row может производить как DDL & DML действия против вашей базы данных.
 

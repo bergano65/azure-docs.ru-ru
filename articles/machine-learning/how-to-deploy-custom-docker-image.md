@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 03/16/2020
-ms.openlocfilehash: 1f11d6667c22990b3cba2079959bec6f413d5951
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a237beb72e35a236e353c58db520a8d611fdfdcd
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80296932"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617993"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового изображения Docker
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -96,7 +96,7 @@ Azure Machine Learning предоставляет базовое изображ�
 
     Следите за запросами, чтобы проверить подлинность подписки.
 
-    [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)]
+    [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)] 
 
 2. Используйте следующую команду, чтобы перечислить реестр контейнеров для рабочего пространства. Замените `<myworkspace>` имя рабочего пространства Azure Machine Learning. Заменить `<resourcegroup>` группу ресурсов Azure, содержащую рабочее пространство:
 
@@ -190,7 +190,7 @@ Azure Machine Learning предоставляет базовое изображ�
 
 Корпорация Майкрософт предоставляет несколько докерных изображений в общедоступном репозитории, которые могут быть использованы с шагами в этом разделе:
 
-| Изображение | Описание |
+| Образ — | Описание |
 | ----- | ----- |
 | `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda` | Базовое изображение для машинного обучения Azure |
 | `mcr.microsoft.com/azureml/onnxruntime:latest` | Содержит ONNX Runtime для выводов процессора |

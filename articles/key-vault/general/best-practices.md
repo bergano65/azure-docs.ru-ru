@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 03/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 57bb897978f47a66adebac069d8892d596ba78f5
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 923fb90f7f0e8eefec650515ed2a3b9b75d2ae77
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81430868"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617910"
 ---
 # <a name="best-practices-to-use-key-vault"></a>Рекомендации по использованию Key Vault
 
@@ -44,4 +44,4 @@ Azure Key Vault — это облачная служба, которая обе
 ## <a name="turn-on-recovery-options"></a>Включить параметры восстановления
 
 1. Включите [Soft Delete](overview-soft-delete.md)).
-2. Включите защиту чистки, если вы хотите защититься от силового удаления секрета / свода даже после того, как мягкое удаление включено.
+2. Включите защиту чистки, если вы хотите защититься от силового удаления секрета / хранилища даже после мягкого удаления включен.

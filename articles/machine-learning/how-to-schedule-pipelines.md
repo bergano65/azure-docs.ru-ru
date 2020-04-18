@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: laobri
 author: lobrien
 ms.date: 11/12/2019
-ms.openlocfilehash: fed411ea171274513308ec3efa68da80e4d25f8a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d9e1bff3d25a978b5159d8e6ab8ab2453df77ca3
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77116759"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81640509"
 ---
 # <a name="schedule-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>Расписание конвейеров машинного обучения с помощью Azure Machine Learning SDK для Python
 
@@ -99,6 +99,10 @@ reactive_schedule = Schedule.create(ws, name="MyReactiveSchedule", description="
 
 В дополнение к аргументам, рассмотренным `status` ранее, можно установить аргумент `"Disabled"` для создания неактивного графика. Наконец, `continue_on_step_failure` позволяет пройти Boolean, который будет переопределять поведение сбоя трубопровода по умолчанию.
 
+### <a name="use-azure-logic-apps-for-more-complex-workflows"></a>Используйте приложения логики Azure для более сложных рабочих процессов
+
+Приложения Azure Logic Apps поддерживают более сложные рабочие процессы и гораздо более широко интегрированы, чем конвейеры Машинного обучения Azure. Для получения дополнительной информации можно [ознакомиться с запуском конвейера машинного обучения из приложения Logic App.](how-to-trigger-published-pipeline.md)
+
 ## <a name="view-your-scheduled-pipelines"></a>Просмотр запланированных конвейеров
 
 В веб-браузере перейдите на Azure Machine Learning. Из раздела **Endpoints** навигационной панели выберите **конечные точки трубопровода.** Это приведет вас к списку конвейеров, опубликованных в рабочем пространстве.
@@ -141,7 +145,7 @@ stop_by_schedule_id(ws, schedule_id)
 
 В этой статье вы использовали SDK для изучения машин Azure для Python для планирования конвейера двумя различными способами. Одно расписание повторяется в зависимости от прошедшего времени часовых часов. Другое расписание выполняется, если файл `Datastore` изменен в указанном или в каталоге в этом хранилище. Вы видели, как использовать портал для изучения трубопровода и отдельных запусков. Наконец, вы узнали, как отключить график, так что конвейер перестанет работать.
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 > [!div class="nextstepaction"]
 > [Использование конвейеров Машинного обучения Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md)

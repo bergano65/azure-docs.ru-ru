@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2019
-ms.openlocfilehash: a2765aaf36aa5f7e541e0ee7fb3178246d2cca5d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3547062f100eeb4dfa741a0566d737a0eac776a0
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77659906"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605098"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-powershell"></a>Создание рабочей области Log Analytics с помощью Azure PowerShell
 
@@ -108,7 +108,7 @@ ms.locfileid: "77659906"
     }
     ```
 
-2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
+2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/2015-11-01-preview/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.   
 4. Теперь вы можете развернуть этот шаблон. Используйте следующие команды из папки, содержащей шаблон. Когда вам будет предложено назвать рабочее пространство, укажите имя, которое является уникальным во всем мире во всех подписках Azure.
 

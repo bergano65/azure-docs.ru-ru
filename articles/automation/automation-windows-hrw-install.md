@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: 2bd9b4f46e28a28f99045319d8ac606cdcee7216
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 53dfe07ebd4925c96290db140b6e613c38eef564
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79536791"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81617346"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -69,16 +69,16 @@ ms.locfileid: "79536791"
 
 Скачать **новый-OnPremiseHybridWorker.ps1** скрипт из [галереи PowerShell](https://www.powershellgallery.com/packages/New-OnPremiseHybridWorker). Загрузка должна осуществляться непосредственно с компьютера, работающего с ролью Hybrid Runbook Worker, или с другого компьютера в вашей среде. Когда вы загрузили скрипт, скопируйте его своему работнику. В скрипте **New-OnPremiseHybridWorker.ps1** используются параметры, описанные ниже во время выполнения.
 
-| Параметр | Состояние | Описание |
+| Параметр | Status | Описание |
 | --------- | ------ | ----------- |
 | `AAResourceGroupName` | Обязательный | имя группы ресурсов, связанной с вашей учетной записью службы автоматизации. |
 | `AutomationAccountName` | Обязательный | имя учетной записи службы автоматизации.
-| `Credential` | Необязательный | Учетные данные для использования при входе в среду Azure. |
+| `Credential` | Необязательно | Учетные данные для использования при входе в среду Azure. |
 | `HybridGroupName` | Обязательный | имя группы гибридных рабочих ролей Runbook, которую вы указываете в качестве целевой для модулей runbook, поддерживающих этот сценарий. |
-| `OMSResourceGroupName` | Необязательный | имя группы ресурсов для рабочей области Log Analytics. Если эта группа ресурсов не указана, используется значение. `AAResourceGroupName` |
+| `OMSResourceGroupName` | Необязательно | имя группы ресурсов для рабочей области Log Analytics. Если эта группа ресурсов не указана, используется значение. `AAResourceGroupName` |
 | `SubscriptionID` | Обязательный | Идентификатор подписки Azure, связанный с учетной записью Automation. |
-| `TenantID` | Необязательный | Идентификатор организации-арендатора, связанной с вашей учетной записью Automation. |
-| `WorkspaceName` | Необязательный | Имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее. |
+| `TenantID` | Необязательно | Идентификатор организации-арендатора, связанной с вашей учетной записью Automation. |
+| `WorkspaceName` | Необязательно | Имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее. |
 
 > [!NOTE]
 > При создании решений Azure Automation поддерживает только определенные регионы для увязки рабочего пространства log Analytics и учетной записи Автоматизации. Список поддерживаемых пар отображений можно узнать на [сайте Region mapping для учетной записи Automation и рабочего пространства Log Analytics.](how-to/region-mappings.md)
@@ -144,7 +144,7 @@ Heartbeat
 Используйте следующие шаги для завершения установки и настройки агента.
 
 1. Включите решение на борт агент-машина. Смотрите [бортовые машины в рабочей области.](https://docs.microsoft.com/azure/automation/automation-onboard-solutions-from-automation-account#onboard-machines-in-the-workspace)
-2. Убедитесь, что агент правильно скачал решение Automation. Он должен иметь папку под названием **AzureAutomationFiles** в **C: »Программные файлы »Агент мониторинга Microsoft .** 
+2. Убедитесь, что агент правильно скачал решение Automation. 
 3. Чтобы подтвердить версию Гибридного Runbook Worker, просмотрите **c: «Файлы программы»-Агент мониторинга Майкрософт»Агент-агент-azureAutomation** и обратите внимание на **версию** subfolder.
 
 ### <a name="step-4---install-the-runbook-environment-and-connect-to-azure-automation"></a>Шаг 4 - Установите среду runbook и подключитесь к автоматизации Azure

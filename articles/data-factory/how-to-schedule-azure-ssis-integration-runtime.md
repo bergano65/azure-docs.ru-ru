@@ -13,16 +13,16 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
-ms.openlocfilehash: 39f758b779e7c4935feab2424be16b829db8e46b
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 50ff0afe13b5b098fbc8d9fbeefba295a6217192
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81399514"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81606068"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описан процесс планирования запуска и остановки Azure-SSIS Integration Runtime (IR) с использованием Фабрики данных Azure (ADF). Azure-SSIS IR представляет собой вычислительный ресурс ADF, предназначенный для выполнения пакетов SQL Server Integration Services (SSIS). Выполнение Azure-SSIS IR сопряжено с определенными затратами. Поэтому среду выполнения интеграции обычно запускают только на тот период, когда требуется выполнение пакетов SSIS в Azure, а затем останавливают. С помощью пользовательского интерфейса (приложения) ADF или Azure PowerShell вы можете [запустить или остановить среду выполнения интеграции вручную](manage-azure-ssis-integration-runtime.md)).
 
@@ -339,7 +339,7 @@ ms.locfileid: "81399514"
     2. В поле **DATA FACTORY NAME** (Имя Фабрики данных) введите имя ADF, где расположена Azure-SSIS IR. 
     3. В поле **AZURESSISNAME** (Имя Azure-SSIS) введите имя Azure-SSIS IR. 
     4. Для параметра **OPERATION** введите **START**. 
-    5. Щелкните **ОК**.  
+    5. Нажмите кнопку **ОК**.  
 
    ![Окно "Запуск Runbook"](./media/how-to-schedule-azure-ssis-integration-runtime/start-runbook-window.png)
    

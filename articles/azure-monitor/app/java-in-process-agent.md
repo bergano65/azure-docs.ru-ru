@@ -3,12 +3,12 @@ title: Мониторинг Java-приложений в любой среде -
 description: Мониторинг производительности приложений для Java-приложений, работающих в любой среде без инструментирования приложения. Распределенная карта отслеживания и применения.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 5a62be45320523ee0577d56eb557a4f87a58a1cc
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 5706d5a74bd6850a237f7418b1a86a8e9c7762e1
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886863"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81604574"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights---public-preview"></a>Java без кода приложение мониторинга Azure Monitor Application Insights - публичный предварительный просмотр
 
@@ -24,11 +24,11 @@ ms.locfileid: "80886863"
 
 **1. Скачать агента**
 
-Скачать [applicationinsights-агент-3.0.0-PREVIEW.2.jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.2/applicationinsights-agent-3.0.0-PREVIEW.2.jar)
+Скачать [applicationinsights-агент-3.0.0-PREVIEW.3.jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.3/applicationinsights-agent-3.0.0-PREVIEW.3.jar)
 
 **2. Направьте JVM агенту**
 
-Добавьте `-javaagent:path/to/applicationinsights-agent-3.0.0-PREVIEW.2.jar` к JVM args вашего приложения
+Добавьте `-javaagent:path/to/applicationinsights-agent-3.0.0-PREVIEW.3.jar` к JVM args вашего приложения
 
 Типичные JVM `-Xmx512m` args включают и `-XX:+UseG1GC`. Так что если вы знаете, где добавить их, то вы уже знаете, где добавить это.
 
@@ -37,7 +37,14 @@ ms.locfileid: "80886863"
 **3. Направьте агента на ресурс Application Insights**
 
 Если у вас еще нет ресурса Application Insights, можно создать новый, выявив шаги в руководстве по [созданию ресурсов.](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource)
-Создайте файл `ApplicationInsights.json`конфигурации с и поместите `applicationinsights-agent-3.0.0-PREVIEW.2.jar`его в тот же каталог, что и следующее содержимое:
+
+Направьте агента на ресурс Application Insights, установив переменную среды:
+
+```
+APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=00000000-0000-0000-0000-000000000000
+```
+
+Или, создав файл `ApplicationInsights.json`конфигурации с и поместить `applicationinsights-agent-3.0.0-PREVIEW.3.jar`его в тот же каталог, что и , со следующим содержанием:
 
 ```json
 {

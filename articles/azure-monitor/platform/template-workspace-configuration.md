@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
-ms.openlocfilehash: 60f85a30815bc1bace409b50af6332bb6622d7ca
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 81e46f53c0afc69c927918daa0488c4835d60805
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80477986"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605015"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочим пространством аналитики журналов с помощью шаблонов управления ресурсами Azure
 
@@ -153,7 +153,7 @@ ms.locfileid: "80477986"
    >* "имя": "Резервирование потенциала",
    >* "Уровень резервирования": 100
 
-2. Отредактируйте шаблон с учетом ваших требований. Рассмотрите возможность создания [файла параметров ресурсного менеджера](../../azure-resource-manager/templates/parameter-files.md) вместо передачи параметров в качестве входиных значений. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
+2. Отредактируйте шаблон с учетом ваших требований. Рассмотрите возможность создания [файла параметров ресурсного менеджера](../../azure-resource-manager/templates/parameter-files.md) вместо передачи параметров в качестве входиных значений. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/2015-11-01-preview/workspaces) с описанием поддерживаемых свойств и значений. 
 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
 
@@ -659,7 +659,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
 

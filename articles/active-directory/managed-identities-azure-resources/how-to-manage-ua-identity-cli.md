@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/15/2019
+ms.date: 04/17/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1e8587562ff452373fe2ee3b98fa20309e77cc7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: be5defb85547e8750dea9ceaa481217aa40a004e
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79266589"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639761"
 ---
 # <a name="create-list-or-delete-a-user-assigned-managed-identity-using-the-azure-cli"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure CLI
 
@@ -37,6 +37,12 @@ ms.locfileid: "79266589"
     - использовать [Azure Cloud Shell](../../cloud-shell/overview.md) с портала Azure (см. следующий раздел).
     - использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробуйте!", расположенной в правом верхнем углу каждого блока кода.
     - [установить последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.13 или выше), если вы предпочитаете использовать локальную консоль CLI. Войдите в Azure с помощью `az login`. Используйте учетную запись, которая связана с подпиской Azure, с помощью которой нужно развернуть управляемое удостоверение, назначаемое пользователем.
+
+
+> [!NOTE]
+> Для того, чтобы изменить пользовательские разрешения при использовании основного приложения servivce с помощью CLI, необходимо предоставить основной сервис дополнительных разрешений в API Azure AD GraphPI, поскольку часть CLI выполняет запросы GET против Графического API. В противном случае вы можете получить сообщение «Недостаточно привилегий для завершения операции». Для этого необходимо зайти в регистрацию приложений в Active Directory Azure, выбрать приложение, нажать на разрешения API, прокрутить вниз и выбрать график active Directory Azure. Оттуда выберите разрешения приложения, а затем добавьте соответствующие разрешения. 
+
+
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

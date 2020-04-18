@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm
 ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: avverma
-ms.openlocfilehash: 8e73ef75b3313656b45d29270d9996c3ad17c630
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 8156c563573183e51e06650914117f8787922e93
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81538075"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81603678"
 ---
 # <a name="automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Автоматическое ремонт экземпляров для наборов виртуальной шкалы смазано Azure
 
@@ -90,6 +90,8 @@ ms.locfileid: "81538075"
 ## <a name="enabling-automatic-repairs-policy-when-creating-a-new-scale-set"></a>Включение политики автоматического ремонта при создании нового набора масштабов
 
 Для включения политики автоматического ремонта при создании нового набора масштабов убедитесь, что все [требования для](#requirements-for-using-automatic-instance-repairs) выбора этой функции будут выполнены. Конечная точка приложения должна быть правильно настроена для экземпляров набора масштаба, чтобы избежать запуска непреднамеренных ремонтов во время настройки конечной точки. Для вновь созданных наборов масштабов любой экземпляр ремонт выполняется только после ожидания в течение льготного периода. Для автоматического ремонта экземпляра в масштабе, используйте *объект automaticRepairPolicy* в модели набора виртуальной шкалы машины.
+
+Вы также можете использовать этот [шаблон quickstart](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-automatic-repairs-slb-health-probe) для развертывания виртуального набора шкалы машины с зондом работоспособности баланса нагрузки и автоматическим ремонтом экземпляра с льготным периодом в 30 минут.
 
 ### <a name="azure-portal"></a>Портал Azure
  
@@ -312,6 +314,6 @@ Set-AzVmssOrchestrationServiceState `
 
 На портале Azure также можно увидеть состояние работоспособности. Перейдите к существующему набору **масштабов,** выберите Instances из меню слева и посмотрите на столбец **состояния работоспособности** для состояния работоспособности каждого набора экземпляра шкалы. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как настроить [расширение работоспособности приложения](./virtual-machine-scale-sets-health-extension.md) или [зонды работоспособности баланса нагрузки](../load-balancer/load-balancer-custom-probe-overview.md) для наборов масштабов.

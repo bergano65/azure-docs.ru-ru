@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7003899b59e409a785c3a50e89aae6674e377b4d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bfee19e9cfd1def71ebad82c2210ffc10146c896
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79264093"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639748"
 ---
 # <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Настройка отображения атрибутов для приложений SaaS в Active Directory
 
@@ -143,7 +143,10 @@ SCIM RFC определяет основную схему пользовател
    4. Выберите **список атрибутов для AppName.**
    5. В нижней части списка атрибутов введите информацию о пользовательском атрибуте в предоставленных полях. Затем выберите **Добавить атрибут**.
 
-Для приложений SCIM имя атрибута должно следовать шаблону, показанного в приведенном ниже примере. "CustomExtensionName" и "CustomAttribute" могут быть настроены в соответствии с требованиями приложения, например: urn:ietf:params:scim:schemas:extension:2.0:CustomExtensionName:CustomAttribute или urn:ietf:params:scim:schemas:extension: CustomExtensionName:2.0:User.CustomAttributeName:value
+Для приложений SCIM имя атрибута должно следовать шаблону, показанного в приведенном ниже примере. "CustomExtensionName" и "CustomAttribute" могут быть настроены в соответствии с требованиями приложения, например:  
+ * урна:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User:CustomAttribute 
+ * урна:ietf:params:scim:schemas:расширение:2.0:CustomExtensionName:CustomAttribute  
+ * urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User.CustomAttributeName:value
 
 Эти инструкции применимы только к приложениям с поддержкой SCIM. Такие приложения, как ServiceNow и Salesforce, не интегрированы с Azure AD с помощью SCIM, и поэтому они не требуют этого конкретного пространства имен при добавлении пользовательского атрибута.
 
@@ -313,7 +316,7 @@ SCIM RFC определяет основную схему пользовател
 - Обновление сопоставлений атрибутов влияет на производительность цикла синхронизации. Чтобы обновить конфигурацию сопоставления атрибутов, необходимо повторно оценить все управляемые объекты.
 - Рекомендуемая рекомендация заключается в том, чтобы свести к минимуму количество последовательных изменений в отображении атрибутов.
 - Добавление атрибута фотографии, которое должно быть подготовлено к приложению, не поддерживается сегодня, так как вы не можете указать формат синхронизации фотографии. Вы можете запросить функцию на [Голосе Пользователя](https://feedback.azure.com/forums/169401-azure-active-directory)
-- Атрибут IsSoftDeleted часто является частью картпо умолчанию для приложения. IsSoftdeleted может быть верным в одном из четырех сценариев (пользователь находится вне сферы из-за того, что он не назначен из приложения, пользователь выходит за рамки из-за несоблюдения фильтра для проверки, пользователь был мягко удален в Azure AD, или свойство AccountEnabled установлено ложным на пользователя). 
+- Атрибут IsSoftDeleted часто является частью картпо умолчанию для приложения. IsSoftdeleted может быть верным в одном из четырех сценариев (пользователь находится вне сферы из-за того, что он не назначен из приложения, пользователь выходит за рамки из-за несоблюдения фильтра для проверки, пользователь был мягко удален в Azure AD, или свойство AccountEnabled установлено ложным для пользователя). 
 - Служба предоставления AD Azure AD не поддерживает предоставление нулевых значений
 
 ## <a name="next-steps"></a>Дальнейшие действия

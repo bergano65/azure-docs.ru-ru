@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: ffb3d590aebe80994de1e7e834a2eba5777df9a1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 427ab6c4e0e769ab881af0af3023d514c1b092c6
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76262492"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81604619"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Центры задач в устойчивых функциях (Функции Azure)
 
@@ -35,7 +35,13 @@ ms.locfileid: "76262492"
 
 ## <a name="task-hub-names"></a>Имена центров задач
 
-Центры задач определяются по имени, объявленном в файле *host.json*, как показано в следующем примере:
+Концентраторы задач идентифицируются по имени, которое соответствует этим правилам:
+
+* Содержит только алфавитные символы
+* Начинается с письма
+* Имеет минимальную длину 3 символов, максимальную длину 45 символов
+
+Имя концентратора задач объявляется в файле *host.json,* как показано в следующем примере:
 
 ### <a name="hostjson-functions-20"></a>host.json (Функции 2.0)
 
@@ -98,7 +104,7 @@ ms.locfileid: "76262492"
 
 Следующий код демонстрирует, как написать функцию, которая использует [связывание клиента оркестровки](durable-functions-bindings.md#orchestration-client) для работы с концентратором задач, настроенным как настройка приложения:
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("HttpStart")]
@@ -121,7 +127,7 @@ public static async Task<HttpResponseMessage> Run(
 > [!NOTE]
 > Предыдущий пример сC —для прочных функций 2.x. Для долгосрочных функций 1.x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Свойство центра задач в файле `function.json` задается с помощью параметра приложения:
 

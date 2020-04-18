@@ -8,16 +8,16 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 04/03/2020
+ms.date: 04/17/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d2e3f8da4a05feedb8c1ab585fabcc74edbc71a
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: 815d3afe68003f56a5748584b322b731ef5a3dc7
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80998744"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639650"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -30,7 +30,7 @@ ms.locfileid: "80998744"
 --------- | --------- |
 Действия по переходу с Azure AD Connect | Различные методы [обновления предыдущей версии до последней версии](how-to-upgrade-previous-version.md) Azure AD Connect.
 Необходимые разрешения | Для получения разрешений, необходимых [accounts and permissions](reference-connect-accounts-permissions.md#upgrade)для применения обновления, см.
-Скачивание| [Скачать Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
+Скачать| [Скачать Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
 
 >[!NOTE]
 >Выпуск новой версии Azure AD Connect — это процесс, который требует нескольких шагов контроля качества, чтобы обеспечить функциональность работы службы, и пока мы проходим этот процесс, номер версии нового выпуска, а также статус релиза будут обновлены с учетом последнего состояния.
@@ -55,6 +55,15 @@ ms.locfileid: "80998744"
 
 ### <a name="fixed-issues"></a>Исправленные проблемы
 Эта сборка hotfix фиксирует проблему с построением 1.5.18.0, если у вас включена функция фильтрации группы и используется mS-DS-ConsistencyGuid в качестве исходного якоря.
+
+> [!IMPORTANT]
+> Если вы используете mS-DS-ConsistencyGuid в качестве исходного якоря, и вы клонировали **In от AD - Правило синхронизации группы Join** и планируете обновление, выполните следующие шаги в рамках обновления:
+> 1. Во время обновления отоверьте опцию **Запуск процесса синхронизации при завершении конфигурации.**
+> 2. Отобразите правило синхронизации клонированного соединения и добавьте следующие два преобразования:
+>     - Установите `objectGUID` прямой поток к `sourceAnchorBinary`.
+>     - Установите `ConvertToBase64([objectGUID])` поток `sourceAnchor`выражения в .     
+> 3. Включить планировщик с `Set-ADSyncScheduler -SyncCycleEnabled $true`помощью .
+
 
 ## <a name="15180"></a>1.5.18.0
 
@@ -528,7 +537,7 @@ ms.locfileid: "80998744"
 *   Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF. При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
 *   Назначение указанных ниже специальных разрешений.
 
-Type     | name                          | Доступ               | Применяется к
+Тип     | Имя                          | Доступ               | Применяется к
 ---------|-------------------------------|----------------------|--------------|
 Allow    | SYSTEM                        | Полный доступ         | этому объекту  |
 Allow    | Администраторы предприятия             | Полный доступ         | этому объекту  |
@@ -562,7 +571,7 @@ Where
 >[!NOTE] 
 >$credential.UserName необходимо указывать в формате "FQDN\имя_пользователя". Пример: contoso.com\admin. 
 
-##### <a name="example"></a>Пример
+##### <a name="example"></a>Пример.
 
 ```powershell
 Set-ADSyncRestrictedPermissions -ObjectDN "CN=TestAccount1,CN=Users,DC=bvtadwbackdc,DC=com" -Credential $credential 
@@ -1390,5 +1399,5 @@ Desktop SSO
 
 **Первоначальный выпуск Azure AD Sync.**
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

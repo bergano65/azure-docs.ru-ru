@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/01/2019
-ms.openlocfilehash: 68975f21ab810398da969384db4d3bddd22f1bd9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 29713622be90ea280bff3c002be746bf1615718f
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79284126"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605899"
 ---
 # <a name="call-azure-functions-from-azure-logic-apps"></a>Вызов функций Azure из приложений логики Azure
 
@@ -101,7 +101,9 @@ function convertToDateString(request, response){
 
 ## <a name="create-functions-inside-logic-apps"></a>Создание встроенных функций приложений логики
 
-Прежде чем создать функцию Azure, начиная с приложения логики с помощью Logic App Designer, сначала необходимо создать приложение функции Azure, которое является контейнером для ваших функций. При отсутствии приложения-функции создайте его. См. статью [Создание первой функции на портале Azure](../azure-functions/functions-create-first-azure-function.md).
+Функции Azure можно создавать непосредственно из рабочего процесса приложения логики, используя встроенное действие Функции Azure в Logic App Designer, но использовать этот метод можно только для функций Azure, написанных в JavaScript. Для других языков можно создавать функции Azure через опыт Azure Functions на портале Azure. Для получения дополнительной информации смотрите [Создать свою первую функцию на портале Azure](../azure-functions/functions-create-first-azure-function.md).
+
+Однако, прежде чем создать какую-либо функцию Azure, необходимо уже иметь приложение функции Azure, которое является контейнером для ваших функций. При отсутствии приложения-функции создайте его. См. статью [Создание первой функции на портале Azure](../azure-functions/functions-create-first-azure-function.md).
 
 1. На [портале Azure](https://portal.azure.com)откройте логическое приложение в Logic App Designer.
 

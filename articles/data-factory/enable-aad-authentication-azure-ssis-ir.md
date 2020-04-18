@@ -11,16 +11,16 @@ ms.author: sawinark
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 5/14/2019
-ms.openlocfilehash: 2359b378b1f54cf6e03218f819b3a7c5740ba596
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 77b49d8446c7882a155742e8455d77bd1ec110cb
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81416401"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81606193"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье показано, как включить активную каталог Azure (Azure AD) аутентификацию с управляемой идентификацией для вашей фабрики данных Azure (ADF) и использовать ее вместо обычных методов аутентификации (например, проверки подлинности S'L) для:
 

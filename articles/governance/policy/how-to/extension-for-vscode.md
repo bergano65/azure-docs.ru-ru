@@ -3,12 +3,12 @@ title: Расширение политики Azure для визуального
 description: Узнайте, как использовать расширение политики Azure для Visual Studio Code для поиска псевдонимов «Менеджер ресурсов».
 ms.date: 03/07/2020
 ms.topic: how-to
-ms.openlocfilehash: 0e9123f2975bda0d61e9d6e9bf894ecd359e6c5a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5e31af652f2746adbf0eda386bdb178c752f5f84
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79264678"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81641023"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Используйте расширение политики Azure для кода Visual Studio
 
@@ -26,13 +26,13 @@ ms.locfileid: "79264678"
 Для выполнения действий, описанных в этой статье, необходимо следующее:
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-- [Визуальный код студии](https://code.visualstudio.com).
+- [Visual Studio Code](https://code.visualstudio.com).
 
 ## <a name="install-azure-policy-extension"></a>Установка расширения политики Azure
 
 После выполнения предпосылок можно установить расширение политики Azure для Visual Studio Code, выполнив следующие действия:
 
-1. Откройте Visual Studio Code.
+1. Откройте Visual Studio Code.
 
 1. Из меню бар, перейдите к **Просмотр** > **расширений**.
 
@@ -121,7 +121,7 @@ ms.locfileid: "79264678"
 
 ## <a name="discover-aliases-for-resource-properties"></a>Откройте для себя псевдонимы для свойств ресурсов
 
-При выборе ресурса, будь то через интерфейс поиска или путем выбора его в представлении дерева, расширение azure Policy открывает файл JSON, представляющий этот ресурс и все его значения свойства менеджера ресурсов.
+При выборе ресурса, будь то через интерфейс поиска или путем выбора его в представлении дерева, расширение azure Policy открывает файл JSON, представляющий этот ресурс и все значения свойств менеджера ресурсов.
 
 После открытия ресурса нависает над именем или значением ресурсного менеджера, отображает псевдоним Azure Policy, если он существует. В этом примере ресурс `Microsoft.Compute/virtualMachines` является типом ресурса, а свойство.storageProfile.imageReference.offer зависло над. **properties.storageProfile.imageReference.offer** На ховеринг показывает соответствующие псевдонимы.
 
