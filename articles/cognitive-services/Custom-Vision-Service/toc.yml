@@ -9,41 +9,33 @@
       href: whats-new.md
 - name: Краткие руководства
   items:
-    - name: Использование веб-портала
+    - name: Построение классификатора
       items:
-        - name: Построение классификатора
+        - name: Использование веб-портала
           href: getting-started-build-a-classifier.md
-        - name: Создание средства обнаружения объектов
-          href: get-started-build-detector.md
-    - name: С помощью пакета SDK для .NET
-      items:
-        - name: Классификация изображений
+        - name: С помощью пакета SDK для .NET
           href: csharp-tutorial.md
-        - name: Обнаружение объектов
-          href: csharp-tutorial-od.md
-    - name: С помощью пакета SDK для Python
-      items:
-        - name: Классификация изображений
+        - name: С помощью пакета SDK для Python
           href: python-tutorial.md
-        - name: Обнаружение объектов
-          href: python-tutorial-od.md
-    - name: Использование пакета SDK для Java
-      items:
-        - name: Классификация изображений
+        - name: Использование пакета SDK для Java
           href: java-tutorial.md
-        - name: Обнаружение объектов
-          href: java-tutorial-od.md
-    - name: Использование пакета SDK для Node.js
-      items:
-        - name: Классификация изображений
+        - name: Использование пакета SDK для Node.js
           href: node-tutorial.md
-        - name: Обнаружение объектов
-          href: node-tutorial-object-detection.md
-    - name: Использование пакета SDK для Go
-      items:
-        - name: Классификация изображений
+        - name: Использование пакета SDK для Go
           href: go-tutorial.md
-        - name: Обнаружение объектов
+    - name: Создание средства обнаружения объектов
+      items:
+        - name: Использование веб-портала
+          href: get-started-build-detector.md
+        - name: С помощью пакета SDK для .NET
+          href: csharp-tutorial-od.md
+        - name: С помощью пакета SDK для Python
+          href: python-tutorial-od.md
+        - name: Использование пакета SDK для Java
+          href: java-tutorial-od.md
+        - name: Использование пакета SDK для Node.js
+          href: node-tutorial-object-detection.md
+        - name: Использование пакета SDK для Go
           href: go-tutorial-object-detection.md
 - name: Учебники
   items:
