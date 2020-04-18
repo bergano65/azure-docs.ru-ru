@@ -13,12 +13,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 03/24/2020
   ms.author: trbye
-  ms.openlocfilehash: 4b9b447ce06e0316cf229fc9a064bfded7411abf
-  ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+  ms.openlocfilehash: 3535f1cb5f8901c0da629e7d2ef4f2a045d714f2
+  ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/16/2020
-  ms.locfileid: "81401380"
+  ms.lasthandoff: 04/17/2020
+  ms.locfileid: "81604921"
 highlightedContent:
   items:
   - title: Что собой представляет служба "Речь"
@@ -37,43 +37,43 @@ conceptualContent:
   items:
   - title: Преобразование речи в текст
     links:
-    - itemType: how-to-guide
-      text: Основы распознавания речи
-      url: speech-to-text-basics.md
     - itemType: quickstart
       text: Распознавание речи с микрофона
       url: quickstarts/speech-to-text-from-microphone.md
     - itemType: quickstart
       text: Распознавание речи из звукового файла
       url: quickstarts/speech-to-text-from-file.md
+    - itemType: how-to-guide
+      text: Основы распознавания речи
+      url: speech-to-text-basics.md
     footerLink:
       text: Подробнее
       url: index-speech-to-text.yml
   - title: Преобразование текста в речь
     links:
-    - itemType: how-to-guide
-      text: Основные сведения о синтезе речи
-      url: text-to-speech-basics.md
     - itemType: quickstart
       text: Синтезирование речи в виде речи докладчика
       url: quickstarts/text-to-speech.md
     - itemType: quickstart
       text: Синтезирование речи в звуковой файл
       url: quickstarts/text-to-speech-audio-file.md
+    - itemType: how-to-guide
+      text: Основные сведения о синтезе речи
+      url: text-to-speech-basics.md
     footerLink:
       text: Подробнее
       url: index-text-to-speech.yml
   - title: Перевод речи
     links:
-    - itemType: how-to-guide
-      text: Основные сведения о переводе речи
-      url: speech-translation-basics.md
     - itemType: quickstart
       text: Преобразование речи в текст
       url: quickstarts/translate-speech-to-text.md
     - itemType: quickstart
       text: Перевод речи на несколько целевых языков
       url: quickstarts/translate-speech-to-text-multiple-languages.md
+    - itemType: how-to-guide
+      text: Основные сведения о переводе речи
+      url: speech-translation-basics.md
     footerLink:
       text: Подробнее
       url: index-speech-translation.yml
