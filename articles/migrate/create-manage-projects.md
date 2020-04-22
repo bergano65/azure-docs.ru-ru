@@ -2,13 +2,13 @@
 title: Создание и администрирование проектов Миграции Azure
 description: Поиск, создание, управление и удаление проектов в Azure Migrate.
 ms.topic: how-to
-ms.date: 02/17/2020
-ms.openlocfilehash: a49595f0580e71048239d5c5d8f4d1a66e24fe6d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/19/2020
+ms.openlocfilehash: f5079ed979d98f2c6f0c654c860c6f176f366497
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79269644"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81676397"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "79269644"
 
 Если у вас уже есть проект Azure Migrate и вы хотите создать дополнительный проект, сделайте следующее:  
 
-1. На [портале Azure](https://portal.azure.com)ищите **Azure Migrate**.
+1. На [общедоступном портале Azure](https://portal.azure.com) или [в правительстве Azure](https://portal.azure.us)ищите **Azure Migrate.**
 2. На панели мониторинга Azure Migrate > **серверов**выберите **изменение** в правом верхнем углу.
 
    ![Изменение проекта Azure Migrate](./media/create-manage-projects/switch-project.png)
@@ -85,6 +85,6 @@ ms.locfileid: "79269644"
        
 2. [Следуйте инструкциям](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace) по удалению рабочего пространства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Добавление инструментов [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты Azure Migrate.

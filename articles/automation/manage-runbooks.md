@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: 29ac9239b8dc87b1ed12fc8333bf5201fe8fa204
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: a1229ee389b41625554fb2869089b08a3cb9cb6d
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80617125"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81676516"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -46,13 +46,13 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 Вы можете создать новый runbook в Azure Automation путем импорта скрипта PowerShell или Рабочего процесса PowerShell (**.ps1**), экспортируемого графического runbook (**.graphrunbook**), или скрипт Python2 (**.py**).  При этом необходимо указать [тип модуля Runbook](automation-runbook-types.md), который создается во время импорта, с учетом следующих рекомендаций.
 
-* Файл **.ps1,** не содержащий рабочий процесс, может быть импортирован либо в [рунбус PowerShell,](automation-runbook-types.md#powershell-runbooks) либо в [справочник рабочего процесса PowerShell.](automation-runbook-types.md#powershell-workflow-runbooks) Если вы импортируете его в книгу рабочего процесса PowerShell, он преобразуется в рабочий процесс. В этом случае комментарии включены в книгу для описания внесенных изменений.
+* Можно импортировать файл **.ps1,** который не содержит рабочий процесс, в [ни в книге powerShell,](automation-runbook-types.md#powershell-runbooks) ни в [runbook Workflow PowerShell.](automation-runbook-types.md#powershell-workflow-runbooks) Если вы импортируете его в книгу рабочего процесса PowerShell, он преобразуется в рабочий процесс. В этом случае комментарии включены в книгу для описания внесенных изменений.
 
-* Файл **.ps1,** содержащий рабочий процесс PowerShell, может быть импортирован только в [книгу запуска рабочего процесса PowerShell.](automation-runbook-types.md#powershell-workflow-runbooks) Если файл содержит несколько рабочих процессов PowerShell, импорт завершается сбой. Каждый рабочий процесс необходимо сохранить в отдельный файл и импортировать отдельно.
+* Вы можете импортировать только файл **.ps1,** содержащий рабочий процесс PowerShell, в [книгу выполнения рабочего процесса PowerShell.](automation-runbook-types.md#powershell-workflow-runbooks) Если файл содержит несколько рабочих процессов PowerShell, импорт завершается сбой. Каждый рабочий процесс необходимо сохранить в отдельный файл и импортировать отдельно.
 
-* Файл **.ps1,** содержащий рабочий процесс PowerShell, не должен импортироваться в [рунированную книгу PowerShell,](automation-runbook-types.md#powershell-runbooks)так как скриптонок PowerShell не может распознать его.
+* Не импортируйте файл **.ps1,** содержащий рабочий процесс PowerShell, в [рунбу PowerShell,](automation-runbook-types.md#powershell-runbooks)так как скриптовый движок PowerShell не может распознать его.
 
-* Файл **.graphrunbook** может быть импортирован только в новый [графический runbook.](automation-runbook-types.md#graphical-runbooks) Обратите внимание, что создать графический runbook можно только из файла **.graphrunbook.**
+* Вы можете импортировать файл **.graphrunbook** только в новый [графический runbook.](automation-runbook-types.md#graphical-runbooks) Обратите внимание, что создать графический runbook можно только из файла **.graphrunbook.**
 
 ### <a name="import-a-runbook-from-a-file-with-the-azure-portal"></a>Импортировать книгу из файла на портале Azure
 

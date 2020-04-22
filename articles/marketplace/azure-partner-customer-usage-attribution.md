@@ -5,14 +5,14 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 04/13/2020
+ms.date: 04/14/2020
 ms.author: dsindona
-ms.openlocfilehash: 5fec72ce5f86c1bee9ec0e978e458f5be454c8e3
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: e061baa8e7eb73bae0a78f4215f0d48610e85fcb
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81256592"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686733"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Коммерческая атрибуция партнеров и клиентов
 
@@ -31,7 +31,7 @@ ms.locfileid: "81256592"
 >
 >- Атрибуция использования клиентов предназначена для новых развертываний и НЕ поддерживает пометку существующих ресурсов, которые уже развернуты.
 >
->- Атрибуция использования клиентов необходима для предложений [приложений Azure,](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/azure-applications/cpp-azure-app-offer) опубликованных в Azure Marketplace.
+>- Атрибуция использования клиентов необходима для предложений [приложений Azure,](./partner-center-portal/create-new-azure-apps-offer.md) опубликованных в Azure Marketplace.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -83,7 +83,7 @@ GUIDs должны быть зарегистрированы в Центре П�
 > [!NOTE]
 > Дополнительные сведения о создании и публикации шаблонов решений см. в статье
 > * [Создайте и разместите свой первый шаблон менеджера ресурсов.](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal)
->* [Предложение приложения Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/azure-applications/cpp-azure-app-offer).
+>* [Предложение приложения Azure](./partner-center-portal/create-new-azure-apps-offer.md).
 >* Видео: [Шаблоны решений и управляемые приложения для Azure Marketplace.](https://channel9.msdn.com/Events/Build/2018/BRK3603)
 
 
@@ -271,7 +271,7 @@ foreach ($deployment in $deployments){
 
 1. Выберите **запрос на запуск**.
 
-1. На следующей странице введите обязательные значения. Выберите **Продолжить**.
+1. На следующей странице введите обязательные значения. Выберите **Continue** (Продолжить).
 
 1. На следующей странице введите обязательные значения.
 

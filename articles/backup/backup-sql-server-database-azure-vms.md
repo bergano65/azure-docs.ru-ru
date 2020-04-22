@@ -4,12 +4,12 @@ description: В этой статье узнайте, как создать ре
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 5b10907738feeecbec06669175e82578f2915f92
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 887f15deed74330cf132e0574d166c074d2c7cad
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79273336"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685711"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "79273336"
 
   1. В разделе **Все службы** перейдите к **группам сетевой безопасности** и выберите группу сетевой безопасности.
   2. Выберите **Правила безопасности для исходящего трафика** в разделе **Параметры**.
-  3. Нажмите кнопку **Добавить**. Введите все необходимые сведения для создания нового правила, как описано в разделе [параметры правила безопасности](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#security-rule-settings). Убедитесь, что параметр **Назначение** имеет значение **Тег службы**, а **Тег целевой службы** имеет значение **AzureBackup**.
+  3. Выберите **Добавить**. Введите все необходимые сведения для создания нового правила, как описано в разделе [параметры правила безопасности](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#security-rule-settings). Убедитесь, что параметр **Назначение** имеет значение **Тег службы**, а **Тег целевой службы** имеет значение **AzureBackup**.
   4. Щелкните **Добавить**, чтобы сохранить только что созданное исходящее правило безопасности.
 
 Чтобы создать правило с помощью PowerShell, выполните следующие действия.
@@ -112,7 +112,7 @@ ms.locfileid: "79273336"
 * Семиколон ';'
 * Передняя слэш '/'
 
-Псевдоним доступен для неподдерживаемых символов, но мы рекомендуем избегать их. Дополнительные сведения см. в статье [Understanding the Table Service Data Model](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN) (Общие сведения о модели данных службы таблиц).
+Псевдоним доступен для неподдерживаемых символов, но мы рекомендуем избегать их. Дополнительные сведения см. в статье [Understanding the Table Service Data Model](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model) (Общие сведения о модели данных службы таблиц).
 
 >[!NOTE]
 >Операция **«Настройка защиты»** для баз данных со специальными символами, такими как «я» или «&» в их названии, не поддерживается. Вы можете либо изменить имя базы данных или включить **Автоматическая защита**, которая может успешно защитить эти базы данных.
@@ -286,7 +286,7 @@ ms.locfileid: "79273336"
 
 ![Отключить автоматическую защиту в этом случае](./media/backup-azure-sql-database/disable-auto-protection.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнаете, как выполнять следующие задачи:
 

@@ -2,7 +2,7 @@
 title: Подключите Azure ExpressRoute с облачной инфраструктурой Oracle (ru) Документы Майкрософт
 description: Подключите Azure ExpressRoute с помощью Oracle Cloud Infrastructure (OCI) FastConnect для включения кросс-облачных решений приложений Oracle
 documentationcenter: virtual-machines
-author: mimckitt
+author: BorisB2015
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/16/2020
-ms.author: mimckitt
-ms.openlocfilehash: d85c0fc8986adfa00559eab1c49a79daacdeb33f
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.author: borisb
+ms.openlocfilehash: 70556cbbfefd6ad22ef96ee16065209031ea456c
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81263188"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683754"
 ---
 # <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого соединения между Azure и облачной инфраструктурой Oracle  
 
@@ -102,7 +102,7 @@ ms.locfileid: "81263188"
 
 На этом этапе процесс удаления и деобеспечения завершен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для получения дополнительной информации о кросс-облачной связи [Oracle documentation](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm)между OCI и Azure см.
 * Используйте [скрипты Terraform](https://aka.ms/azureociinterconnecttf) для развертывания инфраструктуры для целевых приложений Oracle через Azure и настройки сетевого интерсоединения. 

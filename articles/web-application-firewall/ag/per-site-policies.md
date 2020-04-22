@@ -8,12 +8,12 @@ ms.service: web-application-firewall
 ms.date: 01/24/2020
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: a04b850857b6abd81934430a05086477acd058d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1301db56cab36ae623bb94cfac97b8e4bdb934e5
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77444697"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682484"
 ---
 # <a name="configure-per-site-waf-policies-using-azure-powershell"></a>Настройка политик WAF на сайте с помощью Azure PowerShell
 
@@ -284,7 +284,7 @@ $PathRuleConfig1 = New-AzApplicationGatewayPathRuleConfig `
 $URLPathMap = New-AzApplicationGatewayUrlPathMapConfig -Name "PathMap" `
   -PathRules $PathRuleConfig, $PathRuleConfig1 `
   -DefaultBackendAddressPoolId $defaultPool.Id `
-  -DefaultBackendHttpSettingsId poolSettings.Id
+  -DefaultBackendHttpSettingsId $poolSettings.Id
 
 Add-AzApplicationGatewayRequestRoutingRule -ApplicationGateway $AppGw `
   -Name "RequestRoutingRule" `
@@ -443,6 +443,6 @@ curl 1.1.1.1/URIAllow?1=1
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка правил брандмауэра веб-приложения](application-gateway-customize-waf-rules-portal.md)

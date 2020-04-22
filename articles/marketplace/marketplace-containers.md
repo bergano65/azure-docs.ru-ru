@@ -6,14 +6,14 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 07/09/2018
+ms.date: 04/15/2020
 ms.author: dsindona
-ms.openlocfilehash: 882d428d7a8a9b56408aaa68964fa1e36c7cc7c2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 80bcf0d5d37a44cee2aab38161abac619542204a
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80277312"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684323"
 ---
 # <a name="containers-offer-publishing-guide"></a>Руководство по публикации предложения "Контейнеры"
 
@@ -37,13 +37,13 @@ ms.locfileid: "80277312"
 | Размещение в ACR | Образы контейнеров должны размещаться в репозитории в Реестре контейнеров Azure (ACR).<ul> <li>Дополнительные сведения о работе с ACR см. на странице "Краткое руководство. Создание реестра контейнеров на портале Azure" по адресу [docs.microsoft.com/azure/container-registry/container-registry-get-started-portal](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal).</li> </ul> |  
 | Добавление тегов к образам | У образа контейнера должен быть хотя бы один тег (но не более 16).<ul> <li>Дополнительные сведения о пометке образа тегами см. на странице тегов Docker по адресу [docs.docker.com/engine/reference/commandline/tag](https://docs.docker.com/engine/reference/commandline/tag).</li> </ul> |  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если это еще не сделано, 
 
-- [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
+- [Узнайте](https://azuremarketplace.microsoft.com/sell) больше о рынке.
 
-Если вы зарегистрированы и создаете предложение или работаете над существующим,
+Чтобы зарегистрироваться в Партнерс-центре, начните создавать новое предложение или работать над существующим:
 
-- [войдите на Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
-- Дополнительные сведения см. в статье [Контейнеры](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/containers/cpp-containers-offer).
+- [Войдите в Центр Партнеров,](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) чтобы создать или завершить свое предложение.
+- Для получения дополнительной информации можно ознакомиться с [предложением контейнера Azure.](./partner-center-portal/create-azure-container-offer.md)

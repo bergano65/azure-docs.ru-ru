@@ -8,12 +8,12 @@ ms.topic: conceptual
 manager: gwallace
 description: Узнайте, как настроить непрерывную интеграцию/непрерывное развертывание с помощью Azure DevOps с Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
-ms.openlocfilehash: 66ff2080ad44098757a5d9360fd3307e65f7431a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f2eb9449518b32ab74f2dbbca6b5489aed325db7
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75438447"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685638"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>Использование CI/CD в Azure Dev Spaces
 
@@ -131,7 +131,7 @@ MyAKS  MyResourceGroup  dev       fedcba098.eus.azds.io
 Выпуск выполняется, когда все задачи завершены.
 
 > [!TIP]
-> Если выпуск завершается сбоем с сообщением об ошибке, например *UPGRADE FAILED: timed out waiting for the condition* (НЕ УДАЛОСЬ ОБНОВИТЬ: истекло время ожидания условия), проверьте объекты pod в кластере [с помощью панели мониторинга Kubernetes](../../aks/kubernetes-dashboard.md). Если вы видите, что стручки не могут начаться с сообщений об ошибках, таких как *Failed to pull https://azdsexample.azurecr.io/v2/mywebapi/manifests/122: image "azdsexample.azurecr.io/mywebapi:122": ошибка rpc: код - неизвестный desc - Ответ на ошибку от daemon: Получить несанкционированную проверку подлинности,* это может быть связано с тем, что ваш кластер не был уполномочен вытащить из вашего реестра контейнеров Azure. Убедитесь, что предварительное требование о наличии [кластера AKS с разрешениями на извлечение данных из Реестра контейнеров Azure](../../aks/cluster-container-registry-integration.md) выполнено.
+> Если выпуск завершается сбоем с сообщением об ошибке, например *UPGRADE FAILED: timed out waiting for the condition* (НЕ УДАЛОСЬ ОБНОВИТЬ: истекло время ожидания условия), проверьте объекты pod в кластере [с помощью панели мониторинга Kubernetes](../../aks/kubernetes-dashboard.md). Если вы видите, что стручки не могут начаться с сообщений об ошибках, таких как *Failed to pull image "azdsexample.azurecr.io/mywebapi:122": ошибка rpc: код - неизвестный desc - Ответ на ошибку от daemon: Get https:\//azdsexample.azurecr.io/v2/mywebapi/manifests/122: несанкционированная: требуется аутентификация,* это может быть связано с тем, что ваш кластер не был уполномочен вытягивать из вашего реестра контейнеров Azure. Убедитесь, что предварительное требование о наличии [кластера AKS с разрешениями на извлечение данных из Реестра контейнеров Azure](../../aks/cluster-container-registry-integration.md) выполнено.
 
 Теперь у вас есть полностью автоматизированный конвейер CI/CD для вилки GitHub примеров приложений Dev Spaces. Каждый раз при фиксации и отправке кода конвейер сборки будет создавать и отправлять образы *mywebapi* и *webfrontend* в ваш экземпляр ACR. Затем конвейер выпуска будет развертывать диаграмму Helm для каждого приложения в пространстве _dev_ кластера с поддержкой Dev Spaces.
 
@@ -183,7 +183,7 @@ _Prod_ этап конвейера CI/CD использует балансиро
 >
 > После этого может потребоваться удалить все объекты pod в пространстве имен `prod`, чтобы их можно было воссоздать без инструментирования Dev Spaces.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения о коллективной разработке с помощью Azure Dev Spaces](../team-development-netcore.md)

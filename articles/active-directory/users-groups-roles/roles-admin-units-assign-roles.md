@@ -14,18 +14,18 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a518ff070ea021726ee382169e87cca55cad36d0
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: c900b2a363a4ff271e7a436b358ecf170daca163
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81428255"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687026"
 ---
 # <a name="assign-scoped-roles-to-an-administrative-unit"></a>Присваивая функции сферы деятельности административной единице
 
 В Active Directory Azure (Azure AD) можно назначить пользователям роль Azure AD с областью, ограниченной одним или несколькими административными единицами (AUs) для более детального административного контроля.
 
-Для шагов, готовых к использованию PowerShell и Microsoft Graph для управления административными единицами, [см.](roles-admin-units-manage.md#getting-started)
+Для шагов по подготовке к использованию PowerShell и Microsoft Graph для управления административными подразделениями [см.](roles-admin-units-manage.md#get-started)
 
 ## <a name="roles-available"></a>Роли доступны
 
@@ -92,6 +92,6 @@ ms.locfileid: "81428255"
     Request body
     {}
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Административные подразделения устранения неполадок и часто задаваемые вопросы](roles-admin-units-faq-troubleshoot.md)

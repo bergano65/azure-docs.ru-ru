@@ -8,12 +8,12 @@ ms.date: 03/11/2020
 ms.service: storage
 ms.reviewer: rukmani-msft
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: fb982324b66c5ac0d2db00eb906ed850827bc72e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 80c0afafca3b0bf497689cbd4a0870eedd066cfd
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79533289"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81677143"
 ---
 # <a name="migrate-azure-data-lake-storage-from-gen1-to-gen2"></a>Перенести хранение данных Azure из Gen1 в Gen2
 
@@ -97,12 +97,12 @@ Azure Data Lake Storage2 построен на [хранилище Azure Blob](s
 |---|---|---|
 |Упорядочение данных|[Иерархическое пространство имен](data-lake-storage-namespace.md)<br>Поддержка файлов и папок|[Иерархическое пространство имен](data-lake-storage-namespace.md)<br>Поддержка контейнеров, файлов и папок |
 |Геоизбыточность| [LRS](../common/storage-redundancy.md#locally-redundant-storage)| [LRS](../common/storage-redundancy.md#locally-redundant-storage), [ЗРС](../common/storage-redundancy.md#zone-redundant-storage), [GRS](../common/storage-redundancy.md#geo-redundant-storage), [RA-GRS](../common/storage-redundancy.md#read-access-to-data-in-the-secondary-region) |
-|Проверка подлинности|[AAD управляемой идентичности](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)|[AAD управляемой идентичности](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)<br>[Ключ общего доступа](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key)|
+|Аутентификация|[AAD управляемой идентичности](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)|[AAD управляемой идентичности](../../active-directory/managed-identities-azure-resources/overview.md)<br>[Субъекты-службы](../../active-directory/develop/app-objects-and-service-principals.md)<br>[Ключ общего доступа](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key)|
 |Авторизация|Менеджмент - [RBAC](../../role-based-access-control/overview.md)<br>Данные - [ACLs](data-lake-storage-access-control.md)|Менеджмент - [RBAC](../../role-based-access-control/overview.md)<br>Данные - [ACLs](data-lake-storage-access-control.md), [RBAC](../../role-based-access-control/overview.md) |
 |Шифрование - Данные в состоянии покоя|Сторона сервера - с [ключами, управляемыми корпорацией Майкрософт](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или [управляемыми клиентами](../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|Сторона сервера - с [ключами, управляемыми корпорацией Майкрософт](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или [управляемыми клиентами](../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Поддержка VNET|[Интеграция VNET](../../data-lake-store/data-lake-store-network-security.md)|[Конечные точки обслуживания](../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Частные конечные точки (публичный предварительный просмотр)](../common/storage-private-endpoints.md)|
-|Взаимодействие с разработчиками|[REST](../../data-lake-store/data-lake-store-data-operations-rest-api.md), [.NET](../../data-lake-store/data-lake-store-data-operations-net-sdk.md), [Java](../../data-lake-store/data-lake-store-get-started-java-sdk.md), [Python](../../data-lake-store/data-lake-store-data-operations-python.md), [PowerShell](../../data-lake-store/data-lake-store-get-started-powershell.md), [Azure CLI](../../data-lake-store/data-lake-store-get-started-cli-2.0.md)|[REST](/rest/api/storageservices/data-lake-storage-gen2), [.NET](data-lake-storage-directory-file-acl-dotnet.md), [Java](data-lake-storage-directory-file-acl-java.md), [Python](data-lake-storage-directory-file-acl-python.md), [JavaScript](data-lake-storage-directory-file-acl-javascript.md), [PowerShell](data-lake-storage-directory-file-acl-powershell.md), [Azure CLI](data-lake-storage-directory-file-acl-cli.md) (в публичном предварительном просмотре)|
-|Журналы диагностики|Классические журналы<br>[Интегрированный Azure Monitor](../../data-lake-store/data-lake-store-diagnostic-logs.md)|[Классические журналы](../common/storage-analytics-logging.md) (в публичном предварительном просмотре)<br>Интеграция мониторинга Azure - Хронология TBD|
+|Поддержка VNET|[Интеграция VNET](../../data-lake-store/data-lake-store-network-security.md)|[Конечные точки обслуживания](../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Частные конечные точки](../common/storage-private-endpoints.md)|
+|Взаимодействие с разработчиками|[REST](../../data-lake-store/data-lake-store-data-operations-rest-api.md), [.NET](../../data-lake-store/data-lake-store-data-operations-net-sdk.md), [Java](../../data-lake-store/data-lake-store-get-started-java-sdk.md), [Python](../../data-lake-store/data-lake-store-data-operations-python.md), [PowerShell](../../data-lake-store/data-lake-store-get-started-powershell.md), [Azure CLI](../../data-lake-store/data-lake-store-get-started-cli-2.0.md)|Общедоступные - [REST](/rest/api/storageservices/data-lake-storage-gen2), [.NET](data-lake-storage-directory-file-acl-dotnet.md), [Java](data-lake-storage-directory-file-acl-java.md), [Python](data-lake-storage-directory-file-acl-python.md)<br>Публичный предварительный просмотр - [JavaScript](data-lake-storage-directory-file-acl-javascript.md), [PowerShell](data-lake-storage-directory-file-acl-powershell.md), [Azure CLI](data-lake-storage-directory-file-acl-cli.md)|
+|Журналы диагностики|Классические журналы<br>[Интегрированный Azure Monitor](../../data-lake-store/data-lake-store-diagnostic-logs.md)|[Классические журналы](../common/storage-analytics-logging.md) - Как правило, доступны<br>Интеграция мониторинга Azure - Хронология TBD|
 |Экосистема|[HDInsight (3.6)](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md), [Azure Databricks (3.1 и выше)](https://docs.databricks.com/data/data-sources/azure/azure-datalake.html), [S'L DW](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store), [ADF](../../data-factory/load-azure-data-lake-store.md)|[HDInsight (3.6, 4.0)](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md), [Azure Databricks (5.1 и выше)](https://docs.microsoft.com/azure/databricks/data/data-sources/azure/azure-datalake-gen2), [S'L DW](../../sql-database/sql-database-vnet-service-endpoint-rule-overview.md), [ADF](../../data-factory/load-azure-data-lake-storage-gen2.md)|
 
 <a id="migration-patterns" />
@@ -202,7 +202,7 @@ Azure Data Lake Storage2 построен на [хранилище Azure Blob](s
 
 :heavy_check_mark: Миграционные усилия высоки, но они обеспечивают поддержку Gen1 и Gen2.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о различных аспектах настройки безопасности для учетной записи хранилища. Смотрите [руководство по безопасности хранилища Azure](../common/storage-security-guide.md).
 - Оптимизируйте производительность для вашего магазина data Lake Store. Просмотрите [оптимизацию хранения озер данных Azure Gen2 для производительности](data-lake-storage-performance-tuning-guidance.md)

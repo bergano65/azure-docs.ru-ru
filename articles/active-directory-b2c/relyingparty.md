@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/03/2020
+ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 221ed3169fff78a2721e91023036593570fbd723
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.openlocfilehash: 733a33881fe3acc962aeda4b05a1b01be4e148ca
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80637792"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680361"
 ---
 # <a name="relyingparty"></a>RelyingParty
 
@@ -44,7 +44,7 @@ ms.locfileid: "80637792"
   <RelyingParty>
     <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
     <UserJourneyBehaviors>
-      <SingleSignOn Scope="TrustFramework" KeepAliveInDays="7"/>
+      <SingleSignOn Scope="Tenant" KeepAliveInDays="7"/>
       <SessionExpiryType>Rolling</SessionExpiryType>
       <SessionExpiryInSeconds>300</SessionExpiryInSeconds>
       <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="your-application-insights-key" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
@@ -102,7 +102,7 @@ ms.locfileid: "80637792"
 
 Элемент **DefaultUserJourney** содержит следующий атрибут.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | ReferenceId | Да | Идентификатор пути взаимодействия пользователя в политике. Дополнительные сведения см. в статье [UserJourneys](userjourneys.md). |
 
@@ -123,7 +123,7 @@ ms.locfileid: "80637792"
 
 Элемент **SingleSignOn** содержит следующий атрибут.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | Область | Да | Область поведение единого входа. Возможные значения: `Suppressed`, `Tenant`, `Application` или `Policy`. Значение `Suppressed` указывает на то, что поведение подавляется, и пользователю всегда предлагается выбор поставщика идентификационных данных.  Значение `Tenant` указывает, что поведение применяется для всех политик в клиенте. Например, пользователь, который проходит через пути взаимодействия двух политик для клиента, не получает запрос на выбор поставщика удостоверений. Значение `Application` указывает, что поведение применяется ко всем политикам для приложения, делающего запрос. Например, пользователь, который проходит через пути взаимодействия двух политик для приложения, не получает запрос на выбор поставщика удостоверений. Значение `Policy` указывает, что поведение применяется только к политике. Например, пользователь, который проходит через пути взаимодействия двух политик для инфраструктуры доверия, получает запрос на выбор поставщика удостоверений при переключении политик. |
 | KeepAliveInDays | Да | Контролирует, как долго пользователь будет оставаться в системе. Если задать значение 0, функция "Оставаться в системе" будет отключена. Дополнительные сведения см. в статье [Включение функции "Оставаться в системе" в Azure Active Directory B2C](custom-policy-keep-me-signed-in.md). |
@@ -134,7 +134,7 @@ ms.locfileid: "80637792"
 
 Элемент **JourneyInsights** содержит следующие атрибуты.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | TelemetryEngine | Да | Значение должно быть равно `ApplicationInsights`. |
 | InstrumentationKey | Да | Строка, содержащая ключ инструментирования для элемента Application Insights. |
@@ -161,9 +161,9 @@ ms.locfileid: "80637792"
 
 Элемент **ContentDefinitionParameter** содержит следующий атрибут.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| name | Да | Имя пары "ключ — значение". |
+| Имя | Да | Имя пары "ключ — значение". |
 
 Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization.md#configure-dynamic-custom-page-content-uri).
 
@@ -171,7 +171,7 @@ ms.locfileid: "80637792"
 
 Элемент **TechnicalProfile** содержит следующий атрибут.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | Идентификатор | Да | Значение должно быть равно `PolicyProfile`. |
 
@@ -188,9 +188,9 @@ ms.locfileid: "80637792"
 
 Элемент **Protocol** содержит следующий атрибут.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| name | Да | Имя допустимого протокола, поддерживаемого в Azure AD B2C и используемого в составе технического профиля. Возможные значения: `OpenIdConnect` или `SAML2`. Значение `OpenIdConnect` представляет собой стандарт протокола OpenID Connect 1.0 согласно спецификации OpenID Foundation. Значение `SAML2` представляет стандартный протокол SAML 2.0 согласно спецификации OASIS. |
+| Имя | Да | Имя допустимого протокола, поддерживаемого в Azure AD B2C и используемого в составе технического профиля. Возможные значения: `OpenIdConnect` или `SAML2`. Значение `OpenIdConnect` представляет собой стандарт протокола OpenID Connect 1.0 согласно спецификации OpenID Foundation. Значение `SAML2` представляет стандартный протокол SAML 2.0 согласно спецификации OASIS. |
 
 ## <a name="outputclaims"></a>OutputClaims
 
@@ -202,7 +202,7 @@ ms.locfileid: "80637792"
 
 Элемент **OutputClaim** содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | ClaimTypeReferenceId | Да | Ссылка на **ClaimType**, уже определенная в разделе **ClaimsSchema** файла политики. |
 | DefaultValue | нет | Значение по умолчанию, которое можно использовать, если значение утверждения пусто. |
@@ -216,7 +216,7 @@ ms.locfileid: "80637792"
 
 Элемент **SubjectNamingInfo** содержит следующий атрибут.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | ClaimType | Да | Ссылка на элемент **PartnerClaimType** исходящего утверждения. Исходящие утверждения должны быть определены в коллекции **OutputClaims** политики проверяющей стороны. |
 

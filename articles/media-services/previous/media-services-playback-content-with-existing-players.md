@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 07537d3d67e41f7e1179a709ffa19f3d84aa4539
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2d3c22e17c37bc46c16a9cc80eb3cf4b9ec93ecf
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77565831"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686924"
 ---
 # <a name="playing-your-content-with-existing-players"></a>Воспроизведение содержимого с помощью существующих проигрывателей
 Службы мультимедиа Azure поддерживают многие популярные форматы потоковой передачи, например Smooth Streaming, HTTP Live Streaming и MPEG-Dash. В этой статье описываются имеющиеся проигрыватели, которые можно использовать для тестирования потоков.
@@ -46,10 +46,6 @@ ms.locfileid: "77565831"
 
 ### <a name="flash-player"></a>Flash Player
 
-#### <a name="aes-encrypted-with-token"></a>Шифрование AES с маркером
-
-[https://aestoken.azurewebsites.net](https://aestoken.azurewebsites.net)
-
 #### <a name="playready-with-token"></a>PlayReady с маркером
 
 [https://sltoken.azurewebsites.net](https://sltoken.azurewebsites.net)
@@ -60,7 +56,7 @@ ms.locfileid: "77565831"
 
 [https://dashif.org](https://dashif.org)
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Другой
 Для проверки URL-адресов HLS также можно использовать:
 
 * **Safari** на устройстве iOS или

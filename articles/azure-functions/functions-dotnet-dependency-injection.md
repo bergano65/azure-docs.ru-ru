@@ -6,18 +6,18 @@ ms.topic: reference
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: f8f1eb353087c5121eaafb4c8789e7a2f7638b99
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a1ff8e0aedce5d3a6acc9a39084cf0839efdd88e
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79475127"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678456"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
 Azure Functions поддерживает шаблон проектирования программного обеспечения для впрыски визы зависимости (DI), который является методом достижения [инверсии управления (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимостями.
 
-- Инъекция зависимости в функциях Azure построена на функциях инъекций зависимости ядра .NET. Рекомендуется знакомство с [инъекцией зависимости ядра .NET.](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) Однако существуют различия в том, как переопределять зависимости и как значения конфигурации считываются с функциями Azure в плане потребления.
+- Инъекция зависимости в функциях Azure построена на функциях инъекций зависимости ядра .NET. Рекомендуется [знакомство с инъекцией зависимости от ядра .NET.](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) Существуют различия в том, как переопределять зависимости и как значения конфигурации считываются с помощью функций Azure в плане потребления.
 
 - Поддержка впрыска зависимости начинается с Azure Functions 2.x.
 
@@ -253,7 +253,7 @@ public class HttpTrigger
 > [!WARNING]
 > Избегайте попыток чтения значений из файлов, таких как *local.settings.json* или *appsettings. окружающей среды.json* в плане потребления. Значения, считываемые из этих файлов, связанных с триггерными соединениями, недоступны, так как приложение масштабируется, поскольку инфраструктура хостинга не имеет доступа к информации о конфигурации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих ресурсах:
 

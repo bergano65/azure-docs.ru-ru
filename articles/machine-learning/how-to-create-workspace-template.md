@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 03/05/2020
 ms.custom: seoapril2019
-ms.openlocfilehash: 457979837b1c56eb85fc19c9a1fce5dc7df8c23b
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: b802a9c9df7e7f0c44ea66ee0061efb517b80050
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81481984"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682763"
 ---
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 <br>
@@ -43,7 +43,7 @@ ms.locfileid: "81481984"
 * группа ресурсов Azure.
 * Учетная запись хранения Azure
 * Azure Key Vault
-* Azure Application Insights
+* Azure Application Insights
 * Реестр контейнеров Azure
 * Рабочая область службы "Машинное обучение Azure"
 
@@ -81,7 +81,9 @@ ms.locfileid: "81481984"
 
 * Включить настройки высокой конфиденциальности для рабочего пространства
 * Включить шифрование для рабочего пространства
-* Использует существующее хранилище ключей Azure
+* Использует существующее хранилище ключей Azure для извлечения ключей, управляемых клиентами
+
+Для получения дополнительной информации [см.](concept-enterprise-security.md#encryption-at-rest)
 
 ```json
 {
@@ -121,7 +123,7 @@ ms.locfileid: "81481984"
         "description": "Specifies the sku, also referred to as 'edition' of the Azure Machine Learning workspace."
       }
     },
-    "hbi_workspace":{
+    "high_confidentiality":{
       "type": "string",
       "defaultValue": "false",
       "allowedValues": [
@@ -256,27 +258,31 @@ ms.locfileid: "81481984"
                     "keyIdentifier": "[parameters('resource_cmk_uri')]"
                   }
             },
-        "hbiWorkspace": "[parameters('hbi_workspace')]"
+        "hbiWorkspace": "[parameters('high_confidentiality')]"
       }
     }
   ]
 }
 ```
 
-Чтобы получить идентификатор Убежища ключей и ключ URI, необходимый для этого шаблона, можно использовать Azure CLI. Следующая команда является примером использования Azure CLI для получения идентификатора ресурсов Key Vault и URI:
+Чтобы получить идентификатор Убежища ключей и ключ URI, необходимый для этого шаблона, можно использовать Azure CLI. Следующая команда получает идентификатор Key Vault:
 
 ```azurecli-interactive
-az keyvault show --name mykeyvault --resource-group myresourcegroup --query "[id, properties.vaultUri]"
+az keyvault show --name mykeyvault --resource-group myresourcegroup --query "id"
 ```
 
-Эта команда возвращает значение, аналогичное следующему тексту. Первое значение — это идентификатор, а второе — URI:
+Эта команда возвращает значение следующего вида: `"/subscriptions/{subscription-guid}/resourceGroups/myresourcegroup/providers/Microsoft.KeyVault/vaults/mykeyvault"`.
 
-```text
-[
-  "/subscriptions/{subscription-guid}/resourceGroups/myresourcegroup/providers/Microsoft.KeyVault/vaults/mykeyvault",
-  "https://mykeyvault.vault.azure.net/"
-]
+Чтобы получить URI для управляемого ключа клиента, используйте следующую команду:
+
+```azurecli-interactive
+az keyvault key show --vault-name mykeyvault --name mykey --query "key.kid"
 ```
+
+Эта команда возвращает значение следующего вида: `"https://mykeyvault.vault.azure.net/keys/mykey/{guid}"`.
+
+> [!IMPORTANT]
+> После создания рабочего пространства невозможно изменить настройки конфиденциальных данных, шифрования, идентификатора хранилища ключей или идентификаторов ключей. Чтобы изменить эти значения, необходимо создать новое рабочее пространство с использованием новых значений.
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 

@@ -4,12 +4,12 @@ description: В этой статье содержится обзор управ
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: sfrev
-ms.openlocfilehash: 69c10b0e9d3b7c29122c8432ab1e4bc06d3a3120
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7a9f59e3e44d3302ac19c7a9e7e77beb51947ce4
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79481122"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682645"
 ---
 # <a name="service-fabric-application-resource-model"></a>Модель прикладного ресурса Service Fabric
 
@@ -99,7 +99,7 @@ ms.locfileid: "79481122"
 | приложениеTypeVersion | Версия типа приложения         | 1.0.0                                                        | Должен соответствовать ApplicationManifest.xml                 |
 | serviceName            | Название службы         | Голосование                                             | Должно быть в формате ApplicationName-ServiceType            |
 | serviceTypeName        | Имя типа службы                | VotingWeb                                                    | Должен соответствовать ServiceManifest.xml                 |
-| appPackageUrl          | URL-адрес хранения капли приложения     | https://servicefabricapps.blob.core.windows.net/apps/Voting.sfpkg | URL-адрес пакета приложений в хранилище blob (процедура установки URL описана позже в статье) |
+| appPackageUrl          | URL-адрес хранения капли приложения     | https:\//servicefabricapps.blob.core.windows.net/apps/Voting.sfpkg | URL-адрес пакета приложений в хранилище blob (процедура установки URL описана позже в статье) |
 
 ```json
 {
@@ -178,7 +178,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
     Remove-AzResource  -ResourceId <String> [-Force] [-ApiVersion <String>]
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Получите информацию о модели ресурса приложения:
 

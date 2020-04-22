@@ -1,39 +1,39 @@
 ---
-title: Преобразование наследного вонючего Exchange в ресурс Azure с помощью PowerShell
+title: Преобразование наследного вглядывания в ресурс Azure с помощью PowerShell
 titleSuffix: Azure
-description: Преобразование наследного вонючего Exchange в ресурс Azure с помощью PowerShell
+description: Преобразование наследного вглядывания в ресурс Azure с помощью PowerShell
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: aa11f329cf0a0cb27d58b940b42731a2ec41c272
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eedf87548d62e05d4940911ed3dcd821077acb27
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75775398"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686789"
 ---
-# <a name="convert-a-legacy-exchange-peering-to-azure-resource-using-powershell"></a>Преобразование наследного вонючего Exchange в ресурс Azure с помощью PowerShell
+# <a name="convert-a-legacy-exchange-peering-to-an-azure-resource-by-using-powershell"></a>Преобразование наследного вглядывания в ресурс Azure с помощью PowerShell
 
-В этой статье описывается, как преобразовать существующую устаревшую Биржу, вглядывающуюся в ресурс Azure с помощью cmdlets PowerShell.
+В этой статье описывается, как преобразовать существующую устаревшую Биржу, вглядывающуюся в ресурс Azure, с помощью cmdlets PowerShell.
 
-Если вы предпочитаете, вы можете завершить это руководство с помощью [портала](howto-legacy-exchange-portal.md).
+Если вы предпочитаете, вы можете заполнить это руководство с помощью [портала](howto-legacy-exchange-portal.md)Azure .
 
-## <a name="before-you-begin"></a>Перед началом
-* Просмотрите [предпосылки](prerequisites.md) и [обменпирирования пошаговое решение,](walkthrough-exchange-all.md) прежде чем начать конфигурацию.
+## <a name="before-you-begin"></a>Подготовка к работе
+* Просмотрите [предпосылки](prerequisites.md) и [пошаговое пошаговое пошаговое пошаговое решение Exchange](walkthrough-exchange-all.md) перед началом конфигурации.
 
-### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
+### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
 
-## <a name="convert-a-legacy-exchange-peering-to-azure-resource"></a>Преобразование устаревшего пиринга через точку обмена в ресурс Azure
+## <a name="convert-a-legacy-exchange-peering-to-an-azure-resource"></a>Преобразование наследного элемента Exchange в ресурс Azure
 
 ### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
-### <a name="get-legacy-exchange-peering-for-conversion"></a><a name= get></a>Получить наследие Exchange пиринг для преобразования
-Ниже приведен пример, чтобы получить наследие Exchange пиринг в Сиэтле вглядываясь месте:
+### <a name="get-legacy-exchange-peering-for-conversion"></a><a name= get></a>Получить наследование Exchange для преобразования
+В этом примере показано, как получить устаревшую Биржу, вглядывающуюся в место всматриваемых местах Сиэтла:
 
 ```powershell
 $legacyPeering = Get-AzLegacyPeering -Kind Exchange -PeeringLocation "Seattle"
@@ -58,7 +58,7 @@ $legacyPeering
 ```
 
 ### <a name="convert-legacy-peering"></a>Преобразование устаревшего пиринга
-Ниже приводится команда для преобразования устаревшего Exchange, вглядываясь в ресурс Azure:
+Эта команда может использоваться для преобразования узлового элемента Exchange в ресурс Azure:
 
 ```powershell
 $legacyPeering[0] | New-AzPeering `
@@ -69,9 +69,10 @@ $legacyPeering[0] | New-AzPeering `
 
 &nbsp;
 > [!IMPORTANT] 
-> Обратите внимание, что при преобразовании устаревшего пиринга в ресурс azure изменения не поддерживаются&nbsp;
+> При преобразовании устаревшего вонючего в ресурс Azure изменения не поддерживаются.
+&nbsp;
 
-Ниже приведен пример ответа, когда сквозная подготовка была успешно завершена:
+Этот пример ответа показывает, когда сквозная подготовка была успешно завершена:
 
 ```powershell
     Name                     : SeattleExchangePeering
@@ -96,8 +97,8 @@ $legacyPeering[0] | New-AzPeering `
 ```powershell
 Get-Help Get-AzPeering -detailed
 ```
-Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)
+Для получения дополнительной информации, см [Интернет пиринг часто задаваемые вопросы](faqs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание или изменение пиринга Exchange с помощью PowerShell](howto-exchange-powershell.md)

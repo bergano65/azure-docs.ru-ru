@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с гибридными рабочими ролями Runbook в службе автоматизации Azure
+title: Устранение неполадок ВСУ Гибридные Runbook работников
 description: В этой статье содержится информация для устранения неполадок в гибридных runbook работников Azure Automation.
 services: automation
 ms.service: automation
@@ -9,20 +9,23 @@ ms.author: magoedte
 ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d2587af0ada18b5c4271e7411783fe60211a3479
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.openlocfilehash: 2b3bf6706e977bdb6915335dee59da3c250e7895
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80637859"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81679333"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
 В этой статье приводятся сведения об устранении неполадок с гибридными рабочими ролями Runbook.
 
-## <a name="general"></a>Общее
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](../automation-update-azure-modules.md)
 
-Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. Для Windows этот агент является агентом log Analytics для Windows, также именуемым агентом мониторинга Майкрософт (MMA). Для Linux, это журнал Analytics агент для Linux.
+## <a name="general"></a>Общие сведения
+
+Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. Для Windows этот агент является агентом log Analytics для Windows. Для Linux, это журнал Analytics агент для Linux.
 
 ### <a name="scenario-runbook-execution-fails"></a><a name="runbook-execution-fails"></a>Сценарий: происходит сбой выполнения модуля Runbook
 
@@ -36,15 +39,13 @@ ms.locfileid: "80637859"
 
 Ваша книга приостанавливается вскоре после того, как она пытается выполнить три раза. Есть условия, которые могут прервать runbook от завершения. Связанное сообщение об ошибке может не содержать никакой дополнительной информации.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Возможны следующие причины:
 
 * Runbooks не может проверить подлинность с помощью местных ресурсов.
-
 * Гибридная рабочая роль находится за прокси-сервером или брандмауэром.
-
-* Компьютер, настроенный для запуска функции Hybrid Runbook Worker, не отвечает минимальным требованиям к оборудованию.
+* Компьютер, настроенный для запуска гибридного Runbook Worker, не отвечает минимальным требованиям к оборудованию.
 
 #### <a name="resolution"></a>Решение
 
@@ -70,7 +71,7 @@ ms.locfileid: "80637859"
    at JobRuntimeData.NotificationsClient.JobRuntimeDataServiceSignalRClient.<Start>d__45.MoveNext()
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Гибридный Runbook Worker не был настроен правильно для автоматизированного решения развертывания. Это решение содержит часть, которая соединяет VM с рабочим пространством Log Analytics. Скрипт PowerShell ищет рабочее пространство в подписке с предоставленным именем. В этом случае рабочее пространство Log Analytics находится в другой подписке. Скрипт не может найти рабочее пространство и пытается создать его, но имя уже взято. Таким образом, развертывание завершается неудачей.
 
@@ -88,7 +89,7 @@ ms.locfileid: "80637859"
 
 Вы не можете видеть гибридный Runbook работника или vMs, когда рабочая машина была выключена в течение длительного времени.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Гибридная машина Runbook Worker не работает в Azure Automation более 30 дней. В результате автоматизация очистила группу Hybrid Runbook Worker или группу системного рабочего. 
 
@@ -103,20 +104,20 @@ ms.locfileid: "80637859"
 Запуск книги, работающего на гибридном Runbook Worker, выходит из строя со следующим сообщением об ошибке.
 
 ```error
-Connect-AzureRmAccount : No certificate was found in the certificate store with thumbprint 0000000000000000000000000000000000000000
+Connect-AzAccount : No certificate was found in the certificate store with thumbprint 0000000000000000000000000000000000000000
 At line:3 char:1
-+ Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -Appl ...
++ Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -Appl ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Connect-AzureRmAccount], ArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzureRmAccountCommand
+    + CategoryInfo          : CloseError: (:) [Connect-AzAccount], ArgumentException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzAccountCommand
 ```
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
-Эта ошибка возникает при попытке использовать [учетную запись Run As](../manage-runas-account.md) в runbook, который работает на гибридном Runbook Worker, где нет сертификата учетной записи Run As. Hybrid Runbook Workers не имеют актива сертификата локально по умолчанию, который требуется учетной записи Run As для нормальной работы.
+Эта ошибка возникает при попытке использовать [учетную запись Run As](../manage-runas-account.md) в runbook, который работает на гибридном Runbook Worker, где нет сертификата учетной записи Run As. Гибридные работники Runbook не имеют актива сертификата локально по умолчанию. Учетная запись Run As требует, чтобы этот актив работал должным образом.
 
 #### <a name="resolution"></a>Решение
 
-Если ваш гибридный Runbook Worker является VM Azure, вы можете использовать [управляемые идентификаторы для ресурсов Azure.](../automation-hrw-run-runbooks.md#managed-identities-for-azure-resources) Этот сценарий упрощает аутентификацию, позволяя аутентифицировать ресурсы Azure с помощью управляемого итога ВМ Azure вместо учетной записи Run As. Когда Hybrid Runbook Worker является штатной машиной, необходимо установить сертификат учетной записи Run As на машине. Чтобы узнать, как установить сертификат, ознакомьтесь с шагами для запуска runbook PowerShell Export-RunAsCertificateToHybridWorker в [запущенных runbooks на гибридном Runbook Worker.](../automation-hrw-run-runbooks.md)
+Если ваш гибридный Runbook Worker является VM Azure, вы можете использовать [управляемые идентификаторы для ресурсов Azure.](../automation-hrw-run-runbooks.md#managed-identities-for-azure-resources) Этот сценарий упрощает аутентификацию, позволяя аутентифицировать ресурсы Azure с помощью управляемого итога ВМ Azure вместо учетной записи Run As. Когда Hybrid Runbook Worker является штатной машиной, необходимо установить сертификат учетной записи Run As на машине. Чтобы узнать, как установить сертификат, ознакомьтесь с шагами для запуска runbook PowerShell **Export-RunAsCertificateToHybridWorker** в [запущенных runbooks на гибридном Runbook Worker.](../automation-hrw-run-runbooks.md)
 
 ### <a name="scenario-error-403-during-registration-of-hybrid-runbook-worker"></a><a name="error-403-on-registration"></a>Сценарий: Ошибка 403 во время регистрации гибридного runbook работника
 
@@ -128,7 +129,7 @@ At line:3 char:1
 "Forbidden: You don't have permission to access / on this server."
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Возможны следующие причины:
 
@@ -157,7 +158,7 @@ Linux Hybrid Runbook Worker зависит от [агента Log Analytics дл
 
 Агент Log Analytics для Linux не работает
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Если агент не работает, он не позволяет Linux Hybrid Runbook Worker общаться с Azure Automation. Агент может не работать по разным причинам.
 
@@ -193,15 +194,15 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Работник Windows Hybrid Runbook зависит от [агента Log Analytics для Windows,](../../azure-monitor/platform/log-analytics-agent.md) который должен общаться с учетной записью Автоматизации для регистрации сотрудника, получения заданий в runbook и состояния отчета. Если регистрация работника не удается, этот раздел включает в себя некоторые возможные причины.
 
-### <a name="scenario-the-microsoft-monitoring-agent-isnt-running"></a><a name="mma-not-running"></a>Сценарий: Агент мониторинга Майкрософт не работает
+### <a name="scenario-the-log-analytics-agent-for-windows-isnt-running"></a><a name="mma-not-running"></a>Сценарий: Агент аналитики журнала для Windows не работает
 
 #### <a name="issue"></a>Проблемы
 
-Служба `healthservice` не работает на компьютере с гибридной рабочей ролью Runbook.
+Не `healthservice` работает на гибридной машине Runbook Worker.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
-Если служба агента мониторинга Майкрософт не работает, гибридный сотрудник Runbook не может общаться с Azure Automation.
+Если служба журнала Analytics для Windows не работает, сотрудник Гибридного Runbook не сможет связаться с Azure Automation.
 
 #### <a name="resolution"></a>Решение
 
@@ -213,7 +214,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 В журнале событий **«Менеджер по приложениям и службам»** вы увидите `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent` событие 4502 и EventMessage, содержащее следующее описание:<br>`The certificate presented by the service \<wsid\>.oms.opinsights.azure.com was not issued by a certificate authority used for Microsoft services. Please contact your network administrator to see if they are running a proxy that intercepts TLS/SSL communication.`
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Убедитесь, что компьютер имеет исходящий доступ к q **.azure-automation.net** на порту 443. 
 
@@ -231,7 +232,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Если настроить **Orchestrator.Sandbox.exe.config,** чтобы установить прокси и список обхода, песочница по-прежнему не подключается должным образом. Файл **Powershell_ise.exe.config** с тем же самыми настройками списка прокси и обхода, кажется, работает так, как вы ожидаете. Системы автоматизации управления обслуживанием (SMA) и журналы PowerShell не предоставляют никакой информации о прокси-сервере.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Подключение к службам Федерации активных каталогов (ADFS) на сервере не может обойти прокси. Помните, что песочница PowerShell работает как зарегистрированный пользователь. Тем не менее, оркестратор песочница сильно настроены и могут игнорировать **Orchestrator.Sandbox.exe.config** настройки файлов. Он имеет специальный код для обработки машин или MMA прокси настройки, но не для обработки других пользовательских настроек прокси. 
 
@@ -266,13 +267,13 @@ Heartbeat
 | summarize arg_max(TimeGenerated, *) by Computer
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта проблема может быть вызвана повреждением кэша в гибридной рабочей роли Runbook.
 
 #### <a name="resolution"></a>Решение
 
-Чтобы решить данную проблему, войдите в систему гибридной рабочей роли Runbook и запустите следующий сценарий. Он останавливает Microsoft Monitoring Agent, удаляет его кэш и перезапускает службу. Это действие заставляет гибридную рабочую роль Runbook повторно скачать свою конфигурацию из службы автоматизации Azure.
+Чтобы решить данную проблему, войдите в систему гибридной рабочей роли Runbook и запустите следующий сценарий. Этот скрипт останавливает агент Log Analytics для Windows, удаляет кэш и перезапускает службу. Это действие заставляет гибридную рабочую роль Runbook повторно скачать свою конфигурацию из службы автоматизации Azure.
 
 ```powershell
 Stop-Service -Name HealthService
@@ -292,7 +293,7 @@ Start-Service -Name HealthService
 Machine is already registered
 ```
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта проблема может быть вызвана, если машина уже зарегистрирована с другой учетной записью Автоматизация или если вы попытаетесь прочитать гибридный Runbook работника после удаления его из машины.
 
@@ -302,10 +303,10 @@ Machine is already registered
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\HybridRunbookWorker`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
+Если вы не видите проблему выше или не можете решить вашу проблему, попробуйте один из следующих каналов для дополнительной поддержки:
 
 * Получите ответы от экспертов Azure через [форумы Azure.](https://azure.microsoft.com/support/forums/)
-* Связь [@AzureSupport](https://twitter.com/azuresupport) с официальной учетной записью Microsoft Azure для улучшения обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответам, поддержке и экспертам.
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**
+* Связаться [@AzureSupport](https://twitter.com/azuresupport)с официальной учетной записью Microsoft Azure для улучшения обслуживания клиентов, подключив сообщество Azure к нужным ресурсам: ответам, поддержке и экспертам.
+* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**

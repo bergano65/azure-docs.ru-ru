@@ -14,18 +14,18 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78f45d9e1ca5b8237779fe096154c83749aa08fe
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 1f0b0c0a7b666aed56ad24625c80c0a57683b998
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81428437"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683272"
 ---
 # <a name="add-and-manage-groups-in-administrative-units-in-azure-active-directory"></a>Добавление и управление группами в административных подразделениях в Active Directory Azure
 
 В Active Directory Azure (Azure AD) можно добавить группы в административную единицу (AU) для более детальной административной сферы управления.
 
-Для шагов, готовых к использованию PowerShell и Microsoft Graph для управления административными единицами, [см.](roles-admin-units-manage.md#getting-started)
+Для шагов по подготовке к использованию PowerShell и Microsoft Graph для управления административными подразделениями [см.](roles-admin-units-manage.md#get-started)
 
 ## <a name="add-groups-to-an-au"></a>Добавление групп в АС
 
@@ -63,7 +63,7 @@ ms.locfileid: "81428437"
       "@odata.id":"https://graph.microsoft.com/beta/groups/{id}"
     }
 
-Пример
+Пример.
 
     {
       "@odata.id":"https://graph.microsoft.com/beta/users/ 871d21ab-6b4e-4d56-b257-ba27827628f3"
@@ -137,7 +137,7 @@ ms.locfileid: "81428437"
 
     https://graph.microsoft.com/beta/administrativeUnits/<adminunit-id>/members/<group-id>/$ref
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Назначить роль административной единице](roles-admin-units-assign-roles.md)
 - [Управление пользователями в административном блоке](roles-admin-units-add-manage-users.md)

@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/12/2019
 ms.author: dsindona
-ms.openlocfilehash: 8e5165d000ee98212b3fd76091ffbd030b6b787f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fde249f22342ed2a0c50f5fdda3bde9dc2cde183
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281550"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685726"
 ---
 # <a name="promote-your-business-with-microsoft"></a>Развитие бизнеса с помощью решений Майкрософт
 
@@ -32,10 +32,10 @@ ms.locfileid: "80281550"
 | Заработайте компетенцию облачной платформы | Получение компетенции поможет вам: <ul> <li> выделиться среди других партнеров корпорации Майкрософт и </li> <li> продемонстрировать технический опыт и успех на рынке. </li> </ul> Компетенция является обязательным условием для многих ключевых партнерских программ, таких как совместные продажи. Дополнительные сведения см. на сайте [Продавайте с Microsoft](https://partner.microsoft.com/reach-customers/selling-with-microsoft). |
 | Примите участие в программе IP Co-Sell Ready | Возможно, вы имеете право на участие в программе IP Co-Sell Ready.  Эта программа позволяет следующее: <ul> <li> напрямую сотрудничать с продавцами и другими партнерами корпорации Майкрософт и совместно работать над целевыми возможностями клиентов и планированием счетов; </li> <li> сделать ваше решение видимым для продавцов корпорации Майкрософт в каталоге решений продавца. </li> <li> Продавцы Майкрософт вознаграждаются за сотрудничество с вами. </li> </ul> Дополнительные сведения о требованиях к участию см. на странице [Продавайте с Microsoft](https://partner.microsoft.com/reach-customers/selling-with-microsoft). |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать больше о службах выхода на рынок в marketplace, посетите [эту страницу](https://partner.microsoft.com/reach-customers/gtm).
 
-Войдите на [портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать и настроить предложение.
+[Войдите в Центр партнеров,](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) чтобы создать или завершить свое предложение.
 
 ---

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 71dd83db02537ed12dc2e711127e32d90603af6f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7f2c0dda952959db3bffba6016f48b986016c19e
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79252653"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81679453"
 ---
 # <a name="start-a-runbook-in-azure-automation"></a>Запуск модуля Runbook в службе автоматизации Azure
 
@@ -30,47 +30,8 @@ ms.locfileid: "79252653"
 
 ![Архитектура Runbook](media/automation-starting-runbook/runbooks-architecture.png)
 
-## <a name="start-a-runbook-with-the-azure-portal"></a>Запуск модуля Runbook с помощью портала Azure
-
-1. На портале Azure щелкните **Служба автоматизации**, а затем выберите имя учетной записи службы автоматизации.
-2. В меню концентратора выберите **Модули Runbook**.
-3. На странице **Модули Runbook** выберите модуль runbook и щелкните **Запустить**.
-4. Если модуль Runbook содержит параметры, вам будет предложено указать значения в текстовом поле для каждого параметра. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#runbook-parameters).
-5. На странице **Задание** можно просмотреть состояние задания runbook.
-
-## <a name="start-a-runbook-with-powershell"></a>Запуск модуля Runbook с помощью PowerShell
-
-Чтобы запустить модуль Runbook с помощью Windows PowerShell, воспользуйтесь командлетом [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook) . В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook.
-
-```azurepowershell-interactive
-Start-AzureRmAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -ResourceGroupName "ResourceGroup01"
-```
-
-Командлет Start-AzureRmAutomationRunbook возвращает объект задания, который позволяет отслеживать его состояние после запуска. Используйте командлет [Get-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjob), чтобы определить состояние задания, и [Get-AzureRmAutomationJobOutput](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjoboutput), чтобы получить его выходные данные. В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook и после его завершения выводится результат.
-
-```azurepowershell-interactive
-$runbookName = "Test-Runbook"
-$ResourceGroup = "ResourceGroup01"
-$AutomationAcct = "MyAutomationAccount"
-
-$job = Start-AzureRmAutomationRunbook –AutomationAccountName $AutomationAcct -Name $runbookName -ResourceGroupName $ResourceGroup
-
-$doLoop = $true
-While ($doLoop) {
-   $job = Get-AzureRmAutomationJob –AutomationAccountName $AutomationAcct -Id $job.JobId -ResourceGroupName $ResourceGroup
-   $status = $job.Status
-   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped"))
-}
-
-Get-AzureRmAutomationJobOutput –AutomationAccountName $AutomationAcct -Id $job.JobId -ResourceGroupName $ResourceGroup –Stream Output
-```
-
-Если для модуля Runbook требуются параметры, необходимо предоставить их в виде [хэш-таблицы](https://technet.microsoft.com/library/hh847780.aspx). Ключ хэш-таблицы должен совпадать с именем параметра, а значение — со значением параметра. В следующем примере показано, как запустить модуль Runbook с двумя строковыми параметрами FirstName и LastName, целочисленным параметром RepeatCount и логическим параметром Show. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#runbook-parameters) ниже.
-
-```azurepowershell-interactive
-$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
-Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -ResourceGroupName "ResourceGroup01" –Parameters $params
-```
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](automation-update-azure-modules.md)
 
 ## <a name="runbook-parameters"></a>Параметры модуля Runbook
 
@@ -153,9 +114,7 @@ Smith
 
 ### <a name="credentials"></a>Учетные данные
 
-Если параметр относится к типу данных **PSCredential**, можно предоставить имя [учетных данных](automation-credentials.md)в службе автоматизации Azure. Модуль runbook получит учетные данные с указанным именем.
-
-Рассмотрим следующий тестовый модуль Runbook, который принимает параметр credential.
+Если параметр типа `PSCredential`данных, вы можете учесть имя [ресурса проверки](automation-credentials.md)Azure Automation. Модуль runbook получит учетные данные с указанным именем. Следующий тест runbook принимает `credential`параметр под названием .
 
 ```powershell
 Workflow Test-Parameters
@@ -167,20 +126,62 @@ Workflow Test-Parameters
 }
 ```
 
-Следующий текст можно использовать для параметра user, если используется учетная запись *My Credential*.
+Следующий текст может быть использован для параметра пользователя `My Credential`при условии, что существует актив учетных данных называется .
 
 ```input
 My Credential
 ```
 
-Предполагая, что имя пользователя в учетных данных было *jsmith*, это приводит к следующему выходу:
+Предполагая, что имя пользователя `jsmith`в учетных данных, следующий вывод отображается.
 
 ```output
 jsmith
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="start-a-runbook-with-the-azure-portal"></a>Запуск модуля Runbook с помощью портала Azure
 
-* В текущей статье описана общая архитектура Runbook для управления ресурсами в Azure и локальной среде с помощью гибридной рабочей роли Runbook. Дополнительные сведения о выполнении модулей Runbook службы автоматизации Azure в центре обработки данных см. в статье о [гибридных рабочих ролях Runbook](automation-hybrid-runbook-worker.md).
+1. На портале Azure выберите **Automation,** а затем нажмите на имя учетной записи Automation.
+2. В меню концентратора выберите **Модули Runbook**.
+3. На странице Модули Runbook выберите модуль runbook и щелкните **Запустить**.
+4. Если модуль Runbook содержит параметры, вам будет предложено указать значения в текстовом поле для каждого параметра. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#runbook-parameters).
+5. На панели Вакансии можно просмотреть состояние задания runbook.
+
+## <a name="start-a-runbook-with-powershell"></a>Запуск модуля Runbook с помощью PowerShell
+
+Вы можете использовать [Start-AzAutomationRunbook,](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) чтобы начать запуск с Windows PowerShell. Следующий пример кода запускает runbook под названием **Test-Runbook**.
+
+```azurepowershell-interactive
+Start-AzAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -ResourceGroupName "ResourceGroup01"
+```
+
+`Start-AzAutomationRunbook`возвращает объект работы, который можно использовать для отслеживания состояния после запуска запуска запуска. Затем вы можете использовать этот объект работы с [Get-AzAutomationJob,](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0) чтобы определить состояние задания и [Get-AzAutomationJobOutput](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationjoboutput?view=azps-3.7.0) для получения его вывода. Следующий пример запускает runbook под названием **Test-Runbook**, ждет, пока он не будет завершен, а затем отображает свой выход.
+
+```azurepowershell-interactive
+$runbookName = "Test-Runbook"
+$ResourceGroup = "ResourceGroup01"
+$AutomationAcct = "MyAutomationAccount"
+
+$job = Start-AzAutomationRunbook –AutomationAccountName $AutomationAcct -Name $runbookName -ResourceGroupName $ResourceGroup
+
+$doLoop = $true
+While ($doLoop) {
+   $job = Get-AzAutomationJob –AutomationAccountName $AutomationAcct -Id $job.JobId -ResourceGroupName $ResourceGroup
+   $status = $job.Status
+   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped"))
+}
+
+Get-AzAutomationJobOutput –AutomationAccountName $AutomationAcct -Id $job.JobId -ResourceGroupName $ResourceGroup –Stream Output
+```
+
+Если для модуля Runbook требуются параметры, необходимо предоставить их в виде [хэш-таблицы](https://technet.microsoft.com/library/hh847780.aspx). Ключ хэш-таблицы должен совпадать с именем параметра, а значение — со значением параметра. В следующем примере показано, как запустить модуль Runbook с двумя строковыми параметрами FirstName и LastName, целочисленным параметром RepeatCount и логическим параметром Show. Дополнительные сведения о параметрах см. в разделе [Параметры модуля Runbook](#runbook-parameters).
+
+```azurepowershell-interactive
+$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
+Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -ResourceGroupName "ResourceGroup01" –Parameters $params
+```
+
+## <a name="next-steps"></a>Следующие шаги
+
+* Дополнительные сведения о выполнении модулей Runbook службы автоматизации Azure в центре обработки данных см. в статье о [гибридных рабочих ролях Runbook](automation-hybrid-runbook-worker.md).
 * Чтобы узнать больше о создании модульных Runbook, используемых другими модулями Runbook для выполнения конкретных или общих функций, ознакомьтесь с [дочерними модулями Runbook](automation-child-runbooks.md).
 * Для получения дополнительной информации о PowerShell, включая языковые справочные и учебные модули, обратитесь к [документам PowerShell](https://docs.microsoft.com/powershell/scripting/overview).

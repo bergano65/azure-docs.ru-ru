@@ -10,12 +10,12 @@ ms.workload: identity
 ms.service: active-directory
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c198b329f07c5c7459f25165b2dc0a3bfa032276
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6c748df10e432e3bebbce0dc8cb39dd2101d52e2
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60382135"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680042"
 ---
 # <a name="azure-ad-userprincipalname-population"></a>Указание атрибута UserPrincipalName в Azure AD
 
@@ -93,7 +93,7 @@ UserPrincipalName — это атрибут, который является и�
 - mailNickName      : &lt;не задан&gt;
 - proxyAddresses        : {SMTP:us1@contoso.com}
 - mail          : us2@contoso.com
-- userPrincipalName : us3@contoso.com`
+- userPrincipalName : us3@contoso.com
 
 Синхронизация объекта пользователя с клиентом Azure AD в первый раз
 - Задайте для атрибута Azure AD MailNickName основной префикс SMTP-адреса.

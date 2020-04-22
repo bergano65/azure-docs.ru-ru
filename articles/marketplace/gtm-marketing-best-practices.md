@@ -1,18 +1,18 @@
 ---
-title: Службы выхода на рынок — лучшие методики по маркетингу | Azure
+title: Услуги Go-To-Market - Маркетинговые рекомендации Лазурный рынок
 description: 'Службы выхода на рынок: в этом разделе описываются лучшие методики по маркетингу для издателей Microsoft Azure Marketplace'
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 6/24/2018
+ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: 2926752884576bcf3a7a15d68eecb6f1248f7e4c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e874343b5bb38928ae2fc429d901d8f7ec163580
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286274"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684597"
 ---
 # <a name="marketing-best-practices"></a>Рекомендации по маркетингу
 
@@ -22,6 +22,6 @@ ms.locfileid: "80286274"
 
 Чтобы узнать больше о службах выхода на рынок в marketplace, посетите [эту страницу](https://partner.microsoft.com/reach-customers/gtm).
 
-Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать и настроить предложение.
+Войти в [Партнерский центр](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) для создания и настройки предложения.
 
 ---

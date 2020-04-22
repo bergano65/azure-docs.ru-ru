@@ -1,14 +1,14 @@
 ---
 title: Подробная информация о структуре назначения политики
 description: Описывает определение назначения политики, используемое политикой Azure для соотнеса определений и параметров политики с ресурсами для оценки.
-ms.date: 09/23/2019
+ms.date: 04/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: f03c654dfc4c8dfdf2bdc5103a5961b4d8ce1e64
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cdb2fc0c6f057ece44383f68bc79fca54507db9b
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79265302"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683223"
 ---
 # <a name="azure-policy-assignment-structure"></a>Структура назначения в службе "Политика Azure"
 
@@ -20,6 +20,7 @@ ms.locfileid: "79265302"
 - description
 - метаданные
 - режим исполнения
+- исключенные области
 - определение политики
 - параметры
 
@@ -34,6 +35,7 @@ ms.locfileid: "79265302"
             "assignedBy": "Cloud Center of Excellence"
         },
         "enforcementMode": "DoNotEnforce",
+        "notScopes": [],
         "policyDefinitionId": "/subscriptions/{mySubscriptionID}/providers/Microsoft.Authorization/policyDefinitions/ResourceNaming",
         "parameters": {
             "prefix": {
@@ -66,6 +68,10 @@ ms.locfileid: "79265302"
 
 Если **enforcementMode** не указан в определении политики или инициативы, используется значение _Default._ [Задачи по исправлению положения](../how-to/remediate-resources.md) могут быть запущены для [политик deployIfNotExists,](./effects.md#deployifnotexists) даже если **enforcementMode** настроен на _DoNotEnforce._
 
+## <a name="excluded-scopes"></a>Исключенные области
+
+**Сфера действия** назначения включает в себя все контейнеры ресурсов ребенка и ресурсы ребенка. Если контейнер ресурсов ребенка или ресурс ребенка не должны применяться к определению, каждый из них может быть исключен из **оценки, установив notScopes.** Это свойство представляет собой массив, позволяющий исключать один или несколько контейнеров ресурсов или ресурсов из оценки. **notScopes** могут быть добавлены или обновлены после создания первоначального назначения.
+
 ## <a name="policy-definition-id"></a>Идентификатор определения политики
 
 Это поле должно быть полным названием пути либо определения политики, либо определения инициативы.
@@ -89,7 +95,7 @@ ms.locfileid: "79265302"
 
 В этом примере параметры, ранее определенные `prefix` `suffix`в определении политики, являются и . Данное назначение политики `prefix` устанавливается для **DeptA** и `suffix` **-LC**. Одно и то же определение политики можно многоразить с другим набором параметров для другого департамента, что снижает дублирование и сложность определений политики при обеспечении гибкости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о [структуре определения политики](./definition-structure.md).
 - Понять, как [программно создавать политики.](../how-to/programmatically-create.md)

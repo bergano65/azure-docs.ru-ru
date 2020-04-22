@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1730939de399cacd13c62988259904ba84ee78ff
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.openlocfilehash: 053b052abf6f23c385dc7447639aa40b6c2c58a1
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80654146"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680182"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Использование методов аутентификации & информации (предварительный просмотр)
 
@@ -37,7 +37,7 @@ ms.locfileid: "80654146"
 
 Чтобы получить доступ к использованию метода проверки подлинности и идеи:
 
-1. Просмотрите [портал Azure](https://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 1. Просмотрите доступ к **Azure Active Directory** > **Password сбросить** > **использование & идеи.**
 1. Из обзоров **регистрации** или **использования** можно открыть предварительно отфильтрованные отчеты для фильтрации в зависимости от ваших потребностей.
 
@@ -65,7 +65,7 @@ ms.locfileid: "80654146"
 
 Отчет о регистрационных данных показывает следующую информацию для каждого пользователя:
 
-- name
+- Имя
 - Имя пользователя
 - Регистрационный статус (все, зарегистрировано, не зарегистрировано)
 - Статус включен (все, включено, не включено)
@@ -80,7 +80,7 @@ ms.locfileid: "80654146"
 
 Отчет о деталях сначала показывает события регистрации и сбрасыва за последние 30 дней, включая:
 
-- name
+- Имя
 - Имя пользователя
 - Функция (Все, Регистрация, Перезагрузка)
 - Метод аутентификации (уведомление приложения, код приложения, телефонный звонок, офисный звонок, SMS, электронная почта, вопросы безопасности)
@@ -94,7 +94,9 @@ ms.locfileid: "80654146"
 
 Данные об использовании и сведениях не заменяют отчеты о действиях azure Multi-Factor Authentication или информацию, содержащуюся в отчете о входе ВС Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+Отчет в настоящее время не может быть отфильтрочен, чтобы исключить внешних пользователей.
+
+## <a name="next-steps"></a>Следующие шаги
 
 - [Работа с методами проверки подлинности отчета об использовании API](https://docs.microsoft.com/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
 - [Выбор методов проверки подлинности для организации](concept-authentication-methods.md)

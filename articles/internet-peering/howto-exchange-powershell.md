@@ -8,24 +8,24 @@ ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 4fd7d345e5efbe6e4e86e5bb410e2df4dd917047
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 23c905f148da614c7785b61b76abed191206cd90
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75774410"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678665"
 ---
-# <a name="create-or-modify-an-exchange-peering-using-powershell"></a>Создание или изменение пиринга Exchange с помощью PowerShell
+# <a name="create-or-modify-an-exchange-peering-by-using-powershell"></a>Создание или изменение пиринга Exchange с помощью PowerShell
 
 В этой статье описывается, как создать пиринг биржи Майкрософт с помощью cmdlets PowerShell и модели развертывания диспетчера ресурсов. В этой статье также показано, как проверить состояние ресурса, обновить его или удалить и дезавуировать его.
 
-Если вы предпочитаете, вы можете завершить это руководство с помощью [портала](howto-exchange-portal.md).
+Если вы предпочитаете, вы можете заполнить это руководство с помощью [портала](howto-exchange-portal.md)Azure .
 
-## <a name="before-you-begin"></a>Перед началом
-* Просмотрите [предпосылки](prerequisites.md) и [обменпирирования пошаговое решение,](walkthrough-exchange-all.md) прежде чем начать конфигурацию.
-* В случае, если у вас уже есть кондиционирования Exchange с корпорацией Майкрософт, которые не преобразуются в ресурсы Azure, обратитесь [к преобразованию устаревшей Exchange, вглядывающейся в ресурс Azure с помощью PowerShell](howto-legacy-exchange-powershell.md)
+## <a name="before-you-begin"></a>Подготовка к работе
+* Просмотрите [предпосылки](prerequisites.md) и [пошаговое пошаговое пошаговое пошаговое решение Exchange](walkthrough-exchange-all.md) перед началом конфигурации.
+* Если у вас уже есть кондиционирования Exchange с корпорацией Майкрософт, которые не преобразуются в ресурсы Azure, см. [Преобразование устаревшей Exchange, вглядывающее в ресурс Azure, с помощью PowerShell.](howto-legacy-exchange-powershell.md)
 
-### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
+### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
 
 ## <a name="create-and-provision-an-exchange-peering"></a>Создание и предоставление пиринга Exchange
@@ -49,10 +49,10 @@ ms.locfileid: "75774410"
 
 [!INCLUDE [peering-exchange-delete](./includes/delete.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание или изменение прямого пиринга с помощью PowerShell](howto-direct-powershell.md)
-* [Преобразование устаревшего прямого врани в ресурс Azure с помощью PowerShell](howto-legacy-direct-powershell.md)
+* [Преобразование устаревшего прямого вонючего в ресурс Azure с помощью PowerShell](howto-legacy-direct-powershell.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 Подробное описание всех параметров можно получить, выполнив следующую команду.
@@ -61,4 +61,4 @@ ms.locfileid: "75774410"
 Get-Help Get-AzPeering -detailed
 ```
 
-Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)
+Для получения дополнительной информации, см [Интернет пиринг часто задаваемые вопросы](faqs.md).

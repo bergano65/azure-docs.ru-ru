@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 04/06/2020
-ms.openlocfilehash: 9c9f069ad38c65aa0bbfdcde9eef3fed32585d9e
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 288d4e4d0c5faa6bb2b51451fb36bbb6d666c9eb
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80756415"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683176"
 ---
 # <a name="configure-streaming-export-of-azure-sql-database-diagnostic-telemetry"></a>Настройка потокового экспорта диагностической телеметрии базы данных Azure S'L
 
@@ -363,7 +363,7 @@ ms.locfileid: "80756415"
 
 ## <a name="stream-into-event-hubs"></a>Потоковая передача в Центры событий
 
-В центр ездовые данные и журналы ресурсов можно передавать в концентратор ы событий, используя встроенный поток в **опцию концентратора событий** на портале Azure. Вы также можете включить идентификатор правил службы bus, используя настройки диагностики через cmdlets PowerShell, Azure CLI или API REST Azure Monitor.
+В центр ездовые данные и журналы ресурсов можно передавать в концентратор ы событий, используя встроенный поток в **опцию концентратора событий** на портале Azure. Вы также можете включить идентификатор правил службы bus, используя настройки диагностики через cmdlets PowerShell, Azure CLI или API REST Azure Monitor. Убедитесь, что концентратор событий находится в том же регионе, что база данных и сервер.
 
 ### <a name="what-to-do-with-metrics-and-resource-logs-in-event-hubs"></a>Что делать с метриками и журналами ресурсов в концентрах событий
 
@@ -470,12 +470,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="resource-usage-stats-for-managed-instances"></a>Статистика использования ресурсов для управляемых экземпляров
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure.|
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: ResourceUsageStats |
 |Ресурс|Имя ресурса. |
@@ -495,12 +495,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="query-store-runtime-statistics"></a>Статистика среды выполнения хранилища запросов
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreRuntimeStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreRuntimeStatisticsEvent. |
@@ -546,12 +546,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="query-store-wait-statistics"></a>Статистика времени ожидания хранилища запросов
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreWaitStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreWaitStatisticsEvent. |
@@ -584,12 +584,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="errors-dataset"></a>Набор данных ошибок
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Errors. |
 |OperationName|Имя операции. Всегда: ErrorEvent. |
@@ -604,7 +604,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |Сообщение|Сообщение об ошибке в виде обычного текста. |
 |user_defined_b|Указывает, установлен ли бит ошибки пользователем. |
 |error_number_d|Код ошибки |
-|Severity|Серьезность ошибки. |
+|Серьезность|Серьезность ошибки. |
 |state_d|Состояние ошибки. |
 |query_hash_s|Хэш запроса, завершившегося сбоем (при наличии) |
 |query_plan_hash_s|Хэш плана запроса для запроса, завершившегося сбоем (при наличии) |
@@ -613,12 +613,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="database-wait-statistics-dataset"></a>Набор данных статистики времени ожидания базы данных
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: DatabaseWaitStatistics. |
 |OperationName|Имя операции. Всегда: DatabaseWaitStatisticsEvent. |
@@ -642,12 +642,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="time-outs-dataset"></a>Набор данных времени ожидания
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Timeouts. |
 |OperationName|Имя операции. Всегда: TimeoutEvent. |
@@ -665,12 +665,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="blockings-dataset"></a>Набор данных блокировки
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Blocks. |
 |OperationName|Имя операции. Всегда: BlockEvent. |
@@ -689,12 +689,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="deadlocks-dataset"></a>Набор данных взаимоблокировки
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC] |Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Deadlocks. |
 |OperationName|Имя операции. Всегда: DeadlockEvent. |
@@ -710,12 +710,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="automatic-tuning-dataset"></a>Набор данных автоматической настройки
 
-|Свойство|Описание|
+|Свойство.|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: AutomaticTuning. |
 |Ресурс|Имя ресурса. |
@@ -742,7 +742,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 Дополнительные сведения о [формате журнала Intelligent Insights](sql-database-intelligent-insights-use-diagnostics-log.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы научиться включать ведение журнала и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со следующими статьями:
 

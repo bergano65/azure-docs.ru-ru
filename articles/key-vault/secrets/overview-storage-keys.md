@@ -9,12 +9,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/18/2019
-ms.openlocfilehash: 0b855584ef6efef574e8264f3cead79000a51b13
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 1125bafa43ce1752c58d1cce0bba66a6bbd32c32
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81432012"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685419"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-the-azure-cli"></a>Управление ключами учетной записи хранилища с помощью Key Vault и Azure CLI
 
@@ -46,7 +46,7 @@ Key Vault — это приложение Майкрософт, предвари
 | --- | --- | --- |
 | Azure AD | Azure для государственных организаций | `7e7c393b-45d0-48b1-a35e-2905ddf8183c` |
 | Azure AD | общедоступный пиринг Azure; | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
-| Другие  | Любой | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
+| Другой  | Любой | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -71,13 +71,23 @@ az login
 Используйте назначение ролей Azure CLI [az,](/cli/azure/role/assignment?view=azure-cli-latest) чтобы дать ключевой доступ к учетной записи хранилища. Предоставьте команде следующие значения параметров:
 
 - `--role`: Передайте роль RBAC "Ключевой оператор учетной записи" RBAC. Эта роль ограничивает область доступа к учетной записи хранилища. Для классического учетной записи хранения, пройти "Классический учетной записи учетной записи ключевых услуг оператора роль" вместо.
-- `--assignee-object-id`: Передайте значение "93c27d83-f79b-4cb2-8dd4-4aa716542e74", которое является идентификатором объекта для Убежища ключей в общедоступном облаке Azure. (Чтобы получить идентификатор объекта для Убежища ключей в облаке правительства Azure, [см.](#service-principal-application-id)
+- `--assignee`: Передайтеhttps://vault.azure.netзначение ", которое является URL-адресом для Key Vault в общедоступном облаке Azure. (Для облака Azure Goverment вместо этого используйте '-asingee-object-id' см. [идентификатор основного приложения](#service-principal-application-id)Службы.)
 - `--scope`: Передайте идентификатор ресурса `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`учетной записи хранилища, который находится в форме. Чтобы найти идентификатор подписки, используйте команду [списка учетных записей](/cli/azure/account?view=azure-cli-latest#az-account-list) Azure CLI az; Чтобы найти имя учетной записи хранилища и группу ресурсов учетной записи хранения, используйте команду [списка учетных записей](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-list) хранилища Azure CLI az.
 
 ```azurecli-interactive
-az role assignment create --role "Storage Account Key Operator Service Role" --assignee-object-id 93c27d83-f79b-4cb2-8dd4-4aa716542e74 --scope "/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>"
+az role assignment create --role "Storage Account Key Operator Service Role" --assignee 'https://vault.azure.net' --scope "/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>"
  ```
+### <a name="give-your-user-account-permission-to-managed-storage-accounts"></a>Предоставление разрешения учетной записи пользователя для управляемых учетных записей хранения
 
+Для обновления политики доступа к Ключу Vault и выдачи разрешений учетной записи на хранение учетным записям вашего пользователя и использовании политики [keyvault-set-sslet](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) и предоставления разрешений на учетную запись хранилища.
+
+```azurecli-interactive
+# Give your user principal access to all storage account permissions, on your Key Vault instance
+
+az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --storage-permissions get list delete set update regeneratekey getsas listsas deletesas setsas recover backup restore purge
+```
+
+Обратите внимание, что разрешения для учетных записей хранения не доступны на странице "Политики доступа" учетной записи хранения на портале Azure.
 ### <a name="create-a-key-vault-managed-storage-account"></a>Создание учетной записи с управлением хранилищем ключей Vault
 
  Создайте учетную запись хранения с помощью учетной записи хранилища Key Vault с помощью команды [хранения ключей](/cli/azure/keyvault/storage?view=azure-cli-latest#az-keyvault-storage-add) Azure CLI az. Установите период регенерации 90 дней. После 90 дней Key Vault `key1` восстанавливает и свопы активный ключ от `key2` `key1`. `key1`затем помечается как активный ключ. Предоставьте команде следующие значения параметров:
@@ -151,7 +161,7 @@ az keyvault secret show --vault-name <YourKeyVaultName> --id <SasDefinitionID>
 Выход этой команды покажет строку определения`value`SAS как.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [ключах, секретах и сертификатах.](https://docs.microsoft.com/rest/api/keyvault/)
 - Просмотрите статьи в [блоге команды Azure Key Vault](https://blogs.technet.microsoft.com/kv/).

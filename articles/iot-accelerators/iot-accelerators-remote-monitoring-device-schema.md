@@ -8,12 +8,15 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 12/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0f9669d491648ecc621aab27d0908dcc3dc84438
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: ac681bb13ccea49c7a2f566a6fcdb6adb8cec5bb
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "65823331"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683747"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
 
@@ -163,7 +166,7 @@ ms.locfileid: "65823331"
 
 * Object — можно сериализовать с помощью JSON.
 * Binary — можно сериализовать с помощью Base64.
-* Text
+* текст
 * Логическое
 * Целое число
 * Double
@@ -233,7 +236,7 @@ ms.locfileid: "65823331"
 
 Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-method**. Это позволяет отличить их от файлов, которые реализуют поведение состояния.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье описано, как создать пользовательскую модель имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

@@ -9,12 +9,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 8da8cd7110cd17d0aadd52cce1263c7c0fcfdf5c
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 0f42f075f5d3be4486157334403bfa7d3f1aa80c
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80632168"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682872"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -364,7 +364,7 @@ print 'the size of the data is: %d rows and  %d columns' % df1.shape
 
 ![Снимок экрана первых 10 строк данных](./media/vm-do-ten-things/IPNB_data_readin.PNG)
 
-### <a name="azure-data-lake"></a>Azure Data Lake;
+### <a name="azure-data-lake"></a>Azure Data Lake
 Azure Data Lake Storage — это гипермасштабное хранилище для рабочих нагрузок аналитики больших данных и совместимо с системой распределенных файлов Hadoop (HDFS). Оно работает с Hadoop, Spark и Azure Data Lake Analytics. В этом разделе вы узнаете, как можно перемещать данные в хранилище озер Лазурных данных и запускать аналитику с помощью аналитики Azure Data Lake.
 
 #### <a name="prerequisites"></a>Предварительные требования
@@ -817,7 +817,7 @@ Azure Cosmos DB — это база данных NoSQL в облаке. Вы м
 1. Azure Cosmos DB Python SDK уже установлен на DSVM. Чтобы обновить его, выполнить ```pip install pydocumentdb --upgrade``` от запроса команды.
 2. Создайте учетную запись Azure Cosmos DB и базу данных с [портала Azure.](https://portal.azure.com)
 3. Загрузите инструмент миграции данных Azure Cosmos DB из [Центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=53595) и извлеките в каталог по вашему выбору.
-4. Импортные данные JSON (данные вулкана), хранящиеся в [общедоступной капли](https://cahandson.blob.core.windows.net/samples/volcano.json) в Azure Cosmos DB со следующими параметрами команды для инструмента миграции. (Использовать dtui.exe из каталога, где вы установили инструмент миграции данных Azure Cosmos DB.) Введите исходное и целевое местоположение с помощью следующих параметров:
+4. Импортные данные JSON (данные вулкана), хранящиеся в [общедоступной капли](https://dotnet.microsoft.com/) в Azure Cosmos DB со следующими параметрами команды для инструмента миграции. (Использовать dtui.exe из каталога, где вы установили инструмент миграции данных Azure Cosmos DB.) Введите исходное и целевое местоположение с помощью следующих параметров:
    
     `/s:JsonFile /s.Files:https://cahandson.blob.core.windows.net/samples/volcano.json /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://[DocDBAccountName].documents.azure.com:443/;AccountKey=[[KEY];Database=volcano /t.Collection:volcano1`
 

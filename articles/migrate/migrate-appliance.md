@@ -3,12 +3,12 @@ title: Устройство службы "Миграция Azure"
 description: Предоставляет обзор прибора Azure Migrate, используемого для оценки серверов и миграции.
 ms.topic: conceptual
 ms.date: 03/23/2020
-ms.openlocfilehash: 130de0824a1671fb0b0e3e980f06f4c3abc689d2
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 1c21f06e674871aefde1ae952a459db16feeb717
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81538228"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81676343"
 ---
 # <a name="azure-migrate-appliance"></a>Устройство службы "Миграция Azure"
 
@@ -125,7 +125,7 @@ Servicebus.usgovcloudapi.net  | Связь между прибором и слу
 Вопросdiscoverysrv.windowsazure.us <br/> В.migration.windowsazure.us | Подключение к URL-адресам службы Azure Migrate.
 *.hypervrecoverymanager.windowsazure.us | **Используется для миграции без агентов VMware**<br/><br/> Подключение к URL-адресам службы Azure Migrate.
 *.blob.core.usgovcloudapi.net  |  **Используется для миграции без агентов VMware**<br/><br/>Загрузка данных для хранения для миграции.
-В.applicationinsights.us | Используется агентом Gateway на приборе для доступа к конечной точке Application Insights для диагностического мониторинга.
+В.applicationinsights.us | Загружать журналы приложений, используемые для внутреннего мониторинга.
 
 
 
@@ -176,7 +176,7 @@ IPv6-адреса | vm.Guest.Net
 Пропускная часть (Mb в секунду) | net.received.average
 Пропускная часть записи (МБ в секунду) | net.transmitted.average
 **Детали траектории инвентаризации** | 
-name | container.GetType().Name
+Имя | container.GetType().Name
 Тип дочернего объекта | container.ChildType
 Справочные сведения | container.MoRef
 Сведения о родительском объекте | Container.Parent

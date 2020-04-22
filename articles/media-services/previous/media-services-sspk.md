@@ -1,6 +1,6 @@
 ---
-title: Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming
-description: Информация о лицензировании пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming
+title: Лицензирование microsoft&reg; Плавная потоковая перемещение клиента Портинг Kit
+description: Узнайте о том,&reg; как лицензировать набор клиентов Microsoft Smooth Streaming Porting Kit.
 services: media-services
 documentationcenter: ''
 author: xpouyat
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
-ms.openlocfilehash: 59ac3ab2e70bfa00f19bae7e551780f2b2bb8ccb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bd77c53a195a9549f6aaad9ee2928206f5324b0c
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79096711"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686898"
 ---
-# <a name="licensing-microsoft-smooth-streaming-client-porting-kit"></a>Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming 
+# <a name="licensing-microsoftreg-smooth-streaming-client-porting-kit"></a>Лицензирование microsoft&reg; Плавная потоковая перемещение клиента Портинг Kit 
 ## <a name="overview"></a>Обзор
 Пакет для переноса клиента бесперебойной потоковой передачи Microsoft Smooth Streaming (далее для краткости называется **SSPK**) представляет собой реализацию клиента Smooth Streaming. Он оптимизирован так, чтобы помочь производителям встроенных устройств, операторам кабельной и мобильной связи, поставщикам служб содержимого, производителям мобильных устройств, независимым поставщикам программного обеспечения и поставщикам решений создавать продукты и услуги, которые поддерживают потоковую передачу адаптивного содержимого в формате Smooth Streaming. Клиент SSPK не зависит от оборудования и платформы. Лицензиат может легко перенести его на любое устройство и любую платформу. 
 
@@ -73,7 +73,7 @@ ms.locfileid: "79096711"
 ## <a name="licensing-procedure-and-sspk-access"></a>Процедура лицензирования и доступ к SSPK.
 Электронная почта [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com) для всех запросов лицензирования.
 
-Зарегистрированные обладатели лицензии на промежуточный продукт получают доступ к [Порталу распространения SSPK](https://microsoft.sharepoint.com/teams/SSPKDOWNLOAD/) .
+Зарегистрированные обладатели лицензии на промежуточный продукт получают доступ к Порталу распространения SSPK .
 
 Промежуточные и окончательные лицензиаты SSPK могут задавать технические вопросы [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com).
 

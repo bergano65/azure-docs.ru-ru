@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 03/27/2020
 ms.custom: azure-synapse
-ms.openlocfilehash: 4e20129502e7538bd2f3354b75b33095970e1595
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 9e8aa9bbbdf166ba0caf29cd0bce22b8ed321e4e
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81411862"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685189"
 ---
 # <a name="azure-sql-auditing"></a>Аудит Azure SQL
 
@@ -98,7 +98,7 @@ ms.locfileid: "81411862"
 
   ![запись хранения Azure](./media/sql-database-auditing-get-started/auditing_select_storage.png)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 
 - Системы аудита записываются в **Append Blobs** в хранилище Azure Blob в подписке Azure
 - Для настройки неизменяемого хранилища журналов для событий аудита на уровне сервера или базы данных следуйте [инструкциям, предоставленным Azure Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage#enabling-allow-protected-append-blobs-writes) (пожалуйста, вы выбрали **дополнительные приложения Allow** при настройке непреложного хранилища капля).
@@ -111,9 +111,6 @@ ms.locfileid: "81411862"
 ### <a name=""></a><a id="audit-log-analytics-destination">Аудит в области логивой аналитики назначения</a>
   
 Чтобы настроить запись журналов аудита в рабочую область Log Analytics, выберите **Log Analytics (предварительная версия)** и щелкните **Сведения о Log Analytics**. Выберите или создайте рабочую область Log Analytics, в которую будут записываться журналы, а затем щелкните **ОК**.
-    
-  > [!WARNING]
-   > Включение аудита в Log Analytics понесет затраты на основе коэффициентов приема. Пожалуйста, имейте в виду связанные с этим расходы на использование этой [опции](https://azure.microsoft.com/pricing/details/monitor/)или подумайте о хранении журналов аудита в учетной записи хранения Azure.
    
    ![LogAnalyticsworkspace](./media/sql-database-auditing-get-started/auditing_select_oms.png)
 

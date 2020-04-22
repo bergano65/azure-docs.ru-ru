@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 03/10/2020
-ms.openlocfilehash: 9ed17ed0825e0011d1402efc45155755a1ecbadf
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 2739e960c4bc6d35ac9ad757e80ed620e5dc04f8
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81459174"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684643"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о машинном обучении Azure
 
@@ -691,13 +691,13 @@ Azure Machine Learning теперь является поставщиком ре
   + **azureml-train-core**
     + Добавлена поддержка TensorFlow 2.0 в оценщике TensorFlow
   + **лазурь-поезд-автомл**
-    + Создание объекта [Эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) становится или создает эксперимент в рабочем пространстве Azure Machine Learning для отслеживания истории выполнения. Идентификатор эксперимента и архивируемое время заселены в объекте эксперимента по созданию. Пример
+    + Создание объекта [Эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) становится или создает эксперимент в рабочем пространстве Azure Machine Learning для отслеживания истории выполнения. Идентификатор эксперимента и архивируемое время заселены в объекте эксперимента по созданию. Пример.
 
         ```py
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        [архив ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [реактивация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызвать в эксперименте, чтобы скрыть и восстановить эксперимент от отображаемого в UX или возвращенного по умолчанию в вызове для перечня экспериментов. Если новый эксперимент создан с тем же названием, что и архивный эксперимент, можно переименовать архивный эксперимент при реактивации, передав новое имя. Может быть только один активный эксперимент с заданное имя. Пример
+        [архив ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [реактивация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызвать в эксперименте, чтобы скрыть и восстановить эксперимент от отображаемого в UX или возвращенного по умолчанию в вызове для перечня экспериментов. Если новый эксперимент создан с тем же названием, что и архивный эксперимент, можно переименовать архивный эксперимент при реактивации, передав новое имя. Может быть только один активный эксперимент с заданное имя. Пример.
 
         ```py
         experiment1 = Experiment(workspace, "Active Experiment")
@@ -706,7 +706,7 @@ Azure Machine Learning теперь является поставщиком ре
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) на эксперименте может взять фильтр имени и фильтр ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ВСЕ". Пример
+        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) на эксперименте может взять фильтр имени и фильтр ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ВСЕ". Пример.
 
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
@@ -825,7 +825,7 @@ Azure Machine Learning теперь является поставщиком ре
 ### <a name="azure-machine-learning-sdk-for-python-v1062"></a>Azure Machine Learning SDK для Python v1.0.62
 
 + **Новые функции**
-  + Ввел `timeseries` черту на TabularDataset. Эта черта позволяет легко фильтровать метки времени на данных TabularDataset, например, принимать все данные между диапазоном времени или самыми последними данными. Чтобы узнать `timeseries` об этом черту на TabularDataset, пожалуйста, посетите https://aka.ms/azureml-data для документации или https://aka.ms/azureml-tsd-notebook для примера ноутбука.
+  + Ввел `timeseries` черту на TabularDataset. Эта черта позволяет легко фильтровать метки времени на данных TabularDataset, например, принимать все данные между диапазоном времени или самыми последними данными. Чтобы узнать `timeseries` об этом черту на TabularDataset, пожалуйста, посетите https://aka.ms/azureml-data для документации или https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb для примера ноутбука.
   + Включено обучение с TabularDataset и FileDataset. Пожалуйста, посетите https://aka.ms/dataset-tutorial для примера ноутбук.
 
   + **azureml-train-core**
@@ -1339,7 +1339,7 @@ Azure Machine Learning теперь является поставщиком ре
 + **Функции предварительного просмотра**
     + Интеграция с [MLflow](https://mlflow.org) 1.0.0 отслеживания через лазурный-mlflow пакет[(пример ноутбуков](https://aka.ms/azureml-mlflow-examples)).
     + Отправить Jupyter ноутбук в качестве запуска. [Справочная документация API](https://docs.microsoft.com/python/api/azureml-contrib-notebook/azureml.contrib.notebook?view=azure-ml-py)
-    + Публичный предварительный просмотр [детектора дрейфа данных](https://docs.microsoft.com/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector(class)) через пакет azureml-contrib-datadrift[(пример ноутбуков).](https://aka.ms/azureml-datadrift-example) Data Drift является одной из главных причин, по которым точность модели ухудшается с течением времени. Это происходит, когда данные, подаваемые для моделирования в производстве, отличаются от данных, на которые была обучена модель. AML Data Drift детектор помогает клиенту контролировать дрейф данных и отправляет оповещения всякий раз, когда дрейф обнаружен.
+    + Публичный предварительный просмотр [детектора дрейфа данных](https://docs.microsoft.com/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector(class)) через пакет azureml-contrib-datadrift[(пример ноутбуков).](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/monitor-models/data-drift) Data Drift является одной из главных причин, по которым точность модели ухудшается с течением времени. Это происходит, когда данные, подаваемые для моделирования в производстве, отличаются от данных, на которые была обучена модель. AML Data Drift детектор помогает клиенту контролировать дрейф данных и отправляет оповещения всякий раз, когда дрейф обнаружен.
 
 + **Критические изменения**
 

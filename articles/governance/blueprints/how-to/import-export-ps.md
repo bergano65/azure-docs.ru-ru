@@ -3,12 +3,12 @@ title: Импортные и экспортные планы с PowerShell
 description: Узнайте, как работать с определениями чертежей в качестве кода. Поделиться, контролировать исходные ресурсы и управлять ими с помощью экспортных и импортных команд.
 ms.date: 09/03/2019
 ms.topic: how-to
-ms.openlocfilehash: 98bd21aad944346a17d8bdce7fb74c0eb8be2ed7
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: dcdf48f8941198591b39d6cf89ec5e6dac7ba94c
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80677133"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686835"
 ---
 # <a name="import-and-export-blueprint-definitions-with-powershell"></a>Определения схем импорта и экспорта с PowerShell
 
@@ -88,7 +88,7 @@ ms.locfileid: "80677133"
 
 После того как у вас есть либо [экспортируемое определение](#export-your-blueprint-definition) чертежа, либо созданное вручную определение чертежа в [требуемой структуре папок,](#folder-structure-of-a-blueprint-definition)вы можете импортировать это определение чертежа в другую группу управления или подписку.
 
-Примеры встроенных определений чертежей можно найти [в репо Azure Blueprint GitHub.](https://github.com/Azure/azure-blueprints/tree/master/samples/builtins)
+Примеры встроенных определений чертежей можно найти [в репо Azure Blueprint GitHub.](https://github.com/Azure/azure-blueprints/tree/master/samples/001-builtins)
 
 - **Имя** (обязательно)
   - Упогоняет название нового определения чертежа
@@ -121,7 +121,7 @@ ms.locfileid: "80677133"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте о [жизненном цикле чертежей.](../concepts/lifecycle.md)
+- Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../concepts/resource-locking.md).

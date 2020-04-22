@@ -1,14 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов менеджера ресурсов
 description: Укажите список типов ресурсов «Менеджер ресурсов ресурса», поддерживаемый графиком ресурсов Azure и историей изменений.
-ms.date: 04/15/2020
+ms.date: 04/20/2020
 ms.topic: reference
-ms.openlocfilehash: 99cb2176e4b0642be1fc31d49528ebf915ea440a
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 99a10e084f8ae24156c447f7abca31a8ef977720
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81415144"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685475"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица график ресурсов Azure и ссылка на тип ресурса
 
@@ -50,7 +50,11 @@ Graph ресурсAzры поддерживает следующие **типы 
 - livearena.broadcast/services
 - mailjet.email/services
 - microsoft.aad/domainservices
+- microsoft.aadiam/privatelinkforazuread
 - microsoft.aadiam/tenants
+- microsoft.aisupercomputer/accounts
+- microsoft.aisupercomputer/accounts/jobgroups
+- microsoft.aisupercomputer/accounts/jobgroups/jobs
 - microsoft.alertsManagement/actionrules
 - microsoft.alertsmanagement/smartdetectoralertrules
 - microsoft.analysisservices/servers
@@ -63,6 +67,7 @@ Graph ресурсAzры поддерживает следующие **типы 
 - microsoft.automation/automationaccounts/runbooks
 - microsoft.azconfig/configurationstores
 - microsoft.azureactivedirectory/b2cdirectories
+- microsoft.azuredata/datacontrollers
 - microsoft.azuredata/hybriddatamanagers
 - microsoft.azuredata/postgresinstances
 - microsoft.azuredata/sqlbigdataclusters
@@ -351,6 +356,7 @@ Graph ресурсAzры поддерживает следующие **типы 
 - microsoft.remoteapp/collections
 - microsoft.resourcegraph/queries
 - microsoft.resources/deploymentscripts
+- microsoft.resources/templatespecs
 - microsoft.saas/приложения
 - microsoft.scheduler/jobcollections
 - услуги microsoft.search/search
@@ -405,6 +411,7 @@ Graph ресурсAzры поддерживает следующие **типы 
 - microsoft.visualstudio/аккаунт
 - microsoft.visualstudio/account/extension
 - microsoft.visualstudio/account/project
+- microsoft.vmware/arczones
 - microsoft.vmwarecloudsimple/dedicatedcloudnodes
 - microsoft.vmwarecloudsimple/dedicatedcloudservices
 - microsoft.vmwarecloudsimple/virtualmachines
@@ -454,7 +461,6 @@ Graph ресурсAzры поддерживает следующие **типы 
 
 ## <a name="securityresources"></a>ресурсы безопасности
 
-- оценкаметаданных
 - microsoft.security/assessments
 - microsoft.security/assessments/subassessments
 - microsoft.security/pricing
@@ -469,7 +475,7 @@ Graph ресурсAzры поддерживает следующие **типы 
 - microsoft.security/securitystatuses/virtualmachines
 - microsoft.security/securitystatusessummaries
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [языке запросов](../concepts/query-language.md).
 - Узнайте больше о том, как [изучать ресурсы](../concepts/explore-resources.md).

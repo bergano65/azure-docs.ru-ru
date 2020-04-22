@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 097de14a3451e8d352dceb17436ae8423aa06533
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 783fc0fa6f6c4e6c918fa3ff5fe0b53a71fa0178
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81265945"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680178"
 ---
 # <a name="invite-internal-users-to-b2b-collaboration"></a>Пригласите внутренних пользователей к совместной работе B2B
 
@@ -76,27 +76,29 @@ POST https://graph.microsoft.com/v1.0/invitations
 Authorization: Bearer eyJ0eX...
 ContentType: application/json
 {
-    "invitedUserEmailAddress": "<<external email>>"",
-    "sendInvitationMessage": true,
-    "invitedUserMessageInfo": {
-        "messageLanguage": "en-US",
-        "ccRecipients": [
-            {
-                "emailAddress": {
-                    "name": null,
-                    "address": "<<optional additional notification email>>""
-                }
-            }
-        ],
-        "customizedMessageBody": "<<custom message>>"
-    },
-    "inviteRedirectUrl": "https://myapps.microsoft.com?tenantId=",
-    "invitedUser": {"id": "<<ID for the user you want to convert>>"}
+    "invitedUserEmailAddress": "<<external email>>",
+    "sendInvitationMessage": true,
+    "invitedUserMessageInfo": {
+        "messageLanguage": "en-US",
+        "ccRecipients": [
+            {
+                "emailAddress": {
+                    "name": null,
+                    "address": "<<optional additional notification email>>"
+                }
+            }
+        ],
+        "customizedMessageBody": "<<custom message>>"
+    },
+    "inviteRedirectUrl": "https://myapps.microsoft.com?tenantId=",
+    "invitedUser": {
+        "id": "<<ID for the user you want to convert>>"
+    }
 }
 ```
 
 Ответ на API - это тот же ответ, который вы получаете, когда приглашаете нового гостевого пользователя в каталог.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)

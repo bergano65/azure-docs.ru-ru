@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 04/16/2020
-ms.openlocfilehash: cc04d11475568af92ba6a617a1eb6b2b51accb45
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 38e728de22d49de760e998ddc97c5067beb3ecd1
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81481668"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684701"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer-preview"></a>Исключения и коды ошибок для конструктора (предварительный просмотр)
 
@@ -145,6 +145,7 @@ ms.locfileid: "81481668"
 |Значение параметра «arg_name» должно быть меньше или равно параметру «upper_boundary_parameter_name» значение.|
 |Параметр «arg_name» имеет значение «actual_value», которое должно быть меньше или равно «upper_boundary».|
 |Значение параметра «arg_name» actual_value должно быть меньше или равно параметру «upper_boundary_parameter_name» значение «upper_boundary».|
+|Значение параметра «arg_name» (actual_value) должно быть меньше или равно значению «upper_boundary_meaning» (upper_boundary).|
 
 
 ## <a name="error-0008"></a>Ошибка 0008  
@@ -253,8 +254,8 @@ ms.locfileid: "81481668"
 
 |Тип модели|Учебный модуль| Модуль скоринга|
 |----|----|----|
-|любой классификатор|[Модель поезда](train-model.md) |[Оценка модели](score-model.md)|
-|любая регрессионная модель|[Модель поезда](train-model.md) |[Оценка модели](score-model.md)|
+|любой классификатор|[Обучение модели](train-model.md) |[Оценка модели](score-model.md)|
+|любая регрессионная модель|[Обучение модели](train-model.md) |[Оценка модели](score-model.md)|
 
 <!--| clustering models| [Train Clustering Model](train-clustering-model.md) or [Sweep Clustering](sweep-clustering.md)| [Assign Data to Clusters](assign-data-to-clusters.md)|
 | anomaly detection - One-Class SVM | [Train Anomaly Detection Model](train-anomaly-detection-model.md) |[Score Model](score-model.md)|
@@ -271,6 +272,7 @@ ms.locfileid: "81481668"
 |Передан ученик недопустимого типа.|
 |Уобучательец «arg_name» имеет недействительный тип.|
 |Уобучательец «arg_name» имеет недействительный тип «learner_type».|
+|Передан ученик недопустимого типа. Сообщение об исключении: «exception_message»|
 
 
 ## <a name="error-0014"></a>Ошибка 0014  
@@ -393,6 +395,7 @@ ms.locfileid: "81481668"
 |Значения в столбце не сортированы.|
 |Значения в столбце "col_index" не сортируются.|
 |Значения в столбце "col_index" набора данных "набор данных" не сортируются.|
+|Значения в аргументе «arg_name» не отсортированы в порядке «sorting_order».|
 
 
 ## <a name="error-0020"></a>Ошибка 0020  
@@ -633,6 +636,7 @@ ms.locfileid: "81481668"
 |------------------------|
 |Аргумент должен быть конечным.|
 |«arg_name» не является конечной.|
+|Колонка «column_name» содержит бесконечные значения.|
 
 
 ## <a name="error-0034"></a>Ошибка 0034  
@@ -738,7 +742,7 @@ For general information about how the Matchbox recommendation algorithm works, a
     + Изучите текстовые столбцы для символов, не являемых единокодированных, символов вкладок или контрольных символов
     + Данные о дате должны быть последовательными, чтобы избежать ошибок моделирования, но очистка может быть сложной из-за большого количества форматов. Рассмотрите возможность использования <!--the [Execute R Script](execute-r-script.md) or -->[Выполните](execute-python-script.md) модули Python Script для выполнения очистки.  
 + При необходимости измените значения в наборе данных ввода, чтобы столбец мог быть успешно преобразован. Модификация может включать операции по усечению, усечению или округления, устранению выбросов или вычислению недостающих значений. Ознакомьтесь со следующими статьями для некоторых распространенных сценариев трансформации данных в машинном обучении:
-    + [Чистые отсутствующие данные](clean-missing-data.md)
+    + [Очистка недостающих данных](clean-missing-data.md)
     + [Нормализация данных](normalize-data.md)
 <!--+ [Clip Values](clip-values.md) 
     + [Group Data Into Bins](group-data-into-bins.md)
@@ -1492,6 +1496,18 @@ For general information about how the Matchbox recommendation algorithm works, a
 |------------------------------------------------------------|
 |С учетом трансформацииDirectory является недействительным.|
 |ТрансформацияДиректория «arg_name» недействительна. Причина: «причина». Пожалуйста, перезапустите обучаемый эксперимент, который генерирует файл Transform. Если учебный эксперимент был удален, пожалуйста, воссоздайте и сохраните файл Transform.|
+|ТрансформацияДиректория «arg_name» недействительна. Причина: «причина». (troubleshoot_hint)|
+
+
+## <a name="error-0159"></a>Ошибка 0159
+ Исключение происходит при передаваемом в каталог модели модуля недействительно. 
+
+|Сообщения об исключении|
+|------------------------------------------------------------|
+|Учитывая ModelDirectory является недействительным.|
+|МодельДиректория "arg_name" недействительна.|
+|МодельДиректория "arg_name" недействительна. Причина: «причина».|
+|МодельДиректория "arg_name" недействительна. Причина: «причина». (troubleshoot_hint)|
 
 
 ## <a name="error-1000"></a>Ошибка 1000  

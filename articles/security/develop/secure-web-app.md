@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: terrylan
-ms.openlocfilehash: 55c6d374c8a3c308323c0d003726492477e33ff8
-ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
+ms.openlocfilehash: 730e478622da8cd90af1c559e4d0c6fd04151cca
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80811242"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686809"
 ---
 # <a name="develop-a-secure-web-app"></a>Разработка безопасного веб-приложения
 
@@ -104,7 +104,7 @@ ms.locfileid: "80811242"
 - [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) для развертывания.
 - [Docker Hub](https://hub.docker.com/) как реестр контейнеров.
 
-## <a name="security-considerations"></a>Вопросы безопасности
+## <a name="security-considerations"></a>Замечания по безопасности
 
 ### <a name="network"></a>Сеть
 
@@ -803,7 +803,7 @@ az network application-gateway http-settings update --gateway-name $gwName `
 После добавления конфигурации Azure AD и секретов в Key Vault пользователи могут быть проверены в приложении с помощью аутентификации Azure OAuth.
 В коде приложения это обрабатывается Библиотекой подлинности активных каталогов Azure (ADAL).
 
-После того, как секреты находятся в Key Vault и приложение имеет доступ к секретамhttps://GATEWAY_HASH.cloudapp.net)и базе данных, служба приложения может быть достигнута через URL приложения шлюза (, который вы можете получить от его лезвия.
+После того, как секреты находятся в Key Vault и приложение имеет доступ к секретам и базе\/данных, служба приложения может быть достигнута через URL приложения шлюза (https: /GATEWAY_HASH.cloudapp.net), который вы можете получить от его лезвия.
 
 Если при входе в Azure AD вы получаете ошибку, в с помехавую: «Пользователь не зарегистрирован в каталоге, в который вы пытаетесь войти», необходимо добавить пользователя. Чтобы добавить пользователя, перейдите на вкладку **пользователей** Azure AD и добавьте пользователя вручную, введя его данные или пригласив пользователя, введя его адрес электронной почты в качестве приглашенного пользователя в Azure AD в лезвии **Invite Guest.**
 
@@ -978,7 +978,7 @@ PyLint обеспечил асамое значение для этого про
 
 ### <a name="find-and-fix-vulnerabilities-in-app-dependencies"></a>Поиск и исправление уязвимостей в зависимостях приложений
 
-Чтобы найти и исправить зависимости приложений, можно использовать [проверку зависимостей OWASP.](https://www.owasp.org/index.php/OWASP_Dependency_Check)
+Чтобы найти и исправить зависимости приложений, можно использовать [проверку зависимостей OWASP.](https://owasp.org/www-project-dependency-check/)
 
 Безопасность — это аналогичное приложение, которое проверяет зависимости. Вы можете найти его на [GitHub](https://github.com/pyupio/safety). Сканирование уязвимостей, обнаруженных в хорошо известных базах данных уязвимостей.
 
@@ -986,7 +986,7 @@ PyLint обеспечил асамое значение для этого про
 
 *Безопасности*
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Следующие статьи помогут вам разрабатывать, разрабатывать и развертывать безопасные приложения.
 

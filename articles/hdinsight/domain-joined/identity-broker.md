@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: fb82cec6874f8ef4f41897cc22939fe69ed02ec2
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 1e7eaf49fb8b62259b8c619c89edffd629dfde7f
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81457422"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685516"
 ---
 # <a name="use-id-broker-preview-for-credential-management"></a>Используйте ID Broker (предварительный просмотр) для управления учетных данных
 
@@ -46,6 +46,46 @@ ID Broker позволяет войти в кластеры ESP с помощь�
 
 ![Вариант для включения ID Брокер](./media/identity-broker/identity-broker-enable.png)
 
+### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
+Если вы добавите `idbrokernode` новую роль, вызванную со следующими атрибутами, в вычислительный профиль шаблона, кластер будет создан с включенным узлами брокера ID:
+
+```json
+.
+.
+.
+"computeProfile": {
+    "roles": [
+        {
+            "autoscale": null,
+            "name": "headnode",
+           ....
+        },
+        {
+            "autoscale": null,
+            "name": "workernode",
+            ....
+        },
+        {
+            "autoscale": null,
+            "name": "idbrokernode",
+            "targetInstanceCount": 1,
+            "hardwareProfile": {
+                "vmSize": "Standard_A2_V2"
+            },
+            "virtualNetworkProfile": {
+                "id": "string",
+                "subnet": "string"
+            },
+            "scriptActions": [],
+            "dataDisksGroups": null
+        }
+    ]
+}
+.
+.
+.
+```
+
 ## <a name="tool-integration"></a>Интеграция инструментов
 
 Плагин HDInsight [IntelliJ](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-intellij-tool-plugin#integrate-with-hdinsight-identity-broker-hib) обновляется для поддержки OAuth. Этот плагин можно использовать для подключения к кластеру и отправки заданий.
@@ -62,7 +102,7 @@ ID Broker позволяет войти в кластеры ESP с помощь�
 
 *   OAuth ресурс ури:https://hib.azurehdinsight.net 
 * AppId: 7865c1d2-f040-46cc-875f-831a1ef6a28a
-*   Разрешение: (имя: Cluster.ReadWrite, id:8f89faa0-ffef-4007-974d-4989b39ad77d)
+*   Разрешение: (имя: Cluster.ReadWrite, id: 8f89faa0-ffef-4007-974d-4989b39ad77d)
 
 ## <a name="next-steps"></a>Следующие шаги
 

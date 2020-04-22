@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/01/2020
 ms.author: shvija
-ms.openlocfilehash: 806a1f16327ad72a7f3527c813b355e1ba807dda
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: 32b08e565b86af8f6373c9848211646128bb346d
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81606760"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81677354"
 ---
 # <a name="migrate-to-azure-event-hubs-for-apache-kafka-ecosystems"></a>Мигрируйте в центры событий Azure для экосистем Apache Kafka
 Azure Event Hubs предоставляет конечную точку Apache Kafka, которая позволяет подключиться к кцентратам событий с помощью протокола Kafka. Внося минимальные изменения в существующее приложение Kafka, вы можете подключиться к кцентратам azure Event и воспользоваться преимуществами экосистемы Azure. Концентраторы событий для Kafka поддерживают [версию Apache Kafka 1.0](https://kafka.apache.org/10/documentation.html) и позже.
@@ -64,11 +64,10 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 [![Проверка получения сообщения концентратором событий](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png)](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png#lightbox)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в следующих статьях:  
 
 - [Apache Кафка руководство по устранению неполадок для событий концентраторов](apache-kafka-troubleshooting-guide.md)
 - [Часто задаваемые вопросы - Концентраторы событий для Apache Kafka](apache-kafka-frequently-asked-questions.md)
 - [Руководство разработчиков Apache Kafka для центров событий Azure](apache-kafka-developer-guide.md)
 - [Рекомендуемые конфигурации](https://github.com/Azure/azure-event-hubs-for-kafka/blob/master/CONFIGURATION.md)
-- 

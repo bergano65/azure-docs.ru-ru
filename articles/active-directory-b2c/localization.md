@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/11/2020
+ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e73eae4d66f4ff94a48dfa27e258f8ba8ef87633
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 94ff7ddda41f2df2634d927a7dbf8a5a0d4fc1d8
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79126753"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81681412"
 ---
 # <a name="localization"></a>Локализация
 
@@ -39,7 +39,7 @@ ms.locfileid: "79126753"
 
 Элемент **Localization** содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | Активировано | нет | Возможные значения: `true` или `false`. |
 
@@ -54,7 +54,7 @@ ms.locfileid: "79126753"
 
 Элемент **SupportedLanguages** содержит следующие атрибуты.
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | DefaultLanguage | Да | Язык, который будет использоваться по умолчанию для локализованных ресурсов. |
 | MergeBehavior | нет | Перечисление значений, которые объединяются с любым элементом ClaimType с таким же идентификатором в родительской политике. Используйте этот атрибут, чтобы переопределить определенное в базовой политике утверждение. Возможные значения: `Append`, `Prepend` или `ReplaceAll`. Значение `Append` означает, что указанная коллекция данных должна добавляться в конец коллекции, указанной в родительской политике. Значение `Prepend` означает, что указанная коллекция данных должна добавляться в начало коллекции, указанной в родительской политике. Значение `ReplaceAll` означает, что определенную в родительской политике коллекцию данных нужно игнорировать и заменить данными, определенными в текущей политике. |
@@ -71,7 +71,7 @@ ms.locfileid: "79126753"
 
 Элемент **LocalizedResources** содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | Идентификатор | Да | Идентификатор, который используется для уникальной идентификации локализованных ресурсов. |
 
@@ -94,7 +94,7 @@ ms.locfileid: "79126753"
 
 Элемент **LocalizedCollections** содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | ElementType | Да | Ссылается на элемент ClaimType или элемент пользовательского интерфейса в файле политики. |
 | ElementId | Да | Строка, содержащая ссылку на тип утверждения, который уже определен в разделе ClaimsSchema и используется, если **ElementType** имеет значение ClaimType. |
@@ -104,13 +104,13 @@ ms.locfileid: "79126753"
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| Item | 0:n | Определяет варианты, которые пользователь может выбрать для утверждения в пользовательском интерфейсе, например, значения в раскрывающемся списке. |
+| Элемент | 0:n | Определяет варианты, которые пользователь может выбрать для утверждения в пользовательском интерфейсе, например, значения в раскрывающемся списке. |
 
 Элемент **Item** содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| Text | Да | Понятная для пользователя отображаемая строка, которая размещается в пользовательском интерфейсе для этого параметра. |
+| текст | Да | Понятная для пользователя отображаемая строка, которая размещается в пользовательском интерфейсе для этого параметра. |
 | Значение | Да | Строковое значение утверждения, связанное с этим вариантом. |
 | SelectByDefault | нет | Указывает, следует ли по умолчанию выбирать этот параметр в пользовательском интерфейсе. Возможные значения: True или False. |
 
@@ -144,70 +144,195 @@ ms.locfileid: "79126753"
 
 Элемент **LocalizedStrings** содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| ElementType | Да | Ссылается на элемент типа утверждения или элемент пользовательского интерфейса в файле политики. Возможные `ClaimType`значения: `UxElement` `ErrorMessage`, `Predicate`, `GetLocalizedStringsTransformationClaimType`, Значение `ClaimType` используется для локализации одного из атрибутов утверждения, который указан в параметре StringId. Значение `UxElement` используется для локализации одного из элементов пользовательского интерфейса, который указан в параметре StringId. Значение `ErrorMessage` используется для локализации одного из системных сообщений об ошибке, которое указано в параметре StringId. Значение `Predicate` используется для локализации одного из сообщений об ошибке [Predicate](predicates.md), которое указано в параметре StringId. Значение `InputValidation` используется для локализации одного из сообщений об ошибке [PredicateValidation](predicates.md), которое указано в параметре StringId. Значение `GetLocalizedStringsTransformationClaimType` используется для копирования локализованных строк в претензии. Для получения дополнительной информации см. [Преобразование заявок GetLocalizedStringsTransformation](string-transformations.md#getlocalizedstringstransformation)  | 
+| ElementType | Да | Возможные значения: [ClaimsProvider](#claimsprovider), [ClaimType](#claimtype), [ErrorMessage](#errormessage), [GetLocalizedStringsTransformationClaimType](#getlocalizedstringstransformationclaimtype), [Предикат](#predicate), [Входная валидация](#inputvalidation), или [UxElement](#uxelement).   | 
 | ElementId | Да | Если **ElementType** настроен `ClaimType` `Predicate`на `InputValidation`, или, этот элемент содержит ссылку на тип претензии, уже определенный в разделе ClaimsSchema. |
 | StringId | Да | Если **ElementType** имеет значение `ClaimType`, этот элемент содержит ссылку на атрибут типа утверждения. Возможные значения: `DisplayName`, `AdminHelpText` или `PatternHelpText`. Значение `DisplayName` задает отображаемое имя утверждения. Значение `AdminHelpText` задает имя текста справки для пользователя утверждения. Значение `PatternHelpText` задает текста справки по шаблону утверждения. Если **ElementType** имеет значение `UxElement`, этот элемент содержит ссылку на атрибут элемента пользовательского интерфейса. Если **ElementType** имеет значение `ErrorMessage`, этот элемент задает идентификатор сообщения об ошибке. Полный список идентификаторов `UxElement` для строк локализации можно найти на [этой странице](localization-string-ids.md).|
 
+## <a name="elementtype"></a>ElementType
 
-Следующий пример демонстрирует локализованную страницу регистрации. Первые три значения **LocalizedString** задают атрибут утверждения. Третий из них изменяет значение для кнопки "Продолжить". Последний изменяет сообщение об ошибке.
+Ссылка ElementType на тип претензии, преобразование претензии или элемент пользовательского интерфейса в политике, который будет локализован.
 
-```XML
-<LocalizedResources Id="api.selfasserted.en">
-  <LocalizedStrings>
-    <LocalizedString ElementType="ClaimType" ElementId="email" StringId="DisplayName">Email</LocalizedString>
-    <LocalizedString ElementType="ClaimType" ElementId="email" StringId="UserHelpText">Please enter your email</LocalizedString>
-    <LocalizedString ElementType="ClaimType" ElementId="email" StringId="PatternHelpText">Please enter a valid email address</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="button_continue">Create new account</LocalizedString>
-   <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalAlreadyExists">The account you are trying to create already exists, please sign-in.</LocalizedString>
-  </LocalizedStrings>
-</LocalizedResources>
-```
+| Элемент для локализации | ElementType | ElementId |StringId |
+| --------- | -------- | ----------- |----------- |
+| Имя поставщика идентификационных данных |`ClaimsProvider`| | Идентификатор элемента ClaimsExchange|
+| Атрибуты типа претензий|`ClaimType`|Название типа претензии| Атрибут претензии будет локализован. Возможные `AdminHelpText`значения: `DisplayName` `PatternHelpText`, `UserHelpText`, и .|
+|Сообщение об ошибке|`ErrorMessage`||Идентификатор сообщения об ошибке |
+|Копии локализованных строк в претензии|`GetLocalizedStringsTra nsformationClaimType`||Название претензии на вывод|
+|Предиката юношного сообщения|`Predicate`|Название предиката| Атрибут предиката, который будет локализован. Возможные значения: `HelpText`.|
+|Предикат групповое сообщение пользователя|`InputValidation`|Идентификатор элемента PredicateValidation.|Идентификатор элемента PredicateGroup. Предикатная группа должна быть ребенком элемента предикатной проверки, как это определено в ElementId.|
+|Элементы пользовательского интерфейса |`UxElement` | | Идентификатор элемента пользовательского интерфейса, который будет локализован.|
 
-Следующий пример локализует значение **UserHelpText** в объекте **Predicate** с идентификатором `IsLengthBetween8And64`. Также он локализует **UserHelpText** для **PredicateGroup** с идентификатором `CharacterClasses` в объекте **PredicateValidation** с идентификатором `StrongPassword`.
+## <a name="examples"></a>Примеры
 
-```XML
-<PredicateValidation Id="StrongPassword">
-  <PredicateGroups>
-    ...
-    <PredicateGroup Id="CharacterClasses">
-    ...
-    </PredicateGroup>
-  </PredicateGroups>
-</PredicateValidation>
+### <a name="claimsprovider"></a>ClaimsProvider
 
-...
+Значение ClaimsProvider используется для локализации имени одного из поставщиков заявок. 
 
-<Predicate Id="IsLengthBetween8And64" Method="IsLengthRange">
+```xml
+<OrchestrationStep Order="2" Type="ClaimsExchange">
   ...
-</Predicate>
-...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" />
+    <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAUTH" />
+    <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
+  </ClaimsExchanges>
+</OrchestrationStep>
 
-
-<LocalizedString ElementType="InputValidation" ElementId="StrongPassword" StringId="CharacterClasses">The password must have at least 3 of the following:</LocalizedString>
-
-<LocalizedString ElementType="Predicate" ElementId="IsLengthBetween8And64" StringId="HelpText">The password must be between 8 and 64 characters.</LocalizedString>
 ```
 
-## <a name="set-up-localization"></a>Настройка локализации
+В следующем примере показано, как локализовать имя поставщика претензий.
 
-В этой статье описано, как включить поддержку нескольких языковых стандартов или языков в политике для путей взаимодействия пользователя. Для локализации нужно выполнить три шага: настроить явный список поддерживаемых языков, предоставить строки и коллекции для каждого языка и изменить параметр ContentDefinition для страницы.
+```xml
+<LocalizedString ElementType="ClaimsProvider" StringId="FacebookExchange">Facebook</LocalizedString>
+<LocalizedString ElementType="ClaimsProvider" StringId="GoogleExchange">Google</LocalizedString>
+<LocalizedString ElementType="ClaimsProvider" StringId="LinkedInExchange">LinkedIn</LocalizedString>
+```
 
-### <a name="set-up-the-explicit-list-of-supported-languages"></a>Настройка явного списка поддерживаемых языков
+### <a name="claimtype"></a>ClaimType
 
-В элементе **BuildingBlocks** добавьте элемент **Localization** со списком поддерживаемых языков. В следующем примере показано, как определить поддержку локализации для английского (по умолчанию) и испанского языков:
+Значение ClaimType используется для локализации одного из атрибутов претензии. 
+
+```xml
+<ClaimType Id="email">
+  <DisplayName>Email Address</DisplayName>
+  <DataType>string</DataType>
+  <UserHelpText>Email address that can be used to contact you.</UserHelpText>
+  <UserInputType>TextBox</UserInputType>
+</ClaimType>
+```
+
+В следующем примере показано, как локализовать атрибуты DisplayName, UserHelpText и PatternHelpText типа запроса электронной почты.
 
 ```XML
-<Localization Enabled="true">
-  <SupportedLanguages DefaultLanguage="en" MergeBehavior="ReplaceAll">
-    <SupportedLanguage>en</SupportedLanguage>
-    <SupportedLanguage>es</SupportedLanguage>
-  </SupportedLanguages>
-</Localization>
+<LocalizedString ElementType="ClaimType" ElementId="email" StringId="DisplayName">Email</LocalizedString>
+<LocalizedString ElementType="ClaimType" ElementId="email" StringId="UserHelpText">Please enter your email</LocalizedString>
+<LocalizedString ElementType="ClaimType" ElementId="email" StringId="PatternHelpText">Please enter a valid email address</LocalizedString>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="errormessage"></a>ErrorMessage
+
+Значение ErrorMessage используется для локализации одного из сообщений системных ошибок. 
+
+```xml
+<TechnicalProfile Id="AAD-UserWriteUsingAlternativeSecurityId">
+  <Metadata>
+    <Item Key="RaiseErrorIfClaimsPrincipalAlreadyExists">true</Item>
+    <Item Key="UserMessageIfClaimsPrincipalAlreadyExists">You are already registered, please press the back button and sign in instead.</Item>
+  </Metadata>
+  ...
+</TechnicalProfile>
+```
+
+В следующем примере показано, как локализовать сообщение об ошибке UserMessageIfClaimsPrincipalAlreadyExists.
+
+
+```XML
+<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalAlreadyExists">The account you are trying to create already exists, please sign-in.</LocalizedString>
+```
+
+### <a name="getlocalizedstringstransformationclaimtype"></a>GetLocalizedStringsTransformationClaimType
+
+Значение GetLocalizedStringsTransformationClaimType используется для копирования локализованных строк в заявки. Для получения дополнительной информации см. [Преобразование заявок GetLocalizedStringsTransformation](string-transformations.md#getlocalizedstringstransformation)
+
+
+```xml
+<ClaimsTransformation Id="GetLocalizedStringsForEmail" TransformationMethod="GetLocalizedStringsTransformation">
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="subject" TransformationClaimType="email_subject" />
+    <OutputClaim ClaimTypeReferenceId="message" TransformationClaimType="email_message" />
+    <OutputClaim ClaimTypeReferenceId="codeIntro" TransformationClaimType="email_code" />
+    <OutputClaim ClaimTypeReferenceId="signature" TransformationClaimType="email_signature" />
+   </OutputClaims>
+</ClaimsTransformation>
+```
+
+В следующем примере показано, как локализовать притязания на выводные данные преобразования требований GetLocalizedStringsTransformation.
+
+```xml
+<LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_subject">Contoso account email verification code</LocalizedString>
+<LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_message">Thanks for verifying your account!</LocalizedString>
+<LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_code">Your code is</LocalizedString>
+<LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_signature">Sincerely</LocalizedString>
+```
+
+### <a name="predicate"></a>Predicate
+
+Значение Predicate используется для локализации одного из сообщений об ошибках [Predicate.](predicates.md) 
+
+```xml
+<Predicates>
+  <Predicate Id="LengthRange" Method="IsLengthRange"  HelpText="The password must be between 6 and 64 characters.">
+    <Parameters>
+      <Parameter Id="Minimum">6</Parameter>
+      <Parameter Id="Maximum">64</Parameter>
+    </Parameters>
+  </Predicate>
+  <Predicate Id="Lowercase" Method="IncludesCharacters" HelpText="a lowercase letter">
+    <Parameters>
+      <Parameter Id="CharacterSet">a-z</Parameter>
+    </Parameters>
+  </Predicate>
+  <Predicate Id="Uppercase" Method="IncludesCharacters" HelpText="an uppercase letter">
+    <Parameters>
+      <Parameter Id="CharacterSet">A-Z</Parameter>
+    </Parameters>
+  </Predicate>
+</Predicates>
+```
+
+Следующий пример показывает, как локализовать предикаты помогают текст.
+
+```xml
+<LocalizedString ElementType="Predicate" ElementId="LengthRange" StringId="HelpText">The password must be between 6 and 64 characters.</LocalizedString>
+<LocalizedString ElementType="Predicate" ElementId="Lowercase" StringId="HelpText">a lowercase letter</LocalizedString>
+<LocalizedString ElementType="Predicate" ElementId="Uppercase" StringId="HelpText">an uppercase letter</LocalizedString>
+```
+
+### <a name="inputvalidation"></a>Входная валидация
+
+Значение ВводаВалиса используется для локализации одного из сообщений ошибок группы [PredicateValidation.](predicates.md) 
+
+```xml
+<PredicateValidations>
+  <PredicateValidation Id="CustomPassword">
+    <PredicateGroups>
+      <PredicateGroup Id="LengthGroup">
+        <PredicateReferences MatchAtLeast="1">
+          <PredicateReference Id="LengthRange" />
+        </PredicateReferences>
+      </PredicateGroup>
+      <PredicateGroup Id="CharacterClasses">
+        <UserHelpText>The password must have at least 3 of the following:</UserHelpText>
+        <PredicateReferences MatchAtLeast="3">
+          <PredicateReference Id="Lowercase" />
+          <PredicateReference Id="Uppercase" />
+          <PredicateReference Id="Number" />
+          <PredicateReference Id="Symbol" />
+        </PredicateReferences>
+      </PredicateGroup>
+    </PredicateGroups>
+  </PredicateValidation>
+</PredicateValidations>
+```
+
+В следующем примере показано, как локализовать текст справки группы справки о проверке предиката.
+
+```XML
+<LocalizedString ElementType="InputValidation" ElementId="CustomPassword" StringId="CharacterClasses">The password must have at least 3 of the following:</LocalizedString>
+```
+
+### <a name="uxelement"></a>UxElement
+
+Значение UxElement используется для локализации одного из элементов пользовательского интерфейса. В следующем примере показано, как локализовать продолжение и отменить кнопки.
+
+```XML
+<LocalizedString ElementType="UxElement" StringId="button_continue">Create new account</LocalizedString>
+<LocalizedString ElementType="UxElement" StringId="button_cancel">Cancel</LocalizedString>
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 Смотрите следующие статьи для примеров локализации:
 

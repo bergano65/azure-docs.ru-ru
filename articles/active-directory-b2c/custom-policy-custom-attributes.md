@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/17/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: bc5204518cb6e801ba661aecd5498a501122225f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b5990f79891a9cbc0d18c3499691a3d7ef309a73
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79473665"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678254"
 ---
 # <a name="azure-active-directory-b2c-enable-custom-attributes-in-a-custom-profile-policy"></a>Активный каталог Azure B2C: Включить пользовательские атрибуты в пользовательской политике профиля
 
@@ -75,7 +75,7 @@ Azure AD B2C позволяет расширить набор атрибутов
             <Item Key="ApplicationObjectId"></Item>
           </Metadata>
         </TechnicalProfile>
-      <TechnicalProfiles> 
+      </TechnicalProfiles> 
     </ClaimsProvider>
     ```
 
@@ -96,7 +96,7 @@ Azure AD B2C позволяет расширить набор атрибутов
 
 Вы можете создать эти атрибуты, используя пользовательский пользовательский участок портала до или после использования их в пользовательских политиках. Следуйте инструкциям по [определению пользовательских атрибутов в Azure Active Directory B2C.](user-flow-custom-attributes.md) При создании **атрибута loyaltyId** на портале необходимо сослаться на него следующим образом:
 
-|name     |Используется в |
+|Имя     |Используется в |
 |---------|---------|
 |`extension_loyaltyId`  | Настраиваемая политика|
 |`extension_<b2c-extensions-app-guid>_loyaltyId`  | [API Microsoft Graph](manage-user-accounts-graph-api.md)|
@@ -135,7 +135,7 @@ Azure AD B2C позволяет расширить набор атрибутов
 Следуйте инструкциям по [добавлению заявок и настройке пользовательского ввода с помощью пользовательских политик.](custom-policy-configure-user-input.md) В этом примере используется встроенная претензия "город". Чтобы использовать пользовательский атрибут, замените 'город' своими пользовательскими атрибутами.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. также:
 

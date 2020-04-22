@@ -5,14 +5,14 @@ author: roygara
 ms.service: storage
 ms.subservice: files
 ms.topic: conceptual
-ms.date: 04/15/2020
+ms.date: 04/20/2020
 ms.author: rogarana
-ms.openlocfilehash: 8d1e1262c592f0120b191e18a5c16b97b887a6a2
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 44debc299054568769bfbe6cfc089cc528594274
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536542"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81677075"
 ---
 # <a name="enable-on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Включить проверку подлинности доменных служб Active Directory Domain Services по сравнению с SMB для файлов Azure
 
@@ -68,11 +68,7 @@ ms.locfileid: "81536542"
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
-Проверка подлинности файлов Azure с помощью AD DS (предварительный просмотр) доступна в [большинстве общедоступных регионов.](https://azure.microsoft.com/global-infrastructure/regions/)
-
-Аутентификация файлов Azure с помощью предварительного AD DS недоступна в:
-- западная часть США
-
+Аутентификация файлов Azure с помощью AD DS (предварительный просмотр) доступна во [всех публичных регионах и регионах Azure Gov.](https://azure.microsoft.com/global-infrastructure/locations/)
 
 ## <a name="workflow-overview"></a>Обзор рабочего процесса
 
@@ -84,13 +80,13 @@ ms.locfileid: "81536542"
 
 1. Включить проверку подлинности AD DS файлов Azure в учетной записи хранения. 
 
-1. Присвоить разрешения доступа для доступа к идентации Azure AD (пользователь, группа или основной службы), которая синхронизируется с целевым идентатором AD. 
+2. Присвоить разрешения доступа для доступа к идентации Azure AD (пользователь, группа или основной службы), которая синхронизируется с целевым идентатором AD. 
 
-1. Налаживание ACL по сравнению с SMB для каталогов и файлов. 
+3. Налаживание ACL по сравнению с SMB для каталогов и файлов. 
  
-1. Установите совместное сфайлом файла Azure в VM, присоединенном к AD DS. 
+4. Установите совместное сфайлом файла Azure в VM, присоединенном к AD DS. 
 
-1. Обновление пароля вашей учетной записи хранения в AD DS.
+5. Обновление пароля вашей учетной записи хранения в AD DS.
 
 Следующая диаграмма иллюстрирует сквозной рабочий процесс для обеспечения аутентификации Azure AD по сравнению с SMB для файлов Azure. 
 

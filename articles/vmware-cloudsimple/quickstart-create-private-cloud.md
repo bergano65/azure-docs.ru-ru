@@ -9,24 +9,24 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 7460490dbd45862f4269d25e3910373700ec9a03
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 10831c0dc39fa241a43541850afae39593ae033b
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77564726"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678287"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Быстрый запуск - Настройка среды частного облака
 
 В этой статье узнайте, как создать облачное частное облако и настроить среду private Cloud.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Обзор [сетевых предпосылок](cloudsimple-network-checklist.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войти на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="create-a-private-cloud"></a>Создание частного облака
 
@@ -34,7 +34,7 @@ ms.locfileid: "77564726"
 
 Частные облака управляются через портал CloudSimple. Они имеют свой собственный сервер vCenter в своей собственной области управления. Стек работает на выделенных узлах и изолированных голых металлических аппаратных узлов.
 
-1. Выберите **все услуги**.
+1. Выбор пункта **Все службы**.
 2. Поиск **облачных сервисов CloudSimple**.
 3. Выберите сервис CloudSimple, на котором вы хотите создать частное облако.
 4. От **обзора**нажмите **Создать частное облако,** чтобы открыть новую вкладку браузера для портала CloudSimple.  Если побуждение, вопийте со своим знаком Azure в учетных данных.  
@@ -66,7 +66,7 @@ ms.locfileid: "77564726"
 
 Вы можете получить доступ к порталу CloudSimple с портала Azure.  Портал CloudSimple будет запущен с вашим знаком Azure в учетных данных с помощью Single Sign-On (SSO).  Доступ к порталу CloudSimple требует авторизации приложения **для авторизации службы CloudSimple.**  Для получения дополнительной информации [Consent to CloudSimple Service Authorization application](access-cloudsimple-portal.md#consent-to-cloudsimple-service-authorization-application)о предоставлении разрешений см.
 
-1. Выберите **все услуги**.
+1. Выбор пункта **Все службы**.
 2. Поиск **облачных сервисов CloudSimple**.
 3. Выберите сервис CloudSimple, на котором вы хотите создать частное облако.
 4. От обзора нажмите **Перейдите на портал CloudSimple,** чтобы открыть новую вкладку браузера для портала CloudSimple.  Если побуждение, вопийте со своим знаком Azure в учетных данных.  
@@ -140,7 +140,7 @@ VPN клиент необходим для подключения к CloudSimple
 5. Выберите идентификатор VLAN из списка.  
 6. Введите имя подсети для идентификации подсети.
 7. Укажите диапазон подсети CIDR и маску.  Этот диапазон не должен пересекаться с существующими подсетями.
-8. Щелкните элемент **Отправить**.
+8. Щелкните **Отправить**.
 
     ![Создание деталей VLAN/Subnet](media/create-new-vlan-subnet-details.png)
 
@@ -159,8 +159,8 @@ CloudSimple предоставляет схему ExpressRoute для вашег
     ![Запуск vSphere Клиент](media/launch-vcenter-from-cloudsimple-portal.png)
 
 2. Выберите предпочтительного клиента vSphere для доступа к vCenter и вопийте с вашим именем пользователя и паролем.  Значения по умолчанию:
-    * Имя пользователя: **CloudOwner\@cloudsimple.local**
-    * Пароль: **CloudSimple123!**  
+    * Имя пользователя:`CloudOwner@cloudsimple.local`
+    * Пароль: `CloudSimple123!`
 
 Экраны vCenter в следующих процедурах от клиента vSphere (HTML5).
 
@@ -207,7 +207,7 @@ CloudSimple рекомендует изменить пароль при перв
 1. Следуйте инструкциям в "Добавить распределенной группы портов" в [vSphere Networking Guide](https://docs.vmware.com/en/VMware-vSphere/6.5/vsphere-esxi-vcenter-server-65-networking-guide.pdf).
 2. При настройке распределенной группы портов предоставьте идентификатор VLAN, созданный в [Create a VLAN для вдовых работ.](#create-a-vlan-for-your-workload-vms)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование виртуальных машин VMware в Azure](quickstart-create-vmware-virtual-machine.md)
 * [Подключение к предприимительной сети с помощью Azure ExpressRoute](on-premises-connection.md)

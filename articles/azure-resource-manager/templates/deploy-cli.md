@@ -2,13 +2,13 @@
 title: Развертывание ресурсов с помощью Azure CLI и шаблона
 description: Для развертывания ресурсов в Azure и Azure clI используйте менеджер ресурсов Azure и ClI Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
-ms.date: 03/25/2020
-ms.openlocfilehash: 241b84bc7b8c0b213e74cd7ee5f3d7668fe0d808
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/20/2020
+ms.openlocfilehash: 8ee15699a085178add05137be895fe6b660b715b
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80282653"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685703"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-cli"></a>Развертывание ресурсов с шаблонами ARM и Azure CLI
 
@@ -168,7 +168,7 @@ az deployment group create \
 
 ## <a name="handle-extended-json-format"></a>Ручка расширенный формат JSON
 
-Чтобы развернуть шаблон с многолинейными строками или `--handle-extended-json-format` комментариями, необходимо использовать переключатель.  Пример:
+Чтобы развернуть шаблон с многолинейными строками или комментариями с помощью Azure CLI `--handle-extended-json-format` с версией 2.3.0 или старше, необходимо использовать переключатель.  Пример:
 
 ```json
 {
@@ -239,7 +239,7 @@ az deployment group validate \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы откатить к успешному развертыванию при ошибке, просмейте [откат по ошибке для успешного развертывания.](rollback-on-error.md)
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).

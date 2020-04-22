@@ -1,39 +1,39 @@
 ---
-title: Преобразование устаревшего прямого врани в ресурс Azure с помощью PowerShell
+title: Преобразование устаревшего прямого вонючего в ресурс Azure с помощью PowerShell
 titleSuffix: Azure
-description: Преобразование устаревшего прямого врани в ресурс Azure с помощью PowerShell
+description: Преобразование устаревшего прямого вонючего в ресурс Azure с помощью PowerShell
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: ba41f4ad8014ba3e85174b7c32e11394f0068643
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5d2a8c910c9e384e137785bc1cd491bc85c7e7a8
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75775021"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678496"
 ---
-# <a name="convert-a-legacy-direct-peering-to-azure-resource-using-powershell"></a>Преобразование устаревшего прямого врани в ресурс Azure с помощью PowerShell
+# <a name="convert-a-legacy-direct-peering-to-an-azure-resource-by-using-powershell"></a>Преобразование устаревшего прямого вонючего в ресурс Azure с помощью PowerShell
 
-В этой статье описывается, как преобразовать существующее устаревшем вглядывании В ресурс Azure с помощью cmdlets PowerShell.
+В этой статье описывается, как преобразовать существующее устаревшем вглядывании Direct в ресурс Azure с помощью cmdlets PowerShell.
 
-Если вы предпочитаете, вы можете завершить это руководство с помощью [портала](howto-legacy-direct-portal.md).
+Если вы предпочитаете, вы можете заполнить это руководство с помощью [портала](howto-legacy-direct-portal.md)Azure .
 
-## <a name="before-you-begin"></a>Перед началом
-* Просмотрите [предпосылки](prerequisites.md) и [прямое пошаговое руководство](walkthrough-direct-all.md) перед началом конфигурации.
+## <a name="before-you-begin"></a>Подготовка к работе
+* Просмотрите [предпосылки](prerequisites.md) и [пошаговое руководство Direct peering](walkthrough-direct-all.md) перед началом конфигурации.
 
-### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
+### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
 
-## <a name="convert-legacy-direct-peering-to-azure-resource"></a>Преобразование устаревшего вонючеги для ресурса Azure
+## <a name="convert-a-legacy-direct-peering-to-an-azure-resource"></a>Преобразование устаревшего вонючего в ресурс Azure
 
 ### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
-### <a name="get-legacy-direct-peering-for-conversion"></a><a name= get></a>Получить наследие Прямая пиринг для преобразования
-Ниже приведен пример, чтобы получить наследие Прямая пиринг в Сиэтле пиринг месте
+### <a name="get-a-legacy-direct-peering-for-conversion"></a><a name= get></a>Получить наследие Прямая пиринг для преобразования
+В этом примере показано, как получить устаревку Direct, вглядывающуюся в место пиринга в Сиэтле.
 
 ```powershell
 $legacyPeering = Get-AzLegacyPeering `
@@ -41,7 +41,7 @@ $legacyPeering = Get-AzLegacyPeering `
 $legacyPeering
 ```
 
-Ниже приведен пример ответа:
+Вот пример ответа:
 ```powershell
 Name                       :
 Sku                        : Basic_Direct_Free
@@ -79,13 +79,13 @@ ProvisionedBandwidthInMbps : 20000
 ProvisioningState          : Succeeded
 ```
 
-### <a name="convert-legacy-direct-peering"></a>Преобразование устаревшего прямого пиринга
+### <a name="convert-a-legacy-direct-peering"></a>Преобразование устаревшего прямого пиринга
 
 &nbsp;
 > [!IMPORTANT]
-> Обратите внимание, что при преобразовании устаревшего вонючего в ресурс azure изменения не поддерживаются. &nbsp;
+> При преобразовании элементанного вонючего в ресурс Azure изменения не поддерживаются. &nbsp;
 
-Используйте ниже команды для преобразования устаревшего прямого врани в ресурс Azure:
+Используйте эту команду для преобразования устаревшего прямого вралки в ресурс Azure:
 
 ```powershell
 $legacyPeering[0] | New-AzPeering `
@@ -94,7 +94,7 @@ $legacyPeering[0] | New-AzPeering `
 
 ```
 
-Ниже приведен пример ответа:
+Вот пример ответа:
 
 ```powershell
 Name                 : SeattleDirectPeering
@@ -112,14 +112,14 @@ Tags                 : {}
 ```
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-Подробное описание всех параметров можно получить, выполнив следующую команду.
+Вы можете получить подробное описание всех параметров, запустив эту команду:
 
 ```powershell
 Get-Help Get-AzPeering -detailed
 ```
 
-Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)
+Для получения дополнительной информации, см [Интернет пиринг часто задаваемые вопросы](faqs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Создайте или измените прямое пиринг с помощью PowerShell.](howto-direct-powershell.md)
+* [Создание или изменение прямого пиринга с помощью PowerShell](howto-direct-powershell.md)

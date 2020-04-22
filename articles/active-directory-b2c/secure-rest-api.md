@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/30/2020
+ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5a80c6e3bd8cf647590ed757c042ef3301e27b4a
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.openlocfilehash: 34ed6d043f713aa55bfe464c48d4332364df805d
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80743509"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680381"
 ---
 # <a name="secure-your-restful-services"></a>Обезоверьтейте свои услуги RESTful 
 
@@ -69,7 +69,7 @@ ms.locfileid: "80743509"
 
 1. В рабочей папке откройте файл политики расширения (TrustFrameworkExtensions.xml).
 1. Поиск технического профиля REST API. Например, `REST-ValidateProfile` или `REST-GetProfile`.
-1. Найдите элемент `<Metadata>`.
+1. Найдите элемент `<Metadata>` .
 1. Измените *тип проверки подлинности* на `Basic`.
 1. Измените *AllowInsecureAuthInProduction* на `false`.
 1. Сразу после завершения элемента `</Metadata>` добавьте следующий фрагмент XML-кода:
@@ -150,7 +150,7 @@ ms.locfileid: "80743509"
 
 1. В рабочей папке откройте файл политики расширения (TrustFrameworkExtensions.xml).
 1. Поиск технического профиля REST API. Например, `REST-ValidateProfile` или `REST-GetProfile`.
-1. Найдите элемент `<Metadata>`.
+1. Найдите элемент `<Metadata>` .
 1. Измените *тип проверки подлинности* на `ClientCertificate`.
 1. Измените *AllowInsecureAuthInProduction* на `false`.
 1. Сразу после завершения элемента `</Metadata>` добавьте следующий фрагмент XML-кода:
@@ -211,11 +211,19 @@ Authorization: Bearer <token>
 1. Откройте файл расширений вашей политики. Например, <em> `SocialAndLocalAccounts/` </em>.
 1. Найдите элемент [BuildingBlocks](buildingblocks.md). Если такой элемент не существует, добавьте его.
 1. Найдите элемент [ClaimsSchema.](claimsschema.md) Если такой элемент не существует, добавьте его.
-1. Добавьте городской носитель Token в элемент **ClaimsSchema.**  
+1. Добавьте следующие претензии к элементу **ClaimsSchema.**  
 
 ```xml
 <ClaimType Id="bearerToken">
-  <DisplayName>bearer token</DisplayName>
+  <DisplayName>Bearer token</DisplayName>
+  <DataType>string</DataType>
+</ClaimType>
+<ClaimType Id="grant_type">
+  <DisplayName>Grant type</DisplayName>
+  <DataType>string</DataType>
+</ClaimType>
+<ClaimType Id="scope">
+  <DisplayName>scope</DisplayName>
   <DataType>string</DataType>
 </ClaimType>
 ```
@@ -258,7 +266,7 @@ Authorization: Bearer <token>
 
 1. В рабочей папке откройте файл политики расширения *TrustFrameworkExtensions.xml*.
 1. Найдите узел `<TechnicalProfile>`, содержащий `Id="REST-API-SignUp"`.
-1. Найдите элемент `<Metadata>`.
+1. Найдите элемент `<Metadata>` .
 1. Измените *тип аутентификации* на *Bearer:*
     ```xml
     <Item Key="AuthenticationType">Bearer</Item>
@@ -323,7 +331,7 @@ Authorization: Bearer <token>
 
 1. В рабочей папке откройте файл политики расширения (TrustFrameworkExtensions.xml).
 1. Поиск технического профиля REST API. Например, `REST-ValidateProfile` или `REST-GetProfile`.
-1. Найдите элемент `<Metadata>`.
+1. Найдите элемент `<Metadata>` .
 1. Измените *тип проверки подлинности* на `Bearer`.
 1. Измените *AllowInsecureAuthInProduction* на `false`.
 1. Сразу после завершения элемента `</Metadata>` добавьте следующий фрагмент XML-кода:
@@ -357,6 +365,6 @@ Authorization: Bearer <token>
 </ClaimsProvider>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Подробнее о элементе [технического профиля Restful](restful-technical-profile.md) читайте в справке IEF. 

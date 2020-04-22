@@ -8,30 +8,30 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 3a5f7157ef8f3645dd03ec93684238dd8bbc067e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: beffb2babefd86c2807e21e9337cba66f42fcfc2
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75774228"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678486"
 ---
-Перед началом конфигурации установите и импортируйте необходимые модули. Для установки модулей в PowerShell потребуются привилегии администратора.
+Перед началом настройки установите и импортируйте необходимые модули. Для установки модулей в PowerShell необходимы привилегии администратора.
 
-1. Установка и импортирование модуля Az
+1. Установите и импортируйте модуль Az.
     ```powershell
     Install-Module Az -AllowClobber
     Import-Module Az
     ```
-1. Установка и импортирование модуля Az.Peering
+1. Установка и импортируется модуль Az.Peering.
     ```powershell
     Install-Module -Name Az.Peering -AllowClobber
     Import-Module Az.Peering
     ```
-1. Проверить модули импортируются штрафа с помощью команды ниже.
+1. Убедитесь, что модули, импортированные должным образом, с помощью этой команды:
     ```powershell
     Get-Module
     ```
-1. Вопийте в учетную запись Azure, используя следующую команду.
+1. Войдите в учетную запись Azure с помощью следующей команды:
     ```powershell
     Connect-AzAccount
     ```
@@ -46,7 +46,7 @@ ms.locfileid: "75774228"
     New-AzResourceGroup -Name "PeeringResourceGroup" -Location "Central US"
     ```
 > [!IMPORTANT]
-> Если вы еще не связали ваш ASN и подписку, а затем следуйте шагам для [Associate Peer ASN](../howto-subscription-association-powershell.md). Это необходимо для запроса пиринга.
+> Если вы еще не связали свой ASN и подписку, выполните последующие действия в [Associate Peer ASN.](../howto-subscription-association-powershell.md) Это действие требуется для запроса пиринга.
 
 > [!NOTE]
 > Местоположение группы ресурсов не зависит от местоположения, по которому вы решили настроить пиринг.

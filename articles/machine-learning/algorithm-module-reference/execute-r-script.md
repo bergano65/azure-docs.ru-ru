@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 03/10/2020
-ms.openlocfilehash: f038293b48956ac89314e426df3f5dc491954df3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eb778c8d24639320b60927438de76a29de724ac2
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064222"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684711"
 ---
 # <a name="execute-r-script"></a>Выполнение сценария R
 
@@ -44,7 +44,10 @@ azureml_main <- function(dataframe1, dataframe2){
 ```
 
 ## <a name="installing-r-packages"></a>Установка пакетов R
-Для установки дополнительных пакетов R используйте `install.packages()` метод. Обязательно укажите репозиторий CRAN. Пакеты устанавливаются для каждого модуля **Execute R Script** и не используются в других модулях Execute R **Script.**
+Для установки дополнительных пакетов R используйте `install.packages()` метод. Пакеты устанавливаются для каждого модуля **Execute R Script** и не используются в других модулях Execute R **Script.**
+
+> [!NOTE]
+> Пожалуйста, укажите репозиторий CRAN при установке пакетов, таких как`install.packages("zoo",repos = "http://cran.us.r-project.org")`
 
 Этот пример показывает, как установить зоопарк:
 ```R
@@ -52,7 +55,13 @@ azureml_main <- function(dataframe1, dataframe2){
 # The script MUST contain a function named azureml_main
 # which is the entry point for this module.
 
-# The entry point function can contain up to two input arguments:
+# Please note that functions dependant on X11 library
+# such as "View" are not supported because X11 library
+# is not pre-installed.
+
+# The entry point function MUST have two input arguments.
+# If the input port is not connected, the corresponding
+# dataframe argument will be null.
 #   Param<dataframe1>: a R DataFrame
 #   Param<dataframe2>: a R DataFrame
 azureml_main <- function(dataframe1, dataframe2){
@@ -67,7 +76,7 @@ azureml_main <- function(dataframe1, dataframe2){
  > [!NOTE]
   > Пожалуйста, проверьте, если пакет уже существует перед установкой, чтобы избежать повторной установки. Как `  if(!require(zoo)) install.packages("zoo",repos = "http://cran.us.r-project.org")` в вышеобразном коде образца. Повторная установка может привести к тайм-ауту запроса веб-службы.     
 
-## <a name="upload-files"></a>Upload files
+## <a name="upload-files"></a>Отправка файлов
 **Сценарий выполнения R** поддерживает загрузку файлов с помощью Azure Machine Learning R SDK.
 
 Ниже приводится следующий пример, как загрузить файл изображения в **сценарий Execute R:**
@@ -77,7 +86,13 @@ azureml_main <- function(dataframe1, dataframe2){
 # The script MUST contain a function named azureml_main
 # which is the entry point for this module.
 
-# The entry point function can contain up to two input arguments:
+# Please note that functions dependant on X11 library
+# such as "View" are not supported because X11 library
+# is not pre-installed.
+
+# The entry point function MUST have two input arguments.
+# If the input port is not connected, the corresponding
+# dataframe argument will be null.
 #   Param<dataframe1>: a R DataFrame
 #   Param<dataframe2>: a R DataFrame
 azureml_main <- function(dataframe1, dataframe2){
@@ -124,6 +139,12 @@ azureml_main <- function(dataframe1, dataframe2){
 
 1. В текстовом окне **R** введите или вставьте действительный R-скрипт.
 
+    > [!NOTE]
+    > Пожалуйста, будьте очень осторожны при написании скрипта и убедитесь, что нет ошибки синтаксиса, например, с помощью необъявленной переменной или неимпортированного модуля или функции. Также обратите особое внимание на предустановленный список пакетов в конце этого документа. Чтобы использовать пакеты, которые не перечислены, пожалуйста, установите их в свой скрипт, например`install.packages("zoo",repos = "http://cran.us.r-project.org")`
+    
+    > [!NOTE]
+    > Функции, зависят от библиотеки X11, такие как "Вид", не поддерживаются, поскольку библиотека X11 не установлена.
+    
     Чтобы помочь вам начать работу, текстовое окно **R Script** предварительно заселено примером кода, который вы можете отобразить или заменить.
     
     ```R
@@ -131,7 +152,13 @@ azureml_main <- function(dataframe1, dataframe2){
     # The script MUST contain a function named azureml_main
     # which is the entry point for this module.
 
-    # The entry point function can contain up to two input arguments:
+    # Please note that functions dependant on X11 library
+    # such as "View" are not supported because X11 library
+    # is not pre-installed.
+    
+    # The entry point function MUST have two input arguments.
+    # If the input port is not connected, the corresponding
+    # dataframe argument will be null.
     #   Param<dataframe1>: a R DataFrame
     #   Param<dataframe2>: a R DataFrame
     azureml_main <- function(dataframe1, dataframe2){
@@ -148,8 +175,8 @@ azureml_main <- function(dataframe1, dataframe2){
 
  * Скрипт должен содержать `azureml_main`функцию, названную, которая является точкой входа для этого модуля.
 
- * Функция точки входа может содержать до двух `Param<dataframe1>` аргументов ввода: и`Param<dataframe2>`
- 
+ * Функция точки входа должна иметь два `Param<dataframe1>` аргумента входа: и `Param<dataframe2>`, даже если эти два аргумента не используются в функции.
+
    > [!NOTE]
     > Данные, передаваемые в модуль `dataframe1` `dataframe2`Execute **R Script,** называются как и, `dataset1`который `dataset2`отличается от дизайнера машинного обучения Azure (ссылка дизайнера как , ). Пожалуйста, проверьте, чтобы убедиться, что входные данные ссылаются правильно в вашем скрипте.  
  
@@ -195,7 +222,14 @@ azureml_main <- function(dataframe1, dataframe2){
 # R version: 3.5.1
 # The script MUST contain a function named azureml_main
 # which is the entry point for this module.
-# The entry point function can contain up to two input arguments:
+
+# Please note that functions dependant on X11 library
+# such as "View" are not supported because X11 library
+# is not pre-installed.
+
+# The entry point function MUST have two input arguments.
+# If the input port is not connected, the corresponding
+# dataframe argument will be null.
 #   Param<dataframe1>: a R DataFrame
 #   Param<dataframe2>: a R DataFrame
 azureml_main <- function(dataframe1, dataframe2){
@@ -437,6 +471,6 @@ azureml_main <- function(dataframe1, dataframe2){
 | zeallot      | 0.1.0      | 
 | зоопарк          | 1.8–6      | 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с [набором модулей, доступных](module-reference.md) для машинного обучения Azure. 

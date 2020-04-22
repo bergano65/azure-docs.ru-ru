@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: guide
 ms.date: 04/14/2020
-ms.openlocfilehash: d62d05cdbda86af3c3a38757877624e87f6d1719
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 1bd71a4fb150d544125703679cf0fa0b8951e1eb
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383759"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684133"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Создание коммерческого счета на рынке в Партнерс-центре
 
@@ -21,7 +21,7 @@ ms.locfileid: "81383759"
 >[!IMPORTANT]
 >Если у вас есть учетная запись в [облачном партнерской портале (CPP),](https://cloudpartner.azure.com) которая была перемещена в Центр партнеров, вам не нужно создавать новую учетную запись. Для получения дополнительной информации можно узнать [о переходе издателей из CPP из CPP.](#publishers-moving-from-cpp)
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Чтобы создать учетную запись в Partner Center, убедитесь, что у вас есть:
 
@@ -164,7 +164,7 @@ ms.locfileid: "81383759"
 
 Другой пользователь из того же арендатора Active Directory Azure может добавить нового издателя, выполнив ниже следующие действия:
 
-1. Начало потока регистрации в [Партнерском центре Майкрософт.](https://partner.microsoft.com/en-us/dashboard/account/v3/enrollment/introduction/azureisv)
+1. Начало потока регистрации в [Партнерском центре Майкрософт.](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership)
 2. Выберите **вход в рабочую учетную запись** и введите свой рабочий адрес электронной почты.
 3. Выберите кнопку **«Добавить издателя».**
 4. Выберите идентификатор MPN, который вы хотите связать с издателем.

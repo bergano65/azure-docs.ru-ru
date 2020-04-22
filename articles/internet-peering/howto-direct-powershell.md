@@ -8,24 +8,24 @@ ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 69031550bdab1535213c78f81426fa76e8ea62ad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7639499aaef8d479c2552849b2124e709c46fd36
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75774241"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680781"
 ---
-# <a name="create-or-modify-a-direct-peering-using-powershell"></a>Создание или изменение прямого пиринга с помощью PowerShell
+# <a name="create-or-modify-a-direct-peering-by-using-powershell"></a>Создание или изменение прямого пиринга с помощью PowerShell
 
-В этой статье описывается, как создать пиринг Microsoft Direct с помощью cmdlets PowerShell и модели развертывания диспетчера ресурсов. В этой статье также показано, как проверить состояние ресурса, обновить его или удалить и дезавуировать его.
+В этой статье описывается, как создать пиринг Microsoft Direct с помощью cmdlets PowerShell и модели развертывания ресурсов Azure. В этой статье также показано, как проверить состояние ресурса, обновить его или удалить и дезавуировать его.
 
-Если вы предпочитаете, вы можете завершить это руководство с помощью [портала](howto-direct-portal.md).
+Если вы предпочитаете, вы можете заполнить это руководство с помощью [портала](howto-direct-portal.md)Azure .
 
-## <a name="before-you-begin"></a>Перед началом
-* Просмотрите [предпосылки](prerequisites.md) и [прямое пошаговое руководство](walkthrough-direct-all.md) перед началом конфигурации.
-* В случае, если у вас уже есть Direct peering с Microsoft, которые не преобразуются в ресурсы Azure, обратитесь к [Преобразованию устаревшего Прямого визирования ресурса Azure с помощью PowerShell](howto-legacy-direct-powershell.md)
+## <a name="before-you-begin"></a>Подготовка к работе
+* Просмотрите [предпосылки](prerequisites.md) и [пошаговое руководство Direct peering](walkthrough-direct-all.md) перед началом конфигурации.
+* Если у вас уже есть прямые вглядовые связи с корпорацией Майкрософт, которые не преобразуются в ресурсы Azure, [см. Преобразуйте устаревающее прямое использование ресурса Azure с помощью PowerShell.](howto-legacy-direct-powershell.md)
 
-### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
+### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
 
 ## <a name="create-and-provision-a-direct-peering"></a>Создание и предоставление прямого пиринга
@@ -48,10 +48,10 @@ ms.locfileid: "75774241"
 ## <a name="deprovision-a-direct-peering"></a><a name="delete"></a>Деобеспечение прямого пиринга
 [!INCLUDE [peering-direct-delete](./includes/delete.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Создание или изменение пиринга Exchange с помощью PowerShell.](howto-exchange-powershell.md)
-* [Преобразуйте устаревший обмен висящий в ресурс Azure с помощью PowerShell.](howto-legacy-exchange-powershell.md)
+* [Создание или изменение пиринга Exchange с помощью PowerShell](howto-exchange-powershell.md)
+* [Преобразование наследного вглядывания в ресурс Azure с помощью PowerShell](howto-legacy-exchange-powershell.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 Подробное описание всех параметров можно получить, выполнив следующую команду.
@@ -60,4 +60,4 @@ ms.locfileid: "75774241"
 Get-Help Get-AzPeering -detailed
 ```
 
-Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)
+Для получения дополнительной информации, см [Интернет пиринг часто задаваемые вопросы](faqs.md).

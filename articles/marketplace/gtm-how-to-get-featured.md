@@ -1,18 +1,18 @@
 ---
-title: Службы выхода на рынок — как разместить предложение в marketplace | Azure
+title: Услуги Go-To-Market - Как получить признакам на рынке (ru) Лазурный рынок
 description: 'Службы выхода на рынок: в этом разделе описывается, как разместить предложение в списке в Microsoft Azure Marketplace'
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 12/21/2018
+ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: 266070a6292e41af6ce1b4258774d20a9bd90312
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fe18ca41942ff58b8d9eefef3122c90980029766
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286291"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684607"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Как разместить предложение в AppSource и Microsoft Azure Marketplace
 
@@ -38,14 +38,14 @@ ms.locfileid: "80286291"
 Специальные предложения по рекомендуемым приложениям действуют отдельно от алгоритма поиска.
 
 >[!Note]
->Если решение не отображается правильно в результатах поиска, отправьте запрос в службу поддержки через меню "Справка" на [Портале Cloud Partner](https://cloudpartner.azure.com/).
+>Если решение не отображается правильно в результатах поиска, подайте билет поддержки в меню Справка в [Partner Center.](https://partner.microsoft.com/)
 
 Служба поддержки GTM также содержит полную библиотеку шаблонов самостоятельного устранения неполадок, веб-содержимое, обучающие материалы и средства для дальнейшего продвижения ваших публикаций и бизнеса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о [преимуществах коммерческого рынка.](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits)
 
-Войдите на [портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать и настроить предложение.
+Войти в [Партнерский центр](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) для создания и настройки предложения.
 
 ---

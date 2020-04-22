@@ -7,25 +7,23 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 02/24/2020
-ms.openlocfilehash: 888f24e13ce67c878592068927383dd8cbfefa60
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/20/2020
+ms.openlocfilehash: 4f2e8b2a691a6b17b5ed075745d556db4e330535
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77623100"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682465"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
-Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Apache Phoenix. Apache также предоставляет соединитель Apache Spark HBase, который является удобной и эффективной альтернативой запросу и изменению данных, хранимых в HBase.
+Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Apache Phoenix. Apache также предоставляет Apache Spark HBase Коннектор. Соединитель является удобной и выполняющей альтернативой запросу и изменению данных, хранящихся в HBase.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Два отдельных кластера HDInsight, развернутые в одной [виртуальной сети.](./hdinsight-plan-virtual-network-deployment.md) Один HBase, и один Spark с по крайней мере Spark 2.1 (HDInsight 3.6) установлен. Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
 
-* Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
-
-* [Схема универсального кода ресурса (URI)](hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Эта схема будет wasb:// для хранения Azure Blob, abfs:// для хранения данных Azure Data Lake Storage Gen2 или adl:// для хранения данных Azure Data Lake Storage Gen1. Если для Blob Storage включена безопасная `wasbs://`передача, URI будет .  См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
+* Схема универсального кода ресурса (URI) для основного хранилища кластеров. Эта схема будет wasb:// для хранения `abfs://` Azure Blob, для хранения данных Azure Data Lake Data Gen2 или adl:// для Хранения данных Azure Data Lake Data Data Gen1. Если для Blob Storage включена безопасная `wasbs://`передача, URI будет .  См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
 
 ## <a name="overall-process"></a>Общий процесс
 
@@ -152,7 +150,7 @@ exit
     |}""".stripMargin
     ```
 
-    Код делает следующее:  
+    Код выполняет следующие действия:  
 
      а. Определите схему каталога для таблицы HBase с именем `Contacts`.  
      b. Определите rowkey как `key` и сопоставьте имена столбцов, используемые в Spark, с семейством столбцов, именем столбца и типом столбца, используемыми в HBase.  
@@ -269,6 +267,6 @@ exit
     :q
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Соединитель Apache Spark HBase](https://github.com/hortonworks-spark/shc)

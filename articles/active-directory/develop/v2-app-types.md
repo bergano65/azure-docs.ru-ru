@@ -12,19 +12,16 @@ ms.date: 04/13/2020
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: bdbda8bed38819ca2b4d2fb1ef3d9bf591269890
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: def92071496716f90b24158a50e4a5233e93c994
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535916"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81677988"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы идентификации Майкрософт
 
 Конечная точка платформы удостоверений Майкрософт (версии 2.0) поддерживает проверку подлинности для различных современных архитектур приложений, которые основаны на стандартном отраслевом протоколе [OAuth 2.0 или OpenID Connect](active-directory-v2-protocols.md). В этой статье описаны типы приложений, которые можно создать с помощью платформы идентификации Майкрософт, независимо от предпочтительного языка или платформы. Информация предназначена для понимания сценариев высокого уровня перед [началом работы с кодом.](v2-overview.md#getting-started)
-
-> [!NOTE]
-> Конечная точка платформы майкрософт не поддерживает все сценарии и функции Azure Active Directory (Azure AD). Чтобы определить, следует ли использовать конечную точку платформы идентификации Майкрософт, прочитайте об [ограничениях платформы идентификации Майкрософт.](active-directory-v2-limitations.md)
 
 ## <a name="the-basics"></a>Основные сведения
 

@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 05/16/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7eb01f3997ac4ab2e439c00f07990c51ec3e3d3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bdf0cbfb91332d60516432a7a67fb10404d89113
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80370365"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683853"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по настройке Workday для автоматической подготовки пользователей
 
@@ -238,7 +238,7 @@ ms.locfileid: "80370365"
 
 1. Войти на работу с помощью учетной записи администратора. В области **Workday Application** введите в поле поиска "create user", а затем щелкните ссылку **Create Integration System User** (Создать пользователя системы интеграции).
 
-   ![Создание пользователя](./media/workday-inbound-tutorial/wd_isu_01.png "Создать пользователя")
+   ![Создать пользователя](./media/workday-inbound-tutorial/wd_isu_01.png "Создать пользователя")
 2. Выполните задачу **пользователя системы создания интеграции,** предоставив имя пользователя и пароль для нового пользователя системы интеграции.  
   
    * Не устанавливайте флажок **Require New Password at Next Sign In** (Запросить новый пароль при следующем входе), так как этот пользователь будет осуществлять вход в систему программными средствами.
@@ -281,6 +281,7 @@ ms.locfileid: "80370365"
     ![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_06.png "Политики безопасности домена")  
 2. С помощью текстового поля **Domain** (Домен) найдите указанные ниже домены и добавьте их к фильтру по одному.  
    * *External Account Provisioning*
+   * *Данные о работниках: Рабочие*
    * *Worker Data: Public Worker Reports*
    * *Person Data: Work Contact Information*
    * *Worker Data: All Positions*
@@ -312,6 +313,7 @@ ms.locfileid: "80370365"
    | ---------- | ---------- |
    | Get и Put | Worker Data: Public Worker Reports |
    | Get и Put | Person Data: Work Contact Information |
+   | Получить | Данные о работниках: Рабочие |
    | Получить | Worker Data: All Positions |
    | Получить | Worker Data: Current Staffing Information |
    | Получить | Worker Data: Business Title on Worker Profile |
@@ -451,11 +453,15 @@ ms.locfileid: "80370365"
 
 1. В разделе **Учетные данные администратора** заполните поля следующим образом.
 
-   * **Имя пользователя администратора** — введите имя пользователя учетной записи системы интеграции Workday с указанием имени домена клиента. Он должен выглядеть примерно так: **имя\@пользователя tenant_name**
+   * **Имя пользователя в рабочий день** - Введите имя пользователя учетной записи системы интеграции Workday с придативательным доменным именем арендатора. Он должен выглядеть примерно так: **имя\@пользователя tenant_name**
 
-   * **Админ пароль -** Введите пароль учетной записи системы интеграции Workday
+   * **Рабочий день пароль -** Введите пароль учетной записи системы интеграции Workday
 
-   * **URL-адрес клиента** — введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Это значение должно https://wd3-impl-services1.workday.com/ccx/service/contoso4выглядеть следующим образом: , где *contoso4* заменяется вашим правильным именем арендатора и *wd3-impl* заменяется правильной строкой среды.
+   * **API API веб-службы рабочего дня -** Введите URL-адрес в конечную точку веб-службрабочей рабочего дня для вашего клиента. Это значение должно https://wd3-impl-services1.workday.com/ccx/service/contoso4выглядеть следующим образом: , где *contoso4* заменяется вашим правильным именем арендатора и *wd3-impl* заменяется правильной строкой среды.
+
+     > [!NOTE]
+     > По умолчанию приложение использует Web Services workday v21.1, если в URL не указана информация о версии. Для использования определенной версии API Веб-службы рабочего дня, пожалуйста, используйте формат URL:https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# <br>
+     > Пример: https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0
 
    * **Лес Active Directory** — имя домена Active Directory, зарегистрированное в агенте. В раскрывающемся списке выберите целевой домен для подготовки. Как правило, это строка вида: *contoso.com*.
 
@@ -554,8 +560,8 @@ ms.locfileid: "80370365"
 | **SelectUniqueValue (Присоединиться\@(" ", Присоединиться(",", \[\]FirstName , \[LastName\]), "contoso.com"), Присоединиться (",\@Присоединиться (",", Mid (Имя\[первого\]имени , 1, 1), \[LastName\]\]), "contoso.com"), Присоединиться\@(", ", Присоединиться ("",", Mid (Имя,\[\]1, 2), \["Contoso.com")**   | userPrincipalName     |     | Записывается только при создании 
 | **Заменить (Mid(Заменить\](UserID\[\\\\/\\\\\\\\\\\\\[\\\\\]\\\\\\\\, "( ( : ;\\ \[ \\\|\\\\=\\\\,\\\\+\\\\\*\\\\? \\\\\\),,, ",, , , 1, 20), "( .) \\ &lt; \\ \\ &gt; \] \*(file:///\\ \$.) *$)", , "", , )**      |    sAMAccountName            |     |         Записывается только при создании |
 | **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Создание и обновление |
-| **Firstname**   | givenName       |     |    Создание и обновление |
-| **Lastname**   |   sn   |     |  Создание и обновление |
+| **FirstName**   | givenName       |     |    Создание и обновление |
+| **LastName**   |   sn   |     |  Создание и обновление |
 | **PreferredNameData**  |  displayName |     |   Создание и обновление |
 | **Компания**         | company   |     |  Создание и обновление |
 | **SupervisoryOrganization**  | department  |     |  Создание и обновление |
@@ -607,11 +613,16 @@ ms.locfileid: "80370365"
 
 8. В разделе **Учетные данные администратора** заполните поля следующим образом.
 
-   * **Имя пользователя Admin** - Введите имя пользователя учетной записи системы интеграции Workday с придативаемым доменным именем клиента. Оно должно иметь примерно следующий вид: username@contoso4
+   * **Имя пользователя в рабочий день** - Введите имя пользователя учетной записи системы интеграции Workday с придативательным доменным именем арендатора. Оно должно иметь примерно следующий вид: username@contoso4
 
-   * **Админ пароль -** Введите пароль учетной записи системы интеграции Workday
+   * **Рабочий день пароль -** Введите пароль учетной записи системы интеграции Workday
 
-   * **URL-адрес клиента** — введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Значение должно иметь следующий вид: https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources, где *contoso4* заменяется правильным именем клиента, а *wd3-impl* — правильной строкой среды. Если этот URL-адрес неизвестен, свяжитесь с вашим партнером по интеграции Workday или представителем службы поддержки, чтобы определить правильный URL-адрес для использования.
+   * **API API веб-службы рабочего дня -** Введите URL-адрес в конечную точку веб-службрабочей рабочего дня для вашего клиента. Значение должно иметь следующий вид: https://wd3-impl-services1.workday.com/ccx/service/contoso4, где *contoso4* заменяется правильным именем клиента, а *wd3-impl* — правильной строкой среды. Если этот URL-адрес неизвестен, свяжитесь с вашим партнером по интеграции Workday или представителем службы поддержки, чтобы определить правильный URL-адрес для использования.
+
+     > [!NOTE]
+     > По умолчанию приложение использует Web Services workday v21.1, если в URL не указана информация о версии. Для использования определенной версии API Веб-службы рабочего дня, пожалуйста, используйте формат URL:https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# <br>
+     > Пример: https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0
+
 
    * **Уведомление по электронной почте -** Введите свой адрес электронной почты и проверьте флажок "Отправить электронную почту в случае сбоя".
 
@@ -737,7 +748,7 @@ ms.locfileid: "80370365"
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. Нажмите **Сохранить**.
+2. Выберите команду **Сохранить**.
 
 3. Будет запущена начальная синхронизация, которая может длиться переменное число часов в зависимости от количества пользователей в клиенте Workday. 
 
@@ -807,9 +818,13 @@ ms.locfileid: "80370365"
 
 В настоящее время решение использует следующие API Workday:
 
-* Get_Workers (версии 21.1) для получения информации о работнике;
-* Maintain_Contact_Information (версии 26.1) для функции обратной записи рабочего электронного адреса.
-* Update_Workday_Account (v31.2) для функции списания имен пользователей
+* Формат **API API Рабочего дня,** используемый в разделе **Учетные данные Admin,** определяет версию API, используемую для Get_Workers
+  * Если формат URL:\#\#\#\#\.https://\.рабочий день com/ccx/service/tenantName, то используется API v21.1. 
+  * Если формат URL:\#\#\#\#\.https://\.рабочий день com/ccx/service/tenantName/Human\_Resources, то используется API v21.1 
+  * Если формат URL:\#\#\#\#\.https://\.рабочий день com/ccx/service/tenantName/Human\_Resources/v,\# \# \. \# то используется указанная версия API. (Пример: если указано v34.0, то он используется.)  
+   
+* Функция записи списания по электронной почте рабочего дня использует Maintain_Contact_Information (v26.1) 
+* Функция списания имени рабочего дня использует Update_Workday_Account (v31.2) 
 
 #### <a name="can-i-configure-my-workday-hcm-tenant-with-two-azure-ad-tenants"></a>Можно ли настроить клиент Workday HCM с двумя клиентами Azure AD?
 
@@ -938,7 +953,7 @@ ms.locfileid: "80370365"
 
 Чтобы добавить настраиваемые атрибуты Workday, щелкните параметр *Edit attribute list for Workday* (Изменить список атрибутов для Workday), а чтобы добавить настраиваемые атрибуты AD — параметр *Edit attribute list for On Premises Active Directory* (Изменить список атрибутов для локальной службы Active Directory).
 
-См. также
+См. также:
 
 * [Настройка списка атрибутов пользователя Workday](#customizing-the-list-of-workday-user-attributes)
 
@@ -1022,7 +1037,7 @@ ms.locfileid: "80370365"
            "Phoenix", Append(Join(", ",[PreferredLastName], [PreferredFirstName]), "(PHX)")
     )
      ```
-    См. также
+    См. также:
   * [Синтаксис функции Switch](../app-provisioning/functions-for-customizing-application-data.md#switch)
   * [Синтаксис функции Join](../app-provisioning/functions-for-customizing-application-data.md#join)
   * [Синтаксис функции Append](../app-provisioning/functions-for-customizing-application-data.md#append)
@@ -1041,7 +1056,7 @@ SelectUniqueValue(
 
 Как работает вышеупомянутое выражение: Если пользователем является Джон Смит, он сначала пытается создать JSmith, если JSmith уже существует, то он генерирует JoSmith, если это существует, он генерирует JohSmith. Выражение также проверяет, чтобы созданное значение соответствовало ограничениям длины и специальных знаков, связанных с *samAccountName*.
 
-См. также
+См. также:
 
 * [Синтаксис функции Mid](../app-provisioning/functions-for-customizing-application-data.md#mid)
 * [Синтаксис функции Replace](../app-provisioning/functions-for-customizing-application-data.md#replace)
@@ -1328,7 +1343,7 @@ SelectUniqueValue(
 
 8. В поле **Тип** выберите тип, соответствующий атрибуту (чаще всего это **строка**).
 
-9. В поле **Выражение API** введите выражение XPath, скопированное из Workday Studio. Например, `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`.
+9. В поле **Выражение API** введите выражение XPath, скопированное из Workday Studio. Пример: `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`
 
 10. Выберите **Добавить Атрибут**.
 
@@ -1360,7 +1375,7 @@ SelectUniqueValue(
 
 Что касается хранения данных, служба подготовки Azure AD не создает отчеты, не выполняет аналитику и не предоставляет аналитику более чем за 30 дней. Таким образом, в службе подготовки Azure AD не хранятся и не обрабатываются данные за период более 30 дней. Такой подход является совместимым с нормами GDPR, требованиями соответствия нормативам корпорации Майкрософт о конфиденциальности и политике хранения данных Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).

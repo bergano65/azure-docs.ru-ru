@@ -1,29 +1,29 @@
 ---
-title: Включение прямого пиринга в Службе пиринга с помощью портала
+title: Включить службу пиринга Azure на прямой пиринг с помощью портала Azure
 titleSuffix: Azure
-description: Включение прямого пиринга в Службе пиринга с помощью портала
+description: Включить службу пиринга Azure на прямой пиринг с помощью портала Azure
 services: internet-peering
 author: derekolo
 ms.service: internet-peering
 ms.topic: article
 ms.date: 3/18/2020
 ms.author: derekol
-ms.openlocfilehash: 87a65826a338f4098ae24c33939ea7f9d4475e36
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 625a17e5acff00f78c5a19725653eec629936f87
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80129975"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687060"
 ---
-# <a name="enable-peering-service-on-a-direct-peering-using-the-portal"></a>Включение прямого пиринга в Службе пиринга с помощью портала
+# <a name="enable-azure-peering-service-on-a-direct-peering-by-using-the-azure-portal"></a>Включить службу пиринга Azure на прямой пиринг с помощью портала Azure
 
-В этой статье описывается, как включить [Peering Service](overview-peering-service.md) на прямой пиринг с помощью портала.
+В этой статье описывается, как включить [службу пиринга](overview-peering-service.md) Azure в прямой вонючий с помощью портала Azure.
 
 Если вы предпочитаете, вы можете завершить это руководство с помощью [PowerShell](howto-peering-service-powershell.md).
 
-## <a name="before-you-begin"></a>Перед началом
-* Просмотрите предпосылки перед началом [настройки.](prerequisites.md)
-* Выберите прямую вонючую в подписке, на что вы хотите включить службу пиринга. Если у вас его нет, либо конвертировать устаревшее прямое пиринг или создать новый Direct peering.
+## <a name="before-you-begin"></a>Подготовка к работе
+* Просмотрите [предпосылки](prerequisites.md) перед началом конфигурации.
+* Выберите прямую вонючую в подписке, для которой вы хотите включить Peering Service. Если у вас его нет, либо конвертировать устаревшее прямое пиринг или создать новый прямой пиринг:
     * Чтобы преобразовать устаревшку Direct peering, следуйте инструкциям в [Convert a legacy Direct, вглядываясь в ресурс Azure с помощью портала.](howto-legacy-direct-portal.md)
     * Чтобы создать новый прямой пиринг, следуйте инструкциям в [Создать или изменить прямой пиринг с помощью портала](howto-direct-portal.md).
 
@@ -34,17 +34,17 @@ ms.locfileid: "80129975"
 
 ### <a name="enable-the-direct-peering-for-peering-service"></a><a name= get></a>Включить прямое пиринговое обслуживание для peering Service
 
-После открытия Direct peering на предыдущем этапе включите его для Peering Service.
+После открытия прямого пиринга на предыдущем этапе включите его для Peering Service.
 [!INCLUDE [peering-direct-modify](./includes/peering-service-direct-portal.md)]
 
 ## <a name="modify-a-direct-peering-connection"></a>Изменение прямого пирингового соединения
 
-Если вам нужно изменить настройки соединения, обратитесь **к изменению** раздела Direct peering в [Create или изменении прямого пиринга с помощью портала](howto-direct-portal.md)
+Чтобы изменить настройки соединения, см. раздел "Изменить прямое пиринг" в [разделе Создать или изменить прямое пиринг с помощью портала.](howto-direct-portal.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание или изменение пиринга Exchange с помощью портала](howto-exchange-portal.md)
-* [Преобразование устаревшего пиринга через точку обмена в ресурс Azure с помощью портала](howto-legacy-exchange-portal.md)
+* [Преобразование устаревшего вонючего Внеся в ресурс Azure с помощью портала](howto-legacy-exchange-portal.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

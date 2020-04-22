@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: f577059e1ebf70e3a9dfe9e538a9d3d49d7c8e96
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7ee186684b702a42335c6e1a7832cc5c761a69d0
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71199996"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686942"
 ---
 # <a name="build-and-deploy-the-opc-vault-certificate-management-service"></a>Создание и развертывание службы управления сертификатами OPC Vault
 
@@ -107,7 +107,7 @@ cd azure-iiot-opc-vault-service
 
 ### <a name="website-name-already-in-use"></a>Название веб-сайта уже используется
 
-Не исключено, что название сайта уже используется. Вам нужно использовать другое имя группы ресурсов. Имена хоста, использоваемые скриптом развертывания: https://resourcegroupname.azurewebsites.net и https://resourgroupname-service.azurewebsites.net.
+Не исключено, что название сайта уже используется. Вам нужно использовать другое имя группы ресурсов. Имена хоста, использоваемые\/скриптом развертывания:\/https: /resourcegroupname.azurewebsites.net и https: /resourgroupname-service.azurewebsites.net.
 Другие названия сервисов построены сочетанием коротких хэшов имен и вряд ли противоречат другим службам.
 
 ### <a name="azure-ad-registration"></a>регистрация в Azure AD. 
@@ -174,7 +174,7 @@ cd azure-iiot-opc-vault-service
 [docker-url]: https://www.docker.com/
 [dotnet-install]: https://www.microsoft.com/net/learn/get-started
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как развернуть OPC Vault с нуля, вы можете:
 

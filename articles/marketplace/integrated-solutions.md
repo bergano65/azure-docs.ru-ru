@@ -5,14 +5,14 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 12/16/2019
+ms.date: 04/15/2020
 ms.author: dsindona
-ms.openlocfilehash: d99b061b57beb003cc47b2d809f493d5a9c66888
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4c32fe80b681e6d82d40b0f5c94d5e9288f72cd6
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80286172"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684399"
 ---
 # <a name="integrated-solutions-in-microsoft-appsource-and-azure-marketplace"></a>Интегрированные решения в Microsoft AppSource и Azure Marketplace
 
@@ -36,7 +36,7 @@ ms.locfileid: "80286172"
 
 Партнеры, желающие принять участие в программе, должны определить других партнеров, с которыми они хотят работать. Они должны заполнить [форму номинации Интегрированные решения](https://assetsprod.microsoft.com/mpn/integrated-solutions-partner-nomination.docx). Команда программы «Интегрированные решения» рассматривает номинацию и следит за происходящим в течение 10 рабочих дней. Команда предоставляет одобрение и дальнейшие шаги.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы можете открыть для себя интегрированные решения и связаться с этими уважаемыми партнерами, посетив их списки здесь:
 

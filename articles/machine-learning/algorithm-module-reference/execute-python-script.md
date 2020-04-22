@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 03/10/2020
-ms.openlocfilehash: 0f86d1ad03062797764af6a0d49beacaa3458a8f
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 79dc1b188e91028a98f43dc24972228f2d2101be
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80365549"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684731"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль Python Script
 
@@ -151,7 +151,7 @@ import os
 os.system(f"pip install scikit-misc")
 ```
 
-## <a name="upload-files"></a>Upload files
+## <a name="upload-files"></a>Отправка файлов
 **Сценарий выполнения Python** поддерживает загрузку файлов с помощью [Azure Machine Learning Python SDK.](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py#upload-file-name--path-or-stream-)
 
 Ниже приводится следующий пример, как загрузить файл изображения в модуль **Execute Python Script:**
@@ -164,7 +164,7 @@ os.system(f"pip install scikit-misc")
 # imports up here can be used to
 import pandas as pd
 
-# The entry point function can contain up to two input arguments:
+# The entry point function must have two input arguments:
 #   Param<dataframe1>: a pandas.DataFrame
 #   Param<dataframe2>: a pandas.DataFrame
 def azureml_main(dataframe1 = None, dataframe2 = None):
@@ -217,10 +217,17 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 5. В текстовом окне **скрипта Python** введите или вставьте действительный скрипт Python.
 
+    > [!NOTE]
+    > Пожалуйста, будьте очень осторожны при написании скрипта и убедитесь, что нет ошибки синтаксиса, например, с помощью необъявленного объекта или неимпортированного модуля. Также обратите особое внимание на список предустановленных модулей. Чтобы импортировать модули, которые не перечислены, установите соответствующие пакеты в скрипте, такие как
+    >  ``` Python
+    > import os
+    > os.system(f"pip install scikit-misc")
+    > ```
+    
     Текстовое окно **скрипта Python** предварительно заполнено некоторыми инструкциями в комментариях и примером кода для доступа к данным и вывода. Вы должны отодвить или заменить этот код. Обязательно следуйте конвенциям Python о отступах и корпусе.
 
     + Скрипт должен содержать `azureml_main` функцию, названную в качестве точки входа для этого модуля.
-    + Функция точки входа может содержать до двух `Param<dataframe1>` аргументов ввода: и`Param<dataframe2>`
+    + Функция точки входа должна иметь два `Param<dataframe1>` аргумента входа: и `Param<dataframe2>`, даже если эти аргументы не используются в вашем скрипте.
     + Файлов, подключенных к третьему порту ввода, распаковываются и хранятся в каталоге, `.\Script Bundle`который также добавляется в Python. `sys.path` 
 
     Поэтому, если ваш `mymodule.py`почтовый файл `import mymodule`содержит, импортировать его с помощью.
@@ -242,6 +249,6 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 + **Набор данных результат 2**, определяемый вторым возвращенным пандами в скрипте Python
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с [набором модулей, доступных](module-reference.md) для машинного обучения Azure. 

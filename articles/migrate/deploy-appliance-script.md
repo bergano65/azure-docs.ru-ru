@@ -3,31 +3,22 @@ title: Настройка прибора Azure Migrate со скриптом
 description: Узнайте, как настроить прибор Azure Migrate со сценарием
 ms.topic: article
 ms.date: 04/16/2020
-ms.openlocfilehash: faed7f96ea8c1850af5523d35f9f891011a48df8
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 0c4d85909bbfa623b5ad8590e973250474d9d95a
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81537718"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81676313"
 ---
 # <a name="set-up-an-appliance-with-a-script"></a>Настройка прибора со скриптом
 
-В этой статье описывается, как настроить [прибор Azure Migrate](deploy-appliance.md) с помощью сценария установки PowerShell, для VMware VMs и Hyper-V VMs. Если вы хотите настроить прибор для физических серверов, [просмотрите эту статью.](how-to-set-up-appliance-physical.md)
+Следуйте этой статье, чтобы создать [прибор Azure Migrate](deploy-appliance.md) для оценки/миграции VMw и Hyper-V VMs. Вы запускаете скрипт для создания прибора и проверяете, можно ли подключиться к Azure. 
 
+Развертывание прибора для VMware и Hyper-V M можно с помощью скрипта или с помощью шаблона, который вы загружаете с портала Azure. Использование скрипта полезно, если вы не можете создать VM с помощью загруженного шаблона.
 
-Развертывание прибора можно несколькими методами:
-
-
-- Использование шаблона для VMware VMs (OVA) или Hyper-V M (VHD).
-- Использование сценария. Это метод, описанный в этой статье. Скрипт обеспечивает:
-    - Альтернатива настройке прибора с использованием шаблона OVA для оценки и безагентной миграции VMw.
-    - Альтернатива настройке прибора с использованием шаблона VHD для оценки и миграции Hyper-VM.
-    - Для оценки физических серверов (или vMs, которые вы хотите перенести в качестве физических серверов), скрипт является единственным методом настройки прибора.
-    - Способ развертывания прибора в правительстве Azure.
-
-
-После создания прибора вы убедитесь, что он может подключиться к Azure Migrate. Затем вы впервые настраиваете прибор и регистрируете его в проекте Azure Migrate.
-
+- Чтобы использовать шаблон, следуйте учебникам для [VMware](tutorial-prepare-vmware.md) или [Hyper-V](tutorial-prepare-hyper-v.md).
+- Для настройки прибора для физических серверов можно использовать только скрипт. Следуйте [этой статье](how-to-set-up-appliance-physical.md).
+- Чтобы настроить прибор в облаке правительства Azure, следуйте [этой статье](deploy-appliance-script-government.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -55,24 +46,15 @@ ms.locfileid: "81537718"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример использования общедоступного облака:```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256```
-    - Пример использования для правительственного облака:```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMWare-USGov.zip```
+    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256```
+3. Проверить значение генерируемого хэша. Для последней версии прибора:
 
-3. Проверка генерируемых значений хэша:
+    **Алгоритм** | **Значение хэша**
+    --- | ---
+    MD5 | 1e92ede3e87c03bd148e56a708cdd33f
+    SHA256 | a3fa78edc8ff8aff9ab5ae66be1b64e66de7b9f475b6542beef114b20bfdac3c
 
-    - Для общедоступного облака (для последней версии прибора):
 
-        **Алгоритм** | **Значение хэша**
-          --- | ---
-          MD5 | 1e92ede3e87c03bd148e56a708cdd33f
-          SHA256 | a3fa78edc8ff8aff9ab5ae66be1b64e66de7b9f475b6542beef114b20bfdac3c
-
-    - Для правительства Azure (для последней версии прибора):
-
-        **Алгоритм** | **Значение хэша**
-          --- | ---
-          MD5 | 6316bcc8bc9322204295bfe33f4be3949
-          
 
 ### <a name="run-the-script"></a>Выполнение скрипта
 
@@ -92,15 +74,14 @@ ms.locfileid: "81537718"
 2. Запуск PowerShell на машине, с администратором (повышенные) привилегии.
 3. Измените каталог PowerShell в папку, содержащую содержимое, извлеченное из загруженного файла на молнии.
 4. Выполнить сценарий **AzureMigrateInstaller.ps1**, следующим образом:
-    - Для общедоступного облака:``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1 -scenario VMware ```
-    - Для правительства Лазурного государства:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-VMWare-USGov>AzureMigrateInstaller.ps1 ```
+
+    ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1 -scenario VMware ```
    
 5. После успешного запуска скрипта он запускает веб-приложение для обработки приборов, чтобы можно было настроить прибор. Если вы столкнулись с какими-либо проблемами, просмотрите журналы скриптов на c: «ProgramData»Microsoft Azure AzureMigrateScenarioInstaller_<em>Timestamp</em>.log.
 
 ### <a name="verify-access"></a>Проверка доступа
 
-Убедитесь, что прибор может подключаться к URL-адресам Azure для [общедоступных](migrate-appliance.md#public-cloud-urls) и «правительственных облаков» (мигрировать-прибор.md-government-cloud-urls.
-
+Убедитесь, что прибор может подключаться к URL-адресам Azure для [общедоступного](migrate-appliance.md#public-cloud-urls) облака.
 
 ## <a name="set-up-the-appliance-for-hyper-v"></a>Настройка прибора для Hyper-V
 
@@ -120,24 +101,14 @@ ms.locfileid: "81537718"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример использования общедоступного облака:```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256```
-    - Пример использования для правительственного облака:```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-HyperV-USGov.zip MD5```
+    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256```
 
-3. Проверка генерируемых значений хэша:
+3. Проверить значения генерируемого хэша. Для последней версии прибора:
 
-    - Для общедоступного облака (для последней версии прибора):
-
-        **Алгоритм** | **Значение хэша**
-          --- | ---
-          MD5 | 1e92ede3e87c03bd148e56a708cdd33f
-          SHA256 | a3fa78edc8ff8aff9ab5ae66be1b64e66de7b9f475b6542beef114b20bfdac3c
-
-    - Для правительства Azure (для последней версии прибора):
-
-        **Алгоритм** | **Значение хэша**
-          --- | ---
-          MD5 | 717f8b9185f565006b5aff0215ecadac
-          
+    **Алгоритм** | **Значение хэша**
+    --- | ---
+    MD5 | 1e92ede3e87c03bd148e56a708cdd33f
+    SHA256 | a3fa78edc8ff8aff9ab5ae66be1b64e66de7b9f475b6542beef114b20bfdac3c
 
 ### <a name="run-the-script"></a>Выполнение скрипта
 
@@ -156,22 +127,17 @@ ms.locfileid: "81537718"
 1. Извлеките застегнутый на молнию файл в папку на машине, которая будет размещать прибор. Убедитесь, что скрипт не запускать на машине на существующем приборе Azure Migrate.
 2. Запуск PowerShell на машине, с администратором (повышенные) привилегии.
 3. Измените каталог PowerShell в папку, содержащую содержимое, извлеченное из загруженного файла на молнии.
-4. Выполнить сценарий **AzureMigrateInstaller.ps1**, следующим образом:
-    - Для общедоступного облака:``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1 -scenario Hyperv ```
-    - Для правительства Лазурного государства:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-HyperV-USGov>AzureMigrateInstaller.ps1 ```
+4. Выполнить сценарий **AzureMigrateInstaller.ps1**, следующим образом:``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1 -scenario Hyperv ```
    
 5. После успешного запуска скрипта он запускает веб-приложение для обработки приборов, чтобы можно было настроить прибор. Если вы столкнулись с какими-либо проблемами, просмотрите журналы скриптов на c: «ProgramData»Microsoft Azure AzureMigrateScenarioInstaller_<em>Timestamp</em>.log.
 
 ### <a name="verify-access"></a>Проверка доступа
 
-Убедитесь, что прибор может подключаться к URL-адресам Azure для [общедоступных](migrate-appliance.md#public-cloud-urls) и «правительственных облаков» (мигрировать-прибор.md-government-cloud-urls.
-
-
+Убедитесь, что прибор может подключаться к URL-адресам Azure для [общедоступного](migrate-appliance.md#public-cloud-urls) облака.
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Чтобы узнать больше о настройке прибора с помощью шаблона или для физических серверов, просмотрите следующие статьи:
+После развертывания прибора необходимо настроить его в первый раз и зарегистрировать в проекте Azure Migrate.
 
 - Настройка прибора для [VMware.](how-to-set-up-appliance-vmware.md#configure-the-appliance)
 - Настройка прибора для [Hyper-V](how-to-set-up-appliance-hyper-v.md#configure-the-appliance).
-- Настройка прибора для [физических серверов.](how-to-set-up-appliance-physical.md)

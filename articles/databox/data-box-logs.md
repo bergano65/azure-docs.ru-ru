@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 08/08/2019
 ms.author: alkohli
-ms.openlocfilehash: 72e1d3b0ad72b1e68b88eb0550cbe839ade9d929
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 74d38af4a64a184b26bd6ba1105db0d2530d8ba6
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79260024"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81676411"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy"></a>Отслеживание и регистрация событий для вашего ящика данных Azure и ящика данных Azure Heavy
 
@@ -47,7 +47,7 @@ ms.locfileid: "79260024"
 - Назначать роль на уровне заказа. Пользователь имеет только те разрешения, как это определено ролями для взаимодействия только с этим конкретным заказом Box data Box и больше ничего.
 - Назначить роль на уровне группы ресурсов, пользователь имеет доступ ко всем заказам Box данных в группе ресурсов.
 
-Для получения дополнительной информации о предлагаемом использовании RBAC [см.](../role-based-access-control/overview.md#best-practice-for-using-rbac)
+Для получения дополнительной информации о [Best practices for Azure RBAC](../role-based-access-control/best-practices.md)предлагаемом использовании RBAC см.
 
 ## <a name="track-the-order"></a>Отслеживание заказа
 
@@ -411,6 +411,6 @@ Audit Logs Path      : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 BOM Files Path       : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [проблемы с устранением неполадок в коробке данных и коробке данных Heavy.](data-box-troubleshoot.md)

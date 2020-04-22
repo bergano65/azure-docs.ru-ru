@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 04/13/2020
 ms.author: v-umha
-ms.openlocfilehash: d64735e683ba1133e7d381a68611d204c4068026
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 1665c535d4b1fb6190ee5736b688b402f8b4a541
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81313065"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683890"
 ---
 # <a name="disaster-recovery-for-farmbeats"></a>Аварийное восстановление для FarmBeats
 
@@ -28,7 +28,7 @@ ms.locfileid: "81313065"
 
 FarmBeats хранит данные в трех службах первой партии Azure, которые являются **хранилищем Azure,** **Cosmos DB** и **Time Series Insights.** Используйте следующие шаги, чтобы включить избыточность данных для этих служб в парную область Azure:
 
-1.  **Хранилище Azure** - Следуйте этому руководству, чтобы обеспечить избыточность данных для каждой учетной записи хранения в развертывании FarmBbeats.
+1.  **Хранилище Azure** - Следуйте этому руководству, чтобы обеспечить избыточность данных для каждой учетной записи хранения в развертывании FarmBeats.
 2.  **Azure Cosmos DB** - Следуйте этому руководству, чтобы обеспечить избыточность данных для учетной записи Cosmos DB вашего развертывания FarmBeats.
 3.  **Azure Time Series Insights (TSI)** - TSI в настоящее время не предлагает избыточности данных. Чтобы восстановить данные Time Series Insights, перейдите к своему партнеру по датчику/погоде и снова нажмите данные на развертывание FarmBeats.
 

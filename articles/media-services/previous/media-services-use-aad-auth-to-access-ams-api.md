@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 8b38b38789edfd5a0a30fdd589849bfa345eaac9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8e1aeaf105ce371e965b433ac78e2b257f4bc18b
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77157862"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682044"
 ---
 # <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD  
 
@@ -79,7 +79,7 @@ API служб мультимедиа Azure — это REST API. Его можн
        Информацию о клиенте можно получить на портале Azure. Наведите указатель мыши на имя пользователя, выполнившего вход, в верхнем правом углу.
    * Универсальный код ресурса (URI) для ресурса служб мультимедиа. 
 
-       Этот универсальный код ресурса (URI) является одинаковым для учетных записей служб мультимедиа, которые находятся в одной среде Azure (например, https://rest.media.azure.net).
+       Этот URI то же самое для учетных записей медиа-служб, которые\/находятся в той же среде Azure (например, https: /rest.media.azure.net).
 
    * Идентификатор клиента (собственного) приложения служб мультимедиа.
    * Универсальный код ресурса (URI) перенаправления (собственного) приложения служб мультимедиа.
@@ -121,7 +121,7 @@ API служб мультимедиа Azure — это REST API. Его можн
        Информацию о клиенте можно получить на портале Azure. Наведите указатель мыши на имя пользователя, выполнившего вход, в верхнем правом углу.
    * Универсальный код ресурса (URI) для ресурса служб мультимедиа. 
 
-       Этот универсальный код ресурса (URI) является одинаковым для учетных записей служб мультимедиа, которые находятся в одной среде Azure (например, https://rest.media.azure.net).
+       Этот URI то же самое для учетных записей медиа-служб, которые\/находятся в той же среде Azure (например, https: /rest.media.azure.net).
 
    * Универсальный код ресурса (URI) для ресурса REST служб мультимедиа.
 
@@ -153,7 +153,7 @@ API служб мультимедиа Azure — это REST API. Его можн
 - [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md)
 - [Управление доступом на основе ролей с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте, как использовать [аутентификацию Azure AD для работы с API служб мультимедиа Azure](media-services-portal-get-started-with-aad.md) с помощью портала Azure.
 * Используйте аутентификацию Azure AD для [доступа к API медиаслужбы Azure с помощью .NET.](media-services-dotnet-get-started-with-aad.md)

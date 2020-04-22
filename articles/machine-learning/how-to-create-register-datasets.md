@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 02/10/2020
-ms.openlocfilehash: feaa0c22ec98d170a65e5c9bee119ba3904a95cf
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: cc7a8df80e719173c7818055ab8771ddd7f73691
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80673728"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682768"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов машинного обучения Azure
 
@@ -119,7 +119,7 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path, set_column_type
 titanic_ds.take(3).to_pandas_dataframe()
 ```
 
-| |ПассажирИд|Survived|Pclass|name|Секс|Возраст|СибСп|Парч|Билет|Плата|Кабина|Начал
+| |ПассажирИд|Survived|Pclass|Имя|Секс|Возраст|СибСп|Парч|Билет|Плата|Кабина|Начал
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|False|3|Браунд, мистер Оуэн Харрис|Мужской|22.0|1|0|A/5 21171|7.2500||S
 1|2|True|1|Cumings, миссис Джон Брэдли (Флоренция Бриггс Th...|Женский|38.0|1|0|PC 17599|71.2833|C85|C
@@ -164,7 +164,7 @@ sql_ds = Dataset.Tabular.from_sql_query((sql_datastore, 'SELECT * FROM my_table'
 
 В TabularDatasets можно указать отметку времени из столбца в данных или от того, где хранятся данные шаблона пути, чтобы включить черту временных рядов. Эта спецификация позволяет легко и эффективно фильтровать по времени.
 
-Используйте [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) метод`TabularDataset` в классе, чтобы указать столбец отметки времени и включить фильтрацию по времени. Для получения дополнительной [Tabular time series-related API demo with NOAA weather data](https://aka.ms/azureml-tsd-notebook)информации см.
+Используйте [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) метод`TabularDataset` в классе, чтобы указать столбец отметки времени и включить фильтрацию по времени. Для получения дополнительной [Tabular time series-related API demo with NOAA weather data](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb)информации см.
 
 ```Python
 # create a TabularDataset with time series trait
@@ -304,7 +304,7 @@ titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
 df = titanic_ds.to_pandas_dataframe()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте, как тренироваться с наборами данных.](how-to-train-with-datasets.md)
 * Используйте автоматизированное машинное обучение для [обучения с TabularDatasets.](https://aka.ms/automl-dataset)

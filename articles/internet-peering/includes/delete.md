@@ -8,11 +8,11 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 0ed2137d1fd7a3c207db3ec49590a61f00b5fd99
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2d3f866064790fb3936fb76c1deef15ee2a38773
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75774280"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678677"
 ---
-В настоящее время Deprovision не поддерживается с помощью портала или PowerShell, свяжитесь с [корпорацией Майкрософт, вглядываясь](mailto:peeringexperience@microsoft.com) в Deprovision.
+В настоящее время дедвиация не поддерживается с помощью портала Azure или PowerShell. Для деобеспечения обратитесь в [грансь-](mailto:peeringexperience@microsoft.com)

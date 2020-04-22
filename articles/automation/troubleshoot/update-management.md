@@ -1,6 +1,6 @@
 ---
-title: Ошибки устранения неполадок с управлением обновлениями Azure
-description: Узнайте, как устранить неполадки и устранить проблемы с решением управления обновлением в Azure.
+title: Устранение неполадок управления обновлением автоматизации Azure
+description: Узнайте, как устранить неполадки и устранить проблемы с решением управления обновлениями в Azure Automation.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -8,22 +8,22 @@ ms.date: 03/17/2020
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: c9ff05591c98fda8be39e32f26da484f56e0831b
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 91ecff311b8820d3b97e1de0e4b4e87c150e749b
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80984629"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678923"
 ---
-# <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
+# <a name="troubleshoot-issues-with-the-update-management-solution"></a>Проблемы устранения проблем с решением управления обновлением
 
-В этой статье рассматриваются решения проблем, с которыми вы можете встретить при использовании управления обновлением.
+В этой статье рассматриваются проблемы, с которыми можно столкнуться при использовании решения Update Management. Для гибридного агента Runbook Worker есть средство устранения неполадок агента По сотворечке Runbook, чтобы определить основную проблему. Чтобы узнать больше об устранении неполадок, [см. Проблемы устранения проблем с обновлением Windows и](update-agent-issues.md) [проблемы с агентом обновления Troubleshoot Linux.](update-agent-issues-linux.md) Для других вопросов, связанных с посадкой на борт, [см.](onboarding.md)
 
-Для агента Hybrid Worker есть средство устранения неполадок агента Hybrid Worker, чтобы определить основную проблему. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md). Для всех остальных проблем используйте следующее руководство по устранению неполадок.
+>[!NOTE]
+>Если вы обнаружите проблемы при посадке решения на виртуальной машине (VM), проверьте журнал **менеджера операций** в **журнале приложений и служб** на локальной машине. Ищите события с id 4502 события `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent`и сведения о событиях, которые содержат .
 
-Если вы обнаружите проблемы при посадке решения на виртуальной машине (VM), проверьте журнал **менеджера операций** в **журнале приложений и служб** на локальной машине. Ищите события с id 4502 события `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent`и сведения о событиях, которые содержат .
-
-В следующем разделе освещаются конкретные сообщения об ошибках и возможные разрешения для каждого из них. Для других вопросов, связанных с посадкой на борт, [см.](onboarding.md)
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](../automation-update-azure-modules.md)
 
 ## <a name="scenario-you-receive-the-error-failed-to-enable-the-update-solution"></a>Сценарий: Вы получаете ошибку "Не удалось включить решение обновления"
 
@@ -35,7 +35,7 @@ ms.locfileid: "80984629"
 Error details: Failed to enable the Update solution
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка может возникать по следующим причинам.
 
@@ -63,7 +63,7 @@ Error details: Failed to enable the Update solution
 
 Старые обновления появляются для учетной записи Автоматизации как пропавшие, даже если они были заменены. Замененное обновление — это обновление, которое вам не нужно устанавливать, потому что доступно более позднее обновление, исправляющее ту же уязвимость. Управление обновлением игнорирует замененное обновление и делает его неприменимым в пользу заменяющего обновления. Для получения информации о связанной с ней проблеме [см.](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer)
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Замененные обновления неправильно указаны как отклоненные, так что они могут считаться неприменимыми.
 
@@ -99,7 +99,7 @@ Error details: Failed to enable the Update solution
 
 * У вас есть `Not assessed` машины, которые показывают, как в **соответствии с .** Однако данные о сердцебиении можно увидеть в журналах Azure Monitor для гибридного сотрудника Runbook, но не для управления обновлением.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта проблема может быть вызвана локальными проблемами конфигурации или неправильно настроенной конфигурацией области. Возможные конкретные причины:
 
@@ -148,7 +148,7 @@ Error details: Failed to enable the Update solution
 Error details: Unable to register Automation Resource Provider for subscriptions
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Поставщик ресурсов Automation не зарегистрирован в подписке.
 
@@ -172,7 +172,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 Машины, включенные в предварительный просмотр обновления, не все отображаются в списке машин, исправленных во время запланированного запуска.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта проблема может иметь одну из следующих причин:
 
@@ -222,7 +222,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 Виртуальные машины для выбранных областей динамической группы не отображаются в списке предварительных версий портала Azure. Этот список состоит из всех машин, извлеченных по запросу ARG для выбранных областей. Области фильтруются для машин с установленными гибридными работниками Runbook и для которых у вас есть разрешения на доступ. 
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
  
 Вот возможные причины этой проблемы:
 
@@ -291,7 +291,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 The components for the 'Update Management' solution have been enabled, and now this virtual machine is being configured. Please be patient, as this can sometimes take up to 15 minutes.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка может возникать по следующим причинам.
 
@@ -299,7 +299,7 @@ The components for the 'Update Management' solution have been enabled, and now t
 
 * Существует дубликат названия компьютера с различными иди кто-то из исходных компьютеров. Этот сценарий возникает, когда VM с определенным именем компьютера создается в разных группах ресурсов и отчитывается перед тем же рабочим пространством агента логистики в подписке.
 
-* Изображение VM, находясь на борту, может исходить от клонированной машины, которая не была подготовлена с system Preparation (sysprep) с установленным агентом мониторинга Microsoft (MMA).
+* Изображение VM, находясь на борту, может исходить от клонированной машины, которая не была подготовлена с системой подготовки (sysprep) с агентом log Analytics для Windows установлен.
 
 ### <a name="resolution"></a>Решение
 
@@ -345,23 +345,22 @@ Update
 The client has permission to perform action 'Microsoft.Compute/virtualMachines/write' on scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/Microsoft.Automation/automationAccounts/automationAccountName/softwareUpdateConfigurations/updateDeploymentName', however the current tenant '00000000-0000-0000-0000-000000000000' is not authorized to access linked subscription '00000000-0000-0000-0000-000000000000'.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка возникает при создании развертывания обновления с помощью mMs Azure в другом элементе, включенном в развертывание обновлений.
 
 ### <a name="resolution"></a>Решение
 
-Используйте следующий обходной путь, чтобы получить эти элементы запланированы. Для создания расписания можно использовать смдлет `ForUpdate` [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule) с параметром. Затем используйте смдлет [New-AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration
-) и передайте машины `NonAzureComputer` другому арендатору по параметру. В приведенном ниже примере показано, как это сделать.
+Используйте следующий обходной путь, чтобы получить эти элементы запланированы. Для создания расписания можно использовать смдлет [New-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationschedule?view=azps-3.7.0) с параметром. `ForUpdateConfiguration` Затем используйте смдлет [New-AzAutomationSoftwareUpdateConfiguration](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSoftwareUpdateConfiguration?view=azps-3.7.0) и передайте машины `NonAzureComputer` другому арендатору по параметру. В приведенном ниже примере показано, как это сделать.
 
 ```azurepowershell-interactive
 $nonAzurecomputers = @("server-01", "server-02")
 
 $startTime = ([DateTime]::Now).AddMinutes(10)
 
-$s = New-AzureRmAutomationSchedule -ResourceGroupName mygroup -AutomationAccountName myaccount -Name myupdateconfig -Description test-OneTime -OneTime -StartTime $startTime -ForUpdate
+$s = New-AzAutomationSchedule -ResourceGroupName mygroup -AutomationAccountName myaccount -Name myupdateconfig -Description test-OneTime -OneTime -StartTime $startTime -ForUpdateConfiguration
 
-New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName $aa -Schedule $s -Windows -AzureVMResourceId $azureVMIdsW -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
+New-AzAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName $aa -Schedule $s -Windows -AzureVMResourceId $azureVMIdsW -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
 ```
 
 ## <a name="scenario-unexplained-reboots"></a><a name="node-reboots"></a>Сценарий: Необъяснимые перезагрузки
@@ -370,7 +369,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 Даже если вы установили опцию **управления перезагрузкой,** **чтобы никогда не перезагрузить,** машины по-прежнему перезагрузки после установки обновлений.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Обновление Windows может быть изменено несколькими ключами реестра, любой из которых может изменить поведение перезагрузки.
 
@@ -388,7 +387,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 Failed to start the runbook. Check the parameters passed. RunbookName Patch-MicrosoftOMSComputer. Exception You have requested to create a runbook job on a hybrid worker group that does not exist.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Ошибка может быть вызвана одной из следующих причин:
 
@@ -420,7 +419,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 При регистрации машины Windows в управлении обновлением вы видите обновления, установленные без развертывания.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 На Windows обновления устанавливаются автоматически, как только они доступны. Такое поведение может привести к путанице, если вы не запланировали развертывание обновления в машине.
 
@@ -442,7 +441,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 Unable to Register Machine for Patch Management, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Машина уже была на борту в другое рабочее пространство для управления обновлением.
 
@@ -473,7 +472,7 @@ The certificate presented by the service <wsid>.oms.opinsights.azure.com was not
 Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Прокси, шлюз или брандмауэр могут блокировать сетевую связь. 
 
@@ -491,7 +490,7 @@ Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 Unable to Register Machine for Patch Management, Registration Failed with Exception AgentService.HybridRegistration. PowerShell.Certificates.CertificateCreationException: Failed to create a self-signed certificate. ---> System.UnauthorizedAccessException: Access is denied.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Гибридный Runbook Worker не смог создать сертификат, подписанный самостоятельно.
 
@@ -518,7 +517,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 * У вас есть `Not assessed` машины, которые отображались как в соответствии с **требованиями,** и вы видите сообщение об исключении под ними.
 * На портале видна код ошибки HRESULT.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Агент обновления (агент обновления Windows на Windows; менеджер пакетов для дистрибутива Linux) настроен неправильно. Управление обновлением полагается на агента обновления машины, чтобы предоставить необходимые обновления, состояние патча и результаты развернутых исправлений. Без этой информации управление обновлением не может должным образом сообщать о необходимых или установленных патчах.
 
@@ -562,7 +561,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Запускается запуск обновления, но во время выполнения он сталкивается с ошибками.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Возможные причины:
 
@@ -612,9 +611,9 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Статья базы знаний № 2267602 касается [обновления определений Защитника Windows](https://www.microsoft.com/wdsi/definitions). Он обновляется ежедневно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Если вы не увидели проблему или не можете решить проблему, попробуйте один из следующих каналов для дополнительной поддержки.
+Если вы не видите проблему или не можете решить проблему, попробуйте один из следующих каналов для дополнительной поддержки.
 
 * Получите ответы от экспертов Azure через [форумы Azure.](https://azure.microsoft.com/support/forums/)
 * Связаться [@AzureSupport](https://twitter.com/azuresupport)с официальной учетной записью Microsoft Azure для улучшения обслуживания клиентов.

@@ -1,40 +1,40 @@
 ---
-title: Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портала
+title: Преобразование устаревшего прямого вонючего в ресурс Azure с помощью портала Azure
 titleSuffix: Azure
-description: Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портала
+description: Преобразование устаревшего прямого вонючего в ресурс Azure с помощью портала Azure
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 9900414d38bd597d08a80d15e908228c06ce06ea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e49e4d5debe63b99039bbafbc14f7788367314f3
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75775060"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678827"
 ---
-# <a name="convert-a-legacy-direct-peering-to-azure-resource-using-the-portal"></a>Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портала
+# <a name="convert-a-legacy-direct-peering-to-an-azure-resource-by-using-the-azure-portal"></a>Преобразование устаревшего прямого вонючего в ресурс Azure с помощью портала Azure
 
-В этой статье описывается, как преобразовать существующее устаревшем вглядывание в ресурс Azure с помощью портала.
+В этой статье описывается, как преобразовать существующее устаревшем вглядывание в ресурс Azure с помощью портала Azure.
 
 Если вы предпочитаете, вы можете завершить это руководство с помощью [PowerShell](howto-legacy-direct-powershell.md).
 
-## <a name="before-you-begin"></a>Перед началом
-* Просмотрите [предпосылки](prerequisites.md) и [прямое пошаговое руководство](walkthrough-direct-all.md) перед началом конфигурации.
+## <a name="before-you-begin"></a>Подготовка к работе
+* Просмотрите [предпосылки](prerequisites.md) и [пошаговое руководство Direct peering](walkthrough-direct-all.md) перед началом конфигурации.
 
 
-## <a name="convert-legacy-direct-peering-to-azure-resource"></a>Преобразование устаревшего вонючеги для ресурса Azure
+## <a name="convert-a-legacy-direct-peering-to-an-azure-resource"></a>Преобразование устаревшего вонючего в ресурс Azure
 
-### <a name="sign-in-to-portal-and-select-your-subscription"></a>Вопийте на портале и выберите подписку
+### <a name="sign-in-to-the-portal-and-select-your-subscription"></a>Вопийте на портале и выберите подписку
 [!INCLUDE [Account](./includes/account-portal.md)]
 
-### <a name="convert-legacy-direct-peering"></a><a name=create></a>Преобразование устаревшего прямого пиринга
+### <a name="convert-a-legacy-direct-peering"></a><a name=create></a>Преобразование устаревшего прямого пиринга
 
-Можно преобразовать устаревшие пиринговые соединения с помощью ресурса **Peering.**
+Вы можете преобразовать устаревшие пиринговые соединения с помощью ресурса **Peering.**
 
-#### <a name="launch-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка базовых настроек
+#### <a name="launch-the-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка базовых настроек
 [!INCLUDE [direct-peering-basic](./includes/direct-portal-basic.md)]
 
 #### <a name="configure-connections-and-submit"></a>Настройка соединений и отправка
@@ -45,8 +45,8 @@ ms.locfileid: "75775060"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)
+Для получения дополнительной информации, см [Интернет пиринг часто задаваемые вопросы](faqs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Создайте или измените прямое пиринг с помощью портала.](howto-direct-portal.md)
+* [Создание или изменение прямого пиринга с помощью портала](howto-direct-portal.md)

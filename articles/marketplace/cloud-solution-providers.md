@@ -5,14 +5,14 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 11/12/2019
+ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: 9d7cbdd5ad551ba48f08f62237d5384aa7998fb8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c4c8f21234cfbf040d57c0e1c8dbecbb698d7d50
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281669"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81685921"
 ---
 # <a name="cloud-solution-providers"></a>Поставщики облачных решений
 
@@ -189,10 +189,10 @@ ms.locfileid: "80281669"
 
 ![Информация о залоге облачного партнера CSP](media/marketplace-publishers-guide/cpp-csp-information.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Посетите руководство по интернет-рынкам [Azure Marketplace и Издателю AppSource.](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide)
 
 Чтобы узнать больше о рынке УСЛУГ GTM, [см.](https://partner.microsoft.com/reach-customers/gtm)
 
-Вопийте в [Partner Center](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) или [на облачном портале партнеров](https://cloudpartner.azure.com/) для создания и настройки вашего предложения.
+Вопийте в [Partner Center](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) или [на облачном портале партнеров](https://cloudpartner.azure.com/) для создания и настройки вашего предложения.

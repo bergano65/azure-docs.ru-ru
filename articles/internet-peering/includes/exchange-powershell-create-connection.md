@@ -8,18 +8,18 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 0014b67443797f45de51ec1bc459f71bde55cdc9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f8e93cf34ac56344ff7e3d145ce8c7c3529767b7
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75774436"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678636"
 ---
 Ниже приводится следующий пример, как создать соединение Exchange на Интернет-бирже Equinix в Сиэтле. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
 
-Используйте PowerShell cmdlet **New-AzPeeringExchangeConnectionObject** для создания объектов подключения PowerShell, которые будут использоваться для генерации нового запроса на пиринг:
+Для создания объектов подключения PowerShell используйте смдлет PowerShell **New-AzPeeringExchangeConnectionObject** для создания объектов подключения PowerShell, которые будут использоваться для генерации нового запроса на пиринг.
 
-Ниже приведен пример для создания Exchange Connection:
+В этом примере показано, как создать соединение Exchange.
 
 ```powershell
 $connection1 = New-AzPeeringExchangeConnectionObject `
@@ -30,7 +30,7 @@ $connection1 = New-AzPeeringExchangeConnectionObject `
     -MaxPrefixesAdvertisedIPv6 2000 `
 ```
 
-Создайте другое соединение в случае необходимости избыточности в данном месте пиринга:
+Создайте другое соединение в случае необходимости избыточности в данном месте пиринга.
 
 ```powershell
 $connection2 = New-AzPeeringExchangeConnectionObject `
@@ -41,7 +41,7 @@ $connection2 = New-AzPeeringExchangeConnectionObject `
     -MaxPrefixesAdvertisedIPv6 2000 `
 ```
 
-PowerShell cmdlet **New-AzPeering** может быть использован для создания нового вглядывания Exchange:
+Смдлет PowerShell **New-AzPeering** может быть использован для создания нового пиринга Exchange.
 
 ```powershell
 $asn = Get-AzPeerAsn
@@ -54,7 +54,7 @@ New-AzPeering `
 ```
 &nbsp;
 
-Ниже приведен пример ответа, когда запрос был выполнен с помощью одного соединения:
+Этот пример ответа показывает, когда запрос был выполнен с помощью одного соединения.
 
 ```powershell
 
@@ -73,10 +73,10 @@ Tags              : {}
 ```
 
 > [!IMPORTANT]
-> Корпорация Майкрософт приступит к подготовке запрошенного пиринга, и `ConnectionState` будет отражать прогресс.
-> Обратитесь к [пошаговый](../walkthrough-exchange-all.md) документ Exchange для подготовки соответствующих шагов.
+> Корпорация Майкрософт начинает подготовку запрошенного пиринга и `ConnectionState` отражает прогресс.
+> Для получения дополнительной информации о шагах, связанных с подготовкой, см. [Exchange peering walkthrough](../walkthrough-exchange-all.md)
 
-Вы можете проверить Состояние соединения, как показано ниже:
+Вы можете проверить состояние соединения, как показано здесь.
 
 ```powershell
 

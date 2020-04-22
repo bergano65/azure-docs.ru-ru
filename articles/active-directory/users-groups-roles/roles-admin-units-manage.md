@@ -1,6 +1,6 @@
 ---
 title: Добавление и удаление административных единиц (предварительный просмотр) - Активный каталог Azure Документы Майкрософт
-description: Используйте административные единицы для ограничения объема разрешений на роль в каталоге Azure Active
+description: Используйте административные единицы для ограничения сферы действия разрешений на роль в Active Directory Azure.
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -14,55 +14,55 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 351cbee9cbc7cc02c7f20553b6fc8c3f861541df
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 7a4a0dfaeda18b3f68ddc3c7cc7333b8c994d174
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81428164"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81684912"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Управление административными подразделениями в каталоге Azure Active
 
 Для более детального административного управления в Active Directory Azure (Azure AD) можно назначить пользователям роль Azure AD с областью, ограниченной одним или несколькими административными единицами (AUs).
 
-## <a name="getting-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
 
-1. Для выполнения запросов из следующих инструкций через [Graph Explorer,](https://aka.ms/ge)пожалуйста, убедитесь:
+1. Для выполнения запросов из следующих инструкций через [Graph Explorer](https://aka.ms/ge), сделать следующее:
 
-    1. Перейдите на Azure AD на портале, а затем в приложениях выберите Graph Explorer и предоставьте согласие админа Graph Explorer.
+    а. На портале Azure перейдите к Azure AD. В списке приложений выберите **Graph Explorer,** а затем выберите **согласие админа Гранта на Graph Explorer.**
 
-        ![выберите Graph Explorer и предоставьте согласие админа на этой странице](./media/roles-admin-units-manage/select-graph-explorer.png)
+    ![Скриншот, показывающий ссылку на "Грант админ согласия"](./media/roles-admin-units-manage/select-graph-explorer.png)
 
-    1. В Graph Explorer убедитесь, что вы выберете бета-версию.
+    b. В Graph Explorer выберите **бета-версию.**
 
-        ![выбрать бета-версию перед операцией POST](./media/roles-admin-units-manage/select-beta-version.png)
+    ![Скриншот, показывающий выбранную бета-версию](./media/roles-admin-units-manage/select-beta-version.png)
 
-1. Пожалуйста, используйте предварительную версию Azure AD PowerShell. Подробные инструкции здесь.
+1. Используйте предварительную версию Azure AD PowerShell.
 
 ## <a name="add-an-administrative-unit"></a>Добавление административной единицы
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-1. Перейдите в Active Directory на портале и выберите административные единицы в левой панели.
+1. На портале Azure перейдите на Azure AD, а затем, в левом стеле, выберите **Административные единицы**.
 
-    ![перейдите к административным подразделениям в active-каталоге Azure](./media/roles-admin-units-manage/nav-to-admin-units.png)
+    ![Скриншот ссылки административных единиц (Preview) в Azure AD](./media/roles-admin-units-manage/nav-to-admin-units.png)
 
-1. Выберите **Добавить**и указать название административной единицы и опционально можно добавить описание для административной единицы.
+1. Выберите **Добавить,** а затем введите название административной единицы. Дополнительно добавьте описание административной единицы.
 
-    ![выберите Добавить, а затем ввести имя для административной единицы](./media/roles-admin-units-manage/add-new-admin-unit.png)
+    ![Скриншот кнопки Добавить и текстового ящика для ввода названия административного блока](./media/roles-admin-units-manage/add-new-admin-unit.png)
 
 1. Выберите **Добавить** для завершения административной единицы.
 
-### <a name="powershell"></a>PowerShell
+### <a name="use-powershell"></a>Использование PowerShell
 
-Установите Azure AD PowerShell (предварительная версия), прежде чем пытаться выполнить действия ниже:
+Установите Azure AD PowerShell (предварительный просмотр), прежде чем пытаться запустить следующие команды:
 
     Connect-AzureAD
     New-AzureADAdministrativeUnit -Description "West Coast region" -DisplayName "West Coast"
 
-Значения, указанные выше, могут быть изменены по мере необходимости.
+При необходимости можно изменить значения, оговоренные кавычками.
 
-### <a name="microsoft-graph"></a>Microsoft Graph
+### <a name="use-microsoft-graph"></a>Использование графика Майкрософт
 
     Http Request
     POST /administrativeUnits
@@ -74,29 +74,31 @@ ms.locfileid: "81428164"
 
 ## <a name="remove-an-administrative-unit"></a>Удалить административную единицу
 
-В Active Directory Azure (Azure AD) можно удалить блок админ, который вам больше не нужен как единица возможностей для административных ролей.
+В Azure AD можно удалить административную единицу, которая вам больше не нужна как единица области для административных ролей.
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-Перейти к **Azure AD > административных единиц** на портале. Выберите административное подразделение для удаления, а затем выберите **Удалить**. После подтверждения **Да,** административное подразделение будет удалено.
+1. На портале Azure перейдите на**административные подразделения** **Azure AD.** >  
+1. Выберите административное подразделение для удаления, а затем выберите **Удалить**. 
+1. Чтобы подтвердить, что вы хотите удалить административное подразделение, выберите **Да**. Административная единица удаляется.
 
-![Выберите административное подразделение для удаления](./media/roles-admin-units-manage/select-admin-unit-to-delete.png)
+![Скриншот кнопки "Удаление" административного блока и окна подтверждения](./media/roles-admin-units-manage/select-admin-unit-to-delete.png)
 
-### <a name="powershell"></a>PowerShell
+### <a name="use-powershell"></a>Использование PowerShell
 
     $delau = Get-AzureADAdministrativeUnit -Filter "displayname eq 'DeleteMe Admin Unit'"
     Remove-AzureADAdministrativeUnit -ObjectId $delau.ObjectId
 
-Выделенный раздел может быть изменен по мере необходимости для конкретной среды.
+Можно изменить значения, заключенные в кавычки, как это требуется для конкретной среды.
 
-### <a name="graph-api"></a>API Graph
+### <a name="use-the-graph-api"></a>Использование API графика
 
     HTTP request
     DELETE /administrativeUnits/{Admin id}
     Request body
     {}
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Управление пользователями в административном подразделении](roles-admin-units-add-manage-users.md)
-[Управление группами в административном подразделении](roles-admin-units-add-manage-groups.md)
+* [Управление пользователями в административном блоке](roles-admin-units-add-manage-users.md)
+* [Управление группами в административной единице](roles-admin-units-add-manage-groups.md)

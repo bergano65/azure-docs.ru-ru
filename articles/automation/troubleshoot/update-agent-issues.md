@@ -1,6 +1,6 @@
 ---
-title: Диагностика Windows Гибридный Runbook работника - Управление обновлениями Azure
-description: Узнайте, как устранить неполадки и устранить проблемы с гибридным Runbook Работника Azure Automation на Windows, который поддерживает управление обновлением.
+title: Устранение проблем с обновлением агента Windows проблемы в Azure Автоматизация управления обновлением
+description: Узнайте, как устранить неполадки и устранить проблемы с агентом обновления Windows с помощью решения Update Management.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -9,36 +9,36 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: ec35d11eba59ea21947e2c3cd5286bababa4eabb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6983a2ac7ab5fafcb00aee0b72221a8540ea1668
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76153860"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678971"
 ---
-# <a name="understand-and-resolve-windows-hybrid-runbook-worker-health-in-update-management"></a>Понять и решить Windows Гибридный Runbook работы работника в управлении обновлением
+# <a name="troubleshoot-windows-update-agent-issues"></a>Проблемы устранения проблем с обновлением Windows неусисхаем
 
-Есть множество причин, по которым для компьютера не отображается состояние **Готово** в службе "Управление обновлениями". В области управления обновлениями можно проверить работоспособность гибридного агента Runbook Worker, чтобы определить основную проблему. В этой статье обсуждается, как запустить устранение неполадок для машин Azure с портала Azure и не-Azure машин в [автономном сценарии.](#troubleshoot-offline)
+Там может быть много причин, почему ваша машина не отображается как готовый (здоровый) в управлении обновлением. В области управления обновлениями можно проверить работоспособность гибридного агента Runbook Worker, чтобы определить основную проблему. В этой статье обсуждается, как запустить устранение неполадок для машин Azure с портала Azure и не-Azure машин в [автономном сценарии.](#troubleshoot-offline)
 
-В списке ниже приведены три состояния готовности, в которых может находиться компьютер:
+Ниже приведены три состояния готовности к машине:
 
-* **Готов** - Гибридный Runbook Работник развернут и в последний раз видели менее 1 часа назад.
-* **Отключен** - Гибридный Runbook Работник развернут и в последний раз видели более 1 часа назад.
-* **Не настроен** - Гибридный Runbook Worker не найден или не закончил на борту.
+* Готов - Гибридный Runbook Работник развернут и в последний раз видели менее 1 часа назад.
+* Отключен - Гибридный Runbook Работник развернут и в последний раз видели более 1 часа назад.
+* Не настроен - Гибридный Runbook Worker не найден или не закончил на борту.
 
 > [!NOTE]
-> Может быть небольшая задержка между тем, что показывает портал Azure, и текущим состоянием машины.
+> Между тем, что показывает портал Azure, и текущим состоянием машины может быть небольшая задержка.
 
 ## <a name="start-the-troubleshooter"></a>Запуск средства устранения неполадок
 
-Для компьютеров Azure: на портале щелкните ссылку **Устранение неполадок** в столбце **Update Agent Readiness** (Готовность агента обновления), после чего откроется страница **Troubleshoot Update Agent** (Устранение неполадок с агентом обновления). Для машин, не относясь от Azure, ссылка приводит вас к этой статье. Смотрите [инструкции в автономном режиме](#troubleshoot-offline) для устранения неполадок в машине, не являйтесь Azure.
+Для компьютеров Azure: на портале щелкните ссылку **Устранение неполадок** в столбце **Update Agent Readiness** (Готовность агента обновления), после чего откроется страница Troubleshoot Update Agent (Устранение неполадок с агентом обновления). Для машин, не относясь от Azure, ссылка приводит вас к этой статье. Смотрите [инструкции в автономном режиме](#troubleshoot-offline) для устранения неполадок в машине, не являйтесь Azure.
 
 ![Список виртуальных машин в службе "Управление обновлениями"](../media/update-agent-issues/vm-list.png)
 
 > [!NOTE]
 > Чтобы проверить работоспособность hybrid Runbook Worker, VM должен работать. Если виртуальная машина не запущена, появится кнопка **запуска виртуальной машины**.
 
-На странице **Troubleshoot Update Agent** (Устранение неполадок с агентом обновления) выберите **Run checks** (Выполнить проверки), чтобы запустить средство устранения неполадок. Устранение неполадок использует [Команду Run](../../virtual-machines/windows/run-command.md) для выполнения скрипта на машине для проверки зависимостей. После того как средство устранения неполадок завершило свою работу, оно возвращает результаты проверок.
+На странице Troubleshoot Update Agent (Устранение неполадок с агентом обновления) выберите **Run checks** (Выполнить проверки), чтобы запустить средство устранения неполадок. Устранение неполадок использует [Команду Run](../../virtual-machines/windows/run-command.md) для выполнения скрипта на машине для проверки зависимостей. После того как средство устранения неполадок завершило свою работу, оно возвращает результаты проверок.
 
 ![Страница устранения неполадок с агентом обновления](../media/update-agent-issues/troubleshoot-page.png)
 
@@ -86,15 +86,13 @@ ms.locfileid: "76153860"
 
 ### <a name="monitoring-agent-service-status"></a>Отслеживание состояния службы агента
 
-Эта проверка определяет, выполняется ли на компьютере служба работоспособности (`HealthService`) для агента Microsoft Monitoring Agent.
+Эта проверка определяет, работает ли на`healthservice`компьютере агент Log Analytics для Windows () Чтобы узнать больше о устранении неполадок службы, [см.](hybrid-runbook-worker.md#mma-not-running)
 
-Дополнительные сведения об устранении неполадок со службой см. в разделе [Сценарий: Microsoft Monitoring Agent не работает](hybrid-runbook-worker.md#mma-not-running).
-
-Чтобы переустановить агента мониторинга Майкрософт, [см.](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows)
+Чтобы переустановить агент Log Analytics для Windows, [см.](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows)
 
 ### <a name="monitoring-agent-service-events"></a>Мониторинг событий службы агента
 
-Эта проверка определяет, записывались ли какие-либо события `4502` в журнал Azure Operations Manager на компьютере за последние 24 часа.
+Эта проверка определяет, отображаются ли какие-либо события 4502 в журнале Управления операций Azure на машине за последние 24 часа.
 
 Дополнительные сведения об этом событии см. в разделе [Событие 4502 в журнале Operations Manager](hybrid-runbook-worker.md#event-4502).
 
@@ -167,9 +165,9 @@ RuleName                    : Monitoring Agent service status
 RuleGroupName               : VM Service Health Checks
 RuleDescription             : HealthService must be running on the machine
 CheckResult                 : Failed
-CheckResultMessage          : Microsoft Monitoring Agent service (HealthService) is not running
+CheckResultMessage          : Log Analytics for Windows service (HealthService) is not running
 CheckResultMessageId        : MonitoringAgentServiceRunningCheck.Failed
-CheckResultMessageArguments : {Microsoft Monitoring Agent, HealthService}
+CheckResultMessageArguments : {Log Analytics agent for Windows, HealthService}
 
 RuleId                      : MonitoringAgentServiceEventsCheck
 RuleGroupId                 : servicehealth
@@ -177,9 +175,9 @@ RuleName                    : Monitoring Agent service events
 RuleGroupName               : VM Service Health Checks
 RuleDescription             : Event Log must not have event 4502 logged in the past 24 hours
 CheckResult                 : Failed
-CheckResultMessage          : Microsoft Monitoring Agent service Event Log (Operations Manager) does not exist on the machine
+CheckResultMessage          : Log Analytics agent for Windows service Event Log (Operations Manager) does not exist on the machine
 CheckResultMessageId        : MonitoringAgentServiceEventsCheck.Failed.NoLog
-CheckResultMessageArguments : {Microsoft Monitoring Agent, Operations Manager, 4502}
+CheckResultMessageArguments : {Log Analytics agent for Windows, Operations Manager, 4502}
 
 RuleId                      : CryptoRsaMachineKeysFolderAccessCheck
 RuleGroupId                 : permissions
@@ -202,6 +200,6 @@ CheckResultMessageId        : TlsVersionCheck.Passed.EnabledByDefault
 CheckResultMessageArguments : {}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы устранить другие неполадки, ознакомьтесь со статьей [Устранение неполадок с гибридными рабочими ролями Runbook](hybrid-runbook-worker.md).

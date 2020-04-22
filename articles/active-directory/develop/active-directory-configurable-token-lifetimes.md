@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/19/2020
+ms.date: 04/17/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 0b2b9dbe52a5696f21b287402fc4cbaa32b29c73
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f4138c4ae24ae599d4058c9fd06c33b69657fe38
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79263183"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680070"
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-preview"></a>Настройка времени существования маркеров в Azure Active Directory (предварительная версия)
 
@@ -83,7 +83,7 @@ ms.locfileid: "79263183"
 Политика времени жизни маркера — это объект политики, который содержит правила времени жизни маркера. Свойства этой политики и определяют срок действия соответствующих маркеров. Если политика не задана, система использует стандартное значение для времени жизни.
 
 ### <a name="configurable-token-lifetime-properties"></a>Свойства для настройки времени жизни маркера
-| Свойство | Строка свойства политики | Область применения | Значение по умолчанию | Минимальные | Максимальная |
+| Свойство. | Строка свойства политики | Область применения | Значение по умолчанию | Минимальные | Максимальная |
 | --- | --- | --- | --- | --- | --- |
 | Время жизни маркера доступа |AccessTokenLifetime<sup>2</sup> |Маркеры доступа, маркеры безопасности, маркеры SAML2 |1 час |10 минут. |1 день |
 | Максимальное время неактивности для маркеров обновления |MaxInactiveTime |Маркеры обновления |90 дней |10 минут. |90 дней |
@@ -96,7 +96,7 @@ ms.locfileid: "79263183"
 * <sup>2</sup> Для обеспечения работы веб-клиента Microsoft Teams Web рекомендуется хранить AccessTokenLifetime в течение более 15 минут для команд Майкрософт.
 
 ### <a name="exceptions"></a>Исключения
-| Свойство | Область применения | Значение по умолчанию |
+| Свойство. | Область применения | Значение по умолчанию |
 | --- | --- | --- |
 | Обновление максимального возраста маркеров (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |Маркеры обновления (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |12 часов |
 | Максимальное время неактивности для маркера обновления (выданного для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |90 дней |
@@ -243,19 +243,25 @@ ms.locfileid: "79263183"
         }')
         ```
 
-    2. Чтобы создать политику, выполните следующую команду:
+    1. Чтобы создать политику, выполните следующую команду:
 
         ```powershell
         $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1, "MaxAgeSingleFactor":"until-revoked"}}') -DisplayName "OrganizationDefaultPolicyScenario" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"
         ```
 
-    3. Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
+    1. Чтобы удалить любое пробелы, запустите следующую команду:
+
+        ```powershell
+        Get-AzureADPolicy -id | set-azureadpolicy -Definition @($((Get-AzureADPolicy -id ).Replace(" ","")))
+        ```
+
+    1. Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
 
         ```powershell
         Get-AzureADPolicy -Id $policy.Id
         ```
 
-2. Обновите политику.
+1. Обновите политику.
 
     Если вы решили, что созданная в этом примере политика для службы недостаточно строгая, и хотите, чтобы срок действия однофакторных маркеров обновления истекал через 2 дня, выполните следующую команду:
 
@@ -277,13 +283,13 @@ ms.locfileid: "79263183"
         $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"02:00:00","MaxAgeSessionSingleFactor":"02:00:00"}}') -DisplayName "WebPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
         ```
 
-    2. Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
+    1. Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
 
         ```powershell
         Get-AzureADPolicy -Id $policy.Id
         ```
 
-2. Назначьте политику для субъекта-службы. Вам потребуется также получить **идентификатор объекта** субъекта-службы.
+1. Назначьте политику для субъекта-службы. Вам потребуется также получить **идентификатор объекта** субъекта-службы.
 
     1. Воспользуйтесь cmdlet [Get-AzureADServicePrincipal,](/powershell/module/azuread/get-azureadserviceprincipal) чтобы увидеть все директора службы организации или единый директор службы.
         ```powershell
@@ -291,7 +297,7 @@ ms.locfileid: "79263183"
         $sp = Get-AzureADServicePrincipal -Filter "DisplayName eq '<service principal display name>'"
         ```
 
-    2. Если у вас есть основной службы, запустите следующую команду:
+    1. Если у вас есть основной службы, запустите следующую команду:
         ```powershell
         # Assign policy to a service principal
         Add-AzureADServicePrincipalPolicy -Id $sp.ObjectId -RefObjectId $policy.Id
@@ -308,13 +314,13 @@ ms.locfileid: "79263183"
         $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"30.00:00:00","MaxAgeMultiFactor":"until-revoked","MaxAgeSingleFactor":"180.00:00:00"}}') -DisplayName "WebApiDefaultPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
         ```
 
-    2. Чтобы увидеть новую политику, запустите следующую команду:
+    1. Чтобы увидеть новую политику, запустите следующую команду:
 
         ```powershell
         Get-AzureADPolicy -Id $policy.Id
         ```
 
-2. Назначьте политику для веб-API. Вам потребуется также получить **идентификатор объекта** приложения. Воспользуйтесь cmdlet [Get-AzureADApplication,](/powershell/module/azuread/get-azureadapplication) чтобы найти **ObjectId**вашего приложения или использовать [портал Azure.](https://portal.azure.com/)
+1. Назначьте политику для веб-API. Вам потребуется также получить **идентификатор объекта** приложения. Воспользуйтесь cmdlet [Get-AzureADApplication,](/powershell/module/azuread/get-azureadapplication) чтобы найти **ObjectId**вашего приложения или использовать [портал Azure.](https://portal.azure.com/)
 
     Получите **ObjectId** вашего приложения и назначьте политику:
 
@@ -337,19 +343,19 @@ ms.locfileid: "79263183"
         $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxAgeSingleFactor":"30.00:00:00"}}') -DisplayName "ComplexPolicyScenario" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"
         ```
 
-    2. Чтобы увидеть новую политику, запустите следующую команду:
+    1. Чтобы увидеть новую политику, запустите следующую команду:
 
         ```powershell
         Get-AzureADPolicy -Id $policy.Id
         ```
 
-2. Назначьте политику для субъекта-службы.
+1. Назначьте политику для субъекта-службы.
 
     Теперь у нас есть политика, которая применяется ко всей организации. Предположим, мы хотим сохранить эту политику со сроком действия 30 дней для определенного субъекта-службы, но изменить максимальное ограничение стандартной политики для организации, указав значение until-revoked (пока не будет отозван).
 
     1. Чтобы просмотреть все принципы службы организации, вы используете [cmdlet Get-AzureADServicePrincipal.](/powershell/module/azuread/get-azureadserviceprincipal)
 
-    2. Если у вас есть основной службы, запустите следующую команду:
+    1. Если у вас есть основной службы, запустите следующую команду:
 
         ```powershell
         # Get ID of the service principal
@@ -359,13 +365,13 @@ ms.locfileid: "79263183"
         Add-AzureADServicePrincipalPolicy -Id $sp.ObjectId -RefObjectId $policy.Id
         ```
 
-3. Задайте значение false для флага `IsOrganizationDefault`:
+1. Задайте значение false для флага `IsOrganizationDefault`:
 
     ```powershell
     Set-AzureADPolicy -Id $policy.Id -DisplayName "ComplexPolicyScenario" -IsOrganizationDefault $false
     ```
 
-4. Создайте новую политику организации по умолчанию:
+1. Создайте новую политику организации по умолчанию:
 
     ```powershell
     New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxAgeSingleFactor":"until-revoked"}}') -DisplayName "ComplexPolicyScenarioTwo" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"

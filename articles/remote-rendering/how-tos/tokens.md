@@ -1,18 +1,18 @@
 ---
-title: Получите токены доступа к сервису
+title: Получение маркеров доступа к службе
 description: Описывает, как создать токены для доступа к ARR REST AIS
 author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: how-to
-ms.openlocfilehash: 001a77734a8cedf08c5523380c1cbd00dce89f40
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: fd510f90887353d7486908ee076d5308db72c59d
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80681198"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687071"
 ---
-# <a name="get-service-access-tokens"></a>Получите токены доступа к сервису
+# <a name="get-service-access-tokens"></a>Получение маркеров доступа к службе
 
 Доступ к ARR REST AIS предоставляется только авторизованным пользователям. Чтобы доказать свою авторизацию, необходимо отправить *токен доступа* вместе с запросами REST. Эти токены выдаются *Службой безопасных токенов* (STS) в обмен на ключ к учетной записи. Токены имеют **срок службы 24 часа** и, таким образом, могут быть выданы пользователям, не предоставляя им полный доступ к сервису.
 
@@ -24,7 +24,7 @@ ms.locfileid: "80681198"
 
 ## <a name="token-service-rest-api"></a>Сервис токенов REST API
 
-Для создания токенов доступа *служба Secure Token* предоставляет один API REST. URL-адрес службы ARR [https://sts.mixedreality.azure.com](https://sts.mixedreality.azure.com)STS .
+Для создания токенов доступа *служба Secure Token* предоставляет один API REST. URL-адрес службы ARR STS:\//sts.mixedreality.azure.com.
 
 ### <a name="get-token-request"></a>Запрос 'Получить токен'
 
@@ -65,8 +65,8 @@ Write-Output "Token: $($response.AccessToken)"
 
 Скрипт просто печатает маркер на выходе, откуда можно скопировать & вставить его. Для реального проекта, вы должны автоматизировать этот процесс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Пример скриптов PowerShell](../samples/powershell-example-scripts.md)
+* [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)
 * [AIS Azure Frontend](../how-tos/frontend-apis.md)
 * [Управление сеансом REST API](../how-tos/session-rest-api.md)

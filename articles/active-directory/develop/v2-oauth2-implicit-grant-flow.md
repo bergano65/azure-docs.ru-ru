@@ -12,12 +12,12 @@ ms.date: 11/19/2019
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: b946ab6157ba63213a4c140221d36f231aa62f0d
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 7fb2bbcdd5f84e3637a108d0753566d3a9de7fd0
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535848"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81677748"
 ---
 # <a name="microsoft-identity-platform-and-implicit-grant-flow"></a>Платформа идентификации Майкрософт и неявный поток грантов
 
@@ -32,9 +32,6 @@ ms.locfileid: "81535848"
 В этой статье описывается, как запрограммировать непосредственно против протокола в приложении.  Когда это возможно, мы рекомендуем вам использовать поддерживаемые библиотеки подлинности Майкрософт (MSAL) вместо того, чтобы [приобретать токены и вызывать защищенные web-aIS.](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows)  Также взгляните на [образец приложений, которые используют MSAL](sample-v2-code.md).
 
 Но в одностраничном приложении можно обойтись без использования библиотеки. Отправлять сообщения протокола в таком случае нужно самостоятельно. Для этого выполните следующие шаги.
-
-> [!NOTE]
-> Не все сценарии и функции Azure Active Directory (Azure AD) поддерживаются конечными точками платформы идентификации Майкрософт. Чтобы определить, следует ли использовать конечную точку платформы идентификации Майкрософт, прочитайте об [ограничениях платформы идентификации Майкрософт.](active-directory-v2-limitations.md)
 
 ## <a name="suitable-scenarios-for-the-oauth2-implicit-grant"></a>Подходящие сценарии для неявного предоставления OAuth2
 
