@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
-ms.openlocfilehash: f9fca0a9fefb5959747a4492139ae422a118db02
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ce1bb3760ae73a9eaeee3cde957cc94841ebdf29
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "70390178"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81731935"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -59,7 +59,7 @@ ms.locfileid: "70390178"
 
 * operatorType — тип сравнения;
 * ключ — поле в данных события, которое используется для фильтрации (это может быть число, логическое значение или строка);
-* value или values — значения для сравнения с ключом.
+* значения - значение или значения для сравнения с ключом.
 
 Если вы указываете один фильтр с несколькими значениями, выполняется **или выполняется** операция OR, поэтому значение ключевого поля должно быть одним из этих значений. Например:
 
@@ -160,7 +160,7 @@ ms.locfileid: "70390178"
 
 Один ключ можно использовать в нескольких фильтрах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о фильтрации событий для Сетки событий с помощью [PowerShell и Azure CLI](how-to-filter-events.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.openlocfilehash: 46c59e8b4e60fbe17887ea0fc375b6da758ebf50
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 4d2d33f9d83132147b5b257ffcd6d659f272b8ec
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81457405"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730720"
 ---
 # <a name="create-your-azure-virtual-machine-technical-assets"></a>Создание технических средств Azure Virtual Machine
 
@@ -109,7 +109,7 @@ Azure предлагает широкий спектр одобренных ди
 
 Azure начинает подготовку указанной виртуальной машины. Вы можете отслеживать его прогресс, выбрав вкладку **Virtual Machines** слева. После его создания статус будет меняться на **Запуск.**
 
-Если вы столкнулись с трудностями в создании нового VHD на основе Azure, см. [Общие проблемы во время создания VHD (часто задаваемые вопросы)](https://aka.ms/VHDcreationIssues).
+Если вы столкнулись с трудностями в создании нового VHD на основе Azure, см. [Общие проблемы во время создания VHD (часто задаваемые вопросы)](https://docs.microsoft.com/azure/marketplace/partner-center-portal/common-issues-during-vhd-creation).
 
 ### <a name="connect-to-your-azure-vm"></a>Подключение к виртуальной машине Azure
 

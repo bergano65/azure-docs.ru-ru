@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/23/2018
+ms.date: 04/20/2020
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcccc64e0c766164a06932e9b65a4459816f9deb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 89e09fd63ee6121ac9bf7f3c2be00f0ac22f752f
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79409122"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81731707"
 ---
 # <a name="how-to-configure-self-service-application-assignment"></a>Настройка назначения самостоятельного доступа к приложениям
 
@@ -41,6 +41,9 @@ ms.locfileid: "79409122"
 -   При необходимости разрешать корпоративному утверждающему задавать пароли пользователей для входа в приложение прямо с [панели доступа к приложению](https://myapps.microsoft.com/).
 
 -   При необходимости автоматически назначать пользователей, находящихся на самообслуживании, роли приложения напрямую.
+
+> [!NOTE]
+> Лицензия Active Directory Premium Azure (P1 или P2) требуется пользователям, чтобы запросить присоединение к приложению самообслуживания, а владельцам — утвердить или отклонить запросы. Без лицензии Azure Active Directory Premium пользователи не могут добавлять приложения самообслуживания.
 
 ## <a name="enable-self-service-application-access-to-allow-users-to-find-their-own-applications"></a>Включите самостоятельный доступ к приложениям, позволяющий пользователям найти свои приложения
 
@@ -78,5 +81,5 @@ ms.locfileid: "79409122"
 
 Как только вы завершите конфигурацию приложения Самообслуживания, пользователи могут перейти на [панель доступа My Apps](https://myapps.microsoft.com/) и нажать кнопку Приложения **Самообслуживания Добавить,** чтобы найти приложения, которые доступны с доступом к самообслуживанию. Бизнес-одобрители также увидеть уведомление в панели [доступа My Apps.](https://myapps.microsoft.com/) Вы можете получать уведомления по электронной почте, когда пользователь запрашивает доступ к приложению, требующему утверждения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Настройка Azure Active Directory для самостоятельного управления группами](../users-groups-roles/groups-self-service-management.md)

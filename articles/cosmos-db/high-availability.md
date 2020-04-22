@@ -4,15 +4,15 @@ description: В этой статье описывается, как Azure Cosmo
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/06/2019
+ms.date: 04/20/2020
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 2afeae937d56a84c39167ad55a57c86f2623e52d
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 0a67360ab840b7897c85a382dfc3965bd27f6a3e
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81382704"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81688057"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Высокий уровень доступности при использовании Azure Cosmos DB
 
@@ -97,6 +97,8 @@ Azure Cosmos DB прозрачно реплицирует данные во вс
 - Западная Европа
 
 - западная часть США 2
+
+- Восточная Австралия
 
 > [!NOTE]
 > Включение зон доступности для учетной записи Azure Cosmos в одном регионе приведет к расходам, которые эквивалентны добавлению дополнительного региона в вашу учетную запись. Подробнее о ценах можно узнать на [странице ценообразования](https://azure.microsoft.com/pricing/details/cosmos-db/) и мультирегионах в статьях [Azure Cosmos DB.](optimize-cost-regions.md)

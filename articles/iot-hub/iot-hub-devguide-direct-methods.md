@@ -7,12 +7,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/17/2018
 ms.author: rezas
-ms.openlocfilehash: d4040a4d0cf3fadf7a6e07c0e03e105975d17040
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 13936a55baed59d5b6257f13f69305a1ce72927a
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79499263"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730403"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
 
@@ -200,7 +203,7 @@ curl -X POST \
 
 * Статья [Поддержка MQTT в Центре Интернета вещей](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как использовать прямые методы, вас может заинтересовать следующая статья в руководстве разработчика для Центра Интернета вещей:
 

@@ -8,13 +8,16 @@ services: iot-hub
 ms.topic: article
 ms.date: 11/13/2019
 ms.author: dkshir
-ms.custom: security-recommendations
-ms.openlocfilehash: 0ada9a520a5be56444a1c3e746a68dbcf9275686
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- security-recommendations
+- amqp
+- mqtt
+ms.openlocfilehash: 5dd09988d37982c41b761688492bd2dc3642b2db
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74048458"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81728981"
 ---
 # <a name="security-recommendations-for-azure-internet-of-things-iot-deployment"></a>Рекомендации по безопасности для развертывания Azure Internet of Things (IoT)
 
@@ -48,7 +51,7 @@ ms.locfileid: "74048458"
 | Безопасная связь с устройством | IoT Концентратор обеспечивает подключение к устройствам, использующим стандарт Transport Layer Security (TLS), поддерживающий версии 1.2 и 1.0. Используйте [TLS 1.2](https://tools.ietf.org/html/rfc5246) для обеспечения максимальной безопасности. | - |
 | Защита взаимодействия со службой | IoT Hub предоставляет конечные точки для подключения к бэкэнд-сервисам, таким как [Azure Storage](/azure/storage/) или [Event Hubs,](/azure/event-hubs) используя только протокол TLS, и ни одна конечная точка не разоблачается на незашифрованном канале. Как только эти данные понижатся за эти бэкэнд-сервисы для хранения или анализа, не забудьте использовать соответствующие методы безопасности и шифрования для этой службы и защитите конфиденциальную информацию в бэкэнде. | - |
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 | Рекомендация | Комментарии | При поддержке ASC |
 |-|----|--|
@@ -63,7 +66,7 @@ ms.locfileid: "74048458"
 | Мониторинг решения IoT из облака | Мониторинг общего состояния решения IoT Hub с помощью [метрик в Azure Monitor.](https://docs.microsoft.com/azure/iot-hub/iot-hub-metrics) | - |
 | Настройка диагностики | Внимательно следите за операциями, регистрируя события в своем решении, а затем отправляя диагностические журналы в Azure Monitor, чтобы получить видимость производительности. Для получения дополнительной информации читайте в центре [Мониторинга и диагностируйте проблемы в концентраторе IoT.](https://docs.microsoft.com/azure/iot-hub/iot-hub-monitor-resource-health) | - |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для продвинутых сценариев, связанных с Azure IoT, может потребоваться рассмотреть дополнительные требования к безопасности. Дополнительную рекомендацию можно узнать из [архитектуры безопасности IoT.](iot-security-architecture.md)
 

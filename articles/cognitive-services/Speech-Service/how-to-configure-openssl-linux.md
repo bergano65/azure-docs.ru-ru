@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: jhakulin
-ms.openlocfilehash: 350c2bf3c4d0fc0a16f1b393e7c8d8a372679797
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 42960c25c4124203b64646fdc5cbca833b246e21
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78331150"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683162"
 ---
 # <a name="configure-openssl-for-linux"></a>Настройка OpenSSL для Linux
 
@@ -50,8 +50,10 @@ export SSL_CERT_DIR=/opt/ssl/certs
 ```bash
 export SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
 ```
+> [!NOTE]
+> Стоит также отметить, что некоторые дистрибутивы Linux не имеют переменной среды TMPDIR или TMPDIR. Это приведет к тому, что Speech SDK будет каждый раз загружать список отзыва сертификатов (CRL), а не кэшировать CRL на диск для повторного использования до истечения срока их действия. Для повышения начальной производительности соединения можно [создать переменную среды под названием TMPDIR и установить ее на пути выбранного временного каталога.](https://help.ubuntu.com/community/EnvironmentVariables)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения о пакете SDK службы "Речь"](speech-sdk.md)

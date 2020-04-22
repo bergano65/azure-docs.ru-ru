@@ -5,14 +5,14 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 10/4/2019
+ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: 6a142ce3c082f6f9a53287885ba347fc78f77718
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: da324e1e1a40e515cac4b26d6c9f8661f344e1d7
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81262032"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687604"
 ---
 # <a name="microsoft-commercial-marketplace-faqs"></a>Вопросы и ответы о коммерческой платформе Майкрософт
 
@@ -46,7 +46,7 @@ Azure Marketplace предлагает технические решения и 
 
 **Как начать работу в Azure Marketplace?**
 
-Вы найдете самые разнообразные корпоративные приложения и решения, сертифицированные и оптимизированные для работы в Azure, посетив [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps). Доступ к Azure Marketplace также можно получить через [портал Azure] при [**создании ресурса.**](https://portal.azure.com/#create/hub)
+Вы найдете самые разнообразные корпоративные приложения и решения, сертифицированные и оптимизированные для работы в Azure, посетив [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps). Доступ к Azure Marketplace также можно получить через портал «Azure» при [**создании ресурса.**](https://portal.azure.com/#create/hub)
 
 **Каковы основные преимущества использования Azure Marketplace?**
 
@@ -57,7 +57,7 @@ Azure Marketplace предлагает технические решения и 
 Предложения Azure Marketplace можно приобрести с помощью:
 
 * [Веб-магазин](https://azuremarketplace.microsoft.com/marketplace/apps)
-* [Портал Azure][Azure]
+* (Портал Azure) (Портал Azure)
 * [Интерфейс командной строки Azure (CLI)](/cli/azure/?view=azure-cli-latest)
 
 >[!Note]
@@ -127,7 +127,7 @@ Azure Marketplace доступен клиентам Azure в странах/ре
 
 + *На пользователя:* SaaS подписки могут быть оценены на основе на одного пользователя, который выставлен счет ежемесячно или ежегодно. 
 
-Детали цен, оцениваемые в [https://azure.microsoft.com/pricing/](https://azure.microsoft.com/pricing/) конкретных предложениях, можно найти на странице подробной информации о решении на портале Azure или на [портале Azure.]
+Детали цен, оцениваемые в [https://azure.microsoft.com/pricing/](https://azure.microsoft.com/pricing/) конкретных предложениях, можно найти на странице подробной информации о решении в «портале Azure».
 
 > [!Note]
 > Помимо ежемесячных отчислений, плата за использование Azure касается также других моделей ценообразования, если иное не оговорено отдельно.
@@ -180,9 +180,9 @@ Azure Marketplace доступен клиентам Azure в странах/ре
 
 **Где найти подробные сведения о подписке Azure Marketplace и информацию о выставлении счетов?**
 
-MOSP - [Клиенты программы подписки Microsoft Online](https://azure.microsoft.com/support/legal/subscription-agreement/?country=us&language=en) (веб-прямые) могут просматривать сведения о покупке Marketplace во вкладке "Управление затратами" и "Биллинг" [портала Azure.]
+КЛИЕНТы MOSP - [Клиенты программы подписки на веб-страницы Майкрософт](https://azure.microsoft.com/support/legal/subscription-agreement/?country=us&language=en) (веб-прямые) могут просматривать сведения о покупке Marketplace во вкладке "Управление затратами" и разделом "Портал Azure".
 
-Клиенты Enterprise Agreement (EA) могут просматривать сведения о покупке Marketplace во вкладке "Управление затратами" и "Биллинг" [портала Azure.]
+Клиенты Enterprise Agreement (EA) могут просматривать сведения о покупке Marketplace во вкладке «Управление затратами» и разделе «Портал затрат».
 
 Партнеры-поставщики облачных решений (CSP) могут просматривать сведения о покупке Marketplace для каждого клиента в Центре-партнере в рамках вкладки «История заказов» после выбора компании в представлении Клиентов.
 
@@ -208,7 +208,7 @@ MOSP - [Клиенты программы подписки Microsoft Online](htt
 
 **Как выяснить, какая часть покупок в Azure Marketplace была мной использована?**
 
-Предполагаемую информацию об использовании можно найти на [портале Azure]. Такие сведения могут не включать последнее действие и основываться на предполагаемых показателях, полученных во время предыдущего использования. В течение действия предварительной версии этот вариант может не распространяться на покупку всех продуктов и зависеть от типа продукта.
+Предполагаемую информацию об использовании можно найти на портале «Azure». Такие сведения могут не включать последнее действие и основываться на предполагаемых показателях, полученных во время предыдущего использования. В течение действия предварительной версии этот вариант может не распространяться на покупку всех продуктов и зависеть от типа продукта.
 
 ### <a name="customer-support"></a>Поддержка клиентов
 
@@ -307,7 +307,7 @@ Azure Marketplace — это магазин, в котором партнеры
 
 **Есть ли какие-то отчисления в процессе приобретения, осуществляемого в Azure Marketplace?**
 
-Когда лицензия решения приобретена через Azure Marketplace, доходы за лицензию программного обеспечения разделяются между издателем и корпорацией Майкрософт.  Это выполняется в соответствии с условиями использования в [соглашении издателя Marketplace](https://cloudpartner.azure.com/Content/Unversioned/PublisherAgreement2.pdf). Кроме того, за решения издателя под ранее приобретенной лицензией BYOL плата также не предусмотрена.
+Когда лицензия решения приобретена через Azure Marketplace, доходы за лицензию программного обеспечения разделяются между издателем и корпорацией Майкрософт.  Это выполняется в соответствии с условиями использования в [соглашении издателя Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt). Кроме того, за решения издателя под ранее приобретенной лицензией BYOL плата также не предусмотрена.
 
 **Что такое стандартный контракт?**
 
@@ -335,7 +335,7 @@ Azure Marketplace — это магазин, в котором партнеры
 
 **Где можно получить помощь про поводу настройки назначения моего интереса?**
 
-Узнайте больше в [документации Partner Center-Get](./cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads.md) Customer [https://aka.ms/marketplacepublishersupport](https://aka.ms/marketplacepublishersupport) Leads или отправьте билет на поддержку, выбрав тип предложения и руководство.
+Узнайте больше в [документации Partner Center-Get](./partner-center-portal/commercial-marketplace-get-customer-leads.md) Customer [https://aka.ms/marketplacepublishersupport](https://aka.ms/marketplacepublishersupport) Leads или отправьте билет на поддержку, выбрав тип предложения и руководство.
 
 **Необходимо ли мне настроить назначение интереса, чтобы опубликовать предложение в Marketplace?**
 
@@ -343,7 +343,7 @@ Azure Marketplace — это магазин, в котором партнеры
 
 **Как убедиться в том, что конфигурация интереса правильна?**
 
-После завершения предложения и создания ведущего назначения, листинг может быть надлежащим образом опубликован в [Partner Center](https://cloudpartner.azure.com/). Перед предоставлением общего доступа к списку можно проверить правильность работы настройки назначения потенциального клиента.  Отправьте тестового потенциального клиента в назначение потенциального клиента, настроенное в приложении.
+После завершения предложения и создания ведущего назначения, листинг может быть надлежащим образом опубликован в [Partner Center](https://partner.microsoft.com/). Перед предоставлением общего доступа к списку можно проверить правильность работы настройки назначения потенциального клиента.  Отправьте тестового потенциального клиента в назначение потенциального клиента, настроенное в приложении.
 
 **Для каких стран/регионов издатели могут осуществлять продажи в Azure Marketplace?**
 
@@ -353,13 +353,13 @@ Azure Marketplace — это магазин, в котором партнеры
 
 *Виртуальные машины & приложения Azure:*
 
-1. Войти в [Партнерский центр](https://cloudpartner.azure.com/).
+1. Войти в [Партнерский центр](https://partner.microsoft.com/).
 1. Выберите предложение из вкладки **«Все предложения».**
 1. В левой области экрана выберите вкладку **SKUs** (Номера SKU).
 1. Выберите SKU для удаления и нажмите кнопку **удаления** для этого SKU.
 1. [Повторно опубликуйте](./cloud-partner-portal/manage-offers/cpp-publish-offer.md) предложение в Azure Marketplace.
 
-Дополнительные сведения см. в статье [об удалении предложения](./cloud-partner-portal/manage-offers/cpp-delete-offer.md).
+Для получения дополнительной информации, смотрите [обновление предложения](./partner-center-portal/update-existing-offer.md).
 
 *Веб-приложения (приложения SaaS, дополнения) & консалтинговые услуги:*
 
@@ -392,7 +392,7 @@ Azure Marketplace — это отправная точка для начала 
 
 **Где рекламируются решения из Azure Marketplace в Интернете, исходя из возможностей корпорации Майкрософт?**
 
-Решения Azure Marketplace доступны [на портале]Microsoft Azure и [на веб-сайте Azure Marketplace.](https://azuremarketplace.microsoft.com/marketplace/) Разработчики облака и ИТ-специалисты, работающие в Azure, получают доступ к решениям партнера при каждом входе в систему. Все решения партнера постоянно демонстрируются и проходят ротацию в рекламных показах на [домашней странице Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace) и [странице решений Azure](https://azure.microsoft.com/solutions/).
+Решения Azure Marketplace доступны на веб-сайте Microsoft «Azure» и [на веб-сайте Azure Marketplace.](https://azuremarketplace.microsoft.com/marketplace/) Разработчики облака и ИТ-специалисты, работающие в Azure, получают доступ к решениям партнера при каждом входе в систему. Все решения партнера постоянно демонстрируются и проходят ротацию в рекламных показах на [домашней странице Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace) и [странице решений Azure](https://azure.microsoft.com/solutions/).
 
 ### <a name="billing-and-payments"></a>Тарификация и оплата
 
@@ -471,9 +471,6 @@ Azure Marketplace поддерживает 141 географию покупки
 
 Да, по вашему запросу через поддержку билет, Microsoft будет обрабатывать кредиты для вашего клиента, если вы сочтете это целесообразным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Посетите [коммерческую страницу издателя рынка.](/azure/marketplace/marketplace-publishers-guide)
-
-
-[Портал Azure]: https://portal.azure.com

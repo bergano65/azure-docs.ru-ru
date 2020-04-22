@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 04/12/2020
 ms.author: juliako
-ms.openlocfilehash: 9bea9e375e00d6fc0f6c33aa1bcc766773db2059
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 1c7156da171a101f04db9f83df587f5b8bc71e8f
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81269947"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687114"
 ---
 # <a name="what-is-video-indexer"></a>Что такое Индексатор видео?
 
@@ -112,7 +112,7 @@ Video Indexer (VI) — это решение AI- службы мультимед
 
 Если вы используете веб-сайт, сведения добавляются в качестве метаданных и видны на портале. Если вы используете AA, сведения доступны в виде файла JSON.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь вы готовы приступить к работе со службой "Индексатор видео". Дополнительные сведения см. в следующих статьях:
 

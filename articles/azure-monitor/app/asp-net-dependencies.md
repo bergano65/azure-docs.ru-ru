@@ -3,12 +3,12 @@ title: Отслеживание зависимостей в Azure Application In
 description: Мониторинг звонков зависимости из вашего собственного или веб-приложения Microsoft Azure с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: 1d4e8d1a0482257c92f47a00bd440e786c09c7aa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1e30d8036c1fc624d39f027f38e314c6c57360f6
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80292124"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81731497"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Отслеживание зависимостей в исследованиях приложений Azure 
 
@@ -24,7 +24,7 @@ ms.locfileid: "80292124"
 |---------------|-------|
 |Http/Https | Локальные или удаленные звонки http/https |
 |WCF звонки| Только отслеживается автоматически, если http основе привязки используются.|
-|SQL | Звонки, `SqlClient`сделанные с . Просмотрите [это](#advanced-sql-tracking-to-get-full-sql-query) для захвата запроса S'L.  |
+|SQL-код | Звонки, `SqlClient`сделанные с . Просмотрите [это](#advanced-sql-tracking-to-get-full-sql-query) для захвата запроса S'L.  |
 |[Лазурное хранилище (Blob, Таблица, Очередь )](https://www.nuget.org/packages/WindowsAzure.Storage/) | Звонки, сделанные с клиентом хранения Azure. |
 |[EventHub Клиент SDK](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | Версия 1.1.0 и выше. |
 |[Пакет SDK для клиента служебной шины](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus)| Версия 3.0.0 и выше. |
@@ -97,7 +97,7 @@ ms.locfileid: "80292124"
 | Платформа | Шаг (ы) Необходимо получить полный запрос S'L |
 | --- | --- |
 | Веб-приложение Azure |В панели управления веб-приложениями [откройте лезвие Application Insights](../../azure-monitor/app/azure-web-apps.md) и включите команды S'L под .NET |
-| IIS Server (Azure VM, on-prem и так далее.) | Используйте модуль Status Monitor PowerShell для [установки двигателя приборов](../../azure-monitor/app/status-monitor-v2-api-enable-instrumentation-engine.md) и перезапуска IIS. |
+| IIS Server (Azure VM, on-prem и так далее.) | Используйте модуль Status Monitor PowerShell для [установки двигателя приборов](../../azure-monitor/app/status-monitor-v2-api-reference.md) и перезапуска IIS. |
 | Облачная служба Azure | Добавление [задачи запуска для установки StatusMonitor](../../azure-monitor/app/cloudservices.md#set-up-status-monitor-to-collect-full-sql-queries-optional) <br> Ваше приложение должно быть на борту ApplicationInsights SDK во время сборки, установив пакеты NuGet для [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) или [ASP.NET основных приложений](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) |
 | IIS Express. | Не поддерживается
 
@@ -189,7 +189,7 @@ ms.locfileid: "80292124"
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и все приложения Исследования SDK, модуль сбора зависимостей также с открытым исходным кодом. Прочитайте и внесите свой вклад в код или сообщите о проблемах на [официальном репо GitHub.](https://github.com/Microsoft/ApplicationInsights-dotnet-server)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Исключения](../../azure-monitor/app/asp-net-exceptions.md)
 * [Данные пользователей и страниц](../../azure-monitor/app/javascript.md)

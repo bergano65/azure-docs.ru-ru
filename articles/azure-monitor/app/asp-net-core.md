@@ -3,12 +3,12 @@ title: Исследования приложений Azure для ASP.NET осн
 description: Отслеживайте доступность, производительность и использование веб-приложений ASP.NET Core.
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.openlocfilehash: d6a0e507022452f1491e71651ba3bc8db3d1c090
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1a9a81d76df7f14fb99b8521e7bfa2edff6c9e9e
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80284795"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687384"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Анализ приложений для ASP.NET основных приложений
 
@@ -44,7 +44,7 @@ ms.locfileid: "80284795"
 
 2. Выберите **проект** > **Добавить приложение Исследования Телеметрия**.
 
-3. Выберите **Начать**. Текст этого выбора может варьироваться в зависимости от вашей версии Visual Studio. Некоторые более ранние версии вместо этого используют кнопку **Start Free.**
+3. Выберите **Начало работы**. Текст этого выбора может варьироваться в зависимости от вашей версии Visual Studio. Некоторые более ранние версии вместо этого используют кнопку **Start Free.**
 
 4. Выберите свою подписку. Затем выберите**Регистр** **ресурсов** > .
 
@@ -162,11 +162,11 @@ ms.locfileid: "80284795"
     
 Альтернативно к `FullScript` использованию `ScriptBody` доступен начиная с SDK v2.14. Используйте это, если `<script>` вам нужно управлять тегом, чтобы установить политику безопасности содержимого:
 
-    ```cshtml
-        <script> // apply custom changes to this script tag.
-            @Html.Raw(JavaScriptSnippet.ScriptBody)
-        </script>
-    ```
+```cshtml
+ <script> // apply custom changes to this script tag.
+     @Html.Raw(JavaScriptSnippet.ScriptBody)
+ </script>
+```
 
 Имена `.cshtml` файлов, на которые упоминались ранее, взяты из шаблона приложения MVC по умолчанию. В конечном счете, если вы хотите должным образом включить мониторинг клиентской стороны для вашего приложения, фрагмент JavaScript должен отображаться в `<head>` разделе каждой страницы приложения, который вы хотите контролировать. Вы можете достичь этой цели для этого шаблона приложения, добавив фрагмент JavaScript. `_Layout.cshtml` 
 
@@ -460,7 +460,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 - Проверьте это внешнее пошаговый видео для [настройки Application Insights с помощью .NET Core и Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) с нуля.
 - Проверьте это внешнее пошаговое видео, чтобы [настроить Application Insights с помощью .NET Core и Visual Studio Code](https://youtu.be/ygGt84GDync) с нуля.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Исследуйте потоки пользователей,](../../azure-monitor/app/usage-flows.md) чтобы понять, как пользователи перемещаются через ваше приложение.
 * [Назначайте коллекцию моментальных снимков,](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) чтобы увидеть состояние исходного кода и переменных в момент отбрасывания.

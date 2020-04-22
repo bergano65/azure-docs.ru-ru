@@ -7,12 +7,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.author: robinsh
-ms.openlocfilehash: 7f7e957502419b766f7da63048e8168192ea20da
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 7b3dcfc51df7f0fe4291e9c5babccc1444ad32e9
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79284789"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730754"
 ---
 # <a name="communicate-with-your-iot-hub-by-using-the-amqp-protocol"></a>Общайтесь с вашим концентратором IoT с помощью протокола АМЗП
 
@@ -366,7 +369,7 @@ for result in results:
 
 * Ваш клиент должен иногда быть в состоянии обрабатывать ссылки перенаправления правильно. Чтобы понять такую операцию, ознакомьтесь с документацией клиента am-P.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать больше о Протоколе [AMQP v1.0 specification](https://www.amqp.org/sites/amqp.org/files/amqp.pdf)АМЗП, см.
 

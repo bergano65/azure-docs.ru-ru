@@ -4,12 +4,12 @@ description: Эта статья содержит сведения об ауте
 ms.subservice: metrics
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.openlocfilehash: f52776fc6b5f5f530cc368a2f148a2ff63fb5b40
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6b0e321747e0f84be5a75ab96749311ff0071e8d
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294624"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687419"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 
@@ -238,7 +238,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**Запрос URI**:\:https //management.azure.com/subscriptions/*«подписка-id»*(ресурсгруппы/*«ресурс-группа-имя»*/провайдеры */поставщики ресурсов-имен»*/*(ресурс-тип) «ресурс-имя»*/*{resource-name}*(провайдеры/microsoft.insights/metrics?metricnames»*»метрика» «метрики»*&время*запуска/конца»*&&*&* $filter»* }*
+**Запрос URI**:\:https //management.azure.com/subscriptions/*«подписка-id»*/resourceGroups/*«ресурс-группа-имя»*/провайдеры */поставщики ресурсов-имен»*/*(ресурс-тип) (ресурс-имя)*/*{resource-name}*/провайдеры/microsoft.insights/metrics?metricnames»*(метрика) «метрика»*&время*запуска/конца*&*{apiVersion}*&*&* $filter»
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -311,7 +311,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**Запрос**URI https://management.azure.com/subscriptions/: *«подписка-id»/ресурсныегруппы**/«ресурс-группа-имя»*/поставщики */ресурс-поставщик-имя»*/*(ресурс-тип)*/*(ресурс-имя)*/поставщики/microsoft.insights/metrics?metricnames»*(метрика)*&время времени»*(время запуска/конца)* *{aggreation}*&$filter"&*&* *&.* * apiVersion*
+**Запрос URI**:\/https: /management.azure.com/subscriptions/*«подписка-id»*/ресурсгруппы/«ресурс-группа-имя» /провайдеры */ресурс-поставщик-имя)*/*(ресурс-тип) (ресурс-имя)*/*{resource-name}*/провайдеры/microsoft.insights/metric s?metricnames *»&* timespan»*(время запуска/энд-время)*&$filter *»фильтр»*&интервал »*»времяГрейн»*&агрегации»*&* api-версии»*(apiVersion)* *{resource-group-name}*
 
 Например, чтобы вывести первые 3 API-интерфейса в убывающем порядке по величине показателя "Транзакции" в течение 5-минутного диапазона, где для GeoType установлено значение "Primary", используйте следующий запрос:
 
@@ -463,7 +463,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**Запрос URI**:`https://management.azure.com/subscriptions/\*{subscription-id}*/resourceGroups/*{resource-group-name}*/providers/*{resource-provider-namespace}*/*{resource-type}*/*{resource-name}*/providers/microsoft.insights/metrics?$filter=*{filter}*&api-version=*{apiVersion}*`
+**Запрос URI**:`https:\//management.azure.com/subscriptions/\*{subscription-id}*/resourceGroups/*{resource-group-name}*/providers/*{resource-provider-namespace}*/*{resource-type}*/*{resource-name}*/providers/microsoft.insights/metrics?$filter=*{filter}*&api-version=*{apiVersion}*`
 
 Например, запрос для получения точек данных метрики RunsSucceeded в заданном диапазоне времени с интервалом в 1 час будет выглядеть следующим образом.
 
@@ -716,7 +716,7 @@ Invoke-RestMethod -Uri $request `
     -Verbose
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Прочитайте [общие сведения о мониторинге](../../azure-monitor/overview.md).
 * Ознакомьтесь с разделом [Метрики, поддерживаемые Azure Monitor](metrics-supported.md).

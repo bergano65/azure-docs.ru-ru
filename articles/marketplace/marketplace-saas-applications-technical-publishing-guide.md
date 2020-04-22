@@ -1,19 +1,19 @@
 ---
-title: Техническое руководство по публикации SaaS-приложений в Azure Marketplace
+title: Azure Marketplace SaaS Приложения Издательский руководство
 description: Пошаговое руководство и контрольный список по публикации SaaS-приложений в Azure Marketplace
 services: Marketplace, Compute, Storage, Networking, Blockchain, Security, SaaS
-author: keithcharlie
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 07/09/2018
-ms.author: kevidal
-ms.openlocfilehash: 641297ea74a08dea163cf768b8e9b245348824a4
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.date: 04/15/2020
+ms.author: dsindona
+ms.openlocfilehash: 1bc2feb4d8f3f103802bd823c66cd3f54ac5d74a
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80544284"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687554"
 ---
 # <a name="saas-applications-offer-publishing-guide"></a>Руководство по публикации SaaS-приложений
 
@@ -110,8 +110,8 @@ ms.locfileid: "80544284"
 **Для мультитенантных приложений:**  
 
 Если вы уже используете Azure AD, сделайте следующее:
-1.  Зарегистрируйте приложение на портале Azure.
-2.  Включите функцию поддержки мультитенантности в Azure AD, чтобы получить пробную версию одним щелчком. Дополнительные сведения можно найти [здесь](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).  
+1.    Зарегистрируйте приложение на портале Azure.
+2.    Включите функцию поддержки мультитенантности в Azure AD, чтобы получить пробную версию одним щелчком. Дополнительные сведения можно найти [здесь](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).  
 
 Если вы впервые используете федеративный единый вход в Azure AD, сделайте следующее: 
 1.  Зарегистрируйте приложение на портале Azure.
@@ -141,12 +141,12 @@ ms.locfileid: "80544284"
 >[!Note]
 >Поставщики облачных решений (CSP) партнеров канала отказ в 100 000.  Пожалуйста, ознакомьтесь с информацией о компании [Cloud Solution Providers,](./cloud-solution-providers.md) чтобы получить дополнительную информацию о маркетинге вашего предложения по каналам партнеров Microsoft CSP.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если это еще не сделано,
 
-- [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
+* [Узнайте](https://azuremarketplace.microsoft.com/sell) больше о рынке.
 
-Если вы зарегистрированы и создаете предложение или работаете над существующим,
+Чтобы зарегистрироваться в Партнерс-центре, начните создавать новое предложение или работать над существующим:
 
-- [войдите на Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
-- Дополнительные сведения см. в статье [Предложение приложения Azure SaaS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-saas-offer).
+* [Войдите в Центр Партнеров,](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) чтобы создать или завершить свое предложение.
+* Для получения дополнительной информации смотрите [предложение приложения SaaS.](./partner-center-portal/create-new-saas-offer.md)

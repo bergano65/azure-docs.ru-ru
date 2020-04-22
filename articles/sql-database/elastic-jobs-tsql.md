@@ -11,12 +11,12 @@ ms.author: jaredmoo
 author: jaredmoo
 ms.reviewer: sstein
 ms.date: 02/07/2020
-ms.openlocfilehash: c228f3d6591cd72845101c00188f3fc4a55be644
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 740a42dc94cdfa8d5c5a91b32b58cbff4c1bcda0
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77087345"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687774"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -422,7 +422,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 |[sp_delete_target_group](#sp_delete_target_group)     |    Удаляет целевую группу.     |
 |[sp_add_target_group_member](#sp_add_target_group_member)     |    Добавляет базу данных или несколько баз данных в целевую группу.     |
 |[sp_delete_target_group_member](#sp_delete_target_group_member)     |     Удаляет элемент из целевой группы.    |
-|[sp_purge_jobhistory](#sp_purge_jobhistory)    |    Удаляет записи журнала для задания.     |
+|[sp_purge_jobhistory, хранимая процедура](#sp_purge_jobhistory)    |    Удаляет записи журнала для задания.     |
 
 
 
@@ -435,7 +435,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 #### <a name="syntax"></a>Синтаксис  
   
 
-```sql
+```syntaxsql
 [jobs].sp_add_job [ @job_name = ] 'job_name'  
     [ , [ @description = ] 'description' ]   
     [ , [ @enabled = ] enabled ]
@@ -483,7 +483,7 @@ schedule_end_time ** \@schedule_end_time schedule_end_time**
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 sp_add_job необходимо выполнять из базы данных агента заданий, указанной при создании этого агента.
 После выполнения sp_add_job для добавления задания можно выполнить sp_add_jobstep, чтобы добавить в задание шаги для выполнения действий. Исходный номер версии задания — 0. Он будет увеличен на 1 при добавлении первого шага.
 
@@ -500,7 +500,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 #### <a name="syntax"></a>Синтаксис
 
-```sql
+```syntaxsql
 [jobs].sp_update_job [ @job_name = ] 'job_name'  
     [ , [ @new_name = ] 'new_name' ]
     [ , [ @description = ] 'description' ]   
@@ -546,7 +546,7 @@ schedule_start_time ** \@schedule_start_time schedule_start_time**
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 После выполнения sp_add_job для добавления задания можно выполнить sp_add_jobstep, чтобы добавить в задание шаги для выполнения действий. Исходный номер версии задания — 0. Он будет увеличен на 1 при добавлении первого шага.
 
 #### <a name="permissions"></a>Разрешения
@@ -563,7 +563,7 @@ schedule_start_time ** \@schedule_start_time schedule_start_time**
 
 #### <a name="syntax"></a>Синтаксис
 
-```sql
+```syntaxsql
 [jobs].sp_delete_job [ @job_name = ] 'job_name'
     [ , [ @force = ] force ]
 ```
@@ -578,7 +578,7 @@ schedule_start_time ** \@schedule_start_time schedule_start_time**
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 Журнал заданий автоматически удаляется вместе с заданием.
 
 #### <a name="permissions"></a>Разрешения
@@ -596,7 +596,7 @@ schedule_start_time ** \@schedule_start_time schedule_start_time**
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_add_jobstep [ @job_name = ] 'job_name'   
      [ , [ @step_id = ] step_id ]   
      [ , [ @step_name = ] step_name ]   
@@ -703,7 +703,7 @@ step_name ** \@step_name step_name**
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 При успешном выполнении sp_add_jobstep номер текущей версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия. Если идет выполнение задания, то оно не будет включать в себя новый шаг.
 
 #### <a name="permissions"></a>Разрешения
@@ -721,7 +721,7 @@ step_name ** \@step_name step_name**
 
 #### <a name="syntax"></a>Синтаксис
 
-```sql
+```syntaxsql
 [jobs].sp_update_jobstep [ @job_name = ] 'job_name'   
      [ , [ @step_id = ] step_id ]   
      [ , [ @step_name = ] 'step_name' ]   
@@ -827,7 +827,7 @@ new_id ** \@** new_id
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 Какие-либо текущие выполнения задания не затрагиваются. При успешном выполнении sp_update_jobstep номер версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия.
 
 #### <a name="permissions"></a>Разрешения
@@ -847,7 +847,7 @@ new_id ** \@** new_id
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_delete_jobstep [ @job_name = ] 'job_name'   
      [ , [ @step_id = ] step_id ]
      [ , [ @step_name = ] 'step_name' ]   
@@ -870,7 +870,7 @@ new_id ** \@** new_id
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 Какие-либо текущие выполнения задания не затрагиваются. При успешном выполнении sp_update_jobstep номер версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия.
 
 Другие шаги задания будут автоматически перенумерованы, чтобы заполнить пропуск из-за удаленного шага задания.
@@ -893,7 +893,7 @@ new_id ** \@** new_id
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_start_job [ @job_name = ] 'job_name'   
      [ , [ @job_execution_id = ] job_execution_id OUTPUT ]   
 ```
@@ -908,7 +908,7 @@ new_id ** \@** new_id
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 Нет.
  
 #### <a name="permissions"></a>Разрешения
@@ -924,7 +924,7 @@ new_id ** \@** new_id
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_stop_job [ @job_execution_id = ] ' job_execution_id '
 ```
 
@@ -936,7 +936,7 @@ new_id ** \@** new_id
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 Нет.
  
 #### <a name="permissions"></a>Разрешения
@@ -953,7 +953,7 @@ new_id ** \@** new_id
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_add_target_group [ @target_group_name = ] 'target_group_name'   
      [ , [ @target_group_id = ] target_group_id OUTPUT ]
 ```
@@ -968,7 +968,7 @@ new_id ** \@** new_id
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 С помощью целевых групп можно легко нацелить задание на коллекцию баз данных.
 
 #### <a name="permissions"></a>Разрешения
@@ -984,7 +984,7 @@ new_id ** \@** new_id
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_delete_target_group [ @target_group_name = ] 'target_group_name'
 ```
 
@@ -996,7 +996,7 @@ new_id ** \@** new_id
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 Нет.
 
 #### <a name="permissions"></a>Разрешения
@@ -1011,7 +1011,7 @@ new_id ** \@** new_id
 
 #### <a name="syntax"></a>Синтаксис
 
-```sql
+```syntaxsql
 [jobs].sp_add_target_group_member [ @target_group_name = ] 'target_group_name'
          [ @membership_type = ] 'membership_type' ]   
         [ , [ @target_type = ] 'target_type' ]   
@@ -1052,7 +1052,7 @@ Membership_type ** \@** 'membership_type'
 Целевой идентификационный номер, который назначается элементу целевой группы при его успешном создании и добавлении в целевую группу. target_id является выходной переменой типа uniqueidentifier, значение по умолчанию — NULL.
 Значения кода возврата: 0 (успех) или 1 (сбой).
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 Если сервер Базы данных SQL или эластичный пул добавлен в целевую группу, то задание выполняется для всех баз данных на этом сервере Базы данных SQL или в этом эластичном пуле.
 
 #### <a name="permissions"></a>Разрешения
@@ -1101,7 +1101,7 @@ GO
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_delete_target_group_member [ @target_group_name = ] 'target_group_name'
         [ , [ @target_id = ] 'target_id']
 ```
@@ -1117,7 +1117,7 @@ GO
 #### <a name="return-code-values"></a>Значения кода возврата
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>Примечания
 С помощью целевых групп можно легко нацелить задание на коллекцию баз данных.
 
 #### <a name="permissions"></a>Разрешения
@@ -1145,14 +1145,14 @@ EXEC jobs.sp_delete_target_group_member
 GO
 ```
 
-### <a name="sp_purge_jobhistory"></a><a name="sp_purge_jobhistory"></a>sp_purge_jobhistory 
+### <a name="sp_purge_jobhistory"></a><a name="sp_purge_jobhistory"></a>sp_purge_jobhistory, хранимая процедура
 
 Удаляет записи журнала для задания.
 
 #### <a name="syntax"></a>Синтаксис
 
 
-```sql
+```syntaxsql
 [jobs].sp_purge_jobhistory [ @job_name = ] 'job_name'   
       [ , [ @job_id = ] job_id ]
       [ , [ @oldest_date = ] oldest_date []
@@ -1195,7 +1195,7 @@ GO
 Ниже приведены представления, доступные в [базе данных заданий](sql-database-job-automation-overview.md#job-database).
 
 
-|Представление  |Описание  |
+|Просмотр  |Описание  |
 |---------|---------|
 |[job_executions](#job_executions-view)     |  Отображает журнал выполнения задания.      |
 |[Рабочих мест](#jobs-view)     |   Отображает все задания.      |
@@ -1345,7 +1345,7 @@ GO
  - ![Значок ссылки на раздел](https://docs.microsoft.com/sql/database-engine/configure-windows/media/topic-link.gif "Значок ссылки на раздел") [Синтаксические обозначения в Transact-SQL](https://docs.microsoft.com/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создавайте и управляйте эластичными заданиями с помощью PowerShell](elastic-jobs-powershell.md)
 - [Авторизация и разрешения для SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/authorization-and-permissions-in-sql-server)

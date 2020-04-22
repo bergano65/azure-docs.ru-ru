@@ -3,20 +3,25 @@ title: Исследования приложений Azure переопреде�
 description: Изменение конечных точек приложения Azure Monitor Для таких регионов, как Azure Government, измените конечные точки приложения Azure Monitor.
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: b4ab05c7ee815b385ffb2d1ff9e621063d744dd7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b43bd13c73f77c6292e2062db88d68a20e5bf480
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80298316"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81729527"
 ---
 # <a name="application-insights-overriding-default-endpoints"></a>Анализ приложений переопределяет конечные точки по умолчанию
 
 Для отправки данных из Application Insights в определенные регионы необходимо переопределить адреса конечных точек по умолчанию. Каждый SDK требует несколько различных изменений, все из которых описаны в этой статье. Эти изменения требуют корректировки кода выборки и `QuickPulse_Endpoint_Address`замены значений заполнителя для, `TelemetryChannel_Endpoint_Address`и `Profile_Query_Endpoint_address` с фактическими адресами конечных точек для вашего конкретного региона. Конец этой статьи содержит ссылки на конечные адреса для регионов, где требуется эта конфигурация.
 
+> [!NOTE]
+> [Строки подключения](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) являются новым предпочтительным методом настройки пользовательских конечных точек в Application Insights.
+
+---
+
 ## <a name="sdk-code-changes"></a>Изменения кода SDK
 
-### <a name="net-with-applicationinsightsconfig"></a>.NET с applicationinsights.config
+# <a name="net"></a>[.NET](#tab/net)
 
 > [!NOTE]
 > Файл applicationinsights.config автоматически перезаписываются в любое время выполнения обновления SDK. После выполнения обновления SDK обязательно введите определенные значения конечной точки региона.
@@ -41,7 +46,7 @@ ms.locfileid: "80298316"
 </ApplicationInsights>
 ```
 
-### <a name="aspnet-core"></a>ASP.NET Core
+# <a name="net-core"></a>[.NET Core](#tab/netcore)
 
 Изменяйте файл appsettings.json в проекте следующим образом, чтобы настроить основную конечную точку:
 
@@ -68,6 +73,8 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPuls
 
     //Place in the ConfigureServices method. Place this before services.AddApplicationInsightsTelemetry("instrumentation key"); if it's present
 ```
+
+# <a name="azure-functions"></a>[Функции Azure](#tab/functions)
 
 ### <a name="azure-functions-v2x"></a>Функции Azure v2.x
 
@@ -120,7 +127,7 @@ namespace Example
 }
 ```
 
-### <a name="java"></a>Java
+# <a name="java"></a>[Java](#tab/java)
 
 Измените файл applicationinsights.xml, чтобы изменить адрес конечных точек по умолчанию.
 
@@ -155,7 +162,7 @@ namespace Example
 azure.application-insights.channel.in-process.endpoint-address= TelemetryChannel_Endpoint_Address
 ```
 
-### <a name="nodejs"></a>Node.js
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
 ```javascript
 var appInsights = require("applicationinsights");
@@ -174,7 +181,7 @@ Profile Endpoint: "Profile_Query_Endpoint_address"
 Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 ```
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascript"></a>[JavaScript](#tab/js)
 
 ```javascript
 <script type="text/javascript">
@@ -187,9 +194,11 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 </script>
 ```
 
-### <a name="python"></a>Python
+# <a name="python"></a>[Python](#tab/python)
 
 Для получения рекомендаций по изменению точки приема для Opencensus-питон SDK обратитесь к [opencensus-питон репо.](https://github.com/census-instrumentation/opencensus-python/blob/af284a92b80bcbaf5db53e7e0813f96691b4c696/contrib/opencensus-ext-azure/opencensus/ext/azure/common/__init__.py)
+
+---
 
 ## <a name="regions-that-require-endpoint-modification"></a>Регионы, требующие модификации конечных точек
 
@@ -215,7 +224,7 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 > [!NOTE]
 > Мониторинг на основе бескодатого агента/расширения для служб приложений Azure в **настоящее время не поддерживается** в этих регионах. Как только эта функциональность станет доступна, эта статья будет обновлена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы узнать больше о пользовательских модификациях для правительства Azure, обратитесь к подробным рекомендациям по [мониторингу и управлению Azure.](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights)
 - Чтобы узнать больше о Azure China, обратитесь в [журнал Azure China Playbook.](https://docs.microsoft.com/azure/china/)

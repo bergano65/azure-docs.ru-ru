@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
-ms.openlocfilehash: 9d4d82472664900c96b77b31740573d0463465b8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d85e0e967dd802a77ccbc11b884d7a9f2891524d
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75911911"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81688097"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code
 
@@ -48,7 +48,7 @@ ms.locfileid: "75911911"
 * Активная подписка Azure.
 * Центр Интернета вещей Azure в подписке;
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Инструменты Azure IoT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [откройте эту ссылку в Visual Studio Code.](vscode:extension/vsciot-vscode.azure-iot-tools)
+* [Лазурный IoT Инструменты для VS кода](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или скопировать`vscode:extension/vsciot-vscode.azure-iot-tools`этот URL и вставить его в окно браузера: .
 
 ## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
 
@@ -97,7 +97,7 @@ ms.locfileid: "75911911"
 
 3. Результаты будут отображаться в представлении **OUTPUT** > **Azure IoT Hub.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнали, как использовать расширение средств Интернета вещей Azure для Visual Studio Code с различными параметрами управления.
 

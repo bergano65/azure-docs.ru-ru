@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: e83c70424c131e5324192b07e65321d63bf06e2e
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: 2c0cd47acbd4639ff5eff2af78dcebdfc26270a7
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80674219"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730693"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
@@ -25,8 +25,8 @@ ms.locfileid: "80674219"
 
 Модуль IoT Edge — это контейнер, совместимый с Docker, который работает на устройстве IoT Edge.
 
-- Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](https://aka.ms/UnderstandAzureIoTEdgemodules).
-- Чтобы начать работу с разработкой модуля IoT Edge, [см.](https://aka.ms/DevelopyourownIoTEdgemodules)
+- Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](https://docs.microsoft.com/azure/iot-edge/iot-edge-modules).
+- Чтобы начать работу с разработкой модуля IoT Edge, [см.](https://docs.microsoft.com/azure/iot-edge/module-development)
 
 ## <a name="technical-requirements"></a>Технические требования
 
@@ -38,15 +38,15 @@ ms.locfileid: "80674219"
 
 #### <a name="tier-1-platforms-supported-by-iot-edge"></a>Платформы уровня 1, поддерживаемые IoT Edge
 
-Модуль должен поддерживать все платформы Уровня 1, поддерживаемые поддержкой IoT Edge (как записано в [поддержке Azure IoT Edge).](https://aka.ms/AzureIoTEdgesupport) Мы рекомендуем использовать именно этот вариант, так как он обеспечивает максимальное удобство для клиентов. Модули, отвечающие этим критериям, будут продемонстрированы. Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
+Модуль должен поддерживать все платформы Уровня 1, поддерживаемые поддержкой IoT Edge (как записано в [поддержке Azure IoT Edge).](https://docs.microsoft.com/azure/iot-edge/support) Мы рекомендуем использовать именно этот вариант, так как он обеспечивает максимальное удобство для клиентов. Модули, отвечающие этим критериям, будут продемонстрированы. Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
 
-- Предоставьте последний тег и тег версии (например, 1.0.1), которые являются явнотегами, построенными с помощью [gitHub Manifest-инструмента.](https://aka.ms/GitHubmanifest-tool)
+- Предоставьте последний тег и тег версии (например, 1.0.1), которые являются явнотегами, построенными с помощью [gitHub Manifest-инструмента.](https://github.com/estesp/manifest-tool)
 
-- Используйте вкладку о включении предложения в [Partner Center,](https://partner.microsoft.com/dashboard/commercial-marketplace) чтобы добавить ссылку в разделе **Полезные ссылки** на [каталог сертифицированных устройств Azure IoT Edge.](https://catalog.azureiotsolutions.com/) Можно использовать ссылку https://aka.ms/iot-edge-certified на перенаправление, которая разрешается в [каталоге устройств Azure IoT Edge.](https://catalog.azureiotsolutions.com/)
+- Используйте вкладку о включении предложения в [Partner Center,](https://partner.microsoft.com/dashboard/commercial-marketplace) чтобы добавить ссылку в разделе **Полезные ссылки** на [каталог сертифицированных устройств Azure IoT Edge.](https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}/)
 
 #### <a name="a-subset-of-tier-1-platforms-supported-by-iot-edge"></a>Группа платформ уровня 1, поддерживаемых IoT Edge
 
-Модуль должен поддерживать подмножество (по крайней мере одну) платформ Tier 1, поддерживаемых поддержкой IoT Edge (записано в [поддержке Azure IoT Edge).](https://aka.ms/AzureIoTEdgesupport) Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
+Модуль должен поддерживать подмножество (по крайней мере одну) платформ Tier 1, поддерживаемых поддержкой IoT Edge (записано в [поддержке Azure IoT Edge).](https://docs.microsoft.com/azure/iot-edge/support) Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
 
 - Предоставьте последний тег и тег версии (например, 1.0.1), которые являются явнотегами, построенными с [помощью манифеста](https://github.com/estesp/manifest-tool) GitHub, если поддерживается более одной платформы. Теги манифеста необязательны, если поддерживается только одна платформа.
 - Используйте вкладку о включении предложения в [Partner Center,](https://partner.microsoft.com/dashboard/commercial-marketplace) чтобы добавить ссылку в разделе **Полезные ссылки** по крайней мере на одно устройство IoT Edge из [каталога сертифицированных устройств Azure IoT Edge.](https://catalog.azureiotsolutions.com/)
@@ -144,6 +144,6 @@ ServerIPAddress = <MY_SERVER_IP_ADDRESS>
 
 Чтобы загрузить модуль IoT Edge в Azure Marketplace, сначала необходимо разместить его в [реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/) (ACR). Модуль должен включать все теги, которые вы хотите опубликовать, включая теги изображений, на которые ссылается явное тег. Для получения дополнительной информации см. [Create an Azure container registry and push a container image](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-acr)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Создание предложения модуля IoT Edge](https://aka.ms/AzureCreateIoT)
+- [Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-iot-edge-module-creation)

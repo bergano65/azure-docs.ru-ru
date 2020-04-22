@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: af99f369245d6006d0d4784e572020b820e406a3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 50028e81c4ca130aa3266c164a431dc935a271cb
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71266042"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730038"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-cassandra-api-account-using-striim"></a>Перенос данных в учетную запись API Azure Cosmos Cassandra С использованием Striim
 
@@ -22,13 +22,13 @@ ms.locfileid: "71266042"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Если у вас нет [подписки Azure,](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) перед началом.
+* Если у вас еще нет [подписки Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 
 * База данных Oracle работает на месте с некоторыми данными в нем.
 
 ## <a name="deploy-the-striim-marketplace-solution"></a>Развертывание решения для рынка Striim
 
-1. Войти на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Выберите **Создать ресурс** и поиск **Striim** на рынке Azure. Выберите первый вариант и **создайте**.
 
@@ -155,7 +155,7 @@ ms.locfileid: "71266042"
 
    ![Подключение к целевому устройству](./media/cosmosdb-cassandra-api-migrate-data-striim/connect-to-target.png)
 
-1. Перед настройкой цели убедитесь, что вы добавили [корневой сертификат Балтимора в среду Java Striim.](/azure/java/java-sdk-add-certificate-ca-store#to-add-a-root-certificate-to-the-cacerts-store)
+1. Перед настройкой цели убедитесь, что вы добавили [корневой сертификат Балтимора в среду Java Striim.](/azure/developer/java/sdk/java-sdk-add-certificate-ca-store#to-add-a-root-certificate-to-the-cacerts-store)
 
 1. Введите свойства конфигурации в экземпляре Azure Cosmos DB и выберите **Сохранение** для продолжения. Вот ключевые параметры, которые следует отметить:
 
@@ -192,7 +192,7 @@ ms.locfileid: "71266042"
 
 Используя решение Striim в Azure, вы можете непрерывно переносить данные в Azure Cosmos DB из различных источников, таких как Oracle, Cassandra, MongoDB, и различные другие в Azure Cosmos DB. Чтобы узнать больше, пожалуйста, посетите [веб-сайт Striim](https://www.striim.com/), [скачать бесплатную 30-дневную пробную версию Striim](https://go2.striim.com/download-free-trial), и для любых вопросов при настройке пути миграции со Striim, файл [запрос на поддержку.](https://go2.striim.com/request-support-striim)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Если вы переносите данные на API Azure Cosmos DB S'L, узнайте, как перенести данные в [учетную запись Cassandra API с помощью Striim](cosmosdb-sql-api-migrate-data-striim.md)
 

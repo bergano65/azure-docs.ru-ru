@@ -3,14 +3,14 @@ title: Настройка среды разработки Windows
 description: Установите среду выполнения, пакет SDK и инструменты и создайте локальный кластер разработки. После завершения установки вы сможете создавать приложения на базе Windows.
 author: peterpogorski
 ms.topic: conceptual
-ms.date: 03/02/2020
+ms.date: 04/20/2020
 ms.custom: sfrev
-ms.openlocfilehash: f08c6b0675475b4e15ce6db3a9dbe0e2863b9ddb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1b43c838537e46ffbaf6c4adcfb117f6718bd046
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78252765"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81731756"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
@@ -33,7 +33,7 @@ ms.locfileid: "78252765"
 * Windows 8 и Windows 8.1;
 * Windows Server 2012 R2
 * Windows Server 2016
-* Windows 10
+* Windows 10
 
 > [!NOTE]
 > Поддержка Windows 7:
@@ -68,8 +68,8 @@ ms.locfileid: "78252765"
 
 Текущие версии:
 
-* Сервис Ткань SDK и инструменты 4.0.470
-* Обслуживание Ткань время выполнения 7.0.470
+* Сервис Ткань SDK и инструменты 4.1.409
+* Обслуживание Ткань время выполнения 7.1.409
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).
 
@@ -88,7 +88,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 
 [Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 

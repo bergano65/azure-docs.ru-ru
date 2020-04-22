@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: c5fb585d0eb6aeb7866c2ab04b324ee31fe903ca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c804cc8942a40e2f30c980636194daa82e0fb0e8
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77658055"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687327"
 ---
 # <a name="workbook-text-parameters"></a>Параметры текста в трудовой книжке
 
@@ -59,6 +59,8 @@ ms.locfileid: "77658055"
 
     ![Изображение, показывающее параметр текста, на который ссылаются в КЗЛ](./media/workbooks-text/text-reference.png)
 
+> [!NOTE]
+> В приведенном `{SlowRequestThreshold}` выше примере представляет собой величину значения. Если вы задавали запрос на `{ComputerName}` строку, как это необходимо изменить ваш `"{ComputerName}"` запрос Kusto, чтобы добавить котировки для того, чтобы поле параметра приняло вход без кавычек.
 
 ## <a name="setting-default-values"></a>Настройка значений по умолчанию
 1. Начните с пустой трудовой книжки в режиме рерит.
@@ -83,7 +85,7 @@ ms.locfileid: "77658055"
 > [!NOTE]
 > Хотя этот пример запрашивает данные Application Insights, этот подход может быть использован для любого источника данных, основанного на журнале, - Log Analytics, Azure Resource Graph и т.д.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Начать](workbooks-visualizations.md) узнавать больше о рабочих книгах много богатых вариантов визуализации.
 * [Контролируйте](workbooks-access-control.md) и делитесь доступом к ресурсам вашей трудовой книжки.

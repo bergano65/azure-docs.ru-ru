@@ -8,12 +8,12 @@ ms.author: spelluru
 ms.date: 03/31/2020
 ms.topic: article
 ms.service: event-hubs
-ms.openlocfilehash: d90bf8efab28624672dcedb5bf53d45052dd9123
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: b4d9dc51451a06b2c87ddce78547655b51c6fabd
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81605125"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81729630"
 ---
 # <a name="apache-kafka-developer-guide-for-azure-event-hubs"></a>Руководство разработчиков Apache Kafka для центров событий Azure
 В этой статье содержатся ссылки на статьи, описывающие, как интегрировать приложения Apache Kafka с концентраторами событий Azure. 
@@ -75,9 +75,9 @@ ms.locfileid: "81605125"
 | [Подключение Apache Flink к концентратору событий](event-hubs-kafka-flink-tutorial.md) | Показывает, как подключить Apache Flink к центру событий без изменения клиентских протоколов или запуска собственных кластеров. |
 | [Интеграция Apache Kafka Connect с центром событий (Предварительный просмотр)](event-hubs-kafka-connect-tutorial.md) | Прогулки вас через интеграцию Kafka Connect с концентратором событий и развертывание основных разъемов FileStreamSource и FileStreamSink. |
 | [Подключение Akka Streams к концентратору событий](event-hubs-kafka-akka-streams-tutorial.md) | Показывает, как подключить Akka Streams к концентратору событий, не меняя клиентов протокола и не запуская собственные кластеры. |
-| [Используйте стартер Spring Boot для Apache Kafka с концентраторами событий Azure](/azure/java/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub) | Демонстрирует, как настроить на основе Java Весенний облачный поток Binder, созданный с помощью Инициала Весной загрузки, чтобы использовать Apache Kafka с azure Event Hubs. |
+| [Используйте стартер Spring Boot для Apache Kafka с концентраторами событий Azure](/azure/developer/java/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub) | Демонстрирует, как настроить на основе Java Весенний облачный поток Binder, созданный с помощью Инициала Весной загрузки, чтобы использовать Apache Kafka с azure Event Hubs. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Просмотрите образцы в GitHub репо [лазурно-событие-hubs-для-кафки](https://github.com/Azure/azure-event-hubs-for-kafka) под quickstart и учебники папки.
 
 Кроме того, см.

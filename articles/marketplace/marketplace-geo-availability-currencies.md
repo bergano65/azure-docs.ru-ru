@@ -1,5 +1,5 @@
 ---
-title: Географическая доступность и валютная поддержка Azure
+title: Географическая доступность и валютная поддержка для коммерческого рынка Лазурный рынок
 description: Географическая доступность на коммерческом рынке
 author: qianw211
 ms.service: marketplace
@@ -7,14 +7,14 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/29/2020
 ms.author: dsindona
-ms.openlocfilehash: 82c3ed79bbcc566a91f9f249ec2df747bbc01cac
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 83906e6270ed41c2ea8f489c5a5312d32a565a29
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81262015"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687586"
 ---
-# <a name="geographic-availability-and-currency-support"></a>Географическая доступность и валютная поддержка
+# <a name="geographic-availability-and-currency-support-for-commercial-marketplace"></a>Географическая доступность и валютная поддержка для коммерческого рынка
 
 Предложения на коммерческом рынке можно приобрести в 141 географии, как это определено по счету клиента, а транзакции могут быть завершены в 17 валютах. В таблице ниже перечислены каждое поддерживаемое географическое местоположение, его [двузначный альфа-код ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)и назначенная валюта.
 
@@ -48,7 +48,7 @@ ms.locfileid: "81262015"
 | Кабо-Верде                          | CV        | USD          |
 | Каймановы о-ва                      | KY        | USD          |
 | Чили                               | CL        | USD          |
-| Китай\**                            | CN        | Н/Д          |
+| Китай\**                            | CN        | Недоступно          |
 | Колумбия                            | CO        | USD          |
 | Коста-Рика                          | CR        | USD          |
 | Кот д'Ивуар                       | CI        | USD          |

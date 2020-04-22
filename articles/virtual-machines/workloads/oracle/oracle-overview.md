@@ -3,8 +3,7 @@ title: Решения Oracle в Microsoft Azure | Документация Ма�
 description: Узнайте о вариантах развертывания приложений и решений Oracle в Microsoft Azure, включая работу полностью на инфраструктуре Azure или использование кросс-облачного подключения с Oracle Cloud Infrastructure (OCI).
 services: virtual-machines-linux
 documentationcenter: ''
-author: mimckitt
-manager: gwallace
+author: BorisB2015
 tags: azure-resource-management
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -12,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/16/2020
-ms.author: mimckitt
-ms.openlocfilehash: 8c266986ac795be48f3a8439afc5ae4752ff3ed7
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.author: borisb
+ms.openlocfilehash: e6a2e7c646782f5ad874124e4a86809ed1d79eea
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81263256"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687398"
 ---
 # <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Обзор приложений и решений Oracle в Azure
 
@@ -89,7 +88,7 @@ ms.locfileid: "81263256"
 
 Развертывание приложений Oracle в Azure основано на модели «принесите свою собственную лицензию». Предполагается, что вы имеете надлежащую лицензию на использование программного обеспечения Oracle и что у вас есть текущее соглашение о поддержке с Oracle. Oracle гарантирует перемещение лицензий из локальной среды в Azure. Смотрите [часто задаваемые вопросы](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html)Oracle-Azure .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о развертывании [изображений Oracle VM](oracle-vm-solutions.md) в инфраструктуре Azure.
 

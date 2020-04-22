@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/10/2020
-ms.openlocfilehash: 161fd9276427db0d0d7d56da1bfc0bb8ccf52a52
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: d5626f00e9627338349d9b579bcf26256148b551
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536664"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81731268"
 ---
 # <a name="create-an-azure-virtual-machine-offer"></a>Создайте предложение виртуальной машины Azure
 
@@ -32,21 +32,21 @@ ms.locfileid: "81536664"
 - Получите высококачественные интересы с этих рынков
 - Получите продвижение своих услуг в группах microsoft field and telesales
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 
-Если вы еще не сделали этого, просмотрите [руководство по публикации виртуальной машины](https://aka.ms/Virtualmachineofferpublishingguide) и этот материал виртуальной машины Azure:
+Если вы еще не сделали этого, просмотрите [руководство по публикации виртуальной машины](https://docs.microsoft.com/azure/marketplace/marketplace-virtual-machines) и этот материал виртуальной машины Azure:
 
 - Путеводители по кикстарту
-  - [Шаблоны Azure кикстарт](https://azure.microsoft.com/resources/templates/)
+  - [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/)
   - [Шаблоны быстрого запуска Azure в GitHub](https://github.com/azure/azure-quickstart-templates)
 - Учебники
-  - [Виртуальные машины Linux](https://aka.ms/LinuxVMtutorial)
-  - [Виртуальные машины Windows](https://aka.ms/windowsvms)
+  - [Виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)
+  - [Виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm)
 - Примеры
-  - [Образцы Azure CLI для Linux VMs](https://aka.ms/linuxclisamples)
-  - [Azure PowerShell для Linux VMs](https://aka.ms/linuxpowershellsamples)
-  - [Образцы Azure CLI для Windows VMs](https://aka.ms/windowsclisamples)
-  - [Azure PowerShell для Вымочек для Windows](https://aka.ms/windowspowershellvmsamples)
+  - [Образцы Azure CLI для Linux VMs](https://docs.microsoft.com/azure/virtual-machines/linux/cli-samples)
+  - [Azure PowerShell для Linux VMs](https://docs.microsoft.com/azure/virtual-machines/linux/powershell-samples)
+  - [Образцы Azure CLI для Windows VMs](https://docs.microsoft.com/azure/virtual-machines/windows/cli-samples)
+  - [Azure PowerShell для Вымочек для Windows](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-quick)
 
 ### <a name="fundamentals-in-technical-knowledge"></a>Основы технических знаний
 
@@ -62,11 +62,11 @@ ms.locfileid: "81536664"
 
 Прежде чем создать предложение виртуальной машины Azure, вы должны иметь коммерческий счет в Партнерс-центре. Если вы еще не создали его, [см.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account)
 
-1. Войдите в [Центр Партнеров,](https://partner.microsoft.com/dashboard/home)а затем из верхнего меню выберите **панель мониторинга.**
+1. Войти в [Партнерский центр,](https://partner.microsoft.com/dashboard/home)а затем из верхнего меню, выберите **Dashboard**.
 2. В баре left-nav выберите **Коммерческий рынок**, затем **Обзор**.
 3. На странице **Обзор** выберите **новое предложение,** затем **Виртуальная машина Azure.** Появляется диалоговая коробка **Нового предложения.**
 
-![Иллюстрирует страницу Обзор в Партнерс-центре с новой кнопкой предложения и Azure Виртуальная машина предлагает выбран.](media/avm-create7.png)
+    ![Иллюстрирует страницу Обзор в Партнерс-центре с новой кнопкой предложения и Azure Виртуальная машина предлагает выбран.](media/avm-create7.png)
 
 ## <a name="offer-id-and-alias"></a>Идентификатор предложения и псевдоним
 
@@ -91,7 +91,7 @@ ms.locfileid: "81536664"
 Дополнительные ресурсы тест-драйва:
 
 - [Технические рекомендации](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
-- [Рекомендации по маркетингу](https://aka.ms/TestDriveMarketingBestPractices)
+- [Рекомендации по маркетингу](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/marketing-and-best-practices)
 - [Обзор тест-драйвов](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf) PDF (убедитесь, что ваш всплывающий блокировщик выключен).
 
 ### <a name="lead-management"></a>Управление потенциальными клиентами
@@ -99,12 +99,12 @@ ms.locfileid: "81536664"
 При публикации вашего предложения на коммерческом рынке с Партнерским центром подключите его к системе управления взаимоотношениями с клиентами (CRM). Это позволяет получать контактную информацию клиента, как только кто-то проявляет интерес или использует ваш продукт. Подключение к CRM необходимо, если вы включите **тест-драйв** (см. предыдущий раздел), в противном случае это необязательно.
 
 1. Выберите назначение интереса, в которое будут отправляться данные о потенциальных клиентах. Партнерский центр поддерживает следующие CRM-системы:
-    - [Динамика 365](https://aka.ms/Dyn365LeadMgmt) для привлечения клиентов
-    - [Marketo](https://aka.ms/LeadMgmtMarketo)
-    - [Salesforce](https://aka.ms/LeadMgmtSalesforce)
+    - [Динамика 365](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics) для привлечения клиентов
+    - [Marketo](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-marketo)
+    - [Salesforce](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce)
 
     > [!NOTE]
-    > Если система CRM не указана выше, используйте [таблицу Azure](https://aka.ms/AzureTableLeadMgmt) или [конечную точку Https](https://aka.ms/LeadMgmtHTTPS) для хранения данных о свинце клиента. Затем экспортируйте данные в crM-систему.
+    > Если система CRM не указана выше, используйте [таблицу Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-azure-table) или [конечную точку Https](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-https) для хранения данных о свинце клиента. Затем экспортируйте данные в crM-систему.
 
 2. Подключите ваше предложение к месту назначения при публикации в Partner Center.
 3. Подтвердите, что подключение к месту назначения должно быть настроено правильно. После публикации в Partner Center мы проверяем подключение и отправим вам тестовый свинец. При просмотре предложения до его начала в прямом эфире можно также протестировать соединение с ведущими, пытаясь развернуть предложение самостоятельно в среде предварительного просмотра.
@@ -174,7 +174,7 @@ ms.locfileid: "81536664"
 
 ### <a name="marketplace-details"></a>Сведения о рынке
 
-#### <a name="name"></a>name
+#### <a name="name"></a>Имя
 
 Имя, которое вы вводите здесь, отображается клиентам как название вашего предложения. Это поле предварительно заполнено текстом, который вы ввели в поле **псевдонима Offer** при создании предложения. Это имя можно изменить.
 
@@ -239,7 +239,7 @@ ms.locfileid: "81536664"
 
 Предоставьте контактную информацию партнерам Майкрософт для использования при открытии билета поддержки. Это не будет перечислено на рынке.
 
-- name
+- Имя
 - Email
 - Номер телефона
 
@@ -247,7 +247,7 @@ ms.locfileid: "81536664"
 
 Предоставьте корпорации Майкрософт контактную информацию, когда есть проблемы с вашим предложением, включая проблемы с сертификацией. Это не будет перечислено на рынке.
 
-- name
+- Имя
 - Email
 - Номер телефона
 
@@ -274,7 +274,7 @@ ms.locfileid: "81536664"
 
 Добавьте до пяти видео, которые демонстрируют ваше предложение. Они должны быть размещены на внешнем видео-сервисе. Введите имя каждого видео, веб-адрес и миниатюру PNG изображение видео на 1280 х 720 пикселей в размере.
 
-Для получения дополнительных ресурсов листинга рынка, [см. Лучшие практики для рынка предлагают списки](https://aka.ms/LdMgmtOfferListingBestPractices).
+Для получения дополнительных ресурсов листинга рынка, [см. Лучшие практики для рынка предлагают списки](https://docs.microsoft.com/azure/marketplace/gtm-offer-listing-best-practices).
 
 Выберите **проект Сохранить** перед продолжением.
 
@@ -554,4 +554,4 @@ ms.locfileid: "81536664"
 
 ## <a name="next-step"></a>Следующий шаг
 
-- [Обновление существующего предложения на коммерческом рынке](https://aka.ms/UpdateOfferCM)
+- [Обновление существующего предложения на коммерческом рынке](https://docs.microsoft.com/azure/marketplace/partner-center-portal/update-existing-offer)

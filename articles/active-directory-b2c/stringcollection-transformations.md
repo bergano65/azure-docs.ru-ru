@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/27/2020
+ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6aea537ebff4ae61e00861e6cafe742a7feb165e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: cac7e6feb632456b63b97ead057f9ecaf49322ea
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78186783"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81729721"
 ---
 # <a name="stringcollection-claims-transformations"></a>Преобразования утверждений StringCollection
 
@@ -28,7 +28,7 @@ ms.locfileid: "78186783"
 
 Добавляет строку претензии к новым уникальным значениям stringsCollection претензии.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | item | строка | Тип ClaimType, добавляемый к исходящему утверждению. |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
@@ -62,7 +62,7 @@ ms.locfileid: "78186783"
 
 Добавляет параметр строки к новой уникальной заявке строки значенийCollection.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
 | InputParameter | item | строка | Значение, добавляемое к исходящему утверждению. |
@@ -97,7 +97,7 @@ ms.locfileid: "78186783"
 
 Получает первый элемент из предоставленной коллекции строк.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
 | outputClaim | extractedItem | строка | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Первый элемент в коллекции. |
@@ -127,7 +127,7 @@ ms.locfileid: "78186783"
 
 Проверяет, содержит ли тип требования StringCollection элемент
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | stringCollection | Тип претензии, который необходимо искать. |
 |InputParameter|item|строка|Значение для поиска.|
@@ -159,4 +159,38 @@ ms.locfileid: "78186783"
 - Исходящие утверждения:
     - **выходНая претензия**: "правда"
 
+## <a name="stringcollectioncontainsclaim"></a>StringCollectionContainsClaim
 
+Проверяет, содержит ли тип требования StringCollection значение претензии.
+
+| Элемент | TransformationClaimType | Тип данных | Примечания |
+| ---- | ----------------------- | --------- | ----- |
+| InputClaim | коллекция | stringCollection | Тип претензии, который необходимо искать. |
+| InputClaim | item|строка| Тип претензии, содержащий значение для поиска.|
+|InputParameter|ignoreCase|строка|Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк.|
+| outputClaim | outputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. Индикатор булеана, если коллекция содержит такую строку |
+
+Следующий пример `roles` проверяет, содержит ли тип `role` требования stringCollection значение типа претензии.
+
+```XML
+<ClaimsTransformation Id="HasRequiredRole" TransformationMethod="StringCollectionContainsClaim">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="roles" TransformationClaimType="collection" />
+    <InputClaim ClaimTypeReferenceId="role" TransformationClaimType="item" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="ignoreCase" DataType="string" Value="true" />
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="hasAccess" TransformationClaimType="outputClaim" />
+  </OutputClaims>
+</ClaimsTransformation> 
+```
+
+- Входящие утверждения:
+    - **коллекции**: «читатель», «автор», «админ»
+    - **пункт**: "Админ"
+- Входные параметры:
+    - **ignoreCase**: "правда"
+- Исходящие утверждения:
+    - **выходНая претензия**: "правда"

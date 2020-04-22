@@ -1,21 +1,21 @@
 ---
-title: Руководство. Подготовка приложения Java Spring к развертыванию в Azure Spring Cloud
-description: В этом руководстве объясняется, как подготовить приложение Java Spring к развертыванию в Azure Spring Cloud.
+title: Как-то подготовьте приложение Java Spring для развертывания в облачности Azure Spring
+description: В этой теме вы подготовьте приложение Java Spring для развертывания в Облачном Облаке Azure Spring.
 author: bmitchell287
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 02/03/2020
 ms.author: brendm
-ms.openlocfilehash: 49ebfec131c8b9fa7b8535163c03eb7cb692790d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
-ms.translationtype: HT
+ms.openlocfilehash: 16cee333d52765755b732c4de4dd8a6e092a130d
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78200028"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81731181"
 ---
 # <a name="prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>подготовке приложения Java Spring для развертывания в Azure Spring Cloud
 
-В этом кратком руководстве показано, как подготовить имеющееся приложение Java Spring к развертыванию в Azure Spring Cloud. При правильной настройке Azure Spring Cloud предоставляет надежные службы для мониторинга, масштабирования и обновления приложения Java Spring Cloud.
+В этой теме показано, как подготовить существующее приложение Java Spring для развертывания в облачном окноду Azure Spring. При правильной настройке Azure Spring Cloud предоставляет надежные службы для мониторинга, масштабирования и обновления приложения Java Spring Cloud.
 
 В других примерах объясняется, как развернуть приложение в Azure Spring Cloud, если настроен файл POM. 
 * [Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart-launch-app-portal.md)
@@ -27,7 +27,7 @@ ms.locfileid: "78200028"
 
 В Azure Spring Cloud могут работать только приложения Spring/Java.
 
-Azure Spring Cloud поддерживает Java 8 и 11. Среда размещения содержит последнюю версию Azul Zulu OpenJDK для Azure. Дополнительные сведения об Azul Zulu OpenJDK для Azure см. в [статье об установке JDK](https://docs.microsoft.com/azure/java/jdk/java-jdk-install).
+Azure Spring Cloud поддерживает Java 8 и 11. Среда размещения содержит последнюю версию Azul Zulu OpenJDK для Azure. Дополнительные сведения об Azul Zulu OpenJDK для Azure см. в [статье об установке JDK](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install).
 
 ## <a name="spring-boot-and-spring-cloud-versions"></a>Версии Spring Boot и Spring Cloud
 
@@ -225,7 +225,7 @@ public class GatewayApplication {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы узнали, как настроить приложение Java Spring для развертывания в Azure Spring Cloud. Чтобы узнать, как настроить экземпляр сервера конфигурации, перейдите к следующему учебнику.
+В этой теме вы узнали, как настроить приложение Java Spring для развертывания в облаке Azure Spring. Чтобы узнать, как настроить экземпляр Config Server, смотрите следующую статью.
 
 > [!div class="nextstepaction"]
 > [Сведения о настройке экземпляра сервера конфигурации](spring-cloud-tutorial-config-server.md).

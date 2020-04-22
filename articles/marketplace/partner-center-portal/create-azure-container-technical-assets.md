@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/09/2020
-ms.openlocfilehash: 262129084be5c6a68bfd8d8708c9a10fbb606144
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: e51b8c705533fd74a5e46eaa2570563fef485309
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383730"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730637"
 ---
 # <a name="create-an-azure-vm-technical-asset"></a>Создание технического актива Azure VM
 
@@ -21,7 +21,7 @@ ms.locfileid: "81383730"
 
 В этой статье описаны шаги и требования для настройки предложения контейнеров на Azure Marketplace.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для получения быстрых запусков, [Azure Container Instances](https://docs.microsoft.com/azure/container-instances)учебников и образцов см.
 
@@ -46,7 +46,7 @@ ms.locfileid: "81383730"
 
 Мы рекомендуем добавить эти инструменты в среду разработки:
 
-- [Обозреватель службы хранилища Azure](https://aka.ms/GetStartedWithStorageExplorer)
+- [Обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)
 - [Visual Studio Code](https://code.visualstudio.com/)
   - Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
   - Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).

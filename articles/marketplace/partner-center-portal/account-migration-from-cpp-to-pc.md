@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: e17a76d5a017400287644ad2da46caa5b6636654
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 3979be6f49f4ad01a6092fc0d5aa767d342c4642
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81262304"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730489"
 ---
 # <a name="account-migration-from-cloud-partner-portal-to-partner-center"></a>Статья о переносе учетной записи с Портала Cloud Partner в Центр партнеров
 
@@ -47,7 +47,7 @@ ms.locfileid: "81262304"
 
 Компании, желающие сотрудничать с корпорацией Майкрософт, должны присоединиться к партнерской сети Майкрософт (MPN) и получить идентификатор MPN. Если вы уже являетесь участником партнерской сети Майкрософт и имеете идентификатор MPN, держите информацию под рукой, так как она вам понадобится в процессе активации учетной записи.  
 
-Если вы не являетесь участником партнерской сети Майкрософт, вы можете [присоединиться к](https://signup.microsoft.com/signup?sku=StoreForBusinessIW&origin=partnerdashboard&culture=en-us&ru=https://partner.microsoft.com/dashboard/account/v3/xpu/onboard?ru=/en-us/dashboard/account/v3/enrollment/companyprofile/basicpartnernetwork/new) сети, чтобы получить идентификатор MPN. Обратите внимание на свой идентификатор MPN, как вам нужно ввести его в процессе активации учетной записи.
+Если вы не являетесь участником партнерской сети Майкрософт, вы можете [присоединиться к](https://signup.microsoft.com/signup?sku=StoreForBusinessIW&origin=partnerdashboard&culture=en-us&ru=https://partner.microsoft.com/dashboard/account/v3/xpu/onboard?ru=/dashboard/account/v3/enrollment/companyprofile/basicpartnernetwork/new) сети, чтобы получить идентификатор MPN. Обратите внимание на свой идентификатор MPN, как вам нужно ввести его в процессе активации учетной записи.
 
 Чтобы узнать больше о партнерской сети Майкрософт, [см.](https://partner.microsoft.com/en-US/membership) Чтобы узнать больше о преимуществах ISV [ISV Resource Hub](https://partner.microsoft.com/isv-resource-hub)в партнерской сети Майкрософт, см.  
 
@@ -61,7 +61,7 @@ ms.locfileid: "81262304"
 > Это не относится к предложениям Dynamics 365 Business Central.  
 
 1. Если ваша учетная запись членства MPN была первоначально создана в Центре членства партнеров (PMC), вопийте в [Partner Center,](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) чтобы подтвердить, что ваша учетная запись была перенесена. Если вы видите экран профиля с идентификатором MPN, вы готовы продолжить. Если нет, необходимо начать миграцию учетной записи, следуя запросам в [Центре членства партнеров.](https://partners.microsoft.com/partnerprogram/Welcome.aspx) Если вам нужна помощь, посетите [поддержку.](https://partner.microsoft.com/support?issueid=100-0077)
-2. Перейти на [страницу обзора коммерческого рынка в Партнерс-центре.](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) Если вы видите "Коммерческий рынок" в левом навигационном стежке, вы зачислены и должны продолжить следующий шаг. Если нет, [зарегистрируйтесь на коммерческом рынке](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) сейчас.
+2. Перейти на [страницу обзора коммерческого рынка в Партнерс-центре.](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) Если вы видите "Коммерческий рынок" в левом навигационном стежке, вы зачислены и должны продолжить следующий шаг. Если нет, [зарегистрируйтесь на коммерческом рынке](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) сейчас.
 3. Подтвердите ваши предложения в AppSource, [ища ваши предложения](https://appsource.microsoft.com/). Если ваши предложения уже находятся в AppSource, перейдите к следующему шагу. Для любого предложения, не в AppSource, создайте [новое предложение Dynamics 365 Customer Engagement](create-new-customer-engagement-offer.md) или новое предложение [Dynamics 365 Operations.](create-new-operations-offer.md)
 4. На [странице Соглашений](https://partner.microsoft.com/dashboard/account/agreements)Партнерского центра убедитесь, что вы рассмотрели и приняли **бизнес-приложения ISV Addendum.**
 5. В [настройках учетной записи](https://partner.microsoft.com/dashboard/account/v3/accountsettings/billingprofile)Partner Center убедитесь, что ваша платежная информация завершена.
@@ -73,10 +73,10 @@ ms.locfileid: "81262304"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Присоединяйтесь к еженедельному [сообществу Dynamics ISV, призывайте к](https://aka.ms/DynamicsISV-CommunityCall) поддержке и обновлениям.
+Получите помощь от экспертов и коллег на форумах и откройте для себя блоги, вебинары, видео, события и многое другое в [Microsoft Dynamics CRM.](https://community.dynamics.com/crm?wa=wsignin1.0)
 
-Если вам нужна помощь в публикации, сертификации или управлении предложениями на рынке, [отправьте билет поддержки.](https://aka.ms/MarketplacePublisherSupport)
+Если вам нужна помощь в публикации, сертификации или управлении предложениями на рынке, [отправьте билет поддержки.](https://partner.microsoft.com/support/v2/?stage=1)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 - [Управление вашей коммерческой учетной записи рынка в партнерской центре](./manage-account.md)

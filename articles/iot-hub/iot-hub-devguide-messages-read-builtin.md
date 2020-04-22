@@ -8,18 +8,19 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2019
-ms.openlocfilehash: a2674ca0f4808cb6f01781565e57369ca5d3ac37
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.custom: amqp
+ms.openlocfilehash: 169d926e466559bc83ba64ce9e976e0d725f614d
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80478788"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81729990"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
 По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы (**/messages/events**), которая совместима с [Центрами событий](https://azure.microsoft.com/documentation/services/event-hubs/). Сейчас эта конечная точка предоставляется только по протоколу [AMQP](https://www.amqp.org/) на порте 5671. Центр Интернета вещей позволяет управлять встроенной конечной точкой обмена сообщениями **messages/events**, совместимой с концентраторами событий, с помощью приведенных ниже свойств.
 
-| Свойство            | Описание |
+| Свойство.            | Описание |
 | ------------------- | ----------- |
 | **Количество разделов** | Это свойство задается во время создания, чтобы определить количество [разделов](../event-hubs/event-hubs-features.md#partitions) для приема событий, отправляемых с устройства в облако. |
 | **Время хранения**  | Это свойство задает время в днях, в течение которого сообщения хранятся в Центре Интернета вещей. Значение по умолчанию — один день, но это значение можно увеличить до семи дней. |
@@ -50,7 +51,7 @@ IoT Концентратор позволяет хранить данные во
 
 На портале поле конечных точек, совместимых с Event Hub, содержит полную строку соединения Концентраторов событий, которая выглядит следующим образом: **Endpoint'sb://abcd1234namespace.servicebus.windows.net/; SharedAccessKeyName-iothubowner; SharedAccessKey'keykeykeykeykeykey'; EntityПат-иотхуб-эхуб-абхд-1234-123456**. Если SDK, который вы используете, требует других значений, то они будут:
 
-| name | Значение |
+| Имя | Значение |
 | ---- | ----- |
 | Конечная точка | sb://abcd1234namespace.servicebus.windows.net/ |
 | Имя узла | abcd1234namespace.servicebus.windows.net |

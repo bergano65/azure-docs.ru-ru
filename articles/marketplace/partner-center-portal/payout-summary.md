@@ -6,12 +6,12 @@ ms.author: dsindona
 ms.service: marketplace
 ms.topic: guide
 ms.date: 12/10/2019
-ms.openlocfilehash: 678dc8b058d0ae0694dafeb4222b2fc9f10ecda7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5a930dfb38007349155581424d03ee7b3e7a6b46
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288705"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730204"
 ---
 # <a name="payout-reporting"></a>Отчеты о выплатах
 
@@ -69,15 +69,15 @@ ms.locfileid: "80288705"
 
 |Описание    |    Дата  | Заказы/использование  | Выплата |
 |----------|----------|-----------|-------------|
-|Период заказа   | 15 августа 2019 - авг 30, 2019 | **Заказы на атрибуты корреляции** <br> <ul> <li>ИД заказа</li> <li>CustomerId</li> </ul> <br> **Использования** <br> <ul> <li>CustomerId </li> <li>Имя клиента</li> <li>(ИспользованиеСправка) PurchaseRecordId/LineItemId</li> <li> Ориентировочная расширенная зарядка <br> Сметная сумма выплаты (в валюте издателя) </li> </ul> |  |
+|Период заказа   | 15 августа 2019 - авг 30, 2019 | **Заказы на атрибуты корреляции** <br> <ul> <li>ИД заказа</li> <li>CustomerId</li> </ul> <br> **Использование** <br> <ul> <li>CustomerId </li> <li>Имя клиента</li> <li>(ИспользованиеСправка) PurchaseRecordId/LineItemId</li> <li> Ориентировочная расширенная зарядка <br> Сметная сумма выплаты (в валюте издателя) </li> </ul> |  |
 |Окончание срока (месяц)   | 30 августа 2019 г. | | |
 |Дата выставления счета | 1 сентября 2019 г. | | |
 |Дата клиентской выплаты | 1 сентября 2019 г. | | |
-|Период депонирования (только для кредитных карт, 30 дней) | 1 сентября 2019 - 30 сентября 2019 | | **Заказы на атрибуты корреляции:** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li> Имя клиента</li> </ul> <br> **Использования** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплаты:** Необработанные |
+|Период депонирования (только для кредитных карт, 30 дней) | 1 сентября 2019 - 30 сентября 2019 | | **Заказы на атрибуты корреляции:** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li> Имя клиента</li> </ul> <br> **Использование** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплаты:** Необработанные |
 |Начало периода сбора | 1 сентября 2019 г. | | |
 |Окончание периода сбора (максимальное, 30 дней) | 30 сентября 2019 г. | | |
-|Дата вычисления выплат (15-е число каждого месяца) | 1 октября 2019 г. | | **Атрибуты корреляции** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li>Имя клиента</li> </ul> <br> **Использования** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплаты:** Предстоящих |
-|Дата выплаты | 15 октября 2019 г. | | **Атрибуты корреляции** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li> Имя клиента</li> </ul> <br> **Использования** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплаты:** Оплата отправлена |
+|Дата вычисления выплат (15-е число каждого месяца) | 1 октября 2019 г. | | **Атрибуты корреляции** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li>Имя клиента</li> </ul> <br> **Использование** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплаты:** Предстоящих |
+|Дата выплаты | 15 октября 2019 г. | | **Атрибуты корреляции** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li> Имя клиента</li> </ul> <br> **Использование** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплаты:** Оплата отправлена |
 
 ### <a name="enterprise-agreement-quarterlymonthly-customers"></a>Корпоративное соглашение (ежеквартальные/ежемесячные клиенты)
 
@@ -92,7 +92,7 @@ ms.locfileid: "80288705"
 |Окончание периода сбора (максимальное, 90 дней) | 15 января 2020 г. | | |
 |Дата клиентской выплаты | 30 декабря 2019 г. | | |
 |Расчет выплат | 15 января 2020 г. | | |
-|Дата выплаты | 15 февраля 2020 г. | | **Для клиентов ежеквартальной основе** <br> <br> **Отчет о заказах** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li> Имя клиента</li> </ul> <br> **Использования** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплат:** отправлено |
+|Дата выплаты | 15 февраля 2020 г. | | **Для клиентов ежеквартальной основе** <br> <br> **Отчет о заказах** <br> <ul><li>АссетИд</li> <li>ИД клиента</li> <li> Имя клиента</li> </ul> <br> **Использование** <br> <ul> <li>АссетИд</li> <li>CustomerId</li> <li>Имя клиента</li> <li>ИД заказа</li> <li>LineItemId</li> <li>transactionAmount</li> <li>ЗарабатываниеAmountinlastPaymentCurrency</li> </ul> <br> **Статус выплат:** отправлено |
 
 ## <a name="transaction-history-download-export"></a>Экспорт загрузки истории транзакций
 
@@ -175,4 +175,4 @@ ms.locfileid: "80288705"
 
 ## <a name="billing-questions-and-support"></a>Поддержка и вопросы о выставлении счетов
 
-Чтобы получить помощь по вопросам выставления счетов, пожалуйста, свяжитесь с [поддержкой издателя коммерческого рынка.](https://aka.ms/marketplacepublishersupport)
+Чтобы получить помощь по вопросам выставления счетов, пожалуйста, свяжитесь с [поддержкой издателя коммерческого рынка.](https://partner.microsoft.com/support/v2/?stage=1)

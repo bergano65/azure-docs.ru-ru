@@ -8,12 +8,15 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: da6d17e42407048b7ecbcacade67ef48046d7fe1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 53660ad93ab2218d546ae6f363873c4d66872e2b
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79284646"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730310"
 ---
 # <a name="reference---iot-hub-endpoints"></a>Руководство. Конечные точки Центра Интернета вещей
 
@@ -97,11 +100,11 @@ ms.locfileid: "79284646"
 
 Для реализации полевого шлюза можно использовать службу [Azure IoT Edge](/azure/iot-edge/). IoT Edge предлагает определенные функции, например мультиплексировать обмен данными на нескольких устройствах в рамках одного и того же подключения к Центру Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Другие справочные статьи в руководстве разработчика для Центра Интернета вещей:
 
 * [Язык запросов Центра Интернета вещей для двойников устройств, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md)
-* [Quotas and throttling](iot-hub-devguide-quotas-throttling.md) (Квоты и регулирование)
+* [Квоты и регулирование](iot-hub-devguide-quotas-throttling.md)
 * [Поддержка MQTT в Центре Интернета вещей](iot-hub-mqtt-support.md)
 * [Понимание вашего IP-адреса концентратора IoT](iot-hub-understand-ip-address.md)

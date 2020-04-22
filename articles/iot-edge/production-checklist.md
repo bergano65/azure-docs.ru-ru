@@ -8,12 +8,15 @@ ms.date: 4/02/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 6bc74e82dd04e5845e95bdec5c841d0264dd1d3e
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: f1de8330b950ffa09ce3e8ae168f05021b2ad80c
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81115088"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81729458"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
@@ -288,7 +291,7 @@ ms.locfileid: "81115088"
 
 Для максимально эффективного развертывания IoT Edge рекомендуем интегрировать рабочую среду с конвейерами CI/CD и тестирования. Azure IoT Edge поддерживает множество платформ CI/CD, включая Azure DevOps. Дополнительные сведения см. в статье [Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge](how-to-ci-cd.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения см. в статье об [автоматическом развертывании IoT Edge](module-deployment-monitoring.md).
 * Узнайте о поддержке [непрерывных интеграции и развертывания](how-to-ci-cd.md) в IoT Edge.

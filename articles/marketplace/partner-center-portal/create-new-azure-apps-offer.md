@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.openlocfilehash: 6b7ca1f10744bf38137c57d94d796655946c31b3
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: a62551b31c51836dfa50534ee6db907c8a4e111a
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81390349"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81730621"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -49,14 +49,14 @@ ms.locfileid: "81390349"
 
 Все новые предложения приложений Azure должны включать в себя [атрибуцию использования клиентами партнеров Azure GUID.](https://docs.microsoft.com/azure/marketplace/azure-partner-customer-usage-attribution)
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 
 Ознакомьтесь с документацией по приложениям Azure, включающей руководства, примеры и другие материалы.
 
 * [Описание структуры и синтаксиса шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates)
 * Краткие руководства:
 
-    * [Шаблоны Azure кикстарт](https://azure.microsoft.com/documentation/templates/)
+    * [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/)
     * [Шаблоны быстрого запуска Azure в GitHub](https://github.com/azure/azure-quickstart-templates)
     * [Публикация определения приложения](https://docs.microsoft.com/azure/managed-applications/publish-service-catalog-app)
     * [Развертывание приложения из каталога служб](https://docs.microsoft.com/azure/managed-applications/deploy-service-catalog-quickstart)
@@ -293,7 +293,7 @@ ms.locfileid: "81390349"
 
 Выберите опцию **Public Azure,** чтобы сделать ваше решение развертываемым для клиентов во всех общедоступных регионах Azure, где есть интеграция Marketplace.  Подробнее о [географической доступности](https://docs.microsoft.com/azure/marketplace/marketplace-geo-availability-currencies).
 
-Выберите опцию **Облака правительства Azure,** чтобы сделать ваше решение развертываемым в [облаке Azure Government Cloud,](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome)облаке правительственного сообщества с контролируемым доступом для клиентов из федеральных, государственных, местных или племенных и партнеров, имеющих право служить этим организациям.  Вы, как издатель, несете ответственность за любые меры контроля соответствия, меры безопасности и лучшие методы для обслуживания этого облачного сообщества.  Правительство Azure использует физически изолированные центры и сети обработки данных (расположенные только в США).  Перед публикацией в [правительстве Azure](https://aka.ms/azuregovpublish)корпорация Майкрософт рекомендует тестировать и проверять решение в среде, так как определенные конечные точки могут отличаться. Чтобы устроить этап и протестировать решение, запросите пробную учетную запись по этой [ссылке.](https://azure.microsoft.com/global-infrastructure/government/request/)
+Выберите опцию **Облака правительства Azure,** чтобы сделать ваше решение развертываемым в [облаке Azure Government Cloud,](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome)облаке правительственного сообщества с контролируемым доступом для клиентов из федеральных, государственных, местных или племенных и партнеров, имеющих право служить этим организациям.  Вы, как издатель, несете ответственность за любые меры контроля соответствия, меры безопасности и лучшие методы для обслуживания этого облачного сообщества.  Правительство Azure использует физически изолированные центры и сети обработки данных (расположенные только в США).  Перед публикацией в [правительстве Azure](https://docs.microsoft.com/azure/azure-government/documentation-government-manage-marketplace-partners)корпорация Майкрософт рекомендует тестировать и проверять решение в среде, так как определенные конечные точки могут отличаться. Чтобы устроить этап и протестировать решение, запросите пробную учетную запись по этой [ссылке.](https://azure.microsoft.com/global-infrastructure/government/request/)
 
 >[!Note]
 >После публикации плана в определенном облаке это облако не может быть удалено.
@@ -518,6 +518,6 @@ ms.locfileid: "81390349"
 
 Если ошибки возникли на одном или нескольких этапах публикации, их необходимо исправить и выполнить повторную публикацию приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Update an existing offer in the Commercial Marketplace](./update-existing-offer.md) (Обновление имеющегося предложения на коммерческой платформе Marketplace)
