@@ -17,7 +17,7 @@
       items:
         - name: Массовое приглашение с помощью PowerShell
           href: bulk-invite-powershell.md
-        - name: Массовое приглашение с помощью портала (предварительная версия)
+        - name: Массовое приглашение с помощью портала
           href: tutorial-bulk-invite.md
         - name: Применение многофакторной проверки подлинности
           href: b2b-tutorial-require-mfa.md

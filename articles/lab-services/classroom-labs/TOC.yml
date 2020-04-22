@@ -108,6 +108,8 @@
           href: how-to-windows-shutdown.md
         - name: Просмотр сведений о поддержке (инструктор)
           href: lab-creator-support-information.md
+        - name: Доступ к виртуальным машинам учащихся из представления преподавателя
+          href: instructor-access-virtual-machines.md
     - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
       items:
         - name: Доступ к лабораториям для аудитории

@@ -12,12 +12,12 @@ metadata:
   ms.author: mtillman
   manager: daveba
   ms.date: 03/17/2020
-  ms.openlocfilehash: cba5540948f87eb6d0631cc11cc0d5e1134307fa
-  ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+  ms.openlocfilehash: 7f953c7de34e5574deb843dc42092103c8d9b87a
+  ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/14/2020
-  ms.locfileid: "81312981"
+  ms.lasthandoff: 04/17/2020
+  ms.locfileid: "81603328"
 highlightedContent:
   items:
   - title: Что такое Azure AD?
@@ -210,15 +210,15 @@ conceptualContent:
       text: Подробнее
   - title: Identity Governance
     links:
+    - url: ./governance/entitlement-management-access-package-first.md
+      itemType: how-to-guide
+      text: Создание пакета для доступа
     - url: ./governance/create-access-review.md
       itemType: how-to-guide
-      text: Создание проверки доступа
-    - url: ./governance/perform-access-review.md
-      itemType: how-to-guide
-      text: Запуск проверки доступа
+      text: Создание проверки доступа для группы или приложения
     - url: ./conditional-access/terms-of-use.md
       itemType: how-to-guide
-      text: Обязательное применение условий использования
+      text: Требование от пользователей принятия условий использования
     footerLink:
       url: ./governance/index.yml
       text: Подробнее

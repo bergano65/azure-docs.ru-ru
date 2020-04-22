@@ -11,12 +11,12 @@ metadata:
   author: KumudD
   ms.author: kumud
   ms.date: 08/28/2019
-  ms.openlocfilehash: f96f011eedc297b3f48d8b8dda177198809bb564
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.openlocfilehash: 9c7544809836f12069e30e62c06e797bae6d0abf
+  ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "70142946"
+  ms.lasthandoff: 04/18/2020
+  ms.locfileid: "81641055"
 landingContent:
 - title: Сведения о виртуальной сети
   linkLists:
@@ -64,6 +64,10 @@ landingContent:
     links:
     - text: Защита и изоляция доступа к ресурсам Azure
       url: https://docs.microsoft.com/learn/modules/secure-and-isolate-with-nsg-and-service-endpoints
+  - linkListType: video
+    links:
+    - text: Конечная точка службы для виртуальной сети Azure
+      url: https://www.youtube.com/watch?v=gxsitRRgylI
 - title: Подключение виртуальных сетей
   linkLists:
   - linkListType: concept

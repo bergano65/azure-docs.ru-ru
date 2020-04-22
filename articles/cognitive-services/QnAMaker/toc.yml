@@ -61,6 +61,8 @@
     - name: Рекомендации
       href: Concepts/best-practices.md
       displayName: 'tag, rank, score, threshold, question, alternate, filter, synonym, answer, active learning, collaborate, alteration, metadata, bot, personality, extraction, chit-chat'
+    - name: Использование QnA Maker и LUIS
+      href: choose-natural-language-processing-service.md
 - name: Практические руководства
   items:
     - name: Управление ресурсами Azure

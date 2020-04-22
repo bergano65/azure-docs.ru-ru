@@ -232,7 +232,7 @@
           items:
             - name: Создание средства подбора
               href: index-add-suggesters.md
-            - name: Добавление предложения или автозаполнение
+            - name: Добавление автозаполнения и предложений
               href: search-autocomplete-tutorial.md
         - name: Подача запросов из Power Apps
           href: search-howto-powerapps.md
