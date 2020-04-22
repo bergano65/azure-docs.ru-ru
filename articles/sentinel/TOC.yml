@@ -87,7 +87,7 @@
             - name: Решения на основе CEF
               href: connect-common-event-format.md
               items:
-                - name: Шаг 1. Развертывание агента
+                - name: "Шаг\_1. Развертывание сервера пересылки журналов"
                   href: connect-cef-agent.md
                 - name: Шаг 2. Настройка решения для обеспечения безопасности
                   href: connect-cef-solution-config.md

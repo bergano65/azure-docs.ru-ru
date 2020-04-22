@@ -156,8 +156,6 @@
         - name: Добавление дескриптора
           displayName: 'synonym, interchange, phrase list, descriptor'
           href: luis-how-to-add-features.md
-        - name: "Переход на разработку в версии\_3"
-          href: luis-migration-authoring-entities.md
         - name: С использованием REST API
           items:
             - name: Создание приложения программным способом с помощью Node.js
@@ -193,6 +191,8 @@
           displayName: 'import, export'
     - name: Публикация
       href: luis-how-to-publish-app.md
+    - name: Среда выполнения прогнозирующих запросов
+      href: luis-get-started-get-intent-from-browser.md
     - name: Управление приложением
       items:
         - name: Ресурсы Azure
@@ -216,11 +216,10 @@
       items:
         - name: Для разработчиков
           href: developer-reference-resource.md
-        - name: Разработка API-интерфейсов
-          href: luis-migration-api-authoring.md
-        - name: "Переход на API версии\_3"
+        - name: "Переход на версию\_3 интерфейсов API для разработки"
+          href: luis-migration-authoring-entities.md
+        - name: "Переход на версию\_3 интерфейсов API для прогнозирования"
           href: luis-migration-api-v3.md
-          displayName: 'json, response, verbose, dynamic, dynamic list object, brackets, array, role, show-all-intents,prebuilt domain, domain, external entities, "$instance",TimezoneOffset, datetimeReference, overridePredictions, override'
         - name: Миграция в API версии 2
           href: luis-migration-api-v1-to-v2.md
     - name: Использование контейнеров

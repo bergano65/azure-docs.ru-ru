@@ -208,6 +208,8 @@
           href: how-to-connect-pta-quick-start.md
         - name: Часто задаваемые вопросы о сквозной аутентификации
           href: how-to-connect-pta-faq.md
+        - name: Отключение PTA со значением "Не настраивать" в Azure AD Connect
+          href: how-to-connect-pta-disable-do-not-configure.md
     - name: Управление службами федерации
       items:
         - name: "Управление федерацией с Azure\_AD Connect"

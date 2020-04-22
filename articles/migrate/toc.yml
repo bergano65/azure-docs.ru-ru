@@ -96,14 +96,16 @@
       href: how-to-assess.md
     - name: Развертывание устройства службы "Миграция Azure"
       items:
-        - name: Развертывание устройства для VMware (OVA)
+        - name: Развертывание модуля с помощью шаблона (VMware)
           href: how-to-set-up-appliance-vmware.md
-        - name: Развертывание устройства для Hyper-V (VHD)
+        - name: Развертывание модуля с помощью шаблона (Hyper-V)
           href: how-to-set-up-appliance-hyper-v.md
-        - name: Развертывание устройства для VMware или Hyper-V (скрипт)
+        - name: Развертывание модуля с помощью скрипта (VMware или Hyper-V)
           href: deploy-appliance-script.md
         - name: Развертывание устройства для физических серверов
           href: how-to-set-up-appliance-physical.md
+        - name: Развертывание модуля в Azure для государственных организаций
+          href: deploy-appliance-script-government.md
     - name: Ограничение области обнаружения для виртуальных машин VMware
       href: set-discovery-scope.md
     - name: 'Обнаружение приложений, ролей и функций'

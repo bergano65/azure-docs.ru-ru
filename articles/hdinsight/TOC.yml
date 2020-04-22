@@ -102,6 +102,8 @@
               href: hdinsight-hadoop-customize-cluster-linux.md
             - name: Разработка действий скрипта
               href: hdinsight-hadoop-script-actions-linux.md
+            - name: Поддержка программного обеспечения с открытым кодом
+              href: open-source-software.md
             - name: Добавление библиотек Apache Hive
               href: hdinsight-hadoop-add-hive-libraries.md
             - name: Использование Hue
@@ -210,6 +212,10 @@
               href: ./hdinsight-key-scenarios-to-monitor.md
             - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
               href: ./hdinsight-cluster-availability.md
+        - name: Диагностика
+          items:
+            - name: 'Устранение неполадок, связанных с действиями скрипта'
+              href: ./troubleshoot-script-action.md
     - name: Справочник
       items:
         - name: Azure PowerShell
@@ -878,6 +884,8 @@
           href: ./domain-joined/apache-domain-joined-architecture.md
         - name: Архитектура виртуальной сети HDInsight
           href: ./hdinsight-virtual-network-architecture.md
+        - name: Протокол TLS
+          href: ./transport-layer-security.md
         - name: Планирование виртуальных сетей для HDInsight
           href: ./hdinsight-plan-virtual-network-deployment.md
         - name: Необходимые IP-адреса для групп безопасности сети и определяемых пользователем маршрутов
