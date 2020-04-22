@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 46fa0160dd8b37e89cdd77ba8acdae294fddbefe
-ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
+ms.openlocfilehash: 6e660c1244dd5566fbfb45a6da37d39294354ccb
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81616902"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81756986"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовый унизел безопасности Azure для Ключевого Убежища
 
@@ -881,7 +881,7 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 Используйте рекомендации Центра безопасности Azure в качестве надежной базовой настройки для экземпляров Azure Key Vault.
 
-Как просмотреть доступные Aliases Azure Policy:
+Как просмотреть доступные псевдонимы Azure Policy:
 
 https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
@@ -1300,7 +1300,7 @@ https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Ответственность**: Общие сведения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть [тест безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Узнайте больше об [базовых линиях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

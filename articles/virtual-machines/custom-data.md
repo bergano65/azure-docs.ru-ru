@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 03/06/2020
 ms.author: mimckitt
-ms.openlocfilehash: aadac082e90a19d1a185dd7e6181a490adb70a10
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9497e665d024b583c261ade3e6fb5393a9322ce0
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80109632"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759137"
 ---
 # <a name="custom-data-and-cloud-init-on-azure-virtual-machines"></a>Пользовательские данные и облачные технологии на виртуальных машинах Azure
 
@@ -54,7 +54,7 @@ az vm create \
         "computerName": "[parameters('virtualMachineName')]",
         "adminUsername": "[parameters('adminUsername')]",
         "adminPassword": "[parameters('adminPassword')]",
-        "customDataBase64": "[variables('customData')]"
+        "customData": "[variables('customDataBase64')]"
         },
 ```
 
@@ -82,7 +82,7 @@ az vm create \
 Чтобы устранить неполадки выполнения пользовательских данных, просмотрите [документацию](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init#troubleshooting-cloud-init)по устранению неполадок.
 
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 ### <a name="can-i-update-custom-data-after-the-vm-has-been-created"></a>Могу ли я обновить пользовательские данные после создания VM?
 Для отдельных ВМ пользовательские данные в модели VM не могут быть обновлены, но для VMSS можно обновлять пользовательские данные VMSS через REST API (не применимые для клиентов PS или A CLI). При обновлении пользовательских данных в модели VMSS:
 * Существующие экземпляры в VMSS не будут получать обновленные пользовательские данные, только до тех пор, пока они не будут reimaged.

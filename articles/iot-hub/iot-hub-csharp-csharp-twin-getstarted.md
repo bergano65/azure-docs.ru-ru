@@ -9,12 +9,13 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: robinsh
-ms.openlocfilehash: 426430c075cfcb084cfe3238ebd83a19e909369b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: 620e0213733d278a28ec1bcad4b031f5764ccda9
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77110768"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733133"
 ---
 # <a name="get-started-with-device-twins-net"></a>Начало работы с близнецами устройств (.NET)
 
@@ -66,13 +67,13 @@ ms.locfileid: "77110768"
 
 1. В Solution Explorer, правой кнопкой мыши **проекта AddTagsии,,,ry,** а затем выберите **Управление NuGet пакеты**.
 
-1. Выберите **просмотр** и поиск и выберите **Microsoft.Azure.Devices**. Нажмите кнопку **Установить**.
+1. Выберите **просмотр** и поиск и выберите **Microsoft.Azure.Devices**. Выберите пункт **Установить**.
 
     ![Окно "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-twin-getstarted/nuget-package-addtagsandquery-app.png)
 
    В результате выполняется скачивание и установка пакета NuGet [SDK для служб Интернета вещей Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices/) и его зависимостей, а также добавляется соответствующая ссылка.
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+1. Добавьте `using` следующие инструкции в верхней части файла **Program.cs:**
 
     ```csharp  
     using Microsoft.Azure.Devices;
@@ -140,17 +141,17 @@ ms.locfileid: "77110768"
 
 В этом разделе вы создадите консольное приложение .NET, которое подключается к центру как **myDeviceId** и обновляет передаваемые свойства, добавив в них сведения о подключении по сети мобильной связи.
 
-1. В Visual Studio выберите **Файл** > **Новый** > **проект**. В **создании нового проекта**выберите **консоль app (.NET Framework),** а затем выберите **Следующий**.
+1. В Visual Studio выберите **Файл** > **Создать** > **Проект**. В **создании нового проекта**выберите **консоль app (.NET Framework),** а затем выберите **Следующий**.
 
 1. В **настройке нового проекта**назовите проект **ReportConnectivity**. Для **решения** **выберите Добавить в решение,** а затем выберите **Создать.**
 
 1. В Solution Explorer нажмите правой кнопкой мыши на проект **ReportConnectivity,** а затем выберите **пакеты Управления NuGet.**
 
-1. Выберите **просмотр** и поиск и выберите **Microsoft.Azure.Devices.Client**. Нажмите кнопку **Установить**.
+1. Выберите **просмотр** и поиск и выберите **Microsoft.Azure.Devices.Client**. Выберите пункт **Установить**.
 
    Этот шаг загружает, устанавливает и добавляет ссылку на пакет [SDK NuGet-устройства Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) и его зависимости.
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+1. Добавьте `using` следующие инструкции в верхней части файла **Program.cs:**
 
     ```csharp  
     using Microsoft.Azure.Devices.Client;
@@ -245,7 +246,7 @@ ms.locfileid: "77110768"
 
     ![Сведения о подключении устройства успешно переданы](./media/iot-hub-csharp-csharp-twin-getstarted/tagappsuccess.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве мы настроили новый Центр Интернета вещей на портале Azure и создали удостоверение устройства в реестре удостоверений Центра Интернета вещей. Вы добавили метаданные устройства в качестве тегов из внутреннего приложения и написали код приложения имитации устройства, чтобы сообщить сведения о подключении в двойнике устройства. Вы также узнали, как запрашивать эти сведения, используя похожий на SQL язык запросов Центра Интернета вещей.
 

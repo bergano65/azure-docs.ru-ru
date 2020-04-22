@@ -9,12 +9,13 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 07/04/2017
 ms.author: robinsh
-ms.openlocfilehash: b379f158672a9df3056acb09c63c392869a53283
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: 14472e84d425bf03a3c6a0c2dc558d4b8225caec
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77108712"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733398"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-net"></a>Загрузка файлов с устройства в облако с помощью Концентратора IoT (.NET)
 
@@ -185,7 +186,7 @@ ms.locfileid: "77108712"
 
     ![Снимок экрана, показывающий экран выходных данных](./media/iot-hub-csharp-csharp-file-upload/run-apps1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Вы можете продолжить изучение функций и сценариев IoT Hub со следующими статьями:
 
@@ -193,7 +194,7 @@ ms.locfileid: "77108712"
 
 * [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
 
-* [IoT Hub SDKs](iot-hub-devguide-sdks.md) (Пакеты SDK для Центра Интернета вещей)
+* [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 

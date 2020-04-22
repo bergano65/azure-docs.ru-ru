@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: nberdy
-ms.openlocfilehash: 84f28a1cb411e7df156fc08fa683efe7f83eda64
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: amqp
+ms.openlocfilehash: edbc3431c860794c7cd1dd8e5011c0d7d11d692d
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60345742"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732233"
 ---
 # <a name="iot-hub-operations-monitoring-deprecated"></a>Мониторинг операций IoT Hub (унипраженный)
 
@@ -264,7 +265,7 @@ class Program
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 

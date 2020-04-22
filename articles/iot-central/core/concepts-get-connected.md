@@ -8,14 +8,19 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 8178e585ecb7b1cdfd5e530f3d3406b7397f0968
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: f37b070c74abd8511fc597f9b159312d91281083
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79476055"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759113"
 ---
 # <a name="get-connected-to-azure-iot-central"></a>Подключайтесь к Центру Azure IoT
+
+*Эта статья распространяется на операторов и разработчиков устройств.*
 
 В этой статье описаны варианты подключения устройств к центральному приложению Azure IoT.
 
@@ -227,7 +232,7 @@ SDK-устройства Azure предлагают самый простой с
 - [Пакет SDK Azure IoT для Python](https://github.com/azure/azure-iot-sdk-python)
 - [Пакет SDK Azure IoT для Node.js](https://github.com/azure/azure-iot-sdk-node)
 - [Пакет SDK Azure IoT для Java](https://github.com/azure/azure-iot-sdk-java)
-- [Пакет SDK для Azure IoT для .NET](https://github.com/azure/azure-iot-sdk-csharp).
+- [Пакет SDK Azure IoT для .NET](https://github.com/azure/azure-iot-sdk-csharp)
 
 ### <a name="sdk-features-and-iot-hub-connectivity"></a>Функции пакета SDK и возможность подключения Центра Интернета вещей
 
@@ -241,8 +246,8 @@ SDK-устройства Azure предлагают самый простой с
 | Azure IoT Central | Центр Интернета вещей Azure |
 | ----------- | ------- |
 | Телеметрия | Передача сообщений с устройства в облако |
-| Свойство | Сообщаемые свойства двойника устройства |
-| Недвижимость (написать) | Требуемые и передаваемые свойства двойника устройства |
+| Свойство. | Сообщаемые свойства двойника устройства |
+| Свойство (доступно для записи) | Требуемые и передаваемые свойства двойника устройства |
 | Команда | Прямые методы |
 
 Чтобы узнать больше об использовании SDK-приложений устройств, [см.](howto-connect-devkit.md)
@@ -263,9 +268,10 @@ SDK-устройства Azure предлагают самый простой с
 
 Все данные, передаваемые между устройствами и Azure IoT Central, зашифрованы. Центр Интернета вещей выполняет проверку подлинности каждого запроса с устройства, которое подключается к любой конечной точке Центра Интернета вещей, обращенной к устройству. Чтобы избежать обмена учетными данными по сети, для проверки подлинности устройство использует подписанные маркеры. Для получения дополнительной [Control access to IoT Hub](../../iot-hub/iot-hub-devguide-security.md)информации см.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Теперь, когда вы узнали о подключении устройств в Azure IoT Central, вот следующие шаги:
+Если вы разработчик устройств, некоторые предлагаемые следующие шаги:
 
-- [Подготовка и подключение устройства DevKit](howto-connect-devkit.md)
-- [C SDK: Предоставление устройства Клиент SDK](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/devdoc/using_provisioning_client.md)
+- Узнайте, как [отслеживать подключение к устройствам с помощью Azure CLI](./howto-monitor-devices-azure-cli.md)
+- Узнайте, как [определить новый тип ioT-устройства в приложении Azure IoT Central](./howto-set-up-template.md)
+- Читайте об [устройствах Azure IoT Edge и Azure IoT Central](./concepts-iot-edge.md)

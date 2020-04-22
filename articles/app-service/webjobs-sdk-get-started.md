@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 4976be485a9b7609c6e8d23f6b897092217663fc
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 4ee724ec66d5fb474f8c8a9a967cc7235fef5e85
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535678"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732625"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -134,7 +134,7 @@ ms.locfileid: "81535678"
     * Отключает [ведение журнала панели мониторинга](https://github.com/Azure/azure-webjobs-sdk/wiki/Queues#logs). Панель мониторинга — это устаревшее средство мониторинга, поэтому ведение журнала панели мониторинга не рекомендуется в высокопроизводительных сценариях.
     * Добавляет поставщика консоли с [фильтрацией](webjobs-sdk-how-to.md#log-filtering) по умолчанию.
 
-Теперь можно добавить функцию, которая активируется с помощью сообщений, поступающих в [очередь службы хранилища Azure](../azure-functions/functions-bindings-storage-queue.md).
+Теперь можно добавить функцию, которая активируется с помощью сообщений, поступающих в очередь службы хранилища Azure.
 
 ## <a name="install-the-storage-binding-extension"></a>Установка расширения привязки Службы хранилища
 
@@ -184,7 +184,7 @@ ms.locfileid: "81535678"
 
    Атрибут `QueueTrigger` вызывает в среде выполнения эту функцию при записи нового сообщения в очередь службы хранилища Azure с именем `queue`. Содержимое сообщения в очереди передается коду метода в параметре `message`. Тело метода реализуется при обработке данных триггера. В этом примере код просто записывает сообщение в журнал.
 
-   Параметр `message` не должен быть строкой. Также можно выполнить привязку к объекту JSON, массиву байтов или [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage). [См. "Использование триггера очереди"](../azure-functions/functions-bindings-storage-queue-trigger.md#usage). Каждый тип привязки (например, очереди, BLOB-объекты или таблицы) обладает своим набором типов параметров привязки.
+   Параметр `message` не должен быть строкой. Также можно выполнить привязку к объекту JSON, массиву байтов или [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage). [См. "Использование триггера очереди"](/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=csharp#usage). Каждый тип привязки (например, очереди, BLOB-объекты или таблицы) обладает своим набором типов параметров привязки.
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
@@ -280,7 +280,7 @@ ms.locfileid: "81535678"
 
    Поскольку в функции `ProcessQueueMessage` использовался атрибут `QueueTrigger`, среда выполнения пакета SDK WebJobs прослушивает запускаемые сообщения в очереди. Она находит новое сообщение в очереди с именем *queue* и вызывает функцию.
 
-   Из-за [экспоненциально растущего интервала опроса очереди](../azure-functions/functions-bindings-storage-queue-trigger.md#polling-algorithm) процесс поиска сообщения и вызова функции может занимать до 2 минут. Время отклика можно сократить путем запуска в [режиме разработки](webjobs-sdk-how-to.md#host-development-settings).
+   Из-за [экспоненциально растущего интервала опроса очереди](/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=csharp#polling-algorithm) процесс поиска сообщения и вызова функции может занимать до 2 минут. Время отклика можно сократить путем запуска в [режиме разработки](webjobs-sdk-how-to.md#host-development-settings).
 
    В консоли отобразятся следующие сообщения:
 
@@ -327,13 +327,13 @@ ms.locfileid: "81535678"
 
 1. В поле **Строки подключения** добавьте следующую запись.
 
-   |name  |Строка подключения  |Тип базы данных|
+   |Имя  |Строка подключения  |Тип базы данных|
    |---------|---------|------|
    |AzureWebJobsStorage | {строка подключения к службе хранилища, скопированная ранее}|Другой|
 
 1. Если поле **Параметры приложения** не содержит ключа инструментирования Application Insights, добавьте один, скопированный ранее. (Ключ инструментирования уже может быть там, в зависимости от способа создания приложения службы приложений).
 
-   |name  |Значение  |
+   |Имя  |Значение  |
    |---------|---------|
    |APPINSIGHTS_INSTRUMENTATIONKEY | {instrumentation key} |
 
@@ -444,7 +444,7 @@ ms.locfileid: "81535678"
 1. Обновите страницу **Очередь**, после чего новое сообщение исчезнет, так как оно было обработано с помощью функции, работающей в Azure.
 
    > [!TIP]
-   > При тестировании в Azure используйте [режим разработки](webjobs-sdk-how-to.md#host-development-settings), чтобы убедиться, что функция триггера очереди вызывается сразу же, и избежать задержки из-за [экспоненциально растущего интервала опроса очереди](../azure-functions/functions-bindings-storage-queue-trigger.md#polling-algorithm).
+   > При тестировании в Azure используйте [режим разработки](webjobs-sdk-how-to.md#host-development-settings), чтобы убедиться, что функция триггера очереди вызывается сразу же, и избежать задержки из-за [экспоненциально растущего интервала опроса очереди](/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=csharp#polling-algorithm).
 
 ### <a name="view-logs-in-application-insights"></a>Просмотр журналов Application Insights
 

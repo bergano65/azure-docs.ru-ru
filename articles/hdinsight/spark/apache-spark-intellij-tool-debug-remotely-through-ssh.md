@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/23/2019
-ms.openlocfilehash: 67660e3e98f5a12236798d74cc61f71616e6751d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a012c3ce8f7c9e105a42d8383a502f3608c84070
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76934750"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732911"
 ---
 # <a name="debug-apache-spark-applications-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Приложения Debug Apache Spark в кластере HDInsight с Azure Toolkit для IntelliJ через SSH
 
@@ -29,7 +29,7 @@ ms.locfileid: "76934750"
 
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows) (Издание Сообщества бесплатно.).
 
-* [Набор средств Azure для IntelliJ](https://docs.microsoft.com/azure/java/intellij/azure-toolkit-for-intellij-installation).
+* [Набор средств Azure для IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/installation).
 
 * [Плагин Scala для IntelliJ](../spark/apache-spark-intellij-tool-plugin.md#install-scala-plugin-for-intellij-idea).
 
@@ -50,11 +50,11 @@ ms.locfileid: "76934750"
 
      ![Intellij Создать новый проект Spark](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-create-projectfor-debug-remotely.png)
 
-1. Нажмите кнопку **Далее**.
+1. Выберите **Далее**.
 
 1. В следующем окне **нового проекта** предоставьте следующую информацию:
 
-    |Свойство |Описание |
+    |Свойство. |Описание |
     |---|---|
     |Имя проекта|Введите имя. Эта прогулка `myApp`через использует .|
     |Расположение проекта|Введите необходимое расположение для сохранения проекта.|
@@ -151,7 +151,7 @@ ms.locfileid: "76934750"
 
    ![Intellij Debug Удаленная искряная работа без исключения](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debug-without-exception.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 

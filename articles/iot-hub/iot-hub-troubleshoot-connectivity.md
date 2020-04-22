@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: bed6736fda0c1815964f9017adb1e6fffa9335d9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: 82139eef9708ff8d76e1087c71aa5445ba898385
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77110673"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759607"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-disconnects-with-azure-iot-hub"></a>Монитор, диагностика и устранение неполадок отключаются от концентратора Azure IoT
 
@@ -108,7 +109,7 @@ ms.locfileid: "77110673"
 
 Чтобы помочь улучшить документацию, оставьте комментарий в разделе отзывов, если сведения в этом руководстве не были полезны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об устранении временных проблем см. в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 

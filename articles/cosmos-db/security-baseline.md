@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: fd2706b6a6880d7c9454619e1315b2b5b5404561
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 7e927b398bd95160e02ee915eb98ea3cb78d68fe
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80244279"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758689"
 ---
 # <a name="azure-security-baseline-for-cosmos-db"></a>Базовый унизел безопасности Azure для Cosmos DB
 
@@ -638,7 +638,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для об
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью диаграммы ресурсов, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager в будущем.
 
-Как создавать запросы с помощью Графика Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Как создавать запросы с помощью графика ресурсов Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 Как просмотреть подписку на Azure:https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
@@ -792,7 +792,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для об
 
 - Служба Cosmos DB должна использовать конечную точку службы виртуальной сети
 
-Как просмотреть доступные Aliases Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Как просмотреть доступные псевдонимы Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -1108,7 +1108,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 **Ответственность**: Общие сведения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть [тест безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Узнайте больше об [базовых линиях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

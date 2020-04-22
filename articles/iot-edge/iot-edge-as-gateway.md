@@ -8,12 +8,15 @@ ms.date: 02/25/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cbca0c2509e74a7debf5ba26b361c79b9b208f08
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 916eeaa60bc054301af039164ce1c14e77ceb91a
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76547121"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733530"
 ---
 # <a name="how-an-iot-edge-device-can-be-used-as-a-gateway"></a>Использование устройства IoT Edge в качестве шлюза
 
@@ -56,7 +59,7 @@ ms.locfileid: "76547121"
 
 При использовании модели непрозрачного шлюза (преобразование протоколов) все устройства, подключающиеся через шлюз, совместно используют одну очередь из облака на устройство, которая может содержать не более 50 сообщений. Из этого следует, что шаблон непрозрачного шлюза должен использоваться только в том случае, если через шлюз каждого поля подключается небольшое число устройств и их трафик из облака на устройство низкий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как настроить прозрачный шлюз:
 

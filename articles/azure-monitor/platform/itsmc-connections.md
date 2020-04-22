@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: eb3b09c6f349024d30d68a6c970770e2a78924ed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9441e7bb970508df4c002897ab726d6e683fa848
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80132310"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733356"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Для получения дополнительной информации о ITSMC, [см.](../../azure-monitor/platform/itsmc-overview.md)
@@ -159,7 +159,7 @@ ms.locfileid: "80132310"
 
 3. Войдите с помощью учетных данных Azure и выберите подписку, в которой было создано гибридное подключение.
 
-4. Нажмите **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 Гибридное подключение успешно установлено.
 
@@ -194,9 +194,17 @@ ms.locfileid: "80132310"
     - [Настройка OAuth для версии Istanbul](https://docs.servicenow.com/bundle/istanbul-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Helsinki](https://docs.servicenow.com/bundle/helsinki-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Geneva](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/security/task/t_SettingUpOAuth.html)
+> [!NOTE]
+> В рамках определения "Настройка OAuth" мы рекомендуем:
+>
+> 1) **Обновление срока службы маркера обновления до 90 дней (7 776 000 секунд):** В рамках [Настройка OAuth](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_SettingUpOAuth.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696739125&sdata=Q7mF6Ej8MCupKaEJpabTM56EDZ1T8vFVyihhoM594aA%3D&reserved=0) в фазе 2: [Создать конечную точку для клиентов, чтобы получить доступ к экземпляру](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_CreateEndpointforExternalClients.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696749123&sdata=hoAJHJAFgUeszYCX1Q%2FXr4N%2FAKiFcm5WV7mwR2UqeWA%3D&reserved=0) После определения конечной точки, В ServiceNow лезвие поиск системы OAuth->Прикладный реестр выбрать имя OAuth, который был определен и обновить поле "Обновить токен продолжительность жизни" до 7,776,000.
+> В конце нажмите обновление.
+> 2) **Мы рекомендуем установить внутреннюю процедуру, чтобы убедиться, что соединение остается живым:** Согласно "Refresh Token Lifespan", чтобы обновить токен. Пожалуйста, не забудьте выполнить следующие операции до обновления токен ожидаемого срока действия (за пару дней до "Обновить токен продолжительность жизни" истекает мы рекомендуем):
+>
+>>  1) [Заполните ручной процесс синхронизации для конфигурации разъема ITSM](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-resync-servicenow)
+ >> 2) Отменить старый маркер обновления, так как не рекомендуется хранить старые ключи по соображениям безопасности. В ServiceNow поиск лезвия для "System OAuth"->"Управление токенами", а затем выбрать старый маркер из списка в соответствии с именем OAuth и срок годности. Нажмите на кнопку "Отозвать доступ"->"Отменить.
 
-
-- Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. Ознакомьтесь с [дополнительными сведениями](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 ).
+- Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. [Подробнее](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 ).
 - Создать роль пользователя для интеграции в установленном приложении для пользователя. Дополнительные сведения о создании роли пользователя для интеграции см. [здесь](#create-integration-user-role-in-servicenow-app).
 
 ### <a name="connection-procedure"></a>**Процедура подключения**
@@ -220,7 +228,7 @@ ms.locfileid: "80132310"
 | --- | --- |
 | **Имя подключения**   | Введите имя экземпляра ServiceNow, который вы хотите подключить к ITSMC.  В Log Analytics это имя вам потребуется позже при настройке рабочих элементов в ITSM или подробном анализе журналов. |
 | **Тип партнера**   | Выберите **ServiceNow**. |
-| **Пользователя**   | Введите имя пользователя для интеграции, которое вы создали в приложении ServiceNow для подключения к ITSMC. Дополнительные сведения см. в разделе о [создании роли пользователя для интеграции в приложении ServiceNow](#create-integration-user-role-in-servicenow-app).|
+| **Имя пользователя**   | Введите имя пользователя для интеграции, которое вы создали в приложении ServiceNow для подключения к ITSMC. Дополнительные сведения см. в разделе о [создании роли пользователя для интеграции в приложении ServiceNow](#create-integration-user-role-in-servicenow-app).|
 | **Пароль**   | Введите пароль, связанный с этим именем пользователя. **Примечание**: Имя пользователя и пароль используются только для генерации токенов аутентификации и нигде не хранятся в службе ITSMC.  |
 | **URL-адрес сервера**   | Введите URL-адрес экземпляра ServiceNow, который вы хотите подключить к ITSMC. URL должен указывать на поддерживаемую версию SaaS с суффиксом ".servicenow.com".|
 | **Идентификатор клиента**   | Введите созданный ранее идентификатор клиента, который вы хотите использовать для проверки подлинности OAuth2.  Дополнительные сведения о создании идентификатора и секрета клиента см. на странице [установки OAuth](https://wiki.servicenow.com/index.php?title=OAuth_Setup). |
@@ -315,7 +323,7 @@ ms.locfileid: "80132310"
 | --- | --- |
 | **Имя подключения**   | Введите имя экземпляра Provance, который вы хотите подключить к ITSMC.  Это имя вам потребуется позже при настройке рабочих элементов в ITSM или просмотре сведений в службе Log Analytics. |
 | **Тип партнера**   | Выберите **Provance**. |
-| **Пользователя**   | Введите имя пользователя, который может подключаться к ITSMC.    |
+| **Имя пользователя**   | Введите имя пользователя, который может подключаться к ITSMC.    |
 | **Пароль**   | Введите пароль, связанный с этим именем пользователя. **Примечание**. Имя пользователя и пароль будут использоваться только для создания маркеров аутентификации. Они не сохраняются в службе ITSMC.|
 | **URL-адрес сервера**   | Введите URL-адрес экземпляра Provance, который вы хотите подключить к ITSMC. |
 | **Идентификатор клиента**   | Введите созданный в экземпляре Provance идентификатор клиента для проверки подлинности этого соединения.  Дополнительные сведения об идентификаторе клиента см. в статье [Настройка приложения службы приложений для использования службы входа Azure Active Directory](../../app-service/configure-authentication-provider-aad.md). |
@@ -366,7 +374,7 @@ ms.locfileid: "80132310"
 | --- | --- |
 | **Имя подключения**   | Введите имя экземпляра Cherwell, который вы хотите подключить к ITSMC.  Это имя вам потребуется позже при настройке рабочих элементов в ITSM или просмотре сведений в службе Log Analytics. |
 | **Тип партнера**   | Выберите **Cherwell.** |
-| **Пользователя**   | Введите имя пользователя Cherwell, который может подключаться к ITSMC. |
+| **Имя пользователя**   | Введите имя пользователя Cherwell, который может подключаться к ITSMC. |
 | **Пароль**   | Введите пароль, связанный с этим именем пользователя. **Примечание:** Имя пользователя и пароль используются только для генерации токенов аутентификации и нигде не хранятся в службе ITSMC.|
 | **URL-адрес сервера**   | Введите URL-адрес экземпляра Cherwell, который вы хотите подключить к ITSMC. |
 | **Идентификатор клиента**   | Введите идентификатор клиента для проверки подлинности этого подключения, созданного в экземпляре Cherwell.   |
@@ -396,5 +404,5 @@ ms.locfileid: "80132310"
     ![Идентификатор пользователя Cherwell](media/itsmc-connections/itsmc-cherwell-client-id.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
  - [Создание рабочих элементов ITSM из предупреждений Azure](../../azure-monitor/platform/itsmc-overview.md#create-itsm-work-items-from-azure-alerts)

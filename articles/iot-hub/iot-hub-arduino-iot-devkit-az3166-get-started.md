@@ -8,12 +8,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 06/25/2019
 ms.author: wesmc
-ms.openlocfilehash: 0c7566df870b3c41b1f1dd7d4a4129ff9d9d9407
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.custom: mqtt
+ms.openlocfilehash: 1c6af4f44cd16405d1ef12ae909085220b0d072d
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81481738"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733594"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -175,7 +176,7 @@ DevKit подключается к конкретной точке устрой�
 
     ![Установка средств Azure IoT](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/install-azure-iot-tools.png)
 
-    Или используйте этот прямой URL:`vscode:extension/vsciot-vscode.azure-iot-tools`
+    Или скопировать и вставить этот URL в окно браузера:`vscode:extension/vsciot-vscode.azure-iot-tools`
 
     > [!NOTE]
     > Пакет расширения Azure IoT Tools содержит [Workbench приборов Azure IoT,](https://aka.ms/iot-workbench) который используется для разработки и отладки на различных устройствах IoT devkit. [Расширение концентратора Azure IoT,](https://aka.ms/iot-toolkit)также включенное в пакет расширений Azure IoT Tools, используется для управления и взаимодействия с концентраторами Azure IoT.

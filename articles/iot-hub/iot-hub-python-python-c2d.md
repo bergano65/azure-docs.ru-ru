@@ -8,12 +8,13 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: robinsh
-ms.openlocfilehash: 0c3b35eeed85dd3a1c44dea6ec46203eb812e1e8
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.custom: mqtt
+ms.openlocfilehash: f0760f6e61904295771ba349f8101e2d6dc6afe3
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81257855"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759743"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-python"></a>Отправка сообщений из облака на устройства с помощью Центра Интернета вещей (Python)
 
@@ -232,7 +233,7 @@ ms.locfileid: "81257855"
 
     ![Полученное сообщение](./media/iot-hub-python-python-c2d/device-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом учебнике вы научились отправлять и получать сообщения с облака на устройство.
 

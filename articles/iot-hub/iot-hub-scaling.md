@@ -8,12 +8,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: wesmc
-ms.openlocfilehash: ecc1ae5138fe5a1e42fed9be2e31b5afa8b6d5b0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 4b18878cfc5c75bf27fd46cbceaa06e0b6053ddd
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79497505"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759619"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -134,7 +137,7 @@ ms.locfileid: "79497505"
 
 Если вы приближаетесь к допустимому лимиту сообщений в концентраторе IoT, вы можете использовать эти [шаги для автоматического масштабирования](https://azure.microsoft.com/resources/samples/iot-hub-dotnet-autoscale/) для приращения блока Концентратора IoT в том же уровне Концентратора IoT.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о возможностях Центра Интернета вещей и производительности см. на странице [Цены на Центр Интернета вещей](https://azure.microsoft.com/pricing/details/iot-hub) и в статье [Руководство. Квоты и регулирование в Центре Интернета вещей](iot-hub-devguide-quotas-throttling.md).
 

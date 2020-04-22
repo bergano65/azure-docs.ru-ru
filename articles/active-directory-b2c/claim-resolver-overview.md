@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/30/2020
+ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1c4bbd98682d964cfdf72031c7d6cb77cf42a809
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.openlocfilehash: 0bdede482b79c82e6e05b1429cb7c17399bc2277
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80396067"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81756613"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -44,14 +44,14 @@ ms.locfileid: "80396067"
 
 В следующих разделах перечислены доступные арбитры утверждений.
 
-### <a name="culture"></a>Язык и региональные параметры
+### <a name="culture"></a>culture
 
 | Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
 | {Culture:RegionName} | Двухбуквенный код ISO для региона. | США |
-| {Culture:RFC5646} | Код языка RFC5646. | ru-RU |
+| {Culture:RFC5646} | Код языка RFC5646. | en-US |
 
 ### <a name="policy"></a>Политика
 
@@ -66,16 +66,16 @@ ms.locfileid: "80396067"
 
 | Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
-| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
+| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Недоступно |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
 | {OIDC:DomainHint} |Параметр `domain_hint` строки запроса. | facebook.com |
 | {OIDC:LoginHint} |  Параметр `login_hint` строки запроса. | someone@contoso.com |
-| {OIDC:MaxAge} | `max_age`. | Н/Д |
+| {OIDC:MaxAge} | `max_age`. | Недоступно |
 | {OIDC:Nonce} |Параметр `Nonce` строки запроса. | defaultNonce |
 | «OIDC:Пароль»| [Владелец паролей ресурса пароли потока](ropc-custom.md) пароль пользователя.| пароль1| 
 | {OIDC:Prompt} | Параметр `prompt` строки запроса. | login |
 | «OIDC:RedirectUri» |Параметр `redirect_uri` строки запроса. | https://jwt.ms |
-| {OIDC:Resource} |Параметр `resource` строки запроса. | Н/Д |
+| {OIDC:Resource} |Параметр `resource` строки запроса. | Недоступно |
 | «OIDC:Область» |Параметр `scope` строки запроса. | OpenId |
 | «OIDC:Имя пользователя»| [Владелец паролей ресурса, учетные данные потока](ropc-custom.md) пользователя имя пользователя.| emily@contoso.com| 
 
@@ -90,7 +90,14 @@ ms.locfileid: "80396067"
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
 | (Контекст:KMSI) | Указывает, выбирается ли [keep me signed in](custom-policy-keep-me-signed-in.md) checkbox. |  Да |
 
-### <a name="non-protocol-parameters"></a>Не протокольные параметры
+### <a name="claims"></a>Утверждения 
+
+| Утверждение | Описание | Пример |
+| ----- | ----------- | --------|
+| (Заявка:тип претензии) | Идентификатор типа претензии, уже определенный в разделе ClaimsSchema в файле политики или файле родительской политики.  Например: `{Claim:displayName}`, `{Claim:objectId}`или . | Значение типа претензии.|
+
+
+### <a name="oauth2-key-value-parameters"></a>Параметры ключевой стоимости OAuth2
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
@@ -99,13 +106,13 @@ ms.locfileid: "80396067"
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
 | {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1 234 |
-| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Н/Д |
+| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Недоступно |
 
 ### <a name="oauth2"></a>OAuth2
 
 | Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
-| {oauth2:access_token} | Маркер доступа. | Н/Д |
+| {oauth2:access_token} | Маркер доступа. | Недоступно |
 
 
 ### <a name="saml"></a>SAML
@@ -118,12 +125,13 @@ ms.locfileid: "80396067"
 | «SAML:AllowCreate» | Значение `AllowCreate` атрибута из `NameIDPolicy` элемента запроса SAML. | True |
 | (SAML:ForceAuthn) | Значение `ForceAuthN` атрибута из `AuthnRequest` элемента запроса SAML. | True |
 | «SAML:ProviderName» | Значение `ProviderName` атрибута из `AuthnRequest` элемента запроса SAML.| Contoso.com |
+| «SAML:RelayState» | Параметр `RelayState` строки запроса.| 
 
 ## <a name="using-claim-resolvers"></a>Использование решателей претензий
 
 Можно использовать разрешители претензий со следующими элементами:
 
-| Item | Элемент | Параметры |
+| Элемент | Элемент | Параметры |
 | ----- | ----------------------- | --------|
 |Технический профиль Application Insights |`InputClaim` | |
 |Технический профиль [Active Directory Azure](active-directory-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|

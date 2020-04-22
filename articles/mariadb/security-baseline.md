@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: bca9c0e4c0695b6180775051d8b018930f8b808f
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 9df0de443e28e0eea3224e42178eddd46108ea64
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81256473"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759170"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mariadb"></a>Базовый унизел безопасности Azure для базы данных Azure для MariaDB
 
@@ -620,7 +620,7 @@ ms.locfileid: "81256473"
 
 **Руководство**: Используйте график ресурсов Azure для запроса и обнаружения всех ресурсов (включая базу данных Azure для сервера MariaDB) в подписке(ы). Убедитесь, что у вас есть соответствующие (читай) разрешения в арендаторе и можете перечислить все подписки Azure, а также ресурсы в рамках подписки.
 
-Как создавать запросы с помощью Графика Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Как создавать запросы с помощью графика ресурсов Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 Как просмотреть подписку на Azure:https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
@@ -774,7 +774,7 @@ ms.locfileid: "81256473"
 
 - База данных Azure для MariaDB должна использовать геоизбыточное резервное копирование
 
-Как просмотреть доступные Aliases Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Как просмотреть доступные псевдонимы Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -1122,7 +1122,7 @@ https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
 **Ответственность**: Общие сведения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть [тест безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Узнайте больше об [базовых линиях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

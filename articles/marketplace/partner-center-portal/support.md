@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/07/2020
-ms.openlocfilehash: fbfc8cc29a1584dbc9f7e4ff0b73513d85950f99
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fd7582877a74aa998de3a6d0a0f38e56c3c3af91
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281397"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733111"
 ---
 # <a name="support-for-the-commercial-marketplace-program-in-partner-center"></a>Поддержка программы «Коммерческий рынок» в партнерской программе
 
@@ -40,7 +40,7 @@ ms.locfileid: "80281397"
 
 5. Выберите **[форум сообщества Marketplace Partner,](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222)** чтобы ответить на ваши вопросы, используя знания других издателей Майкрософт. 
 
-6. Выберите **[Дополнительную справку,](https://aka.ms/marketplacepublishersupport)** чтобы открыть новый билет **запроса на поддержку.**  
+6. Выберите **[Дополнительную справку,](https://partner.microsoft.com/support/v2/?stage=1)** чтобы открыть новый билет **запроса на поддержку.**  
 
 ## <a name="how-to-open-a-support-ticket"></a>Как открыть запрос в службу поддержки
 
@@ -77,6 +77,6 @@ ms.locfileid: "80281397"
 
 Чтобы просмотреть все открытые и закрытые билеты, перейдите на **коммерческий рынок** на левом панели навигации, а затем выберите **поддержку.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Update an existing offer in the Commercial Marketplace](./update-existing-offer.md) (Обновление имеющегося предложения на коммерческой платформе Marketplace)

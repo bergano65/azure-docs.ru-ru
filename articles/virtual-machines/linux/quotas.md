@@ -1,25 +1,18 @@
 ---
-title: Квоты vCPU для Azure
+title: Квоты на виртуальные ЦП
 description: Дополнительные сведения о квотах виртуальных ЦП для Azure.
-keywords: ''
-services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: cynthn
-ms.openlocfilehash: c194dbeb0183e64535342f8aaf9a770a93b3e332
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4f8d181194328725c2e7c02f6e73752cf568ef4e
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75896189"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759189"
 ---
 # <a name="virtual-machine-vcpu-quotas"></a>Квоты виртуальных ЦП виртуальной машины
 
@@ -66,6 +59,6 @@ Premium Storage Managed Disks                  5    10000
 
 Если увеличение квоты необходимо для приобретения зарезервированного экземпляра с одной подпиской, вы можете [запросить увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) по подписке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о выставлении счетов и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits?toc=/azure/billing/TOC.json).

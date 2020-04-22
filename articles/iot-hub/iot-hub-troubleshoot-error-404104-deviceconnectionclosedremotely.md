@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: 686946b65b4b7540f404a291c87c5ad9c7b7a0ca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: c8cb91aa0c7ce1610320d4107db282d3c34407ba
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76960806"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758726"
 ---
 # <a name="404104-deviceconnectionclosedremotely"></a>404104 DeviceConnectionClosedRemotely
 
@@ -71,6 +72,6 @@ ms.locfileid: "76960806"
 
 Смотрите [решения внутренних ошибок сервера IoT Hub.](iot-hub-troubleshoot-error-500xxx-internal-errors.md#solution)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Мы рекомендуем использовать SDK-устройства Azure IoT для надежного управления соединениями. Чтобы узнать больше, смотрите [Управление подключением и надежными сообщениями, используя SDK-концентратор устройства Azure IoT](iot-hub-reliability-features-in-sdks.md)

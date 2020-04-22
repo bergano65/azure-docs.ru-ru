@@ -9,12 +9,13 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: 5053935f52153f0cd6ff2f05c5153732f5bda945
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: d7f9ce37ad85d39388eea90af263f59ce312a6b8
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77110842"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732273"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>Расписание и трансляция заданий (Node.js)
 
@@ -293,7 +294,7 @@ ms.locfileid: "77110842"
 
    ![Запуск приложения виртуального устройства](./media/iot-hub-node-node-schedule-jobs/schedule-job-service.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 

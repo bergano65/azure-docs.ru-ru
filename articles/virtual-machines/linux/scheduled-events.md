@@ -1,25 +1,18 @@
 ---
 title: Запланированные события для Linux VMs в Azure
 description: Запланируйте события с помощью службы метаданных Azure, для виртуальных машин Linux.
-services: virtual-machines-windows, virtual-machines-linux, cloud-services
-documentationcenter: ''
 author: mimckitt
-manager: gwallace
-editor: ''
-tags: ''
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: mimckitt
-ms.openlocfilehash: b3b9914d0e5162f8f8f41b929d7bdfef68f85ad9
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: ee600d7524af27a0e9e2ce0176e7bd4d1f60bc3b
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81263324"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758558"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-linux-vms"></a>Служба метаданных Azure. Запланированные события для виртуальных машин Linux
 
@@ -74,7 +67,7 @@ ms.locfileid: "81263324"
 ### <a name="version-and-region-availability"></a>Доступность версий в регионах
 Служба запланированных событий имеет версии. Версии являются обязательными. Сейчас используется версия от `2019-01-01`.
 
-| Version | Тип выпуска | Регионы | Заметки о выпуске | 
+| Версия | Тип выпуска | Регионы | Заметки о выпуске | 
 | - | - | - | - | 
 | 2019-01-01 | Общедоступная версия | Все | <li> Добавлена поддержка виртуальных наборов масштабов машин EventType 'Terminate' |
 | 2017-11-01 | Общедоступная версия | Все | <li> Добавлена поддержка Spot VM выселения EventType 'Preempt'<br> | 
@@ -127,7 +120,7 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
 ```
 
 ### <a name="event-properties"></a>Свойства события
-|Свойство  |  Описание |
+|Свойство.  |  Описание |
 | - | - |
 | EventId | Глобальный уникальный идентификатор этого события. <br><br> Пример. <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
 | EventType | Влияние, которое оказывает это событие. <br><br> Значения: <br><ul><li> `Freeze`: Виртуальная машина планируется приостановить на несколько секунд. Подключение процессора и сети может быть приостановлено, но это не влияет на память или открытые файлы.<li>`Reboot`. Планирование перезагрузки виртуальной машины (временная память будет потеряна). <li>`Redeploy`. Виртуальная машина будет перемещена на другой узел с потерей данных на временных дисках. <li>`Preempt`: Спот Виртуальная машина удаляется (эфемерные диски теряются). <li> `Terminate`: Виртуальная машина планируется удалить. |
@@ -219,7 +212,7 @@ if __name__ == '__main__':
     main()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 - Смотрите демонстрационную версию службы "Запланированные события" в серии [Пятница с Azure](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance). 
 - Просмотрите примеры кода Запланированных событий в [репозитории метаданных Azure Instance.](https://github.com/Azure-Samples/virtual-machines-scheduled-events-discover-endpoint-for-non-vnet-vm)
 - Дополнительные сведения об API, доступных в [службе метаданных экземпляра](instance-metadata-service.md).

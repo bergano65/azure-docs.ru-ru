@@ -8,12 +8,15 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: d0a9f643516af5945037acb3dd1da24b06944171
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: f46d41c8287d03cbe9582ed560244cbd85cdeeaa
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79284412"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759590"
 ---
 # <a name="401003-iothubunauthorized"></a>401003 IoTHubUnauthorized
 
@@ -35,7 +38,7 @@ ms.locfileid: "79284412"
 * Проверка подлинности для этого устройства, обновление токена или сертификата и повторное подключение
 * Отпечаток пальца не соответствует конфигурации: Thumbprint: SHA1Hash\*, SHA2Hash ;\* Конфигурация: PrimaryThumbprint ,\*Вторичныйотбиймотпринт\*
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 ### <a name="cause-1"></a>Причина 1
 
@@ -67,6 +70,6 @@ IoT Концентратор не может проверить подлинно
 - Учетные данные авторизации хорошо сформированы для протокола, который вы используете. Чтобы узнать больше, смотрите [элемент управления доступом Концентраторio](iot-hub-devguide-security.md).
 - Используемое правило авторизации имеет запрошенное разрешение на операцию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы упростить аутентификации к hub IoT, рекомендуем использовать [SDK Azure IoT.](iot-hub-devguide-sdks.md)

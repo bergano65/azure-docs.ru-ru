@@ -1,24 +1,18 @@
 ---
 title: Серийная консоль Azure для вызовов SysRq и NMI
 description: Использование последовательной консоли для вызовов SysRq и NMI на виртуальных машинах Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: asinn826
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 5eba50e7cfc00c081622972ca09f305b34c19c47
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5541dec748f31818a0e9485fc0c56b7926ccaae7
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74034992"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758486"
 ---
 # <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
 
@@ -51,7 +45,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="command-keys"></a>Клавиши команд 
 Как указано в упомянутом выше руководстве администратора SysRq:
 
-|Команда| Компонент
+|Команда| Функция
 | ------| ----------- |
 |``b``  |   Немедленно инициирует перезагрузку системы без синхронизации или отключение дисков.
 |``c``  |   Выполняет сбой системы с помощью разыменования пустого указателя. Если настроено, будет создан аварийный дамп.
@@ -126,7 +120,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="coreos"></a>CoreOS 
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * См. страницу документации по работе с [последовательной консолью Linux](serial-console.md).
 * Используйте последовательную консоль для [перехода в режим GRUB и однопользовательский режим](serial-console-grub-single-user-mode.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](../windows/serial-console.md).

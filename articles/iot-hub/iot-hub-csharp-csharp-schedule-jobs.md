@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 7925ca5c69d01b098764ff744fb832eaa43118d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: 4c71a108d1967027465d127db50737119af3e2c1
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77108971"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733372"
 ---
 # <a name="schedule-and-broadcast-jobs-net"></a>Расписание и трансляция заданий (.NET)
 
@@ -77,13 +78,13 @@ ms.locfileid: "77108971"
 
 1. В Solution Explorer, правой кнопкой мыши **проекта SimulateDeviceMethods,** а затем выберите **Управление NuGet пакеты**.
 
-1. В **наборе NuGet менеджер**— выберите **просмотр** и поиск и выбор **Microsoft.Azure.Devices.Client.** Нажмите кнопку **Установить**.
+1. В **наборе NuGet менеджер**— выберите **просмотр** и поиск и выбор **Microsoft.Azure.Devices.Client.** Выберите пункт **Установить**.
 
     ![Клиентское приложение в окне "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-schedule-jobs/device-app-nuget.png)
 
     Этот шаг загружает, устанавливает и добавляет ссылку на пакет [SDK NuGet-устройства Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) и его зависимости.
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+1. Добавьте `using` следующие инструкции в верхней части файла **Program.cs:**
 
     ```csharp
     using Microsoft.Azure.Devices.Client;
@@ -166,7 +167,7 @@ ms.locfileid: "77108971"
 
 В этом разделе создается консольное приложение .NET (с использованием C), которое использует задания для вызова прямого метода **LockDoor** и отправки желаемых обновлений свойств на несколько устройств.
 
-1. В Visual Studio выберите **Файл** > **Новый** > **проект**. В **создании нового проекта**выберите **консоль app (.NET Framework),** а затем выберите **Следующий**.
+1. В Visual Studio выберите **Файл** > **Создать** > **Проект**. В **создании нового проекта**выберите **консоль app (.NET Framework),** а затем выберите **Следующий**.
 
 1. В **настройке нового проекта**назовите проект *ScheduleJob.* Для **решения** **выберите Добавить в решение,** а затем выберите **Создать.**
 
@@ -178,7 +179,7 @@ ms.locfileid: "77108971"
 
    В результате выполняется скачивание и установка пакета NuGet [SDK для служб Интернета вещей Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices/) и его зависимостей, а также добавляется соответствующая ссылка.
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+1. Добавьте `using` следующие инструкции в верхней части файла **Program.cs:**
 
     ```csharp
     using Microsoft.Azure.Devices;
@@ -304,7 +305,7 @@ ms.locfileid: "77108971"
 
     ![Выполнение приложений для планирования заданий](./media/iot-hub-csharp-csharp-schedule-jobs/schedule-jobs-console-results.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 

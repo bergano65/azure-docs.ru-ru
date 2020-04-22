@@ -3,18 +3,17 @@ title: Предоплата за программы - Бронирование A
 description: Узнайте, как вы можете предоплату за программные планы, чтобы сэкономить деньги за оплату по мере работы расходы.
 author: bandersmsft
 manager: yashesvi
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: sizes
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 04/06/2020
 ms.author: banders
-ms.openlocfilehash: 3e05920e495dd4aa14be6c849590a37a2bafa33f
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: a527b75d376f05ab6190187b7a03d6da775055ab
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80757234"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759290"
 ---
 # <a name="prepay-for-azure-software-plans"></a>Предварительная оплата планов программного обеспечения Azure
 
@@ -61,9 +60,9 @@ ms.locfileid: "80757234"
 
 Вы не можете отменить или обменять купленный вами план SUSE или RedHat. Проверьте использование, чтобы убедиться в том, что вы приобретаете подходящей план. Для получения помощи в определении того, что купить, [см.](../../cost-management-billing/reservations/understand-suse-reservation-charges.md)
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или вам нужна помощь, [создайте запрос на поддержку.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

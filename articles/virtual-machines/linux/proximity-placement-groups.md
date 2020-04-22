@@ -1,21 +1,18 @@
 ---
-title: Используйте группы размещения близости для Linux VMs
-description: Узнайте о создании и использовании групп размещения непосредственной близости для виртуальных машин Linux в Azure.
-services: virtual-machines-linux
+title: Использование групп размещения близости
+description: Узнайте о создании и использовании групп размещения непосредственной близости для виртуальных машин в Azure.
 author: cynthn
-manager: gwallace
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: cynthn
-ms.openlocfilehash: 353a266b647c299515c15889c302ba4409aa511b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f89b28e7a3c29e45efa2796788e27325c01d7098
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73171054"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759250"
 ---
 # <a name="deploy-vms-to-proximity-placement-groups-using-azure-cli"></a>Развертывание вс-м входить в группы размещения объектов с помощью Azure CLI
 
@@ -72,6 +69,6 @@ az ppg show --name myppg --resource-group myppggroup --query "virtualMachines"
 
 Вы также можете создать набор шкалы в группе размещения близости. Используйте `--ppg` тот же параметр с [az vmss создать](/cli/azure/vmss?view=azure-cli-latest#az-vmss-create) для создания набора масштаба и все экземпляры будут созданы в той же группе размещения близости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о командах [Azure CLI](/cli/azure/ppg) для групп размещения непосредственной близости.

@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: a1fd22772e72cba4cce3f9fa2751dc0df0e15bb9
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 5a8d5f96449cfecd4628c38fa2788a1e06e96b07
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535604"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758888"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -71,7 +71,7 @@ static void Main(string[] args)
 
 Вы можете запустить узел в режиме разработки, чтобы повысить эффективность локальной разработки. Вот некоторые параметры, которые изменяются при запуске в режиме разработки:
 
-| Свойство | Параметр разработки |
+| Свойство. | Параметр разработки |
 | ------------- | ------------- |
 | `Tracing.ConsoleLevel` | `TraceLevel.Verbose` — чтобы увеличить выходные данные журнала. |
 | `Queues.MaxPollingInterval`  | Низкое значение для обеспечения немедленного запуска методов очереди.  |
@@ -125,7 +125,7 @@ static void Main()
 
 В версии 2. *x,* вы управляете числом одновременных подключений к хостам с помощью [API ServicePointManager.DefaultConnectionLimit.](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) В 2. *x,* вы должны увеличить это значение от по умолчанию 2 перед запуском webJobs хост.
 
-Все исходящие запросы HTTP, которые `HttpClient` вы `ServicePointManager`делаете из функции, используя поток через. После достижения значения, `DefaultConnectionLimit`установленного в, `ServicePointManager` начинается очереди запросов перед отправкой их. Предположим, что для ограничения `DefaultConnectionLimit` установлено значение 2 и код включает 1000 HTTP-запросов. Первоначально в ОС разрешено только два запроса. Остальные 998 поставлены в очередь, пока не появится место для них. Это означает, что ваш `HttpClient` может тайм-аут, потому что он, кажется, сделал запрос, но запрос никогда не был отправлен ОС на сервер назначения. Таким образом, вы можете столкнуться с поведением, которое не имеет смысла: локальному клиенту `HttpClient` потребуется 10 секунд, чтобы выполнить запрос, но служба будет возвращать каждый запрос за 200 мс. 
+Все исходящие запросы HTTP, которые `HttpClient` вы `ServicePointManager`делаете из функции, используя поток через. После достижения значения, `DefaultConnectionLimit`установленного в, `ServicePointManager` начинается очереди запросов перед отправкой их. Предположим, что для ограничения `DefaultConnectionLimit` установлено значение 2 и код включает 1000 HTTP-запросов. Первоначально в ОС разрешено только два запроса. Остальные 998 стоят в очереди, пока нет места для них. Это означает, что ваш `HttpClient` может тайм-аут, потому что он, кажется, сделал запрос, но запрос никогда не был отправлен ОС на сервер назначения. Таким образом, вы можете столкнуться с поведением, которое не имеет смысла: локальному клиенту `HttpClient` потребуется 10 секунд, чтобы выполнить запрос, но служба будет возвращать каждый запрос за 200 мс. 
 
 Значение по умолчанию `Int32.MaxValue`для ASP.NET приложений, и это, вероятно, хорошо работает для WebJobs работает в базовом или более высоком плане службы приложений. WebJobs обычно нуждаются в настройках Always On, и это поддерживается только основными и более высокими планами обслуживания приложений.
 
@@ -423,7 +423,7 @@ static async Task Main()
 }
 ```
 
-Для получения более [подробной](../azure-functions/functions-bindings-event-hubs-output.md#hostjson-settings) информации см.
+Для получения более [подробной](../azure-functions/functions-bindings-event-hubs-trigger.md#host-json) информации см.
 
 ### <a name="queue-storage-trigger-configuration"></a>Конфигурация триггера хранения очереди
 
@@ -817,7 +817,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 
 Мы рекомендуем систему лесозаготовок, разработанную для ASP.NET. В статье [Get started](webjobs-sdk-get-started.md) показано, как ее использовать. 
 
-### <a name="log-filtering"></a>Фильтрация журнала
+### <a name="log-filtering"></a>Фильтрация журналов
 
 Каждый журнал, созданный экземпляром `ILogger`, имеет связанные параметры `Category` и `Level`. [`LogLevel`](/dotnet/api/microsoft.extensions.logging.loglevel)является перечислением, и код степлуказывает относительную важность:
 
@@ -827,7 +827,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 |Отладка       | 1 |
 |Сведения | 2 |
 |Предупреждение     | 3 |
-|Error       | 4 |
+|Ошибка       | 4 |
 |Critical    | 5 |
 |None        | 6 |
 

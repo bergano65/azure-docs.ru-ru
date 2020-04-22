@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 12/10/2019
+ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ad8fcf578ae1c89856a9d7929af0aec813cb4082
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b42c2a414333e7ed262441321a808fc45425fc3b
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78187599"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81756756"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
 
@@ -28,7 +28,7 @@ ms.locfileid: "78187599"
 
 Используйте значения претензий или константы для создания строки JSON. Строка пути после обозначения точек используется для обозначения того, где вставить данные в строку JSON. После разделения по точкам все целые числа интерпретируются как индекс массива JSON, а нецелые интерпретируются как индекс объекта JSON.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | Любая строка после обозначения точек | строка | JsonPath JSON, где значение претензии будет вставлено в. |
 | InputParameter | Любая строка после обозначения точек | строка | JsonPath JSON, где будет вставлено постоянное значение строки. |
@@ -94,7 +94,7 @@ ms.locfileid: "78187599"
 
 Возвращает указанный элемент из данных JSON.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputJson | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
 | InputParameter | claimToExtract | строка | Имя элемента JSON, который требуется извлечь. |
@@ -130,7 +130,7 @@ ms.locfileid: "78187599"
 
 Возвращает список указанных элементов из данных JSON.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | jsonSourceClaim | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения утверждений. |
 | InputParameter | errorOnMissingClaims | Логическое | Указывает, следует ли выдавать ошибку, если одно из утверждений отсутствует. |
@@ -184,7 +184,7 @@ ms.locfileid: "78187599"
 
 Возвращает указанный числовой элемент (long) из данных JSON.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputJson | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения утверждения. |
 | InputParameter | claimToExtract | строка | Имя извлекаемого элемента JSON. |
@@ -223,11 +223,44 @@ ms.locfileid: "78187599"
 - Исходящие утверждения:
     - **extractedClaim**: 6353399.
 
+## <a name="getsingleitemfromjson"></a>GetSingleItemFromJson
+
+Получает первый элемент из данных JSON.
+
+| Элемент | TransformationClaimType | Тип данных | Примечания |
+| ---- | ----------------------- | --------- | ----- |
+| InputClaim | inputJson | строка | ClaimTypes, используемые в преобразовании претензий для получения элемента из данных JSON. |
+| outputClaim | ключ | строка | Первый элемент ключа в JSON. |
+| outputClaim | value | строка | Значение первого элемента в JSON. |
+
+В следующем примере преобразование требований извлекает первый элемент (данное имя) из данных JSON.
+
+```XML
+<ClaimsTransformation Id="GetGivenNameFromResponse" TransformationMethod="GetSingleItemFromJson">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="json" TransformationClaimType="inputJson" />
+  </InputClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="givenNameKey" TransformationClaimType="key" />
+    <OutputClaim ClaimTypeReferenceId="givenName" TransformationClaimType="value" />
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+### <a name="example"></a>Пример
+
+- Входящие утверждения:
+  - **inputJson**: «givenName»: «Emilty», «lastName»: «Smith»»
+- Исходящие утверждения:
+  - **ключ**: givenName
+  - **значение**: Эмильти
+
+
 ## <a name="getsinglevaluefromjsonarray"></a>GetSingleValueFromJsonArray
 
 Возвращает первый элемент из массива данных JSON.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputJsonClaim | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента из массива JSON. |
 | outputClaim | extractedClaim | строка | ClaimType, который создается после вызова ClaimsTransformation (первый элемент в массиве JSON). |
@@ -256,7 +289,7 @@ ms.locfileid: "78187599"
 
 Преобразует данные XML в формат JSON.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | Xml | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для преобразования данных из языка XML в формат JSON. |
 | outputClaim | json | строка | ClaimType, который создается после вызова ClaimsTransformation (данные в формате JSON). |
@@ -294,3 +327,5 @@ ms.locfileid: "78187599"
   }
 }
 ```
+
+

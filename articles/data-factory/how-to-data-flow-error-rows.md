@@ -6,14 +6,14 @@ author: kromerm
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/28/2019
+ms.date: 04/20/2020
 ms.author: makromer
-ms.openlocfilehash: 4f65421a6457d4bf4d438ce9d035d46476829da2
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 8225143bb75118620b45c2520bb62ea30501a617
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81414358"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732687"
 ---
 # <a name="handle-sql-truncation-error-rows-in-data-factory-mapping-data-flows"></a>Обработка строк усечения S'L в потоках картографических данных Data
 
@@ -31,6 +31,9 @@ ms.locfileid: "81414358"
     
 3. Проблема в том, что название фильма не все помещается в столбец раковины, который может содержать только 5 символов. При выполнении этого потока данных, вы получите ошибку, как этот:```"Job failed due to reason: DF-SYS-01 at Sink 'WriteToDatabase': java.sql.BatchUpdateException: String or binary data would be truncated. java.sql.BatchUpdateException: String or binary data would be truncated."```
 
+Это видео проходит через пример настройки логики обработки строки ошибок в потоке данных:
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4uOHj]
+
 ## <a name="how-to-design-around-this-condition"></a>Как спроектировать вокруг этого условия
 
 1. В этом сценарии максимальная длина столбца "имя" составляет пять символов. Итак, давайте добавим условное преобразование сплита, которое позволит нам регистрировать строки с "названиями", которые длиннее пяти символов, а также позволяя остальным строкам, которые могут поместиться в это пространство, писать в базу данных.
@@ -47,6 +50,6 @@ ms.locfileid: "81414358"
 
     ![полный поток данных](media/data-flow/error2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Создайте остальную часть логики потока данных с помощью [преобразования потоков данных](concepts-data-flow-overview.md)для картирования.

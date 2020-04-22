@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 10fc822f9f36512405dd4e3b5aba6270b53e163f
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.openlocfilehash: 1c7e18214ec175b8b21d25643098631a044da19c
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80549027"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758316"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый унизел безопасности Azure для концентраторов событий
 
@@ -335,7 +335,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4: Используйте одиночный вписаться (SSO) с активным каталогом Azure
 
-**Руководство**: Microsoft Azure обеспечивает интегрированное управление управлением доступом для ресурсов и приложений на основе Active Directory Azure (AD). Ключевым преимуществом использования Azure AD с концентраторами azure Event является то, что вам больше не нужно хранить учетные данные в коде. Вместо этого вы можете запросить токен доступа OAuth 2.0 от платформы Microsoft Identity. Имя ресурса для запроса https://eventhubs.azure.net/маркера находится под названием . Azure AD проверяет подлинность принципаслужбы безопасности (пользователя, группы или основного обслуживания), работая с приложением. Если проверка подлинности удалась, Azure AD возвращает в приложение маркер доступа, и приложение может использовать контокен доступа для авторизации запроса на ресурсы Azure Event Hubs.
+**Руководство**: Microsoft Azure обеспечивает интегрированное управление управлением доступом для ресурсов и приложений на основе Active Directory Azure (AD). Ключевым преимуществом использования Azure AD с концентраторами azure Event является то, что вам больше не нужно хранить учетные данные в коде. Вместо этого вы можете запросить токен доступа OAuth 2.0 от платформы Microsoft Identity. Имя ресурса для запроса маркера\/https: /eventhubs.azure.net/. Azure AD проверяет подлинность принципаслужбы безопасности (пользователя, группы или основного обслуживания), работая с приложением. Если проверка подлинности удалась, Azure AD возвращает в приложение маркер доступа, и приложение может использовать контокен доступа для авторизации запроса на ресурсы Azure Event Hubs.
 
 Как проверить подлинность приложения с Помощью Azure AD для доступа к ресурсам Event Hubs:https://docs.microsoft.com/azure/event-hubs/authenticate-application
 
@@ -631,7 +631,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Руководство**: Используйте график ресурсов Azure для запроса и обнаружения всех ресурсов (включая области имен для областей событий Azure) в пределах подписки(ы). Убедитесь, что у вас есть соответствующие (читай) разрешения в арендаторе и можете перечислить все подписки Azure, а также ресурсы в рамках подписки.
 
-Как создавать запросы с помощью Графика Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Как создавать запросы с помощью графика ресурсов Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 Как просмотреть подписку на Azure:https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
@@ -779,7 +779,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Встроенная политика Azure для пространства имен событий:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
 
-Как просмотреть доступные Aliases Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Как просмотреть доступные псевдонимы Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -1085,7 +1085,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Ответственность**: Клиент
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть [тест безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Узнайте больше об [базовых линиях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

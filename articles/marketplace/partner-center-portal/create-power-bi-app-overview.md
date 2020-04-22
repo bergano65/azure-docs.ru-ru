@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/02/2020
-ms.openlocfilehash: c348a172b16e12334d33cf2718609694147fdce3
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: 8f050a43cbdf4ab29df55cd5526eb231c301b271
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80674531"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732680"
 ---
 # <a name="power-bi-app-creation-overview"></a>Обзор создания приложения Power BI
 
@@ -69,7 +69,7 @@ ms.locfileid: "80674531"
 2. Создайте и протестируйте приложение в Power BI.
 3. Когда вы получите веб-адрес установки приложения, добавьте его на страницу **Технической Конфигурации** в Центре Партнеров.
 
-После того, как ваше приложение создано и протестировано в Power BI, сохраните веб-адрес установки приложения, так как оно понадобится для [создания приложения Power BI.](https://aka.ms/AzureCreatePBIServiceApp)
+После того, как ваше приложение создано и протестировано в Power BI, сохраните веб-адрес установки приложения, так как оно понадобится для [создания приложения Power BI.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-power-bi-app-offer)
 
 ### <a name="business-requirements"></a>Бизнес-требования
 
@@ -79,6 +79,6 @@ ms.locfileid: "80674531"
 - Предоставьте контент, отвечающий критериям для вашего предложения, который будет указан в AppSource. Для получения дополнительной информации, [смотрите Есть приложение, чтобы перечислить на AppSource? Вот как](https://appsource.microsoft.com/blogs/have-an-app-to-list-on-appsource-here-s-how).
 - Согласитесь и следуйте [заявлению о конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Создание приложения Power BI в партнерской центре](https://aka.ms/AzureCreatePBIServiceApp)
+- [Создание приложения Power BI в партнерской центре](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-power-bi-app-offer)

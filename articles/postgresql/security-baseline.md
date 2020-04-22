@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 4034759dc4f20649c15236b057e348966d72409e
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: dfe1bd1cbc99838f427aaba5bc29b23f8bfcbaff
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81261166"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758681"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql-single-server"></a>Базовый универсаль безопасности Azure для базы данных Azure для одного сервера PostgreS'L
 
@@ -652,7 +652,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Используйте график ресурсов Azure для запроса и обнаружения всех ресурсов (включая базу данных Azure для экземпляров PostgreS'L) в вашей подписке(ы). Убедитесь, что у вас есть соответствующие (читай) разрешения в арендаторе и можете перечислить все подписки Azure, а также ресурсы в рамках подписки.
 
-Как создавать запросы с помощью Графика Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Как создавать запросы с помощью графика ресурсов Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 Как просмотреть подписку на Azure:https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
@@ -798,7 +798,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 - На серверах баз данных PostgreSQL должны быть включены журналы подключений
 
-Как просмотреть доступные Aliases Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Как просмотреть доступные псевдонимы Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -1105,7 +1105,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Ответственность**: Общие сведения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Посмотреть [тест безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Узнайте больше об [базовых линиях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

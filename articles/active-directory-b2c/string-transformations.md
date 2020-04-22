@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/16/2020
+ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: acacba591c9b895f1bd6abfbab5d3d4a4c858d12
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f08107874598a68fb5ce2a1a8a98b6a81d7b94d4
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79472781"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81756791"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 
@@ -28,7 +28,7 @@ ms.locfileid: "79472781"
 
 Сравнение двух утверждений и создание исключения, если они не равны, в соответствии с указанными для сравнения элементами inputClaim1, inputClaim2 и stringComparison.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | строка | Тип первого утверждения, которое необходимо сравнить. |
 | InputClaim | inputClaim2 | строка | Тип второго утверждения, которое необходимо сравнить. |
@@ -90,7 +90,7 @@ ms.locfileid: "79472781"
 
 Изменяет предоставленное утверждение в нижний или верхний регистр в зависимости от оператора.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | строка | ClaimType будет изменен. |
 | InputParameter | toCase | строка | Одно из следующих значений: `LOWER` или `UPPER`. |
@@ -125,9 +125,9 @@ ms.locfileid: "79472781"
 
 Создает строку претензии из предоставленного параметра ввода в преобразовании.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 |----- | ----------------------- | --------- | ----- |
-| InputParameter | значение | строка | Строка, которая будет установлена. Этот параметр ввода поддерживает [выражения преобразования строки.](string-transformations.md#string-claim-transformations-expressions) |
+| InputParameter | value | строка | Строка, которая будет установлена. Этот параметр ввода поддерживает [выражения преобразования строки.](string-transformations.md#string-claim-transformations-expressions) |
 | outputClaim | createdClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением, указанным во входном параметре. |
 
 Это преобразование утверждения позволяет задать строковое значение параметра ClaimType.
@@ -154,7 +154,7 @@ ms.locfileid: "79472781"
 
 Определяет, равно ли одно строковое утверждение другому. Результатом является новый логический параметр ClaimType со значением `true` или `false`.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | строка | Тип первого утверждения, которое необходимо сравнить. |
 | InputClaim | inputClaim2 | строка | Тип второго утверждения, которое необходимо сравнить. |
@@ -195,7 +195,7 @@ ms.locfileid: "79472781"
 
 Определяет, равно ли значение утверждения значению входного параметра.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | строка | Тип утверждения, которое необходимо сравнить. |
 | InputParameter | оператор | строка | Возможные значения: `EQUAL` или `NOT EQUAL`. |
@@ -235,7 +235,7 @@ ms.locfileid: "79472781"
 
 Создает случайную строку с помощью генератора случайных чисел. Если тип генератора случайных чисел — `integer`, при необходимости можно указать параметр начального значения и максимальное число. Необязательный параметр формата строки позволяет форматировать выходные данные, а необязательный параметр Base64 указывает, соответствуют ли выходные данные randomGeneratorType [идентификатор GUID, целое число] outputClaim (строка) в кодировке Base64.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputParameter | randomGeneratorType | строка | Указывает случайное значение, которое необходимо создать: `GUID` (глобальный уникальный идентификатор) или `INTEGER` (число). |
 | InputParameter | stringFormat | строка | [Необязательно.] Формат случайного значения. |
@@ -294,7 +294,7 @@ ms.locfileid: "79472781"
 
 Форматирование утверждения в указанный формат строки. Это преобразование использует метод C# `String.Format`.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim |строка |Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
 | InputParameter | stringFormat | строка | Формат строки, включая параметр {0}. Этот параметр ввода поддерживает [выражения преобразования строки.](string-transformations.md#string-claim-transformations-expressions)  |
@@ -329,7 +329,7 @@ ms.locfileid: "79472781"
 
 Форматирование двух утверждений в указанный формат строки. Это преобразование использует метод C# `String.Format`.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim |строка | Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
 | InputClaim | InputClaim | строка | Элемент ClaimType, который выступает в качестве параметра {1} формата строки. |
@@ -367,9 +367,9 @@ ms.locfileid: "79472781"
 
 Копии локализованных строк в претензии.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| outputClaim | Название локализованной строки | строка | Список типов претензий, который производится после этого преобразования претензий, был вызван. |
+| outputClaim | Название локализованной строки | строка | Список типов претензий, которые производятся после этого преобразования претензий, был вызван. |
 
 Для использования преобразования претензий GetLocalizedStringsTransformation:
 
@@ -437,7 +437,7 @@ ms.locfileid: "79472781"
 
 Выполняет поиск элемента из коллекции **Restriction** утверждения.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | mapFromClaim | строка | Утверждение, содержащее текст, поиск которого будет выполняться в утверждениях **restrictionValueClaim** с коллекцией **Restriction**.  |
 | outputClaim | restrictionValueClaim | строка | Утверждение, содержащее коллекцию **Restriction**. После вызова преобразования утверждений значение этого утверждения будет содержать значение выбранного элемента. |
@@ -480,7 +480,7 @@ ms.locfileid: "79472781"
 
 Выполняет поиск значения утверждения из списка значений, исходя из значения другого утверждения.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputParameterId | строка | Утверждение, содержащее значение подстановки. |
 | InputParameter | |строка | Коллекция inputParameters. |
@@ -558,7 +558,7 @@ ms.locfileid: "79472781"
 
 Удаление значения данного утверждения.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | outputClaim | claim_to_null | строка | Стоимость претензии установлена в NULL. |
 
@@ -581,7 +581,7 @@ ms.locfileid: "79472781"
 
 Получает доменную часть адреса электронной почты.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | emailAddress | строка | Параметр ClaimType, содержащий адрес электронной почты. |
 | outputClaim | домен | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением домена. |
@@ -610,18 +610,22 @@ ms.locfileid: "79472781"
 
 Проверяет, что `claimToMatch` требование `matchTo` строки и параметр ввода равны, и `outputClaimIfMatched` устанавливает требования вывода с значением, присутствующим в `true` `false` параметре ввода, наряду с сравнением претензии вывода результатов, которая должна быть установлена как или основана на результате сравнения.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | claimToMatch | строка | Тип утверждения, которое необходимо сравнить. |
 | InputParameter | matchTo | строка | Регулярное выражение для сопоставления. |
 | InputParameter | outputClaimIfMatched | строка | Значение, которое необходимо задать, если строки равны. |
+| InputParameter | extractGroups | Логическое | (Необязательно) Уточняется, следует ли извлекать значения групп. Возможные значения: `true` `false` или (по умолчанию). | 
 | outputClaim | outputClaim | строка | Если обычное выражение совпадает, это `outputClaimIfMatched` требование вывода содержит значение параметра ввода. Или нулевой, если нет совпадений. |
 | outputClaim | regexCompareResultClaim | Логическое | Тип результатов результатов регулярного выражения совпадает, который должен быть установлен как `true` или `false` основан на результате сопоставления. |
+| outputClaim| Название претензии| строка | Если параметр ввода extractGroups установлен на достоверность, список типов претензий, которые производятся после этого преобразования претензий, был вызван. Название претензииТип должен совпадать с именем группы Regex. | 
 
-Например, проверяется, является ли предоставленный номер телефона действительным, на основе шаблона регулярного выражения номера телефона.
+### <a name="example-1"></a>Пример 1
+
+Проверяет, является ли предоставленный номер телефона действительным, на основе шаблона регулярного выражения номера телефона.
 
 ```XML
-<ClaimsTransformation Id="SetIsPhoneRegex" TransformationMethod="setClaimsIfRegexMatch">
+<ClaimsTransformation Id="SetIsPhoneRegex" TransformationMethod="SetClaimsIfRegexMatch">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="phone" TransformationClaimType="claimToMatch" />
   </InputClaims>
@@ -636,8 +640,6 @@ ms.locfileid: "79472781"
 </ClaimsTransformation>
 ```
 
-### <a name="example"></a>Пример
-
 - Входящие утверждения:
     - **claimToMatch**: "64854114520"
 - Входные параметры:
@@ -647,11 +649,44 @@ ms.locfileid: "79472781"
     - **выходная претензия**: "isPhone"
     - **regexCompareResultClaim**: правда
 
+### <a name="example-2"></a>Пример 2
+
+Проверяет, является ли предоставленный адрес электронной почты действительным, и верните псевдоним электронной почты.
+
+```XML
+<ClaimsTransformation Id="GetAliasFromEmail" TransformationMethod="SetClaimsIfRegexMatch">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="claimToMatch" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="matchTo" DataType="string" Value="(?&lt;mailAlias&gt;.*)@(.*)$" />
+    <InputParameter Id="outputClaimIfMatched" DataType="string" Value="isEmail" />
+    <InputParameter Id="extractGroups" DataType="boolean" Value="true" />
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="validationResult" TransformationClaimType="outputClaim" />
+    <OutputClaim ClaimTypeReferenceId="isEmailString" TransformationClaimType="regexCompareResultClaim" />
+    <OutputClaim ClaimTypeReferenceId="mailAlias" />
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+- Входящие утверждения:
+    - **claimToMatch**:emily@contoso.com"
+- Входные параметры:
+    - **matchTo**:`(?&lt;mailAlias&gt;.*)@(.*)$`
+    - **выходClaimIfMatched**: "isEmail"
+    - **extractGroups**: правда
+- Исходящие утверждения:
+    - **выходная претензия**: "isEmail"
+    - **regexCompareResultClaim**: правда
+    - **mailAlias**: эмили
+    
 ## <a name="setclaimsifstringsareequal"></a>SetClaimsIfStringsAreEqual
 
 Проверяет, равны ли строка утверждения и входной параметр `matchTo`, и задает для исходящих утверждений значение, указанное во входных параметрах `stringMatchMsg` и `stringMatchMsgCode`, а также задает для исходящего утверждения результата сравнения значение `true` или `false` в зависимости от результата сравнения.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип утверждения, которое необходимо сравнить. |
 | InputParameter | matchTo | строка | Строка для сравнения с `inputClaim`. |
@@ -700,7 +735,7 @@ ms.locfileid: "79472781"
 
 Проверяет, равны ли строка утверждения и входной параметр `matchTo`, и задает для исходящих утверждений значение, указанное во входном параметре `outputClaimIfMatched`, а также задает для исходящего утверждения результата сравнения значение `true` или `false` в зависимости от результата сравнения.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | claimToMatch | строка | Тип утверждения, которое необходимо сравнить. |
 | InputParameter | matchTo | строка | Строка для сравнения с inputClaim. |
@@ -745,7 +780,7 @@ ms.locfileid: "79472781"
 
 Определите, происходит ли указанная подстрока в пределах входиной претензии. Результатом является новый логический параметр ClaimType со значением `true` или `false`. `true`если параметр значения происходит в `false`пределах этой строки, в противном случае, .
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип претензии, который необходимо искать. |
 |InputParameter|contains|строка|Значение для поиска.|
@@ -783,7 +818,7 @@ ms.locfileid: "79472781"
 
 Извлекает части типа требования строки, начиная с символа в указанном положении, и возвращает указанное количество символов.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип претензии, содержащий строку. |
 | InputParameter | startIndex | INT | Отсчитываемая от нуля позиция первого знака подстроки в данном экземпляре. |
@@ -821,7 +856,7 @@ ms.locfileid: "79472781"
 
 Поиск строки типа претензии для заданного значения и возвращает новую строку типа претензии, в которой все случаи указанной строки в текущей строке заменяются другой указанной строкой.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип претензии, содержащий строку. |
 | InputParameter | старое_значение | строка | Строка для поиска. |
@@ -859,7 +894,7 @@ ms.locfileid: "79472781"
 
 Конкатирует элементы указанного типа требования сбора строк, используя указанный сепаратор между каждым элементом или элементом.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | stringCollection | Коллекция, содержащая сцепляемые строки. |
 | InputParameter | разделитель | строка | Строка для использования в качестве сепаратора, например, запятая. `,` |
@@ -895,7 +930,7 @@ ms.locfileid: "79472781"
 
 Возвращает массив строки, содержащий подстроки в данном экземпляре, которые разграничены элементами указанной строки.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип требования строки, содержащий строки для разделения. |
 | InputParameter | разделитель | строка | Строка для использования в качестве сепаратора, например, запятая. `,` |

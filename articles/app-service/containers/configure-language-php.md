@@ -4,12 +4,12 @@ description: Узнайте, как настроить предваритель�
 ms.devlang: php
 ms.topic: article
 ms.date: 03/28/2019
-ms.openlocfilehash: ad121d605e521704597471b446fa79cb43dfccc7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9e87466f810dc4ebf767c36ad74c358cbf6069e5
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78255839"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758875"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройте приложение Linux PHP для службы приложений Azure
 
@@ -86,7 +86,7 @@ getenv("DB_HOST")
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
-    RewriteRule ^.*$ /public/$1 [NC,L,QSA]
+    RewriteRule ^(.*)$ /public/$1 [NC,L,QSA]
 </IfModule>
 ```
 
@@ -206,10 +206,10 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 
 [!INCLUDE [robots933456](../../../includes/app-service-web-configure-robots933456.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Учебник: Приложение PHP с MyS'L](tutorial-php-mysql-app.md)
+> [Руководство по приложению PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

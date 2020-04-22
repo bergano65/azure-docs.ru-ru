@@ -1,25 +1,20 @@
 ---
 title: Контейнерная платформа OpenShift 3.11 в задачах после развертывания Azure
 description: Дополнительные задачи для после развертывания кластера OpenShift Container Platform 3.11.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: haroldwongms
 manager: mdotson
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 1635589b282dc33f6a1e9c2552dc8a73c67b9004
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8d76588ae9124d34902659cc0149063400b6e766
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80294748"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759517"
 ---
 # <a name="post-deployment-tasks"></a>Задачи, выполняемые после развертывания
 
@@ -90,7 +85,7 @@ az ad app create --display-name OCPAzureAD --homepage https://masterdns343khhde.
 
    ![Доступ к регистрации приложения](media/openshift-post-deployment/app-registration-access.png)
 
-8. Выберите **готовое**.
+8. Нажмите кнопку **Готово**.
 
 ### <a name="configure-openshift-for-azure-ad-authentication"></a>Настройка OpenShift для аутентификации Azure AD
 
@@ -206,6 +201,6 @@ Open Service Broker для Azure (OSBA) позволяет подготавли�
 > [!NOTE]
 > Только завершить шаги в разделе OpenShift шаблон проекта, а не весь раздел Установки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Overview](https://docs.openshift.com) (Обзор)

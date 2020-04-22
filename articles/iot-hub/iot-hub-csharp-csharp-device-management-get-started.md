@@ -9,12 +9,13 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 3b37d7e049e7daabbbb4fe1a7b49feb654e8accc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: 3cc74faa39b21b1ab275149db4f85de8f55fd07e
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77110258"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733475"
 ---
 # <a name="get-started-with-device-management-net"></a>Начало работы с управлением устройствами (.NET)
 
@@ -64,7 +65,7 @@ ms.locfileid: "77110258"
 
 1. При **создании нового проекта**найдите и выберите шаблон проекта Console App **(.NET Framework),** а затем выберите **следующий**.
 
-1. При **настройке нового проекта**назовите проект *TriggerReboot*и выберите версию .NET Framework 4.5.1 или позже. Выберите **Создать**.
+1. При **настройке нового проекта**назовите проект *TriggerReboot*и выберите версию .NET Framework 4.5.1 или позже. Нажмите кнопку **создания**.
 
     ![Новый проект классического приложения Windows на языке Visual C#](./media/iot-hub-csharp-csharp-device-management-get-started/create-trigger-reboot-configure.png)
 
@@ -76,7 +77,7 @@ ms.locfileid: "77110258"
 
    В результате выполняется скачивание и установка пакета NuGet [SDK для служб Интернета вещей Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices/) и его зависимостей, а также добавляется соответствующая ссылка.
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+1. Добавьте `using` следующие инструкции в верхней части файла **Program.cs:**
 
    ```csharp
    using Microsoft.Azure.Devices;
@@ -147,19 +148,19 @@ ms.locfileid: "77110258"
 
 1. В Visual Studio, в уже созданном вами решении TriggerReboot выберите **Файл** > **Новый** > **проект.** При **создании нового проекта**найдите и выберите шаблон проекта Console App **(.NET Framework),** а затем выберите **следующий**.
 
-1. В **настройке нового проекта,** назовите проект *SimulateManagedDevice,* а для **решения**выберите **Добавить в решение.** Выберите **Создать**.
+1. В **настройке нового проекта,** назовите проект *SimulateManagedDevice,* а для **решения**выберите **Добавить в решение.** Нажмите кнопку **создания**.
 
     ![Назовите и добавьте свой проект в решение](./media/iot-hub-csharp-csharp-device-management-get-started/configure-device-app.png)
 
 1. В Solution Explorer, правой кнопкой мыши новый проект **SimulateManagedDevice,** а затем выберите **Управление NuGet пакеты**.
 
-1. Выберите **просмотр,** затем поиск и выберите **Microsoft.Azure.Devices.Client**. Нажмите кнопку **Установить**.
+1. Выберите **просмотр,** затем поиск и выберите **Microsoft.Azure.Devices.Client**. Выберите пункт **Установить**.
 
     ![Клиентское приложение в окне "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-device-management-get-started/create-device-nuget-devices-client.png)
 
    Этот шаг загружает, устанавливает и добавляет ссылку на пакет [SDK NuGet-устройства Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) и его зависимости.
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+1. Добавьте `using` следующие инструкции в верхней части файла **Program.cs:**
 
     ```csharp
     using Microsoft.Azure.Devices.Client;

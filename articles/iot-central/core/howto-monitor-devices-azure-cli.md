@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: 0fa1b58547e0260ec5486003cf4cb85d855de33a
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 1a6106a45f5062850ceb12205528a05ed1d494be
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81310230"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81756665"
 ---
 # <a name="monitor-device-connectivity-using-azure-cli"></a>Мониторинг подключения устройств с помощью Azure CLI
 
-*Этот раздел предназначен для разработчиков и администраторов.*
+*Эта тема применима к разработчикам устройств и разработчикам решений.*
 
 Используйте расширение Azure CLI IoT, чтобы видеть сообщения, которые ваши устройства отправляют в IoT Central, и наблюдать изменения в близнеце устройства. Этот инструмент можно использовать для отладки и наблюдения за подключением устройств и диагностики проблем сообщений устройств, не достигающих облака или устройств, не реагирующих на двойные изменения.
 
@@ -79,4 +79,4 @@ az iot central device-twin show --app-id <app-id> --device-id <device-id>
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Теперь, когда вы узнали, как использовать IoT Central Explorer, следующим шагом является [изучение управления устройствами IoT Central.](howto-manage-devices.md)
+Если вы разработчик устройств, следующим шагом является чтение о [подключении устройств в Azure IoT Central.](./concepts-get-connected.md)

@@ -2,18 +2,17 @@
 title: Выполнение сценариев в виртуальной машине Azure Linux
 description: В этом разделе описывается выполнение скриптов в виртуальной машине
 services: automation
-ms.service: automation
+ms.service: virtual-machines-linux
 author: bobbytreed
 ms.author: robreed
 ms.date: 05/02/2018
 ms.topic: article
-manager: carmonm
-ms.openlocfilehash: 6175ae4263aee0ecdca5b1d768438ad20352375c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9dbfb3e76fe1c0e80dd8020b79f4edd6d32a24a3
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "67477032"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758583"
 ---
 # <a name="run-scripts-in-your-linux-vm"></a>Запуск сценариев в виртуальной машине Linux
 
@@ -64,11 +63,11 @@ ms.locfileid: "67477032"
 * Войдите в систему с помощью учетной записи локального пользователя.
 * Можно использовать, когда доступ к виртуальной машине необходим независимо от состояния сети или операционной системы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о различных доступных возможностях, для выполнения сценариев и команд в виртуальных машинах.
 
-* [Пользовательское расширение сценария](../extensions/custom-script-linux.md)
-* [Команда "Выполнить"](run-command.md)
-* [Гибридный компонент Runbook Worker](../../automation/automation-hybrid-runbook-worker.md)
+* [Расширение пользовательских сценариев](../extensions/custom-script-linux.md)
+* [Запуск команды](run-command.md)
+* [Гибридная рабочая роль Runbook](../../automation/automation-hybrid-runbook-worker.md)
 * [Серийная консоль](serial-console.md)

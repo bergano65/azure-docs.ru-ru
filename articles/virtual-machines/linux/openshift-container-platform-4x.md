@@ -1,25 +1,20 @@
 ---
 title: Развертывание контейнерной платформы OpenShift 4.x в Azure
 description: Развертывание контейнерной платформы OpenShift 4.x в Azure.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: haroldwongms
 manager: mdotson
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 213c02b76f822d134729ebc4c0e6bff40f62089f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 14af110b5cf50f167d0c4961e26454bc33c6ed7d
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74035434"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759489"
 ---
 # <a name="deploy-openshift-container-platform-4x-in-azure"></a>Развертывание контейнерной платформы OpenShift 4.x в Azure
 
@@ -37,12 +32,12 @@ ms.locfileid: "74035434"
 
 | Описание проблемы | Контактная точка |
 |-------------------|---------------|
-| Специфические проблемы Azure (AAD, SP, подписка Azure и т.д.)                              | Microsoft |
+| Специфические проблемы Azure (AAD, SP, подписка Azure и т.д.)                              | Майкрософт |
 | Проблемы, связанные с OpenShift (сбои в установке/ ошибки, подписка Red Hat и т.д.) |  Red Hat  |
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Overview](https://docs.openshift.com) (Обзор)

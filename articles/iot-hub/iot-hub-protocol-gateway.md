@@ -8,12 +8,15 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 07/11/2017
-ms.openlocfilehash: 9dbb7905c2a0fed65ede610577e0fa11a1deef92
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: bfd000e2b69f052e25f0ea6cd286b0ca3aef7519
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60345402"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759705"
 ---
 # <a name="support-additional-protocols-for-iot-hub"></a>Поддержка дополнительных протоколов для Центра Интернета вещей
 
@@ -31,7 +34,7 @@ ms.locfileid: "60345402"
 
 Для дополнительной гибкости шлюз протокола Azure IoT и реализация MQTT предоставляются в виде проекта с открытым кодом. При помощи проекта с открытым кодом можно добавлять поддержку различных протоколов и их версий или настраивать реализацию сценария. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы подробнее узнать о шлюзе протокола IoT Azure и о том, как развернуть его для вашего решения IoT, обратитесь к следующим документам и ресурсам:
 

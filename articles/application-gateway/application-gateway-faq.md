@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 04/01/2020
 ms.author: victorh
-ms.openlocfilehash: e64b0a8602a4a0806ada15546972856743c38161
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 0e5a683c95e213a0fc37ec4f559e89abfecf034a
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81312471"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758908"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -72,7 +72,7 @@ Azure Application Gateway предоставляет контроллер дос
 
 *Тайм-аут Keep-Alive* определяет, как долго шлюз приложения будет ждать клиента, чтобы отправить другой запрос HTTP на постоянное соединение перед его повторного использования или закрытия. *Тайм-аут TCP определяет,* как долго подключение TCP остается открытым в случае отсутствия активности. 
 
-*Тайм-аут Keep-Alive* в Application Gateway v1 SKU составляет 120 секунд, а в v2 SKU - 75 секунд. *TCP простоя тайм-аут* 4-минутный по умолчанию на передней виртуальной IP (VIP) как v1 и v2 SKU приложения шлюза. 
+*Тайм-аут Keep-Alive* в Application Gateway v1 SKU составляет 120 секунд, а в v2 SKU - 75 секунд. *TCP простоя тайм-аут* 4-минутный по умолчанию на передней виртуальной IP (VIP) как v1 и v2 SKU приложения шлюза. Вы не можете изменить эти значения.
 
 ### <a name="does-the-ip-or-dns-name-change-over-the-lifetime-of-the-application-gateway"></a>Изменяется ли имя IP или DNS в течение всего срока службы шлюза приложения?
 

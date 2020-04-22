@@ -10,14 +10,16 @@ ms.custom:
 ms.author: avneets
 author: avneet723
 ms.date: 11/27/2019
-ms.openlocfilehash: e8d1c4a605e8db2e9753bb80c9712dd6c2be7b59
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 93e4d3d0bed9090573d2b6ee87a29b86ccd72e42
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80158262"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758938"
 ---
 # <a name="connect-a-ruuvitag-sensor-to-your-azure-iot-central-application"></a>Подключите датчик RuuviTag к приложению Azure IoT Central
+
+*Эта статья относится к разработчикам решений и разработчикам устройств.*
 
 В этой статье описывается, как, будучи разработчиком решений, можно подключить датчик RuuviTag к приложению Microsoft Azure IoT Central.
 
@@ -70,8 +72,11 @@ RuuviTag общается по всему BLE (Bluetooth Low Energy) и треб
 1. Выберите **+ Создать**.
 1. Укажите уникальный **идентификатор устройства** и имя дружественного **устройства.**  
 1. Включить **смоделированную настройку.**
-1. Выберите **Создать**.  
+1. Нажмите кнопку **создания**.  
 
 ## <a name="next-steps"></a>Next Steps
 
-Теперь, когда вы узнали, как подключить RuuviTag к приложению Azure IoT Central, следующий шаг должен научиться [настраивать приложение IoT Central](../retail/tutorial-in-store-analytics-customize-dashboard-pnp.md) для создания решения от конца до конца.
+Если вы разработчик устройств, некоторые предлагаемые следующие шаги:
+
+- Читайте о [подключении устройств в Azure IoT Central](./concepts-get-connected.md)
+- Узнайте, как [отслеживать подключение к устройствам с помощью Azure CLI](./howto-monitor-devices-azure-cli.md)

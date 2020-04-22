@@ -8,12 +8,13 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: robinsh
-ms.openlocfilehash: 706e1920c6c4fe39e885fd3f5a631070545509ee
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.custom: mqtt
+ms.openlocfilehash: 47fb7c615389e24322450ed1785aa7da9ec50db6
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80529301"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759695"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-python"></a>Загрузка файлов с устройства в облако с помощью Концентратора IoT (Python)
 
@@ -176,7 +177,7 @@ ms.locfileid: "80529301"
 
 1. Сохраните и закройте файл **UploadFile.py**.
 
-## <a name="run-the-application"></a>Выполнение приложения
+## <a name="run-the-application"></a>Запуск приложения
 
 Теперь вы готовы к запуску приложения.
 
@@ -194,7 +195,7 @@ ms.locfileid: "80529301"
 
     ![Отправленный файл](./media/iot-hub-python-python-file-upload/view-blob.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Изучение функций и сценариев Центра Интернета вещей можно продолжить в следующих руководствах:
 
@@ -202,7 +203,7 @@ ms.locfileid: "80529301"
 
 * [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
 
-* [IoT Hub SDKs](iot-hub-devguide-sdks.md) (Пакеты SDK для Центра Интернета вещей)
+* [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)
 
 Узнайте больше о хранилище Azure Blob со следующими ссылками:
 

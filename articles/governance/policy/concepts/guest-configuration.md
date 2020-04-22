@@ -3,12 +3,12 @@ title: Научитесь проверять содержимое виртуал
 description: Узнайте, как Azure Policy использует агента конфигурации гостей для проверки настроек внутри виртуальных машин.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4899f6b3108cabb4e9cdd36e4b2bc5cd2f1cbd4
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 1721c0f1ca7c084d636278aabc96f8dac3293038
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81538041"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759079"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -20,19 +20,25 @@ ms.locfileid: "81538041"
 
 В настоящее время большинство политик Azure Policy Guest Configuration политики только параметры аудита внутри машины. Они не применяются конфигурации. Исключением является одна встроенная политика, [на которая ссылается ниже](#applying-configurations-using-guest-configuration).
 
+## <a name="resource-provider"></a>Поставщик ресурсов
+
+Перед использованием гостевой конфигурации необходимо зарегистрировать поставщик ресурсов. Поставщик ресурсов регистрируется автоматически, если через портал осуществляется назначение политики конфигурации гостей. Вы можете вручную зарегистрироваться через [портал,](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) [Azure PowerShell](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-powershell), или [Azure CLI](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-cli).
+
 ## <a name="extension-and-client"></a>Расширение и клиент
 
 Для проверки настроек внутри машины [включено виртуальное расширение машины.](../../../virtual-machines/extensions/overview.md) Расширение скачивает подходящее назначение политики и соответствующее определение конфигурации.
+
+> [!Important]
+> Расширение конфигурации гостей необходимо для проведения аудита в виртуальных машинах Azure.
+> Чтобы развернуть расширение в масштабе, назначайте следующие определения политики:
+>   - Развертывание необходимых компонентов для политики гостевой конфигурации на виртуальных машинах Windows
+>   - Развертывание необходимых компонентов для политики гостевой конфигурации на виртуальных машинах Linux
 
 ### <a name="limits-set-on-the-extension"></a>Ограничения, установленные на расширение
 
 Чтобы ограничить расширение от воздействия приложений, работающих внутри машины, конфигурация гостя не может превышать более 5% процессора. Это ограничение существует как для встроенных, так и для пользовательских определений.
 
-## <a name="register-guest-configuration-resource-provider"></a>Регистрация поставщика ресурсов гостевой конфигурации
-
-Перед использованием гостевой конфигурации необходимо зарегистрировать поставщик ресурсов. Вы можете зарегистрироваться через [портал,](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) [Azure PowerShell](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-powershell), или [Azure CLI](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-cli). Поставщик ресурсов регистрируется автоматически, если через портал осуществляется назначение политики конфигурации гостей.
-
-## <a name="validation-tools"></a>Инструменты проверки
+### <a name="validation-tools"></a>Инструменты проверки
 
 Внутри машины клиент Гостевой Конфигурации использует локальные инструменты для выполнения аудита.
 
@@ -50,17 +56,17 @@ ms.locfileid: "81538041"
 
 ## <a name="supported-client-types"></a>Поддерживаемые типы клиентов
 
-В следующей таблице перечислены операционные системы, поддерживаемые в образах Azure:
+Политики конфигурации гостей включают в себя новые версии. Старые версии операционных систем, доступных на рынке Azure, исключаются, если агент гостевой конфигурации не совместим. В следующей таблице приведен список поддерживаемых операционных систем на изображениях Azure:
 
-|Издатель|name|Версии|
+|Издатель|Имя|Версии|
 |-|-|-|
-|Canonical|Сервер Ubuntu|14.04, 16.04, 18.04|
-|Credativ|Debian|8, 9|
-|Microsoft|Windows Server|2012 Центр обработки данных, 2012 R2 Центр обработки данных, 2016 Центр обработки данных, 2019 Центр обработки данных|
-|Microsoft|Клиент Windows|Windows 10|
-|OpenLogic|CentOS|7.3, 7.4, 7.5, 7.6, 7.7|
-|Red Hat|Red Hat Enterprise Linux|7.4, 7.5, 7.6, 7.7, 7.8|
-|Suse|SLES|12 с пакетом обновления 3|
+|Canonical|Сервер Ubuntu|14.04 и позже|
+|Credativ|Debian|8 и более поздних|
+|Майкрософт|Windows Server|2012 и более поздние|
+|Майкрософт|Клиент Windows|Windows 10|
+|OpenLogic|CentOS|7.3 и более поздние|
+|Red Hat|Red Hat Enterprise Linux|7.4 и более поздние|
+|Suse|SLES|12 SP3 и позже|
 
 ### <a name="unsupported-client-types"></a>Неподдерживаемые типы клиентов
 

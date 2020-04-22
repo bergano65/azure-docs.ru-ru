@@ -5,25 +5,25 @@ author: KarlErickson
 ms.author: karler
 ms.topic: how-to
 ms.date: 04/08/2020
-ms.openlocfilehash: 5e18e035bd237fd489b715986e58d7ede726348d
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 34aab24bf39e387715cfa5783b801d45ed488750
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886608"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732729"
 ---
 # <a name="use-java-and-gradle-to-create-and-publish-a-function-to-azure"></a>Используйте Java и Gradle для создания и публикации функции в Azure
 
 В этой статье показано, как построить и опубликовать проект функции Java для функций Azure с помощью инструмента командной строки Gradle. После завершения этого руководства код функции будет выполняться в Azure в [бессерверном плане потребления](functions-scale.md#consumption-plan) с активацией по HTTP-запросу. 
 
 > [!NOTE]
-> Если Gradle не является предпочтительной вами инструментом разработки, ознакомьтесь с нашими аналогичными учебниками для Java devlopers с использованием [Maven,](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java) [IntelliJ IDEA](/azure/java/intellij/azure-toolkit-for-intellij-quickstart-functions) и [VS Code.](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java)
+> Если Gradle не является предпочтительним инструментом разработки, ознакомьтесь с нашими аналогичными учебниками для Java-разработчиков, использующих [Maven,](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java) [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [VS Code.](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для разработки функций с помощью Java, должны быть установлены следующие компоненты:
 
-- [Набор Java-разработчика,](https://aka.ms/azure-jdks)версия 8
+- [Java Developer Kit (JDK)](https://aka.ms/azure-jdks) версии 8.
 - [Azure CLI]
 - [Azure Functions Core Tools](./functions-run-local.md#v2) 2.6.666 или более поздней версии.
 - [Gradle](https://gradle.org/), версия 4.10 и выше
@@ -113,7 +113,7 @@ az login
 > [!TIP]
 > Если ваша учетная запись имеет доступ к нескольким подпискам, задайте подписку по умолчанию для текущего сеанса с помощью команды [az account set](/cli/azure/account#az-account-set). 
 
-Используйте следующую команду для развертывания проекта в новом приложении функции. 
+Используйте следующую команду, чтобы развернуть проект в виде нового приложения-функции. 
 
 ```bash
 gradle azureFunctionsDeploy
@@ -164,7 +164,7 @@ Hello AzureFunctions!
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=verify-deployment)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Итак, вы создали проект с функцией Java, активируемой по HTTP-запросу, запустили ее на своем локальном компьютере и развернули в Azure. Теперь расширьте свою функцию путем...
 

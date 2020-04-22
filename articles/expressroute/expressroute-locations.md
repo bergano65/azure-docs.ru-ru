@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 04/14/2020
 ms.author: cherylmc
-ms.openlocfilehash: b99bd20b9b9e18bbc09edd5bb49f34147ccfaabd
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: b825ed513f530733d7552e32206c12422a956b14
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81390250"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81766937"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -74,7 +74,7 @@ ms.locfileid: "81390250"
 
 ### <a name="global-commercial-azure"></a>Глобальный коммерческий Azure
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365**  | **Местах** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365**  | **Расположения** |
 | --- | --- | --- | --- |
 | **[AARNet](https://www.aarnet.edu.au/network-and-services/connectivity-services/azure-expressroute)** |Поддерживается |Поддерживается |Мельбурн, Сидней |
 | **[Airtel](https://www.airtel.in/business/#/)** | Поддерживается | Поддерживается | Ченнаи 2, Мумбаи 2 |
@@ -84,7 +84,7 @@ ms.locfileid: "81390250"
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Даллас, Франкфурт, Лондон, Силиконовая долина, Сингапур, Сидней, Токио, Торонто, Вашингтон |
 | **[В ТОКИО](https://www.attokyo.com/service/cloudsconnection/forazure.html)** | Поддерживается | Поддерживается | Токио2 |
 | **[ББИКС](https://www.bbix.net/en/service/ix/)** | Поддерживается | Поддерживается | Токио |
-| **[BCX](https://www.bcx.co.za/solutions)** |Поддерживается |Поддерживается |Кейптаун|
+| **[BCX](https://www.bcx.co.za/solutions)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург|
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Поддерживается |Поддерживается |Квебек, Монреаль, Торонто |
 | **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Гонконг SAR, Иоганнесбург, Лондон, Ньюпорт (Уэльс), Сан-Паулу, Силиконовая долина, Сингапур, Сидней, Токио, Вашингтон |
 | **[C3ntro](https://www.c3ntro.com/data1/express-route1.php)** |Поддерживается |Поддерживается |Майами |
@@ -174,7 +174,7 @@ ms.locfileid: "81390250"
 
 ### <a name="us-government-cloud"></a>Облако US Gov 
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Местах** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
 | --- | --- | --- | --- |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживается |Поддерживается |Чикаго, Финикс, Силиконовая долина, Вашингтон |
 | **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Нью-йорк, Финикс, Сан-Антонио, Вашингтон, округ Колумбия |
@@ -185,7 +185,7 @@ ms.locfileid: "81390250"
 
 ### <a name="china"></a>Китай
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Местах** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
 | --- | --- | --- | --- |
 | **China Telecom** |Поддерживается |Не поддерживается |Пекин, Пекин2, Шанхай, Шанхай2 |
 | **Китай Unicom** | Поддерживается | Не поддерживается | Пекин 2 |
@@ -195,7 +195,7 @@ ms.locfileid: "81390250"
 
 ### <a name="germany"></a>Германия
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Местах** |
+| **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
 | --- | --- | --- | --- |
 | **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Поддерживается |Не поддерживается |Франкфурт |
 | **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Не поддерживается |Франкфурт |
@@ -233,7 +233,7 @@ ms.locfileid: "81390250"
 
 ## <a name="connectivity-through-additional-service-providers"></a>Связь с дополнительными поставщиками услуг
 
-| **Поставщик услуг подключения** | **Exchange** | **Местах** |
+| **Поставщик услуг подключения** | **Exchange** | **Расположения** |
 | --- | --- | --- |
 | **[1CLOUDSTAR](https://www.1cloudstar.com/service/cloudconnect-azure-expressroute/)** |Equinix |Сингапур |
 | **[Airgate Technologies, Inc.](https://www.airgate.ca/expressroute)** | Equinix, Cologix | Торонто, Монреаль |
@@ -279,7 +279,7 @@ ms.locfileid: "81390250"
 | **[Retn](https://retn.net/services/cloud-connect/)** | Equinix | Амстердам |
 | **Rogers** | Cologix, Equinix | Монреаль, Торонто |
 | **[Спектр Предприятия](https://enterprise.spectrum.com/services/cloud/cloud-connect.html)** | Equinix | Чикаго, Даллас, Лос-Анджелес, Нью-йорк, Силиконовая долина | 
-| **[Tamares Telecom](https://www.tamarestelecom.com/our-services/#Connectivity)** | Equinix | London | 
+| **[Tamares Telecom](http://www.tamarestelecom.com/our-services/#Connectivity)** | Equinix | London | 
 | **[TDC Erhverv](https://tdc.dk/Produkter/cloudaccessplus)** | Equinix | Амстердам | 
 | **[Telecom Italia Sparkle](https://www.tisparkle.com/our-platform/corporate-platform/sparkle-cloud-connect#catalogue)**| Equinix | Амстердам |
 | **[Телеком Дойчланд GmbH](https://cloud.telekom.de/de/infrastruktur/managed-it-services/managed-hybrid-infrastructure-mit-microsoft-azure)** | Interxion | Амстердам, Франкфурт |
@@ -353,7 +353,7 @@ ms.locfileid: "81390250"
 | **[Venha Pra Nuvem](https://venhapranuvem.com.br/)** | Южная Америка |
 | **[Vigilant.IT](https://vigilant.it/expressroute)** | Австралия |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

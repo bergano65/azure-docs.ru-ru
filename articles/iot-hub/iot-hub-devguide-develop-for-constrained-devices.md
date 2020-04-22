@@ -7,12 +7,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: robinsh
-ms.openlocfilehash: a1918a99efcdcc5764140093ad422f7887ca3c88
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 9010ff582f05e81e17e280e20f180ceccf0e746f
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "73954699"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733208"
 ---
 # <a name="develop-for-constrained-devices-using-azure-iot-c-sdk"></a>Разработка устройств с ограниченными ресурсами с помощью пакета SDK Azure IoT для C
 
@@ -79,8 +82,8 @@ strip -s <Path_to_executable>
 
 Другой набор API-интерфейсов без индекса _LL_ называется удобным слоем, на котором автоматически запускается рабочий поток. Например, API-интерфейсы удобного слоя для клиента устройства можно найти в этом [файле заголовка клиентского пакета для устройств Интернета вещей](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/inc/iothub_device_client.h). Для устройств с ограниченными ресурсами, на которых поток может потреблять значительный объем системных ресурсов, советуем использовать API-интерфейсы с индексом _LL_.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об архитектуре пакетов SDK для Azure IoT для C см. в следующих источниках:
--   [Исходный код пакета SDK для Интернета вещей Azure для C](https://github.com/Azure/azure-iot-sdk-c/)
--   [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
+-    [Исходный код пакета SDK для Интернета вещей Azure для C](https://github.com/Azure/azure-iot-sdk-c/)
+-    [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)

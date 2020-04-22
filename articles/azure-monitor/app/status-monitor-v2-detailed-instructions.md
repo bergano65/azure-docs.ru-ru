@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 2a0eb83b4b056230e8e7ef103f220b216fceb9e9
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 8f6134e8f8fdb9af3f578afaf0670c32a3896e01
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81537463"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81766861"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Приложение Insights Agent (ранее названный Status Monitor v2): Подробные инструкции
 
@@ -219,7 +219,7 @@ SDK-приложению необходимо будет отправить те
 
 Используйте `Enable-ApplicationInsightsMonitoring` команду для включения мониторинга.
 
-Подробнее о том, как использовать этот cmdlet, можно ознакомиться в [справочнике API.](status-monitor-v2-api-enable-monitoring.md)
+Подробнее о том, как использовать этот cmdlet, можно ознакомиться в [справочнике API.](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-applicationinsightsmonitoring)
 
 
 

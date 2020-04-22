@@ -1,25 +1,20 @@
 ---
 title: Развертывание контейнерной платформы OpenShift 3.11 в Azure
 description: Развертывание контейнерной платформы OpenShift 3.11 в Azure.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: haroldwongms
 manager: mdotson
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/05/2020
 ms.author: haroldw
-ms.openlocfilehash: 7fd1c381ecd2b7dba4c77a025cb0332ace4147bf
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: 7d6cd4c6ce7991ae83f6f4a1dd6d8b86fe7eedbc
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80673668"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81757897"
 ---
 # <a name="deploy-openshift-container-platform-311-in-azure"></a>Развертывание контейнерной платформы OpenShift 3.11 в Azure
 
@@ -248,7 +243,7 @@ ms.locfileid: "80673668"
 
 ### <a name="azuredeployparametersjson-file-explained"></a>лазуриции. Параметры.json файл объяснил
 
-| Свойство | Описание | Допустимые параметры | Значение по умолчанию |
+| Свойство. | Описание | Допустимые параметры | Значение по умолчанию |
 |----------|-------------|---------------|---------------|
 | `_artifactsLocation`  | URL для артефактов (json, скрипты и т.д.) |  |  https:\//raw.githubusercontent.com/Microsoft/openshift-container-platform/master  |
 | `location` | Azure для развертывания ресурсов для |  |  |
@@ -269,9 +264,9 @@ ms.locfileid: "80673668"
 | `dataDiskSize` | Размер диска данных для присоединения к узлам для громкости Docker (в ГБ) | 32, 64, 128, 256, 512, 1024, 2048 | 64 |
 | `cnsGlusterDiskSize` | Размер диска данных для присоединения к узлам ЦНС для использования глухотами (в ГБ | 32, 64, 128, 256, 512, 1024, 2048 | 128 |
 | `adminUsername` | Имя пользователя Admin как для входа в ОС (VM) и начального пользователя OpenShift |  | ocpadmin |
-| `enableMetrics` | Включить метрики. Метрики требуют больше ресурсов, поэтому выберите правильный размер для Infra VM | true <br> false | false |
-| `enableLogging` | Включить регистрацию. elasticsearch стручок требует 8 ГБ оперативной памяти, так что выберите правильный размер для Infra VM | true <br> false | false |
-| `enableCNS` | Включить хранилище контейнеров родного | true <br> false | false |
+| `enableMetrics` | Включить метрики. Метрики требуют больше ресурсов, поэтому выберите правильный размер для Infra VM | Да <br> false | false |
+| `enableLogging` | Включить регистрацию. elasticsearch стручок требует 8 ГБ оперативной памяти, так что выберите правильный размер для Infra VM | Да <br> false | false |
+| `enableCNS` | Включить хранилище контейнеров родного | Да <br> false | false |
 | `rhsmUsernameOrOrgId` | Имя пользователя или идентификатор организации Менеджера подписки Red Hat |  |  |
 | `rhsmPoolId` | Идентификатор менеджера по подписке Red Hat, содержащий права OpenShift на вычислительные узлы |  |  |
 | `rhsmBrokerPoolId` | Red Hat Подписка Менеджер бассейн ID, который содержит ваши права OpenShift для мастеров и инфра узлов. Если у вас нет различных идентификаторов пула, введите тот же идентификатор пула, что и 'rhsmPoolId' |  |
@@ -279,7 +274,7 @@ ms.locfileid: "80673668"
 | `keyVaultSubscriptionId` | Идентификатор подписки, содержащий Ключевое Убежище |  |  |
 | `keyVaultResourceGroup` | Название Группы ресурсов, содержащей Ключевое Убежище |  |  |
 | `keyVaultName` | Название созданного вами Ключевого Убежища |  |  |
-| `enableAzure` | Включить облачный провайдер Azure | true <br> false | true |
+| `enableAzure` | Включить облачный провайдер Azure | Да <br> false | Да |
 | `aadClientId` | Идентификатор клиента Active Directory Azure также известен как идентификатор приложения для директора службы |  |  |
 | `domainName` | Имя пользовательского доменного имени для использования (если это применимо). Установить на "нет", если не развертывание полностью частного кластера |  | none |
 | `masterClusterDnsType` | Тип домена для веб-консоли OpenShift. 'по умолчанию' будет использовать DNS ярлык мастер-инфра общего IP. 'таможня' позволяет определить свое собственное имя | default <br> custom | default |
@@ -349,7 +344,7 @@ $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

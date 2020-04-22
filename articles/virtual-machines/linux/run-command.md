@@ -2,18 +2,18 @@
 title: Запуск скриптов оболочки в Linux VM на Azure
 description: В этой теме описывается, как запускать скрипты в виртуальной машине Azure Linux с помощью функции Run Command
 services: automation
-ms.service: automation
+ms.service: virtual-machines
 author: bobbytreed
 ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 21787854590d3ca0be2cbd6e9d167de33482c787
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 80fc33a93d4d83dad1e687b176b39728fc7e8807
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "72597879"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758602"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-by-using-run-command"></a>Запуск скриптов оболочки в Linux VM с помощью команды Run Command
 
@@ -49,7 +49,7 @@ ms.locfileid: "72597879"
 The entity was not found in this Azure location
 ```
 
-|**Название**|**Описание**|
+|**имя**;|**Описание**|
 |---|---|
 |**RunShellScript**|Запускает сценарий оболочки Linux.|
 |**ifconfig**| Получает конфигурацию всех сетевых интерфейсов.|
@@ -96,6 +96,6 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 Можно использовать одну из [встроенных ролей](../../role-based-access-control/built-in-roles.md) или создать [пользовательскую роль](../../role-based-access-control/custom-roles.md) для использования Команды Выполнения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать о других способах удаленного выполнения скриптов [Run scripts in your Linux VM](run-scripts-in-vm.md)и команд в VM, см.

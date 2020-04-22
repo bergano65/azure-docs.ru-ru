@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: denisgun
-ms.openlocfilehash: 941a1ff23668a3202028e8b693b57d902095b3b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8b675a78041b68210fa7583510582783c506c720
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78384829"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767043"
 ---
 # <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop"></a>Настройка графического процессора (GPU) ускорение для Windows Virtual Desktop
 
@@ -86,9 +86,9 @@ Windows Virtual Desktop поддерживает gPU-ускоренную виз
 3. Чтобы определить, используется ли кодирование GPU, ищите идентификатор событий 170. Если вы видите "AVC аппаратного кодера включен: 1", то кодирование gPU используется.
 4. Чтобы определить, используется ли режим AVC 444, ищите идентификатор событий 162. Если вы видите "AVC Доступно: 1 Первоначальный профиль: 2048", то AVC 444 используется.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Эти инструкции должны иметь вас и работает с ускорением GPU на одном хост-сессии VM. Некоторые дополнительные соображения для обеспечения ускорения графического процессора в большом пуле хостов:
+Эти инструкции должны иметь вас и работает с ускорением GPU на одном хосте сессии (один VM). Некоторые дополнительные соображения для обеспечения ускорения графического процессора в большом пуле хостов:
 
 * Рассмотрите возможность использования [расширения VM](/azure/virtual-machines/extensions/overview) для упрощения установки драйверов и обновлений в нескольких вдыхать их. Используйте [расширение драйвера NVIDIA GPU](/azure/virtual-machines/extensions/hpccompute-gpu-windows) для VMs с графическими процессорами NVIDIA и используйте расширение драйвера GPU AMD (скоро) для ВМ с графическими процессорами AMD.
 * Рассмотрите возможность использования политики группы Active Directory для упрощения конфигурации групповой политики в ряде внештатных внешёв. Для получения информации о развертывании групповой политики в домене Active Directory [см.](https://go.microsoft.com/fwlink/p/?LinkId=620889)

@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: kgremban
-ms.openlocfilehash: f801abc40caf273c28a0c01dedf9735f5198c2af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: amqp
+ms.openlocfilehash: a1d74085090a3e20764d7b6fee84ffca52d5cb74
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79271087"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732432"
 ---
 # <a name="monitor-the-health-of-azure-iot-hub-and-diagnose-problems-quickly"></a>Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок
 
@@ -548,7 +549,7 @@ class Program
 
 Чтобы узнать больше о том, как интерпретировать данные о работоспособности, смотрите [обзор работоспособности ресурсов Azure.](../service-health/resource-health-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
 * [Удаленный мониторинг и отправка уведомлений в Центре Интернета вещей с помощью службы Azure Logic Apps, обеспечивающей подключение между Центром Интернета вещей и почтовым ящиком](iot-hub-monitoring-notifications-with-azure-logic-apps.md)

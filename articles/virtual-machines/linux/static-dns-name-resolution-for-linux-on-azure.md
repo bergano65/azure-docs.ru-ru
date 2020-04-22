@@ -1,26 +1,19 @@
 ---
 title: Используйте внутренние DNS для разрешения имени VM с помощью Azure CLI
-description: Сведения о создании виртуальных сетевых карт и использовании внутренних DNS-имен для разрешения имен виртуальных машин в Azure с помощью Azure CLI.
-services: virtual-machines-linux
-documentationcenter: ''
+description: Как создать виртуальные карты сетевого интерфейса и использовать внутренние DNS для разрешения имени VM в Azure с Azure CLI.
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: networking
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.devlang: azurecli
 ms.topic: article
 ms.date: 02/16/2017
 ms.author: cynthn
-ms.openlocfilehash: acfdfd4edf90b90998a913fa0c6479bedf0028b7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 07a78e4987a844627824ac5034046cf6a393ad8d
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74034741"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81757849"
 ---
 # <a name="create-virtual-network-interface-cards-and-use-internal-dns-for-vm-name-resolution-on-azure"></a>Создание виртуальных сетевых карт и использование внутренних DNS-имен для разрешения имен виртуальных машин в Azure
 
@@ -49,7 +42,7 @@ az network nic create \
 ```
 
 ### <a name="deploy-a-vm-and-connect-the-vnic"></a>Развертывание виртуальной машины и подключение виртуальной сетевой карты
-Создайте VM с [az vm создать.](/cli/azure/vm) Флаг `--nics` позволяет подключить виртуальную сетевую карту к виртуальной машине при развертывании в Azure. Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). Флаг `--nics` позволяет подключить виртуальную сетевую карту к виртуальной машине при развертывании в Azure. Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
 
 ```azurecli
 az vm create \
@@ -149,7 +142,7 @@ az network nic create \
 ## <a name="deploy-the-vm-into-the-virtual-network-infrastructure"></a>Развертывание виртуальной машины в инфраструктуре виртуальной сети
 Теперь у нас есть виртуальная сеть, подсеть и группа безопасности сети, выступающая в качестве брандмауэра для защиты подсети путем блокирования всего входящего трафика, кроме трафика, поступающего через порт 22 по протоколу SSH, а также виртуальная сетевая карта. Теперь вы можете развернуть виртуальную машину в этой созданной сетевой инфраструктуре.
 
-Создайте VM с [az vm создать.](/cli/azure/vm) Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). Следующий пример создает виртуальную машину `myVM`, использующую Управляемые диски Azure, и подключает к ней виртуальную сетевую карту `myNic`, созданную на предыдущем шаге.
 
 ```azurecli
 az vm create \
@@ -163,6 +156,6 @@ az vm create \
 
 Используя флаги командной строки для вызова существующих ресурсов, мы укажем среде Azure развернуть виртуальную машину в существующей сети. После развертывания виртуальную сеть и подсеть можно оставить в качестве статических или постоянных ресурсов в регионе Azure для повторного развертывания.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Создание полной среды Linux с помощью интерфейса командной строки Azure](create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Создание Linux VM на Azure с помощью шаблонов](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: fef1afb9748fd6f2f59b972c451d95ae1204ef70
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: 8bda712523faa90f32a12fe7eecce27dccf3a55c
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81011639"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81756631"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Базовый униза Azure Security для пакета
 
@@ -712,7 +712,7 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью диаграммы ресурсов, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager (ARM) в будущем.
 
-Как создавать запросы с помощью Графика Azure:
+Как создавать запросы с помощью графика ресурсов Azure:
 
 https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
@@ -877,7 +877,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство:** Используйте псевдонимы Azure Policy в пространстве имен «Microsoft.Batch» для создания пользовательских политик для аудита или обеспечения конфигурации учетных записей и пулов пакетов Azure.
 
-Как просмотреть доступные Aliases Azure Policy:
+Как просмотреть доступные псевдонимы Azure Policy:
 
 https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
@@ -899,7 +899,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 ### <a name="73-maintain-secure-configurations-for-all-azure-resources"></a>7.3: Поддержание безопасных конфигураций для всех ресурсов Azure
 
-**Руководство**: Используйте политику Azure «отрицать» и «развертывать, если не существует» для обеспечения безопасных параметров для ресурсов Azure, связанных с учетной записью пакета и пулами (например, виртуальные сети, подсети, брандмауэры Azure, учетные записи хранения Azure и т.д.). Для создания пользовательских политик можно использовать aliases Azure Policy из следующих областей имен:
+**Руководство**: Используйте политику Azure «отрицать» и «развертывать, если не существует» для обеспечения безопасных параметров для ресурсов Azure, связанных с учетной записью пакета и пулами (например, виртуальные сети, подсети, брандмауэры Azure, учетные записи хранения Azure и т.д.). Для создания пользовательских политик можно использовать псевдонимы Azure Policy из следующих областей имен:
 
 - Microsoft.Batch
 
@@ -987,7 +987,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 - Необходимо включить журналы диагностики в учетных записях пакетной службы
 
-Как просмотреть доступные Aliases Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Как просмотреть доступные псевдонимы Azure Policy:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
 Как настроить и управлять политикой Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 

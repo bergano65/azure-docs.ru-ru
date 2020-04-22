@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 08177165439ff7d3205e31757e5d1e28759a9836
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 32bc90cc069ac82641c3aa7692c900c60db7ba87
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79274194"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733103"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub"></a>Потоковая передача данных мониторинга Azure в концентратор событий
 Azure Monitor предоставляет полное решение для мониторинга стеков для приложений и служб в Azure, в других облаках и на территории. Помимо использования Azure Monitor для анализа этих данных и использования их для различных сценариев мониторинга, возможно, потребуется отправить их другим инструментам мониторинга в вашей среде. Наиболее эффективным методом потоковой передачи данных мониторинга на внешние инструменты в большинстве случаев является использование [концентраторов Azure Event.](/azure/event-hubs/) В этой статье приводится краткое описание того, как можно передавать данные мониторинга из разных источников в концентратор событий, а также ссылки на подробные рекомендации.
@@ -56,7 +56,7 @@ Azure Monitor предоставляет полное решение для мо
 | ArcSight | нет | Смарт-разъем ArcSight Event Hub доступен в рамках [коллекции интеллектуальных разъемов ArcSight.](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852) |
 | Сервер системного журнала | нет | Если вы хотите передавать данные Azure Monitor непосредственно на сервер Syslog, можно использовать [решение, основанное на функции Azure.](https://github.com/miguelangelopereira/azuremonitor2syslog/)
 | ЛогРитм | нет| Инструкции по настройке LogRhythm для сбора журналов из концентратора событий доступны [здесь.](https://logrhythm.com/six-tips-for-securing-your-azure-cloud-environment/) 
-|Logz.io | Да | Для получения дополнительной информации см. [Начало мониторинга и регистрации с использованием Logz.io для java-приложений, работающих на Azure](https://docs.microsoft.com/azure/java/java-get-started-with-logzio)
+|Logz.io | Да | Для получения дополнительной информации см. [Начало мониторинга и регистрации с использованием Logz.io для java-приложений, работающих на Azure](https://docs.microsoft.com/azure/developer/java/fundamentals/java-get-started-with-logzio)
 
 
 ## <a name="next-steps"></a>Next Steps

@@ -7,12 +7,13 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 03/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 1352761e308aa2e26864654dae65c290df47102b
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.reviewer: jagaveer
+ms.openlocfilehash: 2d546e9154352ec90aa1b1a457eb5320979239d2
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548259"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758351"
 ---
 # <a name="deploy-spot-vms-using-a-resource-manager-template"></a>Развертывание VMs-ресурсов с помощью шаблона «Менеджер ресурсов»
 
@@ -172,7 +173,7 @@ ms.locfileid: "80548259"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы также можете создать Spot VM с помощью [Azure PowerShell](../windows/spot-powershell.md) или [Azure CLI.](spot-cli.md)
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 93a5bcd77bb4f42d9099cc1ddb1b5c3130c19059
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: 2ddb9a9c205135707d7d96beb106074baa1ce324
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81010143"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758261"
 ---
 # <a name="azure-security-baseline-for-hdinsight"></a>Базовый унизел безопасности Azure для HDInsight
 
@@ -144,7 +144,7 @@ https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags
 
 Можно также использовать планы Azure для упрощения крупномасштабных развертываний Azure путем упаковки ключевых элементов среды, таких как шаблоны управления ресурсами Azure, элементы управления RBAC и политики, в единое определение чертежа. Легко применять план к новым подпискам и средам, а также тонкой настройки управления и управления с помощью версий.
 
-Как просмотреть доступные Aliases Azure Policy:
+Как просмотреть доступные псевдонимы Azure Policy:
 
 https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
@@ -704,7 +704,7 @@ https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnos
 
 Как установить агента Rapid7 вручную:
 
-https://insightvm.help.rapid7.com/v1.0/docs/agent-installation-on-linux
+https://insightvm.help.rapid7.com/docs/install
 
 Как установить агента Квалис вручную:
 
@@ -774,7 +774,7 @@ https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-li
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью диаграммы ресурсов, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager в будущем.
 
-Как создавать запросы с помощью Графика Azure:
+Как создавать запросы с помощью графика ресурсов Azure:
 
 https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
@@ -940,7 +940,7 @@ https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 **Руководство:** Используйте псевдонимы Azure Policy в пространстве имен "Microsoft.HDInsight" для создания пользовательских политик для аудита или обеспечения безопасности сетевой конфигурации кластера HDInsight.
 
-Как просмотреть доступные Aliases Azure Policy:
+Как просмотреть доступные псевдонимы Azure Policy:
 
 https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
@@ -1034,7 +1034,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство:** Используйте псевдонимы Azure Policy в пространстве имен «Microsoft.HDInsight» для создания пользовательских политик для аудита или обеспечения конфигурации кластера HDInsight.
 
-Как просмотреть доступные Aliases Azure Policy:
+Как просмотреть доступные псевдонимы Azure Policy:
 
 https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 

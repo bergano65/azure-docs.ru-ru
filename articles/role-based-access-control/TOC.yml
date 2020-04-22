@@ -28,8 +28,8 @@
       href: tutorial-custom-role-cli.md
 - name: Основные понятия
   items:
-    - name: PIM для ресурсов Azure
-      href: pim-azure-resource.md
+    - name: Рекомендации
+      href: best-practices.md
     - name: Условный доступ для управления Azure
       href: conditional-access-azure-management.md
 - name: Практические руководства

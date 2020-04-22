@@ -10,15 +10,16 @@ ms.custom:
 ms.author: avneets
 author: avneet723
 ms.date: 11/27/2019
-ms.openlocfilehash: d52366684d772f91b53a1ab385b51ae4f11f0a5b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 3e6026e683d46ca9062c5c139fcd7febd7df9bd1
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80158392"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758248"
 ---
 # <a name="connect-a-rigado-cascade-500-gateway-device-to-your-azure-iot-central-application"></a>Подключите шлюз устройства Rigado Cascade 500 к приложению Azure IoT Central
 
+*Эта статья относится к разработчикам решений и разработчикам устройств.*
 
 В этой статье описывается, как, будучи разработчиком решений, можно подключить шлюз-устройство Rigado Cascade 500 к приложению Microsoft Azure IoT Central. 
 
@@ -68,6 +69,9 @@ Cascade 500 предварительно сертифицирован для Azu
 
 Теперь вы готовы использовать устройство C500 в приложении IoT Central!
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Теперь, когда вы узнали, как подключить Rigado Cascade 500 к приложению Azure IoT Central, следующий шаг должен узнать, как [создать приложение аналитики в магазине](../retail/tutorial-in-store-analytics-create-app-pnp.md) для создания решения для конца до конца. 
+Если вы разработчик устройств, некоторые предлагаемые следующие шаги:
+
+- Читайте о [подключении устройств в Azure IoT Central](./concepts-get-connected.md)
+- Узнайте, как [отслеживать подключение к устройствам с помощью Azure CLI](./howto-monitor-devices-azure-cli.md)

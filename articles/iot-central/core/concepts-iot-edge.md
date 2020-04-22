@@ -7,14 +7,16 @@ ms.date: 12/12/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 69660152458de26e9dbcbf1f50db6ce6824351d0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 89d068fbd835a5b4f8886a2ed77691f94a701bb0
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77027073"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759107"
 ---
 # <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Подключение устройств Azure IoT Edge к центральному приложению Azure IoT
+
+*Эта статья относится к разработчикам решений и разработчикам устройств.*
 
 IoT Edge состоит из трех компонентов:
 
@@ -70,6 +72,6 @@ IoT Plug and Play (предварительный просмотр) модели
 
 Если вы выбрали устройство IoT Edge в качестве устройства шлюза, можно добавить подчиненные связи к моделям возможностей устройств для устройств, которые необходимо подключить к устройству шлюза.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Теперь, когда вы знаете, что такое шаблоны приложений IoT Central, начаем с [создания центрального приложения IoT.](quick-deploy-iot-central.md)
+Если вы разработчик устройств, следующим шагом является изучение [типов устройств шлюза в IoT Central.](./tutorial-define-gateway-device-type.md)

@@ -8,12 +8,13 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: robinsh
-ms.openlocfilehash: c1db7f1a891646ad29f6cae95ddb7e2cf3a42bfc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: mqtt
+ms.openlocfilehash: 0bb1371de827fbb68afd5d114f49afa4acec0deb
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79409752"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81759733"
 ---
 # <a name="get-started-with-device-twins-python"></a>Начало работы с двойниками устройств (Python)
 
@@ -232,7 +233,7 @@ ms.locfileid: "79409752"
 
     ![получать желаемые свойства в приложении устройства](./media/iot-hub-python-twin-getstarted/device-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве мы настроили новый Центр Интернета вещей на портале Azure и создали удостоверение устройства в реестре удостоверений Центра Интернета вещей. Вы добавили метаданные устройства в качестве тегов из внутреннего приложения и написали код приложения имитации устройства, чтобы сообщить сведения о подключении в двойнике устройства. Вы также узнали, как запрашивать эти сведения, используя реестр.
 

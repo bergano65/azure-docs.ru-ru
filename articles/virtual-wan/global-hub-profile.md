@@ -5,18 +5,21 @@ services: virtual-wan
 author: anzaman
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 1/31/2020
+ms.date: 4/20/2020
 ms.author: alzam
-ms.openlocfilehash: 3b7e765dbd024d46939e8989993f0c882b2a8f4b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b63bb861f4df087f852bb1bf599d32100d063f7e
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76965233"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733181"
 ---
 # <a name="download-a-global-or-hub-based-profile-for-user-vpn-clients"></a>Скачать глобальный или концентраторный профиль для клиентов VPN пользователя
 
-Azure Virtual WAN предлагает два типа подключения для удаленных пользователей: Глобальный и Концентратор. Используйте следующие разделы, чтобы узнать и загрузить профиль.
+Azure Virtual WAN предлагает два типа подключения для удаленных пользователей: Глобальный и Концентратор. Используйте следующие разделы, чтобы узнать и загрузить профиль. 
+
+> [!IMPORTANT]
+> Проверка подлинности RADIUS поддерживает только профиль на основе концентратора.
 
 ## <a name="global-profile"></a>Глобальный профиль
 
@@ -46,6 +49,6 @@ Azure Virtual WAN предлагает два типа подключения д
 
    ![Профиль концентратора 3](./media/global-hub-profile/download.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).

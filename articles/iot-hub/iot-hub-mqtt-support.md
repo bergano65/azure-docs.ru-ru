@@ -7,12 +7,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: robinsh
-ms.openlocfilehash: 9ccfaa57b8e8fdea325bed908ffe8815b09d0d15
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 86fc5d4845e746604c1ba69f661d1b9ea9d8dca4
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81257799"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732319"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -329,7 +332,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Состояние | Описание |
+|Status | Описание |
 | ----- | ----------- |
 | 200 | Успешно |
 | 429 | Слишком много запросов (регулирование), как указано в статье [Reference - quotas and throttling](iot-hub-devguide-quotas-throttling.md) (Справочные материалы. Квоты и регулирование) |
@@ -360,7 +363,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Состояние | Описание |
+|Status | Описание |
 | ----- | ----------- |
 | 204 | Успех (содержимое не возвращается) |
 | 400 | Недопустимый запрос. Неправильно сформированный JSON. |
@@ -416,7 +419,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" +
 
 Последнее замечание. Если на стороне облака требуется настроить реакцию на событие протокола MQTT, ознакомьтесь со статьей [о дополнительных протоколах для Центра Интернета вещей](iot-hub-protocol-gateway.md). Это программное обеспечение позволяет развернуть шлюз протокола с высокой производительностью, который взаимодействует непосредственно с Центром Интернета вещей. Шлюз протокола Azure IoT позволяет настроить протокол устройства для уже существующих развертываний MQTT или других настраиваемых протоколов. Однако при этом подходе необходимо запустить настраиваемый шлюз протокола и управлять им.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о протоколе MQTT см. в [документации по MQTT](https://mqtt.org/documentation).
 
