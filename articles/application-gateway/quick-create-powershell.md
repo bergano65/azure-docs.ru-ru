@@ -6,15 +6,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 03/05/2020
+ms.date: 04/15/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: abb38dfc342c8ff692ed1a3a05376b5dcefe8a3d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 3e1ca14d967b0e88ea7eb559fd9962a3824ff9b0
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78399558"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81406211"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway-using-azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
 
@@ -99,12 +99,10 @@ $frontendport = New-AzApplicationGatewayFrontendPort `
 
 ### <a name="create-the-backend-pool"></a>Создание внутреннего пула
 
-1. Используйте `New-AzApplicationGatewayBackendAddressPool`, чтобы создать серверный пул для шлюза приложений. Сейчас серверный пул будет пустым. Позже вы добавите в него создаваемые сетевые адаптеры внутреннего сервера (см. следующий раздел).
+1. Используйте `New-AzApplicationGatewayBackendAddressPool`, чтобы создать серверный пул для шлюза приложений. Серверный пул пока останется пустым. Позже вы добавите в него создаваемые сетевые адаптеры внутреннего сервера (см. следующий раздел).
 2. Настройте параметры для серверного пула с помощью `New-AzApplicationGatewayBackendHttpSetting`.
 
 ```azurepowershell-interactive
-$address1 = Get-AzNetworkInterface -ResourceGroupName myResourceGroupAG -Name myNic1
-$address2 = Get-AzNetworkInterface -ResourceGroupName myResourceGroupAG -Name myNic2
 $backendPool = New-AzApplicationGatewayBackendAddressPool `
   -Name myAGBackendPool
 $poolSettings = New-AzApplicationGatewayBackendHttpSetting `

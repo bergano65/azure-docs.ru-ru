@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 05/21/2018
 ms.author: yegu
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 07e2d6f174e5af4af9bdcac73dc74f5cf061ed41
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 88703581c507b79c1b10e0f8741c99e64d204a7e
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78300491"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010874"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-nodejs"></a>Краткое руководство. Использование кэша Azure для Redis с Node.js
 
@@ -41,7 +41,7 @@ set REDISCACHEKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ## <a name="connect-to-the-cache"></a>Подключение к кэшу
 
-Новейшие сборки [node_redis](https://github.com/mranney/node_redis) обеспечивают поддержку подключения к кэшу Redis для Azure по протоколу SSL. В приведенном ниже примере показано, как подключиться к кэшу Redis для Azure с помощью конечной точки SSL на порту 6380. 
+Новейшие сборки [node_redis](https://github.com/mranney/node_redis) обеспечивают поддержку подключения к Кэшу Azure для Redis по протоколу TLS. В приведенном ниже примере показано, как подключиться к Кэшу Azure для Redis с помощью конечной точки TLS на порту 6380. 
 
 ```js
 var redis = require("redis");
@@ -69,7 +69,7 @@ bluebird.promisifyAll(redis.Multi.prototype);
 
 async function testCache() {
 
-    // Connect to the Azure Cache for Redis over the SSL port using the key.
+    // Connect to the Azure Cache for Redis over the TLS port using the key.
     var cacheConnection = redis.createClient(6380, process.env.REDISCACHEHOSTNAME, 
         {auth_pass: process.env.REDISCACHEKEY, tls: {servername: process.env.REDISCACHEHOSTNAME}});
         

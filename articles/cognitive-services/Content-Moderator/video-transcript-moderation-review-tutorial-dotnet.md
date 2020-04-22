@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 2fbd4270221cb23a4f99a0f8155bb1de76472f31
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 2171bbaea065ce1ab3a8d90f32e6ea6dc1f1e821
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74976984"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81404226"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
@@ -82,7 +82,7 @@ ms.locfileid: "74976984"
 Если аргументов командной строки нет, `Main()` вызывает `GetUserInputs()`. Этот метод предлагает пользователю ввести путь к одному видеофайлу и указать, нужно ли создать расшифровку текста.
 
 > [!NOTE]
-> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
+> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
 
 ### <a name="initialize-and-processvideo-methods"></a>Инициализация и методы ProcessVideo
 
@@ -223,7 +223,7 @@ ms.locfileid: "74976984"
 Если флаг `GenerateVTT` установлен, также выполняется транскрибирование аудиофайла.
 
 > [!NOTE]
-> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
+> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
 
 ## <a name="create-a-human-review"></a>Создание пользовательской проверки
 
@@ -299,7 +299,7 @@ ms.locfileid: "74976984"
 
 ### <a name="parse-the-transcript-for-captions"></a>Анализ расшифровки на наличие субтитров
 
-Далее проанализируйте расшифровку в формате VTT на наличие субтитров и меток времени. Средство просмотра отображает эти субтитры на вкладке "Запись разговоров" на экране просмотра видео. Метки времени используются для синхронизации субтитров с соответствующими видеокадрами.
+Далее проанализируйте расшифровку в формате VTT на наличие субтитров и меток времени. Средство проверки отображает эти субтитры на вкладке расшифровки на экране проверки видео. Метки времени используются для синхронизации субтитров с соответствующими видеокадрами.
 
 [!code-csharp[TextScreen2](~/VideoReviewConsoleApp/Microsoft.ContentModerator.AMSComponent/AMSComponentClient/VideoReviewAPI.cs?range=528-567)]
 

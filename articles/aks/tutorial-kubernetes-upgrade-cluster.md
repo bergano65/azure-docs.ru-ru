@@ -5,14 +5,14 @@ services: container-service
 ms.topic: tutorial
 ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 4d9ef061904fb1a0fff25506eedb82158971bed5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 22aad0e601c600e582cbea0cea82dd67a20a2c06
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77622031"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81392676"
 ---
-# <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство. Обновление Kubernetes в службе Azure Kubernetes (AKS)
+# <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство по Обновление Kubernetes в Службе Azure Kubernetes (AKS)
 
 В ходе жизненного цикла приложения и кластера вам может потребоваться выполнить обновления до последней доступной версии Kubernetes и использовать новые функции. Кластер службы Azure Kubernetes (AKS) можно обновить с помощью Azure CLI.
 
@@ -114,7 +114,7 @@ az group delete --name myResourceGroup --yes --no-wait
 ```
 
 > [!NOTE]
-> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе с [дополнительными замечаниями][sp-delete].
+> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе с [дополнительными замечаниями][sp-delete]. Управляемые удостоверения администрируются платформой Azure, и для них не нужно подготавливать или изменять секреты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

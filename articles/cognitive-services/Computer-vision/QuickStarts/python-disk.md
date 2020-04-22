@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 52097963e900411aa07fabc23786a794ee3f3ec1
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: d859d04b9fee9af52c2d63004ba9c84665fe9edf
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80245027"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81404453"
 ---
 # <a name="quickstart-analyze-a-local-image-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Анализ локального изображения с помощью REST API "Компьютерное зрение" и Python
 
@@ -172,7 +172,9 @@ _ = plt.title(image_caption, size="x-large", y=-0.1)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с приложением Python, которое использует API Компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения.
 
 > [!div class="nextstepaction"]
 > [Руководство по API компьютерного зрения для Python](../Tutorials/PythonTutorial.md)
+
+* Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).

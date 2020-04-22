@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: bc810ac7901d83f03d3f3ac2199561225326d261
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8d48ea133aaabbe9fd44bda545d672e68c93c08d
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74048137"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312195"
 ---
 # <a name="tutorial-create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Руководство по Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
 
@@ -207,4 +207,4 @@ ms.locfileid: "74048137"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Включение сквозного SSL в шлюзе приложений Azure](application-gateway-backend-ssl.md)
+- [Включение сквозного TLS в Шлюзе приложений Azure](application-gateway-backend-ssl.md)

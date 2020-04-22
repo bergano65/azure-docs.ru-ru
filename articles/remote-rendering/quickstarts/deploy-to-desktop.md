@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: 93ec25123f60083d4b31cf54592b1a1c0dacab69
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 95993a54d321c9581d35f12b56d60e4ea052e505
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80677649"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81415724"
 ---
 # <a name="quickstart-deploy-unity-sample-to-desktop"></a>Краткое руководство. Развертывание примера Unity на рабочем столе
 
@@ -26,7 +26,7 @@ ms.locfileid: "80677649"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Далее показано, как развернуть пример проекта из краткого руководства по [ отрисовке модели с помощью Unity](render-model.md).
+В этом кратком руководстве мы будем развертывать пример проекта из [Краткого руководства по отрисовке модели с помощью Unity](render-model.md).
 
 Убедитесь, что учетные данные правильно сохранены, и вы можете подключиться к сеансу из редактора Unity.
 
@@ -58,6 +58,9 @@ ms.locfileid: "80677649"
 1. Для отладчика выберите режим **Локальный компьютер**.
   ![Конфигурация решения](./media/unity-deploy-config-pc.png)
 1. Выполните сборку решения (клавиша F7).
+
+> [!WARNING]
+> Необходимо выбрать **x86**, так как архитектура **x64** сейчас не поддерживается (см.[ограничения платформы](../reference/limits.md#platform-limitations)).
 
 ## <a name="launch-the-sample-project"></a>Запуск примера проекта
 

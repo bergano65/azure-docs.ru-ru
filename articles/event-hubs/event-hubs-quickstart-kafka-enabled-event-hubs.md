@@ -8,15 +8,15 @@ ms.service: event-hubs
 ms.topic: quickstart
 ms.custom: seodec18
 ms.date: 02/12/2020
-ms.openlocfilehash: 18976a29a716a0e5a627747d98edc0d3e1bf71e9
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 67ee882acab22d977f08124591289e9cfc7cded1
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587147"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261828"
 ---
 # <a name="quickstart-data-streaming-with-event-hubs-using-the-kafka-protocol"></a>Краткое руководство. Потоковая передача данных с помощью Центров событий Azure и протокола Kafka
-В этом кратком руководстве показано, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Вы узнаете, как обеспечить взаимодействие отправителей и объектов-получателей с Центрами событий с поддержкой Kafka, изменив конфигурацию в приложениях. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
+В этом кратком руководстве показано, как выполнять потоковую передачу данных в Центры событий без необходимости менять клиенты протоколов или запускать собственные кластеры. Вы узнаете, как обеспечить взаимодействие отправителей и объектов-получателей с Центрами событий, изменив конфигурацию в приложениях. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
 
 > [!NOTE]
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/java).
@@ -32,7 +32,7 @@ ms.locfileid: "77587147"
 * [Git](https://www.git-scm.com/);
 
 
-## <a name="create-a-kafka-enabled-event-hubs-namespace"></a>Создание пространства имен Центров событий с поддержкой Kafka
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 Если вы создаете пространство имен в Центрах событий уровня **Стандартный**, конечная точка Kafka для пространства имен включается автоматически. Вы можете выполнять потоковую передачу событий из приложений, использующих протокол Kafka, в Центры событий уровня "Стандартный". Выполните пошаговые инструкции в статье [Краткое руководство. Создание концентратора событий с помощью портала Azure](event-hubs-create.md), чтобы создать пространство имен концентраторов событий уровня **Стандартный**. 
 
 > [!NOTE]
@@ -46,7 +46,7 @@ ms.locfileid: "77587147"
 
 3. Обновите сведения о конфигурации для отправителя в файле по адресу `src/main/resources/producer.config` следующим образом:
 
-    **SSL:**
+    **TLS/SSL:**
 
     ```xml
     bootstrap.servers=NAMESPACENAME.servicebus.windows.net:9093
@@ -65,7 +65,7 @@ ms.locfileid: "77587147"
     ```    
 
     Исходный код для класса обработчика CustomAuthenticateCallbackHandler из примера см. [в этом репозитории на GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/appsecret/producer/src/main/java).
-4. Выполните код отправителя и потоковую передачу событий в Центры событий с поддержкой Kafka.
+4. Выполните код отправителя и потоковую передачу событий в Центры событий.
    
     ```shell
     mvn clean package
@@ -76,7 +76,7 @@ ms.locfileid: "77587147"
 
 6. Обновите для объекта-получателя сведения о конфигурации в файле по адресу `src/main/resources/consumer.config` следующим образом.
    
-    **SSL:**
+    **TLS/SSL:**
 
     ```xml
     bootstrap.servers=NAMESPACENAME.servicebus.windows.net:9093
@@ -98,7 +98,7 @@ ms.locfileid: "77587147"
     Исходный код для класса обработчика CustomAuthenticateCallbackHandler из примера см. [в этом репозитории на GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/appsecret/consumer/src/main/java).
 
     Все примеры с OAuth для Центров событий для Kafka [можно найти здесь](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth).
-7. Используя клиенты Kafka, запустите код объекта-получателя и обработку из включенных Центров событий с поддержкой Kafka.
+7. Используя клиенты Kafka, запустите код объекта-получателя и выполните обработку из концентраторов событий.
 
     ```java
     mvn clean package
@@ -108,10 +108,4 @@ ms.locfileid: "77587147"
 Если у кластера Центров событий с поддержкой Kafka появятся события, можно начать получать их от объекта-получателя.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этой статье вы узнаете, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Дополнительные сведения см. в следующих статьях и примерах:
-
-- [Azure Event Hubs for Apache Kafka (preview)](event-hubs-for-kafka-ecosystem-overview.md) (Центры событий Azure для Apache Kafka (предварительный просмотр))
-- [Краткие руководства по Центрам событий для Kafka на GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart)
-- [Учебники по Центрам событий для Kafka на GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials)
-- Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из локальной системы Kafka к Центрам событий с поддержкой Kafka в облаке](event-hubs-kafka-mirror-maker-tutorial.md).
-- Дополнительные сведения о потоковой передаче во включенные Центры событий с поддержкой Kafka с помощью [Apache Flink ](event-hubs-kafka-flink-tutorial.md) или [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md).
+Из этой статьи вы узнали, как выполнять потоковую передачу данных в Центры событий без необходимости менять клиенты протоколов или запускать собственные кластеры. См. сведения в [руководстве для разработчиков Apache Kafka по Центрам событий Azure](apache-kafka-developer-guide.md). 

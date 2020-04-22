@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: be5a2f76a99149fde378d29f2ef7748ebe60b038
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5889afa033b30606f8981ddb826aa192f24efa10
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78303245"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312914"
 ---
 # <a name="tutorial-azure-data-lake-storage-gen2-azure-databricks--spark"></a>Руководство по Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark
 
@@ -47,7 +47,7 @@ ms.locfileid: "78303245"
   > [!IMPORTANT]
   > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
 
-  :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, идентификатор приложения и значения паролей в текстовый файл. Они вам скоро понадобятся.
+  :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте значения идентификатора клиента, идентификатора приложения и секрета клиента в текстовый файл. Они вам скоро понадобятся.
 
 ### <a name="download-the-flight-data"></a>Скачивание данных о рейсах
 
@@ -151,7 +151,7 @@ ms.locfileid: "78303245"
     configs = {"fs.azure.account.auth.type": "OAuth",
            "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
            "fs.azure.account.oauth2.client.id": "<appId>",
-           "fs.azure.account.oauth2.client.secret": "<password>",
+           "fs.azure.account.oauth2.client.secret": "<clientSecret>",
            "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant>/oauth2/token",
            "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
 
@@ -161,7 +161,7 @@ ms.locfileid: "78303245"
     extra_configs = configs)
     ```
 
-18. В этом блоке кода замените значения заполнителя `appId`, `password`, `tenant` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Замените значение заполнителя `container-name` именем контейнера.
+18. В этом блоке кода замените значения заполнителя `appId`, `clientSecret`, `tenant` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Замените значение заполнителя `container-name` именем контейнера.
 
 19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 

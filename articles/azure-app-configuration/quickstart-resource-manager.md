@@ -3,18 +3,18 @@ title: Краткое руководство. Автоматизированно
 description: В этом кратком руководстве показано, как использовать модуль Azure PowerShell и шаблоны Azure Resource Manager для развертывания хранилища службы "Конфигурация приложений Azure". Затем используйте значения в хранилище для развертывания виртуальной машины.
 author: lisaguthrie
 ms.author: lcozzens
-ms.date: 03/05/2020
+ms.date: 04/14/2020
 ms.topic: quickstart
 ms.service: azure-app-configuration
 ms.custom:
 - mvc
 - subject-armqs
-ms.openlocfilehash: c45f6855c33dff2790ced306fd7f049b98dd1387
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 02afa2cb36323e0c3c38c2451b1924b636f7faed
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79126382"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309099"
 ---
 # <a name="quickstart-automated-vm-deployment-with-app-configuration-and-resource-manager-template"></a>Краткое руководство. Автоматизированное развертывание виртуальной машины с помощью службы "Конфигурация приложений" и шаблона Resource Manager
 
@@ -152,6 +152,9 @@ New-AzResourceGroup `
 ## <a name="deploy-vm-using-stored-key-values"></a>Развертывание виртуальной машины с использованием сохраненных пар "ключ-значение"
 
 Теперь, когда вы добавили пары "ключ-значение" в хранилище, вы можете развернуть виртуальную машину с помощью шаблона Azure Resource Manager. Шаблон ссылается на созданные ключи **windowsOsVersion** и **diskSizeGB**.
+
+> [!WARNING]
+> Шаблоны Resource Manager не могут ссылаться на ключи в хранилище Конфигурации приложений, у которого включен Приватный канал.
 
 1. Скопируйте и вставьте приведенный ниже код JSON в новый файл *azuredeploy.json* или скачайте файл из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-app-configuration/azuredeploy.json).
 
@@ -423,13 +426,13 @@ New-AzResourceGroup `
    |storageAccountName|Уникальное имя для учетной записи хранения, которая связана с виртуальной машиной.|
    |domainNameLabel|Уникальное доменное имя.|
 
-1. В окне PowerShell выполните приведенную ниже команду, чтобы развернуть хранилище службы "Конфигурация приложений Azure". Не забудьте заменить имя группы ресурсов, путь к файлу шаблона и путь к файлу параметров шаблона.
+1. В окне PowerShell выполните приведенную ниже команду, чтобы развернуть виртуальную машину. Не забудьте заменить имя группы ресурсов, путь к файлу шаблона и путь к файлу параметров шаблона.
 
    ```azurepowershell
    New-AzResourceGroupDeployment `
-       -ResourceGroupName "<your resource group>" 
-       -TemplateFile "<path to prereq.azuredeploy.json>" `
-       -TemplateParameterFile "<path to prereq.azuredeploy.parameters.json>"
+       -ResourceGroupName "<your resource group>"
+       -TemplateFile "<path to azuredeploy.json>" `
+       -TemplateParameterFile "<path to azuredeploy.parameters.json>"
    ```
 
 Поздравляем! Вы развернули виртуальную машину с помощью конфигураций, которые хранятся в службе "Конфигурация приложений Azure".

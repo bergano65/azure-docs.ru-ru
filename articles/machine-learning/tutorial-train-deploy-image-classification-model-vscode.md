@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 02/24/2020
-ms.openlocfilehash: ba9cd2e7dc0248aa351cb7bc4519689763f1adda
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 04/13/2020
+ms.openlocfilehash: f793f8c4cb84f821c098cc5ce98e693d272e725f
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79224091"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81272826"
 ---
 # <a name="train-and-deploy-an-image-classification-tensorflow-model-using-the-azure-machine-learning-visual-studio-code-extension"></a>Обучение и развертывание модели TensorFlow для классификации изображений с использованием расширения Visual Studio Code для Машинного обучения Azure
 
@@ -99,71 +99,33 @@ ms.locfileid: "79224091"
 1. Выберите размер виртуальной машины. Выберите **Standard_F2s_v2** в списке вариантов. Размер виртуальной машины влияет на то, сколько времени потребуется на обучение моделей. См. сведения о [размерах виртуальных машин Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes).
 1. Введите для вычислительной среды имя TeamWkspc-com и нажмите клавишу **ВВОД**, чтобы создать вычислительную среду.
 
-Через несколько минут новый целевой объект вычислений появится в узле *Вычисления* в рабочей области.
-
-## <a name="create-a-run-configuration"></a>Создание конфигурации запуска
-
-При отправке выполнения обучения в целевой объект вычислений также предоставляется конфигурация для выполнения обучающего задания. Например, это могут быть скрипт с кодом обучения и зависимости Python, необходимые для его выполнения.
-
-Чтобы создать конфигурацию запуска, выполните следующие действия.
-
-1. На панели действий Visual Studio Code щелкните значок **Azure**. Откроется представление "Машинное обучение Azure". 
-1. Разверните узел подписки. 
-1. Разверните узел **TeamWorkspace**. 
-1. В узле рабочей области щелкните правой кнопкой мыши вычислительный узел **TeamWkspc-com** и выберите **Создать конфигурацию запуска**.
-
-    > [!div class="mx-imgBorder"]
-    > ![Создание конфигурации запуска](./media/tutorial-train-deploy-image-classification-model-vscode/create-run-configuration.png)
-
-1. Введите для конфигурации запуска имя MNIST-rc и нажмите клавишу **ВВОД**, чтобы создать конфигурацию запуска.
-1. Затем выберите тип задания обучения **Обучение TensorFlow с одним узлом**.
-1. Нажмите клавишу **ВВОД**, чтобы просмотреть файл скрипта для выполнения в вычислительной среде. В нашем примере для обучения модели используется файл скрипта `train.py` в каталоге `vscode-tools-for-ai/mnist-vscode-docs-sample`.
-1. Введите следующий текст в поле ввода, чтобы указать необходимые пакеты.
-    
-    ```text
-    pip: azureml-defaults; conda: python=3.6.2, tensorflow=1.15.0
-    ```
-    
-    В VS Code появится файл с именем `MNIST-rc.runconfig`, содержимое которого выглядит примерно так:
+    В VS Code появится файл, содержимое которого выглядит примерно так:
 
     ```json
     {
-        "script": "train.py",
-        "framework": "Python",
-        "communicator": "None",
-        "target": "TeamWkspc-com",
-        "environment": {
-            "python": {
-                "userManagedDependencies": false,
-                "condaDependencies": {
-                    "dependencies": [
-                        "python=3.6.2",
-                        "tensorflow=1.15.0",
-                        {
-                            "pip": [
-                                "azureml-defaults"
-                            ]
-                        }
-                    ]
-                }
-            },
-            "docker": {
-                "baseImage": "mcr.microsoft.com/azureml/base:0.2.4",
-                "enabled": true,
-                "baseImageRegistry": {
-                    "address": null,
-                    "username": null,
-                    "password": null
-                }
+        "location": "westus2",
+        "tags": {},
+        "properties": {
+            "computeType": "AmlCompute",
+            "description": "",
+            "properties": {
+                "vmSize": "Standard_F2s_v2",
+                "vmPriority": "dedicated",
+                "scaleSettings": {
+                    "maxNodeCount": 4,
+                    "minNodeCount": 0,
+                    "nodeIdleTimeBeforeScaleDown": 120
+                },
+                "userAccountCredentials": {
+                    "adminUserName": "",
+                    "adminUserPassword": "",
+                    "adminUserSshPublicKey": ""
+                },
+                "subnetName": "",
+                "vnetName": "",
+                "vnetResourceGroupName": "",
+                "remoteLoginPortPublicAccess": ""
             }
-        },
-        "nodeCount": 1,
-        "history": {
-            "outputCollection": true,
-            "snapshotProject": false,
-            "directoriesToWatch": [
-                "logs"
-            ]
         }
     }
     ```
@@ -175,7 +137,152 @@ ms.locfileid: "79224091"
     Azure ML: Save and Continue
     ```
 
-Конфигурация запуска `MNIST-rc` добавляется в узел вычислений *TeamWkspc-com*.
+Через несколько минут новый целевой объект вычислений появится в узле *Вычисления* в рабочей области.
+
+## <a name="create-a-run-configuration"></a>Создание конфигурации запуска
+
+При отправке выполнения обучения в целевой объект вычислений также предоставляется конфигурация для выполнения обучающего задания. Например, это могут быть скрипт с кодом обучения и зависимости Python, необходимые для его выполнения.
+
+Чтобы создать конфигурацию запуска, выполните следующие действия.
+
+1. На панели действий Visual Studio Code щелкните значок **Azure**. Откроется представление "Машинное обучение Azure". 
+1. Разверните узел подписки. 
+1. Разверните узел **TeamWorkspace > Вычислительная среда**. 
+1. Под этим узлом щелкните правой кнопкой мыши вычислительный узел **TeamWkspc-com** и выберите **Создание конфигурации запуска**.
+
+    > [!div class="mx-imgBorder"]
+    > ![Создание конфигурации запуска](./media/tutorial-train-deploy-image-classification-model-vscode/create-run-configuration.png)
+
+1. Введите для конфигурации запуска имя MNIST-rc и нажмите клавишу **ВВОД**, чтобы создать конфигурацию запуска.
+1. Выберите **Create new Azure ML Environment** (Новая среда машинного обучения Azure). Среды определяют зависимости, необходимые для выполнения скриптов.
+1. Присвойте среде имя MNIST-env и нажмите клавишу **ВВОД**.
+1. В списке выберите **файл зависимостей Conda**.
+1. Нажмите **ВВОД**, чтобы просмотреть этот файл. В нашем примере это файл `env.yml` в каталоге `vscode-tools-for-ai/mnist-vscode-docs-sample`.
+
+    В VS Code появится файл, содержимое которого выглядит примерно так:
+
+    ```json
+    {
+        "name": "MNIST-env",
+        "version": "1",
+        "python": {
+            "interpreterPath": "python",
+            "userManagedDependencies": false,
+            "condaDependencies": {
+                "name": "vs-code-azure-ml-tutorial",
+                "channels": [
+                    "defaults"
+                ],
+                "dependencies": [
+                    "python=3.6.2",
+                    "tensorflow=1.15.0",
+                    "pip",
+                    {
+                        "pip": [
+                            "azureml-defaults"
+                        ]
+                    }
+                ]
+            },
+            "baseCondaEnvironment": null
+        },
+        "environmentVariables": {},
+        "docker": {
+            "baseImage": "mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04",
+            "baseDockerfile": null,
+            "baseImageRegistry": {
+                "address": null,
+                "username": null,
+                "password": null
+            },
+            "enabled": false,
+            "arguments": []
+        },
+        "spark": {
+            "repositories": [],
+            "packages": [],
+            "precachePackages": true
+        },
+        "inferencingStackVersion": null
+    }
+    ```
+
+1. Если конфигурация вас устраивает, сохраните ее. Для этого откройте палитру команд и введите следующую команду.
+
+    ```text
+    Azure ML: Save and Continue
+    ```
+
+1. Нажмите клавишу **ВВОД**, чтобы просмотреть файл скрипта для выполнения в вычислительной среде. В нашем примере для обучения модели используется файл скрипта `train.py` в каталоге `vscode-tools-for-ai/mnist-vscode-docs-sample`.
+
+    В VS Code появится файл с именем `MNIST-rc.runconfig`, содержимое которого выглядит примерно так:
+
+    ```json
+    {
+        "script": "train.py",
+        "framework": "Python",
+        "communicator": "None",
+        "target": "TeamWkspc-com",
+        "environment": {
+            "name": "MNIST-env",
+            "version": "1",
+            "python": {
+                "interpreterPath": "python",
+                "userManagedDependencies": false,
+                "condaDependencies": {
+                    "name": "vs-code-azure-ml-tutorial",
+                    "channels": [
+                        "defaults"
+                    ],
+                    "dependencies": [
+                        "python=3.6.2",
+                        "tensorflow=1.15.0",
+                        "pip",
+                        {
+                            "pip": [
+                                "azureml-defaults"
+                            ]
+                        }
+                    ]
+                },
+                "baseCondaEnvironment": null
+            },
+            "environmentVariables": {},
+            "docker": {
+                "baseImage": "mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04",
+                "baseDockerfile": null,
+                "baseImageRegistry": {
+                    "address": null,
+                    "username": null,
+                    "password": null
+                },
+                "enabled": false,
+                "arguments": []
+            },
+            "spark": {
+                "repositories": [],
+                "packages": [],
+                "precachePackages": true
+            },
+            "inferencingStackVersion": null
+        },
+        "history": {
+            "outputCollection": true,
+            "snapshotProject": false,
+            "directoriesToWatch": [
+                "logs"
+            ]
+        }
+    }
+    ```
+
+1. Если конфигурация вас устраивает, сохраните ее. Для этого откройте палитру команд и введите следующую команду.
+
+    ```text
+    Azure ML: Save and Continue
+    ```
+
+Под вычислительным узлом *TeamWkspc-com* добавится конфигурация запуска `MNIST-rc`, а под узлом *Среды* — конфигурация среды `MNIST-env`.
 
 ## <a name="train-the-model"></a>Обучение модели
 
@@ -264,7 +371,7 @@ ms.locfileid: "79224091"
 1. Щелкните правой кнопкой мыши **MNIST-TensorFlow-model** и выберите **Развернуть службу из зарегистрированной модели**.
 
     > [!div class="mx-imgBorder"]
-    > ![Развертывание модели](./media/tutorial-train-deploy-image-classification-model-vscode/register-model.png)
+    > ![Развертывание модели](./media/tutorial-train-deploy-image-classification-model-vscode/deploy-model.png)
 
 1. Выберите **Экземпляры контейнеров Azure**.
 1. Присвойте этой службе имя mnist-tensorflow-svc и нажмите клавишу **ВВОД**.
@@ -300,6 +407,7 @@ ms.locfileid: "79224091"
         ]
     }
     ```
+
 1. Если конфигурация вас устраивает, сохраните ее. Для этого откройте палитру команд и введите следующую команду.
 
     ```text

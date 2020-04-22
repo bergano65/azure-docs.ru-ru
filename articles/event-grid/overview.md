@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 02/20/2020
 ms.author: babanisa
 ms.custom: seodec18
-ms.openlocfilehash: 65fd9d06c8b25e0aff94429f8eb95bb922da330c
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: b6f987eb283edea7f2d8e6b207b5b4e5b14f9120
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77505913"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81393184"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -32,22 +32,21 @@ ms.locfileid: "77505913"
 
 ## <a name="event-sources"></a>Источники событий
 
-Дополнительные сведения о возможностях каждого источника, а также статьи по этой теме см. в описании [источников событий](event-sources.md). В настоящее время отправку событий в службу "Сетка событий" поддерживают следующие службы Azure:
+В настоящее время отправку событий в службу "Сетка событий" поддерживают следующие службы Azure:
 
-* [Подписки Azure (операции управления)](event-sources.md#azure-subscriptions)
-* [Реестр контейнеров](event-sources.md#container-registry)
-* [Пользовательские разделы](event-sources.md#custom-topics)
-* [Центры событий](event-sources.md#event-hubs)
-* [Центр Интернета вещей](event-sources.md#iot-hub)
-* [Key Vault (предварительная версия)](event-sources.md#key-vault-preview)
-* [Службы мультимедиа](event-sources.md#media-services)
-* [Группы ресурсов (операции управления)](event-sources.md#resource-groups)
-* [Служебная шина](event-sources.md#service-bus)
-* [Большой двоичный объект хранилища](event-sources.md#storage)
-* [Azure Maps](event-sources.md#maps)
-* [Конфигурация приложений](event-sources.md#app-configuration)
-* [Signal R](event-sources.md#azure-signalr)
-* [Машинное обучение](event-sources.md#azure-machine-learning)
+- [Конфигурация приложений Azure](event-schema-app-configuration.md)
+- [Хранилище BLOB-объектов Azure](event-schema-blob-storage.md)
+- [Реестр контейнеров Azure](event-schema-container-registry.md)
+- [Центры событий Azure](event-schema-event-hubs.md)
+- [Центр Интернета вещей Azure](event-schema-iot-hub.md)
+- [Хранилище ключей Azure](event-schema-key-vault.md)
+- [Машинное обучение Azure](event-schema-machine-learning.md)
+- [Azure Maps](event-schema-azure-maps.md)
+- [Службы мультимедиа Azure](event-schema-media-services.md)
+- [группы ресурсов Azure](event-schema-resource-groups.md).
+- [служебной шине Azure](event-schema-service-bus.md)
+- [Azure SignalR](event-schema-azure-signalr.md)
+- [Подписки Azure](event-schema-subscriptions.md)
 
 ## <a name="event-handlers"></a>Обработчики событий
 

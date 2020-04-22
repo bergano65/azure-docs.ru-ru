@@ -1,16 +1,16 @@
 ---
 title: Краткое руководство. Использование cURL и REST для управления базой знаний — QnA Maker
 description: В этом кратком руководстве показано, как создавать, публиковать и запрашивать базу знаний с помощью REST API.
-ms.date: 02/27/2020
+ms.date: 04/13/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: quickstart
-ms.openlocfilehash: 00ec52fe20fb0e6a976f3e7142386e835713c98c
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: facc45ab8f916181f7eeceb65c5102a60ae7d7e9
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78851212"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261709"
 ---
 # <a name="quickstart-use-curl-and-rest-to-manage-knowledge-base"></a>Краткое руководство. Использование cURL и REST для управления базой знаний
 
@@ -21,9 +21,9 @@ ms.locfileid: "78851212"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Текущая версия [cURL](https://curl.haxx.se/). В этом кратком руководстве используются несколько параметров командной строки, которые указаны в [документации cURL](https://curl.haxx.se/docs/manpage.html).
-* У вас должен быть [ресурс QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и имя ресурса, на портале Azure для своего ресурса выберите **Быстрое начало**. Имя ресурса является первой частью URL-адреса конечной точки:
+* Для использования ключа и имени ресурса необходимо иметь [QnA Maker ресурса](../How-To/set-up-qnamaker-service-azure.md). Вы указали **имя** ресурса во время его создания, после чего был создан ключ. Имя ресурса используется в качестве поддомена для конечной точки. Чтобы получить ключ и имя ресурса, на портале Azure для своего ресурса выберите **Быстрое начало**. Имя ресурса является первым поддоменом в URL-адресе конечной точки:
 
-    `https://REPLACE-WITH-YOUR-RESOURCE-NAME.cognitiveservices.azure.com/qnamaker/v4.0`
+    `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com/qnamaker/v4.0`
 
 > [!CAUTION]
 > В следующих примерах BASH используется символ продолжения строки `\`. Если консоль или терминал использует другой символ продолжения строки, используйте этот символ.

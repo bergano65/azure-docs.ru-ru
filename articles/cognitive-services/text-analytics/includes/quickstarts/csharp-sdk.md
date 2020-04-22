@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 03/17/2020
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: 64eb19e43223c1953a7244f8fd29c48d085f1e96
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 2fa2e40ba2a7fe84b6df57bfb711d01332b8f523
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80117015"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81275328"
 ---
 <a name="HOLTop"></a>
 
@@ -32,7 +32,7 @@ ms.locfileid: "80117015"
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Интегрированная среда разработки Visual Studio](https://visualstudio.microsoft.com/vs/).
-* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку.  После развертывания щелкните **Перейти к ресурсам**.
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank">созданию ресурса Анализа текста<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку.  После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
@@ -44,7 +44,7 @@ ms.locfileid: "80117015"
 
 #### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
-Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Выберите версию `1.0.0-preview.3`, а затем **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Выберите версию `1.0.0-preview.4`, а затем **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
 
 > [!TIP]
 > Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/TextAnalytics/program.cs), где размещены примеры кода для этого краткого руководства. 
@@ -63,6 +63,7 @@ ms.locfileid: "80117015"
 Откройте файл *program.cs* и добавьте следующие директивы `using`:
 
 ```csharp
+using Azure;
 using System;
 using System.Globalization;
 using Azure.AI.TextAnalytics;
@@ -73,7 +74,7 @@ using Azure.AI.TextAnalytics;
 [!INCLUDE [text-analytics-find-resource-information](../find-azure-resource-info.md)]
 
 ```csharp
-private static readonly TextAnalyticsApiKeyCredential credentials = new TextAnalyticsApiKeyCredential("<replace-with-your-text-analytics-key-here>");
+private static readonly AzureKeyCredential credentials = new AzureKeyCredential("<replace-with-your-text-analytics-key-here>");
 private static readonly Uri endpoint = new Uri("<replace-with-your-text-analytics-endpoint-here>");
 ```
 
@@ -87,7 +88,6 @@ static void Main(string[] args)
     SentimentAnalysisExample(client);
     LanguageDetectionExample(client);
     EntityRecognitionExample(client);
-    EntityPIIExample(client);
     EntityLinkingExample(client);
     KeyPhraseExtractionExample(client);
 
@@ -121,14 +121,13 @@ private static readonly string endpoint = "<replace-with-your-text-analytics-end
 
 Клиент Анализа текста является объектом `TextAnalyticsClient`, который выполняет проверку подлинности в Azure с помощью вашего ключа и предоставляет функции для приема текста в виде отдельных строк или пакета. Текст в API можно отправлять как синхронно, так и асинхронно. Объект в ответе будет содержать аналитическую информацию по каждому отправленному вами документу. 
 
-Если вы используете версию `3.0-preview`, можно использовать необязательный экземпляр `TextAnalyticsClientOptions` для инициализации клиента с различными параметрами по умолчанию (например, языком по умолчанию или указанием страны). Проверку подлинности можно также выполнить с помощью токена Azure Active Directory. 
+Если вы используете версию `3.0-preview` этой службы, можно использовать необязательный экземпляр `TextAnalyticsClientOptions` для инициализации клиента с различными параметрами по умолчанию (например, языком по умолчанию или указанием страны). Проверку подлинности можно также выполнить с помощью токена Azure Active Directory. 
 
 ## <a name="code-examples"></a>Примеры кода
 
 * [Пример. Как определить тональность с помощью Анализа текста](#sentiment-analysis)
 * [Пример. Как определить язык с помощью Анализа текста](#language-detection)
 * [Распознавание именованных сущностей](#named-entity-recognition-ner)
-* [Обнаружение персональных данных](#detect-personal-information)
 * [Связывание сущностей](#entity-linking)
 * [Пример. Как извлечь ключевые фразы с помощью Анализа текста](#key-phrase-extraction)
 
@@ -264,7 +263,6 @@ Language: English
 
 > [!NOTE]
 > Новое в версии `3.0-preview`.
-> * Распознавание сущностей теперь включает возможность обнаружения персональных данных в тексте.
 > * Связывание сущностей теперь отделено от их распознавания.
 
 
@@ -293,33 +291,6 @@ Named Entities:
         Text: last week,        Category: DateTime,     Sub-Category: DateRange
                 Length: 9,      Score: 0.80
 ```
-
-## <a name="detect-personal-information"></a>Обнаружение персональных данных
-
-Создайте функцию с именем `EntityPIIExample()`, которая принимает созданный ранее клиент, вызовите вложенную в нее функцию `RecognizePiiEntities()` и просмотрите все результаты. Аналогично предыдущей функции, возвращенный объект `Response<IReadOnlyCollection<CategorizedEntity>>` будет содержать список обнаруженных сущностей. При появлении ошибки возникает исключение `RequestFailedException`.
-
-```csharp
-static void EntityPIIExample(TextAnalyticsClient client)
-{
-    string inputText = "Insurance policy for SSN on file 123-12-1234 is here by approved.";
-    var response = client.RecognizePiiEntities(inputText);
-    Console.WriteLine("Personally Identifiable Information Entities:");
-    foreach (var entity in response.Value)
-    {
-        Console.WriteLine($"\tText: {entity.Text},\tCategory: {entity.Category},\tSub-Category: {entity.SubCategory}");
-        Console.WriteLine($"\t\tLength: {entity.GraphemeLength},\tScore: {entity.ConfidenceScore:F2}\n");
-    }
-}
-```
-
-### <a name="output"></a>Выходные данные
-
-```console
-Personally Identifiable Information Entities:
-        Text: 123-12-1234,      Category: U.S. Social Security Number (SSN),    Sub-Category:
-                Length: 11,     Score: 0.85
-```
-
 
 ## <a name="entity-linking"></a>Связывание сущностей
 

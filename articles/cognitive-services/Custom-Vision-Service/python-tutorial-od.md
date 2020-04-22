@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание проекта поиска объектов с помощью пакета SDK Пользовательского визуального распознавания для Python
+title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 titleSuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, передайте изображения, обучите свой проект и найдите объекты с помощью пакетов SDK для Python.
 services: cognitive-services
@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: areddish
-ms.openlocfilehash: 68d63fbc71ea2dcd07522c6ba42808f88966cd7b
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: e527f81ad01cc9c06773fbfd4f76c1630ffa21aa
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76166594"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81403604"
 ---
-# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-python-sdk"></a>Краткое руководство. Создание проекта поиска объектов с помощью пакета SDK Пользовательского визуального распознавания для Python
+# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-python-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 
 В этой статье показано, как с помощью пакета SDK Пользовательского визуального распознавания для Python создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес опубликованной конечной точки прогнозирования и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Python.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Python 2.7 или 3.5+](https://www.python.org/downloads/).
 - Средство [PIP](https://pip.pypa.io/en/stable/installing/).

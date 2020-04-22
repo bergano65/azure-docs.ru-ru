@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 01/15/2020
 ms.author: antchu
 ms.custom: mvc
-ms.openlocfilehash: c64d87b2430cc1d733a67bbc1e803590a37b1714
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9d25e2e32f09cc681d85d5adffe53f1237d7200c
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78190778"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255504"
 ---
 # <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство по Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
 
@@ -153,8 +153,10 @@ py -m venv .venv
 
 Чтобы изменить функцию `classify` для классификации изображения на основе его содержимого, используйте предварительно созданную модель TensorFlow, которая была обучена и экспортирована из службы "Пользовательское визуальное распознавание Azure". Модель, которая содержится в папке *resources* в примере, клонированном ранее, классифицирует изображение, определяя, кто на нем: кошка или собака. Затем вы добавите в проект вспомогательный код и зависимости.
 
+Чтобы создать собственную модель с помощью службы "Пользовательское визуальное распознавание" уровня "Бесплатный", следуйте инструкциям из [репозитория примера проекта](https://github.com/Azure-Samples/functions-python-tensorflow-tutorial/blob/master/train-custom-vision-model.md).
+
 > [!TIP]
-> Если вы хотите создать собственную модель с помощью службы "Пользовательское визуальное распознавание" уровня "Бесплатный", следуйте инструкциям из [репозитория примера проекта](https://github.com/Azure-Samples/functions-python-tensorflow-tutorial/blob/master/train-custom-vision-model.md).
+> Если вы хотите разместить модель TensorFlow независимо от приложения-функции, вы можете подключить общую папку, содержащую модель, к приложению-функции Linux. Подробные сведения см. в статье [Подключение общей папки к приложению-функции Python с помощью Azure CLI](./scripts/functions-cli-mount-files-storage-linux.md).
 
 1. В папке *start* выполните следующую команду, чтобы скопировать файлы модели в папку *classify*. Не забудьте добавить `\*` в эту команду. 
 
@@ -315,3 +317,4 @@ py -m venv .venv
 
 - [Руководство. Создание и развертывание бессерверных функций Azure на языке Python с помощью Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-azure-functions).
 - [Azure Functions Python Developer Guide](./functions-reference-python.md) (Справочник по Функциям Azure для разработчика Python)
+- [Подключение общей папки к приложению-функции Python с помощью Azure CLI](./scripts/functions-cli-mount-files-storage-linux.md)

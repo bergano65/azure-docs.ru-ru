@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 02/24/2020
-ms.openlocfilehash: 583071ee22e4fb9cffc741520b1583790002a5bf
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 04/13/2020
+ms.openlocfilehash: 731ab18346ac9f100862174312c2c9950026f1eb
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77604859"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81272932"
 ---
 # <a name="set-up-azure-machine-learning-visual-studio-code-extension"></a>Настройка расширения Машинного обучения Azure для Visual Studio Code
 
@@ -70,36 +70,36 @@ ms.locfileid: "77604859"
 1. Когда развернется палитра команд, следуйте предложенным инструкциям.
 
     1. Выберите подписку Azure.
-    1. Щелкните **Create a new Azure ML workspace** (Создание рабочей области машинного обучения Azure).
-    1. Выберите тип задания **TensorFlow Single-Node Training** (Обучение TensorFlow с одним узлом).
-    1. Введите скрипт `train.py` для обучения. Этот файл содержит код для модели машинного обучения, которая классифицирует изображения с рукописными цифрами.
-    1. В качестве требований укажите следующие пакеты.
-
-        ```text
-        pip: azureml-defaults; conda: python=3.6.2, tensorflow=1.15.0
-        ```
+    1. В списке сред выберите **файл зависимостей Conda**.
+    1. Нажмите **ВВОД**, чтобы просмотреть этот файл. Этот файл содержит зависимости, необходимые для выполнения скриптов. В нашем примере это файл `env.yml` в каталоге `mnist-vscode-docs-sample`.
+    1. Нажмите **ВВОД**, чтобы просмотреть файл сценария обучения. Этот файл содержит код для модели машинного обучения, которая классифицирует изображения с рукописными цифрами. В нашем примере для обучения модели используется файл скрипта `train.py` в каталоге `mnist-vscode-docs-sample`.
 
 1. На этом этапе в текстовом редакторе отображается файл конфигурации, аналогичный показанному ниже. Эта конфигурация содержит сведения для запуска задания обучения, например файл с кодом для обучения модели и любые зависимости Python, которые вы указали на предыдущем шаге.
 
     ```json
     {
-        "workspace": "WS01311608",
-        "resourceGroup": "WS01311608-rg1",
+        "workspace": "WS04131142",
+        "resourceGroup": "WS04131142-rg1",
         "location": "South Central US",
-        "experiment": "WS01311608-exp1",
+        "experiment": "WS04131142-exp1",
         "compute": {
-            "name": "WS01311608-com1",
+            "name": "WS04131142-com1",
             "vmSize": "Standard_D1_v2, Cores: 1; RAM: 3.5GB;"
         },
         "runConfiguration": {
-            "filename": "WS01311608-com1-rc1",
-            "condaDependencies": [
-                "python=3.6.2",
-                "tensorflow=1.15.0"
-            ],
-            "pipDependencies": [
-                "azureml-defaults"
-            ]
+            "filename": "WS04131142-com1-rc1",
+            "environment": {
+                "name": "WS04131142-env1",
+                "conda_dependencies": [
+                    "python=3.6.2",
+                    "tensorflow=1.15.0",
+                    "pip"
+                ],
+                "pip_dependencies": [
+                    "azureml-defaults"
+                ],
+                "environment_variables": {}
+            }
         }
     }
     ```

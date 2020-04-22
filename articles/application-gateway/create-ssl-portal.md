@@ -1,22 +1,22 @@
 ---
-title: Руководство по настройке завершения SSL-запросов на портале — Шлюз приложений Azure
-description: В этом руководстве вы узнаете, как с помощью портала Azure настроить шлюз приложений и добавить сертификат для завершения SSL-запросов.
+title: Руководство по Настройка завершения TLS-запросов на портале — Шлюз приложений Azure
+description: В этом учебнике рассказывается, как с помощью портала Azure настроить шлюз приложений и добавить сертификат для завершения TSL-запросов.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: b4278fc6d44f32921713681cb094b659901cc87c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b40eb107fc975d2ef0170944892b936680de3c9f
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74012305"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312375"
 ---
-# <a name="tutorial-configure-an-application-gateway-with-ssl-termination-using-the-azure-portal"></a>Руководство по Настройка шлюза приложений с завершением SSL-запросов с помощью портала Azure
+# <a name="tutorial-configure-an-application-gateway-with-tls-termination-using-the-azure-portal"></a>Руководство по Настройка шлюза приложений с завершением TSL-запросов с помощью портала Azure
 
-С помощью портала Azure можно настроить [шлюз приложений](overview.md) с сертификатом для завершения SSL-запросов, в котором используются виртуальные машины для внутренних серверов.
+С помощью портала Azure можно настроить [шлюз приложений](overview.md) с сертификатом для завершения TSL-запросов, в котором используются виртуальные машины для внутренних серверов.
 
 В этом руководстве описано следующее:
 
@@ -265,4 +265,4 @@ Export-PfxCertificate `
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Подробнее о поддержке SSL для Шлюза приложений](ssl-overview.md)
+> [Подробнее о поддержке TSL для Шлюза приложений](ssl-overview.md)

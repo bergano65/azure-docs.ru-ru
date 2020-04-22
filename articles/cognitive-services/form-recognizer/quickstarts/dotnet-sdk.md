@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: b9db9daf06b59e1a26a9b03a93aff63984841862
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 8d05f5ad07f9b3affba9442d6caa6e63162b813c
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77118349"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81399422"
 ---
 # <a name="quickstart-form-recognizer-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Распознавателя документов для .NET
 
@@ -42,7 +42,7 @@ ms.locfileid: "77118349"
 
 [!INCLUDE [create resource](../includes/create-resource.md)]
 
-После получения ключа из своего ресурса или пробной подписки [задайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и конечной точки с именами `FORM_RECOGNIZER_KEY` и `FORM_RECOGNIZER_ENDPOINT` соответственно.
+После получения ключа и конечной точки [задайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и конечной точки с именами `FORM_RECOGNIZER_KEY` и `FORM_RECOGNIZER_ENDPOINT` соответственно.
 
 ### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
@@ -99,12 +99,6 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 |[ExtractedPage](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.extractedpage?view=azure-dotnet-preview)| Этот класс представляет все данные, извлеченные из одного документа.|
 
 ## <a name="code-examples"></a>Примеры кода
-
-<!--
-    Include code snippets and short descriptions for each task you list in the the bulleted list. Briefly explain each operation, but include enough clarity to explain complex or otherwise tricky operations.
-
-    Include links to the service's reference content when introducing a class for the first time
--->
 
 Эти фрагменты кода показывают, как выполнить следующие действия с помощью клиентской библиотеки Распознавателя документов для .NET:
 
@@ -193,7 +187,7 @@ dotnet run
 В этом кратком руководстве описано использование клиентской библиотеки Распознавателя документов .NET для обучения пользовательской модели и анализа документов. Теперь следует изучить советы по созданию лучшего набора данных для обучения и созданию более точных моделей.
 
 > [!div class="nextstepaction"]
->[Создание набора данных для обучения](../build-training-data-set.md)
+> [Создание набора данных для обучения](../build-training-data-set.md)
 
 * [Что такое Распознаватель документов?](../overview.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/FormRecognizer).

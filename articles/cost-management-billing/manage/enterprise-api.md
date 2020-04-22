@@ -5,14 +5,14 @@ author: mumami
 tags: billing
 ms.service: cost-management-billing
 ms.topic: reference
-ms.date: 02/14/2020
+ms.date: 04/14/2020
 ms.author: banders
-ms.openlocfilehash: 10275bac8cd9363939f9b6f298c49d7ef08ab7bf
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: aeca9aede4c1b2d8c27de749c7e07c0153000825
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79202919"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383164"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>Обзор API- интерфейсов отчетов для корпоративных клиентов
 Интерфейсы API отчетов позволяют корпоративным клиентам Azure извлекать данные о потреблении и выставлении счетов программным способом и передавать их в предпочитаемые средства анализа данных. Клиенты, которые принадлежат к типу Enterprise, подписали [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) с Azure и тем самым приняли согласованные денежные обязательства, и получили доступ к пользовательским тарифам на ресурсы Azure.
@@ -51,7 +51,9 @@ ms.locfileid: "79202919"
 |Код состояния отклика|Сообщение|Описание|
 |-|-|-|
 |200| OK|Без ошибок|
+|400| Ошибка запроса| Недопустимые параметры — диапазоны дат, числа EA и т. д.|
 |401| Не авторизовано| Ключ API не найден, недопустимый формат, срок действия истек и т. д.|
 |404| Рекомендации недоступны| Не найдена конечная точка отчетов|
-|400| Ошибка запроса| Недопустимые параметры — диапазоны дат, числа EA и т. д.|
+|429 | TooManyRequests | Запрос не обработан вследствие регулирования. Повторите попытку по окончании периода времени, указанного в заголовке <code>x-ms-ratelimit-microsoft.consumption-retry-after</code>.|
 |500| Ошибка сервера| Непредвиденная ошибка при обработке запроса|
+| 503 | ServiceUnavailable | Служба временно недоступна. Повторите попытку по окончании периода времени, указанного в заголовке <code>Retry-After</code>.|

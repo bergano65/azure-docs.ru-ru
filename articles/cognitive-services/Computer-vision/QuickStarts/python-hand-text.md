@@ -8,26 +8,28 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: fafc5234da3e6dfecdae2c8b2e2ba80cbed20b5c
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 29944311c2215ebcc46ff3752004092bdeb9a9c8
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80244807"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81404393"
 ---
-# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-20-and-21-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения версии 2.0 и 2.1 и Python
+# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения и Python
 
 Из этого краткого руководства вы узнаете, как извлечь печатный и рукописный текст из изображения с помощью REST API Компьютерного зрения. С помощью методов [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) вы можете обнаружить текст на изображении и извлечь распознанные символы в поток машиночитаемых символов. API определит, какую модель распознавания следует использовать для каждой строки текста, так как он поддерживает изображения с печатным и рукописным текстом.
 
-В сравнении с Компьютерным зрением версий 2.0 и 2.1 общедоступная предварительная версия Компьютерного зрения 3.0 предоставляет следующие преимущества:
+Эта функциональная возможность доступна как в API версии 2.1, так и в API-интерфейсе общедоступной предварительной версии 3.0. По сравнению с версией 2.1, в версии 3.0 произошли следующие изменения:
 
-* еще большую точность;
-* измененный формат вывода;
-* оценка достоверности для машинных слов;
-* поддержка испанского и английского языков с дополнительным языковым параметром.
+* Повышенная точность
+* появилась оценка достоверности для машинных слов;
+* реализована поддержка испанского и английского языков с дополнительным параметром `language`;
+* выходные данные представлены в другом формате.
+
+Ниже вы можете выбрать вкладку для своей версии.
 
 #### <a name="version-2"></a>[Версия 2](#tab/version-2)
 
@@ -833,7 +835,9 @@ plt.show()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Ознакомьтесь с приложением Python, которое использует API Компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения.
 
 > [!div class="nextstepaction"]
 > [Руководство по API компьютерного зрения для Python](../Tutorials/PythonTutorial.md)
+
+* Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).

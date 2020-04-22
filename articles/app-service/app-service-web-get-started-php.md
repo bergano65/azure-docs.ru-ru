@@ -5,12 +5,12 @@ ms.assetid: 6feac128-c728-4491-8b79-962da9a40788
 ms.topic: quickstart
 ms.date: 08/24/2018
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: 2813d96fdd9fcd588b78cbfb58fe57bf58a4fe68
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e15d325f0cf13ae774a5dc471a1e2b447286a99c
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80047353"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81009259"
 ---
 # <a name="create-a-php-web-app-in-azure"></a>Создание веб-приложения PHP в Azure
 
@@ -72,12 +72,16 @@ php -S localhost:8080
 
 В следующем примере замените `<app_name>`глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`). Для среды выполнения установлено значение `PHP|7.0`. Список всех поддерживаемых сред выполнения можно получить с помощью команды [`az webapp list-runtimes`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes). 
 
+
 ```azurecli-interactive
 # Bash
 az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name> --runtime "PHP|7.0" --deployment-local-git
 # PowerShell
 az --% webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name> --runtime "PHP|7.0" --deployment-local-git
 ```
+> [!NOTE]
+> С помощью символа `(--%)`, появившегося в PowerShell 3.0, можно указать, что входные данные не следует интерпретировать как команды или выражения. 
+>
 
 Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
 

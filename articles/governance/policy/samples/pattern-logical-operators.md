@@ -1,14 +1,14 @@
 ---
 title: Шаблон. Логические операторы в определении политики
 description: Этот шаблон Политики Azure предоставляет пример использования логических операторов в определении политики.
-ms.date: 01/31/2020
+ms.date: 04/15/2020
 ms.topic: sample
-ms.openlocfilehash: 8e57efaea81848c6b2d0188dbf3f91e06ed74c67
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 691383b1f8ae34bbd51ce7f4f9310980e3c66537
+ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77170242"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81272514"
 ---
 # <a name="azure-policy-pattern-logical-operators"></a>Шаблон политики Azure: логические операторы
 
@@ -38,6 +38,18 @@ ms.locfileid: "77170242"
 :::code language="json" source="~/policy-templates/patterns/pattern-logical-operators-2.json" range="7-21" highlight="2,3,9":::
 
 Этот блок **policyRule.if** также включает один **allOf**, но каждое условие заключено логическим оператором **not**. Сначала вычисляется условие внутри логического оператора **not**, а затем вычисляется значение **not**, чтобы определить, является целое предложение "true" или "false". Если оба логические операторы **not** имеют значение "true", то действие политики срабатывает.
+
+## <a name="sample-3-combining-logical-operators"></a>Пример 3. Объединение логических операторов
+
+Это определение политики проверяет, включена ли трассировка в учетных записях Java Spring и находится ли она в рабочем состоянии.
+
+:::code language="json" source="~/policy-templates/patterns/pattern-logical-operators-3.json":::
+
+### <a name="sample-3-explanation"></a>Пример 3. Объяснение
+
+:::code language="json" source="~/policy-templates/patterns/pattern-logical-operators-3.json" range="6-28" highlight="3,8":::
+
+Этот блок **policyRule.if** содержит оба логических оператора — **allOf** и **anyOf**. Оператор **anyOf** имеет значение "true", если любое из его условий имеет значение "true". Поскольку _type_ лежит в основе **allOf**, он должен всегда иметь значение "true". Если _type_ и одно из условий **anyOf** имеют значение "true", то действие политики срабатывает.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

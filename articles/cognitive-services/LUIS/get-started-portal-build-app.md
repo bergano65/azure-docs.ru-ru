@@ -2,13 +2,13 @@
 title: Краткое руководство. Создание приложения на портале LUIS
 description: В этом кратком руководстве описывается создание основных компонентов приложения, намерений и сущностей, а также тестирование с примером речевого фрагмента на портале LUIS.
 ms.topic: quickstart
-ms.date: 03/24/2020
-ms.openlocfilehash: f0c8f0c77f832e049dfc494f82e90edb61a8cb2a
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 04/14/2020
+ms.openlocfilehash: 2d601646c43c0f0d99dc6934cf1f1c960e0b0f79
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80244620"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382570"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Краткое руководство. Создание приложения на портале LUIS
 
@@ -88,11 +88,10 @@ ms.locfileid: "80244620"
 По структуре эти примеры речевых фрагментов отличаются следующим:
 
 * длина речевого фрагмента;
-* пунктуация;
+* [пунктуация](luis-reference-application-settings.md#punctuation-normalization);
 * выбор слов;
 * время глагола (есть, было, будет);
 * порядок слов.
-
 
 
 ## <a name="create-a-regular-expression-entity"></a>Создание сущности регулярного выражения

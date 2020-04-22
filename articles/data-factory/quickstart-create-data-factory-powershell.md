@@ -11,20 +11,22 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: quickstart
-ms.date: 01/22/2018
+ms.date: 04/10/2020
 ms.author: jingwang
-ms.openlocfilehash: 7f527d3c57f086e7941505a9ca4396885c746762
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ad757e3d65d3094ca6883d747404906a871ed850
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75440087"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81419346"
 ---
 # <a name="quickstart-create-an-azure-data-factory-using-powershell"></a>Краткое руководство. Создание фабрики данных Azure с помощью PowerShell
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-powershell.md)
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом кратком руководстве описано создание фабрики данных Azure с помощью PowerShell. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью Фабрики данных Azure см. в статье [Преобразование данных с помощью действия Spark в фабрике данных Azure](transform-data-using-spark.md).
 
@@ -111,6 +113,10 @@ ms.locfileid: "75440087"
 ## <a name="create-a-linked-service"></a>Создание связанной службы
 
 Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом кратком руководстве мы создадим службу, связанную со службой хранилища Azure, которая используется и как хранилище-источник, и как хранилище-приемник. Связанная служба содержит сведения о подключении, используемые фабрикой данных для подключения к ней в среде выполнения.
+
+>[!TIP]
+>В этом кратком руководстве аутентификация в хранилище данных выполняется с помощью *ключа учетной записи*, но при необходимости можно выбрать другие поддерживаемые инструменты проверки подлинности, такие как *универсальный код ресурса SAS*,*субъект-служба* и *управляемое удостоверение*. Дополнительные сведения см. в соответствующих разделах [этой статьи](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#linked-service-properties).
+>Чтобы безопасно хранить секреты для хранилищ данных, также рекомендуется использовать Azure Key Vault. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault).
 
 1. Создайте JSON-файл **AzureStorageLinkedService.json** в папке **C:\ADFv2QuickStartPSH** со следующим содержимым: (Если папки ADFv2QuickStartPSH нет, создайте ее.)
 

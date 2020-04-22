@@ -3,16 +3,16 @@ title: Использование общего анализа затрат в с
 description: В этой статье объясняется, как получить результаты для общих задач анализа затрат в службе "Управление затратами Azure".
 author: bandersmsft
 ms.author: banders
-ms.date: 03/31/2020
+ms.date: 04/10/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: adwise
-ms.openlocfilehash: a333cad51e6fc089e7e6994c7b89210b12686cd5
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 2e0e222e636f694328835e20fda97deca1d9986a
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80520882"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261514"
 ---
 # <a name="common-cost-analysis-uses"></a>Использование анализа общих затрат
 
@@ -27,6 +27,17 @@ ms.locfileid: "80520882"
 1. Измените представление на **Таблица**.
 
 [![Распределение затрат по службе Azure](./media/cost-analysis-common-uses/breakdown-by-service.png)](./media/cost-analysis-common-uses/breakdown-by-service.png#lightbox)
+
+## <a name="review-invoiced-charges-in-cost-analysis"></a>Просмотр выставленных счетов в разделе анализа затрат
+
+Чтобы просмотреть сведения о счете на портале Azure, перейдите в раздел анализа затрат для интересующего вас счета. Выберите представление **Сведения о счете**. Здесь сведения о расходах показаны так же, как в счете.
+
+[![Пример сведений о счете](./media/cost-analysis-common-uses/invoice-details.png)](./media/cost-analysis-common-uses/invoice-details.png#lightbox)
+
+Просматривая сведения о счете, можно определить, из-за какой службы возникли непредвиденные затраты и какие ресурсы непосредственно связанны с определенным ресурсом в анализе затрат. Например, если вы хотите проанализировать расходы на службу "Виртуальные машины", перейдите к представлению **Накопленные затраты**. Затем установите степень детализации **Ежедневно**, примените фильтр **Название службы: Виртуальные машины** и сгруппируйте расходы по **ресурсам**.
+
+[![Пример накопленных затрат на виртуальные машины](./media/cost-analysis-common-uses/virtual-machines.png)](./media/cost-analysis-common-uses/virtual-machines.png#lightbox)
+
 
 ## <a name="view-cost-breakdown-by-azure-resource"></a>Просмотр распределения затрат по ресурсам Azure
 

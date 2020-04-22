@@ -1,5 +1,5 @@
 ---
-title: 'Краткое руководство: обнаружение лиц на изображении с помощью REST API и PHP'
+title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и PHP
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководстве вы узнаете, как обнаруживать лица на изображениях, используя REST API "Распознавание лиц" и PHP.
 services: cognitive-services
@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 0f76ec4ce1072b247be7f46610d37190cd282a22
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: f2584892bb349d126b73c3f8df211f745a362bd8
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76169741"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81403353"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-php"></a>Краткое руководство: обнаружение лиц на изображении с помощью REST API и PHP
+# <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-php"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и PHP
 
-В этом кратком руководстве описано, как обнаруживать лица на изображении с помощью REST API распознавания лиц Azure и PHP.
+В этом кратком руководстве описано, как обнаруживать лица на изображении с помощью REST API Распознавания лиц Azure и PHP.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ключ подписки на службу "Распознавание лиц". Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу "Распознавание лиц" и свой ключ.
 - Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).

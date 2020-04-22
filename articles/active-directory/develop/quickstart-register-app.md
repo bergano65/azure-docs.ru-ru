@@ -12,12 +12,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 1625b48d86eebaf5d8fcd4c100d89b83716ba459
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 79983678d13b810a521a00ba2c1978de92a5029f
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79408374"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81309507"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт
 
@@ -28,7 +28,7 @@ ms.locfileid: "79408374"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
-* [Клиент Azure AD](quickstart-create-new-tenant.md).
+* [Клиент Azure AD](quickstart-create-new-tenant.md).
 
 ## <a name="register-a-new-application-using-the-azure-portal"></a>Регистрация нового приложения с помощью портала Azure
 

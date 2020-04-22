@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Обнаружение лиц на изображении с помощью Azure REST API и Python
+title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определять лица на изображении с помощью REST API распознавания лиц Azure и Python.
 services: cognitive-services
@@ -8,25 +8,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: c4d136eaf0f6c4ac64093f417f144e422e2da52f
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: c88a60fdc6d064fba91f4b6d79e1637f45bf2716
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74977919"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81403215"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-python"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и Python
 
-В этом кратком руководстве описано, как определять лица на изображении с помощью REST API распознавания лиц Azure и Python. Это скрипт нарисует рамки вокруг лиц и наложит на изображение сведения о поле и возрасте.
+В этом кратком руководстве описано, как определять лица на изображении с помощью REST API Распознавания лиц Azure и Python. Это скрипт нарисует рамки вокруг лиц и наложит на изображение сведения о поле и возрасте.
 
 ![Изображение женщины и мужчины с прямоугольниками, нарисованными вокруг лиц, и сведениями о возрасте и поле](../images/labelled-faces-python.png)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
 

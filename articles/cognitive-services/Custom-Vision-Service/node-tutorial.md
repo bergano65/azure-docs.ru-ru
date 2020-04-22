@@ -8,14 +8,14 @@ manager: daauld
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: areddish
-ms.openlocfilehash: f1c0d8f72fe59ff9a8c0fdba86d97ea588a9a808
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 2a7da34238af6d1936c680cd5a063e9ad49ee889
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366626"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81403618"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-nodejs-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательского визуального распознавания для Node.js
 
@@ -176,7 +176,7 @@ Results:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы узнали, как выполнять в коде каждый шаг процесса классификации изображений. В этом примере выполняется одна итерация обучения, но часто нужно несколько раз обучать и тестировать модель, чтобы сделать ее более точной.
+Теперь вы узнали, как выполнять в коде каждый шаг процесса обнаружения объектов. В этом примере выполняется одна итерация обучения, но часто нужно несколько раз обучать и тестировать модель, чтобы сделать ее более точной.
 
 > [!div class="nextstepaction"]
 > [Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания](test-your-model.md)

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 04/13/2020
 ms.author: erhopf
-ms.openlocfilehash: 7a929794ffaea4f863ffaef7227e58c7ccf901f0
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 9fe8bc06aafd17518d37c35034fac9b566e079ce
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74976576"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261556"
 ---
 # <a name="quickstart-get-the-list-of-text-to-speech-voices-using-nodejs"></a>Краткое руководство. Получение списка голосовых моделей для преобразований текста в речь с использованием Node.js
 
@@ -27,8 +27,8 @@ ms.locfileid: "74976576"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Node 8.12.x или более поздней версии](https://nodejs.org/en/);
-* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
+* <a href="https://nodejs.org/en/" target="_blank">Node 8.12.x или более поздней версии<span class="docon docon-navigate-external x-hidden-focus"></span></a>;
+* <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio <span class="docon docon-navigate-external x-hidden-focus"></span></a>, <a href="https://code.visualstudio.com/download" target="_blank"> Visual Studio Code <span class="docon docon-navigate-external x-hidden-focus"></span></a> или другой редактор кода;
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
 ## <a name="create-a-project-and-require-dependencies"></a>Создание проекта и объявление зависимостей

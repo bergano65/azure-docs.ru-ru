@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Определение лиц на изображении с помощью Azure REST API и Node.js
+title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Node.js
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и Node.js.
 services: cognitive-services
@@ -8,22 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 12/06/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 7897c1602a8b9ed6a1fea68e80d57cd5bae1c004
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: b88959d1dd936df0315d7365513ab0c0c5b7df17
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76165947"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402941"
 ---
-# <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-nodejs"></a>Краткое руководство. Определение лиц на изображении с помощью REST API распознавания лиц и Node.js
+# <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-nodejs"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Node.js
 
-В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и Node.js.
+В этом кратком руководстве описано, как обнаруживать лица на изображении с помощью REST API Распознавания лиц Azure и Node.js.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ключ подписки на службу "Распознавание лиц". Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу "Распознавание лиц" и свой ключ.
 - Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).

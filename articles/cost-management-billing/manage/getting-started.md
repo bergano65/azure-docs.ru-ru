@@ -6,14 +6,14 @@ ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 3/30/2020
+ms.date: 04/10/2020
 ms.author: banders
-ms.openlocfilehash: 79af6f78e8e9bf93c49deafe79f6a421cbb77d1a
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: b1986a4cb59e0f276ba59eb99acfb459b48615d8
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80475261"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81262109"
 ---
 # <a name="prevent-unexpected-charges-with-azure-billing-and-cost-management"></a>Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure
 
@@ -193,6 +193,17 @@ ms.locfileid: "80475261"
 Отфильтруйте CSV-файл с данными об использовании на основе _MeterName_, как показано в счете, который нужно проанализировать, чтобы увидеть все элементы строки, применяющиеся к единице измерений. _InstanceID_ элемента строки соответствует фактическому ресурсу Azure, создавшему расходы.
 
 Определив необходимый ресурс, вы можете воспользоваться анализом затрат в службе "Управление затратами Azure", чтобы проанализировать затраты, связанные с ресурсом. Дополнительные сведения об использовании анализа затрат см. в [этой статье](../costs/quick-acm-cost-analysis.md).
+
+### <a name="review-invoiced-charges-in-cost-analysis"></a>Просмотр выставленных счетов в разделе анализа затрат
+
+Чтобы просмотреть сведения о счете на портале Azure, перейдите в раздел анализа затрат для интересующего вас счета. Выберите представление **Сведения о счете**. Здесь сведения о расходах показаны так же, как в счете.
+
+[![Пример сведений о счете](./media/getting-started/invoice-details.png)](./media/getting-started/invoice-details.png#lightbox)
+
+Просматривая сведения о счете, можно определить, из-за какой службы возникли непредвиденные затраты и какие ресурсы непосредственно связанны с определенным ресурсом в анализе затрат. Например, если вы хотите проанализировать расходы на службу "Виртуальные машины", перейдите к представлению **Накопленные затраты**. Затем установите степень детализации **Ежедневно**, примените фильтр **Название службы: Виртуальные машины** и сгруппируйте расходы по **Ресурсам**.
+
+[![Пример накопленных затрат на виртуальные машины](./media/getting-started/virtual-machines.png)](./media/getting-started/virtual-machines.png#lightbox)
+
 
 ### <a name="identify-spikes-in-cost-over-time"></a>Определение максимальных расходов за период времени
 

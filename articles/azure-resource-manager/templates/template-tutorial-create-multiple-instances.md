@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/08/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 70c86c82cb28bf767da50cca20f7c1d052d4bf01
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 83afff3aa15caa1743f66eea9eaee541492b8d1c
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80982550"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81260842"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-arm-templates"></a>Руководство по Создание нескольких экземпляров ресурса с помощью шаблонов ARM
 
@@ -124,7 +124,8 @@ ms.locfileid: "80982550"
 echo "Enter a project name that is used to generate resource group name:" &&
 read projectName &&
 resourceGroupName="${projectName}rg" &&
-az storage account list --resource-group $resourceGroupName
+az storage account list --resource-group $resourceGroupName &&
+echo "Press [ENTER] to continue ..."
 ```
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -133,6 +134,7 @@ az storage account list --resource-group $resourceGroupName
 $projectName = Read-Host -Prompt "Enter a project name that is used to generate resource group name"
 $resourceGroupName = "${projectName}rg"
 Get-AzStorageAccount -ResourceGroupName $resourceGroupName
+Write-Host "Press [ENTER] to continue ..."
 ```
 
 ---
@@ -145,7 +147,7 @@ Get-AzStorageAccount -ResourceGroupName $resourceGroupName
 
 1. На портале Azure в меню слева выберите **Группа ресурсов**.
 2. В поле **Фильтровать по имени** введите имя группы ресурсов.
-3. Выберите имя группы ресурсов.  В группе ресурсов должно появится шесть ресурсов.
+3. Выберите имя группы ресурсов.  В группе ресурсов должно появиться три ресурса.
 4. В главном меню выберите **Удалить группу ресурсов**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
