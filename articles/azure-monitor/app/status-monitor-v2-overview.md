@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: 4042fc05f278915fe72bf8fc4e6afd69a5bbb4b9
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 626a8c96fdc247db174e2cbcd2e5c99cec43d2ea
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81537429"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770967"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента по анализу приложений Azure Monitor для наемных серверов
 
@@ -36,14 +36,14 @@ ms.locfileid: "81537429"
 - Смотрите [подробные инструкции](status-monitor-v2-detailed-instructions.md) для глубокого погружения о том, как начать работу.
 
 ## <a name="powershell-api-reference"></a>Ссылка На API PowerShell
-- [Отключить-ApplicationInsightsМониторинг](status-monitor-v2-api-disable-monitoring.md)
-- [Отмашина-ИнструментацияEngine](status-monitor-v2-api-disable-instrumentation-engine.md)
-- [Включить-ApplicationInsightsМониторинг](status-monitor-v2-api-enable-monitoring.md)
-- [Включить-ИнструментированиеEngine](status-monitor-v2-api-enable-instrumentation-engine.md)
-- [Get-ApplicationInsightsMonitoringConfig](status-monitor-v2-api-get-config.md)
-- [Get-ApplicationInsightsМониторинг](status-monitor-v2-api-get-status.md)
-- [Set-ApplicationInsightsMonitoringConfig](status-monitor-v2-api-set-config.md)
-- [Старт-ApplicationInsightsMonitoringTrace](status-monitor-v2-api-start-trace.md)
+- [Отключить-ApplicationInsightsМониторинг](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#disable-applicationinsightsmonitoring)
+- [Отмашина-ИнструментацияEngine](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#disable-instrumentationengine)
+- [Включить-ApplicationInsightsМониторинг](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-applicationinsightsmonitoring)
+- [Включить-ИнструментированиеEngine](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-instrumentationengine)
+- [Get-ApplicationInsightsMonitoringConfig](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#get-applicationinsightsmonitoringconfig)
+- [Get-ApplicationInsightsМониторинг](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#get-applicationinsightsmonitoringstatus)
+- [Set-ApplicationInsightsMonitoringConfig](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#set-applicationinsightsmonitoringconfig)
+- [Старт-ApplicationInsightsMonitoringTrace](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#start-applicationinsightsmonitoringtrace)
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 - [Устранение неполадок](status-monitor-v2-troubleshoot.md)
@@ -64,7 +64,7 @@ ms.locfileid: "81537429"
 
 - Как проверить, что включение удалось?
 
-  - [Get-ApplicationInsightsMonitoringStatus](status-monitor-v2-api-get-status.md) cmdlet может быть использован для проверки того, что включение удалось.
+  - [Get-ApplicationInsightsMonitoringStatus](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#get-applicationinsightsmonitoringstatus) cmdlet может быть использован для проверки того, что включение удалось.
   - Мы рекомендуем вам использовать [Live Metrics,](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) чтобы быстро определить, отправляет ли ваше приложение телеметрию.
 
   - Вы также можете использовать [Log Analytics](../log-query/get-started-portal.md) для списка всех ролей облака, отправляющих телеметрию:

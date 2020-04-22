@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rateller
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b199854867c48906061cff65bad21e514456c911
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 845948d9aec28ee79a11fb11aaef4cfbf1b263fa
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81378708"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770551"
 ---
 # <a name="configure-and-enable-users-for-sms-based-authentication-using-azure-active-directory-preview"></a>Настройка и включение пользователей для проверки подлинности на основе SMS с помощью Active Directory Azure (предварительный просмотр)
 
@@ -29,18 +29,19 @@ ms.locfileid: "81378708"
 | Проверка подлинности на основе SMS для пользователей — это общедоступное функцию предварительного просмотра Active Directory Azure. Для получения дополнительной информации о предварительных просмотрах [см.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
 |     |
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для завершения этой статьи необходимы следующие ресурсы и привилегии:
 
 * Активная подписка Azure.
-    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Арендатор Active Directory Azure, связанный с подпиской.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Для включения проверки подлинности на основе SMS-авт.на основе SMS необходимы глобальные привилегии *администратора* в вашем адентичном АТАКЖЕ.
 * Каждый пользователь, включенный в политику метода проверки подлинности текстового сообщения, должен быть лицензирован, даже если он не используется. Каждый пользователь с включенным пользователем должен иметь одну из следующих лицензий Azure AD или Microsoft 365:
     * [Azure AD Premium (P1 или P2)][azuread-licensing]
-    * [Microsoft 365 F1 или F3][m365-firstline-workers-licensing]
+    * [Microsoft 365 (M365) F1 или F3][m365-firstline-workers-licensing]
+    * [Корпоративная мобильность - Безопасность (EMS) E3 или E5][ems-licensing] или [Microsoft 365 (M365) E3 или E5][m365-licensing]
 
 ## <a name="limitations"></a>Ограничения
 
@@ -161,3 +162,5 @@ ms.locfileid: "81378708"
 [office]: https://www.office.com
 [m365-firstline-workers-licensing]: https://www.microsoft.com/licensing/news/m365-firstline-workers
 [azuread-licensing]: https://azure.microsoft.com/pricing/details/active-directory/
+[ems-licensing]: https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing
+[m365-licensing]: https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans
