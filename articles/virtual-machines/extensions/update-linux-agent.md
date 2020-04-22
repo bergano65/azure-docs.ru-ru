@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 08/02/2017
 ms.author: mimckitt
-ms.openlocfilehash: e4489f7c810799ca8e89565fe698f398f942b089
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e3b2819b33feba52c3b02f0e2104d4106bd04cbb
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78251717"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770054"
 ---
 # <a name="how-to-update-the-azure-linux-agent-on-a-vm"></a>Как обновить агент Azure Linux на виртуальной машине
 
@@ -29,6 +29,8 @@ ms.locfileid: "78251717"
 - подключение к этой виртуальной машине Linux с помощью протокола SSH.
 
 Пакет нужно всегда сначала проверять в репозитории дистрибутива Linux. Возможно, доступный пакет будет не последней версии. Тем не менее после включения автоматического обновления агент Linux будет всегда получать последнее обновление. При возникновении проблем во время установки из диспетчеров пакетов за поддержкой обратитесь к поставщику дистрибутива.
+
+> ! (ПРИМЕЧАНИЕ) Для получения дополнительной информации смотрите [одобренные дистрибутивы Linux на Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros)
 
 ## <a name="minimum-virtual-machine-agent-support-in-azure"></a>Минимальная поддержка агента виртуальных машин в Azure
 Ознакомьтесь со статьей [Minimum version support for virtual machine agents in Azure](https://support.microsoft.com/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) (Минимальная поддержка версий для агентов виртуальных машин в Azure) перед продолжением.

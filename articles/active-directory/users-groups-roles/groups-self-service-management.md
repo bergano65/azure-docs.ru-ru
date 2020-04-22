@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e52c37e293941a767621cf56ef75f8cc83b1925
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 541deb5cf44ad5440e31641b673ed5da5b5d2b26
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79298009"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768541"
 ---
 # <a name="set-up-self-service-group-management-in-azure-active-directory"></a>Настройка управления группами самообслуживания в Active Directory Azure 
 
@@ -56,12 +56,15 @@ ms.locfileid: "79298009"
 
 Когда пользователи могут создавать группы, всем пользователям в вашей организации разрешается создавать новые группы, а затем, как владелец по умолчанию, добавлять в эти группы пользователей. Вы не можете указать людей, которые могут создавать свои собственные группы. Вы можете указать отдельных лиц только для того, чтобы сделать другого участника группы владельцем группы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+> [!NOTE]
+> Лицензия Active Directory Premium Azure (P1 или P2) требуется пользователям для запроса на вступление в группу безопасности или группу Office 365, а владельцам — для утверждения или отказа в запросах на членство. Без лицензии Azure Active Directory Premium пользователи по-прежнему могут управлять своими группами в панели доступа, но они не могут создать группу, которая требует одобрения владельца в панели доступа, и они не могут запросить присоединение к группе. 
+
+## <a name="next-steps"></a>Следующие шаги
 
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
 * [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md)
 * [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
-* [Что такое активный каталог Azure?](../fundamentals/active-directory-whatis.md)
+* [Что такое Azure Active Directory](../fundamentals/active-directory-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)

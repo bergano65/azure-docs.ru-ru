@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 1054328216d0517b3f450ba4fe08f3bef32d68f7
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 645baf9102785d223fd1f23ae52a4609725f795b
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81431726"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770808"
 ---
 # <a name="query-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Файлы запроса JSON с использованием S'L по требованию (предварительный просмотр) в Azure Synapse Analytics
 
@@ -140,9 +140,9 @@ WHERE
     JSON_VALUE(jsonContent, '$.title') = 'Probabilistic and Statistical Methods in Cryptology, An Introduction by Selected Topics';
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Следующие статьи в этой серии продемонстрируют, как:
 
 - [Папки запросов и несколько файлов](query-folders-multiple-csv-files.md)
-- [Создание и использование представлений](create-use-views.md).
+- [Создание и использование представлений](create-use-views.md)

@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e17cc4bf6f70901e3bb5d250f0a55f073ad8d99e
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 1e5861e802f39adecb5661bc17c22b432f137d59
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81406730"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770303"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory
 
@@ -49,8 +49,6 @@ ms.locfileid: "81406730"
 
 Хотя внутренние и внешние URL-адреса могут содержать разные домены, рекомендуется, чтобы они совпадали. При публикации приложения появится сообщение об ошибке, если один из URL-адресов не содержит подстановочный знак.
 
-При наличии дополнительных приложений с другими параметрами конфигурации их необходимо будет опубликовать как отдельные приложения, чтобы перезаписать параметры по умолчанию, заданные для подстановочного знака. Приложения без подстановочного знака всегда имеют приоритет над приложениями с подстановочным знаком. С точки зрения конфигурации это самые обычные приложения.
-
 При создании приложения с подстановочным знаком используется тот же [процесс публикации приложения](application-proxy-add-on-premises-application.md), что и для всех других приложений. Единственное отличие заключается в добавлении подстановочного знака в URL-адреса и, возможно, настройке единого входа.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -76,7 +74,7 @@ ms.locfileid: "81406730"
 
 Чтобы убедиться, что запись CNAME правильно настроена, можно использовать [nslookup](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) на одной из целевых конечных точек, например `expenses.adventure-works.com`.  Полученный ответ должен содержать упомянутый выше псевдоним (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 Вот некоторые соображения, которые вы должны принять во внимание для подстановочных приложений.
 
@@ -191,7 +189,7 @@ ms.locfileid: "81406730"
 
 Если вы опубликовали несколько приложений для финансового отдела и используете проверенный домен `finance.adventure-works.com`, то можно опубликовать другое приложение с подстановочным знаком `*.finance.adventure-works.com`. Так как оно определено точнее, чем общее приложение `*.adventure-works.com`, оно имеет более высокий приоритет в случае, когда пользователь обращается к приложению в домене finance.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы узнать больше о **пользовательских доменов,** [см. Работа с пользовательскими доменами в Azure AD Application Proxy](application-proxy-configure-custom-domain.md).
 - Чтобы узнать больше о **приложениях публикации,** см. [Publish applications using Azure AD Application Proxy](application-proxy-add-on-premises-application.md)

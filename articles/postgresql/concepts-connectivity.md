@@ -2,17 +2,17 @@
 title: Обработка переходных ошибок подключения - База данных Azure для PostgreS'L - Единый сервер
 description: Узнайте, как обрабатывать временные ошибки подключения для базы данных Azure для PostgreS-L - Single Server.
 keywords: подключение postgresql,строка подключения,проблемы с подключением, временная ошибка,ошибка подключения
-author: jan-eng
-ms.author: janeng
+author: jasonwhowell
+ms.author: jasonh
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: fe5b772946bece165a4e09f170355dc7b595a48f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8138512dfc893f3523c5ad78a93aef1bcdedfe70
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74768849"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768036"
 ---
 # <a name="handling-transient-connectivity-errors-for-azure-database-for-postgresql---single-server"></a>Handling transient connectivity errors for Azure Database for PostgreSQL —Single Server (Обработка временных ошибок подключения к Базе данных Azure для PostgreSQL — одиночный сервер)
 
@@ -44,6 +44,6 @@ ms.locfileid: "74768849"
 
 Не забудьте проверить логику повторных попыток. Например, попробуйте выполнить свой код, увеличивая или уменьшая число вычислительных ресурсов сервера Базы данных Azure для PostgreSQL. Ваше приложение должно без каких-либо проблем справиться с небольшим простоем во время этой операции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Устранение неполадок подключения к Базе данных Azure для PostgreSQL](howto-troubleshoot-common-connection-issues.md)

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 8fe9e551a4ca7dea8f53e0f8c2975ca3d88c48f7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b25e9d860f118c1b044b13e01a80aaf7a24963cf
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79366263"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768246"
 ---
 # <a name="install-custom-apache-hadoop-applications-on-azure-hdinsight"></a>Установка пользовательских приложений Apache Hadoop в Azure HDInsight
 
@@ -51,7 +51,7 @@ ms.locfileid: "79366263"
 
 1. Выберите флажок, **ибо я согласен с условиями, указанными выше.**
 
-1. Нажмите кнопку **Купить**.
+1. Щелкните **Приобрести**.
 
 Состояние установки можно наблюдать на плитке, закрепленной на панели мониторинга, и в уведомлении портала (щелкните значок колокольчика в верхней части портала).  Установка приложения занимает около 10 минут.
 
@@ -119,7 +119,7 @@ ms.locfileid: "79366263"
 
 * UI Apache Ambari Web: Если скрипт установки стал причиной сбоя, используйте веб-чат Ambari для проверки полных журналов об установке скриптов.
 
-    См. дополнительные сведения об [устранении неполадок](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting).
+    Для получения дополнительной [Troubleshoot script actions](./troubleshoot-script-action.md)информации см.
 
 ## <a name="remove-hdinsight-applications"></a>Удаление приложений HDInsight
 
@@ -139,7 +139,7 @@ ms.locfileid: "79366263"
 az hdinsight application delete --name NAME --cluster-name CLUSTERNAME --resource-group RESOURCEGROUP
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx)(Установка приложения HDInsight) — узнайте, как разрабатывать шаблоны Resource Manager для развертывания приложений HDInsight.
 * [Установка приложений HDInsight](hdinsight-apps-install-applications.md)— узнайте, как устанавливать в кластер приложения HDInsight.

@@ -7,40 +7,36 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 02/23/2020
 ms.author: irenehua
-ms.openlocfilehash: c2c909d8ef2be982d4dd4a70b5f35d03e8e71418
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 239dc0f3133a5adf59a23d333131c91d3a655597
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77659974"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770388"
 ---
 # <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Обновление баланса внутренней нагрузки Azure - Не требуется исходящие подключения
 [Azure Standard Load Balancer](load-balancer-overview.md) предлагает богатый набор функциональных возможностей и высокую доступность за счет избыточности зон. Чтобы узнать больше о Загружение балансер SKU, [см.](https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus)
 
-Есть два этапа обновления:
-
-1. Перенести конфигурацию
-2. Добавление VM в пулы бэкэнда standard Load Balancer
-
-Эта статья охватывает миграцию конфигурации. Добавление VM в пулы бэкэнда может варьироваться в зависимости от вашей конкретной среды. Тем не менее, некоторые высокого уровня, общие рекомендации [предоставляются](#add-vms-to-backend-pools-of-standard-load-balancer).
+В этой статье представлен скрипт PowerShell, который создает балансер стандартной нагрузки с той же конфигурацией, что и балансер basic Load, а также миграционный трафик от Basic Load Balancer к балансу стандартной нагрузки.
 
 ## <a name="upgrade-overview"></a>Общие сведения об обновлении
 
 Доступен скрипт Azure PowerShell, который делает следующее:
 
 * Создает стандартный внутренний балансосиватель загрузки SKU в указанном вами месте. Обратите внимание, что [исходящие соединения](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) не будут предоставляться Standard Internal Load Balancer.
-* Бесшовно копирует конфигурации Базового балансировора загрузки SKU для недавно созданного Standard Load Balancer.
+* Бесшовно копирует конфигурации Базового балансировора загрузки SKU на недавно созданный Standard Load Balancer.
+* Бесшовно перемещать частные I-провайдеры с Basic Load Balancer на недавно созданный Standard Load Balancer.
+* Бесшовно переместить VMs из бэкэндпула базового баланса нагрузки в бэкэнд бассейн балансировки стандартной нагрузки
 
 ### <a name="caveatslimitations"></a>Ограничения оговорок
 
 * Сценарий поддерживает только обновление внутреннего баланса нагрузки, где не требуется исходящих подключений. Если вам требуется [исходящие соединения](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) для некоторых из ваших VMs, пожалуйста, обратитесь к этой [странице](upgrade-InternalBasic-To-PublicStandard.md) для получения инструкций. 
-* Стандартный балансировка нагрузки имеет новые публичные адреса. Невозможно беспрепятственно перемещать IP-адреса, связанные с существующим балансом Basic Load Balancer, в Standard Load Balancer, поскольку они имеют различные SkRU.
 * Если балансомер стандартной нагрузки создан в другом регионе, вы не сможете связать ВМ, существующие в старом регионе, с недавно созданным балансом стандартной нагрузки. Чтобы обойти это ограничение, убедитесь, что создать новый VM в новом регионе.
-* Если ваш балансер нагрузки не имеет конфигурации IP-адреса переднего энда или пула бэкэнда, вы, скорее всего, поразите ошибку, управляя скриптом. Пожалуйста, убедитесь, что они не пусты.
+* Если ваш балансер нагрузки не имеет конфигурации IP-адреса переднего энда или пула бэкэнда, вы, скорее всего, поразите ошибку, управляя скриптом. Убедитесь, что они не пусты.
 
 ## <a name="download-the-script"></a>Скачать сценарий
 
-Скачать скрипт миграции из [галереи PowerShell](https://www.powershellgallery.com/packages/AzureILBUpgrade/1.0).
+Скачать скрипт миграции из [галереи PowerShell](https://www.powershellgallery.com/packages/AzureILBUpgrade/2.0).
 ## <a name="use-the-script"></a>Использование сценария
 
 Есть два варианта для вас в зависимости от локальной настройки среды PowerShell и предпочтений:
@@ -84,30 +80,6 @@ ms.locfileid: "77659974"
    AzureILBUpgrade.ps1 -rgName "test_InternalUpgrade_rg" -oldLBName "LBForInternal" -newlocation "centralus" -newLbName "LBForUpgrade"
    ```
 
-### <a name="add-vms-to-backend-pools-of-standard-load-balancer"></a>Добавление VM в пулы бэкэнда standard Load Balancer
-
-Во-первых, дважды проверьте, что скрипт успешно создал новый стандартный внутренний балансер нагрузки с точной конфигурацией, перенесенной из базового баланса внутренней нагрузки. Вы можете проверить это с портала Azure.
-
-Не забудьте отправить небольшое количество трафика через Standard Load Balancer в качестве ручного теста.
-  
-Вот несколько сценариев того, как вы добавляете VMs в пулы бэкэндов недавно созданного Standard Internal Load Balancer, и наши рекомендации по каждому из них:
-
-* **Перемещение существующих VM из бэкэнд-пулов старого базового баланса внутренней нагрузки в пулы бэкэндов недавно созданного Standard Internal Load Balancer.**
-    1. Для выполнения задач в этом кратком руководстве войдите на [портал Azure](https://portal.azure.com).
- 
-    1. Выберите **все ресурсы** в левом меню, а затем выберите **недавно созданный Standard Load Balancer** из списка ресурсов.
-   
-    1. В разделе **Параметры** выберите **Внутренние пулы**.
-   
-    1. Выберите пул бэкэнда, который соответствует пулу бэкэнда базового баланса нагрузки, выберите следующее значение: 
-      - **Виртуальная машина:** Падение вниз и выбрать виртуальные вымотка из соответствующего бэкэнд пула basic Load Balancer.
-    1. Нажмите кнопку **Сохранить**.
-    >[!NOTE]
-    >Для вс-президентов, которые имеют общедоступные IP-адреса, сначала необходимо создать стандартные IP-адреса, где тот же IP-адрес не гарантируется. Отмежевать вМ от базовых IP-адресов и связать их с недавно созданными СТАНДАРТНЫми IP-адресами. После этого, вы будете последовать за инструкциями для того чтобы добавить VMs в пул бэкэнда балансора стандартной нагрузки. 
-
-* **Создание новых VM для добавления в пулы бэкэнда недавно созданного Standard Internal Load Balancer.**
-    * Дополнительные инструкции о том, как создать VM и связать его со стандартной нагрузкой балансер можно найти [здесь](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal#create-virtual-machines).
-
 ## <a name="common-questions"></a>Часто задаваемые вопросы
 
 ### <a name="are-there-any-limitations-with-the-azure-powershell-script-to-migrate-the-configuration-from-v1-to-v2"></a>Существуют ли какие-либо ограничения со скриптом Azure PowerShell для переноса конфигурации из v1 в v2?
@@ -116,12 +88,12 @@ ms.locfileid: "77659974"
 
 ### <a name="does-the-azure-powershell-script-also-switch-over-the-traffic-from-my-basic-load-balancer-to-the-newly-created-standard-load-balancer"></a>Переключается ли также скрипт Azure PowerShell с моего базового баланса нагрузки на недавно созданный балансер стандартной нагрузки?
 
-Нет. Скрипт Azure PowerShell только мигрирует по конфигурации. Фактическая миграция трафика является вашей ответственностью и в вашем контроле.
+Да, он мигрирует трафика. Если вы хотите мигрировать трафик лично, используйте [этот скрипт,](https://www.powershellgallery.com/packages/AzureILBUpgrade/1.0) который не перемещает ввоз в обиходы для вас.
 
 ### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>Я столкнулся с некоторыми проблемами с использованием этого сценария. Как я могу получить помощь?
   
 Вы можете отправить slbupgradesupport@microsoft.comэлектронное письмо, открыть кейс поддержки с помощью поддержки Azure или сделать и то, и другое.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Узнайте о балансе standard Load Balancer](load-balancer-overview.md)

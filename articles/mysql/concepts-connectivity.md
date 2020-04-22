@@ -2,17 +2,17 @@
 title: Переходные ошибки подключения - База данных Azure для MyS'L
 description: Узнайте, как обрабатывать временные ошибки подключения и эффективно подключаться к базе данных Azure для MyS'L.
 keywords: mysql соединение,строка соединения,проблемы соединения,переходная ошибка,ошибка соединения,соединяют эффективно
-author: jan-eng
-ms.author: janeng
+author: jasonwhowell
+ms.author: jasonh
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 79c5c7e485cc9cb03757b8a981cef92d79b81c3d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4f9101b4108f5512ee9779f4633845b34fdfad5a
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79537182"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767860"
 ---
 # <a name="handle-transient-errors-and-connect-efficiently-to-azure-database-for-mysql"></a>Обработка временных ошибок и эффективное подключение к базе данных Azure для MyS'L
 
@@ -110,6 +110,6 @@ public class SimpleTestOnBorrowExample {
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте, как устранить проблемы с подключением к Базе данных Azure для MySQL](howto-troubleshoot-common-connection-issues.md)

@@ -1,27 +1,24 @@
 ---
-title: Лазурное хранилище данных озера Gen2 PowerShell для файлов & ACLs (предварительный просмотр)
+title: Лазурное хранилище данных озера Gen2 PowerShell для файлов & AcLs
 description: Используйте смдлеты PowerShell для управления каталогами и списками управления доступом файлов и каталогов (ACL) в учетных записях хранения с включенным иерархическим пространством имен (HNS).
 services: storage
 author: normesta
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.topic: conceptual
-ms.date: 04/10/2020
+ms.date: 04/21/2020
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: b59c68e3f2edc0fbe5eee3c3861a3e5116d4fac6
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 68ffe40f93be3d10666ebad2eaa153fc9dc9687f
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81262389"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768016"
 ---
-# <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Используйте PowerShell для управления каталогами, файлами и ACL в Azure Data Lake Storage 2 (предварительный просмотр)
+# <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Используйте PowerShell для управления каталогами, файлами и ACL в Azure Data Lake Storage 2
 
 В этой статье показано, как использовать PowerShell для создания и управления каталогами, файлами и разрешениями в учетных записях хранения с включенным иерархическим пространством имен (HNS). 
-
-> [!IMPORTANT]
-> Модуль PowerShell, который показан в этой статье, в настоящее время находится в открытом доступе.
 
 [Gen1 к Gen2 отображение](#gen1-gen2-map) | [Дайте обратную связь](https://github.com/Azure/azure-powershell/issues)
 
@@ -33,7 +30,7 @@ ms.locfileid: "81262389"
 > * .NET Framework установлено 4.7.2 или более. Смотрите [Скачать .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
 > * Версия `5.1` PowerShell или выше.
 
-## <a name="install-powershell-modules"></a>Установка модулей PowerShell
+## <a name="install-the-powershell-module"></a>Установка модуля PowerShell
 
 1. Убедитесь, что установленная версия `5.1` PowerShell или выше, используя следующую команду.    
 
@@ -43,16 +40,10 @@ ms.locfileid: "81262389"
     
    Чтобы обновить версию PowerShell, [см.](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)
     
-2. Установите новейший модуль **PowershellGet.** Затем закройте и вновь откройте консоль PowerShell.
+2. Установка модуля **Az.Storage.**
 
    ```powershell
-   Install-Module PowerShellGet –Repository PSGallery –Force 
-   ```
-
-3. Установка модуля предварительного просмотра **Az.Storage.**
-
-   ```powershell
-   Install-Module az.storage -RequiredVersion 1.13.3-preview -Repository PSGallery -AllowClobber -AllowPrerelease -Force 
+   Install-Module Az.Storage -Repository PSGallery -Force  
    ```
 
    Для получения дополнительной информации о том, как установить модули PowerShell, смотрите [модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.0.0)

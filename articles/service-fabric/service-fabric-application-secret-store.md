@@ -3,12 +3,12 @@ title: Azure сервис Ткань Центральный секреты ма�
 description: В этой статье описывается, как использовать Central Secrets Store в azure Service Fabric.
 ms.topic: conceptual
 ms.date: 07/25/2019
-ms.openlocfilehash: 11fb94a9fba40e6f2474ad64f5eb0c454be28ca0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4087e7ccdcb2281c4a08af155d35a10c66147a85
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77589170"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770411"
 ---
 # <a name="central-secrets-store-in-azure-service-fabric"></a>Центральный магазин секретов в лазурном сервисе Ткань 
 В этой статье описывается, как использовать Central Secrets Store (CSS) в Azure Service Fabric для создания секретов в приложениях Service Fabric. CSS — это локальный секретный кэш хранилища, который хранит конфиденциальные данные, такие как пароль, маркеры и ключи, зашифрованные в памяти.
@@ -47,31 +47,9 @@ ms.locfileid: "77589170"
      ]
 ```
 ## <a name="declare-a-secret-resource"></a>Объявить секретный ресурс
-Вы можете создать секретный ресурс, используя шаблон Azure Resource Manager или API REST.
-
-### <a name="use-resource-manager"></a>Использование Resource Manager
-
-Используйте следующий шаблон для использования ресурса Manager для создания секретного ресурса. Шаблон создает `supersecret` секретный ресурс, но значение для секретного ресурса пока не установлено.
-
-
-```json
-   "resources": [
-      {
-        "apiVersion": "2018-07-01-preview",
-        "name": "supersecret",
-        "type": "Microsoft.ServiceFabricMesh/secrets",
-        "location": "[parameters('location')]", 
-        "dependsOn": [],
-        "properties": {
-          "kind": "inlinedValue",
-            "description": "Application Secret",
-            "contentType": "text/plain",
-          }
-        }
-      ]
-```
-
-### <a name="use-the-rest-api"></a>Использование REST API
+Вы можете создать секретный ресурс с помощью REST API.
+  > [!NOTE] 
+  > Если кластер использует аутентификацию окон, запрос REST отправляется через незащищенный канал HTTP. Рекомендация заключается в использовании кластера на основе X509 с безопасными конечными точками.
 
 Чтобы создать `supersecret` секретный ресурс с помощью REST API, сделайте запрос `https://<clusterfqdn>:19080/Resources/Secrets/supersecret?api-version=6.4-preview`PUT. Для создания секретного ресурса нужен сертификат кластера или сертификат клиента админа.
 
@@ -81,48 +59,6 @@ Invoke-WebRequest  -Uri https://<clusterfqdn>:19080/Resources/Secrets/supersecre
 ```
 
 ## <a name="set-the-secret-value"></a>Установите секретное значение
-
-### <a name="use-the-resource-manager-template"></a>Использование шаблона менеджера ресурсов
-
-Используйте следующий шаблон менеджера ресурсов для создания и установки секретного значения. Этот шаблон устанавливает секретное `supersecret` значение для `ver1`секретного ресурса в качестве версии.
-```json
-  {
-  "parameters": {
-  "supersecret": {
-      "type": "string",
-      "metadata": {
-        "description": "supersecret value"
-      }
-   }
-  },
-  "resources": [
-    {
-      "apiVersion": "2018-07-01-preview",
-        "name": "supersecret",
-        "type": "Microsoft.ServiceFabricMesh/secrets",
-        "location": "[parameters('location')]", 
-        "dependsOn": [],
-        "properties": {
-          "kind": "inlinedValue",
-            "description": "Application Secret",
-            "contentType": "text/plain",
-        }
-    },
-    {
-      "apiVersion": "2018-07-01-preview",
-      "name": "supersecret/ver1",
-      "type": "Microsoft.ServiceFabricMesh/secrets/values",
-      "location": "[parameters('location')]",
-      "dependsOn": [
-        "Microsoft.ServiceFabricMesh/secrets/supersecret"
-      ],
-      "properties": {
-        "value": "[parameters('supersecret')]"
-      }
-    }
-  ],
-  ```
-### <a name="use-the-rest-api"></a>Использование REST API
 
 Используйте следующий скрипт, чтобы использовать API REST для настройки секретного значения.
 ```powershell
@@ -189,5 +125,5 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
    </EnvironmentVariables>
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Подробнее о [безопасности приложений и сервиса.](service-fabric-application-and-service-security.md)

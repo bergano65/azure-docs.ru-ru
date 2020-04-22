@@ -1,17 +1,17 @@
 ---
 title: Проблемы с подключением к проблеме - База данных Azure для MariaDB
 description: Узнайте, как устранить проблемы подключения к базе данных Azure для MariaDB, включая временные ошибки, требующие повтора, проблем ы с брандмауэром и простоев.
-author: jan-eng
-ms.author: janeng
+author: jasonwhowell
+ms.author: jasonh
 ms.service: mariadb
 ms.topic: troubleshooting
 ms.date: 3/18/2020
-ms.openlocfilehash: d134bcd0c5f9bfde0fdb095122d54848873174be
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6817807d0a85b1465beafc86045ea1e0dd8a31ec
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79536366"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770342"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mariadb"></a>Устранение проблем с подключением к Базе данных Azure для MariaDB
 
@@ -56,6 +56,6 @@ ms.locfileid: "79536366"
 3. Проверьте строку подключения и другие параметры подключения. Ознакомьтесь со статьей [How to connect applications to Azure Database for MariaDB](howto-connection-string.md) (Как подключить приложения к Базе данных Azure для MariaDB).
 4. Проверьте работоспособность службы на панели мониторинга. Если вы считаете, что происходит региональное отключение, [см. Обзор непрерывности бизнеса с базой данных Azure для MariaDB](concepts-business-continuity.md) для шагов по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обработка временных ошибок подключения к Базе данных Azure для MariaDB](concepts-connectivity.md)

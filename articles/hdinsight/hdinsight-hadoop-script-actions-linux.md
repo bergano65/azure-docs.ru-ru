@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/28/2019
-ms.openlocfilehash: ad9b4b69b0be34c89d03b677c1889e486aae0379
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: db37a56ffbf0cb64530f8f7af38841bac72c77d4
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75931697"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767548"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 
@@ -159,7 +159,7 @@ hdfs dfs -put /usr/hdp/current/hadoop-client/hadoop-common.jar /example/jars/
 HDInsight заносит в журнал выходные данные сценария, которые записываются в поток STDOUT и STDERR. Эти данные можно просмотреть с помощью веб-интерфейса Ambari.
 
 > [!NOTE]  
-> Веб-интерфейс Apache Ambari доступен, только если кластер успешно создан. Если во время создания кластера используется действие сценария и создание завершается ошибкой, ознакомьтесь с другими способами доступа к данным журнала в разделе по устранению неполадок [Настройка кластеров HDInsight с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting) .
+> Веб-интерфейс Apache Ambari доступен, только если кластер успешно создан. Если вы используете действие скрипта во время создания кластера, а создание завершается неудачей, см. [действия скриптов Troubleshoot](./troubleshoot-script-action.md) для других способов доступа к зарегистрированной информации.
 
 Большинство программ и пакетов установки добавляют данные в STDOUT и STDERR по умолчанию, однако вам может потребоваться добавить дополнительные записи в журнал. Для отправки текста в STDOUT используйте `echo`. Пример:
 
@@ -175,7 +175,7 @@ echo "Getting ready to install Foo"
 
 Информация, записываемая в STDOUT, перенаправляется STDERR (2). Для получения дополнительной информации [https://www.tldp.org/LDP/abs/html/io-redirection.html](https://www.tldp.org/LDP/abs/html/io-redirection.html)о перенаправлении IO см.
 
-Дополнительные сведения о просмотре журналов, созданных действиями сценариев, см. в статье [Настройка кластеров HDInsight с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting).
+Для получения дополнительной информации о просмотре [Troubleshoot script actions](./troubleshoot-script-action.md)информации, зарегистрированной действиями скрипта, см.
 
 ### <a name="save-files-as-ascii-with-lf-line-endings"></a><a name="bps8"></a>Сохранение файлов как ASCII с окончанием линии LF
 
@@ -248,7 +248,7 @@ wget -O /tmp/HDInsightUtilities-v01.sh -q https://hdiconfigactions.blob.core.win
 | `get_primary_headnode_number` |Возвращает числовой суффикс основного головного узла. При возникновении ошибки возвращается пустая строка. |
 | `get_secondary_headnode_number` |Возвращает числовой суффикс дополнительного головного узла. При возникновении ошибки возвращается пустая строка. |
 
-## <a name="common-usage-patterns"></a><a name="commonusage"></a>Общие варианты использования
+## <a name="common-usage-patterns"></a><a name="commonusage"></a>Общие шаблоны использования
 
 В этом разделе содержится руководство по реализации некоторых общих вариантов использования, которые могут понадобиться при написании пользовательского сценария.
 
@@ -339,7 +339,7 @@ echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 > [!NOTE]  
 > Для замены символов CRLF на LF могут использоваться следующие аналогичные команды. Выберите подходящий вариант в зависимости от наличия в системе соответствующих служебных программ.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 | --- | --- |
 | `unix2dos -b INFILE` |Для исходного файла будет создана резервная копия с расширением BAK. |
 | `tr -d '\r' < INFILE > OUTFILE` |В файле OUTFILE для окончания строк будут использоваться только символы LF. |
@@ -356,7 +356,7 @@ echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 
 Замените `INFILE` на файл с меткой порядка байтов. `OUTFILE` должно быть новым именем файла, который будет содержать сценарий без метки порядка байтов.
 
-## <a name="next-steps"></a><a name="seeAlso"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="seeAlso"></a>Следующие шаги
 
 * Узнайте, как [Настройка кластеров HDInsight с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md)
 * Используйте [справочник по пакету SDK .NET для HDInsight](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight) , чтобы узнать больше о создании приложений .NET, которые управляют HDInsight.

@@ -8,16 +8,16 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 04/17/2020
+ms.date: 04/21/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 815d3afe68003f56a5748584b322b731ef5a3dc7
-ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
+ms.openlocfilehash: 3a03a03557fbb2e71ff79ff42fd9d9c72cd5907c
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2020
-ms.locfileid: "81639650"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770511"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -48,6 +48,14 @@ ms.locfileid: "81639650"
 >
 >Пожалуйста, обратитесь к [этой статье,](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-upgrade-previous-version) чтобы узнать больше о том, как обновить Azure AD Connect в последней версии.
 
+## <a name="15220"></a>1.5.22.0
+
+### <a name="release-status"></a>Состояние выпуска
+04/20/2020: Выпущен для скачивания
+
+### <a name="fixed-issues"></a>Исправленные проблемы
+Эта сборка hotfix фиксирует проблему в сборке 1.5.20.0, если вы клонировали **In от AD - Правило группового соединения** и не клонировали In от **AD - Правило Группы Общее.**
+
 ## <a name="15200"></a>1.5.20.0
 
 ### <a name="release-status"></a>Состояние выпуска
@@ -57,12 +65,13 @@ ms.locfileid: "81639650"
 Эта сборка hotfix фиксирует проблему с построением 1.5.18.0, если у вас включена функция фильтрации группы и используется mS-DS-ConsistencyGuid в качестве исходного якоря.
 
 > [!IMPORTANT]
-> Если вы используете mS-DS-ConsistencyGuid в качестве исходного якоря, и вы клонировали **In от AD - Правило синхронизации группы Join** и планируете обновление, выполните следующие шаги в рамках обновления:
+> Если вы клонировали **In от AD - Правило синхронизации Group Join** и не клонировали **In от AD - Правило** синхронизации группы и планируете обновление, выполните следующие шаги в рамках обновления:
 > 1. Во время обновления отоверьте опцию **Запуск процесса синхронизации при завершении конфигурации.**
 > 2. Отобразите правило синхронизации клонированного соединения и добавьте следующие два преобразования:
 >     - Установите `objectGUID` прямой поток к `sourceAnchorBinary`.
 >     - Установите `ConvertToBase64([objectGUID])` поток `sourceAnchor`выражения в .     
 > 3. Включить планировщик с `Set-ADSyncScheduler -SyncCycleEnabled $true`помощью .
+
 
 
 ## <a name="15180"></a>1.5.18.0
@@ -1399,5 +1408,5 @@ Desktop SSO
 
 **Первоначальный выпуск Azure AD Sync.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)

@@ -2,17 +2,17 @@
 title: Проблемы с устранением проблем - База данных Azure для MyS'L
 description: Узнайте, как устранить проблемы подключения к базе данных Azure для MyS'L, включая временные ошибки, требующие повтора, проблем ы с брандмауэром и простоев.
 keywords: mysql connection,connection string,connectivity issues,transient error,connection error
-author: jan-eng
-ms.author: janeng
+author: jasonwhowell
+ms.author: jasonh
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/18/2020
-ms.openlocfilehash: a68f351276c47f623728a279ad551744c61b6d14
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b22d47d177c4606396b0c8b2279301121c905ca2
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80063225"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768279"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mysql"></a>Узнайте, как устранить проблемы с подключением к Базе данных Azure для MySQL
 
@@ -57,6 +57,6 @@ ms.locfileid: "80063225"
 3. Проверьте строку подключения и другие параметры подключения. См. статью [Как подключить приложения к базе данных Azure для MySQL](howto-connection-string.md).
 4. Проверьте работоспособность службы на панели мониторинга. Если вы считаете, что происходит региональное отключение, [см. Обзор непрерывности бизнеса с базой данных Azure для MyS'L](concepts-business-continuity.md) для шагов по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обработка временных ошибок подключения к Базе данных Azure для MySQL](concepts-connectivity.md)

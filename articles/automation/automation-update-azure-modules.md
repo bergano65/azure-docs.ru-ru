@@ -1,18 +1,18 @@
 ---
-title: Обновление модулей Azure в службе автоматизации Azure
+title: Обновление модулей Azure PowerShell в автоматизации Azure
 description: В этой статье описывается, как можно обновить общие модули Azure PowerShell, предоставленные по умолчанию в службе автоматизации Azure.
 services: automation
 ms.subservice: process-automation
 ms.date: 06/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: ba926ccbb069c8620259514e0a64c56957529a0f
-ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
+ms.openlocfilehash: bb73b3d644e96f9596f887faaf62eb15f01956ab
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81617472"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81769670"
 ---
-# <a name="how-to-update-azure-powershell-modules-in-azure-automation"></a>Как обновить модули Azure PowerShell в службе автоматизации Azure
+# <a name="update-azure-powershell-modules-in-azure-automation"></a>Обновление модулей Azure PowerShell в автоматизации Azure
 
 Для обновления модулей Azure в учетной записи Automation необходимо использовать [runbook модулей Обновления Azure,](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update)который доступен в виде открытого исходного кода. Чтобы приступить к использованию модуля runbook **Update-AutomationAzureModulesForAccount** для обновления модулей Azure, скачайте его из [этого репозитория](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update) на сайте GitHub. Затем вы можете импортировать его в свою учетную запись Автоматизация или запустить его в качестве сценария. Чтобы узнать, как импортировать книгу в учетной записи Автоматизация, [см.](manage-runbooks.md#importing-a-runbook)
 
@@ -37,7 +37,7 @@ ms.locfileid: "81617472"
 
 Ниже приведены некоторые соображения, которые следует учитывать при использовании этой статьи для обновления модулей Azure:
 
-* В книге runbook, описанной в этой статье, поддерживается обновление модулей Azure, AzureRM и Az по умолчанию. Просмотрите [runbook модулей Обновления Azure,](https://github.com/microsoft/AzureAutomation-Account-Modules-Update/blob/master/README.md) чтобы узнать больше об обновлении модулей Az.Automation с помощью этого runbook. Есть дополнительные важные факторы, которые необходимо учитывать при использовании модулей Az в вашей учетной записи Автоматизация. Чтобы узнать больше, смотрите [с помощью модулей Az в учетной записи Автоматизация](az-modules.md).
+* В книге runbook, описанной в этой статье, поддерживается обновление модулей Azure, AzureRM и Az по умолчанию. Просмотрите [runbook модулей Обновления Azure,](https://github.com/microsoft/AzureAutomation-Account-Modules-Update/blob/master/README.md) чтобы узнать больше об обновлении модулей Az.Automation с помощью этого runbook. Есть дополнительные важные факторы, которые необходимо учитывать при использовании модулей Az в вашей учетной записи Автоматизация. Чтобы узнать больше, смотрите [модули Управления в Azure Automation](shared-resources/modules.md).
 
 * Перед запуском этого модуля runbook убедитесь, что для вашей учетной записи службы автоматизации созданы [учетные данные для учетной записи запуска от имени Azure](manage-runas-account.md).
 
@@ -48,6 +48,6 @@ ms.locfileid: "81617472"
 * Если вы хотите использовать конкретную версию модуля Azure PowerShell вместо последнего модуля, доступного в галерее PowerShell, передайте эти версии дополнительному `ModuleVersionOverrides` параметру runbook **Update-AutomationAzureModulesForAccount.** Примеры см. в модуле runbook [Update-AutomationAzureModulesForAccount.ps1](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update/blob/master/Update-AutomationAzureModulesForAccount.ps1
 ). Модули Azure PowerShell, которые не упомянуты в параметре `ModuleVersionOverrides`, обновляются до последних версий из коллекции PowerShell. Если в параметр `ModuleVersionOverrides` не передано ничего, все модули обновляются последними версиями из коллекции PowerShell, как при нажатии кнопки **Обновить модули Azure**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. на странице [модуля runbook с открытым кодом для обновления модулей Azure](https://github.com/Microsoft/AzureAutomation-Account-Modules-Update).

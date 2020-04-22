@@ -1,19 +1,19 @@
 ---
 title: Используйте расширение Azure IoT для Azure CLI для взаимодействия с устройствами IoT Plug и Play Preview Документы Майкрософт
 description: Установите расширение Azure IoT для Azure CLI и используйте его для взаимодействия с устройствами IoT Plug и Play, подключенными к моему концентратору IoT.
-author: ChrisGMsft
-ms.author: chrisgre
+author: Philmea
+ms.author: philmea
 ms.date: 12/26/2019
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: b5907c0fb127947e90352e68b2726a22f5afea0d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1ccb32996cd8f15805a810dd5b5985aeb5f87c26
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80234685"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770459"
 ---
 # <a name="install-and-use-the-azure-iot-extension-for-the-azure-cli"></a>Установка и использование расширения Azure IoT для Azure CLI
 
@@ -225,6 +225,6 @@ az iot pnp capability-model publish --model {YourModelID} --login {YourCompanyMo
 
 Публиковать модели в репозитории общедоступных моделей могут только партнеры Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как установить и использовать расширение Azure IoT для Azure CLI для взаимодействия с устройствами Plug and Play. Следующий шаг предлагается узнать, как [управлять моделями.](./howto-manage-models.md)

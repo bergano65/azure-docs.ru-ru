@@ -1,19 +1,19 @@
 ---
 title: Автоматическое управление устройствами в масштабе с Azure IoT концентратором Документы Майкрософт
 description: Используйте автоматические конфигурации Azure IoT Hub для управления несколькими устройствами и модулями IoT
-author: ChrisGMsft
+author: Philmea
 manager: bruz
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 12/13/2019
-ms.author: chrisgre
-ms.openlocfilehash: 75c6b7d89e7ae540e7428afde127281aa3f15fc6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: philmea
+ms.openlocfilehash: 1de7c34d8f8cbfa139212f29ca6be5d4eca64655
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79271308"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767486"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-portal"></a>Автоматическое управление устройством IoT и модулем с помощью портала Azure
 
@@ -208,10 +208,10 @@ SELECT deviceId, moduleId FROM devices.modules
 
    * Условие назначения 
    * Метки 
-   * Приоритет 
+   * Priority 
    * Метрики
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 5. Следуйте указаниям раздела [Мониторинг конфигурации](#monitor-a-configuration) для отслеживания выполнения изменений. 
 
@@ -225,11 +225,11 @@ SELECT deviceId, moduleId FROM devices.modules
 
 3. Установите флажок, чтобы выбрать конфигурацию, которую необходимо удалить. 
 
-4. Выберите **Удалить**.
+4. Выберите команду **Удалить**.
 
 5. Появится запрос на подтверждение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как настроить и контролировать IoT устройств в масштабе. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 

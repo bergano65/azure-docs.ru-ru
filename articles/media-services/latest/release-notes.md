@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 02/03/2020
+ms.date: 04/20/2020
 ms.author: juliako
-ms.openlocfilehash: 76ef9f92b6b6633982242ccafab1950e0ef5f410
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: b4849b4fbfdbaece46f5669f4c242e864b1ca533
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80582802"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81769751"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -32,10 +32,16 @@ ms.locfileid: "80582802"
 ## <a name="known-issues"></a>Известные проблемы
 
 > [!NOTE]
-> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления v3 [Live Events,](live-events-outputs-concept.md)просмотра [активов](assets-concept.md)v3, получения информации о доступе к AIS. Для всех других задач управления (например, Transforms и Jobs) используйте [REST API,](https://aka.ms/ams-v3-rest-ref) [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [SDK.](media-services-apis-overview.md#sdks)
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [трансляциями](live-events-outputs-concept.md) в версии 3, просмотра [файлов](assets-concept.md) в версии 3, а также получения сведений о доступе к интерфейсам API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
- 
+
+## <a name="april-2020"></a>Апрель 2020 г.
+
+### <a name="improvements-in-documentation"></a>Улучшения в документации
+
+Документы мультиплеера Azure были перенесены в [документацию Azure.](../azure-media-player/azure-media-player-overview.md)
+
 ## <a name="january-2020"></a>Январь 2020 г.
 
 ### <a name="improvements-in-media-processors"></a>Улучшения в медиапроцессорах
@@ -54,7 +60,7 @@ ms.locfileid: "80582802"
 |Заголовок HTTP|Значения|Отправитель|Получатель|Назначение|
 | ---- | ---- | ---- | ---- | ----- |
 |CDN-Origin-Assist-Prefetch-Enabled | 1 (по умолчанию) или 0 |CDN|Исходный домен|Указать CDN включено prefetch|
-|CDN-Origin-Assist-Prefetch-Path| Пример <br/>Фрагменты (видео 14000000000,формат-mpd-время-cmaf)|Исходный домен|CDN|Для обеспечения предосудительного пути к CDN|
+|CDN-Origin-Assist-Prefetch-Path| Пример. <br/>Фрагменты (видео 14000000000,формат-mpd-время-cmaf)|Исходный домен|CDN|Для обеспечения предосудительного пути к CDN|
 |CDN-Origin-Assist-Prefetch-Request|1 (запрос на prefetch) или 0 (обычный запрос)|CDN|Исходный домен|Указать запрос от CDN является предтеч|
 
 Чтобы увидеть часть обмена заголовком в действии, вы можете попробовать следующие шаги:
@@ -358,7 +364,8 @@ Media Services v3 объявляет предварительный просмо
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор](media-services-overview.md)
+- [Медиа Услуги v3 Обновления документации](docs-release-notes.md)
 - [Media Services v2 релиз отмечает](../previous/media-services-release-notes.md)

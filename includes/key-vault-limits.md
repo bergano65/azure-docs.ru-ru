@@ -2,16 +2,16 @@
 author: rothja
 ms.service: cost-management-billing
 ms.topic: include
-ms.date: 11/09/2018
+ms.date: 04/21/2020
 ms.author: jroth
-ms.openlocfilehash: 2d16febd4676ca7ba763eb7bc6dcecda4608ebb5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8247b1cedc2c5ebc8577af6be485aed0fcd5d6af
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "74224575"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768737"
 ---
-#### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Ключевые транзакции (максимальные транзакции разрешены за 10 секунд, на хранилище на область<sup>1):</sup>
+### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Ключевые транзакции (максимальные транзакции разрешены за 10 секунд, на хранилище на область<sup>1):</sup>
 
 |Тип ключа|HSM ключ<br>CREATE ключ|HSM ключ<br>Все остальные транзакции|Ключ ПО<br>CREATE ключ|Ключ ПО<br>Все остальные транзакции|
 |:---|---:|---:|---:|---:|
@@ -34,7 +34,8 @@ ms.locfileid: "74224575"
 > - 125 транзакций RSA 4,096-битный HSM-ключ GET
 > - 124 RSA 4,096-bit HSM-ключ GET сделок и 8 RSA 2,048-разрядных транзакций HSM-ключ GET
 
-#### <a name="secrets-managed-storage-account-keys-and-vault-transactions"></a>Секреты, управляемые ключи от учетной записи хранения и операции с хранилищем:
+### <a name="secrets-managed-storage-account-keys-and-vault-transactions"></a>Секреты, управляемые ключи от учетной записи хранения и операции с хранилищем:
+
 | Тип транзакций | Максимальные транзакции разрешены за 10 секунд, на хранилище на область<sup>1</sup> |
 | --- | --- |
 | Все транзакции |2 000 |
@@ -42,3 +43,10 @@ ms.locfileid: "74224575"
 Для получения информации о том, как обрабатывать регулирование [Azure Key Vault throttling guidance](../articles/key-vault/key-vault-ovw-throttling.md)при превышении этих пределов, см.
 
 <sup>1</sup> Ограничение по подписке для всех типов транзакций составляет пять раз на ограничение хранилища ключей. Например, HSM-другие транзакции за подписку ограничены 5000 транзакций за 10 секунд за подписку.
+
+### <a name="azure-private-link-integration"></a>Интеграция частной ссылки Azure
+
+| Ресурс | Ограничение |
+| -------- | ----- |
+| Частные конечные точки на хранилище ключей | 64 |
+| Ключевые хранилища с частными конечными точками на подписку | 64 |

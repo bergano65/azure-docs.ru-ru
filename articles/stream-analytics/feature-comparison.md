@@ -6,16 +6,19 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: cdae6a3b7319aefa9d4f19b5d613d1afb8b6804a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d3b27a50fa86916b71c84b30ecdbf45deb0ec45c
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80235309"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770757"
 ---
 # <a name="azure-stream-analytics-feature-comparison"></a>Сравнение функций Azure Stream Analytics
 
 С помощью Azure Stream Analytics вы можете создавать потоковые решения в облаке и на IoT Edge с помощью [портала Azure,](stream-analytics-quick-create-portal.md) [Visual Studio](stream-analytics-quick-create-vs.md)и Visual [Studio Code.](quick-create-vs-code.md) Таблицы в этой статье показывают, какие функции поддерживаются каждой платформой для обоих типов задания.
+
+> [!NOTE]
+> Инструменты Visual Studio и Visual Studio Code не поддерживают рабочие места в регионах Китая На Востоке, севере Китая, Германии в Центральной и Германии в северо-восточных регионах.
 
 ## <a name="cloud-job-features"></a>Функции облачных задания
 
@@ -57,15 +60,15 @@ ms.locfileid: "80235309"
 |Экспорт работы в местный проект     |нет         |Да         |нет         |
 |Тестирование запросов с образцом файла     |Да         |Да         |нет         |
 |Доля входных данных и выводов в нескольких запросах     |нет         |Да         |нет         |
-|СЗ УДФ     |нет         |Да         |нет         |
+|Определяемая пользователем функция C#     |нет         |Да         |нет         |
 |Отправка заданий     |Да         |Да         |нет         |
 |Перечислите задания и просмотр объектов заданий     |Да         |Да         |нет         |
-|Просмотр метрик и диаграмм ы     |Да         |Partial         |нет         |
-|Просмотр ошибок выполнения задания     |Да         |Partial         |нет         |
+|Просмотр метрик и диаграмм ы     |Да         |Частично         |нет         |
+|Просмотр ошибок выполнения задания     |Да         |Частично         |нет         |
 |Поддержка CI/CD     |нет         |нет         |нет         |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Azure Stream Analytics в IoT Edge](stream-analytics-edge.md)
 * [Учебник: Напишите функцию, определяемую пользователем на Основе ВС для задания Azure Stream Analytics IoT Edge (Предварительный просмотр)](stream-analytics-edge-csharp-udf.md)

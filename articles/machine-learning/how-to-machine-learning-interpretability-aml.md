@@ -1,5 +1,5 @@
 ---
-title: Объясните модели и прогнозы машинного обучения
+title: Интерпретируйте & объясните модели ML в Python
 titleSuffix: Azure Machine Learning
 description: Узнайте, как получить объяснения того, как модель машинного обучения определяет важность функции и делает прогнозы при использовании SDK Для машинного обучения Azure.
 services: machine-learning
@@ -10,14 +10,14 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: Luis.Quintanilla
 ms.date: 04/12/2020
-ms.openlocfilehash: c1282ed16c9e3b92e7d5ec3f9969bee6fc3d917f
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 45eef976fe10bbb5acda2cd348a77b28c3ffbe02
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81257209"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81769808"
 ---
-# <a name="explain-machine-learning-models-and-predictions"></a>Объясните модели и прогнозы машинного обучения
+# <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python"></a>Используйте пакет интерпретаций для объяснения моделей ML & прогнозы в Python
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
@@ -41,10 +41,10 @@ ms.locfileid: "81257209"
 ## <a name="generate-feature-importance-value-on-your-personal-machine"></a>Создание значения значения значения функции на персональной машине 
 Ниже приводится следующий пример, как использовать пакет интерпретаций на личной машине, не связываясь с службами Azure.
 
-1. Установка `azureml-interpret` `azureml-interpret-contrib` и пакеты.
+1. Установка `azureml-interpret` `azureml-contrib-interpret` и пакеты.
     ```bash
     pip install azureml-interpret
-    pip install azureml-interpret-contrib
+    pip install azureml-contrib-interpret
     ```
 
 2. Обучите образец модели в местном блокноте Jupyter.
@@ -85,7 +85,7 @@ ms.locfileid: "81257209"
                                  classes=classes)
     ```
 
-    or
+    или диспетчер конфигурации служб
 
     ```python
 
@@ -111,7 +111,7 @@ ms.locfileid: "81257209"
                                classes=classes)
     ```
 
-    or
+    или диспетчер конфигурации служб
 
     ```python
     from interpret.ext.blackbox import PFIExplainer
@@ -566,7 +566,7 @@ ExplanationDashboard(global_explanation, model, x_test)
 
    Для удаления развернутой веб-службы используйте `service.delete()`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Подробнее о интерпретации модели](how-to-machine-learning-interpretability.md)
 

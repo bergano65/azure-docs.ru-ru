@@ -1,45 +1,46 @@
 ---
-title: Конечная точка HTTPS Лазурный рынок
-description: Настройка управления интересами для конечной точки HTTPS.
+title: Настройка управления свинцом с помощью конечной точки HTTPS Лазурный рынок
+description: Узнайте, как использовать конечную точку HTTP для обработки интересов Microsoft AppSource и Azure Marketplace.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 12/24/2018
+ms.date: 04/21/2020
 ms.author: dsindona
-ms.openlocfilehash: cb6ef173e97a7c2bbd7d7cad5e5074b1f2d0f066
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f56cc5aaad7d77ff8dc753115ef1becb08ddde73
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80288603"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770188"
 ---
 # <a name="configure-lead-management-using-an-https-endpoint"></a>Настройка управления интересами с помощью конечной точки HTTPS
 
-Вы можете использовать конечную точку HTTPS для обработки интересов Azure Marketplace и AppSource. Сведения об этих интересах можно записать в систему управления отношениями с клиентами (CRM) или отправить как уведомление по электронной почте. В этой статье описана настройка управления интересами с помощью службы автоматизации [Microsoft Flow](https://powerapps.microsoft.com/automate-processes/).
+Для обработки интересов Microsoft AppSource и Azure Marketplace можно использовать конечную точку HTTPS. Эти интересы могут быть записаны в систему управления взаимоотношениями с клиентами (CRM) или отправлены в виде уведомления по электронной почте. В этой статье описывается, как использовать службу автоматизации [Microsoft Power Automate](https://powerapps.microsoft.com/automate-processes/) для настройки руководства.
 
-## <a name="create-a-flow-using-microsoft-flow"></a>Создание потока с помощью Microsoft Flow
+## <a name="create-a-flow-using-microsoft-power-automate"></a>Создание потока с помощью автоматизации Microsoft Power
 
-1. Откройте веб-страницу [Поток](https://flow.microsoft.com/). Чтобы создать бесплатную учетную запись потока, нажмите **Войти** или выберите **Бесплатная регистрация**.
+1. Откройте веб-страницу [Power Automate.](https://flow.microsoft.com/) Чтобы создать бесплатную учетную запись потока, нажмите **Войти** или выберите **Бесплатная регистрация**.
 
-2. Войдите и выберите **Мои потоки** в строке меню.
+1. Войдите и выберите **Мои потоки** в строке меню.
+    > [!div class="mx-imgBorder"]
+    > ![Мои потоки](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows.png)
 
-    ![Мои потоки](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows.png)
+1. В **соответствии**с no New , выберите **мгновенный - от пустых**.
+    > [!div class="mx-imgBorder"]
+    > ![Создание с нуля](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-create-fromblank.png)
 
-3. Выберите **+ Создать с нуля**.
+1. Назовите поток, а затем под **выберите, как вызвать этот поток,** выберите **Когда получен запрос HTTP.**
 
-    ![Создание с нуля](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-create-fromblank.png)
+    > [!div class="mx-imgBorder"]
+    > ![Выбор триггера "При получении HTTP-запроса"](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-pick-request-trigger.png)
 
-4. Выберите **Создать с нуля**.
+1. Нажмите на шаг потока, чтобы расширить его.
 
-    ![Создание с нуля](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-create-fromblank2.png)
+    > [!div class="mx-imgBorder"]
+    > ![Расширить шаг потока](./media/cloud-partner-portal-lead-management-instructions-https/expand-flow-step.png)
 
-5. В поле **Поиск соединителей и триггеров** введите "запрос", чтобы найти соединитель "Запрос".
-6. На вкладке **Триггеры** выберите триггер **При получении HTTP-запроса**. 
-
-    ![Выбор триггера "При получении HTTP-запроса"](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-pick-request-trigger.png)
-
-7. Настройте **схему текста запроса JSON** одним из следующих способов:
+1. Используйте один из следующих методов для настройки **органа запроса JSON Schema:**
 
    - Скопируйте [схему JSON](#json-schema) в конце этой статьи в текстовое поле **Схема JSON текста запроса**.
    - Выберите **Использовать пример полезной нагрузки, чтобы создать схему**. В текстовое поле **Enter or paste a sample JSON payload** (Введите или вставьте пример полезных данных JSON) вставьте [пример JSON](#json-example). Выберите **Готово**, чтобы создать схему.
@@ -90,6 +91,7 @@ ms.locfileid: "80288603"
    ![Добавление действия электронной почты](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-configure-email-action.png)
 
 5. Нажмите кнопку **Сохранить**, чтобы завершить поток.
+
 6. В запросе создается URL-адрес HTTP POST. Скопируйте этот URL-адрес и используйте его в качестве конечной точки HTTPS.
 
     ![URL-адрес HTTP POST](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-get-post-url.png)
@@ -100,7 +102,7 @@ ms.locfileid: "80288603"
 
 ![Добавление динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-image017.png)
 
-При создании интересов корпорация Майкрософт отправляет их в службу Flow. Затем выполняется маршрутизация в систему CRM или на адрес электронной почты, настроенные вами.
+При генерации интересов корпорация Майкрософт отправляет на поток Power Automate, который направляется в систему CRM или адрес электронной почты, настроенный на настройку.
 
 ## <a name="json-schema-and-example"></a>Пример и схема JSON
 
@@ -124,6 +126,10 @@ ms.locfileid: "80288603"
     },
     "LeadSource": {
       "id": "/properties/LeadSource",
+      "type": "string"
+    },
+    "Description": {
+      "id": "/properties/Description",
       "type": "string"
     },
     "UserDetails": {
@@ -165,26 +171,28 @@ ms.locfileid: "80288603"
 }
 ```
 
-Можно скопировать и изменить приведенный ниже пример JSON, чтобы использовать его в качестве теста в Microsoft Flow.
+Вы можете скопировать и отсечь следующий пример JSON для использования в качестве теста в потоке.
 
 ### <a name="json-example"></a>Пример JSON-файла
 
 ```json
 {
-"OfferTitle": "Test Microsoft",
-"LeadSource": "Test run through MS Flow",
-"UserDetails": {
-"Company": "Contoso",
-"Country": "USA",
-"Email": "someone@contoso.com",
-"FirstName": "Some",
-"LastName": "One",
-"Phone": "16175555555",
-"Title": "Esquire"
-}
+  "UserDetails": {
+    "FirstName": "Some",
+    "LastName": "One",
+    "Email": "someone@contoso.com",
+    "Phone": "16175555555",
+    "Country": "USA",
+    "Company": "Contoso",
+    "Title": "Esquire"
+ },
+  "LeadSource": "AzureMarketplace",
+  "ActionCode": "INS",
+  "OfferTitle": "Test Microsoft",
+  "Description": "Test run through Power Automate"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Настройте получение сведений об [интересах](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads) на Портале Cloud Partner, если это еще не сделано.

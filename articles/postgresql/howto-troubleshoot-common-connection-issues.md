@@ -2,17 +2,17 @@
 title: Соединения для устранения проблем - База данных Azure для PostgreS'L - Единый сервер
 description: Узнайте, как устранить проблемы с подключением к базе данных Azure для PostgreS-L - Один сервер.
 keywords: подключение postgresql,строка подключения,проблемы с подключением, временная ошибка,ошибка подключения
-author: jan-eng
-ms.author: janeng
+author: jasonwhowell
+ms.author: jasonh
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: c74b819893133116b8ac6905988f3fe11220ed95
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 593dc060ff92c7f4bc338e235dd1a0dd9f303ab3
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74770073"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767614"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql---single-server"></a>Проблемы с устранением проблем с подключением к базе данных Azure для PostgreS'L - Единый сервер
 
@@ -57,6 +57,6 @@ ms.locfileid: "74770073"
 3. Проверьте строку подключения и другие параметры подключения.
 4. Проверьте работоспособность службы на панели мониторинга. Если присутствует региональный сбой, см. статью [Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для MySQL"](concepts-business-continuity.md), чтобы выполнить инструкции по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Handling of transient connectivity errors for Azure Database for PostgreSQL](concepts-connectivity.md) (Обработка временных ошибок подключения для Базы данных Azure для PostgreSQL)

@@ -3,12 +3,12 @@ title: Налаживание гибридных кластеров Kubernetes �
 description: В этой статье описывается, как можно настроить Azure Monitor для контейнеров для мониторинга кластеров Kubernetes, размещенных в Azure Stack или другой среде.
 ms.topic: conceptual
 ms.date: 01/24/2020
-ms.openlocfilehash: 5a973e7e500906ebe833ec4cc6fd2fa8ee79c19e
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 6c2782fdd810403a793f6ef682d1112fadc22465
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81255436"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81769049"
 ---
 # <a name="configure-hybrid-kubernetes-clusters-with-azure-monitor-for-containers"></a>Налаживание гибридных кластеров Kubernetes с помощью Azure Monitor для контейнеров
 
@@ -241,6 +241,9 @@ Azure Monitor для контейнеров предоставляет бога�
 
 ## <a name="install-the-chart"></a>Установка диаграммы
 
+>[!NOTE]
+>Следующие команды применимы только для версии Helm 2. Использование параметра -имя не применимо с версией Helm 3.
+
 Для включения диаграммы HELM сделайте следующее:
 
 1. Добавьте репозиторий диаграмм Azure в локальный список, запустив следующую команду:
@@ -298,6 +301,6 @@ Azure Monitor для контейнеров предоставляет бога�
 .\TroubleshootError_nonAzureK8s.ps1 - azureLogAnalyticsWorkspaceResourceId </subscriptions/<subscriptionId>/resourceGroups/<resourcegroupName>/providers/Microsoft.OperationalInsights/workspaces/<workspaceName> -kubeConfig <kubeConfigFile> -clusterContextInKubeconfig <clusterContext>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Благодаря мониторингу, позволяющим собирать работоспособность и использование ресурсов гибридного кластера Kubernetes и рабочих нагрузок, работающих на них, [научитесь использовать](container-insights-analyze.md) Azure Monitor для контейнеров.

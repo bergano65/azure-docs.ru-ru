@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3b45c20e2d3e8829913c9e566516f85866ee80d4
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: ba0573af59c2924648361fec10bffed189291d28
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81390321"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768569"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -100,7 +100,7 @@ ms.locfileid: "81390321"
 | **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | Недоступно | Арьяк Сети, Британский Телеком, CenturyLink Cloud Connect, Главный Телеком, China Telecom Global, Equinix, InterCloud, Мегапорт, NTT Связи, Оранжевый, PCCW Global Limited, Tata Communications, Telia Carrier, Verizon |
 | **Гонконг2** | [МЕГА-и](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Недоступно | 10G | |
 | **Джакарта** | Телком Индонезия | 4 | Недоступно | 10G | |
-| **Йоханнесбург** | [Терако JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР; | 10G | Британский Телеком, Интернет-решения - Cloud Connect, Liquid Telecom, Оранжевый, Терако |
+| **Йоханнесбург** | [Терако JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР; | 10G | BCX, British Telecom, Интернет-решения - Cloud Connect, Liquid Telecom, Orange, Teraco |
 | **Куала-Лумпур** | [ВРЕМЯ дотКом Менара AIMS](https://www.aims.com.my/co-location/points-of-presence.html) | 2 | Недоступно | Недоступно | TIME dotCom |
 | **Лас-Вегас** | [Переключатель LV](https://www.switch.com/las-vegas) | 1 | Недоступно | Недоступно | CenturyLink Cloud Connect, Megaport |
 | **Лондон** | [Equinix LD5](https://www.equinix.com/locations/europe-colocation/united-kingdom-colocation/london-data-centers/ld5/) | 1 | южная часть Соединенного Королевства | 10G, 100G | AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telehouse - KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
@@ -241,7 +241,7 @@ ms.locfileid: "81390321"
 | **Европа** |Avanade Inc., Altogee, Bright Skies GmbH, Inframon, MSG Services, New Signature, Nelite, Orange Networks, sol-tec |
 | **Северная Америка** |Avanade Inc., Equinix Professional Services, FlexManage, Lightstream, Perficient, Presidio |
 | **Южная Америка** |Avanade Inc., Venha Pra Nuvem |
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

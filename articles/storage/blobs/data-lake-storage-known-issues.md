@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/20/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 204b5dd4661b34aae8b76d65505a65e20f293f0f
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.openlocfilehash: dfa4d65464192b90d4a6f74255faaf8b664ce118
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81115322"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767978"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -62,14 +62,11 @@ Blob AБИ и AA-аПЫ хранения данных Озера Gen2 могут
 
 <a id="api-scope-data-lake-client-library" />
 
-## <a name="file-system-support-in-sdks"></a>Поддержка файловой системы в SDK
+## <a name="file-system-support-in-sdks-powershell-and-azure-cli"></a>Поддержка файловой системы в SDK, PowerShell и Azure CLI
 
-Получить и установить ACL операции в настоящее время не повторяются.
-
-## <a name="file-system-support-in-powershell-and-azure-cli"></a>Поддержка файловой системы в PowerShell и Azure CLI
-
-- [Поддержка PowerShell](data-lake-storage-directory-file-acl-powershell.md) и [Azure CLI](data-lake-storage-directory-file-acl-cli.md) представлена в открытом доступе.
 - Получить и установить ACL операции в настоящее время не повторяются.
+- Поддержка [Azure CLI](data-lake-storage-directory-file-acl-cli.md) находится в открытом доступе.
+
 
 ## <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
 

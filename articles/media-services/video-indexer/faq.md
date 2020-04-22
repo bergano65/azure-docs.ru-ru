@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 03/30/2020
+ms.date: 04/20/2020
 ms.author: juliako
-ms.openlocfilehash: dd41596b6631bb63e1625325f8bec065b43881cd
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: dc57978dd881532cab59150dec921df9ffa958c3
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80421398"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767203"
 ---
 # <a name="video-indexer-frequently-asked-questions"></a>Видеоиндексчасто задавал вопросы
 
@@ -43,7 +43,7 @@ ms.locfileid: "80421398"
 
 ### <a name="how-do-i-get-started-with-video-indexer"></a>Как приступить к работе с Индексатором видео?
 
-Доступна бесплатная пробная версия Индексатора видео, которая позволяет использовать 600 минут видео в веб-интерфейсе и 2400 минут через API. Вы можете [войти в веб-интерфейс Индексатора видео](https://www.videoindexer.ai/) и поработать с ним, используя любое веб-удостоверение даже без подписки Azure. 
+Доступна бесплатная пробная версия Индексатора видео, которая позволяет использовать 600 минут видео в веб-интерфейсе и 2400 минут через API. Вы можете [войти в веб-интерфейс Индексатора видео](https://www.videoindexer.ai/) и поработать с ним, используя любое веб-удостоверение даже без подписки Azure. Следуйте [этой простой лаборатории введения,](https://github.com/Azure-Samples/media-services-video-indexer/blob/master/IntroToVideoIndexer.md) чтобы получить лучшее представление о том, как использовать Video Indexer.
 
 Для масштабного индексирования аудио- и видеофайлов можно подключить Индексатор видео к платной подписке Microsoft Azure. Дополнительные сведения о ценах можно найти на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/video-indexer/).
 
@@ -61,9 +61,18 @@ ms.locfileid: "80421398"
 
 Индексатор видео поддерживает самые распространенные форматы мультимедиа. См. [список стандартных форматов кодировщика мультимедиа Azure](https://docs.microsoft.com/azure/media-services/latest/media-encoder-standard-formats).
 
-### <a name="how-to-do-i-upload-a-media-into-video-indexer"></a>Как отправлять мультимедиа в Индексатор видео?
+### <a name="how-do-i-upload-a-media-file-into-video-indexer-and-what-are-the-limitations"></a>Как загрузить медиафайл в Video Indexer и каковы ограничения?
 
-На веб-портале Индексатора видео можно отправить файл мультимедиа с помощью диалогового окна отправки файла или предоставив прямой URL-адрес, по которому размещен исходный файл (как в [этом примере](https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/Ignite-short.mp4)). URL-адреса для доступа к файлам через iFrame или код внедрения (как в [этом примере](https://www.videoindexer.ai/accounts/7e1282e8-083c-46ab-8c20-84cae3dc289d/videos/5cfa29e152/?t=4.11)) не поддерживаются. API Индексатора видео требует указать входной файл с помощью URL-адреса или массива байтов. Обратите внимание, что с помощью URL-адреса через этот API можно передавать до 10 ГБ данных, но при этом отсутствует ограничение по продолжительности передачи. Дополнительные сведения см. в этом [практическом руководстве](https://docs.microsoft.com/azure/media-services/video-indexer/upload-index-videos).
+На веб-портале Индексатора видео можно отправить файл мультимедиа с помощью диалогового окна отправки файла или предоставив прямой URL-адрес, по которому размещен исходный файл (как в [этом примере](https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/Ignite-short.mp4)). URL-адреса для доступа к файлам через iFrame или код внедрения (как в [этом примере](https://www.videoindexer.ai/accounts/7e1282e8-083c-46ab-8c20-84cae3dc289d/videos/5cfa29e152/?t=4.11)) не поддерживаются. 
+
+Дополнительные сведения см. в этом [практическом руководстве](https://docs.microsoft.com/azure/media-services/video-indexer/upload-index-videos).
+
+#### <a name="limitations"></a>Ограничения
+
+* Название видео не может превышать 80 символов.
+* При загрузке видео с помощью массива байт размер видео ограничен 2 ГБ (и 30 ГБ при использовании URL). 
+
+Для полного списка [см.](upload-index-videos.md#uploading-considerations-and-limitations)
 
 ### <a name="how-long-does-it-take-video-indexer-to-extract-insights-from-media"></a>Сколько времени требуется Индексатору видео для извлечения аналитических сведений из мультимедиа?
 
@@ -71,7 +80,7 @@ ms.locfileid: "80421398"
 
 ### <a name="can-i-create-customized-workflows-to-automate-processes-with-video-indexer"></a>Могу ли я создавать настраиваемые рабочие процессы для автоматизации процессов с помощью Индексатора видео?
 
-Да, вы можете интегрировать Индексатор видео в любые бессерверные технологии, такие как Logic Apps, Flow и [Функции Azure](https://azure.microsoft.com/services/functions/). См. [дополнительные сведения](https://azure.microsoft.com/blog/logic-apps-flow-connectors-will-make-automating-video-indexer-simpler-than-ever/) о соединителях [Logic Apps](https://azure.microsoft.com/services/logic-apps/) и [Flow](https://flow.microsoft.com/en-us/) для Индексатора видео. 
+Да, вы можете интегрировать Индексатор видео в любые бессерверные технологии, такие как Logic Apps, Flow и [Функции Azure](https://azure.microsoft.com/services/functions/). См. [дополнительные сведения](https://azure.microsoft.com/blog/logic-apps-flow-connectors-will-make-automating-video-indexer-simpler-than-ever/) о соединителях [Logic Apps](https://azure.microsoft.com/services/logic-apps/) и [Flow](https://flow.microsoft.com/en-us/) для Индексатора видео. Вы можете увидеть некоторые проекты автоматизации, выполненные партнерами в репо [Video Indexer Samples.](https://github.com/Azure-Samples/media-services-video-indexer)
 
 ### <a name="in-which-azure-regions-is-video-indexer-available"></a>В каких регионах Azure доступен Индексатор видео?
 
@@ -84,6 +93,12 @@ ms.locfileid: "80421398"
 Например, наша модель Person поддерживает нестандартные 1 000 000 лиц распознавания знаменитостей, но вы также можете обучить ее распознавать другие лица, которых нет в этой базе данных. 
 
 Для получения подробной информации смотрите статьи о настройке [моделей Person,](customize-person-model-overview.md) [Brands](customize-brands-model-overview.md)и [Language.](customize-language-model-overview.md) 
+
+###  <a name="can-i-edit-the-videos-in-my-library"></a>Могу ли я отображать видео в своей библиотеке?
+
+Да. Нажмите кнопку **отображения видео** от библиотеки или **кнопку "Открытая в редакторе"** с дисплея плеера, чтобы попасть на вкладку **"Проекты".** Вы можете создать новый проект и добавить больше видео из вашей библиотеки, чтобы отсеивать их вместе, как только вы закончите, вы можете сделать видео и скачать. 
+
+Если вы хотите получить информацию о новом видео, индексируйте его с помощью Video Indexer, и оно появится в вашей библиотеке с его информацией.
 
 ### <a name="what-is-the-sla-for-video-indexer"></a>Что собой представляет соглашение об уровне обслуживания для Индексатора видео?
 

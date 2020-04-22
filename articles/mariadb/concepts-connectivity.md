@@ -2,17 +2,17 @@
 title: Временные ошибки подключения - База данных Azure для MariaDB
 description: Узнайте, как обрабатывать временные ошибки подключения к Базе данных Azure для MariaDB.
 keywords: mysql connection,connection string,connectivity issues,transient error,connection error
-author: jan-eng
-ms.author: janeng
+author: jasonwhowell
+ms.author: jasonh
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 26a6ac4412f1dff450cc087382dc9b0fce443f0b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2d162b5123cdaabe17859863c148f6483175d1e1
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79532201"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770235"
 ---
 # <a name="handling-of-transient-connectivity-errors-for-azure-database-for-mariadb"></a>Обработка временных ошибок подключения к Базе данных Azure для MariaDB
 
@@ -44,6 +44,6 @@ ms.locfileid: "79532201"
 
 Не забудьте проверить логику повторных попыток. Например, попробуйте выполнить свой код, увеличивая или уменьшая число вычислительных ресурсов сервера Базы данных Azure для MariaDB. Ваше приложение должно без каких-либо проблем справиться с небольшим простоем во время этой операции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Устранение проблем с подключением к Базе данных Azure для MariaDB](howto-troubleshoot-common-connection-issues.md)

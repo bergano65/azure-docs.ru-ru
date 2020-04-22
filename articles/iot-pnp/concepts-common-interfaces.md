@@ -1,18 +1,18 @@
 ---
 title: Общие интерфейсы - IoT Plug и Play Preview Документы Майкрософт
 description: Описание общих интерфейсов для разработчиков IoT Plug и Play
-author: ChrisGMsft
-ms.author: chrisgre
+author: Philmea
+ms.author: philmea
 ms.date: 12/26/2019
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: c6ac90f917b9afc37b3a39d8da679fbcad091778
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5773ec2b3ea88fa9a507b7c1b0b84bb7ea305a94
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80234703"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770492"
 ---
 # <a name="iot-plug-and-play-preview-common-interfaces"></a>IoT Plug и Play Предварительный просмотр общих интерфейсов
 
@@ -20,7 +20,7 @@ ms.locfileid: "80234703"
 
 ## <a name="summary-of-common-interfaces"></a>Резюме общих интерфейсов
 
-| name | ID | Описание | Реализовано SDK Azure IoT | Должен быть объявлен в модели возможностей |
+| Имя | ID | Описание | Реализовано SDK Azure IoT | Должен быть объявлен в модели возможностей |
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | Информация о модели | урна:azureiot:МодельОткрытие:МодельИнформация:1 | Для устройств, чтобы объявить идентификатор модели возможностей и интерфейсы. Требуется для всех устройств IoT Plug and Play. | Да | нет |
 | Информация о клиенте-близнеце Цифровой | урна:azureiot:Клиент:SDKInformation:1 | Клиент SDK для подключения устройства к Azure. Требуется для [сертификации](tutorial-build-device-certification.md) | Да | нет |
@@ -55,7 +55,7 @@ az iot pnp capability-model show --model {ModelID}
 
 1. Чтобы создать локальную копию интерфейса, выберите ее в результатах поиска, а затем выберите **Download.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали об общих интерфейсах, вот некоторые дополнительные ресурсы:
 

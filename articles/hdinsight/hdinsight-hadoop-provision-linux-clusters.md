@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.date: 02/12/2020
-ms.openlocfilehash: 246ec08e9b4edb33fa49318b68cc4364534282b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6bba71ab35920027cc7296e774936c3d1deb8f92
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064649"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770316"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -33,11 +33,11 @@ ms.locfileid: "80064649"
 | Метод создания кластеров | браузер | Командная строка | REST API | SDK |
 | --- |:---:|:---:|:---:|:---:|
 | [Портал Azure](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
-| [Фабрика данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md) |✔ |✔ |✔ |✔ |
-| [Лазурный CLI](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
-| [Лазурная силаШелл](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
-| [Curl](hdinsight-hadoop-create-linux-clusters-curl-rest.md) |&nbsp; |✔ |✔ |&nbsp; |
-| [Шаблоны диспетчера ресурсов Azure](hdinsight-hadoop-create-linux-clusters-arm-templates.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
+| [Фабрика данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md). |✔ |✔ |✔ |✔ |
+| [Azure CLI](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
+| [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
+| [cURL](hdinsight-hadoop-create-linux-clusters-curl-rest.md) |&nbsp; |✔ |✔ |&nbsp; |
+| [Шаблоны Azure Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 
 Эта статья проветроки вас через установку в [портале Azure](https://portal.azure.com), где вы можете создать кластер HDInsight.
 
@@ -80,7 +80,7 @@ ms.locfileid: "80064649"
 | [Kafka](kafka/apache-kafka-introduction.md) | Распределенная платформа потоковой передачи с открытым кодом, которую можно использовать для создания конвейеров и приложений потоковой передачи данных в режиме реального времени. |
 | [Службы машинного обучения](r-server/r-server-overview.md) |Разнообразная статистика больших данных, прогнозное моделирование и возможности машинного обучения |
 | [Spark](spark/apache-spark-overview.md) |Обработка в памяти, интерактивные запросы, обработка потоков микро-пакетов |
-| [Шторм](storm/apache-storm-overview.md) |Обработка событий в режиме реального времени |
+| [Storm](storm/apache-storm-overview.md) |Обработка событий в режиме реального времени |
 
 #### <a name="version"></a>Версия
 
@@ -104,9 +104,9 @@ ms.locfileid: "80064649"
 * Разрешено специальные`_` символы: и`@`
 * Персонажи не допускаются: «;.»,,,:'!?»...<>)\/{}&-----%-пространство
 * Максимальная длина: 64
-* Зарезервированные имена: hadoop, пользователи, oozie, улей, mapred, ambari-qa, зоозащитник, tez, hdfs, sqoop, пряжа, hcat, ams, hbase, шторм, администратор, администратор, пользователь, user1, тест, user2, test1, user3, admin1, admin1, a, actuser, adm, adm, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, david, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, david, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, david, david, davidnet, davidnet, davidnet, david, david, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, davidnet, david, david, david, david, davidnet, davidnet, davidnet, david гость, Джон, владелец, корень, сервер, sql, поддержка, support_388945a0, sys, test2, test3, user4, user5, искра
+* Зарезервированные имена: hadoop, пользователи, oozie, улей, картографический, амбари-ка, зоозащитник, tez, hdfs, sqoop, пряжа, hcat, ams, hbase, storm, administrator, admin, пользователь, user1, test, user2, test1, user2, adm, a, adm, admin2, aspnet, backup, console, david, guest, john, owner, root, server, sql, support, support_388945a0, sys, test2, userpark,
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 ![Настройки кластерного хранения: hdFS-совместимые конечные точки](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-storage.png)
 
@@ -169,7 +169,7 @@ Ambari используется для мониторинга кластеров
 
 ### <a name="tls"></a>TLS
 
-Для получения дополнительной информации [см.](./hdinsight-plan-virtual-network-deployment.md#transport-layer-security)
+Для получения дополнительной информации [см.](./transport-layer-security.md)
 
 ### <a name="virtual-network"></a>Виртуальная сеть
 
@@ -187,7 +187,7 @@ Ambari используется для мониторинга кластеров
 
 Эта настройка доступна только для типа кластера Kafka. Для получения дополнительной информации [см.](./kafka/rest-proxy.md)
 
-### <a name="identity"></a>идентификации
+### <a name="identity"></a>Идентификация
 
 Для получения дополнительной информации смотрите [Управляемые идентификаторы в Azure HDInsight](./hdinsight-managed-identities.md).
 
@@ -279,7 +279,7 @@ Ambari используется для мониторинга кластеров
 
 Подробные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](hdinsight-hadoop-customize-cluster-bootstrap.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сбои создания кластеров с Azure HDInsight](./hadoop/hdinsight-troubleshoot-cluster-creation-fails.md)
 * [Что такое Azure HDInsight и стек технологий Apache Hadoop](hadoop/apache-hadoop-introduction.md)

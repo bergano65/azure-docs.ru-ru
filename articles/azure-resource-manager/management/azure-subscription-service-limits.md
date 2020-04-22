@@ -2,13 +2,13 @@
 title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит информацию о том, как увеличить лимиты вместе с максимальными значениями.
 ms.topic: conceptual
-ms.date: 04/03/2020
-ms.openlocfilehash: 4200784e3018ec80d9fbbbc0d3680b6b0e6d2cb3
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.date: 04/21/2020
+ms.openlocfilehash: 00bd85febe34a7bd9b4e993d5697fa810347711b
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80656216"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768733"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -409,7 +409,7 @@ ms.locfileid: "80656216"
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Понимание пределов и увеличений Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных сервисов для Azure](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

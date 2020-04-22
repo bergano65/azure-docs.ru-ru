@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 04/16/2020
+ms.date: 04/21/2020
 ms.author: juergent
 ms.custom: ''
-ms.openlocfilehash: e803da238ebdd728e772a15b0f29ae36d401a699
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: c19471fee9235faffba12a12d9f92de77f60fd4d
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536409"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770517"
 ---
 # <a name="sap-certifications-and-configurations-running-on-microsoft-azure"></a>Сертификаты и конфигурации SAP на платформе Microsoft Azure
 
@@ -68,3 +68,4 @@ ms.locfileid: "81536409"
 | Торговая платформа SAP Hybris  | Windows | SQL Server, Oracle | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Вики-сайт Hybris](https://cxwiki.sap.com/display/cloudss/Using+the+hybris+Platform+with+the+Cloud) |
 | Торговая платформа SAP Hybris  | SLES 12 или более поздние | SAP HANA | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Вики-сайт Hybris](https://cxwiki.sap.com/display/cloudss/Using+the+hybris+Platform+with+the+Cloud) |
 | Торговая платформа SAP Hybris  | RHEL 7 или более поздние | SAP HANA | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Вики-сайт Hybris](https://cxwiki.sap.com/display/cloudss/Using+the+hybris+Platform+with+the+Cloud) |
+| SAP (Hybris) Торговая платформа 1811 и позже  | Окна, SLES или RHEL | СЗЛ Лазурный DB | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Документация Hybris](https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/1811/en-US/8c71300f866910149b40c88dfc0de431.html) |

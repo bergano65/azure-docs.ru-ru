@@ -1,19 +1,19 @@
 ---
 title: Автоматическое управление устройствами в масштабе с Azure IoT концентратор (CLI) Документы Майкрософт
 description: Используйте автоматические конфигурации Azure IoT Hub для управления несколькими устройствами или модулями IoT
-author: ChrisGMsft
+author: Philmea
 manager: bruz
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 12/13/2019
-ms.author: chrisgre
-ms.openlocfilehash: 748f3e09fd03a6f37954c8dfaf4b6ae9144384bb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.author: philmea
+ms.openlocfilehash: 76728b99f1e9309294079d4df88e563054e780e7
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80235603"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767574"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-cli"></a>Автоматическое управление устройством IoT и модулем с помощью Azure CLI
 
@@ -225,7 +225,7 @@ az iot hub configuration delete --config-id [configuration id] \
 
 * --**hub-name** — имя центра IoT, в котором существует конфигурация. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как настроить и контролировать IoT устройств в масштабе. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
