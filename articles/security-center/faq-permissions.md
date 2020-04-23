@@ -1,6 +1,6 @@
 ---
-title: Часто задаваемые вопросы Центра безопасности Azure — вопросы о разрешениях
-description: В этом часто задаваемые вопросы отвечают вопросы о разрешениях в Azure Security Center, который помогает предотвращать, обнаруживать и реагировать на угрозы.
+title: Вопросы и ответы по центру безопасности Azure — вопросы о разрешениях
+description: В этой статье содержатся ответы на вопросы о разрешениях в центре безопасности Azure — продукте, который помогает предотвращать, обнаруживать угрозы и реагировать на них.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 66a260fbb03f770ee98ec29a5f5e15e3d7dd1310
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 89b3233966ac53d6c384ca6bd5ac30322fbb0b02
+ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77599396"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82106599"
 ---
 # <a name="permissions"></a>Разрешения
 
-## <a name="how-do-permissions-work-in-azure-security-center"></a>Как работают разрешения в Центре безопасности Azure?
+## <a name="how-do-permissions-work-in-azure-security-center"></a>Как работают разрешения в центре безопасности Azure?
 
 Центр безопасности Azure использует [управление доступом на основе ролей (RBAC)](../role-based-access-control/role-assignments-portal.md), в котором предусмотрены [встроенные роли](../role-based-access-control/built-in-roles.md). Эти роли можно назначать пользователям, группам и службам.
 
@@ -34,6 +34,6 @@ ms.locfileid: "77599396"
 
 ## <a name="who-can-modify-a-security-policy"></a>Кто может изменять политику безопасности?
 
-Изменить политику безопасности может пользователь с правами администратора безопасности, владельца или участника этой подписки.
+Чтобы изменить политику безопасности, необходимо быть администратором безопасности или владельцем или участником этой подписки.
 
 Дополнительные сведения о настройке политики безопасности см. в статье [Настройка политик безопасности в Центре безопасности Azure](tutorial-security-policy.md).
