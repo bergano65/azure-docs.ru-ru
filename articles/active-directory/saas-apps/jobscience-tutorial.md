@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f0ea5b922b2c958aabf5be3a6123bb81a8f0234
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 23d2694aa4936090367cf881379f81911ae70f9d
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80048507"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870538"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobscience"></a>Руководство. Интеграция Azure Active Directory с Jobscience
 
@@ -116,7 +116,7 @@ ms.locfileid: "80048507"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `http://<company name>.my.salesforce.com`.
     
     > [!NOTE] 
-    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Данное значение можно получить у [группы поддержки клиентов Jobscience](https://www.jobscience.com/support) или из профиля единого входа, который вы создадите. Это описано далее в этом руководстве. 
+    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Данное значение можно получить у [группы поддержки клиентов Jobscience](http://www.jobscience.com/support) или из профиля единого входа, который вы создадите. Это описано далее в этом руководстве. 
  
 1. В разделе **Сертификат подписи SAML** нажмите **Сертификат (Base64),** а затем сохраните файл сертификата на компьютере.
 
@@ -134,7 +134,7 @@ ms.locfileid: "80048507"
 
 1. Перейдите в раздел **Настройка**.
    
-   ![Установки](./media/jobscience-tutorial/IC784358.png "Настройка")
+   ![Установка](./media/jobscience-tutorial/IC784358.png "Настройка")
 
 1. В области навигации слева в разделе **Administer** (Администрирование) щелкните **Domain Management** (Управление доменами), чтобы развернуть соответствующий раздел, а затем щелкните **My Domain** (Мой домен), чтобы открыть страницу **My Domain** (Мой домен). 
    
@@ -176,7 +176,7 @@ ms.locfileid: "80048507"
 
     h. В текстовое поле **Identity Provider Logout URL** (URL-адрес выхода IdP) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    i. Нажмите **Сохранить**.
+    i. Выберите команду **Сохранить**.
 
 1. В области навигации слева в разделе **Administer** (Администрирование) щелкните **Domain Management** (Управление доменами), чтобы развернуть соответствующий раздел, а затем щелкните **My Domain** (Мой домен), чтобы открыть страницу **My Domain** (Мой домен). 
     
@@ -245,7 +245,7 @@ ms.locfileid: "80048507"
 
 1. Перейдите в раздел "Настройка".
    
-   ![Установки](./media/jobscience-tutorial/ic784358.png "Настройка")
+   ![Установка](./media/jobscience-tutorial/ic784358.png "Настройка")
 1. Выберите **Manage Users \> Users** (Управление пользователями > Пользователи).
    
    ![Пользователи](./media/jobscience-tutorial/ic784369.png "Пользователи")
@@ -268,7 +268,7 @@ ms.locfileid: "80048507"
 
    е) В текстовом поле **Nick Name** (Псевдоним) укажите псевдоним пользователя, например Simon.
 
-   ж. Нажмите **Сохранить**.
+   ж. Выберите команду **Сохранить**.
 
     
 > [!NOTE]
@@ -313,8 +313,8 @@ ms.locfileid: "80048507"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с помощью активного каталога Azure](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
+* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
+* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 <!--Image references-->
 

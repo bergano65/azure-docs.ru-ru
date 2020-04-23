@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/16/2020
 ms.author: borisb
-ms.openlocfilehash: e6a2e7c646782f5ad874124e4a86809ed1d79eea
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: c737189650d571fb62a770707e84ed15c5a37a57
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81687398"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870497"
 ---
 # <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Обзор приложений и решений Oracle в Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "81687398"
 
 * Используйте [восстановление сайта Azure](../../../site-recovery/site-recovery-overview.md) для организации и управления аварийным восстановлением для ваших ВМ Oracle Linux в Azure и ваших наместах или физических серверах. 
 
-* Включите кластеры реальных приложений Oracle (RAC) в Azure с помощью [решения Azure VMWare](https://docs.azure.cloudsimple.com/oracle-rac/) или [FlashGrid SkyCluster.](https://www.flashgrid.io/oracle-rac-in-azure/)
+* Включите кластеры реальных приложений Oracle (RAC) в Azure с помощью [решения Azure VMWare](https://docs.microsoft.com/azure/vmware-cloudsimple/oracle-real-application-clusters/) или [FlashGrid SkyCluster.](https://www.flashgrid.io/oracle-rac-in-azure/)
 
 ## <a name="backup-oracle-workloads"></a>Резервные рабочие нагрузки Oracle
 
@@ -88,7 +88,7 @@ ms.locfileid: "81687398"
 
 Развертывание приложений Oracle в Azure основано на модели «принесите свою собственную лицензию». Предполагается, что вы имеете надлежащую лицензию на использование программного обеспечения Oracle и что у вас есть текущее соглашение о поддержке с Oracle. Oracle гарантирует перемещение лицензий из локальной среды в Azure. Смотрите [часто задаваемые вопросы](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html)Oracle-Azure .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о развертывании [изображений Oracle VM](oracle-vm-solutions.md) в инфраструктуре Azure.
 

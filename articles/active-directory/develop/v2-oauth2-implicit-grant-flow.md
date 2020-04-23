@@ -12,12 +12,12 @@ ms.date: 11/19/2019
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 7fb2bbcdd5f84e3637a108d0753566d3a9de7fd0
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 89ae088b9cbb3bb3c593cfcbbfb4ce619baccfa8
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81677748"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868410"
 ---
 # <a name="microsoft-identity-platform-and-implicit-grant-flow"></a>Платформа идентификации Майкрософт и неявный поток грантов
 
@@ -117,7 +117,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 Успешный ответ с использованием `response_mode=fragment` и `response_type=id_token+token` выглядит следующим образом (разрывы строк — для удобства чтения):
 
-```
+```HTTP
 GET https://localhost/myapp/#
 &token_type=Bearer
 &expires_in=3599
@@ -138,7 +138,7 @@ GET https://localhost/myapp/#
 
 Сообщения об ошибках также можно отправлять на `redirect_uri` , чтобы приложение обрабатывало их должным образом:
 
-```
+```HTTP
 GET https://localhost/myapp/#
 error=access_denied
 &error_description=the+user+canceled+the+authentication
@@ -184,7 +184,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 Успешный ответ с использованием метода `response_mode=fragment` выглядит следующим образом:
 
-```
+```HTTP
 GET https://localhost/myapp/#
 access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 &state=12345
@@ -206,7 +206,7 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q..
 
 Сообщения об ошибках также можно отправлять на `redirect_uri` , чтобы приложение правильно обрабатывало их. Если вы используете `prompt=none`, отобразится следующая ошибка.
 
-```
+```HTTP
 GET https://localhost/myapp/#
 error=user_authentication_required
 &error_description=the+request+could+not+be+completed+silently
@@ -236,6 +236,6 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/logout?post_logout_redire
 | `tenant` |обязательно |Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Дополнительные сведения см. в [описании протоколов](active-directory-v2-protocols.md#endpoints). |
 | `post_logout_redirect_uri` | рекомендуется | URL-адрес, на который следует возвратить пользователя после выхода. Это значение должно соответствовать одному из универсальных кодов ресурсов (URI) перенаправления, зарегистрированных для приложения. Если пользователь не включен, он будет показан общий текст сообщения конечным пунктом платформы идентификации Майкрософт. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Перейдите на страницу [примеров MSAL JS](sample-v2-code.md), чтобы приступить к созданию кода.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: 9441e7bb970508df4c002897ab726d6e683fa848
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: 0773492c3042a6f8c906aa6ba1bc3c76ea8c0d8f
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81733356"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870591"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Для получения дополнительной информации о ITSMC, [см.](../../azure-monitor/platform/itsmc-overview.md)
@@ -197,12 +197,12 @@ ms.locfileid: "81733356"
 > [!NOTE]
 > В рамках определения "Настройка OAuth" мы рекомендуем:
 >
-> 1) **Обновление срока службы маркера обновления до 90 дней (7 776 000 секунд):** В рамках [Настройка OAuth](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_SettingUpOAuth.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696739125&sdata=Q7mF6Ej8MCupKaEJpabTM56EDZ1T8vFVyihhoM594aA%3D&reserved=0) в фазе 2: [Создать конечную точку для клиентов, чтобы получить доступ к экземпляру](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_CreateEndpointforExternalClients.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696749123&sdata=hoAJHJAFgUeszYCX1Q%2FXr4N%2FAKiFcm5WV7mwR2UqeWA%3D&reserved=0) После определения конечной точки, В ServiceNow лезвие поиск системы OAuth->Прикладный реестр выбрать имя OAuth, который был определен и обновить поле "Обновить токен продолжительность жизни" до 7,776,000.
+> 1) **Обновление срока службы маркера обновления до 90 дней (7 776 000 секунд):** В рамках [Настройка OAuth](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_SettingUpOAuth.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696739125&sdata=Q7mF6Ej8MCupKaEJpabTM56EDZ1T8vFVyihhoM594aA%3D&reserved=0) в фазе 2: [Создание конечной точки для клиентов, чтобы получить доступ к экземпляру](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_CreateEndpointforExternalClients.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696749123&sdata=hoAJHJAFgUeszYCX1Q%2FXr4N%2FAKiFcm5WV7mwR2UqeWA%3D&reserved=0) После определения конечной точки, в ServiceNow лезвие поиск системы OAuth, чем выбрать реестр приложений. Выберите название OAuth, которое было определено, и обновите поле срок службы токенов Refresh до 7 776 000 (90 дней в секундах).
 > В конце нажмите обновление.
-> 2) **Мы рекомендуем установить внутреннюю процедуру, чтобы убедиться, что соединение остается живым:** Согласно "Refresh Token Lifespan", чтобы обновить токен. Пожалуйста, не забудьте выполнить следующие операции до обновления токен ожидаемого срока действия (за пару дней до "Обновить токен продолжительность жизни" истекает мы рекомендуем):
+> 2) **Мы рекомендуем установить внутреннюю процедуру, чтобы убедиться, что соединение остается живым:** Согласно периоду времени обновления токенов, чтобы обновить токен. Пожалуйста, убедитесь, что для выполнения следующих операций до обновления токен ожидаемого срока действия (за пару дней до обновления токен продолжительность жизни истекает мы рекомендуем):
 >
 >>  1) [Заполните ручной процесс синхронизации для конфигурации разъема ITSM](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-resync-servicenow)
- >> 2) Отменить старый маркер обновления, так как не рекомендуется хранить старые ключи по соображениям безопасности. В ServiceNow поиск лезвия для "System OAuth"->"Управление токенами", а затем выбрать старый маркер из списка в соответствии с именем OAuth и срок годности. Нажмите на кнопку "Отозвать доступ"->"Отменить.
+ >> 2) Отменить старый маркер обновления, так как не рекомендуется хранить старые ключи по соображениям безопасности. В ServiceNow поиск лезвия для системы OAuth, чем выбрать управление токенами. Выберите старый маркер из списка в соответствии с именем OAuth и датой истечения срока действия. Нажмите на отозвать доступ и чем на отозвать.
 
 - Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. [Подробнее](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 ).
 - Создать роль пользователя для интеграции в установленном приложении для пользователя. Дополнительные сведения о создании роли пользователя для интеграции см. [здесь](#create-integration-user-role-in-servicenow-app).
@@ -404,5 +404,5 @@ ms.locfileid: "81733356"
     ![Идентификатор пользователя Cherwell](media/itsmc-connections/itsmc-cherwell-client-id.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
  - [Создание рабочих элементов ITSM из предупреждений Azure](../../azure-monitor/platform/itsmc-overview.md#create-itsm-work-items-from-azure-alerts)

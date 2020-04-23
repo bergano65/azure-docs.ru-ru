@@ -1,25 +1,21 @@
 ---
 title: Служба метаданных экземпляров Azure
-description: ИНТЕРФЕЙС RESTful для получения информации о вычислениях, сетевых и предстоящих событиях технического обслуживания Windows VMs.
-services: virtual-machines-windows
-documentationcenter: ''
+description: Интерфейс RESTful для получения информации о вычислениях, сетевых и предстоящих событиях технического обслуживания.
 author: KumariSupriya
 manager: paulmey
-editor: ''
-tags: azure-resource-manager
-ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.service: virtual-machines
+ms.subservice: monitoring
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 03/30/2020
 ms.author: sukumari
 ms.reviewer: azmetadata
-ms.openlocfilehash: f351bba9cd474eab0774efa5ffbd2b24499d105b
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: cb9453e1a25f4042c45d4e89229b555c996d4c8b
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80520954"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870078"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -455,7 +451,7 @@ Invoke-RestMethod -Headers @{"Metadata"="true"} -URI http://169.254.169.254/meta
 -----|-------------|-----------------------
 attested | См. раздел [Аттестованные данные](#attested-data). | 2018-10-01
 identity | Управляемые удостоверения для ресурсов Azure. Ознакомьтесь с [получением маркера доступа](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md). | 2018-02-01
-instance | Посмотреть [API экземпляра](#instance-api) | 2017-04-02
+экземпляр | Посмотреть [API экземпляра](#instance-api) | 2017-04-02
 scheduledevents | Ознакомьтесь со статьей [Служба метаданных Azure. Запланированные события (предварительная версия) для виртуальных машин Windows](scheduled-events.md) | 2017-08-01
 
 ### <a name="instance-api"></a>API инстанции
@@ -837,7 +833,7 @@ sku | Специфический SKU для изображения VM, пред�
 > [!NOTE]
 > Для общедоступного облака и национального облака используются разные сертификаты.
 
- Cloud | Сертификат
+ Облако | Сертификат
 ---------|-----------------
 [Все общедоступные глобальные регионы Azure](https://azure.microsoft.com/regions/)     | В.metadata.azure.com
 [Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/)              | В.metadata.azure.us
@@ -1039,7 +1035,7 @@ C#       | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.cs
 JavaScript | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.js
 PowerShell | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.ps1
 Bash       | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.sh
-Perl;       | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.pl
+Perl       | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.pl
 Java       | https://github.com/Microsoft/azureimds/blob/master/imdssample.java
 Visual Basic | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.vb
 Puppet | https://github.com/keirans/azuremetadata

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 620c0226d3aca907352658ebbe1b94c7673d91cd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 13496a18f4c99b69a5b8095caf5b74a04d1bba88
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77014833"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869303"
 ---
 # <a name="manage-private-cloud-resources-and-activity"></a>Управление ресурсами и активностью частных облаков
 
@@ -21,7 +21,7 @@ ms.locfileid: "77014833"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войти на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="access-the-cloudsimple-portal"></a>Доступ к порталу CloudSimple
 
@@ -37,13 +37,13 @@ ms.locfileid: "77014833"
 
 ## <a name="private-cloud-summary"></a>Резюме частного облака
 
-Посмотреть полное резюме выбранного частного облака.  Краткая страница включает dNS-серверы, развернутые в приватном облаке.  Вы можете настроить переадресировку DNS с закрытых DNS-серверов на свои серверы Private Cloud DNS.  Для получения дополнительной информации о dNS-пересылке см. [Накрешимость DNS для разрешения имен для Private Cloud vCenter из предварительного.](https://docs.azure.cloudsimple.com/on-premises-dns-setup/)
+Посмотреть полное резюме выбранного частного облака.  Краткая страница включает dNS-серверы, развернутые в приватном облаке.  Вы можете настроить переадресировку DNS с закрытых DNS-серверов на свои серверы Private Cloud DNS.  Для получения дополнительной информации о dNS-пересылке см. [Накрешимость DNS для разрешения имен для Private Cloud vCenter из предварительного.](https://docs.microsoft.com/azure/vmware-cloudsimple/on-premises-dns-setup/)
 
 ![Резюме частного облака](media/private-cloud-summary.png)
 
 ### <a name="available-actions"></a>Доступные действия
 
-* [Запуск vSphere клиента](https://docs.azure.cloudsimple.com/vsphere-access/). Доступ к vCenter для этого частного облака.
+* [Запуск vSphere клиента](https://docs.microsoft.com/azure/vmware-cloudsimple/vcenter-access). Доступ к vCenter для этого частного облака.
 * [Покупка узлов](create-nodes.md). Добавьте узлы в это приватное облако.
 * [Расширить](expand-private-cloud.md). Добавьте узлы в это приватное облако.
 * **Освежите**. Обновление информации на этой странице.
@@ -58,11 +58,11 @@ ms.locfileid: "77014833"
 
 ### <a name="available-actions"></a>Доступные действия
 
-* [Добавить VLANS/Subnets](https://docs.azure.cloudsimple.com/create-vlan-subnet/). Добавьте VLAN/подмножество в это приватное облако.
+* [Добавить VLANS/Subnets](https://docs.microsoft.com/azure/vmware-cloudsimple/create-vlan-subnet/). Добавьте VLAN/подмножество в это приватное облако.
 
 Выберите VLAN/Subnet для следующих действий
-* [Прикрепите стол брандмауэра.](https://docs.azure.cloudsimple.com/firewall/) Прикрепите стол брандмауэра к этому частному облаку.
-* **Изменить**
+* [Прикрепите стол брандмауэра.](https://docs.microsoft.com/azure/vmware-cloudsimple/firewall/) Прикрепите стол брандмауэра к этому частному облаку.
+* **Edit** (Изменение)
 * **Удаление** (только пользовательские VLANs/Subnets)
 
 ## <a name="private-cloud-activity"></a>Деятельность в частном облаке

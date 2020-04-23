@@ -13,12 +13,12 @@ ms.date: 11/19/2019
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 828bdab26684b29d664ea42d0b36f475c7872a80
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: a282264ed3e9539bcc96babfc41376d2c6c35628
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81309464"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868653"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-resource-owner-password-credentials"></a>Платформа идентификации Майкрософт и учетные данные владельца ресурсов OAuth 2.0
 
@@ -50,8 +50,8 @@ ms.locfileid: "81309464"
 > [![Попробуйте запустить этот запрос в Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
 
-```
-// Line breaks and spaces are for legibility only.  This is a public client, so no secret is required. 
+```HTTP
+// Line breaks and spaces are for legibility only.  This is a public client, so no secret is required.
 
 POST {tenant}/oauth2/v2.0/token
 Host: login.microsoftonline.com
@@ -67,13 +67,13 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | Параметр | Условие | Описание |
 | --- | --- | --- |
 | `tenant` | Обязательно | Клиент каталога, в который пользователь выполняет вход. Его можно указать в виде GUID или понятного имени. Этот параметр не может иметь значение `common` или `consumers`, но может быть равен `organizations`. |
-| `client_id` | Обязательно | Идентификатор приложения (клиента), который имеет [сявок портала Azure -](https://go.microsoft.com/fwlink/?linkid=2083908) страница регистраций приложений, назначенная вашему приложению. | 
+| `client_id` | Обязательно | Идентификатор приложения (клиента), который имеет [сявок портала Azure -](https://go.microsoft.com/fwlink/?linkid=2083908) страница регистраций приложений, назначенная вашему приложению. |
 | `grant_type` | Обязательно | Нужно задать значение `password`. |
 | `username` | Обязательно | Адрес электронной почты пользователя. |
 | `password` | Обязательно | Пароль пользователя. |
 | `scope` | Рекомендуемая | Разделенный пробелами список [областей](v2-permissions-and-consent.md) или разрешений, которые нужны приложению. В интерактивном потоке админ или пользователь должны дать согласие на эти области заранее. |
-| `client_secret`| Иногда требуется | Если ваше приложение является публичным `client_secret` `client_assertion` клиентом, то включено или не может быть включено.  Если приложение является конфиденциальным клиентом, то оно должно быть включено. | 
-| `client_assertion` | Иногда требуется | Другая `client_secret`форма, генерируемая с помощью сертификата.  Для получения более подробной информации можно ознакомиться с [учетных данных сертификатов.](active-directory-certificate-credentials.md) | 
+| `client_secret`| Иногда требуется | Если ваше приложение является публичным `client_secret` `client_assertion` клиентом, то включено или не может быть включено.  Если приложение является конфиденциальным клиентом, то оно должно быть включено. |
+| `client_assertion` | Иногда требуется | Другая `client_secret`форма, генерируемая с помощью сертификата.  Для получения более подробной информации можно ознакомиться с [учетных данных сертификатов.](active-directory-certificate-credentials.md) |
 
 ### <a name="successful-authentication-response"></a>Успешный ответ аутентификации
 

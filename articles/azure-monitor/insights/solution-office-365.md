@@ -6,17 +6,16 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
-ms.openlocfilehash: 5aa025fb366634e796abfb2eb9c0035d9b87dc3c
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: 2c6eb5407ec62b6e9e771ce257b66fca2a91e0a5
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80437043"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023611"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
 ![Логотип Office 365](media/solution-office-365/icon.png)
-
 
 > [!IMPORTANT]
 > ## <a name="solution-update"></a>Обновление решений
@@ -34,10 +33,10 @@ ms.locfileid: "80437043"
 > 3. [Включите решение Azure Sentinel](../../sentinel/quickstart-onboard.md) в рабочем пространстве.
 > 4. Перейдите на страницу **разъемов данных** в Azure Sentinel и включите разъем **Office 365.**
 >
-> ## <a name="frequently-asked-questions"></a>Вопросы и ответы
+> ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 > 
-> ### <a name="q-is-it-possible-to-on-board-the-office-365-azure-monitor-solution-between-now-and-april-30th"></a>В: Возможно ли на борту решения Office 365 Azure Monitor в период до 30 апреля?
-> Нет, решение Azure Monitor Office 365, наносящее на бортскрипты, больше не доступно. Решение будет удалено 30 апреля.
+> ### <a name="q-is-it-possible-to-on-board-the-office-365-azure-monitor-solution-between-now-and-july-30th"></a>В: Возможно ли на борту решения Office 365 Azure Monitor в период до 30 июля?
+> Нет, решение Azure Monitor Office 365, наносящее на бортскрипты, больше не доступно. Решение будет удалено 30 июля.
 > 
 > ### <a name="q-will-the-tables-and-schemas-be-changed"></a>В: Будут ли изменены таблицы и схемы?
 > Имя таблицы **OfficeActivity** и схема останутся такими же, как и в текущем решении. Вы можете продолжить использование тех же запросов в новом решении, исключая запросы, ссылающиеся на данные Azure AD.
@@ -103,11 +102,11 @@ ms.locfileid: "80437043"
 > ### <a name="q-does-azure-sentinel-provide-additional-connectors-as-part-of-the-solution"></a>В: Предоставляет ли Azure Sentinel дополнительные разъемы в рамках решения?
 > Да, см. Доступ К источникам [данных Azure Sentinel.](../../sentinel/connect-data-sources.md)
 > 
-> ###    <a name="q-what-will-happen-on-april-30-do-i-need-to-offboard-beforehand"></a>В: Что произойдет 30 апреля? Нужно ли мне заранее выходить за борт?
+> ###    <a name="q-what-will-happen-on-july-30-do-i-need-to-offboard-beforehand"></a>В: Что произойдет 30 июля? Нужно ли мне заранее выходить за борт?
 > 
 > - Вы не сможете получать данные из решения **Office365.** Решение больше не будет доступно в Marketplace
 > - Для клиентов Azure Sentinel решение рабочего пространства **Office365** будет включено в решение Azure Sentinel **SecurityInsights.**
-> - Если вы не отключите решение вручную, ваши данные будут автоматически отключены 30 апреля.
+> - Если вы не отключите решение вручную, ваши данные будут автоматически отключены 30 июля.
 > 
 > ### <a name="q-will-my-data-transfer-to-the-new-solution"></a>В: Переведут ли мои данные в новое решение?
 > Да. При удалении решения **Office 365** из рабочего пространства его данные временно станут недоступными из-за удаления схемы. При входе нового разъема **Office 365** в Sentinel схема будет восстановлена в рабочей области и любые уже собранные данные станут доступными. 
@@ -382,7 +381,7 @@ ms.locfileid: "80437043"
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
-| Item | Представляет элемент, в отношении которого выполнялась операция. | 
+| Элемент | Представляет элемент, в отношении которого выполнялась операция. | 
 | SendAsUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить как". |
 | SendAsUserSmtp | SMTP-адрес пользователя, олицетворяемого при отправке. |
 | SendonBehalfOfUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить от имени". |
@@ -472,7 +471,7 @@ ms.locfileid: "80437043"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
 * [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.

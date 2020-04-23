@@ -8,12 +8,12 @@ ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: mimckitt
-ms.openlocfilehash: 1dbc08e01b9a36b1bc80ee6b81ceb2d92ff831cc
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: c2db0cca120d08b85229618547a2aaabbba437ad
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273721"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870220"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "81273721"
 
 ### <a name="do-scale-sets-work-with-azure-availability-zones"></a>Работают ли масштабируемые наборы с зонами доступности Azure?
 
- Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
+Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
 ## <a name="autoscale"></a>Автомасштабирование
@@ -445,7 +445,7 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
 
     Обновите учетные данные администратора непосредственно в модели масштабируемого набора (например, с помощью обозревателя ресурсов Azure, PowerShell или CLI). После обновления масштабируемого набора у всех новых виртуальных машин будут новые учетные данные. Для имеющихся виртуальных машин новые данные доступны только в том случае, если они будут пересозданы с использованием нового образа.
 
-- Сбросьте пароль с помощью расширений доступа к виртуальной машине.
+- Сбросьте пароль с помощью расширений доступа к виртуальной машине. Убедитесь в том, чтобы следовать требованиям пароля, как описано [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm).
 
     Используйте следующий пример сценария PowerShell:
 
@@ -466,7 +466,7 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
 
 ### <a name="is-it-possible-to-assign-a-network-security-group-nsg-to-a-scale-set-so-that-it-applies-to-all-the-vm-nics-in-the-set"></a>Можно ли назначить группу безопасности сети масштабируемому набору, чтобы она применялась ко всем сетевым картам виртуальных машин в наборе?
 
-Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример.
+Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример
 
 ```json
 "networkProfile": {
@@ -540,7 +540,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-the-dns-servers-used-by-a-scale-set"></a>Как настроить DNS-серверы, используемые масштабируемым набором?
 
-Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример.
+Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример
 
 ```json
     "dnsSettings":{
@@ -550,7 +550,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-a-scale-set-to-assign-a-public-ip-address-to-each-vm"></a>Как настроить масштабируемый набор, чтобы назначать общедоступный IP-адрес каждой виртуальной машине?
 
-Чтобы создать виртуальный набор масштабов машины, который назначает общедоступный IP-адрес каждому VM, убедитесь, что версия API ресурса Microsoft.Compute/virtualMachineScaleSets является 2017-03-30, и добавьте _пакет publicipaddressconfiguration_ JSON в раздел ipConfigurations, установленный масштаб. Пример.
+Чтобы создать виртуальный набор масштабов машины, который назначает общедоступный IP-адрес каждому VM, убедитесь, что версия API ресурса Microsoft.Compute/virtualMachineScaleSets является 2017-03-30, и добавьте _пакет publicipaddressconfiguration_ JSON в раздел ipConfigurations, установленный масштаб. Пример
 
 ```json
     "publicipaddressconfiguration": {

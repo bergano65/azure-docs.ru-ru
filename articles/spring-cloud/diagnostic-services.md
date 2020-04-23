@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
-ms.openlocfilehash: 544de1b4ac46a58d533f71a46266807a3b93820a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: adbcf28cfbbe2ea3b7cc9c7fd0d1c76246938344
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77920048"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870406"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Анализ журналов и метрик с настройками диагностики
 
@@ -22,6 +22,9 @@ ms.locfileid: "77920048"
 * Поток журналов в концентратор событий для приема в эксплуатацию сторонними службами или пользовательским аналитическим решением.
 
 Выберите категорию журнала и метрическую категорию, за которые вы хотите следить.
+
+> [!TIP]
+> Просто хотите, чтобы поток ваших журналов? Проверьте эту [команду Azure CLI!](https://docs.microsoft.com/cli/azure/ext/spring-cloud/spring-cloud/app?view=azure-cli-latest#ext-spring-cloud-az-spring-cloud-app-logs)
 
 ## <a name="logs"></a>Журналы
 
@@ -46,7 +49,7 @@ ms.locfileid: "77920048"
     * **Отправка в Log Analytics**
 
 1. Выберите, какую категорию журнала и метрическую категорию вы хотите контролировать, а затем укажите время удержания (в днях). Время хранения применяется только к учетной записи хранилища.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 > [!NOTE]
 > Между тем, когда излучаются журналы или метрики, и когда они отображаются в учетной записи хранилища, в центре событий или в журнале Analytics, может быть разрыв до 15 минут.

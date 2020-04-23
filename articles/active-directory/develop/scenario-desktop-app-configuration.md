@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: f6cd9e17045fc400d32e9822cef870f1763179ab
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: e0b43f7563c9dfac6374590f6b081197536fe31e
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80885279"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869012"
 ---
 # <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Настольное приложение, которое вызывает веб-AIS: конфигурация кода
 
@@ -114,7 +114,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
 
 Представьте себе консольное приложение `appsettings.json` .NET Core, которое имеет следующий файл конфигурации:
 
-```JSon
+```json
 {
   "Authentication": {
     "AzureCloudInstance": "AzurePublic",
@@ -205,7 +205,7 @@ app = msal.PublicClientApplication(
     )
 ```
 
-# <a name="macos"></a>[Macos](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Следующий код мгновенно выполняет публичное клиентское приложение и подписывается в общедоступном облаке Microsoft Azure с рабочей или школьной учетной записью или личной учетной записью Майкрософт.
 
@@ -216,7 +216,7 @@ Objective-C.
 ```objc
 NSError *msalError = nil;
 
-MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];    
+MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];
 MSALPublicClientApplication *application = [[MSALPublicClientApplication alloc] initWithConfiguration:config error:&msalError];
 ```
 

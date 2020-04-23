@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 9e7070e925d12df82adbc3683da5b10e48c5d4b0
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 810219bca5c75e3ee7e65c6b7302531bca89788d
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80668130"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869962"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -187,7 +187,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 3. Щелкните правой кнопкой мыши в области сообщений на панели и выберите **Копировать все**.
 4. Вставьте скопированный текст в файл и сохраните файл.
 
-Чтобы просмотреть HAR-файл, можно использовать [средство просмотра HAR](https://www.softwareishard.com/har/viewer/).
+Чтобы просмотреть HAR-файл, можно использовать [средство просмотра HAR](http://www.softwareishard.com/har/viewer/).
 
 ## <a name="why-do-i-get-an-error-when-i-try-to-connect-an-app-service-web-app-to-a-virtual-network-that-is-connected-to-expressroute"></a>Почему при попытке подключить веб-приложение службы приложений к виртуальной сети с ExpressRoute отображается сообщение об ошибке?
 

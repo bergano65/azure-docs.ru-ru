@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: juliako
-ms.openlocfilehash: 5aa7abf7aafc14e71af5618cec892ef9f843d88a
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: f7ce5f5086bcf2d577fb998df307ee684d536c15
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81733071"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870102"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске видеоиндекса медиаиндекса От службы мультимедиа Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "81733071"
 
 Для получения дополнительной [информации](video-indexer-embed-widgets.md#widget-types) см. 
 
-## <a name="new-player-skin"></a>Новая кожа игрока
+### <a name="new-player-skin"></a>Новая кожа игрока
 
 Новая кожа игрока запущена с обновленным дизайном.
 
@@ -216,6 +216,6 @@ Video Indexer определяет названные места и людей �
 
 В дополнение к закрытому формату субтитров, уже поддержанным (SRT, VTT и TTML), Video Indexer теперь поддерживает загрузку стенограммы в форматах TXT и CSV.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор](video-indexer-overview.md)

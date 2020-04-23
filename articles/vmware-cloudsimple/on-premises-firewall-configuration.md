@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: df4c51953c6f50e30ba61b993cdb35856fcb8e25
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 539665c4756a7dc87078922421b45a88404f58f1
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77082971"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868144"
 ---
 # <a name="accessing-your-cloudsimple-private-cloud-environment-and-applications-from-on-premises"></a>Доступ к среде облачного облака Cloud и приложениям из закрытых
 
@@ -35,7 +35,7 @@ ms.locfileid: "77082971"
 
 ## <a name="ports-required-for-using-on-premises-active-directory-as-an-identity-source"></a>Порты, необходимые для использования в предварительном активном каталоге в качестве источника идентификации
 
-Для настройки наместеранного активного каталога в качестве источника идентификации в Private Cloud vCenter необходимо открыть порты, определенные в таблице.  Для шагов конфигурации [используйте Azure AD в качестве поставщика идентификационных данных для vCenter в облачном частном облаке CloudSimple Private Cloud.](https://docs.azure.cloudsimple.com/azure-ad/)
+Для настройки наместеранного активного каталога в качестве источника идентификации в Private Cloud vCenter необходимо открыть порты, определенные в таблице.  Для шагов конфигурации [используйте Azure AD в качестве поставщика идентификационных данных для vCenter в облачном частном облаке CloudSimple Private Cloud.](https://docs.microsoft.com/azure/vmware-cloudsimple/azure-ad/)
 
 | Порт         | Источник                           | Назначение                                         | Назначение                                                                                                                                          |
 |--------------|----------------------------------|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,6 +60,6 @@ ms.locfileid: "77082971"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание и управление VLAN и подсетями](https://docs.azure.cloudsimple.com/create-vlan-subnet/)
-* [Подключение к предприимительной сети с помощью Azure ExpressRoute](https://docs.azure.cloudsimple.com/on-premises-connection/)
-* [Настройка сайта на сайт VPN из наместа](https://docs.azure.cloudsimple.com/vpn-gateway/)
+* [Создание и управление VLAN и подсетями](https://docs.microsoft.com/azure/vmware-cloudsimple/create-vlan-subnet/)
+* [Подключение к предприимительной сети с помощью Azure ExpressRoute](https://docs.microsoft.com/azure/vmware-cloudsimple/on-premises-connection/)
+* [Настройка сайта на сайт VPN из наместа](https://docs.microsoft.com/azure/vmware-cloudsimple/vpn-gateway/)

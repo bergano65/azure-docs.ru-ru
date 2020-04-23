@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/12/2019
+ms.date: 04/21/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 3b2d78bd929e23d49a57f337022f6678114bb5fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 125f4188ed3f12f366c619af9efe3aa203987c19
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75457450"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870519"
 ---
 # <a name="require-secure-transfer-to-ensure-secure-connections"></a>Требуется безопасная передача для обеспечения безопасных подключений
 
@@ -25,7 +25,7 @@ ms.locfileid: "75457450"
 
 Подключение к совместной акции Azure File через SMB без шифрования не удается, когда для учетной записи хранилища требуется безопасная передача. Примеры небезопасных соединений включают в себя те, сделанные более SMB 2.1, SMB 3.0 без шифрования, или некоторые версии клиента Linux SMB.
 
-По умолчанию необходимое свойство **безопасной передачи** включено при создании учетной записи хранилища на портале Azure. Однако он отключается при создании учетной записи хранилища с помощью SDK.
+По умолчанию при создании учетной записи хранилища включено необходимое свойство **безопасной передачи.**
 
 > [!NOTE]
 > Так как служба хранилища Azure не поддерживает протокол HTTPS для имен личных доменов, при использовании данных имен этот параметр не применяется. Классические учетные записи хранения не поддерживаются.
@@ -55,7 +55,7 @@ ms.locfileid: "75457450"
 
 * [REST API](/rest/api/storagerp/storageaccounts)
 * [PowerShell](/powershell/module/az.storage/set-azstorageaccount)
-* [Cli](/cli/azure/storage/account)
+* [CLI](/cli/azure/storage/account)
 * [NodeJS](https://www.npmjs.com/package/azure-arm-storage/)
 * [Пакет SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage)
 * [Питон SDK](https://pypi.org/project/azure-mgmt-storage)

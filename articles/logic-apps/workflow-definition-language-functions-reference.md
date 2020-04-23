@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/03/2020
-ms.openlocfilehash: 48be73a6385c9690909cb70abe558a2def1ace88
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: f557753c61af1e57490ae2d10b7f42475bd7c0a6
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81730511"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870236"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для приложений логики Azure и автоматизации питания
 
@@ -146,7 +146,7 @@ ms.locfileid: "81730511"
 
 | Функция преобразования | Задача |
 | ------------------- | ---- |
-| [Массива](../logic-apps/workflow-definition-language-functions-reference.md#array) | Возвращает массив из одного экземпляра указанных входных данных. Для нескольких входов см. [createArray.](../logic-apps/workflow-definition-language-functions-reference.md#createArray) |
+| [массиве](../logic-apps/workflow-definition-language-functions-reference.md#array) | Возвращает массив из одного экземпляра указанных входных данных. Для нескольких входов см. [createArray.](../logic-apps/workflow-definition-language-functions-reference.md#createArray) |
 | [base64](../logic-apps/workflow-definition-language-functions-reference.md#base64) | Возвращает версию строки с кодировкой base64 для заданной строки. |
 | [base64ToBinary](../logic-apps/workflow-definition-language-functions-reference.md#base64ToBinary) | Возвращает двоичную версию строки с кодировкой base64. |
 | [base64ToString](../logic-apps/workflow-definition-language-functions-reference.md#base64ToString) | Возвращает строковую версию строки с кодировкой base64. |
@@ -236,15 +236,15 @@ ms.locfileid: "81730511"
 
 | Функция рабочего процесса | Задача |
 | ----------------- | ---- |
-| [Действий](../logic-apps/workflow-definition-language-functions-reference.md#action) | Возвращает выходные данные текущего действия во время выполнения или значения из других пар "имя — значение" JSON. Смотрите также [действия](../logic-apps/workflow-definition-language-functions-reference.md#actions). |
+| [action](../logic-apps/workflow-definition-language-functions-reference.md#action) | Возвращает выходные данные текущего действия во время выполнения или значения из других пар "имя — значение" JSON. Смотрите также [действия](../logic-apps/workflow-definition-language-functions-reference.md#actions). |
 | [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody) | Возвращает результат действия `body` во время выполнения. См. раздел [body](../logic-apps/workflow-definition-language-functions-reference.md#body). |
 | [actionOutputs](../logic-apps/workflow-definition-language-functions-reference.md#actionOutputs) | Возвращает результат действия во время выполнения. Смотрите [выходы](../logic-apps/workflow-definition-language-functions-reference.md#outputs) и [действия](../logic-apps/workflow-definition-language-functions-reference.md#actions). |
-| [Действия](../logic-apps/workflow-definition-language-functions-reference.md#actions) | Возвращает выходные данные действия во время выполнения или значения из других пар "имя — значение" JSON. См. раздел [action](../logic-apps/workflow-definition-language-functions-reference.md#action).  |
-| [Тела](#body) | Возвращает результат действия `body` во время выполнения. См. раздел [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody). |
+| [actions](../logic-apps/workflow-definition-language-functions-reference.md#actions) | Возвращает выходные данные действия во время выполнения или значения из других пар "имя — значение" JSON. См. раздел [action](../logic-apps/workflow-definition-language-functions-reference.md#action).  |
+| [body](#body) | Возвращает результат действия `body` во время выполнения. См. раздел [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody). |
 | [formDataMultiValues](../logic-apps/workflow-definition-language-functions-reference.md#formDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* действия. |
 | [formDataValue](../logic-apps/workflow-definition-language-functions-reference.md#formDataValue) | Верните одно значение, которое соответствует ключевому имени в *форме-данных* действия или *закодированном выходе.* |
 | [item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
-| [Элементы](../logic-apps/workflow-definition-language-functions-reference.md#items) | При входе в цикл Foreach или Until верните текущий элемент из указанного цикла.|
+| [items](../logic-apps/workflow-definition-language-functions-reference.md#items) | При входе в цикл Foreach или Until верните текущий элемент из указанного цикла.|
 | [итерацииИндексы](../logic-apps/workflow-definition-language-functions-reference.md#iterationIndexes) | При входе в цикл Until верните значение индекса для текущей итерации. Эту функцию можно использовать внутри вложенных петель. |
 | [listCallbackUrl](../logic-apps/workflow-definition-language-functions-reference.md#listCallbackUrl) | Возвращает URL-адрес обратного вызова, который вызывает триггер или действие. |
 | [multipartBody](../logic-apps/workflow-definition-language-functions-reference.md#multipartBody) | Возвращает текст указанной части выходных данных действия, которые состоят из нескольких частей. |
@@ -2426,9 +2426,11 @@ iterationIndexes('<loopName>')
 
 *Пример* 
 
-Этот пример создает встречную переменную и приращения, которые изменяют по одному во время каждой итерации в цикле До тех пор, пока значение счетчика не достигнет пяти. Пример также создает переменную, которая отслеживает текущий индекс для каждой итерации. В цикле Until во время каждой итерации пример приращает счетчик, а затем присваивает значение счетчика к текущему значению индекса, а затем приращает счетчик. В любое время можно определить текущее число итерации, извлекая текущее значение индекса.
+Этот пример создает встречную переменную и приращения, которые изменяют по одному во время каждой итерации в цикле До тех пор, пока значение счетчика не достигнет пяти. Пример также создает переменную, которая отслеживает текущий индекс для каждой итерации. В цикле Until во время каждой итерации пример приращает счетчик, а затем присваивает значение счетчика к текущему значению индекса, а затем приращает счетчик. В цикле этот пример ссылается на текущий индекс `iterationIndexes` итерации с помощью функции:
 
-```
+`iterationIndexes('Until_Max_Increment')`
+
+```json
 {
    "actions": {
       "Create_counter_variable": {
@@ -2459,7 +2461,7 @@ iterationIndexes('<loopName>')
             "Create_counter_variable": [ "Succeeded" ]
          }
       },
-      "Until": {
+      "Until_Max_Increment": {
          "type": "Until",
          "actions": {
             "Assign_current_index_to_counter": {
@@ -2472,6 +2474,15 @@ iterationIndexes('<loopName>')
                   "Increment_variable": [ "Succeeded" ]
                }
             },
+            "Compose": {
+               "inputs": "'Current index: ' @{iterationIndexes('Until_Max_Increment')}",
+               "runAfter": {
+                  "Assign_current_index_to_counter": [
+                     "Succeeded"
+                    ]
+                },
+                "type": "Compose"
+            },           
             "Increment_variable": {
                "type": "IncrementVariable",
                "inputs": {
@@ -4780,6 +4791,6 @@ xpath('<xml>', '<xpath>')
 
 Возвращается такой результат: `"Paris"`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [языке определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md).

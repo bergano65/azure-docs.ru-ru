@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: c13c6ab180a172c034d25ac84781f5d3f83ae186
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 43fbc158c9ed0bbe87a75cd845433c7a7be2e6d1
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086640"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81867897"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Учебник. Интеграция Azure Active Directory с Workstars
 
@@ -110,7 +110,7 @@ ms.locfileid: "67086640"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.workstars.com/saml/login_check`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [группу поддержки клиентов Workstars](https://support.workstars.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [группу поддержки клиентов Workstars](http://support.workstars.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -210,7 +210,7 @@ ms.locfileid: "67086640"
 
 ### <a name="create-workstars-test-user"></a>Создание тестового пользователя Workstars
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Workstars. Обратитесь в [службу поддержки Workstars](https://support.workstars.com), чтобы добавить пользователей на платформу Workstars.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Workstars. Обратитесь в [службу поддержки Workstars](http://support.workstars.com), чтобы добавить пользователей на платформу Workstars.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

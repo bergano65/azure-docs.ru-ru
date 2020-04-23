@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 04/21/2020
-ms.openlocfilehash: b2e8bec18f4f5df6fb78a3c31aa0956ec7333eb5
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: 9129cb308a364a3ed0654055f8afe9dd8c89010a
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/22/2020
-ms.locfileid: "81770109"
+ms.locfileid: "82024631"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Реплики чтения в Базе данных Azure для MariaDB
 
@@ -33,9 +33,6 @@ ms.locfileid: "81770109"
 
 ## <a name="cross-region-replication"></a>Кросс-регион репликации
 Вы можете создать реплику чтения в другой области с вашего главного сервера. Кросс-регион репликации может быть полезным для таких сценариев, как планирование аварийного восстановления или сближение данных с пользователями.
-
-> [!NOTE]
-> Репликация кросс-региона находится в предварительном просмотре.
 
 У вас может быть мастер-сервер в любой [базе данных Azure для региона MariaDB.](https://azure.microsoft.com/global-infrastructure/services/?products=mariadb)  Мастер-сервер может иметь реплику в парной области или универсальных регионах реплики. На рисунке ниже показано, какие области реплик доступны в зависимости от основной области.
 
@@ -156,7 +153,7 @@ mysql -h myreplica.mariadb.database.azure.com -u myadmin@myreplica -p
 - Таблицы памяти могут привести к тому, что реплики не синхронизируются. Это ограничение технологии репликации MariaDB.
 - Убедитесь, что у таблиц главного сервера есть первичные ключи. Отсутствие первичных ключей может привести к задержке репликации между главным сервером и репликами.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [создавать реплики чтения и управлять ими с помощью портала Azure](howto-read-replicas-portal.md).
 - Узнайте, как [создавать и управлять речированными репликами чтения с помощью Azure CLI и REST API](howto-read-replicas-cli.md)

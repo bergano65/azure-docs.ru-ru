@@ -9,18 +9,18 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 10831c0dc39fa241a43541850afae39593ae033b
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: a2fe7daf1476f19f6a6eea83174342fa1273fe14
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81678287"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81867980"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Быстрый запуск - Настройка среды частного облака
 
 В этой статье узнайте, как создать облачное частное облако и настроить среду private Cloud.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Обзор [сетевых предпосылок](cloudsimple-network-checklist.md).
 
@@ -148,7 +148,7 @@ VPN клиент необходим для подключения к CloudSimple
 
 ## <a name="connect-your-environment-to-an-azure-virtual-network"></a>Подключение среды к виртуальной сети Azure
 
-CloudSimple предоставляет схему ExpressRoute для вашего частного облака. Вы можете подключить виртуальную сеть на Azure к схеме ExpressRoute. Для получения подробной информации о настройке соединения выполните последующие действия в [Azure Virtual Network Connection с помощью ExpressRoute.](https://docs.azure.cloudsimple.com/cloudsimple-azure-network-connection/)
+CloudSimple предоставляет схему ExpressRoute для вашего частного облака. Вы можете подключить виртуальную сеть на Azure к схеме ExpressRoute. Для получения подробной информации о настройке соединения выполните последующие действия в [Azure Virtual Network Connection с помощью ExpressRoute.](https://docs.microsoft.com/azure/vmware-cloudsimple/cloudsimple-azure-network-connection)
 
 ## <a name="sign-in-to-vcenter"></a>Войти в vCenter
 
@@ -207,7 +207,7 @@ CloudSimple рекомендует изменить пароль при перв
 1. Следуйте инструкциям в "Добавить распределенной группы портов" в [vSphere Networking Guide](https://docs.vmware.com/en/VMware-vSphere/6.5/vsphere-esxi-vcenter-server-65-networking-guide.pdf).
 2. При настройке распределенной группы портов предоставьте идентификатор VLAN, созданный в [Create a VLAN для вдовых работ.](#create-a-vlan-for-your-workload-vms)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование виртуальных машин VMware в Azure](quickstart-create-vmware-virtual-machine.md)
 * [Подключение к предприимительной сети с помощью Azure ExpressRoute](on-premises-connection.md)

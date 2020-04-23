@@ -9,25 +9,25 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 3d06f3e8be449e7050c65c75339a0cff6efe19e4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 63dc18c522a1e2e3b03bdf806945e0be67774b18
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77025322"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870476"
 ---
 # <a name="escalate-private-cloud-vcenter-privileges-from-the-cloudsimple-portal"></a>Эскалация привилегий Private Cloud vCenter с портала CloudSimple
 
 Для административного доступа к вашему Private Cloud vCenter можно временно усилить привилегии CloudSimple.  Используя повышенные привилегии, можно установить решения VMware, добавить источники идентификации и управлять пользователями.
 
-Новые пользователи могут быть созданы на домене vCenter SSO и получить доступ к vCenter.  При создании новых пользователей добавляйте их в встроенные группы CloudSimple для доступа к vCenter.  Для получения дополнительной информации [см.](https://docs.azure.cloudsimple.com/learn-private-cloud-permissions/)
+Новые пользователи могут быть созданы на домене vCenter SSO и получить доступ к vCenter.  При создании новых пользователей добавляйте их в встроенные группы CloudSimple для доступа к vCenter.  Для получения дополнительной информации [см.](https://docs.microsoft.com/azure/vmware-cloudsimple/learn-private-cloud-permissions/)
 
 > [!CAUTION]
 > Не внося никаких изменений конфигурации для компонентов управления. Действия, предпринятые во время эскалации привилегированном состоянии, могут негативно повлиять на вашу систему или привести к тому, что ваша система станет недоступной.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войти на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="escalate-privileges"></a>Эскалация привилегий
 
@@ -88,5 +88,5 @@ ms.locfileid: "77025322"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка источников идентификации vCenter для использования Active Directory](https://docs.azure.cloudsimple.com/set-vcenter-identity/)
-* Установка решения резервного копирования для [резервной рабочей нагрузки виртуальных машин](https://docs.azure.cloudsimple.com/backup-workloads-veeam/)
+* [Настройка источников идентификации vCenter для использования Active Directory](https://docs.microsoft.com/azure/vmware-cloudsimple/set-vcenter-identity/)
+* Установка решения резервного копирования для [резервной рабочей нагрузки виртуальных машин](https://docs.microsoft.com/azure/vmware-cloudsimple/backup-workloads-veeam/)

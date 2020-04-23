@@ -12,12 +12,12 @@ ms.date: 02/03/2020
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: ab3ab25df6ce41d4045a270754830d501fe40689
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 8eb59eebd29c2cc94e20b71b467866686deec2f1
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80347176"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869725"
 ---
 # <a name="sign-in-and-start-apps-from-the-my-apps-portal"></a>Вопийте и запускайте приложения с портала My Apps
 
@@ -110,7 +110,7 @@ ms.locfileid: "80347176"
 
 Просматривайте и используйте приложения организации из управляемого браузера Intune на устройствах iOS и Android.
 
-1. На мобильном устройстве загрузите и установите приложение Intune Managed Browser из [Apple App Store](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) и Google Play [Store.](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser)
+1. На мобильном устройстве загрузите и установите приложение Intune Managed Browser из Apple App Store и Google Play Store.
 
 2. Откройте приложение Intune Managed https://myapps.microsoft.comBrowser, перейдите на ссылку, предоставленную вашей организацией, https://myapps.microsoft.com/contoso.comесли они направят вас на настраиваемую страницу, например.
 

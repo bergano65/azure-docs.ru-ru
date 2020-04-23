@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/18/2019
 ms.author: jennile
 ms.custom: seodec18
-ms.openlocfilehash: e06e71d4436ac6c64ff2edc876d7849d084482f8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: df8f68e47776f46ae2d1331f85bd76d6cfe17b80
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74671639"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869949"
 ---
 # <a name="azure-app-service-diagnostics-overview"></a>Общие сведения о диагностике службы приложений Azure
 
@@ -31,6 +31,10 @@ ms.locfileid: "74671639"
 На главной странице диагностики Службы приложений вы можете выбрать категорию, которая наилучшим образом описывает проблему с вашим приложением, используя ключевые слова в каждой плитке домашней страницы. Кроме того, на этой странице вы можете найти **диагностические инструменты** для приложений Windows. Смотрите [диагностические инструменты (только для приложения Windows)](#diagnostic-tools-only-for-windows-app).
 
 ![Домашняя страница](./media/app-service-diagnostics/app-service-diagnostics-homepage-1.png)
+
+> [!NOTE]
+> Если приложение работает медленно или работает медленно, можно [собрать след профилирования,](https://azure.github.io/AppService/2018/06/06/App-Service-Diagnostics-Profiling-an-ASP.NET-Web-App-on-Azure-App-Service.html) чтобы определить первопричину проблемы. Профилирование имеет легкий вес и предназначено для производственных сценариев.
+>
 
 ## <a name="interactive-interface"></a>Интерактивный интерфейс
 

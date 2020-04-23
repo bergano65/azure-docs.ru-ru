@@ -1,19 +1,19 @@
 ---
-title: Развертывание контейнеров с помощью Helm в Kubernetes в Azure
+title: Установка существующих приложений с шлемом в AKS
 description: Узнайте, как использовать инструмент упаковки Helm для развертывания контейнеров в кластере Службы Azure Kubernetes (AKS)
 services: container-service
 author: zr-msft
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: zarhoads
-ms.openlocfilehash: 4a9ccaff0e3425c365a64ecb4fbadf3c7aa8dcfb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e46bed5fc9fd83a907f8c9e716317a54548c58cc
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77595184"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870254"
 ---
-# <a name="install-applications-with-helm-in-azure-kubernetes-service-aks"></a>Установка приложения с помощью Helm в службе Azure Kubernetes
+# <a name="install-existing-applications-with-helm-in-azure-kubernetes-service-aks"></a>Установка существующих приложений с помощью службы «Хелм» в Azure Kubernetes Service (AKS)
 
 [Helm][helm] — это средство упаковки с открытым кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как *APT* и *Yum*, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes.
 

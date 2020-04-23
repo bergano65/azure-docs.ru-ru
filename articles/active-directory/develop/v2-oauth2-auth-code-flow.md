@@ -12,12 +12,12 @@ ms.date: 01/31/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: e5e462c52c8b06af6da5081f84a082138cd53a3f
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: fcd80c052edf659f93f97800da3112c1f11309cc
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81677947"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868491"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Платформа идентификации Майкрософт и поток кода авторизации OAuth 2.0
 
@@ -35,7 +35,7 @@ ms.locfileid: "81677947"
 
 ## <a name="request-an-authorization-code"></a>Запрос кода авторизации
 
-Поток кода авторизации начинается с того, что клиент направляет пользователя к конечной точке `/authorize` . В этом запросе клиент `openid` `offline_access`запрашивает `https://graph.microsoft.com/mail.read `, и разрешения от пользователя.  Некоторые разрешения ограничены амин-амин, например, запись данных в `Directory.ReadWrite.All`каталог организации с помощью. Если приложение запрашивает доступ к одному из этих разрешений у организационного пользователя, пользователь получает сообщение об ошибке, в которое говорится, что он не уполномочен давать согласие на разрешения приложения. Чтобы запросить доступ к ограниченным областям, ограниченным администратором, следует запросить их непосредственно у администратора компании.  Для получения дополнительной информации прочитайте разрешения с ограниченным доступом к [аминистам.](v2-permissions-and-consent.md#admin-restricted-permissions)
+Поток кода авторизации начинается с того, что клиент направляет пользователя к конечной точке `/authorize` . В этом запросе клиент `openid` `offline_access`запрашивает `https://graph.microsoft.com/mail.read ` , и разрешения от пользователя.  Некоторые разрешения ограничены амин-амин, например, запись данных в `Directory.ReadWrite.All`каталог организации с помощью. Если приложение запрашивает доступ к одному из этих разрешений у организационного пользователя, пользователь получает сообщение об ошибке, в которое говорится, что он не уполномочен давать согласие на разрешения приложения. Чтобы запросить доступ к ограниченным областям, ограниченным администратором, следует запросить их непосредственно у администратора компании.  Для получения дополнительной информации прочитайте разрешения с ограниченным доступом к [аминистам.](v2-permissions-and-consent.md#admin-restricted-permissions)
 
 ```
 // Line breaks for legibility only
@@ -76,7 +76,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 Успешный ответ с использованием метода `response_mode=query` выглядит следующим образом:
 
-```
+```HTTP
 GET https://login.microsoftonline.com/common/oauth2/nativeclient?
 code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 &state=12345
@@ -91,7 +91,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 Сообщения об ошибках также можно отправлять на `redirect_uri` , чтобы приложение обрабатывало их должным образом:
 
-```
+```HTTP
 GET https://login.microsoftonline.com/common/oauth2/nativeclient?
 error=access_denied
 &error_description=the+user+canceled+the+authentication
@@ -122,7 +122,7 @@ error=access_denied
 
 После получения кода авторизации и разрешения от пользователя вы можете применить `code` для получения `access_token` к требуемому ресурсу. Для этого отправьте запрос `POST` к конечной точке `/token`:
 
-```
+```HTTP
 // Line breaks for legibility only
 
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1
@@ -221,7 +221,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > [!TIP]
 > Выполните этот запрос в Postman. (Сначала `Authorization` замените заголовок) [Попробуйте запустить этот запрос в Postman ![](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
-```
+```HTTP
 GET /v1.0/me/messages
 Host: https://graph.microsoft.com
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
@@ -235,7 +235,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
 
 Хотя токены обновления не отменяются при использовании для получения новых токенов доступа, ожидается, что старый маркер обновления отбросит. Спецификация [OAuth 2.0](https://tools.ietf.org/html/rfc6749#section-6) гласит: «Сервер авторизации МОЖЕТ выпустить новый маркер обновления, и в этом случае клиент должен отказаться от старого маркера обновления и заменить его новым маркером обновления. Сервер авторизации МОЖЕТ отозвать старый маркер обновления после выдачи клиенту нового токена обновления.
 
-```
+```HTTP
 // Line breaks for legibility only
 
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1
@@ -276,6 +276,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
     "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
 }
 ```
+
 | Параметр     | Описание         |
 |---------------|-------------------------------------------------------------|
 | `access_token`  | Запрашиваемый маркер доступа. Приложение может использовать этот маркер для аутентификации в защищенном ресурсе, таком как веб-API. |

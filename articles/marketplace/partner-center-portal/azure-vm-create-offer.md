@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/10/2020
-ms.openlocfilehash: d5626f00e9627338349d9b579bcf26256148b551
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: d598f741c5add58a89aa2b7aa01802a7e35f9a19
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81731268"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869056"
 ---
 # <a name="create-an-azure-virtual-machine-offer"></a>Создайте предложение виртуальной машины Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "81731268"
 - Получите высококачественные интересы с этих рынков
 - Получите продвижение своих услуг в группах microsoft field and telesales
 
-### <a name="before-you-begin"></a>Подготовка к работе
+### <a name="before-you-begin"></a>Перед началом
 
 Если вы еще не сделали этого, просмотрите [руководство по публикации виртуальной машины](https://docs.microsoft.com/azure/marketplace/marketplace-virtual-machines) и этот материал виртуальной машины Azure:
 
@@ -240,7 +240,7 @@ ms.locfileid: "81731268"
 Предоставьте контактную информацию партнерам Майкрософт для использования при открытии билета поддержки. Это не будет перечислено на рынке.
 
 - Имя
-- Email
+- Электронная почта
 - Номер телефона
 
 ### <a name="engineering-contact"></a>Инженерный контакт
@@ -248,12 +248,15 @@ ms.locfileid: "81731268"
 Предоставьте корпорации Майкрософт контактную информацию, когда есть проблемы с вашим предложением, включая проблемы с сертификацией. Это не будет перечислено на рынке.
 
 - Имя
-- Email
+- Электронная почта
 - Номер телефона
 
 ### <a name="marketplace-media"></a>Рыночные медиа
 
 Предоставьте логотипы и изображения, чтобы использовать с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения приведут к отклонению отправки.
+
+>[!Note]
+>Если у вас есть непойская загрузка файлов, https://upload.xboxlive.com убедитесь, что локальная сеть не блокирует службу, используемую Центром партнеров.
 
 #### <a name="marketplace-logos"></a>Логотипы Marketplace
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: efe6cc132b062e833dc85c13cf2f6c5f6289484c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 410215550f728d6b11b02b3ef108d429481e42a0
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77564625"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869025"
 ---
 # <a name="key-concepts-for-administration-of-azure-vmware-solutions-by-cloudsimple"></a>Ключевые концепции администрирования решений Azure VMware от CloudSimple
 
@@ -50,8 +50,8 @@ ms.locfileid: "77564625"
 
 * [Виртуальные локальные сети и подсети](cloudsimple-vlans-subnets.md)
 * [Таблицы брандмауэра](cloudsimple-firewall-tables.md)
-* [VPN шлюзы](cloudsimple-vpn-gateways.md)
-* [Общественная ИС](cloudsimple-public-ip-address.md)
+* [VPN-шлюзы](cloudsimple-vpn-gateways.md)
+* [Общедоступный IP-адрес](cloudsimple-public-ip-address.md)
 * [Подключение к сети Azure](cloudsimple-azure-network-connection.md)
 
 ## <a name="cloudsimple-virtual-machine"></a>Виртуальная машина CloudSimple
@@ -61,4 +61,4 @@ ms.locfileid: "77564625"
 См. также:
 
 * [Виртуальные машины CloudSimple](cloudsimple-virtual-machines.md)
-* [Отображение подписки Azure](https://docs.azure.cloudsimple.com/azure-subscription-mapping/)
+* [Отображение подписки Azure](https://docs.microsoft.com/azure/vmware-cloudsimple/azure-subscription-mapping/)

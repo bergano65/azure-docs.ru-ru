@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/11/2019
 ms.author: rogara
 ms.custom: include file
-ms.openlocfilehash: e40171b95e6faae0020f8bf61410aad8999ddecb
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 608c2619c19a2b5fa7e39c1ecb82be40ff4e83f4
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536541"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82072626"
 ---
 ## <a name="2-assign-access-permissions-to-an-identity"></a>2. Назначить разрешения на доступ к удостоверению личности
 
@@ -87,15 +87,6 @@ az role assignment create --role "<role-name>" --assignee <user-principal-name> 
 - NT AUTHORITY\SYSTEM:(F);
 - CREATOR OWNER:(OI)(CI)(IO)(F).
 
-### <a name="configure-ntfs-permissions-with-icacls"></a>Настройка разрешений NTFS с помощью icacls
-Используйте следующую команду Windows, чтобы предоставить полный набор разрешений для всех каталогов и файлов в файловом ресурсе, включая корневую папку. Не забудьте заменить значения заполнителей в примере собственными значениями.
-
-```
-icacls <mounted-drive-letter>: /grant <user-email>:(f)
-```
-
-Для получения дополнительной информации о том, как использовать icacls для установки [the command-line reference for icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls)разрешений NTFS и о различных типах поддерживаемых разрешений, см.
-
 ### <a name="mount-a-file-share-from-the-command-prompt"></a>Подключение файлового ресурса Azure из командной строки
 
 Используйте команду Windows **net use** для подключения файлового ресурса Azure. Не забудьте заменить значения заполнителя в следующем примере своими собственными значениями. Для получения дополнительной информации о сборе файлов [см.](../articles/storage/files/storage-how-to-use-files-windows.md) 
@@ -103,6 +94,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 ```
 net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /user:Azure\<storage-account-name> <storage-account-key>
 ```
+
 ### <a name="configure-ntfs-permissions-with-windows-file-explorer"></a>Настройка разрешений NTFS с помощью Windows File Explorer
 Используйте Windows File Explorer для предоставления полного разрешения всем каталогам и файлам, наданным в рамках раздела файлов, включая корневой каталог.
 
@@ -114,6 +106,15 @@ net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<
 7.    Щелкните **ОК**.
 8.    Во вкладке **"Безопасность"** выберите все разрешения, которые вы хотите предоставить новому пользователю.
 9.    Нажмите кнопку **Применить**.
+
+### <a name="configure-ntfs-permissions-with-icacls"></a>Настройка разрешений NTFS с помощью icacls
+Используйте следующую команду Windows, чтобы предоставить полный набор разрешений для всех каталогов и файлов в файловом ресурсе, включая корневую папку. Не забудьте заменить значения заполнителей в примере собственными значениями.
+
+```
+icacls <mounted-drive-letter>: /grant <user-email>:(f)
+```
+
+Для получения дополнительной информации о том, как использовать icacls для установки [the command-line reference for icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls)разрешений NTFS и о различных типах поддерживаемых разрешений, см.
 
 ## <a name="4-mount-a-file-share-from-a-domain-joined-vm"></a>4. Смонтировать файл долю из домена, примкнувного к VM
 

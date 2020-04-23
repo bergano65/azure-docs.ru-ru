@@ -12,12 +12,12 @@ ms.date: 04/12/2019
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: ebec4cb6bbbac5b331eb2eb4145716e16e7320fa
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 161f97dc99ce5ce16d7c40126b95a769c4b79621
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81677684"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868331"
 ---
 # <a name="microsoft-identity-platform-and-openid-connect-protocol"></a>Платформа идентификации Майкрософт и протокол OpenID Connect
 
@@ -38,6 +38,7 @@ OpenID Connect описывает документ метаданных, сод�
 ```
 https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 ```
+
 > [!TIP]
 > Тестирование Нажмите, [https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration](https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration) `common` чтобы увидеть конфигурацию арендаторов.
 
@@ -48,11 +49,11 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 | `common` |Пользователи, употребляемые как с персональной учетной записью Майкрософт, так и с рабочей или школьной учетной записью из Azure AD, могут войти в приложение. |
 | `organizations` |Вход в приложение могут выполнять только пользователи с рабочими или учебными учетными записями Azure AD. |
 | `consumers` |Вход в приложение могут выполнять только пользователи с личной учетной записью Майкрософт. |
-| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` или `contoso.onmicrosoft.com` | Только пользователи из конкретного арендатора Azure AD (будь то члены каталога с рабочей или школьной учетной записью, или они являются гостями в каталоге с персональной учетной записью Майкрософт) могут войти в приложение. Можно использовать понятное доменное имя клиента Azure AD или идентификатор GUID клиента. Вы также можете использовать `9188040d-6c67-4c5b-b112-36a304b66dad`потребителя арендатора, вместо арендатора. `consumers`  |
+| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` либо `contoso.onmicrosoft.com` | Только пользователи из конкретного арендатора Azure AD (будь то члены каталога с рабочей или школьной учетной записью, или они являются гостями в каталоге с персональной учетной записью Майкрософт) могут войти в приложение. Можно использовать понятное доменное имя клиента Azure AD или идентификатор GUID клиента. Вы также можете использовать `9188040d-6c67-4c5b-b112-36a304b66dad`потребителя арендатора, вместо арендатора. `consumers`  |
 
 Метаданные — это простой документ JSON. В качестве примера ниже приведен фрагмент кода. Его содержимое полностью описано в [спецификации OpenID Connect](https://openid.net/specs/openid-connect-discovery-1_0.html#rfc.section.4.2).
 
-```
+```json
 {
   "authorization_endpoint": "https:\/\/login.microsoftonline.com\/{tenant}\/oauth2\/v2.0\/authorize",
   "token_endpoint": "https:\/\/login.microsoftonline.com\/{tenant}\/oauth2\/v2.0\/token",
@@ -84,7 +85,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 Пример:
 
-```
+```HTTP
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
@@ -123,7 +124,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 Успешный ответ при использовании `response_mode=form_post` выглядит следующим образом.
 
-```
+```HTTP
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -140,7 +141,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 
 Сообщения об ошибках также можно отправлять на универсальный код ресурса (URI) перенаправления, чтобы приложение могло их обработать. Сообщение об ошибке выглядит следующим образом.
 
-```
+```HTTP
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -187,7 +188,7 @@ error=access_denied&error_description=the+user+canceled+the+authentication
 
 Можно перенаправить пользователя на адрес, указанный в параметре `end_session_endpoint` в документе метаданных OpenID Connect:
 
-```
+```HTTP
 GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
 post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ```
@@ -211,7 +212,7 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ## <a name="get-access-tokens"></a>Получение маркеров доступа
 Для получения маркеров доступа необходимо изменить запрос на вход.
 
-```
+```HTTP
 // Line breaks are for legibility only.
 
 GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
@@ -236,7 +237,7 @@ https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
 
 Успешный ответ с использованием `response_mode=form_post` выглядит следующим образом.
 
-```
+```HTTP
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded
@@ -254,7 +255,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAA
 
 Сообщения об ошибках также можно отправлять на универсальный код ресурса (URI) перенаправления, чтобы приложение могло их правильно обработать. Сообщение об ошибке выглядит следующим образом.
 
-```
+```HTTP
 POST /myapp/ HTTP/1.1
 Host: localhost
 Content-Type: application/x-www-form-urlencoded

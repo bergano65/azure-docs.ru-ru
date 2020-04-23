@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8ca8c5cacd2b1a1a7b4f70615831d2901510045e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d7c137a75c0a021aa8bca3aec23da6c4d1ada300
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77024438"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868018"
 ---
 # <a name="quickstart---create-azure-vmware-solution-by-cloudsimple-service"></a>Быстрый запуск - Создайте решение Azure VMware с помощью сервиса CloudSimple
 
@@ -34,11 +34,11 @@ ms.locfileid: "77024438"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войти на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="create-the-service"></a>Создание службы
 
-1. Выберите **все услуги**.
+1. Выбор пункта **Все службы**.
 2. Поиск **службы CloudSimple**.
 
     ![Поиск облачных сервисов](media/create-cloudsimple-service-search.png)
@@ -63,7 +63,7 @@ ms.locfileid: "77024438"
 
 Для настройки возможностей с оплатой по мере вхаддля среды облачного облака Cloud первые узлы обеспечения на портале Azure.
 
-1. Выберите **все услуги**.
+1. Выбор пункта **Все службы**.
 2. Поиск **облачных простые узлы**.
 
     ![Поиск облачных простые узлы](media/create-cloudsimple-node-search.png)
@@ -80,11 +80,11 @@ ms.locfileid: "77024438"
 9. Выберите выделенное место для размещения ресурсов узла.
 10. Выберите [тип узла.](cloudsimple-node.md)
 11. Выберите количество узлов для обеспечения.
-12. Выберите **Обзор и Создайте**.
+12. Выберите **Review + Create** (Просмотреть и создать).
 13. Просмотрите настройки. Чтобы изменить любые настройки, нажмите **Предыдущий**.
-14. Выберите **Создать**.
+14. Нажмите кнопку **создания**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание частного облака и настройка среды](quickstart-create-private-cloud.md)
-* Подробнее о [сервисе CloudSimple](https://docs.azure.cloudsimple.com/cloudsimple-service)
+* Подробнее о [сервисе CloudSimple](https://docs.microsoft.com/azure/vmware-cloudsimple/cloudsimple-service)

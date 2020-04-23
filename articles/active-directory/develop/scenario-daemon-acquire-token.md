@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: a81f3ffb7ec190943c50127b129523badf0ef0a7
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: d755573b53eb63d85165fb73fe4b97298dbeff09
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80882987"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868997"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Приложение Daemon, которое вызывает веб-AIS - приобрести токен
 
@@ -173,7 +173,7 @@ private static IAuthenticationResult acquireToken() throws Exception {
 
 #### <a name="first-case-access-the-token-request-by-using-a-shared-secret"></a>Первый случай: Доступ к запросу маркера с помощью общего секрета
 
-```Text
+```HTTP
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity.
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
@@ -186,7 +186,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 
 #### <a name="second-case-access-the-token-request-by-using-a-certificate"></a>Второй случай: Доступ к запросу токенов с помощью сертификата
 
-```Text
+```HTTP
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clarity.
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
@@ -215,7 +215,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 Если при **Insufficient privileges to complete the operation** вызове API у администратора администратора-клиента требуется предоставить разрешения приложению. Смотрите шаг 6 Регистрация клиентского приложения выше.
 Обычно вы увидите ошибку, которая выглядит как эта ошибка:
 
-```JSon
+```json
 Failed to call the web API: Forbidden
 Content: {
   "error": {

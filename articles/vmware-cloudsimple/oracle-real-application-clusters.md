@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 733a225c66040cb2ab819f041647120c8b63b6a0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b945beaa7497e1ad19315bacf1284dd0cbc24d6a
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77016023"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81868075"
 ---
 # <a name="optimize-your-cloudsimple-private-cloud-for-installing-oracle-rac"></a>Оптимизируйте облачное частное облако для установки Oracle RAC
 
@@ -169,7 +169,7 @@ SQL > alter database add logfile thread 2 ('+ORCLRAC_REDO1','+ORCLRAC_REDO2') si
 
 политики vSAN определяют сбои в переносительном и дисковом полоске для данных, хранящихся на дисках VM.  Созданная политика хранения должна применяться на дисках VM при создании VM.
 
-1. [Войти на введомый клиент vSphere](https://docs.azure.cloudsimple.com/vsphere-access) вашего частного облака.
+1. [Войти на введомый клиент vSphere](https://docs.microsoft.com/azure/vmware-cloudsimple/vcenter-access) вашего частного облака.
 2. Из верхнего меню выберите **Политики и профили.**
 3. Из левого меню выберите **политики хранения VM,** а затем выберите **«Создайте политику хранения VM».**
 4. Введите значимое имя для политики и нажмите **NEXT**.

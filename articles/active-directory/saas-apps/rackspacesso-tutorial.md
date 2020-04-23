@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 31826f5d4d88c977f859a009bface2fddf3a1c88
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 98a160b361e316c87e61855825c2cc36fdbb06d1
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67093196"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870302"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rackspace-sso"></a>Руководство по Интеграция Azure Active Directory с Rackspace SSO
 
@@ -187,7 +187,7 @@ ms.locfileid: "67093196"
 
 ### <a name="set-up-attribute-mapping-in-the-rackspace-control-panel"></a>Настройка сопоставления атрибутов на панели управления Rackspace
 
-Rackspace использует **политику сопоставления атрибутов** для назначения ролей и групп Rackspace пользователям единого входа. **Политика сопоставления атрибутов** преобразует утверждения SAML в Azure AD в поля конфигурации пользователя, требуемые в Rackspace. См. дополнительные сведения в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/attribmapping-basics/). Некоторые замечания:
+Rackspace использует **политику сопоставления атрибутов** для назначения ролей и групп Rackspace пользователям единого входа. **Политика сопоставления атрибутов** преобразует утверждения SAML в Azure AD в поля конфигурации пользователя, требуемые в Rackspace. См. дополнительные сведения в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/appendix/map/). Некоторые замечания:
 
 * Если вы хотите назначить разные уровни доступа Rackspace с использованием групп Azure AD, необходимо включить утверждение групп в параметрах единого входа Azure для **Rackspace SSO**. **Политика сопоставления атрибутов** будет использоваться для сопоставления этих групп с требуемыми ролями и группами Rackspace:
 
@@ -226,7 +226,7 @@ mapping:
 > [!TIP]
 > Убедитесь, что используется текстовый редактор, который проверяет синтаксис YAML при редактировании файла политики.
 
-См. дополнительные примеры в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/attribmapping-basics/).
+См. дополнительные примеры в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/appendix/map/).
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: c4eddf68e964b412e7270319630f41fc4d802241
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: cca54e4e456fe766b190f64657cd1aca1d9520e0
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81733145"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869146"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Создание предложения модуля IoT Edge
 
@@ -223,6 +223,9 @@ ms.locfileid: "81733145"
 ### <a name="marketplace-images"></a>Изображения marketplace
 
 Предоставьте логотипы и изображения, чтобы использовать с вашим предложением. Все изображения должны быть в формате .png. Размытые изображения будут отклонены.
+
+>[!Note]
+>Если у вас есть непойская загрузка файлов, https://upload.xboxlive.com убедитесь, что локальная сеть не блокирует службу, используемую Центром партнеров.
 
 #### <a name="store-logos"></a>Логотипы Store
 
@@ -465,6 +468,6 @@ ms.locfileid: "81733145"
 
 Мы вышлем вам электронное письмо, чтобы сообщить вам, когда предварительный вариант предложения доступен для рассмотрения и утверждения. Чтобы опубликовать свое предложение для общественности (или если частное предложение, для частной аудитории), перейдите в Партнерский центр и выберите **Go-live**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обновление существующего предложения на коммерческом рынке](https://docs.microsoft.com//azure/marketplace/partner-center-portal/update-existing-offer)
