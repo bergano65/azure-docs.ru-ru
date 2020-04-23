@@ -1,25 +1,23 @@
 ---
 title: Внутренние компоненты службы Azure SignalR
-description: Узнайте о внутренних службах Azure SignalR, архитектуре, соединениях и способе передачи данных.
+description: Сведения о внутренних компонентах службы Azure SignalR, архитектуре, подключениях и способах передачи данных.
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 62afa5ee6993aa1bb3c7b5926e5320ab1fa510a2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8ba34edfc382f0f03abe080d78a6a47dcb65501b
+ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74157593"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105766"
 ---
 # <a name="azure-signalr-service-internals"></a>Внутренние компоненты службы Azure SignalR
 
-Служба Azure SignalR создана на основе платформы ASP.NET Core SignalR. Она также поддерживает ASP.NET SignalR как предварительную версию функции.
+Служба Azure SignalR создана на основе платформы ASP.NET Core SignalR. Он также поддерживает ASP.NET SignalR путем повторного внедрения протокола данных ASP.NET SignalR поверх платформы ASP.NET Core Framework.
 
-> Чтобы поддерживать ASP.NET SignalR, служба Azure SignalR повторно реализует протокол ASP.NET SignalR на базе платформы ASP.NET Core.
-
-Вы можете легко перенести локальный веб-узел ASP. NET Core SignalR для работы со Службой SignalR с минимальным изменением кода.
+Вы можете легко перенести локальное ASP.NET Core приложение SignalR или приложение SignalR ASP.NET для работы со службой SignalR с помощью нескольких строк кода.
 
 На схеме ниже описывается типичная архитектура для использования Службы SignalR с сервером приложений.
 

@@ -1,6 +1,6 @@
 ---
 title: Заметки о выпуске
-description: Узнайте о новых функциях и усовершенствованиях в службе баз данных Azure S'L и в документации базы данных Azure S'L
+description: Узнайте о новых возможностях и улучшениях в службе базы данных SQL Azure и документации по базе данных SQL Azure.
 services: sql-database
 author: stevestein
 ms.service: sql-database
@@ -9,117 +9,117 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: sstein
-ms.openlocfilehash: 7d922aa0727ad28054d050a29039951d3f04985f
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 27a62223970b0f697465ce9aa050f3fccbcae464
+ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383371"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82106429"
 ---
-# <a name="sql-database-release-notes"></a>Примечания к выпуску базы данных S'L
+# <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
-В этой статье перечислены функции базы данных S'L, которые в настоящее время находятся в открытом предварительном просмотре. Для обновления и усовершенствования [SQL Database service updates](https://azure.microsoft.com/updates/?product=sql-database)базы данных s'L см. Для получения обновлений и улучшений в других службах Azure [см.](https://azure.microsoft.com/updates)
+В этой статье перечислены функции базы данных SQL, которые в настоящее время доступны в общедоступной предварительной версии. Сведения об обновлениях и улучшениях базы данных SQL см. в статье [обновления службы базы данных SQL](https://azure.microsoft.com/updates/?product=sql-database). Обновления и улучшения других служб Azure см. в разделе [обновления служб](https://azure.microsoft.com/updates).
 
-## <a name="features-in-public-preview"></a>Особенности в публичном предварительном просмотре
+## <a name="features-in-public-preview"></a>Возможности общедоступной предварительной версии
 
-### <a name="single-database"></a>[Единая база данных](#tab/single-database)
+### <a name="single-database"></a>[Отдельная база данных](#tab/single-database)
 
 | Компонент | Сведения |
 | ---| --- |
-| Новые поколения оборудования серии Fsv2 и M-серии| Для получения информации, см [Аппаратные поколения](sql-database-service-tiers-vcore.md#hardware-generations).|
-| Ускоренное восстановление базы данных с помощью единых баз данных и эластичных пулов | Для получения [информации, см Ускоренное восстановление базы данных](sql-database-accelerated-database-recovery.md).|
-|Приблизительный подсчет различных объектов|Для получения информации, [см.](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing)|
-|Режим пакетов на Rowstore (под уровнем совместимости 150)|Для получения информации [см. режим пакетов на Rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore).|
-| Обнаружение и классификация данных  |Для получения информации [&](sql-database-data-discovery-and-classification.md)см.|
-| Задания обработки эластичных баз данных | Для получения информации [см. Создать, настроить и управлять эластичными заданиями.](elastic-jobs-overview.md) |
-| Эластичные запросы | Для получения информации смотрите [обзор запроса Elastic](sql-database-elastic-query-overview.md). |
-| Эластичные транзакции | [Распределенные транзакции по облачным базам данных.](sql-database-elastic-transactions-overview.md) |
-|Обратная связь с памятью Гранта (режим строки) (под уровнем совместимости 150)|Для получения информации, см [Память Грант Обратная связь (режим строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback).|
-| Редактор запросов на портале Azure |Для получения информации посетите [редактор запроса портала Azure для подключения и запроса данных.](sql-database-connect-query-portal.md)|
-| R-сервисы / машинное обучение с едиными базами данных и эластичными пулами |Для получения информации можно ознакомиться на [службах машинного обучения в базе данных Azure S'L.](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database)|
-|Аналитика SQL|Для получения информации, [см.](../azure-monitor/insights/azure-sql.md)|
-|Переменная переменная отложенная компиляция таблицы (под уровнем совместимости 150)|Для получения информации [см. Таблица Переменная Отложенная компиляция](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation).|
+| Новые поколения оборудования серии серия fsv2 и M| Дополнительные сведения см. в разделе [поколения оборудования](sql-database-service-tiers-vcore.md#hardware-generations).|
+| Ускоренное восстановление базы данных с отдельными базами данных и эластичными пулами | Дополнительные сведения см. в разделе [Ускорение восстановления базы данных](sql-database-accelerated-database-recovery.md).|
+|Приблизительный подсчет различных объектов|Дополнительные сведения см. в разделе [приблизительный подсчет DISTINCT](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing).|
+|Пакетный режим в rowstore (на уровне совместимости 150)|Дополнительные сведения см. [в разделе пакетный режим в rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore).|
+| Обнаружение и классификация данных  |Дополнительные сведения см. в разделе [база данных SQL Azure и обнаружение данных хранилища данных sql & классификация](sql-database-data-discovery-and-classification.md).|
+| Задания обработки эластичных баз данных | Дополнительные сведения см. в статье [Создание и настройка эластичных заданий и управление ими](elastic-jobs-overview.md). |
+| Эластичные запросы | Дополнительные сведения см. в разделе [Общие сведения о эластичных запросах](sql-database-elastic-query-overview.md). |
+| Эластичные транзакции | [Распределенные транзакции между облачными базами данных](sql-database-elastic-transactions-overview.md). |
+|Обратная связь выделения памяти (режим строки) (на уровне совместимости 150)|Дополнительные сведения см. в разделе [обратная связь предоставления памяти (режим строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback).|
+| Редактор запросов в портал Azure |Дополнительные сведения см. в разделе [Использование редактора запросов SQL портал Azure для подключения и запроса данных](sql-database-connect-query-portal.md).|
+| Службы R/машинное обучение с отдельными базами данных и эластичными пулами |Дополнительные сведения см. [в разделе службы машинного обучения в базе данных SQL Azure](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database).|
+|Аналитика SQL|Дополнительные сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md).|
+|Отложенная компиляция табличной переменной (на уровне совместимости 150)|Дополнительные сведения см. в разделе [табличная переменная Отложенная компиляция](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation).|
 | &nbsp; |
 
-### <a name="managed-instance"></a>[Управляемая инстанция](#tab/managed-instance)
+### <a name="managed-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
 | Компонент | Сведения |
 | ---| --- |
-| <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров S'L в облако. |
-| <a href="https://aka.ms/managed-instance-aadlogins">Принципы серверов Azure AD уровня инстанций (логины)</a> | Создавайте логины на уровне сервера с помощью заявления <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN FROM EXTERNAL PROVIDER.</a> |
-| [репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Воспроизвести изменения из таблиц в другие базы данных, размещенные в управляемых инстанциях, единичных базах данных или в экземплярах сервера S'L, или обновите таблицы, когда некоторые строки изменены в других управляемых инстанциях или экземпляре сервера S'L. Для получения информации [см. Репликацию настройки в управляемой базой данных данных данных azure S'L.](replication-with-sql-database-managed-instance.md) |
-| Обнаружение угроз |Для получения информации [см. Наверждем обнаружение угроз в управляемом экземпляре базы данных Azure S'L Database.](sql-database-managed-instance-threat-detection.md)|
-| Долгосрочное хранение резервных копий | Для получения информации [см. Нафотось о долгосрочном резервном копировании в управляемом экземпляре базы данных Azure S'L](sql-database-managed-instance-long-term-backup-retention-configure.md)Database. | 
+| <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
+| <a href="https://aka.ms/managed-instance-aadlogins">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена входа на уровне сервера, используя инструкцию <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Create login из внешнего поставщика</a> . |
+| [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Репликация изменений из таблиц в другие базы данных, размещенные на управляемых экземплярах, отдельных базах данных или SQL Server экземплярах, или при изменении некоторых строк в других управляемых экземплярах или экземплярах SQL Server. Дополнительные сведения см. [в статье Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md). |
+| Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-threat-detection.md).|
+| Долгосрочное хранение резервных копий | Дополнительные сведения см. [в статье Настройка долгосрочного резервного копирования в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-long-term-backup-retention-configure.md). | 
 
 ---
 
-## <a name="managed-instance---new-features-and-known-issues"></a>Управляемый экземпляр - новые функции и известные проблемы
+## <a name="managed-instance---new-features-and-known-issues"></a>Управляемый экземпляр — новые функции и известные проблемы
 
-### <a name="managed-instance-h2-2019-updates"></a>Управляемый экземпляр H2 2019 обновления
+### <a name="managed-instance-h2-2019-updates"></a>Обновления управляемого экземпляра H2 2019
 
-- [Конфигурация подсети с помощью сервиса](https://azure.microsoft.com/updates/service-aided-subnet-configuration-for-managed-instance-in-azure-sql-database-available/) Безопасный и удобный способ управления конфигурацией подсети, где вы управляете трафиком данных при управляемом экземпляре, обеспечивает непрерывный поток трафика управления
-- [Прозрачное шифрование данных (TDE) с Bring Your Own Key (BYOK)](https://azure.microsoft.com/updates/general-avilability-transparent-data-encryption-with-customer-managed-keys-for-azure-sql-database-managed-instance/) позволяет принести свой собственный ключ (BYOK) сценарий для защиты данных в состоянии покоя и позволяет организациям отделить обязанности по управлению ключами и данными.
-- [Группы автоматического отказа](https://azure.microsoft.com/updates/azure-sql-database-auto-failover-groups-feature-now-available-in-all-regions/) позволяют воспроизвести все базы данных от основного экземпляра до вторичного экземпляра в другом регионе.
-- Наверстируйте поведение управляемого экземпляра с [помощью глобальных флагов трассировки.](https://azure.microsoft.com/updates/global-trace-flags-are-now-available-in-azure-sql-database-managed-instance/)
+- [Конфигурация подсети с разавтоматизированной службой](https://azure.microsoft.com/updates/service-aided-subnet-configuration-for-managed-instance-in-azure-sql-database-available/) Безопасный и удобный способ управления конфигурацией подсети, в которой контролируется трафик данных, а управляемый экземпляр обеспечивает непрерывный поток трафика управления.
+- [Прозрачное шифрование данных (TDE) с создание собственных ключей (BYOK)](https://azure.microsoft.com/updates/general-avilability-transparent-data-encryption-with-customer-managed-keys-for-azure-sql-database-managed-instance/) позволяет применять собственный ключ (BYOK) для защиты данных в неактивных целях и позволяет организациям отделить обязанности по управлению ключами и данными.
+- [Группы автоматической отработки отказа](https://azure.microsoft.com/updates/azure-sql-database-auto-failover-groups-feature-now-available-in-all-regions/) позволяют реплицировать все базы данных с первичного экземпляра на дополнительный экземпляр в другом регионе.
+- Настройте поведение управляемого экземпляра с помощью [глобальных флагов трассировки](https://azure.microsoft.com/updates/global-trace-flags-are-now-available-in-azure-sql-database-managed-instance/).
 
-### <a name="managed-instance-h1-2019-updates"></a>Управляемый экземпляр H1 2019 обновления
+### <a name="managed-instance-h1-2019-updates"></a>Обновления управляемого экземпляра H1 2019
 
-Следующие функции включены в модели развертывания управляемых экземпляров в H1 2019:
-  - Поддержка подписки с <a href="https://aka.ms/sql-mi-visual-studio-subscribers">ежемесячным кредитом Azure для подписчиков Visual Studio</a> и увеличение [региональных лимитов.](sql-database-managed-instance-resource-limits.md#regional-resource-limitations)
+Следующие функции включены в модели развертывания управляемого экземпляра в H1 2019:
+  - Поддержка подписок с <a href="https://aka.ms/sql-mi-visual-studio-subscribers">ежемесячным кредитом Azure для подписчиков Visual Studio</a> и повышенными [региональными ограничениями](sql-database-managed-instance-resource-limits.md#regional-resource-limitations).
   - Поддержка <a href="https://docs.microsoft.com/sharepoint/administration/deploy-azure-sql-managed-instance-with-sharepoint-servers-2016-2019">SharePoint 2016 и SharePoint 2019</a>, а также <a href="https://docs.microsoft.com/business-applications-release-notes/october18/dynamics365-business-central/support-for-azure-sql-database-managed-instance">Dynamics 365 Business Central</a>.
-  - Создавайте экземпляры с <a href="https://aka.ms/managed-instance-collation">коллажами уровня сервера</a> и <a href="https://azure.microsoft.com/updates/managed-instance-time-zone-ga/">часовыми поясами</a> по вашему выбору.
-  - Управляемые экземпляры теперь защищены <a href="sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md">встроенным брандмауэром.</a>
-  - Настройка экземпляров для использования [общедоступных конечных точек,](sql-database-managed-instance-public-endpoint-configure.md) [прокси переопределить](sql-database-connectivity-architecture.md#connection-policy) соединение, чтобы получить лучшую производительность сети, <a href="https://aka.ms/four-cores-sql-mi-update">4 vCores на Gen5 аппаратного поколения</a> или настроить <a href="https://aka.ms/managed-instance-configurable-backup-retention">резервное копирование удержания до 35 дней</a> для точки в срок восстановления. Долгосрочное сохранение резервного копирования (до 10 лет) по-прежнему не включено, так что вы можете использовать <a href="https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server">только для копирования резервные копии</a> в качестве альтернативы.
-  - Новые функции позволяют <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">геовосстановить базу данных в другой центр обработки данных с помощью PowerShell,</a> [переименовать базу данных,](https://azure.microsoft.com/updates/azure-sql-database-managed-instance-database-rename-is-supported/) [удалить виртуальный кластер.](sql-database-managed-instance-delete-virtual-cluster.md)
-  - Новая встроенная [роль вкладчика инстанций](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-managed-instance-contributor) позволяет разделить обязанности (SoD) в соответствии с принципами безопасности и соблюдать корпоративные стандарты.
-  - Управляемый экземпляр доступен в следующих регионах правительства Azure в GA (US Gov Texas, US Gov Arizona), а также в Китае North 2 и China East 2. Он также доступен в следующих общественных регионах: Австралия Центральной, Австралия Центральной 2, Бразилия на юге, Франция на юге, ОАЭ Центральной, ОАЭ Севера, северной части Африки, южная Африка Запад.
+  - Создайте экземпляры с <a href="https://aka.ms/managed-instance-collation">параметрами сортировки на уровне сервера</a> и <a href="https://azure.microsoft.com/updates/managed-instance-time-zone-ga/">часовым поясом</a> по своему усмотрению.
+  - Управляемые экземпляры теперь защищены <a href="sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md">встроенным брандмауэром</a>.
+  - Настройте экземпляры на использование [общедоступных конечных точек](sql-database-managed-instance-public-endpoint-configure.md), [Переопределение прокси-сервера](sql-database-connectivity-architecture.md#connection-policy) , чтобы повысить производительность сети, <a href="https://aka.ms/four-cores-sql-mi-update">4 виртуальных ядер на го поколения поколение оборудования</a> или <a href="https://aka.ms/managed-instance-configurable-backup-retention">настройте срок хранения резервных копий до 35 дней</a> для восстановления на момент времени. Долгосрочное хранение резервных копий (до 10 лет) по-прежнему не включено, поэтому в качестве альтернативы можно использовать <a href="https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server">резервные копии только для копирования</a> .
+  - Новые возможности позволяют выполнять <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">геовосстановление базы данных в другом центре обработки данных с помощью PowerShell</a>, [переименования базы данных](https://azure.microsoft.com/updates/azure-sql-database-managed-instance-database-rename-is-supported/), [удаления виртуального кластера](sql-database-managed-instance-delete-virtual-cluster.md).
+  - Новая встроенная [роль участника «экземпляр](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-managed-instance-contributor) » обеспечивает соответствие требованиям к разделению (разделения обязанностей) с учетом принципов безопасности и соответствия стандартам предприятия.
+  - Управляемый экземпляр доступен в следующих регионах Azure для государственных организаций (US Gov (Техас), US Gov (Аризона)), а также в Северный Китай 2 и Восточный Китай 2. Она также доступна в следующих общедоступных регионах: Центральная Австралия, Центральная Австралия 2, Южная Бразилия, Юго-Восточная часть Франции, Центральная ОАЭ, Северная Народно-Восточная, Южная Африка, Северная Африка, Юго-Африканская Республика.
 
 ### <a name="known-issues"></a>Известные проблемы
 
-|Проблемы  |Дата обнаружена  |Состояние  |Дата решена  |
+|Проблема  |Дата обнаружения  |Status  |Дата разрешения  |
 |---------|---------|---------|---------|
-|[Разрешения на группу ресурсов, не применяемые к Управляемой инстанции](#permissions-on-resource-group-not-applied-to-managed-instance)|Февраль 2020 г.|Имеет обходной путь||
-|[Ограничение ручного сбоя через портал для групп неудач](#limitation-of-manual-failover-via-portal-for-failover-groups)|Январь 2020 г.|Имеет обходной путь||
-|[Роли агента S'L нуждаются в явных разрешениях EXECUTE для входа в систему, не относясь к sysadmin](#in-memory-oltp-memory-limits-are-not-applied)|Декабрь 2019 г.|Имеет обходной путь||
-|[Рабочие места агента Пос-L могут быть прерваны перезагрузкой процесса агента](#sql-agent-jobs-can-be-interrupted-by-agent-process-restart)|Декабрь 2019 г.|Без обхода|Март 2020 г.|
-|[Логины и пользователи AAD не поддерживаются в SSDT](#aad-logins-and-users-are-not-supported-in-ssdt)|Ноябрь 2019 года|Без обхода||
-|[Ограничения памяти OLTP в памяти в памяти не применяются](#in-memory-oltp-memory-limits-are-not-applied)|Октябрь 2019 г.|Имеет обходной путь||
-|[Неправильная ошибка возвращается при попытке удалить файл, который не пуст](#wrong-error-returned-while-trying-to-remove-a-file-that-is-not-empty)|Октябрь 2019 г.|Имеет обходной путь||
-|[Изменение уровня службы и создание операций экземпляров блокируется текущим восстановлением базы данных](#change-service-tier-and-create-instance-operations-are-blocked-by-ongoing-database-restore)|сентябрь 2019 г.|Имеет обходной путь||
-|[Ресурсный управляющий на уровне бизнес-критических услуг, возможно, потребуется перенастроить после сбоя](#resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover)|сентябрь 2019 г.|Имеет обходной путь||
-|[Диалоги по перекрестной базе данных Service Broker должны быть переинализованы после обновления уровня обслуживания](#cross-database-service-broker-dialogs-must-be-re-initialized-after-service-tier-upgrade)|Авг 2019|Имеет обходной путь||
-|[Олицетворение типов входа Azure AD не поддерживается](#impersonification-of-azure-ad-login-types-is-not-supported)|Июл 2019|Без обхода||
-|[@queryпараметр не поддерживается в sp_send_db_mail](#-parameter-not-supported-in-sp_send_db_mail)|Апрель 2019|Без обхода||
-|[Транзакционная репликация должна быть перенастроена после геоотказа](#transactional-replication-must-be-reconfigured-after-geo-failover)|Март 2019 г.|Без обхода||
-|[Временная база данных используется во время операции RESTORE](#temporary-database-is-used-during-restore-operation)||Имеет обходной путь||
-|[Структура и контент TEMPDB воссозданы](#tempdb-structure-and-content-is-re-created)||Без обхода||
-|[Превышение дискового пространства с небольшими файлами баз данных](#exceeding-storage-space-with-small-database-files)||Имеет обходной путь||
-|[Значения GUID, отображаемые вместо названий баз данных](#guid-values-shown-instead-of-database-names)||Имеет обходной путь||
-|[Ошибки не сохраняются](#error-logs-arent-persisted)||Без обхода||
-|[Область транзакций на двух базах данных в одном экземпляре не поддерживается](#transaction-scope-on-two-databases-within-the-same-instance-isnt-supported)||Имеет обходной путь||
-|[Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес](#clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address)||Имеет обходной путь||
-|Согласованность базы данных не проверена с помощью DBCC CHECKDB после восстановления базы данных из Azure Blob Storage.||"Разрешено"|Ноябрь 2019 года|
-|Восстановление базы данных Point-in-time от уровня Бизнес критического до общего назначения не будет успешным, если исходная база данных содержит объекты OLTP-памяти в памяти.||"Разрешено"|Октябрь 2019 г.|
-|Функция "Почта базы данных" с внешними (не-Azure) почтовыми серверами с использованием безопасного соединения||"Разрешено"|Октябрь 2019 г.|
-|Содержащиеся базы данных, не поддерживаемые в управляемом экземпляре||"Разрешено"|Авг 2019|
+|[Разрешения для группы ресурсов, которые не применяются к Управляемый экземпляр](#permissions-on-resource-group-not-applied-to-managed-instance)|Фев 2020|Есть обходной путь||
+|[Ограничение отработки отказа вручную с помощью портала для групп отработки отказа](#limitation-of-manual-failover-via-portal-for-failover-groups)|Янв 2020|Есть обходной путь||
+|[Ролям агента SQL требуются явные разрешения на выполнение для имен входа, отличных от sysadmin](#in-memory-oltp-memory-limits-are-not-applied)|Dec 2019|Есть обходной путь||
+|[Задания агента SQL Server могут быть прерваны с помощью перезапуска процесса агента](#sql-agent-jobs-can-be-interrupted-by-agent-process-restart)|Dec 2019|Обходной путь отсутствует|Мар 2020|
+|[Имена входа и пользователи AAD не поддерживаются в SSDT](#aad-logins-and-users-are-not-supported-in-ssdt)|2019 ноября|Обходной путь отсутствует||
+|[Ограничения памяти выполняющейся в памяти OLTP не применяются](#in-memory-oltp-memory-limits-are-not-applied)|Октябрь 2019|Есть обходной путь||
+|[При попытке удаления непустого файла возвращена неверная ошибка](#wrong-error-returned-while-trying-to-remove-a-file-that-is-not-empty)|Октябрь 2019|Есть обходной путь||
+|[Изменение уровня служб и операций создания экземпляра заблокировано текущим восстановлением базы данных](#change-service-tier-and-create-instance-operations-are-blocked-by-ongoing-database-restore)|Sep 2019|Есть обходной путь||
+|[Resource Governor на уровне служб критически важный для бизнеса может потребоваться перенастроить после отработки отказа](#resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover)|Sep 2019|Есть обходной путь||
+|[После обновления уровня службы необходимо повторно инициализировать диалоговые окна межбазовых Service Broker](#cross-database-service-broker-dialogs-must-be-re-initialized-after-service-tier-upgrade)|Авг 2019|Есть обходной путь||
+|[Имперсонификатион типов входа Azure AD не поддерживается](#impersonification-of-azure-ad-login-types-is-not-supported)|Июл 2019|Обходной путь отсутствует||
+|[@queryпараметр не поддерживается в sp_send_db_mail](#-parameter-not-supported-in-sp_send_db_mail)|Апр 2019|Обходной путь отсутствует||
+|[После географической отработки отказа необходимо перенастроить репликацию транзакций](#transactional-replication-must-be-reconfigured-after-geo-failover)|Мар 2019|Обходной путь отсутствует||
+|[Во время операции восстановления используется временная база данных](#temporary-database-is-used-during-restore-operation)||Есть обходной путь||
+|[Структура и содержимое базы данных TEMPDB создано повторно](#tempdb-structure-and-content-is-re-created)||Обходной путь отсутствует||
+|[Превышение дискового пространства с небольшими файлами баз данных](#exceeding-storage-space-with-small-database-files)||Есть обходной путь||
+|[Значения GUID, отображаемые вместо имен баз данных](#guid-values-shown-instead-of-database-names)||Есть обходной путь||
+|[Журналы ошибок не сохраняются](#error-logs-arent-persisted)||Обходной путь отсутствует||
+|[Область транзакций в двух базах данных в одном и том же экземпляре не поддерживается](#transaction-scope-on-two-databases-within-the-same-instance-isnt-supported)||Есть обходной путь|Март 2020 г.|
+|[Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес.](#clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address)||Есть обходной путь||
+|Согласованность базы данных не проверена с помощью инструкции DBCC CHECKDB после восстановления базы данных из хранилища BLOB-объектов Azure.||"Разрешено"|2019 ноября|
+|Восстановление базы данных на момент времени с уровня критически важный для бизнеса на уровень общего назначения не будет выполняться, если база данных-источник содержит объекты OLTP в памяти.||"Разрешено"|Октябрь 2019|
+|Database Mailная функция с внешними (не Azure) почтовыми серверами с использованием безопасного подключения||"Разрешено"|Октябрь 2019|
+|Автономные базы данных не поддерживаются в управляемом экземпляре||"Разрешено"|Авг 2019|
 
-### <a name="permissions-on-resource-group-not-applied-to-managed-instance"></a>Разрешения на группу ресурсов, не применяемые к управляемому экземпляру
+### <a name="permissions-on-resource-group-not-applied-to-managed-instance"></a>Разрешения для группы ресурсов, не примененные к управляемому экземпляру
 
-Роль управляемого вкладчика RBAC при применении к группе ресурсов (RG) не применяется к Управляемой инстанции и не имеет эффекта.
+Роль RBAC Управляемый экземпляр участника, применяемая к группе ресурсов (RG), не применяется к Управляемый экземпляр и не действует.
 
-**Обходной путь**: Настройка Управляемой роли вкладчика инстанций для пользователей на уровне подписки.
+**Обходное решение**. Настройте роль участника управляемый экземпляр для пользователей на уровне подписки.
 
-### <a name="limitation-of-manual-failover-via-portal-for-failover-groups"></a>Ограничение ручного сбоя через портал для групп неудач
+### <a name="limitation-of-manual-failover-via-portal-for-failover-groups"></a>Ограничение отработки отказа вручную с помощью портала для групп отработки отказа
 
-Если группа failover охватывает экземпляры в разных группах подписчиков Azure или группах ресурсов, сбой вручную не может быть инициирован из основного экземпляра в группе failover.
+Если группа отработки отказа охватывает экземпляры в разных подписках Azure или группах ресурсов, отработка отказа вручную не может быть инициирована из основного экземпляра в группе отработки отказа.
 
-**Обход :** Инициировать сбой через портал из гео-вторичного экземпляра.
+**Обходное решение**. Инициируйте отработку отказа с помощью портала из экземпляра Geo-Secondary.
 
-### <a name="sql-agent-roles-need-explicit-execute-permissions-for-non-sysadmin-logins"></a>Роли агента S'L нуждаются в явных разрешениях EXECUTE для входа в систему, не относясь к sysadmin
+### <a name="sql-agent-roles-need-explicit-execute-permissions-for-non-sysadmin-logins"></a>Ролям агента SQL требуются явные разрешения на выполнение для имен входа, отличных от sysadmin
 
-Если логины, не связанные с sysadmin, добавляются к какой-либо из [ролей фиксированной базы данных s'L Agent,](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent-fixed-database-roles)существует проблема, в которой явные разрешения EXECUTE должны быть предоставлены мастеру, хранящим процедуры для работы этих логинов. В случае возникновения этой проблемы будет показано сообщение об ошибке "Разрешение EXECUTE было отказано на объекте <object_name> (Microsoft S'L Server, Ошибка: 229)" будет отображаться.
+Если имена входа, отличные от системного администратора, добавляются к любой из [предопределенных ролей базы данных агента SQL Server](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent-fixed-database-roles), существует проблема, в которой для работы этих имен входа должны быть предоставлены явные разрешения на выполнение. В случае возникновения этой проблемы появляется сообщение об ошибке "недопустимое разрешение на выполнение объекта <object_name будет показано> (Microsoft SQL Server, ошибка: 229)".
 
-**Обход:** Как только вы добавляете логины к одной из функций фиксированной базы данных агента S'LL: S'LAgentUserRole, S'LAgentReaderRole или S'LAgentOperatorRole, для каждой из входов, добавленных в эти роли, ниже t-S'L скрипт явно предоставляет сяорна разрешения на сохраненные процедуры, перечисленные.
+**Решение**. После добавления имен входа в одну из предопределенных ролей базы данных агента SQL: SQLAgentUserRole, SQLAgentReaderRole или SQLAgentOperatorRole для каждого имени входа, добавленного в эти роли, выполняет приведенный ниже скрипт T-SQL для явного предоставления разрешений EXECUTE для перечисленных хранимых процедур.
 
 ```tsql
 USE [master]
@@ -131,90 +131,90 @@ GRANT EXECUTE ON master.dbo.xp_sqlagent_is_starting TO [login_name]
 GRANT EXECUTE ON master.dbo.xp_sqlagent_notify TO [login_name]
 ```
 
-### <a name="sql-agent-jobs-can-be-interrupted-by-agent-process-restart"></a>Рабочие места агента Пос-L могут быть прерваны перезагрузкой процесса агента
+### <a name="sql-agent-jobs-can-be-interrupted-by-agent-process-restart"></a>Задания агента SQL Server могут быть прерваны с помощью перезапуска процесса агента
 
-СЗЛ Агент создает новую сессию каждый раз, когда задание начинается, постепенно увеличивая потребление памяти. Чтобы избежать попадания на внутренний предел памяти, который блокирует выполнение запланированных заданий, процесс агента будет перезапущен, как только его потребление памяти достигнет порога. Это может привести к прерыванию выполнения заданий, работающих в момент перезагрузки.
+Агент SQL создает новый сеанс при каждом запуске задания, постепенно увеличивая потребление памяти. Чтобы избежать попадания в пределы внутренней памяти, которая может блокировать выполнение запланированных заданий, процесс агента будет перезапущен после достижения порогового значения потребления памяти. Это может привести к прерыванию выполнения заданий, выполняемых в момент перезапуска.
 
-### <a name="in-memory-oltp-memory-limits-are-not-applied"></a>Ограничения памяти OLTP в памяти в памяти не применяются
+### <a name="in-memory-oltp-memory-limits-are-not-applied"></a>Ограничения памяти выполняющейся в памяти OLTP не применяются
 
-Бизнес Критический сервис-уровень не будет правильно применять [максимальные ограничения памяти для объектов, оптимизированных памятью](sql-database-managed-instance-resource-limits.md#in-memory-oltp-available-space) в некоторых случаях. Управляемый экземпляр может позволить рабочей нагрузке использовать больше памяти для операций In-memory OLTP, что может повлиять на доступность и стабильность экземпляра. Запросы OLTP в памяти, достигающие пределов, могут не выйти из строя немедленно. Эта проблема будет исправлена в ближайшее время. Запросы, которые используют больше памяти in-memory OLTP, сбой быстрее, если они достигают [пределов.](sql-database-managed-instance-resource-limits.md#in-memory-oltp-available-space)
+Критически важный для бизнеса уровня служб не будет правильно применять [максимальные ограничения памяти для оптимизированных для памяти объектов](sql-database-managed-instance-resource-limits.md#in-memory-oltp-available-space) в некоторых случаях. Управляемый экземпляр может позволить рабочей нагрузке использовать больше памяти для операций OLTP в памяти, что может повлиять на доступность и стабильность экземпляра. Запросы выполняющейся в памяти OLTP, которые достигли ограничений, могут не завершаться сбоем немедленно. Эта проблема будет исправлена в ближайшее время. Запросы, в которых используется больше памяти OLTP в памяти, будут завершаться сбоем быстрее, если достигнут [предел](sql-database-managed-instance-resource-limits.md#in-memory-oltp-available-space).
 
-**Обход:** [Мониторинг использования хранилища в памяти OLTP](https://docs.microsoft.com/azure/sql-database/sql-database-in-memory-oltp-monitoring) с помощью [студии управления серверами S'L,](/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage#bkmk_Monitoring) чтобы гарантировать, что рабочая нагрузка не использует больше, чем доступная память. Увеличьте лимиты памяти, зависят от количества vCore, или оптимизируйте рабочую нагрузку, чтобы использовать меньше памяти.
+**Обходное решение.** [отслеживайте использование хранилища выполняющейся в памяти OLTP](https://docs.microsoft.com/azure/sql-database/sql-database-in-memory-oltp-monitoring) с помощью [SQL Server Management Studio](/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage#bkmk_Monitoring) , чтобы убедиться, что Рабочая нагрузка не использует больше доступной памяти. Увеличьте ограничения памяти, зависящие от числа виртуальных ядер, или оптимизируйте рабочую нагрузку для использования меньшего объема памяти.
 
-### <a name="wrong-error-returned-while-trying-to-remove-a-file-that-is-not-empty"></a>Неправильная ошибка возвращается при попытке удалить файл, который не пуст
+### <a name="wrong-error-returned-while-trying-to-remove-a-file-that-is-not-empty"></a>При попытке удаления непустого файла возвращена неверная ошибка
 
-СЗЛ Сервер /Управляемый instance [не позволяет пользователю отказаться от файла, который не пуст.](/sql/relational-databases/databases/delete-data-or-log-files-from-a-database#Prerequisites) Если вы попытаетесь удалить непустой файл данных с помощью `ALTER DATABASE REMOVE FILE` оператора, ошибка `Msg 5042 – The file '<file_name>' cannot be removed because it is not empty` не будет немедленно возвращена. Управляемый Instance будет продолжать пытаться отказаться от файла `Internal server error`и операция не удастся после 30минут с .
+SQL Server и Управляемый экземпляр [не позволяют пользователю удалять непустые файлы](/sql/relational-databases/databases/delete-data-or-log-files-from-a-database#Prerequisites). Если попытаться удалить непустой файл данных с помощью `ALTER DATABASE REMOVE FILE` инструкции, то эта ошибка `Msg 5042 – The file '<file_name>' cannot be removed because it is not empty` не будет немедленно возвращена. Управляемый экземпляр будет пытаться удалить файл, и операция завершится ошибкой после 30 мин с `Internal server error`.
 
-**Обход:** Удалить содержимое файла `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)` с помощью команды. Если это единственный файл в группе файлов, вам необходимо удалить данные из таблицы или раздела, связанные с этой группой файлов, прежде чем уменьшить файл, и дополнительно загрузить эти данные в другую таблицу / раздел.
+Инструкции по **решению**: удалите содержимое файла с помощью `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)` команды. Если это единственный файл в файловой группе, необходимо удалить данные из таблицы или секции, связанной с этой файловой группой, перед сжатием файла и при необходимости загрузить эти данные в другую таблицу или секцию.
 
-### <a name="change-service-tier-and-create-instance-operations-are-blocked-by-ongoing-database-restore"></a>Изменение уровня службы и создание операций экземпляров блокируется текущим восстановлением базы данных
+### <a name="change-service-tier-and-create-instance-operations-are-blocked-by-ongoing-database-restore"></a>Изменение уровня служб и операций создания экземпляра заблокировано текущим восстановлением базы данных
 
-Текущее `RESTORE` заявление, процесс миграции службы обработки данных и встроенное время восстановления времени блокируют обновление уровня службы или изменение размера существующего экземпляра и создание новых экземпляров до завершения процесса восстановления. Процесс восстановления блокирует эти операции в управляемых экземплярах и пулах экземпляров в той же подсети, где работает процесс восстановления. Экземпляры в экземплярах не затрагиваются. Создание или изменение операций уровня обслуживания не потерпит неудачу или тайм-аут - они будут продолжены после завершения или отмены процесса восстановления.
+Непрерывная `RESTORE` инструкция, процесс миграции данных и встроенное восстановление на момент времени будут блокировать обновление уровня служб или изменение размера существующего экземпляра и создание новых экземпляров до завершения процесса восстановления. Процесс восстановления блокирует эти операции с управляемыми экземплярами и пулами экземпляров в той же подсети, где выполняется процесс восстановления. Экземпляры в пулах экземпляров не затрагиваются. Операции создания или изменения уровня служб не будут завершаться сбоем или превышено время ожидания — они будут продолжены после завершения или отмены процесса восстановления.
 
-**Обход:** Подождите, пока процесс восстановления не завершится, или отмените процесс восстановления, если работа создания или обновления уровня обслуживания имеет более высокий приоритет.
+**Решение**. Дождитесь завершения процесса восстановления или отмените процесс восстановления, если операция создания или обновления уровня службы имеет более высокий приоритет.
 
-### <a name="resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover"></a>Ресурсный управляющий на уровне бизнес-критических услуг, возможно, потребуется перенастроить после сбоя
+### <a name="resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover"></a>Resource Governor на уровне служб критически важный для бизнеса может потребоваться перенастроить после отработки отказа
 
-Функция [«Губернатор ресурсов»,](/sql/relational-databases/resource-governor/resource-governor) позволяющая ограничить ресурсы, назначенные рабочей нагрузке пользователя, может неправильно классифицировать некоторые рабочие нагрузки пользователя после сбоя или инициированного пользователем изменения уровня обслуживания (например, изменение размера хранилища max vCore или max instance).
+Функция [Resource Governor](/sql/relational-databases/resource-governor/resource-governor) , которая позволяет ограничить ресурсы, назначенные пользовательской рабочей нагрузке, может неправильно классифицировать определенную рабочую нагрузку пользователя после отработки отказа или изменения уровня обслуживания, инициированного пользователем (например, изменение максимального Виртуальное ядро или максимального размера хранилища экземпляра).
 
-**Обход : Выполняйте** `ALTER RESOURCE GOVERNOR RECONFIGURE` периодически или в рамках работы агента S'L, выполняющей задачу S'L при запуске экземпляра при использовании [ресурсного управляющего.](/sql/relational-databases/resource-governor/resource-governor)
+**Workaround**Инструкции по решению `ALTER RESOURCE GOVERNOR RECONFIGURE` : периодически запускайте или как часть задания агента SQL, которое выполняет задачу SQL при запуске экземпляра, если используется [Resource Governor](/sql/relational-databases/resource-governor/resource-governor).
 
-### <a name="cross-database-service-broker-dialogs-must-be-re-initialized-after-service-tier-upgrade"></a>Диалоги по перекрестной базе данных Service Broker должны быть переинализованы после обновления уровня обслуживания
+### <a name="cross-database-service-broker-dialogs-must-be-re-initialized-after-service-tier-upgrade"></a>После обновления уровня службы необходимо повторно инициализировать диалоговые окна межбазовых Service Broker
 
-Диалоги службы по перекрестной базе данных службы брокера перестанут доставлять сообщения службам в других базах данных после изменения работы уровня обслуживания. Сообщения **не потеряны,** и они могут быть найдены в очереди отправителя. Любое изменение vCores или размера хранилища экземпляров в Управляемом экземпляре приведет к `service_broke_guid` изменению значения в [представлении sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql) для всех баз данных. Любой созданный `DIALOG` с помощью [заявления BEGIN DIALOG,](/sql/t-sql/statements/begin-dialog-conversation-transact-sql) которое ссылается на сервисных брокеров в другой базе данных, перестанет доставлять сообщения в целевую службу.
+Межбазовые Service Broker диалоговые окна перестают предоставлять сообщения службам в других базах данных после изменения уровня служб. Сообщения **не теряются** , и их можно найти в очереди отправителя. Любое изменение размера хранилища виртуальных ядер или экземпляра в Управляемый экземпляр приведет к изменению `service_broke_guid` значения в представлении [sys. databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql) для всех баз данных. Все `DIALOG` созданные с помощью инструкции [BEGIN DIALOG](/sql/t-sql/statements/begin-dialog-conversation-transact-sql) , которая ссылается на брокеры служб в другой базе данных, прекращает доставку сообщений целевой службе.
 
-**Обходной путь:** Остановите любое действие, использующее диалоговые диалоги по перекрестным базам данных Service Broker, прежде чем обновлять уровень обслуживания, и повторно инициализируете их после. Если есть оставшиеся сообщения, которые не будут доставлены после изменения уровня обслуживания, прочитайте сообщения из исходной очереди и отправьте их в целевую очередь.
+**Обходной путь:** Перед обновлением уровня службы и повторной их инициализацией после этого отключите все действия, использующие диалоговые окна межбазовых Service Broker. Если остались сообщения, которые не доставляются после изменения уровня службы, прочтите сообщения из очереди источника и повторно отправьте их в целевую очередь.
 
-### <a name="impersonification-of-azure-ad-login-types-is-not-supported"></a>Олицетворение типов входа Azure AD не поддерживается
+### <a name="impersonification-of-azure-ad-login-types-is-not-supported"></a>Имперсонификатион типов входа Azure AD не поддерживается
 
-Олицетворение `EXECUTE AS USER` `EXECUTE AS LOGIN` с использованием или следующих принципов AAD не поддерживается:
--    Псевдоним AAD пользователей. В этом случае `15517`возвращается следующая ошибка.
-- AAD логины и пользователи на основе aAD приложений или основ услуг. В этом случае `15517` возвращаются `15406`следующие ошибки и .
+Олицетворение с использованием `EXECUTE AS USER` или `EXECUTE AS LOGIN` из следующих субъектов AAD не поддерживается:
+-    Пользователи AAD с псевдонимами. В этом случае `15517`возвращается следующая ошибка.
+- Имена входа и пользователей AAD, основанные на приложениях AAD или субъектах-службах. В этом случае `15517` возвращаются следующие ошибки и `15406`.
 
 ### <a name="query-parameter-not-supported-in-sp_send_db_mail"></a>@queryпараметр не поддерживается в sp_send_db_mail
 
-Параметр `@query` в [процедуре sp_send_db_mail](/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql) не работает.
+`@query` Параметр в процедуре [sp_send_db_mail](/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql) не работает.
 
-### <a name="transactional-replication-must-be-reconfigured-after-geo-failover"></a>Транзакционная репликация должна быть перенастроена после геоотказа
+### <a name="transactional-replication-must-be-reconfigured-after-geo-failover"></a>После географической отработки отказа необходимо перенастроить репликацию транзакций
 
-Если транзакционная репликация включена в базе данных в группе автоматического отказа, администратор управляемого экземпляра должен очистить все публикации на старом элементаре и перенастроить их на новый основной после сбоя в другой области. Более подробная информация приводит к [ремиктии.](sql-database-managed-instance-transact-sql-information.md#replication)
+Если репликация транзакций включена для базы данных в группе автоматической отработки отказа, администратор управляемого экземпляра должен очистить все публикации на старом первичном ресурсе и перенастроить их на новом первичном ресурсе после отработки отказа в другой регион. Дополнительные сведения см. в разделе [репликация](sql-database-managed-instance-transact-sql-information.md#replication) .
 
-### <a name="aad-logins-and-users-are-not-supported-in-ssdt"></a>Логины и пользователи AAD не поддерживаются в SSDT
+### <a name="aad-logins-and-users-are-not-supported-in-ssdt"></a>Имена входа и пользователи AAD не поддерживаются в SSDT
 
-Инструменты данных серверов s'L не полностью поддерживают логины каталогов Azure Active и пользователей.
+SQL Server Data Tools не полностью поддерживают имена входа и пользователей Azure Active Directory.
 
-### <a name="temporary-database-is-used-during-restore-operation"></a>Временная база данных используется во время операции RESTORE
+### <a name="temporary-database-is-used-during-restore-operation"></a>Во время операции восстановления используется временная база данных
 
-При восстановлении базы данных в Управляемой инстанции служба восстановления сначала создаст пустую базу данных с желаемым именем для выделения имени в экземпляре. Через некоторое время эта база данных будет удалена и будет начато восстановление фактической базы данных. База данных, наминое в *состоянии восстановления,* будет временно иметь случайное значение GUID вместо имени. Временное имя будет изменено на `RESTORE` желаемое имя, указанное в выписке после завершения процесса восстановления. На начальном этапе пользователь может получить доступ к пустой базе данных и даже создавать таблицы или загружать данные в эту базу данных. Эта временная база данных будет удалена при запуске службы восстановления второй фазы.
+При восстановлении базы данных в Управляемый экземпляр Служба восстановления сначала создаст пустую базу данных с нужным именем, чтобы выделить имя экземпляра. Через некоторое время эта база данных будет удалена и восстановлена фактическая база данных. База данных, которая находится в состоянии *восстановления* , будет иметь случайное значение идентификатора GUID вместо имени. После завершения процесса восстановления временное имя будет изменено на нужное `RESTORE` имя, указанное в инструкции. На начальном этапе пользователь может получить доступ к пустой базе данных и даже создать таблицы или загрузить данные в эту базу данных. Эта временная база данных будет удалена, когда служба восстановления запустит второй этап.
 
-**Обход**: Не получите доступ к базе данных, которую вы восстанавливаете, пока не увидите, что восстановление завершено.
+Инструкции по решению: не **пытайтесь**получить доступ к восстанавливаемой базе данных до тех пор, пока не будет показано, что восстановление завершено.
 
-### <a name="tempdb-structure-and-content-is-re-created"></a>Структура и контент TEMPDB воссозданы
+### <a name="tempdb-structure-and-content-is-re-created"></a>Структура и содержимое базы данных TEMPDB создано повторно
 
-База `tempdb` данных всегда разделена на 12 файлов данных, и структура файла не может быть изменена. Максимальный размер файла не может быть изменен, и `tempdb`новые файлы не могут быть добавлены в . `Tempdb`всегда воссоздан как пустая база данных, когда экземпляр запускается `tempdb` или завершается, и любые внесенные изменения не будут сохранены.
+`tempdb` База данных всегда разделяется на 12 файлов данных, и структура файла не может быть изменена. Максимальный размер для файла нельзя изменить, и новые файлы нельзя добавить в `tempdb`. `Tempdb`всегда создается повторно как пустая база данных при запуске или отработки отказа экземпляра, а любые изменения, `tempdb` внесенные в, не сохраняются.
 
 ### <a name="exceeding-storage-space-with-small-database-files"></a>Превышение дискового пространства с небольшими файлами баз данных
 
-`CREATE DATABASE`, `ALTER DATABASE ADD FILE`, `RESTORE DATABASE` и операторы могут выйти из строя, потому что экземпляр может достичь предела хранилища Azure.
+`CREATE DATABASE`инструкции `ALTER DATABASE ADD FILE`, и `RESTORE DATABASE` могут завершиться ошибкой, так как экземпляр может достигнуть ограничения хранилища Azure.
 
-Каждый управляемый экземпляр Общего назначения имеет до 35 ТБ хранилища, зарезервированных для пространства Azure Premium Disk. Каждый файл базы данных размещается на отдельном физическом диске. Поддерживаются диски размером 128 ГБ, 256 ГБ, 512 ГБ, 1 ТБ или 4 ТБ. Неиспользованное пространство на диске не взимается, но общая сумма размеров Azure Premium Disk не может превышать 35 ТБ. В некоторых случаях управляемый экземпляр, которому не нужно 8 ТБ в общей сложности, может превысить 35-й предел По размеру хранилища из-за внутренней фрагментации.
+Каждый управляемый экземпляр общего назначения имеет до 35 ТБ хранилища, зарезервированного для дискового пространства Azure уровня "Премиум". Каждый файл базы данных размещается на отдельном физическом диске. Поддерживаются диски размером 128 ГБ, 256 ГБ, 512 ГБ, 1 ТБ или 4 ТБ. Неиспользуемое пространство на диске не заряжено, но общая сумма размеров дисков Azure уровня "Премиум" не может превышать 35 ТБ. В некоторых случаях управляемый экземпляр, для которого не требуется 8 ТБ, может превысить ограничение в 35 ТБ на размер хранилища из-за внутренней фрагментации.
 
-Например, в управляемом экземпляре общего назначения может быть один большой файл размером 1,2 ТБ, размещенный на 4-ТБ-диске. Он также может иметь 248 файлов с 1 ГБ размер каждого, которые размещены на отдельных 128-ГБ дисков. В этом примере:
+Например, управляемый экземпляр общего назначения может иметь один большой файл размером 1,2 ТБ, размещенный на диске объемом 4 ТБ. У него также может быть 248 файлов с размером 1 ГБ, каждый из которых размещается на отдельных дисках емкостью 128 ГБ. В этом примере:
 
 - общий размер выделенного дискового хранилища составляет 1 x 4 ТБ + 248 x 128 ГБ = 35 ТБ;
 - общий объем зарезервированного пространства для баз данных в экземпляре составляет 1 x 1,2 ТБ + 248 x 1 ГБ = 1,4 ТБ.
 
-Этот пример показывает, что при определенных обстоятельствах из-за определенного распространения файлов управляемый экземпляр может достичь предела 35 ТБ, который зарезервирован для присоединенного премиум-диска Azure, когда вы не можете ожидать этого.
+В этом примере показано, что в некоторых обстоятельствах при определенных распределениях файлов управляемый экземпляр может достичь предельного размера в 35 ТБ, зарезервированного для подключенного диска Azure уровня "Премиум", если вы не ожидаете его.
 
-В этом примере существующие базы данных продолжают работать и могут расти без каких-либо проблем до тех пор, пока не будут добавлены новые файлы. Новые базы данных не могут быть созданы или восстановлены, поскольку не хватает места для новых дисков, даже если общий размер всех баз данных не достигает предела размера экземпляра. Ошибка, которая возвращается в этом случае, не ясна.
+В этом примере существующие базы данных продолжают работать и могут увеличиваться без каких бы то ни было проблем, пока новые файлы не добавляются. Новые базы данных не могут быть созданы или восстановлены, так как не хватает места для новых дисков, даже если общий размер всех баз данных не достигает предельного размера экземпляра. Ошибка, возвращаемая в этом случае, не ясно.
 
-Количество [оставшихся файлов](https://medium.com/azure-sqldb-managed-instance/how-many-files-you-can-create-in-general-purpose-azure-sql-managed-instance-e1c7c32886c1) можно определить с помощью системных представлений. Если вы достигнете этого предела, попробуйте [очистить и удалить некоторые из небольших файлов с помощью dBCC SHRINKFILE заявление](/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql#d-emptying-a-file) или переключиться на бизнес [критический уровень, который не имеет этого предела.](/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics)
+[Количество оставшихся файлов можно узнать](https://medium.com/azure-sqldb-managed-instance/how-many-files-you-can-create-in-general-purpose-azure-sql-managed-instance-e1c7c32886c1) с помощью системных представлений. Если вы достигли этого ограничения, попытайтесь [удалить некоторые файлы меньшего размера с помощью инструкции DBCC SHRINKFILE](/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql#d-emptying-a-file) или переключитесь на [уровень критически важный для бизнеса, который не имеет этого ограничения](/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
 
-### <a name="guid-values-shown-instead-of-database-names"></a>Значения GUID, отображаемые вместо названий баз данных
+### <a name="guid-values-shown-instead-of-database-names"></a>Значения GUID, отображаемые вместо имен баз данных
 
-Несколько системных представлений, счетчиков производительности, сообщений об ошибках, XEvents и записей в журнале ошибок отображают идентификаторы базы данных GUID вместо фактических имен базы данных. Не полагайтесь на эти идентификаторы GUID, поскольку в будущем они будут заменены фактическими именами баз данных.
+Несколько системных представлений, счетчиков производительности, сообщений об ошибках, XEvents и записей в журнале ошибок отображают идентификаторы базы данных GUID вместо фактических имен базы данных. Не полагайтесь на эти идентификаторы GUID, так как они заменяются фактическими именами баз данных в будущем.
 
-**Обходной путь**: Используйте представление sys.databases для разрешения фактического имени базы данных из физического имени базы данных, указанного в форме идентификаторов базы данных GUID
+**Обходное решение**. Используйте представление sys. databases для разрешения фактического имени базы данных из имени физической базы данных, указанного в виде идентификаторов базы данных GUID.
 
 ```tsql
 SELECT name as ActualDatabaseName, physical_database_name as GUIDDatabaseIdentifier 
@@ -222,13 +222,13 @@ FROM sys.databases
 WHERE database_id > 4
 ```
 
-### <a name="error-logs-arent-persisted"></a>Ошибки не сохраняются
+### <a name="error-logs-arent-persisted"></a>Журналы ошибок не сохраняются
 
-Ошибки журналов, доступных в управляемом экземпляре, не сохраняются, а их размер не включен в максимальный лимит хранения. Ошибки журналы могут быть автоматически удалены, если происходит сбой. В истории журнала ошибок могут быть пробелы, поскольку Managed Instance несколько раз перемещался на нескольких виртуальных машинах.
+Журналы ошибок, доступные в управляемом экземпляре, не сохраняются, и их размер не включается в максимальный предел хранилища. Если происходит отработка отказа, журналы ошибок могут автоматически удаляться. В журнале ошибок могут содержаться пробелы, так как Управляемый экземпляр были перемещены несколько раз на несколько виртуальных машин.
 
-### <a name="transaction-scope-on-two-databases-within-the-same-instance-isnt-supported"></a>Область транзакций на двух базах данных в одном экземпляре не поддерживается
+### <a name="transaction-scope-on-two-databases-within-the-same-instance-isnt-supported"></a>Область транзакций в двух базах данных в одном и том же экземпляре не поддерживается
 
-Класс `TransactionScope` в .NET не работает, если два запроса отправляются в две базы данных в пределах одного и того же экземпляра в рамках одной и той же области транзакций:
+**(Разрешено в марте 2020)** `TransactionScope` Класс в .NET не работает, если два запроса отправляются в две базы данных в одном экземпляре в одной и той же области транзакций:
 
 ```csharp
 using (var scope = new TransactionScope())
@@ -253,22 +253,20 @@ using (var scope = new TransactionScope())
 
 ```
 
-Хотя этот код работает с данными в одном и том же экземпляре, он требует MSDTC.
+**Обходной путь (не требуется с 2020 марта):** Используйте [SqlConnection. чанжедатабасе (String)](/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase) для использования другой базы данных в контексте соединения вместо двух соединений.
 
-**Обходной путь:** Используйте [SqlConnection.ChangeDatabase(String)](/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase) для использования другой базы данных в контексте соединения вместо двух соединений.
+### <a name="clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address"></a>Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес.
 
-### <a name="clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address"></a>Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес
-
-Модули CLR, размещенные в управляемом экземпляре и связанные серверы или распределенные запросы, которые ссылаются на текущий экземпляр, иногда не могут решить IP локального экземпляра. Это временная ошибка.
+Модули CLR, размещенные в управляемом экземпляре, а также на связанных серверах или распределенных запросах, которые ссылаются на текущий экземпляр, иногда не могут разрешить IP-адрес локального экземпляра. Это временная ошибка.
 
 **Обходной путь:** По возможности используйте контекстные соединения в модуле CLR.
 
 ## <a name="updates"></a>Обновления
 
-Для получения списка обновлений и [SQL Database service updates](https://azure.microsoft.com/updates/?product=sql-database)улучшений базы данных S'L см.
+Список обновлений и улучшений базы данных SQL см. в статье [обновления службы базы данных SQL](https://azure.microsoft.com/updates/?product=sql-database).
 
-Для обновления и улучшений всех [Service updates](https://azure.microsoft.com/updates)служб Azure см.
+Обновления и улучшения для всех служб Azure см. в разделе [обновления служб](https://azure.microsoft.com/updates).
 
 ## <a name="contribute-to-content"></a>Участие в разработке документации
 
-Чтобы внести свой вклад в документацию [Docs Contributor Guide](https://docs.microsoft.com/contribute/)базы данных Azure S'L, см.
+Чтобы внести изменения в документацию по базе данных SQL Azure, ознакомьтесь с [руководством для участников](https://docs.microsoft.com/contribute/)документации.

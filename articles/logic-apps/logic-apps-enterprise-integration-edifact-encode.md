@@ -7,13 +7,13 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, divswa, logicappspm
 ms.topic: article
-ms.date: 01/27/2017
-ms.openlocfilehash: 257cbd0b1a68ddd2b16235e6f8dec5d5b0eb10e2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/22/2020
+ms.openlocfilehash: cee97fddc619840de821ebb70d32e0cab1bbe040
+ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74790644"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82106531"
 ---
 # <a name="encode-edifact-messages-for-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений EDIFACT для Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -25,13 +25,17 @@ ms.locfileid: "74790644"
 Вам понадобится следующее:
 
 * Учетная запись Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-* Учетная [запись интеграции,](logic-apps-enterprise-integration-create-integration-account.md) которая уже определена и связана с подпиской Azure. Для работы с соединителем для кодирования сообщений EDIFACT потребуется учетная запись интеграции. 
+* [Учетная запись интеграции](logic-apps-enterprise-integration-create-integration-account.md) , которая уже определена и связана с подпиской Azure. Для работы с соединителем для кодирования сообщений EDIFACT потребуется учетная запись интеграции. 
 * В учетной записи интеграции должны быть определены по крайней мере два [партнера](logic-apps-enterprise-integration-partners.md).
 * В учетной записи интеграции должно быть определено [соглашение EDIFACT](logic-apps-enterprise-integration-edifact.md).
 
 ## <a name="encode-edifact-messages"></a>Кодирование сообщений EDIFACT
 
-1. [Создание приложения логики](quickstart-create-first-logic-app-workflow.md).
+> [!IMPORTANT]
+> Соединитель EDIFACT поддерживает только символы UTF-8.
+> Если в выходных данных содержатся непредвиденные символы, убедитесь, что в сообщениях EDIFACT используется кодировка UTF-8.
+
+1. [Создайте приложение логики](quickstart-create-first-logic-app-workflow.md).
 
 2. В соединителе для кодирования сообщений EDIFACT нет триггеров, поэтому вам придется добавить триггер, чтобы запустить приложение логики (например, триггер запроса). В конструкторе приложений логики добавьте триггер, а затем добавьте действие в приложение логики.
 
@@ -92,5 +96,5 @@ ms.locfileid: "74790644"
 Дополнительные сведения о Swagger для соединителя EDIFACT см.в [этой статье](/connectors/edifact/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Узнайте больше о пакете корпоративной интеграции") 
+[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
 

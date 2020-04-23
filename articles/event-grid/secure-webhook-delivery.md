@@ -1,42 +1,42 @@
 ---
-title: Безопасная доставка WebHook с Azure AD в azure Event Grid
-description: Описывает, как доставлять события в конечные точки HTTPS, защищенные активным каталогом Azure, с помощью Azure Event Grid
+title: Безопасная доставка веб-перехватчика с помощью Azure AD в службе "Сетка событий Azure"
+description: Описание доставки событий в конечные точки HTTPS, защищенные Azure Active Directory с помощью службы "Сетка событий Azure"
 services: event-grid
 author: banisadr
 ms.service: event-grid
 ms.topic: conceptual
 ms.date: 11/18/2019
 ms.author: babanisa
-ms.openlocfilehash: 074378668b0516936e11968ea8c800d3daa667bb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 4cb8168cd6d1c19cc797a7cd5454b96131fa35be
+ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74931552"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82106623"
 ---
-# <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в защищенных конечными точками active Directory Azure
+# <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в защищенных конечных точках Azure Active Directory
 
-В этой статье описывается, как использовать преимущества Active Directory Azure для обеспечения связи между подпиской на события и конечной точкой веб-крючка. Для обзора приложений azure AD и основ [Microsoft identity platform (v2.0) overview](https://docs.microsoft.com/azure/active-directory/develop/v2-overview)службы см.
+В этой статье описывается, как использовать преимущества Azure Active Directory для защиты подключения между подпиской на события и конечной точкой веб-перехватчика. Общие сведения о приложениях и субъектах-службах Azure AD см. в [статье Обзор платформы Microsoft Identity Platform (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
 
-В этой статье используется портал Azure для демонстрации, однако функция также может быть включена с помощью CLI, PowerShell или SDKs.
+В этой статье используется портал Azure для демонстрации, однако эту функцию можно также включить с помощью интерфейса командной строки, PowerShell или пакетов SDK.
 
 [!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
 ## <a name="create-an-azure-ad-application"></a>Создание приложения Azure AD
 
-Начните с создания приложения Azure AD для защищенной конечных точек. См. раздел https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
-    - Наверстримируйте защищенный API, который будет вызываться приложением daemon.
+Начните с создания приложения Azure AD для защищенной конечной точки. См. раздел https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
+    - Настройте защищенный API, который будет вызываться приложением демона.
     
-## <a name="enable-event-grid-to-use-your-azure-ad-application"></a>Включить сетку событий для использования приложения Azure AD
+## <a name="enable-event-grid-to-use-your-azure-ad-application"></a>Включение использования приложения Azure AD в службе "Сетка событий"
 
-Используйте приведенный ниже сценарий PowerShell, чтобы создать принцип роли и обслуживания в приложении Azure AD. Вам понадобится идентификатор клиента и идентификатор объекта из приложения Azure AD:
+Используйте приведенный ниже сценарий PowerShell для создания роли и участника-службы в приложении Azure AD. Вам потребуется идентификатор клиента и идентификатор объекта из приложения Azure AD:
 
     > [!NOTE]
     > You must be a member of the [Azure AD Application Administrator role](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) to execute this script.
     
-1. Измените $myTenantId скрипта PowerShell, чтобы использовать идентификатор aD Azure AD.
-1. Изменение $myAzureADApplicationObjectId скрипта PowerShell для использования идентификатора объекта приложения Azure AD
-1. Выполнить измененный скрипт.
+1. Измените $myTenantId сценария PowerShell, чтобы использовать идентификатор клиента Azure AD.
+1. Измените $myAzureADApplicationObjectId сценария PowerShell, чтобы использовать идентификатор объекта приложения Azure AD.
+1. Запустите измененный скрипт.
 
 ```PowerShell
 # This is your Tenant Id. 
@@ -103,25 +103,25 @@ else
     
 New-AzureADServiceAppRoleAssignment -Id $myApp.AppRoles[0].Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventGridSP.ObjectId -PrincipalId $eventGridSP.ObjectId
     
-Write-Host "My Azure AD Tenant Id" + $myTenantId
-Write-Host "My Azure AD Application Id" + $myAzureADApplicationObjectId
-Write-Host "My Azure AD Application ($myApp.ObjectId): " + $myApp.ObjectId
-Write-Host "My Azure AD Application's Roles"
+Write-Host "My Azure AD Tenant Id: $myTenantId"
+Write-Host "My Azure AD Application Id: $($myApp.AppId)"
+Write-Host "My Azure AD Application ObjectId: $($myApp.ObjectId)"
+Write-Host "My Azure AD Application's Roles: "
 Write-Host $myApp.AppRoles
 ```
     
-## <a name="configure-the-event-subscription"></a>Настройка подписки на событие
+## <a name="configure-the-event-subscription"></a>Настройка подписки на события
 
-В потоке создания для подписки на событие выберите тип endpoint 'Web Hook'. После того как вы дали свою конечную точку URI, нажмите на вкладку дополнительных функций в верхней части лезвия подписки на события.
+В последовательности создания подписки на события выберите тип конечной точки "веб-перехватчик". Получив URI конечной точки, щелкните вкладку Дополнительные компоненты в верхней части колонки создание подписок на события.
 
-![Выберите веб-крюк типа конечных точек](./media/secure-webhook-delivery/select-webhook.png)
+![Выберите веб-перехватчик типа конечной точки](./media/secure-webhook-delivery/select-webhook.png)
 
-Во вкладке дополнительных функций проверьте поле для проверки подлинности AAD и наймите идентификатор идентификатор клиента:
+На вкладке Дополнительные компоненты установите флажок "использовать проверку подлинности AAD" и настройте идентификатор клиента и идентификатор приложения:
 
-* Копируйте идентификатор AD-накопителя Azure AD из вывода скрипта и введите его в поле AAD Tenant ID.
-* Копируйте идентификатор приложения Azure AD на выходе скрипта и введите его в поле ИДЕНта приложений AAD.
+* Скопируйте идентификатор клиента Azure AD из выходных данных скрипта и введите его в поле Идентификатор клиента AAD.
+* Скопируйте идентификатор приложения Azure AD из выходных данных скрипта и введите его в поле Application ID (идентификатор приложения AAD).
 
-    ![Безопасные действия Webhook](./media/secure-webhook-delivery/aad-configuration.png)
+    ![Действие "безопасный веб-перехватчик"](./media/secure-webhook-delivery/aad-configuration.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
