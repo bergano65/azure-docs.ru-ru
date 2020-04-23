@@ -1,6 +1,6 @@
 ---
 title: Сценарий PowerShell для задания допустимых размеров виртуальных машин в службе "Службы лабораторий Azure" | Документация Майкрософт
-description: Эта статья включает в себя образец сценария PowerShell, который устанавливает разрешенные размеры виртуальной машины (VM) в Службах лаборатории Azure.
+description: В этой статье содержится пример сценария PowerShell, который устанавливает разрешенные размеры виртуальной машины (ВМ) в службах лаборатории Azure.
 services: lab-services
 author: spelluru
 manager: ''
@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 04/24/2020
 ms.author: spelluru
-ms.openlocfilehash: a1b0e9a4aed475f04ec8dcffa9bc95b7c7c713e1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5b3dbee7d0ac928c4f18f25348e714aba9c1cd13
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76760473"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82100776"
 ---
 # <a name="use-powershell-to-set-allowed-vm-sizes-in-azure-lab-services"></a>Задание допустимых размеров виртуальных машин в службе "Службы лабораторий Azure" с помощью PowerShell
 
@@ -38,9 +38,9 @@ ms.locfileid: "76760473"
 
 Этот сценарий использует следующие команды: 
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
-| Найти-AzResource | Выполняет поиск ресурсов на основе указанных параметров. |
+| Find-Азресаурце | Выполняет поиск ресурсов на основе указанных параметров. |
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | Получает ресурсы. |
 | [Set-AzResource](/powershell/module/az.resources/set-azresource) | Изменяет ресурс. |
 | [New-AzResource](/powershell/module/az.resources/new-azresource) | Создает ресурса. |

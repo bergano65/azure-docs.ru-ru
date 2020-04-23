@@ -1,24 +1,18 @@
 ---
 title: Как развернуть Windows 10 в Azure с правами на мультитенантное размещение
 description: Узнайте, как воспользоваться преимуществами программы Software Assurance для Windows, чтобы перенести свои локальные лицензии в Azure.
-services: virtual-machines-windows
-documentationcenter: ''
 author: xujing
-manager: gwallace
-editor: ''
-ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: 9ff8cc64266375a2d439763b222870843136f67a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: c85eef1a5d035e23c7e63632ac92c21440b15cae
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "70101501"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101558"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Как развернуть Windows 10 в Azure с правами на мультитенантное размещение 
 Клиентам, использующим Windows 10 Корпоративная E3 или Windows 10 Корпоративная E5 для каждого пользователя, либо Windows VDA для каждого пользователя (лицензии на подписку пользователя или дополнительные лицензии на подписку пользователя), права на мультитенантное размещение для Windows 10 позволяют перенести лицензии Windows 10 в облако и запустить виртуальные машины Windows 10 в Azure без необходимости платить за другую лицензию. Дополнительные сведения см. в [этом разделе](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
@@ -69,7 +63,7 @@ Add-AzVhd -ResourceGroupName "myResourceGroup" -LocalFilePath "C:\Path\To\myvhd.
 ```
 
 
-**Развертывание с помощью шаблона Azure Resource Manager** В шаблонах Resource Manager можно указать дополнительный параметр для `licenseType`. Вы можете прочитать больше об [авторизации шаблонов управления ресурсами Azure.](../../resource-group-authoring-templates.md) После загрузки виртуального жесткого диска в Azure необходимо изменить шаблон Resource Manager, чтобы включить в него тип лицензирования как часть поставщика вычислительных ресурсов и развернуть шаблон в обычном режиме.
+**Развертывание с помощью шаблона Azure Resource Manager** В шаблонах Resource Manager можно указать дополнительный параметр для `licenseType`. Дополнительные сведения о [создании шаблонов Azure Resource Manager](../../resource-group-authoring-templates.md)см. в этой статье. После загрузки виртуального жесткого диска в Azure необходимо изменить шаблон Resource Manager, чтобы включить в него тип лицензирования как часть поставщика вычислительных ресурсов и развернуть шаблон в обычном режиме.
 ```json
 "properties": {
     "licenseType": "Windows_Client",

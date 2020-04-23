@@ -1,5 +1,5 @@
 ---
-title: Управление NSG поток журналы с помощью Grafana
+title: Управление журналами потоков NSG с помощью Grafana
 titleSuffix: Azure Network Watcher
 description: Управляйте журналами потоков для групп безопасности сети и анализируйте их с помощью наблюдателя за сетями и Grafana.
 services: network-watcher
@@ -14,19 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: damendo
-ms.openlocfilehash: c48d5a02cdb8ef63904642c6c2c76cb5d61e1f9d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f038412079ad0620a445b85e4bbc3c325e1aa211
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76840916"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82100113"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-using-network-watcher-and-grafana"></a>Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana
 
 [Журналы потоков для групп безопасности сети (NSG)](network-watcher-nsg-flow-logging-overview.md) содержат сведения, которые могут быть полезны для анализа входящего и исходящего IP-трафика в сетевых интерфейсах. Эти журналы потоков отображают сведения о входящем и исходящем потоках на основе правила NSG, сетевой карте, к которой относится поток, 5 кортежах потока (IP-адрес назначения и исходный IP-адрес, порт назначения и исходный порт, протокол), а также сведения о разрешении и отклонении трафика.
-
-> [!Warning]  
-> В следующих шагах используются журналы потоков версии 1. Дополнительные сведения см. в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md). Приведенные ниже инструкции не будут работать с файлами журнала версии 2 без изменений.
 
 Ведение журналов потоков можно включить для нескольких групп безопасности сети. Такой объем регистрируемых данных усложняет синтаксический анализ и получение аналитических сведений из журналов. В этой статье описывается решение для централизованного управления этими журналами потоков для NSG с помощью Grafana, графического средства с открытым исходным кодом, ElasticSearch, распределенного модуля поиска и аналитики, а также Logstash, конвейера обработки данных на стороне сервера с открытым исходным кодом.  
 
@@ -40,7 +37,7 @@ ms.locfileid: "76840916"
 
 ### <a name="enable-network-security-group-flow-logging"></a>Включение ведения журнала потоков для групп безопасности сети
 
-В рамках данного сценария вам необходимо включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в своей учетной записи. Для получения инструкций по включению журналов потоков сетевой безопасности, обратитесь к следующей статье [Введение в журнал потока для групп сетевой безопасности.](network-watcher-nsg-flow-logging-overview.md)
+В рамках данного сценария вам необходимо включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в своей учетной записи. Инструкции по включению журналов потоков безопасности сети см. в следующей статье [Введение в ведение журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md).
 
 ### <a name="setup-considerations"></a>Рекомендации по настройке
 
@@ -107,6 +104,11 @@ Logstash позволяет преобразовать формат журнал
           "protocol" => "%{[records][properties][flows][flows][flowTuples][5]}"
           "trafficflow" => "%{[records][properties][flows][flows][flowTuples][6]}"
           "traffic" => "%{[records][properties][flows][flows][flowTuples][7]}"
+      "flowstate" => "%{[records][properties][flows][flows][flowTuples][8]}"
+      "packetsSourceToDest" => "%{[records][properties][flows][flows][flowTuples][9]}"
+      "bytesSentSourceToDest" => "%{[records][properties][flows][flows][flowTuples][10]}"
+      "packetsDestToSource" => "%{[records][properties][flows][flows][flowTuples][11]}"
+      "bytesSentDestToSource" => "%{[records][properties][flows][flows][flowTuples][12]}"
         }
         add_field => {
           "time" => "%{[records][time]}"

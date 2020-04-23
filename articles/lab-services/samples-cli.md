@@ -1,6 +1,6 @@
 ---
 title: Примеры Azure CLI для Службы лабораторий Azure | Документация Майкрософт
-description: В этой статье приводится список образцов сценариев Azure CLI, которые помогают управлять лабораториями в лабораторных службах Azure.
+description: В этой статье представлен список примеров сценариев Azure CLI, помогающих управлять лабораториями в службах лаборатории Azure.
 services: lab-services
 author: spelluru
 manager: ''
@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.custom: mvc
-ms.openlocfilehash: 35c1a18587ebae1253bd1661a57e21c39f34ee51
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 075b5dc06c59682b33c20b182e0dc585b2727027
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76760510"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82097852"
 ---
 # <a name="azure-cli-samples-for-azure-lab-services"></a>Примеры Azure CLI для Службы лабораторий Azure
 
@@ -26,6 +26,6 @@ ms.locfileid: "76760510"
 
 | | |
 |---|---|
-| [Создание и проверка доступности виртуальной машины](scripts/create-verify-virtual-machine-in-lab-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Создает виртуальную машину Windows с минимальной конфигурацией. |
-| [Запуск виртуальной машины](scripts/start-connect-virtual-machine-in-lab-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Запускает виртуальную машину. |
-| [Остановка и удаление виртуальной машины](scripts/stop-delete-virtual-machine-in-lab-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Останавливает и удаляет виртуальную машину. |
+| [Создание и проверка доступности виртуальной машины](scripts/create-verify-virtual-machine-in-lab-cli.md) | Создает виртуальную машину Windows с минимальной конфигурацией. |
+| [Запуск виртуальной машины](scripts/start-connect-virtual-machine-in-lab-cli.md) | Запускает виртуальную машину. |
+| [Остановка и удаление виртуальной машины](scripts/stop-delete-virtual-machine-in-lab-cli.md) | Останавливает и удаляет виртуальную машину. |

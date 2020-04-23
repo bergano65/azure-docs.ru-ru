@@ -1,25 +1,20 @@
 ---
-title: Создание неуправляемого изображения обобщенного VM в Azure
+title: Создание неуправляемого образа универсальной виртуальной машины в Azure
 description: Создание неуправляемого образа универсальной виртуальной машины Windows, который будет использоваться для создания нескольких копий виртуальной машины в Azure.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1f44f30666ead84b2bd2fc63d8a8eb624f70c85c
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.custom: storage-accounts
+ms.openlocfilehash: 130764ad5504ded398a9fdf9fa27d6cb936fbacc
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81458085"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82099790"
 ---
 # <a name="how-to-create-an-unmanaged-vm-image-from-an-azure-vm"></a>Создание неуправляемого образа виртуальной машины на основе виртуальной машины Azure
 
@@ -32,18 +27,18 @@ ms.locfileid: "81458085"
 ## <a name="generalize-the-vm"></a>Подготовка виртуальной машины к использованию 
 В этом разделе содержатся сведения о том, как обобщить виртуальную машину Windows для ее дальнейшего использования в качестве образа. При подготовке виртуальной машины удаляются все сведения о вашей учетной записи и выполняется настройка ВМ для использования в качестве образа. в статье [Использование программы Sysprep: введение](https://technet.microsoft.com/library/bb457073.aspx).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Для получения дополнительной [информации](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) см.
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка Sysprep для ролей сервера](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) .
 
 > [!IMPORTANT]
 > Если вы впервые отправляете виртуальный жесткий диск в Azure, перед запуском Sysprep [подготовьте виртуальную машину](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 > 
 > 
 
-Можно также подготовить виртуальную машину Linux к использованию с помощью `sudo waagent -deprovision+user`, а затем использовать PowerShell для ее записи. Для получения информации об использовании CLI для захвата VM см., [как обобщить и захватить виртуальную машину Linux с помощью Azure CLI.](../linux/capture-image.md)
+Можно также подготовить виртуальную машину Linux к использованию с помощью `sudo waagent -deprovision+user`, а затем использовать PowerShell для ее записи. Сведения об использовании интерфейса командной строки для записи виртуальной машины см. в статье [Подготовка виртуальной машины Linux и запись в нее с помощью Azure CLI](../linux/capture-image.md).
 
 
 1. Выполните вход на виртуальную машину Windows.
-2. Откройте окно командной строки с правами администратора. Измените каталог на **%windir%-system32'sysprep**, `sysprep.exe`а затем запустите .
+2. Откройте окно командной строки с правами администратора. Измените каталог на **%WINDIR%\system32\sysprep**и запустите `sysprep.exe`.
 3. В диалоговом окне **Программа подготовки системы** выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
 4. В окне **Параметры завершения работы** выберите параметр **Завершение работы**.
 5. Нажмите кнопку **ОК**.
@@ -110,7 +105,7 @@ Save-AzVMImage -ResourceGroupName <resourceGroupName> -Name <vmName> `
     -Path <C:\local\Filepath\Filename.json>
 ```
    
-URL-адрес образа можно получить из шаблона файла JSON. Перейдите к **ресурсам** > **storageProfile** > **osDisk** > **изображение** > **uri** разделе для полного пути вашего изображения. URL-адрес образа выглядит так: `https://<storageAccountName>.blob.core.windows.net/system/Microsoft.Compute/Images/<imagesContainer>/<templatePrefix-osDisk>.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.vhd`.
+URL-адрес образа можно получить из шаблона файла JSON. Полный путь к образу см. в разделе **Resources** > **storageProfile** > **osDisk** > **Image** > **URI** . URL-адрес образа выглядит так: `https://<storageAccountName>.blob.core.windows.net/system/Microsoft.Compute/Images/<imagesContainer>/<templatePrefix-osDisk>.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.vhd`.
    
 Также вы также можете проверить URI на портале. Образ копируется в контейнер **system** в вашей учетной записи хранения. 
 
@@ -128,7 +123,7 @@ $imageURI = "https://mystorageaccount.blob.core.windows.net/mycontainer/myVhd.vh
 
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-Создайте vNet и подсеть [виртуальной сети.](../../virtual-network/virtual-networks-overview.md)
+Создайте виртуальную сеть и подсети [виртуальной сети](../../virtual-network/virtual-networks-overview.md).
 
 1. Создание подсети. В следующем примере создается подсеть с именем **mySubnet** в группе ресурсов **myResourceGroup** с префикс адреса **10.0.0.0/24**.  
    
@@ -255,7 +250,7 @@ $vnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vnetName
     $vmList.Name
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения об управлении созданной виртуальной машиной с помощью Azure PowerShell см. в статье [Управление виртуальными машинами Azure с помощью Azure Resource Manager и PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 

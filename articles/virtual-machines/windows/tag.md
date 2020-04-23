@@ -1,27 +1,21 @@
 ---
-title: Как отметить ресурс Windows VM в Azure
+title: Пометка ресурса виртуальной машины Windows в Azure
 description: Узнайте, как добавлять теги к виртуальной машине Windows, созданной в Azure с помощью модели развертывания на основе диспетчера ресурсов.
-services: virtual-machines-windows
-documentationcenter: ''
 author: mmccrory
-manager: gwallace
-tags: azure-resource-manager
-ms.assetid: 56d17f45-e4a7-4d84-8022-b40334ae49d2
 ms.service: virtual-machines-windows
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/05/2016
 ms.author: memccror
-ms.openlocfilehash: 8f95c11f93ca2075eb2472ad5bb7360df7d69234
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 6ecf0f047fe353d94ca901118d1f434e33e9c8d2
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81456453"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82100572"
 ---
 # <a name="how-to-tag-a-windows-virtual-machine-in-azure"></a>Пометка виртуальной машины Windows в Azure
-В этой статье описываются разные способы назначения тегов виртуальной машине Windows в Azure с использованием модели развертывания Resource Manager. Теги — это определяемые пользователем пары "ключ-значение", которые можно помещать непосредственно в ресурс или группу ресурсов. В настоящее время Azure поддерживает до 50 тегов на одну группу ресурсов и ресурсов. Теги можно добавлять к ресурсу во время его создания или к уже существующему ресурсу. Обратите внимание, что теги поддерживаются только для тех ресурсов, которые созданы с помощью модели развертывания Resource Manager. Чтобы назначить тег виртуальной машине Linux, см. статью [Пометка виртуальной машины Linux в Azure](../linux/tag.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+В этой статье описываются разные способы назначения тегов виртуальной машине Windows в Azure с использованием модели развертывания Resource Manager. Теги — это определяемые пользователем пары "ключ-значение", которые можно помещать непосредственно в ресурс или группу ресурсов. В настоящее время Azure поддерживает до 50 тегов на ресурс и группу ресурсов. Теги можно добавлять к ресурсу во время его создания или к уже существующему ресурсу. Обратите внимание, что теги поддерживаются только для тех ресурсов, которые созданы с помощью модели развертывания Resource Manager. Чтобы назначить тег виртуальной машине Linux, см. статью [Пометка виртуальной машины Linux в Azure](../linux/tag.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 [!INCLUDE [virtual-machines-common-tag](../../../includes/virtual-machines-common-tag.md)]
 
@@ -62,11 +56,11 @@ ms.locfileid: "81456453"
     Environment   Production
 ```
 
-Третья команда добавляет дополнительный тег к *переменной $tags.* Обратите внимание на **+=** использование пары ключей/значений к *$tags* списку.
+Третья команда добавляет дополнительный тег в переменную *$Tags* . Обратите внимание на использование **+=** для добавления новой пары "ключ-значение" в список *$Tags* .
 
         PS C:\> $tags += @{Location="MyLocation"}
 
-Четвертая команда устанавливает все теги, определенные в *$tags* переменной к данному ресурсу. В нашем примере это MyTestVM.
+Четвертая команда устанавливает все теги, определенные в переменной *$Tags* , в заданный ресурс. В нашем примере это MyTestVM.
 
         PS C:\> Set-AzResource -ResourceGroupName MyResourceGroup -Name MyTestVM -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags
 
@@ -88,7 +82,7 @@ ms.locfileid: "81456453"
 
 [!INCLUDE [virtual-machines-common-tag-usage](../../../includes/virtual-machines-common-tag-usage.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о добавлении тегов для ресурсов Azure см. в статьях [Общие сведения об Azure Resource Manager][Azure Resource Manager Overview] и [Использование тегов для организации ресурсов в Azure][Using Tags to organize your Azure Resources].
 * Сведения о том, как теги могут помочь в управлении использованием ресурсов Azure, см. в статьях [Расшифровка счета за использование Microsoft Azure][Understanding your Azure Bill] и [Получение ценных сведений о потреблении ресурсов Microsoft Azure][Gain insights into your Microsoft Azure resource consumption].
 

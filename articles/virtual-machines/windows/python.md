@@ -1,24 +1,18 @@
 ---
-title: Создание и управление Windows VM в Azure с помощью Python
+title: Создание виртуальной машины Windows в Azure и управление ею с помощью Python
 description: Сведения об использовании Python для создания виртуальных машин Windows в Azure с помощью Python и управления ими.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.workload: na
-ms.tgt_pltfrm: vm-windows
+ms.workload: infrastructure
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
-ms.openlocfilehash: 670c369e25639c859f6a8d8b3c65e329b5cf7f04
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: b2172d44b4136b51c0ea459868ebd5b0572bb004
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81458187"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82098074"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
@@ -31,15 +25,15 @@ ms.locfileid: "81458187"
 > * Создание ресурсов
 > * Выполнение задач управления.
 > * Удаление ресурсов
-> * Выполнение приложения
+> * Запуск приложения
 
 На выполнение этих действий требуется примерно 20 минут.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
 1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка на Python** и нажмите кнопку **Установить**. В сводке вы увидите, что вариант **64-разрядная версия Python 3 (3.6.0)** выберется автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку Python с помощью средства запуска Visual Studio.
-2. После установки и запуска Visual Studio нажмите **Файл** > **Новый** > **проект**.
-3. Нажмите **шаблоны** > **Python** > **Python Application,** введите *myPythonProject* для названия проекта, выберите местоположение проекта, а затем нажмите **OK**.
+2. После установки и запуска Visual Studio щелкните **файл** > **создать** > **проект**.
+3. Щелкните **шаблоны** > **Python** > Python**Application**, введите *миписонпрожект* в поле имя проекта, выберите расположение проекта и нажмите кнопку **ОК**.
 
 ## <a name="install-packages"></a>Установка пакетов
 
@@ -124,7 +118,7 @@ compute_client = ComputeManagementClient(
 
 ### <a name="create-the-vm-and-supporting-resources"></a>Создание виртуальной машины и ресурсов поддержки
 
-Все ресурсы должны содержаться в [группе ресурсов.](../../azure-resource-manager/management/overview.md)
+Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/management/overview.md).
 
 1. Чтобы создать группу ресурсов, добавьте эту функцию после переменных в PY-файле:
 
@@ -560,7 +554,7 @@ compute_client = ComputeManagementClient(
 
 3. Сохраните *myPythonProject.py*.
 
-## <a name="run-the-application"></a>Выполнение приложения
+## <a name="run-the-application"></a>Запуск приложения
 
 1. Чтобы запустить консольное приложение, нажмите кнопку **Запустить** в Visual Studio.
 
@@ -569,8 +563,8 @@ compute_client = ComputeManagementClient(
     На полное выполнение этого консольного приложения потребуется примерно 5 минут. После закрытия приложения на удаление ресурсов и групп ресурсов может потребоваться несколько минут.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Если возникли проблемы с развертыванием, следующим шагом будет поиск [развертываний группы ресурсов Troubleshooting с порталом Azure](../../resource-manager-troubleshoot-deployments-portal.md)
+- Если возникли проблемы с развертыванием, на следующем шаге будет рассмотрено [Устранение неполадок развертывания группы ресурсов с портал Azure](../../resource-manager-troubleshoot-deployments-portal.md)
 - Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).
 

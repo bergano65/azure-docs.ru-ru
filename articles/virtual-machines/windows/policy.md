@@ -1,25 +1,20 @@
 ---
-title: Обеспечение безопасности с помощью политик на Windows VMs в Azure
+title: Обеспечение безопасности с помощью политик на виртуальных машинах Windows в Azure
 description: Как применить политику к виртуальной машине Azure Resource Manager на основе Windows
-services: virtual-machines-windows
-documentationcenter: ''
 author: mimckitt
 manager: vashan
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 0b71ba54-01db-43ad-9bca-8ab358ae141b
 ms.service: virtual-machines-windows
+ms.subservice: security
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 08/02/2017
 ms.author: mimckitt
-ms.openlocfilehash: 407e5cefe9f7f60c86de6e80133ff1b3f8b9003d
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: a0ff463bd7f77f8a4a138bf41698059102809215
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2020
-ms.locfileid: "82086544"
+ms.locfileid: "82098702"
 ---
 # <a name="apply-policies-to-windows-vms-with-azure-resource-manager"></a>Применение политик к виртуальным машинам Windows с помощью Azure Resource Manager
 С помощью политик организация может обеспечить выполнение различных норм и правил во всей организации. Обязательные для выполнения стандарты поведения помогают снизить риск, что способствует успешной деятельности организации. В этой статье описано, как определить требуемое поведение для виртуальных машин вашей организации с помощью политик Azure Resource Manager.

@@ -1,28 +1,22 @@
 ---
 title: Общие команды PowerShell для виртуальных машин Azure
-description: Общие команды PowerShell, позволяющие приступить к созданию виртуальных машин Windows в Azure и управлению ими.
-services: virtual-machines-windows
-documentationcenter: ''
+description: Распространенные команды PowerShell, позволяющие приступить к созданию виртуальных машин и управлению ими в Azure.
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
-ms.assetid: ba3839a2-f3d5-4e19-a5de-95bfb1c0e61e
-ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.service: virtual-machines
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/01/2018
 ms.author: cynthn
-ms.openlocfilehash: 3d08693b6b07b5a2f1fb40d0c4758ab43729bd76
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 8b99b6dd62920ed17d79281b448089754613d4e1
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81456368"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82098414"
 ---
 # <a name="common-powershell-commands-for-creating-and-managing-azure-virtual-machines"></a>Общие команды PowerShell для создания виртуальных машин Azure и управления ими
 
-В этой статье рассматриваются некоторые из команд Azure PowerShell, которые можно использовать для создания виртуальных машин в подписке Azure и управления ими.  Для получения более подробной справки с конкретными переключателями и опциями командной строки можно использовать *команду* **Get-Help.**
+В этой статье рассматриваются некоторые из команд Azure PowerShell, которые можно использовать для создания виртуальных машин в подписке Azure и управления ими.  Для получения более подробных сведений о параметрах и параметрах командной строки можно использовать команду **Get-Help** *command*.
 
  
 
@@ -34,7 +28,7 @@ ms.locfileid: "81456368"
 
 ## <a name="create-a-vm---simplified"></a>Создание упрощенной виртуальной машины
 
-| Задача | Команда |
+| Задача | Get-Help |
 | ---- | ------- |
 | Создание простой виртуальной машины | [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) -Name $myVM <BR></BR><BR></BR> Команда New-AzVM имеет набор *упрощенных* параметров, в которых нужно указать только одно имя. Значения параметра -Name будет использоваться как имя для всех ресурсов, необходимых для создания виртуальной машины. Можно указать дополнительные значения, но только это является обязательным.|
 | Создание виртуальной машины из пользовательского образа | New-AzVm -ResourceGroupName $myResourceGroup -Name $myVM ImageName "myImage" -Location $location  <BR></BR><BR></BR>У вас уже должен быть собственный [управляемый образ](capture-image-resource.md). Его можно использовать для создания нескольких одинаковых виртуальных машин. |
@@ -43,7 +37,7 @@ ms.locfileid: "81456368"
 
 ## <a name="create-a-vm-configuration"></a>Создание конфигурации виртуальной машины
 
-| Задача | Команда |
+| Задача | Get-Help |
 | ---- | ------- |
 | Создание конфигурации виртуальной машины |$vm = [New-AzVMConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azvmconfig) -VMName $myVM -VMSize "Standard_D1_v1"<BR></BR><BR></BR>Конфигурация виртуальной машины используется для определения или обновления параметров виртуальной машины. Для инициализации конфигурации используется имя виртуальной машины и ее [размер](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). |
 | Добавление параметров конфигурации |$vm = [Set-AzVMOperatingSystem](https://docs.microsoft.com/powershell/module/az.compute/set-azvmoperatingsystem) -VM $vm -Windows -ComputerName $myVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate<BR></BR><BR></BR>Параметры операционной системы, в том числе [учетные данные](https://technet.microsoft.com/library/hh849815.aspx), добавляются в объект конфигурации, созданный ранее с помощью командлета New-AzVMConfig. |
@@ -54,14 +48,14 @@ ms.locfileid: "81456368"
 
 ## <a name="get-information-about-vms"></a>Получение информации о виртуальных машинах
 
-| Задача | Команда |
+| Задача | Get-Help |
 | ---- | ------- |
 | Вывод списка виртуальных машин в подписке |[Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm) |
 | Вывод списка виртуальных машин в группе ресурсов |Get-AzVM -ResourceGroupName $myResourceGroup<BR></BR><BR></BR>Для получения списка групп ресурсов в подписке используйте командлет [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroup). |
 | Получение информации о виртуальной машине |Get-AzVM -ResourceGroupName $myResourceGroup -Name $myVM |
 
 ## <a name="manage-vms"></a>Управление виртуальными машинами
-| Задача | Команда |
+| Задача | Get-Help |
 | --- | --- |
 | Запуск виртуальной машины |[Start-AzVM](https://docs.microsoft.com/powershell/module/az.compute/start-azvm) -ResourceGroupName $myResourceGroup -Name $myVM |
 | Остановка виртуальной машины |[Stop-AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm) -ResourceGroupName $myResourceGroup -Name $myVM |
@@ -69,6 +63,6 @@ ms.locfileid: "81456368"
 | Удаление виртуальной машины |[Remove-AzVM](https://docs.microsoft.com/powershell/module/az.compute/remove-azvm) -ResourceGroupName $myResourceGroup -Name $myVM |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь с основными шагами по созданию виртуальной машины в разделе [Создание виртуальной машины Windows с помощью Resource Manager и PowerShell](../virtual-machines-windows-ps-create.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

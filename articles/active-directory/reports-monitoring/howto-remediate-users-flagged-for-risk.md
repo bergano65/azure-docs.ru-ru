@@ -1,5 +1,5 @@
 ---
-title: Пользователи, отмеченные риском на портале Active Directory Azure Документы Майкрософт
+title: Пользователи, помеченные для риска на Azure Active Directory портале | Документация Майкрософт
 description: Описание отчета системы безопасности о пользователях под угрозой на портале Azure Active Directory
 services: active-directory
 author: MarkusVi
@@ -15,12 +15,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30d02c5484ea4cce2953eac6b1b7b26a17c142bc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ea1360499c4f4f9b2f6cfa07e81d8f692d0353d3
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "68989702"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82100793"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Применение защитных мер к пользователям, находящимся в группе риска на портале Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "68989702"
 
 ## <a name="access-the-users-flagged-for-risk-report"></a>Доступ к отчету о пользователях, находящихся в группе риска
 
-Вы можете просмотреть пользователей, находящихся в группе риска, в [соответствующем отчете](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RiskyUsers) на портале Azure. Если у вас нет Azure AD, вы можете [https://aka.ms/AccessAAD](https://aka.ms/AccessAAD)зарегистрироваться бесплатно в . 
+Вы можете просмотреть пользователей, находящихся в группе риска, в [соответствующем отчете](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RiskyUsers) на портале Azure. Если у вас нет Azure AD, вы можете зарегистрироваться бесплатно по адресу [https://aka.ms/AccessAAD](https://aka.ms/AccessAAD). 
 
 Из отчета о пользователях, находящихся в группе риска, можно выполнить следующие действия для каждого пользователя:
 
@@ -46,7 +46,7 @@ ms.locfileid: "68989702"
 
 Можно использовать учетные данные Office 365 для доступа к **центру администрирования Azure**. После активации доступа в Azure AD вы будете перенаправлены на портал Azure AD. На уровне подписки "Базовый" ограничен объем предоставляемых в отчетах сведений. Дополнительные данные и аналитика доступны для подписчиков Azure уровня "Премиум".
 
-Чтобы получить доступ к **пользователям, помеченным для** отчетов о рисках в центре управления Microsoft 365:
+Для доступа к отчетам **пользователей, помеченных для отчетов о рисках** , в Microsoft 365 центре администрирования:
 
 1.  В меню навигации слева выберите **Центры администрирования**. 
 2.  Выберите **Azure AD**.
@@ -87,7 +87,6 @@ ms.locfileid: "68989702"
 
 - Ознакомьтесь с этим [руководством по мерам, предпринимаемым в случае обнаружения необычной активности](https://aka.ms/fixaccount), и выполните описанные в нем шаги. 
 - [Включите конвейер аудита](https://aka.ms/improvesecurity) для анализа действий в своем клиенте. После завершения анализа журналы действий в хранилище аудита начнут заполняться соответствующими данными. На этом этапе вы также можете использовать [ресурс поиска и исследования в центре безопасности и соответствия требованиям](https://aka.ms/sccsearch). 
-- Используйте этот [сценарий для включения аудита почтовых ящиков](https://aka.ms/mailboxaudit1) для всех учетных записей. 
 - Просмотрите делегированные разрешения и правила переадресации сообщений для всех почтовых ящиков. Чтобы выполнить эту задачу, можно использовать этот [сценарий PowerShell](https://aka.ms/delegateforwardrules). 
 
 ## <a name="next-steps"></a>Дальнейшие действия

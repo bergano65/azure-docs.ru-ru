@@ -1,25 +1,18 @@
 ---
 title: Виртуальные машины в шаблоне Azure Resource Manager | Microsoft Azure
 description: Сведения о том, как ресурс виртуальной машины определяется в шаблоне Azure Resource Manager.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: f63ab5cc-45b8-43aa-a4e7-69dc42adbb99
 ms.service: virtual-machines-windows
-ms.workload: na
-ms.tgt_pltfrm: vm-windows
+ms.workload: infrastructure
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: c9bf1cf0564655c932e066e5b74225382375e9c2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 04dba192488744d1b54b0a0e2d885c0b1766bdc6
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80235421"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82100538"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -281,7 +274,7 @@ Resource Manager параллельно развертывает все ресу
 
 При определении ресурса виртуальной машины используются несколько элементов профиля. Некоторые являются обязательными, а другие — необязательными. Например, элементы hardwareProfile, osProfile, storageProfile и networkProfile являются обязательными, а diagnosticsProfile — необязательным. С помощью этих профилей задаются следующие параметры:
    
-- [Размер](sizes.md)
+- [size](sizes.md)
 - [имя](/azure/architecture/best-practices/resource-naming) и учетные данные;
 - диск и [параметры операционной системы;](cli-ps-findimage.md)
 - [сетевой интерфейс](../../virtual-network/virtual-network-deploy-multinic-classic-ps.md) 
@@ -374,7 +367,7 @@ Resource Manager параллельно развертывает все ресу
 ],
 ```
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>Модули
 
 Хотя функции [расширения](extensions-features.md) являются отдельным ресурсом, они тесно связаны с виртуальными машинами. Расширения можно добавить как дочерний ресурс виртуальной машины или как отдельный ресурс. В примере показано добавление [расширения системы диагностики](extensions-diagnostics-template.md) к виртуальным машинам.
 

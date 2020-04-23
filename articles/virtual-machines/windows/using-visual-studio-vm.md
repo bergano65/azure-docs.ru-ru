@@ -1,41 +1,37 @@
 ---
 title: Использование Visual Studio на виртуальной машине Azure
 description: Использование Visual Studio на виртуальной машине Azure.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cathysull
 manager: cathys
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.topic: conceptual
 ms.date: 12/04/2019
 ms.author: cathys
 keywords: visualstudio
-ms.openlocfilehash: 76c8ec8f3d691a897ec924e06b76beec746ad14a
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 15de6a9aa7e49f680dcd953937d6b12cb9e16d4a
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81451590"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101609"
 ---
 # <a name="visual-studio-images-on-azure"></a>Образы Visual Studio в Azure
 Запуск Visual Studio на предварительно настроенной виртуальной машине Azure — простой и быстрый способ получить "с нуля" готовую к работе среду разработки. Образы системы с различными конфигурациями Visual Studio доступны в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images%3Bmicrosoft%3Bwindows&page=1&subcategories=application-infrastructure).
 
-Впервые работаете с Azure? [Создайте бесплатную учетную запись Azure.](https://azure.microsoft.com/free)
+Впервые работаете с Azure? [Создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free).
 
 > [!NOTE]
-> Не все подписки имеют право на развертывание изображений Windows 10. Для получения дополнительной информации [см. Используйте клиента Windows в Azure для сценариев отклонений/тестов](https://docs.microsoft.com/azure/virtual-machines/windows/client-images)
+> Не все подписки подходят для развертывания образов Windows 10. Дополнительные сведения см. [в статье Использование клиента Windows в Azure для сценариев разработки и тестирования](https://docs.microsoft.com/azure/virtual-machines/windows/client-images) .
 
 ## <a name="what-configurations-and-versions-are-available"></a>Какие конфигурации и версии доступны?
 Образы большинства последних основных версий (Visual Studio 2019, Visual Studio 2017 и Visual Studio 2015) можно найти в Azure Marketplace.  Для каждой выпущенной основной версии доступна исходная версия "выпущено для веб" (RTW) и последние обновленные версии.  Для каждой из этих версий доступны выпуски Visual Studio Enterprise и Visual Studio Community.  Эти образы обновляются по крайней мере раз в месяц для включения последних обновлений Visual Studio и Windows.  Хотя имена образов не меняются, описание каждого образа содержит версию установленного продукта и дату выпуска образа.
 
 | Версия выпуска                                                                                                                                                | Выпуски              | Версия продукта   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------:|:-----------------:|
-| [Визуальная студия 2019: Последние (Версия 16.4)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019latest?tab=Overview) | Enterprise, Community | Версия 16.4.0    |
-| [Визуальная студия 2019: RTW](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019?tab=Overview)                         | Enterprise, Community | Версия 16.0.9    |
+| [Visual Studio 2019: Последняя (версия 16,4)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019latest?tab=Overview) | Enterprise, Community | Версия 16.4.0    |
+| [Visual Studio 2019: RTW](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio2019?tab=Overview)                         | Enterprise, Community | Версия 16.0.9    |
 | [Visual Studio 2017: последняя версия (15.9)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)           | Enterprise, Community | Версия 15.9.17   |
 | [Visual Studio 2017 RTW](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)                             | Enterprise, Community | Версия 15.0.27  |
 | [Последняя версия Visual Studio 2015 (обновление 3)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftvisualstudio.visualstudio?tab=Overview)               | Enterprise, Community | Версия 14.0.25431.01 |
@@ -110,7 +106,7 @@ Visual Studio реализует модель использования соб�
 
 Кроме того, для ваших задач разработки или технологий может понадобиться больший масштаб. Например, это могут быть разнообразные конфигурации разработки и конфигурации с несколькими виртуальными машинами. Вы можете использовать Azure DevTest Labs, чтобы создать _файлы инструкций_, автоматизирующие создание вашего "золотого образа", а также управлять политиками для работающих виртуальных машин вашей команды. Статья [Использование Azure DevTest Labs для разработчиков](/azure/devtest-lab/devtest-lab-developer-lab) — лучший источник дополнительных сведений о DevTest Labs.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы знаете о предварительно настроенных образах Visual Studio, следующим шагом является создание виртуальной машины.
 
 * [Создание виртуальной машины с помощью портала Azure](quick-create-portal.md)

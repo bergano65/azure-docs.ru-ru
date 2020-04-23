@@ -1,6 +1,6 @@
 ---
-title: Ошибки, устранение ошибок в запуске системы автоматизации Azure
-description: Узнайте, как устранить неполадки и устранить проблемы, с которыми можно столкнуться в runbooks Azure Automation.
+title: Устранение ошибок Runbook службы автоматизации Azure
+description: Узнайте, как устранять неполадки и устранять проблемы, которые могут возникнуть при работе с модулями Runbook службы автоматизации Azure.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -8,51 +8,51 @@ ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 5ed25821f606b98bacf2acf3c2c389a8437406fa
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: 73f79145f63e0d8afee7596f1f8231a054ef1c2e
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81770904"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82097699"
 ---
-# <a name="troubleshoot-runbook-errors"></a>Ошибки выполнения ошибок
+# <a name="troubleshoot-runbook-errors"></a>Устранение ошибок модуля Runbook
 
- В этой статье описаны различные ошибки runbook, которые могут возникнуть и как их устранить.
+ В этой статье описываются различные ошибки Runbook, которые могут возникнуть, и способы их устранения.
 
 >[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](../automation-update-azure-modules.md)
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
 
-## <a name="diagnosing-runbook-issues"></a>Диагностика вопросов, связанных с книгой,
+## <a name="diagnosing-runbook-issues"></a>Диагностика проблем Runbook
 
-При получении ошибок во время выполнения runbook в Azure Automation можно использовать следующие действия для диагностики проблем.
+При возникновении ошибок во время выполнения Runbook в службе автоматизации Azure можно выполнить следующие действия, чтобы помочь в диагностике проблем.
 
-1. **Убедитесь, что ваш скрипт runbook успешно выполняется на локальной машине.** 
+1. **Убедитесь, что скрипт Runbook успешно выполнен на локальном компьютере.** 
 
-    Обратитесь к [документам PowerShell](/powershell/scripting/overview) или [Python Docs](https://docs.python.org/3/) для языковых справочных и обучающих модулей. Выполнение сценария локально может обнаружить и устранить распространенные ошибки, такие как:
+    Справочные материалы по языку и учебным модулям см. в документации по [документам PowerShell](/powershell/scripting/overview) или документах [Python](https://docs.python.org/3/) . Локальное выполнение скрипта может обнаружить и устранить распространенные ошибки, например:
 
       * Отсутствующие модули
       * Синтаксические ошибки
       * Логические ошибки
 
-2. **Исследуйте [потоки ошибок](https://docs.microsoft.com/azure/automation/automation-runbook-output-and-messages#runbook-output)runbook.**
+2. **Исследуйте [Потоки ошибок](https://docs.microsoft.com/azure/automation/automation-runbook-output-and-messages#runbook-output)Runbook.**
 
-    Посмотрите на эти потоки для конкретных сообщений и сравните их с ошибками, задокументированными в этой статье.
+    Просмотрите эти потоки для конкретных сообщений и сравните их с ошибками, описанными в этой статье.
 
-3. **Убедитесь, что ваши узлы и рабочее пространство автоматизации имеют необходимые модули.** 
+3. **Убедитесь, что узлы и Рабочая область службы автоматизации имеют необходимые модули.** 
 
-    Если в runbook импортируются какие-либо модули, убедитесь, что они доступны для вашей учетной записи Автоматизации, используя шаги, перечисленные в [модулях Импорта.](../shared-resources/modules.md#importing-modules) Обновите свои модули до последней версии, следуя инструкциям [в модулях Update Azure в Azure Automation.](..//automation-update-azure-modules.md) Для получения дополнительной [информации](shared-resources.md#modules)об устранении неполадок см.
+    Если модуль Runbook импортирует все модули, убедитесь, что они доступны для учетной записи службы автоматизации, выполнив действия, описанные в разделе [Импорт модулей](../shared-resources/modules.md#importing-modules). Обновите модули до последней версии, следуя инструкциям в [статье обновление модулей Azure в службе автоматизации Azure](..//automation-update-azure-modules.md). Дополнительные сведения об устранении неполадок см. в разделе [Устранение неполадок модулей](shared-resources.md#modules).
 
-4. **Делайте, если ваша книга приостановлена или неожиданно выходит из строя.**
+4. **Если модуль Runbook приостанавливается или неожиданно завершается сбоем.**
 
-    * [Проверка статусов вакансий](https://docs.microsoft.com/azure/automation/automation-runbook-execution#job-statuses) определяет статусы runbook и некоторые возможные причины.
-    * [Добавьте дополнительный выход](https://docs.microsoft.com/azure/automation/automation-runbook-output-and-messages#message-streams) в книгу, чтобы определить, что происходит до приостановки выполнения.
-    * [Обработка любых исключений,](https://docs.microsoft.com/azure/automation/automation-runbook-execution#handling-exceptions) которые брошены вашей работы.
+    * [Проверка состояния задания](https://docs.microsoft.com/azure/automation/automation-runbook-execution#job-statuses) определяет состояние Runbook и некоторые возможные причины.
+    * [Добавьте дополнительные выходные данные](https://docs.microsoft.com/azure/automation/automation-runbook-output-and-messages#message-streams) в модуль Runbook, чтобы определить, что происходит перед приостановкой модуля Runbook.
+    * [Обрабатывает все исключения](https://docs.microsoft.com/azure/automation/automation-runbook-execution#handling-exceptions) , создаваемые заданием.
 
-## <a name="scenario-run-login-azurermaccount-to-log-in"></a><a name="login-azurerm"></a>Сценарий: Выполнить Login-AzureRMAccount для входа в систему
+## <a name="scenario-run-login-azurermaccount-to-log-in"></a><a name="login-azurerm"></a>Сценарий: для входа выполните команду Login-AzureRMAccount.
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Вы получаете следующую ошибку при выполнении runbook:
+При выполнении модуля Runbook появляется следующая ошибка:
 
 ```error
 Run Login-AzureRMAccount to login.
@@ -60,34 +60,34 @@ Run Login-AzureRMAccount to login.
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка может возникнуть, когда вы не используете учетную запись Run As или срок действия учетной записи Run As. Смотрите [Управление Azure Автоматизация Run Как счета](https://docs.microsoft.com/azure/automation/manage-runas-account).
+Эта ошибка может возникать, если не используется учетная запись запуска от имени или истек срок действия учетной записи запуска от имени. См. раздел [Управление учетными записями запуска от имени службы автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runas-account).
 
-Эта ошибка имеет две основные причины:
+Эта ошибка возникает в двух основных причинах:
 
-* Существуют различные версии модуля AzureRM или Az.
+* Существуют разные версии модуля AzureRM или AZ.
 * Вы пытаетесь получить доступ к ресурсам в отдельной подписке.
 
 ### <a name="resolution"></a>Решение
 
-Если вы получили эту ошибку после обновления одного модуля AzureRM или Az, необходимо обновить все модули до одной и той же версии.
+Если эта ошибка возникает после обновления одного модуля AzureRM или AZ, следует обновить все модули до одной версии.
 
-Если вы пытаетесь получить доступ к ресурсам в другой подписке, вы можете выполнить ниже приведенные ниже действия для настройки разрешений.
+Если вы пытаетесь получить доступ к ресурсам в другой подписке, можно выполнить следующие действия, чтобы настроить разрешения.
 
-1. Перейдите на счет Automation Run As и скопируйте идентификатор приложения и отпечаток пальца.
+1. Перейдите к учетной записи запуска от имени службы автоматизации и скопируйте идентификатор и отпечаток приложения.
 
-    ![Копирование идентификатора и отпечатка пальца](../media/troubleshoot-runbooks/collect-app-id.png)
+    ![Копировать идентификатор и отпечаток](../media/troubleshoot-runbooks/collect-app-id.png)
 
-1. Перейдите в управление доступом подписки, где не размещается учетная запись Автоматизации, и добавьте новое назначение ролей.
+1. Перейдите к контролю доступа подписки, в котором не размещена учетная запись службы автоматизации, и добавьте новое назначение ролей.
 
     ![Управление доступом](../media/troubleshoot-runbooks/access-control.png)
 
-1. Добавьте идентификатор приложения, собранный ранее. Выберите разрешения участников.
+1. Добавьте собранный ранее идентификатор приложения. Выберите разрешения участника.
 
     ![Добавление назначения роли](../media/troubleshoot-runbooks/add-role-assignment.png)
 
-1. Копируйте название подписки.
+1. Скопируйте имя подписки.
 
-1. Теперь вы можете использовать следующий код runbook для проверки разрешений с учетной записи Automation на другую подписку. Заменить `"\<CertificateThumbprint\>"` значение, скопированное в шаге 1. Заменить `"\<SubscriptionName\>"` значение, скопированное в шаге 4.
+1. Теперь можно использовать следующий код Runbook для проверки разрешений учетной записи службы автоматизации в другой подписке. Замените `"\<CertificateThumbprint\>"` на значение, скопированное на шаге 1. Замените `"\<SubscriptionName\>"` на значение, скопированное на шаге 4.
 
     ```powershell
     $Conn = Get-AutomationConnection -Name AzureRunAsConnection
@@ -106,9 +106,9 @@ Run Login-AzureRMAccount to login.
 
 ## <a name="scenario-unable-to-find-the-azure-subscription"></a><a name="unable-to-find-subscription"></a>Сценарий: не удается найти подписку Azure
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Вы получаете следующую ошибку `Select-AzureRMSubscription`при `Select-AzSubscription` работе `Select-AzureSubscription`с, или cmdlet:
+При работе с командлетом `Select-AzureSubscription`, `Select-AzureRMSubscription`или `Select-AzSubscription` вы получаете следующую ошибку:
 
 ```error
 The subscription named <subscription name> cannot be found.
@@ -118,18 +118,18 @@ The subscription named <subscription name> cannot be found.
 
 Это ошибка может возникать в указанных ниже случаях.
 
-* Имя подписки неявляется.
-* Пользователь Active Directory Azure, который пытается получить данные о подписке, не настроен как администратор подписки.
-* Cmdlet недоступен.
+* Недопустимое имя подписки.
+* Пользователь Azure Active Directory, который пытается получить сведения о подписке, не настроен в качестве администратора подписки.
+* Командлет недоступен.
 
 ### <a name="resolution"></a>Решение
 
-Выполните ниже шаги, чтобы определить, прошли ли вы аутентифицированные действия в Azure и получили доступ к выбранной подписке.
+Выполните следующие действия, чтобы определить, прошли ли вы проверку подлинности в Azure и у вас есть доступ к подписке, которую вы пытаетесь выбрать.
 
-1. Чтобы убедиться, что ваш скрипт работает автономно, протестируйте его за пределами Azure Automation.
-2. Убедитесь, что скрипт запускает cmdlet [Connect-AzAccount](https://docs.microsoft.com/powershell/module/Az.Accounts/Connect-AzAccount?view=azps-3.7.0) перед запуском `Select-*` cmdlet.
-3. К началу вашего модуля runbook добавьте `Disable-AzContextAutosave –Scope Process`. Этот вызов cmdlet гарантирует, что все учетные данные применяются только к выполнению текущей службы runbook.
-4. Если вы все еще видите это сообщение `AzContext` об `Connect-AzAccount`ошибке, измените код, добавив параметр для, а затем выполните код.
+1. Чтобы убедиться, что сценарий работает автономно, протестируйте его за пределами службы автоматизации Azure.
+2. Убедитесь, что скрипт запускает командлет [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/Az.Accounts/Connect-AzAccount?view=azps-3.7.0) перед запуском `Select-*` командлета.
+3. К началу вашего модуля runbook добавьте `Disable-AzContextAutosave –Scope Process`. Этот вызов командлета гарантирует, что любые учетные данные применяются только к выполнению текущего модуля Runbook.
+4. Если вы по-прежнему видите это сообщение об ошибке, измените код `AzContext` , добавив параметр для `Connect-AzAccount`, а затем выполните код.
 
    ```powershell
    Disable-AzContextAutosave –Scope Process
@@ -144,7 +144,7 @@ The subscription named <subscription name> cannot be found.
 
 ## <a name="scenario-authentication-to-azure-failed-because-multi-factor-authentication-is-enabled"></a><a name="auth-failed-mfa"></a>Сценарий: не удается выполнить проверку подлинности в Azure из-за включенной многофакторной проверки подлинности
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 При аутентификации в Azure с помощью своего имени и пароля вы получаете следующую ошибку:
 
@@ -154,17 +154,17 @@ Add-AzureAccount: AADSTS50079: Strong authentication enrollment (proof-up) is re
 
 ### <a name="cause"></a>Причина:
 
-Если в учетной записи Azure активирована многофакторная проверка подлинности, применять учетную запись пользователя Azure Active Directory для аутентификации в Azure нельзя. Вместо этого для проверки подлинности необходимо использовать сертификат или принцип службы.
+Если в учетной записи Azure активирована многофакторная проверка подлинности, применять учетную запись пользователя Azure Active Directory для аутентификации в Azure нельзя. Вместо этого для проверки подлинности необходимо использовать сертификат или субъект-службу.
 
 ### <a name="resolution"></a>Решение
 
-Чтобы использовать сертификат с cmdlets классической модели развертывания Azure, обратитесь к [созданию и добавлению сертификата для управления службами Azure.](https://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx) Чтобы использовать основной сервис с cmdlets Ресурсов Azure, см. [Создание основной службы с помощью портала Azure](../../active-directory/develop/howto-create-service-principal-portal.md) и [проверка подлинности основного сервиса с помощью менеджера ресурсов Azure.](../../active-directory/develop/howto-authenticate-service-principal-powershell.md)
+Чтобы использовать сертификат с командлетами классической модели развертывания Azure, см. статью [Создание и Добавление сертификата для управления службами Azure](https://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx). Сведения об использовании субъекта-службы с командлетами Azure Resource Manager см. в разделе [Создание участника-службы с помощью портал Azure](../../active-directory/develop/howto-create-service-principal-portal.md) и [Проверка подлинности субъекта-службы с помощью Azure Resource Manager](../../active-directory/develop/howto-authenticate-service-principal-powershell.md).
 
-## <a name="scenario-you-see-an-error-in-your-job-streams-about-the-get_serializationsettings-method"></a><a name="get-serializationsettings"></a>Сценарий: В потоках работы видно, что в потоках работы прослушаешься get_SerializationSettings
+## <a name="scenario-you-see-an-error-in-your-job-streams-about-the-get_serializationsettings-method"></a><a name="get-serializationsettings"></a>Сценарий: вы видите ошибку в потоках заданий о методе get_SerializationSettings
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-В потоках вакансий в потоке вакансий можно увидеть следующую ошибку:
+В потоках заданий для модуля Runbook появится следующая ошибка:
 
 ```error
 Connect-AzAccount : Method 'get_SerializationSettings' in type
@@ -180,15 +180,15 @@ At line:16 char:1
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка вызвана использованием как модуля AzureRM, так и az-модулей cmdlets в ступеньке. Это происходит при импорте модуля Az перед импортом модуля AzureRM.
+Эта ошибка вызвана использованием командлетов модуля AzureRM и az в модуле Runbook. Это происходит при импорте модуля AZ перед импортом модуля AzureRM.
 
 ### <a name="resolution"></a>Решение
 
-Смдлеты Az и AzureRM не могут быть импортированы и использованы в одной и той же книге. Подробнее о Az cmdlets в Azure Automation можно узнать в [автоматизации Azure,](../shared-resources/modules.md)см.
+Командлеты AZ и AzureRM нельзя импортировать и использовать в одном модуле Runbook. Дополнительные сведения о командлетах az в службе автоматизации Azure см. в статье [Управление модулями в службе автоматизации Azure](../shared-resources/modules.md).
 
 ## <a name="scenario-the-runbook-fails-with-the-error-a-task-was-canceled"></a><a name="task-was-cancelled"></a>Сценарий. Выполнение модуля Runbook завершается ошибкой отмены задачи
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 В модуле Runbook возникает ошибка, аналогичная приведенной ниже:
 
@@ -204,16 +204,16 @@ Exception: A task was canceled.
 
 Эту ошибку можно устранить, обновив модули Azure до последней версии. 
 
-1. В вашей учетной записи Автоматизация щелкните **модули,** а затем **обновите модули Azure.** 
-2. Обновление занимает около 15 минут. Как только он будет завершен, перезапустите запущенную книгу, которая не удалась.
+1. В учетной записи службы автоматизации щелкните **модули**, а затем **Обновите модули Azure**. 
+2. Обновление занимает примерно 15 минут. После завершения повторно запустите модуль Runbook, который завершился сбоем.
 
-Чтобы узнать больше об обновлении модулей, смотрите [в обновлении модулей Azure в Azure Automation.](../automation-update-azure-modules.md)
+Дополнительные сведения об обновлении модулей см. [в статье обновление модулей Azure в службе автоматизации Azure](../automation-update-azure-modules.md).
 
-## <a name="scenario-runbooks-fail-when-dealing-with-multiple-subscriptions"></a><a name="runbook-auth-failure"></a>Сценарий: Runbooks терпят неудачу при работе с несколькими подписками
+## <a name="scenario-runbooks-fail-when-dealing-with-multiple-subscriptions"></a><a name="runbook-auth-failure"></a>Сценарий: Сбой модулей Runbook при работе с несколькими подписками
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-При запуске руны в runbook работает не удается управлять ресурсами Azure.
+При выполнении модулей Runbook модуль Runbook не может управлять ресурсами Azure.
 
 ### <a name="cause"></a>Причина:
 
@@ -221,7 +221,7 @@ Exception: A task was canceled.
 
 ### <a name="resolution"></a>Решение
 
-Контекст подписки может быть потерян, когда в runbook вывешнетне несколько runbooks. Чтобы обеспечить передачу контекста подписки в runbooks, пусть `Start-AzureRmAutomationRunbook` клиент runbook `AzureRmContext` передаст контекст cmdlet в параметре. Используйте `Disable-AzureRmContextAutosave` cmdlet `Scope` с набором параметров, чтобы `Process` гарантировать, что указанные учетные данные используются только для текущей книги. Для получения дополнительной [информации см.](../automation-runbook-execution.md#working-with-multiple-subscriptions)
+Контекст подписки может быть потерян, если модуль Runbook вызывает несколько модулей Runbook. Чтобы убедиться в том, что контекст подписки передается в модули Runbook, клиент Runbook должен передать контекст в `Start-AzureRmAutomationRunbook` командлет в `AzureRmContext` параметре. Используйте `Disable-AzureRmContextAutosave` командлет с `Scope` параметром, имеющим значение `Process` , чтобы убедиться, что указанные учетные данные используются только для текущего модуля Runbook. Дополнительные сведения см. в разделе [Работа с несколькими подписками](../automation-runbook-execution.md#working-with-multiple-subscriptions).
 
 ```azurepowershell-interactive
 # Ensures that any credentials apply only to the execution of this runbook
@@ -248,9 +248,9 @@ Start-AzAutomationRunbook `
     –Parameters $params –wait
 ```
 
-## <a name="scenario-term-not-recognized-as-the-name-of-a-cmdlet-function-script"></a><a name="not-recognized-as-cmdlet"></a>Сценарий: Срок, не признанный как название cmdlet, функция, сценарий
+## <a name="scenario-term-not-recognized-as-the-name-of-a-cmdlet-function-script"></a><a name="not-recognized-as-cmdlet"></a>Сценарий: термин не распознан как имя командлета, функции, скрипта
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 В модуле Runbook возникает ошибка, аналогичная приведенной ниже:
 
@@ -260,24 +260,24 @@ The term 'Connect-AzAccount' is not recognized as the name of a cmdlet, function
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка может произойти по следующим причинам:
+Эта ошибка может возникать по следующим причинам.
 
-* Модуль, содержащий cmdlet, не импортируется в учетную запись Автоматизации.
-* Модуль, содержащий cmdlet импортируется, но устарел.
+* Модуль, содержащий командлет, не импортируется в учетную запись службы автоматизации.
+* Модуль, содержащий командлет, импортирован, но устарел.
 
 ### <a name="resolution"></a>Решение
 
-Выполняй одну из следующих задач для устранения этой ошибки. 
+Выполните одну из следующих задач, чтобы устранить эту ошибку. 
 
-* Для модуля Azure смотрите, [как обновить модули Azure PowerShell в Azure Automation,](../automation-update-azure-modules.md) чтобы узнать, как обновить свои модули в учетной записи автоматизации.
+* Сведения о модулях Azure см. в разделе [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md) , чтобы узнать, как обновить модули в учетной записи службы автоматизации.
 
-* Для модуля, не относящемся к Azure, убедитесь, что модуль, импортируемый в вашу учетную запись Автоматизации.
+* Для модуля, не относящегося к Azure, убедитесь, что модуль импортируется в учетную запись службы автоматизации.
 
-## <a name="scenario-the-runbook-job-start-was-attempted-three-times-but-failed-to-start-each-time"></a><a name="job-attempted-3-times"></a>Сценарий: Запуск работы runbook был предпринят три раза, но не запускался каждый раз
+## <a name="scenario-the-runbook-job-start-was-attempted-three-times-but-failed-to-start-each-time"></a><a name="job-attempted-3-times"></a>Сценарий: предпринята попытка запуска задания Runbook три раза, но не удалось запустить каждый раз
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Ваша книга не удается со следующей ошибкой:
+Модуль Runbook завершается со следующей ошибкой:
 
 ```error
 The job was tried three times but it failed
@@ -285,35 +285,35 @@ The job was tried three times but it failed
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка возникает из-за одной из следующих проблем:
+Эта ошибка возникает по одной из следующих причин:
 
-* Предельный объем памяти. Задание может выполнить неудачу, если она использует более 400 МБ памяти. Задокументированные ограничения памяти, отведенные в песочнице, находятся в [пределах службавтоматизации.](../../azure-resource-manager/management/azure-subscription-service-limits.md#automation-limits) 
+* Предельный объем памяти. Задание может завершиться ошибкой, если в нем используется более 400 МБ памяти. Документированные ограничения на память, выделенную для песочницы, находятся в статье [ограничения службы автоматизации](../../azure-resource-manager/management/azure-subscription-service-limits.md#automation-limits). 
 
-* Сетевые сокеты. Панзурные песочницы ограничены 1000 одновременными сетевыми розетками. См [Ограничения служб автоматизации](../../azure-resource-manager/management/azure-subscription-service-limits.md#automation-limits).
+* Сетевые сокеты. В песочницах Azure ограничено 1000 одновременных сетевых сокетов. См. раздел [ограничения службы автоматизации](../../azure-resource-manager/management/azure-subscription-service-limits.md#automation-limits).
 
-* Модуль несовместим. Зависимость от модуля может быть неправильной. В этом случае ваша книга `Command not found` обычно `Cannot bind parameter` возвращает или сообщение.
+* Модуль несовместим. Зависимости модуля могут быть неправильными. В этом случае модуль Runbook обычно возвращает сообщение `Command not found` или. `Cannot bind parameter`
 
-* Нет аутентификации с Active Каталог для песочницы. В runbook была предпринята попытка вызвать исполняемый или подпроцесс, который работает в песочнице Azure. Настройка рун для аутентификации с помощью Azure AD с помощью Библиотеки подлинности активных каталогов Azure (ADAL) не поддерживается.
+* Без проверки подлинности с Active Directory для "песочницы". Модуль Runbook попытался вызвать исполняемый файл или подпроцесс, который выполняется в песочнице Azure. Настройка модулей Runbook для проверки подлинности в Azure AD с помощью библиотеки проверки подлинности Azure Active Directory (ADAL) не поддерживается.
 
-* Слишком много данных об исключениях. В runbook была предпринята попытка написать слишком много данных об исключениях в поток вывода.
+* Слишком много данных об исключениях. Модуль Runbook попытался записать слишком много данных об исключении в поток вывода.
 
 ### <a name="resolution"></a>Решение
 
-* Предел памяти, сетевые розетки. Предлагаемые способы работы в пределах памяти — разделить рабочую нагрузку между несколькими runbooks, обработать меньше данных в памяти, избежать написания ненужных выходных данных из ваших runbooks и рассмотреть, сколько контрольных личек записано в ваших рукописных учебниках powerShell. Используйте четкий метод, `$myVar.clear`например, чтобы `[GC]::Collect` очистить переменные и использовать для запуска сбора мусора немедленно. Эти действия уменьшают объем памяти, занимаемой модулем runbook во время выполнения.
+* Ограничение памяти, сетевые сокеты. Предлагаемые способы работы в рамках ограничения памяти: разделить рабочую нагрузку между несколькими модулями Runbook, обрабатывать меньшие объемы данных в памяти, избежать необходимости записывать ненужные выходные данные из модулей Runbook и определить, сколько контрольных точек записывается в модули Runbook рабочего процесса PowerShell. Используйте метод Clear, например `$myVar.clear`, для удаления переменных и использования `[GC]::Collect` для немедленного выполнения сборки мусора. Эти действия уменьшают объем памяти, занимаемой модулем runbook во время выполнения.
 
-* Модуль несовместим. Обновите модули Azure, выяснив следующие шаги в [мочеиспускании модулей Azure PowerShell в Azure Automation.](../automation-update-azure-modules.md)
+* Модуль несовместим. Обновите модули Azure, выполнив действия, описанные в статье [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
 
-* Нет аутентификации с active каталог для песочницы. При проверке подлинности в Azure AD с помощью runbook убедитесь, что модуль Azure AD доступен в вашей учетной записи Автоматизации. Не забудьте предоставить учетной записи Run As необходимые разрешения для выполнения задач, которые автоматизирует runbook.
+* Без проверки подлинности с Active Directory для "песочницы". При проверке подлинности в Azure AD с помощью модуля Runbook убедитесь, что модуль Azure AD доступен в вашей учетной записи службы автоматизации. Не забудьте предоставить учетной записи запуска от имени необходимые разрешения для выполнения задач, которые автоматизируется модулем Runbook.
 
-  Если в runbook не может вызвать исполняемый или подпроцесс, работающий в песочнице Azure, используйте книгу запуска на [гибридном Runbook Worker.](../automation-hrw-run-runbooks.md) Гибридные работники не ограничены ограничениями памяти и сети, которыми являются песочницы Azure.
+  Если модуль Runbook не может вызвать исполняемый файл или подпроцесс, выполняющийся в песочнице Azure, используйте Runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md). Гибридные рабочие роли не ограничиваются ограничениями памяти и сети, которые имеют службы "песочницы Azure".
 
-* Слишком много данных об исключениях. Существует ограничение в 1 МБ в потоке вывода задания. Убедитесь, что в runbook контакты с выполнением `try` выполнения `catch` и блоков. Если операции бросают исключение, попросайте код сообщение из исключения в переменную Автоматизации. Этот метод предотвращает вписания сообщения в поток вывода задания.
+* Слишком много данных об исключениях. В потоке выходных данных задания имеется ограничение в 1 МБ. Убедитесь, что модуль Runbook закрывает вызовы исполняемого или вложенного процесса `try` с `catch` помощью блоков и. Если операции создают исключение, то код будет записывать сообщение из исключения в переменную автоматизации. Эта методика предотвращает запись сообщения в поток вывода задания.
 
-## <a name="scenario-sign-in-to-azure-account-failed"></a><a name="sign-in-failed"></a>Сценарий: Запись на учетную запись Azure не удалась
+## <a name="scenario-sign-in-to-azure-account-failed"></a><a name="sign-in-failed"></a>Сценарий: сбой входа в учетную запись Azure
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Вы получаете одну из следующих `Connect-AzAccount` ошибок при работе с cmdlet:
+При работе с `Connect-AzAccount` командлетом появляется одна из следующих ошибок:
 
 ```error
 Unknown_user_type: Unknown User Type
@@ -325,14 +325,14 @@ No certificate was found in the certificate store with thumbprint
 
 ### <a name="cause"></a>Причина:
 
-Эти ошибки возникают, если имя актива учетных данных не является действительным. Они также могут возникнуть, если имя пользователя и пароль, которые вы использовали для настройки актива учетных данных Automation, недействительны.
+Эти ошибки возникают, если имя ресурса учетных данных недопустимо. Они также могут возникать, если имя пользователя и пароль, используемые для настройки ресурса учетных данных службы автоматизации, недействительны.
 
 ### <a name="resolution"></a>Решение
 
 Чтобы определить источник проблемы, необходимо выполнить следующие действия.
 
 1. Убедитесь, что у вас нет специальных символов. В имени ресурса учетных данных Службы автоматизации Azure, используемом для подключения к Azure, запрещается вводить такие специальные символы, как `\@`.
-2. Проверьте, можно ли использовать имя пользователя и пароль, которые хранятся в учетных данных Azure Automation в локальном редакторе PowerShell ISE. Выполнить следующие cmdlets в PowerShell ISE.
+2. Проверьте, можно ли использовать имя пользователя и пароль, которые хранятся в учетных данных службы автоматизации Azure в локальном редакторе интегрированной среды сценариев PowerShell. Выполните следующие командлеты в интегрированной среде сценариев PowerShell.
 
    ```powershell
    $Cred = Get-Credential
@@ -342,9 +342,9 @@ No certificate was found in the certificate store with thumbprint
    Connect-AzAccount –Credential $Cred
    ```
 
-3. Если проверка подлинности не сработала локально, вы не настроили учетные данные Active Directory Azure. Обратитесь к [Authenticating to Azure с помощью блога Azure Active Directory,](https://azure.microsoft.com/blog/azure-automation-authenticating-to-azure-using-azure-active-directory/) чтобы настроить учетную запись Active Directory Azure.
+3. Если проверка подлинности не выполняется локально, учетные данные Azure Active Directory не настроены должным образом. Сведения о том, как правильно настроить учетную запись Azure Active Directory, см. в записи блога [Проверка подлинности в Azure с помощью Azure Active Directory](https://azure.microsoft.com/blog/azure-automation-authenticating-to-azure-using-azure-active-directory/) .
 
-4. Если ошибка кажется преходящей, попробуйте добавить логику повторной работы в рутину проверки подлинности, чтобы сделать проверку подлинности более надежной.
+4. Если ошибка кажется временной, попробуйте добавить логику повторных попыток в подсистему проверки подлинности, чтобы сделать проверку подлинности более надежной.
 
    ```powershell
    # Get the connection "AzureRunAsConnection"
@@ -368,11 +368,25 @@ No certificate was found in the certificate store with thumbprint
    }
    ```
 
-## <a name="scenario-object-reference-not-set-to-an-instance-of-an-object"></a><a name="child-runbook-object"></a>Сценарий: Ссылка на объект не установлена на экземпляр объекта
+## <a name="scenario-incorrect-object-reference-on-call-to-add-azaccount"></a><a name="object-reference-not-set"></a>Сценарий: Неверная ссылка на объект при вызове Add-Азаккаунт
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Вы получаете следующую ошибку при входе `Wait` в детскую запущенную книгу с параметром, и поток вывода содержит объект:
+Эта ошибка возникает при работе с `Add-AzAccount`, который является псевдонимом для `Connect-AzAccount` командлета:
+
+```error
+Add-AzAccount : Object reference not set to an instance of an object
+```
+
+### <a name="cause"></a>Причина:
+
+Эта ошибка может возникать, если модуль Runbook не выполняет нужные действия `Add-AzAccount` перед вызовом для добавления учетной записи службы автоматизации. Примером одного из необходимых действий является вход с использованием учетной записи запуска от имени. Сведения о правильных операциях, используемых в модуле Runbook, см. [в разделе Выполнение Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-runbook-execution).
+
+## <a name="scenario-object-reference-not-set-to-an-instance-of-an-object"></a><a name="child-runbook-object"></a>Сценарий: ссылка на объект не задает экземпляр объекта
+
+### <a name="issue"></a>Проблема
+
+При вызове дочернего модуля Runbook с `Wait` параметром и выходным потоком, содержащим объект, возникает следующая ошибка:
 
 ```error
 Object reference not set to an instance of an object
@@ -380,11 +394,11 @@ Object reference not set to an instance of an object
 
 ### <a name="cause"></a>Причина:
 
-`Start-AzAutomationRunbook`не обрабатывает поток вывода правильно, если поток содержит объекты.
+`Start-AzAutomationRunbook`не обрабатывает выходной поток правильно, если поток содержит объекты.
 
 ### <a name="resolution"></a>Решение
 
-Рекомендуется реализовать логику опроса и использовать [cmdlet Get-AzAutomationJobOutput](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0) для получения вывода. Ниже приведен пример этой логики.
+Рекомендуется реализовать логику опроса и получить выходные данные с помощью командлета [Get-азаутоматионжобаутпут](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0) . Пример этой логики определен ниже.
 
 ```powershell
 $automationAccountName = "ContosoAutomationAccount"
@@ -410,7 +424,7 @@ $jobResults | Get-AzAutomationJobOutput | Get-AzAutomationJobOutputRecord | Sele
 
 ## <a name="scenario-runbook-fails-because-of-deserialized-object"></a><a name="fails-deserialized-object"></a>Сценарий: сбой модуля Runbook из-за десериализованного объекта
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Выполнение модуля Runbook завершилось ошибкой.
 
@@ -426,15 +440,15 @@ Cannot convert the <ParameterType> value of type Deserialized <ParameterType> to
 
 ### <a name="resolution"></a>Решение
 
-Используйте любое из следующих решений, чтобы исправить эту проблему.
+Чтобы устранить эту проблему, используйте любое из следующих решений.
 
-* Если вы трубопроводов сложных объектов от одного cmdlet к `InlineScript` другому, оберните эти cmdlets в деятельности.
+* Если вы направляете сложные объекты из одного командлета в другой, заключите эти `InlineScript` командлеты в действие.
 * Передайте только требуемое имя или значение сложного объекта, а не весь объект.
 * Используйте модуль Runbook PowerShell, а не модуль Runbook рабочего процесса PowerShell.
 
-## <a name="scenario-runbook-job-fails-because-allocated-quota-exceeded"></a><a name="quota-exceeded"></a>Сценарий: Задание Runbook не удается из-за превышения выделенной квоты
+## <a name="scenario-runbook-job-fails-because-allocated-quota-exceeded"></a><a name="quota-exceeded"></a>Сценарий: сбой задания Runbook из-за превышения выделенной квоты
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Выполнение задания Runbook завершилось ошибкой.
 
@@ -444,20 +458,20 @@ The quota for the monthly total job run time has been reached for this subscript
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка возникает, когда время выполнения задания превышает квоту для учетной записи в 500 бесплатных минут. Эта квота применяется ко всем типам задач на выполнение заданий. Некоторые из этих задач — тестирование задания, запуск задания с портала, выполнение задания с помощью веб-крючков или планирование выполнения задания с помощью портала Azure или центра обработки данных. Чтобы узнать больше о ценах на автоматизацию, [см.](https://azure.microsoft.com/pricing/details/automation/)
+Эта ошибка возникает, когда время выполнения задания превышает квоту для учетной записи в 500 бесплатных минут. Эта квота применяется ко всем типам задач на выполнение заданий. Некоторые из этих задач — тестирование задания, запуск задания с портала, выполнение задания с помощью веб-перехватчиков или планирование выполнения задания с помощью портал Azure или вашего центра обработки данных. Дополнительные сведения о ценах на автоматизацию см. в разделе [цены на автоматизацию](https://azure.microsoft.com/pricing/details/automation/).
 
 ### <a name="resolution"></a>Решение
 
-Если вы хотите использовать более 500 минут обработки в месяц, измените подписку с бесплатного уровня на базовый.
+Если вы хотите использовать более 500 минут обработки в месяц, измените подписку с уровня "бесплатный" на уровень "базовый".
 
 1. Войдите в свою подписку Azure.
-2. Выберите учетную запись Автоматизации для обновления.
-3. Нажмите **Настройки,** затем **цены**.
-4. Нажмите **Включить на** нижней части страницы, чтобы обновить учетную запись до базового уровня.
+2. Выберите учетную запись службы автоматизации для обновления.
+3. Щелкните **Параметры**, а затем — **цены**.
+4. Щелкните **включить** на странице снизу, чтобы обновить учетную запись до уровня "базовый".
 
 ## <a name="scenario-cmdlet-not-recognized-when-executing-a-runbook"></a><a name="cmdlet-not-recognized"></a>Сценарий: не удается распознать командлет при выполнении модуля Runbook
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Выполнение задания Runbook завершилось ошибкой.
 
@@ -467,50 +481,50 @@ The quota for the monthly total job run time has been reached for this subscript
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка возникает, когда модулю PowerShell не удается найти командлет, который используется в runbook. Возможно, что модуль, содержащий cmdlet отсутствует в учетной записи, есть конфликт имени с именем runbook, или cmdlet также существует в другом модуле и автоматизация не может решить имя.
+Эта ошибка возникает, когда модулю PowerShell не удается найти командлет, который используется в runbook. Возможно, модуль, содержащий командлет, отсутствует в учетной записи, существует конфликт имен с именем Runbook, или же командлет существует в другом модуле, и автоматизация не может разрешить это имя.
 
 ### <a name="resolution"></a>Решение
 
-Используйте любое из следующих решений для устранения проблемы.
+Чтобы устранить проблему, используйте любое из следующих решений.
 
-* Убедитесь, что вы правильно ввели имя cmdlet.
-* Убедитесь, что cmdlet существует в вашей учетной записи Automation и что нет никаких конфликтов. Чтобы проверить наличие cmdlet, откройте книгу в режиме отображаеми и ищите `Get-Command <CommandName>`cmdlet, который вы хотите найти в библиотеке, или запустите. После того как вы подтвердили, что cmdlet доступен для учетной записи, и что нет никаких конфликтов имени с другими cmdlets или runbooks, добавьте cmdlet к холсту и убедитесь, что вы используете действительный параметр, установленный в вашей книге.
-* Если у вас есть конфликт имени и cmdlet доступен в двух различных модулях, решить проблему, используя полностью квалифицированное название для cmdlet. Например, можно использовать `ModuleName\CmdletName`.
-* Если вы проводите запуск в гибридной рабочей группе, убедитесь, что модуль и cmdlet установлены на машине, в мещающейся в гибридной рабочей группе.
+* Убедитесь, что имя командлета введено правильно.
+* Убедитесь, что командлет существует в учетной записи службы автоматизации и что конфликтов нет. Чтобы проверить наличие командлета, откройте модуль Runbook в режиме редактирования и выполните поиск командлета, который нужно найти в библиотеке, или выполните команду `Get-Command <CommandName>`. После проверки того, что командлет доступен для учетной записи и не существует конфликтов имен с другими командлетами или модулями Runbook, добавьте командлет на холст и убедитесь, что вы используете допустимый набор параметров в модуле Runbook.
+* Если у вас есть конфликт имен и командлет доступен в двух разных модулях, устраните проблему, используя полное имя командлета. Например, можно использовать `ModuleName\CmdletName`.
+* Если вы выполняете локальный модуль Runbook в группе гибридной рабочей роли, убедитесь, что модуль и командлет установлены на компьютере, на котором размещена Гибридная Рабочая роль.
 
-## <a name="scenario-a-long-running-runbook-fails-to-complete"></a><a name="long-running-runbook"></a>Сценарий: Долгосрочный runbook не завершается
+## <a name="scenario-a-long-running-runbook-fails-to-complete"></a><a name="long-running-runbook"></a>Сценарий: сбой длительного выполнения Runbook
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Runbook находится в остановленном состоянии в течение 3 часов после выполнения команды. Вы также можете получить эту ошибку:
+Runbook находится в остановленном состоянии в течение 3 часов после выполнения команды. Кроме того, может появиться следующее сообщение об ошибке:
 
 ```error
 The job was evicted and subsequently reached a Stopped state. The job cannot continue running.
 ```
 
-Такое поведение происходит по своей конструкции в песочницах Azure из-за справедливого мониторинга [процессов](../automation-runbook-execution.md#fair-share) в Azure Automation. Если процесс выполняется более трех часов, справедливая доля автоматически останавливает запуск книги. Статус runbook, который проходит мимо справедливого ограничения времени доли отличается по типу runbook. Модули runbook PowerShell и Python переходят в состояние Остановлено. Модули runbook рабочих процессов PowerShell переходят в состояние Сбой.
+Такое поведение характерно в изолированных средах Azure из-за [общего](../automation-runbook-execution.md#fair-share) мониторинга процессов в службе автоматизации Azure. Если процесс выполняется дольше трех часов, справедливое предоставление общего доступа автоматически останавливает модуль Runbook. Состояние модуля Runbook, который находится за пределами длительного общего времени, отличается от типа Runbook. Модули runbook PowerShell и Python переходят в состояние Остановлено. Модули runbook рабочих процессов PowerShell переходят в состояние Сбой.
 
 ### <a name="cause"></a>Причина:
 
-Запуск побежал за 3-часовой лимит, разрешенный справедливой долей в песочнице Azure.
+Модуль Runbook выполнялся в течение 3-часового лимита, разрешенного долево в песочнице Azure.
 
 ### <a name="resolution"></a>Решение
 
-Одно из рекомендуемых решений — запустить runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md). Гибридные рабочие не ограничены 3-часовым лимитом на справедливую долю, который есть у песочниц Azure. Runbooks, запущенные на гибридных работниках Runbook, должны быть разработаны для поддержки поведения перезапуска при возникновении неожиданных проблем с локальной инфраструктурой.
+Одно из рекомендуемых решений — запустить runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md). Гибридные рабочие роли не ограничиваются предельным числом модулей Runbook, допустимым в течение 3 часов. Модули Runbook, выполняемые в гибридных рабочих ролях Runbook, должны быть разработаны для поддержки поведения при перезапуске в случае непредвиденных проблем с локальной инфраструктурой.
 
-Другим решением является оптимизация runbook путем создания [детских runbooks.](../automation-child-runbooks.md) Если в книге runbook работает одинаковая функция на нескольких ресурсах, например, в операции базы данных на нескольких базах данных, можно переместить функцию в детскую книгу. Каждая детская книга выполняется параллельно в отдельном процессе. Это уменьшает количество времени на завершение родительского модуля runbook.
+Другое решение — оптимизация модуля Runbook путем создания [дочерних модулей Runbook](../automation-child-runbooks.md). Если модуль Runbook просматривает одну и ту же функцию в нескольких ресурсах, например в операции базы данных в нескольких базах данных, функцию можно переместить в дочерний модуль Runbook. Каждый дочерний модуль Runbook выполняется параллельно в отдельном процессе. Это уменьшает количество времени на завершение родительского модуля runbook.
 
 Командлеты PowerShell для реализации дочерних runbook:
 
-* [Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Этот командлет позволяет запустить runbook и передать в него параметры.
+* [Start-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Этот командлет позволяет запустить runbook и передать в него параметры.
 
-* [Get-AzAutomationJob](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). Если есть операции, которые должны быть выполнены после завершения детской книги, это cmdlet позволяет проверить состояние работы для каждого ребенка.
+* [Get-азаутоматионжоб](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). При наличии операций, которые необходимо выполнить после завершения дочернего Runbook, этот командлет позволяет проверить состояние задания для каждого дочернего модуля.
 
-## <a name="scenario-status-400-bad-request-when-calling-a-webhook"></a><a name="expired webhook"></a>Сценарий: Статус: 400 Bad Request при вызове веб-крючка
+## <a name="scenario-status-400-bad-request-when-calling-a-webhook"></a><a name="expired webhook"></a>Сценарий: состояние: 400 недопустимый запрос при вызове веб-перехватчика
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-При попытке вызвать веб-крюк для запуска Azure Automation получает следующую ошибку:
+При попытке вызвать веб-перехватчик для модуля Runbook службы автоматизации Azure появляется следующее сообщение об ошибке:
 
 ```error
 400 Bad Request : This webhook has expired or is disabled
@@ -522,11 +536,11 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 ### <a name="resolution"></a>Решение
 
-если веб-перехватчик отключен, его можно повторно включить на портале Azure. Если у веб-крючка истек срок действия, необходимо удалить, а затем воссоздать его. Если срок действия еще не истек, можно только [обновить веб-перехватчик](../automation-webhooks.md#renew-webhook).
+если веб-перехватчик отключен, его можно повторно включить на портале Azure. Если срок действия веб-перехватчика истек, его необходимо удалить, а затем создать заново. Если срок действия еще не истек, можно только [обновить веб-перехватчик](../automation-webhooks.md#renew-webhook).
 
-## <a name="scenario-429-the-request-rate-is-currently-too-large"></a><a name="429"></a>Сценарий: 429: Коэффициент запроса в настоящее время слишком велик...
+## <a name="scenario-429-the-request-rate-is-currently-too-large"></a><a name="429"></a>Сценарий: 429: частота запросов в настоящее время слишком велика...
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 При выполнении командлета `Get-AzAutomationJobOutput` вы получаете следующее сообщение об ошибке:
 
@@ -536,21 +550,21 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка может возникнуть при извлечении вывода задания из runbook, который имеет много [потоков Verbose.](../automation-runbook-output-and-messages.md#verbose-stream)
+Эта ошибка может возникать при получении выходных данных задания из модуля Runbook, который содержит много [подробных потоков](../automation-runbook-output-and-messages.md#verbose-stream).
 
 ### <a name="resolution"></a>Решение
 
-Сделайте одно из следующих, чтобы устранить эту ошибку.
+Чтобы устранить эту ошибку, выполните одно из следующих действий.
 
 * изменить модуль Runbook и сократить число создаваемых потоков заданий;
 
-* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно установить значение `Stream` параметра для cmdlet [Get-AzAutomationJobOutput](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0) для получения только выходных потоков. 
+* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно задать значение `Stream` параметра командлета [Get-азаутоматионжобаутпут](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0) , чтобы получить только выходные потоки. 
 
-## <a name="scenario-powershell-job-fails-with-error-cannot-invoke-method"></a><a name="cannot-invoke-method"></a>Сценарий: Работа PowerShell не справляется с ошибкой: не может вызвать метод
+## <a name="scenario-powershell-job-fails-with-error-cannot-invoke-method"></a><a name="cannot-invoke-method"></a>Сценарий: сбой задания PowerShell с ошибкой: не удается вызвать метод
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Вы получаете следующее сообщение об ошибке при запуске задания PowerShell в запущенной в Azure книге:
+При запуске задания PowerShell в модуле Runbook, запущенном в Azure, появляется следующее сообщение об ошибке:
 
 ```error
 Exception was thrown - Cannot invoke method. Method invocation is supported only on core types in this language mode.
@@ -558,63 +572,63 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 
 ### <a name="cause"></a>Причина:
 
-Эта ошибка может указывать на то, что запущенные книги, исполняемые в песочнице Azure, не могут работать в [режиме полного языка.](/powershell/module/microsoft.powershell.core/about/about_language_modes)
+Эта ошибка может означать, что модули Runbook, выполняющиеся в песочнице Azure, не могут работать в [полном языковом режиме](/powershell/module/microsoft.powershell.core/about/about_language_modes).
 
 ### <a name="resolution"></a>Решение
 
-Существует два способа устранения этой ошибки.
+Устранить эту ошибку можно двумя способами.
 
-* Вместо того, чтобы использовать [Start-Job,](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7)используйте [Start-AzAutomationRunbook,](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) чтобы запустить книгу.
-* Попробуйте запустить книгу на гибридный Runbook работника.
+* Для запуска модуля Runbook вместо [запуска](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7)используйте [Start-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) .
+* Попробуйте запустить модуль Runbook в гибридной рабочей роли Runbook.
 
-Чтобы узнать больше об этом поведении и других [Runbook behavior](../automation-runbook-execution.md#runbook-behavior)поведении runbooks Azure Automation, см.
+Дополнительные сведения об этом поведении и других возможностях модулей Runbook службы автоматизации Azure см. в разделе [поведение модуля Runbook](../automation-runbook-execution.md#runbook-behavior).
 
-## <a name="scenario-linux-hybrid-runbook-worker-receives-a-prompt-for-a-password-when-signing-a-runbook"></a>Сценарий: Linux Hybrid Runbook Worker получает подсказку для пароля при подписании runbook
+## <a name="scenario-linux-hybrid-runbook-worker-receives-a-prompt-for-a-password-when-signing-a-runbook"></a>Сценарий: Гибридная Рабочая роль Runbook Linux получает запрос на ввод пароля при подписании модуля Runbook
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Запуск `sudo` команды для Linux Hybrid Runbook Worker получает неожиданный запрос для пароля.
+При выполнении `sudo` команды для гибридной рабочей роли Runbook Linux получается непредвиденный запрос на ввод пароля.
 
 ### <a name="cause"></a>Причина:
 
-Учетная запись **nxautomationuser** для агента Log Analytics для Linux неправильно настроена в файле **sudoers.** Гибридный Runbook Worker нуждается в соответствующей конфигурации разрешений на учетную запись и других данных, чтобы он мог подписать runbooks на Linux Runbook Worker.
+Учетная запись **нксаутоматионусер** для агента log Analytics для Linux неправильно настроена в файле " **sudo** ". Гибридной рабочей роли Runbook требуется соответствующая настройка разрешений учетной записи и других данных, чтобы она могла подписывать модули Runbook в рабочей роли Runbook для Linux.
 
 ### <a name="resolution"></a>Решение
 
-* Убедитесь, что Hybrid Runbook Worker имеет GnuPG (GPG) исполняемый на машине.
+* Убедитесь, что Гибридная Рабочая роль Runbook имеет исполняемый файл GnuPG (GPG) на компьютере.
 
-* Проверьте конфигурацию учетной записи **nxautomationuser** в файле **sudoers.** Смотрите [Запуск runbooks на гибридных Runbook работника](../automation-hrw-run-runbooks.md)
+* Проверьте конфигурацию учетной записи **нксаутоматионусер** в файле " **sudo** ". См. раздел [Запуск модулей Runbook в гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md) .
 
-## <a name="scenario-cmdlet-failing-in-pnp-powershell-runbook-on-azure-automation"></a>Сценарий: Cmdlet не удается в PnP PowerShell runbook на Azure автоматизации
+## <a name="scenario-cmdlet-failing-in-pnp-powershell-runbook-on-azure-automation"></a>Сценарий: сбой командлета в Runbook PowerShell PnP в службе автоматизации Azure
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-Когда запуск записывает созданный PnP PowerShell объект на выход Azure Automation напрямую, выход cmdlet не может передаваться обратно в Автоматизацию.
+Когда модуль Runbook записывает автоматически созданный объект PnP PowerShell в выходные данные службы автоматизации Azure, выходные данные командлета не могут выполнять потоковую передачу в службу автоматизации.
 
 ### <a name="cause"></a>Причина:
 
-Эта проблема чаще всего возникает, когда Azure Automation обрабатывает рунированные книги, `add-pnplistitem`которые вызывают PnP PowerShell cmdlets, например, без ловли объектов возврата.
+Чаще всего эта проблема возникает, когда служба автоматизации Azure обрабатывает модули Runbook, которые вызывают командлеты PnP PowerShell `add-pnplistitem`, например, без перехвата возвращаемых объектов.
 
 ### <a name="resolution"></a>Решение
 
-Отспособьте скрипты, чтобы присвоить переменным любые значения возврата, чтобы cmdlets не пытались написать целые объекты в стандартный вывод. Скрипт может перенаправить выходной поток на cmdlet, как показано ниже.
+Измените скрипты, чтобы присвоить значения переменным, чтобы командлеты не предпринимали попытку записи целых объектов в стандартный вывод. Скрипт может перенаправить поток вывода в командлет, как показано ниже.
 
 ```azurecli
   $null = add-pnplistitem
 ```
 
-Если скрипт разбирает выход cmdlet, скрипт должен хранить выход в переменной и манипулировать переменной, а не просто потоковой передачей.
+Если сценарий анализирует выходные данные командлета, сценарий должен сохранить выходные данные в переменной и манипулировать переменной вместо просто потоковой передачи выходных данных.
 
 ```azurecli
 $SomeVariable = add-pnplistitem ....
 if ($SomeVariable.someproperty -eq ....
 ```
 
-## <a name="scenario-invalid-status-code-forbidden-when-using-key-vault-inside-a-runbook"></a>Сценарий: Недействительный код статуса "Запрещено" при использовании Key Vault в справочной книге
+## <a name="scenario-invalid-status-code-forbidden-when-using-key-vault-inside-a-runbook"></a>Сценарий: недопустимый код состояния "запрещено" при использовании Key Vault в модуле Runbook
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
-При попытке получить доступ к Key Vault через runbook Автоматизации Azure вы получаете следующую ошибку:
+При попытке получить доступ к Key Vault с помощью модуля Runbook службы автоматизации Azure возникает следующая ошибка:
 
 ```error
 Operation returned an invalid status code 'Forbidden' 
@@ -624,77 +638,77 @@ Operation returned an invalid status code 'Forbidden'
 
 Возможные причины этой проблемы:
 
-* Не использовать учетную запись Run As.
+* Не использовать учетную запись запуска от имени.
 * Недостаточно разрешений.
 
 ### <a name="resolution"></a>Решение
 
-#### <a name="not-using-run-as-account"></a>Не использование учетной записи Run As
+#### <a name="not-using-run-as-account"></a>Не используется учетная запись запуска от имени
 
-Выполните последующие шаги в [шаге 5 - Добавьте аутентификацию для управления ресурсами Azure,](https://docs.microsoft.com/azure/automation/automation-first-runbook-textual-powershell#add-authentication-to-manage-azure-resources) чтобы убедиться, что вы используете учетную запись Run As для доступа к Key Vault. 
+Выполните действия, описанные в [шаге 5. Добавление проверки подлинности для управления ресурсами Azure](https://docs.microsoft.com/azure/automation/automation-first-runbook-textual-powershell#add-authentication-to-manage-azure-resources) , чтобы обеспечить использование учетной записи запуска от имени для доступа к Key Vault. 
 
 #### <a name="insufficient-permissions"></a>Недостаточные разрешения
 
-Выполните последующие [действия в Добавлении разрешений в Key Vault,](https://docs.microsoft.com/azure/automation/manage-runas-account#add-permissions-to-key-vault) чтобы убедиться, что ваша учетная запись Run As имеет достаточное количество разрешений для доступа к Key Vault. 
+Выполните действия, описанные в разделе [Добавление разрешений для Key Vault](https://docs.microsoft.com/azure/automation/manage-runas-account#add-permissions-to-key-vault) , чтобы убедиться, что учетная запись запуска от имени имеет достаточные разрешения для доступа к Key Vault. 
 
 ## <a name="my-problem-isnt-listed-above"></a><a name="other"></a>Моя проблема не указана в этой статье
 
-В приведенных ниже разделах перечисляют другие распространенные ошибки и предоставляются вспомогательная документация, которая поможет вам решить проблему.
+В следующих разделах перечислены другие распространенные ошибки и предоставлена вспомогательная документация, помогающая устранить проблему.
 
 ### <a name="hybrid-runbook-worker-doesnt-run-jobs-or-isnt-responding"></a>Гибридная рабочая роль runbook не выполняет задания или не отвечает
 
-Если вы работаете на гибридном Runbook Worker, а не в Azure Automation, возможно, потребуется [устранить неполадки самого гибридного работника.](https://docs.microsoft.com/azure/automation/troubleshoot/hybrid-runbook-worker)
+Если вы используете задания в гибридной рабочей роли Runbook, а не в службе автоматизации Azure, вам может потребоваться [устранить неполадки в работе гибридной рабочей роли](https://docs.microsoft.com/azure/automation/troubleshoot/hybrid-runbook-worker).
 
-### <a name="runbook-fails-with-no-permission-or-some-variation"></a>Runbook не удается без разрешения или некоторые изменения
+### <a name="runbook-fails-with-no-permission-or-some-variation"></a>Сбой Runbook без разрешения или некоторого варианта
 
-Выполнить Как-то может не иметь тех же разрешений для ресурсов Azure, что и текущая учетная запись. Убедитесь, что ваша учетная запись Run As имеет [разрешения на доступ к любым ресурсам,](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) используемым в скрипте.
+Учетные записи запуска от имени могут не иметь тех же разрешений на ресурсы Azure, что и текущая учетная запись. Убедитесь, что учетная запись запуска от имени имеет [разрешения на доступ к любым ресурсам](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) , используемым в скрипте.
 
-### <a name="issues-passing-parameters-into-webhooks"></a>Вопросы передачи параметров в webhooks
+### <a name="issues-passing-parameters-into-webhooks"></a>Проблемы при передаче параметров в веб-перехватчики
 
-Для справки с прохождением параметров в веб-крючки, [см.](../automation-webhooks.md#parameters-used-when-the-webhook-starts-a-runbook)
+Дополнительные сведения о передаче параметров в веб-перехватчики см. в статье [Запуск Runbook из веб-перехватчика](../automation-webhooks.md#parameters-used-when-the-webhook-starts-a-runbook).
 
-### <a name="issues-using-az-modules"></a>Проблемы с использованием модулей Az
+### <a name="issues-using-az-modules"></a>Проблемы с использованием модулей AZ
 
-Использование модулей Az и модулей AzureRM в одной учетной записи Автоматизации не поддерживается. Для получения более подробной информации можно узнать [о модулях Az в runbooks.](https://docs.microsoft.com/azure/automation/az-modules)
+Использование модулей AZ modules и AzureRM modules в одной учетной записи службы автоматизации не поддерживается. Дополнительные сведения см. в разделе о [модулях az в модулях Runbook](https://docs.microsoft.com/azure/automation/az-modules) .
 
 ### <a name="inconsistent-behavior-in-runbooks"></a>Несогласованное поведение модулей runbook
 
-Следуйте инструкциям в [исполнении Runbook,](https://docs.microsoft.com/azure/automation/automation-runbook-execution#runbook-behavior) чтобы избежать проблем с одновременными заданиями, ресурсами, создаваемыми несколько раз, или другой логикой, чувствительной к времени, в runbooks.
+Следуйте указаниям в [выполнении модуля Runbook](https://docs.microsoft.com/azure/automation/automation-runbook-execution#runbook-behavior) , чтобы избежать проблем с параллельными заданиями, ресурсами, создаваемыми несколько раз, или другой логикой с учетом времени в модулях Runbook.
 
-### <a name="runbook-fails-with-the-error-no-permission-forbidden-403-or-some-variation"></a>Runbook не справляется с ошибкой Нет разрешения, Запрещено (403), или некоторые изменения
+### <a name="runbook-fails-with-the-error-no-permission-forbidden-403-or-some-variation"></a>Модуль Runbook завершается ошибкой без разрешения, запрещен (403) или какой-либо вариант
 
-Выполнить Как-то может не иметь тех же разрешений для ресурсов Azure, что и текущая учетная запись. Убедитесь, что ваша учетная запись Run As имеет [разрешения на доступ к любым ресурсам,](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) используемым в скрипте.
+Учетные записи запуска от имени могут не иметь тех же разрешений на ресурсы Azure, что и текущая учетная запись. Убедитесь, что учетная запись запуска от имени имеет [разрешения на доступ к любым ресурсам](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) , используемым в скрипте.
 
 ### <a name="runbooks-were-working-but-suddenly-stopped"></a>Модули runbook работали, но внезапно были остановлены
 
-* Убедитесь, что срок действия учетной записи Run As не истек. Смотрите [продление сертификации](https://docs.microsoft.com/azure/automation/manage-runas-account#cert-renewal).
-* Если вы используете [веб-крюк](https://docs.microsoft.com/azure/automation/automation-webhooks#renew-webhook) для запуска runbook, убедитесь, что веб-крюк не истек.
+* Убедитесь, что срок действия учетной записи запуска от имени не истек. См. статью [продление сертификации](https://docs.microsoft.com/azure/automation/manage-runas-account#cert-renewal).
+* Если вы используете веб- [перехватчик](https://docs.microsoft.com/azure/automation/automation-webhooks#renew-webhook) для запуска модуля Runbook, убедитесь, что срок действия веб-перехватчика не истек.
 
 ### <a name="passing-parameters-into-webhooks"></a>Передача параметров в веб-перехватчики
 
-Для справки с прохождением параметров в веб-крючки, [см.](https://docs.microsoft.com/azure/automation/automation-webhooks#parameters-used-when-the-webhook-starts-a-runbook)
+Дополнительные сведения о передаче параметров в веб-перехватчики см. в статье [Запуск Runbook из веб-перехватчика](https://docs.microsoft.com/azure/automation/automation-webhooks#parameters-used-when-the-webhook-starts-a-runbook).
 
 ### <a name="using-az-modules"></a>Использование модулей Az
 
-Использование модулей Az и модулей AzureRM в одной учетной записи Автоматизации не поддерживается. Смотрите [модули Az в runbooks](https://docs.microsoft.com/azure/automation/az-modules).
+Использование модулей AZ modules и AzureRM modules в одной учетной записи службы автоматизации не поддерживается. См. раздел [AZ modules in runbooks](https://docs.microsoft.com/azure/automation/az-modules).
 
-### <a name="using-self-signed-certificates"></a>Использование самоподписанных сертификатов
+### <a name="using-self-signed-certificates"></a>Использование самозаверяющих сертификатов
 
-Для использования самоподписанных сертификатов [см.](https://docs.microsoft.com/azure/automation/shared-resources/certificates#creating-a-new-certificate)
+Сведения о том, как использовать самозаверяющие сертификаты, см. в разделе [Создание нового сертификата](https://docs.microsoft.com/azure/automation/shared-resources/certificates#creating-a-new-certificate).
 
-### <a name="access-denied-when-using-azure-sandbox-for-a-runbook"></a>Доступ отказано при использовании песочницы Azure для runbook
+### <a name="access-denied-when-using-azure-sandbox-for-a-runbook"></a>Отказано в доступе при использовании "песочницы Azure" для модуля Runbook
 
-Песочница Azure препятствует доступу ко всем неумуренным серверам COM. Например, приложение с песочницей или runbook не могут зайти в службу управления Windows (WMI) или в службу установки Windows (msiserver.exe). Подробную информацию об использовании песочницы можно узнать [в журнале Azure Automation.](https://docs.microsoft.com/azure/automation/automation-runbook-execution)
+"Песочница Azure" предотвращает доступ ко всем необработанным COM-серверам. Например, изолированное приложение или модуль Runbook не может вызвать инструментарий управления Windows (WMI) (WMI) или в службу установщик Windows (мсисервер. exe). Дополнительные сведения об использовании песочницы см. в разделе [выполнение Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-runbook-execution).
 
 ## <a name="recommended-documents"></a>Рекомендуемые документы
 
 * [Запуск модуля Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-starting-a-runbook)
 * [Выполнение модуля Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-runbook-execution)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [форумы Azure.](https://azure.microsoft.com/support/forums/)
-* Связь [@AzureSupport](https://twitter.com/azuresupport) с официальной учетной записью Microsoft Azure для улучшения обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответам, поддержке и экспертам.
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**
+* Получите ответы от экспертов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
+* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **получить поддержку**.

@@ -1,23 +1,18 @@
 ---
 title: Синхронизация времени для виртуальных машин Windows в Azure
 description: Синхронизация времени для виртуальных машин Windows
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 33c8d58877a73c1ea3055fe52ef8470d8775b6e3
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: cd9a196e5f957782de91cff69c01fbfa5716369a
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81458034"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82100504"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Синхронизация времени для виртуальных машин Windows в Azure
 
@@ -72,7 +67,7 @@ w32time отдает приоритет поставщикам времени в
 
 ### <a name="host-only"></a>Только от узла 
 
-Поскольку time.windows.com является публичным сервером NTP, синхронизация времени с ним требует отправки трафика через Интернет, различные задержки пакетов могут негативно повлиять на качество синхронизации времени. Удаление time.windows.com путем переключения на синхронизацию только для хоста иногда может улучшить результаты синхронизации времени.
+Так как time.windows.com является общедоступным NTP-сервером, синхронизация времени с ней требует передачи трафика через Интернет, а различные задержки пакетов могут негативно повлиять на качество синхронизации времени. Удаление time.windows.com путем переключения на синхронизацию только между узлами иногда может улучшить результаты синхронизации времени.
 
 Переход на синхронизацию времени только с узлом имеет смысл, если возникают проблемы при использовании конфигурации синхронизации по умолчанию. Попробуйте использовать синхронизацию только с узлом и посмотрите, улучшится ли синхронизация времени в виртуальной машине. 
 
@@ -152,7 +147,7 @@ net stop w32time && net start w32time
 
 ## <a name="windows-server-2012-and-r2-vms"></a>Виртуальные машины Windows Server 2012 и Windows Server 2012 R2 
 
-Windows Server 2012 и Windows Server 2012 R2 имеют различные настройки по умолчанию для синхронизации времени. w32time по умолчанию настроен таким образом, что предпочитает низкие накладные расходы службы к точному времени. 
+В Windows Server 2012 и Windows Server 2012 R2 существуют разные параметры по умолчанию для синхронизации времени. По умолчанию служба w32time настроена таким образом, чтобы снизить нагрузку на службу в течение точного времени. 
 
 Если вы хотите перевести развертывания Windows Server 2012 и Windows Server 2012 R2 на использование новых параметров по умолчанию, в соответствии с которыми предпочтение отдается точности времени, выполните указанные ниже действия.
 
@@ -173,7 +168,7 @@ w32tm /config /update
 w32tm /dumpreg /subkey:Parameters | findstr /i "ntpserver"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на дополнительные материалы по синхронизации времени:
 

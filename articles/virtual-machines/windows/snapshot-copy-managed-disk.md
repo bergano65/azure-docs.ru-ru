@@ -1,25 +1,20 @@
 ---
-title: Создание снимка виртуального жесткого диска в Azure
+title: Создание моментального снимка виртуального жесткого диска в Azure
 description: Узнайте, как создать копию виртуальной машины Azure в качестве резервной копии или для устранения неполадок.
-documentationcenter: ''
 author: roygara
 manager: twooley
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 15eb778e-fc07-45ef-bdc8-9090193a6d20
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: bc74a3eea1f99de6080788d6f3fddcac823092dc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 92957bd078c04a9bb7ac35f9d30f042a44e10764
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75370907"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82100640"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
 
@@ -29,20 +24,20 @@ ms.locfileid: "75370907"
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure 
 
-Чтобы создать снимок, выполните следующие шаги: 
-1.  На [портале Azure](https://portal.azure.com)выберите **Создайте ресурс.**
-2. Поиск и выбор **снимка**.
+Чтобы создать моментальный снимок, выполните следующие действия. 
+1.  На [портал Azure](https://portal.azure.com)выберите **создать ресурс**.
+2. Найдите и выберите **snapshot (моментальный снимок**).
 3. В окне **Моментальный снимок** нажмите кнопку **Создать**. Откроется окно **Создание моментального снимка**.
 4. Заполните поле **Имя** для моментального снимка.
 5. Введите имя новой [группы ресурсов](../../azure-resource-manager/management/overview.md#resource-groups) или выберите имеющуюся. 
 6. Выберите **расположение** центра обработки данных Azure.  
 7. В поле **Исходный диск** выберите управляемый диск, моментальный снимок которого необходимо создать.
 8. Выберите **тип учетной записи**, которая будет использоваться для хранения моментального снимка. Выберите **Standard_HDD**, если вам не нужно хранить моментальный снимок на высокопроизводительном диске.
-9. Выберите **Создать**.
+9. Нажмите кнопку **создания**.
 
 ## <a name="use-powershell"></a>Использование PowerShell
 
-Следующие шаги показывают, как скопировать диск VHD и создать конфигурацию моментального снимка. Затем можно сделать снимок диска с помощью cmdlet [New-AzSnapshot.](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot) 
+В следующих шагах показано, как скопировать диск виртуального жесткого диска и создать конфигурацию моментального снимка. Затем можно создать моментальный снимок диска с помощью командлета [New-азснапшот](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot) . 
 
  
 

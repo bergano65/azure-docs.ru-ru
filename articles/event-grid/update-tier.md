@@ -1,101 +1,101 @@
 ---
-title: Обновление уровня ценообразования темы или домена Azure Event Grid
-description: В этой статье описывается, как обновить уровень ценообразования темы или домена Azure Event Grid (основной для премиум, премиум-уровня к базовому) с помощью портала Azure, Azure CLI и Azure PowerShell.
+title: Обновление ценовой категории раздела или домена службы "Сетка событий Azure"
+description: В этой статье описывается, как обновить ценовую категорию раздела или домена службы "Сетка событий Azure" (базовый для Premium, Premium — базовый) с помощью портал Azure, Azure CLI и Azure PowerShell.
 services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 03/11/2020
+ms.date: 04/22/2020
 ms.author: spelluru
-ms.openlocfilehash: 1e92a9f0b9ba007b289c634995b04f4f1575310a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: caea8d515964510fce432eb0497e3af19ecc1369
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79300145"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101643"
 ---
-# <a name="update-pricing-tier"></a>Обновление уровня ценообразования 
-В этой статье показано, как обновить уровень ценообразования темы или домена Azure Event Grid с помощью портала Azure, Azure CLI и Azure PowerShell. 
+# <a name="update-pricing-tier"></a>Обновление ценовой категории 
+В этой статье показано, как обновить ценовую категорию раздела или домена службы "Сетка событий Azure" с помощью портал Azure, Azure CLI и Azure PowerShell. 
 
 ## <a name="use-azure-portal"></a>Использование портала Azure
-В этом разделе показано, как изменить ценовой уровень темы или домена на портале Azure. 
+В этом разделе показано, как изменить ценовую категорию раздела или домена в портал Azure. 
 
 ### <a name="overview-page"></a>Страница "Обзор"
-Вы можете изменить ценовой уровень темы или домена на странице **Обзор.** Ниже приводится следующий пример, как обновить тему с базового уровня на премиум-уровня. Шаги по понижению от премиум уровня до базового уровня аналогичны.
+Ценовую категорию раздела или домена можно изменить на странице **Обзор** . В следующем примере показано, как обновить раздел с уровня "базовый" до уровня "Премиум". Действия по переходу с уровня "Премиум" на уровень "базовый" выполняются аналогично.
 
-1. На [портале Azure](https://portal.azure.com)перейдите к теме или странице домена. 
-2. На странице **Обзор** выберите текущий уровень ценообразования (в следующем примере он **базовый.)**
+1. В [портал Azure](https://portal.azure.com)перейдите на страницу раздела или домена. 
+2. На странице **Обзор** выберите текущую ценовую категорию (в следующем примере это **базовый**уровень).
     
-    ![Выберите текущий уровень ценообразования](./media/update-tier/select-tier.png)
-3. На странице **уровня ценообразования** измените уровень и выберите **OK.** 
+    ![Выбрать текущую ценовую категорию](./media/update-tier/select-tier.png)
+3. На странице **ценовая** Категория измените уровень и нажмите кнопку **ОК**. 
 
-    ![Обновление ценового уровня](./media/update-tier/change-tier.png)
-4. Проверьте состояние операции на странице **Уведомлений.**
+    ![Обновление ценовой категории](./media/update-tier/change-tier.png)
+4. Проверьте состояние операции на странице **уведомления** .
 
     ![Состояние обновления](./media/update-tier/status.png)    
-5. Подтвердите, что обновленный уровень можно увидеть на странице **«Обзор».** 
+5. Убедитесь, что на странице **Обзор** отображается обновленный уровень. 
 
     ![Состояние обновления](./media/update-tier/changed-tier.png)
 
 ### <a name="networking-page"></a>Страница "Сетевое взаимодействие"
-Вы можете **перейти** от базового уровня до премиум-уровня на странице **Сети.** Вы не можете понизить от премиум уровня до базового уровня на этой странице, хотя. 
+Вы можете **Обновить** уровень "базовый" до уровня "Премиум" на странице " **сеть** ". Вы не сможете перейти с уровня "Премиум" на уровень "базовый" на этой странице. 
 
-1. На [портале Azure](https://portal.azure.com)перейдите к теме или странице домена. 
-2. На странице **Сети** переключитесь на вкладку **приватных конечных точек (предварительный просмотр).** 
-3. Если текущий уровень ценообразования является **базовым,** вы видите следующее сообщение. Выберите его. 
+1. В [портал Azure](https://portal.azure.com)перейдите на страницу раздела или домена. 
+2. На странице **сеть** перейдите на вкладку **подключения частной конечной точки (Предварительная версия)** . 
+3. Если текущая ценовая категория — **Basic**, появится следующее сообщение. Выберите его. 
 
-    ![Обновление уровня на частной странице соединения конечных точек](./media/update-tier/private-endpoint-connections-page.png)
-4. На странице **обновления до премиум-уровня ценообразования** выберите **Да**. 
+    ![Страница "уровни обновления на частных подключениях конечной точки"](./media/update-tier/private-endpoint-connections-page.png)
+4. На странице **изменение ценовой категории Premium** выберите **Да**. 
     
-    ![Подтвердить обновление](./media/update-tier/message-private-endpoint-connection.png)
-5. Проверьте состояние операции на странице **Уведомлений.**
+    ![Подтверждение обновления](./media/update-tier/message-private-endpoint-connection.png)
+5. Проверьте состояние операции на странице **уведомления** .
 
     ![Состояние обновления](./media/update-tier/status.png)
 
 
 
 ## <a name="use-azure-cli"></a>Использование Azure CLI
-В этом разделе показаны, как использовать команды Azure CLI для изменения уровня ценообразования темы или домена. 
+В этом разделе показано, как использовать команды Azure CLI для изменения ценовой категории раздела. Чтобы обновить ценовую категорию домена, используйте `az eventgrid domain update` команду аналогичным образом.
 
-### <a name="upgrade-a-topic-from-basic-to-premium"></a>Обновление темы с базовой на премиум
-
-```azurecli-interactive
-az rest --method patch \
-        --uri "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>?api-version=2020-04-01-preview" \
-        --body "{\""sku\"": {\""name\"": \""premium\""}}"
-```
-
-### <a name="downgrade-a-topic-from-premium-to-basic"></a>Понизить тему с премиум-класса до базовой
+### <a name="prerequisites"></a>Предварительные требования
+Обновите расширение службы "Сетка событий Azure" для интерфейса командной строки, выполнив следующую команду: 
 
 ```azurecli-interactive
-az rest --method patch \
-        --uri "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>?api-version=2020-04-01-preview" \
-        --body "{\""sku\"": {\""name\"": \""basic\""}}"
+az extension update -n eventgrid
 ```
 
-### <a name="upgrade-a-domain-from-basic-to-premium"></a>Обновление домена с базового на премиум
+Если расширение не установлено, выполните следующую команду, чтобы установить его: 
 
 ```azurecli-interactive
-az rest --method patch \
-        --uri "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/domains/<EVENT GRID DOMAIN NAME>?api-version=2020-04-01-preview" \
-        --body "{\""sku\"": {\""name\"": \""premium\""}}"
+az extension add -n eventgrid
 ```
 
-### <a name="downgrade-a-domain-from-premium-to-basic"></a>Понизить домен с премиум-класса до базового
+### <a name="upgrade-a-topic-from-basic-to-premium"></a>Обновление раздела с Basic на Premium
 
 ```azurecli-interactive
-az rest --method patch \
-        --uri "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/domains/<EVENT GRID DOMAIN NAME>?api-version=2020-04-01-preview" \
-        --body "{\""sku\"": {\""name\"": \""basic\""}}"
+az eventgrid topic update \
+    --resource-group $resourceGroupName \
+    --name $topicName \
+    --location $location \
+    --sku "Premium" 
 ```
 
+### <a name="downgrade-a-topic-from-premium-to-basic"></a>Переход на более раннюю версию статьи с уровня "Премиум" на "базовый"
+
+```azurecli-interactive
+az eventgrid topic update \
+    --resource-group $resourceGroupName \
+    --name $topicName \
+    --location $location \
+    --sku "Basic" 
+```
 
 
 ## <a name="use-azure-powershell"></a>Использование Azure PowerShell
-В этом разделе показано, как использовать команды PowerShell для изменения ценового уровня темы или домена. 
+В этом разделе показано, как использовать команды PowerShell для изменения ценовой категории раздела или домена. 
 
-### <a name="prepare-token-and-headers-for-rest-api-calls"></a>Подготовка токенов и заголовков для вызовов REST API 
-Запустите следующие предварительные команды, чтобы получить токен проверки подлинности для использования с вызовами REST API, а также авторизацией и другой информацией заголовка. 
+### <a name="prepare-token-and-headers-for-rest-api-calls"></a>Подготовка токена и заголовков для вызовов REST API 
+Выполните следующие предварительные команды, чтобы получить маркер проверки подлинности для использования с REST API вызовами, а также авторизацией и другими сведениями о заголовке. 
 
 ```azurepowershell-interactive
 # replace <CLIENT ID> and <CLIENT SECRET>
@@ -113,7 +113,7 @@ $Headers.Add("Authorization","$($Token.token_type) "+ " " + "$($Token.access_tok
 $Headers.Add("Content-Type","application/json")
 ```
 
-### <a name="upgrade-a-topic-from-basic-to-premium"></a>Обновление темы с базовой на премиум
+### <a name="upgrade-a-topic-from-basic-to-premium"></a>Обновление раздела с Basic на Premium
 
 ```azurepowershell-interactive
 $body = @{"sku"=@{"name"="premium"}} | ConvertTo-Json -Depth 5
@@ -125,7 +125,7 @@ Invoke-RestMethod -Method 'Patch' `
     | ConvertTo-Json -Depth 5
 ```
 
-### <a name="downgrade-a-topic-from-premium-to-basic"></a>Понизить тему с премиум-класса до базовой
+### <a name="downgrade-a-topic-from-premium-to-basic"></a>Переход на более раннюю версию статьи с уровня "Премиум" на "базовый"
 
 ```azurepowershell-interactive
 $body = @{"sku"=@{"name"="basic"}} | ConvertTo-Json -Depth 5
@@ -137,7 +137,7 @@ Invoke-RestMethod -Method 'Patch' `
     | ConvertTo-Json -Depth 5
 ```
 
-### <a name="upgrade-a-domain-from-basic-to-premium"></a>Обновление домена с базового на премиум
+### <a name="upgrade-a-domain-from-basic-to-premium"></a>Обновление домена с базовой на Premium
 
 ```azurepowershell-interactive
 $body = @{"sku"=@{"name"="premium"}} | ConvertTo-Json -Depth 5
@@ -149,7 +149,7 @@ Invoke-RestMethod -Method 'Patch' `
     | ConvertTo-Json -Depth 5
 ```
 
-### <a name="downgrade-a-domain-from-premium-to-basic"></a>Понизить домен с премиум-класса до базового
+### <a name="downgrade-a-domain-from-premium-to-basic"></a>Понижение уровня домена с Premium на Basic
 
 ```azurepowershell-interactive
 $body = @{"sku"=@{"name"="basic"}} | ConvertTo-Json -Depth 5
@@ -162,4 +162,4 @@ Invoke-RestMethod -Method 'Patch' `
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Для тем и доменов премиум-уровня можно настроить частные конечные точки, чтобы ограничить доступ только из выбранных виртуальных сетей. Для пошаговых инструкций [см.](configure-private-endpoints.md)
+Для разделов и доменов уровня "Премиум" можно настроить частные конечные точки, чтобы ограничить доступ только из выбранных виртуальных сетей. Пошаговые инструкции см. в разделе [Настройка частных конечных точек](configure-private-endpoints.md).
