@@ -3,12 +3,12 @@ title: Научитесь проверять содержимое виртуал
 description: Узнайте, как Azure Policy использует агента конфигурации гостей для проверки настроек внутри виртуальных машин.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1721c0f1ca7c084d636278aabc96f8dac3293038
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.openlocfilehash: 89f7cc3931971d70b441490f77b67ace89434c2b
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/22/2020
-ms.locfileid: "81759079"
+ms.locfileid: "82025226"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -31,8 +31,8 @@ ms.locfileid: "81759079"
 > [!Important]
 > Расширение конфигурации гостей необходимо для проведения аудита в виртуальных машинах Azure.
 > Чтобы развернуть расширение в масштабе, назначайте следующие определения политики:
->   - Развертывание необходимых компонентов для политики гостевой конфигурации на виртуальных машинах Windows
->   - Развертывание необходимых компонентов для политики гостевой конфигурации на виртуальных машинах Linux
+>   - [Развертывание необходимых компонентов для политики гостевой конфигурации на виртуальных машинах Windows](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0ecd903d-91e7-4726-83d3-a229d7f2e293)
+>   - [Развертывание необходимых компонентов для политики гостевой конфигурации на виртуальных машинах Linux](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffb27e9e0-526e-4ae1-89f2-a2a0bf0f8a50)
 
 ### <a name="limits-set-on-the-extension"></a>Ограничения, установленные на расширение
 
@@ -63,10 +63,12 @@ ms.locfileid: "81759079"
 |Canonical|Сервер Ubuntu|14.04 и позже|
 |Credativ|Debian|8 и более поздних|
 |Майкрософт|Windows Server|2012 и более поздние|
-|Майкрософт|Клиент Windows|Windows 10|
+|Майкрософт|Клиент Windows|быть под управлением ОС Windows 10;|
 |OpenLogic|CentOS|7.3 и более поздние|
 |Red Hat|Red Hat Enterprise Linux|7.4 и более поздние|
 |Suse|SLES|12 SP3 и позже|
+
+Пользовательские виртуальные изображения машины поддерживаются политиками гостевой конфигурации до тех пор, пока они являются одной из операционных систем в таблице выше.
 
 ### <a name="unsupported-client-types"></a>Неподдерживаемые типы клиентов
 
@@ -175,7 +177,7 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 - [Встроенные инициативы - Конфигурация гостей](../samples/built-in-initiatives.md#guest-configuration)
 - [Образцы политики Azure GitHub репо](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policySetDefinitions/Guest%20Configuration)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как просматривать сведения о каждом параметре из [представления о соответствии конфигурации гостей](../how-to/determine-non-compliance.md#compliance-details-for-guest-configuration)
 - Просмотрите [примеры на примерах политики Azure](../samples/index.md).

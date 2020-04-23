@@ -16,12 +16,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d723af5d994006c4ae4f90905ede73fa87326bf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2808c8431a6b98b162920fb58a6e2ac0498d2055
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74014268"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82081716"
 ---
 # <a name="tutorial-get-data-using-the-azure-active-directory-reporting-api-with-certificates"></a>Руководство. Получение данных с помощью API отчетов Azure Active Directory с сертификатами
 
@@ -44,9 +44,9 @@ ms.locfileid: "74014268"
     - маркеры доступа пользователя, ключи приложений и сертификаты с использованием ADAL;
     - обработку результатов с разбивкой на страницы с помощью API Graph.
 
-6. Если вы используете модуль впервые, выполните командлет **Install-MSCloudIdUtilsModule** или же импортируйте его с помощью команды PowerShell **Import-Module**. Сеанс должен выглядеть так ![же, как на этом экране: Windows Powershell](./media/tutorial-access-api-with-certificates/module-install.png)
+6. Если это ваш первый раз, используя модуль запустить **Install-MSCloudIdUtilsModule**, в противном случае импортировать его с помощью **импортно-модуль** PowerShell команды. Сеанс должен выглядеть так ![же, как на этом экране: Windows PowerShell](./media/tutorial-access-api-with-certificates/module-install.png)
   
-7. Используйте командлет Powershell **New-SelfSignedCertificate** для создания тестового сертификата.
+7. Для создания тестового сертификата используйте командное управление **New-SelfSignedCertificate** PowerShell.
 
    ```
    $cert = New-SelfSignedCertificate -Subject "CN=MSGraph_ReportingAPI" -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 -KeyAlgorithm RSA -HashAlgorithm SHA256
@@ -63,13 +63,13 @@ ms.locfileid: "74014268"
 
 1. Перейдите на [портал Azure](https://portal.azure.com), выберите **Azure Active Directory**, затем выберите **Регистрация приложений** и ваше приложение из списка. 
 
-2. Выберите**ключи** **настройки** > и выберите **открытый ключ загрузки.**
+2. Выберите **Сертификаты & секреты** в разделе **Управление** на лезвии регистрации приложения и выберите Сертификат **загрузки.**
 
-3. Выберите файл сертификата из предыдущего шага и нажмите **Сохранить**. 
+3. Выберите файл сертификата на предыдущем этапе и **выберите Добавить.** 
 
-4. Запишите идентификатор приложения и отпечаток сертификата, который вы только что зарегистрировали для приложения. Чтобы найти отпечаток, на странице приложения на портале щелкните **Параметры** и выберите пункт **Ключи**. Отпечаток будет указан в списке **Открытые ключи**.
+4. Запишите идентификатор приложения и отпечаток сертификата, который вы только что зарегистрировали для приложения. Чтобы найти отпечаток пальца, со страницы приложения на портале, перейдите на **Сертификаты & секреты** в разделе **Управление.** Отпечаток пальца будет находиться в списке **сертификатов.**
 
-5. Откройте манифест приложения во встроенном редакторе манифеста и замените свойство *keyCredentials* данными нового сертификата, используя следующую схему. 
+5. Откройте манифест приложения в редакторе inline manifest и проверьте, что свойство *keyCredentials* обновляется с помощью новой информации о сертификате, показанной ниже - 
 
    ```
    "keyCredentials": [
@@ -81,23 +81,20 @@ ms.locfileid: "74014268"
             "value":  "$base64Value" //base64 encoding of the certificate raw data
         }
     ]
-   ```
-
-6. Сохраните манифест. 
-  
-7. Теперь вы можете получить маркер доступа для API Microsoft Graph, используя этот сертификат. Используйте командлет **Get MSCloudIdMSGraphAccessTokenFromCert** из PowerShell-модуля MSCloudIdUtils, передав идентификатор приложения и отпечаток, полученный на предыдущем шаге. 
+   ``` 
+6. Теперь вы можете получить маркер доступа для API Microsoft Graph, используя этот сертификат. Используйте командлет **Get MSCloudIdMSGraphAccessTokenFromCert** из PowerShell-модуля MSCloudIdUtils, передав идентификатор приложения и отпечаток, полученный на предыдущем шаге. 
 
    ![Портал Azure](./media/tutorial-access-api-with-certificates/getaccesstoken.png)
 
-8. Используйте маркер доступа в скрипте PowerShell для отправки запроса в API Graph. Используйте командлет **Invoke-MSCloudIdMSGraphQuery** из модуля MSCloudIDUtils для перечисления операций входа и запроса конечной точки diectoryAudits. Этот командлет обрабатывает результаты с разбивкой на несколько страниц и отправляет их в конвейер PowerShell.
+7. Используйте маркер доступа в скрипте PowerShell для запроса API Графика. Используйте командлет **Invoke-MSCloudIdMSGraphQuery** из модуля MSCloudIDUtils для перечисления операций входа и запроса конечной точки diectoryAudits. Этот командлет обрабатывает результаты с разбивкой на несколько страниц и отправляет их в конвейер PowerShell.
 
-9. Запросите конечную точку directoryAudits для получения журналов аудита. 
+8. Запросите конечную точку directoryAudits для получения журналов аудита. 
    ![Портал Azure](./media/tutorial-access-api-with-certificates/query-directoryAudits.png)
 
-10. Запросите конечную точку signins для получения журналов входа в систему.
+9. Запросите конечную точку signins для получения журналов входа в систему.
     ![Портал Azure](./media/tutorial-access-api-with-certificates/query-signins.png)
 
-11. Теперь можно экспортировать эти данные в CSV-файл и сохранить его в системе SIEM. Также можно перенести скрипт в запланированную задачу, чтобы периодически получать данные Azure AD из клиента без необходимости сохранять ключи приложений в исходном коде. 
+10. Теперь можно экспортировать эти данные в CSV-файл и сохранить его в системе SIEM. Также можно перенести скрипт в запланированную задачу, чтобы периодически получать данные Azure AD из клиента без необходимости сохранять ключи приложений в исходном коде. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

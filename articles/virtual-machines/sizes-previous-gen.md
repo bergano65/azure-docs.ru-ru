@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/20/2020
 ms.author: jonbeck
-ms.openlocfilehash: 6cf43df756e9bed0438169c9c01b868653d84b57
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: ac49d2da9d05c9677dbb6f5328874ab3a45ff661
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985734"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82081546"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
 
@@ -217,6 +217,8 @@ ACU: 160-250 <sup>1</sup>
 
 ## <a name="preview-dc-series"></a>Предварительный просмотр: DC-серия
 
+**Рекомендация по новым размерам**: [DCsv2-серия](dcv2-series.md)
+
 Хранилище класса Premium: поддерживается
 
 Премиум кэширование хранилища: Поддерживается
@@ -368,11 +370,11 @@ ACU: 180–240
 
 ## <a name="other-sizes"></a>Остальные размеры
 
-* [Общего назначения](sizes-general.md)
+* [Универсальные](sizes-general.md)
 * [Оптимизированные для вычислений](sizes-compute.md)
-* [Оптимизированные для операций в памяти](sizes-memory.md)
-* [Оптимизированные для операций в хранилище](sizes-storage.md)
-* [Графический процессор](sizes-gpu.md)
+* [Оптимизированные для памяти](sizes-memory.md)
+* [Оптимизированные для хранилища](sizes-storage.md)
+* [GPU](sizes-gpu.md)
 * [Для высокопроизводительных вычислений](sizes-hpc.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия

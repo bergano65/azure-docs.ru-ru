@@ -8,12 +8,12 @@ ms.workload: core
 ms.topic: quickstart
 ms.date: 01/30/2020
 ms.author: spelluru
-ms.openlocfilehash: 063f2e1005db177420da7f81b799ab01fd212d7e
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 42c58a84c71b6573814e82517373db6900a83658
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80478474"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82025022"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs-version-5"></a>Отправка событий или получение событий из концентраторов событий с помощью JavaScript (azure/event-hubs версии 5)
 В этом кратком руководстве показано, как отправлять и получать события через концентратор событий с помощью пакета JavaScript **azure/event-hubs версии 5**. 
@@ -185,7 +185,7 @@ npm install @azure/eventhubs-checkpointstore-blob
 1. В окне командной строки выполните команду `node receive.js`, которая запускает этот файл. Сообщения о полученных событиях должны отображаться в окне.
 
     > [!NOTE]
-    > Полный исходный код, включая дополнительные информационные комментарии, можно найти на странице [GitHub receiveEventsUsingCheckpointStore](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsUsingCheckpointStore.js).
+    > Полный исходный код, включая дополнительные информационные комментарии, можно найти на странице [GitHub receiveEventsUsingCheckpointStore](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript/receiveEventsUsingCheckpointStore.js).
 
 Поздравляем! Теперь вы получили события из вашего концентратора событий. Программа-получатель получит события из всех разделов группы потребителей по умолчанию в указанном центре событий.
 

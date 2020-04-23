@@ -16,12 +16,12 @@ ms.date: 04/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b84e972584562be741919c7dccb6bdfe1bdea628
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 18ffb48b2e7978831155afaf2e675bb720e57544
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81312851"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82082209"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Azure Активный каталог проходной аутентификации: Быстрый запуск
 
@@ -37,6 +37,9 @@ ms.locfileid: "81312851"
 ## <a name="step-1-check-the-prerequisites"></a>Шаг 1. Проверка соблюдения предварительных требований
 
 Выполните указанные ниже предварительные требования.
+
+>[!IMPORTANT]
+>С точки зрения безопасности администраторы должны относиться к серверу, работая с агентом PTA, как к контроллеру домена.  Серверы агентов PTA должны быть закалены по тому же признаку, что и [в](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack)
 
 ### <a name="in-the-azure-active-directory-admin-center"></a>В центре администрирования Azure Active Directory
 
@@ -162,7 +165,7 @@ ms.locfileid: "81312851"
 
 Smart Lockout помогает в блокировке плохих актеров, которые пытаются угадать пароли ваших пользователей или с помощью методов грубой силы, чтобы войти. Настраивая настройки Smart Lockout в Azure AD и/или соответствующие настройки блокировки в предпосылок Active Directory, атаки могут быть отфильтрованы до того, как они достигнут Active Directory. Прочитайте [эту статью,](../authentication/howto-password-smart-lockout.md) чтобы узнать больше о том, как настроить настройки Smart Lockout на вашем арендаторе для защиты учетных записей пользователей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Migrate from AD FS to Pass-through Authentication](https://aka.ms/adfstoptadp) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Узнайте о том, какие сценарии поддерживаются для сквозной аутентификации, а какие нет.

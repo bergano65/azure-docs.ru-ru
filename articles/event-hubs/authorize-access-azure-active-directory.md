@@ -8,12 +8,12 @@ author: spelluru
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: spelluru
-ms.openlocfilehash: 1fa8f7a48c03ead7e939185b23834b3049b3e21c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6216b56c8e8f0de4f9cd60306bbf9c5ed49a11ad
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80064863"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82025209"
 ---
 # <a name="authorize-access-to-event-hubs-resources-using-azure-active-directory"></a>Разрешить доступ к ресурсам концентраторов событий с помощью активного каталога Azure
 Концентраторы событий Azure поддерживают использование active Directory Azure (Azure AD) для авторизации запросов к ресурсам концентраторов событий. С Помощью Azure AD можно использовать элементуправления доступа на основе ролей (RBAC) для предоставления разрешений директору службы безопасности, который может быть пользователем, или директором службы приложения. Чтобы узнать больше о ролях и назначениях ролей, [см.](../role-based-access-control/overview.md)
@@ -65,7 +65,7 @@ Azure предоставляет следующие встроенные рол�
 ## <a name="samples"></a>Примеры
 - [Образцы microsoft.Azure.EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
     
-    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно [см.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md)
+    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно [см.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
 - [Образцы образцов Azure.Messaging.EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)
 
     Этот пример был обновлен для использования последней библиотеки **Azure.Messaging.EventHubs.**

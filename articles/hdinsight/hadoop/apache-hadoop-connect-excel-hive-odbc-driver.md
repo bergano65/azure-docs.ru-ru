@@ -1,5 +1,5 @@
 ---
-title: Excel & Apache Hadoop с драйвером ODBC - Azure HDInsight
+title: Excel & Apache Hadoop с драйвером open Database Connectivity (ODBC) - Azure HDInsight
 description: Узнайте, как установить и использовать драйвер Microsoft Hive ODBC для Excel, чтобы запрашивать данные в кластерах HDInsight из Microsoft Excel.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -7,21 +7,21 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.date: 03/02/2020
-ms.openlocfilehash: f356009197c0446efa2ea2d7f0e90040229df47b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 04/22/2020
+ms.openlocfilehash: 5aefd2c344565bf6dcb384996c42c1bc30e7291d
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78251065"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82024937"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
 [!INCLUDE [ODBC-JDBC-selector](../../../includes/hdinsight-selector-odbc-jdbc.md)]
 
-Решение Майкрософт для работы с данными большого размера интегрирует компоненты бизнес-аналитики Майкрософт с кластерами Apache Hadoop, которые были развернуты в Azure HDInsight. Примером такой интеграции является возможность подключения Excel к хранилищу данных Hive на кластере Hadoop в HDInsight с помощью драйвера Microsoft Hive ODBC.
+Решение Microsoft big Data интегрирует компоненты Microsoft Business Intelligence (BI) с кластерами Apache Hadoop, развернутыми в HDInsight. Примером может быть возможность подключения Excel к складу данных Hive кластера Hadoop. Подключитесь с помощью драйвера Microsoft Hive Open Database Connectivity (ODBC).
 
-Также можно подключить данные, связанные с кластером HDInsight и другими источниками данных, включая другие (не-HDInsight) кластеры Hadoop, от Excel с помощью надстройки Microsoft Power Query для Excel. Сведения об установке и использовании Power Query см. в статье [Подключение Excel к Hadoop с помощью Power Query](../hdinsight-connect-excel-power-query.md).
+Можно подключить данные, связанные с кластером HDInsight от Excel, с надстройкой Microsoft Power Query для Excel. Для получения дополнительной информации [см. Подключите Excel к HDInsight с помощью энергетического запроса](../hdinsight-connect-excel-power-query.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,13 +32,13 @@ ms.locfileid: "78251065"
 
 ## <a name="install-microsoft-hive-odbc-driver"></a>Установка драйвера Microsoft Hive ODBC
 
-Скачать и установить версию [Microsoft Hive ODBC Driver,](https://www.microsoft.com/download/details.aspx?id=40886) которая соответствует версии приложения, где вы будете использовать драйвер ODBC.  Для этой статьи драйвер используется для Office Excel.
+Скачать и установить [Microsoft Hive ODBC Драйвер](https://www.microsoft.com/download/details.aspx?id=40886). Выберите версию, которая соответствует версии приложения, где вы будете использовать драйвер ODBC.  Для этой статьи драйвер используется для Office Excel.
 
 ## <a name="create-apache-hive-odbc-data-source"></a>Создание источника данных Apache Hive ODBC
 
 Ниже показано, как создать источник данных Hive ODBC.
 
-1. В Windows откройте "Пуск > Средства администрирования Windows > Источники данных ODBC" (32-разрядная или 64-разрядная версия).  В результате откроется окно **Администратор источников данных ODBC**.
+1. От Windows, перейдите к **начать > Windows административные инструменты > ODBC источников данных (32-битный)/(64-разрядный)**.  Это действие открывает окно **администратора источника данных ODBC.**
 
     ![Администратор источника данных ODBC](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png "Настройка DSN с помощью администратора источников данных ODBC")
 
@@ -64,11 +64,11 @@ ms.locfileid: "78251065"
    | --- | --- |
    |  Использовать исходный запрос |При выборе этого параметра драйвер ODBC НЕ пытается преобразовать TSQL в HiveQL. Вы должны использовать его, только если вы на 100% уверены, что вы представляете чистые заявления Hive'L. При подключении к серверу SQL Server или базе данных Azure SQL необходимо снять этот флажок. |
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |
-   |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Это приведет к возврату недопустимой информации из-за потери точности и (или) усечения. |
+   |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Они приводят к неверную информацию, которая будет возвращена из-за потери точности и или усечения. |
 
     ![Дополнительные параметры конфигурации DSN](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Дополнительные параметры конфигурации DSN")
 
-1. Щелкните **Тест** для проверки источника данных. Когда источник данных настроен правильно, результат теста показывает **SUCCESS!**.  
+1. Щелкните **Тест** для проверки источника данных. Когда источник данных настроен правильно, результат теста показывает **SUCCESS!**
 
 1. Нажмите кнопку **ОК**, чтобы закрыть окно тестов.  
 
@@ -100,8 +100,5 @@ ms.locfileid: "78251065"
 
 * [Визуализируйте данные Apache Hive с помощью Microsoft Power BI в Azure HDInsight.](apache-hadoop-connect-hive-power-bi.md)
 * [Visualize Interactive Query Hive data with Microsoft Power BI using DirectQuery in Azure HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md) (Визуализация данных Hive из кластера Interactive Query с помощью Microsoft Power BI и DirectQuery в Azure HDInsight).
-* [Используйте Apache Цеппелин для запуска запросов Apache Hive в Azure HDInsight.](../interactive-query/hdinsight-connect-hive-zeppelin.md)
 * [Подключите Excel к Apache Hadoop с помощью power Query](apache-hadoop-connect-excel-power-query.md).
 * [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью Средств Data Lake для Visual Studio](apache-hadoop-visual-studio-tools-get-started.md)
-* [Используйте инструмент Azure HDInsight для визуального кода studio.](../hdinsight-for-vscode.md)
-* [Отправка данных в HDInsight](./../hdinsight-upload-data.md)

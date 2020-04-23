@@ -3,12 +3,12 @@ title: Элементы управления примера схемы для у
 description: Сопоставление элементов управления примера схемы для уровня влияния DoD 4. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
 ms.date: 03/06/2020
 ms.topic: sample
-ms.openlocfilehash: 001c838ed6a19269a6abbcebd59ee2e344b6a296
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a11a8637618bb42831ccf1a7001e4da40529ba74
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79415399"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82024835"
 ---
 # <a name="control-mapping-of-the-dod-impact-level-4-blueprint-sample"></a>Сопоставление элементов управления примера схемы для уровня влияния DoD 4
 
@@ -18,7 +18,7 @@ ms.locfileid: "79415399"
 
 > [!IMPORTANT]
 > Каждый элемент управления ниже связан с одним или несколькими определениями [Политики Azure](../../../policy/overview.md). Такие политики помогут вам в [оценке соответствия](../../../policy/how-to/get-compliance-data.md) с помощью элементов управления, но часто полное или точное соответствие между элементом управления и одной или несколькими политиками отсутствует. Поэтому состояние **Соответствует** в Политике Azure применимо только к самим политикам и не означает полное соответствие всем требованиям элемента управления. Кроме того, стандарт соответствия включает элементы управления, на которые сейчас не распространяются определения Политики Azure. Следовательно, сведения о соответствии в Политике Azure — это только частичное представление общего состояния соответствия. Связи между элементами управления и определениями Политики Azure для этого примера схемы соответствия могут измениться в будущем.
-> Историю изменений можно просмотреть на странице [журнала фиксаций в GitHub](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/DoDIL4/control-mapping.md).
+> Историю изменений можно просмотреть на странице [журнала фиксаций в GitHub](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/dod-impact-level-4/control-mapping.md).
 
 ## <a name="ac-2-account-management"></a>Управление учетными записями AC-2
 

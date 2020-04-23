@@ -2,17 +2,18 @@
 title: Создание и настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий релиз)
 description: Эта статья содержит предварительные требования для использования шифрования дисков Microsoft Azure с виртуальными машинами IaaS.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-windows
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: b80d2e5e7c9157da2a3b05a7b422f0c0a950f90c
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: c8610beb8903c979f0d5f5e71bd6710a3ccb49bd
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81452049"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82081988"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption-with-azure-ad-previous-release"></a>Создание и настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий релиз)
 
@@ -454,6 +455,6 @@ ms.locfileid: "81452049"
 ```
 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включить шифрование azure disk с Azure AD на Windows VMs (предыдущий релиз)](disk-encryption-windows-aad.md)

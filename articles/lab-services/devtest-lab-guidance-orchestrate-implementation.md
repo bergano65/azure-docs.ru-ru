@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 02/11/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
-ms.openlocfilehash: e0ac09a68bda539fe7abd05fce1739d1a58a3c99
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fc6cbbd0aa9cb0750e497c7cc7edbd42f21bda55
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "62127350"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82025005"
 ---
 # <a name="orchestrate-the-implementation-of-azure-devtest-labs"></a>Оркестрация внедрения службы Azure DevTest Labs
 В этой статье предоставляется рекомендуемый подход для быстрого развертывания и реализации службы Azure DevTest Labs. На следующем изображении поэтапно представлен весь процесс, который гибко поддерживает различные сценарии и отраслевые требования.
@@ -43,7 +43,7 @@ ms.locfileid: "62127350"
 ## <a name="milestone-2-deploy-the-pilot-lab"></a>Веха 2. Развертывание лаборатории пилотного проекта
 Когда сетевая топология будет настроена, можно создать первую или экспериментальную лабораторию, выполнив следующие действия:
 
-1. Создайте начальную среду DevTest Labs (пошаговые инструкции можно найти [здесь](https://github.com/Azure/fta-devops/blob/master/devtest-labs/articles/devtest-labs-walkthrough-it.md)).
+1. Создайте начальную среду DevTest Labs.
 2. Определите допустимые образы виртуальных машин и их размеры для использования в лаборатории. Решите, можно ли отправлять пользовательские образы в Azure для использования с DevTest Labs.
 3. Защитите доступ к лаборатории, создав начальные элементы управления доступом на основе ролей (пользователей и владельцев лаборатории). Мы рекомендуем синхронизировать учетные записи Active Directory с Azure Active Directory для идентификации в DevTest Labs.
 4. Настройте в DevTest Labs использование политик, например расписания, управления затратами, запрашиваемых виртуальных машин, пользовательских образов или формул.

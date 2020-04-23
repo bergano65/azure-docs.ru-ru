@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 04/24/2019
+ms.date: 04/15/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a82766be01476890bbf18b518ce21febe0d07f1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ab51030ad39e1360cabc7d63390af7c1654d2891
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79253615"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82082124"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory
 В этой статье перечислены атрибуты, которые синхронизируются при помощи служб синхронизации Azure AD Connect.  
@@ -375,7 +375,7 @@ ms.locfileid: "79253615"
 * Yammer (используется только пользователь);
 * [гибридные сценарии межорганизационного взаимодействия бизнес-бизнес, обеспечиваемые такими ресурсами, как SharePoint.](https://go.microsoft.com/fwlink/?LinkId=747036)
 
-Ниже приведена группа атрибутов, которые можно использовать, если каталог Azure AD не используется для поддержки Office 365, Dynamics или Intune. Это небольшой набор основных атрибутов.
+Ниже приведена группа атрибутов, которые можно использовать, если каталог Azure AD не используется для поддержки Office 365, Dynamics или Intune. Это небольшой набор основных атрибутов. Обратите внимание, что одиночный входе или подготовка к некоторым сторонним приложениям требует настройки синхронизации атрибутов в дополнение к описанным здесь атрибутам. Требования к приложениям описаны в [учебнике приложения SaaS](../saas-apps/tutorial-list.md) для каждого приложения.
 
 | Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
@@ -396,7 +396,7 @@ ms.locfileid: "79253615"
 | usageLocation |X | | |Механическое свойство. Страна/регион пользователя. Используется для назначения лицензии. |
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
-## <a name="windows-10"></a>Windows 10
+## <a name="windows-10"></a>быть под управлением ОС Windows 10;
 Компьютер (устройство), присоединенное к домену Windows 10, синхронизирует некоторые атрибуты с Azure AD. Дополнительные сведения о сценариях см. в статье [Подключение присоединенных к домену устройств к Azure AD для работы в Windows 10](../active-directory-azureadjoin-devices-group-policy.md). Эти атрибуты всегда синхронизируются, и Windows 10 отображается как приложение, выбор которого нельзя отменить. Компьютер, присоединенный к домену Windows 10, определяется заполненным атрибутом userCertificate.
 
 | Имя атрибута | Устройство | Комментарий |

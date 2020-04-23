@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 03/13/2020
-ms.openlocfilehash: 9f3a1c3455aadfbd243cdc6ab2920849c8558841
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 1af1a1ccd8bff8fc4b578ecdeec3ac5f7c2352b1
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81414627"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82082141"
 ---
 # <a name="enterprise-security-for-azure-machine-learning"></a>Корпоративная безопасность для машинного обучения Azure
 
@@ -183,7 +183,7 @@ Azure Machine Learning хранит метрики и метаданные в э
         > [!NOTE]
         > Этот экземпляр хранилища ключей может отличаться от хранилища ключей, созданного ВСУ при предоставлении рабочего пространства. Если вы хотите использовать тот же экземпляр хранилища ключей для рабочего пространства, пройдите то же хранилище ключей, одновременно припомощи рабочее пространство с помощью [key_vault параметра.](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) 
 
-Этот экземпляр Cosmos DB создан в группе ресурсов, управляемой корпорацией Майкрософт, в вашей подписке. 
+Этот экземпляр Cosmos DB создан в группе ресурсов, управляемой корпорацией Майкрософт, в вашей подписке. Управляемая группа ресурсов названа в формате<AML Workspace Resource Group Name><GUID>
 
 > [!IMPORTANT]
 > * Если вам нужно удалить этот экземпляр Cosmos DB, необходимо удалить рабочее пространство Azure Machine Learning, которое использует его. 

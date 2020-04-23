@@ -1,15 +1,15 @@
 ---
 title: Использование данных Azure Blockchain Workbench в Microsoft Power BI
 description: Узнайте, как загружать и просматривать данные базы данных SQL Azure Blockchain Workbench в Microsoft Power BI.
-ms.date: 05/09/2019
+ms.date: 04/22/2020
 ms.topic: article
-ms.reviewer: mmercuri
-ms.openlocfilehash: 6e1f160c3563a280548c74ebe84f30bf08945c3f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.reviewer: sunri
+ms.openlocfilehash: 4245603fee5b3d24488426c3dc2d026a3c0d7848
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74324796"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82082532"
 ---
 # <a name="using-azure-blockchain-workbench-data-with-microsoft-power-bi"></a>Использование данных Azure Blockchain Workbench с помощью Microsoft Power BI
 
@@ -19,7 +19,7 @@ Microsoft Power BI обеспечивает возможность легко г
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Скачать [Power BI Desktop](https://aka.ms/pbidesktopstore).
+* Скачать [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
 ## <a name="connecting-power-bi-to-data-in-azure-blockchain-workbench"></a>Подключение к данным Power BI в Azure Blockchain Workbench
 
@@ -29,7 +29,7 @@ Microsoft Power BI обеспечивает возможность легко г
     ![Получение данных](./media/data-powerbi/get-data.png)
 3.  Выберите **SQL Server** в списке типов источников данных.
 
-4.  В диалоговом окне укажите имя сервера и базы данных. Укажите, следует ли импортировать данные или выполнять **DirectQuery**. Нажмите кнопку **ОК**.
+4.  В диалоговом окне укажите имя сервера и базы данных. Укажите, следует ли импортировать данные или выполнять **DirectQuery**. Щелкните **ОК**.
 
     ![Выбор SQL Server](./media/data-powerbi/select-sql.png)
 

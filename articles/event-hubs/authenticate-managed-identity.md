@@ -9,12 +9,12 @@ manager: ''
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: spelluru
-ms.openlocfilehash: 672b663a9cab72d465ea00e0a5ade364eadbf64e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: dfc60fbc03021e72dccc0f60a7ac34d204ef6df9
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78251525"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82025192"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Проверка управляемого итогового данных с помощью Active Directory Azure для доступа к ресурсам концентратов событий
 Концентраторы событий Azure поддерживают активную проверку каталога Azure (Azure AD) с [управляемыми идентификаторами для ресурсов Azure.](../active-directory/managed-identities-azure-resources/overview.md) Управляемые идентификаторы для ресурсов Azure могут авторизовать доступ к ресурсам концентраторов событий, используя учетные данные Azure AD из приложений, работающих в виртуальных машинах Azure, функциональных приложениях, наборах виртуальной шкалы машин и других службах. Используя управляемые идентификаторы для ресурсов Azure вместе с аутентификацией Azure AD, можно избежать хранения учетных данных с помощью приложений, запускаемых в облаке.
@@ -25,9 +25,9 @@ ms.locfileid: "78251525"
 Прежде чем использовать управляемые идентификаторы ресурсов Azure для авторизации ресурсов концентраторов событий из вашего VM, необходимо сначала включить управляемые идентификаторы для ресурсов Azure на VM. Сведения о включении управляемых удостоверений для ресурсов Azure см. в одной из следующих статей.
 
 - [Портал Azure](../active-directory/managed-service-identity/qs-configure-portal-windows-vm.md)
-- [Лазурная силаШелл](../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
-- [Лазурный CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
-- [Шаблон менеджера ресурсов Azure](../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
+- [Azure PowerShell](../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
+- [Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
+- [Шаблон Azure Resource Manager](../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
 - [Клиентские библиотеки менеджера ресурсов Azure](../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
 ## <a name="grant-permissions-to-a-managed-identity-in-azure-ad"></a>Разрешение на получение управляемой идентификации в Azure AD
@@ -65,7 +65,7 @@ ms.locfileid: "78251525"
 4.  На странице **назначения ролей Добавить** выберите роли концентраторов событий, которые вы хотите назначить. Затем поиск, чтобы найти службу идентификации вы зарегистрировали назначить роль.
     
     ![Добавление страницы назначения ролей](./media/authenticate-managed-identity/add-role-assignment-page.png)
-5.  Нажмите кнопку **Сохранить**. Удостоверение, которому назначена роль RBAC, будет отображаться в списке под этой ролью. Например, на следующем изображении показано, что иная личность службы имеет владельца данных event Hubs.
+5.  Щелкните **Сохранить**. Удостоверение, которому назначена роль RBAC, будет отображаться в списке под этой ролью. Например, на следующем изображении показано, что иная личность службы имеет владельца данных event Hubs.
     
     ![Идентификация, присвоенная роли](./media/authenticate-managed-identity/role-assigned.png)
 
@@ -149,7 +149,7 @@ var ehClient = EventHubClient.CreateWithManagedIdentity(new Uri($"sb://{EventHub
     - [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs/src/samples/java/com/azure/messaging/eventhubs)
 - [Образцы microsoft.Azure.EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
     
-    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно [см.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md)
+    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно [см.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
     Этот пример был обновлен для использования последней библиотеки **Azure.Messaging.EventHubs.**
 - [Концентраторы событий для Kafka - отправлять и получать сообщения с помощью управляемой идентификации OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/managedidentity)
 

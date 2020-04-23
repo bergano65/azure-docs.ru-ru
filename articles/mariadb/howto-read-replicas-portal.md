@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: 5c28697b27e9cf910302b7379e1443f7e78e96b8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 4/21/2020
+ms.openlocfilehash: 20d8e46d6fa6b031c809d629a6af41e8e682bcef
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79530620"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82025090"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать и управлять считывательными репликами в базе данных Azure для MariaDB с помощью портала Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "79530620"
 
 Чтобы создать сервер-реплику чтения, выполните следующие действия.
 
-1. Войти на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Выберите существующую базу данных Azure для сервера MariaDB, который вы хотите использовать в качестве мастера. Откроется страница **Обзор**.
 
@@ -45,9 +45,6 @@ ms.locfileid: "79530620"
 6. Выберите местоположение для сервера реплики. Местоположение по умолчанию такое же, как и у главного сервера.
 
     ![База данных Azure для MariaDB - Местоположение реплики](./media/howto-read-replica-portal/replica-location.png)
-
-   > [!NOTE]
-   > Репликация кросс-региона находится в предварительном просмотре. Чтобы узнать больше о том, в каких регионах можно создать копию, посетите [статью о концепциях ремиссий.](concepts-read-replicas.md) 
 
 7. Выберите **OK,** чтобы подтвердить создание реплики.
 

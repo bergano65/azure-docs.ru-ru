@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2020
 ms.author: spelluru
-ms.openlocfilehash: a8124e9860ba5703e96f96c90bc0cf37e42baf9c
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.openlocfilehash: 2a3b14acad4990059a27201b7e1e6b9e93123194
+ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80398355"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82025175"
 ---
 # <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий в центры событий Azure или получать их с помощью .NET Core (Microsoft.Azure.EventHubs)
 Этот быстрый запуск показывает, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft.Azure.EventHubs** .NET Core.
@@ -34,7 +34,7 @@ ms.locfileid: "80398355"
 - **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
 - [Microsoft Visual Studio 2019](https://www.visualstudio.com).
 - [Инструментарий Visual Studio 2015 или Visual Studio 2017 для .NET Core](https://www.microsoft.com/net/core). 
-- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен кцентров событий типа и получения учетных данных управления, необходимых вашему приложению для связи с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите **строку соединения для пространства имен концентратора событий,** следуя инструкциям из статьи: [Получить строку соединения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
+- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите **строку соединения для пространства имен концентратора событий,** следуя инструкциям из статьи: [Получить строку соединения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий 
 В этом разделе показано, как создать консольное приложение .NET Core, которое отправляет события в концентратор событий. 
@@ -368,12 +368,12 @@ ms.locfileid: "80398355"
 4. Запустите программу и убедитесь в отсутствии ошибок.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями:
 
 - [Образцы управления доступом на основе ролей (RBAC).](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac) 
     
-    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно см. руководство [по переходу с Microsoft.Azure.EventHubs на Azure.Messaging.EventHubs.)](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md)
+    В этих образцах используется старая библиотека **Microsoft.Azure.EventHubs,** но вы можете легко обновить ее до самой последней библиотеки **Azure.Messaging.EventHubs.** Для перемещения образца из старой библиотеки в новую можно [см.](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
 - [EventProcessorHost](event-hubs-event-processor-host.md)
 - [Особенности и терминология в концентрах событий Azure](event-hubs-features.md)
 - [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
