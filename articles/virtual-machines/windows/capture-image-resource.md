@@ -1,25 +1,19 @@
 ---
 title: Создание управляемого изображения в Azure
 description: Создание управляемого образа универсальной виртуальной машины или виртуального жесткого диска в Azure. Образы можно использовать для создания нескольких виртуальных машин, использующих управляемые диски.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
+ms.subservice: imaging
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 01619027ddc79530dc9541584efa9a3e518f5136
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 258bddec85e4ab182ff0b07c49cdc93f92264f95
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74842064"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084470"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
 
@@ -50,7 +44,7 @@ Sysprep удаляет все сведения о вашей учетной за
    
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
    
-5. Нажмите кнопку **ОК**.
+5. Щелкните **ОК**.
    
     ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 
@@ -70,7 +64,7 @@ Sysprep удаляет все сведения о вашей учетной за
 
 ## <a name="create-a-managed-image-in-the-portal"></a>Создание управляемого образа на портале 
 
-1. Перейдите на [портал Azure,](https://portal.azure.com) чтобы управлять изображением VM. Поиск и выбор **виртуальных машин.**
+1. Перейдите на [портал Azure,](https://portal.azure.com) чтобы управлять изображением VM. Найдите и щелкните **Виртуальные машины**.
 
 2. Выберите VM из списка.
 

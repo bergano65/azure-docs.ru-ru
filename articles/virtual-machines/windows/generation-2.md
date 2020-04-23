@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: 239e339d1870060d95d6c7e7b602be7d61af5f77
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
-ms.translationtype: HT
+ms.openlocfilehash: 53806a1a627c7ae6bc3470aa387be0982df914fa
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81869643"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82082264"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка вдвизирующих в поколение 2 в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "81869643"
 ВМ поколения 1 поддерживаются всеми размерами VM в Azure (за исключением VM-м вибрёв серии Mv2). Теперь Azure предлагает поддержку поколения 2 для следующих выбранных серий VM:
 
 * [Серия B](https://docs.microsoft.com/azure/virtual-machines/windows/b-series-burstable)
-* [Серии DC](../dcv2-series.md)
+* [DCsv2-серия](../dcv2-series.md)
 * [DSv2-серия](../dv2-dsv2-series.md) и [Dsv3-серия](../dv3-dsv3-series.md)
 * [Dasv4-серия](https://docs.microsoft.com/azure/virtual-machines/dav4-dasv4-series)
 * [Серия Esv3](../ev3-esv3-series.md)

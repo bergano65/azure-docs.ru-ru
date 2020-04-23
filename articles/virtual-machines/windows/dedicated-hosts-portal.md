@@ -7,12 +7,13 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 03/10/2020
 ms.author: cynthn
-ms.openlocfilehash: 3d014014b540e5ea5959483427dec4b239ceaf7b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.reviewer: zivr
+ms.openlocfilehash: 53a9cd33f7bd2223be1c9f199b7a6d10d876c322
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79476796"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82082940"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-portal"></a>Развертывание ВМ для выделенных хостов с помощью портала
 
@@ -28,7 +29,7 @@ ms.locfileid: "79476796"
 1. В разделе **Подробности об экземпляре** введите *myVM* в поле **Имя виртуальной машины** и выберите *Восточная часть США* в поле **Расположение**.
 1. В **вариантах доступности** выберите **зону доступности,** выберите *1* из выпадения.
 1. Для размера выберите **размер изменения.** В списке доступных размеров выберите один из серии Esv3, как **Standard E2s v3**. Возможно, вам придется очистить фильтр, чтобы увидеть все доступные размеры.
-1. Под **учетной записью Administrator**укажите имя пользователя, такое как *лазуриты* и пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](faq.md#what-are-the-password-requirements-when-creating-a-vm).
+1. В разделе **Учетная запись администратора** укажите имя пользователя, например *azureuser*, и пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](faq.md#what-are-the-password-requirements-when-creating-a-vm).
 1. В разделе **Правила входящего порта** щелкните **Разрешить выбранные порты**, а затем выберите **RDP (3389)** из раскрывающегося списка.
 1. В верхней части страницы выберите **вкладку Advanced** и раздел **Host,** выберите *myHostGroup* для **группы host** и *myHost* для **host.** 
     ![Выберите группу и хост-хозяина](./media/dedicated-hosts-portal/advanced.png)

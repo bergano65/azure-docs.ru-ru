@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/02/2019
-ms.openlocfilehash: c6a3ac701442fb30e471bcc2c8f317e3988980f7
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 24e622f76e604d7c0c48e2f3c354e3b4aa64e549
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81261981"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084912"
 ---
 # <a name="microsoft-commercial-marketplace-roadmap"></a>Дорожная карта коммерческого рынка Майкрософт
 
@@ -33,7 +33,7 @@ ms.locfileid: "81261981"
 * [Стандартный контракт](https://aka.ms/standardcontract)
 * [SaaS Выполнение API](https://aka.ms/saasapiv2)
 * [Рынок Геос и Валюты](https://aka.ms/marketplacegeos)
-* [Seller Insights](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/si-changes)
+* [Seller Insights](./partner-center-portal/analytics.md)
 * [Блог Microsoft Build Marketplace](https://aka.ms/marketplacebuildblog)
 * [Рынок мая Обновления блог](https://azure.microsoft.com/blog/microsoft-commercial-marketplace-updates-may-2019/)
 * Партнерский центр: [Создание учетной записи](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) / [управлять миграцией учетной записи](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account) / [из CPP](https://docs.microsoft.com/azure/marketplace/partner-center-portal/account-migration-from-cpp-to-pc)

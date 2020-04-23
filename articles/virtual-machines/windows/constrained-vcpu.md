@@ -2,23 +2,20 @@
 title: Azure ограничил размеры VCPU - Windows
 description: Список размеров виртуальных машин, в которых можно задать ограниченное число виртуальных ЦП.
 services: virtual-machines-windows
-documentationcenter: ''
 author: joelpelley
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: sizes
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/09/2018
 ms.author: jonbeck
-ms.openlocfilehash: 4121da405c2700e09bf22d1e7b42fbdc5cdc35a7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: eeb43247253386d6dd58a4c35ef0cba15a991b9e
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "77912840"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086204"
 ---
 # <a name="constrained-vcpu-capable-vm-sizes"></a>Размеры виртуальных машин, поддерживающие ограниченное число виртуальных ЦП
 
@@ -28,9 +25,9 @@ ms.locfileid: "77912840"
 
 ## <a name="other-sizes"></a>Остальные размеры
 - [Оптимизированные для вычислений](../windows/sizes-compute.md)
-- [Оптимизирована память](sizes-memory.md)
-- [Оптимизированные для операций в хранилище](sizes-storage.md)
-- [Графический процессор](sizes-gpu.md)
+- [Оптимизированные для памяти](sizes-memory.md)
+- [Оптимизированные для хранилища](sizes-storage.md)
+- [GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия

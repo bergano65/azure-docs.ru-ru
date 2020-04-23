@@ -2,17 +2,18 @@
 title: Руководство по устранению неполадок шифрования дисков Azure
 description: В этой статье содержатся советы по устранению неполадок для шифрования дисков Microsoft Azure для Windows VMs.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-windows
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: fafe4a9ef78a92595eaae942fa5d7cbeb2c07189
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 11c1e0bf10725173a2a341addf4c3f845bbb7fba
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81458221"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82085694"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -83,7 +84,7 @@ DISKPART> list vol
 
 Чтобы отключить шифрование Azure Disk с помощью CLI, используйте [az vm шифрование отключите.](/cli/azure/vm/encryption) 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0cfc66789360f78c927dd157305074ed5ea6f32a
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: 8b2f4e7a16c967b26b545d1405f973bf8b8afaae
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81768440"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086136"
 ---
 # <a name="what-sap-software-is-supported-for-azure-deployments"></a>Какое программное обеспечение SAP поддерживается для развертывания Azure
 В этой статье описывается, как можно узнать, какое программное обеспечение SAP поддерживается для развертывания Azure и каковы необходимые релизы операционной системы или DBMS-релизы.
@@ -135,7 +135,7 @@ ms.locfileid: "81768440"
 
 Поддержка SAP BPC 10.1 SP08 описана в [примечании поддержки SAP #2451795](https://launchpad.support.sap.com/#/notes/2451795)
 
-Поддержка торговой платформы SAP Hybris на Azure подробно описана в [Hybris Wiki](https://cxwiki.sap.com/display/cloudss/Using+the+hybris+Platform+with+the+Cloud). По состоянию на поддержку DBMS для SAP Hybris Commerce Platform, в нем перечислены:
+Поддержка торговой платформы SAP Hybris на Azure подробно описана в [документации Hybris.](https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/1811/en-US/8c71300f866910149b40c88dfc0de431.html) По состоянию на поддержку DBMS для SAP Hybris Commerce Platform, в нем перечислены:
 
 - Сервер и Oracle на платформе операционной системы Windows. Те же минимальные релизы применяются как для SAP NetWeaver. Подробнее о [#1928533 заметок SAP](https://launchpad.support.sap.com/#/notes/1928533)
 - SAP HANA на Red Hat и SUSE Linux. Сертифицированные VM типы SAP HANA необходимы, как описано ранее в [этом документе.](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-supported-product-on-azure#sap-hana-support) Торговая платформа SAP (Hybris) считается рабочей нагрузкой OLTP

@@ -13,12 +13,12 @@ metadata:
   ms.date: 02/27/2020
   featureFlags:
   - clicktale
-  ms.openlocfilehash: 7f78774b0c26e26bb0fb0da1ac7a11ab13ee23e0
-  ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+  ms.openlocfilehash: c4f5f9516e4c96876bbdb3e37680ccf0ce7fea7a
+  ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/21/2020
-  ms.locfileid: "81732933"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "82086510"
 highlightedContent:
   items:
   - title: Руководство по началу работы для разработчиков Azure
@@ -475,15 +475,6 @@ productDirectory:
     - featured
     - compute
     url: virtual-machines/linux/index.yml
-  - title: Мобильные приложения
-    summary: Создание и размещение серверной части для любого мобильного приложения
-    imageSrc: https://docs.microsoft.com/media/common/i_mobileapp.svg
-    azureCategories:
-    - compute
-    - containers
-    - mobile
-    - web
-    url: app-service-mobile/index.yml
   - title: SAP HANA на крупных экземплярах Azure
     summary: Выполняйте самые крупные рабочие нагрузки SAP HANA любого поставщика гипермасштабируемых облачных решений
     imageSrc: https://static.docs.com/ui/media/product/azure/sap.svg

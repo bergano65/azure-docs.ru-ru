@@ -134,7 +134,7 @@
           href: source-control-integration.md
     - name: Управление конфигурацией
       items:
-        - name: Управление State Configuration (DSC)
+        - name: State Configuration (DSC)
           items:
             - name: Обзор
               href: automation-dsc-overview.md
@@ -156,7 +156,7 @@
               href: automation-dsc-diagnostics.md
             - name: Устранение неполадок с DSC
               href: troubleshoot/desired-state-configuration.md
-        - name: Управление решением для отслеживания изменений и инвентаризации
+        - name: Отслеживание изменений и инвентаризация
           items:
             - name: Обзор
               href: change-tracking.md

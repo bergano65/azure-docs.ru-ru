@@ -586,6 +586,9 @@
         - name: Индексатор видео
           tocHref: /azure/media-services/video-indexer/
           topicHref: /azure/media-services/video-indexer/
+        - name: Проигрыватель мультимедиа Azure
+          tocHref: /azure/media-services/azure-media-player/
+          topicHref: /azure/media-services/azure-media-player/
     - name: Службы обмена сообщениями
       tocHref: /azure/messaging-services/
       topicHref: /azure/messaging-services/

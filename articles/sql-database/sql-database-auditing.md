@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 03/27/2020
 ms.custom: azure-synapse
-ms.openlocfilehash: 9e8aa9bbbdf166ba0caf29cd0bce22b8ed321e4e
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 48cdbc8188604ce1992a1cb15289576ba92902a3
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81685189"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086153"
 ---
 # <a name="azure-sql-auditing"></a>Аудит Azure SQL
 
@@ -89,7 +89,7 @@ ms.locfileid: "81685189"
   
    ![варианты хранилищ](./media/sql-database-auditing-get-started/auditing-select-destination.png)
    
-### <a name=""></a><a id="audit-storage-destination">Аудит в пункт ели хранения</a>
+### <a name="audit-to-storage-destination"></a><a id="audit-storage-destination"></a>Аудит в пункт ели хранения
 
 Чтобы настроить запись журналов аудита в учетную запись хранения, выберите **Хранилище** и щелкните **Сведения о хранилище**. Выберите учетную запись хранения Azure, в которой будут храниться журналы, и укажите срок хранения. После этого щелкните **OK**. Логи старше периода хранения удаляются.
 
@@ -98,7 +98,7 @@ ms.locfileid: "81685189"
 
   ![запись хранения Azure](./media/sql-database-auditing-get-started/auditing_select_storage.png)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 - Системы аудита записываются в **Append Blobs** в хранилище Azure Blob в подписке Azure
 - Для настройки неизменяемого хранилища журналов для событий аудита на уровне сервера или базы данных следуйте [инструкциям, предоставленным Azure Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage#enabling-allow-protected-append-blobs-writes) (пожалуйста, вы выбрали **дополнительные приложения Allow** при настройке непреложного хранилища капля).
@@ -108,13 +108,13 @@ ms.locfileid: "81685189"
 - Если используется проверка подлинности AAD, неудачные попытки входа *не* отображаются в журнале аудита SQL. Чтобы просмотреть записи аудита для неудачных попыток входа, посетите [портал Azure Active Directory]( ../active-directory/reports-monitoring/reference-sign-ins-error-codes.md), который регистрирует сведения об этих событиях.
 - Аудит на [только для чтения реплики](sql-database-read-scale-out.md) автоматически включен. Для получения более подробной информации об иерархии папок хранения, именованиях конвенций и формате журнала можно ознакомиться в [формате журнала s'L Database Log Log.](sql-database-audit-log-format.md) 
 
-### <a name=""></a><a id="audit-log-analytics-destination">Аудит в области логивой аналитики назначения</a>
+### <a name="audit-to-log-analytics-destination"></a><a id="audit-log-analytics-destination"></a>Аудит в области логивой аналитики назначения
   
 Чтобы настроить запись журналов аудита в рабочую область Log Analytics, выберите **Log Analytics (предварительная версия)** и щелкните **Сведения о Log Analytics**. Выберите или создайте рабочую область Log Analytics, в которую будут записываться журналы, а затем щелкните **ОК**.
    
    ![LogAnalyticsworkspace](./media/sql-database-auditing-get-started/auditing_select_oms.png)
 
-### <a name=""></a><a id="audit-event-hub-destination">Аудит к месту назначения концентратора событий</a>
+### <a name="audit-to-event-hub-destination"></a><a id="audit-event-hub-destination"></a>Аудит к месту назначения концентратора событий
 
 > [!WARNING]
 > Включение аудита на сервере, на котором есть пул S'L, **приводит к возобновлению пула S'L и повторному приостановке,** что может повлечь за собой оплату счетов.
@@ -199,7 +199,7 @@ ms.locfileid: "81685189"
 
 <!--The description in this section refers to preceding screen captures.-->
 
-#### <a name="auditing-geo-replicated-databases"></a>Аудит географически реплицированных баз данных
+### <a name="auditing-geo-replicated-databases"></a>Аудит географически реплицированных баз данных
 
 При использовании геореплицированных баз данных, если включить аудит для базы данных-источника, к базе данных-получателю будут применяться идентичные политики аудита. Кроме того, можно настроить аудит базы данных-получателя, включив аудит для **сервера-получателя**, независимо от базы данных-источника.
 
@@ -211,7 +211,7 @@ ms.locfileid: "81685189"
     >[!IMPORTANT]
     >При использовании аудита на уровне базы данных настройки хранилища для базы данных-получателя будут совпадать с настройками для базы данных-источника, что приведет к появлению трафика между регионами. Рекомендуем включать аудит только на уровне сервера, а на уровне баз данных отключить все параметры аудита для всех баз данных.
 
-#### <a name="storage-key-regeneration"></a>Повторное создание ключа хранилища
+### <a name="storage-key-regeneration"></a>Повторное создание ключа хранилища
 
 Обычно в рабочей среде приходится периодически обновлять ключи хранилища. Если журналы аудита записываются в службу хранилища Azure, при обновлении ключей необходимо повторно сохранить политику аудита. Применяется следующая обработка.
 
@@ -226,7 +226,7 @@ ms.locfileid: "81685189"
 
 ## <a name="manage-azure-sql-server-and-database-auditing"></a><a id="manage-auditing"></a>Управление аудитом серверов и баз данных Azure S'L
 
-#### <a name="using-azure-powershell"></a>Использование Azure PowerShell
+### <a name="using-azure-powershell"></a>Использование Azure PowerShell
 
 **Командлеты PowerShell (включая поддержку предложения WHERE для дополнительной фильтрации)**.
 
@@ -239,7 +239,7 @@ ms.locfileid: "81685189"
 
 Пример сценария см. в статье [Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
 
-#### <a name="using-rest-api"></a>Использование REST API
+### <a name="using-rest-api"></a>Использование REST API
 
 **REST API**:
 
@@ -255,7 +255,7 @@ ms.locfileid: "81685189"
 - [Получите *расширенную* политику аудита баз данных](/rest/api/sql/database%20extended%20auditing%20settings/get)
 - [Получите *расширенную* политику аудита серверов](/rest/api/sql/server%20auditing%20settings/get)
 
-#### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
+### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
 
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](../azure-resource-manager/management/overview.md), как показано в следующих примерах.
 

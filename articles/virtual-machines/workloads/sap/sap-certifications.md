@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/21/2020
 ms.author: juergent
 ms.custom: ''
-ms.openlocfilehash: c19471fee9235faffba12a12d9f92de77f60fd4d
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: df80113b85153f4e52bcbefa7b33dab9da296173
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81770517"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084827"
 ---
 # <a name="sap-certifications-and-configurations-running-on-microsoft-azure"></a>Сертификаты и конфигурации SAP на платформе Microsoft Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "81770517"
 | SAP BPC 10.01 MS SP08 | Windows и Linux | | Все типы виртуальных машин, сертифицированные NetWeaver<br /> Примечание к SAP № 2451795 |
 | Платформа SAP BusinessObjects BI | Windows и Linux | | Примечание к SAP № 2145537 |
 | SAP Data Services 4.2 | | | Примечание к SAP № 2288344 |
-| Торговая платформа SAP Hybris  | Windows | SQL Server, Oracle | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Вики-сайт Hybris](https://cxwiki.sap.com/display/cloudss/Using+the+hybris+Platform+with+the+Cloud) |
-| Торговая платформа SAP Hybris  | SLES 12 или более поздние | SAP HANA | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Вики-сайт Hybris](https://cxwiki.sap.com/display/cloudss/Using+the+hybris+Platform+with+the+Cloud) |
-| Торговая платформа SAP Hybris  | RHEL 7 или более поздние | SAP HANA | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Вики-сайт Hybris](https://cxwiki.sap.com/display/cloudss/Using+the+hybris+Platform+with+the+Cloud) |
+| Торговая платформа SAP Hybris  | Windows | SQL Server, Oracle | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Документация Hybris](https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/6.7.0.0/en-US/8c71300f866910149b40c88dfc0de431.html) |
+| Торговая платформа SAP Hybris  | SLES 12 или более поздние | SAP HANA | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Документация Hybris](https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/6.7.0.0/en-US/8c71300f866910149b40c88dfc0de431.html) |
+| Торговая платформа SAP Hybris  | RHEL 7 или более поздние | SAP HANA | Все типы виртуальных машин, сертифицированные NetWeaver <br /> (Документация Hybris)https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/6.7.0.0/en-US/8c71300f866910149b40c88dfc0de431.html) |
 | SAP (Hybris) Торговая платформа 1811 и позже  | Окна, SLES или RHEL | СЗЛ Лазурный DB | Все типы виртуальных машин, сертифицированные NetWeaver <br /> [Документация Hybris](https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/1811/en-US/8c71300f866910149b40c88dfc0de431.html) |

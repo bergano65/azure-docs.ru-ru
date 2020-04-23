@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/01/2019
-ms.openlocfilehash: 95bfa7b1918da09e4f5913eeb2b57c290b093efe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 432e22879ce0eba89f04a1084e2d4a93a487dd45
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79270450"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086442"
 ---
 # <a name="deploy-azure-resource-manager-templates-for-azure-logic-apps"></a>Развертывание шаблонов диспетчера ресурсов Azure для логических приложений Azure
 
@@ -19,10 +19,10 @@ ms.locfileid: "79270450"
 
 * [Портал Azure](#portal)
 * [Visual Studio](#visual-studio)
-* [Лазурная силаШелл](#powershell)
-* [Лазурный CLI](#cli)
+* [Azure PowerShell](#powershell)
+* [Azure CLI](#cli)
 * [API REST диспетчера ресурсов Azure](../azure-resource-manager/templates/deploy-rest.md)
-* [Лазурные ДевОпс](#azure-pipelines)
+* [Azure DevOps](#azure-pipelines)
 
 <a name="portal"></a>
 
@@ -79,7 +79,7 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md) 
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md)
 * [`az group deployment create`](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create)
 
 <a name="azure-pipelines"></a>
@@ -91,7 +91,7 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 Для получения дополнительной информации о непрерывной интеграции и непрерывном развертывании (CI/CD) для шаблонов Управления ресурсами Azure с azure Pipelines см.
 
 * [Интеграция шаблонов диспетчера ресурсов с конвейерами Azure](../azure-resource-manager/templates/add-template-to-azure-pipelines.md)
-* [Учебник: Непрерывная интеграция шаблонов управления ресурсами Azure с помощью конвейеров Azure](../azure-resource-manager/templates/template-tutorial-use-azure-pipelines.md)
+* [Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines](../azure-resource-manager/templates/deployment-tutorial-pipeline.md)
 * [Пример: Подключение к очередям в шины Azure из приложений логики Azure и развертывание с помощью проводов Azure в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример: Подключение к учетным записям хранения Azure из приложений логики Azure и развертывание с помощью конвейеров Azure в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример: Настройка действия приложения функции для приложений Логики Azure и развертывание с помощью проводов Azure в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)

@@ -132,7 +132,7 @@
     - name: Отраслевые шаблоны приложений
       items:
         - name: Розничная торговля
-          href: ../retail/overview-iot-central-retail-pnp.md
+          href: ../retail/overview-iot-central-retail.md
         - name: Энергетика
           href: ../energy/overview-iot-central-energy.md
         - name: Государственные организации

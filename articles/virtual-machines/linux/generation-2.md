@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: 0767d6c003be8f4e0b28c8d8ce1d48b8f578dd86
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: ae76c30f63c87f7e741fff31792d520fb144b93b
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273534"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084283"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка вдвизирующих в поколение 2 в Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "81273534"
 ВМ поколения 1 поддерживаются всеми размерами VM в Azure (за исключением VM-м вибрёв серии Mv2). Теперь Azure предлагает поддержку поколения 2 для следующих выбранных серий VM:
 
 * [Серия B](https://docs.microsoft.com/azure/virtual-machines/linux/b-series-burstable)
-* [Серии DC](../dcv2-series.md)
+* [DCsv2-серия](../dcv2-series.md)
 * [DSv2-серия](../dv2-dsv2-series.md) и [Dsv3-серия](../dv3-dsv3-series.md)
 * [Серия Esv3](../ev3-esv3-series.md)
 * [Серия Fsv2](../fsv2-series.md)
@@ -48,7 +48,7 @@ ms.locfileid: "81273534"
 Поколение 2 VMs поддерживает следующие изображения Marketplace:
 
 * Windows Server 2019, 2016, 2012 R2, 2012
-* Windows 10
+* быть под управлением ОС Windows 10;
 * SUSE Linux Enterprise Server 15 SP1
 * SUSE Linux Enterprise Server 12 SP4
 * Ubuntu Server 16.04, 18.04, 19.04, 19.10 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.openlocfilehash: 4a8b3cf47235e061e5dbcc08a409fce84d421771
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 57ca5b0880d4b027e33bc0d01fc6225eb886029b
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77562213"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084997"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в службе приложений с помощью действий GitHub
 
@@ -27,8 +27,8 @@ ms.locfileid: "77562213"
 
 |Section  |Задания  |
 |---------|---------|
-|**Проверка подлинности** | 1. Определить директора службы <br /> 2. Создайте секрет GitHub |
-|**Построить** | 1. Настройка окружающей среды <br /> 2. Создайте веб-приложение |
+|**Аутентификация** | 1. Определить директора службы <br /> 2. Создайте секрет GitHub |
+|**Сборка** | 1. Настройка окружающей среды <br /> 2. Создайте веб-приложение |
 |**Развернуть** | 1. Развертывание веб-приложения |
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
@@ -62,7 +62,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 4. Теперь в файле рабочего `.github/workflows/workflow.yml` процесса в вашей `publish-profile` ветке: замените секрет для ввода развертывания действия Web App Azure.
     
     ```yaml
-        - uses: azure/webapps-deploy@v1
+        - uses: azure/webapps-deploy@v2
           with:
             creds: ${{ secrets.azureWebAppPublishProfile }}
     ```
@@ -79,12 +79,12 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 |---------|---------|
 |**.NET**     | `actions/setup-dotnet` |
 |**Java**     | `actions/setup-java` |
-|**Javascript** | `actions/setup-node` |
+|**JavaScript** | `actions/setup-node` |
 |**Python**     | `actions/setup-python` |
 
 Ниже приведены следующие примеры, в которой показана часть рабочего процесса, которая настраивает среду для различных поддерживаемых языков:
 
-**Javascript**
+**JavaScript**
 
 ```yaml
     - name: Setup Node 10.x
@@ -127,7 +127,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 Ниже приведены следующие примеры, в какой части рабочего процесса, который создает веб-приложение, на различных поддерживаемых языках.
 
-**Javascript**
+**JavaScript**
 
 ```yaml
     - name: 'Run npm'
@@ -180,15 +180,15 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 ```
-## <a name="deploy-to-app-service"></a>Развертывание в службу приложений
+## <a name="deploy-to-app-service"></a>Развертывание в Службе приложений
 
-Чтобы развернуть код в приложении `azure/webapps-deploy@v1 ` Службы app, используйте действие. Это действие имеет четыре параметра:
+Чтобы развернуть код в приложении `azure/webapps-deploy@v2` Службы app, используйте действие. Это действие имеет четыре параметра:
 
 | **Параметр**  | **Объяснение**  |
 |---------|---------|
 | **имя приложения** | (Обязательно) Название приложения Службы Приложений | 
 | **опубликовать-профиль** | (Необязательно) Публикация содержимого файла профиля с помощью секретов Web Deploy |
-| **Пакет** | (Необязательно) Путь к пакету или папке. З.зип, З.Война, К.банк или папка для развертывания |
+| **package** | (Необязательно) Путь к пакету или папке. З.зип, З.Война, К.банк или папка для развертывания |
 | **слот-имя** | (Необязательно) Введите существующий слот, кроме слота Production |
 
 ### <a name="deploy-using-publish-profile"></a>Развертывание с помощью профиля публикации
@@ -219,7 +219,7 @@ jobs:
         npm run test --if-present
        
     - name: 'Run Azure webapp deploy action using publish profile credentials'
-          uses: azure/webapps-deploy@v1
+          uses: azure/webapps-deploy@v2
           with: 
             app-name: node-rn
             publish-profile: ${{ secrets.azureWebAppPublishProfile }}
@@ -258,7 +258,7 @@ jobs:
         npm run test --if-present
                
     # deploy web app using Azure credentials
-    - uses: azure/webapps-deploy@v1
+    - uses: azure/webapps-deploy@v2
       with:
         app-name: 'node-rn'
 

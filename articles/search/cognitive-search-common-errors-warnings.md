@@ -8,12 +8,12 @@ ms.author: abmotley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 72bf08dce36d857c1fe91bbe9806336dfa185f7e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ed10e998ea05b6687190b1f87095f8bc28265905
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78671975"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086621"
 ---
 # <a name="troubleshooting-common-indexer-errors-and-warnings-in-azure-cognitive-search"></a>Устранение ошибок в распространенных ошибках индекса и предупреждениях в Azure Cognitive Search
 
@@ -35,7 +35,7 @@ ms.locfileid: "78671975"
 | Свойство | Описание | Пример |
 | --- | --- | --- |
 | ключ | Идентификатор документа, на который повлияла ошибка или предупреждение. | https:\//coromsearch.blob.core.windows.net/jfk-1k/docid-32112954.pdf |
-| name | Имя операции, описывающее, где произошла ошибка или предупреждение. Это генерируется следующей структурой: «категория». (подкатегория). (ресурсТип). (РесурсНое имя) | DocumentExtraction.azureblob.myBlobContainerNameEnrich.WebApiskill.mySkillName Projection.SearchIndex.OutputfieldMapping.myOutputfieldName Проекция.SearchIndex.MergeOrUpload.myIndexName Проекция.ЗнаниеStore.Table.myTableName |
+| name | Имя операции, описывающее, где произошла ошибка или предупреждение. Это генерируется следующей структурой: «категория». (подкатегория). (ресурсТип). (РесурсНое имя) | DocumentExtraction.azureblob.myBlobContainerName Enrichment.WebApiSkill.mySkillName Projection.SearchIndex.OutputfieldMapping.myOutputfieldName Проекция.SearchIndex.MergeOrUpload.myIndexName Проекция.KnowledgeStore.TableName |
 | message | Высокоуровневое описание ошибки или предупреждения. | Не удалось выполнить навык, потому что запрос Web Api не удалось. |
 | подробности | Любые дополнительные детали, которые могут быть полезны для диагностики проблемы, такие как ответ WebApi, если выполнение пользовательского навыка не удалось. | `link-cryptonyms-list - Error processing the request record : System.ArgumentNullException: Value cannot be null. Parameter name: source at System.Linq.Enumerable.All[TSource](IEnumerable`1 источник,`2 predicate) at Microsoft.CognitiveSearch.WebApiSkills.JfkWebApiSkills.` Func ... остальная часть стека след ... |
 | документацияLink | Ссылка на соответствующую документацию с подробной информацией для отладки и решения проблемы. Эта ссылка часто указывает на один из нижеразделов на этой странице. | https://go.microsoft.com/fwlink/?linkid=2106475 |
@@ -91,6 +91,8 @@ Indexer не смог запустить навык в skillset.
 
 ## <a name="error-could-not-execute-skill-because-the-web-api-request-failed"></a>Ошибка: не удалось выполнить навык, потому что запрос Web API не удалось
 Выполнение навыков не удалось из-за сбой вызова Web API. Как правило, этот класс сбоя происходит при использовании пользовательских навыков, и в этом случае вам нужно будет отладить пользовательский код для решения проблемы. Если сбой происходит от встроенного навыка, обратитесь к сообщению об ошибке для помощи в устранении проблемы.
+
+При отладке этой проблемы, не забудьте обратить внимание на любые [навыки ввода предупреждений](#warning-skill-input-was-invalid) для этого навыка. Конечная точка Web API может сбой, поскольку индексатор передает ее неожиданный вход.
 
 <a name="could-not-execute-skill-because-web-api-skill-response-is-invalid"/>
 

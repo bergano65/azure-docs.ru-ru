@@ -2,13 +2,13 @@
 title: Функции шаблона - дата
 description: Описывает функции, которые можно использовать в шаблоне менеджера ресурсов Azure для работы с датами.
 ms.topic: conceptual
-ms.date: 04/06/2020
-ms.openlocfilehash: 75234a142b9f2fbe61c337bfeb378b47534bac79
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.date: 04/22/2020
+ms.openlocfilehash: 364b41e9e92cb248a7bd2fac5a41eb535adbf440
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80986282"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084793"
 ---
 # <a name="date-functions-for-arm-templates"></a>Функции дат для шаблонов ARM
 
@@ -21,7 +21,7 @@ ms.locfileid: "80986282"
 
 `dateTimeAdd(base, duration, [format])`
 
-Добавляет продолжительность времени к базовому значению даты.
+Добавляет продолжительность времени к базовому значению. Ожидается формат ISO 8601.
 
 ### <a name="parameters"></a>Параметры
 
@@ -146,7 +146,7 @@ ms.locfileid: "80986282"
 |:--- |:--- |:--- |:--- |
 | format |нет |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Используйте [строки стандартного формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) или [строки пользовательского формата.](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) |
 
-### <a name="remarks"></a>Примечания
+### <a name="remarks"></a>Remarks
 
 Эту функцию можно использовать только в выражении для значения параметра по умолчанию. Использование этой функции в другом месте в шаблоне возвращает ошибку. Функция не допускается в других частях шаблона, поскольку она возвращает различное значение каждый раз, когда она называется. Развертывание одного и того же шаблона с теми же параметрами не даст точно такие же результаты.
 

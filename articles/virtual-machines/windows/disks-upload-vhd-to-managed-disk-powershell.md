@@ -5,15 +5,15 @@ author: roygara
 ms.author: rogarana
 ms.date: 03/27/2020
 ms.topic: article
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 55606aeeb9f6445027f5da49821dbc4970764ade
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: 7c66507989357569828d4ef933cfdca735f71570
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80421046"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82085417"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Загрузите VHD в Azure или скопируйте управляемый диск в другой регион - Azure PowerShell
 
@@ -127,7 +127,7 @@ Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
 Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы успешно загрузили VHD на управляемый диск, вы можете прикрепить диск к VM и начать использовать его.
 

@@ -2,24 +2,19 @@
 title: 'Сделайте D: привод VM диском данных '
 description: Описывает, как изменить буквы дисков для виртуальной машины Windows, чтобы диск D можно было использовать в качестве диска данных.
 services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: 0867a931-0055-4e31-8403-9b38a3eeb904
 ms.service: virtual-machines-windows
+ms.subservice: disks
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 01/02/2018
 ms.author: cynthn
-ms.openlocfilehash: 491e7b7be084017cc370fe431c3175ac5b2673f9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 15df3178f2860fa066a82cb1429e0c1a6e5c2b08
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74033652"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82083428"
 ---
 # <a name="use-the-d-drive-as-a-data-drive-on-a-windows-vm"></a>Использование диска D в качестве диска данных на виртуальной машине Windows
 Если вашему приложению нужно использовать диск D для хранения данных, следуйте приведенным указаниям, чтобы использовать другой диск в качестве временного. Никогда не используйте временный диск для хранения данных, которые нужно сохранить.
@@ -59,7 +54,7 @@ ms.locfileid: "74033652"
 5. В разделе **Виртуальная память** нажмите кнопку **Изменить**.
 6. Выберите диск ОС **C**, значение **Без файла подкачки** и нажмите кнопку **Задать**.
 7. Выберите диск временного хранилища **T**, щелкните **Размер по выбору системы** и нажмите кнопку **Задать**.
-8. Щелкните **Применить**. Вы получите предупреждение о том, что для вступления изменений в силу необходимо перезагрузить компьютер.
+8. Нажмите кнопку **Применить**. Вы получите предупреждение о том, что для вступления изменений в силу необходимо перезагрузить компьютер.
 9. Перезапустите виртуальную машину.
 
 ## <a name="next-steps"></a>Дальнейшие действия

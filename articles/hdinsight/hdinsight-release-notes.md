@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 03/20/2020
-ms.openlocfilehash: cdb31f1a46d7f46b69e9e0ad47a77ba6b32a50a0
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.date: 04/22/2020
+ms.openlocfilehash: f8331b64792781a89428f8c5070375c31c0da48d
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81770833"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084895"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -30,7 +30,7 @@ Azure HDInsight является одним из самых популярных
 > [!IMPORTANT]  
 > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в [статье об управлении версиями HDInsight](hdinsight-component-versioning.md).
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>новые функции;
 ### <a name="tls-12-enforcement"></a>Обязательное использование TLS 1.2
 TLS и SSL являются протоколами шифрования, которые обеспечивает безопасность передачи данных по сети. Узнайте больше о [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security#SSL_1.0.2C_2.0_and_3.0). HDInsight использует TLS 1.2 на общедоступных конечных точках HTTPs, но TLS 1.1 по-прежнему поддерживается для обратной совместимости. 
 
@@ -66,14 +66,3 @@ HDInsight продолжает делать кластер надежности 
 ## <a name="component-version-change"></a>Изменение компонентной версии
 Нет изменения компонентной версии для этого релиза. Вы можете найти текущие версии компонентов для HDInsight 4.0 объявление HDInsight 3.6 здесь.
 
-## <a name="known-issues"></a>Известные проблемы
-
-По состоянию на 18 марта 2020 года некоторые клиенты Azure HDInsight в Западной Европе или Северной Европе получали уведомления об ошибках при создании или масштабировании кластеров HDInsight в этих регионах. Ошибки, связанные с этой проблемой включают в себя:
-
-- При обработке запроса произошла ошибка внутреннего сервера. Пожалуйста, повторите запрос или обратитесь в службу поддержки.
-- По крайней мере одна операция развертывания ресурсов не удалась. Пожалуйста, перечислите операции развертывания для получения подробной информации. Пожалуйста, ознакомьтесь https://aka.ms/DeployOperations с деталями использования
-- Пользовательский идентификатор\<\>подписки Подписной id\<' не имеет ядер, оставленных для создания> кластера кластера. \<Требуется:\>X , Доступно: 0.
-
-Инженеры знают об этой проблеме и активно изучают.
-
-Для получения дополнительной справки создайте [запрос на поддержку.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
