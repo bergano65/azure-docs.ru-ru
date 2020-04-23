@@ -13,12 +13,13 @@ ms.author: garye
 ms.reviewer: davidph, carlrab
 manager: cgronlun
 ms.date: 05/29/2019
-ms.openlocfilehash: 7103afc29e4021d950d9a3634b190f4439ecfe8d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ROBOTS: NOINDEX
+ms.openlocfilehash: 23dc784586e85b8cbdc816ac5f4d54556fc1ffb7
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76768514"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81456997"
 ---
 # <a name="quickstart-use-r-with-machine-learning-services-to-query-an-azure-sql-database-preview"></a>Краткое руководство. Отправка запросов к базе данных SQL Azure с помощью сценария R в Службах машинного обучения (предварительная версия)
 
@@ -30,16 +31,13 @@ ms.locfileid: "76768514"
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [База данных SQL Azure](sql-database-single-database-get-started.md)
-- [Службы машинного обучения](sql-database-machine-learning-services-overview.md) (с поддержкой R) включены. [Зарегистрируйтесь, чтобы получить предварительную версию](sql-database-machine-learning-services-overview.md#signup).
+- [Службы машинного обучения](sql-database-machine-learning-services-overview.md) (с поддержкой R) включены.
 - [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS).
 
 > [!IMPORTANT]
 > Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
 
-> [!NOTE]
-> Во время общедоступной предварительной версии корпорация Майкрософт подключит вас и включит машинное обучение для имеющейся или новой базы данных, однако в настоящее время параметр развертывания управляемого экземпляра не поддерживается.
-
-Службы машинного обучения с поддержкой R — это функция базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. [The R Project for Statistical Computing](https://www.r-project.org/) (Проект R для статических вычислений)
+Службы машинного обучения с поддержкой R — это функция Базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. [The R Project for Statistical Computing](https://www.r-project.org/) (Проект R для статических вычислений)
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 

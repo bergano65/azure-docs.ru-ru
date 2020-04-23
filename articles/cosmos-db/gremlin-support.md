@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 06/24/2019
 ms.author: lbosq
-ms.openlocfilehash: 564e69e3cd852c6a0f8c20278d4742b77f064298
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 59c45497ea6d9fcb216c83060a858ee6c96f1151
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75499995"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81449975"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
 Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
@@ -46,11 +46,9 @@ TinkerPop — это стандартная платформа, которая 
 | Функции ребра | AddEdges, RemoveEdges, StringIds, UserSuppliedIds, AddProperty, RemoveProperty | Поддерживается создание, изменение и удаление ребра. |
 | Функции свойств ребра | Поддерживаются типы Properties, BooleanValues, ByteValues, DoubleValues, FloatValues, IntegerValues, LongValues, StringValues. | Поддерживается создание, изменение и удаление свойств ребра. |
 
-## <a name="gremlin-wire-format-graphson"></a>Формат подключения Gremlin: GraphSON
+## <a name="gremlin-wire-format"></a>Формат подключения Gremlin
 
-При возвращении результатов операций Gremlin в базе данных Azure Cosmos DB используется [формат GraphSON](https://tinkerpop.apache.org/docs/current/reference/#graphson). Azure Cosmos DB сейчас поддерживает работу с версией GraphSONv2. GraphSON представляет собой стандартный формат Gremlin для представления вершин, ребер и свойств (единичных и со множественными значениями) с помощью JSON.
-
-Например, в следующем фрагменте кода показано представление GraphSON вершины, *возвращенной клиенту* из базы данных Azure Cosmos DB. 
+При возвращении результатов операций Gremlin в Azure Cosmos DB используется формат JSON. Azure Cosmos DB сейчас поддерживает формат JSON. Например, в следующем фрагменте кода показано представление JSON вершины, *возвращенной клиенту* из Azure Cosmos DB.
 
 ```json
   {
@@ -89,9 +87,9 @@ TinkerPop — это стандартная платформа, которая 
   }
 ```
 
-Свойства вершин, используемые в формате GraphSON, описаны ниже:
+Свойства вершин, используемые в формате JSON, описаны ниже:
 
-| Свойство | Description | 
+| Свойство | Описание | 
 | --- | --- | --- |
 | `id` | Идентификатор вершины. Должен иметь уникальное значение (если применимо — со значением `_partition`). Если значение не указано, оно будет предоставляться автоматически с помощью идентификатора GUID. | 
 | `label` | Метка вершины. Это свойство используется для описания типа сущности. |
@@ -102,7 +100,7 @@ TinkerPop — это стандартная платформа, которая 
 
 Ребро содержит приведенные ниже сведения, необходимые для перехода в другие части графа.
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | `id` | Идентификатор ребра. Должен иметь уникальное значение (если применимо — со значением `_partition`). |
 | `label` | Метка ребра. Это свойство является необязательным и используется для описания типа связи. |
@@ -111,14 +109,14 @@ TinkerPop — это стандартная платформа, которая 
 
 Каждое свойство может хранить несколько значений в массиве. 
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | `value` | Значение свойства
 
 ## <a name="gremlin-steps"></a>Шаги Gremlin
 Теперь рассмотрим шаги Gremlin, поддерживаемые базой данных Azure Cosmos DB. Дополнительные сведения о Gremlin см. в [руководстве по TinkerPop](https://tinkerpop.apache.org/docs/3.3.2/reference).
 
-| Шаг | Description | Руководство по TinkerPop 3.2 |
+| Шаг | Описание | Руководство по TinkerPop 3.2 |
 | --- | --- | --- |
 | `addE` | Добавляет ребро между двумя вершинами. | [Шаг addE](https://tinkerpop.apache.org/docs/3.3.2/reference/#addedge-step) |
 | `addV` | Добавляет вершину в граф. | [Шаг addV](https://tinkerpop.apache.org/docs/3.3.2/reference/#addvertex-step) |

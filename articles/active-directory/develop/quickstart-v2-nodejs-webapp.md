@@ -11,14 +11,14 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 4aa0cce83f9adc8c648656899ec6dc12d498e26b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 1ff92b8a9477800477ebb2d79145ddaa78831f30
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77160454"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536069"
 ---
-# <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Краткое руководство. Добавление входа с помощью OpenID Connect в веб-приложение Node.js
+# <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Node.js с помощью OpenID Connect
 
 В этом кратком руководстве вы узнаете, как настроить проверку подлинности подключения OpenID в веб-приложении, созданном с помощью Node.js и Экспресс. Пример предназначен для работы на любой платформе.
 
@@ -30,7 +30,7 @@ ms.locfileid: "77160454"
 
 * [Учетная запись Майкрософт](https://www.outlook.com) или [Программа для разработчиков Office 365](/office/developer-program/office-365-developer-program).
 
-## <a name="register-your-application"></a>Регистрация приложения 
+## <a name="register-your-application"></a>Регистрация приложения
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. Если ваша учетная запись присутствует в нескольких клиентах Azure AD:
     - Выберите свой профиль в меню в правом верхнем углу страницы, а затем **Переключение каталога**.
@@ -78,7 +78,7 @@ ms.locfileid: "77160454"
 
 В корневом каталоге проекта выполните команду:
 
-`$ npm install`  
+`$ npm install`
 
 ## <a name="configure-the-application"></a>Настройка приложения
 

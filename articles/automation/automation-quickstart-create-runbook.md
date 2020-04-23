@@ -6,12 +6,12 @@ ms.date: 02/05/2019
 ms.topic: quickstart
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 5a6dbda59495fccb6b9d53440f408fd4750925b5
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 250f51c9f028dd55d8327259e35b82b0c392c1f6
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75421664"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537004"
 ---
 # <a name="create-an-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -21,27 +21,27 @@ ms.locfileid: "75421664"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите в Azure (https://portal.azure.com ).
+Войдите в Azure по адресу https://portal.azure.com.
 
-## <a name="create-runbook"></a>Создание модуля Runbook
+## <a name="create-the-runbook"></a>Создание модуля runbook
 
 Для начала создайте runbook. В этом кратком руководстве вы создадите простой пример runbook, который по умолчанию выводит `Hello World`.
 
 1. Откройте учетную запись автоматизации.
 
-1. Щелкните **Модули Runbook** в разделе **Автоматизация процессов**. Отобразится список модулей runbook.
+1. Выберите **Модули Runbook** в разделе **Автоматизация процессов**. Отобразится список модулей runbook.
 
 1. Нажмите кнопку **Создать Runbook** в верхней части списка.
 
-1. Введите "Hello World" в качестве значения для параметра **Имя**, а затем выберите вариант **PowerShell** в списке **Тип Runbook**. Нажмите кнопку **Создать**.
+1. Введите имя `Hello-World` в поле **Имя** и выберите **PowerShell** в поле **Тип Runbook**. 
 
    ![Страница ввода сведений о runbook службы автоматизации](./media/automation-quickstart-create-runbook/automation-create-runbook-configure.png)
 
-1. Это действие создает новый runbook и открывает страницу **Изменение Runbook PowerShell**.
+1. Нажмите кнопку **Создать**. После этого создается модуль runbook и откроется страница "Изменение Runbook PowerShell".
 
     ![Создание скрипта PowerShell в редакторе runbook](./media/automation-quickstart-create-runbook/automation-edit-runbook-empty.png)
 
-1. Наберите следующий код в панели редактирования или скопируйте и вставьте его туда. Этот код создает необязательный входной параметр с именем Name и значением по умолчанию World и выводит строку, содержащую значение этого входного параметра:
+1. Наберите следующий код в панели редактирования или скопируйте и вставьте его туда. Этот код создает необязательный входной параметр с именем `Name` и значением по умолчанию `World` и выводит строку, содержащую значение этого входного параметра:
 
    ```powershell-interactive
    param
@@ -59,17 +59,17 @@ ms.locfileid: "75421664"
 
 ## <a name="test-the-runbook"></a>Тестирование модуля Runbook
 
-Созданный runbook нужно протестировать, чтобы проверить правильность выполнения.
+Созданный runbook нужно протестировать, чтобы проверить правильность его выполнения.
 
-1. Щелкните **Область тестирования**, чтобы открыть страницу **Тест**.
+1. Щелкните **Область тестирования**.
 
 1. Введите значение для параметра **Name** и щелкните **Запустить**. Это действие запускает задание тестирования и отображение его состояния и выходных данных.
 
     ![Задание тестирования runbook](./media/automation-quickstart-create-runbook/automation-test-runbook.png)
 
-1. Закройте окно **Тест**, нажав крестик (**x**) в правом верхнем углу. Нажмите **ОК** во всплывающем окне.
+1. Закройте окно "Тест", щелкнув значок крестика (**X**) в правом верхнем углу. Нажмите **ОК** во всплывающем окне.
 
-1. На странице **Изменение Runbook PowerShell** щелкните **Опубликовать**, чтобы опубликовать официальную версию runbook в учетной записи.
+1. На странице "Изменение Runbook PowerShell" нажмите кнопку **Опубликовать**, чтобы опубликовать официальную версию runbook в учетной записи.
 
    ![Задание тестирования runbook](./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "75421664"
 
 После публикации runbook отобразится страница с общими сведениями.
 
-1. Щелкните **Запустить** на этой странице, чтобы открыть страницу конфигурации **Запустить Runbook** для этого runbook.
+1. Щелкните **Запустить** на этой странице, чтобы открыть страницу конфигурации "Запустить Runbook" для этого runbook.
 
    ![Задание тестирования runbook](./media/automation-quickstart-create-runbook/automation-hello-world-runbook-start.png)
 
@@ -85,7 +85,7 @@ ms.locfileid: "75421664"
 
    ![Задание тестирования runbook](./media/automation-quickstart-create-runbook/automation-job-page.png)
 
-1. Если **состояние задания** имеет значение **Выполняется** или **Завершено**, щелкнув элемент **Выходные данные**, вы откроете панель **Выходные данные**, где отображается результат работы runbook.
+1. Если состояние задания имеет значение `Running` или `Completed`, щелкните **Выходные данные**, чтобы открыть панель с результатами работы runbook.
 
    ![Задание тестирования runbook](./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job-output.png)
 
