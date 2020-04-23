@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -15,16 +14,16 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: d6624b9d5d77a8552584049463b63738bbf17627
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5527fbfc05eb5aadf5c5775fb9987a88d5ba81bb
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79222261"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460449"
 ---
-# <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Руководство. Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux с помощью Azure CLI
+# <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux с помощью Azure CLI
 
-Виртуальные машины Azure осуществляют внутреннее и внешнее взаимодействие через сеть Azure. В этом руководстве содержатся сведения о развертывании двух виртуальных машин и настройке для них сети Azure. Примеры, описанные в этом руководстве, предполагают, что на виртуальных машинах размещается веб-приложение с сервером базы данных, но здесь не описывается развертывание самого приложения. В этом руководстве описано следующее.
+Виртуальные машины Azure осуществляют внутреннее и внешнее взаимодействие через сеть Azure. В этом руководстве содержатся сведения о развертывании двух виртуальных машин и настройке для них сети Azure. Примеры, описанные в этом руководстве, предполагают, что на виртуальных машинах размещается веб-приложение с сервером базы данных, но здесь не описывается развертывание самого приложения. В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание виртуальной сети и подсети
@@ -190,7 +189,7 @@ az network vnet subnet update \
 
 При создании интерфейсной виртуальной машины также было создано правило NSG, разрешающее входящий трафик через порт 22. Это правило разрешает SSH-подключения к виртуальной машине. В этом примере трафик также необходимо разрешить через порт *80*. Такая конфигурация обеспечивает доступ к веб-приложению на виртуальной машине.
 
-Создайте правило для порта [80](/cli/azure/network/nsg/rule) с помощью команды *az network nsg rule create*.
+Создайте правило для порта *80* с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule).
 
 ```azurecli-interactive 
 az network nsg rule create \

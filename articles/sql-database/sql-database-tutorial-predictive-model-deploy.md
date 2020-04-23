@@ -13,12 +13,13 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/26/2019
-ms.openlocfilehash: 7779db053344f99238d38d5d49762730efbc5fc4
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ROBOTS: NOINDEX
+ms.openlocfilehash: efcb73866c83dcc03b5db8b7b97f438fb3010511
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80346323"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81452814"
 ---
 # <a name="tutorial-deploy-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по развертыванию прогнозной модели на языке R с помощью Служб машинного обучения Azure в Базе данных SQL (предварительная версия)
 
@@ -39,8 +40,6 @@ ms.locfileid: "80346323"
 Из [первой части](sql-database-tutorial-predictive-model-prepare-data.md) вы узнали, как импортировать пример базы данных, а затем подготовить данные, которые будут использоваться для обучения прогнозной модели на языке R.
 
 Из [второй части](sql-database-tutorial-predictive-model-build-compare.md) вы узнали, как создавать и обучать несколько моделей машинного обучения на языке R, а затем выбирать наиболее точную.
-
-[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 

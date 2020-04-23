@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -15,14 +14,14 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e5474387933404c29536759d383a4f2c85236949
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8e559be82fc7c3d6b25b99319785d49e30f56287
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80060203"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460007"
 ---
-# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по созданию виртуальных машин Linux и управлению ими с помощью Azure CLI
+# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по Создание виртуальных машин Linux и управление ими с помощью Azure CLI
 
 Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве рассматриваются основные элементы развертывания виртуальной машины Azure, например выбор ее размера, образа и ее развертывание. Вы узнаете, как выполнять следующие задачи:
 
@@ -154,7 +153,7 @@ az vm create --resource-group myResourceGroupVM --name myVM2 --image OpenLogic:C
 
 В приведенной ниже таблицы указаны категории размеров и примеры использования.  
 
-| Тип                     | Распространенные размеры           |    Description       |
+| Тип                     | Распространенные размеры           |    Описание       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | [Универсальные](sizes-general.md)         |B, Dsv3, Dv3, DSv2, Dv2, Av2, DC| Сбалансированное соотношение ресурсов ЦП и памяти. Идеально подходят для разработки и тестирования малых и средних приложений и решений для обработки данных.  |
 | [Оптимизированные для вычислений](sizes-compute.md)   | Fsv2          | Высокое соотношение ресурсов ЦП и памяти. Подходят для приложений со средним объемом трафика, сетевых устройств и пакетных процессов.        |
@@ -252,7 +251,7 @@ az vm start --resource-group myResourceGroupVM --name myVM
 
 ### <a name="power-states"></a>Состояния включения
 
-| Состояние включения | Description
+| Состояние включения | Описание
 |----|----|
 | Запуск | Указывает, что виртуальная машина запущена. |
 | Запущен | Указывает, что виртуальная машина работает. |

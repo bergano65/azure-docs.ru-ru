@@ -3,12 +3,12 @@ title: Руководство. Хранение состояния Terraform в 
 description: Общие сведения о сохранении состояния Terraform в службе хранилища Azure.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: 1cc475e5070b21a7ea96585f2183c07d258acdc5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c94c66969c517bd0e51117ab7c6ed6a889149518
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75708430"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81459021"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Руководство по Хранение состояния Terraform в службе хранилища Azure
 
@@ -67,7 +67,7 @@ echo "access_key: $ACCOUNT_KEY"
 export ARM_ACCESS_KEY=<storage access key>
 ```
 
-Чтобы еще надежнее защитить ключ доступа к учетной записи хранения Azure, храните его в Azure Key Vault. В этом случае переменную среды можно задать с помощью команды, наподобие приведенной ниже. Дополнительные сведения об Azure Key Vault см. в [документации по Azure Key Vault](../key-vault/quick-create-cli.md).
+Чтобы еще надежнее защитить ключ доступа к учетной записи хранения Azure, храните его в Azure Key Vault. В этом случае переменную среды можно задать с помощью команды, наподобие приведенной ниже. Дополнительные сведения об Azure Key Vault см. в [документации по Azure Key Vault](../key-vault/secrets/quick-create-cli.md).
 
 ```bash
 export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name myKeyVault --query value -o tsv)
