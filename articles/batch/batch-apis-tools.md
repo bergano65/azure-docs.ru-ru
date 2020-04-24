@@ -1,20 +1,15 @@
 ---
-title: API-интерфейсы и инструменты для разработчиков. Пакетная служба Azure | Документация Майкрософт
+title: API и средства для разработчиков
 description: Сведения об API-интерфейсах и средствах, доступных для разработки решений с помощью пакетной службы Azure.
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.service: batch
 ms.topic: conceptual
 ms.date: 12/07/2018
-ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 00d2a74946957f690979eec1d3a03a9b766299d8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 56c268675a39dfd3c70b3d8d8e457a2a200d7db6
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79252328"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82114927"
 ---
 # <a name="overview-of-batch-apis-and-tools"></a>Общие сведения об API-интерфейсах и средствах пакетной службы
 
@@ -30,31 +25,31 @@ ms.locfileid: "79252328"
 ## <a name="azure-accounts-for-batch-development"></a>Учетные записи Azure для разработки с помощью пакетной службы
 При разработке решений с использованием пакетной службы требуются следующие учетные записи в вашей подписке Azure:
 
-* **Пакетная учетная запись** - Ресурсы Azure Batch, включая пулы, вычислительные узлы, задания и задачи, связаны с [учетной записью](batch-api-basics.md#account)Azure Batch. Когда приложение отправляет запрос к пакетной службе, выполняется проверка подлинности запроса с использованием имени учетной записи пакетной службы Azure, URL-адреса учетной записи и ключа доступа или токена Azure Active Directory. Вы можете [создать учетную запись пакетной службы](batch-account-create-portal.md) на портале Azure или программным способом.
+* **Учетная запись пакетной службы** — это ресурсы пакетной службы Azure, в том числе пулы, расчетные узлы, задания и задачи, связанные с [учетной записью пакета](batch-api-basics.md#account)Azure. Когда приложение отправляет запрос к пакетной службе, выполняется проверка подлинности запроса с использованием имени учетной записи пакетной службы Azure, URL-адреса учетной записи и ключа доступа или токена Azure Active Directory. Вы можете [создать учетную запись пакетной службы](batch-account-create-portal.md) на портале Azure или программным способом.
 * **Учетная запись хранения.** В пакетную службу встроена поддержка работы с файлами в [службе хранилища Azure][azure_storage]. При работе с пакетной службой хранилище BLOB-объектов Azure используется преимущественно не только для промежуточного хранения файлов программ и данных (запускаются и обрабатываются задачами соответственно), но и для хранения выходных данных (результаты выполнения задач). Параметры учетной записи хранения в пакетной службе см. в [обзоре функций пакетной службы](batch-api-basics.md#azure-storage-account).
 
 ## <a name="batch-service-apis"></a>API-интерфейсы пакетной службы
 
 Приложения и службы могут напрямую вызывать REST API или использовать следующие клиентские библиотеки для выполнения рабочих нагрузок пакетной службы Azure и управления ими.
 
-| API | Справочник по интерфейсам API | Скачивание | Учебник | Примеры кода | Подробнее |
+| API | Справочник по API | Скачивание | Учебник | Примеры кода | Подробнее |
 | --- | --- | --- | --- | --- | --- |
-| **Пакетная служба (REST)** |[docs.microsoft.com][batch_rest] |Недоступно |- |- | [Поддерживаемые версии](/rest/api/batchservice/batch-service-rest-api-versioning) |
-| **Пакетная служба (.NET)** |[docs.microsoft.com][api_net] |[NuGet][api_net_nuget] |[Учебник](tutorial-parallel-dotnet.md) |[GitHub][api_sample_net] | [Заметки о выпуске](https://aka.ms/batch-net-dataplane-changelog) |
-| **Пакетная служба Python** |[docs.microsoft.com][api_python] |[PyPI][api_python_pypi] |[Учебник](tutorial-parallel-python.md)|[GitHub][api_sample_python] | [Readme](https://github.com/Azure/azure-sdk-for-python/blob/master/doc/batch.rst) |
-| **Node.js для пакетной службы** |[docs.microsoft.com][api_nodejs] |[Npm][api_nodejs_npm] |[Учебник](batch-nodejs-get-started.md) |- | [Readme](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/batch) |
+| **Пакетная служба (REST)** |[docs.microsoft.com][batch_rest] |Н/Д |- |- | [Поддерживаемые версии](/rest/api/batchservice/batch-service-rest-api-versioning) |
+| **Пакетная служба (.NET)** |[docs.microsoft.com][api_net] |[NuGet][api_net_nuget] |[Руководство](tutorial-parallel-dotnet.md) |[GitHub][api_sample_net] | [Заметки о выпуске](https://aka.ms/batch-net-dataplane-changelog) |
+| **Пакетная служба Python** |[docs.microsoft.com][api_python] |[PyPI][api_python_pypi] |[Руководство](tutorial-parallel-python.md)|[GitHub][api_sample_python] | [Readme](https://github.com/Azure/azure-sdk-for-python/blob/master/doc/batch.rst) |
+| **Node.js для пакетной службы** |[docs.microsoft.com][api_nodejs] |[NPM][api_nodejs_npm] |[Руководство](batch-nodejs-get-started.md) |- | [Readme](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/batch) |
 | **Java для пакетной службы** |[docs.microsoft.com][api_java] |[Maven][api_java_jar] |- |[Readme][api_sample_java] | [Readme](https://github.com/Azure/azure-batch-sdk-for-java)|
 
 ## <a name="batch-management-apis"></a>API-интерфейсы для управления пакетной службой
 
 API-интерфейсы Azure Resource Manager для пакетной службы предоставляют программный доступ к учетным записям пакетной службы. Применяя эти API, можно программно управлять учетными записями пакетной службы, квотами, пакетами приложений и другими ресурсами через поставщик Microsoft.Batch.  
 
-| API | Справочник по интерфейсам API | Скачивание | Учебник | Примеры кода |
+| API | Справочник по API | Скачивание | Учебник | Примеры кода |
 | --- | --- | --- | --- | --- |
-| **REST для управления пакетной службой** |[docs.microsoft.com][api_rest_mgmt] |Недоступно |- |[GitHub](https://github.com/Azure-Samples/batch-dotnet-manage-batch-accounts) |
-| **Библиотека .NET для управления пакетной службой** |[docs.microsoft.com][api_net_mgmt] |[NuGet][api_net_mgmt_nuget] | [Учебник](batch-management-dotnet.md) |[GitHub][api_sample_net] |
+| **REST для управления пакетной службой** |[docs.microsoft.com][api_rest_mgmt] |Н/Д |- |[GitHub](https://github.com/Azure-Samples/batch-dotnet-manage-batch-accounts) |
+| **Библиотека .NET для управления пакетной службой** |[docs.microsoft.com][api_net_mgmt] |[NuGet][api_net_mgmt_nuget] | [Руководство](batch-management-dotnet.md) |[GitHub][api_sample_net] |
 | **Python для управления пакетной службой** |[docs.microsoft.com][api_python_mgmt] |[PyPI][api_python_mgmt_pypi] |- |- |
-| **Node.js для управления пакетной службой** |[docs.microsoft.com][api_nodejs_mgmt] |[Npm][api_nodejs_mgmt_npm] |- |- | 
+| **Node.js для управления пакетной службой** |[docs.microsoft.com][api_nodejs_mgmt] |[NPM][api_nodejs_mgmt_npm] |- |- | 
 | **Java для управления пакетной службой** |- |[Maven][api_java_mgmt_jar] |- |- |
 ## <a name="batch-command-line-tools"></a>Программы командной строки пакетной службы
 
@@ -68,16 +63,16 @@ API-интерфейсы Azure Resource Manager для пакетной служ
 Ниже приведены дополнительные средства, которые можно использовать для создания и отладки приложений и служб пакетной службы.
 
 * [Портал Azure.][portal] На портале Azure можно создавать, отслеживать и удалять пулы, задания и задачи пакетной службы. Во время выполнения заданий можно просмотреть сведения о состоянии этих и других ресурсов, а также скачать файлы из вычислительных узлов в пулах. Например, при устранении неполадок можно скачать файл `stderr.txt` задачи, завершившейся сбоем. Кроме того, можно скачать файлы удаленного рабочего стола, которые можно использовать для входа на вычислительные узлы.
-* [Azure Batch Explorer][batch_labs] (ранее BatchLabs) — это бесплатное автономное клиентское средство с множеством функций для создания, отладки и мониторинга приложений в Пакетной службе Azure. Загрузите [пакет для установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows.
-* [Верфь Azure Batch:](https://github.com/Azure/batch-shipyard)Batch Shipyard — это инструмент, помогающих предоставлять, выполнять и контролировать обработку пакетов на основе контейнеров и рабочие нагрузки НаЖихнина на Azure Batch.
-* [Azure Storage Explorer:][storage_explorer]Хотя это и не строго инструмент Azure Batch, исследователь хранения является еще одним ценным инструментом, который можно иметь во время разработки и отладки решений Batch.
+* [Azure Batch Explorer][batch_labs] (ранее BatchLabs) — это бесплатное автономное клиентское средство с множеством функций для создания, отладки и мониторинга приложений в Пакетной службе Azure. Скачайте [пакет установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows.
+* Пакетная служба [Azure Shipyard](https://github.com/Azure/batch-shipyard)— это средство, помогающее подготавливать, выполнять и отслеживать пакетную обработку на основе контейнера и рабочие нагрузки HPC в пакетной службе Azure.
+* [Обозреватель службы хранилища Azure][storage_explorer]. Хотя и не является средством пакетной службы Azure, обозреватель службы хранилища является еще одним ценным средством, которое можно использовать при разработке и отладке решений пакетной службы.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - Дополнительные сведения о регистрации событий приложения пакетной службы см. в статье [События журнала для диагностики и мониторинга решений пакетной службы](batch-diagnostics.md). Ссылки на события, которые происходят в пакетной службе, см. в статье [Пакетная аналитика](batch-analytics.md).
 - Сведения о переменных среды для вычислительных узлов см. в статье [Переменные среды вычислительного узла пакетной службы Azure](batch-compute-node-environment-variables.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Информация, необходимая для тех, кто готовится использовать пакетную службу, доступна в статье [Обзор функций пакетной службы для разработчиков](batch-api-basics.md). Эта статья содержит дополнительные подробные сведения о таких ресурсах пакетной службы, как пулы, узлы, задания, задачи и многие функции API, которые можно использовать при создании приложения пакетной службы.
 * Сведения об использовании C# и библиотеки .NET для пакетной службы при обработке простой рабочей нагрузки с помощью стандартного рабочего процесса пакетной службы см. в статье [Начало работы с библиотекой пакетной службы Azure для .NET](tutorial-parallel-dotnet.md). Кроме того, доступны [версия Python](tutorial-parallel-python.md) и [руководство Node.js](batch-nodejs-get-started.md).

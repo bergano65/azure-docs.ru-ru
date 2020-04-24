@@ -1,24 +1,14 @@
 ---
-title: Высокая доступность и аварийное восстановление - Azure Batch
-description: Узнайте, как спроектировать приложение Batch для регионального сбоа. Рабочие нагрузки должны не перейти в другой регион или быть разделены между двумя или более регионами.
-services: batch
-documentationcenter: ''
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.assetid: ''
-ms.service: batch
-ms.workload: ''
-ms.tgt_pltfrm: na
+title: Высокий уровень доступности и аварийное восстановление — Пакетная служба Azure
+description: Узнайте, как спроектировать приложение пакетной службы для региональной непростоя. Рабочие нагрузки должны выполнить отработку отказа в другой регион или разделить их между двумя или более регионами.
 ms.topic: article
 ms.date: 01/29/2019
-ms.author: labrenne
-ms.openlocfilehash: 84b0cce9557b4ae05586579f175cd0f5db14fdfc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: da46753906e27a94e3c76fcaf9c4a26861bba6c8
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77026087"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82117443"
 ---
 # <a name="design-your-application-for-high-availability"></a>Обеспечение высокого уровня доступности при проектировании приложения
 
@@ -47,7 +37,7 @@ ms.locfileid: "77026087"
 - В приложении, вызывающем пакетные службы, хранилище и любых других службах можно легко переключать клиентов или загружать данные в другой регион.
 - Наилучшим способом обеспечения успешного переключения при сбое является частое переключение на альтернативный регион в рамках нормальной работы. Например, при двух развертываниях в отдельных регионах переключайтесь на альтернативный регион каждый месяц.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Подробнее о создании учетных записей пакетов на [портале Azure,](batch-account-create-portal.md) [Azure CLI,](cli-samples.md) [PowerShell](batch-powershell-cmdlets-get-started.md)или [API управления пакетом.](batch-management-dotnet.md)
+- Дополнительные сведения о создании учетных записей пакетной службы с помощью [портал Azure](batch-account-create-portal.md), [Azure CLI](cli-samples.md), [PowerShell](batch-powershell-cmdlets-get-started.md)или [API управления пакетной](batch-management-dotnet.md)службой.
 - Квоты по умолчанию связаны с учетной записью пакетной службы. В [этой статье](batch-quota-limit.md) подробно описываются значения квот по умолчанию и то, как их можно увеличить.

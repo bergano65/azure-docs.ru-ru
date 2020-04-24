@@ -1,10 +1,12 @@
 - name: Заметки о выпуске
   href: 'https://github.com/Azure/azure-remote-rendering/releases'
-- name: Инструменты
-  href: tools/toc.yml
 - name: Диагностика
   href: troubleshoot.md
+- name: Поддержка
+  href: support.md
 - name: Отзыв о продукте
   href: 'https://feedback.azure.com/forums/928696-azure-remote-rendering'
 - name: Stack Overflow
   href: 'https://stackoverflow.com/questions/tagged/azure-remote-rendering'
+- name: Инструменты
+  href: tools/toc.yml

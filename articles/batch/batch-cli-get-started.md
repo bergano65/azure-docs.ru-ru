@@ -1,25 +1,15 @@
 ---
-title: Начало работы с интерфейсом командной строки пакетной службы Azure | Документация Майкрософт
+title: Начало работы с Azure CLI для пакетной службы
 description: Ознакомьтесь с командами интерфейса командной строки пакетной службы Azure для управления ресурсами пакетной службы Azure.
-services: batch
-documentationcenter: ''
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.assetid: fcd76587-1827-4bc8-a84d-bba1cd980d85
-ms.service: batch
 ms.topic: conceptual
-ms.tgt_pltfrm: multiple
-ms.workload: big-compute
 ms.date: 07/24/2018
-ms.author: labrenne
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 30f71432ca008b87bddfb253f23ae3cef0ac390d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5fe73770dbe8dfe6d69cb08e1fbf44d42bff9e54
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77020188"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82117375"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
@@ -38,7 +28,7 @@ Azure CLI — это интерфейс командной строки Azure д
 
 ## <a name="command-help"></a>Справка по командам
 
-Текст справки для каждой команды в Azure CLI можно просмотреть, добавив к ней `-h`. Другие параметры следует опустить. Пример:
+Текст справки для каждой команды в Azure CLI можно просмотреть, добавив к ней `-h`. Другие параметры следует опустить. Например:
 
 * Чтобы получить справку по команде `az`, введите: `az -h`
 * Чтобы получить список всех команд пакетной службы в интерфейсе командной строки, используйте: `az batch -h`
@@ -83,7 +73,7 @@ az login
 
 Проверку подлинности в учетной записи пакетной службы можно пройти двумя способами:
 
-- **С помощью проверки подлинности Active Directory (Azure AD) с помощью информационно-изыски** 
+- **С помощью проверки подлинности Azure Active Directory (Azure AD)** 
 
     При использовании Azure CLI с пакетной службой этот метод проверки подлинности реализован по умолчанию. Мы советуем использовать его в большинстве сценариев. 
     
@@ -97,7 +87,7 @@ az login
     az batch account login -g myresource group -n mybatchaccount
     ```
 
-- **С помощью общей аутентификации ключей**
+- **С помощью проверки подлинности с общим ключом**
 
     При использовании метода [проверки подлинности на основе общего ключа](/rest/api/batchservice/authenticate-requests-to-the-azure-batch-service#authentication-via-shared-key) проверка подлинности команд Azure CLI для пакетной службы выполняется на основе ключей доступа к учетной записи.
 
@@ -121,7 +111,7 @@ az login
 
 ## <a name="json-files-for-resource-creation"></a>JSON-файлы для создания ресурса
 
-После создания ресурсов пакетной службы, таких как пулы и задания, вы можете указать JSON-файл, содержащий конфигурацию нового ресурса, вместо того чтобы передавать его параметры в виде параметров командной строки. Пример:
+После создания ресурсов пакетной службы, таких как пулы и задания, вы можете указать JSON-файл, содержащий конфигурацию нового ресурса, вместо того чтобы передавать его параметры в виде параметров командной строки. Например:
 
 ```azurecli
 az batch pool create my_batch_pool.json
@@ -170,7 +160,7 @@ az batch task list --job-id job001
 * Вы можете просмотреть **выходные данные команды в виде JSON** с помощью параметра `--json`. Например, параметр `az batch pool show pool001 --json` отображает свойства элемента pool001 в формате JSON. Затем вы можете скопировать и изменить эти выходные данные для использования в параметре `--json-file` (см. выше раздел, посвященный JSON-файлам).
 <!---Loc Comment: Please, check link [JSON files] since it's not redirecting to any location.--->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 * Дополнительные сведения о ресурсах пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).

@@ -1,5 +1,5 @@
 ---
-title: Хранение Azure Blob как источник сетки событий
+title: Хранилище BLOB-объектов Azure в качестве источника службы "Сетка событий"
 description: Описание свойств событий хранилища больших двоичных объектов в службе "Сетка событий Azure"
 services: event-grid
 author: spelluru
@@ -7,60 +7,60 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: spelluru
-ms.openlocfilehash: cfc6e4790b67137b423cc90d93874d4914f81251
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: 8d22f8a2722dc55a13ce8e3752ca69d6e7251070
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81393378"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115131"
 ---
-# <a name="azure-blob-storage-as-an-event-grid-source"></a>Хранение Azure Blob как источник сетки событий
+# <a name="azure-blob-storage-as-an-event-grid-source"></a>Хранилище BLOB-объектов Azure в качестве источника службы "Сетка событий"
 
-В этой статье описаны свойства и схема событий хранилища BLOB-объектов.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). Он также дает вам список быстрых стартов и учебников для использования Azure Blob Storage в качестве источника событий.
+В этой статье описаны свойства и схема событий хранилища BLOB-объектов.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). Здесь также приводится список быстрых запусков и учебников по использованию хранилища BLOB-объектов Azure в качестве источника событий.
 
 
 >[!NOTE]
-> Только учетные записи хранения рода **StorageV2 (общая цель v2)**, **BlockBlobStorage**, и **BlobStorage** поддержки событий интеграции. **Хранилище (версия 1, общего назначения)***не* поддерживает интеграцию со службой "Сетка событий".
+> Интеграция событий поддерживается только для учетных записей хранения типа **StorageV2 (общее назначение версии 2)**, **блоккблобстораже**и **блобстораже** . **Хранилище (общее назначение** версии 1) *не поддерживает интеграцию со службой "* сетка событий".
 
 ## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
-### <a name="list-of-events-for-blob-rest-apis"></a>Список мероприятий для APIs Blob REST
+### <a name="list-of-events-for-blob-rest-apis"></a>Список событий для API-интерфейсов RESTFUL для BLOB-объектов
 
-Эти события срабатывают, когда клиент создает, заменяет или удаляет blob, вызывая APIs Blob REST.
+Эти события активируются, когда клиент создает, заменяет или удаляет большой двоичный объект, вызывая интерфейсы API-интерфейсов RESTFUL для больших двоичных объектов.
 
  |Имя события |Описание|
  |----------|-----------|
- |**Microsoft.Storage.BlobCreated** |Срабатывает при создании или замене капли. <br>В частности, это событие срабатывает, когда клиенты используют `PutBlob` `PutBlockList`, или `CopyBlob` операции, которые доступны в Blob REST API.   |
- |**Microsoft.Storage.BlobDeleted** |Срабатывает при удалении капли. <br>В частности, это событие срабатывает, когда клиенты называют операцию, `DeleteBlob` которая доступна в Blob REST API. |
+ |**Microsoft.Storage.BlobCreated** |Активируется при создании или замене большого двоичного объекта. <br>В частности, это событие активируется, когда клиенты используют `PutBlob`операции `PutBlockList`, или `CopyBlob` , доступные в REST API больших двоичных объектов.   |
+ |**Microsoft.Storage.BlobDeleted** |Активируется при удалении большого двоичного объекта. <br>В частности, это событие активируется, когда клиенты вызывают `DeleteBlob` операцию, доступную в REST API больших двоичных объектов. |
 
 > [!NOTE]
-> Если вы хотите убедиться, что событие **Microsoft.Storage.BlobCreated** срабатывает только тогда, когда `CopyBlob` `PutBlob`Block `PutBlockList` Blob полностью зафиксирован, отфильтруйте событие для вызовов , и REST API. Эти вызовы API вызывают событие **Microsoft.Storage.BlobCreated** только после того, как данные полностью зафиксированы в Block Blob. Чтобы узнать, как создать фильтр, [см.](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)
+> Если необходимо, чтобы событие **Microsoft. Storage. BlobCreated** вызывалось только при полной фиксации блочного BLOB-объекта, отфильтруйте событие для вызовов `CopyBlob`, `PutBlob`и `PutBlockList` REST API. Эти вызовы API активируют событие **Microsoft. Storage. BlobCreated** только после полной фиксации данных в блочном BLOB-объекте. Сведения о создании фильтра см. в разделе [Фильтрация событий для сетки событий](https://docs.microsoft.com/azure/event-grid/how-to-filter-events).
 
-### <a name="list-of-the-events-for-azure-data-lake-storage-gen-2-rest-apis"></a>Список событий для Azure Data Lake Storage Gen 2 REST AIS
+### <a name="list-of-the-events-for-azure-data-lake-storage-gen-2-rest-apis"></a>Список событий для интерфейсов API для Azure Data Lake Storage поколения 2
 
-Эти события срабатывают, если вы включите иерархическое пространство имен в учетной записи хранилища, а клиенты вызывают ApIs Azure Data Lake Storage Gen2 REST. Для получения дополнительной информации о бое Azure Data Lake Storage Gen2 [см.](../storage/blobs/data-lake-storage-introduction.md)
+Эти события активируются при включении иерархического пространства имен в учетной записи хранения, а клиенты вызывают Azure Data Lake Storage 2-го поколения интерфейсы API. Дополнительные сведения грамме Azure Data Lake Storage 2-го поколения см. [в статье Введение в Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md).
 
 |Имя события|Описание|
 |----------|-----------|
-|**Microsoft.Storage.BlobCreated** | Срабатывает при создании или замене капли. <br>В частности, это событие срабатывает, когда клиенты используют `CreateFile` и `FlushWithClose` операции, доступные в Azure Data Lake Storage Gen2 REST API. |
-|**Microsoft.Storage.BlobDeleted** |Срабатывает при удалении капли. <br>В частности, это событие также `DeleteFile` запускается, когда клиенты вызывают операцию, которая доступна в Azure Data Lake Storage Gen2 REST API. |
-|**Microsoft.Storage.BlobRenamed**|Срабатывает при переименовании капли. <br>В частности, это событие срабатывает, когда клиенты используют операцию, `RenameFile` доступную в Azure Data Lake Storage Gen2 REST API.|
-|**Microsoft.Storage.DirectoryСоздано**|Срабатывает при создании каталога. <br>В частности, это событие срабатывает, когда клиенты используют операцию, `CreateDirectory` доступную в Azure Data Lake Storage Gen2 REST API.|
-|**Microsoft.Storage.DirectoryRenamed**|Срабатывает при переименовании каталога. <br>В частности, это событие срабатывает, когда клиенты используют операцию, `RenameDirectory` доступную в Azure Data Lake Storage Gen2 REST API.|
-|**Microsoft.Storage.DirectoryУдален**|Срабатывает при удалении каталога. <br>В частности, это событие срабатывает, когда клиенты используют операцию, `DeleteDirectory` доступную в Azure Data Lake Storage Gen2 REST API.|
+|**Microsoft.Storage.BlobCreated** | Активируется при создании или замене большого двоичного объекта. <br>В частности, это событие активируется, когда клиенты используют `CreateFile` операции `FlushWithClose` и, доступные в Azure Data Lake Storage 2-го поколения REST API. |
+|**Microsoft.Storage.BlobDeleted** |Активируется при удалении большого двоичного объекта. <br>В частности, это событие также активируется, когда клиенты вызывают `DeleteFile` операцию, доступную в REST API Azure Data Lake Storage 2-го поколения. |
+|**Microsoft. Storage. Блобренамед**|Активируется при переименовании большого двоичного объекта. <br>В частности, это событие активируется, когда клиенты используют `RenameFile` операцию, доступную в REST API Azure Data Lake Storage 2-го поколения.|
+|**Microsoft. Storage. Директорикреатед**|Активируется при создании каталога. <br>В частности, это событие активируется, когда клиенты используют `CreateDirectory` операцию, доступную в REST API Azure Data Lake Storage 2-го поколения.|
+|**Microsoft. Storage. Директориренамед**|Активируется при переименовании каталога. <br>В частности, это событие активируется, когда клиенты используют `RenameDirectory` операцию, доступную в REST API Azure Data Lake Storage 2-го поколения.|
+|**Microsoft. Storage. Директориделетед**|Активируется при удалении каталога. <br>В частности, это событие активируется, когда клиенты используют `DeleteDirectory` операцию, доступную в REST API Azure Data Lake Storage 2-го поколения.|
 
 > [!NOTE]
-> Если вы хотите убедиться, что событие **Microsoft.Storage.BlobCreated** срабатывает только тогда, когда `FlushWithClose` Block Blob полностью зафиксирован, отфильтруйте событие для вызова REST API. Этот вызов API запускает событие **Microsoft.Storage.BlobCreated** только после того, как данные полностью зафиксированы в Block Blob. Чтобы узнать, как создать фильтр, [см.](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)
+> Если необходимо, чтобы событие **Microsoft. Storage. BlobCreated** вызывалось только при полной фиксации блочного BLOB-объекта, отфильтруйте событие для вызова `FlushWithClose` REST API. Этот вызов API активирует событие **Microsoft. Storage. BlobCreated** только после полной фиксации данных в блочном BLOB-объекте. Сведения о создании фильтра см. в разделе [Фильтрация событий для сетки событий](https://docs.microsoft.com/azure/event-grid/how-to-filter-events).
 
 <a id="example-event" />
 
-### <a name="the-contents-of-an-event-response"></a>Содержание ответа на события
+### <a name="the-contents-of-an-event-response"></a>Содержимое ответа на событие
 
-При срабатывании события служба Event Grid отправляет данные об этом событии в конечную точку.
+При активации события служба службы "Сетка событий" отправляет данные об этом событии в подписку на конечную точку.
 
-В этом разделе содержится пример того, как будут выглядеть эти данные для каждого события хранения капли.
+В этом разделе содержится пример того, как будут выглядеть данные для каждого события хранилища BLOB-объектов.
 
-### <a name="microsoftstorageblobcreated-event"></a>Microsoft.Storage.BlobCreated событие
+### <a name="microsoftstorageblobcreated-event"></a>Событие Microsoft. Storage. BlobCreated
 
 ```json
 [{
@@ -88,18 +88,18 @@ ms.locfileid: "81393378"
 }]
 ```
 
-### <a name="microsoftstorageblobcreated-event-data-lake-storage-gen2"></a>Microsoft.Storage.BlobCreated событие (Data Lake Storage Gen2)
+### <a name="microsoftstorageblobcreated-event-data-lake-storage-gen2"></a>Событие Microsoft. Storage. BlobCreated (Data Lake Storage 2-го поколения)
 
-Если учетная запись хранилища blob имеет иерархическое пространство имен, данные похожи на предыдущий пример, за исключением этих изменений:
+Если учетная запись хранения BLOB-объектов имеет иерархическое пространство имен, то данные выглядят примерно так, как в предыдущем примере, за исключением следующих изменений:
 
-* Ключ `dataVersion` установлен на значение `2`.
+* Для `dataVersion` ключа задается значение `2`.
 
-* Ключ `data.api` установлен на `CreateFile` строку `FlushWithClose`или .
+* Для `data.api` ключа задается строка `CreateFile` или `FlushWithClose`.
 
-* Ключ `contentOffset` включен в набор данных.
+* `contentOffset` Ключ включен в набор данных.
 
 > [!NOTE]
-> Если приложения `PutBlockList` используют операцию для загрузки новой капли в учетную запись, данные не будут содержать эти изменения.
+> Если приложения используют `PutBlockList` операцию для отправки нового большого двоичного объекта в учетную запись, данные не будут содержать эти изменения.
 
 ```json
 [{
@@ -128,7 +128,7 @@ ms.locfileid: "81393378"
 }]
 ```
 
-### <a name="microsoftstorageblobdeleted-event"></a>Microsoft.Storage.BlobDeleted событие
+### <a name="microsoftstorageblobdeleted-event"></a>Событие Microsoft. Storage. BlobDeleted
 
 ```json
 [{
@@ -153,18 +153,18 @@ ms.locfileid: "81393378"
 }]
 ```
 
-### <a name="microsoftstorageblobdeleted-event-data-lake-storage-gen2"></a>Microsoft.Storage.BlobDeleted событие (Данные озерного хранения Gen2)
+### <a name="microsoftstorageblobdeleted-event-data-lake-storage-gen2"></a>Событие Microsoft. Storage. BlobDeleted (Data Lake Storage 2-го поколения)
 
-Если учетная запись хранилища blob имеет иерархическое пространство имен, данные похожи на предыдущий пример, за исключением этих изменений:
+Если учетная запись хранения BLOB-объектов имеет иерархическое пространство имен, то данные выглядят примерно так, как в предыдущем примере, за исключением следующих изменений:
 
-* Ключ `dataVersion` установлен на значение `2`.
+* Для `dataVersion` ключа задается значение `2`.
 
-* Ключ `data.api` установлен на строку. `DeleteFile`
+* Для `data.api` ключа задается строка `DeleteFile`.
 
-* Ключ `url` содержит путь `dfs.core.windows.net`.
+* `url` Ключ содержит путь `dfs.core.windows.net`.
 
 > [!NOTE]
-> Если приложения `DeleteBlob` используют операцию для удаления капли из учетной записи, данные не будут содержать эти изменения.
+> Если приложения используют `DeleteBlob` операцию для удаления большого двоичного объекта из учетной записи, данные не будут содержать эти изменения.
 
 ```json
 [{
@@ -190,7 +190,7 @@ ms.locfileid: "81393378"
 }]
 ```
 
-### <a name="microsoftstorageblobrenamed-event"></a>Microsoft.Storage.BlobRenamed событие
+### <a name="microsoftstorageblobrenamed-event"></a>Событие Microsoft. Storage. Блобренамед
 
 ```json
 [{
@@ -215,7 +215,7 @@ ms.locfileid: "81393378"
 }]
 ```
 
-### <a name="microsoftstoragedirectorycreated-event"></a>Microsoft.Storage.DirectoryСоздание события
+### <a name="microsoftstoragedirectorycreated-event"></a>Событие Microsoft. Storage. Директорикреатед
 
 ```json
 [{
@@ -239,7 +239,7 @@ ms.locfileid: "81393378"
 }]
 ```
 
-### <a name="microsoftstoragedirectoryrenamed-event"></a>Microsoft.Storage.DirectoryRenamed event
+### <a name="microsoftstoragedirectoryrenamed-event"></a>Событие Microsoft. Storage. Директориренамед
 
 ```json
 [{
@@ -264,7 +264,7 @@ ms.locfileid: "81393378"
 }]
 ```
 
-### <a name="microsoftstoragedirectorydeleted-event"></a>Microsoft.Storage.DirectoryDeleted событие
+### <a name="microsoftstoragedirectorydeleted-event"></a>Событие Microsoft. Storage. Директориделетед
 
 ```json
 [{
@@ -309,22 +309,22 @@ ms.locfileid: "81393378"
 | Свойство | Тип | Описание |
 | -------- | ---- | ----------- |
 | api | строка | Операция, вызвавшая событие. |
-| clientRequestId | строка | идентификатор запроса, предоставленного клиентом, для работы API хранилища. Этот идентификатор может быть использован для соотношения с диагностическими журналами Azure Storage с помощью поля "клиент-запрос-id" в журналах, и может быть предоставлен в запросах клиентов с помощью заголовка "x-ms-client-request-id". Ознакомьтесь со статьей [Storage Analytics Log Format](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format) (Формат журналов Аналитики Службы хранилища). |
+| clientRequestId | строка | предоставленный клиентом идентификатор запроса для операции API хранилища. Этот идентификатор можно использовать для сопоставления с журналами диагностики службы хранилища Azure с помощью поля "Client-Request-ID" в журналах и может быть предоставлено в запросах клиента с помощью заголовка "x-MS-Client-Request-ID". Ознакомьтесь со статьей [Storage Analytics Log Format](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format) (Формат журналов Аналитики Службы хранилища). |
 | requestId | строка | Создаваемый службой идентификатор запроса для операции API хранилища. Может использоваться для корреляции журналов диагностики службы хранилища Azure с помощью поля request-id-header в журналах. Возвращается при инициации вызова API в заголовке x-ms-request-id. Ознакомьтесь со статьей [Storage Analytics Log Format](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format) (Формат журналов Аналитики Службы хранилища). |
 | eTag | строка | Значение, которое позволяет выполнять операции условно. |
 | сontentType | строка | Тип содержимого, указанный для BLOB-объекта. |
 | contentLength | Целое число | Размер большого двоичного объекта в байтах. |
 | blobType | строка | Тип большого двоичного объекта. Допустимые значения: BlockBlob или PageBlob. |
-| contentOffset | number | Смещение байтов операции записи, сделанной в момент, когда приложение, запускающее события, завершило запись в файл. <br>Отображается только для событий, срабатывающих на учетных записях хранения blob, которые имеют иерархическое пространство имен.|
-| destinationUrl |строка | URL файла, который будет существовать после завершения операции. Например, если файл переименован, `destinationUrl` свойство содержит URL нового имени файла. <br>Отображается только для событий, срабатывающих на учетных записях хранения blob, которые имеют иерархическое пространство имен.|
-| sourceUrl |строка | URL-адрес файла, который существует до операции. Например, если файл переименован, `sourceUrl` url-адрес исходного имени файла до операции переименования. <br>Отображается только для событий, срабатывающих на учетных записях хранения blob, которые имеют иерархическое пространство имен. |
-| url | строка | Путь к BLOB-объекту. <br>Если клиент использует Blob REST API, то URL имеет эту структуру: * \<имя\>/\<хранилища.blob.core.windows.net/\>\>\<контейнерное имя файла.* <br>Если клиент использует Data Lake Storage REST API, то URL имеет эту структуру: * \<имя\>/\<хранилища-счета\>\>.dfs.core.windows.net/\<файл-имя-имя-* |
-| recursive | строка | `True`для выполнения операции во всех каталогах детей; в `False`противном случае . <br>Отображается только для событий, срабатывающих на учетных записях хранения blob, которые имеют иерархическое пространство имен. |
+| contentOffset | number | Смещение в байтах операции записи, выполненной в момент, когда приложение, запускающее событие, выполнило запись в файл. <br>Отображается только для событий, запускаемых в учетных записях хранения BLOB-объектов с иерархическим пространством имен.|
+| дестинатионурл |строка | URL-адрес файла, который будет существовать после завершения операции. Например, если файл переименован, `destinationUrl` свойство содержит URL-адрес нового имени файла. <br>Отображается только для событий, запускаемых в учетных записях хранения BLOB-объектов с иерархическим пространством имен.|
+| саурцеурл |строка | URL-адрес файла, который существует до операции. Например, при переименовании файла `sourceUrl` содержит URL-адрес исходного имени файла перед операцией переименования. <br>Отображается только для событий, запускаемых в учетных записях хранения BLOB-объектов с иерархическим пространством имен. |
+| url | строка | Путь к BLOB-объекту. <br>Если клиент использует REST API больших двоичных объектов, URL-адрес имеет следующую структуру * \<: Storage-Account-\>Name.\<BLOB.Core.Windows.net/-name\>/\<имя файла\>-контейнера*. <br>Если клиент использует Data Lake Storage REST API, URL-адрес имеет следующую структуру: * \<\>Storage-Account-Name. DFS.Core.Windows.NET/\<File-System-Name\>/\<\>*. |
+| recursive | строка | `True`для выполнения операции со всеми дочерними каталогами; в `False`противном случае — значение. <br>Отображается только для событий, запускаемых в учетных записях хранения BLOB-объектов с иерархическим пространством имен. |
 | sequencer | строка | Значение непрозрачной строки, представляющее логическую последовательность событий для любого отдельного имени большого двоичного объекта.  Пользователи могут использовать стандартное сравнение строк для понимания относительной последовательности двух событий в одном имени большого двоичного объекта. |
 | storageDiagnostics | объект | Диагностические данные, которые иногда включаются службой хранилища Azure. Если они присутствуют, то должны игнорироваться потребителями события. |
 
-## <a name="tutorials-and-how-tos"></a>Учебники и как-tos
-|Title  |Описание  |
+## <a name="tutorials-and-how-tos"></a>Руководства и инструкции
+|Заголовок  |Описание  |
 |---------|---------|
 | [Перенаправление событий хранилища BLOB-объектов в пользовательскую конечную веб-точку с помощью Azure CLI](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Содержит сведения об отправке событий хранилища BLOB-объектов в веб-перехватчик с помощью Azure CLI. |
 | [Перенаправление событий хранилища BLOB-объектов в пользовательскую конечную веб-точку с помощью PowerShell](../storage/blobs/storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Содержит сведения об отправке событий хранилища BLOB-объектов в веб-перехватчик с помощью Azure PowerShell. |
@@ -334,7 +334,7 @@ ms.locfileid: "81393378"
 | [Шаблон Resource Manager для создания хранилища BLOB-объектов и подписки](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-subscription-and-storage) | Развертывает учетную запись службы хранилища больших двоичных объектов Azure и создает подписку на события для этой учетной записи хранения. Он отправляет события в веб-перехватчик. |
 | [Реагирование на события хранилища BLOB-объектов](../storage/blobs/storage-blob-event-overview.md) | Общие сведения об интеграции хранилища BLOB-объектов со службой "Сетка событий". |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. общие сведения о [службе "Сетка событий Azure"](overview.md).
 * Дополнительные сведения о создании подписки на Сетку событий Azure см. в статье [Схема подписки для службы "Сетка событий"](subscription-creation-schema.md).
