@@ -7,10 +7,12 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Создание участника\_— портал"
+    - name: Создание участника с помощью портала
       href: create-member.md
-    - name: "Создание участника\_— CLI"
+    - name: Создание участника с помощью CLI
       href: create-member-cli.md
+    - name: Создание участника с помощью шаблона
+      href: create-member-template.md
     - name: Подключение к узлу транзакций
       items:
         - name: Использование VS Code

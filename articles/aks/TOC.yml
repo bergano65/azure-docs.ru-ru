@@ -20,8 +20,8 @@
     - name: Разработка приложений
       expanded: true
       items:
-        - name: С помощью Draft
-          href: kubernetes-draft.md
+        - name: Разработка с использованием Helm
+          href: quickstart-helm.md
         - name: Azure Dev Spaces
           expanded: true
           items:
@@ -316,7 +316,7 @@
                 - name: "3.\_Командная разработка"
                   href: ../dev-spaces/team-development-nodejs.md
                   maintainContext: true
-        - name: Запуск приложений с помощью Helm
+        - name: Установка существующих приложений с помощью Helm
           href: kubernetes-helm.md
         - name: С помощью OpenFaaS
           href: openfaas.md

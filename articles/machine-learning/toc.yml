@@ -149,8 +149,9 @@
             - name: Использование Приватного канала
               displayName: private endpoint
               href: how-to-configure-private-link.md
-            - name: Защита веб-служб с помощью SSL
+            - name: Защита веб-служб с помощью TLS
               href: how-to-secure-web-service.md
+              displayName: ssl
             - name: "Использование удостоверений Azure\_AD в развертываниях AKS"
               href: how-to-use-azure-ad-identity.md
             - name: Повторное создание ключей доступа к хранилищу

@@ -256,8 +256,8 @@
           href: search-query-troubleshoot-collection-filters.md
         - name: Основные сведения о фильтрах коллекций
           href: search-query-understand-collection-filters.md
-        - name: Пример многоуровневых аспектов
-          href: search-example-adventureworks-multilevel-faceting.md
+        - name: Фильтрация по языку
+          href: search-filters-language.md
     - name: Результаты
       items:
         - name: Работа с результатами
@@ -455,10 +455,6 @@
           href: 'https://wolterskluwereap.azurewebsites.net/'
         - name: Демонстрация с файлами JFK
           href: 'https://aka.ms/jfkfiles'
-        - name: Демонстрация заданий NYC
-          href: 'https://aka.ms/azjobsdemo'
-        - name: Варианты использования поиска
-          href: 'https://searchsamples.azurewebsites.net/'
     - name: Обучение
       items:
         - name: Введение (Microsoft Learn)

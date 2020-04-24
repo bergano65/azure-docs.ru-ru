@@ -11,12 +11,12 @@ metadata:
   author: KumudD
   ms.author: kumud
   ms.date: 08/28/2019
-  ms.openlocfilehash: 9c7544809836f12069e30e62c06e797bae6d0abf
-  ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
+  ms.openlocfilehash: a6c0bee32fbeb50c1eef0a9625706bcee9e1ae17
+  ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/18/2020
-  ms.locfileid: "81641055"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "82086476"
 landingContent:
 - title: Сведения о виртуальной сети
   linkLists:
@@ -66,8 +66,8 @@ landingContent:
       url: https://docs.microsoft.com/learn/modules/secure-and-isolate-with-nsg-and-service-endpoints
   - linkListType: video
     links:
-    - text: Конечная точка службы для виртуальной сети Azure
-      url: https://www.youtube.com/watch?v=gxsitRRgylI
+    - text: Безопасный доступ к ресурсам Azure PaaS с помощью Приватного канала Azure
+      url: https://www.youtube.com/watch?v=PWKM5KXjWno
 - title: Подключение виртуальных сетей
   linkLists:
   - linkListType: concept

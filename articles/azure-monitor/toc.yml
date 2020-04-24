@@ -1199,6 +1199,8 @@
           href: platform/diagnostic-logs-schema.md
         - name: Схема журнала действий
           href: platform/activity-log-schema.md
+    - name: Справочник по таблицам журналов Azure Monitor
+      href: 'https://docs.microsoft.com/azure/azure-monitor/reference/'
     - name: Azure CLI
       href: /cli/azure/monitor?view=azure-cli-latest
     - name: Использование Azure CLI с Application Insights (предварительная версия)

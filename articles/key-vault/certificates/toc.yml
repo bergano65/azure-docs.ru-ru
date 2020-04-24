@@ -19,6 +19,8 @@
   items:
     - name: Импорт сертификата
       href: tutorial-import-certificate.md
+    - name: Настройка смены сертификата
+      href: tutorial-rotate-certificates.md
 - name: Основные понятия
   items:
     - name: Начало работы с сертификатами Key Vault

@@ -32,10 +32,12 @@
       href: azure-media-player-plugin-gallery.md
     - name: Локализация
       href: azure-media-player-localization.md
+- name: Примеры
+  items:
+    - name: Примеры использования Проигрывателя мультимедиа Azure
+      href: 'https://github.com/Azure-Samples/azure-media-player-samples'
 - name: Справочник
   items:
-    - name: Примеры
-      href: 'https://github.com/Azure-Samples/azure-media-player-samples'
     - name: API
       href: 'https://docs.microsoft.com/en-us/javascript/api/azuremediaplayer/?view=azure-node-latest'
     - name: Методы API

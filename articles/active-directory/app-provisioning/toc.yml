@@ -79,6 +79,8 @@
   items:
     - name: "Соответствие протоколу SCIM\_2.0"
       href: application-provisioning-config-problem-scim-compatibility.md
+    - name: Сценарии использования SCIM и Graph
+      href: scim-graph-scenarios.md
     - name: Выбор метода подготовки
       href: isv-automatic-provisioning-multi-tenant-apps.md
     - name: Подготовка к управлению кадрами

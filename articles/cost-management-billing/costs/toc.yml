@@ -10,6 +10,9 @@
       items:
         - name: Начало анализа затрат
           href: quick-acm-cost-analysis.md
+        - name: Создание бюджета на основе шаблона
+          href: quick-create-budget-template.md
+          displayName: 'ARM template, resource manager template'
     - name: Учебники
       items:
         - name: Создание бюджетов и управление ими

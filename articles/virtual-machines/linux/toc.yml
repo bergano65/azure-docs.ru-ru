@@ -45,9 +45,13 @@
       href: ../../jenkins/tutorial-jenkins-github-docker-cicd.md
     - name: 14б. Интеграция Jenkins с Azure DevOps
       href: ../../jenkins/tutorial-build-deploy-jenkins.md
-    - name: 15а. Использование DevOps для IaaS и PaaS в Azure
+    - name: "15a.\_Настройка стратегии последовательного развертывания"
       href: tutorial-devops-azure-pipelines-classic.md
-    - name: 15б. Использование CI/CD с Azure Pipelines (YAML)
+    - name: "15b.\_Настройка стратегии раннего развертывания"
+      href: tutorial-azure-devops-canary-strategy.md
+    - name: "15c.\_Настройка стратегии развертывания по схеме Blue-Green"
+      href: tutorial-azure-devops-blue-green-strategy.md
+    - name: 15d. Использование CI/CD с Azure Pipelines (YAML)
       href: tutorial-build-deploy-azure-pipelines.md
     - name: "16а.\_Создание стека LAMP"
       href: tutorial-lamp-stack.md

@@ -76,6 +76,8 @@
           href: How-To/collaborate-knowledge-base.md
         - name: Включение активного обучения
           href: How-To/use-active-learning.md
+        - name: Изменение ответа по умолчанию
+          href: How-To/change-default-answer.md
     - name: Управление базой знаний
       items:
         - name: Создание базы знаний

@@ -34,6 +34,8 @@
       href: security-baselines-overview.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
+    - name: Базовые средства безопасности резервного копирования
+      href: ../../backup/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
       href: ../../batch/security-baseline.md
     - name: Базовая конфигурация безопасности для Реестра контейнеров
@@ -56,3 +58,5 @@
       href: ../../postgresql/security-baseline.md
     - name: Базовый уровень безопасности Базы данных SQL
       href: ../../sql-database/security-baseline.md
+    - name: Базовые средства безопасности хранилища
+      href: ../../storage/common/security-baseline.md

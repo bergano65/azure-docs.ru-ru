@@ -60,6 +60,8 @@
           href: sql-support-matrix.md
         - name: Матрица поддержки резервного копирования SAP HANA
           href: sap-hana-backup-support-matrix.md
+        - name: Таблица поддержки резервного копирования общих папок в Azure
+          href: azure-file-share-support-matrix.md
         - name: Поддерживаемые номера SKU виртуальных машин для Политики Azure
           href: backup-azure-policy-supported-skus.md
     - name: Часто задаваемые вопросы
@@ -346,6 +348,8 @@
           href: backup-azure-security-feature.md
         - name: Встроенные средства управления безопасностью
           href: backup-security-controls.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Диагностика
       items:
         - name: Azure

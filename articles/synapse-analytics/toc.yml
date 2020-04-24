@@ -20,8 +20,8 @@
       href: quickstart-synapse-studio.md
     - name: Создание пулов
       items:
-        - name: Создание пула Apache Spark с помощью веб-средств
-          href: ./spark/apache-spark-notebook-create-spark-use-sql.md
+        - name: Создание записной книжки Apache Spark с помощью веб-средств
+          href: quickstart-apache-spark-notebook.md
         - name: Создание пула Apache Spark с помощью портала Azure
           href: quickstart-create-apache-spark-pool.md
         - name: Создание пула SQL

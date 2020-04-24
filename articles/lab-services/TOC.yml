@@ -20,10 +20,28 @@
       href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates'
     - name: Azure PowerShell
       href: samples-powershell.md
+      items:
+        - name: Добавление внешнего пользователя в лабораторию
+          href: scripts/add-external-user-to-lab.md
+        - name: Добавление образов Marketplace в лабораторию
+          href: scripts/add-marketplace-images-to-lab.md
+        - name: Создание пользовательского образа из виртуального жесткого диска
+          href: scripts/create-custom-image-from-vhd.md
+        - name: Создание пользовательской роли в лаборатории
+          href: scripts/create-custom-role-in-lab.md
+        - name: Устанавливает допустимые размеры виртуальных машин в лаборатории
+          href: scripts/set-allowed-vm-sizes-in-lab.md
     - name: Azure PowerShell. Модуль Az.DevTestLabs2
       href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
     - name: Azure CLI
       href: samples-cli.md
+      items:
+        - name: Создание и проверка доступности виртуальной машины
+          href: scripts/create-verify-virtual-machine-in-lab-cli.md
+        - name: Запуск виртуальной машины
+          href: scripts/start-connect-virtual-machine-in-lab-cli.md
+        - name: Остановка и удаление виртуальной машины
+          href: scripts/stop-delete-virtual-machine-in-lab-cli.md
 - name: Основные понятия
   items:
     - name: Основные понятия DevTest Labs

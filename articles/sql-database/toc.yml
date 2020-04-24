@@ -108,7 +108,7 @@
           items:
             - name: Аудит Azure SQL
               href: sql-database-auditing.md
-            - name: Запись в хранилище за пределами виртуальной сети или брандмауэра
+            - name: Запись результатов аудита в учетную запись хранения за брандмауэром или виртуальной сетью
               href: create-auditing-storage-account-vnet-firewall.md
             - name: Формат журналов аудита
               href: sql-database-audit-log-format.md

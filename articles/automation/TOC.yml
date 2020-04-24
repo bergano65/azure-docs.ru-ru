@@ -26,6 +26,8 @@
       href: learn/automation-tutorial-runbook-textual-python2.md
 - name: Основные понятия
   items:
+    - name: Общие сведения о проверке подлинности учетной записи службы автоматизации
+      href: automation-security-overview.md
     - name: Общие сведения о выполнении runbook
       href: automation-runbook-execution.md
     - name: Обзор гибридной рабочей роли Runbook
@@ -48,6 +50,8 @@
           href: automation-create-standalone-account.md
         - name: Создание учетной записи службы автоматизации с помощью шаблона Resource Manager
           href: automation-create-account-template.md
+        - name: Настройка аутентификации с помощью Amazon Web Services
+          href: automation-config-aws-account.md
         - name: Управление учетной записью запуска от имени в службе автоматизации
           href: manage-runas-account.md
         - name: Управление разрешениями ролей и безопасностью
@@ -156,6 +160,8 @@
               href: automation-dsc-diagnostics.md
             - name: Устранение неполадок с DSC
               href: troubleshoot/desired-state-configuration.md
+            - name: Журнал версий расширения Azure DSC
+              href: automation-dsc-extension-history.md
         - name: Отслеживание изменений и инвентаризация
           items:
             - name: Обзор
@@ -248,8 +254,6 @@
           href: automation-create-alert-triggered-runbook.md
         - name: "Управление службами Office\_365"
           href: manage-office-365.md
-        - name: Проверка подлинности модулей runbook с помощью Amazon Web Services
-          href: automation-config-aws-account.md
         - name: Развертывание виртуальной машины AWS с помощью runbook службы автоматизации
           href: automation-scenario-aws-deployment.md
         - name: Развертывание шаблона Resource Manager с помощью runbook
