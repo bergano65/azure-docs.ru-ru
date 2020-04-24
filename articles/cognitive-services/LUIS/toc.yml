@@ -328,7 +328,7 @@
       href: luis-reference-regions.md
       displayName: 'failover, fail-over, fail over, Europe, EU, Australia, business continuity, bcdr'
     - name: Ограничения
-      href: luis-boundaries.md
+      href: luis-limits.md
     - name: Параметры приложения
       href: luis-reference-application-settings.md
     - name: Справочник по предварительно созданным сущностям

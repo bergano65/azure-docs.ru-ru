@@ -12,12 +12,12 @@ metadata:
   title: Документация по Распознаванию речи (LUIS)
   titleSuffix: Azure Cognitive Services
   description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей, исходя из их слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
-  ms.openlocfilehash: c05d10b4b732a466ff4a6a4abe352e78e898c857
-  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.openlocfilehash: f1fab99692fbd02cf3a8b659aad0069ac73ce8e6
+  ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "80053362"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "82101677"
 landingContent:
 - title: Сведения о Распознавании речи (LUIS)
   linkLists:
@@ -124,7 +124,7 @@ landingContent:
     - text: Ресурсы для разработчиков
       url: developer-reference-resource.md
     - text: Ограничения приложений
-      url: luis-boundaries.md
+      url: luis-limits.md
     - text: Предварительно созданные сущности
       url: luis-reference-prebuilt-entities.md
     - text: Настраиваемые сущности
