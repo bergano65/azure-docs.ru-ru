@@ -12,4 +12,4 @@ ms.lasthandoff: 03/28/2020
 ms.locfileid: "78183178"
 ---
 > [!NOTE]
-> В Azure Active Directory B2C [пользовательские политики предназначены](../articles/active-directory-b2c/custom-policy-get-started.md) в первую очередь для решения сложных сценариев. Для большинства сценариев мы рекомендуем использовать встроенные [потоки пользователей.](../articles/active-directory-b2c/user-flow-overview.md)
+> В Azure Active Directory B2C [пользовательские политики](../articles/active-directory-b2c/custom-policy-get-started.md) предназначены в основном для решения сложных сценариев. В большинстве случаев рекомендуется использовать встроенные [потоки пользователей](../articles/active-directory-b2c/user-flow-overview.md).
