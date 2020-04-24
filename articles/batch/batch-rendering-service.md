@@ -1,18 +1,16 @@
 ---
 title: Общие сведения о рендеринге — пакетная служба Azure
 description: Общие сведения об использовании Azure для рендеринга и обзор возможностей рендеринга в пакетной службе Azure
-services: batch
-ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: d4423b22c4c8afea5afa9c7040e081665b17ba87
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 515fc92aa14c0a86746d0a97d2bc601fab553aa3
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "60774035"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115709"
 ---
 # <a name="rendering-using-azure"></a>Рендеринг с помощью Azure
 
@@ -100,6 +98,6 @@ ms.locfileid: "60774035"
 * [Руководство. Преобразование для просмотра сцены Blender с помощью Batch Explorer](https://docs.microsoft.com/azure/batch/tutorial-rendering-batchexplorer-blender);
 * [Руководство по использованию CLI пакетной службы для рендеринга сцены, созданной в Autodesk 3ds Max](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Список приложений рендеринга и версий в образах виртуальных машин, включенных в Azure Marketplace, вы найдете в [этой статье](https://docs.microsoft.com/azure/batch/batch-rendering-applications).

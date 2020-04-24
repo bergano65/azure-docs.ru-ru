@@ -1,49 +1,49 @@
 ---
-title: Мониторинг и журнал ирование веб-приложений Azure Web Application
-description: Изучите веб-приложение Firewall (WAF) с frontDoor мониторинга и регистрации
+title: Мониторинг и ведение журнала брандмауэра веб-приложения Azure
+description: Знакомство с брандмауэром веб-приложения (WAF) с мониторингом и ведением журнала FrontDoor
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: article
 services: web-application-firewall
 ms.date: 08/21/2019
 ms.author: victorh
-ms.openlocfilehash: 4488fadf5db3b32049b5dce4bbee1fa76c320e96
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b4f666415a96307b89022c6caf6af90581f294f3
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80284149"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115369"
 ---
-# <a name="azure-web-application-firewall-monitoring-and-logging"></a>Мониторинг и журнал ирование веб-приложений Azure Web Application 
+# <a name="azure-web-application-firewall-monitoring-and-logging"></a>Мониторинг и ведение журнала брандмауэра веб-приложения Azure 
 
-Мониторинг и журналирование веб-приложений Azure Web Application Firewall (WAF) обеспечивается путем регистрации и интеграции с журналами Azure Monitor и Azure Monitor.
+Мониторинг и ведение журнала брандмауэра веб-приложения Azure (WAF) осуществляется с помощью ведения журналов и интеграции с журналами Azure Monitor и Azure Monitor.
 
 ## <a name="azure-monitor"></a>Azure Monitor
 
-WAF с журналом FrontDoor интегрирован с [Azure Monitor.](../../azure-monitor/overview.md) Azure Monitor позволяет отслеживать диагностическую информацию, включая оповещения WAF и журналы. Вы можете настроить мониторинг WAF в ресурсе Front Door на портале под вкладкой **Диагностика** или через службу Azure Monitor напрямую.
+WAF с журналом FrontDoor интегрируется с [Azure Monitor](../../azure-monitor/overview.md). Azure Monitor позволяет вести мониторинг диагностических данных, включая оповещения и журналы WAF. Вы можете настроить мониторинг WAF в ресурсе передней дверцы на портале на вкладке **Диагностика** или непосредственно в службе Azure Monitor.
 
-С портала Azure перейдите к типу ресурсов Front Door. С**вкладки «Метрика** **мониторинга»**/слева можно добавить **WebApplicationFirewallRequestCount** для отслеживания количества запросов, которые соответствуют правилам WAF. Пользовательские фильтры могут создаваться на основе типов действий и имен правил.
+В портал Azure выберите тип ресурса "Передняя дверь". На вкладке**метрики** **мониторинга**/слева можно добавить **вебаппликатионфиреваллрекуесткаунт** для отслеживания количества запросов, соответствующих правилам WAF. Настраиваемые фильтры можно создавать на основе типов действий и имен правил.
 
-![WAFMetrics](../media/waf-frontdoor-monitor/waf-frontdoor-metrics.png)
+![вафметрикс](../media/waf-frontdoor-monitor/waf-frontdoor-metrics.png)
 
-## <a name="logs-and-diagnostics"></a>Логи и диагностика
+## <a name="logs-and-diagnostics"></a>Журналы и диагностика
 
-WAF с Front Door предоставляет подробную отчетность о каждой обнаруженной угрозе. Функция ведения журналов интегрирована с журналами системы диагностики Azure, и оповещения записываются в формате JSON. Эти журналы можно интегрировать с [журналами Azure Monitor](../../azure-monitor/insights/azure-networking-analytics.md).
+WAF с передней дверцей предоставляет подробные отчеты по каждой обнаруженной угрозе. Функция ведения журналов интегрирована с журналами системы диагностики Azure, и оповещения записываются в формате JSON. Эти журналы можно интегрировать с [журналами Azure Monitor](../../azure-monitor/insights/azure-networking-analytics.md).
 
-![WAFDiag](../media/waf-frontdoor-monitor/waf-frontdoor-diagnostics.png)
+![вафдиаг](../media/waf-frontdoor-monitor/waf-frontdoor-diagnostics.png)
 
-FrontdoorAccessLog регистрирует все запросы, которые направляются клиенту. FrontdoorWebApplicationFirewallLog регистрирует любой запрос, который соответствует правилу WAF.
+Фронтдуракцесслог регистрирует все запросы, перенаправляемые на серверные концы. Фронтдурвебаппликатионфиревалллог регистрирует любой запрос, соответствующий правилу WAF.
 
-Следующий пример запроса получает журналы WAF на заблокированных запросах:
+В следующем примере запрос получает журналы WAF для заблокированных запросов:
 
 ``` WAFlogQuery
 AzureDiagnostics
 | where ResourceType == "FRONTDOORS" and Category == "FrontdoorWebApplicationFirewallLog"
-| where action_name_s == "Block"
+| where action_s == "Block"
 
 ```
 
-Вот пример запроса в журнале WAF:
+Ниже приведен пример зарегистрированного запроса в журнале WAF:
 
 ``` WAFlogQuerySample
 {
@@ -66,7 +66,7 @@ AzureDiagnostics
 
 ``` 
 
-Следующий пример запроса получает записи AccessLogs:
+В следующем примере запрос получает записи Акцесслогс:
 
 ``` AccessLogQuery
 AzureDiagnostics
@@ -74,7 +74,7 @@ AzureDiagnostics
 
 ```
 
-Вот пример зарегистрированного запроса в журнале Access:
+Ниже приведен пример зарегистрированного запроса в журнале доступа:
 
 ``` AccessLogSample
 {
@@ -103,6 +103,6 @@ AzureDiagnostics
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Узнайте больше о [передней двери](../../frontdoor/front-door-overview.md).
+- Дополнительные сведения о [передней дверце](../../frontdoor/front-door-overview.md).

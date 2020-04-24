@@ -1,22 +1,15 @@
 ---
-title: Пул аспакет Azure удалить полное событие
+title: Событие завершения удаления пула пакетной службы Azure
 description: Справочник по событию завершения удаления пула пакетной службы. Это событие создается при завершении операции удаления пула.
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.assetid: ''
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 04/20/2017
 ms.author: labrenne
-ms.openlocfilehash: d317d7395a8246c109073a72338b55960cb50954
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: d28223c79f96f35a6ee11f98e0f09f21d7db4451
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77023622"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115947"
 ---
 # <a name="pool-delete-complete-event"></a>Событие завершения удаления пула
 
@@ -34,7 +27,7 @@ ms.locfileid: "77023622"
 
 |Элемент|Тип|Примечания|
 |-------------|----------|-----------|
-|`id`|Строка|Идентификатор бассейна.|
+|`id`|Строка|Идентификатор пула.|
 |`startTime`|Дата и время|Время, когда было начато удаление пула.|
 |`endTime`|Дата и время|Время, когда удаление пула было завершено.|
 

@@ -1,20 +1,20 @@
 ---
-title: Получить ответ по умолчанию - NA Maker
-description: Ответ по умолчанию возвращается, когда нет совпадения с вопросом. Вы можете изменить ответ по умолчанию со стандартного ответа по умолчанию.
-ms.topic: conceptual
-ms.date: 01/10/2020
-ms.openlocfilehash: fae5c38fd64435a3fae56862bad04e000916e88b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+title: Получить ответ по умолчанию — QnA Maker
+description: Ответ по умолчанию возвращается в случае отсутствия соответствующего вопроса. Может потребоваться изменить ответ по умолчанию из стандартного ответа по умолчанию.
+ms.topic: how-to
+ms.date: 04/22/2020
+ms.openlocfilehash: db5a79ec612a73066ac37365a1815841fafb3862
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "76843281"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82097104"
 ---
-# <a name="set-default-answer-for-a-knowledge-base"></a>Установите ответ по умолчанию для базы знаний
+# <a name="change-default-answer-for-a-qna-maker-resource"></a>Изменить ответ по умолчанию для ресурса QnA Maker
 
-Ответ по умолчанию возвращается, когда нет совпадения с вопросом. Вы можете изменить ответ по умолчанию со стандартного ответа по умолчанию.
+Ответ по умолчанию возвращается в случае отсутствия соответствующего вопроса. Может потребоваться изменить ответ по умолчанию из стандартного ответа по умолчанию.
 
-## <a name="change-default-answer"></a>Изменение ответа по умолчанию
+## <a name="change-default-answer-in-the-azure-portal"></a>Изменить ответ по умолчанию в портал Azure
 
 1. Перейдите на [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, которая представляет созданный вами сервис QnA Maker.
 
@@ -22,7 +22,7 @@ ms.locfileid: "76843281"
 
     ![Доступ к службе приложений для QnA Maker на портале Azure](../media/qnamaker-concepts-confidencescore/set-default-response.png)
 
-3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Нажмите **Сохранить**.
+3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Нажмите кнопку **Сохранить**.
 
     ![Выбор элемента "Параметры приложения" и изменение значения в поле DefaultAnswer для QnA Maker](../media/qnamaker-concepts-confidencescore/change-response.png)
 
@@ -30,6 +30,6 @@ ms.locfileid: "76843281"
 
     ![Перезапуск службы приложений QnA Maker после изменения значения в поле DefaultAnswer](../media/qnamaker-faq/qnamaker-appservice-restart.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Создайте бота с помощью «NA Maker» и LUIS](../tutorials/integrate-qnamaker-luis.md)
+* [Создание базы знаний](../How-to/manage-knowledge-bases.md)

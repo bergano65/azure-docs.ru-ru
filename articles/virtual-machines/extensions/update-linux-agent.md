@@ -1,5 +1,5 @@
 ---
-title: Обновление агента Linux Azure от GitHub
+title: Обновление агента Linux для Azure с сайта GitHub
 description: Сведения об обновлении агента Linux для Azure на виртуальной машине Linux
 services: virtual-machines-linux
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 08/02/2017
 ms.author: mimckitt
-ms.openlocfilehash: e3b2819b33feba52c3b02f0e2104d4106bd04cbb
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: ab846eeb09c4f3d2db71abf58ef5d55dc74962a9
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81770054"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82112054"
 ---
 # <a name="how-to-update-the-azure-linux-agent-on-a-vm"></a>Как обновить агент Azure Linux на виртуальной машине
 
@@ -30,7 +30,8 @@ ms.locfileid: "81770054"
 
 Пакет нужно всегда сначала проверять в репозитории дистрибутива Linux. Возможно, доступный пакет будет не последней версии. Тем не менее после включения автоматического обновления агент Linux будет всегда получать последнее обновление. При возникновении проблем во время установки из диспетчеров пакетов за поддержкой обратитесь к поставщику дистрибутива.
 
-> ! (ПРИМЕЧАНИЕ) Для получения дополнительной информации смотрите [одобренные дистрибутивы Linux на Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros)
+> [!NOTE]
+> Дополнительные сведения см. [в статье Рекомендуемые дистрибутивы Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) .
 
 ## <a name="minimum-virtual-machine-agent-support-in-azure"></a>Минимальная поддержка агента виртуальных машин в Azure
 Ознакомьтесь со статьей [Minimum version support for virtual machine agents in Azure](https://support.microsoft.com/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) (Минимальная поддержка версий для агентов виртуальных машин в Azure) перед продолжением.
@@ -282,7 +283,7 @@ sudo systemctl restart waagent.service
 
 ## <a name="debian"></a>Debian
 
-### <a name="debian-7-jesse-debian-7-stretch"></a>Debian 7 "Джесси" / Debian 7 "Stretch"
+### <a name="debian-7-jesse-debian-7-stretch"></a>Debian 7 "Джесси"/Debian 7 "Stretch"
 
 #### <a name="check-your-current-package-version"></a>Проверка текущей версии пакета
 
@@ -396,7 +397,7 @@ sudo yum update WALinuxAgent
 
 Установите wget (некоторые дистрибутивы не устанавливают его по умолчанию, например Red Hat, CentOS и Oracle Linux версий 6.4 и 6.5), введя `sudo yum install wget` в командной строке.
 
-### <a name="1-download-the-latest-version"></a>1. Скачать последнюю версию
+### <a name="1-download-the-latest-version"></a>1. Скачайте последнюю версию
 Откройте [выпуск агента Linux для Azure в GitHub](https://github.com/Azure/WALinuxAgent/releases) на веб-странице и узнайте номер последней версии. (Номер текущей версии можно узнать, введя `waagent --version`.)
 
 #### <a name="for-version-22x-or-later-type"></a>Для версии 2.2.x или более поздней версии введите:
@@ -414,7 +415,7 @@ unzip v2.2.14.zip
 cd WALinuxAgent-2.2.14
 ```
 
-### <a name="2-install-the-azure-linux-agent"></a>2. Установка агента Linux Azure
+### <a name="2-install-the-azure-linux-agent"></a>2. Установка агента Linux для Azure
 
 #### <a name="for-version-22x-use"></a>Для версии 2.2.x введите:
 Возможно, сначала потребуется установить пакет `setuptools`. Ознакомьтесь со сведениями, приведенными [здесь](https://pypi.python.org/pypi/setuptools). Далее выполните:
@@ -444,7 +445,7 @@ AutoUpdate.Enabled=y
 sudo sed -i 's/# AutoUpdate.Enabled=n/AutoUpdate.Enabled=y/g' /etc/waagent.conf
 ```
 
-### <a name="3-restart-the-waagent-service"></a>3. Перезагрузка waagent службы
+### <a name="3-restart-the-waagent-service"></a>3. Перезапустите службу waagent
 Для большинства дистрибутивов Linux:
 
 ```bash
@@ -463,7 +464,7 @@ sudo service walinuxagent restart
 sudo systemctl restart waagent
 ```
 
-### <a name="4-confirm-the-azure-linux-agent-version"></a>4. Подтвердите версию Azure Linux Agent
+### <a name="4-confirm-the-azure-linux-agent-version"></a>4. Подтвердите версию агента Linux для Azure
     
 ```bash
 waagent -version

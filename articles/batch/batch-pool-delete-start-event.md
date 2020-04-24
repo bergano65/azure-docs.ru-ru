@@ -1,22 +1,15 @@
 ---
-title: Событие запуска пула Azure Batch
+title: Событие начала удаления пула пакетной службы Azure
 description: Справочник по событию начала удаления пула пакетной службы. Это событие создается при запуске операции удаления пула.
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.assetid: ''
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 04/20/2017
 ms.author: labrenne
-ms.openlocfilehash: 24a68c6656bd13f0c353d53870a51cdc940fd141
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 38e419e549006d3fde2f1694e0d40e620cd438e5
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77022211"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115930"
 ---
 # <a name="pool-delete-start-event"></a>Событие начала удаления пула
 
@@ -32,4 +25,4 @@ ms.locfileid: "77022211"
 
 |Элемент|Тип|Примечания|
 |-------------|----------|-----------|
-|`id`|Строка|Идентификатор бассейна.|
+|`id`|Строка|Идентификатор пула.|

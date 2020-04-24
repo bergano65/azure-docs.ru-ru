@@ -1,26 +1,15 @@
 ---
-title: Используйте библиотеку Управления пакетами .NET для управления ресурсами учетных записей
+title: Управление ресурсами учетной записи с помощью библиотеки .NET для управления пакетной службой
 description: Создание, удаление и изменение ресурсов учетных записей пакетной службы Azure с помощью библиотеки .NET для управления пакетной службой.
-services: batch
-documentationcenter: .net
-author: LauraBrenner
-manager: evansma
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 16279b23-60ff-4b16-b308-5de000e4c028
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 04/24/2017
-ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 79916d769ad8a7228aec8db965c29506ccd78ece
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 69e3eb04352feff11ee50acab11328adb7900539
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77023690"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115998"
 ---
 # <a name="manage-batch-accounts-and-quotas-with-the-batch-management-client-library-for-net"></a>Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой
 
@@ -175,10 +164,10 @@ Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.A
 Для успешного выполнения примера приложения необходимо зарегистрировать его в клиенте Azure AD на портале Azure и предоставить разрешения для API Azure Resource Manager. Выполните инструкции, описанные в статье [Аутентификация решений по управлению пакетной службой с помощью Active Directory](batch-aad-auth-management.md).
 
 
-[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое активный каталог Azure?"
+[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Azure Active Directory?"
 [aad_adal]: ../active-directory/active-directory-authentication-libraries.md
-[aad_auth_scenarios]:../active-directory/develop/authentication-scenarios.md "Сценарии аутентификации для Azure AD"
-[aad_integrate]:../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md "Интеграция приложений с активным каталогом Azure"
+[aad_auth_scenarios]:../active-directory/develop/authentication-scenarios.md "Сценарии проверки подлинности в Azure AD"
+[aad_integrate]:../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md "Интеграция приложений с Azure Active Directory"
 [acct_mgmt_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement
 [api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_mgmt_net]: https://msdn.microsoft.com/library/azure/mt463120.aspx

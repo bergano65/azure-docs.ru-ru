@@ -1,22 +1,14 @@
 ---
-title: Задача Azure Batch завершает событие
+title: Событие завершения задачи пакетной службы Azure
 description: Справочник по событию завершения выполнения задачи пакетной службы. Это событие создается при завершении задачи независимо от кода выхода.
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.assetid: ''
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 04/20/2017
-ms.author: labrenne
-ms.openlocfilehash: 0fee5f071d5c7005e466bf4c3d0c1d0a7db24731
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9e11eac04009def2bce4476ba2d77c798f25ca15
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77022925"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82116508"
 ---
 # <a name="task-complete-event"></a>Событие завершения выполнения задачи
 
@@ -53,12 +45,12 @@ ms.locfileid: "77022925"
 
 |Имя элемента|Тип|Примечания|
 |------------------|----------|-----------|
-|`jobId`|Строка|Идентификатор задания, содержащий задачу.|
+|`jobId`|Строка|Идентификатор задания, содержащего задачу.|
 |`id`|Строка|Идентификатор задачи.|
 |`taskType`|Строка|Тип задачи. Может быть установлено значение "JobManager", указывающее, что это задача диспетчера заданий, или значение "User", указывающее, что задача не относится к диспетчеру заданий. Это событие не создается для задач подготовки задания, задачи выпуска задания или задач запуска.|
 |`systemTaskVersion`|Int32|Это внутренний счетчик повторных попыток для задачи. Пакетная служба может повторить попытку выполнения задачи для преодоления временных неполадок. В таким неполадкам относятся внутренние ошибки планирования и попытки восстановления из вычислительных узлов в неисправном состоянии.|
 |[`nodeInfo`](#nodeInfo)|Сложный тип|Содержит сведения о вычислительном узле, где выполнялась задача.|
-|[`multiInstanceSettings`](#multiInstanceSettings)|Сложный тип|Указывает, что задача включает в себя несколько экземпляров и требует несколько вычислительных узлов.  Подробности смотрите. [`multiInstanceSettings`](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-task)|
+|[`multiInstanceSettings`](#multiInstanceSettings)|Сложный тип|Указывает, что задача включает в себя несколько экземпляров и требует несколько вычислительных узлов.  Дополнительные [`multiInstanceSettings`](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-task) сведения см. в разделе.|
 |[`constraints`](#constraints)|Сложный тип|Ограничения выполнения, применяемые к этой задаче.|
 |[`executionInfo`](#executionInfo)|Сложный тип|Содержит сведения о выполнении задачи.|
 
@@ -66,8 +58,8 @@ ms.locfileid: "77022925"
 
 |Имя элемента|Тип|Примечания|
 |------------------|----------|-----------|
-|`poolId`|Строка|Идентификатор пула, на котором выполнена задача.|
-|`nodeId`|Строка|Идентификатор узла, на котором выполнена задача.|
+|`poolId`|Строка|Идентификатор пула, в котором выполнялась задача.|
+|`nodeId`|Строка|Идентификатор узла, на котором выполнялась задача.|
 
 ###  <a name="multiinstancesettings"></a><a name="multiInstanceSettings"></a>multiInstanceSettings
 
@@ -75,7 +67,7 @@ ms.locfileid: "77022925"
 |------------------|----------|-----------|
 |`numberOfInstances`|Int32|Число вычислительных узлов, необходимых задаче.|
 
-###  <a name="constraints"></a><a name="constraints"></a>Зависимости
+###  <a name="constraints"></a><a name="constraints"></a>Учитывая
 
 |Имя элемента|Тип|Примечания|
 |------------------|----------|-----------|

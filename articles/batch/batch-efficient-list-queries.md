@@ -1,25 +1,15 @@
 ---
-title: Проектирование эффективных запросов списков с помощью пакетной службы Azure | Документация Майкрософт
+title: Разработка эффективных запросов списков
 description: 'Сведения о повышении производительности за счет фильтрации запросов, а именно при запросе сведений о ресурсах пакетной службы: пулах, заданиях, задачах и вычислительных узлах.'
-services: batch
-documentationcenter: .net
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.assetid: 031fefeb-248e-4d5a-9bc2-f07e46ddd30d
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 12/07/2018
-ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: df923ac479ce5f5a3668c18c616b11348dc6c0b3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fea8efd4e4946b67754bad98589b728e8d696425
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77022245"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82116117"
 ---
 # <a name="create-queries-to-list-batch-resources-efficiently"></a>Эффективное создание запросов на вывод списка ресурсов пакетной службы
 
@@ -172,7 +162,7 @@ List<CloudPool> testPools =
 | [CloudJob][net_job] |[Получение информации о задании][rest_get_job] |
 | [CloudJobSchedule][net_schedule] |[Получение информации о расписании задания][rest_get_schedule] |
 | [ComputeNode][net_node] |[Получение информации об узле][rest_get_node] |
-| [Облачный пул][net_pool] |[Получение информации о пуле][rest_get_pool] |
+| [CloudPool][net_pool] |[Получение информации о пуле][rest_get_pool] |
 | [CloudTask][net_task] |[Получение информации о задаче][rest_get_task] |
 
 ## <a name="example-construct-a-filter-string"></a>Пример. Создание строки фильтрации
@@ -240,7 +230,7 @@ internal static ODATADetailLevel OnlyChangedAfter(DateTime time)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 ### <a name="parallel-node-tasks"></a>Параллельные задачи узла
 Еще одна статья, посвященная производительности приложения пакетной службы — [Повышение эффективности вычислительных ресурсов в пакетной службе Azure благодаря параллельному выполнению задач на узлах](batch-parallel-node-tasks.md). Для эффективной обработки некоторых типов рабочих нагрузок можно применять параллельное выполнение задач на меньшем количестве более крупных вычислительных узлов. Дополнительные сведения о таком сценарии см. [здесь](batch-parallel-node-tasks.md#example-scenario).
 

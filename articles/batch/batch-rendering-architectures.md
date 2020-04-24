@@ -1,20 +1,15 @@
 ---
-title: Эталонные архитектуры рендеринга в Azure — пакетная служба Azure
+title: Эталонные архитектуры подготовки отчетов в Azure
 description: Архитектуры для применения пакетной службы Azure и других служб Azure для расширения локальных ферм рендеринга в облако
-services: batch
-ms.service: batch
-author: davefellows
-manager: evansma
-ms.author: labrenne
 ms.date: 02/07/2019
 ms.topic: conceptual
 ms.custom: seodec18
-ms.openlocfilehash: 20442a6618ca9357bb3be95879b68bffca45a40d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: bbdb5eb39805ac87bf90216e5fbeedae91b423f0
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77022959"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115777"
 ---
 # <a name="reference-architectures-for-azure-rendering"></a>Эталонные архитектуры для рендеринга в Azure
 
@@ -28,7 +23,7 @@ ms.locfileid: "77022959"
 
 * **Сеть** — Azure ExpressRoute или VPN в локальной сети. Виртуальная сеть Azure.
 
-* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync. Кроме того: Avere vFXT для ввода или вывода файлов из наемных устройств NAS с использованием NFS.
+* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync. Кроме того, Авере Вфкст к входным или выходным файлам с локальных устройств NAS с помощью NFS.
 
   ![Выход в облако — гибридное развертывание с NFS или CFS](./media/batch-rendering-architectures/hybrid-nfs-cfs-avere.png)
 
@@ -57,7 +52,7 @@ ms.locfileid: "77022959"
   ![Выход в облако — гибридное развертывание служб вычислений и хранения](./media/batch-rendering-architectures/hybrid-compute-storage-avere.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Изучите сведения об использовании [диспетчеров рендеринга](batch-rendering-render-managers.md) с пакетной службой Azure.
 

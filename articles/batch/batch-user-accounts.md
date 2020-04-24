@@ -1,34 +1,21 @@
 ---
-title: Выполнение задач в учетных записях пользователей - Azure Batch
-description: Полезно настроить учетную запись пользователя, под которой требуется выполнение задачи. Узнайте типы учетных записей пользователей и способы их настройки.
-services: batch
-author: LauraBrenner
-manager: evansma
-editor: ''
-tags: ''
-ms.assetid: ''
-ms.service: batch
+title: Выполнение задач с учетными записями пользователей в пакетной службе Azure
+description: Полезно иметь возможность настроить учетную запись пользователя, под которой должна выполняться задача. Сведения о типах учетных записей пользователей и их настройке.
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 11/18/2019
-ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: fee3dc764d2052185160a4ba6b3d70854c54eeac
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 22827a1a1406be7cb6ea0bd6e19f6ce316598a48
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79252276"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82111748"
 ---
 > [!NOTE] 
-> Учетные записи пользователей, обсуждаемые в этой статье, отличаются от учетных записей пользователей, используемых для протокола удаленного рабочего стола (RDP) или Secure Shell (SSH) по соображениям безопасности. 
+> Учетные записи пользователей, описанные в этой статье, отличаются от учетных записей пользователей, используемых для протокол удаленного рабочего стола (RDP) или Secure Shell (SSH) по соображениям безопасности. 
 >
 > Подключение к узлу с конфигурацией виртуальной машины Linux по протоколу SSH описывается в разделе [Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure](../virtual-machines/virtual-machines-linux-use-remote-desktop.md). Подключение к узлам под управлением Windows по протоколу RDP описывается в разделе [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](../virtual-machines/windows/connect-logon.md).<br /><br />
 > Чтобы подключиться к узлу, на котором выполняется конфигурация облачной службы, по протоколу RDP, ознакомьтесь с разделом [Включение подключения к удаленному рабочему столу для роли в облачных службах Azure](../cloud-services/cloud-services-role-enable-remote-desktop-new-portal.md).
->
->
-
 
 # <a name="run-tasks-under-user-accounts-in-batch"></a>Выполнение задач с учетными записями пользователей в пакетной службе
 
@@ -333,6 +320,6 @@ task.UserIdentity = new UserIdentity(AdminUserAccountName);
 | Свойство `run_elevated` не указано | Обновление не требуется.                                                                                                                                  |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Исчерпывающий обзор пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).

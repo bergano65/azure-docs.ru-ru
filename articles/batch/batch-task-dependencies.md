@@ -1,25 +1,15 @@
 ---
-title: Создание зависимостей задач для выполнения задач - Azure Batch
+title: Создание зависимостей задач для выполнения задач в пакетной службе Azure
 description: Создание задач, которые зависят от выполнения других задач, для обработки по модели MapReduce и аналогичных рабочих нагрузок больших данных в пакетной службе Azure.
-services: batch
-documentationcenter: .net
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.assetid: b8d12db5-ca30-4c7d-993a-a05af9257210
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 05/22/2017
-ms.author: labrenne
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ca771117e889afc8e143c4ca4626ab2d3bb4da2f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9b3bc37a3d004f077e2e780d096b7bb2a8e5f773
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77022908"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82116491"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
 
@@ -209,8 +199,8 @@ new CloudTask("B", "cmd.exe /c echo B")
 - как создать задачи, которые зависят от других задач;
 - как выполнить эти задачи в пуле вычислительных узлов.
 
-## <a name="next-steps"></a>Дальнейшие действия
-### <a name="application-deployment"></a>Развертывание приложений
+## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="application-deployment"></a>Развертывание приложения
 Функция [пакетов приложения](batch-application-packages.md) в пакетной службе дает возможность очень легко развернуть приложения, которые задачи выполняют на вычислительных узлах, и управлять их версиями.
 
 ### <a name="installing-applications-and-staging-data"></a>Установка приложений и промежуточных данных
@@ -238,4 +228,4 @@ new CloudTask("B", "cmd.exe /c echo B")
 
 [1]: ./media/batch-task-dependency/01_one_to_one.png "Схема: зависимость один к одному"
 [2]: ./media/batch-task-dependency/02_one_to_many.png "Схема: зависимость один ко многим"
-[3]: ./media/batch-task-dependency/03_task_id_range.png "Диаграмма: зависимость диапазона идентификаторов задач"
+[3]: ./media/batch-task-dependency/03_task_id_range.png "Схема: зависимость диапазона идентификаторов задач"

@@ -1,23 +1,15 @@
 ---
-title: Сохраняющиеся выходные данные в хранилище Azure с aPI службы пакетов - Azure Batch
-description: Узнайте, как использовать API службы пакетов для сохранения данных задач пакетных задач и выходных задач в Хранилище Azure.
-services: batch
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.service: batch
+title: Сохранение выходных данных в службе хранилища Azure с помощью API пакетной службы — Пакетная служба Azure
+description: Узнайте, как использовать API пакетной службы для сохранения данных пакетной задачи и задания в службе хранилища Azure.
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 03/05/2019
-ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 11bd8bc427dd3da35ec5aa0f728f6b04b7d4527d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 5fbbf75defcfe976e59d38ae76341e71feee9f53
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77022857"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82116474"
 ---
 # <a name="persist-task-data-to-azure-storage-with-the-batch-service-api"></a>Сохранение данных для задач в службе хранилища Azure с помощью API пакетной службы
 
@@ -71,7 +63,7 @@ string containerSasUrl = container.Uri.AbsoluteUri + containerSasToken;
 
 Чтобы указать выходные файлы для задачи, создайте коллекцию объектов [OutputFile](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.outputfile) и назначьте ему свойство [CloudTask.OutputFiles](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudtask.outputfiles#Microsoft_Azure_Batch_CloudTask_OutputFiles) при создании задачи.
 
-В следующем примере кода C# создается задача, которая записывает случайные числа в файл с именем `output.txt`. В примере создается выходной файл, чтобы записывать `output.txt` в контейнер. Пример также создает выходные файлы для любых `std*.txt` файлов журнала, которые `stderr.txt`соответствуют шаблону файла _(например,_ `stdout.txt` и). Для URL-адреса контейнера требуется SAS, который был создан ранее для контейнера. Пакетная служба использует SAS для проверки подлинности при доступе к контейнеру:
+В следующем примере кода C# создается задача, которая записывает случайные числа в файл с именем `output.txt`. В примере создается выходной файл, чтобы записывать `output.txt` в контейнер. В примере также создаются выходные файлы для всех файлов журнала, `std*.txt` соответствующих шаблону файла (_например_, `stdout.txt` и `stderr.txt`). Для URL-адреса контейнера требуется SAS, который был создан ранее для контейнера. Пакетная служба использует SAS для проверки подлинности при доступе к контейнеру:
 
 ```csharp
 new CloudTask(taskId, "cmd /v:ON /c \"echo off && set && (FOR /L %i IN (1,1,100000) DO (ECHO !RANDOM!)) > output.txt\"")
@@ -187,7 +179,7 @@ string containerName = job.OutputStorageContainerName();
 6. Когда появится запрос на выбор технологии постоянного хранения для выполнения образца, введите **2** для запуска образца с помощью API пакетной службы для сохранения выходных данных задачи.
 7. При необходимости запустите пример снова путем ввода **3** для сохранения выходных данных с помощью API пакетной службы, а также именования пути к целевому контейнеру и большому двоичному объекту в соответствии со стандартом соглашений об именовании файлов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о сохранении выходных данных задачи с помощью библиотеки соглашений о файлах для .NET см. в разделе [Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET](batch-task-output-file-conventions.md).
 - Дополнительные сведения о других способах сохранения выходных данных задачи в пакетной службе Azure см. в разделе [Сохранение выходных данных заданий и задач в службе хранилища Azure](batch-task-output.md).

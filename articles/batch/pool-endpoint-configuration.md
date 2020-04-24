@@ -1,19 +1,14 @@
 ---
-title: Настройка конечных точек узла в пуле пакетной службы Azure | Документация Майкрософт
+title: Настройка конечных точек узла в пуле пакетной службы Azure
 description: Сведения о том, как настроить или отключить доступ к портам SSH или RDP на вычислительных узлах пула пакетной службы Azure.
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.service: batch
 ms.topic: article
 ms.date: 02/13/2018
-ms.author: labrenne
-ms.openlocfilehash: 098ccf999391412520989c4ec2433fd73bc0a72d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8b0ae4b80757bfa647cd5322668d793fa66ffca3
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77017230"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82113856"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Настройка или отключение удаленного доступа к вычислительным узлам пула пакетной службы Azure
 
@@ -22,7 +17,7 @@ ms.locfileid: "77017230"
 В своей среде вам может потребоваться ограничить или отключить эти параметры внешнего доступа по умолчанию. Эти параметры можно изменить с помощью API пакетной службы для установки свойства [PoolEndpointConfiguration](/rest/api/batchservice/pool/add#poolendpointconfiguration). 
 
 ## <a name="about-the-pool-endpoint-configuration"></a>О конфигурации конечной точки пула
-Конфигурация конечной точки состоит из одного или нескольких [пулов преобразования сетевых адресов (NAT)](/rest/api/batchservice/pool/add#inboundnatpool) интерфейсных портов. (Не путайте пул NAT с пулом вычислительных узлов пакета.) Вы настраиваете каждый пул NAT для переопределения настроек соединения по умолчанию на вычислительных узлах пула. 
+Конфигурация конечной точки состоит из одного или нескольких [пулов преобразования сетевых адресов (NAT)](/rest/api/batchservice/pool/add#inboundnatpool) интерфейсных портов. (Не путайте пул NAT с пулом пакетной службы для кластерных узлов.) Вы настраиваете каждый пул NAT для переопределения параметров подключения по умолчанию на расчетных узлах пула. 
 
 Каждая конфигурация пула NAT включает одно или несколько правил [групп безопасности сети](/rest/api/batchservice/pool/add#networksecuritygrouprule), каждое из которых разрешает или запрещает определенный сетевой трафик к конечной точке. Вы можете разрешить или запретить весь трафик, трафик, определяемый по [тегу службы](../virtual-network/security-overview.md#service-tags) (например, "Интернет"), или трафик из определенных IP-адресов или подсетей.
 
@@ -123,7 +118,7 @@ pool.network_configuration = batchmodels.NetworkConfiguration(
 )
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о правилах NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 

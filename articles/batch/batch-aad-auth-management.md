@@ -1,25 +1,14 @@
 ---
-title: Используйте активный каталог Azure для проверки подлинности решений управления пакетами
-description: Исследуйте с помощью Active Directory Azure для проверки подлинности от приложений, использующих библиотеку Batch Management .NET.
-services: batch
-documentationcenter: .net
-author: LauraBrenner
-manager: evansma
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: batch
+title: Использование Azure Active Directory для проверки подлинности решений по управлению пакетной службой
+description: Изучите использование Azure Active Directory для проверки подлинности в приложениях, использующих библиотеку .NET для управления пакетной службой.
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 04/27/2017
-ms.author: labrenne
-ms.openlocfilehash: 5c217971bd213c97a2ee31a0a1f513b601d14df9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0aa95aa440303d1577b7646c1a9f1bc5b6e69ac2
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79472985"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82114791"
 ---
 # <a name="authenticate-batch-management-solutions-with-active-directory"></a>Аутентификация решений по управлению пакетной службой с помощью Active Directory
 
@@ -122,7 +111,7 @@ AuthenticationResult authResult = authContext.AcquireToken(ResourceUri,
 
 После указания учетных данных пример приложения может отправлять запросы, прошедшие проверку подлинности, к службе управления пакетами. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о выполнении [примера приложения AccountManagement][acct_mgmt_sample] см. в статье [Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой](batch-management-dotnet.md).
 
@@ -131,10 +120,10 @@ AuthenticationResult authResult = authContext.AcquireToken(ResourceUri,
 Дополнительные сведения об аутентификации приложений пакетной службы с помощью Azure AD см. в статье [Аутентификация решений пакетной службы с помощью Active Directory](batch-aad-auth.md). 
 
 
-[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое активный каталог Azure?"
+[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Azure Active Directory?"
 [aad_adal]: ../active-directory/active-directory-authentication-libraries.md
-[aad_auth_scenarios]:../active-directory/develop/authentication-scenarios.md "Сценарии аутентификации для Azure AD"
-[aad_integrate]: ../active-directory/active-directory-integrating-applications.md "Интеграция приложений с активным каталогом Azure"
+[aad_auth_scenarios]:../active-directory/develop/authentication-scenarios.md "Сценарии проверки подлинности в Azure AD"
+[aad_integrate]: ../active-directory/active-directory-integrating-applications.md "Интеграция приложений с Azure Active Directory"
 [acct_mgmt_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement
 [azure_portal]: https://portal.azure.com
 [resman_overview]: ../azure-resource-manager/management/overview.md

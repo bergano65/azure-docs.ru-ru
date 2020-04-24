@@ -8,12 +8,12 @@ ms.author: magoedte
 ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 995c87ca6f091e9ccf0b82af831bbf43ff17846f
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.openlocfilehash: c8d22e63be880c0cef0c4072e99ab85bf3250a1c
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82100844"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82114280"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Администрирование модулей в службе автоматизации Azure
 
@@ -22,7 +22,6 @@ ms.locfileid: "82100844"
 * [Azure PowerShell AZ. Automation](/powershell/azure/new-azureps-module-az?view=azps-1.1.0)
 * [Azure PowerShell AzureRM. Automation](https://docs.microsoft.com/powershell/module/azurerm.automation/?view=azurermps-6.13.0)
 * Внутренний `Orchestrator.AssetManagement.Cmdlets` модуль для агента log Analytics для Windows
-* [азуреаутоматионаусорингтулкит](https://www.powershellgallery.com/packages/AzureAutomationAuthoringToolkit/0.2.3.9)
 * Другие модули PowerShell
 * Создаваемые пользовательские модули 
 
@@ -40,12 +39,12 @@ ms.locfileid: "82100844"
 
 В следующей таблице перечислены модули, которые служба автоматизации Azure импортирует по умолчанию при создании учетной записи службы автоматизации. Автоматизация может импортировать более новые версии этих модулей. Однако вы не сможете удалить исходную версию из учетной записи службы автоматизации, даже если вы удалите более новую версию. Обратите внимание, что эти модули по умолчанию включают несколько модулей AzureRM. 
 
-В модулях Runbook и конфигурациях DSC предпочтительнее использовать модули AZ. Automation. Однако служба автоматизации Azure не импортирует корневой модуль AZ автоматически в любую новую или существующую учетную запись службы автоматизации. Дополнительные сведения о работе с этими модулями см. [в разделе Переход на AZ modules](#migrating-to-az-modules).
+Служба автоматизации Azure не импортирует корневой модуль AZ автоматически в любые новые или существующие учетные записи службы автоматизации. Дополнительные сведения о работе с этими модулями см. [в разделе Переход на AZ modules](#migrating-to-az-modules).
 
 > [!NOTE]
 > В учетных записях службы автоматизации, содержащих [решение запуск и остановка виртуальных машин в нерабочее время в службе автоматизации Azure](../automation-solution-vm-management.md), не рекомендуется изменять модули и Runbook.
 
-|Имя модуля|Version|
+|Имя модуля|Версия|
 |---|---|
 | аудитполицидск | 1.1.0.0 |
 | Azure | 1.0.3 |
@@ -72,6 +71,10 @@ ms.locfileid: "82100844"
 | ксповершеллексекутионполици | 1.1.0.0 |
 | ксремотедесктопадмин | 1.1.0.0 |
 
+## <a name="az-module-cmdlets"></a>AZ Module командлеты
+
+Для AZ. Automation большинство командлетов имеют те же имена, что и для модулей AzureRM, за исключением того, что префикс AzureRm был изменен на AZ. Список модулей AZ, которые не соответствуют соглашению об именовании, см. в разделе [список исключений](/powershell/azure/migrate-from-azurerm-to-az#update-cmdlets-modules-and-parameters).
+
 ## <a name="internal-cmdlets"></a>Внутренние командлеты
 
 В следующей таблице определены внутренние командлеты, поддерживаемые `Orchestrator.AssetManagement.Cmdlets` модулем. Используйте эти командлеты в модулях Runbook и конфигурациях DSC для взаимодействия с ресурсами Azure в учетной записи службы автоматизации. Командлеты предназначены для использования вместо командлетов Azure PowerShell для получения секретов из зашифрованных переменных, учетных данных и зашифрованных соединений. 
@@ -91,41 +94,47 @@ ms.locfileid: "82100844"
 
 Обратите внимание, что внутренние командлеты отличаются по именам из командлетов AZ и AzureRM. Имена внутренних командлетов не содержат слов, например "Azure" или "AZ", в существительных, но используют слово "Automation". Мы рекомендуем использовать командлеты az или AzureRM во время выполнения Runbook в песочнице Azure или в гибридной рабочей роли Windows. Они занимают меньше параметров и выполняются в контексте уже выполняемого задания.
 
-Используйте командлеты az или AzureRM для управления ресурсами службы автоматизации Azure вне контекста модуля Runbook. В таких случаях необходимо неявно подключиться к Azure при использовании командлетов, как при использовании учетной записи запуска от имени для проверки подлинности в Azure. 
+Мы рекомендуем использовать командлеты az или AzureRM для управления ресурсами службы автоматизации Azure вне контекста модуля Runbook. 
 
-## <a name="modules-supporting-get-automationpscredential"></a>Модули, поддерживающие Get-AutomationPSCredential
+## <a name="module-supporting-get-automationpscredential"></a>Модуль, поддерживающий Get-AutomationPSCredential
 
-Для локальной разработки с помощью набора средств автоматизации Azure, `Get-AutomationPSCredential` командлет является частью сборки [азуреаутоматионаусорингтулкит](https://www.powershellgallery.com/packages/AzureAutomationAuthoringToolkit/0.2.3.9). Для работы Azure с контекстом автоматизации используется командлет `Orchestrator.AssetManagement.Cmdlets`. Дополнительные сведения об использовании учетных данных в службе автоматизации Azure см. в статье [ресурсы учетных данных в службе автоматизации Azure](credentials.md).
-
-Обратите `Get-AutomationPsCredential` внимание, `PSCredential` что возвращает объект, который ожидается большинством командлетов PowerShell, работающих с учетными данными. Чаще всего следует использовать этот командлет вместо командлета [Get-азаутоматионкредентиал](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationcredential?view=azps-3.8.0) . `Get-AzAutomationCredential`Извлекает объект [кредентиалинфо](https://docs.microsoft.com/dotnet/api/microsoft.azure.commands.automation.model.credentialinfo?view=azurerm-ps) , содержащий метаданные об учетных данных. Эта информация обычно не полезна для передачи другому командлету.
+`Get-AutomationPSCredential` Командлет является частью модуля `Orchestrator.AssetManagement.Cmdlets`. Этот командлет возвращает `PSCredential` объект, который ожидается большинством командлетов PowerShell, работающих с учетными данными. Дополнительные сведения об использовании учетных данных в службе автоматизации Azure см. в статье [ресурсы учетных данных в службе автоматизации Azure](credentials.md).
 
 ## <a name="migrating-to-az-modules"></a>Переход к модулям Az
 
-При использовании модулей az в службе автоматизации Azure необходимо учитывать несколько моментов:
+### <a name="migration-considerations"></a>Вопросы миграции
 
-* Мы не рекомендуем запускать модули AzureRM и az в одной учетной записи службы автоматизации, так как это гарантирует возникновение проблем. См. статью [миграция Azure PowerShell из AzureRM в AZ](https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az?view=azps-3.7.0). 
+В этом разделе приводятся рекомендации, которые необходимо учитывать при переходе на модули az в службе автоматизации Azure. См. также [миграция Azure PowerShell из AzureRM в AZ](https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az?view=azps-3.7.0). 
 
-* Прежде чем импортировать модули AZ, тщательно протестируйте все модули Runbook и конфигурации DSC в отдельной учетной записи службы автоматизации. 
+#### <a name="use-of-azurerm-modules-and-az-modules-in-the-same-automation-account"></a>Использование модулей AzureRM и AZ modules в одной учетной записи службы автоматизации
 
-* При импорте модуля az в учетную запись службы автоматизации модуль не импортируется автоматически в сеанс PowerShell, используемый модулями Runbook. Модули импортируются в сеанс PowerShell в следующих ситуациях:
+ Мы не рекомендуем запускать модули AzureRM и az в одной и той же учетной записи службы автоматизации. Если вы уверены, что хотите выполнить миграцию с AzureRM на AZ, то лучше полностью зафиксировать полную миграцию. Наиболее важная причина в том, что служба автоматизации Azure часто использует песочницы в учетной записи службы автоматизации для экономии времени запуска. Если вы не сделаете полную миграцию модулей, вы можете запустить задание, используя только модули AzureRM, а затем запустить другое задание, используя только AZ modules. Вскоре произойдет сбой песочницы, и вы получите неустранимую ошибку, сообщающую, что модули не совместимы. Эта ситуация приводит к случайному возникновению сбоев для всех заданных модулей Runbook или конфигурации. 
 
-    * Когда модуль Runbook вызывает командлет из модуля
-    * Когда Runbook импортирует модуль явным образом с помощью командлета [Import-Module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7)
-    * Когда модуль Runbook импортирует другой зависимый модуль
+#### <a name="import-of-az-modules-into-the-powershell-session"></a>Импорт модулей az в сеанс PowerShell
 
-После завершения миграции модулей не пытайтесь запустить модули Runbook с помощью модулей AzureRM в учетной записи службы автоматизации. Также не рекомендуется импортировать или обновлять модули AzureRM в учетной записи. Рассмотрим, что учетная запись перенесена в AZ. Automation и действует только с модулями AZ.
+При импорте модуля az в учетную запись службы автоматизации модуль не импортируется автоматически в сеанс PowerShell, используемый модулями Runbook. Модули импортируются в сеанс PowerShell в следующих ситуациях:
 
->[!IMPORTANT]
->При создании новой учетной записи службы автоматизации Azure по умолчанию устанавливает модули AzureRM. Вы по-прежнему можете обновить учебные модули Runbook с помощью командлетов AzureRM. Однако не следует запускать эти модули Runbook.
+* Когда модуль Runbook вызывает командлет из модуля
+* Когда Runbook импортирует модуль явным образом с помощью командлета [Import-Module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7)
+* Когда модуль Runbook импортирует другой зависимый модуль
+    
+#### <a name="testing-for-your-runbooks-and-dsc-configurations-prior-to-module-migration"></a>Тестирование модулей Runbook и конфигураций DSC до миграции модулей
+
+Прежде чем переходить на модули AZ, тщательно протестируйте все модули Runbook и конфигурации DSC в отдельной учетной записи службы автоматизации. 
+
+#### <a name="updates-for-tutorial-runbooks"></a>Обновления для учебных модулей Runbook 
+
+При создании новой учетной записи службы автоматизации, даже после миграции в AZ Modules, служба автоматизации Azure по умолчанию устанавливает модули AzureRM. Вы по-прежнему можете обновить учебные модули Runbook с помощью командлетов AzureRM. Однако не следует запускать эти модули Runbook.
 
 ### <a name="stop-and-unschedule-all-runbooks-that-use-azurerm-modules"></a>Останавливает и отменяет планирование всех модулей Runbook, использующих модули AzureRM
 
-Чтобы не запускать ни один из существующих модулей Runbook, использующих модули AzureRM, следует приостанавливаться и отменять планирование всех затронутых Runbook с помощью командлета [Remove-AzureRmAutomationSchedule](https://docs.microsoft.com/powershell/module/azurerm.automation/remove-azurermautomationschedule?view=azurermps-6.13.0) . Важно проверять каждое расписание отдельно, чтобы при необходимости можно было перепланировать его в будущем для ваших модулей Runbook.
+Чтобы не запускать существующие модули Runbook или конфигурации DSC, использующие AzureRM Modules, необходимо приостанавливаться и отменять планирование всех затронутых модулей Runbook и конфигураций. Сначала убедитесь, что каждый модуль Runbook или Конфигурация DSC и его расписания просматриваются отдельно, чтобы при необходимости можно было перепланировать элемент в будущем. 
 
-```powershell
-Get-AzureRmAutomationSchedule -AutomationAccountName "Contoso17" -Name "DailySchedule08" -ResourceGroupName "ResourceGroup01" 
-Remove-AzureRmAutomationSchedule -AutomationAccountName "Contoso17" -Name "DailySchedule08" -ResourceGroupName "ResourceGroup01"
-```
+Когда вы будете готовы удалить расписания, можно либо использовать портал Azure, либо командлет [Remove-AzureRmAutomationSchedule](https://docs.microsoft.com/powershell/module/azurerm.automation/remove-azurermautomationschedule?view=azurermps-6.13.0) . См. раздел [Удаление расписания](schedules.md#removing-a-schedule).
+
+### <a name="remove-the-azurerm-modules"></a>Удаление модулей AzureRM
+
+Можно удалить модули AzureRM перед импортом модулей AZ. Однако удаление модулей AzureRM может привести к прерыванию синхронизации системы управления версиями и вызвать сбой всех сценариев, которые по-прежнему запланированы. Если вы решили удалить эти модули, см. раздел [uninstall AzureRM](https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az?view=azps-3.8.0#uninstall-azurerm).
 
 ### <a name="import-the-az-modules"></a>Импорт модулей Az
 
@@ -144,17 +153,11 @@ Remove-AzureRmAutomationSchedule -AutomationAccountName "Contoso17" -Name "Daily
 
 ### <a name="test-your-runbooks"></a>Тестирование модулей runbook
 
-После импорта модулей az в учетную запись службы автоматизации можно начать редактирование модулей Runbook, чтобы использовать новые модули. Большинство командлетов имеют те же имена, что и для модулей AzureRM, за исключением того, что префикс AzureRm был изменен на AZ. Список модулей, которые не соответствуют соглашению об именовании, см. в разделе [список исключений](/powershell/azure/migrate-from-azurerm-to-az#update-cmdlets-modules-and-parameters).
-
-Одним из способов тестирования изменения модуля Runbook для использования новых командлетов является использование `Enable-AzureRmAlias -Scope Process` в начале модуля Runbook. При добавлении этой команды в модуль Runbook скрипт может выполняться без изменений. 
+После импорта модулей az в учетную запись службы автоматизации можно начать редактирование модулей Runbook и конфигураций DSC, чтобы использовать новые модули. Одним из способов тестирования изменения модуля Runbook для использования новых командлетов является использование `Enable-AzureRmAlias -Scope Process` в начале модуля Runbook. При добавлении этой команды в модуль Runbook скрипт может выполняться без изменений. 
 
 ## <a name="authoring-modules"></a>Создание модулей
 
 При создании модуля PowerShell для использования в службе автоматизации Azure рекомендуется следовать рекомендациям, приведенным в этом разделе.
-
-### <a name="references-to-azurerm-and-az"></a>Ссылки на AzureRM и AZ
-
-Если вы ссылаетесь на модули az в своем модуле, убедитесь, что вы не ссылаетесь на модули AzureRM. Нельзя одновременно использовать оба набора модулей. 
 
 ### <a name="version-folder"></a>Папка версии
 
@@ -215,7 +218,7 @@ myModule
 
   ![Справка по модулям интеграции](../media/modules/module-activity-description.png)
 
-### <a name="connection-type"></a>Тип соединений
+### <a name="connection-type"></a>Тип подключения
 
 Если модуль подключается к внешней службе, определите [тип соединения](#adding-a-connection-type-to-your-module). Каждый командлет в модуле должен принимать объект соединения (экземпляр этого типа соединения) в качестве параметра. Пользователи сопоставляют параметры ресурса подключения с соответствующими параметрами командлета каждый раз, когда они вызывают командлет. Следующий пример модуля Runbook, основанный на примере из предыдущего раздела, использует ресурс-контейнер подключения Contoso `ContosoConnection` для доступа к ресурсам Contoso и возврата данных из внешней службы. В этом примере поля сопоставляются со свойствами `UserName` и `Password` `PSCredential` объекта, а затем передаются в командлет.
 
@@ -393,7 +396,7 @@ Remove-AzAutomationModule -Name <moduleName> -AutomationAccountName <automationA
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об использовании модулей Azure PowerShell см. в статье [Приступая к работе с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azps-3.7.0).
 * Дополнительные сведения о создании модулей PowerShell см. в разделе [написание модуля Windows PowerShell](https://docs.microsoft.com/powershell/scripting/developer/module/writing-a-windows-powershell-module?view=powershell-7).

@@ -1,15 +1,15 @@
 ---
-title: Часто задаваемые вопросы (Часто) - LUIS
+title: Часто задаваемые вопросы — LUIS
 description: В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: diberry
-ms.openlocfilehash: 59d9b1f21e1936b7d03293ec3d338677380a7c99
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 3c7e191ab64d30ddb64f1c3ff4e31b9c20c87b5c
+ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81530272"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101116"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -17,7 +17,7 @@ ms.locfileid: "81530272"
 
 ## <a name="whats-new"></a>Новые возможности
 
-[Узнайте больше](whats-new.md) о том, что нового в понимании языка (LUIS).
+[Узнайте больше](whats-new.md) о новых возможностях Language UNDERSTANDING (Luis).
 
 <a name="luis-authoring"></a>
 
@@ -54,8 +54,8 @@ ms.locfileid: "81530272"
 ### <a name="should-variations-of-an-example-utterance-include-punctuation"></a>Должны ли вариации примерного высказывания включать пунктуацию?
 Используйте одно из следующих решений:
 * Игнорировать [знаки препинания](luis-reference-application-settings.md#punctuation-normalization)
-* Добавьте различные вариации в качестве примера высказывания к намерениям
-* Добавьте шаблон примера высказывания [синтаксисом, чтобы проигнорировать](luis-concept-patterns.md#pattern-syntax) пунктуацию.
+* Добавьте различные варианты, например фразы продолжительностью, в цель.
+* Добавьте шаблон примера utterance с [синтаксисом, чтобы игнорировать](luis-concept-patterns.md#pattern-syntax) знаки препинания.
 
 ### <a name="does-luis-currently-support-cortana"></a>Осуществляется ли поддержка Cortana в LUIS в данный момент?
 
@@ -64,17 +64,17 @@ ms.locfileid: "81530272"
 ### <a name="how-do-i-transfer-ownership-of-a-luis-app"></a>Как передавать права владельца приложения LUIS?
 Чтобы переместить приложение LUIS в другую подписку Azure, экспортируйте приложение LUIS и импортируйте его, используя новую учетную запись. Обновите идентификатор приложения LUIS в клиентском приложении, которое его вызывает. Возвращаемые новым приложением оценки LUIS могут немного отличаться от оценок исходного приложения.
 
-### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Заранее построенная сущность помечена в примере высказывания вместо моей пользовательской сущности. Как устранить эту проблему?
+### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Предварительно созданная сущность помечается в примере utterance вместо моей пользовательской сущности. Как устранить эту проблему?
 
-На портале LUIS можно пометить текст для точной сущности, которая вам интересна для извлечения. Если портал LUIS не показывает правильное предсказание сущности, возможно, потребуется добавить больше высказываний и пометить сущность в тексте или добавить дескриптор (например, функцию).
+На портале LUIS можно пометить текст для точной сущности, которую нужно извлечь. Если на портале LUIS не отображается правильный прогноз сущностей, может потребоваться добавить дополнительные фразы продолжительностью и пометить сущность в тексте или Добавить дескриптор (например, компонент).
 
-### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Я попытался импортировать приложение или файл версии, но я получил ошибку, что случилось?
+### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>При попытке импортировать файл приложения или версии возникла ошибка, что случилось?
 
-Подробнее об [ошибках импорта версий.](luis-how-to-manage-versions.md#import-errors)
+Дополнительные сведения об [ошибках импорта версий](luis-how-to-manage-versions.md#import-errors).
 
 <a name="luis-collaborating"></a>
 
-## <a name="collaborating-and-contributing"></a>Сотрудничество и содействие
+## <a name="collaborating-and-contributing"></a>Совместная работа и участие
 
 ### <a name="how-do-i-give-collaborators-access-to-luis-with-azure-active-directory-azure-ad-or-role-based-access-control-rbac"></a>Как предоставить доступ для участников совместной работы LUIS с Azure Active Directory (Azure AD) или управлять доступом на основе ролей (RBAC)?
 
@@ -84,30 +84,30 @@ ms.locfileid: "81530272"
 
 ## <a name="endpoint"></a>Конечная точка
 
-### <a name="i-received-an-http-403-error-status-code-how-do-i-fix-it"></a>Я получил код статуса ошибки HTTP 403. Как ее исправить?
+### <a name="i-received-an-http-403-error-status-code-how-do-i-fix-it"></a>Я получил код состояния ошибки HTTP 403. Как ее исправить?
 
-Вы получаете 403 и 429 кодов статуса ошибок, когда вы превышаете транзакции в секунду или транзакции в месяц для вашего ценового уровня. Увеличьте свой ценовой уровень или используйте [контейнеры](luis-container-howto.md)Language Understanding.
+Вы получаете коды состояния ошибок 403 и 429 при превышении числа транзакций в секунду или транзакций в месяц для ценовой категории. Увеличьте ценовую категорию или используйте [контейнеры](luis-container-howto.md)Language Understanding.
 
-Когда вы используете все эти бесплатные 1000 запросов конечных точек или превышаете ежемесячную квоту транзакций вашего ценового уровня, вы получаете код состояния ошибки HTTP 403.
+При использовании всех этих бесплатных запросов к конечной точке 1000 или превышении квоты месячных транзакций для ценовой категории вы получаете код состояния ошибки HTTP 403.
 
-Чтобы исправить эту ошибку, необходимо либо [изменить свой ценовой уровень](luis-how-to-azure-subscription.md#change-pricing-tier) на более высокий уровень, либо [создать новый ресурс](get-started-portal-deploy-app.md#create-the-endpoint-resource) и [назначить его приложению.](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal)
+Чтобы устранить эту ошибку, необходимо либо [изменить ценовую](luis-how-to-azure-subscription.md#change-pricing-tier) категорию на более высокий уровень, либо [создать новый ресурс](get-started-portal-deploy-app.md#create-the-endpoint-resource) и [назначить его приложению](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal).
 
-Решения для этой ошибки включают в себя:
+Ниже приведены решения для этой ошибки.
 
-* На [портале Azure](https://portal.azure.com)на ресурсе Language Understanding, на **уровне управления ресурсами - > уровне цен,** измените свой уровень ценообразования на более высокий уровень TPS. Вам не нужно ничего делать на портале Language Understanding, если ваш ресурс уже назначен в приложение Language Understanding.
-*  Если ваше использование превышает самый высокий ценовой уровень, добавьте больше ресурсов Language Understanding с балансером нагрузки перед ними. Контейнер [Language Understanding](luis-container-howto.md) с Kubernetes или Docker Compose может помочь в этом.
+* В [портал Azure](https://portal.azure.com)на ресурсе Language Understanding в **ценовой категории управление ресурсами — >** измените ценовую категорию на более высокий уровень технической спецификации. Вам не нужно ничего делать на портале Language Understanding, если ресурс уже назначен вашему Language Understanding приложению.
+*  Если вы превысили максимальную ценовую категорию, добавьте дополнительные Language Understanding ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер Language Understanding](luis-container-howto.md) с Kubernetes или DOCKER Compose.
 
-### <a name="i-received-an-http-429-error-status-code-how-do-i-fix-it"></a>Я получил код статуса ошибки HTTP 429. Как ее исправить?
+### <a name="i-received-an-http-429-error-status-code-how-do-i-fix-it"></a>Я получил код состояния ошибки HTTP 429. Как ее исправить?
 
-Вы получаете 403 и 429 кодов статуса ошибок, когда вы превышаете транзакции в секунду или транзакции в месяц для вашего ценового уровня. Увеличьте свой ценовой уровень или используйте [контейнеры](luis-container-howto.md)Language Understanding.
+Вы получаете коды состояния ошибок 403 и 429 при превышении числа транзакций в секунду или транзакций в месяц для ценовой категории. Увеличьте ценовую категорию или используйте [контейнеры](luis-container-howto.md)Language Understanding.
 
-Этот код состояния возвращается, когда транзакции в секунду превышают ваш ценовой уровень.
+Этот код состояния возвращается, если количество транзакций в секунду превышает вашу ценовую категорию.
 
-Решения включают в себя:
+Решения включают:
 
-* Вы можете [увеличить свой ценовой уровень,](luis-how-to-azure-subscription.md#change-pricing-tier)если вы не на самом высоком уровне.
-* Если ваше использование превышает самый высокий ценовой уровень, добавьте больше ресурсов Language Understanding с балансером нагрузки перед ними. Контейнер [Language Understanding](luis-container-howto.md) с Kubernetes или Docker Compose может помочь в этом.
-* Вы можете выполнить запросы клиентского приложения с [помощью политики повторной попытки,](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) которая вы реализуете самостоятельно, когда получите этот код статуса.
+* Вы можете [увеличить ценовую категорию](luis-how-to-azure-subscription.md#change-pricing-tier), если вы не на самом высшем уровне.
+* Если вы превысили максимальную ценовую категорию, добавьте дополнительные Language Understanding ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер Language Understanding](luis-container-howto.md) с Kubernetes или DOCKER Compose.
+* Вы можете настроить запрос клиентского приложения с помощью [политики повтора](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) , которая реализуется при получении этого кода состояния.
 
 ### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Запрос конечной точки вернул непредвиденные результаты.   Что следует делать?
 
@@ -123,10 +123,10 @@ ms.locfileid: "81530272"
 LUIS [помечает](luis-glossary.md#token) высказывание на основе [языка и региональных параметров](luis-language-support.md#tokenization). Исходное и помеченное значения можно использовать для [извлечения данных](luis-concept-data-extraction.md#tokenized-entity-returned).
 
 ### <a name="how-do-i-create-and-assign-a-luis-endpoint-key"></a>Как создать и назначить ключ конечной точки LUIS?
-[Создайте ключ конечной точки](luis-how-to-azure-subscription.md) в Azure для уровня вашей [службы](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Назначай ключ](luis-how-to-azure-subscription.md) на странице **[ресурсов Azure.](luis-how-to-azure-subscription.md)** Это действие можно выполнить с помощью любого API. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md).
+[Создайте ключ конечной точки](luis-how-to-azure-subscription.md) в Azure для уровня вашей [службы](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Назначьте ключ](luis-how-to-azure-subscription.md) на странице **[ресурсов Azure](luis-how-to-azure-subscription.md)** . Это действие можно выполнить с помощью любого API. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md).
 
 ### <a name="how-do-i-interpret-luis-scores"></a>Как интерпретировать оценки LUIS?
-В системе должно использоваться намерение с самой высокой оценкой, независимо от его значения. Например, оценка ниже 0,5 (меньше 50%) не означает, что данные LUIS имеют низкую степень достоверности. Предоставление дополнительных учебных данных может помочь увеличить [балл](luis-concept-prediction-score.md) наиболее вероятного намерения.
+В системе должно использоваться намерение с самой высокой оценкой, независимо от его значения. Например, оценка ниже 0,5 (меньше 50%) не означает, что данные LUIS имеют низкую степень достоверности. Предоставление дополнительных обучающих данных поможет увеличить [показатель](luis-concept-prediction-score.md) наиболее вероятной цели.
 
 ### <a name="why-dont-i-see-my-endpoint-hits-in-my-apps-dashboard"></a>Почему для меня недоступны обращения конечной точки на панели мониторинга приложения?
 Общее количество обращений конечной точки на панели мониторинга приложения периодически обновляется, но более часто обновляются показатели, связанные с ключом конечной точки LUIS на портале Azure.
@@ -144,7 +144,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ```
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>Вчера приложение LUIS работало, но сейчас отображаются ошибки 403. Я не изменял приложение. Как ее исправить?
-Следуйте этим [инструкциям,](#how-do-i-create-and-assign-a-luis-endpoint-key) чтобы создать ключ endpoint LUIS и назначить его приложению. Затем необходимо изменить запрос HTTP клиента на конечную точку, чтобы [использовать новый ключ конечных точек.](luis-concept-keys.md) Если вы создали новый ресурс в другом регионе, измените и область запроса клиента HTTP.
+Выполните эти [инструкции](#how-do-i-create-and-assign-a-luis-endpoint-key) , чтобы создать ключ КОНЕЧНОЙ точки Luis и назначить его приложению. Затем необходимо изменить HTTP-запрос клиентского приложения на конечную точку, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md). Если вы создали новый ресурс в другом регионе, измените регион запроса клиента HTTP.
 
 ### <a name="how-do-i-secure-my-luis-endpoint"></a>Как включить защиту конечной точки LUIS?
 Сведения об этом можно просмотреть в разделе [Защита конечной точки](luis-concept-keys.md#securing-the-endpoint).
@@ -152,7 +152,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ## <a name="working-within-luis-limits"></a>Работа в пределах ограничений LUIS
 
 ### <a name="what-is-the-maximum-number-of-intents-and-entities-that-a-luis-app-can-support"></a>Какое максимальное число намерений и сущностей, поддерживаемых приложением LUIS?
-Подробные сведения см. в разделе по [этой](luis-boundaries.md) ссылке.
+Подробные сведения см. в разделе по [этой](luis-limits.md) ссылке.
 
 ### <a name="i-want-to-build-a-luis-app-with-more-than-the-maximum-number-of-intents-what-should-i-do"></a>Я хочу создать приложение LUIS с количеством намерений, которое превышает допустимое количество.   Что следует делать?
 
@@ -163,10 +163,10 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 Подробнее см. в [этом](luis-concept-entity-types.md#if-you-need-more-than-the-maximum-number-of-entities) разделе с рекомендациями.
 
 ### <a name="what-are-the-limits-on-the-number-and-size-of-phrase-lists"></a>Какие ограничения на количество и размер списков фраз?
-Максимально полный [список фраз](./luis-concept-feature.md) см. в разделе по[этой](luis-boundaries.md) ссылке.
+Максимально полный [список фраз](./luis-concept-feature.md) см. в разделе по[этой](luis-limits.md) ссылке.
 
 ### <a name="what-are-the-limits-on-example-utterances"></a>Каковы ограничения на примеры высказываний?
-Подробные сведения см. в разделе по [этой](luis-boundaries.md) ссылке.
+Подробные сведения см. в разделе по [этой](luis-limits.md) ссылке.
 
 ## <a name="testing-and-training"></a>Обучение и тестирование
 
@@ -206,19 +206,19 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 ### <a name="how-do-i-know-what-key-i-need-where-i-get-it-and-what-i-do-with-it"></a>Как я узнаю, какой ключ мне нужен, где его получить и что мне с ним делать?
 
-Смотрите [клавиши конечных точек авторизации и запроса в LUIS,](luis-concept-keys.md) чтобы узнать о различиях между ключом авторизации и ключом выполнения прогноза.
+Сведения о различиях между ключом разработки и ключом среды выполнения прогнозирования см. [в разделе Создание и прогнозирование запросов в ключах конечных точек в Luis](luis-concept-keys.md) .
 
 ### <a name="i-got-an-error-about-being-out-of-quota-how-do-i-fix-it"></a>Я получил ошибку с сообщением об отсутствии квоты. Как ее исправить?
 
-Смотрите, исправить код статуса HTTP [403](#i-received-an-http-403-error-status-code-how-do-i-fix-it) и [429,](#i-received-an-http-429-error-status-code-how-do-i-fix-it) чтобы узнать больше.
+Дополнительные сведения см. в разделе Исправление кода состояния HTTP [403](#i-received-an-http-403-error-status-code-how-do-i-fix-it) и [429](#i-received-an-http-429-error-status-code-how-do-i-fix-it) .
 
 ### <a name="i-need-to-handle-more-endpoint-queries-how-do-i-do-that"></a>Мне нужно обрабатывать больше запросов конечной точки. Как это сделать?
 
-Смотрите, исправить код статуса HTTP [403](#i-received-an-http-403-error-status-code-how-do-i-fix-it) и [429,](#i-received-an-http-429-error-status-code-how-do-i-fix-it) чтобы узнать больше.
+Дополнительные сведения см. в разделе Исправление кода состояния HTTP [403](#i-received-an-http-403-error-status-code-how-do-i-fix-it) и [429](#i-received-an-http-429-error-status-code-how-do-i-fix-it) .
 
-### <a name="i-created-an-authoring-key-but-it-isnt-showing-in-the-luis-portal-what-happened"></a>Я создал авторский ключ, но он не отображается на портале LUIS. Что произошло?
+### <a name="i-created-an-authoring-key-but-it-isnt-showing-in-the-luis-portal-what-happened"></a>Я создал ключ разработки, но он не отображается на портале LUIS. Что произошло?
 
-Авторские ключи доступны на портале LUIS после [перехода к автору ключевого опыта.](luis-migration-authoring.md)
+Ключи разработки доступны на портале LUIS после [перехода на процесс создания ключа разработки](luis-migration-authoring.md).
 
 ## <a name="app-management"></a>Управление приложениями
 
@@ -311,25 +311,25 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 ## <a name="migrating-to-the-next-version"></a>Переход на следующую версию
 
-### <a name="how-do-i-migrate-to-preview-v3-api"></a>Как перенести для просмотра API V3?
+### <a name="how-do-i-migrate-to-preview-v3-api"></a>Разделы справки перейти на предварительную версию API V3?
 
-Смотрите [API v2 для v3 Миграция Руководство для приложений LUIS](luis-migration-api-v3.md)
+См. [инструкции по миграции для приложений Luis в API версии 2 и 3](luis-migration-api-v3.md)
 
-## <a name="build-2019-conference-announcements"></a>Объявления конференции «Строить 2019»
+## <a name="build-2019-conference-announcements"></a>Объявления о конференции для сборки 2019
 
-На конференции Build 2019 были опубликованы следующие функции:
+Следующие функции были выпущены на Конференции Build 2019:
 
-* [Предварительный просмотр руководства по миграции API V3](luis-migration-api-v3.md)
+* [Предварительная версия инструкции по миграции API V3](luis-migration-api-v3.md)
 * [Улучшенная панель мониторинга аналитики](luis-how-to-use-dashboard.md)
-* [Улучшенные предварительно построенные домены](luis-reference-prebuilt-domains.md)
-* [Объекты динамического списка](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time)
-* [Внешние субъекты](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
+* [Улучшенные предварительно созданные домены](luis-reference-prebuilt-domains.md)
+* [Сущности динамического списка](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time)
+* [Внешние сущности](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
 
 Видеоролики:
 
-* [Как использовать Azure Conversational AI для масштабирования бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
+* [Как использовать службу искусственного интеллекта Azure для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)

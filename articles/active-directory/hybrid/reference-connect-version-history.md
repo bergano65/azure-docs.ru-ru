@@ -8,16 +8,16 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 04/21/2020
+ms.date: 04/23/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1377023af9d4f153671f15e214516ac29536638
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.openlocfilehash: 7704a758f53b6ba26b1c9cf9e9e2811f533601f0
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82100079"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82112207"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -26,7 +26,7 @@ ms.locfileid: "82100079"
 
 В таблице ниже приведен список связанных разделов.
 
-Раздел |  Сведения
+Раздел |  Подробности
 --------- | --------- |
 Действия по переходу с Azure AD Connect | Различные методы [обновления предыдущей версии до последней версии](how-to-upgrade-previous-version.md) Azure AD Connect.
 Необходимые разрешения | Разрешения, необходимые для применения обновления, см. в разделе [учетные записи и разрешения](reference-connect-accounts-permissions.md#upgrade).
@@ -47,6 +47,14 @@ ms.locfileid: "82100079"
 >Если вы включили Azure AD Connect для синхронизации, скоро начнется получение уведомлений о работоспособности, которые предупреждают вас о предстоящих устаревании при использовании одной из предыдущих версий.
 >
 >Дополнительные сведения о том, как обновить Azure AD Connect до последней версии, см. в [этой статье](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-upgrade-previous-version) .
+
+## <a name="15290"></a>1.5.29.0
+
+### <a name="release-status"></a>Состояние выпуска
+04/23/2020: выпущено для скачивания
+
+### <a name="fixed-issues"></a>Исправленные проблемы
+Эта сборка исправления устраняет проблему, появившуюся в сборке 1.5.20.0, когда администратору клиента с MFA не удалось включить ДССО.
 
 ## <a name="15220"></a>1.5.22.0
 
@@ -192,8 +200,8 @@ ms.locfileid: "82100079"
 > Чтобы устранить эту проблему, необходимо импортировать модуль **AdSync** , а затем запустить командлет`Set-ADSyncDirSyncConfiguration` PowerShell на Azure AD Connect сервере.  Можно выполнить следующие действия.
 >
 >1. Откройте PowerShell в режиме администратора.
->2. Выполните `Import-Module "ADSync"`.
->3. Выполните `Set-ADSyncDirSyncConfiguration -AnchorAttribute ""`.
+>2. Выполните команду `Import-Module "ADSync"`.
+>3. Выполните команду `Set-ADSyncDirSyncConfiguration -AnchorAttribute ""`.
  
 ### <a name="release-status"></a>Состояние выпуска 
 
@@ -546,7 +554,7 @@ ms.locfileid: "82100079"
 *   Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF. При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
 *   Назначение указанных ниже специальных разрешений.
 
-Тип     | name                          | Доступ               | Применяется к
+Тип     | Название                          | Доступ               | Применяется к
 ---------|-------------------------------|----------------------|--------------|
 Allow    | SYSTEM                        | Полный доступ         | этому объекту  |
 Allow    | Администраторы предприятия             | Полный доступ         | этому объекту  |
@@ -571,7 +579,7 @@ Allow    | Прошедшие проверку пользователи         
 Set-ADSyncRestrictedPermissions -ObjectDN <$ObjectDN> -Credential <$Credential>
 ```
 
-Where 
+Где 
 
 **$ObjectDN** — это учетная запись Active Directory, для которой нужно настроить разрешения.
 
@@ -890,7 +898,7 @@ CBool(
     |CertFormat|CertNotAfter|CertPublicKeyOid|
     |CertSerialNumber|CertNotBefore|CertPublicKeyParametersOid|
     |CertVersion|CertSignatureAlgorithmOid|Выберите пункт|
-    |CertKeyAlgorithmParams|CertHashString|Where|
+    |CertKeyAlgorithmParams|CertHashString|Где|
     |||With|
 
 * Чтобы разрешить пользователям создавать пользовательские правила синхронизации для потока sAMAccountName, domainNetBios и domainFQDN для объектов-групп, а также distinguishedName для объектов-пользователей, были введены следующие изменения схемы:
@@ -1408,5 +1416,5 @@ Desktop SSO
 
 **Первоначальный выпуск Azure AD Sync.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

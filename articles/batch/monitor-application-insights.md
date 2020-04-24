@@ -1,22 +1,14 @@
 ---
-title: Мониторинг пакетной службы с помощью Azure Application Insights | Документация Майкрософт
+title: Мониторинг пакета с помощью Azure Application Insights
 description: Узнайте, как инструментировать приложение .NET пакетной службы Azure с помощью библиотеки Azure Application Insights.
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.assetid: ''
-ms.service: batch
-ms.devlang: .NET
 ms.topic: article
-ms.workload: na
 ms.date: 04/05/2018
-ms.author: labrenne
-ms.openlocfilehash: b1f4fb0207d4f659861dbd3fdfd1b2d502409935
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: ca8cde9b1838239a79ebca4efe43d9e619f80f12
+ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77022466"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82115471"
 ---
 # <a name="monitor-and-debug-an-azure-batch-net-application-with-application-insights"></a>Мониторинг и отладка приложения .NET пакетной службы Azure с помощью Application Insights
 
@@ -27,11 +19,11 @@ ms.locfileid: "77022466"
 Пример решения C# с кодом, который служит дополнением к этой статье, доступен в [GitHub](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/ApplicationInsights). В этом примере код инструментирования Application Insights добавляется в пример [TopNWords](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/TopNWords). Если вы не знакомы с этим примером, сначала создайте и запустите TopNWords. Это поможет вам получить представление о базовом рабочем процессе обработки набора входных больших двоичных объектов в параллельном режиме на нескольких вычислительных узлах в пакетной службе. 
 
 > [!TIP]
-> Также можно настроить в решении пакетной службы отображение данных из Application Insights, таких как счетчики производительности виртуальных машин в Batch Explorer. [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Загрузите [пакет для установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. См. [репозиторий batch-insights](https://github.com/Azure/batch-insights) с описанием быстрых действий, позволяющих включить данные Application Insights в Batch Explorer. 
+> Также можно настроить в решении пакетной службы отображение данных из Application Insights, таких как счетчики производительности виртуальных машин в Batch Explorer. [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Скачайте [пакет установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. См. [репозиторий batch-insights](https://github.com/Azure/batch-insights) с описанием быстрых действий, позволяющих включить данные Application Insights в Batch Explorer. 
 >
 
 ## <a name="prerequisites"></a>Предварительные требования
-* [Визуальная студия 2017 или более поздней](https://www.visualstudio.com/vs)
+* [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/vs)
 
 * [Учетная запись пакетной службы и связанная учетная запись хранения](batch-account-create-portal.md).
 
@@ -288,7 +280,7 @@ for (int i = 1; i <= topNWordsConfiguration.NumberOfTasks; i++)
 Настраиваемые метрики также являются полезным средством на портале. Например, можно отобразить среднее время, затраченное на каждом вычислительном узле для загрузки необходимого текстового файла, который он обрабатывал.
 
 Создание примера диаграммы
-1. На ресурсе Application Insights нажмите диаграмму **Metrics Explorer** > **Add.**
+1. В Application Insights ресурсе щелкните **Обозреватель метрик** > **Добавить диаграмму**.
 2. Нажмите кнопку **Изменить** на добавленной диаграмме.
 2. Обновите сведения диаграммы следующим образом:
    * Для параметра **Тип диаграммы** задайте значение **Сетка**.
@@ -341,7 +333,7 @@ pool.StartTask = new StartTask()
 Из-за особенностей крупномасштабных приложений пакетной службы Azure, работающих в рабочей среде, для управления затратами может потребоваться ограничить объем данных, собираемых Application Insights. Сведения о механизмах, с помощью которых этого можно добиться, см. в статье [Выборка в Application Insights](../azure-monitor/app/sampling.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения об [Application Insights](../azure-monitor/app/app-insights-overview.md).
 
 * Для поддержки Application Insights на других языках ознакомьтесь с [документацией по языкам, платформам и интеграции](../azure-monitor/app/platforms.md).
