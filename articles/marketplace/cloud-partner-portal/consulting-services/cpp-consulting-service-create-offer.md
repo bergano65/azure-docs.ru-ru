@@ -1,23 +1,23 @@
 ---
-title: Создайте консалтинговое предложение Лазурный рынок
-description: Создайте предложение консалтинговых услуг Azure or Dynamics 365 на портале облачных партнеров для Azure Marketplace.
+title: Создание предложения консультации | Azure Marketplace
+description: Создайте предложение службы консультационных услуг Azure или Dynamics 365 в Портал Cloud Partner для Azure Marketplace.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: ed744cfbb49393980c2622b00233fca373b32019
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: a9fbf402bb8de11ae0353ef05d2a526d686c5884
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985139"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148173"
 ---
-# <a name="create-a-consulting-offer"></a>Создание консалтингового предложения
+# <a name="create-a-consulting-offer"></a>Создание предложения консультации
 
 >[!Important]
->С 13 апреля 2020 года мы начнем перемещение управления предложениями консалтингового сервиса в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
+>Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями консультационной службы в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в статье [Обзор создания службы консалтинга](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-consulting-service-offer) , чтобы управлять перенесенными предложениями.
 
 В этой статье описывается, как создать и опубликовать предложение консультационных услуг.
 
@@ -33,9 +33,9 @@ ms.locfileid: "80985139"
 
     ![Создание нового предложения консультационных служб](media/cppselectnewconsultingoffer.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Страница **Новое предложение** для предложения консультационной услуги содержит вкладки и поля форм, которые будут использоваться для создания нового предложения. Перечисленные ниже статьи содержат описание использования вкладок, чтобы определить параметры предложения и сведения об интернет-магазине для нового предложения.
 
--    [Определите настройки предложения](./cpp-consulting-service-define-offer-settings.md)
+-    [Определение параметров предложения](./cpp-consulting-service-define-offer-settings.md)
 -    [Вкладка со сведениями об онлайн-магазине](./cpp-consulting-service-storefront-details.md)

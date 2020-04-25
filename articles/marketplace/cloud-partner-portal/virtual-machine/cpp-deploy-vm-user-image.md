@@ -1,5 +1,5 @@
 ---
-title: Развертывание VM Azure от пользователя VHD (ru) Лазурный рынок
+title: Развертывание виртуальной машины Azure из виртуального жесткого диска пользователя | Azure Marketplace
 description: В этой статье описывается развертывание пользовательского образа виртуального жесткого диска для создания экземпляра виртуальной машины Azure.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: dsindona
-ms.openlocfilehash: 79754b4ce7c3dfe2a5c549f4a39ef3160be423d8
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: e3bad2dc63f6a75f52c537aabfa6e85d1846ef15
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273893"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82147934"
 ---
 # <a name="deploy-an-azure-vm-from-a-user-vhd"></a>Развертывание виртуальной машины Azure из виртуального жесткого диска пользователя
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Чтобы управлять перенесенными предложениями, следуйте инструкциям в статье [сертификация образа виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-image-certification) .
 
 В этой статье описывается развертывание универсального образа виртуального жесткого диска для создания нового ресурса виртуальной машины Azure, используя указанный шаблон Azure Resource Manager и сценарий Azure PowerShell.
 
@@ -67,6 +67,6 @@ New-AzResourceGroupDeployment -Name "dplisvvm$postfix" -ResourceGroupName "$rgNa
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После развертывания виртуальной машины вы сможете [сертифицировать образ своей виртуальной машины](./cpp-certify-vm.md).

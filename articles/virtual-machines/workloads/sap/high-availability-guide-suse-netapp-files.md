@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 03/27/2020
+ms.date: 04/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 436e9c6b8bdff42680d7aa5b941822090f668855
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
-ms.translationtype: HT
+ms.openlocfilehash: 9cde457d36154a71970a159b1c247af7b37bae82
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82127631"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148178"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP
 
@@ -152,7 +152,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 4. Делегируйте подсеть в файлы Azure NetApp, как описано в [инструкциях делегирование подсети в Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet).  
 
-5. Разверните Azure NetApp Files тома, следуя [инструкциям по созданию тома для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes). Разверните тома в указанной [подсети](https://docs.microsoft.com/rest/api/virtualnetwork/subnets)Azure NetApp Files. Помните, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. В этом примере используются два Azure NetApp Files томов: SAP<b>Оценка качества</b> и транзакции. Пути к файлам, подключенные к соответствующим точкам подключения, —/усрсап<b>Оценка качества</b>/sapmnt<b>Оценка качества</b>,/усрсап<b>Оценка качества</b>/усрсап<b>Оценка качества</b>sys и т. д.  
+5. Разверните Azure NetApp Files тома, следуя [инструкциям по созданию тома для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes). Разверните тома в указанной [подсети](https://docs.microsoft.com/rest/api/virtualnetwork/subnets)Azure NetApp Files. IP-адреса томов NetApp для Azure назначаются автоматически. Помните, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. В этом примере используются два Azure NetApp Files томов: SAP<b>Оценка качества</b> и транзакции. Пути к файлам, подключенные к соответствующим точкам подключения, —/усрсап<b>Оценка качества</b>/sapmnt<b>Оценка качества</b>,/усрсап<b>Оценка качества</b>/усрсап<b>Оценка качества</b>sys и т. д.  
 
    1. Volume SAP<b>Оценка качества</b> (NFS://10.1.0.4/usrsap<b>Оценка качества</b>/sapmnt<b>Оценка качества</b>)
    2. Volume SAP<b>Оценка качества</b> (NFS://10.1.0.4/usrsap<b>Оценка качества</b>/усрсап<b>Оценка качества</b>ASCS)
@@ -1435,7 +1435,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_QAS_ERS01  (ocf::heartbeat:SAPInstance):   Started anftstsapcl1
    </code></pre>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Рекомендации по использованию SAP NW на виртуальных машинах Azure в SLES для приложений SAP с несколькими ИД безопасности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-multi-sid)
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]

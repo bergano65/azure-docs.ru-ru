@@ -1,5 +1,5 @@
 ---
-title: Подключение к базе данных Oracle
+title: Подключение к Oracle Database
 description: Вставляйте записи и управляйте ими с помощью интерфейсов REST API Oracle Database и Azure Logic Apps.
 services: logic-apps
 ms.suite: integration
@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 03/29/2017
 tags: connectors
-ms.openlocfilehash: 99abd48bde97c2a2e085688cdfbb365e5e4cfd56
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fdbf7fd7dded2fc0026e5c819ca579eeddc5cdb6
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74789432"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82147815"
 ---
 # <a name="get-started-with-the-oracle-database-connector"></a>Начало работы с соединителем базы данных Oracle
 
@@ -23,7 +23,7 @@ ms.locfileid: "74789432"
 
 В этой статье показано, как использовать соединитель базы данных Oracle в приложении логики.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Поддерживаемые версии Oracle: 
     * Oracle 9 и более поздних версий;
@@ -47,13 +47,13 @@ ms.locfileid: "74789432"
 > [!IMPORTANT]
 > Этот соединитель не содержит триггеров. В нем есть только действия. Поэтому при создании приложения логики следует добавить отдельный триггер для запуска приложения логики, например **Расписание — Периодичность** или **Запрос/ответ — Ответ**. 
 
-1. На [портале Azure](https://portal.azure.com)создайте пустое логическое приложение.
+1. В [портал Azure](https://portal.azure.com)создайте пустое приложение логики.
 
 2. Для запуска приложения логики выберите триггер **Запрос/ответ — Запрос**: 
 
     ![](./media/connectors-create-api-oracledatabase/request-trigger.png)
 
-3. Нажмите кнопку **Сохранить**. При сохранении данных автоматически создается URL-адрес запроса. 
+3. Щелкните **Сохранить**. При сохранении данных автоматически создается URL-адрес запроса. 
 
 4. Выберите **Новый шаг**, а затем — **Добавить действие**. Введите `oracle`, чтобы увидеть список доступных действий: 
 
@@ -72,7 +72,7 @@ ms.locfileid: "74789432"
 
     ![](./media/connectors-create-api-oracledatabase/table-rowid.png)
 
-7. На этом шаге в создаваемый рабочий процесс можно добавить любой другой соединитель. Если вам достаточно просто проверить получение данных из Oracle, отправьте полученные из Oracle данные себе по электронной почте, применив любой из соединителей отправки электронной почты, например Office 365 или Gmail. Используйте динамические маркеры из таблицы Oracle для формирования полей `Subject` и `Body` в сообщении электронной почты:
+7. На этом шаге в создаваемый рабочий процесс можно добавить любой другой соединитель. Если вы хотите проверить получение данных из Oracle, отправьте себе сообщение электронной почты с данными Oracle, используя один из соединителей отправки электронной почты, например Office 365 Outlook. Используйте динамические маркеры из таблицы Oracle для формирования полей `Subject` и `Body` в сообщении электронной почты:
 
     ![](./media/connectors-create-api-oracledatabase/oracle-send-email.png)
 
@@ -97,7 +97,7 @@ ms.locfileid: "74789432"
 
 **Устранение.** Убедитесь, что шлюз работает на локальной машине, где он установлен, и что он может подключаться к Интернету.Мы рекомендуем не устанавливать шлюза на компьютере, который может быть выключен или переведен в спящий режим.Можно также попытаться перезапустить локальную службу шлюза данных (PBIEgwService).
 
-#### <a name="error-the-provider-being-used-is-deprecated-systemdataoracleclient-requires-oracle-client-software-version-817-or-greater-see-httpsgomicrosoftcomfwlinkplinkid272376-to-install-the-official-provider"></a>**Ошибка.** Используемый поставщик является устаревшим: "System.Data.OracleClient требует версию клиента программного обеспечения Oracle 8.1.7 или более поздней версии.". Смотрите, [https://go.microsoft.com/fwlink/p/?LinkID=272376](https://go.microsoft.com/fwlink/p/?LinkID=272376) чтобы установить официальный провайдер.
+#### <a name="error-the-provider-being-used-is-deprecated-systemdataoracleclient-requires-oracle-client-software-version-817-or-greater-see-httpsgomicrosoftcomfwlinkplinkid272376-to-install-the-official-provider"></a>**Ошибка.** Используемый поставщик является устаревшим: "System.Data.OracleClient требует версию клиента программного обеспечения Oracle 8.1.7 или более поздней версии.". Сведения [https://go.microsoft.com/fwlink/p/?LinkID=272376](https://go.microsoft.com/fwlink/p/?LinkID=272376) об установке официального поставщика см. в разделе.
 
 **Причина.** На компьютере, где выполняется локальный шлюз данных, не установлен пакет SDK для клиента Oracle.  
 
@@ -123,8 +123,8 @@ ms.locfileid: "74789432"
 
 Мы рекомендуем посетить [форум, посвященный Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps), где вы сможете задать вопросы, помочь другим пользователям и узнать, что они делают. 
 
-Вы можете помочь улучшить логические приложения и разъемы, голосуя и представляя свои идеи на [https://aka.ms/logicapps-wish](https://aka.ms/logicapps-wish). 
+Вы можете улучшить Logic Apps и соединители, используя голосование и отправляя [https://aka.ms/logicapps-wish](https://aka.ms/logicapps-wish)свои идеи по адресу. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Создайте приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) и просмотрите в [списке интерфейсов API](apis-list.md) другие доступные соединители в Logic Apps.

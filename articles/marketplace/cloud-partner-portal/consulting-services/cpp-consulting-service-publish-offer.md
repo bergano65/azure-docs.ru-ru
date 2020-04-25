@@ -1,23 +1,23 @@
 ---
-title: Azure и Динамика 365 консалтинговые услуги предлагают публикации Лазурный рынок
-description: Опубликуйте предложение консалтинговых услуг Azure or Dynamics 365 на портале облачных партнеров для Azure Marketplace или AppSource.
+title: Публикация предложений консультационной службы Azure и Dynamics 365 | Azure Marketplace
+description: Опубликуйте предложение службы консультационных услуг Azure или Dynamics 365 в Портал Cloud Partner для Azure Marketplace или AppSource.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 3a06bae941c75e43a0e4ea2b66cc420e7a2467c3
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: c602bbee128c3338d841cb4564add26ba1c9e841
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985088"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82146631"
 ---
 # <a name="publish-a-consulting-service-offer"></a>Публикация предложения консультационных услуг
 
 >[!Important]
->С 13 апреля 2020 года мы начнем перемещение управления предложениями консалтингового сервиса в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
+>Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями консультационной службы в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в статье [Обзор создания службы консалтинга](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-consulting-service-offer) , чтобы управлять перенесенными предложениями.
 
 После заполнения строк **Параметры предложения**, **Сведения об онлайн-магазине** и **Контакты**, выберите **Опубликовать** и укажите адрес электронной почты. Когда корпорация Майкрософт будет готова опубликовать ваше предложение, вы получите по электронной почте сообщение для его предварительного просмотра перед запуском. В любой момент можно вернуться на портал, чтобы проверить состояние вашего предложения.
 
@@ -34,6 +34,6 @@ ms.locfileid: "80985088"
 * [Microsoft Dynamics CRM](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)
 * [Salesforce](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Продолжайте узнавать, как публиковать ваше предложение.

@@ -1,5 +1,5 @@
 ---
-title: Создание технических активов для виртуального предложения машины для Azure Marketplace
+title: Создание технических ресурсов для предложения виртуальной машины в Azure Marketplace
 description: В этой статье объясняется, как создать технические ресурсы для предложения виртуальной машине в Azure Marketplace.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/20/2018
 ms.author: dsindona
-ms.openlocfilehash: a62af1d8d751d36150c236280077cde8f6547385
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: c6ca017e18a83f0745140cba15d9c894e5a21c32
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273976"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148142"
 ---
 # <a name="create-technical-assets-for-a-virtual-machine-offer"></a>Создание технических ресурсов для предложения виртуальной машины
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем управление вашим предложением Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [создании технических активов Azure Virtual Machine](https://aka.ms/AzureVMTechAsset) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. мы начнем Управление виртуальными машинами Azure, предлагаемыми в центре партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в статье [Создание технических ресурсов виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-create-offer) для управления перенесенными предложениями.
 
 В этой статье описана процедура создания и настройки технических ресурсов для предложения виртуальной машины в Azure Marketplace.  Виртуальная машина содержит два компонента: виртуальный жесткий диск (VHD) решения и дополнительные связанные диски данных.  
 
@@ -37,7 +37,7 @@ ms.locfileid: "81273976"
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
-Проектирование, создание и тестирование этих ресурсов требует времени и технических знаний как платформы Azure, так и технологий, используемых для создания предложения. В дополнение к домену решения, ваша команда инженеров должна иметь знания о следующих технологиях Майкрософт: 
+Проектирование, сборка и тестирование этих ресурсов занимает время и требует технических знаний о платформе Azure и технологиях, используемых для создания предложения. Помимо домена решения, группа разработчиков должна иметь знания о следующих технологиях Майкрософт: 
 -    базовое представление о [службах Azure](https://azure.microsoft.com/services/); 
 -    умение [разработать приложения Azure](https://azure.microsoft.com/solutions/architecture/);
 -    опыт работы с [виртуальными машинами Azure](https://azure.microsoft.com/services/virtual-machines/), [службой хранилища Azure](https://azure.microsoft.com/services/?filter=storage) и [сетями Azure](https://azure.microsoft.com/services/?filter=networking);
@@ -62,7 +62,7 @@ ms.locfileid: "81273976"
 Мы также предлагаем проверить доступные средства на странице [Средства для разработчиков Azure](https://azure.microsoft.com/tools/) и, если вы используете Visual Studio, на странице [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В последующих статьях этого раздела рассматриваются шаги по созданию и регистрации таких ресурсов виртуальной машины:
 

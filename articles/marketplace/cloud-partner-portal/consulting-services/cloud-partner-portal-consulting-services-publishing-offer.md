@@ -1,5 +1,5 @@
 ---
-title: Предложение консалтинговых услуг Azure и Dynamics 365 Лазурный рынок
+title: Предложение консультационной службы Azure и Dynamics 365 | Azure Marketplace
 description: Руководство по определению и публикации предложения консультационных услуг Azure или Dynamics 365 на портале Cloud Partner.
 author: qianw211
 ms.service: marketplace
@@ -7,19 +7,19 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: dace05715828395aed3953b42bf7926df292bbdb
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: bdc2537d21fd88c677d07ebdb5170cdf14c7489d
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80981347"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82146703"
 ---
 # <a name="azure-and-dynamics-365-consulting-service-offer"></a>Предложение консультационных услуг в Dynamics 365 и Azure
 
 >[!Important]
->С 13 апреля 2020 года мы начнем перемещение управления предложениями консалтингового сервиса в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [обзоре создания консультационных служб](https://aka.ms/AzureCreateConsultingService) для управления мигрированными предложениями.
+>Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями консультационной службы в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в статье [Обзор создания службы консалтинга](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-consulting-service-offer) , чтобы управлять перенесенными предложениями.
 
-В этой статье описано, как публиковать предложения консультационной услуги в Microsoft <a href="https://azuremarketplace.microsoft.com">Azure Marketplace</a> или в <a href="https://appsource.microsoft.com">AppSource</a>. Решения на основе Microsoft <a href="https://dynamics.microsoft.com">Dynamics 365,</a> <a href="https://powerbi.microsoft.com">Power BI</a>и <a href="https://powerapps.microsoft.com">Power Apps</a> могут быть перечислены в AppSource. Предложения, основанные на других <a href="https://azure.microsoft.com/services">службах Microsoft Azure</a>, могут размещаться в Azure Marketplace.
+В этой статье описано, как публиковать предложения консультационной услуги в Microsoft <a href="https://azuremarketplace.microsoft.com">Azure Marketplace</a> или в <a href="https://appsource.microsoft.com">AppSource</a>. Решения на базе Microsoft <a href="https://dynamics.microsoft.com">Dynamics 365</a>, <a href="https://powerbi.microsoft.com">Power BI</a>и <a href="https://powerapps.microsoft.com">Power Apps</a> можно найти в AppSource. Предложения, основанные на других <a href="https://azure.microsoft.com/services">службах Microsoft Azure</a>, могут размещаться в Azure Marketplace.
 
 ## <a name="publishing-benefits"></a>Преимущества публикации
 
@@ -37,18 +37,18 @@ ms.locfileid: "80981347"
 - [Предварительные требования к консультационной услуге](./cpp-consulting-service-prerequisites.md) предлагают требования к публикации предложения консультационной услуги для:
  
     - Microsoft Azure.
-    - Динамика 365 Привлечение клиентов 
-    - Динамика 365 Финансовые & операции 
+    - Участие клиентов Dynamics 365 
+    - & финансовых операций Dynamics 365 
     - Dynamics 365 Customer Insights
     - Dynamics 365 Business Central 
     - Power BI 
     - Power Apps
     - Power Automate
 - [Создание предложения](./cpp-consulting-service-create-offer.md) предлагает шаги по созданию записи предложения консультационных услуг с помощью Портала Cloud Partner.
-    - [Определите настройки предложения.](./cpp-consulting-service-define-offer-settings.md)
-    - [Введите сведения о витринах магазинов и о том, следует ли публиковать их в Azure Marketplace или на AppSource.](./cpp-consulting-service-storefront-details.md)
+    - [Определите параметры предложения](./cpp-consulting-service-define-offer-settings.md).
+    - [Введите сведения о витрине и укажите, следует ли публиковать их в Azure Marketplace или на AppSource.](./cpp-consulting-service-storefront-details.md)
 - [Публикация предложения консультационных услуг](./cpp-consulting-service-publish-offer.md) описывается, как запустить предложения для публикации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Прежде чем выполнять эти действия по публикации предложения консультационных услуг, необходимо выполнить [предварительные требования](./cpp-consulting-service-prerequisites.md) для публикации предложения консультационных услуг.

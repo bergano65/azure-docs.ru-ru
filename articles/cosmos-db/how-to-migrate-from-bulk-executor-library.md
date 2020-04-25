@@ -1,96 +1,100 @@
 ---
-title: Миграция из библиотеки исполнителей навалом в объемную поддержку в Azure Cosmos DB .NET V3 SDK
-description: Узнайте, как перенести приложение с использования библиотеки исполнителей на массовую поддержку в Azure Cosmos DB SDK V3
+title: Миграция из библиотеки NET выполнителя в пакетную поддержку в Azure Cosmos DB пакете SDK для .NET v3
+description: Узнайте, как перенести приложение из использования библиотеки пакетного исполнителя в пакетную поддержку в Azure Cosmos DB SDK v3.
 author: ealsur
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/06/2020
+ms.date: 04/24/2020
 ms.author: maquaran
-ms.openlocfilehash: 820a5398d84122659b1676b7d5722bce08b1837d
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: d63b34c118cd719f73abbd6711dcb3ef02a6fb28
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80755974"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82146291"
 ---
-# <a name="migrate-from-the-bulk-executor-library-to-the-bulk-support-in-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки исполнителей навалом в объемную поддержку в Azure Cosmos DB .NET V3 SDK
+# <a name="migrate-from-the-bulk-executor-library-to-the-bulk-support-in-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки NET выполнителя в пакетную поддержку в Azure Cosmos DB пакете SDK для .NET v3
 
-В этой статье описаны необходимые шаги для переноса кода существующего приложения, использующее библиотеку исполнителей [.NET навалом](bulk-executor-dot-net.md) в функцию [поддержки навалом](tutorial-sql-api-dotnet-bulk-import.md) в последней версии .NET SDK.
+В этой статье описываются действия, необходимые для переноса кода существующего приложения, использующего [библиотеку .NET NET выполнителя](bulk-executor-dot-net.md) , в функцию [пакетной поддержки](tutorial-sql-api-dotnet-bulk-import.md) в последней версии пакета SDK для .NET.
 
-## <a name="enable-bulk-support"></a>Включить объемную поддержку
+## <a name="enable-bulk-support"></a>Включить поддержку групповой поддержки
 
-Включить объемную `CosmosClient` поддержку на экземпляре через конфигурацию [AllowBulkExecution:](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.allowbulkexecution)
+Включите поддержку групповой поддержки для `CosmosClient` экземпляра с помощью конфигурации [алловбулкексекутион](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.allowbulkexecution) :
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="Initialization":::
 
 ## <a name="create-tasks-for-each-operation"></a>Создание задач для каждой операции
 
-Массовая поддержка в .NET SDK работает за счет одновременного использования [параллельной библиотеки задач](https://docs.microsoft.com/dotnet/standard/parallel-programming/task-parallel-library-tpl) и операций по группировке. 
+Поддержка пакетной поддержки в пакете SDK для .NET осуществляется с помощью [параллельной библиотеки задач](https://docs.microsoft.com/dotnet/standard/parallel-programming/task-parallel-library-tpl) и операций группирования, выполняемых одновременно. 
 
-Не существует единого метода, который будет принимать список документов или операций в качестве параметра ввода, а, скорее, необходимо создать задачу для каждой операции, которую вы хотите выполнить оптом.
+В пакете SDK нет единственного метода, который будет принимать список документов или операций в качестве входного параметра, но вместо этого необходимо создать задачу для каждой операции, которую нужно выполнить в пакетном режиме, а затем просто дождаться их завершения.
 
-Например, если начальный ввод — это список элементов, в котором каждый элемент имеет следующую схему:
+Например, если начальным входом является список элементов, в котором каждый элемент имеет следующую схему:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="Model":::
 
-Если вы хотите сделать объем импорта (по аналогии с использованием BulkExecutor.BulkImportAsync), вам нужно иметь одновременные звонки `CreateItemAsync` с каждой стоимости элемента. Пример:
+Если требуется выполнить групповое импорт (аналогично использованию BulkExecutor. Булкимпортасинк), необходимо иметь одновременные вызовы `CreateItemAsync`. Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkImport":::
 
-Если вы хотите сделать массовое *обновление* (по аналогии с использованием [BulkExecutor.BulkUpdateAsync),](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkupdateasync)вы должны иметь одновременные звонки к методу `ReplaceItemAsync` после обновления значения элемента. Пример:
+Если требуется выполнить групповое *Обновление* (аналогично использованию [BulkExecutor. булкупдатеасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkupdateasync)), необходимо иметь одновременные вызовы `ReplaceItemAsync` метода после обновления значения элемента. Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkUpdate":::
 
-И если вы хотите сделать *объемное удаление* (по аналогии с использованием [BulkExecutor.BulkDeleteAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkdeleteasync)), вы должны иметь одновременные `DeleteItemAsync`звонки, с `id` и ключ раздела каждого элемента. Пример:
+Если вы хотите выполнить групповое *Удаление* (аналогично использованию [BulkExecutor. булкделетеасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkdeleteasync)), необходимо иметь одновременные вызовы `DeleteItemAsync`с ключом раздела `id` и для каждого элемента. Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkDelete":::
 
-## <a name="capture-task-result-state"></a>Состояние результата задачи захвата
+## <a name="capture-task-result-state"></a>Сохранить состояние результата задачи
 
-В предыдущих примерах кода вы создали параллельный список `CaptureOperationResponse` задач и назвали метод по каждой из этих задач. Этот метод является расширением, которое позволяет нам поддерживать *аналогичную схему ответа,* как BulkExecutor, путем захвата любых ошибок и отслеживания [использования единиц запроса.](request-units.md)
+В предыдущих примерах кода мы создали параллельный список задач и назвали `CaptureOperationResponse` метод для каждой из этих задач. Этот метод является расширением, позволяющим нам поддерживать *похожую схему ответа* как BulkExecutor, записывая все ошибки и отслеживая [Использование единиц запросов](request-units.md).
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="CaptureOperationResult":::
 
-Где `OperationResponse` объявлено:
+`OperationResponse` Где объявлен как:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="OperationResult":::
 
-## <a name="execute-operations-concurrently"></a>Выполнение операций одновременно
+## <a name="execute-operations-concurrently"></a>Выполнять операции одновременно
 
-После определения списка задач подождите, пока все они будут завершены. Вы можете отслеживать выполнение задач, определяя область объема операции, как показано в следующем фрагменте кода:
+Для трассировки области всего списка задач мы используем этот вспомогательный класс:
+
+   :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkOperationsHelper":::
+
+`ExecuteAsync` Метод будет ожидать завершения всех операций, и вы сможете использовать его следующим образом:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="WhenAll":::
 
-## <a name="capture-statistics"></a>Статистика захвата
+## <a name="capture-statistics"></a>Статистика записи
 
-Предыдущий код ждет завершения всех операций и вычисляет требуемую статистику. Эти статистические данные аналогичны статистике, которую можно сделать в [библиотеке BulkImportResponse.](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkimport.bulkimportresponse)
+Предыдущий код ожидает завершения всех операций и вычисляет необходимую статистику. Эти статистические данные похожи на [булкимпортреспонсе](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkimport.bulkimportresponse)библиотеки небольшого выполнителя.
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="ResponseType":::
 
-Содержит: `BulkOperationResponse`
+`BulkOperationResponse` Содержит:
 
-1. Общее время, заработавальное для обработки списка операций с помощью массовой поддержки.
+1. Общее время, затраченное на обработку списка операций с помощью группового поддержки.
 1. Количество успешных операций.
-1. Общее количество потребляемых единиц запросов.
-1. При сбоях отображается список подставных элементов, содержащих исключение и связанный с ним элемент для целей регистрации и идентификации.
+1. Общее количество потребленных единиц запросов.
+1. При наличии сбоев отображается список кортежей, содержащих исключение, и связанный элемент для ведения журнала и идентификации.
 
-## <a name="retry-configuration"></a>Конфигурация повтора
+## <a name="retry-configuration"></a>Настройка повторных попыток
 
-Массовая библиотека исполнителя имела [указания,](bulk-executor-dot-net.md#bulk-import-data-to-an-azure-cosmos-account) в `MaxRetryWaitTimeInSeconds` `MaxRetryAttemptsOnThrottledRequests` которых упоминалось `0` установить и [RetryOptions](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions) делегировать управление библиотеке.
+Библиотека полного Исполнительного исполнителя представила [рекомендации](bulk-executor-dot-net.md#bulk-import-data-to-an-azure-cosmos-account) по `MaxRetryWaitTimeInSeconds` установке `MaxRetryAttemptsOnThrottledRequests` и [RetryOptions](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions) для RetryOptions `0` в для делегирования управления библиотеке.
 
-Для массовой поддержки в .NET SDK нет скрытого поведения. Вы можете настроить варианты повтора непосредственно через [CosmosClientOptions.MaxRetryAttemptsOnRateLimitedRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretryattemptsonratelimitedrequests) и [CosmosClientOptions.MaxRetryWaitTimeOnRateLimitedRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretrywaittimeonratelimitedrequests).
+Для пакетной поддержки в пакете SDK для .NET нет скрытого поведения. Параметры повтора можно настроить непосредственно с помощью [космосклиентоптионс. максретряттемптсонрателимитедрекуестс](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretryattemptsonratelimitedrequests) и [космосклиентоптионс. MaxRetryWaitTimeOnRateLimitedRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretrywaittimeonratelimitedrequests).
 
 > [!NOTE]
-> В тех случаях, когда единицы подготовленных запросов значительно ниже ожидаемых на основе объема данных, можно рассмотреть возможность установления их на высокие значения. Основная операция займет больше времени, но она имеет более высокие шансы на полное успех из-за более высоких повторов.
+> В тех случаях, когда подготовленные единицы запроса значительно ниже, чем ожидалось, в зависимости от объема данных, может потребоваться задать для них высокие значения. Эта операция требует больше времени, но она имеет более высокую шансы на полное успешное завершение из-за более высоких повторных попыток.
 
 ## <a name="performance-improvements"></a>Повышение производительности
 
-Как и в случае с другими операциями с .NET SDK, использование Stream AIS приводит к повышению производительности и позволяет избежать ненужной сериализации. 
+Как и в случае с другими операциями с пакетом SDK для .NET, использование интерфейсов API потока приводит к повышению производительности и позволяет избежать ненужной сериализации. 
 
-Использование AIS потока возможно только в том случае, если характер данных, которые вы используете, совпадает с потоком байтов (например, потоки файлов). В таких случаях, `CreateItemStreamAsync` `ReplaceItemStreamAsync`используя `DeleteItemStreamAsync` , или методы и работать с `ResponseMessage` (вместо `ItemResponse`) увеличивает пропускную стоимость, которая может быть достигнута.
+Использование API-интерфейсов потока возможно только в том случае, если характер используемых данных соответствует потоку байтов (например, потокам файлов). В таких случаях `CreateItemStreamAsync`использование методов, `ReplaceItemStreamAsync`или `DeleteItemStreamAsync` и работы с `ResponseMessage` (а не `ItemResponse`) увеличивает пропускную способность, которую можно достичь.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Подробнее о выпусках .NET SDK можно узнать в статье [Azure Cosmos DB SDK.](sql-api-sdk-dotnet.md)
-* Получите полный [исходный код миграции](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration) от GitHub.
-* [Дополнительные объемные образцы на GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/BulkSupport)
+* Дополнительные сведения о выпусках пакета SDK для .NET см. в статье [Azure Cosmos DB SDK](sql-api-sdk-dotnet.md) .
+* Получите полный [Исходный код миграции](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration) с сайта GitHub.
+* [Дополнительные примеры для выполнения инструкций на GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/BulkSupport)

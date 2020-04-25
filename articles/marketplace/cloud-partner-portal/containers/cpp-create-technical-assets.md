@@ -1,5 +1,5 @@
 ---
-title: Создание технических активов изображений контейнеров Azure (фото) Лазурный рынок
+title: Создание ресурсов Azure с изображениями в виде контейнеров | Azure Marketplace
 description: Создание технических ресурсов для контейнера Azure.
 author: dsindona
 ms.service: marketplace
@@ -7,21 +7,21 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: dsindona
-ms.openlocfilehash: 1116bd03cf0ef734b74b387ff8f3cff74b29b215
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 68db606c9a01c4b1122f9b0cce620762485ca40a
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81270321"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148274"
 ---
 # <a name="prepare-your-container-technical-assets"></a>Подготовка технических ресурсов для контейнера
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления предложениями Azure Container в партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям по [подготовке технических активов Azure Container](https://aka.ms/CreateContainerTechAssets) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями контейнеров Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в статье [Подготовка технических ресурсов контейнеров Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-azure-container-offer) для управления перенесенными предложениями.
 
 В этой статье приведены инструкции по настройке предложения контейнера в Azure Marketplace и описаны требования к ней.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Ознакомьтесь с документацией по [Экземплярам контейнеров Azure](https://docs.microsoft.com/azure/container-instances), включающей руководства, примеры и другие материалы.
 
@@ -58,9 +58,9 @@ ms.locfileid: "81270321"
 
 Дополнительную информацию см. в следующих статьях:
 
-* [Учебник: Создание изображения контейнера для развертывания в экземплярах контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
-* [Учебник: Создание и развертывание изображений контейнеров в облаке с помощью задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
+* [Руководство. Создание образа контейнера для развертывания в службе "экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
+* [Руководство. Создание и развертывание образов контейнеров в облаке с помощью задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание предложения контейнера](./cpp-create-offer.md)

@@ -1,5 +1,5 @@
 ---
-title: Шаблон развертывания Azure VHD Лазурный рынок
+title: Шаблон развертывания виртуального жесткого диска Azure | Azure Marketplace
 description: Список шаблонов Azure Resource Manager, необходимых для развертывания новой виртуальной машины Azure из пользовательского виртуального жесткого диска.
 author: dsindona
 ms.service: marketplace
@@ -7,19 +7,19 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: dsindona
-ms.openlocfilehash: 506412c23288d58c2f59b91a300265ddd79428bf
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: f3e3dc6e0d73627f49ba04a8b861253bafcddfa9
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273925"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148050"
 ---
 # <a name="virtual-hard-disk-deployment-template"></a>Шаблон развертывания виртуального жесткого диска
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Чтобы управлять перенесенными предложениями, следуйте инструкциям в статье [сертификация образа виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-image-certification) .
 
-Следующий шаблон Azure Resource Manager определяет новый экземпляр виртуальной машины Azure, созданный из локального виртуального жесткого диска.  Этот шаблон используется в статье [Deploy an Azure VM from a user VHD](./cpp-deploy-vm-user-image.md) (Развертывание виртуальной машины Azure из пользовательского виртуального жесткого диска). 
+Следующий шаблон Azure Resource Manager определяет новый экземпляр виртуальной машины Azure, созданный из локального виртуального жесткого диска.  Этот шаблон используется в статье [Deploy an Azure VM from a user VHD](./cpp-deploy-vm-user-image.md) (Развертывание виртуальной машины Azure из пользовательского виртуального жесткого диска).
 
 ```json
 {

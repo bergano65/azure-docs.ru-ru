@@ -1,5 +1,5 @@
 ---
-title: Общие проблемы при создании VHD (Часто задаваемые вопросы) для рынка Azure
+title: Распространенные проблемы при создании VHD (часто задаваемые вопросы) для Azure Marketplace
 description: Часто задаваемые вопросы о создании виртуального жесткого диска и связанные с ним проблемы.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/02/2018
 ms.author: dsindona
-ms.openlocfilehash: 988121effb35949cce442ba9458789105e88feec
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: df219ad7428eed5283c7a30a232308dca84fd25f
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273449"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82146973"
 ---
 # <a name="common-issues-during-vhd-creation-faq"></a>Распространенные проблемы при создании виртуального жесткого диска. Вопросы и ответы
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create VHD часто задаваемые вопросы](https://aka.ms/VHDcreationIssues) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Чтобы управлять перенесенными предложениями, следуйте инструкциям в статье [Создание вопросов и ответов виртуальных жестких дисков](https://docs.microsoft.com/azure/marketplace/partner-center-portal/common-issues-during-vhd-creation) .
 
 Следующие часто задаваемые вопросы охватывают общие проблемы, возникающие во время создания виртуальных жестких дисков (VHD) и виртуальных машин для предложений виртуальных машин. 
 
@@ -52,7 +52,7 @@ Azure Marketplace в настоящее время не поддерживает
 ## <a name="how-do-you-configure-a-virtual-private-network-vpn-to-work-with-my-vms"></a>Как настроить виртуальную частную сеть (VPN) для работы с моими виртуальными машинами?
 
 Если вы используете модель развертывания Azure Resource Manager, то у вас есть три общих варианта настройки VPN:
-- [Создание VPN-шлюза на основе маршрутов с помощью портала Azure](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-portal)
+- [Создание VPN-шлюза на основе маршрутов с помощью портал Azure](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-portal)
 - [Создание VPN-шлюза на основе маршрутов с помощью PowerShell](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-powershell)
 - [Создание VPN-шлюза на основе маршрута с помощью CLI](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-cli)
 

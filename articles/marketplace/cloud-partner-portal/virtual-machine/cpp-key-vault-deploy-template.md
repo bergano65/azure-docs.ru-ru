@@ -1,5 +1,5 @@
 ---
-title: Шаблон развертывания Azure Key Vault Лазурный рынок
+title: Шаблон развертывания Azure Key Vault | Azure Marketplace
 description: Содержит шаблон Azure Resource Manager, необходимый для развертывания нового экземпляра Azure Key Vault.
 author: dsindona
 ms.service: marketplace
@@ -7,19 +7,19 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: dsindona
-ms.openlocfilehash: 0d08caf5444216666e7296b830f0af6af606dd4f
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: a6e7260bb761db5cfa6884baf29317a004ab1452
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273840"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82147026"
 ---
 # <a name="key-vault-deployment-template"></a>Шаблон развертывания Key Vault
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Чтобы управлять перенесенными предложениями, следуйте инструкциям в статье [сертификация образа виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-image-certification) .
 
-Следующий шаблон Azure Resource Manager определяет новый экземпляр Azure Key Vault.  Он используется в статье [Create certificates for Azure Key Vault](cpp-create-key-vault-cert.md) (Создание сертификата для Azure Key Vault). 
+Следующий шаблон Azure Resource Manager определяет новый экземпляр Azure Key Vault.  Он используется в статье [Create certificates for Azure Key Vault](cpp-create-key-vault-cert.md) (Создание сертификата для Azure Key Vault).
 
 ```json
 {

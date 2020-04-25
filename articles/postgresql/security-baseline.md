@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: a38bb12577fd646b2e7abf773dbb2a3f138f58fe
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
-ms.translationtype: HT
+ms.openlocfilehash: eb6fc65d15ba7262b38a48e220f01d74bfcee54a
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82127552"
+ms.locfileid: "82146559"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql-single-server"></a>Базовый уровень безопасности Azure для сервера базы данных Azure для PostgreSQL
 
@@ -130,7 +130,7 @@ ms.locfileid: "82127552"
 
 - Стандарт Защиты от атак DDoS должен быть включен.
 
-- Для серверов баз данных PostgreSQL должно быть включено принудительное использование SSL-соединения
+- Необходимо включить подключение TLS для серверов базы данных PostgreSQL
 
 Как настроить политику Azure и управлять ей:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -525,7 +525,7 @@ ms.locfileid: "82127552"
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: шифрование всех конфиденциальных данных во время передачи
 
-**Руководство**. база данных Azure для PostgreSQL поддерживает подключение сервера PostgreSQL к клиентским приложениям с помощью SSL (SSL). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением. В портал Azure убедитесь, что по умолчанию включено "принудительное подключение SSL" для всех экземпляров базы данных Azure для PostgreSQL.
+**Руководство**. база данных Azure для PostgreSQL поддерживает подключение сервера PostgreSQL к клиентским приложениям с помощью протокола TLS, ранее известного как SSL (SSL). Применение TLS соединений между сервером базы данных и клиентскими приложениями помогает защититься от атак "злоумышленник в середине" путем шифрования потока данных между сервером и приложением. В портал Azure убедитесь, что по умолчанию включено "принудительное подключение SSL" для всех экземпляров базы данных Azure для PostgreSQL.
 
 Сейчас версия TLS, поддерживаемая для базы данных Azure для PostgreSQL, — это TLS 1,0, TLS 1,1, TLS 1,2.
 
@@ -794,7 +794,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для экземпляров базы данных Azure для PostgreSQL с помощью политики Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Дбфорпостгрескл, чтобы создать настраиваемые политики для аудита или принудительно применить конфигурацию сети для экземпляров базы данных Azure для PostgreSQL. Вы также можете использовать встроенные определения политик, связанные с экземплярами базы данных Azure для PostgreSQL, например:
 
-- Для серверов баз данных PostgreSQL должно быть включено принудительное использование SSL-соединения
+- Необходимо включить подключение TLS для серверов базы данных PostgreSQL
 
 - На серверах баз данных PostgreSQL должны быть включены журналы подключений
 
@@ -1105,7 +1105,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Ответственность**: Общая
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

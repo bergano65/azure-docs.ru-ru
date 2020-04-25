@@ -1,5 +1,5 @@
 ---
-title: Создайте предложение контейнеров Azure (ru) Лазурный рынок
+title: Создание предложения контейнеров Azure | Azure Marketplace
 description: Как опубликовать новое предложение контейнеров в Marketplace.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: dsindona
-ms.openlocfilehash: 25d678ad7b8c2b786239b294de873bc1d98fa5cb
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: a7266d0f32a8ac18a4a76dee7eb3c39be253f7bd
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81270338"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148285"
 ---
 # <a name="create-a-new-container-offer-with-the-cloud-partner-portal"></a>Создайте новое предложение контейнеров с помощью Портала Cloud Partner.
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления предложениями Azure Container в партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [предложении Create an Azure Container](https://aka.ms/CreateContainerOffer) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями контейнеров Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в разделе [Создание предложения контейнера Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-azure-container-offer) для управления перенесенными предложениями.
 
 В этой статье описывается, как создать и опубликовать запись предложения контейнеров для Azure Marketplace. Каждое предложение отображается в виде отдельной сущности в Azure Marketplace и связывается с одним или несколькими номерами SKU.  Предложение контейнеров включает следующие группы ресурсов и вспомогательные службы.
 
@@ -34,7 +34,7 @@ ms.locfileid: "81270338"
 
 ![Выбор параметра контейнеров для нового предложения](./media/azure-container-offer.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Страница **Новое предложение** для предложения контейнеров предоставляет набор вкладок и полей форм, которые будут использоваться для создания нового предложения. В каждой из перечисленных ниже статей описано, как использовать вкладку, чтобы определить группы ресурсов и вспомогательные службы для нового предложения контейнеров.
 

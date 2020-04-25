@@ -1,18 +1,18 @@
 ---
 title: Общие сведения о маршрутизации содержимого на основе URL-адресов с помощью службы "Шлюз приложений Azure"
-description: В этой статье приводится обзор маршрутизации содержимого url-адресов Azure Application Gateway, конфигурации UrlPathMap и правила PathBasedRouting.
+description: В этой статье представлен обзор маршрутизации содержимого на основе URL-адресов шлюза приложений Azure, конфигурации UrlPathMap и правила PathBasedRouting.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.date: 09/10/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: e20acb131b1a091fef858dab34705f4a8d3b4c4a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1d393055b0ac62198bd5a7239b2b92b7aeff62e5
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77251844"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82145365"
 ---
 # <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
 
@@ -27,7 +27,7 @@ ms.locfileid: "77251844"
 Запросы для http\://contoso.com/video/* направляются в VideoServerPool, а запросы для http\://contoso.com/images/* — в ImageServerPool. Если ни один из шаблонов пути не подходит, выбирается пул DefaultServerPool.
 
 > [!IMPORTANT]
-> Для V1 SKU правила обрабатываются в порядке, указанном на портале. Если базовый прослушиватель стоит первым в списке и совпадает с входящим запросом, он будет обрабатываться прослушивателем. Для v2 SKU точные матчи имеют более высокий приоритет. Тем не менее, настоятельно рекомендуется настроить многоузловых слушателей, прежде чем настроить основной слушатель. Это гарантирует, что трафик будет перенаправляться на правильный внутренний сервер.
+> Для номера SKU v1 правила обрабатываются в том порядке, в котором они указаны на портале. Если базовый прослушиватель стоит первым в списке и совпадает с входящим запросом, он будет обрабатываться прослушивателем. Для SKU версии 2 точные совпадения имеют более высокий приоритет. Однако настоятельно рекомендуется настроить многосайтовые прослушиватели, прежде чем настраивать базовый прослушиватель. Это гарантирует, что трафик будет перенаправляться на правильный внутренний сервер.
 
 ## <a name="urlpathmap-configuration-element"></a>Элемент конфигурации UrlPathMap
 
@@ -113,14 +113,14 @@ PathPattern — это список шаблонов пути для сопос
         "id": "/subscriptions/{subscriptionId}/../microsoft.network/applicationGateways/{gatewayName}/httpListeners/<listenerName>"
     },
     "urlPathMap": {
-        "id": "/subscriptions/{subscriptionId}/../microsoft.network/applicationGateways/{gatewayName}/ urlPathMaps/{urlpathMapName}"
-    },
+        "id": "/subscriptions/{subscriptionId}/../microsoft.network/applicationGateways/{gatewayName}/urlPathMaps/{urlpathMapName}"
+    }
 
 }
     }
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомившись с маршрутизацией на основе URL-адресов, создайте шлюз приложений с соответствующими правилами маршрутизации, как указано в статье о [создании шлюза приложений с помощью маршрутизации на основе URL-адресов](create-url-route-portal.md) .

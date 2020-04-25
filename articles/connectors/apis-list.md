@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 04/24/2020
-ms.openlocfilehash: 9723fc3ab68785c6e444647f427fcf9788792cea
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 27f86a3fa34f8029e59d11066de9ea5a25a8c5ad
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82115692"
+ms.locfileid: "82147978"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -48,9 +48,6 @@ ms.locfileid: "82115692"
 
   Соединители классифицируются как Standard или Enterprise. [Корпоративные соединители](#enterprise-connectors) предоставляют доступ к корпоративным системам, таким как SAP, IBM MQ и IBM 3270, за дополнительную плату. Чтобы определить, является ли соединитель стандартным или корпоративным, ознакомьтесь с техническими сведениями на справочной странице каждого соединителя в разделе " [Общие сведения о соединителях](https://docs.microsoft.com/connectors)".
 
-  > [!IMPORTANT]
-  > Начиная с **1 мая 2020**г. изменения, внесенные Google в свои [политики безопасности и конфиденциальности](https://www.blog.google/technology/safety-security/project-strobe/) , могут повлиять на приложения логики, использующие [соединитель Gmail](https://docs.microsoft.com/connectors/gmail/). Если приложения логики используют соединитель Gmail с учетной записью потребителя Gmail (адрес электронной почты, @gmail.com который @googlemail.comзаканчивается на или), приложения логики могут использовать только утвержденные Google триггеры, действия и соединители. Начиная с **15 июня 2020**, все несоответствующие рабочие процессы будут отключены. Дополнительные сведения см. [в разделе политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
-
   Можно также выявление соединителей с помощью этих категорий, хотя некоторые соединители могут пересекаться с несколькими категориями. Например, SAP — это соединитель предприятия и локальный Соединитель:
 
   |   |   |
@@ -59,6 +56,9 @@ ms.locfileid: "82115692"
   | [**Локальные соединители**](#on-premises-connectors) | После установки и настройки [локального шлюза данных][gateway-doc] эти соединители помогают приложениям логики получать доступ к локальным системам, таким как SQL Server, SharePoint Server, Oracle DB, общие файловые ресурсы и другие. |
   | [**Соединители для учетной записи интеграции**](#integration-account-connectors) | Доступные при создании и оплате учетной записи интеграции. Эти соединители преобразуют и проверяют XML, кодируют и декодируют неструктурированные файлы, а также обрабатывают сообщения типа "бизнес-бизнес" (B2B) с помощью протоколов AS2, EDIFACT и X12. |
   |||
+
+  > [!IMPORTANT]
+  > Если вы хотите использовать соединитель Gmail, только бизнес-учетные записи G-Suite могут использовать этот соединитель без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с конкретными утвержденными Google службами или [создать клиентское приложение Google для проверки подлинности с помощью соединителя Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. [в разделе политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
 <a name="integration-service-environment"></a>
 

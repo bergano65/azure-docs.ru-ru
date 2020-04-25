@@ -1,5 +1,5 @@
 ---
-title: Создание сертификата Убежища ключей Azure (ru) Лазурный рынок
+title: Создание сертификата Azure Key Vault | Azure Marketplace
 description: Здесь описано, как зарегистрировать виртуальную машину из виртуального жесткого диска, развернутого в Azure.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: dsindona
-ms.openlocfilehash: 09e82b9905104df9b1902b0f64f6cfdf812aabb8
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 9981f8eda174bbe04b54933528d20d270d360824
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81274027"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148257"
 ---
 # <a name="create-certificates-for-azure-key-vault"></a>Создание сертификатов для Azure Key Vault
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Чтобы управлять перенесенными предложениями, следуйте инструкциям в статье [сертификация образа виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-image-certification) .
 
 В этой статье объясняется, как подготовить к работе самозаверяющие сертификаты, необходимые для установки подключения службы удаленного управления Windows (WinRM) к размещенной в Azure виртуальной машине (ВМ). Эта процедура состоит из трех шагов:
 
@@ -79,7 +79,7 @@ ms.locfileid: "81274027"
 
 ## <a name="create-the-key-vault"></a>Создание хранилища ключей
 
-Скопируйте содержимое [шаблона развертывания хранилища ключей](./cpp-key-vault-deploy-template.md) в файл на локальном компьютере. (в приведенном ниже примере `C:\certLocation\keyvault.json`сценарий— «этот ресурс.  Отспособите и запустите следующий скрипт Azure Powershell для создания экземпляра Azure Key Vault и связанной с ними группы ресурсов.  Необходимо заменить значения для следующих параметров:
+Скопируйте содержимое [шаблона развертывания хранилища ключей](./cpp-key-vault-deploy-template.md) в файл на локальном компьютере. (в приведенном ниже примере скрипта это ресурс `C:\certLocation\keyvault.json`.)  Измените и выполните следующий сценарий Azure PowerShell, чтобы создать экземпляр Azure Key Vault и связанную с ним группу ресурсов.  Необходимо заменить значения для следующих параметров:
 
 |  **Параметр**        |   **Описание**                                                               |
 |  -------------        |   ---------------                                                               |
@@ -215,6 +215,6 @@ ms.locfileid: "81274027"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Далее следует [развернуть виртуальную машину из образа ВМ пользователя](./cpp-deploy-vm-user-image.md).
