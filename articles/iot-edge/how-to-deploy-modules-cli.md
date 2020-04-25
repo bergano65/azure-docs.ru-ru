@@ -1,6 +1,6 @@
 ---
-title: Развертывание модулей из командной строки Azure CLI - Azure IoT Edge
-description: Используйте Azure CLI с расширением Azure IoT, чтобы подтолкнуть модуль IoT Edge от концентратора IoT на устройство IoT Edge, настроенный манифестом развертывания.
+title: Развертывание модулей из Azure CLI командной строки Azure IoT Edge
+description: Используйте Azure CLI с расширением Azure IoT, чтобы отправить модуль IoT Edge из центра Интернета вещей на устройство IoT Edge, настроенное манифестом развертывания.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 619ba7cb2d99e0137fd1834096dd5b66ffcd6ec9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: fbd0d65624852737c424128e9125b8370b870d4d
+ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80240381"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82133944"
 ---
 # <a name="deploy-azure-iot-edge-modules-with-azure-cli"></a>Развертывание модулей IoT Edge Azure с помощью интерфейса командной строки Azure
 
@@ -22,14 +22,14 @@ ms.locfileid: "80240381"
 
 [Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это кроссплатформенная программа командной строки с открытым кодом для управления ресурсами Azure (например, IoT Edge). Она позволяет управлять ресурсами Центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными концентраторами без дополнительной настройки. Новое расширение Интернета вещей расширяет функции интерфейса командной строки Azure (например, функция управления устройствами) и добавляет возможности IoT Edge.
 
-В этой статье показано, как создать манифест развертывания JSON и применить этот файл для отправки этого развертывания на устройство IoT Edge. Информацию о создании развертываний, предназначенных для нескольких устройств с определенными значениями тегов, см. в разделе [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor-cli.md)
+В этой статье показано, как создать манифест развертывания JSON и применить этот файл для отправки этого развертывания на устройство IoT Edge. Информацию о создании развертываний, предназначенных для нескольких устройств с определенными значениями тегов, см. в разделе [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-cli-at-scale.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* [Концентратор IoT](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure.
+* [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure.
 * [Устройство IoT Edge](how-to-register-device.md#register-with-the-azure-cli) с установленной средой выполнения IoT Edge.
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Как минимум, ваша версия Azure CLI должна быть 2.0.70 или выше. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
-* [Расширение IoT для Azure CLI.](https://github.com/Azure/azure-iot-cli-extension)
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
+* [Расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
 
@@ -120,7 +120,7 @@ ms.locfileid: "80240381"
    az iot edge set-modules --device-id [device id] --hub-name [hub name] --content [file path]
    ```
 
-Параметр идентификатора устройства чувствителен к случаям. Параметр content указывает на сохраненный ранее файл манифеста развертывания.
+В параметре идентификатора устройства учитывается регистр. Параметр content указывает на сохраненный ранее файл манифеста развертывания.
 
    ![Выходные данные команды az iot edge set-modules](./media/how-to-deploy-cli/set-modules.png)
 
@@ -134,10 +134,10 @@ ms.locfileid: "80240381"
    az iot hub module-identity list --device-id [device id] --hub-name [hub name]
    ```
 
-Параметр идентификатора устройства чувствителен к случаям.
+В параметре идентификатора устройства учитывается регистр.
 
    ![Выходные данные команды az iot hub module-identity list](./media/how-to-deploy-cli/list-modules.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Изучите раздел [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md)
+Изучите раздел [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-at-scale.md)

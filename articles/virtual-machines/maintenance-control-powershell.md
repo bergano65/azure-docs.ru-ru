@@ -1,66 +1,39 @@
 ---
-title: Управление обслуживанием виртуальных машин Azure с использованием PowerShell
-description: Узнайте, как управлять, когда техническое обслуживание применяется к вашим VMs-вам Azure, используя управление обслуживанием и PowerShell.
+title: Управление обслуживанием для виртуальных машин Azure с помощью PowerShell
+description: Узнайте, как управлять применением обслуживания к виртуальным машинам Azure с помощью управления обслуживанием и PowerShell.
 author: cynthn
 ms.service: virtual-machines
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: cynthn
-ms.openlocfilehash: dc47afe9cb6eca1b10f8caca7b85087023c5eadf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b1c72c2f606ab653d7e3f1d81f7278571e8e4978
+ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80060136"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82136538"
 ---
-# <a name="preview-control-updates-with-maintenance-control-and-azure-powershell"></a>Предварительный просмотр: Управление обновлениями с помощью управления обслуживанием и Azure PowerShell
+# <a name="control-updates-with-maintenance-control-and-azure-powershell"></a>Управление обновлениями с помощью управления обслуживанием и Azure PowerShell
 
-Управление обновлениями платформы, которые не требуют перезагрузки, с помощью управления обслуживанием. Azure часто обновляет свою инфраструктуру для повышения надежности, производительности, безопасности или запуска новых функций. Большинство обновлений являются прозрачными для пользователей. Некоторые чувствительные рабочие нагрузки, такие как игры, потоковое воспроизведение мультимедиа и финансовые операции, не могут допустить даже нескольких секунд замораживания или отключения VM для обслуживания. Управление обслуживанием дает вам возможность ждать обновления платформы и применять их в течение 35-дневного прокатного окна. 
+Управление обслуживанием позволяет решить, когда следует применять обновления к изолированным виртуальным машинам и выделенным узлам Azure. В этом разделе рассматриваются параметры Azure PowerShell для управления обслуживанием. Дополнительные сведения о преимуществах использования управления обслуживанием, его ограничений и других параметров управления см. [в разделе Управление обновлениями платформы с помощью управления обслуживанием](maintenance-control.md).
+ 
+## <a name="enable-the-powershell-module"></a>Включение модуля PowerShell
 
-Управление обслуживанием позволяет решать, когда следует применять обновления для изолированных ВМ.
-
-С помощью управления обслуживанием, вы можете:
-- Обновления пакета в один пакет обновлений.
-- Подождите до 35 дней, чтобы применить обновления. 
-- Автоматируйте обновления платформы для окна обслуживания с помощью функций Azure.
-- Конфигурации обслуживания работают между подписками и группами ресурсов. 
-
-> [!IMPORTANT]
-> Управление обслуживанием в настоящее время находится в общедоступном предварительном просмотре.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-> 
-
-## <a name="limitations"></a>Ограничения
-
-- VMs должны быть на [выделенном хосте](./linux/dedicated-hosts.md)или быть созданы с использованием [изолированного размера VM.](./linux/isolation.md)
-- Через 35 дней обновление будет автоматически применено.
-- Пользователь должен иметь доступ **к ресурсу.**
-
-
-## <a name="enable-the-powershell-module"></a>Включить модуль PowerShell
-
-Убедитесь, что `PowerShellGet` в актуальном состоянии.
+Убедитесь, `PowerShellGet` что оно не устарело.
 
 ```azurepowershell-interactive
 Install-Module -Name PowerShellGet -Repository PSGallery -Force
 ```
 
-Смлеты Az.Maintenance PowerShell находятся в предварительном просмотре, поэтому необходимо установить модуль с `AllowPrerelease` параметром в Облачной оболочке или локальной установке PowerShell.   
+Если выполняется локальная установка, убедитесь, что вы откроете командную строку PowerShell с правами администратора.
 
-```azurepowershell-interactive
-Install-Module -Name Az.Maintenance -AllowPrerelease
-```
-
-Если вы устанавливаете локально, убедитесь, что вы открываете запрос PowerShell в качестве администратора.
-
-Вас также могут попросить подтвердить, что вы хотите установить из *ненадежного репозитория.* Для `Y` установки модуля введите или выберите **«Да для всех».**
-
+Вам также может быть предложено подтвердить установку из *ненадежного репозитория*. Введите `Y` или выберите **Да для всех** , чтобы установить модуль.
 
 
 ## <a name="create-a-maintenance-configuration"></a>Создание конфигурации обслуживания
 
-Создайте группу ресурсов в качестве контейнера для конфигурации. В этом примере в *Eastus*создается ресурсная группа под названием *myMaintenanceRG.* Если у вас уже есть группа ресурсов, которую вы хотите использовать, вы можете пропустить эту часть и заменить имя группы ресурсов на свой собственный в остальных примерах.
+Создайте группу ресурсов в качестве контейнера для вашей конфигурации. В этом примере в *eastus*создается группа ресурсов с именем *мимаинтенанцерг* . Если у вас уже есть группа ресурсов, которую вы хотите использовать, можно пропустить эту часть и заменить имя группы ресурсов своим владельцем в остальных примерах.
 
 ```azurepowershell-interactive
 New-AzResourceGroup `
@@ -68,7 +41,7 @@ New-AzResourceGroup `
    -Name myMaintenanceRG
 ```
 
-Используйте [New-AzMaintenanceConfiguration](https://docs.microsoft.com/powershell/module/az.maintenance/new-azmaintenanceconfiguration) для создания конфигурации обслуживания. Этот пример создает конфигурацию обслуживания под названием *myConfig,* прицелваемую для узла. 
+Используйте [New-азмаинтенанцеконфигуратион](https://docs.microsoft.com/powershell/module/az.maintenance/new-azmaintenanceconfiguration) для создания конфигурации обслуживания. В этом примере создается конфигурация обслуживания с именем *myConfig* , областью действия которой является узел. 
 
 ```azurepowershell-interactive
 $config = New-AzMaintenanceConfiguration `
@@ -78,23 +51,23 @@ $config = New-AzMaintenanceConfiguration `
    -Location  eastus
 ```
 
-Использование `-MaintenanceScope host` гарантирует, что конфигурация обслуживания используется для управления обновлениями для узла.
+Использование `-MaintenanceScope host` гарантирует, что конфигурация обслуживания будет использоваться для управления обновлениями узла.
 
-Если вы попытаетесь создать конфигурацию с тем же именем, но в другом месте, вы получите ошибку. Имена конфигураций должны быть уникальными для вашей подписки.
+При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для вашей подписки.
 
-Вы можете запросить доступные конфигурации обслуживания с помощью [Get-AzMaintenanceConfiguration.](https://docs.microsoft.com/powershell/module/az.maintenance/get-azmaintenanceconfiguration)
+Вы можете запросить доступные конфигурации обслуживания с помощью команды [Get-азмаинтенанцеконфигуратион](https://docs.microsoft.com/powershell/module/az.maintenance/get-azmaintenanceconfiguration).
 
 ```azurepowershell-interactive
 Get-AzMaintenanceConfiguration | Format-Table -Property Name,Id
 ```
 
-## <a name="assign-the-configuration"></a>Назначить конфигурацию
+## <a name="assign-the-configuration"></a>Назначение конфигурации
 
-Используйте [New-AzConfigurationAssignment,](https://docs.microsoft.com/powershell/module/az.maintenance/new-azconfigurationassignment) чтобы назначить конфигурацию изолированной VM или Azure Dedicated Host.
+Используйте [New-азконфигуратионассигнмент](https://docs.microsoft.com/powershell/module/az.maintenance/new-azconfigurationassignment) , чтобы назначить конфигурацию изолированной виртуальной машине или выделенному узлу Azure.
 
-### <a name="isolated-vm"></a>Изолированный VM
+### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
-Примените конфигурацию к VM, используя идентификатор конфигурации. Укажите `-ResourceType VirtualMachines` и предоставим название `-ResourceName`VM для , и ресурсная группа VM для `-ResourceGroupName`. 
+Примените конфигурацию к виртуальной машине, используя идентификатор конфигурации. Укажите `-ResourceType VirtualMachines` и введите имя виртуальной машины для `-ResourceName`, а также группу ресурсов виртуальной машины для. `-ResourceGroupName` 
 
 ```azurepowershell-interactive
 New-AzConfigurationAssignment `
@@ -109,7 +82,7 @@ New-AzConfigurationAssignment `
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
-Чтобы применить конфигурацию к выделенной хосте, необходимо также `-ResourceType hosts`включить, `-ResourceParentType hostGroups` `-ResourceParentName` с именем хоста и. 
+Чтобы применить конфигурацию к выделенному узлу, необходимо также включить `-ResourceType hosts`, `-ResourceParentName` с именем группы узлов и. `-ResourceParentType hostGroups` 
 
 
 ```azurepowershell-interactive
@@ -125,11 +98,11 @@ New-AzConfigurationAssignment `
    -MaintenanceConfigurationId $config.Id
 ```
 
-## <a name="check-for-pending-updates"></a>Проверка ожидающих обновления
+## <a name="check-for-pending-updates"></a>Проверить наличие ожидающих обновлений
 
-Используйте [Get-AzMaintenanceUpdate,](https://docs.microsoft.com/powershell/module/az.maintenance/get-azmaintenanceupdate) чтобы узнать, есть ли ожидающие обновления. Используйте `-subscription` для указания подписки Azure VM, если она отличается от той, в которую вы вошли.
+Чтобы узнать, есть ли ожидающие обновления, используйте [Get-азмаинтенанцеупдате](https://docs.microsoft.com/powershell/module/az.maintenance/get-azmaintenanceupdate) . Используйте `-subscription` , чтобы указать подписку Azure виртуальной машины, если она отличается от той, в которую вы выполнили вход.
 
-Если нет обновлений для отображаемого, эта команда ничего не вернет. В противном случае он вернет объект PSApplyUpdate:
+Если обновления для отображения отсутствуют, эта команда возвратит значение Nothing. В противном случае он вернет объект Псапплюпдате:
 
 ```json
 {
@@ -143,9 +116,9 @@ New-AzConfigurationAssignment `
 } 
 ```
 
-### <a name="isolated-vm"></a>Изолированный VM
+### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
-Проверьте ожидающие обновления для изолированного VM. В этом примере вывод отформатирован как таблица для читаемости.
+Проверьте наличие ожидающих обновлений для изолированной виртуальной машины. В этом примере выходные данные форматируются в виде таблицы для удобства чтения.
 
 ```azurepowershell-interactive
 Get-AzMaintenanceUpdate `
@@ -158,7 +131,7 @@ Get-AzMaintenanceUpdate `
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
-Проверка ожидающих обновления для выделенного узла. В этом примере вывод отформатирован как таблица для читаемости. Замените значения для ресурсов своими собственными.
+Проверка наличия ожидающих обновлений для выделенного узла. В этом примере выходные данные форматируются в виде таблицы для удобства чтения. Замените значения для ресурсов собственными.
 
 ```azurepowershell-interactive
 Get-AzMaintenanceUpdate `
@@ -173,11 +146,11 @@ Get-AzMaintenanceUpdate `
 
 ## <a name="apply-updates"></a>Применение обновлений
 
-Используйте [New-AzApplyUpdate](https://docs.microsoft.com/powershell/module/az.maintenance/new-azapplyupdate) для подачи заявки на ожидающие обновления.
+Используйте [New-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/new-azapplyupdate) для применения ожидающих обновлений.
 
-### <a name="isolated-vm"></a>Изолированный VM
+### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
-Создайте запрос на применение обновлений к изолированной VM.
+Создайте запрос на применение обновлений к изолированной виртуальной машине.
 
 ```azurepowershell-interactive
 New-AzApplyUpdate `
@@ -187,11 +160,11 @@ New-AzApplyUpdate `
    -ProviderName Microsoft.Compute
 ```
 
-При успехе эта команда `PSApplyUpdate` вернет объект. Атрибут «Имя» можно `Get-AzApplyUpdate` использовать для проверки состояния обновления. Смотрите [статус обновления проверьте](#check-update-status).
+При успешном выполнении эта команда вернет `PSApplyUpdate` объект. Для проверки состояния обновления можно использовать атрибут Name `Get-AzApplyUpdate` в команде. См. раздел [Проверка состояния обновления](#check-update-status).
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
-Применяйте обновления к выделенной хосте.
+Применить обновления к выделенному узлу.
 
 ```azurepowershell-interactive
 New-AzApplyUpdate `
@@ -203,8 +176,8 @@ New-AzApplyUpdate `
    -ProviderName Microsoft.Compute
 ```
 
-## <a name="check-update-status"></a>Проверка состояния обновления
-Используйте [Get-AzApplyUpdate,](https://docs.microsoft.com/powershell/module/az.maintenance/get-azapplyupdate) чтобы проверить состояние обновления. Команды, показанные ниже, показывают состояние последнего обновления, используя `default` для `-ApplyUpdateName` параметра. Вы можете заменить название обновления (возвращенное командой [New-AzApplyUpdate),](https://docs.microsoft.com/powershell/module/az.maintenance/new-azapplyupdate) чтобы получить статус конкретного обновления.
+## <a name="check-update-status"></a>Проверить состояние обновления
+Чтобы проверить состояние обновления, используйте команду [Get-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/get-azapplyupdate) . Команды, показанные ниже, показывают состояние последнего обновления с помощью `default` для `-ApplyUpdateName` параметра. Можно заменить имя обновления (возвращаемое командой [New-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/new-azapplyupdate) ), чтобы получить состояние конкретного обновления.
 
 ```text
 Status         : Completed
@@ -216,11 +189,11 @@ ute/virtualMachines/DXT-test-04-iso/providers/Microsoft.Maintenance/applyUpdates
 Name           : default
 Type           : Microsoft.Maintenance/applyUpdates
 ```
-LastUpdateTime будет время, когда обновление получило завершение, либо инициировано вами или платформой в случае, если окно самообслуживания не было использовано. Если никогда не было обновления, применяемого с помощью управления обслуживанием, оно покажет значение по умолчанию.
+Ластупдатетиме будет считать время завершения обновления, инициированное вами или платформой в случае, если окно самостоятельного обслуживания не использовалось. Если обновление не было применено через контроль обслуживания, будет отображаться значение по умолчанию.
 
-### <a name="isolated-vm"></a>Изолированный VM
+### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
-Проверьте наличие обновлений в конкретной виртуальной машине.
+Проверьте наличие обновлений для определенной виртуальной машины.
 
 ```azurepowershell-interactive
 Get-AzApplyUpdate `
@@ -233,7 +206,7 @@ Get-AzApplyUpdate `
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
-Проверьте наличие обновлений для выделенного хоста.
+Проверьте наличие обновлений для выделенного узла.
 
 ```azurepowershell-interactive
 Get-AzApplyUpdate `
@@ -246,9 +219,9 @@ Get-AzApplyUpdate `
    -ApplyUpdateName myUpdateName
 ```
 
-## <a name="remove-a-maintenance-configuration"></a>Удалить конфигурацию обслуживания
+## <a name="remove-a-maintenance-configuration"></a>Удаление конфигурации обслуживания
 
-Используйте [Remove-AzMaintenanceConfiguration](https://docs.microsoft.com/powershell/module/az.maintenance/remove-azmaintenanceconfiguration) для удаления конфигурации обслуживания.
+Удалите конфигурацию обслуживания с помощью [Remove-азмаинтенанцеконфигуратион](https://docs.microsoft.com/powershell/module/az.maintenance/remove-azmaintenanceconfiguration) .
 
 ```azurepowershell-interactive
 Remove-AzMaintenanceConfiguration `
@@ -256,5 +229,5 @@ Remove-AzMaintenanceConfiguration `
    -Name $config.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-Чтобы узнать больше, смотрите [техническое обслуживание и обновления](maintenance-and-updates.md).
+## <a name="next-steps"></a>Следующие шаги
+Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

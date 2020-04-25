@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: juliako
-ms.openlocfilehash: 07046d181e8e83e0271cb78cfb182df4e76980b5
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 8a9c1ba8e6316ea79941fbec1fbd339893afdb35
+ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82115522"
+ms.locfileid: "82131205"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "82115522"
     * Замена URL-адреса URL-адресом, указывающим на API мини-приложения индексатора видео (например, Мини-приложение [Insights](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Insights-Widget))
     * Использование веб-сайта индексатора видео для создания нового внедренного URL-адреса:
          
-         Нажмите кнопку " **Воспроизведение** ", чтобы перейти на страницу видео. > щелкните ** &lt;внедрить&gt; ** -> скопируйте URL-адрес в приложение:
+         Нажмите кнопку " **Воспроизведение** ", чтобы перейти на страницу вашего видео — > щелкните " ** &lt; / &gt; внедрить** ", > скопировать URL-адрес в приложение:
    
     Региональные URL-адреса не поддерживаются и будут заблокированы в ближайшие недели.
 
@@ -241,6 +241,6 @@ ms.locfileid: "82115522"
 
 В дополнение к уже поддерживаемому формату субтитров (SRT, ВТТ и TTML), индексатор видео теперь поддерживает загрузку записи в форматах TXT и CSV.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Обзор](video-indexer-overview.md)

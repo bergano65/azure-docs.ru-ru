@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 42abeba310e7a30364f93e998f12129a2d3c1f15
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 4226a625918be378b14e14c55fe4dd4ca5c398d5
+ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82114298"
+ms.locfileid: "82136691"
 ---
 # <a name="manage-credentials-in-azure-automation"></a>Управление учетными данными в службе автоматизации Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "82114298"
 
 ## <a name="activities-used-to-access-credentials"></a>Действия, используемые для доступа к учетным данным
 
-Действия, приведенные в следующей таблице, используются для доступа к учетным данным в модулях Runbook и конфигурациях DSC.
+Действия, приведенные в следующей таблице, используются для доступа к учетным данным в графических модулях Runbook и конфигурациях DSC. Примеры использования действий см. [в разделе графическая разработка в службе автоматизации Azure](../automation-graphical-authoring-intro.md#activities).
 
 | Действие | Описание |
 |:--- |:--- |
@@ -162,7 +162,7 @@ print cred["username"]
 print cred["password"]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о создании ссылок в графической разработке см. в разделе [ссылки в графической разработке](../automation-graphical-authoring-intro.md#links-and-workflow).
 * Сведения о различных методах проверки подлинности для автоматизации см. в статье [Безопасность службы автоматизации Azure](../automation-security-overview.md).

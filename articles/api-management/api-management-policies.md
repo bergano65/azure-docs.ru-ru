@@ -12,21 +12,21 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 2b6e056fbfb134f0b1218b4281b9f971a0e24202
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f4a29c7cb7e35e69eb9410dd7ddc9f07757e3565
+ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71219471"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82128717"
 ---
 # <a name="api-management-policies"></a>Политики управления API
 В этом разделе рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](api-management-howto-policies.md).  
   
  Политики представляют собой одну из эффективных функций системы, позволяющих издателю изменять поведение интерфейса API путем его настройки. Политика — это коллекция операторов, которые выполняются последовательно по запросу интерфейса API или при получении из него ответа. К часто используемым операторам относятся преобразование формата из XML в JSON, а также ограничение скорости вызовов, позволяющее ограничивать количество входящих вызовов от разработчика. Также существует много готовых политик.  
   
- Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (в том числе [Поток управления](api-management-advanced-policies.md#choose) и [Задание переменной](api-management-advanced-policies.md#set-variable)) основаны на выражениях политики. Для получения дополнительной [информации](api-management-advanced-policies.md#AdvancedPolicies) [Policy expressions](api-management-policy-expressions.md)см.  
+ Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (в том числе [Поток управления](api-management-advanced-policies.md#choose) и [Задание переменной](api-management-advanced-policies.md#set-variable)) основаны на выражениях политики. Дополнительные сведения см. в разделе [Расширенные политики](api-management-advanced-policies.md#AdvancedPolicies) и [выражения политик](api-management-policy-expressions.md).  
   
-##  <a name="policies"></a><a name="ProxyPolicies"></a>Политики  
+##  <a name="policies"></a><a name="ProxyPolicies"></a>Политике  
   
 -   [Политики ограничения доступа](api-management-access-restriction-policies.md#AccessRestrictionPolicies)  
     -   [Проверка заголовка HTTP](api-management-access-restriction-policies.md#CheckHTTPHeader) – обеспечивает принудительный ввод заголовка HTTP и/или его значения.  
@@ -50,12 +50,12 @@ ms.locfileid: "71219471"
     -   [Установка переменной](api-management-advanced-policies.md#set-variable) — сохраняет значение в именованной переменной контекста для последующего использования.  
     -   [Установка метода запроса](api-management-advanced-policies.md#SetRequestMethod) — позволяет изменить метод HTTP для запроса.  
     -   [Установка кода состояния](api-management-advanced-policies.md#SetStatus) — меняет код состояния HTTP на указанное значение.  
-    -   [Trace](api-management-advanced-policies.md#Trace) - Добавляет пользовательские следы в выход [API Inspector,](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) телеметрии Application Insights и диагностические журналы.  
-    -   [Подождите](api-management-advanced-policies.md#Wait) - Ожидается прилагаемый [запрос Отправить,](api-management-advanced-policies.md#SendRequest) [Получить значение из кэша,](api-management-caching-policies.md#GetFromCacheByKey)или [политики потока управления](api-management-advanced-policies.md#choose) для завершения перед началом.  
--   [Политики аутентификации](api-management-authentication-policies.md#AuthenticationPolicies)  
+    -   [Трассировка](api-management-advanced-policies.md#Trace) . Добавляет пользовательские трассировки в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) , Application Insights телеметрии и журналы ресурсов.  
+    -   [Ожидание](api-management-advanced-policies.md#Wait) — ожидание вложенных [запросов на отправку](api-management-advanced-policies.md#SendRequest), [Получение значения из кэша](api-management-caching-policies.md#GetFromCacheByKey)или политики [потока управления](api-management-advanced-policies.md#choose) для завершения перед продолжением.  
+-   [Политики проверки подлинности](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [Обычная проверка подлинности](api-management-authentication-policies.md#Basic) – обычная проверка подлинности внутренней службы.  
     -   [Аутентификация с помощью сертификата клиента](api-management-authentication-policies.md#ClientCertificate) – аутентификация внутренней службы с помощью сертификатов клиентов.  
-    -   [Authenticate с управляемой идентификацией](api-management-authentication-policies.md#ManagedIdentity) - Authenticate с бэкэнд-сервисом с использованием [управляемой идентификации.](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)  
+    -   [Аутентификация с помощью управляемого удостоверения](api-management-authentication-policies.md#ManagedIdentity) — аутентификация в серверной службе с помощью [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
 -   [Политики кэширования](api-management-caching-policies.md#CachingPolicies)  
     -   [Получение из кэша](api-management-caching-policies.md#GetFromCache) – выполнение операции поиска в кэше и возврат допустимого кэшированного ответа при его наличии.  
     -   [Сохранение в кэше](api-management-caching-policies.md#StoreToCache) – помещение в кэш ответа в соответствии с заданной конфигурацией управления кэшем.  
@@ -80,7 +80,7 @@ ms.locfileid: "71219471"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Политики в управлении API](api-management-howto-policies.md)

@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 04/15/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 61fb8b53d7d109fefc002b387702a240353f0dca
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: bfe0c6fcc0d1d22807bfb59b146050fb307892a0
+ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82117613"
+ms.locfileid: "82133163"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -4284,7 +4284,7 @@ ms.locfileid: "82117613"
 > |  | **домены/Привателинкресаурцес** |  |
 > | Действие | Microsoft. EventGrid/Domains/Привателинкресаурцес/Read | Получение или перечисление Привателинкресаурцес для доменов |
 > |  | **домены и поставщики/Microsoft. Insights/Логдефинитионс** |  |
-> | Действие | Microsoft. EventGrid/Domains/providers/Microsoft. Insights/Логдефинитионс/Read | Разрешает доступ к журналам диагностики |
+> | Действие | Microsoft. EventGrid/Domains/providers/Microsoft. Insights/Логдефинитионс/Read | Разрешает доступ к журналам ресурсов |
 > |  | **домены и поставщики/Microsoft. Insights/metricDefinitions** |  |
 > | Действие | Microsoft.EventGrid/domains/providers/Microsoft.Insights/metricDefinitions/read | Получает доступные метрики для доменов |
 > |  | **domains/topics** |  |
@@ -4352,7 +4352,7 @@ ms.locfileid: "82117613"
 > | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/diagnosticSettings/Read | Получает параметр диагностики для системных разделов |
 > | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/diagnosticSettings/запись | Создает или обновляет параметр диагностики для системных разделов |
 > |  | **Системтопикс/providers/Microsoft. Insights/Логдефинитионс** |  |
-> | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/Логдефинитионс/Read | Разрешает доступ к журналам диагностики |
+> | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/Логдефинитионс/Read | Разрешает доступ к журналам ресурсов |
 > |  | **Системтопикс/providers/Microsoft. Insights/metricDefinitions** |  |
 > | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/metricDefinitions/Read | Получение доступных метрик для системных разделов |
 > |  | **разделы** |  |
@@ -4376,7 +4376,7 @@ ms.locfileid: "82117613"
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для разделов. |
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметра диагностики для разделов. |
 > |  | **разделы и поставщики/Microsoft. Insights/Логдефинитионс** |  |
-> | Действие | Microsoft. EventGrid/темы/поставщики/Microsoft. Insights/Логдефинитионс/чтение | Разрешает доступ к журналам диагностики |
+> | Действие | Microsoft. EventGrid/темы/поставщики/Microsoft. Insights/Логдефинитионс/чтение | Разрешает доступ к журналам ресурсов |
 > |  | **разделы и поставщики/Microsoft. Insights/metricDefinitions** |  |
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/metricDefinitions/read | Получение доступных метрик для разделов. |
 > |  | **топиктипес** |  |
@@ -8578,7 +8578,7 @@ ms.locfileid: "82117613"
 > |  | **настройки** |  |
 > | Действие | Microsoft.Security/settings/read | Получение параметров для области |
 > | Действие | Microsoft.Security/settings/write | Обновление параметров для области |
-> |  | **задачи** |  |
+> |  | **операции** |  |
 > | Действие | Microsoft.Security/tasks/read | Возвращает все доступные рекомендации по безопасности. |
 > |  | **вебаппликатионфиреваллс** |  |
 > | Действие | Microsoft.Security/webApplicationFirewalls/read | Возвращает брандмауэры веб-приложения. |
@@ -10854,7 +10854,7 @@ ms.locfileid: "82117613"
 > |  | **Operations** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Встроенные роли Azure](built-in-roles.md)

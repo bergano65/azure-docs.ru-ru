@@ -1,5 +1,5 @@
 ---
-title: Обновление существующего предложения контейнеров Azure (ru) Лазурный рынок
+title: Обновление существующего предложения контейнеров Azure | Azure Marketplace
 description: Сведения об обновлении существующего предложения контейнера в Azure Marketplace.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: dsindona
-ms.openlocfilehash: 650ef45e56184b67efba67810580d9d6e763a4d0
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: cc378dcc1d5f777f4e81825e2f99dedd37a87f96
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81271273"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82143819"
 ---
 # <a name="update-an-existing-container-offer"></a>Обновление существующего предложения контейнера
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления предложениями Azure Container в партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [предложении Create an Azure Container](https://aka.ms/CreateContainerOffer) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями контейнеров Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в разделе [Создание предложения контейнера Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-azure-container-offer) для управления перенесенными предложениями.
 
 В этой статье описана процедура обновления предложения контейнера на [Портале Cloud Partner](https://cloudpartner.azure.com/).
 
@@ -70,12 +70,12 @@ ms.locfileid: "81271273"
 
 1. Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com/).
 2. В разделе **Все предложения** найдите предложение, которое нужно обновить.
-3. Перейдите на вкладку **Marketplace.** Используйте инструкции в предложении [предложения о предложении предложения Publish,](./cpp-publish-offer.md) чтобы внести изменения метаданных.
+3. Перейдите на вкладку **Marketplace** . чтобы внести изменения в метаданные, используйте инструкции из статьи публикация предложения для [контейнера](./cpp-publish-offer.md) .
 4. Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации изменений.
 
 ## <a name="compare-feature"></a>Функция сравнения
 
-При внесении изменений в опубликованное предложение можно использовать функцию **«Сравнить»** для аудита внесенных изменений.
+При внесении изменений в опубликованное предложение можно использовать функцию **сравнения** для аудита внесенных изменений.
 
 ### <a name="to-use-the-compare-feature"></a>Чтобы использовать функцию сравнения, выполните следующие действия.
 

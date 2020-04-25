@@ -1,5 +1,5 @@
 ---
-title: Создание технических средств модуля Azure IoT Edge (фото) Лазурный рынок
+title: Создание технических ресурсов модуля Azure IoT Edge | Azure Marketplace
 description: Создание технических ресурсов для модуля IoT Edge.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: b36d03695c107054549fba716f4cc27ecb7bba26
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 1a523872bb15981958eeb1678caa1d911a9cbbba
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80983489"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82142413"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
 >[!Important]
->С 13 апреля 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureIoTTechAsset) для управления мигрированными предложениями.
+>Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями модулей IoT Edge в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в разделе [создание IOT Edge модуля](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-iot-edge-module-asset) для управления перенесенными предложениями.
 
 В этой статье описываются требования, которым должны соответствовать технические ресурсы для модуля IoT Edge для публикации в Azure Marketplace.
 
@@ -41,7 +41,7 @@ ms.locfileid: "80983489"
 Поддержка всех платформ уровня 1, поддерживаемых в IoT Edge (см. [список для Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/support)). Мы рекомендуем использовать именно этот вариант, так как он обеспечивает максимальное удобство для клиентов. Для клиентов отображаются модули, соответствующие этому критерию. Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
 
 - Содержать тег `latest` и тег версии (например, `1.0.1`), которые представляют собой манифест тегов, созданных с помощью [manifect-tool](https://github.com/estesp/manifest-tool) с сайта GitHub.
-- Использовать вкладку [Marketplace](./cpp-marketplace-tab.md) для добавления ссылки на [совместимые сертифицированные устройства IoT Edge](https://aka.ms/iot-edge-certified). Эта ссылка разрешается в `https://aka.ms/iot-edge-certified` и указывает на веб-сайт, на котором клиенты могут или искать просматривать сертифицированные устройства. Этот веб-сайт также содержит каталог устройств, [сертифицированных для Azure IoT Edge](https://catalog.azureiotsolutions.com/).
+- Используйте [вкладку Marketplace](./cpp-marketplace-tab.md) , чтобы добавить ссылку на [IOT Edge сертифицированный](https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]})веб-сайт, на котором клиенты могут просматривать и искать сертифицированные устройства. Этот веб-сайт также содержит каталог устройств, [сертифицированных для Azure IoT Edge](https://catalog.azureiotsolutions.com/).
 
 #### <a name="a-subset-of-tier-1-platforms-supported-by-iot-edge"></a>Группа платформ уровня 1, поддерживаемых IoT Edge
   
@@ -70,9 +70,9 @@ ms.locfileid: "80983489"
 Модули IoT Edge должны поддерживать запуск с параметрами по умолчанию, которые указаны на [вкладке с номерами SKU на портале Cloud Partner](./cpp-skus-tab.md). Доступны следующие параметры по умолчанию:
 
 - **Маршруты** по умолчанию
-- По умолчанию **близнец ы желаемые свойства**
+- **Требуемые свойства двойника** по умолчанию
 - **Переменные среды** по умолчанию
-- По умолчанию **создаютопции**
+- **Креатеоптионс** по умолчанию
 
 Когда значение по умолчанию нецелесообразно использовать для какого-либо параметра (например, IP-адрес сервера клиента), укажите в качестве значения по умолчанию имя этого параметра. Это значение вводится в верхнем регистре и заключается в квадратные скобки. Например, можно настроить следующую переменную среды по умолчанию:
 
@@ -82,11 +82,11 @@ ms.locfileid: "80983489"
 
 #### <a name="configuration-documentation"></a>Документация по конфигурации
 
-Все настройки конфигурации модуля IoT Edge должны быть четко документированы (как использовать его маршруты, двойные желаемые свойства, переменные среды, создаватьОпции и так далее). Предоставьте ссылку на вашу документацию, или документация должна быть частью вашего предложения / sku описание.
+Все параметры конфигурации модуля IoT Edge должны быть четко документированы (как использовать его маршруты, двойника требуемые свойства, переменные среды, Креатеоптионс и т. д.). Укажите ссылку на документацию, или документация должна быть частью описания предложения или номера SKU.
 
 ### <a name="tags-and-versioning"></a>Теги и управление версиями
 
-Клиенты должны иметь возможность легко развернуть модуль и автоматически получать обновления с рынка (в сценарии разработчика). Они также должны быть в состоянии использовать и заморозить точную версию, которые они тестировали (в производственном сценарии.)
+Клиенты должны иметь возможность легко развертывать модуль и автоматически получать обновления из Marketplace (в сценарии разработки). Они также должны иметь возможность использовать и закрепить точную версию, протестированную ими (в рабочем сценарии).
 
 Чтобы соответствовать ожиданиям клиентов и получить разрешение на публикацию в Marketplace, все модули IoT Edge должны соответствовать следующим требованиям:
 
@@ -104,7 +104,7 @@ ms.locfileid: "80983489"
 
  Используйте следующие методы из пакетов SDK для модуля Интернета вещей, чтобы задать значение `ProductInfo` для этого идентификатора:
 
-- [C\#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.productinfo?view=azure-dotnet#Microsoft_Azure_Devices_Client_DeviceClient_ProductInfo) 
+- [Ц\#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.productinfo?view=azure-dotnet#Microsoft_Azure_Devices_Client_DeviceClient_ProductInfo) 
 - [C](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md)
 - [Python](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md)
 - [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.productinfo?view=azure-java-stable)
@@ -139,6 +139,6 @@ ms.locfileid: "80983489"
 Чтобы загрузить модуль IoT Edge на Портал Cloud Partner, необходимо сначала разместить его в [Реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/). Модуль должен включать все теги, которые вы хотите опубликовать, включая теги образов, указанные в теге манифеста.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание предложения модуля IoT Edge](./cpp-create-offer.md)

@@ -1,14 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов диспетчер ресурсов
 description: Укажите список типов ресурсов диспетчер ресурсов, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 04/23/2020
+ms.date: 04/24/2020
 ms.topic: reference
-ms.openlocfilehash: 021a0d595a34bc132aa0e67f2b5485ae9c321ef3
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 7092a6dccc2870c7fd7b6dc6feb3af16f0fd3b7a
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82116644"
+ms.locfileid: "82141895"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Graph ресурсов Azure и Справочник по типам ресурсов
 
@@ -65,6 +65,7 @@ ms.locfileid: "82116644"
 - Microsoft. Automation/automationaccounts
 - Microsoft. Automation/automationaccounts/конфигурации
 - Microsoft. Automation/automationaccounts/модули Runbook
+- Microsoft. аутономауссистемс/рабочие области
 - Microsoft. азконфиг/конфигуратионсторес
 - Microsoft. azureactivedirectory/b2cdirectories
 - Microsoft. азуредата/контроллеры
@@ -104,6 +105,7 @@ ms.locfileid: "82116644"
 - Microsoft. распознавания/синсетиксаккаунтс
 - Microsoft. cognitiveservices/учетные записи
 - Microsoft. COMPUTE/availabilitysets
+- Microsoft. COMPUTE/дискакцессес
 - Microsoft. COMPUTE/дискенкриптионсетс
 - Microsoft. COMPUTE/Disks
 - Microsoft. COMPUTE/галереи

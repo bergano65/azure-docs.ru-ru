@@ -1,78 +1,85 @@
 ---
-title: Настройка руководства управления для Salesforce (ru) Лазурный рынок
-description: Налажить руководство в отделе продаж для клиентов Azure Marketplace.
+title: Настройка управления интересами для Salesforce | Azure Marketplace
+description: Настройка управления интересами в Salesforce для клиентов Azure Marketplace.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: dsindona
-ms.openlocfilehash: 087cdafe8b819e4929e1608ed7e00be2c1169414
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: e0fbb09370e198772b4fc485b3c0fe8a56da4226
+ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81263100"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82133636"
 ---
 # <a name="configure-lead-management-for-salesforce"></a>Настройка управления интересами для Salesforce
 
-В этой статье описывается, как настроить систему Salesforce для обработки продаж приводит от вашего коммерческого предложения рынке.
+В этой статье описывается, как настроить систему salesforce для обработки интересов продаж из коммерческого предложения Marketplace.
 
-> [!Note]
-> Marketplace не поддерживает предварительно заполненные списки, такие как список значений для поля **страны.** Убедитесь, что перед продолжением списков нет. Кроме того, можно настроить [конечную точку HTTPS](./commercial-marketplace-lead-management-instructions-https.md) или [таблицу Azure](./commercial-marketplace-lead-management-instructions-azure-table.md) для получения удовбытостей.
+> [!NOTE]
+> Azure Marketplace не поддерживает предварительно заполненные списки, например список значений для поля Country ( **страна** ). Прежде чем продолжить, убедитесь, что списки не настроены. Кроме того, можно настроить [конечную точку HTTPS](./commercial-marketplace-lead-management-instructions-https.md) или [таблицу Azure](./commercial-marketplace-lead-management-instructions-azure-table.md) для получения интересов.
 
 ## <a name="set-up-your-salesforce-system"></a>Настройка системы Salesforce
 
 1. Войдите в Salesforce.
-2. Если вы используете опыт освещения Salesforce.
-    1. Выберите **настройку** на главной странице Salesforce.
-    ![Установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-1.png)
+1. Если вы используете интерфейс освещения Salesforce:
+    1. На домашней странице Salesforce выберите **Setup (Настройка** ).
 
-    1. Со страницы настройки перейдите через левую навигацию на **платформу Инструменты >настройки функции >Маркетинг->Web-to-Lead**.
+       ![Настройка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-1.png)
+
+    1. На странице **Установка** последовательно выберите **инструменты** > платформы**Параметры** > компоненты**маркетинг** > **в Интернете**.
 
         ![SalesForce Web-to-Lead](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-2.png)
 
-3. Если вы используете опыт Salesforce Classic:
-    1. Выберите **настройку** на главной странице Salesforce.
-    ![Классическая установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-setup.png)
+1. Если вы используете классический интерфейс Salesforce:
 
-    1. Со страницы настройки перейдите через левую навигацию в **Build->Настроить->ведет >Web-to-Lead.**
+    1. На домашней странице Salesforce выберите **Setup (Настройка** ).
 
-        ![Salesforce классический веб-к-ведущего](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
+       ![Классическая установка Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-setup.png)
 
-Остальные инструкции одинаковы, независимо от того, какой опыт Salesforce вы используете.
+    1. На странице **Установка** выберите **Сборка** > **Настройка** > **интересов** > **Интернет-руководитель**.
 
-4. На **странице настройки Web-to-Lead**выберите кнопку **«Создание веб-формы».**
-5. На **установке Web-to-Lead** выберите **Создать форму Web-to-Lead**.
-    ![Salesforce - Настройка веб-руководства](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-3.png)
+        ![Классический веб-узел Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-classic-web-to-lead.png)
 
-6. При **создании формы Web-to-Lead**убедитесь, что `the Include reCAPTCHA in HTML` настройка не проверена, и выберите **Generate.** 
-    ![Salesforce - Создание веб-формы](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-4.png)
+Остальные инструкции одинаковы, независимо от того, какой интерфейс Salesforce вы используете.
 
-7. Вам будет представлен текст HTML. Поиск текста "oid" и скопировать **значение oid** из текста HTML (только текст между кавычками) и сохранить его. Это значение будет вклеено в поле **идентификатора Организации** на портале публикации.
-    ![Salesforce - Создание веб-формы](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-5.png)
+1. На странице **Настройка с веб-сайта** нажмите кнопку **создать форму Web-to-Lead** .
+1. При **настройке "с веб-сайта**" выберите **создать форму с веб-интереса**.
 
-8. Выбранный **Законченный**.
+    ![Настройка веб-приложения Salesforce](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-3.png)
 
-## <a name="configure-your-offer-to-send-leads-to-salesforce"></a>Напередите предложение отправить литые в Salesforce
+1. При **создании формы "веб-форма**" `Include reCAPTCHA in HTML` убедитесь, что параметр сброшен, и выберите **создать**.
 
-Когда вы будете готовы настроить информацию о руководстве для вашего предложения на портале публикации, выполните ниже:
+    ![SalesForce создание панели «веб-форма-интерес»](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-4.png)
+
+1. Появится текст HTML. Выполните поиск текста "OID" и скопируйте **значение "OID"** из текста HTML (только текст между кавычками) и сохраните его. Это значение будет вставлено в поле **идентификатор организации** на портале публикации.
+
+    ![SalesForce создание веб-формы с отображением значения "OID" в формате HTML](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-5.png)
+
+1. Щелкните **Готово**.
+
+## <a name="configure-your-offer-to-send-leads-to-salesforce"></a>Настройка предложения для отправки интересов в Salesforce
+
+Когда вы будете готовы к настройке сведений об управлении интересами для вашего предложения на портале публикации, выполните следующие действия.
 
 1. Перейдите на страницу **настройки предложения** для вашего предложения.
-1. Выберите **Подключение** в разделе «Управление ведущим иссяка».
-    ![Руководство - Подключение](./media/commercial-marketplace-lead-management-instructions-salesforce/lead-management-connect.png)
+1. Выберите **Подключиться** в разделе **управление интересами** .
 
-1. На всплывающем окне подключения выберите **Salesforce** для **ведущего** назначения `oid` и вставьте в созданной из веб-формы, созданной вами, следуя более ранним шагам в поле **идентификатора Организации.**
+    ![Кнопка подключения раздела управления интересами](./media/commercial-marketplace-lead-management-instructions-salesforce/lead-management-connect.png)
 
-1. **Контактная почта** - Предоставьте электронные письма для людей в вашей компании, которые должны получать уведомления по электронной почте, когда новый свинец получен. Вы можете предоставить несколько писем, разделив их с запятой.
+1. Во всплывающем окне **сведения о подключении** выберите **Salesforce** для **назначения интереса** и вставьте `oid` значение из созданной формы в поле **идентификатор организации** .
 
-1. Выберите **Ok**.
+1. В разделе **Контактная электронная почта**введите адреса электронной почты сотрудников Организации, которые должны получать уведомления по электронной почте при получении нового интереса. Можно указать несколько сообщений электронной почты, разделяя их точкой с запятой.
 
-Чтобы убедиться, что вы успешно подключены к месту назначения, нажмите на кнопку проверки. В случае успеха, вы будете иметь тест свинца в главной цели.
+1. Щелкните **ОК**.
 
->[!Note]
->Вы должны закончить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить приводит для предложения.
+Чтобы убедиться, что вы успешно подключились к цели назначения, нажмите кнопку **проверить** . В случае успеха вы получите руководителя тестирования в целевом месте назначения.
 
-![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/choose-lead-destination.png)
+>[!NOTE]
+>Необходимо завершить настройку остальной части предложения и опубликовать его, прежде чем вы сможете получить интересы для предложения.
 
-![Детали подключения - Выберите место назначения](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-connection-details.png)
+![Всплывающее окно "сведения о подключении" Выбор поля назначения интереса](./media/commercial-marketplace-lead-management-instructions-salesforce/choose-lead-destination.png)
+
+![Всплывающее окно "сведения о подключении" Проверка поля Контактная электронная почта](./media/commercial-marketplace-lead-management-instructions-salesforce/salesforce-connection-details.png)

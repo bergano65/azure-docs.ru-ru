@@ -8,12 +8,12 @@ ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: how-to
 manager: carmonm
-ms.openlocfilehash: a0125c556789b1a1a5b11dcd16b852d7f57b6c50
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.openlocfilehash: f4e318281da5cd704d9fbf13c96cbec0a2d1b1b6
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82099875"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82143776"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-by-using-run-command"></a>Выполнение сценариев PowerShell на виртуальной машине Windows с помощью команды Run
 
@@ -51,14 +51,14 @@ ms.locfileid: "82099875"
 The entity was not found in this Azure location
 ```
 
-|**имя**;|**Описание**|
+|**Имя**|**Описание**|
 |---|---|
 |**RunPowerShellScript**|Запускает сценарий PowerShell.|
 |**EnableRemotePS**|Настраивает компьютер для удаленного подключения к PowerShell.|
 |**EnableAdminAccount**|Проверяет, отключена ли локальная учетная запись администратора, и, если да, включает ее.|
 |**IPConfig**| Отображает подробные сведения об IP-адресе, маске подсети и шлюзе по умолчанию для каждого адаптера, привязанного к TCP/IP.|
 |**RDPSettings**|Проверяет параметры реестра и параметры политики домена. Предлагает действия политики, если компьютер является частью домена, или изменяет параметры на значения по умолчанию.|
-|**ResetRDPCert**|Удаляет SSL-сертификат, привязанный к прослушивателю RDP, и восстанавливает защиту прослушивателя RDP по умолчанию. Используйте этот сценарий при появлении проблем с сертификатом.|
+|**ResetRDPCert**|Удаляет сертификат TLS/SSL, привязанный к прослушивателю RDP, и восстанавливает защиту прослушивателя RDP по умолчанию. Используйте этот сценарий при появлении проблем с сертификатом.|
 |**SetRDPPort**|Задает указанный по умолчанию или заданный пользователем номер порта для удаленный рабочий столных соединений. Включает правила брандмауэра для входящего доступа к порту.|
 
 ## <a name="azure-cli"></a>Azure CLI
@@ -108,6 +108,6 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 Можно использовать одну из [встроенных ролей](../../role-based-access-control/built-in-roles.md) или создать [настраиваемую роль](../../role-based-access-control/custom-roles.md) для использования команды Run.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о других способах удаленного выполнения сценариев и команд в виртуальной машине см. в статье [Запуск сценариев на виртуальной машине Windows](run-scripts-in-vm.md).

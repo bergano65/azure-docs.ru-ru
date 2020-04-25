@@ -1,24 +1,24 @@
 ---
 title: Ведение журнала диагностики для Azure Analysis Services | Документация Майкрософт
-description: Описывает, как настроить диагностическую систему мониторинга ресурсов Azure для мониторинга сервера аналитических служб Azure.
+description: Описание процесса настройки ведения журнала для мониторинга сервера Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 0f13f297facedceb50920c0f6afca63fe1df0b48
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 71a81c4a3a57c206540e20f7c7e58949c552e582
+ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79266186"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82128930"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. С [помощью журналов ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md)можно отслеживать и отправлять журналы в [хранилище Azure,](https://azure.microsoft.com/services/storage/)передавать их в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать в [журналы Azure Monitor.](../azure-monitor/azure-monitor-log-hub.md)
+Важной частью любого решения Analysis Services является мониторинг работы серверов. Службы Azure Analysis Services интегрированы с Azure Monitor. С помощью [журналов Azure Monitor ресурсов](../azure-monitor/platform/platform-logs-overview.md)можно отслеживать и отсылать журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в [журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
 
-![Процесс ведения журнала диагностики в хранилище, Центрах событий и журналах Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
+![Ведение журнала ресурсов для хранилища, концентраторов событий или журналов Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -42,7 +42,7 @@ ms.locfileid: "79266186"
 |Запросы     |   Query End      |
 |Команды     |  Command Begin       |
 |Команды     |  Command End       |
-|Ошибки и предупреждения     |   Error      |
+|Ошибки и предупреждения     |   Ошибка      |
 |Поиск     |   Discover End      |
 |Уведомление     |    Уведомление     |
 |Сеанс     |  Session Initialize       |
@@ -66,15 +66,15 @@ ms.locfileid: "79266186"
 
 ### <a name="all-metrics"></a>Все метрики
 
-Категория Метрики регистрирует те же [метрики сервера](analysis-services-monitor.md#server-metrics) в таблице AzureMetrics. Если вы используете [масштаб](analysis-services-scale-out.md) запроса и необходимо разделить метрики для каждой реплики чтения, вместо этого используйте таблицу AzureDiagnostics, где **OperationName** равен **LogMetric.**
+В категории метрики регистрируются те же [метрики сервера](analysis-services-monitor.md#server-metrics) , что и в таблице азуреметрикс. Если вы используете [горизонтальное масштабирование](analysis-services-scale-out.md) запросов и вам нужно разделить метрики для каждой реплики чтения, используйте вместо этого таблицу AzureDiagnostics, где **OperationName** равно **логметрик**.
 
 ## <a name="setup-diagnostics-logging"></a>Настройка ведения журнала диагностики
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. На [портале Azure](https://portal.azure.com) выберите сервер, в левой области навигации выберите **Журналы диагностики**, а затем — **Включить диагностику**.
+1. В [портал Azure](https://portal.azure.com) > Server щелкните **параметры диагностики** в левой области навигации, а затем выберите **включить диагностику**.
 
-    ![Включение журнала ведения диагностики для Azure Cosmos DB на портале Azure](./media/analysis-services-logging/aas-logging-turn-on-diagnostics.png)
+    ![Включите ведение журнала ресурсов для Azure Cosmos DB в портал Azure](./media/analysis-services-logging/aas-logging-turn-on-diagnostics.png)
 
 2. На странице **Параметры диагностики** настройте следующие параметры: 
 
@@ -84,23 +84,23 @@ ms.locfileid: "79266186"
     * **Stream to an event hub** (Потоковая передача в концентратор событий). Чтобы использовать этот параметр, вам понадобится пространство имен концентратора событий и концентратор событий для подключения. Дополнительные сведения см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем на портале вернитесь на эту страницу, чтобы выбрать пространство имен концентратора событий и имя политики.
     * **Отправка в Azure Monitor (рабочую область Log Analytics)**. Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/learn/quick-create-workspace.md) на портале. См. дополнительные сведения о [просмотре журналов в рабочей области Log Analytics](#view-logs-in-log-analytics-workspace).
 
-    * **Подсистема**. Выберите этот параметр для ведения журнала xEvents. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
-    * **Обслуживание**. Выберите этот параметр, чтоб вести журнал событий уровня службы. Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
-    * **Метрика**. Выберите этот параметр, чтобы хранить подробные данные в разделе [Метрики](analysis-services-monitor.md#server-metrics). Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
+    * **Подсистема**. Выберите этот параметр для ведения журнала xEvents. Если выполняется архивация в учетную запись хранения, можно выбрать срок хранения для журналов ресурсов. По окончании периода хранения журналы удаляются автоматически.
+    * **Служба**. Выберите этот параметр, чтоб вести журнал событий уровня службы. При архивации в учетную запись хранения можно выбрать срок хранения для журналов ресурсов. По окончании периода хранения журналы удаляются автоматически.
+    * **Метрики**. Выберите этот параметр, чтобы хранить подробные данные в разделе [Метрики](analysis-services-monitor.md#server-metrics). При архивации в учетную запись хранения можно выбрать срок хранения для журналов ресурсов. По окончании периода хранения журналы удаляются автоматически.
 
-3. Нажмите **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
     Если отобразится сообщение об ошибке Failed to update diagnostics for \<workspace name>. The subscription \<subscription id> is not registered to use Microsoft.Insights (Не удалось обновить данные диагностики для <имя_рабочей_области>. Подписку <идентификатор_подписки> не зарегистрировано для использования Microsoft.Insights), следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
 
-    Если вы хотите изменить способ сохранения журналов диагностики в дальнейшем, можно в любое время вернуться на эту страницу, чтобы изменить параметры.
+    Если вы хотите изменить способ сохранения журналов ресурсов в любой момент в будущем, можно вернуться на эту страницу, чтобы изменить параметры.
 
 ### <a name="powershell"></a>PowerShell
 
 Ниже приведены основные команды для ознакомления. Если вам требуются пошаговые указания по настройке ведения журнала в учетной записи хранения с помощью PowerShell, ознакомьтесь с руководством далее в этой статье.
 
-Чтобы включить ведение журналов метрик и диагностики с помощью PowerShell, используйте следующие команды:
+Чтобы включить метрики и ведение журнала ресурсов с помощью PowerShell, используйте следующие команды:
 
-- Выполните приведенную ниже команду, чтобы включить отправку журналов диагностики в учетную запись хранения:
+- Чтобы включить хранение журналов ресурсов в учетной записи хранения, используйте следующую команду:
 
    ```powershell
    Set-AzDiagnosticSetting -ResourceId [your resource id] -StorageAccountId [your storage account id] -Enabled $true
@@ -108,7 +108,7 @@ ms.locfileid: "79266186"
 
    StorageAccountId — это идентификатор ресурса учетной записи хранения, в которую будут отправляться журналы.
 
-- Чтобы включить потоковую передачу журналов диагностики в концентратор событий, используйте следующую команду:
+- Чтобы включить потоковую передачу журналов ресурсов в концентратор событий, используйте следующую команду:
 
    ```powershell
    Set-AzDiagnosticSetting -ResourceId [your resource id] -ServiceBusRuleId [your service bus rule id] -Enabled $true
@@ -120,7 +120,7 @@ ms.locfileid: "79266186"
    {service bus resource ID}/authorizationrules/{key name}
    ``` 
 
-- Чтобы включить отправку журналов диагностики в рабочую область Log Analytics, используйте следующую команду:
+- Чтобы включить отправку журналов ресурсов в рабочую область Log Analytics, выполните следующую команду:
 
    ```powershell
    Set-AzDiagnosticSetting -ResourceId [your resource id] -WorkspaceId [resource id of the log analytics workspace] -Enabled $true
@@ -158,13 +158,13 @@ ms.locfileid: "79266186"
 
 ![Параметры поиска по журналам на портале Azure](./media/analysis-services-logging/aas-logging-open-log-search.png)
 
-В проекте-конструкторе запросов расширьте **LogManagement** > **AzureDiagnostics.** AzureDiagnostics включает в себя события "Подсистема" и "Служба". Обратите внимание на то, что запрос создается в режиме реального времени. Поле "EventClass\_s" содержит имена событий xEvent, которые могут быть вам знакомы, если вы использовали события xEvent для локального входа. Щелкните поле **EventClass\_s** или одно из имен событий, и рабочая область Log Analytics продолжит создание запроса. Не забудьте сохранить запросы для последующего повторного использования.
+В построителе запросов разверните узел **логманажемент** > **AzureDiagnostics**. AzureDiagnostics включает в себя события "Подсистема" и "Служба". Обратите внимание на то, что запрос создается в режиме реального времени. Поле "EventClass\_s" содержит имена событий xEvent, которые могут быть вам знакомы, если вы использовали события xEvent для локального входа. Щелкните поле **EventClass\_s** или одно из имен событий, и рабочая область Log Analytics продолжит создание запроса. Не забудьте сохранить запросы для последующего повторного использования.
 
 ### <a name="example-queries"></a>Примеры запросов
 
 #### <a name="example-1"></a>Пример 1
 
-Следующие запросы возвращают продолжительность для каждого конца запроса/обновления события для базы данных модели и сервера. Если масштабирование, результаты разбиваются реплики, потому что номер реплики включен в ServerName_s. Группировка по RootActivityId_g уменьшает количество строк, извлеченных из API Azure Diagnostics REST, и помогает оставаться в пределах, описанных в [пределах тарифа log Analytics.](https://dev.loganalytics.io/documentation/Using-the-API/Limits)
+Следующий запрос возвращает длительность каждого события конца запроса для базы данных и сервера модели. При горизонтальном масштабировании результаты разбиваются репликой, поскольку номер реплики включается в ServerName_s. Группирование по RootActivityId_g сокращает количество строк, извлеченное из система диагностики Azure REST API и обеспечивает соблюдение ограничений, как описано в разделе [ограничения скорости log Analytics](https://dev.loganalytics.io/documentation/Using-the-API/Limits).
 
 ```Kusto
 let window = AzureDiagnostics
@@ -179,7 +179,7 @@ window
 
 #### <a name="example-2"></a>Пример 2
 
-Следующий запрос возвращает память и потребление qPU для сервера. Если масштабирование, результаты разбиваются реплики, потому что номер реплики включен в ServerName_s.
+Следующий запрос возвращает сведения о потреблении памяти и QPU для сервера. При горизонтальном масштабировании результаты разбиваются репликой, поскольку номер реплики включается в ServerName_s.
 
 ```Kusto
 let window = AzureDiagnostics
@@ -194,7 +194,7 @@ window
 
 #### <a name="example-3"></a>Пример 3
 
-Следующий запрос возвращает счетчики производительности двигателя Строки чтения/сек анализов для сервера.
+Следующий запрос возвращает счетчики производительности подсистемы Analysis Services "Прочитано строк/с" для сервера.
 
 ```Kusto
 let window =  AzureDiagnostics
@@ -213,9 +213,9 @@ window
 
 ## <a name="turn-on-logging-by-using-powershell"></a>Включение ведения журнала с помощью PowerShell
 
-В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем для вневедения журнала «Диагностика» Set-AzDiagnosticSetting используется Set-AzDiagnosticSetting, отправляющий выход на новую учетную запись хранилища.
+В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем с помощью Set-Аздиагностиксеттинг включите ведение журнала диагностики, отправив выходные данные в новую учетную запись хранения.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
 * Существующий сервер Azure Analysis Services. Инструкции по созданию ресурса сервера см. в разделе [Создание сервера Azure Analysis Services на портале Azure](analysis-services-create-server.md) или [Создание сервера Azure Analysis Services с помощью PowerShell](analysis-services-create-powershell.md).
@@ -269,7 +269,7 @@ $account = Get-AzResource -ResourceGroupName awsales_resgroup `
 
 ### <a name="enable-logging"></a>Включение ведения журналов
 
-Для включения в систему ведения журнала используйте cmdlet Set-AzDiagnosticSetting вместе с переменными для новой учетной записи хранилища, учетной записи сервера и категории. Выполните следующую команду, задав для флага **-Enabled** значение **$true**:
+Чтобы включить ведение журнала, используйте командлет Set-Аздиагностиксеттинг вместе с переменными для новой учетной записи хранения, учетной записи сервера и категории. Выполните следующую команду, задав для флага **-Enabled** значение **$true**:
 
 ```powershell
 Set-AzDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories Engine
@@ -324,8 +324,8 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
   -RetentionEnabled $true -RetentionInDays 90
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md).
+Дополнительные сведения о [Azure Monitor регистрации ресурсов](../azure-monitor/platform/platform-logs-overview.md).
 
-Смотрите [Set-AzDiagnosticSetting](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в PowerShell помощь.
+См. раздел [Set-аздиагностиксеттинг](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.

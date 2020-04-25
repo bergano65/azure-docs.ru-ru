@@ -1,6 +1,6 @@
 ---
-title: Интеграция журналов с Помощью ArcSight с помощью Azure Monitor Документы Майкрософт
-description: Узнайте, как интегрировать журналы активных каталогов Azure с Помощью ArcSight с помощью Azure Monitor
+title: Интеграция журналов с ArcSight с помощью Azure Monitor | Документация Майкрософт
+description: Узнайте, как интегрировать журналы Azure Active Directory с ArcSight с помощью Azure Monitor
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -17,12 +17,12 @@ ms.date: 04/19/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05002c1b11ef31b61fb4036f09dc8edcdafca767
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: f03b146331069371106c1857f2acc68b566d3c5d
+ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75608386"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82129232"
 ---
 # <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor
 
@@ -30,7 +30,7 @@ ms.locfileid: "75608386"
 
 В этой статье вы узнаете, как перенаправлять журналы Azure AD в ArcSight с помощью Azure Monitor. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для использования этой функции необходимо иметь следующее.
 * Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
@@ -53,10 +53,10 @@ ms.locfileid: "75608386"
     * Параметры приложения из развертывания сохраняются в параметрах приложения в приложениях-функциях Azure. 
     * Группа ресурсов для ArcSight создается в Azure с приложением Azure AD для соединителя ArcSight и учетных записей хранения, содержащих сопоставленные файлы в формате CEF.
 
-4. Наконец, выполните действия после развертывания, указанные в разделе **Настройка после развертывания** в руководстве по настройке. В этом разделе объясняется, как выполнить дополнительную настройку, если вы используете план службы приложений, чтобы приложения-функции не переходили в состояние бездействия по истечении времени ожидания, как настроить потоковую передачу журналов диагностики из концентратора событий и обновить сертификат хранилища ключей SysLog NG Daemon SmartConnector, чтобы связать его с созданной учетной записью хранения.
+4. Наконец, выполните действия после развертывания, указанные в разделе **Настройка после развертывания** в руководстве по настройке. В этом разделе объясняется, как выполнить дополнительную настройку, если вы используете план службы приложений, чтобы предотвратить неактивность приложений-функций по истечении времени ожидания, настроить потоковую передачу журналов ресурсов из концентратора событий и обновить сертификат хранилища Смартконнектор для управляющей программы SysLog NG, чтобы связать его с созданной учетной записью хранения.
 
 5. В руководстве по настройке также объясняется, как настроить свойства соединителя в Azure, а также обновить и удалить соединитель. Кроме того, имеется раздел о производительности, в котором говорится о переходе к [плану потребления Azure](https://azure.microsoft.com/pricing/details/functions) и настройке ArcSight Load Balancer, если объем нагрузки событий больше, чем тот, с которым может справиться Syslog NG Daemon SmartConnector.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.microfocus.com/t5/ArcSight-Connectors/SmartConnector-for-Microsoft-Azure-Monitor-Event-Hub/ta-p/1671292)

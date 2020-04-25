@@ -1,31 +1,31 @@
 ---
-title: Удаленное управление Windows по сравнению с HTTPS для Azure (ru) Лазурный рынок
-description: Объясняет, как настроить VM на базе Windows, на основе Windows, чтобы управлять им удаленно с помощью PowerShell.
+title: служба удаленного управления Windows по протоколу HTTPS для Azure | Azure Marketplace
+description: В этой статье объясняется, как настроить размещенную в Azure виртуальную машину на основе Windows, чтобы ее можно было удаленно управлять с помощью PowerShell.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: dsindona
-ms.openlocfilehash: b2a4bb107309894a7180e0a4585cdba6f04d1bee
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 88941b334a9c218365bd2d97046dbb6c32d50f35
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273041"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82142770"
 ---
 # <a name="windows-remote-management-over-https"></a>Служба удаленного управления Windows по протоколу HTTPS
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create an Azure Virtual Machine, чтобы](https://aka.ms/CreateAzureVMoffer) управлять мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в разделе [Создание предложения виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-create-offer) для управления перенесенными предложениями.
 
 В этом разделе описывается настройка размещенной в Azure виртуальной машины на базе Windows для удаленного управления и развертывания с помощью PowerShell.  Чтобы включить удаленное взаимодействие посредством PowerShell, на целевой виртуальной машине должна предоставляться конечная точка HTTPS для службы удаленного управления Windows (WinRM).  Дополнительные сведения об удаленном взаимодействии посредством PowerShell см. в разделе [Running Remote Commands](https://docs.microsoft.com/powershell/scripting/learn/remoting/running-remote-commands) (Выполнение удаленных команд).  Дополнительные сведения о WinRM см. в статье [Windows Remote Management](https://docs.microsoft.com/windows/desktop/WinRM/portal) (Удаленное управление Windows).
 
-Если вы создали VM с помощью одного из "классических" подходов Azure - либо портала управления службами Azure, либо изуродованного [API управления службой Azure,](https://docs.microsoft.com/previous-versions/azure/ee460799(v=azure.100))то он автоматически настраивается с конечной точкой WinRM.  Тем не менее, если вы создаете виртуальную машину любым из следующих "современных" для Azure способов, на ней WinRM по протоколу HTTPS *не* настраивается.
+Если вы создали виртуальную машину с помощью одного из "классических" подходов Azure — либо портала Azure Service Manager, либо устаревшего [API управления службами Azure](https://docs.microsoft.com/previous-versions/azure/ee460799(v=azure.100)), то она автоматически настраивается с помощью конечной точки WinRM.  Тем не менее, если вы создаете виртуальную машину любым из следующих "современных" для Azure способов, на ней WinRM по протоколу HTTPS *не* настраивается.
 
 - С помощью [портала Azure](https://portal.azure.com/), обычно на основе утвержденного базового образа в соответствии с инструкциями в статье [Создание виртуального жесткого диска, совместимого с Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-create-vhd).
 - [С помощью шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/ps-template)
-- С помощью командной оболочки Azure PowerShell или Azure CLI.  Например, [см. квикстарт: Создайте виртуальную машину windows в Azure с PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell) и [quickstart: Создайте виртуальную машину Linux с Azure CLI.](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-cli)
+- С помощью командной оболочки Azure PowerShell или Azure CLI.  Примеры см. [в разделе Краткое руководство. Создание виртуальной машины Windows в Azure с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell) и [Краткое руководство. Создание виртуальной машины Linux с Azure CLI](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-cli).
 
 Эта конечная точка WinRM также требуется для запуска набора инструментов сертификации при подключении виртуальной машины как описано в статье [Сертификация образа виртуальной машины](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-certify-vm).
 
@@ -40,5 +40,5 @@ ms.locfileid: "81273041"
 - После развертывания — на имеющейся виртуальной машине, размещенной в Azure.  Этот подход используется в том случае, если у вас уже есть развернутое в Azure решение (виртуальная машина), для которого необходимо включить удаленное управление.  Этот подход требует внесения изменений вручную на портале Azure и выполнения скрипта на целевой виртуальной машине.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Если вы создаете новую виртуальную машину, вы можете включить WinRM во время [развертывания виртуальной машины с виртуального жесткого диска](./cpp-deploy-vm-vhd.md).  В противном случае можно включить WinRM на имеющейся виртуальной машине.
