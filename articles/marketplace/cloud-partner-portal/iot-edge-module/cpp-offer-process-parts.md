@@ -1,5 +1,5 @@
 ---
-title: Модуль Azure IoT Edge предлагает публикацию обзора Лазурный рынок
+title: Общие сведения о публикации предложения модуля Azure IoT Edge | Azure Marketplace
 description: Общие сведения о процессе публикации предложения модуля IoT Edge в Azure Marketplace.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
-ms.openlocfilehash: 20c76cec82944568c1b16694bef2838626b90b03
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: e9116e5cdb3bd9ed61205ceabd4d51c96c6aadc2
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80983353"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82144670"
 ---
 # <a name="iot-edge-module-offer-publishing-overview"></a>Общие сведения о публикации предложения модуля IoT Edge
 
 >[!Important]
->С 13 апреля 2020 года мы начнем перемещение управления вашим модулем IoT Edge в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [совете по созданию модуля IoT Edge](https://aka.ms/AzureCreateIoT) для управления мигрированными предложениями.
+>Начиная с 13 апреля 2020 г. Мы начинаем перемещаться по управлению предложениями модулей IoT Edge в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в разделе [создание IOT Edge модуля](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-iot-edge-module-creation) для управления перенесенными предложениями.
 
 <table> <tr> <td>В этом разделе объясняется, как опубликовать новое предложение модуля Azure IoT Edge в <a href="https://azuremarketplace.microsoft.com">Microsoft Azure Marketplace</a>. Модуль IoT Edge представляет собой совместимый с Docker контейнер, подготовленный для запуска на устройстве IoT Edge. Модуль Azure IoT Edge представляет собой наименьшую единицу вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Azure или пользовательский код решения. </td> <td><img src="./media/iotedge-icon1.png"  alt="Azure IoT Edge module icon" /></td> </tr> </table>
 
@@ -37,11 +37,11 @@ ms.locfileid: "80983353"
 
 В статьях по следующих ссылках рассматриваются основные части предложения модуля IoT Edge.
 
-- [Предварительные требования](./cpp-prerequisites.md) <br>В этой статье перечислены технические и бизнес-требования, необходимые для создания и публикации предложения модуля IoT Edge.
+- [Предварительные условия](./cpp-prerequisites.md) <br>В этой статье перечислены технические и бизнес-требования, необходимые для создания и публикации предложения модуля IoT Edge.
 - [Подготовка технических ресурсов для модуля IoT Edge](./cpp-create-technical-assets.md) <br>В этой статье описывается подготовка технических ресурсов для модуля IoT Edge. Эти ресурсы должны соответствовать всем необходимым техническим критериям, которые нужно выполнить для публикации модуля IoT Edge в Azure Marketplace.
 - [Создание предложения модуля IoT Edge](./cpp-create-offer.md) <br>В этой статье перечислены шаги, необходимые для создания записи предложения модуля IoT Edge с использованием [Портала Cloud Partner](https://cloudpartner.azure.com).
 - [Публикация предложения модуля IoT Edge](./cpp-publish-offer.md)<br> В этой статье описывается отправка предложения для публикации в Azure Marketplace.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с [техническими и бизнес-требованиями](./cpp-prerequisites.md), которые должны быть выполнены для публикации модуля IoT Edge в Microsoft Azure Marketplace.

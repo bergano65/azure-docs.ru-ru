@@ -1,5 +1,5 @@
 ---
-title: Сертификация изображения VM для Рынка Azure
+title: Сертификация образа виртуальной машины для Azure Marketplace
 description: В статье показано, как протестировать и отправить образ виртуальной машины для сертификации в Azure Marketplace.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/26/2018
 ms.author: dsindona
-ms.openlocfilehash: ce1e001b9cafff83a3f9bf546d6903cc4a4f450f
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 81dec159a8a84adce97750666baba455ae3fdd93
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273500"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82147078"
 ---
 # <a name="certify-your-vm-image"></a>Сертификация образа виртуальной машины
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям [в сертификации изображений Azure VM](https://aks.ms/CertifyVMimage) для управления мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Чтобы управлять перенесенными предложениями, следуйте инструкциям в статье [сертификация образа виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-image-certification) .
 
 После создания и развертывания виртуальной машины необходимо протестировать ее образ и отправить его на сертификацию в Azure Marketplace. В этой статье описывается, где можно получить *средство проверки сертификации Azure*, как его использовать, чтобы сертифицировать образ виртуальной машины, и как отправить результаты проверки в контейнер Azure, где располагаются виртуальные жесткие диски (VHD). 
 
@@ -76,6 +76,6 @@ ms.locfileid: "81273500"
 ![Сохранение результатов теста для сертификации](./media/publishvm_031.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Далее необходимо [создать универсальные коды ресурсов (URI) для каждого виртуального жесткого диска](./cpp-get-sas-uri.md), который отправляется в marketplace. 

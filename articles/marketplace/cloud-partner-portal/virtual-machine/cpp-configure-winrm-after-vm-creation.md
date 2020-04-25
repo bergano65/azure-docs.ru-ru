@@ -1,5 +1,5 @@
 ---
-title: НастроиТе WinRM после создания виртуальной машины Azure (ru) Лазурный рынок
+title: Настройка WinRM после создания виртуальной машины Azure | Azure Marketplace
 description: Описание процесса настройки службы удаленного управления Windows (WinRM) после создания виртуальной машины, размещенной в Azure.
 author: dsindona
 ms.service: marketplace
@@ -7,17 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: dsindona
-ms.openlocfilehash: b80325594eedb87293c31de3236bb4690eb89e05
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.openlocfilehash: 3a67371ce6f951a9e446ab639ea5b59248b79565
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81273024"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82144142"
 ---
 # <a name="configure-winrm-after-virtual-machine-creation"></a>Настройка WinRM после создания виртуальной машины
 
 > [!IMPORTANT]
-> С 13 апреля 2020 года мы начнем перемещение управления вашими предложениями Azure Virtual Machine в Партнерский центр. После миграции вы будете создавать и управлять своими предложениями в Partner Center. Следуйте инструкциям в [Create an Azure Virtual Machine, чтобы](https://aka.ms/CreateAzureVMoffer) управлять мигрированными предложениями.
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в разделе [Создание предложения виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-create-offer) для управления перенесенными предложениями.
 
 В этой статье описывается настройка имеющейся виртуальной машины (ВМ), размещенной в Azure, для включения WinRM по протоколу HTTPS.  Она применима только к виртуальным машинам на платформе Windows и требует выполнения следующих двух действий:
 
@@ -27,9 +27,9 @@ ms.locfileid: "81273024"
 
 ## <a name="enabling-port-traffic"></a>Включение передачи трафика через порт
 
-В протоколе WinRM over HTTPS используется порт 5986, который по умолчанию не включен на предварительно настроенных вдыхаемых Windows-виз, предлагаемых на Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
+Протокол WinRM через HTTPS использует порт 5986, который не включен по умолчанию на предварительно настроенных виртуальных машинах Windows, предлагаемых в Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
 
-1. Перейдите к лезвию **Виртуальные машины >**   < *vm-имя* >   **> Настройки / Сети**.
+1. Перейдите к колонке **виртуальные машины >**   < *VM-Name* >   **> Settings/Networks**.
 2. Щелкните имя группы безопасности сети (в этом примере **testvm11002**) для отображения ее свойств:
 
     ![Свойства группы безопасности сети](./media/nsg-properties.png)
@@ -62,6 +62,6 @@ ms.locfileid: "81273024"
     Этот скрипт зависит от двух других файлов в этой же папке.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После настройки WinRM вы будете готовы к [развертыванию виртуальной машины с содержащих ее виртуальных жестких дисков](./cpp-deploy-vm-vhd.md).
