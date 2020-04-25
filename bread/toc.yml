@@ -835,6 +835,9 @@
             - name: Виртуальная машина SQL
               tocHref: /azure/virtual-machines/windows/sql
               topicHref: /azure/virtual-machines/windows/sql
+    - name: Конфиденциальные вычисления
+      tocHref: /azure/confidential-computing/
+      topicHref: /azure/confidential-computing/
     - name: Виртуальный рабочий стол Windows
       tocHref: /azure/virtual-desktop/
       topicHref: /azure/virtual-desktop/

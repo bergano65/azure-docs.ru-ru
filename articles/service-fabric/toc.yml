@@ -7,6 +7,9 @@
 - name: Краткие руководства
   expanded: true
   items:
+    - name: Шаблон ARM
+      displayName: Resource Manager
+      href: quickstart-cluster-template.md
     - name: Создание приложения .NET
       href: service-fabric-quickstart-dotnet.md
     - name: Развертывание приложения-контейнера Linux

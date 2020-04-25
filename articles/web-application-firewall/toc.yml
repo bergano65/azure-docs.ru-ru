@@ -107,7 +107,7 @@
           href: ./ag/bot-protection.md
         - name: Связывание политики с существующим Шлюзом приложений
           href: ./ag/associate-waf-policy-existing-gateway.md
-        - name: Журналы диагностики
+        - name: Журналы ресурсов
           href: ./ag/web-application-firewall-logs.md
         - name: Устранение неполадок с WAF
           href: ./ag/web-application-firewall-troubleshoot.md
