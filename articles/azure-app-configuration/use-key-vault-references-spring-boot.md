@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 12/16/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: b6b6d10165eed331c397e17a18e382b095e1f74f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6a5bc947c3ea414f197df9cfcdd5f233e4654cbc
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79216744"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82085031"
 ---
 # <a name="tutorial-use-key-vault-references-in-a-java-spring-app"></a>Руководство по Использование ссылок Key Vault в приложении Java Spring
 
@@ -140,6 +140,14 @@ ms.locfileid: "79216744"
 
 ## <a name="update-your-code-to-use-a-key-vault-reference"></a>Обновление кода для использования ссылки Key Vault
 
+1. Создайте переменную среды с именем **APP_CONFIGURATION_ENDPOINT**. Задайте в качестве значения конечную точку хранилища Конфигурации приложения. Конечную точку можно найти в колонке **Ключи доступа** на портале Azure.
+
+1. Откройте *bootstrap.properties* в папке *resources*. Обновите этот файл, чтобы использовать конечную точку Конфигурации приложения, а не строку подключения.
+
+    ```properties
+    spring.cloud.azure.appconfiguration.stores[0].endpoint= ${APP_CONFIGURATION_ENDPOINT}
+    ```
+
 1. Откройте *MessageProperties.java*. Добавьте новую переменную с именем *keyVaultMessage*:
 
     ```java
@@ -166,7 +174,7 @@ ms.locfileid: "79216744"
 1. Создайте файл с именем *AzureCredentials.java* и добавьте приведенный ниже код.
 
     ```java
-    package com.example;
+    package com.example.demo;
 
     import com.azure.core.credential.TokenCredential;
     import com.azure.identity.EnvironmentCredentialBuilder;
@@ -195,7 +203,7 @@ ms.locfileid: "79216744"
 1. Создайте файл с именем *AppConfiguration.java*. И добавьте приведенный ниже код.
 
     ```java
-    package com.example;
+    package com.example.demo;
 
     import org.springframework.context.annotation.Bean;
     import org.springframework.context.annotation.Configuration;
@@ -214,7 +222,7 @@ ms.locfileid: "79216744"
 
     ```factories
     org.springframework.cloud.bootstrap.BootstrapConfiguration=\
-    com.example.AppConfiguration
+    com.example.demo.AppConfiguration
     ```
 
 1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:

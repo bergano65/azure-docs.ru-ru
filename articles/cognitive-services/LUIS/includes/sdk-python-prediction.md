@@ -10,12 +10,12 @@ ms.date: 02/14/2020
 ms.topic: include
 ms.custom: include file
 ms.author: diberry
-ms.openlocfilehash: ff4c33aea3d3ce604f44c38e6e3856242388b0e9
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: eabec50f57785bde6760db053eb3b12f6f5b6452
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77372390"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732094"
 ---
 С помощью клиентской библиотеки прогнозирования для Python в службе "Распознавание речи" (LUIS) можно выполнить следующие задачи.
 
@@ -24,10 +24,11 @@ ms.locfileid: "77372390"
 
 [Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/index?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-language-luis/azure/cognitiveservices/language/luis) | [Пакет для прогнозирования (PyPi)](https://pypi.org/project/azure-cognitiveservices-language-luis/) | [Образцы кода (C#)](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/LUIS)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетную запись на портале LUIS [можно создать бесплатно](https://www.luis.ai).
 * [Python 3.x](https://www.python.org/)
+* Идентификатор приложения LUIS. Используйте общедоступный идентификатор приложения для Интернета вещей `df67dcdb-c37d-46af-88e1-8b97951ca1c2`. Пользовательский запрос, используемый в коде из этого краткого руководства, относится только к этому приложению.
 
 ## <a name="setting-up"></a>Настройка
 

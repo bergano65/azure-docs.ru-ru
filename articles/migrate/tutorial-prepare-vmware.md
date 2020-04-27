@@ -2,14 +2,14 @@
 title: Подготовка виртуальных машин VMware к оценке и миграции с помощью службы "Миграция Azure"
 description: Узнайте, как подготовить виртуальные машины VMware к оценке и миграции с помощью службы "Миграция Azure".
 ms.topic: tutorial
-ms.date: 11/19/2019
+ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: 2e8aa72300c840832168138015e0a01ab054f954
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: a3f9716d6302c41f139d9a2a8b1f994b79afd199
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80619426"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81677296"
 ---
 # <a name="prepare-vmware-vms-for-assessment-and-migration-to-azure"></a>Подготовка виртуальных машин VMware к оценке и миграции в Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "80619426"
 Перед настройкой устройства Миграции Azure и началом оценки из следующего руководства вам следует подготовиться к развертыванию устройства.
 
 1. [Проверьте](migrate-appliance.md#appliance---vmware) требования к устройству Миграции Azure
-2. [Просмотрите](migrate-appliance.md#url-access) URL-адреса Azure, к которым устройству потребуется доступ. Если вы используете брандмауэр или прокси-сервер на основе URL-адресов, убедитесь, что он разрешает доступ к нужным URL-адресам.
+2. Проверьте URL-адреса Azure, к которым модуль будет обращаться в [общедоступных](migrate-appliance.md#public-cloud-urls) облаках и облаках для [государственных организаций](migrate-appliance.md#government-cloud-urls).
 3. [Просмотрите данные](migrate-appliance.md#collected-data---vmware), собранные устройством во время обнаружения и оценки.
 4. [Обратите внимание](migrate-support-matrix-vmware.md#port-access) на требования доступа к порту для устройства.
 
@@ -138,7 +138,8 @@ ms.locfileid: "80619426"
 2. [Проверьте разрешения](migrate-support-matrix-vmware-migration.md#agentless-vmware-servers), необходимые службе "Миграция Azure" для доступа к vCenter Server.
 3. [Проверьте](migrate-support-matrix-vmware-migration.md#agentless-vmware-vms) требования виртуальных машин VMware.
 4. [Проверьте](migrate-support-matrix-vmware-migration.md#agentless-azure-migrate-appliance) требования к устройству Миграции Azure.
-5. Обратите внимание на требования к [доступу к URL-адресу](migrate-appliance.md#url-access) и [доступу к портам](migrate-support-matrix-vmware-migration.md#agentless-ports).
+5. Обратите внимание на доступ к URL-адресам, необходимый для [общедоступных](migrate-appliance.md#public-cloud-urls) облаков и облаков для [государственных организаций](migrate-appliance.md#government-cloud-urls).
+6. Просмотрите требования для [доступа к порту](migrate-support-matrix-vmware-migration.md#agentless-ports).
 
 ## <a name="prepare-for-agent-based-vmware-migration"></a>Подготовка к миграции VMware на основе агента
 
@@ -150,7 +151,8 @@ ms.locfileid: "80619426"
 3. Миграция на основе агентов использует устройство репликации:
     - [Ознакомьтесь](migrate-replication-appliance.md#appliance-requirements) с требованиями к развертыванию для устройства репликации.
     - [Проверьте параметры](migrate-replication-appliance.md#mysql-installation) для установки MySQL на устройстве.
-    - Проверьте требования к доступу к [URL-адресам](migrate-replication-appliance.md#url-access) и [портам](migrate-replication-appliance.md#port-access) для устройства репликации.
+    - Обратите внимание на доступ к URL-адресам, необходимый для [общедоступных](migrate-replication-appliance.md#url-access) облаков и облаков для [государственных организаций](migrate-replication-appliance.md#azure-government-url-access).
+    - Проверьте требования к доступу к [портам](migrate-replication-appliance.md#port-access) для модуля репликации.
     
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -4,17 +4,17 @@ description: Узнайте, как настроить роли админист
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 10/30/2019
+ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: owend
-ms.openlocfilehash: c7d53ae71ac68559877561bf9fd15fe0f341e03a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0bedc88b78f2ac758d3201965425b42b69580719
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78273683"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81454260"
 ---
-# <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство по настройке ролей администратора сервера и пользователя
+# <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство по Настройка ролей администратора и пользователя сервера
 
  При работе с этим руководством вы с помощью SQL Server Management Studio (SSMS) подключитесь к серверу в Azure и настроите роли администратора сервера и шаблона базы данных. Также мы ознакомитесь с [языком TMSL](https://docs.microsoft.com/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200). Язык написания скриптов TMSL основывается на формате JSON и предназначен для табличных моделей на уровнях совместимости 1200 и выше. Он позволяет автоматизировать многие задачи табличного моделирования. TMSL часто используется с PowerShell, но в этом руководстве мы ограничимся редактором запросов XMLA в среде SSMS. При работе с этим руководством вы выполните следующие задачи: 
   
@@ -27,7 +27,7 @@ ms.locfileid: "78273683"
 
 Дополнительные сведения о защите пользователей в службах Azure Analysis Services см. в статье [Аутентификация и разрешения пользователей](../analysis-services-manage-users.md). 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка с поддержкой Azure Active Directory.
 - Созданный в подписке [сервер Azure Analysis Services](../analysis-services-create-server.md).
@@ -67,7 +67,7 @@ ms.locfileid: "78273683"
 
 ## <a name="add-a-user-account-to-the-server-administrator-role"></a>Добавление учетной записи пользователя к роли администратора сервера
 
-На этом этапе вы добавите учетную запись пользователя или группы из Azure AD в роль администратора сервера. Если вы добавляете группу безопасности, для свойства `MailEnabled` необходимо задать значение `True`.
+На этом этапе вы добавите учетную запись пользователя или группы из Azure AD в роль администратора сервера. При указании группы безопасности используйте `obj:groupid@tenantid`.
 
 1. В **обозревателе объектов** щелкните правой кнопкой мыши имя сервера и выберите **Свойства**. 
 2. В окне **Свойства сервера анализа данных** выберите **Безопасность** > **Добавить**.

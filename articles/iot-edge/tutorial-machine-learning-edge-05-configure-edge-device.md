@@ -8,12 +8,13 @@ ms.date: 2/5/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: d2bad581c925bb62cbe65a45000f6d3ae35db011
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.custom: amqp
+ms.openlocfilehash: 353ed321ce3b6161b28bf67d852a81f809880603
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80372694"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733014"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
 
@@ -296,7 +297,7 @@ ms.locfileid: "80372694"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Мы завершили настройку виртуальной машины Azure, которая будет выполнять роль прозрачного шлюза IoT Edge. Мы начали с создания тестовых сертификатов, которые затем отправили в Azure Key Vault. После этого мы применили скрипт и шаблон Resource Manager для развертывания виртуальной машины из образа "Ubuntu Server 16.04 LTS + Azure IoT Edge runtime" из Azure Marketplace. К запущенной виртуальной машине мы подключились по протоколу SSH, вошли в Azure и скачали сертификаты из Key Vault. Мы внесли несколько изменений в конфигурацию среды выполнения IoT Edge, обновив файл config.yaml.
+Мы завершили настройку виртуальной машины Azure, которая будет выполнять роль прозрачного шлюза IoT Edge. Мы начали с создания тестовых сертификатов, которые затем отправили в Azure Key Vault. После этого мы применили скрипт и шаблон Resource Manager для развертывания виртуальной машины из образа Ubuntu Server 16.04 LTS + Azure IoT Edge runtime из Azure Marketplace. К запущенной виртуальной машине мы подключились по протоколу SSH, вошли в Azure и скачали сертификаты из Key Vault. Мы внесли несколько изменений в конфигурацию среды выполнения IoT Edge, обновив файл config.yaml.
 
 Дополнительные сведения см. в статьях [об использовании устройства IoT Edge в качестве шлюза](iot-edge-as-gateway.md) и [о настройке устройства IoT Edge в качестве прозрачного шлюза](how-to-create-transparent-gateway.md).
 

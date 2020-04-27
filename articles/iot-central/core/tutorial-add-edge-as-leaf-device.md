@@ -9,14 +9,16 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: bf74784998de6bbad6310c48c24d6353512bff13
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c60cf4b90b089d271c0ccd91031420efe9017b1e
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77026397"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758159"
 ---
 # <a name="tutorial-add-an-azure-iot-edge-device-to-your-azure-iot-central-application"></a>Руководство по добавлению устройства Azure IoT Edge в приложение Azure IoT Central
+
+*Эта статья предназначена для создателей решений и разработчиков устройств.*
 
 В этом учебнике показано, как добавить устройство Azure IoT Edge в приложение Azure IoT Central и настроить его. В этом учебнике для имитации устройства IoT Edge используется виртуальная машина Linux с поддержкой IoT Edge из Azure Marketplace. Устройство IoT Edge использует модуль, который создает смоделированные данные телеметрии окружающей среды. Данные телеметрии можно просмотреть на панели мониторинга в приложении IoT Central.
 
@@ -262,9 +264,9 @@ ms.locfileid: "77026397"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как управлять устройствами IoT Edge в IoT Central, перейдите к дальнейшему рекомендуемому шагу:
+Теперь, когда вы как разработчик устройства узнали, как управлять устройствами IoT Edge в IoT Central, ознакомьтесь со следующим руководством:
 
 <!-- Next how-tos in the sequence -->
 
 > [!div class="nextstepaction"]
-> [Настройка прозрачного шлюза](../../iot-edge/how-to-create-transparent-gateway.md)
+> [Подключение к Azure IoT Central](./concepts-get-connected.md)

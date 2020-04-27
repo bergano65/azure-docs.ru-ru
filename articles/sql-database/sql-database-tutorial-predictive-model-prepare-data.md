@@ -13,12 +13,13 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/26/2019
-ms.openlocfilehash: 505f58f13a7186948a228fefe872d74fb98eba33
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ROBOTS: NOINDEX
+ms.openlocfilehash: bf69d2963c74723cb3fea542e28288e4f136d5c3
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345775"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81458766"
 ---
 # <a name="tutorial-prepare-data-to-train-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по подготовке данных для обучения прогнозной модели на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 
@@ -41,13 +42,11 @@ ms.locfileid: "80345775"
 
 Из [третьей части](sql-database-tutorial-predictive-model-deploy.md) вы узнаете, как сохранить модель в базе данных, а затем создать хранимые процедуры с помощью скриптов R, разработанных в первых двух частях. Хранимые процедуры будут выполняться в базе данных SQL для составления прогнозов на основе новых данных.
 
-[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-* Сервер базы данных SQL Azure с включенными Службами машинного обучения. Во время общедоступной предварительной версии корпорация Майкрософт подключит вас и включит машинное обучение для имеющихся или новых баз данных. Выполните шаги, приведенные в разделе [Sign up for the preview](sql-database-machine-learning-services-overview.md#signup) (Регистрация для получения предварительной версии).
+* [База данных SQL Azure с включенными Службами машинного обучения](sql-database-machine-learning-services-overview.md) (с использованием R).
 
 * Пакет RevoScaleR. Сведения о вариантах локальной установки этого пакета см. в разделе [RevoScaleR](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-revoscaler?view=sql-server-2017#versions-and-platforms).
 

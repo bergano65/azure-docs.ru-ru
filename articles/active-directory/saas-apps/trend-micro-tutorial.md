@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 04/03/2020
+ms.date: 04/21/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a4c2cddbc9086c80922fcf9c5d96cd197ab4778
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 5f4dc7223d64fd299da70375329260f7b4f8b322
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81425283"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82083450"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-trend-micro-web-securitytmws"></a>Руководство по Интеграция единого входа Azure Active Directory с Trend Micro Web Security(TMWS)
 
@@ -87,7 +87,7 @@ ms.locfileid: "81425283"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://auth.iws-hybrid.trendmicro.com/simplesaml/module.php/saml/sp/saml2-acs.php/ics-sp`
 
     > [!NOTE]
-    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить значение идентификатора, обратитесь в [службу поддержки клиентов Trend Micro Web Security(TMWS)](https://success.trendmicro.com/contact-support-north-america). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Эти значения можно получить в области **Параметры поставщика услуг** для портала администрирования Azure на экране **Метод проверки подлинности** для Azure AD, который открывается через меню **Администрирование > Службы каталогов**.
 
 1. Trend Micro Web Security(TMWS) ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
@@ -173,7 +173,41 @@ ms.locfileid: "81425283"
 
 ## <a name="configure-trend-micro-web-security-sso"></a>Настройка единого входа в Trend Micro Web Security
 
-Чтобы настроить единый вход на стороне **Trend Micro Web Security(TMWS)** , нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [службе поддержки Trend Micro Web Security(TMWS)](https://success.trendmicro.com/contact-support-north-america). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Войдите в консоль управления TMWS и последовательно выберите **Administration** > **USERS & AUTHENTICATION** > **Directory Services**. (Администрирование > Пользователи и проверка подлинности > Службы каталогов).
+
+1. Щелкните в любом месте верхней области экрана.
+
+1. На открывшемся экране Authentication Method (Метод проверки подлинности) щелкните **Azure AD**.
+
+1. Щелкните **On** (Вкл.) или **Off** (Выкл.), чтобы указать, смогут ли пользователи AD из вашей организации посещать веб-сайты через TMWS, если их данные не синхронизированы с TMWS.
+
+    > [!NOTE]
+    > Пользователи, данные которых не синхронизированные из Azure AD, могут проходить проверку подлинности только через известные шлюзы TMWS или выделенный порт для вашей организации.
+
+1. В разделе **Identity Provider Settings** (Параметры поставщика удостоверений) выполните следующие действия:
+
+    а. В поле **Service URL** (URL-адрес службы) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+
+    b. В поле **Logon name attribute** (Атрибут имени входа) вставьте имя утверждения пользователя для исходного атрибута **user.onpremisessamaccountname**, полученное на портале Azure.
+
+    c. В поле **Public SSL certificate** (Открытый сертификат SSL) скачайте **сертификат (Base64)** , который был получен на портале Azure.
+
+1. В разделе **Synchronization Settings** (Параметры синхронизации) выполните следующие действия:
+
+    а. В поле **Tenant** (Клиент) укажите **идентификатор каталога (клиента)** или **имя личного домена**, полученные на портале Azure.
+
+    b. В поле **Application ID** (Идентификатор приложения) вставьте **идентификатор приложения (клиента)** , полученный на портале Azure.
+
+    c. В поле **Client secret** (Секрет клиента) укажите **секрет клиента**, полученный на портале Azure.
+
+    d. В поле **Synchronization schedule** (Расписание синхронизации) выберите режим синхронизации с Azure AD: вручную или по расписанию. Если вы выберете синхронизацию вручную, при любых изменениях сведений о пользователе в Active Directory важно перейти на экран служб каталогов и запустить синхронизацию, чтобы информация в TMWS оставалась актуальной.
+
+    д) Щелкните **Test Connection** (Проверить подключение), чтобы проверить возможность успешно подключиться к службе Azure AD. 
+    
+    е) Выберите команду **Сохранить**.
+ 
+ > [!NOTE]
+ > Дополнительные сведения о настройке Trend Micro Web Security с Azure AD см. в [этом документе](https://docs.trendmicro.com/en-us/enterprise/trend-micro-web-security-online-help/administration_001/directory-services/azure-active-directo/configuring-azure-ad.aspx).
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

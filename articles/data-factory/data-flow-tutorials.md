@@ -5,13 +5,13 @@ author: djpmsft
 ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 03/24/2020
-ms.openlocfilehash: 8aedbba5d65281753ca61f13e7e1a28c856948ec
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.date: 04/17/2020
+ms.openlocfilehash: 4dba719453546337f9e5657cbe56755ac1ac9149
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81417799"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686236"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
@@ -113,6 +113,8 @@ ms.locfileid: "81417799"
 
 [Dynamically optimize data flow cluster size at runtime](https://www.youtube.com/watch?v=jWSkJdtiJNM) (Динамическая оптимизация размера кластера потока данных во время выполнения)
 
+[Оптимизация времени запуска для потоков данных ](https://www.youtube.com/watch?v=VT_2ZV3a7Fc)
+
 ## <a name="mapping-data-flow-scenarios"></a>Сценарии потоков данных для сопоставления
 
 [Fuzzy lookups](http://youtu.be/7gdwExjHBbw) (Нечеткие уточняющие запросы)
@@ -156,3 +158,5 @@ ms.locfileid: "81417799"
 [Использование интерполяции строк и параметров](https://youtu.be/hb3-cn2CMgM)
 
 [Введение в скрипт потока данных: копирование, вставка, фрагменты](https://www.youtube.com/watch?v=3_1I4XdoBKQ)
+
+[ADF Data Quality Expressions](https://www.youtube.com/watch?v=O8gmv5-lXhs) (Выражения для проверки качества данных в ADF)

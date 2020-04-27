@@ -6,20 +6,20 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 01/31/2020
+ms.date: 04/20/2020
 ms.author: diberry
-ms.openlocfilehash: 1bd7a2bb6d3393aca397686a2817f1dcd5f89a38
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: d59b7ebd1376d0bee10482cfe5faac1c53d1bde0
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76987808"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81733265"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
 * [Visual Studio Code](https://code.visualstudio.com/) или привычный вам редактор кода;
-* Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`.
+* Идентификатор приложения LUIS. Используйте общедоступный идентификатор приложения для Интернета вещей `df67dcdb-c37d-46af-88e1-8b97951ca1c2`. Пользовательский запрос, используемый в коде из этого краткого руководства, относится только к этому приложению.
 
 ## <a name="create-luis-runtime-key-for-predictions"></a>Создание ключа среды выполнения LUIS для прогнозирования
 
@@ -30,8 +30,8 @@ ms.locfileid: "76987808"
     |Параметр|Значение|
     |--|--|
     |Имя|Требуемое имя (от 2 до 64 символов)|
-    |Subscription|Выберите соответствующую подписку|
-    |Location|Выберите доступное поблизости расположение|
+    |Подписка|Выберите соответствующую подписку|
+    |Расположение|Выберите доступное поблизости расположение|
     |Ценовая категория|`F0` — минимальная ценовая категория|
     |Группа ресурсов|Выберите доступную группу ресурсов|
 

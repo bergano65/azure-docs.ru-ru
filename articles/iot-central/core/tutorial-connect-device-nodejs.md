@@ -7,16 +7,19 @@ ms.date: 03/24/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: b7aebb5b9c1aa6566cedda869f97f2d1aa20df83
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.custom: mqtt
+ms.openlocfilehash: a8c5d9479585c0a519d0ad05a4d73f3f15b21287
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80674656"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758202"
 ---
-# <a name="tutorial-create-and-connect-a-nodejs-client-application-to-your-azure-iot-central-application-nodejs"></a>Руководство по Создание клиентского приложения Node.js и его подключение к приложению Azure IoT Central (Node.js)
+# <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application-nodejs"></a>Руководство по Создание клиентского приложения и его подключение к приложению Azure IoT Central (Node.js)
 
 [!INCLUDE [iot-central-selector-tutorial-connect](../../../includes/iot-central-selector-tutorial-connect.md)]
+
+*Эта статья предназначена для создателей решений и разработчиков устройств.*
 
 Из этого руководства вы узнаете, как разработчик устройства может подключить клиентское приложение Node.js к приложению Microsoft Azure IoT Central. Приложение Node.js имитирует поведение датчика окружающей среды. С помощью примера _модели возможностей устройства_ вы создадите _шаблон устройства_ в IoT Central. Затем вы добавите представления в шаблон устройства, чтобы разрешить оператору взаимодействовать с устройством.
 
@@ -325,7 +328,12 @@ node environmentalSensor.js
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать больше о модели возможностей устройства и о том, как создавать шаблоны устройств, перейдите к следующему практическому руководству:
+Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Node.js, ознакомьтесь со следующими руководствами:
+
+- Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
+- Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
+
+Если вы хотите продолжать работу с набором руководств по IoT Central, чтобы узнать больше о создании решении IoT Central, ознакомьтесь со следующим руководством:
 
 > [!div class="nextstepaction"]
-> [Определение типа нового устройства Интернета вещей в приложении Azure IoT Central](./howto-set-up-template.md)
+> [Создайте шаблон устройства шлюза](./tutorial-define-gateway-device-type.md)

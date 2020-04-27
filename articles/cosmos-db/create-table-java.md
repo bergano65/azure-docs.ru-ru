@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c8427333a0a395ca4a0998662cacf13dea662e04
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e3517804cb66a9f98351e4c68f4f7c4387cee8fe
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77212854"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82083807"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-table-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API таблиц Azure Cosmos DB
 
@@ -52,7 +52,7 @@ ms.locfileid: "77212854"
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Теперь необходимо клонировать приложение "Таблица" из GitHub. Задайте строку подключения и выполните ее. Вы узнаете, как можно упростить работу с данными программным способом. 
+Теперь необходимо клонировать приложение "Таблица" из GitHub. Задайте строку подключения и выполните ее. Вы узнаете, как можно упростить работу с данными программным способом.
 
 1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
 
@@ -71,6 +71,8 @@ ms.locfileid: "77212854"
     ```bash
     git clone https://github.com/Azure-Samples/storage-table-java-getting-started.git 
     ```
+
+> ![СОВЕТ] Более подробное пошаговое руководство по аналогичному коду см. в статье с [примером API таблиц для Cosmos DB](table-storage-how-to-use-java.md). 
 
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 

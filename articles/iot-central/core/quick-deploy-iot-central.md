@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: 0ed32a4c1272c23c9500b35e05c383eac6dea185
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: b670776804c9758774bf216052254148f063e7da
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80998951"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758152"
 ---
 # <a name="create-an-azure-iot-central-application"></a>Создание приложения Azure IoT Central
 
@@ -59,7 +59,11 @@ ms.locfileid: "80998951"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали приложение IoT Central. Ниже приведено предлагаемое дальнейшее действие:
+В этом кратком руководстве вы создали приложение IoT Central. Чтобы продолжить изучение IoT Central, ознакомьтесь со следующим руководством:
 
 > [!div class="nextstepaction"]
 > [Quickstart: Add a simulated device to your IoT Central application (preview features)](./quick-create-simulated-device.md) (Добавление имитированного устройства в приложение IoT Central (предварительные версии функций))
+
+Если вы являетесь разработчиком устройства и хотите углубиться в код, ознакомьтесь со следующим руководством:
+> [!div class="nextstepaction"]
+> [Создание клиентского приложения и его подключение к приложению Azure IoT Central](./tutorial-connect-device-nodejs.md)

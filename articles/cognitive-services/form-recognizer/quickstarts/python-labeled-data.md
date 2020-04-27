@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 02/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 5469c2512e133d17e4d18cebb64ab9e2a21b1f83
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 36ded3bd85cd7acdffbfe46b9e931a811994fa30
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77482305"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81531106"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-rest-api-and-python"></a>Обучение модели Распознавателя документов по примерам с метками с помощью REST API и Python
 
@@ -40,7 +40,7 @@ ms.locfileid: "77482305"
 
 Чтобы обучить модель с использованием маркированных данных, во вложенной папке должны размещаться следующие входные файлы. Ниже описано, как создать эти файлы.
 
-* **Исходные формы**, из которых извлекаются данные. Поддерживаются следующие типы: JPEG, PNG, BMP, PDF и TIFF.
+* **Исходные формы**, из которых извлекаются данные. Поддерживаются типы JPEG, PNG, PDF и TIFF.
 * **Файлы макета OCR** в формате JSON, которые описывают размеры и положения всех доступных для чтения фрагментов текста в каждой исходной форме. Для создания этих данных вы будете использовать API макета Распознавателя документов. 
 * **Файлы меток** в формате JSON, которые описывают метки данных, присвоенные пользователем вручную.
 
@@ -219,7 +219,7 @@ headers = {
     'Ocp-Apim-Subscription-Key': '<subsription key>',
 }
 
-body =  {
+body =     {
     "source": source,
     "sourceFilter": {
         "prefix": prefix,
@@ -455,7 +455,7 @@ print("Train operation did not complete within the allocated time.")
                     "#/readResults/0/lines/8/words/1"
                   ]
                 },
-                ...     
+                ...        
               ]
             }
           ]

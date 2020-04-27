@@ -13,12 +13,13 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/29/2019
-ms.openlocfilehash: 2241b69e36e3b17475dba115b8d2ae94fe2189a7
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ROBOTS: NOINDEX
+ms.openlocfilehash: abe7d5ed1d4ba1308abde04aee32a3ea222456b8
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345844"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81452882"
 ---
 # <a name="tutorial-prepare-data-to-perform-clustering-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по Подготовка данных для выполнения кластеризации на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 
@@ -43,13 +44,11 @@ ms.locfileid: "80345844"
 
 В [третьей части](sql-database-tutorial-clustering-model-deploy.md) рассказывается, как создать в Базе данных SQL Azure хранимую процедуру, с помощью которой можно выполнять кластеризацию с помощью R на основе новых данных.
 
-[!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-* Сервер базы данных SQL Azure с включенными Службами машинного обучения. Во время общедоступной предварительной версии корпорация Майкрософт подключит вас и включит машинное обучение для имеющихся или новых баз данных. Выполните шаги, приведенные в разделе [Sign up for the preview](sql-database-machine-learning-services-overview.md#signup) (Регистрация для получения предварительной версии).
+* [База данных SQL Azure с включенными Службами машинного обучения](sql-database-machine-learning-services-overview.md) (с использованием R).
 
 * Пакет RevoScaleR. Сведения о вариантах локальной установки этого пакета см. в разделе [RevoScaleR](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-revoscaler?view=sql-server-2017#versions-and-platforms).
 

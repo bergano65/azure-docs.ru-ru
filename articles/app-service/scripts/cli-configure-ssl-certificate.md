@@ -1,25 +1,25 @@
 ---
-title: Интерфейс командной строки. отправка и привязка SSL-сертификата к приложению
-description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показана привязка пользовательского SSL-сертификата к приложению.
+title: Интерфейс командной строки. Отправка и привязка TLS/SSL-сертификата к приложению
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как создать привязку пользовательского TLS/SSL-сертификата к приложению.
 tags: azure-service-management
 ms.assetid: eb95d350-81ea-4145-a1e2-6eea3b7469b2
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 12/11/2017
 ms.custom: mvc, seodec18
-ms.openlocfilehash: d519ae31359890430c3e0f690e51d95acfacf1ef
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d1775f3af390bb71b6895dc6d43c5ae574371aef
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80058757"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81537667"
 ---
-# <a name="bind-a-custom-ssl-certificate-to-an-app-service-app-using-cli"></a>Привязка SSL-сертификата к приложению Службы приложений в интерфейсе командной строки
+# <a name="bind-a-custom-tlsssl-certificate-to-an-app-service-app-using-cli"></a>Привязка TLS/SSL-сертификата к приложению Службы приложений с помощью CLI
 
-Этот сценарий создает в Службе приложений приложение со связанными ресурсами, а затем привязывает к нему SSL-сертификат имени личного домена. Для этого примера вам потребуются следующие компоненты:
+Этот скрипт создает в Службе приложений приложение со связанными ресурсами, а затем привязывает к нему TLS/SSL-сертификат имени личного домена. Для этого примера вам потребуются следующие компоненты:
 
 * Доступ к странице конфигурации DNS вашего регистратора доменных имен.
-* Допустимый PFX-файл и пароль для SSL-сертификата, который будет отправлен и привязан.
+* Допустимый PFX-файл и пароль для TLS/SSL-сертификата, который будет отправлен и привязан.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -29,7 +29,7 @@ ms.locfileid: "80058757"
 
 ## <a name="sample-script"></a>Пример скрипта
 
-[!code-azurecli-interactive[main](../../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom SSL certificate to an app")]
+[!code-azurecli-interactive[main](../../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to an app")]
 
 [!INCLUDE [cli-script-clean-up](../../../includes/cli-script-clean-up.md)]
 
@@ -43,8 +43,8 @@ ms.locfileid: "80058757"
 | [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) | Создает план службы приложений. |
 | [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) | Создает приложение Службы приложений. |
 | [`az webapp config hostname add`](/cli/azure/webapp/config/hostname?view=azure-cli-latest#az-webapp-config-hostname-add) | Сопоставляет личный домен с приложением Службы приложений. |
-| [`az webapp config ssl upload`](/cli/azure/webapp/config/ssl?view=azure-cli-latest#az-webapp-config-ssl-upload) | Передает SSL-сертификат в приложение Службы приложений. |
-| [`az webapp config ssl bind`](/cli/azure/webapp/config/ssl?view=azure-cli-latest#az-webapp-config-ssl-bind) | Привязывает переданный SSL-сертификат к приложению Службы приложений. |
+| [`az webapp config ssl upload`](/cli/azure/webapp/config/ssl?view=azure-cli-latest#az-webapp-config-ssl-upload) | Отправляет TLS/SSL-сертификат в приложение Службы приложений. |
+| [`az webapp config ssl bind`](/cli/azure/webapp/config/ssl?view=azure-cli-latest#az-webapp-config-ssl-bind) | Привязывает переданный TLS/SSL-сертификат к приложению Службы приложений. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

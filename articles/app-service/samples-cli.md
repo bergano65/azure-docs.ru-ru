@@ -6,12 +6,12 @@ ms.assetid: 53e6a15a-370a-48df-8618-c6737e26acec
 ms.topic: sample
 ms.date: 12/12/2017
 ms.custom: mvc
-ms.openlocfilehash: 0b3acb1b421962cde7d90398f42bdfeefda578e3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 499bf25f06030ae9fc5c1f8381ef4cd6ff6873dc
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74971508"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535627"
 ---
 # <a name="cli-samples-for-azure-app-service"></a>Примеры интерфейса командной строки для Службы приложений Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "74971508"
 | [Создание приложения ASP.NET Core в контейнере Docker](./scripts/cli-linux-docker-aspnetcore.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений в Linux и загружает образ Docker из Docker Hub. |
 |**Настройка приложения**||
 | [Сопоставление личного домена с приложением](./scripts/cli-configure-custom-domain.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и сопоставляет c ним имя личного домена. |
-| [Привязка SSL-сертификата к приложению](./scripts/cli-configure-ssl-certificate.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и привязывает к нему SSL-сертификат имени личного домена. |
+| [Привязка TLS/SSL-сертификата к приложению](./scripts/cli-configure-ssl-certificate.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и привязывает к нему TLS/SSL-сертификат имени личного домена. |
 |**Масштабирование приложения**||
 | [Масштабирование приложения вручную](./scripts/cli-scale-manual.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и масштабирует его по двум экземплярам. |
 | [Глобальное масштабирование приложения с помощью высокодоступной архитектуры](./scripts/cli-scale-high-availability.md?toc=%2fcli%2fazure%2ftoc.json) | Создает два приложения Службы приложений в двух разных географических регионах и делает их доступными через одну конечную точку с помощью диспетчера трафика Azure. |

@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 9de9739efce13fc96bf550759eb0ef68d732af1e
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 673155706c3b7d44b41562c2dc8ce24a94ac6a58
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77212729"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82083637"
 ---
-# <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Сборка приложения API таблиц с помощью Python и Azure Cosmos DB
+# <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Python и Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-table-dotnet.md)
@@ -27,9 +27,9 @@ ms.locfileid: "77212729"
 
 Из этого краткого руководства вы узнаете, как создать учетную запись API таблиц Azure Cosmos DB и управлять ею с портала Azure и из Visual Studio с помощью приложения Python, клонированного из GitHub. Azure Cosmos DB — это служба многомодельной базы данных, позволяющая быстро создавать и запрашивать документы, таблицы, пары "ключ-значение" и графовые базы данных, используя возможности глобального распределения и горизонтального масштабирования.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure. Вы также можете воспользоваться [эмулятором Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) с URI `https://localhost:8081` и ключом `C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==`.
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure. Вы также можете воспользоваться [эмулятором Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) с URI `https://localhost:8081` и ключом `C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==`.
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/) с выбранными во время установки рабочими нагрузками **разработки Azure** и **разработки Python**. 
 - [Git](https://git-scm.com/downloads).
 
@@ -73,11 +73,13 @@ ms.locfileid: "77212729"
 
 3. Затем откройте файл решения в Visual Studio. 
 
+> ![СОВЕТ] Более подробное пошаговое руководство по аналогичному коду см. в статье с [примером API таблиц для Cosmos DB](table-storage-how-to-use-python.md).
+
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. Выберите элемент [Строка подключения](https://portal.azure.com/) в своей учетной записи Azure Cosmos DB на **портале Azure**. 
+1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
     ![Просмотр и копирование строки подключения в параметрах "Строка подключения"](./media/create-table-python/view-and-copy-connection-string-in-connection-string-settings.png)
 

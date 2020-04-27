@@ -4,12 +4,12 @@ description: Узнайте о том, как вызывать бизнес-пр
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: mvc
-ms.openlocfilehash: 44f2dfb83e96e1d8fa31ee1acf350193b954dbd8
-ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
+ms.openlocfilehash: 4073b49a134356943bd7da8d54bf574f2e0d5eea
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80892573"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81604851"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Руководство по Отправка сообщений электронной почты и вызов других бизнес-процессов из Службы приложений
 
@@ -199,7 +199,7 @@ var statusCode = result.StatusCode.ToString();
 ```
 
 > [!NOTE]
-> Этот код специально упрощен для ознакомления. В реальной системе не следует создавать новый экземпляр объекта `HttpClient` для каждого запроса. Соблюдайте рекомендации из руководства по [использованию IHttpClientFactory для реализации устойчивых HTTP-запросов](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient -http-requests).
+> Этот код специально упрощен для ознакомления. В реальной системе не следует создавать новый экземпляр объекта `HttpClient` для каждого запроса. Соблюдайте рекомендации из руководства по [использованию IHttpClientFactory для реализации устойчивых запросов HTTP](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests).
 
 Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе ASP.NET Core с базой данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md), вы можете с его помощью отправить подтверждение по электронной почте в [действии Create](https://github.com/Azure-Samples/dotnetcore-sqldb-tutorial/blob/master/Controllers/TodosController.cs#L56-L65) после добавления элемента `Todo`.
 

@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 04/19/2018
 ms.author: ccompy
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 9bc40e71c1da6eb60b62cd08c51df89a7f35af09
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 08a97f0f7b1a6a65feb7a2ec041001f2199ffdf7
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80057385"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770635"
 ---
 # <a name="introduction-to-the-app-service-environments"></a>Общие сведения о средах службы приложений #
  
@@ -34,7 +34,7 @@ ms.locfileid: "80057385"
 
 Клиенты могут создавать несколько сред ASE в одном или в нескольких регионах Azure. Благодаря этой гибкости среды ASE идеально подходят для горизонтально масштабируемых уровней приложений без учета состояний, поддерживающих большие рабочие нагрузки RPS.
 
-Среды ASE изолированы, позволяют запускать приложения только одного клиента и всегда развернуты в виртуальной сети. Клиенты могут детально управлять входящим и исходящим сетевым трафиком приложений, а приложения — создавать высокоскоростные безопасные подключения к локальным корпоративным ресурсам через VPN.
+Среды ASE размещают приложения только от одного пользователя и в одной из своих виртуальных сетей. Клиенты могут детально управлять входящим и исходящим сетевым трафиком приложений, а приложения — создавать высокоскоростные безопасные подключения к локальным корпоративным ресурсам через VPN.
 
 * Для ASE предусмотрена собственная ценовая категория. Узнайте, как [предложение категории "Изолированный"](https://channel9.msdn.com/Shows/Azure-Friday/Security-and-Horsepower-with-App-Service-The-New-Isolated-Offering?term=app%20service%20environment) помогает достичь высочайшего уровня масштабируемости и безопасности.
 * [Среды службы приложений версии 2](https://channel9.msdn.com/Blogs/Azure/Azure-Application-Service-Environments-v2-Private-PaaS-Environments-in-the-Cloud?term=app%20service%20environment) предоставляют окружение для защиты приложениях в подсети вашей сети и обеспечивают частное развертывание Службы приложений Azure.

@@ -7,17 +7,17 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc
-ms.date: 03/02/2020
-ms.openlocfilehash: d7330225ecbdc6715847821a47c140a3c2b8d1b9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 04/21/2020
+ms.openlocfilehash: dd0b4d1b0998bd4b13a17fb8345b87924bc27e1d
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78251949"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81869972"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство по Анализ данных Apache Spark с использованием Power BI в HDInsight
 
-Из этого учебника вы узнаете, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере Apache Spark в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
+Из этого руководства вы узнаете, как использовать Microsoft Power BI для визуализации данных в кластере Apache Spark в Azure HDInsight.
 
 В этом руководстве описано следующее:
 > [!div class="checklist"]
@@ -70,9 +70,6 @@ ms.locfileid: "78251949"
 ### <a name="create-a-report-in-power-bi-desktop"></a>Создание отчета в Power BI Desktop
 
 Начиная работать со Spark, в первую очередь необходимо подключиться к кластеру в Power BI Desktop, загрузить данные из кластера, а затем создать базовую визуализацию на основе этих данных.
-
-> [!NOTE]  
-> Соединитель, описанный в этой статье, находится в стадии предварительной версии. Любые отзывы о нем вы можете предоставить на [сайте сообщества Power BI](https://community.powerbi.com/) или на форуме [Power BI ideas](https://ideas.powerbi.com/forums/265200-power-bi-ideas).
 
 1. Откройте Power BI Desktop. Закройте экран-заставку запуска, если он открыт.
 
@@ -180,7 +177,7 @@ ms.locfileid: "78251949"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого учебника вы узнали, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере Apache Spark в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/). Перейдите к следующей статье, чтобы создать приложение машинного обучения.
+Из этого учебника вы узнали, как использовать Microsoft Power BI для визуализации данных в кластере Apache Spark в Azure HDInsight. Перейдите к следующей статье, чтобы создать приложение машинного обучения.
 
 > [!div class="nextstepaction"]
 > [Создание приложений машинного обучения Apache Spark в Azure HDInsight](./apache-spark-ipython-notebook-machine-learning.md)

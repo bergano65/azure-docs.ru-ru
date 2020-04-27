@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: 629adfe558aec71e156e50c75aa0891eac5a8bcf
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: df26021a3718c17d72f0fdb25588487043918732
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79214932"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82084113"
 ---
 # <a name="quickstart-build-a-table-api-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью пакета SDK .NET и Azure Cosmos DB 
 
@@ -65,6 +65,8 @@ ms.locfileid: "79214932"
    ```bash
    git clone https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started.git
    ```
+
+> ![СОВЕТ] Более подробное пошаговое руководство по аналогичному коду см. в статье с [примером API таблиц для Cosmos DB](table-storage-how-to-use-dotnet.md).
 
 ## <a name="open-the-sample-application-in-visual-studio"></a>Открытие примера приложения в Visual Studio
 

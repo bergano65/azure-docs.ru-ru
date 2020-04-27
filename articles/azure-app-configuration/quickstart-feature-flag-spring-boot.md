@@ -4,14 +4,14 @@ description: Добавление флагов функций в приложе�
 author: lisaguthrie
 ms.service: azure-app-configuration
 ms.topic: quickstart
-ms.date: 01/21/2020
+ms.date: 04/18/2020
 ms.author: lcozzens
-ms.openlocfilehash: 489bc0234580e8df8dcc85c1d3cc0add547818b1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e6dc51250987e0282530209ffa13e52d6e75aa9c
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78944344"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81687363"
 ---
 # <a name="quickstart-add-feature-flags-to-a-spring-boot-app"></a>Краткое руководство. Добавление флагов функций в приложение Spring Boot
 
@@ -57,7 +57,7 @@ ms.locfileid: "78944344"
 
 1. Откройте файл *pom.xml* в текстовом редакторе и добавьте следующие строки в список `<dependencies>`:
 
-### <a name="spring-cloud-11x"></a>Spring Cloud 1.1.x
+    **Spring Cloud 1.1.x**
 
     ```xml
     <dependency>
@@ -76,7 +76,7 @@ ms.locfileid: "78944344"
     </dependency>
     ```
 
-### <a name="spring-cloud-12x"></a>Spring Cloud 1.2.x
+    **Spring Cloud 1.2.x**
 
     ```xml
     <dependency>
@@ -103,7 +103,7 @@ ms.locfileid: "78944344"
 1. Перейдите в каталог `resources` приложения и откройте `bootstrap.properties`.  Если файл не существует, создайте его. Добавьте следующую строку в файл.
 
     ```properties
-    spring.cloud.azure.appconfiguration.stores[0].name= ${APP_CONFIGURATION_CONNECTION_STRING}
+    spring.cloud.azure.appconfiguration.stores[0].connection-string= ${APP_CONFIGURATION_CONNECTION_STRING}
     ```
 
 1. На портале Конфигурации приложения для хранилища конфигураций выберите `Access keys` на боковой панели. Выберите вкладку "Ключи только для чтения". Скопируйте значение основной строки подключения.
@@ -283,13 +283,13 @@ ms.locfileid: "78944344"
     mvn spring-boot:run
     ```
 
-1. Откройте окно браузера и перейдите по стандартному URL-адресу для веб-приложения, размещенного локально: `https://localhost:8080`.
+1. В браузере перейдите по адресу `http://localhost:8080/welcome`.
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/spring-boot-feature-flag-local-before.png)
 
 1. На портале конфигурации приложений выберите **Feature Manager** (Диспетчер функций) и измените состояние ключа **Beta** на **On** (Включен).
 
-    | Клавиши | Штат |
+    | Клавиши | Состояние |
     |---|---|
     | Бета-версия | С |
 

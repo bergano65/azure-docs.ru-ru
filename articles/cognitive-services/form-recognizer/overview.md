@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: overview
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 6919849d28573ad7388a7f2e317d2b8433f35559
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 5b7a060aa2313902e4644fdd15068e06816e3f58
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2020
-ms.locfileid: "81399446"
+ms.locfileid: "81529898"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -92,7 +92,7 @@ ms.locfileid: "81399446"
 
 Требования к входным данным модели для обработки квитанций немного отличаются.
 
-* Данные должны предоставляться в формате JPEG, PNG, BMP, PDF (текст или отсканированный) или TIFF.
+* Формат JPG, PNG, PDF (текстовые или отсканированные документы) или TIFF.
 * Размер файла не должен превышать 20 МБ.
 * Изображения должны иметь размеры в пределах от 50 x 50 до 10000 x 10000 пикселей.
 * Размер страницы PDF-файла не должен превышать 17 x 17 дюймов, что соответствует размеру листа Legal или A3 и меньше.

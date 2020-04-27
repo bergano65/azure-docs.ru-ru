@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 03/05/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 7c7186b6ac5d5dcf4db75ccba9e08f8e0484932f
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: dfd7b933502b96c0952a24dbee563e9b537dcdd8
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81253430"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683475"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint-using-resource-manager-template"></a>Краткое руководство. Создание профиля Azure CDN и конечной точки с помощью шаблона Resource Manager
 
@@ -211,7 +211,7 @@ az cdn endpoint list --profile-name standard-microsoft --resource-group cdn -o t
 
 ![Просмотр конечной точки CDN](./media/create-profile-resource-manager-template/cdn-view-endpoint.png)
 
-Чтобы просмотреть содержимое, используйте имя узла. Например, получите доступ к https://cdndemo-azurewebsites-net.azureedge.net с помощью браузера.
+Чтобы просмотреть содержимое, используйте имя узла. Например, в браузере перейдите по адресу https:\//cdndemo-azurewebsites-net.azureedge.net.
 
 ## <a name="clean-up"></a>Очистка
 

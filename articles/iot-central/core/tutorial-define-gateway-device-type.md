@@ -9,16 +9,18 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 7bb386d39f53331e77bee4d863c431c2e3655f5c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2411eab50cc921a09ba55780b3c6620744a78f3f
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79298841"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758130"
 ---
 # <a name="define-a-new-iot-gateway-device-type-in-your-azure-iot-central-application"></a>Определение нового типа устройства шлюза Интернета вещей в приложении Azure IoT Central
 
-В этом учебнике показано, как с помощью шаблона устройства шлюза разработчики могут определить устройство шлюза в приложении IoT Central. Затем настройте несколько подчиненных устройств, подключающихся к приложению IoT Central через устройство шлюза. 
+*Эта статья предназначена для создателей решений и разработчиков устройств.*
+
+В этом руководстве показано, как с помощью шаблона устройства шлюза создатели решений могут определить устройство шлюза в приложении IoT Central. Затем настройте несколько подчиненных устройств, подключающихся к приложению IoT Central через устройство шлюза. 
 
 В этом учебнике вы создадите шаблон устройства шлюза**Интеллектуальное здание**. Устройство шлюза **Интеллектуальное здание** связано с другими подчиненными устройствами.
 
@@ -207,7 +209,7 @@ ms.locfileid: "79298841"
 > [!NOTE]
 > Для устройств шлюзов, смоделированных в IoT Central, сейчас не поддерживается создание кода на базе VS Code.
 
-Далее вы можете выполнить такую задачу:
+Как разработчик устройств вы можете узнать о следующем:
 
 > [!div class="nextstepaction"]
-> [Подключение устройства](tutorial-connect-device.md)
+> [Добавление устройства Azure IoT Edge в приложение Azure IoT Central](tutorial-add-edge-as-leaf-device.md)

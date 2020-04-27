@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 94d3993c6a0c62a68ea77a888d3351c8fea1d935
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.openlocfilehash: 29f5a48feaaafee64a20745b3cdf09726a6372ac
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80990996"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81533843"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -117,7 +117,7 @@ ms.locfileid: "80990996"
         string authority = String.Format(System.Globalization.CultureInfo.InvariantCulture, System.Configuration.ConfigurationManager.AppSettings["Authority"], tenant);
 
         /// <summary>
-        /// Configure OWIN to use OpenIdConnect 
+        /// Configure OWIN to use OpenIdConnect
         /// </summary>
         /// <param name="app"></param>
         public void Configuration(IAppBuilder app)
@@ -208,7 +208,7 @@ ms.locfileid: "80990996"
                 OpenIdConnectAuthenticationDefaults.AuthenticationType);
         }
     }
-    
+
     /// <summary>
     /// Send an OpenID Connect sign-out request.
     /// </summary>
@@ -291,19 +291,19 @@ ms.locfileid: "80990996"
         public ActionResult Index()
         {
             var userClaims = User.Identity as System.Security.Claims.ClaimsIdentity;
-    
+
             //You get the user’s first and last name below:
             ViewBag.Name = userClaims?.FindFirst("name")?.Value;
-    
+
             // The 'preferred_username' claim can be used for showing the username
             ViewBag.Username = userClaims?.FindFirst("preferred_username")?.Value;
-    
+
             // The subject/ NameIdentifier claim can be used to uniquely identify the user across the web
             ViewBag.Subject = userClaims?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-    
+
             // TenantId is the unique Tenant Id - which represents an organization in Azure AD
             ViewBag.TenantId = userClaims?.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid")?.Value;
-    
+
             return View();
         }
     }
@@ -311,7 +311,7 @@ ms.locfileid: "80990996"
 
 <!--start-collapse-->
 > ### <a name="more-information"></a>Дополнительные сведения
-> Атрибут `[Authorize]` означает, что все методы контроллера можно выполнять, только если пользователь прошел аутентификацию. Если пользователь, не прошедший аутентификацию, пытается получить доступ к контроллеру, OWIN инициирует запрос на аутентификацию для такого пользователя. Приведенный выше код проверяет список утверждений на наличие определенных атрибутов пользователя, включенных в маркер идентификации пользователя. Эти атрибуты включают имя и фамилию пользователя, а также субъект глобального идентификатора пользователя. Этот субъект содержит *идентификатор клиента*, который представляет идентификатор организации пользователя. 
+> Атрибут `[Authorize]` означает, что все методы контроллера можно выполнять, только если пользователь прошел аутентификацию. Если пользователь, не прошедший аутентификацию, пытается получить доступ к контроллеру, OWIN инициирует запрос на аутентификацию для такого пользователя. Приведенный выше код проверяет список утверждений на наличие определенных атрибутов пользователя, включенных в маркер идентификации пользователя. Эти атрибуты включают имя и фамилию пользователя, а также субъект глобального идентификатора пользователя. Этот субъект содержит *идентификатор клиента*, который представляет идентификатор организации пользователя.
 <!--end-collapse-->
 
 ## <a name="create-a-view-to-display-the-users-claims"></a>Создание представления для отображения утверждений пользователя

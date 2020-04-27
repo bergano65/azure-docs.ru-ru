@@ -4,12 +4,12 @@ description: Узнайте, как создать функцию в коман�
 ms.date: 03/30/2020
 ms.topic: quickstart
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 1e3ce26894e9e89d196c068bd32245c8c891b2e2
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 547acb42be6a0c89dbc315031c46192b5c9a4a0d
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81255555"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732805"
 ---
 # <a name="quickstart-create-a-function-in-azure-that-responds-to-http-requests"></a>Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы
 
@@ -21,7 +21,7 @@ ms.locfileid: "81255555"
 
 ::: zone pivot="programming-language-java"  
 > [!NOTE]
-> Если Maven не является предпочтительным средством разработки, ознакомьтесь с аналогичными учебниками для разработчиков Java с помощью [Gradle](/azure/azure-functions/functions-create-first-java-gradle), [IntelliJ IDEA](/azure/java/intellij/azure-toolkit-for-intellij-quickstart-functions) и [VS Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java).
+> Если вы не хотите использовать Maven в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Gradle](/azure/azure-functions/functions-create-first-java-gradle), [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [VS Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java).
 ::: zone-end  
 
 [!INCLUDE [functions-requirements-cli](../../includes/functions-requirements-cli.md)]
@@ -222,9 +222,9 @@ cd fabrikam-functions
 
 Войдите в Azure с помощью команды [az login](/cli/azure/reference-index#az-login), если вы еще не сделали этого:
 
-    ```azurecli
-    az login
-    ```
+```azurecli
+az login
+```
     
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем `AzureFunctionsQuickstart-rg` в регионе `westeurope`. (Группу ресурсов и ресурсы целесообразно создавать в ближайшем к вам регионе. Для этого используйте команду `az account list-locations`.)
 

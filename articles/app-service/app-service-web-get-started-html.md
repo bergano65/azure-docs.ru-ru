@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: 159b38962fe91cedfc8d313bef943dbc74e9974e
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 04cd28db52630e9de26e30ef4bf35db983f48b50
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80520253"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086068"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
@@ -42,16 +42,12 @@ git clone https://github.com/Azure-Samples/html-docs-hello-world.git
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
-Перейдите в каталог, в котором содержится пример кода, и выполните команду `az webapp up`.
-
-В следующем примере замените <app_name> уникальным именем приложения.
+Перейдите в каталог, в котором содержится пример кода, и выполните команду `az webapp up`. В следующем примере замените <app_name> уникальным именем приложения. Статическое содержимое обозначается флагом `--html`.
 
 ```bash
 cd html-docs-hello-world
-```
 
-```azurecli
-az webapp up --location westeurope --name <app_name> 
+az webapp up --location westeurope --name <app_name> --html
 ```
 
 Команда `az webapp up` выполняет следующие действия:
@@ -66,19 +62,19 @@ az webapp up --location westeurope --name <app_name>
 
 Выполнение этой команды может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения:
 
-```json
+<pre>
 {
-  "app_url": "https://<app_name>.azurewebsites.net",
+  "app_url": "https://&lt;app_name&gt;.azurewebsites.net",
   "location": "westeurope",
-  "name": "<app_name>",
+  "name": "&lt;app_name&gt;",
   "os": "Windows",
   "resourcegroup": "appsvc_rg_Windows_westeurope",
   "serverfarm": "appsvc_asp_Windows_westeurope",
   "sku": "FREE",
-  "src_path": "/home/<username>/quickstart/html-docs-hello-world ",
-  < JSON data removed for brevity. >
+  "src_path": "/home/&lt;username&gt;/quickstart/html-docs-hello-world ",
+  &lt; JSON data removed for brevity. &gt;
 }
-```
+</pre>
 
 Запишите значение `resourceGroup`. Оно потребуется при выполнении задач в разделе об [очистке ресурсов](#clean-up-resources).
 
@@ -102,7 +98,7 @@ az webapp up --location westeurope --name <app_name>
 
 Теперь повторно разверните приложение с помощью той же команды `az webapp up`.
 
-```azurecli
+```bash
 az webapp up --location westeurope --name <app_name> --html
 ```
 
@@ -130,7 +126,7 @@ az webapp up --location westeurope --name <app_name> --html
 
 На предыдущем шаге вы создали ресурсы Azure в группе ресурсов. Если эти ресурсы вам не понадобятся в будущем, вы можете удалить группу ресурсов, выполнив приведенную ниже команду в Cloud Shell. Помните, что имя группы ресурсов автоматически создано на этапе [создания веб-приложения](#create-a-web-app).
 
-```azurecli
+```bash
 az group delete --name appsvc_rg_Windows_westeurope
 ```
 

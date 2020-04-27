@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 0e8b79a88fc173674caa0ca65e394e21d58d5f2f
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 2b867a65fa11e14cdc3fc3e5c269686fa4d559de
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80756096"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81757178"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -41,7 +41,7 @@ ms.locfileid: "80756096"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Установите Visual Studio 2019](https://www.visualstudio.com/) (15.5 или более поздней версии), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
+* [Установите Visual Studio 2019](https://www.visualstudio.com/) версии 16.5 (или выше), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
 * [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 
 ## <a name="obtain-a-certificate-or-create-a-self-signed-development-certificate"></a>Получение сертификата или создание самозаверяющего сертификат разработки
@@ -156,27 +156,42 @@ serviceContext =>
 Имейте в виду, что при локальном развертывании на `localhost` предпочтительнее использовать CN = localhost, чтобы избежать исключений при проверке подлинности.
 
 ```csharp
-private X509Certificate2 GetHttpsCertificateFromStore()
+private X509Certificate2 FindMatchingCertificateBySubject(string subjectCommonName)
 {
     using (var store = new X509Store(StoreName.My, StoreLocation.LocalMachine))
     {
-        store.Open(OpenFlags.ReadOnly);
+        store.Open(OpenFlags.OpenExistingOnly | OpenFlags.ReadOnly);
         var certCollection = store.Certificates;
-        var currentCerts = certCollection.Find(X509FindType.FindBySubjectDistinguishedName, "CN=<your_CN_value>", false);
+        var matchingCerts = new X509Certificate2Collection();
+    
+    foreach (var enumeratedCert in certCollection)
+    {
+      if (StringComparer.OrdinalIgnoreCase.Equals(subjectCommonName, enumeratedCert.GetNameInfo(X509NameType.SimpleName, forIssuer: false))
+        && DateTime.Now < enumeratedCert.NotAfter
+        && DateTime.Now >= enumeratedCert.NotBefore)
+        {
+          matchingCerts.Add(enumeratedCert);
+        }
+    }
+
+        if (matchingCerts.Count == 0)
+    {
+        throw new Exception($"Could not find a match for a certificate with subject 'CN={subjectCommonName}'.");
+    }
         
-        if (currentCerts.Count == 0)
-                {
-                    throw new Exception("Https certificate is not found.");
-                }
-        
-        return currentCerts[0];
+        return matchingCerts[0];
     }
 }
+
+
 ```
 
-## <a name="give-network-service-access-to-the-certificates-private-key"></a>Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
+## <a name="grant-network-service-access-to-the-certificates-private-key"></a>Предоставление службе NETWORK SER VICE доступа к закрытому ключу сертификата
 
 На предыдущем шаге вы импортировали сертификат в хранилище `Cert:\LocalMachine\My` на компьютере разработки.  Теперь нужно предоставить доступ к закрытому ключу сертификата учетной записи, из которой запускается служба (по умолчанию NETWORK SERVICE). Этот шаг можно выполнить вручную (используя средство certlm.msc), но лучше автоматически запустить скрипт PowerShell, [настроив скрипт запуска](service-fabric-run-script-at-service-startup.md) в **SetupEntryPoint** манифеста службы.
+
+>[!NOTE]
+> Service Fabric поддерживает объявление сертификатов конечной точки по отпечатку или общему имени субъекта. В этом случае среда выполнения настроит привязку и список управления доступом (ACL) закрытого ключа сертификата для удостоверения, от имени которого выполняется служба. Среда выполнения также будет отслеживать изменения и продления сертификата и будет вносить изменения в список ACL для соответствующего закрытого ключа.
 
 ### <a name="configure-the-service-setup-entry-point"></a>Настройка точки входа установки службы
 
@@ -385,7 +400,7 @@ $slb | Set-AzLoadBalancer
 
 Сохраните все файлы, переключитесь с версии для отладки на версию выпуска и нажмите F6 для повторного создания.  Щелкните правой кнопкой мыши проект в **приложении для голосования** и выберите пункт **Опубликовать**. Выберите конечную точку подключения кластера, созданного в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md) или выберите другой кластер.  Нажмите кнопку **Опубликовать**, чтобы опубликовать приложение на удаленном кластере.
 
-При развертывании приложения откройте браузер и выберите [https://mycluster.region.cloudapp.azure.com:443](https://mycluster.region.cloudapp.azure.com:443) (обновите URL-адрес, используя конечную точку подключения кластера). Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
+При развертывании приложения откройте веб-браузер и перейдите по адресу `https://mycluster.region.cloudapp.azure.com:443` (обновите URL-адрес, используя конечную точку подключения кластера). Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
 
 ![Приложение для голосования][image3]
 

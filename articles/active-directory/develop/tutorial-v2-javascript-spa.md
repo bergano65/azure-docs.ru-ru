@@ -11,17 +11,17 @@ ms.workload: identity
 ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: ec47850ce4cccb6a891c7e5aef2644550bc3e39a
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.openlocfilehash: 52b7c582848dd24f6d9963a9d37c8f12c5db6149
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80990962"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81678026"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
 В этом руководстве описано, как с помощью одностраничного приложения (SPA) JavaScript сделать следующее:
-- войти в личные, рабочие и учебные учетные записи; 
+- войти в личные, рабочие и учебные учетные записи;
 - Получение маркера доступа
 - вызвать API Microsoft Graph и другие API, которым требуются маркеры доступа от *конечной точки платформы удостоверений Майкрософт*.
 
@@ -48,10 +48,6 @@ ms.locfileid: "80990962"
 |---|---|
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|MSAL для JavaScript|
 
-> [!NOTE]
-> В качестве целевого объекта в библиотеке *msal.js* задана конечная точка платформы удостоверений Майкрософт. Это позволяет выполнять вход и запрашивать маркеры, используя личные, рабочие и учебные учетные записи. К конечной точке платформы удостоверений Майкрософт применяются [некоторые ограничения](../azuread-dev/azure-ad-endpoint-comparison.md#limitations).
-> См. [сравнение конечных точек версии 1.0 и 2.0](../azuread-dev/azure-ad-endpoint-comparison.md).
-
 <!--end-collapse-->
 
 ## <a name="set-up-your-web-server-or-project"></a>Настройка веб-сервера или проекта
@@ -68,7 +64,7 @@ ms.locfileid: "80990962"
 
 ## <a name="create-your-project"></a>Создание проекта
 
-Установите [Node.js](https://nodejs.org/en/download/) и создайте папку для размещения приложения. В ней будет реализован простой веб-сервер [Express](https://expressjs.com/) для обслуживания файла `index.html`. 
+Установите [Node.js](https://nodejs.org/en/download/) и создайте папку для размещения приложения. В ней будет реализован простой веб-сервер [Express](https://expressjs.com/) для обслуживания файла `index.html`.
 
 1. Сначала с помощью встроенного терминала Visual Studio Code найдите папку проекта, а затем установите Express, используя npm.
 
@@ -170,7 +166,7 @@ ms.locfileid: "80990962"
 
        <!-- importing bootstrap.js and supporting js libraries -->
        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>  
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
        <!-- importing app scripts (load order is important) -->
@@ -188,7 +184,7 @@ ms.locfileid: "80990962"
 
    > [!TIP]
    > Приведенную в сценарии выше версию MSAL.js можно заменить последней выпущенной версией в разделе с [выпусками MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases).
-   
+
 2. Теперь создайте JS-файл с именем `ui.js` для получения доступа к элементам DOM и их обновления и добавьте следующий код:
 
    ```JavaScript
@@ -304,7 +300,7 @@ ms.locfileid: "80990962"
       cacheLocation: "sessionStorage", // This configures where your cache will be stored
       storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
     }
-  };  
+  };
 
   // Add here scopes for id token to be used at MS Identity Platform endpoints.
   const loginRequest = {
@@ -350,7 +346,7 @@ ms.locfileid: "80990962"
    function signOut() {
      myMSALObj.logout();
    }
-   
+
    function callMSGraph(theUrl, accessToken, callback) {
        var xmlHttp = new XMLHttpRequest();
        xmlHttp.onreadystatechange = function () {
@@ -430,7 +426,7 @@ ms.locfileid: "80990962"
 1. Приложения также могут визуально уведомить пользователя, что требуется интерактивный вход, чтобы пользователь мог выбрать подходящее время для входа или приложение могло повторить метод `acquireTokenSilent` ​​позднее. Обычно это применимо в тех случаях, когда пользователь может использовать другие функции приложения, на которые это не влияет. Например, в приложении есть содержимое, для доступа к аутентификация не требуется. В этой ситуации пользователь может самостоятельно решить, когда выполнять вход для получения доступа к защищенному ресурсу или обновления устаревших данных.
 
 > [!NOTE]
-> В этом кратком руководстве по умолчанию используются методы `loginPopup` и `acquireTokenPopup`. Если в качестве браузера вы используете Internet Explorer, мы рекомендуем использовать методы `loginRedirect` и `acquireTokenRedirect` в связи с [известной проблемой](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues) со способом работы всплывающих окон Internet Explorer. Если вы хотите узнать, как добиться того же результата с помощью `Redirect methods`, см. [эту страницу](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/blob/quickstart/JavaScriptSPA/authRedirect.js). 
+> В этом кратком руководстве по умолчанию используются методы `loginPopup` и `acquireTokenPopup`. Если в качестве браузера вы используете Internet Explorer, мы рекомендуем использовать методы `loginRedirect` и `acquireTokenRedirect` в связи с [известной проблемой](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues) со способом работы всплывающих окон Internet Explorer. Если вы хотите узнать, как добиться того же результата с помощью `Redirect methods`, см. [эту страницу](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/blob/quickstart/JavaScriptSPA/authRedirect.js).
 <!--end-collapse-->
 
 ## <a name="call-the-microsoft-graph-api-by-using-the-token-you-just-acquired"></a>Вызов API Microsoft Graph с помощью полученного маркера
@@ -462,7 +458,7 @@ ms.locfileid: "80990962"
      };
 
      console.log('request made to Graph API at: ' + new Date().toString());
-  
+
      fetch(endpoint, options)
        .then(response => response.json())
        .then(response => callback(response, endpoint))

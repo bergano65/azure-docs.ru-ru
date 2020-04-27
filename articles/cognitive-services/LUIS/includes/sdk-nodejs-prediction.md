@@ -10,12 +10,12 @@ ms.date: 02/14/2020
 ms.topic: include
 ms.custom: include file
 ms.author: diberry
-ms.openlocfilehash: 05e668ff5b0ec19c5e380cf6bfee4b6e46900b2f
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 9c15e4217c5331346c5a95329bae7e2a4f0e0841
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77372145"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732068"
 ---
 С помощью клиентской библиотеки LUIS для Node.js можно выполнить приведенные ниже задачи.
 
@@ -28,6 +28,7 @@ ms.locfileid: "77372145"
 
 * Ресурс среды выполнения LUIS: [Создание с помощью портала Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne)
 * [Node.js](https://nodejs.org)
+* Идентификатор приложения LUIS. Используйте общедоступный идентификатор приложения для Интернета вещей `df67dcdb-c37d-46af-88e1-8b97951ca1c2`. Пользовательский запрос, используемый в коде из этого краткого руководства, относится только к этому приложению.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -37,9 +38,9 @@ ms.locfileid: "77372145"
 
 [!INCLUDE [Set up environment variables for prediction quickstart](sdk-prediction-environment-variables.md)]
 
-### <a name="create-a-new-javascript-nodejs-file"></a>Создание нового файла JavaScript (Node.js)
+### <a name="create-a-new-javascript-nodejs-file"></a>Создание файла JavaScript (Node.js)
 
-Создайте файл JavaScript в предпочитаемой интегрированной среде разработки или редакторе с именем `luis_prediction.js`.
+Создайте файл JavaScript с именем `luis_prediction.js` в предпочитаемой интегрированной среде разработки или редакторе.
 
 ### <a name="install-the-npm-library-for-the-luis-runtime"></a>Установка библиотеки NPM для среды выполнения LUIS
 

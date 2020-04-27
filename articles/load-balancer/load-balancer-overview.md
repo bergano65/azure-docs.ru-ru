@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 2853b1567618127866a4e9c61d81e599d3100823
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8596b435ffa02da7daf4ef98bfe0fe7995b9270a
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80064267"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81768191"
 ---
 # <a name="what-is-azure-load-balancer"></a>Что такое Azure Load Balancer?
 
@@ -82,6 +82,7 @@ Load Balancer уровня "Базовый" предоставляется бе�
 См. [Соглашение об уровне обслуживания для Load Balancer](https://aka.ms/lbsla). Load Balancer уровня "Базовый" не имеет Соглашения об уровне обслуживания (SLA).
 
 ## <a name="next-steps"></a>Дальнейшие действия
+См. сведения об [обновлении Load Balancer ценовой категории "Базовый" до ценовой категории "Стандартный"](upgrade-basic-standard.md).
 
 Чтобы приступить к работе с Load Balancer, см. [Create a public Standard Load Balancer](quickstart-load-balancer-standard-public-portal.md) (Создание общедоступного Load Balancer (цен. категория "Стандартный")).
 

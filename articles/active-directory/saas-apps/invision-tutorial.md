@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 03/09/2020
+ms.date: 04/09/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63ec58711c5dd142064e2d5cb29ccaa9eb9c0ed9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1c2427fff37158745e416f4b2f0641697ad62ea9
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79300358"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81682667"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-invision"></a>Руководство по интеграции единого входа Azure Active Directory с InVision
 
@@ -157,13 +157,15 @@ ms.locfileid: "79300358"
 
     д) Откройте в Блокноте скачанный **сертификат (Base64)** , скопируйте его содержимое и вставьте его в текстовое поле **SAML Certificate** (Сертификат SAML).
 
-    е) Выберите **SHA-256** в раскрывающемся списке **HASH Algorithm** (Хэш-алгоритм).
+    е) В текстовом поле **Name ID Format** (Формат идентификатора имени) укажите `Unspecified` в качестве **формата идентификатора имени**.
 
-    ж. Введите соответствующее имя для параметра **SSO Button Label** (Надпись кнопки единого входа).
+    ж. Выберите **SHA-256** в раскрывающемся списке **HASH Algorithm** (Хэш-алгоритм).
 
-    h. Установите флажок **Allow Just-in-Time provisioning** (Разрешить JIT-подготовку).
+    h. Введите соответствующее имя для параметра **SSO Button Label** (Надпись кнопки единого входа).
 
-    i. Нажмите кнопку **Обновить**.
+    i. Установите флажок **Allow Just-in-Time provisioning** (Разрешить JIT-подготовку).
+
+    j. Нажмите кнопку **Обновить**.
 
 ### <a name="create-invision-test-user"></a>Создание тестового пользователя InVision
 

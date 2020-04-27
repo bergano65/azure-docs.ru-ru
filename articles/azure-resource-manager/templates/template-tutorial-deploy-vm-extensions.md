@@ -2,15 +2,15 @@
 title: Развертывание расширений виртуальной машины с помощью шаблона
 description: Узнайте, как можно развернуть расширения виртуальной машины с помощью шаблонов Azure Resource Manager
 author: mumian
-ms.date: 03/31/2020
+ms.date: 04/16/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 7397e9387fe3354a926ed607a9132ab6ddc7e785
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 280b4a9775346c719e82d1fef4162fa6ea666798
+ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80477590"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81616883"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-arm-templates"></a>Руководство по развертыванию расширений виртуальных машин с помощью шаблонов Resource Manager
 
@@ -23,7 +23,6 @@ ms.locfileid: "80477590"
 > * Открытие шаблона быстрого запуска
 > * Изменение шаблона
 > * Развертывание шаблона
-> * Проверка развертывания
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -42,29 +41,34 @@ ms.locfileid: "80477590"
 
 ## <a name="prepare-a-powershell-script"></a>Подготовка скрипта PowerShell
 
-Используется доступный на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1) скрипт PowerShell со следующим содержимым:
+Вы можете использовать встроенный скрипт PowerShell или файл скрипта.  В этом руководстве описано, как использовать файл скрипта. Используется доступный на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1) скрипт PowerShell со следующим содержимым:
 
 ```azurepowershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-Если вы решили опубликовать файл в своем расположении, необходимо позже обновить элемент `fileUri` в шаблоне в этом руководстве.
+Если вы решили опубликовать файл в своем расположении, обновите элемент `fileUri` в шаблоне, как описано в этом руководстве.
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
 Шаблоны быстрого запуска Azure — это репозиторий для шаблонов ARM. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом руководстве, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows).
 
 1. В Visual Studio Code выберите **Файл** > **Открыть файл**.
-1. В поле **Имя файла** вставьте следующий URL-адрес: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json.
+1. В поле **Имя файла** вставьте следующий URL-адрес:
+
+    ```url
+    https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
+    ```
 
 1. Чтобы открыть файл, выберите **Открыть**.
     Шаблон определяет пять ресурсов:
 
-   * **Microsoft.Storage/storageAccounts**. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).
-   * **Microsoft.Network/publicIPAddresses**. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses).
-   * **Microsoft.Network/virtualNetworks**. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks).
-   * **Microsoft.Network/networkInterfaces**. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/networkinterfaces).
-   * **Microsoft.Compute/virtualMachines**. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines).
+   * [**Microsoft.Storage/storageAccounts**](/azure/templates/Microsoft.Storage/storageAccounts).
+   * [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses).
+   * [**Microsoft.Network/networkSecurityGroups**](/azure/templates/microsoft.network/networksecuritygroups).
+   * [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks).
+   * [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces).
+   * [**Microsoft.Compute/virtualMachines**](/azure/templates/microsoft.compute/virtualmachines).
 
      Прежде чем настраивать шаблон, рекомендуется получить основные сведения о нем.
 
@@ -77,7 +81,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```json
 {
   "type": "Microsoft.Compute/virtualMachines/extensions",
-  "apiVersion": "2018-06-01",
+  "apiVersion": "2019-12-01",
   "name": "[concat(variables('vmName'),'/', 'InstallWebServer')]",
   "location": "[parameters('location')]",
   "dependsOn": [
@@ -105,6 +109,14 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 * **fileUris**. Это расположение, в котором хранятся файлы скриптов. Если вы решили не использовать указанное расположение, необходимо обновить значения.
 * **commandToExecute**. Эта команда запускает скрипт.
 
+Чтобы использовать встроенный скрипт, удалите **fileUris** и измените **commandToExecute** на:
+
+```powershell
+powershell.exe Install-WindowsFeature -name Web-Server -IncludeManagementTools && powershell.exe remove-item 'C:\\inetpub\\wwwroot\\iisstart.htm' && powershell.exe Add-Content -Path 'C:\\inetpub\\wwwroot\\iisstart.htm' -Value $('Hello World from ' + $env:computername)
+```
+
+Этот встроенный скрипт также обновляет содержимое файла iisstart.html.
+
 Кроме того, необходимо открыть HTTP-порт, чтобы вы могли получить доступ к серверу.
 
 1. Найдите **securityRules** в шаблоне.
@@ -130,10 +142,13 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 Дополнительные сведения о процедуре развертывания см. в разделе "Развертывание шаблона" статьи [Руководство. Создание шаблонов Resource Manager с зависимыми ресурсами](./template-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Мы советуем использовать пароль, созданный для учетной записи администратора виртуальной машины. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites) этой статьи.
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+В Cloud Shell выполните следующую команду, чтобы получить общедоступный IP-адрес виртуальной машины.
 
-1. На портале Azure выберите виртуальную машину.
-1. В обзоре виртуальной машины скопируйте IP-адрес, выбрав **Щелкните, чтобы скопировать**, а затем вставьте его на вкладке браузера. Откроется страница приветствия IIS по умолчанию, которая будет выглядеть следующим образом:
+```azurepowershell
+(Get-AzPublicIpAddress -ResourceGroupName $resourceGroupName).IpAddress
+```
+
+Вставьте URL-адрес в веб-браузер. Откроется страница приветствия IIS по умолчанию, которая будет выглядеть следующим образом:
 
 ![Страница приветствия служб IIS](./media/template-tutorial-deploy-vm-extensions/resource-manager-template-deploy-extensions-customer-script-web-server.png)
 

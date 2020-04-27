@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 03/18/2019
 ms.author: alkohli
-ms.openlocfilehash: c2a0dde496d6af66387210ca9b2ebf9cb4bdae7f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b3cf4fd958202c28586b7c15932dc88a21d7c60f
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79087941"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81686879"
 ---
 # <a name="tutorial-connect-set-up-activate-azure-data-box-gateway"></a>Руководство по Подключение, настройка и активация Шлюза Azure Data Box
 
@@ -41,7 +41,7 @@ ms.locfileid: "79087941"
 
 1. Откройте окно браузера и перейдите к локальному пользовательскому веб-интерфейсу на устройстве по адресу:
    
-   [https://ip-address-of-network-interface](https://ip-address-of-network-interface)
+   https:\//ip-address-of-network-interface
    
    Используйте URL-адрес подключения, указанный в предыдущем руководстве. Появится сообщение об ошибке или предупреждение, уведомляющее о проблеме с сертификатом безопасности веб-сайта.
 

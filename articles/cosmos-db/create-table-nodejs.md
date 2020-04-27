@@ -8,14 +8,14 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 08/06/2019
 ms.author: sngun
-ms.openlocfilehash: f317b7b5f3ab60f466054f2043027b13e8396abc
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e0d2d2ea99822c95b9fab73642db37430771c583
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77212829"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82083773"
 ---
-# <a name="quickstart-build-a-table-api-app-with-nodejs-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблицы с помощью Node.js и Azure Cosmos DB
+# <a name="quickstart-build-a-table-api-app-with-nodejs-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Node.js и Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-table-dotnet.md)
@@ -26,9 +26,9 @@ ms.locfileid: "77212829"
 
 В этом кратком руководстве объясняется, как создать учетную запись API таблиц Azure Cosmos DB, а также как с помощью обозревателя данных и приложения Node.js, клонированного из GitHub, создать таблицы и сущности. Azure Cosmos DB — это служба многомодельной базы данных, позволяющая быстро создавать и запрашивать документы, таблицы, пары "ключ-значение" и графовые базы данных, используя возможности глобального распределения и горизонтального масштабирования.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure. Вы также можете воспользоваться [эмулятором Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) с URI `https://localhost:8081` и ключом `C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==`.
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure. Вы также можете воспользоваться [эмулятором Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) с URI `https://localhost:8081` и ключом `C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==`.
 - [Node.js версии 0.10.29 и выше](https://nodejs.org/).
 - [Git](https://git-scm.com/downloads).
 
@@ -50,7 +50,7 @@ ms.locfileid: "77212829"
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Теперь необходимо клонировать приложение "Таблица" из GitHub. Задайте строку подключения и выполните ее. Вы узнаете, как можно упростить работу с данными программным способом. 
+Теперь необходимо клонировать приложение "Таблица" из GitHub. Задайте строку подключения и выполните ее. Вы узнаете, как можно упростить работу с данными программным способом.
 
 1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
 
@@ -70,11 +70,13 @@ ms.locfileid: "77212829"
     git clone https://github.com/Azure-Samples/storage-table-node-getting-started.git
     ```
 
+> ![СОВЕТ] Более подробное пошаговое руководство по аналогичному коду см. в статье с [примером API таблиц для Cosmos DB](table-storage-how-to-use-nodejs.md). 
+
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. Выберите элемент [Строка подключения](https://portal.azure.com/) в своей учетной записи Azure Cosmos DB на **портале Azure**. 
+1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
     ![Просмотр и копирование необходимой информации строки подключения на панели строки подключения](./media/create-table-nodejs/connection-string.png)
 

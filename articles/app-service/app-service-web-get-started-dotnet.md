@@ -3,14 +3,14 @@ title: Краткое руководство. Создание приложен�
 description: Узнайте, как запускать веб-приложения в Службе приложений Azure, развертывая шаблон веб-приложения ASP.NET Core на C# по умолчанию в Visual Studio.
 ms.assetid: b1e6bd58-48d1-4007-9d6c-53fd6db061e3
 ms.topic: quickstart
-ms.date: 03/17/2020
+ms.date: 04/22/2020
 ms.custom: mvc, devcenter, vs-azure, seodec18
-ms.openlocfilehash: be7c4a2fb65f913bc97617af1a0f21ee8fcca714
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 6c7ab1290033792cf356c4882811670011df5efe
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81313283"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086051"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Краткое руководство. Создание веб-приложения ASP.NET Core в Azure
 
@@ -107,7 +107,7 @@ ms.locfileid: "81313283"
 
 1. В **обозревателе решений** в проекте откройте **Страницы** > **Index.cshtml**.
 
-1. Замените содержимое двух тегов `<div>` кодом, приведенным ниже:
+1. Замените весь тег `<div>` следующим кодом:
 
    ```HTML
    <div class="jumbotron">

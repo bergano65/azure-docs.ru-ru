@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Oneteam.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 195fa26a38d89d9ef738e6060ff7dab602d5c234
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 875114c53cb3193b1b140e95be19daf7fb6415a9
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67095912"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81870313"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство. Интеграция Azure Active Directory с Oneteam
+# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство по Интеграция Azure Active Directory с Oneteam
 
 В этом руководстве описано, как интегрировать Oneteam с Azure Active Directory (Azure AD).
 Интеграция Oneteam с Azure AD обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67095912"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Oneteam, вам потребуется следующее:
 
-* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Oneteam с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,7 +101,7 @@ ms.locfileid: "67095912"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
@@ -118,7 +118,7 @@ ms.locfileid: "67095912"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<team name>.one-team.io/`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Oneteam](https://support.one-team.com/hc/requests/new). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в службу поддержки клиентов Oneteam. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -136,7 +136,7 @@ ms.locfileid: "67095912"
 
 ### <a name="configure-oneteam-single-sign-on"></a>Настройка единого входа в Oneteam
 
-Чтобы настроить единый вход на стороне **Oneteam**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в [группу поддержки Oneteam](https://support.one-team.com/hc/requests/new). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Oneteam**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в службу поддержки Oneteam. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -194,7 +194,7 @@ ms.locfileid: "67095912"
 В этом разделе вы создадите в Oneteam пользователя с именем Britta Simon. Приложение Oneteam поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Oneteam, он создается после проверки подлинности.
 
 >[!NOTE]
->Если необходимо создать пользователя вручную, можно отправить запрос [службе поддержки Oneteam](https://support.one-team.com/hc/requests/new).
+>Если необходимо создать пользователя вручную, можно отправить запрос службе поддержки Oneteam.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

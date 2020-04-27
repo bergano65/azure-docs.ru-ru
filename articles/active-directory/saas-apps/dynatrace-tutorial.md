@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ba96dd2fcfb995afa6e3b1302a2c8b075abfd90
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 275215a69f97d93a1b1741a8fa8f3ca752c8c9ef
+ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72968697"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81758984"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-dynatrace"></a>Руководство по интеграции единого входа Azure Active Directory с Dynatrace
 
@@ -140,7 +140,7 @@ ms.locfileid: "72968697"
 
 ## <a name="configure-dynatrace-sso"></a>Настройка единого входа для Dynatrace
 
-Чтобы настроить единый вход на стороне **Dynatrace**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Dynatrace](https://www.dynatrace.com/services-support/). Специалисты службы поддержки правильно настроят подключение единого входа SAML на обеих сторонах подключения.
+Чтобы настроить единый вход на стороне **Dynatrace**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [Dynatrace](https://www.dynatrace.com/support/help/shortlink/users-sso-hub). Вы можете выполнить инструкции на веб-сайте Dynatrace, чтобы настроить подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-dynatrace-test-user"></a>Создание тестового пользователя в Dynatrace
 

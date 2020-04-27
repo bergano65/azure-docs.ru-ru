@@ -2,18 +2,18 @@
 title: Подготовка виртуальных машин Hyper-V к оценке и миграции с помощью службы "Миграция Azure"
 description: Узнайте, как подготовить виртуальные машины Hyper-V к оценке и миграции с помощью службы "Миграция Azure".
 ms.topic: tutorial
-ms.date: 03/31/2020
+ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: d14ae4282afb610d025d08419a69c6d10c2f1d08
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.openlocfilehash: ea6290eae187ed4ead39f7307a84a54a23c19c29
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80436223"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81641636"
 ---
 # <a name="prepare-for-assessment-and-migration-of-hyper-v-vms-to-azure"></a>Подготовка виртуальных машин Hyper-V к оценке и переносу в Azure
 
-В этой статье показано, как подготовиться к оценке локальных виртуальных машин Hyper-V и выполнить миграцию виртуальных машин Hyper-V с помощью [средства оценки серверов Миграции Azure](migrate-services-overview.md#azure-migrate-server-migration-tool) (migrate-services-overview.md#azure-migrate-server-assessment-tool).
+В этой статье показано, как подготовиться к оценке локальных виртуальных машин Hyper-V с помощью [средства оценки серверов Миграции Azure](migrate-services-overview.md#azure-migrate-server-assessment-tool) и выполнить их миграцию с помощью [средства миграции серверов Миграции Azure](migrate-services-overview.md#azure-migrate-server-migration-tool).
 
 
 Это руководство является первым в серии, в которой показано, как оценивать и переносить виртуальные машины Hyper-V в Azure. В этом руководстве описано следующее:
@@ -214,9 +214,11 @@ Integration Services должны быть включены на каждой в
 Перед настройкой устройства Миграции Azure и началом оценки из следующего руководства вам следует подготовиться к развертыванию устройства.
 
 1. [Проверьте](migrate-appliance.md#appliance---hyper-v) требования к устройству.
-2. [Просмотрите](migrate-appliance.md#url-access) URL-адреса Azure, к которым устройству потребуется доступ.
+2. Проверьте URL-адреса Azure, к которым модуль будет обращаться в [общедоступных](migrate-appliance.md#public-cloud-urls) облаках и облаках для [государственных организаций](migrate-appliance.md#government-cloud-urls). Если вы используете брандмауэр или прокси-сервер на основе URL-адресов, убедитесь, что он разрешает доступ к нужным URL-адресам.
 3. Просмотрите данные, собранные устройством во время обнаружения и оценки.
-4. [Обратите внимание](migrate-appliance.md#collected-data---hyper-v) на требования доступа к порту для устройства.
+4. [Просмотрите](migrate-appliance.md#collected-data---hyper-v) требования доступа к порту для устройства.
+
+
 
 
 ## <a name="prepare-for-hyper-v-migration"></a>Подготовка к миграции Hyper-V
