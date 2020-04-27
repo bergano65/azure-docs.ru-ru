@@ -356,14 +356,14 @@
           href: backup-azure-vms-troubleshoot.md
         - name: Истечение времени ожидания агента Azure Backup или расширения виртуальной машины
           href: backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md
+        - name: Агент Azure Backup
+          href: backup-azure-mars-troubleshoot.md
         - name: Резервное копирование файлов и папок выполняется медленно
           href: backup-azure-troubleshoot-slow-backup-performance-issue.md
         - name: Azure Backup Server
           href: backup-azure-mabs-troubleshoot.md
         - name: System Center DPM
           href: backup-azure-scdpm-troubleshooting.md
-        - name: Агент Azure Backup
-          href: backup-azure-mars-troubleshoot.md
         - name: Общая папка Azure
           href: troubleshoot-azure-files.md
         - name: "SQL\_Server"
