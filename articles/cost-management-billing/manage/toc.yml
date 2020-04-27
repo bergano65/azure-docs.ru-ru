@@ -107,7 +107,7 @@
       href: billing-troubleshoot-azure-payment-issues.md
     - name: Карта не принимается
       href: troubleshoot-declined-card.md
-    - name: Проблемы при регистрации новой учетной записи
+    - name: Проблемы при регистрации учетной записи Azure
       href: troubleshoot-azure-sign-up.md
     - name: Проблемы со входом в подписку
       href: troubleshoot-sign-in-issue.md

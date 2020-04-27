@@ -24,6 +24,8 @@
       href: private-endpoint-overview.md
     - name: Служба "Приватный канал"
       href: private-link-service-overview.md
+    - name: Интеграция с частной конечной точкой DNS
+      href: private-endpoint-dns.md
 - name: Практическое руководство
   items:
     - name: Частное подключение к учетной записи хранения

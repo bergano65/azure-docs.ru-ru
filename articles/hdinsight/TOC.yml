@@ -39,6 +39,8 @@
       items:
         - name: Компоненты Apache Hadoop в HDInsight
           href: ./hdinsight-component-versioning.md
+        - name: Заметки о выпуске Hortonworks
+          href: ./hortonworks-release-notes.md
         - name: Компоненты высокого уровня доступности
           href: ./hdinsight-high-availability-components.md
         - name: Apache Ambari в Azure HDInsight
@@ -59,10 +61,17 @@
           href: ./cluster-management-best-practices.md
         - name: Доступность и надежность
           href: ./hdinsight-high-availability-linux.md
-        - name: Сравнение вариантов хранилищ
-          href: ./hdinsight-hadoop-compare-storage-options.md
         - name: Основные сведения об управляемых удостоверениях
           href: ./hdinsight-managed-identities.md
+        - name: Сравнение вариантов хранилищ
+          href: hdinsight-hadoop-compare-storage-options.md
+          items:
+            - name: Обзор службы хранилища Azure
+              href: overview-azure-storage.md
+            - name: Обзор Azure Data Lake Storage 1-го поколения
+              href: overview-data-lake-storage-gen1.md
+            - name: Обзор Azure Data Lake Storage 2-го поколения
+              href: overview-data-lake-storage-gen2.md
     - name: Практическое руководство
       items:
         - name: Создание кластеров
@@ -122,6 +131,8 @@
               href: hdinsight-hadoop-linux-use-ssh-unix.md
             - name: Использование туннелирования SSH
               href: hdinsight-linux-ambari-ssh-tunnel.md
+            - name: Использование SCP с HDInsight
+              href: ./use-scp.md
             - name: Ограничение доступа к данным
               href: hdinsight-storage-sharedaccesssignature-permissions.md
             - name: Предоставление пользователям доступа к представлениям Apache Ambari
@@ -216,6 +227,8 @@
           items:
             - name: 'Устранение неполадок, связанных с действиями скрипта'
               href: ./troubleshoot-script-action.md
+            - name: Сбои при создании ресурсов
+              href: ./troubleshoot-resource-creation-fails.md
     - name: Справочник
       items:
         - name: Azure PowerShell

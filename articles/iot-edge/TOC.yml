@@ -168,13 +168,15 @@
         - name: Развертывание в масштабе
           items:
             - name: Портал Azure
-              href: how-to-deploy-monitor.md
+              href: how-to-deploy-at-scale.md
             - name: Azure CLI
-              href: how-to-deploy-monitor-cli.md
+              href: how-to-deploy-cli-at-scale.md
             - name: Visual Studio Code
-              href: how-to-deploy-monitor-vscode.md
+              href: how-to-deploy-vscode-at-scale.md
     - name: Мониторинг и диагностика развертываний
       items:
+        - name: Мониторинг развертываний IoT Edge
+          href: how-to-monitor-iot-edge-deployments.md
         - name: Прямые методы EdgeAgent
           href: how-to-edgeagent-direct-method.md
     - name: Использование устройств IoT Edge в качестве шлюзов

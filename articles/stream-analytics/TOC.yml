@@ -219,7 +219,7 @@
           href: stream-analytics-troubleshoot-output.md
         - name: Логика запросов
           href: stream-analytics-troubleshoot-query.md
-        - name: Журналы действий и диагностики
+        - name: Журналы действий и ресурсов
           href: stream-analytics-job-diagnostic-logs.md
         - name: Ошибки данных
           href: data-errors.md
