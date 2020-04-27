@@ -10,10 +10,10 @@ ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.topic: conceptual
 ms.date: 02/09/2018
 ms.openlocfilehash: 5042d89f1cb5e928444e4b3c9a23db7bb1d66585
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60509346"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Использование средств Azure Data Lake для Visual Studio Code
@@ -22,14 +22,14 @@ ms.locfileid: "60509346"
 
 <a href="https://channel9.msdn.com/Series/AzureDataLake/Azure-Data-Lake-Tools-for-VSCode?term=ADL%20Tools%20for%20VSCode"><img src="./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS.Локальные запуск и отладка U-SQL работают только в Windows.
 
 - [Visual Studio Code](https://www.visualstudio.com/products/code-vs.aspx)
 
 Для MacOS и Linux:
-- [.NET Core SDK 2.0](https://www.microsoft.com/net/download/core)
+- [Пакет SDK для .NET Core 2,0](https://www.microsoft.com/net/download/core)
 - [Mono 5.2.x](https://www.mono-project.com/download/).
 
 ## <a name="install-azure-data-lake-tools"></a>Установка средств озера данных Azure
@@ -46,7 +46,7 @@ ms.locfileid: "60509346"
 
    Через несколько секунд кнопка **Установить** изменится на **Перезагрузить**.
 4. Нажмите кнопку **Перезагрузить**, чтобы активировать расширение **Средства Azure Data Lake**.
-5. Выберите **Перезагрузить окно** для подтверждения. Вы можете увидеть **инструменты Azure Data Lake** в панели **расширений.**
+5. Выберите **Перезагрузить окно** для подтверждения. На панели **расширения** можно просмотреть **Azure Data Lake инструменты** .
 
  
 ## <a name="activate-azure-data-lake-tools"></a>Активация Средств Azure Data Lake
@@ -121,8 +121,8 @@ ms.locfileid: "60509346"
 3. Откроется файл xxx_settings.json со следующими свойствами:
 
    - **account**. Учетная запись Azure Data Lake Analytics из подписки Azure, необходимая для компиляции и запуска заданий U-SQL. Необходимо настроить учетную запись вычислений, прежде чем компилировать и запускать задания U-SQL.
-   - **база данных**: База данных под вашей учетной записью. По умолчанию является **мастером**.
-   - **схема**: Схема под вашей базой данных. По умолчанию **dbo**.
+   - **база данных**: база данных под вашей учетной записью. Значение по умолчанию — **master**.
+   - **схема**: схема в базе данных. Значение по умолчанию — **dbo**.
    - **optionalSettings**:
         - **priority**. Значение приоритета в диапазоне от 1 до 1000, где 1 — наивысший приоритет. Значение по умолчанию: **1000**.
         - **degreeOfParallelism**. Значение степени параллелизма в диапазоне от 1 до 150. Значением по умолчанию является максимально допустимый коэффициент параллелизма в учетной записи Azure Data Lake Analytics. 
@@ -172,7 +172,7 @@ ms.locfileid: "60509346"
 1.  Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд.
 2.  Введите команду **ADL: Register Assembly (Advanced)**. 
 3.  Укажите локальный путь к сборке. 
-4.  Отобразится JSON-файл. Просмотрите и при необходимости измените зависимости сборки и параметры ресурсов. Инструкции отображаются в окне **вывода.** Чтобы перейти к регистрации сборки, сохраните (CTRL+S) JSON-файл.
+4.  Отобразится JSON-файл. Просмотрите и при необходимости измените зависимости сборки и параметры ресурсов. Инструкции отображаются в окне **вывод** . Чтобы перейти к регистрации сборки, сохраните (CTRL+S) JSON-файл.
 
     ![JSON-файл с зависимостями сборки и параметрами ресурсов](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-register-assembly-advance.png)
     
@@ -370,7 +370,7 @@ ms.locfileid: "60509346"
 
 **Скачивание файла с помощью команды ADL: Download File (Advanced)**
 1. Щелкните правой кнопкой мыши редактор скриптов, а затем выберите **Download File (Advanced)** (Скачать файл (Дополнительно)).
-2. В VS Code отобразится JSON-файл. Вы можете ввести несколько путей к файлам, чтобы загрузить несколько файлов одновременно. Инструкции отображаются в окне **вывода.** Чтобы продолжить скачивание файлов, сохраните (CTRL+S) JSON-файл.
+2. В VS Code отобразится JSON-файл. Вы можете ввести несколько путей к файлам, чтобы загрузить несколько файлов одновременно. Инструкции отображаются в окне **вывод** . Чтобы продолжить скачивание файлов, сохраните (CTRL+S) JSON-файл.
 
     ![JSON-файл с путями для скачивания файлов](./media/data-lake-analytics-data-lake-tools-for-vscode/download-multi-files.png)
 
@@ -460,7 +460,7 @@ ms.locfileid: "60509346"
 
 В средствах Data Lake откроется путь к хранилищу Azure на портале Azure. Можно найти путь и предварительно просмотреть файл в Интернете.
 
-## <a name="additional-features"></a>Дополнительные функции
+## <a name="additional-features"></a>Дополнительные возможности
 
 Средства Data Lake для VS Code поддерживают следующие функции:
 
@@ -477,7 +477,7 @@ ms.locfileid: "60509346"
  
     ![типы объектов IntelliSense.](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-auto-complete-objects.png)
  
--   **IntelliSense автозаполнить на данных Лейк-Аналитика метаданных**: Data Lake Tools загружает данные лейк-аналитики метаданных информации локально. Функция IntelliSense автоматически заполняет объекты метаданными Data Lake Analytics. К этим объектам относятся база данных, схема, таблица, представление, функция с табличным значением, процедуры и сборки C#.
+-   **Автозаполнение IntelliSense на Data Lake Analytics метаданных**. средства Data Lake загружают Data Lake Analytics данные метаданных локально. Функция IntelliSense автоматически заполняет объекты метаданными Data Lake Analytics. К этим объектам относятся база данных, схема, таблица, представление, функция с табличным значением, процедуры и сборки C#.
  
     ![Метаданные IntelliSense](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-auto-complete-metastore.png)
 
@@ -489,7 +489,7 @@ ms.locfileid: "60509346"
 > [!NOTE]
 > Рекомендуем обновить средства Azure Data Lake для Visual Studio до версии 2.3.3000.4 или выше. Предыдущие версии являются устаревшими и недоступными для скачивания.  
    
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Разработка U-SQL с помощью Python, R, и C Sharp для Azure Data Lake Analytics в VS Code](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
 - [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
 - [Начало работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)

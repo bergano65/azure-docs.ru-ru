@@ -13,26 +13,26 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: bc6e0718cdc4ccb18480dc760279da9c177db4cb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "60877470"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-java-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием Java SDK
 > [!div class="op_single_selector"]
 > * [Пакет SDK для .NET](data-lake-store-data-operations-net-sdk.md)
-> * [пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
+> * [Пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
 > * [REST API](data-lake-store-data-operations-rest-api.md)
 > * [Python](data-lake-store-data-operations-python.md)
 >
 > 
 
-Узнайте, как использовать Azure Data Lake Storage Gen1 Java SDK для выполнения основных операций, таких как создание папок, загрузка и загрузка файлов данных и т.д. Для получения дополнительной информации о [Azure Data Lake Storage Gen1](data-lake-store-overview.md)хранении данных озера Gen1, см.
+Узнайте, как использовать пакет SDK для Java Azure Data Lake Storage 1-го поколения для выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных и т. д. Дополнительные сведения о Data Lake Storage 1-го поколения см. в разделе [Azure Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
 Документацию по API пакета Java SDK для Data Lake Storage 1-го поколения можно найти [здесь](https://azure.github.io/azure-data-lake-store-java/javadoc/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * Комплект разработчика Java (JDK 7 или более поздней версии с использованием Java версии 1.7 или более поздней).
 * Учетная запись Data Lake Storage 1-го поколения. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
 * [Maven](https://maven.apache.org/install.html). В этом руководстве это средство используется для создания зависимостей проекта. Хотя зависимости можно создать и без использования таких систем, как Maven или Gradle, они существенно упрощают управление ими.
@@ -43,7 +43,7 @@ ms.locfileid: "60877470"
 
 1. Создайте проект Maven с использованием [архетипа mvn](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) с помощью командной строки или интегрированной среды разработки (IDE). Инструкции по созданию проекта Java с использованием IntelliJ см. [здесь](https://www.jetbrains.com/help/idea/2016.1/creating-and-running-your-first-java-application.html). Инструкции по созданию проекта с использованием Eclipse см. [здесь](https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-3.htm). 
 
-2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Добавьте следующий фрагмент перед ** \<тегом /project>:**
+2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Перед тегом ** \<>/Project** добавьте следующий фрагмент:
    
         <dependencies>
           <dependency>
@@ -73,7 +73,7 @@ ms.locfileid: "60877470"
         import java.util.Arrays;
         import java.util.List;
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 * Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с использованием Java](data-lake-store-end-user-authenticate-java-sdk.md).
 * Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Проверка подлинности между службами в Data Lake Storage 1-го поколения с использованием Java](data-lake-store-service-to-service-authenticate-java.md).
@@ -208,7 +208,7 @@ ms.locfileid: "60877470"
 1. Для запуска из среды IDE найдите и нажмите кнопку **запуска**. Для запуска из Maven выполните команду [exec:exec](https://www.mojohaus.org/exec-maven-plugin/exec-mojo.html).
 2. Чтобы получить автономный JAR-файл, который можно запустить из командной строки, создайте такой файл со всеми зависимостями с помощью [подключаемого модуля сборки Maven](https://maven.apache.org/plugins/maven-assembly-plugin/usage.html). Пример содержится в файле pom.xml в [исходном коде на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started/blob/master/pom.xml).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Документация по пакету SDK для Java](https://azure.github.io/azure-data-lake-store-java/javadoc/)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 

@@ -9,10 +9,10 @@ ms.assetid: cf5633d4-bc43-444e-90fc-f90fbd0b7935
 ms.topic: conceptual
 ms.date: 02/12/2018
 ms.openlocfilehash: 7fd88383e909ebd6be64c22721b813946e37179e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60616517"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Доступ к журналам диагностики для Azure Data Lake Analytics
@@ -25,7 +25,7 @@ ms.locfileid: "60616517"
 
 ## <a name="enable-logging"></a>Включение ведения журналов
 
-1. Подпишитесь на [портал Azure](https://portal.azure.com).
+1. Войдите в [портал Azure](https://portal.azure.com).
 
 2. Откройте свою учетную запись Data Lake Analytics и в разделе __Мониторинг__ выберите **Журналы диагностики**. Затем выберите __Turn on diagnostics__ (Включить диагностику).
 
@@ -41,12 +41,12 @@ ms.locfileid: "60616517"
 
      * Выберите **Stream to an event hub** (Потоковая передача в концентратор событий), чтобы передавать поток данных журнала в концентратор событий Azure. Этот параметр следует использовать, если есть конвейер последующей обработки, анализирующий входящие журналы в режиме реального времени. При выборе этого параметра необходимо указать сведения о концентраторе событий Azure, который вы хотите использовать.
 
-     * Выберите __«Отправить в журнал аналитики»__ для отправки данных в службу мониторинга Azure. Используйте эту опцию, если вы хотите использовать журналы Azure Monitor для сбора и анализа журналов.
+     * Выберите __отправить log Analytics__ , чтобы отправить данные в службу Azure Monitor. Используйте этот параметр, если вы хотите использовать журналы Azure Monitor для сбора и анализа журналов.
    * Укажите, что вы хотите получать: журналы аудита, журналы запросов либо и те, и другие журналы.  В журнал запросов записываются все запросы API, а в журнал аудита — все операции, активируемые запросами API.
 
    * Для параметра __Архивировать в учетной записи хранения__ укажите срок хранения данных в днях.
 
-   * Нажмите __Сохранить__.
+   * Нажмите кнопку __Сохранить__.
 
         > [!NOTE]
         > Перед нажатием кнопки __Сохранить__ нужно выбрать один из следующих параметров: __Архивировать в учетной записи хранения__, __Передать в концентратор событий__ или __Отправить в Log Analytics__.
@@ -125,7 +125,7 @@ ms.locfileid: "60616517"
 
 #### <a name="request-log-schema"></a>Схема журнала запросов
 
-| name | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -139,7 +139,7 @@ ms.locfileid: "60616517"
 
 #### <a name="request-log-properties-schema"></a>Схема свойств журнала запросов
 
-| name | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | HttpMethod |Строка |Метод HTTP, использованный для операции. Например, GET. |
 | путь |Строка |Путь выполнения операции. |
@@ -177,7 +177,7 @@ ms.locfileid: "60616517"
 
 #### <a name="audit-log-schema"></a>Схема журнала аудита
 
-| name | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -195,7 +195,7 @@ ms.locfileid: "60616517"
 
 #### <a name="audit-log-properties-schema"></a>Схема свойств журнала аудита
 
-| name | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | JobId |Строка |Идентификатор, присвоенный заданию. |
 | JobName |Строка |Имя, указанное для задания. |
@@ -210,7 +210,7 @@ ms.locfileid: "60616517"
 
 ## <a name="process-the-log-data"></a>Обработка данных журнала
 
-В Azure Data Lake Analytics есть пример обработки и анализа данных журнала. Вы можете найти [https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample](https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample)образец на .
+В Azure Data Lake Analytics есть пример обработки и анализа данных журнала. Пример можно найти по адресу [https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample](https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)

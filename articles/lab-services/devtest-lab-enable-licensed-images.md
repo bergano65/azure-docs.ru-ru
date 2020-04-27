@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 11b6553fe8aceef0d3d15977998dd870c275128a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "61294341"
 ---
 # <a name="enable-a-licensed-image-in-your-lab-in-azure-devtest-labs"></a>Активация лицензированных образов в лаборатории в Azure DevTest Labs
@@ -30,7 +30,7 @@ ms.locfileid: "61294341"
 
 1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Выберите **все службы,** а затем выберите **DevTest Labs** из списка.
+1. Выберите **все службы**, а затем в списке выберите **DevTest Labs** .
 
 1. Из списка лабораторий выберите нужную лабораторию.  
 
@@ -77,7 +77,7 @@ ms.locfileid: "61294341"
    >
 
 
-1. Нажмите кнопку **Сохранить**. 
+1. Щелкните **Сохранить**. 
 
     В списке образов Marketplace образ имеет состояние **Terms accepted** (Условия приняты) и доступен для создания виртуальных машин пользователями.
 
@@ -92,7 +92,7 @@ ms.locfileid: "61294341"
 - [Custom images or formulas? (Пользовательские изображения или формулы?)](https://blogs.msdn.microsoft.com/devtestlab/2016/04/06/custom-images-or-formulas/)
 - [Copying Custom Images between Azure DevTest Labs (Копирование пользовательских образов между лабораториями для разработки и тестирования Azure)](https://www.visualstudiogeeks.com/blog/DevOps/How-To-Move-CustomImages-VHD-Between-AzureDevTestLabs#copying-custom-images-between-azure-devtest-labs)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание пользовательского образа из виртуальной машины](devtest-lab-create-custom-image-from-vm-using-portal.md)
 - [Создание пользовательского образа из VHD-файла](devtest-lab-create-template.md)

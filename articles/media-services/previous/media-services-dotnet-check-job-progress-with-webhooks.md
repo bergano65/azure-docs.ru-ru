@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: a29381bded4bb2562227bd5f23ccb59bb5add028
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "67059206"
 ---
 # <a name="use-azure-webhooks-to-monitor-media-services-job-notifications-with-net"></a>Использование веб-перехватчиков Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. Уведомления о заданиях служб мультимедиа можно отслеживать с помощью объектов webhook Azure или [хранилища очередей Azure](media-services-dotnet-check-job-progress-with-queues.md). В этой статье приведены сведения о работе с веб-перехватчиками.
 
@@ -42,12 +42,12 @@ ms.locfileid: "67059206"
 
 Определения разных Функций Azure для служб мультимедиа .NET (включая приведенные в этой статье) см. [здесь](https://github.com/Azure-Samples/media-services-dotnet-functions-integration).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
-* Учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/)
-* Учетная запись служб мультимедиа. Чтобы создать учетную запись [How to Create a Media Services Account](media-services-portal-create-account.md)Media Services, см.
+* Учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Учетная запись служб мультимедиа. Сведения о создании учетной записи служб мультимедиа см. в разделе [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
 * Ознакомьтесь со статьей с общими сведения о [Функциях Azure](../../azure-functions/functions-overview.md). Посмотрите также статью [Привязки HTTP и webhook в функциях Azure](../../azure-functions/functions-bindings-http-webhook.md).
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
@@ -64,7 +64,7 @@ ms.locfileid: "67059206"
 |name|Определение|Пример| 
 |---|---|---|
 |SigningKey |Ключ подписи.| j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt|
-|WebHookEndpoint | Адрес конечной точки объекта webhook. После создания функции веб-перехватчика скопируйте URL-адрес из ссылки **Получить URL-адрес функции**. | https:\//juliakofuncapp.azurewebsites.net/api/Notification_Webhook_Function?code=iN2phdrTnCxmvaKExFWOTulfnm4C71mMLIy8tzLr7Zvf6Z22HHIK5g.|
+|WebHookEndpoint | Адрес конечной точки объекта webhook. После создания функции веб-перехватчика скопируйте URL-адрес из ссылки **Получить URL-адрес функции**. | HTTPS:\//juliakofuncapp.azurewebsites.NET/API/Notification_Webhook_Function?Code=iN2phdrTnCxmvaKExFWOTulfnm4C71mMLIy8tzLr7Zvf6Z22HHIK5g = =.|
 
 ## <a name="create-a-function"></a>Создание функции
 
@@ -379,7 +379,7 @@ internal sealed class NotificationMessage
 В этом разделе приведен код, который добавляет уведомление объекта webhook в задачу. Вы также можете добавить уведомление на уровне задания, что было бы лучше для задания с цепными задачами.  
 
 1. Создайте в Visual Studio консольное приложение C#. Введите значения в полях Имя, Расположение и Имя решения, а затем нажмите кнопку ОК.
-2. Используйте [NuGet](https://www.nuget.org/packages/windowsazure.mediaservices) для установки медиа-служб Azure.
+2. Используйте [NuGet](https://www.nuget.org/packages/windowsazure.mediaservices) для установки служб мультимедиа Azure.
 3. Обновите файл App.config, используя соответствующие значения: 
     
    * Данные для подключения к службам мультимедиа Azure. 
@@ -516,9 +516,9 @@ internal sealed class NotificationMessage
             }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

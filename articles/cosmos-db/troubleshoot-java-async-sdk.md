@@ -10,14 +10,14 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.openlocfilehash: 572139743c66546622450cef8f8a0fa264d24779
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "65519984"
 ---
 # <a name="troubleshoot-issues-when-you-use-the-java-async-sdk-with-azure-cosmos-db-sql-api-accounts"></a>Устранение неполадок при использовании пакета SDK Async Java с учетными записями API SQL для Azure Cosmos DB
-В этой статье рассматриваются общие проблемы, обходные пути, диагностические шаги и инструменты при использовании [SDK Java Async](sql-api-sdk-async-java.md) с учетными записями API Azure Cosmos DB S'L.
+В этой статье рассматриваются распространенные проблемы, обходные пути, шаги диагностики и средства, используемые при использовании [пакета SDK для Java Async](sql-api-sdk-async-java.md) с учетными ЗАПИСЯМи API для Azure Cosmos DB SQL.
 Пакет SDK Java Async обеспечивает клиентское логическое представление для доступа к API SQL для Azure Cosmos DB. В этой статье описываются средства и подходы, которые помогут вам, если вы столкнетесь с проблемами.
 
 Начните с этого списка:
@@ -58,15 +58,15 @@ ulimit -a
     При включении конечной точки службы запросы больше не отправляются с общедоступного IP-адреса в Azure Cosmos DB. Вместо этого отправляются идентификаторы виртуальной сети и подсети. Это изменение может привести к сбою брандмауэра, если разрешены только общедоступные IP-адреса. Если вы используете брандмауэр, при включении конечной точки службы добавьте подсеть в брандмауэре с помощью [списков управления доступом для виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-networks-acl).
 * Назначьте общедоступный IP-адрес виртуальной машине Azure.
 
-##### <a name="cant-reach-the-service---firewall"></a><a name="cant-connect"></a>Не умуно дозвониться до службы - брандмауэр
-``ConnectTimeoutException``указывает на то, что SDK не может связаться с службой.
-Вы можете получить сбой, аналогичный следующему при использовании прямого режима:
+##### <a name="cant-reach-the-service---firewall"></a><a name="cant-connect"></a>Не удается связаться со службой — брандмауэр
+``ConnectTimeoutException``Указывает, что пакет SDK не может связаться со службой.
+При использовании прямого режима может возникнуть ошибка, аналогичная приведенной ниже:
 ```
 GoneException{error=null, resourceAddress='https://cdb-ms-prod-westus-fd4.documents.azure.com:14940/apps/e41242a5-2d71-5acb-2e00-5e5f744b12de/services/d8aa21a5-340b-21d4-b1a2-4a5333e7ed8a/partitions/ed028254-b613-4c2a-bf3c-14bd5eb64500/replicas/131298754052060051p//', statusCode=410, message=Message: The requested resource is no longer available at the server., getCauseInfo=[class: class io.netty.channel.ConnectTimeoutException, message: connection timed out: cdb-ms-prod-westus-fd4.documents.azure.com/101.13.12.5:14940]
 ```
 
-Если в машине приложения работает брандмауэр, откройте диапазон портов от 10 000 до 20 000, которые используются в прямом режиме.
-Также следуйте [лимиту подключения на хост-машине.](#connection-limit-on-host)
+Если на компьютере приложения работает брандмауэр, откройте диапазон портов 10 000 на 20 000, которые используются в режиме прямого подключения.
+Кроме того, следует соблюдать [ограничение на количество подключений на хост-компьютере](#connection-limit-on-host).
 
 #### <a name="http-proxy"></a>Прокси-сервер HTTP
 
@@ -161,23 +161,23 @@ createObservable
 
 Сертификат HTTPS эмулятора для Azure Cosmos DB является самозаверяющим. Чтобы SDK работал с эмулятором, необходимо импортировать сертификат эмулятора в Java TrustStore. Дополнительные сведения см. в статье [Экспорт сертификатов эмулятора для Azure Cosmos DB](local-emulator-export-ssl-certificates.md).
 
-### <a name="dependency-conflict-issues"></a>Проблемы зависимости конфликты
+### <a name="dependency-conflict-issues"></a>Проблемы с конфликтом зависимостей
 
 ```console
 Exception in thread "main" java.lang.NoSuchMethodError: rx.Observable.toSingle()Lrx/Single;
 ```
 
-Вышеупомянутое исключение предполагает, что у вас есть зависимость от более старой версии RxJava lib (например, 1.2.2). Наш SDK опирается на RxJava 1.3.8, который имеет AIS, недоступный в более ранней версии RxJava. 
+Приведенное выше исключение предполагает, что у вас есть зависимость от более старой версии Рксжава lib (например, 1.2.2). Наш пакет SDK полагается на Рксжава 1.3.8, который содержит интерфейсы API, недоступные в более ранней версии Рксжава. 
 
-Обход для таких issuses заключается в том, чтобы определить, какие другие зависимости приносит в RxJava-1.2.2 и исключить транзитную зависимость от RxJava-1.2.2, и позволить CosmosDB SDK принести новую версию.
+Обходной путь для таких 1.2.2ов заключается в том, чтобы выяснить, какая другая зависимость переносится в Рксжава-1.2.2 и исключают транзитивное зависимость от Рксжава-CosmosDB и разрешите SDK вывести новую версию.
 
-Чтобы определить, какая библиотека приносит в RxJava-1.2.2 запустить следующую команду рядом с вашим файлом проекта pom.xml:
+Чтобы узнать, какая библиотека переносится в Рксжава-1.2.2, выполните следующую команду рядом с файлом проекта POM. XML:
 ```bash
 mvn dependency:tree
 ```
-Для получения дополнительной [информации](https://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html)см.
+Дополнительные сведения см. в разделе [руководств по дереву зависимостей Maven](https://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html).
 
-Как только вы определите, Что RxJava-1.2.2 является транзитной зависимостью от другой зависимости вашего проекта, можно изменить зависимость от этого файла lib в файле pom и исключить транзитную зависимость RxJava:
+Определив Рксжава-1.2.2, вы можете изменить зависимость от этой библиотеки в файле POM и исключить Рксжава с косвенной зависимостью. это будет так:
 
 ```xml
 <dependency>
@@ -193,7 +193,7 @@ mvn dependency:tree
 </dependency>
 ```
 
-Для получения дополнительной [информации](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html)см.
+Дополнительные сведения см. в разделе [исключение транзитивных зависимостей](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
 
 
 ## <a name="enable-client-sdk-logging"></a><a name="enable-client-sice-logging"></a>Включение ведения журнала для пакета SDK клиента
@@ -251,7 +251,7 @@ netstat -nap
  <!--Anchors-->
 [Распространенные проблемы и обходные решения для них]: #common-issues-workarounds
 [Enable client SDK logging]: #enable-client-sice-logging
-[Ограничение подключения на хост-машине]: #connection-limit-on-host
-[Исчерпание порта Azure SNAT (PAT)]: #snat
+[Ограничение числа подключений на хост-компьютере]: #connection-limit-on-host
+[Нехватка портов Azure SNAT (PAT)]: #snat
 
 

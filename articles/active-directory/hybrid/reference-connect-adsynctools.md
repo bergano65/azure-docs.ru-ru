@@ -11,10 +11,10 @@ ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9a1b8abf15233c06e8ff9e507b315cc8a3703970
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60454665"
 ---
 # <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADSyncTools
@@ -528,7 +528,7 @@ Get-ADSyncToolsSourceAnchorChanged [-sourcePath] <Object> [-outputPath] <Object>
 ```
 
 ### <a name="description"></a>DESCRIPTION
-Функциональные запросы AAD Connect Run History и экспортируют всех пользователей, сообщающих об ошибке: "Атрибут SourceAnchor изменился".
+Функция запрашивает журнал выполнения AAD Connect Run и экспортирует всех пользователей, которые сообщают об ошибке: "атрибут SourceAnchor изменился".
 
 ### <a name="examples"></a>Примеры
 
@@ -859,7 +859,7 @@ Accept wildcard characters: False
 ## <a name="restore-adsynctoolsexpiredcertificates"></a>Restore-ADSyncToolsExpiredCertificates
 
 ### <a name="synopsis"></a>Краткий обзор
-(ДЕЛАТЬ) Восстановление атрибута AD UserCertificate из файла сертификата
+(ДЛЯ ЭТОГО) Восстанавливает атрибут AD UserCertificate из файла сертификата
 
 ### <a name="syntax"></a>SYNTAX
 

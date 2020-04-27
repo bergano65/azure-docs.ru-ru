@@ -1,5 +1,5 @@
 ---
-title: Поддержка коммерческого рынка Лазурный рынок
+title: Поддержка коммерческого рынка | Azure Marketplace
 description: Сведения о поддержке и ссылки для Azure Marketplace и AppSource
 author: dsindona
 ms.service: marketplace
@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: 2b73fee33692b65770caeea651c12e9780dba2c4
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 3871ef232d9a2315ece632f6f764f8377a8435c5
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81681387"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82159921"
 ---
 # <a name="support-for-the-marketplace"></a>Поддержка Marketplace
 
@@ -22,13 +22,13 @@ ms.locfileid: "81681387"
 
 ## <a name="onboarding"></a>Переход
 
-Откройте билет с [поддержкой издателя рынка](https://aka.ms/marketplacepublishersupport) Майкрософт для проблем с бортовой работы и начала работы.
+Откройте билет с [поддержкой издателя Microsoft Marketplace](https://partner.microsoft.com/support/v2/?stage=1) для устранения проблем с подключением и приступим к работе.
 
 ## <a name="partner-center"></a>Центр партнеров   
 
 | Канал поддержки | Описание | Доступность |  
 |:--- |:--- |:--- |  
-| Чтобы получить помощь, посетите страницу создания инцидента в [поддержке Marketplace](https://aka.ms/marketplacepublishersupport)</li> </ul> | Поддержка партнерского центра. | Поддержка предоставляется 24x5. |  
+| Чтобы получить помощь, посетите страницу создания инцидента в [поддержке Marketplace](https://partner.microsoft.com/support/v2/?stage=1)</li> </ul> | Поддержка для центра партнеров. | Поддержка предоставляется 24x5. |  
 
 ## <a name="technical"></a>Технические требования  
 
@@ -48,7 +48,7 @@ ms.locfileid: "81681387"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Посетите [коммерческую страницу издателя рынка](https://docs.microsoft.com/azure/marketplace/).
-* Узнайте больше о [поддержке программы коммерческого рынка в Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support).
+* Посетите [страницу с руководством по издателю коммерческого рынка](https://docs.microsoft.com/azure/marketplace/).
+* Узнайте больше о [поддержке программы коммерческого рынка в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support).
 
 ---

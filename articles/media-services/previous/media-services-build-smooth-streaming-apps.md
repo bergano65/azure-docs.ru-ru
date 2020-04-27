@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.openlocfilehash: 9ff961638aa170948d51793a21e86d18dd7e1d80
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "69016789"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей  
@@ -32,7 +32,7 @@ ms.locfileid: "69016789"
 3. Выбор потоков для бесперебойной потоковой передачи
 4. Выбор дорожек для бесперебойной потоковой передачи
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 > [!NOTE]
 > Проекты для Магазина Windows версии 8.1 и более ранней версии не поддерживаются в Visual Studio 2017.  Дополнительные сведения см. в статье [Целевая платформа и совместимость для Visual Studio 2017](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).
 
@@ -63,7 +63,7 @@ ms.locfileid: "69016789"
 ### <a name="to-create-a-windows-store-project"></a>Создание проекта приложения Магазина Windows
 
 1. Запустите Visual Studio. Поддерживаются Visual Studio версии 2012–2015.
-1. Из меню **FILE** нажмите **Новый**, а затем нажмите **проекта**.
+1. В меню **файл** выберите пункт **создать**, а затем выберите пункт **проект**.
 1. В диалоговом окне "Новый проект" введите или выберите следующие значения:
 
     | name | Значение |
@@ -94,7 +94,7 @@ ms.locfileid: "69016789"
 ### <a name="to-design-the-player-user-interface"></a>Создание пользовательского интерфейса проигрывателя
 
 1. В обозревателе решений дважды щелкните **MainPage.xaml** , чтобы открыть его в режиме конструктора.
-2. Найдите ** &lt;&gt; сетку** и ** &lt;/Grid&gt; ** теги файлxML, и вставьте следующий код между двумя тегами:
+2. Выделите ** &lt;сетку&gt; ** и ** &lt;/Grid&gt; ** теги в файле XAML и вставьте следующий код между двумя тегами:
 
    ```xml
          <Grid.RowDefinitions>
@@ -507,7 +507,7 @@ ms.locfileid: "69016789"
    ```
 
    > [!NOTE]
-   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае узкого места на потоке диспетчера разработчик может использовать диспетчера, предоставленного UI-элементом, который они намерены обновить.  Пример:
+   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае узкого места в потоке Dispatcher разработчик может использовать Dispatcher, предоставляемый элементом пользовательского интерфейса, который предполагается обновить.  Пример:
 
    ```csharp
          await sliderProgress.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { TimeSpan 
@@ -819,7 +819,7 @@ ms.locfileid: "69016789"
 
 Вы завершили урок 3.  В этом уроке были добавлены функциональные возможности для выбора потоков.
 
-## <a name="lesson-4-select-smooth-streaming-tracks"></a>Урок 4: Выберите гладкие треки потоковой передачи
+## <a name="lesson-4-select-smooth-streaming-tracks"></a>Занятие 4. Выбор Smooth Streaming дорожек
 
 Представление бесперебойной потоковой передачи может содержать несколько видеофайлов, зашифрованных с разными уровнями качества (скоростью) и разрешениями. На этом занятии предстоит включить возможность выбора потоков для пользователей. Это занятие содержит следующие процедуры:
 
@@ -847,7 +847,7 @@ ms.locfileid: "69016789"
          </ListBox>
          </StackPanel>
    ```
-3. Нажмите **ctRL-S,** чтобы сохранить изменения
+3. Нажмите клавиши **CTRL + S** , чтобы сохранить изменения
 
 ### <a name="to-modify-the-code-behind-file"></a>Изменение файла кода программной части
 
@@ -1027,7 +1027,7 @@ ms.locfileid: "69016789"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="other-resources"></a>Другие ресурсы:

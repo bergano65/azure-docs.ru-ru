@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: af9c157b4644156edc6dcdb1b53c141263576500
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "68727156"
 ---
 # <a name="azure-infrastructure-monitoring"></a>Мониторинг инфраструктуры Azure   
@@ -49,7 +49,7 @@ Azure ежегодно проверяет и обновляет параметр
 
 Была создана платформа управления инцидентами, определяющая роли и распределяющая обязанности. Команда управления инцидентами безопасности Azure отвечает за управление инцидентами безопасности, включая эскалацию и обеспечение участия групп специалистов, когда это необходимо. Менеджеры по операциям Azure отвечают за контроль расследования и разрешения инцидентов безопасности и конфиденциальности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о действиях корпорации Майкрософт в сфере защиты инфраструктуры Azure приведены в следующих статьях:
 
 - [Объекты, локальная среда и физическая безопасность в Azure](physical-security.md)
@@ -57,7 +57,7 @@ Azure ежегодно проверяет и обновляет параметр
 - [Компоненты и границы информационной системы Azure](infrastructure-components.md)
 - [Сетевая архитектура Azure](infrastructure-network.md)
 - [Рабочая сеть Azure](production-network.md)
-- [Функции безопасности базы данных Лазурного средства данных](infrastructure-sql.md)
+- [Функции безопасности базы данных SQL Azure](infrastructure-sql.md)
 - [Операции и управление в рабочей среде Azure](infrastructure-operations.md)
 - [Целостность инфраструктуры Azure](infrastructure-integrity.md)
 - [Защита данных клиентов в Azure](protection-customer-data.md)

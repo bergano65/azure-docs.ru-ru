@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 09/14/2018
 ms.openlocfilehash: b035be727df2dfecb613da79681affd740c69bec
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60333882"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
@@ -66,7 +66,7 @@ MSBuild не предоставляет встроенной поддержки 
 См. дополнительные сведения о [проектах базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md).
 
 >[!NOTE]
->Заявление DROP может привести к проблеме удаления аварии. Чтобы включить заявление DROP, необходимо четко указать аргументы MSBuild. **AllowDropStatement** позволит не связанных с данными drop операции, как падение сборки и падение таблице ценится функции. **AllowDataDropStatement** позволит операции DROP, связанной с данными, например, таблица сброса и схема падения. Вы должны включить AllowDropStatement перед использованием AllowDataDropStatement.
+>Инструкция DROP может вызвать ошибку случайного удаления. Чтобы включить инструкцию DROP, необходимо явно указать аргументы MSBuild. **Алловдропстатемент** ВКЛЮЧИТ операцию Drop, не связанную с данными, например DROP ASSEMBLY и функцию Drop с табличным значением. **Алловдатадропстатемент** ВКЛЮЧИТ операцию Drop, связанную с данными, например Drop Table и Drop Schema. Необходимо включить Алловдропстатемент перед использованием Алловдатадропстатемент.
 >
 
 ### <a name="build-a-u-sql-project-with-the-msbuild-command-line"></a>Создание проекта U-SQL из командной строки MSBuild
@@ -79,11 +79,11 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 
 Ниже приведены определения и значения аргументов.
 
-* **ПАКЕТ US-LSDKPath U-S'L\<Nuget>** Этот параметр ссылается на путь установки пакета NuGet для языковой службы U-SQL.
+* **Усклсдкпас =\<пакет NUGET U-SQL> \буилд\рунтиме**. Этот параметр ссылается на путь установки пакета NuGet для языковой службы U-SQL.
 * **USQLTargetType=Merge или SyntaxCheck**:
     * **Слияние**. Режим слияния компилирует файлы с выделенным кодом. Примеры — файлы **CS**, **PY**, и **R**. В этом режиме полученная библиотека пользовательского кода включается в скрипт U-SQL. Этот режим используется для двоичных файлов DLL, кода Python или R.
     * **SyntaxCheck**. Режим SyntaxCheck сначала объединяет файлы с выделенным кодом в скрипт U-SQL. Затем он компилирует скрипт U-SQL для проверки кода.
-* **Путь DataRoot\<>. ** DataRoot используется только в режиме SyntaxCheck. Создавая скрипт в режиме SyntaxCheck, MSBuild проверяет включаемые в этот скрипт ссылки на объекты базы данных. Перед сборкой настройте на компьютере сборки локальную среду так, чтобы она содержала в папке DataRoot все объекты, на которые ссылается база данных U-SQL. Вы также можете управлять этими зависимостями базы данных, используя [ссылки на проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild проверяет только ссылки на объекты базы данных, но не файлы.
+* **Root =\<путь к корню>**. DataRoot используется только в режиме SyntaxCheck. Создавая скрипт в режиме SyntaxCheck, MSBuild проверяет включаемые в этот скрипт ссылки на объекты базы данных. Перед сборкой настройте на компьютере сборки локальную среду так, чтобы она содержала в папке DataRoot все объекты, на которые ссылается база данных U-SQL. Вы также можете управлять этими зависимостями базы данных, используя [ссылки на проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild проверяет только ссылки на объекты базы данных, но не файлы.
 * **EnableDeployment=true** или **false**. EnableDeployment указывает, разрешено ли развертывать указанные базы данных U-SQL во время процесса сборки. Если вы ссылаетесь на проект базы данных U-SQL и используете объекты базы данных в скрипте U-SQL, установите для этого параметра значение **true**.
 
 ### <a name="continuous-integration-through-azure-pipelines"></a>Непрерывная интеграция с помощью Azure Pipelines
@@ -92,7 +92,7 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 
 ![Задача MSBuild для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-task.png) 
 
-1.  Добавьте задачу восстановления NuGet, чтобы получить пакет NuGet со ссылкой на решение, который включает `Azure.DataLake.USQL.SDK`, чтобы предоставить возможность MSBuild найти целевые объекты языка U-SQL. Установите каталог **Расширенный** > **пункт назначения,** если `$(Build.SourcesDirectory)/packages` вы хотите использовать образец аргументов MSBuild непосредственно в шаге 2.
+1.  Добавьте задачу восстановления NuGet, чтобы получить пакет NuGet со ссылкой на решение, который включает `Azure.DataLake.USQL.SDK`, чтобы предоставить возможность MSBuild найти целевые объекты языка U-SQL. Задайте для `$(Build.SourcesDirectory)/packages` параметра **Расширенный** > **Каталог назначения** значение, если вы хотите использовать пример аргументов MSBuild непосредственно на шаге 2.
 
     ![Задача восстановления NuGet для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-nuget-task.png)
 
@@ -328,7 +328,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
    ![Задача MSBuild CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-msbuild-task.png) 
 
 
-1. Добавьте задачу восстановления NuGet, чтобы получить пакет NuGet со ссылкой на решение, который включает `Azure.DataLake.USQL.SDK`, чтобы MSBuild смог найти целевые объекты языка U-SQL. Установите каталог **Расширенный** > **пункт назначения,** если `$(Build.SourcesDirectory)/packages` вы хотите использовать образец аргументов MSBuild непосредственно в шаге 2.
+1. Добавьте задачу восстановления NuGet, чтобы получить пакет NuGet со ссылкой на решение, который включает `Azure.DataLake.USQL.SDK`, чтобы MSBuild смог найти целевые объекты языка U-SQL. Задайте для `$(Build.SourcesDirectory)/packages` параметра **Расширенный** > **Каталог назначения** значение, если вы хотите использовать пример аргументов MSBuild непосредственно на шаге 2.
 
    ![Задача NuGet CI/CD для проекта U-SQL](./media/data-lake-analytics-cicd-overview/data-lake-analytics-set-vsts-nuget-task.png)
 
@@ -454,7 +454,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="common-parameters"></a>Общие параметры
 
-| Параметр | Описание | Значение по умолчанию | Обязательно |
+| Параметр | Описание | Значение по умолчанию | Обязательный |
 |---------|-----------|-------------|--------|
 |Пакет|Путь к развертываемому пакету развертывания базы данных U-SQL.|null|Да|
 |База данных|Имя развертываемой или создаваемой базы данных.|master|false|
@@ -463,28 +463,28 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="parameter-for-local-deployment"></a>Параметр для локального развертывания
 
-|Параметр|Описание|Значение по умолчанию|Обязательно|
+|Параметр|Описание|Значение по умолчанию|Обязательный|
 |---------|-----------|-------------|--------|
 |DataRoot|Локальный путь к корневой папке данных.|null|Да|
 
 #### <a name="parameters-for-azure-data-lake-analytics-deployment"></a>Параметры для развертывания Azure Data Lake Analytics
 
-|Параметр|Описание|Значение по умолчанию|Обязательно|
+|Параметр|Описание|Значение по умолчанию|Обязательный|
 |---------|-----------|-------------|--------|
 |Учетная запись|Определяет имя учетной записи Azure Data Lake Analytics, в которую выполняется развертывание.|null|Да|
 |ResourceGroup|Имя группы ресурсов Azure для учетной записи Azure Data Lake Analytics.|null|Да|
 |SubscriptionId|Идентификатор подписки Azure для учетной записи Azure Data Lake Analytics.|null|Да|
 |Клиент|Имя клиента, то есть имя домена Azure Active Directory (Azure AD). Это значение вы найдете на странице управления подпиской на портале Azure.|null|Да|
 |AzureSDKPath|Путь для поиска зависимых сборок в пакете Azure SDK.|null|Да|
-|Интерактивно|Определяет, нужно ли использовать интерактивный режим для аутентификации.|false|false|
+|Interactive (Интерактивные)|Определяет, нужно ли использовать интерактивный режим для аутентификации.|false|false|
 |ClientId|Идентификатор приложения в Azure AD, используемый для неинтерактивной аутентификации.|null|Обязательно, если не используется интерактивная аутентификация.|
 |Секрет|Секрет или пароль для неинтерактивной аутентификации. Следует использовать только в доверенной и защищенной среде.|null|Обязательно для неинтерактивной аутентификации (иначе используется SecreteFile).|
 |SecreteFile|В этом файле хранится секрет или пароль для неинтерактивной аутентификации. Следите за тем, чтобы права на чтение этого файла были только у текущего пользователя.|null|Обязательно для неинтерактивной аутентификации (иначе используется Secrete).|
 |CertFile|В этом файле хранится сертификат X.509 для неинтерактивной аутентификации. По умолчанию используется аутентификация с помощью секрета клиента.|null|false|
 | JobPrefix | Префикс для развертывания базы данных в задании DDL U-SQL. | Deploy_ + DateTime.Now | false |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md).
-- [Запустите скрипт U-S'L на локальной машине.](data-lake-analytics-data-lake-tools-local-run.md)
+- [Выполните скрипт U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).
 - [Использование проекта базы данных U-SQL в разработке базы данных U-SQL для Azure Data Lake](data-lake-analytics-data-lake-tools-develop-usql-database.md).

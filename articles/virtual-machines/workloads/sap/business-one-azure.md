@@ -16,10 +16,10 @@ ms.date: 07/15/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 18409f93ab50f7d031ec78a55b9eaf8ad1b85a49
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70101413"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>Использование SAP Business One на виртуальных машинах Azure
@@ -31,13 +31,13 @@ Business One поддерживает две разных базы данных.
 
 Что касается SQL Server, применяются основные соображения развертывания, описанные в разделе [Развертывание СУБД виртуальных машин Azure для SAP NetWeaver ](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms-guide). для SAP HANA соображения упоминаются в этом документе.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Чтобы воспользоваться приведенными в этом руководстве сведениями, необходимо иметь базовые знания об использовании следующих компонентов Azure:
 
 - [Виртуальные машины Azure в Windows](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm)
 - [Виртуальные машины Azure в Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)
 - [Управление сетями Azure и виртуальными сетями с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-virtual-network)
-- [Сети Azure и виртуальные сети с CLI](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-virtual-network)
+- [Сеть и виртуальные сети Azure с интерфейсом командной строки](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-virtual-network)
 - [Управление дисками Azure с помощью интерфейса командной строки Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-disks)
 
 Даже если вы интересуетесь только Business One, документ [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) может быть полезным источником информации.
@@ -149,8 +149,8 @@ Business One — это двухуровневое приложение.
 ### <a name="business-one-client-server"></a>Клиентский сервер Business One
 Для этих компонентов рекомендации по хранению не являются основной проблемой. Тем не менее, необходимо иметь надежную платформу. Таким образом, следует использовать хранилище Azure класса Premium для этой виртуальной машины даже для базового виртуального жесткого диска. Изменение размера виртуальной машины на основе данных, указанных в [Руководстве по требованиям к оборудованию SAP Business One](https://help.sap.com/http.svc/rc/011000358700000244612011e/9.3/en-US/B1_Hardware_Requirements_Guide.pdf). Для Azure необходимо сосредоточиться и вычислить требования, перечисленные в разделе документа 2.4. При расчете требований, нужно сравнить их со следующими документами, чтобы найти идеальную виртуальную машину.
 
-- [Размеры для виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)
-- [SAP Примечание #1928533](https://launchpad.support.sap.com/#/notes/1928533)
+- [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)
+- [Примечание SAP #1928533](https://launchpad.support.sap.com/#/notes/1928533)
 
 Сравните количество процессоров и памяти, необходимых для документирования Microsoft. Также при выборе виртуальной машины помните о пропускной способности сети.
 

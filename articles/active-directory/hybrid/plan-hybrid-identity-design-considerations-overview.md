@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7f8dd49f3668b8f68753681123a04d21edac46c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60381491"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations"></a>Рекомендации по разработке архитектуры гибридной идентификации в Azure Active Directory
@@ -50,7 +50,7 @@ ms.locfileid: "60381491"
 
 В этом руководстве подробно описаны шаги и задачи, которые помогут вам разработать архитектуру решения для гибридной идентификации, отвечающего уникальным потребностям вашей организации. В процессе описания шагов и задач будут представлены соответствующие технологии и функции, благодаря которым организация сможет удовлетворить функциональные требования и требования к качеству обслуживания.
 
-**Предположения**: У вас есть некоторый опыт работы с Windows Server, службами домена Active Directory и Active Directory Azure. Предполагается, что с помощью этого документа вы хотите узнать, как эти решения могут решить ваши деловые потребности по отдельности или в виде интегрированного решения.
+**Предположения**: у вас есть опыт работы с Windows Server, домен Active Directory Services и Azure Active Directory. Предполагается, что с помощью этого документа вы хотите узнать, как эти решения могут решить ваши деловые потребности по отдельности или в виде интегрированного решения.
 
 ## <a name="design-considerations-overview"></a>Обзор рекомендаций по проектированию
 Этот документ предоставляет набор шагов и задач, которые необходимо выполнить для разработки архитектуры решения гибридной идентификации, наилучшим образом соответствующего вашим требованиям. Шаги приведены в виде упорядоченной последовательности. Однако вопросы проектирования, с которыми вы познакомитесь на более поздних этапах, могут потребовать изменения решений, принятых на более ранних этапах из-за конфликтующих вариантов архитектур. Мы предприняли все возможное, чтобы сообщить вам о возможных конфликтах архитектур на протяжении всего документа. 
@@ -63,6 +63,6 @@ ms.locfileid: "60381491"
 | Планирование повышения безопасности данных благодаря надежному решению для идентификации |[Определение требований к защите данных](plan-hybrid-identity-design-considerations-dataprotection-requirements.md) <br> [Определение требований к управлению содержимым](plan-hybrid-identity-design-considerations-contentmgt-requirements.md)<br> [Определение требований к управлению доступом](plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)<br> [Определение требований по реагированию на инциденты](plan-hybrid-identity-design-considerations-incident-response-requirements.md) <br> [Определение стратегии защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) |
 | Планирование жизненного цикла гибридной идентификации |[Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md) <br> [Управление синхронизацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)<br> [Определение стратегии внедрения гибридной идентификации](plan-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md) |
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 [Определение требований к идентификации](plan-hybrid-identity-design-considerations-business-needs.md)
 

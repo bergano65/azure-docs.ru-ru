@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a639b14c9313179816f6376aa0c5642a645ea344
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60455999"
 ---
 # <a name="troubleshoot-an-attribute-not-synchronizing-in-azure-ad-connect"></a>Устранение неполадок атрибута, связанных с отсутствием синхронизации в Azure AD Connect
@@ -30,24 +30,24 @@ ms.locfileid: "60455999"
 
   ![Процесс синхронизации Azure AD Connect](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/syncingprocess.png)
 
-### <a name="terminology"></a>**Терминологии**
+### <a name="terminology"></a>**Терминология**
 
-* **CS:** Соединительное пространство, таблица в базе данных.
-* **MV:** Metaverse, таблица в базе данных.
-* **АД:** Активный каталог
-* **AAD:** Активный каталог Azure
+* **CS:** Пространство соединителя, таблица в базе данных.
+* **MV:** Метавселенной, таблица в базе данных.
+* **Реклама:** Active Directory
+* **AAD:** Azure Active Directory
 
-### <a name="synchronization-steps"></a>**Шаги синхронизации**
+### <a name="synchronization-steps"></a>**Этапы синхронизации**
 
-* Импорт из AD: Активные объекты каталога вводятся в AD CS.
+* Импорт из Active Directory: Active Directory объекты переносятся в AD CS.
 
-* Импорт из AAD: Объекты активного каталога Azure вводятся в AAD CS.
+* Импорт из AAD: Azure Active Directory объекты передаются в AAD CS.
 
-* Синхронизация: **Правила синхронизации входящих** и **правила исходящих синхронизации** работают в порядке приоритетного числа от нижнего к более высокому. Чтобы просмотреть правила синхронизации, можно перейти в **Редактор правил синхронизации** из приложений рабочего стола. **Правила входящей синхронизации** перемещают данные из CS в MV. **Правила исходящей синхронизации** перемещают данные из MV в CS.
+* Синхронизация: **правила входящей синхронизации** и **Исходящие правила синхронизации** выполняются в порядке приоритета от меньшего к большему. Чтобы просмотреть правила синхронизации, можно перейти в **Редактор правил синхронизации** из приложений рабочего стола. **Правила входящей синхронизации** перемещают данные из CS в MV. **Правила исходящей синхронизации** перемещают данные из MV в CS.
 
-* Экспорт в AD: После запуска синхронизации объекты экспортируются из AD CS в **Active Directory.**
+* Экспорт в AD: после выполнения синхронизации объекты экспортируются из AD CS в **Active Directory**.
 
-* Экспорт в AAD: После запуска синхронизации объекты экспортируются из AAD CS в **Active Directory Azure.**
+* Экспорт в AAD: после выполнения синхронизации объекты экспортируются из AAD CS в **Azure Active Directory**.
 
 ### <a name="step-by-step-investigation"></a>**Пошаговое исследование**
 
@@ -80,15 +80,15 @@ ms.locfileid: "60455999"
 * Аналогичным образом вы можете просмотреть объект **пространства соединителя Azure Active Directory** и создать **предварительный просмотр**, чтобы просмотреть поток атрибутов из **метавселенной** в **пространство соединителя** и обратно. Таким образом вы можете выяснить, почему атрибут не синхронизируется.
 
 ## <a name="recommended-documents"></a>**Рекомендуемые документы**
-* [Синхронизация Azure AD Connect: Технические концепции](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-technical-concepts)
+* [Синхронизация Azure AD Connect: технические понятия](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-technical-concepts)
 * [Синхронизация Azure AD Connect: общие сведения об архитектуре](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-architecture)
 * [Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-declarative-provisioning)
-* [Синхронизация Azure AD Connect: Понимание декларативного выражения обеспечения](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-declarative-provisioning-expressions)
+* [Azure AD Connect синхронизации: Общие сведения о выражениях декларативной подготовки](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-declarative-provisioning-expressions)
 * [Службы синхронизации Azure AD Connect: общие сведения о конфигурации по умолчанию](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-default-configuration)
 * [Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-user-and-contacts)
-* [Синхронизация Azure AD Connect: атрибуты теней](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-syncservice-shadow-attributes)
+* [Синхронизация Azure AD Connect: теневые атрибуты](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-syncservice-shadow-attributes)
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md).
-- [Что собой представляет гибридная идентификация](whatis-hybrid-identity.md).
+- [Что такое Гибридная идентификация?](whatis-hybrid-identity.md)

@@ -10,10 +10,10 @@ ms.assetid: ad14d53c-fed4-478d-ab4b-6d2e14ff2097
 ms.topic: conceptual
 ms.date: 06/29/2018
 ms.openlocfilehash: 4273828c9c2bdb75fcbc1de45da55c5a03dd615f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "66156425"
 ---
 # <a name="manage-azure-data-lake-analytics-using-azure-powershell"></a>Управление аналитикой озера данных Azure с помощью Azure PowerShell
@@ -21,7 +21,7 @@ ms.locfileid: "66156425"
 
 В этой статье описано, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics с помощью Azure PowerShell.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -243,8 +243,8 @@ Get-AdlJob -Account $adla -State Accepted,Compiling,New,Paused,Scheduling,Start
 Используйте параметр `-Result`, чтобы определить, успешно ли выполнено завершенное задание. Возможны следующие значения:
 
 * Отменено
-* Ошибка
-* None
+* Failed
+* Отсутствуют
 * Выполнено
 
 ``` powershell
@@ -555,7 +555,7 @@ foreach ($sub in $subs)
 
 Вы также можете применить шаблон группы ресурсов Azure, используя следующий пример: [Create a Data Lake Analytics account using a template](https://github.com/Azure-Samples/data-lake-analytics-create-account-with-arm-template) (Создание учетной записи Data Lake Analytics с помощью шаблона).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
-* Начало работы с аналитикой Data Lake с помощью [портала](data-lake-analytics-get-started-portal.md) | [Azure PowerShell](data-lake-analytics-get-started-powershell.md) | [CLI](data-lake-analytics-get-started-cli.md)
-* Управление аналитикой озер данных Azure с помощью [портала](data-lake-analytics-manage-use-portal.md) | [Azure Azure PowerShell](data-lake-analytics-manage-use-powershell.md) | [CLI](data-lake-analytics-manage-use-cli.md) 
+* Приступая к работе с Data Lake Analytics с помощью[Azure PowerShell](data-lake-analytics-get-started-powershell.md) |  [портал Azure](data-lake-analytics-get-started-portal.md) | [Azure CLI](data-lake-analytics-get-started-cli.md)
+* Управление Azure Data Lake Analytics с помощью [портал Azure](data-lake-analytics-manage-use-portal.md) | [Azure PowerShell](data-lake-analytics-manage-use-powershell.md) | [CLI](data-lake-analytics-manage-use-cli.md) 

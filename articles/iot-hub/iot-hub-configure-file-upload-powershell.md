@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
 ms.openlocfilehash: c8fc0393e0961b46fbb8031d735f27e9ad785031
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60318466"
 ---
 # <a name="configure-iot-hub-file-uploads-using-powershell"></a>Настройка отправки файлов в Центре Интернета вещей с помощью PowerShell
@@ -25,11 +25,11 @@ ms.locfileid: "60318466"
 
 Для работы с этим учебником требуется:
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за пару минут.
+* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
-* [Командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+* [Azure PowerShell командлетов](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 
-* Центр интернета вещей Azure. Если у вас нет концентратора IoT, вы можете использовать [New-AzIoTHub cmdlet](https://docs.microsoft.com/powershell/module/az.iothub/new-aziothub) для создания или использования портала для [создания концентратора IoT.](iot-hub-create-through-portal.md)
+* Центр интернета вещей Azure. Если у вас нет центра Интернета вещей, вы можете создать [центр Интернета вещей](iot-hub-create-through-portal.md)с помощью [командлета New-азиосуб](https://docs.microsoft.com/powershell/module/az.iothub/new-aziothub) или создать его с помощью портала.
 
 * Учетная запись хранения Azure. [Создать учетную запись хранения Azure](../storage/common/storage-create-storage-account.md) (если у вас ее еще нет) можно с помощью [командлетов PowerShell службы хранилища Azure](https://docs.microsoft.com/powershell/module/az.storage/) или на портале
 
@@ -37,7 +37,7 @@ ms.locfileid: "60318466"
 
 Войдите в учетную запись Azure и выберите подписку.
 
-1. В запросе PowerShell запустите cmdlet **Connect-AzAccount:**
+1. В командной строке PowerShell выполните командлет **Connect-азаккаунт** :
 
     ```powershell
     Connect-AzAccount
@@ -123,7 +123,7 @@ Set-AzIotHub `
     -FileUploadNotificationMaxDeliveryCount 10
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о возможностях Центра Интернета вещей, касающихся отправки файлов, см. в разделе об [отправке файлов с устройства](iot-hub-devguide-file-upload.md).
 

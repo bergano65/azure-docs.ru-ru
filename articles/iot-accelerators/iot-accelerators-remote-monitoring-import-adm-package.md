@@ -1,5 +1,5 @@
 ---
-title: Пакет импорта решений дистанционного мониторинга - Azure Документы Майкрософт
+title: Пакет импорта решения для удаленного мониторинга в Azure | Документация Майкрософт
 description: В этой статье описывается, как импортировать пакет автоматического управления устройствами в акселератор решения для удаленного мониторинга
 author: dominicbetts
 manager: philmea
@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 11/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: 8100914e9a1d1489cb80de55a689e17f6d28a941
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "61443451"
 ---
 # <a name="import-an-automatic-device-management-package-into-your-remote-monitoring-solution-accelerator"></a>Импорт пакета автоматического управления устройствами в акселератор решения для удаленного мониторинга
@@ -34,7 +34,7 @@ ms.locfileid: "61443451"
 
 1. Щелкните конфигурацию, которую вы хотите использовать. Отобразится страница **Сведения о конфигурации устройства**:
 
-    [![Деталь конфигурации устройства IoT](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-expanded.png#lightbox)
+    [![Сведения о конфигурации устройства IoT](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/configuration-details-expanded.png#lightbox)
 1. Щелкните **Download configuration file** (Скачать файл конфигурации):
 
     [![Скачать файл конфигурации](./media/iot-accelerators-remote-monitoring-import-adm-package/download-inline.png)](./media/iot-accelerators-remote-monitoring-import-adm-package/download-expanded.png#lightbox)
@@ -59,6 +59,6 @@ ms.locfileid: "61443451"
 
 Вы загрузили конфигурацию автоматического управления устройствами в виде пакета. На странице **Развертывания** можно развернуть этот пакет для своих подключенных устройств.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как создать пакет конфигурации и импортировать его в решение для удаленного мониторинга, изучите статью [Руководство. Управление подключенными устройствами в пакетном режиме](iot-accelerators-remote-monitoring-bulk-configuration-update.md).

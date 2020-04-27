@@ -1,6 +1,6 @@
 ---
-title: Часто задаваемые вопросы конфигурации
-description: Получите ответы на часто задаваемые вопросы о настройках и проблемах управления для службы приложений Azure.
+title: Вопросы и ответы по настройке
+description: Получите ответы на часто задаваемые вопросы о проблемах с конфигурацией и управлением для службы приложений Azure.
 author: genlin
 manager: dcscontentpm
 tags: top-support-issue
@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 810219bca5c75e3ee7e65c6b7302531bca89788d
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.openlocfilehash: 867c011cb3086cab736d17501e72bc477d0d2889
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81869962"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82160006"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -35,14 +35,14 @@ ms.locfileid: "81869962"
 Сведения об этом см. в статье [Приобретение и настройка имени личного домена для службы приложений Azure](manage-custom-dns-buy-domain.md).
 
 
-## <a name="how-do-i-upload-and-configure-an-existing-tlsssl-certificate-for-my-web-app"></a>Как загрузить и настроить существующий сертификат TLS/SSL для моего веб-приложения?
+## <a name="how-do-i-upload-and-configure-an-existing-tlsssl-certificate-for-my-web-app"></a>Разделы справки отправить и настроить существующий сертификат TLS/SSL для моего веб-приложения?
 
-Чтобы узнать, как загрузить и настроить существующий пользовательский сертификат TLS/SSL, [перевежните сертификат TLS/SSL в приложение App Service.](configure-ssl-certificate.md)
+Сведения о том, как отправить и настроить существующий настраиваемый сертификат TLS/SSL, см. в статье [Добавление сертификата TLS/SSL в приложение службы приложений](configure-ssl-certificate.md).
 
 
-## <a name="how-do-i-purchase-and-configure-a-new-tlsssl-certificate-in-azure-for-my-web-app"></a>Как приобрести и настроить новый сертификат TLS/SSL в Azure для моего веб-приложения?
+## <a name="how-do-i-purchase-and-configure-a-new-tlsssl-certificate-in-azure-for-my-web-app"></a>Разделы справки приобрести и настроить новый сертификат TLS/SSL в Azure для моего веб-приложения?
 
-Чтобы узнать, как приобрести и настроить сертификат TLS/SSL для веб-приложения Службы приложения, [пересмотрите сертификат TLS/SSL в приложение App Service.](configure-ssl-certificate.md)
+Чтобы узнать, как приобрести и настроить сертификат TLS/SSL для веб-приложения службы приложений, см. статью [Добавление сертификата TLS/SSL в приложение службы приложений](configure-ssl-certificate.md).
 
 
 ## <a name="how-do-i-move-application-insights-resources"></a>Как перемещать ресурсы Application Insights?
@@ -65,7 +65,7 @@ ms.locfileid: "81869962"
     * Значение = *требуемый часовой пояс*
 3. Щелкните **Сохранить**.
 
-Для служб приложений, запускаемых в Windows, см. столбец **"Часовой пояс"** в статье ["Временные поясы по умолчанию"](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для общепринятых значений. Для служб приложений, запускаемых на Linux, установите [имя базы данных ТЗ](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Вот пример названия базы данных ТЗ: Америка/Адак.
+Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с именем: America/Адак.
 
 ## <a name="why-do-my-continuous-webjobs-sometimes-fail"></a>Почему при выполнении непрерывных веб-заданий иногда происходят сбои?
 
@@ -84,13 +84,13 @@ ms.locfileid: "81869962"
 
 ## <a name="how-do-i-get-a-reserved-or-dedicated-inbound-ip-address-for-my-web-app"></a>Как получить зарезервированный или выделенный входящий IP-адрес для веб-приложения?
 
-Чтобы настроить специальный или зарезервированный IP-адрес для входящих звонков на веб-сайт приложения Azure, установите и назначьте сертификат TLS/SSL на основе IP.
+Чтобы настроить выделенный или зарезервированный IP-адрес для входящих вызовов веб-сайта приложения Azure, установите и настройте сертификат TLS/SSL на основе IP-адреса.
 
 Чтобы использовать выделенный или зарезервированный IP-адрес для входящих вызовов, требуется план службы приложений категории "Базовый" или выше.
 
 ## <a name="can-i-export-my-app-service-certificate-to-use-outside-azure-such-as-for-a-website-hosted-elsewhere"></a>Можно ли экспортировать сертификат службы приложений для использования за пределами Azure, например для веб-сайтов в других расположениях? 
 
-Да, их можно экспортировать для использования за пределами Azure. Дополнительные сведения см. в статье [FAQs for App Service certificates and custom domains](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview) (Вопросы и ответы по сертификатам службы приложений и личным доменам).
+Да, вы можете экспортировать их для использования за пределами Azure. Дополнительные сведения см. в статье [FAQs for App Service certificates and custom domains](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview) (Вопросы и ответы по сертификатам службы приложений и личным доменам).
 
 ## <a name="can-i-export-my-app-service-certificate-to-use-with-other-azure-cloud-services"></a>Можно ли экспортировать сертификат службы приложений для использования с другими облачными службами Azure?
 
@@ -105,7 +105,7 @@ ms.locfileid: "81869962"
 
 ## <a name="how-do-i-remove-a-header-from-the-http-response"></a>Как удалить заголовок ответа HTTP?
 
-Чтобы удалить заголовки из ответа HTTP, обновите файл web.config вашего сайта. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
+Чтобы удалить заголовки из HTTP-ответа, обновите файл Web. config сайта. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
 
 ## <a name="is-app-service-compliant-with-pci-standard-30-and-31"></a>Соответствует ли служба приложений стандарту PCI версий 3.0 и 3.1?
 
@@ -125,7 +125,7 @@ ms.locfileid: "81869962"
 
 Просмотр журналов веб-задания
 
-1. Перейдите на [веб-сайт Kudu](https://*yourwebsitename*.scm.azurewebsites.net).
+1. Войдите на **веб-сайт KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net`).
 2. Выберите веб-задание.
 3. Нажмите кнопку **Переключить выходные данные**.
 4. Чтобы загрузить выходной файл, выберите ссылку **загрузки**.
@@ -141,13 +141,13 @@ ms.locfileid: "81869962"
 Exception: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. —> System.OverflowException: Arithmetic operation resulted in an overflow. or (64 bit Web app) System.OverflowException: Array dimensions exceeded supported range, at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake
 ```
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 Исключение было порождено из-за проблемы с диспетчером гибридных подключений, которая затем была исправлена. Не забудьте [обновить диспетчер гибридных подключений](https://go.microsoft.com/fwlink/?LinkID=841308), чтобы устранить эту проблему.
 
-## <a name="how-do-i-add-a-url-rewrite-rule"></a>Как добавить правило переписывания URL?»
+## <a name="how-do-i-add-a-url-rewrite-rule"></a>Разделы справки добавить правило переопределения URL-адресов?
 
-Чтобы добавить правило переписывания URL, создайте файл web.config с соответствующими записи конфигурации в папке **wwwroot.** Для получения дополнительной информации см. [Службы приложений Azure: Понимание URL-адреса переписать](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/).
+Чтобы добавить правило переопределения URL-адресов, создайте файл Web. config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см. в статье [о службе приложений Azure: Общие сведения о перезаписи URL-адресов](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/).
 
 ## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Как контролировать входящий трафик в службе приложений?
 
@@ -160,7 +160,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 ## <a name="how-do-i-block-ports-in-an-app-service-web-app"></a>Как блокировать порты в веб-приложении службы приложений?
 
-В среде службы приложений с общим клиентом нельзя блокировать определенные порты из-за особенностей инфраструктуры. Порты TCP 4020, 4022 и 4024 также могут быть открыты для удаленной отладки Visual Studio.
+В среде службы приложений с общим клиентом нельзя блокировать определенные порты из-за особенностей инфраструктуры. TCP-порты 4020, 4022 и 4024 также могут быть открыты для удаленной отладки Visual Studio.
 
 В среде службы приложений можно полностью контролировать входящий и исходящий трафик. Для ограничения трафика в определенных портах или их блокировки можно использовать группы безопасности сети. Дополнительные сведения о среде службы приложений см. в записи блога [Introducing App Service Environment](https://azure.microsoft.com/blog/introducing-app-service-environment/) (Введение в среду службы приложения).
 
@@ -183,7 +183,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 ### <a name="f12-console-output"></a>Вывод F12 на консоль
 
 1. Выберите вкладку **Консоль**.
-2. Выберите все вкладки с элементами больше нуля (**Ошибка**, **Предупреждение** или **Информация**). Если вкладка не выбрана, значок вкладки серый или черный при перемещении курсора от нее.
+2. Выберите все вкладки с элементами больше нуля (**Ошибка**, **Предупреждение** или **Информация**). Если вкладка не выбрана, значок табуляции отображается серым или черным цветом при перемещении курсора из него.
 3. Щелкните правой кнопкой мыши в области сообщений на панели и выберите **Копировать все**.
 4. Вставьте скопированный текст в файл и сохраните файл.
 
@@ -282,7 +282,7 @@ Invoke-AzResourceAction -ResourceGroupName "<App Service Certificate Resource Gr
 
 ## <a name="how-do-i-redirect-the-default-azurewebsitesnet-domain-to-my-azure-web-apps-custom-domain"></a>Как перенаправить домен по умолчанию *.azurewebsites.net в пользовательский домен моего веб-приложения Azure?
 
-При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавляете на свой сайт специальное имя хоста и не хотите, чтобы пользователи могли получить доступ к вашему домену по умолчанию azurewebsites.net, вы можете перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
+При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавите на сайт пользовательское имя узла и не хотите, чтобы пользователи могли получить доступ к домену *. azurewebsites.net по умолчанию, можно перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
 
 ## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Как определить, какая версия платформы .NET установлена в службе приложений?
 

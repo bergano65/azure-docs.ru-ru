@@ -1,5 +1,5 @@
 ---
-title: Azure Marketplace и Дорожная карта AppSource
+title: Azure Marketplace и стратегия AppSource
 description: Стратегический план развития Marketplace
 author: qianw211
 ms.author: dsindona
@@ -7,40 +7,40 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/02/2019
-ms.openlocfilehash: 24e622f76e604d7c0c48e2f3c354e3b4aa64e549
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 0631859983944a7e33615106060d3ffb45a3c7bc
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82084912"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82160500"
 ---
-# <a name="microsoft-commercial-marketplace-roadmap"></a>Дорожная карта коммерческого рынка Майкрософт
+# <a name="microsoft-commercial-marketplace-roadmap"></a>План коммерческого рынка Майкрософт
 
-В этом документе представлено представление о том, что будет дальше для коммерческого рынка корпорации Майкрософт для издателей, продавцов и клиентов. Он фиксирует некоторые из важных функций, которые мы совершили, грубые сроки, когда вы можете ожидать, чтобы увидеть их и будет обновляться ежемесячно. Это не полный список всех новых функций, но предназначен для обеспечения видимости в наших ключевых инвестиций. Эти наборы возможностей и интервалы времени реализации отражают текущие планы и могут быть изменены.
+В этом документе представлено подробное описание коммерческого рынка Майкрософт для издателей, продавцов и клиентов. Он фиксирует некоторые важные функции, которые мы зафиксировали, грубое время, когда вы ожидаете их просмотра и будете обновляться ежемесячно. Он не является исчерпывающим списком всех новых функций, но предназначен для обеспечения видимости наших ключевых вложений. Эти наборы возможностей и интервалы времени реализации отражают текущие планы и могут быть изменены.
 
 Мы приветствуем ваши предложения! Присоединяйтесь к обсуждениям в [сообществе партнеров Майкрософт](https://www.microsoftpartnercommunity.com/), чтобы получать последние новости о новых возможностях, программах и событиях.
 
 ## <a name="roadmap"></a>Схема действий
-![Дорожная карта рынка на ноябрь 2019 года](./media/marketplace-publishers-guide/roadmap-nov19.png)
+![План Marketplace за ноябрь 2019](./media/marketplace-publishers-guide/roadmap-nov19.png)
 
 ## <a name="recent-releases"></a>Последние выпуски
 
-Как только возможность будет жить, она будет удалена из дорожной карты. Функциональность, добавленная на рынок, содержится в следующей документации.
+После того, как возможность будет актуальна, она будет удалена из плана. Функциональные возможности, добавленные в Marketplace, можно найти в следующей документации.
 
-* [Маркетплейс - Блог обновления CSP](https://aka.ms/marketplacemarchupdateblog)
-* [Публикация предложений в канале CSP (ISV)](https://aka.ms/publishtocsp)
-* [Перепродавать предложения Marketplace (CSP)](https://aka.ms/marketplaceincsp)
-* [Стандартный контракт](https://aka.ms/standardcontract)
-* [SaaS Выполнение API](https://aka.ms/saasapiv2)
-* [Рынок Геос и Валюты](https://aka.ms/marketplacegeos)
-* [Seller Insights](./partner-center-portal/analytics.md)
-* [Блог Microsoft Build Marketplace](https://aka.ms/marketplacebuildblog)
-* [Рынок мая Обновления блог](https://azure.microsoft.com/blog/microsoft-commercial-marketplace-updates-may-2019/)
-* Партнерский центр: [Создание учетной записи](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) / [управлять миграцией учетной записи](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account) / [из CPP](https://docs.microsoft.com/azure/marketplace/partner-center-portal/account-migration-from-cpp-to-pc)
-* Партнерский центр: [Создание SaaS Предложение](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-saas-offer) / [Издательский Статус](https://docs.microsoft.com/azure/marketplace/partner-center-portal/publishing-status
-) / [Обновление Существующие предложения](https://docs.microsoft.com/azure/marketplace/partner-center-portal/update-existing-offer) / [Аналитика](https://docs.microsoft.com/azure/marketplace/partner-center-portal/analytics)
-* [Получите поддержку рынка в партнерской центре](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support)
+* [Блог по обновлению Marketplace и CSP](https://azure.microsoft.com/blog/azure-marketplace-and-cloud-solution-provider-updates-march-2019/)
+* [Публикация предложений в канале CSP (ISV)](./cloud-solution-providers.md)
+* [Перепродажа предложений Marketplace (CSP)](https://docs.microsoft.com/partner-center/sell-marketplace-products)
+* [Стандартный контракт для коммерческого рынка Майкрософт](./standard-contract.md)
+* [API исполнения SaaS](./partner-center-portal/pc-saas-fulfillment-apis.md)
+* [Поддержка географической доступности и валюты для коммерческого рынка](./marketplace-geo-availability-currencies.md)
+* [Аналитика для коммерческого рынка в центре партнеров](./partner-center-portal/analytics.md)
+* [Блог Microsoft Build Marketplace](https://azure.microsoft.com/blog/announcing-new-marketplace-revenue-opportunities/)
+* [Веб Marketplace может обновлять блог](https://azure.microsoft.com/blog/microsoft-commercial-marketplace-updates-may-2019/)
+* Центр партнеров: [Создание учетной](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) / записи управление миграцией[учетных записей](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account) / [из cpp](https://docs.microsoft.com/azure/marketplace/partner-center-portal/account-migration-from-cpp-to-pc)
+* Центр партнеров: [Создание](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-saas-offer) / [состояния](https://docs.microsoft.com/azure/marketplace/partner-center-portal/publishing-status
+) / публикации предложения SaaS[Обновление существующего](https://docs.microsoft.com/azure/marketplace/partner-center-portal/update-existing-offer) / предложения-[аналитика предложений](https://docs.microsoft.com/azure/marketplace/partner-center-portal/analytics)
+* [Получение поддержки Marketplace в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide).

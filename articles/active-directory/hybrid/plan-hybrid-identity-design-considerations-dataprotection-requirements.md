@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 056d0caf2bfc6e99d5d659a2561bc41844feb79a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "64918780"
 ---
 # <a name="plan-for-enhancing-data-security-through-a-strong-identity-solution"></a>Планирование повышения безопасности данных благодаря надежному решению для идентификации
@@ -44,7 +44,7 @@ ms.locfileid: "64918780"
 Однако есть некоторые аспекты безопасности, которые необходимо изучить и проверить независимо от отрасли.
 
 ## <a name="data-protection-paths"></a>Пути защиты данных
-![Пути защиты данных](./media/plan-hybrid-identity-design-considerations/data-protection-paths.png)
+![пути защиты данных](./media/plan-hybrid-identity-design-considerations/data-protection-paths.png)
 
 **Пути защиты данных**
 
@@ -80,11 +80,11 @@ ms.locfileid: "64918780"
 * встроенные возможности, которые позволят компании соответствовать нормативным требованиям? 
 
 > [!NOTE]
-> Составьте письменный ответ на каждый вопрос и убедитесь, что он логически обоснован. [Определение стратегии защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) будет переходить к имеющимся вариантам и преимуществам/недостаткам каждого варианта.  Ответив на эти вопросы, вы сможете выбрать тот вариант, который лучше всего подходит для вашего бизнеса.
+> Составьте письменный ответ на каждый вопрос и убедитесь, что он логически обоснован. [Определите стратегию защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) , чтобы получить доступ к параметрам, а также преимуществам и недостаткам каждого из них.  Ответив на эти вопросы, вы сможете выбрать тот вариант, который лучше всего подходит для вашего бизнеса.
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
  [Определение требований к управлению содержимым](plan-hybrid-identity-design-considerations-contentmgt-requirements.md)
 
 ## <a name="see-also"></a>См. также
