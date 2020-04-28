@@ -8,19 +8,19 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
 ms.openlocfilehash: c509d174787a58abeee33e039eb7bbbcbcb43f38
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79531740"
 ---
-# <a name="azure-stream-analytics-javascript-user-defined-aggregates"></a>Агрегаты, определяемые пользователями Azure Stream Analytics JavaScript
+# <a name="azure-stream-analytics-javascript-user-defined-aggregates"></a>Azure Stream Analytics определяемые пользователем статистические функции JavaScript
  
 Azure Stream Analytics поддерживает пользовательские статистические выражения (UDA) на языке JavaScript, что позволяет реализовывать сложную бизнес-логику с отслеживанием состояния. Внутри пользовательского статистического выражения предоставляется полный контроль над структурой данных состояния, накоплением состояния, сокращением состояния и вычислением статистических результатов. В этой статье представлены два разных интерфейса пользовательских статистических выражений (UDA) JavaScript, а также инструкции по созданию пользовательского статистического выражения и способы его использования в операциях на основе окна в запросе Stream Analytics.
 
 ## <a name="javascript-user-defined-aggregates"></a>Пользовательские статистические выражения JavaScript
 
-Пользовательское статистическое выражение используется в указанном временном окне для выполнения статистического вычисления и создания одиночного результирующего значения. Существуют два типа интерфейсов UDA, поддерживаемых Stream Analytics в настоящее: AccumulateOnly и AccumulateDeaccumulate. Оба типа UDA могут быть использованы Tumbling, Хпппинг, Раздвижные и сессионное окно. AccumulateDeaccumulate UDA работает лучше, чем AccumulateOnly UDA при использовании вместе с окном прыжков, скольжения и сеанса. Можно выбрать один из двух типов в зависимости от используемого алгоритма.
+Пользовательское статистическое выражение используется в указанном временном окне для выполнения статистического вычисления и создания одиночного результирующего значения. Существуют два типа интерфейсов UDA, поддерживаемых Stream Analytics в настоящее: AccumulateOnly и AccumulateDeaccumulate. Оба типа UDA могут использоваться "переворачивающегося", прыгающее», скользящего и сеансового окна. AccumulateDeaccumulate UDA работает лучше, чем AccumulateOnly UDA, когда используется вместе с прыгающее», скользящей и окном сеанса. Можно выбрать один из двух типов в зависимости от используемого алгоритма.
 
 ### <a name="accumulateonly-aggregates"></a>Статистические выражения AccumulateOnly
 
@@ -90,7 +90,7 @@ function main() {
 
 ### <a name="function-name"></a>Имя функции
 
-Имя этого объекта функции. Название функции должно соответствовать псевдониму UDA.
+Имя этого объекта функции. Имя функции должно соответствовать псевдониму UDA.
 
 ### <a name="method---init"></a>Метод init()
 
@@ -98,11 +98,11 @@ function main() {
 
 ### <a name="method--accumulate"></a>Метод accumulate()
 
-Метод accumulate() определяет состояние пользовательского статистического выражения на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие входит в временное окно (TUMBLINGWINDOW, HOPPINGWINDOW, SLIDINGWINDOW или SESSIONWINDOW).
+Метод accumulate() определяет состояние пользовательского статистического выражения на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие попадает в временное окно (TUMBLINGWINDOW, HOPPINGWINDOW, SLIDINGWINDOW или СЕССИОНВИНДОВ).
 
 ### <a name="method--deaccumulate"></a>Метод deaccumulate()
 
-Метод deaccumulate() повторно определяет состояние на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие покидает SLIDINGWINDOW или SESSIONWINDOW.
+Метод deaccumulate() повторно определяет состояние на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие покидает SLIDINGWINDOW или СЕССИОНВИНДОВ.
 
 ### <a name="method--deaccumulatestate"></a>Метод deaccumulateState()
 
@@ -110,7 +110,7 @@ function main() {
 
 ### <a name="method--computeresult"></a>Метод computeResult()
 
-Метод computeResult() возвращает результат статистического выражения на основе текущего состояния. Этот метод называется в конце временного окна (TUMBLINGWINDOW, HOPPINGWINDOW, SLIDINGWINDOW или SESSIONWINDOW).
+Метод computeResult() возвращает результат статистического выражения на основе текущего состояния. Этот метод вызывается в конце временного окна (TUMBLINGWINDOW, HOPPINGWINDOW, SLIDINGWINDOW или СЕССИОНВИНДОВ).
 
 ## <a name="javascript-uda-supported-input-and-output-data-types"></a>Поддерживаемые типы входных и выходных данных для пользовательских статистических выражений JavaScript
 Типы данных для пользовательских статистических выражений JavaScript приведены в разделе **Преобразование типов Stream Analytics и JavaScript** статьи [Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md).
@@ -119,7 +119,7 @@ function main() {
 
 Ниже рассматривается процесс создания пользовательского статистического выражения на портале. В примере, который здесь используется, вычисляются средневзвешенные по времени значения.
 
-Теперь давайте создадим JavaScript UDA под существующее задание ASA, выпустив следующие шаги.
+Теперь создадим UDA JavaScript в существующем задании ASA, выполнив следующие действия.
 
 1. Выполните вход на портал Azure и найдите задание Stream Analytics.
 1. Щелкните ссылку "Функции" в разделе **Топология задания**.
@@ -230,7 +230,7 @@ GROUP BY TumblingWindow(minute, 5)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
+* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Ссылка на языковую ссылку на языковой запрос Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
-* [Ссылка на aPI управления rest API управления потоками Azure Stream](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
+* [Справочник REST API по управлению Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

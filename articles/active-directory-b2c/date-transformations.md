@@ -1,6 +1,6 @@
 ---
-title: Примеры преобразования дат для пользовательских политик
-description: Примеры преобразования Date для схемы интерфейса интерфейса идентификации (IEF) Active Directory B2C.
+title: Примеры преобразования "утверждения даты" для пользовательских политик
+description: Примеры преобразования "утверждения даты" для схемы Azure Active Directory B2C в схеме "инфраструктура процедур идентификации" (инфраструктура процедур идентификации).
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -11,23 +11,23 @@ ms.date: 02/16/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: c02ac9392d6f3f95deef38ff86250e96dfb76d96
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79476694"
 ---
 # <a name="date-claims-transformations"></a>Преобразования утверждений даты
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приводятся примеры использования преобразований датных утверждений в схеме интерфейса Identity Experience Framework в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приведены примеры использования преобразований «Дата утверждения» схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
 ## <a name="assertdatetimeisgreaterthan"></a>AssertDateTimeIsGreaterThan
 
 Проверяет, что одно утверждение даты и времени (строковый тип данных) соответствует более позднему моменту, чем второе утверждение даты и времени (строковый тип данных), и создает исключение.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | leftOperand | строка | Тип первого утверждения, который должен быть больше (позже) второго утверждения. |
 | InputClaim | rightOperand | строка | Тип второго утверждения, который должен быть меньше (раньше) первого утверждения. |
@@ -35,7 +35,7 @@ ms.locfileid: "79476694"
 | InputParameter | AssertIfRightOperandIsNotPresent | Логическое | Указывает, выполняется ли это утверждение, если правый операнд отсутствует. |
 | InputParameter | TreatAsEqualIfWithinMillseconds | INT | Указывает количество миллисекунд между двумя датами и временем, после которого они считаются равными (например, чтобы учесть разницу в показаниях часов). |
 
-Преобразование утверждений **AssertDateTimeIsGreaterThan** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md). В метаданных самоподтвержденного технического профиля **DateTimeGreaterThan** задаются сообщения об ошибках, которые технический профиль отображает пользователю. Сообщения об ошибках могут быть [локализованы.](localization-string-ids.md#claims-transformations-error-messages)
+Преобразование утверждений **AssertDateTimeIsGreaterThan** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md). В метаданных самоподтвержденного технического профиля **DateTimeGreaterThan** задаются сообщения об ошибках, которые технический профиль отображает пользователю. Сообщения об ошибках можно [локализовать](localization-string-ids.md#claims-transformations-error-messages).
 
 ![Выполнение AssertStringClaimsAreEqual](./media/date-transformations/assert-execution.png)
 
@@ -81,15 +81,15 @@ ms.locfileid: "79476694"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **leftOperand**: 2020-03-01T15:00:00.0000000
-    - **rightOperand**: 2020-03-01T14:00:00.0000000
+    - **лефтоперанд**: 2020-03-01T15:00:00.0000000 z
+    - **ригхтоперанд**: 2020-03-01T14:00:00.0000000 z
 - Результат: возникла ошибка.
 
 ## <a name="convertdatetodatetimeclaim"></a>ConvertDateToDateTimeClaim
 
 Преобразует ClaimType **Date** в тип **DateTime**. Преобразование утверждений преобразует формат времени и добавляет 00:00:00 к дате.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | Дата | ClaimType, который необходимо преобразовать. |
 | outputClaim | outputClaim | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
@@ -110,20 +110,20 @@ ms.locfileid: "79476694"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **вводпретензии**: 2020-15-03
+    - **inputClaim**: 2020-15-03
 - Исходящие утверждения:
-    - **выходная подача**: 2020-15-03T00:00:00000000
+    - **outputClaim**: 2020-15-03T00:00:00.0000000 z
 
-## <a name="convertdatetimetodateclaim"></a>ПреобразованиеДатаТодатик
+## <a name="convertdatetimetodateclaim"></a>конвертдатетиметодатеклаим
 
-Преобразует **ClaimTime dateType** в **Date** ClaimType. Преобразование требований удаляет формат времени с даты.
+Преобразует тип данных DateTime в **дату** - **время** . Преобразование «утверждения» удаляет формат времени из даты.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | dateTime | ClaimType, который необходимо преобразовать. |
 | outputClaim | outputClaim | Дата | ClaimType, который создается после вызова ClaimsTransformation. |
 
-Следующий пример демонстрирует преобразование `systemDateTime` претензии (тип данных `systemDate` dateTime) в другую претензию (тип данных даты).
+В следующем примере показано преобразование утверждения `systemDateTime` (тип данных DateTime) в другое утверждение `systemDate` (тип данных Date).
 
 ```XML
 <ClaimsTransformation Id="ConvertToDate" TransformationMethod="ConvertDateTimeToDateClaim">
@@ -139,15 +139,15 @@ ms.locfileid: "79476694"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **вводпретензии**: 2020-15-03T11:34:22.00000000
+  - **inputClaim**: 2020-15-03T11:34:22.0000000 z
 - Исходящие утверждения:
-  - **выходная добыча :** 2020-15-03
+  - **outputClaim**: 2020-15-03
 
 ## <a name="getcurrentdatetime"></a>GetCurrentDateTime
 
 Получает текущую дату и время в формате UTC и добавляет это значение к ClaimType.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | outputClaim | currentDateTime | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
@@ -162,13 +162,13 @@ ms.locfileid: "79476694"
 ### <a name="example"></a>Пример
 
 * Исходящие утверждения:
-    * **текущее время**: 2020-15-03T11:40:35.00000000
+    * **куррентдатетиме**: 2020-15-03T11:40:35.0000000 z
 
 ## <a name="datetimecomparison"></a>DateTimeComparison
 
 Определяет, является ли одно утверждение dateTime больше (позже), меньше (раньше) или равно другому. Результатом является новый логический параметр ClaimType со значением `true` или `false`.
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | firstDateTime | dateTime | Первое значение dateTime для сравнения со вторым значением dateTime. При значении NULL возникает исключение. |
 | InputClaim | secondDateTime | dateTime | Второе значение dateTime для сравнения с первым значением dateTime. Значение NULL обрабатывается как текущее значение dateTime. |
@@ -198,8 +198,8 @@ ms.locfileid: "79476694"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **firstDateTime**: 2020-01-01T00:00:00.100000
-    - **seconddateTime**: 2020-04-01T00:00:00.100000
+    - **фирстдатетиме**: 2020-01-01T00:00:00.100000 z
+    - **секонддатетиме**: 2020-04-01T00:00:00.100000 z
 - Входные параметры:
     - **operator**: later than
     - **timeSpanInSeconds**: 7776000 (90 дней)

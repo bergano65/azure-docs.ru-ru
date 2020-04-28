@@ -1,5 +1,5 @@
 ---
-title: Управление настройками SSO и маркеров с помощью пользовательских политик
+title: Управление единым входом и настройкой маркеров с помощью пользовательских политик
 titleSuffix: Azure AD B2C
 description: Сведения об управлении единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
@@ -12,21 +12,21 @@ ms.date: 10/09/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: ff9f57af92c50c0df6f628113bd9490ca83e1310
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78189299"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
-В этой статье приводится информация о том, как можно управлять конфигурациями токенов, сессий и одной настройки (SSO) с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
+В этой статье содержатся сведения об управлении конфигурациями маркеров, сеансов и единого входа (SSO) с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
 ## <a name="token-lifetimes-and-claims-configuration"></a>Конфигурация времени существования токенов и утверждений
 
 Чтобы изменить настройки времени существования токенов, добавьте элемент [ClaimsProviders](claimsproviders.md) в файл проверяющей стороны политики, которую следует изменить.  Элемент **ClaimsProviders** является дочерним элементом [TrustFrameworkPolicy](trustframeworkpolicy.md).
 
-Вставьте элемент ClaimsProviders между элементом BasePolicy и элементом RelyingParty файла relying party.
+Вставьте элемент Клаимспровидерс между элементом Басеполици и элементом Релингпарти файла проверяющей стороны.
 
 Внутри необходимо разместить сведения, влияющие на время существования токенов. Пример XML выглядит так:
 
@@ -104,4 +104,4 @@ ms.locfileid: "78189299"
 
 - **Включение единого входа (SSO).** Включение единого входа (SSO) настроено с помощью **SingleSignOn**. Применимые значения — `Tenant`, `Application`, `Policy` и `Suppressed`.
 - **Время ожидания сеанса веб-приложения.** Время ожидания сеанса веб-приложения устанавливается с помощью элемента **SessionExpiryType**. Применимые значения — `Absolute` и `Rolling`.
-- **Срок службы сеанса веб-приложений** - Срок службы сеанса веб-приложений устанавливается с элементом **SessionExInSeconds.** Значение по умолчанию составляет 86400 секунд (1440 минут).
+- **Время существования сеанса веб-приложения** . время существования сеанса веб-приложения задается с помощью элемента **сессионекспиринсекондс** . Значение по умолчанию составляет 86400 секунд (1440 минут).

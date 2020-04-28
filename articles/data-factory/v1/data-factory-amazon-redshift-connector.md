@@ -1,5 +1,5 @@
 ---
-title: Перемещение данных из Amazon Redshift с помощью Фабрики данных Azure
+title: Перемещение данных из Amazon RedShift с помощью фабрики данных Azure
 description: Узнайте о том, как перемещать данные из Amazon Redshift с помощью действия копирования фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: c2e2394bbcee5294bfb752a0af2969457ffff0ee
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79260531"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
@@ -43,7 +43,7 @@ ms.locfileid: "79260531"
 
 Проще всего создать конвейер с помощью мастера копирования фабрики данных Azure. Краткие пошаговые указания по созданию конвейера с помощью мастера копирования приведены в статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md).
 
-Вы также можете создать конвейер с помощью Visual Studio, Azure PowerShell или других инструментов. Шаблоны Azure Resource Manager, .NET API и REST API также можно использовать для создания конвейера. Для пошаговых инструкций по созданию конвейера с копированием, [см.](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+Кроме того, конвейер можно создать с помощью Visual Studio, Azure PowerShell или других средств. Шаблоны Azure Resource Manager, .NET API и REST API также можно использовать для создания конвейера. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -59,14 +59,14 @@ ms.locfileid: "79260531"
 
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Amazon Redshift.
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
-| **тип** |Этому свойству необходимо задать значение **AmazonRedshift**. |Да |
-| **Сервера** |IP-адрес или имя узла сервера Amazon Redshift. |Да |
-| **Порт** |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет (значение по умолчанию — 5439) |
-| **Базы данных** |Имя базы данных Amazon Redshift. |Да |
-| **Пользователя** |Имя пользователя, имеющего доступ к базе данных. |Да |
-| **пароль** |Пароль для учетной записи пользователя. |Да |
+| **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |Да |
+| **сервером** |IP-адрес или имя узла сервера Amazon Redshift. |Да |
+| **порту** |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет (значение по умолчанию — 5439) |
+| **database** |Имя базы данных Amazon Redshift. |Да |
+| **имен** |Имя пользователя, имеющего доступ к базе данных. |Да |
+| **password** |Пароль для учетной записи пользователя. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
@@ -74,9 +74,9 @@ ms.locfileid: "79260531"
 
 Раздел **typeProperties** во всех типах наборов данных разный. Он содержит сведения о расположении данных в хранилище. Раздел **typeProperties** набора данных типа **RelationalTable** (который включает в себя набор данных Amazon Redshift) содержит следующие свойства:
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
-| **Tablename** |Имя таблицы в базе данных Amazon Redshift, на которое ссылается связанная служба. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
+| **tableName** |Имя таблицы в базе данных Amazon Redshift, на которое ссылается связанная служба. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -84,18 +84,18 @@ ms.locfileid: "79260531"
 
 Если действие копирования относится к типу **AmazonRedshiftSource**, в разделе **typeProperties** для него доступны следующие свойства:
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
-| **Запроса** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
-| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | нет |
+| **запрос** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
+| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет |
 | **s3LinkedServiceName** | Используется Amazon S3 в качестве промежуточного хранилища. Связанная служба указывается с помощью имени типа фабрики данных Azure **AwsAccessKey**. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 | **bucketName** | Указывает контейнер Amazon S3 для хранения промежуточных данных. Если это свойство не указано, действие копирования автоматически создаст контейнер. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 
 Кроме того, можно использовать тип **RelationalSource** (включающий Amazon Redshift) со следующим свойством в разделе **typeProperties**. Обратите внимание, что этот тип источника не поддерживает Redshift команду **UNLOAD**.
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
-| **Запроса** |Используйте пользовательский запрос для чтения данных. | Нет (если для свойства **tableName** задано значение dataset). |
+| **запрос** |Используйте пользовательский запрос для чтения данных. | Нет (если для свойства **tableName** задано значение dataset). |
 
 ## <a name="use-unload-to-copy-data-from-amazon-redshift"></a>Копирование данных из Amazon Redshift с помощью UNLOAD
 
@@ -142,10 +142,10 @@ ms.locfileid: "79260531"
 
 Образец состоит из следующих сущностей фабрики данных.
 
-* Связанная услуга типа [AmazonRedshift](#linked-service-properties)
+* Связанная служба типа [AmazonRedshift](#linked-service-properties)
 * Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
-* Набор входных [данных](data-factory-create-datasets.md) типа [RelationalTable](#dataset-properties)
-* Набор выходных [данных](data-factory-create-datasets.md) типа [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties)
+* Входной [набор данных](data-factory-create-datasets.md) типа [RelationalTable](#dataset-properties)
+* Выходной [набор данных](data-factory-create-datasets.md) типа [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties)
 * [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются свойства [RelationalSource](#copy-activity-properties) и [BlobSink](data-factory-azure-blob-connector.md#copy-activity-properties).
 
 В примере данные из результата запроса к Amazon Redshift каждый час копируются в большой двоичный объект Azure. Используемые в этом примере свойства JSON описаны в разделах, следующих за определениями сущностей.
@@ -170,7 +170,7 @@ ms.locfileid: "79260531"
 }
 ```
 
-**Служба хранения данных Azure Blob**
+**Связанная служба хранилища BLOB-объектов Azure**
 
 ```json
 {
@@ -205,7 +205,7 @@ ms.locfileid: "79260531"
 }
 ```
 
-**Набор выходных данных Azure Blob**
+**Выходной набор данных BLOB-объекта Azure**
 
 Данные записываются в новый большой двоичный объект каждый час. Для этого свойству **frequency** присваивается значение Hour, а свойству **interval** — 1. Свойство **folderPath** для большого двоичного объекта вычисляется динамически. Значение свойства основано на времени начала обрабатываемого среза. В пути к папке используются год, месяц, день и час времени начала.
 
@@ -333,13 +333,13 @@ ms.locfileid: "79260531"
 | INTEGER |Int32 |
 | bigint |Int64 |
 | DECIMAL |Decimal |
-| real |Один |
+| real |Single |
 | DOUBLE PRECISION |Double |
 | BOOLEAN |Строка |
 | CHAR |Строка |
 | VARCHAR |Строка |
-| DATE |Дата и время |
-| timestamp |Дата и время |
+| DATE |DateTime |
+| timestamp |DateTime |
 | TEXT |Строка |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника

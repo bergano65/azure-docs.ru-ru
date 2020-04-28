@@ -1,25 +1,25 @@
 ---
-title: Получайте журналы экземпляров контейнеров & события
-description: Узнайте, как получить журналы контейнеров и события в экземплярах контейнеров Azure, чтобы помочь устранить проблемы контейнера
+title: Получение журналов экземпляров контейнера & событий
+description: Узнайте, как получить журналы контейнеров и события в службе "экземпляры контейнеров Azure", чтобы помочь в устранении проблем с контейнерами.
 ms.topic: article
 ms.date: 12/30/2019
 ms.custom: mvc
 ms.openlocfilehash: 0991b9cb1f99606910dbdf2c87b111f67da6da7b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78249997"
 ---
 # <a name="retrieve-container-logs-and-events-in-azure-container-instances"></a>Получение журналов и событий контейнеров в службе "Экземпляры контейнеров Azure"
 
-Если у вас есть неправильное контейнер в Azure Container Instances, начните с просмотра его журналов с [журналами контейнеров az,][az-container-logs]и поток его стандарта и стандартной ошибки с [az контейнера прикрепить.][az-container-attach] Также можно просматривать журналы и события для экземпляров контейнеров на портале Azure или отправлять данные журналов и событий для контейнерных групп в [журналы Azure Monitor.](container-instances-log-analytics.md)
+При наличии неправильного поведения контейнера в службе "экземпляры контейнеров Azure" Начните с просмотра журналов с помощью команды [AZ Container Logs][az-container-logs]и потоковой передачи стандартного выхода и стандартной ошибки с помощью команды [AZ Container Attach][az-container-attach]. Кроме того, можно просматривать журналы и события для экземпляров контейнеров в портал Azure или передавать данные журналов и событий для групп контейнеров в [журналы Azure Monitor](container-instances-log-analytics.md).
 
 ## <a name="view-logs"></a>Просмотр журналов
 
 Для просмотра журналов из кода приложения в контейнере можно использовать команду [az container logs][az-container-logs].
 
-Ниже приводится вывод журнала из примера на основе задачи контейнера в [Установить командную строку в экземпляре контейнера,](container-instances-start-command.md#azure-cli-example)после предоставления недействительных URL с помощью переопределения командной строки:
+Ниже приведены выходные данные журнала из примера контейнера на основе задач в [строке установка командной строки в экземпляре контейнера](container-instances-start-command.md#azure-cli-example)после того, как был предоставлен недопустимый URL-адрес с помощью переопределения командной строки:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name mycontainer
@@ -50,7 +50,7 @@ urllib.error.HTTPError: HTTP Error 404: Not Found
 
 Команда [az container attach][az-container-attach] предоставляет диагностические сведения во время запуска контейнера. Она направляет потоки STDOUT и STDERR запущенного контейнера в локальную консоль.
 
-Например, вот вывод из контейнера, основанного на задачах, в [Set the command line в экземпляре контейнера](container-instances-start-command.md#azure-cli-example)после отправки действительного URL большого текстового файла для обработки:
+Например, ниже приведены выходные данные контейнера, основанного на задачах, в разделе [Установка командной строки в экземпляре контейнера](container-instances-start-command.md#azure-cli-example)после того, как был указан допустимый URL-адрес большого текстового файла для обработки:
 
 ```azurecli
 az container attach --resource-group myResourceGroup --name mycontainer
@@ -82,7 +82,7 @@ Start streaming logs:
 
 ## <a name="get-diagnostic-events"></a>Получение диагностических событий
 
-Если контейнер успешно развернут, просмотрите диагностическую информацию, предоставленную поставщиком ресурсов Azure Container Instances. Чтобы просмотреть события для контейнера, выполните команду [az container show][az-container-show]:
+Если контейнер не удается развернуть, ознакомьтесь с диагностическими сведениями, предоставленными поставщиком ресурсов службы "экземпляры контейнеров Azure". Чтобы просмотреть события для контейнера, выполните команду [az container show][az-container-show]:
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name mycontainer
@@ -151,7 +151,7 @@ az container show --resource-group myResourceGroup --name mycontainer
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [устранить неполадки контейнера и развертывания](container-instances-troubleshooting.md) для службы "Экземпляры контейнеров Azure".
 
-Узнайте, как отправлять данные журналов и событий для контейнерных групп в [журналы Azure Monitor.](container-instances-log-analytics.md)
+Сведения об отправке журналов и данных событий для групп контейнеров в [Azure Monitor журналов](container-instances-log-analytics.md).
 
 <!-- LINKS - Internal -->
 [az-container-attach]: /cli/azure/container#az-container-attach

@@ -11,26 +11,26 @@ ms.date: 12/06/2016
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 5195241003b1ce4ea505002e2cc3c10410e6cde1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78183726"
 ---
 # <a name="azure-active-directory-b2c-file-support-requests"></a>Azure Active Directory B2C: регистрация запросов в службу поддержки
-Вы можете подавать запросы на поддержку Для Azure Active Directory B2C (Azure AD B2C) на портале Azure, используя следующие действия:
+Вы можете получить запросы на поддержку для Azure Active Directory B2C (Azure AD B2C) на портал Azure, выполнив следующие действия:
 
 1. Переключитесь с вашего клиента B2C на клиент, с которым связана подписка Azure. Это может быть клиент вашего сотрудника или клиент по умолчанию, созданный во время регистрации для получения подписки Azure. Дополнительные сведения см. в разделе [Как подписка Azure связана с Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
-    ![Azure портал с выбором арендатора выделены](./media/support-options/support-switch-dir.png)
+    ![портал Azure с выделенным выбором клиента](./media/support-options/support-switch-dir.png)
 
 1. После переключения клиентов щелкните **Справка и поддержка**.
 
-    ![Справка и плитка поддержки, выделенная на портале Azure](./media/support-options/support-support.png)
+    ![Плитка "Справка и поддержка", выделенная в портал Azure](./media/support-options/support-support.png)
 
-1. Нажмите **новый запрос на поддержку**.
+1. Щелкните **новый запрос в службу поддержки**.
 
-    ![Новая плитка запроса поддержки выделена на портале Azure](./media/support-options/support-new.png)
+    ![Новая плитка запроса на поддержку, выделенная в портал Azure](./media/support-options/support-new.png)
 
 1. В колонке **Основы** укажите эти сведения и нажмите кнопку **Далее**.
 
@@ -39,7 +39,7 @@ ms.locfileid: "78183726"
     * **Служба** — **Active Directory**.
     * Выберите соответствующий **план поддержки**. Если у вас его нет, его можно зарегистрировать [здесь](https://azure.microsoft.com/support/plans/).
 
-     ![Страница Основы с кнопкой Next, выделенная на портале Azure](./media/support-options/support-basics.png)
+     ![Страница "Основные сведения" с кнопкой "Далее", выделенной в портал Azure](./media/support-options/support-basics.png)
 
 1. В колонке **Проблема** укажите эти сведения и нажмите кнопку **Далее**.
 
@@ -50,11 +50,11 @@ ms.locfileid: "78183726"
     * В поле **Интервал времени** укажите дату и время (включая часовой пояс) возникновения проблемы.
     * В разделе **Отправка файлов**отправьте все снимки экрана и файлы, которые, по вашему мнению, помогут в устранении этой проблемы.
 
-     ![Страница проблемы со кнопкой Next, выделенная на портале Azure](./media/support-options/support-problem.png)
+     ![Страница проблемы со следующей кнопкой, выделенной в портал Azure](./media/support-options/support-problem.png)
 
 1. В колонке **Контактные данные** добавьте контактные данные. Нажмите кнопку **Создать**.
 
-    ![Контактная информация с кнопкой "Создание", выделенной на портале](./media/support-options/support-contact.png)
+    ![Страница сведений о контактах с кнопкой "создать", выделенной на портале](./media/support-options/support-contact.png)
 
 1. Отправленный в службу поддержки запрос можно отслеживать, щелкнув **Справка и поддержка** на начальной панели и выбрав **Управление запросами в службу поддержки**.
 
@@ -65,4 +65,4 @@ ms.locfileid: "78183726"
 > [!IMPORTANT]
 > Не пытайтесь зарегистрироваться для получения новой подписки Azure в вашем клиенте B2C.
 
-![Ошибка подписки не отображается на портале Azure](./media/support-options/support-no-sub.png)
+![У вас нет ошибок подписки, отображаемых в портал Azure](./media/support-options/support-no-sub.png)

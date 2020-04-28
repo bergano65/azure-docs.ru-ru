@@ -1,5 +1,5 @@
 ---
-title: Наследие Azure виртуальной сети VPN шлюз SKUs
+title: Устаревшие номера SKU VPN-шлюзов виртуальной сети Azure
 description: 'Как работать со старыми номерами SKU шлюзов виртуальной сети: Basic, Standard и HighPerformance.'
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/15/2019
 ms.author: cherylmc
 ms.openlocfilehash: 9c5e6d5aca51bd560a46837ba47de86362665773
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79279394"
 ---
 # <a name="working-with-virtual-network-gateway-skus-legacy-skus"></a>Работа со SKU шлюза виртуальной сети (старые версии SKU)
@@ -22,7 +22,7 @@ ms.locfileid: "79279394"
 
 [!INCLUDE [Legacy gateway SKUs](../../includes/vpn-gateway-gwsku-legacy-include.md)]
 
-Вы можете просмотреть устаревшие цены шлюза в разделе **Виртуальной сети шлюзов,** который находится на [странице цен ExpressRoute.](https://azure.microsoft.com/pricing/details/expressroute)
+Вы можете просмотреть сведения о ценах на устаревший шлюз в разделе **шлюзы виртуальной сети** , расположенном на [странице цен ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute).
 
 ## <a name="estimated-aggregate-throughput-by-sku"></a><a name="agg"></a>Расчетная суммарная пропускная способность в зависимости от SKU
 
@@ -49,7 +49,7 @@ Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -GatewaySku HighPerfor
 
 ### <a name="classic"></a><a name="classicresize"></a>Классическая модель
 
-Чтобы изменить размер шлюза для классической модели развертывания, необходимо использовать cmdlets Управления обслуживанием PowerShell. Используйте следующую команду:
+Чтобы изменить размер шлюза для классической модели развертывания, необходимо использовать командлеты PowerShell для управления службами. Используйте следующую команду:
 
 ```powershell
 Resize-AzureVirtualNetworkGateway -GatewayId <Gateway ID> -GatewaySKU HighPerformance

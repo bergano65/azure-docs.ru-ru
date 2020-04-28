@@ -1,6 +1,6 @@
 ---
-title: SAP SuccessFactors Справка по attribute (ru) Документы Майкрософт
-description: Узнайте, какие атрибуты от SuccessFactors поддерживаются подготовкой SuccessFactors-HR
+title: Справочник по атрибутам SAP SuccessFactors | Документация Майкрософт
+description: Сведения о том, какие атрибуты из SuccessFactors поддерживаются при подготовке SuccessFactors-с управлением персоналом.
 services: active-directory
 author: cmmdesai
 documentationcenter: na
@@ -15,127 +15,127 @@ ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
 ms.openlocfilehash: 00b16f969525e7b802c008ba247ecba015875689
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77522362"
 ---
-# <a name="sap-successfactors-attribute-reference"></a>SAP SuccessFactors Attribute Справка
+# <a name="sap-successfactors-attribute-reference"></a>Справочник по атрибутам SAP SuccessFactors
 
-## <a name="supported-successfactors-entities-and-attributes"></a>Поддерживаемые организации и атрибуты SuccessFactors
+## <a name="supported-successfactors-entities-and-attributes"></a>Поддерживаемые сущности и атрибуты SuccessFactors
 
-В таблице ниже отражен список атрибутов SuccessFactors, поддерживаемых двумя приложениями для подготовки: 
-* [SuccessFactors to Active Directory User Provisioning](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
-* [SuccessFactors to Azure AD User Provisioning](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) 
+В следующей таблице записан список атрибутов SuccessFactors, поддерживаемых следующими двумя приложениями подготовки: 
+* [SuccessFactors Active Directory подготовки пользователей](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
+* [SuccessFactors для подготовки пользователей Azure AD](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) 
 
-| \# | Успешноесущность                  | SuccessFactors Attribute     | Тип операции |
+| \# | Сущность SuccessFactors                  | Атрибут SuccessFactors     | Тип операции |
 |----|----------------------------------------|------------------------------|----------------|
-| 1  | Перперсон                              | personIdExternal             | Чтение           |
-| 2  | Перперсон                              | personId                     | Чтение           |
-| 3  | Перперсон                              | perPersonUuid                | Чтение           |
-| 4  | PerPersonal                            | displayName                  | Чтение           |
-| 5  | PerPersonal                            | firstName                    | Чтение           |
-| 6  | PerPersonal                            | gender                       | Чтение           |
-| 7  | PerPersonal                            | lastName                     | Чтение           |
-| 8  | PerPersonal                            | middleName                   | Чтение           |
-| 9  | PerPersonal                            | предпочтительноеИмя                | Чтение           |
-| 10 | Пользователь                                   | addressLine1                 | Чтение           |
-| 11 | Пользователь                                   | addressLine2                 | Чтение           |
-| 12 | Пользователь                                   | addressLIne3                 | Чтение           |
-| 13 | Пользователь                                   | businessPhone                | Чтение           |
-| 14 | Пользователь                                   | Телефон                    | Чтение           |
-| 15 | Пользователь                                   | city                         | Чтение           |
-| 16 | Пользователь                                   | country                      | Чтение           |
-| 17 | Пользователь                                   | custom01                     | Чтение           |
-| 18 | Пользователь                                   | custom02                     | Чтение           |
-| 19 | Пользователь                                   | custom03                     | Чтение           |
-| 20 | Пользователь                                   | custom04                     | Чтение           |
-| 21 | Пользователь                                   | custom05                     | Чтение           |
-| 22 | Пользователь                                   | custom06                     | Чтение           |
-| 23 | Пользователь                                   | custom07                     | Чтение           |
-| 24 | Пользователь                                   | custom08                     | Чтение           |
-| 25 | Пользователь                                   | custom09                     | Чтение           |
-| 26 | Пользователь                                   | custom10                     | Чтение           |
-| 27 | Пользователь                                   | custom11                     | Чтение           |
-| 28 | Пользователь                                   | custom12                     | Чтение           |
-| 29 | Пользователь                                   | custom13                     | Чтение           |
-| 30 | Пользователь                                   | custom14                     | Чтение           |
-| 31 | Пользователь                                   | empId                        | Чтение           |
-| 32 | Пользователь                                   | homePhone                    | Чтение           |
-| 33 | Пользователь                                   | работаСемья                    | Чтение           |
-| 34 | Пользователь                                   | псевдоним                     | Чтение           |
-| 35 | Пользователь                                   | state                        | Чтение           |
-| 36 | Пользователь                                   | timeZone                     | Чтение           |
-| 37 | Пользователь                                   | username                     | Чтение           |
-| 38 | Пользователь                                   | Индекс                      | Чтение           |
-| 39 | Перфон                               | AreaCode                     | Чтение           |
-| 40 | Перфон                               | countryCode                  | Чтение           |
-| 41 | Перфон                               | Расширение                    | Чтение           |
-| 42 | Перфон                               | phoneNumber                  | Чтение           |
-| 43 | Перфон                               | phoneType                    | Чтение           |
-| 44 | PerEmail                               | emailAddress                 | Чтение и запись    |
-| 45 | PerEmail                               | emailType                    | Чтение           |
-| 46 | EmpEmployment                          | firstDateWorked              | Чтение           |
-| 47 | EmpEmployment                          | lastDateWorked               | Чтение           |
-| 48 | EmpEmployment                          | userId                       | Чтение           |
-| 49 | EmpEmployment                          | isContingentWorker           | Чтение           |
-| 50 | Эмпджоб                                 | countryOfCompany             | Чтение           |
-| 51 | Эмпджоб                                 | emplStatus                   | Чтение           |
-| 52 | Эмпджоб                                 | endDate                      | Чтение           |
-| 53 | Эмпджоб                                 | startDate                    | Чтение           |
-| 54 | Эмпджоб                                 | jobTitle                     | Чтение           |
-| 55 | Эмпджоб                                 | position                     | Чтение           |
-| 65 | Эмпджоб                                 | customString13               | Чтение           |
-| 56 | Эмпджоб                                 | managerId                    | Чтение           |
-| 57 | Бизнес-единица EmpJob\.                   | businessUnit                 | Чтение           |
-| 58 | Бизнес-единица EmpJob\.                   | businessUnitId               | Чтение           |
-| 59 | Компания EmpJob\.                        | company                      | Чтение           |
-| 60 | Компания EmpJob\.                        | companyId                    | Чтение           |
-| 61 | EmpJob\.\.Компания СтранаРегистрация | дваЧарСтранаКод           | Чтение           |
-| 62 | EmpJob\.CostCenter                     | costCenter                   | Чтение           |
-| 63 | EmpJob\.CostCenter                     | costCenterId                 | Чтение           |
-| 64 | EmpJob\.CostCenter                     | costCenterОписание        | Чтение           |
-| 65 | Департамент EmpJob\.                     | department                   | Чтение           |
-| 66 | Департамент EmpJob\.                     | departmentId                 | Чтение           |
-| 67 | Подразделение Эмпджоум\.                       | division                     | Чтение           |
-| 68 | Подразделение Эмпджоум\.                       | divisionId                   | Чтение           |
-| 69 | EmpJob\.JobCode                        | jobCode                      | Чтение           |
-| 70 | EmpJob\.JobCode                        | jobCodeId                    | Чтение           |
-| 71 | Расположение Эмпджода\.                       | МестоположениеИмя                 | Чтение           |
-| 72 | Расположение Эмпджода\.                       | officeLocationАдрес        | Чтение           |
-| 73 | Расположение Эмпджода\.                       | officeLocationCity           | Чтение           |
-| 74 | Расположение Эмпджода\.                       | officeLocationCustomString4  | Чтение           |
-| 75 | Расположение Эмпджода\.                       | officeLocationIpCode        | Чтение           |
-| 76 | EmpJob\.PayGrade                       | payGrade                     | Чтение           |
-| 77 | EmpEmploymentTermination               | активныетрудовыекСчет       | Чтение           |
-| 78 | EmpEmploymentTermination               | последниеТерминдата        | Чтение           |
+| 1  | перперсон                              | персонидекстернал             | Чтение           |
+| 2  | перперсон                              | personId                     | Чтение           |
+| 3  | перперсон                              | перперсонууид                | Чтение           |
+| 4  | перперсонал                            | displayName                  | Чтение           |
+| 5  | перперсонал                            | firstName                    | Чтение           |
+| 6  | перперсонал                            | gender                       | Чтение           |
+| 7  | перперсонал                            | lastName                     | Чтение           |
+| 8  | перперсонал                            | middleName                   | Чтение           |
+| 9  | перперсонал                            | преферреднаме                | Чтение           |
+| 10 | User (Пользователь)                                   | addressLine1                 | Чтение           |
+| 11 | User (Пользователь)                                   | addressLine2                 | Чтение           |
+| 12 | User (Пользователь)                                   | addressLIne3                 | Чтение           |
+| 13 | User (Пользователь)                                   | бусинессфоне                | Чтение           |
+| 14 | User (Пользователь)                                   | целлфоне                    | Чтение           |
+| 15 | User (Пользователь)                                   | city                         | Чтение           |
+| 16 | User (Пользователь)                                   | country                      | Чтение           |
+| 17 | User (Пользователь)                                   | custom01                     | Чтение           |
+| 18 | User (Пользователь)                                   | custom02                     | Чтение           |
+| 19 | User (Пользователь)                                   | custom03                     | Чтение           |
+| 20 | User (Пользователь)                                   | custom04                     | Чтение           |
+| 21 | User (Пользователь)                                   | custom05                     | Чтение           |
+| 22 | User (Пользователь)                                   | custom06                     | Чтение           |
+| 23 | User (Пользователь)                                   | custom07                     | Чтение           |
+| 24 | User (Пользователь)                                   | custom08                     | Чтение           |
+| 25 | User (Пользователь)                                   | custom09                     | Чтение           |
+| 26 | User (Пользователь)                                   | custom10                     | Чтение           |
+| 27 | User (Пользователь)                                   | custom11                     | Чтение           |
+| 28 | User (Пользователь)                                   | custom12                     | Чтение           |
+| 29 | User (Пользователь)                                   | custom13                     | Чтение           |
+| 30 | User (Пользователь)                                   | custom14                     | Чтение           |
+| 31 | User (Пользователь)                                   | empId                        | Чтение           |
+| 32 | User (Пользователь)                                   | homePhone                    | Чтение           |
+| 33 | User (Пользователь)                                   | жобфамили                    | Чтение           |
+| 34 | User (Пользователь)                                   | псевдоним                     | Чтение           |
+| 35 | User (Пользователь)                                   | state                        | Чтение           |
+| 36 | User (Пользователь)                                   | timeZone                     | Чтение           |
+| 37 | User (Пользователь)                                   | username                     | Чтение           |
+| 38 | User (Пользователь)                                   | zipCode                      | Чтение           |
+| 39 | перфоне                               | ареакоде                     | Чтение           |
+| 40 | перфоне                               | countryCode                  | Чтение           |
+| 41 | перфоне                               | Расширение                    | Чтение           |
+| 42 | перфоне                               | phoneNumber                  | Чтение           |
+| 43 | перфоне                               | фонетипе                    | Чтение           |
+| 44 | перемаил                               | emailAddress                 | Чтение и запись    |
+| 45 | перемаил                               | емаилтипе                    | Чтение           |
+| 46 | емпемплоймент                          | фирстдатеворкед              | Чтение           |
+| 47 | емпемплоймент                          | ластдатеворкед               | Чтение           |
+| 48 | емпемплоймент                          | userId                       | Чтение           |
+| 49 | емпемплоймент                          | исконтинжентворкер           | Чтение           |
+| 50 | емпжоб                                 | каунтрйофкомпани             | Чтение           |
+| 51 | емпжоб                                 | емплстатус                   | Чтение           |
+| 52 | емпжоб                                 | endDate                      | Чтение           |
+| 53 | емпжоб                                 | startDate                    | Чтение           |
+| 54 | емпжоб                                 | jobTitle                     | Чтение           |
+| 55 | емпжоб                                 | position                     | Чтение           |
+| 65 | емпжоб                                 | customString13               | Чтение           |
+| 56 | емпжоб                                 | managerId                    | Чтение           |
+| 57 | Емпжоб\.businessunit                   | businessUnit                 | Чтение           |
+| 58 | Емпжоб\.businessunit                   | бусинессунитид               | Чтение           |
+| 59 | Компания\.емпжоб                        | company                      | Чтение           |
+| 60 | Компания\.емпжоб                        | companyId                    | Чтение           |
+| 61 | Емпжоб\.каунтрйофрегистратион\.компании | твочаркаунтрикоде           | Чтение           |
+| 62 | Емпжоб\.CostCenter                     | costCenter                   | Чтение           |
+| 63 | Емпжоб\.CostCenter                     | костцентерид                 | Чтение           |
+| 64 | Емпжоб\.CostCenter                     | костцентердескриптион        | Чтение           |
+| 65 | Емпжоб\.отдел                     | department                   | Чтение           |
+| 66 | Емпжоб\.отдел                     | departmentId                 | Чтение           |
+| 67 | Подразделение Емпжоб\.                       | division                     | Чтение           |
+| 68 | Подразделение Емпжоб\.                       | divisionId                   | Чтение           |
+| 69 | Емпжоб\.жобкоде                        | жобкоде                      | Чтение           |
+| 70 | Емпжоб\.жобкоде                        | жобкодеид                    | Чтение           |
+| 71 | Расположение\.емпжоб                       | локатионнаме                 | Чтение           |
+| 72 | Расположение\.емпжоб                       | оффицелокатионаддресс        | Чтение           |
+| 73 | Расположение\.емпжоб                       | оффицелокатионЦити           | Чтение           |
+| 74 | Расположение\.емпжоб                       | officeLocationCustomString4  | Чтение           |
+| 75 | Расположение\.емпжоб                       | оффицелокатионзипкоде        | Чтение           |
+| 76 | Емпжоб\.пайграде                       | пайграде                     | Чтение           |
+| 77 | емпемплойменттерминатион               | активимплойментскаунт       | Чтение           |
+| 78 | емпемплойменттерминатион               | латесттерминатиондате        | Чтение           |
 
 
-## <a name="default-attribute-mapping"></a>Отображение атрибутов по умолчанию
+## <a name="default-attribute-mapping"></a>Сопоставление атрибутов по умолчанию
 
-В приведенной ниже таблице представлено отображение атрибутов по умолчанию между атрибутами SuccessFactors, перечисленными выше, и атрибутами AD/Azure AD. В приложении Azure AD для подготовки "Картирование" можно изменить это отображение по умолчанию, чтобы включить атрибуты из списка выше. 
+В следующей таблице представлено сопоставление атрибутов по умолчанию между атрибутами SuccessFactors, перечисленными выше, и атрибутами AD или Azure AD. В колонке "сопоставление" для приложения подготовки Azure AD можно изменить это сопоставление по умолчанию, включив в него атрибуты из списка выше. 
 
-| \# | Успешноесущность                  | SuccessFactors Attribute | Отображение атрибутов AD/Azure AD   | Обработка Ремарка                                                                            |
+| \# | Сущность SuccessFactors                  | Атрибут SuccessFactors | Сопоставление атрибутов AD или Azure AD по умолчанию   | Обработка комментария                                                                            |
 |----|----------------------------------------|--------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------|
-| 1  | Перперсон                              | personIdExternal         | employeeId                              | Используется в качестве атрибута соответствия                                                                   |
-| 2  | Перперсон                              | perPersonUuid            | \[Не отображено, \- используемое в качестве якоря источника\] | Во время первоначальной синхронизации Служба обеспечения связывает человека с существующим objectGuid.  |
-| 3  | PerPersonal                            | displayName              | displayName                             | Н/Д                                                                                           |
-| 4  | PerPersonal                            | firstName                | givenName                               | Н/Д                                                                                           |
-| 5  | PerPersonal                            | lastName                 | sn                                      | Н/Д                                                                                           |
-| 6  | Пользователь                                   | addressLine1             | streetAddress                           | Н/Д                                                                                           |
-| 7  | Пользователь                                   | city                     | l                                       | Н/Д                                                                                           |
-| 8  | Пользователь                                   | country                  | co                                      | Н/Д                                                                                           |
-| 9  | Пользователь                                   | state                    | st                                      | Н/Д                                                                                           |
-| 10 | Пользователь                                   | username                 | samAccountName                          | Н/Д                                                                                           |
-| 11 | Пользователь                                   | Индекс                  | postalCode                              | Н/Д                                                                                           |
-| 12 | PerEmail                               | emailAddress             | mail                                    | Н/Д                                                                                           |
-| 13 | Эмпджоб                                 | jobTitle                 | title                                   | Н/Д                                                                                           |
-| 14 | Эмпджоб                                 | managerId                | manager                                 | Н/Д                                                                                           |
-| 15 | EmpJob\.\.Компания СтранаРегистрация | дваЧарСтранаКод       | с                                       | Н/Д                                                                                           |
-| 16 | Департамент EmpJob\.                     | department               | department                              | Н/Д                                                                                           |
-| 17 | Подразделение Эмпджоум\.                       | division                 | company                                 | Н/Д                                                                                           |
-| 18 | Расположение Эмпджода\.                       | officeLocationАдрес    | streetAddress                           | Н/Д                                                                                           |
-| 19 | Расположение Эмпджода\.                       | officeLocationIpCode    | postalCode                              | Н/Д                                                                                           |
-| 20 | EmpEmploymentTermination               | активныетрудовыекСчет   | AccountEnabled                          | если activeEmploymentsCount'0, отключить учетную запись.                                           |
+| 1  | перперсон                              | персонидекстернал         | employeeId                              | Используется как атрибут сопоставления                                                                   |
+| 2  | перперсон                              | перперсонууид            | \[Не сопоставлено \- , используемое в качестве привязки к источнику\] | Во время начальной синхронизации Служба подготовки связывает Персонууид с существующим Обжектгуид\.  |
+| 3  | перперсонал                            | displayName              | displayName                             | Н/Д                                                                                           |
+| 4  | перперсонал                            | firstName                | givenName                               | Н/Д                                                                                           |
+| 5  | перперсонал                            | lastName                 | sn                                      | Н/Д                                                                                           |
+| 6  | User (Пользователь)                                   | addressLine1             | streetAddress                           | Н/Д                                                                                           |
+| 7  | User (Пользователь)                                   | city                     | l                                       | Н/Д                                                                                           |
+| 8  | User (Пользователь)                                   | country                  | co                                      | Н/Д                                                                                           |
+| 9  | User (Пользователь)                                   | state                    | st                                      | Н/Д                                                                                           |
+| 10 | User (Пользователь)                                   | username                 | samAccountName                          | Н/Д                                                                                           |
+| 11 | User (Пользователь)                                   | zipCode                  | postalCode                              | Н/Д                                                                                           |
+| 12 | перемаил                               | emailAddress             | mail                                    | Н/Д                                                                                           |
+| 13 | емпжоб                                 | jobTitle                 | title                                   | Н/Д                                                                                           |
+| 14 | емпжоб                                 | managerId                | manager                                 | Н/Д                                                                                           |
+| 15 | Емпжоб\.каунтрйофрегистратион\.компании | твочаркаунтрикоде       | с                                       | Н/Д                                                                                           |
+| 16 | Емпжоб\.отдел                     | department               | department                              | Н/Д                                                                                           |
+| 17 | Подразделение Емпжоб\.                       | division                 | company                                 | Н/Д                                                                                           |
+| 18 | Расположение\.емпжоб                       | оффицелокатионаддресс    | streetAddress                           | Н/Д                                                                                           |
+| 19 | Расположение\.емпжоб                       | оффицелокатионзипкоде    | postalCode                              | Н/Д                                                                                           |
+| 20 | емпемплойменттерминатион               | активимплойментскаунт   | AccountEnabled                          | Если Активимплойментскаунт = 0, отключите аккаунт\.                                           |
 

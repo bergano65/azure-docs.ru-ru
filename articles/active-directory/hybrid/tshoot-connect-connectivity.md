@@ -1,5 +1,5 @@
 ---
-title: 'Подключение Azure AD: проблемы с подключением к аду Azure Документы Майкрософт'
+title: 'Azure AD Connect: устранение проблем с подключением к Azure AD | Документация Майкрософт'
 description: Сведения об устранении неполадок подключения в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -17,13 +17,13 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 72dbb404d1b4d3618909e0233f332d2f98b51516
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80049736"
 ---
-# <a name="troubleshoot-azure-ad-connectivity"></a>Подключение к AD Azure
+# <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
 
 ## <a name="troubleshoot-connectivity-issues-in-the-installation-wizard"></a>Устранение неполадок подключения в мастере установки
@@ -69,14 +69,14 @@ Azure AD Connect использует для аутентификации сов
 ![Используется учетная запись Майкрософт](./media/tshoot-connect-connectivity/unknownerror.png)
 
 ### <a name="the-mfa-endpoint-cannot-be-reached"></a>Не удается связаться с конечной точкой многофакторной проверки подлинности
-Эта ошибка появляется, **https://secure.aadcdn.microsoftonline-p.com** если конечная точка не может быть достигнута и ваш глобальный админ имеет МИД включен.  
+Эта ошибка возникает, если конечная точка **https://secure.aadcdn.microsoftonline-p.com** недоступна и для глобального администратора включена поддержка mfa.  
 ![nomachineconfig](./media/tshoot-connect-connectivity/nomicrosoftonlinep.png)
 
 * Если вы видите эту ошибку, то убедитесь, что конечная точка **secure.aadcdn.microsoftonline-p.com** добавлена на прокси-сервер.
 
 ### <a name="the-password-cannot-be-verified"></a>Невозможно проверить пароль
 Если мастер установки успешно подключается к Azure AD, но проверить пароль невозможно, то отображается следующая ошибка:  
-![Плохой пароль.](./media/tshoot-connect-connectivity/badpassword.png)
+![Неправильный пароль.](./media/tshoot-connect-connectivity/badpassword.png)
 
 * Проверьте, не используется ли временный пароль, который необходимо сменить. Проверьте, правильно ли указан пароль. Попробуйте войти в систему по адресу `https://login.microsoftonline.com` (на другом компьютере, отличном от сервера Azure AD Connect), и убедитесь, что учетная запись доступна.
 
@@ -93,10 +93,10 @@ Azure AD Connect использует для аутентификации сов
 Если прокси-сервер настроен неправильно, то появляется ошибка: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest403.png)
 ![proxy407](./media/tshoot-connect-connectivity/invokewebrequest407.png).
 
-| Error | Текст сообщения об ошибке | Комментарий |
+| Ошибка | Текст сообщения об ошибке | Добавление примечаний |
 | --- | --- | --- |
 | 403 |Запрещено |Прокси-сервер не был открыт для запрошенного URL-адреса. Проверьте конфигурацию прокси-сервера и убедитесь, что [URL-адреса](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) открыты. |
-| 407 |Требуется проверка подлинности прокси-сервера |Для прокси-сервера требуется имя входа, которое не было указано. Если ваш прокси-сервер требует проверки подлинности, убедитесь, что эта настройка настроена в машине. Также убедитесь, что вы используете учетные записи доменов для пользователя, работая с мастером, и для учетной записи службы. |
+| 407 |Требуется проверка подлинности прокси-сервера |Для прокси-сервера требуется имя входа, которое не было указано. Если для прокси-сервера требуется проверка подлинности, убедитесь, что этот параметр настроен в файле Machine. config. Также убедитесь, что вы используете учетные записи домена для пользователя, запустившего мастер, и для учетной записи службы. |
 
 ### <a name="proxy-idle-timeout-setting"></a>Параметр времени ожидания прокси-сервера в режиме простоя
 Когда Azure AD Connect отправляет запрос на экспорт в службу Azure AD, службе Azure AD может потребоваться около 5 минут на обработку запроса и создание ответа. Это особенно актуально в случаях, когда один запрос на экспорт содержит несколько объектов групп с большим количеством участников. Убедитесь, что время ожидания прокси-сервера в режиме простоя превышает 5 минут. В противном случае на сервере Azure AD Connect могут наблюдаться перебои с подключением к Azure AD.
@@ -113,7 +113,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Подключение к Azure AD**
 
-| Time | URL-адрес |
+| Время | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:31 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:31 |connect://adminwebservice.microsoftonline.com:443 |
@@ -124,7 +124,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Настройка**
 
-| Time | URL-адрес |
+| Время | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:43 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:43 |connect://*bba800-anchor*.microsoftonline.com:443 |
@@ -138,9 +138,9 @@ Azure AD Connect использует для аутентификации сов
 | 1/11/2016 8:46 |connect://provisioningapi.microsoftonline.com:443 |
 | 1/11/2016 8:46 |connect://*bwsc02-relay*.microsoftonline.com:443 |
 
-**Первоначальная синхронизация**
+**Начальная синхронизация**
 
-| Time | URL-адрес |
+| Время | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:48 |connect://login.windows.net:443 |
 | 1/11/2016 8:49 |connect://adminwebservice.microsoftonline.com:443 |
@@ -165,8 +165,8 @@ Azure AD Connect использует для аутентификации сов
 ### <a name="authorization-failure"></a>"Authorization Failure" (Сбой авторизации)
 Не удалось авторизовать пользователя для выполнения действия в Azure AD.
 
-### <a name="authentication-canceled"></a>Аутентификация отменена
-Многофакторная проверка подлинности (MFA) была отменена.
+### <a name="authentication-canceled"></a>Проверка подлинности отменена
+Запрос многофакторной проверки подлинности (MFA) был отменен.
 
 <div id="connect-msolservice-failed">
 <!--
@@ -236,4 +236,4 @@ Azure AD Connect использует для аутентификации сов
 * Если конфигурация выглядит нормально, выполните действия, описанные в разделе [Проверка подключения прокси-сервера](#verify-proxy-connectivity) , и убедитесь в том, что проблема возникает не только в мастере.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

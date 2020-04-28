@@ -1,5 +1,5 @@
 ---
-title: Настройка активных S2S Azure VPN Gateway соединения
+title: Настройка подключений VPN-шлюза Azure типа "активный — активный"
 description: В этой статье описана поэтапная настройка подключений в режиме "активный — активный" для VPN-шлюзов Azure с помощью Azure Resource Manager и PowerShell.
 services: vpn-gateway
 author: yushwang
@@ -9,10 +9,10 @@ ms.date: 07/24/2018
 ms.author: yushwang
 ms.reviewer: cherylmc
 ms.openlocfilehash: ec3697208434eb971e47136416f2c2cc541b5cea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79244645"
 ---
 # <a name="configure-active-active-s2s-vpn-connections-with-azure-vpn-gateways"></a>Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure
@@ -50,11 +50,11 @@ ms.locfileid: "79244645"
 Другие свойства такие же, как у шлюзов не в режиме "активный — активный". 
 
 ### <a name="before-you-begin"></a>Перед началом
-* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки на Azure, вы можете активировать льготы для [абонента MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или подписаться на [бесплатную учетную запись.](https://azure.microsoft.com/pricing/free-trial/)
+* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 * Вам потребуется установить командлеты PowerShell диспетчера ресурсов Azure. Дополнительные сведения об установке командлетов PowerShell см. в разделе [Общие сведения об Azure PowerShell](/powershell/azure/overview).
 
 ### <a name="step-1---create-and-configure-vnet1"></a>Шаг 1. Создание и настройка VNet1
-#### <a name="1-declare-your-variables"></a>1. Объявите свои переменные
+#### <a name="1-declare-your-variables"></a>1. Объявите переменные
 В этом упражнении мы начнем с объявления переменных. В примере ниже объявлены переменные со значениями для этого упражнения. Обязательно замените значения своими при настройке для рабочей среды. Эти переменные можно использовать для ознакомления с этим типом конфигурации. Измените переменные, а затем скопируйте и вставьте код в консоль PowerShell.
 
 ```powershell
@@ -105,7 +105,7 @@ New-AzVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1 -Location $Locatio
 ```
 
 ### <a name="step-2---create-the-vpn-gateway-for-testvnet1-with-active-active-mode"></a>Шаг 2. Создание VPN-шлюза для TestVNet1 в режиме "активный — активный"
-#### <a name="1-create-the-public-ip-addresses-and-gateway-ip-configurations"></a>1. Создание общедоступных IP-адресов и конфигураций IP-адресов шлюза
+#### <a name="1-create-the-public-ip-addresses-and-gateway-ip-configurations"></a>1. Создайте общедоступные IP-адреса и IP-конфигурации шлюза.
 Запросите выделение двух общедоступных IP-адресов для шлюза, который будет создан для виртуальной сети. Также следует определить настройки подсети и IP-адресов.
 
 ```powershell
@@ -118,14 +118,14 @@ $gw1ipconf1 = New-AzVirtualNetworkGatewayIpConfig -Name $GW1IPconf1 -Subnet $sub
 $gw1ipconf2 = New-AzVirtualNetworkGatewayIpConfig -Name $GW1IPconf2 -Subnet $subnet1 -PublicIpAddress $gw1pip2
 ```
 
-#### <a name="2-create-the-vpn-gateway-with-active-active-configuration"></a>2. Создание VPN шлюза с активной активной конфигурацией
+#### <a name="2-create-the-vpn-gateway-with-active-active-configuration"></a>2. Создание VPN-шлюза с конфигурацией "активный — активный"
 Создайте шлюз для виртуальной сети TestVNet1. Обратите внимание, что есть две записи GatewayIpConfig и задан параметр EnableActiveActiveFeature. Создание шлюза может занять некоторое время (45 минут или более).
 
 ```powershell
 New-AzVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 -Location $Location1 -IpConfigurations $gw1ipconf1,$gw1ipconf2 -GatewayType Vpn -VpnType RouteBased -GatewaySku VpnGw1 -Asn $VNet1ASN -EnableActiveActiveFeature -Debug
 ```
 
-#### <a name="3-obtain-the-gateway-public-ip-addresses-and-the-bgp-peer-ip-address"></a>3. Получить публичные IP-адреса шлюза и IP-адрес BGP Peer
+#### <a name="3-obtain-the-gateway-public-ip-addresses-and-the-bgp-peer-ip-address"></a>3. получите общедоступные IP-адреса шлюза и IP-адрес узла BGP
 После создания шлюза необходимо получить IP-адрес для узла Azure BGP на VPN-шлюзе Azure. Этот адрес нужен, чтобы VPN-шлюз Azure мог выполнять роль узла BGP для локальных VPN-устройств.
 
 ```powershell
@@ -163,7 +163,7 @@ PS D:\> $vnet1gw.BgpSettingsText
 Прежде чем продолжить, убедитесь, что вы выполнили инструкции из [первой части](#aagateway) этой статьи.
 
 ### <a name="step-1---create-and-configure-the-local-network-gateway"></a>Шаг 1. Создание и настройка локального сетевого шлюза
-#### <a name="1-declare-your-variables"></a>1. Объявите свои переменные
+#### <a name="1-declare-your-variables"></a>1. Объявите переменные
 В этом упражнении мы продолжим создание конфигурации, которая представлена на схеме. Не забудьте заменить значения теми, которые вы хотите использовать для конфигурации.
 
 ```powershell
@@ -183,7 +183,7 @@ $BGPPeerIP51 = "10.52.255.253"
 * Если включен BGP, то префикс, который необходимо объявить для шлюза локальной сети — это IP-адрес узла BGP на VPN-устройстве. В нашем примере это префикс /32 для адреса 10.52.255.253/32.
 * Не забывайте, что для локальных сетей и виртуальной сети Azure должны быть указаны разные номера ASN BGP. Если они совпадают, а локальное VPN-устройство уже использует свой ASN для связи с другими соседями BGP, необходимо изменить ASN вашей виртуальной сети.
 
-#### <a name="2-create-the-local-network-gateway-for-site5"></a>2. Создание локального сетевого шлюза для Site5
+#### <a name="2-create-the-local-network-gateway-for-site5"></a>2. Создание шлюза локальной сети для site5
 Прежде чем продолжить, убедитесь, что вы все еще подключены к подписке 1. Создайте группу ресурсов, если она еще не создана.
 
 ```powershell
@@ -192,21 +192,21 @@ New-AzLocalNetworkGateway -Name $LNGName51 -ResourceGroupName $RG5 -Location $Lo
 ```
 
 ### <a name="step-2---connect-the-vnet-gateway-and-local-network-gateway"></a>Шаг 2. Подключение шлюза виртуальной сети к локальному сетевому шлюзу
-#### <a name="1-get-the-two-gateways"></a>1. Получить два шлюза
+#### <a name="1-get-the-two-gateways"></a>1. получение двух шлюзов
 
 ```powershell
 $vnet1gw = Get-AzVirtualNetworkGateway -Name $GWName1  -ResourceGroupName $RG1
 $lng5gw1 = Get-AzLocalNetworkGateway  -Name $LNGName51 -ResourceGroupName $RG5
 ```
 
-#### <a name="2-create-the-testvnet1-to-site5-connection"></a>2. Создание подключения TestVNet1 к Site5
+#### <a name="2-create-the-testvnet1-to-site5-connection"></a>2. Создание подключения TestVNet1 к site5
 На этом шаге создается подключение между TestVNet1 и Site5_1, при этом параметру EnableBGP задано значение $True.
 
 ```powershell
 New-AzVirtualNetworkGatewayConnection -Name $Connection151 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw1 -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $True
 ```
 
-#### <a name="3-vpn-and-bgp-parameters-for-your-on-premises-vpn-device"></a>3. Параметры VPN и BGP для вашего собственного VPN-устройства
+#### <a name="3-vpn-and-bgp-parameters-for-your-on-premises-vpn-device"></a>3. параметры VPN и BGP для локального VPN-устройства
 В приведенном ниже примере перечислены параметры, которые следует ввести в разделе конфигурации BGP на локальном VPN-устройстве для нашего тестового задания.
 
 ```
@@ -228,7 +228,7 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection151 -ResourceGroupName $R
 ### <a name="step-3---connect-two-on-premises-vpn-devices-to-the-active-active-vpn-gateway"></a>Шаг 3. Подключение двух локальных VPN-устройств к VPN-шлюзу в режиме "активный — активный"
 При наличии двух VPN-устройств в одной локальной сети можно добиться двойной избыточности, подключив VPN-шлюз Azure ко второму VPN-устройству.
 
-#### <a name="1-create-the-second-local-network-gateway-for-site5"></a>1. Создайте второй локальный сетевой шлюз для Site5
+#### <a name="1-create-the-second-local-network-gateway-for-site5"></a>1. Создайте второй шлюз локальной сети для site5.
 IP-адрес шлюза, префикс адреса и адрес пиринга BGP для второго шлюза локальной сети не должны перекрываться с предыдущим шлюзом локальной сети для одной локальной сети.
 
 ```powershell
@@ -242,7 +242,7 @@ $BGPPeerIP52 = "10.52.255.254"
 New-AzLocalNetworkGateway -Name $LNGName52 -ResourceGroupName $RG5 -Location $Location5 -GatewayIpAddress $LNGIP52 -AddressPrefix $LNGPrefix52 -Asn $LNGASN5 -BgpPeeringAddress $BGPPeerIP52
 ```
 
-#### <a name="2-connect-the-vnet-gateway-and-the-second-local-network-gateway"></a>2. Подключите шлюз VNet и второй локальный сетевой шлюз
+#### <a name="2-connect-the-vnet-gateway-and-the-second-local-network-gateway"></a>2. Подключите шлюз виртуальной сети и второй локальный сетевой шлюз.
 Создайте подключение между TestVNet1 и Site5_2, где параметру EnableBGP задано значение $True.
 
 ```powershell
@@ -253,7 +253,7 @@ $lng5gw2 = Get-AzLocalNetworkGateway -Name $LNGName52 -ResourceGroupName $RG5
 New-AzVirtualNetworkGatewayConnection -Name $Connection152 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw2 -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $True
 ```
 
-#### <a name="3-vpn-and-bgp-parameters-for-your-second-on-premises-vpn-device"></a>3. Параметры VPN и BGP для вашего второго на территории VPN устройства
+#### <a name="3-vpn-and-bgp-parameters-for-your-second-on-premises-vpn-device"></a>3. параметры VPN и BGP для второго локального VPN-устройства
 Аналогичным образом ниже перечислены параметры, которые нужно ввести на втором VPN-устройстве.
 
 ```
@@ -282,7 +282,7 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection152 -ResourceGroupName $R
 
 В этом примере виртуальные сети относятся к одной подписке. Вы можете создавать подключения и между виртуальными сетями из разных подписок. Дополнительные сведения об этом в статье [Настройка подключения между виртуальными сетями в развертывании Resource Manager с помощью PowerShell](vpn-gateway-vnet-vnet-rm-ps.md). Чтобы использовать для подключения протокол BGP, обязательно укажите параметр -EnableBgp True при создании подключения.
 
-#### <a name="1-declare-your-variables"></a>1. Объявите свои переменные
+#### <a name="1-declare-your-variables"></a>1. Объявите переменные
 Не забудьте заменить значения теми, которые вы хотите использовать для конфигурации.
 
 ```powershell
@@ -308,7 +308,7 @@ $Connection21 = "VNet2toVNet1"
 $Connection12 = "VNet1toVNet2"
 ```
 
-#### <a name="2-create-testvnet2-in-the-new-resource-group"></a>2. Создание TestVNet2 в новой группе ресурсов
+#### <a name="2-create-testvnet2-in-the-new-resource-group"></a>2. Создайте TestVNet2 в новой группе ресурсов.
 
 ```powershell
 New-AzResourceGroup -Name $RG2 -Location $Location2
@@ -320,7 +320,7 @@ $gwsub2 = New-AzVirtualNetworkSubnetConfig -Name $GWSubName2 -AddressPrefix $GWS
 New-AzVirtualNetwork -Name $VNetName2 -ResourceGroupName $RG2 -Location $Location2 -AddressPrefix $VNetPrefix21,$VNetPrefix22 -Subnet $fesub2,$besub2,$gwsub2
 ```
 
-#### <a name="3-create-the-active-active-vpn-gateway-for-testvnet2"></a>3. Создание активного VPN шлюза для TestVNet2
+#### <a name="3-create-the-active-active-vpn-gateway-for-testvnet2"></a>3. Создание VPN-шлюза "активный — активный" для TestVNet2
 Запросите выделение двух общедоступных IP-адресов для шлюза, который будет создан для виртуальной сети. Также следует определить настройки подсети и IP-адресов.
 
 ```powershell
@@ -342,7 +342,7 @@ New-AzVirtualNetworkGateway -Name $GWName2 -ResourceGroupName $RG2 -Location $Lo
 ### <a name="step-2---connect-the-testvnet1-and-testvnet2-gateways"></a>Шаг 2. Подключение шлюзов TestVNet1 и TestVNet2
 В этом примере оба шлюза находятся в одной подписке. Этот шаг можно выполнить в одном сеансе PowerShell.
 
-#### <a name="1-get-both-gateways"></a>1. Получить оба шлюза
+#### <a name="1-get-both-gateways"></a>1. получите оба шлюза.
 Обязательно войдите и подключитесь к подписке 1.
 
 ```powershell
@@ -350,7 +350,7 @@ $vnet1gw = Get-AzVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1
 $vnet2gw = Get-AzVirtualNetworkGateway -Name $GWName2 -ResourceGroupName $RG2
 ```
 
-#### <a name="2-create-both-connections"></a>2. Создание обоих соединений
+#### <a name="2-create-both-connections"></a>2. Создайте оба подключения.
 На этом шаге вы создадите подключение от TestVNet1 к TestVNet2, а также подключение от TestVNet2 к TestVNet1.
 
 ```powershell
@@ -376,7 +376,7 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection21 -ResourceGroupName $RG
 
 В следующем примере шлюз в режиме "активный — резервный" переходит в режим "активный — активный". При изменении режима шлюза "активный — резервный" на "активный — активный" необходимо создать другой общедоступный IP-адрес, затем добавить вторую IP-конфигурацию шлюза.
 
-#### <a name="1-declare-your-variables"></a>1. Объявите свои переменные
+#### <a name="1-declare-your-variables"></a>1. Объявите переменные
 
 Замените приведенные ниже параметры, используемые для примера, собственными параметрами конфигурации, после чего объявите эти переменные.
 
@@ -397,14 +397,14 @@ $gw = Get-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG
 $location = $gw.Location
 ```
 
-#### <a name="2-create-the-public-ip-address-then-add-the-second-gateway-ip-configuration"></a>2. Создайте общедоступный IP-адрес, а затем добавьте вторую конфигурацию IP шлюза
+#### <a name="2-create-the-public-ip-address-then-add-the-second-gateway-ip-configuration"></a>2. Создайте общедоступный IP-адрес, а затем добавьте конфигурацию IP-адреса второго шлюза.
 
 ```powershell
 $gwpip2 = New-AzPublicIpAddress -Name $GWIPName2 -ResourceGroupName $RG -Location $location -AllocationMethod Dynamic
 Add-AzVirtualNetworkGatewayIpConfig -VirtualNetworkGateway $gw -Name $GWIPconf2 -Subnet $subnet -PublicIpAddress $gwpip2
 ```
 
-#### <a name="3-enable-active-active-mode-and-update-the-gateway"></a>3. Включить активный активный режим и обновить шлюз
+#### <a name="3-enable-active-active-mode-and-update-the-gateway"></a>3. Включение режима "активный — активный" и обновление шлюза
 
 На этом шаге вы включаете режим "активный — активный" и обновляете шлюз. В приведенном примере VPN-шлюз использует устаревший номер SKU "Стандартный". Однако режим "активный — активный" не поддерживает его. Чтобы изменить размер устаревшего номера SKU на один из поддерживаемых размеров (в данном случае — HighPerformance), просто укажите поддерживаемый устаревший номер SKU, который вы хотите использовать.
 
@@ -419,7 +419,7 @@ Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -EnableActiveActiveFeatur
 ```
 
 ### <a name="change-an-active-active-gateway-to-an-active-standby-gateway"></a>Настройка режима "активный — резервный" для шлюза в режиме "активный — активный"
-#### <a name="1-declare-your-variables"></a>1. Объявите свои переменные
+#### <a name="1-declare-your-variables"></a>1. Объявите переменные
 
 Замените приведенные ниже параметры, используемые для примера, собственными параметрами конфигурации, после чего объявите эти переменные.
 
@@ -435,7 +435,7 @@ $gw = Get-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG
 $ipconfname = $gw.IpConfigurations[1].Name
 ```
 
-#### <a name="2-remove-the-gateway-ip-configuration-and-disable-the-active-active-mode"></a>2. Удалить конфигурацию IP шлюза и отключить активно-активный режим
+#### <a name="2-remove-the-gateway-ip-configuration-and-disable-the-active-active-mode"></a>2. Удалите IP-конфигурацию шлюза и отключите режим "активный — активный".
 
 Используйте этот пример, чтобы удалить IP-конфигурацию шлюза и отключить режим "активный — активный". Обратите внимание на то, что нужно задать объект шлюза в PowerShell, чтобы активировать фактическое обновление.
 

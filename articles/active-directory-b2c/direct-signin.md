@@ -11,10 +11,10 @@ ms.date: 06/18/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 9a02ad3ea43ae9d91489417bc314e3c23d54a958
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78188772"
 ---
 # <a name="set-up-direct-sign-in-using-azure-active-directory-b2c"></a>Настройка прямого входа в систему с помощью Azure Active Directory B2C
@@ -25,7 +25,7 @@ ms.locfileid: "78188772"
 
 Во время входа пользователя в систему приложение проверяющей стороны может предложить определенное имя пользователя или домена. При этом приложение может указать параметр запроса `login_hint` с именем пользователя в запросе на авторизацию. Azure AD B2C автоматически заполняет имя для входа в систему — пользователю нужно ввести только пароль.
 
-![Зарегистрируйтесь на странице с login_hint паразапросом, выделенным в URL](./media/direct-signin/login-hint.png)
+![Страница входа с login_hint параметром запроса, выделенным в URL-адресе](./media/direct-signin/login-hint.png)
 
 Пользователь может изменить значение, отображаемое в текстовом поле, для входа в систему.
 
@@ -49,7 +49,7 @@ ms.locfileid: "78188772"
 
 Если вы настроили для приложения возможность входа с использованием учетных записей социальных сетей, таких как Facebook, LinkedIn или Google, вы можете указать параметр `domain_hint`. Этот параметр запроса сообщает Azure AD B2C о поставщике удостоверений социальных сетей, который должен использоваться для входа в систему. Например, если приложение указывает `domain_hint=facebook.com`, вход в систему выполняется непосредственно на странице входа в Facebook.
 
-![Зарегистрируйтесь на странице с domain_hint паразапросом, выделенным в URL](./media/direct-signin/domain-hint.png)
+![Страница входа с domain_hint параметром запроса, выделенным в URL-адресе](./media/direct-signin/domain-hint.png)
 
 Если вы используете пользовательскую политику, вы можете настроить доменное имя с помощью XML-элемента `<Domain>domain name</Domain>` любого `<ClaimsProvider>`.
 

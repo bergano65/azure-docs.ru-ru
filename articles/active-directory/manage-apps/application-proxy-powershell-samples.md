@@ -1,6 +1,6 @@
 ---
-title: Образцы PowerShell для прокси-приложения Azure AD
-description: Используйте эти образцы PowerShell для Azure AD Application Proxy для получения информации о приложениях и разъемах приложений Application Proxy в каталоге, отсваивайте пользователей и группы в приложения и получайте информацию о сертификатах.
+title: Примеры PowerShell для AD Application Proxy Azure
+description: Используйте эти примеры PowerShell для AD Application Proxy Azure, чтобы получить сведения о приложениях и соединителях прокси приложения в каталоге, назначить пользователей и группы для приложений и получить сведения о сертификате.
 services: active-directory
 author: msmimart
 manager: CelesteDG
@@ -13,38 +13,38 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 476bdfdd2c0b81d86900cee18024cc261ee80a07
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79481268"
 ---
-# <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Примеры Azure AD PowerShell для прокси-приложений Azure AD
+# <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Примеры Azure AD PowerShell для Azure AD Application Proxy
 
-В следующей таблице приведены ссылки на примеры сценариев PowerShell для прокси-приложений Azure AD. Эти образцы требуют либо [AzureAD V2 PowerShell для модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) или [AzureAD V2 PowerShell для версии предварительного просмотра модуля Graph,](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview)если не указано иное.
+В следующей таблице приведены ссылки на примеры сценариев PowerShell для Azure AD Application Proxy. Для этих примеров требуется [модуль PowerShell AzureAD v2 для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) или [версия AzureAD v2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview), если не указано иное.
 
 
-Для получения дополнительной информации о cmdlets, используемых [Application Proxy Connector Management](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management)в этих образцах, [см.](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management)
+Дополнительные сведения о командлетах, используемых в этих примерах, см. в разделе Управление [приложениями прокси](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management) приложения и [Управление соединителем прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management).
 
 | | |
 |---|---|
-|**Приложения Прокси-приложения**||
-| [Перечислите основную информацию для всех приложений App Proxy](scripts/powershell-get-all-app-proxy-apps-basic.md) | Перечисляет основную информацию (AppId, DisplayName, ObjId) обо всех приложениях App Proxy в вашем каталоге. |
-| [Список расширенной информации для всех приложений Прокси приложений приложений](scripts/powershell-get-all-app-proxy-apps-extended.md) | Перечисляет расширенную информацию (AppId, DisplayName, ExternalUrl, InternalUrl, ExternalAuthenticationType) обо всех приложениях App Proxy в вашем каталоге.  |
-| [Перечислите все приложения Прокси приложений по группе разъемов](scripts/powershell-get-all-app-proxy-apps-by-connector-group.md) | Перечисляет информацию обо всех приложениях Application Proxy в вашем каталоге и о группах разъемов приложений. |
-| [Получите все приложения App Proxy с политикой срока службы маркеров](scripts/powershell-get-all-app-proxy-apps-with-policy.md) | Перечисляет все приложения Application Proxy в каталоге с политикой жизни маркеров и его деталями. Этот образец требует [AzureAD V2 PowerShell для версии предварительного просмотра модуля Graph.](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) |
+|**Приложения прокси приложения**||
+| [Вывод основных сведений обо всех приложениях прокси приложения](scripts/powershell-get-all-app-proxy-apps-basic.md) | Список основных сведений (AppId, DisplayName, ObjId) обо всех приложениях прокси приложения в каталоге. |
+| [Вывод расширенных сведений обо всех приложениях прокси приложения](scripts/powershell-get-all-app-proxy-apps-extended.md) | Список расширенных сведений (AppId, DisplayName, Екстерналурл, InternalUrl, Екстерналаусентикатионтипе) обо всех приложениях прокси приложения в каталоге.  |
+| [Вывод списка всех приложений прокси приложения по группам соединителей](scripts/powershell-get-all-app-proxy-apps-by-connector-group.md) | Выводит сведения обо всех приложениях прокси приложения в каталоге, а также о том, к каким группам соединителей назначены приложения. |
+| [Получение всех приложений прокси приложения с помощью политики времени жизни маркеров](scripts/powershell-get-all-app-proxy-apps-with-policy.md) | Список всех приложений прокси приложения в каталоге с политикой времени существования маркера и сведениями о нем. Для работы с этим образцом требуется [AzureAD v2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview). |
 |**Группы соединителей**||
-| [Получить все группы разъемов и разъемов в каталоге](scripts/powershell-get-all-connectors.md) | Перечисляет все группы разъемов и разъемов в каталоге. |
-| [Переместите все приложения, назначенные группе разъемов, в другую группу разъемов](scripts/powershell-move-all-apps-to-connector-group.md) | Перемещает все приложения, в настоящее время назначенные группе разъемов, в другую группу разъемов. |
+| [Получение всех групп соединителей и соединителей в каталоге](scripts/powershell-get-all-connectors.md) | Список всех групп соединителей и соединителей в каталоге. |
+| [Перемещение всех приложений, назначенных группе соединителей, в другую группу соединителей](scripts/powershell-move-all-apps-to-connector-group.md) | Перемещает все приложения, назначенные в данный момент группе соединителей, в другую группу соединителей. |
 |**Пользователи и назначенные группы**||
-| [Отображение пользователей и групп, назначенных приложению Прокси-приложения приложения](scripts/powershell-display-users-group-of-app.md) | Перечисляет пользователей и группы, назначенные в конкретное приложение Прокси-приложения. |
-| [Назначить пользователю приложение](scripts/powershell-assign-user-to-app.md) | Назначает конкретного пользователя в приложение. |
-| [Назначить группу приложения](scripts/powershell-assign-group-to-app.md) | Назначает определенную группу приложения. |
-|**Конфигурация внешнего URL**||
-| [Получите все приложения Application Proxy с помощью доменов по умолчанию (.msappproxy.net)](scripts/powershell-get-all-default-domain-apps.md)  | Перечисляет все приложения Application Proxy с использованием доменов по умолчанию (.msappproxy.net). |
-| [Получите все приложения Application Proxy с помощью публикации подстановочных знаков](scripts/powershell-get-all-wildcard-apps.md) | Перечисляет все приложения Application Proxy с помощью публикации подстановочных знаков. |
+| [Отображение пользователей и групп, назначенных приложению прокси приложения](scripts/powershell-display-users-group-of-app.md) | Список пользователей и групп, назначенных конкретному приложению прокси приложения. |
+| [Назначение пользователя для приложения](scripts/powershell-assign-user-to-app.md) | Назначает конкретному пользователю приложение. |
+| [Назначение группы для приложения](scripts/powershell-assign-group-to-app.md) | Назначает определенную группу для приложения. |
+|**Настройка внешнего URL-адреса**||
+| [Получение всех приложений прокси приложения с помощью доменов по умолчанию (. msappproxy.net)](scripts/powershell-get-all-default-domain-apps.md)  | Список всех приложений прокси приложения, использующих домены по умолчанию (. msappproxy.net). |
+| [Получение всех приложений прокси приложения с помощью публикации с использованием подстановочных знаков](scripts/powershell-get-all-wildcard-apps.md) | Список всех приложений прокси приложения, использующих публикацию с подстановочными знаками. |
 |**Конфигурация пользовательского домена**||
-| [Получите все приложения App Proxy, используя пользовательские домены и сведения о сертификатах](scripts/powershell-get-all-custom-domains-and-certs.md) | Перечисляет все приложения App Proxy, использующие пользовательские домены, и сведения о сертификатах, связанные с пользовательскими доменами. |
-| [Публикация всех приложений Azure AD Proxy без загрузки сертификата](scripts/powershell-get-all-custom-domain-no-cert.md) | Перечисляет все приложения App Proxy, которые используют пользовательские домены, но не имеют действительного сертификата TLS/SSL загружены. |
-| [Получите все приложения Azure AD Proxy, опубликованные с идентичным сертификатом](scripts/powershell-get-custom-domain-identical-cert.md) | Перечисляет все приложения Azure AD Proxy, опубликованные с идентичным сертификатом. |
-| [Получите все приложения Azure AD Proxy, опубликованные с идентичным сертификатом, и замените его](scripts/powershell-get-custom-domain-replace-cert.md) | Для приложений Azure AD Proxy, которые публикуются с идентичным сертификатом, позволяет заменить сертификат оптом. |
+| [Получение всех приложений прокси приложения, использующих личные домены и сведения о сертификате](scripts/powershell-get-all-custom-domains-and-certs.md) | Список всех приложений прокси приложения, использующих личные домены, и сведения о сертификате, связанные с пользовательскими доменами. |
+| [Получение всех опубликованных приложений прокси-сервера Azure AD без отправленного сертификата](scripts/powershell-get-all-custom-domain-no-cert.md) | Список всех приложений прокси приложения, использующих пользовательские домены, но не имеющих действительного сертификата TLS/SSL. |
+| [Получение всех приложений прокси-сервера Azure AD, опубликованных с помощью идентичного сертификата](scripts/powershell-get-custom-domain-identical-cert.md) | Список всех приложений прокси-сервера Azure AD, опубликованных с помощью идентичного сертификата. |
+| [Получить все приложения прокси-сервера Azure AD, опубликованные с помощью идентичного сертификата, и заменить их](scripts/powershell-get-custom-domain-replace-cert.md) | Для приложений прокси-сервера Azure AD, опубликованных с помощью идентичного сертификата, можно выполнить небольшую замену сертификата. |

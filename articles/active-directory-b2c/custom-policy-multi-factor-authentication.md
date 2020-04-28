@@ -11,15 +11,15 @@ ms.date: 11/30/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 25724ba82e57c5e3800fa1a989dd4f504df1c163
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78189282"
 ---
 # <a name="enable-multi-factor-authentication-in-azure-active-directory-b2c"></a>Включение многофакторной идентификации в Azure Active Directory B2C
 
-Активный каталог Azure B2C (Azure AD B2C) интегрируется непосредственно с [Многофакторной аутентификацией Azure,](../active-directory/authentication/multi-factor-authentication.md) чтобы можно было добавить второй уровень безопасности для регистрации и регистрации в приложениях. Вы включаете многофакторную идентификацию, не написав ни строки кода. Если вы уже создали потоки пользователя для регистрации и входа в систему, вы все равно можете включить многофакторную проверку подлинности.
+Azure Active Directory B2C (Azure AD B2C) интегрируется напрямую с [многофакторной идентификацией Azure](../active-directory/authentication/multi-factor-authentication.md) , чтобы можно было добавить второй уровень безопасности для регистрации и входа в приложения. Вы включаете многофакторную идентификацию, не написав ни строки кода. Если вы уже создали потоки пользователя для регистрации и входа в систему, вы все равно можете включить многофакторную проверку подлинности.
 
 Используя эту функцию, приложения могут реализовать следующие сценарии, в которых:
 

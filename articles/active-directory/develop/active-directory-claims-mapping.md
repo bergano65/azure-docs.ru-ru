@@ -1,5 +1,5 @@
 ---
-title: Настройка требований для арендаторов Приложения для арендаторов Azure AD (PowerShell)
+title: Настройка утверждений для приложения клиента Azure AD (PowerShell)
 titleSuffix: Microsoft identity platform
 description: На этой странице описываются сопоставления утверждений Azure Active Directory.
 services: active-directory
@@ -14,10 +14,10 @@ ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.openlocfilehash: 49860504da8dd2a1b994a23a24df95f59c959c90
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79263196"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
@@ -36,7 +36,7 @@ ms.locfileid: "79263196"
 
 ## <a name="claims-mapping-policy-type"></a>Тип политики сопоставления утверждений
 
-В Azure AD объект **политики** представляет собой набор правил, применяемых в отдельных приложениях или во всех приложениях организации. Каждый тип политики имеет уникальную структуру и набор свойств, которые применяются к объектам, для которых назначена эта политика.
+В Azure AD объект **политики** представляет набор правил, которые применяются к отдельным приложениям или ко всем приложениям в Организации. Каждый тип политики имеет уникальную структуру и набор свойств, которые применяются к объектам, для которых назначена эта политика.
 
 Тип политики сопоставления утверждений — это тип объекта **политики**, который изменяет утверждения, которые добавлены в токены, выданные определенным приложениям.
 
@@ -87,7 +87,7 @@ ms.locfileid: "79263196"
 | cloud_graph_host_name |
 | cloud_instance_name |
 | cnf |
-| код |
+| code |
 | controls |
 | credential_keys |
 | csr |
@@ -120,7 +120,7 @@ ms.locfileid: "79263196"
 | identityprovider |
 | idp |
 | in_corp |
-| instance |
+| экземпляр |
 | ipaddr |
 | isbrowserhostedapp |
 | iss |
@@ -142,7 +142,7 @@ ms.locfileid: "79263196"
 | onprem_sam_account_name |
 | onprem_sid |
 | openid2_id |
-| password |
+| пароль |
 | platf |
 | polids |
 | pop_jwk |
@@ -156,10 +156,10 @@ ms.locfileid: "79263196"
 | refresh_token |
 | refreshtoken |
 | request_nonce |
-| ресурс |
+| resource |
 | роль |
 | roles |
-| область |
+| scope |
 | scp |
 | sid |
 | подпись |
@@ -287,44 +287,44 @@ ms.locfileid: "79263196"
 | Источник | ID | Описание |
 |-----|-----|-----|
 | Пользователь | surname | Фамилия |
-| Пользователь | givenname | Заданное имя |
-| Пользователь | displayname | Отображаемое имя |
-| Пользователь | objectid | ObjectID |
-| Пользователь | mail | Электронная почта |
-| Пользователь | userprincipalname | Имя участника-пользователя |
-| Пользователь | department|отдел;|
-| Пользователь | onpremisessamaccountname | Имя счета SAM |
-| Пользователь | netbiosname| NetBIOS-имя |
-| Пользователь | dnsdomainname | DNS-имя домена |
-| Пользователь | onpremisesecurityidentifier | Идентификация безопасности на месте |
-| Пользователь | companyname| Название организации |
-| Пользователь | streetaddress | Почтовый адрес |
-| Пользователь | postalcode | Почтовый индекс |
-| Пользователь | preferredlanguange | Предпочитаемый язык |
-| Пользователь | onpremisesuserprincipalname | На территории UPN |
-| Пользователь | mailNickname | Почтовый псевдоним |
-| Пользователь | extensionattribute1 | Атрибут расширения 1 |
-| Пользователь | extensionattribute2 | Атрибут расширения 2 |
-| Пользователь | extensionattribute3 | Атрибут расширения 3 |
-| Пользователь | extensionattribute4 | Атрибут расширения 4 |
-| Пользователь | extensionattribute5 | Атрибут расширения 5 |
-| Пользователь | extensionattribute6 | Атрибут расширения 6 |
-| Пользователь | extensionattribute7 | Атрибут расширения 7 |
-| Пользователь | extensionattribute8 | Атрибут расширения 8 |
-| Пользователь | extensionattribute9 | Атрибут расширения 9 |
-| Пользователь | extensionattribute10 | Атрибут расширения 10 |
-| Пользователь | extensionattribute11 | Атрибут расширения 11 |
-| Пользователь | extensionattribute12 | Атрибут расширения 12 |
-| Пользователь | extensionattribute13 | Атрибут расширения 13 |
-| Пользователь | extensionattribute14 | Атрибут расширения 14 |
-| Пользователь | extensionattribute15 | Атрибут расширения 15 |
-| Пользователь | othermail | Остальные сообщения |
-| Пользователь | country | Country |
-| Пользователь | city | Город |
-| Пользователь | state | Штат |
-| Пользователь | jobtitle | Должность |
-| Пользователь | employeeid | Код сотрудника |
-| Пользователь | facsimiletelephonenumber | Номер телефона, факса |
+| User (Пользователь) | givenname | Заданное имя |
+| User (Пользователь) | displayname | Отображаемое имя |
+| User (Пользователь) | objectid | ObjectID |
+| User (Пользователь) | mail | Электронная почта |
+| User (Пользователь) | userprincipalname | Имя участника-пользователя |
+| User (Пользователь) | department|отдел;|
+| User (Пользователь) | onpremisessamaccountname | Имя локальной учетной записи SAM |
+| User (Пользователь) | netbiosname| NetBIOS-имя |
+| User (Пользователь) | dnsdomainname | DNS-имя домена |
+| User (Пользователь) | onpremisesecurityidentifier | Локальный идентификатор безопасности |
+| User (Пользователь) | companyname| Название организации |
+| User (Пользователь) | streetaddress | Почтовый адрес |
+| User (Пользователь) | postalcode | Почтовый индекс |
+| User (Пользователь) | preferredlanguange | Предпочитаемый язык |
+| User (Пользователь) | onpremisesuserprincipalname | Имя участника-пользователя в локальной среде |
+| User (Пользователь) | mailNickname | Почтовый псевдоним |
+| User (Пользователь) | extensionattribute1 | Атрибут расширения 1 |
+| User (Пользователь) | extensionattribute2 | Атрибут расширения 2 |
+| User (Пользователь) | extensionattribute3 | Атрибут расширения 3 |
+| User (Пользователь) | extensionattribute4 | Атрибут расширения 4 |
+| User (Пользователь) | extensionattribute5 | Атрибут расширения 5 |
+| User (Пользователь) | extensionattribute6 | Атрибут расширения 6 |
+| User (Пользователь) | extensionattribute7 | Атрибут расширения 7 |
+| User (Пользователь) | extensionattribute8 | Атрибут расширения 8 |
+| User (Пользователь) | extensionattribute9 | Атрибут расширения 9 |
+| User (Пользователь) | extensionattribute10 | Атрибут расширения 10 |
+| User (Пользователь) | extensionattribute11 | Атрибут расширения 11 |
+| User (Пользователь) | extensionattribute12 | Атрибут расширения 12 |
+| User (Пользователь) | extensionattribute13 | Атрибут расширения 13 |
+| User (Пользователь) | extensionattribute14 | Атрибут расширения 14 |
+| User (Пользователь) | extensionattribute15 | Атрибут расширения 15 |
+| User (Пользователь) | othermail | Остальные сообщения |
+| User (Пользователь) | country | Country |
+| User (Пользователь) | city | Город |
+| User (Пользователь) | state | Состояние |
+| User (Пользователь) | jobtitle | Должность |
+| User (Пользователь) | employeeid | Код сотрудника |
+| User (Пользователь) | facsimiletelephonenumber | Номер телефона, факса |
 | application, resource, audience | displayname | Отображаемое имя |
 | application, resource, audience | objected | ObjectID |
 | application, resource, audience | tags | Тег субъекта-службы |
@@ -387,24 +387,24 @@ ms.locfileid: "79263196"
 |Источник|ID|Описание|
 |-----|-----|-----|
 | Пользователь | mail|Электронная почта|
-| Пользователь | userprincipalname|Имя участника-пользователя|
-| Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
-| Пользователь | employeeid|Код сотрудника|
-| Пользователь | extensionattribute1 | Атрибут расширения 1 |
-| Пользователь | extensionattribute2 | Атрибут расширения 2 |
-| Пользователь | extensionattribute3 | Атрибут расширения 3 |
-| Пользователь | extensionattribute4 | Атрибут расширения 4 |
-| Пользователь | extensionattribute5 | Атрибут расширения 5 |
-| Пользователь | extensionattribute6 | Атрибут расширения 6 |
-| Пользователь | extensionattribute7 | Атрибут расширения 7 |
-| Пользователь | extensionattribute8 | Атрибут расширения 8 |
-| Пользователь | extensionattribute9 | Атрибут расширения 9 |
-| Пользователь | extensionattribute10 | Атрибут расширения 10 |
-| Пользователь | extensionattribute11 | Атрибут расширения 11 |
-| Пользователь | extensionattribute12 | Атрибут расширения 12 |
-| Пользователь | extensionattribute13 | Атрибут расширения 13 |
-| Пользователь | extensionattribute14 | Атрибут расширения 14 |
-| Пользователь | extensionattribute15 | Атрибут расширения 15 |
+| User (Пользователь) | userprincipalname|Имя участника-пользователя|
+| User (Пользователь) | onpremisessamaccountname|Имя локальной учетной записи SAM|
+| User (Пользователь) | employeeid|Код сотрудника|
+| User (Пользователь) | extensionattribute1 | Атрибут расширения 1 |
+| User (Пользователь) | extensionattribute2 | Атрибут расширения 2 |
+| User (Пользователь) | extensionattribute3 | Атрибут расширения 3 |
+| User (Пользователь) | extensionattribute4 | Атрибут расширения 4 |
+| User (Пользователь) | extensionattribute5 | Атрибут расширения 5 |
+| User (Пользователь) | extensionattribute6 | Атрибут расширения 6 |
+| User (Пользователь) | extensionattribute7 | Атрибут расширения 7 |
+| User (Пользователь) | extensionattribute8 | Атрибут расширения 8 |
+| User (Пользователь) | extensionattribute9 | Атрибут расширения 9 |
+| User (Пользователь) | extensionattribute10 | Атрибут расширения 10 |
+| User (Пользователь) | extensionattribute11 | Атрибут расширения 11 |
+| User (Пользователь) | extensionattribute12 | Атрибут расширения 12 |
+| User (Пользователь) | extensionattribute13 | Атрибут расширения 13 |
+| User (Пользователь) | extensionattribute14 | Атрибут расширения 14 |
+| User (Пользователь) | extensionattribute15 | Атрибут расширения 15 |
 
 #### <a name="table-6-transformation-methods-allowed-for-saml-nameid"></a>Таблица 6. Разрешенные методы преобразования для идентификатора имени SAML NameID
 
@@ -415,9 +415,9 @@ ms.locfileid: "79263196"
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
 
-Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Для добавления пользовательского ключа подписи можно использовать cmdlet `new-azureadapplicationkeycredential` Azure PowerShell для создания симметричного ключа для объекта приложения. Для получения дополнительной информации об этом Azure PowerShell cmdlet, [см.](https://docs.microsoft.com/powerShell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0)
+Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Чтобы добавить пользовательский ключ подписывания, можно использовать командлет `new-azureadapplicationkeycredential` Azure PowerShell, чтобы создать для объекта приложения учетные данные симметричного ключа. Дополнительные сведения об этом Azure PowerShellном командлете см. в разделе [New-азуреадаппликатионкэйкредентиал](https://docs.microsoft.com/powerShell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0).
 
-Приложения с включенным отображением утверждений должны `appid={client_id}` проверять свои ключи подписи маркеров, применяя к своим [запросам на метаданные OpenID Connect.](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document) Ниже приведен формат документа метаданных OpenID Connect, который следует использовать: 
+Приложения с включенным сопоставлением утверждений должны проверять ключи подписывания маркеров, `appid={client_id}` добавляя их в [запросы метаданных Connect OpenID Connect](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Ниже приведен формат документа метаданных OpenID Connect Connect, который следует использовать: 
 
 ```
 https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}
@@ -437,11 +437,11 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 #### <a name="prerequisites"></a>Предварительные требования
 
-В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы новичок в Azure AD, мы рекомендуем вам узнать о том, [как получить aD-арендатора Azure AD,](quickstart-create-new-tenant.md) прежде чем приступить к работе с этими примерами.
+В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы еще не знакомы с Azure AD, мы рекомендуем [узнать, как получить клиент Azure AD](quickstart-create-new-tenant.md) , прежде чем продолжить работу с этими примерами.
 
 Чтобы начать работу, сделайте следующее:
 
-1. Загрузите последний выпуск [публичного предварительного просмотра Azure AD PowerShell Module.](https://www.powershellgallery.com/packages/AzureADPreview)
+1. Скачайте последнюю версию [общедоступной предварительной версии модуля Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureADPreview).
 1. Чтобы войти в учетную запись администратора Azure AD, выполните команду Connect. Эту команду следует выполнять при каждом запуске сеанса.
 
    ``` powershell
@@ -453,7 +453,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
    Get-AzureADPolicy
    ```
 
-#### <a name="example-create-and-assign-a-policy-to-omit-the-basic-claims-from-tokens-issued-to-a-service-principal"></a>Пример: Создание и присвоение политики для оторвании основных требований из токенов, выданных директору службы
+#### <a name="example-create-and-assign-a-policy-to-omit-the-basic-claims-from-tokens-issued-to-a-service-principal"></a>Пример. Создание и назначение политики для пропуска базовых утверждений из маркеров, выданных субъекту-службе
 
 В этом примере мы создадим политику, которая удаляет набор базовых утверждений из токенов, выданных связанным субъектам-службам.
 
@@ -469,7 +469,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Get-AzureADPolicy
       ```
 1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы.
-   1. Чтобы просмотреть все принципы службы организации, вы можете [задать запрос на API Microsoft Graph.](/graph/traverse-the-graph) Или же в [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)вопийте на свою учетную запись Azure AD.
+   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). В [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
    2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:  
      
       ``` powershell
@@ -493,7 +493,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Get-AzureADPolicy
       ```
 1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы. 
-   1. Чтобы просмотреть все принципы службы организации, вы можете [задать запрос на API Microsoft Graph.](/graph/traverse-the-graph) Или же в [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)вопийте на свою учетную запись Azure AD.
+   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). В [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
    2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:  
      
       ``` powershell
@@ -517,7 +517,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Get-AzureADPolicy
       ```
 1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы. 
-   1. Чтобы просмотреть все принципы службы организации, вы можете [задать запрос на API Microsoft Graph.](/graph/traverse-the-graph) Или же в [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)вопийте на свою учетную запись Azure AD.
+   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). В [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
    2. Получив идентификатор объекта субъекта-службы, выполните следующую команду: 
      
       ``` powershell
@@ -526,4 +526,4 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 ## <a name="see-also"></a>См. также
 
-Чтобы узнать, как настроить требования, выданные в токене SAML через портал Azure, [см.](active-directory-saml-claims-customization.md)
+Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портал Azure, см [. раздел как настроить утверждения, выданные в токене SAML для корпоративных приложений](active-directory-saml-claims-customization.md) .

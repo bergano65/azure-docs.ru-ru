@@ -1,6 +1,6 @@
 ---
 title: Фильтрация событий для Сетки событий Azure
-description: В этой статье показано, как фильтровать события (по типу событий, по субъекту, операторам и данным и т.д.) при создании подписки Event Grid.
+description: В этой статье показано, как отфильтровать события (по типу события, по темам, по операторам и данным и т. д.) при создании подписки на сетку событий.
 services: event-grid
 author: spelluru
 ms.service: event-grid
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: spelluru
 ms.openlocfilehash: 63a5cdbff79af52d9f96cf410a820c6cfc530066
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79454029"
 ---
 # <a name="filter-events-for-event-grid"></a>Фильтрация событий для Сетки событий

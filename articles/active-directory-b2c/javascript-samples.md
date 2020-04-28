@@ -12,36 +12,36 @@ ms.date: 02/10/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: a26f6c5e69ca083335580a0368459e062de3941e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78187667"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-Вы можете добавить свой собственный клиентский код JavaScript в приложения Azure Active Directory B2C (Azure AD B2C).
+Вы можете добавить собственный код на стороне клиента JavaScript в приложения Azure Active Directory B2C (Azure AD B2C).
 
-Для включения JavaScript для ваших приложений:
+Чтобы включить JavaScript для приложений, выполните следующие действия.
 
-* Добавление элемента в [пользовательскую политику](custom-policy-overview.md)
-* Выберите [макет страницы](page-layout.md)
-* Используйте [b2clogin.com](b2clogin.md) в запросах
+* Добавление элемента в [настраиваемую политику](custom-policy-overview.md)
+* Выберите [Макет страницы](page-layout.md)
+* Использование [b2clogin.com](b2clogin.md) в запросах
 
 В этой статье объясняется, как изменить настраиваемые политики, чтобы разрешить выполнение сценариев.
 
 > [!NOTE]
-> Если вы хотите включить JavaScript для потоков пользователей, смотрите [версии JavaScript и макета страниц в Azure Active Directory B2C.](user-flow-javascript-overview.md)
+> Если вы хотите включить JavaScript для потоков пользователей, см. раздел [версии JavaScript и страницы в Azure Active Directory B2C](user-flow-javascript-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="select-a-page-layout"></a>Выберите макет страницы
 
-* Выберите [макет страницы](contentdefinitions.md#select-a-page-layout) для элементов пользовательского интерфейса приложения.
+* Выберите [Макет страницы](contentdefinitions.md#select-a-page-layout) для элементов пользовательского интерфейса приложения.
 
-    Если вы собираетесь использовать JavaScript, вам необходимо определить `contract` [версию макета страницы](contentdefinitions.md#migrating-to-page-layout) с версией страницы для *всех* определений содержимого в пользовательской политике.
+    Если предполагается использовать JavaScript, необходимо [определить версию макета страницы](contentdefinitions.md#migrating-to-page-layout) с версией страницы `contract` для *всех* определений содержимого в пользовательской политике.
 
 ## <a name="add-the-scriptexecution-element"></a>Добавление элемента ScriptExecution
 
@@ -138,7 +138,7 @@ function addTermsOfUseLink() {
 }
 ```
 
-Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Для каталога создайте новый атрибут пользователя, **называемый termsUse,** а затем включите **терминыOfUse** в качестве атрибута пользователя.
+Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Для каталога создайте новый атрибут пользователя с именем **термсофусе** , а затем включите **термсофусе** в качестве атрибута пользователя.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

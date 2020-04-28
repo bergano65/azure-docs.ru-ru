@@ -1,7 +1,7 @@
 ---
-title: Соображения Xamarin iOS (MSAL.NET) Azure
+title: Замечания по Xamarin iOS (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте о соображениях использования Xamarin iOS в библиотеке подлинности Microsoft для .NET (MSAL.NET).
+description: Сведения о вопросах использования Xamarin iOS с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -15,24 +15,24 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 76e614b605cd07cd5dc454824dd204447f806907
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79262715"
 ---
-# <a name="considerations-for-using-xamarin-ios-with-msalnet"></a>Рассмотрение вопроса об использовании Xamarin iOS с MSAL.NET
-При использовании библиотеки аутентификации Майкрософт для .NET (MSAL.NET) на Xamarin iOS следует: 
+# <a name="considerations-for-using-xamarin-ios-with-msalnet"></a>Рекомендации по использованию Xamarin iOS с MSAL.NET
+При использовании библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET) в Xamarin iOS необходимо выполнить следующие действия: 
 
-- Переопределить и `OpenUrl` реализовать `AppDelegate`функцию в .
-- Включить группы брелоков.
-- Включить совместное использование кэша токенов.
-- Включить доступ к брелоку.
-- Понимание известных проблем с iOS 12 и аутентификации.
+- Переопределите и реализуйте `OpenUrl` функцию `AppDelegate`в.
+- Включите группы цепочки ключей.
+- Включите совместное использование кэша маркеров.
+- Включите доступ к цепочке ключей.
+- Узнайте об известных проблемах с iOS 12 и проверкой подлинности.
 
 ## <a name="implement-openurl"></a>Реализация OpenUrl
 
-Переопределить `OpenUrl` метод производного `FormsApplicationDelegate` `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs`класса и вызвать . Ниже приведен пример:
+Переопределите `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызовите `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs`. Ниже приведен пример:
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -42,19 +42,19 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 }
 ```
 
-Также выполняйте следующие задачи: 
-* Определите схему URL- и
-* Требуются разрешения для вызова приложения в другое приложение.
-* Иметь конкретную форму для URL-адреса перенаправления.
-* Зарегистрируйте URL-адрес перенаправления на [портале Azure](https://portal.azure.com).
+Также выполните следующие задачи. 
+* Определите схему URL-адресов.
+* Требовать разрешения для приложения на вызов другого приложения.
+* Иметь определенную форму для URL-адреса перенаправления.
+* Зарегистрируйте URL-адрес перенаправления в [портал Azure](https://portal.azure.com).
 
-### <a name="enable-keychain-access"></a>Включить доступ к брелоку
+### <a name="enable-keychain-access"></a>Включение доступа к цепочке ключей
 
-Чтобы включить доступ к брелоку, убедитесь, что ваше приложение имеет группу доступа к брелоку. При создании приложения можно настроить группу доступа к `WithIosKeychainSecurityGroup()` брелоку с помощью API.
+Чтобы включить доступ к цепочке ключей, убедитесь, что у приложения есть группа доступа к цепочке ключей. Группу доступа к цепочке ключей можно задать при создании приложения с помощью `WithIosKeychainSecurityGroup()` API.
 
-Чтобы воспользоваться кэшом и единым ввозам (SSO), установите группу доступа к брелоку одинаковое значение во всех приложениях.
+Чтобы воспользоваться преимуществами кэша и единого входа (SSO), задайте для группы доступа к цепочке ключей одно и то же значение во всех приложениях.
 
-В этом примере установки используется MSAL 4.x:
+В этом примере программы установки используется MSAL 4. x:
 ```csharp
 var builder = PublicClientApplicationBuilder
      .Create(ClientId)
@@ -62,7 +62,7 @@ var builder = PublicClientApplicationBuilder
      .Build();
 ```
 
-Также включите доступ `Entitlements.plist` к брелоку в файле. Используйте либо следующую группу доступа, либо собственную группу доступа.
+Также включите доступ к цепочке `Entitlements.plist` ключей в файле. Используйте следующую группу доступа или собственную группу доступа.
 
 ```xml
 <dict>
@@ -73,50 +73,50 @@ var builder = PublicClientApplicationBuilder
 </dict>
 ```
 
-При использовании `WithIosKeychainSecurityGroup()` API MSAL автоматически прикладывает группу безопасности к концу *идентификатора команды* приложения ().`AppIdentifierPrefix` MSAL добавляет вашу группу безопасности, потому что при создании приложения в Xcode, он будет делать то же самое. Вот почему права в `Entitlements.plist` файле должны `$(AppIdentifierPrefix)` быть включены перед группой доступа к брелоку.
+При использовании `WithIosKeychainSecurityGroup()` API MSAL автоматически добавляет группу безопасности в конец *идентификатора группы* приложения (`AppIdentifierPrefix`). MSAL добавляет группу безопасности, так как при создании приложения в Xcode оно будет выполнять те же действия. Именно поэтому права в `Entitlements.plist` файле должны быть включены `$(AppIdentifierPrefix)` перед группой доступа к цепочке ключей.
 
-Для получения дополнительной информации ознакомьтесь с документацией о [правах iOS.](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps) 
+Дополнительные сведения см. в документации по назначениям [iOS](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps). 
 
-### <a name="enable-token-cache-sharing-across-ios-applications"></a>Включить кэш маркеров в приложениях iOS
+### <a name="enable-token-cache-sharing-across-ios-applications"></a>Включение общего доступа к кэшу маркеров в приложениях iOS
 
-Начиная с MSAL 2.x, можно указать группу доступа к брелоку для сохранения кэша маркеров в нескольких приложениях. Эта настройка позволяет совместно использовать кэш маркеров между несколькими приложениями, которые имеют одну и ту же группу доступа к брелоку. Вы можете поделиться токенналичными деньгами между [ADAL.NET](https://aka.ms/adal-net) приложениями, MSAL.NET приложениями Xamarin.iOS и нативными приложениями iOS, которые были разработаны в [ADAL.objc](https://github.com/AzureAD/azure-activedirectory-library-for-objc) или [MSAL.objc.](https://github.com/AzureAD/microsoft-authentication-library-for-objc)
+Начиная с MSAL 2. x можно указать группу доступа к цепочке ключей, чтобы сохранить кэш маркеров в нескольких приложениях. Этот параметр позволяет использовать кэш маркеров в нескольких приложениях с одной группой доступа к цепочке ключей. Вы можете поделиться наличными маркерами между [ADAL.NET](https://aka.ms/adal-net) приложениями, MSAL.NET приложениями Xamarin. iOS и собственными приложениями iOS, разработанными в [ADAL. ObjC](https://github.com/AzureAD/azure-activedirectory-library-for-objc) или [MSAL. ObjC](https://github.com/AzureAD/microsoft-authentication-library-for-objc).
 
-Совместное использование кэша маркеров позволяет развести (SSO) между всеми приложениями, которые используют одну и ту же группу доступа к брелоку.
+При совместном использовании кэша маркеров вы разрешаете единый вход (SSO) для всех приложений, использующих одну группу доступа к цепочке ключей.
 
-Чтобы включить этот общий `WithIosKeychainSecurityGroup()` доступ к эшели, используйте метод для установки группы доступа к брелоку одинакового значения во всех приложениях, которые имеют один и тот же кэш. Первый пример кода в этой статье показывает, как использовать метод.
+Чтобы включить этот общий доступ к кэшу, `WithIosKeychainSecurityGroup()` используйте метод, чтобы задать для группы доступа к цепочке ключей одно и то же значение во всех приложениях, использующих общий кэш. В первом примере кода в этой статье показано, как использовать метод.
 
-Ранее в этой статье вы узнали, что MSAL добавляет `$(AppIdentifierPrefix)` всякий раз, когда вы используете `WithIosKeychainSecurityGroup()` API. MSAL добавляет этот элемент, `AppIdentifierPrefix` поскольку идентификатор команды гарантирует, что только приложения, сделанные одним и тем же издателем, могут совместно с доступом к брелоку.
+Ранее в этой статье вы узнали, что MSAL добавляет `$(AppIdentifierPrefix)` каждый раз при использовании `WithIosKeychainSecurityGroup()` API. MSAL добавляет этот элемент, так как идентификатор `AppIdentifierPrefix` команды гарантирует, что только приложения, созданные одним издателем, могут использовать доступ к цепочке ключей.
 
 > [!NOTE]
-> Имущество `KeychainSecurityGroup` обезвлечено.
+> `KeychainSecurityGroup` Свойство является устаревшим.
 > 
-> Начиная с MSAL 2.x, разработчики `TeamId` были вынуждены `KeychainSecurityGroup` включить префикс, когда они использовали свойство. Но, начиная с MSAL 2.7.x, `iOSKeychainSecurityGroup` когда вы используете `TeamId` новое свойство, MSAL разрешает префикс во время выполнения. При использовании этого свойства не `TeamId` включайте приставку в значение. Приставка не требуется.
+> Начиная с MSAL 2. x разработчики вынуждены включать `TeamId` префикс при использовании `KeychainSecurityGroup` свойства. Но начиная с версии MSAL 2.7. x, при использовании нового `iOSKeychainSecurityGroup` свойства MSAL разрешает `TeamId` префикс во время выполнения. При использовании этого свойства не включайте `TeamId` префикс в значение. Префикс не требуется.
 >
-> Поскольку `KeychainSecurityGroup` свойство устарело, используйте свойство. `iOSKeychainSecurityGroup`
+> Поскольку `KeychainSecurityGroup` свойство устарело, используйте `iOSKeychainSecurityGroup` свойство.
 
 ### <a name="use-microsoft-authenticator"></a>Использование Microsoft Authenticator
 
-Ваше приложение может использовать Microsoft Authenticator в качестве брокера для включения:
+Приложение может использовать Microsoft Authenticator в качестве брокера для включения:
 
-- **SSO**: При включании SSO пользователям не нужно входить в каждое приложение.
-- **Идентификация устройства**: Используйте идентификацию устройства для проверки подлинности при доступе к сертификату устройства. Этот сертификат создается на устройстве при присоединении к рабочему месту. Ваше приложение будет готово, если администраторы-арендаторы смогут обеспечить условный доступ, связанный с устройствами.
-- **Проверка идентификации приложения:** Когда приложение звонит брокеру, оно передает свой url-адрес перенаправления. Брокер проверяет URL-адрес перенаправления.
+- **Единый**вход. при включении единого входа пользователям не нужно входить в каждое приложение.
+- **Идентификация устройства**: используйте идентификацию устройства для проверки подлинности при доступе к сертификату устройства. Этот сертификат создается на устройстве при его присоединении к рабочей области. Приложение будет готово, если администраторы клиента включают условный доступ, связанный с устройствами.
+- **Проверка идентификации приложения**. когда приложение вызывает брокер, ему передается URL-адрес перенаправления. Брокер проверяет URL-адрес перенаправления.
 
-Подробную информацию о том, как включить брокера, можно получить [в приложении Xamarin iOS и Android:](msal-net-use-brokers-with-xamarin-apps.md)
+Дополнительные сведения о том, как включить брокер, см. [в статье использование Microsoft Authenticator или Microsoft Intune корпоративный портал в приложениях Xamarin iOS и Android](msal-net-use-brokers-with-xamarin-apps.md).
 
 ## <a name="known-issues-with-ios-12-and-authentication"></a>Известные проблемы с iOS 12 и аутентификацией
-Корпорация Майкрософт выпустила рекомендации по [безопасности](https://github.com/aspnet/AspNetCore/issues/4647) о несовместимости между iOS 12 и некоторыми типами аутентификации. Несовместимость нарушает социальные, WSFed, и OIDC входе. Рекомендации по безопасности помогают разработчикам понять, как снять ограничения ASP.NET безопасности из своих приложений, чтобы сделать их совместимыми с iOS 12.  
+Корпорация Майкрософт выпустила [Советы по безопасности](https://github.com/aspnet/AspNetCore/issues/4647) о несовместимости между iOS 12 и некоторыми типами проверки подлинности. Несовместимость нарушит вход в социальные, WSFed и OIDC. Советы по безопасности помогают разработчикам понять, как удалить ASP.NET ограничения безопасности из своих приложений, чтобы обеспечить их совместимость с iOS 12.  
 
-При разработке MSAL.NET приложений на Xamarin iOS, вы можете увидеть бесконечный цикл, когда вы пытаетесь войти на веб-сайты с iOS 12. Такое поведение похоже на эту [проблему ADAL.](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/issues/1329) 
+При разработке MSAL.NET приложений в Xamarin iOS вы можете столкнуться с бесконечным циклом при попытке войти на веб-сайты из iOS 12. Такое поведение аналогично этой [ошибке ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/issues/1329). 
 
-Вы также можете увидеть перерыв в ASP.NET Core OIDC аутентификации с iOS 12 Safari. Для получения дополнительной информации смотрите этот [выпуск WebKit](https://bugs.webkit.org/show_bug.cgi?id=188165).
+Вы также можете увидеть перерыв в ASP.NET Core проверки подлинности OIDC в iOS 12 Safari. Дополнительные сведения см. в этой [WebKit статье](https://bugs.webkit.org/show_bug.cgi?id=188165).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для получения информации о свойствах xamarin iOS README.md см. [iOS-specific considerations](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/master/1-Basic#ios-specific-considerations)
+Дополнительные сведения о свойствах для Xamarin iOS см. в разделе [рекомендации для iOS](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/master/1-Basic#ios-specific-considerations) в следующем примере файла readme.md:
 
 Пример | Платформа | Описание
 ------ | -------- | -----------
-[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, Универсальная платформа Windows (UWP) | Простое приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2.0. Приложение также показывает, как использовать полученный маркер для доступа к Microsoft Graph.
+[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, универсальная платформа Windows (UWP) | Простое приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. В приложении также показано, как использовать полученный маркер для доступа к Microsoft Graph.
 
 <!--- https://github.com/Azure-Samples/active-directory-xamarin-native-v2/blob/master/ReadmeFiles/Topology.png -->

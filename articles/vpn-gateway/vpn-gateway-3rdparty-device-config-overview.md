@@ -1,5 +1,5 @@
 ---
-title: Конфигурации VPN-устройств партнеров для подключения к VPN шлюзам Azure
+title: Конфигурации партнерских VPN-устройств для подключения к VPN-шлюзам Azure
 description: В этой статье содержится обзор конфигураций партнерских VPN-устройств, позволяющих подключаться к VPN-шлюзам Azure.
 services: vpn-gateway
 author: yushwang
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/20/2017
 ms.author: yushwang
 ms.openlocfilehash: b914afaa6725920078da309981bcda5bb765e155
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79279407"
 ---
 # <a name="overview-of-partner-vpn-device-configurations"></a>Обзор конфигураций партнерских VPN-устройств
@@ -111,7 +111,7 @@ $lng5gw  = Get-AzLocalNetworkGateway -Name $LNGName5 -ResourceGroupName $RG1
 New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $False
 ```
 
-### <a name="optional-use-custom-ipsecike-policy-with-usepolicybasedtrafficselectors"></a><a name ="policybased"></a>(Необязательно) Используйте пользовательскую политику IPsec/IKE с UsePolicyBasedTrafficSelectors
+### <a name="optional-use-custom-ipsecike-policy-with-usepolicybasedtrafficselectors"></a><a name ="policybased"></a>Используемых Использование настраиваемой политики IPsec/IKE с UsePolicyBasedTrafficSelectors
 Если ваши VPN-устройства не поддерживают селекторы трафика "любой к любому", такие как конфигурация на основе маршрутов или на основе VTI, то создайте настраиваемую политику IPsec/IKE с параметром [UsePolicyBasedTrafficSelectors](vpn-gateway-connect-multiple-policybased-rm-ps.md).
 
 > [!IMPORTANT]
@@ -133,7 +133,7 @@ $lng5gw  = Get-AzLocalNetworkGateway -Name $LNGName5 -ResourceGroupName $RG1
 New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $False -IpsecPolicies $ipsecpolicy5 -UsePolicyBasedTrafficSelectors $True
 ```
 
-### <a name="optional-use-bgp-on-s2s-vpn-connection"></a><a name ="bgp"></a>(Необязательно) Использование BGP на S2S VPN соединение
+### <a name="optional-use-bgp-on-s2s-vpn-connection"></a><a name ="bgp"></a>Используемых Использовать VPN-подключение BGP на S2S
 При создании VPN-подключения типа "сеть — сеть" (S2S) можно использовать [BGP для VPN-шлюза](vpn-gateway-bgp-resource-manager-ps.md). Такой подход имеет два отличия:
 
 * Префиксы адресов в локальной среде могут быть адресом одиночного хоста. IP-адрес узла BGP в локальной среде указывается следующим образом:

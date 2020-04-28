@@ -1,7 +1,7 @@
 ---
-title: Поддержка AD FS в MSAL.NET Azure
+title: Поддержка AD FS в MSAL.NET | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте об поддержке Active Directory Federation Services (AD FS) в Библиотеке аутентификации Майкрософт для .NET (MSAL.NET).
+description: Сведения о поддержке службы федерации Active Directory (AD FS) (AD FS) в библиотеке проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -14,48 +14,48 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 15af18177cea217612a4d5276d130abe02d339f4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77160766"
 ---
-# <a name="active-directory-federation-services-support-in-msalnet"></a>Поддержка активных служб Федерации каталогов в MSAL.NET
-Службы Федерации активных директоров (AD FS) в Windows Server позволяют добавлять OpenID Connect и OAuth 2.0 на основе аутентификации и авторизации в разрабатываемые приложения. Эти приложения могут, таким образом, аутентифицировать пользователей непосредственно против AD FS. Для получения дополнительной информации прочитайте [сценарии AD FS для разработчиков](/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios).
+# <a name="active-directory-federation-services-support-in-msalnet"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL.NET
+Службы федерации Active Directory (AD FS) (AD FS) в Windows Server позволяет добавлять аутентификацию и авторизацию на основе OpenID Connect Connect и OAuth 2,0 для разрабатываемых приложений. Эти приложения могут выполнять проверку подлинности пользователей непосредственно в AD FS. Дополнительные сведения см. в статье [сценарии AD FS для разработчиков](/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios).
 
-Библиотека аутентификации Майкрософт для .NET (MSAL.NET) поддерживает два сценария проверки подлинности в отношении AD FS:
+Библиотека проверки подлинности Microsoft для .NET (MSAL.NET) поддерживает два сценария проверки подлинности в AD FS.
 
-- MSAL.NET беседует с Azure Active Directory, который сам по себе *используется* AD FS.
-- MSAL.NET беседует **непосредственно** с органом ADFS. Это поддерживается только от AD FS 2019 и выше. Одним из сценариев, окоторых ирисуемом является поддержка [Azure Stack](https://azure.microsoft.com/overview/azure-stack/)
+- MSAL.NET взаимодействует с Azure Active Directory, который сам является *федеративным* с AD FS.
+- MSAL.NET **напрямую** обращается к центру ADFS. Это поддерживается только в AD FS 2019 и более поздних версиях. В одном из сценариев это относится [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) поддержки.
 
 
-## <a name="msal-connects-to-azure-ad-which-is-federated-with-ad-fs"></a>MSAL подключается к Azure AD, который федеративно с aD FS
-MSAL.NET поддерживает подключение к Azure AD, который подписывает управляемых пользователей (пользователей, управляемых в Azure AD) или федеративных пользователей (пользователей, управляемых другим поставщиком идентификационных данных, таких как AD FS). MSAL.NET не знает о том, что пользователи являются федеративными. Что касается его, то он разговаривает с Azure AD.
+## <a name="msal-connects-to-azure-ad-which-is-federated-with-ad-fs"></a>MSAL подключается к Azure AD, который является федеративным с AD FS
+MSAL.NET поддерживает подключение к Azure AD, которое подписывает управляемых пользователей (пользователей, управляемых в Azure AD) или федеративных пользователей (пользователей, управляемых другим поставщиком удостоверений, например AD FS). MSAL.NET не знает о том, что пользователи являются федеративными. По мере того, как это касается, он взаимодействует с Azure AD.
 
-[Орган,](msal-client-application-configuration.md#authority) который вы используете в этом случае, является обычным органом (имя хозяина власти , арендатор, общий или организации).
+В этом случае в качестве [центра](msal-client-application-configuration.md#authority) используется обычный центр (имя узла центра сертификации + клиент, общие или организации).
 
-### <a name="acquiring-a-token-interactively"></a>Приобретение токена в интерактивном режиме
-При вызове `AcquireTokenInteractive` метода пользовательский интерфейс обычно:
+### <a name="acquiring-a-token-interactively"></a>Интерактивное получение маркера
+При вызове `AcquireTokenInteractive` метода взаимодействие с пользователем обычно выполняется следующим образом:
 
-1. Пользователь вводит идентификатор учетной записи.
-2. Azure AD отображает краткосообщение «Выведет вас на страницу организации».
-3. Пользователь перенаправляется на страницу регистрации поставщика идентификационных данных. Страница ввне обычно настраивается с логотипом организации.
+1. Пользователь вводит идентификатор своей учетной записи.
+2. В Azure AD отображается краткое сообщение "идет переход на страницу вашей организации".
+3. Пользователь перенаправляется на страницу входа поставщика удостоверений. Страница входа обычно настраивается с помощью логотипа Организации.
 
-Поддерживаемые версии AD FS в этом федеративном сценарии: AD FS v2, AD FS v3 (Windows Server 2012 R2) и AD FS v4 (AD FS 2016).
+Поддерживаемые AD FS версии в этом объединенном сценарии: AD FS v2, AD FS v3 (Windows Server 2012 R2) и AD FS V4 (AD FS 2016).
 
-### <a name="acquiring-a-token-using-acquiretokenbyintegratedauthentication-or-acquiretokenbyusernamepassword"></a>Приобретение токена с помощью AcquireTokenByIntegratedAuthentication или AcquireTokenByUsernamePassword
-При приобретении токена с помощью `AcquireTokenByIntegratedAuthentication` или `AcquireTokenByUsernamePassword` методов MSAL.NET получает, чтобы поставщик удостоверяющих данных связался на основе имени пользователя.  MSAL.NET получает [токен SAML 1.1](reference-saml-tokens.md) после обращения к поставщику удостоверений личности.  MSAL.NET затем предоставляет токен SAML Azure AD в качестве утверждения пользователя (по аналогии с [потоком от имени),](msal-authentication-flows.md#on-behalf-of)чтобы получить обратно JWT.
+### <a name="acquiring-a-token-using-acquiretokenbyintegratedauthentication-or-acquiretokenbyusernamepassword"></a>Получение маркера с помощью Аккуиретокенбинтегратедаусентикатион или Аккуиретокенбюсернамепассворд
+При получении маркера с помощью методов `AcquireTokenByIntegratedAuthentication` или `AcquireTokenByUsernamePassword` MSAL.NET получает поставщик удостоверений для связи на основе имени пользователя.  MSAL.NET получает [токен SAML 1,1](reference-saml-tokens.md) после обращения к поставщику удостоверений.  Затем MSAL.NET предоставляет маркер SAML для Azure AD в качестве пользовательского утверждения (аналогично [потоку](msal-authentication-flows.md#on-behalf-of)"от имени") для возврата JWT.
 
-## <a name="msal-connects-directly-to-ad-fs"></a>MSAL подключается непосредственно к AD FS
-MSAL.NET поддерживает подключение к AD FS 2019, который соответствует требованиям Open ID Connect и понимает PKCE и области. Эта поддержка требует, чтобы пакет услуг [KB 4490481](https://support.microsoft.com/en-us/help/4490481/windows-10-update-kb4490481) был применен к Windows Server. При подключении непосредственно к AD FS, полномочия, которые вы хотите `https://mysite.contoso.com/adfs/`использовать для создания приложения, аналогичны .
+## <a name="msal-connects-directly-to-ad-fs"></a>MSAL напрямую подключается к AD FS
+MSAL.NET поддерживает подключение к AD FS 2019, что соответствует требованиям Open ID Connect и понимает PKCE и области. Для этой поддержки требуется, чтобы к Windows Server был применен пакет обновления [KB 4490481](https://support.microsoft.com/en-us/help/4490481/windows-10-update-kb4490481) . При прямом подключении к AD FS центр, который вы хотите использовать для создания приложения, аналогичен `https://mysite.contoso.com/adfs/`.
 
-В настоящее время нет планов по поддержке прямой связи с:
+В настоящее время нет планов для поддержки прямого подключения к:
 
 - AD FS 16, так как он не поддерживает PKCE и по-прежнему использует ресурсы, а не область
-- AD FS v2, который не соответствует требованиям OIDC.
+- AD FS версии 2, которая не соответствует требованиям OIDC.
 
- Если вам нужна поддержка сценариев, требующих прямого подключения к AD FS 2016, используйте последнюю версию [Библиотеки подлинности active Directory Library Azure.](../azuread-dev/active-directory-authentication-libraries.md#microsoft-supported-client-libraries) Когда вы модернизируете свою систему до AD FS 2019, вы сможете использовать MSAL.NET.
+ Если требуется поддержка сценариев, требующих прямого подключения к AD FS 2016, используйте последнюю версию [библиотеки проверки Подлинности Azure Active Directory](../azuread-dev/active-directory-authentication-libraries.md#microsoft-supported-client-libraries). После обновления локальной системы до AD FS 2019 вы сможете использовать MSAL.NET.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В случае с федеративной стороной см. [Например, в поведении приложения можно найти знак «Настройка активного каталога» с помощью политики Home Realm Discovery](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal)
+Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal) .

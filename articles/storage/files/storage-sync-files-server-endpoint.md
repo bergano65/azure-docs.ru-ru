@@ -73,5 +73,5 @@ Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint> -Order Clou
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md)
-- [Планирование развертывания синхронизации файлов Azure](storage-sync-files-planning.md)
+- [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)
 - [Мониторинг службы "Синхронизация файлов Azure"](storage-sync-files-monitoring.md)

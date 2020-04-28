@@ -1,7 +1,7 @@
 ---
-title: Приобретение токена в приложении Android
+title: Получение маркера в приложении Android
 titleSuffix: Azure AD B2C
-description: Как создать приложение для Android, использующее AppAuth с Помощью Active Directory B2C для управления идентификаторами пользователей и проверки подлинности пользователей.
+description: Как создать приложение Android, которое использует AppAuth с Azure Active Directory B2C для управления удостоверениями пользователей и проверки подлинности пользователей.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,10 +12,10 @@ ms.date: 11/30/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 31ad373b1544fc601a9c37e05e324a9c1dfb3f73
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78183791"
 ---
 # <a name="sign-in-using-an-android-application-in-azure-active-directory-b2c"></a>Вход с помощью приложения Android в Azure Active Directory B2C
@@ -35,13 +35,13 @@ ms.locfileid: "78183791"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Затем зарегистрируйте приложение в арендаторе Azure AD B2C. Это дает Azure AD информацию, необходимую для безопасного общения с вашим приложением.
+Затем зарегистрируйте приложение в клиенте Azure AD B2C. Это предоставляет Azure AD сведения, необходимые для безопасного обмена данными с приложением.
 
 [!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
 
 Запишите значение параметра **Идентификатор приложения (клиент)**. Оно вам потребуется в дальнейшем.
 
-Также запишите свой пользовательский перенаправить URI для использования в более позднем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
+Кроме того, запишите пользовательский URI перенаправления для использования на следующем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
 
@@ -65,7 +65,7 @@ ms.locfileid: "78183791"
 > AppAuth поддерживает Android API версии 16 (Jellybean) и более поздних. Мы советуем использовать API версии 23 и более поздних.
 >
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Чтобы настроить взаимодействие с Azure AD B2C, укажите URI обнаружения или URI конечных точек авторизации и токенов. В любом случае вам потребуются следующие сведения:
 
@@ -120,8 +120,8 @@ AuthorizationServiceConfiguration config =
 
 После настройки или извлечения конфигурации службы авторизации можно сформировать запрос авторизации. Для создания запроса вам потребуются следующие сведения:
 
-* Идентификатор клиента (APPLICATION ID), который вы записали ранее. Например, `00000000-0000-0000-0000-000000000000`.
-* Пользовательские перенаправить URI, что вы записали ранее. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
+* Идентификатор клиента (идентификатор приложения), записанный ранее. Например, `00000000-0000-0000-0000-000000000000`.
+* Пользовательский URI перенаправления, записанный ранее. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 Оба элемента нужно сохранить при [регистрации приложения](#create-an-application).
 

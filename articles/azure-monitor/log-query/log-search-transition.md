@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 01/16/2019
 ms.openlocfilehash: 6cc7fc94162ed101d06fbbbc4722867be46987b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670140"
 ---
 # <a name="transition-from-log-analytics-log-search-to-azure-monitor-logs"></a>Переход с поиска по журналам Log Analytics на анализ журналов Azure Monitor
@@ -53,7 +53,7 @@ ms.locfileid: "77670140"
 
 ![Детализация поиска по журналам](media/log-search-transition/drilldown-search.png)
 
-В журналах Azure Monitor необходимо изменить запрос, чтобы возвращать эти записи. Расширьте одну из строк в результатах и нажмите на следующее **+** значение, чтобы добавить его в запрос. Затем закомментируйте команду **summarize** и повторите запрос.
+В журналах Azure Monitor необходимо изменить запрос, чтобы возвращать эти записи. Разверните одну из строк в результатах и щелкните **+** рядом со значением, чтобы добавить его в запрос. Затем закомментируйте команду **summarize** и повторите запрос.
 
 ![Детализация журналов Azure Monitor](media/log-search-transition/drilldown-logs.png)
 

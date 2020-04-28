@@ -8,10 +8,10 @@ ms.date: 04/17/2017
 ms.author: rasquill
 ms.custom: mvc
 ms.openlocfilehash: 2af20a1ddf4239b7eec6cceabf2ff9711959c128
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77189111"
 ---
 # <a name="deprecated-canary-release-microservices-with-vamp-on-an-azure-container-service-dcos-cluster"></a>(УСТАРЕЛО) Ранний выпуск микрослужб с помощью Vamp в кластере DC/OS Службы контейнеров Azure
@@ -42,13 +42,13 @@ ms.locfileid: "77189111"
 
 ## <a name="set-up-vamp"></a>Настройка Vamp
 
-Теперь, когда у вас есть запущенный кластер DC/OS, вы можете\/установить Vamp из uI DC/OS (http: /localhost:80). 
+Теперь, когда вы используете кластер DC/OS, вы можете установить его с помощью пользовательского интерфейса DC/OS (http:\//ЛОКАЛХОСТ: 80). 
 
 ![Пользовательский интерфейс DC/OS](./media/container-service-dcos-vamp-canary-release/01_set_up_vamp.png)
 
 Установка выполняется в два этапа:
 
-1. **Развертывание Elasticsearch**.
+1. **Разверните Elasticsearch**.
 
 2. Затем **разверните Vamp**, установив пакет Vamp DC/OS Universe.
 
@@ -151,7 +151,7 @@ Vamp требуется Elasticsearch для сбора метрик и агре
               webport: 8080/http # cluster endpoint, used for canary releasing
    ```
 
-4. Нажмите **Сохранить**. Vamp инициирует развертывание.
+4. Выберите команду **Сохранить**. Vamp инициирует развертывание.
 
 Развертывание отображается на странице **Deployments** (Развертывания). Щелкните развертывание, чтобы отследить его состояние.
 
@@ -211,7 +211,7 @@ Vamp развернула службу sava на узлах агента DC/OS, 
               webport: 8080/http # cluster endpoint to update
    ```
   
-3. Нажмите **Сохранить**. Схема сохраняется и отображается на странице **Blueprints** (Схемы).
+3. Выберите команду **Сохранить**. Схема сохраняется и отображается на странице **Blueprints** (Схемы).
 
 4. Откройте меню действий схемы sava:1.1 и выберите команду **Merge to** (Объединить с).
 

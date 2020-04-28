@@ -1,5 +1,5 @@
 ---
-title: "Учебник: Мигрируйте РДС МыСЗЛ онлайн в базу данных Azure для MyS'L"
+title: Руководство. Перенос RDS MySQL Online в базу данных Azure для MySQL
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить интерактивную миграцию из RDS MySQL в Базу данных Azure для MySQL с помощью Azure Database Migration Service.
 services: dms
@@ -13,13 +13,13 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
 ms.openlocfilehash: c34de48d0184057f42d1b779abee56e1fa9ac169
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78255167"
 ---
-# <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Учебник: Перенос RDS MyS'L в базу данных Azure для MyS'L онлайн с помощью DMS
+# <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос RDS MySQL в базу данных Azure для MySQL Online с помощью DMS
 
 С помощью службы Azure Database Migration Service базы данных из экземпляра RDS MySQL можно перенести в [Базу данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/), не отключая базу данных-источник от сети. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется перенос примера базы данных **сотрудников** из экземпляра RDS MySQL в Базу данных Azure для MySQL с помощью интерактивного действия миграции в Azure Database Migration Service.
 
@@ -33,7 +33,7 @@ ms.locfileid: "78255167"
 > * мониторинг миграции.
 
 > [!NOTE]
-> Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Для получения дополнительной информации на странице ценообразования миграционной службы лазурного баз данных смотрите страницу [миграционных](https://azure.microsoft.com/pricing/details/database-migration/) служб Лазурного человека.
+> Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Дополнительные сведения см. на странице [цен](https://azure.microsoft.com/pricing/details/database-migration/) на Azure Database Migration Service.
 
 > [!IMPORTANT]
 > Чтобы оптимизировать процесс миграции, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
@@ -56,8 +56,8 @@ ms.locfileid: "78255167"
 
 * Скачайте и установите пример базы данных [MySQL **Сотрудники**](https://dev.mysql.com/doc/employee/en/employees-installation.html).
 * Создайте экземпляр [Базы данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal).
-* Создайте виртуальную сеть Microsoft Azure для миграционной службы лазурных данных с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение к исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) Для получения дополнительной информации о создании виртуальной сети, см [Виртуальная сеть Документация](https://docs.microsoft.com/azure/virtual-network/), и особенно быстро начать статьи с пошаговой детали.
-* Убедитесь, что правила виртуальной сетевой группы безопасности не блокируют следующие входящие порты связи в службу миграции базы данных Azure: 443, 53, 9354, 445 и 12000. Для получения более подробной информации о виртуальной сети NSG фильтрации трафика, [см.](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg)
+* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
+* Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 * Настройте [брандмауэр Windows](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) (или Linux) для доступа к ядру СУБД. Для сервера MySQL разрешите подключение через порт 3306.
 
 > [!NOTE]
@@ -143,7 +143,7 @@ ms.locfileid: "78255167"
 
     ![Отображение поставщиков ресурсов](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/portal-select-resource-provider.png)
 
-3. Поиск миграции, а затем справа **от Microsoft.DataMigration**, выберите **Регистр**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/portal-register-resource-provider.png)
 
@@ -163,11 +163,11 @@ ms.locfileid: "78255167"
 
 5. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет миграционной службе базы данных Azure доступ к исходной экземпляру MyS'L и целевой базе данных Azure для экземпляра MyS'L.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходному экземпляру MySQL и целевому экземпляру базы данных Azure для MySQL.
 
-    Для получения дополнительной информации о том, как создать виртуальную сеть на портале Azure, смотрите статью [Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
-6. Выберите уровень ценообразования; для этой онлайн-миграции, не забудьте выбрать Premium: 4vCores ценовой уровень.
+6. Выберите ценовую категорию. для этой оперативной миграции не забудьте выбрать ценовую категорию Premium: 4vCores.
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/dms-settings3.png)
 
@@ -187,7 +187,7 @@ ms.locfileid: "78255167"
 
 3. Выберите **+ Новый проект миграции**.
 4. В окне **New migration project** (Новый проект миграции) задайте имя для проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **MySQL**, а затем в текстовом поле **Target server type** (Тип целевого сервера) выберите **AzureDbForMySQL**.
-5. В разделе **«Выбрать тип активности»** выберите **миграцию данных в Интернете.**
+5. В разделе **Выбор типа действия** выберите **Перенос данных в сети**.
 
     > [!IMPORTANT]
     > Не забудьте выбрать режим **миграции данных по сети**, так как автономная миграция не поддерживается для этого сценария.
@@ -197,7 +197,7 @@ ms.locfileid: "78255167"
     > [!NOTE]
     > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
 
-6. Нажмите кнопку **Сохранить**.
+6. Щелкните **Сохранить**.
 
 7. Выберите **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 
@@ -230,7 +230,7 @@ ms.locfileid: "78255167"
 
 * Выберите **Запустить миграцию**.
 
-    Появляется окно миграционной активности, а **состояние** действия **инициализируется.**
+    Откроется окно действие миграции, в котором будет **инициализировано** **состояние** действия.
 
 ## <a name="monitor-the-migration"></a>Мониторинг миграции
 
@@ -248,7 +248,7 @@ ms.locfileid: "78255167"
 
 ## <a name="perform-migration-cutover"></a>Выполнение прямой миграции
 
-После завершения первоначальной полной нагрузки базы данных помечаются **готовыми к сокращению.**
+После завершения начальной полной загрузки базы данных помечаются как **готовые к прямую миграцию**.
 
 1. Когда вы будете готовы выполнить миграцию базы данных, щелкните **Запустить прямую миграцию**.
 

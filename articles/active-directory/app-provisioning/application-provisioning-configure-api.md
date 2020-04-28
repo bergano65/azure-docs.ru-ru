@@ -1,6 +1,6 @@
 ---
-title: Используйте AI-аДО Microsoft Graph для настройки подготовки - Активный каталог Azure (ru) Документы Майкрософт
-description: Вам нужно настроить подготовку для нескольких экземпляров приложения? Узнайте, как сэкономить время, используя AIS Microsoft Graph для автоматизации конфигурации автоматического проготовивания.
+title: Использование Microsoft Graph API для настройки подготовки — Azure Active Directory | Документация Майкрософт
+description: Необходимо настроить подготовку для нескольких экземпляров приложения? Узнайте, как сэкономить время с помощью API-интерфейсов Microsoft Graph для автоматизации настройки автоматической подготовки.
 services: active-directory
 documentationcenter: ''
 author: msmimart
@@ -17,43 +17,43 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c72217a565071f9531281af1862ba3681e353a4d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79481472"
 ---
-# <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с использованием AIS Microsoft Graph
+# <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с помощью API-интерфейсов Microsoft Graph
 
-Портал Azure — это удобный способ настройки подготовки отдельных приложений по одному. Но если вы создаете несколько или даже сотни экземпляров приложения, может быть проще автоматизировать создание и конфигурацию приложений с помощью AIS Microsoft Graph. В этой статье описывается, как автоматизировать конфигурацию подготовки с помощью AA. Этот метод обычно используется для таких приложений, как [Amazon Web Services.](../saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso)
+Портал Azure — это удобный способ настройки подготовки для отдельных приложений по одному за раз. Но если вы создаете несколько или даже сотни экземпляров приложения, можно легко автоматизировать создание и настройку приложений с помощью Microsoft Graph API. В этой статье описано, как автоматизировать подготовку конфигурации с помощью интерфейсов API. Этот метод обычно используется для таких приложений, как [Amazon Web Services](../saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
 
-**Обзор шагов по использованию AIS Microsoft Graph для автоматизации конфигурации подготовки**
+**Общие сведения о действиях по использованию Microsoft Graph API для автоматизации настройки подготовки**
 
 
 |Шаг  |Сведения  |
 |---------|---------|
-|[Шаг 1. Создание приложения галереи](#step-1-create-the-gallery-application)     |Восподписание перед клиентом API <br> Изыскните шаблон приложения галереи <br> Создание приложения галереи         |
-|[Шаг 2. Создание задания подготовки на основе шаблона](#step-2-create-the-provisioning-job-based-on-the-template)     |Извлеките шаблон для разъема подготовки <br> Создание задания подготовки         |
-|[Шаг 3. Разрешить доступ](#step-3-authorize-access)     |Протестировать подключение к приложению <br> Сохранить учетные данные         |
-|[Шаг 4. Начало подготовки задания](#step-4-start-the-provisioning-job)     |Запустите задание         |
-|[Шаг 5. Мониторинг подготовки](#step-5-monitor-provisioning)     |Проверьте состояние задания по подготовке <br> Извлекать журналы подготовки         |
+|[Шаг 1. Создание приложения коллекции](#step-1-create-the-gallery-application)     |Вход в клиент API <br> Получение шаблона приложения коллекции <br> Создание приложения коллекции         |
+|[Шаг 2. Создание задания подготовки на основе шаблона](#step-2-create-the-provisioning-job-based-on-the-template)     |Получение шаблона для соединителя подготовки <br> Создание задания подготовки         |
+|[Шаг 3. Авторизация доступа](#step-3-authorize-access)     |Проверка подключения к приложению <br> Сохранение учетных данных         |
+|[Шаг 4. Запуск задания подготовки](#step-4-start-the-provisioning-job)     |Запустите задание         |
+|[Шаг 5. Подготовка монитора](#step-5-monitor-provisioning)     |Проверка состояния задания подготовки <br> Получение журналов подготовки         |
 
 > [!NOTE]
-> Объекты ответа, указанные в этой статье, могут быть сокращены для удобства чтения. Все свойства будут возвращены из фактического вызова.
+> Объекты ответа, приведенные в этой статье, могут быть сокращены для удобства чтения. Все свойства будут возвращены из фактического вызова.
 
-## <a name="step-1-create-the-gallery-application"></a>Шаг 1: Создайте приложение галереи
+## <a name="step-1-create-the-gallery-application"></a>Шаг 1. Создание приложения коллекции
 
-### <a name="sign-in-to-microsoft-graph-explorer-recommended-postman-or-any-other-api-client-you-use"></a>Войти на microsoft Graph Explorer (рекомендуется), Почтальон или любой другой клиент API, который вы используете
+### <a name="sign-in-to-microsoft-graph-explorer-recommended-postman-or-any-other-api-client-you-use"></a>Войдите в Microsoft Graph Explorer (рекомендуется), POST или любой другой клиент API, который вы используете.
 
-1. Запустите [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
-1. Выберите кнопку "Войти в систему с корпорацией Майкрософт" и вопийте с помощью глобального администратора Azure AD или учетных данных App Admin.
+1. Запуск [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer)
+1. Нажмите кнопку "вход с помощью Microsoft" и выполните вход с помощью глобального администратора Azure AD или учетных данных администратора приложения.
 
     ![Выполнение входа в Graph](./media/application-provisioning-configure-api/wd_export_02.png)
 
-1. После успешного вхостана вы увидите данные учетной записи пользователя в левом стеле.
+1. После успешного входа в систему вы увидите сведения об учетной записи пользователя на панели слева.
 
-### <a name="retrieve-the-gallery-application-template-identifier"></a>Изыскните идентификатор шаблона шаблона приложения галереи
-Приложения в галерее приложений Azure AD имеют [шаблон приложения,](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http) описывающий метаданные для этого приложения. Используя этот шаблон, можно создать экземпляр приложения и основного обслуживания в вашем арендаторе для управления.
+### <a name="retrieve-the-gallery-application-template-identifier"></a>Получение идентификатора шаблона приложения коллекции
+У приложений в коллекции приложений Azure AD есть [шаблон приложения](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http) , описывающий метаданные для этого приложения. С помощью этого шаблона можно создать экземпляр приложения и субъекта-службы в клиенте для управления.
 
 #### <a name="request"></a>*Запрос*
 
@@ -103,9 +103,9 @@ Content-type: application/json
 }
 ```
 
-### <a name="create-the-gallery-application"></a>Создание приложения галереи
+### <a name="create-the-gallery-application"></a>Создание приложения коллекции
 
-Идентификатор шаблона, полученный для приложения, на последнем этапе создайте экземпляр приложения и [основной](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) службы в вашем арендаторе.
+Для [создания экземпляра](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) приложения и субъекта-службы в клиенте используйте идентификатор шаблона, полученный в приложении на предыдущем шаге.
 
 #### <a name="request"></a>*Запрос*
 
@@ -170,11 +170,11 @@ Content-type: application/json
 }
 ```
 
-## <a name="step-2-create-the-provisioning-job-based-on-the-template"></a>Шаг 2: Создать задание подготовки на основе шаблона
+## <a name="step-2-create-the-provisioning-job-based-on-the-template"></a>Шаг 2. Создание задания подготовки на основе шаблона
 
-### <a name="retrieve-the-template-for-the-provisioning-connector"></a>Извлеките шаблон для разъема подготовки
+### <a name="retrieve-the-template-for-the-provisioning-connector"></a>Получение шаблона для соединителя подготовки
 
-Приложения в галерее, включенные для подготовки, имеют шаблоны для оптимизации конфигурации. Используйте запрос ниже, чтобы [получить шаблон для конфигурации подготовки.](https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-beta&tabs=http) Обратите внимание, что вам нужно будет предоставить идентификатор. Идентификатор относится к предыдущему ресурсу, который в данном случае является ServicePrincipal. 
+Приложения в коллекции, для которых включена подготовка, имеют шаблоны для упрощения настройки. Используйте следующий запрос, чтобы [получить шаблон для конфигурации подготовки](https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-beta&tabs=http). Обратите внимание, что вам потребуется указать идентификатор. ИДЕНТИФИКАТОР ссылается на предыдущий ресурс, который в данном случае является ServicePrincipal. 
 
 #### <a name="request"></a>*Запрос*
 
@@ -212,7 +212,7 @@ HTTP/1.1 200 OK
 ```
 
 ### <a name="create-the-provisioning-job"></a>Создание задания подготовки
-Для обеспечения подготовки сначала необходимо [создать задание.](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-beta&tabs=http) Используйте запрос ниже, чтобы создать задание подготовки. Используйте шаблонId с предыдущего шага при указании шаблона, который будет использоваться для выполнения задания.
+Чтобы включить подготовку, сначала необходимо [создать задание](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-beta&tabs=http). Используйте приведенный ниже запрос для создания задания подготовки. Используйте templateId из предыдущего шага при указании шаблона, который будет использоваться для задания.
 
 #### <a name="request"></a>*Запрос*
 <!-- {
@@ -262,11 +262,11 @@ Content-type: application/json
 }
 ```
 
-## <a name="step-3-authorize-access"></a>Шаг 3: Разрешить доступ
+## <a name="step-3-authorize-access"></a>Шаг 3. Авторизация доступа
 
-### <a name="test-the-connection-to-the-application"></a>Протестировать подключение к приложению
+### <a name="test-the-connection-to-the-application"></a>Проверка подключения к приложению
 
-Проверьте соединение с сторонним приложением. Приведенприведенный ниже пример для приложения, которое требует clientSecret и secretToken. Каждое приложение имеет свои требования. Приложения часто используют BaseAddress вместо ClientSecret. Чтобы определить, какие учетные данные требуется приложению, перейдите на страницу конфигурации подготовки для приложения и в режиме разработчика нажмите тестное соединение. Сетевой трафик будет отображать параметры, используемые для учетных данных. Полный список учетных данных можно найти [здесь](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http). 
+Проверьте соединение с приложением стороннего производителя. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Приложения часто используют BaseAddress вместо ClientSecret. Чтобы определить, какие учетные данные требуются приложению, перейдите на страницу конфигурации подготовки для приложения и в режиме разработчика щелкните Проверить подключение. В сетевом трафике будут показаны параметры, используемые для учетных данных. Полный список учетных данных можно найти [здесь](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http). 
 
 #### <a name="request"></a>*Запрос*
 ```msgraph-interactive
@@ -288,9 +288,9 @@ POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/job
 HTTP/1.1 204 No Content
 ```
 
-### <a name="save-your-credentials"></a>Сохранить учетные данные
+### <a name="save-your-credentials"></a>Сохранение учетных данных
 
-Настройка подготовки требует создания доверия между Azure AD и приложением. Разрешить доступ к стороннему приложению. Приведенприведенный ниже пример для приложения, которое требует clientSecret и secretToken. Каждое приложение имеет свои требования. Просмотрите [документацию API,](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) чтобы увидеть доступные варианты. 
+Для настройки подготовки необходимо установить доверие между Azure AD и приложением. Авторизуйте доступ к сторонним приложениям. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Просмотрите [документацию по API](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) , чтобы просмотреть доступные варианты. 
 
 #### <a name="request"></a>*Запрос*
 ```msgraph-interactive
@@ -314,8 +314,8 @@ PUT https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/secr
 HTTP/1.1 204 No Content
 ```
 
-## <a name="step-4-start-the-provisioning-job"></a>Шаг 4: Начало задания по подготовке
-Теперь, когда задание подготовки настроено, используйте следующую команду для [начала задания.](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&tabs=http) 
+## <a name="step-4-start-the-provisioning-job"></a>Шаг 4. Запуск задания подготовки
+Теперь, когда задание подготовки настроено, используйте следующую команду для [запуска задания](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&tabs=http). 
 
 
 #### <a name="request"></a>*Запрос*
@@ -338,11 +338,11 @@ HTTP/1.1 204 No Content
 ```
 
 
-## <a name="step-5-monitor-provisioning"></a>Шаг 5: Мониторинг подготовки
+## <a name="step-5-monitor-provisioning"></a>Шаг 5. Подготовка к мониторингу
 
-### <a name="monitor-the-provisioning-job-status"></a>Мониторинг статуса задания
+### <a name="monitor-the-provisioning-job-status"></a>Мониторинг состояния задания подготовки
 
-Теперь, когда задание подготовки выполняется, используйте следующую команду для отслеживания хода текущего цикла подготовки, а также статистические данные на сегодняшний день, такие как количество пользователей и групп, которые были созданы в целевой системе. 
+Теперь, когда задание подготовки выполняется, используйте следующую команду, чтобы отслеживать ход выполнения текущего цикла подготовки, а также статистические данные по датам, таким как число пользователей и групп, созданных в целевой системе. 
 
 #### <a name="request"></a>*Запрос*
 <!-- {
@@ -397,7 +397,7 @@ Content-length: 2577
 
 
 ### <a name="monitor-provisioning-events-using-the-provisioning-logs"></a>Мониторинг событий подготовки с помощью журналов подготовки
-В дополнение к мониторингу состояния задания подготовки можно использовать [журналы подготовки](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http) для запроса всех происходящих событий (например, запрос для конкретного пользователя и определить, были ли они успешно подготовлены).
+В дополнение к наблюдению за состоянием задания подготовки можно использовать [журналы подготовки](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http) для запроса всех происходящих событий (например, запрос определенного пользователя и определения, были ли они успешно подготовлены).
 
 #### <a name="request"></a>*Запрос*
 ```msgraph-interactive
@@ -529,7 +529,7 @@ Content-type: application/json
 }
 
 ```
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-- [Просмотрите документацию синхронизации Microsoft Graph](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)
+- [Обзор документации по Microsoft Graph синхронизации](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)
 - [Интеграция пользовательского приложения SCIM с Azure AD](use-scim-to-provision-users-and-groups.md)

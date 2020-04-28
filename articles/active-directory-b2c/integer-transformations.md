@@ -1,7 +1,7 @@
 ---
-title: Integer утверждает примеры трансформации для пользовательских политик
+title: Примеры преобразования целочисленных требований для пользовательских политик
 titleSuffix: Azure AD B2C
-description: Integer утверждает примеры трансформации для схемы интерфейса identity Experience (IEF) Active Directory B2C.
+description: Примеры преобразования целочисленных утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,23 +12,23 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: ece25e95bbbe9f1a1fa591c29ea9ffda0fefd369
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78187684"
 ---
 # <a name="integer-claims-transformations"></a>Преобразования целочисленных утверждений
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приводятся примеры использования инкемгепреобразований системы интерфейса identity Experience в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приводятся примеры использования преобразования целочисленных утверждений схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
 ## <a name="convertnumbertostringclaim"></a>ConvertNumberToStringClaim
 
 Преобразует тип данных "длинное целое" в тип данных "строка".
 
-| Item | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | long | ClaimType для преобразования в строку. |
 | outputClaim | outputClaim | строка | ClaimType, который создается после вызова ClaimsTransformation. |

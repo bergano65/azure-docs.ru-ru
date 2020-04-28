@@ -11,10 +11,10 @@ ms.date: 11/30/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: d6dad52c8a3e63c64bb8e0e0030e8c50b5bab42c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78183114"
 ---
 # <a name="set-up-self-service-password-reset-for-your-customers"></a>Настройка самостоятельного сброса пароля для пользователей
@@ -30,7 +30,7 @@ ms.locfileid: "78183114"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) под именем администратора подписки. Это рабочая или учебная учетная запись либо учетная запись Майкрософт, которая использовалась для создания каталога.
 2. Откройте **Azure Active Directory**, щелкнув в области навигации слева.
-3. Прокрутите вниз на лезвии опций и выберите **сбросить пароль.**
+3. Прокрутите колонку "Параметры" вниз и выберите **Сброс пароля**.
 4. Для параметра **Разрешен самостоятельный сброс пароля** задайте значение **Все**.
 5. Щелкните **Сохранить** в верхней части страницы. Готово!
 
