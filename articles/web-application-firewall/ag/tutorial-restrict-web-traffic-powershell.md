@@ -1,5 +1,5 @@
 ---
-title: Ограничьте веб-трафик с помощью PowerShell
+title: Ограничение веб-трафика с помощью PowerShell
 titleSuffix: Azure Web Application Firewall
 description: Узнайте, как ограничить веб-трафик с помощью брандмауэра веб-приложения и Azure PowerShell.
 services: web-application-firewall
@@ -9,15 +9,15 @@ ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: a57c5b155f7ab00f781236cfceea59a4277ff06a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74046280"
 ---
 # <a name="enable-web-application-firewall-using-azure-powershell"></a>Включение брандмауэра веб-приложения с помощью Azure PowerShell
 
-Можно ограничить трафик на шлюзе приложения с помощью [веб-приложения Firewall](ag-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса. 
+Вы можете ограничить трафик в шлюзе приложений с помощью [брандмауэра веб-приложения](ag-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса. 
 
 Вы узнаете, как выполнять следующие задачи:
 

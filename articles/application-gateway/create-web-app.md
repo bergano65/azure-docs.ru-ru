@@ -9,13 +9,13 @@ ms.topic: article
 ms.date: 11/15/2019
 ms.author: victorh
 ms.openlocfilehash: 4198c83a167ad8f2d52f4393c39625948e18e6e3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74089510"
 ---
-# <a name="configure-app-service-with-application-gateway-using-powershell"></a>Настройка службы приложений с помощью шлюза приложений с помощью PowerShell
+# <a name="configure-app-service-with-application-gateway-using-powershell"></a>Настройка службы приложений с использованием шлюза приложений с помощью PowerShell
 
 Шлюз приложений позволяет иметь приложение службы приложений или другую мультитенантную службу в качестве участника узла серверной части. В этой статье вы узнаете, как настраивать приложения службы приложений с помощью шлюза приложений. Первый пример показывает, как настроить шлюз приложений для использования в качестве участника пула серверной части веб-приложения. Второй пример показывает, как создать шлюз приложений с помощью веб-приложения в качестве участника пула серверной части.
 

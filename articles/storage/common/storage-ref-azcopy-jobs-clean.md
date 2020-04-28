@@ -1,6 +1,6 @@
 ---
-title: азкопия рабочих мест чистой Документы Майкрософт
-description: В этой статье содержится справочная информация для чистой команды заданий azcopy.
+title: Очистка заданий azcopy | Документация Майкрософт
+description: В этой статье содержатся справочные сведения по команде azcopy jobs.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -9,24 +9,24 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 7ae14c3606dfe6bffa8481682843f3f2e85c2131
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74033719"
 ---
 # <a name="azcopy-jobs-clean"></a>azcopy jobs clean
 
-Удалить все файлы журнала и спланировать все задания
+Удалить все файлы журналов и планов для всех заданий
 
 ```
 azcopy jobs clean [flags]
 ```
 
-## <a name="related-conceptual-articles"></a>Похожие концептуальные статьи
+## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
 - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
-- [Передача данных с помощью хранилища AzCopy и Blob](storage-use-azcopy-blobs.md)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
 - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -38,15 +38,15 @@ azcopy jobs clean [flags]
 
 ## <a name="options"></a>Параметры
 
-**-h, --помощь**                Помощь для очистки.
+**-h,--Справка**                Справка по очистке.
 
-**--с-статус** строки Только удалить задания с этим статусом, доступные значения: Отменено, Завершено, Не удалось, InProgress, Все (по умолчанию "Все")
+**параметр--WITH-Status** удаляет только задания с этим состоянием, доступные значения: отменено, завершено, сбой, выполняется, все (по умолчанию "все")
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-**--кап-мбитп uint32**      Ограничивает скорость передачи, в мегабитах в секунду. Пропускная часть момент за моментом может незначительно отличаться от крышки. Если эта опция установлена до нуля или опущена, пропускная часть не ограничена.
+**--Cap-Мбит/с UInt32**      Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
 
-**--тип вывода** Формат вывода команды. Выбор включает в себя: текст, Json. Значение по умолчанию — это «текст». (по умолчанию "текст")
+**--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
 
 ## <a name="see-also"></a>См. также
 

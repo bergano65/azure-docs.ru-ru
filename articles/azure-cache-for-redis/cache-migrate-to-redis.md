@@ -1,5 +1,5 @@
 ---
-title: Перенести приложения службы управляемого кэша в Redis - Azure
+title: Перенос приложений управляемой службы кэша в Redis — Azure
 description: Узнайте, как перенести приложения управляемой службы кэша и приложения кэша роли в кэш Azure для Redis.
 author: yegu-ms
 ms.service: cache
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/30/2017
 ms.author: yegu
 ms.openlocfilehash: 9596b8cb771f114cb09c5d6c6ae33b4fc4a8cada
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74122685"
 ---
 # <a name="migrate-from-managed-cache-service-to-azure-cache-for-redis"></a>Перенос из управляемой службы кэша в кэш Azure для Redis
@@ -54,7 +54,7 @@ ms.locfileid: "74122685"
 
 * **Basic** — один узел. Множество размеров вплоть до 53 ГБ.
 * **Стандартный** — два узла: основной и реплика. Множество размеров вплоть до 53 ГБ. СОГЛАШЕНИЕ ОБ УРОВНЕ ОБСЛУЖИВАНИЯ 99,9 %.
-* **Премиум** — два узла (основной и реплика), включающие до 10 сегментов. Множественные размеры от 6 ГБ до 1,2 ТБ. Все функции уровня "Стандартный", а также дополнительные функции, включая поддержку [кластера Redis](cache-how-to-premium-clustering.md), [сохраняемости Redis](cache-how-to-premium-persistence.md) и [виртуальной сети Azure](cache-how-to-premium-vnet.md). СОГЛАШЕНИЕ ОБ УРОВНЕ ОБСЛУЖИВАНИЯ 99,9 %.
+* **Премиум** — два узла (основной и реплика), включающие до 10 сегментов. Несколько размеров от 6 ГБ до 1,2 ТБ. Все функции уровня "Стандартный", а также дополнительные функции, включая поддержку [кластера Redis](cache-how-to-premium-clustering.md), [сохраняемости Redis](cache-how-to-premium-persistence.md) и [виртуальной сети Azure](cache-how-to-premium-vnet.md). СОГЛАШЕНИЕ ОБ УРОВНЕ ОБСЛУЖИВАНИЯ 99,9 %.
 
 Каждый уровень отличается доступными возможностями и ценой. Конкретные возможности рассматриваются ниже в этом руководстве, а дополнительные сведения о ценах доступны на странице [Сведения о ценах — кэш](https://azure.microsoft.com/pricing/details/cache/).
 
@@ -122,7 +122,7 @@ ms.locfileid: "74122685"
 using StackExchange.Redis
 ```
 
-Если это пространство имен не разрешится, убедитесь, что вы добавили пакет StackExchange.Redis NuGet, описанный в [квикстарте: Используйте кэш Azure для Redis с помощью приложения .NET.](cache-dotnet-how-to-use-azure-redis-cache.md)
+Если это пространство имен не разрешается, убедитесь, что вы добавили пакет NuGet StackExchange. Redis, как описано в разделе [Краткое руководство по использованию кэша Azure для Redis с приложением .NET](cache-dotnet-how-to-use-azure-redis-cache.md).
 
 > [!NOTE]
 > Обратите внимание, что клиенту StackExchange.Redis необходима среда .NET Framework 4 или выше.

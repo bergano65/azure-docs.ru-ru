@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 09/12/2019
 ms.author: akjosh
 ms.openlocfilehash: bf17f499c1e8339a1e9abb13cffd5e35c390f564
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74072979"
 ---
 # <a name="azure-virtual-machine-extensions-and-features"></a>Расширения и компоненты виртуальной машины Azure
@@ -52,31 +52,31 @@ ms.locfileid: "74072979"
 
 ## <a name="troubleshoot-extensions"></a>Устранение неполадок расширений
 
-Информация о проблемно-схватом для каждого расширения может быть найдена в разделе **Troubleshoot и поддержки** в обзоре для расширения. Вот список информации о устранении неполадок доступны:
+Сведения об устранении неполадок для каждого расширения можно найти в разделе **Устранение неполадок и поддержка** в обзоре расширения. Ниже приведен список доступных сведений по устранению неполадок.
 
 | Пространство имен | Устранение неполадок |
 |-----------|-----------------|
-| microsoft.azure.monitoring.dependencyagent.dependencyagentlinux | [Зависимость от монитора Azure для Linux](agent-dependency-linux.md#troubleshoot-and-support) |
-| microsoft.azure.monitoring.dependencyagent.dependencyagent.dependencyagentwindows | [Зависимость от монитора Azure для Windows](agent-dependency-windows.md#troubleshoot-and-support) |
-| microsoft.azure.security.azurediskencryptionforlinux | [Лазурное шифрование дисков для Linux](azure-disk-enc-linux.md#troubleshoot-and-support) |
-| microsoft.azure.security.azurediskencryption | [Шифрование дисков Azure для Windows](azure-disk-enc-windows.md#troubleshoot-and-support) |
-| microsoft.compute.customscriptextension | [Пользовательский скрипт для Windows](custom-script-windows.md#troubleshoot-and-support) |
-| microsoft.ostcextensions.customscriptforlinux | [Пожеланная конфигурация состояния для Linux](dsc-linux.md#troubleshoot-and-support) |
-| microsoft.powershell.dsc | [Пожеланная конфигурация состояния для Windows](dsc-windows.md#troubleshoot-and-support) |
-| microsoft.hpccompute.nvidiagpudriverlinux | [NVIDIA GPU Расширение драйвера для Linux](hpccompute-gpu-linux.md#troubleshoot-and-support) |
-| microsoft.hpccompute.nvidiagpudriverwindows | [NVIDIA GPU Расширение драйвера для Windows](hpccompute-gpu-windows.md#troubleshoot-and-support) |
-| microsoft.azure.security.iaasantimalware | [Антивредоносное расширение для Windows](iaas-antimalware-windows.md#troubleshoot-and-support) |
-| microsoft.enterprisecloud.monitoring.omsagentforlinux | [Azure Monitor для Linux](oms-linux.md#troubleshoot-and-support)
-| microsoft.enterprisecloud.monitoring.Microsoftmonitoringagent | [Монитор Azure для Windows](oms-windows.md#troubleshoot-and-support) |
-| stackify.linuxagent.extension.stackifylinuxagentextension | [Проследить стеки для Linux](stackify-retrace-linux.md#troubleshoot-and-support) |
-| vmaccessforlinux.microsoft.ostcextensions | [Сбросить пароль (VMAccess) для Linux](vmaccess.md#troubleshoot-and-support) |
-| microsoft.recoveryservices.vmsnapshot | [Снимок для Linux](vmsnapshot-linux.md#troubleshoot-and-support) |
-| microsoft.recoveryservices.vmsnapshot | [Снимок для Windows](vmsnapshot-windows.md#troubleshoot-and-support) |
+| Microsoft. Azure. Monitoring. депенденциажент. депенденциажентлинукс | [Зависимость от Azure Monitor для Linux](agent-dependency-linux.md#troubleshoot-and-support) |
+| Microsoft. Azure. Monitoring. депенденциажент. депенденциажентвиндовс | [Зависимость Azure Monitor для Windows](agent-dependency-windows.md#troubleshoot-and-support) |
+| Microsoft. Azure. Security. azurediskencryptionforlinux | [Шифрование дисков Azure для Linux](azure-disk-enc-linux.md#troubleshoot-and-support) |
+| Microsoft. Azure. Security. azurediskencryption | [Шифрование дисков Azure для Windows](azure-disk-enc-windows.md#troubleshoot-and-support) |
+| Microsoft. COMPUTE. customscriptextension | [Пользовательский скрипт для Windows](custom-script-windows.md#troubleshoot-and-support) |
+| Microsoft. ostcextensions. customscriptforlinux | [Настройка требуемого состояния для Linux](dsc-linux.md#troubleshoot-and-support) |
+| Microsoft. PowerShell. DSC | [Настройка требуемого состояния для Windows](dsc-windows.md#troubleshoot-and-support) |
+| Microsoft. хпккомпуте. нвидиагпудриверлинукс | [Расширение драйвера GPU NVIDIA для Linux](hpccompute-gpu-linux.md#troubleshoot-and-support) |
+| Microsoft. хпккомпуте. нвидиагпудривервиндовс | [Расширение драйвера GPU NVIDIA для Windows](hpccompute-gpu-windows.md#troubleshoot-and-support) |
+| Microsoft. Azure. Security. iaasantimalware | [Расширение антивредоносной программы для Windows](iaas-antimalware-windows.md#troubleshoot-and-support) |
+| Microsoft. ентерприсеклауд. Monitoring. omsagentforlinux | [Azure Monitor для Linux](oms-linux.md#troubleshoot-and-support)
+| Microsoft. ентерприсеклауд. Monitoring. расширение microsoftmonitoringagent | [Azure Monitor для Windows](oms-windows.md#troubleshoot-and-support) |
+| stackify. линуксажент. extension. стаккифилинуксажентекстенсион | [Перетрассировка Stackify для Linux](stackify-retrace-linux.md#troubleshoot-and-support) |
+| vmaccessforlinux. Microsoft. ostcextensions | [Сброс пароля (VMAccess) для Linux](vmaccess.md#troubleshoot-and-support) |
+| Microsoft. recoveryservices. vmsnapshot | [Моментальный снимок для Linux](vmsnapshot-linux.md#troubleshoot-and-support) |
+| Microsoft. recoveryservices. vmsnapshot | [Моментальный снимок для Windows](vmsnapshot-windows.md#troubleshoot-and-support) |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о работе агента и расширений для Linux см. в статье о [расширениях и компонентах виртуальной машины Azure для Linux](features-linux.md).
 * Дополнительные сведения о работе гостевого агента и расширений для Windows см. в статье о [расширениях и компонентах виртуальной машины Azure для Windows](features-windows.md).  
-* Чтобы установить гостевой [Azure Windows Virtual Machine Agent Overview](agent-windows.md)агент Windows, см.  
-* Чтобы установить Linux [Azure Linux Virtual Machine Agent Overview](agent-linux.md)Agent, см.  
+* Сведения об установке гостевого агента Windows см. в статье [Обзор агента виртуальных машин Windows в Azure](agent-windows.md).  
+* Сведения об установке агента Linux см. в статье [Обзор агента виртуальной машины Linux в Azure](agent-linux.md).  
 

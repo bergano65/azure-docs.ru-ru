@@ -1,6 +1,6 @@
 ---
-title: азкопия Документы Майкрософт
-description: В этой статье содержится справочная информация для команды azcopy.
+title: azcopy | Документация Майкрософт
+description: В этой статье содержатся справочные сведения о команде azcopy.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -9,36 +9,36 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 5da3a2e5d003a191bff66af6599cae4d34ab60c6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74038089"
 ---
 # <a name="azcopy"></a>azcopy
 
-AzCopy — это инструмент командной строки, который перемещает данные в и из хранилища Azure.
+AzCopy — это программа командной строки, которая перемещает данные в службу хранилища Azure и из нее.
 
 ## <a name="synopsis"></a>Краткий обзор
 
 Общий формат команд: `azcopy [command] [arguments] --[flag-name]=[flag-value]`.
 
-Чтобы сообщить о проблемах или [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy)узнать больше об этом инструменте, см.
+Чтобы сообщить о проблемах или узнать больше об этом средстве, [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy)см. раздел.
 
-## <a name="related-conceptual-articles"></a>Похожие концептуальные статьи
+## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
 - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
-- [Передача данных с помощью хранилища AzCopy и Blob](storage-use-azcopy-blobs.md)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
 - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="options"></a>Параметры
 
-**--кап-мбитп uint32**   Ограничивает скорость передачи, в мегабитах в секунду. Пропускная часть момент за моментом может незначительно отличаться от крышки. Если эта опция установлена до нуля или опущена, пропускная часть не ограничена.
+**--Cap-Мбит/с UInt32**   Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
 
-**-h, --помощь** Справка по азкопии
+**-h,--Справка** Справка по azcopy
       
-**--выходтипа**  Формат вывода команды. Выбор включает в себя: текст, Json. Значение по умолчанию — это «текст». (по умолчанию "текст")
+**--Output-Type**  Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
 
 ## <a name="see-also"></a>См. также
 

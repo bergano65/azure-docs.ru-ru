@@ -1,7 +1,7 @@
 ---
 title: Установка ролей RBAC для административного доступа Azure
 titleSuffix: Azure Cognitive Search
-description: Управление административным управлением на основе ролей (RBAC) на портале Azure для управления и делегирования административных задач для управления когнитивным поиском Azure.
+description: Административный контроль на основе ролей (RBAC) в портал Azure для управления административными задачами и их делегирования в Azure Когнитивный поиск Management.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
@@ -9,22 +9,22 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 9262d01e35bd03a9116a30b070b023f578f0b15a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74112560"
 ---
-# <a name="set-rbac-roles-for-administrative-access-to-azure-cognitive-search"></a>Установка ролей RBAC для административного доступа к когнитивному поиску Azure
+# <a name="set-rbac-roles-for-administrative-access-to-azure-cognitive-search"></a>Установка ролей RBAC для административного доступа к Azure Когнитивный поиск
 
-Azure реализует [глобальную модель авторизации на основе ролей](../role-based-access-control/role-assignments-portal.md) для всех служб, управляемых через портал или API Resource Manager. Роли владельца, вкладчика и чтения определяют уровень *администрирования служб* для пользователей, групп и принципов безопасности, назначенных каждой роли. 
+Azure реализует [глобальную модель авторизации на основе ролей](../role-based-access-control/role-assignments-portal.md) для всех служб, управляемых через портал или API Resource Manager. Роли "владелец", "участник" и "читатель" определяют уровень *администрирования служб* для Active Directory пользователей, групп и субъектов безопасности, назначенных каждой роли. 
 
 > [!Note]
 > Элементы управления доступом на основе ролей для защиты частей индекса или набора документов отсутствуют. Чтобы применить доступ к результатам поиска на основе удостоверений, вы можете создать фильтры безопасности по идентификаторам, удаляя из результатов те документы, к которым запрашивающая сторона не должна иметь доступ. Дополнительные сведения см. в статьях о [фильтрах безопасности](search-security-trimming-for-azure-search.md) и [безопасности в Active Directory](search-security-trimming-for-azure-search-with-aad.md).
 
 ## <a name="management-tasks-by-role"></a>Задачи управления с использованием разных ролей
 
-Для Azure Cognitive Search роли связаны с уровнями разрешений, которые поддерживают следующие задачи управления:
+Для Когнитивный поиск Azure роли связаны с уровнями разрешений, которые поддерживают следующие задачи управления:
 
 | Роль | Задача |
 | --- | --- |
@@ -38,5 +38,5 @@ Azure реализует [глобальную модель авторизаци
 ## <a name="see-also"></a>См. также
 
 + [Управление с помощью PowerShell](search-manage-powershell.md) 
-+ [Производительность и оптимизация в когнитивном поиске Azure](search-performance-optimization.md)
-+ [Начатые с помощью управления доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
++ [Производительность и оптимизация в Azure Когнитивный поиск](search-performance-optimization.md)
++ Приступите к [работе с управлением доступом на основе ролей в портал Azure](../role-based-access-control/overview.md).

@@ -1,5 +1,5 @@
 ---
-title: Изменение статической группы членства в динамическом - Azure AD Документы Майкрософт
+title: Изменение членства статической группы на Dynamic — Azure AD | Документация Майкрософт
 description: Сведения о создании правил членства для автоматического заполнения групп и о ссылках на эти правила.
 services: active-directory
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 34451fcc4597f77464e5e9566613e21e9fecdbc6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74027311"
 ---
 # <a name="change-static-group-membership-to-dynamic-in-azure-active-directory"></a>Изменение статического типа членства в группах на динамический в Azure Active Directory
@@ -32,7 +32,7 @@ ms.locfileid: "74027311"
 
 ## <a name="change-the-membership-type-for-a-group"></a>Изменение типа членства для группы
 
-1. Вопийте в [центре администратора Ad Azure](https://aad.portal.azure.com) с учетной записью, которая является глобальным администратором или администратором пользователей в вашем арендаторе.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи глобального администратора или администратора пользователя в клиенте.
 2. Выберите **Группы**.
 3. В списке **Все группы** откройте группу, которую нужно изменить.
 4. Выберите **Свойства**.
@@ -46,7 +46,7 @@ ms.locfileid: "74027311"
   
 2. Выберите **Добавить динамический запрос**, а затем укажите правило.
   
-   ![ввести правило для динамической группы](./media/groups-change-type/enter-rule.png)
+   ![Введите правило для динамической группы](./media/groups-change-type/enter-rule.png)
   
 3. После создания правила выберите **Добавить запрос** в нижней части страницы.
 4. Щелкните **Сохранить** на странице **Свойства** группы, чтобы сохранить изменения. **Тип членства** группы будет немедленно обновлен в списке групп.

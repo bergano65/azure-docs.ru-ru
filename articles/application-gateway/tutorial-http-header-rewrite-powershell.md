@@ -1,5 +1,5 @@
 ---
-title: Создание шлюза приложения Azure & переписать заголовки HTTP
+title: Создание шлюза приложений Azure & перезапись заголовков HTTP
 description: Статья содержит сведения о том, как создать шлюз приложений Azure и как переписывать заголовки HTTP с помощью Azure PowerShell.
 services: application-gateway
 author: vhorne
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: absha
 ms.openlocfilehash: 2663c049245a7025b5948a64fc5008bb9e7dee90
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74173718"
 ---
 # <a name="create-an-application-gateway-and-rewrite-http-headers"></a>Создание шлюза приложений и перезапись заголовков HTTP
@@ -34,7 +34,7 @@ ms.locfileid: "74173718"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье требуется локальное запуск Azure PowerShell. Необходим модуль Az 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Import-Module Az`, а затем команду `Get-Module Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Для работы с этой статьей необходимо запустить Azure PowerShell локально. Необходим модуль Az 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Import-Module Az`, а затем команду `Get-Module Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

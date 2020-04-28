@@ -1,28 +1,28 @@
 ---
-title: Создание приложения в режиме реального времени - Функции Azure & службы сигнала Azure
-description: Узнайте, как разрабатывать веб-приложение без серверов в режиме реального времени с помощью службы Azure SignalR, следуя примеру.
+title: Создание приложения в режиме реального времени. функции Azure & службу Azure SignalR
+description: Дополнительные сведения о разработке бессерверного веб-приложения в режиме реального времени с помощью службы Azure SignalR см. в следующем примере.
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: cbb1fcf320a78f11045bf9627ffcc438af3e388a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74157625"
 ---
-# <a name="build-real-time-apps-with-azure-functions-and-azure-signalr-service"></a>Создавайте приложения в режиме реального времени с функциями Azure и службой Azure SignalR
+# <a name="build-real-time-apps-with-azure-functions-and-azure-signalr-service"></a>Создавайте приложения в режиме реального времени с помощью функций Azure и службы SignalR Azure.
 
-Поскольку служба Azure SignalR и функции Azure полностью управляются и высоко масштабируемыми службами, которые позволяют сосредоточиться на создании приложений, а не на управлении инфраструктурой, обычно эти две службы используются вместе для обеспечения связи в режиме реального времени в [среде без серверов.](https://azure.microsoft.com/solutions/serverless/)
+Так как служба Azure SignalR и функции Azure являются полностью управляемыми, масштабируемыми службами, которые позволяют сосредоточиться на создании приложений, а не на управлении инфраструктурой, обычно эти две службы используются совместно для обеспечения обмена данными в режиме реального времени в [бессерверной](https://azure.microsoft.com/solutions/serverless/) среде.
 
 > [!NOTE]
-> Научитесь использовать функции SignalR и Azure вместе в интерактивном [учебнике Включить автоматические обновления в веб-приложении с помощью Azure Функции и службы SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr).
+> Узнайте, как использовать SignalR и функции Azure вместе в интерактивном учебнике [Включение автоматического обновления в веб-приложении с помощью функций Azure и службы SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr).
 
 ## <a name="integrate-real-time-communications-with-azure-services"></a>Интеграция служб Azure в режиме реального времени
 
-Функции Azure позволяют записывать код на [нескольких языках,](../azure-functions/supported-languages.md)включая JavaScript, Python, C и Java, который вызывает события в облаке. Примеры этих событий.
+Функции Azure позволяют писать код на [нескольких языках](../azure-functions/supported-languages.md), включая JavaScript, Python, C# и Java, которые срабатывают при каждом возникновении событий в облаке. Примеры этих событий.
 
 * Запросы HTTP и веб-перехватчика.
 * Периодические таймеры.
@@ -66,9 +66,9 @@ ms.locfileid: "74157625"
 
 В этой статье вы получили общие сведения об использовании службы "Функции Azure" со службой SignalR для реализации широкого спектра бессерверных сценариев обмена сообщениями в реальном времени.
 
-Для получения подробной информации о том, как использовать функции Azure и службы SignalR вместе, посетите следующие ресурсы:
+Полные сведения об использовании функций Azure и службы SignalR см. в следующих ресурсах:
 
-* [Разработка и конфигурация функций Azure с помощью службы SignalR](signalr-concept-serverless-development-config.md)
+* [Разработка и Настройка функций Azure с помощью службы SignalR](signalr-concept-serverless-development-config.md)
 * [Обеспечение автоматических обновлений в веб-приложении с помощью Функций Azure и службы SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr)
 
 Дополнительные сведения см. в следующих кратких руководствах.

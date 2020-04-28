@@ -1,5 +1,5 @@
 ---
-title: Внутреннее перенаправление с использованием CLI
+title: Внутреннее перенаправление с помощью интерфейса командной строки
 titleSuffix: Azure Application Gateway
 description: Узнайте, как создать шлюз приложений, который перенаправляет внутренний веб-трафик в соответствующий пул с помощью Azure CLI.
 services: application-gateway
@@ -9,15 +9,15 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: 7d37e36a4cdfed462904e2d02871345ad89d7ac9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74074553"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI
 
-С помощью Azure CLI можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. Этот учебник предполагает, что вы владеете несколькими доменами и использует примеры *www\.contoso.com* и *www\.contoso.org*.
+С помощью Azure CLI можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом учебнике предполагается, что вы владеете несколькими доменами и в них используются примеры *www\.contoso.com* и *www\.contoso.org*.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -32,7 +32,7 @@ ms.locfileid: "74074553"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
+Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -97,7 +97,7 @@ az network application-gateway create \
 
 ## <a name="add-listeners-and-rules"></a>Добавление прослушивателей и правил 
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере слушатели создаются для доменов *www\.contoso.com* и www *\.contoso.org*.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере прослушиватели создаются для доменов *www\.contoso.com* и *www\.contoso.org*.
 
 Добавьте серверные прослушиватели, необходимые для маршрутизации трафика, при помощи команды [az network application-gateway http-listener create](/cli/azure/network/application-gateway/http-listener#az-network-application-gateway-http-listener-create).
 
@@ -120,7 +120,7 @@ az network application-gateway http-listener create \
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Добавьте конфигурацию перенаправления, которая отправляет трафик с *www\.consoto.org* слушателю для www *\.contoso.com* в шлюзе приложения, используя az [сетевое приложение-шлюз перенаправление-конфигурацию создать.](/cli/azure/network/application-gateway/redirect-config#az-network-application-gateway-redirect-config-create)
+Добавьте конфигурацию перенаправления, которая отправляет трафик из *www\.consoto.org* в прослушиватель для *www\.contoso.com* в шлюзе приложений, с помощью команды [AZ Network Application-шлюзов Redirect-config Create](/cli/azure/network/application-gateway/redirect-config#az-network-application-gateway-redirect-config-create).
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \
@@ -213,7 +213,7 @@ az network public-ip show \
 
 ![Проверка сайта contoso в шлюзе приложений](./media/redirect-internal-site-cli/application-gateway-nginxtest.png)
 
-Измените адрес другого домена,\/например http: /www.contoso.org и вы должны увидеть, что\.трафик был перенаправлен обратно слушателю на www contoso.com.
+Измените адрес на другой домен, например http:\//www.contoso.org, и вы увидите, что трафик был перенаправлен обратно в прослушиватель для www\.contoso.com.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

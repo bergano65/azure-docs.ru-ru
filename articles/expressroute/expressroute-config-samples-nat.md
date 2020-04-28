@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: образцы конфигурации маршрутизатора - NAT'
+title: Azure ExpressRoute. примеры конфигурации маршрутизатора — NAT
 description: Эта страница содержит примеры конфигурации для маршрутизаторов серий Cisco ASA и Juniper MX.
 services: expressroute
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: cherylmc
 ms.openlocfilehash: ef2fd40db422c459ca966e802344ef45f7ec01de
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74072115"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-nat"></a>Примеры конфигурации маршрутизатора для настройки и управления NAT
@@ -56,7 +56,7 @@ ms.locfileid: "74072115"
     Source Interface (where the traffic enters the ASA): inside
     Destination Interface (where the traffic exits the ASA): outside
 
-**Конфигурации:**
+**Настройка**
 
 Пул преобразования сетевых адресов:
 
@@ -82,7 +82,7 @@ ms.locfileid: "74072115"
 
 
 ## <a name="juniper-srx-series-routers"></a>Маршрутизаторы серии Juniper SRX
-### <a name="1-create-redundant-ethernet-interfaces-for-the-cluster"></a>1. Создание избыточных интерфейсов Ethernet для кластера
+### <a name="1-create-redundant-ethernet-interfaces-for-the-cluster"></a>1. создание избыточных интерфейсов Ethernet для кластера
     interfaces {
         reth0 {
             description "To Internal Network";
@@ -212,8 +212,8 @@ ms.locfileid: "74072115"
            }
        }
 
-### <a name="5-configure-bgp-to-advertise-selective-prefixes-in-each-direction"></a>5. Настройка BGP для рекламы селективных префиксов в каждом направлении
-Ссылайтесь на образцы на странице [конфигурации Routing.](expressroute-config-samples-routing.md)
+### <a name="5-configure-bgp-to-advertise-selective-prefixes-in-each-direction"></a>5. Настройка BGP для объявления выборочных префиксов в каждом направлении
+См. примеры на странице образцов [конфигурации маршрутизации](expressroute-config-samples-routing.md) .
 
 ### <a name="6-create-policies"></a>6. Создание политик
     routing-options {

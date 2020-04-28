@@ -1,6 +1,6 @@
 ---
-title: Доки роли админа в службах Microsoft 365 - Azure AD Документы Майкрософт
-description: Поиск ссылок на контент и API для ролей администратора для служб Microsoft 365 в Active Directory Azure
+title: Документация по ролям администраторов в Microsoft 365 службах Azure AD | Документация Майкрософт
+description: Поиск содержимого и справочников по API для ролей администратора служб Microsoft 365 в Azure Active Directory
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -15,13 +15,13 @@ ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 430b65217da33185cd3b5c235fb148f3350e1bfe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74024458"
 ---
-# <a name="administrator-roles-for-microsoft-365-services"></a>Роли администратора для служб Microsoft 365
+# <a name="administrator-roles-for-microsoft-365-services"></a>Роли администратора для служб Microsoft 365 Services
 
 Всеми продуктами в Microsoft 365 можно управлять с помощью административных ролей в Azure AD. Некоторые продукты также предоставляют дополнительные роли, относящиеся к этому продукту. Сведения о ролях, включенных в каждый продукт, см. в следующей таблице. Общие обсуждения проблем делегирования см. в статье [Делегирование администрирования в Azure Active Directory](roles-concept-delegation.md).
 
@@ -38,7 +38,7 @@ SharePoint Online | [Разрешения роли администратора 
 Оценка безопасности | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0)
 Диспетчер соответствия | [Разрешения и управление доступом на основе ролей](https://docs.microsoft.com/office365/securitycompliance/meet-data-protection-and-regulatory-reqs-using-microsoft-cloud#permissions-and-role-based-access-control) | Недоступно
 Azure Information Protection | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0)
-Microsoft Cloud App Security | [Элемент управления доступом на основе ролей](https://docs.microsoft.com/cloud-app-security/manage-admins) | [Ссылка на API](https://docs.microsoft.com/cloud-app-security/api-tokens) 
+Microsoft Cloud App Security | [Управление доступом на основе ролей](https://docs.microsoft.com/cloud-app-security/manage-admins) | [Справочник по интерфейсам API](https://docs.microsoft.com/cloud-app-security/api-tokens) 
 Расширенная защита от угроз Azure | [Группы ролей Azure ATP](https://docs.microsoft.com/azure-advanced-threat-protection/atp-role-groups) | Недоступно
 Advanced Threat Protection в Защитнике Windows | [Управление доступом к порталу с помощью элемента управления доступом на основе ролей](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/rbac-windows-defender-advanced-threat-protection) | Недоступно
 Управление привилегированными пользователями (PIM) | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0)

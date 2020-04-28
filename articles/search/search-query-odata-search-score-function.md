@@ -1,7 +1,7 @@
 ---
-title: Ссылка на функцию OData search.score
+title: Справочник по функциям поиска OData. Score
 titleSuffix: Azure Cognitive Search
-description: Синтаксис и справочная документация для использования функции search.score в запросах Azure Cognitive Search.
+description: Справочная документация по синтаксису и документации по использованию функции поиска. Score в Когнитивный поиск запросов Azure.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -20,28 +20,28 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 2439d4f03184f8dbb85b229b3908dff95013b4bc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74113141"
 ---
-# <a name="odata-searchscore-function-in-azure-cognitive-search"></a>Функция `search.score` OData в когнитивном поиске Azure
+# <a name="odata-searchscore-function-in-azure-cognitive-search"></a>Функция `search.score` OData в Azure когнитивный Поиск
 
-При отправке запроса в Azure Cognitive Search без [ **$orderby** параметра](search-query-odata-orderby.md)результаты, которые возвращаются, будут отсортированы в порядке убывания по оценке релевантности. Даже когда вы используете **$orderby,** оценка релевантности будет использоваться для разрыва связей по умолчанию. Однако иногда полезно использовать оценку релевантности в качестве исходного критерия сортировки и некоторых других критериев в качестве тай-брейка. Функция `search.score` позволяет это сделать.
+При отправке запроса в Когнитивный поиск Azure без [параметра **$OrderBy** ](search-query-odata-orderby.md)возвращенные результаты будут отсортированы в порядке убывания по релевантности. Даже если вы используете **$OrderBy**, показатель релевантности будет использоваться для разрыва связей по умолчанию. Однако иногда полезно использовать показатель релевантности в качестве начального критерия сортировки, а некоторые другие критерии — как средство разбиения. Эта `search.score` функция позволяет сделать это.
 
 ## <a name="syntax"></a>Синтаксис
 
-Синтаксис для `search.score` в **$orderby** — `search.score()`. Функция `search.score` не принимает параметров. Он может быть `asc` использован `desc` с или сортировочнитель или сортов, как и любой другой пункт в **$orderby** параметре. Он может появиться в любом месте списка критериев сортировки.
+Синтаксис для `search.score` в **$orderby** — `search.score()`. Функция `search.score` не принимает параметров. Его можно использовать с описателем `asc` или `desc` с помощью спецификатора сортировки, как и любое другое предложение в параметре **$OrderBy** . Он может находиться в любом месте в списке критериев сортировки.
 
 ## <a name="example"></a>Пример
 
-Сортировать отели в `search.score` `rating`порядке убывания и, а затем в порядке возрастания на расстоянии от данных координат так, что между двумя отелями с одинаковыми рейтингами, ближайший из них указан первым:
+Сортировать Гостиницы в убывающем порядке по `search.score` и `rating`, а затем в возрастающем порядке по расстоянию от заданных координат, чтобы между двумя гостиницами с одинаковыми рейтингами первым был указан ближайший вариант:
 
     search.score() desc,rating desc,geo.distance(location, geography'POINT(-122.131577 47.678581)') asc
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 
-- [Обзор языка выражения OData для когнитивного поиска Azure](query-odata-filter-orderby-syntax.md)
-- [Ссылка синтаксиса выражения OData для когнитивного поиска Azure](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure когнитивного поиска EST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
+- [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
+- [Поиск документов &#40;API Azure Когнитивный поиск EST&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)

@@ -1,5 +1,5 @@
 ---
-title: Пример приложения multi-tenant - Wingtip SaaS
+title: Пример приложения с несколькими клиентами — SaaS Wingtip
 description: В этой статье приводятся шаги и рекомендации по установке и запуску примера мультитенантного приложения SaaS, использующего Базу данных SQL Azure — Wingtip Tickets.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: genemi
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: 162d1f269c65ad98afa30e8e96370bbdceca99bd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74132293"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
@@ -24,7 +24,7 @@ ms.locfileid: "74132293"
 
 ## <a name="download-and-unblock-the-wingtip-tickets-saas-scripts"></a>Скачивание и разблокирование сценариев SaaS Wingtip Tickets
 
-Исполняемое содержимое (скрипты, библиотеки DLL) может быть заблокировано Windows, в то время как ZIP-файлы можно загрузить с внешнего источника, а затем извлечь их содержимое. При извлечении скриптов из почтового файла выполните **ниже шаги, чтобы разблокировать файл .zip перед извлечением.** После этого скрипты можно выполнять.
+Исполняемое содержимое (скрипты, библиотеки DLL) может быть заблокировано Windows, в то время как ZIP-файлы можно загрузить с внешнего источника, а затем извлечь их содержимое. При извлечении скриптов из ZIP-файла **выполните следующие действия, чтобы разблокировать ZIP-файл перед извлечением**. После этого скрипты можно выполнять.
 
 1. Перейдите в репозиторий SaaS Wingtip Tickets на сайте GitHub, в котором хранится шаблон аренды базы данных, который вы хотите просмотреть.
     - [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp)
@@ -37,7 +37,7 @@ ms.locfileid: "74132293"
 6. Нажмите кнопку **ОК**.
 7. Извлеките файлы.
 
-Сценарии расположены в *.. \\Папка для обучения модулей.*
+Сценарии находятся в *... Папка \\учебных модулей* .
 
 
 ## <a name="working-with-the-wingtip-tickets-powershell-scripts"></a>Работа со сценариями PowerShell для приложения Wingtip Tickets
@@ -89,11 +89,11 @@ ms.locfileid: "74132293"
     - **Изолированное приложение:** серверы отдельных клиентов (например, *contosoconcerthall-&lt;Пользователь&gt;.database.windows.net*).
     - **Однотенантная база данных:** *tenants1-dpt-&lt;Пользователь&gt;.database.windows.net*.
     - **Мультитенантная база данных:** *tenants1-mt-&lt;Пользователь&gt;.database.windows.net*.
-2. Нажмите **Подключить** > **движок базы данных...**:
+2. Нажмите кнопку **подключить** > **ядро СУБД...**:
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
-3. Демо-учетные данные: Логин и *разработчик,* Пароль и *P\@sssword1*
+3. Демонстрационные учетные данные: имя входа — *разработчик*, пароль — *P\@ssword1*
 
     На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*.
     ![connection](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)

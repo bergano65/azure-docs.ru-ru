@@ -1,5 +1,5 @@
 ---
-title: Включить прозрачное шифрование данных для базы данных stretch
+title: Включение прозрачное шифрование данных для Stretch Database
 description: Включение прозрачного шифрования данных (TDE) для SQL Server Stretch Database в Azure
 services: sql-server-stretch-database
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.reviewer: jroth
 manager: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 465338bb793ad7b4fc406e9d1c073b9dc0dc06c8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74034015"
 ---
 # <a name="enable-transparent-data-encryption-tde-for-stretch-database-on-azure"></a>Включение прозрачного шифрования данных (TDE) для Stretch Database в Azure
@@ -38,7 +38,7 @@ ms.locfileid: "74034015"
 1. Откройте базу данных на [портале Azure](https://portal.azure.com)
 2. В колонке базы данных нажмите кнопку **Параметры** .
 3. Выберите параметр **Прозрачное шифрование данных** . ![][1]
-4. Выберите настройку **На** настройке, а затем выберите **Сохранить**
+4. Выберите параметр **вкл** ., а затем нажмите кнопку **сохранить** .
    ![][2]
 
 ## <a name="disabling-encryption"></a>Отключение шифрования

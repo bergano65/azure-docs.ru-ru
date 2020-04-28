@@ -1,5 +1,5 @@
 ---
-title: Ограничьте доступ к ресурсам PaaS - Azure PowerShell
+title: Ограничение сетевого доступа к ресурсам PaaS — Azure PowerShell
 description: Из этой статьи вы узнаете, как ограничить сетевой доступ к ресурсам Azure, таким как служба хранилища Azure и служба "База данных SQL Azure", с помощью конечных точек служб для виртуальной сети и Azure PowerShell.
 services: virtual-network
 documentationcenter: virtual-network
@@ -18,10 +18,10 @@ ms.date: 03/14/2018
 ms.author: kumud
 ms.custom: ''
 ms.openlocfilehash: 1d0cf65bb39dbda2b7451c50629ff8949c5507cb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74185538"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-powershell"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек служб для виртуальной сети с помощью PowerShell
@@ -61,7 +61,7 @@ $virtualNetwork = New-AzVirtualNetwork `
   -AddressPrefix 10.0.0.0/16
 ```
 
-Создайте конфигурацию подсети с [помощью New-AzVirtualNetworkSubnetConfig.](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) В следующем примере создается конфигурация подсети *Public*.
+Создайте конфигурацию подсети с помощью [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере создается конфигурация подсети *Public*.
 
 ```azurepowershell-interactive
 $subnetConfigPublic = Add-AzVirtualNetworkSubnetConfig `
@@ -70,7 +70,7 @@ $subnetConfigPublic = Add-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $virtualNetwork
 ```
 
-Создайте подсеть в виртуальной сети, написав конфигурацию подсети в виртуальную сеть с [Set-AzVirtualNetwork:](/powershell/module/az.network/Set-azVirtualNetwork)
+Создайте подсеть в виртуальной сети, записав конфигурацию подсети в виртуальную сеть с помощью [Set-азвиртуалнетворк](/powershell/module/az.network/Set-azVirtualNetwork):
 
 ```azurepowershell-interactive
 $virtualNetwork | Set-AzVirtualNetwork
@@ -78,7 +78,7 @@ $virtualNetwork | Set-AzVirtualNetwork
 
 ## <a name="enable-a-service-endpoint"></a>Включение конечной точки службы
 
-Вы можете включить конечные точки службы только для служб, поддерживающих эту функцию. Просмотр услуг с конечными точками, доступных в расположении Azure с [помощью Get-AzVirtualNetworkAvailableEndPointService.](/powershell/module/az.network/get-azvirtualnetworkavailableendpointservice) В следующем примере возвращается список служб с поддержкой конечных точек службы, доступных в регионе *eastus*. Список возвращаемых служб со временем будет увеличиваться, так как поддержка конечных точек службы будет реализовываться во все большем числе служб Azure.
+Вы можете включить конечные точки службы только для служб, поддерживающих эту функцию. Просмотрите службы с поддержкой конечных точек службы, доступные в расположении Azure, с помощью [Get-азвиртуалнетворкаваилаблиндпоинтсервице](/powershell/module/az.network/get-azvirtualnetworkavailableendpointservice). В следующем примере возвращается список служб с поддержкой конечных точек службы, доступных в регионе *eastus*. Список возвращаемых служб со временем будет увеличиваться, так как поддержка конечных точек службы будет реализовываться во все большем числе служб Azure.
 
 ```azurepowershell-interactive
 Get-AzVirtualNetworkAvailableEndpointService -Location eastus | Select Name
@@ -98,7 +98,7 @@ $virtualNetwork | Set-AzVirtualNetwork
 
 ## <a name="restrict-network-access-for-a-subnet"></a>Ограничение сетевого доступа для подсети
 
-Создание правил безопасности группы сетевой безопасности с [помощью New-AzNetworkSecurityRuleConfig.](/powershell/module/az.network/new-aznetworksecurityruleconfig) Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
+Создайте правила безопасности группы безопасности сети с помощью [New-азнетворксекуритирулеконфиг](/powershell/module/az.network/new-aznetworksecurityruleconfig). Приведенное ниже правило разрешает исходящий доступ к общедоступным IP-адресам, назначенным службе хранилища Azure. 
 
 ```azurepowershell-interactive
 $rule1 = New-AzNetworkSecurityRuleConfig `
@@ -153,7 +153,7 @@ $nsg = New-AzNetworkSecurityGroup `
   -SecurityRules $rule1,$rule2,$rule3
 ```
 
-Связать группу сетевой безопасности с *частной* подсетью с [Set-AzVirtualNetworkSubnetConfig,](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) а затем написать конфигурацию подсети в виртуальную сеть. В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
+Свяжите группу безопасности сети с *частной* подсетью с помощью [Set-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) , а затем запишите конфигурацию подсети в виртуальную сеть. В следующем примере подсеть *Private* привязывается к группе безопасности сети *myNsgPrivate*.
 
 ```azurepowershell-interactive
 Set-AzVirtualNetworkSubnetConfig `
@@ -172,7 +172,7 @@ $virtualNetwork | Set-AzVirtualNetwork
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте учетную запись хранения данных Azure с [помощью New-AzStorageAccount.](/powershell/module/az.storage/new-azstorageaccount) Замените `<replace-with-your-unique-storage-account-name>` именем, которое является уникальным для всех расположений Azure, содержащим только цифры и строчные буквы (длиной от 3 до 24 знаков).
+Создайте учетную запись хранения Azure с помощью [New-азсторажеаккаунт](/powershell/module/az.storage/new-azstorageaccount). Замените `<replace-with-your-unique-storage-account-name>` именем, которое является уникальным для всех расположений Azure, содержащим только цифры и строчные буквы (длиной от 3 до 24 знаков).
 
 ```azurepowershell-interactive
 $storageAcctName = '<replace-with-your-unique-storage-account-name>'
@@ -185,7 +185,7 @@ New-AzStorageAccount `
   -Kind StorageV2
 ```
 
-После создания учетной записи хранилища извлеките ключ для учетной записи хранилища в переменную с [Get-AzStorageAccountAccountKey:](/powershell/module/az.storage/get-azstorageaccountkey)
+После создания учетной записи хранения получите ключ для учетной записи хранения в переменной с помощью [Get-азсторажеаккаунткэй](/powershell/module/az.storage/get-azstorageaccountkey):
 
 ```azurepowershell-interactive
 $storageAcctKey = (Get-AzStorageAccountKey `
@@ -197,19 +197,19 @@ $storageAcctKey = (Get-AzStorageAccountKey `
 
 ### <a name="create-a-file-share-in-the-storage-account"></a>Создание файлового ресурса в учетной записи хранения
 
-Создайте контекст для учетной записи хранения данных и ключов с [помощью New-AzStorageContext.](/powershell/module/az.storage/new-AzStoragecontext) Этот контекст инкапсулирует имя учетной записи хранения и ее ключ.
+Создайте контекст для учетной записи хранения и ключ с помощью [New-азсторажеконтекст](/powershell/module/az.storage/new-AzStoragecontext). Этот контекст инкапсулирует имя учетной записи хранения и ее ключ.
 
 ```azurepowershell-interactive
 $storageContext = New-AzStorageContext $storageAcctName $storageAcctKey
 ```
 
-Создайте файл с [помощью New-AzStorageShare:](/powershell/module/az.storage/new-azstorageshare)
+Создайте общую папку с помощью [New-азсторажешаре](/powershell/module/az.storage/new-azstorageshare):
 
-$share - New-AzStorageShare my-file-share -Context $storageContext
+$share = New-Азсторажешаре My-файл-Share-context $storageContext
 
 ### <a name="deny-all-network-access-to-a-storage-account"></a>Запрет любого сетевого доступа к учетной записи хранения
 
-По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ к выбранным сетям, измените действие по умолчанию на *Отрицание* с [помощью Update-AzStorageAccountNetworkRuleSetSet.](/powershell/module/az.storage/update-azstorageaccountnetworkruleset) После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
+По умолчанию учетные записи хранения принимают сетевые подключения клиентов в любой сети. Чтобы ограничить доступ к выбранным сетям, измените действие по умолчанию на *запретить* с помощью [Update-азсторажеаккаунтнетворкрулесет](/powershell/module/az.storage/update-azstorageaccountnetworkruleset). После запрещения сетевого доступа учетная запись хранения не будет доступна из любой сети.
 
 ```azurepowershell-interactive
 Update-AzStorageAccountNetworkRuleSet  `
@@ -220,7 +220,7 @@ Update-AzStorageAccountNetworkRuleSet  `
 
 ### <a name="enable-network-access-from-a-subnet"></a>Включение сетевого доступа из подсети
 
-Извлеките созданную виртуальную сеть с [помощью Get-AzVirtualNetwork,](/powershell/module/az.network/get-azvirtualnetwork) а затем извлеките частный объект субсети в переменную с [Get-AzVirtualNetworkSubnetConfig:](/powershell/module/az.network/get-azvirtualnetworksubnetconfig)
+Получите созданную виртуальную сеть с помощью [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork) , а затем извлеките объект частной подсети в переменную с помощью [Get-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/get-azvirtualnetworksubnetconfig):
 
 ```azurepowershell-interactive
 $privateSubnet = Get-AzVirtualNetwork `
@@ -230,7 +230,7 @@ $privateSubnet = Get-AzVirtualNetwork `
   -Name "Private"
 ```
 
-Разрешить доступ к учетной записи хранилища из *частной* подсети с [Add-AzStorageAccountNetworkRule](/powershell/module/az.network/add-aznetworksecurityruleconfig).
+Разрешите сетевой доступ к учетной записи хранения из *частной* подсети с помощью [Add-азсторажеаккаунтнетворкруле](/powershell/module/az.network/add-aznetworksecurityruleconfig).
 
 ```azurepowershell-interactive
 Add-AzStorageAccountNetworkRule `
@@ -245,7 +245,7 @@ Add-AzStorageAccountNetworkRule `
 
 ### <a name="create-the-first-virtual-machine"></a>Создание первой виртуальной машины
 
-Создайте виртуальную машину в *подсети Public* с [New-AzVM](/powershell/module/az.compute/new-azvm). При выполнении следующей команды будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины. Параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме, чтобы можно было перейти к следующему шагу.
+Создайте виртуальную машину в подсети *Public* с помощью [New-AzVM](/powershell/module/az.compute/new-azvm). При выполнении следующей команды будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины. Параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме, чтобы можно было перейти к следующему шагу.
 
 ```azurepowershell-interactive
 New-AzVm `
@@ -297,7 +297,7 @@ Get-AzPublicIpAddress `
 mstsc /v:<publicIpAddress>
 ```
 
-Будет создан и скачан на ваш компьютер файл протокола удаленного рабочего стола (RDP-файл). Откройте этот RDP-файл. При появлении запроса выберите **Подключиться**. Введите имя пользователя и пароль, указанные при создании виртуальной машины. Возможно, потребуется выбрать **More choices** (Дополнительные варианты), а затем **Use a different account** (Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины. Нажмите кнопку **ОК**. При входе в систему может появиться предупреждение о сертификате. Если вы получили предупреждение, выберите **Да** или **Продолжить**.
+Будет создан и скачан на ваш компьютер файл протокола удаленного рабочего стола (RDP-файл). Откройте этот RDP-файл. При появлении запроса выберите **Подключиться**. Введите имя пользователя и пароль, указанные при создании виртуальной машины. Возможно, потребуется выбрать **More choices** (Дополнительные варианты), а затем **Use a different account** (Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины. Щелкните **ОК**. При входе в систему может появиться предупреждение о сертификате. Если вы получили предупреждение, выберите **Да** или **Продолжить**.
 
 На виртуальной машине *myVmPrivate* с помощью PowerShell подключите файловый ресурс Azure как диск Z. Перед выполнением следующих команд замените `<storage-account-key>` и `<storage-account-name>` собственными значениями или значениями, полученными при [создании учетной записи хранения](#create-a-storage-account).
 
@@ -364,7 +364,7 @@ Get-AzStorageFile `
   -Context $storageContext
 ```
 
-Доступ отказано, и вы получаете *Get-AzStorageFile : Удаленный сервер вернулся ошибка: (403) Запрещено. HTTP Статус код: 403 - HTTP Сообщение об ошибке: Этот запрос не уполномочен для выполнения этой ошибки операции,* потому что ваш компьютер не находится в *частной* подсети виртуальной сети *MyVirtualNetwork.*
+Отказано в доступе, и вы получаете *Get-азсторажефиле: удаленный сервер вернул ошибку: (403) запрещено. Код состояния HTTP: 403-сообщение об ошибке HTTP: этот запрос не имеет разрешений на выполнение этой операции* , так как ваш компьютер не находится в *частной* подсети виртуальной сети *MyVirtualNetwork* .
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

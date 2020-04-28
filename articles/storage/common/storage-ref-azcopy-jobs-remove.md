@@ -1,6 +1,6 @@
 ---
-title: азкопия задания удалить (ru) Документы Майкрософт
-description: В этой статье содержится справочная информация для заданий azcopy, удаляемых команду.
+title: Удаление заданий azcopy | Документация Майкрософт
+description: В этой статье содержатся справочные сведения по команде azcopy Jobs Remove.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -9,27 +9,27 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: ba403c8d823b7ead0414521ebd51dc6f6601ccd8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74034164"
 ---
 # <a name="azcopy-jobs-remove"></a>azcopy jobs remove
 
-Удалите все файлы, связанные с данным идентификатором задания.
+Удалить все файлы, связанные с заданным ИДЕНТИФИКАТОРом задания.
 
 > [!NOTE] 
-> Можно настроить место, где сохраняются файлы журнала и планирования. Смотрите команду [azcopy env,](storage-ref-azcopy-env.md) чтобы узнать больше.
+> Можно настроить расположение для сохранения файлов журнала и плана. Дополнительные сведения см. в описании команды [azcopy env](storage-ref-azcopy-env.md) .
 
 ```
 azcopy jobs remove [jobID] [flags]
 ```
 
-## <a name="related-conceptual-articles"></a>Похожие концептуальные статьи
+## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
 - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
-- [Передача данных с помощью хранилища AzCopy и Blob](storage-use-azcopy-blobs.md)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
 - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -41,13 +41,13 @@ azcopy jobs remove [jobID] [flags]
 
 ## <a name="options"></a>Параметры
 
-**-h, --помощь**                Помощь для удаления.
+**-h,--Справка**                Справка по удалению.
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-**--кап-мбитп uint32**      Ограничивает скорость передачи, в мегабитах в секунду. Пропускная часть момент за моментом может незначительно отличаться от крышки. Если эта опция установлена до нуля или опущена, пропускная часть не ограничена.
+**--Cap-Мбит/с UInt32**      Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.
 
-**--тип вывода** Формат вывода команды. Выбор включает в себя: текст, Json. Значение по умолчанию — это «текст». (по умолчанию "текст")
+**--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
 
 ## <a name="see-also"></a>См. также
 

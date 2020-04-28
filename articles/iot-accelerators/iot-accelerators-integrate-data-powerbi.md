@@ -1,6 +1,6 @@
 ---
 title: Визуализация данных удаленного мониторинга с помощью Power BI в Azure | Документация Майкрософт
-description: В этом учебнике используются Power BI Desktop и Cosmos DB для интеграции данных из решения удаленного мониторинга в индивидуальную визуализацию. Таким образом, пользователи могут создавать собственные настраиваемые панели мониторинга и делиться ими с другими пользователями вне решения.
+description: В этом руководстве используется Power BI Desktop и Cosmos DB для интеграции данных из решения удаленного мониторинга в настраиваемую визуализацию. Таким образом, пользователи могут создавать собственные настраиваемые панели мониторинга и делиться ими с другими пользователями вне решения.
 author: dominicbetts
 manager: hegate
 ms.author: dobett
@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 05/01/2018
 ms.topic: conceptual
 ms.openlocfilehash: 8b0f395936c8628ff7b8dab601168538f97ccdb7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74184243"
 ---
 # <a name="visualize-remote-monitoring-data-using-power-bi"></a>Визуализация данных удаленного мониторинга с помощью Power BI
@@ -22,13 +22,13 @@ ms.locfileid: "74184243"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - У вас должно быть запущено решение для удаленного мониторинга.
-- Вы должны иметь доступ к [порталу Azure](https://portal.azure.com) и подписке, на которой работают концентратор IoT и решение
+- Необходимо иметь доступ к [портал Azure](https://portal.azure.com) и подписке, в которой работают центр Интернета вещей и решение
 - Необходимо иметь установленный [Power BI Desktop](https://powerbi.microsoft.com) (любой версии).
 
 
-## <a name="information-needed-from-azure-portal"></a>Информация, необходимая с портала Azure
+## <a name="information-needed-from-azure-portal"></a>Сведения, необходимые из портал Azure
 
-1. Перейдите на [портал Azure](https://portal.azure.com) и при необходимости войдите в систему
+1. Перейдите к [портал Azure](https://portal.azure.com) и войдите в систему, если это необходимо.
 
 2. В области слева щелкните "Группы ресурсов".
 

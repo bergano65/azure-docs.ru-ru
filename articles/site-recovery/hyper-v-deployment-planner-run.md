@@ -1,5 +1,5 @@
 ---
-title: Запустите планировщик развертывания Hyper-V в восстановлении сайта Azure
+title: Запуск Планировщик развертывания Hyper-V в Azure Site Recovery
 description: В этой статье описано, как запустить Планировщик развертывания Azure Site Recovery для аварийного развертывания Hyper-V в Azure.
 author: mayurigupta13
 manager: rochakm
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: mayg
 ms.openlocfilehash: ba1979c940d4a92b3d1a7a52a4f356b2896ece55
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74082607"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления Hyper-V в Azure
@@ -97,8 +97,8 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 |-Directory|(Необязательно.) UNC-путь или путь к локальному каталогу для хранения данных профилирования. Если имя не указано, в качестве каталога по умолчанию используется каталог ProfiledData, расположенный по текущему пути.|
 |-Password|(Необязательно.) Пароль для подключения к узлу Hyper-V. Если не указать его в качестве параметра, запрос на ввод пароля отобразится после выполнения команды.|
 |-StorageAccountName|(Необязательно.) Имя учетной записи хранения, используемой для определения объема пропускной способности, доступной для репликации данных из локальной среды в Azure. Программа отправляет тестовые данные в эту учетную запись хранения, чтобы рассчитать пропускную способность. Учетная запись хранения должна относиться к универсальному типу версии 1 (GPv1).|
-|-StorageAccountKey|(Необязательно.) Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure > имя >  > *учетной записи* **хранения****данных Настройки** > **ключей** > доступа**1** (или основной ключ доступа для классической учетной записи хранения).|
-|-Environment|(Необязательно.) Целевая среда для учетной записи хранения Azure. Она может иметь одно из трех значений: AzureCloud, AzureUSGovernment или AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, когда вашей целевой областью является либо правительство Сша Azure, либо Azure China 21Vianet.|
+|-StorageAccountKey|(Необязательно.) Ключ, используемый для доступа к учетной записи хранения. Перейдите в портал Azure > **учетные записи** > хранения —**Параметры** >  > *имени учетной записи***ключи** > доступа**Key1** (или первичный ключ доступа для классической учетной записи хранения).|
+|-Environment|(Необязательно.) Целевая среда для учетной записи хранения Azure. Она может иметь одно из трех значений: AzureCloud, AzureUSGovernment или AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если целевой регион — Azure для государственных организаций США или Azure Китая (21Vianet).|
 
 Рекомендуем выполнять профилирование виртуальных машин более 7 дней. Если в течение месяца шаблон обработки изменяется, рекомендуем выполнять профилирование в течение недели, когда будет зафиксирован максимальный показатель. Чтобы получить точные данные, рекомендуем профилировать машины в течение 31 дня. 
 
@@ -254,14 +254,14 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization Hyper-V -Dire
 
 Созданный отчет Microsoft Excel содержит следующие сведения:
 
-* [Резюме на территории](hyper-v-deployment-planner-analyze-report.md#on-premises-summary)
+* [Сводка по локальной среде](hyper-v-deployment-planner-analyze-report.md#on-premises-summary)
 * [Рекомендации](hyper-v-deployment-planner-analyze-report.md#recommendations)
 * [Размещение хранилища виртуальной машины](hyper-v-deployment-planner-analyze-report.md#vm-storage-placement-recommendation)
 * [Совместимые виртуальные машины](hyper-v-deployment-planner-analyze-report.md#compatible-vms)
 * [Несовместимые виртуальные машины](hyper-v-deployment-planner-analyze-report.md#incompatible-vms)
-* [Требование к хранению на местах](hyper-v-deployment-planner-analyze-report.md#on-premises-storage-requirement)
-* [Пакетирование ИК](hyper-v-deployment-planner-analyze-report.md#initial-replication-batching)
-* [Оценка затрат](hyper-v-deployment-planner-cost-estimation.md)
+* [Требования к локальному хранилищу](hyper-v-deployment-planner-analyze-report.md#on-premises-storage-requirement)
+* [Пакетная обработка IR](hyper-v-deployment-planner-analyze-report.md#initial-replication-batching)
+* [Оценка стоимости](hyper-v-deployment-planner-cost-estimation.md)
 
 ![Отчет планировщика развертывания](media/hyper-v-deployment-planner-run/deployment-planner-report-h2a.png)
 
@@ -281,9 +281,9 @@ ASRDeploymentPlanner.exe -Operation GetThroughput /?
 |-Virtualization|Тип виртуализации (VMware или Hyper-V).|
 |-Directory|(Необязательно.) UNC-путь или путь к локальному каталогу, в котором хранятся данные профилирования (файлы, созданные в процессе профилирования). Эти данные используются для создания отчета. Если имя не указано, в качестве каталога по умолчанию используется каталог ProfiledData, расположенный по текущему пути.|
 | -StorageAccountName | Имя учетной записи хранения, используемой для определения пропускной способности, необходимой для репликации данных из локальной среды в Azure. Программа отправляет тестовые данные в эту учетную запись хранения, чтобы рассчитать используемую пропускную способность. Учетная запись хранения должна относиться к универсальному типу версии 1 (GPv1).|
-| -StorageAccountKey | Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure > > имя **учетной** > *записи хранения***данных Настройки** > **ключей** > доступа**1.**|
+| -StorageAccountKey | Ключ, используемый для доступа к учетной записи хранения. Перейдите в портал Azure > **учетные записи** > хранения —**Параметры** >  > *имя учетной записи***ключи** > доступа**Key1**.|
 | -VMListFile | Файл со списком виртуальных машин, профилирование которых необходимо выполнить, для расчета используемой пропускной способности. Путь к файлу может быть абсолютным или относительным. Для Hyper-V это выходной файл операции GetVMList. При подготовке вручную файл должен содержать одно имя или IP-адрес сервера и имя виртуальной машины, разделенные символом "\" в каждой строке. Имя виртуальной машины, указанное в файле, должно совпадать с именем виртуальной машины в узле Hyper-V.<br><br>**Пример.** Файл VMList.txt содержит следующие виртуальные машины:<ul><li>Host_1\VM_A;</li><li>10.8.59.27\VM_B;</li><li>Host_2\VM_C.</li><ul>|
-|-Environment|(Необязательно.) Целевая среда для учетной записи хранения Azure. Она может иметь одно из трех значений: AzureCloud, AzureUSGovernment или AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, когда вашего целевого региона Azure является либо правительство Сша Azure, либо Azure China 21Vianet.|
+|-Environment|(Необязательно.) Целевая среда для учетной записи хранения Azure. Она может иметь одно из трех значений: AzureCloud, AzureUSGovernment или AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если целевой регион Azure — Azure для государственных организаций США или Azure Китая (21Vianet).|
 
 ### <a name="example"></a>Пример
 ```

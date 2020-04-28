@@ -1,5 +1,5 @@
 ---
-title: 'ExpressRoute: Фильтры маршрута - Microsoft пиринг:Azure CLI'
+title: 'ExpressRoute: фильтры маршрутов — пиринг Майкрософт: Azure CLI'
 description: В этой статье описывается, как настраивать фильтры маршрутов для пиринга Майкрософт с помощью Azure CLI.
 services: expressroute
 author: anzaman
@@ -8,25 +8,25 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: anzaman
 ms.openlocfilehash: c3c50a005e119890fb17fcf7b3114a747bbe34bf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74033410"
 ---
 # <a name="configure-route-filters-for-microsoft-peering-azure-cli"></a>Настройка фильтров маршрутов для пиринга Майкрософт с помощью Azure CLI
 
 > [!div class="op_single_selector"]
 > * [Портал Azure](how-to-routefilter-portal.md)
-> * [Лазурная силаШелл](how-to-routefilter-powershell.md)
-> * [Лазурный CLI](how-to-routefilter-cli.md)
+> * [Azure PowerShell](how-to-routefilter-powershell.md)
+> * [Azure CLI](how-to-routefilter-cli.md)
 > 
 
 Фильтры маршрутов — это способ использовать подмножество поддерживаемых служб через пиринг Майкрософт. Действия, описанные в этой статье, помогут настроить фильтры маршрутов для каналов ExpressRoute и управлять ими.
 
-Службы Office 365, такие как Exchange Online, SharePoint Online и Skype for Business, доступны через пиринг Майкрософт. При настройке пиринга Майкрософт в канале ExpressRoute все префиксы, которые относятся к этим службам, объявляются через установленные сеансы BGP. Значение сообщества BGP подключается к каждому префиксу для идентификации службы, предлагаемой через него. Список значений сообщества BGP и служб, с которыми они сопоставляются, см. в разделе [Поддержка сообществ BGP](expressroute-routing.md#bgp).
+Службы Office 365, такие как Exchange Online, SharePoint Online и Skype для бизнеса, доступны через пиринг Майкрософт. При настройке пиринга Майкрософт в канале ExpressRoute все префиксы, которые относятся к этим службам, объявляются через установленные сеансы BGP. Значение сообщества BGP подключается к каждому префиксу для идентификации службы, предлагаемой через него. Список значений сообщества BGP и служб, с которыми они сопоставляются, см. в разделе [Поддержка сообществ BGP](expressroute-routing.md#bgp).
 
-Если требуется подключение ко всем службам, большое число префиксов объявляется через BGP. Это значительно увеличивает размер таблиц маршрутов, которые обслуживают маршрутизаторы в вашей сети. Если вы планируете использовать только подмножество служб, предлагаемых через пиринг Майкрософт, размер таблиц маршрутизации можно уменьшить двумя способами. Вы можете:
+Если требуется подключение ко всем службам, большое число префиксов объявляется через BGP. Это значительно увеличивает размер таблиц маршрутов, которые обслуживают маршрутизаторы в вашей сети. Если вы планируете использовать только подмножество служб, предлагаемых через пиринг Майкрософт, размер таблиц маршрутизации можно уменьшить двумя способами. Можно выполнить следующие действия.
 
 * Отфильтровывать нежелательные префиксы путем применения фильтров маршрутов к сообществам BGP. Это стандартная сетевая практика и обычно используется во многих сетях.
 
@@ -45,7 +45,7 @@ ms.locfileid: "74033410"
 > 
 > 
 
-### <a name="workflow"></a><a name="workflow"></a>Рабочего процесса
+### <a name="workflow"></a><a name="workflow"></a>Рабочий процесс
 
 Чтобы успешно подключиться к службам через пиринг Майкрософт, необходимо выполнить следующие действия по настройке:
 
@@ -92,14 +92,14 @@ az account set --subscription "<subscription ID>"
 
 ## <a name="step-1-get-a-list-of-prefixes-and-bgp-community-values"></a><a name="prefixes"></a>Шаг 1. Получение списка префиксов и значений сообщества BGP
 
-### <a name="1-get-a-list-of-bgp-community-values"></a>1. Получить список значений сообщества BGP
+### <a name="1-get-a-list-of-bgp-community-values"></a>1. Получение списка значений сообщества BGP
 
 Чтобы получить список значений сообщества BGP, связанных со службами, которые доступны через пиринг Майкрософт, а также список префиксов, связанных с ними, используйте следующий командлет:
 
 ```azurecli-interactive
 az network route-filter rule list-service-communities
 ```
-### <a name="2-make-a-list-of-the-values-that-you-want-to-use"></a>2. Составьте список ценностей, которые вы хотите использовать
+### <a name="2-make-a-list-of-the-values-that-you-want-to-use"></a>2. Сделайте список значений, которые вы хотите использовать
 
 Создайте список значений сообщества BGP, которые нужно использовать в фильтре маршрута.
 
@@ -107,9 +107,9 @@ az network route-filter rule list-service-communities
 
 Фильтр может иметь только одно правило, и оно должно иметь тип "Разрешить". С этим правилом может быть связан список значений сообщества BGP.
 
-### <a name="1-create-a-route-filter"></a>1. Создание фильтра маршрута
+### <a name="1-create-a-route-filter"></a>1. Создание фильтра маршрутов
 
-Сначала создайте фильтр маршрутов. Команда `az network route-filter create` создает только ресурс фильтрации маршрутов. После создания ресурса нужно создать правило и подключить его к объекту фильтра маршрута. Чтобы создать ресурс фильтра маршрута, выполните следующую команду:
+Сначала создайте фильтр маршрутов. Команда `az network route-filter create` создает только ресурс фильтра маршрутов. После создания ресурса нужно создать правило и подключить его к объекту фильтра маршрута. Чтобы создать ресурс фильтра маршрута, выполните следующую команду:
 
 ```azurecli-interactive
 az network route-filter create -n MyRouteFilter -g MyResourceGroup
@@ -131,7 +131,7 @@ az network route-filter rule create --filter-name MyRouteFilter -n CRM --communi
 az network express-route peering update --circuit-name MyCircuit -g ExpressRouteResourceGroupName --name MicrosoftPeering --route-filter MyRouteFilter
 ```
 
-## <a name="common-tasks"></a><a name="tasks"></a>Общие задачи
+## <a name="common-tasks"></a><a name="tasks"></a>Стандартные задачи
 
 ### <a name="to-get-the-properties-of-a-route-filter"></a><a name="getproperties"></a>Получение свойств фильтра маршрута
 
@@ -165,6 +165,6 @@ az network express-route peering update --circuit-name MyCircuit -g ExpressRoute
 az network route-filter delete -n MyRouteFilter -g MyResourceGroup
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
-Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)
+Дополнительные сведения об ExpressRoute см. в статье [вопросы и ответы по expressroute](expressroute-faqs.md).

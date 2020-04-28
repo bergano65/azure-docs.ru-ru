@@ -1,7 +1,7 @@
 ---
-title: OData выбрать ссылку
+title: Выбор ссылки OData
 titleSuffix: Azure Cognitive Search
-description: Синтаксис и языковая ссылка на явный выбор полей для возврата в результатах поиска запросов Azure Cognitive Search.
+description: Справочник по синтаксису и языку для явного выбора полей, возвращаемых в результатах поиска Когнитивный поиск запросов Azure.
 manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
@@ -20,19 +20,19 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 64f15bf3d262249cdda2760c7ddf768be2590419
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74113100"
 ---
-# <a name="odata-select-syntax-in-azure-cognitive-search"></a>OData $select синтаксис в когнитивном поиске Azure
+# <a name="odata-select-syntax-in-azure-cognitive-search"></a>Синтаксис $select OData в Azure Когнитивный поиск
 
- Можно использовать [параметр OData **$select,** ](query-odata-filter-orderby-syntax.md) чтобы выбрать, какие поля следует включить в результаты поиска из Azure Cognitive Search. В этой статье подробно описывается синтаксис **$select.** Более подробную информацию о том, как использовать **$select** при представлении результатов поиска, можно [найти в Azure Cognitive Search.](search-pagination-page-layout.md)
+ [Параметр **$SELECT** OData](query-odata-filter-orderby-syntax.md) можно использовать для выбора полей, включаемых в результаты поиска когнитивный Поиск Azure. В этой статье подробно описывается синтаксис **$SELECT** . Дополнительные общие сведения об использовании **$SELECT** при представлении результатов поиска см. [в статье работа с результатами поиска в Azure когнитивный Поиск](search-pagination-page-layout.md).
 
 ## <a name="syntax"></a>Синтаксис
 
-Параметр **$select** определяет, какие поля для каждого документа возвращаются в наборе результатов запроса. Следующая форма EBNF[(Расширенная форма Backus-Naur)](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)определяет грамматику для **$select** параметра:
+Параметр **$SELECT** определяет, какие поля для каждого документа возвращаются в результирующем наборе запроса. Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для параметра **$SELECT** :
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -42,26 +42,26 @@ select_expression ::= '*' | field_path(',' field_path)*
 field_path ::= identifier('/'identifier)*
 ```
 
-Также доступна интерактивная диаграмма синтаксиса:
+Доступна также интерактивная схема синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Диаграмма синтаксиса OData для когнитивного поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#select_expression)
+> [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/#select_expression)
 
 > [!NOTE]
-> Смотрите [ссылку синтаксиса выражения OData для Azure Cognitive Search](search-query-odata-syntax-reference.md) для полного EBNF.
+> Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
 
-Параметр **$select** поставляется в двух формах:
+Параметр **$SELECT** состоит из двух форм:
 
-1. Одна звезда`*`( , указывая, что все извлекаемые поля должны быть возвращены, или
-1. Список полевых путей, разделенных запятой, определяющий, какие поля следует вернуть.
+1. Одиночная звездочка`*`(), указывающая, что должны возвращаться все извлекаемые поля, или
+1. Разделенный запятыми список путей к полям, определяющий, какие поля должны быть возвращены.
 
-При использовании второй формы можно указать только извлекаемые поля в списке.
+При использовании второй формы вы можете указать в списке только доступные для получения поля.
 
-Если вы перечислите сложное поле без указания его подполей прямо, все извлекаемые подполя будут включены в набор результатов запроса. Например, `Address` предположим, `Street` `City`что у индекса есть поле с и `Country` подполями, которые можно извлечь. Если указать `Address` в **$select,** результаты запроса будут включать все три подполя.
+Если вы передаете сложное поле, не указывая его вложенные поля явным образом, все доступные для извлечения поля будут включаться в результирующий набор запроса. Например, предположим, что в индексе `Address` есть поле `Street`с `City`полями, `Country` и, и все они доступны для извлечения. Если указать `Address` в **$SELECT**, результаты запроса будут содержать все три вложенные поля.
 
 ## <a name="examples"></a>Примеры
 
-`HotelId`Включите `HotelName`поля `Rating` , и топ-уровня поля в `City` результатах, `Address`а также подполе:
+Включите поля `HotelId`, `HotelName`и `Rating` верхнего уровня в результаты, а также `City` вспомогательное поле: `Address`
 
     $select=HotelId, HotelName, Rating, Address/City
 
@@ -78,7 +78,7 @@ field_path ::= identifier('/'identifier)*
 }
 ```
 
-Включите поле `HotelName` верхнего уровня в результаты, а `Address`также `Type` все `BaseRate` подполя, а также `Rooms` подполя каждого объекта в коллекцию:
+Включите поле `HotelName` верхнего уровня в результаты, а также все вложенные `Address`поля, и вложенные поля `Type` и `BaseRate` для каждого объекта в `Rooms` коллекции:
 
     $select=HotelName, Address, Rooms/Type, Rooms/BaseRate
 
@@ -110,7 +110,7 @@ field_path ::= identifier('/'identifier)*
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 
-- [Как работать с результатами поиска в Azure Cognitive Search](search-pagination-page-layout.md)
-- [Обзор языка выражения OData для когнитивного поиска Azure](query-odata-filter-orderby-syntax.md)
-- [Ссылка синтаксиса выражения OData для когнитивного поиска Azure](search-query-odata-syntax-reference.md)
+- [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
+- [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
+- [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
 - [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
