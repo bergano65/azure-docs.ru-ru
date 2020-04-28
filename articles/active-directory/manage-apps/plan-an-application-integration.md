@@ -16,10 +16,10 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89b16a8479f8975d101b8a4e26dcb1885d9730bd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77063386"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
@@ -77,7 +77,7 @@ ms.locfileid: "77063386"
 С помощью прокси приложений Microsoft Azure AD вы можете предоставлять безопасный доступ к приложениям, расположенным в частной сети, из любого места и с любого устройства. После установки в своей среде соединителя прокси-сервера приложения его можно легко настроить с Azure AD.
 
 ### <a name="integrating-custom-applications"></a>Интеграция пользовательских приложений
-Если вы пишете новое приложение и хотите помочь разработчикам в использовании мощности Azure AD, [см.](../active-directory-applications-guiding-developers-for-lob-applications.md)
+Если вы создаете новое приложение и хотите помочь разработчикам в использовании возможностей Azure AD, см. статью создание [GUID для разработчиков](../active-directory-applications-guiding-developers-for-lob-applications.md).
 
 Если вы хотите добавить пользовательское приложение в коллекцию приложений Azure, то см. запись блога [“Bring your own app” with Azure AD Self-Service SAML configuration](https://cloudblogs.microsoft.com/enterprisemobility/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-now-in-preview/) (Использование собственных приложений с конфигурацией SAML самообслуживания Azure AD).
 
@@ -87,15 +87,15 @@ ms.locfileid: "77063386"
 * [Управление доступом к приложениям с помощью Azure AD.](what-is-access-management.md)
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory.](../app-provisioning/user-provisioning.md)
 * [Назначение пользователей приложения](../active-directory-applications-guiding-developers-assigning-users.md)
-* [Назначение групп в приложение](../active-directory-applications-guiding-developers-assigning-groups.md)
+* [Назначение групп для приложения](../active-directory-applications-guiding-developers-assigning-groups.md)
 * [Совместное использование учетных записей.](../active-directory-sharing-accounts.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Для получения подробных сведений можно скачать планы развертывания Azure Active Directory с сайта [GitHub](https://aka.ms/deploymentplans). Для приложений галереи можно загрузить планы развертывания для одного входного, условного доступа и подготовки пользователей через [портал Azure.](https://portal.azure.com) 
+Для получения подробных сведений можно скачать планы развертывания Azure Active Directory с сайта [GitHub](https://aka.ms/deploymentplans). Для приложений из коллекции можно загрузить планы развертывания для единого входа, условного доступа и подготовки пользователей с помощью [портал Azure](https://portal.azure.com). 
 
 Чтобы скачать план развертывания на портале Azure, сделайте следующее.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **корпоративные приложения** | Выберите**план развертывания****приложений.** | 
+2. Выберите **корпоративные приложения** | выбор**плана развертывания****приложения** | .
 
 Оставьте отзыв о планах развертывания, приняв участие в этом [опросе](https://aka.ms/DeploymentPlanFeedback).

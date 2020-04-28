@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: c71136ecb57fac460514b5f4815ba19cc22d86cb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76290620"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием Python
@@ -27,7 +27,7 @@ ms.locfileid: "76290620"
 >
 >
 
-Узнайте, как использовать Python SDK для хранения azure Data Lake Storage Gen1 для выполнения основных операций по управлению учетными записями, таких как создание учетной записи Data Lake Storage Gen1, список учетных записей Data Lake Storage Gen1 и т.д. Для получения инструкций о том, как выполнять операции файловой [Filesystem operations on Data Lake Storage Gen1 using Python](data-lake-store-data-operations-python.md)системы на Data Lake Storage Gen1 с помощью Python, см.
+Узнайте, как использовать пакет SDK для Python для Azure Data Lake Storage 1-го поколения для выполнения основных операций по управлению учетными записями, таких как создание учетной записи Data Lake Storage 1-го поколения, получение списка учетных записей Data Lake Storage 1-го поколения и т. д. Инструкции по выполнению операций файловой системы в Data Lake Storage 1-го поколения с помощью Python см. [в разделе операции файловой системы на Data Lake Storage 1-го поколения с помощью Python](data-lake-store-data-operations-python.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -86,7 +86,7 @@ pip install azure-datalake-store
 
 3. Сохраните изменения в mysample.py.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 В этом разделе мы рассмотрим различные способы проверки подлинности в Azure AD. Доступны следующие варианты.
 
@@ -130,10 +130,10 @@ pip install azure-datalake-store
     adlsAcctClient.account.delete(adlsAccountName)
     
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-data-operations-python.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Справочник по azure-datalake-store для Python. Файловая система](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core)
 * [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)

@@ -1,6 +1,6 @@
 ---
-title: Создание концентратора уведомлений Azure с помощью PowerShell Документы Майкрософт
-description: Узнайте, как использовать скрипт PowerShell для создания концентратора уведомлений Azure.
+title: Создание центра уведомлений Azure с помощью PowerShell | Документация Майкрософт
+description: Узнайте, как использовать скрипт PowerShell для создания центра уведомлений Azure.
 author: dimazaid
 manager: femila
 services: notification-hubs
@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/14/2020
 ms.author: dimazaid
 ms.openlocfilehash: 01749e1ae5c29a7e77b2143939e25cf1ccd1aec2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76263985"
 ---
 # <a name="use-powershell-to-create-an-azure-notification-hub"></a>Создание центра уведомлений Azure с помощью PowerShell
@@ -47,7 +47,7 @@ Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
 
 Этот сценарий использует следующие команды:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzNotificationHubsNamespace](/powershell/module/az.notificationhubs/new-aznotificationhubsnamespace) | Создает пространство имен для центра уведомлений. |

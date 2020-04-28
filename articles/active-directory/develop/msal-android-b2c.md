@@ -1,7 +1,7 @@
 ---
-title: Azure AD B2C (MSAL Android) Azure
+title: Azure AD B2C (MSAL Android) | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте о конкретных соображениях при использовании Azure AD B2C в библиотеке подлинности Microsoft для Android (MSAL). Android)
+description: Ознакомьтесь с конкретными соображениями при использовании Azure AD B2C с библиотекой проверки подлинности Майкрософт для Android (MSAL. Android
 services: active-directory
 author: brianmel
 manager: CelesteDG
@@ -14,27 +14,27 @@ ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
 ms.openlocfilehash: 0998bb04b0dfc69db4696f2e390cfe259eba6718
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76696527"
 ---
-# <a name="use-msal-for-android-with-b2c"></a>Используйте MSAL для Android с B2C
+# <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
 
-Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений аутентифицировать пользователей с помощью удостоверений социальных сетей и локальных удостоверений, используя [Azure Active Directory B2C (Azure AD B2C)](https://docs.microsoft.com/azure/active-directory-b2c/). Azure AD B2C — это служба управления удостоверениями. Используйте его для настройки и контроля, как клиенты регистрироваться, войти в систему и управлять своими профилями, когда они используют ваши приложения.
+Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений аутентифицировать пользователей с помощью удостоверений социальных сетей и локальных удостоверений, используя [Azure Active Directory B2C (Azure AD B2C)](https://docs.microsoft.com/azure/active-directory-b2c/). Azure AD B2C — это служба управления удостоверениями. Используйте его для настройки и управления регистрацией клиентов, входом в систему и управлением их профилями при использовании ваших приложений.
 
-## <a name="configure-known-authorities-and-redirect-uri"></a>Настройка известных органов власти и перенаправление URI
+## <a name="configure-known-authorities-and-redirect-uri"></a>Настройка известных центров и URI перенаправления
 
-В MSAL для Android политики B2C (путешествия пользователей) настроены как отдельные органы власти.
+В MSAL для Android политики B2C (пути взаимодействия пользователя) настраиваются как отдельные центры.
 
-С учетом приложения B2C, которое имеет две политики:
-- Регистрация / Регистрация в
-    * Называется`B2C_1_SISOPolicy`
+При наличии B2C приложения с двумя политиками:
+- Регистрация и вход в систему
+    * Имя`B2C_1_SISOPolicy`
 - Изменить профиль
-    * Называется`B2C_1_EditProfile`
+    * Имя`B2C_1_EditProfile`
 
-Файл конфигурации для приложения `authorities`объявляет два . По одному для каждой политики. Собственность `type` каждого органа `B2C`власти .
+Файл конфигурации для приложения будет объявлять два `authorities`. По одному для каждой политики. `type` Свойство каждого из полномочий имеет `B2C`значение.
 
 ### `app/src/main/res/raw/msal_config.json`
 ```json
@@ -54,11 +54,11 @@ ms.locfileid: "76696527"
 }
 ```
 
-Необходимо `redirect_uri` зарегистрироваться в конфигурации приложения, `AndroidManifest.xml` а также для поддержки перенаправления во время [потока гранта кода авторизации.](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-oauth-code)
+`redirect_uri` Должен быть зарегистрирован в конфигурации приложения, а также в `AndroidManifest.xml` для поддержки перенаправления во время [потока предоставления кода авторизации](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-oauth-code).
 
-## <a name="initialize-ipublicclientapplication"></a>Инициализация приложения Для государственных клиентов
+## <a name="initialize-ipublicclientapplication"></a>Инициализация Ипубликклиентаппликатион
 
-`IPublicClientApplication`построен по заводскому методу, чтобы конфигурация приложения была разогнана асинхронно.
+`IPublicClientApplication`создается с помощью фабричного метода, позволяющего выполнять синтаксический анализ конфигурации приложения в асинхронном режиме.
 
 ```java
 PublicClientApplication.createMultipleAccountPublicClientApplication(
@@ -79,9 +79,9 @@ PublicClientApplication.createMultipleAccountPublicClientApplication(
 );
 ```
 
-## <a name="interactively-acquire-a-token"></a>Интерактивно приобрести токен
+## <a name="interactively-acquire-a-token"></a>Интерактивное получение маркера
 
-Чтобы приобрести токен в интерактивном `AcquireTokenParameters` режиме с MSAL, создайте экземпляр и предоставите его методу. `acquireToken` Запрос токенов ниже `default` использует полномочия.
+Чтобы получить маркер в интерактивном режиме с помощью MSAL, создайте `AcquireTokenParameters` экземпляр и предоставьте его `acquireToken` методу. В запросе токена ниже используется `default` центр.
 
 ```java
 IMultipleAccountPublicClientApplication pca = ...; // Initialization not shown
@@ -110,9 +110,9 @@ AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
 pca.acquireToken(parameters);
 ```
 
-## <a name="silently-renew-a-token"></a>Тихо обновить токен
+## <a name="silently-renew-a-token"></a>Автоматическое продление срока действия токена
 
-Чтобы получить токен с помощью MSAL, создайте `AcquireTokenSilentParameters` `acquireTokenSilentAsync` экземпляр и поставите его методу. В `acquireToken` отличие от `authority` метода, необходимо указать, чтобы приобрести токен молча.
+Чтобы получить маркер в автоматическом режиме с помощью MSAL, `AcquireTokenSilentParameters` создайте экземпляр и предоставьте его `acquireTokenSilentAsync` методу. В `authority` отличие от `acquireToken` метода, необходимо указать для получения маркера в автоматическом режиме.
 
 ```java
 IMultilpeAccountPublicClientApplication pca = ...; // Initialization not shown
@@ -137,9 +137,9 @@ AcquireTokenSilentParameters parameters = new AcquireTokenSilentParameters.Build
 pca.acquireTokenSilentAsync(parameters);
 ```
 
-## <a name="specify-a-policy"></a>Указать политику
+## <a name="specify-a-policy"></a>Укажите политику
 
-Поскольку политики в B2C представлены как отдельные органы, использование политики, `fromAuthority` кроме дефолта, достигается путем указания положения при построении `acquireToken` или `acquireTokenSilent` параметров.  Пример:
+Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания `fromAuthority` предложения `acquireToken` при `acquireTokenSilent` создании или настройке параметров.  Пример:
 
 ```java
 AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
@@ -151,13 +151,13 @@ AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
     .build();
 ```
 
-## <a name="handle-password-change-policies"></a>Обработка политики изменения паролей
+## <a name="handle-password-change-policies"></a>Работа с политиками изменения паролей
 
-Локальная регистрация учетной записи или поток пользователей для ввоза показывает **'Забытый пароль?'** . При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически.
+Пользовательский поток регистрации или входа в локальную учетную запись отображает "**забыли пароль?**" . При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически.
 
-Вместо этого в приложение возвращается код ошибки `AADB2C90118`. Приложение должно обрабатывать этот код ошибки, запустив определенный поток пользователей, который сбрасывает пароль.
+Вместо этого в приложение возвращается код ошибки `AADB2C90118`. Приложение должно справиться с этим кодом ошибки, запустив конкретный поток пользователя, который сбрасывает пароль.
 
-Чтобы поймать код ошибки сброса пароля, следующая реализация может быть использована внутри вашего: `AuthenticationCallback`
+Чтобы перехватить код ошибки сброса пароля, можно использовать следующую реализацию в `AuthenticationCallback`:
 
 ```java
 new AuthenticationCallback() {
@@ -183,11 +183,11 @@ new AuthenticationCallback() {
 }
 ```
 
-## <a name="use-iauthenticationresult"></a>Использование IAuthenticationResult
+## <a name="use-iauthenticationresult"></a>Использование Иаусентикатионресулт
 
-Успешное приобретение токенов `IAuthenticationResult` приводит к объекту. Он содержит токен доступа, требования пользователей и метаданные.
+Успешное получение маркера приводит к `IAuthenticationResult` получению объекта. Он содержит маркер доступа, пользовательские утверждения и метаданные.
 
-### <a name="get-the-access-token-and-related-properties"></a>Получите токен доступа и связанные с ними свойства
+### <a name="get-the-access-token-and-related-properties"></a>Получение маркера доступа и связанных свойств
 
 ```java
 // Get the raw bearer token
@@ -203,7 +203,7 @@ Date expiry = authenticationResult.getExpiresOn();
 String tenantId = authenticationResult.getTenantId();
 ```
 
-### <a name="get-the-authorized-account"></a>Получить авторизованную учетную запись
+### <a name="get-the-authorized-account"></a>Получение полномочной учетной записи
 
 ```java
 // Get the account from the result
@@ -225,18 +225,18 @@ String username = account.getUsername();
 String tenantId = account.getTenantId();
 ```
 
-### <a name="idtoken-claims"></a>Претензии IdToken
+### <a name="idtoken-claims"></a>Утверждения IdToken
 
-Претензии, возвращенные в IdToken, заполняются службой безопасности (STS), а не MSAL. В зависимости от используемого поставщика идентификационных данных (IdP) некоторые претензии могут отсутствовать. Некоторые ИДП в настоящее `preferred_username` время не предоставляют претензию. Потому что это утверждение используется MSAL для кэширования, значение заполнителя, `MISSING FROM THE TOKEN RESPONSE`используется на своем месте. Для получения дополнительной информации о [претензиях](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-tokens#claims)B2C IdToken см.
+Утверждения, возвращенные в IdToken, заполняются службой маркеров безопасности (STS), а не MSAL. В зависимости от используемого поставщика удостоверений (IdP) некоторые утверждения могут отсутствовать. Некоторые поставщиков удостоверений в настоящее время не `preferred_username` предоставляют заявку. Так как это утверждение используется MSAL для кэширования, вместо него используется значение `MISSING FROM THE TOKEN RESPONSE`заполнителя. Дополнительные сведения об утверждениях B2C IdToken см. [в разделе Обзор маркеров в Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-tokens#claims).
 
 ## <a name="managing-accounts-and-policies"></a>Управление учетными записями и политиками
 
-B2C рассматривает каждую политику как отдельный орган. Таким образом, токены доступа, маркеры обновления и идентификаторы, возвращенные из каждой политики, не являются взаимозаменяемыми. Это означает, что `IAccount` каждая политика возвращает отдельный объект, маркеры которого не могут быть использованы для использования других политик.
+B2C рассматривает каждую политику как отдельный центр. Поэтому маркеры доступа, маркеры обновления и маркеры идентификации, возвращаемые из каждой политики, не взаимозаменяемы. Это означает, что каждая политика возвращает `IAccount` отдельный объект, маркеры которого нельзя использовать для вызова других политик.
 
-Каждая политика `IAccount` добавляет кэш для каждого пользователя. Если пользователь впишется в приложение и вызывает две политики, `IAccount`у него будет два s. Чтобы удалить этого пользователя из кэша, необходимо вызвать `removeAccount()` каждую политику.
+Каждая политика добавляет `IAccount` в кэш для каждого пользователя. Если пользователь входит в приложение и вызывает две политики, у них будет два `IAccount`. Чтобы удалить этого пользователя из кэша, необходимо вызвать `removeAccount()` для каждой политики.
 
-При обновлении токенов `acquireTokenSilent`для политики, предоставьте то же `IAccount` самое, `AcquireTokenSilentParameters`что было возвращено из предыдущих вызовов политики в . Предоставление учетной записи, возвращенной другой политикой, приведет к ошибке.
+При обновлении маркеров для политики с помощью `acquireTokenSilent`укажите то же `IAccount` значение, которое было возвращено предыдущими вызовами политики в. `AcquireTokenSilentParameters` Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше об B2C Active Directory Azure (Azure AD B2C) в [исканне Active Directory B2C?](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview)
+Дополнительные сведения о Azure Active Directory B2C (Azure AD B2C) о том [, что Azure Active Directory B2C?](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview)

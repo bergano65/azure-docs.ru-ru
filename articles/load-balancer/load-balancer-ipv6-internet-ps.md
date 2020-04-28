@@ -1,5 +1,5 @@
 ---
-title: Создайте балансировку нагрузки в Интернете с IPv6 - Azure PowerShell
+title: Создание балансировщика нагрузки с выходом в Интернет с использованием IPv6 — Azure PowerShell
 titleSuffix: Azure Load Balancer
 description: Узнайте, как создать балансировщик нагрузки для Интернета с поддержкой IPv6 с помощью PowerShell для Resource Manager.
 services: load-balancer
@@ -15,21 +15,21 @@ ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
 ms.openlocfilehash: e5f9762533dc2ad47f855714822ba39c645bf847
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76045470"
 ---
 # <a name="get-started-creating-an-internet-facing-load-balancer-with-ipv6-using-powershell-for-resource-manager"></a>Приступая к созданию балансировщика нагрузки для Интернета с поддержкой IPv6 с помощью PowerShell для Resource Manager
 
 > [!div class="op_single_selector"]
 > * [PowerShell](load-balancer-ipv6-internet-ps.md)
-> * [Лазурный CLI](load-balancer-ipv6-internet-cli.md)
+> * [Azure CLI](load-balancer-ipv6-internet-cli.md)
 > * [Шаблон](load-balancer-ipv6-internet-template.md)
 
 >[!NOTE] 
->В этой статье описывается вводная функция IPv6, позволяющая балансирум basic Load обеспечивающих подключение IPv4 и IPv6. Всеобъемлющее подключение IPv6 теперь доступно с [IPv6 для Azure VNETs,](../virtual-network/ipv6-overview.md) которое интегрирует подключение IPv6 с вашими виртуальными сетями и включает в себя ключевые функции, такие как правила Группы сетевой безопасности IPv6, IPv6 пользователь-определяемая, балансировка iPv6 Basic и Standard load и многое другое.  IPv6 для Azure VNETs является рекомендуемым стандартом для приложений IPv6 в Azure. [См. IPv6 для развертывания Azure VNET Powershell](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md) 
+>В этой статье описывается вводная функция IPv6, позволяющая базовым подсистемам балансировки нагрузки предоставлять подключения IPv4 и IPv6. Комплексное подключение IPv6 теперь доступно с [IPv6 для Azure виртуальных сетей](../virtual-network/ipv6-overview.md) , которое интегрирует IPv6-подключения с виртуальными сетями и включает основные функции, такие как правила группы безопасности сети IPv6, определяемая пользователем маршрутизация IPv6, базовая и стандартная балансировка нагрузки IPv6 и многое другое.  IPv6 для Azure виртуальных сетей является рекомендуемым стандартом для приложений IPv6 в Azure. См. раздел [IPv6 для развертывания Azure vnet PowerShell](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md) 
 
 Azure Load Balancer является балансировщиком нагрузки 4-го уровня (TCP, UDP). Балансировщик нагрузки обеспечивает высокий уровень доступности, распределяя входящий трафик между работоспособными экземплярами службы в облачных службах или виртуальных машинах, определенных в наборе балансировщика нагрузки. Azure Load Balancer может также представить данные службы на нескольких портах, нескольких IP-адресах или обоими этими способами.
 
@@ -55,13 +55,13 @@ Azure Load Balancer является балансировщиком нагруз
 
 Чтобы развернуть балансировщик нагрузки, необходимо создать и настроить следующие объекты:
 
-* Конфигурация IP-адреса Frontend - содержит общедоступные IP-адреса для входящего сетевого трафика.
-* Backend address pool - содержит сетевые интерфейсы (NICs) для виртуальных машин для получения сетевого трафика от балансивающего нагрузожающего.
+* IP-конфигурация внешнего интерфейса — содержит общедоступные IP-адреса для входящего сетевого трафика.
+* Внутренний пул адресов — содержит сетевые интерфейсы (NIC), которые виртуальные машины получают сетевой трафик от балансировщика нагрузки.
 * Правила балансировки нагрузки. Содержат правила сопоставления общего порта в балансировщике нагрузки с портом в пуле внутренних адресов.
 * Правила NAT для входящего трафика. Содержат правила сопоставления общего порта в балансировщике нагрузки с портом на конкретной виртуальной машине в пуле внутренних адресов.
 * Пробы. Содержат пробы работоспособности, с помощью которых можно проверить доступность экземпляров виртуальных машин в пуле внутренних адресов.
 
-Для получения дополнительной [Azure Load Balancer components](./concepts-limitations.md#load-balancer-components)информации см.
+Дополнительные сведения см. в разделе [Azure Load Balancer Components](./concepts-limitations.md#load-balancer-components).
 
 ## <a name="set-up-powershell-to-use-resource-manager"></a>Настройка PowerShell для использования Resource Manager
 
@@ -102,7 +102,7 @@ Azure Load Balancer является балансировщиком нагруз
     $vnet = New-AzvirtualNetwork -Name VNet -ResourceGroupName NRP-RG -Location 'West US' -AddressPrefix 10.0.0.0/16 -Subnet $backendSubnet
     ```
 
-2. Создайте общедоступный IP-адрес (PIP) Azure для интерфейсного пула IP-адресов. Не забудьте изменить `-DomainNameLabel` значение для перед запуском следующих команд. Значение должно быть уникальным в регионе Azure.
+2. Создайте общедоступный IP-адрес (PIP) Azure для интерфейсного пула IP-адресов. Не забудьте изменить значение для `-DomainNameLabel` перед выполнением следующих команд. Значение должно быть уникальным в пределах региона Azure.
 
     ```azurepowershell-interactive
     $publicIPv4 = New-AzPublicIpAddress -Name 'pub-ipv4' -ResourceGroupName NRP-RG -Location 'West US' -AllocationMethod Static -IpAddressVersion IPv4 -DomainNameLabel lbnrpipv4

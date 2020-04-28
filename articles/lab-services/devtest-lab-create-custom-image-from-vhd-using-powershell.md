@@ -1,5 +1,5 @@
 ---
-title: Создание пользовательского изображения из файла VHD с помощью Azure PowerShell
+title: Создание пользовательского образа из VHD-файла с помощью Azure PowerShell
 description: Автоматизация создания пользовательского образа в Azure DevTest Labs из VHD-файла с помощью PowerShell
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
 ms.openlocfilehash: cd144659dd8a8e981e267be998c9c783b7482840
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76169576"
 ---
 # <a name="create-a-custom-image-from-a-vhd-file-using-powershell"></a>Создание пользовательского образа из VHD-файла с помощью PowerShell
@@ -35,20 +35,20 @@ ms.locfileid: "76169576"
 
 Чтобы создать пользовательский образ из VHD-файла с помощью PowerShell, сделайте следующее:
 
-1. В запросе PowerShell войдите в свою учетную запись Azure со следующим вызовом на cmdlet **Connect-AzAccount.**
+1. В командной строке PowerShell Войдите в свою учетную запись Azure, выполнив следующий вызов командлета **Connect-азаккаунт** .
 
     ```powershell
     Connect-AzAccount
     ```
 
-1.  Выберите нужную подписку Azure, позвонив в cmdlet **Select-AzSubscription.** Замените заполнитель для переменной **$subscriptionId** на идентификатор действующей подписки Azure.
+1.  Выберите нужную подписку Azure, вызвав командлет **SELECT-азсубскриптион** . Замените заполнитель для переменной **$subscriptionId** на идентификатор действующей подписки Azure.
 
     ```powershell
     $subscriptionId = '<Specify your subscription ID here>'
     Select-AzSubscription -SubscriptionId $subscriptionId
     ```
 
-1.  Получить лабораторный объект, позвонив **Get-AzResource** cmdlet. Замените заполнители для переменных **$labRg** и **$labName** на соответствующие значения для своей среды.
+1.  Получите лабораторный объект, вызвав командлет **Get-азресаурце** . Замените заполнители для переменных **$labRg** и **$labName** на соответствующие значения для своей среды.
 
     ```powershell
     $labRg = '<Specify your lab resource group name here>'
@@ -62,7 +62,7 @@ ms.locfileid: "76169576"
     $vhdUri = '<Specify the VHD URI here>'
     ```
 
-1.  Создайте пользовательское изображение с помощью cmdlet **New-AzResourceGroupDeployment.** Замените следующие заполнители для переменных **$customImageName** и **$customImageDescription** на значимые имена для своей среды.
+1.  Создайте пользовательский образ с помощью командлета **New-азресаурцеграупдеплоймент** . Замените следующие заполнители для переменных **$customImageName** и **$customImageDescription** на значимые имена для своей среды.
 
     ```powershell
     $customImageName = '<Specify the custom image name>'

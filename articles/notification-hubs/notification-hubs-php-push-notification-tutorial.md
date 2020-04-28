@@ -1,5 +1,5 @@
 ---
-title: Как использовать концентраторы уведомлений Azure с помощью PHP
+title: Как использовать центры уведомлений Azure с PHP
 description: Узнайте, как использовать центры уведомлений Azure из серверной части PHP.
 services: notification-hubs
 documentationcenter: ''
@@ -17,22 +17,22 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 9a77a9d9c8b2d71197089f66d81e07d56c780e11
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76263852"
 ---
 # <a name="how-to-use-notification-hubs-from-php"></a>Использование концентраторов уведомлений из PHP
 
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
-Вы можете получить доступ ко всем функциям уведомлений концентратов из бэкэнда Java/PHP/Ruby, используя интерфейс Notification Hub REST, описанный в APIs ДЛЯ [уведомлений](https://msdn.microsoft.com/library/dn223264.aspx)MSDN.
+Доступ ко всем функциям концентраторов уведомлений можно получить из серверной части Java/PHP/Ruby с помощью интерфейса RESTFUL центра уведомлений, как описано в разделе MSDN [интерфейсы API для концентраторов уведомлений](https://msdn.microsoft.com/library/dn223264.aspx).
 
 В этом разделе описывается:
 
 * построение клиента REST для функций концентраторов уведомлений на PHP;
-* Следуйте [Получить начал учебник](notification-hubs-ios-apple-push-notification-apns-get-started.md) для вашей мобильной платформы выбора, реализации бэкэнд часть в PHP.
+* Следуйте указаниям в [руководстве по началу](notification-hubs-ios-apple-push-notification-apns-get-started.md) работы для вашей мобильной платформы, реализующей серверную часть на PHP.
 
 ## <a name="client-interface"></a>Интерфейс клиента
 
@@ -55,7 +55,7 @@ ms.locfileid: "76263852"
 
 ## <a name="implementation"></a>Реализация
 
-Если вы еще не сделали, следуйте [Получить начал учебник] до последнего раздела, где вы должны реализовать бэкэнд.
+Если вы еще не сделали это, следуйте инструкциям в [руководстве по началу работы] вплоть до последнего раздела, в котором необходимо реализовать серверную часть.
 Кроме того, при необходимости можно воспользоваться кодом из [Примере оболочки PHP REST] и перейти непосредственно к разделу [Завершение работы с руководством](#complete-tutorial).
 
 Подробные сведения о реализации полноценной оболочки REST можно найти в [MSDN](https://msdn.microsoft.com/library/dn530746.aspx). В этом разделе описывается реализация основных действий на PHP, необходимых для доступа к конечным точкам REST службы "Центры уведомлений".
@@ -280,7 +280,7 @@ ms.locfileid: "76263852"
 
 После выполнения кода PHP на целевом устройстве должно отобразиться уведомление.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом разделе было показано, как создать простой клиент Java REST для службы "Центры уведомлений". Здесь вы можете сделать следующее:
 
@@ -291,4 +291,4 @@ ms.locfileid: "76263852"
 Дополнительную информацию можно найти также в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 
 [Примере оболочки PHP REST]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
-[Начало учебника]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
+[Руководство по началу работы]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/

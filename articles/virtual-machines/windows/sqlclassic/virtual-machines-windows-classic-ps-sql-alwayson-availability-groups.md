@@ -15,10 +15,10 @@ ms.workload: iaas-sql-server
 ms.date: 03/17/2017
 ms.author: mikeray
 ms.openlocfilehash: ba6f1300353247ef2de99b2bd903bc82665d9a52
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75978146"
 ---
 # <a name="configure-the-always-on-availability-group-on-an-azure-vm-with-powershell"></a>Настройка группы доступности Always On на виртуальной машине Azure с помощью PowerShell
@@ -30,7 +30,7 @@ ms.locfileid: "75978146"
 Прежде чем начать, учтите, что теперь можно выполнить эту задачу в модели Azure Resource Manager. Для новых развертываний мы советуем использовать модель Azure Resource Manager. См. сведения в статье [Введение в группы доступности Always On SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-portal-sql-availability-group-overview.md).
 
 > [!IMPORTANT]
-> Для большинства новых развертываний рекомендуется использовать модель Resource Manager. Azure имеет две различные модели развертывания для создания и работы с ресурсами: [менеджер ресурсов и классический.](../../../azure-resource-manager/management/deployment-models.md) В этой статье рассматривается использование классической модели развертывания.
+> Для большинства новых развертываний рекомендуется использовать модель Resource Manager. В Azure предусмотрены две различные модели развертывания для создания ресурсов и работы с ними: [Диспетчер ресурсов и Classic](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания.
 
 Виртуальные машины Azure могут помочь администраторам баз данных сократить затраты при реализации более высокого уровня доступности системы SQL Server. В этом руководстве описано, как реализовать группу доступности с помощью сквозного соединения SQL Server Always On в среде Azure. Когда вы завершите, решение SQL Server Always On в Azure будет состоять из следующих элементов:
 
@@ -46,7 +46,7 @@ ms.locfileid: "75978146"
 
 * Вы уже имеете учетную запись Azure с подпиской для виртуальных машин.
 * В системе установлены [командлеты Azure PowerShell](/powershell/azure/overview).
-* Вы хорошо понимаете принцип работы групп доступности Always On в локальных решениях. Для получения дополнительной информации см. [Всегда на группы доступности (Сервер S'L)](https://msdn.microsoft.com/library/hh510230.aspx).
+* Вы хорошо понимаете принцип работы групп доступности Always On в локальных решениях. Дополнительные сведения см. в разделе [группы доступности Always On (SQL Server)](https://msdn.microsoft.com/library/hh510230.aspx).
 
 ## <a name="connect-to-your-azure-subscription-and-create-the-virtual-network"></a>Подключение к подписке Azure и создание виртуальной сети
 1. В окне Powershell на локальном компьютере импортируйте модуль Azure, скачайте файл параметров публикации на компьютер и подключите сеанс PowerShell к подписке Azure путем импорта скачанных параметров публикации.
@@ -381,7 +381,7 @@ ms.locfileid: "75978146"
 
 * Все серверы. Необходимо установить компонент **отказоустойчивой кластеризации**.
 * Все серверы. Необходимо добавить учетную запись **CORP\Install** в качестве **администратора** виртуальной машины.
-* Только ContosoSS-L1 и ContosoS'L2: Вам необходимо добавить **corp-Install** в качестве роли **sysadmin** в базу данных по умолчанию.
+* Только ContosoSQL1 и ContosoSQL2: необходимо добавить **CORP\Install** в качестве роли **sysadmin** в базе данных по умолчанию.
 * Только ContosoSQL1 и ContosoSQL2. Необходимо добавить учетную запись **NT AUTHORITY\System** в качестве имени входа со следующими разрешениями:
 
   * Изменение любой группы доступности

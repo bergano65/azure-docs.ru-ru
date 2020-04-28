@@ -1,5 +1,5 @@
 ---
-title: Включить мультитенантные приложения - Azure Digital Twins Документы Майкрософт
+title: Включение многоклиентских приложений в Azure Digital двойников | Документация Майкрософт
 description: Как настроить мультитенантные приложения Azure Active Directory для Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
@@ -9,10 +9,10 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/17/2020
 ms.openlocfilehash: 6e1321e01d8d12974a2704f4478b02a26c14142f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76264939"
 ---
 # <a name="enable-multitenant-applications-with-azure-digital-twins"></a>Включение мультитенантных приложений с помощью Azure Digital Twins
@@ -54,18 +54,18 @@ ms.locfileid: "76264939"
 
 - На [портале Azure](https://portal.azure.com) администратор клиента Azure AD **пользователя** должен выполнить описанные ниже действия:
 
-  1. Поиск **подписок** в верхнем поле поиска Azure. Выберите **Подписку**.
+  1. Поиск **подписок** в верхнем поле поиска Azure. Выберите **подписки**.
   1. Выберите подписку с клиентом Azure Active Directory, который будет использоваться в приложении **разработчика**.
 
      [![Подписки Azure Active Directory](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
 
-  1. Выберите **поставщиков ресурсов.**
+  1. Выберите **поставщики ресурсов**.
   1. Найти **Microsoft.IoTSpaces**.
   1. Выберите **Зарегистрировать**.
 
      [![Поставщики ресурсов Azure Active Directory](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения см. в статье [Создание определяемых пользователем функций в Azure Digital Twins](./how-to-user-defined-functions.md).
 

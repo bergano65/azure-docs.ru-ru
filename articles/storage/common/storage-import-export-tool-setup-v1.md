@@ -9,10 +9,10 @@ ms.date: 01/15/2017
 ms.author: twooley
 ms.subservice: common
 ms.openlocfilehash: f65220a04a709bae5a6892bfd4105195cee35741
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75978418"
 ---
 # <a name="setting-up-the-azure-importexport-tool"></a>Настройка инструмента импорта и экспорта Azure
@@ -247,11 +247,11 @@ Examples:
         es\drama /dstdir:movies/drama/ /skipwrite
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Подготовка жестких дисков для выполнения задания по импорту](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
-* [Предварительный просмотр использования диска для задания на экспорт](../storage-import-export-tool-previewing-drive-usage-export-v1.md)   
+* [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
+* [Предварительный просмотр использования дисков для задания экспорта](../storage-import-export-tool-previewing-drive-usage-export-v1.md)   
 * [Просмотр состояния задания с помощью файлов журнала копирования](../storage-import-export-tool-reviewing-job-status-v1.md)   
-* [Ремонт задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
+* [Восстановление задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
 * [Исправление задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)   
-* [Устранение проблем с инструментом импорта/экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)
+* [Устранение неполадок средства импорта и экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)

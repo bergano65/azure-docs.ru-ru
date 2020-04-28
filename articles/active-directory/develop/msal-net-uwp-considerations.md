@@ -1,7 +1,7 @@
 ---
-title: Соображения UWP (MSAL.NET) Azure
+title: Замечания по UWP (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте о соображениях использования универсальной платформы Windows (UWP) в библиотеке подлинности Microsoft для .NET (MSAL.NET).
+description: Сведения о вопросах использования универсальная платформа Windows (UWP) с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -15,54 +15,54 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2eeec28569cf31af4542d6cd7aca1fb27d77b1e0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77132525"
 ---
-# <a name="considerations-for-using-universal-windows-platform-with-msalnet"></a>Рассмотрение вопроса об использовании универсальной платформы Windows с MSAL.NET
-Разработчики приложений, которые используют Универсальную платформу Windows (UWP) с MSAL.NET должны рассмотреть концепции, представленные в этой статье.
+# <a name="considerations-for-using-universal-windows-platform-with-msalnet"></a>Рекомендации по использованию универсальная платформа Windows с MSAL.NET
+Разработчики приложений, использующих универсальная платформа Windows (UWP) с MSAL.NET, должны учитывать концепции, представленные в этой статье.
 
-## <a name="the-usecorporatenetwork-property"></a>Свойство UseCorporateNetwork
-На платформе Windows Runtime (WinRT) `PublicClientApplication` имеет `UseCorporateNetwork`свойство Boolean. Это свойство позволяет приложениям Windows 8.1 и UWP получать выгоду от интегрированной аутентификации Windows (IWA), если пользователь вписался в учетную запись с федеративным клиентом Active Directory (Azure AD). Пользователи, всданные в операционную систему, также могут использовать один развлек (SSO). При настройке `UseCorporateNetwork` свойства MSAL.NET использует веб-брокера аутентификации (WAB).
+## <a name="the-usecorporatenetwork-property"></a>Свойство Усекорпоратенетворк
+На платформе среда выполнения Windows (WinRT) `PublicClientApplication` имеет логическое свойство. `UseCorporateNetwork` Это свойство позволяет приложениям Windows 8.1 и приложениям UWP использовать преимущества встроенной проверки подлинности Windows (IWA), если пользователь вошел в учетную запись с клиентом Федерации Azure Active Directory (Azure AD). Пользователи, выполнившие вход в операционную систему, также могут использовать единый вход (SSO). При задании `UseCorporateNetwork` свойства MSAL.NET использует брокер веб-проверки подлинности (WAB).
 
 > [!IMPORTANT]
-> Установка `UseCorporateNetwork` свойства на истину предполагает, что разработчик приложения включил IWA в приложение. Для включения IWA:
-> - В приложении UWP `Package.appxmanifest`на вкладке **«Возможности»** включите следующие возможности:
+> Присвоение `UseCorporateNetwork` свойству значения true предполагает, что разработчик приложения включил IWA в приложении. Чтобы включить IWA, сделайте следующее:
+> - В приложении `Package.appxmanifest`UWP на вкладке **возможности** включите следующие возможности.
 >   - **Корпоративная проверка подлинности**
 >   - **Частные сети (клиент и сервер)**
->   - **Общий пользовательский сертификат**
+>   - **Сертификат общего пользователя**
 
-IWA не включен по умолчанию, потому что Microsoft Store требует высокого уровня проверки, прежде чем он принимает приложения, которые запрашивает возможности корпоративной аутентификации или общие сертификаты пользователей. Не все разработчики хотят сделать этот уровень проверки.
+IWA не включен по умолчанию, так как Microsoft Store требует высокого уровня проверки перед приемом приложений, запрашивающих возможности проверки подлинности предприятия или общих сертификатов пользователей. Не все разработчики хотят выполнить этот уровень проверки.
 
-На платформе UWP базовая реализация WAB не работает правильно в корпоративных сценариях, где включен условный доступ. Пользователи видят симптомы этой проблемы, когда они пытаются войти в систему с помощью Windows Hello. Когда пользователю предлагается выбрать сертификат:
+На платформе UWP Базовая реализация WAB работает неправильно в корпоративных сценариях с включенным условным доступом. Пользователи видят симптомы этой проблемы при попытке входа с помощью Windows Hello. Когда пользователю предлагается выбрать сертификат:
 
-- Сертификат для PIN-кода не найден.
-- После того, как пользователь выбирает сертификат, он не подсказывается для PIN-кода.
+- Не найден сертификат для ПИН-кода.
+- После того, как пользователь выберет сертификат, он не запрашивает ввод ПИН-кода.
 
-Вы можете попытаться избежать этой проблемы с помощью альтернативного метода, такого как имя пользователя-пароль и проверка подлинности телефона, но опыт не очень хорош.
+Вы можете попытаться избежать этой проблемы с помощью альтернативного метода, например имени пользователя, пароля и телефонной проверки подлинности, но неплохой опыт.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Некоторые клиенты сообщили о следующей ошибке ввходе в конкретных корпоративных средах, в которых они знают, что у них есть подключение к Интернету и что соединение работает с общедоступной сетью.
+Некоторые клиенты сообщили об ошибке входа в определенных корпоративных средах, в которых они узнают, что они имеют подключение к Интернету и что подключение работает с общедоступной сетью.
 
 ```Text
 We can't connect to the service you need right now. Check your network connection or try this again later.
 ```
 
-Вы можете избежать этой проблемы, убедившись, что WAB (основной компонент Windows) позволяет частную сеть. Вы можете сделать это, установив ключ реестра:
+Эту ошибку можно избежать, убедившись, что WAB (базовый компонент Windows) разрешает использовать частную сеть. Это можно сделать, задав раздел реестра:
 
 ```Text
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe\EnablePrivateNetwork = 00000001
 ```
 
-Для получения дополнительной информации, смотрите [веб-брокер аутентификации - Скрипач](https://docs.microsoft.com/windows/uwp/security/web-authentication-broker#fiddler).
+Дополнительные сведения см. в разделе [посредник веб-проверки подлинности — Fiddler](https://docs.microsoft.com/windows/uwp/security/web-authentication-broker#fiddler).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Следующие примеры предоставляют более подробную информацию.
+В следующих примерах содержатся дополнительные сведения.
 
 Пример | Платформа | Описание 
 |------ | -------- | -----------|
-|[активный-каталог-dotnet-родной-uwp-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Клиентское приложение UWP, используюеееееееMSAL.NET. Он получает доступ к Microsoft Graph для пользователя, который проверяет подлинность с помощью точки azure AD 2.0. <br>![Топология](media/msal-net-uwp-considerations/topology-native-uwp.png)|
-|[активный каталог-xamarin-родной-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2.0. Он также показывает, как получить доступ к Microsoft Graph и показывает полученный токен. <br>![Топология](media/msal-net-uwp-considerations/topology-xamarin-native.png)|
+|[Active-Directory-DotNet-Native-UWP-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Клиентское приложение UWP, использующее MSAL.NET. Он обращается к Microsoft Graph для пользователя, который выполняет проверку подлинности с помощью конечной точки Azure AD 2,0. <br>![Топология](media/msal-net-uwp-considerations/topology-native-uwp.png)|
+|[Active-Directory-Xamarin-Native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. Здесь также показано, как получить доступ к Microsoft Graph и показать получившийся маркер. <br>![Топология](media/msal-net-uwp-considerations/topology-xamarin-native.png)|

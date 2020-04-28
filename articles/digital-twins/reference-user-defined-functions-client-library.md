@@ -1,6 +1,6 @@
 ---
-title: Ссылка на библиотеку клиентских функций, определяемых пользователем, - Azure Digital Twins Документы Майкрософт
-description: Azure Digital Twins, определяемая функциями клиентской библиотеки.
+title: Справочник по клиентской библиотеке пользовательских функций — Azure Digital двойников | Документация Майкрософт
+description: Справочная документация по клиентской библиотеке пользовательских функций в Azure Digital двойников.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 01/17/2020
 ms.custom: seodec18
 ms.openlocfilehash: bd6095daca51ddca0cfb4b34ca86e763df9a3d02
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76276814"
 ---
 # <a name="user-defined-functions-client-library-reference"></a>Справочник по клиентским библиотекам определяемых пользователем функций
@@ -32,7 +32,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ---------- | ------------------- | ------------ |
-| *id*  | `guid` | Идентификатор пространства |
+| *идентификатор*  | `guid` | Идентификатор пространства |
 
 ### <a name="getsensormetadataid--sensor"></a>getSensorMetadata(id) ⇒ `sensor`
 
@@ -42,7 +42,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ---------- | ------------------- | ------------ |
-| *id*  | `guid` | Идентификатор датчика |
+| *идентификатор*  | `guid` | Идентификатор датчика |
 
 ### <a name="getdevicemetadataid--device"></a>getDeviceMetadata(id) ⇒ `device`
 
@@ -52,7 +52,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *id* | `guid` | Идентификатор устройства |
+| *идентификатор* | `guid` | Идентификатор устройства |
 
 ### <a name="getsensorvaluesensorid-datatype--value"></a>getSensorValue(sensorId, dataType) ⇒ `value`
 
@@ -74,7 +74,7 @@ ms.locfileid: "76276814"
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
 | *spaceId*  | `guid` | Идентификатор пространства |
-| *значениеИмя* | `string` | Имя свойства пространства |
+| *valueName* | `string` | Имя свойства пространства |
 
 ### <a name="getsensorhistoryvaluessensorid-datatype--value"></a>getSensorHistoryValues(sensorId, dataType) ⇒ `value[]`
 
@@ -96,7 +96,7 @@ ms.locfileid: "76276814"
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Идентификатор пространства |
-| *значениеИмя* | `string` | Имя свойства пространства |
+| *valueName* | `string` | Имя свойства пространства |
 
 ### <a name="getspacechildspacesspaceid--space"></a>getSpaceChildSpaces(spaceId) ⇒ `space[]`
 
@@ -136,7 +136,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *устройствоId* | `guid` | Идентификатор устройства |
+| *deviceId* | `guid` | Идентификатор устройства |
 
 ### <a name="getspaceparentspacechildspaceid--space"></a>getSpaceParentSpace(childSpaceId) ⇒ `space`
 
@@ -187,7 +187,7 @@ ms.locfileid: "76276814"
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Идентификатор пространства |
-| *Propertyname* | `string` | Имя свойства пространства |
+| *propertyName* | `string` | Имя свойства пространства |
 
 ### <a name="getsensorextendedpropertysensorid-propertyname--extendedproperty"></a>getSensorExtendedProperty(sensorId, propertyName) ⇒ `extendedProperty`
 
@@ -198,7 +198,7 @@ ms.locfileid: "76276814"
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
 | *sensorId* | `guid` | Идентификатор датчика |
-| *Propertyname* | `string` | Имя свойства датчика |
+| *propertyName* | `string` | Имя свойства датчика |
 
 ### <a name="getdeviceextendedpropertydeviceid-propertyname--extendedproperty"></a>getDeviceExtendedProperty(deviceId, propertyName) ⇒ `extendedProperty`
 
@@ -208,8 +208,8 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *устройствоId* | `guid` | Идентификатор устройства |
-| *Propertyname* | `string` | Имя свойства устройства |
+| *deviceId* | `guid` | Идентификатор устройства |
+| *propertyName* | `string` | Имя свойства устройства |
 
 ### <a name="setsensorvaluesensorid-datatype-value"></a>setSensorValue(sensorId, dataType, value)
 
@@ -294,7 +294,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *Propertyname* | `string` | Имя расширенного свойства |
+| *propertyName* | `string` | Имя расширенного свойства |
 
 #### <a name="valuevaluename--value"></a>Value(valueName) ⇒ `value`
 
@@ -302,7 +302,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *значениеИмя* | `string` | Имя значения |
+| *valueName* | `string` | Имя значения |
 
 #### <a name="historyvaluename--value"></a>History(valueName) ⇒ `value[]`
 
@@ -310,7 +310,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *значениеИмя* | `string` | Имя значения |
+| *valueName* | `string` | Имя значения |
 
 #### <a name="notifypayload"></a>Notify(payload)
 
@@ -354,7 +354,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *Propertyname* | `string` | Имя расширенного свойства |
+| *propertyName* | `string` | Имя расширенного свойства |
 
 #### <a name="notifypayload"></a>Notify(payload)
 
@@ -402,7 +402,7 @@ ms.locfileid: "76276814"
 
 | Параметр  | Тип                | Описание  |
 | ------ | ------------------- | ------------ |
-| *Propertyname* | `string` | Имя расширенного свойства |
+| *propertyName* | `string` | Имя расширенного свойства |
 
 #### <a name="value--value"></a>Value() ⇒ `value`
 
@@ -439,7 +439,7 @@ ms.locfileid: "76276814"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. статью [Обработка данных и определяемые пользователем функции](./concepts-user-defined-functions.md).
 

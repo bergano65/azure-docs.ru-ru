@@ -14,10 +14,10 @@ ms.date: 09/18/2018
 ms.author: changov
 ms.reviewer: vashan, rajraj
 ms.openlocfilehash: f5fbd80fc9a8e519cf8f49ab16d7e747c6a8171b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76045357"
 ---
 # <a name="troubleshooting-api-throttling-errors"></a>Устранение ошибок регулирования API 
@@ -80,7 +80,7 @@ Content-Type: application/json; charset=utf-8
 ## <a name="api-call-rate-and-throttling-error-analyzer"></a>Анализатор частоты вызова API и ошибок регулирования
 Доступна предварительная версия средства устранения неполадок для API поставщика вычислительных ресурсов. Эти командлеты PowerShell предоставляют статистику о частоте запросов API за интервал времени на операцию и о нарушении регулирования на группу операций (политику):
 -   [Export-AzLogAnalyticRequestRateByInterval](https://docs.microsoft.com/powershell/module/az.compute/export-azloganalyticrequestratebyinterval)
--   [Экспорт-ацлоганалитическийзатическийзапрос](https://docs.microsoft.com/powershell/module/az.compute/export-azloganalyticthrottledrequest)
+-   [Export-Азлоганалитиксроттледрекуест](https://docs.microsoft.com/powershell/module/az.compute/export-azloganalyticthrottledrequest)
 
 Статистика вызовов API позволяет подробно изучить поведение клиентов подписки и легко определить шаблоны вызова, которые приводят к регулированию.
 

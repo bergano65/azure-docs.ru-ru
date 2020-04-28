@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
 ms.openlocfilehash: da564f8d49675ba0d51c5120768028e9d333e2fd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76045474"
 ---
 # <a name="create-an-internal-load-balancer-by-using-the-azure-powershell-module"></a>Создание внутренней подсистемы балансировки нагрузки с помощью модуля Azure PowerShell
@@ -25,7 +25,7 @@ ms.locfileid: "76045474"
 > [!div class="op_single_selector"]
 > * [Портал Azure](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)
 > * [PowerShell](../load-balancer/load-balancer-get-started-ilb-arm-ps.md)
-> * [Лазурный CLI](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
+> * [Azure CLI](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
 > * [Шаблон](../load-balancer/load-balancer-get-started-ilb-arm-template.md)
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "76045474"
 * Конфигурация проверки: проверки состояния работоспособности для виртуальных машин.
 * Правила NAT для входящих подключений: правила порта для прямого доступа к виртуальным машинам.
 
-Для получения дополнительной информации о [Azure Load Balancer components](concepts-limitations.md#load-balancer-components)компонентах балансоровы нагрузки см.
+Дополнительные сведения о компонентах подсистемы балансировки нагрузки см. в разделе [Azure Load Balancer Components](concepts-limitations.md#load-balancer-components).
 
 Далее описана настройка балансировщика нагрузки для двух виртуальных машин.
 
@@ -251,7 +251,7 @@ $backendnic2= New-AzNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic2-b
 
 ### <a name="step-1-store-the-load-balancer-resource"></a>Шаг 1. Сохранение ресурса подсистемы балансировки нагрузки
 
-Сохраните ресурс подсистемы балансировки нагрузки в переменную (если вы этого еще не сделали). Мы используем переменное имя **$lb**. Для значений атрибутов в скрипте используйте имена для ресурсов балансоровы хитора нагрузки, созданных в предыдущих шагах.
+Сохраните ресурс подсистемы балансировки нагрузки в переменную (если вы этого еще не сделали). Мы используем имя переменной **$LB**. Для значений атрибутов в скрипте используйте имена ресурсов балансировщика нагрузки, которые были созданы на предыдущих шагах.
 
 ```azurepowershell-interactive
 $lb = Get-AzLoadBalancer –name NRP-LB -resourcegroupname NRP-RG

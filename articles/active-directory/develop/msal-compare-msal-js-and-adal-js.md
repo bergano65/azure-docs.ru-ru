@@ -14,10 +14,10 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 7238a78279528b4522d09178d00bf916f14bad88
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76696424"
 ---
 # <a name="differences-between-msal-js-and-adal-js"></a>Различия между ADAL и MSAL для JavaScript
@@ -61,7 +61,7 @@ ms.locfileid: "76696424"
 
     Вы можете запросить области для любого API ресурсов, используя URI API-интерфейса в формате "URI_приложения/область", например https:\//mytenant.onmicrosoft.com/myapi/api.read.
 
-    Только для API MS Graph, `user.read` карты значения\/области к https: /graph.microsoft.com/User.Read и могут быть использованы взаимозаменяемы.
+    Только для MS API Graph, значение `user.read` области сопоставляется с HTTPS:\//Graph.Microsoft.com/User.Read и может использоваться взаимозаменяемы.
 
     ```javascript
     var request = {

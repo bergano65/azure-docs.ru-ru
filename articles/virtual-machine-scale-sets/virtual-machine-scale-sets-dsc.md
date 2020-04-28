@@ -1,6 +1,6 @@
 ---
-title: Использование желаемой конфигурации состояния с виртуальными наборами масштабов машины
-description: Использование наборов виртуальной шкалы машин с расширением конфигурации Azure Desired State для настройки виртуальных машин.
+title: Использование настройки требуемого состояния с масштабируемыми наборами виртуальных машин
+description: Использование масштабируемых наборов виртуальных машин с расширением настройки требуемого состояния Azure для настройки виртуальных машин.
 author: zjalexander
 tags: azure-service-management,azure-resource-manager
 ms.assetid: c8f047b5-0e6c-4ef3-8a47-f1b284d32942
@@ -10,10 +10,10 @@ ms.tgt_pltfrm: vm-windows
 ms.date: 04/05/2017
 ms.author: zachal
 ms.openlocfilehash: a93a8a9c27be5a1736a50e6c4c4b830980b7d974
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76278073"
 ---
 # <a name="using-virtual-machine-scale-sets-with-the-azure-dsc-extension"></a>Использование наборов масштабирования виртуальных машин с помощью расширения Azure DSC

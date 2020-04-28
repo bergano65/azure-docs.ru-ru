@@ -1,6 +1,6 @@
 ---
-title: Развертывание и управление концентраторами уведомлений с помощью PowerShell
-description: Как создавать и управлять концентраторами уведомлений с помощью PowerShell для автоматизации
+title: Развертывание концентраторов уведомлений и управление ими с помощью PowerShell
+description: Создание концентраторов уведомлений и управление ими с помощью PowerShell для автоматизации
 services: notification-hubs
 documentationcenter: ''
 author: sethmanheim
@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 863fdb445cce41f0fe4cbee63a3d6198c0a79339
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76264650"
 ---
 # <a name="deploy-and-manage-notification-hubs-using-powershell"></a>Развертывание центров уведомлений и управление ими с помощью PowerShell

@@ -9,10 +9,10 @@ ms.date: 11/20/2018
 author: sakash279
 ms.author: akshanka
 ms.openlocfilehash: b9b5d51d0d35284d9854bd048396df84881266d2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76771424"
 ---
 # <a name="azure-cosmos-db-table-api-for-java-release-notes-and-resources"></a>API таблиц Azure Cosmos DB на Java: заметки о выпуске и ресурсы
@@ -26,8 +26,8 @@ ms.locfileid: "76771424"
 
 |   |   |
 |---|---|
-|**Загрузка SDK**|[Параметры скачивания](https://github.com/azure/azure-storage-java#download)|
-|**Документация API**|[Справочная документация по API Java](https://azure.github.io/azure-storage-java/)|
+|**Загрузка пакета SDK**|[Параметры скачивания](https://github.com/azure/azure-storage-java#download)|
+|**Документация по API**|[Справочная документация по API Java](https://azure.github.io/azure-storage-java/)|
 |**Участие в разработке пакета SDK**|[GitHub](https://github.com/Azure/azure-storage-java#contribute-code-or-provide-feedback)|
 
 > [!IMPORTANT]
@@ -48,9 +48,9 @@ ms.locfileid: "76771424"
 | --- | --- | --- |
 | [1.0.0](#1.0.0) |15 ноября 2017 г. |--- |
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). 
 

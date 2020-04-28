@@ -1,7 +1,7 @@
 ---
 title: Поддержка Azure AD FS (MSAL Python)
 titleSuffix: Microsoft identity platform
-description: Узнайте о поддержке Службы Федерации активных каталогов (AD FS) в Библиотеке аутентификации Майкрософт для Python
+description: Дополнительные сведения о поддержке службы федерации Active Directory (AD FS) (AD FS) в библиотеке проверки подлинности Майкрософт для Python
 services: active-directory
 author: abhidnya13
 manager: CelesteDG
@@ -14,51 +14,51 @@ ms.author: abpati
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.openlocfilehash: 01d4cb626aabc83117e864b75b49eec63a6c0af0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76699552"
 ---
-# <a name="active-directory-federation-services-support-in-msal-for-python"></a>Поддержка активных служб Федерации каталогов в MSAL для Python
+# <a name="active-directory-federation-services-support-in-msal-for-python"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL для Python
 
-Службы Федерации активных директоров (AD FS) в Windows Server позволяют добавлять OpenID Connect и OAuth 2.0 на основе аутентификации и авторизации в приложения с помощью библиотеки подлинности Microsoft (MSAL) для Python. Используя MSAL для библиотеки Python, приложение может проверить подлинность пользователей непосредственно против AD FS. Для получения дополнительной информации о сценариях [см.](/windows-server/identity/ad-fs/ad-fs-development)
+Службы федерации Active Directory (AD FS) (AD FS) в Windows Server позволяет добавить проверку подлинности и авторизацию на основе OpenID Connect Connect и OAuth 2,0 в приложения с помощью библиотеки проверки подлинности Майкрософт (MSAL) для Python. С помощью MSAL для библиотеки Python приложение может проверять подлинность пользователей непосредственно в AD FS. Дополнительные сведения о сценариях см. в разделе [сценарии AD FS для разработчиков](/windows-server/identity/ad-fs/ad-fs-development).
 
-Есть, как правило, два способа аутентификации против AD FS:
+Существует два способа проверки подлинности в AD FS.
 
-- MSAL Python ведет переговоры с Azure Active Directory, который сам по себе является federated с другими поставщиками идентификационных данных. Федерация происходит через AD FS. MSAL Python подключается к Azure AD, который подписывается в пользователях, управляемых в Azure AD (управляемых пользователей) или пользователях, управляемых другим поставщиком идентификационных данных, таких как AD FS (федеративные пользователи). MSAL Python не знает, что пользователь является федеративным. Он просто разговаривает с Azure AD. [Орган,](msal-client-application-configuration.md#authority) который вы используете в этом случае, является обычным органом (имя хозяина власти , арендатор, общий или организации).
-- MSAL Python беседует непосредственно с органом AD FS. Это поддерживается только AD FS 2019 и позже.
+- MSAL Python обращается к Azure Active Directory, которая является Федеративной с другими поставщиками удостоверений. Федерация происходит через AD FS. MSAL Python подключается к Azure AD, который выполняет вход пользователей, управляемых в Azure AD (управляемых пользователей), или пользователей, управляемых другим поставщиком удостоверений, например AD FS (Федеративные пользователи). MSAL Python не знает, что пользователь является федеративным. Это просто говорит с Azure AD. В этом случае в качестве [центра](msal-client-application-configuration.md#authority) используется обычный центр (имя узла центра сертификации + клиент, общие или организации).
+- MSAL Python напрямую обращается к центру AD FS. Поддерживается только AD FS 2019 и более поздних версий.
 
-## <a name="connect-to-active-directory-federated-with-ad-fs"></a>Подключение к Active Directory федеративный с AD FS
+## <a name="connect-to-active-directory-federated-with-ad-fs"></a>Подключение к Active Directory федеративным с AD FS
 
-### <a name="acquire-a-token-interactively-for-a-federated-user"></a>Приобретите токен в интерактивном режиме для федеративного пользователя
+### <a name="acquire-a-token-interactively-for-a-federated-user"></a>Получение маркера в интерактивном режиме для федеративного пользователя
 
-Ниже приводится вопрос о том, подключаетесь ли вы непосредственно к службам Active Directory Federation Services (AD FS) или через Active Directory.
+Приведенные ниже зависимости применяются непосредственно к службы федерации Active Directory (AD FS) (AD FS) или через Active Directory.
 
-При `acquire_token_by_authorization_code` вызове `acquire_token_by_device_flow`или, пользовательский опыт, как правило, следующим образом:
+При вызове `acquire_token_by_authorization_code` или `acquire_token_by_device_flow`интерфейс пользователя обычно выглядит следующим образом:
 
-1. Пользователь вводит идентификатор учетной записи.
-2. AD Azure отображает краткосообщение «Забрасывая вас на страницу организации», и пользователь перенаправляется на страницу поставщика идентификационных данных. Страница ввне обычно настраивается с логотипом организации.
+1. Пользователь вводит идентификатор своей учетной записи.
+2. В Azure AD отображается краткое сообщение "идет переход на страницу вашей организации", и пользователь перенаправляется на страницу входа поставщика удостоверений. Страница входа обычно настраивается с помощью логотипа Организации.
 
-Поддерживаемые версии AD FS в этом федеративном сценарии:
-- Активные услуги Федерации каталога FS v2
-- Активные службы Федерации каталогов v3 (Windows Server 2012 R2)
-- Активные услуги Федерации каталога v4 (AD FS 2016)
+Поддерживаемые версии AD FS в этом Федеративной ситуации:
+- службы федерации Active Directory (AD FS) FS v2
+- Службы федерации Active Directory (AD FS) v3 (Windows Server 2012 R2)
+- Службы федерации Active Directory (AD FS) v4 (AD FS 2016)
 
-### <a name="acquire-a-token-via-username-and-password"></a>Приобретите токен с помощью имени пользователя и пароля
+### <a name="acquire-a-token-via-username-and-password"></a>Получение маркера с помощью имени пользователя и пароля
 
-Ниже приводится вопрос о том, подключаетесь ли вы непосредственно к службам Active Directory Federation Services (AD FS) или через Active Directory.
+Приведенные ниже зависимости применяются непосредственно к службы федерации Active Directory (AD FS) (AD FS) или через Active Directory.
 
-При приобретении токена с помощью `acquire_token_by_username_password`MSAL Python получает контакт с поставщиком идентификационных данных на основе имени пользователя. MSAL Python получает [токен SAML 1.1](reference-saml-tokens.md) от поставщика идентификационных данных, который он затем предоставляет Azure AD, который возвращает токен JSON Web (JWT).
+При получении маркера с помощью `acquire_token_by_username_password`MSAL Python Получает поставщик удостоверений для связи на основе имени пользователя. MSAL Python получает [токен SAML 1,1](reference-saml-tokens.md) от поставщика удостоверений, который затем предоставляет Azure AD, который возвращает JSON Web Token (JWT).
 
-## <a name="connecting-directly-to-ad-fs"></a>Подключение непосредственно к AD FS
+## <a name="connecting-directly-to-ad-fs"></a>Прямое подключение к AD FS
 
-При подключении каталога к AD FS, орган, который вы хотите использовать для создания приложения будет что-то вроде`https://somesite.contoso.com/adfs/`
+При подключении каталога к AD FS центр, который вы хотите использовать для создания приложения, будет выглядеть примерно так:`https://somesite.contoso.com/adfs/`
 
 MSAL Python поддерживает ADFS 2019.
 
-Он не поддерживает прямое подключение к ADFS 2016 или ADFS v2. Если вам необходимо поддерживать сценарии, требующие прямого подключения к ADFS 2016, используйте последнюю версию ADAL Python. После обновления предприимшнивой системы до ADFS 2019, вы можете использовать MSAL Python.
+Он не поддерживает прямое подключение к ADFS 2016 или ADFS v2. Если вам требуется поддержка сценариев, требующих прямого подключения к ADFS 2016, используйте последнюю версию ADAL Python. После обновления локальной системы до ADFS 2019 можно использовать MSAL Python.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- В случае с федеративной стороной см. [Например, в поведении приложения можно найти знак «Настройка активного каталога» с помощью политики Home Realm Discovery](../manage-apps/configure-authentication-for-federated-users-portal.md)
+- Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](../manage-apps/configure-authentication-for-federated-users-portal.md) .

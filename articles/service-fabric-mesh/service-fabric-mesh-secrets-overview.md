@@ -1,15 +1,15 @@
 ---
-title: Хранение и использование Azure службы Ткань сетки приложения Секреты
-description: Служба "Сетка Service Fabric" поддерживает секреты в качестве ресурсов Azure. Вот как хранить и управлять секретами с помощью приложений Service Fabric Mesh.
+title: Хранение и использование секретов приложения сети Service Fabric Azure
+description: Служба "Сетка Service Fabric" поддерживает секреты в качестве ресурсов Azure. Вот как можно хранить секреты и управлять ими с помощью приложений Service Fabricной сетки.
 author: erikadoyle
 ms.author: edoyle
 ms.date: 10/25/2018
 ms.topic: conceptual
 ms.openlocfilehash: da4eaa34840f14714616b85e24fd62cf65602b84
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76277637"
 ---
 # <a name="service-fabric-mesh-application-secrets"></a>Секреты приложения в службе "Сетка Service Fabric"
@@ -22,7 +22,7 @@ ms.locfileid: "76277637"
 * Ресурс **Секреты** — это контейнер, в котором хранятся секреты в текстовом формате. Секреты, находящиеся в пределах ресурса **Секреты**, хранятся и передаются в защищенном виде.
 * Один или несколько ресурсов **Секреты** (или Значения), которые хранятся в контейнере ресурса **Секреты**. Каждый ресурс **Секреты** (или Значения) отличается номером версии.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 Дополнительные сведения о секретах в службе "Сетка Service Fabric".
 - [Управление секретами приложения "Сетка Service Fabric"](service-fabric-mesh-howto-manage-secrets.md)
 - [Общие сведения о модели ресурсов Service Fabric](service-fabric-mesh-service-fabric-resources.md)

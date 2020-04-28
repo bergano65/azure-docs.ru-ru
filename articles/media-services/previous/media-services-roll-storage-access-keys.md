@@ -16,17 +16,17 @@ ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: milanga;cenkdin
 ms.openlocfilehash: 2a0d1c5af572c88dc11bed950b46706f0a2f081f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75981961"
 ---
 # <a name="update-media-services-after-rolling-storage-access-keys"></a>Обновление Служб мультимедиа после смены ключей доступа к хранилищу 
 
 При создании новой учетной записи служб мультимедиа Azure (AMS) пользователю предлагается выбрать учетную запись хранения Azure, которая используется для хранения мультимедийного содержимого. К учетной записи служб мультимедиа можно добавить несколько учетных записей хранения. В этой статье показано, как чередовать ключи к хранилищу данных. В нем также показано, как добавлять учетные записи хранения в учетную запись служб мультимедиа. 
 
-Чтобы выполнить действия, описанные в этой статье, необходимо использовать [API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](https://docs.microsoft.com/powershell/module/az.media).  Для получения дополнительной [How to manage Azure resources with PowerShell and Resource Manager](../../azure-resource-manager/management/manage-resource-groups-powershell.md)информации см.
+Чтобы выполнить действия, описанные в этой статье, необходимо использовать [API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](https://docs.microsoft.com/powershell/module/az.media).  Дополнительные сведения см. [в статье Управление ресурсами Azure с помощью PowerShell и диспетчер ресурсов](../../azure-resource-manager/management/manage-resource-groups-powershell.md).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -45,7 +45,7 @@ ms.locfileid: "75981961"
 ## <a name="steps-to-rotate-storage-keys"></a>Инструкции по чередованию ключей к хранилищу данных 
  
  1. Измените первичный ключ учетной записи хранения с помощью командлета PowerShell или портала [Azure](https://portal.azure.com/).
- 2. Позвоните Sync-AzMediaServiceStorageKeys cmdlet с соответствующими парамыми, чтобы заставить учетную запись мультимедиа забрать ключи учетной записи хранилища
+ 2. Вызов командлета Sync-Азмедиасервицесторажекэйс с соответствующими параметрами для принудительного выбора учетной записи носителя ключей учетной записи хранения
  
     Следующий пример демонстрирует, как синхронизировать ключи с учетными записями хранения.
   
@@ -53,7 +53,7 @@ ms.locfileid: "75981961"
   
  3. Подождите один час или около того. Проверьте работу потоковой передачи там, где она используется.
  4. Измените вторичный ключ учетной записи хранения с помощью командлета PowerShell или портала Azure.
- 5. Позвоните Sync-AzMediaServiceStorageKeys powershell с соответствующими парамами, чтобы заставить учетную запись мультимедиа, чтобы забрать новые ключи учетной записи хранилища. 
+ 5. Вызовите Sync-Азмедиасервицесторажекэйс PowerShell с соответствующими параметрами, чтобы принудительно выбрать новые ключи учетной записи хранения для учетной записи носителя. 
  6. Подождите один час или около того. Проверьте работу потоковой передачи там, где она используется.
  
 ### <a name="a-powershell-cmdlet-example"></a>Примеры использования командлетов PowerShell 
@@ -76,7 +76,7 @@ ms.locfileid: "75981961"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ### <a name="acknowledgments"></a>Благодарности

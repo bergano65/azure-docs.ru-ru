@@ -1,5 +1,5 @@
 ---
-title: 'Подключите свою локта-кистовую виртуальную сеть Azure: Сайт-к-сайт VPN: PowerShell'
+title: 'Подключение локальной сети к виртуальной сети Azure: VPN типа "сеть — сеть": PowerShell'
 description: Сведения о создании подключения IPsec между локальной сетью и виртуальной сетью Azure через общедоступный Интернет. Они помогут вам создать подключение типа "сеть — сеть" с использованием VPN-шлюза и PowerShell.
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: cherylmc
 ms.openlocfilehash: d1693a6165aa31b221b6901e2e1c8b2955a3dfb3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76045705"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell
@@ -22,7 +22,7 @@ ms.locfileid: "76045705"
 > [!div class="op_single_selector"]
 > * [Портал Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 > * [PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md)
-> * [Cli](vpn-gateway-howto-site-to-site-resource-manager-cli.md)
+> * [CLI](vpn-gateway-howto-site-to-site-resource-manager-cli.md)
 > * [Портал Azure (классический)](vpn-gateway-howto-site-to-site-classic-portal.md)
 > 
 >
@@ -43,7 +43,7 @@ ms.locfileid: "76045705"
 
 [!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
-### <a name="example-values"></a><a name="example"></a>Значения примера
+### <a name="example-values"></a><a name="example"></a>Примеры значений
 
 В примерах этой статьи мы используем следующие значения. Эти значения можно использовать для создания тестовой среды или для лучшего понимания примеров в этой статье.
 
@@ -129,7 +129,7 @@ New-AzResourceGroup -Name TestRG1 -Location 'East US'
    Set-AzVirtualNetwork -VirtualNetwork $vnet
    ```
 
-## <a name="2-create-the-local-network-gateway"></a>2. <a name="localnet"> </a>Создание локального сетевого шлюза
+## <a name="2-create-the-local-network-gateway"></a>2. <a name="localnet"> </a>Создание шлюза локальной сети
 
 Обычно термин "шлюз локальной сети" (LNG) означает локальное расположение. Это не то же самое, что шлюз виртуальной сети. Присвойте сайту имя, по которому Azure может обращаться к этому сайту, а затем укажите IP-адрес локального VPN-устройства, к которому вы подключитесь. Вы можете также указать префиксы IP-адресов, которые будут направляться через VPN-шлюз к VPN-устройству. Указываемые префиксы адресов расположены в локальной сети. При изменении локальной сети вы сможете без проблем обновить эти префиксы.
 
@@ -156,11 +156,11 @@ New-AzResourceGroup -Name TestRG1 -Location 'East US'
 
 Иногда префиксы адресов шлюза локальной сети могут изменяться. Действия по изменению префиксов IP-адресов зависят от того, создано ли подключение через VPN-шлюз. См. раздел [Изменение префиксов IP-адресов для локального сетевого шлюза](#modify) этой статьи.
 
-## <a name="3-request-a-public-ip-address"></a><a name="PublicIP"></a>3. Запросить публичный IP-адрес
+## <a name="3-request-a-public-ip-address"></a><a name="PublicIP"></a>3. запрос общедоступного IP-адреса
 
 VPN-шлюз должен иметь общедоступный IP-адрес. Сначала запросите ресурс IP-адреса, а затем укажите его при создании шлюза виртуальной сети. IP-адрес динамически назначается ресурсу при создании VPN-шлюза. 
 
-VPN Gateway в настоящее время поддерживает только *динамическое* распределение ip-адресов. Вы не можете запросить назначение статического общедоступного IP-адреса. Однако это не означает, что IP-адрес изменится после назначения VPN-шлюзу. Общедоступный IP-адрес изменяется только после удаления и повторного создания шлюза. При изменении размера, сбросе или других внутренних операциях обслуживания или обновления IP-адрес VPN-шлюза не изменяется.
+В настоящее время VPN-шлюз поддерживает выделение *динамических* общедоступных IP-адресов. Вы не можете запросить назначение статического общедоступного IP-адреса. Однако это не означает, что IP-адрес изменится после назначения VPN-шлюзу. Общедоступный IP-адрес изменяется только после удаления и повторного создания шлюза. При изменении размера, сбросе или других внутренних операциях обслуживания или обновления IP-адрес VPN-шлюза не изменяется.
 
 Запросите общедоступный IP-адрес, который будет назначен VPN-шлюзу виртуальной сети.
 
@@ -168,7 +168,7 @@ VPN Gateway в настоящее время поддерживает тольк
 $gwpip= New-AzPublicIpAddress -Name VNet1GWPIP -ResourceGroupName TestRG1 -Location 'East US' -AllocationMethod Dynamic
 ```
 
-## <a name="4-create-the-gateway-ip-addressing-configuration"></a><a name="GatewayIPConfig"></a>4. Создание конфигурации IP-адреса шлюза
+## <a name="4-create-the-gateway-ip-addressing-configuration"></a><a name="GatewayIPConfig"></a>4. Создание конфигурации IP-адресации шлюза
 
 Конфигурация шлюза определяет используемые подсеть (GatewaySubnet) и общедоступный IP-адрес. Используйте следующий пример, чтобы создать конфигурацию шлюза:
 
@@ -178,15 +178,15 @@ $subnet = Get-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -VirtualNetwork
 $gwipconfig = New-AzVirtualNetworkGatewayIpConfig -Name gwipconfig1 -SubnetId $subnet.Id -PublicIpAddressId $gwpip.Id
 ```
 
-## <a name="5-create-the-vpn-gateway"></a><a name="CreateGateway"></a>5. Создание VPN шлюза
+## <a name="5-create-the-vpn-gateway"></a><a name="CreateGateway"></a>5. Создание VPN-шлюза
 
 Создайте VPN-шлюз виртуальной сети.
 
 Используйте следующие значения:
 
 * Для конфигурации "сеть — сеть" задайте для параметра *-GatewayType* значение *Vpn*. Тип шлюза всегда зависит от реализуемой конфигурации. Например, для других конфигураций шлюза может потребоваться тип шлюза ExpressRoute.
-* *-VpnType* может быть *RouteBased* (называется динамическим шлюзом в некоторой документации), или *PolicyBased* (называется статическим шлюзом в некоторых документах). Дополнительные сведения о типах VPN-шлюзов см. в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).
-* Выберите SKU шлюза, который нужно использовать. К определенным номерам SKU применяются ограничения настройки. Для получения дополнительной информации [см.](vpn-gateway-about-vpn-gateway-settings.md#gwsku) Если при создании VPN-шлюза вы получаете сообщение об ошибке с -GatewaySku, убедитесь, что установлена последняя версия командлетов PowerShell.
+* Параметр *-VpnType* может быть *RouteBased* (в некоторых документах он называется динамическим шлюзом) или *PolicyBased* (в некоторых документах он называется статическим шлюзом). Дополнительные сведения о типах VPN-шлюзов см. в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).
+* Выберите SKU шлюза, который нужно использовать. К определенным номерам SKU применяются ограничения настройки. Дополнительные сведения см. в разделе [SKU шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwsku). Если при создании VPN-шлюза вы получаете сообщение об ошибке с -GatewaySku, убедитесь, что установлена последняя версия командлетов PowerShell.
 
 ```azurepowershell-interactive
 New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
@@ -196,7 +196,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 
 После выполнения этой команды для завершения настройки шлюза может потребоваться до 45 минут.
 
-## <a name="6-configure-your-vpn-device"></a><a name="ConfigureVPNDevice"></a>6. Наверскакните свое VPN-устройство
+## <a name="6-configure-your-vpn-device"></a><a name="ConfigureVPNDevice"></a>6. Настройка VPN-устройства
 
 Для подключения типа "сеть — сеть" к локальной сети требуется VPN-устройство. На этом этапе мы настроим VPN-устройство. Чтобы настроить локальное VPN-устройство, вам потребуется следующее:
 
@@ -210,7 +210,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 [!INCLUDE [Configure VPN device](../../includes/vpn-gateway-configure-vpn-device-rm-include.md)]
 
 
-## <a name="7-create-the-vpn-connection"></a><a name="CreateConnection"></a>7. Создание VPN-соединения
+## <a name="7-create-the-vpn-connection"></a><a name="CreateConnection"></a>7. Создание VPN-подключения
 
 Далее вам нужно создать VPN-подключение типа "сеть — сеть" между шлюзом виртуальной сети и VPN-устройством. Обязательно подставьте собственные значения. Общий ключ должен соответствовать значению, использованному в конфигурации VPN-устройства. Обратите внимание, что для подключения типа "сеть — сеть" параметр -ConnectionType имеет значение **IPsec**.
 
@@ -229,7 +229,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 
 Через некоторое время будет установлено подключение.
 
-## <a name="8-verify-the-vpn-connection"></a><a name="toverify"></a>8. Проверить подключение VPN
+## <a name="8-verify-the-vpn-connection"></a><a name="toverify"></a>8. Проверка VPN-подключения
 
 Существует несколько разных способов для проверки VPN-подключения.
 
@@ -252,7 +252,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 
 ## <a name="to-delete-a-gateway-connection"></a><a name="deleteconnection"></a>Удаление подключения шлюза
 
-Если вы не знаете имя вашего соединения, вы можете найти его с помощью cmdlet 'Get-AzVirtualNetworkGatewayConnection'.
+Если имя подключения неизвестно, его можно найти с помощью командлета Get-Азвиртуалнетворкгатевайконнектион.
 
 ```azurepowershell-interactive
 Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
@@ -263,5 +263,5 @@ Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
 
 *  Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).
-* Для получения информации о создании VPN-соединения от сайта к сайту с использованием шаблона Azure Resource Manager [см.](https://azure.microsoft.com/resources/templates/101-site-to-site-vpn-create/)
-* Для получения информации о создании VPN-соединения vnet-vnet с помощью шаблона Azure Resource Manager [см.](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-replication-geo/)
+* Сведения о создании VPN-подключения типа "сеть — сеть" с помощью шаблона Azure Resource Manager см. [в разделе Создание VPN-подключения](https://azure.microsoft.com/resources/templates/101-site-to-site-vpn-create/)типа "сеть — сеть".
+* Сведения о создании VPN-подключения между виртуальными сетями с помощью шаблона Azure Resource Manager см. в статье [развертывание георепликации HBase](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-replication-geo/).

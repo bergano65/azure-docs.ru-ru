@@ -5,24 +5,24 @@ ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
 ms.openlocfilehash: d4d599063f727510cbf504ea3d121bdabfe001c9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76261523"
 ---
 # <a name="sub-orchestrations-in-durable-functions-azure-functions"></a>Вложенные оркестрации в устойчивых функциях (Функции Azure)
 
-Кроме вызова функций действия, функции оркестратора могут вызывать другие функции оркестратора. Например, можно создать большую оркестровку из библиотеки небольших функций оркестратора. Или можно запустить несколько экземпляров функции оркестратора одновременно.
+Кроме вызова функций действия, функции оркестратора могут вызывать другие функции оркестратора. Например, можно создать более крупное согласование из библиотеки небольших функций Orchestrator. Или можно запустить несколько экземпляров функции оркестратора одновременно.
 
-Функция оркестратора может вызывать другую функцию оркестратора, используя `CallSubOrchestratorAsync` `CallSubOrchestratorWithRetryAsync` или `callSubOrchestrator` `callSubOrchestratorWithRetry` методы в .NET, или методы в JavaScript. Дополнительные сведения об автоматических повторных попытках см. в руководстве по [обработке ошибок и компенсации](durable-functions-error-handling.md#automatic-retry-on-failure).
+Функция Orchestrator может вызывать другую функцию `CallSubOrchestratorAsync` Orchestrator, используя `CallSubOrchestratorWithRetryAsync` методы или в .NET или методы `callSubOrchestrator` или `callSubOrchestratorWithRetry` в JavaScript. Дополнительные сведения об автоматических повторных попытках см. в руководстве по [обработке ошибок и компенсации](durable-functions-error-handling.md#automatic-retry-on-failure).
 
 Для вызывающего функции вложенного оркестратора и функции действия ведут себя одинаково. Они возвращают значение, выдают исключение и могут ожидаться родительской функцией оркестратора. 
 ## <a name="example"></a>Пример
 
-В следующем примере показан сценарий использования Интернета вещей с несколькими устройствами, которые нужно подготовить. Следующая функция представляет рабочий процесс подготовки, который должен быть выполнен для каждого устройства:
+В следующем примере показан сценарий использования Интернета вещей с несколькими устройствами, которые нужно подготовить. Следующая функция представляет рабочий процесс подготовки, который должен выполняться для каждого устройства:
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 public static async Task DeviceProvisioningOrchestration(
@@ -43,7 +43,7 @@ public static async Task DeviceProvisioningOrchestration(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -66,11 +66,11 @@ module.exports = df.orchestrator(function*(context) {
 
 ---
 
-Эту функцию оркестратора можно использовать как есть — для однократной подготовки устройства — или же как часть более крупной оркестрации. В последнем случае функция родительского оркестратора может `DeviceProvisioningOrchestration` планировать `CallSubOrchestratorAsync` экземпляры использования `callSubOrchestrator` API (.NET) или (JavaScript).
+Эту функцию оркестратора можно использовать как есть — для однократной подготовки устройства — или же как часть более крупной оркестрации. В последнем случае родительская функция Orchestrator может запланировать экземпляры `DeviceProvisioningOrchestration` с помощью API `CallSubOrchestratorAsync` (.NET) или `callSubOrchestrator` (JavaScript).
 
 В примере ниже показано, как реализовать параллельное выполнение нескольких функций оркестратора.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("ProvisionNewDevices")]
@@ -94,9 +94,9 @@ public static async Task ProvisionNewDevices(
 ```
 
 > [!NOTE]
-> Предыдущие примеры СЗ относятся к долгосрочным функциям 2.x. Для долгосрочных функций 1.x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
+> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -123,9 +123,9 @@ module.exports = df.orchestrator(function*(context) {
 ---
 
 > [!NOTE]
-> Подоркестрации должны быть определены в приложении той же функции, что и родительская оркестровка. Если вам нужно вызвать и ждать оркестровки в другом приложении функции, рассмотрите возможность использования встроенной поддержки HTTP AIS и потребительского шаблона опроса HTTP 202. Для получения дополнительной информации посетите тему [функций HTTP.](durable-functions-http-features.md)
+> Подсогласования должны быть определены в том же приложении-функции, что и родительское согласование. Если необходимо вызвать и подождать согласования в другом приложении-функции, рассмотрите возможность использования встроенной поддержки API HTTP и шаблона потребителя опроса HTTP 202. Дополнительные сведения см. в разделе [функции HTTP](durable-functions-http-features.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Узнайте, как установить пользовательский статус оркестровки](durable-functions-custom-orchestration-status.md)
+> [Узнайте, как задать пользовательское состояние оркестрации](durable-functions-custom-orchestration-status.md)

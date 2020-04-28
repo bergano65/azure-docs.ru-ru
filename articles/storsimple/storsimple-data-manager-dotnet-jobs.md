@@ -1,5 +1,5 @@
 ---
-title: Использование .NET SDK для заданий менеджера данных Microsoft Azure StorSimple
+title: Использование пакета SDK для .NET для Microsoft Azure StorSimple заданий Диспетчер данных
 description: Узнайте, как запускать задания диспетчера данных StorSimple с помощью пакета SDK для .NET
 author: alkohli
 ms.service: storsimple
@@ -7,13 +7,13 @@ ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: b7cf1d3b9d4a9d751348c4792f904062b00ac104
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76270726"
 ---
-# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Используйте .NET SDK для инициирования преобразования данных
+# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK для .NET
 
 ## <a name="overview"></a>Обзор
 
@@ -36,7 +36,7 @@ ms.locfileid: "76270726"
     - Azure PowerShell. [Скачать Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
 *   Правильно настроенное определение задания в диспетчере данных StorSimple в одной группе ресурсов.
 *   Все необходимые библиотеки DLL. Их можно скачать из [репозитория GitHub](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/tree/master/Data_Manager_Job_Run/dlls).
-*   [`Get-ConfigurationParams.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Data_Manager_Job_Run/Get-ConfigurationParams.ps1)скрипт из репозитория GitHub.
+*   [`Get-ConfigurationParams.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Data_Manager_Job_Run/Get-ConfigurationParams.ps1)Скрипт из репозитория GitHub.
 
 ## <a name="step-by-step-procedure"></a>Пошаговая процедура
 
@@ -52,7 +52,7 @@ ms.locfileid: "76270726"
         Вы можете передать любые значения для ActiveDirectoryKey и AppName.
 
 2. Этот скрипт выводит следующие значения:
-    * Идентификатор клиента
+    * ИД клиента
     * Tenant ID
     * ключ Active Directory (совпадает с указанным выше);
     * Идентификатор подписки
@@ -61,7 +61,7 @@ ms.locfileid: "76270726"
 
 3. С помощью Visual Studio 2012, 2013 или 2015 создайте консольное приложение C# .NET.
 
-    1. Запуск **Визуальной студии 2012/2013/2015**.
+    1. Запустите **Visual Studio 2012/2013/2015**.
     1. Выберите **Файл > Создать > Проект**.
 
         ![Создание проекта 1](media/storsimple-data-manager-dotnet-jobs/create-new-project-7.png)        
@@ -83,7 +83,7 @@ ms.locfileid: "76270726"
 
        ![Добавление библиотек DLL 2](media/storsimple-data-manager-dotnet-jobs/create-new-project-6.png)
 
-5. Добавьте следующие **операторы с использованием** в исходный файл (Program.cs) в проекте.
+5. Добавьте следующие операторы **using** в исходный файл (Program.cs) в проекте.
 
     ```
     using System;
@@ -194,4 +194,4 @@ ms.locfileid: "76270726"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Используйте uI-аналитику StorSimple Data Manager для преобразования данных.](storsimple-data-manager-ui.md)
+[Используйте диспетчер данных StorSimple пользовательский интерфейс для преобразования данных](storsimple-data-manager-ui.md).

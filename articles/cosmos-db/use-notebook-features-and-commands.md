@@ -1,65 +1,65 @@
 ---
-title: Используйте встроенные команды и функции ноутбуков в Azure Cosmos DB (предварительный просмотр)
-description: Узнайте, как использовать встроенные команды и функции для проведения обычных операций с помощью встроенных ноутбуков Azure Cosmos DB.
+title: Использование встроенных команд и функций записной книжки в Azure Cosmos DB (Предварительная версия)
+description: Узнайте, как использовать встроенные команды и функции для выполнения стандартных операций с помощью встроенных записных книжек Azure Cosmos DB.
 author: deborahc
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/07/2019
 ms.author: dech
 ms.openlocfilehash: 61d46bbf0ccdeb5cd2e95e36e19f1aa81cfeeb48
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76513405"
 ---
-# <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-preview"></a>Используйте встроенные команды и функции ноутбуков в Azure Cosmos DB (предварительный просмотр)
+# <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-preview"></a>Использование встроенных команд и функций записной книжки в Azure Cosmos DB (Предварительная версия)
 
-Встроенные ноутбуки Jupyter в Azure Cosmos DB позволяют анализировать и визуализировать данные с портала Azure. В этой статье описывается, как использовать встроенные команды и функции записной книжки для выполнения стандартных операций.
+Встроенные записные книжки Jupyter в Azure Cosmos DB позволяют анализировать и визуализировать данные из портал Azure. В этой статье описывается, как использовать встроенные команды и функции записной книжки для выполнения стандартных операций.
 
 ## <a name="install-a-new-package"></a>Установка нового пакета
-После включения поддержки ноутбуков для учетных записей Azure Cosmos можно открыть новый блокнот и установить пакет.
+После включения поддержки ноутбуков для учетных записей Azure Cosmos можно открыть новую записную книжку и установить пакет.
 
-В новой ячейке кода вставьте и запустите следующий код, заменив ``PackageToBeInstalled`` нужный пакет Python.
+В новой ячейке кода вставьте и выполните следующий код, заменив ``PackageToBeInstalled`` его на нужный пакет Python.
 ```python
 import sys
 !{sys.executable} -m pip install PackageToBeInstalled –user
 ```
-Этот пакет будет доступен для использования из любого ноутбука в рабочем пространстве учетной записи Azure Cosmos. 
+Этот пакет будет доступен для использования из любой записной книжки в рабочей области учетной записи Azure Cosmos. 
 
 > [!TIP]
-> Если ваш ноутбук требует пользовательского пакета, мы рекомендуем добавить ячейку в блокнот для установки пакета, так как пакеты удаляются при [сбросить рабочее пространство.](#reset-notebooks-workspace)  
+> Если записной книжке требуется пользовательский пакет, мы рекомендуем добавить в записную книжку ячейку для установки пакета, так как пакеты удаляются при [сбросе рабочей области](#reset-notebooks-workspace).  
 
-## <a name="run-a-sql-query"></a>Выполнить запрос на S'L
+## <a name="run-a-sql-query"></a>Выполнение SQL-запроса
 
-Можно использовать ``%%sql`` волшебную команду для выполнения [запроса s'L](sql-query-getting-started.md) против любого контейнера в вашей учетной записи. Используйте синтаксис:
+С помощью команды ``%%sql`` Magic можно выполнить [SQL-запрос](sql-query-getting-started.md) к любому контейнеру в вашей учетной записи. Используйте синтаксис:
 
 ```bash
 %%sql --database {database_id} --container {container_id}
 {Query text}
 ```
 
-- ``{database_id}`` Замените ``{container_id}`` и с именем базы данных и контейнера в вашей учетной записи Космос. Если ``--database`` аргументы не ``--container`` предоставлены, запрос будет выполнен в [базе данных по умолчанию и контейнере.](#set-default-database-for-queries)
-- Вы можете запустить любой запрос S'L, действительный в Azure Cosmos DB. Текст запроса должен быть на новой строке.
+- Замените ``{database_id}`` и ``{container_id}`` именем базы данных и контейнера в учетной записи Cosmos. Если аргументы ``--database`` и ``--container`` не указаны, запрос будет выполнен в [базе данных и контейнере по умолчанию](#set-default-database-for-queries).
+- Можно выполнить любой SQL-запрос, допустимый в Azure Cosmos DB. Текст запроса должен находиться на новой строке.
 
 Пример: 
 ```bash
 %%sql --database RetailDemo --container WebsiteData
 SELECT c.Action, c.Price as ItemRevenue, c.Country, c.Item FROM c
 ```
-Выполнить ```%%sql?``` в ячейке, чтобы увидеть справочную документацию для команды sql магии в блокноте.
+Выполните ```%%sql?``` в ячейке, чтобы просмотреть справочную документацию по команде SQL Magic в записной книжке.
 
-## <a name="run-a-sql-query-and-output-to-a-pandas-dataframe"></a>Выполнить запрос и вывести на вывод данных Pandas DataFrame
+## <a name="run-a-sql-query-and-output-to-a-pandas-dataframe"></a>Выполнение SQL-запроса и выход в кадр данных Pandas
 
-Результаты ``%%sql`` запроса можно выставить в [Pandas DataFrame.](https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe) Используйте синтаксис: 
+Результаты ``%%sql`` запроса можно вывести в [кадр данных Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe). Используйте синтаксис: 
 
 ```bash
 %%sql --database {database_id} --container {container_id} --output {outputDataFrameVar}
 {Query text}
 ```
-- ``{database_id}`` Замените ``{container_id}`` и с именем базы данных и контейнера в вашей учетной записи Космос. Если ``--database`` аргументы не ``--container`` предоставлены, запрос будет выполнен в [базе данных по умолчанию и контейнере.](#set-default-database-for-queries)
-- Замените ``{outputDataFrameVar}`` имя переменной DataFrame, которая будет содержать результаты.
-- Вы можете запустить любой запрос S'L, действительный в Azure Cosmos DB. Текст запроса должен быть на новой строке. 
+- Замените ``{database_id}`` и ``{container_id}`` именем базы данных и контейнера в учетной записи Cosmos. Если аргументы ``--database`` и ``--container`` не указаны, запрос будет выполнен в [базе данных и контейнере по умолчанию](#set-default-database-for-queries).
+- Замените ``{outputDataFrameVar}`` на имя переменной кадра данных, которая будет содержать результаты.
+- Можно выполнить любой SQL-запрос, допустимый в Azure Cosmos DB. Текст запроса должен находиться на новой строке. 
 
 Пример:
 
@@ -82,15 +82,15 @@ df_cosmos.head(10)
 8   Viewed  33.00   Tuvalu  Red Top
 9   Viewed  14.00   Cape Verde  Flip Flop Shoes
 ```
-## <a name="upload-json-items-to-a-container"></a>Загрузка элементов JSON в контейнер
-Волшебная ``%%upload`` команда может загрузить данные из файла JSON в указанный контейнер Azure Cosmos. Используйте следующую команду для загрузки элементов:
+## <a name="upload-json-items-to-a-container"></a>Отправка элементов JSON в контейнер
+Для отправки данных из ``%%upload`` JSON-файла в указанный контейнер Azure Cosmos можно использовать команду Magic. Для отправки элементов используйте следующую команду:
 
 ```bash
 %%upload --databaseName {database_id} --containerName {container_id} --url {url_location_of_file}
 ```
 
-- ``{database_id}`` Замените ``{container_id}`` и с именем базы данных и контейнера в вашей учетной записи Azure Cosmos. Если ``--database`` аргументы не ``--container`` предоставлены, запрос будет выполнен в [базе данных по умолчанию и контейнере.](#set-default-database-for-queries)
-- Замените ``{url_location_of_file}`` местоположение файла JSON. Файл должен быть массивом действительных объектов JSON и должен быть доступен через общедоступный Интернет.
+- Замените ``{database_id}`` и ``{container_id}`` именем базы данных и контейнера в учетной записи Azure Cosmos. Если аргументы ``--database`` и ``--container`` не указаны, запрос будет выполнен в [базе данных и контейнере по умолчанию](#set-default-database-for-queries).
+- Замените ``{url_location_of_file}`` на расположение файла JSON. Файл должен быть массивом допустимых объектов JSON, и он должен быть доступен через общедоступный Интернет.
 
 Пример:
 
@@ -104,26 +104,26 @@ Total number of documents imported : 2654
 Total time taken : 00:00:38.1228087 hours
 Total RUs consumed : 25022.58
 ```
-С помощью статистики вывода можно рассчитать эффективные RU/s, используемые для загрузки элементов. Например, если 25 000 РУ были употребления в течение 38 секунд, то эффективный RU/s составляет 25 000 r.Ru / 38 секунд, 658 RU/s.
+С помощью выходной статистики можно вычислить действующие единицы запросов в секунду, используемые для отправки элементов. Например, если 25 000 RUs использовался свыше 38 секунд, то действующий единица запросов в секунду составляет 25 000/38 секунд = 658 единиц запросов в секунду.
 
-## <a name="set-default-database-for-queries"></a>Установка базы данных по умолчанию для запросов
-Команды базы данных ```%%sql``` по умолчанию можно использовать для ноутбука. Замените ```{database_id}``` на имя вашей базы данных.
+## <a name="set-default-database-for-queries"></a>Задать базу данных по умолчанию для запросов
+Вы можете задать команды базы данных ```%%sql``` по умолчанию, которые будут использоваться для записной книжки. Замените ```{database_id}``` на имя вашей базы данных.
 
 ```bash
 %database {database_id}
 ```
-Выполнить ```%database?``` в ячейке, чтобы увидеть документацию в блокноте.
+Выполните ```%database?``` в ячейке, чтобы просмотреть документацию в записной книжке.
 
-## <a name="set-default-container-for-queries"></a>Установка контейнера по умолчанию для запросов
-Команды контейнера ```%%sql``` по умолчанию можно использовать для ноутбука. Замените ```{container_id}``` имя контейнера.
+## <a name="set-default-container-for-queries"></a>Задать контейнер по умолчанию для запросов
+Вы можете задать команды контейнера ```%%sql``` по умолчанию, которые будут использоваться для записной книжки. Замените ```{container_id}``` на имя контейнера.
 
 ```bash
 %container {container_id}
 ```
-Выполнить ```%container?``` в ячейке, чтобы увидеть документацию в блокноте.
+Выполните ```%container?``` в ячейке, чтобы просмотреть документацию в записной книжке.
 
-## <a name="use-built-in-nteract-data-explorer"></a>Используйте встроенный исследователь данных nteract
-Для фильтрации и визуализации DataFrame можно использовать встроенный [исследователь данных nteract.](https://blog.nteract.io/designing-the-nteract-data-explorer-f4476d53f897) Для включения этой функции ``pd.options.display.html.table_schema`` ``True`` установите опцию и ``pd.options.display.max_rows`` желаемое значение (вы можете установить, ``pd.options.display.max_rows`` чтобы ``None`` показать все результаты).
+## <a name="use-built-in-nteract-data-explorer"></a>Использование встроенного обозревателя данных нтеракт
+С помощью встроенного [обозревателя данных нтеракт](https://blog.nteract.io/designing-the-nteract-data-explorer-f4476d53f897) можно фильтровать и визуализировать кадры данные. Чтобы включить эту функцию, ``pd.options.display.html.table_schema`` присвойте параметру ``True`` значение ``pd.options.display.max_rows`` ``pd.options.display.max_rows`` ``None`` и, чтобы в нем отображались все результаты.
 
 ```python
 import pandas as pd
@@ -132,10 +132,10 @@ pd.options.display.max_rows = None
 
 df_cosmos.groupby("Item").size()
 ```
-![исследователь данных nteract](media/use-notebook-features-and-commands/nteract-built-in-chart.png)
+![Обозреватель данных нтеракт](media/use-notebook-features-and-commands/nteract-built-in-chart.png)
 
-## <a name="use-the-built-in-python-sdk"></a>Используйте встроенный Python SDK
-Версия 4 [Azure Cosmos DB Python SDK для API для S'L](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos) установлена и включена в среду для учетной записи Azure Cosmos.
+## <a name="use-the-built-in-python-sdk"></a>Использование встроенного пакета SDK для Python
+Версия 4 [пакета SDK для Azure Cosmos DB Python для SQL](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos) установлена и включена в среду записных книжек для учетной записи Azure Cosmos.
 
 Используйте встроенный ``cosmos_client`` экземпляр для выполнения любой операции SDK. 
 
@@ -151,18 +151,18 @@ database = cosmos_client.create_database_if_not_exists('RetailDemo')
 ## Create a new container if it doesn't exist
 container = database.create_container_if_not_exists(id='WebsiteData', partition_key=PartitionKey(path='/CartID'))
 ```
-Смотрите [образцы Python SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos/samples). 
+См. раздел [примеры пакетов SDK для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos/samples). 
 
 > [!IMPORTANT]
-> Встроенный Python SDK поддерживается только для учетных записей API S'L (Core). Для других API необходимо [установить соответствующий драйвер Python,](#install-a-new-package) соответствующий API. 
+> Встроенный пакет SDK для Python поддерживается только для учетных записей API SQL (ядра). Для других API необходимо [установить соответствующий драйвер Python](#install-a-new-package) , соответствующий API. 
 
 ## <a name="create-a-custom-instance-of-cosmos_client"></a>Создание пользовательского экземпляра``cosmos_client``
-Для большей гибкости можно создать ``cosmos_client`` пользовательский экземпляр, чтобы:
+Для большей гибкости можно создать пользовательский экземпляр ``cosmos_client`` , чтобы:
 
 - Настройка [политики подключения](https://docs.microsoft.com/python/api/azure-cosmos/azure.cosmos.documents.connectionpolicy?view=azure-python-preview)
-- Запуск операций против другой учетной записи Azure Cosmos, чем тот, в который вы находитесь
+- Выполнение операций с другой учетной записью Azure Cosmos, отличной от вашей
 
-Вы можете получить доступ к строке подключения и основному ключу текущего счета через [переменные среды.](#access-the-account-endpoint-and-primary-key-env-variables) 
+Вы можете получить доступ к строке подключения и первичному ключу текущей учетной записи через [переменные среды](#access-the-account-endpoint-and-primary-key-env-variables). 
 
 ```python
 import os
@@ -179,7 +179,7 @@ custom_connection_policy.PreferredLocations = [region_1, region_2] # Set the ord
 # Create a new instance of CosmosClient, getting the endpoint and key from the environment variables
 custom_client = cosmos.CosmosClient(url=os.environ["COSMOS_ENDPOINT"], credential=os.environ["COSMOS_KEY"], connection_policy=custom_connection_policy)
 ```
-## <a name="access-the-account-endpoint-and-primary-key-env-variables"></a>Доступ к конечным точкам счета и основным ключевым переменным env
+## <a name="access-the-account-endpoint-and-primary-key-env-variables"></a>Доступ к конечной точке учетной записи и переменным основного ключа env
 ```python
 import os
 
@@ -187,14 +187,14 @@ endpoint = os.environ["COSMOS_ENDPOINT"]
 primary_key = os.environ["COSMOS_KEY"]
 ```
 > [!IMPORTANT]
-> ``COSMOS_ENDPOINT`` Переменные ``COSMOS_KEY`` среды и среды применимы только для API S'L. Для других AA найдите конечную точку и ключ в лезвии **строк соединения** или **ключей** в вашей учетной записи Azure Cosmos.  
+> Переменные ``COSMOS_ENDPOINT`` среды ``COSMOS_KEY`` и применимы только для API SQL. Для других API-интерфейсов найдите конечную точку и ключ в колонке **строки подключения** или **ключи** в учетной записи Azure Cosmos.  
 
-## <a name="reset-notebooks-workspace"></a>Рабочее пространство сбросить ноутбуки
-Чтобы сбросить рабочее пространство ноутбуков в настройки по умолчанию, выберите **рабочее пространство сброса** в панели команд. Это позволит удалить все установленные пакеты и перезапустить сервер Jupyter. Ваши блокноты, файлы и ресурсы Azure Cosmos не будут затронуты.  
+## <a name="reset-notebooks-workspace"></a>Сброс рабочей области записных книжек
+Чтобы сбросить рабочую область записных книжек до значений по умолчанию, выберите **сбросить рабочую область** на панели команд. При этом будут удалены все пользовательские установленные пакеты и перезапущен сервер Jupyter. Ваши записные книжки, файлы и ресурсы Azure Cosmos не будут затронуты.  
 
-![Рабочее пространство сбросить ноутбуки](media/use-notebook-features-and-commands/reset-workspace.png)
+![Сброс рабочей области записных книжек](media/use-notebook-features-and-commands/reset-workspace.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Узнайте о преимуществах [ноутбуков Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)
-- Узнайте о [SDK-канале Azure Cosmos DB Python для API](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos)
+- Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)
+- Дополнительные сведения о [пакете SDK для Azure Cosmos DB Python для API SQL](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos)

@@ -1,5 +1,5 @@
 ---
-title: Создание пространства имен Azure Service Bus с помощью шаблона
+title: Создание пространства имен служебной шины Azure с помощью шаблона
 description: Используйте шаблон Azure Resource Manager для создания пространства имен для обмена сообщениями служебной шины
 services: service-bus-messaging
 documentationcenter: .net
@@ -15,17 +15,17 @@ ms.workload: na
 ms.date: 06/21/2019
 ms.author: spelluru
 ms.openlocfilehash: 5febdd63ab6f854ca3244f8449f6f715a75e735f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76264481"
 ---
-# <a name="create-a-service-bus-namespace-by-using-an-azure-resource-manager-template"></a>Создание пространства имен sass, используя шаблон управления ресурсами Azure
+# <a name="create-a-service-bus-namespace-by-using-an-azure-resource-manager-template"></a>Создание пространства имен служебной шины с помощью шаблона Azure Resource Manager
 
-Узнайте, как развернуть шаблон менеджера ресурсов Azure для создания пространства имен Service Bus. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. Для получения дополнительной информации о создании шаблонов можно ознакомиться с [документацией менеджера ресурсов Azure.](/azure/azure-resource-manager/)
+Узнайте, как развернуть шаблон Azure Resource Manager для создания пространства имен служебной шины. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. Дополнительные сведения о создании шаблонов см. в [документации по Azure Resource Manager](/azure/azure-resource-manager/).
 
-Следующие шаблоны также доступны для создания пространства имен Service Bus:
+Для создания пространств имен служебной шины также доступны следующие шаблоны:
 
 * [Создание пространства имен служебной шины с очередью](./service-bus-resource-manager-namespace-queue.md)
 * [Создание пространства имен служебной шины с разделом и подпиской](./service-bus-resource-manager-namespace-topic.md)
@@ -34,17 +34,17 @@ ms.locfileid: "76264481"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="create-a-service-bus-namespace"></a>Создание пространства имен служебной шины
 
-В этом быстром запуске используется [существующий шаблон менеджера ресурсов](https://github.com/Azure/azure-quickstart-templates/blob/master/101-servicebus-create-namespace/azuredeploy.json) из [шаблонов Azure quickstart:](https://azure.microsoft.com/resources/templates/)
+В этом кратком руководстве вы используете [существующий шаблон диспетчер ресурсов](https://github.com/Azure/azure-quickstart-templates/blob/master/101-servicebus-create-namespace/azuredeploy.json) из [шаблонов](https://azure.microsoft.com/resources/templates/)быстрого запуска Azure:
 
 [!code-json[create-azure-service-bus-namespace](~/quickstart-templates/101-servicebus-create-namespace/azuredeploy.json)]
 
 См. [примеры шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Servicebus&pageNumber=1&sort=Popular).
 
-Для создания пространства имен шины обслуживания путем развертывания шаблона:
+Создание пространства имен служебной шины путем развертывания шаблона.
 
 1. Выберите **Попробовать** в следующем блоке кода и следуйте инструкциям, чтобы войти в Azure Cloud Shell.
 
@@ -60,7 +60,7 @@ ms.locfileid: "76264481"
     Write-Host "Press [ENTER] to continue ..."
     ```
 
-    Имя группы ресурсов — это имя пространства имен службы с придативаемым **rg.**
+    Имя группы ресурсов — это имя пространства имен служебной шины с добавленным **RG** .
 
 2. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
 3. Щелкните правой кнопкой в консоли оболочки и выберите **Вставить**.
@@ -69,7 +69,7 @@ ms.locfileid: "76264481"
 
 ## <a name="verify-the-deployment"></a>Проверка развертывания
 
-Чтобы увидеть развернутое пространство имен шины обслуживания, можно либо открыть группу ресурсов с портала Azure, либо использовать следующий скрипт Azure PowerShell. Если оболочка облака по-прежнему открыта, вам не нужно копировать/запускать первую и вторую строки следующего сценария.
+Чтобы просмотреть развернутое пространство имен служебной шины, можно либо открыть группу ресурсов из портал Azure, либо использовать следующий Azure PowerShell скрипта. Если Cloud Shell все еще открыт, вам не нужно копировать и запускать первую и вторую строки следующего скрипта.
 
 ```azurepowershell-interactive
 $serviceBusNamespaceName = Read-Host -Prompt "Enter the same service bus namespace name used earlier"
@@ -80,15 +80,15 @@ Get-AzServiceBusNamespace -ResourceGroupName $resourceGroupName -Name $serviceBu
 Write-Host "Press [ENTER] to continue ..."
 ```
 
-Azure PowerShell используется для развертывания шаблона в этом учебнике. Для других методов развертывания шаблонов см.:
+Azure PowerShell используется для развертывания шаблона в этом руководстве. Другие методы развертывания шаблонов см. в следующих статьях:
 
-* [С помощью портала Azure](../azure-resource-manager/templates/deploy-portal.md).
-* [С помощью Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
-* [С помощью REST API](../azure-resource-manager/templates/deploy-rest.md).
+* С [помощью портал Azure](../azure-resource-manager/templates/deploy-portal.md).
+* С [помощью Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
+* С [помощью REST API](../azure-resource-manager/templates/deploy-rest.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов. Если оболочка облака по-прежнему открыта, вам не нужно копировать/запускать первую и вторую строки следующего сценария.
+Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов. Если Cloud Shell все еще открыт, вам не нужно копировать и запускать первую и вторую строки следующего скрипта.
 
 ```azurepowershell-interactive
 $serviceBusNamespaceName = Read-Host -Prompt "Enter the same service bus namespace name used earlier"

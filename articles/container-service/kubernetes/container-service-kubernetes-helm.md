@@ -8,10 +8,10 @@ ms.date: 04/10/2017
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: a32c9fab3877a693d2df26571b9fae4aa7b4380c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76271085"
 ---
 # <a name="deprecated-use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>(УСТАРЕЛО) Использование Helm для развертывания контейнеров в кластере Kubernetes
@@ -30,7 +30,7 @@ Helm состоит из двух компонентов:
  
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в контейнерной службе Azure
+* [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в службе контейнеров Azure
 
 * [Установка и настройка`kubectl`](../container-service-connect.md) на локальном компьютере
 
@@ -143,11 +143,11 @@ sudo mysql –h v1-mariadb
 ```
  
  
-Теперь для создания баз данных, таблиц и т.д. можно использовать стандартные команды S'L. Например, `Create DATABASE testdb1;` создаетпустую базу данных. 
+Теперь можно использовать стандартные команды SQL для создания баз данных, таблиц и т. д. Например, `Create DATABASE testdb1;` создает пустую базу данных. 
  
  
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об управлении чартами Kubernetes см. в [документации по Helm](https://github.com/kubernetes/helm/blob/master/docs/index.md). 
 

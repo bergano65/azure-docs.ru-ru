@@ -1,5 +1,5 @@
 ---
-title: Используйте Azure Automation Runbook для управления устройствами StorSimple
+title: Управление устройствами StorSimple с помощью модуля Runbook службы автоматизации Azure
 description: Узнайте, как использовать Runbook службы автоматизации Azure для автоматизации заданий StorSimple.
 author: alkohli
 ms.service: storsimple
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: alkohli
 ms.openlocfilehash: 727bebe0c190ed4dff4408884c45fe166ad541a9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76276975"
 ---
 # <a name="use-azure-automation-runbooks-to-manage-storsimple-devices"></a>Управление устройствами StorSimple с помощью Runbook службы автоматизации Azure
@@ -171,13 +171,13 @@ ms.locfileid: "76276975"
 
 ### <a name="import-publish-and-run-automation-runbook"></a>Импорт, публикация и запуск модуля Runbook службы автоматизации
 
-1. Создайте учетную запись запуска от имени Azure на портале Azure. Для этого перейдите к **Azure Marketplace > Все** и выполните поиск **службы автоматизации**. Выберите **учетные записи автоматизации.**
+1. Создайте учетную запись запуска от имени Azure на портале Azure. Для этого перейдите к **Azure Marketplace > Все** и выполните поиск **службы автоматизации**. Выберите **учетные записи службы автоматизации**.
 
     ![search-automation](./media/storsimple-8000-automation-azurerm-runbook/automation1.png)
 
 2. В колонке **Добавление учетной записи службы автоматизации**:
 
-   1. Предоставьте **название** учетной записи Автоматизации.
+   1. Укажите **имя** учетной записи службы автоматизации.
    2. Выберите **подписку**, связанную со службой диспетчера устройств StorSimple.
    3. Создайте группу ресурсов или выберите имеющуюся.
    4. Выберите **Расположение** (если возможно, то же самое, что и для вашей службы).
@@ -188,7 +188,7 @@ ms.locfileid: "76276975"
 
       После успешного создания учетной записи автоматизации вы получите уведомление. Дополнительные сведения о создании учетной записи автоматизации см. в статье [Обновление проверки подлинности учетных записей службы автоматизации с использованием учетных записей запуска от имени](https://docs.microsoft.com/azure/automation/automation-create-runas-account).
 
-3. Чтобы убедится, что созданная учетная запись службы автоматизации имеем доступ к службе диспетчера устройств StorSimple, необходимо присвоить этой учетной записи соответствующие разрешения. Перейдите в раздел **Управление доступом** в службе диспетчера устройств StorSimple. Щелкните **+ Добавить** и укажите имя учетной записи службы автоматизации Azure. **Сохранить** настройки.
+3. Чтобы убедится, что созданная учетная запись службы автоматизации имеем доступ к службе диспетчера устройств StorSimple, необходимо присвоить этой учетной записи соответствующие разрешения. Перейдите в раздел **Управление доступом** в службе диспетчера устройств StorSimple. Щелкните **+ Добавить** и укажите имя учетной записи службы автоматизации Azure. **Сохраните** параметры.
 
     ![add-permissions-automation-account](./media/storsimple-8000-automation-azurerm-runbook/goto-add-roles.png)
 
@@ -206,7 +206,7 @@ ms.locfileid: "76276975"
 
     ![click-new-runbook](./media/storsimple-8000-automation-azurerm-runbook/verify-runbook-created.png)
 
-8. Измените модуль Runbook и щелкните **Тестовая область**. Укажите параметры, такие как имя службы диспетчера устройства StorSimple, а также имя устройства StorSimple и подписку. **Начните** тест. После завершения выполнения создается отчет. Дополнительные сведения см. в разделе [Шаг 3. Тестирование модуля Runbook](../automation/automation-first-runbook-textual-powershell.md#step-3---test-the-runbook).
+8. Измените модуль Runbook и щелкните **Тестовая область**. Укажите параметры, такие как имя службы диспетчера устройства StorSimple, а также имя устройства StorSimple и подписку. **Запустите** тест. После завершения выполнения создается отчет. Дополнительные сведения см. в разделе [Шаг 3. Тестирование модуля Runbook](../automation/automation-first-runbook-textual-powershell.md#step-3---test-the-runbook).
 
     ![test-runbook](./media/storsimple-8000-automation-azurerm-runbook/test-runbook.png)
 

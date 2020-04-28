@@ -1,6 +1,6 @@
 ---
-title: Шаблоны концентраторов уведомлений Azure
-description: Узнайте об использовании шаблонов для концентраторов уведомлений Azure.
+title: Шаблоны центров уведомлений Azure
+description: Сведения об использовании шаблонов для центров уведомлений Azure.
 services: notification-hubs
 documentationcenter: .net
 author: sethmanheim
@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 7d88f57fe92b9da62cc9f90d64bdec4c27642fb0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76263750"
 ---
 # <a name="templates"></a>Шаблоны
@@ -173,4 +173,4 @@ ms.locfileid: "76263750"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Узнайте о концентрах уведомлений Azure](notification-hubs-push-notification-overview.md)
+[Дополнительные сведения о центрах уведомлений Azure](notification-hubs-push-notification-overview.md)

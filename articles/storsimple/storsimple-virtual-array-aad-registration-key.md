@@ -1,5 +1,5 @@
 ---
-title: Новая аутентификация для виртуальных массивов StorSimple
+title: Новая проверка подлинности для виртуальных массивов StorSimple
 description: Из этой статьи вы узнаете, как использовать для службы аутентификацию на основе AAD, создать ключ регистрации и регистрировать устройства вручную.
 author: alkohli
 ms.service: storsimple
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 89f367e866c1a794f4359c76b8b8a8a9cfefd50d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76273809"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
@@ -38,10 +38,10 @@ ms.locfileid: "76273809"
 
 Если вы используете виртуальный массив StorSimple, убедитесь, что в правила брандмауэра включен следующий URL-адрес:
 
-| Шаблон URL-адреса                         | Cloud | Компонент или функция         |
+| Шаблон URL-адреса                         | Облако | Компонент или функция         |
 |------------------------------------|-------|---------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
-| `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
+| `https://login.microsoftonline.us` | US Government |Служба аутентификации AAD      |
 
 Полный список шаблонов URL-адресов для виртуальных массивов StorSimple см. в разделе [Шаблоны URL-адресов для правил брандмауэра](storsimple-ova-system-requirements.md#url-patterns-for-firewall-rules).
 
@@ -53,9 +53,9 @@ ms.locfileid: "76273809"
 
 | Если на вашем устройстве используется  | Сделайте следующее                                    |
 |----------------------------|--------------------------------------------------------------|
-| Обновление 1.0 или более поздней версии. Устройство не в сети. <br> Отображается оповещение о том, что URL-адрес не включен в список разрешений.| 1. Измените правила брандмауэра, чтобы включить URL-адрес проверки подлинности. Нужные адреса вы можете найти [здесь](#url-changes-for-aad-authentication). <br> 2. [Получить ключ регистрации AAD от службы](#aad-based-registration-keys). <br> 3. Выполните шаги 1-5 для [подключения к интерфейсу Windows PowerShell виртуального массива.](storsimple-virtual-array-deploy2-provision-hyperv.md#step-2-provision-a-virtual-array-in-hypervisor)<br> 4. `Invoke-HcsReRegister` Используйте cmdlet для регистрации устройства через Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
+| Обновление 1.0 или более поздней версии. Устройство не в сети. <br> Отображается оповещение о том, что URL-адрес не включен в список разрешений.| 1. Измените правила брандмауэра, включив в них URL-адрес проверки подлинности. Нужные адреса вы можете найти [здесь](#url-changes-for-aad-authentication). <br> 2. [получите ключ регистрации AAD из службы](#aad-based-registration-keys). <br> 3. Выполните шаги 1-5, чтобы [подключиться к интерфейсу Windows PowerShell виртуального массива](storsimple-virtual-array-deploy2-provision-hyperv.md#step-2-provision-a-virtual-array-in-hypervisor).<br> 4. Используйте `Invoke-HcsReRegister` командлет для регистрации устройства с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
 | Обновление 1.0 или более поздней версии. Устройство подключено к сети.| Никаких действий не требуется.                                       |
-| Обновление 0.6 или более поздней версии. Устройство отключено от сети. | 1. [Скачать обновление 1.0 через сервер каталога](storsimple-virtual-array-install-update-1.md#download-the-update-or-the-hotfix).<br>2. [Применить обновление 1.0 через локальный веб-uI](storsimple-virtual-array-install-update-1.md#install-the-update-or-the-hotfix).<br>3. [Получить ключ регистрации AAD от службы](#aad-based-registration-keys). <br>4. Выполните шаги 1-5 для [подключения к интерфейсу Windows PowerShell виртуального массива.](storsimple-virtual-array-deploy2-provision-hyperv.md#step-2-provision-a-virtual-array-in-hypervisor)<br>5. `Invoke-HcsReRegister` Используйте cmdlet для регистрации устройства через Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
+| Обновление 0.6 или более поздней версии. Устройство отключено от сети. | 1. [Загрузите обновление 1,0 через сервер каталога](storsimple-virtual-array-install-update-1.md#download-the-update-or-the-hotfix).<br>2. [Примените обновление 1,0 через локальный веб-интерфейс](storsimple-virtual-array-install-update-1.md#install-the-update-or-the-hotfix).<br>3. [получите ключ регистрации AAD из службы](#aad-based-registration-keys). <br>4. Выполните шаги 1-5, чтобы [подключиться к интерфейсу Windows PowerShell виртуального массива](storsimple-virtual-array-deploy2-provision-hyperv.md#step-2-provision-a-virtual-array-in-hypervisor).<br>5. Используйте `Invoke-HcsReRegister` командлет для регистрации устройства с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
 | Обновление 0.6 или более ранней версии. Устройство подключено к сети. | Измените правила брандмауэра, чтобы включить в них URL-адрес аутентификации.<br> Установите обновление 1.0 с помощью портала Azure. |
 
 ## <a name="aad-based-registration-keys"></a>Регистрационные ключи на основе AAD

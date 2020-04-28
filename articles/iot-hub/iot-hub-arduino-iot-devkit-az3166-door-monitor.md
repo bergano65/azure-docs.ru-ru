@@ -1,5 +1,5 @@
 ---
-title: Отправка электронной почты при открытии двери с помощью функций Azure
+title: Отправка сообщения электронной почты при открытии дверцы с помощью функций Azure
 description: Наблюдайте за магнитным датчиком, чтобы обнаружить, когда дверь открыта, и используйте решение "Функции Azure" для отправки уведомления по электронной почте.
 author: liydu
 ms.service: iot-hub
@@ -9,13 +9,13 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
 ms.openlocfilehash: 6bebe8ac6b9869466938600d6267fd0062c84477
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75977300"
 ---
-# <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Дверной монитор - Используя функции Azure и SendGrid, отправьте электронную почту, когда дверь открыта           
+# <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Монитор двери — использование функций Azure и SendGrid, отправка электронной почты при открытии дверцы           
 
 Плата MXChip IoT DevKit содержит встроенный магнитный датчик. В этом проекте необходимо обнаружить присутствие или отсутствие поблизости мощного магнитного поля, которое в этом случае исходит от маленького постоянного магнита.
 
@@ -39,7 +39,7 @@ ms.locfileid: "75977300"
 
 Активная подписка Azure. Если у вас еще нет ее, вы можете зарегистрироваться одним из этих способов:
 
-* Активируйте [бесплатную 30-дневную пробную версию учетной записи Microsoft Azure.](https://azure.microsoft.com/free/)
+* Активировать [бесплатную 30-дневную пробную Microsoft Azureную учетную запись](https://azure.microsoft.com/free/).
 * Запросите [деньги на счете в Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), если у вас есть подписка MSDN или Visual Studio.
 
 ## <a name="deploy-the-sendgrid-service-in-azure"></a>Развертывание службы SendGrid в Azure
@@ -53,7 +53,7 @@ ms.locfileid: "75977300"
 
 Чтобы подготовить службы Azure, нажмите кнопку **Развертывание в Azure**. С помощью этой кнопки можно быстро и легко развернуть проекты с открытым исходным кодом в Microsoft Azure.
 
-Нажмите кнопку **«Развертывание»** на Azure ниже. 
+Нажмите кнопку **развернуть в Azure** ниже. 
 
 [![Развертывание в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FVSChina%2Fdevkit-door-monitor%2Fmaster%2FSendGridDeploy%2Fazuredeploy.json)
 
@@ -81,7 +81,7 @@ ms.locfileid: "75977300"
 
 ![Управление SendGrid](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/sendgrid-manage.png)
 
-На странице SendGrid нажмите **Кнопка Параметры** > **API Keys** > **Создание aPI Key.**
+На странице SendGrid щелкните **Параметры** > **API ключи** > **создать ключ API**.
 
 ![Первый снимок экрана создания API SendGrid](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/sendgrid-create-api-first.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "75977300"
 
 Ниже показано, как подготовить другие связанные с Центром Интернета вещей службы и развернуть решение "Функции Azure" для этого проекта.
 
-Нажмите кнопку **«Развертывание»** на Azure ниже. 
+Нажмите кнопку **развернуть в Azure** ниже. 
 
 [![Развертывание в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FVSChina%2Fdevkit-door-monitor%2Fmaster%2Fazuredeploy.json)
 
@@ -184,9 +184,9 @@ ms.locfileid: "75977300"
 
 После инициализации на экране отображается `Door closed`. При изменении в магнитном поле состояние изменяется на `Door opened`. При каждом изменении состояния двери вы получаете уведомление по электронной почте. (Получение этих сообщений электронной почты может занять до пяти минут.)
 
-![Магниты близко к датчику: Дверь закрыта](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/test-door-closed.jpg "Магниты близко к датчику: Дверь закрыта")
+![Магниты близко к датчику: дверца закрыта](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/test-door-closed.jpg "Магниты близко к датчику: дверца закрыта")
 
-![Магнит отошел от датчика: Дверь открыта](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/test-door-opened.jpg "Магнит отошел от датчика: Дверь открыта")
+![Магниты, перемещенные с датчика: открытая дверца](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/test-door-opened.jpg "Магниты, перемещенные с датчика: открытая дверца")
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 

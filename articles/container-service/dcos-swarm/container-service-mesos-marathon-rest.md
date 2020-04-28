@@ -8,10 +8,10 @@ ms.date: 04/04/2017
 ms.author: iainfou
 ms.custom: mvc
 ms.openlocfilehash: 3492f35d54dd3ee61ab8d29a3af06e4998bbd477
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76277781"
 ---
 # <a name="deprecated-dcos-container-management-through-the-marathon-rest-api"></a>Управление контейнерами DC/OS с помощью REST API Marathon (не рекомендуется)
@@ -28,7 +28,7 @@ DC/OS — это среда для развертывания и масштаб�
 * [Подключение к кластеру службы контейнеров Azure.](../container-service-connect.md)
 
 ## <a name="access-the-dcos-apis"></a>Доступ к API DC/OS
-После подключения к кластеру службы контейнеров Azure вы можете получить доступ к\/DC/OS и связанным с ними API REST через http:/localhost:local-port. В этом документе для примера используется туннелирование через порт 80. Например, конечные точки марафона могут быть достигнуты\/на URIs, начиная с http: /localhost/marathon/v2/. 
+После подключения к кластеру службы контейнеров Azure вы можете получить доступ к DC/OS и связанным API-интерфейсам RESTFUL через\/http:/ЛОКАЛХОСТ: Local-Port. В этом документе для примера используется туннелирование через порт 80. Например, конечные точки Marathon могут быть достигнуты по URI, начиная с HTTP\/:/localhost/Marathon/v2/. 
 
 Дополнительные сведения о разных доступных API-интерфейсах см. в документации Mesosphere по [API для Marathon](https://mesosphere.github.io/marathon/docs/rest-api.html) и [API для Chronos](https://mesos.github.io/chronos/docs/api.html), а также в документации Apache по [API для планировщика Mesos](https://mesos.apache.org/documentation/latest/scheduler-http-api/).
 
@@ -121,7 +121,7 @@ Marathon API может использоваться для увеличения
 Используя туннельное подключение, выполните следующую команду для развертывания приложения.
 
 > [!NOTE]
-> URI http:\//localhost/marathon/v2/apps/followed by the ID of the application to scale. Если вы используете образец Nginx, который предоставляется\/здесь, URI будет http: /localhost/marathon/v2/apps/nginx.
+> URI — это http:\//localhost/Marathon/v2/Apps/, за которым следует идентификатор приложения для масштабирования. Если вы используете пример nginx, приведенный здесь, URI будет иметь вид http:\//localhost/Marathon/v2/Apps/nginx.
 
 ```bash
 curl http://localhost/marathon/v2/apps/nginx -H "Content-type: application/json" -X PUT -d @scale.json
@@ -178,13 +178,13 @@ Marathon API может также использоваться для увел�
 Выполните следующую команду для создания дополнительных экземпляров приложения:
 
 > [!NOTE]
-> URI http:\//localhost/marathon/v2/apps/followed by the ID of the application to scale. Если вы используете образец Nginx, представленный\/здесь, URI будет http: /localhost/marathon/v2/apps/nginx.
+> URI — это http:\//localhost/Marathon/v2/Apps/, за которым следует идентификатор приложения для масштабирования. Если вы используете образец nginx, приведенный здесь, URI будет иметь вид http:\//localhost/Marathon/v2/Apps/nginx.
 
 ```powershell
 Invoke-WebRequest -Method Put -Uri http://localhost/marathon/v2/apps/nginx -ContentType application/json -InFile 'c:\scale.json'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Ознакомьтесь с дополнительными сведениями о конечных HTTP-точках Mesos](https://mesos.apache.org/documentation/latest/endpoints/).
 * [Ознакомьтесь с дополнительными сведениями о REST API Marathon](https://mesosphere.github.io/marathon/docs/rest-api.html).
 

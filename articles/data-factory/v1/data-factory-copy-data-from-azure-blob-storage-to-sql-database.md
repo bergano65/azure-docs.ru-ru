@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из blob Storage в базу данных S-L - Azure
+title: Копирование данных из хранилища BLOB-объектов в базу данных SQL Azure
 description: В этом учебнике рассказывается, как использовать действие копирования в конвейере фабрики данных Azure для копирования данных из хранилища BLOB-объектов в базу данных SQL.
 services: data-factory
 documentationcenter: ''
@@ -14,19 +14,19 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: cc2f0a513219a671dd8a75ee00af4fc9d4c6a68a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75979726"
 ---
 # <a name="tutorial-copy-data-from-blob-storage-to-sql-database-using-data-factory"></a>Руководство. Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
-> * [Копировать Мастера](data-factory-copy-data-wizard-tutorial.md)
+> * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
 > * [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 > * [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
-> * [Шаблон менеджера ресурсов Azure](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)
+> * [Шаблон Azure Resource Manager](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)
 > * [REST API](data-factory-copy-activity-tutorial-using-rest-api.md)
 > * [API для .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
 
@@ -46,8 +46,8 @@ ms.locfileid: "75979726"
 Для работы с этим учебником необходимо следующее:
 
 * **Подписка Azure**.  Если у вас нет подписки, вы можете создать бесплатную пробную версию учетной записи всего за несколько минут. Дополнительные сведения см. в статье [Бесплатная пробная версия](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранения Azure**. В этом учебнике в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, см. статью [учетной записи хранилища](../../storage/common/storage-account-create.md) для шагов по ее созданию.
-* **база данных SQL Azure**. В этом учебнике используется база данных SQL Azure в качестве **конечного** хранилища данных. Если нет базы данных SQL Azure, которую можно использовать для изучения этого учебника, ознакомьтесь с разделом [Как создать и настроить базу данных SQL Azure](../../sql-database/sql-database-get-started.md), чтобы создать такую базу данных.
+* **Учетная запись хранения Azure**. В этом учебнике в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, создайте ее, как описано в статье [Создание учетной записи хранения](../../storage/common/storage-account-create.md) .
+* **База данных SQL Azure**. В этом учебнике используется база данных SQL Azure в качестве **конечного** хранилища данных. Если нет базы данных SQL Azure, которую можно использовать для изучения этого учебника, ознакомьтесь с разделом [Как создать и настроить базу данных SQL Azure](../../sql-database/sql-database-get-started.md), чтобы создать такую базу данных.
 * **SQL Server 2012/2014 или Visual Studio 2013**. Для создания образца базы данных и просмотра итоговых данных в базе данных используется SQL Server Management Studio или Visual Studio .  
 
 ## <a name="collect-blob-storage-account-name-and-key"></a>Получение имени и ключа учетной записи хранения BLOB-объектов
@@ -114,10 +114,10 @@ ms.locfileid: "75979726"
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 Необходимые условия выполнены. Для создания фабрики данных можно использовать один из приведенных ниже способов. Выберите в раскрывающемся списке в верхней части страницы один из вариантов или щелкните одну из следующих ссылок, чтобы изучить руководство.     
 
-* [Копировать Мастера](data-factory-copy-data-wizard-tutorial.md)
+* [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
 * [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 * [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
-* [Шаблон менеджера ресурсов Azure](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)
+* [Шаблон Azure Resource Manager](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)
 * [REST API](data-factory-copy-activity-tutorial-using-rest-api.md)
 * [API для .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
 

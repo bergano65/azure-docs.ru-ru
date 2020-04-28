@@ -1,5 +1,5 @@
 ---
-title: Поделитесь изображениями VM с общими галереями
+title: Совместное использование образов виртуальных машин с общими галереями
 description: Узнайте, как предоставлять сотрудникам своей организации доступ к образам виртуальных машин с помощью коллекций общих образов.
 documentationcenter: virtual-machine-scale-sets
 author: axayjo
@@ -13,10 +13,10 @@ ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
 ms.openlocfilehash: 38b8738a383d2953d89677f76e6395035b83181f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76276363"
 ---
 # <a name="shared-image-galleries-overview"></a>Обзор коллекций общих образов

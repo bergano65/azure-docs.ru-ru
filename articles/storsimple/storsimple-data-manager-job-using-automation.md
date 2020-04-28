@@ -1,5 +1,5 @@
 ---
-title: Используйте автоматизацию Azure для запуска работы в StorSimple Data Manager
+title: Использование службы автоматизации Azure для запуска задания в Диспетчер данных StorSimple
 description: Узнайте, как активировать задания диспетчера данных StorSimple с помощью службы автоматизации Azure
 author: alkohli
 ms.service: storsimple
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: 034b4996672f0961cf31d342aa6055482f099b9f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76273989"
 ---
 # <a name="use-azure-automation-to-trigger-a-job"></a>Активация задания с помощью службы автоматизации Azure
@@ -26,16 +26,16 @@ ms.locfileid: "76273989"
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
-*   Среда Azure PowerShell, установленная на клиентском компьютере. [Скачать Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps).
+*   Среда Azure PowerShell, установленная на клиентском компьютере. [Скачайте Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps).
 *   Правильно настроенное определение задания в службе диспетчера данных StorSimple в одной группе ресурсов.
-*   Скачать [`DataTransformationApp.zip`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/raw/master/Azure%20Automation%20For%20Data%20Manager/DataTransformationApp.zip) файл из репозитория GitHub. 
-*   Скачать [`Trigger-DataTransformation-Job.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Azure%20Automation%20For%20Data%20Manager/Trigger-DataTransformation-Job.ps1) скрипт из репозитория GitHub.
+*   Скачайте [`DataTransformationApp.zip`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/raw/master/Azure%20Automation%20For%20Data%20Manager/DataTransformationApp.zip) файл из репозитория GitHub. 
+*   Скачайте [`Trigger-DataTransformation-Job.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Azure%20Automation%20For%20Data%20Manager/Trigger-DataTransformation-Job.ps1) скрипт из репозитория GitHub.
 
 ## <a name="step-by-step-procedure"></a>Пошаговая процедура
 
 ### <a name="set-up-the-automation-account"></a>Настройка учетной записи службы автоматизации
 
-1. Создайте учетную запись запуска от имени Azure на портале Azure. Для этого перейдите к **Azure Marketplace > Все** и выполните поиск **службы автоматизации**. Выберите **учетные записи автоматизации.**
+1. Создайте учетную запись запуска от имени Azure на портале Azure. Для этого перейдите к **Azure Marketplace > Все** и выполните поиск **службы автоматизации**. Выберите **учетные записи службы автоматизации**.
 
     ![Создание учетной записи службы автоматизации запуска от имени](./media/storsimple-data-manager-job-using-automation/search-automation-account1.png)
 
@@ -48,7 +48,7 @@ ms.locfileid: "76273989"
    1. Укажите **имя** учетной записи службы автоматизации.
    2. Выберите **подписку**, связанную со службой диспетчера данных StorSimple.
    3. Создайте группу ресурсов или выберите имеющуюся.
-   4. Выберите **местоположение**.
+   4. Выберите **Расположение**.
    5. Оставьте выбранный по умолчанию вариант **Создать учетную запись запуска от имени**.
    6. Чтобы получить ссылки для быстрого доступа к панели мониторинга, установите флажок **Закрепить на панели мониторинга**. Нажмите кнопку **Создать**.
 
@@ -80,7 +80,7 @@ ms.locfileid: "76273989"
 
 Чтобы активировать определение задания, выполните следующие действия для модуля runbook: импорт, публикация и запуск.
 
-1. На портале Azure выберите свою учетную запись службы автоматизации. Перейти к **автоматизации процессов > Runbooks** и нажмите **кнопку и добавить runbook**.
+1. На портале Azure выберите свою учетную запись службы автоматизации. Последовательно выберите **процессы автоматизация > модули Runbook** и щелкните **+ Добавить модуль Runbook**.
 
     ![Добавление модуля runbook 1](./media/storsimple-data-manager-job-using-automation/add-runbook-1.png)
 
@@ -94,11 +94,11 @@ ms.locfileid: "76273989"
 
     ![Добавление модуля runbook 3](./media/storsimple-data-manager-job-using-automation/add-runbook-3.png)
 
-5. Отоверьте runbook и нажмите **тест** панели.
+5. Измените модуль Runbook и щелкните область **тестирования** .
 
     ![Добавление модуля runbook 4](./media/storsimple-data-manager-job-using-automation/add-runbook-4.png)
 
-6. Укажите такие параметры, как имя службы Диспетчера данных StorSimple, связанная группа ресурсов и имя определения задания. **Начните** тест. После завершения выполнения создается отчет. Для получения дополнительной информации, перейдите на то, как [проверить runbook](../automation/automation-first-runbook-textual-powershell.md#step-3---test-the-runbook).
+6. Укажите такие параметры, как имя службы Диспетчера данных StorSimple, связанная группа ресурсов и имя определения задания. **Запустите** тест. После завершения выполнения создается отчет. Дополнительные сведения см. в подразделах о [тестировании модуля Runbook](../automation/automation-first-runbook-textual-powershell.md#step-3---test-the-runbook).
 
     ![Добавление модуля runbook 8](./media/storsimple-data-manager-job-using-automation/add-runbook-8.png)    
 
@@ -110,7 +110,7 @@ ms.locfileid: "76273989"
 
     ![Добавление модуля runbook 7](./media/storsimple-data-manager-job-using-automation/add-runbook-7.png)
 
-9. **Запустите** модуль runbook. В колонке **Запуск Runbook** введите все параметры. Нажмите кнопку **ОК**, чтобы отправить и запустить задание преобразования данных.
+9. **Запустите** модуль Runbook. В колонке **Запуск Runbook** введите все параметры. Нажмите кнопку **ОК**, чтобы отправить и запустить задание преобразования данных.
 
 10. Чтобы отслеживать ход выполнения задания на портале Azure, перейдите к окну **Задания** службы диспетчера данных StorSimple. Выберите и щелкните задание, чтобы просмотреть сведения о нем.
 
@@ -118,4 +118,4 @@ ms.locfileid: "76273989"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Используйте uI-аналитику StorSimple Data Manager для преобразования данных.](storsimple-data-manager-ui.md)
+[Используйте диспетчер данных StorSimple пользовательский интерфейс для преобразования данных](storsimple-data-manager-ui.md).

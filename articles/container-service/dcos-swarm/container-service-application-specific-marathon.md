@@ -8,10 +8,10 @@ ms.date: 04/12/2016
 ms.author: rogardle
 ms.custom: mvc
 ms.openlocfilehash: 423dc7f62806f774a5ec4855faa8be9001292773
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76277718"
 ---
 # <a name="deprecated-create-an-application-or-user-specific-marathon-service"></a>Создание службы Marathon с настройками для приложения или пользователя (не рекомендуется)
@@ -25,7 +25,7 @@ ms.locfileid: "76277718"
 Так как эта службу будет использовать один пользователь или группа пользователей, ее можно настроить любым способом. Кроме того, служба контейнеров Azure гарантирует бесперебойную работу службы. В случае сбоя службы служба контейнеров Azure перезапустит ее. В большинстве таких случаев вы вообще ничего не заметите.
 
 ## <a name="prerequisites"></a>Предварительные требования
-[Развертывание экземпляра службы контейнеров Azure](container-service-deployment.md) с оркестратором типа DC/OS и [убедитесь, что ваш клиент может подключиться к вашему кластеру.](../container-service-connect.md) Кроме того, выполните следующие действия.
+[Разверните экземпляр службы контейнеров Azure](container-service-deployment.md) с типом Orchestrator DC/OS и [Убедитесь, что клиент может подключиться к кластеру](../container-service-connect.md). Кроме того, выполните следующие действия.
 
 [!INCLUDE [install the DC/OS CLI](../../../includes/container-service-install-dcos-cli-include.md)]
 

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/19/2019
 ms.author: rohogue
 ms.openlocfilehash: b01bcb743e4ffc110f0182e50630baea288f16d2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76153706"
 ---
 # <a name="avere-vfxt-demo-projects"></a>Демонстрационные проекты Avere vFXT
@@ -19,13 +19,13 @@ ms.locfileid: "76153706"
 
 ## <a name="video-rendering"></a>Рендеринг видео
 
-* [Рендеринг с помощью Azure Batch и Avere vFXT](https://github.com/Azure/Avere/blob/master/docs/maya_azure_batch_avere_vfxt_demo.md) - 60-минутный проект, демонстрирующий, как использовать Autodesk Maya с Azure Batch и кластер Avere vFXT для создания анимационного фильма
+* [Подготовка к просмотру с помощью пакетной службы Azure и Авере вфкст](https://github.com/Azure/Avere/blob/master/docs/maya_azure_batch_avere_vfxt_demo.md) — 60-минутный проект, демонстрирующий использование Autodesk Maya с пакетной службой Azure и кластером авере вфкст для создания анимированного фильма
 
-* [Преимущества использования Avere vFXT для рендеринга](https://github.com/Azure/Avere/blob/master/docs/why_avere_for_rendering.md) - Демонстрация, которая сравнивает время рендеринга из сетевого хранилища с кластером Avere vFXT и без его
+* [Преимущества использования Avere vFXT для рендеринга](https://github.com/Azure/Avere/blob/master/docs/why_avere_for_rendering.md) — Демонстрация, которая сравнивает время отрисовки из подключенного к сети хранилища с кластером Авере Вфкст и без него.
 
 ## <a name="high-performance-computing"></a>Высокопроизводительные вычисления
 
-* [Лучшие практики для улучшения времени загрузки Azure Virtual Machine (VM)](https://github.com/Azure/Avere/blob/master/docs/azure_vm_provision_best_practices.md) - воспроизводимый тест, который использует Avere vFXT для Azure для улучшения времени загрузки при быстром закручивании тысяч вычислительных клиентов
+* Рекомендации [по улучшению времени загрузки виртуальной машины Azure (ВМ)](https://github.com/Azure/Avere/blob/master/docs/azure_vm_provision_best_practices.md) — воспроизводимый тест, использующий авере Вфкст для Azure для повышения времени загрузки при быстром увеличении количества клиентов вычислений
 
 ## <a name="vfxt-performance"></a>Производительность vFXT
 

@@ -16,16 +16,16 @@ ms.date: 03/07/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: efc6d0c25c5186b391deb08ee0e41dcb8ae6edf0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75978083"
 ---
 # <a name="automated-patching-for-sql-server-in-azure-virtual-machines-classic"></a>Автоматическая установка исправлений SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
-> * [Менеджер ресурсов](../sql/virtual-machines-windows-sql-automated-patching.md)
-> * [Классический](../classic/sql-automated-patching.md)
+> * [Resource Manager](../sql/virtual-machines-windows-sql-automated-patching.md)
+> * [Классические](../classic/sql-automated-patching.md)
 > 
 > 
 
@@ -37,18 +37,18 @@ ms.locfileid: "75978083"
 Автоматическая установка исправлений зависит от [Расширения агента IaaS для SQL Server](../classic/sql-server-agent-extension.md).
 
 > [!IMPORTANT] 
-> Azure имеет две различные модели развертывания для создания и работы с ресурсами: [менеджер ресурсов и Classic.](../../../azure-resource-manager/management/deployment-models.md) В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.  Версию этой статьи для Resource Manager см. в разделе [Автоматическое исправление SQL Server на виртуальных машинах Azure Resource Manager](../sql/virtual-machines-windows-sql-automated-patching.md).
+> В Azure предусмотрены две различные модели развертывания для создания ресурсов и работы с ними: [Диспетчер ресурсов и Classic](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.  Версию этой статьи для Resource Manager см. в разделе [Автоматическое исправление SQL Server на виртуальных машинах Azure Resource Manager](../sql/virtual-machines-windows-sql-automated-patching.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для использования автоматической установки исправлений необходимо выполнить следующие предварительные требования.
 
 **Операционная система**:
 
-* Windows Server 2012
+* Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
-**Версия сервера S'L**:
+**Версия SQL Server**:
 
 * SQL Server 2012
 * SQL Server 2014
@@ -84,7 +84,7 @@ ms.locfileid: "75978083"
 
 | Параметр | Действие |
 | --- | --- |
-| **Dayofweek** |Исправления устанавливаются каждый четверг. |
+| **DayOfWeek** |Исправления устанавливаются каждый четверг. |
 | **MaintenanceWindowStartingHour** |Установка обновлений начинается в 11:00. |
 | **MaintenanceWindowDuration** |Обновления должны быть установлены в течение 120 минут. С учетом времени начала установка обновлений должна завершаться к 13:00. |
 | **PatchCategory** |Единственное возможное значение для этого параметра — Important (Важно). |

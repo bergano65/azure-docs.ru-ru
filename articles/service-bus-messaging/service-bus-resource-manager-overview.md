@@ -1,5 +1,5 @@
 ---
-title: Создание ресурсов Azure Service Bus с использованием шаблонов
+title: Создание ресурсов служебной шины Azure с помощью шаблонов
 description: С помощью шаблонов Azure Resource Manager можно автоматизировать создание ресурсов служебной шины.
 services: service-bus-messaging
 documentationcenter: .net
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/11/2018
 ms.author: spelluru
 ms.openlocfilehash: 9bc784ee57b9bde393408cbefa9a197aebc59b08
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76264464"
 ---
 # <a name="create-service-bus-resources-using-azure-resource-manager-templates"></a>Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager
@@ -36,7 +36,7 @@ ms.locfileid: "76264464"
 
 Эти шаблоны Azure Resource Manager для служебной шины доступны для скачивания и развертывания. Чтобы получить подробные сведения о каждом из них со ссылками на шаблоны в GitHub, щелкните приведенные ниже ссылки.
 
-* [Создание пространства имен сервисного автобуса](service-bus-resource-manager-namespace.md)
+* [Создайте пространство имен служебной шины](service-bus-resource-manager-namespace.md)
 * [Создание пространства имен служебной шины с очередью](service-bus-resource-manager-namespace-queue.md)
 * [Создание пространства имен служебной шины с разделом и подпиской](service-bus-resource-manager-namespace-topic.md)
 * [Создание пространства имен служебной шины с очередью и правилом авторизации](service-bus-resource-manager-namespace-auth-rule.md)
@@ -181,7 +181,7 @@ Set-AzContext -SubscriptionID <YourSubscriptionId>
 
 ### <a name="set-the-resource-group"></a>Задание группы ресурсов
 
-Если у вас нет существующей группы ресурсов, создайте новую группу ресурсов с командой **New-AzResourceGroup.** Введите имя группы ресурсов и нужное расположение. Пример:
+Если у вас нет группы ресурсов, создайте новую группу ресурсов с помощью команды **New-азресаурцеграуп** . Введите имя группы ресурсов и нужное расположение. Пример:
 
 ```powershell
 New-AzResourceGroup -Name MyDemoRG -Location "West US"
@@ -207,7 +207,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName MyDemoRG -TemplateFile <path t
 
 ### <a name="create-the-deployment"></a>Создание развертывания
 
-Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **режима** не указан, используется значение **Инкрементального** значения по умолчанию. Дополнительные сведения см. в статье [Добавочные и полные развертывания](../azure-resource-manager/templates/deployment-modes.md).
+Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **mode** не указан, используется значение **добавочного** по умолчанию. Дополнительные сведения см. в статье [Добавочные и полные развертывания](../azure-resource-manager/templates/deployment-modes.md).
 
 Следующая команда запрашивает три параметра в окне PowerShell:
 
@@ -255,7 +255,7 @@ Parameters        :
 ## <a name="next-steps"></a>Дальнейшие действия
 Мы рассмотрели базовую процедуру и команды для развертывания шаблона Azure Resource Manager. Для получения более подробных сведений перейдите по следующим ссылкам:
 
-* [Обзор менеджера ресурсов Azure][Azure Resource Manager overview]
+* [Обзор Azure Resource Manager][Azure Resource Manager overview]
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][Deploy resources with Azure Resource Manager templates]
 * [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
 * [Microsoft.ServiceBus versions](/azure/templates/microsoft.servicebus/allversions) (Версии типов ресурсов Microsoft.ServiceBus)

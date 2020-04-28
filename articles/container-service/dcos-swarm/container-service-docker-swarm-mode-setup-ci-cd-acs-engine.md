@@ -8,10 +8,10 @@ ms.date: 05/27/2017
 ms.author: dimart
 ms.custom: mvc
 ms.openlocfilehash: 1ec7ece6f5afd1bbd2613ae08af04b82e8a156b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76277915"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>(УСТАРЕЛО) Реализация полного конвейера CI/CD для многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
@@ -67,7 +67,7 @@ ms.locfileid: "76277915"
 
 Настройте подключение между проектом Azure DevOps и учетной записью Azure.
 
-1. Слева щелкните **New Service Endpoint** > **Resource Manager.**
+1. В левой части щелкните **создать конечную точку** > службы**Azure Resource Manager**.
 2. Чтобы авторизовать Azure DevOps для работы с учетной записью Azure, выберите свою **подписку** и нажмите кнопку **ОК**.
 
     ![Azure DevOps — авторизация Azure](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-azure.PNG)
@@ -76,7 +76,7 @@ ms.locfileid: "76277915"
 
 Настройте подключение между проектом Azure DevOps и учетной записью GitHub.
 
-1. Слева щелкните **New Service Endpoint** > **GitHub**.
+1. В левой части щелкните **создать конечную точку** > службы**GitHub**.
 2. Чтобы авторизовать Azure DevOps для работы с вашей учетной записью GitHub, щелкните **Авторизовать** и следуйте указаниям в открывшемся окне.
 
     ![Azure DevOps — авторизация GitHub](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-github.png)
@@ -126,7 +126,7 @@ ms.locfileid: "76277915"
 Для сборки приложения *MyShop* доступно пять образов контейнера. Каждый образ создается с помощью Dockerfile, расположенного в папках проекта:
 
 * ProductsApi;
-* Прокси-сервер
+* Proxy (Прокси)
 * RatingsApi;
 * RecommendationsApi;
 * ShopFront.
@@ -141,7 +141,7 @@ ms.locfileid: "76277915"
 
     ![Azure DevOps — сборка Docker](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-docker-build.png)
 
-    Для операции сборки выберите реестр контейнеров Azure, действие **изображения** и Dockerfile, определяющее каждое изображение. В качестве **рабочей папки** укажите корневой каталог Dockerfile, определите **имя образа** и выберите **Включить последний тег**.
+    Для операции сборки выберите реестр контейнеров Azure, действие **создать образ** и Dockerfile, определяющие каждый образ. В качестве **рабочей папки** укажите корневой каталог Dockerfile, определите **имя образа** и выберите **Включить последний тег**.
     
     Имя образа должно быть представлено в формате ```$(RegistryURL)/[NAME]:$(Build.BuildId)```. Замените **[NAME]** именем образа:
     - ```proxy```
@@ -194,9 +194,9 @@ Azure DevOps позволяет [управлять выпусками в раз
 
 ### <a name="initial-release-setup"></a>Начальная настройка выпуска
 
-1. Чтобы создать конвейер выпуска, нажмите **«Релизы»** > **и «Выпуск**
+1. Чтобы создать конвейер выпуска, щелкните **выпуски** > **+ выпуск** .
 
-2. Чтобы настроить источник **артефакта,** > нажмите Артефакты**Ссылка источник артефакта**. Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
+2. Чтобы настроить источник артефакта, щелкните **артефакты** > **связать источник артефакта**. Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
 
     ![Azure DevOps — выпуск артефактов](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-release-artefacts.png) 
 
@@ -246,8 +246,8 @@ Azure DevOps позволяет [управлять выпусками в раз
 
 Теперь после выполнения настройки пришло время протестировать этот новый конвейер CI/CD. Самый простой способ сделать это — обновить исходный код и сохранить изменения в репозитории GitHub. Через несколько секунд после отправки кода в Azure DevOps появится новая сборка. После успешного выполнения новый выпуск активируется и разворачивает новую версию приложения в кластере Службы контейнеров Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Более подробную информацию о CI/CD с Azure DevOps можно узнать в статье [Azure Pipelines Documentation.](/azure/devops/pipelines/?view=azure-devops)
+* Дополнительные сведения о CI/CD с Azure DevOps см. в статье [Azure pipelines документация](/azure/devops/pipelines/?view=azure-devops) .
 * Дополнительные сведения об обработчике ACS см. в [репозитории GitHub для обработчика ACS](https://github.com/Azure/acs-engine).
 * Дополнительные сведения о Docker Swarm Mode см. в [этой статье](https://docs.docker.com/engine/swarm/).

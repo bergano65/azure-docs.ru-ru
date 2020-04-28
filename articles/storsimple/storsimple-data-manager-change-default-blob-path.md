@@ -1,5 +1,5 @@
 ---
-title: Изменение пути blob от значения по умолчанию
+title: Изменить путь к BLOB-объекту из значения по умолчанию
 description: Узнайте, как настроить функцию Azure для переименования пути к файлу большого двоичного объекта
 author: alkohli
 ms.service: storsimple
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: 5ba1709ae195631371e4ea72667ba9b2a4bf279e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76270633"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>Изменение пути к большому двоичному объекту по умолчанию
@@ -38,7 +38,7 @@ ms.locfileid: "76270633"
 4. В колонке настройки **Приложение-функция** выполните следующие действия:
 
     1. Укажите уникальное **имя приложения**.
-    2. Из списка выпадающих данных выберите **подписку.** Эта подписка должна быть такой же, как и та, что связана со службой диспетчера данных StorSimple.
+    2. В раскрывающемся списке выберите **подписку**. Эта подписка должна быть такой же, как и та, что связана со службой диспетчера данных StorSimple.
     3. Выберите **Создание** для группы ресурсов.
     4. В раскрывающемся списке **План размещения** выберите **План потребления**.
     5. Укажите расположение выполняемой функции. Используйте тот же регион, в котором находятся служба диспетчера данных StorSimple и учетная запись хранения, связанная с определением задания.
@@ -179,7 +179,7 @@ ms.locfileid: "76270633"
 
         ![Копирование имени подключения к хранилищу](./media/storsimple-data-manager-change-default-blob-path/new-function-storage-connection-name.png)
 
-    3. **Сохранить** функцию.
+    3. **Сохраните** функцию.
 
         ![Сохранение функции](./media/storsimple-data-manager-change-default-blob-path/save-function.png)
 
@@ -189,11 +189,11 @@ ms.locfileid: "76270633"
 
        ![Ссылка "Просмотреть файлы"](./media/storsimple-data-manager-change-default-blob-path/view-files.png)
 
-    2. Нажмите **и добавьте**.
+    2. Щелкните **+ Добавить**.
         
         ![Ссылка "Просмотреть файлы"](./media/storsimple-data-manager-change-default-blob-path/new-function-add-file.png)
     
-    3. Введите **project.json**, а затем нажмите **Enter**. В файле **project.json** скопируйте следующий код:
+    3. Введите **Project. JSON**и нажмите клавишу **Ввод**. В файле **project.json** скопируйте следующий код:
 
         ```
         {
@@ -209,7 +209,7 @@ ms.locfileid: "76270633"
         ```
 
     
-    4. Нажмите **Сохранить**.
+    4. Выберите команду **Сохранить**.
 
         ![Ссылка "Просмотреть файлы"](./media/storsimple-data-manager-change-default-blob-path/new-function-project-json.png)
 

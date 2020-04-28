@@ -1,13 +1,13 @@
 ---
-title: Ошибки родительских ресурсов
-description: Описывает, как устранить ошибки при работе с родительским ресурсом в шаблоне Azure Resource Manager.
+title: Ошибки родительского ресурса
+description: Описание способов устранения ошибок при работе с родительским ресурсом в шаблоне Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 08/01/2018
 ms.openlocfilehash: f1847389d60ddf3c6abc70bc3309940c2246084e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76154046"
 ---
 # <a name="resolve-errors-for-parent-resources"></a>Устранение ошибок, связанных с родительскими ресурсами
@@ -23,7 +23,7 @@ Code=ParentResourceNotFound;
 Message=Can not perform requested operation on nested resource. Parent resource 'exampleserver' not found."
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Если один ресурс является дочерним для другого ресурса, перед созданием дочернего ресурса должен существовать его родительский ресурс. Имя дочернего ресурса определяет соединение с родительским ресурсом. Формат имени дочернего ресурса: `<parent-resource-name>/<child-resource-name>` Например, база данных SQL может быть определена следующим образом.
 
@@ -78,4 +78,4 @@ Message=Can not perform requested operation on nested resource. Parent resource 
 }
 ```
 
-Для получения дополнительной информации [см.](define-resource-dependency.md)
+Дополнительные сведения см. [в разделе Определение порядка развертывания ресурсов в Azure Resource Manager шаблонах](define-resource-dependency.md).

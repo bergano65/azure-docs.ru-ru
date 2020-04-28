@@ -1,7 +1,7 @@
 ---
-title: Очистить кэш токенов (MSAL.NET) Azure
+title: Очистить кэш маркеров (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте, как очистить кэш маркеров с помощью библиотеки подлинности Майкрософт для .NET (MSAL.NET).
+description: Узнайте, как очистить кэш маркеров с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -14,17 +14,17 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: a10efb5ff0a2c6a3ced3631dfe82c86e3e8a72fc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77084766"
 ---
-# <a name="clear-the-token-cache-using-msalnet"></a>Очистить кэш маркера с помощью MSAL.NET
+# <a name="clear-the-token-cache-using-msalnet"></a>Очистка кэша маркеров с помощью MSAL.NET
 
-При [приобретении токена доступа](msal-acquire-cache-tokens.md) с помощью библиотеки подлинности Майкрософт для .NET (MSAL.NET) токен консея кончается. Когда приложению нужен маркер, он `AcquireTokenSilent` должен сначала вызвать метод, чтобы проверить, находится ли приемлемый маркер в кэше. 
+При [получении маркера доступа](msal-acquire-cache-tokens.md) с помощью библиотеки проверки подлинности Майкрософт для .net (MSAL.NET) маркер кэшируется. Когда приложению требуется токен, сначала необходимо вызвать `AcquireTokenSilent` метод, чтобы проверить, находится ли допустимый маркер в кэше. 
 
-Очистка кэша достигается путем удаления учетных записей из кэша. Файл cookie сеанса, находящийся в браузере, не будет удален.  Следующий пример мгновенно выполняет публичное клиентское приложение, получает учетные записи для приложения и удаляет учетные записи.
+Очистка кэша достигается путем удаления учетных записей из кэша. Файл cookie сеанса, находящийся в браузере, не будет удален.  Следующий пример создает экземпляр общедоступного клиентского приложения, получает учетные записи для приложения и удаляет учетные записи.
 
 ```csharp
 private readonly IPublicClientApplication _app;
@@ -46,4 +46,4 @@ while (accounts.Any())
 
 ```
 
-Чтобы узнать больше о приобретении и кэширования токенов, прочитайте [приобрести токен доступа](msal-acquire-cache-tokens.md).
+Дополнительные сведения о получении и кэшировании токенов см. в статье [Получение маркера доступа](msal-acquire-cache-tokens.md).
