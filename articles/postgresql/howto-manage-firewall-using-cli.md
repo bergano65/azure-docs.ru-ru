@@ -1,6 +1,6 @@
 ---
-title: Управление правилами брандмауэра - Azure CLI - База данных Azure для PostgreS'L - Единый сервер
-description: В этой статье описывается, как создавать и управлять правилами брандмауэра в базе данных Azure для PostgreS-L - Single Server с помощью командной строки Azure CLI.
+title: Управление правилами брандмауэра — Azure CLI — "база данных Azure для PostgreSQL — один сервер"
+description: В этой статье описывается создание правил брандмауэра в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью командной строки Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
@@ -8,16 +8,16 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 4af0fb288961689fb051bab8091c838f793cfcc3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74765653"
 ---
-# <a name="create-and-manage-firewall-rules-in-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание и управление правилами брандмауэра в базе данных Azure для PostgreS-L - Единый сервер с помощью Azure CLI
-Правила брандмауэра уровня сервера могут использоваться для управления доступом к базе данных Azure для сервера PostgreS'L с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Для получения обзора базы данных Azure для правил [Azure Database for PostgreSQL Server firewall rules](concepts-firewall-rules.md)брандмауэра PostgreS'L см.
+# <a name="create-and-manage-firewall-rules-in-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание правил брандмауэра в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью Azure CLI
+Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для PostgreSQL с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Общие сведения о правилах брандмауэра базы данных Azure для PostgreSQL см. в статье [правила брандмауэра сервера базы данных Azure для PostgreSQL](concepts-firewall-rules.md).
 
-Для обеспечения доступа к серверу также можно использовать правила виртуальной сети (VNet). Подробнее о [создании и управлении конечными точками и правилами службы виртуальной сети с помощью Azure CLI.](howto-manage-vnet-using-cli.md)
+Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
@@ -81,5 +81,5 @@ az postgres server firewall-rule delete --resource-group myresourcegroup --serve
 ## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно использовать веб-браузер, чтобы [создать правила брандмауэра базы данных Azure для PostgreSQL и управлять ими с помощью портала Azure](howto-manage-firewall-using-portal.md).
 - Узнайте больше о [правилах брандмауэра сервера базы данных Azure для PostgreSQL](concepts-firewall-rules.md).
-- Дальнейший безопасный доступ к серверу путем [создания и управления конечными точками и правилами службы Виртуальной сети с помощью Azure CLI.](howto-manage-vnet-using-cli.md)
+- Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 - Справка по подключению к серверу базы данных Azure для PostgreSQL доступна в статье [Библиотеки подключений для базы данных Azure для PostgreSQL](concepts-connection-libraries.md).

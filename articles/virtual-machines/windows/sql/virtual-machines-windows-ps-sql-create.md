@@ -16,10 +16,10 @@ ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: b1578547fbca4caaecb209021569f0fbb2f1ae24
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74790637"
 ---
 # <a name="how-to-provision-sql-server-virtual-machines-with-azure-powershell"></a>Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell
@@ -337,7 +337,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualM
 > Если вы получите сообщение об ошибке диагностики загрузки, ее можно пропустить. Стандартная учетная запись хранения создается для диагностики загрузки, так как для диска виртуальной машины указана учетная запись хранилища класса Premium.
 
 ## <a name="install-the-sql-iaas-agent"></a>Установка агента SQL IaaS
-Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Чтобы установить агент на новый VM и зарегистрировать его у поставщика ресурсов, запустите команду [New-AzSqlVM](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для вашего S'L Server VM, выбирая между оплатой по мере от вас или принести свою собственную лицензию через [Azure Hybrid Benefit.](https://azure.microsoft.com/pricing/hybrid-benefit/) Для получения дополнительной информации о лицензировании [см.](virtual-machines-windows-sql-ahb.md) 
+Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Чтобы установить агент на новой виртуальной машине и зарегистрировать его с помощью поставщика ресурсов, выполните команду [New-азсклвм](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для виртуальной машины SQL Server, выбрав одну из [преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/)с оплатой по мере использования или с помощью собственной лицензии. Дополнительные сведения о лицензировании см. в разделе [модель лицензирования](virtual-machines-windows-sql-ahb.md). 
 
 
    ```powershell
@@ -429,7 +429,7 @@ New-AzSqlVM -ResourceGroupName $ResourceGroupName -Name $VMName -Location $Locat
 
 - подключаться к виртуальной машине с помощью протокола удаленного рабочего стола (RDP);
 - Настраивать параметры SQL Server на портале для виртуальной машины, включая:
-   - [Настройки хранения](virtual-machines-windows-sql-server-storage-configuration.md) 
+   - [Параметры хранилища](virtual-machines-windows-sql-server-storage-configuration.md) 
    - [автоматизированные задачи управления](virtual-machines-windows-sql-server-agent-extension.md).
 - [настраивать подключение](virtual-machines-windows-sql-connect.md);
 - подключать клиентов и приложения к новому экземпляру SQL Server.

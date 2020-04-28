@@ -1,26 +1,26 @@
 ---
-title: Расширенная защита от угроз - База данных Azure для PostgreS-L - Единый сервер
-description: Узнайте об использовании Расширенной защиты от угроз для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности базы данных.
+title: Расширенная защита от угроз — база данных Azure для PostgreSQL — один сервер
+description: Узнайте об использовании Advanced Threat Protection для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности для базы данных.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 3d86c76472580567c95d285924761e1714465d6f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74768747"
 ---
-# <a name="advanced-threat-protection-in-azure-database-for-postgresql---single-server"></a>Расширенная защита от угроз в базе данных Azure для PostgreS-L - Единый сервер
+# <a name="advanced-threat-protection-in-azure-database-for-postgresql---single-server"></a>Расширенная защита от угроз в базе данных Azure для PostgreSQL — один сервер
 
 Служба "Расширенная защита от угроз" для Базы данных Azure для PostgreSQL позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
 > [!NOTE]
-> Расширенная защита от угроз находится в открытом доступе.
+> Расширенная защита от угроз доступна в общедоступной предварительной версии.
 
-Защита от угроз входит в состав предложения "Расширенная защита от угроз (ATP)", которое представляет собой унифицированный пакет расширенных возможностей безопасности. Расширенная защита от угроз может быть доступна и управляется через [портал Azure](https://portal.azure.com) или с помощью [REST API.](/rest/api/postgresql/serversecurityalertpolicies) Функция доступна для серверов общего назначения и оптимизации памяти.
+Защита от угроз входит в состав предложения "Расширенная защита от угроз (ATP)", которое представляет собой унифицированный пакет расширенных возможностей безопасности. К расширенной защите угроз можно получить доступ и управлять ими с помощью [портал Azure](https://portal.azure.com) или [REST API](/rest/api/postgresql/serversecurityalertpolicies). Эта функция доступна для общего назначения и оптимизированных для памяти серверов.
 
 > [!NOTE]
 > Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах облака правительства и национального облака Azure: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
@@ -41,6 +41,6 @@ ms.locfileid: "74768747"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте больше о [Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
+* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/postgresql/). 
 * Настройка [Расширенной защиты от угроз для Базы данных Azure для PostgreSQL](howto-database-threat-protection-portal.md) с помощью портала Azure  

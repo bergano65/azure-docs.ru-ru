@@ -1,19 +1,19 @@
 ---
-title: Подключение к службе Azure Kubernetes - База данных Azure для PostgreS'L - Единый сервер
-description: Подробнее о подключении службы Azure Kubernetes (AKS) с базой данных Azure для PostgreS-L - Единый сервер
+title: Подключение к службе Azure Kubernetes. база данных Azure для PostgreSQL — один сервер
+description: Дополнительные сведения о подключении службы Kubernetes Azure (AKS) к базе данных Azure для PostgreSQL-Single Server
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.date: 5/6/2019
 ms.topic: conceptual
 ms.openlocfilehash: 46aa411826dd3ea578a2d98b0fe631ab0a12ef4a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74769886"
 ---
-# <a name="connecting-azure-kubernetes-service-and-azure-database-for-postgresql---single-server"></a>Подключение службы Azure Kubernetes и базы данных Azure для PostgreS'L - Единый сервер
+# <a name="connecting-azure-kubernetes-service-and-azure-database-for-postgresql---single-server"></a>Подключение службы Kubernetes Azure и базы данных Azure для PostgreSQL-Single Server
 
 Служба Azure Kubernetes (AKS) предоставляет управляемый кластер Kubernetes для использования в Azure. Ниже приведены некоторые настройки, которые можно использовать при создании приложения с помощью AKS и Базы данных Azure для PostgreSQL.
 

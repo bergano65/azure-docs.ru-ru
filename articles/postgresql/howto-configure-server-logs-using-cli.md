@@ -1,6 +1,6 @@
 ---
-title: Управление журналами - Azure CLI - База данных Azure для PostgreS'L - Единый сервер
-description: В этой статье описывается, как настроить и получить доступ к журналам сервера (.log файлы) в базе данных Azure для PostgreS-L - Единый сервер с помощью Azure CLI.
+title: Управление журналами — Azure CLI — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как настроить журналы сервера (файлы журнала) и получить доступ к ним в базе данных Azure для PostgreSQL — Single Server с помощью Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
@@ -8,10 +8,10 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: be679be91d49516bd2f6c672eb53640cfad2ae2a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74763578"
 ---
 # <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Настройка журналов сервера и получение к ним доступа с помощью Azure CLI
@@ -19,7 +19,7 @@ ms.locfileid: "74763578"
 
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
-- [База данных Azure для сервера PostgreS'L](quickstart-create-server-database-azure-cli.md)
+- [Сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-azure-cli.md)
 - Программа командной строки [Azure CLI 2.0](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере
 
 ## <a name="configure-logging"></a>Настройка журнала
@@ -30,7 +30,7 @@ ms.locfileid: "74763578"
 
 Дополнительные сведения см. в статье [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-using-cli.md).
 
-## <a name="list-logs"></a>Списки журналов
+## <a name="list-logs"></a>Список журналов
 Чтобы получить список доступных файлов журналов для сервера, выполните команду [az postgres server-logs list](/cli/azure/postgres/server-logs).
 
 Можно отобразить список файлов журнала для сервера **mydemoserver.postgres.database.azure.com** в группе ресурсов **myresourcegroup**. Затем направьте список файлов журнала в текстовый файл с именем **log\_files\_list.txt**.

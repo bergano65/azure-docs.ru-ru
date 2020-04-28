@@ -1,5 +1,5 @@
 ---
-title: Мигрировать базу данных - База данных Azure для PostgreS-L - Единый сервер
+title: Миграция базы данных Azure для PostgreSQL — один сервер
 description: Описывается, как извлечь базу данных PostgreSQL в файл сценария и импортировать данные из этого файла в целевую базу данных.
 author: rachel-msft
 ms.author: raagyema
@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.openlocfilehash: f7cf5d245383b8a58f03e2e3610750866a2f4b5a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74770209"
 ---
 # <a name="migrate-your-postgresql-database-using-export-and-import"></a>Перенос базы данных PostgreSQL с помощью экспорта и импорта
@@ -29,7 +29,7 @@ ms.locfileid: "74770209"
 ```bash
 pg_dump –-host=<host> --username=<name> --dbname=<database name> --file=<database>.sql
 ```
-Например, если у вас есть локальный сервер и база данных, называемая **testdb** в нем:
+Например, если в нем есть локальный сервер и база данных с именем **TestDB** :
 ```bash
 pg_dump --host=localhost --username=masterlogin --dbname=testdb --file=testdb.sql
 ```
@@ -45,5 +45,5 @@ psql --file=testdb.sql --host=mydemoserver.database.windows.net --port=5432 --us
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Чтобы перенести базу данных PostgreS'L [Migrate your PostgreSQL database using dump and restore](howto-migrate-using-dump-and-restore.md)с помощью дампа и восстановления, см.
+- Сведения о миграции базы данных PostgreSQL с помощью dump и RESTORE см. в статье [Перенос базы данных PostgreSQL с помощью функции Dump и восстановления](howto-migrate-using-dump-and-restore.md).
 - Дополнительные сведения о переносе баз данных в службу "База данных Azure для PostgreSQL" см. в [этой статье](https://aka.ms/datamigration). 

@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью потоковой деятельности Hadoop - Azure
+title: Преобразование данных с помощью действия потоковой передачи Hadoop в Azure
 description: Узнайте, как с помощью действия потоковой передачи Hadoop в фабрике данных Azure преобразовывать данные, выполняя программы потоковой передачи Hadoop в собственном кластере HDInsight или кластере по требованию.
 services: data-factory
 documentationcenter: ''
@@ -13,20 +13,20 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: a7f07365da699a40f5b51917104a68a62affa3d9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74703363"
 ---
 # <a name="transform-data-using-hadoop-streaming-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия потоковой передачи Hadoop в фабрике данных Azure
-> [!div class="op_single_selector" title1="Деятельность по трансформации"]
-> * [Активность улья](data-factory-hive-activity.md) 
+> [!div class="op_single_selector" title1="Действия преобразования"]
+> * [Действие Hive](data-factory-hive-activity.md) 
 > * [Действие Pig](data-factory-pig-activity.md)
-> * [КартаУменьшить активность](data-factory-map-reduce.md)
-> * [Активность потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
+> * [Действие MapReduce](data-factory-map-reduce.md)
+> * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие выполнения пакета в службе Машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
 > * [Действие обновления ресурса в службе Машинного обучения](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
@@ -38,7 +38,7 @@ ms.locfileid: "74703363"
 
 Можно использовать действие HDInsightStreamingActivity для вызова задания потоковой передачи Hadoop из конвейера фабрики данных Azure. В следующем фрагменте JSON показан синтаксис для использования действия HDInsightStreamingActivity в JSON-файле конвейера. 
 
-Потоковая активность HDInsight в [конвейере](data-factory-create-pipelines.md) Data Factory выполняет программы Стримингового Хадоопа по [своему усмотрению](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) или по [требованию](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) кластером HDInsight на основе Windows/Linux. Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
+Действие потоковой передачи HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет программы потоковой передачи Hadoop в [вашем собственном](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластере HDInsight или на основе Windows или Linux по [запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) . Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
 > [!NOTE] 
 > Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md). 
@@ -222,10 +222,10 @@ ms.locfileid: "74703363"
     }
 }
 ```
-## <a name="see-also"></a>См. также
-* [Активность улья](data-factory-hive-activity.md)
+## <a name="see-also"></a>См. также:
+* [Действие Hive](data-factory-hive-activity.md)
 * [Действие Pig](data-factory-pig-activity.md)
-* [КартаУменьшить активность](data-factory-map-reduce.md)
+* [Действие MapReduce](data-factory-map-reduce.md)
 * [Вызов программ Spark](data-factory-spark.md)
 * [Вызов сценариев R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample)
 

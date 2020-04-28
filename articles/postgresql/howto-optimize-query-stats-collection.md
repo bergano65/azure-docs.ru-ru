@@ -1,19 +1,19 @@
 ---
-title: Оптимизация сбора статистики запросов - База данных Azure для PostgreS'L - Единый сервер
-description: В этой статье описывается, как можно оптимизировать сбор статистики запросов в базе данных Azure для PostgreS-L - Единый сервер
+title: Оптимизация сбора статистики запросов — База данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как оптимизировать сбор статистики запросов в базе данных Azure для PostgreSQL-Single Server.
 author: dianaputnam
 ms.author: dianas
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: f467f01118470eb51f7decf3bd6457917c566723
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74770175"
 ---
-# <a name="optimize-query-statistics-collection-on-an-azure-database-for-postgresql---single-server"></a>Оптимизация сбора статистики запросов в базе данных Azure для PostgreS-L - Единый сервер
+# <a name="optimize-query-statistics-collection-on-an-azure-database-for-postgresql---single-server"></a>Оптимизация сбора статистики запросов в базе данных Azure для PostgreSQL — один сервер
 В этой статье описывается оптимизация сбора статистики запросов на сервере службы "База данных Azure для PostgreSQL".
 
 ## <a name="use-pg_stats_statements"></a>Использование pg_stats_statements
@@ -37,6 +37,6 @@ ms.locfileid: "74770175"
 ## <a name="next-steps"></a>Дальнейшие действия
 Попробуйте задать `pg_stat_statements.track = NONE` на [портале Azure](howto-configure-server-parameters-using-portal.md) или с помощью [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
-Дополнительные сведения см. в разделе: 
+Дополнительные сведения можно найти в разделе 
 - [Сценарии использования хранилища запросов](concepts-query-store-scenarios.md) 
-- [Лучшие практики магазина запросов](concepts-query-store-best-practices.md) 
+- [Рекомендации по использованию хранилища запросов](concepts-query-store-best-practices.md) 

@@ -1,19 +1,19 @@
 ---
-title: Перезагрузка сервера - Azure CLI - База данных Azure для PostgreS'L - Единый сервер
-description: В этой статье описывается, как можно перезапустить базу данных Azure для PostgreS-L - Единый сервер с помощью Azure CLI
+title: Перезапуск сервера-Azure CLI — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как можно перезапустить базу данных Azure для PostgreSQL-Single Server с помощью Azure CLI
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 13b26b545f9e95ce2457e4f8d9cf32da59cd91e6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74770158"
 ---
-# <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Перезагрузка базы данных Azure для PostgreS'L - Единый сервер с помощью Azure CLI
+# <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Перезапустите базу данных Azure для PostgreSQL — один сервер с помощью Azure CLI
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для PostgreSQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
 
 Если служба занята, перезапустить сервер не удастся. Например, служба может обрабатывать запрошенную ранее операцию, такую как масштабирование виртуальных ядер.
@@ -32,7 +32,7 @@ ms.locfileid: "74770158"
 
 ## <a name="restart-the-server"></a>Перезапустите сервер.
 
-Перезазапуск сервера со следующей командой:
+Перезапустите сервер с помощью следующей команды:
 
 ```azurecli-interactive
 az postgres server restart --name mydemoserver --resource-group myresourcegroup
@@ -40,4 +40,4 @@ az postgres server restart --name mydemoserver --resource-group myresourcegroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте о [том, как устанавливать параметры в базе данных Azure для PostgreS'L](howto-configure-server-parameters-using-cli.md)
+Дополнительные сведения о [настройке параметров в базе данных Azure для PostgreSQL](howto-configure-server-parameters-using-cli.md)

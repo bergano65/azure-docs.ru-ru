@@ -1,19 +1,19 @@
 ---
-title: Перезагрузка сервера - Портал Azure - База данных Azure для PostgreS'L - Единый сервер
-description: В этой статье описывается, как можно перезапустить базу данных Azure для PostgreS -L - Единый сервер с помощью портала Azure.
+title: Перезапуск сервера-портал Azure — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как можно перезапустить базу данных Azure для PostgreSQL-Single Server с помощью портал Azure.
 author: ajlam
 ms.author: andrela
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 52ffb3943e6e3f209fd236216cc44026dff59dad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74770090"
 ---
-# <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Перезагрузка базы данных Azure для PostgreS-L - Единый сервер с помощью портала Azure
+# <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Перезапустите базу данных Azure для PostgreSQL — один сервер с помощью портал Azure
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для PostgreSQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
 
 Если служба занята, перезапустить сервер не удастся. Например, служба может обрабатывать запрошенную ранее операцию, такую как масштабирование виртуальных ядер.
@@ -28,7 +28,7 @@ ms.locfileid: "74770090"
 
 Чтобы перезапустить сервер PostgreSQL, выполните следующие действия:
 
-1. На [портале Azure](https://portal.azure.com/)выберите базу данных Azure для сервера PostgreS'L.
+1. В [портал Azure](https://portal.azure.com/)выберите сервер базы данных Azure для PostgreSQL.
 
 2. На панели инструментов страницы **Обзор** сервера нажмите кнопку **Восстановить**.
 
@@ -48,4 +48,4 @@ ms.locfileid: "74770090"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте о [том, как устанавливать параметры в базе данных Azure для PostgreS'L](howto-configure-server-parameters-using-portal.md)
+Дополнительные сведения о [настройке параметров в базе данных Azure для PostgreSQL](howto-configure-server-parameters-using-portal.md)

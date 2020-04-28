@@ -1,6 +1,6 @@
 ---
 title: Масштабирование приложения в ASE v1
-description: Масштабирование приложения в среде службы приложений. Этот документ предоставляется только для клиентов, которые используют наследие v1 ASE.
+description: Масштабирование приложения в Среда службы приложений. Этот документ предоставляется только для клиентов, использующих устаревшую версию V1 ASE.
 author: ccompy
 ms.assetid: 78eb1e49-4fcd-49e7-b3c7-f1906f0f22e3
 ms.topic: article
@@ -8,13 +8,13 @@ ms.date: 10/17/2016
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 43849ca7084f2237c37ad537c50f4e94ac4ea7c0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74688681"
 ---
-# <a name="scaling-apps-in-an-app-service-environment-v1"></a>Масштабирование приложений в среде службы приложений v1
+# <a name="scaling-apps-in-an-app-service-environment-v1"></a>Масштабирование приложений в Среда службы приложений v1
 Обычное в службе приложений Azure можно масштабировать три параметра:
 
 * план ценообразования;
