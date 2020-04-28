@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: Мониторинг, метрика и оповещения'
+title: 'Azure ExpressRoute: мониторинг, метрики и оповещения'
 description: Эта страница содержит сведения о мониторинге в ExpressRoute
 services: expressroute
 author: mialdrid
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: cherylmc
 ms.openlocfilehash: 268a7e7c94285d3c4fdcb0c5fb91b685c09b58c8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75436914"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
@@ -24,84 +24,84 @@ ms.locfileid: "75436914"
 
 ## <a name="expressroute-metrics"></a>Метрики ExpressRoute
 
-Чтобы просмотреть **метрики,** перейдите на страницу *Azure Monitor* и нажмите *Metrics.* Для просмотра метрик **ExpressRoute,** фильтр по схемам типа ресурса *ExpressRoute.* Для просмотра метрик **Глобального Охвата** отфильтруйте *по схемам* Типа Ресурсов ExpressRoute и выберите ресурс схемы ExpressRoute с включенным Global Reach. Для просмотра **метрик ExpressRoute Direct,** фильтруйте тип ресурсов по *портам ExpressRoute.* 
+Чтобы просмотреть **метрики**, перейдите на страницу *Azure Monitor* и щелкните *метрики*. Чтобы просмотреть метрики **expressroute** , отфильтруйте по типу ресурса *каналы ExpressRoute*. Чтобы просмотреть метрики **Global REACH** , отфильтруйте по типу ресурса *каналы expressroute* и выберите ресурс канала expressroute, в котором включено Global REACH. Чтобы просмотреть метрики **Direct expressroute** , отфильтруйте тип ресурса по *портам ExpressRoute*. 
 
-После выбора метрики будет применена агрегация по умолчанию. Дополнительно можно применить расщепление, которое покажет метрику с различными размерами.
+После выбора метрики будет применено агрегирование по умолчанию. При необходимости можно применить разделение, которое будет показывать метрику с разными измерениями.
 
 ### <a name="available-metrics"></a>Доступные показатели
-|**Метрические**|**Категория**|**Измерение (ы)**|**Характеристика (ы)**|
+|**Метрика**|**Категория**|**Измерения (s)**|**Функции**|
 | --- | --- | --- | --- |
-|Доступность ARP|Доступность|<ui><li>Peer (Первичный/вторичный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга (частный/публичный/Microsoft)</ui></li>|ExpressRoute|
-|Доступность Bgp|Доступность|<ui><li> Peer (Первичный/вторичный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга</ui></li>|ExpressRoute|
-|BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (ExpressRoute Прямая)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direct|
-|BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (ExpressRoute Прямая) | <ui><li>Expressroute<ui><li>ЭкспрессРут Прямая</ui></li> |
-|GlobalReachBitsInВторая|Трафик|<ui><li>Peered Circuit Skey (Сервисный ключ)</ui></li>|Global Reach|
-|GlobalReachBitsOutPerSecond|Трафик|<ui><li>Peered Circuit Skey (Сервисный ключ)</ui></li>|Global Reach|
-|Админгосударство|Физическая связь|Ссылка|ExpressRoute Direct|
-|Линейныйпротокол|Физическая связь|Ссылка|ExpressRoute Direct|
-|RxLightLevel|Физическая связь|<ui><li>Ссылку</ui></li><ui><li>Полосы</ui></li>|ExpressRoute Direct|
-|TxLightLevel|Физическая связь|<ui><li>Ссылку</ui></li><ui><li>Полосы</ui></li>|ExpressRoute Direct|
+|Доступность ARP|Доступность|<ui><li>Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга (частный, общедоступный/Майкрософт)</ui></li>|ExpressRoute|
+|Доступность BGP|Доступность|<ui><li> Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга</ui></li>|ExpressRoute|
+|BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (с ExpressRoute Direct)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direct|
+|BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) | <ui><li>ExpressRoute<ui><li>Непосредственный ExpressRoute</ui></li> |
+|глобалреачбитсинперсеконд|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
+|глобалреачбитсаутперсеконд|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
+|админстате|Физическое подключение|Ссылка|ExpressRoute Direct|
+|линепротокол|Физическое подключение|Ссылка|ExpressRoute Direct|
+|ркслигхтлевел|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|ткслигхтлевел|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
 >[!NOTE]
->Использование *GlobalGlobalReachBitsInPerSecond* и *GlobalGlobalReachBitsOutPerSecond* будет видно только в том случае, если будет установлено хотя бы одно соединение Global Reach.
+>Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
 >
 
-## <a name="circuits-metrics"></a>Метрики цепей
+## <a name="circuits-metrics"></a>Метрики каналов
 
-### <a name="bits-in-and-out---metrics-across-all-peerings"></a>Bits In and Out - Метрика во всех пирингах
+### <a name="bits-in-and-out---metrics-across-all-peerings"></a>Входные и выходные метрики во всех пиринга
 
-Вы можете просматривать метрики во всех пирингах на данной схеме ExpressRoute.
+Вы можете просматривать метрики для всех узлов в заданном канале ExpressRoute.
 
 ![метрики канала](./media/expressroute-monitoring-metrics-alerts/ermetricspeering.jpg)
 
-### <a name="bits-in-and-out---metrics-per-peering"></a>Bits In and Out - Метрика за пиринг
+### <a name="bits-in-and-out---metrics-per-peering"></a>Количество входных и исходящих битов в метрики на пиринг
 
 Доступны метрики по частному и общедоступному пирингу, а также пирингу Майкрософт в бит/с.
 
 ![метрики пиринга](./media/expressroute-monitoring-metrics-alerts/erpeeringmetrics.jpg) 
 
-### <a name="bgp-availability---split-by-peer"></a>Доступность BGP - Разделение по Peer  
+### <a name="bgp-availability---split-by-peer"></a>Доступность BGP — разделение по узлу  
 
-Вы можете просматривать рядом с доступностью BGP в режиме реального времени через пиринги и одноранговые (первичные и вторичные маршрутизаторы ExpressRoute). Эта панель мониторинга показывает сессию Primary BGP для приватного пиринга и вторую сессию BGP вниз для приватного пиринга. 
+Вы можете просмотреть сведения о доступности BGP в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан основной сеанс BGP для частного пиринга и второй сеанс BGP для частного пиринга. 
 
-![Доступность BGP на одноранговой](./media/expressroute-monitoring-metrics-alerts/erBgpAvailabilityMetrics.jpg) 
+![Доступность BGP на узел](./media/expressroute-monitoring-metrics-alerts/erBgpAvailabilityMetrics.jpg) 
 
-### <a name="arp-availability---split-by-peering"></a>Доступность ARP - Разделение по пирингу  
+### <a name="arp-availability---split-by-peering"></a>Доступность ARP — разделение по пиринга  
 
-Вы можете просматривать рядом с доступностью [ARP](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-arp-resource-manager) в режиме реального времени через пиринги и одноранговые (первичные и вторичные маршрутизаторы ExpressRoute). Эта панель мониторинга показывает приватную сессию ARP для обоих узлов, но завершается для Microsoft, вглядываясь в пиринг. Агрегация по умолчанию (средний) использовалась в обоих одноранговых узлах.  
+Вы можете просмотреть сведения о доступности [ARP](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-arp-resource-manager) в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан сеанс ARP частного пиринга по обоим одноранговым узлам, но для пиринга Майкрософт между одноранговыми узлами завершается. По умолчанию для обоих узлов использовалась статистическая обработка (среднее значение).  
 
-![Доступность ARP на одноранговой](./media/expressroute-monitoring-metrics-alerts/erArpAvailabilityMetrics.jpg) 
+![Доступность ARP на одноранговый узел](./media/expressroute-monitoring-metrics-alerts/erArpAvailabilityMetrics.jpg) 
 
-## <a name="expressroute-direct-metrics"></a>Прямая метрика ExpressRoute
+## <a name="expressroute-direct-metrics"></a>Непосредственные метрики ExpressRoute
 
-### <a name="admin-state---split-by-link"></a>Состояние админ - Разделение по ссылке
-Вы можете просмотреть состояние админа для каждой ссылки пары прямого порта ExpressRoute.
+### <a name="admin-state---split-by-link"></a>Состояние администратора — разбиение по каналу
+Вы можете просмотреть состояние администратора для каждой ссылки на пару прямых портов ExpressRoute.
 
-![ER прямое состояние админ](./media/expressroute-monitoring-metrics-alerts/adminstate-per-link.jpg)
+![состояние прямого администратора ER](./media/expressroute-monitoring-metrics-alerts/adminstate-per-link.jpg)
 
-### <a name="bits-in-per-second---split-by-link"></a>Биты в секунду - Сплит по ссылке
-Вы можете просматривать биты в секунду по обе ссылки пары expressRoute Direct порта. 
+### <a name="bits-in-per-second---split-by-link"></a>Число битов в секунду — разбиение по каналу
+Можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute. 
 
-![er прямые биты в секунду](./media/expressroute-monitoring-metrics-alerts/bits-in-per-second-per-link.jpg)
+![число прямых бит в секунду для ER](./media/expressroute-monitoring-metrics-alerts/bits-in-per-second-per-link.jpg)
 
-### <a name="bits-out-per-second---split-by-link"></a>Bits Out в секунду - Сплит по ссылке
-Вы также можете просматривать биты в секунду по обе ссылки пары ExpressRoute Direct порта. 
+### <a name="bits-out-per-second---split-by-link"></a>Биты за секунду — разбиение по каналу
+Кроме того, можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute. 
 
-![er прямые биты в секунду](./media/expressroute-monitoring-metrics-alerts/bits-out-per-second-per-link.jpg)
+![непосредственных бит ER в секунду](./media/expressroute-monitoring-metrics-alerts/bits-out-per-second-per-link.jpg)
 
-### <a name="line-protocol---split-by-link"></a>Протокол строки - Разделение по ссылке
-Вы можете просмотреть линейный протокол по каждой ссылке пары портов ExpressRoute Direct.
+### <a name="line-protocol---split-by-link"></a>Протокол строки — разбиение по каналу
+Протокол Line можно просмотреть по каждой ссылке на пару прямых портов ExpressRoute.
 
-![er протокол прямой линии](./media/expressroute-monitoring-metrics-alerts/line-protocol-per-link.jpg)
+![Протокол прямой строки ER](./media/expressroute-monitoring-metrics-alerts/line-protocol-per-link.jpg)
 
-### <a name="rx-light-level---split-by-link"></a>Уровень света Rx - Разделение по ссылке
-Вы можете просмотреть уровень света Rx (уровень света, который **получает**порт ExpressRoute Direct) для каждого порта. Здоровые уровни света Rx обычно подпадают в диапазоне от -10 до 0 дБ
+### <a name="rx-light-level---split-by-link"></a>Уровень источника RX — разбиение по каналу
+Для каждого порта можно просмотреть уровень падения на RX (уровень освещения, который **получает**прямой порт ExpressRoute). Работоспособные уровни освещения обычно находятся в диапазоне от-10 до 0 dBm.
 
-![er прямой линии Rx Light Level](./media/expressroute-monitoring-metrics-alerts/rxlight-level-per-link.jpg)
+![непосредственный уровень RX прямой строки ER](./media/expressroute-monitoring-metrics-alerts/rxlight-level-per-link.jpg)
 
-### <a name="tx-light-level---split-by-link"></a>Уровень tx Light - Разделение по ссылке
-Вы можете просмотреть уровень света Tx (уровень света, который **транслирует**прямой порт ExpressRoute) для каждого порта. Здоровые уровни tx света обычно подпадают в диапазоне от -10 до 0 дБ
+### <a name="tx-light-level---split-by-link"></a>Уровень источника TX — разбиение по каналу
+Для каждого порта можно просмотреть уровень источника TX (уровень падения, который **передает**прямой порт ExpressRoute). Работоспособные уровни интенсивности TX обычно находятся в диапазоне от-10 до 0 dBm.
 
-![er прямой линии Rx Light Level](./media/expressroute-monitoring-metrics-alerts/txlight-level-per-link.jpg)
+![непосредственный уровень RX прямой строки ER](./media/expressroute-monitoring-metrics-alerts/txlight-level-per-link.jpg)
 
 ## <a name="expressroute-gateway-connections-in-bitsseconds"></a>Подключения шлюза ExpressRoute в бит/с
 

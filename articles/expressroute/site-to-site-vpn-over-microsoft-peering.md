@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: Налаживание S2S VPN над пирингом Microsoft'
+title: 'Azure ExpressRoute: Настройка S2S VPN через пиринг Майкрософт'
 description: Настройка подключения IPsec/IKE к Azure через пиринговый канал Майкрософт ExpressRoute с использованием VPN-шлюза типа "сеть — сеть".
 services: expressroute
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: f3044a2701b0f1cd0e5f9ab3ab60c1d60cfb8f45
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75436815"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
@@ -43,7 +43,7 @@ VPN-туннели через пиринговый канал Майкрософ
 >
 >
 
-## <a name="workflow"></a><a name="workflow"></a>Рабочего процесса
+## <a name="workflow"></a><a name="workflow"></a>Рабочий процесс
 
 1. Настройте пиринг Майкрософт для своего канала ExpressRoute.
 2. Объявите выбранные региональные префиксы Azure в своей локальной сети через пиринг Майкрософт.
@@ -53,7 +53,7 @@ VPN-туннели через пиринговый канал Майкрософ
 6. (Необязательно.) Настройте брандмауэры или фильтрацию на локальном VPN-устройстве.
 7. Протестируйте и проверьте обмен данными IPsec через канал ExpressRoute.
 
-## <a name="1-configure-microsoft-peering"></a><a name="peering"></a>1. Настройка microsoft пиринг
+## <a name="1-configure-microsoft-peering"></a><a name="peering"></a>1. Настройка пиринга Майкрософт
 
 Чтобы настроить VPN-подключение типа "сеть — сеть" через ExpressRoute, вы должны использовать пиринг Майкрософт ExpressRoute.
 
@@ -65,9 +65,9 @@ VPN-туннели через пиринговый канал Майкрософ
 
 ![канал](./media/site-to-site-vpn-over-microsoft-peering/ExpressRouteCkt.png)
 
-## <a name="2-configure-route-filters"></a><a name="routefilter"></a>2. Настройка фильтров маршрута
+## <a name="2-configure-route-filters"></a><a name="routefilter"></a>2. Настройка фильтров маршрутов
 
-Фильтр маршрутов позволяет вам идентифицировать службы, которые можно использовать через пиринг Майкрософт по каналу ExpressRoute. По существу, это допустимый список всех ценностей сообщества BGP. 
+Фильтр маршрутов позволяет вам идентифицировать службы, которые можно использовать через пиринг Майкрософт по каналу ExpressRoute. По сути, это список разрешений для всех значений сообщества BGP. 
 
 ![фильтр маршрутов](./media/site-to-site-vpn-over-microsoft-peering/route-filter.png)
 
@@ -91,7 +91,7 @@ VPN-туннели через пиринговый канал Майкрософ
 show ip bgp vpnv4 vrf 10 summary
 ```
 
-Следующий частичный выход показывает, что 68 \*префиксов были получены от соседа .243.229.34 с ASN 12076 (MSEE):
+В следующих частичных выходных данных показано, что префиксы 68 были получены \*из соседнего узла. 243.229.34 с ASN 12076 (MSEE):
 
 ```
 ...
@@ -112,7 +112,7 @@ sh ip bgp vpnv4 vrf 10 neighbors X.243.229.34 received-routes
 Get-AzBgpServiceCommunity
 ```
 
-## <a name="3-configure-the-vpn-gateway-and-ipsec-tunnels"></a><a name="vpngateway"></a>3. Настройка VPN шлюза и тоннелей IPsec
+## <a name="3-configure-the-vpn-gateway-and-ipsec-tunnels"></a><a name="vpngateway"></a>3. Настройка VPN-шлюза и туннелей IPsec
 
 В этом разделе между VPN-шлюзом Azure и локальным VPN-устройством создаются VPN-туннели IPsec. В примерах используются VPN-устройства маршрутизатора облачной службы Cisco (CSR1000).
 
@@ -354,7 +354,7 @@ Get-AzBgpServiceCommunity
   }
 ```
 
-## <a name="4-configure-the-on-premises-vpn-device"></a><a name="device"></a>4. Настройка на месте VPN-устройства
+## <a name="4-configure-the-on-premises-vpn-device"></a><a name="device"></a>4. Настройка локального VPN-устройства
 
 VPN-шлюз Azure совместим со многими VPN-устройствами от разных поставщиков. Сведения о конфигурации и устройства, сертифицированные для работы с VPN-шлюзом, см. в статье [VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpn-devices.md).
 
@@ -475,11 +475,11 @@ ip route 10.2.0.229 255.255.255.255 Tunnel1
 !
 ```
 
-## <a name="5-configure-vpn-device-filtering-and-firewalls-optional"></a><a name="firewalls"></a>5. Настройка фильтрации устройств VPN и брандмауэров (по желанию)
+## <a name="5-configure-vpn-device-filtering-and-firewalls-optional"></a><a name="firewalls"></a>5. Настройка фильтрации и брандмауэров VPN-устройств (необязательно)
 
 Настройте брандмауэр и фильтрацию в соответствии с требованиями.
 
-## <a name="6-test-and-validate-the-ipsec-tunnel"></a><a name="testipsec"></a>6. Испытание и проверка туннеля IPsec
+## <a name="6-test-and-validate-the-ipsec-tunnel"></a><a name="testipsec"></a>6. Тестирование и проверка туннеля IPsec
 
 Статус туннелей IPsec можно проверить в VPN-шлюзе Azure с помощью команд PowerShell:
 
@@ -711,4 +711,4 @@ Total number of prefixes 2
 
 * [Настройка решения "Монитор производительности сети" для ExpressRoute](how-to-npm.md)
 
-* [Добавление подключения к сайту к VNet с существующим vpn-шлюзом](../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
+* [Добавление подключения типа "сеть — сеть" в виртуальную сеть с существующим VPN-шлюзом](../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
