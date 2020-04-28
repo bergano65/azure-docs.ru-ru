@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых идентификаторов на Azure VM с помощью PowerShell - Azure AD
+title: Настройка управляемых удостоверений на виртуальной машине Azure с помощью PowerShell — Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f24c89477d71df3f497590b49841403576343bd4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74547213"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell
@@ -46,7 +46,7 @@ ms.locfileid: "74547213"
 
 Чтобы создать виртуальную машину Azure с включенным управляемым удостоверением, назначаемым системой, вашей учетной записи должна быть назначена роль [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
 
-1. Обратитесь к одному из следующих Azure VM квикстартов, заполнив только необходимые разделы ("Войти в Azure", "Создать группу ресурсов", "Создать сетевую группу", "Создать VM").
+1. Ознакомьтесь с одним из следующих кратких руководств по виртуальным машинам Azure, заполнив только необходимые разделы ("войти в Azure", "создать группу ресурсов", "создать сетевую группу", "создать виртуальную машину").
     
     При выполнении действий, описанных в разделе о создании виртуальной машины, не забудьте внести небольшие изменения в синтаксис командлета [New-AzVMConfig](/powershell/module/az.compute/new-azvm). Чтобы подготовить виртуальную машину с включенным удостоверением, назначаемым системой, добавьте параметр `-AssignIdentity:$SystemAssigned`, как показано ниже.
       
@@ -142,9 +142,9 @@ Update-AzVm -ResourceGroupName myResourceGroup -VM $vm -IdentityType None
 
 Чтобы присвоить назначаемое пользователем удостоверение виртуальной машине, вашей учетной записи должны быть назначены роли [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) и [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Назначать другие роли в каталоге Azure AD не требуется.
 
-1. Обратитесь к одному из следующих Azure VM квикстартов, заполнив только необходимые разделы ("Войти в Azure", "Создать группу ресурсов", "Создать сетевую группу", "Создать VM"). 
+1. Ознакомьтесь с одним из следующих кратких руководств по виртуальным машинам Azure, заполнив только необходимые разделы ("войти в Azure", "создать группу ресурсов", "создать сетевую группу", "создать виртуальную машину"). 
   
-    Когда вы доберетесь до раздела "Создай VM", внедрите небольшое [`New-AzVMConfig`](/powershell/module/az.compute/new-azvm) изменение в синтаксис cmdlet. Добавьте параметры `-IdentityType UserAssigned` и `-IdentityID`, чтобы подготовить виртуальную машину с удостоверением, назначаемым пользователем.  Замените `<VM NAME>`,`<SUBSCRIPTION ID>`, `<RESROURCE GROUP>` и `<USER ASSIGNED IDENTITY NAME>` собственными значениями.  Пример:
+    При получении раздела "Создание виртуальной машины" внесите небольшое изменение в синтаксис [`New-AzVMConfig`](/powershell/module/az.compute/new-azvm) командлета. Добавьте параметры `-IdentityType UserAssigned` и `-IdentityID`, чтобы подготовить виртуальную машину с удостоверением, назначаемым пользователем.  Замените `<VM NAME>`,`<SUBSCRIPTION ID>`, `<RESROURCE GROUP>` и `<USER ASSIGNED IDENTITY NAME>` собственными значениями.  Пример:
     
     ```powershell 
     $vmConfig = New-AzVMConfig -VMName <VM NAME> -IdentityType UserAssigned -IdentityID "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESROURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>..."
@@ -168,7 +168,7 @@ Update-AzVm -ResourceGroupName myResourceGroup -VM $vm -IdentityType None
 2. Создайте управляемое удостоверение, назначаемое пользователем, с помощью командлета [New-AzUserAssignedIdentity](/powershell/module/az.managedserviceidentity/new-azuserassignedidentity).  Обратите внимание на свойство `Id` в выходных данных. Оно потребуется в следующем шаге.
 
    > [!IMPORTANT]
-   > Создание назначенных пользователем управляемых идентификаторов поддерживает только буквеннумерические, подчеркивающие и \_ дефисные символы (0-9 или a-z или A-Я, или -) символы. Кроме того, имя должно быть ограничено от 3 до 128 длины символов для правильной работы при назначении VM/VMSS. Дополнительные сведения см. в разделе [Часто задаваемые вопросы и известные проблемы](known-issues.md).
+   > Создание управляемых удостоверений, назначаемых пользователем, поддерживает только буквы, цифры, символы подчеркивания и дефис (0-9 или a- \_ z или a-z, или-). Кроме того, имя должно быть ограничено длиной от 3 до 128 символов, чтобы назначение виртуальной машине или VMSS работало правильно. Дополнительные сведения см. в разделе [Часто задаваемые вопросы и известные проблемы](known-issues.md).
 
    ```powershell
    New-AzUserAssignedIdentity -ResourceGroupName <RESOURCEGROUP> -Name <USER ASSIGNED IDENTITY NAME>

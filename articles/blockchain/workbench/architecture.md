@@ -1,21 +1,21 @@
 ---
 title: Архитектура Azure Blockchain Workbench
-description: Обзор архитектуры Azure Blockchain Workbench Preview и ее компонентов.
+description: Обзор архитектуры Azure Блокчейн Workbench Preview и ее компонентов.
 ms.date: 09/05/2019
 ms.topic: conceptual
 ms.reviewer: brendal
 ms.openlocfilehash: aa972e8ae486d181f0c48df72ec89c925c940451
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74324897"
 ---
 # <a name="azure-blockchain-workbench-architecture"></a>Архитектура Azure Blockchain Workbench
 
-Azure Blockchain Workbench Preview упрощает разработку блокчейн-приложений, предоставляя решение с использованием нескольких компонентов Azure. Blockchain Workbench можно развернуть с помощью шаблона решения в Azure Marketplace. Шаблон позволяет выбрать модули и компоненты для развертывания, включая блокчейн-стек, тип клиентского приложения и поддержку интеграции Интернета вещей. После развертывания Blockchain Workbench предоставляет доступ к веб-приложению, iOS-приложению и Android-приложению.
+Предварительная версия Azure Блокчейн Workbench упрощает разработку приложений блокчейн, предоставляя решение с помощью нескольких компонентов Azure. Blockchain Workbench можно развернуть с помощью шаблона решения в Azure Marketplace. Шаблон позволяет выбрать модули и компоненты для развертывания, включая блокчейн-стек, тип клиентского приложения и поддержку интеграции Интернета вещей. После развертывания Blockchain Workbench предоставляет доступ к веб-приложению, iOS-приложению и Android-приложению.
 
-![Архитектура Блокчейн Workbench](./media/architecture/architecture.png)
+![Архитектура блокчейн Workbench](./media/architecture/architecture.png)
 
 ## <a name="identity-and-authentication"></a>Идентификация и аутентификация
 

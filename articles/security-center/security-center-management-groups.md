@@ -1,6 +1,6 @@
 ---
 title: Получение видимости в пределах клиента в центре безопасности Azure | Документация Майкрософт
-description: В этой статье объясняется, как управлять позицией безопасности в масштабе, применяя политики ко всем подпискам, связанным с вашим арендатором Active Directory Azure.
+description: В этой статье объясняется, как управлять степенью безопасности в масштабе, применяя политики ко всем подпискам, связанным с вашим клиентом Azure Active Directory.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -14,14 +14,14 @@ ms.workload: na
 ms.date: 12/19/2018
 ms.author: memildin
 ms.openlocfilehash: 734876380d22f5d4d6dae0dd375b238fd5f6ffed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74559348"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
-В этой статье объясняется, как управлять позицией безопасности организации в масштабе, применяя политики безопасности ко всем подписям Azure, связанным с вашим арендатором Active Directory Azure.
+В этой статье описывается, как управлять степенью безопасности Организации в масштабе, применяя политики безопасности ко всем подпискам Azure, связанным с вашим клиентом Azure Active Directory.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "74559348"
 
  
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите все > **группы управления** **службами.**
+2. Выберите **все службы** > **группы управления**.
 3. На главной странице выберите **New Management group** (Создать группу управления). 
 
     ![Главная группа](./media/security-center-management-groups/main.png) 
@@ -49,7 +49,7 @@ ms.locfileid: "74559348"
     - Поле отображаемого имени — это имя, которое отображается во всех разделах портала Azure. Отдельное отображаемое имя можно указать в необязательном поле при создании группы управления и изменить в любой момент.  
 
       ![Создание](./media/security-center-management-groups/create_context_menu.png)  
-5.  Выберите **Сохранить**
+5.  Нажмите кнопку **Сохранить**.
 
 ### <a name="view-management-groups-in-the-azure-portal"></a>Просмотр групп управления на портале Azure
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -101,7 +101,7 @@ ms.locfileid: "74559348"
  
 1. Щелкните **Управление доступом (IAM)**, а затем **Назначения ролей**.
 
-1. Нажмите **Добавить ролевые задания**.
+1. Щелкните **добавить назначение ролей**.
 
 1. Выберите пользователя и роль для назначения, а затем щелкните **Сохранить**.  
    
@@ -112,7 +112,7 @@ ms.locfileid: "74559348"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-1. Установка [Azure PowerShell](/powershell/azure/install-az-ps).
+1. Установите [Azure PowerShell](/powershell/azure/install-az-ps).
 2. Выполните следующие команды: 
 
     ```azurepowershell
@@ -167,7 +167,7 @@ ms.locfileid: "74559348"
 
 
 
-## <a name="adding-subscriptions-to-a-management-group"></a>Добавление подписки в группу управления
+## <a name="adding-subscriptions-to-a-management-group"></a>Добавление подписок в группу управления
 В созданную группу управления можно добавить подписки. Эти шаги не обязательны при обеспечении видимости в пределах клиента и управлении доступом и глобальной политикой.
 
 1. В разделе **Группы управления** выберите группу управления, в которую нужно добавить подписку.
@@ -189,7 +189,7 @@ ms.locfileid: "74559348"
 Работая с этой статьей, вы узнали, как получить видимость в пределах клиента в центре безопасности Azure. Дополнительные сведения о центре безопасности см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Мониторинг работоспособности безопасности в Центре безопасности Azure](security-center-monitoring.md)
+> [Мониторинг работоспособности системы безопасности в центре безопасности Azure](security-center-monitoring.md)
 
 > [!div class="nextstepaction"]
 > [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)

@@ -1,19 +1,19 @@
 ---
 title: Получение подробных сведений о базе данных Azure Blockchain Workbench
-description: Узнайте, как получить базу данных Azure Blockchain Workbench Preview и информацию о сервере баз данных.
+description: Узнайте, как получить сведения о базе данных и сервере базы данных Azure Блокчейн Workbench Preview.
 ms.date: 09/05/2019
 ms.topic: article
 ms.reviewer: mmercuri
 ms.openlocfilehash: 2b3190a9d042be8ead1ff3d5ef48d4a2a19e8963
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74324693"
 ---
 # <a name="get-information-about-your-azure-blockchain-workbench-database"></a>Получение сведений о базе данных Azure Blockchain Workbench
 
-В этой статье показано, как получить подробную информацию о вашей базе данных Azure Blockchain Workbench Preview.
+В этой статье показано, как получить подробные сведения о базе данных Azure Блокчейн Workbench Preview.
 
 ## <a name="overview"></a>Обзор
 
@@ -28,7 +28,7 @@ ms.locfileid: "74324693"
 
 Для подключения к базе данных:
 
-1. Вопийте на порталaz с учетной записью, у которой есть разрешения **владельца** для ресурсов Azure Blockchain Workbench.
+1. Войдите в портал Azure с учетной записью, имеющей разрешения **владельца** для ресурсов Azure блокчейн Workbench.
 2. В левой области навигации выберите **Группа ресурсов**.
 3. Выберите имя группы ресурсов для развертывания Blockchain Workbench.
 4. Выберите **Тип** для сортировки списка ресурсов, а затем выберите **SQL Server**. В отсортированном списке на следующем снимке экрана показаны две базы данных SQL, master и использующая lhgn в качестве **префикса ресурса**.

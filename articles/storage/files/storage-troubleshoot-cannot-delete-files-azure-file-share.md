@@ -1,6 +1,6 @@
 ---
 title: Azure file share – failed to delete files from Azure file share (Общая папка Azure — сбой удаления файлов)
-description: Определите и устраните неустранение файлов из раздела файлов Azure.
+description: Выявление и устранение неполадок при удалении файлов из файлового ресурса Azure.
 author: v-miegge
 ms.topic: troubleshooting
 ms.author: kartup
@@ -11,38 +11,38 @@ ms.subservice: common
 services: storage
 tags: ''
 ms.openlocfilehash: d3a3763a8964810626bcdc47da230a9ee406f1f8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74196479"
 ---
 # <a name="azure-file-share--failed-to-delete-files-from-azure-file-share"></a>Azure file share – failed to delete files from Azure file share (Общая папка Azure — сбой удаления файлов)
 
-Неспособность удалить файлы из раздела файлов Azure может иметь несколько симптомов:
+Сбой удаления файлов из общей папки Azure может иметь несколько симптомов:
 
-**Симптом 1:**
+**Симптом 1.**
 
-Не удалось удалить файл в лазурной части файла из-за одной из двух проблем ниже:
+Не удалось удалить файл в общей папке Azure из-за одной из двух следующих проблем:
 
-* Файл, отмеченный для удаления
-* Указанный ресурс может быть использоваться клиентом SMB
+* Файл, помеченный для удаления
+* Указанный ресурс может использоваться клиентом SMB
 
-**Симптом 2:**
+**Симптом 2.**
 
 Недостаточно квот для обработки команды
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-Ошибка 1816 происходит, когда вы достигаете верхнего предела одновременных открытых ручек, разрешенных для файла, на компьютере, где устанавливается доля файла. Для получения дополнительной информации посетите [контрольный список производительности и масштабируемости хранилища Azure.](https://docs.microsoft.com/azure/storage/blobs/storage-performance-checklist)
+Ошибка 1816 возникает при достижении верхнего предела одновременных открытых дескрипторов, разрешенных для файла, на компьютере, на котором размонтируется общая папка. Дополнительные сведения см. в статье [Контрольный список производительности и масштабируемости службы хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-performance-checklist).
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
-Уменьшите количество одновременных открытых ручек, закрыв некоторые ручки.
+Сократите число параллельно открытых дескрипторов, закрыв некоторые дескрипторы.
 
 ## <a name="prerequisite"></a>Предварительные требования
 
-### <a name="install-the-latest-azure-powershell-module"></a>Установка последнего модуля Azure PowerShell
+### <a name="install-the-latest-azure-powershell-module"></a>Установите последнюю версию модуля Azure PowerShell
 
 * [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps)
 
@@ -52,19 +52,19 @@ ms.locfileid: "74196479"
 # Connect-AzAccount
 ```
 
-### <a name="select-the-subscription-of-the-target-storage-account"></a>Выберите подписку целевого хранилища:
+### <a name="select-the-subscription-of-the-target-storage-account"></a>Выберите подписку целевой учетной записи хранения:
 
 ```
 # Select-AzSubscription -subscriptionid "SubscriptionID"
 ```
 
-### <a name="create-context-for-the-target-storage-account"></a>Создайте контекст для целевой учетной записи хранилища:
+### <a name="create-context-for-the-target-storage-account"></a>Создайте контекст для целевой учетной записи хранения:
 
 ```
 $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -StorageAccountKey "StorageAccessKey"
 ```
 
-### <a name="get-the-current-open-handles-of-the-file-share"></a>Получите текущие открытые ручки общего файла:
+### <a name="get-the-current-open-handles-of-the-file-share"></a>Получение текущих открытых дескрипторов файлового ресурса:
 
 ```
 # Get-AzStorageFileHandle -Context $Context -ShareName "FileShareName" -Recursive
@@ -72,17 +72,17 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 
 ## <a name="example-result"></a>Пример результата:
 
-|HandleId|путь|ClientIp|КлиентПорт|Открытое время|Последнее время подключения|FileId|Parentid|SessionId|
+|хандлеид|Path|ClientIp|клиентпорт|опентиме|ластреконнекттиме|FileId|ParentId|SessionId|
 |---|---|---|---|---|---|---|---|---|
-|259101229083|---|10.222.10.123|62758|2019-10-05|12:16:50|0|0|9507758546259807489|
-|259101229131|---|10.222.10.123|62758|2019-10-05|12:36:20|0|0|9507758546259807489|
-|259101229137|---|10.222.10.123|62758|2019-10-05|12:36:53|0|0|9507758546259807489|
-|259101229136|Новая папка/test.zip|10.222.10.123|62758|2019-10-05|12:36:29|13835132822072852480|9223446803645464576|9507758546259807489|
-|259101229135|test.zip|37.222.22.143|62758|2019-10-05|12:36:24|11529250230440558592|0|9507758546259807489|
+|259101229083|---|10.222.10.123|62758|2019-10-05|12:16:50Z|0|0|9507758546259807489|
+|259101229131|---|10.222.10.123|62758|2019-10-05|12:36:20Z|0|0|9507758546259807489|
+|259101229137|---|10.222.10.123|62758|2019-10-05|12:36:53Z|0|0|9507758546259807489|
+|259101229136|Создать папку/Test. zip|10.222.10.123|62758|2019-10-05|12:36:29Z|13835132822072852480|9223446803645464576|9507758546259807489|
+|259101229135|Test. zip|37.222.22.143|62758|2019-10-05|12:36:24Z|11529250230440558592|0|9507758546259807489|
 
-### <a name="close-an-open-handle"></a>Закройте открытую ручку:
+### <a name="close-an-open-handle"></a>Закройте открытый маркер:
 
-Чтобы закрыть открытую ручку, используйте следующую команду:
+Чтобы закрыть открытый маркер, используйте следующую команду:
 
 ```
 # Close-AzStorageFileHandle -Context $Context -ShareName "FileShareName" -Path 'New folder/test.zip' -CloseAll

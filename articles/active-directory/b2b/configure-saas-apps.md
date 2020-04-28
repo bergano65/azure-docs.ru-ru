@@ -1,5 +1,5 @@
 ---
-title: Налаживать приложения SaaS для совместной работы B2B - Azure AD
+title: Настройка приложений SaaS для службы совместной работы B2B в Azure AD
 description: Примеры кода и команд PowerShell для службы совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7c73a14c2a8cd063672bd0998368ca660f52cd5a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74272957"
 ---
 # <a name="configure-saas-apps-for-b2b-collaboration"></a>Настройка приложений SaaS для службы совместной работы B2B
@@ -54,7 +54,7 @@ ms.locfileid: "74272957"
 
 5. Войдите в Dropbox с помощью URL-адреса входа со страницы **единого входа**.
 
-   ![Скриншот, показывающий страницу регистрации Dropbox](media/configure-saas-apps/sign-in-to-dropbox.png)
+   ![Снимок экрана со страницей входа Dropbox](media/configure-saas-apps/sign-in-to-dropbox.png)
 
 6. Выберите в меню **Консоль администратора**.
 
@@ -79,9 +79,9 @@ ms.locfileid: "74272957"
 
 2. Настройте единый вход, выполнив следующие действия:
 
-   ![Скриншот, показывающий настройки конфигурации одного знака](media/configure-saas-apps/configure-box-sso.png)
+   ![Снимок экрана, показывающий параметры конфигурации единого входа](media/configure-saas-apps/configure-box-sso.png)
 
-   а. Проверьте поле **URL-адрес для входа**, чтобы убедиться, что на портале Azure указан правильный URL-адрес для Box. Этот URL-адрес совпадает с URL-адресом вашего клиента Box.com. Он должен следовать *https://.box.com*конвенции о наименовании .  
+   а. Проверьте поле **URL-адрес для входа**, чтобы убедиться, что на портале Azure указан правильный URL-адрес для Box. Этот URL-адрес совпадает с URL-адресом вашего клиента Box.com. Оно должно соответствовать соглашению об *https://.box.com*именовании.  
    **Идентификатор** не применяется к этому приложению, но это поле по-прежнему отображается как обязательное.
 
    b. В поле **Идентификатор пользователя** введите **user.mail** (для единого входа для учетных записей гостей).
@@ -102,7 +102,7 @@ ms.locfileid: "74272957"
 
 Другие статьи о службе совместной работы Azure AD B2B перечислены ниже.
 
-- [Что такое сотрудничество Azure AD B2B?](what-is-b2b.md)
+- [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Динамические группы и служба совместной работы Azure Active Directory B2B](use-dynamic-groups.md)
 - [Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory](claims-mapping.md)
 - [Доступ внешних пользователей к Office 365](o365-external-user.md)

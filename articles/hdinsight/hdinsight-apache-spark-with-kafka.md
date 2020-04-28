@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
 ms.openlocfilehash: d868cdd346c79cf77d4f8c1ea6e4b20adcd99b6c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74327401"
 ---
 # <a name="apache-spark-streaming-dstream-example-with-apache-kafka-on-hdinsight"></a>Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight
 
-Узнайте, как использовать [Apache Spark](https://spark.apache.org/) для потоковой передачи данных в [apache Kafka](https://kafka.apache.org/) на HDInsight с помощью [DStreams.](https://spark.apache.org/docs/latest/api/java/org/apache/spark/streaming/dstream/DStream.html) В этом примере используется средство [Jupyter Notebook](https://jupyter.org/), которое выполняется на кластере Spark.
+Узнайте, как использовать [Apache Spark](https://spark.apache.org/) для потоковой передачи данных в [Apache Kafka](https://kafka.apache.org/) в HDInsight и из него с помощью [DStreams](https://spark.apache.org/docs/latest/api/java/org/apache/spark/streaming/dstream/DStream.html). В этом примере используется средство [Jupyter Notebook](https://jupyter.org/), которое выполняется на кластере Spark.
 
 > [!NOTE]  
 > Вы узнаете, как создать группу ресурсов Azure, которая содержит кластеры Spark и Kafka в HDInsight. Оба этих кластера находятся в виртуальной сети Azure, что позволяет кластеру Spark напрямую обмениваться данными с кластером Kafka.
@@ -29,7 +29,7 @@ ms.locfileid: "74327401"
 
 ## <a name="create-the-clusters"></a>Создание кластеров
 
-Apache Kafka на HDInsight не предоставляет доступ к брокерам Kafka через публичный интернет. Все объекты, обращающиеся к Kafka, должны находиться в той же виртуальной сети Azure, что и узлы в кластере Kafka. В этом примере кластеры Kafka и Spark расположены в виртуальной сети Azure. На следующей схеме показано, как взаимодействуют кластеры.
+Apache Kafka в HDInsight не предоставляет доступ к брокерам Kafka через общедоступный сегмент Интернета. Все объекты, обращающиеся к Kafka, должны находиться в той же виртуальной сети Azure, что и узлы в кластере Kafka. В этом примере кластеры Kafka и Spark расположены в виртуальной сети Azure. На следующей схеме показано, как взаимодействуют кластеры.
 
 ![Схема кластеров Spark и Kafka в виртуальной сети Azure](./media/hdinsight-apache-spark-with-kafka/apache-spark-kafka-vnet.png)
 
@@ -42,7 +42,7 @@ Apache Kafka на HDInsight не предоставляет доступ к бр
 
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-kafka-spark-cluster-in-vnet-v4.1.json" target="_blank"><img src="./media/hdinsight-apache-spark-with-kafka/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
 
-    Шаблон менеджера ресурсов Azure **https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-spark-cluster-in-vnet-v4.1.json**расположен по адресу .
+    Шаблон Azure Resource Manager доступен по адресу **https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-spark-cluster-in-vnet-v4.1.json** .
 
     > [!WARNING]  
     > Чтобы обеспечить доступность Kafka в HDInsight, кластер должен содержать не менее трех рабочих узлов. Этот шаблон создает кластер Kafka, содержащий три рабочих узла.
@@ -55,15 +55,15 @@ Apache Kafka на HDInsight не предоставляет доступ к бр
     |---|---|
     |Группа ресурсов|Создайте новую группу или выберите существующую.|
     |Расположение|Выберите близкое к вам географическое расположение.|
-    |Название базового кластера|Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdistreaming**, будет создан кластер Spark с именем __spark-hdistreaming__ и кластер Kafka с именем **kafka-hdistreaming**.|
+    |Имя базового кластера|Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdistreaming**, будет создан кластер Spark с именем __spark-hdistreaming__ и кластер Kafka с именем **kafka-hdistreaming**.|
     |Имя пользователя для входа в кластер|Имя администратора для кластеров Spark и Kafka.|
     |Пароль для входа в кластер|Пароль администратора для кластеров Spark и Kafka.|
     |Имя пользователя SSH|Создаваемый пользователь SSH для кластеров Spark и Kafka.|
     |Пароль SSH|Пароль пользователя SSH для кластеров Spark и Kafka.|
 
-    ![Пользовательские параметры развертывания HDInsight](./media/hdinsight-apache-spark-with-kafka/hdinsight-parameters.png)
+    ![Параметры настраиваемого развертывания HDInsight](./media/hdinsight-apache-spark-with-kafka/hdinsight-parameters.png)
 
-1. Читайте **Условия и условия**, а затем выбрать Я **согласен с условиями, изложенными выше**.
+1. Ознакомьтесь с **условиями, а**затем установите флажок **я принимаю указанные выше условия**.
 
 1. Наконец, щелкните **Приобрести**. Процесс создания кластеров занимает около 20 минут.
 
@@ -76,7 +76,7 @@ Apache Kafka на HDInsight не предоставляет доступ к бр
 
 ## <a name="use-the-notebooks"></a>Использование записных книжек
 
-Код для примера, описанного в [https://github.com/Azure-Samples/hdinsight-spark-scala-kafka](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka)этом документе, доступен по адресу .
+Код для примера, описанного в этом документе, доступен по [https://github.com/Azure-Samples/hdinsight-spark-scala-kafka](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka)адресу.
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
 

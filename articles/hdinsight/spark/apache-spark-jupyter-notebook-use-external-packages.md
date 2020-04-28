@@ -1,5 +1,5 @@
 ---
-title: Используйте пользовательские пакеты Maven с Jupyter в Spark - Azure HDInsight
+title: Использование пользовательских пакетов Maven с Jupyter в Spark — Azure HDInsight
 description: Пошаговые инструкции по настройке записных книжек Jupyter, доступных с кластерами HDInsight Spark для использования пользовательских пакетов Maven.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/22/2019
 ms.openlocfilehash: cec94b2ecb18bc9e8cceb24a21967a3c829d78a5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74561739"
 ---
 # <a name="use-external-packages-with-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight
@@ -21,11 +21,11 @@ ms.locfileid: "74561739"
 > * [Использование волшебных команд](apache-spark-jupyter-notebook-use-external-packages.md)
 > * [Использование действия сценария](apache-spark-python-package-installation.md)
 
-Узнайте, как настроить [ноутбук Jupyter](https://jupyter.org/) в кластере Apache Spark на HDInsight, чтобы использовать внешние пакеты Apache **maven,** которые не включены в кластер.
+Узнайте, как настроить [Jupyter Notebook](https://jupyter.org/) в кластере Apache Spark в HDInsight для использования внешних, участвующих в сообществе пакетов Apache **Maven** , которые не включены в готовый список в кластере.
 
 Полный список доступных пакетов можно найти в [репозитории Maven](https://search.maven.org/) . Его также можно получить из других источников. Например, полный список предоставленных сообществом пакетов можно найти в разделе [Пакеты Spark](https://spark-packages.org/).
 
-В этой статье вы узнаете, как использовать пакет [spark-csv](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar) с ноутбуком Jupyter.
+В этой статье вы узнаете, как использовать пакет [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar) с записной книжкой Jupyter.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,31 +37,31 @@ ms.locfileid: "74561739"
 
 ## <a name="use-external-packages-with-jupyter-notebooks"></a>Использование внешних пакетов с записными книжками Jupyter
 
-1. Перейдите `https://CLUSTERNAME.azurehdinsight.net/jupyter` `CLUSTERNAME` к месту, где находится название кластера Spark.
+1. Перейдите в `https://CLUSTERNAME.azurehdinsight.net/jupyter` папку `CLUSTERNAME` , где — имя кластера Spark.
 
-1. Создайте новую записную книжку. Выберите **новый**, а затем выберите **Spark**.
+1. Создайте новую записную книжку. Выберите **создать**, а затем выберите **Spark**.
 
-    ![Создайте новый блокнот Spark Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-create-notebook.png "Создание новой записной книжки Jupyter")
+    ![Создание новой записной книжки Spark Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-create-notebook.png "Создание новой записной книжки Jupyter")
 
-1. Будет создана и открыта записная книжка с именем Untitled.pynb. Выберите имя ноутбука в верхней части, и введите дружественное имя.
+1. Будет создана и открыта записная книжка с именем Untitled.pynb. Выберите имя записной книжки вверху и введите понятное имя.
 
     ![Указание имени для записной книжки](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-name-notebook.png "Указание имени для записной книжки")
 
-1. Вы будете использовать `%%configure` магию, чтобы настроить ноутбук, чтобы использовать внешний пакет. В записных книжках, которые используют внешние пакеты, следует вызывать волшебную команду `%%configure` в первой ячейке кода. Она настраивает ядро для использования пакета до начала сеанса.
+1. С помощью `%%configure` волшебной настройки записной книжки можно настроить использование внешнего пакета. В записных книжках, которые используют внешние пакеты, следует вызывать волшебную команду `%%configure` в первой ячейке кода. Она настраивает ядро для использования пакета до начала сеанса.
 
     >[!IMPORTANT]  
     >Если вы забыли настроить ядро в первой ячейке, можно использовать `%%configure` с параметром `-f`, но при этом сеанс будет перезапущен и все изменения будут утеряны.
 
-    | Версия HDInsight | Команда |
+    | Версия HDInsight | Get-Help |
     |-------------------|---------|
     | Для HDInsight 3.5 и HDInsight 3.6 | `%%configure`<br>`{ "conf": {"spark.jars.packages": "com.databricks:spark-csv_2.11:1.5.0" }}`|
     |Для HDInsight 3.3 и HDInsight 3.4 | `%%configure` <br>`{ "packages":["com.databricks:spark-csv_2.10:1.4.0"] }`|
 
 1. Приведенный выше фрагмент ожидает получить координаты Maven для внешнего пакета в центральном репозитории Maven. В этом фрагменте кода `com.databricks:spark-csv_2.11:1.5.0` — координата пакета **spark-csv** в Maven. Вот как сформировать координаты для пакета.
 
-    а. Найдите пакет в репозитории Maven. Для этой статьи мы используем [искру-csv](https://mvnrepository.com/artifact/com.databricks/spark-csv).
+    а. Найдите пакет в репозитории Maven. В этой статье мы используем [Spark-CSV](https://mvnrepository.com/artifact/com.databricks/spark-csv).
 
-    b. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**. Убедитесь, что полученные значения соответствуют кластеру. В этом случае мы используем пакет Scala 2.11 и Spark 1.5.0, но возможно, что вам придется выбрать различные версии для соответствующей версии Scala или Spark в вашем кластере. Выяснить версию Scala в кластере можно, выполнив `scala.util.Properties.versionString` для ядра Jupyter Spark или при отправке Spark. Выяснить версию Spark в кластере можно, выполнив `sc.version` для элементов Jupyter Notebook.
+    b. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**. Убедитесь, что полученные значения соответствуют кластеру. В этом случае мы используем пакет Scala 2,11 и Spark 1.5.0, но вам может потребоваться выбрать разные версии для соответствующей версии Scala или Spark в кластере. Выяснить версию Scala в кластере можно, выполнив `scala.util.Properties.versionString` для ядра Jupyter Spark или при отправке Spark. Выяснить версию Spark в кластере можно, выполнив `sc.version` для элементов Jupyter Notebook.
 
     ![Использование внешних пакетов с записной книжкой Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/use-external-packages-with-jupyter.png "Использование внешних пакетов с записной книжкой Jupyter")
 
@@ -76,7 +76,7 @@ ms.locfileid: "74561739"
         option("inferSchema", "true").
         load("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 
-    Для HDInsight 3.4 и ниже, вы должны использовать следующий фрагмент.
+    Для HDInsight 3,4 и ниже следует использовать следующий фрагмент кода.
 
         val df = sqlContext.read.format("com.databricks.spark.csv").
         option("header", "true").
@@ -89,7 +89,7 @@ ms.locfileid: "74561739"
    
         df.select("Time").count()
 
-## <a name="see-also"></a><a name="seealso"></a>Смотрите также
+## <a name="see-also"></a><a name="seealso"></a>См. также
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 

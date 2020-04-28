@@ -1,6 +1,6 @@
 ---
-title: Подключение к задней части v1
-description: Подробные сведения о безопасном подключении к серверным ресурсам из среды службы приложений. Этот документ предоставляется только для клиентов, которые используют наследие v1 ASE.
+title: Подключение к серверной части v1
+description: Подробные сведения о безопасном подключении к серверным ресурсам из среды службы приложений. Этот документ предоставляется только для клиентов, использующих устаревшую версию V1 ASE.
 author: stefsch
 ms.assetid: f82eb283-a6e7-4923-a00b-4b4ccf7c4b5b
 ms.topic: article
@@ -8,10 +8,10 @@ ms.date: 10/04/2016
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 03f773e286697a12188f238cf2f422a18a20054f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74687312"
 ---
 # <a name="connect-securely-to-back-end-resources-from-an-app-service-environment"></a>Безопасное подключение к серверным ресурсам из Среды службы приложений
@@ -42,7 +42,7 @@ ms.locfileid: "74687312"
 Существует два подхода к ограничению трафика к этой конечной точке.
 
 * [Сетевые списки управления доступом][NetworkAccessControlLists] (сетевые ACL).
-* [Группы сетевой безопасности][NetworkSecurityGroups]
+* [Группы безопасности сети][NetworkSecurityGroups]
 
 ## <a name="restricting-access-with-a-network-acl"></a>Ограничение доступа с помощью сетевых списков управления доступом
 Порт 1433 можно защитить с помощью сетевого списка управления доступом.  В примере ниже адреса клиентов из виртуальной сети добавляются в утвержденный список, а доступ ко всем других клиентам блокируется.

@@ -1,5 +1,5 @@
 ---
-title: Управление управляемыми идентификаторами, назначенными пользователем, с помощью REST - Azure AD
+title: Управление назначенными пользователем управляемыми удостоверениями с помощью функции RESTFUL в Azure AD
 description: Пошаговые инструкции по созданию и удалению управляемых удостоверений, назначаемых пользователем, а также получению их списка для выполнения вызовов REST API.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 06/26/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 39e108451e4c19e77e01b5bcc5d8dd21e86ad73a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74547415"
 ---
 # <a name="create-list-or-delete-a-user-assigned-managed-identity-using-rest-api-calls"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью вызовов REST API
@@ -58,16 +58,16 @@ PUT https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview HTTP/1.1
 ```
 
-**Заголовки запросов**
+**Заголовки запроса**
 
 |Заголовок запроса  |Описание  |
 |---------|---------|
-|*Тип контента*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
+|*Тип содержимого*     | Обязательный элемент. Задайте значение `application/json`.        |
+|*Проверки*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
 
-**Запрос тела**
+**Текст запроса**
 
-|name  |Описание  |
+|Имя  |Описание  |
 |---------|---------|
 |location     | Обязательный элемент. Расположение ресурса.        |
 
@@ -85,8 +85,8 @@ GET https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/
 
 |Заголовок запроса  |Описание  |
 |---------|---------|
-|*Тип контента*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
+|*Тип содержимого*     | Обязательный элемент. Задайте значение `application/json`.        |
+|*Проверки*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
 
 ## <a name="delete-a-user-assigned-managed-identity"></a>Удаление управляемого удостоверения, назначаемого пользователем
 
@@ -105,8 +105,8 @@ DELETE https://management.azure.com/subscriptions/80c696ff-5efa-4909-a64d-f1b616
 ```
 |Заголовок запроса  |Описание  |
 |---------|---------|
-|*Тип контента*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
+|*Тип содержимого*     | Обязательный элемент. Задайте значение `application/json`.        |
+|*Проверки*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

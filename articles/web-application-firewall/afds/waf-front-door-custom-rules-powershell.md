@@ -1,6 +1,6 @@
 ---
-title: Настройка пользовательских правил WAF & правила по умолчанию для передней двери Azure
-description: Узнайте, как настроить политику WAF, состоящую как из пользовательских, так и управляемых правил для существующей конечной точки Front Door.
+title: Настройка настраиваемых правил WAF & наборе правил по умолчанию для передней дверцы Azure
+description: Узнайте, как настроить политику WAF, включающую как настраиваемые, так и управляемые правила для существующей конечной точки передней дверцы.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
@@ -8,28 +8,28 @@ ms.topic: article
 ms.date: 09/05/2019
 ms.author: victorh
 ms.openlocfilehash: 493ed1a31a23366a90b80d3ab510218c8dce0e9c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74186634"
 ---
-# <a name="configure-a-web-application-firewall-policy-using-azure-powershell"></a>Налажить политику веб-приложений с помощью Azure PowerShell
+# <a name="configure-a-web-application-firewall-policy-using-azure-powershell"></a>Настройка политики брандмауэра веб-приложения с помощью Azure PowerShell
 
-Политика Azure Web Application Firewall (WAF) определяет проверки, необходимые при поступления запроса в Front Door.
-В этой статье показано, как настроить политику WAF, которая состоит из некоторых пользовательских правил и с включенным набором правил по умолчанию, управляемым Azure.
+Политика брандмауэра веб-приложения Azure (WAF) определяет проверки, необходимые при поступлении запроса на переднюю дверцу.
+В этой статье показано, как настроить политику WAF, состоящую из некоторых настраиваемых правил, с включенным набором правил по умолчанию, управляемым Azure.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем приступить к настройке политики ограничения скорости, навязайте среду PowerShell и создайте профиль Front Door.
+Прежде чем приступить к настройке политики ограничения скорости, настройте среду PowerShell и создайте профиль передней дверцы.
 
 ### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. 
 
-Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) на локальном компьютере и использовать его в любом сеансе PowerShell. Следуйте инструкциям на странице, чтобы войти в систему с вашими учетными данными Azure и установить модуль Az PowerShell.
+Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) на локальном компьютере и использовать его в любом сеансе PowerShell. Выполните инструкции на странице, чтобы войти с помощью учетных данных Azure, и установите команду AZ PowerShell Module.
 
 #### <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -50,11 +50,11 @@ Install-Module -Name Az.FrontDoor
 ```
 ### <a name="create-a-front-door-profile"></a>Создание профиля Front Door
 
-Создайте профиль передних дверей, следуя инструкциям, описанным в [профиле «Быстрый старт: Создайте переднюю дверь»](../../frontdoor/quickstart-create-front-door.md)
+Создайте профиль передней дверцы, следуя инструкциям, приведенным в [кратком руководстве по созданию профиля передней дверцы.](../../frontdoor/quickstart-create-front-door.md)
 
-## <a name="custom-rule-based-on-http-parameters"></a>Пользовательское правило, основанное на параметрах http
+## <a name="custom-rule-based-on-http-parameters"></a>Настраиваемое правило на основе параметров HTTP
 
-Ниже приводится, как настроить пользовательское правило с двумя условиями соответствия с помощью [New-AzFrontDoorWafMatchConditionObject.](/powershell/module/az.frontdoor/new-azfrontdoorwafmatchconditionobject) Запросы от определенного сайта, как это определено реферером, и строка запроса не содержит "пароль". 
+В следующем примере показано, как настроить пользовательское правило с двумя условиями соответствия с помощью [New-азфронтдурвафматчкондитионобжект](/powershell/module/az.frontdoor/new-azfrontdoorwafmatchconditionobject). Запросы относятся к указанному сайту, как определено в источнике ссылок, а строка запроса не содержит "Password". 
 
 ```powershell-interactive
 $referer = New-AzFrontDoorWafMatchConditionObject -MatchVariable RequestHeader -OperatorProperty Equal -Selector "Referer" -MatchValue "www.mytrustedsites.com/referpage.html"
@@ -62,42 +62,42 @@ $password = New-AzFrontDoorWafMatchConditionObject -MatchVariable QueryString -O
 $AllowFromTrustedSites = New-AzFrontDoorWafCustomRuleObject -Name "AllowFromTrustedSites" -RuleType MatchRule -MatchCondition $referer,$password -Action Allow -Priority 1
 ```
 
-## <a name="custom-rule-based-on-http-request-method"></a>Пользовательское правило, основанное на методе запроса http
+## <a name="custom-rule-based-on-http-request-method"></a>Настраиваемое правило на основе метода HTTP-запроса
 
-Создайте правило, блокирующее метод «PUT», используя [New-AzFrontDoorWafCustomRuleObject](/powershell/module/az.frontdoor/new-azfrontdoorwafcustomruleobject) следующим образом:
+Создайте метод, блокирующий правило, с помощью [New-азфронтдурвафкустомрулеобжект](/powershell/module/az.frontdoor/new-azfrontdoorwafcustomruleobject) следующим образом:
 
 ```powershell-interactive
 $put = New-AzFrontDoorWafMatchConditionObject -MatchVariable RequestMethod -OperatorProperty Equal -MatchValue PUT
 $BlockPUT = New-AzFrontDoorWafCustomRuleObject -Name "BlockPUT" -RuleType MatchRule -MatchCondition $put -Action Block -Priority 2
 ```
 
-## <a name="create-a-custom-rule-based-on-size-constraint"></a>Создание пользовательского правила, основанного на ограничении размера
+## <a name="create-a-custom-rule-based-on-size-constraint"></a>Создание настраиваемого правила на основе ограничения размера
 
-Следующий пример создает запросы блокировки правил с помощью Url, который длиннее 100 символов с помощью Azure PowerShell:
+В следующем примере создается правило блокировки запросов с URL-адресом, длина которого превышает 100 символов, с помощью Azure PowerShell:
 ```powershell-interactive
 $url = New-AzFrontDoorWafMatchConditionObject -MatchVariable RequestUri -OperatorProperty GreaterThanOrEqual -MatchValue 100
 $URLOver100 = New-AzFrontDoorWafCustomRuleObject -Name "URLOver100" -RuleType MatchRule -MatchCondition $url -Action Block -Priority 3
 ```
-## <a name="add-managed-default-rule-set"></a>Добавление управляемого набора правил по умолчанию
+## <a name="add-managed-default-rule-set"></a>Добавить набор управляемых правил по умолчанию
 
-Следующий пример создает управляемый набор правил по умолчанию с помощью Azure PowerShell:
+В следующем примере создается управляемый набор правил по умолчанию с помощью Azure PowerShell.
 ```powershell-interactive
 $managedRules =  New-AzFrontDoorWafManagedRuleObject -Type DefaultRuleSet -Version 1.0
 ```
 ## <a name="configure-a-security-policy"></a>Настройка политики безопасности
 
-С помощью команды `Get-AzResourceGroup` найдите имя группы ресурсов, содержащей профиль Front Door. Затем назначаем политику безопасности с созданными правилами в предыдущих шагах с помощью [New-AzFrontDoorWafPolicy](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy) в указанной группе ресурсов, содержащей профиль Front Door.
+С помощью команды `Get-AzResourceGroup` найдите имя группы ресурсов, содержащей профиль Front Door. Затем настройте политику безопасности с созданными правилами в предыдущих шагах, используя [New-азфронтдурвафполици](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy) в указанной группе ресурсов, которая содержит профиль передней дверцы.
 
 ```powershell-interactive
 $myWAFPolicy=New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName -Customrule $AllowFromTrustedSites,$BlockPUT,$URLOver100 -ManagedRule $managedRules -EnabledState Enabled -Mode Prevention
 ```
 
-## <a name="link-policy-to-a-front-door-front-end-host"></a>Ссылка политики на передний дом двери хост
+## <a name="link-policy-to-a-front-door-front-end-host"></a>Связывание политики с интерфейсным узлом передней дверцы
 
-Связать объект политики безопасности с существующим передним хостом Front Door и обновить свойства Front Door. Во-первых, получить переднюю дверь объекта с помощью [Get-AzFrontDoor](/powershell/module/Az.FrontDoor/Get-AzFrontDoor).
-Далее установите передний конец *WebApplicationFirewallPolicyLink* собственности *на ресурс "$myWAFPolicy* $", созданный в предыдущем шаге с помощью [Set-AzFrontDoor](/powershell/module/Az.FrontDoor/Set-AzFrontDoor). 
+Свяжите объект политики безопасности с существующим интерфейсным узлом передней дверцы и обновите свойства передней дверцы. Сначала извлеките объект Front дверь, используя [Get-азфронтдур](/powershell/module/Az.FrontDoor/Get-AzFrontDoor).
+Затем задайте для свойства внешнего интерфейса *вебаппликатионфиреваллполицилинк* значение *resourceId* из "$myWAFPolicy $", созданного на предыдущем шаге, с помощью [Set-азфронтдур](/powershell/module/Az.FrontDoor/Set-AzFrontDoor). 
 
-Ниже приводится пример, в каком названии Группы ресурсов *myResourceGroupFD1* используется предположение, что вы создали профиль Front Door с помощью инструкций, предусмотренных в статье [«Быстрый старт: Создайте переднюю дверь».](../../frontdoor/quickstart-create-front-door.md) Кроме того, в приведенном ниже примере замените $frontDoorName с именем профиля Front Door. 
+В приведенном ниже примере используется имя группы ресурсов *myResourceGroupFD1* с предположением, что вы создали профиль передней дверцы с помощью инструкций, приведенных в статье [Краткое руководство по созданию передней дверцы](../../frontdoor/quickstart-create-front-door.md) . Кроме того, в следующем примере замените $frontDoorName именем профиля передней дверцы. 
 
 ```powershell-interactive
    $FrontDoorObjectExample = Get-AzFrontDoor `
@@ -108,9 +108,9 @@ $myWAFPolicy=New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $reso
  ```
 
 > [!NOTE]
-> Вам нужно только установить *свойство WebApplicationFirewallPolicyLink* один раз для того чтобы соединить политику обеспеченностью к front door front-end. Последующие обновления политики автоматически применяются к переднему концу.
+> Свойство *вебаппликатионфиреваллполицилинк* необходимо установить только один раз, чтобы связать политику безопасности с внешним интерфейсом передней дверцы. Последующие обновления политики автоматически применяются к интерфейсной части.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о [передней двери](../../frontdoor/front-door-overview.md) 
-- Узнайте больше о [WAF с передней дверью](afds-overview.md)
+- Дополнительные сведения о [передней дверце](../../frontdoor/front-door-overview.md) 
+- Дополнительные сведения о [WAF с помощью передней дверцы](afds-overview.md)

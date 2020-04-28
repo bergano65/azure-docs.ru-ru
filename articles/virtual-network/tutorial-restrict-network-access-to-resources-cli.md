@@ -1,5 +1,5 @@
 ---
-title: Ограничьте доступ к ресурсам PaaS - Azure CLI
+title: Ограничение сетевого доступа к ресурсам PaaS — Azure CLI
 description: Из этой статьи вы узнаете, как ограничить сетевой доступ к ресурсам Azure, таким как служба хранилища Azure и служба "База данных SQL Azure", с помощью конечных точек служб для виртуальной сети и Azure CLI.
 services: virtual-network
 documentationcenter: virtual-network
@@ -18,10 +18,10 @@ ms.date: 03/14/2018
 ms.author: kumud
 ms.custom: ''
 ms.openlocfilehash: f2dcc714bc9052dd51f114e24f0b9bd74b87480c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74186404"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек служб для виртуальной сети с помощью Azure CLI
@@ -39,7 +39,7 @@ ms.locfileid: "74186404"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.]( /cli/azure/install-azure-cli) 
+Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -120,7 +120,7 @@ az network nsg rule create \
   --destination-port-range "*"
 ```
 
-Каждая группа сетевой безопасности содержит несколько [правил безопасности по умолчанию.](security-overview.md#default-security-rules) Следующее правило перекрывает правило безопасности по умолчанию, которое позволяет доступ ко всем общедоступным IP-адресам. Опция `destination-address-prefix "Internet"` лишает исходящий доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
+Каждая группа безопасности сети содержит несколько [правил безопасности по умолчанию](security-overview.md#default-security-rules). Следующее правило переопределяет правило безопасности по умолчанию, разрешающее исходящий доступ ко всем общедоступным IP-адресам. `destination-address-prefix "Internet"` Параметр запрещает исходящий доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -137,7 +137,7 @@ az network nsg rule create \
   --destination-port-range "*"
 ```
 
-Следующее правило позволяет SSH трафик входящих в подсеть из любого места. Это правило переопределяет правило безопасности по умолчанию, запрещающее весь входящий трафик из Интернета. SSH допускается к подсети, так что подключение может быть проверено на более позднем этапе.
+Следующее правило разрешает входящий трафик SSH в подсеть из любого места. Это правило переопределяет правило безопасности по умолчанию, запрещающее весь входящий трафик из Интернета. Для подсети разрешено использование SSH, чтобы можно было протестировать подключение на более позднем этапе.
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -272,7 +272,7 @@ az vm create \
 
 ## <a name="confirm-access-to-storage-account"></a>Подтверждение прав доступа к учетной записи хранения
 
-Подключитесь к виртуальной машине *myVmPrivate* по протоколу SSH. Замените * \<publicIpAddress>* общедоступным IP-адресом *вашего myVmPrivate* VM.
+Подключитесь к виртуальной машине *myVmPrivate* по протоколу SSH. Замените * \<publicIpAddress>* общедоступным IP-адресом виртуальной машины *myVmPrivate* .
 
 ```bash 
 ssh <publicIpAddress>
@@ -316,7 +316,7 @@ ssh <publicIpAddress>
 sudo mkdir /mnt/MyAzureFileShare
 ```
 
-Попытайтесь подключить файловый ресурс Azure к созданному каталогу. В этой статье предполагается, что вы развернули последнюю версию Ubuntu. При использовании более ранних версий Ubuntu обратитесь к разделу [Использование файлов Azure в Linux](../storage/files/storage-how-to-use-files-linux.md?toc=%2fazure%2fvirtual-network%2ftoc.json), чтобы получить дополнительные инструкции по подключению файловых ресурсов. Перед запуском следующей `<storage-account-name>` команды замените `<storage-account-key>` имя учетной записи и ключ, извлеченный в [учетной записи «Создать учетную запись хранения»:](#create-a-storage-account)
+Попытайтесь подключить файловый ресурс Azure к созданному каталогу. В этой статье предполагается, что вы развернули последнюю версию Ubuntu. При использовании более ранних версий Ubuntu обратитесь к разделу [Использование файлов Azure в Linux](../storage/files/storage-how-to-use-files-linux.md?toc=%2fazure%2fvirtual-network%2ftoc.json), чтобы получить дополнительные инструкции по подключению файловых ресурсов. Перед выполнением следующей команды замените `<storage-account-name>` именем учетной записи и `<storage-account-key>` ключом, полученным в разделе [Создание учетной записи хранения](#create-a-storage-account).
 
 ```bash
 sudo mount --types cifs //storage-account-name>.file.core.windows.net/my-file-share /mnt/MyAzureFileShare --options vers=3.0,username=<storage-account-name>,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino

@@ -9,19 +9,19 @@ description: Использование настраиваемого веб-ка
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 manager: gwallace
 ms.openlocfilehash: 39984a3b3a1be64a497fb8088559ccfcdee4f1c6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74325722"
 ---
-# <a name="use-a-custom-nuget-feed-with-azure-dev-spaces"></a>Используйте пользовательский канал NuGet с Azure Dev Spaces
+# <a name="use-a-custom-nuget-feed-with-azure-dev-spaces"></a>Использование пользовательского веб-канала NuGet с Azure Dev Spaces
 
-Веб-канал NuGet обеспечивает удобный способ добавления источников пакетов в проект. Пространства Azure Dev должны получить доступ к этому каналу для того, чтобы зависимые были должным образом установлены в контейнере Docker.
+Веб-канал NuGet обеспечивает удобный способ добавления источников пакетов в проект. Azure Dev Spaces необходимо получить доступ к этому веб-каналу, чтобы обеспечить правильную установку зависимостей в контейнере DOCKER.
 
 ## <a name="set-up-a-nuget-feed"></a>Настройка веб-канала NuGet
 
-Добавьте [ссылку](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) на пакет `*.csproj` зависимости `PackageReference` в файл под узлом. Пример:
+Добавьте [ссылку на пакет](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) для зависимости в `*.csproj` файл в `PackageReference` узле. Пример:
 
 ```xml
 <ItemGroup>
@@ -31,7 +31,7 @@ ms.locfileid: "74325722"
 </ItemGroup>
 ```
 
-Создайте файл [NuGet.Config](https://docs.microsoft.com/nuget/reference/nuget-config-file) в папке `packageSources` `packageSourceCredentials` проекта и установите и разделы для вашего канала NuGet. Раздел `packageSources` содержит URL-адрес канала, который должен быть доступен из кластера AKS. Это `packageSourceCredentials` учетные данные для доступа к каналу. Пример:
+Создайте файл [NuGet. config](https://docs.microsoft.com/nuget/reference/nuget-config-file) в папке проекта и задайте разделы `packageSources` и `packageSourceCredentials` для своего веб-канала NuGet. `packageSources` Раздел содержит URL-адрес канала, который должен быть доступен из кластера AKS. `packageSourceCredentials` — Это учетные данные для доступа к веб-каналу. Пример:
 
 ```xml
 <packageSources>
@@ -46,17 +46,17 @@ ms.locfileid: "74325722"
 </packageSourceCredentials>
 ```
 
-Обновление Dockerfiles для `NuGet.Config` копирования файла на изображение. Пример:
+Обновите файлы dockerfile, чтобы скопировать `NuGet.Config` файл в образ. Пример:
 
 ```console
 COPY ["<project folder>/NuGet.Config", "./NuGet.Config"]
 ```
 
 > [!TIP]
-> На `NuGet.Config`Windows, `Nuget.Config`, `nuget.config` и все работает как действительные имена файлов. На Linux, `NuGet.Config` только это действительное имя файла для этого файла. Поскольку Azure Dev Spaces использует Docker и `NuGet.Config`Linux, этот файл должен быть назван . Вы можете исправить именование `dotnet restore --configfile nuget.config`вручную или при запуске.
+> В Windows, `NuGet.Config` `Nuget.Config`, и `nuget.config` все работают как допустимые имена файлов. В Linux для этого `NuGet.Config` файла допустимо только имя файла. Поскольку Azure Dev Spaces использует DOCKER и Linux, этот файл должен иметь имя `NuGet.Config`. Имя можно исправить вручную или с помощью команды `dotnet restore --configfile nuget.config`.
 
 
-Если вы используете Git, вы не должны иметь учетные данные для вашего nuGet канал в управлении версиями. Добавьте `NuGet.Config` `.gitignore` к проекту, чтобы `NuGet.Config` файл не был добавлен в управление версией. Пространства Azure Dev будут нужны в процессе создания изображения контейнера, но по `.gitignore` `.dockerignore` умолчанию он уважает правила, определенные в синхронизации и во время синхронизации. Чтобы изменить значение по умолчанию и разрешить Azure Dev Spaces синхронизировать `NuGet.Config` файл, обновите `azds.yaml` файл:
+Если вы используете Git, у вас не должно быть учетных данных для веб-канала NuGet в системе управления версиями. Добавьте `NuGet.Config` в проект `.gitignore` для проекта, чтобы `NuGet.Config` файл не добавлялся в систему управления версиями. Azure Dev Spaces потребуется этот файл в процессе сборки образа контейнера, но по умолчанию он учитывает правила, определенные в `.gitignore` и `.dockerignore` во время синхронизации. Чтобы изменить значение по умолчанию и разрешить Azure Dev Spaces синхронизировать `NuGet.Config` файл, обновите `azds.yaml` файл:
 
 ```yaml
 build:
@@ -65,10 +65,10 @@ ignore:
 - "!NuGet.Config"
 ```
 
-Если вы не используете Git, вы можете пропустить этот шаг.
+Если вы не используете Git, этот шаг можно пропустить.
 
-При следующем запуске `azds up` `F5` или запуске в Visual Studio Code или Visual Studio `NuGet.Config` Azure Dev Spaces синхронизирует файл, используйте его для установки зависимостей пакетов.
+При следующем выполнении `azds up` или попадании `F5` в Visual Studio Code или Visual Studio Azure dev Spaces синхронизирует `NuGet.Config` файл, используйте его для установки зависимостей пакетов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о [NuGet и как он работает.](https://docs.microsoft.com/nuget/what-is-nuget)
+Узнайте больше о [NuGet и принципах его работы](https://docs.microsoft.com/nuget/what-is-nuget).

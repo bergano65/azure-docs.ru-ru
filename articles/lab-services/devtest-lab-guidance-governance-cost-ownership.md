@@ -1,6 +1,6 @@
 ---
-title: Управление затратами и владением в Лабораториях Azure DevTest
-description: В этой статье содержится информация, которая поможет оптимизировать затраты и выровнять право собственности в вашей среде.
+title: Управление затратами и владением в Azure DevTest Labs
+description: В этой статье содержатся сведения, которые помогут вам оптимизировать затраты и распределить владение в среде.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -14,10 +14,10 @@ ms.date: 11/26/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: b82d338f85f1b43712296ac7f27bdad55f8f1919
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74561662"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---manage-cost-and-ownership"></a>Система управления инфраструктурой Azure DevTest Labs — контроль затрат и владение

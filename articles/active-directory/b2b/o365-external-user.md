@@ -1,5 +1,5 @@
 ---
-title: Office 365 внешний обмен и Сотрудничество B2B - Azure AD
+title: Office 365 внешний общий доступ и совместная работа B2B — Azure AD
 description: В этом документе описано общее использование ресурсов с внешними партнерами с помощью Office 365 и службы совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3d70aed6fbe0f09ea6284f913c88186ecf94e297
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74272272"
 ---
 # <a name="office-365-external-sharing-and-azure-active-directory-b2b-collaboration"></a>Внешний общий доступ Office 365 и служба совместной работы Azure Active Directory B2B
@@ -45,7 +45,7 @@ ms.locfileid: "74272272"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое сотрудничество Azure AD B2B?](what-is-b2b.md)
+* [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 * [Добавление пользователя службы совместной работы Azure Active Directory B2B в роль](add-guest-to-role.md)
 * [Делегирование приглашений для службы совместной работы Azure Active Directory B2B](delegate-invitations.md)
 * [Динамические группы и служба совместной работы Azure Active Directory B2B](use-dynamic-groups.md)

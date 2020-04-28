@@ -1,5 +1,5 @@
 ---
-title: Пользователь B2B-сотрудничества утверждает, что отображение - Активный каталог Azure
+title: Сопоставление утверждений пользователей службы совместной работы B2B — Azure Active Directory
 description: Настройка утверждений пользователей, передаваемых в токене SAML для пользователей Azure Active Directory (Azure AD) B2B.
 services: active-directory
 ms.service: active-directory
@@ -12,17 +12,17 @@ manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3508865d9f89501cf70e09087c6a609beb6662b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74273180"
 ---
 # <a name="b2b-collaboration-user-claims-mapping-in-azure-active-directory"></a>Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory
 
 Azure Active Directory (Azure AD) позволяет настраивать утверждения, которые передаются в токене SAML для пользователей службы совместной работы B2B. Когда пользователь проходит аутентификацию в приложении, Azure AD выдает токен SAML для приложения. В токене собрана информация (утверждения), которая однозначно идентифицирует пользователя. По умолчанию здесь указаны имя пользователя, адрес электронной почты, имя и фамилия пользователя.
 
-На [портале Azure](https://portal.azure.com) можно просмотреть или изменить утверждения, которые передаются приложению в токене SAML. Чтобы получить доступ к настройкам, выберите**приложения** **Azure Active Directory** > Enterprise > приложение, настроенное для одного > **однозначный вход.** Параметры токена SAML отобразятся в разделе **Атрибуты пользователя**.
+На [портале Azure](https://portal.azure.com) можно просмотреть или изменить утверждения, которые передаются приложению в токене SAML. Чтобы получить доступ к параметрам, выберите **Azure Active Directory** > **корпоративные приложения** > приложение, для которого настроен единый вход > **единый вход**. Параметры токена SAML отобразятся в разделе **Атрибуты пользователя**.
 
 ![Список атрибутов токена SAML в пользовательском интерфейсе](media/claims-mapping/view-claims-in-saml-token.png)
 

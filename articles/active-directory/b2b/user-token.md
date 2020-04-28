@@ -1,5 +1,5 @@
 ---
-title: Понимание токенов пользователей в совместной работе B2B - Azure AD
+title: Общие сведения о маркерах пользователей в службе совместной работы B2B — Azure AD
 description: Справочные материалы по токенам пользователей для службы совместной работы Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
@@ -12,15 +12,15 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 08dbb81b91def2fd464ecc85c2d2eaf45ed189d5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74271778"
 ---
 # <a name="understand-user-tokens-in-azure-ad-b2b-collaboration"></a>Основные сведения о токенах пользователей в службе совместной работы Azure AD B2B
 
-Если вам необходимо знать, как выглядит токен для пользователя службы совместной работы B2B, ниже приведены сведения о токене носителя и содержимое токена для гостевого пользователя Azure Active Directory (Azure AD) и гостевого пользователя учетной записи Майкрософт в клиенте ресурса (для tenantid 04dcc6ab-388a-4559-b527-fbec656300ea). Чтобы просмотреть содержимое веб-токона JSON [https://jwt.io/](https://jwt.io/) [https://jwt.ms/](https://jwt.ms/)(JWT), используйте или .
+Если вам необходимо знать, как выглядит токен для пользователя службы совместной работы B2B, ниже приведены сведения о токене носителя и содержимое токена для гостевого пользователя Azure Active Directory (Azure AD) и гостевого пользователя учетной записи Майкрософт в клиенте ресурса (для tenantid 04dcc6ab-388a-4559-b527-fbec656300ea). Чтобы просмотреть содержимое JSON Web Token (JWT), используйте [https://jwt.io/](https://jwt.io/) или. [https://jwt.ms/](https://jwt.ms/)
 
 ## <a name="azure-ad-guest-token"></a>Токен гостевого пользователя Azure AD
 ```
@@ -34,7 +34,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ilk0dWVLMm9hSU
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое сотрудничество Azure AD B2B?](what-is-b2b.md)
+* [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 * [Свойства пользователя службы совместной работы Azure Active Directory B2B](user-properties.md)
 * [Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory](claims-mapping.md)
 

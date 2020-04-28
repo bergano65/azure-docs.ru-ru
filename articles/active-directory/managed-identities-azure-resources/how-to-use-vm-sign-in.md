@@ -1,5 +1,5 @@
 ---
-title: Используйте управляемые идентификаторы на Azure VM для входини - Azure AD
+title: Использование управляемых удостоверений на виртуальной машине Azure для входа в Azure AD
 description: Пошаговые инструкции с примерами использования субъекта-службы управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для входа и доступа к ресурсам из клиентского сценария.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 12/01/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 34f4dc749c0254b5aa4e9ff018d2a869832de3f0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74547384"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-for-sign-in"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для входа 
@@ -87,14 +87,14 @@ ms.locfileid: "74547384"
 Такие ответы могут обозначать, что управляемые удостоверения для ресурсов Azure на виртуальной машины настроены неправильно:
 
 - PowerShell: *Invoke-WebRequest : Unable to connect to the remote server* (Invoke-WebRequest: Unable to connect to the remote server)
-- CLI: *MSI: Не удалось получить `http://localhost:50342/oauth2/token` токен из с ошибкой 'HTTPConnectionPool (хост''localhost', порт No50342)* 
+- CLI: *MSI: не удалось получить маркер `http://localhost:50342/oauth2/token` из-за ошибки "HTTPConnectionPool (узел =" localhost ", порт = 50342)* 
 
 Если вы встретите любую из этих ошибок, найдите виртуальную машину Azure на [портале Azure](https://portal.azure.com) и выполните на ней следующие действия:
 
 - Перейдите на страницу **Удостоверение** и убедитесь, что параметр **Назначено системой** имеет значение "Да".
 - Откройте страницу **Расширения** и убедитесь, что расширение управляемых удостоверений для ресурсов Azure **(прекращение поддержки запланировано на январь 2019 г.)** успешно развернуто.
 
-Если какое-либо из условий не выполнено, может потребоваться повторно развернуть управляемые удостоверения для ресурсов Azure для ресурса или устранить неполадки развертывания. Если вам нужна помощь в конфигурации VM, [см.](qs-configure-portal-windows-vm.md)
+Если какое-либо из условий не выполнено, может потребоваться повторно развернуть управляемые удостоверения для ресурсов Azure для ресурса или устранить неполадки развертывания. Дополнительные сведения о настройке виртуальных машин см. [в статье Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портал Azure](qs-configure-portal-windows-vm.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

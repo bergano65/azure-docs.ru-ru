@@ -1,6 +1,6 @@
 ---
 title: CI/CD для пользовательских контейнеров Linux
-description: Узнайте, как настроить непрерывное развертывание в пользовательском контейнере Linux в службе приложений Azure. Непрерывное развертывание поддерживается для Docker Hub и ACR.
+description: Узнайте, как настроить непрерывное развертывание в пользовательском контейнере Linux в службе приложений Azure. Непрерывное развертывание поддерживается для DOCKER HUB и записи контроля доступа.
 keywords: azure app service, linux, docker, acr,oss
 author: msangapu-msft
 ms.assetid: a47fb43a-bbbd-4751-bdc1-cd382eae49f8
@@ -9,10 +9,10 @@ ms.date: 11/08/2018
 ms.author: msangapu
 ms.custom: seodec18
 ms.openlocfilehash: d43491de7500204ed470757a1b744017a8180b57
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74687634"
 ---
 # <a name="continuous-deployment-with-web-app-for-containers"></a>Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"
