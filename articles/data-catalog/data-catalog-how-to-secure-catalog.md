@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: b0972be2b8a6e05d3d90cde7354b4890ea95cbe4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68976760"
 ---
 # <a name="how-to-secure-access-to-data-catalog-and-data-assets"></a>Как обеспечить безопасный доступ к каталогу данных и ресурсам данных
@@ -26,23 +26,23 @@ ms.locfileid: "68976760"
 
 1. На [домашней странице своего каталога данных](https://www.azuredatacatalog.com) на панели инструментов щелкните **Параметры**.
 
-   ![Кнопка настройки главной страницы каталога данных Azure](media/data-catalog-how-to-secure-catalog/data-catalog-settings.png)
+   ![Кнопка параметров домашней страницы каталога данных Azure](media/data-catalog-how-to-secure-catalog/data-catalog-settings.png)
 
 2. На странице "Параметры" раскройте раздел **Пользователи каталога**.
 
-   ![Пользователи каталога данных Azure Добавляют кнопку](media/data-catalog-how-to-secure-catalog/data-catalog-add-button.png)
+   ![Кнопка добавления пользователей каталога данных Azure](media/data-catalog-how-to-secure-catalog/data-catalog-add-button.png)
 
 3. Нажмите кнопку **Добавить**.
 
 4. Введите полное **имя пользователя** или имя **группы безопасности** в Azure Active Directory (AAD), связанной с каталогом. Используйте запятую (",") в качестве разделителя при добавлении нескольких пользователей или групп.
 
-   ![Пользователи каталога данных Azure - пользователи или группы](media/data-catalog-how-to-secure-catalog/data-catalog-users-groups.png)
+   ![Пользователи каталога данных Azure — пользователи или группы](media/data-catalog-how-to-secure-catalog/data-catalog-users-groups.png)
 
 5. Нажмите клавишу **Ввод** или **TAB** за пределами текстового поля. 
 
 6. Убедитесь, что все разрешения (**Добавление заметок**, **Регистрация** и **Смена владельца**) назначены этим пользователям или группам по умолчанию. То есть пользователь или группа могут [регистрировать ресурсы данных]( data-catalog-how-to-register.md), [добавлять заметки к ресурсам данных]( data-catalog-how-to-annotate.md) и [изменять владельца ресурса данных]( data-catalog-how-to-manage.md). 
 
-   ![Пользователи каталога данных Azure - разрешения по умолчанию](media/data-catalog-how-to-secure-catalog/data-catalog-default-permissions.png)
+   ![Пользователи каталога данных Azure — разрешения по умолчанию](media/data-catalog-how-to-secure-catalog/data-catalog-default-permissions.png)
 
 7. Чтобы предоставить пользователю или группе только доступ на чтение к каталогу, удалите параметр **Заметки** для этого пользователя или группы. После этого пользователь или группа не смогут добавлять заметки к данным ресурса в каталоге, но могут их просматривать. 
 
@@ -52,7 +52,7 @@ ms.locfileid: "68976760"
 
 10. Чтобы удалить пользователя или группу из пользователей каталога, щелкните **x** возле пользователя или группы в нижней части списка. 
 
-   ![Пользователи каталога данных Azure - удалить значок пользователя X](media/data-catalog-how-to-secure-catalog/data-catalog-delete-user.png)
+   ![Пользователи каталога каталога данных Azure — удалить пользователя X значок](media/data-catalog-how-to-secure-catalog/data-catalog-delete-user.png)
 
    > [!IMPORTANT]
    > Мы рекомендуем добавлять группы безопасности пользователям каталога, а не добавлять пользователей напрямую и присваивать им разрешения. Затем добавьте пользователей в группы безопасности, соответствующие их ролям и необходимому уровню доступа к каталогу.

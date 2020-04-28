@@ -9,10 +9,10 @@ ms.date: 010/17/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 26e48d1af8e29c7d00a80910dcca62811da14822
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67673485"
 ---
 Чтобы на портале Azure просмотреть состояние подключения для VPN-шлюза виртуальной сети в классической модели развертывания, перейдите к нужному подключению. Ниже показано, как перейти к подключению и проверить его.
@@ -21,10 +21,10 @@ ms.locfileid: "67673485"
 2. В колонке виртуальной сети щелкните **Обзор**, чтобы открыть раздел **VPN-подключения**.
 3. На схеме подключений виртуальной частной сети щелкните сайт.
 
-    ![Местный сайт](./media/vpn-gateway-verify-connection-azureportal-classic/localsitename.png "локальный сайт")
+    ![Локальный сайт](./media/vpn-gateway-verify-connection-azureportal-classic/localsitename.png "локальный сайт")
 4. В колонке **Подключения VPN типа "сеть — сеть"** просмотрите сведения о веб-узле.
 
-    ![Статус подключения](./media/vpn-gateway-verify-connection-azureportal-classic/siteconnectstatus.png "Состояние подключения")
+    ![Состояние подключения](./media/vpn-gateway-verify-connection-azureportal-classic/siteconnectstatus.png "Состояние подключения")
 5. Чтобы просмотреть дополнительные сведения о подключении, щелкните имя подключения. Откроется колонка **Подключения VPN типа "сайт — сайт"**.
 
-    ![Статус подключения больше](./media/vpn-gateway-verify-connection-azureportal-classic/connections4.png "Состояние подключения больше информации")
+    ![Состояние подключения больше](./media/vpn-gateway-verify-connection-azureportal-classic/connections4.png "Дополнительные сведения о состоянии подключения")

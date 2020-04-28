@@ -9,13 +9,13 @@ ms.date: 08/14/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: ddab6927044ce638e50ff3ad79aa3c35d046c820
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "69520876"
 ---
-Следующая конфигурация была использована для приведенных ниже ступенек:
+Для приведенных ниже действий использовалась следующая конфигурация.
 
   | | |
   |---|---|
@@ -37,7 +37,7 @@ sudo apt install strongswan-pki
 sudo apt install libstrongswan-extra-plugins
 ```
 
-Используйте следующую команду для установки интерфейса командной строки Azure:
+Чтобы установить интерфейс командной строки Azure, используйте следующую команду:
 
 ```
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: d56007e5a196a0857f3b69ac51f5e3b5a88c4f6e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67593488"
 ---
 # <a name="real-time-stats-in-microsoft-azure-cdn"></a>Статистика в реальном времени в сети CDN Microsoft Azure
@@ -29,13 +29,13 @@ ms.locfileid: "67593488"
 
 Доступны следующие диаграммы:
 
-* [Пропускной способности](#bandwidth)
+* [Связи](#bandwidth)
 * [Коды состояний](#status-codes)
 * [Состояния кэша](#cache-statuses)
 * [Подключения](#connections)
 
 ## <a name="accessing-real-time-stats"></a>Доступ к статистике в реальном времени
-1. На [портале Azure](https://portal.azure.com)просмотрите свой профиль CDN.
+1. На [портале Azure](https://portal.azure.com)перейдите к профилю CDN.
    
     ![Колонка профиля сети CDN](./media/cdn-real-time-stats/cdn-profile-blade.png)
 2. В колонке профиля сети CDN нажмите кнопку **Управление** .
@@ -89,8 +89,8 @@ ms.locfileid: "67593488"
 
 На этой диаграмме показано количество подключений, установленных с пограничными серверами. Подключение устанавливается при каждом запросе к ресурсу, который проходит через сеть CDN.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 * Получение уведомлений с помощью [оповещения в режиме реального времени в Azure CDN](cdn-real-time-alerts.md)
 * Дополнительные сведения о [расширенных HTTP-отчетах](cdn-advanced-http-reports.md).
-* Анализ [шаблонов использования](cdn-analyze-usage-patterns.md)
+* Анализ [закономерностей использования](cdn-analyze-usage-patterns.md)
 

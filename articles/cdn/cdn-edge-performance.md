@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: b8a65d4ae6aaac78e642c851a66b745a940fa0ad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67593895"
 ---
 # <a name="analyze-edge-node-performance-in-microsoft-azure-cdn"></a>Анализ производительности узла Edge в сети CDN Microsoft Azure
@@ -187,5 +187,5 @@ ms.locfileid: "67593895"
 * [Обзор Azure CDN](cdn-overview.md)
 * [Статистика сети CDN Microsoft Azure в режиме реального времени](cdn-real-time-stats.md)
 * [Переопределение стандартного поведения через HTTP с помощью обработчика правил](cdn-rules-engine.md)
-* [Расширенные отчеты HTTP](cdn-advanced-http-reports.md)
+* [Расширенные HTTP-отчеты](cdn-advanced-http-reports.md)
 

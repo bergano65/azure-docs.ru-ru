@@ -9,13 +9,13 @@ ms.date: 08/16/2018
 ms.author: clemensv
 ms.custom: include file
 ms.openlocfilehash: 2684f89088854ecf05c547c77852155168baa38d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185522"
 ---
-### <a name="create-a-console-application"></a>Создание консольного приложение
+### <a name="create-a-console-application"></a>Создание консольного приложения
 
 В Visual Studio создайте проект **Консольное приложение (.NET Framework)**.
 
@@ -23,7 +23,7 @@ ms.locfileid: "67185522"
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
 2. Выберите параметр **Включить предварительные выпуски**. 
-3. Выберите **Обзор** и выполните поиск по ключевой фразе **Microsoft.Azure.Relay**. В результатах поиска выберите **Ретрансляцию Microsoft Azure.**
+3. Выберите **Обзор** и выполните поиск по ключевой фразе **Microsoft.Azure.Relay**. В результатах поиска выберите **Microsoft Azure ретранслятор**.
 4. При выборе версии укажите **2.0.0-preview1-20180523**. 
 5. Выберите **Установить** для завершения установки. Закройте диалоговое окно.
 

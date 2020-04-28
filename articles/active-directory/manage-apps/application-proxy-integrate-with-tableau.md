@@ -14,10 +14,10 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a1aa99e7e71ad78a62c1a9da303b2ecc8347ebeb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "65783848"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Azure Active Directory Application Proxy и Tableau 
@@ -50,7 +50,7 @@ ms.locfileid: "65783848"
 **Чтобы опубликовать приложение, сделайте следующее**. 
 
 
-1. Вопиюсь на [портал Azure](https://portal.azure.com) в качестве администратора приложений. 
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве администратора приложения. 
 
 2. Выберите **Azure Active Directory > Корпоративные приложения**. 
 
@@ -70,7 +70,7 @@ ms.locfileid: "65783848"
 
 8. Щелкните **Назначить**, чтобы сохранить назначение тестового пользователя. 
 
-9. (Необязательно.) На странице управления приложением щелкните **Единый вход**. Выберите **Встроенная проверка подлинности Windows** в раскрывающемся меню и заполните обязательные поля на основе конфигурации Tableau. Нажмите кнопку **Сохранить**. 
+9. (Необязательно.) На странице управления приложением щелкните **Единый вход**. Выберите **Встроенная проверка подлинности Windows** в раскрывающемся меню и заполните обязательные поля на основе конфигурации Tableau. Щелкните **Сохранить**. 
 
  
 

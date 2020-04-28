@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 11/20/2018
 ms.topic: conceptual
 ms.openlocfilehash: 1bd08596a30db7322a72b4269fddfe0b9df19119
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "61447189"
 ---
 # <a name="remote-monitoring-architectural-choices"></a>Сведения об архитектуре решения для удаленного мониторинга
@@ -59,7 +59,7 @@ ms.locfileid: "61447189"
 
 При потоковой обработке решение для удаленного мониторинга использует Azure Stream Analytics для обработки сложных правил. Если вам достаточно более простых правил, для их обработки предоставляется пользовательская микрослужба, но ее придется настроить отдельно от стандартного развертывания. В эталонной архитектуре рекомендуется использовать Функции Azure для обработки простых правил и Azure Stream Analytics для более сложных правил.
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 
 Для хранения акселератор решения для удаленного мониторинга использует службу Аналитика временных рядов Azure и Azure Cosmos DB. Аналитика временных рядов Azure хранит сообщения, поступающие через центр Интернета вещей от подключенных устройств. Акселератор решений использует Azure Cosmos DB для хранения остальных данных, например данных автономного неструктурированного защищенного хранилища, определений правил, оповещений и параметров конфигурации.
 
@@ -82,7 +82,7 @@ Azure Cosmos DB — это рекомендуемое решение тепло
 
 Вместо Docker вы можете разместить микрослужбы в службах PaaS, таких как Служба приложений Azure. Вместо Kubernetes можно применить оркестраторы, например Service Fabric, DC/OS или Swarm.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Разверните свое решение для удаленного мониторинга [здесь](https://www.azureiotsolutions.com/).
 * Изучите код в GitHub на [C#](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/) и [Java](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java/).  

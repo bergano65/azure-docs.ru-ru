@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 632f6f80184c6ba3409bd30ae070cbaefc77f036
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67109497"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect: включение обратной записи устройств
@@ -31,10 +31,10 @@ ms.locfileid: "67109497"
 
 Следующая документация содержит сведения о том, как включить функцию обратной записи устройств в службе Azure AD Connect. Обратная запись устройств используется в ситуациях,
 
-* Включить [Windows Hello для бизнеса с помощью гибридного развертывания доверия сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust-prereqs#device-registration)
-* Включить условный доступ на основе устройств к Защищенным приложениям ADFS (2012 R2 или выше) (полагаясь на трасты сторон).
+* Включение [Windows Hello для бизнеса с помощью развертывания гибридного доверия сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust-prereqs#device-registration)
+* Включение условного доступа на основе устройств в службы ADFS (2012 R2 или более поздней версии) защищенных приложений (отношения доверия с проверяющей стороной).
 
-Это обеспечивает дополнительную защиту и гарантию того, что доступ к приложениям предоставляется только доверенным устройствам. Для получения дополнительной информации об условном доступе см. [Управление рисками с условным доступом](../active-directory-conditional-access-azure-portal.md) и [настройка на местах условный доступ с помощью Azure Active Directory Device Registration.](../../active-directory/active-directory-device-registration-on-premises-setup.md)
+Это обеспечивает дополнительную защиту и гарантию того, что доступ к приложениям предоставляется только доверенным устройствам. Дополнительные сведения об условном доступе см. в статьях [Управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md) и [Настройка локального условного доступа с использованием регистрация устройств Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md).
 
 > [!IMPORTANT]
 > <li>Устройства должны находиться в том же лесу, что и пользователи. Поскольку обратная запись устройств должна производиться в один лес, эта функция в настоящий момент не поддерживает развертывание с несколькими лесами пользователей.</li>
@@ -97,7 +97,7 @@ ms.locfileid: "67109497"
   * В меню "Пуск" щелкните **Служба синхронизации**.
   * Откройте вкладку **Соединители** .
   * Найдите соединитель с типом "Доменные службы Active Directory" и выберите его.
-  * Под **действием**, выберите **Свойства**.
+  * В разделе **действия**выберите **свойства**.
   * Выберите **Подключиться к лесу Active Directory**. Убедитесь, что домен и имя пользователя, указанные в этом окне, совпадают с учетной записью, указанной в сценарии.
     ![Учетная запись соединителя в диспетчере службы синхронизации](./media/how-to-connect-device-writeback/connectoraccount.png)
 
@@ -127,8 +127,8 @@ ms.locfileid: "67109497"
 
 ## <a name="additional-information"></a>Дополнительные сведения
 * [Управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md)
-* [Настройка на местах Условный доступ с помощью регистрации устройств active directory Azure](../../active-directory/active-directory-device-registration-on-premises-setup.md)
+* [Настройка локального условного доступа с помощью Регистрация устройств Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 

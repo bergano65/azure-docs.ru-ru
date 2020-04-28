@@ -8,15 +8,15 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.openlocfilehash: 54085d602246d38adb970ed02f451241ca7ba19d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "68726405"
 ---
 # <a name="how-to-use-blob-storage-from-ios"></a>Использование хранилища BLOB-объектов из iOS
 
-В этой статье показано, как реализовать распространенные сценарии с использованием хранилища BLOB-объектов Microsoft Azure. Примеры написаны на Objective-C и используют [клиентскую библиотеку службы хранилища Azure для iOS](https://github.com/Azure/azure-storage-ios). Здесь описаны такие сценарии, как отправка, перечисление, скачивание и удаление больших двоичных объектов. Для получения дополнительной информации о капли, [см.](#next-steps) Кроме того, можно загрузить [пример приложения](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample), чтобы просмотреть варианты использования службы хранилища Azure в приложении iOS.
+В этой статье показано, как реализовать распространенные сценарии с использованием хранилища BLOB-объектов Microsoft Azure. Примеры написаны на Objective-C и используют [клиентскую библиотеку службы хранилища Azure для iOS](https://github.com/Azure/azure-storage-ios). Здесь описаны такие сценарии, как отправка, перечисление, скачивание и удаление больших двоичных объектов. Дополнительные сведения о больших двоичных объектах см. в разделе [дальнейшие действия](#next-steps) . Кроме того, можно загрузить [пример приложения](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample), чтобы просмотреть варианты использования службы хранилища Azure в приложении iOS.
 
 Дополнительные сведения см. в статье [Общие сведения о хранилище BLOB-объектов Azure](storage-blobs-introduction.md).
 
@@ -62,7 +62,7 @@ ms.locfileid: "68726405"
 Другой способ использования библиотеки заключается в создании файла framework вручную.
 
 1. Прежде всего загрузите или клонируйте [репозиторий azure-storage-ios](https://github.com/azure/azure-storage-ios).
-2. Перейдите в*библиотеку клиентов* `AZSClient.xcodeproj` *Azure-storage-ios* -> *Lib* -> Azure Storage И открыть в Xcode.
+2. Перейдите в раздел *Azure-Storage-iOS* -> *lib* -> и*Клиентская библиотека хранилища Azure*, а затем откройте `AZSClient.xcodeproj` в Xcode.
 3. В левой верхней части окна Xcode измените активную схему с Azure Storage Client Library (Клиентская библиотека хранилища Azure) на Framework (Платформа).
 4. Выполните сборку проекта (⌘ + B). На рабочем столе будет создан файл `AZSClient.framework`.
 
@@ -82,7 +82,7 @@ ms.locfileid: "68726405"
 #import <AZSClient/AZSClient.h>
 ```
 
-Если вы используете Swift, вам нужно будет создать \<заголовок моста и импортировать>:
+Если вы используете SWIFT, необходимо создать заголовок моста и импортировать \<AZSClient/AZSClient. h> там:
 
 1. Создайте файл заголовка `Bridging-Header.h` и добавьте приведенный выше оператор импорта.
 2. Откройте вкладку *Параметры сборки* и найдите *Заголовок Objective-C*.
@@ -394,5 +394,5 @@ https://nameofyourstorageaccount.blob.core.windows.net/containerpublic/sampleblo
 - [REST API служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 - [Блог рабочей группы службы хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage)
 
-Если у вас есть вопросы, касающиеся этой библиотеки, не стесняйтесь отправлять на наш [форум MSDN Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) или [Стек переполнения](https://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
+Если у вас возникли вопросы, касающиеся этой библиотеки, вы можете отправить на наш [форум MSDN Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) или [Stack overflow](https://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
 Если у вас есть предложения по функциям службы хранилища Azure, вы можете опубликовать их на сайте [отзывов о службе хранилища Azure](https://feedback.azure.com/forums/217298-storage/).

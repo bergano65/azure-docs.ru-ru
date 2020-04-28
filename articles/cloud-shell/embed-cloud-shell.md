@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 12/11/2017
 ms.author: damaerte
 ms.openlocfilehash: bbf6c1f3049265961559ea34c8b748b2b4d263b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60614307"
 ---
 # <a name="embed-azure-cloud-shell"></a>Внедрение Azure Cloud Shell
@@ -27,13 +27,13 @@ ms.locfileid: "60614307"
 
 Стандартная по размеру кнопка
 
-[![Регулярный запуск](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+[![Обычный запуск](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
 
 Большая по размеру кнопка
 
 [![Большой запуск](https://shell.azure.com/images/launchcloudshell@2x.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
 
-## <a name="how-to"></a>Практические советы
+## <a name="how-to"></a>Практическое руководство
 
 Интегрируйте кнопку запуска Cloud Shell в файлы Markdown, скопировав следующий фрагмент кода:
 

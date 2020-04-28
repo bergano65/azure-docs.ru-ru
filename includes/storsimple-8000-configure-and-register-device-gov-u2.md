@@ -5,16 +5,16 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 7700f1c92aecab76dbc347814b7b161bc3d822a0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185343"
 ---
 ### <a name="to-configure-and-register-the-device"></a>Настройка и регистрация устройства
 1. Доступ к интерфейсу Windows PowerShell через последовательную консоль устройства StorSimple. Инструкции см. в разделе [Использование PuTTY для подключения к последовательной консоли устройства](../articles/storsimple/storsimple-8000-deployment-walkthrough-gov-u2.md#use-putty-to-connect-to-the-device-serial-console). **Строго соблюдайте описанный порядок действий, иначе доступ к консоли будет невозможен.**
-2. В сеансе, который открывается, нажмите **Enter** один раз, чтобы получить запрос команды.
-3. Будет предложено выбрать язык устройства. Укажите язык, а затем нажмите **Enter**.
+2. В открывшемся сеансе нажмите клавишу **Ввод** один раз, чтобы открыть командную строку.
+3. Будет предложено выбрать язык устройства. Укажите язык и нажмите клавишу **Ввод**.
    
     ![Настройка и регистрация StorSimple: устройство 1](./media/storsimple-configure-and-register-device-gov-u2/HCS_RegisterYourDevice1-gov-include.png)
 4. В открывшемся меню последовательной консоли выберите вариант 1, **Log in with full access** (Вход с правами полного доступа).

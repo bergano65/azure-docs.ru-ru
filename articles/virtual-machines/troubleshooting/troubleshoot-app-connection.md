@@ -16,10 +16,10 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: caf73ffbc18a603ace22acfbd0da490048da698a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71058120"
 ---
 # <a name="troubleshoot-application-connectivity-issues-on-virtual-machines-in-azure"></a>Устранение проблем с подключением к приложениям на виртуальных машинах в Azure
@@ -28,10 +28,10 @@ ms.locfileid: "71058120"
 
 Если у вас возникают проблемы при подключении к виртуальной машине по протоколу RDP или SSH, сначала ознакомьтесь с одной из следующих статей:
 
-* [Устранение проблем удаленного соединения рабочего стола с Windows на основе Azure Виртуальная машина](troubleshoot-rdp-connection.md)
+* [Устранение неполадок удаленный рабочий стол подключений к виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md)
 * [Устранение неполадок с подключением Secure Shell (SSH) к виртуальной машине Azure под управлением Linux](troubleshoot-ssh-connection.md)
 
-Если вам потребуется дополнительная помощь по любому из вопросов, рассматриваемых в статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**
+Если вам потребуется дополнительная помощь по любому из вопросов, рассматриваемых в статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **получить поддержку**.
 
 ## <a name="quick-start-troubleshooting-steps"></a>Действия по устранению неполадок
 Если у вас возникают проблемы с подключением к приложению, попробуйте выполнить приведенные ниже шаги по их устранению. После каждого шага попробуйте подключиться к приложению еще раз.
@@ -141,8 +141,8 @@ ms.locfileid: "71058120"
 Дополнительные сведения см. в статье [Обзор мониторинга сети Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-[Устранение проблем удаленного соединения рабочего стола с Windows на основе Azure Виртуальная машина](troubleshoot-rdp-connection.md)
+[Устранение неполадок удаленный рабочий стол подключений к виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md)
 
-[Troubleshoot Secure Shell (SSH) подключается к виртуальной машине Azure на базе Linux](troubleshoot-ssh-connection.md)
+[Устранение неполадок подключения Secure Shell (SSH) к виртуальной машине Azure под управлением Linux](troubleshoot-ssh-connection.md)
 
 

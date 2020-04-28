@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 08/26/2019
 ms.author: juliako
 ms.openlocfilehash: 780d3ab5047bff321d0c554880ba2995bcf25524
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70102917"
 ---
 # <a name="scaling-media-processing-overview"></a>Обзор масштабирования обработка мультимедиа 
@@ -33,9 +33,9 @@ ms.locfileid: "70102917"
 
 |Тип зарезервированных единиц|Сценарий|Пример результатов для [видео длительностью 7 мин. с разрешением 1080p](https://nimbuspmteam.blob.core.windows.net/asset-46f1f723-5d76-477e-a153-3fd0f9f90f73/SeattlePikePlaceMarket_7min.ts?sv=2015-07-08&sr=c&si=013ab6a6-5ebf-431e-8243-9983a6b5b01c&sig=YCgEB8DxYKK%2B8W9LnBykzm1ZRUTwQAAH9QFUGw%2BIWuc%3D&se=2118-09-21T19%3A28%3A57Z)|
 |---|---|---|
-| **S1**|Односкоростное кодирование. <br/> Файлы с разрешением SD или ниже, без учета времени, низкие затраты.|Кодирование однобитного файла MP4 с разрешением SD с использованием "H264 Single Bitrate SD 16x9" занимает около 7 минут.|
-| **S2**|Односкоростное и многоскоростное кодирование.<br/> Обычное использование для кодирования SD и HD.|Кодирование с предустановленным набором "H264 Single Bitrate 720p" занимает около 6 минут.<br/><br/>Кодирование с предустановленным набором "H264 Multiple Bitrate 720p" занимает около 12 минут.|
-| **S3**|Односкоростное и многоскоростное кодирование.<br/> Видеоролики с разрешением Full HD и 4К. С учетом времени, более быстрое полное кодирование.|Кодирование с предустановленным набором "H264 Single Bitrate 1080p" занимает около 3 минут.<br/><br/>Кодирование с предустановкой H264 Multiple Bitrate 1080p длится 8 минут.|
+| **S1**|Односкоростное кодирование. <br/> Файлы с разрешением SD или ниже, без учета времени, низкие затраты.|Кодирование в файл MP4 с односкоростным SD-файлом с помощью "H264 Single bitrate с односкоростным SD-16x9" занимает около 7 минут.|
+| **S2**|Односкоростное и многоскоростное кодирование.<br/> Обычное использование для кодирования SD и HD.|Кодирование с предустановленной установкой H264 Single bitrate с односкоростной скоростью 720p занимает около 6 минут.<br/><br/>Кодирование с предустановленной установкой "H264 Single bitrate несколько скорость 720p" занимает около 12 минут.|
+| **S3**|Односкоростное и многоскоростное кодирование.<br/> Видеоролики с разрешением Full HD и 4К. С учетом времени, более быстрое полное кодирование.|Кодирование с предустановкой "H264 Single bitrate односкоростной" требует приблизительно 3 минут.<br/><br/>Кодирование с предустановкой H264 Multiple Bitrate 1080p длится 8 минут.|
 
 ## <a name="considerations"></a>Рекомендации
 > [!IMPORTANT]
@@ -48,7 +48,7 @@ ms.locfileid: "70102917"
 
 ## <a name="billing"></a>Выставление счетов
 
-С вас взимается плата в зависимости от количества минут, которые зарезервированные средства массовой информации предусмотрены в вашем аккаунте. Это происходит независимо от того, есть ли в вашей учетной записи вакансии. Подробное описание см. в разделе часто задаваемых вопросов на странице [цен на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/).   
+Вы платите за количество минут, в течение которых зарезервированные единицы мультимедиа подготавливаются в вашей учетной записи. Это происходит независимо от того, выполняются ли в вашей учетной записи какие-либо задания. Подробное описание см. в разделе часто задаваемых вопросов на странице [цен на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/).   
 
 ## <a name="quotas-and-limitations"></a>Квоты и ограничения
 Сведения о квотах и ограничениях, а также о том, как отправить запрос в службу поддержки, см. в разделе [Квоты и ограничения](media-services-quotas-and-limitations.md).
@@ -59,9 +59,9 @@ ms.locfileid: "70102917"
 > [!div class="op_single_selector"]
 > * [.NET](media-services-dotnet-encoding-units.md)
 > * [Портал](media-services-portal-scale-media-processing.md)
-> * [Остальные](https://docs.microsoft.com/rest/api/media/operations/encodingreservedunittype)
+> * [REST](https://docs.microsoft.com/rest/api/media/operations/encodingreservedunittype)
 > * [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
-> * [Php](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
+> * [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 > 
 
 > [!NOTE]
@@ -71,6 +71,6 @@ ms.locfileid: "70102917"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

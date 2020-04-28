@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
 ms.openlocfilehash: dc4ff35ff04680e8635d54c25212c8ae639ae472
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60779904"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
@@ -29,8 +29,8 @@ ms.locfileid: "60779904"
 
 Активная подписка Azure. Если у вас ее нет, зарегистрируйтесь одним из следующих способов:
 
-* Активируйте [бесплатную 30-дневную пробную версию учетной записи Microsoft Azure](https://azure.microsoft.com/free/)
-* Claim your [Azure credit](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) if you are an MSDN or Visual Studio subscriber
+* Активация [бесплатной 30-дневной пробной Microsoft Azure учетной записи](https://azure.microsoft.com/free/)
+* Заявка на [кредит Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) , если вы являетесь подписчиком MSDN или Visual Studio
 
 ## <a name="open-the-project-folder"></a>Открытие папки проекта
 
@@ -92,7 +92,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 1. Нажмите `Ctrl+P`, чтобы запустить задачу `task device-upload`.
 
-2. Терминал предложит перейти в режим настройки. Для этого:
+2. Терминал предложит перейти в режим настройки. Для этого выполните следующие действия.
 
    * Нажмите и удерживайте кнопку A.
 

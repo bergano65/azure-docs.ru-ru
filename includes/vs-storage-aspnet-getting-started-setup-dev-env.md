@@ -9,10 +9,10 @@ ms.date: 09/15/2018
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: a7c696870e22e1692ca5ed778e47f8e4cc00615a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185188"
 ---
 ## <a name="set-up-the-development-environment"></a>Настройка среды разработки
@@ -23,9 +23,9 @@ ms.locfileid: "67185188"
 
 1. Запустите Visual Studio.
 
-1. Из основного меню выберите **Файл** > **Новый** > **проект**.
+1. В главном меню выберите **файл** > **создать** > **проект**.
 
-1. В диалоговом окне **Новый проект** выберите **Веб** > **Веб-приложение ASP.NET (.NET Framework)**. В поле **Имя** введите **StorageAspNet**. Нажмите кнопку **ОК**.
+1. В диалоговом окне **Новый проект** выберите **Веб** > **Веб-приложение ASP.NET (.NET Framework)**. В поле **Имя** введите **StorageAspNet**. Щелкните **ОК**.
 
     ![Снимок экрана: диалоговое окно нового проекта](./media/vs-storage-aspnet-getting-started-setup-dev-env/vs-storage-aspnet-getting-started-setup-dev-env-1.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "67185188"
 
 1. В **обозревателе решений** щелкните проект правой кнопкой мыши.
 
-1. Из контекстного меню выберите **Добавленную** > **службу**Connected Service.
+1. В контекстном меню выберите команду **Добавить** > **подключенную службу**.
 
 1. В диалоговом окне **Подключенные службы** выберите **Cloud Storage with Azure Storage** (Облачное хранилище в службе хранения Azure).
 
@@ -45,7 +45,7 @@ ms.locfileid: "67185188"
 
 1. В диалоговом окне **Служба хранилища Azure** выберите учетную запись хранения Azure, с которой вы будете работать в рамках этого руководства. Чтобы создать учетную запись хранения Azure, выберите **Создать новую учетную запись хранения** и заполните форму. Создав учетную запись или выбрав имеющуюся, нажмите кнопку **Добавить**. После этого Visual Studio установит пакет NuGet для службы хранилища Azure и создаст строку подключения хранилища к **Web.config**.
 
-1. В **Solution Explorer**, правой кнопкой мыши на **зависимости,** выберите Управление **NuGet пакеты**, и добавить пакет NuGet ссылку на последнюю версию Microsoft.Azure.ConfigurationManager.
+1. В **Обозреватель решений**щелкните правой кнопкой мыши **зависимости**, выберите **Управление пакетами NuGet**и добавьте ссылку на пакет NuGet в последнюю версию Microsoft. Azure. ConfigurationManager.
 
 > [!TIP]
 > Сведения о создании учетной записи хранения на [портале Azure](https://portal.azure.com) см. в разделе [Об учетных записях хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).

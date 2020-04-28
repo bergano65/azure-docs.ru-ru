@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 5/04/2017
 ms.author: ril
 ms.openlocfilehash: 703623e3f7f314d87417458f3f9a218dfdf45427
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67849968"
 ---
 # <a name="http2-support-in-azure-cdn"></a>Поддержка HTTP/2 в Azure CDN
@@ -57,7 +57,7 @@ HTTP/2 является основной редакцией HTTP/1.1\. Этот 
 
 Сейчас HTTP/2 поддерживается во всех профилях Azure CDN. Никаких действий со стороны пользователей не требуется.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 Преимущества HTTP/2 в действии представлены в [этой демонстрации от Akamai](https://http2.akamai.com/demo).
 

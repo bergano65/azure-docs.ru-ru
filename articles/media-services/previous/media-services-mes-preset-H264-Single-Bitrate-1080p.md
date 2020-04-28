@@ -1,6 +1,6 @@
 ---
 title: 'Предустановка Media Encoder Standard в Azure: H264 Single Bitrate 1080p | Документация Майкрософт'
-description: Тема дает обзор **H264 Однобитный 1080p** задача предпоставления.
+description: В этом разделе приводится обзор предустановки H264 Single bitrate односкоростной задачи **1080p** .
 author: Juliako
 manager: femila
 editor: ''
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 04333e54566d8535f3d5ba98f32650d30f5fbfc0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "61463588"
 ---
 # <a name="h264-single-bitrate-1080p"></a>H264 Single Bitrate 1080p

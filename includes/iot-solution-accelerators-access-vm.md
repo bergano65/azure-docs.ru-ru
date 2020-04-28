@@ -9,15 +9,15 @@ ms.date: 08/16/2018
 ms.author: dobett
 ms.custom: include file
 ms.openlocfilehash: a58e408feadd10e6dbc9d6878b82a4d045918ea6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68781489"
 ---
 ## <a name="access-the-virtual-machine"></a>Доступ к виртуальной машине
 
-Следующие шаги используют Azure CLI в лазурной облачной оболочке. Если вы предпочитаете, вы можете [установить Azure CLI](/cli/azure/install-azure-cli) на машине разработки и запустить команды локально.
+В следующих шагах используется Azure CLI в Azure Cloud Shell. При желании можно [установить Azure CLI](/cli/azure/install-azure-cli) на компьютере разработки и выполнить команды локально.
 
 Ниже показано, как настроить виртуальную машину Azure, чтобы разрешить доступ **SSH**. Представленные шаги предполагают, что имя, которое вы выбрали для ускорителя решения, — **contoso-simulation**. Замените это значение на имя вашего развертывания.
 
@@ -35,7 +35,7 @@ ms.locfileid: "68781489"
     az network nsg rule update --name SSH --nsg-name contoso-simulation-nsg -g contoso-simulation --access Allow -o table
     ```
 
-    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если вы включите SSH, [вы должны отключить его снова как можно скорее.](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices#disable-rdpssh-access-to-virtual-machines)
+    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если вы включили протокол SSH, [то следует отключить его снова как можно скорее](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices#disable-rdpssh-access-to-virtual-machines).
 
 1. Обновите пароль для учетной записи **azureuser** на виртуальной машине на известный вам пароль. Выберите свой пароль, если вы запускаете следующую команду.
 

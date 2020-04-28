@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 18dbcbf93947306334ccc2c156d9266884198e19
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67594128"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
@@ -86,7 +86,7 @@ ms.locfileid: "67594128"
     var msRestAzure = require('ms-rest-azure');
     var cdnManagementClient = require('azure-arm-cdn');
     ```
-2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  Добавьте следующий код.  Обязательно замените заполнителей, в том числе ** &lt;угловые&gt;скобки,** с вашими собственными значениями по мере необходимости.
+2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  Добавьте следующий код.  Обязательно замените заполнители, включая ** &lt;угловые скобки&gt;**, собственными значениями.
    
     ``` javascript
     //Tenant app constants
@@ -119,7 +119,7 @@ ms.locfileid: "67594128"
     var cdnClient = new cdnManagementClient(credentials, subscriptionId);
     ```
    
-    Обязательно замените элементы в ** &lt;&gt; угловых скобках** правильной информацией.  Вместо `<redirect URI>`укажите универсальный код ресурса (URI) перенаправления, который вы ввели при регистрации приложения в Azure AD.
+    Не забудьте заменить элементы в ** &lt;угловых скобках&gt; ** на правильные данные.  Вместо `<redirect URI>`укажите универсальный код ресурса (URI) перенаправления, который вы ввели при регистрации приложения в Azure AD.
 4. Консольное приложение Node.js будет принимать некоторые параметры командной строки.  Давайте добавим проверку того, что передан хотя бы один параметр.
    
    ```javascript
@@ -360,7 +360,7 @@ function cdnDelete() {
 
 ![Удаление профиля](./media/cdn-app-dev-node/cdn-delete-profile.png)
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы просмотреть описываемый в этом руководстве готовый проект, [скачайте пример](https://code.msdn.microsoft.com/Azure-CDN-SDK-for-Nodejs-c712bc74).
 
 Справочную информацию о пакете SDK Azure CDN для Node.js вы найдете [здесь](https://azure.github.io/azure-sdk-for-node/azure-arm-cdn/latest/).

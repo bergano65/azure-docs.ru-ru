@@ -10,10 +10,10 @@ ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.openlocfilehash: b8c7d2ba1c782c3b6ae3034d6a9aab5eb19be954
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70813638"
 ---
 # <a name="manage-azure-data-lake-analytics-using-a-java-app"></a>Управление Azure Data Lake Analytics с помощью приложения Java
@@ -22,7 +22,7 @@ ms.locfileid: "70813638"
 Из этой статьи вы узнаете, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics, используя приложение, написанное с помощью пакета SDK Azure для Java. 
 
 ## <a name="prerequisites"></a>Предварительные требования
-* **Java Development Kit (JDK) 8** (с использованием Java-версии 1.8).
+* **Пакет Java Development Kit (JDK) 8** (с использованием Java версии 1,8).
 * **IntelliJ** или другая подходящая среда разработки Java. В инструкциях в этом документе используется IntelliJ.
 * Создайте приложение Azure Active Directory (AAD) и получите его **идентификатор клиента**, **код клиента** и **ключ**. Дополнительные сведения о приложениях AAD и указания о том, как получить идентификатор клиента, см. в статье [Создание приложения Active Directory и субъекта-службы с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Когда будут созданы приложение и ключ, URI ответа и ключ также будут доступны на портале.
 
@@ -78,7 +78,7 @@ ms.locfileid: "70813638"
 
 Последовательно выберите пункты **Файл > Параметры > Сборка > Выполнение > Развертывание**. Выберите **Средства сборки > Maven > Импорт**. Затем установите флажок **Import Maven projects automatically**(Импортировать проекты Maven автоматически).
 
-Откройте `Main.java` и замените существующий код-блок следующим кодом:
+Откройте `Main.java` и замените существующий блок кода следующим кодом:
 
 ```java
 import com.microsoft.azure.CloudException;

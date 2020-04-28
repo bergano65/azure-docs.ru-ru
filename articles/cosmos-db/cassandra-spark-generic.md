@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/01/2019
 ms.openlocfilehash: cb34ea44c069f067d13a6480531a94a1a515f380
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70241244"
 ---
 # <a name="connect-to-azure-cosmos-db-cassandra-api-from-spark"></a>Подключитесь к API Cassandra для Azure Cosmos DB из оболочки Spark
@@ -20,16 +20,16 @@ ms.locfileid: "70241244"
 Эта статья — одна из серии об интеграции API Cassandra для Azure Cosmos DB из оболочки Spark. В статье речь идет о подключении, операциях языка описания данных, основных операциях языка обработки данных DML и расширенной интеграции API Cassandra для Azure Cosmos DB из оболочки Spark. 
 
 ## <a name="prerequisites"></a>Предварительные требования
-* [Предоставление учетной записи Azure Cosmos DB Cassandra API.](create-cassandra-dotnet.md#create-a-database-account)
+* [Подготавливает учетную запись API Cassandra Azure Cosmos DB.](create-cassandra-dotnet.md#create-a-database-account)
 
-* Предоставить свой выбор среды Spark -[Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal) | [Azure HDInsight-Spark](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql) Другие».
+* Предоставление выбора среды Spark [[Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal) | [Azure HDInsight — Spark](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql) | Другие].
 
 ## <a name="dependencies-for-connectivity"></a>Зависимости для подключения
 * **Соединитель Spark для Cassandra.** Соединитель Spark используется для подключения к API Cassandra для Azure Cosmos DB.  Определите и используйте версию соединителя, расположенного в [Maven central]( https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector), которая совместима с версиями Spark и Scala вашей среды Spark.
 
 * **Воспомогательная библиотека Azure Cosmos DB для API Cassandra.** В придачу к соединителю Spark вам потребуется другая библиотека Azure Cosmos DB, которая называется [azure-cosmos-cassandra-spark-helper]( https://search.maven.org/artifact/com.microsoft.azure.cosmosdb/azure-cosmos-cassandra-spark-helper/1.0.0/jar). Эта библиотека содержит классы настраиваемой фабрики подключений и политик повтора.
 
-  Политика повтора в Azure Cosmos DB настроена для обработки исключений кода состояния HTTP 429 ("Высокая частота запросов"). API Cassandra Azure Cosmos DB преобразует эти исключения в перегруженные ошибки в собственном протоколе Cassandra, и вы можете повторить попытку в пассивном режиме. Так как Azure Cosmos DB использует модель подготовленной пропускной способности, то исключения ограничения частоты запроса возникают тогда, когда увеличивается скорость входа/выхода. Политика повторная попытка защищает ваши задания искры от скачков данных, которые на мгновение превышают пропускную емкость, выделенную для контейнера.
+  Политика повтора в Azure Cosmos DB настроена для обработки исключений кода состояния HTTP 429 ("Высокая частота запросов"). API Cassandra Azure Cosmos DB преобразует эти исключения в перегруженные ошибки в собственном протоколе Cassandra, и вы можете повторить попытку в пассивном режиме. Так как Azure Cosmos DB использует модель подготовленной пропускной способности, то исключения ограничения частоты запроса возникают тогда, когда увеличивается скорость входа/выхода. Политика повтора защищает задания Spark от всплесков данных, которые моментально превышают пропускную способность, выделенную для контейнера.
 
   > [!NOTE] 
   > Политика повтора может защитить задания Spark только от кратковременных скачков. Если вы не настроили достаточное количество ЕЗ, необходимых для выполнения вашей рабочей нагрузки, тогда политика повтора не применима, а класс политики повтора еще раз генерирует исключение.
@@ -46,8 +46,8 @@ ms.locfileid: "70241244"
 | spark.cassandra.connection.connections_per_executor_max  | None | Максимальное число подключений на узел для каждого исполнителя. 10*n равно 10 подключениям на узел для кластера Cassandra с n узлов. Итак, если вам требуется 5 подключений на узел для каждого исполнителя для кластера Cassandra с 5 узлами, то вы должны настроить эту конфигурацию на 25. Меняйте это значение в зависимости от степени параллелизма или количества исполнителей, для которых настроены ваши задания Spark.   |
 | spark.cassandra.output.concurrent.writes  |  100 | Определяет количество параллельных записей, которые могут происходить на каждом исполнителе. Поскольку "batch.size.rows" равно 1, убедитесь, что вы увеличили масштаб этого значения соответствующим образом. Меняйте это значение в зависимости от степени параллелизма или пропускной способности, которую вы хотите получить для рабочей нагрузки. |
 | spark.cassandra.concurrent.reads |  512 | Определяет количество параллельных процессов операций чтения, которые могут происходить на каждом исполнителе. Меняйте это значение в зависимости от степени параллелизма или пропускной способности, которую вы хотите получить для рабочей нагрузки  |
-| spark.cassandra.output.throughput_mb_per_sec  | None | Определяет общую пропускную способность записи для каждого исполнителя. Этот параметр может быть использован в качестве верхнего предела для вашей пропускной связи искры, и основывать его на подготовленной пропускной их пропускной всей емкостью контейнера Cosmos.   |
-| spark.cassandra.input.reads_per_sec| None   | Определяет общую пропускную способность чтения для каждого исполнителя. Этот параметр может быть использован в качестве верхнего предела для вашей пропускной связи искры, и основывать его на подготовленной пропускной их пропускной всей емкостью контейнера Cosmos.  |
+| spark.cassandra.output.throughput_mb_per_sec  | None | Определяет общую пропускную способность записи для каждого исполнителя. Этот параметр можно использовать в качестве верхнего предела пропускной способности задания Spark и основывать его на подготовленной пропускной способности контейнера Cosmos.   |
+| spark.cassandra.input.reads_per_sec| None   | Определяет общую пропускную способность чтения для каждого исполнителя. Этот параметр можно использовать в качестве верхнего предела пропускной способности задания Spark и основывать его на подготовленной пропускной способности контейнера Cosmos.  |
 | spark.cassandra.output.batch.grouping.buffer.size |  1000  | Определяет количество пакетов для одной задачи Spark, которая может сохраниться в памяти перед отправкой в API Cassandra |
 | spark.cassandra.connection.keep_alive_ms | 60 000 | Определяет период времени, до которого доступны соединения, которые не используются. | 
 
@@ -65,15 +65,15 @@ export SSL_VALIDATE=false
 cqlsh.py YOUR-COSMOSDB-ACCOUNT-NAME.cassandra.cosmosdb.azure.com 10350 -u YOUR-COSMOSDB-ACCOUNT-NAME -p YOUR-COSMOSDB-ACCOUNT-KEY --ssl
 ```
 
-### <a name="1--azure-databricks"></a>1. Лазурные databricks
+### <a name="1--azure-databricks"></a>1. Azure Databricks
 В этой статье описывается создание кластеров Azure Databricks, конфигурация кластера для подключения к API Cassandra Azure Cosmos DB и несколько примеров записных книжек, которые охватывают операции DDL, DML и другое.<BR>
 [Работа с API Cassandra для Azure Cosmos DB из Azure Databricks](cassandra-spark-databricks.md)<BR>
   
-### <a name="2--azure-hdinsight-spark"></a>2. Azure HDInsight-Spark
+### <a name="2--azure-hdinsight-spark"></a>2. Azure HDInsight — Spark
 В этой статье описывается служба HDinsight-Spark, создание, конфигурация кластера для подключения к API Cassandra Azure Cosmos DB и несколько примеров записных книжек, которые охватывают операции DDL, DML и другое.<BR>
 [Работа с API Cassandra для Azure Cosmos DB из Azure HDInsight-Spark](cassandra-spark-hdinsight.md)
  
-### <a name="3--spark-environment-in-general"></a>3. Среда искры в целом
+### <a name="3--spark-environment-in-general"></a>3. среда Spark в целом
 Хотя приведенные выше разделы концентрировались на службах PaaS, основанных на Azure Spark, этот раздел охватывает общие сведения о среде Spark.  Зависимости соединителя, импорт и конфигурация сеанса Spark приведены ниже. В разделе Next steps (Дальнейшие действия) рассматриваются примеры кода для операций DDL, DML и других.  
 
 #### <a name="connector-dependencies"></a>Зависимости соединителя:

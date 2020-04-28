@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: apimpm
 ms.openlocfilehash: c10939b50a66cd608d27a71f02d959fbc2380f59
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70072309"
 ---
 # <a name="policies-in-azure-api-management"></a>Политики в Azure API Management
@@ -25,7 +25,7 @@ ms.locfileid: "70072309"
 
 Политики применяются внутри шлюза, который находится между потребителем интерфейса API и управляемым API. Шлюз получает все запросы и обычно отправляет их без изменения в базовый API. Однако политика может применять изменения как для входящего запроса, так и для исходящего ответа.
 
-Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (в том числе [Поток управления][Control flow] и [Задание переменной][Set variable]) основаны на выражениях политики. Для получения дополнительной [информации][Advanced policies] [Policy expressions][Policy expressions]см.
+Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (в том числе [Поток управления][Control flow] и [Задание переменной][Set variable]) основаны на выражениях политики. Дополнительные сведения см. в разделе [Расширенные политики][Advanced policies] и [выражения политик][Policy expressions].
 
 ## <a name="understanding-policy-configuration"></a><a name="sections"> </a>Общая информация о конфигурации политики
 

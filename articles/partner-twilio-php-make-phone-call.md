@@ -13,20 +13,20 @@ ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
 ms.openlocfilehash: fb1623c4a409f1c6cba94bad56d773e166d2b182
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "69637327"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-php-application-on-azure"></a>Как в Azure выполнить телефонный звонок с помощью Twilio в PHP-приложении
-В следующем примере показано, как выполнить звонок с веб-страницы PHP, размещенной в Azure, с помощью службы Twilio. Полученное приложение подскажет пользователю значения телефонных звонков, как показано на следующем скриншоте.
+В следующем примере показано, как выполнить звонок с веб-страницы PHP, размещенной в Azure, с помощью службы Twilio. Полученное приложение запрашивает у пользователя значения телефонного звонка, как показано на следующем снимке экрана.
 
 ![Форма звонка Azure с использованием службы Twilio и PHP][twilio_php]
 
 Чтобы использовать код, представленный в этом разделе, выполните следующие действия:
 
-1. Получите учетную запись Twilio и маркер проверки подлинности из [консоли Twilio][twilio_console]. Чтобы начать работу с Twilio, оценить цены на [https://www.twilio.com/pricing][twilio_pricing]. Вы можете подписаться на [https://www.twilio.com/try-twilio][try_twilio]пробный счет по адресу .
+1. Получите учетную запись Twilio и маркер проверки подлинности из [консоли Twilio][twilio_console]. Чтобы приступить к работе с Twilio, оцените [https://www.twilio.com/pricing][twilio_pricing]цены по адресу. Вы можете зарегистрироваться для получения пробной учетной [https://www.twilio.com/try-twilio][try_twilio]записи по адресу.
 2. Получите [библиотеку Twilio для PHP](https://github.com/twilio/twilio-php) или установите ее в виде пакета PEAR. Дополнительные сведения см. в [файле сведений](https://github.com/twilio/twilio-php/blob/master/README.md).
 3. Установите Azure SDK для PHP. 
 <!-- For an overview of the SDK and instructions on installing it, see [Set up the Azure SDK for PHP](app-service-web/web-sites-php-mysql-deploy-use-git.md) -->
@@ -100,7 +100,7 @@ echo "URI resource: " . $call->uri . "<br />";
 </html>
 ```
 
-Помимо выполнения вызова, на странице **makecall.php** отображаются некоторые метаданные о нем (см. изображение ниже). Для получения дополнительной информации о [https://www.twilio.com/docs/api/rest/call#instance-properties][twilio_call_properties]метаданных вызова см.
+Помимо выполнения вызова, на странице **makecall.php** отображаются некоторые метаданные о нем (см. изображение ниже). Дополнительные сведения о метаданных вызовов см. в [https://www.twilio.com/docs/api/rest/call#instance-properties][twilio_call_properties]разделе.
 
 ![Ответ на звонок Azure с использованием службы Twilio и PHP][twilio_php_response]
 
@@ -111,12 +111,12 @@ echo "URI resource: " . $call->uri . "<br />";
 Данный код демонстрирует базовую функциональность, доступную через PHP-библиотеку Twillio в Azure. Возможно, перед развертыванием в рабочей среде Azure потребуется добавить в него дополнительные обработчики ошибок и другие функции. Пример:
 
 * Вместо использования веб-формы для хранения телефонных номеров и текста вызова можно применить большие двоичные объекты хранилища Azure или SQL Database. Дополнительные сведения об использовании BLOB-объектов Azure в PHP см. в разделе [Использование службы хранения BLOB-объектов Azure в PHP-приложениях][howto_blob_storage_php]. Дополнительные сведения об использовании базы данных SQL в PHP см. в разделе [Использование базы данных SQL в PHP-приложениях][howto_sql_azure_php].
-* В коде **makecall.php** используется предоставляемый Twilio URL-адрес ([https://twimlets.com/message][twimlet_message_url]) для предоставления ответа в формате языка разметки Twilio (TwiML), содержащего инструкции для Twilio по обработке вызова. Например, возвращаемый ответ TwiML может содержать команду `<Say>` , которая задает голосовое воспроизведение текста вызываемому абоненту. Вместо предоставляемого Twilio URL-адреса вы можете построить собственную службу, отвечающую на запросы Twilio. Дополнительные сведения см. в разделе [Использование Twilio для поддержки голосовых возможностей и SMS в PHP][howto_twilio_voice_sms_php]. Более подробную информацию о [https://www.twilio.com/docs/api/twiml][twiml]TwiML можно `<Say>` найти по адресу, и более [https://www.twilio.com/docs/api/twiml/say][twilio_say]подробную информацию о и других глаголов Twilio можно найти на .
-* Прочитайте рекомендации по безопасности Twilio по адресу [https://www.twilio.com/docs/security][twilio_docs_security].
+* В коде **makecall.php** используется предоставляемый Twilio URL-адрес ([https://twimlets.com/message][twimlet_message_url]) для предоставления ответа в формате языка разметки Twilio (TwiML), содержащего инструкции для Twilio по обработке вызова. Например, возвращаемый ответ TwiML может содержать команду `<Say>` , которая задает голосовое воспроизведение текста вызываемому абоненту. Вместо предоставляемого Twilio URL-адреса вы можете построить собственную службу, отвечающую на запросы Twilio. Дополнительные сведения см. в разделе [Использование Twilio для поддержки голосовых возможностей и SMS в PHP][howto_twilio_voice_sms_php]. Дополнительные сведения о TwiML можно найти по адресу [https://www.twilio.com/docs/api/twiml][twiml], а дополнительные сведения `<Say>` о и других командах Twilio можно найти по [https://www.twilio.com/docs/api/twiml/say][twilio_say]адресу.
+* Ознакомьтесь с рекомендациями по безопасности [https://www.twilio.com/docs/security][twilio_docs_security]Twilio по адресу.
 
-Для получения дополнительной информации [https://www.twilio.com/docs][twilio_docs]о Twilio, см.
+Дополнительные сведения о Twilio см. в [https://www.twilio.com/docs][twilio_docs]разделе.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Использование Twilio для поддержки голосовых возможностей и SMS в PHP](partner-twilio-php-how-to-use-voice-sms.md)
 
 [twilio_console]: https://www.twilio.com/console

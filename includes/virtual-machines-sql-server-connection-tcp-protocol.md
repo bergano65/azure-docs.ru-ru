@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: 8b919608dfc562d8db77619d5215a6828a53a4aa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "67185229"
 ---
 1. При подключении к виртуальной машине с помощью удаленного рабочего стола найдите **диспетчер конфигурации**:
@@ -17,7 +17,7 @@ ms.locfileid: "67185229"
 
 1. В диспетчере конфигурации SQL Server в области консоли разверните раздел **Сетевая конфигурация SQL Server**.
 
-1. В панели консоли щелкните **Протоколы для MSS'LSERVER** (имя экземпляра по умолчанию).) В деталях панели, правой кнопкой **TCP** и нажмите **Включить,** если он еще не включен.
+1. В области консоли щелкните **протоколы для MSSQLSERVER** (имя экземпляра по умолчанию). В области сведений щелкните правой кнопкой мыши **TCP** и выберите пункт **включить** , если он еще не включен.
 
     ![Включение TCP](./media/virtual-machines-sql-server-connection-tcp-protocol/enable-tcp.png)
 

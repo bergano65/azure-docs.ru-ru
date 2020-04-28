@@ -16,13 +16,13 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e75ad29c5b4a76de5317991995f132c6cb53bbe3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70211843"
 ---
-# <a name="troubleshoot-azure-ad-connect-install-issues"></a>Устранение проблем: проблемы с установкой Azure AD Connect
+# <a name="troubleshoot-azure-ad-connect-install-issues"></a>Устранение неполадок: Azure AD Connect проблемы установки
 
 ## <a name="recommended-steps"></a>**Рекомендуемые действия**
 Убедитесь, что [тип установки Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-select-installation) подходит для вас. Если возникло условие экспресс-установки, то мы настоятельно рекомендуем перейти к экспресс-установке. Экспресс-установка предоставляет минимальные параметры, необходимые для завершения установки, поэтому существует меньше вероятности возникновения проблем. 
@@ -39,13 +39,13 @@ ms.locfileid: "70211843"
 
     ![Учетная запись леса AD](media/tshoot-connect-install-issues/tshoot-connect-install-issues/createnewaccount.png)
 
-### <a name="common-issues"></a>**Общие проблемы**
+### <a name="common-issues"></a>**Распространенные проблемы**
 
-* [Проблемы с подключением с натерритории Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-adconnectivitytools).
+* [Проблемы с подключением к локальной Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-adconnectivitytools).
 
 * [Проблемы с подключением к веб-службе Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/tshoot-connect-connectivity).
 
-* [Вопросы разрешения с натерритории Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-configure-ad-ds-connector-account).
+* [Проблемы с разрешениями локального Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-configure-ad-ds-connector-account).
 
 ## <a name="recommended-documents"></a>**Рекомендуемые документы**
 * [Необходимые условия для Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites)
@@ -53,12 +53,12 @@ ms.locfileid: "70211843"
 * [Приступая к работе с Azure AD Connect с использованием стандартных параметров](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-express)
 * [Выборочная установка Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-custom)
 * [Azure AD Connect: обновление до последней версии](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-upgrade-previous-version)
-* [Azure AD Connect: Что такое промежуточный сервер?](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-topologies#staging-server)
+* [Azure AD Connect: что такое промежуточный сервер?](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-topologies#staging-server)
 * [Что такое модуль PowerShell ADConnectivityTools?](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-adconnectivitytools)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md).
-- [Что такое гибридная идентичность?](whatis-hybrid-identity.md)
+- [Что собой представляет гибридная идентификация](whatis-hybrid-identity.md)
 
 
 
