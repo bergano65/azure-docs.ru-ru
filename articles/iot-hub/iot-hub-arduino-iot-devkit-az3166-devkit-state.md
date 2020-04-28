@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
 ms.openlocfilehash: deb1ea8c7b41ad48bddebfbed1b15c667ee0071a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73483949"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
@@ -77,7 +77,7 @@ ms.locfileid: "73483949"
 
 После подключения MXChip IoT DevKit к компьютеру сделайте следующее:
 
-1. Нажмите меню выпадения **задач** в Visual Studio Code и выберите **задачу Run Build...** Эскиз Ардуино составлен и загружен в DevKit.
+1. Щелкните раскрывающееся меню **задачи** в Visual Studio Code и выберите **выполнить задачу сборки...** Эскиз Arduino компилируется и отправляется в DevKit.
 
 2. Если эскиз успешно передан, на экран выводится сообщение *Build & Upload Sketch: success* (Сборка и передача эскиза: успешно).
 
@@ -89,7 +89,7 @@ ms.locfileid: "73483949"
 
 3. Введите название приложения-функции, записанное ранее.
 
-4. Нажмите кнопку **«Подключение»**
+4. Нажмите кнопку **подключить** .
 
 5. Через несколько секунд страница обновится и на ней отобразится состояние подключения DevKit по Wi-Fi, а также состояние каждого из встроенных датчиков.
 
@@ -106,7 +106,7 @@ ms.locfileid: "73483949"
 ![Пример процедуры тестирования](media/iot-hub-arduino-iot-devkit-az3166-devkit-state/devkit-state.gif)
 
 > [!NOTE]
-> Необработанные данные устройства-близнеца можно увидеть на\> портале\> Azure: IoT Hub - устройства IoT - \> - * \<устройство\> * Twin.
+> Необработанные данные двойникаов устройств можно просмотреть в портал Azure: центр Интернета\> вещей — устройства\> * \<IOT —\> *  - \> устройство двойника устройства.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

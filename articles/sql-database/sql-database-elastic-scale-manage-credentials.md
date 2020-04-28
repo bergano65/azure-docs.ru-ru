@@ -1,5 +1,5 @@
 ---
-title: Управление учетными данными в библиотеке клиентов упругой базы данных
+title: Управление учетными данными в клиентской библиотеке эластичной базы данных
 description: Как установить правильный уровень учетных данных (от администратора до доступа только для чтения) для приложений эластичных баз данных.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/03/2019
 ms.openlocfilehash: 91689a32a128584aade8081905e3d1aa3ecb0a97
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73823578"
 ---
 # <a name="credentials-used-to-access-the-elastic-database-client-library"></a>Учетные данные для доступа к клиентской библиотеке эластичной базы данных
@@ -74,7 +74,7 @@ using (SqlConnection conn = rangeMap.OpenConnectionForKey<int>(targetWarehouse, 
 
 ## <a name="see-also"></a>См. также
 
-[Управление базами данных и именами для входа в Базе данных SQL Azure](sql-database-manage-logins.md)
+[Управление базами данных и именами входа в базе данных SQL Azure](sql-database-manage-logins.md)
 
 [Защита Базы данных SQL](sql-database-security-overview.md)
 

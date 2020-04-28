@@ -1,6 +1,6 @@
 ---
-title: Как установить и использовать представления аналитики журналов Документы Майкрософт
-description: Узнайте, как установить и использовать представления аналитики журналов для active Directory Azure
+title: Установка и использование представлений log Analytics | Документация Майкрософт
+description: Узнайте, как установить и использовать представления log Analytics для Azure Active Directory
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -18,18 +18,18 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b17026e4cfbe69e36c8e459aa259fe16b1c9d80d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74014416"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Установка и использование представлений Log Analytics для Azure Active Directory
 
 Представления Log Analytics в Azure Active Directory позволяют анализировать и искать журналы действий Azure AD в клиенте Azure AD. Журналы действий Azure AD включает в себя следующие:
 
-* Журналы аудита: Отчет о [деятельности журналов аудита](concept-audit-logs.md) дает вам доступ к истории каждой задачи, выполняемой в вашем арендаторе.
-* Войти в журналы: С [помощью отчета о деятельности входа](concept-sign-ins.md)можно определить, кто выполнял задачи, о которых сообщается в журналах аудита.
+* Журналы аудита. [отчет об активности журналов аудита](concept-audit-logs.md) предоставляет доступ к журналу каждой задачи, выполняемой в клиенте.
+* Журналы входа. с помощью отчета " [действия при входе](concept-sign-ins.md)" можно определить, кто выполнил задачи, зарегистрированные в журналах аудита.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

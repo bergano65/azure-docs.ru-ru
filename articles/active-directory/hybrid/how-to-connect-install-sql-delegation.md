@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6269d00c9a6a8f827a4e31044d9d20efb0f8471b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60243551"
 ---
 # <a name="install-azure-ad-connect-using-sql-delegated-administrator-permissions"></a>Установка Azure AD Connect с использованием делегированных разрешений администратора SQL
@@ -54,16 +54,16 @@ ms.locfileid: "60243551"
    ![Разрешения](./media/how-to-connect-install-sql-delegation/sql3a.png)
 
    >[!NOTE]
-   >Azure AD Connect не поддерживает логины с вложенным членством.  Это означает, что учетная запись администратора Azure AD Connect и учетная запись службы домена должны быть связаны с логином, которым предоставлены права на dbo.  Он не может быть просто членом группы, которая назначается логину с правами dbo.
+   >Azure AD Connect не поддерживает имена входа с вложенным членством.  Это означает, что учетная запись администратора Azure AD Connect и учетная запись службы домена должны быть связаны с именем входа, которому предоставлены права dbo.  Он не может просто быть членом группы, назначенной имени входа с правами dbo.
 
 3. Отправьте электронное сообщение администратору Azure AD Connect, указав сервер и имя экземпляра SQL, которые должны использоваться при установке Azure AD Connect.
 
 ## <a name="additional-information"></a>Дополнительные сведения
 После подготовки базы данных администратор Azure AD Connect может для удобства установить и настроить службу локальной синхронизации.
 
-В случае, если администратор S'L восстановил базу данных ADSync из предыдущей резервной системы Azure AD Connect, необходимо установить новый сервер Azure AD Connect с помощью существующей базы данных. Для получения дополнительной информации об установке Azure AD Connect с существующей базой данных [см.](how-to-connect-install-existing-database.md)
+Если администратор SQL Server восстановил базу данных ADSync из предыдущей Azure AD Connect резервной копии, необходимо будет установить новый сервер Azure AD Connect с помощью существующей базы данных. Дополнительные сведения об установке Azure AD Connect с существующей базой данных см. в [статье установка Azure AD Connect с использованием существующей базы данных ADSync](how-to-connect-install-existing-database.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
 - [Установка Azure AD Connect с помощью имеющейся базы данных ADSync](how-to-connect-install-existing-database.md)  

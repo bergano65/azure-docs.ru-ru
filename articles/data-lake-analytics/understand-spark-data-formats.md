@@ -1,6 +1,6 @@
 ---
-title: Понять форматы данных Apache Spark для разработчиков Azure Data Lake.
-description: В этой статье описаны концепции Apache Spark, которые помогут разработчикам U_SQL понять различия между форматами данных U-S'L и Spark.
+title: Сведения о форматах данных Apache Spark для разработчиков Azure Data Lake Analytics U-SQL.
+description: В этой статье описываются Apache Spark концепции, которые помогут U_SQL разработчикам понять различия между форматами данных U-SQL и Spark.
 author: guyhay
 ms.author: guyhay
 ms.reviewer: jasonh
@@ -9,46 +9,46 @@ ms.topic: conceptual
 ms.custom: understand-apache-spark-data-formats
 ms.date: 01/31/2019
 ms.openlocfilehash: 36f39503ca32f1ee4b422ae7b1cf9abf48716f07
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73648445"
 ---
-# <a name="understand-differences-between-u-sql-and-spark-data-formats"></a>Понимание различий между форматами данных U-S'S и Spark
+# <a name="understand-differences-between-u-sql-and-spark-data-formats"></a>Общие сведения о различиях между форматами данных U-SQL и Spark
 
-Если вы хотите использовать либо [Azure Databricks,](../azure-databricks/what-is-azure-databricks.md) либо [Azure HDInsight Spark,](../hdinsight/spark/apache-spark-overview.md)мы рекомендуем перенести данные из [Azure Data Lake Storage Gen1](../data-lake-store/data-lake-store-overview.md) в [Azure Data Lake Storage Gen2.](../storage/blobs/data-lake-storage-introduction.md)
+Если вы хотите использовать либо [Azure Databricks](../azure-databricks/what-is-azure-databricks.md) , либо [Azure HDInsight Spark](../hdinsight/spark/apache-spark-overview.md), рекомендуется перенести данные из [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md) в [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md).
 
-В дополнение к перемещению файлов, вы также хотите, чтобы ваши данные, хранящиеся в таблицах U-S'L, доступны для Spark.
+Помимо перемещения файлов, необходимо также сделать данные, хранящиеся в таблицах U-SQL, доступными для Spark.
 
-## <a name="move-data-stored-in-azure-data-lake-storage-gen1-files"></a>Перемещение данных, хранящихся в файлах Хранения озера Лазурных Данных Gen1
+## <a name="move-data-stored-in-azure-data-lake-storage-gen1-files"></a>Перемещение данных, хранящихся в файлах Azure Data Lake Storage 1-го поколения
 
-Данные, хранящиеся в файлах, могут перемещаться различными способами:
+Данные, хранящиеся в файлах, можно перемещать различными способами.
 
-- Напишите конвейер [Azure Data Factory](../data-factory/introduction.md) для копирования данных из учетной записи [Azure Data Lake Storage Gen1](../data-lake-store/data-lake-store-overview.md) в учетную запись [Azure Data Lake Storage Gen2.](../storage/blobs/data-lake-storage-introduction.md)
-- Напишите задание Spark, которое считывает данные из учетной записи [Azure Data Lake Storage Gen1](../data-lake-store/data-lake-store-overview.md) и записывает их в учетную запись [Azure Data Lake Storage Gen2.](../storage/blobs/data-lake-storage-introduction.md) На основании случая использования вы можете написать его в другом формате, например, Паркет, если вам не нужно сохранять исходный формат файла.
+- Создайте конвейер [фабрики данных Azure](../data-factory/introduction.md) , чтобы скопировать данные из учетной записи [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md) в учетную запись [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md) .
+- Напишите задание Spark, которое считывает данные из учетной записи [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md) и записывает их в учетную запись [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md) . В зависимости от варианта использования может потребоваться написать его в другом формате, например Parquet, если не нужно сохранять исходный формат файла.
 
-Рекомендуем ознакомиться со статьей [Upgrade your big data Analytics решения от Azure Data Lake Storage Gen1 до Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-upgrade.md)
+Рекомендуется ознакомиться со статьей [Обновление решений аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-upgrade.md)
 
-## <a name="move-data-stored-in-u-sql-tables"></a>Перемещение данных, хранящихся в таблицах U-S'L
+## <a name="move-data-stored-in-u-sql-tables"></a>Перемещение данных, хранящихся в таблицах U-SQL
 
-Таблицы U-S'L не понятны Spark. Если данные хранятся в таблицах U-S'L, вы запустите задание U-S'L, которое извлекает данные таблицы и сохраняет их в формате, который понимает Spark. Наиболее подходящим форматом является создание набора файлов Паркета после макета папки Hive metastore.
+В Spark не понимаются таблицы U-SQL. При наличии данных, хранящихся в таблицах U-SQL, вы запускаете задание U-SQL, которое извлекает данные таблицы и сохраняет их в формате, понятном Spark. Наиболее подходящий формат — создание набора Parquet-файлов после разметки папки хранилище метаданных Hive.
 
-Выход может быть достигнут в U-S'L со встроенным выходом паркета и с помощью динамического вывода раздела с наборами файлов для создания папок раздела. [Обработка больше файлов, чем когда-либо и использовать Паркет](https://blogs.msdn.microsoft.com/azuredatalake/2018/06/11/process-more-files-than-ever-and-use-parquet-with-azure-data-lake-analytics) является примером того, как создать такие Spark расходных данных.
+Выходные данные можно получить в U-SQL со встроенным Parquetом вывода и использовать динамическое секционирование выходных данных с наборами файлов для создания папок разделов. [Обработайте больше файлов, чем когда бы то ни было, и используйте Parquet](https://blogs.msdn.microsoft.com/azuredatalake/2018/06/11/process-more-files-than-ever-and-use-parquet-with-azure-data-lake-analytics) , чтобы получить пример создания таких данных, которые можно использовать для Spark.
 
-После этого преобразования вы копируете данные, изложенные в главе [Move, данные, хранящиеся в файлах Azure Data Lake Storage Gen1.](#move-data-stored-in-azure-data-lake-storage-gen1-files)
+После этого преобразования данные копируются, как описано в главе [Перемещение данных, хранящихся в файлах Azure Data Lake Storage 1-го поколения](#move-data-stored-in-azure-data-lake-storage-gen1-files).
 
 ## <a name="caveats"></a>Предупреждения
 
-- Семантика данных при копировании файлов, копия будет происходить на уровне байт. Таким образом, те же данные должны появляться в учетной записи [Azure Data Lake Storage Gen2.](../storage/blobs/data-lake-storage-introduction.md) Обратите внимание, однако, Spark может интерпретировать некоторые символы по-разному. Например, он может использовать другой по умолчанию для разграничения строкви в файле CSV.
-    Кроме того, если вы копируете набранные данные (из таблиц), то Паркет и Искра могут иметь различную точность и масштаб для некоторых набранных значений (например, поплавок) и могут по-разному относиться к нулевым значениям. Например, у U-S'SL есть семантика СЗ для нулевых значений, в то время как Spark имеет трехценную логику для нулевых значений.
+- Семантика данных при копировании файлов копия будет выполняться на уровне Byte. Поэтому одни и те же данные должны отображаться в учетной записи [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md) . Обратите внимание, однако Spark может интерпретировать некоторые символы по-разному. Например, он может использовать другое значение по умолчанию для разделителя строк в CSV-файле.
+    Более того, если вы копируете типизированные данные (из таблиц), то Parquet и Spark могут иметь разную точность и масштаб для некоторых из типизированных значений (например, с плавающей запятой) и могут обрабатывать значения NULL по-разному. Например, U-SQL имеет семантику C# для значений NULL, в то время как Spark имеет 3-значную логику для значений NULL.
 
-- Организации данных (раздельные) таблицы U-S'L обеспечивают двухуровневое раздел. Внешний уровень ()`PARTITIONED BY`по стоимости и карты в основном в схеме раздела Hive/Spark с использованием иерархий папок. Необходимо убедиться, что значения null отображаются в правой папке. Внутренний уровень ()`DISTRIBUTED BY`в U-S'L предлагает 4 схемы распределения: круглый малиновка, диапазон, хэш и прямой хэш.
-    Таблицы Hive/Spark поддерживают только раздел значения или разделх хэша, используя другую функцию хэша, чем U-S'SL. При выходе данных таблицы U-S'L вы, вероятно, сможете отобразить в себе часть значений для Spark и, возможно, потребуется провести дальнейшую настройку макета данных в зависимости от ваших окончательных запросов Spark.
+- Организация данных (секционирование). таблицы U-SQL предоставляют два уровня секционирования. Внешний уровень (`PARTITIONED BY`) представляет собой значение и сопоставляет преимущественно с схемой секционирования Hive/Spark с помощью иерархий папок. Необходимо убедиться, что значения NULL сопоставлены с правой папкой. Внутренний уровень (`DISTRIBUTED BY`) в U-SQL предлагает 4 схемы распределения: циклический перебор, диапазон, хэш и прямой хэш.
+    Таблицы Hive/Spark поддерживают секционирование значений или хэш-секционирование, используя другую хэш-функцию, отличную от U-SQL. При выводе данных из таблицы U-SQL вы, вероятно, сможете сопоставляться только с секционированием значений для Spark и может потребоваться дополнительная настройка макета данных в зависимости от ваших заключительных запросов Spark.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Понять концепции кода Spark для разработчиков U-S'SL](understand-spark-code-concepts.md)
+- [Основные сведения о концепциях кода Spark для разработчиков U-SQL](understand-spark-code-concepts.md)
 - [Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-upgrade.md)
 - [.NET для Apache Spark](https://docs.microsoft.com/dotnet/spark/what-is-apache-spark-dotnet)
 - [Преобразование данных с помощью действия Spark в фабрике данных Azure](../data-factory/transform-data-using-spark.md)

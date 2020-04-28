@@ -1,21 +1,21 @@
 ---
-title: Загрузка больших наборов данных в Azure Data Lake Storage Gen1 - автономные методы
-description: Воспользуйтесь службой импорта/экспорта для копирования данных из хранилища Azure Blob для хранения azure Data Lake Gen1
+title: Передача больших наборов данных в методы автономного Azure Data Lake Storage 1-го поколения
+description: Используйте службу импорта и экспорта для копирования данных из хранилища BLOB-объектов Azure в Azure Data Lake Storage 1-го поколения
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: aa3eb0bcd9ddd2a094563efe326f7af7e9e8708a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73839294"
 ---
-# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>Используйте сервис Azure Import/Export для автономной копии данных в Data Lake Storage Gen1
+# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>Используйте службу импорта и экспорта Azure для автономной копии данных в Data Lake Storage 1-го поколения
 
-В этой статье вы узнаете, как скопировать огромные наборы данных (>200 ГБ) в Data Lake Storage Gen1 с помощью автономных методов копирования, таких как [служба импорта/экспорта Azure.](../storage/common/storage-import-export-service.md) В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
+В этой статье вы узнаете, как скопировать огромные наборы данных (>200 ГБ) в Data Lake Storage 1-го поколения с помощью методов автономного копирования, таких как [Служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
 
 Служба импорта и экспорта Azure позволяет безопасно переносить большие объемы данных в хранилище BLOB-объектов Azure, отправляя жесткие диски в центр обработки данных Azure.
 
@@ -29,7 +29,7 @@ ms.locfileid: "73839294"
 
 ## <a name="prepare-the-data"></a>Подготовка данных
 
-Перед использованием службы импорта и экспорта необходимо разделить передаваемый файл данных на **копии, размер которых не превышает 200 ГБ**. Это нужно сделать, так как инструмент для импорта не работает с файлами, размер которых превышает 200 ГБ. В этой статье мы разделили файл на куски по 100 ГБ каждый. Это можно сделать с помощью [Cygwin](https://cygwin.com/install.html). Это средство поддерживает команды Linux. Воспользуйтесь следующей командой:
+Перед использованием службы импорта и экспорта необходимо разделить передаваемый файл данных на **копии, размер которых не превышает 200 ГБ**. Это нужно сделать, так как инструмент для импорта не работает с файлами, размер которых превышает 200 ГБ. В этой статье файл разбивается на фрагменты размером 100 ГБ. Это можно сделать с помощью [Cygwin](https://cygwin.com/install.html). Это средство поддерживает команды Linux. Воспользуйтесь следующей командой:
 
     split -b 100m 319GB.tsv
 
@@ -65,7 +65,7 @@ ms.locfileid: "73839294"
 
 Теперь можно выполнить физическую доставку дисков в центр обработки данных Azure. Там данные копируются в большие двоичные объекты службы хранилища Azure, указанные при создании задания импорта. Кроме того, если при создании задания было решено указать сведения об отслеживании позже, теперь можно вернуться к заданию импорта и обновить номер отслеживания.
 
-## <a name="copy-data-from-blobs-to-data-lake-storage-gen1"></a>Копирование данных из капли для хранения данных озера Gen1
+## <a name="copy-data-from-blobs-to-data-lake-storage-gen1"></a>Копирование данных из больших двоичных объектов в Data Lake Storage 1-го поколения
 
 После того как задание импорта перейдет в состояние "Завершено", можно проверить, доступны ли данные в указанных больших двоичных объектах службы хранилища Azure. Затем можно переместить данные из больших двоичных объектов в Azure Data Lake Storage 1-го поколения, используя различные методы. Сведения о всех доступных вариантах передачи данных см. в разделе [Прием данных в Azure Data Lake Storage 1-го поколения](data-lake-store-data-scenarios.md#ingest-data-into-data-lake-storage-gen1).
 
@@ -86,7 +86,7 @@ ms.locfileid: "73839294"
 }
 ```
 
-### <a name="target-linked-service-data-lake-storage-gen1"></a>Целевая служба связи (Data Lake Storage Gen1)
+### <a name="target-linked-service-data-lake-storage-gen1"></a>Целевая связанная служба (Data Lake Storage 1-го поколения)
 
 ```JSON
 {
@@ -198,7 +198,7 @@ ms.locfileid: "73839294"
 
 Дополнительные сведения см. в статье [Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью Фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md).
 
-## <a name="reconstruct-the-data-files-in-data-lake-storage-gen1"></a>Реконструкция файлов данных в Data Lake Storage Gen1
+## <a name="reconstruct-the-data-files-in-data-lake-storage-gen1"></a>Восстановление файлов данных в Data Lake Storage 1-го поколения
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

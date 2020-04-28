@@ -1,5 +1,5 @@
 ---
-title: Специальные запросы отчетности в нескольких базах данных
+title: Автоматизированная нерегламентированная отчетность по нескольким базам данных
 description: Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL на примере мультитенантного приложения.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: craigg
 ms.reviewer: sstein
 ms.date: 10/30/2018
 ms.openlocfilehash: c0d1829c52041446b4feb43d8af262265e2680fc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73822185"
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL Azure
@@ -52,7 +52,7 @@ ms.locfileid: "73822185"
 
 ## <a name="get-the-wingtip-tickets-saas-multi-tenant-database-application-source-code-and-scripts"></a>Получение скриптов и исходного кода для SaaS-приложения Wingtip Tickets c мультитенантной БД
 
-Скрипты Ибн-антеролетов И исходный код базы данных Wingtip Tickets SaaS и исходный код приложения доступны в репо [WingtipTicketsSaaS-MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB) GitHub. Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
+Скрипты и исходный код приложения SaaS Wingtip Tickets для баз данных с несколькими клиентами доступны в репозитории GitHub [WingtipTicketsSaaS-MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB) . Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 
 ## <a name="create-ticket-sales-data"></a>Создание данных о продажах билетов
 
@@ -158,4 +158,4 @@ ms.locfileid: "73822185"
 * Additional [tutorials that build upon the Wingtip Tickets SaaS Multi-tenant Database application](saas-multitenantdb-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
 -->
 
-* [Упругий запрос](sql-database-elastic-query-overview.md)
+* [Эластичный запрос](sql-database-elastic-query-overview.md)

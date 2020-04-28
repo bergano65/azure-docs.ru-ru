@@ -1,6 +1,6 @@
 ---
-title: Анализ Данных хранения данных Az1 с помощью HDInsight Apache Spark
-description: Выполнить задания Apache Spark для анализа данных, хранящихся в Azure Data Lake Storage Gen1
+title: Анализ Azure Data Lake Storage 1-го поколения с помощью Apache Spark HDInsight
+description: Выполнение заданий Apache Spark для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,15 +9,15 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.openlocfilehash: f7a6ab954aff1bcc2e3dae3fc035db4b136ccbbe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73818171"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения
 
-В этой статье используется [ноутбук Jupyter,](https://jupyter.org/) доступный с кластерами HDInsight Spark для выполнения задания, считывающегося данных из учетной записи хранилища данных.
+В этой статье вы используете [Jupyter Notebook](https://jupyter.org/) , доступных в кластерах HDInsight Spark для выполнения задания, считывающего данные из учетной записи Data Lake Storage.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -56,7 +56,7 @@ ms.locfileid: "73818171"
 
 ## <a name="use-an-hdinsight-spark-cluster-with-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark с Data Lake Storage 1-го поколения
 
-1. С [портала Azure](https://portal.azure.com/)со стартовой доски щелкните плитку для кластера Apache Spark (если вы прикрепили ее к старту). Вы также можете перейти к кластеру под **просматривать все** > **кластеры HDInsight**.
+1. На [портал Azure](https://portal.azure.com/)в начальной панели щелкните плитку для кластера Apache Spark (если он закреплен в начальной панели). Вы также можете перейти к кластеру в разделе **Обзор всех** > **кластеров HDInsight**.
 
 2. В колонке кластера Spark щелкните **Быстрые ссылки**, затем в колонке **Панель мониторинга кластера** выберите **Записная книжка Jupyter**. При появлении запроса введите учетные данные администратора для кластера.
 
@@ -129,4 +129,4 @@ ms.locfileid: "73818171"
 * [Создание автономного приложения Scala для работы в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-create-standalone-application.md)
 * [Создание приложений Apache Spark для кластера HDInsight с помощью набора средств Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse](apache-spark-eclipse-tool-plugin.md)
-* [Используйте хранилище данных Azure Data Lake Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)
+* [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)

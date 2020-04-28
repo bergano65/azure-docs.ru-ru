@@ -1,7 +1,7 @@
 ---
 title: Когнитивный навык тональности
 titleSuffix: Azure Cognitive Search
-description: Извлеките положительно-отрицательную оценку настроений из текста в конвейере обогащения ИИ в Azure Cognitive Search.
+description: Извлеките положительную отрицательную оценку тональности из текста в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
 ms.author: luisca
@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: cc3aab703b9c5ffcb5f3280060417ce32fcec2fc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72791910"
 ---
 # <a name="sentiment-cognitive-skill"></a>Когнитивный навык тональности
@@ -20,7 +20,7 @@ ms.locfileid: "72791910"
 Навык **тональности** обеспечивает полный спектр оценки положительной и отрицательной тональности в неструктурированном тексте и возвращает для каждой записи числовую оценку от 0 до 1. Оценки, близкие к 1, указывают на позитивную тональность, а оценки, близкие к 0, — на негативную. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) в Cognitive Services.
 
 > [!NOTE]
-> По мере расширения сферы охвата за счет увеличения частоты обработки, добавления дополнительных документов или добавления большего числа алгоритмов ИИ необходимо [прикрепить ресурс Cognitive Services.](cognitive-search-attach-cognitive-services.md) Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
+> Когда вы расширяете область, увеличивая частоту обработки, добавляя дополнительные документы или добавляете дополнительные алгоритмы искусственного интеллекта, вам потребуется [подключить ресурс Cognitive Services для оплаты](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
 >
 > Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на службу "Когнитивный поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400).
 
@@ -29,7 +29,7 @@ ms.locfileid: "72791910"
 Microsoft.Skills.Text.SentimentSkill
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи должен соразмеровать 5000 [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)символов. Если вам нужно разбить данные перед отправкой в анализатор тональности, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи должен составлять 5000 символов, [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)измеряемый. Если вам нужно разбить данные перед отправкой в анализатор тональности, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 
 ## <a name="skill-parameters"></a>Параметры навыков
@@ -38,7 +38,7 @@ Microsoft.Skills.Text.SentimentSkill
 
 | Имя параметра |                      |
 |----------------|----------------------|
-| defaultLanguageCode | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом. <br/> Посмотреть [полный список поддерживаемых языков](../cognitive-services/text-analytics/text-analytics-supported-languages.md) |
+| defaultLanguageCode | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/text-analytics-supported-languages.md). |
 
 ## <a name="skill-inputs"></a>Входные данные навыков 
 

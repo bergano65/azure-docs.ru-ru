@@ -10,22 +10,22 @@ ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
 ms.openlocfilehash: 1d5313f3f0fff128dd09f9c9857b7dd9921ea4f8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "69992221"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
-Вы можете получить доступ к данным и управлять ими в учетной записи хранилища, используя интерфейс командной строки так же, как и с [помощью распределенной файловой системы Hadoop (HDFS).](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) В этой статье приведены некоторые примеры, которые помогут вам начать работу.
+Вы можете получать доступ к данным в учетной записи хранения и управлять ими с помощью интерфейса командной строки точно так же, как с [Распределенная файловая система Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). В этой статье приводятся некоторые примеры, которые помогут приступить к работе.
 
-HDInsight предоставляет доступ к распределенному контейнеру, локально прикрепленному к вычислительным узлам. Вы можете получить доступ к этому контейнеру с помощью оболочки, которая непосредственно взаимодействует с HDFS и другими файловыми системами, которые поддерживает Hadoop.
+HDInsight предоставляет доступ к распределенному контейнеру, который локально подключен к этим узлам. Доступ к этому контейнеру можно получить с помощью оболочки, которая напрямую взаимодействует с HDFS и другими файловыми системами, поддерживаемыми Hadoop.
 
-Для получения дополнительной информации о HDFS CLI, см [официальная документация](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html) и [руководство HDFS Разрешения](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html)
+Дополнительные сведения об интерфейсе HDFS CLI см. в [официальной документации](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html) и [руководстве по разрешениям HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) .
 
 >[!NOTE]
->Если вы используете Azure Databricks вместо HDInsight и хотите взаимодействовать с данными с помощью интерфейса командной строки, вы можете использовать Databricks CLI для взаимодействия с файловой системой Databricks. Смотрите [Databricks CLI](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html).
+>Если вы используете Azure Databricks вместо HDInsight и хотите взаимодействовать с данными с помощью интерфейса командной строки, можно использовать CLI модуля данных для взаимодействия с файловой системой модуля данных. См. раздел [CLI кирпичей](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html).
 
 ## <a name="use-the-hdfs-cli-with-an-hdinsight-hadoop-cluster-on-linux"></a>Использование HDFS CLI с кластером HDInsight Hadoop в Linux
 
@@ -56,7 +56,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -ls <path>
 
-Замените `<path>` заполнитель НА URI контейнерной или контейнерной папки.
+Замените `<path>` заполнитель URI контейнера или папки контейнера.
 
 Например: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
 
@@ -64,7 +64,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -mkdir [-p] <path>
 
-Замените `<path>` заполнитель на имя корневого контейнера или папку в контейнере.
+Замените `<path>` заполнитель именем корневого контейнера или папкой в контейнере.
 
 Например: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
 
@@ -80,7 +80,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -getfacl [-R] <path>
 
-Пример
+Пример.
 
 `hdfs dfs -getfacl -R /dir`
 
@@ -90,7 +90,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -setfacl [-R] [-b|-k -m|-x <acl_spec> <path>]|[--set <acl_spec> <path>]
 
-Пример
+Пример.
 
 `hdfs dfs -setfacl -m user:hadoop:rw- /file`
 
@@ -116,8 +116,8 @@ hdfs dfs -mkdir /samplefolder
 
 Полный список команд можно просмотреть на веб-сайте [Apache Hadoop 2.4.1 File System Guide](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](./data-lake-storage-quickstart-create-databricks-account.md)
 
-* [Узнайте о списках управления доступом в файлах и каталогах](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
+* [Сведения о списках управления доступом к файлам и каталогам](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)

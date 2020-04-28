@@ -8,10 +8,10 @@ ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 28a280ea7c3bf9ef84a1fff05da5090ed526fb12
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73837462"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
@@ -154,7 +154,7 @@ if ( containerDir.deleteIfExists() ) {
 ```
 
 ## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в общей папке Azure
-Получение списка файлов и каталогов в рамках доли легко сделать, позвонив **в listFilesAndDirectories** на ссылку CloudFileDirectory. Метод возвращает список объектов ListFileItem, с которым вы можете производить дальнейшие действия. Например следующий код отображает все файлы и каталоги, содержащиеся в корневом каталоге.
+Получение списка файлов и каталогов в общей папке легко осуществляется путем вызова **листфилесанддиректориес** в ссылке клаудфиледиректори. Метод возвращает список объектов ListFileItem, с которым вы можете производить дальнейшие действия. Например следующий код отображает все файлы и каталоги, содержащиеся в корневом каталоге.
 
 ```java
 //Get a reference to the root directory for the share.
@@ -224,8 +224,8 @@ if ( file.deleteIfExists() ) {
 ## <a name="next-steps"></a>Дальнейшие действия
 Если вы хотите узнать больше о других API-интерфейсах Azure, пожалуйста перейдите по следующим ссылкам.
 
-* [Azure для Java-разработчиков](/java/azure)/)
-* [SDK для хранения данных Azure для Java](https://github.com/azure/azure-storage-java)
+* [Azure для разработчиков Java](/java/azure)/)
+* [Пакет SDK службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
 * [Microsoft Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
 * [справочнике по пакету SDK для клиента службы хранилища Azure](https://javadoc.io/doc/com.microsoft.azure/azure-core/0.8.0/index.html)
 * [REST API служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)

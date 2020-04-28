@@ -1,6 +1,6 @@
 ---
 title: Возможности решения подключенной фабрики Azure | Документация Майкрософт
-description: В этой статье описывается обзор особенностей преднастроенного решения Connected Factory, таких как панель мониторинга облака, правила и оповещения.
+description: В этой статье описывается обзор возможностей предварительно настроенного решения подключенной фабрики, например информационной панели, правил и оповещений в облаке.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 06/10/2019
 ms.author: dobett
 ms.openlocfilehash: c868aa0f1c2449ccf163523c9ded25a31d1d84c4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73820112"
 ---
 # <a name="what-is-connected-factory-iot-solution-accelerator"></a>Общие сведения об акселераторе решений IoT для подключенной фабрики
@@ -65,4 +65,4 @@ ms.locfileid: "73820112"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать больше об ускорителе решений Connected Factory, см. [Try a cloud-based solution to manage my industrial IoT devices](quickstart-connected-factory-deploy.md)
+Дополнительные сведения о комплекте Solution Accelerator для подключенной фабрики см. в руководстве по использованию [облачного решения для управления устройствами IOT](quickstart-connected-factory-deploy.md).

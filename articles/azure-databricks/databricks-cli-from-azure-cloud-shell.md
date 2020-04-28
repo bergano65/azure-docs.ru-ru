@@ -1,6 +1,6 @@
 ---
 title: 'Использование интерфейса командной строки Databricks через Azure Cloud Shell '
-description: Узнайте, как использовать CLI Databricks от Azure Cloud Shell для выполнения операций на Azure Databricks.
+description: Узнайте, как использовать интерфейс командной строки (CLI) в модулях Azure Cloud Shell для выполнения операций с Azure Databricks.
 services: azure-databricks
 author: mamccrea
 ms.reviewer: jasonh
@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: mamccrea
 ms.openlocfilehash: efb0d3222bfd98b15502163979425d47fa459e07
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73605720"
 ---
 # <a name="use-databricks-cli-from-azure-cloud-shell"></a>Использование интерфейса командной строки Databricks через Azure Cloud Shell
@@ -28,7 +28,7 @@ ms.locfileid: "73605720"
 
 ## <a name="use-the-azure-cloud-shell"></a>Использование Azure Cloud Shell
 
-1. Войти на [портал Azure](https://portal.azure.com).
+1. Войдите в [портал Azure](https://portal.azure.com).
  
 2. В правом верхнем углу выберите значок **Cloud Shell**.
 
@@ -36,7 +36,7 @@ ms.locfileid: "73605720"
 
 3. Убедитесь, что для среды Cloud Shell выбран вариант **Bash**. Как показано на следующем снимке экрана, эту среду можно выбрать в раскрывающемся списке.
 
-   ![Выберите Bash для среды обуподелки](./media/databricks-cli-from-azure-cloud-shell/select-bash-for-shell.png "Выберите Bash.") 
+   ![Выберите bash для среды Cloud Shell](./media/databricks-cli-from-azure-cloud-shell/select-bash-for-shell.png "Выберите Bash.") 
 
 4. Создайте виртуальную среду, в которой можно будет установить интерфейс командной строки Databtricks. Используя фрагмент кода ниже, создайте виртуальную среду, которая называется `databrickscli`.
 

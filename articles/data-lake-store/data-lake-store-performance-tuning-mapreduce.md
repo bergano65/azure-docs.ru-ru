@@ -1,5 +1,5 @@
 ---
-title: Настройка производительности Azure Data Lake Storage Gen1 - MapReduce
+title: Настройка производительности Azure Data Lake Storage 1-го поколения — MapReduce
 description: Рекомендации по настройке производительности для MapReduce в Azure Data Lake Storage 1-го поколения
 author: stewu
 ms.service: data-lake-store
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/19/2016
 ms.author: stewu
 ms.openlocfilehash: a645049665bc1d51efa94a879b9d2e4e5529282f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73904594"
 ---
 # <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Storage 1-го поколения
@@ -18,10 +18,10 @@ ms.locfileid: "73904594"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 1-го поколения**. Для получения инструкций о том, как его создать, [см.](data-lake-store-get-started-portal.md)
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по ее созданию см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Использование MapReduce на HDInsight**. См. дополнительные сведения об [использовании MapReduce в Hadoop и HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-mapreduce)
-* **Просмотрите рекомендации по настройке производительности для Data Lake Storage Gen1**. Для общих концепций [Data Lake Storage Gen1 Performance Tuning Guidance](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) производительности см.
+* **Использование MapReduce в HDInsight**. См. дополнительные сведения об [использовании MapReduce в Hadoop и HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-mapreduce)
+* **Ознакомьтесь с рекомендациями по настройке производительности для Data Lake Storage 1-го поколения**. Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) .
 
 ## <a name="parameters"></a>Параметры
 
@@ -29,38 +29,38 @@ ms.locfileid: "73904594"
 
 |Параметр      | Описание  |
 |---------|---------|
-|`Mapreduce.map.memory.mb`  |  Количество памяти, чтобы выделить для каждого картографа.  |
-|`Mapreduce.job.maps`     |  Количество задач карты на задание.  |
-|`Mapreduce.reduce.memory.mb`     |  Количество памяти, чтобы выделить для каждого редуктора.  |
-|`Mapreduce.job.reduces`    |   Количество задач сокращения на задания.  |
+|`Mapreduce.map.memory.mb`  |  Объем памяти, выделяемой для каждого модуля сопоставления.  |
+|`Mapreduce.job.maps`     |  Число задач Map на задание.  |
+|`Mapreduce.reduce.memory.mb`     |  Объем памяти, выделяемой для каждого объекта reduce.  |
+|`Mapreduce.job.reduces`    |   Число задач уменьшения на задание.  |
 
-### <a name="mapreducemapmemory--mapreducereducememory"></a>Mapreduce.map.memory / Mapreduce.reduce.memory
+### <a name="mapreducemapmemory--mapreducereducememory"></a>MapReduce. Map. Memory/MapReduce. reduce. Memory
 
-Отрегулируйте это число в зависимости от того, сколько памяти необходимо для карты и/или уменьшите задачу. Вы можете просматривать значения `mapreduce.map.memory` по `mapreduce.reduce.memory` умолчанию и в Ambari через конфигурацию Yarn. В Амбари перейдите на YARN и просмотрите вкладку **Configs.** Память YARN будет отображаться.
+Измените это число в зависимости от объема памяти, необходимой для задачи Map или reduce. Вы можете просмотреть значения по умолчанию `mapreduce.map.memory` и `mapreduce.reduce.memory` в Ambari с помощью конфигурации Yarn. В Ambari перейдите по адресу YARN и просмотрите вкладку **configs (конфигурации** ). Будет отображена память YARN.
 
-### <a name="mapreducejobmaps--mapreducejobreduces"></a>Mapreduce.job.maps / Mapreduce.job.reduces
+### <a name="mapreducejobmaps--mapreducejobreduces"></a>MapReduce. job. Maps/MapReduce. job. reduces
 
-Это определяет максимальное количество картографов или редукторов для создания. Количество сплитов определяет количество картографов, созданных для задания MapReduce. Таким образом, вы можете получить меньше картографов, чем вы просили, если Есть меньше расколов, чем количество картографов просил.
+Определяет максимальное количество модулей сопоставления или модулей сжатия для создания. Число разбиений определяет, сколько модулей сопоставления создается для задания MapReduce. Таким образом, вы можете получить меньшее число модулей сопоставления, чем было запрошено, если количество разделений меньше числа запрошенных модулей сопоставления.
 
 ## <a name="guidance"></a>Руководство
 
-### <a name="step-1-determine-number-of-jobs-running"></a>Шаг 1: Определить количество рабочих мест
+### <a name="step-1-determine-number-of-jobs-running"></a>Шаг 1. Определение числа выполняемых заданий
 
-По умолчанию MapReduce будет использовать весь кластер для обработки задания. Вы можете использовать меньше кластера, используя меньше картографов, чем есть доступные контейнеры. В этой статье предполагается, что ваше приложение — единственное, которое выполняется в кластере.
+По умолчанию MapReduce будет использовать весь кластер для обработки задания. Вы можете использовать меньше кластеров, используя меньшее число модулей сопоставления, чем есть доступные контейнеры. В этой статье предполагается, что ваше приложение — единственное, которое выполняется в кластере.
 
-### <a name="step-2-set-mapreducemapmemorymapreducereducememory"></a>Шаг 2: Установите mapreduce.map.memory/mapreduce.reduce.memory
+### <a name="step-2-set-mapreducemapmemorymapreducereducememory"></a>Шаг 2. Задание MapReduce. Map. Memory/MapReduce. reduce. Memory
 
-Объем памяти для задач сопоставления и уменьшения будет зависеть от конкретного задания. Можно уменьшить объем памяти, если нужно повысить параллелизм. Число одновременно выполняемых задач зависит от числа контейнеров. Сокращая объем памяти для каждого модуля сопоставления или уменьшения, можно создавать дополнительные контейнеры, обеспечивая одновременный запуск большего числа модулей сопоставления или уменьшения. Слишком сильное снижение объема памяти может вызвать нехватку памяти при выполнении некоторых процессов. Если вы получаете ошибку кучи при запуске вашей работы, увеличить память на картограф или редуктора. Учтите, что добавление дополнительных контейнеров добавляет дополнительные накладные расходы для каждого дополнительного контейнера, что потенциально может привести к ухудшить производительность. Альтернатива — обеспечить больший объем памяти, используя кластер с большим объемом памяти или увеличивая число узлов в кластере. Больший объем памяти позволит использовать дополнительные контейнеры, обеспечивая возможность параллельной обработки.
+Объем памяти для задач сопоставления и уменьшения будет зависеть от конкретного задания. Можно уменьшить объем памяти, если нужно повысить параллелизм. Число одновременно выполняемых задач зависит от числа контейнеров. Сокращая объем памяти для каждого модуля сопоставления или уменьшения, можно создавать дополнительные контейнеры, обеспечивая одновременный запуск большего числа модулей сопоставления или уменьшения. Слишком сильное снижение объема памяти может вызвать нехватку памяти при выполнении некоторых процессов. Если при выполнении задания возникнет ошибка кучи, увеличьте объем памяти для каждого модуля сопоставления или уменьшения. Учтите, что добавление дополнительных контейнеров увеличивает дополнительную нагрузку на каждый дополнительный контейнер, что может привести к снижению производительности. Альтернатива — обеспечить больший объем памяти, используя кластер с большим объемом памяти или увеличивая число узлов в кластере. Больший объем памяти позволит использовать дополнительные контейнеры, обеспечивая возможность параллельной обработки.
 
-### <a name="step-3-determine-total-yarn-memory"></a>Шаг 3: Определить общую память YARN
+### <a name="step-3-determine-total-yarn-memory"></a>Шаг 3. Определение общего объема памяти YARN
 
-Чтобы настроить mapreduce.job.maps/mapreduce.job.reduces, рассмотрим количество общей памяти YARN, доступной для использования. Эта информация доступна в Ambari. Перейдите к YARN и просмотрите вкладку **Configs.** Память YARN отображается в этом окне. Умножьте память YARN с числом узлов в кластере, чтобы получить общую память YARN.
+Чтобы настроить MapReduce. job. Maps/MapReduce. job. reduces, учитывайте объем общей YARN памяти, доступной для использования. Эта информация доступна в Ambari. Перейдите по адресу YARN и просмотрите вкладку **configs (конфигурации** ). В этом окне отображается память YARN. Умножьте объем памяти YARN на количество узлов в кластере, чтобы получить общий объем памяти YARN.
 
 `Total YARN memory = nodes * YARN memory per node`
 
-Если вы используете пустое скопление, то память может быть общей памятью YARN для вашего кластера. Если другие приложения используют память, вы можете ограничить выделение памяти кластера, сократив число модулей сопоставления или уменьшения в соответствии с числом контейнеров, которые вы хотите использовать.
+Если вы используете пустой кластер, то память может быть общей YARN памятью для кластера. Если другие приложения используют память, вы можете ограничить выделение памяти кластера, сократив число модулей сопоставления или уменьшения в соответствии с числом контейнеров, которые вы хотите использовать.
 
-### <a name="step-4-calculate-number-of-yarn-containers"></a>Шаг 4: Рассчитать количество контейнеров YARN
+### <a name="step-4-calculate-number-of-yarn-containers"></a>Шаг 4. Вычисление числа контейнеров YARN
 
 Контейнеры YARN определяют уровень параллелизма для задания. Разделите общий объем памяти YARN на значение mapreduce.map.memory.
 
@@ -76,17 +76,17 @@ ms.locfileid: "73904594"
 
 Предположим, у вас есть кластер, который состоит из 8 узлов D14 и вы хотите запустить задание с большим количеством операций ввода-вывода. Ниже представлены примеры вычислений, которые нужно выполнить.
 
-### <a name="step-1-determine-number-of-jobs-running"></a>Шаг 1: Определить количество рабочих мест
+### <a name="step-1-determine-number-of-jobs-running"></a>Шаг 1. Определение числа выполняемых заданий
 
-Например, мы предполагаем, что наша работа является единственной запущенной.
+В нашем примере предполагается, что задание является единственным работающим.
 
-### <a name="step-2-set-mapreducemapmemorymapreducereducememory"></a>Шаг 2: Установите mapreduce.map.memory/mapreduce.reduce.memory
+### <a name="step-2-set-mapreducemapmemorymapreducereducememory"></a>Шаг 2. Задание MapReduce. Map. Memory/MapReduce. reduce. Memory
 
-Например, вы проводите интенсивную работу по ввоцированию и решаете, что 3 ГБ памяти для задач карты достаточно.
+В нашем примере вы запускаете задание с интенсивным вводом-выводом и решаете, что достаточно 3 ГБ памяти для задач Map.
 
 `mapreduce.map.memory = 3GB`
 
-### <a name="step-3-determine-total-yarn-memory"></a>Шаг 3: Определить общую память YARN
+### <a name="step-3-determine-total-yarn-memory"></a>Шаг 3. Определение общего объема памяти YARN
 
 `total memory from the cluster is 8 nodes * 96GB of YARN memory for a D14 = 768GB`
 
@@ -110,30 +110,30 @@ ms.locfileid: "73904594"
 
 2. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 
-3. Если вы получаете задушены, вы увидите код ошибки HTTP 429 в файле журнала YARN. Файл журнала YARN расположен здесь: /tmp/&lt;пользователь&gt;/yarn.log
+3. В случае регулирования вы увидите код ошибки HTTP 429 в файле журнала YARN. Файл журнала YARN расположен здесь: /tmp/&lt;пользователь&gt;/yarn.log
 
 ## <a name="examples-to-run"></a>Примеры выполнения кода
 
-Чтобы продемонстрировать, как MapReduce работает на Data Lake Storage Gen1, ниже приводится несколько примеров кода, который был запущен в кластере со следующими настройками:
+Чтобы продемонстрировать выполнение MapReduce на Data Lake Storage 1-го поколения, ниже приведен пример кода, который был запущен в кластере со следующими параметрами:
 
 * 16 узлов D14v2;
 * кластер Hadoop под управлением HDI 3.6.
 
 Для начала ознакомьтесь с примерами команд для запуска MapReduce Teragen, Terasort и Teravalidate. Эти команды можно настроить в соответствии с имеющимися ресурсами.
 
-### <a name="teragen"></a>Тераген
+### <a name="teragen"></a>Teragen
 
 ```
 yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar teragen -Dmapreduce.job.maps=2048 -Dmapreduce.map.memory.mb=3072 10000000000 adl://example/data/1TB-sort-input
 ```
 
-### <a name="terasort"></a>Терасорт
+### <a name="terasort"></a>Terasort
 
 ```
 yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar terasort -Dmapreduce.job.maps=2048 -Dmapreduce.map.memory.mb=3072 -Dmapreduce.job.reduces=512 -Dmapreduce.reduce.memory.mb=3072 adl://example/data/1TB-sort-input adl://example/data/1TB-sort-output
 ```
 
-### <a name="teravalidate"></a>Тералтер
+### <a name="teravalidate"></a>Teravalidate
 
 ```
 yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar teravalidate -Dmapreduce.job.maps=512 -Dmapreduce.map.memory.mb=3072 adl://example/data/1TB-sort-output adl://example/data/1TB-sort-validate

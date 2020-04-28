@@ -1,6 +1,6 @@
 ---
 title: Настройка группы доступности (Azure CLI)
-description: Используйте Azure CLI для создания кластера Сбой Windows, слушателя группы доступности и баланса внутренней нагрузки на VM сервера S'L в Azure.
+description: Используйте Azure CLI для создания отказоустойчивого кластера Windows, прослушивателя группы доступности и внутренней подсистемы балансировки нагрузки на виртуальной машине SQL Server в Azure.
 services: virtual-machines-windows
 documentationcenter: na
 author: MashaMSFT
@@ -15,33 +15,33 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: a6600af353daf2bfa7b49196f48ba5b60e6c45fb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74022368"
 ---
-# <a name="use-the-azure-cli-to-configure-an-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Используйте Azure CLI для настройки группы всегда на доступности для сервера S'L на Azure VM
-В этой статье описывается, как использовать [Azure CLI](/cli/azure/sql/vm?view=azure-cli-latest/) для развертывания кластера совмещения Windows, добавления в кластер VMs-сервера, а также создания баланса внутренней нагрузки и слушателя для группы всегда на наличие. Развертывание группы всегда на доступность по-прежнему осуществляется вручную через студию управления серверами S'L (SSMS). 
+# <a name="use-the-azure-cli-to-configure-an-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Настройка группы доступности Always On для SQL Server на виртуальной машине Azure с помощью Azure CLI
+В этой статье описывается, как использовать [Azure CLI](/cli/azure/sql/vm?view=azure-cli-latest/) для развертывания отказоустойчивого кластера Windows, добавления SQL Server виртуальных машин в кластер и создания внутренней подсистемы балансировки нагрузки и прослушивателя для Always on группы доступности. Развертывание группы доступности Always On по-прежнему выполняется вручную с помощью SQL Server Management Studio (SSMS). 
 
 ## <a name="prerequisites"></a>Предварительные требования
-Чтобы автоматизировать настройку группы всегда на доступность с помощью Azure CLI, необходимо иметь следующие предпосылки: 
+Чтобы автоматизировать настройку Always On группы доступности с помощью Azure CLI, необходимо выполнить следующие предварительные требования. 
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - Группа ресурсов с контроллером домена. 
-- Один или несколько конментов, объединенных [VMs в Azure под управлением S'L Server 2016 (или позже) Enterprise Edition](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) в том *же наборе доступности или в различных зонах доступности,* которые были [зарегистрированы с поставщиком ресурсов S'L VM.](virtual-machines-windows-sql-register-with-resource-provider.md)  
-- [Лазурный CLI](/cli/azure/install-azure-cli). 
-- Два доступных (не используемых какой-либо организацией) IP-адреса. Один из них предназначен для внутреннего баланса нагрузки. Другой - для слушателя группы доступности в той же подсети, что и группа доступности. Если вы используете существующий балансер нагрузки, вам нужен только один доступный IP-адрес для слушателя группы доступности. 
+- Одна или несколько виртуальных машин, присоединенных к домену, [в Azure под управлением SQL Server 2016 (или более поздней версии) Enterprise Edition](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) в *одной группе доступности или разных зонах доступности* , [зарегистрированных в поставщике ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md).  
+- [Azure CLI](/cli/azure/install-azure-cli). 
+- Два доступных (не используемые ни одними) IP-адреса. Один предназначен для внутреннего балансировщика нагрузки. Второй — для прослушивателя группы доступности в той же подсети, что и группа доступности. Если вы используете существующую подсистему балансировки нагрузки, для прослушивателя группы доступности требуется только один доступный IP-адрес. 
 
 ## <a name="permissions"></a>Разрешения
-Для настройки группы всегда на доступности с помощью Azure CLI требуется следующее разрешение учетной записи: 
+Для настройки группы доступности Always On с помощью Azure CLI необходимы следующие разрешения учетной записи: 
 
-- Существующая учетная запись пользователя домена, которая имеет разрешение **на создание компьютерного объекта** в домене. Например, учетная запись domain Admin обычно account@domain.comимеет достаточное разрешение (например: ). _Эта учетная запись также должна входить в группу локальных администраторов на каждой виртуальной машине для создания кластера._
-- Учетная запись пользователя домена, которая управляет службой сервера S'L. 
+- Существующая учетная запись пользователя домена, имеющая разрешение на **Создание объекта Computer** в домене. Например, учетная запись администратора домена обычно имеет достаточные разрешения (например, account@domain.com). _Эта учетная запись также должна входить в группу локальных администраторов на каждой виртуальной машине для создания кластера._
+- Учетная запись пользователя домена, управляющая службой SQL Server. 
  
-## <a name="step-1-create-a-storage-account-as-a-cloud-witness"></a>Шаг 1: Создание учетной записи хранилища в качестве свидетеля облака
-Кластеру нужна учетная запись хранения, чтобы выступать в качестве свидетеля облака. Вы можете использовать любую существующую учетную запись хранения или создать новую учетную запись хранения. Если вы хотите использовать существующую учетную запись хранения, перейдите к следующему разделу. 
+## <a name="step-1-create-a-storage-account-as-a-cloud-witness"></a>Шаг 1. Создание учетной записи хранения в качестве облачного следящего сервера
+Кластеру требуется учетная запись хранения, которая будет использоваться в качестве облачного следящего сервера. Вы можете использовать любую существующую учетную запись хранения или создать новую. Если вы хотите использовать существующую учетную запись хранения, перейдите к следующему разделу. 
 
-Следующий фрагмент кода создает учетную запись хранения: 
+В следующем фрагменте кода создается учетная запись хранения: 
 ```azurecli-interactive
 # Create the storage account
 # example: az storage account create -n 'cloudwitness' -g SQLVM-RG -l 'West US' `
@@ -52,12 +52,12 @@ az storage account create -n <name> -g <resource group name> -l <region ex:eastu
 ```
 
 >[!TIP]
-> Ошибка может быть `az sql: 'vm' is not in the 'az sql' command group` проислется, если используете устаревшую версию CLI Azure. Загрузите [последнюю версию Azure CLI,](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) чтобы пройти эту ошибку.
+> Если вы используете устаревшую `az sql: 'vm' is not in the 'az sql' command group` версию Azure CLI, может появиться сообщение об ошибке. Скачайте [последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) , чтобы устранить эту ошибку.
 
-## <a name="step-2-define-windows-failover-cluster-metadata"></a>Шаг 2: Определить метаданные кластера сбоя Windows
-Группа командных данных Azure CLI [az sql vm](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest) управляет метаданными службы Windows Server Failover Cluster (WSFC), в котором размещается группа доступности. Метаданные кластера включают в себя домен Active Directory, учетные записи кластеров, учетные записи хранения, которые будут использоваться в качестве свидетеля облака, и версию S'L Server. Используйте [группу az sql vm](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest#az-sql-vm-group-create) для определения метаданных для WSFC, чтобы при добавлении первого сервера S'L VM кластер создавался по мере определенного. 
+## <a name="step-2-define-windows-failover-cluster-metadata"></a>Шаг 2. Определение метаданных отказоустойчивого кластера Windows
+Группа команд Azure CLI [AZ SQL VM Group](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest) управляет метаданными службы отказоустойчивого кластера Windows Server (WSFC), в которой размещается группа доступности. Метаданные кластера включают домен Active Directory, учетные записи кластера, учетные записи хранения, которые будут использоваться в качестве облака-свидетеля, и SQL Server версии. Для определения метаданных для WSFC, чтобы при добавлении первой SQL Server виртуальной машины был создан кластер, используйте команду [AZ SQL VM Group Create](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest#az-sql-vm-group-create) . 
 
-Следующий фрагмент кода определяет метаданные для кластера:
+В следующем фрагменте кода определяются метаданные для кластера.
 ```azurecli-interactive
 # Define the cluster metadata
 # example: az sql vm group create -n Cluster -l 'West US' -g SQLVM-RG `
@@ -74,10 +74,10 @@ az sql vm group create -n <cluster name> -l <region ex:eastus> -g <resource grou
   --storage-account '<ex:https://cloudwitness.blob.core.windows.net/>'
 ```
 
-## <a name="step-3-add-sql-server-vms-to-the-cluster"></a>Шаг 3: Добавление VMs-сервера S'L в кластер
-Добавление первого VM сервера S'L в кластер создает кластер. Команда [надстройки az sql vm](https://docs.microsoft.com/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-add-to-group) создает кластер с ранее приведенным названием, устанавливает роль кластера на vMs-серверах S'L Server и добавляет их в кластер. Последующее использование `az sql vm add-to-group` команды добавляет больше vMs сервера S'L server в недавно созданный кластер. 
+## <a name="step-3-add-sql-server-vms-to-the-cluster"></a>Шаг 3. Добавление SQL Server виртуальных машин в кластер
+Добавление первой SQL Server виртуальной машины в кластер создает кластер. Команда [AZ SQL VM Add-to-Group](https://docs.microsoft.com/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-add-to-group) создает кластер с указанным ранее именем, устанавливает роль кластера на SQL Server виртуальных машинах и добавляет их в кластер. При последующем использовании `az sql vm add-to-group` команды добавьте дополнительные SQL Server виртуальные машины в созданный кластер. 
 
-Следующий фрагмент кода создает кластер и добавляет к нему первый VM сервера S'L: 
+Следующий фрагмент кода создает кластер и добавляет в него первую виртуальную машину SQL Server: 
 
 ```azurecli-interactive
 # Add SQL Server VMs to cluster
@@ -91,22 +91,22 @@ az sql vm add-to-group -n <VM1 Name> -g <Resource Group Name> --sqlvm-group <clu
 az sql vm add-to-group -n <VM2 Name> -g <Resource Group Name> --sqlvm-group <cluster name> `
   -b <bootstrap account password> -p <operator account password> -s <service account password>
 ```
-Используйте эту команду, чтобы добавить в кластер все другие вм: Серверный сервер. Изменяйте `-n` только параметр для имени S'L Server VM. 
+Используйте эту команду, чтобы добавить в кластер любые другие SQL Server виртуальные машины. Измените только `-n` параметр для SQL Server имя виртуальной машины. 
 
-## <a name="step-4-create-the-availability-group"></a>Шаг 4: Создание группы доступности
-Вручную создайте группу доступности, как обычно, с помощью [студии управления серверами S'L,](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio) [PowerShell](/sql/database-engine/availability-groups/windows/create-an-availability-group-sql-server-powershell)или [Transact-S'L.](/sql/database-engine/availability-groups/windows/create-an-availability-group-transact-sql) 
+## <a name="step-4-create-the-availability-group"></a>Шаг 4. Создание группы доступности
+Вручную создайте группу доступности, как обычно, с помощью [SQL Server Management Studio](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio), [PowerShell](/sql/database-engine/availability-groups/windows/create-an-availability-group-sql-server-powershell)или [Transact-SQL](/sql/database-engine/availability-groups/windows/create-an-availability-group-transact-sql). 
 
 >[!IMPORTANT]
-> Не *not* создавайте слушателя в настоящее время, потому что это делается через Azure CLI в следующих разделах.  
+> *Не* создавайте прослушиватель в данный момент, так как это выполняется с помощью Azure CLI в следующих разделах.  
 
-## <a name="step-5-create-the-internal-load-balancer"></a>Шаг 5: Создание внутреннего баланса нагрузки
+## <a name="step-5-create-the-internal-load-balancer"></a>Шаг 5. создание внутренней подсистемы балансировки нагрузки
 
-Слушателю группы всегда на наличие требуется внутренний экземпляр баланса загрузки Azure. Внутренний балансизатор нагрузки обеспечивает "плавающий" IP-адрес для слушателя группы доступности, что позволяет быстрее выводить из строя и воссоединения. Если ВМ сервера S'L в группе доступности являются частью одного и того же набора доступности, можно использовать балансера basic load. В противном случае необходимо использовать балансизатор стандартной нагрузки.  
+Прослушивателю группы доступности Always On требуется внутренний экземпляр Azure Load Balancer. Внутренний балансировщик нагрузки предоставляет "плавающий" IP-адрес для прослушивателя группы доступности, который обеспечивает более быструю отработку отказа и повторное подключение. Если SQL Server виртуальные машины в группе доступности входят в одну группу доступности, можно использовать базовую подсистему балансировки нагрузки. В противном случае необходимо использовать стандартный балансировщик нагрузки.  
 
 > [!NOTE]
-> Внутренний балансосиватор нагрузки должен находиться в той же виртуальной сети, что и экземпляры S'L Server VM. 
+> Внутренняя подсистема балансировки нагрузки должна находиться в той же виртуальной сети, что и SQL Server экземпляры виртуальных машин. 
 
-Следующий фрагмент кода создает внутренний балансер нагрузки:
+В следующем фрагменте кода создается внутренняя подсистема балансировки нагрузки:
 
 ```azurecli-interactive
 # Create the internal load balancer
@@ -118,22 +118,22 @@ az network lb create --name sqlILB -g <resource group name> --sku Standard `
 ```
 
 >[!IMPORTANT]
-> Общедоступный ip-ресурс для каждого S'L Server VM должен иметь стандартный SKU, чтобы быть совместимым со балансиватором стандартной нагрузки. Чтобы определить SKU общедоступного IP-ресурса вашего VM, перейдите в **Группу ресурсов,** выберите ресурс **общественного IP-адреса** для желаемого S'L Server VM и найдите значение под **SKU** в панели **Обзора.**  
+> Ресурс общедоступного IP-адреса для каждой SQL Server виртуальной машины должен иметь стандартный SKU, совместимый с подсистемой балансировки нагрузки уровня "Стандартный". Чтобы определить номер SKU ресурса общедоступного IP-адреса виртуальной машины, перейдите в раздел **Группа ресурсов**, выберите ресурс **общедоступного IP-адрес** для нужной виртуальной машины SQL Server и найдите значение в поле **SKU** в области **Обзор** .  
 
-## <a name="step-6-create-the-availability-group-listener"></a>Шаг 6: Создание группы слушателя доступности
-После ручного создания группы доступности можно создать слушателя с помощью [az sql vm ag-listener.](/cli/azure/sql/vm/group/ag-listener?view=azure-cli-latest#az-sql-vm-group-ag-listener-create) 
+## <a name="step-6-create-the-availability-group-listener"></a>Шаг 6. Создание прослушивателя группы доступности
+После создания группы доступности вручную можно создать прослушиватель с помощью команды [AZ SQL VM AG-Listener](/cli/azure/sql/vm/group/ag-listener?view=azure-cli-latest#az-sql-vm-group-ag-listener-create). 
 
-*Идентификатор ресурсов подсети* — это значение, приложено `/subnets/<subnetname>` к идентификатору ресурса виртуального сетевого ресурса. Для определения идентификатора ресурсов подсети:
-   1. Перейдите к группе ресурсов на [портале Azure](https://portal.azure.com). 
-   1. Выберите виртуальный сетевой ресурс. 
-   1. Выберите **свойства** в панели **настроек.** 
-   1. Определите идентификатор ресурса `/subnets/<subnetname>` для виртуальной сети и притязание к концу для создания идентификатора ресурсов подсети. Пример:
-      - Идентификатор виртуального сетевого ресурса:`/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet`
-      - Ваше имя подсети:`default`
-      - Таким образом, идентификатор ресурсов подсети:`/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet/subnets/default`
+*Идентификатор ресурса подсети* — это значение `/subnets/<subnetname>` , добавляемое к идентификатору ресурса виртуальной сети. Чтобы задать идентификатор ресурса подсети, выполните следующие действия.
+   1. Перейдите к группе ресурсов в [портал Azure](https://portal.azure.com). 
+   1. Выберите ресурс виртуальной сети. 
+   1. На панели **Параметры** выберите **Свойства** . 
+   1. Найдите идентификатор ресурса для виртуальной сети и добавьте `/subnets/<subnetname>` его в конец, чтобы создать идентификатор ресурса подсети. Пример:
+      - Идентификатор ресурса виртуальной сети:`/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet`
+      - Имя вашей подсети:`default`
+      - Таким образом, идентификатор ресурса подсети:`/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet/subnets/default`
 
 
-Следующий фрагмент кода создает слушателя группы доступности:
+В следующем фрагменте кода создается прослушиватель группы доступности:
 
 ```azurecli-interactive
 # Create the availability group listener
@@ -151,14 +151,14 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
 ```
 
 ## <a name="modify-the-number-of-replicas-in-an-availability-group"></a>Изменение числа реплик в группе доступности
-При развертывании группы доступности для VMs-серверов, размещенных в Azure, возникает дополнительный уровень сложности. Поставщик ресурсов и виртуальная группа машин теперь управляют ресурсами. Таким образом, при добавлении или удалении реплик в группе доступности происходит дополнительный этап обновления метаданных слушателя с информацией о ВМ сервера S'L. При изменении количества реплик в группе доступности необходимо также использовать команду [обновления группы az sql vm ag-listener](/cli/azure/sql/vm/group/ag-listener?view=azure-cli-2018-03-01-hybrid#az-sql-vm-group-ag-listener-update) для обновления слушателя с помощью метаданных VMs-сервера S'L. 
+Существует дополнительный уровень сложности при развертывании группы доступности для SQL Server виртуальных машин, размещенных в Azure. Поставщик ресурсов и группа виртуальных машин теперь управляют ресурсами. Таким образом, при добавлении или удалении реплик в группе доступности существует дополнительный шаг обновления метаданных прослушивателя сведениями о SQL Server виртуальных машинах. При изменении числа реплик в группе доступности необходимо также использовать команду [AZ SQL VM Group AG-Listener Update](/cli/azure/sql/vm/group/ag-listener?view=azure-cli-2018-03-01-hybrid#az-sql-vm-group-ag-listener-update) , чтобы обновить прослушиватель метаданными, используя метаданные SQL Server виртуальных машин. 
 
 
 ### <a name="add-a-replica"></a>Добавление реплики
 
-Чтобы добавить новую реплику в группу доступности:
+Чтобы добавить новую реплику в группу доступности, выполните следующие действия.
 
-1. Добавьте vM сервера S'L к кластеру:
+1. Добавьте SQL Server виртуальную машину в кластер:
    ```azurecli-interactive
    # Add the SQL Server VM to the cluster
    # example: az sql vm add-to-group -n SQLVM3 -g SQLVM-RG --sqlvm-group Cluster `
@@ -167,8 +167,8 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
    az sql vm add-to-group -n <VM3 Name> -g <Resource Group Name> --sqlvm-group <cluster name> `
    -b <bootstrap account password> -p <operator account password> -s <service account password>
    ```
-1. Для добавления экземпляра сервера в качестве реплики в группе доступности — «Студия управления серверами» —L Server Studio.
-1. Добавьте метаданные S'L Server VM слушателю:
+1. Используйте SQL Server Management Studio, чтобы добавить экземпляр SQL Server в качестве реплики в группу доступности.
+1. Добавьте SQL Server метаданные виртуальной машины в прослушиватель:
    ```azurecli-interactive
    # Update the listener metadata with the new VM
    # example: az sql vm group ag-listener update -n AGListener `
@@ -180,10 +180,10 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
 
 ### <a name="remove-a-replica"></a>Удаление реплики
 
-Чтобы удалить реплику из группы доступности:
+Чтобы удалить реплику из группы доступности, выполните следующие действия.
 
-1. Удалите реплику из группы доступности, используя студию управления серверами S'L. 
-1. Удалите метаданные сервера VM от слушателя:
+1. Удалите реплику из группы доступности с помощью SQL Server Management Studio. 
+1. Удалите SQL Server метаданные виртуальной машины из прослушивателя:
    ```azurecli-interactive
    # Update the listener metadata by removing the VM from the SQLVMs list
    # example: az sql vm group ag-listener update -n AGListener `
@@ -192,7 +192,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
    az sql vm group ag-listener update -n <Listener> `
    -g <RG name> --group-name <cluster name> --sqlvms <SQL VMs that remain>
    ```
-1. Удалите VM сервера S'L из кластера:
+1. Удалите SQL Serverную виртуальную машину из кластера:
    ```azurecli-interactive
    # Remove the SQL VM from the cluster
    # example: az sql vm remove-from-group --name SQLVM3 --resource-group SQLVM-RG
@@ -200,10 +200,10 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
    az sql vm remove-from-group --name <SQL VM name> --resource-group <RG name> 
    ```
 
-## <a name="remove-the-availability-group-listener"></a>Удалить слушателя группы доступности
-Если позже необходимо удалить слушатель группы доступности, настроенный с помощью Azure CLI, необходимо пройти через поставщика ресурсов S'L VM. Поскольку слушатель зарегистрирован через поставщика ресурсов S'L VM, простого удаляния его через студию управления серверами S'L недостаточно. 
+## <a name="remove-the-availability-group-listener"></a>Удаление прослушивателя группы доступности
+Если позже потребуется удалить прослушиватель группы доступности, настроенный с Azure CLI, необходимо пройти по поставщику ресурсов виртуальной машины SQL. Так как прослушиватель зарегистрирован с помощью поставщика ресурсов виртуальной машины SQL, просто его удаление с помощью SQL Server Management Studio недостаточно. 
 
-Наилучшим методом является удаление его через поставщика ресурсов S'L VM, используя следующий фрагмент кода в Azure CLI. Это удаляет метаданные группы слушателей доступности из поставщика ресурсов S'L VM. Он также физически удаляет слушателя из группы доступности. 
+Лучший способ — удалить его с помощью поставщика ресурсов виртуальной машины SQL, используя следующий фрагмент кода в Azure CLI. При этом удаляются метаданные прослушивателя группы доступности из поставщика ресурсов виртуальной машины SQL. Он также физически удаляет прослушиватель из группы доступности. 
 
 ```azurecli-interactive
 # Remove the availability group listener
@@ -216,13 +216,13 @@ az sql vm group ag-listener delete --group-name <cluster name> --name <listener 
 
 Дополнительные сведения см. в следующих статьях: 
 
-* [Обзор VMs-серверов S'L](virtual-machines-windows-sql-server-iaas-overview.md)
-* [Часто задаваемые вопросы для VMs-серверов S'L](virtual-machines-windows-sql-server-iaas-faq.md)
-* [Выпуск примечаний для VMs-сервера S'L](virtual-machines-windows-sql-server-iaas-release-notes.md)
+* [Обзор SQL Server виртуальных машин](virtual-machines-windows-sql-server-iaas-overview.md)
+* [Часто задаваемые вопросы о SQL Server виртуальных машинах](virtual-machines-windows-sql-server-iaas-faq.md)
+* [Заметки о выпуске для SQL Server виртуальных машин](virtual-machines-windows-sql-server-iaas-release-notes.md)
 * [Изменение модели лицензирования для виртуальной машины SQL Server](virtual-machines-windows-sql-ahb.md)
-* [Обзор групп доступности всегда на &#40;&#41;сервера S'L](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server)   
-* [Конфигурация экземпляра сервера для групп доступности Always On &#40;S'L Server&#41;](/sql/database-engine/availability-groups/windows/configuration-of-a-server-instance-for-always-on-availability-groups-sql-server)   
-* [Администрирование группы доступности &#40;&#41;сервера S'L](/sql/database-engine/availability-groups/windows/administration-of-an-availability-group-sql-server)   
-* [Отслеживание групп доступности (SQL Server)](/sql/database-engine/availability-groups/windows/monitoring-of-availability-groups-sql-server)
-* [Обзор заявлений о Трансакт-СЗЛ для групп доступности всегда на &#40;s-L Server&#41;](/sql/database-engine/availability-groups/windows/transact-sql-statements-for-always-on-availability-groups)   
-* [Обзор смдлетов PowerShell для всегда на группах доступности &#40;s'L Server&#41;](/sql/database-engine/availability-groups/windows/overview-of-powershell-cmdlets-for-always-on-availability-groups-sql-server)  
+* [Общие сведения о группы доступности Always On &#40;SQL Server&#41;](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server)   
+* [Конфигурация экземпляра сервера для группы доступности Always On &#40;SQL Server&#41;](/sql/database-engine/availability-groups/windows/configuration-of-a-server-instance-for-always-on-availability-groups-sql-server)   
+* [Администрирование &#40;SQL Server группы доступности&#41;](/sql/database-engine/availability-groups/windows/administration-of-an-availability-group-sql-server)   
+* [Мониторинг групп доступности &#40;SQL Server&#41;](/sql/database-engine/availability-groups/windows/monitoring-of-availability-groups-sql-server)
+* [Общие сведения о инструкциях Transact-SQL для группы доступности Always On &#40;SQL Server&#41;](/sql/database-engine/availability-groups/windows/transact-sql-statements-for-always-on-availability-groups)   
+* [Общие сведения о командлетах PowerShell для группы доступности Always On &#40;SQL Server&#41;](/sql/database-engine/availability-groups/windows/overview-of-powershell-cmdlets-for-always-on-availability-groups-sql-server)  

@@ -1,6 +1,6 @@
 ---
-title: Работа Debug Spark с Помощью Инструментов IntelliJ Azure (предварительный просмотр) - HDInsight
-description: Руководство с использованием инструментов HDInsight в Azure Toolkit для IntelliJ для отладки приложений
+title: Отладка задания Spark с помощью набора средств Azure IntelliJ (Предварительная версия) — HDInsight
+description: Руководство по использованию средств HDInsight в Azure Toolkit for IntelliJ для отладки приложений
 keywords: удаленная отладка intellij, ssh, intellij, hdinsight, отладка intellij, отладка
 author: hrasheed-msft
 ms.author: hrasheed
@@ -10,113 +10,113 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 07/12/2019
 ms.openlocfilehash: 1a0a6cf5a26854539dc4bbb0ae0254bbf08dad1f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73494602"
 ---
-# <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Неудача искры отладки работы с Azure Toolkit для IntelliJ (предварительный просмотр)
+# <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Сбой отладки задания Spark с Azure Toolkit for IntelliJ (Предварительная версия)
 
-В этой статье содержатся пошаговые рекомендации по использованию инструментов HDInsight в [Azure Toolkit для IntelliJ для](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij?view=azure-java-stable) запуска приложений **Spark Failure Debug.**
+В этой статье содержатся пошаговые инструкции по использованию средств HDInsight в [Azure Toolkit for IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij?view=azure-java-stable) для запуска приложений **отладки Spark с ошибкой** .
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Комплект Oracle Java Development](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). В этом руководстве используется Java версии 8.0.202.
+* [Комплект разработчика Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). В этом руководстве используется Java версии 8.0.202.
   
-* Среда IntelliJ IDEA. Эта статья использует [IntelliJ IDEA сообщества ver. 2019.1.3](https://www.jetbrains.com/idea/download/#section=windows).
+* Среда IntelliJ IDEA. В этой статье используется [INTELLIJ идея Community ver. 2019.1.3](https://www.jetbrains.com/idea/download/#section=windows).
   
 * Azure Toolkit for IntelliJ. Дополнительные сведения см. в статье [Установка набора средств Azure для IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij-installation?view=azure-java-stable).
 
-* Подключитесь к кластеру HDInsight. Смотрите [Подключите к кластеру HDInsight.](apache-spark-intellij-tool-plugin.md)
+* Подключитесь к кластеру HDInsight. См. раздел [Подключение к кластеру HDInsight](apache-spark-intellij-tool-plugin.md).
 
-* Исследователь хранения данных Microsoft Azure. Смотрите [Скачать Microsoft Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/).
+* Обозреватель службы хранилища Microsoft Azure. См. раздел [Download обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/).
 
 ## <a name="create-a-project-with-debugging-template"></a>Создание проекта с шаблоном отладки
 
-Создайте проект spark2.3.2 для продолжения отладки сбоев, примите отладку образца в этом документе задачи отказа.
+Создайте проект Spark 2.3.2, чтобы продолжить отладку сбоя, выполните в этом документе пример файла отладки задачи, который не удалось выполнить.
 
-1. Откройте IntelliJ IDEA. Откройте окно **нового проекта.**
+1. Откройте IntelliJ IDEA. Откройте окно **Новый проект** .
 
    а. На левой панели щелкните **Azure Spark/HDInsight**.
 
-   b. Выберите **проект Spark с пробой отказа Отображения (Предварительный просмотр) (Scala)** из основного окна.
+   b. В главном окне выберите **проект Spark с неудачной отладкой задачи (Предварительная версия) (Scala)** .
 
-     ![Intellij Создать отладку проекта](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-projectfor-failure-debug.png)
+     ![IntelliJ создание проекта отладки](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-projectfor-failure-debug.png)
 
-   c. Нажмите кнопку **Далее**.
+   c. Выберите **Далее**.
 
 2. В окне **New Project** (Новый проект) выполните указанные ниже действия.
 
-   ![Intellij Новый проект выбрать версию Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-project.png)
+   ![IntelliJ новый проект выберите версию Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-project.png)
 
    а. Введите имя и расположение проекта.
 
-   b. В списке выпадающих проектов **SDK** выберите **Java 1.8** для кластера **Spark 2.3.2.**
+   b. В раскрывающемся списке **пакет SDK для проекта** выберите **Java 1,8** для кластера **Spark 2.3.2** .
 
-   c. В списке **Spark Version** выпадвниз, выберите **Spark 2.3.2 (Scala 2.11.8)**.
+   c. В раскрывающемся списке **версия Spark** выберите **Spark 2.3.2 (Scala 2.11.8)**.
 
    d. Нажмите кнопку **Готово**.
 
-3. Выберите **src** > **main** > **scala,** чтобы открыть код в проекте. В этом примере используется **AgeMean_Div ()** скрипт.
+3. Выберите **src** > **Main** > **Scala** , чтобы открыть код в проекте. В этом примере используется скрипт **AgeMean_Div ()** .
 
 ## <a name="run-a-spark-scalajava-application-on-an-hdinsight-cluster"></a>Запуск приложения Spark Scala/Java в кластере HDInsight
 
-Создайте искру приложения Scala/Java, а затем запустите приложение в кластере Spark, сделав следующие действия:
+Создайте приложение Spark Scala/Java, а затем запустите приложение в кластере Spark, выполнив следующие действия.
 
-1. Нажмите **Добавить Конфигурация,** чтобы открыть **окно конфигураций Run/Debug.**
+1. Щелкните **Добавить конфигурацию** , чтобы открыть окно **конфигурации запуска/отладки** .
 
-   ![Конфигурация HDI Intellij Add](./media/apache-spark-intellij-tool-failure-debug/hdinsight-add-new-configuration.png)
+   ![HDI IntelliJ добавить конфигурацию](./media/apache-spark-intellij-tool-failure-debug/hdinsight-add-new-configuration.png)
 
-2. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" (**+**). Затем выберите **Apache Spark на hdInsight** вариант.
+2. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" (**+**). Затем выберите параметр **Apache Spark в HDInsight** .
 
-   ![Intellij Добавить новую конфигурацию](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-configuraion-01.png)
+   ![IntelliJ добавить новую конфигурацию](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-configuraion-01.png)
 
-3. Переключиться на **удаленное запуск в** вкладке кластера. Введите информацию для **имени,** **кластера Spark**и **имени основного класса.** Наши средства поддерживают отладку с **исполнителями**. **NumExectors**, значение по умолчанию составляет 5, и вам лучше не устанавливать выше, чем 3. Чтобы сократить время выполнения, вы можете добавить **spark.yarn.maxAppAttempts** в **конфигурации рабочих мест** и установить значение до 1. Нажмите **кнопку OK,** чтобы сохранить конфигурацию.
+3. Перейдите в режим **удаленного запуска на вкладке кластер** . Введите данные для **имени**, **кластера Spark**и **имени класса Main**. Наши средства поддерживают отладку с **исполнителями**. **Нумексекторс**, значение по умолчанию — 5, и лучше не задавать более 3. Чтобы сократить время выполнения, можно добавить **Spark. Yarn. максаппаттемптс** в **конфигурации задания** и установить значение 1. Нажмите кнопку " **ОК** ", чтобы сохранить конфигурацию.
 
-   ![Настройки отладки Intellij Run новые](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-configuraion-002.png)
+   ![IntelliJ запускать конфигурации отладки New](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-configuraion-002.png)
 
 4. Теперь конфигурация сохранена под именем, которое вы указали. Чтобы просмотреть сведения о конфигурации, выберите имя конфигурации. Чтобы внести изменения, выберите **Edit Configurations** (Изменить конфигурации).
 
-5. После завершения настроек конфигураций можно запустить проект против удаленного кластера.
+5. После завершения настройки конфигурации можно запустить проект в удаленном кластере.
 
-   ![Кнопка удаленного запуска Intellij Debug](./media/apache-spark-intellij-tool-failure-debug/hdinsight-local-run-configuration.png)
+   ![Кнопка удаленного запуска IntelliJ отладки удаленного задания Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-local-run-configuration.png)
 
-6. Идентификатор приложения можно проверить из окна вывода.
+6. Идентификатор приложения можно проверить в окне Вывод.
 
-   ![Результат удаленного запуска Intellij Debug Remote Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-remotely-run-result.png)
+   ![Результат удаленного запуска IntelliJ отладки удаленного задания Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-remotely-run-result.png)
 
-## <a name="download-failed-job-profile"></a>Скачать неудавшийся профиль работы
+## <a name="download-failed-job-profile"></a>Скачивание профиля невыполненного задания
 
-Если отправка задания не удается, можно загрузить неудавшийся профиль задания в локальную машину для дальнейшей отладки.
+В случае сбоя отправки задания можно скачать профиль невыполненного задания на локальный компьютер для дальнейшей отладки.
 
-1. Откройте **Microsoft Azure Storage Explorer,** найдите учетную запись кластера HDInsight для неудавшейся работы, загрузите невыполненные задания из соответствующего местоположения: **идентификатор приложения\\.spark-failures.spark-failed\\\<>** в локальную папку. Окно **действий** покажет прогресс загрузки.
+1. Откройте **Обозреватель службы хранилища Microsoft Azure**, выберите учетную запись HDInsight кластера для невыполненного задания, скачайте невыполненные ресурсы заданий из соответствующего расположения: **\hdp\spark2-Events\\. Spark-\\\<Fails Application ID>** в локальную папку. В окне **действия** отобразится ход загрузки.
 
-   ![Сбой загрузки Azure Storage Explorer](./media/apache-spark-intellij-tool-failure-debug/hdinsight-find-spark-file-001.png)
+   ![Сбой загрузки Обозреватель службы хранилища Azure](./media/apache-spark-intellij-tool-failure-debug/hdinsight-find-spark-file-001.png)
 
-   ![Успех загрузки Azure Storage Explorer](./media/apache-spark-intellij-tool-failure-debug/spark-on-cosmos-doenload-file-2.png)
+   ![Загрузка Обозреватель службы хранилища Azure успешно завершена](./media/apache-spark-intellij-tool-failure-debug/spark-on-cosmos-doenload-file-2.png)
 
 ## <a name="configure-local-debugging-environment-and-debug-on-failure"></a>Настройка локальной среды отладки и отладка при сбое
 
-1. Откройте исходный проект или создайте новый проект и свяжете его с исходным кодом. Только версия spark2.3.2 поддерживается для отладки сбоев в настоящее время.
+1. Откройте исходный проект или создайте новый проект и свяжите его с исходным исходным кодом. В настоящее время отладка сбоев поддерживается только для версии Spark 2.3.2.
 
-1. В IntelliJ IDEA создайте файл конфигурации **Spark Failure Debug,** выберите файл FTD из ранее загруженных невыполненных ресурсов для поля **расположения контекста сбоя в работе Spark.**
+1. В IntelliJ идея создайте файл конфигурации **отладки Spark** с ошибкой, выберите файл ФТД из ранее скачанных ресурсов невыполненных заданий для поля **расположение контекста сбоя задания Spark** .
 
-   ![конфигурация сбоя crete](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-failure-configuration-01.png)
+   ![Конфигурация сбоя создавайте](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-failure-configuration-01.png)
 
-1. Нажмите кнопку локального запуска в панели инструментов, ошибка будет отображаться в окне Run.
+1. Нажмите кнопку "локальный запуск" на панели инструментов. ошибка отобразится в окне "выполнение".
 
-   ![конфигурация запуска-сбой1](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuraion-01.png)
+   ![Run-Failure-configuration1](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuraion-01.png)
 
-   ![конфигурация запуска-сбой2](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuration.png)
+   ![Run-Failure-configuration2](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuration.png)
 
-1. Установите точку разрыва, как показывает журнал, а затем нажмите кнопку локальной отладки, чтобы сделать локальную отладку так же, как обычные проекты Scala / Java в IntelliJ.
+1. Установите точку останова, как указано в журнале, затем нажмите кнопку локальная отладка, чтобы выполнить локальную отладку так же, как обычные проекты Scala/Java в IntelliJ.
 
-1. После отладки, если проект успешно завершен, можно повторно отправить сбой задания в искру в кластере HDInsight.
+1. После отладки, если проект успешно завершает работу, можно повторно отправить невыполненное задание в Spark в кластере HDInsight.
 
-## <a name="next-steps"></a><a name="seealso"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="seealso"></a>Следующие шаги
 
-* [Обзор: Приложения Debug Apache Spark](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
+* [Обзор: Отладка Apache Spark приложений](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
 
 ### <a name="demo"></a>Демонстрация
 
@@ -125,7 +125,7 @@ ms.locfileid: "73494602"
 
 ### <a name="scenarios"></a>Сценарии
 
-* [Apache Spark с BI: Делайте интерактивный анализ данных с помощью Spark в HDInsight с помощью инструментов BI](apache-spark-use-bi-tools.md)
+* [Apache Spark с бизнес-аналитикой: Интерактивный анализ данных с помощью Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)

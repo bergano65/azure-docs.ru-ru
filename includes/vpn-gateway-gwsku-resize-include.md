@@ -9,13 +9,13 @@ ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 4842c55b2b1fd23f4d6b7996ccf02e7141504836
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73495781"
 ---
-Вы можете `Resize-AzVirtualNetworkGateway` использовать Смдлет PowerShell для обновления или понижения Поколения1 или Generation2 SKU (все VPNGw SKUs могут быть переобезвренена, кроме базовых SKUS). Если вы используете номер SKU шлюза уровня "Базовый", чтобы изменить размер шлюза, [вместо указанного командлета используйте эти инструкции](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md#resize).
+Вы можете использовать командлет `Resize-AzVirtualNetworkGateway` PowerShell для обновления или понижения уровня Generation1 или Generation2 SKU (все номера SKU VpnGw можно изменять, за исключением основных SKU). Если вы используете номер SKU шлюза уровня "Базовый", чтобы изменить размер шлюза, [вместо указанного командлета используйте эти инструкции](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md#resize).
 
 В следующем примере PowerShell показано изменение размера шлюза до SKU со значением VpnGw2.
 

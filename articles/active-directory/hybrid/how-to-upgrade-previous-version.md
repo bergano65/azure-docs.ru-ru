@@ -17,17 +17,17 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2a3e7373a8b0354a3d08debf944f2f77f1609382
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "60347755"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect: обновление до последней версии
 В этой статье описываются различные варианты обновления установленного экземпляра Azure Active Directory (Azure AD) Connect до последней версии. Мы рекомендуем устанавливать все новые выпуски Azure AD Connect. Действия, описанные в разделе [Обновление со сменой сервера](#swing-migration), можно также использовать при значительных изменениях конфигурации.
 
 >[!NOTE]
-> В настоящее время он поддерживается для обновления от любой версии Azure AD Connect до текущей версии. Обновления DirSync или ADSync на месте не поддерживаются, и требуется миграция качелей.  Если требуется обновление с DirSync, [см.](how-to-dirsync-upgrade-get-started.md) [Swing migration](#swing-migration)  </br>На практике клиенты на очень старых версиях могут столкнуться с проблемами, не связанными непосредственно с Azure AD Connect. Серверы, которые были в производстве в течение нескольких лет, как правило, было несколько патчей применяется к ним, и не все из них могут быть учтены.  Как правило, клиенты, которые не обновили в 12-18 месяцев следует рассмотреть качели обновления, а не как это самый консервативный и наименее рискованный вариант.
+> Сейчас поддерживается обновление с любой версии Azure AD Connect до текущей версии. Обновления на месте DirSync или ADSync не поддерживаются, и требуется пошаговая миграция.  Если вы хотите обновить DirSync, см. статью [обновление с помощью средства Azure AD Sync Tool (DirSync)](how-to-dirsync-upgrade-get-started.md) или в разделе " [размах миграции](#swing-migration) ".  </br>На практике клиенты в чрезвычайно старых версиях могут столкнуться с проблемами, не связанными непосредственно с Azure AD Connect. Серверы, находящиеся в рабочей среде в течение нескольких лет, обычно применялись к ним несколько исправлений, а не все из них можно учитывать.  Как правило, клиенты, которые не обновлялись в 12-18 месяцев, должны учитывать последующее обновление, так как это наиболее консервативный и наименее рискованный вариант.
 
 Инструкции по обновлению DirSync см. в статье [Azure AD Connect: обновление DirSync](how-to-dirsync-upgrade-get-started.md).
 
@@ -42,7 +42,7 @@ ms.locfileid: "60347755"
 Сведения о разрешениях см. в разделе [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md#upgrade).
 
 > [!NOTE]
-> После того как новый сервер Azure AD Connect начал синхронизацию изменений в Azure AD, необходимо не возвращаться к использованию DirSync или Azure AD Sync. Понижение с Azure AD Connect для устаревших клиентов, включая DirSync и Azure AD Sync, не поддерживается и может привести к таким проблемам, как потеря данных в Azure AD.
+> После включения нового сервера Azure AD Connect для синхронизации изменений в Azure AD не следует выполнять откат к использованию DirSync или Azure AD Sync. Переход от Azure AD Connect к устаревшим клиентам, включая DirSync и Azure AD Sync, не поддерживается и может привести к проблемам, таким как потери данных в Azure AD.
 
 ## <a name="in-place-upgrade"></a>Обновление «на месте»
 Обновление на месте подходит для обновления Azure AD Sync или Azure AD Connect. Оно не подходит для перехода с DirSync или для решения на основе Forefront Identity Manager (FIM) и соединителя Azure AD.
@@ -142,7 +142,7 @@ ms.locfileid: "60347755"
 
 При обновлении предыдущей версии Azure AD Connect в начале этого процесса может произойти приведенная ниже ошибка. 
 
-![Error](./media/how-to-upgrade-previous-version/error1.png)
+![Ошибка](./media/how-to-upgrade-previous-version/error1.png)
 
 Эта ошибка происходит потому, что соединитель Azure Active Directory с идентификатором b891884f-051e-4a83-95af - 2544101c 9083 не существует в текущей конфигурации Azure AD Connect. Чтобы убедиться в этом, откройте окно PowerShell и выполните командлет `Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083`.
 
@@ -167,5 +167,5 @@ At line:1 char:1
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md).

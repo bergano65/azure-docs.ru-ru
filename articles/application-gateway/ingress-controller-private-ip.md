@@ -1,6 +1,6 @@
 ---
-title: Используйте частный IP-адрес для внутренней реуктора для точки входа
-description: В этой статье содержится информация о том, как использовать частные ИС для внутренней реукторов и тем самым подвергая конечную точку Ingress в кластере остальной части VNet.
+title: Использовать частный IP-адрес для внутренней маршрутизации входной конечной точки
+description: В этой статье содержатся сведения о том, как использовать частные IP-адреса для внутренней маршрутизации и таким образом предоставлять конечную точку входящих данных в кластере остальной части виртуальной сети.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -8,32 +8,32 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 570f28ce559ff1c1180ffaacb781b9120b1890a2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73795493"
 ---
-# <a name="use-private-ip-for-internal-routing-for-an-ingress-endpoint"></a>Используйте частный IP для внутренней реукторов для точки входа 
+# <a name="use-private-ip-for-internal-routing-for-an-ingress-endpoint"></a>Использовать частный IP-адрес для внутренней маршрутизации для конечной точки входящего трафика 
 
-Эта функция позволяет разоблачить конечную `Virtual Network` точку входа в использовании частного IP.
+Эта функция позволяет предоставлять конечную точку входящих данных в `Virtual Network` с помощью частного IP-адреса.
 
 ## <a name="pre-requisites"></a>Предварительные требования  
-Шлюз приложений с [конфигурацией Private IP](https://docs.microsoft.com/azure/application-gateway/configure-application-gateway-with-private-frontend-ip)
+Шлюз приложений с [частной IP-конфигурацией](https://docs.microsoft.com/azure/application-gateway/configure-application-gateway-with-private-frontend-ip)
 
-Существует два способа настройки контроллера для использования private IP для входа,
+Существует два способа настройки контроллера для использования частного IP-адреса для входящего трафика,
 
-## <a name="assign-to-a-particular-ingress"></a>Назначить конкретному всховщику
-Чтобы разоблачить определенный вход через частный [`appgw.ingress.kubernetes.io/use-private-ip`](./ingress-controller-annotations.md#use-private-ip) IP, используйте аннотацию в Ingress.
+## <a name="assign-to-a-particular-ingress"></a>Назначить определенному входящему
+Чтобы предоставить определенный входящий трафик через частный IP-адрес, используйте [`appgw.ingress.kubernetes.io/use-private-ip`](./ingress-controller-annotations.md#use-private-ip) аннотацию в качестве входных данных.
 
 ### <a name="usage"></a>Использование
 ```yaml
 appgw.ingress.kubernetes.io/use-private-ip: "true"
 ```
 
-Для шлюзов приложений без частного IP, `appgw.ingress.kubernetes.io/use-private-ip: "true"` Ingresses аннотированные с будут проигнорированы. Это будет указано в событии входа и журнале AGIC pod.
+Для шлюзов приложений без частного IP-адреса передает с `appgw.ingress.kubernetes.io/use-private-ip: "true"` заметками будет игнорироваться. Это будет указано в журнале входящих событий и АГИК Pod.
 
-* Ошибка, указанная в событии Ingress
+* Ошибка, как указано в событии входящего трафика
 
     ```bash
     Events:
@@ -43,7 +43,7 @@ appgw.ingress.kubernetes.io/use-private-ip: "true"
     applicationgateway3026 has a private IP address
     ```
 
-* Ошибка, указанная в журналах AGIC
+* Ошибка, как указано в журналах АГИК
 
     ```bash
     E0730 18:57:37.914749       1 prune.go:65] Ingress default/hello-world-ingress requires Application Gateway applicationgateway3026 has a private IP address
@@ -51,7 +51,7 @@ appgw.ingress.kubernetes.io/use-private-ip: "true"
 
 
 ## <a name="assign-globally"></a>Назначить глобально
-В случае, требование заключается в том, чтобы ограничить `appgw.usePrivateIP: true` все `helm` Ingresses подвергаться воздействию частных IP, использование в config.
+В этом случае необходимо ограничить доступ всех передает к частному IP-адресу, используя `appgw.usePrivateIP: true` в `helm` конфигурации.
 
 ### <a name="usage"></a>Использование
 ```yaml
@@ -62,8 +62,8 @@ appgw:
     usePrivateIP: true
 ```
 
-Это позволит фильтровать всходной контроллер конфигураций IP-адреса для частного IP при настройке передних слушателей на шлюзе приложения.
-AGIC будет паниковать и сбой, если `usePrivateIP: true` и не частный IP назначен.
+Это сделает контроллер входящего трафика фильтром IP-адресов для частного IP-адреса при настройке интерфейсных прослушивателей в шлюзе приложений.
+АГИК выдаст сбой, если `usePrivateIP: true` не назначен частный IP-адрес.
 
 > [!NOTE]
-> Приложение Gateway v2 SKU требует общественного IP. Если вам требуется, чтобы шлюз приложения был закрытым, прикрепите [`Network Security Group`](https://docs.microsoft.com/azure/virtual-network/security-overview) к подсети портала приложения для ограничения трафика.
+> Для SKU шлюза приложений версии 2 требуется общедоступный IP-адрес. Если требуется, чтобы шлюз приложений был частным, подключите его [`Network Security Group`](https://docs.microsoft.com/azure/virtual-network/security-overview) к подсети шлюза приложений, чтобы ограничить трафик.

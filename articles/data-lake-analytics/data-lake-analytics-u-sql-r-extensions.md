@@ -1,6 +1,6 @@
 ---
 title: Расширение возможностей сценариев U-SQL c R в Azure Data Lake Analytics
-description: Узнайте, как запускать R-код в сценариях U-S'L с помощью Аналитики озер данных Azure. Встраиваем R-код в строку или ссылку из файлов.
+description: Узнайте, как выполнять код R в скриптах U-SQL с помощью Azure Data Lake Analytics. Внедрение встроенного кода R или ссылки из файлов.
 services: data-lake-analytics
 ms.service: data-lake-analytics
 author: saveenr
@@ -10,19 +10,19 @@ ms.assetid: c1c74e5e-3e4a-41ab-9e3f-e9085da1d315
 ms.topic: conceptual
 ms.date: 06/20/2017
 ms.openlocfilehash: c5dd3f493e85afc925b639c142a293eed1e8cbd7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71672696"
 ---
 # <a name="extend-u-sql-scripts-with-r-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом R в Azure Data Lake Analytics
 
 В следующих примерах представлены основные шаги по развертыванию кода R:
 * Используйте инструкцию `REFERENCE ASSEMBLY`, чтобы включить расширения R для скрипта U-SQL.
-* Используйте `REDUCE` операцию для раздела входных данных на ключ.
+* Используйте `REDUCE` операцию, чтобы секционировать входные данные по ключу.
 * Расширения R для U-SQL включают встроенное средство редукции (`Extension.R.Reducer`), которое выполняет код R в каждой назначенной ему вершине. 
-* Исправлены использование выделенных `inputFromUSQL` именных кадров данных, называемых и, `outputToUSQL` соответственно, для передачи данных между U-S'SL и R. Имена идентификаторов DataFrame и выходных данных DataFrame фиксируются (т.е. пользователи не могут изменить эти предопределенные имена идентификаторов входных данных и вывода DataFrame).
+* Использование выделенных именованных кадров данных `inputFromUSQL` , `outputToUSQL` называемых и соответственно, для передачи данных между U-SQL и R. имена идентификаторов входного и выходного фрейма таблицы являются фиксированными (т. е. пользователи не могут изменять эти предопределенные имена идентификаторов кадров данных и входных и выходных).
 
 ## <a name="embedding-r-code-in-the-u-sql-script"></a>Внедрение кода R в скрипт U-SQL
 
@@ -206,7 +206,7 @@ ms.locfileid: "71672696"
 
     OUTPUT @RScriptOutput TO @OutputFileModelSummary USING Outputters.Tsv();
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
 * [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](data-lake-analytics-use-window-functions.md)

@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6d031546bb4f1f05e9ea2abb5b74fe911b0b507f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74007705"
 ---
 # <a name="azure-active-directory-reporting-latencies"></a>Задержки в отчетах Azure Active Directory
@@ -66,9 +66,9 @@ ms.locfileid: "74007705"
 
 ## <a name="risk-detections"></a>Обнаружение рисков
 
-Azure AD использует адаптивные алгоритмы машинного обучения и эвристические методы, чтобы обнаруживать подозрительные действия, связанные с вашими учетными записями. Каждое обнаруженное подозрительное действие хранится в записи, называемой **обнаружением риска.**
+Azure AD использует адаптивные алгоритмы машинного обучения и эвристические методы, чтобы обнаруживать подозрительные действия, связанные с вашими учетными записями. Каждое обнаруженное подозрительные действие хранится в записи, называемой **обнаружением рисков**.
 
-В следующей таблице перечислена информация о задержках для обнаружения рисков.
+В следующей таблице перечислены сведения о задержке для обнаружения рисков.
 
 | Report | Минимальные | Среднее | Максимальная |
 | :-- | --- | --- | --- |
@@ -84,4 +84,4 @@ Azure AD использует адаптивные алгоритмы машин
 
 * [Обзор отчетов Azure AD](overview-reports.md)
 * [Программный доступ к отчетам Azure Active Directory](concept-reporting-api.md).
-* [Обнаружение рисков активных каталогов Azure](concept-risk-events.md)
+* [Обнаружение рисков Azure Active Directory](concept-risk-events.md)

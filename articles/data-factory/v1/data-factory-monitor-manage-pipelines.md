@@ -1,5 +1,5 @@
 ---
-title: Мониторинг и управление конвейерами с помощью портала Azure и PowerShell
+title: Мониторинг конвейеров и управление ими с помощью портал Azure и PowerShell
 description: Сведения о том, как с помощью портала Azure и Azure PowerShell отслеживать состояние созданных конвейеров и фабрик данных Azure и управлять ими.
 services: data-factory
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.openlocfilehash: 44aadecfa80524345932c03abb51e8ebd040a902
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73666981"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
@@ -87,7 +87,7 @@ ms.locfileid: "73666981"
 
 <table>
 <tr>
-    <th align="left">Штат</th><th align="left">Подсостояние</th><th align="left">Описание</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
@@ -121,7 +121,7 @@ ms.locfileid: "73666981"
 <td>Срез обрабатывается.</td>
 </tr>
 <tr>
-<td rowspan="4">Ошибка</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Failed</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
 <td>Отменено</td><td>Срез был отменен пользователем.</td>
@@ -132,7 +132,7 @@ ms.locfileid: "73666981"
 <tr>
 <td>-</td><td>Не удалось создать и/или проверить срез.</td>
 </tr>
-<td>Ready</td><td>-</td><td>Срез готов к использованию.</td>
+<td>Готово</td><td>-</td><td>Срез готов к использованию.</td>
 </tr>
 <tr>
 <td>Пропущено</td><td>None</td><td>Срез не обрабатывается.</td>
@@ -173,7 +173,7 @@ ms.locfileid: "73666981"
 > [!NOTE] 
 > Представление схемы не поддерживает приостановку и возобновление конвейеров. Если вы хотите использовать пользовательский интерфейс, используйте приложение для мониторинга и управления. Чтобы узнать больше об этом приложении, ознакомьтесь со статьей [Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления](data-factory-monitor-manage-app.md). 
 
-Вы можете приостановить/приостановить конвейеры с помощью смдлета **Suspend-AzDataFactoryPipeline** PowerShell. Этот командлет полезен, если не требуется запускать конвейеры до устранения проблемы. 
+Приостанавливать и приостанавливать конвейеры можно с помощью командлета PowerShell **Suspend-аздатафакторипипелине** . Этот командлет полезен, если не требуется запускать конвейеры до устранения проблемы. 
 
 ```powershell
 Suspend-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
@@ -217,7 +217,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
 
 #### <a name="use-powershell-to-debug-an-error"></a>Отладка ошибок с помощью PowerShell
 1. Запустите **PowerShell**.
-2. Выполнить команду **Get-AzDataFactorySlice,** чтобы увидеть срезы и их статусы. Вы должны увидеть срез с состоянием **Сбой**.        
+2. Выполните команду **Get-аздатафакторислице** , чтобы просмотреть срезы и их состояния. Вы должны увидеть срез с состоянием **Сбой**.        
 
     ```powershell   
     Get-AzDataFactorySlice [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
@@ -229,7 +229,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     ```
 
    Замените **StartDateTime** на время запуска конвейера. 
-3. Теперь запустите cmdlet **Get-AzDataFactoryRun,** чтобы получить подробную информацию о действиях, запущенных для среза.
+3. Теперь выполните командлет **Get-аздатафакторирун** , чтобы получить сведения о выполнении действия для среза.
 
     ```powershell   
     Get-AzDataFactoryRun [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime]
@@ -267,7 +267,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     PipelineName            : EnrichGameLogsPipeline
     Type                    :
     ```
-5. Вы можете запустить cmdlet **Save-AzDataFactoryLog** со значением Id, которое вы видите из вывода, и загрузить файлы журнала с помощью **-DownloadLogsoption** для cmdlet.
+5. Вы можете запустить командлет **Save-аздатафакторилог** со значением идентификатора, отображаемым на выходе, и скачать файлы журнала с помощью командлета **-DownloadLogsoption** .
 
     ```powershell
     Save-AzDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39" -DownloadLogs -Output "C:\Test"
@@ -288,9 +288,9 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
 ![Исправление ошибок и проверка](./media/data-factory-monitor-manage-pipelines/fix-error-and-validate.png)
 
 ### <a name="use-azure-powershell"></a>Использование Azure PowerShell
-Вы можете перезапустить сбои с помощью **cmdlet Set-AzDataFactorySliceStatus.** Для синтаксиса и других подробностей о cmdlet смотрите тему [Set-AzDataFactorySliceStatus.](https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus)
+Ошибки можно повторно запустить с помощью командлета **Set-аздатафакторислицестатус** . Синтаксис и другие сведения о командлете см. в разделе [Set-аздатафакторислицестатус](https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus) .
 
-**Примере:**
+**Пример.**
 
 В следующем примере состояние всех срезов в таблице DAWikiAggregatedData в фабрике данных WikiADF меняется на Waiting.
 
@@ -309,7 +309,7 @@ Set-AzDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -Da
 
     ![Создание оповещения](media/data-factory-monitor-manage-pipelines/v1alerts-image2.png)
 
-3.  Определите **условия оповещения**. (Не забудьте выбрать **заводы данных** в **фильтре по полю типа ресурсов.)** Вы также можете указать значения для **измерений.**
+3.  Определите **условия оповещения**. (Не забудьте выбрать **фабрики данных** в поле **Фильтр по типу ресурса** .) Можно также указать значения для **измерений**.
 
     ![Определение условия оповещения — выбор цели](media/data-factory-monitor-manage-pipelines/v1alerts-image3.png)
 
@@ -317,7 +317,7 @@ Set-AzDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -Da
 
     ![Определение условия оповещения — добавление логики оповещения](media/data-factory-monitor-manage-pipelines/v1alerts-image5.png)
 
-4.  Определите **сведения оповещения**.
+4.  Укажите **сведения о предупреждении**.
 
     ![Определение сведений об оповещении](media/data-factory-monitor-manage-pipelines/v1alerts-image6.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Начало работы с хранением очередей с помощью Visual Studio (проекты WebJob)
+title: Начало работы с хранилищем очередей с помощью Visual Studio (проекты веб-заданий)
 description: Как приступить к работе, используя хранилище очередей Azure в проекте веб-задания после подключения к учетной записи хранения с использованием подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -14,10 +14,10 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: ffba203bafaf3837cd2d7fc1a6fd962a6926b186
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72298751"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-webjob-projects"></a>Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты веб-заданий)
@@ -89,10 +89,10 @@ public async static Task ProcessQueueMessageAsyncCancellationToken(
 ## <a name="types-the-queuetrigger-attribute-works-with"></a>Типы, с которыми используется атрибут QueueTrigger
 Атрибут **QueueTrigger** можно использовать со следующими типами:
 
-* **Строка**
+* **string**
 * тип POCO, сериализованный как JSON;
-* **байт**
-* **ОблакоКютюсообщения**
+* **byte[]**
+* **CloudQueueMessage**
 
 ## <a name="polling-algorithm"></a>Алгоритм опроса
 В пакете SDK реализован алгоритм случайной экспоненциальной отсрочки, который позволяет уменьшить влияние опроса очереди ожидающих задач на затраты на транзакции хранилища.  При обнаружении сообщения пакет SDK ожидает в течение двух секунд и затем проверяет, не поступило ли еще одно сообщение; если сообщение не найдено, он ожидает около четырех секунд перед повторной попыткой. После последующих неудачных попыток получения сообщения очереди время ожидания продолжает увеличиваться, пока не достигнет максимального времени ожидания, по умолчанию — одна минута. [Можно настроить максимальное время ожидания](#how-to-set-configuration-options).
@@ -112,7 +112,7 @@ public async static Task ProcessQueueMessageAsyncCancellationToken(
 * **DateTimeOffset** insertionTime
 * **DateTimeOffset** nextVisibleTime
 * **string** queueTrigger (содержит текст сообщения)
-* **строка** id
+* Идентификатор **строки**
 * **string** popReceipt
 * **int** dequeueCount
 
@@ -191,7 +191,7 @@ public static void GracefulShutdownDemo(
 Чтобы написать функцию, которая создает новое сообщение очереди, используйте атрибут **Queue** . Как и в случае с **QueueTrigger**, имя очереди можно передать в виде строки или [задать динамически](#how-to-set-configuration-options).
 
 ### <a name="string-queue-messages"></a>Строковые сообщения очереди
-Следующий пример неасинхронного кода создает новое сообщение очереди в очереди с именем «outputqueue» с тем же содержимым, что и сообщение очереди, поступившее в очередь с именем «inputqueue». (Для функций async используйте **IAsyncCollector\<T>** как показано позже в этом разделе.)
+Следующий пример неасинхронного кода создает новое сообщение очереди в очереди с именем «outputqueue» с тем же содержимым, что и сообщение очереди, поступившее в очередь с именем «inputqueue». (Для асинхронных функций **Используйте\<IAsyncCollector T>** , как показано далее в этом разделе.)
 
 ```csharp
 public static void CreateQueueMessage(
@@ -217,7 +217,7 @@ public static void CreateQueueMessage(
 Пакет SDK автоматически выполняет сериализацию объекта в формат JSON. Сообщение очереди создается всегда, даже если объект имеет значение null.
 
 ### <a name="create-multiple-messages-or-in-async-functions"></a>Создание нескольких сообщений или сообщений в асинхронных функциях
-Чтобы создать несколько сообщений, сделайте тип параметра для выходной очереди **\<ICollector T>** или **IAsyncCollector\<T>, **как показано в следующем примере.
+Чтобы создать несколько сообщений, сделайте тип параметра для выходной очереди **\<ICollector t>** или **\<IAsyncCollector t>**, как показано в следующем примере.
 
 ```csharp
 public static void CreateQueueMessages(
@@ -282,7 +282,7 @@ public static void ProcessQueueMessage(
 }
 ```
 
-Конструктор атрибута **Blob** учитывает параметр **blobPath**, который указывает контейнер и имя большого двоичного объекта. Для получения дополнительной информации об этом заполнителе см. [Как использовать хранилище Azure blob с помощью WebJobs SDK](https://github.com/Azure/azure-webjobs-sdk/wiki).
+Конструктор атрибута **Blob** учитывает параметр **blobPath**, который указывает контейнер и имя большого двоичного объекта. Дополнительные сведения об этом заполнителе см. в статье [Использование хранилища BLOB-объектов Azure с пакетом SDK](https://github.com/Azure/azure-webjobs-sdk/wiki)для веб-заданий.
 
 Если атрибут декорирует объект **Stream**, другой параметр конструктора задает режим **FileAccess** как режим чтения, записи или чтения и записи.
 

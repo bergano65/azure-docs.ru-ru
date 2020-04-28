@@ -1,5 +1,5 @@
 ---
-title: Нанастройка оповещений безопасности для ролей ресурсов Azure в привилегированном управлении identity - Активный каталог Azure Документы Майкрософт
+title: Настройка оповещений системы безопасности для ролей ресурсов Azure в управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить оповещения системы безопасности для ролей ресурсов Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -16,23 +16,23 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f0b938dc808d9b02ad4105d85a5b3125135c51d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74023087"
 ---
-# <a name="configure-security-alerts-for-azure-resource-roles-in-privileged-identity-management"></a>Настройка предупреждений безопасности для ролей ресурсов Azure в Привилегированном управлении identity
+# <a name="configure-security-alerts-for-azure-resource-roles-in-privileged-identity-management"></a>Настройка оповещений системы безопасности для ролей ресурсов Azure в управление привилегированными пользователями
 
-Привилегированное управление идентификацией (PIM) генерирует оповещения при подозрительной или небезопасной деятельности в организации Azure Active Directory (Azure AD). Активированные оповещения отображаются на странице "Оповещения".
+Управление привилегированными пользователями (PIM) создает оповещения при наличии подозрительных или ненадежных действий в Организации Azure Active Directory (Azure AD). Активированные оповещения отображаются на странице "Оповещения".
 
-![Ресурсы Azure - Оповещение о включении страницы оповещения, уровня риска и подсчета](media/pim-resource-roles-configure-alerts/rbac-alerts-page.png)
+![Ресурсы Azure. страница оповещений с перечнем предупреждений, уровня риска и количества](media/pim-resource-roles-configure-alerts/rbac-alerts-page.png)
 
 ## <a name="review-alerts"></a>Просмотр оповещений
 
-Выберите оповещение, чтобы просмотреть отчет, в который перечислены пользователи или роли, которые вызвали оповещение, а также руководство по исправлению положения.
+Выберите оповещение, чтобы просмотреть отчет, в котором перечислены пользователи или роли, которые активировали оповещение, а также руководство по исправлению.
 
-![Отчет о предупреждениях, показывающий последнее время сканирования, описание, шаги смягчения, тип, тяжесть, влияние на безопасность и способы предотвращения в следующий раз](media/pim-resource-roles-configure-alerts/rbac-alert-info.png)
+![Отчет о предупреждениях, показывающий время последнего сканирования, описание, шаги по устранению рисков, тип, серьезность, влияние на безопасность и способы предотвращения следующего времени](media/pim-resource-roles-configure-alerts/rbac-alert-info.png)
 
 ## <a name="alerts"></a>видны узлы
 
@@ -52,12 +52,12 @@ ms.locfileid: "74023087"
 
 Со страницы оповещений перейдите к **параметрам**.
 
-![Страница оповещения с выделенными настройками](media/pim-resource-roles-configure-alerts/rbac-navigate-settings.png)
+![Страница "оповещения" с выделенными параметрами](media/pim-resource-roles-configure-alerts/rbac-navigate-settings.png)
 
 Настройте для оповещений параметры, которые подходят для вашей среды и целей безопасности.
 
-![Настройка страницы для оповещения для включения и настройки настроек](media/pim-resource-roles-configure-alerts/rbac-alert-settings.png)
+![Настройка страницы оповещения для включения и настройки параметров](media/pim-resource-roles-configure-alerts/rbac-alert-settings.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Настройка параметров роли ресурсов Azure в привилегированном управлении идентификацией](pim-resource-roles-configure-role-settings.md)
+- [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)

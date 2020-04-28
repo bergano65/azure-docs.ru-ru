@@ -1,5 +1,5 @@
 ---
-title: 'Приложения SaaS: Гео-излишние резервные копирования для аварийного восстановления'
+title: 'Приложения SaaS: геоизбыточные резервные копии для аварийного восстановления'
 description: Узнайте, как использовать геоизбыточные резервные копии базы данных SQL Azure для восстановления мультитенантных приложений SaaS в случае сбоя
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: craigg
 ms.reviewer: sstein
 ms.date: 01/14/2019
 ms.openlocfilehash: 270fc157fa14efa19ed30d35b614fb769804b72e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73826458"
 ---
 # <a name="use-geo-restore-to-recover-a-multitenant-saas-application-from-database-backups"></a>Использование геовосстановления для восстановления мультитенантного приложения SaaS из резервных копий базы данных
@@ -29,7 +29,7 @@ ms.locfileid: "73826458"
 > [!NOTE]
 > Чтобы добиться минимальных значений RPO и RTO при восстановлении приложений, используйте георепликацию вместо геовосстановления.
 
-В этом руководстве рассматриваются рабочие процессы восстановления и репатриации. Вы узнаете, как выполнять следующие задачи:
+В этом руководстве рассматриваются рабочие процессы восстановления и репатриации. Вы научитесь:
 > [!div class="checklist"]
 > 
 > * синхронизация сведений о конфигурации базы данных и эластичного пула с каталогом клиента;
@@ -41,8 +41,8 @@ ms.locfileid: "73826458"
  
 
 Перед началом работы с этим руководством выполните следующие обязательные действия:
-* Разверните приложение SaaS Wingtip Tickets с однотенантной базой данных. Чтобы развернуть менее чем за пять минут, см [Развертывание и изучить базу данных Wingtip Билеты SaaS на клиента приложения](saas-dbpertenant-get-started-deploy.md). 
-* Установите Azure PowerShell. Для получения подробной информации [см.](https://docs.microsoft.com/powershell/azure/get-started-azureps)
+* Разверните приложение SaaS Wingtip Tickets с однотенантной базой данных. Сведения о развертывании менее чем за пять минут см. в разделе [развертывание и изучение приложения SaaS Wingtip Tickets для каждого клиента](saas-dbpertenant-get-started-deploy.md). 
+* Установите Azure PowerShell. Дополнительные сведения см. [в статье Приступая к работе с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 
 ## <a name="introduction-to-the-geo-restore-recovery-pattern"></a>Введение в шаблон восстановления с использованием шаблона геовосстановления
 

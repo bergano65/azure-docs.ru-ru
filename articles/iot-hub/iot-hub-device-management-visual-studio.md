@@ -1,5 +1,5 @@
 ---
-title: Управление устройством Azure IoT без Визуальной студии Cloud Explorer
+title: Управление устройствами Azure IoT с Cloud Explorer Visual Studio
 description: Управляйте устройствами Интернета вещей Azure с помощью Cloud Explorer для Visual Studio, используя прямые методы и возможности управления требуемыми свойствами двойника.
 author: shizn
 ms.service: iot-hub
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
 ms.openlocfilehash: 6fe5a45dda6632c56b3c6714827950e25e7d26af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73953184"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью Cloud Explorer для Visual Studio
@@ -35,11 +35,11 @@ ms.locfileid: "73953184"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-В этой статье вы узнаете, как использовать Cloud Explorer для Visual Studio с различными вариантами управления на компьютере разработки.
+Из этой статьи вы узнаете, как использовать Cloud Explorer для Visual Studio с различными параметрами управления на компьютере разработчика.
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
-В этой статье запустите Cloud Explorer для Visual Studio с различными вариантами управления.
+В этой статье выполните Cloud Explorer для Visual Studio с различными вариантами управления.
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
@@ -49,49 +49,49 @@ ms.locfileid: "73953184"
 
 - Центр Интернета вещей Azure в подписке.
 
-- Microsoft Visual Studio 2017 Обновление 9 или более поздней версии. Эта статья использует [Visual Studio 2017 или Visual Studio 2019](https://www.visualstudio.com/vs/).
+- Microsoft Visual Studio 2017 с обновлением 9 или более поздней версии. В этой статье используется [Visual studio 2017 или Visual studio 2019](https://www.visualstudio.com/vs/).
 
-- Компонент Cloud Explorer от Visual Studio Installer, который по умолчанию выбирается с помощью рабочей нагрузки Azure.
+- Cloud Explorer компонент из Visual Studio Installer, который выбран по умолчанию в рабочей нагрузке Azure.
 
 ## <a name="update-cloud-explorer-to-latest-version"></a>Обновление Cloud Explorer до последней версии
 
-Компонент Cloud Explorer от Visual Studio Installer for Visual Studio 2017 поддерживает только мониторинг сообщений от устройства к облаку и облачным устройствам. Чтобы использовать Visual Studio 2017, загрузите и установите новейший [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS).
+Компонент Cloud Explorer из Visual Studio Installer для Visual Studio 2017 поддерживает мониторинг сообщений, отправляемых с устройства в облако и из облака на устройство. Чтобы использовать Visual Studio 2017, скачайте и установите последнюю версию [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS).
 
-## <a name="sign-in-to-access-your-hub"></a>Войти на вход, чтобы получить доступ к концентратору
+## <a name="sign-in-to-access-your-hub"></a>Войдите, чтобы получить доступ к концентратору
 
-1. В Visual Studio выберите **View** > **Cloud Explorer,** чтобы открыть Cloud Explorer.
+1. В Visual Studio выберите **Просмотреть** > **Cloud Explorer** , чтобы открыть Cloud Explorer.
 
-1. Выберите значок управления учетной записью, чтобы показать подписку.
+1. Щелкните значок управления учетной записью, чтобы отобразить подписки.
 
-    ![Значок управления счетами](media/iot-hub-visual-studio-cloud-device-messaging/account-management-icon.png)
+    ![Значок управления учетной записью](media/iot-hub-visual-studio-cloud-device-messaging/account-management-icon.png)
 
-1. Если вы вписались в Azure, отображаются учетные записи. Чтобы войти в Azure в первый раз, **выберите учетную запись**.
+1. Если вы вошли в Azure, ваши учетные записи будут отображаться. Чтобы войти в Azure в первый раз, выберите **Добавить учетную запись**.
 
-1. Выберите подписи Azure, которые вы хотите использовать, и выберите **Apply.**
+1. Выберите подписки Azure, которые вы хотите использовать, и нажмите кнопку **Применить**.
 
-1. Расширьте подписку, а затем расширьте **концентраторы IoT.**  Под каждым концентратором можно увидеть устройства для этого концентратора. Щелкните устройство правой кнопкой мыши, чтобы получить доступ к параметрам управления.
+1. Разверните подписку, а затем — **центры Интернета вещей**.  В каждом концентраторе можно увидеть устройства для этого центра. Щелкните устройство правой кнопкой мыши, чтобы получить доступ к параметрам управления.
 
     ![Параметры управления](media/iot-hub-device-management-visual-studio/management-options-vs2019.png)
 
 ## <a name="direct-methods"></a>Прямые методы
 
-Чтобы использовать прямые методы, сделайте следующие шаги:
+Чтобы использовать прямые методы, выполните следующие действия.
 
 1. Щелкните устройство правой кнопкой мыши и выберите **Invoke Device Direct Method** (Вызвать прямой метод устройства).
 
-1. Введите имя метода и полезную нагрузку в **Invoke Direct Method,** а затем выберите **OK.**
+1. Введите имя метода и полезные данные в **вызове прямого метода**, а затем нажмите кнопку **ОК**.
 
     Результаты отображаются в **выходных данных**.
 
 ## <a name="update-device-twin"></a>Обновление двойников устройств
 
-Чтобы отсеять устройство-близнец, сделайте следующие шаги:
+Чтобы изменить двойника устройства, выполните следующие действия.
 
 1. Щелкните устройство правой кнопкой мыши и выберите **Изменить двойник устройства**.
 
-   **Лазурный-iot-устройство-twin.json** файл открывается с содержанием устройства близнеца.
+   Откроется файл **Azure-IOT-Device-двойника. JSON** с содержимым двойникаа устройства.
 
-1. Внедрите некоторые влитые **теги** или **свойства.желаемых** полей к файлу **azure-iot-device-twin.json.**
+1. Внесите некоторые изменения в **теги** или **Свойства. необходимые** поля в файл **Azure-IOT-Device-двойника. JSON** .
 
 1. Нажмите клавиши **CTRL+S**, чтобы обновить двойник устройства.
 
@@ -103,7 +103,7 @@ ms.locfileid: "73953184"
 
 1. Щелкните правой кнопкой мыши свое устройство и выберите **Send C2D Message** (Отправить сообщение C2D).
 
-1. Введите сообщение в **сообщении Send C2D** и выберите **OK.**
+1. Введите сообщение в поле **Отправка сообщения C2D** и нажмите кнопку **ОК**.
 
    Результаты отображаются в **выходных данных**.
 

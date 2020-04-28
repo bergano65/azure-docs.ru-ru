@@ -1,5 +1,5 @@
 ---
-title: Обновление до Azure Search .NET SDK версия 1.1
+title: Обновление до пакета SDK .NET для поиска Azure версии 1,1
 titleSuffix: Azure Cognitive Search
 description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 1.1 с предыдущих версий API. Сведения о новых возможностях и необходимых изменениях кода.
 manager: nitinme
@@ -10,13 +10,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 159aaa8424c3d7a711b587464b80696929f02186
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72792386"
 ---
-# <a name="upgrade-to-azure-search-net-sdk-version-11"></a>Обновление до Azure Search .NET SDK версия 1.1
+# <a name="upgrade-to-azure-search-net-sdk-version-11"></a>Обновление до пакета SDK .NET для поиска Azure версии 1,1
 
 Если вы используете версию 1.0.2-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то эта статья поможет вам обновить приложение для использования версии 1.1.
 

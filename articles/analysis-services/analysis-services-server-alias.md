@@ -1,6 +1,6 @@
 ---
 title: Псевдонимы сервера Azure Analysis Services | Документация Майкрософт
-description: Узнайте, как создать псевдонимы сервера Azure Analysis Services с именем. Пользователи могут подключиться к серверу с более коротким псевдонимом вместо имени сервера.
+description: Узнайте, как создавать псевдонимы имен серверов Azure Analysis Services. После этого пользователи смогут подключаться к серверу с более коротким именем псевдонима вместо имени сервера.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 10/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 5e7017fad90e32cb8c4b952987fe248e463e4d03
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73572295"
 ---
 # <a name="alias-server-names"></a>Псевдонимы сервера
@@ -54,5 +54,5 @@ protected void Page_Load(object sender, EventArgs e)
 
 ## <a name="see-also"></a>См. также
 
-[Библиотеки клиентов](analysis-services-data-providers.md)   
+[Клиентские библиотеки](analysis-services-data-providers.md)   
 [Подключение из Power BI Desktop](analysis-services-connect-pbi.md)

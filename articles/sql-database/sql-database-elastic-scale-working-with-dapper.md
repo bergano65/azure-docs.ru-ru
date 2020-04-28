@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
 ms.openlocfilehash: 83d24d45d7628a2e02068c8757fa6568d6d3fc37
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73823473"
 ---
 # <a name="using-elastic-database-client-library-with-dapper"></a>Использование клиентской библиотеки эластичной базы данных с Dapper
@@ -83,7 +83,7 @@ ms.locfileid: "73823473"
 
 Объект сопоставления сегментов создает открытое подключение к сегменту, в котором содержится шардлет, соответствующий заданному ключу сегментирования. Клиентские API-интерфейсы эластичной базы данных также помечают подключение тегом для реализации гарантий согласованности. Так как при вызове [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) возвращается регулярный объект подключения клиента SQL, последующий вызов метода расширения **Execute** из Dapper выполняется по стандартной схеме.
 
-Запросы работают почти так же - сначала вы открываете соединение с помощью [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) от aPI клиента. а затем используются регулярные методы расширения Dapper для сопоставления результатов SQL-запроса в объектах .NET:
+Запросы работают почти так же, как сначала вы открываете подключение с помощью [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) из API клиента. а затем используются регулярные методы расширения Dapper для сопоставления результатов SQL-запроса в объектах .NET:
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
                     key: tenantId1,

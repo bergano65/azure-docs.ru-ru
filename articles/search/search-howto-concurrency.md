@@ -1,7 +1,7 @@
 ---
-title: Как управлять параллельными записами на ресурсы
+title: Управление параллельными операциями записи в ресурсы
 titleSuffix: Azure Cognitive Search
-description: Используйте оптимистичную параллелизм, чтобы избежать столкновений в воздухе при обновлениях или удалениях в индексы Azure Cognitive Search, индексы, источники данных.
+description: Используйте оптимистичный параллелизм, чтобы избежать конфликтов середины воздуха при обновлениях или удалениях в Azure Когнитивный поиск индексы, индексаторы и источники данных.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
@@ -9,18 +9,18 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: edfb2fe5cc37a00335ca7b5be851a88825b03eb1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72792215"
 ---
-# <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Как управлять параллелизмом в Azure Cognitive Search
+# <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Управление параллелизмом в Azure Когнитивный поиск
 
-При управлении ресурсами Azure Cognitive Search, такими как индексы и источники данных, важно безопасно обновлять ресурсы, особенно если доступ к ресурсам осуществляется одновременно различными компонентами приложения. Если два клиента одновременно обновляют ресурс, не координируя свои действия, то могут возникать состояния гонки. Чтобы предотвратить это, Azure Cognitive Search предлагает *оптимистичную модель параллелизма.* При этом в отношении ресурса нет никаких блокировок. Для каждого ресурса существует тег ETag, который определяет версию ресурса. Это позволяет создавать запросы, избегая случайных перезаписей.
+При управлении ресурсами Когнитивный поиск Azure, такими как индексы и источники данных, важно безопасно обновлять ресурсы, особенно если доступ к ресурсам осуществляется параллельно разными компонентами приложения. Если два клиента одновременно обновляют ресурс, не координируя свои действия, то могут возникать состояния гонки. Чтобы избежать этого, Azure Когнитивный поиск предлагает *модель оптимистичного параллелизма*. При этом в отношении ресурса нет никаких блокировок. Для каждого ресурса существует тег ETag, который определяет версию ресурса. Это позволяет создавать запросы, избегая случайных перезаписей.
 
 > [!Tip]
-> Концептуальный код в [выборке решения с C объясняет,](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) как работает контроль параллелизма в Azure Cognitive Search. Код создает условия, которые вызывают управление параллелизмом. Большинству разработчиков, скорее всего, достаточно будет прочитать [приведенный ниже фрагмент кода](#samplecode), но если вы хотите выполнить его, то измените файл appsettings.json, добавив имя службы и ключ API администратора. URL-адрес службы — `http://myservice.search.windows.net`, а имя службы — `myservice`.
+> Концептуальный код в [примере решения C#](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) объясняет, как работает управление параллелизмом в Azure когнитивный Поиск. Код создает условия, которые вызывают управление параллелизмом. Большинству разработчиков, скорее всего, достаточно будет прочитать [приведенный ниже фрагмент кода](#samplecode), но если вы хотите выполнить его, то измените файл appsettings.json, добавив имя службы и ключ API администратора. URL-адрес службы — `http://myservice.search.windows.net`, а имя службы — `myservice`.
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -169,7 +169,7 @@ ms.locfileid: "72792215"
 
 Конструктивный шаблон для реализации оптимистической блокировки должен включать в себя цикл повторных попыток проверки условия доступа, тест для условия доступа и, при необходимости, должен получать обновленный ресурс перед попыткой повторного применения изменений.
 
-В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код — пример [Synonym C для Azure Cognitive Search.](search-synonyms-tutorial-sdk.md)
+В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код из примера на [C# синонима для Azure когнитивный Поиск](search-synonyms-tutorial-sdk.md).
 
 Этот фрагмент получает индекс "hotels", проверяет версию объекта при операции обновления, порождает исключение, если условие не выполняется, а затем совершает повторную попытку операции (до трех раз), начиная с извлечения индекса с сервера, чтобы получить последнюю версию.
 
@@ -211,11 +211,11 @@ ms.locfileid: "72792215"
 
 Попробуйте изменить один из следующих примеров, включив теги ETags или объекты AccessCondition.
 
-+ [Образец API REST на GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
-+ [образца SDK .NET на GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started). Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
++ [REST API пример на GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
++ [Пример пакета SDK для .NET на сайте GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started). Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
 
 ## <a name="see-also"></a>См. также
 
 [Общие](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)
-операции[индекса индексов индекса статусов](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)
-HTTP запроса и заголовки ответов HTTP[(REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)
+
+[коды состояния HTTP](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)для операций с индексами HTTP-запросов и ответов[(REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)

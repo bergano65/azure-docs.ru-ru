@@ -1,5 +1,5 @@
 ---
-title: Запросы отчетности в нескольких базах данных
+title: Создание отчетов о запросах в нескольких базах данных
 description: Сведения о формировании отчетов по всем клиентам с использованием распределенных запросов.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewers: billgib,ayolubek
 ms.date: 01/25/2019
 ms.openlocfilehash: c863946934df9990c14e49ef1a0a82bbc55b27c6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73822078"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Отчеты по всем клиентам с использованием распределенных запросов
@@ -35,7 +35,7 @@ ms.locfileid: "73822078"
 Для работы с этим руководством выполните следующие предварительные требования:
 
 
-* Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. Чтобы развернуть менее чем за пять минут, см [Развертывание и изучить Wingtip Билеты SaaS Базы данных для арендатора приложения](saas-dbpertenant-get-started-deploy.md)
+* Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. Сведения о развертывании менее чем за пять минут см. в статье [развертывание и изучение приложения SaaS Wingtip Tickets для каждого клиента](saas-dbpertenant-get-started-deploy.md) .
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Установите SQL Server Management Studio (SSMS). Сведения о том, как скачать и установить SSMS, см. в статье [Скачивание SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 
@@ -52,7 +52,7 @@ ms.locfileid: "73822078"
 
 ## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Получение скриптов для SaaS-приложения Wingtip Tickets c однотенантной БД
 
-Скрипты Ибн-антеролетов Wingtip SaaS Multi-tenant Database и исходный код приложения доступны в репо [WingtipTicketsSaAS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) GitHub. Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
+Скрипты и исходный код приложения SaaS Wingtip Tickets для баз данных с несколькими клиентами доступны в репозитории GitHub [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) . Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 
 ## <a name="create-ticket-sales-data"></a>Создание данных о продажах билетов
 
@@ -95,7 +95,7 @@ ms.locfileid: "73822078"
    ![узел "Представления"](media/saas-tenancy-cross-tenant-reporting/views.png)
 
 2. Щелкните **dbo.Venues** правой кнопкой мыши.
-3. Выберите **представление сценария как** > **CREATE To** > **New Query Editor Window**
+3. Выберите **создать скрипт для представления** > "**Создание в** > **новом окне редактора запросов** ".
 
 Создайте сценарий, используя любые другие представления *Venue*, чтобы увидеть, как они добавляют *VenueId*.
 
@@ -105,7 +105,7 @@ ms.locfileid: "73822078"
 
 1. В *интегрированной среде сценариев PowerShell* откройте сценарий \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReporting.ps1*. 
 
-1. Установить **$DemoScenario No 2**, Развертывание _специальной базы данных отчетности_.
+1. Установите **$DemoScenario = 2**, _разверните базу данных автоматизированной нерегламентированной отчетности_.
 
 1. Нажмите клавишу **F5**, чтобы выполнить скрипт и создать базу данных *adhocreporting*.
 
@@ -147,7 +147,7 @@ ms.locfileid: "73822078"
 
 При проверке плана выполнения наведите указатель мыши на значки плана, чтобы получить дополнительные сведения. 
 
-Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)**, заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Как и каждая *карта VenueId* в отдельной базе данных, фильтрация легко выполняется удаленно, возвращая только необходимые данные.
+Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)**, заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждый *VenueId* сопоставляется с отдельной базой данных, фильтрация легко выполняется удаленно, возвращая только необходимые данные.
 
 1. В SSMS откройте файл \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReportingQueries.sql*.
 2. Убедитесь в наличии подключения к базе данных **adhocreporting**.
@@ -190,4 +190,4 @@ ms.locfileid: "73822078"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * Дополнительные [руководства по SaaS-приложению Wingtip Tickets c однотенантной БД](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
-* [Упругий запрос](sql-database-elastic-query-overview.md)
+* [Эластичный запрос](sql-database-elastic-query-overview.md)

@@ -12,10 +12,10 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 02/13/2019
 ms.openlocfilehash: 9c627c3e597fdcd3859ce02ea208fc7a8b5d612b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73822855"
 ---
 # <a name="manage-rolling-upgrades-of-cloud-applications-by-using-sql-database-active-geo-replication"></a>Управление последовательными обновлениями для облачных приложений с помощью активной георепликации базы данных SQL
@@ -109,7 +109,7 @@ ALTER DATABASE <Prod_DB>
 SET (ALLOW_CONNECTIONS = NO)
 ```
 
-2. Прекратить георепликацию путем отключения вторичного (11). При этом создается независимая, но полностью синхронизированная копия рабочей базы данных-источника. Эта база данных будет обновлена. В следующем примере используется Transact-S'L, но [PowerShell](/powershell/module/az.sql/remove-azsqldatabasesecondary?view=azps-1.5.0) также доступна. 
+2. Завершите георепликацию, отменив соединение с получателем (11). При этом создается независимая, но полностью синхронизированная копия рабочей базы данных-источника. Эта база данных будет обновлена. В следующем примере используется язык Transact-SQL, но также доступен [PowerShell](/powershell/module/az.sql/remove-azsqldatabasesecondary?view=azps-1.5.0) . 
 
 ```sql
 -- Disconnect the secondary, terminating geo-replication
@@ -150,8 +150,8 @@ REMOVE SECONDARY ON SERVER <Partner-Server>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Для обзора непрерывности бизнеса и [Business continuity overview](sql-database-business-continuity.md)сценариев см.
-* Чтобы узнать об активной георепликации базы данных Azure S'L, [см.](sql-database-active-geo-replication.md)
+* Общие сведения о непрерывности бизнес-процессов и сценарии см. в статье [Обзор непрерывности бизнес-процессов](sql-database-business-continuity.md).
+* Дополнительные сведения об активной георепликации базы данных SQL Azure см. в статье [Создание считываемых баз данных-получателей с помощью активной георепликации](sql-database-active-geo-replication.md).
 * Сведения о группах автоматической отработки отказа Базы данных SQL Azure см. в статье [Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных](sql-database-auto-failover-group.md).
 * Сведения о промежуточных средах в Службе приложений Azure см. в статье [Настройка промежуточных сред в Службе приложений Azure](../app-service/deploy-staging-slots.md).
 * Сведения о профилях диспетчера трафика Azure см. в статье [Управление профилем диспетчера трафика Azure](../traffic-manager/traffic-manager-manage-profiles.md).

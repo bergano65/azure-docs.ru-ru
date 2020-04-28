@@ -1,16 +1,16 @@
 ---
-title: Аутентификация от обслуживания к обслуживанию - Data Lake Storage Gen1 - REST API
-description: Узнайте, как обеспечить аутентификацию системы обслуживания с помощью Azure Data Lake Storage Gen1 и Active Directory Azure с помощью REST API.
+title: Проверка подлинности между службами — Data Lake Storage 1-го поколения-REST API
+description: Узнайте, как обеспечить проверку подлинности между службами с помощью Azure Data Lake Storage 1-го поколения и Azure Active Directory использования REST API.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 59d0bf20b16beda47d76e6a9940ac9fa4436da3f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73904517"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-rest-api"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с использованием REST API
@@ -22,7 +22,7 @@ ms.locfileid: "73904517"
 > 
 > 
 
-В этой статье вы узнаете, как использовать REST API для проверки подлинности обслуживания с помощью Azure Data Lake Storage Gen1. Дополнительные сведения об аутентификации пользователей в Azure Data Lake Storage 1-го поколения с помощью REST API см. в статье [Аутентификация пользователей в Azure Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-end-user-authenticate-rest-api.md).
+Из этой статьи вы узнаете, как использовать REST API для проверки подлинности между службами с помощью Azure Data Lake Storage 1-го поколения. Дополнительные сведения об аутентификации пользователей в Azure Data Lake Storage 1-го поколения с помощью REST API см. в статье [Аутентификация пользователей в Azure Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-end-user-authenticate-rest-api.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,5 +50,5 @@ ms.locfileid: "73904517"
 
 В этой статье описывается, как использовать аутентификацию между службами, чтобы реализовать аутентификацию в Data Lake Storage 1-го поколения с помощью REST API. Дополнительные сведения об использовании REST API для работы с Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Операции по управлению счетами на Data Lake Storage Gen1 с помощью REST API](data-lake-store-get-started-rest-api.md)
+* [Операции управления учетными записями для Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-get-started-rest-api.md)
 * [Операции с данными в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-data-operations-rest-api.md)

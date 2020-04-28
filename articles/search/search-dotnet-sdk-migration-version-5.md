@@ -1,5 +1,5 @@
 ---
-title: Обновление до Azure Search .NET SDK версия 5
+title: Обновление до пакета SDK .NET для поиска Azure версии 5
 titleSuffix: Azure Cognitive Search
 description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 5 с предыдущих версий. Сведения о новых возможностях и необходимых изменениях кода.
 manager: nitinme
@@ -10,13 +10,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: bb0cd191ba7e5939c55d11b484ed7a2c422f8c6d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72793027"
 ---
-# <a name="upgrade-to-azure-search-net-sdk-version-5"></a>Обновление до Azure Search .NET SDK версия 5
+# <a name="upgrade-to-azure-search-net-sdk-version-5"></a>Обновление до пакета SDK .NET для поиска Azure версии 5
 
 Если вы используете версию 4.0-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то сведения в этой статье помогут вам обновить приложение для использования версии 5.
 
@@ -98,6 +98,6 @@ ms.locfileid: "72793027"
 ## <a name="conclusion"></a>Заключение
 Если вам нужны дополнительные сведения об использовании пакета SDK .NET для службы поиска Azure, то ознакомьтесь с [практическим руководством по .NET](search-howto-dotnet-sdk.md).
 
-Будем рады вашим отзывам о пакете SDK. Если вы столкнулись с проблемами, не стесняйтесь обратиться к нам за помощью на [стек переполнения](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
+Будем рады вашим отзывам о пакете SDK. При возникновении проблем вы можете попросить нас получить помощь по [Stack overflow](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
 
 Благодарим вас за использование поиска Azure!

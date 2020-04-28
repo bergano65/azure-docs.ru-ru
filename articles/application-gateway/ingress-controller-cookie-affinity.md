@@ -1,6 +1,6 @@
 ---
-title: Включить сродство на основе файлов cookie с шлюзом приложений
-description: В этой статье содержится информация о том, как включить сродство на основе файлов cookie с шлюзом приложения.
+title: Включение сходства на основе файлов cookie с помощью шлюза приложений
+description: В этой статье содержатся сведения о том, как включить сходство на основе файлов cookie с шлюзом приложений.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -8,14 +8,14 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: adacd805e736524fd7956c4bbc0ad402980b4cd0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73795976"
 ---
-# <a name="enable-cookie-based-affinity-with-an-application-gateway"></a>Включить cookie основе сродства с приложением шлюз
-Как указано в [документации Azure Application Gateway,](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#http-settings)Application Gateway поддерживает сродство на основе файлов cookie, что означает, что он может направлять последующий трафик от сеанса пользователя к тому же серверу для обработки.
+# <a name="enable-cookie-based-affinity-with-an-application-gateway"></a>Включение сходства на основе файлов cookie с шлюзом приложений
+Как описано в [документации по шлюзу приложений Azure](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#http-settings), шлюз приложений поддерживает сопоставление на основе файлов cookie. Это означает, что он может направить последующий трафик из сеанса пользователя на тот же сервер для обработки.
 
 ## <a name="example"></a>Пример
 ```yaml

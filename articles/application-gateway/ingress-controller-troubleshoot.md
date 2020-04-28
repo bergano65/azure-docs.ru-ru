@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок в контроллере входа в приложение
-description: В этой статье приводится документация о том, как устранить общие вопросы и/или проблемы с контроллером входа в приложение.
+title: Устранение неполадок контроллера входящего трафика шлюза приложений
+description: Эта статья содержит документацию по устранению распространенных вопросов и/или проблем с контроллером входящего трафика шлюза приложений.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -8,27 +8,27 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: a64a9ce5e080308674893273e90a0e83686e339e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73795513"
 ---
-# <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>Устранение проблем наобщиваемых вопросов или проблем с контроллером Ingress
+# <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>Устранение распространенных вопросов и проблем с контроллером входящего трафика
 
-[Azure Cloud Shell](https://shell.azure.com/) — это самый удобный способ устранения неполадок при установке AKS и AGIC. Запустите оболочку с [shell.azure.com](https://shell.azure.com/) или нажав на ссылку:
+[Azure Cloud Shell](https://shell.azure.com/) — это наиболее удобный способ устранения проблем с установкой AKS и агик. Запустите оболочку из [Shell.Azure.com](https://shell.azure.com/) или щелкните ссылку:
 
-[![Встраиваемый запуск](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
 
 
-## <a name="test-with-a-simple-kubernetes-app"></a>Тест с помощью простого приложения Kubernetes
+## <a name="test-with-a-simple-kubernetes-app"></a>Тестирование с помощью простого приложения Kubernetes
 
-Приведенные ниже шаги предполагают:
-  - У вас есть кластер AKS с включенным расширенным сетью
-  - AGIC установлен на кластере AKS
-  - Вы уже hav шлюз приложения на VNET совместно с вашим кластером AKS
+Ниже предполагается, что выполняются следующие действия.
+  - У вас есть кластер AKS с включенной поддержкой расширенных сетей
+  - АГИК установлен в кластере AKS
+  - Вы уже закончите шлюз приложений в виртуальной сети, совместно используемой кластером AKS.
 
-Чтобы убедиться, что установка Приложения Gateway и AKS AGIC настроена правильно, разместите простейшую из возможных приложений:
+Чтобы убедиться, что установка шлюза приложений + AKS + АГИК правильно настроена, разверните простейшее возможное приложение:
 
 ```bash
 cat <<EOF | kubectl apply -f -
@@ -76,64 +76,64 @@ spec:
 EOF
 ```
 
-Копируйте и вставьте все строки сразу из приведенного выше сценария в [облачную оболочку Azure.](https://shell.azure.com/) Пожалуйста, убедитесь, что вся команда скопирована - начиная с `cat` и включая последнюю `EOF`.
+Скопируйте и вставьте все строки из приведенного выше сценария в [Azure Cloud Shell](https://shell.azure.com/). Убедитесь, что скопирована вся команда — начиная с `cat` и включая последнюю `EOF`.
 
 ![apply](./media/application-gateway-ingress-controller-troubleshooting/tsg--apply-config.png)
 
-После успешного развертывания приложения над кластером AKS появится новый Pod, Service и Ingress.
+После успешного развертывания приложения, расположенного выше, в кластере AKS будет создан новый модуль Pod, служба и входящий трафик.
 
-Получить список стручков с `kubectl get pods -o wide` [облачной оболочки](https://shell.azure.com/): .
-Мы ожидаем, что будет создан аст под именем 'Test-agic-app-pod'. Он будет иметь IP-адрес. Этот адрес должен быть в пределах VNET шлюза приложения, который используется с AKS.
+Получите список модулей Pod с [Cloud Shell](https://shell.azure.com/): `kubectl get pods -o wide`.
+Мы планируем создать Pod с именем Test-агик-App-Pod. Он будет иметь IP-адрес. Этот адрес должен находиться в виртуальной сети шлюза приложений, используемом с AKS.
 
-![Стручки](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-pods.png)
+![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-pods.png)
 
-Получить список услуг: `kubectl get services -o wide`. Мы ожидаем увидеть службу под названием "тест-агика-приложение-сервис".
+Получить список служб: `kubectl get services -o wide`. Мы планируем Просмотреть службу с именем Test-агик-App-Service.
 
-![Стручки](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-services.png)
+![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-services.png)
 
-Получить список входов: `kubectl get ingress`. Мы ожидаем, что был создан ресурс Ingress под названием 'Test-agic-app-ingress'. Ресурс будет иметь название хозяина "test.agic.contoso.com".
+Получите список передает: `kubectl get ingress`. Предполагается, что для входящего ресурса с именем Test-агик-App-Authenticator были созданы. Ресурс будет иметь имя узла "test.agic.contoso.com".
 
-![Стручки](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-ingress.png)
+![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--get-ingress.png)
 
-Один из стручков будет AGIC. `kubectl get pods`покажет список стручков, один из которых начнется с "неприязни". Получите все журналы `kubectl logs <name-of-ingress-controller-pod>` этого стручка, чтобы убедиться, что у нас было успешное развертывание. Успешное развертывание добавило бы в журнал следующие строки:
+Один из модулей Pod будет АГИК. `kubectl get pods`отобразит список модулей Pod, один из которых будет начинаться с "входящий трафик — Azure". Получите все журналы этого модуля, `kubectl logs <name-of-ingress-controller-pod>` чтобы убедиться в успешном развертывании. Успешное развертывание добавило в журнал следующие строки:
 ```
 I0927 22:34:51.281437       1 process.go:156] Applied Application Gateway config in 20.461335266s
 I0927 22:34:51.281585       1 process.go:165] cache: Updated with latest applied config.
 I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
 ```
 
-Кроме того, из [Cloud Shell](https://shell.azure.com/) мы можем получить только `kubectl logs <ingress-azure-....> | grep 'Applied App Gateway config in'`строки, указывающие на успешную конфигурацию Gateway application с , где `<ingress-azure....>` должно быть точное название стручка AGIC.
+Кроме того, с [Cloud Shell](https://shell.azure.com/) мы можем извлекать только строки, указывающие на успешную настройку шлюза приложений с помощью `kubectl logs <ingress-azure-....> | grep 'Applied App Gateway config in'`, где `<ingress-azure....>` должно быть точным именем Pod агик.
 
-Приложение Шлюза будет иметь следующую конфигурацию применяется:
+К шлюзу приложений будет применена следующая конфигурация:
 
-- Слушатель: ![слушатель](./media/application-gateway-ingress-controller-troubleshooting/tsg--listeners.png)
+- Прослушиватель ![: прослушиватель](./media/application-gateway-ingress-controller-troubleshooting/tsg--listeners.png)
 
-- Правило реуктора: ![routing_rule](./media/application-gateway-ingress-controller-troubleshooting/tsg--rule.png)
+- Правило маршрутизации: ![routing_rule](./media/application-gateway-ingress-controller-troubleshooting/tsg--rule.png)
 
-- Бэкэнд бассейн:
-  - Там будет один IP-адрес в бэкэнд адрес пула, и он будет `kubectl get pods -o wide` 
- ![соответствовать IP-адрес Pod мы наблюдали ранее с backend_pool](./media/application-gateway-ingress-controller-troubleshooting/tsg--backendpools.png)
+- Внутренний пул:
+  - В серверном пуле адресов будет один IP-адрес, который будет соответствовать IP-адресу модуля, который мы наблюдали ранее `kubectl get pods -o wide` 
+ ![с backend_pool](./media/application-gateway-ingress-controller-troubleshooting/tsg--backendpools.png)
 
 
-Наконец, мы `cURL` можем использовать команду из [облачной оболочки](https://shell.azure.com/) для создания подключения HTTP к недавно развернутому приложению:
+Наконец, можно использовать `cURL` команду из [Cloud Shell](https://shell.azure.com/) , чтобы установить HTTP-подключение к только что развернутому приложению:
 
-1. Использование `kubectl get ingress` для получения публичного IP-адреса прикладного шлюза
+1. Использование `kubectl get ingress` для получения общедоступного IP-адреса шлюза приложений
 2. Используйте `curl -I -H 'test.agic.contoso.com' <publitc-ip-address-from-previous-command>`.
 
-![Стручки](./media/application-gateway-ingress-controller-troubleshooting/tsg--curl.png)
+![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--curl.png)
 
-Результат указывает `HTTP/1.1 200 OK` на то, что система Application Gateway - AKS и AGIC работает в штатном состоянии, как и ожидалось.
-
-
-## <a name="inspect-kubernetes-installation"></a>Инспектирование Кубернетес Установка
-
-### <a name="pods-services-ingress"></a>Стручки, Услуги, Ingress
-Приложение Gateway Ingress Controller (AGIC) непрерывно отслеживает следующие ресурсы Kubernetes: [Развертывание](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) или [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), [Служба](https://kubernetes.io/docs/concepts/services-networking/service/), [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+Результат `HTTP/1.1 200 OK` означает, что система "шлюз приложений + AKS + агик" работает должным образом.
 
 
-Для того, чтобы AGIC функционировала так, как ожидалось, должны быть следующие:
-  1. AKS должен иметь один или несколько **здоровых стручков.**
-     Проверить это из `kubectl get pods -o wide --show-labels` [облачной оболочки](https://shell.azure.com/) с `apsnetapp`Если у вас есть pod с , ваш выход может выглядеть следующим образом:
+## <a name="inspect-kubernetes-installation"></a>Проверка установки Kubernetes
+
+### <a name="pods-services-ingress"></a>Модули Pod, службы, входящие
+Контроллер входящего трафика шлюза приложений (АГИК) постоянно отслеживает следующие ресурсы Kubernetes: [развертывание](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) или [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), [Служба](https://kubernetes.io/docs/concepts/services-networking/service/), [входящий](https://kubernetes.io/docs/concepts/services-networking/ingress/) трафик
+
+
+Для правильной работы АГИК необходимо следующее:
+  1. AKS должен иметь один или несколько работоспособных **модулей**.
+     Проверьте, не [Cloud Shell](https://shell.azure.com/) с `kubectl get pods -o wide --show-labels` чем `apsnetapp`, если у вас есть Pod с, выходные данные могут выглядеть следующим образом:
      ```bash
      delyan@Azure:~$ kubectl get pods -o wide --show-labels
 
@@ -141,8 +141,8 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
      aspnetapp              1/1     Running   0          17h   10.0.0.6    aks-agentpool-35064155-1   <none>           <none>            app=aspnetapp
      ```
 
-  2. Один или несколько **услуг**, ссылаясь на `selector` стручки выше через соответствующие этикетки.
-     Проверить это из [облачной оболочки](https://shell.azure.com/) с`kubectl get services -o wide`
+  2. Одна или несколько **служб**, ссылающихся на модули, приведенные выше, с помощью соответствующих `selector` меток.
+     Проверьте, не [Cloud Shell](https://shell.azure.com/) ли это с помощью`kubectl get services -o wide`
      ```bash
      delyan@Azure:~$ kubectl get services -o wide --show-labels
 
@@ -150,7 +150,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
      aspnetapp           ClusterIP   10.2.63.254    <none>        80/TCP    17h   app=aspnetapp   <none>     
      ```
 
-  3. **Ingress**, аннотированный с `kubernetes.io/ingress.class: azure/application-gateway`, ссылаясь на службу выше Проверить это от cloud [Shell](https://shell.azure.com/) с`kubectl get ingress -o wide --show-labels`
+  3. Входящий (с `kubernetes.io/ingress.class: azure/application-gateway`заметкам **),** ссылающийся на указанную выше службу Проверьте это с [Cloud Shell](https://shell.azure.com/)`kubectl get ingress -o wide --show-labels`
      ```bash
      delyan@Azure:~$ kubectl get ingress -o wide --show-labels
 
@@ -158,7 +158,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
      aspnetapp   *                 80      17h   <none>
      ```
 
-  4. Просмотр аннотаций входа выше: `kubectl get ingress aspnetapp -o yaml` `aspnetapp` (замените имя вашего входа)
+  4. Просмотрите аннотации входящего трафика, приведенного выше `kubectl get ingress aspnetapp -o yaml` : ( `aspnetapp` замените именем своего входящего трафика).
      ```bash
      delyan@Azure:~$ kubectl get ingress aspnetapp -o yaml
 
@@ -174,12 +174,12 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
          servicePort: 80
      ```
 
-     Всходный ресурс должен быть `kubernetes.io/ingress.class: azure/application-gateway`аннотирован.
+     У ресурса входящих данных должен быть заметка `kubernetes.io/ingress.class: azure/application-gateway`.
  
 
-### <a name="verify-observed-namespace"></a>Проверить наблюдаемое пространство имен
+### <a name="verify-observed-namespace"></a>Проверка наблюдаемого пространства имен
 
-* Получите существующие пространства имен в кластере Kubernetes. В каком пространстве имен работает ваше приложение? Является ли AGIC смотреть, что пространство имен? Обратитесь к документации [поддержки нескольких имен](./ingress-controller-multiple-namespace-support.md#enable-multiple-namespace-support) о том, как правильно настроить наблюдаемые пространства имен.
+* Получите существующие пространства имен в кластере Kubernetes. В каком пространстве имен выполняется ваше приложение? АГИК ли наблюдение за этим пространством имен? Сведения о правильной настройке наблюдаемых пространств имен см. в документации по [поддержке нескольких пространств имен](./ingress-controller-multiple-namespace-support.md#enable-multiple-namespace-support) .
 
     ```bash
     # What namespaces exist on your cluster
@@ -190,7 +190,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
     ```
 
 
-* Под AGIC должен находиться в пространстве `NAMESPACE`имен (см. колонку). `default` Здоровый стручок будет иметь `Running` в колонке. `STATUS` Там должно быть по крайней мере один AGIC стручка.
+* Модуль АГИК должен находиться в `default` пространстве имен (см. столбец `NAMESPACE`). Работоспособный Pod будет `Running` в `STATUS` столбце. Должен существовать хотя бы один модуль АГИК.
 
     ```bash
     # Get a list of the Application Gateway Ingress Controller pods
@@ -198,13 +198,13 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
     ```
 
 
-* Если стручок AGIC`STATUS` не является здоровым (колонка из команды выше, не `Running`является):
-  - получить журналы, чтобы понять, почему:`kubectl logs <pod-name>`
-  - для предыдущего экземпляра стручка:`kubectl logs <pod-name> --previous`
-  - описать стручок, чтобы получить больше контекста:`kubectl describe pod <pod-name>`
+* Если модуль АГИК не является работоспособным (`STATUS` столбец из команды выше не является `Running`):
+  - получите журналы, чтобы понять, почему:`kubectl logs <pod-name>`
+  - для предыдущего экземпляра Pod:`kubectl logs <pod-name> --previous`
+  - Опишите модуль, чтобы получить дополнительный контекст:`kubectl describe pod <pod-name>`
 
 
-* Есть ли у вас kubernetes [Service](https://kubernetes.io/docs/concepts/services-networking/service/) и [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) ресурсы?
+* У вас есть [Служба](https://kubernetes.io/docs/concepts/services-networking/service/) [Kubernetes и входящие](https://kubernetes.io/docs/concepts/services-networking/ingress/) ресурсы?
     
     ```bash
     # Get all services across all namespaces
@@ -215,7 +215,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
     ```
 
 
-* Является ли ваша [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) аннотируется с: ? `kubernetes.io/ingress.class: azure/application-gateway` AGIC будет следить только за ресурсами Kubernetes Ingress, которые имеют эту аннотацию.
+* Является ли ваш [входной](https://kubernetes.io/docs/concepts/services-networking/ingress/) код заметкам `kubernetes.io/ingress.class: azure/application-gateway`:? АГИК будет отслеживать только те ресурсы Kubernetes, которые имеют эту аннотацию.
     
     ```bash
     # Get the YAML definition of a particular ingress resource
@@ -223,31 +223,31 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
     ```
 
 
-* AGIC излучает события Kubernetes для определенных критических ошибок. Вы можете просмотреть следующие:
-  - в вашем терминале через`kubectl get events --sort-by=.metadata.creationTimestamp`
-  - в вашем браузере с помощью [веб-интерфейса Kubernetes (Dashboard)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+* АГИК выдает события Kubernetes для определенных критических ошибок. Вы можете просмотреть следующие данные:
+  - в терминале через`kubectl get events --sort-by=.metadata.creationTimestamp`
+  - в браузере с помощью [веб-интерфейса Kubernetes (панель мониторинга)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
 
 ## <a name="logging-levels"></a>Уровни ведения журнала
 
-AGIC имеет 3 уровня регистрации. Уровень 1 является по умолчанию и показывает минимальное количество строк журнала.
-Уровень 5, с другой стороны, будет отображать все журналы, в том числе дезинфицированных содержание конфигурации применяется к ARM.
+АГИК имеет 3 уровня ведения журнала. Уровень 1 — это значение по умолчанию, которое показывает минимальное количество строк журнала.
+Уровень 5, с другой стороны, отображает все журналы, включая исключенное содержимое конфигурации, применяемое к ARM.
 
-Сообщество Kubernetes установило 9 уровней лесозаготовок для инструмента [kubectl.](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-output-verbosity-and-debugging) В этом репозитории мы используя 3 из них, с аналогичной семантикой:
+Сообщество Kubernetes установило 9 уровней ведения журнала для средства [kubectl](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-output-verbosity-and-debugging) . В этом репозитории используется три из этих трех вариантов с аналогичной семантикой:
 
 
 | Уровень детализации | Описание |
 |-----------|-------------|
-|  1        | Уровень журнала по умолчанию; показывает детали запуска, предупреждения и ошибки |
-|  3        | Расширенная информация о событиях и изменениях; списки созданных объектов |
-|  5        | Логи маршализированных объектов; показывает, дезинфицированные JSON конфигурации применяется к ARM |
+|  1        | Уровень ведения журнала по умолчанию; отображаются сведения о запуске, предупреждения и ошибки |
+|  3        | Расширенные сведения о событиях и изменениях; списки созданных объектов |
+|  5        | Заносит в журнал упакованные объекты; показывает исключенную конфигурацию JSON, примененную к ARM |
 
 
-Уровни многословности регулируются `verbosityLevel` через переменную в файле [руля-конфигурации.](#sample-helm-config-file) Увеличьте уровень многословности, чтобы `5` получить jSON конфигурации отправлены в [ARM:](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)
-  - добавить `verbosityLevel: 5` на линии сам по себе в [руля-config.yaml](#sample-helm-config-file) и повторно установить
-  - получить журналы с`kubectl logs <pod-name>`
+Уровни детализации изменяются с `verbosityLevel` помощью переменной в файле [Helm-config. YAML](#sample-helm-config-file) . Увеличьте уровень `5` детализации, чтобы получить конфигурацию JSON, отправленную в [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview):
+  - Добавьте `verbosityLevel: 5` строку отдельно в [Helm-config. YAML](#sample-helm-config-file) и повторите установку.
+  - получение журналов с помощью`kubectl logs <pod-name>`
 
-### <a name="sample-helm-config-file"></a>Файл конфигурации «Пример Хелм»
+### <a name="sample-helm-config-file"></a>Пример файла конфигурации Helm
 ```yaml
     # This file contains the essential configs for the ingress controller helm chart
 

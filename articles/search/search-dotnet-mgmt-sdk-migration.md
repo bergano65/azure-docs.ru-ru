@@ -1,5 +1,5 @@
 ---
-title: Обновление до версии Azure Search .NET Management SDK 2
+title: Обновление до пакета SDK управления .NET для службы поиска Azure версии 2
 titleSuffix: Azure Cognitive Search
 description: Сведения об обновлении пакета SDK управления .NET для службы "Поиск Azure" до версии 2. Сведения о новых возможностях и необходимых изменениях кода.
 manager: nitinme
@@ -10,16 +10,16 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: b18e9688141ee64eb7dfcb82ce58db198e324b5b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73847538"
 ---
-# <a name="upgrading-versions-of-the-azure-search-net-management-sdk"></a>Обновление версий Azure Search .NET Management SDK
+# <a name="upgrading-versions-of-the-azure-search-net-management-sdk"></a>Обновление версий пакета SDK для службы поиска Azure для .NET
 
 > [!Important]
-> Это содержание все еще находится в стадии разработки. Версия 3.0 управления поиском Azure .NET SDK доступна на NuGet. Мы работаем над обновлением этого руководства по миграции, чтобы объяснить, как перейти на новую версию. 
+> Это содержимое все еще находится в стадии разработки. Версия 3,0 пакета SDK для .NET для управления поиском Azure доступна в NuGet. Мы работаем над обновлением этого руководства по миграции, чтобы объяснить, как выполнить обновление до новой версии. 
 >
 
 Если вы используете версию 1.0.2 [пакета SDK управления .NET для службы поиска Azure](https://aka.ms/search-mgmt-sdk) или более раннюю версию, то эта статья поможет вам обновить приложение для использования версии 2.
@@ -47,4 +47,4 @@ ms.locfileid: "73847538"
 После устранения ошибки сборки при необходимости можно внести изменения в приложение, чтобы воспользоваться преимуществами новых функциональных возможностей. Новые возможности в пакете SDK описаны в разделе [Новые возможности в версии 2](#WhatsNew).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Будем рады вашим отзывам о пакете SDK. Если вы столкнулись с проблемами, пожалуйста, отправьте свои вопросы в [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-cognitive-search?tab=Newest). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Убедитесь в том, чтобы пометить название вашей проблемы с "поиск".
+Будем рады вашим отзывам о пакете SDK. Если возникли проблемы, опубликуйте свои вопросы в [Stack overflow](https://stackoverflow.com/questions/tagged/azure-cognitive-search?tab=Newest). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Обязательно пометка названия проблемы на "[Поиск]".

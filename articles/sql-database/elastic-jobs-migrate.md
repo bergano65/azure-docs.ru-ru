@@ -1,5 +1,5 @@
 ---
-title: Переход на новые упругаемые рабочие места базы данных
+title: Миграция на новые задания обработки эластичных баз данных
 description: Миграция к новым заданиям обработки эластичных баз данных.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: joke
 ms.reviewer: sstein
 ms.date: 03/13/2019
 ms.openlocfilehash: 5a7ed254de7b7ea32f2fb357d860354693e46e92
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73827238"
 ---
 # <a name="migrate-to-the-new-elastic-database-jobs"></a>Миграция к новым заданиям обработки эластичных баз данных
@@ -31,7 +31,7 @@ ms.locfileid: "73827238"
 
 ### <a name="install-the-latest-elastic-jobs-cmdlets"></a>Установка агента задания обработки эластичных баз данных
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом.
+Если у вас еще нет подписки Azure, [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , прежде чем начинать работу.
 
 Установите модуль **Az.Sql** предварительной версии 1.1.1, чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
 
@@ -629,5 +629,5 @@ $jobs | Set-AzSqlElasticJob -Enable
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создавайте и управляйте эластичными заданиями с помощью PowerShell](elastic-jobs-powershell.md)
+- [Создание эластичных заданий и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

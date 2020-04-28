@@ -1,6 +1,6 @@
 ---
-title: Решения с использованием глобально распределенной аналитики в Azure Cosmos DB.
-description: Узнайте о решениях, которые могут быть созданы с помощью глобально распределенной аналитики в Azure Cosmos DB.
+title: Решения, использующие глобально распределенную аналитику в Azure Cosmos DB.
+description: Узнайте о решениях, которые можно построить с помощью глобального распределенного анализа в Azure Cosmos DB.
 author: markjbrown
 ms.author: mjbrown
 ms.topic: conceptual
@@ -8,15 +8,15 @@ ms.service: cosmos-db
 ms.date: 09/26/2019
 ms.reviewer: sngun
 ms.openlocfilehash: d0b5042c1401a95cc75f4c01ace843659b6babfe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73681751"
 ---
-# <a name="solutions-using-globally-distributed-analytics-in-azure-cosmos-db"></a>Решения с использованием глобально распределенной аналитики в Azure Cosmos DB
+# <a name="solutions-using-globally-distributed-analytics-in-azure-cosmos-db"></a>Решения, использующие глобально распределенную аналитику в Azure Cosmos DB
 
-В этой статье описаны решения, которые могут быть созданы с помощью глобально распределенной аналитики в Azure Cosmos DB.
+В этой статье описываются решения, которые можно построить с помощью глобального распределенного анализа в Azure Cosmos DB.
 
 ## <a name="retail-and-consumer-goods"></a>Розничная торговля и потребительские товары
 

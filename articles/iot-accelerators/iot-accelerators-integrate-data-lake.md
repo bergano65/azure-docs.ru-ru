@@ -1,5 +1,5 @@
 ---
-title: Потоковые данные от удаленного мониторинга до хранилища data Lake Store - Azure Документы Майкрософт
+title: Потоковая передача данных из удаленного мониторинга в Data Lake Store в Azure | Документация Майкрософт
 description: Узнайте о том, как выполнить интеграцию решения для удаленного мониторинга с Azure Data Lake Store с помощью задания Azure Stream Analytics.
 author: philmea
 manager: timlt
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 0a684151e01b298c60ff17ef1470e0648a425850
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73889236"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения для удаленного мониторинга с Azure Data Lake Store
@@ -89,7 +89,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
     ![Выбор входных данных](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-input.png)
 
-1. Нажмите **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 1. На странице обзора щелкните **Выходные данные**.
 
@@ -118,7 +118,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
     > [!NOTE]
     > Если во всплывающем окне появится сообщение об ошибке, откройте новое окно браузера в анонимном режиме и повторите попытку.
 
-1. Нажмите **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ## <a name="edit-the-stream-analytics-query"></a>Изменение запроса Stream Analytics
 
@@ -141,7 +141,7 @@ Azure Stream Analytics использует SQL-подобный язык зап
 
     ![Запрос Stream Analytics](./media/iot-accelerators-integrate-data-lake/stream-analytics-query.png)
 
-1. Нажмите **Сохранить**.
+1. Выберите команду **Сохранить**.
 1. Нажмите кнопку **Да** для принятия изменений.
 
 ## <a name="start-the-stream-analytics-job"></a>Запуск задания Stream Analytics
@@ -154,7 +154,7 @@ Azure Stream Analytics использует SQL-подобный язык зап
 
 1. Установите настраиваемое время, чтобы вернуться на несколько часов для выборки данных с момента, когда устройство начало потоковую передачу.
 
-1. Щелкните **Пуск**.
+1. Нажмите **Запуск**.
 
     ![Выбор настраиваемой даты](./media/iot-accelerators-integrate-data-lake/stream-analytics-start-custom.png)
 
@@ -178,6 +178,6 @@ Azure Stream Analytics использует SQL-подобный язык зап
 
     ![Анализ данных потоковой передачи](./media/iot-accelerators-integrate-data-lake/data-lake-store-file-preview.png)
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 Azure Data Lake Analytics можно использовать для выполнения анализа больших данных в наборах данных Data Lake Store. Дополнительные сведения см. в [документации по Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics).

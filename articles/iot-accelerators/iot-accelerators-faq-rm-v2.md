@@ -1,6 +1,6 @@
 ---
 title: Вопросы и ответы об акселераторе решения для удаленного мониторинга — Azure | Документация Майкрософт
-description: В этой статье ответы на часто задаваемые вопросы для ускорителей решений удаленного мониторинга.
+description: В этой статье содержатся ответы на часто задаваемые вопросы о акселераторах решений для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
 ms.openlocfilehash: c410ac7f41adb623a7198320a1edced097778569
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73826241"
 ---
 # <a name="frequently-asked-questions-for-remote-monitoring-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения для удаленного мониторинга
@@ -40,13 +40,13 @@ ms.locfileid: "73826241"
 
 ### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Где можно найти сведения о предыдущей версии решения для удаленного мониторинга?
 
-Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Вы можете найти архивную [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/)документацию по адресу .
+Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Архивную документацию можно найти по адресу [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/).
 
 ### <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Изучите возможности ускорителя решений удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Изучите возможности акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
 * [Все аспекты безопасности Интернета вещей](/azure/iot-fundamentals/iot-security-ground-up)

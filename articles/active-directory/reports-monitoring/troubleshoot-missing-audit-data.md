@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок отсутствующих данных в журналах активности Документы Майкрософт
+title: Устранение неполадок с отсутствующими данными в журналах действий | Документация Майкрософт
 description: В этой статье описаны способы устранения неполадок, связанных с отсутствием данных в журналах действий.
 services: active-directory
 documentationcenter: ''
@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c335a4d30846f7c1b4dbd6b6aedc4d100a9b43a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74014288"
 ---
 # <a name="troubleshoot-missing-data-in-the-azure-active-directory-activity-logs"></a>Устранение неполадок, связанных с отсутствием данных в журналах действий Azure Active Directory 
@@ -34,7 +34,7 @@ ms.locfileid: "74014288"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/01.png)
  
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
@@ -43,7 +43,7 @@ ms.locfileid: "74014288"
 | Аудит каталогов | &nbsp; | 2 мин | 5 мин |
 | Действия при входе | &nbsp; | 2 мин | 5 мин | 
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -55,7 +55,7 @@ ms.locfileid: "74014288"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/02.png)
  
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
@@ -64,7 +64,7 @@ ms.locfileid: "74014288"
 | Аудит каталогов | &nbsp; | 2 мин | 5 мин |
 | Действия при входе | &nbsp; | 2 мин | 5 мин | 
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -76,7 +76,7 @@ ms.locfileid: "74014288"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/03.png)
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 В зависимости от типа лицензии Azure Active Directory сохраняет отчеты о действиях за такие периоды времени:
 
@@ -87,13 +87,13 @@ ms.locfileid: "74014288"
 
 Дополнительные сведения см. в статье [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).
-* [Активный каталог Azure сообщает о пропонах](reference-reports-latencies.md).
-* [Активный каталог Azure сообщает о часто задаваемых вопросов](reports-faq.md).
+* [Azure Active Directory отчет о задержке](reference-reports-latencies.md).
+* [Azure Active Directory сообщение часто задаваемые вопросы](reports-faq.md).
 

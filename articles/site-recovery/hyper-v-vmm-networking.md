@@ -1,5 +1,5 @@
 ---
-title: Настройка IP-адреса после сбоя на вторичном сайте с восстановлением сайта Azure
+title: Настройка IP-адресов после отработки отказа на дополнительный сайт с Azure Site Recovery
 description: Сведения о том, как настроить IP-адреса для подключения к виртуальным машинам на второй локальной площадке после аварийного восстановления и отработки отказа с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: a61f7ff69e648262eb721eb61a98b09dbbee924c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73961431"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-a-secondary-on-premises-site-after-failover"></a>Настройка назначения IP-адресов для подключения к локальному веб-сайту после отработки отказа
@@ -61,11 +61,11 @@ ms.locfileid: "73961431"
 На следующем рисунке показаны подсети до и после отработки отказа:
 
 
-**Перед неудачей**
+**Перед отработкой отказа**
 
 ![До отработки отказа](./media/hyper-v-vmm-networking/network-design2.png)
 
-**После неудачи**
+**После отработки отказа**
 
 ![После отработки отказа](./media/hyper-v-vmm-networking/network-design3.png)
 
@@ -116,16 +116,16 @@ ms.locfileid: "73961431"
 - В этом сценарии не нужно выполнять отработку отказа всей подсети, а также вносить изменения для перенастройки VPN или сетевых маршрутов. Отработка отказа и некоторые обновления DNS обеспечивают доступность приложений.
 - Если DNS настроен для разрешения динамических обновлений, после запуска по завершении отработки отказа виртуальные машины зарегистрируются, используя новый IP-адрес.
 
-**Перед неудачей**
+**Перед отработкой отказа**
 
 ![Другой IP-адрес — до отработки отказа](./media/hyper-v-vmm-networking/network-design10.png)
 
-**После неудачи**
+**После отработки отказа**
 
 ![Другой IP-адрес — после отработки отказа](./media/hyper-v-vmm-networking/network-design11.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Выполнить сбой](hyper-v-vmm-failover-failback.md)
+[Выполнение отработки отказа](hyper-v-vmm-failover-failback.md)
 

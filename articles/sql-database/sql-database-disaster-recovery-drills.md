@@ -1,5 +1,5 @@
 ---
-title: Аварийные восстановительные установки
+title: Детализация аварийного восстановления
 description: Дополнительные сведения и рекомендации по использованию Базы данных SQL Azure для выполнения детализации при аварийном восстановлении.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 12/18/2018
 ms.openlocfilehash: 3ca00a03976ae38b7956616b8287220a7bc5998c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73825850"
 ---
 # <a name="performing-disaster-recovery-drill"></a>Отработка аварийного восстановления
@@ -69,5 +69,5 @@ ms.locfileid: "73825850"
 
 * Ознакомьтесь со [сценариями обеспечения непрерывности для бизнес-процессов](sql-database-business-continuity.md).
 * Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [создаваемых автоматически резервных копий базы данных SQL](sql-database-automated-backups.md)
-* Чтобы узнать об использовании автоматизированных [restore a database from the service-initiated backups](sql-database-recovery-using-backups.md)резервных ups для восстановления, см.
+* Дополнительные сведения об использовании автоматических резервных копий для восстановления см. в статье [Восстановление базы данных из резервных копий, инициированных службой](sql-database-recovery-using-backups.md).
 * Чтобы узнать о более быстрых вариантах восстановления, ознакомьтесь со сведениями об [активной георепликации](sql-database-active-geo-replication.md) и [группах автоматической отработки отказа](sql-database-auto-failover-group.md).

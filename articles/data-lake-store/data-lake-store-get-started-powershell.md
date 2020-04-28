@@ -1,16 +1,16 @@
 ---
-title: Начало работы с Azure Data Lake Storage Gen1 - PowerShell (англ.) Документы Майкрософт
-description: Используйте Azure PowerShell для создания учетной записи Azure Data Lake Storage Gen1 и выполнения основных операций.
+title: Приступая к работе с Azure Data Lake Storage 1-го поколения PowerShell | Документация Майкрософт
+description: Используйте Azure PowerShell для создания учетной записи Azure Data Lake Storage 1-го поколения и выполнения основных операций.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: 42ddab6991b418af3e41da9966cdab69ded87461
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73837894"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-azure-powershell"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью Azure PowerShell
@@ -18,24 +18,24 @@ ms.locfileid: "73837894"
 > [!div class="op_single_selector"]
 > * [Портал](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
-> * [Лазурный CLI](data-lake-store-get-started-cli-2.0.md)
+> * [Azure CLI](data-lake-store-get-started-cli-2.0.md)
 >
 >
 
 [!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)]
 
-Узнайте, как использовать Azure PowerShell для создания учетной записи Azure Data Lake Storage Gen1 и выполнения основных операций, таких как создание папок, загрузка и загрузка файлов данных, удаление учетной записи и т.д. Для получения дополнительной информации о хранении данных озера Gen1, [см.](data-lake-store-overview.md)
+Узнайте, как использовать Azure PowerShell для создания учетной записи Azure Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения о Data Lake Storage 1-го поколения см. в разделе [обзор Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Azure PowerShell 1.0 или больше**. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+* **Azure PowerShell 1,0 или более поздней**версии. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
-В этой статье используется более простой подход к аутентификации с Data Lake Storage Gen1, где вам предлагается ввести учетные данные Azure. Уровень доступа к учетной записи Data Lake Storage 1-го поколения и файловой системе зависит от уровня доступа пользователя, который вошел в систему. Однако существуют и другие подходы к аутентификации с помощью Data Lake Storage Gen1, которые являются аутентификацией конечных пользователей или аутентификацией от обслуживания. Инструкции и дополнительные сведения об аутентификации см. в разделах [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md) и [Аутентификация между службами](data-lake-store-authenticate-using-active-directory.md).
+В этой статье используется упрощенный подход к проверке подлинности с Data Lake Storage 1-го поколения, где предлагается ввести учетные данные учетной записи Azure. Уровень доступа к учетной записи Data Lake Storage 1-го поколения и файловой системе зависит от уровня доступа пользователя, который вошел в систему. Однако существуют и другие подходы к проверке подлинности с помощью Data Lake Storage 1-го поколения, которые являются проверкой подлинности пользователей или проверкой подлинности между службами. Инструкции и дополнительные сведения об аутентификации см. в разделах [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md) и [Аутентификация между службами](data-lake-store-authenticate-using-active-directory.md).
 
 ## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
 
@@ -81,7 +81,7 @@ ms.locfileid: "73837894"
 
     Результат должен иметь значение **True**.
 
-## <a name="create-directory-structures"></a>Создание структур каталога
+## <a name="create-directory-structures"></a>Создание структур каталогов
 
 Чтобы хранить данные и управлять ими, вы можете создать каталоги в своей учетной записи Data Lake Storage 1-го поколения.
 
@@ -119,7 +119,7 @@ Import-AzDataLakeStoreItem -AccountName $dataLakeStorageGen1Name `
    -Destination $myrootdir\mynewdirectory\vehicle1_09142014.csv
 ```
 
-## <a name="rename-download-and-delete-data"></a>Переименовайте, скачивайте и удаляйте данные
+## <a name="rename-download-and-delete-data"></a>Переименование, скачивание и удаление данных
 
 Чтобы переименовать файл, используйте следующую команду:
 

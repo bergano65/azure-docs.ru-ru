@@ -1,5 +1,5 @@
 ---
-title: Запрос ы по облачным базам данных с различными схемами
+title: Запрос к нескольким облачным базам данных с разными схемами
 description: настройка межбазовых запросов для вертикального секционирования
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 01/25/2019
 ms.openlocfilehash: d5983d25685242a696300f293231bbf987e8442d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73823730"
 ---
 # <a name="query-across-cloud-databases-with-different-schemas-preview"></a>Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)
@@ -35,10 +35,10 @@ ms.locfileid: "73823730"
 > В отличие от горизонтального секционирования эти инструкции DDL не зависят от определения уровня данных с помощью карты сегментов через клиентскую библиотеку эластичной базы данных.
 >
 
-1. [СОЗДАНИЕ КЛЮЧА MASTER](https://msdn.microsoft.com/library/ms174382.aspx)
+1. [СОЗДАТЬ ГЛАВНЫЙ КЛЮЧ](https://msdn.microsoft.com/library/ms174382.aspx)
 2. [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
 3. [CREATE EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
-4. [СОЗДАНИЕ ВНЕШНЕЙ ТАБЛИЦЫ](https://msdn.microsoft.com/library/dn935021.aspx) 
+4. [CREATE EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx) 
 
 ## <a name="create-database-scoped-master-key-and-credentials"></a>Создание главного ключа и учетных данных для конкретной базы данных
 
@@ -50,7 +50,7 @@ ms.locfileid: "73823730"
     [;]
 
 > [!NOTE]
-> Убедитесь, `<username>` что в него не включено суффикс **"имя\@сервера".** 
+> Убедитесь, что `<username>` в не указан суффикс **"\@servername"** . 
 >
 
 ## <a name="create-external-data-sources"></a>Создание внешних источников данных
@@ -176,7 +176,7 @@ ms.locfileid: "73823730"
 
 Процедура sp\_execute\_remote использует внешний источник данных, указанный в параметрах вызова, для выполнения заданной инструкции T-SQL в удаленной базе данных. Она использует учетные данные внешнего источника данных для подключения к удаленной базе данных.  
 
-Пример 
+Пример. 
 
 ```sql
     EXEC sp_execute_remote

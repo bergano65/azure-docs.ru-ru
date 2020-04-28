@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/25/2018
 ms.openlocfilehash: ae26f669ddbe2cc2c5b6e25a9c1c0229e88dc2e1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73823907"
 ---
 # <a name="building-scalable-cloud-databases"></a>Создание масштабируемых облачных баз данных
@@ -29,14 +29,14 @@ ms.locfileid: "73823907"
 
 ## <a name="documentation"></a>Документация
 
-1. [Начало работы с инструментами упругой базы данных](sql-database-elastic-scale-get-started.md)
+1. [Начало работы с инструментами эластичных баз данных](sql-database-elastic-scale-get-started.md)
 2. [Функции эластичных баз данных](sql-database-elastic-scale-introduction.md)
 3. [Управление размещением сегментов](sql-database-elastic-scale-shard-map-management.md)
 4. [Перенос существующих баз данных для развертывания](sql-database-elastic-convert-to-use-elastic-tools.md)
 5. [Маршрутизация, зависящая от данных](sql-database-elastic-scale-data-dependent-routing.md)
 6. [Запросы к нескольким сегментам](sql-database-elastic-scale-multishard-querying.md)
 7. [Добавление сегмента с использованием средств эластичных баз данных](sql-database-elastic-scale-add-a-shard.md)
-8. [Мультитенантные приложения с эластичными инструментами базы данных и безопасностью уровня строки](sql-database-elastic-tools-multi-tenant-row-level-security.md)
+8. [Приложения с несколькими клиентами с инструментами эластичных баз данных и безопасностью на уровне строк](sql-database-elastic-tools-multi-tenant-row-level-security.md)
 9. [Обновление библиотеки клиентских приложений](sql-database-elastic-scale-upgrade-client-library.md) 
 10. [Обзор эластичных запросов](sql-database-elastic-query-overview.md)
 11. [Глоссарий по средствам работы с эластичными базами данных](sql-database-elastic-scale-glossary.md)

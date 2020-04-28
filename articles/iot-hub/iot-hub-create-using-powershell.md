@@ -1,6 +1,6 @@
 ---
 title: Создание Центра Интернета вещей Azure с помощью командлета PowerShell | Документация Майкрософт
-description: Узнайте, как использовать cmdlets PowerShell для создания группы ресурсов, а затем создать концентратор IoT в группе ресурсов. Также узнайте, как удалить концентратор.
+description: Узнайте, как с помощью командлетов PowerShell создать группу ресурсов, а затем создать центр Интернета вещей в группе ресурсов. Также Узнайте, как удалить концентратор.
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: robinsh
 ms.openlocfilehash: 9c49f7ac744ee516aefc1571d50264132035ba8a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73890605"
 ---
-# <a name="create-an-iot-hub-using-the-new-aziothub-cmdlet"></a>Создание концентратора IoT с помощью смдлета New-AzIotHub
+# <a name="create-an-iot-hub-using-the-new-aziothub-cmdlet"></a>Создание центра Интернета вещей с помощью командлета New-Азиосуб
 
 [!INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 Для создания Центров Интернета вещей и управления ими можно использовать командлеты Azure PowerShell. В этом руководстве показано, как создать Центр Интернета вещей с помощью PowerShell.
 
@@ -41,7 +41,7 @@ Login-AzAccount
 
 Для развертывания Центра Интернета вещей необходима группа ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую.
 
-Чтобы создать группу ресурсов для концентратора IoT, используйте команду [New-AzResourceGroup.](https://docs.microsoft.com/powershell/module/az.Resources/New-azResourceGroup) В этом примере создается группа ресурсов с именем **MyIoTRG1**, размещенная в регионе **Восточная часть США**:
+Чтобы создать группу ресурсов для центра Интернета вещей, используйте команду [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.Resources/New-azResourceGroup) . В этом примере создается группа ресурсов с именем **MyIoTRG1**, размещенная в регионе **Восточная часть США**:
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name MyIoTRG1 -Location "East US"
@@ -49,7 +49,7 @@ New-AzResourceGroup -Name MyIoTRG1 -Location "East US"
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
-Для создания концентратора IoT в группе ресурсов, созданной на предыдущем этапе, используйте команду [New-AzIotHub.](https://docs.microsoft.com/powershell/module/az.IotHub/New-azIotHub) В этом примере создается центр категории **S1** с именем **MyTestIoTHub**, размещенный в регионе **Восточная часть США**:
+Чтобы создать центр Интернета вещей в группе ресурсов, созданной на предыдущем шаге, используйте команду [New-азиосуб](https://docs.microsoft.com/powershell/module/az.IotHub/New-azIotHub) . В этом примере создается центр категории **S1** с именем **MyTestIoTHub**, размещенный в регионе **Восточная часть США**:
 
 ```azurepowershell-interactive
 New-AzIotHub `
@@ -63,7 +63,7 @@ New-AzIotHub `
 
 [!INCLUDE [iot-hub-pii-note-naming-hub](../../includes/iot-hub-pii-note-naming-hub.md)]
 
-Вы можете перечислить все концентраторы IoT в подписке с помощью команды [Get-AzIotHub:](https://docs.microsoft.com/powershell/module/az.IotHub/Get-azIotHub)
+Список всех центров Интернета вещей в подписке можно получить с помощью команды [Get-азиосуб](https://docs.microsoft.com/powershell/module/az.IotHub/Get-azIotHub) :
 
 ```azurepowershell-interactive
 Get-AzIotHub
@@ -71,7 +71,7 @@ Get-AzIotHub
 
 Это пример стандартного Центра Интернета вещей S1, который вы создали на предыдущем шаге.
 
-Вы можете удалить концентратор IoT с помощью команды [Remove-AzIotHub:](https://docs.microsoft.com/powershell/module/az.iothub/remove-aziothub)
+Вы можете удалить центр Интернета вещей с помощью команды [Remove-азиосуб](https://docs.microsoft.com/powershell/module/az.iothub/remove-aziothub) :
 
 ```azurepowershell-interactive
 Remove-AzIotHub `
@@ -79,7 +79,7 @@ Remove-AzIotHub `
     -Name MyTestIoTHub
 ```
 
-Кроме того, можно удалить группу ресурсов и все ресурсы, которые она содержит, с помощью команды [Удалить-AzResourceGroup:](https://docs.microsoft.com/powershell/module/az.Resources/Remove-azResourceGroup)
+Кроме того, можно удалить группу ресурсов и все содержащиеся в ней ресурсы с помощью команды [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.Resources/Remove-azResourceGroup) :
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name MyIoTRG1
@@ -91,13 +91,13 @@ Remove-AzResourceGroup -Name MyIoTRG1
 
 * [AzureRM.IotHub](https://docs.microsoft.com/powershell/module/az.iothub/).
 
-* [Поставщик ресурсов IoT Hub REST API](https://docs.microsoft.com/rest/api/iothub/iothubresource).
+* [REST API поставщика ресурсов центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/iothubresource).
 
 Дополнительные сведения о разработке для Центра Интернета вещей см. в следующих статьях:
 
 * [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
 
-* [IoT Hub SDKs](iot-hub-devguide-sdks.md) (Пакеты SDK для Центра Интернета вещей)
+* [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 

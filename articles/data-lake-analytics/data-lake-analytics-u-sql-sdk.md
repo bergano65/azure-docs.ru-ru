@@ -1,5 +1,5 @@
 ---
-title: Выполнить U-S'L рабочих мест на местном уровне - Azure Data Lake U-S'S L SDK
+title: Выполнение заданий U-SQL локально Azure Data Lake пакета SDK U-SQL
 description: Узнайте, как запускать и тестировать задания U-SQL с помощью командной строки и программных интерфейсов на локальной рабочей станции.
 services: data-lake-analytics
 ms.service: data-lake-analytics
@@ -9,10 +9,10 @@ ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 03/01/2017
 ms.openlocfilehash: 51d9060eaf4b30c696ef2a3b5f798a31e2f2a98a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71309683"
 ---
 # <a name="run-and-test-u-sql-with-azure-data-lake-u-sql-sdk"></a>Выполнение и тестирование U-SQL с помощью пакета SDK Azure Data Lake для U-SQL
@@ -23,7 +23,7 @@ ms.locfileid: "71309683"
 
 ## <a name="install-azure-data-lake-u-sql-sdk"></a>Установка пакета SDK Azure Data Lake для U-SQL
 
-Вы можете получить Azure Data Lake U-S'SL SDK [здесь,](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.SDK/) Nuget.org. И прежде чем использовать его, вы должны убедиться, что у вас есть зависимости следующим образом.
+Вы можете получить [Azure Data Lake пакет SDK](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.SDK/) U-SQL на NuGet.org. И перед его использованием необходимо убедиться в наличии зависимостей, как показано ниже.
 
 ### <a name="dependencies"></a>Зависимости
 
@@ -120,7 +120,7 @@ ms.locfileid: "71309683"
 
     Кроме настройки переменной среды, вы можете использовать аргумент **-CppSDK** в командной строке. Этот аргумент переопределяет используемую по умолчанию переменную среды CppSDK.
 
-- Установите переменную **LOCALRUN_DATAROOT** среды.
+- Задайте переменную среды **LOCALRUN_DATAROOT** .
 
     Определите новую переменную среды с именем **LOCALRUN_DATAROOT**, которая будет указывать на корневую папку данных.
 
@@ -326,7 +326,7 @@ ms.locfileid: "71309683"
 
 ### <a name="programming-interfaces-in-localrunhelperexe"></a>Программные интерфейсы в LocalRunHelper.exe
 
-LocalRunHelper.exe предоставляет интерфейсы программирования для локальной компиляции, выполнения и т.д. Интерфейсы перечислены следующим образом.
+LocalRunHelper. exe предоставляет программные интерфейсы для локальной компиляции, выполнения и т. д. в U-SQL. Интерфейсы перечислены ниже.
 
 **Конструктор**
 
@@ -338,7 +338,7 @@ public LocalRunHelper([System.IO.TextWriter messageOutput = null])
 
 **Свойства**
 
-|Свойство|Тип|Описание|
+|Свойство|Type|Описание|
 |--------|----|-----------|
 |AlgebraPath|строка|Путь к файлу алгебры (он является одним из результатов компиляции).|
 |CodeBehindReferences|строка|Если сценарий содержит дополнительные ссылки на код программной части, укажите эти пути, разделенные точкой с запятой ";".|
@@ -387,6 +387,6 @@ E_CSC_SYSTEM_INTERNAL: Внутренняя ошибка! Не удалось з
 
 * Для знакомства с U-SQL см. статью о [начале работы с языком U-SQL для Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md).
 * Сведения о том, как записывать диагностические данные в журнал, см. в статье [Доступ к журналам диагностики для Azure Data Lake Analytics](data-lake-analytics-diagnostic-logs.md).
-* Чтобы увидеть более сложный запрос, см. [журналы веб-сайтов С помощью Аналитики Azure Data Lake Analytics.](data-lake-analytics-analyze-weblogs.md)
-* Для просмотра сведений о вакансиях просмотрите [браузер вакансий и просмотр вакансий для заданий Azure Data Lake Analytics.](data-lake-analytics-data-lake-tools-view-jobs.md)
-* Чтобы использовать представление о выполнении вершины, [см.](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md)
+* Более сложный запрос см. в статье [Анализ журналов веб-сайта с помощью Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md).
+* Сведения о просмотре сведений о задании см. в статье [Использование обозревателя заданий и представления заданий для Azure Data Lake Analyticsных заданий](data-lake-analytics-data-lake-tools-view-jobs.md).
+* Сведения об использовании представления выполнения вершин см. [в разделе Использование представления выполнения вершин в Data Lake инструментов для Visual Studio](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md).

@@ -1,5 +1,5 @@
 ---
-title: Используйте существующий концентратор IoT с решением моделирования устройств - Azure Документы Майкрософт
+title: Использование существующего центра Интернета вещей с решением "имитация устройства" в Azure | Документация Майкрософт
 description: В этой статье описывается настройка акселератора решений "Симулятор устройств" для существующего Центра Интернета вещей.
 author: dominicbetts
 manager: timlt
@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
 ms.openlocfilehash: 1f89e23d7bb279e7cce5c104060cc7898517f8b7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73889180"
 ---
 # <a name="use-an-existing-iot-hub-with-the-device-simulation-solution-accelerator"></a>Использование существующего Центра Интернета вещей с акселератором решений "Симулятор устройств"
@@ -31,7 +31,7 @@ ms.locfileid: "73889180"
 
 1. Скопируйте основную или дополнительную строку подключения.
 
-[![Получить строку соединения](./media/iot-accelerators-device-simulation-choose-hub/connectionstring-inline.png)](./media/iot-accelerators-device-simulation-choose-hub/connectionstring-expanded.png#lightbox)
+[![Получение строки подключения](./media/iot-accelerators-device-simulation-choose-hub/connectionstring-inline.png)](./media/iot-accelerators-device-simulation-choose-hub/connectionstring-expanded.png#lightbox)
 
 Используйте строку подключения, которую вы скопировали при настройке моделирования:
 

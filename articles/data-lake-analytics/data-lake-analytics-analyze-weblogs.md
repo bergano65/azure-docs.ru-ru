@@ -1,6 +1,6 @@
 ---
 title: Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
-description: Узнайте, как анализировать журналы веб-сайтов с помощью Azure Data Lake Analytics для выполнения функций и запросов ВС-У.
+description: Узнайте, как анализировать журналы веб-сайта с помощью Azure Data Lake Analytics для выполнения функций и запросов U-SQL.
 services: data-lake-analytics
 author: saveenr
 ms.author: saveenr
@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 04c6d4c74a82ccfbcbb0faecb0dca5ec495f6663
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "71672877"
 ---
 # <a name="analyze-website-logs-using-azure-data-lake-analytics"></a>Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
@@ -45,7 +45,7 @@ ms.locfileid: "71672877"
 **Просмотр учетных записей аналитики озера данных**
 
 1. В Visual Studio откройте **обозреватель серверов**, нажав клавиши **CTRL + ALT + S**.
-2. В **обозревателе серверов** разверните **Azure**, а затем — **Data Lake Analytics**. Будет выведен список учетных записей аналитики озера данных, если они есть. Создать учетную запись аналитики озера данных в Studio невозможно. Чтобы создать учетную запись, [см. Начало работы с Azure Data Lake Analytics с помощью Azure Portal](data-lake-analytics-get-started-portal.md) или начать работу с [Azure Data Lake Analytics с помощью Azure PowerShell.](data-lake-analytics-get-started-powershell.md)
+2. В **обозревателе серверов** разверните **Azure**, а затем — **Data Lake Analytics**. Будет выведен список учетных записей аналитики озера данных, если они есть. Создать учетную запись аналитики озера данных в Studio невозможно. Чтобы создать учетную запись, ознакомьтесь [со статьей Приступая к работе с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md) или Приступая [к работе с Azure Data Lake Analytics с помощью Azure PowerShell](data-lake-analytics-get-started-powershell.md).
 
 ## <a name="develop-u-sql-application"></a>Разработка приложения U-SQL
 Приложение U-SQL представляет собой главным образом сценарий U-SQL. Дополнительные сведения о языке U-SQL см. в статье [Приступая к работе с U-SQL](data-lake-analytics-u-sql-get-started.md).

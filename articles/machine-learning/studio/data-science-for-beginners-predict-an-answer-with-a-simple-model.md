@@ -11,10 +11,10 @@ ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
 ms.openlocfilehash: 6ad9c7912eee6c3f5ec55b9cd7ab340bc79c9db7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73837774"
 ---
 # <a name="predict-an-answer-with-a-simple-model"></a>Прогнозирование ответа с помощью простой модели
@@ -32,7 +32,7 @@ ms.locfileid: "73837774"
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
 * Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
-* Видео 2: [Готовы ли ваши данные к науке о данных?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
+* Видео 2. [готовы ли ваши данные](data-science-for-beginners-is-your-data-ready-for-data-science.md) к обработке и анализу данных? *(4 мин 56 с)*
 * Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
 * Видео 4. Прогнозирование ответа с помощью простой модели.
 * Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
@@ -124,8 +124,8 @@ ms.locfileid: "73837774"
 
 Сегодня мы поговорили о том, как создать линейную регрессию, а также мы сделали прогноз, используя данные.
 
-Не забудьте ознакомиться с другими видео в разделе "Наука о данных для начинающих" от Microsoft Azure Machine Learning Studio (классический).
+Обязательно ознакомьтесь с другими видеоматериалами, приведенными в подСтудия машинного обучения Microsoft Azure (классическая модель обработки данных для начинающих).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Попробуйте первый эксперимент по науке о данных со студией машинного обучения (классический)](create-experiment.md)
+* [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
 * [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)

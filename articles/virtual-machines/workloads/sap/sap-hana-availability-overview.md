@@ -16,10 +16,10 @@ ms.date: 03/05/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: bccaf45cf617bd31a584b6c73f3dd08877bc8587
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71266060"
 ---
 # <a name="sap-hana-high-availability-for-azure-virtual-machines"></a>Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure
@@ -37,13 +37,13 @@ ms.locfileid: "71266060"
 
 Вот несколько статей, в которых хорошо объясняется, как использовать SAP HANA в Azure.
 
-- [Ручная установка одноэкземплярной SAP HANA на VMs Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-get-started)
+- [Ручная установка SAP HANA с одним экземпляром на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-get-started)
 - [Высокий уровень доступности SAP HANA на виртуальных машинах Azure](sap-hana-high-availability.md)
-- [Руководство по резервному копированию SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide)
+- [Резервное копирование SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide)
 
 Еще мы рекомендуем ознакомиться со следующими статьями о SAP HANA.
 
-- [Высокая доступность для SAP HANA](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/6d252db7cdd044d19ad85b46e6c294a4.html)
+- [Высокий уровень доступности для SAP HANA](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/6d252db7cdd044d19ad85b46e6c294a4.html)
 - [FAQ: High Availability for SAP HANA](https://archive.sap.com/documents/docs/DOC-66702) (Высокий уровень доступности для SAP HANA: вопросы и ответы)
 - [How to Perform System Replication for SAP HANA](https://archive.sap.com/documents/docs/DOC-47702) (Как выполнить репликацию системы для SAP HANA)
 - [SAP HANA 2.0 SPS 01 What’s New: High Availability](https://blogs.sap.com/2017/05/15/sap-hana-2.0-sps-01-whats-new-high-availability-by-the-sap-hana-academy/) (Новые возможности SAP HANA 2.0 SPS 01: высокий уровень доступности)
@@ -58,11 +58,11 @@ ms.locfileid: "71266060"
 
 Для разных компонентов Azure, таких как сеть, хранилище и виртуальные машины, предлагаются разные соглашения об уровне обслуживания. Все эти соглашения документированы. Дополнительные сведения см. на странице [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/). 
 
-[SLA для виртуальных машин](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) описывает три различных SLA, для трех различных конфигураций:
+[SLA для виртуальных машин](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) описывает три разных соглашения об уровне обслуживания для трех различных конфигураций:
 
 - Одна виртуальная машина, у которой диск ОС и все диски с данными размещены на [дисках SSD ценовой категории "Премиум"](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview). Этот вариант гарантирует время работоспособности на уровне 99,9 % в месяц.
 - Несколько (не менее двух) виртуальных машин, организованных в [группу доступности Azure](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Этот вариант гарантирует время работоспособности на уровне 99,95 % в месяц.
-- Несколько (по крайней мере два) ВМ, которые организованы в [зоне Availablity.](https://docs.microsoft.com/azure/availability-zones/az-overview) Эта опция предусматривала ежемесячную простору 99,99 процента.
+- Несколько (по крайней мере, две) виртуальные машины, упорядоченные в [зоне доступность](https://docs.microsoft.com/azure/availability-zones/az-overview). Этот параметр обеспечивает ежемесячное время бесперебойной работы 99,99%.
 
 Сравните свои требования к уровню доступности с теми параметрами, которые предложены в соглашениях об уровне обслуживания для компонентов Azure. По результатам этого анализа выберите такой сценарий SAP HANA, который обеспечит необходимый уровень доступности.
 

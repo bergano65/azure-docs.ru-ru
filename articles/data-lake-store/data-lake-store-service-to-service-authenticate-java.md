@@ -1,5 +1,5 @@
 ---
-title: Аутентификация обслуживания в обслуживании - Data Lake Storage Gen1 - Java SDK
+title: Проверка подлинности между службами — Data Lake Storage 1-го поколения — пакет SDK для Java
 description: Узнайте, как реализовать проверку подлинности между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и Java
 author: twooley
 ms.service: data-lake-store
@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: f355da7cd9c035b4ed0845bbd374a93bfb4a7350
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73904535"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-java"></a>Проверка подлинности между службами в Azure Data Lake Storage 1-го поколения с использованием Java
@@ -31,7 +31,7 @@ ms.locfileid: "73904535"
 
 * **Создайте веб-приложение Azure Active Directory**. Вам нужно выполнить инструкции по [аутентификации между службами в Data Lake Storage 1-го поколения с помощью Azure Active Directory](data-lake-store-service-to-service-authenticate-using-active-directory.md).
 
-* [Maven](https://maven.apache.org/install.html). В этом руководстве это средство используется для создания зависимостей проекта. Хотя можно создавать без использования системы сборки, такой как Maven или Gradle, эти системы значительно упрощают управление зависимостями.
+* [Maven](https://maven.apache.org/install.html). В этом руководстве это средство используется для создания зависимостей проекта. Хотя можно выполнять сборку без использования системы сборки, такой как Maven или Gradle, эти системы значительно упрощают управление зависимостями.
 
 * Интегрированная среда разработки, например [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), [Eclipse](https://www.eclipse.org/downloads/) или аналогичная (необязательно).
 
@@ -39,7 +39,7 @@ ms.locfileid: "73904535"
 
 1. Создайте проект Maven с использованием [архетипа mvn](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) с помощью командной строки или интегрированной среды разработки (IDE). Инструкции по созданию проекта Java с использованием IntelliJ см. [здесь](https://www.jetbrains.com/help/idea/2016.1/creating-and-running-your-first-java-application.html). Инструкции по созданию проекта с использованием Eclipse см. [здесь](https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-3.htm).
 
-2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Добавьте следующий фрагмент перед ** \<тегом /project>:**
+2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Перед тегом ** \<>/Project** добавьте следующий фрагмент:
 
         <dependencies>
           <dependency>

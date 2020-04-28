@@ -1,5 +1,5 @@
 ---
-title: Подключите веб-симулятор Raspberry Pi к концентратору Azure IoT (Node.js)
+title: Подключение веб-симулятора Raspberry Pi к центру Интернета вещей Azure (Node. js)
 description: Подключение веб-симулятора Raspberry Pi к Центру Интернета вещей для передачи данных с него в облако Azure.
 author: wesmc7777
 manager: philmea
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: wesmc
 ms.openlocfilehash: efbe41be6c923f3547df86fd6faeb56bff5e0802
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73954531"
 ---
 # <a name="connect-raspberry-pi-online-simulator-to-azure-iot-hub-nodejs"></a>Подключение онлайн-симулятора Raspberry Pi к Центру Интернета вещей Azure (Node.js)
@@ -50,7 +50,7 @@ ms.locfileid: "73954531"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-* Как создать Центр Интернета вещей Azure и получить строку подключения нового устройства. Если у вас нет учетной записи Azure, [создайте бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
+* Как создать Центр Интернета вещей Azure и получить строку подключения нового устройства. Если у вас нет учетной записи Azure, [Создайте бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
 
 * Как использовать онлайн-симулятор Raspberry Pi.
 
@@ -61,7 +61,7 @@ ms.locfileid: "73954531"
 Нажмите кнопку, чтобы запустить онлайн-симулятор Raspberry Pi.
 
 > [!div class="button"]
-> <a href="https://azure-samples.github.io/raspberry-pi-web-simulator/#GetStarted" target="_blank">Начало Малина Pi Симулятор</a>
+> <a href="https://azure-samples.github.io/raspberry-pi-web-simulator/#GetStarted" target="_blank">Запуск симулятора Raspberry Pi</a>
 
 В веб-симуляторе есть 3 области.
 
@@ -96,15 +96,15 @@ ms.locfileid: "73954531"
 1. 
    ![Замена строки подключения устройства](media/iot-hub-raspberry-pi-web-simulator/1-connectionstring.png)
 
-2. Выберите **Выполнить** или введите `npm start` для запуска приложения.
+2. Выберите **выполнить** или введите `npm start` , чтобы запустить приложение.
 
 Должны отобразиться следующие результаты, содержащие данные датчика и сообщения, которые отправляются в Центр Интернета вещей: ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](media/iot-hub-raspberry-pi-web-simulator/2-run-application.png)
 
-## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, полученные концентратором
+## <a name="read-the-messages-received-by-your-hub"></a>Чтение сообщений, полученных центром
 
-Одним из способов мониторинга сообщений, полученных концентратором IoT с смоделированного устройства, является использование инструментов Azure IoT для visual Studio Code. Чтобы узнать больше, [см.](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)
+Одним из способов мониторинга сообщений, полученных центром Интернета вещей от имитации устройства, является использование средств Azure IoT для Visual Studio Code. Дополнительные сведения см. в статье [использование средств Azure IOT для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
 
-Дополнительные способы обработки данных, отправляемых устройством, переследуйте на следующий раздел.
+Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

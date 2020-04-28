@@ -1,5 +1,5 @@
 ---
-title: Визуализируйте смоделированную телеметрию с помощью Исследования временных рядов - Azure Документы Майкрософт
+title: Визуализация моделируемой телеметрической информации с помощью службы "аналитика временных рядов" — Azure | Документация Майкрософт
 description: Сведения о настройке среды службы "Аналитика временных рядов Azure" для изучения и анализа данных телеметрии, созданных акселератором решений для имитации устройств.
 author: dominicbetts
 manager: timlt
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 2bbd7911a40d6a256d478e2533ad2469b8fd6973
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73889343"
 ---
 # <a name="use-time-series-insights-to-visualize-telemetry-sent-from-the-device-simulation-solution-accelerator"></a>Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств
@@ -53,11 +53,11 @@ ms.locfileid: "73889343"
 
 ## <a name="create-a-new-time-series-insights-environment"></a>Создание среды "Аналитика временных рядов"
 
-[Azure Time Series Insights](../../articles/time-series-insights/time-series-insights-overview.md) — это полностью управляемый сервис аналитики, хранения и визуализации для управления данными временных рядов масштабов IoT в облаке. Чтобы создать новую среду "Аналитики временных рядов", выполните следующие действия.
+Служба " [аналитика временных рядов Azure](../../articles/time-series-insights/time-series-insights-overview.md) " представляет собой полностью управляемую службу аналитики, хранения и визуализации для управления данными временных рядов Интернета вещей в облаке. Чтобы создать новую среду "Аналитики временных рядов", выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. Выберите **Создать ресурс** > **Интернет вещей** > Время**серии Исследования**:
+1. Выберите **создать ресурс** > **"Интернет вещей"** > "**аналитика временных рядов**":
 
     ![Новая среда "Аналитика временных рядов Azure"](./media/iot-accelerators-device-simulation-time-series-insights/new-time-series-insights.png)
 
@@ -89,7 +89,7 @@ ms.locfileid: "73889343"
 
     ![Просмотр источников событий](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-event-sources.png)
 
-1. Нажмите **Добавить**:
+1. Нажмите кнопку **Добавить**.
 
     ![Добавление источника событий](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-event-sources-add.png)
 
@@ -105,7 +105,7 @@ ms.locfileid: "73889343"
     | Имя политики Центра Интернета вещей | **iothubowner** |
     | Ключ политики Центра Интернета вещей | Это поле заполняется автоматически. |
     | Группа потребителей Центра Интернета вещей | **devicesimulationtsi** |
-    | Формат сериализации событий | **Json** |
+    | Формат сериализации событий | **ФОРМАТ** |
     | Имя свойства для метки времени | Не указывайте |
 
     ![Создание источника событий](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-event-source-create.png)
@@ -139,7 +139,7 @@ ms.locfileid: "73889343"
 
     ![Запрос в обозревателе службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-query1.png)
 
-1. Нажмите на диаграмму и выберите **Исследуйте события:**
+1. Щелкните правой кнопкой мыши диаграмму и выберите пункт **Просмотр событий**.
 
     ![События в обозревателе службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-explore-events.png)
 
@@ -151,7 +151,7 @@ ms.locfileid: "73889343"
 
     ![Представление "Перспектива" в обозревателе службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-explorer-perspective.png)
 
-1. Нажмите, **+** чтобы добавить новый запрос в перспективе:
+1. Щелкните **+** , чтобы добавить новый запрос в перспективу:
 
     ![Добавление запроса в обозревателе службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-new-query.png)
 
@@ -167,10 +167,10 @@ ms.locfileid: "73889343"
 
 Если вы планируете продолжить изучение, оставьте развертывание ускорителя решения.
 
-Если вам больше не нужен ускоритель решения, удалите его со страницы [«Готовую к решению»,](https://www.azureiotsolutions.com/Accelerators#dashboard) выбрав его, а затем нажав **на delete Solution.**
+Если средство Solution Accelerator больше не требуется, удалите его со страницы [подготовленные решения](https://www.azureiotsolutions.com/Accelerators#dashboard) , выбрав ее и нажав кнопку **удалить решение**.
 
 Если вы добавили среду "Аналитика временных рядов" в группу ресурсов ускорителя решения, она автоматически удаляется при удалении ускорителя решения. В противном случае необходимо вручную удалить среду "Аналитика временных рядов" с портала Azure.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как изучать и запрашивать данные в обозревателе службы "Аналитика временных рядов", см. в [этой статье](../time-series-insights/time-series-insights-explorer.md).

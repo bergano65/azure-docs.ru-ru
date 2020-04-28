@@ -1,5 +1,5 @@
 ---
-title: Настройка целевой среды для физических серверов в восстановлении сайта Azure
+title: Настройка целевой среды для физических серверов в Azure Site Recovery
 description: В этой статье описано, как настроить целевую среду Azure для аварийного восстановления физических серверов с помощью Azure Site Recovery.
 author: Rajeswari-Mamilla
 manager: rochakm
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ramamill
 ms.openlocfilehash: 685f04b27cd315b04ef5c45e155e825eebe2747b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73953907"
 ---
 # <a name="prepare-target-vmware-to-azure"></a>Подготовка цели (репликация виртуальных машин VMware в Azure)
@@ -21,7 +21,7 @@ ms.locfileid: "73953907"
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается:
-- Вы создали хранилище служб восстановления для защиты физических серверов. Вы можете создать Хранилище служб восстановления с [портала Azure.](https://portal.azure.com "Портал Azure")
+- Вы создали хранилище служб восстановления для защиты физических серверов. Хранилище служб восстановления можно создать из [портал Azure](https://portal.azure.com "Портал Azure").
 - Вы [настроили локальную среду](physical-azure-disaster-recovery.md) для репликации физических серверов в Azure.
 
 ## <a name="prepare-target"></a>Подготовка цели
@@ -40,4 +40,4 @@ ms.locfileid: "73953907"
 Если у вас нет совместимых учетных записей хранения диспетчера ресурсов или виртуальной сети, их можно создать, нажав кнопку **+ Storage Account** (+ Учетная запись хранения) или кнопку **+ Network** (+ Сеть) в верхней части страницы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Настройка параметров репликации.](vmware-azure-set-up-replication.md)
+[Настройте параметры репликации](vmware-azure-set-up-replication.md).
