@@ -1,15 +1,15 @@
 ---
-title: Элемент пользовательного заик-приiv VirtualNetworkCombo
+title: Элемент пользовательского интерфейса VirtualNetworkCombo
 description: Сведения об элементе пользовательского интерфейса Microsoft.Network.VirtualNetworkCombo для портала Azure.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: tomfitz
 ms.openlocfilehash: 53c9653b44a6c9d26d49d37b351cf6000676e2d4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75651973"
 ---
 # <a name="microsoftnetworkvirtualnetworkcombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Network.VirtualNetworkCombo
@@ -110,9 +110,9 @@ ms.locfileid: "75651973"
 - Обязательно должен быть указан параметр `constraints.minAddressPrefixSize`. Любые имеющиеся виртуальные сети с адресным пространством меньше указанного значения являются недоступными.
 - Для каждой подсети должны быть определены `subnets` и `constraints.minAddressPrefixSize`.
 - При создании виртуальной сети префикс адреса каждой подсети определяется автоматически на основе префикса адреса виртуальной сети и `addressPrefixSize` соответственно.
-- При использовании имеющейся виртуальной сети любые подсети со значением меньше, чем у `constraints.minAddressPrefixSize`, — недоступны. Кроме того (если указано), подсети, которые не содержат минимальное число доступных адресов (`minAddressCount`), недоступны для выбора. Значение по умолчанию **0**. Чтобы адреса были связанными, задайте значение **true** для `requireContiguousAddresses`. Значение по умолчанию **верно.**
+- При использовании имеющейся виртуальной сети любые подсети со значением меньше, чем у `constraints.minAddressPrefixSize`, — недоступны. Кроме того (если указано), подсети, которые не содержат минимальное число доступных адресов (`minAddressCount`), недоступны для выбора. Значение по умолчанию — **0**. Чтобы адреса были связанными, задайте значение **true** для `requireContiguousAddresses`. Значение по умолчанию — **true**
 - Создание подсетей в имеющейся виртуальной сети не поддерживается.
-- Если для параметра `options.hideExisting` задано значение **true**, пользователь не может выбрать имеющуюся виртуальную сеть. По умолчанию используется значение **false**.
+- Если для параметра `options.hideExisting` задано значение **true**, пользователь не может выбрать имеющуюся виртуальную сеть. Значение по умолчанию — **false**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,24 +1,24 @@
 ---
-title: Посмотреть ссылку артефакта определения
-description: Предоставляет пример артефакта определения представления для управляемых приложений Azure. Имя файла — viewDefinition.json.
+title: Просмотреть ссылку артефакта определения
+description: Содержит пример артефакта определения представления для управляемых приложений Azure. Имя файла — viewDefinition. JSON.
 ms.topic: conceptual
 ms.author: lazinnat
 author: lazinnat
 ms.date: 07/11/2019
 ms.openlocfilehash: 5173db54abef132a4a4d5d117881352ca37d6b23
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75651206"
 ---
-# <a name="reference-view-definition-artifact"></a>Ссылка: Артефакт определения представления
+# <a name="reference-view-definition-artifact"></a>Ссылка: Просмотр артефакта определения
 
-Эта статья является ссылкой на артефакт *viewDefinition.json* в управляемых приложениях Azure. Для получения дополнительной информации об [View definition artifact](concepts-view-definition.md)настройке конфигурации представлений см.
+Эта статья представляет собой справочник по артефакту *viewDefinition. JSON* в управляемых приложениях Azure. Дополнительные сведения о конфигурации создания представлений см. в разделе [View definition артефакт](concepts-view-definition.md).
 
 ## <a name="view-definition"></a>Просмотр определений
 
-Ниже приводится пример файла *viewDefinition.json* для управляемых приложений Azure:
+В следующем JSON показан пример файла *viewDefinition. JSON* для управляемых приложений Azure:
 
 ```json
 {
@@ -87,6 +87,6 @@ ms.locfileid: "75651206"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник: Создание управляемого приложения с помощью пользовательских действий и ресурсов](tutorial-create-managed-app-with-custom-provider.md)
-- [Справка: Артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
-- [Справка: артефакт шаблона развертывания](reference-main-template-artifact.md)
+- [Учебник. Создание управляемого приложения с настраиваемыми действиями и ресурсами](tutorial-create-managed-app-with-custom-provider.md)
+- [Ссылка: артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
+- [Ссылка: артефакт шаблона развертывания](reference-main-template-artifact.md)

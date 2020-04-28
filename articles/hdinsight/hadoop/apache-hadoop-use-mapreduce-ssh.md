@@ -1,5 +1,5 @@
 ---
-title: MapReduce и SSH соединение с Apache Hadoop - Azure HDInsight
+title: Подключение MapReduce и SSH с Apache Hadoop — Azure HDInsight
 description: Узнайте, как использовать SSH для выполнения заданий MapReduce с помощью Apache Hadoop в HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/10/2020
 ms.openlocfilehash: 543bc29adc85bd767de9479607d067fadf7b0078
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75934698"
 ---
 # <a name="use-mapreduce-with-apache-hadoop-on-hdinsight-with-ssh"></a>Использование MapReduce с Apache Hadoop в HDInsight с помощью SSH
@@ -26,11 +26,11 @@ ms.locfileid: "75934698"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Кластер Apache Hadoop в HDInsight. [См. Создать кластеры Apache Hadoop с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
+Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
 ## <a name="use-hadoop-commands"></a>Использование команд Hadoop
 
-1. Используйте [команду ssh](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Отоверьте приведенную ниже команду, заменив CLUSTERNAME на имя кластера, а затем введите команду:
+1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net

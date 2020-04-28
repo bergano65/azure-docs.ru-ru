@@ -1,6 +1,6 @@
 ---
-title: Миграция приложений и интеграция в Лаборатории Azure DevTest
-description: В этой статье содержатся рекомендации по управлению инфраструктурой Azure DevTest Labs в контексте миграции и интеграции приложений.
+title: Миграция и интеграция приложений в Azure DevTest Labs
+description: В этой статье приводятся рекомендации по управлению Azure DevTest Labs инфраструктурой в контексте миграции и интеграции приложений.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -14,10 +14,10 @@ ms.date: 11/26/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 14641e9096fa9366334e9f7460ae55cda0e6c2e8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75644892"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---application-migration-and-integration"></a>Система управления инфраструктурой Azure DevTest Labs. Миграция и интеграция приложений
@@ -64,7 +64,7 @@ ms.locfileid: "75644892"
 С помощью DevTest Labs создайте конвейер пользовательского образа в Azure Pipelines.
 
 - [Introduction: Get VMs ready in minutes by setting up an image factory in Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2016/09/14/introduction-get-vms-ready-in-minutes-by-setting-up-image-factory-in-azure-devtest-labs/) (Введение: подготовьте виртуальные машины за несколько минут, настроив фабрику образов в Azure DevTest Labs)
-- [Изображение Фабрика - Часть 2! Настройка трубопроводов Azure и заводской лаборатории для создания VMs](https://blogs.msdn.microsoft.com/devtestlab/2017/10/25/image-factory-part-2-setup-vsts-to-create-vms-based-on-devtest-labs/)
+- [Фабрика образов — часть 2! Настройка Azure Pipelines и фабричной лаборатории для создания виртуальных машин](https://blogs.msdn.microsoft.com/devtestlab/2017/10/25/image-factory-part-2-setup-vsts-to-create-vms-based-on-devtest-labs/)
 - [Image Factory – Part 3: Save Custom Images and Distribute to Multiple Labs](https://blogs.msdn.microsoft.com/devtestlab/2018/01/10/image-factory-part-3-save-custom-images-and-distribute-to-multiple-labs/) (Фабрика образов, часть 3. Сохранение пользовательских образов и распространение их в несколько лабораторий)
 - [Video: Custom Image Factory with Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2017/04/17/video-custom-image-factory-with-azure-devtest-labs/) (Видео. Фабрика пользовательских образов в Azure DevTest Labs)
 
@@ -117,7 +117,7 @@ ms.locfileid: "75644892"
 При выборе числа виртуальных машин для одного пользователя или лаборатории следует учитывать три основных критерия.
 
 - **Общая сумма расходов** группы на ресурсы для лаборатории. Запустить несколько компьютеров очень легко. Чтобы контролировать эти расходы, можно применить ограничение на число виртуальных машин для пользователя и (или) лаборатории.
-- Общее число виртуальных машин в лаборатории зависит от доступных [квот уровня подписки](../azure-resource-manager/management/azure-subscription-service-limits.md). Одно из действующих ограничений — не более 800 групп ресурсов на одну подписку. В настоящее время DevTest Labs создает для каждой виртуальной машины новую группу ресурсов (если не используются общие общедоступные IP-адреса). Если в подписке 10 лабораторий, лаборатории могут поместить около 79 виртуальных машин в каждой лаборатории (800 верхних пределов – 10 групп ресурсов для 10 самих лабораторий) - 79 виртуальных машин в каждой лаборатории.
+- Общее число виртуальных машин в лаборатории зависит от доступных [квот уровня подписки](../azure-resource-manager/management/azure-subscription-service-limits.md). Одно из действующих ограничений — не более 800 групп ресурсов на одну подписку. В настоящее время DevTest Labs создает для каждой виртуальной машины новую группу ресурсов (если не используются общие общедоступные IP-адреса). Если в подписке 10 лабораторий, лабораторные занятия могут разместить около 79 виртуальных машин в каждой лаборатории (800 верхний предел — 10 групп ресурсов для 10 практических занятий) = 79 виртуальных машин на лабораторию.
 - Если лаборатория подключена к локальной сети через (например) Express Route, для виртуальной сети или подсети будут действовать **определенные доступные пространства IP-адресов**. Чтобы не возникало ситуаций, когда новые виртуальные машины в лаборатории не удается создать из-за ошибки ("не удается получить IP-адрес"), владельцу лаборатории следует настроить для лаборатории ограничение на максимальное количество виртуальных машин, согласованное с размером доступного пространства IP-адресов.
 
 ## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager

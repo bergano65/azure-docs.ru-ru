@@ -1,15 +1,15 @@
 ---
-title: Развертывание приложений предсказуемо с помощью ARM
-description: Узнайте, как развернуть несколько приложений Службы приложений Azure в единое целое и предсказуемым образом, используя шаблоны управления ресурсами Azure и сценарии PowerShell.
+title: Предсказуемое развертывание приложений с помощью ARM
+description: Узнайте, как развертывать несколько приложений службы приложений Azure как единое целое и прогнозируемым способом с помощью шаблонов управления ресурсами Azure и сценариев PowerShell.
 ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: 62d0bf776b2d0c97d95b992ed6a1fd2a356e467a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75967377"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
@@ -42,7 +42,7 @@ ms.locfileid: "75967377"
 Дополнительные сведения см. в статье [Использование Azure PowerShell с Azure Resource Manager](../powershell-azure-resource-manager.md).
 
 ### <a name="azure-resource-explorer"></a>Обозреватель ресурсов Azure
-Этот [инструмент предварительного просмотра](https://resources.azure.com) позволяет изучать определения JSON всех групп ресурсов в подписке и отдельных ресурсов. Этот инструмент предназначен для изменения определений JSON ресурса, удаления всей иерархии ресурсов и создания новых ресурсов.  Информация, доступная в этом инструменте, очень полезна для авторства шаблонов, поскольку она показывает, какие свойства необходимо установить для определенного типа ресурса, правильные значения и т.д. Вы даже можете создать свою группу ресурсов в [Azure Portal,](https://portal.azure.com/)а затем проверить ее определения JSON в инструменте explorer, чтобы помочь вам утомить группу ресурсов.
+Этот [инструмент предварительного просмотра](https://resources.azure.com) позволяет изучать определения JSON всех групп ресурсов в подписке и отдельных ресурсов. Этот инструмент предназначен для изменения определений JSON ресурса, удаления всей иерархии ресурсов и создания новых ресурсов.  Сведения, доступные в этом средстве, очень полезны для создания шаблонов, так как они показывают, какие свойства необходимо задать для конкретного типа ресурса, правильные значения и т. д. Вы даже можете создать группу ресурсов на [портале Azure](https://portal.azure.com/), а затем проверить определения JSON в средстве обозревателя, чтобы помочь вам темплатизе группу ресурсов.
 
 ### <a name="deploy-to-azure-button"></a>Кнопка "Развертывание в Azure"
 При использовании GitHub для управления версиями можно поместить кнопку [Deploy to Azure](https://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/) (Развернуть в Azure) в свой файл README.MD, которая обеспечивает готовый пользовательский интерфейс развертывания в Azure. Хотя это можно сделать для любого простого приложения, этот параметр можно расширить, чтобы организовать развертывание группы ресурсов как единого целого, помещая файл azuredeploy.json в корневой репозиторий. Этот файл JSON, который содержит шаблон группы ресурсов, используется кнопкой "Развертывание в Azure" для создания группы ресурсов. Например, см. образец [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp), который будет использоваться в этом руководстве.
@@ -182,8 +182,8 @@ ms.locfileid: "75967377"
 ## <a name="deploy-the-resource-group-template-yourself"></a>Развертывание шаблона группы ресурсов вручную
 Кнопка **Развертывание в Azure** — это отлично, но она позволяет развернуть шаблон группы ресурсов в azuredeploy.json только в том случае, если azuredeploy.json уже помещен в GitHub. Пакет SDK для Azure .NET также предоставляет средства для развертывания любого файла шаблона JSON непосредственно с локального компьютера. Для этого сделайте следующее.
 
-1. В Visual Studio нажмите **Файл** > **Новый** > **проект**.
-2. Нажмите **На кнопку «Визуальная**группа > **ресурсов облачного** > лазурного средства» (Visual C' Cloud**Azure Resource Group,** затем нажмите **OK**.
+1. В Visual Studio щелкните **файл** > **создать** > **проект**.
+2. Щелкните **Visual C#** > **Cloud** > **Группа ресурсов Azure**, а затем нажмите кнопку **ОК**.
    
    ![](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
 3. В разделе **Выберите шаблон Azure** выберите **Пустой шаблон** и нажмите кнопку **ОК**.
@@ -209,7 +209,7 @@ ms.locfileid: "75967377"
 11. Найдите свойства `location` и `isEnabled`, а затем задайте их, как показано ниже. Выполните то же самое для других трех предупреждений (фиолетового цвета).
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
-12. Теперь все готово для развертывания. Нажмите правой кнопкой мыши проекта и выберите **Развертывание** > **нового развертывания.**
+12. Теперь все готово для развертывания. Щелкните проект правой кнопкой мыши и выберите пункт **развернуть** > **новое развертывание**.
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-8-newdeployment.png)
 13. Войдите в свою учетную запись Azure, если вы еще этого не сделали.
@@ -230,7 +230,7 @@ ms.locfileid: "75967377"
     > 
 16. Нажмите кнопку **Развернуть**. Если вы выбрали параметр **Сохранить пароль**, пароль будет сохранен в файле параметров **в виде обычного текста**. В противном случае вам будет предложено ввести пароль для базы данных во время развертывания.
 
-Это все! Теперь нужно просто перейти на [портал Azure](https://portal.azure.com/) и с помощью инструмента [Обозреватель ресурсов Azure](https://resources.azure.com) просмотреть новые параметры автоматического масштабирования и предупреждения, добавляемые в развертываемое приложение JSON.
+Вот и все! Теперь нужно просто перейти на [портал Azure](https://portal.azure.com/) и с помощью инструмента [Обозреватель ресурсов Azure](https://resources.azure.com) просмотреть новые параметры автоматического масштабирования и предупреждения, добавляемые в развертываемое приложение JSON.
 
 Действия, описанные в этом разделе, главным образом охватывают следующее.
 
@@ -251,20 +251,20 @@ ms.locfileid: "75967377"
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 * [Язык шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/templates/template-syntax.md)
-* [Автор шаблоны менеджера ресурсов Azure](../azure-resource-manager/templates/template-syntax.md)
+* [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
 * [Функции шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/templates/template-functions.md)
 * [Развертывание приложения с использованием шаблона диспетчера ресурсов Azure](../azure-resource-manager/templates/deploy-powershell.md)
 * [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/powershell-azure-resource-manager.md)
 * [Устранение неполадок при развертывании групп ресурсов в Azure](../azure-resource-manager/templates/common-deployment-errors.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о синтаксисе JSON и свойствах для типов ресурсов, развертываемых в этой статье, см. таких справочниках:
 
 * [Microsoft.Sql/servers](/azure/templates/microsoft.sql/servers)
 * [Microsoft.Sql/servers/databases](/azure/templates/microsoft.sql/servers/databases)
-* [Microsoft.Sql/серверы/брандмауэры](/azure/templates/microsoft.sql/servers/firewallrules)
-* [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)
-* [Microsoft.Web/сайты](/azure/templates/microsoft.web/sites)
+* [Microsoft. SQL/Servers/Фиреваллрулес](/azure/templates/microsoft.sql/servers/firewallrules)
+* [Microsoft. Web/serverfarms](/azure/templates/microsoft.web/serverfarms)
+* [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)
 * [Microsoft.Web/sites/slots](/azure/templates/microsoft.web/sites/slots)
-* [Microsoft.Insights/autoscalesettings](/azure/templates/microsoft.insights/autoscalesettings)
+* [Microsoft. Insights/autoscalesettings](/azure/templates/microsoft.insights/autoscalesettings)

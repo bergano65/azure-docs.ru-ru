@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
 ms.openlocfilehash: 3c93eca493275612ac14a995140b2e91cc40fe98
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75644670"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-azure-powershell"></a>Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell
@@ -27,7 +27,7 @@ Azure PowerShell — это полнофункциональная среда с
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-[Лазурная силаШелл](/powershell/azure/install-Az-ps) Модуль Az.
+[Azure PowerShell](/powershell/azure/install-Az-ps) AZ Module.
 
 ## <a name="create-cluster"></a>Создание кластера
 
@@ -41,7 +41,7 @@ Azure PowerShell — это полнофункциональная среда с
 * Создание кластера HDInsight
 
 > [!NOTE]
-> Использование PowerShell для создания кластера HDInsight с Azure Data Lake Storage Gen2 в настоящее время не поддерживается.
+> Использование PowerShell для создания кластера HDInsight с Azure Data Lake Storage 2-го поколения в настоящее время не поддерживается.
 
 Следующий сценарий демонстрирует создание нового кластера.
 
@@ -60,7 +60,7 @@ Azure PowerShell — это полнофункциональная среда с
 
 ## <a name="create-cluster-configuration-object"></a>Создание кластера: объект конфигурации
 
-Вы также можете создать объект [`New-AzHDInsightClusterConfig`](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightclusterconfig) конфигурации HDInsight с помощью cmdlet. Затем можно изменить этот объект конфигурации, чтобы включить дополнительные параметры конфигурации для кластера. Наконец, `-Config` используйте [`New-AzHDInsightCluster`](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) параметр cmdlet для использования конфигурации.
+Вы также можете создать объект конфигурации HDInsight с помощью [`New-AzHDInsightClusterConfig`](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightclusterconfig) командлета. Затем можно изменить этот объект конфигурации, чтобы включить дополнительные параметры конфигурации для кластера. Наконец, используйте `-Config` параметр [`New-AzHDInsightCluster`](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) командлета для использования конфигурации.
 
 Приведенный ниже сценарий создает объект конфигурации для настройки R Server для типа кластера HDInsight. Конфигурация включает граничный узел, RStudio и дополнительную учетную запись хранения.
 
@@ -84,7 +84,7 @@ Azure PowerShell — это полнофункциональная среда с
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы успешно создали кластер HDInsight, используйте следующие ресурсы, чтобы узнать, как работать с кластером.
+Теперь, когда вы успешно создали кластер HDInsight, используйте следующие ресурсы, чтобы научиться работать с кластером.
 
 ### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
 

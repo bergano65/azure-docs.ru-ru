@@ -1,5 +1,5 @@
 ---
-title: 'Azure VPN Gateway: Установка сертификата клиента от точки к сайту'
+title: VPN-шлюз Azure. Установка сертификата клиента "точка — сеть"
 description: Установка сертификата клиента для аутентификации на основе сертификата для подключения "точка — сеть" (Windows, Mac, Linux).
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: cherylmc
 ms.openlocfilehash: 787b8a34ed4b232b9e6cc033e67b1a8162c85f6c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75902852"
 ---
 # <a name="install-client-certificates-for-p2s-certificate-authentication-connections"></a>Установка сертификатов клиента для аутентификации Azure на основе сертификата для подключения "точка — сеть"
@@ -39,6 +39,6 @@ ms.locfileid: "75902852"
 
 Сертификат клиента для Linux устанавливается в клиенте в рамках настройки. Ознакомьтесь с инструкциями по [настройке клиента для Linux](point-to-site-vpn-client-configuration-azure-cert.md#linuxinstallcli).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Продолжайте настраивать параметры конфигурации "точка — сеть", чтобы [создать и установить файлы конфигурации VPN-клиента](point-to-site-vpn-client-configuration-azure-cert.md).

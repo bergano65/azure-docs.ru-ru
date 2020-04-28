@@ -1,5 +1,5 @@
 ---
-title: Создание кластеров на Сервере Windows и Linux
+title: Создание кластеров на базе Windows Server и Linux
 description: Кластеры Service Fabric выполняются в Windows Server и Linux, позволяя разворачивать и размещать приложения Service Fabric везде, где можно запустить Windows Server или Linux.
 services: service-fabric
 documentationcenter: .net
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: dekapur
 ms.openlocfilehash: b6942c2a0647401df0d88b83e1b144ca3207a6db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75614678"
 ---
 # <a name="overview-of-service-fabric-clusters-on-azure"></a>Общие сведения о кластерах Service Fabric в Azure
@@ -48,9 +48,9 @@ ms.locfileid: "75614678"
 Дополнительные сведения см. в статье [Типы узлов Azure Service Fabric и масштабируемые наборы виртуальных машин](service-fabric-cluster-nodetypes.md).
 
 ### <a name="azure-load-balancer"></a>Azure Load Balancer
-Экземпляры виртуальных машин объединяются за [подсистемой балансировки нагрузки Azure](/azure/load-balancer/load-balancer-overview), которая связана с [общедоступным IP-адресом](/azure/virtual-network/virtual-network-ip-addresses-overview-arm#public-ip-addresses) и меткой DNS.  При предоставлении кластера с * &lt;кластерным&gt;именем,* именем DNS, * &lt;названием&gt;кластера .&lt; расположение&gt;.cloudapp.azure.com* — это метка DNS, связанная с балансером нагрузки перед набором масштабов.
+Экземпляры виртуальных машин объединяются за [подсистемой балансировки нагрузки Azure](/azure/load-balancer/load-balancer-overview), которая связана с [общедоступным IP-адресом](/azure/virtual-network/virtual-network-ip-addresses-overview-arm#public-ip-addresses) и меткой DNS.  При подготовке кластера с параметром * &lt;имя_кластера&gt;* DNS-имя * &lt;имя_кластера&gt;.&lt; Location&gt;. cloudapp.Azure.com* — это метка DNS, связанная с подсистемой балансировки нагрузки перед масштабируемым набором.
 
-Виртуальные машины в кластере имеют только [частные IP-адреса](/azure/virtual-network/virtual-network-ip-addresses-overview-arm#private-ip-addresses).  Трафик управления и трафик служб маршрутизируются через общедоступную подсистему балансировки нагрузки.  Сетевой трафик на эти машины маршрутизируется через правила NAT (клиенты подключаются к определенным узлам или экземплярам) или правила балансировки нагрузки (трафик поступает на виртуальные машины циклически).  Балансант нагрузки имеет связанный публичный IP с именем DNS в формате: * &lt;название&gt;кластера .&lt; расположение&gt;.cloudapp.azure.com*.  Общедоступный IP-адрес представляет собой еще один ресурс Azure в группе ресурсов.  При определении нескольких типов узлов в кластере для каждого типа узла или масштабируемого набора создается подсистема балансировки нагрузки. Можно также настроить одну подсистему балансировки нагрузки для нескольких типов узлов.  Тип основного узла имеет * &lt;&gt;кластерное&lt; имя метки DNS. расположение&gt;.cloudapp.azure.com*, другие типы узлов имеют dNS маркировки * &lt;&gt;-&lt;кластерного названия&gt;&lt; узла. расположение&gt;.cloudapp.azure.com*.
+Виртуальные машины в кластере имеют только [частные IP-адреса](/azure/virtual-network/virtual-network-ip-addresses-overview-arm#private-ip-addresses).  Трафик управления и трафик служб маршрутизируются через общедоступную подсистему балансировки нагрузки.  Сетевой трафик на эти машины маршрутизируется через правила NAT (клиенты подключаются к определенным узлам или экземплярам) или правила балансировки нагрузки (трафик поступает на виртуальные машины циклически).  С подсистемой балансировки нагрузки связан общедоступный IP-адрес с DNS-именем в формате: * &lt;имя_кластера&gt;.&lt; Location&gt;. cloudapp.Azure.com*.  Общедоступный IP-адрес представляет собой еще один ресурс Azure в группе ресурсов.  При определении нескольких типов узлов в кластере для каждого типа узла или масштабируемого набора создается подсистема балансировки нагрузки. Можно также настроить одну подсистему балансировки нагрузки для нескольких типов узлов.  Тип первичного узла имеет метку * &lt;DNS имя_кластера&gt;.&lt; Location&gt;. cloudapp.Azure.com*, другие типы узлов имеют метку * &lt;DNS имя_кластера&gt;-&lt;NodeType&gt;.&lt; Location&gt;. cloudapp.Azure.com*.
 
 ### <a name="storage-accounts"></a>Учетные записи хранения
 Каждый тип узла кластера поддерживается [учетной записью хранения Azure](/azure/storage/common/storage-introduction) и управляемыми дисками.
@@ -103,10 +103,10 @@ Service Fabric также поддерживает управление дост
 | Windows Server 1709; | 6,0 |
 | Windows Server 1803. | 6.4 |
 | Windows Server 1809 | 6.4.654.9590 |
-| Windows Server 2019 | 6.4.654.9590 |
+| Windows Server 2019 | 6.4.654.9590 |
 | Linux Ubuntu 16.04 | 6,0 |
 
-Для получения дополнительной информации [см. Поддерживаемые версии кластеров в Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-versions#supported-operating-systems)
+Дополнительные сведения см. [в статье Поддерживаемые версии кластеров в Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-versions#supported-operating-systems) .
 
 > [!NOTE]
 > Если вы решили развернуть Service Fabric в Windows Server 1709, обратите внимание на следующее: 1) это не ветвь долгосрочного обслуживания, поэтому, возможно, в дальнейшем потребуется перемещение версий; 2) контейнеры, созданные в Windows Server 2016 не работают в Windows Server 1709 и наоборот (потребуется перестроить их для развертывания).

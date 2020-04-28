@@ -1,6 +1,6 @@
 ---
-title: Подключите среду к Power BI - Исследования серии времени Azure Документы Майкрософт
-description: Узнайте, как подключить Исследования временных рядов Azure к Power BI для обмена, диаграммы и отображения данных в организации.
+title: Подключение среды к Power BIам Azure Time Series Insights | Документация Майкрософт
+description: Узнайте, как подключить службу "аналитика временных рядов Azure", чтобы Power BI для совместного использования, создания диаграмм и отображения данных в Организации.
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -9,141 +9,141 @@ ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.openlocfilehash: 22053bdc3a9836b76aa92303234a095cac6448ef
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75863848"
 ---
-# <a name="visualize-data-from-time-series-insights-in-power-bi"></a>Визуализация данных из Time Series Исследования в Power BI
+# <a name="visualize-data-from-time-series-insights-in-power-bi"></a>Визуализация данных из Аналитики временных рядов в Power BI
 
-Azure Time Series Insights — это платформа для хранения, управления, запроса и визуализации данных временных рядов в облаке. [Power BI](https://powerbi.microsoft.com) — это инструмент бизнес-аналитики с богатыми возможностями визуализации, который позволяет обмениваться мнениями и результатами в организации. Обе службы теперь могут быть интегрированы, чтобы получить лучшее из как Time Series Insights'присущие визуализации возможностей, а также Power BI.
+Служба "аналитика временных рядов Azure" — это платформа для хранения, управления, запроса и визуализации данных временных рядов в облаке. [Power BI](https://powerbi.microsoft.com) — это средство бизнес-аналитики с богатыми возможностями визуализации, которое позволяет обмениваться ценными сведениями и результатами в Организации. Обе службы теперь можно интегрировать, чтобы получить лучшее из встроенных функций визуализации временных рядов, а также Power BI.
 
 Вы узнаете, как:
 
-* Подключите Time Series Insights к Power BI с помощью облачного разъема
-* Создавайте визуальные эффекты с помощью данных в Power BI
-* Опубликовать отчет в Power BI и поделиться с остальной частью вашей организации
+* Подключение Time Series Insights к Power BI с помощью облачного соединителя
+* Создание визуальных элементов с помощью данных в Power BI
+* Публикация отчета в Power BI и совместное использование с остальной частью Организации
 
-В конце концов, вы узнаете, как визуализировать данные временных рядов через Azure Time Series Insights и улучшить их с помощью мощной визуализации данных и простых возможностей совместного использования Power BI.
+По окончании вы узнаете, как визуализировать данные временных рядов с помощью службы "аналитика временных рядов Azure" и улучшать их с помощью надежной визуализации данных и возможностей предоставления общего доступа к Power BI.
 
-Убедитесь в том, чтобы подписаться на [бесплатную подписку Azure,](https://azure.microsoft.com/free/) если у вас ее еще нет.
+Обязательно подпишитесь на [бесплатную подписку Azure](https://azure.microsoft.com/free/) , если у вас ее еще нет.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Скачать и установить последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/downloads/)
-* Иметь или создавать [экземпляр Azure Time Series Исследования](time-series-insights-update-how-to-manage.md)
+* Скачайте и установите последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/downloads/)
+* Создание [экземпляра предварительной версии службы "аналитика временных рядов Azure](time-series-insights-update-how-to-manage.md) "
 
 > [!IMPORTANT]
-> Разъем Power BI в настоящее время поддерживается в Time Series Исследования Предварительный *оплаты по мере вас-го* среды настроены для **теплый магазин**.
+> Соединитель Power BI в настоящее время поддерживается в средах "аналитика временных рядов" Предварительная версия *"с оплатой по мере использования"* , настроенных для **горячего хранения**.
 
 ## <a name="connect-data-from-time-series-insights-to-power-bi"></a>Подключение данных из Time Series Insights к Power BI
 
-Чтобы подключить среду Time Series Insights к Среде Power BI, выполните следующие действия:
+Чтобы подключить среду "аналитика временных рядов" к Power BI, выполните следующие действия.
 
-1. Исследователь анализов серии «Открытое время»
-1. Экспортные данные как запрос или как необработанные данные
-1. Open Power BI Desktop
+1. Открыть обозреватель аналитики временных рядов
+1. Экспорт данных в виде запроса или необработанных данных
+1. Открыть Power BI Desktop
 1. Загрузка из пользовательского запроса
 
-### <a name="export-data-into-power-bi-desktop"></a>Экспортные данные на рабочий стол Power BI
+### <a name="export-data-into-power-bi-desktop"></a>Экспорт данных в Power BI Desktop
 
 Чтобы начать работу:
 
-1. Откройте Time Series Insights Preview Explorer и курируйте ваши данные.
-1. После того как вы создали представление, вас устраивает, перейдите в меню **больше действий** выпадения и выберите **Подключите к Power BI.**
+1. Откройте обозреватель предварительного просмотра "аналитика временных рядов" и проучите данные.
+1. После создания представления, с которым вы удовлетворены, перейдите в раскрывающееся меню **More Actions (дополнительные действия** ) и выберите **подключиться к Power BI**.
 
-    [![Время Серии Исследования Предварительный исследователь экспорта](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
+    [![Экспорт обозревателя предварительной версии аналитики временных рядов](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
 
-1. Установите параметры внутри этой вкладки:
+1. Задайте параметры на этой вкладке:
 
-   1. Укажите относительный временной промежуток для просмотра. Если вы довольны существующим представлением, оставьте это в качестве **существующего таймфрейма.**
+   1. Укажите относительный интервал времени для просмотра. Если вы довольны существующим представлением, оставьте его в качестве **существующего времени**.
    
-   1. Выберите между **агрегированными** и **сырыми событиями.** 
+   1. Выберите между **агрегированными** и **необработанными событиями**. 
    
        > [!NOTE]
-       > Вы всегда можете агрегировать данные позже в Power BI, но вы не можете вернуться к необработанным данным после агрегирования. 
+       > Вы всегда можете выполнять статистическую обработку данных позже в Power BI, но нельзя вернуться к необработанным данным после статистической обработки. 
        
        > [!NOTE]
-       > Для данных уровня Raw Event существует лимит отсчета 100-K событий.
+       > Для данных на уровне необработанных событий существует ограничение в 100 КБ.
 
-       [![Подключения](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
+       [![Подключение](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
 
-   1. Если вы не настроили экземпляр Time Series Insights для **Теплого магазина,** вы получите предупреждение.
+   1. Если вы не настроили экземпляр "аналитика временных рядов" для " **горячего" хранилища**, вы получите предупреждение.
 
-       [![Теплое предупреждение магазина](media/how-to-connect-power-bi/connect-to-power-bi-warning.png)](media/how-to-connect-power-bi/connect-to-power-bi-warning.png#lightbox)
+       [![Предупреждение о горячем хранении](media/how-to-connect-power-bi/connect-to-power-bi-warning.png)](media/how-to-connect-power-bi/connect-to-power-bi-warning.png#lightbox)
 
        > [!TIP]
-       > Вы можете настроить существующий экземпляр для **теплого магазина** на портале Azure.
+       > Вы можете настроить существующий экземпляр для **горячего хранения** в портал Azure.
 
-1. Выберите **запрос копирования для буфера обмена**.
+1. Выберите **Копировать запрос в буфер обмена**.
 1. Теперь запустите Power BI Desktop.
-1. В Power BI Desktop на вкладке **Home** выберите **Get Data** в левом верхнем углу, а затем **подробнее.**
+1. На вкладке **Главная** в Power BI Desktop выберите **получить данные** в левом верхнем углу, а затем **еще**.
 
-    [![Главная выпадение](media/how-to-connect-power-bi/power-bi-home-drop-down.png)](media/how-to-connect-power-bi/power-bi-home-drop-down.png#lightbox)
+    [![Раскрывающийся список домашней страницы](media/how-to-connect-power-bi/power-bi-home-drop-down.png)](media/how-to-connect-power-bi/power-bi-home-drop-down.png#lightbox)
 
-1. Поиск **по версии Time Series Insights**, выберите **Azure Time Series Insights (бета),** затем **подключитесь.**
+1. Выполните поиск по запросу " **аналитика временных рядов**", выберите **"аналитика временных рядов Azure" (бета-версия)**, а затем **подключитесь**.
 
-    [![Подключите Power BI к анализу временных рядов](media/how-to-connect-power-bi/connect-to-time-series-insights.png)](media/how-to-connect-power-bi/connect-to-time-series-insights.png#lightbox)
+    [![Подключение Power BI к службе "аналитика временных рядов"](media/how-to-connect-power-bi/connect-to-time-series-insights.png)](media/how-to-connect-power-bi/connect-to-time-series-insights.png#lightbox)
 
-    Кроме того, перейдите на вкладку **Azure,** выберите **Azure Time Series Insights (бета),** затем **подключите**.
+    Кроме того, перейдите на вкладку **Azure** , выберите **Azure Time Series Insights (бета-версия)**, а затем **подключитесь**.
     
-1. В поле диалога сообщений будет отображаться запрос на разрешение на подключение к сторонним ресурсам. Выберите **продолжить**.
+1. Откроется диалоговое окно сообщения с запросом на разрешение на подключение к ресурсам сторонних производителей. Нажмите кнопку **продолжить**.
 
-    [![Выберите Создать пользовательский запрос](media/how-to-connect-power-bi/confirm-the-connection.png)](media/how-to-connect-power-bi/confirm-the-connection.png#lightbox)
+    [![Выбор создания настраиваемого запроса](media/how-to-connect-power-bi/confirm-the-connection.png)](media/how-to-connect-power-bi/confirm-the-connection.png#lightbox)
 
-1. В меню выпадающих **данных**под source data выберите **пользовательский запрос.** Вставьте из буфера обмена в дополнительное **пользовательское запрос (необязательно)** поле ниже, а затем нажмите **OK**.
+1. В раскрывающемся меню в разделе **источник данных**выберите **создать настраиваемый запрос**. Вставьте из буфера обмена в поле необязательный **настраиваемый запрос (необязательно)** ниже, а затем нажмите кнопку **ОК**.
 
-    [![Перейдите в пользовательском запросе и выберите OK](media/how-to-connect-power-bi/custom-query-load.png)](media/how-to-connect-power-bi/custom-query-load.png#lightbox)  
+    [![Передайте пользовательский запрос и нажмите кнопку ОК.](media/how-to-connect-power-bi/custom-query-load.png)](media/how-to-connect-power-bi/custom-query-load.png#lightbox)  
 
-1. Теперь таблица данных будет загружена. Нажмите **нагрузку** для загрузки в Power BI.
+1. Теперь таблица данных будет загружена. Нажмите кнопку **загрузить** , чтобы загрузить Power BI.
 
-    [![Просмотрите загруженные данные в таблице и выберите Load](media/how-to-connect-power-bi/review-the-loaded-data-table.png)](media/how-to-connect-power-bi/review-the-loaded-data-table.png#lightbox)  
+    [![Проверьте загруженные данные в таблице и выберите Load (загрузить).](media/how-to-connect-power-bi/review-the-loaded-data-table.png)](media/how-to-connect-power-bi/review-the-loaded-data-table.png#lightbox)  
 
-Если вы выполнили эти шаги, перейдите к следующему разделу.
+Если вы выполнили эти действия, перейдите к следующему разделу.
 
 ## <a name="create-a-report-with-visuals"></a>Создание отчета с визуальными элементами
 
-Теперь, когда вы импортировали данные в Power BI, пришло время создать отчет с визуальными эффектами.
+Теперь, когда данные импортированы в Power BI, пришло время создать отчет с визуальными элементами.
 
-1. В левой части окна убедитесь, что вы выбрали представление **отчета.**
+1. Убедитесь, что в левой части окна выбрано представление **отчета** .
 
-    [![Выберите представление отчета](media/how-to-connect-power-bi/select-the-report-view.png)](media/how-to-connect-power-bi/select-the-report-view.png#lightbox)
+    [![Выбор представления отчетов](media/how-to-connect-power-bi/select-the-report-view.png)](media/how-to-connect-power-bi/select-the-report-view.png#lightbox)
 
-1.  В колонке **Визуализации** выберите визуальный выбор. Например, выберите **диаграмму строки.** Это добавит диаграмму пустой линии к вашему холсту.
+1.  В столбце **визуализации** выберите нужный визуальный элемент. Например, выберите **график**. В холст будет добавлена пустая графика.
  
-1.  В списке **Полей** выберите **Timestamp** и перетащите ее на поле **Axis** для отображения элементов вдоль X-оси.
+1.  В списке **поля** выберите **timestamp** и перетащите его в поле **ось** , чтобы отобразить элементы вдоль оси X.
 
-1.  Опять же, в списке **Полей** выберите **TimeSeriesId** и перетащите его в поле **Значений** для отображения элементов по оси Y.
+1.  Опять же, в списке **поля** выберите **тимесериесид** и перетащите его в поле **значения** , чтобы отобразить элементы вдоль оси Y.
 
     [![Создание графика](media/how-to-connect-power-bi/power-bi-line-chart.png)](media/how-to-connect-power-bi/power-bi-line-chart.png#lightbox)
 
-1.  Чтобы добавить еще одну диаграмму в холст, выберите место на холсте за пределами диаграммы строки и повторите этот процесс.
+1.  Чтобы добавить на холст другую диаграмму, выберите в любом месте холста за пределами линейного графика и повторите эту процедуру.
 
-    [![Создание дополнительных диаграмм для совместного участия](media/how-to-connect-power-bi/power-bi-additional-charts.png)](media/how-to-connect-power-bi/power-bi-additional-charts.png#lightbox)
+    [![Создание дополнительных диаграмм для совместного использования](media/how-to-connect-power-bi/power-bi-additional-charts.png)](media/how-to-connect-power-bi/power-bi-additional-charts.png#lightbox)
 
-После создания отчета вы можете опубликовать его в службах отчетности Power BI.
+После создания отчета его можно опубликовать в Power BI Reporting Services.
 
 ## <a name="advanced-editing"></a>Расширенное редактирование
 
-Если вы уже загрузили набор данных в Power BI, но хотели бы изменить запрос (например, параметры даты/времени или идентификатора среды), вы можете сделать это с помощью функциональности расширенного редактора Power BI. Обратитесь к [документации Power BI,](https://docs.microsoft.com/power-bi/desktop-query-overview) чтобы узнать больше.
+Если вы уже загрузили набор данных в Power BI, но хотите изменить запрос (например, параметры даты и времени или идентификатора среды), это можно сделать с помощью функций Расширенный редактор Power BI. Дополнительные сведения см. в [документации по Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) .
 
-В качестве обзора:
+Общие сведения:
 
-1. В Power BI Desktop выберите **Запросы на редактор.**
-1. Пресс **Расширенный редактор**.
+1. В Power BI Desktop выберите **изменить запросы**.
+1. Нажмите **Расширенный редактор**.
 
-    [![Редит-запросы в расширенном редакторе](media/how-to-connect-power-bi/power-bi-advanced-query-editing.png)](media/how-to-connect-power-bi/power-bi-advanced-query-editing.png#lightbox)
+    [![Изменение запросов в Расширенный редактор](media/how-to-connect-power-bi/power-bi-advanced-query-editing.png)](media/how-to-connect-power-bi/power-bi-advanced-query-editing.png#lightbox)
 
-1. Изменяем полезную нагрузку JSON по желанию.
-1. Выберите **готовое,** а затем **закрыть & применить** в окно **редактора запроса питания**.
+1. При необходимости измените полезные данные JSON.
+1. Нажмите кнопку **Готово** , а затем **закройте & применить** в **окне редактора Power Query**.
 
-Интерфейс теперь будет отражать желаемые изменения, которые вы применили.  
+Теперь интерфейс будет отражать примененные необходимые изменения.  
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Прочитайте о [концепциях разъема Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) для исследования серии времени Azure.
+* Узнайте о [концепциях соединителей Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) для Azure Time Series Insights.
 
-* Узнайте больше о [рабочем столе Power BI.](https://docs.microsoft.com/power-bi/desktop-query-overview)
+* Дополнительные сведения о [Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-query-overview).
 
-* Читайте [Время Серии Исследования GA Explorer](https://docs.microsoft.com/azure/time-series-insights/time-series-quickstart) и Время [серии Исследования Предварительный исследователь](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart).
+* Ознакомьтесь со сведениями в обозревателе " [аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-quickstart) " — "Глобальный обозреватель" и " [аналитика временных рядов Insights](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart)".

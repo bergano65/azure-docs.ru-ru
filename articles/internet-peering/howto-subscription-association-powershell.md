@@ -1,7 +1,7 @@
 ---
-title: Ассоциированное одноранговое снасть ASN для подписки Azure с помощью PowerShell
+title: Связывание однорангового ASN с подпиской Azure с помощью PowerShell
 titleSuffix: Azure
-description: Ассоциированное одноранговое снасть ASN для подписки Azure с помощью PowerShell
+description: Связывание однорангового ASN с подпиской Azure с помощью PowerShell
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,44 +9,44 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 77cc4732e017d95cbae19578cf26b1111b08fdde
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75908984"
 ---
-# <a name="associate-peer-asn-to-azure-subscription-using-powershell"></a>Ассоциированное одноранговое снасть ASN для подписки Azure с помощью PowerShell
+# <a name="associate-peer-asn-to-azure-subscription-using-powershell"></a>Связывание однорангового ASN с подпиской Azure с помощью PowerShell
 
-Прежде чем отправить запрос на пиринг, сначала следует связать asN с подпиской Azure, используя приведенные ниже шаги.
+Прежде чем отправлять запрос пиринга, необходимо сначала связать ASN с подпиской Azure, выполнив приведенные ниже действия.
 
-Если вы предпочитаете, вы можете завершить это руководство с помощью [портала](howto-subscription-association-portal.md).
+При желании вы можете выполнить инструкции с помощью [портала](howto-subscription-association-portal.md).
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
 
-## <a name="create-peerasn-to-associate-your-asn-with-azure-subscription"></a>Создайте PeerASN, чтобы связать asN с подпиской Azure
+## <a name="create-peerasn-to-associate-your-asn-with-azure-subscription"></a>Создание PeerASN для связывания ASN с подпиской Azure
 
 ### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
-### <a name="register-for-peering-resource-provider"></a>Регистрация для поставщика пиринговых ресурсов
-Зарегистрируйтесь для поставщика пиринговых ресурсов в подписке, используя приведенную ниже команду. Если вы не выполняете это, то ресурсы Azure, необходимые для настройки пиринга, недоступны.
+### <a name="register-for-peering-resource-provider"></a>Регистрация для поставщика ресурсов пиринга
+Зарегистрируйтесь для использования поставщика ресурсов пиринга в подписке с помощью приведенной ниже команды. Если вы не выполните эту процедуру, ресурсы Azure, необходимые для настройки пиринга, недоступны.
 
 ```powershell
 Register-AzResourceProvider -ProviderNamespace Microsoft.Peering
 ```
 
-Вы можете проверить статус регистрации, используя команды ниже:
+Проверить состояние регистрации можно с помощью следующих команд:
 ```powershell
 Get-AzResourceProvider -ProviderNamespace Microsoft.Peering
 ```
 
 > [!IMPORTANT]
-> Подождите, пока *РегистрацияГосударство* повернет "Зарегистрированный" перед началом работы. После выполнения команды может потребоваться от 5 до 30 минут.
+> Перед продолжением дождитесь, пока *RegistrationState* зарегистрируется "Registered". Выполнение команды может занять от 5 до 30 минут.
 
-### <a name="update-the-peer-information-associated-with-this-subscription"></a>Обновление одноранговой информации, связанной с этой подпиской
+### <a name="update-the-peer-information-associated-with-this-subscription"></a>Обновление сведений о одноранговом узле, связанных с этой подпиской
 
-Ниже приведен пример обновления одноранговой информации.
+Ниже приведен пример обновления сведений об одноранговом узле.
 
 ```powershell
 New-AzPeerAsn `
@@ -58,23 +58,23 @@ New-AzPeerAsn `
 ```
 
 > [!NOTE]
-> -Имя соответствует названию ресурса и может быть все, что вы выбираете. Тем не менее, -peerName соответствует названию вашей компании и должен быть как можно ближе к вашему профилю PeeringDB. Обратите внимание, что значение для -peerName поддерживает только символы a-z, A-Я и пространство.
+> — Имя соответствует имени ресурса и может быть любым выбранным. Однако параметр-однорангово соответствует названию вашей компании и должен быть максимально близко к профилю Пирингдб. Обратите внимание, что параметр-одноранговое значение поддерживает только символы a – z, A – Z и пробел.
 
-Подписка может иметь несколько ASNs. Обновление вглядывающей информации для каждого ASN. Убедитесь, что "имя" является уникальным для каждого ASN.
+Подписка может иметь несколько ASN. Обновите сведения об пиринга для каждого ASN. Убедитесь, что "имя" уникально для каждого ASN.
 
-Ожидается, что у сверстников будет полный и актуальный профиль на [PeeringDB.](https://www.peeringdb.com) Мы используем эту информацию во время регистрации для проверки данных узла, таких как информация NOC, техническая контактная информация, их присутствие в пиринговых объектах и т.д.
+Предполагается, что узлы имеют полный и актуальный профиль на [пирингдб](https://www.peeringdb.com). Мы используем эти сведения во время регистрации, чтобы проверить сведения об одноранговом узле, такие как сведения о центре Интернета, технические контактные данные и их присутствие на узлах и т. д.
 
-Обратите внимание, что вместо **«subscriptionId»** в вышеуказанном выводе будет отображаться фактический идентификатор подписки.
+Обратите внимание, что вместо **{SubscriptionId}** в приведенных выше выходных данных будет отображен фактический идентификатор подписки.
 
-## <a name="view-status-of-a-peerasn"></a>Просмотр статуса PeerASN
+## <a name="view-status-of-a-peerasn"></a>Просмотр состояния PeerASN
 
-Проверьте состояние проверки ASN с помощью приведенной ниже команды:
+Проверьте состояние проверки ASN с помощью следующей команды:
 
 ```powershell
 Get-AzPeerAsn
 ```
 
-Ниже приведен пример ответа:
+Ниже приведен пример ответа.
 ```powershell
 PeerContactInfo : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSContactInfo
 PeerName        : Contoso
@@ -86,10 +86,10 @@ Type            : Microsoft.Peering/peerAsns
 ```
 
 > [!IMPORTANT]
-> Подождите, пока состояние валидации повернет "Утверждено", прежде чем отправлять запрос на пиринг. Это утверждение может занять до 12 часов.
+> Дождитесь включения утверждения Валидатионстате перед отправкой запроса пиринга. Для этого утверждения может потребоваться до 12 часов.
 
-## <a name="modify-peerasn"></a>Изменение PeerAsn
-Вы можете изменить контактную информацию NOC в любое время.
+## <a name="modify-peerasn"></a>Изменить PeerAsn
+Вы можете изменить контактные данные в любое время.
 
 Ниже приведен пример:
 
@@ -97,8 +97,8 @@ Type            : Microsoft.Peering/peerAsns
 Set-PeerAsn -Name Contoso_1234 -Email "newemail@test.com" -Phone "1800-000-0000"
 ```
 
-## <a name="delete-peerasn"></a>Удаление PeerAsn
-В настоящее время удалять PeerASN не поддерживается. Если вам нужно удалить PeerASN, обратитесь в [запрансь корпорации Майкрософт.](mailto:peering@microsoft.com)
+## <a name="delete-peerasn"></a>Удалить PeerAsn
+Удаление PeerASN в настоящее время не поддерживается. Если вам нужно удалить PeerASN, обратитесь в службу [пиринга Майкрософт](mailto:peering@microsoft.com).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -109,4 +109,4 @@ Set-PeerAsn -Name Contoso_1234 -Email "newemail@test.com" -Phone "1800-000-0000"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Для получения дополнительной информации посетите [Интернет пиринг часто задаваемые вопросы](faqs.md)
+Дополнительные сведения см. на странице [часто задаваемые вопросы об пиринга через Интернет](faqs.md)

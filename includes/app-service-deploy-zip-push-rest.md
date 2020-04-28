@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/12/2019
 ms.author: cephalin
 ms.openlocfilehash: 92e39f128e90ba83a919388e217f0edc86f81770
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75769678"
 ---
 ## <a name="deploy-zip-file-with-rest-apis"></a><a name="rest"></a>Развертывание ZIP-файла с помощью с REST API 
@@ -33,7 +33,7 @@ curl -u <deployment_user> https://<app_name>.scm.azurewebsites.net/api/deploymen
 
 ### <a name="with-powershell"></a>С помощью PowerShell
 
-Следующий пример использует [Publish-AzWebapp](/powershell/module/az.websites/publish-azwebapp) загрузить файл .zip. Замените заполнители `<group-name>`, `<app-name>` и `<zip-file-path>`.
+В следующем примере используется [Публикация-азвебапп](/powershell/module/az.websites/publish-azwebapp) . Замените заполнители `<group-name>`, `<app-name>` и `<zip-file-path>`.
 
 ```powershell
 Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <zip-file-path>
@@ -41,7 +41,7 @@ Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <
 
 Этот запрос позволяет активировать принудительное развертывание из отправленного ZIP-файла. 
 
-Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Опять же, `<deployment-password>`заменить , и `<app-name>` заполнителей. `<deployment-user>`
+Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Опять же, замените `<deployment-user>`заполнители `<deployment-password>`, `<app-name>` и.
 
 ```bash
 $username = "<deployment-user>"

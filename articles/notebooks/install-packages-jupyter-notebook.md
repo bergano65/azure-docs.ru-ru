@@ -1,16 +1,16 @@
 ---
-title: Установка пакетов в ноутбуках Jupyter - Обзор ноутбуков Azure
-description: Узнайте, как установить пакеты Python, R и F-программы из блокнота Jupyter, работающего на Azure.
+title: Установка пакетов в записных книжках Jupyter в предварительной версии Azure Notebook
+description: 'Узнайте, как устанавливать пакеты Python, R и F # в записной книжке Jupyter, работающей в Azure.'
 ms.topic: how-to
 ms.date: 12/04/2018
 ms.openlocfilehash: f6359b4c010834ffaee00b6208d309997339f36e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75646234"
 ---
-# <a name="install-packages-from-within-azure-notebooks-preview"></a>Установка пакетов из блокнотов Azure Предварительный просмотр
+# <a name="install-packages-from-within-azure-notebooks-preview"></a>Установка пакетов из в предварительной версии Azure Notebook Preview
 
 Несмотря на то что можно настроить [среду для записной книжки на уровне проекта](configure-manage-azure-notebooks-projects.md#configure-the-project-environment), может потребоваться установить пакеты непосредственно в отдельной записной книжке.
 
@@ -63,7 +63,7 @@ Paket.Package
   ]
 ```
 
-Затем загрузите генератор Paket:
+Затем загрузите генератор пакет:
 ```fsharp
 #load "Paket.Generated.Refs.fsx"
 ```
@@ -75,5 +75,5 @@ open MathNet.Numerics
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Как: Настроить и управлять проектами](configure-manage-azure-notebooks-projects.md)
-- [Как: Представляем слайд-шоу](present-jupyter-notebooks-slideshow.md)
+- [Как настраивать проекты и управлять ими](configure-manage-azure-notebooks-projects.md)
+- [Как Показать слайд-шоу](present-jupyter-notebooks-slideshow.md)

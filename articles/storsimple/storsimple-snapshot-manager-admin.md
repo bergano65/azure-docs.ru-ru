@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2016
 ms.author: twooley
 ms.openlocfilehash: b8fe87a2df633af310bc661308813a60987e77d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75933276"
 ---
 # <a name="use-storsimple-snapshot-manager-to-administer-your-storsimple-solution"></a>Использование диспетчера моментальных снимков StorSimple для администрирования решения StorSimple
@@ -48,7 +48,7 @@ ms.locfileid: "75933276"
 
 | ЗАДАЧА | УЧЕБНИК |
 |:--- |:--- |
-| Получение дополнительных сведений о диспетчере моментальных снимков StorSimple |[Что такое StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md) |
+| Получение дополнительных сведений о диспетчере моментальных снимков StorSimple |[Что такое Snapshot Manager в StorSimple?](storsimple-what-is-snapshot-manager.md) |
 | Установка диспетчера моментальных снимков StorSimple<br>Переустановка StorSimple Snapshot Manager<br>Удаление диспетчера моментальных снимков StorSimple |[Развертывание диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-deployment.md) |
 | Использование меню и компонентов диспетчера моментальных снимков StorSimple<ul><li>Строка меню</li><li>Панель инструментов</li><li>Панель "Область"</li><li>Панель "Результаты"</li><li>Панель "Действия"</li><li>Навигация с помощью клавиатуры и сочетания клавиш</li></ul> |[Пользовательский интерфейс диспетчера моментальных снимков StorSimple](storsimple-use-snapshot-manager.md) |
 | Использование распространенных компонентов MMC, включенных в диспетчер моментальных снимков StorSimple:<ul><li>Представление</li><li>Создать окно отсюда</li><li>Обновить</li><li>Экспорт списка</li><li>Справка</li></ul> |[Использование действий меню MMC в диспетчере моментальных снимков StorSimple](storsimple-snapshot-manager-mmc-menu.md) |

@@ -1,5 +1,5 @@
 ---
-title: 'Архитектура: На-предпосылки Apache Hadoop к Azure HDInsight'
+title: 'Архитектура: локальное Apache Hadoop в Azure HDInsight'
 description: Ознакомьтесь с рекомендациями по архитектуре в контексте миграции локальных кластеров Hadoop в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
 ms.openlocfilehash: 2d0d5bb871612bc5e16a26eb49808c39661ffb50
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75934693"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
@@ -23,7 +23,7 @@ ms.locfileid: "75934693"
 
 Большое количество локальных развертываний Apache Hadoop состоит из одного большого кластера, который поддерживает многие рабочие нагрузки. Этот отдельный кластер может быть комплексным и требовать компромиссов для отдельных служб, чтобы обеспечить их совместную работу. При миграции локальных кластеров Hadoop в Azure HDInsight нужен измененный подход.
 
-Кластеры Azure HDInsight предназначены для конкретного типа использований вычислений. Поскольку хранение может быть общим для нескольких кластеров, можно создать несколько оптимизированных вычислительных кластеров для выполнения различных заданий. У каждого типа кластера есть оптимальная конфигурация для конкретной рабочей нагрузки. В следующей таблице перечислены поддерживаемые типы кластеров в HDInsight и соответствующие рабочие нагрузки.
+Кластеры Azure HDInsight предназначены для конкретного типа использований вычислений. Так как хранилище может совместно использоваться несколькими кластерами, можно создать несколько кластеров, оптимизированных для рабочей нагрузки, в соответствии с потребностями различных заданий. У каждого типа кластера есть оптимальная конфигурация для конкретной рабочей нагрузки. В следующей таблице перечислены поддерживаемые типы кластеров в HDInsight и соответствующие рабочие нагрузки.
 
 |Рабочая нагрузка|Тип кластера HDInsight|
 |---|---|
@@ -39,14 +39,14 @@ ms.locfileid: "75934693"
 |Инструмент|На основе браузера|Командная строка|REST API|SDK|
 |---|---|---|---|---|
 |[Портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)|X||||
-|[Фабрика данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md)|X|X|X|X|
+|[Фабрика данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md).|X|X|X|X|
 |[Azure CLI (версия 1.0)](../hdinsight-hadoop-create-linux-clusters-azure-cli.md)||X|||
-|[Лазурная силаШелл](../hdinsight-hadoop-create-linux-clusters-azure-powershell.md)||X|||
-|[Curl](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)||X|X||
+|[Azure PowerShell](../hdinsight-hadoop-create-linux-clusters-azure-powershell.md)||X|||
+|[Листывания](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)||X|X||
 |[Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet)||||X|
-|[Питон SDK](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python)||||X|
-|[пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable)||||X|
-|[Шаблоны диспетчера ресурсов Azure](../hdinsight-hadoop-create-linux-clusters-arm-templates.md)||X|||
+|[Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python)||||X|
+|[Пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable)||||X|
+|[Шаблоны Azure Resource Manager](../hdinsight-hadoop-create-linux-clusters-arm-templates.md)||X|||
 
 Дополнительные сведения см. в статье [Что такое Azure HDInsight и стек технологий Apache Hadoop](../hadoop/apache-hadoop-introduction.md).
 
@@ -54,15 +54,15 @@ ms.locfileid: "75934693"
 
 Кластеры HDInsight могут не использоваться в течение длительного периода времени. Для экономии расходов на ресурсы HDInsight поддерживает промежуточные кластеры по запросу, которые можно удалить после успешного выполнения рабочей нагрузки.
 
-При удалении кластера не удаляются связанные с ними учетная запись хранения и внешние метаданные. Кластер можно создавать повторно с использованием тех же учетных записей хранения и хранилищ метаданных.
+При удалении кластера связанная учетная запись хранения и внешние метаданные не удаляются. Кластер можно создавать повторно с использованием тех же учетных записей хранения и хранилищ метаданных.
 
 Фабрику данных Azure можно использовать для планирования создания кластеров HDInsight по запросу. Дополнительные сведения см. в статье [Руководство. Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md).
 
 ## <a name="decouple-storage-from-compute"></a>Отделение ресурсов хранилища от вычислительных ресурсов
 
-Стандартное локальное развертывание Hadoop использует один набор компьютеров для хранения и обработки данных. Поскольку они перемещаются, вычисления и хранение должны быть масштабированы вместе.
+Стандартное локальное развертывание Hadoop использует один набор компьютеров для хранения и обработки данных. Так как они совместно размещены, расчеты и хранилище должны масштабироваться вместе.
 
-В кластерах HDInsight хранение не должно быть перемещено с помощью вычислений и может быть либо в хранилище Azure, хранилище озер данных Azure data, либо в обоих. Отделение хранилища от вычислительных ресурсов предоставляет следующие преимущества:
+В кластерах HDInsight хранилище не нужно совместно использовать с COMPUTE и может быть в службе хранилища Azure, Azure Data Lake Storage или в обоих случаях. Отделение хранилища от вычислительных ресурсов предоставляет следующие преимущества:
 
 - совместное использование данных кластерами;
 - использование промежуточных кластеров, так как данные не зависят от кластера;
@@ -74,7 +74,7 @@ ms.locfileid: "75934693"
 
 ## <a name="use-external-metadata-stores"></a>Использование внешних хранилищ метаданных
 
-Есть два основных метамагазина, которые работают с кластерами HDInsight: [Apache Hive](https://hive.apache.org/) и [Apache Oozie](https://oozie.apache.org/). Хранилище метаданных Hive — это центральный репозиторий схемы, который могут использовать модули обработки данных, такие как Hadoop, Spark, LLAP, Presto и Apache Pig. Хранилище метаданных Oozie хранит сведения о планировании, состояние хода выполнения и выполненные задания Hadoop.
+Существует два основных метахранилища, которые работают с кластерами HDInsight: [Apache Hive](https://hive.apache.org/) и [Apache Oozie](https://oozie.apache.org/). Хранилище метаданных Hive — это центральный репозиторий схемы, который могут использовать модули обработки данных, такие как Hadoop, Spark, LLAP, Presto и Apache Pig. Хранилище метаданных Oozie хранит сведения о планировании, состояние хода выполнения и выполненные задания Hadoop.
 
 HDInsight использует Базу данных SQL Azure для хранилищ метаданных Hive и Oozie. Есть два способа настроить хранилище метаданных для кластеров HDInsight.
 
@@ -102,12 +102,12 @@ HDInsight использует Базу данных SQL Azure для храни
 - Не используйте хранилище метаданных, созданное для одной версии кластера HDInsight, с кластерами других версий. Различные версии Hive используют отличающиеся схемы. Например, хранилище метаданных нельзя совместно использовать с кластерами Hive 1.2 и Hive 2.1.
 - Периодически архивируйте пользовательское хранилище метаданных.
 - Разместите хранилище метаданных и кластер HDInsight в одном регионе.
-- Мониторинг метамагазина для повышения производительности и доступности с помощью инструментов мониторинга баз данных Azure S'L, таких как портал Azure или журналы Azure Monitor.
-- Выполняйте `ANALYZE TABLE` команду, необходимую для создания статистики для таблиц и столбцов. Например, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
+- Отслеживайте производительность и доступность хранилище метаданных с помощью средств мониторинга базы данных SQL Azure, таких как портал Azure или журналов Azure Monitor.
+- Выполните `ANALYZE TABLE` команду в соответствии с требованиями для создания статистики по таблицам и столбцам. Например, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
 
 ## <a name="best-practices-for-different-workloads"></a>Рекомендации для различных рабочих нагрузок
 
-- Рассмотрите возможность использования кластера LLAP для интерактивных запросов Hive с улучшенным временем отклика [LLAP](https://cwiki.apache.org/confluence/display/Hive/LLAP) — это новая функция в Hive 2.0, которая позволяет кэшировать запросы в памяти. LLAP создает запросы Hive гораздо быстрее — в  [некоторых случаях в 26 раз быстрее, чем Hive версии 1.x](https://hortonworks.com/blog/announcing-apache-hive-2-1-25x-faster-queries-much/).
+- Рассмотрите возможность использования кластера LLAP для интерактивных запросов Hive с улучшенным временем отклика [LLAP](https://cwiki.apache.org/confluence/display/Hive/LLAP) — новая функция в Hive 2,0, позволяющая кэшировать запросы в памяти. LLAP создает запросы Hive гораздо быстрее — в  [некоторых случаях в 26 раз быстрее, чем Hive версии 1.x](https://hortonworks.com/blog/announcing-apache-hive-2-1-25x-faster-queries-much/).
 - Рассмотрите возможность использования заданий Spark вместо заданий Hive.
 - Рассмотрите возможность замены запросов на основе Impala на запросы LLAP.
 - Рассмотрите возможность замены заданий MapReduce на задания Spark.

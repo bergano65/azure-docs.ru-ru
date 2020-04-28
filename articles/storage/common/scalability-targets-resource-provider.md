@@ -1,6 +1,6 @@
 ---
-title: Масштабируемость для поставщика ресурсов ресурсов Ресурсов Azure
-description: Цели масштабируемости и производительности для операций против поставщика ресурсов ресурсов Ресурсов Ресурсов Azure. Поставщик ресурсов реализует менеджер ресурсов Azure для хранения azure.
+title: Масштабируемость для поставщика ресурсов службы хранилища Azure
+description: Целевые показатели масштабируемости и производительности для операций с поставщиком ресурсов службы хранилища Azure. Поставщик ресурсов реализует Azure Resource Manager для службы хранилища Azure.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,17 +9,17 @@ ms.date: 12/18/2019
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: e7fb118dbc53b36e01c8188b9013a3f739bf0c59
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75747776"
 ---
-# <a name="scalability-and-performance-targets-for-the-azure-storage-resource-provider"></a>Цели масштабируемости и производительности для поставщика ресурсов ресурсов Ресурсов Ресурсов Azure
+# <a name="scalability-and-performance-targets-for-the-azure-storage-resource-provider"></a>Целевые показатели масштабируемости и производительности для поставщика ресурсов службы хранилища Azure
 
 [!INCLUDE [storage-scalability-intro-include](../../../includes/storage-scalability-intro-include.md)]
 
-## <a name="scale-targets-for-the-resource-provider"></a>Масштабирование целевых показателей для поставщика ресурсов
+## <a name="scale-targets-for-the-resource-provider"></a>Целевые показатели масштабирования для поставщика ресурсов
 
 [!INCLUDE [azure-storage-limits-azure-resource-manager](../../../includes/azure-storage-limits-azure-resource-manager.md)]
 

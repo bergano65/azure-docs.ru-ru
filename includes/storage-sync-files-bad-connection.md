@@ -9,10 +9,10 @@ ms.date: 07/08/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: b2ff542d2782293e89b66e5d25cb67a9bcde6da8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75773014"
 ---
 Эта ошибка может возникать всякий раз, когда служба "Синхронизация файлов Azure" недоступна с сервера. Вы можете устранить эту ошибку, выполнив следующие шаги:
@@ -31,6 +31,6 @@ ms.locfileid: "75773014"
     Import-Module "$agentPath\StorageSync.Management.ServerCmdlets.dll"
     Get-StorageSyncProxyConfiguration
     ```
-4. Используйте смдlet Test-StorageNetworkConnectivity для проверки подключения сети к конечным точкам службы. Чтобы узнать больше, смотрите [тестовое подключение сети к конечным точкам обслуживания.](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#test-network-connectivity-to-service-endpoints)    
+4. Используйте командлет Test-Сторажесинкнетворкконнективити, чтобы проверить сетевое подключение к конечным точкам службы. Дополнительные сведения см. в статье [Проверка сетевого подключения к конечным точкам служб](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#test-network-connectivity-to-service-endpoints).    
 
 5. Обратитесь к администратору сети за дополнительной помощью в устранении неполадок подключения к сети.

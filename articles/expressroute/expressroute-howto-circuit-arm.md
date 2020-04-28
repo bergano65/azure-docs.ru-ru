@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: Изменить схему: PowerShell'
+title: 'Azure ExpressRoute: изменение канала: PowerShell'
 description: Создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute.
 services: expressroute
 author: cherylmc
@@ -8,20 +8,20 @@ ms.topic: article
 ms.date: 01/08/2020
 ms.author: cherylmc
 ms.openlocfilehash: ab44d5358154c17622eef68205ac2326e81377a0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75770974"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-powershell"></a>Создание и изменение канала ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Лазурный CLI](howto-circuit-cli.md)
-> * [Шаблон менеджера ресурсов Azure](expressroute-howto-circuit-resource-manager-template.md)
-> * [Видео - Портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
-> * [PowerShell (классический)](expressroute-howto-circuit-classic.md)
+> * [Azure CLI](howto-circuit-cli.md)
+> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
+> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
+> * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
 
 В этой статье описывается, как создать канал ExpressRoute, используя командлеты PowerShell и модель развертывания с помощью Azure Resource Manager. Вы также сможете проверять состояние каналов, обновлять, удалять или отзывать их.
@@ -37,14 +37,14 @@ ms.locfileid: "75770974"
 [!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
 ## <a name="create-and-provision-an-expressroute-circuit"></a><a name="create"></a>Создание и предоставление канала ExpressRoute
-### <a name="1-sign-in-to-your-azure-account-and-select-your-subscription"></a>1. Вопийте на свою учетную запись Azure и выберите подписку
+### <a name="1-sign-in-to-your-azure-account-and-select-your-subscription"></a>1. Войдите в учетную запись Azure и выберите подписку.
 
 [!INCLUDE [sign in](../../includes/expressroute-cloud-shell-connect.md)]
 
-### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. Получить список поддерживаемых поставщиков, местоположений и пропускных полос
+### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. получите список поддерживаемых поставщиков, расположений и пропускной способности.
 Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности.
 
-Смдлет PowerShell **Get-AzExpressRouteServiceProvider** возвращает эту информацию, которую вы будете использовать в последующих шагах:
+Командлет PowerShell **Get-азекспрессраутесервицепровидер** возвращает эти сведения, которые будут использоваться в последующих шагах:
 
 ```azurepowershell-interactive
 Get-AzExpressRouteServiceProvider
@@ -52,13 +52,13 @@ Get-AzExpressRouteServiceProvider
 
 Проверьте, указан ли в списке поставщик услуг подключения. Запишите следующие сведения, которые потребуются позднее при создании канала:
 
-* name
+* Имя
 * PeeringLocations
 * BandwidthsOffered
 
 Теперь все готово к созданию канала ExpressRoute.
 
-### <a name="3-create-an-expressroute-circuit"></a>3. Создание схемы ExpressRoute
+### <a name="3-create-an-expressroute-circuit"></a>3. Создание канала ExpressRoute
 Перед созданием канала ExpressRoute необходимо создать группу ресурсов (если вы этого еще не сделали) с помощью следующей команды:
 
 ```azurepowershell-interactive
@@ -73,8 +73,8 @@ New-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "Exp
 
 Убедитесь, что указаны правильный уровень SKU и семейство SKU:
 
-* Уровень SKU определяет, является ли схема ExpressRoute [локальной,](expressroute-faqs.md#expressroute-local)стандартной или [премиум-](expressroute-faqs.md#expressroute-premium) Вы можете указать *местные,* *стандартные* или *премиум*.
-* Семейство SKU определяет тип выставления счетов. Можно указать *Metereddata* для дозированного плана данных и *Unlimiteddata* для неограниченного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальная* схема всегда *неограниченной.*
+* Уровень SKU определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, *Standard* или *Premium*.
+* Семейство SKU определяет тип выставления счетов. Вы можете указать *Metereddata* для тарифного тарифного плана и *Unlimiteddata* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальная* цепь всегда *Unlimiteddata*.
 
 > [!IMPORTANT]
 > Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Обязательно выполните эту операцию, как только поставщик услуг подключения будет готов предоставить канал.
@@ -88,8 +88,8 @@ get-help New-AzExpressRouteCircuit -detailed
 ```
 
 
-### <a name="4-list-all-expressroute-circuits"></a>4. Перечислите все схемы ExpressRoute
-Чтобы получить список всех созданных схем ExpressRoute, запустите команду **Get-AzExpressRouteCircuit:**
+### <a name="4-list-all-expressroute-circuits"></a>4. Вывод списка всех каналов ExpressRoute
+Чтобы получить список всех созданных каналов ExpressRoute, выполните команду **Get-азекспрессраутеЦиркуит** :
 
 ```azurepowershell-interactive
 Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
@@ -151,8 +151,8 @@ Get-AzExpressRouteCircuit
     Peerings                         : []
 
 
-### <a name="5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>5. Отправить ключ службы поставщику услуг для подготовки
-*ServiceProvideringState* предоставляет информацию о текущем состоянии подготовки на стороне поставщика услуг. Параметр Status предоставляет состояние на стороне Майкрософт. Дополнительные сведения о состояниях подготовки канала см. в разделе о [рабочих процессах](expressroute-workflows.md#expressroute-circuit-provisioning-states).
+### <a name="5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>5. Отправьте ключ службы поставщику услуг подключения для подготовки
+*Параметр serviceproviderprovisioningstate* предоставляет сведения о текущем состоянии подготовки на стороне поставщика услуг. Параметр Status предоставляет состояние на стороне Майкрософт. Дополнительные сведения о состояниях подготовки канала см. в разделе о [рабочих процессах](expressroute-workflows.md#expressroute-circuit-provisioning-states).
 
 Вновь созданный канал ExpressRoute будет имеет следующее состояние:
 
@@ -171,7 +171,7 @@ Get-AzExpressRouteCircuit
     ServiceProviderProvisioningState : Provisioned
     CircuitProvisioningState         : Enabled
 
-### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. Периодически проверяйте состояние и состояние ключа цепи
+### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. периодически проверяйте состояние и состояние ключа канала
 Проверка состояния и состояния ключа канала позволит вам узнать, когда поставщик активирует ваш канал. После настройки канала значение параметра *ServiceProviderProvisioningState* изменится на *Provisioned*, как показано в примере ниже.
 
 ```azurepowershell-interactive
@@ -203,7 +203,7 @@ Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "Exp
     ServiceKey                       : **************************************
     Peerings                         : []
 
-### <a name="7-create-your-routing-configuration"></a>7. Создайте конфигурацию реуктора
+### <a name="7-create-your-routing-configuration"></a>7. Создание конфигурации маршрутизации
 Пошаговые инструкции по созданию и изменению пиринга каналов см. в статье [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-arm.md).
 
 > [!IMPORTANT]
@@ -211,11 +211,11 @@ Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "Exp
 >
 >
 
-### <a name="8-link-a-virtual-network-to-an-expressroute-circuit"></a>8. Свяжите виртуальную сеть с схемой ExpressRoute
+### <a name="8-link-a-virtual-network-to-an-expressroute-circuit"></a>8. Связывание виртуальной сети с каналом ExpressRoute
 Теперь свяжите виртуальную сеть с каналом ExpressRoute. При работе с моделью развертывания Resource Manager пользуйтесь статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md) .
 
 ## <a name="getting-the-status-of-an-expressroute-circuit"></a>Получение состояния канала ExpressRoute
-Вы можете получить эту информацию в любое время с помощью **cmdlet Get-AzExpressRouteCircuit.** Если командлет вызывается без параметров, выводится список всех каналов.
+Эти сведения можно получить в любое время с помощью командлета **Get-азекспрессраутеЦиркуит** . Если командлет вызывается без параметров, выводится список всех каналов.
 
 ```azurepowershell-interactive
 Get-AzExpressRouteCircuit
@@ -375,8 +375,8 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 Обратите внимание на следующие сведения:
 
 * Связь между ExpressRoute и всеми виртуальными сетями необходимо разорвать. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
-* Если поставщик услуг по предоставлению услуг по кольцевым услугам ExpressRoute **предоставляет** или **предоставляет,** вы должны работать с поставщиком услуг, чтобы дезавуировать схему на их стороне. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
-* Если поставщик услуг дезавуировал схему (состояние подготовки поставщика услуг **установлено не предусмотрено),** вы можете удалить схему. Это приостанавливает выставление счетов для канала.
+* Если состояние подготовки поставщика службы канала ExpressRoute — **Подготовка** или **Подготовка** , необходимо обратиться к поставщику услуг, чтобы отменить подготовку канала к своей стороне. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
+* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг установлено в значение " **не подготовлено**"), можно удалить канал. Это приостанавливает выставление счетов для канала.
 
 Для удаления канала ExpressRoute выполните следующую команду:
 

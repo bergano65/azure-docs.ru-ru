@@ -1,15 +1,15 @@
 ---
-title: Элемент uI PasswordBox
-description: Сведения об элементе пользовательского интерфейса Microsoft.Common.PasswordBox для портала Azure. Позволяет пользователям предоставлять секретное значение при развертывании управляемых приложений.
+title: Элемент пользовательского интерфейса PasswordBox
+description: Сведения об элементе пользовательского интерфейса Microsoft.Common.PasswordBox для портала Azure. Позволяет пользователям предоставлять секретные значения при развертывании управляемых приложений.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: tomfitz
 ms.openlocfilehash: 5f7d3a47482ccec9778b102d3509b5f8ef343185
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75652311"
 ---
 # <a name="microsoftcommonpasswordbox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.PasswordBox
@@ -53,7 +53,7 @@ ms.locfileid: "75652311"
 
 - Этот элемент не поддерживает свойство `defaultValue`.
 - Дополнительные сведения о реализации `constraints` см. в статье [Элемент пользовательского интерфейса Microsoft.Common.TextBox](microsoft-common-textbox.md).
-- Если для параметра `options.hideConfirmation` задано значение **true**, второе текстовое поле для подтверждения пароля скрыто. По умолчанию используется значение **false**.
+- Если для параметра `options.hideConfirmation` задано значение **true**, второе текстовое поле для подтверждения пароля скрыто. Значение по умолчанию — **false**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

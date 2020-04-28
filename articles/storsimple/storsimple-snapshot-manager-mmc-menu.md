@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: twooley
 ms.openlocfilehash: ced075395c4f2a51308d5d3b0cbe4c0153a17816
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75931470"
 ---
 # <a name="use-the-mmc-menu-actions-in-storsimple-snapshot-manager"></a>Использование действий меню MMC в диспетчере моментальных снимков StorSimple
@@ -87,7 +87,7 @@ ms.locfileid: "75931470"
    1. В поле **Имя файла** введите имя CSV-файла или щелкните стрелку, чтобы выбрать имя в раскрывающемся списке.
    2. В поле **Тип файла** щелкните стрелку и выберите в раскрывающемся списке тип файла.
    3. Чтобы сохранить только выбранные элементы, выделите нужные строки и установите флажок **Сохранить только выбранные строки**. Чтобы сохранить все экспортированные списки, снимите флажок **Сохранить только выбранные строки** .
-   4. Нажмите **Сохранить**.
+   4. Выберите команду **Сохранить**.
       
       ![Экспорт списка в виде файла с разделителями-запятыми](./media/storsimple-snapshot-manager-mmc-menu/HCS_SSM_Export_List.png) 
 

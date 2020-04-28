@@ -1,5 +1,5 @@
 ---
-title: Проблема съемки Azure от сайта к сайту VPN отключается с перерывами
+title: Временное устранение неполадок при подключении VPN типа "сеть — сеть" Azure
 description: Сведения об устранении регулярных разрывов подключений VPN типа "сеть — сеть".
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 10/30/2018
 ms.author: genli
 ms.openlocfilehash: 82054099a5a496e99c49135ab98ee1163af19784
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75862566"
 ---
 # <a name="troubleshooting-azure-site-to-site-vpn-disconnects-intermittently"></a>Устранение проблемы периодических разрывов подключений VPN типа "сеть — сеть" Azure
@@ -62,10 +62,10 @@ ms.locfileid: "75862566"
 
 ### <a name="step-7-check-whether-the-on-premises-vpn-device-has-perfect-forward-secrecy-enabled"></a>Шаг 7. Проверьте, включена ли для локального VPN-устройства функция полной безопасности пересылки
 
-Функция **полной безопасности пересылки** (PFS) может вызвать проблемы отключения. Если устройство VPN имеет **Perfect forward Secrecy** включен, отключить функцию. Затем [обновите политику iPsec виртуального сетевого шлюза.](vpn-gateway-ipsecikepolicy-rm-powershell.md#managepolicy)
+Функция **полной безопасности пересылки** (PFS) может вызвать проблемы отключения. Если для VPN-устройства **включена полная PFS,** отключите ее. Затем [Обновите политику IPSec шлюза виртуальной сети](vpn-gateway-ipsecikepolicy-rm-powershell.md#managepolicy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание подключения типа "сеть — сеть" на портале Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-- [Настройте политику IPsec/IKE для VPN-соединений от сайта к сайту](vpn-gateway-ipsecikepolicy-rm-powershell.md)
+- [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md)
 

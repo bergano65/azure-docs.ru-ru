@@ -1,5 +1,5 @@
 ---
-title: 'Добавьте несколько VPN шлюзов от сайта к сайту на портал VNet: Azure'
+title: 'Добавление нескольких подключений типа "сеть — сеть" VPN-шлюза к виртуальной сети: портал Azure'
 description: Добавление многосайтовых подключений типа "сеть — сеть" к VPN-шлюзу с имеющимся подключением
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
@@ -10,23 +10,23 @@ ms.workload: infrastructure-services
 ms.date: 10/09/2019
 ms.author: cherylmc
 ms.openlocfilehash: 7b438f2b966dc43d41b91a138b39193d230d5546
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75779694"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection"></a>Добавление подключения типа "сеть — сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза
 
 > [!div class="op_single_selector"]
 > * [Портал Azure](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
-> * [PowerShell (классический)](vpn-gateway-multi-site.md)
+> * [PowerShell (классическая модель)](vpn-gateway-multi-site.md)
 >
 > 
 
 В этой статье рассматривается использование портала Azure для добавления подключений типа "сеть — сеть" в VPN-шлюз с имеющимся подключением. Этот тип подключения часто называется "многосайтовым". Можно добавить подключение типа "сеть-сеть" к виртуальной сети, которая уже имеет подключение типа "сеть-сеть", "точка-сеть" или "виртуальная сеть — виртуальная сеть". При добавлении подключения есть некоторые ограничения. Прежде чем начать настройку, просмотрите раздел [Перед началом работы](#before) в этой статье. 
 
-Эта статья относится к виртуальным сетям Resource Manager, использующим VPN-шлюз на основе маршрутов. Эти шаги не распространяются на новые конфигурации сосуществующих соединений ExpressRoute/Site-to-Site. Однако, если вы просто добавляете новое VPN соединение к уже существующей конфигурации сосуществования, вы можете использовать эти шаги. Сведения о параллельно существующих подключениях см. в разделе [Параллельно существующие подключения ExpressRoute и "сеть — сеть"](../expressroute/expressroute-howto-coexist-resource-manager.md).
+Эта статья относится к виртуальным сетям Resource Manager, использующим VPN-шлюз на основе маршрутов. Эти действия не применяются к новым конфигурациям подключения ExpressRoute или "сеть — сеть". Однако, если вы просто добавляете новое VPN-подключение к уже существующей конфигурации, вы можете использовать эти действия. Сведения о параллельно существующих подключениях см. в разделе [Параллельно существующие подключения ExpressRoute и "сеть — сеть"](../expressroute/expressroute-howto-coexist-resource-manager.md).
 
 ### <a name="deployment-models-and-methods"></a>Модели и методы развертывания
 [!INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "75779694"
 ## <a name="before-you-begin"></a><a name="before"></a>Перед началом
 Проверьте следующее.
 
-* Вы не настраиваете новую конфигурацию Сосуществующих ExpressRoute и VPN Gateway.
+* Вы не настраиваете новую конфигурацию сосуществующих ExpressRoute и VPN-шлюза.
 * У вас должна быть виртуальная сеть, созданная с помощью модели развертывания Resource Manager, с имеющимся подключением.
 * Тип шлюза виртуальной сети — RouteBased. При наличии VPN-шлюза типа PolicyBased необходимо удалить шлюз виртуальной сети и создать VPN-шлюз типа RouteBased.
 * Ни один из диапазонов адресов не должен перекрываться ни в одной из виртуальных сетей, к которой подключается эта виртуальная сеть.
@@ -46,11 +46,11 @@ ms.locfileid: "75779694"
 * Имеется внешний общедоступный IP-адрес для VPN-устройства. Этот IP-адрес не может располагаться вне преобразования сетевых адресов (NAT).
 
 ## <a name="part-1---configure-a-connection"></a><a name="part1"></a>Часть 1. Настройка подключения
-1. Из браузера перейдите на [портал Azure](https://portal.azure.com) и, при необходимости, войдите в систему с помощью учетной записи Azure.
+1. В браузере перейдите к [портал Azure](https://portal.azure.com) и при необходимости войдите с помощью учетной записи Azure.
 2. Щелкните **Все ресурсы**, а затем найдите в списке ресурсов **Шлюз виртуальной сети** и щелкните его.
 3. На странице **Шлюз виртуальной сети** щелкните **Подключения**.
    
-    ![Страница подключения](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/connectionsblade.png "Страница подключения")<br>
+    ![Страница "подключения"](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/connectionsblade.png "Страница "подключения"")<br>
 4. На странице **Подключения** нажмите кнопку **+ Добавить**.
    
     ![Кнопка "Добавить подключение"](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/addbutton.png "Кнопка "Добавить подключение"")<br>
@@ -59,7 +59,7 @@ ms.locfileid: "75779694"
    * **Имя.** Имя, назначаемое сайту, к которому создается подключение.
    * **Тип подключения.** Выберите **Сеть — сеть (IPSec)**.
      
-     ![Добавление страницы соединения](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/addconnectionblade.png "Добавление страницы соединения")<br>
+     ![Страница "Добавление подключения"](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/addconnectionblade.png "Страница "Добавление подключения"")<br>
 
 ## <a name="part-2---add-a-local-network-gateway"></a><a name="part2"></a>Часть 2. Добавление шлюза локальной сети
 1. Щелкните **Шлюз локальной сети, а затем ** ***Выберите шлюз локальной сети***. Откроется страница **Выбор шлюза локальной сети**.
@@ -67,7 +67,7 @@ ms.locfileid: "75779694"
     ![Выбор шлюза локальной сети](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/chooselng.png "Выбор шлюза локальной сети")<br>
 2. Щелкните **Создать**, чтобы открыть страницу **Создание шлюза локальной сети**.
    
-    ![Создание локальной страницы сетевого шлюза](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/createlngblade.png "Создание локального сетевого шлюза")<br>
+    ![Страница "Создание шлюза локальной сети"](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/createlngblade.png "Создание шлюза локальной сети")<br>
 3. На странице **Создание шлюза локальной сети** заполните следующие поля.
    
    * **Имя.** Имя, которое будет использоваться для шлюза локальной сети.
@@ -86,6 +86,6 @@ ms.locfileid: "75779694"
 
 [!INCLUDE [vpn-gateway-verify-connection-ps-rm](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию о виртуальных машинах см. в [схеме обучения](/learn/paths/deploy-a-website-with-azure-virtual-machines/).

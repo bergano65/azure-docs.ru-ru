@@ -1,6 +1,6 @@
 ---
-title: Синхронизация пользователей Active Directory Azure с кластером HDInsight
-description: Синхронизация аутентифицированных пользователей из Active Directory Azure в кластер HDInsight.
+title: Синхронизация пользователей Azure Active Directory с кластером HDInsight
+description: Синхронизация пользователей, прошедших проверку подлинности, от Azure Active Directory к кластеру HDInsight.
 author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
 ms.openlocfilehash: 299d242c38152db6a471159d1f3d2803598c1832
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75744866"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
 
-[Кластеры HDInsight с Корпоративным пакетом безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую аутентификацию пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей* (RBAC). При добавлении пользователей и групп в AD Azure можно синхронизировать пользователей, которым необходим доступ к кластеру.
+[Кластеры HDInsight с Корпоративным пакетом безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую аутентификацию пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей* (RBAC). При добавлении пользователей и групп в Azure AD можно синхронизировать пользователей, которым необходим доступ к кластеру.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,17 +27,17 @@ ms.locfileid: "75744866"
 
 Чтобы просмотреть узлы, откройте веб-интерфейс Ambari. Для каждого узла будут заданы новые параметры автоматического обновления.
 
-1. С [портала Azure](https://portal.azure.com)перейдите в каталог Azure AD, связанный с кластером ESP.
+1. В [портал Azure](https://portal.azure.com)перейдите к каталогу Azure AD, связанному с кластером ESP.
 
 2. Выберите **All users** (Все пользователи) в левом меню, а затем щелкните **New user** (Новый пользователь).
 
-    ![Пользователи портала Azure и группы всех](./media/hdinsight-sync-aad-users-to-cluster/users-and-groups-new.png)
+    ![портал Azure пользователей и групп](./media/hdinsight-sync-aad-users-to-cluster/users-and-groups-new.png)
 
 3. Заполните форму нового пользователя. Выберите группы, созданные для назначения разрешений на основе кластеров. В этом примере создайте группу с именем HiveUsers, которой можно назначить новых пользователей. [Примеры инструкций](hdinsight-domain-joined-configure.md) для создания кластера ESP включают в себя добавление двух групп: `HiveUsers` и `AAD DC Administrators`.
 
-    ![Группы выбора панели панели панели пользователя портала Azure](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
+    ![портал Azure область пользователя "Выбор групп"](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
 
-4. Выберите **Создать**.
+4. Нажмите кнопку **создания**.
 
 ## <a name="use-the-apache-ambari-rest-api-to-synchronize-users"></a>Синхронизация пользователей с помощью REST API Apache Ambari
 
@@ -45,7 +45,7 @@ ms.locfileid: "75744866"
 
 Следующий метод использует POST с REST API Ambari. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md).
 
-1. Используйте [команду ssh](hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив `CLUSTERNAME` именем своего кластера, а затем введите команду:
+1. Используйте [команду SSH](hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив `CLUSTERNAME` именем своего кластера, а затем введите команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
@@ -120,26 +120,26 @@ ms.locfileid: "75744866"
     }
     ```
 
-1. Этот результат показывает, что статус **COMPLETE,** один новый пользователь был создан, и пользователю было назначено членство. В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
+1. В результате отобразится состояние " **завершено**", был создан один пользователь, и ему было назначено членство. В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
 
     > [!NOTE]  
-    > Предыдущий метод синхронизирует только группы Azure AD, указанные в свойстве **группы пользователей Access** параметров домена во время создания кластера. Дополнительные сведения см. в статье [Настройка среды с присоединенной к домену песочницей HDInsight](domain-joined/apache-domain-joined-configure.md).
+    > Предыдущий метод синхронизирует только группы Azure AD, указанные в свойстве **доступа к группе пользователей** параметров домена во время создания кластера. Дополнительные сведения см. в статье [Настройка среды с присоединенной к домену песочницей HDInsight](domain-joined/apache-domain-joined-configure.md).
 
 ## <a name="verify-the-newly-added-azure-ad-user"></a>Проверка только что добавленного пользователя Azure AD
 
-Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Доступ к веб-uI Ambari, просматривая доступ к **`https://CLUSTERNAME.azurehdinsight.net`**. Укажите имя администратора и пароль кластера.
+Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Получите доступ к веб-ИНТЕРФЕЙСу Ambari **`https://CLUSTERNAME.azurehdinsight.net`**, перейдя по адресу. Укажите имя администратора и пароль кластера.
 
 1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin**.
 
-    ![Apache Ambari приборная панель Управлять Амбари](./media/hdinsight-sync-aad-users-to-cluster/manage-apache-ambari.png)
+    ![Панель мониторинга Apache Ambari управление Ambari](./media/hdinsight-sync-aad-users-to-cluster/manage-apache-ambari.png)
 
 2. Выберите **Пользователи** в группе меню **User + Group Management** (Управление пользователями и группами) в левой части страницы.
 
-    ![МЕНЮ пользователей и групп HDInsight](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-menu-item.png)
+    ![Меню пользователей и групп HDInsight](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-menu-item.png)
 
 3. Новый пользователь должен быть указан в таблице "Пользователи". Для типа необходимо задать значение `LDAP`, а не `Local`.
 
-    ![Обзор страницы пользователей HDInsight aad](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-page.png)
+    ![Обзор страницы пользователей AAD HDInsight](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-page.png)
 
 ## <a name="log-in-to-ambari-as-the-new-user"></a>Вход в Ambari в качестве нового пользователя
 

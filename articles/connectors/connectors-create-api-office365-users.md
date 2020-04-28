@@ -1,6 +1,6 @@
 ---
-title: Подключение к Office 365 Пользователей
-description: Автоматизировать задачи и рабочие процессы, которые получают и управляют профилями в профилях Пользователей Office 365 с помощью приложений Логики Azure
+title: Подключение к пользователям Office 365
+description: Автоматизируйте задачи и рабочие процессы, которые получают профили и управляют ими в профилях пользователей Office 365 с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
@@ -8,13 +8,13 @@ ms.date: 08/18/2016
 ms.topic: article
 tags: connectors
 ms.openlocfilehash: 179c7538d8072f0e1a4f7d049cf521971efd7a21
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75666862"
 ---
-# <a name="get-and-manage-profiles-in-office-365-users-by-using-azure-logic-apps"></a>Получайте и управляйте профилями в Office 365 пользователей с помощью приложений логики Azure
+# <a name="get-and-manage-profiles-in-office-365-users-by-using-azure-logic-apps"></a>Получение профилей и управление ими в Office 365 пользователи с помощью Azure Logic Apps
 
 Подключившись к Office 365 Пользователи, вы сможете получать профили, искать пользователей и выполнять многие другие действия. С помощью Office 365 Пользователи вы можете:
 
@@ -25,7 +25,7 @@ ms.locfileid: "75666862"
 
 ## <a name="create-a-connection-to-office-365-users"></a>Создание подключения к Office 365 Пользователи
 
-При добавлении этого разъема в логические приложения необходимо войти в учетную запись Office 365 Users, чтобы приложения для логики Azure могли подключиться к вашей учетной записи.
+При добавлении этого соединителя в приложения логики необходимо войти в учетную запись Office 365, чтобы Azure Logic Apps мог подключиться к вашей учетной записи.
 
 > [!INCLUDE [Steps to create a connection to Office 365 Users](../../includes/connectors-create-api-office365users.md)]
 > 
@@ -35,7 +35,7 @@ ms.locfileid: "75666862"
 
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 
-Для получения технических сведений о триггерах, действиях и ограничениях, описанных в описании Swagger разъема, просмотрите [страницу ссылки разъема.](/connectors/officeusers/)
+Технические сведения о триггерах, действиях и ограничениях, которые описаны в описании Swagger соединителя, см. на [странице справочника по соединителю](/connectors/officeusers/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

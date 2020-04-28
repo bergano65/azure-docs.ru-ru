@@ -1,5 +1,5 @@
 ---
-title: Решения для хранения данных Azure для служб ML на HDInsight - Azure
+title: Решения службы хранилища Azure для служб ML в HDInsight — Azure
 description: Сведения о разных вариантах хранилищ, доступных для служб машинного обучения в HDInsight.
 ms.service: hdinsight
 author: hrasheed-msft
@@ -9,25 +9,25 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/02/2020
 ms.openlocfilehash: 1c79d0390a80a1358ddb09707fbabf6a5a2affdc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75660245"
 ---
-# <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения для хранения данных Azure для служб ML на Azure HDInsight
+# <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб ML в Azure HDInsight
 
-Службы ML на HDInsight могут использовать различные решения для хранения данных, кода или объектов, содержащих результаты анализа. Эти решения включают в себя следующие варианты:
+Службы ML в HDInsight могут использовать различные решения хранилища для сохранения данных, кода или объектов, содержащих результаты анализа. Эти решения включают следующие варианты.
 
-- [Лазурный Blob](https://azure.microsoft.com/services/storage/blobs/)
-- [Хранение озер лазурных данных](https://azure.microsoft.com/services/storage/data-lake-storage/)
+- [Большой двоичный объект Azure](https://azure.microsoft.com/services/storage/blobs/)
+- [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/)
 - [Хранилище файлов Azure](https://azure.microsoft.com/services/storage/files/)
 
-Кроме того, из кластера HDInsight вы можете обращаться к нескольким учетным записям хранения или контейнерам Azure. Хранение файлов Azure — это удобная опция для хранения данных для использования на краевом узле, которая позволяет установить долю файла хранения Azure, например, в файловую систему Linux. Общие папки Azure можно подключить и использовать на любом устройстве с поддерживаемой операционной системой, например Windows или Linux.
+Кроме того, из кластера HDInsight вы можете обращаться к нескольким учетным записям хранения или контейнерам Azure. Хранилище файлов Azure — это удобный вариант хранения данных для использования на пограничном узле, который позволяет подключать файловый ресурс службы хранилища Azure к, например, файловой системе Linux. Общие папки Azure можно подключить и использовать на любом устройстве с поддерживаемой операционной системой, например Windows или Linux.
 
-При создании кластера Apache Hadoop в HDInsight указано либо учетную запись **хранения Azure,** либо **хранилище data Lake.** Определенный контейнер хранилища в этой учетной записи используется для хранения файловой системы создаваемого кластера, например распределенной файловой системы Hadoop (HDFS). Дополнительные сведения и рекомендации см. в следующих статьях:
+При создании кластера Apache Hadoop в HDInsight необходимо указать учетную запись **хранения Azure** или **Data Lake Storage**. Определенный контейнер хранилища в этой учетной записи используется для хранения файловой системы создаваемого кластера, например распределенной файловой системы Hadoop (HDFS). Дополнительные сведения и рекомендации см. в следующих статьях:
 
-- [Используйте хранилище Azure с помощью HDInsight](../hdinsight-hadoop-use-blob-storage.md)
+- [Использование службы хранилища Azure с HDInsight](../hdinsight-hadoop-use-blob-storage.md)
 - [Использование Data Lake Store с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-store.md)
 
 ## <a name="use-azure-blob-storage-accounts-with-ml-services-cluster"></a>Использование учетных записей хранения BLOB-объектов Azure с кластером служб машинного обучения
@@ -100,7 +100,7 @@ inputFile <-file.path(bigDataDirRoot,"mysamplefile1.csv")
 
 Теперь все ссылки на каталоги и файлы указывают на учетную запись хранения `wasbs://container2@storage2.blob.core.windows.net`. Это указанный вами **узел имени**.
 
-Назначай `/user/RevoShare/<SSH username>` каталог на **хранение2** следующим образом:
+Настройте `/user/RevoShare/<SSH username>` каталог в **storage2** следующим образом:
 
 ```bash
 hadoop fs -mkdir wasbs://container2@storage2.blob.core.windows.net/user
@@ -124,11 +124,11 @@ hadoop fs -mkdir wasbs://container2@storage2.blob.core.windows.net/user/RevoShar
 
 Присвоив имя субъекту-службе и создав для него пароль, щелкните **Управление доступом ADLS**, чтобы связать субъект-службу с Data Lake Storage.
 
-Кроме того, после создания кластера можно добавить кластерный доступ к одной или нескольких учетным записям хранения Data Lake. На портале Azure откройте запись Data Lake Storage и выберите пункты **Обозреватель данных > Доступ > Добавить**.
+Можно также добавить доступ к кластеру для одной или нескольких учетных записей хранения Data Lake после создания кластера. На портале Azure откройте запись Data Lake Storage и выберите пункты **Обозреватель данных > Доступ > Добавить**.
 
 ### <a name="how-to-access-data-lake-storage-gen1-from-ml-services-on-hdinsight"></a>Доступ к Data Lake Storage 1-го поколения из служб машинного обучения в HDInsight
 
-Получив доступ к Data Lake Storage Gen1, вы можете использовать хранилище в кластере УСЛУГ ML на HDInsight так, как вы бы сделали вторичную учетную запись хранения Azure. Разница лишь в том, что префикс **wasbs://** изменения **adl://** следующим образом:
+Когда вы получите доступ к Data Lake Storage 1-го поколения, вы можете использовать хранилище в кластере служб ML в HDInsight так же, как и для дополнительной учетной записи хранения Azure. Единственное отличие заключается в том, что префикс **wasbs://** изменяется на **ADL://** следующим образом:
 
 ```R
 # Point to the ADL Storage (e.g. ADLtest)
@@ -167,15 +167,15 @@ hadoop fs –ls adl://rkadl1.azuredatalakestore.net/share
 
 ## <a name="use-azure-file-storage-with-ml-services-on-hdinsight"></a>Использование хранилища файлов Azure для служб машинного обучения в HDInsight
 
-Также существует удобная опция хранения данных для использования на краевом узлах под названием [Azure Files.](https://azure.microsoft.com/services/storage/files/) Они позволяют подключить общую папку службы хранения Azure к файловой системе Linux. Этот вариант может быть удобен для хранения файлов данных, скриптов R и объектов результатов, которые могут понадобиться позже, особенно если на граничном узле есть смысл использовать собственную файловую систему, а не HDFS.
+Существует также удобный вариант хранения данных для использования в пограничном узле, называемом [службой файлов Azure](https://azure.microsoft.com/services/storage/files/). Они позволяют подключить общую папку службы хранения Azure к файловой системе Linux. Этот вариант может быть удобен для хранения файлов данных, скриптов R и объектов результатов, которые могут понадобиться позже, особенно если на граничном узле есть смысл использовать собственную файловую систему, а не HDFS.
 
-Основное преимущество файлов Azure заключается в том, что общие папки можно подключить и использовать на любом устройстве с поддерживаемой операционной системой, например Windows или Linux. Например, их можно использовать в другом кластере HDInsight, принадлежащем вам или коллеге, в виртуальной машине Azure, или даже в локальной системе. Дополнительные сведения см. в разделе:
+Основное преимущество файлов Azure заключается в том, что общие папки можно подключить и использовать на любом устройстве с поддерживаемой операционной системой, например Windows или Linux. Например, их можно использовать в другом кластере HDInsight, принадлежащем вам или коллеге, в виртуальной машине Azure, или даже в локальной системе. Дополнительные сведения можно найти в разделе
 
-- [Как использовать хранилище файлов Azure с linux](../../storage/files/storage-how-to-use-files-linux.md)
+- [Использование хранилища файлов Azure с Linux](../../storage/files/storage-how-to-use-files-linux.md)
 - [Использование хранилища файлов Azure в Windows](../../storage/files/storage-dotnet-how-to-use-files.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о кластере служб машинного обучения в HDInsight](r-server-overview.md)
 - [Варианты контекста вычислений для кластера служб машинного обучения в HDInsight](r-server-compute-contexts.md)
-- [Используйте хранилище данных Azure Data Lake Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)
+- [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)

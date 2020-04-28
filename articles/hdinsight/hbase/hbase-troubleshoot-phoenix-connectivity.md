@@ -1,5 +1,5 @@
 ---
-title: Проблемы с подключением Apache Phoenix в Azure HDInsight
+title: Проблемы с подключением к Apache Phoenix в Azure HDInsight
 description: Проблемы с подключением между Apache HBase и Apache Phoenix в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
@@ -8,62 +8,62 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/14/2019
 ms.openlocfilehash: b886f51bcb2bb7308c49c76563dcb70148bbc583
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75887297"
 ---
-# <a name="scenario-apache-phoenix-connectivity-issues-in-azure-hdinsight"></a>Сценарий: Проблемы подключения Apache Phoenix в Azure HDInsight
+# <a name="scenario-apache-phoenix-connectivity-issues-in-azure-hdinsight"></a>Сценарий: Apache Phoenix проблемы с подключением в Azure HDInsight
 
-В этой статье описаны шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
 ## <a name="issue"></a>Проблема
 
-Невозможно подключиться к Apache HBase с Apache Phoenix. Причины могут варьироваться.
+Не удалось подключиться к Apache HBase с Apache Phoenix. Причины могут отличаться.
 
-## <a name="cause-incorrect-ip"></a>Причина: Неправильный IP
+## <a name="cause-incorrect-ip"></a>Причина: неверный IP-адрес
 
-Неправильное IP активного узла зоозащитника.
+Неправильный IP-адрес активного узла Zookeeper.
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
-IP активного узла зоозащитника можно идентифицировать из uI Ambari, следуя ссылкам на **HBase** > **Быстрые ссылки** > **(Активный)** > **Зоохранител Информация**. Исправить IP по мере необходимости.
+IP-адрес активного узла Zookeeper можно определить из пользовательского интерфейса Ambari, следуя ссылкам на**краткие ссылки** > на **HBase** > **ZK (Active)** > **Zookeeper info**. При необходимости исправьте IP-адрес.
 
 ---
 
-## <a name="cause-systemcatalog-table-offline"></a>Причина: SYSTEM. Таблица CATALOG в автономном режиме
+## <a name="cause-systemcatalog-table-offline"></a>Причина: SYSTEM. Таблица каталога в автономном режиме
 
-При запуске команд, таких как, `!tables`вы получаете сообщение об ошибке, аналогичное:
+При выполнении таких команд, `!tables`как, появляется сообщение об ошибке следующего вида:
 
 ```output
 Error while connecting to sqlline.py (Hbase - phoenix) Setting property: [isolation, TRANSACTION_READ_COMMITTED] issuing: !connect jdbc:phoenix:10.2.0.7 none none org.apache.phoenix.jdbc.PhoenixDriver Connecting to jdbc:phoenix:10.2.0.7 SLF4J: Class path contains multiple SLF4J bindings.
 ```
 
-При запуске команд, таких как, `count 'SYSTEM.CATALOG'`вы получаете сообщение об ошибке, аналогичное:
+При выполнении таких команд, `count 'SYSTEM.CATALOG'`как, появляется сообщение об ошибке следующего вида:
 
 ```output
 ERROR: org.apache.hadoop.hbase.NotServingRegionException: Region SYSTEM.CATALOG,,1485464083256.c0568c94033870c517ed36c45da98129. is not online on 10.2.0.5,16020,1489466172189)
 ```
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
-Из uI Apache Ambari выполните следующие шаги по перезапуску сервиса HMaster на всех узлах зоопарка:
+В пользовательском интерфейсе Apache Ambari выполните следующие действия, чтобы перезапустить службу HMaster на всех узлах ZooKeeper:
 
-1. Из **раздела Резюме** HBase, перейдите на **HBase** > **Активный HBase Мастер**.
+1. В разделе **Сводка** по HBase перейдите в раздел **HBase** > **Active HBase Master**.
 
-1. Из раздела **Компоненты** перезапустите сервис HBase Master.
+1. В разделе **компоненты** перезапустите службу HBase Master.
 
 1. Повторите описанные выше шаги для остальных служб **главного узла HBase в режиме ожидания**.
 
-Это может занять до пяти минут для hBase Master службы для стабилизации и завершения восстановления. После `SYSTEM.CATALOG` того, как таблица вернется в нормальное русло, проблема подключения к Apache Phoenix должна быть решена автоматически.
+Для стабилизации и завершения восстановления службы HBase Master может потребоваться до пяти минут. После возврата `SYSTEM.CATALOG` таблицы в нормальное состояние проблемы с подключением к Apache Phoenix должно быть разрешено автоматически.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с - официальная учетная запись Microsoft Azure для улучшения обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации просмотрите [Как создать запрос поддержки Azure.](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

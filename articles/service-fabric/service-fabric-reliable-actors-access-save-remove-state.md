@@ -1,19 +1,19 @@
 ---
-title: Управление состоянием службы Azure Fabric
-description: Узнайте о доступе, сохранении и удалении состояния для надежного актера Свиной Ткани службы Azure и соображениях при проектировании приложения.
+title: Управление состоянием Service Fabric Azure
+description: Сведения о доступе, сохранении и удалении состояния для надежного субъекта Azure Service Fabric и рекомендации при проектировании приложения.
 author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: vturecek
 ms.openlocfilehash: 788c337a37ec66c5aa1521c5cd9f2816ed7a8bf9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645639"
 ---
 # <a name="access-save-and-remove-reliable-actors-state"></a>Доступ к состоянию Reliable Actors, а аткже его сохранение и удаление
-[Reliable Actors](service-fabric-reliable-actors-introduction.md) — это однопотоковые объекты для инкапсуляции логики и состояния, а также для поддержки надежного состояния. Каждый экземпляр субъекта имеет свой собственный [государственный менеджер:](service-fabric-reliable-actors-state-management.md)словарно-подобную структуру данных, которая надежно хранит пары ключей/значений. Диспетчер состояний — это оболочка вокруг поставщика состояний. Вы можете использовать его для хранения данных независимо от того, какой [параметр сохранения](service-fabric-reliable-actors-state-management.md#state-persistence-and-replication) используется.
+[Reliable Actors](service-fabric-reliable-actors-introduction.md) — это однопотоковые объекты для инкапсуляции логики и состояния, а также для поддержки надежного состояния. Каждый экземпляр субъекта имеет собственный [диспетчер состояний](service-fabric-reliable-actors-state-management.md): структура данных, подобная словарю, которая надежно хранит пары "ключ-значение". Диспетчер состояний — это оболочка вокруг поставщика состояний. Его можно использовать для хранения данных независимо от того, какой [параметр сохраняемости](service-fabric-reliable-actors-state-management.md#state-persistence-and-replication) используется.
 
 Ключи диспетчера состояний должны быть строками. Значения являются универсальными и могут быть любого типа, в том числе пользовательского. Значения, хранящиеся в диспетчере состояний, должны быть сериализуемыми контрактом данных, так как они могут передаваться по сети другим узлам во время репликации и быть записаны на диск в зависимости от параметра сохранения состояния субъекта.
 

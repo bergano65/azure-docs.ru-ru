@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 1b042c0279e458cf83bd5c81147f4b1f25d7687d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645146"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Фабрика данных Azure — часто задаваемые вопросы
@@ -33,7 +33,7 @@ ms.locfileid: "75645146"
 Дополнительные сведения см. в статье [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](data-factory-introduction.md).
 
 ### <a name="where-can-i-find-pricing-details-for-azure-data-factory"></a>Где можно найти подробную информацию о ценах на фабрику данных Azure?
-Ознакомиться [со деталями цен][adf-pricing-details] на фабрике данных можно на странице Data Factory.  
+Сведения о ценах на фабрику данных Azure см. на [странице сведений о ценах на фабрику данных][adf-pricing-details] .  
 
 ### <a name="how-do-i-get-started-with-azure-data-factory"></a>Вопрос. Как приступить к работе с фабрикой данных Azure?
 * Общие сведения о фабрике данных Azure см. в разделе [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](data-factory-introduction.md).
@@ -59,7 +59,7 @@ ms.locfileid: "75645146"
 Нет. Как и для других ресурсов Azure, имя фабрики данных Azure изменить нельзя.
 
 ### <a name="can-i-move-a-data-factory-from-one-azure-subscription-to-another"></a>Можно ли переместить фабрику данных из одной подписки Azure в другую?
-Да. Используйте кнопку **Move** на лезвии фабрики данных, как показано на следующей диаграмме:
+Да. Используйте кнопку **переместить** в колонке фабрики данных, как показано на следующей схеме:
 
 ![Перемещение фабрики данных](media/data-factory-faq/move-data-factory.png)
 
@@ -71,11 +71,11 @@ ms.locfileid: "75645146"
 | [Кластер HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) |[DotNet](data-factory-use-custom-activities.md), [Hive](data-factory-hive-activity.md), [Pig](data-factory-pig-activity.md), [MapReduce](data-factory-map-reduce.md), [потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |
 | [Пакетная служба Azure](data-factory-compute-linked-services.md#azure-batch-linked-service) |[DotNet](data-factory-use-custom-activities.md) |
 | [Машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
-| [Аналитика озер данных Azure](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
-| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Сохраненная процедура](data-factory-stored-proc-activity.md) |
+| [Azure Data Lake Analytics](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
+| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Хранимая процедура](data-factory-stored-proc-activity.md) |
 
 ### <a name="how-does-azure-data-factory-compare-with-sql-server-integration-services-ssis"></a>Чем отличаются возможности фабрики данных Azure и SQL Server Integration Services (SSIS)? 
-Смотрите презентацию [Azure Data Factory vs. SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) от одного из наших MVPs (самых ценных профессионалов): Reza Rad. Некоторые из последних изменений в фабрике данных могут отсутствовать в наборе слайдов. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы внесем эти обновления в сравнение технологий интеграции данных от корпорации Майкрософт позже в этом году.   
+Ознакомьтесь с представлением [фабрики данных Azure и служб SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) от одного из наших MVP (наиболее ценных специалистов): Рэд Reza RAD. Некоторые из последних изменений в фабрике данных могут отсутствовать в наборе слайдов. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы внесем эти обновления в сравнение технологий интеграции данных от корпорации Майкрософт позже в этом году.   
 
 ## <a name="activities---faq"></a>Действия — вопросы и ответы
 ### <a name="what-are-the-different-types-of-activities-you-can-use-in-a-data-factory-pipeline"></a>Какие типы действий использовать в конвейере фабрики данных Azure?
@@ -170,12 +170,12 @@ ms.locfileid: "75645146"
 
 * Запустите окно действия или срез повторно с помощью приложения для мониторинга и управления. Инструкции см. в разделе [Повторное выполнение выбранных окон действий](data-factory-monitor-manage-app.md#perform-batch-actions).   
 * Щелкните **Выполнить** в командной строке в колонке **Срез данных** для среза на портале Azure.
-* Выполнить **Set-AzDataFactorySliceStatus** cmdlet со статусом, установленным для **ожидания** среза.   
+* Выполните командлет **Set-аздатафакторислицестатус** с параметром status, имеющим значение **Ожидание** среза.   
 
     ```powershell
     Set-AzDataFactorySliceStatus -Status Waiting -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00"
     ```
-  Подробную информацию о cmdlet можно узнать о [cmdlet.][set-azure-datafactory-slice-status]
+  Дополнительные сведения о командлете см. в разделе [Set-аздатафакторислицестатус][set-azure-datafactory-slice-status] .
 
 ### <a name="how-long-did-it-take-to-process-a-slice"></a>Сколько времени занимает обработка среза?
 Узнать, сколько времени занимает обработка среза данных, можно в обозревателе окон действий в приложении мониторинга и управления. Дополнительные сведения см. в разделе [Обозреватель окон действий](data-factory-monitor-manage-app.md#activity-window-explorer).
@@ -190,7 +190,7 @@ ms.locfileid: "75645146"
 6. Вы увидите поле **ДЛИТЕЛЬНОСТЬ** со значением. Это время, затраченное на обработку среза.   
 
 ### <a name="how-to-stop-a-running-slice"></a>Как остановить выполнение среза?
-Если необходимо остановить выполнение конвейера, можно использовать [смдлет Suspend-AzDataFactoryPipeline.](/powershell/module/az.datafactory/suspend-azdatafactorypipeline) В настоящее время приостановка конвейера не останавливает выполняющиеся срезы. После завершения текущих выполняемых задач никакие дополнительные срезы выбираются.
+Если необходимо остановить выполнение конвейера, можно использовать командлет [Suspend-аздатафакторипипелине](/powershell/module/az.datafactory/suspend-azdatafactorypipeline) . В настоящее время приостановка конвейера не останавливает выполняющиеся срезы. После завершения текущих выполняемых задач никакие дополнительные срезы выбираются.
 
 Если вы действительно хотите немедленно прекратить все выполняемые задачи, единственным способом является удаление конвейера и создание его заново. Если вы решили удалить конвейер, НЕ обязательно удалять таблицы и связанные службы, используемые конвейером.
 

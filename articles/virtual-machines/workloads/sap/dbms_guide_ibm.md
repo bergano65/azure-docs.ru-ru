@@ -1,5 +1,5 @@
 ---
-title: Развертывание виртуальных машин IBM Db2 Виртур-машины DBMS для рабочей нагрузки SAP Документы Майкрософт
+title: Развертывание СУБД в виртуальных машинах IBM DB2 для рабочей нагрузки SAP | Документация Майкрософт
 description: Развертывание СУБД IBM DB2 на Виртуальных машинах Azure для рабочей нагрузки SAP
 services: virtual-machines-linux,virtual-machines-windows
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 04/10/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 679e033418fba34eddddd21ddca66b1d9bb2fd48
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645894"
 ---
 # <a name="ibm-db2-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД IBM DB2 на Виртуальных машинах Azure для рабочей нагрузки SAP
@@ -309,10 +309,10 @@ ms.locfileid: "75645894"
 
 
 
-С помощью Microsoft Azure вы можете перенести существующее приложение SAP, работая на IBM Db2 для Linux, UNIX и Windows (LUW) в виртуальные машины Azure. С помощью SAP на IBM Db2 для LUW администраторы и разработчики по-прежнему могут использовать те же инструменты разработки и администрирования, которые доступны на местах.
-Общую информацию о запуске SAP Business Suite на IBM Db2 для LUW <https://www.sap.com/community/topic/db2-for-linux-unix-and-windows.html>можно найти в SAP Community Network (SCN) по адресу .
+С Microsoft Azure можно перенести существующее приложение SAP, работающее в IBM DB2 для Linux, UNIX и Windows (LUW), на виртуальные машины Azure. Благодаря SAP в IBM DB2 для LUW администраторы и разработчики по-прежнему могут использовать те же средства разработки и администрирования, которые доступны в локальной среде.
+Общие сведения о запуске SAP Business Suite в IBM DB2 для LUW можно найти в сети SAP Community Network (SCN) по адресу <https://www.sap.com/community/topic/db2-for-linux-unix-and-windows.html>.
 
-Для получения дополнительной информации и обновлений о SAP на Db2 для LUW на Azure см. SAP Примечание [2233094]. 
+Дополнительные сведения и обновления о SAP в DB2 для LUW в Azure см. в разделе SAP Note [2233094]. 
 
 Существуют различные статьи, посвященные использованию рабочей нагрузки SAP в Azure.  Рекомендуется начать со статьи [Рабочая нагрузка SAP в Azure — приступая к работе](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/get-started) и затем выбрать интересующую вас область.
 
@@ -335,19 +335,19 @@ ms.locfileid: "75645894"
 Перед чтением этого документа следует ознакомиться с документом [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md), а также с другими руководствами в [документации по рабочей нагрузке SAP в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/get-started). 
 
 
-## <a name="ibm-db2-for-linux-unix-and-windows-version-support"></a>IBM Db2 для поддержки Linux, UNIX и Windows-версии
-SAP на IBM Db2 для LUW на Microsoft Azure Виртуальные службы машины поддерживается по мере db2 версии 10.5.
+## <a name="ibm-db2-for-linux-unix-and-windows-version-support"></a>Поддержка версий IBM DB2 для Linux, UNIX и Windows
+SAP в IBM DB2 для LUW на Microsoft Azure служб виртуальных машин поддерживается в версии DB2 10,5.
 
 Дополнительные сведения о поддерживаемых продуктах SAP и типах виртуальных машин Azure см. в примечании к SAP [1928533].
 
-## <a name="ibm-db2-for-linux-unix-and-windows-configuration-guidelines-for-sap-installations-in-azure-vms"></a>IBM Db2 для Linux, UNIX и Windows Configuration Guidelines для SAP-установок в Azure VMs
+## <a name="ibm-db2-for-linux-unix-and-windows-configuration-guidelines-for-sap-installations-in-azure-vms"></a>Руководство по настройке IBM DB2 для Linux, UNIX и Windows для установки SAP на виртуальных машинах Azure
 ### <a name="storage-configuration"></a>Конфигурация хранилища
 Все файлы базы данных должны храниться на подключенных напрямую дисках с файловой системой NTFS. Эти диски должны быть подключены к виртуальной машине Azure и созданы на основе хранилища страничных BLOB-объектов Azure (<https://docs.microsoft.com/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs>) или Управляемых дисков (<https://docs.microsoft.com/azure/storage/storage-managed-disks-overview>). Сетевые диски всех типов и удаленные общие ресурсы, включая следующие файловые службы Azure, **невозможно** использовать для хранения файлов базы данных. 
 
 * <https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx>
 * <https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx>
 
-Используя диски на основе Azure Page BLOB Storage или Управляемые диски, заявления, сделанные в [рассмотрениях для развертывания Виртуальных машин Azure для SAP рабочей нагрузки,](dbms_guide_general.md) также применяются к развертываниям с Db2 DBMS.
+С помощью дисков, основанных на хранилище страничных BLOB-объектов Azure или управляемых дисках, выполняются инструкции по [развертыванию СУБД Azure для рабочих нагрузок SAP](dbms_guide_general.md) в развертываниях и СУБД DB2.
 
 Как упомянуто в общей части этого документа, для дисков Azure существуют квоты на количество операций ввода-вывода в секунду. Квоты зависят от типа используемой виртуальной машины. Список типов виртуальных машин с соответствующими квотами приведен [здесь (Linux)][virtual-machines-sizes-linux] и [здесь (Windows)][virtual-machines-sizes-windows].
 
@@ -359,12 +359,12 @@ SAP на IBM Db2 для LUW на Microsoft Azure Виртуальные служ
 
 <!-- sapdata and saptmp are terms in the SAP and DB2 world and now spelling errors -->
 
-Для дисков, содержащих пути хранения Db2 для каталогов sapdata и saptmp, необходимо указать физический размер сектора диска 512 кБ. При использовании пулов носителей Windows эти пулы необходимо создать вручную с помощью интерфейса командной строки, используя параметр `-LogicalSectorSizeDefault`. Для получения дополнительной информации см. <https://technet.microsoft.com/itpro/powershell/windows/storage/new-storagepool>.
+Для дисков, содержащих пути к хранилищу DB2 для каталогов сапдата и саптмп, необходимо указать размер сектора физического диска 512 КБ. При использовании пулов носителей Windows эти пулы необходимо создать вручную с помощью интерфейса командной строки, используя параметр `-LogicalSectorSizeDefault`. Для получения дополнительной информации см. <https://technet.microsoft.com/itpro/powershell/windows/storage/new-storagepool>.
 
-Для виртуальных машин Azure серии M задержку записи в журналы транзакций можно уменьшить с помощью ряда возможностей (по сравнению с производительностью хранилища Azure класса Premium), доступных при использовании ускорителя записи Azure. Таким образом, следует развернуть azure Write Accelerator для VHD(ы), которые формируют объем для журналов транзакций Db2. Дополнительные сведения см. в документе об [ускорителе записи](https://docs.microsoft.com/azure/virtual-machines/windows/how-to-enable-write-accelerator).
+Для виртуальных машин Azure серии M задержку записи в журналы транзакций можно уменьшить с помощью ряда возможностей (по сравнению с производительностью хранилища Azure класса Premium), доступных при использовании ускорителя записи Azure. Поэтому следует развернуть Ускоритель записи Azure для виртуальных жестких дисков, которые формируют том для журналов транзакций DB2. Дополнительные сведения см. в документе об [ускорителе записи](https://docs.microsoft.com/azure/virtual-machines/windows/how-to-enable-write-accelerator).
 
 ### <a name="backuprestore"></a>Резервное копирование и восстановление
-Функциональность резервного копирования/восстановления ДЛЯ IBM Db2 для LUW поддерживается так же, как и на стандартных операционных системах Windows Server и Hyper-V.
+Функции резервного копирования и восстановления для IBM DB2 для LUW поддерживаются так же, как и в стандартных операционных системах Windows Server и Hyper-V.
 
 У вас обязательно должна быть надежная стратегия резервного копирования базы данных. 
 
@@ -380,27 +380,27 @@ SAP на IBM Db2 для LUW на Microsoft Azure Виртуальные служ
 * Использовать несколько целевых каталогов, в которые будут записываться резервные копии.
 
 >[!NOTE]
->Db2 на Windows не поддерживает технологию Windows VSS. В результате, постоянное резервное копирование резервного копирования ВМ службы резервного копирования Azure не может быть использовано для VMs, в который развернут Db2 DBMS.
+>DB2 в Windows не поддерживает технологию Windows VSS. В результате для виртуальных машин, в которых развернута СУБД DB2, нельзя использовать резервную копию виртуальной машины, которая не может использоваться приложением Azure Backup Service.
 
 ### <a name="high-availability-and-disaster-recovery"></a>Высокая доступность и аварийное восстановление
 Microsoft Cluster Server (MSCS) не поддерживается.
 
-Db2 высокой доступности аварийного восстановления (HADR) поддерживается. Если в конфигурации высокой доступности виртуальные машины имеют работающее разрешение имен, настройка в Azure не будет отличаться от настройки, которая выполняется локально. Мы не рекомендуем полагаться только на разрешение IP-адресов.
+Поддерживается аварийное восстановление высокой доступности DB2 (HADR). Если в конфигурации высокой доступности виртуальные машины имеют работающее разрешение имен, настройка в Azure не будет отличаться от настройки, которая выполняется локально. Мы не рекомендуем полагаться только на разрешение IP-адресов.
 
 Не используйте георепликацию для учетных записей хранения, в которых хранятся диски базы данных. Дополнительные сведения см. в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
 
 ### <a name="accelerated-networking"></a>Ускорение работы в сети
-Для развертывания Db2 в Windows настоятельно рекомендуется использовать функциональность Ускоренной сети Azure, описанную в документе [Azure Accelerated Networking.](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/) Также обратите внимание на рекомендации, приведенные в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
+Для развертываний DB2 в Windows настоятельно рекомендуется использовать функциональность Azure с ускорением работы в сети, как описано в статье Документирование [ускоренной сети в Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/). Также обратите внимание на рекомендации, приведенные в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
 
 
 ### <a name="specifics-for-linux-deployments"></a>Особенности развертываний Linux
 Если текущего количества операций ввода-вывода в секунду для каждого диска достаточно, все файлы базы данных можно хранить на одном диске. Однако файлы данных и файлы журналов транзакций всегда должны находиться на разных дисках или виртуальных жестких дисках.
 
 Кроме того, если количество операций ввода-вывода в секунду или пропускная способность операций ввода-вывода недостаточны для одного виртуального жесткого диска Azure, с помощью LVM (диспетчера логических томов) или MDADM можно создать одно крупное логическое устройство с несколькими дисками, как описано в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
-Для дисков, содержащих пути хранения Db2 для каталогов sapdata и saptmp, необходимо указать физический размер сектора диска 512 кБ.
+Для дисков, содержащих пути к хранилищу DB2 для каталогов сапдата и саптмп, необходимо указать размер сектора физического диска 512 КБ.
 
 <!-- sapdata and saptmp are terms in the SAP and DB2 world and now spelling errors -->
 
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Другой
 Все другие общие темы, такие как группы доступности Azure и мониторинг SAP, касаются также развертывания виртуальных машин с базой данных IBM, как описано в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).

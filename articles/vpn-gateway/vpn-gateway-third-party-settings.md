@@ -1,5 +1,5 @@
 ---
-title: Предлагаемые сообществом сторонние настройки VPN или брандмауэра для Azure VPN Gateway
+title: Предлагаемые сообществом параметры VPN-устройства или брандмауэра стороннего производителя для VPN-шлюза Azure
 description: Узнайте о предлагаемых сообществом сторонних параметрах устройств VPN или брандмауэра для VPN-шлюза Azure.
 services: vpn-gateway
 author: chadmath
@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.openlocfilehash: b87340fbb3f94eee106fc5d0d72117d30e331035
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75862719"
 ---
 # <a name="community-suggested-third-party-vpn-or-firewall-device-settings-for-azure-vpn-gateway"></a>Предлагаемые сообществом сторонние параметры устройств VPN или брандмауэра для VPN-шлюза Azure

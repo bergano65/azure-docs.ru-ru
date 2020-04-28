@@ -1,15 +1,15 @@
 ---
 title: Резервное копирование и восстановление в Service Fabric
-description: Концептуальная документация для резервного копирования и восстановления сервера service Fabric, сервиса настройки резервного копирования надежных государственных служб и надежных актеров.
+description: Концептуальная документация по Service Fabric резервного копирования и восстановления, службы для настройки резервного копирования надежных служб с отслеживанием состояния и Reliable Actors.
 author: mcoskun
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: mcoskun
 ms.openlocfilehash: ac6bb14517b67a4b308460583e8c9fb99a2df9f0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75922778"
 ---
 # <a name="backup-and-restore-reliable-services-and-reliable-actors"></a>Резервное копирование и восстановление Reliable Services и Reliable Actors
@@ -253,7 +253,7 @@ class MyCustomActorService : ActorService
 
 `RestoreAsync` сначала удаляет все имеющиеся состояния в первичной реплике, для которой он вызван. После этого диспетчер надежных состояний создает все надежные объекты, существующие в папке резервного копирования. Затем все надежные объекты получают команду выполнить восстановление из контрольных точек в папке резервного копирования. Наконец, диспетчер надежных состояний восстанавливает собственное состояние из записей журнала в папке резервного копирования и выполняет восстановление. В рамках процесса восстановления операции, начиная с отправной точки, записи журнала которых сохранены в папке резервного копирования, воспроизводятся в надежных объектах. Этот шаг обеспечивает согласованность восстановленного состояния.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
   - [Надежные коллекции](service-fabric-work-with-reliable-collections.md)
   - [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
   - [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)

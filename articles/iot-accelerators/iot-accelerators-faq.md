@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы об акселераторах решений для Интернета вещей Azure | Документация Майкрософт
-description: В этой статье ответы на часто задаваемые вопросы для ускорителей решений IoT. Она включает в себя ссылки на репозитории GitHub.
+description: В этой статье содержатся ответы на часто задаваемые вопросы по акселераторам решений IoT. Он содержит ссылки на репозитории GitHub.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
 ms.openlocfilehash: 7a2b167f90b4ec79f5fa515ded1c676ca7085e72
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75647719"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
-Смотрите также, [связанные завод конкретных часто задаваемые вопросы](iot-accelerators-faq-cf.md) и [удаленного мониторинга конкретных часто задаваемых вопросов](iot-accelerators-faq-rm-v2.md) .
+См. также вопросы и ответы по вопросам [удаленного мониторинга](iot-accelerators-faq-rm-v2.md) , связанные с [подключенной фабрикой](iot-accelerators-faq-cf.md) .
 
 ### <a name="where-can-i-find-the-source-code-for-the-solution-accelerators"></a>Где можно найти исходный код акселераторов решений?
 
@@ -65,15 +65,15 @@ ms.locfileid: "75647719"
 
 ### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Где можно найти сведения о предыдущей версии решения для удаленного мониторинга?
 
-Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Вы можете найти архивную [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/)документацию по адресу .
+Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Архивную документацию можно найти по адресу [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/).
 
 ### <a name="is-the-new-solution-accelerator-available-in-the-same-geographic-region-as-the-existing-solution"></a>Доступен ли новый акселератор решений в том же географическом регионе, что и существующее решение?
 
 Да, новое решение для удаленного мониторинга доступно в том же географическом регионе.
 
-### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>В чем разница между удалением группы ресурсов на портале Azure и нажатием кнопки «Удаление на ускорителе решений в azureiotsolutions.com?»
+### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>В чем разница между удалением группы ресурсов в портал Azure и нажатием кнопки Удалить в Solution Accelerator в azureiotsolutions.com?
 
-* Если вы удалите ускоритель решения в [azureiotsolutions.com,](https://www.azureiotsolutions.com/)вы удалите все ресурсы, которые были развернуты при создании ускорителя решения. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
+* Если удалить Solution Accelerator в [azureiotsolutions.com](https://www.azureiotsolutions.com/), удаляются все ресурсы, развернутые при создании акселератора решений. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
 * Если удалить группу ресурсов на [портале Azure](https://portal.azure.com), будут удалены ресурсы в этой группе. Вам также придется удалить приложение Azure Active Directory, связанное с акселератором решений.
 
 ### <a name="can-i-continue-to-leverage-my-existing-investments-in-azure-iot-solution-accelerators"></a>Можно ли и дальше использовать существующие системы на базе акселераторов решений для Интернета вещей Azure?
@@ -107,7 +107,7 @@ ms.locfileid: "75647719"
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Изучите возможности ускорителя решений удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Изучите возможности акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
 * [Все аспекты безопасности Интернета вещей](/azure/iot-fundamentals/iot-security-ground-up)

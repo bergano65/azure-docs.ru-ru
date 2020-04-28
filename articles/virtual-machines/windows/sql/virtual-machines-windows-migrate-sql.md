@@ -16,10 +16,10 @@ ms.date: 08/18/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: c8314b04c05e2ecba2715b807171b5c1a2fa988a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75646869"
 ---
 # <a name="migrate-a-sql-server-database-to-sql-server-in-an-azure-vm"></a>Миграция базы данных SQL Server в экземпляр SQL Server на виртуальной машине Azure
@@ -30,7 +30,7 @@ ms.locfileid: "75646869"
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-both-include.md)]
 
   > [!NOTE]
-  > Сервер 2008 и S'L Server 2008 R2 приближаются к [концу жизненного цикла поддержки](https://www.microsoft.com/sql-server/sql-server-2008) для внутренних экземпляров. Чтобы расширить поддержку, можно либо перенести экземпляр S'L Server в Azure VM, либо купить расширенные обновления безопасности, чтобы сохранить его на месте. Для получения дополнительной информации [см.](virtual-machines-windows-sql-server-2008-eos-extend-support.md)
+  > SQL Server 2008 и SQL Server 2008 R2 приближается к [концу жизненного цикла поддержки](https://www.microsoft.com/sql-server/sql-server-2008) локальных экземпляров. Чтобы расширить поддержку, можно либо перенести экземпляр SQL Server на виртуальную машину Azure, либо приобрести Расширенные обновления безопасности, чтобы обеспечить его локальную среду. Дополнительные сведения см. [в статье расширение поддержки для SQL Server 2008 и 2008 R2 в Azure](virtual-machines-windows-sql-server-2008-eos-extend-support.md) .
 
 ## <a name="what-are-the-primary-migration-methods"></a>Описание основных методов миграции
 Ниже перечислены основные методы миграции.
@@ -62,7 +62,7 @@ ms.locfileid: "75646869"
 | --- | --- | --- | --- | --- |
 | [Локальная архивация с использованием сжатия и ручное копирование файла резервной копии на виртуальную машину Azure.](#backup-and-restore) |SQL Server 2005 или более поздней версии |SQL Server 2005 или более поздней версии |[Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) | Это очень простая и проверенная методика перемещения баз данных между компьютерами. |
 | [Архивация на URL-адрес и восстановление в виртуальную машину Azure из URL-адреса.](#backup-to-url-and-restore) |SQL Server 2012 SP1 CU2 или более поздней версии |SQL Server 2012 SP1 CU2 или более поздней версии |Менее 12,8 ТБ для SQL Server 2016, в противном случае менее 1 ТБ | Этот просто еще один способ перемещения файла резервной копии на виртуальную машину с помощью службы хранилища Azure. |
-| [Отключение и копирование файлов данных и журналов в хранилище больших двоичных объектов Azure с последующим подключением к SQL Server на виртуальной машине Azure с использованием URL-адреса.](#detach-and-attach-from-url) |SQL Server 2005 или более поздней версии |SQL Server 2014 или более поздней версии |[Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |Используйте этот метод, когда вы планируете [хранить эти файлы с помощью службы хранения Azure Blob](https://msdn.microsoft.com/library/dn385720.aspx) и прикреплять их к серверу S'L, работая в Azure VM, особенно с очень большими базами данных |
+| [Отключение и копирование файлов данных и журналов в хранилище больших двоичных объектов Azure с последующим подключением к SQL Server на виртуальной машине Azure с использованием URL-адреса.](#detach-and-attach-from-url) |SQL Server 2005 или более поздней версии |SQL Server 2014 или более поздней версии |[Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |Используйте этот метод, если вы планируете [хранить эти файлы с помощью службы хранилища BLOB-объектов Azure](https://msdn.microsoft.com/library/dn385720.aspx) и подключаете их к SQL Server, работающей на виртуальной машине Azure, особенно с очень большими базами данных. |
 | [Преобразование локального компьютера в VHD Hyper-V, отправка VHD в хранилище больших двоичных объектов Azure и последующее развертывание новой виртуальной машины на базе отправленного VHD.](#convert-to-vm-and-upload-to-url-and-deploy-as-new-vm) |SQL Server 2005 или более поздней версии |SQL Server 2005 или более поздней версии |[Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |Используется в случае [использования вашей собственной лицензии SQL Server](../../../sql-database/sql-database-paas-vs-sql-server-iaas.md) при миграции базы данных, которую планируется запустить на более ранней версии SQL Server, или при совместной миграции системных и пользовательских баз данных в рамках миграции базы данных, которая зависит от других пользовательских и (или) системных баз данных. |
 | [Доставка жесткого диска в службу импорта и экспорта Windows.](#ship-hard-drive) |SQL Server 2005 или более поздней версии |SQL Server 2005 или более поздней версии |[Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |Следует использовать [службу импорта и экспорта Windows](../../../storage/common/storage-import-export-service.md) , когда на ручное копирование требуется слишком много времени, особенно при работе с базами данных очень большого размера. |
 | [Использование мастера добавления реплики Azure](../sqlclassic/virtual-machines-windows-classic-sql-onprem-availability.md) |SQL Server 2012 или более поздней версии |SQL Server 2012 или более поздней версии |[Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |Сокращает время простоя, используется при наличии локального развертывания AlwaysOn. |
@@ -99,7 +99,7 @@ ms.locfileid: "75646869"
 ## <a name="ship-hard-drive"></a>Отправка жестких дисков
 Для передачи больших объемов данных в хранилище больших двоичных объектов Azure в ситуациях, когда отправка этих данных по сети чрезвычайно дорога или невыполнима, можно использовать [службу импорта и экспорта Windows](../../../storage/common/storage-import-export-service.md) . При использовании этой службы можно отправить один или несколько жестких дисков с данными в центр обработки данных Azure, где данные будут перемещены в вашу учетную запись хранения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Подробные сведения о работе SQL Server на виртуальных машинах Azure см. в разделе [Общие сведения об SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md).
 
 > [!TIP]

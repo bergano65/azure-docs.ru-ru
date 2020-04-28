@@ -1,15 +1,15 @@
 ---
 title: Уведомления Reliable Services
-description: Концептуальная документация для уведомлений Service Fabric Reliable Services для надежного государственного менеджера и надежного словаря
+description: Концептуальная документация по Service Fabric Reliable Services уведомлений для диспетчера надежных состояний и надежного словаря
 author: mcoskun
 ms.topic: conceptual
 ms.date: 6/29/2017
 ms.author: mcoskun
 ms.openlocfilehash: 1f3239ea1da252ccd84c6572b562756c8fd1677d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75639570"
 ---
 # <a name="reliable-services-notifications"></a>Уведомления Reliable Services
@@ -158,7 +158,7 @@ public async Task OnDictionaryRebuildNotificationHandlerAsync(
 
 * **NotifyDictionaryChangedAction.Rebuild**: **NotifyDictionaryRebuildEventArgs**;
 * **NotifyDictionaryChangedAction.Clear**: **NotifyDictionaryClearEventArgs**;
-* **NotifyDictionaryChangedAction.Add**: **NotifyDictionaryItemAddedEventArgs**
+* **NotifyDictionaryChangedAction. Add**: **нотифидиктионаритемаддедевентаргс**
 * **NotifyDictionaryChangedAction.Update**: **NotifyDictionaryItemUpdatedEventArgs**;
 * **NotifyDictionaryChangedAction.Remove**: **NotifyDictionaryItemRemovedEventArgs**.
 
@@ -208,7 +208,7 @@ public void OnDictionaryChangedHandler(object sender, NotifyDictionaryChangedEve
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Надежные коллекции](service-fabric-work-with-reliable-collections.md)
-* [Надежные услуги быстро ежекты](service-fabric-reliable-services-quick-start.md)
+* [Быстрый запуск Reliable Services](service-fabric-reliable-services-quick-start.md)
 * [Архивация и восстановление (аварийное восстановление) надежных служб](service-fabric-reliable-services-backup-restore.md)
 * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
 

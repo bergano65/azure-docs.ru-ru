@@ -9,27 +9,27 @@ ms.date: 08/14/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: f322803d3484b4ec2d5449e19d67d75b35d6d92f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75751985"
 ---
 [!INCLUDE [P2S FAQ All](vpn-gateway-faq-p2s-all-include.md)]
 
-### <a name="what-should-i-do-if-im-getting-a-certificate-mismatch-when-connecting-using-certificate-authentication"></a>Что делать, если при подключении с помощью проверки подлинности сертификата я получаю несоответствие сертификата?
+### <a name="what-should-i-do-if-im-getting-a-certificate-mismatch-when-connecting-using-certificate-authentication"></a>Что делать, если при подключении с использованием проверки подлинности сертификата возникло несоответствие сертификата?
 
-Отоверьте **"Проверить личность сервера, проверяя сертификат"** или **добавить сервер F-DN вместе с сертификатом** при создании профиля вручную. Вы можете сделать это, запустив **rasphone** из запроса команды и выбрав профиль из списка выпадающих.
+Снимите флажок **"проверять удостоверение сервера путем проверки сертификата"** или **Добавьте полное доменное имя сервера вместе с сертификатом** при создании профиля вручную. Это можно сделать, запустив **Rasphone** из командной строки и выбрав профиль из раскрывающегося списка.
 
-Обход проверки личности сервера в целом не рекомендуется, но при аутентификации сертификата Azure тот же сертификат используется для проверки сервера в протоколе vpn tunneling (IKEv2/SSTP) и протоколе EAP. Так как сертификат сервера и F-DN уже проверены протоколом туннелирования VPN, проверить то же самое в EAP является излишним.
+Обход проверки удостоверения сервера не рекомендуется в целом, но при использовании проверки подлинности сертификата Azure для проверки сервера в протоколе туннелирования VPN (IKEv2/SSTP) и протокола EAP используется один и тот же сертификат. Так как сертификат сервера и полное доменное имя уже проверены протоколом туннелирования VPN, он становится избыточным для повторной проверки в EAP.
 
-![от точки к месту](./media/vpn-gateway-faq-p2s-all-include/servercert.png "Сертификат сервера")
+![точка-сеть](./media/vpn-gateway-faq-p2s-all-include/servercert.png "Сертификат сервера")
 
-### <a name="can-i-use-my-own-internal-pki-root-ca-to-generate-certificates-for-point-to-site-connectivity"></a>Могу ли я использовать свой внутренний PKI root CA для создания сертификатов для подключения к сайту?
+### <a name="can-i-use-my-own-internal-pki-root-ca-to-generate-certificates-for-point-to-site-connectivity"></a>Можно ли использовать собственный внутренний корневой ЦС PKI для создания сертификатов для подключения "точка — сеть"?
 
 Да. Раньше поддерживались только самозаверяющие корневые сертификаты. Вы по-прежнему можете загружать до 20 корневых сертификатов.
 
-### <a name="can-i-use-certificates-from-azure-key-vault"></a>Могу ли я использовать сертификаты из Azure Key Vault?
+### <a name="can-i-use-certificates-from-azure-key-vault"></a>Можно ли использовать сертификаты из Azure Key Vault?
 
 Нет.
 
@@ -45,7 +45,7 @@ ms.locfileid: "75751985"
 
 * **MakeCert:** см. инструкции по работе с [MakeCert](../articles/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert.md).
 
-* **Openssl:** 
+* **OpenSSL** 
 
     * При экспорте сертификатов преобразуйте корневой сертификат в кодировку Base64.
 

@@ -1,26 +1,26 @@
 ---
 title: Справочник по кэшу пользовательских ресурсов
-description: Пользовательская ссылка на кэш ресурсов для поставщиков пользовательских ресурсов Azure. В этой статье будут выполняться требования к конечным точкам реализации пользовательских ресурсов кэша.
+description: Справочник по пользовательскому кэшу ресурсов для поставщиков настраиваемых ресурсов Azure. В этой статье рассматриваются требования к конечным точкам, реализующим пользовательские ресурсы кэша.
 ms.topic: conceptual
 ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: e1b8c44f020d18066423eed236018308fe88b607
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75650387"
 ---
 # <a name="custom-resource-cache-reference"></a>Ссылка на пользовательский кэш ресурсов
 
-В этой статье будут выполняться требования к конечным точкам реализации пользовательских ресурсов кэша. Если вы не знакомы с поставщиками пользовательских ресурсов Azure, смотрите [обзор поставщиков пользовательских ресурсов.](overview.md)
+В этой статье рассматриваются требования к конечным точкам, реализующим пользовательские ресурсы кэша. Если вы не знакомы с поставщиками настраиваемых ресурсов Azure, ознакомьтесь [с обзором пользовательских поставщиков ресурсов](overview.md).
 
 ## <a name="how-to-define-a-cache-resource-endpoint"></a>Как определить конечную точку ресурса кэша
 
-Прокси-ресурс может быть создан путем указания **routingType** на "Прокси, кэш".
+Ресурс-посредник можно создать, указав для **раутингтипе** значение Proxy, Cache.
 
-Пример поставщика пользовательских ресурсов:
+Пример пользовательского поставщика ресурсов:
 
 ```JSON
 {
@@ -40,17 +40,17 @@ ms.locfileid: "75650387"
 }
 ```
 
-## <a name="building-proxy-resource-endpoint"></a>Создание конечная точка прокси-ресурса
+## <a name="building-proxy-resource-endpoint"></a>Создание конечной точки ресурса прокси-сервера
 
-**Конечная точка,** реализуемый **в конечном итоге** ресурса "Прокси, кэш", должна обрабатывать запрос и ответ для нового API в Azure. В этом случае **ресурсType** будет генерировать новый API `GET`ресурсов `DELETE` Azure для `PUT`, и для `GET` выполнения CRUD на одном ресурсе, а также для извлечения всех существующих ресурсов:
+**Конечная** точка, реализующая **конечную точку** ресурса "прокси, кэш", должна поддерживать запрос и ответ для нового API в Azure. В этом случае **ResourceType** создает новый API ресурсов Azure `PUT`для `GET`, и `DELETE` для выполнения CRUD на одном ресурсе, а также `GET` для получения всех существующих ресурсов:
 
 > [!NOTE]
-> API Azure `PUT`будет генерировать методы `GET`запроса, и, `DELETE`но **конечная** `PUT` точка кэша требует только обработки и `DELETE`
-> Мы рекомендовали, чтобы **конечная точка** также реализует `GET`.
+> API Azure `PUT`создаст методы `GET`запроса, и `DELETE`, но **конечной точке** кэша требуется только обработку `PUT` и. `DELETE`
+> Мы рекомендуем, чтобы **Конечная точка** также реализовала `GET`.
 
 ### <a name="create-a-custom-resource"></a>Создание настраиваемого ресурса
 
-Входящий запрос API Azure API:
+Входящий запрос API Azure:
 
 ``` HTTP
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/myCustomResources/{myCustomResourceName}?api-version=2018-09-01-preview
@@ -67,7 +67,7 @@ Content-Type: application/json
 }
 ```
 
-Затем этот запрос будет направлен в **конечную точку** в форме:
+Затем этот запрос будет перенаправлен в **конечную точку** в форме:
 
 ``` HTTP
 PUT https://{endpointURL}/?api-version=2018-09-01-preview
@@ -84,14 +84,14 @@ X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups
 }
 ```
 
-Аналогичным образом, ответ с **конечной точки** затем пересылается клиенту. Ответ с конечной точки должен вернуться:
+Аналогичным образом ответ от **конечной точки** затем перенаправляется обратно клиенту. Ответ от конечной точки должен вернуть:
 
-- Действительный документ объекта JSON. Все массивы и строки должны быть вложены под верхний объект.
-- Заголовок `Content-Type` должен быть установлен на "приложение / Json; charset'utf-8".
-- Поставщик пользовательских ресурсов перезавержает `name` `type`запрос и `id` поля.
-- Поставщик пользовательских ресурсов вернет `properties` поля под объект только для конечных точек кэша.
+- Допустимый документ объекта JSON. Все массивы и строки должны быть вложены в верхний объект.
+- Для `Content-Type` заголовка необходимо задать значение Application/JSON; charset = UTF-8 ".
+- Настраиваемый поставщик ресурсов перезапишет поля `name`, `type`и `id` для запроса.
+- Поставщик настраиваемых ресурсов будет возвращать только поля в `properties` объекте для конечной точки кэша.
 
-**Конечная точка** Ответ:
+**Конечная точка** Ответ
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -107,9 +107,9 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-`id` `type` Поля `name`и поля будут автоматически сгенерированы для пользовательского ресурса поставщиком пользовательских ресурсов.
+Поля `name`, `id`и `type` будут автоматически созданы настраиваемым поставщиком ресурсов для настраиваемого ресурса.
 
-Ответ поставщика пользовательских ресурсов Azure:
+Ответ поставщика настраиваемых ресурсов Azure:
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -130,7 +130,7 @@ Content-Type: application/json; charset=utf-8
 
 ### <a name="remove-a-custom-resource"></a>Удаление настраиваемого ресурса
 
-Входящий запрос API Azure API:
+Входящий запрос API Azure:
 
 ``` HTTP
 Delete https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/myCustomResources/{myCustomResourceName}?api-version=2018-09-01-preview
@@ -138,7 +138,7 @@ Authorization: Bearer eyJ0e...
 Content-Type: application/json
 ```
 
-Затем этот запрос будет направлен в **конечную точку** в форме:
+Затем этот запрос будет перенаправлен в **конечную точку** в форме:
 
 ``` HTTP
 Delete https://{endpointURL}/?api-version=2018-09-01-preview
@@ -146,20 +146,20 @@ Content-Type: application/json
 X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/myCustomResources/{myCustomResourceName}
 ```
 
-Аналогичным образом, ответ с **конечной точки** затем пересылается обратно клиенту. Ответ с конечной точки должен вернуться:
+Аналогичным образом ответ от **конечной точки** затем перенаправляется обратно клиенту. Ответ от конечной точки должен вернуть:
 
-- Действительный документ объекта JSON. Все массивы и строки должны быть вложены под верхний объект.
-- Заголовок `Content-Type` должен быть установлен на "приложение / Json; charset'utf-8".
-- Поставщик пользовательских ресурсов Azure удаляет элемент из кэша только в случае возврата 200-уровней ответа. Даже если ресурса не существует, **конечная точка** должна вернуть ся204.
+- Допустимый документ объекта JSON. Все массивы и строки должны быть вложены в верхний объект.
+- Для `Content-Type` заголовка необходимо задать значение Application/JSON; charset = UTF-8 ".
+- Поставщик настраиваемых ресурсов Azure удаляет элемент из своего кэша, только если возвращается ответ уровня 200. Даже если ресурс не существует, **Конечная точка** должна вернуть 204.
 
-**Конечная точка** Ответ:
+**Конечная точка** Ответ
 
 ``` HTTP
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ```
 
-Ответ поставщика пользовательских ресурсов Azure:
+Ответ поставщика настраиваемых ресурсов Azure:
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -168,7 +168,7 @@ Content-Type: application/json; charset=utf-8
 
 ### <a name="retrieve-a-custom-resource"></a>Извлечение настраиваемого ресурса
 
-Входящий запрос API Azure API:
+Входящий запрос API Azure:
 
 ``` HTTP
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/myCustomResources/{myCustomResourceName}?api-version=2018-09-01-preview
@@ -176,9 +176,9 @@ Authorization: Bearer eyJ0e...
 Content-Type: application/json
 ```
 
-Запрос **не** будет перенаправлен в **конечную точку.**
+Запрос **не** будет перенаправлен в **конечную точку**.
 
-Ответ поставщика пользовательских ресурсов Azure:
+Ответ поставщика настраиваемых ресурсов Azure:
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -197,9 +197,9 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-### <a name="enumerate-all-custom-resources"></a>Перечислить все пользовательские ресурсы
+### <a name="enumerate-all-custom-resources"></a>Перечисление всех настраиваемых ресурсов
 
-Входящий запрос API Azure API:
+Входящий запрос API Azure:
 
 ``` HTTP
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/myCustomResources?api-version=2018-09-01-preview
@@ -207,9 +207,9 @@ Authorization: Bearer eyJ0e...
 Content-Type: application/json
 ```
 
-Этот запрос **не** будет перенаправлен в **конечную точку.**
+Этот запрос **не** будет перенаправляться в **конечную точку**.
 
-Ответ поставщика пользовательских ресурсов Azure:
+Ответ поставщика настраиваемых ресурсов Azure:
 
 ``` HTTP
 HTTP/1.1 200 OK
@@ -234,8 +234,8 @@ Content-Type: application/json; charset=utf-8
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обзор поставщиков пользовательских ресурсов Azure](overview.md)
-- [Быстрый запуск: Создайте поставщика пользовательских ресурсов Azure и развернуть пользовательские ресурсы](./create-custom-provider.md)
-- [Учебник: Создавайте пользовательские действия и ресурсы в Azure](./tutorial-get-started-with-custom-providers.md)
-- [Как: Добавление пользовательских действий в API Azure REST](./custom-providers-action-endpoint-how-to.md)
-- [Справка: Пользовательские ресурсы Прокси Ссылка](proxy-resource-endpoint-reference.md)
+- [Общие сведения о поставщиках настраиваемых ресурсов Azure](overview.md)
+- [Краткое руководство. Создание настраиваемого поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)
+- [Руководство. Создание настраиваемых действий и ресурсов в Azure](./tutorial-get-started-with-custom-providers.md)
+- [Как добавлять настраиваемые действия в Azure REST API](./custom-providers-action-endpoint-how-to.md)
+- [Справочник: Справочник по прокси-службе настраиваемого ресурса](proxy-resource-endpoint-reference.md)

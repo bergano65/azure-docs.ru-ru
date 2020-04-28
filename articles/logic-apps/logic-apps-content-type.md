@@ -1,16 +1,16 @@
 ---
 title: Обработка типов содержимого
-description: Узнайте, как обрабатывать различные типы содержимого в рабочих процессах во время проектирования и времени выполнения в приложениях логики Azure
+description: Узнайте, как работать с различными типами содержимого в рабочих процессах во время разработки и во время выполнения в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/20/2018
 ms.openlocfilehash: ae0abe288edda2ce01311d8533b1f104409efce0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75666879"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
@@ -140,12 +140,12 @@ ms.locfileid: "75666879"
 * `xml()`: Приводит данные к `application/xml`
 * `binary()`: Приводит данные к `application/octet-stream`
 * `string()`: Приводит данные к `text/plain`
-* `base64()`: Преобразует содержимое в базовую строку 64
-* `base64toString()`: Преобразует базовую64-закодированную строку в`text/plain`
-* `base64toBinary()`: Преобразует базовую64-закодированную строку в`application/octet-stream`
-* `dataUri()`: Преобразует строку в данные URI
-* `dataUriToBinary()`: Преобразует данные URI в двоичную строку
-* `dataUriToString()`: Преобразует данные URI в строку
+* `base64()`: Преобразует содержимое в строку в кодировке Base64
+* `base64toString()`: Преобразует строку в кодировке Base64 в`text/plain`
+* `base64toBinary()`: Преобразует строку в кодировке Base64 в`application/octet-stream`
+* `dataUri()`: Преобразует строку в универсальный код ресурса (URI) данных
+* `dataUriToBinary()`: Преобразует универсальный код ресурса (URI) данных в двоичную строку
+* `dataUriToString()`: Преобразует универсальный код ресурса (URI) данных в строку
 
 Например, при получении HTTP-запроса, где `Content-Type` установлено как `application/xml`, как в этом содержимом.
 

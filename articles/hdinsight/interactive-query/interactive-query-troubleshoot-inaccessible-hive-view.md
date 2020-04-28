@@ -1,6 +1,6 @@
 ---
-title: Apache Hive подключает сяовладельца зоопарка Apache - Azure HDInsight
-description: Apache Hive View недоступен из-за проблем с зоозащитником Apache в Azure HDInsight
+title: Apache Hive подключения к Apache Zookeeper — Azure HDInsight
+description: Apache Hive просмотр недоступен из-за проблем Apache Zookeeper в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
@@ -8,47 +8,47 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/30/2019
 ms.openlocfilehash: 6e000d31ffbacd7cb716bd59dde4f935638b0810
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75895194"
 ---
-# <a name="scenario-apache-hive-fails-to-establish-a-connection-to-apache-zookeeper-in-azure-hdinsight"></a>Сценарий: Apache Hive не удается установить связь с Зоозащитником Apache в Azure HDInsight
+# <a name="scenario-apache-hive-fails-to-establish-a-connection-to-apache-zookeeper-in-azure-hdinsight"></a>Сценарий: Apache Hive не удается установить подключение к Apache Zookeeper в Azure HDInsight
 
-В этой статье описаны шаги устранения неполадок и возможные разрешения проблем при использовании компонентов интерактивного запроса в кластерах Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании интерактивных компонентов запросов в кластерах Azure HDInsight.
 
 ## <a name="issue"></a>Проблема
 
-Представление Hive недоступно, а журналы `/var/log/hive` в них показывают ошибку, похожую на следующую:
+Представление Hive недоступно, а в журналах `/var/log/hive` отображается ошибка следующего вида:
 
 ```
 ERROR [Curator-Framework-0]: curator.ConnectionState (ConnectionState.java:checkTimeouts(200)) - Connection timed out for connection string (zk0-cluster.cloud.wbmi.com:2181,zk1-cluster.cloud.wbmi.com:2181,zk2-cluster.cloud.wbmi.com:2181) and timeout (15000) / elapsed (21852)
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-Вполне возможно, что Hive может не установить связь с зоозащитником, что предотвращает запуск Hive View.
+Возможно, Hive не сможет установить подключение к Zookeeper, что не позволит запустить представление Hive.
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
-1. Убедитесь, что служба зоозащитника здорова.
+1. Убедитесь, что служба Zookeeper работоспособна.
 
-1. Проверьте, есть ли в службе зоозащитника запись для Hive Server2. Значение будет отсутствовать или неправильно.
+1. Проверьте, имеет ли служба Zookeeper запись Znode будет удален для Hive Server2. Значение будет отсутствовать или быть неправильным.
 
     ```
     /usr/hdp/2.6.2.25-1/zookeeper/bin/zkCli.sh -server zk1-wbwdhs
     [zk: zk0-cluster(CONNECTED) 0] ls /hiveserver2-hive2
     ```
 
-1. Для восстановления подключения, перезагрузки узлов зоозащитника и перезагрузки HiveServer2.
+1. Чтобы повторно установить подключение, перезагрузите узлы Zookeeper и перезагрузите HiveServer2.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с официальным аккаунтом Microsoft Azure для улучшения обслуживания клиентов, подключив сообщество Azure к нужным ресурсам: ответам, поддержке и экспертам.
+* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации, пожалуйста, просмотрите [Как создать запрос поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

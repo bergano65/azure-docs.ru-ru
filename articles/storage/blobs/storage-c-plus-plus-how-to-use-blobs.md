@@ -8,10 +8,10 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.openlocfilehash: 0a9015e33f5456efeac7f7c887995ac4a69f0259
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75941808"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
@@ -32,14 +32,14 @@ ms.locfileid: "75941808"
 
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
-* **Linux:** Следуйте инструкциям, приведенным в [библиотеке клиентов по хранению данных Azure для C' README: Начало работы на](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) странице Linux.
-* **Окна:** В Windows используйте [vcpkg](https://github.com/microsoft/vcpkg) в качестве менеджера зависимостей. Следуйте инструкциям из этого [краткого руководства](https://github.com/microsoft/vcpkg#quick-start), чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
+* **Linux:** Следуйте инструкциям, приведенным в [файле сведений о клиентской библиотеке хранилища Azure для C++ README: Начало работы на странице Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) .
+* **Windows:** В Windows используйте [vcpkg](https://github.com/microsoft/vcpkg) в качестве диспетчера зависимостей. Следуйте инструкциям из этого [краткого руководства](https://github.com/microsoft/vcpkg#quick-start), чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
 
 ```powershell
 .\vcpkg.exe install azure-storage-cpp
 ```
 
-Вы можете найти руководство по созданию исходного кода и экспорту в NuGet в файле [README.](https://github.com/Azure/azure-storage-cpp#download--install)
+Руководство по созданию исходного кода и экспорту в NuGet можно найти в файле [сведений](https://github.com/Azure/azure-storage-cpp#download--install) .
 
 ## <a name="configure-your-application-to-access-blob-storage"></a>Настройка приложения для доступа к хранилищу больших двоичных объектов
 Добавьте следующие инструкции в начало файла C++, где требуется использовать API-интерфейсы Azure для доступа к BLOB-объектам.  
@@ -52,7 +52,7 @@ ms.locfileid: "75941808"
 ```
 
 ## <a name="setup-an-azure-storage-connection-string"></a>Настройка строки подключения к службе хранилища Azure
-Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения для хранилища в следующем формате (в качестве параметров *AccountName* и *AccountKey* укажите имя и ключ доступа своей учетной записи хранения, их можно получить на [портале Azure](https://portal.azure.com)). Для получения информации о учетных записях хранения данных и ключах доступа [см.](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) В этом примере показано, как объявить статическое поле для размещения строки подключения:  
+Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения для хранилища в следующем формате (в качестве параметров *AccountName* и *AccountKey* укажите имя и ключ доступа своей учетной записи хранения, их можно получить на [портале Azure](https://portal.azure.com)). Сведения о учетных записях хранения и ключах доступа см. в статье [об учетных записях хранения Azure](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). В этом примере показано, как объявить статическое поле для размещения строки подключения:  
 
 ```cpp
 // Define the connection-string with your values.
@@ -70,8 +70,8 @@ const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;
 
 В приведенных ниже примерах предполагается, что вы использовали одно из этих двух определений для получения строки подключения к хранилищу.  
 
-## <a name="retrieve-your-storage-account"></a>Изыскните учетную запись хранения
-Для представления **информации** о учетной записи хранилища можно использовать cloud_storage_account класс. Чтобы получить данные учетной записи хранения из строки подключения хранилища, можно использовать метод **синтаксического анализа** .  
+## <a name="retrieve-your-storage-account"></a>Получение учетной записи хранения
+Для представления сведений об учетной записи хранения можно использовать класс **cloud_storage_account** . Чтобы получить данные учетной записи хранения из строки подключения хранилища, можно использовать метод **синтаксического анализа** .  
 
 ```cpp
 // Retrieve storage account from connection string.
@@ -158,7 +158,7 @@ blob3.upload_text(U("other text"));
 Кроме того, можно использовать метод **upload_from_file** для отправки файла в блочный BLOB-объект.
 
 ## <a name="how-to-list-the-blobs-in-a-container"></a>Практическое руководство. Перечисление BLOB-объектов в контейнере
-Для перечисления BLOB-объектов в контейнере сначала необходимо получить ссылку на контейнер. Затем можно использовать **list_blobs** метод контейнера для извлечения капли и/или каталогов в нем. Для доступа к широкому набору свойств и методов возвращаемого объекта **list_blob_item** необходимо вызвать метод **list_blob_item.as_blob**, чтобы получить объект **cloud_blob**, или метод **list_blob.as_directory**, чтобы получить объект cloud_blob_directory. В следующем коде показано, как получить и вывести URI каждого элемента в контейнере **my-sample-container** .
+Для перечисления BLOB-объектов в контейнере сначала необходимо получить ссылку на контейнер. Затем можно использовать метод **list_blobs** контейнера для извлечения больших двоичных объектов и (или) каталогов внутри него. Для доступа к широкому набору свойств и методов возвращаемого объекта **list_blob_item** необходимо вызвать метод **list_blob_item.as_blob**, чтобы получить объект **cloud_blob**, или метод **list_blob.as_directory**, чтобы получить объект cloud_blob_directory. В следующем коде показано, как получить и вывести URI каждого элемента в контейнере **my-sample-container** .
 
 ```cpp
 // Retrieve storage account from connection string.
@@ -188,7 +188,7 @@ for (auto it = container.list_blobs(); it != end_of_results; ++it)
 Дополнительные сведения об операциях перечисления см. в разделе [Перечисление ресурсов хранилища Azure в C++](../storage-c-plus-plus-enumeration.md).
 
 ## <a name="how-to-download-blobs"></a>Практическое руководство. Загрузка BLOB-объектов
-Чтобы загрузить капли, сначала получить ссылку капли, а затем вызвать **download_to_stream** метод. В следующем примере используется метод **download_to_stream** для передачи содержимого капли на объект потока, который затем можно сохранить в локальном файле.  
+Чтобы скачать большие двоичные объекты, сначала извлеките ссылку на большой двоичный объект, а затем вызовите метод **download_to_stream** . В следующем примере используется метод **download_to_stream** для передачи содержимого большого двоичного объекта в объект потока, который затем можно сохранить в локальном файле.  
 
 ```cpp
 // Retrieve storage account from connection string.
@@ -255,13 +255,13 @@ azure::storage::cloud_block_blob blockBlob = container.get_block_blob_reference(
 blockBlob.delete_blob();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы ознакомились с основными сведениями о хранилище BLOB-объектов, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.  
 
 * [Использование хранилища очередей из C++](../storage-c-plus-plus-how-to-use-queues.md)
-* [Как использовать таблицу хранения от СЗЗ](../../cosmos-db/table-storage-how-to-use-c-plus.md)
-* [Перечислите ресурсы хранения Azure в СЗ](../storage-c-plus-plus-enumeration.md)
-* [Библиотека клиентского хранения для справки о СЗ](https://azure.github.io/azure-storage-cpp)
-* [Документация по хранению данных Azure](https://azure.microsoft.com/documentation/services/storage/)
-* [Передача данных с помощью утилиты командной строки AzCopy](../storage-use-azcopy.md)
+* [Использование табличного хранилища из C++](../../cosmos-db/table-storage-how-to-use-c-plus.md)
+* [Список ресурсов службы хранилища Azure в C++](../storage-c-plus-plus-enumeration.md)
+* [Справочник по клиентской библиотеке хранилища для C++](https://azure.github.io/azure-storage-cpp)
+* [Документация по службе хранилища Azure](https://azure.microsoft.com/documentation/services/storage/)
+* [Перенос данных с помощью служебной программы командной строки AzCopy](../storage-use-azcopy.md)
 

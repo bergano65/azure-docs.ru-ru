@@ -1,15 +1,15 @@
 ---
-title: Элемент uI credentialsCombo
+title: Элемент пользовательского интерфейса CredentialsCombo
 description: Сведения об элементе пользовательского интерфейса Microsoft.Compute.CredentialsCombo для портала Azure.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 09/29/2018
 ms.author: tomfitz
 ms.openlocfilehash: baee83e08505ddabb4680b5bbb4101479010ea47
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75652142"
 ---
 # <a name="microsoftcomputecredentialscombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.CredentialsCombo
@@ -112,9 +112,9 @@ ms.locfileid: "75652142"
 ## <a name="remarks"></a>Remarks
 
 - Необходимо задать значение для параметра `osPlatform` (**Windows** или **Linux**).
-- Если для параметра `constraints.required` задано значение **true**, то текстовые поля для пароля и открытого ключа SSH должны содержать значения, чтобы пройти проверку. Значение по умолчанию **верно.**
-- Если для параметра `options.hideConfirmation` задано значение **true**, второе текстовое поле для подтверждения пароля скрыто. По умолчанию используется значение **false**.
-- Если для параметра `options.hidePassword` задано значение **true**, возможность использования проверки пароля скрыта. Его можно использовать только тогда, когда параметр `osPlatform` имеет значение **Linux**. По умолчанию используется значение **false**.
+- Если для параметра `constraints.required` задано значение **true**, то текстовые поля для пароля и открытого ключа SSH должны содержать значения, чтобы пройти проверку. Значение по умолчанию — **true**
+- Если для параметра `options.hideConfirmation` задано значение **true**, второе текстовое поле для подтверждения пароля скрыто. Значение по умолчанию — **false**.
+- Если для параметра `options.hidePassword` задано значение **true**, возможность использования проверки пароля скрыта. Его можно использовать только тогда, когда параметр `osPlatform` имеет значение **Linux**. Значение по умолчанию — **false**.
 - Дополнительные ограничения на разрешенные пароли можно реализовать с помощью свойства `customPasswordRegex`. Строка в `customValidationMessage` отображается, если пароль не прошел пользовательскую проверку. Значение по умолчанию для обоих свойств — **null**.
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,15 +1,15 @@
 ---
-title: Надежные актеры таймеры и напоминания
-description: Введение в таймеры и напоминания для службы Fabric Надежные актеры, в том числе руководство о том, когда использовать каждый.
+title: Reliable Actors таймеры и напоминания
+description: Общие сведения о таймерах и напоминаниях для Service Fabric Reliable Actors, включая рекомендации по их использованию.
 author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 02d6220b31ee9c991e8450759bf46759af6177a3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75639621"
 ---
 # <a name="actor-timers-and-reminders"></a>Таймеры и напоминания субъекта
@@ -218,7 +218,7 @@ CompletableFuture reminderUnregistration = unregisterReminderAsync(reminder);
 
 Как показано выше, метод `UnregisterReminderAsync`(C#) или `unregisterReminderAsync`(Java) принимает интерфейс `IActorReminder`(C#) или `ActorReminder`(Java) Базовый класс субъекта поддерживает метод `GetReminder`(C#) или `getReminder`(Java), с помощью которого можно получить интерфейс `IActorReminder`(C#) или `ActorReminder`(Java), передав имя напоминания. Это удобно, так как субъекту не требуется сохранять интерфейс `IActorReminder`(C#) или `ActorReminder`(Java), возвращенный вызовом метода `RegisterReminder`(C#) или `registerReminder`(Java).
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с событиями Reliable Actors и повторным входом:
-* [Актер события](service-fabric-reliable-actors-events.md)
-* [Ретрансция актера](service-fabric-reliable-actors-reentrancy.md)
+* [События субъекта](service-fabric-reliable-actors-events.md)
+* [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)

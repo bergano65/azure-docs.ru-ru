@@ -1,15 +1,15 @@
 ---
-title: Разработка приложений .NET Core с помощью кода Visual Studio
+title: Разработка приложений .NET Core с помощью Visual Studio Code
 description: В этой статье показано, как создавать, развертывать и отлаживать приложения .NET Core Service Fabric с помощью Visual Studio Code.
 author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 1d7478e6b81ef2c53ca6194197336e91d3ff250b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75614529"
 ---
 # <a name="develop-c-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Service Fabric на C# с помощью Visual Studio Code
@@ -48,7 +48,7 @@ sudo code . --user-data-dir='.'
 
 ![Приложение Counter Service в рабочей области](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-application-in-workspace.png)
 
-## <a name="build-the-application"></a>создание приложения;
+## <a name="build-the-application"></a>Построение приложения
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть **палитру команд** в VS Code.
 2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)**. Выходные данные сборки передаются во встроенный терминал.
 
@@ -61,22 +61,22 @@ sudo code . --user-data-dir='.'
 
    ![Команда развертывания приложения в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-deploy-application.png)
 
-4. Когда развертывание будет завершено, запустите браузер и\/откройте Сервис Fabric Explorer: http: /localhost:19080/Explorer. Будет видно, что приложение запущено. Это может занять некоторое время. 
+4. После завершения развертывания запустите браузер и откройте Service Fabric Explorer: http:\//ЛОКАЛХОСТ: 19080/Explorer. Будет видно, что приложение запущено. Это может занять некоторое время. 
 
    ![Приложение службы счетчиков в Service Fabric Explorer](./media/service-fabric-develop-csharp-applications-with-vs-code/sfx-verify-deploy.png)
 
-4. После проверки приложения работает, запустите браузер и открыть эту\/страницу: http: /localhost:31002. Это веб-интерфейс приложения. Чтобы увидеть текущее значение счетчика при его изменении, обновите страницу.
+4. Убедившись, что приложение запущено, запустите браузер и откройте следующую страницу: http:\//ЛОКАЛХОСТ: 31002. Это веб-интерфейс приложения. Чтобы увидеть текущее значение счетчика при его изменении, обновите страницу.
 
    ![Приложение Counter Service в браузере](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-running.png)
 
-## <a name="publish-the-application-to-an-azure-service-fabric-cluster"></a>Публикация приложения в кластерaz данных Службы азово-сервиса
-Наряду с развертыванием приложения в локальном кластере можно также опубликовать приложение в удаленном кластере Azure Service Fabric. 
+## <a name="publish-the-application-to-an-azure-service-fabric-cluster"></a>Публикация приложения в кластере Azure Service Fabric
+Вместе с развертыванием приложения в локальном кластере можно также опубликовать приложение в удаленном кластере Azure Service Fabric. 
 
-1. Убедитесь, что вы создали свое приложение, используя приведенные выше инструкции. Обновите `Cloud.json` файл сгенерированной конфигурации с подробной информацией о удаленном кластере, который вы хотите опубликовать.
+1. Убедитесь, что приложение создано с помощью приведенных выше инструкций. Обновите созданный файл `Cloud.json` конфигурации, указав сведения об удаленном кластере, в котором необходимо выполнить публикацию.
 
-2. Из **палитры командования**выберите **ткань службы: Опубликовать команду приложения.** Выходные данные процесса установки отправляются в интегрированный терминал.
+2. В **палитре команд**выберите **команду Service Fabric: Публикация приложения**. Выходные данные процесса установки отправляются в интегрированный терминал.
 
-   ![Опубликовать команду приложения в КОД VS](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-publish-application.png)
+   ![Команда публикации приложения в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-publish-application.png)
 
 3. Когда развертывание будет завершено, запустите браузер и откройте Service Fabric Explorer: `https:<clusterurl>:19080/Explorer`. Будет видно, что приложение запущено. Это может занять некоторое время. 
 
@@ -93,7 +93,7 @@ sudo code . --user-data-dir='.'
 
    ![Значок отладки в рабочей области VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/debug-start.png)
 
-3. Открытый сервис Fabric Explorer в\/браузере: http: /localhost:19080/Explorer. Чтобы определить первичный узел, на котором работает CounterService, щелкните **Приложения** и разверните его. Значение первичного узла CounterService, который находится на рисунке ниже, соответствует узлу 0.
+3. Откройте Service Fabric Explorer в браузере: http:\//ЛОКАЛХОСТ: 19080/Explorer. Чтобы определить первичный узел, на котором работает CounterService, щелкните **Приложения** и разверните его. Значение первичного узла CounterService, который находится на рисунке ниже, соответствует узлу 0.
 
    ![Первичный узел для CounterService](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-primary-node.png)
 

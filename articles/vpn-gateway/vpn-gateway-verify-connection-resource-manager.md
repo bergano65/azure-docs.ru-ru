@@ -1,5 +1,5 @@
 ---
-title: 'Azure VPN Gateway: Проверить подключение шлюза'
+title: 'VPN-шлюз Azure: Проверка подключения шлюза'
 description: В этой статье показано, как проверить подключение VPN-шлюза виртуальной сети.
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/16/2017
 ms.author: cherylmc
 ms.openlocfilehash: 40417b078577424b1ba13ce60f4f773a1c8fd4dc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75780153"
 ---
 # <a name="verify-a-vpn-gateway-connection"></a>Проверка подключения VPN-шлюза
@@ -45,6 +45,6 @@ ms.locfileid: "75780153"
 
 [!INCLUDE [Classic PowerShell](../../includes/vpn-gateway-verify-connection-ps-classic-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * В виртуальные сети можно добавлять виртуальные машины. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

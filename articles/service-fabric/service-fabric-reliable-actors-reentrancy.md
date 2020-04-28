@@ -1,15 +1,15 @@
 ---
-title: Реантранство в лазурном сервисе Fabric актеров
-description: Введение в reentrancy для службы Fabric Надежные актеры, способ логически избежать блокировки на основе контекста вызова.
+title: Повторный вход в Azure Service Fabric субъекты
+description: Общие сведения о повторном входе для Service Fabric Reliable Actors, способе логически избежать блокировки на основе контекста вызова.
 author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 46ce91e607341e2fbdc0b6a3018e74cb24e76839
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645537"
 ---
 # <a name="reliable-actors-reentrancy"></a>Повторный вход надежных субъектов

@@ -1,24 +1,24 @@
 ---
-title: Создать артефактUiDefinition
-description: Показывает, как создать артефакт createUiDefinition для управляемого приложения Azure. Файл называется createUiDefinition.json.
+title: Артефакт CreateUiDefinition
+description: Здесь показано, как создать артефакт createUiDefinition для управляемого приложения Azure. Файл называется createUiDefinition. JSON.
 ms.topic: conceptual
 ms.author: lazinnat
 author: lazinnat
 ms.date: 07/11/2019
 ms.openlocfilehash: 9be1cb02c419314a33b9487bf183ef3659b2b549
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75651492"
 ---
-# <a name="reference-user-interface-elements-artifact"></a>Справка: Артефакт элементов пользовательского интерфейса
+# <a name="reference-user-interface-elements-artifact"></a>Ссылка: артефакт элементов пользовательского интерфейса
 
-Эта статья является ссылкой на артефакт *createUiDefinition.json* в управляемых приложениях Azure. Для получения дополнительной информации об авторизации элементов пользовательского интерфейса [см.](create-uidefinition-elements.md)
+Эта статья представляет собой справочник по артефакту *createUiDefinition. JSON* в управляемых приложениях Azure. Дополнительные сведения о создании элементов пользовательского интерфейса см. в разделе [Создание элементов пользовательского интерфейса](create-uidefinition-elements.md).
 
 ## <a name="user-interface-elements"></a>Элементы пользовательского интерфейса
 
-Ниже приводится пример создания файла *для* управляемых приложений Azure:
+В следующем JSON показан пример файла *createUiDefinition. JSON* для управляемых приложений Azure:
 
 ```json
 {
@@ -81,6 +81,6 @@ ms.locfileid: "75651492"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник: Создание управляемого приложения с помощью пользовательских действий и ресурсов](tutorial-create-managed-app-with-custom-provider.md)
-- [Справка: артефакт шаблона развертывания](reference-main-template-artifact.md)
-- [Ссылка: Артефакт определения представления](reference-view-definition-artifact.md)
+- [Учебник. Создание управляемого приложения с настраиваемыми действиями и ресурсами](tutorial-create-managed-app-with-custom-provider.md)
+- [Ссылка: артефакт шаблона развертывания](reference-main-template-artifact.md)
+- [Ссылка: Просмотр артефакта определения](reference-view-definition-artifact.md)

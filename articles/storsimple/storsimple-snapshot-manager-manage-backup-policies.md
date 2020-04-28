@@ -15,15 +15,15 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: twooley
 ms.openlocfilehash: 7b2df6c8384e78094d80a17d8982b0db9edf73e1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75933357"
 ---
 # <a name="use-storsimple-snapshot-manager-to-create-and-manage-backup-policies"></a>Создание политик архивации и управление ими с помощью диспетчера моментальных снимков StorSimple
 ## <a name="overview"></a>Обзор
-Политика архивации создает расписание архивации данных томов. Данные могут сохраняться как локально, так и в облаке. Создавая политику архивации, вы также можете указать политику хранения. (Вы можете сохранить максимум 64 снимков.) Для получения дополнительной информации о политике резервного копирования см. [Типы резервного копирования](storsimple-what-is-snapshot-manager.md#backup-types-and-backup-policies) в [серии StorSimple 8000: гибридное облачное решение.](storsimple-overview.md)
+Политика архивации создает расписание архивации данных томов. Данные могут сохраняться как локально, так и в облаке. Создавая политику архивации, вы также можете указать политику хранения. (Можно хранить не более 64 моментальных снимков.) Дополнительные сведения о политиках резервного копирования см. в разделе [типы резервного копирования](storsimple-what-is-snapshot-manager.md#backup-types-and-backup-policies) в [StorSimple 8000 Series: гибридное облачное решение](storsimple-overview.md).
 
 В этом учебнике объясняется, как выполнить такие задачи:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Подключение VNet к другому VNet с помощью подключения Azure VPN Gateway VNet-to-VNet: PowerShell'
+title: 'Подключение виртуальной сети к другой виртуальной сети с помощью VPN-шлюза Azure подключение между виртуальными сетями: PowerShell'
 description: Установка подключения "виртуальная сеть — виртуальная сеть" между виртуальными сетями с помощью PowerShell.
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: cherylmc
 ms.openlocfilehash: eebe66ca038b31f23ca864b107816b8cf761b29c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75860544"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью PowerShell
@@ -23,7 +23,7 @@ ms.locfileid: "75860544"
 > [!div class="op_single_selector"]
 > * [Портал Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
-> * [Лазурный CLI](vpn-gateway-howto-vnet-vnet-cli.md)
+> * [Azure CLI](vpn-gateway-howto-vnet-vnet-cli.md)
 > * [Портал Azure (классический)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 > * [Подключение с использованием разных моделей развертывания — портал Azure](vpn-gateway-connect-different-deployment-models-portal.md)
 > * [Подключение с использованием разных моделей развертывания — PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
@@ -166,7 +166,7 @@ ms.locfileid: "75860544"
    ```azurepowershell-interactive
    New-AzResourceGroup -Name $RG1 -Location $Location1
    ```
-4. Создайте конфигурации подсети для TestVNet1. В этом примере создается виртуальная сеть с именем TestVNet1 и три подсети: GatewaySubnet, FrontEnd и Backend. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем. По этой причине он не назначается через переменную ниже.
+4. Создайте конфигурации подсети для TestVNet1. В этом примере создается виртуальная сеть с именем TestVNet1 и три подсети: GatewaySubnet, FrontEnd и Backend. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем. По этой причине она не назначается с помощью переменной ниже.
 
    В следующем примере используются переменные, заданные ранее. В этом примере в подсети шлюза используется длина префикса /27. Хотя можно создать подсеть шлюза размером /29, рекомендуется создать подсеть большего размера, включающую несколько адресов, выбрав по крайней мере значение /28 или /27. Таким образом, у вас будет достаточно адресов, чтобы добавить дополнительные конфигурации в будущем.
 
@@ -481,7 +481,7 @@ ms.locfileid: "75860544"
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

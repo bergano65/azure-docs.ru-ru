@@ -1,5 +1,5 @@
 ---
-title: 'Изменение настроек IP-адреса шлюза: PowerShell'
+title: 'Изменение параметров IP-адреса шлюза: PowerShell'
 description: Из этой статьи вы узнаете, как изменять префиксы IP-адресов для шлюза локальной сети с помощью PowerShell.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/19/2017
 ms.author: cherylmc
 ms.openlocfilehash: dbaef6e0c81a9230b24aa1e85e7fdc421444047d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75864001"
 ---
 # <a name="modify-local-network-gateway-settings-using-powershell"></a>Изменение параметров шлюза локальной сети с помощью PowerShell
@@ -22,7 +22,7 @@ ms.locfileid: "75864001"
 > [!div class="op_single_selector"]
 > * [Портал Azure](vpn-gateway-modify-local-network-gateway-portal.md)
 > * [PowerShell](vpn-gateway-modify-local-network-gateway.md)
-> * [Лазурный CLI](vpn-gateway-modify-local-network-gateway-cli.md)
+> * [Azure CLI](vpn-gateway-modify-local-network-gateway-cli.md)
 >
 >
 

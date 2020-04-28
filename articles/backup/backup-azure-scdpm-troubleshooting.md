@@ -1,13 +1,13 @@
 ---
 title: Устранение неполадок при работе с System Center Data Protection Manager
-description: В этой статье откройте для себя решения проблем, с которыми можно столкнуться при использовании диспетчера системы защиты данных System Center.
+description: В этой статье описаны решения проблем, которые могут возникнуть при использовании System Center Data Protection Manager.
 ms.topic: troubleshooting
 ms.date: 01/30/2019
 ms.openlocfilehash: bcb30fa7eb3e05099761fc751b09a9fb16134e34
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75664749"
 ---
 # <a name="troubleshoot-system-center-data-protection-manager"></a>Устранение неполадок при работе с System Center Data Protection Manager
@@ -58,7 +58,7 @@ ms.locfileid: "75664749"
 
 - Убедитесь, что вы используете самую последнюю версию агента Azure Backup.
 - Убедитесь в наличии подключения (по сети, через брандмауэр или прокси-сервер) между сервером Data Protection Manager и защищенным сервером.
-- Если вы защищаете сервер S'L, убедитесь, что свойство **Login Properties** > **NT AUTHORITY-SYSTEM** показывает настройку **sysadmin** включена.
+- Если вы защищаете SQL Server, убедитесь, что в свойстве **имя входа** > **NT AUTHORITY\SYSTEM** отображается параметр **sysadmin** .
 
 ## <a name="error-server-not-registered-as-specified-in-vault-credential-file"></a>Ошибка: "Server not registered as specified in vault credential file" (Сервер не зарегистрирован так, как указано в файле учетных данных хранилища)
 

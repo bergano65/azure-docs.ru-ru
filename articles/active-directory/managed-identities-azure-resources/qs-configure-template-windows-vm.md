@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых идентификаторов на Azure VM с помощью шаблона - Azure AD
+title: Настройка управляемых удостоверений на виртуальной машине Azure с помощью шаблона — Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений на виртуальной машине Azure с помощью шаблона Azure Resource Manager.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e5540697e8e64586d73e34d253fb95e549fc0301
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75972148"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-a-templates"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью шаблонов
@@ -39,7 +39,7 @@ ms.locfileid: "75972148"
 
 Так же как портал Azure и сценарии, шаблоны [Azure Resource Manager](../../azure-resource-manager/management/overview.md) предоставляют возможность развертывать новые или измененные ресурсы, определенные в группе ресурсов Azure. Доступно несколько способов редактирования и развертывания шаблона, локально и на портале, в том числе:
 
-   - Использование [пользовательского шаблона из Azure Marketplace,](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template)который позволяет создавать шаблон с нуля, или основывать его на существующем общем шаблоне или [шаблоне quickstart.](https://azure.microsoft.com/documentation/templates/)
+   - С помощью [настраиваемого шаблона из Azure Marketplace](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template), который позволяет создать шаблон с нуля или основывать его на существующем [шаблоне общего или краткого шаблона](https://azure.microsoft.com/documentation/templates/).
    - Наследование от имеющейся группы ресурсов путем экспорта шаблона из [исходного развертывания](../../azure-resource-manager/templates/export-template-portal.md) или от [текущего состояния развертывания](../../azure-resource-manager/templates/export-template-portal.md).
    - Использование локального [редактора JSON (например, VS Code)](../../azure-resource-manager/resource-manager-create-first-template.md), а затем передача и развертывание с помощью PowerShell или интерфейса командной строки.
    - Использование [проекта группы ресурсов Azure](../../azure-resource-manager/templates/create-visual-studio-deployment-project.md) Visual Studio для создания и развертывания шаблона.  
@@ -344,6 +344,6 @@ ms.locfileid: "75972148"
 
    Если у вас есть управляемое удостоверение, назначаемое системой, сохраните его в значении `type` в рамках значения `identity`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Управляемые идентификаторы для обзора ресурсов Azure.](overview.md)
+- [Обзор управляемых удостоверений для ресурсов Azure](overview.md).

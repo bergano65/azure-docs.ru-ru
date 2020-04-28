@@ -1,6 +1,6 @@
 ---
-title: Неудается доступа к файлам хранения data Lake в Azure HDInsight
-description: Неудается доступа к файлам хранения data Lake в Azure HDInsight
+title: Не удается получить доступ к файлам Data Lakeного хранилища в Azure HDInsight
+description: Не удается получить доступ к файлам Data Lakeного хранилища в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
@@ -8,79 +8,79 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/13/2019
 ms.openlocfilehash: 21269f7d5a9ec832a49a613351702dd24be156af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75894165"
 ---
-# <a name="unable-to-access-data-lake-storage-files-in-azure-hdinsight"></a>Неудается доступа к файлам хранения data Lake в Azure HDInsight
+# <a name="unable-to-access-data-lake-storage-files-in-azure-hdinsight"></a>Не удается получить доступ к файлам Data Lakeного хранилища в Azure HDInsight
 
-В этой статье описаны шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue-acl-verification-failed"></a>Выпуск: Проверка ACL не удалась
+## <a name="issue-acl-verification-failed"></a>Ошибка: сбой проверки ACL
 
-Вы получаете сообщение об ошибке, аналогичное:
+Появится сообщение об ошибке следующего вида:
 
 ```
 LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.).
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
-Возможно, пользователь отозвал разрешения директора службы (SP) на файлы/папки.
+Возможно, пользователь отменил разрешения субъекта-службы (Service Principal, SP) для файлов и папок.
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
-1. Убедитесь, что SP имеет разрешения 'x' для прохождения по пути. Дополнительные сведения см. в разделе [Разрешения](https://hdinsight.github.io/ClusterCRUD/ADLS/adls-create-permission-setup.html). Пример команды dfs для проверки доступа к файлам/папкам в учетной записи хранения Data Lake:
+1. Убедитесь, что у пакета обновления есть разрешения "x" для обхода по пути. Дополнительные сведения см. в разделе [Разрешения](https://hdinsight.github.io/ClusterCRUD/ADLS/adls-create-permission-setup.html). Пример команды DFS для проверки доступа к файлам и папкам в Data Lake учетной записи хранения:
 
     ```
     hdfs dfs -ls /<path to check access>
     ```
 
-1. Настройка необходимых разрешений для доступа к пути на основе выполняемой операции чтения/записи. Смотрите здесь для разрешений, необходимых для различных операций файловой системы.
+1. Настройте необходимые разрешения для доступа к пути на основе выполняемой операции чтения-записи. Дополнительные сведения о разрешениях, необходимых для различных операций файловой системы, см. здесь.
 
 ---
 
-## <a name="issue-service-principal-certificate-expiry"></a>Выпуск: Срок действия основного сертификата обслуживания
+## <a name="issue-service-principal-certificate-expiry"></a>Ошибка: истекает срок действия сертификата субъекта-службы
 
-Вы получаете сообщение об ошибке, аналогичное:
+Появится сообщение об ошибке следующего вида:
 
 ```
 Token Refresh failed - Received invalid http response: 500
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
-Срок действия сертификата, предоставленного для основного доступа службы, может истечь.
+Возможно, истек срок действия сертификата, предоставленного для доступа субъекта-службы.
 
-1. SSH в headnode. Проверьте доступ к учетной записи хранилища с помощью следующей команды dfs:
+1. SSH в головного узла. Проверьте доступ к учетной записи хранения с помощью следующей команды DFS:
 
     ```
     hdfs dfs -ls /
     ```
 
-1. Подтвердите, что сообщение об ошибке похоже на следующее:
+1. Убедитесь, что сообщение об ошибке имеет следующий вид:
 
     ```
     {"stderr": "-ls: Token Refresh failed - Received invalid http response: 500, text = Response{protocol=http/1.1, code=500, message=Internal Server Error, url=http://gw0-abccluster.24ajrd4341lebfgq5unsrzq0ue.fx.internal.cloudapp.net:909/api/oauthtoken}}...
     ```
 
-1. Получить один из URL-адресов от `core-site.xml property`  -  `fs.azure.datalake.token.provider.service.urls`.
+1. Получите один из URL-адресов `core-site.xml property`  -  `fs.azure.datalake.token.provider.service.urls`из.
 
-1. Выполнить следующую команду локон для получения токена OAuth.
+1. Выполните следующую команду, чтобы получить токен OAuth.
 
     ```
     curl gw0-abccluster.24ajrd4341lebfgq5unsrzq0ue.fx.internal.cloudapp.net:909/api/oauthtoken
     ```
 
-1. Выход для действительного директора службы должен быть чем-то вроде:
+1. Выходные данные для допустимого субъекта-службы должны быть примерно такими:
 
     ```
     {"AccessToken":"MIIGHQYJKoZIhvcNAQcDoIIGDjCCBgoCAQA…….","ExpiresOn":1500447750098}
     ```
 
-1. Если срок действия основного сертификата службы истек, выход будет выглядеть примерно так:
+1. Если срок действия сертификата субъекта-службы истек, выходные данные будут выглядеть примерно так:
 
     ```
     Exception in OAuthTokenController.GetOAuthToken: 'System.InvalidOperationException: Error while getting the OAuth token from AAD for AppPrincipalId 23abe517-2ffd-4124-aa2d-7c224672cae2, ResourceUri https://management.core.windows.net/, AADTenantId https://login.windows.net/80abc8bf-86f1-41af-91ab-2d7cd011db47, ClientCertificateThumbprint C49C25705D60569884EDC91986CEF8A01A495783 ---> Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException: AADSTS70002: Error validating credentials. AADSTS50012: Client assertion contains an invalid signature. **[Reason - The key used is expired.**, Thumbprint of key used by client: 'C49C25705D60569884EDC91986CEF8A01A495783', Found key 'Start=08/03/2016, End=08/03/2017, Thumbprint=C39C25705D60569884EDC91986CEF8A01A4956D1', Configured keys: [Key0:Start=08/03/2016, End=08/03/2017, Thumbprint=C39C25705D60569884EDC91986CEF8A01A4956D1;]]
@@ -91,17 +91,17 @@ Token Refresh failed - Received invalid http response: 500
     at Microsoft.IdentityModel.Clients.ActiveDirectory.HttpWebRequestWrapper.<GetResponseSyncOrAsync>d__2.MoveNext()
     ```
 
-1. Любые другие ошибки, связанные с ошибками/сертификатами, могут быть распознаны путем пингинга URL-адреса шлюза, чтобы получить токен OAuth.
+1. Любые другие ошибки, связанные с Azure Active Directory, а также ошибки, связанные с сертификатом, можно узнать с помощью команды ping по URL-адресу шлюза, чтобы получить маркер OAuth.
 
-1. Если вы получаете следующие ошибки при попытке получить доступ к ADLS из кластера ИРЧП. Проверьте, истек ли срок действия сертификата, выяснив вышеуказанные шаги.
+1. Если при попытке получить доступ к ADLS из кластера HDI возникает следующая ошибка. Проверьте срок действия сертификата, выполнив описанные выше действия.
 
     ```
     Error: java.lang.IllegalArgumentException: Token Refresh failed - Received invalid http response: 500, text = Response{protocol=http/1.1, code=500, message=Internal Server Error, url=http://clustername.hmssomerandomstringc.cx.internal.cloudapp.net:909/api/oauthtoken}
     ```
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
-Создайте новый сертификат или назначить существующий сертификат с помощью следующего скрипта PowerShell:
+Создайте новый сертификат или назначьте существующий сертификат, используя следующий сценарий PowerShell:
 
 ```powershell
 $clusterName = 'CLUSTERNAME'
@@ -161,16 +161,16 @@ Invoke-AzureRmResourceAction `
 
 ```
 
-Для назначения существующего сертификата создайте сертификат, подготовите файл .pfx и пароль. Связать сертификат с основой обслуживания, с помощью которого был создан кластер, и подготовить AppId.
+Для назначения существующего сертификата создайте сертификат, допуская его PFX-файл и пароль. Свяжите сертификат с субъектом-службой, с которым был создан кластер, и приготовьте идентификатор AppId.
 
-Выполните команду PowerShell после замены параметров фактическими значениями.
+После замены параметров фактическими значениями выполните команду PowerShell.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с - официальная учетная запись Microsoft Azure для улучшения обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации просмотрите [Как создать запрос поддержки Azure.](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

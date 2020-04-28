@@ -1,6 +1,6 @@
 ---
-title: Схемы диагностических журналов Azure Media Services - Azure
-description: В этой статье показаны схемы диагностических журналов мультимедиа Azure Media Services.
+title: Схемы журналов диагностики служб мультимедиа Azure — Azure
+description: В этой статье описываются схемы журналов диагностики служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,41 +14,41 @@ ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
 ms.openlocfilehash: 37baed076ca074c1d558af36649e90959a0034c9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75750872"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
-[Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и диагностические журналы, которые помогают понять, как работают приложения. Вы можете отслеживать диагностические журналы Media Services и создавать оповещения и уведомления для собранных метрик и журналов. Вы можете отправлять журналы в [хранилище Azure,](https://azure.microsoft.com/services/storage/)передавать их в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать в [журнал Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать службы третьей стороны.
+[Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
 
-Для получения подробной информации смотрите [журналы Azure Monitor Metrics](../../azure-monitor/platform/data-platform.md) и [Azure Monitor Diagnostic.](../../azure-monitor/platform/platform-logs-overview.md)
+Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/platform-logs-overview.md).
 
-В этой статье описаны схемы диагностических журналов Media Services.
+В этой статье описываются схемы журналов диагностики служб мультимедиа.
 
 ## <a name="top-level-diagnostic-logs-schema"></a>Схема журналов диагностики верхнего уровня
 
-Подробное описание схемы диагностики верхних журналов сверху, [см.](../../azure-monitor/platform/tutorial-dashboards.md)
+Подробное описание схемы журналов диагностики верхнего уровня см. в статье [Поддерживаемые службы, схемы и категории для журналов диагностики Azure](../../azure-monitor/platform/tutorial-dashboards.md).
 
 ## <a name="key-delivery-log-schema"></a>Схема журнала доставки ключей
 
 ### <a name="properties"></a>Свойства
 
-Эти свойства специфичны для ключевой схемы журнала доставки.
+Эти свойства относятся к схеме журнала доставки ключей.
 
-|name|Описание|
+|Имя|Описание|
 |---|---|
-|keyId|Идентификатор запрошенного ключа.|
-|keyType|Может быть одно из следующих значений: "Ясно" (без шифрования), "FairPlay", "PlayReady", или "Widevine".|
-|policyName|Имя менеджера ресурсов Azure.|
+|keyId|ИДЕНТИФИКАТОР запрошенного ключа.|
+|keyType|Может принимать одно из следующих значений: "Clear" (без шифрования), "FairPlay", "PlayReady" или "Widevine".|
+|policyName|Azure Resource Manager имя политики.|
 |tokenType|Тип токена.|
 |statusMessage|Сообщение состояния.|
 
 ### <a name="examples"></a>Примеры
 
-Свойства ключевой схемы запросов запросов на доставку.
+Свойства схемы запросов на доставку ключей.
 
 ```json
 {
@@ -108,10 +108,10 @@ ms.locfileid: "75750872"
 } 
 ```
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Мониторинг медиа-услуг метрик и диагностических журналов](media-services-metrics-diagnostic-logs.md)
+[Мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)

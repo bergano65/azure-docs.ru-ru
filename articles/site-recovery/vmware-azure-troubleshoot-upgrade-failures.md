@@ -1,6 +1,6 @@
 ---
-title: Обновление системы устранения проблем поставщика восстановления сайтов Microsoft Azure
-description: Устранение общих проблем, возникающих при обновлении поставщика восстановления сайтов Microsoft Azure.
+title: Устранение неполадок при обновлении поставщика Microsoft Azure Site Recovery
+description: Устранение распространенных проблем, возникающих при обновлении поставщика Microsoft Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 11/10/2019
 ms.author: raynew
 ms.openlocfilehash: b59f933fedd5f1d3ed3f7972b1a1fe653df31be2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75893897"
 ---
 # <a name="troubleshoot-microsoft-azure-site-recovery-provider-upgrade-failures"></a>Устранение неполадок с обновлением поставщика службы Microsoft Azure Site Recovery
@@ -42,9 +42,9 @@ Upgrade is not supported as a higher version of the software is already installe
 
 1. Вернитесь в папку со скачанным пакетом и запустите команду MicrosoftAzureSiteRecoveryUnifiedSetup.exe, чтобы завершить обновление. 
 
-## <a name="upgrade-failure-due-to-the-3rd-party-folder-being-renamed"></a>Сбой обновления из-за переименования папки 3-й стороны
+## <a name="upgrade-failure-due-to-the-3rd-party-folder-being-renamed"></a>Сбой обновления из-за переименования сторонней папки
 
-Для успешного обновления папка 3-й стороны не должна быть переименована.
+Для успешности обновления папка стороннего производителя не должна быть переименована.
 
 Устранение проблемы:
 

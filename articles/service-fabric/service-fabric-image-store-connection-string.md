@@ -1,15 +1,15 @@
 ---
-title: Строка подключения к изображению Магазина изображений Azure Service Fabric
-description: Узнайте о строке подключения к хранилику изображений, включая ее использование и приложения для кластера Service Fabric.
+title: Строка подключения к хранилищу образов Azure Service Fabric
+description: Сведения о строке подключения к хранилищу образов, включая ее использование и приложения в Service Fabric кластере.
 author: alexwun
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: alexwun
 ms.openlocfilehash: c3395248188c2a16736cfc8cea262fe163a6944b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645673"
 ---
 # <a name="understand-the-imagestoreconnectionstring-setting"></a>Общие сведения о параметре ImageStoreConnectionString

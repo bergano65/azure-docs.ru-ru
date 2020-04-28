@@ -1,15 +1,15 @@
 ---
-title: Мониторинг кластерных событий Linux в сервисной структуре Azure Fabric
-description: Узнайте, как отслеживать события кластера Service Fabric Linux, написав события платформы Service Fabric в Syslog.
+title: Мониторинг событий кластера Linux в Azure Service Fabric
+description: Узнайте, как отслеживать события кластера Service Fabric Linux путем записи событий платформы Service Fabric в системный журнал.
 author: srrengar
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: srrengar
 ms.openlocfilehash: 5bd3bda71943b2ba8a34cd4fbd0b20917b875670
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645758"
 ---
 # <a name="service-fabric-linux-cluster-events-in-syslog"></a>События кластера Service Fabric под управлением Linux в системном журнале
@@ -18,17 +18,17 @@ Service Fabric предоставляет набор событий платфо
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 В выпуске 6.4 был представлен SyslogConsumer для отправки событий платформы Service Fabric в системный журнал кластеров Linux. После включения события будут автоматически передаваться в системный журнал, который собирает и отправляет агент Log Analytics.
 
 Каждое событие системного журнала состоит из 4 компонентов.
 * Facility
-* идентификации
+* Идентификация
 * Сообщение
 * Severity
 
-SyslogConsumer записывает все события платформы с помощью средства `Local0`. Вы можете обновить до любого действительного объекта, изменив конфигурацию. Используемая идентификация `ServiceFabric`. Поле "Сообщение" содержит все событие, сериализованное в JSON, чтобы различные средства могли его запрашивать и использовать. 
+SyslogConsumer записывает все события платформы с помощью средства `Local0`. Можно выполнить обновление до любого допустимого устройства, изменив конфигурацию конфигурации. Используемое удостоверение `ServiceFabric`—. Поле "Сообщение" содержит все событие, сериализованное в JSON, чтобы различные средства могли его запрашивать и использовать. 
 
 ## <a name="enable-syslogconsumer"></a>Включение Syslog Consumer
 
@@ -76,7 +76,7 @@ SyslogConsumer записывает все события платформы с 
 
 Необходимо вызвать следующие изменения:
 1. В разделе Common находится новый параметр с именем `LinuxStructuredTracesEnabled`. **Он необходим для структурирования и сериализации событий Linux при отправке в системный журнал.**
-2. В разделе Диагностика добавлен новый ConsumerInstance: SyslogConsumer. Он сообщает платформе, что доступен другой потребитель событий. 
+2. В разделе "Диагностика" добавлен новый Консумеринстанце: Сислогконсумер. Он сообщает платформе, что доступен другой потребитель событий. 
 3. В разделе нового параметра SyslogConsumer для `IsEnabled` должно быть установлено значение `true`. Этот параметр настроен для автоматического использования средства Local0. Вы можете переопределить его, добавив еще один параметр.
 
 ```json
@@ -87,7 +87,7 @@ SyslogConsumer записывает все события платформы с 
 ```
 
 ## <a name="azure-monitor-logs-integration"></a>Интеграция журналов Azure Monitor
-Вы можете прочитать эти события Syslog в инструменте мониторинга, таком как журналы Azure Monitor. Вы можете создать рабочую область Log Analytics с помощью Azure Marketplace, выполнив эти [инструкции].(../azure-monitor/learn/quick-create-workspace.md). Кроме того, вам необходимо добавить в кластер агент Log Analytics для сбора и отправки этих данных в рабочую область. Этот же агент используется для сбора счетчиков производительности. 
+Эти события syslog можно читать в средстве мониторинга, например в журналах Azure Monitor. Вы можете создать рабочую область Log Analytics с помощью Azure Marketplace, выполнив эти [инструкции].(../azure-monitor/learn/quick-create-workspace.md). Кроме того, вам необходимо добавить в кластер агент Log Analytics для сбора и отправки этих данных в рабочую область. Этот же агент используется для сбора счетчиков производительности. 
 
 1. Перейдите к колонке `Advanced Settings`.
 
@@ -95,7 +95,7 @@ SyslogConsumer записывает все события платформы с 
 
 2. Щелкните `Data`.
 3. Щелкните `Syslog`.
-4. Настройте Local0 как объект для отслеживания. Вы можете добавить еще один объект, если вы изменили его в fabricSettings
+4. Настройте Local0 в качестве средства для трассировки. Можно добавить другое средство, если оно было изменено в fabricSettings
 
     ![Настройка системного журнала](media/service-fabric-diagnostics-oms-syslog/syslog-configure.png)
 5. Перейдите в проводник запросов, щелкнув `Logs` в меню ресурсов рабочей области, чтобы выполнить запрос.
@@ -113,6 +113,6 @@ SyslogConsumer записывает все события платформы с 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Разверните агент Log Analytics](service-fabric-diagnostics-oms-agent.md) на узлах для сбора данных счетчиков производительности и статистики Docker, а также журналов для контейнеров.
-* Ознакомьтесь с функциями [поиска журналов и запросов,](../log-analytics/log-analytics-log-searches.md) предлагаемых в рамках журналов Azure Monitor
-* [Используйте «Дизайнер представлений» для создания пользовательских представлений в журналах Azure Monitor](../log-analytics/log-analytics-view-designer.md)
-* Ссылка на [интеграцию журналов Azure Monitor с syslog.](../log-analytics/log-analytics-data-sources-syslog.md)
+* Ознакомьтесь с функциями поиска по [журналам и запросами](../log-analytics/log-analytics-log-searches.md) , предлагаемыми в составе журналов Azure Monitor
+* [Использование конструктора представлений для создания пользовательских представлений в журналах Azure Monitor](../log-analytics/log-analytics-view-designer.md)
+* Справочник по [Azure Monitorию журналов интеграции с syslog](../log-analytics/log-analytics-data-sources-syslog.md).

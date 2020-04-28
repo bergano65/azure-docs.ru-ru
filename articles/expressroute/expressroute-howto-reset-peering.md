@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: сбросить контур пиринга'
+title: 'Azure ExpressRoute: сброс пиринга цепи'
 description: Практическое руководство по отключению и включению пиринга канала ExpressRoute.
 services: expressroute
 author: charwen
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/13/2018
 ms.author: charwen
 ms.openlocfilehash: 9f32eb439872de9e4687d046745c03bafd86b2fa
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75941738"
 ---
 # <a name="reset-expressroute-circuit-peerings"></a>Сброс пиринга канала ExpressRoute
@@ -20,7 +20,7 @@ ms.locfileid: "75941738"
 
 Существует несколько сценариев, в которых сброс пиринга для ExpressRoute может оказаться полезным.
 * Протестируйте проектирование и реализацию аварийного восстановления. Например, существует две цепи ExpressRoute. Пиринг в первой цепи можно отключить и принудительно перевести весь сетевой трафик на вторую цепь.
-* Включить двухнаправленное обнаружение форвардов (BFD) на Azure Private Peering или Microsoft Peering вашей схемы ExpressRoute. BFD включен по умолчанию на Azure Private Peering, если ваша схема ExpressRoute создана после 1 августа 2018 года и в Microsoft Peering, если ваша схема ExpressRoute создана после 10 января 2020 года. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. 
+* Включите обнаружение двунаправленной переадресации (БФД) в частном пиринга Azure или пиринга Майкрософт для канала ExpressRoute. БФД по умолчанию включен для частного пиринга Azure, если канал ExpressRoute создается после августа 1 2018 и пиринга Майкрософт, если канал ExpressRoute создается после 10 2020 января. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. 
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 

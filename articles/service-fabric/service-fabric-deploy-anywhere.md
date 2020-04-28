@@ -1,5 +1,5 @@
 ---
-title: Обзор кластеров Azure и автономных кластеров Service Fabric
+title: Общие сведения об Azure и автономных кластерах Service Fabric
 description: Вы можете создать кластеры Service Fabric на любых виртуальных машинах или компьютерах, выполняемых под управлением Windows Server или Linux. Это означает, что вы можете развертывать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров под управлением Windows Server или Linux как локально, в Microsoft Azure, так и в другом поставщике облачных служб.
 author: dkkapur
 ms.topic: conceptual
@@ -7,10 +7,10 @@ ms.date: 01/07/2020
 ms.author: dekapur
 ms.custom: sfrev
 ms.openlocfilehash: a3627effe10039ded5007f9dd060bf1865929040
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75751143"
 ---
 # <a name="comparing-azure-and-standalone-service-fabric-clusters-on-windows-server-and-linux"></a>Сравнение Azure и изолированных кластеров Service Fabric в Windows Server и Linux
@@ -27,7 +27,7 @@ Service Fabric позволяет создавать кластеры Service Fa
 * **Диспетчер ресурсов Azure:** с помощью диспетчера ресурсов Azure легко управлять всеми ресурсами, используемыми кластером, как единым целым. Кроме того, он упрощает отслеживание затрат и выставление счетов.
 * **Кластер Service Fabric как ресурс Azure:** кластер Service Fabric является ресурсом Azure, поэтому его можно моделировать, как и другие ресурсы в Azure.
 * **Интеграция с инфраструктурой Azure**: Service Fabric координирует свою работу с базовой инфраструктурой Azure для операционной системы, сетью и другими обновлениями, чтобы повысить доступность и надежность приложений.  
-* **Диагностика:** В Azure мы предоставляем интеграцию с диагностикой Azure и журналами Azure Monitor.
+* **Диагностика:** В Azure мы предоставляем интеграцию с системой диагностики Azure и Azure Monitor журналов.
 * **Автомасштабирование:** для кластеров в Azure мы предоставляем встроенную функциональность автомасштабирования, основанную на наборах масштабирования виртуальных машин. В локальной среде и других облачных средах требуется реализовать собственную функцию автомасштабирования или выполнить масштабирование вручную с помощью интерфейсов API, предоставляемых Service Fabric для масштабирования кластеров.
 
 ## <a name="benefits-of-standalone-clusters"></a>Преимущества изолированных кластеров
@@ -43,4 +43,4 @@ Service Fabric позволяет создавать кластеры Service Fa
 
 * Общие сведения об кластерах Service Fabric в Azure см. [здесь](service-fabric-azure-clusters-overview.md)
 * Общие сведения об изолированных кластерах Service Fabric см. в [этой статье](service-fabric-standalone-clusters-overview.md)
-* Узнайте о [вариантах поддержки Service Fabric](service-fabric-support.md)
+* Дополнительные сведения о [вариантах поддержки Service Fabric](service-fabric-support.md)

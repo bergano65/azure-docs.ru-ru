@@ -1,16 +1,16 @@
 ---
-title: Впишитесь в Предварительный просмотр ноутбуков Azure
+title: Вход в предварительную версию Azure Notebooks
 description: Настройка учетной записи пользователя для Записных книжек Azure на основе учетной записи Майкрософт, рабочей или учебной учетной записи.
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: 9401a9e483f3f8db5af827f53937cb0f01b27a28
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75646302"
 ---
-# <a name="your-user-account-for-azure-notebooks-preview"></a>Ваша учетная запись пользователя для предварительного просмотра ноутбуков Azure
+# <a name="your-user-account-for-azure-notebooks-preview"></a>Учетная запись пользователя для предварительной версии Azure Notebooks
 
 Работать с Записными книжками Azure можно как в учетной записи пользователя, так и без входа в нее.
 

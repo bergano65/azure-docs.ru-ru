@@ -1,5 +1,5 @@
 ---
-title: Пример конфигурации для подключения устройств Cisco ASA к VPN шлюзам Azure
+title: Пример конфигурации для подключения устройств Cisco ASA к VPN-шлюзам Azure
 description: В этой статье приведен пример конфигурации для подключения устройства Cisco ASA к VPN-шлюзам Azure.
 services: vpn-gateway
 author: yushwang
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/19/2018
 ms.author: yushwang
 ms.openlocfilehash: 96e5c26ea7b5f1baa33fd8830491ee3aa1e60221
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75778088"
 ---
 # <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>Пример конфигурации. Устройство Cisco ASA (IKEv2/без BGP)
@@ -27,7 +27,7 @@ ms.locfileid: "75778088"
 | Проверенная модель           | ASA 5505                          |
 | Проверенные версии         | 9.2                               |
 | Версия IKE            | IKEv2                             |
-| BGP                    | нет                                |
+| BGP                    | Нет                                |
 | Тип VPN-шлюза Azure | Пример VPN-шлюза на основе маршрута           |
 |                        |                                   |
 
@@ -111,13 +111,13 @@ ms.locfileid: "75778088"
 * Обеспечьте уникальность всех имен и номеров политики устройства.
 * Убедитесь, что на устройстве поддерживаются алгоритмы шифрования.
 * Замените следующие **значения заполнителей** фактическими значениями для вашей конфигурации:
-  - Имя внешнего интерфейса: **снаружи**
+  - Внешнее имя интерфейса: **вне**
   - **Azure_Gateway_Public_IP**
   - **OnPrem_Device_Public_IP;**
   - IKE: **Pre_Shared_Key**
   - имена виртуальной сети и шлюза локальной сети: **VNetName** и **LNGName**;
   - **префиксы** адресов виртуальной сети и локальной сети;
-  - Правильные **нетмаски**
+  - Правильный **маски сети**
 
 #### <a name="sample-script"></a>Пример скрипта
 
@@ -300,5 +300,5 @@ sysopt connection tcpmss 1350
     show run tunnel-group
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Инструкции по настройке распределенных подключений (локальных и между виртуальными сетями) с конфигурацией "активный — активный" см. в статье [Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure](vpn-gateway-activeactive-rm-powershell.md).

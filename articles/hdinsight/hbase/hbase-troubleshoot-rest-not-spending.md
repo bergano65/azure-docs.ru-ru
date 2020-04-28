@@ -1,6 +1,6 @@
 ---
-title: Apache HBase REST не отвечает на запросы в Azure HDInsight
-description: Разрешить проблему с Apache HBase REST, не отвечая на запросы в Azure HDInsight.
+title: Служба "Apache HBase" не отвечает на запросы в Azure HDInsight
+description: Устранение проблемы с помощью Apache HBase RESTFUL, не отвечающего на запросы в Azure HDInsight.
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
@@ -8,40 +8,40 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/01/2019
 ms.openlocfilehash: 49b547829a369ea6df35e2f1c2f7d60458e41040
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75887178"
 ---
-# <a name="scenario-apache-hbase-rest-not-responding-to-requests-in-azure-hdinsight"></a>Сценарий: Apache HBase REST не отвечает на запросы в Azure HDInsight
+# <a name="scenario-apache-hbase-rest-not-responding-to-requests-in-azure-hdinsight"></a>Сценарий: остальные компоненты Apache HBase не отвечают на запросы в Azure HDInsight
 
-В этой статье описаны шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
 ## <a name="issue"></a>Проблема
 
-Служба Apache HBase REST не отвечает на запросы в Azure HDInsight.
+Служба RESTFUL Apache HBase не реагирует на запросы в Azure HDInsight.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-Возможной причиной может быть apache HBase REST службы утечки розетки, что особенно часто, когда служба работает в течение длительного времени (например, месяцев). От клиента SDK вы можете увидеть сообщение об ошибке, похожее на:
+Возможно, это может быть вызвано тем, что служба RESTFUL Apache HBase имеет утечку сокетов, что особенно распространено, когда служба работает в течение длительного времени (например, месяцев). В клиентском пакете SDK может появиться сообщение об ошибке следующего вида:
 
 ```
 System.Net.WebException : Unable to connect to the remote server --->
 System.Net.Sockets.SocketException : A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.0.0.19:8090
 ```
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
-Перезапустите HBase REST с помощью нижей команды после SSHing к усту. Вы также можете использовать действия скрипта для перезапуска этой службы на всех рабочих узлах:
+Перезапустите службу HBase RESTFUL, выполнив следующую команду после SSH на узле. Вы также можете использовать действия сценария, чтобы перезапустить эту службу на всех рабочих узлах:
 
 ```bash
 sudo service hdinsight-hbrest restart
 ```
 
-Эта команда остановит сервер региона HBase на том же хосте. Вы можете либо вручную запустить HBase Region Server через Ambari, либо позволить Ambari автоматически перезапустить функциональность автоматического восстановления HBase Region Server автоматически.
+Эта команда останавливает сервер региона HBase на том же узле. Вы можете вручную запустить сервер региона HBase через Ambari или разрешить функции автоматического перезапуска Ambari автоматически восстановить сервер региона HBase.
 
-Если проблема сохраняется, можно установить следующий сценарий смягчения в качестве задания CRON, который работает каждые 5 минут на каждом рабочем узлах. Этот скрипт смягчения пингов службы REST и перезапускает его в случае, если служба REST не отвечает.
+Если проблема сохраняется, можно установить следующий сценарий устранения рисков в качестве задания CRON, которое выполняется каждые 5 минут на каждом узле рабочей роли. Этот сценарий устранения проблем проверяет связь со службой RESTFUL и перезапускает ее в случае, если служба RESTFUL не отвечает.
 
 ```bash
 #!/bin/bash
@@ -53,12 +53,12 @@ if [ $? -ne 0 ]
 fi
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с официальным аккаунтом Microsoft Azure для улучшения обслуживания клиентов, подключив сообщество Azure к нужным ресурсам: ответам, поддержке и экспертам.
+* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации, пожалуйста, просмотрите [Как создать запрос поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

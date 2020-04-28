@@ -1,6 +1,6 @@
 ---
-title: Ошибка illegalArgumentException для Apache Spark - Azure HDInsight
-description: НезаконныйАргументИсключение для деятельности Apache Spark в Azure HDInsight для фабрики данных Azure
+title: Ошибка Иллегаларгументексцептион для Apache Spark — Azure HDInsight
+description: Иллегаларгументексцептион для действия Apache Spark в Azure HDInsight для фабрики данных Azure
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
@@ -8,43 +8,43 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/29/2019
 ms.openlocfilehash: df62dbd8db7d41eb11207c7741aed76cec0ac7a8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75894384"
 ---
-# <a name="scenario-illegalargumentexception-for-apache-spark-activity-in-azure-hdinsight"></a>Сценарий: НезаконныйАргументИсключение для деятельности Apache Spark в Azure HDInsight
+# <a name="scenario-illegalargumentexception-for-apache-spark-activity-in-azure-hdinsight"></a>Сценарий: Иллегаларгументексцептион для действия Apache Spark в Azure HDInsight
 
-В этой статье описаны шаги устранения неполадок и возможные решения проблем при использовании компонентов Apache Spark в кластерах Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
 
 ## <a name="issue"></a>Проблема
 
-При попытке выполнения действия Spark в конвейере Azure Data Factory необходимо следующее исключение:
+При попытке выполнить действие Spark в конвейере фабрики данных Azure появляется следующее исключение:
 
 ```error
 Exception in thread "main" java.lang.IllegalArgumentException:
 Wrong FS: wasbs://additional@xxx.blob.core.windows.net/spark-examples_2.11-2.1.0.jar, expected: wasbs://wasbsrepro-2017-11-07t00-59-42-722z@xxx.blob.core.windows.net
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-Задание Spark выйдет из строя, если файл банки приложения не находится в по умолчанию/первичном хранилище кластера Spark.
+Задание Spark завершится ошибкой, если JAR-файл приложения не размещается в хранилище по умолчанию (первичном) кластера Spark.
 
-Это известная проблема с платформой с открытым исходным кодом Spark, отслеживаемым в этой ошибке: [работа Spark выходит из строя, если fs.defaultFS и банку приложений отличаются URL.](https://issues.apache.org/jira/browse/SPARK-22587)
+Это известная проблема с инфраструктурой открытого кода Spark, проданной в этой ошибке: [Задание Spark завершается ошибкой, если в FS. дефаултфс и JAR-файл хранятся разные URL](https://issues.apache.org/jira/browse/SPARK-22587).
 
-Эта проблема была решена в Spark 2.3.0.
+Эта проблема решена в Spark 2.3.0.
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
-Убедитесь, что банку приложения хранится в хранилище по умолчанию/первичной для кластера HDInsight. В случае с Фабрикой данных Azure убедитесь, что связанная служба ADF указывается на контейнер по умолчанию HDInsight, а не на вторичный контейнер.
+Убедитесь, что JAR-файл приложения хранится в хранилище по умолчанию (первичном) для кластера HDInsight. В случае фабрики данных Azure убедитесь, что связанная служба ADF указывает на контейнер HDInsight по умолчанию, а не на дополнительный контейнер.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с официальным аккаунтом Microsoft Azure для улучшения обслуживания клиентов, подключив сообщество Azure к нужным ресурсам: ответам, поддержке и экспертам.
+* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации, пожалуйста, просмотрите [Как создать запрос поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

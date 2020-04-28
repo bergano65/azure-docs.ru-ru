@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: twooley
 ms.openlocfilehash: 6d3e3d6cdf7a831bf09d9c4709c1a60d27683438
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75933381"
 ---
 # <a name="deploy-the-storsimple-snapshot-manager-mmc-snap-in"></a>Развертывание оснастки консоли управления диспетчера моментальных снимков StorSimple (необязательно)
@@ -52,7 +52,7 @@ ms.locfileid: "75933381"
 2. Убедитесь, что главный компьютер работает под управлением одной из следующих операционных систем.
    
    * Windows Server 2008 R2 (на серверах под управлением Windows 2008 R2 также необходимо установить Windows Server 2008 с пакетом обновления 1 (SP1) и Windows Management Framework 3.0)
-   * Windows Server 2012
+   * Windows Server 2012
    * Windows Server 2012 R2
      
      Для виртуального устройства StorSimple в качестве узла необходимо использовать виртуальную машину Microsoft Azure.

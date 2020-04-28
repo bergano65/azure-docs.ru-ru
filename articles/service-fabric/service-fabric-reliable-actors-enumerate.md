@@ -1,15 +1,15 @@
 ---
-title: Перечислить актеров на Azure сервис Fabric
-description: Узнайте о перечислении надежных актеров и их метаданных в приложении Azure Service Fabric на примерах.
+title: Перечисление субъектов в Azure Service Fabric
+description: Дополнительные сведения о перечислении Reliable Actors и их метаданных в приложении Service Fabric Azure с помощью примеров.
 author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: vturecek
 ms.openlocfilehash: 1516c9005a7c4dd0adcb279e9954e5f882c575c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645605"
 ---
 # <a name="enumerate-service-fabric-reliable-actors"></a>Перечисление Reliable Actors в Service Fabric
@@ -60,9 +60,9 @@ while (continuationToken != null);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
-* [Актер жизненный цикл и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
+* [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
-* [Код образца .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->

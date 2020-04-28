@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 01/03/2020
 ms.openlocfilehash: 3987a2d208bb96120d443300068ea739acbb4131
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75680253"
 ---
 # <a name="index-of-apache-hadoop-in-hdinsight-troubleshooting-articles"></a>Указатель статей об устранении неполадок с Apache Hadoop в HDInsight
@@ -21,11 +21,11 @@ ms.locfileid: "75680253"
 
 ## <a name="out-of-memory-error"></a>Ошибка нехватки памяти
 
-* [Исправить Apache Hive из ошибки памяти в HDInsight:](hdinsight-hadoop-hive-out-of-memory-error-oom.md)Исправить ошибку памяти (OOM) из запроса Hive. Пользовательский сценарий включает в себя запрос ко множеству больших таблиц.
+* [Устранение ошибки нехватки памяти Apache Hive в HDInsight](hdinsight-hadoop-hive-out-of-memory-error-oom.md): Устранение ошибки нехватки памяти ("сбой") из запроса Hive. Пользовательский сценарий включает в себя запрос ко множеству больших таблиц.
 
 ## <a name="apache-hive-query-performance"></a>Производительность запросов Apache Hive
 
-* [Оптимизируйте запросы Apache Hive для Apache Hadoop в HDInsight:](hdinsight-hadoop-optimize-hive-query.md)Эта статья охватывает некоторые наиболее распространенные методы оптимизации производительности Hive, которые можно применить к запросам Hive.
+* [Оптимизация запросов Apache Hive для Apache Hadoop в HDInsight](hdinsight-hadoop-optimize-hive-query.md). в этой статье рассматриваются некоторые наиболее распространенные методы оптимизации производительности Hive, которые можно применять к запросам Hive.
 * [Устранение неполадок Apache Hive с помощью Azure HDInsight](hdinsight-troubleshoot-hive.md).
 
 ## <a name="more-troubleshooting-articles"></a>Дополнительные статьи об устранении неполадок

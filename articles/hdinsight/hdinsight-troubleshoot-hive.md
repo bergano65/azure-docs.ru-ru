@@ -9,10 +9,10 @@ ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.openlocfilehash: 02247adb9852a72b386feb2ef0924b0f1b3d6277
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75895236"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Hive с помощью Azure HDInsight
@@ -39,7 +39,7 @@ ms.locfileid: "75895236"
     hive -f alltables.sql
     ```
 
-Код в разделе "Способы устранения" предполагает, что пути к данным в новом кластере являются такими же, как и в старом кластере. Если пути данных отличаются, можно вручную `alltables.sql` отсеивать генерируемый файл с учетом любых изменений.
+Код в разделе "Способы устранения" предполагает, что пути к данным в новом кластере являются такими же, как и в старом кластере. Если пути к данным различаются, можно вручную изменить созданный `alltables.sql` файл, чтобы отразить любые изменения.
 
 ### <a name="additional-reading"></a>Дополнительные материалы
 
@@ -63,7 +63,7 @@ ms.locfileid: "75895236"
    /var/log/hive/hivemetastore.log
    ```
 
-4. Для просмотра журналов серверов Hive используйте следующую команду:
+4. Чтобы просмотреть журналы сервера Hive, используйте следующую команду:
 
    ```apache
    /var/log/hive/hiveserver2.log
@@ -161,12 +161,12 @@ ms.locfileid: "75895236"
 
 [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-- Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+- Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-- Связаться [@AzureSupport](https://twitter.com/azuresupport) с - официальная учетная запись Microsoft Azure для улучшения обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+- Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-- Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации просмотрите [Как создать запрос поддержки Azure.](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

@@ -1,5 +1,5 @@
 ---
-title: 'Устранение проблем VPN-соединение azure, которое не может соединить названиеSuffix: Azure VPN Gateway'
+title: 'Устранение неполадок VPN-подключения "сеть — сеть" Azure, которое не может подключить titleSuffix: VPN-шлюз Azure'
 description: Узнайте, как устранить проблемы подключения VPN типа "сеть — сеть", которое внезапно завершается сбоем и его невозможно восстановить.
 services: vpn-gateway
 author: chadmath
@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 09/16/2019
 ms.author: genli
 ms.openlocfilehash: 4e827c5f6eedc819bc3635cb09a28f65df51312c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75862583"
 ---
 # <a name="troubleshooting-an-azure-site-to-site-vpn-connection-cannot-connect-and-stops-working"></a>Устранение проблемы подключения VPN типа "сеть — сеть" Azure
@@ -50,11 +50,11 @@ ms.locfileid: "75862583"
 
 1. Перейдите к созданному вами подключению типа "сеть — сеть" через VPN-шлюз Azure.
 
-2. В разделе **Настройки** щелкните **общий ключ**.
+2. В разделе **Параметры** щелкните **общий ключ**.
     
     ![Общий ключ](media/vpn-gateway-troubleshoot-site-to-site-cannot-connect/sharedkey.png)
 
-**Лазурная силаШелл**
+**Azure PowerShell**
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -106,5 +106,5 @@ ms.locfileid: "75862583"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
--   [Настройка подключения сайта к сайту к виртуальной сети](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+-   [Настройка подключения типа "сеть — сеть" к виртуальной сети](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 -   [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md)

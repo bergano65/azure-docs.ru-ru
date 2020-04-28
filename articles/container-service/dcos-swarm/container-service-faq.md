@@ -10,10 +10,10 @@ ms.date: 03/28/2017
 ms.author: mlearned
 ms.custom: H1Hack27Feb201
 ms.openlocfilehash: 317862b694b93de44422ac3c28575c732ffc5be5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75887926"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров (не рекомендуется)
@@ -24,7 +24,7 @@ ms.locfileid: "75887926"
 
 ### <a name="which-container-orchestrators-do-you-support-on-azure-container-service"></a>Какие оркестраторы контейнеров поддерживает Служба контейнеров Azure? 
 
-Служба контейнеров Azure поддерживает компоненты DC/OS, Docker Swarm и Kubernetes с открытым кодом. Для получения дополнительной информации смотрите [обзор](../kubernetes/container-service-intro-kubernetes.md).
+Служба контейнеров Azure поддерживает компоненты DC/OS, Docker Swarm и Kubernetes с открытым кодом. Дополнительные сведения см. в [обзоре](../kubernetes/container-service-intro-kubernetes.md).
  
 ### <a name="do-you-support-docker-swarm-mode"></a>Поддерживается ли режим Docker Swarm? 
 
@@ -112,9 +112,9 @@ ssh userName@masterFQDN –A –p 22 
 
 Дополнительные сведения см. в статье [Подключение к кластеру службы контейнеров Azure](../../container-service/kubernetes/container-service-connect.md).
 
-### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS. Что делать?
+### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS.   Что следует делать?
 
-Есть некоторые известные проблемы DNS на Windows, чьи исправления по-прежнему активно сворачиваются. Пожалуйста, убедитесь, что вы используете самые обновленные ACS-двигатель и Windows версии (с [KB4074588](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4074588) и [KB4089848](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4089848) установлен), так что ваша среда может извлечь выгоду из этого. В противном случае см. инструкции по устранению проблем в следующей таблице:
+В Windows есть некоторые известные проблемы с DNS, исправления которых по-прежнему находятся в активном состоянии. Убедитесь, что вы используете наиболее обновленную версию ядра ACS и Windows (с установленными [KB4074588](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4074588) и [KB4089848](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4089848) ), чтобы среда могла использовать преимущества. В противном случае см. инструкции по устранению проблем в следующей таблице:
 
 | Симптом DNS | Обходной путь  |
 |-------------|-------------|

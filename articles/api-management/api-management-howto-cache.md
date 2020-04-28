@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: apimpm
 ms.openlocfilehash: bf8d8a2c11962467300ae8d65fe5bbbe9a65cf92
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75708361"
 ---
 # <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Добавление кэширования для повышения производительности в службе управления API Azure
@@ -43,20 +43,20 @@ ms.locfileid: "75708361"
 
 Для работы с этим руководством сделайте следующее:
 
-+ [Создание экземпляра управления API API Azure](get-started-create-service-instance.md)
++ [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 + [импортируйте и опубликуйте API.](import-and-publish.md)
 
 ## <a name="add-the-caching-policies"></a><a name="caching-policies"> </a>Добавление политик кэширования
 
 При использовании политик кэширования в этом примере на первый запрос операции **GetSpeakers** возвращается ответ из серверной службы. Этот ответ кэшируется, а также отмечается ключом указанных заголовков и параметров строки запроса. Для последующих вызовов операции с совпадающими параметрами будет возвращаться кэшированный ответ до тех пор, пока не истечет срок действия кэша.
 
-1. Войти на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. Перейдите к экземпляру службы управления API Azure.
-3. Выберите вкладку **API.**
+3. Перейдите на вкладку **API** .
 4. В списке API выберите **Demo Conference API**.
 5. Выберите **GetSpeakers**.
 6. В верхней части экрана выберите вкладку **Конструктор**.
-7. В разделе **Обработка входящих запросов** щелкните значок **</>**.
+7. В разделе **Обработка входящих запросов** щелкните значок **</>** .
 
     ![Редактор кода](media/api-management-howto-cache/code-editor.png)
 
@@ -81,13 +81,13 @@ ms.locfileid: "75708361"
 Чтобы увидеть кэширование в действии, вызовите операцию на портале разработчика.
 
 1. На портале Azure перейдите к экземпляру службы управления API Azure.
-2. Выберите вкладку **AA.**
+2. Перейдите на вкладку **API** .
 3. Выберите API, в который вы добавили политики кэширования.
 4. Щелкните операцию **GetSpeakers**.
 5. Перейдите на вкладку **Тестирование** в правом верхнем меню.
 6. Нажмите кнопку **Отправить**.
 
-## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next-steps"> </a>Следующие шаги
 * Дополнительные сведения о политиках кэширования см. в разделе [Политики кэширования][Caching policies][справочника по политикам управления API][API Management policy reference].
 * Сведения о кэшировании элементов по ключу с помощью выражений политики см. в статье [Пользовательское кэширование в службе управления API Azure](api-management-sample-cache-by-key.md).
 * Дополнительные сведения см. в статье об [использовании внешнего кэша Azure для Redis в службе Azure "Управление API"](api-management-howto-cache-external.md).
