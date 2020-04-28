@@ -6,18 +6,18 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
-ms.date: 09/30/2019
+ms.date: 04/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6b0a81a2f3af10a1e5ad60c6c33357a6e906ee47
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 6de9e31c3e79f6d704ef8b4749d41329dcc0bddb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75895248"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82190692"
 ---
 # <a name="troubleshoot-apache-hadoop-hdfs-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop HDFS с помощью Azure HDInsight
 
-Ознакомьтесь с основными проблемами и их способами их решения при работе с полезными данными распределенной файловой системы Hadoop (HDFS) в Apache Ambari. Полный список команд можно узнать из [руководства HDFS Commands Guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html) и [Руководства по оболочке файловой системы.](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html)
+Сведения об основных проблемах и способах их решения при работе с Hadoop распределенная файловая система (HDFS). Полный список команд см. в [руководству по командам HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html) и в разделе [руководств по оболочке файловой системы](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html).
 
 ## <a name="how-do-i-access-the-local-hdfs-from-inside-a-cluster"></a><a name="how-do-i-access-local-hdfs-from-inside-a-cluster"></a>Как получить доступ к локальной системе HDFS в пределах кластера?
 
@@ -72,14 +72,65 @@ ms.locfileid: "75895248"
     hdfs://mycluster/tmp/hive/hive/a0be04ea-ae01-4cc4-b56d-f263baf2e314/inuse.lck
     ```
 
+## <a name="storage-exception-for-write-on-blob"></a>Исключение хранилища для записи в большой двоичный объект
+
+### <a name="issue"></a>Проблема
+
+При использовании команд `hadoop` или `hdfs dfs` для записи файлов размером свыше 12 ГБ в кластер HBase может возникнуть следующая ошибка:
+
+```error
+ERROR azure.NativeAzureFileSystem: Encountered Storage Exception for write on Blob : example/test_large_file.bin._COPYING_ Exception details: null Error Code : RequestBodyTooLarge
+copyFromLocal: java.io.IOException
+        at com.microsoft.azure.storage.core.Utility.initIOException(Utility.java:661)
+        at com.microsoft.azure.storage.blob.BlobOutputStream$1.call(BlobOutputStream.java:366)
+        at com.microsoft.azure.storage.blob.BlobOutputStream$1.call(BlobOutputStream.java:350)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.storage.StorageException: The request body is too large and exceeds the maximum permissible limit.
+        at com.microsoft.azure.storage.StorageException.translateException(StorageException.java:89)
+        at com.microsoft.azure.storage.core.StorageRequest.materializeException(StorageRequest.java:307)
+        at com.microsoft.azure.storage.core.ExecutionEngine.executeWithRetry(ExecutionEngine.java:182)
+        at com.microsoft.azure.storage.blob.CloudBlockBlob.uploadBlockInternal(CloudBlockBlob.java:816)
+        at com.microsoft.azure.storage.blob.CloudBlockBlob.uploadBlock(CloudBlockBlob.java:788)
+        at com.microsoft.azure.storage.blob.BlobOutputStream$1.call(BlobOutputStream.java:354)
+        ... 7 more
+```
+
+### <a name="cause"></a>Причина:
+
+В HBase в кластерах HDInsight размер блока по умолчанию при записи в службу хранилища Azure равен 256 КБ. Несмотря на то что это подходит при использовании API HBase или REST API, применение служебных программ командной строки `hadoop` или `hdfs dfs` вызовет ошибку.
+
+### <a name="resolution"></a>Разрешение
+
+Задайте больший размер блока с помощью свойства `fs.azure.write.request.size`. Это изменение можно выполнить отдельно для каждого использования с помощью `-D` параметра. Далее приведен пример использования параметра с командой `hadoop`:
+
+```bash
+hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file.bin /example/data
+```
+
+Можно также глобально увеличить значение `fs.azure.write.request.size` с помощью Apache Ambari. Чтобы изменить значение в веб-интерфейсе Ambari, сделайте следующее:
+
+1. В браузере перейдите к веб-интерфейсу Ambari для кластера URL-адрес `https://CLUSTERNAME.azurehdinsight.net`—, `CLUSTERNAME` где — имя кластера. При появлении запроса введите имя и пароль администратора для кластера.
+2. В левой части экрана выберите **HDFS**, а затем перейдите на вкладку **Configs** (Конфигурации).
+3. В поле **Фильтр...** введите `fs.azure.write.request.size`.
+4. Измените значение с 262 144 (256 КБ) на новое. Например, 4 194 304 (4 MB).
+
+    ![Изображение смены значения через веб-интерфейс Ambari](./media/hdinsight-troubleshoot-hdfs/hbase-change-block-write-size.png)
+
+Подробные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
+
 ## <a name="du"></a>du
 
-Команда [-du](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html#du) отображает размеры файлов и каталогов, содержащихся в данном каталоге, или длину файла в случае, если это всего лишь файл.
+[`-du`](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html#du) Команда отображает размеры файлов и каталогов, содержащихся в заданном каталоге, или длину файла, если это просто файл.
 
-Опция `-s` производит совокупное резюме отображаемых длин файлов.  
-Опция `-h` форматирует размеры файла.
+`-s` Параметр создает сводную сводку по длине файлов.  
+`-h` Параметр форматирует размеры файлов.
 
-Пример
+Пример.
 
 ```bash
 hdfs dfs -du -s -h hdfs://mycluster/
@@ -88,9 +139,9 @@ hdfs dfs -du -s -h hdfs://mycluster/tmp
 
 ## <a name="rm"></a>rm
 
-Команда [-rm](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html#rm) удаляет файлы, указанные в качестве аргументов.
+Команда [-RM](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html#rm) удаляет файлы, указанные в качестве аргументов.
 
-Пример
+Пример.
 
 ```bash
 hdfs dfs -rm hdfs://mycluster/tmp/testfile
@@ -100,8 +151,8 @@ hdfs dfs -rm hdfs://mycluster/tmp/testfile
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с - официальная учетная запись Microsoft Azure для улучшения обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации просмотрите [Как создать запрос поддержки Azure.](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

@@ -5,20 +5,20 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 2/21/2019
 ms.author: dekapur
-ms.openlocfilehash: 461d6021a201ca1fa5722bb44c427baca2a7728e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9133a7087285aa6e01a2431bf1a65dfa3c6f8857
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79258828"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189102"
 ---
 # <a name="create-a-standalone-cluster-running-on-windows-server"></a>Создание изолированного кластера под управлением Windows Server
-Azure Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server. Это означает, что вы сможете разворачивать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров с Windows Server как в локальной среде, так и у любого поставщика облачных служб. Service Fabric предоставляет установочный пакет для создания кластеров Service Fabric, который называется изолированным пакетом Windows Server. Традиционные кластеры Service Fabric в Azure доступны в качестве управляемой службы, в то время как автономные кластеры Service Fabric являются самообслуживанием. Подробнее о различиях можно узнать на примере [кластеров «Сравнение Azure» и автономных кластеров Service Fabric.](./service-fabric-deploy-anywhere.md)
+Azure Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server. Это означает, что вы сможете разворачивать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров с Windows Server как в локальной среде, так и у любого поставщика облачных служб. Service Fabric предоставляет установочный пакет для создания кластеров Service Fabric, который называется изолированным пакетом Windows Server. Традиционные кластеры Service Fabric в Azure доступны в виде управляемой службы, а автономные Service Fabric кластеров являются самостоятельными. Дополнительные сведения об отличиях см. в статье [Сравнение кластеров Azure и автономных Service Fabric](./service-fabric-deploy-anywhere.md).
 
 В этой статье описывается процесс создания изолированного кластера Service Fabric.
 
 > [!NOTE]
-> Этот автономный пакет Windows Server доступен на коммерческой основе на безсредствную стоимость и может использоваться для развертывания продукции. Этот пакет может содержать новые функции Service Fabric, которые находятся на этапе предварительной версии. Прокрутите вниз до["Предварительные функции, включенные в этот пакет."](#previewfeatures_anchor) в разделе "Возможности на этапе предварительной версии в этом пакете". Вы можете [загрузить копию лицензионного соглашения](https://go.microsoft.com/fwlink/?LinkID=733084).
+> Этот автономный пакет Windows Server является коммерчески доступным и может использоваться для развертывания в рабочей среде. Этот пакет может содержать новые функции Service Fabric, которые находятся на этапе предварительной версии. Прокрутите вниз до пункта "[функции предварительной версии, включенные в этот пакет](#previewfeatures_anchor)". в разделе "Возможности на этапе предварительной версии в этом пакете". Вы можете [загрузить копию лицензионного соглашения](https://go.microsoft.com/fwlink/?LinkID=733084).
 > 
 > 
 
@@ -43,7 +43,7 @@ Azure Service Fabric позволяет создавать кластеры Serv
 [Ссылка для скачивания среды выполнения Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?linkid=839354)
 
 Примеры конфигурации изолированного кластера доступны здесь: <br>
-[Образцы конфигурации автономных кластеров](https://github.com/Azure-Samples/service-fabric-dotnet-standalone-cluster-configuration/tree/master/Samples)
+[Примеры конфигурации изолированного кластера](https://github.com/Azure-Samples/service-fabric-dotnet-standalone-cluster-configuration/tree/master/Samples)
 
 <a id="createcluster"></a>
 
@@ -52,12 +52,12 @@ Azure Service Fabric позволяет создавать кластеры Serv
 
 Кластер, созданный в этой статье, не защищен.  Любой пользователь может анонимно подключиться и выполнять операции управления, поэтому рабочие кластеры нужно обязательно защищать с помощью сертификатов X.509 или средств обеспечения безопасности Windows.  Безопасность настраивается только во время создания кластера. После этого ее невозможно включить. Обновите файл конфигурации, включив в нем [безопасность сертификата](service-fabric-windows-cluster-x509-security.md) или [безопасность Windows](service-fabric-windows-cluster-windows-security.md). См. дополнительные сведения о безопасности кластера Service Fabric в статье о [защите кластеров](service-fabric-cluster-security.md).
 
-### <a name="step-1-create-the-cluster"></a>Шаг 1: Создание кластера
+### <a name="step-1-create-the-cluster"></a>Шаг 1. Создание кластера
 
-#### <a name="scenario-a-create-an-unsecured-local-development-cluster"></a>Сценарий A: Создание незащищенного локального кластера разработки
+#### <a name="scenario-a-create-an-unsecured-local-development-cluster"></a>Сценарий а. Создание незащищенного локального кластера разработки
 Service Fabric можно развернуть на кластере с одним компьютером разработки с помощью файла *ClusterConfig.Unsecure.DevCluster.json* из [примеров](https://github.com/Azure-Samples/service-fabric-dotnet-standalone-cluster-configuration/tree/master/Samples).
 
-Распакуйте автономный пакет в свою машину, скопируйте пример файла конфигурации в локальную машину, а затем запустите скрипт *CreateServiceFabricCluster.ps1* через сеанс администратора PowerShell из отдельной папки пакета.
+Распакуйте автономный пакет на компьютер, скопируйте пример файла конфигурации на локальный компьютер, а затем запустите сценарий *CreateServiceFabricCluster. ps1* с помощью сеанса PowerShell администратора из папки автономного пакета.
 
 ```powershell
 .\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.DevCluster.json -AcceptEULA
@@ -67,7 +67,7 @@ Service Fabric можно развернуть на кластере с одни
 
 После завершения выполнения сценариев разработки кластер Service Fabric можно будет удалить с компьютера с помощью действий, описанных в разделе [Удаление кластера](#removecluster_anchor). 
 
-#### <a name="scenario-b-create-a-multi-machine-cluster"></a>Сценарий B: Создание многомашинного кластера
+#### <a name="scenario-b-create-a-multi-machine-cluster"></a>Сценарий б. Создание кластера с несколькими компьютерами
 Выполнив этапы планирования и подготовки для развертывания кластера, как описано в [этом разделе](service-fabric-cluster-standalone-deployment-preparation.md), вы будете готовы создать рабочий кластер с помощью своего файла конфигурации кластера.
 
 У администратора кластера, который развертывает и настраивает кластер, должны быть привилегии администратора на компьютере. Пакет Service Fabric нельзя установить на контроллере домена.
@@ -107,7 +107,7 @@ Service Fabric можно развернуть на кластере с одни
 > 
 > 
 
-#### <a name="scenario-c-create-an-offline-internet-disconnected-cluster"></a>Сценарий C: Создание автономного (отключенного из Интернета) кластера
+#### <a name="scenario-c-create-an-offline-internet-disconnected-cluster"></a>Сценарий C. Создание автономного кластера (без подключения к Интернету)
 Пакет среды выполнения Service Fabric автоматически скачивается во время создания кластера. При развертывании кластера на компьютерах, не подключенных к Интернету, необходимо скачать пакет среды выполнения Service Fabric отдельно и указать путь к нему во время создания кластера.
 Пакет среды выполнения можно скачать отдельно, с другого компьютера, подключенного к Интернету, по [ссылке для скачивания среды выполнения Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?linkid=839354). Скопируйте пакет среды выполнения туда, откуда вы развертываете не подключенный к Интернету кластер, и создайте кластер, выполнив `CreateServiceFabricCluster.ps1` с включенным параметром `-FabricRuntimePackagePath`, как показано ниже: 
 
@@ -144,7 +144,7 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 ```
 
 ### <a name="step-3-visualize-the-cluster-using-service-fabric-explorer"></a>Шаг 3. Визуализация кластера с помощью Service Fabric Explorer
-[Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) — хорошее средство для визуализации кластера и управления приложениями.  Сервис Fabric Explorer — это сервис, который работает в кластере, к [http://localhost:19080/Explorer](http://localhost:19080/Explorer)которому вы получаете доступ с помощью браузера, ориентируясь на .
+[Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) — хорошее средство для визуализации кластера и управления приложениями.  Service Fabric Explorer — это служба, которая выполняется в кластере. Чтобы получить к ней доступ, перейдите в браузере по адресу `http://localhost:19080/Explorer`.
 
 На панели мониторинга кластера представлены общие сведения о кластере, включая общие сведения о приложении и работоспособности узла кластера. В представлении "Узлы" отображается физическая структура кластера. Для каждого узла можно просмотреть, какие приложения были развернуты на этом узле
 
@@ -172,9 +172,9 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 <a id="telemetry"></a>
 
 ## <a name="telemetry-data-collected-and-how-to-opt-out-of-it"></a>Собираемые данные телеметрии и отказ от них
-По умолчанию продукт собирает данные телеметрии по использованию Service Fabric для последующего усовершенствования продукта. Анализатор наилучшей практики, который выполняется как часть [https://vortex.data.microsoft.com/collect/v1](https://vortex.data.microsoft.com/collect/v1)проверки настройки на подключение к. Если это расположение недоступно, установку выполнить не удастся, если только вы не отказались от сбора данных телеметрии.
+По умолчанию продукт собирает данные телеметрии по использованию Service Fabric для последующего усовершенствования продукта. Анализатор соответствия рекомендациям, который запускается как часть программы установки, проверяет наличие подключения к [https://vortex.data.microsoft.com/collect/v1](https://vortex.data.microsoft.com/collect/v1). Если это расположение недоступно, установку выполнить не удастся, если только вы не отказались от сбора данных телеметрии.
 
-1. Конвейер телеметрии пытается загрузить следующие данные [https://vortex.data.microsoft.com/collect/v1](https://vortex.data.microsoft.com/collect/v1) один раз в день. Эта отправка является необходимой и не влияет на функциональные возможности кластера. Данные телеметрии отправляется только с узла, на котором первоначально выполняется диспетчер отработки отказа. С других узлов данные телеметрии не отправляются.
+1. Конвейер телеметрии пытается отправить следующие данные [https://vortex.data.microsoft.com/collect/v1](https://vortex.data.microsoft.com/collect/v1) каждый день. Эта отправка является необходимой и не влияет на функциональные возможности кластера. Данные телеметрии отправляется только с узла, на котором первоначально выполняется диспетчер отработки отказа. С других узлов данные телеметрии не отправляются.
 2. Данные телеметрии включают:
 
 * количество служб;
@@ -203,7 +203,7 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 <a id="previewfeatures" name="previewfeatures_anchor"></a>
 
 ## <a name="preview-features-included-in-this-package"></a>Возможности на этапе предварительной версии в этом пакете
-Нет.
+Отсутствует.
 
 
 > [!NOTE]
@@ -211,14 +211,14 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Развертывание и удаление приложений с помощью PowerShell](service-fabric-deploy-remove-applications.md)
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
 * [Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md)
 * [Upgrade a standalone Service Fabric cluster version](service-fabric-cluster-upgrade-windows-server.md) (Обновление версии изолированного кластера Service Fabric)
 * [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](service-fabric-cluster-creation-with-windows-azure-vms.md)
 * [Защита автономного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md)
-* [Защищайте автономный кластер на Windows с помощью сертификатов X509](service-fabric-windows-cluster-x509-security.md)
+* [Защита автономного кластера в Windows с помощью сертификатов X509](service-fabric-windows-cluster-x509-security.md)
 
 <!--Image references-->
 [Trusted Zone]: ./media/service-fabric-cluster-creation-for-windows-server/TrustedZone.png

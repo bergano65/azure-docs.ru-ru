@@ -1,18 +1,19 @@
 ---
-title: Заметки Hortonworks, связанные с версиями Azure HDInsight
-description: Изучите компоненты и версии Apache Hadoop в Azure HDInsight.
+title: Заметки о выпуске Hortonworks, связанные с версиями Azure HDInsight
+description: Сведения о компонентах и версиях Apache Hadoop в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
+ms.custom: seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: cd14390419d5833e5d071f2cd410260421247387
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: aa20e048db2b68d8f953b06745570759de5f2e9c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82087664"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82190577"
 ---
 # <a name="hortonworks-release-notes-associated-with-hdinsight-versions"></a>Заметки о выпуске Hortonworks, связанные с версиями HDInsight
 
@@ -20,7 +21,7 @@ ms.locfileid: "82087664"
 
 ## <a name="current-versions"></a>Текущие версии
 
-* КЛАСТЕРная версия 4.0 HDInsight использует дистрибутив Hadoop, основанный на [платформе данных Hortonworks 3.0](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.0/release-notes/content/relnotes.html).
+* В кластере HDInsight версии 4,0 используется дистрибутив Hadoop, основанный на [платформе Hortonworks Data Platform 3,0](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.0/release-notes/content/relnotes.html).
 
 * Кластер HDInsight версии 3.6 использует дистрибутив Hadoop, основанный на платформе [Нortonworks Data Platform 2.6](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_release-notes/content/ch_relnotes.html).
 

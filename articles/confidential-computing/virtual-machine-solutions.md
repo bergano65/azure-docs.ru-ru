@@ -8,16 +8,16 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: 8db477f87f344b28e8941e185c70c81d9b860a72
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.openlocfilehash: e574ac33e5f7da814c4bd813fc1c083c7cb4c2c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82149480"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82187891"
 ---
 # <a name="solutions-on-azure-virtual-machines"></a>Решения на виртуальных машинах Azure
 
-В этой статье рассматриваются сведения о развертывании виртуальных машин Azure для конфиденциальных вычислений (ВМ), на которых работают процессоры Intel, поддерживающие Intel [Software Extension Guard](https://software.intel.com/sgx) (Intel SGX). 
+В этой статье рассматриваются сведения о развертывании виртуальных машин Azure для конфиденциальных вычислений (ВМ), на которых работают процессоры Intel с [расширением Intel Software Guard](https://software.intel.com/sgx) (Intel SGX). 
 
 ## <a name="azure-confidential-computing-vm-sizes"></a>Размеры виртуальных машин для конфиденциальных вычислений в Azure
 
@@ -148,5 +148,5 @@ Azure Resource Manager — это служба развертывания и у
 
 В этой статье вы узнали о квалификации и конфигурациях, необходимых при создании виртуальной машины для конфиденциальных вычислений. Теперь вы можете заголовкировать в Azure Marketplace, чтобы развернуть виртуальную машину серии DCsv2.
 
-[!div class=”nextstepaction”]
-[Развертывание виртуальной машины серии DCsv2 в Azure Marketplace](quick-create-marketplace.md)
+> [!div class="nextstepaction"]
+> [Развертывание виртуальной машины серии DCsv2 в Azure Marketplace](quick-create-marketplace.md)

@@ -6,13 +6,14 @@ ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
+ms.custom: seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: aee0576654827351fa5ff9b3c29b57d0d4148d3e
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 64fe56ff506cf256dd7e317984551949f9ffad06
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82116610"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189370"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -126,7 +127,7 @@ HDInsight обеспечивает эластичность с помощью п
 yarn application -kill <application_id>
 ```
 
-Например:
+Пример:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -234,7 +235,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
 
 Серверы регионов автоматически распределяются в течение нескольких минут после завершения операции масштабирования. Чтобы вручную сбалансировать серверы регионов, выполните следующие действия.
 
-1. Подключитесь к кластеру HDInsight по протоколу SSH. Дополнительные сведения см. [в статье Использование SSH с HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md).
+1. Подключитесь к кластеру HDInsight по протоколу SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 2. Запустите оболочку HBase:
 
@@ -248,6 +249,6 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
     balancer
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)

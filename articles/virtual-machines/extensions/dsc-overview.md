@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: c03487b100ddb066416072c6c06773890db86e0a
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 82d268eedd73b8de670da93ad3a601b5e75e6444
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82115318"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82188541"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "82115318"
 
 В этой статье предоставлены сведения для двух сценариев — расширения DSC для подключения службы автоматизации и использования расширения DSC как инструмента для назначения конфигураций виртуальным машинам с помощью пакета SDK Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Локальный компьютер.** Для взаимодействия с расширением виртуальной машины Azure нужно использовать портал Azure или пакет SDK для Azure PowerShell.
 - **Гостевой агент.** Виртуальная машина Azure, настроенная с помощью конфигурации DSC, должна работать под управлением ОС, которая поддерживает Windows Management Framework (WMF) версии 4.0 или более поздней. Полный список поддерживаемых версий ОС см. в [журнале версий расширения DSC](../../automation/automation-dsc-extension-history.md).
@@ -49,7 +49,7 @@ ms.locfileid: "82115318"
 - **Узел**. Целевой объект для конфигурации DSC. В этом документе *узел* всегда ссылается на виртуальную машину Azure.
 - **Данные конфигурации**. PSD1-файл, содержащий данные среды для конфигурации.
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 Расширение DSC Azure использует платформу агента Azure, чтобы доставлять и применять конфигурации DSC виртуальных машин Azure, а также сообщать об этих конфигурациях. Расширение DSC принимает документ конфигурации и набор параметров. Если файл не предоставлен, внедряется [скрипт конфигурации по умолчанию](#default-configuration-script) с расширением. Скрипт конфигурации по умолчанию используется только для задания метаданных в [локальном диспетчере конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig).
 
@@ -188,7 +188,7 @@ az vm extension set \
 
 - **Configuration Arguments** (Аргументы конфигурации). Если функция конфигурации принимает аргументы, введите их здесь в формате **argumentName1=value1,argumentName2=value2**. Этот формат отличается от того, в котором аргументы конфигурации принимаются в командлетах PowerShell или шаблонах Resource Manager.
 
-- **Configuration Data PSD1 File**(PSD1-файл данных конфигурации) — необязательное поле. Если для вашей конфигурации требуется PSD1-файл данных конфигурации, выберите его с помощью этого поля и передайте в хранилище BLOB-объектов, где он будет защищен маркером SAS.
+- **Файл PSD1 данных конфигурации**: для настройки требуется файл данных конфигурации в PSD1. Используйте это поле, чтобы выбрать файл данных и передать его в хранилище BLOB-объектов пользователя. где он будет защищен маркером SAS.
 
 - **WMF Version** (Версия WMF). Указывает версию Windows Management Framework (WMF), которую необходимо установить на виртуальной машине. Если задать для этого свойства значение latest, будет установлена последняя версия WMF. В настоящее время для этого свойства доступны только такие значения: 4.0, 5.0, 5.1 и latest. Возможные значения зависят от обновлений. Значение по умолчанию — **Latest**.
 
@@ -202,7 +202,7 @@ az vm extension set \
 
 Журналы для расширения хранятся в следующем расположении: `C:\WindowsAzure\Logs\Plugins\Microsoft.Powershell.DSC\<version number>`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о PowerShell DSC см. в [центре документации по PowerShell](/powershell/scripting/dsc/overview/overview).
 - Изучите [шаблон Resource Manager для расширения DSC](dsc-template.md).

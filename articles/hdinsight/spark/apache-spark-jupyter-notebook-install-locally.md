@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: d68019a499b81ffbe40ba42e0b3edb7dab562844
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.openlocfilehash: b2394c580b871105fee84d63c478c3c490b56a0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82133559"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82191929"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
 
@@ -67,7 +67,7 @@ ms.locfileid: "82133559"
 
 1. В новом рабочем каталоге введите одну или несколько приведенных ниже команд, чтобы установить требуемые ядра.
 
-    |Ядро | Команда |
+    |Ядро | Get-Help |
     |---|---|
     |Spark|`jupyter-kernelspec install sparkmagic/kernels/sparkkernel`|
     |SparkR|`jupyter-kernelspec install sparkmagic/kernels/sparkrkernel`|
@@ -148,7 +148,7 @@ ms.locfileid: "82133559"
 
 6. Убедитесь, что вы можете использовать магическую платформу Spark, доступную в ядрах. Выполните следующие шаги.
 
-    a. Создайте новую записную книжку. В правом углу выберите **создать**. Вы должны увидеть ядро по умолчанию **Python 2** или **Python 3** и установленные ядра. Фактические значения могут различаться в зависимости от выбранных вариантов установки.  Выберите **PySpark**.
+    а. Создайте новую записную книжку. В правом углу выберите **создать**. Вы должны увидеть ядро по умолчанию **Python 2** или **Python 3** и установленные ядра. Фактические значения могут различаться в зависимости от выбранных вариантов установки.  Выберите **PySpark**.
 
     ![Доступные ядра в записной книжке Jupyter](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels-notebook.png "Ядра в записной книжке Jupyter")
 
@@ -179,7 +179,7 @@ ms.locfileid: "82133559"
 > [!WARNING]  
 > Если Jupyter установлен на локальном компьютере, несколько пользователей могут одновременно запустить одну и ту же записную книжку в одном кластере Spark. В такой ситуации создаются несколько сеансов Livy. Если вы столкнетесь с проблемами и начнете их отладку, вам будет сложно определить, какой сеанс Livy какому пользователю принадлежит.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 * [Ядра для записной книжки Jupyter на Apache Spark](apache-spark-jupyter-notebook-kernels.md)

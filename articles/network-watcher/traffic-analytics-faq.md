@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: damendo
-ms.openlocfilehash: 5e31ed905f05070c8715a63ef3386b0006df0a75
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2402e72d2ef9fcda46f2f40bff48759262ee30e0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76840627"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189051"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -52,11 +52,11 @@ ms.locfileid: "76840627"
         
 Чтобы проверить роли, назначенные пользователю для подписки:
 
-1. Войдите в Azure с помощью **Login-AzAccount**. 
+1. Войдите в Azure с помощью **Login-азаккаунт**. 
 
-2. Выберите требуемую подписку с помощью **Select-AzSubscription**. 
+2. Выберите нужную подписку с помощью команды **SELECT-азсубскриптион**. 
 
-3. Чтобы перечислить все роли, назначенные указанному пользователю, используйте **Get-AzRoleAssignment -SignInName (электронная почта пользователя) -IncludeClassicAdministrators**. 
+3. Чтобы получить список всех ролей, назначенных указанному пользователю, используйте **Get-азролеассигнмент-SignInName [адрес электронной почты пользователя]-инклудеклассикадминистраторс**. 
 
 Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
 
@@ -126,7 +126,7 @@ ms.locfileid: "76840627"
 
 ## <a name="can-i-use-an-existing-workspace"></a>Можно ли использовать имеющуюся рабочую область?
 
-Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Для получения дополнительной информации о [Azure Monitor logs upgrade to new log search](../log-analytics/log-analytics-log-search-upgrade.md)новом языке запросов см.
+Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов см. в разделе [Azure Monitor журналы обновление до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md).
 
 ## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Возможен ли сценарий, когда учетная запись службы хранилища Azure и рабочая область Log Analytics работают на разных подписках?
 
@@ -134,7 +134,7 @@ ms.locfileid: "76840627"
 
 ## <a name="can-i-store-raw-logs-in-a-different-subscription"></a>Можно ли хранить необработанные журналы в другой подписке?
 
-Нет. Необработанные журналы можно хранить в любой учетной записи хранения, в которой группа безопасности сети включена для журналов потоков. Однако и учетная запись хранения, и необработанные журналы должны относиться к той же подписке и тому же региону.
+Да. Вы можете настроить отправку журналов потоков NSG в учетную запись хранения, расположенную в другой подписке, при условии, что у вас есть соответствующие привилегии, и что учетная запись хранения находится в том же регионе, что и NSG. NSG и Целевая учетная запись хранения также должны совместно использовать один и тот же клиент Azure Active Directory.
 
 ## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>Что делать, если я не могу настроить NSG для Аналитики трафика из-за ошибки "Не найдено"?
 
@@ -176,7 +176,7 @@ ms.locfileid: "76840627"
 
 ## <a name="can-i-configure-traffic-analytics-using-powershell-or-an-azure-resource-manager-template-or-client"></a>Можно ли настроить решение "Аналитика трафика" с помощью PowerShell, шаблона или клиента Azure Resource Manager?
 
-Вы можете настроить решение "Аналитика трафика" с помощью Windows PowerShell, начиная с версии 6.2.1. Для настройки регистрации потоков и анализа трафика для конкретного NSG с помощью Set cmdlet [см.](https://docs.microsoft.com/powershell/module/az.network/set-aznetworkwatcherconfigflowlog) Чтобы получить статус регистрации потока и аналитики трафика для определенного NSG, [см. Get-AzNetworkWatcherFlowFlowLogStatus](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkwatcherflowlogstatus).
+Вы можете настроить решение "Аналитика трафика" с помощью Windows PowerShell, начиная с версии 6.2.1. Сведения о настройке ведения журнала потоков и анализа трафика для определенного NSG с помощью командлета Set см. в разделе [Set-азнетворкватчерконфигфловлог](https://docs.microsoft.com/powershell/module/az.network/set-aznetworkwatcherconfigflowlog). Сведения о получении журнала потоков и состояния аналитики трафика для определенного NSG см. в разделе [Get-азнетворкватчерфловлогстатус](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkwatcherflowlogstatus).
 
 В настоящее время вы не можете использовать шаблон Azure Resource Manager для настройки решения "Аналитика трафика".
 
@@ -248,23 +248,23 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 
 Например, согласно [тарифному плану](https://azure.microsoft.com/pricing/details/network-watcher/) для региона "Центрально-западная часть США", если объем данных в журналах потоков, хранящихся в учетной записи хранения и обрабатываемых решением "Аналитика трафика", составляет 10 ГБ, а объем улучшенных журналов, принятых в рабочей области Log Analytics, — 1 ГБ, то применимый тариф рассчитывается так: 10 x 2,3 долл. США + 1 x 2,76 долл. США = 25,76 долл. США.
 
-## <a name="how-frequently-does-traffic-analytics-process-data"></a>Как часто обрабатывается трафик Analytics данные?
+## <a name="how-frequently-does-traffic-analytics-process-data"></a>Как часто Аналитика трафика обрабатывать данные?
 
-Ссылайтесь на [раздел агрегации данных](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema#data-aggregation) в схеме анализа трафика и документе агрегации данных
+См. [раздел агрегирование данных](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema#data-aggregation) в схеме аналитика трафика и документе агрегирования данных.
 
-## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Как Traffic Analytics решает, что IP является вредоносным? 
+## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Как Аналитика трафика решает, что IP-адрес является вредоносным? 
 
-Traffic Analytics полагается на внутренние системы разведки угроз Microsoft, чтобы считать IP вредоносным. Эти системы используют различные источники телеметрии, такие как продукты и службы Microsoft, Microsoft Digital Crimes Unit (DCU), Центр реагирования на безопасность Майкрософт (MSRC), а также внешние каналы и создают много интеллекта поверх него. Некоторые из этих данных корпорации Майкрософт. Если известный IP помечается как вредоносный, пожалуйста, поднимите билет поддержки, чтобы узнать подробности.
+Аналитика трафика полагается на внутренние системы анализа угроз Майкрософт, чтобы считаться вредоносным. Эти системы используют различные источники телеметрии, такие как продукты и службы Майкрософт, модуль Microsoft Digital Crimes Unit (DCU), центр Microsoft Security Response Center (MSRC) и внешние веб-каналы, а также поверх нее. Некоторые из этих данных являются Microsoft internal. Если известный IP-адрес помечается как вредоносный, создайте запрос в службу поддержки, чтобы узнать подробности.
 
-## <a name="how-can-i-set-alerts-on-traffic-analytics-data"></a>Как настроить оповещения на данных Traffic Analytics?
+## <a name="how-can-i-set-alerts-on-traffic-analytics-data"></a>Как настроить оповещения для данных Аналитика трафика?
 
-Аналитика трафика не имеет встроенной поддержки оповещений. Однако, поскольку данные Traffic Analytics хранятся в журнале Analytics, вы можете писать пользовательские запросы и устанавливать оповещения на них. Шаги:
-- Вы можете использовать краткую ссылку для журнала Analytics в трафик Analytics. 
-- Используйте [задокументированную схему,](traffic-analytics-schema.md) чтобы написать свои запросы 
-- Нажмите "Новое правило оповещения", чтобы создать оповещение
-- Ссылка на [документацию оповещений о журнале](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) для создания оповещения
+Аналитика трафика не поддерживает встроенную поддержку предупреждений. Однако, поскольку Аналитика трафика данные хранятся в Log Analytics можно создавать пользовательские запросы и задавать для них оповещения. Выполнены
+- Вы можете использовать шортлинк для Log Analytics в Аналитика трафика. 
+- Используйте [схему, описанную здесь](traffic-analytics-schema.md) для написания запросов 
+- Щелкните "создать правило генерации оповещений", чтобы создать оповещение.
+- Сведения о создании оповещения см. в [документации по оповещениям журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) .
 
-## <a name="how-do-i-check-which-vms-are-receiving-most-on-premise-traffic"></a>Как проверить, какие VMs получают наибольший трафик на месте
+## <a name="how-do-i-check-which-vms-are-receiving-most-on-premise-traffic"></a>Разделы справки проверить, какие виртуальные машины получают наибольший объем локального трафика
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
@@ -275,7 +275,7 @@ Traffic Analytics полагается на внутренние системы 
             | make-series TotalTraffic = sum(traffic) default = 0 on FlowStartTime_t from datetime(<time>) to datetime(<time>) step 1m by vm
             | render timechart
 
-  Для ИС:
+  Для IP-адресов:
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
@@ -286,9 +286,9 @@ Traffic Analytics полагается на внутренние системы 
             | make-series TotalTraffic = sum(traffic) default = 0 on FlowStartTime_t from datetime(<time>) to datetime(<time>) step 1m by IP
             | render timechart
 
-Для времени, использовать формат : yyyy-mm-dd 00:00:00
+Для времени используйте формат: гггг-мм-дд 00:00:00
 
-## <a name="how-do-i-check-standard-deviation-in-traffic-recieved-by-my-vms-from-on-premise-machines"></a>Как проверить стандартное отклонение в трафике, полученное моими вводом от локальных машин
+## <a name="how-do-i-check-standard-deviation-in-traffic-recieved-by-my-vms-from-on-premise-machines"></a>Разделы справки проверить стандартное отклонение в трафике, получаемом из виртуальных машин с локальных компьютеров
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
@@ -299,7 +299,7 @@ Traffic Analytics полагается на внутренние системы 
             | summarize deviation = stdev(traffic)  by vm
 
 
-Для ИС:
+Для IP-адресов:
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
@@ -309,7 +309,7 @@ Traffic Analytics полагается на внутренние системы 
             | extend traffic = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_d + DeniedOutFlows_d // For bytes use: | extend traffic = InboundBytes_d + OutboundBytes_d
             | summarize deviation = stdev(traffic)  by IP
             
-## <a name="how-do-i-check-which-ports-are-reachable-or-bocked-between-ip-pairs-with-nsg-rules"></a>Как проверить, какие порты доступны (или bocked) между парами IP с правилами NSG
+## <a name="how-do-i-check-which-ports-are-reachable-or-bocked-between-ip-pairs-with-nsg-rules"></a>Разделы справки проверить, какие порты доступны (или боккед) между парами IP-адресов и правилами NSG
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and TimeGenerated between (startTime .. endTime)
@@ -324,8 +324,8 @@ Traffic Analytics полагается на внутренние системы 
 
 На странице географической карты есть два основных раздела:
     
-- **Баннер**: Баннер в верхней части геокарты предоставляет кнопки для выбора фильтров распределения трафика (например, Развертывание, Трафик из стран/регионов и вредоносный). При нажатии кнопки соответствующий фильтр применяется на карте. Например, если нажать кнопку "Активный", карта выделит активные центры обработки данных в развертывании.
-- **Карта**: Ниже баннера раздел карты показывает распределение трафика между центрами обработки данных Azure и странами/регионами.
+- **Баннер**: баннер в верхней части географической схемы содержит кнопки для выбора фильтров распределения трафика (например, развертывание, трафик из стран и регионов, а также вредоносный). При нажатии кнопки соответствующий фильтр применяется на карте. Например, если нажать кнопку "Активный", карта выделит активные центры обработки данных в развертывании.
+- **Map**: под баннером в разделе Map показано распределение трафика между центрами обработки данных Azure и странами/регионами.
     
 ### <a name="keyboard-navigation-on-the-banner"></a>Навигация по баннеру с помощью клавиатуры
     

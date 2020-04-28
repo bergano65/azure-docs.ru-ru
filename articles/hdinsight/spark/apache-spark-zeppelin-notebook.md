@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: e97ac14c91ec9fb05b25d422680d788b4498725f
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 931114a56d774c506b0b33fe4f4fc39e564c06c7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82116729"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82195100"
 ---
 # <a name="use-apache-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight
 
@@ -133,7 +133,7 @@ ms.locfileid: "82116729"
 
 4. Вот как можно получить значение указанного выше ключа.
 
-    a. Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
+    а. Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
 
     b. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
 
@@ -195,7 +195,7 @@ ms.locfileid: "82116729"
 
 Чтобы проверить службу из командной строки, подключитесь к головному узлу по протоколу SSH. Переключите пользователя в Zeppelin с `sudo su zeppelin`помощью команды. Команды состояния:
 
-|Команда |Описание |
+|Get-Help |Описание |
 |---|---|
 |`/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh status`|Состояние службы.|
 |`/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh --version`|Версия службы.|
@@ -203,7 +203,7 @@ ms.locfileid: "82116729"
 
 ### <a name="log-locations"></a>Расположения журналов
 
-|Служба |путь |
+|Служба |Path |
 |---|---|
 |Zeppelin — сервер|/уср/хдп/куррент/зеппелин-сервер/|
 |Журналы сервера|/вар/лог/зеппелин|
@@ -222,7 +222,7 @@ ms.locfileid: "82116729"
 
 1. Сохраните изменения и перезапустите службу.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)

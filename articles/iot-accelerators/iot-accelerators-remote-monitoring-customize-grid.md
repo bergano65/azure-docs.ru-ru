@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: a24cb7f39ccb8ea07d4dde2869dc7c924b91983a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: e27c1c4303129467c0bd05152570e26f129585a1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "61447103"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82186294"
 ---
 # <a name="add-a-custom-grid-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -28,14 +28,14 @@ ms.locfileid: "61447103"
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
-- [Git](https://git-scm.com/downloads);
+- [Git](https://git-scm.com/downloads)
 - [Node.js](https://nodejs.org/download/)
 
 ## <a name="before-you-start"></a>Перед началом работы
 
 Прежде чем продолжить, необходимо выполнить шаги, указанные в следующих статьях:
 
-- [Добавьте пользовательскую страницу в пользовательский веб-пользовательский доступ к веб-пользовательскому доступу к веб-размножеству решения удаленного мониторинга.](iot-accelerators-remote-monitoring-customize-page.md)
+- [Добавьте пользовательскую страницу в пользовательский веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md).
 - [Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
 
 ## <a name="add-a-grid"></a>Добавление сетки
@@ -182,7 +182,7 @@ describe('BasicPage Component', () => {
 npm start
 ```
 
-Предыдущая команда выполняет uI [http://localhost:3000/dashboard](http://localhost:3000/dashboard)локально на . Чтобы увидеть отображение данных службы в виде сетки, перейдите на страницу **Пример**.
+Предыдущая команда запускает пользовательский интерфейс локально по адресу `http://localhost:3000/dashboard`. Чтобы увидеть отображение данных службы в виде сетки, перейдите на страницу **Пример**.
 
 ## <a name="select-rows"></a>Выбор строк
 
@@ -277,7 +277,7 @@ npm start
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении станицы в веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 

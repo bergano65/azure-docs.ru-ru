@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive,hdiseo17may2017
+ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 01aad05995f4df5181a82bdedf630d4082760c38
-ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
+ms.openlocfilehash: f7f460b01674359847427296e4526fc5771658f0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82137439"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82191963"
 ---
 # <a name="kernels-for-jupyter-notebook-on-apache-spark-clusters-in-azure-hdinsight"></a>Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight
 
@@ -25,7 +25,7 @@ ms.locfileid: "82137439"
 
 В этой статье вы узнаете, как использовать эти ядра, а также преимущества их использования.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
@@ -135,7 +135,7 @@ ms.locfileid: "82137439"
 
 Новые ядра находятся в стадии развития и будут улучшаться со временем. Поэтому API-интерфейсы могут измениться по мере разработки этих ядер. Мы будем признательны вам за любые отзывы о работе с новыми ядрами. Обратная связь полезна при формировании окончательного выпуска этих ядер. Комментарии и отзывы можно оставить в разделе " **Отзывы** " в нижней части этой статьи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 - [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)

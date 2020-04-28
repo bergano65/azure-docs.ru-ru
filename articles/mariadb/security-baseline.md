@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: babfd9aafa56091bfdd526366b1042966222f993
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.openlocfilehash: 2d78a7e0eaed27fec7f813fa3e6bffaffe5a6540
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82144597"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82186175"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mariadb"></a>Базовый план безопасности Azure для базы данных Azure для MariaDB
 
@@ -1122,7 +1122,7 @@ https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
 **Ответственность**: Общая
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

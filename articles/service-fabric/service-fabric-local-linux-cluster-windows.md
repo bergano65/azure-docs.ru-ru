@@ -1,16 +1,16 @@
 ---
-title: Настройка кластера Azure Service Fabric Linux на Windows
+title: Настройка кластера Azure Service Fabric Linux в Windows
 description: В этой статье описывается установка кластеров Service Fabric на платформе Linux на компьютерах разработки Windows. Это особенно удобно для кроссплатформенной разработки.
 author: suhuruli
 ms.topic: conceptual
 ms.date: 11/20/2017
 ms.author: suhuruli
-ms.openlocfilehash: 9f60b9d9b919a72250038ede2a2bd53278df79cb
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 1798d57f9fc4004fd2c7d1f1901fcddf850626c2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81308999"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82193332"
 ---
 # <a name="set-up-a-linux-service-fabric-cluster-on-your-windows-developer-machine"></a>Установка кластера Service Fabric на платформе Linux на компьютере разработчики Windows
 
@@ -21,7 +21,7 @@ ms.locfileid: "81308999"
 
 * не менее 4 ГБ ОЗУ;
 * последняя версия [Docker](https://store.docker.com/editions/community/docker-ce-desktop-windows);
-* Докер должен работать в режиме Linux
+* DOCKER должен работать в режиме Linux
 
 >[!TIP]
 > * Чтобы установить Docker в среде Windows, можно выполнить инструкции, приведенные в официальной [документации](https://store.docker.com/editions/community/docker-ce-desktop-windows/plans/docker-ce-desktop-windows-tier?tab=instructions) Docker. 
@@ -64,7 +64,7 @@ ms.locfileid: "81308999"
     >Например, добавленный элемент `RUN apt-get install nodejs -y` разрешает поддержку приложений `nodejs` в качестве гостевых исполняемых файлов.
     
     >[!TIP]
-    > По умолчанию вы получите образ с последней версией Service Fabric. Для получения конкретных изменений, пожалуйста, посетите страницу [Docker Hub](https://hub.docker.com/r/microsoft/service-fabric-onebox/)
+    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [центра DOCKER](https://hub.docker.com/r/microsoft/service-fabric-onebox/) .
 
 3. Чтобы создать образ для многократного использования на основе файла `Dockerfile`, откройте терминал и с помощью команды `cd` перейдите в каталог, в котором хранится `Dockerfile`. Затем выполните следующий код:
 
@@ -89,7 +89,7 @@ ms.locfileid: "81308999"
     >`docker run -itd -p 19080:19080 -p 8080:8080 --name sfonebox mcr.microsoft.com/service-fabric/onebox:latest`
     >
 
-5. Кластер займет короткое время, чтобы начать, вы можете просмотреть журналы, используя следующую команду [http://localhost:19080](http://localhost:19080)или перейти на панель мониторинга для просмотра кластеров работоспособности:
+5. Для запуска кластера потребуется некоторое время. Чтобы просмотреть состояние работоспособности кластера, можно перейти к панели мониторинга кластера `http://localhost:19080` или просмотреть журналы с помощью следующей команды:
 
     ```powershell 
     docker logs sftestcluster
@@ -112,7 +112,7 @@ ms.locfileid: "81308999"
  
  * Служба DNS не работает и не поддерживается ([проблема № 132](https://github.com/Microsoft/service-fabric/issues/132))
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Приступите к работе с [Eclipse](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-eclipse).
 * Просмотрите другие [примеры Java](https://github.com/Azure-Samples/service-fabric-java-getting-started).
 

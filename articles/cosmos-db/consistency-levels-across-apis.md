@@ -1,56 +1,56 @@
 ---
 title: Уровни согласованности и API для Azure Cosmos DB
-description: Понимание отображения уровня согласованности между различными AБИ в Azure Cosmos DB и Apache Cassandra, MongoDB
+description: Основные сведения о сопоставлении уровней согласованности между различными интерфейсами API в Azure Cosmos DB и Apache Cassandra, MongoDB
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 04/23/2020
 ms.reviewer: sngun
-ms.openlocfilehash: ef7d032d37105549ff7b05f85b953cd420954602
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 2851968b102bdcbae95a81352439f39f5837020b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80131456"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82191793"
 ---
 # <a name="consistency-levels-and-azure-cosmos-db-apis"></a>Уровни согласованности и API для Azure Cosmos DB
 
-Azure Cosmos DB обеспечивает нативную поддержку aI-аПО, совместимых с протоколами проводов, для популярных баз данных. К ним относятся хранение MongoDB, Apache Cassandra, Gremlin и Azure Table. Эти базы данных не предлагают точно определенных моделей согласованности или гарантий sLA для уровней согласованности. Они обычно предоставляют лишь подмножество пяти моделей согласованности, предлагаемых Azure Cosmos DB. 
+Azure Cosmos DB предоставляет встроенную поддержку интерфейсов API, совместимых с протоколом Wired, для популярных баз данных. К ним относятся MongoDB, Apache Cassandra, Gremlin и хранилище таблиц Azure. Эти базы данных не предлагают точно определенные модели согласованности или гарантии с поддержкой соглашения об уровне обслуживания для уровней согласованности. Они обычно предоставляют лишь подмножество пяти моделей согласованности, предлагаемых Azure Cosmos DB. 
 
-При использовании API, API Gremlin и Table API используется уровень согласованности по умолчанию, настроенный на учетную запись Azure Cosmos. 
+При использовании API SQL, API Gremlin и API таблиц используется уровень согласованности по умолчанию, настроенный в учетной записи Azure Cosmos. 
 
-При использовании API Cassandra API или API Azure Cosmos DB для MongoDB приложения получают полный набор уровней согласованности, предлагаемых Apache Cassandra и MongoDB, соответственно, с еще более сильными гарантиями согласованности и долговечности. В этом документе показаны соответствующие уровни согласованности Azure Cosmos DB для уровней согласованности Apache Cassandra и MongoDB.
+При использовании API Cassandra или API Azure Cosmos DB для MongoDB приложения получают полный набор уровней согласованности, предлагаемых Apache Cassandra и MongoDB соответственно, с более надежными гарантиями согласованности и устойчивости. В этом документе показаны соответствующие уровни согласованности Azure Cosmos DB для уровней согласованности Apache Cassandra и MongoDB.
 
 ## <a name="mapping-between-apache-cassandra-and-azure-cosmos-db-consistency-levels"></a><a id="cassandra-mapping"></a>Сопоставление уровней согласованности Apache Cassandra и Azure Cosmos DB
 
-В отличие от Azure Cosmos DB, Apache Cassandra не обеспечивает точно определенных гарантий согласованности.  Вместо этого Apache Cassandra обеспечивает уровень согласованности записей и уровень согласованности чтения, чтобы обеспечить высокую доступность, согласованность и задержку. При использовании API Cassandra API Azure Cosmos DB: 
+В отличие от Azure Cosmos DB, Apache Cassandra изначально не предоставляет точно определенные гарантии согласованности.  Вместо этого Apache Cassandra предоставляет уровень согласованности записи и уровень согласованности чтения, чтобы обеспечить высокую доступность, согласованность и задержку. При использовании API Cassandra Azure Cosmos DB: 
 
-* Уровень согласованности записи Apache Cassandra отображен на уровне согласованности по умолчанию, настроенном на учетную запись Azure Cosmos. Согласованность операции записи (CL) не может быть изменена на основе запроса.
+* Уровень согласованности записи Apache Cassandra сопоставлен с уровнем согласованности по умолчанию, настроенным в вашей учетной записи Azure Cosmos. Согласованность для операции записи (CL) не может быть изменена отдельно для каждого запроса.
 
-* Azure Cosmos DB динамически сопоставит уровень согласованности чтения, указанный драйвером клиента Cassandra, к одному из уровней согласованности Azure Cosmos DB, настроенного динамически по запросу чтения. 
+* Azure Cosmos DB будет динамически сопоставлять уровень согласованности чтения, заданный драйвером клиента Cassandra, с одним из Azure Cosmos DBных уровней согласованности, динамически настроенных для запроса на чтение. 
 
-В следующей таблице показано, как уровни согласованности «Кассандра» отображаются на уровнях согласованности Azure Cosmos DB при использовании API Cassandra API:  
+В следующей таблице показано, как собственные уровни согласованности Cassandra сопоставляются с уровнями согласованности Azure Cosmos DB при использовании API Cassandra.  
 
-[![Картирование модели консистенции Cassandra](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png)](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png#lightbox)
+[![Сопоставление модели согласованности Cassandra](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png)](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png#lightbox)
 
-## <a name="mapping-between-mongodb-and-azure-cosmos-db-consistency-levels"></a><a id="mongo-mapping"></a>Сопоставление между уровнями согласованности MongoDB и Azure Cosmos DB
+## <a name="mapping-between-mongodb-and-azure-cosmos-db-consistency-levels"></a><a id="mongo-mapping"></a>Сопоставление уровней согласованности MongoDB и Azure Cosmos DB
 
-В отличие от Azure Cosmos DB, родной MongoDB не дает точно определенных гарантий согласованности. Вместо этого, родной MongoDB позволяет пользователям настроить следующие гарантии согласованности: написать озабоченность, читать озабоченность, и директива isMaster - направить чтение операций либо первичных или вторичных реплик для достижения желаемого уровня согласованности. 
+В отличие от Azure Cosmos DB, машинный MongoDB не предоставляет точно определенные гарантии согласованности. Вместо этого Native MongoDB позволяет пользователям настраивать следующие гарантии согласованности: запись, проблема чтения и директива «Master» — для направления операций чтения к первичным или вторичным репликам для достижения требуемого уровня согласованности. 
 
-При использовании API-извращенца Azure Cosmos DB для MongoDB драйвер MongoDB рассматривает область записи как основную реплику, а все остальные регионы читаются репликами. Вы можете выбрать, какой регион связан с учетной записью Azure Cosmos в качестве основной реплики. 
+При использовании API Azure Cosmos DB для MongoDB драйвер MongoDB считает регион записи первичной репликой, а все остальные регионы — репликой чтения. Вы можете выбрать регион, связанный с вашей учетной записью Azure Cosmos в качестве первичной реплики. 
 
-При использовании API-изира для MongoDB Azure Cosmos DB:
+При использовании API Azure Cosmos DB для MongoDB:
 
-* Концерн записей отображается на уровне согласованности по умолчанию, настроенном на учетную запись Azure Cosmos.
+* Проблема записи сопоставлена с уровнем согласованности по умолчанию, настроенным в учетной записи Azure Cosmos.
  
-* Azure Cosmos DB динамически сопоставит с читающей проблемой, указанной драйвером клиента MongoDB, к одному из уровней согласованности Azure Cosmos DB, настроенного динамически по запросу чтения.  
+* Azure Cosmos DB динамически сопоставляет проблему чтения, указанную драйвером клиента MongoDB, с одним из Azure Cosmos DBных уровней согласованности, динамически настроенных для запроса на чтение.  
 
-* Можно аннотировать определенный регион, связанный с вашей учетной записью Azure Cosmos как "Мастер", сделав регион первым областью, которая может быть вычтена. 
+* Вы можете добавить заметки к определенному региону, связанному с вашей учетной записью Azure Cosmos, в качестве "главного", сделав этот регион первым доступным для записи регионом. 
 
-В следующей таблице показано, как родные проблемы MongoDB отображаются на уровнях согласованности Azure Cosmos при использовании API Azure Cosmos DB для MongoDB:
+В следующей таблице показано, как проблемы с записью и чтением в машинном MongoDB сопоставляются с уровнями согласованности Azure Cosmos при использовании API Azure Cosmos DB для MongoDB:
 
-[![Отображение модели согласованности MongoDB](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png)](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png#lightbox)
+[![Сопоставление модели согласованности MongoDB](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png)](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 9be6c174e30514ef81cd5fa020d50ffa238317be
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: acc8ceaa96f6fddafdbf4aa74ab9e43a1a60714a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "82160893"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82195678"
 ---
 # <a name="azure-security-baseline-for-backup"></a>Базовые показатели безопасности Azure для резервного копирования
 
@@ -1014,7 +1014,7 @@ Azure Backup предоставляет три встроенных роли д�
 
 **Ответственность**: Общая
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

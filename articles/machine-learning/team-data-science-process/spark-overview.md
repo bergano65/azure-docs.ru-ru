@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 63148b99e65a5ccc49d54d4ae6c58adebc72c6d3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 64caa1228cd073358bef496721c22b17554031d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76718520"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189289"
 ---
 # <a name="overview-of-data-science-using-spark-on-azure-hdinsight"></a>Общие сведения об обработке и анализе данных с помощью платформы Spark в Azure HDInsight
 
@@ -41,29 +41,29 @@ ms.locfileid: "76718520"
 ### <a name="spark-20-notebooks"></a>Записные книжки для Spark 2.0
 Эти записные книжки должны выполняться в ядре PySpark3 на сервере записной книжки Jupyter:
 
-- [Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb). Содержит сведения о том, как выполнять просмотр данных, моделирование и оценку в кластерах Spark 2.0 на примере набора данных о расстояниях и ценах на такси в Нью-Йорке, описанного [здесь](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-spark-overview#the-nyc-2013-taxi-data). Эту записную книжку можно использовать в качестве отправной точки для быстрого изучения кода, предоставленного для Spark 2.0. В следующей записной книжке списка приведен более детальный анализ данных о поездках в такси по Нью-Йорку Смотрите заметки, следующие за этим списком, который сравнивает эти блокноты.
+- [Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb). Содержит сведения о том, как выполнять просмотр данных, моделирование и оценку в кластерах Spark 2.0 на примере набора данных о расстояниях и ценах на такси в Нью-Йорке, описанного [здесь](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-spark-overview#the-nyc-2013-taxi-data). Эту записную книжку можно использовать в качестве отправной точки для быстрого изучения кода, предоставленного для Spark 2.0. В следующей записной книжке списка приведен более детальный анализ данных о поездках в такси по Нью-Йорку См. примечания, следующие за списком, в котором сравниваются эти записные книжки.
 - [Spark2.0-pySpark3_NYC_Taxi_Tip_Regression.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0_pySpark3_NYC_Taxi_Tip_Regression.ipynb). Демонстрирует, как можно выполнять структурирование данных (Spark SQL и операции с кадрами данных), просмотр данных, моделирование и оценку на примере набора данных о расстояниях и ценах на такси в Нью-Йорке, который описан [здесь](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-spark-overview#the-nyc-2013-taxi-data).
-- [Spark2.0-pySpark3_Airline_Departure_Delay_Classification.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0_pySpark3_Airline_Departure_Delay_Classification.ipynb). Демонстрирует, как можно выполнять структурирование данных (Spark SQL и операции с кадрами данных), просмотр данных, моделирование и оценку на примере известного набора данных о расписании вылетов авиакомпании за 2011 и 2012 гг. Мы интегрировали набор данных авиакомпании с данными о погоде в аэропортах (например, скорость ветра, температура, высота и т.д.) до моделирования, так что эти погодные особенности могут быть включены в модель.
+- [Spark2.0-pySpark3_Airline_Departure_Delay_Classification.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0_pySpark3_Airline_Departure_Delay_Classification.ipynb). Демонстрирует, как можно выполнять структурирование данных (Spark SQL и операции с кадрами данных), просмотр данных, моделирование и оценку на примере известного набора данных о расписании вылетов авиакомпании за 2011 и 2012 гг. Мы интегрировали набор данных авиакомпании с данными о погоде в аэропорту (например, windspeed, температуру, высоту и т. д.) перед моделированием, чтобы эти функции погоды можно было включать в модель.
 
 <!-- -->
 
 > [!NOTE]
 > В записные книжки для Spark 2.0 был добавлен набор данных об авиарейсах, который лучше иллюстрирует использование алгоритмов классификации. Следующие ссылки помогут получить информацию о наборах данных о расписании вылетов авиакомпании и о погоде.
 > 
-> - Данные об отходе авиакомпании по времени:[https://www.transtats.bts.gov/ONTIME/](https://www.transtats.bts.gov/ONTIME/)
+> - Данные о проотъезде авиакомпании-времени:[https://www.transtats.bts.gov/ONTIME/](https://www.transtats.bts.gov/ONTIME/)
 > 
-> - Данные о погоде в аэропортах:[https://www.ncdc.noaa.gov/](https://www.ncdc.noaa.gov/)
+> - Данные о погоде аэропорта:[https://www.ncdc.noaa.gov/](https://www.ncdc.noaa.gov/)
 
 <!-- -->
 
 <!-- -->
 
 > [!NOTE]
-> Выполнение записных книжек Spark 2.0 с наборами данных о поездках в такси по Нью-Йорку и задержке рейсов может занять примерно 10 минут или больше (в зависимости от размера кластера HDI). Первый ноутбук в приведенном выше списке показывает многие аспекты исследования данных, визуализации и ML модель обучения в ноутбуке, который занимает меньше времени, чтобы работать с вниз-выборы NYC набор данных, в котором такси и тариф файлы были предварительно соединены: [Spark2.0-pySpark3-машина-обучение-данные-наука-искра-продвинутый-данные-разведка-modeling.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb). Чтение этой записной книжку займет всего 2–3 минуты, поэтому ее можно использовать в качестве отправной точки для быстрого изучения кода, предоставленного для Spark 2.0.
+> Выполнение записных книжек Spark 2.0 с наборами данных о поездках в такси по Нью-Йорку и задержке рейсов может занять примерно 10 минут или больше (в зависимости от размера кластера HDI). Первая Записная книжка в списке выше содержит множество аспектов изучения данных, визуализации и обучения моделей в записной книжке, которая занимает меньше времени на работу с Нью набором данных, в котором файлы такси и FARE были предварительно присоединены: [Spark 2.0-pySpark3-Machine-Learning-Data-техника-Spark-Advanced-Data-исследовать-Model. ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb). Чтение этой записной книжку займет всего 2–3 минуты, поэтому ее можно использовать в качестве отправной точки для быстрого изучения кода, предоставленного для Spark 2.0.
 
 <!-- -->
 
-Руководство по применению модели Spark 2.0 и использованию моделей для оценки вы найдете в [этом документе для Spark 1.6](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-model-consumption.ipynb), который содержит пример с описанием выполняемых шагов. Чтобы использовать этот пример на Spark 2.0, замените файл кода Python [этим файлом.](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/Python/Spark2.0_ConsumeRFCV_NYCReg.py)
+Руководство по применению модели Spark 2.0 и использованию моделей для оценки вы найдете в [этом документе для Spark 1.6](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-model-consumption.ipynb), который содержит пример с описанием выполняемых шагов. Чтобы использовать этот пример в Spark 2,0, замените файл кода Python [этим файлом](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/Python/Spark2.0_ConsumeRFCV_NYCReg.py).
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -130,10 +130,10 @@ ms.locfileid: "76718520"
 | dropoff_longitude |Долгота высадки пассажира |
 | dropoff_latitude |Широта высадки пассажира |
 | direct_distance |Расстояние по прямой между местом посадки и местом высадки |
-| payment_type |Тип платежа (наличные, кредитные карты и т.д.) |
+| payment_type |Тип оплаты (касса, кредитная карта и т. д.) |
 | fare_amount |Сумма к оплате |
 | surcharge |Доплата |
-| mta_tax |MTA Метро Транспортный налог |
+| mta_tax |Транспортный налог метро Metro |
 | tip_amount |Сумма чаевых |
 | tolls_amount |Дорожные пошлины |
 | total_amount |Общая сумма |
@@ -141,17 +141,17 @@ ms.locfileid: "76718520"
 | tip_class |Класс чаевых (0: 0 долларов, 1: 0–5 долларов, 2: 6–10 долларов, 3: 11–20 долларов, 4: >20 долларов) |
 
 ## <a name="execute-code-from-a-jupyter-notebook-on-the-spark-cluster"></a>Выполнение кода из записной книжки Jupyter в кластере Spark
-Записную книжку Jupyter можно запустить с портала Azure. Найдите кластер Spark на панели мониторинга и щелкните его, чтобы войти на страницу управления кластером. Чтобы открыть блокнот, связанный с кластером Spark, щелкните **кластерные панели** -> **мониторинга Jupyter Notebook.**
+Записную книжку Jupyter можно запустить с портала Azure. Найдите кластер Spark на панели мониторинга и щелкните его, чтобы войти на страницу управления кластером. Чтобы открыть записную книжку, связанную с кластером Spark, щелкните **панели мониторинга** -> кластера**Jupyter Notebook**.
 
 ![Панели мониторинга кластера](./media/spark-overview/spark-jupyter-on-portal.png)
 
-Вы также можете ***https://CLUSTERNAME.azurehdinsight.net/jupyter*** просматривать для доступа к ноутбукам Jupyter. Замените в этом URL-адресе фрагмент CLUSTERNAME именем вашего кластера. Для доступа к записным книжкам необходим пароль к учетной записи администратора.
+Кроме того, можно перейти ***`https://CLUSTERNAME.azurehdinsight.net/jupyter`*** к записным книжкам Jupyter. Замените в этом URL-адресе фрагмент CLUSTERNAME именем вашего кластера. Для доступа к записным книжкам необходим пароль к учетной записи администратора.
 
 ![Просмотр записных книжек Jupyter](./media/spark-overview/spark-jupyter-notebook.png)
 
-Выберите PySpark, чтобы увидеть каталог, содержащий несколько примеров расфасованных ноутбуков, которые используют API PySpark. Ноутбуки, содержащие образцы кода для этой темы Spark, доступны на [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/Spark/pySpark)
+Выберите PySpark, чтобы просмотреть каталог, содержащий несколько примеров предварительно упакованных записных книжек, использующих API PySpark. Записные книжки, содержащие примеры кода для этого набора разделов Spark, доступны на сайте [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/Spark/pySpark) .
 
-Вы можете загрузить ноутбуки непосредственно с [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/Spark/pySpark) на ноутбук Jupyter на вашем кластере Spark. На домашней странице записной книжки Jupyter нажмите кнопку **Отправить** в правой части экрана. Откроется окно проводника. Здесь вы можете вставить GitHub (сырое содержание) URL ноутбука и нажмите **Открыть**.
+Вы можете отправить записные книжки непосредственно из [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/Spark/pySpark) на сервер записных книжек Jupyter в кластере Spark. На домашней странице записной книжки Jupyter нажмите кнопку **Отправить** в правой части экрана. Откроется окно проводника. Здесь можно вставить URL-адрес GitHub (необработанное содержимое) записной книжки и нажать кнопку **Открыть**.
 
 В списке файлов Jupyter отобразится имя файла с кнопкой **Отправить**. Нажмите кнопку **Отправить** . Записная книжка импортирована. Повторите эти действия для отправки остальных записных книжек из этого руководства.
 
@@ -164,7 +164,7 @@ ms.locfileid: "76718520"
 
 * просмотреть код, щелкнув записную книжку;
 * выполнить отдельную ячейку, нажав клавиши **SHIFT+ВВОД**;
-* Выполнить весь ноутбук, нажав на **Cell** -> **Run**.
+* Запустите всю записную книжку, щелкнув **элемент** -> **выполнить**.
 * использовать автоматическую визуализацию запросов.
 
 > [!TIP]
@@ -174,12 +174,12 @@ ms.locfileid: "76718520"
 
 ![Кривая ROC логистической регрессии для универсального подхода](./media/spark-overview/pyspark-jupyter-autovisualization.png)
 
-## <a name="whats-next"></a>Дальнейшие действия
+## <a name="whats-next"></a>Что дальше?
 Теперь, когда вы настроили кластер HDInsight Spark и отправили записные книжки Jupyter, все готово для работы со статьями, посвященными этим трем записным книжкам PySpark. В них рассказывается, как исследовать данные, а также как создавать и использовать модели. С помощью записной книжки по расширенному исследованию и моделированию данных можно более подробно ознакомиться с тем, как использовать перекрестную проверку, перебор гиперпараметров и оценку модели.
 
 **Исследование и моделирование данных с помощью Spark**. Исследуйте набор данных, а затем создайте, оцените и проанализируйте модели машинного обучения, выполнив инструкции из статьи, посвященной [созданию моделей двоичной классификации и регрессии для данных с помощью набора средств Spark MLlib](spark-data-exploration-modeling.md).
 
 **Использование модели**. Дополнительные сведения об оценке моделей классификации и регрессии, созданных в этой статье, см. в статье [Оценка моделей машинного обучения, созданных с помощью Spark](spark-model-consumption.md).
 
-**Перекрестная проверка и гиперпараметр радикальные**: Смотрите [Расширенный исследования данных и моделирования с Spark](spark-advanced-data-exploration-modeling.md) о том, как модели могут быть обучены с помощью перекрестной проверки и гипер-параметр радикальных
+**Перекрестная проверка и очистка параметров**. Дополнительные сведения о том, как можно обучить модели с помощью перекрестной проверки и вычистки параметров Hyper-Parameter, см. в статье [расширенное исследование данных и моделирование с использованием Spark](spark-advanced-data-exploration-modeling.md) .
 

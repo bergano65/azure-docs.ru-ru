@@ -6,13 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
+ms.custom: seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 4007d18291e91ae2a72d7a99dac2cb3a8bc2877a
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.openlocfilehash: 41688792330214943eeb116dc4b5aaf7eebfeebf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82143849"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192048"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Use Azure Monitor logs to monitor HDInsight clusters (Мониторинг кластеров HDInsight с помощью журналов Azure Monitor)
 
@@ -132,7 +133,7 @@ HDInsight поддерживает аудит кластеров с помощь
 * `log_ambari_audit_CL`— Эта таблица предоставляет журналы аудита из Ambari.
 * `log_ranger_audti_CL`— Эта таблица предоставляет журналы аудита из Apache Ranger в кластерах ESP.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запрос журналов Azure Monitor для мониторинга кластеров HDInsight](hdinsight-hadoop-oms-log-analytics-use-queries.md)
 * [Как отслеживать доступность кластера с помощью Apache Ambari и журналов Azure Monitor](./hdinsight-cluster-availability.md)

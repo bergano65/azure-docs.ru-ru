@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 04/23/2020
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 298c99d44328dc79db1722b450ad74c3929d0c12
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
-ms.translationtype: MT
+ms.openlocfilehash: 6a816f2235fa5356f2300255ec9d2fb2b315acf7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82114445"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82190322"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по настройке Workday для автоматической подготовки пользователей
 
@@ -93,7 +93,7 @@ ms.locfileid: "82114445"
 * [Интеграция с несколькими доменами Active Directory](#integrating-with-multiple-active-directory-domains)
 * [Планирование трансформации и сопоставления атрибутов пользователей Workday и Active Directory](#planning-workday-to-active-directory-user-attribute-mapping-and-transformations)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -348,7 +348,7 @@ ms.locfileid: "82114445"
 
 1. Введите "активировать" в поле поиска и затем нажмите ссылку **Активировать ожидающие изменения политики безопасности**.
 
-    ![Активировать](./media/workday-inbound-tutorial/wd_isu_16.png "Активировать")
+    ![Вызова](./media/workday-inbound-tutorial/wd_isu_16.png "Активировать")
 
 1. Начните выполнять задачу активации ожидающих изменений политики безопасности: введите комментарий для проведения аудита и нажмите кнопку **ОК**.
 1. Завершите задачу на следующем экране, установив флажок **Confirm** (Подтверждаю) и нажав кнопку **ОК**.
@@ -462,7 +462,7 @@ ms.locfileid: "82114445"
 
      > [!NOTE]
      > По умолчанию приложение использует веб-службы Workday (WWS) v 21.1, если в URL-адресе не указаны сведения о версии. Чтобы использовать определенную версию API WWS, используйте формат URL-адреса:https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# <br>
-     > Пример: https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0 <br>
+     > Например, https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0. <br>
      
      > [!NOTE]
      > Если вы используете API WWS v 30,0 и более поздней версии, перед включением задания подготовки обновите **выражения API XPath** в разделе **сопоставление атрибутов — > дополнительные параметры-> изменить список атрибутов для Workday** , ссылающегося на раздел [Управление конфигурацией](#managing-your-configuration) и ссылкой на [атрибут workday](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
@@ -562,7 +562,7 @@ ms.locfileid: "82114445"
 | **WorkerID.**  |  EmployeeID | **Да** | Записывается только при создании |
 | **PreferredNameData**    |  cn    |   |   Записывается только при создании |
 | **Селектуникуевалуе (Join ("\@", Join (".", \[FirstName\], \[LastName\]), "contoso.com"), объединения ("\@", объединения (".", MID (\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), объединения ("\@", объединения (".", MID (\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Записывается только при создании 
-| **Replace (MID (заменить\[(\]UserID,, "\[\\\\/\\\\\\\\\\\\\[(\\\\ :\\\]\\\\\\\\ \\\|\\\\=\\\\,\\\\+\\\\\*\\\\? \\\\\\) ",," ",,), 1, 20),," ([.) \\ &lt; \\ \\ &gt; \] \*file:///\\ \$.) *$)", , "", , )**      |    sAMAccountName            |     |         Записывается только при создании |
+| `Replace(Mid(Replace(\[UserID\], , "(\[\\\\/\\\\\\\\\\\\\[\\\\\]\\\\:\\\\;\\\\\|\\\\=\\\\,\\\\+\\\\\*\\\\?\\\\&lt;\\\\&gt;\])", , "", , ), 1, 20), , "([\\\\.)\*\$](file:///\\.)*$)", , "", , )`      |    sAMAccountName            |     |         Записывается только при создании |
 | **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Создание и обновление |
 | **Фамилия**   | givenName       |     |    Создание и обновление |
 | **LastName**   |   sn   |     |  Создание и обновление |
@@ -625,7 +625,7 @@ ms.locfileid: "82114445"
 
      > [!NOTE]
      > По умолчанию приложение использует Workday Web Services v 21.1, если в URL-адресе не указаны сведения о версии. Чтобы использовать определенную версию API веб-служб Workday, используйте формат URL-адреса:https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# <br>
-     > Пример: https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0
+     > Например, https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0.
 
 
    * **Уведомление по электронной почте —** Введите свой адрес электронной почты и установите флажок "отправлять сообщение, если происходит сбой".
@@ -752,7 +752,7 @@ ms.locfileid: "82114445"
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. Нажмите кнопку **Сохранить**.
+2. Выберите команду **Сохранить**.
 
 3. Будет запущена начальная синхронизация, которая может длиться переменное число часов в зависимости от количества пользователей в клиенте Workday. 
 
@@ -1347,7 +1347,7 @@ SelectUniqueValue(
 
 8. В поле **Тип** выберите тип, соответствующий атрибуту (чаще всего это **строка**).
 
-9. В поле **Выражение API** введите выражение XPath, скопированное из Workday Studio. Пример: `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`
+9. В поле **Выражение API** введите выражение XPath, скопированное из Workday Studio. Например, `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`.
 
 10. Выберите **Добавить атрибут**.
 
@@ -1379,7 +1379,7 @@ SelectUniqueValue(
 
 Что касается хранения данных, служба подготовки Azure AD не создает отчеты, не выполняет аналитику и не предоставляет аналитику более чем за 30 дней. Таким образом, в службе подготовки Azure AD не хранятся и не обрабатываются данные за период более 30 дней. Такой подход является совместимым с нормами GDPR, требованиями соответствия нормативам корпорации Майкрософт о конфиденциальности и политике хранения данных Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).

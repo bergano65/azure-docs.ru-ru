@@ -1,35 +1,34 @@
 ---
-title: Функции шаблона - сравнение
+title: Функции шаблонов — сравнение
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для сравнения значений.
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: 42009e8543e307f2d3e4643ddaa79f492f9bdfee
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: MT
+ms.date: 04/27/2020
+ms.openlocfilehash: a9b7b32475695e5222b87c8fe75e8982f34ebb21
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80156367"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192337"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Функции сравнения для шаблонов ARM
 
-Диспетчер ресурсов предоставляет несколько функций для сравнения в шаблонах Azure Resource Manager (ARM).
+Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблонах Azure Resource Manager (ARM).
 
 * [equals](#equals)
 * [greater](#greater)
 * [greaterOrEquals](#greaterorequals)
-* [Меньше](#less)
+* [столь](#less)
 * [lessOrEquals](#lessorequals)
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+## <a name="equals"></a>equals (равно)
 
-## <a name="equals"></a>equals
 `equals(arg1, arg2)`
 
 Проверяет, являются ли два значения равными.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число, строка, массив или объект |Первое значение, которое необходимо проверить на равенство. |
 | arg2 |Да |целое число, строка, массив или объект |Второе значение, которое необходимо проверить на равенство. |
@@ -124,24 +123,12 @@ ms.locfileid: "80156367"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| name | Тип | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | True |
 | checkArrays | Bool | True |
 | checkObjects | Bool | True |
-
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az deployment group create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/equals.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/equals.json
-```
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/not-equals.json) используется [not](template-functions-logical.md#not) и **equals**.
 
@@ -162,30 +149,19 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера:
 
-| name | Тип | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkNotEquals | Bool | True |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az deployment group create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/not-equals.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/not-equals.json
-```
-
 ## <a name="greater"></a>greater
+
 `greater(arg1, arg2)`
 
 Проверяет, является ли первое значение большим, чем второе.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли большим). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли большим). |
@@ -237,31 +213,20 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| name | Тип | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | False |
 | checkStrings | Bool | True |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az deployment group create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/greater.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/greater.json
-```
-
 ## <a name="greaterorequals"></a>greaterOrEquals
+
 `greaterOrEquals(arg1, arg2)`
 
 Проверяет, является ли первое значение большим, чем второе, или равным ему.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли большим или равным). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли большим или равным). |
@@ -313,31 +278,20 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| name | Тип | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | False |
 | checkStrings | Bool | True |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az deployment group create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/greaterorequals.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/greaterorequals.json
-```
-
 ## <a name="less"></a>less
+
 `less(arg1, arg2)`
 
 Проверяет, является ли первое значение меньшим, чем второе.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли меньшим). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли меньшим). |
@@ -389,31 +343,20 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| name | Тип | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | False |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az deployment group create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/less.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/less.json
-```
-
 ## <a name="lessorequals"></a>lessOrEquals
+
 `lessOrEquals(arg1, arg2)`
 
 Проверяет, является ли первое значение меньшим, чем второе, или равным ему.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли меньшим или равным). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли меньшим или равным). |
@@ -465,26 +408,11 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| name | Тип | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | False |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az deployment group create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/lessorequals.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/lessorequals.json
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
-* Для описания разделов в шаблоне менеджера ресурсов Azure [см.](template-syntax.md)
-* Чтобы объединить несколько шаблонов, [см. Использование связанных шаблонов с менеджером ресурсов Azure.](linked-templates.md)
-* Чтобы итерировать определенное количество раз при создании типа ресурса, [см. Создать несколько экземпляров ресурсов в azure Resource Manager.](copy-resources.md)
-* Чтобы узнать, как развернуть созданный шаблон, можно [развернуть приложение с шаблоном Azure Resource Manager.](deploy-powershell.md)
 
+* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 04/17/2020
-ms.openlocfilehash: bd4dabe1d5fbc4722d03f31492d2118802292df2
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 6cf89790ee125d8d09d9bdead2f6e34dcb73e8f8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82111978"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82188129"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "82111978"
 > [!WARNING]
 > Корпорация Майкрософт не поддерживает использование таких функций Машинное обучение Azure Studio, как автоматизированный ML, наборы данных, Добавление меток, конструктор и записные книжки, если в базовом хранилище включена виртуальная сеть.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + [Рабочая область](how-to-manage-workspace.md)машинное обучение Azure.
 
@@ -508,19 +508,7 @@ az rest --method put --uri https://management.azure.com"/subscriptions/<subscrip
 
 ## <a name="use-azure-firewall"></a>Использование брандмауэра Azure
 
-При использовании брандмауэра Azure необходимо настроить сетевое правило, разрешающее входящий и исходящий трафик из следующих адресов:
-
-- `*.batchai.core.windows.net`
-- `ml.azure.com`
-- `*.azureml.ms`
-- `*.experiments.azureml.net`
-- `*.modelmanagement.azureml.net`
-- `mlworkspace.azure.ai`
-- `*.aether.ms`
-
-При добавлении правила задайте для __протокола__ значение Any, а для `*`портов —.
-
-Дополнительные сведения о настройке правила сети см. в статье [развертывание и настройка брандмауэра Azure](/azure/firewall/tutorial-firewall-deploy-portal#configure-a-network-rule).
+Сведения об использовании Машинное обучение Azure с брандмауэром Azure см. в статье [использование машинное обучение Azure рабочей области за брандмауэром Azure](how-to-access-azureml-behind-firewall.md).
 
 ## <a name="use-azure-container-registry"></a>Использование реестра контейнеров Azure
 
@@ -621,7 +609,7 @@ az rest --method put --uri https://management.azure.com"/subscriptions/<subscrip
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка сред обучения](how-to-set-up-training-targets.md)
 * [Где следует развертывать модели](how-to-deploy-and-where.md)

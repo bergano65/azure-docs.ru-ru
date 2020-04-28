@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 7da6536e78a0b981306e3909b06a674cbb8cbaa1
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.openlocfilehash: 726cf362e62f0ef914dfaea090a08c224bd5d8d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82106276"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192507"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux
 
@@ -56,7 +56,7 @@ YARN Timeline Server содержит следующие типы данных:
 
 К пользовательской `mapred-site` в Ambari необходимо добавить две конфигурации.
 
-1. В веб-браузере перейдите в `https://CLUSTERNAME.azurehdinsight.net`папку, где `CLUSTERNAME` — имя кластера.
+1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
 1. В пользовательском интерфейсе Ambari перейдите к **MapReduce2** > **configs** > **Advanced** > **Custom mapred-site**.
 

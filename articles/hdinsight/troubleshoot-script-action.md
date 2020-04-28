@@ -1,30 +1,31 @@
 ---
-title: Действия скриптов устранения неполадок в Azure HDInsight
+title: Устранение неполадок в действиях скриптов в Azure HDInsight
 description: Общие шаги по устранению неполадок для действий скриптов в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
+ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: b1e6b674edc155e0aa6c88ad360eb59864eebee4
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: e2a2f6abfd6b7c644e95649f3c9832e4cc986037
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771980"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82188452"
 ---
-# <a name="troubleshoot-script-actions-in-azure-hdinsight"></a>Действия скриптов устранения неполадок в Azure HDInsight
+# <a name="troubleshoot-script-actions-in-azure-hdinsight"></a>Устранение неполадок в действиях скриптов в Azure HDInsight
 
-В этой статье описаны шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
 ## <a name="viewing-logs"></a>Просмотр журналов
 
-Для просмотра информации, зарегистрированной действиями скрипта, можно использовать веб-ui Apache Ambari. Если сбой скрипта скрипт при создании кластера, журналы находятся в учетной записи хранения кластера по умолчанию. Этот раздел содержит сведения о том, как получить журналы обоими этими способами.
+Вы можете использовать веб-интерфейс Apache Ambari для просмотра информации, регистрируемой действиями сценария. Если во время создания кластера произошел сбой сценария, журналы находятся в учетной записи хранения кластера по умолчанию. Этот раздел содержит сведения о том, как получить журналы обоими этими способами.
 
-### <a name="apache-ambari-web-ui"></a>Apache Ambari веб-uI
+### <a name="apache-ambari-web-ui"></a>Веб-интерфейс Apache Ambari
 
-1. Из веб-браузера, `https://CLUSTERNAME.azurehdinsight.net`перейдите к , где `CLUSTERNAME` имя вашего кластера.
+1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
 1. В панели вверху страницы выберите запись **ops**. Появится список текущих и предыдущих операций, выполняемых в кластере с помощью Ambari.
 
@@ -32,7 +33,7 @@ ms.locfileid: "81771980"
 
 1. Найдите записи, для которых в столбце **Операции** указано **run\_customscriptaction**. Такие записи создаются при выполнении действий сценариев.
 
-    ![Операции действий по сценарию Apache Ambari](./media/troubleshoot-script-action/ambari-script-action.png)
+    ![Операции с действиями сценария Apache Ambari](./media/troubleshoot-script-action/ambari-script-action.png)
 
     Для просмотра выходных данных **STDOUT** и **STDERR** выберите запись **run\customscriptaction** и перейдите по ссылкам. Эти выходные данные формируются при запуске сценария и могут содержать полезные сведения.
 
@@ -42,15 +43,15 @@ ms.locfileid: "81771980"
 
 * Журналы хранилища находятся в `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\CLUSTER_NAME\DATE`.
 
-    ![Журналы действий по сценарию](./media/troubleshoot-script-action/script-action-logs-in-storage.png)
+    ![Журналы действий скриптов](./media/troubleshoot-script-action/script-action-logs-in-storage.png)
 
     В этом каталоге журналы упорядочены по **головному узлу**, **рабочему узлу** и **узлу zookeeper**. См. следующие примеры.
 
-    * **Хеднод**:`<ACTIVE-HEADNODE-NAME>.cloudapp.net`
+    * **Головного узла**:`<ACTIVE-HEADNODE-NAME>.cloudapp.net`
 
-    * **Рабочий узла**:`<ACTIVE-WORKERNODE-NAME>.cloudapp.net`
+    * **Рабочий узел**:`<ACTIVE-WORKERNODE-NAME>.cloudapp.net`
 
-    * **Узла зоозащитника**:`<ACTIVE-ZOOKEEPERNODE-NAME>.cloudapp.net`
+    * **Zookeeper узел**:`<ACTIVE-ZOOKEEPERNODE-NAME>.cloudapp.net`
 
 * Все **stdout** и **stderr** соответствующего узла передаются в учетную запись хранения. Для каждого действия сценария создается файл **output-\*.txt** и файл **errors-\*.txt**. Файл **output-*.txt** содержит сведения об URI сценария, запущенном на узле. Ниже приведен пример таких сведений:
 
@@ -68,11 +69,11 @@ ms.locfileid: "81771980"
 
 ## <a name="ambari-watchdog"></a>Модуль наблюдения Ambari
 
-Не изменяйте пароль модуля наблюдения Ambari (hdinsightwatchdog) в кластере HDInsight под управлением Linux. Изменение пароля нарушает возможность запуска новых действий скрипта в кластере HDInsight.
+Не изменяйте пароль модуля наблюдения Ambari (hdinsightwatchdog) в кластере HDInsight под управлением Linux. Изменение пароля нарушает возможность выполнения новых действий сценария в кластере HDInsight.
 
 ## <a name="cant-import-name-blobservice"></a>Не удается импортировать BlobService имени
 
-__Симптомы.__ Сбой действия скрипта. При просмотре операции в Ambari выводится следующее сообщение об ошибке:
+__Симптомы__. Сбой действия скрипта. При просмотре операции в Ambari выводится следующее сообщение об ошибке:
 
 ```
 Traceback (most recent call list):
@@ -83,7 +84,7 @@ ImportError: cannot import name BlobService
 
 __Причина__. Эта ошибка возникает при обновлении клиента Python службы хранилища Azure, который входит в состав кластера HDInsight. HDInsight требуется клиент службы хранилища Azure версии 0.20.0.
 
-__Разрешение__. Чтобы устранить эту ошибку, вручную подключитесь к каждому узлу кластера с помощью `ssh`. Выполните следующую команду, чтобы повторно установить требуемую версию клиента хранилища:
+__Решение__. Чтобы устранить эту ошибку, вручную подключитесь к каждому узлу кластера с помощью `ssh`. Выполните следующую команду, чтобы повторно установить требуемую версию клиента хранилища:
 
 ```bash
 sudo pip install azure-storage==0.20.0
@@ -105,12 +106,12 @@ sudo pip install azure-storage==0.20.0
     No new script actions can be run on this cluster because of conflicting script names in existing scripts. Script names provided at cluster creation must be all unique. Existing scripts are run on resize.
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с - официальная учетная запись Microsoft Azure для улучшения обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации просмотрите [Как создать запрос поддержки Azure.](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

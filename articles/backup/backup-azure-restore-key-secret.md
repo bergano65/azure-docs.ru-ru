@@ -1,14 +1,14 @@
 ---
-title: Восстановление ключа & Key Vault & секрет для зашифрованного VM
+title: Восстановление Key Vault ключа & секрета для зашифрованной виртуальной машины
 description: Узнайте, как восстановить ключ и секрет хранилища ключей в службе архивации Azure с помощью PowerShell
 ms.topic: conceptual
 ms.date: 08/28/2017
-ms.openlocfilehash: 35bcb919cadd46c603b1f2ad49742c5435f873d2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 826b3917fda820ed02cde425ca5a394bffec0df1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75450054"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82186827"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "75450054"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Резервная копия зашифрованных виртуальных машин** — выполнять резервное копирование зашифрованных виртуальных машин Azure нужно с помощью службы архивации Azure. Например, статья [Управление резервной копированием и восстановлением VMs Azure с помощью PowerShell](backup-azure-vms-automation.md) для получения подробной информации о том, как создать резервную резервную связь с зашифрованными VM Azure.
+* **Резервная копия зашифрованных виртуальных машин** — выполнять резервное копирование зашифрованных виртуальных машин Azure нужно с помощью службы архивации Azure. Дополнительные сведения о резервном копировании зашифрованных виртуальных машин Azure см. в статье [Управление резервным копированием и восстановлением виртуальных машин Azure с помощью PowerShell](backup-azure-vms-automation.md) .
 * **Настроенное хранилище ключей Azure** — убедитесь, что хранилище ключей, в которое нужно восстановить ключи и секреты, существует. Управление хранилищами ключей описано в статье [Приступая к работе с хранилищем ключей Azure](../key-vault/key-vault-get-started.md).
 * **Восстановление диска** — убедитесь, что запущено задание восстановления дисков для зашифрованной виртуальной машины с помощью [PowerShell](backup-azure-vms-automation.md#restore-an-azure-vm). Это связано с тем, что данное задание создает JSON-файл в учетной записи хранения, которая содержит ключи и секреты для восстанавливаемой зашифрованной виртуальной машины.
 
@@ -60,7 +60,7 @@ Restore-AzureKeyVaultKey -VaultName '<target_key_vault_name>' -InputFile $keyDes
 
 ## <a name="restore-secret"></a>Восстановление секрета
 
-Используйте созданный выше JSON-файл для получения имени и значения секрета и укажите его при выполнении командлета настройки секрета, чтобы поместить секрет (BEK) обратно в хранилище ключей.Используйте эти cmdlets, если ваш **VM зашифрован с помощью BEK и KEK.**
+Используйте созданный выше JSON-файл для получения имени и значения секрета и укажите его при выполнении командлета настройки секрета, чтобы поместить секрет (BEK) обратно в хранилище ключей.Используйте эти командлеты, если ваша **Виртуальная машина зашифрована с помощью BEK и KEK**.
 
 **Воспользуйтесь этими командлетами, если виртуальная машина Windows зашифрована с помощью BEK и KEK.**
 
@@ -92,8 +92,8 @@ Restore-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -InputFile $sec
 
 > [!NOTE]
 >
-> * Значение для $secretname можно получить, ссылаясь на выход $encryptionObject.OsDiskKeyAndSecretDetails.SecretUrl и используя текст после секретов / например, выход секретный URL https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163 и секретное имя B3284AAA-DAAA-4AAA-B393-60CAA848AAA
-> * Значение тега DiskEncryptionKeyFileName совпадает с секретным именем.
+> * Значение для $secretname можно получить, обратившись к выходным данным $encryptionObject. Осдисккэйандсекретдетаилс. SecretUrl и используя текст после секретов/, например, URL-адрес выходных `https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163` данных — и имя секрета — b3284aaa-daaa-4AAA-b393-60caa848aaaa.
+> * Значение тега Diskencryptionkeyfilename совпадает с совпадает с именем секрета.
 >
 >
 
@@ -128,7 +128,7 @@ Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -
 
 > [!NOTE]
 >
-> * Значение переменной $secretname можно получить из выходных данных параметра $rp1.KeyAndSecretDetails.SecretUrl, используя текст после secrets/. Например, выходной URL-адрес секрета — https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163, а имя секрета — B3284AAA-DAAA-4AAA-B393-60CAA848AAAA.
+> * Значение переменной $secretname можно получить из выходных данных параметра $rp1.KeyAndSecretDetails.SecretUrl, используя текст после secrets/. Например, выходной URL-адрес секрета — `https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163`, а имя секрета — B3284AAA-DAAA-4AAA-B393-60CAA848AAAA.
 > * Значение тега DiskEncryptionKeyFileName совпадает с именем секрета.
 > * Значение для DiskEncryptionKeyEncryptionKeyURL можно получить из хранилища ключей после восстановления ключей с помощью командлета [Get-AzureKeyVaultKey](/powershell/module/azurerm.keyvault/get-azurekeyvaultkey).
 >
@@ -136,4 +136,4 @@ Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После восстановления ключа и секрета обратно в хранилище ключей, отображайте статью [Управление резервной копированием и восстановлением VMs Azure с помощью PowerShell](backup-azure-vms-automation.md#create-a-vm-from-restored-disks) для создания зашифрованных VMs из восстановленного диска, ключа и секрета.
+После восстановления ключа и секрета в хранилище ключей ознакомьтесь со статьей [Управление резервным копированием и восстановлением виртуальных машин Azure с помощью PowerShell](backup-azure-vms-automation.md#create-a-vm-from-restored-disks) для создания зашифрованных виртуальных машин из восстановленного диска, ключа и секрета.

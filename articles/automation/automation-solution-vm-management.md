@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 10c66ba175484d8b95f26ef9330753151a92969b
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.openlocfilehash: 631c9b37cf1fec0d39c3c362c6bc303a576d6b7c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82106038"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82187336"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
 
@@ -108,7 +108,7 @@ ms.locfileid: "82106038"
 | --- | --- | ---|
 |AutoStop_CreateAlert_Child | VMObject <br> AlertAction <br> WebHookURI | Вызывается из родительского runbook. Этот модуль Runbook создает предупреждения для каждого отдельного ресурса в сценарии автоматической отмены.|
 |AutoStop_CreateAlert_Parent | VMList<br> WhatIf: true или false.  | Создает или обновляет правила генерации оповещений Azure для виртуальных машин в целевой подписке или группах ресурсов. <br> `VMList`— Это список виртуальных машин с разделителями-запятыми. Например, `vm1, vm2, vm3`.<br> `WhatIf`включает проверку логики модуля Runbook без выполнения.|
-|AutoStop_Disable | Отсутствуют | Отключает автоматическое оповещение и расписание по умолчанию.|
+|AutoStop_Disable | None | Отключает автоматическое оповещение и расписание по умолчанию.|
 |AutoStop_VM_Child | WebHookData | Вызывается из родительского runbook. Правила генерации оповещений вызывают этот модуль Runbook для отключения классической виртуальной машины.|
 |AutoStop_VM_Child_ARM | WebHookData |Вызывается из родительского runbook. Правила генерации оповещений вызывают этот модуль Runbook для завершения виртуальной машины.  |
 |ScheduledStartStop_Base_Classic; | CloudServiceName<br> Действие: Start или Stop<br> VMList  | Выполняет действие Запуск или завершение действия в классической группе виртуальных машин по облачным службам. |
@@ -148,7 +148,7 @@ ms.locfileid: "82106038"
 >[!NOTE]
 >Для переменной `External_WaitTimeForVMRetryInSeconds`значение по умолчанию было изменено с 600 на 2100. 
 
-`External_Start_ResourceGroupNames`Во всех сценариях переменные, `External_Stop_ResourceGroupNames`и `External_ExcludeVMNames` необходимы для целевых виртуальных машин, за исключением списков виртуальных машин с разделителями-запятыми для **AutoStop_CreateAlert_Parent**, **SequencedStartStop_Parent**и **ScheduledStartStop_Parent** модулей Runbook. То есть виртуальные машины должны принадлежать к целевым группам ресурсов для выполнения действий запуска и отмены. Эта логика напоминает политику Azure тем, что можно выбрать целевую подписку или группу ресурсов, после чего действия будут наследоваться создаваемыми в ней виртуальными машинами. Такой подход позволяет избежать необходимости использовать отдельное расписание для каждой виртуальной машины и управлять запуском и остановкой в соответствующем масштабе.
+`External_Start_ResourceGroupNames`Во всех сценариях переменные, `External_Stop_ResourceGroupNames`и `External_ExcludeVMNames` необходимы для целевых виртуальных машин, за исключением списков виртуальных машин с разделителями-запятыми для **AutoStop_CreateAlert_Parent**, **SequencedStartStop_Parent**и **ScheduledStartStop_Parent** модулей Runbook. То есть виртуальные машины должны принадлежать к целевым группам ресурсов для выполнения действий запуска и отмены. Логика работает аналогично политике Azure, в которой можно ориентироваться на подписку или группу ресурсов и выполнять действия, наследуемые только что созданными виртуальными машинами. Такой подход позволяет избежать необходимости использовать отдельное расписание для каждой виртуальной машины и управлять запуском и остановкой в соответствующем масштабе.
 
 ### <a name="schedules"></a>Расписания
 

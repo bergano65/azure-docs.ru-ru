@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.subservice: workloads
 ms.date: 4/17/2020
 ms.author: jencook
-ms.openlocfilehash: 2bd9430fc6f48d72faa2c1850af0bb8432a7c5f5
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.openlocfilehash: e9cb691ef60f612672078a9ef84db904c79cbc87
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82149506"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189451"
 ---
 # <a name="frequently-asked-questions-for-azure-confidential-computing"></a>Часто задаваемые вопросы о конфиденциальных вычислениях в Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "82149506"
 
 1. **В чем разница между виртуальными машинами серии DCsv2 и DC?**
 
-   Виртуальные машины серии DC работают на старых 6-ядерных процессорах Intel с SGX. Они имеют менее общий объем памяти, меньшее количество памяти (страничный корпус анклава) и доступны в меньшем количестве регионов. Эти виртуальные машины доступны только в восточной части США и Западной Европе доступны в двух размерах: Standard_DC2s и Standard_DC4s. Они не будут работать в общедоступной версии и могут быть развернуты только в экземпляре Marketplace [VM (Предварительная версия) виртуальной машины серии DC [Preview]](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-azure-compute.confidentialcompute?tab=Overview) .
+   Виртуальные машины серии DC работают на старых 6-ядерных процессорах Intel с Intel SGX. Они имеют менее общий объем памяти, меньшее количество памяти (страничный корпус анклава) и доступны в меньшем количестве регионов. Эти виртуальные машины доступны только в восточной части США и Западной Европе доступны в двух размерах: Standard_DC2s и Standard_DC4s. Они не будут работать в общедоступной версии и могут быть развернуты только в экземпляре Marketplace [VM (Предварительная версия) виртуальной машины серии DC [Preview]](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-azure-compute.confidentialcompute?tab=Overview) .
 
 1. **Доступны ли DCsv2 виртуальные машины глобально?**
 
