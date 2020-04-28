@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: 77b64f09b7fd1429eb23c4407c729dfc0aafdf2b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60461029"
 ---
 # <a name="set-up-vmware-disaster-recovery-in-a-multi-tenancy-environment-with-the-cloud-solution-provider-csp-program"></a>Настройка аварийного восстановления VMware в мультитенантном окружении с использованием программы поставщика облачных решений (CSP)
@@ -65,7 +65,7 @@ ms.locfileid: "60461029"
 ## <a name="assign-tenant-access-to-the-subscription"></a>Назначение доступа клиента к подписке
 
 1. Убедитесь, что инфраструктура аварийного восстановления настроена. Партнерам необходимо обращаться к подпискам клиентов через портал CSP, независимо от типа аварийного восстановления (управляемое или в режиме самообслуживания). Настройте хранилище и зарегистрируйте инфраструктуру для подписок клиента.
-2. Предоставьте арендатору [созданную учетную запись.](#create-a-tenant-account)
+2. Укажите клиент с [созданной учетной записью](#create-a-tenant-account).
 3. На портале CSP можно добавить нового пользователя к подписке клиента следующим образом:
 
     а) Перейдите на страницу подписок CSP для клиента и выберите параметр **Users and licenses** (Пользователи и лицензии).
@@ -99,6 +99,6 @@ ms.locfileid: "60461029"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Ознакомьтесь с дополнительными сведениями](site-recovery-role-based-linked-access-control.md) об управлении доступом на основе ролей для развертываний Azure Site Recovery.
-- Узнайте больше об [архитектуре репликации](vmware-azure-architecture.md)VMware to Azure.
+- Дополнительные сведения об [архитектуре репликации](vmware-azure-architecture.md)из VMware в Azure.
 - См. дополнительные сведения о [репликации виртуальных машин VMware в Azure](vmware-azure-tutorial.md).
 Узнайте больше о [мультитенантных средах](vmware-azure-multi-tenant-overview.md) для репликации виртуальных машин VMware в Azure.
