@@ -1,14 +1,14 @@
 ---
-title: 'Обновление приложений: сериализация данных'
+title: 'Обновление приложения: сериализация данных'
 description: Лучшие методики для сериализации данных и ее влияние на последовательные обновления приложений.
 author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.openlocfilehash: 7dc60c28b56982f82c1ac90db55ac752977ea2d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75457493"
 ---
 # <a name="how-data-serialization-affects-an-application-upgrade"></a>Влияние сериализации данных на обновление приложений
@@ -43,14 +43,14 @@ ms.locfileid: "75457493"
 
 Контракт данных является рекомендуемым решением для обеспечения совместимости ваших данных. Он обладает строго заданными правилами управления версиями при добавлении, удалении или изменении полей. Кроме того, он обладает поддержкой обработки неизвестных полей, участвующей в процессе сериализации и десериализации, а также наследования классов. Дополнительные сведения см. в разделе [Использование контракта данных](https://msdn.microsoft.com/library/ms733127.aspx).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
-[Обновление приложения с помощью Powershell](service-fabric-application-upgrade-tutorial-powershell.md) проведке приложения с помощью PowerShell.
+[Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).
 
-Узнайте, как использовать расширенные функциональные возможности при обновлении приложения, ссылаясь на [Расширенные темы.](service-fabric-application-upgrade-advanced.md)
+Узнайте, как использовать расширенные функциональные возможности при обновлении приложения, обратившись к [дополнительным разделам](service-fabric-application-upgrade-advanced.md).
 
-Исправить общие проблемы в обновлениях приложений, ссылаясь на шаги в [обновление приложений для устранения проблем.](service-fabric-application-upgrade-troubleshooting.md)
+Решения распространенных проблем при обновлении приложений см. в статье [Устранение неполадок при обновлении приложений](service-fabric-application-upgrade-troubleshooting.md).
 

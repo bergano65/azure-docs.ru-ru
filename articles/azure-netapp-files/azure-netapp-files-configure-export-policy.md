@@ -1,6 +1,6 @@
 ---
-title: Настройка экспортной политики для объема NFS - Файлы Azure NetApp
-description: Описывает, как настроить экспортную политику для управления доступом к объему NFS с помощью файлов Azure NetApp
+title: Настройка политики экспорта для тома NFS — Azure NetApp Files
+description: Описание настройки политики экспорта для управления доступом к тому NFS с помощью Azure NetApp Files
 services: azure-netapp-files
 author: b-juche
 ms.author: b-juche
@@ -9,22 +9,22 @@ ms.workload: storage
 ms.topic: conceptual
 ms.date: 10/18/2019
 ms.openlocfilehash: b96fca3a5627a1c6c96c8db5c1c209a51c5e102a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75551564"
 ---
 # <a name="configure-export-policy-for-an-nfs-volume"></a>Настройка политики экспорта для тома NFS
 
-При необходимости можно настроить политику экспорта для управления доступом к тому Azure NetApp Files. Экспортная политика Azure NetApp Files поддерживает только объемы NFS.  И NFSv3 и NFSv4 поддерживаются. 
+При необходимости можно настроить политику экспорта для управления доступом к тому Azure NetApp Files. Azure NetApp Files политика экспорта поддерживает только тома NFS.  Поддерживаются NFSv3 и NFSv4. 
 
 ## <a name="steps"></a>Шаги 
 
-1.  Нажмите **на экспортную политику** из навигационного панели Файлов Сети Azure. 
+1.  Нажмите кнопку **Экспорт политики** в области навигации Azure NetApp Files. 
 
 2.  Чтобы создать правило политики экспорта, заполните следующие поля.   
-    *  **Индекс**   
+    *  **Номер**   
         Укажите номер индекса для правила.  
         Политика экспорта может содержать до пяти правил. Правила вычисляются в соответствии с их номером индекса в списке. Правила с более низкими номерами индекса вычисляются первыми. Например, сначала вычисляется правило с номером индекса 1, а затем правило с номером индекса 2. 
 

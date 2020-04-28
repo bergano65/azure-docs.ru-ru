@@ -1,15 +1,15 @@
 ---
-title: Как просмотреть агрегированное работоспособность объектов Службы обслуживания Azure Fabric
+title: Просмотр агрегированной работоспособности сущностей Azure Service Fabric
 description: Описание того, как отправлять запросы, просматривать и оценивать сводные данные о работоспособности сущностей Azure Service Fabric при помощи запросов о работоспособности и общих запросов.
 author: oanapl
 ms.topic: conceptual
 ms.date: 2/28/2018
 ms.author: oanapl
 ms.openlocfilehash: d02d8f717801bf51e43c9dafa5eb9379d0737674
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75464128"
 ---
 # <a name="view-service-fabric-health-reports"></a>Просмотр отчетов о работоспособности Service Fabric
@@ -19,7 +19,7 @@ ms.locfileid: "75464128"
 
 В Service Fabric доступны несколько способов получения сводных данных о работоспособности сущностей:
 
-* [Служба Fabric Explorer](service-fabric-visualizing-your-cluster.md) или другие инструменты визуализации
+* [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) или другие средства визуализации
 * запросы работоспособности (с помощью PowerShell, API или REST);
 * общие запросы, возвращающие перечень сущностей, среди свойств которых есть работоспособность (с помощью PowerShell, API или REST).
 
@@ -1044,7 +1044,7 @@ ApplicationHealthStateChunks :
   * PowerShell: Get-ServiceFabricDeployedApplication.
 
 > [!NOTE]
-> Некоторые запросы возвращают результаты с разбивкой на страницы. Возвращение этих запросов представляет собой список, полученный из [>PagedList\<T ](https://docs.microsoft.com/dotnet/api/system.fabric.query.pagedlist-1). Если результаты не соответствуют сообщению, возвращается только страница и устанавливается маркер ContinuationToken, который отслеживает остановку перечисления. Чтобы получить следующие результаты, необходимо продолжить вызов того же запроса, передавая маркер продолжения из предыдущего запроса.
+> Некоторые запросы возвращают результаты с разбивкой на страницы. Возврат этих запросов представляет собой список, производный от [пажедлист\<T>](https://docs.microsoft.com/dotnet/api/system.fabric.query.pagedlist-1). Если результаты не соответствуют сообщению, возвращается только страница и устанавливается маркер ContinuationToken, который отслеживает остановку перечисления. Чтобы получить следующие результаты, необходимо продолжить вызов того же запроса, передавая маркер продолжения из предыдущего запроса.
 
 ### <a name="examples"></a>Примеры
 Следующий код возвращает неработоспособные приложения в кластере.

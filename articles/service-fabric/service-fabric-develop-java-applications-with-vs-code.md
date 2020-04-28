@@ -1,15 +1,15 @@
 ---
-title: Разработка Java-приложений с помощью visual Studio Code
+title: Разработка приложений Java с помощью Visual Studio Code
 description: В этой статье показано, как создавать, развертывать и отлаживать приложения Java Service Fabric с помощью редактора Visual Studio Code.
 author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 999dbb8c36c4e0413f287b2a73cf39ab4acd15f5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75610052"
 ---
 # <a name="develop-java-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Java Service Fabric с помощью Visual Studio Code
@@ -40,7 +40,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
 ![Приложение для голосования Java в рабочей области](./media/service-fabric-develop-java-applications-with-vs-code/java-voting-application.png)
 
-## <a name="build-the-application"></a>создание приложения;
+## <a name="build-the-application"></a>Построение приложения
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть **палитру команд** в VS Code.
 2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)**. Выходные данные сборки передаются во встроенный терминал.

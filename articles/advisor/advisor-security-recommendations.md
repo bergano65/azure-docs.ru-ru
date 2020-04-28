@@ -4,10 +4,10 @@ description: Используйте Azure Advisor для повышения бе
 ms.topic: article
 ms.date: 01/29/2019
 ms.openlocfilehash: 5a4b7e9a9d9a7919155db361fd2c96ed98e6e5a4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75443038"
 ---
 # <a name="make-resources-more-secure-with-azure-advisor"></a>Обеспечение более надежной защиты ресурсов с помощью средства "Помощник по Azure"
@@ -16,7 +16,7 @@ ms.locfileid: "75443038"
 
 Центр безопасности помогает вам выявлять и предотвращать угрозы, а также принимать ответные меры благодаря более полной информации о состоянии ресурсов Azure и контролю над их безопасностью. Он периодически анализирует состояние безопасности ресурсов Azure. Когда Центр безопасности выявляет потенциальные уязвимости системы безопасности, он создает рекомендации. Рекомендации помогают настраивать необходимые элементы управления. 
 
-Для получения дополнительной информации о рекомендациях по безопасности смотрите [рекомендации по безопасности управления в Центре безопасности Azure.](https://azure.microsoft.com/documentation/articles/security-center-recommendations/)
+Дополнительные сведения о рекомендациях по безопасности см. [в статье Управление рекомендациями по безопасности в центре безопасности Azure](https://azure.microsoft.com/documentation/articles/security-center-recommendations/).
 
 ## <a name="how-to-access-security-recommendations-in-azure-advisor"></a>Как получить доступ к рекомендации по безопасности в Помощнике по Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "75443038"
 
 2.  На панели мониторинга Помощника выберите вкладку **Безопасность**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
@@ -32,6 +32,6 @@ ms.locfileid: "75443038"
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md)
-* [Рекомендации советника по операционному совершенству](advisor-operational-excellence-recommendations.md)
+* [Рекомендации для оперативной работы Advisor](advisor-operational-excellence-recommendations.md)
 
  

@@ -1,16 +1,16 @@
 ---
 title: Создание или соединение параллельных ветвей для действий в рабочих процессах
-description: Узнайте, как создать или объединить параллельные текущие ветви для независимых действий рабочего процесса в приложениях логики Azure
+description: Узнайте, как создавать или объединять параллельно выполняющиеся ветви для независимых действий рабочего процесса в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/10/2018
 ms.openlocfilehash: c0b1519992ba930382a1987aed185ef3c92eded4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75453432"
 ---
 # <a name="create-or-join-parallel-branches-for-workflow-actions-in-azure-logic-apps"></a>Создание или присоединение параллельных ветвей для действий рабочих процессов в Azure Logic Apps
@@ -24,7 +24,7 @@ ms.locfileid: "75453432"
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
-* Основные знания о [том, как создавать логические приложения](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 <a name="parallel-branches"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "75453432"
 
    ![Поиск и выбор нужных действий](media/logic-apps-control-flow-branches/added-parallel-branch.png)
 
-1. Теперь добавьте нужные шаги для каждой параллельной ветви. Чтобы добавить последующее действие в ветвь, необходимо навести указатель мыши над действием, в которое его необходимо добавить. Выберите **plus** плюс**+**() знак, который появляется, а затем выберите **Добавить действие.**
+1. Теперь добавьте нужные шаги для каждой параллельной ветви. Чтобы добавить последующее действие в ветвь, необходимо навести указатель мыши над действием, в которое его необходимо добавить. Щелкните знак **плюс** (**+**), который появится, а затем выберите **Добавить действие**.
 
    ![Добавление последующего действия в параллельную ветвь](media/logic-apps-control-flow-branches/add-sequential-action.png)
 

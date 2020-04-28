@@ -1,15 +1,15 @@
 ---
-title: Представляем менеджер кластерных ресурсов сервисных кластеров
-description: Узнайте о менеджере кластерных ресурсов Service Fabric, способе управления согласованием служб приложения.
+title: Введение в кластер Service Fabric диспетчер ресурсов
+description: Сведения о диспетчер ресурсов кластера Service Fabric, способах управления согласованиями служб приложения.
 author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: da9205f5d95eaf1b4dc655ee727ab8a4fe90893d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75563332"
 ---
 # <a name="introducing-the-service-fabric-cluster-resource-manager"></a>Общие сведения о диспетчере кластерных ресурсов Service Fabric
@@ -45,7 +45,7 @@ ms.locfileid: "75563332"
 Так как диспетчер кластерных ресурсов отвечает за перемещение служб, набор его функций отличается от возможностей подсистемы балансировки сетевой нагрузки. Это обусловлено тем, что подсистемы балансировки сетевой нагрузки доставляют сетевой трафик в фактическое расположение службы, даже если оно не является оптимальным для выполнения самой службы. Диспетчер кластерных ресурсов Service Fabric применяет совершенно иные стратегии для обеспечения эффективного использования ресурсов в кластере.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Для получения информации об архитектуре и информационном потоке в управлении кластерными ресурсами, ознакомьтесь с [этой статьей](service-fabric-cluster-resource-manager-architecture.md)
+- Сведения об архитектуре и потоке информации в диспетчер ресурсове кластера см. в [этой статье](service-fabric-cluster-resource-manager-architecture.md) .
 - В Cluster Resource Manager предусмотрено много параметров для описания кластера. Дополнительные сведения о метриках см. в статье, в которой [описывается кластер Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md).
 - Дополнительные сведения о настройке служб см. в разделе [Настройка параметров Cluster Resource Manager для служб Service Fabric](service-fabric-cluster-resource-manager-configure-services.md).
 - Метрики показывают, как диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Чтобы узнать больше о метриках и их настройке, ознакомьтесь с [этой статьей](service-fabric-cluster-resource-manager-metrics.md).

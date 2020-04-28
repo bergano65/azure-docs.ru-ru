@@ -1,15 +1,15 @@
 ---
 title: Доступность служб структуры служб
-description: Описывает обнаружение неисправностей, сбой и восстановление службы в приложении Azure Service Fabric.
+description: Описывает обнаружение сбоя, отработку отказа и восстановление службы в приложении Service Fabric Azure.
 author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 5306439184561e8dec8303a7b149f51d6c2f6e08
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75551868"
 ---
 # <a name="availability-of-service-fabric-services"></a>Доступность служб структуры служб

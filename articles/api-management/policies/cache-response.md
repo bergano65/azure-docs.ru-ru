@@ -1,5 +1,5 @@
 ---
-title: Пример политики управления API - Добавление возможностей в бэкэнд-сервис
+title: Пример политики управления API — добавление возможностей в серверную службу
 titleSuffix: Azure API Management
 description: Пример политики службы управления API Azure. Способы добавления функций в серверную службу. В статье показано, как принять имя вместо широты и долготы в API прогнозирования погоды.
 services: api-management
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: e286f77009a17870332ed5caf1c66c18dd21d020
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75442472"
 ---
 # <a name="add-capabilities-to-a-backend-service"></a>Добавление функций в серверную службу

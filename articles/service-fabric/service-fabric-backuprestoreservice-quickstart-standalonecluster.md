@@ -1,21 +1,21 @@
 ---
-title: Периодическое резервное копирование/восстановление в автономном сервисе Azure Fabric
+title: Периодическое резервное копирование и восстановление в автономной Service Fabric Azure
 description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
 author: hrushib
 ms.topic: conceptual
 ms.date: 5/24/2019
 ms.author: hrushib
 ms.openlocfilehash: 938cbbde9f53c52350ef64715f6c61c4aa961057
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75526249"
 ---
-# <a name="periodic-backup-and-restore-in-a-standalone-service-fabric"></a>Периодическое резервное копирование и восстановление в автономном сервисном fabric
+# <a name="periodic-backup-and-restore-in-a-standalone-service-fabric"></a>Периодическое резервное копирование и восстановление в автономной Service Fabric
 > [!div class="op_single_selector"]
 > * [Кластеры в Azure](service-fabric-backuprestoreservice-quickstart-azurecluster.md) 
-> * [Изолированные кластеры](service-fabric-backuprestoreservice-quickstart-standalonecluster.md)
+> * [Автономные кластеры](service-fabric-backuprestoreservice-quickstart-standalonecluster.md)
 > 
 
 Service Fabric — это платформа распределенных систем, которая упрощает разработку надежных распределенных облачных приложений на основе микрослужб и управление ими. Она позволяет запускать микрослужбы с отслеживанием и без отслеживания состояния. Службы с отслеживанием состояния могут поддерживать изменчивое, авторитетное состояние за пределами запроса и ответа или полной транзакции. Если служба с отслеживанием состояния отключена в течение длительного времени или теряет информацию вследствие аварии, может возникнуть необходимость восстановления до недавней резервной копии состояния для дальнейшего использования службы.
@@ -39,23 +39,23 @@ Service Fabric предоставляет набор API для использо
     - Хранилище Azure
     - Файловый ресурс (в локальной среде)
 - Перечисление резервных копий.
-- Триггер специального резервного копирования раздела
+- Активация нерегламентированного резервного копирования секции
 - Восстановление секции с помощью предыдущей резервной копии.
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Кластер Service Fabric с версией Fabric 6.4 или выше. См. дополнительные сведения о [скачивании требуемого пакета](service-fabric-cluster-creation-for-windows-server.md).
+* Service Fabric кластер с структурой версии 6,4 или более поздней. См. дополнительные сведения о [скачивании требуемого пакета](service-fabric-cluster-creation-for-windows-server.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Ознакомьтесь со [статьей](service-fabric-windows-cluster-x509-security.md) о том, как получить или создать самозаверяющий сертификат X.509.
 
 * Надежное приложения Service Fabric с отслеживанием состояния, созданное с помощью пакета SDK Service Fabric версии 3.0 или выше. Приложение, ориентированное на .Net Core 2.0, нужно создавать с помощью пакета SDK Service Fabric версии 3.1 или выше.
-* Установка Microsoft.ServiceFabric.Powershell.Http Модуль «В предварительном просмотре» для совершения вызовов конфигурации.
+* Установите модуль Microsoft. ServiceFabric. PowerShell. http [в предварительной версии] для выполнения вызовов конфигурации.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
 ```
 
-* Убедитесь, что кластер `Connect-SFCluster` подключен с помощью команды, прежде чем делать какой-либо запрос конфигурации с помощью модуля Microsoft.ServiceFabric.Powershell.Http.
+* Убедитесь, что кластер подключен с помощью `Connect-SFCluster` команды перед выполнением любого запроса конфигурации с помощью модуля Microsoft. ServiceFabric. PowerShell. http.
 
 ```powershell
 
@@ -122,14 +122,14 @@ Service Fabric предоставляет набор API для использо
 Для хранилища резервных копий создайте общий файловый ресурс и предоставьте ему права ReadWrite для всех компьютеров узла Service Fabric. Пример предполагает наличие папки с именем `BackupStore`, размещенной на `StorageServer`.
 
 
-#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Powershell с помощью Microsoft.ServiceFabric.Powershell.Http Модуль
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>PowerShell с использованием модуля Microsoft. ServiceFabric. PowerShell. http
 
 ```powershell
 
 New-SFBackupPolicy -Name 'BackupPolicy1' -AutoRestoreOnDataLoss $true -MaxIncrementalBackups 20 -FrequencyBased -Interval 00:15:00 -FileShare -Path '\\StorageServer\BackupStore' -Basic -RetentionDuration '10.00:00:00'
 
 ```
-#### <a name="rest-call-using-powershell"></a>Отдых Вызова с помощью Powershell
+#### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
 Выполните следующий сценарий PowerShell, чтобы вызвать требуемый REST API для создания политики.
 
@@ -163,27 +163,27 @@ $url = "http://localhost:19080/BackupRestore/BackupPolicies/$/Create?api-version
 Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/json'
 ```
 
-#### <a name="using-service-fabric-explorer"></a>Использование сервисной ткани Explorer
+#### <a name="using-service-fabric-explorer"></a>Использование Service Fabric Explorer
 
-1. В Service Fabric Explorer перейдите на вкладку Резервного копирования и выберите Действия > создать политику резервного копирования.
+1. В Service Fabric Explorer перейдите на вкладку резервные копии и выберите действия > создать политику архивации.
 
     ![Создать политику архивации][6]
 
-2. Заполните информацию. Для автономных кластеров следует выбрать FileShare.
+2. Заполните информацию. Для автономных кластеров следует выбрать общую папку.
 
-    ![Создание файла политики резервного копирования][7]
+    ![Создать общую папку политики архивации][7]
 
 ### <a name="enable-periodic-backup"></a>Включение периодического резервного копирования
 После определения политики резервного копирования, соответствующей требованиям защиты данных приложения, необходимо связать ее с приложением. В зависимости от требований политику резервного копирования можно связать с приложением, службой или секцией.
 
 
-#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Powershell с помощью Microsoft.ServiceFabric.Powershell.Http Модуль
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>PowerShell с использованием модуля Microsoft. ServiceFabric. PowerShell. http
 
 ```powershell
 Enable-SFApplicationBackup -ApplicationId 'SampleApp' -BackupPolicyName 'BackupPolicy1'
 ```
 
-#### <a name="rest-call-using-powershell"></a>Отдых Вызова с помощью Powershell
+#### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 Выполните следующий сценарий PowerShell для вызова необходимого REST API, чтобы связать политику резервного копирования `BackupPolicy1`, созданную на предыдущем шаге, с приложением `SampleApp`.
 
 ```powershell
@@ -197,15 +197,15 @@ $url = "http://localhost:19080/Applications/SampleApp/$/EnableBackup?api-version
 Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/json'
 ``` 
 
-#### <a name="using-service-fabric-explorer"></a>Использование сервисной ткани Explorer
+#### <a name="using-service-fabric-explorer"></a>Использование Service Fabric Explorer
 
-1. Выберите приложение и перейдите к действию. Нажмите Резервное копирование приложений включить/обновление.
+1. Выберите приложение и перейдите к действию. Щелкните Включить/обновить резервную копию приложения.
 
-    ![Включить резервное копирование приложений][3] 
+    ![Включить резервное копирование приложения][3] 
 
-2. Наконец, выберите нужную политику и нажмите кнопку Резервного копирования включить.
+2. Наконец, выберите нужную политику и щелкните включить резервное копирование.
 
-    ![Выберите политику][4]
+    ![Выбор политики][4]
 
 ### <a name="verify-that-periodic-backups-are-working"></a>Проверка работоспособности периодического резервного копирования
 
@@ -217,13 +217,13 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Резервные копии, связанные со всеми секциями, принадлежащими надежным службам с отслеживанием состояния и службам Reliable Actors приложения, можно перечислить с помощью API _GetBackups_. В зависимости от требований резервные копии можно перечислить для приложения, службы или секции.
 
-#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Powershell с помощью Microsoft.ServiceFabric.Powershell.Http Модуль
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>PowerShell с использованием модуля Microsoft. ServiceFabric. PowerShell. http
 
 ```powershell
     Get-SFApplicationBackupList -ApplicationId WordCount     
 ```
 
-#### <a name="rest-call-using-powershell"></a>Отдых Вызова с помощью Powershell
+#### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
 Выполните следующий сценарий PowerShell, чтобы вызвать API HTTP для перечисления резервных копий, созданных для всех секций внутри приложения `SampleApp`.
 
@@ -276,14 +276,14 @@ CreationTimeUtc         : 2018-04-01T20:09:44Z
 FailureError            : 
 ```
 
-#### <a name="using-service-fabric-explorer"></a>Использование сервисной ткани Explorer
+#### <a name="using-service-fabric-explorer"></a>Использование Service Fabric Explorer
 
-Для просмотра резервных ups в Service Fabric Explorer перейдите на раздел и выберите вкладку Backups.
+Чтобы просмотреть резервные копии в Service Fabric Explorer, перейдите к разделу и выберите вкладку резервные копии.
 
-![Перечисление резервных upups][5]
+![Перечислить резервные копии][5]
 
 ## <a name="limitation-caveats"></a>Ограничения и предупреждения
-- Сервис Fabric PowerShell cmdlets находятся в режиме предварительного просмотра.
+- Командлеты PowerShell Service Fabric находятся в режиме предварительного просмотра.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
 
 ## <a name="next-steps"></a>Дальнейшие действия

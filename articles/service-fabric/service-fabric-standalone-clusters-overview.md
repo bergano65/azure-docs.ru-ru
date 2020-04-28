@@ -1,15 +1,15 @@
 ---
-title: Обзор кластеров standalone Service Fabric
+title: Общие сведения о автономных кластерах Service Fabric
 description: Кластеры Service Fabric выполняются в Windows Server и Linux, позволяя разворачивать и размещать приложения Service Fabric везде, где можно запустить Windows Server или Linux.
 author: dkkapur
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: dekapur
 ms.openlocfilehash: e8912ef5bc0fd6009443b736031fc9af57ab6c5b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75465646"
 ---
 # <a name="overview-of-service-fabric-standalone-clusters"></a>Общие сведения об изолированных кластерах Service Fabric
@@ -59,7 +59,7 @@ Service Fabric также поддерживает управление дост
 
 * Windows Server 2012 R2
 * Windows Server 2016 
-* Windows Server 2019
+* Windows Server 2019
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со статьями [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md), [Масштабирование автономных кластеров Service Fabric](service-fabric-cluster-scaling-standalone.md) и [Обновление изолированного кластера Service Fabric](service-fabric-cluster-upgrade-standalone.md), касающихся изолированных кластеров.

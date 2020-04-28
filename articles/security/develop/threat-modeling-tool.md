@@ -1,6 +1,6 @@
 ---
-title: Обзор инструмента моделирования угроз Майкрософт - Azure
-description: Обзор инструмента моделирования угроз Майкрософт, содержащего информацию о начале работы с инструментом, включая процесс моделирования угроз.
+title: Обзор Microsoft Threat Modeling Tool — Azure
+description: Обзор Microsoft Threat Modeling Tool, содержащий сведения о начале работы с инструментом, включая процесс моделирования угроз.
 author: jegeib
 ms.author: jegeib
 ms.service: security
@@ -8,10 +8,10 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 02/16/2017
 ms.openlocfilehash: 0d800102b6f6ff77944a2b625d3bcecef69c1ee9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75548748"
 ---
 # <a name="microsoft-threat-modeling-tool"></a>Средство моделирования угроз Microsoft

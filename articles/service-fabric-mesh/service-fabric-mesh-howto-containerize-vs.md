@@ -1,15 +1,15 @@
 ---
 title: Контейнеризация существующего приложения .NET для сетки Service Fabric
-description: Добавьте поддержку контейнерной организации Service Fabric Mesh в ASP.NET и консольных проектов, которые используют полную платформу .NET.
+description: Добавление Service Fabric поддержки оркестрации контейнера сети в проекты ASP.NET и консоли, использующие полную версию .NET Framework.
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/08/2018
 ms.topic: conceptual
 ms.openlocfilehash: d67ea5bb7df5910ec87e69adf3c414c303bf0182
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75462047"
 ---
 # <a name="containerize-an-existing-net-app-for-service-fabric-mesh"></a>Контейнеризация существующего приложения .NET для сетки Service Fabric
@@ -23,7 +23,7 @@ ms.locfileid: "75462047"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) до начала.
+* Если у вас нет подписки Azure, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 * Убедитесь в том, что вы [настроили среду разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md). Это подразумевает также установку среды выполнения Service Fabric, пакета SDK, Docker, Visual Studio 2017 и создание локального кластера.
 
@@ -65,6 +65,6 @@ git clone https://github.com/MikkelHegn/ContainersSFLab.git
 
 Теперь можно опубликовать приложение в сетку Azure Service Fabric.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как опубликовать приложение в сетку Service Fabric: [Tutorial — Deploy a Service Fabric Mesh application](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md) (Руководство по развертыванию приложения сетки Service Fabric)

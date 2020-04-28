@@ -1,6 +1,6 @@
 ---
 title: Массовая загрузка данных в Apache Phoenix с помощью psql в Azure HDInsight
-description: Используйте инструмент psql для загрузки данных о массовой нагрузке в таблицы Apache Phoenix в Azure HDInsight
+description: Использование средства psql для загрузки данных с массовыми загрузками в Apache Phoenix таблицы в Azure HDInsight
 author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
 ms.openlocfilehash: 845c4a62aee04a8acdc645ba4c41f1f5496537c3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75552616"
 ---
 # <a name="bulk-load-data-into-apache-phoenix-using-psql"></a>Массовая загрузка данных в Apache Phoenix с помощью psql
@@ -27,13 +27,13 @@ ms.locfileid: "75552616"
 
 Массовая загрузка с помощью MapReduce применяется для данных существенно большего объема, в том числе в промышленных средах, поскольку в MapReduce используется многопоточная схема работы.
 
-Прежде чем загружать данные, убедитесь, что Phoenix включен и для запросов правильно настроены параметры времени ожидания.  Получите доступ к панели мониторинга HDInsight [Apache Ambari,](https://ambari.apache.org/) выберите HBase, а затем вкладку Configuration.  Прокрутите вниз, чтобы убедиться, что Apache Phoenix настроен на то, чтобы `enabled` показать:
+Прежде чем загружать данные, убедитесь, что Phoenix включен и для запросов правильно настроены параметры времени ожидания.  Откройте панель мониторинга [Apache Ambari](https://ambari.apache.org/) для кластера HDInsight, выберите HBase и перейдите на вкладку Конфигурация.  Прокрутите вниз, чтобы убедиться, что Apache Phoenix `enabled` имеет значение, как показано ниже.
 
 ![Параметры кластера HDInsight для Apache Phoenix](./media/apache-hbase-phoenix-psql/apache-ambari-phoenix.png)
 
 ### <a name="use-psql-to-bulk-load-tables"></a>Использование `psql` для массовой загрузки таблиц
 
-1. Создайте файл `createCustomersTable.sql`под названием и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
+1. Создайте файл с именем `createCustomersTable.sql`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```sql
     CREATE TABLE Customers (
@@ -44,13 +44,13 @@ ms.locfileid: "75552616"
         Country varchar);
     ```
 
-1. Создайте файл `listCustomers.sql`под названием и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
+1. Создайте файл с именем `listCustomers.sql`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```sql
     SELECT * from Customers;
     ```
 
-1. Создайте файл `customers.csv`под названием и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
+1. Создайте файл с именем `customers.csv`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```txt
     1,Samantha,260000.0,18,US
@@ -58,7 +58,7 @@ ms.locfileid: "75552616"
     3,Anton,550150.0,42,Norway
     ```
 
-1. Создайте файл `customers2.csv`под названием и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
+1. Создайте файл с именем `customers2.csv`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```txt
     4,Nicolle,180000.0,22,US
@@ -66,31 +66,31 @@ ms.locfileid: "75552616"
     6,Ben,45000.0,32,Poland
     ```
 
-1. Откройте запрос команды и измените каталог к местоположению вновь созданных файлов. Замените CLUSTERNAME, ниже, с фактическим названием вашего кластера HBase. Затем выполните код, чтобы загрузить файлы в головной нод кластера:
+1. Откройте командную строку и перейдите в каталог, где находятся только что созданные файлы. Замените ИМЯ_КЛАСТЕРА, ниже, фактическим именем кластера HBase. Затем выполните код, чтобы передать файлы в головного узла кластера:
 
     ```cmd
     scp customers.csv customers2.csv createCustomersTable.sql listCustomers.sql sshuser@CLUSTERNAME-ssh.azurehdinsight.net:/tmp
     ```
 
-1. Используйте [команду ssh](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Отоверьте приведенную ниже команду, заменив CLUSTERNAME на имя кластера, а затем введите команду:
+1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
-1. От сеанса ssh измените каталог на расположение инструмента **psql.** Выполните команду ниже:
+1. В сеансе SSH измените каталог на расположение средства **psql** . Выполните следующую команду:
 
     ```bash
     cd /usr/hdp/current/phoenix-client/bin
     ```
 
-1. Массовая загрузка данных. Приведенный ниже код создаст таблицу **Клиентов,** а затем загружает данные.
+1. Выполнить небольшую загрузку данных. Приведенный ниже код создаст таблицу **Customers** , а затем отправит данные.
 
     ```bash
     python psql.py /tmp/createCustomersTable.sql /tmp/customers.csv
     ```
 
-    После `psql` завершения операции следует увидеть сообщение, аналогичное:
+    После завершения `psql` операции вы увидите примерно следующее сообщение:
 
     ```output
     csv columns from database.
@@ -98,15 +98,15 @@ ms.locfileid: "75552616"
     Time: 0.081 sec(s)
     ```
 
-1. Можно продолжать использовать `psql` для просмотра содержимого таблицы Заказчиков. Выполните код ниже:
+1. Можно продолжить использовать `psql` для просмотра содержимого таблицы Customers. Выполните приведенный ниже код.
 
     ```bash
     python psql.py /tmp/listCustomers.sql
     ```
 
-    Кроме того, для запроса данных можно использовать [оболочку HBase](./query-hbase-with-hbase-shell.md)или [Apache цеппелин.](./apache-hbase-phoenix-zeppelin.md)
+    Кроме того, для запроса данных можно использовать [оболочку HBase](./query-hbase-with-hbase-shell.md)или [Apache Zeppelin](./apache-hbase-phoenix-zeppelin.md) .
 
-1. Загрузите дополнительные данные. Теперь, когда таблица уже существует, команда определяет таблицу. Выполните команду ниже:
+1. Отправьте дополнительные данные. Теперь, когда таблица уже существует, команда указывает таблицу. Выполните следующую команду:
 
     ```bash
     python psql.py -t CUSTOMERS /tmp/customers2.csv
@@ -116,9 +116,9 @@ ms.locfileid: "75552616"
 
 Чтобы повысить пропускную способность и распределить нагрузку в кластере, используйте средство загрузки MapReduce. Этот загрузчик преобразует все данные в формат HFiles и передает созданные файлы HFiles в HBase.
 
-1. Этот раздел продолжается сеансом ssh и объектами, созданными ранее. Создайте таблицу **клиентов** и файл **customers.csv** по мере необходимости, используя приведенные выше шаги. При необходимости восстановите соединение ssh.
+1. Этот раздел продолжится с помощью сеанса SSH и созданных ранее объектов. При необходимости создайте таблицу **Customers** и файл **Customers. csv** , выполнив действия, описанные выше. При необходимости восстановите SSH-подключение.
 
-1. Truncate содержимое таблицы **Заказчиков.** Из открытой сессии ssh выполните команды ниже:
+1. Усечение содержимого таблицы **Customers** . В открытом сеансе SSH выполните приведенные ниже команды.
 
     ```bash
     hbase shell
@@ -126,7 +126,7 @@ ms.locfileid: "75552616"
     exit
     ```
 
-1. Копируйте `customers.csv` файл из головного нода в Хранилище Azure.
+1. Скопируйте `customers.csv` файл из головного узла в службу хранилища Azure.
 
     ```bash
     hdfs dfs -put /tmp/customers.csv wasbs:///tmp/customers.csv
@@ -144,7 +144,7 @@ ms.locfileid: "75552616"
     HADOOP_CLASSPATH=/usr/hdp/current/hbase-client/lib/hbase-protocol.jar:/etc/hbase/conf hadoop jar phoenix-client.jar org.apache.phoenix.mapreduce.CsvBulkLoadTool --table Customers --input /tmp/customers.csv
     ```
 
-    Как только загрузка завершается, вы должны увидеть сообщение, аналогичное следующим образом:
+    После завершения отправки вы увидите примерно следующее сообщение:
 
     ```output
     19/12/18 18:30:57 INFO client.ConnectionManager$HConnectionImplementation: Closing master protocol: MasterService
@@ -165,7 +165,7 @@ ms.locfileid: "75552616"
     org.apache.phoenix.mapreduce.CsvBulkLoadTool --table Customers --input adl://hdinsightconf1.azuredatalakestore.net:443/hbase1/data/hbase/temp/input/customers.csv –zookeeper ZookeeperQuorum:2181:/hbase-unsecure --output  adl://hdinsightconf1.azuredatalakestore.net:443/hbase1/data/hbase/output1
     ```
 
-1. Для запроса и просмотра данных можно использовать **psql,** как описано ранее. Вы также можете использовать [hBase оболочки](./query-hbase-with-hbase-shell.md), или [Apache Цеппелин](./apache-hbase-phoenix-zeppelin.md).
+1. Для запроса и просмотра данных можно использовать **psql** , как описано выше. Можно также использовать [оболочку HBase](./query-hbase-with-hbase-shell.md)или [Apache Zeppelin](./apache-hbase-phoenix-zeppelin.md).
 
 ## <a name="recommendations"></a>Рекомендации
 
@@ -186,4 +186,4 @@ ms.locfileid: "75552616"
 * [Массовая загрузка данных с помощью Apache Phoenix](https://phoenix.apache.org/bulk_dataload.html)
 * [Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight](../hbase/apache-hbase-query-with-phoenix.md)
 * [Таблицы случайных данных](https://phoenix.apache.org/salted.html)
-* [Апач Феникс Грамматика](https://phoenix.apache.org/language/index.html)
+* [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html)

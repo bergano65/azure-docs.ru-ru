@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
 ms.openlocfilehash: 3fd0a8bf6bacfec5e2be6dfa52ca51e46c7025f7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75443585"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Цикл перезагрузки Windows на виртуальной машине Azure
@@ -28,7 +28,7 @@ ms.locfileid: "75443585"
 
 ![Начальный экран 1](./media/troubleshoot-reboot-loop/start-screen-1.png)
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Цикл перезагрузки возникает из-за перечисленных ниже причин.
 
@@ -62,7 +62,7 @@ ms.locfileid: "75443585"
 
 4. Откройте редактор реестра Windows (regedit) на виртуальной машине спасения.
 
-5. Выберите **HKEY_LOCAL_MACHINE** ключ, а затем выберите **File** > **Load Hive** из меню.
+5. Выберите ключ **HKEY_LOCAL_MACHINE** , а затем в меню выберите **файл** > **Загрузить куст** .
 
 6. Перейдите к файлу системы в папке **\Windows\System32\config**.
 
@@ -86,7 +86,7 @@ ms.locfileid: "75443585"
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupInquirySvc\ErrorControl`
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupPluginSvc\ErrorControl`
 
-13. Выберите клавишу **BROKENSYSTEM,** а затем выберите **Файл** > **Выгрузить Hive** из меню.
+13. Выберите ключ **BROKENSYSTEM** , а затем в меню выберите **файл** > **Выгрузить куст Hive** .
 
 14. Отключите диск операционной системы от виртуальной машины для устранения неполадок.
 

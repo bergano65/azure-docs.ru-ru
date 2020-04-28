@@ -1,15 +1,15 @@
 ---
-title: Настройте автономный кластер Azure Service Fabric
+title: Настройка автономного кластера Azure Service Fabric
 description: Узнайте, как настраивать изолированный или локальный кластер Service Fabric.
 author: dkkapur
 ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: dekapur
 ms.openlocfilehash: 0f9b625dfbe9c39bea7771dcc5fd58805ce19811
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75458377"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
@@ -19,9 +19,9 @@ ms.locfileid: "75458377"
 
 * В примерах ClusterConfig.Unsecure.DevCluster.json и ClusterConfig.Unsecure.MultiMachine.json показано, как создать незащищенный тестовый или рабочий кластер соответственно.
 
-* ClusterConfig.Windows.DevCluster.json и ClusterConfig.Windows.MultiMachine.json показывают, как создавать тестовые или производственные кластеры, которые защищены с помощью [безопасности Windows.](service-fabric-windows-cluster-windows-security.md)
+* ClusterConfig. Windows. DevCluster. JSON и ClusterConfig. Windows. remachine. JSON демонстрируют создание тестовых или рабочих кластеров, защищенных с помощью [системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
-* ClusterConfig.X509.DevCluster.json и ClusterConfig.X509.MultiMachine.json показывают, как создавать тестовые или производственные кластеры, которые обеспечиваются с помощью [безопасности на основе сертификатов X509.](service-fabric-windows-cluster-x509-security.md)
+* ClusterConfig. X509. DevCluster. JSON и ClusterConfig. X509. remachine. JSON демонстрируют создание тестовых или рабочих кластеров, защищенных с помощью [безопасности на основе сертификата X509](service-fabric-windows-cluster-x509-security.md).
 
 Теперь рассмотрим различные разделы файла ClusterConfig.json.
 
@@ -113,7 +113,7 @@ ms.locfileid: "75458377"
 }
 ```
 
-Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Они могут быть установлены либо *X509* для безопасности на основе сертификатов или *Windows* для безопасности на основе Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
+Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Для них можно задать значение *X509* для безопасности на основе сертификатов или *Windows* для обеспечения безопасности на основе Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
 ### <a name="node-types"></a>Типы узлов
 В разделе nodeTypes описывается тип узлов в кластере. Для кластера нужно указать по крайней мере один тип узла, как показано в следующем фрагменте кода: 
@@ -193,13 +193,13 @@ name — понятное имя этого конкретного типа уз
     ]
 }
 ```
-Все доступные дополнительные функции можно увидеть в [справке Service Fabric REST API.](https://docs.microsoft.com/rest/api/servicefabric/sfrp-model-addonfeatures)
+Все доступные надстройки можно просмотреть в [справочнике по Service Fabric REST API](https://docs.microsoft.com/rest/api/servicefabric/sfrp-model-addonfeatures).
 
 ### <a name="container-support"></a>Поддержка контейнеров
 Чтобы включить в изолированных кластерах поддержку контейнеров для контейнеров Windows Server и Hyper-V, необходимо включить компонент надстройки DnsService.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-После того, как у вас есть полный файл *ClusterConfig.json,* настроенный в соответствии с автономной кластерной установкой, можно развернуть кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
+После создания полного файла *ClusterConfig. JSON* , настроенного в соответствии с настройками автономного кластера, можно развернуть кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
 
 Если у вас развернут изолированный кластер, вы также можете [обновить его конфигурацию](service-fabric-cluster-config-upgrade-windows-server.md). 
 

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 8/10/2017
 ms.author: maburlik
 ms.openlocfilehash: 1bb73fa69717f067139067f127a0d50af4878d6c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75451847"
 ---
 # <a name="contents-of-service-fabric-standalone-package-for-windows-server"></a>Содержимое изолированного пакета Service Fabric для Windows Server
@@ -44,7 +44,7 @@ ms.locfileid: "75451847"
 | ClusterConfig.gMSA.Windows.MultiMachine.json |Пример файла конфигурации кластера, содержащего все параметры защищенного кластера разработки с несколькими виртуальными машинами или компьютерами, в том числе сведения о каждом узле, который находится в защищенном кластере. Кластер защищается с помощью [групповых управляемых учетных записей служб](https://technet.microsoft.com/library/jj128431(v=ws.11).aspx). |
 
 ## <a name="cluster-configuration-samples"></a>Примеры конфигурации кластера
-Последние версии шаблонов конфигурации кластеров можно найти на странице GitHub: [Автономные образцы конфигурации кластера.](https://github.com/Azure-Samples/service-fabric-dotnet-standalone-cluster-configuration/tree/master/Samples)
+Последние версии шаблонов конфигурации кластера можно найти на странице GitHub [примеры конфигурации изолированного кластера](https://github.com/Azure-Samples/service-fabric-dotnet-standalone-cluster-configuration/tree/master/Samples).
 
 ## <a name="independent-runtime-package"></a>Независимый пакет среды выполнения
 Последняя версия пакета среды выполнения автоматически загружается во время развертывания кластера по [ссылке для скачивания среды выполнения Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?linkid=839354).

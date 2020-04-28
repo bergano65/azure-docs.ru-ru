@@ -1,5 +1,5 @@
 ---
-title: Пример политики управления API - Запрос маршрута на основе размера тела сообщений
+title: Пример политики управления API — запрос маршрута на основе размера текста сообщения
 titleSuffix: Azure API Management
 description: Пример политики службы управления API Azure. Маршрутизация запроса на основе размера его текста.
 services: api-management
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 8cee2c13386a076f0321619754468cfc1e9fb31c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75442426"
 ---
 # <a name="route-the-request-based-on-the-size-of-its-body"></a>Маршрутизация запроса на основе размера его текста

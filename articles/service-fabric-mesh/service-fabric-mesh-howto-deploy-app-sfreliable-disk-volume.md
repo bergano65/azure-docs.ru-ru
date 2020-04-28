@@ -1,5 +1,5 @@
 ---
-title: Сервис Ткань Надежный объем диска с обслуживанием Ткань сетки
+title: Service Fabric надежного тома диска с Service Fabricной сеткой
 description: Узнайте, как сохранить состояние в приложении "Сетка Azure Service Fabric" путем подключения тома надежного диска Service Fabric в контейнере с помощью Azure CLI.
 author: ashishnegi
 ms.topic: conceptual
@@ -7,10 +7,10 @@ ms.date: 12/03/2018
 ms.author: asnegi
 ms.custom: mvc, devcenter
 ms.openlocfilehash: f26fe70afe7d9e2872f06ac6da7143556278b1b0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75497965"
 ---
 # <a name="mount-highly-available-service-fabric-reliable-disk-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric" 

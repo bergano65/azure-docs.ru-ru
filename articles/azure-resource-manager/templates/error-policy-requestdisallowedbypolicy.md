@@ -1,15 +1,15 @@
 ---
 title: Ошибка RequestDisallowedByPolicy.
-description: Описывает причину ошибки RequestDisallowedByPolicy при развертывании ресурсов с помощью менеджера ресурсов Azure.
+description: Описывает причину ошибки RequestDisallowedByPolicy при развертывании ресурсов с помощью Azure Resource Manager.
 author: genlin
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 41581ba48da2f2e717c5abf2a749f8fd2b86ac06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75477672"
 ---
 # <a name="requestdisallowedbypolicy-error-with-azure-resource-policy"></a>Ошибка RequestDisallowedByPolicy с политикой ресурсов Azure
@@ -59,4 +59,4 @@ az policy definition show --name regionPolicyAssignment
 Дополнительные сведения см. в следующих статьях:
 
 - [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)
-- [Создание и управление политиками для обеспечения соответствия требованиям](../../governance/policy/tutorials/create-and-manage.md)
+- [Создание политик и управление ими для обеспечения соответствия](../../governance/policy/tutorials/create-and-manage.md)

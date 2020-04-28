@@ -1,20 +1,20 @@
 ---
-title: Создание службы на основе актеров на базе службы Azure Fabric
+title: Создание службы на основе субъектов в Azure Service Fabric
 description: Узнайте, как создать, выполнить отладку и развернуть первую службу на основе субъекта на C#, используя Reliable Actors в Service Fabric.
 author: vturecek
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: vturecek
 ms.openlocfilehash: a6e4fb48653572139463738c82de632ff7d55074
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75466250"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
 > [!div class="op_single_selector"]
-> * [C на Windows](service-fabric-reliable-actors-get-started.md)
+> * [C# в Windows](service-fabric-reliable-actors-get-started.md)
 > * [Java в Linux](service-fabric-reliable-actors-get-started-java.md)
 
 В этой статье описывается создание и отладка простого приложения Reliable Actor в Visual Studio. Дополнительные сведения о Reliable Actors см. в статье [Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md).
@@ -25,11 +25,11 @@ ms.locfileid: "75466250"
 
 ## <a name="create-a-new-project-in-visual-studio"></a>Создание проекта в Visual Studio
 
-Запуск Visual Studio 2019 или позже в качестве администратора, а затем создать новый проект **приложения Service Fabric Application:**
+Запустите Visual Studio 2019 или более поздней версии с правами администратора, а затем создайте новый проект **приложения Service Fabric** .
 
 ![Средства Service Fabric для Visual Studio — новый проект][1]
 
-В следующем диалоговом окне выберите **службу актера** под **.NET Core 2.0** и введите имя службы.
+В следующем диалоговом окне выберите **службу субъектов** в разделе **.NET Core 2,0** и введите имя службы.
 
 ![Шаблоны проекта Service Fabric][5]
 
@@ -86,7 +86,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
 Создайте простое консольное приложение для вызова службы субъекта.
 
-1. Нажмите на решение в Solution Explorer > **добавить** > **новый проект ...**.
+1. Щелкните решение правой кнопкой мыши в Обозреватель решений > **Добавить** > **Новый проект..**..
 
 2. В разделе типов проектов **.NET Core** выберите **Консольное приложение (.NET Core)**.  Назовите проект *ActorClient*.
     
@@ -99,7 +99,7 @@ internal class HelloWorld : Actor, IHelloWorld
     
     ![Свойства сборки][8]
 
-4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Нажмите **Инструменты** > **NuGet пакет менеджер** > **менеджер консоли**.  В консоли диспетчера пакетов введите следующую команду.
+4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Щелкните **Сервис** > диспетчер**пакетов** > NuGet**консоль диспетчера пакетов**.  В консоли диспетчера пакетов введите следующую команду.
     
     ```powershell
     Install-Package Microsoft.ServiceFabric.Actors -IncludePrerelease -ProjectName ActorClient
@@ -107,7 +107,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
     Пакет NuGet и все его зависимости будут установлены в проект ActorClient.
 
-5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient, право-клик **зависимостей,** а затем нажмите **Добавить ссылку ...**.  Выберите **проекты > решение** (если еще не выбрано), а затем отметьте флажок рядом с **HelloWorld.Interfaces.**  Нажмите кнопку **ОК**.
+5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши элемент **зависимости** и выберите команду **Добавить ссылку...**.  Выберите **проекты > решение** (если оно еще не выбрано), а затем установите флажок рядом с **HelloWorld. interfaces**.  Нажмите кнопку **ОК**.
     
     ![Диалоговое окно "Добавление ссылки"][7]
 

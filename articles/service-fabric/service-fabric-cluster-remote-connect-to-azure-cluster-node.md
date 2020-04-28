@@ -1,13 +1,13 @@
 ---
-title: Удаленное подключение к кластеру Azure Service Fabric
+title: Удаленное подключение к узлу кластера Azure Service Fabric
 description: Узнайте, как установить удаленное подключение к экземпляру масштабируемого набора (узел кластера Service Fabric).
 ms.topic: conceptual
 ms.date: 03/23/2018
 ms.openlocfilehash: c7ca4f0d5dce1b19837a44d5c9749f3e1293c6b8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75458316"
 ---
 # <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Удаленное подключение к экземпляру масштабируемого набора виртуальных машин или узлу кластера
@@ -19,7 +19,7 @@ ms.locfileid: "75458316"
 
     Обычно у каждого типа узла, определенного в кластере, есть собственные виртуальные IP-адреса и выделенная подсистема балансировки нагрузки. По умолчанию имя подсистемы балансировки нагрузки для типа узла имеет следующий формат: *LB-{имя кластера}-{тип узла}*. Например, *LB-mycluster-FrontEnd*. 
     
-    На странице балансистора нагрузки на портале Azure выберите**правила Входящие NAT** **настройки:** >  
+    На странице подсистемы балансировки нагрузки в портал Azure выберите **Параметры** > **правила NAT для входящего трафика**. 
 
     ![Правила NAT для входящих подключений подсистемы балансировки нагрузки](./media/service-fabric-cluster-remote-connect-to-azure-cluster-node/lb-window.png)
 
@@ -52,7 +52,7 @@ ms.locfileid: "75458316"
 
 На следующем этапе ознакомьтесь с указанными ниже статьями:
 * Дополнительные сведения о возможности развертывания в любом месте и сравнении с кластерами под управлением Azure см. в статье [Создание кластеров Service Fabric в Windows Server или Linux](service-fabric-deploy-anywhere.md).
-* Узнайте о [безопасности кластеров.](service-fabric-cluster-security.md)
+* Сведения о [безопасности кластера](service-fabric-cluster-security.md).
 * [Обновление значений диапазона портов RDP](./scripts/service-fabric-powershell-change-rdp-port-range.md) в кластере виртуальных машин после развертывания
 * [Обновление имени пользователя и пароля администратора](./scripts/service-fabric-powershell-change-rdp-user-and-pw.md) для виртуальных машин кластера
 

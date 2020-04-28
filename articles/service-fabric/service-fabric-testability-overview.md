@@ -1,15 +1,15 @@
 ---
-title: Обзор службы анализа неисправностей
+title: Обзор службы анализа сбоев
 description: В этой статье описывается служба анализа сбоев в Service Fabric, используемая для вызова ошибок и запуска сценариев тестирования для служб.
 author: anmolah
 ms.topic: conceptual
 ms.date: 06/15/2017
 ms.author: anmola
 ms.openlocfilehash: d5c770a4d823ebe9b2700b081c407c54dd1d18a3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75465572"
 ---
 # <a name="introduction-to-the-fault-analysis-service"></a>Общие сведения о службе анализа сбоев
@@ -79,7 +79,7 @@ ms.locfileid: "75465572"
 Аналогичный механизм используется и в платформе Service Fabric (только мы имеем дело с другим масштабом сбоев и другими средами). Это позволяет намного быстрее внедрить код в конвейере развертывания и проверить службы в условиях реальных нагрузок.
 
 ## <a name="using-the-fault-analysis-service"></a>Использование службы анализа сбоев
-**C #**
+**C#**
 
 Компоненты службы анализа сбоев находятся в пространстве имен System.Fabric в пакете Microsoft.ServiceFabric NuGet. Чтобы использовать функции службы анализа сбоев, включите пакет NuGet в качестве ссылки в свой проект.
 

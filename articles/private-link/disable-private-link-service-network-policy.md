@@ -1,6 +1,6 @@
 ---
-title: 'Отключить сетевые политики для IP-адреса источника службы Azure Private Link '
-description: Узнайте, как отключить сетевые политики для частной ссылки Azure
+title: 'Отключение сетевых политик для IP-адреса источника службы частной связи Azure '
+description: Узнайте, как отключить политики сети для частной связи Azure
 services: private-link
 author: malopMSFT
 ms.service: private-link
@@ -8,22 +8,22 @@ ms.topic: article
 ms.date: 09/16/2019
 ms.author: allensu
 ms.openlocfilehash: 4c6bd64d141341e0b7fa5641e04320a95d7951bb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75453008"
 ---
-# <a name="disable-network-policies-for-private-link-service-source-ip"></a>Отключить сетевые политики для IP-адреса источника услуг Private Link
+# <a name="disable-network-policies-for-private-link-service-source-ip"></a>Отключить политики сети для исходного IP-адреса службы частной связи
 
-Для выбора исходного IP-адреса для службы Private Link `privateLinkServiceNetworkPolicies` в подсети требуется явная настройка отработки. Эта настройка применима только для конкретного частного IP-адреса, выбранного вами в качестве исходного IP-адреса службы Private Link. Для других ресурсов в подсети доступ контролируется на основе определения правил безопасности Network Security Groups (NSG). 
+Чтобы выбрать исходный IP-адрес для службы частной связи, в подсети требуется явный параметр `privateLinkServiceNetworkPolicies` отключения. Этот параметр применим только к конкретному частному IP-адресу, выбранному в качестве исходного IP-адреса службы частной связи. Для других ресурсов в подсети управление доступом осуществляется на основе определения правил безопасности группы безопасности сети (NSG). 
  
-При использовании любого клиента Azure (PowerShell, CLI или шаблоны) требуется дополнительный шаг для изменения этого свойства. Отключить политику можно с помощью облачной оболочки с портала Azure или локальных установок Azure PowerShell, Azure CLI, или использовать шаблоны управления ресурсами Azure.  
+При использовании любого клиента Azure (PowerShell, CLI или шаблонов) для изменения этого свойства требуется дополнительный шаг. Вы можете отключить политику с помощью Cloud Shell из портал Azure или локальной установки Azure PowerShell, Azure CLI или использовать шаблоны Azure Resource Manager.  
  
-Следуйте ниже, чтобы отключить частные политики сети услуг ссылка для виртуальной сети под названием *myVirtualNetwork* с подсетью *по умолчанию,* размещенной в группе ресурсов под названием *myResourceGroup*. 
+Выполните следующие действия, чтобы отключить сетевые политики службы частной связи для виртуальной сети с именем *myVirtualNetwork* и подсетью *по умолчанию* , размещенной в группе ресурсов с именем *myResourceGroup*. 
 
 ## <a name="using-azure-powershell"></a>Использование Azure PowerShell
-В этом разделе описывается, как отключить политики частной конечных точек с помощью Azure PowerShell.
+В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure PowerShell.
 
 ```azurepowershell
 $virtualNetwork= Get-AzVirtualNetwork `
@@ -35,7 +35,7 @@ $virtualNetwork= Get-AzVirtualNetwork `
 $virtualNetwork | Set-AzVirtualNetwork 
 ```
 ## <a name="using-azure-cli"></a>Использование Azure CLI
-В этом разделе описывается, как отключить политики частной конечных точек с помощью политикAzура CLI.
+В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure CLI.
 ```azurecli
 az network vnet subnet update \ 
   --name default \ 
@@ -44,7 +44,7 @@ az network vnet subnet update \
   --disable-private-link-service-network-policies true 
 ```
 ## <a name="using-a-template"></a>Использование шаблона
-В этом разделе описывается, как отключить политики частной конечных точек подсети с помощью шаблона менеджера ресурсов Azure.
+В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью шаблона Azure Resource Manager.
 ```json
 { 
     "name": "myVirtualNetwork", 
@@ -71,5 +71,5 @@ az network vnet subnet update \
  
 ```
 ## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте больше о [частной точке зрения Azure](private-endpoint-overview.md)
+- Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
  

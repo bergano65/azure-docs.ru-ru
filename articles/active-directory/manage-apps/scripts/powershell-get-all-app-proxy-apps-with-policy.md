@@ -1,6 +1,6 @@
 ---
-title: Образец PowerShell - Перечислите все приложения Прокси-приложений с политикой
-description: Пример PowerShell, в которых перечислены все прокси-приложения Azure Active Directory (Azure AD) приложения для приложений в каталоге, которые имеют политику маркеров на протяжении всей жизни.
+title: Пример PowerShell. Вывод списка всех приложений прокси приложения с политикой
+description: Пример PowerShell, в котором перечислены все приложения прокси приложения Azure Active Directory (Azure AD) в каталоге, имеющие политику токенов времени существования.
 services: active-directory
 author: msmimart
 manager: CelesteDG
@@ -13,15 +13,15 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c2ad7b769dc890917e5364fe57582acdfe16acac
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75482131"
 ---
-# <a name="get-all-application-proxy-apps-with-a-token-lifetime-policy"></a>Получите все приложения App Proxy с политикой срока службы маркеров
+# <a name="get-all-application-proxy-apps-with-a-token-lifetime-policy"></a>Получение всех приложений прокси приложения с помощью политики времени жизни маркеров
 
-В этом примере сценария PowerShell перечислены все прокси-приложения Azure Active Directory (Azure AD) в каталоге с политикой жизни маркеров и перечислены сведения о политике.
+В этом примере сценария PowerShell перечислены все приложения прокси приложения Azure Active Directory (Azure AD), которые имеют политику времени существования маркера, и перечислены сведения о политике.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
@@ -29,7 +29,7 @@ ms.locfileid: "75482131"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Этот образец требует [AzureAD V2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
+Для работы с этим образцом требуется [AzureAD v2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -37,16 +37,16 @@ ms.locfileid: "75482131"
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
-|[Get-AzureADServicePrincipal](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Получает директора службы. |
-|[Get-AzureADApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Получает приложение Azure AD. |
-|[Get-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview) | Получает политику в Azure AD. |
-|[Get-AzureADServicePrincipalPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview) | Получает политику основного обслуживания в Azure AD. |
+|[Get-AzureADServicePrincipal](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Возвращает субъект-службу. |
+|[Get-AzureADApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Возвращает приложение Azure AD. |
+|[Get-AzureADPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview) | Возвращает политику в Azure AD. |
+|[Get-AzureADServicePrincipalPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview) | Возвращает политику субъекта-службы в Azure AD. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для получения дополнительной информации о модуле Azure AD PowerShell смотрите [обзор модуля Azure AD PowerShell.](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0)
+Дополнительные сведения о модуле Azure AD PowerShell см. в статье [Общие сведения о модуле Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 
-Для других примеров PowerShell [Azure AD PowerShell examples for Azure AD Application Proxy](../application-proxy-powershell-samples.md)для приложения Proxy см.
+Другие примеры PowerShell для прокси приложения см. в статье [примеры Azure AD PowerShell для AD application proxy Azure](../application-proxy-powershell-samples.md).

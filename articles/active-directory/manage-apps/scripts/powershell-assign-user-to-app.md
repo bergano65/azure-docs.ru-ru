@@ -1,6 +1,6 @@
 ---
-title: Образец PowerShell - Назначить пользователя приложению App Proxy
-description: Пример PowerShell, который присваивает пользователю приложение Azure Active Directory (Azure AD).
+title: Пример PowerShell. Назначение пользователя для приложения прокси приложения
+description: Пример PowerShell, который назначает пользователя для приложения прокси приложения Azure Active Directory (Azure AD).
 services: active-directory
 author: msmimart
 manager: CelesteDG
@@ -13,15 +13,15 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 42667ebdfc37b679d56421e3a82d4a6aaaed8fdf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75483340"
 ---
-# <a name="assign-a-user-to-a-specific-azure-ad-application-proxy-application"></a>Назначить пользователю определенное приложение Azure AD-приложение Proxy
+# <a name="assign-a-user-to-a-specific-azure-ad-application-proxy-application"></a>Назначение пользователя конкретному приложению Azure AD Application Proxy
 
-Этот пример скрипта PowerShell позволяет назначить пользователя в определенное приложение Azure AD Application Proxy.
+Этот пример сценария PowerShell позволяет назначить пользователя конкретному приложению AD Application Proxy Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
@@ -29,7 +29,7 @@ ms.locfileid: "75483340"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Этот образец требует [AzureAD V2 PowerShell для графического модуля](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [AzureAD V2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
+Для работы с этим образцом требуется [AzureAD v2 PowerShell для модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [AzureAD v2 PowerShell для предварительной версии модуля Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -37,12 +37,12 @@ ms.locfileid: "75483340"
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
-| [New-AzureADUserAppRoleAssignment](https://docs.microsoft.com/powershell/module/AzureAD/new-azureaduserapproleassignment?view=azureadps-2.0) | Назначает пользователю роль приложения. |
+| [New-AzureADUserAppRoleAssignment](https://docs.microsoft.com/powershell/module/AzureAD/new-azureaduserapproleassignment?view=azureadps-2.0) | Назначает пользователя роли приложения. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для получения дополнительной информации о модуле Azure AD PowerShell смотрите [обзор модуля Azure AD PowerShell.](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0)
+Дополнительные сведения о модуле Azure AD PowerShell см. в статье [Общие сведения о модуле Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 
-Для других примеров PowerShell [Azure AD PowerShell examples for Azure AD Application Proxy](../application-proxy-powershell-samples.md)для приложения Proxy см.
+Другие примеры PowerShell для прокси приложения см. в статье [примеры Azure AD PowerShell для AD application proxy Azure](../application-proxy-powershell-samples.md).

@@ -1,6 +1,6 @@
 ---
-title: Устранение проблем с виртуальным развертыванием машины из-за отдельных дисков Документы Майкрософт
-description: Устранение проблем с виртуальным развертыванием машины из-за отдельных дисков
+title: Устранение неполадок развертывания виртуальной машины из-за отключенных дисков | Документация Майкрософт
+description: Устранение неполадок развертывания виртуальной машины из-за отключенных дисков
 services: virtual-machines-windows
 documentationCenter: ''
 author: v-miegge
@@ -13,30 +13,30 @@ ms.workload: infrastructure
 ms.date: 10/31/2019
 ms.author: vaaga
 ms.openlocfilehash: e049a2b914cbf9c4f0ca0f3a1dd0281d58f881b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75486824"
 ---
-# <a name="troubleshoot-virtual-machine-deployment-due-to-detached-disks"></a>Устранение проблем с виртуальным развертыванием машины из-за отдельных дисков
+# <a name="troubleshoot-virtual-machine-deployment-due-to-detached-disks"></a>Устранение неполадок развертывания виртуальной машины из-за отключенных дисков
 
 ## <a name="symptom"></a>Симптом
 
-При попытке обновить виртуальную машину, предыдущая часть диска данных не сработала, вы можете встретить этот код ошибки.
+При попытке обновить виртуальную машину, для которой произошел сбой отключения на диске данных, может возникнуть этот код ошибки.
 
 ```
 Code=\"AttachDiskWhileBeingDetached\" 
 Message=\"Cannot attach data disk '{disk ID}' to virtual machine '{vmName}' because the disk is currently being detached or the last detach  operation failed. Please wait until the disk is completely detached, and then try again or delete/detach the disk explicitly again\” 
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-Эта ошибка возникает при попытке повторного присоединения диска данных, последняя операция отсоединившегося не удалась. Лучший способ выбраться из этого состояния — отсоединить неисправный диск.
+Эта ошибка возникает при попытке повторно подключить диск данных, операция последнего отсоединения завершилась ошибкой. Лучшим способом выхода из этого состояния является отключение диска, на котором происходит сбой.
 
-## <a name="solution-1-powershell"></a>Решение 1: Powershell
+## <a name="solution-1-powershell"></a>Решение 1. PowerShell
 
-### <a name="step-1-get-the-virtual-machine-and-disk-details"></a>Шаг 1: Получить виртуальную машину и детали диска
+### <a name="step-1-get-the-virtual-machine-and-disk-details"></a>Шаг 1. Получение сведений о виртуальной машине и диске
 
 ```azurepowershell-interactive
 PS D:> $vm = Get-AzureRmVM -ResourceGroupName "Example Resource Group" -Name "ERGVM999999" 
@@ -51,39 +51,39 @@ diskSizeGB   : 8
 toBeDetached : False 
 ```
 
-### <a name="step-2-set-the-flag-for-failing-disks-to-true"></a>Шаг 2: Установите флаг для отказа дисков на "истинное".
+### <a name="step-2-set-the-flag-for-failing-disks-to-true"></a>Шаг 2. Установите флаг для неудачных дисков в значение "true".
 
-Получите индекс массива сбоем диска и установите флаг **toBeDetached** для неисправного диска (для которого произошла ошибка **AttachDiskBeingBeingDetached)** на "истинную". Эта настройка подразумевает отсоединение диска от виртуальной машины. Имя неисправного диска можно найти в **errorMessage**.
+Получите индекс массива диска, на котором произошел сбой, и установите флаг **тобедетачед** для диска, для которого произошел сбой (для которого произошла ошибка **аттачдисквхилебеингдетачед** ), равным true. Этот параметр подразумевает отсоединение диска от виртуальной машины. Имя диска, на котором происходит сбой, можно найти в **ErrorMessage**.
 
-> ! Примечание: Версия API, указанная для вызовов Get and Put, должна быть 2019-03-01 или больше.
+> ! Примечание. версия API, указанная для вызовов Get и помещает, должна быть 2019-03-01 или выше.
 
 ```azurepowershell-interactive
 PS D:> $vm.StorageProfile.DataDisks[0].ToBeDetached = $true 
 ```
 
-Кроме того, вы также можете отсоединить этот диск, используя приведенную ниже команду, которая будет полезна для пользователей, использующих версии API до 01 марта 2019 года.
+Кроме того, вы можете отключить этот диск с помощью приведенной ниже команды, которая будет полезна для пользователей, использующих версии API до 01 марта 2019.
 
 ```azurepowershell-interactive
 PS D:> Remove-AzureRmVMDataDisk -VM $vm -Name "<disk ID>" 
 ```
 
-### <a name="step-3-update-the-virtual-machine"></a>Шаг 3: Обновление виртуальной машины
+### <a name="step-3-update-the-virtual-machine"></a>Шаг 3. Обновление виртуальной машины
 
 ```azurepowershell-interactive
 PS D:> Update-AzureRmVM -ResourceGroupName "Example Resource Group" -VM $vm 
 ```
 
-## <a name="solution-2-rest"></a>Решение 2: REST
+## <a name="solution-2-rest"></a>Решение 2. ОСТАВШАЯся
 
-### <a name="step-1-get-the-virtual-machine-payload"></a>Шаг 1: Получить виртуальную полезную нагрузку машины.
+### <a name="step-1-get-the-virtual-machine-payload"></a>Шаг 1. получение полезных данных виртуальной машины.
 
 ```azurepowershell-interactive
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}?$expand=instanceView&api-version=2019-03-01
 ```
 
-### <a name="step-2-set-the-flag-for-failing-disks-to-true"></a>Шаг 2: Установите флаг для отказа дисков на "истинное".
+### <a name="step-2-set-the-flag-for-failing-disks-to-true"></a>Шаг 2. Установите флаг для неудачных дисков в значение "true".
 
-Установите флаг **toBeDetached** для отказа диска к истине в полезной нагрузке, возвращенной в шаге 1. Пожалуйста, обратите внимание: версия API, указанная для вызовов Get and Put, должна быть `2019-03-01` или больше.
+Установите флаг **тобедетачед** для параметра сбой диска в значение true в полезных данных, возвращенных на шаге 1. Примечание. версия API, указанная для вызовов Get и постановки, `2019-03-01` должна быть или выше.
 
 **Пример текста запроса**
 
@@ -143,11 +143,11 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 }
 ```
 
-Кроме того, вы также можете удалить неисправный диск данных из вышеуказанной полезной нагрузки, что полезно для пользователей, использующих версии API до 01 марта 2019 года.
+Кроме того, можно также удалить неисправный диск данных из приведенных выше полезных данных, что полезно для пользователей, использующих версии API до 01 марта 2019.
 
-### <a name="step-3-update-the-virtual-machine"></a>Шаг 3: Обновление виртуальной машины
+### <a name="step-3-update-the-virtual-machine"></a>Шаг 3. Обновление виртуальной машины
 
-Используйте полезную нагрузку тела запроса, установленную в шаге 2, и обновите виртуальную машину следующим образом:
+Используйте набор полезных данных запроса в тексте на шаге 2 и обновите виртуальную машину следующим образом:
 
 ```azurepowershell-interactive
 PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}?api-version=2019-03-01
@@ -230,7 +230,7 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 }
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md).
 

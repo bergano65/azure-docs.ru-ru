@@ -1,15 +1,15 @@
 ---
-title: Указать переменные среды для служб
+title: Указание переменных среды для служб
 description: Показано, как использовать переменные среды для приложений в Service Fabric.
 author: mikkelhegn
 ms.topic: conceptual
 ms.date: 12/06/2017
 ms.author: mikhegn
 ms.openlocfilehash: f4c4f2a1c140e3d0f181c4fd55482056f9f91b62
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75614321"
 ---
 # <a name="how-to-specify-environment-variables-for-services-in-service-fabric"></a>Как указать переменные среды для служб в Service Fabric
@@ -46,9 +46,9 @@ ms.locfileid: "75614321"
       </ServiceManifestImport>
     ```
 
-## <a name="specifying-environment-variables-dynamically-using-docker-compose"></a>Определение переменных среды динамически с помощью Docker Compose
+## <a name="specifying-environment-variables-dynamically-using-docker-compose"></a>Динамическое указание переменных среды с помощью Docker Compose
 
-Service Fabric поддерживает возможность [использования Docker Compose для развертывания.](service-fabric-docker-compose.md#supported-compose-directives) Составные файлы могут создавать переменные среды из оболочки. Это поведение может быть использовано для динамического замены желаемых значений среды:
+Service Fabric поддерживает возможность [использования DOCKER Compose для развертывания](service-fabric-docker-compose.md#supported-compose-directives). Создание файлов может быть источником переменных среды из оболочки. Это поведение можно использовать для динамического замены требуемых значений среды:
 
 ```yml
 environment:

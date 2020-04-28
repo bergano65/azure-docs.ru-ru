@@ -1,5 +1,5 @@
 ---
-title: Концентраторы уведомлений Azure Secure Push для Windows
+title: Безопасное push-уведомление центра уведомлений Azure для Windows
 description: Узнайте, как отправлять безопасные push-уведомления в Azure. Примеры кода написаны на C# с использованием API .NET.
 documentationcenter: windows
 author: sethmanheim
@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: db42cf7f886855af77073963e6f04ac088ca5612
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75530737"
 ---
 # <a name="securely-push-notifications-from-azure-notification-hubs"></a>Безопасная отправка push-уведомлений из Центров уведомлений Azure
@@ -159,7 +159,7 @@ ms.locfileid: "75530737"
     using Windows.UI.Notifications;
     using Windows.Data.Xml.Dom;
     ```
-11. В Solution Explorer, в **проекте NotifyUserWindowsPhone (Windows Phone 8.1),** ссылки на кнопку правой **кнопки,** затем нажмите **Добавить справку...**. В диалоге справочного менеджера проверьте поле рядом с **PushBackgroundComponent,** а затем нажмите **OK**.
+11. В обозреватель решений в проекте **проекте notifyuserwindowsphone (Windows Phone 8,1)** щелкните правой кнопкой мыши элемент **ссылки**и выберите команду **Добавить ссылку...**. В диалоговом окне Диспетчер ссылок установите флажок **PushBackgroundComponent**и нажмите кнопку **ОК**.
 12. В обозревателе решений дважды щелкните **Package.appxmanifest** в проекте **NotifyUserWindowsPhone (Windows Phone 8.1)**. В поле **Уведомления** установите для параметра **Всплывающие уведомления** значение **Да**.
 
     ![][3]
@@ -168,7 +168,7 @@ ms.locfileid: "75530737"
 15. В **Package.appxmanifest** в области **Параметры приложения** введите **PushBackgroundComponent.PushBackgroundTask** в поле **Точка входа**.
 
     ![][13]
-16. Из меню **файла** нажмите **«Сохранить все».**
+16. В меню **файл** выберите команду **сохранить все**.
 
 ## <a name="run-the-application"></a>Запуск приложения
 

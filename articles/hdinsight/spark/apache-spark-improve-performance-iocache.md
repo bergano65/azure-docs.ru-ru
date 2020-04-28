@@ -1,5 +1,5 @@
 ---
-title: Производительность Apache Spark - Azure HDInsight IO Cache (Предварительный просмотр)
+title: Производительность Apache Spark — кэш ввода-вывода Azure HDInsight (Предварительная версия)
 description: Узнайте о службе IO Cache для Azure HDInsight и ее использовании для повышения производительности Apache Spark.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,13 +8,13 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/23/2019
 ms.openlocfilehash: 43875b87d26f144b85454077fd3c044c820132bf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75494989"
 ---
-# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Улучшение производительности рабочих нагрузок Apache Spark с помощью кэша Azure HDInsight IO
+# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight
 
 IO Cache — это служба кэширования данных для Azure HDInsight, который повышает производительность заданий Apache Spark. IO Cache также поддерживает рабочие нагрузки [Apache Tez](https://tez.apache.org/) и [Apache Hive](https://hive.apache.org/), которые могут выполняться в кластерах [Apache Spark](https://spark.apache.org/). IO Cache использует компонент кэширования с открытым исходным кодом RubiX. Локальный дисковый кэш RubiX предназначен для использования с модулями аналитики больших данных, которые получают данные из систем облачного хранения. RubiX выделяется в ряду систем кэширования, поскольку использует для хранения данных не оперативную память, а твердотельные накопители (SSD). Служба IO Cache запускает серверы метаданных RubiX на каждом рабочем узле кластера и управляет ими. Она также настраивает прозрачное использование кэша RubiX для всех служб кластера.
 
@@ -22,7 +22,7 @@ IO Cache — это служба кэширования данных для Azur
 
 > [!Note]  
 > В настоящее время IO Cache использует RubiX в качестве компонента кэширования, но в будущих версиях службы это может измениться. Используйте интерфейсы IO Cache, не создавая никаких прямых зависимостей от реализации RubiX.
->В настоящее время IO Cache поддерживается только при хранении Azure BLOB.
+>В настоящее время кэш операций ввода-вывода поддерживается только в хранилище больших двоичных объектов Azure.
 
 ## <a name="benefits-of-azure-hdinsight-io-cache"></a>Преимущества IO Cache для Azure HDInsight
 
@@ -32,15 +32,15 @@ IO Cache — это служба кэширования данных для Azur
 
 ## <a name="getting-started"></a>Начало работы
 
-IO Cache для Azure HDInsight по умолчанию отключен в предварительной версии. Служба IO Cache доступна в кластерах Azure HDInsight 3.6 и более поздних версий с Apache Spark 2.3.  Чтобы активировать кэш IO на HDInsight 4.0, сделайте следующие шаги:
+IO Cache для Azure HDInsight по умолчанию отключен в предварительной версии. Служба IO Cache доступна в кластерах Azure HDInsight 3.6 и более поздних версий с Apache Spark 2.3.  Чтобы активировать кэш ввода-вывода в HDInsight 4,0, выполните следующие действия.
 
-1. Из веб-браузера, `https://CLUSTERNAME.azurehdinsight.net`перейдите к , где `CLUSTERNAME` имя вашего кластера.
+1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
 1. Выберите службу **IO Cache** в левой части страницы.
 
-1. Выберите **действия** **(Действия службы** в ИРЧП 3.6) и **активируйте.**
+1. Выберите **действия** (**действия службы** в HDi 3,6) и **активируйте**.
 
-    ![Включение службы IO Cache в Амбари](./media/apache-spark-improve-performance-iocache/ambariui-enable-iocache.png "Включение службы IO Cache в Амбари")
+    ![Включение службы кэша ввода-вывода в Ambari](./media/apache-spark-improve-performance-iocache/ambariui-enable-iocache.png "Включение службы кэша ввода-вывода в Ambari")
 
 1. Подтвердите перезапуск всех затрагиваемых служб в кластере.
 
@@ -55,7 +55,7 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Выберите вкладки **Configs** (Конфигурации) и **Advanced** (Дополнительно).
 
-    ![Оторитите расширенную конфигурацию HDFS](./media/apache-spark-improve-performance-iocache/ambariui-hdfs-service-configs-advanced.png "Оторитите расширенную конфигурацию HDFS")
+    ![Изменить расширенную конфигурацию HDFS](./media/apache-spark-improve-performance-iocache/ambariui-hdfs-service-configs-advanced.png "Изменить расширенную конфигурацию HDFS")
 
 1. Прокрутите вниз и разверните область **Custom core-site** (Пользовательский основной сайт).
 
@@ -63,18 +63,18 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Измените значение в этом поле.
 
-    ![Изменение IO кэш апотой полноты Процент](./media/apache-spark-improve-performance-iocache/ambariui-cache-data-fullness-percentage-property.png "Изменение IO кэш апотой полноты Процент")
+    ![Изменение полных значений в кэше ввода-вывода](./media/apache-spark-improve-performance-iocache/ambariui-cache-data-fullness-percentage-property.png "Изменение полных значений в кэше ввода-вывода")
 
 1. Выберите **Сохранить** в правом верхнем углу.
 
-1. Выберите **перезагрузку** > **перезагрузки всех пострадавших.**
+1. Выберите **перезапустить** > **все затронутые**.
 
-    ![Apache Ambari перезапускает все пострадавших](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезагрузить все затронутые")
+    ![Apache Ambari перезапускает все затронутые](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезапустить все затронутые")
 
-1. Выберите **Подтвердить Перезагрузить все**.
+1. Выберите пункт **подтвердить перезагрузку все**.
 
-Если это не работает, отогнайте IO Cache.
+Если это не сработает, отключите кэш ввода-вывода.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительная информация об IO Cache, в том числе о сравнительных тестах производительности, приведена в [этой записи блога](https://azure.microsoft.com/blog/apache-spark-speedup-with-hdinsight-io-cache/)
