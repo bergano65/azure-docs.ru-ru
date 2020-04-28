@@ -16,10 +16,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1193bfc08ccbd86d4da09c4de472f09bb49208f6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80049939"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
@@ -31,7 +31,7 @@ ms.locfileid: "80049939"
 
 * Содержимое, например инструкции и примеры кода для ИТ-специалистов и разработчиков, см. в [технической документации на сайте docs.microsoft.com](https://docs.microsoft.com/azure/active-directory/).
 
-* [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/) — это место для наших ИТ-партнеров и клиентов, которые могут сотрудничать, делиться и учиться. [Информационный центр технического сообщества Майкрософт](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) используется для объявлений, сообщений в блогах, взаимодействия ask-me-anything (AMA) с экспертами и многое другое. Вы также можете [присоединиться к сообществу и предлагать свои идеи](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities).
+* [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/) — это место для наших партнеров и клиентов ИТ-специалистов по совместной работе, совместному использованию и освоению. [Информационный центр технического сообщества Майкрософт](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) используется для объявлений, записей в блоге, Ask-Me-любых (АМА) взаимодействий с экспертами и т. д. Вы также можете [присоединиться к сообществу и предлагать свои идеи](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities).
 
 
 ## <a name="open-a-support-ticket"></a>Открытие запроса в службу поддержки
@@ -41,7 +41,7 @@ ms.locfileid: "80049939"
 ### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-azure-portal"></a>Как создать запрос в службу поддержки для Azure AD на портале Azure
 
 > [!NOTE]
-> Для выставления счетов или проблем с подпиской необходимо использовать [центр админирования Microsoft 365.](https://admin.microsoft.com)
+> Для вопросов, связанных с выставлением счетов или подпиской, необходимо использовать [центр администрирования Microsoft 365](https://admin.microsoft.com).
 > 
 
 1. Войдите на [портал Azure](https://portal.azure.com) и откройте **Azure Active Directory**.
@@ -50,34 +50,34 @@ ms.locfileid: "80049939"
    
 3. В колонке **Основы** выберите для **типа проблемы** значение **Техническая**.
 
-4. Выберите **подписку**.
+4. Выберите свою **подписку**.
 
-5. Для **обслуживания**выберите **активный каталог Azure.**
+5. В качестве **службы**выберите **Azure Active Directory**.
 
-6. Создайте **резюме** для запроса. Резюме должно быть менее 140 символов.
+6. Создайте **сводку** для запроса. Сводка должна содержать не более 140 символов.
   
-7. Выберите **тип проблемы,** а затем выберите категорию для этого типа. На этом этапе также предоставляются сведения для самостоятельного разрешения вашей проблемы данной категории.
+7. Выберите **тип проблемы**, а затем выберите категорию для этого типа. На этом этапе также предоставляются сведения для самостоятельного разрешения вашей проблемы данной категории.
   
 7. Добавьте сведения о своей проблеме и нажмите кнопку **Далее**. 
 
-8. На этом этапе вам предлагаются решения для самопомощи и документация в лезвии **решений.** Если ни одно из решений не решит вашу проблему, нажмите **Далее.** 
+8. На этом этапе предлагаются решения и документация по самостоятельному решению в колонке **решения** . Если ни одно из решений не устраняет проблему, нажмите кнопку **Далее**. 
 
-9. На **лезвии детали,** заполнить необходимые детали и выбрать [тяжесть](https://azure.microsoft.com/support/plans/response/). 
+9. В колонке **сведения** введите необходимые сведения и выберите [серьезность](https://azure.microsoft.com/support/plans/response/). 
  
 ![Изображение](https://user-images.githubusercontent.com/13383753/76565580-1c284900-6468-11ea-8c0f-85af98097b6f.png)
  
-10. Предоставьте свою контактную информацию и выберите **Next**. 
+10. Укажите контактные данные и нажмите кнопку **Далее**. 
 
 
 8. Введите свои контактные данные и щелкните **Создать**.
-  ![Проблема категории самопомощи скриншот](./media/active-directory-troubleshooting-support-howto/open-support-ticket.png)
+  ![Снимок экрана самостоятельного решения категории проблем](./media/active-directory-troubleshooting-support-howto/open-support-ticket.png)
 
-### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-microsoft-365-admin-center"></a>Как открыть билет поддержки для Azure AD в центре для админ-центра Microsoft 365
+### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-microsoft-365-admin-center"></a>Как открыть запрос в службу поддержки для Azure AD в центре администрирования Microsoft 365
 
 > [!NOTE]
-> Поддержка Azure AD в [центре администратора Microsoft 365](https://admin.microsoft.com) предлагается только для администраторов. 
+> Поддержка Azure AD в [центре администрирования Microsoft 365](https://admin.microsoft.com) предлагается только для администраторов. 
 
-1. Вопием в [центре управления Microsoft 365](https://admin.microsoft.com) с учетной записью с лицензией Enterprise Mobility и Security (EMS).
+1. Войдите в [центр администрирования Microsoft 365](https://admin.microsoft.com) с помощью учетной записи с лицензией Enterprise Mobility + Security (EMS).
 
 2. На плитке **Поддержка** выберите **Новый запрос на обслуживание**:
 
