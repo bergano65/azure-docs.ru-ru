@@ -1,5 +1,5 @@
 ---
-title: О Hyper-V (с VMM) сетевого картирования с восстановлением сайта
+title: Сведения о сетевом сопоставлении Hyper-V (с VMM) с Site Recovery
 description: В этой статье описано, как настроить сетевое сопоставление для аварийного восстановления виртуальных машин Hyper-V (управляемых в облаках VMM) в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: 6b68b4c943ec96620427978c2309f27e1fb1f217
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74082560"
 ---
 # <a name="prepare-network-mapping-for-hyper-v-vm-disaster-recovery-to-azure"></a>Подготовка сетевого сопоставления для аварийного восстановления виртуальных машин Hyper-V в Azure
@@ -104,7 +104,7 @@ VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступно
 Чтобы увидеть, что происходит в случае отработки отказа (обратной репликации), предположим, что VMNetwork1-NewYork сопоставляется с VMNetwork1-Chicago со следующими параметрами.
 
 
-**Vm** | **Подключенная сеть виртуальных машин**
+**Виртуальная машина** | **Подключенная сеть виртуальных машин**
 ---|---
 VM1 | VMNetwork1-Network
 VM2 (реплика VM1) | VMNetwork1-Chicago

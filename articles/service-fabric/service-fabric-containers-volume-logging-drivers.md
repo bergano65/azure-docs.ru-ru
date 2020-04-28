@@ -1,21 +1,21 @@
 ---
-title: Драйвер громкости файлов Azure для сервисной ткани
+title: Драйвер тома файлов Azure для Service Fabric
 description: Service Fabric поддерживает использование службы файлов Azure для резервного копирования томов в контейнере.
 ms.topic: conceptual
 ms.date: 6/10/2018
 ms.openlocfilehash: 514a0cb12359d58e38ebc30ae12cdb277757f2b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75750046"
 ---
-# <a name="azure-files-volume-driver-for-service-fabric"></a>Драйвер громкости файлов Azure для сервисной ткани
+# <a name="azure-files-volume-driver-for-service-fabric"></a>Драйвер тома файлов Azure для Service Fabric
 
-Драйвер громкости Azure Files — это [плагин громкости Docker,](https://docs.docker.com/engine/extend/plugins_volume/) который предоставляет объемы на основе [файлов Azure](/azure/storage/files/storage-files-introduction) для контейнеров Docker. Он упакован в приложение Service Fabric, которое может быть развернуто в кластере Service Fabric для предоставления объемов для других контейнерных приложений Service Fabric в кластере.
+Драйвер тома файлов Azure — это [подключаемый модуль томов DOCKER](https://docs.docker.com/engine/extend/plugins_volume/) , который предоставляет тома на основе [файлов Azure](/azure/storage/files/storage-files-introduction) для контейнеров DOCKER. Он упаковывается как Service Fabricое приложение, которое можно развернуть в кластере Service Fabric, чтобы предоставить тома для других приложений-контейнеров Service Fabric в кластере.
 
 > [!NOTE]
-> Версия 6.5.661.9590 плагина объема Azure Files была выпущена для общей доступности.
+> Выпущена версия 6.5.661.9590 подключаемого модуля тома файлов Azure для общедоступной версии.
 >
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -29,9 +29,9 @@ ms.locfileid: "75750046"
 
 * Вам потребуется установить [PowerShell с модулем Service Fabric](/azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli).
 
-* Если вы используете контейнеры Hyper-V, следующие фрагменты должны быть добавлены в раздел ClusterManifest (местный кластер) или fabricSettings в шаблоне Azure Resource Manager (Azure cluster) или ClusterConfig.json (автономный кластер).
+* Если вы используете контейнеры Hyper-V, необходимо добавить следующие фрагменты в раздел ClusterManifest (локальный кластер) или fabricSettings в шаблоне Azure Resource Manager (кластер Azure) или ClusterConfig. JSON (изолированный кластер).
 
-В файле ClusterManifest в раздел Hosting нужно добавить приведенный ниже код. В этом примере имя громкости **sfazurefile** и порт он слушает на кластере **19100**. Замените их правильными значениями для кластера.
+В файле ClusterManifest в раздел Hosting нужно добавить приведенный ниже код. В этом примере имя тома — **сфазурефиле** , а порт, который он прослушивает в кластере, — **19100**. Замените их правильными значениями для кластера.
 
 ``` xml 
 <Section Name="Hosting">
@@ -39,7 +39,7 @@ ms.locfileid: "75750046"
 </Section>
 ```
 
-В разделе fabricSettings в шаблоне Azure Resource Manager (для развертывания Azure) или ClusterConfig.json (для автономных развертываний) необходимо добавить следующий фрагмент. Опять же, замените имя громкости и значения порта своими собственными.
+В разделе fabricSettings шаблона Azure Resource Manager (для развертываний Azure) или ClusterConfig. JSON (для автономных развертываний) необходимо добавить следующий фрагмент кода. Опять же, замените имя тома и значения порта своим собственным.
 
 ```json
 "fabricSettings": [
@@ -55,31 +55,31 @@ ms.locfileid: "75750046"
 ]
 ```
 
-## <a name="deploy-a-sample-application-using-service-fabric-azure-files-volume-driver"></a>Развертывание примера приложения с помощью драйвера громкости файлов Service Fabric Azure
+## <a name="deploy-a-sample-application-using-service-fabric-azure-files-volume-driver"></a>Развертывание примера приложения с помощью Service Fabric драйвер тома файлов Azure
 
-### <a name="using-azure-resource-manager-via-the-provided-powershell-script-recommended"></a>Использование менеджера ресурсов Azure через предоставленный скрипт Powershell (рекомендуется)
+### <a name="using-azure-resource-manager-via-the-provided-powershell-script-recommended"></a>Использование Azure Resource Manager с помощью предоставленного скрипта PowerShell (рекомендуется)
 
-Если кластер базируется в Azure, мы рекомендуем развертывать приложения для него с помощью модели ресурсов ресурсов Ресурсов Azure Resource Manager для удобства использования и помочь перейти к модели поддержания инфраструктуры в качестве кода. Этот подход устраняет необходимость отслеживания версии приложения для драйвера громкости Azure Files. Он также позволяет поддерживать отдельные шаблоны менеджер ресурсов Azure для каждой поддерживаемой ОС. Сценарий предполагает развертывание последней версии приложения Azure Files и использует параметры для типа ОС, идентификатора подписки кластера и группы ресурсов. Вы можете скачать сценарий с [сайта загрузки Service Fabric](https://sfazfilevd.blob.core.windows.net/sfazfilevd/DeployAzureFilesVolumeDriver.zip). Обратите внимание, что это автоматически устанавливает ListenPort, который является портом, на котором плагин громкости Azure Files слушает запросы от Docker daemon, до 19100. Вы можете изменить его, добавив параметр под названием "listenPort". Убедитесь, что порт не противоречит любому другому порту, который использует кластер или приложения.
+Если кластер основан на Azure, мы рекомендуем развертывать приложения на нем, используя модель ресурсов приложения Azure Resource Manager, чтобы упростить использование и перейти к модели обслуживания инфраструктуры как кода. Такой подход исключает необходимость отслеживания версии приложения для драйвера тома файлов Azure. Он также позволяет поддерживать отдельные шаблоны Azure Resource Manager для каждой поддерживаемой ОС. В сценарии предполагается, что вы развертываете последнюю версию приложения службы файлов Azure и принимаете параметры для типа ОС, идентификатора подписки кластера и группы ресурсов. Скрипт можно скачать на [сайте загрузки Service Fabric](https://sfazfilevd.blob.core.windows.net/sfazfilevd/DeployAzureFilesVolumeDriver.zip). Обратите внимание, что этот параметр автоматически задает ListenPort, который является портом, на котором подключаемый модуль тома файлов Azure прослушивает запросы от управляющей программы DOCKER до 19100. Его можно изменить, добавив параметр с именем "listenPort". Убедитесь, что порт не конфликтует с любым другим портом, используемым кластером или вашими приложениями.
  
 
-Команда развертывания ресурсов Azure для Windows:
+Команда развертывания Azure Resource Manager для Windows:
 ```powershell
 .\DeployAzureFilesVolumeDriver.ps1 -subscriptionId [subscriptionId] -resourceGroupName [resourceGroupName] -clusterName [clusterName] -windows
 ```
 
-Команда развертывания ресурсов Azure Resource Manager для Linux:
+Команда развертывания Azure Resource Manager для Linux:
 ```powershell
 .\DeployAzureFilesVolumeDriver.ps1 -subscriptionId [subscriptionId] -resourceGroupName [resourceGroupName] -clusterName [clusterName] -linux
 ```
 
-После успешного запуска скрипта можно перейти к [настройке раздела приложения.](/azure/service-fabric/service-fabric-containers-volume-logging-drivers#configure-your-applications-to-use-the-volume)
+После успешного выполнения скрипта можно перейти к [разделу Настройка приложения.](/azure/service-fabric/service-fabric-containers-volume-logging-drivers#configure-your-applications-to-use-the-volume)
 
 
-### <a name="manual-deployment-for-standalone-clusters"></a>Ручное развертывание для автономных кластеров
+### <a name="manual-deployment-for-standalone-clusters"></a>Ручное развертывание автономных кластеров
 
-Приложение Service Fabric, которое предоставляет объемы для контейнеров, можно загрузить с [сайта загрузки Service Fabric.](https://sfazfilevd.blob.core.windows.net/sfazfilevd/AzureFilesVolumePlugin.6.5.661.9590.zip) Это приложение можно развернуть в кластере с помощью [PowerShell](./service-fabric-deploy-remove-applications.md), [интерфейса командной строки](./service-fabric-application-lifecycle-sfctl.md) или [интерфейсов API FabricClient](./service-fabric-deploy-remove-applications-fabricclient.md).
+Приложение Service Fabric, которое предоставляет тома для контейнеров, можно скачать с [сайта Service Fabric скачивания](https://sfazfilevd.blob.core.windows.net/sfazfilevd/AzureFilesVolumePlugin.6.5.661.9590.zip). Это приложение можно развернуть в кластере с помощью [PowerShell](./service-fabric-deploy-remove-applications.md), [интерфейса командной строки](./service-fabric-application-lifecycle-sfctl.md) или [интерфейсов API FabricClient](./service-fabric-deploy-remove-applications-fabricclient.md).
 
-1. Используя командную строку, измените каталог в корневой каталог загруженного пакета приложений.
+1. С помощью командной строки перейдите в корневой каталог скачанного пакета приложения.
 
     ```powershell
     cd .\AzureFilesVolume\
@@ -89,7 +89,7 @@ ms.locfileid: "75750046"
     cd ~/AzureFilesVolume
     ```
 
-2. Затем скопируйте пакет приложения в хранилище изображений с соответствующими значениями для «ApplicationPackagePath» и «ImageStoreConnectionString»:
+2. Затем скопируйте пакет приложения в хранилище образов с соответствующими значениями для [Аппликатионпаккажепас] и [ImageStoreConnectionString]:
 
     ```powershell
     Copy-ServiceFabricApplicationPackage -ApplicationPackagePath [ApplicationPackagePath] -ImageStoreConnectionString [ImageStoreConnectionString] -ApplicationPackagePathInImageStore AzureFilesVolumePlugin
@@ -110,7 +110,7 @@ ms.locfileid: "75750046"
     sfctl application provision --application-type-build-path [ApplicationPackagePath]
     ```
 
-4. Создайте приложение, уделяя пристальное внимание значению параметра **приложения ListenPort.** Это значение представляет собой порт, на котором плагин громкости Azure Files прослушивает запросы от Docker daemon. Убедитесь, что порт, предоставленный приложению, соответствует VolumePluginPorts в ClusterManifest и не противоречит ни какому другому порту, который использует кластер или приложения.
+4. Создайте приложение, обращая особое внимание на значение параметра приложения **ListenPort** . Это значение представляет собой порт, на котором подключаемый модуль тома файлов Azure прослушивает запросы от управляющей программы DOCKER. Убедитесь, что порт, предоставленный приложению, соответствует Волумеплугинпортс в ClusterManifest и не конфликтует с любым другим портом, используемым кластером или вашими приложениями.
 
     ```powershell
     New-ServiceFabricApplication -ApplicationName fabric:/AzureFilesVolumePluginApp -ApplicationTypeName AzureFilesVolumePluginType -ApplicationTypeVersion 6.5.661.9590   -ApplicationParameter @{ListenPort='19100'}
@@ -125,9 +125,9 @@ ms.locfileid: "75750046"
 > Windows Server 2016 Datacenter не поддерживает сопоставление подключений SMB с контейнерами ([поддерживается только в Windows Server версии 1709](/virtualization/windowscontainers/manage-containers/container-storage)). Это ограничение предотвращает сопоставление сетевых томов и использование драйверов томов службы файлов Azure в версиях, предшествующих версии 1709.
 
 #### <a name="deploy-the-application-on-a-local-development-cluster"></a>Развертывание приложения в локальном кластере разработки
-Следуйте шагам 1-3 из [вышеперечисленного.](/azure/service-fabric/service-fabric-containers-volume-logging-drivers#manual-deployment-for-standalone-clusters)
+Выполните шаги 1-3 из [приведенного выше.](/azure/service-fabric/service-fabric-containers-volume-logging-drivers#manual-deployment-for-standalone-clusters)
 
- Число экземпляров службы по умолчанию для приложения подключаемого модуля тома службы файлов Azure равно –1. Это означает, что экземпляр службы развернут на каждом узле в кластере. Тем не менее при развертывании приложения подключаемого модуля тома службы файлов Azure в локальном кластере разработки нужно указать число экземпляров, равное 1. Это можно сделать с помощью параметра приложения **InstanceCount**. Таким образом, команда для создания приложения плагина громкости Azure Files в локальном кластере разработки:
+ Число экземпляров службы по умолчанию для приложения подключаемого модуля тома службы файлов Azure равно –1. Это означает, что экземпляр службы развернут на каждом узле в кластере. Тем не менее при развертывании приложения подключаемого модуля тома службы файлов Azure в локальном кластере разработки нужно указать число экземпляров, равное 1. Это можно сделать с помощью параметра приложения **InstanceCount**. Поэтому команда для создания приложения подключаемого модуля тома файлов Azure в локальном кластере разработки:
 
 ```powershell
 New-ServiceFabricApplication -ApplicationName fabric:/AzureFilesVolumePluginApp -ApplicationTypeName AzureFilesVolumePluginType -ApplicationTypeVersion 6.5.661.9590  -ApplicationParameter @{ListenPort='19100';InstanceCount='1'}
@@ -138,7 +138,7 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
 ```
 
 ## <a name="configure-your-applications-to-use-the-volume"></a>Настройка приложений для использования тома
-Следующий фрагмент показывает, как объем на основе файлов Azure может быть указан в файле приложения манифест акрет вашего приложения. Отдельного внимания заслуживает тег **Volume**.
+В следующем фрагменте кода показано, как можно указать том на основе файлов Azure в файле манифеста приложения. Отдельного внимания заслуживает тег **Volume**.
 
 ```xml
 ?xml version="1.0" encoding="UTF-8"?>
@@ -172,11 +172,11 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
 </ApplicationManifest>
 ```
 
-Имя драйвера для плагина громкости Azure Files — **sfazurefile.** Это значение устанавливается для атрибута **драйвера** элемента тега **тома** в манифесте приложения.
+Имя драйвера подключаемого модуля тома файлов Azure — **сфазурефиле**. Это значение задается для атрибута **Driver** элемента тега **тома** в манифесте приложения.
 
-В теге **объема** в фрагменте выше, плагин громкости Файлов Azure требует следующих атрибутов:
+В теге **Volume** в приведенном выше фрагменте подключаемый модуль тома файлов Azure требует наличия следующих атрибутов:
 - **Source**. Это имя тома. Для тома можно выбрать любое имя.
-- **Направление** - Этот атрибут — это место, в которое отображается объем в бегущей таре. Таким образом, конечной папкой не может быть существующее в контейнере расположение.
+- **Назначение** . Этот атрибут представляет собой расположение, в котором сопоставляется том в работающем контейнере. Таким образом, конечной папкой не может быть существующее в контейнере расположение.
 
 Как показано в элементах **DriverOption** в приведенном выше фрагменте кода, подключаемый модуль тома службы файлов Azure поддерживает следующие параметры драйвера.
 - **shareName**. Имя файлового ресурса службы файлов Azure, предоставляющего том для контейнера.
@@ -241,4 +241,4 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Примеры контейнеров, включая драйвер тома, приведены в разделе [Примеры контейнеров Service Fabric](https://github.com/Azure-Samples/service-fabric-containers).
-* Для развертывания контейнеров в кластер Service Fabric [перевязайте](service-fabric-deploy-container.md) статью Развертывание контейнера на Service Fabric
+* Сведения о развертывании контейнеров в кластере Service Fabric см. в статье [развертывание контейнера в Service Fabric](service-fabric-deploy-container.md)

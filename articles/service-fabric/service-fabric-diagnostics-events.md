@@ -1,15 +1,15 @@
 ---
-title: События Лазурного сервиса
+title: События Service Fabric Azure
 description: Сведения о событиях Service Fabric, предоставляемых для отслеживания кластера Azure Service Fabric.
 author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
 ms.openlocfilehash: 638b650e485ad3e83bd6021639a7e55b540d9cdc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75451734"
 ---
 # <a name="service-fabric-events"></a>События Service Fabric 
@@ -36,7 +36,7 @@ ms.locfileid: "75451734"
 ## <a name="how-to-access-events"></a>Получение доступа к событиям
 
 Существует несколько способов, с помощью которых можно получить доступ к событиям Service Fabric.
-* События регистрируются через стандартные каналы, такие как журналы событий ETW/Windows, и могут быть визуализированы любым инструментом мониторинга, который поддерживает эти журналы, такие как журналы Azure Monitor. По умолчанию кластеры, созданные на портале, включены в диагностику и агент диагностики Windows Azure, отправляющий события в хранилище таблиц Azure, но все равно необходимо интегрировать это с ресурсом аналитики журналов. Подробнее о настройке [агента Azure Diagnostics](service-fabric-diagnostics-event-aggregation-wad.md) для изменения конфигурации диагностики кластера, чтобы подобрать больше журналов или счетчиков производительности и [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md)
+* События записываются через стандартные каналы, такие как ETW или журналы событий Windows, и могут быть представлены любым средством мониторинга, которое поддерживает такие данные, как журналы Azure Monitor. По умолчанию в кластерах, созданных на портале, включена диагностика, и агент диагностики Microsoft Azure отправляет события в хранилище таблиц Azure, но вам все равно нужно интегрировать его с ресурсом log Analytics. Узнайте больше о настройке [агента система диагностики Azure](service-fabric-diagnostics-event-aggregation-wad.md) для изменения конфигурации диагностики кластера, чтобы получить дополнительные журналы, счетчики производительности и [интеграцию Azure Monitor журналов](service-fabric-diagnostics-event-analysis-oms.md) .
 * Через Rest API службы EventStore, которые позволяют запрашивать кластер напрямую, или через клиентскую библиотеку Service Fabric. Дополнительные сведения см. в статье [Query EventStore APIs for cluster events](service-fabric-diagnostics-eventstore-query.md) (Запрос к API EventStore для события кластера).
 
 ## <a name="next-steps"></a>Дальнейшие действия

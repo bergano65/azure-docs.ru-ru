@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/21/2018
 ms.openlocfilehash: 6346055f1169bfa533d5dbfe441ecf27fb0d78a7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75397749"
 ---
 # <a name="splunk-to-azure-monitor-log-query"></a>Запрос журнала в Splunk и Azure Monitor
@@ -21,7 +21,7 @@ ms.locfileid: "75397749"
 
 В следующей таблице сравниваются основные понятия и структуры данных в журналах Splunk и Azure Monitor.
 
- | Концепция  | Splunk | Azure Monitor |  Комментарий
+ | Концепция  | Splunk | Azure Monitor |  Добавление примечаний
  | --- | --- | --- | ---
  | Единица развертывания  | cluster |  cluster |  В Azure Monitor можно выполнять произвольные межкластерные запросы. В Splunk — нет. |
  | Кэши данных |  контейнеры  |  Политики кэширования и хранения |  Определяет период и уровень кэширования данных. Этот параметр напрямую влияет на производительность запросов и затраты на развертывание. |
@@ -37,7 +37,7 @@ ms.locfileid: "75397749"
 
 В следующей таблице перечислены функции Azure Monitor, эквивалентные функциям Splunk.
 
-|Splunk | Azure Monitor |Комментарий
+|Splunk | Azure Monitor |Добавление примечаний
 |---|---|---
 |strcat | strcat()| (1) |
 |split  | split() | (1) |
@@ -70,8 +70,8 @@ ms.locfileid: "75397749"
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Поиск** | <code>search Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" earliest=-24h</code> |
-| Azure Monitor | **Найти** | <code>find Session.Id=="c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time()> ago(24h)</code> |
+| Splunk | **осуществлять** | <code>search Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" earliest=-24h</code> |
+| Azure Monitor | **find** | <code>find Session.Id=="c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time()> ago(24h)</code> |
 | | |
 
 ### <a name="filter"></a>Filter
@@ -79,7 +79,7 @@ ms.locfileid: "75397749"
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Поиск** | <code>Event.Rule="330009.2" Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" _indextime>-24h</code> |
+| Splunk | **осуществлять** | <code>Event.Rule="330009.2" Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" _indextime>-24h</code> |
 | Azure Monitor | **where** | <code>Office_Hub_OHubBGTaskError<br>&#124; where Session_Id == "c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time() > ago(24h)</code> |
 | | |
 
@@ -89,8 +89,8 @@ ms.locfileid: "75397749"
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Голову** | <code>Event.Rule=330009.2<br>&#124; head 100</code> |
-| Azure Monitor | **Предел** | <code>Office_Hub_OHubBGTaskError<br>&#124; limit 100</code> |
+| Splunk | **Глава** | <code>Event.Rule=330009.2<br>&#124; head 100</code> |
+| Azure Monitor | **Размер** | <code>Office_Hub_OHubBGTaskError<br>&#124; limit 100</code> |
 | | |
 
 
@@ -100,7 +100,7 @@ ms.locfileid: "75397749"
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Голову** |  <code>Event.Rule="330009.2"<br>&#124; sort Event.Sequence<br>&#124; head 20</code> |
+| Splunk | **Глава** |  <code>Event.Rule="330009.2"<br>&#124; sort Event.Sequence<br>&#124; head 20</code> |
 | Azure Monitor | **Вверх** | <code>Office_Hub_OHubBGTaskError<br>&#124; top 20 by Event_Sequence</code> |
 | | |
 
@@ -112,18 +112,18 @@ ms.locfileid: "75397749"
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Eval** |  <code>Event.Rule=330009.2<br>&#124; eval state= if(Data.Exception = "0", "success", "error")</code> |
-| Azure Monitor | **Расширить** | <code>Office_Hub_OHubBGTaskError<br>&#124; extend state = iif(Data_Exception == 0,"success" ,"error")</code> |
+| Splunk | **испытаний** |  <code>Event.Rule=330009.2<br>&#124; eval state= if(Data.Exception = "0", "success", "error")</code> |
+| Azure Monitor | **расширений** | <code>Office_Hub_OHubBGTaskError<br>&#124; extend state = iif(Data_Exception == 0,"success" ,"error")</code> |
 | | |
 
 
 ### <a name="rename"></a>Переименовать 
-Azure Monitor `project-rename` использует оператора для переименования поля. `project-rename`позволяет запросу воспользоваться любыми индексами, предварительно построенными для поля. Splunk имеет `rename` оператора, чтобы сделать то же самое.
+Azure Monitor использует `project-rename` оператор для переименования поля. `project-rename`позволяет запросу использовать преимущества всех индексов, предварительно созданных для поля. Splunk имеет `rename` оператор для того, чтобы сделать то же самое.
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Переименовать** |  <code>Event.Rule=330009.2<br>&#124; rename Date.Exception as execption</code> |
-| Azure Monitor | **переименование проекта** | <code>Office_Hub_OHubBGTaskError<br>&#124; project-rename exception = Date_Exception</code> |
+| Splunk | **rename** |  <code>Event.Rule=330009.2<br>&#124; rename Date.Exception as execption</code> |
+| Azure Monitor | **проект-переименование** | <code>Office_Hub_OHubBGTaskError<br>&#124; project-rename exception = Date_Exception</code> |
 | | |
 
 
@@ -134,8 +134,8 @@ Azure Monitor `project-rename` использует оператора для п
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Таблице** |  <code>Event.Rule=330009.2<br>&#124; table rule, state</code> |
-| Azure Monitor | **Проекта**<br>**project-away** | <code>Office_Hub_OHubBGTaskError<br>&#124; project exception, state</code> |
+| Splunk | **table** |  <code>Event.Rule=330009.2<br>&#124; table rule, state</code> |
+| Azure Monitor | **проект**<br>**project-away** | <code>Office_Hub_OHubBGTaskError<br>&#124; project exception, state</code> |
 | | |
 
 
@@ -146,7 +146,7 @@ Azure Monitor `project-rename` использует оператора для п
 | |  | |
 |:---|:---|:---|
 | Splunk | **Статистика** |  <code>search (Rule=120502.*)<br>&#124; stats count by OSEnv, Audience</code> |
-| Azure Monitor | **Суммировать** | <code>Office_Hub_OHubBGTaskError<br>&#124; summarize count() by App_Platform, Release_Audience</code> |
+| Azure Monitor | **SUMMARIZE** | <code>Office_Hub_OHubBGTaskError<br>&#124; summarize count() by App_Platform, Release_Audience</code> |
 | | |
 
 
@@ -156,8 +156,8 @@ Azure Monitor `project-rename` использует оператора для п
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Присоединиться к** |  <code>Event.Rule=120103* &#124; stats by Client.Id, Data.Alias \| join Client.Id max=0 [search earliest=-24h Event.Rule="150310.0" Data.Hresult=-2147221040]</code> |
-| Azure Monitor | **Присоединиться к** | <code>cluster("OAriaPPT").database("Office PowerPoint").Office_PowerPoint_PPT_Exceptions<br>&#124; where  Data_Hresult== -2147221040<br>&#124; join kind = inner (Office_System_SystemHealthMetadata<br>&#124; summarize by Client_Id, Data_Alias)on Client_Id</code>   |
+| Splunk | **join** |  <code>Event.Rule=120103* &#124; stats by Client.Id, Data.Alias \| join Client.Id max=0 [search earliest=-24h Event.Rule="150310.0" Data.Hresult=-2147221040]</code> |
+| Azure Monitor | **join** | <code>cluster("OAriaPPT").database("Office PowerPoint").Office_PowerPoint_PPT_Exceptions<br>&#124; where  Data_Hresult== -2147221040<br>&#124; join kind = inner (Office_System_SystemHealthMetadata<br>&#124; summarize by Client_Id, Data_Alias)on Client_Id</code>   |
 | | |
 
 
@@ -167,8 +167,8 @@ Azure Monitor `project-rename` использует оператора для п
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Сортировки** |  <code>Event.Rule=120103<br>&#124; sort Data.Hresult<br>&#124; reverse</code> |
-| Azure Monitor | **заказ по** | <code>Office_Hub_OHubBGTaskError<br>&#124; order by Data_Hresult,  desc</code> |
+| Splunk | **sort** |  <code>Event.Rule=120103<br>&#124; sort Data.Hresult<br>&#124; reverse</code> |
+| Azure Monitor | **упорядочить по** | <code>Office_Hub_OHubBGTaskError<br>&#124; order by Data_Hresult,  desc</code> |
 | | |
 
 
@@ -202,7 +202,7 @@ Azure Monitor `project-rename` использует оператора для п
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **dedup** |  <code>Event.Rule=330009.2<br>&#124; dedup device_id sortby -batterylife</code> |
+| Splunk | **чисто** |  <code>Event.Rule=330009.2<br>&#124; dedup device_id sortby -batterylife</code> |
 | Azure Monitor | **summarize arg_max()** | <code>Office_Excel_BI_PivotTableCreate<br>&#124; summarize arg_max(batterylife, *) by device_id</code> |
 | | |
 

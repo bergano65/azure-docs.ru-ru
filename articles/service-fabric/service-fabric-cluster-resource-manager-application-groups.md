@@ -1,15 +1,15 @@
 ---
-title: Менеджер кластерных ресурсов сервисной ткани - группы приложений
+title: Диспетчер ресурсов кластера Service Fabric. группы приложений
 description: Общие сведения о назначении групп приложений в диспетчере кластерных ресурсов службы Fabric Service
 author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 988c7ce52125800c16aa785d5b1458604a927ecd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75452152"
 ---
 # <a name="introduction-to-application-groups"></a>Введение в группы приложений
@@ -35,7 +35,7 @@ ms.locfileid: "75452152"
 
 Такое поведение управляется параметром MaximumNodes. Этот параметр можно задать при создании приложения или изменить для уже выполняющегося экземпляра приложения.
 
-PowerShell
+PowerShell.
 
 ``` posh
 New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MaximumNodes 3
@@ -121,7 +121,7 @@ await fc.ApplicationManager.CreateApplicationAsync(ad);
 - для приложения определена метрика со следующими значениями:
   - NodeReservationCapacity = 20;
 
-PowerShell
+PowerShell.
 
  ``` posh
  New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MinimumNodes 2 -Metrics @("MetricName:Metric1,NodeReservationCapacity:20")
@@ -206,7 +206,7 @@ Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicat
 - Чтобы узнать, как диспетчер кластерных ресурсов управляет нагрузкой кластера и балансирует ее, ознакомьтесь со статьей о [балансировке нагрузки](service-fabric-cluster-resource-manager-balancing.md)
 - Начните с самого начала, [изучив общие сведения о диспетчере кластерных ресурсов Service Fabric](service-fabric-cluster-resource-manager-introduction.md)
 - Дополнительные сведения об использовании метрик см. в статье [Управление потреблением ресурсов и нагрузкой в Service Fabric с помощью метрик](service-fabric-cluster-resource-manager-metrics.md).
-- В Cluster Resource Manager предусмотрено много параметров для описания кластера. Чтобы узнать больше о них, ознакомьтесь с этой статьей о [описании кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md)
+- В Cluster Resource Manager предусмотрено много параметров для описания кластера. Чтобы узнать больше о них, ознакомьтесь с этой статьей, посвященной [описанию кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md)
 
 [Image1]:./media/service-fabric-cluster-resource-manager-application-groups/application-groups-max-nodes.png
 [Image2]:./media/service-fabric-cluster-resource-manager-application-groups/application-groups-reserved-capacity.png

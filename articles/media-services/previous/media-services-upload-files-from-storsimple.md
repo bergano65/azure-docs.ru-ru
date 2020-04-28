@@ -15,16 +15,16 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: c77b700cab4afd411c3a2df824ee8335cb394cda
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "64868311"
 ---
 # <a name="upload-files-into-an-azure-media-services-account-from-azure-storsimple"></a>Отправка файлов в учетную запись служб мультимедиа Azure из Azure StorSimple  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 >
 > 
 > В настоящее время диспетчер данных Azure StorSimple доступен в качестве закрытой предварительной версии. 
@@ -32,7 +32,7 @@ ms.locfileid: "64868311"
 
 ## <a name="overview"></a>Обзор
 
-В службах мультимедиа цифровые файлы отправляются в актив. Актив может содержать видео, аудио, изображения, коллекции эскизов, текстовые треки и закрытые файлы субтитры (и метаданные об этих файлах). После загрузки файлов содержимое надежно хранится в облаке для дальнейшей обработки и потоковой передачи.
+В службах мультимедиа цифровые файлы отправляются в актив. Ресурс может содержать видео, аудио, изображения, коллекции эскизов, текстовые дорожки и файлы скрытых субтитров (а также метаданные этих файлов). После передачи файлов содержимое будет безопасно сохранено в облаке для дальнейшей обработки и потоковой передачи.
 
 [Azure StorSimple](https://docs.microsoft.com/azure/storsimple/) использует облачное хранилище в качестве расширения локального решения и автоматически связывает данные локального хранилища с данными облачного хранилища. Перед отправкой данных в облако устройство StorSimple дублирует и сжимает их. Таким образом, в облако можно эффективно отправлять большие файлы. Служба [диспетчера данных StorSimple](../../storsimple/storsimple-data-manager-overview.md) предоставляет интерфейсы API, позволяющие извлекать данные из StorSimple и представлять их в качестве ресурсов AMS.
 
@@ -47,12 +47,12 @@ ms.locfileid: "64868311"
 
 ## <a name="see-also"></a>См. также
 
-[Используйте SDK .NET для запуска заданий в диспетчере данных](../../storsimple/storsimple-data-manager-dotnet-jobs.md)
+[Использование пакета SDK для .NET для активации заданий в Диспетчер данных](../../storsimple/storsimple-data-manager-dotnet-jobs.md)
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия

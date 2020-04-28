@@ -1,6 +1,6 @@
 ---
 title: Руководство по устранению неполадок потоковой трансляции | Документация Майкрософт
-description: В этой статье содержатся предложения о том, как устранить проблемы потоковой передачи мультимедиа Azure в прямом эфире.
+description: В этой статье приводятся рекомендации по устранению проблем с динамической потоковой передачей в службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: b00df5e8176aaad86be5cf3ae4e04c736f36cf5b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74885608"
 ---
 # <a name="troubleshooting-guide-for-live-streaming"></a>Руководство по устранению неполадок потоковой передачи в реальном времени  
@@ -55,6 +55,6 @@ ms.locfileid: "74885608"
 > 
 > 
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

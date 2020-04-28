@@ -1,6 +1,6 @@
 ---
 title: Использование CLI для создания фильтров с помощью служб мультимедиа Azure | Документация Майкрософт
-description: В этой статье показано, как использовать CLI для создания фильтров с помощью Службы мультимедиа Azure v3.
+description: В этой статье показано, как использовать интерфейс командной строки для создания фильтров с помощью служб мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -15,22 +15,22 @@ ms.date: 06/13/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 74516aa921e45917f327a193a1c972b021c9c8ff
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74896073"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
 
 При доставке содержимого пользователям (потоковой трансляции мероприятий или видео по запросу) клиенту может потребоваться больше возможностей, чем описано в файле манифеста ресурса по умолчанию. Службы мультимедиа Azure позволяют определять фильтры учетной записи и фильтры ресурсов для содержимого. 
 
-Для подробного описания этой функции и сценариев, [Filters](filters-concept.md)где она используется, [см.](filters-dynamic-manifest-overview.md)
+Подробное описание этой функции и сценариев, в которых она используется, см. в разделе [динамические манифесты](filters-dynamic-manifest-overview.md) и [фильтры](filters-concept.md).
 
 В этой статье показано, как настроить фильтр для ресурса-контейнера видео по запросу и использовать CLI для Служб мультимедиа версии 3, чтобы создать [фильтры учетных записей](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest) и [фильтры ресурсов](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest). 
 
 > [!NOTE]
-> Убедитесь в том, чтобы просмотреть [презентациюTimeRange](filters-concept.md#presentationtimerange).
+> Обязательно ознакомьтесь с [пресентатионтимеранже](filters-concept.md#presentationtimerange).
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
@@ -43,7 +43,7 @@ ms.locfileid: "74896073"
 В следующем примере определяются условия выбора дорожки, которые добавляются в манифест. Этот фильтр включает любые аудиодорожки в формате EC3 и любые видеодорожки со скоростью в диапазоне 0–1 000 000.
 
 > [!TIP]
-> Если вы планируете определить **фильтры** в REST, обратите внимание, что вам нужно включить обертку «Свойства» JSON.  
+> Если вы планируете определять **фильтры** в других частях, обратите внимание, что необходимо включить объект оболочки JSON "Properties".  
 
 ```json
 [
@@ -100,11 +100,11 @@ az ams asset-filter create -a amsAccount -g resourceGroup -n filterName --asset-
 
 Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate#create-an-asset-filter).
 
-## <a name="associate-filters-with-streaming-locator"></a>Ассоциированные фильтры с потоковым локатором
+## <a name="associate-filters-with-streaming-locator"></a>Связывание фильтров с указателем потоковой передачи
 
-Можно указать список фильтров активов или учетных записей, которые будут применяться к потоковому locator. [Динамический packager (Streaming Endpoint)](dynamic-packaging-overview.md) применяет этот список фильтров вместе с теми, которые ваш клиент указывает в URL. Эта комбинация генерирует [динамический манифест,](filters-dynamic-manifest-overview.md)который основан на фильтрах в фильтрах URL, которые вы указываете на потоковом локаторе. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не хотите, чтобы разоблачить имена фильтров в URL.
+Можно указать список фильтров активов или учетных записей, которые будут применяться к указателю потоковой передачи. [Динамический упаковщик (конечная точка потоковой передачи)](dynamic-packaging-overview.md) применяет этот список фильтров вместе с тем, что ваш клиент указывает в URL-адресе. Это сочетание создает [динамический манифест](filters-dynamic-manifest-overview.md), основанный на фильтрах в URL-адресах и фильтрах, указанных при указателе потоковой передачи. Рекомендуется использовать эту функцию, если вы хотите применить фильтры, но не хотите предоставлять имена фильтров в URL-адресе.
 
-Следующий код CLI показывает, как создать потоковое locator и указать `filters`. Это дополнительное свойство, которое занимает разделенный в пространстве список имен фильтров активов и/или имен фильтров учетных записей.
+В следующем коде CLI показано, как создать указатель потоковой передачи и `filters`указать. Это необязательное свойство, которое принимает разделенный пробелами список имен фильтров ресурсов и/или имен фильтров учетных записей.
 
 ```azurecli
 az ams streaming-locator create -a amsAccount -g resourceGroup -n streamingLocatorName \
@@ -114,7 +114,7 @@ az ams streaming-locator create -a amsAccount -g resourceGroup -n streamingLocat
                                 
 ```
 
-## <a name="stream-using-filters"></a>Поток с помощью фильтров
+## <a name="stream-using-filters"></a>Поток с использованием фильтров
 
 После определения фильтров клиенты могут использовать их в URL-адресах потоковой передачи. Фильтры можно применять к протоколам потоковой передачи с переменной скоростью: Apple HTTP Live Streaming (HLS), MPEG-DASH и Smooth Streaming.
 
@@ -132,4 +132,4 @@ az ams streaming-locator create -a amsAccount -g resourceGroup -n streamingLocat
 
 ## <a name="see-also"></a>См. также
 
-[Лазурный CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
+[Azure CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)

@@ -1,5 +1,5 @@
 ---
-title: Начало работы с хранением каблов с помощью Visual Studio (проекты WebJob)
+title: Начало работы с хранилищем BLOB-объектов с помощью Visual Studio (проекты веб-заданий)
 description: Как приступить к работе, используя хранилище больших двоичных объектов в проекте веб-задания после подключения к хранилищу Azure с использованием подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -14,10 +14,10 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 90aa824b7df575eb2783ece5bd88322f0b55f0a2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72299982"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-webjob-projects"></a>Начало работы с подключенными службами хранилища больших двоичных объектов Azure и Visual Studio (проекты веб-заданий)
@@ -79,7 +79,7 @@ ms.locfileid: "72299982"
 ## <a name="types-that-you-can-bind-to-blobs"></a>Типы, которые можно привязать к большим двоичным объектам
 Атрибут **BlobTrigger** можно использовать со следующими типами:
 
-* **Строка**
+* **string**
 * **TextReader;**
 * **Поток**
 * **ICloudBlob;**

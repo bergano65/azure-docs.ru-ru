@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 05/07/2017
 ms.subservice: autoscale
 ms.openlocfilehash: a77cf1704c20abb77d432eab16569071208f6da8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75396095"
 ---
 # <a name="overview-of-common-autoscale-patterns"></a>Обзор общих шаблонов автомасштабирования
@@ -50,7 +50,7 @@ ms.locfileid: "75396095"
 
 ## <a name="scale-based-on-custom-metric"></a>Масштабирование на основе пользовательской метрики
 
-У вас есть веб-фронт и уровень API, который общается с бэкэндом.
+У вас есть веб-интерфейс и уровень API, который взаимодействует с серверной частью.
 
 - Необходимо масштабировать уровень API на основе пользовательских событий во внешнем интерфейсе (например, масштабировать процесс оформления заказов и оплаты на основе количества элементов в корзине).
 

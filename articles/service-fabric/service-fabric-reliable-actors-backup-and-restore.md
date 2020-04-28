@@ -1,15 +1,15 @@
 ---
-title: Резервное копирование и восстановление участников Службы обслуживания Azure
+title: Резервное копирование и восстановление субъектов Azure Service Fabric Actors
 description: Узнайте о реализации резервного копирования и восстановления в субъектах Azure Service Fabric.
 author: vturecek
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: vturecek
 ms.openlocfilehash: 41ba3f9c7d362756b800005d0c140c23dd96caa6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75370465"
 ---
 # <a name="implement-reliable-actors-backup-and-restore"></a>Реализация резервного копирования и восстановления Reliable Actors
@@ -111,9 +111,9 @@ myActorServiceProxy.backupActorsAsync();
 
 Дополнительные сведения о Reliable Actors см. в этих статьях:
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
-* [Актер жизненный цикл и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
+* [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
-* [Код образца .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->

@@ -1,13 +1,13 @@
 ---
-title: Создание проекта Service Fabric следующие шаги
+title: Дальнейшие действия по созданию проекта Service Fabric
 description: Узнайте о проекте приложения, который вы только что создали в Visual Studio,  о том, как создать службы с помощью руководств, а также ознакомьтесь с дополнительными сведениями о разработке служб для Service Fabric.
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.openlocfilehash: e8fc105657bda6114851f4819be4658926ad621c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75349415"
 ---
 # <a name="your-service-fabric-application-and-next-steps"></a>Ваше приложение Service Fabric и дальнейшие действия
@@ -56,7 +56,7 @@ Service Fabric предлагает несколько способов запи
 В приложении может храниться конфиденциальная информация, например строки подключения к хранилищу, пароли или другие значения, которые не должны обрабатываться в виде обычного текста. Узнайте, как [управлять конфиденциальными сведениями в приложении](service-fabric-application-secret-management.md).
 
 ## <a name="learn-about-the-application-lifecycle"></a>Узнайте больше о жизненном цикле приложения
-Как и в случае с другими платформами, приложение в Service Fabric обычно проходит следующие фазы: проектирование, разработка, тестирование, развертывание, обновление, техническое обслуживание и удаление. [В этой статье](service-fabric-application-lifecycle.md) приводится обзор AI и того, как они используются различными ролями на этапах жизненного цикла приложения Service Fabric.
+Как и в случае с другими платформами, приложение в Service Fabric обычно проходит следующие фазы: проектирование, разработка, тестирование, развертывание, обновление, техническое обслуживание и удаление. В [этой статье](service-fabric-application-lifecycle.md) представлен обзор интерфейсов API и их использования различными ролями на всех этапах жизненного цикла приложения Service Fabric.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).

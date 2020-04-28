@@ -1,21 +1,21 @@
 ---
-title: Сервер резервного копирования Azure и часто задаваемые вопросы DPM
-description: В этой статье можно найти ответы на распространенные вопросы о сервере резервного копирования Microsoft Azure (MABS) и DPM (менеджер защиты данных).
+title: 'Azure Backup Server и DPM: вопросы и ответы'
+description: В этой статье вы найдете ответы на часто задаваемые вопросы о Microsoft Azure Backup сервере (MABS) и DPM (Data Protection Manager).
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.openlocfilehash: 35957a1e8a3d6c3d9be06d9d44dbcd47efa0e6ee
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74173155"
 ---
-# <a name="azure-backup-server-and-dpm---faq"></a>Сервер резервного копирования Azure и DPM - часто задаваемые вопросы
+# <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server и DPM — часто задаваемые вопросы
 
 ## <a name="general-questions"></a>Общие вопросы
 
-В этой статье часто задаются вопросы о сервере резервного копирования Azure и DPM.
+В этой статье содержатся ответы на часто задаваемые вопросы о Azure Backup Server и DPM.
 
 ### <a name="can-i-use-azure-backup-server-to-create-a-bare-metal-recovery-bmr-backup-for-a-physical-server"></a>Можно ли использовать Azure Backup Server, чтобы создать резервную копию для восстановления исходного состояния физического сервера?
 
@@ -46,7 +46,7 @@ ms.locfileid: "74173155"
 - См. дополнительные сведения о [поддерживаемых версиях](backup-mabs-protection-matrix.md).
 - См. [инструкции по резервному копированию сервера VMware](backup-azure-backup-server-vmware.md).
 
-### <a name="do-i-need-a-separate-license-to-recover-a-full-on-premises-vmwarehyper-v-cluster"></a>Нужна ли мне отдельная лицензия для восстановления полного локтевого кластера VMware/Hyper-V?
+### <a name="do-i-need-a-separate-license-to-recover-a-full-on-premises-vmwarehyper-v-cluster"></a>Требуется ли отдельная лицензия для восстановления всего локального кластера VMware или Hyper-V?
 
 Для защиты VMware или Hyper-V отдельная лицензия не требуется.
 
@@ -67,5 +67,5 @@ ms.locfileid: "74173155"
 
 См. другие статьи с вопросами и ответами:
 
-- [Узнайте больше](backup-support-matrix-mabs-dpm.md) о сервере резервного копирования Azure и матрице поддержки DPM.
-- [Узнайте больше](backup-azure-mabs-troubleshoot.md) о рекомендациях по устранению проблем Azure Backup Server и DPM.
+- Дополнительные [сведения](backup-support-matrix-mabs-dpm.md) о Azure Backup Server и матрице поддержки DPM.
+- Дополнительные [сведения](backup-azure-mabs-troubleshoot.md) о Azure Backup Server и рекомендациях по устранению неполадок DPM.

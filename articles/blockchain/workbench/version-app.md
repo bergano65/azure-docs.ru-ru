@@ -1,19 +1,19 @@
 ---
-title: Версия приложения Blockchain - Azure Blockchain Workbench
-description: Как использовать версии приложений в Azure Blockchain Workbench Preview.
+title: Управление версиями приложений блокчейн — Azure Блокчейн Workbench
+description: Использование версий приложений в предварительной версии Azure Блокчейн Workbench.
 ms.date: 11/20/2019
 ms.topic: article
 ms.reviewer: brendal
 ms.openlocfilehash: 45219790cf0cd064e0fcd456e262b2f93aa03ac9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74323912"
 ---
-# <a name="azure-blockchain-workbench-preview-application-versioning"></a>Версия приложения Azure Blockchain Workbench
+# <a name="azure-blockchain-workbench-preview-application-versioning"></a>Управление версиями в предварительной версии приложения Azure Блокчейн Workbench
 
-Вы можете создать и использовать несколько версий приложения Azure Blockchain Workbench Preview. Если передано несколько версий одного и того же приложения, доступен журнал версий и пользователи могут выбирать версию, которую они хотят использовать.
+Вы можете создать и использовать несколько версий приложения Azure Блокчейн Workbench Preview. Если передано несколько версий одного и того же приложения, доступен журнал версий и пользователи могут выбирать версию, которую они хотят использовать.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

@@ -1,13 +1,13 @@
 ---
-title: Доступ из контейнерных инстанций
+title: Доступ из экземпляров контейнеров
 description: Узнайте, как обеспечить доступ к образам в закрытом реестре контейнеров из службы "Экземпляры контейнеров Azure" с помощью субъекта-службы Azure Active Directory.
 ms.topic: article
 ms.date: 04/23/2018
 ms.openlocfilehash: b1bc8119c495dea99c6bdc4923db198d041a1e9e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74456517"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-container-instances"></a>Аутентификация с помощью реестра контейнеров Azure из службы "Экземпляры контейнеров Azure"
@@ -44,8 +44,8 @@ az container create \
 
 На GitHub можно найти предыдущие примеры сценариев для Azure CLI, а также версии для Azure PowerShell:
 
-* [Лазурный CLI][acr-scripts-cli]
-* [Лазурная силаШелл][acr-scripts-psh]
+* [Azure CLI][acr-scripts-cli]
+* [Azure PowerShell][acr-scripts-psh]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

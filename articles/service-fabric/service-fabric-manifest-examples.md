@@ -1,15 +1,15 @@
 ---
-title: Примеры приложений Azure Service Fabric
+title: Примеры манифеста приложения Azure Service Fabric
 description: Узнайте, как настроить параметры манифестов приложений и служб для приложения Service Fabric.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: pepogors
 ms.openlocfilehash: 6f44d2ddaac11545a3a3dc52fd20e02263c6ad67
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75451644"
 ---
 # <a name="service-fabric-application-and-service-manifest-examples"></a>Примеры манифестов приложений и служб Service Fabric
@@ -17,7 +17,7 @@ ms.locfileid: "75451644"
 
 Ниже приведен список возможностей и примеры манифестов, частью которых они являются.
 
-|Компонент|манифеста|
+|Функция|манифеста|
 |---|---|
 |[Управление ресурсами](service-fabric-resource-governance.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest), [манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Запуск службы с использованием учетной записи локального администратора](service-fabric-application-runas-security.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest)|
@@ -34,7 +34,7 @@ ms.locfileid: "75451644"
 |[Настройка проверки подлинности в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-repository-authentication)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Настройка режима изоляции](service-fabric-get-started-containers.md#configure-isolation-mode)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Указание образов контейнеров для конкретной сборки ОС](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
-|[Установка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables)|[Манифест службы FrontEndService контейнера](service-fabric-manifest-example-container-app.md#frontendservice-service-manifest), [манифест службы BackEndService контейнера](service-fabric-manifest-example-container-app.md#backendservice-service-manifest)|
+|[Настройка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables)|[Манифест службы FrontEndService контейнера](service-fabric-manifest-example-container-app.md#frontendservice-service-manifest), [манифест службы BackEndService контейнера](service-fabric-manifest-example-container-app.md#backendservice-service-manifest)|
 |[Настройка конечной точки](service-fabric-get-started-containers.md#configure-communication)|[Манифест службы FrontEndService контейнера](service-fabric-manifest-example-container-app.md#frontendservice-service-manifest), [манифест службы BackEndService контейнера](service-fabric-manifest-example-container-app.md#backendservice-service-manifest), [манифест службы VotingData](service-fabric-manifest-example-reliable-services-app.md#votingdata-service-manifest)|
 |передача команд в контейнер|[Манифест службы FrontEndService контейнера](service-fabric-manifest-example-container-app.md#frontendservice-service-manifest)|
 |[Импорт сертификата в контейнер](service-fabric-securing-containers.md)|[Манифест службы FrontEndService контейнера](service-fabric-manifest-example-container-app.md#frontendservice-service-manifest)|

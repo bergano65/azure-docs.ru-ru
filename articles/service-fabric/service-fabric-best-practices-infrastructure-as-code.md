@@ -1,15 +1,15 @@
 ---
-title: Инфраструктура Сервиса Обслуживания Azure как лучшие практики кода
-description: Рекомендации по разработке и рекомендациям по управлению Azure Service Fabric как инфраструктурой как кодом.
+title: Инфраструктура Service Fabric Azure как рекомендации по коду
+description: Рекомендации и соображения по проектированию для управления Service Fabric Azure в качестве инфраструктуры как кода.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
 ms.openlocfilehash: 1c044d5fd973d3c577088a887f2fac413d2ab79d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75551834"
 ---
 # <a name="infrastructure-as-code"></a>Инфраструктура как код
@@ -90,8 +90,8 @@ for root, dirs, files in os.walk(self.microservices_app_package_path):
 microservices_sfpkg.close()
 ```
 
-## <a name="azure-virtual-machine-operating-system-automatic-upgrade-configuration"></a>Настройка автоматического обновления виртуальной машины Azure 
-Обновление виртуальных машин является инициированной пользователем операцией, и рекомендуется использовать [обновление автоматической операционной системы установки виртуальной шкалы машин](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для управления патчами кластеров Azure Service Fabric; Patch Orchestration Application — это альтернативное решение, предназначенное для размещения за пределами Azure, хотя POA может быть использована в Azure, при этом накладные расходы на размещение POA в Azure являются распространенной причиной, предпочитающей автоматическое обновление виртуальной системы управления машиной по сравнению с POA. Ниже приведены свойства шаблона шаблона вычислительной виртуальной шкалы вычислительной шкалы, набора ресурсов, позволяющие обновить АвтоОС:
+## <a name="azure-virtual-machine-operating-system-automatic-upgrade-configuration"></a>Конфигурация автоматического обновления операционной системы виртуальной машины Azure 
+Обновление виртуальных машин — это операция, инициированная пользователем, поэтому рекомендуется использовать [масштабируемый набор виртуальных машин автоматическое обновление операционной системы](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для Azure Service Fabric кластеры управления обновлениями узла. Приложение для управления исправлениями — это альтернативное решение, которое предназначено для размещения за пределами Azure, хотя ВЕХ можно использовать в Azure, и издержки на размещение ВЕХ в Azure являются распространенной причиной для автоматического обновления операционной системы виртуальной машины через ВЕХ. Ниже приведены свойства шаблона "вычисление масштабируемого набора виртуальных машин" диспетчер ресурсов для включения автоматического обновления ОС.
 
 ```json
 "upgradePolicy": {
@@ -102,11 +102,11 @@ microservices_sfpkg.close()
     }
 },
 ```
-При использовании автоматического обновления ОС с помощью Service Fabric новое изображение ОС выкатывается из одного домена обновления в то время, чтобы поддерживать высокую доступность услуг, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше.
+При использовании автоматических обновлений ОС с Service Fabric новый образ ОС помещается в один домен обновления за раз, чтобы обеспечить высокий уровень доступности служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше.
 
-Убедитесь, что следующий ключ реестра установлен на ложное, чтобы предотвратить ваши окна хост машины от начала несогласованных обновлений: HKEY_LOCAL_MACHINE-SOFTWARE-Политики »Microsoft-WindowsUpdate-AU.
+Убедитесь, что для следующего раздела реестра задано значение false, чтобы предотвратить запуск несогласованных обновлений на компьютерах узла Windows: HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\микрософт\виндовс\виндовсупдате\ау.
 
-Ниже приведены свойства шаблона шаблона «Вычислительная виртуальная шкала вычислительной шкалы, набор ресурсов для установки ключа реестра WindowsUpdate» на ложное:
+Ниже приведены свойства шаблона "вычисленный масштабируемый набор виртуальных машин" диспетчер ресурсов, чтобы задать для раздела реестра WindowsUpdate значение false:
 ```json
 "osProfile": {
         "computerNamePrefix": "{vmss-name}",
@@ -119,12 +119,12 @@ microservices_sfpkg.close()
       },
 ```
 
-## <a name="azure-service-fabric-cluster-upgrade-configuration"></a>Конфигурация кластера обновления кластера Azure Service Fabric
-Ниже приводится свойство шаблона шаблона кластера Service Fabric Resource Manager для автоматического обновления:
+## <a name="azure-service-fabric-cluster-upgrade-configuration"></a>Конфигурация обновления кластера Azure Service Fabric
+Ниже приведено свойство шаблона диспетчер ресурсов кластера Service Fabric для включения автоматического обновления.
 ```json
 "upgradeMode": "Automatic",
 ```
-Чтобы вручную обновить кластер, загрузите дистрибутив кабины/деба в кластерную виртуальную машину, а затем вывешив следующее PowerShell:
+Чтобы вручную обновить кластер, скачайте CAB-файл или debное распределение на виртуальную машину кластера, а затем запустите следующую команду PowerShell:
 ```powershell
 Copy-ServiceFabricClusterPackage -Code -CodePackagePath <"local_VM_path_to_msi"> -CodePackagePathInImageStore ServiceFabric.msi -ImageStoreConnectionString "fabric:ImageStore"
 Register-ServiceFabricClusterPackage -Code -CodePackagePath "ServiceFabric.msi"
@@ -135,4 +135,4 @@ Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion <"msi_code_version">
 
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание кластера Azure Service Fabric в локальной или облачной средах](service-fabric-tutorial-create-vnet-and-windows-cluster.md)
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
-* Узнайте о [вариантах поддержки Service Fabric](service-fabric-support.md)
+* Дополнительные сведения о [вариантах поддержки Service Fabric](service-fabric-support.md)

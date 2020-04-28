@@ -1,5 +1,5 @@
 ---
-title: Начало работы с хранилищем Azure с помощью Visual Studio (проекты WebJob)
+title: Начало работы со службой хранилища Azure с помощью Visual Studio (проекты веб-заданий)
 description: Как приступить к работе, используя табличное хранилище Azure в проекте веб-задания Azure в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -14,10 +14,10 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: e4d8299c06bfa5b0f33bff8fa592a2fa549c695c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74707602"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Начало работы со службой хранилища Azure (проекты веб-заданий Azure)
@@ -33,7 +33,7 @@ ms.locfileid: "74707602"
 
 ## <a name="how-to-add-entities-to-a-table"></a>Как добавить сущность в таблицу
 
-Чтобы добавить объекты в таблицу, используйте атрибут **таблицы** с **iCollector\<T>** или **iAsyncCollector\<T>** параметр, где **T** определяет схему объектов, которые вы хотите добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
+Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector\<t>** или **IAsyncCollector\<>t** , где **t** указывает схему сущностей, которую необходимо добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
 
 Следующий пример кода добавляет сущности **Person** в таблицу с именем *Ingress*.
 
@@ -88,7 +88,7 @@ public class Person
 
 ## <a name="how-to-read-multiple-entities-from-a-table"></a>Как выполнять чтение нескольких сущностей из таблицы
 
-Чтобы прочитать таблицу, используйте атрибут **таблицы** с параметром **\<I'siiable T>,** где тип **T** происходит от **TableEntity** или реализует **ITableEntity.**
+Для чтения таблицы используйте атрибут **Table** с параметром **IQueryable\<T>** , где тип **t** является производным от **TableEntity** или реализует **ITableEntity**.
 
 Следующий пример кода считывает и записывает все строки таблицы **Ingress** .
 

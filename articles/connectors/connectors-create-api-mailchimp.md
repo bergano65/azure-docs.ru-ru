@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 08/18/2016
 tags: connectors
 ms.openlocfilehash: a440f702058abc25bb360111418c451d59c3ab1b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74789630"
 ---
 # <a name="get-started-with-the-mailchimp-connector"></a>Начало работы с соединителем MailChimp
 
 MailChimp — это служба SaaS, которая позволяет компаниям управлять маркетинговыми мероприятиями по электронной почте, включая отправку маркетинговых сообщений электронной почты, автоматических сообщений и целевых кампаний, и автоматизировать их.
 
-Вы можете начать с создания приложения логики сейчас, [см. Создать логическое приложение](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+Вы можете начать с создания приложения логики прямо сейчас, в разделе [Создание приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="create-a-connection-to-mailchimp"></a>Создание подключения к MailChimp
 

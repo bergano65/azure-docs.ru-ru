@@ -1,5 +1,5 @@
 ---
-title: Начало работы с хранением таблиц с помощью Visual Studio (облачные сервисы)
+title: Приступая к работе с хранилищем таблиц с помощью Visual Studio (облачные службы)
 description: Как приступить к работе, используя табличное хранилище Azure в проекте облачной службы в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio
 services: storage
 author: ghogen
@@ -14,10 +14,10 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 5c42d65b5e2c46fcdbe1b0725f2ebce881722db3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72299990"
 ---
 # <a name="getting-started-with-azure-table-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Начало работы с табличным хранилищем Azure и подключенными службами Visual Studio (проектами облачных служб)
@@ -28,12 +28,12 @@ ms.locfileid: "72299990"
 
 В службе хранилища таблиц Azure можно хранить большие объемы структурированных данных. Эта служба — хранилище данных NoSQL, которое принимает вызовы внутри и снаружи облака Azure с проверкой подлинности. Таблицы Azure идеально подходят для хранения нереляционных структурированных данных.
 
-Чтобы начать работу, сначала необходимо создать таблицу в учетной записи хранения. Мы покажем, как создать таблицу Azure в коде, и как выполнять базовые операции с таблицами и сущностями, например добавлять, изменять и читать сущности таблицы. Образцы написаны\# в C-коде и [используются в клиентской библиотеке Microsoft Azure Storage для .NET.](https://msdn.microsoft.com/library/azure/dn261237.aspx)
+Чтобы начать работу, сначала необходимо создать таблицу в учетной записи хранения. Мы покажем, как создать таблицу Azure в коде, и как выполнять базовые операции с таблицами и сущностями, например добавлять, изменять и читать сущности таблицы. Примеры написаны на языке C\# и используют [клиентскую библиотеку служба хранилища Microsoft Azure для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 
 **Примечание**. Некоторые интерфейсы API, которые выполняют вызовы к службе хранилища Azure, являются асинхронными. Дополнительные сведения см. в статье [Asynchronous Programming with async and await (C#)](https://msdn.microsoft.com/library/hh191443.aspx) (Асинхронное программирование с использованием ключевых слов Async и Await (C#)). В следующем примере кода предполагается, что используются асинхронные методы программирования.
 
 * Дополнительные сведения о выполнении программных операций с таблицами см. в статье [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../storage/storage-dotnet-how-to-use-tables.md).
-* Ознакомиться с [документацией для хранения данных](https://azure.microsoft.com/documentation/services/storage/) об хранилище Azure.
+* Общие сведения о службе хранилища Azure см. в [документации по хранилищу](https://azure.microsoft.com/documentation/services/storage/) .
 * Общие сведения об облачных службах Azure см. в [документации по облачным службам](https://azure.microsoft.com/documentation/services/cloud-services/).
 * Дополнительную информацию о программировании для ASP.NET см. в разделе [ASP.NET](https://www.asp.net).
 
@@ -151,7 +151,7 @@ ms.locfileid: "72299990"
 
 
 ## <a name="get-a-single-entity"></a>Получение одной сущности
-Можно написать запрос для получения отдельной сущности. Следующий пример кода использует **TableOperation** для указания клиента "Ben Smith". Этот метод возвращает только одну сущность, а не коллекцию, а возвращенное значение в **TableResult.Result** является объектом **CustomerEntity.** Указание ключей раздела и строки в запросе — это самый быстрый способ получения одной сущности из службы **таблицы.**
+Можно написать запрос для получения отдельной сущности. Следующий пример кода использует **TableOperation** для указания клиента "Ben Smith". Этот метод возвращает только одну сущность, а не коллекцию, а возвращаемое значение в **TableResult. Result** является объектом **CustomerEntity** . Указание ключей разделов и строк в запросе — самый быстрый способ извлечь одну сущность из службы **таблиц** .
 
     // Create a retrieve operation that takes a customer entity.
     TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");

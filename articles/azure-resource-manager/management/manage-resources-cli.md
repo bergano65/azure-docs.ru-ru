@@ -1,33 +1,33 @@
 ---
-title: Управление ресурсами - Azure CLI
-description: Для управления ресурсами используйте Azure CLI и менеджер ресурсов Azure. Показывает, как развертывать и удалять ресурсы.
+title: Управление ресурсами — Azure CLI
+description: Используйте Azure CLI и Azure Resource Manager для управления ресурсами. Показывает, как развертывать и удалять ресурсы.
 author: mumian
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.openlocfilehash: f00c1725201b0e49f80fec64e5d69b375ec7a233
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75485537"
 ---
 # <a name="manage-azure-resources-by-using-azure-cli"></a>Управление ресурсами Azure с помощью Azure CLI
 
-Узнайте, как использовать Azure CLI с [помощью менеджера ресурсов Azure](overview.md) для управления ресурсами Azure. Для управления группами ресурсов см. [Управление группами ресурсов Azure с помощью Azure CLI.](manage-resource-groups-cli.md)
+Узнайте, как использовать Azure CLI с [Azure Resource Manager](overview.md) для управления ресурсами Azure. Сведения об управлении группами ресурсов см. в статье [Управление группами ресурсов Azure с помощью Azure CLI](manage-resource-groups-cli.md).
 
 Другие статьи об управлении ресурсами:
 
-- [Управление ресурсами Azure с помощью портала Azure](manage-resources-portal.md)
+- [Управление ресурсами Azure с помощью портал Azure](manage-resources-portal.md)
 - [Управление ресурсами Azure с помощью Azure PowerShell](manage-resources-powershell.md)
 
 ## <a name="deploy-resources-to-an-existing-resource-group"></a>Развертывание ресурсов в существующей группе ресурсов
 
-Можно развертывать ресурсы Azure непосредственно с помощью Azure CLI или развертывать шаблон управления ресурсами для создания ресурсов Azure.
+Ресурсы Azure можно развернуть непосредственно с помощью Azure CLI или развернуть шаблон диспетчер ресурсов для создания ресурсов Azure.
 
 ### <a name="deploy-a-resource"></a>Развертывание ресурса
 
-Следующий скрипт создает учетную запись для хранения данных.
+Следующий скрипт создает учетную запись хранения.
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -42,7 +42,7 @@ az storage account show --resource-group $resourceGroupName --name $storageAccou
 
 ### <a name="deploy-a-template"></a>Развертывание шаблона
 
-Следующий скрипт создает шаблон «Быстрый пуск» для создания учетной записи хранилища. Для получения дополнительной информации [см.](../templates/quickstart-create-templates-use-visual-studio-code.md?tabs=PowerShell)
+Следующий скрипт создает шаблон быстрого запуска для создания учетной записи хранения. Дополнительные сведения см. в разделе [Краткое руководство. Создание шаблонов Azure Resource Manager с помощью Visual Studio Code](../templates/quickstart-create-templates-use-visual-studio-code.md?tabs=PowerShell).
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -56,15 +56,15 @@ az group deployment create --resource-group $resourceGroupName --template-uri "h
 
 ## <a name="deploy-a-resource-group-and-resources"></a>Развертывание группы ресурсов и ресурсов
 
-Можно создать группу ресурсов и развернуть ресурсы в группу. См. дополнительные сведения в разделе [Создание группы ресурсов и развертывание ресурсов](../templates/deploy-to-subscription.md#resource-group-and-resources).
+Вы можете создать группу ресурсов и развернуть в нее ресурсы. См. дополнительные сведения в разделе [Создание группы ресурсов и развертывание ресурсов](../templates/deploy-to-subscription.md#resource-group-and-resources).
 
-## <a name="deploy-resources-to-multiple-subscriptions-or-resource-groups"></a>Развертывание ресурсов в нескольких подписок или групп ресурсов
+## <a name="deploy-resources-to-multiple-subscriptions-or-resource-groups"></a>Развертывание ресурсов в нескольких подписках или группах ресурсов
 
-Обычно развертывание всех ресурсов в шаблоне выполняется в отдельную группу ресурсов. Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Для получения дополнительной информации [перечню развертывание ресурсов Azure для нескольких подписок или групп ресурсов.](../templates/cross-resource-group-deployment.md)
+Обычно развертывание всех ресурсов в шаблоне выполняется в отдельную группу ресурсов. Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Дополнительные сведения см. [в статье Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](../templates/cross-resource-group-deployment.md).
 
 ## <a name="delete-resources"></a>Удаление ресурсов
 
-На следующем скрипте показано, как удалить учетную запись хранения.
+В следующем сценарии показано, как удалить учетную запись хранения.
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -74,11 +74,11 @@ read storageAccountName &&
 az storage account delete --resource-group $resourceGroupName --name $storageAccountName 
 ```
 
-Для получения дополнительной информации о том, как диспетчер [Azure Resource Manager resource group deletion](delete-resource-group.md)ресурсов Azure заказывает удаление ресурсов, см.
+Дополнительные сведения о том, как Azure Resource Manager упорядочивают удаление ресурсов, см. в разделе [Azure Resource Manager удаление группы ресурсов](delete-resource-group.md).
 
 ## <a name="move-resources"></a>Перемещение ресурсов
 
-В следующем скрипте показано, как удалить учетную запись хранилища из одной группы ресурсов в другую группу ресурсов.
+В следующем сценарии показано, как удалить учетную запись хранения из одной группы ресурсов в другую.
 
 ```azurecli-interactive
 echo "Enter the source Resource Group name:" &&
@@ -95,9 +95,9 @@ az resource move --destination-group $destResourceGroupName --ids $storageAccoun
 
 ## <a name="lock-resources"></a>Блокировка ресурсов
 
-Блокировка предотвращает случайное исключение или изменение критически важных ресурсов, таких как подписка Azure, группа ресурсов или ресурс. 
+Блокировка запрещает другим пользователям в организации случайно удалить или изменить критически важные ресурсы, такие как подписка Azure, Группа ресурсов или ресурс. 
 
-Следующий скрипт блокирует учетную запись хранения, поэтому учетная запись не может быть удалена.
+Следующий скрипт блокирует учетную запись хранения, чтобы учетную запись нельзя было удалить.
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -107,7 +107,7 @@ read storageAccountName &&
 az lock create --name LockSite --lock-type CanNotDelete --resource-group $resourceGroupName --resource-name $storageAccountName --resource-type Microsoft.Storage/storageAccounts 
 ```
 
-Следующий скрипт получает все блокировки для учетной записи хранилища:
+Следующий скрипт получает все блокировки для учетной записи хранения:
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -117,7 +117,7 @@ read storageAccountName &&
 az lock list --resource-group $resourceGroupName --resource-name $storageAccountName --resource-type Microsoft.Storage/storageAccounts --parent ""
 ```
 
-Следующий скрипт удаляет блокировку учетной записи хранилища:
+Следующий скрипт удаляет блокировку учетной записи хранения:
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -128,19 +128,19 @@ lockId=$(az lock show --name LockSite --resource-group $resourceGroupName --reso
 az lock delete --ids $lockId
 ```
 
-Для получения дополнительной информации смотрите [ресурсы блокировки с менеджером ресурсов Azure.](lock-resources.md)
+Дополнительные сведения см. [в разделе Блокировка ресурсов с помощью Azure Resource Manager](lock-resources.md).
 
 ## <a name="tag-resources"></a>Добавление тегов к ресурсам
 
-Метки помогают логически организовать группу ресурсов и ресурсы. Для получения [информации см. «Использование тегов для организации ресурсов Azure.](tag-resources.md#azure-cli)
+Теги позволяют логически упорядочивать группы ресурсов и ресурсы. Дополнительные сведения см. [в статье Использование тегов для Организации ресурсов Azure](tag-resources.md#azure-cli).
 
 ## <a name="manage-access-to-resources"></a>Управление доступом к ресурсам
 
-[Управление доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Для получения дополнительной информации [см. Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md).
+[Управление доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы узнать менеджер ресурсов Azure, [пересмотрите обзор менеджера ресурсов Azure.](overview.md)
-- Чтобы узнать синтаксис шаблона управления ресурсами, [см.](../templates/template-syntax.md)
-- Чтобы узнать, как разрабатывать шаблоны, смотрите [пошаговые учебники](/azure/azure-resource-manager/).
-- Для просмотра схем шаблонов шаблонов Azure Resource Manager [см.](/azure/templates/)
+- Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](overview.md).
+- Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../templates/template-syntax.md).
+- Дополнительные сведения о разработке шаблонов см. в пошаговых [руководствах](/azure/azure-resource-manager/).
+- Сведения о том, как просмотреть схемы шаблонов Azure Resource Manager, см. в разделе [Справочник по шаблонам](/azure/templates/).

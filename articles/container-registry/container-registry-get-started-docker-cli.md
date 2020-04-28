@@ -1,25 +1,25 @@
 ---
-title: Нажмите & вытащить Докер изображение
+title: Образ DOCKER & для отправки по запросу
 description: Отправка образов Docker в частный реестр контейнеров в Azure и их получение с помощью интерфейса командной строки Docker
 ms.topic: article
 ms.date: 01/23/2019
 ms.custom: seodec18, H1Hack27Feb2017
 ms.openlocfilehash: 6751a04c3c1bfe826334161704c20c1ba2e5a6d2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74456355"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
 
-Реестр контейнеров Azure хранит и управляет изображениями контейнеров [Docker,](https://hub.docker.com) подобно тому, как [Docker Hub](https://hub.docker.com/) хранит общедоступные изображения Docker. [Интерфейс командной строки Docker](https://docs.docker.com/engine/reference/commandline/cli/) (Docker CLI) позволяет [входить](https://docs.docker.com/engine/reference/commandline/login/) в реестр контейнеров, а также выполнять [отправку](https://docs.docker.com/engine/reference/commandline/push/), [извлечение](https://docs.docker.com/engine/reference/commandline/pull/) и другие операции.
+Реестр контейнеров Azure хранит частные образы контейнеров [DOCKER](https://hub.docker.com) и управляет ими, аналогично тому, как [центр DOCKER](https://hub.docker.com/) хранит общедоступные образы DOCKER. [Интерфейс командной строки Docker](https://docs.docker.com/engine/reference/commandline/cli/) (Docker CLI) позволяет [входить](https://docs.docker.com/engine/reference/commandline/login/) в реестр контейнеров, а также выполнять [отправку](https://docs.docker.com/engine/reference/commandline/push/), [извлечение](https://docs.docker.com/engine/reference/commandline/pull/) и другие операции.
 
 Выполняя следующие действия, вы скачаете официальный [образ Nginx](https://store.docker.com/images/nginx) из общедоступного реестра Docker Hub, поместите его в частный реестр контейнеров Azure, отправите его в свой реестр, а затем извлечете его от туда.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Реестр контейнеров Azure** - Создание реестра контейнеров в подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
+* **Реестр контейнеров Azure** . Создайте реестр контейнеров в подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
 * **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе: [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 ## <a name="log-in-to-a-registry"></a>Вход в раздел реестра
@@ -30,7 +30,7 @@ ms.locfileid: "74456355"
 az acr login --name myregistry
 ```
 
-Вы также можете выполнить вход с помощью команды [docker login](https://docs.docker.com/engine/reference/commandline/login/). Например, вы могли [бы назначить в](container-registry-authentication.md#service-principal) реестр директор службы для сценария автоматизации. При запуске следующей команды, когда появляется запрос в интерактивном режиме, укажите идентификатор приложения (имя пользователя) и пароль субъекта-службы. Рекомендации по управлению учетными данными см. в справочнике по команде [docker login](https://docs.docker.com/engine/reference/commandline/login/).
+Вы также можете выполнить вход с помощью команды [docker login](https://docs.docker.com/engine/reference/commandline/login/). Например, для сценария автоматизации может быть [назначен субъект-служба](container-registry-authentication.md#service-principal) в реестре. При запуске следующей команды, когда появляется запрос в интерактивном режиме, укажите идентификатор приложения (имя пользователя) и пароль субъекта-службы. Рекомендации по управлению учетными данными см. в справочнике по команде [docker login](https://docs.docker.com/engine/reference/commandline/login/).
 
 ```
 docker login myregistry.azurecr.io
@@ -121,9 +121,9 @@ az acr repository delete --name myregistry --image samples/nginx:latest
 
 Теперь, когда вы знаете основы, можно приступать к использованию реестра. Например, можно развернуть образы контейнера из реестра в следующие службы:
 
-* [Служба Лазурного Кубернета (AKS)](../aks/tutorial-kubernetes-prepare-app.md)
-* [Инстанции контейнеров Azure](../container-instances/container-instances-tutorial-prepare-app.md)
-* [Service Fabric](../service-fabric/service-fabric-tutorial-create-container-images.md)
+* [Служба Azure Kubernetes (AKS)](../aks/tutorial-kubernetes-prepare-app.md)
+* [Экземпляры контейнеров Azure](../container-instances/container-instances-tutorial-prepare-app.md);
+* [Service Fabric.](../service-fabric/service-fabric-tutorial-create-container-images.md)
 
 При необходимости установите [расширение Docker для Visual Studio Code](https://code.visualstudio.com/docs/azure/docker) и расширение [учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) для работы со своими реестрами контейнеров Azure. Извлекайте и отправляйте образы в реестр контейнеров Azure или запускайте Задачи ACR в Visual Studio Code.
 

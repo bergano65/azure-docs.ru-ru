@@ -1,14 +1,14 @@
 ---
-title: Подготовка к изменению исходящих IP-адресов
+title: Подготовка к изменению исходящего IP-адреса
 description: Если ваш исходящий IP-адрес будет изменен, узнайте, что необходимо сделать, чтобы ваше приложение продолжало работать после изменения.
 ms.topic: article
 ms.date: 06/28/2018
 ms.custom: seodec18
 ms.openlocfilehash: 2be4bc92dde278b054bd04f412f937440027ece7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74671667"
 ---
 # <a name="how-to-prepare-for-an-outbound-ip-address-change"></a>Подготовка к изменению исходящего IP-адреса

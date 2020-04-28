@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 63715f668438519131eba5bfff7aa38fc73267d0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "61094657"
 ---
 # <a name="retry-logic-in-the-media-services-sdk-for-net"></a>Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET  
@@ -37,55 +37,55 @@ ms.locfileid: "61094657"
 ## <a name="exception-types"></a>Типы исключений
 В таблице ниже описаны исключения, которые пакет SDK служб мультимедиа для .NET обрабатывает или не обрабатывает для некоторых операций, которые могут вызывать временные сбои.  
 
-| Исключение | Веб-запрос | Хранилище | Запрос | Сохранение изменений |
+| Исключение | Веб-запрос | Память | query | Сохранение изменений |
 | --- | --- | --- | --- | --- |
 | WebException<br/>Дополнительные сведения см. в разделе [Коды состояний WebException](media-services-retry-logic-in-dotnet-sdk.md#WebExceptionStatus). |Да |Да |Да |Да |
-| DataServiceClientException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |нет |Да |Да |Да |
-| DataServiceQueryException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |нет |Да |Да |Да |
-| DataServiceRequestException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |нет |Да |Да |Да |
-| DataServiceTransportException |нет |нет |Да |Да |
-| TimeoutException |Да |Да |Да |нет |
+| DataServiceClientException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет |Да |Да |Да |
+| DataServiceQueryException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет |Да |Да |Да |
+| DataServiceRequestException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет |Да |Да |Да |
+| DataServiceTransportException |Нет |Нет |Да |Да |
+| TimeoutException |Да |Да |Да |Нет |
 | SocketException |Да |Да |Да |Да |
-| StorageException |нет |Да |нет |нет |
-| IOException |нет |Да |нет |нет |
+| StorageException |Нет |Да |Нет |Нет |
+| IOException |Нет |Да |Нет |Нет |
 
 ### <a name="webexception-status-codes"></a><a name="WebExceptionStatus"></a> Коды состояний WebException
 В таблице ниже показано, для каких кодов ошибок WebException реализована логика повторного выполнения операций. Перечисление [WebExceptionStatus](https://msdn.microsoft.com/library/system.net.webexceptionstatus.aspx) определяет коды состояний.  
 
-| Состояние | Веб-запрос | Хранилище | Запрос | Сохранение изменений |
+| Состояние | Веб-запрос | Память | query | Сохранение изменений |
 | --- | --- | --- | --- | --- |
 | ConnectFailure |Да |Да |Да |Да |
 | NameResolutionFailure |Да |Да |Да |Да |
 | ProxyNameResolutionFailure |Да |Да |Да |Да |
 | SendFailure |Да |Да |Да |Да |
-| PipelineFailure |Да |Да |Да |нет |
-| ConnectionClosed |Да |Да |Да |нет |
-| KeepAliveFailure |Да |Да |Да |нет |
-| UnknownError |Да |Да |Да |нет |
-| ReceiveFailure |Да |Да |Да |нет |
-| RequestCanceled |Да |Да |Да |нет |
-| Время ожидания |Да |Да |Да |нет |
+| PipelineFailure |Да |Да |Да |Нет |
+| ConnectionClosed |Да |Да |Да |Нет |
+| KeepAliveFailure |Да |Да |Да |Нет |
+| UnknownError |Да |Да |Да |Нет |
+| ReceiveFailure |Да |Да |Да |Нет |
+| RequestCanceled |Да |Да |Да |Нет |
+| Время ожидания |Да |Да |Да |Нет |
 | ProtocolError <br/>Повторное выполнение операции при состоянии ProtocolError определяется обработкой кодов состояния HTTP. Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Да |Да |Да |Да |
 
 ### <a name="http-error-status-codes"></a><a name="HTTPStatusCode"></a> Коды состояний ошибок HTTP
 Когда операции выполнения запросов и сохранения изменений выдают исключение DataServiceClientException, DataServiceQueryException или DataServiceQueryException, код состояния ошибки HTTP возвращается в свойстве StatusCode.  В таблице ниже показано, для каких кодов ошибок реализована логика повторного выполнения операций.  
 
-| Состояние | Веб-запрос | Хранилище | Запрос | Сохранение изменений |
+| Состояние | Веб-запрос | Память | query | Сохранение изменений |
 | --- | --- | --- | --- | --- |
-| 401 |нет |Да |нет |нет |
-| 403 |нет |Да<br/>Обработка повторных попыток с увеличением времени ожидания. |нет |нет |
+| 401 |Нет |Да |Нет |Нет |
+| 403 |Нет |Да<br/>Обработка повторных попыток с увеличением времени ожидания. |Нет |Нет |
 | 408 |Да |Да |Да |Да |
 | 429 |Да |Да |Да |Да |
-| 500 |Да |Да |Да |нет |
-| 502 |Да |Да |Да |нет |
+| 500 |Да |Да |Да |Нет |
+| 502 |Да |Да |Да |Нет |
 | 503 |Да |Да |Да |Да |
-| 504 |Да |Да |Да |нет |
+| 504 |Да |Да |Да |Нет |
 
 Фактическую реализацию логики повторного выполнения операций в пакете SDK служб мультимедиа для .NET см. [здесь](https://github.com/Azure/azure-sdk-for-media-services/tree/dev/src/net/Client/TransientFaultHandling).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

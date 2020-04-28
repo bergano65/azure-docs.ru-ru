@@ -1,14 +1,14 @@
 ---
 title: создание хранилищ Служб восстановления с помощью REST API
-description: В этой статье узнайте, как управлять резервным копированием и восстанавливать операции резервного копирования Azure VM с помощью REST API.
+description: Из этой статьи вы узнаете, как управлять операциями резервного копирования и восстановления резервной копии виртуальной машины Azure с помощью REST API.
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
 ms.openlocfilehash: 1901c35d2b4d8bcd02cc064fcfc844e19969e3b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74173421"
 ---
 # <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища Служб восстановления Azure с помощью REST API
@@ -23,14 +23,14 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ## <a name="create-a-request"></a>Создание запроса
 
-Для создания запроса *PUT* требуется параметр `{subscription-id}`. Если у вас есть несколько подписок, см [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). Для ваших ресурсов параметры `{resourceGroupName}` и `{vaultName}` определяются вместе с параметром `api-version`. Для этой статьи используется `api-version=2016-06-01`.
+Для создания запроса *PUT* требуется параметр `{subscription-id}`. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). Для ваших ресурсов параметры `{resourceGroupName}` и `{vaultName}` определяются вместе с параметром `api-version`. Для этой статьи используется `api-version=2016-06-01`.
 
 Ниже приведены обязательные заголовки.
 
 | Заголовок запроса   | Описание |
 |------------------|-----------------|
-| *Тип контента:*  | Обязательный элемент. Задайте значение `application/json`. |
-| *Авторизации:* | Обязательный элемент. Задайте допустимый  [маркер доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |
+| *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
+| *Authorization:* | Обязательный элемент. Задайте допустимый  [маркер доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |
 
 Дополнительные сведения по созданию запросов см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
@@ -38,12 +38,12 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Для создания текста запроса используются следующие общие определения.
 
-|name  |Обязательно  |Тип  |Описание  |
+|Имя  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
 |eTag     |         |   Строка      |  Необязательный eTag       |
 |location     |  Да       |Строка         |   Расположение ресурса      |
 |properties     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
-|sku     |         |  [Sku](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#sku)       |    В этом столбце указан уникальный системный идентификатор для каждого ресурса Azure.     |
+|sku     |         |  [SKU](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#sku)       |    В этом столбце указан уникальный системный идентификатор для каждого ресурса Azure.     |
 |tags     |         | Объект        |     Теги ресурсов    |
 
 Обратите внимание, что имена хранилища и группы ресурсов указаны в универсальном коде ресурса (URI) PUT. Текст запроса определяет расположение.
@@ -66,7 +66,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Есть два успешных ответа для операции по созданию или обновлению хранилища Служб восстановления:
 
-|name  |Тип  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     |   [Хранилище](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vault)      | OK        |
 |201 Создано     | [Хранилище](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vault)        |   Создание      |

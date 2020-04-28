@@ -1,6 +1,6 @@
 ---
 title: Изменения, внесенные в проекты WebAPI при подключении к Azure AD
-description: Описывает, что происходит с вашим проектом WebAPI при подключении к Azure AD с помощью Visual Studio
+description: Описывает, что происходит с проектом WebAPI при подключении к Azure AD с помощью Visual Studio
 author: ghogen
 manager: jillfra
 ms.workload: azure-vs
@@ -11,10 +11,10 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.openlocfilehash: 46fb0ad37b872a1d7ca72114f2f263df776aabf1
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80886064"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом WebApi в подключенной службе Visual Studio Azure Active Directory
@@ -123,9 +123,9 @@ ms.locfileid: "80886064"
 - Создано приложение Azure AD в домене, который вы выбрали при добавлении подключенной службы.
 - В приложение добавлены разрешения на **чтение данных каталога**, если вы выбрали соответствующий параметр.
 
-[Узнайте больше об активном каталоге Azure](https://azure.microsoft.com/services/active-directory/).
+Дополнительные [сведения о Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации для активного каталога Azure](authentication-scenarios.md)
+- [Сценарии проверки подлинности для Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

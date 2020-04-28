@@ -1,24 +1,24 @@
 ---
 title: Устранение неполадок в Azure Blockchain Workbench
-description: Как устранить неполадки в приложении Azure Blockchain Workbench Preview.
+description: Устранение неполадок в предварительной версии приложения Azure Блокчейн Workbench.
 ms.date: 10/14/2019
 ms.topic: article
 ms.reviewer: brendal
 ms.openlocfilehash: ef4bce4dfba77aafa9b86c6877c153534b54636e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74324301"
 ---
-# <a name="azure-blockchain-workbench-preview-troubleshooting"></a>Лазурный Blockchain Workbench Предварительный устранение неполадок
+# <a name="azure-blockchain-workbench-preview-troubleshooting"></a>Устранение неполадок в предварительной версии Azure Блокчейн Workbench
 
 Мы создали скрипт PowerShell для отладки при разработке и технической поддержки. Этот скрипт формирует сводные данные и собирает подробные журналы для устранения неполадок. Собираются журналы следующих служб:
 
 * сеть Blockchain, например Ethereum;
 * микрослужбы Blockchain Workbench;
 * Application Insights
-* Мониторинг azure (журналы Azure Monitor)
+* Мониторинг Azure (журналы Azure Monitor)
 
 Эти сведения помогут вам определиться с дальнейшими действиями и выяснить основную причину возникших проблем.
 
@@ -42,15 +42,15 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 ```
 Этот скрипт принимает следующие параметры.
 
-| Параметр  | Описание | Обязательно |
+| Параметр  | Описание | Обязательный |
 |---------|---------|----|
 | SubscriptionID | Идентификатор подписки, в которой создаются или используются ресурсы. | Да |
 | ResourceGroupName | Имя группы ресурсов Azure, в которой развернуто приложение Blockchain Workbench. | Да |
-| OutputDirectory | Путь для создания ZIP-файла с выходными данными. Если это значение не указано, по умолчанию используется текущий каталог. | нет |
-| LookbackHours | Интервал времени (в часах), используемый при извлечении данных телеметрии. Значение по умолчанию — 24 часа. Максимальное значение — 90 часов. | нет |
-| OmsSubscriptionId | Идентификатор подписки, в котором развернуты журналы Azure Monitor. Пройдите этот параметр только в том случае, если журналы Azure Monitor для блокчейн-сети развернуты за пределами группы ресурсов Blockchain Workbench.| нет |
-| OmsResourceGroup |Группа ресурсов, в которой развернуты журналы Azure Monitor. Пройдите этот параметр только в том случае, если журналы Azure Monitor для блокчейн-сети развернуты за пределами группы ресурсов Blockchain Workbench.| нет |
-| OmsWorkspaceName | Имя рабочей области Log Analytics. Пройдите этот параметр только в том случае, если журналы Azure Monitor для блокчейн-сети развернуты за пределами группы ресурсов Blockchain Workbench | нет |
+| OutputDirectory | Путь для создания ZIP-файла с выходными данными. Если это значение не указано, по умолчанию используется текущий каталог. | Нет |
+| LookbackHours | Интервал времени (в часах), используемый при извлечении данных телеметрии. Значение по умолчанию — 24 часа. Максимальное значение — 90 часов. | Нет |
+| OmsSubscriptionId | Идентификатор подписки, в которой развертываются Azure Monitor журналы. Этот параметр следует передавать только в том случае, если журналы Azure Monitor для сети блокчейн развертываются за пределами группы ресурсов Блокчейн Workbench.| Нет |
+| OmsResourceGroup |Группа ресурсов, в которой развертываются журналы Azure Monitor. Этот параметр следует передавать только в том случае, если журналы Azure Monitor для сети блокчейн развертываются за пределами группы ресурсов Блокчейн Workbench.| Нет |
+| OmsWorkspaceName | Имя рабочей области Log Analytics. Передавать этот параметр только в том случае, если журналы Azure Monitor для сети блокчейн развертываются за пределами группы ресурсов Блокчейн Workbench. | Нет |
 
 ## <a name="what-is-collected"></a>Какие данные собираются?
 

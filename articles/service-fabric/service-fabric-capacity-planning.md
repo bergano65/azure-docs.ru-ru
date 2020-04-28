@@ -1,13 +1,13 @@
 ---
-title: Планирование емкости для приложений Service Fabric
+title: Планирование ресурсов для Service Fabric приложений
 description: Описание процедуры определения количество вычислительных узлов, необходимых для приложения Service Fabric.
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: cd5a5c55ff873e4891ac63361d0c4a0b56d70109
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75377214"
 ---
 # <a name="capacity-planning-for-service-fabric-applications"></a>Планирование емкости для приложений Service Fabric

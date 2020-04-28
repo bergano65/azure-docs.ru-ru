@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 01/27/2017
 ms.openlocfilehash: 918516a5629f8570d54c641ffc29f2367937266f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74792373"
 ---
 # <a name="decode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Декодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -24,13 +24,13 @@ ms.locfileid: "74792373"
 Вам понадобится следующее:
 
 * Учетная запись Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-* Учетная [запись интеграции,](logic-apps-enterprise-integration-create-integration-account.md) которая уже определена и связана с подпиской Azure. Для работы с соединителем для декодирования сообщений X12 потребуется учетная запись интеграции.
+* [Учетная запись интеграции](logic-apps-enterprise-integration-create-integration-account.md) , которая уже определена и связана с подпиской Azure. Для работы с соединителем для декодирования сообщений X12 потребуется учетная запись интеграции.
 * В учетной записи интеграции должны быть определены по крайней мере два [партнера](logic-apps-enterprise-integration-partners.md).
 * В учетной записи интеграции должно быть определено [соглашение X12](logic-apps-enterprise-integration-x12.md).
 
 ## <a name="decode-x12-messages"></a>Декодирование сообщений X12
 
-1. [Создание приложения логики](quickstart-create-first-logic-app-workflow.md).
+1. [Создайте приложение логики](quickstart-create-first-logic-app-workflow.md).
 
 2. В соединителе для декодирования сообщений X12 нет триггеров, поэтому вам придется добавить триггер, чтобы запустить приложение логики (например, триггер запроса). В конструкторе приложений логики добавьте триггер, а затем добавьте действие в приложение логики.
 
@@ -103,5 +103,5 @@ ms.locfileid: "74792373"
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/x12/). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Узнайте больше о пакете корпоративной интеграции") 
+[Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
 

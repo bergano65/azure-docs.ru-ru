@@ -18,10 +18,10 @@ ms.date: 03/30/2018
 ms.author: kumud
 ms.custom: mvc
 ms.openlocfilehash: 08031bc2ac29ea77374e21c4ce6f7bcf6151bcad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "66730035"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-powershell"></a>Фильтрация сетевого трафика с помощью группы безопасности сети посредством PowerShell
@@ -47,13 +47,13 @@ ms.locfileid: "66730035"
 
 ### <a name="create-application-security-groups"></a>Создание групп безопасности приложений
 
-Сначала создайте группу ресурсов для всех ресурсов, созданных в этой статье, с [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов в расположении *eastus*.
+Сначала создайте группу ресурсов для всех ресурсов, созданных в этой статье, с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов в расположении *eastus*.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 ```
 
-Создайте группу безопасности приложений с [помощью New-AzApplicationSecurityGroup.](/powershell/module/az.network/new-azapplicationsecuritygroup) Группа безопасности приложений позволяет группировать серверы с аналогичными требованиями к фильтрации портов. В следующем примере создаются две группы безопасности приложений.
+Создайте группу безопасности приложений с помощью [New-азаппликатионсекуритиграуп](/powershell/module/az.network/new-azapplicationsecuritygroup). Группа безопасности приложений позволяет группировать серверы с аналогичными требованиями к фильтрации портов. В следующем примере создаются две группы безопасности приложений.
 
 ```azurepowershell-interactive
 $webAsg = New-AzApplicationSecurityGroup `
@@ -69,7 +69,7 @@ $mgmtAsg = New-AzApplicationSecurityGroup `
 
 ### <a name="create-security-rules"></a>Создание правил безопасности
 
-Создайте правило безопасности с [помощью New-AzNetworkSecurityRuleConfig.](/powershell/module/az.network/new-aznetworksecurityruleconfig) В следующем примере создается правило, разрешающее входящий поток трафика из Интернета в группу безопасности приложений *myWebServers* через порты 80 и 443:
+Создайте правило безопасности с помощью [New-азнетворксекуритирулеконфиг](/powershell/module/az.network/new-aznetworksecurityruleconfig). В следующем примере создается правило, разрешающее входящий поток трафика из Интернета в группу безопасности приложений *myWebServers* через порты 80 и 443:
 
 ```azurepowershell-interactive
 $webRule = New-AzNetworkSecurityRuleConfig `
@@ -97,7 +97,7 @@ $mgmtRule = New-AzNetworkSecurityRuleConfig `
   -DestinationPortRange 3389
 ```
 
-В этой статье RDP-подключение (порт 3389) доступно в Интернете для виртуальной машины *myAsgMgmtServers*. Для производственных сред вместо того, чтобы выставлять порт 3389 в Интернет, рекомендуется подключиться к ресурсам Azure, которыми вы хотите управлять с помощью [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [частного](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) сетевого соединения.
+В этой статье RDP-подключение (порт 3389) доступно в Интернете для виртуальной машины *myAsgMgmtServers*. Для рабочих сред вместо доступа к порту 3389 через Интернет рекомендуется подключаться к ресурсам Azure, которыми вы хотите управлять с помощью подключения [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [частной](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) сети.
 
 ### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
@@ -123,7 +123,7 @@ $virtualNetwork = New-AzVirtualNetwork `
   -AddressPrefix 10.0.0.0/16
 ```
 
-Создайте конфигурацию подсети с [помощью New-AzVirtualNetworkSubnetConfig,](/powershell/module/az.network/new-azvirtualnetworksubnetconfig)а затем напишите конфигурацию подсети в виртуальную сеть с [Set-AzVirtualNetwork.](/powershell/module/az.network/set-azvirtualnetwork) В следующем примере добавляется подсеть с именем *mySubnet* в виртуальную сеть и ей назначается группа безопасности сети *myNsg*:
+Создайте конфигурацию подсети с помощью [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/new-azvirtualnetworksubnetconfig), а затем запишите конфигурацию подсети в виртуальную сеть с помощью [Set-азвиртуалнетворк](/powershell/module/az.network/set-azvirtualnetwork). В следующем примере добавляется подсеть с именем *mySubnet* в виртуальную сеть и ей назначается группа безопасности сети *myNsg*:
 
 ```azurepowershell-interactive
 Add-AzVirtualNetworkSubnetConfig `
@@ -136,7 +136,7 @@ $virtualNetwork | Set-AzVirtualNetwork
 
 ## <a name="create-virtual-machines"></a>Создание виртуальных машин
 
-Перед созданием виртуальных технологий, получить виртуальный объект сети с подсетью с [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork):
+Перед созданием виртуальных машин извлеките объект виртуальной сети с подсетью с помощью [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork):
 
 ```powershell-interactive
 $virtualNetwork = Get-AzVirtualNetwork `
@@ -144,7 +144,7 @@ $virtualNetwork = Get-AzVirtualNetwork `
  -Resourcegroupname myResourceGroup
 ```
 
-Создайте общедоступный IP-адрес для каждого VM с [помощью New-AzPublicIpAddress:](/powershell/module/az.network/new-azpublicipaddress)
+Создайте общедоступный IP-адрес для каждой виртуальной машины с помощью [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress):
 
 ```powershell-interactive
 $publicIpWeb = New-AzPublicIpAddress `
@@ -160,7 +160,7 @@ $publicIpMgmt = New-AzPublicIpAddress `
   -Name myVmMgmt
 ```
 
-Создайте два сетевых интерфейса с [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface)и назначайте общедоступный IP-адрес сетевому интерфейсу. В следующем примере создается сетевой интерфейс, которому назначается общедоступный IP-адрес *myVmWeb*. Этот сетевой интерфейс добавляется в группу безопасности приложений *myAsgWebServers*.
+Создайте два сетевых интерфейса с помощью [New-азнетворкинтерфаце](/powershell/module/az.network/new-aznetworkinterface)и назначьте сетевому интерфейсу общедоступный IP-адрес. В следующем примере создается сетевой интерфейс, которому назначается общедоступный IP-адрес *myVmWeb*. Этот сетевой интерфейс добавляется в группу безопасности приложений *myAsgWebServers*.
 
 ```powershell-interactive
 $webNic = New-AzNetworkInterface `
@@ -186,7 +186,7 @@ $mgmtNic = New-AzNetworkInterface `
 
 Создайте две виртуальные машины в виртуальной сети, чтобы вы могли проверить фильтрацию трафика на более позднем этапе.
 
-Создайте конфигурацию VM с [New-AzVMConfig,](/powershell/module/az.compute/new-azvmconfig)а затем создайте VM с [New-AzVM.](/powershell/module/az.compute/new-azvm) В следующем примере создается виртуальная машина, которая будет служить веб-сервером. Чтобы можно было перейти к следующему шагу, параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме.
+Создайте конфигурацию виртуальной машины с помощью [New-азвмконфиг](/powershell/module/az.compute/new-azvmconfig), а затем создайте виртуальную машину с помощью [New-AzVM](/powershell/module/az.compute/new-azvm). В следующем примере создается виртуальная машина, которая будет служить веб-сервером. Чтобы можно было перейти к следующему шагу, параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме.
 
 ```azurepowershell-interactive
 # Create user object
@@ -277,7 +277,7 @@ mstsc /v:myvmWeb
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-Когда установка служб IIS завершится, отключитесь от виртуальной машины *myVmWeb*, после чего вы останетесь в сеансе удаленного рабочего стола виртуальной машины *myVmMgmt*. Чтобы просмотреть экран приветствия IIS,\/откройте интернет-браузер и просмотрите http:/myVmWeb.
+Когда установка служб IIS завершится, отключитесь от виртуальной машины *myVmWeb*, после чего вы останетесь в сеансе удаленного рабочего стола виртуальной машины *myVmMgmt*. Чтобы просмотреть экран приветствия IIS, откройте Интернет-браузер и перейдите по адресу\/http:/мивмвеб.
 
 Отключитесь от виртуальной машины *myVmMgmt*.
 

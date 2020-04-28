@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.openlocfilehash: 252d5e551dad56108ad952eb0c7c3b39df0585d5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "69901783"
 ---
 # <a name="managing-media-services-assets-across-multiple-storage-accounts"></a>Управление ресурсами Служб мультимедиа в нескольких учетных записях хранения  
@@ -42,11 +42,11 @@ ms.locfileid: "69901783"
 
 Дополнительные рекомендации
 
-Службы мультимедиа используют значение **IAssetFile.Name** свойств при создании URL-адресов для потокового контента (например, http://'WAMSAccount.origin.mediaservices.windows.net/'GUID/IAssetFile/streamingParameters).) По этой причине кодирование процентов не допускается. Значение свойства Name не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак ".". Кроме того, может использоваться только один символ "." для расширения имени файла.
+Службы мультимедиа используют значение свойства **IAssetFile.Name** при создании URL-адресов для потоковой передачи содержимого (например, http://{вамсаккаунт}. Origin. mediaservices. Windows. NET/{GUID}/{IAssetFile. Name}/streamingParameters.) По этой причине процентное кодирование запрещено. Значение свойства Name не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак ".". Кроме того, может использоваться только один символ "." для расширения имени файла.
 
 ## <a name="to-attach-storage-accounts"></a>Присоединение учетных записей хранения  
 
-Чтобы прикрепить учетные записи хранилища к учетной записи AMS, используйте [AA-и](/rest/api/media/operations/azure-media-services-rest-api-reference) Powershell Resource Manager ИППП и [Powershell,](/powershell/module/az.media)как показано в следующем примере:
+Чтобы присоединить учетные записи хранения к учетной записи AMS, используйте [интерфейсы api Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](/powershell/module/az.media), как показано в следующем примере:
 
     $regionName = "West US"
     $subscriptionId = " xxxxxxxx-xxxx-xxxx-xxxx- xxxxxxxxxxxx "
@@ -280,6 +280,6 @@ namespace MultipleStorageAccounts
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

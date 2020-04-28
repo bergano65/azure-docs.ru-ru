@@ -1,13 +1,13 @@
 ---
 title: Просмотр репозиториев на портале
-description: Используйте портал Azure для просмотра репозиторий реестра контейнеров Azure, в которых размещается изображения контейнеров Docker и другие поддерживаемые артефакты.
+description: Используйте портал Azure для просмотра репозиториев реестра контейнеров Azure, в которых размещены образы контейнеров DOCKER и другие поддерживаемые артефакты.
 ms.topic: article
 ms.date: 01/05/2018
 ms.openlocfilehash: 1da72706d2554610a685f71199ab14af5e30ce1a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74456290"
 ---
 # <a name="view-container-registry-repositories-in-the-azure-portal"></a>Просмотр списка репозиториев реестра контейнеров на портале Azure
@@ -34,7 +34,7 @@ docker push myregistry.azurecr.io/samples/nginx
 
 Чтобы просмотреть список репозиториев, сделайте следующее:
 
-1. Войти на [портал Azure][portal]
+1. Войдите на [портал Azure][portal]
 1. Выберите **Реестр контейнеров Azure**, в который вы отправили образ Nginx.
 1. Выберите **Репозитории**, чтобы просмотреть список репозиториев с образами в реестре.
 1. Выберите репозиторий, чтобы просмотреть теги сохраненных в нем образов.

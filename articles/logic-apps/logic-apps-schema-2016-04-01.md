@@ -1,5 +1,5 @@
 ---
-title: Обновления схемы Июнь-1-2016
+title: Обновления схемы, Июнь – 1-2016
 description: Обновленная схема от 1 июня 2016 г. для определений приложений логики в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
@@ -9,10 +9,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 07/25/2016
 ms.openlocfilehash: e2f65f1c52dc7dfb2e4e4bf66f5c7e82f4b802b8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74792874"
 ---
 # <a name="schema-updates-for-azure-logic-apps---june-1-2016"></a>Обновления схемы для Azure Logic Apps от 1 июня 2016 г.
@@ -103,7 +103,7 @@ ms.locfileid: "74792874"
 
 1. Откройте приложение логики на портале Azure.
 
-2. Перейдите на вкладку **Обзор**. На панели инструментов приложения логики выберите **Обновить схему**.
+2. Перейдите к разделу **Обзор**. На панели инструментов приложения логики выберите **Обновить схему**.
    
    ![Выбор параметра "Обновить схему"][1]
    

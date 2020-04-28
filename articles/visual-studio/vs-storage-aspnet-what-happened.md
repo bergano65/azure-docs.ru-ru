@@ -1,6 +1,6 @@
 ---
 title: Что произошло с моим проектом ASP.NET?
-description: Описывает, что происходит после добавления хранилища Azure в ASP.NET проект с помощью подключенных служб Visual Studio
+description: Описывает, что происходит после добавления службы хранилища Azure в проект ASP.NET с помощью подключенных служб Visual Studio
 services: storage
 author: ghogen
 manager: jillfra
@@ -14,10 +14,10 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 4374955d6d51c1ae44c211aaa93d0b5e8930fe5b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72300038"
 ---
 # <a name="what-happened-to-my-aspnet-project-visual-studio-azure-storage-connected-service"></a>Что произошло с моим проектом ASP.NET (подключенными к службе хранилища Azure службами Visual Studio)?
@@ -31,7 +31,7 @@ ms.locfileid: "72300038"
 * **Microsoft.WindowsAzure.Configuration**
 * **Microsoft.WindowsAzure.Storage**
 * **Newtonsoft.Json**
-* **System.Data**
+* **System. Data**
 * **System.Spatial**
 
 ## <a name="connection-string-for-azure-storage-added"></a>Добавлена строка подключения к хранилищу Azure

@@ -1,13 +1,13 @@
 ---
-title: Обновление приложений для устранения неполадок
+title: Устранение неполадок при обновлении приложений
 description: В этой статье рассматриваются некоторые общие проблемы, связанные с обновлением приложений структуры служб, и способы их устранения.
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: d462f2c2482e0fbb4d252967754a9675ed362674
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75377928"
 ---
 # <a name="troubleshoot-application-upgrades"></a>Устранение неполадок при обновлениях приложений
@@ -212,9 +212,9 @@ Service Fabric преобразовывает все процентные зна
 
 Напомним о том, как значения времени ожидания сказываются на времени применения обновлений.
 
-Обновления для домена обновления не могут завершиться быстрее, чем *HealthCheckWaitDuration* + *HealthCheckStable.*
+Обновление домена обновления не может выполняться быстрее, чем *хеалсчеккваитдуратион* + *HealthCheckStableDuration*.
 
-Сбой обновления не может произойти быстрее, чем *HealthCheckWaitDuration* + *HealthCheckRetryTimeout*.
+Сбой обновления не может происходить быстрее, чем *хеалсчеккваитдуратион* + *HealthCheckRetryTimeout*.
 
 Время обновления для домена обновления ограничено значением *UpgradeDomainTimeout*.  Если значения *HealthCheckRetryTimeout* и *HealthCheckStableDuration* оба не равны нулю, а работоспособность приложения постоянно меняется, то время ожидания обновления обязательно завершится при достижении значения *UpgradeDomainTimeout*. *UpgradeDomainTimeout* начинает обратный отсчет с момента начала текущего домена обновления.
 
@@ -222,10 +222,10 @@ Service Fabric преобразовывает все процентные зна
 
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
-[Обновление приложения с помощью Powershell](service-fabric-application-upgrade-tutorial-powershell.md) проведке приложения с помощью PowerShell.
+[Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).
 
-Сделайте обновление приложения совместимым, научившись использовать [серизацию данных.](service-fabric-application-upgrade-data-serialization.md)
+Изучите, как использовать [сериализацию данных](service-fabric-application-upgrade-data-serialization.md), чтобы обеспечить совместимость обновлений приложений.
 
-Узнайте, как использовать расширенные функциональные возможности при обновлении приложения, ссылаясь на [Расширенные темы.](service-fabric-application-upgrade-advanced.md)
+Узнайте, как использовать расширенные функциональные возможности при обновлении приложения, обратившись к [дополнительным разделам](service-fabric-application-upgrade-advanced.md).

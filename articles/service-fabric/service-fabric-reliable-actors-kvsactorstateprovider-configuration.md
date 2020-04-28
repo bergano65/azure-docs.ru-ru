@@ -1,15 +1,15 @@
 ---
-title: Изменение настроек KVSActorStateProvider
+title: Изменить параметры KVSActorStateProvider
 description: Сведения о настройке субъектов Azure Service Fabric с отслеживанием состояния и типом KVSActorStateProvider.
 author: sumukhs
 ms.topic: conceptual
 ms.date: 10/2/2017
 ms.author: sumukhs
 ms.openlocfilehash: cdb115bd57cf3d5af4388f4efa03c2522feef9ca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75609780"
 ---
 # <a name="configuring-reliable-actors--kvsactorstateprovider"></a>Настройка надежных субъектов — KVSActorStateProvider
@@ -41,7 +41,7 @@ ms.locfileid: "75609780"
 &lt;имя_субъекта&gt;ServiceReplicatorConfig
 
 ### <a name="configuration-names"></a>Имена файлов конфигурации
-| name | Единицы | Значение по умолчанию | Remarks |
+| Имя | Единицы | Значение по умолчанию | Remarks |
 | --- | --- | --- | --- |
 | BatchAcknowledgementInterval |Секунды |0,015 |Период времени, в течение которого дополнительный репликатор после получения операции находится в режиме ожидания, а затем отправляет подтверждение обратно основному репликатору. Любые другие подтверждения, отправляемые для операций, обработанных в течение этого интервала, отправляются как один ответ. |
 | ReplicatorEndpoint |Недоступно |Значение по умолчанию не задано — обязательный параметр |IP-адрес и порт, которые будут использоваться основным и дополнительным репликаторами для связи с другими репликаторами в наборе реплик. Значение должно быть ссылкой на конечную точку ресурса TCP в манифесте службы. Дополнительные сведения об определении ресурсов конечных точек в манифесте службы см. в статье [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md). |
@@ -58,7 +58,7 @@ ms.locfileid: "75609780"
 &lt;имя_субъекта&gt;ServiceLocalStoreConfig
 
 ### <a name="configuration-names"></a>Имена файлов конфигурации
-| name | Единицы | Значение по умолчанию | Remarks |
+| Имя | Единицы | Значение по умолчанию | Remarks |
 | --- | --- | --- | --- |
 | MaxAsyncCommitDelayInMilliseconds |Миллисекунды |200 |Задает максимальный интервал для устойчивой пакетной фиксации в локальном хранилище. |
 | MaxVerPages |Количество страниц |16384 |Максимальное количество страниц версий в базе данных локального хранилища. Определяет максимальное число необработанных транзакций. |

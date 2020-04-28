@@ -1,5 +1,5 @@
 ---
-title: Одиночный знак Azure в протоколе SAML
+title: Протокол SAML единого входа Azure
 description: В этой статье описывается протокол единого входа SAML в Azure Active Directory
 services: active-directory
 documentationcenter: .net
@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.openlocfilehash: f1437ec5d9c3fd0ff69be0c884c340cb857ee181
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80881288"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
@@ -44,14 +44,14 @@ xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
 
 | Параметр |  | Описание |
 | --- | --- | --- |
-| ID | Обязательно | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
-| Версия | Обязательно | Этот параметр должен иметь значение **2.0**. |
-| IssueInstant | Обязательно | Это строка DateTime со значением в формате всемирного времени (UTC) и с [преобразованием без потери данных ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение DateTime этого типа, но не оценивает и не использует его. |
+| ID | Обязательный | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
+| Версия | Обязательный | Этот параметр должен иметь значение **2.0**. |
+| IssueInstant | Обязательный | Это строка DateTime со значением в формате всемирного времени (UTC) и с [преобразованием без потери данных ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение DateTime этого типа, но не оценивает и не использует его. |
 | AssertionConsumerServiceUrl | Необязательный | Если указан, то он должен соответствовать параметру `RedirectUri` облачной службы в Azure AD. |
 | ForceAuthn | Необязательный | Это логическое значение. Если задано значение true, то это означает, что пользователь должен будет повторно выполнить проверку подлинности, даже если время его сеанса в Azure AD еще не истекло. |
 | IsPassive | Необязательный | Это логическое значение, которое указывает, должна ли служба Azure AD автоматически выполнять аутентификацию пользователя, без прямого его участия, используя файл cookie сеанса (если он существует). Если задано значение true, то Azure AD попытается аутентифицировать пользователя с помощью файла cookie сеанса. |
 
-Все `AuthnRequest` остальные атрибуты, такие как Согласие, Назначение, AssertionConsumerServiceIndex, AttributeConsumerServiceIndex и ProviderName **игнорируются.**
+Все остальные `AuthnRequest` атрибуты, такие как согласие, назначение, Ассертионконсумерсервицеиндекс, Аттрибутеконсумерсервицеиндекс и ProviderName, **игнорируются**.
 
 Azure AD также игнорирует элемент `Conditions` в `AuthnRequest`.
 
@@ -85,7 +85,7 @@ Azure AD также игнорирует элемент `Conditions` в `AuthnRe
 Azure AD игнорирует атрибут `AllowCreate` .
 
 ### <a name="requestauthncontext"></a>RequestAuthnContext
-Элемент `RequestedAuthnContext` указывает нужные методы проверки подлинности. Он необязателен в элементах `AuthnRequest` , отправленных в Azure AD. Azure AD `AuthnContextClassRef` поддерживает такие `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`значения, как .
+Элемент `RequestedAuthnContext` указывает нужные методы проверки подлинности. Он необязателен в элементах `AuthnRequest` , отправленных в Azure AD. Azure AD поддерживает `AuthnContextClassRef` такие значения, `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`как.
 
 ### <a name="scoping"></a>Scoping
 Элемент `Scoping`, который включает список поставщиков удостоверений, необязателен в элементах `AuthnRequest`, отправленных в Azure AD.
@@ -153,7 +153,7 @@ Azure AD игнорирует элемент `Subject` элементов `Authn
 
 ### <a name="issuer"></a>Издатель
 
-Azure AD `Issuer` устанавливает `https://login.microsoftonline.com/<TenantIDGUID>/` элемент, в котором \<TenantIDGUID> является идентификатором арендатора ad-клиента Azure AD.
+Azure AD задает для `Issuer` `https://login.microsoftonline.com/<TenantIDGUID>/` элемента, где \<Тенантидгуид> — идентификатор клиента клиента Azure AD.
 
 Например, ответ с элементом Issuer может выглядеть следующим образом:
 
@@ -188,7 +188,7 @@ Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
 
 #### <a name="issuer"></a>Издатель
 
-Это `https://sts.windows.net/<TenantIDGUID>/`установлено, \<где TenantIDGUID> является идентификатором арендатора ad-клиента Azure AD.
+Он имеет значение, `https://sts.windows.net/<TenantIDGUID>/`где \<Тенантидгуид> — идентификатор клиента Azure AD.
 
 ```
 <Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
@@ -266,7 +266,7 @@ Azure AD подписывает утверждение в ответ на усп
 </AttributeStatement>
 ```        
 
-* **Название претензии** - `Name` Значение`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`атрибута ( ) является основным именем пользователя `testuser@managedtenant.com`аутентифицированных пользователей, таких как .
+* **Утверждение имени** `Name` `testuser@managedtenant.com`. значение атрибута (`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`) — это имя участника-пользователя, прошедшего проверку подлинности пользователя, например.
 * **Утверждение ObjectIdentifier**. Значение `ObjectIdentifier` атрибута (`http://schemas.microsoft.com/identity/claims/objectidentifier`) — это `ObjectId` объекта каталога, который представляет пользователя, прошедшего проверку подлинности в Azure AD. Значение `ObjectId` неизменяемое, глобально уникальное и повторно использует безопасный идентификатор пользователя, прошедшего проверку подлинности.
 
 #### <a name="authnstatement"></a>AuthnStatement

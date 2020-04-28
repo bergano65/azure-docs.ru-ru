@@ -1,5 +1,5 @@
 ---
-title: Azure Одиночный знак из протокола SAML
+title: Протокол SAML единого выхода Azure
 description: В этой статье описывается протокол единого выхода SAML в Azure Active Directory
 services: active-directory
 author: rwike77
@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.openlocfilehash: dbe21d020d5d01f24913b95587721403fa218cc8
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80881273"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Протокол единого выхода SAML
@@ -66,9 +66,9 @@ Azure AD отправляет `LogoutResponse` в ответ на элемент
 Azure AD устанавливает значения `ID`, `Version` и `IssueInstant` для элемента `LogoutResponse`. Он также задает для элемента `InResponseTo` значение, взятое из атрибута `ID` для `LogoutRequest`, который запрашивал ответ.
 
 ### <a name="issuer"></a>Издатель
-Azure AD устанавливает `https://login.microsoftonline.com/<TenantIdGUID>/` это \<значение в том случае, если TenantIdGUID> является идентификатором арендатора ad-налажима Azure AD.
+Azure AD задает для `https://login.microsoftonline.com/<TenantIdGUID>/` этого параметра значение \<, где тенантидгуид> — идентификатор клиента клиента Azure AD.
 
 Чтобы оценить значение элемента `Issuer` , используйте значение **URI идентификатора приложения** , указанное при регистрации приложения.
 
 ### <a name="status"></a>Состояние
-Azure AD `StatusCode` использует элемент `Status` элемента для обозначения успеха или неудачи выхода из системы. При сбой попытки выхода `StatusCode` из системы не удается, элемент может также содержать пользовательские сообщения об ошибках.
+Azure AD использует `StatusCode` элемент в `Status` элементе, чтобы указать успешность или неудачу выхода. При неудачной попытке выхода `StatusCode` элемент может также содержать настраиваемые сообщения об ошибках.
