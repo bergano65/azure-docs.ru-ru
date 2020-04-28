@@ -1,6 +1,6 @@
 ---
-title: Как долго Azure AD хранит отчетные данные? | Документы Майкрософт
-description: Узнайте, как долго Azure хранит различные типы отчетных данных.
+title: Как долго Azure AD хранит данные отчетов? | Документы Майкрософт
+description: Узнайте, как долго Azure хранит различные типы данных отчетов.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -18,13 +18,13 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 54636600c208f8f5df9fa2e25460c63dd9f46e85
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80239551"
 ---
-# <a name="how-long-does-azure-ad-store-reporting-data"></a>Как долго Azure AD хранит отчетные данные?
+# <a name="how-long-does-azure-ad-store-reporting-data"></a>Как долго Azure AD хранит данные отчетов?
 
 
 Из этой статьи вы узнаете о политиках хранения данных, которые используются для разных отчетов о действиях в Azure Active Directory. 
@@ -40,7 +40,7 @@ ms.locfileid: "80239551"
 
 ### <a name="when-is-the-activity-data-available-in-the-azure-portal"></a>Когда данные о действиях становятся доступными на портале Azure?
 
-- **Немедленно** - Если вы уже работали с отчетами на портале Azure.
+- **Немедленно** — если вы уже работали с отчетами в портал Azure.
 - **В течение 2 часов** — если вы не включили функцию создания отчетов на портале Azure.
 
 ---

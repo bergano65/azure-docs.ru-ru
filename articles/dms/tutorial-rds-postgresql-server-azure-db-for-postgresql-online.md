@@ -1,5 +1,5 @@
 ---
-title: "Учебник: Мигрируйте RDS PostgreS'L онлайн в базу данных Azure для PostgreS'L"
+title: Руководство. Миграция RDS PostgreSQL Online в базу данных Azure для PostgreSQL
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить сетевую миграцию из RDS PostgreSQL в Базу данных Azure для PostgreSQL с помощью Azure Database Migration Service.
 services: dms
@@ -13,13 +13,13 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 04/11/2020
 ms.openlocfilehash: be6f0cd734d31f43557b49f8e9314e925b383899
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81113947"
 ---
-# <a name="tutorial-migrate-rds-postgresql-to-azure-db-for-postgresql-online-using-dms"></a>Учебник: Мигрируйте RDS PostgreS'L в Azure DB для PostgreS'L онлайн с помощью DMS
+# <a name="tutorial-migrate-rds-postgresql-to-azure-db-for-postgresql-online-using-dms"></a>Руководство. Миграция RDS PostgreSQL в базу данных Azure для PostgreSQL Online с помощью DMS
 
 С помощью службы Azure Database Migration Service базы данных из экземпляра RDS PostgreSQL можно перенести в [Базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/), не отключая базу данных-источник от сети. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется миграция примера базы данных **Прокат DVD** из экземпляра RDS PostgreSQL 9.6 в Базу данных Azure для PostgreSQL с помощью действия сетевой миграции в Azure Database Migration Service.
 
@@ -31,10 +31,10 @@ ms.locfileid: "81113947"
 > * создание проекта миграции с использованием Azure Database Migration Service.
 > * выполнение миграции.
 > * мониторинг миграции.
-> * Выполните сокращение миграции.
+> * Выполните миграцию прямую миграцию.
 
 > [!NOTE]
-> Чтобы выполнить подключенную миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Для получения дополнительной информации на странице ценообразования миграционной службы лазурного баз данных смотрите страницу [миграционных](https://azure.microsoft.com/pricing/details/database-migration/) служб Лазурного человека. Мы шифруем диск, чтобы предотвратить кражу данных в процессе миграции.
+> Чтобы выполнить подключенную миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Дополнительные сведения см. на странице [цен](https://azure.microsoft.com/pricing/details/database-migration/) на Azure Database Migration Service. Мы будем шифровать диск, чтобы предотвратить кражу данных в процессе миграции.
 
 > [!IMPORTANT]
 > Чтобы оптимизировать процесс миграции, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
@@ -49,15 +49,15 @@ ms.locfileid: "81113947"
 
 * Скачайте и установите [PostgreSQL Community Edition](https://www.postgresql.org/download/) версии 9.5, 9.6 или 10. На исходном сервере должна быть установлена PostgreSQL версии 9.5.11, 9.6.7, 10 или более поздней. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions).
 
-   Также обратите внимание, что целевая база данных Azure для версии PostgreS'L должна быть равна или позже, чем версия RDS PostgreS'L. Например, RDS PostgreS'L 9.6 может мигрировать только в базу данных Azure для PostgreS'L 9.6, 10 или 11, но не в базу данных Azure для PostgreS'L 9.5.
+   Также обратите внимание, что Целевая версия базы данных Azure для PostgreSQL должна быть больше или равна версии RDS PostgreSQL. Например, RDS PostgreSQL 9,6 можно перенести только в базу данных Azure для PostgreSQL 9,6, 10 или 11, но не в базу данных Azure для PostgreSQL 9,5.
 
-* Создайте экземпляр базы данных Azure для базы данных [PostgreS'L](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal) или [Базы данных Azure для PostgreS-L - Hyperscale (Citus).](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal) В [этом разделе](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal#connect-to-the-postgresql-server-using-pgadmin) документа приводятся сведения о том, как подключиться к серверу PostgreSQL с помощью pgAdmin.
-* Создайте виртуальную сеть Microsoft Azure для миграционной службы лазурных данных с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение к исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) Для получения дополнительной информации о создании виртуальной сети, см [Виртуальная сеть Документация](https://docs.microsoft.com/azure/virtual-network/), и особенно быстро начать статьи с пошаговой детали.
-* Убедитесь, что правила виртуальной сетевой группы безопасности не блокируют следующие входящие порты связи в службу миграции базы данных Azure: 443, 53, 9354, 445 и 12000. Для получения более подробной информации о виртуальной сети NSG фильтрации трафика, [см.](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg)
+* Создайте экземпляр [базы данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal) или [базы данных Azure для PostgreSQL-Scale (Цитус)](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal). В [этом разделе](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal#connect-to-the-postgresql-server-using-pgadmin) документа приводятся сведения о том, как подключиться к серверу PostgreSQL с помощью pgAdmin.
+* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
+* Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 * Настройте [брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу PostgreSQL. По умолчанию это TCP-порт 5432.
 * Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
-* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для сервера Базы данных Azure для PostgreSQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Предоставьте диапазон подсетей виртуальной сети, используемой для миграционной службы базы данных Azure.
+* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для сервера Базы данных Azure для PostgreSQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Укажите диапазон подсети виртуальной сети, используемый для Azure Database Migration Service.
 
 ### <a name="set-up-aws-rds-postgresql-for-replication"></a>Настройка репликации для AWS RDS PostgreSQL
 
@@ -92,7 +92,7 @@ ms.locfileid: "81113947"
 2. Создайте пустую базу данных в целевой службе, то есть в Базе данных Azure для PostgreSQL. Чтобы подключиться и создать базу данных, воспользуйтесь одной из следующих статей.
 
     * [Create an Azure Database for PostgreSQL by using the Azure portal](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal) (Создание базы данных Azure для PostgreSQL с помощью портала Azure)
-    * [Создание базы данных Azure для сервера PostgreS-L - Hyperscale (Citus) с помощью портала Azure](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal)
+    * [Создание сервера базы данных Azure для PostgreSQL-Scale (Цитус) с помощью портал Azure](https://docs.microsoft.com/azure/postgresql/quickstart-create-hyperscale-portal)
 
 3. Импортируйте схему в целевую службу, то есть в Базу данных Azure для PostgreSQL. Чтобы восстановить файл дампа схемы, выполните следующую команду:
 
@@ -154,7 +154,7 @@ ms.locfileid: "81113947"
 
     ![Отображение поставщиков ресурсов](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/portal-select-resource-provider.png)
 
-3. Поиск миграции, а затем справа **от Microsoft.DataMigration**, выберите **Регистр**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/portal-register-resource-provider.png)
 
@@ -174,11 +174,11 @@ ms.locfileid: "81113947"
 
 5. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет миграционной службе баз данных Azure доступ к исходной экземпляру PostgreS'L и целевой базе данных Azure для экземпляра PostgreS-L.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходному экземпляру PostgreSQL и целевому экземпляру базы данных Azure для PostgreSQL.
 
-    Для получения дополнительной информации о том, как создать виртуальную сеть на портале Azure, смотрите статью [Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
-6. Выберите уровень ценообразования; для этой онлайн-миграции, не забудьте выбрать Premium: 4vCores ценовой уровень.
+6. Выберите ценовую категорию. для этой оперативной миграции не забудьте выбрать ценовую категорию Premium: 4vCores.
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/dms-settings5.png)
 
@@ -192,9 +192,9 @@ ms.locfileid: "81113947"
 
       ![Поиск всех экземпляров Azure Database Migration Service](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/dms-search.png)
 
-2. На экране **миграционных служб базы данных Azure** ищите имя созданной службы миграции базы данных Azure, выберите экземпляр, а затем выберите **новый проект миграции.**
+2. На экране **службы миграции баз данных Azure** найдите имя созданного экземпляра Azure Database Migration Service, выберите экземпляр, а затем выберите + **Новый проект миграции**.
 3. На экране **Новый проект миграции** задайте имя проекта, в текстовом поле **Тип исходного сервера** выберите **AWS RDS для PostgreSQL**, а в текстовом поле **Тип целевого сервера** — **База данных Azure для PostgreSQL**.
-4. В разделе **«Выбрать тип активности»** выберите **миграцию данных в Интернете.**
+4. В разделе **Выбор типа действия** выберите **Перенос данных в сети**.
 
     > [!IMPORTANT]
     > Не забудьте выбрать режим **миграции данных по сети**, так как автономная миграция не поддерживается для этого сценария.
@@ -213,7 +213,7 @@ ms.locfileid: "81113947"
 
 ## <a name="specify-source-details"></a>Указание сведений об источнике
 
-* На экране **добавления исходных данных** укажите сведения о подключении к исходной экземпляру PostgreS'L.
+* На экране **добавить сведения об источнике** укажите сведения о соединении для исходного экземпляра PostgreSQL.
 
    ![Сведения об источнике](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/dms-source-details5.png)
 
@@ -221,7 +221,7 @@ ms.locfileid: "81113947"
 
 1. Нажмите кнопку **Сохранить**, а затем на экране **Сведения о целевом объекте** укажите сведения о подключении для предварительно подготовленного целевого сервера Базы данных Azure для PostgreSQL, для которого была развернута схема **Прокат DVD** с помощью PostgreSQL.
 
-    ![Детали цели](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/dms-target-details.png)
+    ![Сведения о целевом объекте](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/dms-target-details.png)
 
 2. Нажмите кнопку **Сохранить**, а затем на экране **Сопоставление с целевыми базами данных** сопоставьте исходную и целевую базы данных для миграции.
 
@@ -237,7 +237,7 @@ ms.locfileid: "81113947"
 
 * Выберите **Запустить миграцию**.
 
-    Появляется окно миграционной активности, а **состояние** действия **инициализируется.**
+    Откроется окно действие миграции, в котором будет **инициализировано** **состояние** действия.
 
 ## <a name="monitor-the-migration"></a>Мониторинг миграции
 
@@ -255,17 +255,17 @@ ms.locfileid: "81113947"
 
 ## <a name="perform-migration-cutover"></a>Выполнение прямой миграции
 
-После завершения первоначальной полной нагрузки базы данных помечаются **готовыми к сокращению.**
+После завершения начальной полной загрузки базы данных помечаются как **готовые к прямую миграцию**.
 
 1. Когда вы будете готовы выполнить миграцию базы данных, щелкните **Запустить прямую миграцию**.
 
-2. Подождите, пока счетчик **изменений Pending** покажет **0,** чтобы убедиться, что все входящие транзакции в исходную базу данных остановлены, выберите флажок **Confirm,** а затем выберите **Apply.**
+2. Подождите, пока счетчик **ожидающих изменений** отобразит значение **0** , чтобы убедиться, что все входящие транзакции в базу данных источника остановлены, установите флажок **подтвердить** и нажмите кнопку **Применить**.
 
-    ![Полный экран огранки](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/dms-complete-cutover.png)
+    ![Завершение прямую миграцию экрана](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/dms-complete-cutover.png)
 
 3. Когда состояние переноса базы данных изменится на **Завершено**, подключите свои приложения к новому целевому экземпляру Базы данных Azure для PostgreSQL.
 
-Ваша онлайн-миграция в предварительном экземпляре RDS PostgreS'L в базу данных Azure для PostgreS'L завершена.
+Оперативная миграция локального экземпляра RDS PostgreSQL в базу данных Azure для PostgreSQL теперь завершена.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

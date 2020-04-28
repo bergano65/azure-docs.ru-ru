@@ -1,5 +1,5 @@
 ---
-title: Опыты согласия приложения Azure AD
+title: Возможности согласия приложения Azure AD
 titleSuffix: Microsoft identity platform
 description: Узнайте о процедуре предоставления согласия Azure AD, а также о том, как вы можете использовать ее при управлении и разработке приложений в Azure AD
 services: active-directory
@@ -14,10 +14,10 @@ ms.date: 03/27/2019
 ms.author: ryanwi
 ms.reviewer: zachowd
 ms.openlocfilehash: e96442be50a075ebf2cd81bf1b6fb0f58f883bad
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80885588"
 ---
 # <a name="understanding-azure-ad-application-consent-experiences"></a>Основные сведения о процедуре предоставления согласия для приложений Azure AD
@@ -83,4 +83,4 @@ ms.locfileid: "80885588"
 ## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с пошаговым руководством по [реализации согласия в инфраструктуре согласия Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).
 - Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](active-directory-devhowto-multi-tenant-overview.md), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.
-- [Узнайте, как настроить домен издателя приложения.](howto-configure-publisher-domain.md)
+- Узнайте, [как настроить домен издателя приложения](howto-configure-publisher-domain.md).

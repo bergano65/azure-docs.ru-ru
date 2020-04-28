@@ -19,10 +19,10 @@ author: billmath
 ms.custom: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f3e521fb7668305ce511aaddd63ed2cce8dfed0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80331719"
 ---
 # <a name="manage-ad-fs-trust-with-azure-ad-using-azure-ad-connect"></a>Управление доверием между AD FS и Azure AD с помощью Azure AD Connect
@@ -105,7 +105,7 @@ Azure AD Connect гарантирует, что доверие Azure AD всег
 
 Azure AD Connect версии 1.1.873.0 или более поздней создает резервную копию параметров отношения доверия Azure AD при каждом их обновлении. Резервная копия параметров отношения доверия Azure AD создается здесь: **%ProgramData%\AADConnect\ADFS**. Имя файла записывается в таком формате: AadTrust-&lt;дата&gt;-&lt;время&gt;.txt, например AadTrust-20180710-150216.txt.
 
-![Скриншот примера резервного копирования доверия Azure AD](./media/how-to-connect-azure-ad-trust/backup.png)
+![Снимок экрана примера резервного копирования доверия Azure AD](./media/how-to-connect-azure-ad-trust/backup.png)
 
 Вы можете восстановить правила преобразования выдачи с помощью шагов ниже.
 

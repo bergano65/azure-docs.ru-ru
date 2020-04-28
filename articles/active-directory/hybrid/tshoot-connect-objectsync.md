@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e10d00ed90248319801974c7c1e7fadf835024b
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81407015"
 ---
 # <a name="troubleshoot-object-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации объектов с помощью службы синхронизации Azure AD Connect
@@ -37,13 +37,13 @@ ms.locfileid: "81407015"
 4.  Перейдите к странице "Дополнительные задачи", выберите "Устранение неполадок" и щелкните "Далее".
 5.  На странице "Устранение неполадок" щелкните "Запуск", чтобы открыть меню устранения неполадок в PowerShell.
 6.  В главном меню выберите Troubleshoot Object Synchronization (Устранение неполадок с синхронизацией объектов).
-![Синхронизация объектов устранения неполадок](media/tshoot-connect-objectsync/objsynch11.png)
+![Устранение неполадок синхронизации объектов](media/tshoot-connect-objectsync/objsynch11.png)
 
 ### <a name="troubleshooting-input-parameters"></a>Входные параметры для устранения неполадок
 Следующие входные параметры необходимы для выполнения задачи по устранению неполадок.
 1.  **Object Distinguished Name** (Различающееся имя объекта) — различающееся имя объекта, неполадки которого требуется устранить.
 2.  **AD Connector Name** (Имя соединителя AD) — имя леса AD, где находится указанный выше объект.
-3.  Глобальный администратор администратора Azure AD учетных данных глобальных ![учетных данных администратора](media/tshoot-connect-objectsync/objsynch1.png)
+3.  Глобальные административные учетные данные глобального ![администратора клиента Azure AD](media/tshoot-connect-objectsync/objsynch1.png)
 
 ### <a name="understand-the-results-of-the-troubleshooting-task"></a>Изучение результатов задачи устранения неполадок
 Задача устранения неполадок выполняет следующие проверки.
@@ -97,4 +97,4 @@ ms.locfileid: "81407015"
 ![Отчет HTML](media/tshoot-connect-objectsync/objsynch8.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 2a919996d00f8ef3fa00109944b60d53b63d95ff
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80529124"
 ---
 # <a name="claimstransformations"></a>ClaimsTransformations
@@ -35,7 +35,7 @@ ms.locfileid: "80529124"
 
 Элемент **ClaimsTransformation** содержит следующие атрибуты:
 
-| Атрибут |Обязательно | Описание |
+| Атрибут |Обязательный | Описание |
 | --------- |-------- | ----------- |
 | Идентификатор |Да | Идентификатор, который уникально определяет преобразование утверждения. На идентификатор ссылаются другие XML-элементы в политике. |
 | TransformationMethod | Да | Метод преобразования, используемый в преобразовании утверждений. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
@@ -77,7 +77,7 @@ ms.locfileid: "80529124"
 
 Элемент **InputClaim** содержит следующие атрибуты:
 
-| Атрибут |Обязательно | Описание |
+| Атрибут |Обязательный | Описание |
 | --------- | ----------- | ----------- |
 | ClaimTypeReferenceId |Да | Ссылка на тип ClaimType, уже определенный в разделе ClaimsSchema политики. |
 | TransformationClaimType |Да | Идентификатор для ссылки на тип утверждения преобразования. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
@@ -92,7 +92,7 @@ ms.locfileid: "80529124"
 
 #### <a name="inputparameter"></a>InputParameter
 
-| Атрибут | Обязательно |Описание |
+| Атрибут | Обязательный |Описание |
 | --------- | ----------- |----------- |
 | Идентификатор | Да | Идентификатор, который является ссылкой на параметр метода преобразования утверждений. Каждый метод преобразования утверждения имеет собственные значения. Полный список доступных значений см. в таблице по преобразованию утверждений. |
 | DataType | Да | Тип данных параметра, такой как String, Boolean, Int или DateTime, в соответствии с перечислением DataType в схеме XML настраиваемой политики. Этот тип используется для правильного выполнения арифметических операций. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
@@ -110,7 +110,7 @@ ms.locfileid: "80529124"
 
 Элемент **OutputClaim** содержит следующие атрибуты:
 
-| Атрибут |Обязательно | Описание |
+| Атрибут |Обязательный | Описание |
 | --------- | ----------- |----------- |
 | ClaimTypeReferenceId | Да | Ссылка на тип ClaimType, уже определенный в разделе ClaimsSchema политики.
 | TransformationClaimType | Да | Идентификатор для ссылки на тип утверждения преобразования. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
@@ -159,13 +159,13 @@ ms.locfileid: "80529124"
 
 Примеры преобразования утверждений см. на следующих страницах справки:
 
-- [Логических](boolean-transformations.md)
+- [Boolean](boolean-transformations.md)
 - [Дата](date-transformations.md)
-- [Целое число](integer-transformations.md)
-- [JSON](json-transformations.md)
-- [Номер телефона](phone-number-claims-transformations.md)
-- [Общие](general-transformations.md)
+- [Цело](integer-transformations.md)
+- [ФОРМАТ](json-transformations.md)
+- [номер телефона.](phone-number-claims-transformations.md)
+- [Общие сведения](general-transformations.md)
 - [Учетная запись социальной сети](social-transformations.md)
-- [Строка](string-transformations.md)
+- [String](string-transformations.md)
 - [StringCollection](stringcollection-transformations.md)
 

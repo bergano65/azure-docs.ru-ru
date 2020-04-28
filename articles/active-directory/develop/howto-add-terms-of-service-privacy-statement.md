@@ -1,5 +1,5 @@
 ---
-title: Условия обслуживания и заявления о конфиденциальности для приложений Azure
+title: Условия обслуживания и заявление о конфиденциальности для приложений | Службы
 description: Узнайте, как настроить условия обслуживания и заявление о конфиденциальности для приложений, зарегистрированных для использования Azure AD.
 services: active-directory
 author: rwike77
@@ -13,13 +13,13 @@ ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja
 ms.custom: aaddev
 ms.openlocfilehash: 40e7a05505bc501c1c622e627a6d97cc57db1cfa
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80884245"
 ---
-# <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как: Настройка условий обслуживания и выписки о конфиденциальности для приложения
+# <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как настроить условия предоставления услуг и заявления о конфиденциальности для приложения
 
 Разработчики, создающие и обслуживающие приложения, которые интегрируются с Azure Active Directory (Azure AD) и учетными записями Майкрософт, должны добавить ссылки на условия обслуживания и заявление о конфиденциальности приложений. Условия обслуживания и заявление о конфиденциальности отображаются в окне запроса согласия пользователя. Они помогут пользователям понять, что они могут доверять вашему приложению. Условия обслуживания и заявление о конфиденциальности особенно важны для пользовательских мультитенантных приложений, то есть приложений, используемых в нескольких каталогах или доступных для любой учетной записи Майкрософт.
 
@@ -53,18 +53,18 @@ ms.locfileid: "80884245"
 
 * [Через портал Azure](#azure-portal)
 * [с помощью JSON объекта приложения](#app-object-json);
-* [Использование API графика Майкрософт](#msgraph-rest-api)
+* [Использование API Microsoft Graph](#msgraph-rest-api)
 
 ### <a name="using-the-azure-portal"></a><a name="azure-portal"></a>Использование портала Azure
-Выполните следующие действия на портале Azure.
+Выполните следующие действия в портал Azure.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Перейдите к разделу **Регистрация приложений** и выберите свое приложение.
-3. Откройте **фирменное** стекло.
+3. Откройте панель **фирменной символики** .
 4. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
 5. Сохраните изменения.
 
-    ![Свойства приложения содержат URL-адреса выписки об обслуживании и конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
+    ![Свойства приложения содержат условия предоставления услуг и URL-адресов заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
 
 ### <a name="using-the-app-object-json"></a><a name="app-object-json"></a>с помощью JSON объекта приложения;
 
@@ -77,9 +77,9 @@ ms.locfileid: "80884245"
     }
 ```
 
-### <a name="using-the-microsoft-graph-api"></a><a name="msgraph-rest-api"></a>Использование API графика Майкрософт
+### <a name="using-the-microsoft-graph-api"></a><a name="msgraph-rest-api"></a>Использование API Microsoft Graph
 
-Для программного обновления всех приложений можно использовать API Microsoft Graph для обновления всех приложений, чтобы включить ссылки на условия документов об обслуживании и выписке о конфиденциальности.
+Для программного обновления всех приложений можно использовать API Microsoft Graph, чтобы обновить все приложения, включив ссылки на условия предоставления услуг и документов заявления о конфиденциальности.
 
 ```
 PATCH https://graph.microsoft.com/v1.0/applications/{application id}
@@ -97,4 +97,4 @@ PATCH https://graph.microsoft.com/v1.0/applications/{application id}
 
 > [!NOTE]
 > * Соблюдайте осторожность, чтобы не перезаписать значения, присвоенные какому-либо из этих полей: `supportUrl`, `marketingUrl`, и `logoUrl`.
-> * API Microsoft Graph работает только при входе в учетную запись Azure AD. Личные учетные записи Майкрософт не поддерживаются.
+> * Microsoft Graph API работает только при входе с помощью учетной записи Azure AD. Личные учетные записи Майкрософт не поддерживаются.

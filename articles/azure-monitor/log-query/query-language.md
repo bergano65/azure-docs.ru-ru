@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 01/11/2019
 ms.openlocfilehash: 6b81aba553fc775821c80631aa83bbb3e8ac63b5
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80631795"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
@@ -21,7 +21,7 @@ ms.locfileid: "80631795"
 
 ## <a name="getting-started"></a>Начало работы
 
-- [Начало работы с Azure Monitor Log Analytics](get-started-portal.md) — это урок для написания запросов и работы с результатами на портале Azure.
+- [Начало работы с Azure Monitor log Analytics](get-started-portal.md) — это занятие для написания запросов и работы с результатами в портал Azure.
 - Статья о [начале работы с запросами к журналам в Azure Monitor](get-started-queries.md) — это руководство по созданию запросов с использованием данных журнала Azure Monitor.
 
 ## <a name="concepts"></a>Основные понятия

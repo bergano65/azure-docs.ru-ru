@@ -1,6 +1,6 @@
 ---
-title: Видео платформы идентификации Майкрософт Azure
-description: Список видео о современной аутентификации и платформе идентификации Майкрософт
+title: Видеоролики по платформе Microsoft Identity | Службы
+description: Список видеороликов о современной проверке подлинности и платформе удостоверений Майкрософт
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -13,30 +13,30 @@ ms.author: marsma
 ms.custom: aaddev
 ms.reviewer: celested
 ms.openlocfilehash: e8c7ec6cf1d15e414a6db54d5bc2ad7e4994cd82
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80991302"
 ---
 # <a name="microsoft-identity-platform-videos"></a>Видео по платформе удостоверений Майкрософт
 
-Изучите основы современной аутентификации, платформу идентификации Майкрософт и библиотеки подлинности Майкрософт (MSAL).
+Изучите основы современной проверки подлинности, платформы Microsoft Identity и библиотек проверки подлинности Майкрософт (MSAL).
 
-## <a name="authentication-fundamentals"></a>Основы аутентификации
+## <a name="authentication-fundamentals"></a>Основы проверки подлинности
 
-Если вы новичок в таких понятиях, как поставщики идентификационных данных, маркеры безопасности, претензии и аудитория, эта серия видео является хорошим местом для начала.
+Если вы не знакомы с такими концепциями, как поставщики удостоверений, маркеры безопасности, заявки и аудитория, то в этой серии видео стоит начать.
 ___
 
 :::row:::
     :::column:::
-        1 - Основы: Концепции современной аутентификации (4:33)
+        1. Основные понятия современной проверки подлинности (4:33)
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/fbSVgC8nGz4?list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy]
     :::column-end:::
      :::column:::
-        2 - Современная аутентификация для веб-приложений (6:02)
+        2. Современная проверка подлинности для веб-приложений (6:02)
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/tCNcG1lcCHY?list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy]
@@ -44,13 +44,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        3 - Веб-одиночный вписаться (4:13)
+        3. единый вход через Интернет (4:13)
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/51B-jSOBF8U?list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy]
     :::column-end:::
     :::column:::
-        4 - Федеративная веб-аутентификация (6:19)
+        4. Федеративная веб-аутентификация (6:19)
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/CjarTgjKcX8?list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy]
@@ -58,13 +58,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        5 - Заявки коренных клиентов - Часть 1 (8:12)
+        5. собственные клиентские приложения — часть 1 (8:12)
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/OGMDnuDrAcQ?list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy]
     :::column-end:::
     :::column:::
-        6 - Заявки коренных клиентов - Часть 2 (5:33)
+        6. собственные клиентские приложения — часть 2 (5:33)
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/2RE6IhXfmHY?list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy]
@@ -73,7 +73,7 @@ ___
 
 ## <a name="microsoft-identity-platform-basics"></a>Основы платформы идентификации Майкрософт
 
-Узнайте о компонентах платформы идентификации Майкрософт, библиотеках подлинности Майкрософт (MSAL) и о том, как эти компоненты взаимодействуют с Active Directory Azure. Один Dev Вопрос видео 1-2 минут в длину.
+Узнайте о компонентах платформы идентификации Майкрософт, библиотеках проверки подлинности Майкрософт (MSAL) и о том, как эти компоненты взаимодействуют с Azure Active Directory. Видео с вопросом о доходе разработки — 1-2 минут.
 ___
 
 :::row:::
@@ -90,13 +90,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        Введение в библиотеки MSAL
+        Общие сведения о библиотеках MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/apbbx2n4tnU]
     :::column-end:::
     :::column:::
-        Как MSAL упрощает аутентификацию
+        Как MSAL упрощает проверку подлинности
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/yLVEBU9Z96Q]
@@ -104,7 +104,7 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        Области объяснил
+        Описание областей
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/eiPHOoLmGJs]
@@ -118,13 +118,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        Что делают перенаправление УРИ
+        Что делают URI перенаправления
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/znSN_3JAuoU]
     :::column-end:::
     :::column:::
-        Арендаторы объяснили
+        Описание клиентов
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/mDhT4Zv1fZU]
@@ -146,33 +146,33 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        Организационные и личные различия в учетной записи Майкрософт
+        Различия в организационных и личных учетная запись Майкрософт
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/E2OUluQQKSk]
     :::column-end:::
     :::column:::
-        Различия В СПА и веб-приложениях
+        Различия в SPA и веб-приложениях
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/ZJirt7eTVw8?t=5]
     :::column-end:::
 :::row-end:::
 
-## <a name="migrate-from-v10-to-v20"></a>Миграция из v1.0 в v2.0
+## <a name="migrate-from-v10-to-v20"></a>Миграция с версии 1.0 на v 2.0
 
-Узнайте о переходе на последнюю версию платформы майкрософт, включая переход из Библиотеки подлинности active Directory (ADAL) в MSAL.
+Узнайте о переходе на последнюю версию платформы Microsoft Identity, включая переход с Библиотека проверки подлинности Active Directory (ADAL) в MSAL.
 ___
 
 :::row:::
     :::column:::
-        Конечные точки и преимущества перехода на v2.0
+        Конечные точки и преимущества перехода на v 2.0
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
     :::column-end:::
      :::column:::
-        Миграция кодовой базы ADAL в MSAL
+        Перенос базы кода ADAL в MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/xgL_z9yCnrE]
@@ -180,13 +180,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        Зачем мигрировать из ADAL в MSAL
+        Зачем выполнять миграцию из ADAL в MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
     :::column-end:::
     :::column:::
-        Преимущества MSAL над ADAL
+        Преимущества MSAL через ADAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/q-TDszj2O-4]

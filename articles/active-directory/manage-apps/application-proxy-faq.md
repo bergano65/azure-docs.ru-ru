@@ -1,6 +1,6 @@
 ---
-title: Прокси-приложение Azure AD Proxy часто задавало вопросы Документы Майкрософт
-description: Узнайте ответы на часто задаваемые вопросы (Часто задаваемые вопросы) об использовании приложения Azure AD Proxy для публикации внутренних приложений для удаленных пользователей.
+title: Часто задаваемые вопросы об Azure AD Application Proxy | Документация Майкрософт
+description: Ознакомьтесь с ответами на часто задаваемые вопросы об использовании AD Application Proxy Azure для публикации внутренних локальных приложений для удаленных пользователей.
 services: active-directory
 documentationcenter: ''
 author: msmimart
@@ -16,158 +16,158 @@ ms.date: 10/03/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.openlocfilehash: d1929f937d86001a0f2a399b1ebd92e47bbd2c86
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80990911"
 ---
-# <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Прокси-сервер приложения Active Directory (Azure AD) часто задавал вопросы
+# <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
-Эта страница часто отвечает на часто задаваемые вопросы о прокси-сервере приложения Azure Active Directory (Azure AD).
+На этой странице приведены ответы на часто задаваемые вопросы о Azure Active Directory прокси приложения (Azure AD).
 
 ## <a name="enabling-azure-ad-application-proxy"></a>Включение прокси приложения Azure AD
 
-### <a name="what-license-is-required-to-use-azure-ad-application-proxy"></a>Какая лицензия необходима для использования Azure AD Application Proxy?
+### <a name="what-license-is-required-to-use-azure-ad-application-proxy"></a>Какая лицензия необходима для использования AD Application Proxy Azure?
 
-Чтобы использовать прокси-приложение Azure AD, необходимо иметь лицензию Azure AD Premium P1 или P2. Для получения дополнительной информации о лицензировании [см.](https://azure.microsoft.com/pricing/details/active-directory/)
+Чтобы использовать Azure AD Application Proxy, необходимо иметь лицензию Azure AD Premium P1 или P2. Дополнительные сведения о лицензировании см. в разделе [цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/)
 
-### <a name="why-is-the-enable-application-proxy-button-grayed-out"></a>Почему кнопка "Включить приложение Прокси серый?
+### <a name="why-is-the-enable-application-proxy-button-grayed-out"></a>Почему кнопка "включить прокси приложения" неактивна?
 
-Убедитесь, что у вас есть по крайней мере лицензия Azure AD Premium P1 или P2 и установлен прокси-коннектор приложения Azure AD. После успешной установки первого разъема служба Azure AD Application Proxy будет включена автоматически.
+Убедитесь, что у вас есть по крайней мере лицензия Azure AD Premium P1 или P2 и установлен соединитель AD Application Proxy Azure. После успешной установки первого соединителя служба AD Application Proxy Azure будет включена автоматически.
 
 ## <a name="connector-configuration"></a>Конфигурация соединителя
 
-### <a name="can-application-proxy-connector-services-run-in-a-different-user-context-than-the-default"></a>Могут ли службы Application Proxy Connector работать в другом контексте пользователя, чем по умолчанию?
+### <a name="can-application-proxy-connector-services-run-in-a-different-user-context-than-the-default"></a>Могут ли службы соединителя прокси приложения запускаться в контексте пользователя, отличном от контекста по умолчанию?
 
 Нет, этот сценарий не поддерживается. Параметры по умолчанию:
 
-- Microsoft AAD приложение Прокси-коннектор - WAPCSvc - Сетевая служба
-- Microsoft AAD Приложение Прокси-коннектор Обновление - WAPCUpdaterSvc - NT Органа
+- Соединитель прокси приложения Microsoft AAD — Вапксвк — сетевая служба
+- Средство обновления соединителей Microsoft AAD Application Proxy-Вапкупдатерсвк-NT Authority\System
 
-### <a name="my-back-end-application-is-hosted-on-multiple-web-servers-and-requires-user-session-persistence-stickiness-how-can-i-achieve-session-persistence"></a>Мое приложение бэк-энда размещается на нескольких веб-серверах и требует сохранения сеанса пользователя (липкость). Как я могу достичь настойчивости сеанса? 
+### <a name="my-back-end-application-is-hosted-on-multiple-web-servers-and-requires-user-session-persistence-stickiness-how-can-i-achieve-session-persistence"></a>Мое серверное приложение размещается на нескольких веб-серверах и требует сохранения пользовательского сеанса («закрепления»). Как можно добиться сохранения сеанса? 
 
-Для получения рекомендаций [см.](application-proxy-high-availability-load-balancing.md)
+Рекомендации см. в статье [Высокая доступность и балансировка нагрузки соединителей прокси приложения и приложений](application-proxy-high-availability-load-balancing.md).
 
-### <a name="is-tls-termination-tlshttps-inspection-or-acceleration-on-traffic-from-the-connector-servers-to-azure-supported"></a>Поддерживается ли прекращение TLS (проверка TLS/HTTPS или ускорение) на трафике с серверов разъема на Azure?
+### <a name="is-tls-termination-tlshttps-inspection-or-acceleration-on-traffic-from-the-connector-servers-to-azure-supported"></a>Поддерживается ли прерывание TLS (проверка или ускорение TLS/HTTPS) на трафике с серверов соединителей в Azure?
 
-Соединение прокси-приложений выполняет проверку подлинности на основе сертификатов в Azure. Прекращение TLS (tLS/HTTPS инспекция или ускорение) нарушает этот метод проверки подлинности и не поддерживается. Трафик от разъема до Azure должен обходить любые устройства, выполняющие TLS Termination.  
+Соединитель прокси приложения выполняет проверку подлинности на основе сертификата в Azure. Прерывание TLS (проверка или ускорение TLS/HTTPS) прерывает этот метод проверки подлинности и не поддерживается. Трафик из соединителя в Azure должен обходить любые устройства, выполняющие завершение TLS.  
 
-### <a name="can-i-place-a-forward-proxy-device-between-the-connector-servers-and-the-back-end-application-server"></a>Могу ли я разместить передний прокси-устройство между сервером разъема (ы) и сервером приложений обратного конца?
-Да, этот сценарий поддерживается, начиная с разъема версии 1.5.1526.0. Смотрите [Работа с существующими в непредпомяги прокси-серверов.](application-proxy-configure-connectors-with-proxy-servers.md)
+### <a name="can-i-place-a-forward-proxy-device-between-the-connector-servers-and-the-back-end-application-server"></a>Можно ли разместить устройство с прямым прокси-сервером между серверами соединителей и сервером серверных приложений?
+Да, этот сценарий поддерживается начиная с соединителя версии 1.5.1526.0. См. раздел [Работа с существующими локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md).
 
-### <a name="should-i-create-a-dedicated-account-to-register-the-connector-with-azure-ad-application-proxy"></a>Должен ли я создать специальную учетную запись для регистрации разъема с помощью Azure AD Application Proxy?
+### <a name="should-i-create-a-dedicated-account-to-register-the-connector-with-azure-ad-application-proxy"></a>Следует ли создать выделенную учетную запись для регистрации соединителя в Azure AD Application Proxy?
 
-Нет причин. Любая глобальная учетная запись администратора или администратора приложений будет работать. Учетные данные, введенные во время установки, не используются после процесса регистрации. Вместо этого сертификат выдается разъему, который используется для проверки подлинности с этого момента.
+Нет причин. Будет работать любая учетная запись глобального администратора или администратора приложения. Учетные данные, указанные во время установки, не используются после процесса регистрации. Вместо этого к соединителю выдается сертификат, который используется для проверки подлинности с этого момента.
 
-### <a name="how-can-i-monitor-the-performance-of-the-azure-ad-application-proxy-connector"></a>Как я могу контролировать производительность разъема прокси-сервера Azure AD?
+### <a name="how-can-i-monitor-the-performance-of-the-azure-ad-application-proxy-connector"></a>Как можно отслеживать производительность соединителя Azure AD Application Proxy?
 
-Есть счетчики монитора производительности, которые установлены вместе с разъемом. Чтобы просмотреть эти элементы:  
+Существуют счетчики системного монитора, которые устанавливаются вместе с соединителем. Чтобы просмотреть эти элементы:  
 
-1. Выберите **Начало,** введите "Perfmon" и нажмите ENTER.
-2. Выберите **монитор производительности** и нажмите зеленый **+** значок.
-3. Добавьте счетчики **прокси-соединения приложений Microsoft AAD,** которые вы хотите контролировать.
+1. Нажмите кнопку **Пуск**, введите "PerfMon" и нажмите клавишу ВВОД.
+2. Выберите **системный монитор** и щелкните зеленый **+** значок.
+3. Добавьте счетчики **соединителя прокси приложения Microsoft AAD** , которые необходимо отслеживать.
 
-### <a name="does-the-azure-ad-application-proxy-connector-have-to-be-on-the-same-subnet-as-the-resource"></a>Должен ли разъем приложения Azure AD Proxy находиться в той же подсети, что и ресурс?
+### <a name="does-the-azure-ad-application-proxy-connector-have-to-be-on-the-same-subnet-as-the-resource"></a>Должен ли соединитель Azure AD Application Proxy находиться в той же подсети, что и ресурс?
 
-Разъем не требуется, чтобы быть на той же подсети. Тем не менее, для этого необходимо разрешение имени (DNS, файл хостов) к ресурсу и необходимое подключение к сети (переориентация на ресурс, открытые порты на ресурсе и т.д.). Для получения рекомендаций см. [соображения топологии сети при использовании прокси-приложения Azure Active Directory Proxy.](application-proxy-network-topology.md)
+Соединитель не обязательно должен находиться в той же подсети. Однако ему требуется разрешение имен (DNS, файл Hosts) для ресурса и необходимое сетевое подключение (маршрутизация к ресурсу, порты, открытые на ресурсе и т. д.). Рекомендации см. в разделе [рекомендации по топологии сети при использовании Azure Active Directory Application proxy](application-proxy-network-topology.md).
 
-## <a name="application-configuration"></a>Конфигурация приложений
+## <a name="application-configuration"></a>Настройка приложения
 
-### <a name="what-is-the-length-of-the-default-and-long-back-end-timeout-can-the-timeout-be-extended"></a>Какова длина по умолчанию и "длинный" бэк-энд тайм-аут? Можно ли продлить тайм-аут?
+### <a name="what-is-the-length-of-the-default-and-long-back-end-timeout-can-the-timeout-be-extended"></a>Какова длина значения по умолчанию и времени ожидания серверной части "Long"? Можно ли увеличить время ожидания?
 
-Длина по умолчанию составляет 85 секунд. "Длинная" настройка составляет 180 секунд. Ограничение тайм-аута не может быть продлено.
+Длина по умолчанию составляет 85 секунд. Значение параметра "Long" составляет 180 секунд. Ограничение времени ожидания не может быть расширено.
 
-### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Как изменить целевую страницу загрузки приложения?
+### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Разделы справки изменить целевую страницу, с которой загружается приложение?
 
-Со страницы регистрации приложений можно изменить URL-адрес главной страницы на нужный внешний URL целевой страницы. Указанная страница будет загружена при запуске приложения с my Apps или портала Office 365. Для шагов конфигурации смотрите [на специальной домашней странице для опубликованных приложений с помощью прокси-приложения Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-home-page)
+На странице регистрации приложений можно изменить URL-адрес домашней страницы на требуемый внешний URL-адрес целевой странице. Указанная страница будет загружаться при запуске приложения из папки "Мои приложения" или с портала Office 365. Инструкции по настройке см. в разделе [Настройка пользовательской домашней страницы для опубликованных приложений с помощью Azure AD application proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-home-page)
 
-### <a name="can-only-iis-based-applications-be-published-what-about-web-applications-running-on-non-windows-web-servers-does-the-connector-have-to-be-installed-on-a-server-with-iis-installed"></a>Могут ли быть опубликованы только приложения на базе IIS? Как насчет веб-приложений, работающих на веб-серверах, не относящих Windows? Должен ли разъем быть установлен на сервере с установленным IIS?
+### <a name="can-only-iis-based-applications-be-published-what-about-web-applications-running-on-non-windows-web-servers-does-the-connector-have-to-be-installed-on-a-server-with-iis-installed"></a>Можно ли публиковать только приложения на основе IIS? Как насчет веб-приложений, работающих на веб-серверах, отличных от Windows? Нужно ли устанавливать соединитель на сервере с установленными службами IIS?
 
-Нет, нет требования IIS для приложений, которые публикуются. Вы можете публиковать веб-приложения, работающие на серверах, кроме Windows Server. Тем не менее, вы не сможете использовать предварительную аутентификацию с сервером, не относящимся к Windows, в зависимости от того, поддерживает ли веб-сервер «Переговоры» (проверка подлинности Kerberos). IIS не требуется на сервере, где установлен разъем.
+Нет, для опубликованных приложений не требуется IIS. Можно публиковать веб-приложения, работающие на серверах, отличных от Windows Server. Однако использование предварительной проверки подлинности на сервере, отличном от Windows Server, может оказаться невозможным в зависимости от того, поддерживает ли веб-сервер согласование (проверка подлинности Kerberos). Службы IIS не требуются на сервере, на котором установлен соединитель.
 
 ## <a name="integrated-windows-authentication"></a>Встроенная проверка подлинности Windows
 
-### <a name="when-should-i-use-the-principalsallowedtodelegatetoaccount-method-when-setting-up-kerberos-constrained-delegation-kcd"></a>Когда следует использовать метод PrincipalsAllowedToDelegateToAccount при настройке ограниченной делегации Kerberos (KCD)?
+### <a name="when-should-i-use-the-principalsallowedtodelegatetoaccount-method-when-setting-up-kerberos-constrained-delegation-kcd"></a>Когда следует использовать метод PrincipalsAllowedToDelegateToAccount при настройке ограниченного делегирования Kerberos (KCD)?
 
-Метод PrincipalsAllowedToDelegateToAccount используется, когда серверы разъема находятся в другом домене от учетной записи службы веб-приложений. Она требует использования ограниченной делегации на основе ресурсов.
-Если серверы разъема и учетная запись службы веб-приложений находятся в одном домене, можно использовать Активные пользователи каталогов и компьютеры для настройки параметров делегирования на каждой из учетных записей разъемной машины, что позволяет им делегировать целевой SPN.
+Метод PrincipalsAllowedToDelegateToAccount используется, когда серверы соединителей находятся в разных доменах из учетной записи службы веб-приложений. Он требует использования ограниченного делегирования на основе ресурсов.
+Если серверы соединителей и учетная запись службы веб-приложения находятся в одном домене, можно использовать Active Directory пользователи и компьютеры для настройки параметров делегирования на каждой учетной записи компьютера соединителя, что позволяет им делегировать целевому имени участника-службы.
 
-Если серверы разъема и учетная запись службы веб-приложений находятся в разных доменах, используется делегация на основе ресурсов. Разрешения делегации настраиваются на целевой веб-сервер и учетную запись службы веб-приложений. Этот метод ограниченной делегирования является относительно новым. Метод был введен в Windows Server 2012, который поддерживает делегацию кросс-домена, позволяя владельцу ресурса (веб-сервиса) контролировать, какие учетные записи машины и службы могут делегировать ему. Нет никакого использования используется для использования в этой конфигурации, поэтому вам необходимо использовать PowerShell.
-Для получения дополнительной информации, см. [Understanding Kerberos Constrained Delegation with Application Proxy](https://aka.ms/kcdpaper)
+Если серверы соединителей и учетная запись службы веб-приложения находятся в разных доменах, используется делегирование на основе ресурсов. Разрешения на делегирование настраиваются на целевом веб-сервере и в учетной записи службы веб-приложений. Этот метод ограниченного делегирования является относительно новым. Этот метод появился в Windows Server 2012, который поддерживает делегирование между доменами, позволяя владельцу ресурса (веб-службе) управлять тем, какие компьютеры и учетные записи служб могут быть делегированы. Нет пользовательского интерфейса для помощи с этой конфигурацией, поэтому вам потребуется использовать PowerShell.
+Дополнительные сведения см. в техническом документе [об ограниченном делегировании Kerberos с помощью прокси приложения](https://aka.ms/kcdpaper).
 
 ## <a name="pass-through-authentication"></a>Сквозная аутентификация
 
-### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Могу ли я использовать политики условного доступа для приложений, опубликованных с помощью сквозной аутентификации?
+### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Можно ли использовать политики условного доступа для приложений, опубликованных с помощью сквозной проверки подлинности?
 
-Политики условного доступа применяются только для успешно проверенных пользователей в Azure AD. Сквозная аутентификация не вызывает аутентификацию Azure AD, поэтому политики условного доступа не могут быть приведены в исполнение. При сквозной аутентификации политики MFA должны быть реализованы на сервере, если это возможно, или путем включения предварительной аутентификации с помощью Azure AD Application Proxy.
+Политики условного доступа применяются только для пользователей, которые прошли предварительную проверку подлинности в Azure AD. Сквозная проверка подлинности не активирует аутентификацию Azure AD, поэтому применение политик условного доступа невозможно. При использовании сквозной проверки подлинности политики MFA должны быть реализованы на локальном сервере, если это возможно, или путем включения предварительной проверки подлинности в Azure AD Application Proxy.
 
-### <a name="can-i-publish-a-web-application-with-client-certificate-authentication-requirement"></a>Могу ли я опубликовать веб-приложение с требованием проверки подлинности сертификата клиента?
+### <a name="can-i-publish-a-web-application-with-client-certificate-authentication-requirement"></a>Можно ли опубликовать веб-приложение с требованием проверки подлинности сертификата клиента?
 
-Нет, этот сценарий не поддерживается, поскольку прокси-сервер приложения прекратит трафик TLS.  
+Нет, этот сценарий не поддерживается, так как прокси приложения будет завершать трафик TLS.  
 
-## <a name="remote-desktop-gateway-publishing"></a>Удаленное издание шлюза для рабочего стола
+## <a name="remote-desktop-gateway-publishing"></a>Публикация шлюза удаленный рабочий стол
 
-### <a name="how-can-i-publish-remote-desktop-gateway-over-azure-ad-application-proxy"></a>Как опубликовать шлюз удаленного рабочего стола через прокси-приложение Azure AD?
+### <a name="how-can-i-publish-remote-desktop-gateway-over-azure-ad-application-proxy"></a>Как опубликовать удаленный рабочий стол шлюза в Azure AD Application Proxy?
 
-Обратитесь к [публикации удаленного рабочего стола с прокси-приложением Azure AD.](application-proxy-integrate-with-remote-desktop-services.md)
+См. статью [публикация удаленный рабочий стол с помощью AD application proxy Azure](application-proxy-integrate-with-remote-desktop-services.md).
 
-### <a name="can-i-use-kerberos-constrained-delegation-single-sign-on---windows-integrated-authentication-in-the-remote-desktop-gateway-publishing-scenario"></a>Могу ли я использовать ограниченную делегацию Kerberos (Single Sign-On - Интегрированная аутентификация Windows) в сценарии публикации удаленного рабочего стола?
+### <a name="can-i-use-kerberos-constrained-delegation-single-sign-on---windows-integrated-authentication-in-the-remote-desktop-gateway-publishing-scenario"></a>Можно ли использовать ограниченное делегирование Kerberos (единый вход — встроенная проверка подлинности Windows) в сценарии публикации шлюза удаленный рабочий стол?
 
 Нет, этот сценарий не поддерживается.  
 
-### <a name="my-users-dont-use-internet-explorer-11-and-the-pre-authentication-scenario-doesnt-work-for-them-is-this-expected"></a>Мои пользователи не используют Internet Explorer 11, и сценарий предварительной проверки не работает для них. Так и должно быть?
+### <a name="my-users-dont-use-internet-explorer-11-and-the-pre-authentication-scenario-doesnt-work-for-them-is-this-expected"></a>Пользователи не используют Internet Explorer 11, и сценарий предварительной проверки подлинности не подходит для них. Так и должно быть?
 
-Да, это ожидаемо. Сценарий предварительной проверки требует управления ActiveX, который не поддерживается в сторонних браузерах.
+Да, это ожидаемое значение. Для сценария предварительной проверки подлинности требуется элемент управления ActiveX, который не поддерживается сторонними браузерами.
 
-### <a name="is-the-remote-desktop-web-client-html5-supported"></a>Поддерживается ли веб-клиент удаленного рабочего стола (HTML5)?
+### <a name="is-the-remote-desktop-web-client-html5-supported"></a>Поддерживается ли удаленный рабочий стол веб-клиентом (HTML5)?
 
-Нет, этот сценарий в настоящее время не поддерживается. Следите за обновлениями на этом форуме [UserVoice.](https://aka.ms/aadapuservoice)
+Нет, в настоящее время этот сценарий не поддерживается. Ознакомьтесь с нашим форумом по обратной связи [UserVoice](https://aka.ms/aadapuservoice) , чтобы получить обновления для этой функции.
 
-### <a name="after-i-configured-the-pre-authentication-scenario-i-realized-that-the-user-has-to-authenticate-twice-first-on-the-azure-ad-sign-in-form-and-then-on-the-rdweb-sign-in-form-is-this-expected-how-can-i-reduce-this-to-one-sign-in"></a>После настройки сценария предварительной аутентификации я понял, что пользователь должен проверить подлинность дважды: сначала в форме регистрации Azure AD, а затем в форме входной формы RDWeb. Так и должно быть? Как я могу уменьшить это до одного ввоза?
+### <a name="after-i-configured-the-pre-authentication-scenario-i-realized-that-the-user-has-to-authenticate-twice-first-on-the-azure-ad-sign-in-form-and-then-on-the-rdweb-sign-in-form-is-this-expected-how-can-i-reduce-this-to-one-sign-in"></a>После настройки сценария предварительной проверки подлинности я понял, что пользователь должен пройти проверку подлинности дважды: сначала на форме входа в Azure AD, а затем на форме входа RDWeb. Так и должно быть? Как можно сократить это до одного входа?
 
-Да, это ожидаемо. Если компьютер пользователя присоединился к Azure AD, пользователь автоматически переходит в Azure AD. Пользователь должен предоставить свои учетные данные только в форме регистрации RDWeb.
+Да, это ожидаемое значение. Если компьютер пользователя подключен к Azure AD, он автоматически входит в Azure AD. Пользователь должен предоставить свои учетные данные только в форме входа RDWeb.
 
 ## <a name="sharepoint-publishing"></a>Публикация SharePoint
 
-### <a name="how-can-i-publish-sharepoint-over-azure-ad-application-proxy"></a>Как опубликовать SharePoint через прокси-сервер Azure AD?
+### <a name="how-can-i-publish-sharepoint-over-azure-ad-application-proxy"></a>Как опубликовать SharePoint через Azure AD Application Proxy?
 
-Обратитесь к [включить удаленный доступ к SharePoint с Azure AD приложение прокси](application-proxy-integrate-with-sharepoint-server.md).
+См. статью [Включение удаленного доступа к SharePoint с помощью AD application proxy Azure](application-proxy-integrate-with-sharepoint-server.md).
 
-### <a name="can-i-use-the-sharepoint-mobile-app-ios-android-to-access-a-published-sharepoint-server"></a>Могу ли я использовать мобильное приложение SharePoint (iOS/ Android) для доступа к опубликованному серверу SharePoint?
+### <a name="can-i-use-the-sharepoint-mobile-app-ios-android-to-access-a-published-sharepoint-server"></a>Можно ли использовать мобильное приложение SharePoint (iOS и Android) для доступа к опубликованному серверу SharePoint?
 
-[Мобильное приложение SharePoint](https://docs.microsoft.com/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) не поддерживает предпроверку подлинности Active Directory Azure.
+[Мобильное приложение SharePoint](https://docs.microsoft.com/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) не поддерживает Azure Active Directory предварительную проверку подлинности в настоящее время.
 
-## <a name="active-directory-federation-services-ad-fs-publishing"></a>Публикация Active Directory Federation Services (AD FS) 
+## <a name="active-directory-federation-services-ad-fs-publishing"></a>Публикация службы федерации Active Directory (AD FS) (AD FS) 
 
-### <a name="can-i-use-azure-ad-application-proxy-as-ad-fs-proxy-like-web-application-proxy"></a>Могу ли я использовать прокси-сервер Azure AD Application в качестве прокси-сервера AD FS (например, веб-прокси-сервера)?
+### <a name="can-i-use-azure-ad-application-proxy-as-ad-fs-proxy-like-web-application-proxy"></a>Можно ли использовать AD Application Proxy Azure в качестве прокси-сервера AD FS (например, прокси)?
 
-Нет. Прокси-сервер Azure AD при приложении Azure AD предназначен для работы с Azure AD и не выполняет требования, предъявляемые к прокси-серверу AD FS.
+Нет. Azure AD Application Proxy предназначен для работы с Azure AD и не выполняет требования, выступающие в роли прокси-сервера AD FS.
 
-## <a name="websocket"></a>Websocket
+## <a name="websocket"></a>WebSocket
 
-### <a name="does-websocket-support-work-for-applications-other-than-qliksense"></a>Работает ли поддержка WebSocket для приложений, не относясь до zlikSense?
+### <a name="does-websocket-support-work-for-applications-other-than-qliksense"></a>Поддерживает ли WebSocket работу для приложений, отличных от QlikSense?
 
-В настоящее время поддержка протокола WebSocket все еще находится в открытом доступе и может не работать для других приложений. Некоторые клиенты имели смешанный успех, используя протокол WebSocket с другими приложениями. Если вы тестируете такие сценарии, мы хотели бы услышать ваши результаты. Пожалуйста, пришлите aadapfeedback@microsoft.comнам свои отзывы по адресу .
+В настоящее время поддержка протокола WebSocket по-прежнему доступна в общедоступной предварительной версии, и она может не работать для других приложений. Некоторые клиенты успешно выполнили смешанный успешный протокол WebSocket с другими приложениями. При тестировании таких сценариев мы будем рады услышать результаты. Отправьте нам свой отзыв по адресу aadapfeedback@microsoft.com.
 
-Функции (Eventlogs, PowerShell и Remote Desktop Services) в Центре управления Windows (WAC) или удаленном веб-клиенте рабочего стола (HTML5) в настоящее время не работают через прокси-сервер Azure AD Application.
+Функции (EventLog, PowerShell и службы удаленных рабочих столов) в центре администрирования Windows (ВАК) или удаленный рабочий стол веб-клиента (HTML5) не работают в Azure AD Application Proxy в настоящее время.
 
-## <a name="link-translation"></a>Перевод ссылки
+## <a name="link-translation"></a>Преобразование ссылок
 
-### <a name="does-using-link-translation-affect-performance"></a>Влияет ли использование перевода Link на производительность?
+### <a name="does-using-link-translation-affect-performance"></a>Влияет ли преобразование ссылок на производительность?
 
-Да. Перевод ссылок влияет на производительность. Служба Приложения Proxy сканирует приложение для жестко закодированных ссылок и заменяет их соответствующими, опубликованными внешними URL-адресами, прежде чем представить их пользователю. 
+Да. Преобразование ссылок влияет на производительность. Служба прокси приложения просматривает приложение на наличие жестко закодированных ссылок и заменяет их соответствующими опубликованными внешними URL-адресами перед их представлением пользователю. 
 
-Для лучшей производительности мы рекомендуем использовать идентичные внутренние и внешние URL-адреса путем настройки [пользовательских доменов.](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain) Если использование пользовательских доменов невозможно, вы можете улучшить производительность перевода ссылок, используя мой безопасный знак приложений в расширении или Microsoft Edge Browser на мобильном телефоне. Смотрите [перенаправить жесткие ссылки для приложений, опубликованных с Azure AD Application Proxy](application-proxy-configure-hard-coded-link-translation.md).
+Для лучшей производительности рекомендуется использовать идентичные внутренние и внешние URL-адреса, настроив [Личные домены](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain). Если использование пользовательских доменов невозможно, можно улучшить производительность преобразования ссылок с помощью расширения для безопасного входа в мои приложения или браузера Microsoft ребра на мобильных устройствах. См. раздел [Перенаправление жестко закодированных ссылок для приложений, опубликованных с помощью Azure AD application proxy](application-proxy-configure-hard-coded-link-translation.md).
 
 ## <a name="wildcards"></a>Подстановочные знаки
 
-### <a name="how-do-i-use-wildcards-to-publish-two-applications-with-the-same-custom-domain-name-but-with-different-protocols-one-for-http-and-one-for-https"></a>Как использовать подстановочные знаки для публикации двух приложений с одним и тем же пользовательским доменным именем, но с разными протоколами, одним для HTTP и одним для HTTPS?
+### <a name="how-do-i-use-wildcards-to-publish-two-applications-with-the-same-custom-domain-name-but-with-different-protocols-one-for-http-and-one-for-https"></a>Разделы справки использовать подстановочные знаки для публикации двух приложений с одним и тем же именем личного домена, но с разными протоколами, одним для HTTP и одним для HTTPS?
 
-Этот сценарий не поддерживается напрямую. Ваши варианты для этого сценария:
+Этот сценарий не поддерживается напрямую. Параметры для этого сценария:
 
-1. Публикуйте URL-адреса HTTP и HTTPS как отдельные приложения с подстановочным знаком, но присваивайте каждому из них различный пользовательский домен. Эта конфигурация будет работать, поскольку они имеют различные внешние URLS.
+1. Опубликуйте URL-адреса HTTP и HTTPS как отдельные приложения с подстановочным знаком, но присвойте каждому из них другой личный домен. Эта конфигурация будет работать, так как у них разные внешние URL-адреса.
 
-2. Опубликовать URL HTTPS через приложение подстановочных знаков. Опубликовать приложения HTTP отдельно, используя эти приложения Прокси PowerShell cmdlets:
-   - [Управление приложениями прокси](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management)
-   - [Управление подключением прокси-приложений](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management)
+2. Опубликуйте URL-адрес HTTPS с помощью приложения с подстановочными знаками. Опубликуйте приложения HTTP отдельно с помощью этих командлетов PowerShell для прокси приложения:
+   - [Управление приложениями прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management)
+   - [Управление соединителем прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management)

@@ -1,5 +1,5 @@
 ---
-title: Используйте хранилище очереди Azure от Node.js - Хранилище Azure
+title: Использование хранилища очередей Azure из Node. js в службе хранилища Azure
 description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Node.js.
 author: mhopkins-msft
 ms.author: mhopkins
@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.reviewer: cbrooks
 ms.custom: seo-javascript-september2019
 ms.openlocfilehash: 7abcad03678131668700f5d2c64b9c971081cb89
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80060936"
 ---
-# <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Используйте службу очереди Azure для создания и удаления очередей из Node.js
+# <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Использование службы очередей Azure для создания и удаления очередей из Node. js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "80060936"
     +-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
     ```
 
-3. Вы можете вручную запустить команду **ls,** чтобы убедиться, что папка **модулей узлов\_** была создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
+3. Можно вручную выполнить команду **Ls** , чтобы убедиться, что папка **Node\_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
 
 ### <a name="import-the-package"></a>Импорт пакета
 Используйте Блокнот или другой текстовый редактор, чтобы добавить следующий код в начало файла **server.js** приложения, где планируется использовать хранилище.
@@ -83,7 +83,7 @@ queueSvc.createQueueIfNotExists('myqueue', function(error, results, response){
 Если очередь создана, значение `result.created` будет истинно. Если очередь уже существует, значение `result.created` будет ложно.
 
 ### <a name="filters"></a>Фильтры
-Дополнительные операции фильтрации можно применить к выполняемым операциям, используя **QueueService**. Операции фильтрации могут включать в себя журнал, автоматический повтор и т.д. Фильтры — это объекты, реализующие метод с подписью:
+Дополнительные операции фильтрации можно применить к выполняемым операциям, используя **QueueService**. Операции фильтрации могут включать ведение журнала, автоматическую повторную попытку и т. д. Фильтры — это объекты, реализующие метод с сигнатурой:
 
 ```javascript
 function handle (requestOptions, next)
@@ -105,7 +105,7 @@ var queueSvc = azure.createQueueService().withFilter(retryOperations);
 ```
 
 ## <a name="how-to-insert-a-message-into-a-queue"></a>Практическое руководство. Вставка сообщения в очередь
-Чтобы вставить сообщение в очередь, используйте метод **createMessage** для создания нового сообщения и добавьте его в очередь.
+Чтобы вставить сообщение в очередь, используйте метод **createMessage** , чтобы создать новое сообщение и добавить его в очередь.
 
 ```javascript
 queueSvc.createMessage('myqueue', "Hello world!", function(error, results, response){
@@ -116,7 +116,7 @@ queueSvc.createMessage('myqueue', "Hello world!", function(error, results, respo
 ```
 
 ## <a name="how-to-peek-at-the-next-message"></a>Практическое руководство. Просмотр следующего сообщения
-Вы можете заглянуть в сообщение в передней части очереди, не удаляя его из очереди, позвонив в метод **peekMessages.** По умолчанию **peekMessages** просматривает одно сообщение.
+Можно посмотреть сообщение в начале очереди, не удаляя его из очереди, вызвав метод **peekMessages** . По умолчанию **peekMessages** просматривает одно сообщение.
 
 ```javascript
 queueSvc.peekMessages('myqueue', function(error, results, response){
@@ -230,7 +230,7 @@ queueSvc.listQueuesSegmented(null, function(error, results, response){
 Если не удается вернуть все очереди, атрибут `result.continuationToken` можно использовать в качестве первого параметра метода **listQueuesSegmented** или второго параметра метода **listQueuesSegmentedWithPrefix** для получения дополнительных результатов.
 
 ## <a name="how-to-delete-a-queue"></a>Практическое руководство. Удаление очереди
-Чтобы удалить очередь и все сообщения, содержащиеся в ней, позвоните методу **удаления на** объекте очереди.
+Чтобы удалить очередь и все сообщения, содержащиеся в ней, вызовите метод **deleteQueue** для объекта Queue.
 
 ```javascript
 queueSvc.deleteQueue(queueName, function(error, response){
@@ -324,10 +324,10 @@ queueSvc.getQueueAcl('myqueue', function(error, result, response) {
 queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [блог группы хранения данных Azure][Azure Storage Team Blog].
+* Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog].
 * Посетите репозиторий [пакета SDK службы хранилища Azure для Node][Azure Storage SDK for Node] на веб-сайте GitHub.
 
 

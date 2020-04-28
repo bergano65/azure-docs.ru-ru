@@ -5,16 +5,16 @@ ms.topic: include
 ms.date: 02/13/2019
 ms.author: danlep
 ms.openlocfilehash: 33a82a55b03cde79d2d80826041ee6d43565476a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80334815"
 ---
 | Ресурс | Ограничение |
 | --- | :--- |
-| Стандартные группы контейнеров sku в регионе за [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 100<sup>1</sup> |
-| Выделенные группы контейнеров sku в регионе за [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 0<sup>1</sup> |
+| Группы контейнеров уровня "Стандартный" для каждого региона на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 100<sup>1</sup> |
+| Выделенные группы контейнеров SKU для каждого региона на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 0<sup>1</sup> |
 | Число контейнеров в группе контейнеров | 60 |
 | Число томов в группе контейнеров | 20 |
 | Портов на каждый IP-адрес | 5 |

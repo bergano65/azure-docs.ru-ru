@@ -1,7 +1,7 @@
 ---
-title: Учетные данные сертификата идентификационных данных платформы Майкрософт
+title: Учетные данные сертификата платформы удостоверений Microsoft Identity
 titleSuffix: Microsoft identity platform
-description: В этой статье обсуждается регистрация и использование учетных данных сертификатов для проверки подлинности приложения.
+description: В этой статье обсуждается регистрация и использование учетных данных сертификата для проверки подлинности приложения.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -14,20 +14,20 @@ ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: d834d37f686279facf0052e3c8f4da3c8d259e0b
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81309672"
 ---
-# <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата аутентификации приложения платформы идентификации Майкрософт
+# <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы Microsoft Identity
 
-Платформа идентификации Майкрософт позволяет приложению использовать свои собственные учетные данные для проверки подлинности, например, в [OAuth 2.0 Клиентские учетные данные Grant flowv2.0](v2-oauth2-client-creds-grant-flow.md) и [потоке On-Behalf-Of).](v2-oauth2-on-behalf-of-flow.md)
+Платформа Microsoft Identity позволяет приложению использовать собственные учетные данные для проверки подлинности, например, в [учетных данных клиента OAuth 2,0 предоставьте фловв 2.0](v2-oauth2-client-creds-grant-flow.md) и поток "от [имени](v2-oauth2-on-behalf-of-flow.md)".
 
 Одной из форм учетных данных, которые приложение может использовать для аутентификации, является утверждение JSON Web Token (JWT), подписанное с помощью сертификата приложения.
 
 ## <a name="assertion-format"></a>Формат утверждения
-Идентификационная платформа Майкрософт для вычисления утверждения можно использовать одну из многочисленных библиотек [JSON Web Token](https://jwt.ms/) на языке по вашему выбору. Маркер содержит следующие сведения:
+Платформа Microsoft Identity. чтобы вычислить утверждение, можно использовать одну из многих [JSON Web Token](https://jwt.ms/) библиотек на выбранном языке. Маркер содержит следующие сведения:
 
 ### <a name="header"></a>Заголовок
 
@@ -41,7 +41,7 @@ ms.locfileid: "81309672"
 
 | Параметр |  Remarks |
 | --- | --- |
-| `aud` | Аудитория: должна быть ** https://login.microsoftonline.com/ *tenant_Id*/oauth2/token** |
+| `aud` | Аудитория: следует ** https://login.microsoftonline.com/ *tenant_Id*/OAuth2/Token** |
 | `exp` | Срок действия: дата, когда истекает срок действия маркера. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до истечения срока действия маркера.|
 | `iss` | Издатель: параметр должен иметь значение client_id (идентификатор приложения службы клиента) |
 | `jti` | GUID: идентификатор JWT |
@@ -85,17 +85,17 @@ ms.locfileid: "81309672"
 Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ```
 
-## <a name="register-your-certificate-with-microsoft-identity-platform"></a>Регистрация сертификата на платформе идентификации Майкрософт
+## <a name="register-your-certificate-with-microsoft-identity-platform"></a>Регистрация сертификата на платформе Microsoft Identity
 
-Учетные данные сертификата можно связать с клиентским приложением в идентификационной платформе Майкрософт через портал Azure, используя любой из следующих методов:
+Учетные данные сертификата можно связать с клиентским приложением на платформе Microsoft Identity с помощью портал Azure одним из следующих способов.
 
 ### <a name="uploading-the-certificate-file"></a>Передача файла сертификата
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
 1. Выберите **Сертификаты и секреты**.
-2. Нажмите на **сертификат Загрузки** и выберите файл сертификата для загрузки.
+2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
 3. Нажмите кнопку **Добавить**.
-  После загрузки сертификата отображаются отпечаток пальца, дата начала и значения истечения срока действия.
+  После отправки сертификата отображаются отпечаток, Дата начала и срок действия.
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения
 
@@ -107,7 +107,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 Также необходимо предоставить идентификатор GUID для определения ключа в манифесте приложения (`$keyId`).
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
-1. Выберите **манифест,** чтобы открыть манифест приложения.
+1. Выберите **Манифест** , чтобы открыть манифест приложения.
 2. Замените свойство *keyCredentials* данными нового сертификата, используя приведенную ниже схему.
 
    ```JSON
@@ -121,13 +121,13 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
        }
    ]
    ```
-3. Сохраните свои права в манифесте приложения, а затем загрузите манифест на идентификационную платформу Майкрософт.
+3. Сохраните изменения в манифесте приложения, а затем отправьте манифест на платформу удостоверений Майкрософт.
 
    Свойство `keyCredentials` является многозначным, поэтому для расширенного управления ключами можно передать несколько сертификатов.
 
 ## <a name="code-sample"></a>Пример кода
 
 > [!NOTE]
-> Вы можете вычислить заголовок X5T, преобразовав его в строку базы 64 с помощью хэша сертификата. Код для выполнения этого в `System.Convert.ToBase64String(cert.GetCertHash());`C q .
+> Необходимо вычислить заголовок X5T, преобразовав его в базовую строку 64, используя хэш сертификата. Код для выполнения этого кода в C# — `System.Convert.ToBase64String(cert.GetCertHash());`.
 
-Образец кода [консольного приложения .NET Core daemon с помощью платформы идентификации Microsoft](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показывает, как приложение использует свои собственные учетные данные для проверки подлинности. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph#optional-use-the-automation-script) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/AppCreationScripts-withCert/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.
+Пример кода [консольное приложение управляющей программы .NET Core с использованием платформы идентификации Майкрософт](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показывает, как приложение использует собственные учетные данные для проверки подлинности. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph#optional-use-the-automation-script) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/AppCreationScripts-withCert/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.

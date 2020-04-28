@@ -1,5 +1,5 @@
 ---
-title: Обновление моделей машинного обучения с помощью Azure Data Factory
+title: Обновление моделей машинного обучения с помощью фабрики данных Azure
 description: Здесь описывается, как создавать прогнозирующие конвейеры с помощью фабрики данных Azure и машинного обучения.
 services: data-factory
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.openlocfilehash: 4488c174ba5ff35ec2709d7c1b9f3093b4ee90a3
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81409076"
 ---
 # <a name="update-azure-machine-learning-models-by-using-update-resource-activity"></a>Обновление моделей машинного обучения Azure с помощью действия обновления ресурса
@@ -59,10 +59,10 @@ ms.locfileid: "81409076"
 }
 ```
 
-| Свойство                      | Описание                              | Обязательно |
+| Свойство                      | Описание                              | Обязательный |
 | :---------------------------- | :--------------------------------------- | :------- |
 | name                          | Имя действия в конвейере.     | Да      |
-| description                   | Описание действия.  | нет       |
+| description                   | Описание действия.  | Нет       |
 | type                          | Для действия обновления ресурса в службе машинного обучения Azure тип действия — **AzureMLUpdateResource**. | Да      |
 | linkedServiceName             | Связанная служба машинного обучения Azure, которая содержит свойство updateResourceEndpoint. | Да      |
 | trainedModelName              | Имя модуля модели обучения для обновления в эксперименте веб-службы. | Да      |
@@ -73,7 +73,7 @@ ms.locfileid: "81409076"
 
 Процесс переобучения модели и обновления прогнозных веб-служб включает в себя такие шаги:
 
-- Вызов **веб-службы обучения** с помощью **действия выполнения пакета**. Вызов веб-службы обучения выполняется так же, как вызов прогнозной веб-службы, описанный в статье [Create predictive pipelines using Azure Machine Learning and Azure Data Factory](transform-data-using-machine-learning.md) (Создание прогнозных конвейеров с помощью Машинного обучения Azure и фабрики данных Azure). Выход обучаемых web-сервисов — это файл iLearner, который можно использовать для обновления прогностической Web Service.
+- Вызов **веб-службы обучения** с помощью **действия выполнения пакета**. Вызов веб-службы обучения выполняется так же, как вызов прогнозной веб-службы, описанный в статье [Create predictive pipelines using Azure Machine Learning and Azure Data Factory](transform-data-using-machine-learning.md) (Создание прогнозных конвейеров с помощью Машинного обучения Azure и фабрики данных Azure). Выходные данные обучающей веб-службы — это файл iLearner, который можно использовать для обновления прогнозной веб-службы.
 - Вызов **обновления конечной точки ресурса****прогнозной веб-службы** с помощью **действия обновления ресурса**, чтобы обновить веб-службу и добавить новую обученную модель.
 
 ## <a name="azure-machine-learning-linked-service"></a>Связанная служба Машинного обучения Azure
@@ -274,9 +274,9 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)
 * [Действие Hive](transform-data-using-hadoop-hive.md)
-* [Свинья деятельность](transform-data-using-hadoop-pig.md)
+* [Действие Pig](transform-data-using-hadoop-pig.md)
 * [Действие MapReduce](transform-data-using-hadoop-map-reduce.md)
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
-* [Активность искры](transform-data-using-spark.md)
-* [пользовательская деятельность .NET](transform-data-using-dotnet-custom-activity.md)
-* [Сохраненная процедура деятельности](transform-data-using-stored-procedure.md)
+* [Действие Spark](transform-data-using-spark.md)
+* [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
+* [Действие хранимой процедуры](transform-data-using-stored-procedure.md)

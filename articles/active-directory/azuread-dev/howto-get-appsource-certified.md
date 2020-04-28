@@ -14,10 +14,10 @@ ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 3ad4efa3b8126a9b9c6557822f61e3bfff3fe120
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80154888"
 ---
 # <a name="how-to-get-appsource-certified-for-azure-active-directory"></a>Как получить сертификат AppSource для Azure Active Directory
@@ -30,7 +30,7 @@ ms.locfileid: "80154888"
 
 ## <a name="guides-and-code-samples"></a>Руководства и примеры кода
 
-Если вы хотите узнать о том, как интегрировать приложение с Azure AD с помощью Open ID connect, следуйте нашим руководствам и примерам кода в [руководстве разработчика Azure Active Directory.](v1-overview.md#get-started "Начало работы с Azure AD для разработчиков")
+Если вы хотите узнать о том, как интегрировать приложение с Azure AD с помощью Open ID Connect, следуйте нашим руководствам и примерам кода в [Руководстве разработчика Azure Active Directory](v1-overview.md#get-started "Приступая к работе с Azure AD для разработчиков").
 
 ## <a name="multi-tenant-applications"></a>Мультитенантные приложения
 
@@ -55,11 +55,11 @@ ms.locfileid: "80154888"
 
 ### <a name="free-trial-customer-led-trial-experience"></a>Бесплатная пробная версия возможностей (клиентская)
 
-Клиентская пробная версия возможностей рекомендуется AppSource, так как она позволяет воспользоваться доступом к приложению в один щелчок. Следующий пример показывает, как выглядит этот опыт:
+Клиентская пробная версия возможностей рекомендуется AppSource, так как она позволяет воспользоваться доступом к приложению в один щелчок. В следующем примере показано, как выглядит этот интерфейс:
 
 <table >
 <tr>
-    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step1.png" width="85%" alt-text="Shows Free trial for customer-led trial experience"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Выбирает опцию «Бесплатная проба»</li></ul></td>
+    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step1.png" width="85%" alt-text="Shows Free trial for customer-led trial experience"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Выбор параметра "Бесплатная пробная версия"</li></ul></td>
     <td valign="top" width="33%">2.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step2.png" width="85%" alt-text="Shows how user is redirected to a URL in your web site"/><ul><li>AppSource перенаправляет пользователя по URL-адресу вашего веб-сайта.</li><li>На вашем веб-сайте автоматически запускается <i>единый вход</i> (при загрузке страницы).</li></ul></td>
     <td valign="top" width="33%">3.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step3.png" width="85%" alt-text="Shows the Microsoft sign-in page"/><ul><li>Пользователь перенаправляется на страницу входа Майкрософт.</li><li>Пользователь указывает учетные данные для входа.</li></ul></td>
 </tr>
@@ -76,7 +76,7 @@ ms.locfileid: "80154888"
 
 <table valign="top">
 <tr>
-    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step1.png" width="85%" alt-text="Shows Contact me for partner-led trial experience"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Выбирает опцию «Контакт со мной»</li></ul></td>
+    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step1.png" width="85%" alt-text="Shows Contact me for partner-led trial experience"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Выбор параметра "связаться со мной"</li></ul></td>
     <td valign="top" width="33%">2.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step2.png" width="85%" alt-text="Shows an example form with contact info"/><ul><li>Заполняет форму контактными данными.</li></ul></td>
      <td valign="top" width="33%">3.<br/><br/>
         <table bgcolor="#f7f7f7">
@@ -108,7 +108,7 @@ ms.locfileid: "80154888"
 
 Дополнительные сведения о пробной версии AppSource см. [в этом видео](https://aka.ms/trialexperienceforwebapps). 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/v1-authentication-scenarios).
 - Сведения о выводе списка приложений SaaS в AppSource см. на [странице сведений для партнеров AppSource](https://appsource.microsoft.com/partners).
@@ -117,7 +117,7 @@ ms.locfileid: "80154888"
 
 Для интеграции Azure AD мы используем [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource). Кроме того, участники сообщества могут предоставлять поддержку.
 
-Мы настоятельно рекомендуем сначала задавать вопросы на сайте Stack Overflow и просмотреть имеющиеся проблемы, чтобы узнать, не задавал ли кто-то аналогичные вопросы раньше. Убедитесь, что ваши вопросы или комментарии помечены [ `[azure-active-directory]` и `[appsource]` ](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource).
+Мы настоятельно рекомендуем сначала задавать вопросы на сайте Stack Overflow и просмотреть имеющиеся проблемы, чтобы узнать, не задавал ли кто-то аналогичные вопросы раньше. Убедитесь, что ваши вопросы или комментарии помечены как [ `[azure-active-directory]` и `[appsource]` ](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource).
 
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 

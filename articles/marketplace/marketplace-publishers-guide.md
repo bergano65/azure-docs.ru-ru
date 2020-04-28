@@ -1,6 +1,6 @@
 ---
-title: Коммерческий рынок издательское руководство
-description: Обзор коммерческого рынка для издателей приложений и сервисов.
+title: Руководству по публикации в коммерческом магазине
+description: Обзор коммерческого рынка для издателей приложений и служб.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 04/12/2020
 ms.author: dsindona
 ms.openlocfilehash: c41a24ecb3e12618ac8cfcdfb756a33114f0f8a2
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81261998"
 ---
-# <a name="commercial-marketplace-publishing-guide"></a>Коммерческий рынок издательское руководство
+# <a name="commercial-marketplace-publishing-guide"></a>Руководству по публикации в коммерческом магазине
 
 Руководство по публикации в Marketplace призвано помочь новым и существующим издателям узнать, как использовать онлайн-магазины в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [Microsoft AppSource](https://appsource.microsoft.com) для развития бизнеса в партнерстве с корпорацией Майкрософт, публикуя приложения и службы.
 
@@ -30,7 +30,7 @@ ms.locfileid: "81261998"
 
 Это руководство содержит техническую и деловую информацию о шагах, которые необходимо предпринять перед публикацией приложений и служб. Используйте оглавление для перехода к различным разделам руководства и непосредственно к ключевым темам.
 
-Для вопросов о Azure Marketplace и AppSource отправьте нам сообщение в > **рамках onboarding** **Типа проблем.** Наши сотрудники из группы подключения издателей к Marketplace будут рады вам помочь! 
+Чтобы получить ответы на вопросы о Azure Marketplace и AppSource, отправьте нам сообщение. в разделе **проблема введите** > в**Marketplace**. Наши сотрудники из группы подключения издателей к Marketplace будут рады вам помочь! 
 
 ## <a name="benefits-of-participating-in-the-marketplace"></a>Преимущества участия в Marketplace 
 
@@ -52,7 +52,7 @@ Marketplace — это стартовая площадка для маркети
 
 Получайте сведения о производительности своих предложений из аналитической информации, доступной через Marketplace. Получайте больше сведений об эффективности кампаний, заказах и выплатах, а также о возможностях повысить эффективность маркетинговой кампании для продвигаемого решения.
 
-### <a name="commercial-marketplace-benefits"></a>Коммерческие преимущества рынка 
+### <a name="commercial-marketplace-benefits"></a>Преимущества коммерческой Marketplace 
 
 Новые предложения в Marketplace получают целый ряд бесплатных преимуществ, которые помогают партнерам развивать свой бизнес в Marketplace. Эти преимущества подразделяются на следующие категории: 
 
@@ -62,9 +62,9 @@ Marketplace — это стартовая площадка для маркети
 
 *   Совместные продажи. Marketplace — это отправная точка, с которой можно не только начать свой путь к продажам совместно с Майкрософт, но и ускорить этот процесс. Доступ к программам и поддержке позволит создать возможности для совместных продаж с Майкрософт.
 
-Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  [Узнайте, как создать учетную запись Центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) для получения дополнительной информации.
+Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  Дополнительные сведения см. [в статье Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
 
-Узнайте больше о [преимуществах коммерческого рынка.](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits)
+Узнайте больше о [преимуществах коммерческого рынка](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

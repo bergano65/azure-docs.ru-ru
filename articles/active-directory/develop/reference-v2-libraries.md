@@ -1,6 +1,6 @@
 ---
-title: Библиотеки аутентификации платформы идентификации Майкрософт
-description: Совместимые библиотеки клиентов и библиотеки промежуточного сервера, а также связанные ссылки библиотеки, источника и образца для конечных точек платформы идентификации Майкрософт.
+title: Библиотеки проверки подлинности платформы Microsoft Identity
+description: Совместимые клиентские библиотеки и библиотеки промежуточного слоя сервера, а также связанные библиотеки, источник и образцы ссылок для конечной точки платформы Microsoft Identity.
 services: active-directory
 author: negoe
 manager: CelesteDG
@@ -13,26 +13,26 @@ ms.author: negoe
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 22e2ee0e3596bc996482a090af7509db4c415e61
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80883497"
 ---
-# <a name="microsoft-identity-platform-authentication-libraries"></a>Библиотеки аутентификации платформы идентификации Майкрософт
+# <a name="microsoft-identity-platform-authentication-libraries"></a>Библиотеки проверки подлинности платформы Microsoft Identity
 
-[Конечная точка платформы Microsoft](active-directory-v2-compare.md) поддерживает стандартные протоколы OAuth 2.0 и OpenID Connect 1.0. Библиотека аутентификации Майкрософт (MSAL) предназначена для работы с конечной точкой платформы идентификационных данных Майкрософт. Вы также можете использовать библиотеки с открытым исходным кодом, которые поддерживают OAuth 2.0 и OpenID Connect 1.0.
+[Конечная точка платформы Microsoft Identity](active-directory-v2-compare.md) поддерживает стандартные протоколы OAuth 2,0 и openid connect Connect 1,0. Библиотека проверки подлинности Microsoft (MSAL) предназначена для работы с конечной точкой платформы Microsoft Identity. Также можно использовать библиотеки с открытым исходным кодом, поддерживающие OAuth 2,0 и OpenID Connect Connect 1,0.
 
-Мы рекомендуем использовать библиотеки, написанные экспертами по области протоколов, которые следуют методологии жизненного цикла разработки безопасности (SDL). Такие методологии включают в себя [тот, который Microsoft следует][Microsoft-SDL]. Если вы вручаете код для протоколов, следует следовать методологии, такой как Microsoft SDL. Обратите пристальное внимание на соображения безопасности в спецификациях стандартов для каждого протокола.
+Рекомендуется использовать библиотеки, написанные экспертами по домену протокола, которые соответствуют методологии жизненного цикла разработки безопасности (SDL). Такие методологии включают [в себя ту, что следует корпорации Майкрософт][Microsoft-SDL]. При наличии кода для протоколов следует следовать такой методологии, как Microsoft SDL. Обратите особое внимание на вопросы безопасности в спецификациях стандартов для каждого протокола.
 
 > [!NOTE]
-> Вы ищете библиотеку подлинности активных каталогов Azure (ADAL)? Ознакомьтесь с [руководством библиотеки ADAL.](../azuread-dev/active-directory-authentication-libraries.md)
+> Вы ищете библиотеку проверки подлинности Azure Active Directory (ADAL)? Ознакомьтесь с [руководством по библиотеке ADAL](../azuread-dev/active-directory-authentication-libraries.md).
 
 ## <a name="types-of-libraries"></a>Типы библиотек
 
-Конечная точка платформы Майкрософт работает с двумя типами библиотек:
+Конечная точка платформы Microsoft Identity работает с двумя типами библиотек:
 
-* **Библиотеки клиентов:** Родные клиенты и серверы используют библиотеки клиентов для получения токенов доступа для вызова ресурса, такого как Microsoft Graph.
+* **Клиентские библиотеки**. собственные клиенты и серверы используют клиентские библиотеки для получения маркеров доступа для вызова ресурса, например Microsoft Graph.
 * **Серверные библиотеки ПО промежуточного слоя**. Веб-приложения используют серверные библиотеки ПО промежуточного слоя для выполнения входа пользователей. Веб-API используют серверные библиотеки ПО промежуточного слоя для проверки маркеров, отправляемых собственными клиентами или другими серверами.
 
 ## <a name="library-support"></a>Поддержка библиотек
@@ -40,72 +40,72 @@ ms.locfileid: "80883497"
 Для библиотек предусмотрено две категории поддержки:
 
 * **Библиотеки, поддерживаемые корпорацией Майкрософт**. Корпорация Майкрософт предоставляет исправления для этих библиотек, к тому же она провела для них комплексную экспертизу жизненного цикла разработки защищенных приложений.
-* **Совместимо**: Корпорация Майкрософт протестировала эти библиотеки в основных сценариях и подтвердила, что они работают с конечным пунктом платформы идентификации Майкрософт. Корпорация Майкрософт не предоставляет исправления для этих библиотек и не провела обзор этих библиотек. Проблемы и запросы возможностей следует отправлять в проекты с открытым кодом библиотеки.
+* **Совместимо**: Корпорация Майкрософт проверила эти библиотеки в основных сценариях и подтвердила, что они работают с конечной точкой платформы Microsoft Identity. Корпорация Майкрософт не предоставляет исправления для этих библиотек и не выполнила проверку этих библиотек. Проблемы и запросы возможностей следует отправлять в проекты с открытым кодом библиотеки.
 
-В списке библиотек, которые работают с конечной точкой платформы майкрософт, приведены следующие разделы.
+Список библиотек, которые работают с конечной точкой платформы идентификации Майкрософт, см. в следующих разделах.
 
 ## <a name="microsoft-supported-client-libraries"></a>Клиентские библиотеки, поддерживаемые корпорацией Майкрософт
 
-Используйте библиотеки проверки подлинности клиентов для получения токена для вызова защищенного веб-API.
+Используйте библиотеки проверки подлинности клиента, чтобы получить маркер для вызова защищенного веб-API.
 
-| Платформа | Библиотека | Скачивание | Исходный код | Образец | Справочник | Основная документация | Схема действий |
+| Платформа | Библиотека | Скачивание | Исходный код | Пример | Справочник | Основная документация | Схема действий |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ![JavaScript](media/sample-v2-code/logo_js.png) | MSAL.js  | [npm](https://www.npmjs.com/package/msal) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/README.md) |  [Одностраничное приложение](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) | [Справочник](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-core/) | [Концептуальные документы](msal-overview.md)| [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
-![Angular](media/sample-v2-code/logo_angular.png) | MSAL Угловой | [npm](https://www.npmjs.com/package/@azure/msal-angular) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) | [Угловой SPA](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) | [Справочник](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-angular/) | [Концептуальные документы](msal-overview.md) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
-| ![.NET Framework](media/sample-v2-code/logo_NET.png) ![UWP](media/sample-v2-code/logo_windows.png) ![Xamarin](media/sample-v2-code/logo_xamarin.png) | MSAL.NET  |[Nuget](https://www.nuget.org/packages/Microsoft.Identity.Client) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) | [Классическое приложение](guidedsetups/active-directory-mobileanddesktopapp-windowsdesktop-intro.md) | [MSAL.NET](https://docs.microsoft.com/dotnet/api/microsoft.identity.client?view=azure-dotnet-preview) |[Концептуальные документы](msal-overview.md) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#roadmap)
-| ![Python](media/sample-v2-code/logo_python.png) | MSAL Python | [PyPI](https://pypi.org/project/msal) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-python) | [Примеры](https://github.com/AzureAD/microsoft-authentication-library-for-python/tree/dev/sample) | [ReadTheDocs](https://msal-python.rtfd.io/) | [Вики](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki/Roadmap)
-| ![Java](media/sample-v2-code/logo_java.png) | MSAL Java | [Maven](https://mvnrepository.com/artifact/com.microsoft.azure/msal4j) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-java) | [Примеры](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples) | [Справочник](https://javadoc.io/doc/com.microsoft.azure/msal4j/latest/index.html) | [Вики](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki)
-| iOS & macOS | MSAL iOS и macOS | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-objc) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-objc) | [приложение iOS](https://github.com/Azure-Samples/ms-identity-mobile-apple-swift-objc), [приложение macOS](https://github.com/Azure-Samples/ms-identity-macOS-swift-objc) | [Справочник](https://azuread.github.io/microsoft-authentication-library-for-objc/index.html)  | [Концептуальные документы](msal-overview.md) | |
-|![Android и Java](media/sample-v2-code/logo_Android.png) | MSAL Android | [Центральное репозиторий](https://repo1.maven.org/maven2/com/microsoft/identity/client/msal/) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-android) | [Android приложение](quickstart-v2-android.md) | [Javadocs](https://javadoc.io/doc/com.microsoft.identity.client/msal) | [Концептуальные документы](msal-overview.md) |[Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-android/wiki/Roadmap)
+| ![JavaScript](media/sample-v2-code/logo_js.png) | MSAL.js  | [npm](https://www.npmjs.com/package/msal) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/README.md) |  [Одностраничное приложение](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) | [Справочные материалы](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-core/) | [Основные документы](msal-overview.md)| [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
+![Angular](media/sample-v2-code/logo_angular.png) | MSALный угловой | [npm](https://www.npmjs.com/package/@azure/msal-angular) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) | [Угловой SPA](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) | [Справочные материалы](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-angular/) | [Основные документы](msal-overview.md) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
+| ![.NET Framework](media/sample-v2-code/logo_NET.png) ![UWP](media/sample-v2-code/logo_windows.png) ![Xamarin](media/sample-v2-code/logo_xamarin.png) | MSAL.NET  |[NuGet](https://www.nuget.org/packages/Microsoft.Identity.Client) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) | [Классическое приложение](guidedsetups/active-directory-mobileanddesktopapp-windowsdesktop-intro.md) | [MSAL.NET](https://docs.microsoft.com/dotnet/api/microsoft.identity.client?view=azure-dotnet-preview) |[Основные документы](msal-overview.md) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#roadmap)
+| ![Python](media/sample-v2-code/logo_python.png) | MSAL Python | [PyPI](https://pypi.org/project/msal) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-python) | [Примеры](https://github.com/AzureAD/microsoft-authentication-library-for-python/tree/dev/sample) | [реадседокс](https://msal-python.rtfd.io/) | [Сайт](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki/Roadmap)
+| ![Java](media/sample-v2-code/logo_java.png) | MSAL Java | [Maven](https://mvnrepository.com/artifact/com.microsoft.azure/msal4j) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-java) | [Примеры](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples) | [Справочные материалы](https://javadoc.io/doc/com.microsoft.azure/msal4j/latest/index.html) | [Сайт](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki)
+| macOS iOS & | MSAL iOS и macOS | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-objc) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-objc) | [приложение iOS](https://github.com/Azure-Samples/ms-identity-mobile-apple-swift-objc), [приложение macOS](https://github.com/Azure-Samples/ms-identity-macOS-swift-objc) | [Справочные материалы](https://azuread.github.io/microsoft-authentication-library-for-objc/index.html)  | [Основные документы](msal-overview.md) | |
+|![Android и Java](media/sample-v2-code/logo_Android.png) | MSAL Android | [Центральный репозиторий](https://repo1.maven.org/maven2/com/microsoft/identity/client/msal/) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-android) | [Приложение Android](quickstart-v2-android.md) | [Javadocs](https://javadoc.io/doc/com.microsoft.identity.client/msal) | [Основные документы](msal-overview.md) |[Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-android/wiki/Roadmap)
 
 ## <a name="microsoft-supported-server-middleware-libraries"></a>Серверные библиотеки ПО промежуточного слоя, поддерживаемые корпорацией Майкрософт
 
-Используйте библиотеки посредника для защиты веб-приложений и веб-aIS. Веб-приложения или веб-АПЫ, написанные с ASP.NET или ASP.NET Core, используют библиотеки посредника.
+Используйте библиотеки по промежуточного слоя для защиты веб-приложений и веб-API. Веб-приложения или веб-API, написанные с помощью ASP.NET или ASP.NET Core, используют библиотеки по промежуточного слоя.
 
-| Платформа | Библиотека | Скачивание | Исходный код | Образец | Справочник
+| Платформа | Библиотека | Скачивание | Исходный код | Пример | Справочник
 | --- | --- | --- | --- | --- | --- |
-| ![.NET](media/sample-v2-code/logo_NET.png) ![.NET Core](media/sample-v2-code/logo_NETcore.png) | Безопасность ASP.NET |[Nuget](https://www.nuget.org/packages/Microsoft.AspNet.Mvc/) |[GitHub](https://github.com/aspnet/AspNetCore) |[Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочник по API для ASP.NET](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0) |
-| ![.NET](media/sample-v2-code/logo_NET.png)| Расширения модели идентификации для .NET| |[GitHub](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | [Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочник](https://docs.microsoft.com/dotnet/api/overview/azure/activedirectory/client?view=azure-dotnet) |
+| ![.NET](media/sample-v2-code/logo_NET.png) ![.NET Core](media/sample-v2-code/logo_NETcore.png) | Безопасность ASP.NET |[NuGet](https://www.nuget.org/packages/Microsoft.AspNet.Mvc/) |[GitHub](https://github.com/aspnet/AspNetCore) |[Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочник по API для ASP.NET](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0) |
+| ![.NET](media/sample-v2-code/logo_NET.png)| Расширения модели идентификации для .NET| |[GitHub](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | [Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочные материалы](https://docs.microsoft.com/dotnet/api/overview/azure/activedirectory/client?view=azure-dotnet) |
 | ![Node.js](media/sample-v2-code/logo_nodejs.png) | Azure AD Passport |[npm](https://www.npmjs.com/package/passport-azure-ad) |[GitHub](https://github.com/AzureAD/passport-azure-ad) | [Веб-приложение](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs) | |
 
-## <a name="microsoft-supported-libraries-by-os--language"></a>Библиотеки, поддерживаемые Корпорацией Майкрософт, с помощью ОС / языка
+## <a name="microsoft-supported-libraries-by-os--language"></a>Библиотеки, поддерживаемые Майкрософт, по ОС и языку
 
-С точки зрения поддерживаемых операционных систем против языков, отображение заключается в следующем:
+В терминах поддерживаемых операционных систем и языков используется следующее сопоставление:
 
 |             | Windows    | Linux      | macOS      | iOS | Android    |
 |-------------|------------|------------|------------|------------|------------|
 | ![JavaScript](media/sample-v2-code/logo_js.png)  |  MSAL.js | MSAL.js | MSAL.js | MSAL.js |  MSAL.js |
-| <img alt="C#" src="../../cognitive-services/speech-service/media/index/logo_csharp.svg" width="64px" height="64px" /> | ASP.NET, ASP.NET Core, MSAL.Net (.NET FW, Core, UWP)| ASP.NET ядро, MSAL.Net (.NET Core) | ASP.NET Core, MSAL.Net (macOS)       | MSAL.Net (Xamarin.iOS) | MSAL.Net (Xamarin.Android)|
+| <img alt="C#" src="../../cognitive-services/speech-service/media/index/logo_csharp.svg" width="64px" height="64px" /> | ASP.NET, ASP.NET Core, MSAL.Net (.NET FW, Core, UWP)| ASP.NET Core MSAL.Net (.NET Core) | ASP.NET Core, MSAL.Net (macOS)       | MSAL.Net (Xamarin. iOS) | MSAL.Net (Xamarin. Android)|
 | Swift <br> Objective-C |            |            | [MSAL для iOS и MacOS](msal-overview.md) | [MSAL для iOS и MacOS](msal-overview.md) |            |
 | ![Java](media/sample-v2-code/logo_java.png) Java | msal4j | msal4j | msal4j | | MSAL Android |
 | ![Python](media/sample-v2-code/logo_python.png) Python | MSAL Python | MSAL Python | MSAL Python |
-| ![Node.js](media/sample-v2-code/logo_nodejs.png) Node.JS | Паспорт.узла | Паспорт.узла | Паспорт.узла |
+| ![Node. js](media/sample-v2-code/logo_nodejs.png) Node.JS | Паспорт. Node | Паспорт. Node | Паспорт. Node |
 
-Смотрите также [Сценарии с помощью поддерживаемых платформ и языков](authentication-flows-app-scenarios.md#scenarios-and-supported-platforms-and-languages)
+См. также [сценарии поддерживаемых платформ и языков](authentication-flows-app-scenarios.md#scenarios-and-supported-platforms-and-languages)
 
 ## <a name="compatible-client-libraries"></a>Совместимые клиентские библиотеки
 
-| Платформа | Имя библиотеки | Проверенные версии | Исходный код | Образец |
+| Платформа | Имя библиотеки | Проверенные версии | Исходный код | Пример |
 |:---:|:---:|:---:|:---:|:---:|
-|![JavaScript](media/sample-v2-code/logo_js.png)|[Hello.js](https://adodson.com/hello.js/) | Версия 1.13.5 |[Hello.js](https://github.com/MrSwitch/hello.js) |[Спа](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) |
+|![JavaScript](media/sample-v2-code/logo_js.png)|[Hello.js](https://adodson.com/hello.js/) | Версия 1.13.5 |[Hello.js](https://github.com/MrSwitch/hello.js) |[SPA](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) |
 | ![Java](media/sample-v2-code/logo_java.png) | [Scribe Java](https://github.com/scribejava/scribejava) | [Версия 3.2.0](https://github.com/scribejava/scribejava/releases/tag/scribejava-3.2.0) | [ScribeJava](https://github.com/scribejava/scribejava/) | |
-| ![Java](media/sample-v2-code/logo_java.png) | [Библиотека Gluu OpenID Connect](https://github.com/GluuFederation/oxAuth) | [Версия 3.0.2](https://github.com/GluuFederation/oxAuth/releases/tag/3.0.2) | [Библиотека Gluu OpenID Connect](https://github.com/GluuFederation/oxAuth) | |
-| ![Python](media/sample-v2-code/logo_python.png) | [Запросы-OAuthlib](https://github.com/requests/requests-oauthlib) | [Версии 1.2.0](https://github.com/requests/requests-oauthlib/releases/tag/v1.2.0) | [Запросы-OAuthlib](https://github.com/requests/requests-oauthlib) | |
-| ![Node.js](media/sample-v2-code/logo_nodejs.png) | [openid-клиент](https://github.com/panva/node-openid-client) | [Версия 2.4.5](https://github.com/panva/node-openid-client/releases/tag/v2.4.5) | [openid-клиент](https://github.com/panva/node-openid-client) | |
+| ![Java](media/sample-v2-code/logo_java.png) | [Библиотека глуу OpenID Connect Connect](https://github.com/GluuFederation/oxAuth) | [Версия 3.0.2](https://github.com/GluuFederation/oxAuth/releases/tag/3.0.2) | [Библиотека глуу OpenID Connect Connect](https://github.com/GluuFederation/oxAuth) | |
+| ![Python](media/sample-v2-code/logo_python.png) | [Запросы — Оауслиб](https://github.com/requests/requests-oauthlib) | [Версии 1.2.0](https://github.com/requests/requests-oauthlib/releases/tag/v1.2.0) | [Запросы — Оауслиб](https://github.com/requests/requests-oauthlib) | |
+| ![Node.js](media/sample-v2-code/logo_nodejs.png) | [OpenID Connect — клиент](https://github.com/panva/node-openid-client) | [Версия 2.4.5](https://github.com/panva/node-openid-client/releases/tag/v2.4.5) | [OpenID Connect — клиент](https://github.com/panva/node-openid-client) | |
 | ![PHP](media/sample-v2-code/logo_php.png) | [The PHP League (oauth2-client)](https://github.com/thephpleague/oauth2-client) | [Версия 1.4.2](https://github.com/thephpleague/oauth2-client/releases/tag/1.4.2) | [oauth2-client](https://github.com/thephpleague/oauth2-client/) | |
-| ![Ruby](media/sample-v2-code/logo_ruby.png) |[OmniAuth](https://github.com/omniauth/omniauth/wiki) |омниут: 1.3.1<br />omniauth-oauth2: 1.4.0 |[OmniAuth](https://github.com/omniauth/omniauth)<br />[OmniAuth OAuth2](https://github.com/intridea/omniauth-oauth2) |  |
-| iOS, macOS, & Android  | [Реагировать Родной App Auth](https://github.com/FormidableLabs/react-native-app-auth) | [Версия 4.2.0](https://github.com/FormidableLabs/react-native-app-auth/releases/tag/v4.2.0) | [Реагировать Родной App Auth](https://github.com/FormidableLabs/react-native-app-auth) | |
+| ![Ruby](media/sample-v2-code/logo_ruby.png) |[OmniAuth](https://github.com/omniauth/omniauth/wiki) |омниаус: 1.3.1<br />омниаус-OAuth2:1.4.0 |[OmniAuth](https://github.com/omniauth/omniauth)<br />[OmniAuth OAuth2](https://github.com/intridea/omniauth-oauth2) |  |
+| iOS, macOS, & Android  | [Отреагировать на проверку подлинности собственного приложения](https://github.com/FormidableLabs/react-native-app-auth) | [Версия 4.2.0](https://github.com/FormidableLabs/react-native-app-auth/releases/tag/v4.2.0) | [Отреагировать на проверку подлинности собственного приложения](https://github.com/FormidableLabs/react-native-app-auth) | |
 
-Для любой библиотеки, соответствующей стандартам, можно использовать конечную точку платформы майкрософт. Важно знать, куда обратиться за поддержкой:
+Для любой библиотеки, совместимой со стандартами, можно использовать конечную точку платформы Microsoft Identity. Важно иметь представление о том, где следует обращаться в службу поддержки:
 
 * Проблемы и запросы на новые возможности в коде библиотеки отправляются владельцу библиотеки.
 * Проблемы и запросы на новые возможности в реализации протокола на стороне службы отправляются в корпорацию Майкрософт.
-* [Подать запрос на функцию](https://feedback.azure.com/forums/169401-azure-active-directory) для дополнительных функций, которые вы хотите увидеть в протоколе.
-* [Создайте запрос на поддержку,](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) если вы обнаружите проблему, в которой конечная точка платформы Майкрософт не соответствует OAuth 2.0 или OpenID Connect 1.0.
+* Отправьте [запрос функции](https://feedback.azure.com/forums/169401-azure-active-directory) для дополнительных функций, которые вы хотите увидеть в протоколе.
+* [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) , если вы нашли ошибку, когда конечная точка платформы Microsoft Identity не соответствует требованиям OAuth 2,0 или openid connect Connect 1,0.
 
-## <a name="related-content"></a>Связанная информация
+## <a name="related-content"></a>Связанное содержимое
 
-Для получения дополнительной информации о конечная точка платформы Майкрософт можно ознакомиться на [обзоре платформы идентификации Майкрософт.][AAD-App-Model-V2-Overview]
+Дополнительные сведения о конечной точке платформы идентификации Майкрософт см. в [статье Обзор платформы идентификации Майкрософт][AAD-App-Model-V2-Overview].
 
 <!--Image references-->
 

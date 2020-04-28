@@ -1,6 +1,6 @@
 ---
-title: Вызов веб-AI с настольного приложения - платформа идентификации Microsoft (ru) Azure
-description: Узнайте, как создать настольное приложение, которое вызывает web-а.П.
+title: Вызов веб-API из классического приложения — платформа Microsoft Identity | Службы
+description: Узнайте, как создать классическое приложение, вызывающее веб-API
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,15 +12,15 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 753892790a6f6b898b48d955e6806837967f3e92
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80882970"
 ---
-# <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Настольное приложение, которое вызывает веб-API: Вызов веб-API
+# <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Классическое приложение, вызывающее веб-API: вызов веб-API
 
-Теперь, когда у вас есть маркер, вы можете вызвать защищенный веб-API.
+Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
 
 ## <a name="call-a-web-api"></a>Вызов веб-API
 
@@ -60,11 +60,11 @@ if(responseCode != HttpURLConnection.HTTP_OK) {
 JSONObject responseObject = HttpClientHelper.processResponse(responseCode, response);
 ```
 
-# <a name="macos"></a>[Macos](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 ## <a name="call-a-web-api-in-msal-for-ios-and-macos"></a>Вызов веб-API в MSAL для iOS и macOS
 
-Методы приобретения токенов возвращают `MSALResult` объект. `MSALResult`предоставляет свойство, `accessToken` которое может быть использовано для вызова веб-API. До того, как сделать вызов защищенного web API, до всадите маркер доступа к маркеру доступа к доступу к защищенного веб-aPI.
+Методы получения маркеров возвращают `MSALResult` объект. `MSALResult`предоставляет `accessToken` свойство, которое можно использовать для вызова веб-API. Перед вызовом доступа к защищенному веб-API добавьте маркер доступа в заголовок авторизации HTTP.
 
 Objective-C.
 
@@ -92,9 +92,9 @@ let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data: D
 task.resume()
 ```
 
-## <a name="call-several-apis-incremental-consent-and-conditional-access"></a>Позвоните несколько AIS: Инкрементное согласие и условный доступ
+## <a name="call-several-apis-incremental-consent-and-conditional-access"></a>Вызов нескольких API: последовательное согласие и условный доступ
 
-Чтобы вызвать несколько API для одного и того же пользователя, `AcquireTokenSilent`после получения токена для первого API позвоните в группу aIs. Большую часть времени вы получите токен для других AIS.
+Чтобы вызвать несколько API для одного пользователя, после получения маркера для первого API вызовите `AcquireTokenSilent`. Вы получите маркер для других интерфейсов API в большинстве случаев.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -104,10 +104,10 @@ result = await app.AcquireTokenSilent("scopeApi2")
                   .ExecuteAsync();
 ```
 
-Взаимодействие необходимо, когда:
+Взаимодействие требуется, если:
 
-- Пользователь согласился на первый API, но теперь необходимо дать согласие на дополнительные области. Такого рода согласие называется дополнительным согласием.
-- Первый API не требовал многофакторной аутентификации, но другой требует.
+- Пользователь, которому предоставлен доступ к первому API, теперь должен предоставить согласие на дополнительные области. Этот тип разрешения известен как добавочное согласие.
+- Первый API не требует многофакторной проверки подлинности, а следующий —.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")

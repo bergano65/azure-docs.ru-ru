@@ -1,5 +1,5 @@
 ---
-title: Поддержка и помощь для разработчиков приложений Azure AD
+title: Поддержка и параметры справки для разработчиков приложений Azure AD
 description: Узнайте, как получить справку и поддержку по вопросам и проблемам разработки, возникающим при создании приложения, которое интегрируется с удостоверениями Майкрософт (Azure Active Directory и учетной записью Майкрософт)
 services: active-directory
 author: rwike77
@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
 ms.openlocfilehash: ea1afd2ecac8974c0e865e235288da545a9f1244
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80885537"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
@@ -46,7 +46,7 @@ ms.locfileid: "80885537"
 
 ## <a name="use-the-development-support-tools"></a>Использование средств технической поддержки для разработки
 
-| Средство  | Описание  |
+| Инструмент  | Описание  |
 |---------|---------|
 | [jwt.ms](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
 | [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph. |
@@ -57,29 +57,29 @@ Stack Overflow — это идеальное место для вопросов
 
 Если вы не нашли ответ на свой вопрос через поиск, опубликуйте его на сайте Stack Overflow. При этом используйте один из указанных ниже тегов. Это поможет сообществу своевременно определить ваш вопрос и ответить на него.
 
-|Компонент/область  | Теги |
+|Компонент/область  | Tags |
 |---------|---------|
-| Библиотека ADAL | [(Адал)](https://stackoverflow.com/questions/tagged/adal) |
-| Библиотека MSAL     | [(Мсал)](https://stackoverflow.com/questions/tagged/msal) |
-| ПО промежуточного слоя OWIN  | [«Лазурно-активный каталог»](https://stackoverflow.com/questions/tagged/azure-active-directory) |
+| Библиотека ADAL | [ADAL](https://stackoverflow.com/questions/tagged/adal) |
+| Библиотека MSAL     | [msal](https://stackoverflow.com/questions/tagged/msal) |
+| ПО промежуточного слоя OWIN  | [[Azure-Active-Directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
 | [Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)  | [[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
 | [Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[azure-ad-b2c]](https://stackoverflow.com/questions/tagged/azure-ad-b2c) |
-| [API Microsoft Graph](https://developer.microsoft.com/graph/) | [(Microsoft-граф)](https://stackoverflow.com/questions/tagged/microsoft-graph) |
-| Любая другая область, которая относится к аутентификации или авторизации | [«Лазурно-активный каталог»](https://stackoverflow.com/questions/tagged/azure-active-directory) |
+| [API Microsoft Graph](https://developer.microsoft.com/graph/) | [[Microsoft-Graph]](https://stackoverflow.com/questions/tagged/microsoft-graph) |
+| Любая другая область, которая относится к аутентификации или авторизации | [[Azure-Active-Directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
 
 Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуя этим рекомендациям, вы повысите вероятность того, что участники сообщества быстро отреагируют на ваш вопрос.
 
-* [Как задать хороший вопрос](https://stackoverflow.com/help/how-to-ask)
+* [Разделы справки задать хороший вопрос](https://stackoverflow.com/help/how-to-ask)
 * [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример)
 
 ## <a name="create-a-github-issue"></a>Сообщение о проблеме на GitHub
 
 Если возникла ошибка или проблема, связанная с нашими библиотеками, сообщите о ней на сайте GitHub. Так как в наших библиотеках используется открытый код, вы также можете отправить запрос на вытягивание.
 
-Список библиотек и их репозитории GitHub можно узнать следующее:
+Список библиотек и их репозиториев GitHub см. в следующих статьях:
 
-* [Библиотеки и](../azuread-dev/active-directory-authentication-libraries.md) репозитории GitHub
-* Библиотеки [библиотеки Microsoft Authentication Library (MSAL)](reference-v2-libraries.md) и репозитории GitHub
+* Библиотеки [библиотеки проверки Подлинности Azure Active Directory (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) и репозитории GitHub
+* Библиотеки [проверки подлинности Microsoft (MSAL)](reference-v2-libraries.md) и репозитории GitHub
 
 ## <a name="open-a-support-request"></a>Подача запроса в службу поддержки
 

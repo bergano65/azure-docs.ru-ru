@@ -1,6 +1,6 @@
 ---
-title: Безопасные службы домена Azure AD (ru) Документы Майкрософт
-description: Узнайте, как отключить слабые шифры, старые протоколы и синхронизацию хэш-хэша паролем NTLM для домена Azure Active Directory Domain Services.
+title: Защита доменных служб Azure AD | Документация Майкрософт
+description: Узнайте, как отключить слабые шифры, старые протоколы и синхронизацию хэша паролей NTLM для управляемого домена доменных служб Azure Active Directory.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -12,41 +12,41 @@ ms.topic: how-to
 ms.date: 03/31/2020
 ms.author: iainfou
 ms.openlocfilehash: 581963c94129c36acbd8761d93e369281797fa9f
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80654717"
 ---
-# <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-ad-domain-services-managed-domain"></a>Отключить слабые шифры и синхронизацию паролей для обеспечения безопасности домена Azure AD Domain Services, управляемого домена
+# <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-ad-domain-services-managed-domain"></a>Отключение слабых шифров и синхронизации хэшей паролей для защиты управляемого домена доменных служб Azure AD
 
-По умолчанию службы домена Active Directory Domain Services Azure (Azure AD DS) позволяют использовать шифры, такие как NTLM v1 и TLS v1. Эти шифры могут потребоваться для некоторых устаревших приложений, но считаются слабыми и могут быть отключены, если они вам не нужны. Если у вас есть предварительное гибридное подключение с помощью Azure AD Connect, вы также можете отключить синхронизацию хэшей паролем NTLM.
+По умолчанию доменные службы Azure Active Directory (Azure AD DS) позволяют использовать такие шифры, как NTLM v1 и TLS V1. Эти шифры могут потребоваться для некоторых устаревших приложений, но считаются ненадежными и могут быть отключены, если они вам не нужны. При наличии локального гибридного подключения с помощью Azure AD Connect можно также отключить синхронизацию хэшей паролей NTLM.
 
-В этой статье показано, как отключить шифры NTLM v1 и TLS v1 и отключить синхронизацию хэша паролем NTLM.
+В этой статье показано, как отключить шифры NTLM v1 и TLS V1 и отключить синхронизацию хэша паролей NTLM.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для завершения этой статьи необходимы следующие ресурсы:
+Для работы с этой статьей требуются следующие ресурсы:
 
 * Активная подписка Azure.
-    * Если у вас нет подписки НаAz, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Установите и настройте Azure PowerShell.
-    * При необходимости следуйте [инструкциям по установке модуля Azure PowerShell и подключитесь к подписке Azure.](/powershell/azure/install-az-ps)
-    * Убедитесь, что вы впишетесь в подписку Azure с помощью cmdlet [Connect-AzAccount.][Connect-AzAccount]
-* Установка и настройка Azure AD PowerShell.
-    * При необходимости следуйте инструкциям [по установке модуля Azure AD PowerShell и подключитесь к Azure AD.](/powershell/azure/active-directory/install-adv2)
-    * Убедитесь, что вы впишетесь в ваш aure AD-арендатора с помощью [cmdlet Connect-AzureAD.][Connect-AzureAD]
+    * Если необходимо, выполните инструкции по [установке модуля Azure PowerShell и его подключению к подписке Azure](/powershell/azure/install-az-ps).
+    * Войдите в подписку Azure с помощью командлета [Connect-AzAccount][Connect-AzAccount].
+* Установите и настройте Azure AD PowerShell.
+    * Если необходимо, выполните инструкции по [установке модуля Azure AD PowerShell и подключению к Azure AD](/powershell/azure/active-directory/install-adv2).
+    * Войдите в клиент Azure AD с помощью командлета [Connect-AzureAD][Connect-AzureAD].
 
-## <a name="disable-weak-ciphers-and-ntlm-password-hash-sync"></a>Отключить слабые шифры и синхронизацию хэша паролем NTLM
+## <a name="disable-weak-ciphers-and-ntlm-password-hash-sync"></a>Отключение слабых шифров и синхронизация хэша паролей NTLM
 
-Чтобы отключить слабые наборы шифров и синхронизацию хэш-хэш-хэша NTLM, вопийте на учетную запись Azure, а затем получите ресурс Azure AD DS с помощью cmdlet [Get-AzResource:][Get-AzResource]
+Чтобы отключить слабые комплекты шифров и синхронизацию хэша учетных данных NTLM, войдите в свою учетную запись Azure, а затем получите ресурс Azure AD DS с помощью командлета [Get-азресаурце][Get-AzResource] :
 
 > [!TIP]
-> Если вы получили ошибку с помощью команды [Get-AzResource,][Get-AzResource] что ресурс *Microsoft.AAD/DomainServices* не существует, [повысить доступ к управлению всеми подписями Azure и группами управления.][global-admin]
+> При получении сообщения об ошибке с помощью команды [Get-азресаурце][Get-AzResource] , которая не существует в ресурсе *Microsoft. AAD/DomainServices* , [следует повысить уровень доступа, чтобы управлять всеми подписками и группами управления Azure][global-admin].
 
 ```powershell
 Login-AzAccount
@@ -54,30 +54,30 @@ Login-AzAccount
 $DomainServicesResource = Get-AzResource -ResourceType "Microsoft.AAD/DomainServices"
 ```
 
-Далее определите *DomainSecuritySettings* для настройки следующих параметров безопасности:
+Затем определите *домаинсекуритисеттингс* , чтобы настроить следующие параметры безопасности.
 
-1. Отключить поддержку NTLM v1.
+1. Отключите поддержку NTLM v1.
 2. отключить синхронизацию хэшей паролей NTLM в локальном экземпляре Active Directory;
-3. Отключить TLS v1.
+3. Отключите TLS V1.
 
 > [!IMPORTANT]
-> Пользователи и учетные записи служб не могут выполнять простые связывания LDAP, если вы отстраняете синхронизацию хэш-хэша NTLM в домене Azure AD DS. Если вам нужно выполнить простые привязки LDAP, не устанавливайте *"SyncNtlmPasswords" -"Инвалид";* параметр конфигурации безопасности в следующей команде.
+> Пользователи и учетные записи служб не могут выполнять простые привязки LDAP при отключении синхронизации хэша паролей NTLM в управляемом домене Azure AD DS. Если необходимо выполнить простые привязки LDAP, не устанавливайте параметр *"синкнтлмпассвордс" = "Disabled"* (конфигурация безопасности) в следующей команде.
 
 ```powershell
 $securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPasswords"="Disabled";"TlsV1"="Disabled"}}
 ```
 
-Наконец, примените определенные параметры безопасности к управляемому домемену Azure AD DS с помощью cmdlet [Set-AzResource.][Set-AzResource] Укажите ресурс Azure AD DS с первого шага и параметры безопасности предыдущего шага.
+Наконец, примените определенные параметры безопасности к управляемому домену Azure AD DS с помощью командлета [Set-азресаурце][Set-AzResource] . Укажите ресурс Azure AD DS, начиная с первого шага, и параметры безопасности, описанные на предыдущем шаге.
 
 ```powershell
 Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -Verbose -Force
 ```
 
-Требуется несколько минут, чтобы настройки безопасности были применены к домену Azure AD DS.
+Применение параметров безопасности к управляемому домену Azure AD DS займет несколько секунд.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать больше о процессе синхронизации, см., [как объекты и учетные данные синхронизируются в домене Azure AD DS.][synchronization]
+Дополнительные сведения о процессе синхронизации см. в статье [как синхронизировать объекты и учетные данные в управляемом домене Azure AD DS][synchronization].
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

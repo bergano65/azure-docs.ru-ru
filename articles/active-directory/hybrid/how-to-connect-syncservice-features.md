@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d3f6b698922440c6e3e9b488cca93ca8d98d9c59
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80983081"
 ---
 # <a name="azure-ad-connect-sync-service-features"></a>Функции службы синхронизации Azure AD Connect
@@ -41,7 +41,7 @@ ms.locfileid: "80983081"
 
 Следующие параметры можно настроить с помощью `Set-MsolDirSyncFeature`:
 
-| DirSyncFeature | Комментарий |
+| DirSyncFeature | Добавление примечаний |
 | --- | --- |
 | [EnableSoftMatchOnUpn](#userprincipalname-soft-match) |Позволяет присоединять объекты по атрибуту userPrincipalName в дополнение к основному адресу SMTP. |
 | [SynchronizeUpnForManagedUsers](#synchronize-userprincipalname-updates) |Позволяет модулю синхронизации обновлять атрибут userPrincipalName для управляемых или лицензированных пользователей (не являющихся федеративными). |
@@ -55,7 +55,7 @@ ms.locfileid: "80983081"
 
 Следующие параметры настраиваются службой Azure AD Connect и не могут изменяться командлетом `Set-MsolDirSyncFeature`:
 
-| DirSyncFeature | Комментарий |
+| DirSyncFeature | Добавление примечаний |
 | --- | --- |
 | DeviceWriteback |[Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md) |
 | DirectoryExtensions |[Синхронизация Azure AD Connect: расширения каталогов](how-to-connect-sync-feature-directory-extensions.md) |
@@ -89,16 +89,16 @@ Set-MsolDirSyncFeature -Feature EnableSoftMatchOnUpn -Enable $true
 
 ## <a name="synchronize-userprincipalname-updates"></a>Синхронизация обновлений атрибута userPrincipalName
 
-Исторически сложилось так, что обновления атрибута UserPrincipalName с помощью службы синхронизации из предварительного помещения были заблокированы, если оба этих условия не были правдой:
+Исторически обновления атрибута UserPrincipalName, использующего службу синхронизации из локальной среды, были заблокированы, если оба условия не были соблюдены.
 
 * пользователь является управляемым (нефедеративным);
 * пользователю не назначена лицензия.
 
 > [!NOTE]
-> С марта 2019 года допускается синхронизация изменений UPN для учетных записей федеративного пользователя.
+> С 2019 марта Синхронизация изменений имени участника-пользователя для учетных записей федеративных пользователей разрешена.
 > 
 
-Включение этой функции позволяет механизму синхронизации обновлять userPrincipalName при изменении его на месте и вы используете синхронизацию хэша пароля или сквозную аутентификацию.
+Включение этой функции позволяет модулю синхронизации обновлять userPrincipalName при изменении в локальной среде, а также использовать синхронизацию хэша паролей или сквозную проверку подлинности.
 
 Эта функция по умолчанию включена для создаваемых каталогов Azure AD. Чтобы увидеть, включена ли эта функция, выполните следующую команду:  
 
@@ -116,5 +116,5 @@ Set-MsolDirSyncFeature -Feature SynchronizeUpnForManagedUsers -Enable $true
 
 ## <a name="see-also"></a>См. также
 
-* [Синхронизация azure AD Connect](how-to-connect-sync-whatis.md)
-* [Интеграция личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
+* [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

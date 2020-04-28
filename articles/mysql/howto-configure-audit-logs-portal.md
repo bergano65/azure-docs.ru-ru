@@ -1,73 +1,73 @@
 ---
-title: Журналы аудита доступа - Портал Azure - База данных Azure для MyS'L
-description: В этой статье описывается, как настроить и получить доступ к журналам аудита в базе данных Azure для MyS'L с портала Azure.
+title: Доступ к журналам аудита — портал Azure — база данных Azure для MySQL
+description: В этой статье описывается, как настроить и получить доступ к журналам аудита в базе данных Azure для MySQL из портал Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 4/13/2020
 ms.openlocfilehash: fcd436f87b24d8cdc246d2f1d33a49311e72d46b
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81380305"
 ---
-# <a name="configure-and-access-audit-logs-for-azure-database-for-mysql-in-the-azure-portal"></a>Настройка и доступ к журналам аудита для базы данных Azure для MyS'L на портале Azure
+# <a name="configure-and-access-audit-logs-for-azure-database-for-mysql-in-the-azure-portal"></a>Настройка и доступ к журналам аудита для базы данных Azure для MySQL в портал Azure
 
-Вы можете настроить [базу данных Azure для журналов аудита MyS'L](concepts-audit-logs.md) и диагностических настроек с портала Azure.
+Вы можете настроить [журналы аудита базы данных Azure для MySQL](concepts-audit-logs.md) и параметры диагностики из портал Azure.
 
 > [!IMPORTANT]
-> Функциональность журнала аудита в настоящее время находится в предварительном просмотре.
+> Функции журнала аудита в настоящее время доступны в предварительной версии.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
-- [База данных Azure для сервера MyS'L](quickstart-create-mysql-server-database-using-azure-portal.md)
+- [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
 
-## <a name="configure-audit-logging"></a>Настройка журналов аудита
+## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
 
-Включить и настроить журнал аудита.
+Включение и Настройка ведения журнала аудита.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Выберите сервер базы данных Azure для MySQL.
 
-1. В разделе **Настройки** в боковой панели выберите **параметры сервера.**
+1. В разделе **Параметры** на боковой панели выберите **Параметры сервера**.
     ![Параметры сервера](./media/howto-configure-audit-logs-portal/server-parameters.png)
 
-1. Обновление параметра **audit_log_enabled** ON.
+1. Обновите параметр **audit_log_enabled** в значение ON.
     ![Включить журналы аудита](./media/howto-configure-audit-logs-portal/audit-log-enabled.png)
 
-1. Выберите [типы событий,](concepts-audit-logs.md#configure-audit-logging) которые должны быть зарегистрированы путем обновления **параметра audit_log_events.**
+1. Выберите [типы событий](concepts-audit-logs.md#configure-audit-logging) для записи, обновив параметр **audit_log_events** .
     ![События журнала аудита](./media/howto-configure-audit-logs-portal/audit-log-events.png)
 
-1. Добавьте всех пользователей MyS'L, которые **audit_log_exclude_users** будут исключены из журнала, обновив audit_log_exclude_users параметр. Укажите пользователям, предоставив их имя пользователя MyS'L.
-    ![Журнал аудита исключает пользователей](./media/howto-configure-audit-logs-portal/audit-log-exclude-users.png)
+1. Добавьте пользователей MySQL, которые будут исключены из ведения журнала, путем обновления параметра **audit_log_exclude_users** . Укажите пользователей, указав имя пользователя MySQL.
+    ![Исключить пользователей из журнала аудита](./media/howto-configure-audit-logs-portal/audit-log-exclude-users.png)
 
 1. После изменения параметров нажмите кнопку **Сохранить**. Также вы можете нажать кнопку **Отменить**, чтобы отменить изменения.
     ![Сохранить](./media/howto-configure-audit-logs-portal/save-parameters.png)
 
 ## <a name="set-up-diagnostic-logs"></a>Настройка журналов диагностики
 
-1. В разделе **Мониторинг** в боковой панели выберите **Настройки Диагностики.**
+1. В разделе **мониторинг** на боковой панели выберите **параметры диагностики**.
 
-1. Нажмите на кнопку !["Добавить диагностическую настройку" Добавить диагностическую настройку](./media/howto-configure-audit-logs-portal/add-diagnostic-setting.png)
+1. Щелкните "+ добавить параметр диагностики" ![добавить параметр диагностики](./media/howto-configure-audit-logs-portal/add-diagnostic-setting.png)
 
-1. Укажите имя диагностической настройки.
+1. Укажите имя параметра диагностики.
 
-1. Укажите, какие данные погружаются для отправки журналов аудита (учетная запись хранения, концентратор событий и/или рабочее пространство log Analytics).
+1. Укажите приемники данных для отправки журналов аудита (учетную запись хранения, концентратор событий и (или) рабочую область Log Analytics).
 
-1. Выберите "MySqlAuditLogLogs" в качестве типа журнала.
-![Настройка диагностической настройки](./media/howto-configure-audit-logs-portal/configure-diagnostic-setting.png)
+1. Выберите "Мисклаудитлогс" в качестве типа журнала.
+![Настройка параметра диагностики](./media/howto-configure-audit-logs-portal/configure-diagnostic-setting.png)
 
-1. После настройки приемников данных для сравщения журналов аудита можно нажать кнопку **«Сохранение».**
-![Сохранение диагностической настройки](./media/howto-configure-audit-logs-portal/save-diagnostic-setting.png)
+1. После настройки приемников данных для передачи журналов аудита в можно нажать кнопку **сохранить**.
+![Сохранить параметр диагностики](./media/howto-configure-audit-logs-portal/save-diagnostic-setting.png)
 
-1. Получите доступ к журналам аудита, исследуя их в настроенных данных. Появление журналов может занять до 10 минут.
+1. Получите доступ к журналам аудита, просмотрев их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MyS'L
+- Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MySQL
 - Узнайте, как настроить журналы аудита в [Azure CLI](howto-configure-audit-logs-cli.md)

@@ -1,5 +1,5 @@
 ---
-title: Типы & претензий Azure AD
+title: Типы утверждений маркера Azure AD &
 description: Руководство с общими данными и анализом утверждений в токенах SAML 2.0 и веб-токенах JSON (JWT), выдаваемых службой Azure Active Directory (AAD)
 documentationcenter: na
 author: rwike77
@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.openlocfilehash: b7ba4abd45fff8548c361f5e5ed44ef45fe32bbe
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80883446"
 ---
 # <a name="azure-ad-saml-token-reference"></a>Справочник по токенам SAML в Azure AD
@@ -150,9 +150,9 @@ ms.locfileid: "80883446"
       <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>
     </t:RequestSecurityTokenResponse>
 
-## <a name="related-content"></a>Связанная информация
+## <a name="related-content"></a>Связанное содержимое
 
-* См. [ресурс Policy,](https://docs.microsoft.com/graph/api/resources/policy?view=graph-rest-beta)чтобы узнать больше об управлении политикой срока службы токенов с помощью API Microsoft Graph.
+* Дополнительные сведения об управлении политикой времени существования маркеров с помощью API Microsoft Graph см. в разделе [ресурс политики](https://docs.microsoft.com/graph/api/resources/policy?view=graph-rest-beta).
 * Дополнительные сведения об управлении политиками посредством командлетов PowerShell, включая примеры, см. в разделе [Configurable Token Lifetimes in Azure Active Directory (Public Preview)](../develop/active-directory-configurable-token-lifetimes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) (Настраиваемое время существования маркеров в Azure Active Directory (общедоступная предварительная версия)). 
 * Добавьте [пользовательские и необязательные утверждения](../develop/active-directory-optional-claims.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) в токены для приложения.
 * Используйте [единый вход с помощью SAML](single-sign-on-saml-protocol.md).

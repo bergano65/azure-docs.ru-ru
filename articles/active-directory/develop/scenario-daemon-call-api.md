@@ -1,6 +1,6 @@
 ---
-title: Позвоните в веб-API из приложения daemon - платформа идентификации Microsoft Azure
-description: Узнайте, как создать приложение daemon, которое вызывает веб-AIS
+title: Вызов веб-API из управляющего приложения — платформа Microsoft Identity | Службы
+description: Узнайте, как создать управляющее приложение, вызывающее веб-API
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,19 +12,19 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: e440628526dada7655cc71f63fc9fff006cc5ef5
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80885452"
 ---
-# <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Приложение Daemon, которое вызывает веб-API - вызов веб-API из приложения
+# <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Управляющее приложение, вызывающее веб-API — вызов веб-API из приложения
 
-приложения .NET daemon могут вызывать веб-API. приложения .NET daemon также могут вызывать несколько предварительно утвержденных web-aIS.
+Приложения управляющей программы .NET могут вызывать веб-API. Приложения управляющей программы .NET также могут вызывать несколько предварительно утвержденных веб-API.
 
-## <a name="calling-a-web-api-from-a-daemon-application"></a>Вызов веб-API из приложения daemon
+## <a name="calling-a-web-api-from-a-daemon-application"></a>Вызов веб-API из управляющего приложения
 
-Вот как использовать маркер для вызова API:
+Вот как можно использовать маркер для вызова API:
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -61,25 +61,25 @@ JSONObject responseObject = HttpClientHelper.processResponse(responseCode, respo
 
 ---
 
-## <a name="calling-several-apis"></a>Вызов нескольких AIS
+## <a name="calling-several-apis"></a>Вызов нескольких API
 
-Для приложений daemon веб-аПО, которые вы называете, должны быть предварительно утверждены. Там нет постепенного согласия с приложениями daemon. (Нет никакого взаимодействия с пользователем.) Админ-арендатор должен заранее предоставить согласие на применение и все разрешения API. Если вы хотите позвонить несколько AI, вам нужно приобрести `AcquireTokenForClient`токен для каждого ресурса, каждый раз вызывая . MSAL будет использовать кэш маркеров приложения, чтобы избежать ненужных вызовов службы.
+Для приложений управляющей программы необходимо предварительно утвердить веб-API, которые вызываются. Нет добавочного согласия с приложениями управляющей программы. (Нет взаимодействия с пользователем.) Администратор клиента должен заранее предоставить согласие на доступ к приложению и всем разрешениям API. Если требуется вызвать несколько API, необходимо получить маркер для каждого ресурса, каждый раз вызывая `AcquireTokenForClient`. MSAL будет использовать кэш маркеров приложений, чтобы избежать ненужных вызовов служб.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
 > [!div class="nextstepaction"]
-> [Приложение Daemon - переход к производству](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-production?tabs=dotnet)
+> [Приложение управляющей программы — переместить в рабочую среду](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-production?tabs=dotnet)
 
 # <a name="python"></a>[Python](#tab/python)
 
 > [!div class="nextstepaction"]
-> [Приложение Daemon - переход к производству](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-production?tabs=python)
+> [Приложение управляющей программы — переместить в рабочую среду](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-production?tabs=python)
 
 # <a name="java"></a>[Java](#tab/java)
 
 > [!div class="nextstepaction"]
-> [Приложение Daemon - переход к производству](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-production?tabs=java)
+> [Приложение управляющей программы — переместить в рабочую среду](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-production?tabs=java)
 
 ---

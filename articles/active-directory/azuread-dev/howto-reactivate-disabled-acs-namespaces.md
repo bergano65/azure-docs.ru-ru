@@ -1,6 +1,6 @@
 ---
-title: Повторное активация отключенных служб управления доступом Azure (ACS)
-description: Найдите и включите в иные пространства управления доступом Azure (ACS) и запросите расширение, чтобы сохранить их до 4 февраля 2019 года.
+title: Повторная активация отключенных пространств имен службы контроля доступа Azure (ACS)
+description: Найдите и включите пространства имен службы контроля доступа Azure (ACS) и запросите расширение, чтобы они оставались включенными до 4 февраля 2019 г.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -14,10 +14,10 @@ ms.reviewer: jlu
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: ff0ce05b13fea8409475e3415c5d810d7c79769a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80154871"
 ---
 # <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство. Повторная активация отключенных пространств имен службы контроля доступа
@@ -26,7 +26,7 @@ ms.locfileid: "80154871"
 
 В ноябре 2017 года мы объявили, что служба контроля доступа Microsoft Azure (ACS), относящаяся к Azure Active Directory (Azure AD), прекратит функционирование 7 ноября 2018 года.
 
-С тех пор мы отправили письма на электронную почту admin sa'min acS о выходе на пенсию ACS 12 месяцев, 9 месяцев, 6 месяцев, 3 месяца, 1 месяц, 2 недели, 1 неделя, и 1 день до даты выхода на пенсию 7 ноября 2018 года.
+С этого момента мы отправили сообщения электронной почты администраторам подписки ACS о прекращении использования ACS 12 месяцев, 9 месяцах, 6 месяцах, 3 месяцах, 1 месяце, 2 недели, 1 неделю и 1 день до даты выхода 7 ноября 2018.
 
 3 октября 2018 года мы объявили (по электронной почте и в [записи блога](https://azure.microsoft.com/blog/one-month-retirement-notice-access-control-service/)) о предложении расширения для клиентов, которые не могут завершить миграцию до 7 ноября 2018 года. В объявлении также содержались указания по запросам расширения.
 
@@ -69,7 +69,7 @@ ms.locfileid: "80154871"
 1. Получите список пространств имен ACS с помощью командлета **Get-AcsNamespace**.
 1. Удостоверьтесь, что пространства имен отключены. Для этого убедитесь, что для `State` задано значение `Disabled`.
 
-    [![Подтвердите, что области имен отключены](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png)](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png#lightbox)
+    [![Убедитесь, что пространства имен отключены.](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png)](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png#lightbox)
 
     Кроме того, можно использовать `nslookup {your-namespace}.accesscontrol.windows.net`, чтобы убедиться, что домен по-прежнему активен.
 
@@ -89,7 +89,7 @@ ms.locfileid: "80154871"
 
 ### <a name="to-request-an-extension"></a>Запрос расширения
 
-1. Вопийте на портале Azure и создайте [новый запрос на поддержку.](https://portal.azure.com/#create/Microsoft.Support)
+1. Войдите в портал Azure и создайте [новый запрос в службу поддержки](https://portal.azure.com/#create/Microsoft.Support).
 1. Заполните новую форму запроса на поддержку, как показано в следующем примере.
 
     | Поле запроса на поддержку | Значение |
@@ -97,7 +97,7 @@ ms.locfileid: "80154871"
     | **Тип проблемы** | `Technical` |
     | **Подписка** | Задается вашей подписке |
     | **Служба** | `All services` |
-    | **Ресурсов** | `General question/Resource not available` |
+    | **Ресурс** | `General question/Resource not available` |
     | **Тип проблемы** | `ACS to SAS Migration` |
     | **Тема** | Описание проблемы |
 

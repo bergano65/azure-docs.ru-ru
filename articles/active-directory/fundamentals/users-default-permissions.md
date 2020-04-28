@@ -14,10 +14,10 @@ ms.reviewer: vincesm
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 227230f2d6f46fae27e2cec69d99390f5054c7db
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80366251"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Разрешения пользователя по умолчанию в Azure Active Directory
@@ -32,15 +32,15 @@ ms.locfileid: "80366251"
 
 ## <a name="compare-member-and-guest-default-permissions"></a>Сравнение стандартных разрешений участника и гостя
 
-**Области** | **Разрешения участника** | **Разрешения гостевого пользователя**
+**Область** | **Разрешения участника** | **Разрешения гостевого пользователя**
 ------------ | --------- | ----------
-Пользователи и контакты | Чтение всех открытых свойств пользователей и контактов<br>Приглашение гостей<br>Изменение пароля<br>Управление собственным номером мобильного телефона<br>Управление собственными фотографиями<br>Аннуляция собственных токенов обновления | Чтение собственных свойств<br>Читайте имя дисплея, электронную почту, вписаться в имя, фотографию, имя пользователя и свойства типа пользователя других пользователей и контактов<br>Изменение пароля
+Пользователи и контакты | Чтение всех открытых свойств пользователей и контактов<br>Приглашение гостей<br>Изменение пароля<br>Управление собственным номером мобильного телефона<br>Управление собственными фотографиями<br>Аннуляция собственных токенов обновления | Чтение собственных свойств<br>Чтение отображаемого имени, адреса электронной почты, имени входа, фотографии, имени участника-пользователя и свойств типа пользователя для других пользователей и контактов<br>Изменение пароля
 Группы | Создание групп безопасности<br>Создание групп Office 365<br>Чтение всех свойств групп<br>Чтение не скрытого членства в группах<br>Чтение скрытых членств в группах Office 365 для объединенной группы<br>Управление свойствами, правами владения и членством в группах, которые принадлежат пользователю<br>Добавление гостей в собственные группы<br>Управление параметрами динамического членства<br>Удаление собственных групп<br>Восстановление собственных групп Office 365 | Чтение всех свойств групп<br>Чтение не скрытого членства в группах<br>Чтение скрытых членств в группах Office 365 для объединенных групп<br>Управление собственными группами<br>Добавление гостей в имеющиеся группы, если это допустимо<br>Удаление собственных групп<br>Восстановление собственных групп Office 365<br>Чтение свойств групп, к которым они принадлежат, включая членство.
 Приложения | Регистрация (создание) приложения<br>Чтение свойств зарегистрированных и корпоративных приложений<br>Управление свойствами приложения, назначениями и учетными данными собственных приложений<br>Создание или удаление пароля приложения для пользователя<br>Удаление собственных приложений<br>Восстановление собственных приложений | Чтение свойств зарегистрированных и корпоративных приложений<br>Управление свойствами приложения, назначениями и учетными данными собственных приложений<br>Удаление собственных приложений<br>Восстановление собственных приложений
 Устройства | Чтение всех свойств устройств<br>Управление всеми свойствами собственных устройств<br> | Нет разрешений<br>Удаление собственных устройств<br>
 Каталог | Чтение всей информации о компании<br>Чтение всех доменов<br>Чтение всех контрактов партнера | Чтение отображаемого имени и проверенных доменов
 Роли и области | Чтение всех административных ролей и членств<br>Чтение всех свойств и членств административных единиц | Нет разрешений 
-Подписки | Чтение всех подписок<br>Включение участника плана обслуживания | Нет разрешений
+Subscriptions | Чтение всех подписок<br>Включение участника плана обслуживания | Нет разрешений
 Политики | Чтение всех свойств политик<br>Управление всеми свойствами собственной политики | Нет разрешений
 
 ## <a name="to-restrict-the-default-permissions-for-member-users"></a>Ограничение разрешений по умолчанию для пользователей-участников
@@ -49,84 +49,84 @@ ms.locfileid: "80366251"
 
 Разрешение | Описание параметра
 ---------- | ------------
-Пользователи могут зарегистрировать приложение | Установка этой опции в No предотвращает пользователей от создания регистрации приложений. Затем возможность может быть возвращена конкретным лицам, добавив их в роль разработчика приложений.
-Разрешить пользователям подключение рабочей или школьной учетной записи с помощью LinkedIn | Установка этой опции в No не позволяет пользователям подключить свою рабочую или школьную учетную запись к своей учетной записи LinkedIn. Для получения дополнительной информации смотрите [обмен данными и согласие LinkedIn на подключение к учетной записи.](https://docs.microsoft.com/azure/active-directory/users-groups-roles/linkedin-user-consent)
+Пользователи могут регистрировать приложения | Если установить для этого параметра значение "нет", пользователи не смогут создавать регистрации приложений. Затем эту возможность можно предоставить отдельным пользователям, добавив их в роль разработчика приложения.
+Разрешить пользователям подключаться к рабочей или учебной учетной записи с помощью LinkedIn | Если установить для этого параметра значение "нет", пользователи не смогут подключать свою рабочую или учебную учетную запись к учетной записи LinkedIn. Дополнительные сведения см. в статье [Подключение к учетной записи LinkedIn общий доступ к данным и согласие](https://docs.microsoft.com/azure/active-directory/users-groups-roles/linkedin-user-consent).
 Возможность создания групп безопасности | Если установить для этого параметра значение "Нет", пользователи не смогут создавать группы безопасности. Глобальные администраторы и администраторы пользователей по-прежнему могут создавать группы безопасности. Дополнительные сведения см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md).
 Возможность создавать группы Office 365 | Если установить для этого параметра значение "Нет", пользователи не смогут создавать группы Office 365. Если установить для этого параметра значение "Некоторые", можно выбрать набор пользователей для создания групп Office 365. Глобальные администраторы и администраторы пользователей по-прежнему смогут создавать группы Office 365. Дополнительные сведения см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md).
-Ограничить доступ к порталу администрирования Azure AD | Установка этой опции в No позволяет неадминистраторам использовать портал администрирования Azure AD для чтения и управления ресурсами Azure AD. Yes ограничивает доступ всех неадминистраторов к любым данным Azure AD на портале администрирования. Важно отметить: этот параметр не ограничивает доступ к данным Azure AD с помощью PowerShell или других клиентов, таких как Visual Studio. При наборе в "Да" предоставление определенному пользователю, не являющемуся аниме, возможностью использования портала администрирования Azure AD назначить любую административную роль, такую как роль читателей каталогов. Эта роль позволяет читать основную информацию каталога, которую пользователи-члены имеют по умолчанию (гости и директора службы не).
-Возможность чтения других пользователей | Этот параметр доступен только в PowerShell. Установка этого флага на $false предотвращает чтение всеми не-амиминами информации о пользователе из каталога. Этот флаг не препятствует чтению информации о пользователях в других службах Майкрософт, таких как Exchange Online. Эта настройка предназначена для особых обстоятельств, и установка этого флага на $false не рекомендуется.
+Ограничить доступ к порталу администрирования Azure AD | Если задать для этого параметра значение "нет", пользователи, не являющиеся администраторами, смогут читать ресурсы Azure AD и управлять ими с помощью портала администрирования Azure AD. Да — ограничивать доступ всех данных Azure AD на портале администрирования для всех, не являющихся администраторами. Важно отметить: этот параметр не ограничивает доступ к данным Azure AD с помощью PowerShell или других клиентов, таких как Visual Studio. Если задано значение Да, пользователю, который не является администратором, предоставляется возможность использовать портал администрирования Azure AD для назначения любой административной роли, например роли "читатели каталога". Эта роль позволяет считывать основные сведения о каталоге, члены которых по умолчанию имеют пользователи (гости и субъекты-службы).
+Возможность чтения других пользователей | Этот параметр доступен только в PowerShell. Если задать для этого флага значение $false, все пользователи, не являющиеся администраторами, не смогут считывать сведения о пользователях из каталога. Этот флаг не запрещает чтение сведений о пользователях в других службах Майкрософт, таких как Exchange Online. Этот параметр предназначен для особых обстоятельств, и установка этого флага в $false не рекомендуется.
 
 ## <a name="object-ownership"></a>Владелец объекта
 
 ### <a name="application-registration-owner-permissions"></a>Разрешения владельца при регистрации приложения
 Когда пользователь регистрирует приложение, он автоматически добавляется в качестве владельца приложения. Владелец может управлять метаданными приложения, такими как имя, и разрешениями приложения. Он также может управлять конфигурацией конкретного клиента приложения, например конфигурацией единого входа и назначениями пользователей. Владелец также может добавлять или удалять других владельцев. В отличие от глобальных администраторов, владельцы могут управлять только приложениями, которыми они владеют.
 
-### <a name="enterprise-application-owner-permissions"></a>Разрешения владельца корпоративных приложений
-Когда пользователь добавляет новое корпоративное приложение, он автоматически добавляется как владелец. Как владелец, они могут управлять конфигурацией приложения для конкретных клиентов, такой как конфигурация SSO, подготовка и назначения пользователей. Владелец также может добавлять или удалять других владельцев. В отличие от Global Administrators, владельцы могут управлять только теми приложениями, которыми они владеют.
+### <a name="enterprise-application-owner-permissions"></a>Разрешения владельца корпоративного приложения
+Когда пользователь добавляет новое корпоративное приложение, он автоматически добавляется в качестве владельца. Как владелец, они могут управлять конфигурацией конкретного клиента приложения, например конфигурацией единого входа, подготовкой и назначениями пользователей. Владелец также может добавлять или удалять других владельцев. В отличие от глобальных администраторов, владельцы могут управлять только вашими приложениями.
 
 ### <a name="group-owner-permissions"></a>Разрешения владельца группы
 Когда пользователь создает группу, он автоматически добавляется в качестве владельца этой группы. Владелец может управлять свойствами группы, например именем, а также членством группы. Владелец также может добавлять или удалять других владельцев. В отличие от глобальных администраторов и администраторов пользователей, владельцы могут управлять только группами, которыми они владеют. Сведения о назначении владельца группы см. в [этой статье](active-directory-accessmanagement-managing-group-owners.md).
 
-### <a name="ownership-permissions"></a>Разрешения на владение
-В следующих таблицах описывались конкретные разрешения пользователей-пользователей Active Directory, накоторых которых они имеют объекты, принадлежащие им. Пользователь имеет эти разрешения только на объекты, которые они владеют.
+### <a name="ownership-permissions"></a>Права владения
+В следующих таблицах описаны определенные разрешения в Azure Active Directory пользователей, имеющих доступ к объектам. Пользователь имеет только эти разрешения для объектов, которыми они владеют.
 
-#### <a name="owned-application-registrations"></a>Регистрация заявок
-Пользователи могут выполнять следующие действия по регистрации принадлежащих приложений.
-
-| **Действия** | **Описание** |
-| --- | --- |
-| microsoft.directory/applications/audience/update | Изменение свойства applications.audience в Azure Active Directory. |
-| microsoft.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory. |
-| microsoft.directory/applications/basic/update | Изменение базовых свойств приложений в Azure Active Directory. |
-| microsoft.directory/applications/credentials/update | Изменение свойства applications.credentials в Azure Active Directory. |
-| microsoft.directory/applications/delete | Удаление приложений в Azure Active Directory. |
-| microsoft.directory/applications/owners/update | Изменение свойства applications.owners в Azure Active Directory. |
-| microsoft.directory/applications/permissions/update | Изменение свойства applications.permissions в Azure Active Directory. |
-| microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
-| microsoft.directory/applications/restore | Восстановление приложений в Azure Active Directory. |
-
-#### <a name="owned-enterprise-applications"></a>Принадлежавшие корпоративным приложениям
-Пользователи могут выполнять следующие действия в принадлежащих корпоративных приложениях. Корпоративное приложение состоит из основного обслуживания, одной или нескольких политик приложения, а иногда и объекта приложения в том же арендаторе, что и основной службы.
+#### <a name="owned-application-registrations"></a>Регистрация принадлежащих приложений
+Пользователи могут выполнять следующие действия с регистрацией принадлежащих приложений.
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
-| microsoft.directory/policies/delete | Удаление политик в Azure Active Directory. |
-| microsoft.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/delete | Удаление объектов servicePrincipal в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/owners/update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/permissions/update | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory, приложения, аудитория и обновление | Изменение свойства applications.audience в Azure Active Directory. |
+| Microsoft. Directory/приложения, проверка подлинности или обновление | Изменение свойства applications.authentication в Azure Active Directory. |
+| Microsoft. Directory/Applications/Basic/Update | Изменение базовых свойств приложений в Azure Active Directory. |
+| Microsoft. Directory/приложения/учетные данные/обновление | Изменение свойства applications.credentials в Azure Active Directory. |
+| Microsoft. Directory/Applications/Delete | Удаление приложений в Azure Active Directory. |
+| Microsoft. Directory, приложения, владельцы и обновление | Изменение свойства applications.owners в Azure Active Directory. |
+| Microsoft. Directory/приложения/разрешения/обновление | Изменение свойства applications.permissions в Azure Active Directory. |
+| Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
+| Microsoft. каталог/приложения/восстановление | Восстановление приложений в Azure Active Directory. |
+
+#### <a name="owned-enterprise-applications"></a>Собственные корпоративные приложения
+Пользователи могут выполнять следующие действия в собственных корпоративных приложениях. Корпоративное приложение состоит из субъекта-службы, одной или нескольких политик приложений, а иногда — объекта приложения в том же клиенте, что и субъект-служба.
+
+| **Действия** | **Описание** |
+| --- | --- |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/политики/базовый/обновление | Обновление базовых свойств политик в Azure Active Directory. |
+| Microsoft. Каталог/политики/удаление | Удаление политик в Azure Active Directory. |
+| Microsoft. Directory, политики, владельцы и обновление | Изменение свойства policies.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Basic/Update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/учетные данные/обновление | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/удаление | Удаление объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Owners/Update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/разрешения/обновление | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 
 #### <a name="owned-devices"></a>Принадлежащие устройства
-Пользователи могут выполнять следующие действия на принадлежащих устройствах.
+Пользователи могут выполнять следующие действия на собственных устройствах.
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.directory/devices/disable | Отключение устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/Devices/Disable | Отключение устройств в Azure Active Directory. |
 
-#### <a name="owned-groups"></a>Принадлежащие группы
-Пользователи могут выполнять следующие действия на принадлежащих группам.
+#### <a name="owned-groups"></a>Собственные группы
+Пользователи могут выполнять следующие действия в собственных группах.
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
-| microsoft.directory/groups/delete | Удаление групп в Azure Active Directory. |
-| microsoft.directory/groups/dynamicMembershipRule/update | Изменение свойства groups.dynamicMembershipRule в Azure Active Directory. |
-| microsoft.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
-| microsoft.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.directory/groups/restore | Восстановление групп в Azure Active Directory. |
-| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. Directory/Groups/appRoleAssignments/обновление | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Groups/базовый/обновление | Обновление базовых свойств в группах в Azure Active Directory. |
+| Microsoft. Directory/Groups/удалить | Удаление групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/dynamicMembershipRule/обновление | Изменение свойства groups.dynamicMembershipRule в Azure Active Directory. |
+| Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
+| Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
+| Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
+| Microsoft. каталог/группы/параметры/обновление | Изменение свойства groups.settings в Azure Active Directory. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
