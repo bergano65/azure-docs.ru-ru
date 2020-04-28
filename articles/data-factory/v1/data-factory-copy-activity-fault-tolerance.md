@@ -1,5 +1,5 @@
 ---
-title: Добавление допуска к ошибкам в деятельности копирования фабрики данных Azure, пропуская несовместимые строки
+title: Добавление отказоустойчивости в действие копирования фабрики данных Azure путем пропуска несовместимых строк
 description: Обеспечение отказоустойчивости для действия копирования в фабрике данных Azure с помощью пропуска несовместимых строк во время копирования
 services: data-factory
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.date: 03/27/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 8ffaee75154fd5fe025bdb683c89f16799d6e86b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74926151"
 ---
 # <a name="add-fault-tolerance-in-copy-activity-by-skipping-incompatible-rows"></a>Обеспечение отказоустойчивости для действия копирования с помощью пропуска несовместимых строк
@@ -50,7 +50,7 @@ ms.locfileid: "74926151"
 >[!NOTE]
 >Эта функция не применяется, если действие копирования вызывает механизм загрузки внешних данных, включая [PolyBase хранилища данных SQL Azure](data-factory-azure-sql-data-warehouse-connector.md#use-polybase-to-load-data-into-azure-sql-data-warehouse) или [Amazon Redshift Unload](data-factory-amazon-redshift-connector.md#use-unload-to-copy-data-from-amazon-redshift). Чтобы загрузить данные в хранилище данных SQL с помощью PolyBase, воспользуйтесь встроенной в PolyBase поддержкой отказоустойчивости, указав [polyBaseSettings](data-factory-azure-sql-data-warehouse-connector.md#sqldwsink) в действии копирования.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 В следующем примере приводится определение JSON для настройки пропуска несовместимых строк в действии копирования:
 
 ```json
@@ -69,12 +69,12 @@ ms.locfileid: "74926151"
 }
 ```
 
-| Свойство | Описание | Допустимые значения | Обязательно |
+| Свойство | Описание | Допустимые значения | Обязательный |
 | --- | --- | --- | --- |
-| **enableSkipIncompatibleRow** | Включить или отключить пропуск несовместимых строк во время копирования. | True<br/>False (по умолчанию) | нет |
-| **redirectIncompatibleRowSettings** | Группа свойств, которые можно указать, если вы хотите записать несовместимые строки в журнал. | &nbsp; | нет |
-| **linkedServiceName (имя связанной службы)** | Связанная служба хранилища Azure, в которой будет храниться журнал, содержащий пропущенные строки. | Имя связанной службы [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service) или [AzureStorageSas](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service), которая будет ссылаться на экземпляр хранилища, используемый для хранения файла журнала. | нет |
-| **Путь** | Путь к файлу журнала, который содержит пропущенные строки. | Укажите путь к хранилищу BLOB-объектов, в котором будут храниться несовместимые данные. Если путь не указан, служба создаст контейнер самостоятельно. | нет |
+| **enableSkipIncompatibleRow** | Включить или отключить пропуск несовместимых строк во время копирования. | True<br/>False (по умолчанию) | Нет |
+| **redirectIncompatibleRowSettings** | Группа свойств, которые можно указать, если вы хотите записать несовместимые строки в журнал. | &nbsp; | Нет |
+| **linkedServiceName (имя связанной службы)** | Связанная служба хранилища Azure, в которой будет храниться журнал, содержащий пропущенные строки. | Имя связанной службы [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service) или [AzureStorageSas](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service), которая будет ссылаться на экземпляр хранилища, используемый для хранения файла журнала. | Нет |
+| **path** | Путь к файлу журнала, который содержит пропущенные строки. | Укажите путь к хранилищу BLOB-объектов, в котором будут храниться несовместимые данные. Если путь не указан, служба создаст контейнер самостоятельно. | Нет |
 
 ## <a name="monitoring"></a>Наблюдение
 Когда действие копирования будет завершено, вы увидите число пропущенных строк в разделе мониторинга:

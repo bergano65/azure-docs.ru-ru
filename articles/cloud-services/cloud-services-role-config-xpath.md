@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/19/2017
 ms.author: tagore
 ms.openlocfilehash: 380b0be4e4e4b19d16cb611b0b472294339f2199
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75386091"
 ---
 # <a name="expose-role-configuration-settings-as-an-environment-variable-with-xpath"></a>Предоставление параметров конфигурации ролей как переменной среды с помощью XPath
@@ -116,7 +116,7 @@ ms.locfileid: "75386091"
 | Код |var port = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["Endpoint1"].IPEndpoint.Port; |
 
 ## <a name="example"></a>Пример
-Вот пример роли работника, которая создает задачу запуска с `TestIsEmulated` переменной среды, названной [ @emulated значением xpath.](#app-running-in-emulator) 
+Ниже приведен пример рабочей роли, которая создает задачу запуска с переменной среды с именем `TestIsEmulated` Set, [ @emulated равным значению XPath](#app-running-in-emulator). 
 
 ```xml
 <WorkerRole name="Role1">

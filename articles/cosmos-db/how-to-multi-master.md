@@ -1,16 +1,16 @@
 ---
 title: Настройка нескольких источников в Azure Cosmos DB
-description: Узнайте, как настроить мультимастер для приложений, используя различные SDK в Azure Cosmos DB.
+description: Узнайте, как настроить несколько хозяев для приложений с помощью разных пакетов SDK в Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mjbrown
 ms.openlocfilehash: 654baed649093add2aa62f4ba81bf6ce7c3e0df5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74873647"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
@@ -20,7 +20,7 @@ ms.locfileid: "74873647"
 > [!Note]
 > Учетные записи Cosmos, изначально настроенные для записи в один регион, можно без какого-либо простоя настроить для записи в несколько регионов (т. е. для использования архитектуры "несколько источников"). Дополнительные сведения см. в разделе [Настройка нескольких регионов записи](how-to-manage-database-account.md#configure-multiple-write-regions).
 
-## <a name="net-sdk-v2"></a><a id="netv2"></a>.NET SDK v2
+## <a name="net-sdk-v2"></a><a id="netv2"></a>Пакет SDK для .NET версии 2
 
 Чтобы включить несколько источников в приложении, задайте для параметра `UseMultipleWriteLocations` значение `true`. Кроме того, задайте для `SetCurrentLocation` регион, в котором развернуто приложение и реплицируется Azure Cosmos DB:
 
@@ -34,7 +34,7 @@ ConnectionPolicy policy = new ConnectionPolicy
 policy.SetCurrentLocation("West US 2");
 ```
 
-## <a name="net-sdk-v3"></a><a id="netv3"></a>Пакет SDK для .NET версии 3
+## <a name="net-sdk-v3"></a><a id="netv3"></a>Пакет SDK для .NET v3
 
 Чтобы включить несколько источников в своем приложении, задайте для параметра `ApplicationRegion` регион, в котором развернуто приложение и реплицируется Cosmos DB:
 
@@ -108,10 +108,10 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
 
 * [Использование маркеров сеанса](how-to-manage-consistency.md#utilize-session-tokens)
 * [Типы конфликтов и политики их устранения](conflict-resolution-policies.md)
-* [Высокая доступность в Azure Cosmos DB](high-availability.md)
+* [Высокий уровень доступности в Azure Cosmos DB](high-availability.md)
 * [Уровни согласованности в Azure Cosmos DB](consistency-levels.md)
 * [Choose the right consistency level](consistency-levels-choosing.md) (Выбор правильного уровня согласованности)
-* [Согласованность, доступность и производительность в Azure Cosmos DB](consistency-levels-tradeoffs.md)
+* [Недостатки согласованности, доступности и производительности в Azure Cosmos DB](consistency-levels-tradeoffs.md)
 * [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
 * [Глобальное масштабирование подготовленной пропускной способности](scaling-throughput.md)
-* [Глобальное распространение: под капотом](global-dist-under-the-hood.md)
+* [Глобальное распределение. внутри](global-dist-under-the-hood.md)

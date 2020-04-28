@@ -1,57 +1,57 @@
 ---
-title: Ограничьте доступ пользователей к операциям данных только с помощью Azure Cosmos DB
-description: Узнайте, как ограничить доступ к операциям данных только с Помощью Azure Cosmos DB
+title: Ограничьте доступ пользователей к операциям с данными только с помощью Azure Cosmos DB
+description: Узнайте, как ограничить доступ к операциям с данными только с помощью Azure Cosmos DB
 author: voellm
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/9/2019
 ms.author: tvoellm
 ms.openlocfilehash: 03cad9e4c3752b5f35be785a6280bf18aaa14860
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74980378"
 ---
 # <a name="restrict-user-access-to-data-operations-only"></a>Ограничение доступа пользователей только операциями с данными
 
-В Azure Cosmos DB существует два способа аутентификации взаимодействия с службой базы данных:
-- используя иноеудостоверения Active Directory Azure при взаимодействии с порталом Azure,
-- использование [ключей](secure-access-to-data.md#master-keys) DB Azure Cosmos или [токенов ресурсов](secure-access-to-data.md#resource-tokens) при выдаче звонков от AIS и SDK.
+В Azure Cosmos DB есть два способа проверки подлинности взаимодействия со службой базы данных:
+- Использование удостоверения Azure Active Directory при взаимодействии с портал Azure
+- использование [ключей](secure-access-to-data.md#master-keys) Azure Cosmos DB или [маркеров ресурсов](secure-access-to-data.md#resource-tokens) при выдаче вызовов из API и пакетов SDK.
 
-Каждый метод проверки подлинности дает доступ к ![различным наборам операций, с некоторым совпадением: Разделение операций по типу аутентификации](./media/how-to-restrict-user-data/operations.png)
+Каждый метод проверки подлинности предоставляет доступ к разным наборам операций с перекрытием: ![Разбиение операций на тип проверки подлинности](./media/how-to-restrict-user-data/operations.png)
 
-В некоторых сценариях может потребоваться ограничить некоторых пользователей организации выполнять операции данных (то есть только запросы и запросы CRUD). Обычно это относится к разработчикам, которым не нужно создавать или удалять ресурсы или изменять прокладку подготовленных контейнеров, над которыми они работают.
+В некоторых сценариях может потребоваться ограничить количество пользователей организации для выполнения операций с данными (то есть запросов CRUD и запросов). Обычно это относится к разработчикам, которым не требуется создавать или удалять ресурсы, или изменять подготовленную пропускную способность контейнеров, над которыми они работают.
 
-Вы можете ограничить доступ, применяя следующие действия:
-1. Создание пользовательской роли активного каталога Azure для пользователей, к которым требуется ограничить доступ. Пользовательская роль Active Directory должна иметь тонкий уровень доступа к операциям с использованием [гранулированных действий](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb)Azure Cosmos DB.
-1. Отказ при выполнении операций, не связанных с данными, с помощью ключей. Этого можно достичь, ограничив эти операции только вызовами диспетчера ресурсов Azure.
+Вы можете ограничить доступ, применив следующие шаги.
+1. Создание настраиваемой роли Azure Active Directory для пользователей, которым требуется ограничить доступ. Настраиваемая роль Active Directory должна иметь детальный уровень доступа к операциям с помощью [детализированных действий](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb)Azure Cosmos DB.
+1. Запрещение выполнения операций, не связанных с данными, с ключами. Это достигается путем того, что эти операции ограничиваются только Azure Resource Manager вызовах.
 
-В следующих разделах этой статьи показаны способы выполнения этих шагов.
+В следующих разделах этой статьи показано, как выполнить эти действия.
 
 > [!NOTE]
-> Для выполнения команд в следующих разделах необходимо установить модуль Azure PowerShell 3.0.0 или позже, а также [роль владельца Azure](../role-based-access-control/built-in-roles.md#owner) в подписке, которую вы пытаетесь изменить.
+> Чтобы выполнить команды в следующих разделах, необходимо установить Azure PowerShell Module 3.0.0 или более поздней версии, а также [роль владельца Azure](../role-based-access-control/built-in-roles.md#owner) в подписке, которую вы пытаетесь изменить.
 
-В сценариях PowerShell в следующих разделах замените следующие заполнители значениями, специфичными для вашей среды:
-- `$MySubscriptionId`- Идентификатор подписки, содержащий учетную запись Azure Cosmos, где требуется ограничить разрешения. Например: `e5c8766a-eeb0-40e8-af56-0eb142ebf78e`.
-- `$MyResourceGroupName`- Группа ресурсов, содержащая учетную запись Azure Cosmos. Например: `myresourcegroup`.
-- `$MyAzureCosmosDBAccountName`- Название вашей учетной записи Azure Cosmos. Например: `mycosmosdbsaccount`.
-- `$MyUserName`- Логинusername@domain() пользователя, для которого вы хотите ограничить доступ. Например: `cosmosdbuser@contoso.com`.
+В сценариях PowerShell в следующих разделах Замените следующие заполнители значениями, характерными для вашей среды:
+- `$MySubscriptionId`— Идентификатор подписки, содержащий учетную запись Azure Cosmos, в которой необходимо ограничить разрешения. Например: `e5c8766a-eeb0-40e8-af56-0eb142ebf78e`.
+- `$MyResourceGroupName`— Группа ресурсов, содержащая учетную запись Azure Cosmos. Например: `myresourcegroup`.
+- `$MyAzureCosmosDBAccountName`— Имя учетной записи Azure Cosmos. Например: `mycosmosdbsaccount`.
+- `$MyUserName`— Имя входа (username@domain) пользователя, для которого необходимо ограничить доступ. Например: `cosmosdbuser@contoso.com`.
 
 ## <a name="select-your-azure-subscription"></a>Выбор подписки Azure
 
-Команды Azure PowerShell требуют входа и выбора подписки для выполнения команд:
+Azure PowerShell командам требуется выполнить вход и выбрать подписку для выполнения команд:
 
 ```azurepowershell
 Login-AzAccount
 Select-AzSubscription $MySubscriptionId
 ```
 
-## <a name="create-the-custom-azure-active-directory-role"></a>Создание пользовательской роли активного каталога Azure
+## <a name="create-the-custom-azure-active-directory-role"></a>Создание настраиваемой роли Azure Active Directory
 
-Следующий скрипт создает назначение ролей Active Directory Azure с доступом «Только ключ» для учетных записей Azure Cosmos. Роль основана на [пользовательских ролях для ресурсов Azure](../role-based-access-control/custom-roles.md) и [гранулированных действиях для Azure Cosmos DB.](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb) Эти роли и действия `Microsoft.DocumentDB` являются частью пространства имен Active Directory Azure.
+Следующий скрипт создает назначение роли Azure Active Directory с доступом только для ключа для учетных записей Azure Cosmos. Эта роль основана на [пользовательских ролях для ресурсов Azure](../role-based-access-control/custom-roles.md) и [детализированных действиях для Azure Cosmos DB](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb). Эти роли и действия являются частью пространства имен `Microsoft.DocumentDB` Azure Active Directory.
 
-1. Во-первых, создайте `AzureCosmosKeyOnlyAccess.json` документ JSON с названием со следующим содержанием:
+1. Сначала создайте документ JSON с именем `AzureCosmosKeyOnlyAccess.json` со следующим содержимым:
 
     ```
     {
@@ -73,7 +73,7 @@ Select-AzSubscription $MySubscriptionId
     }
     ```
 
-1. Выполнить следующие команды, чтобы создать назначение роли и назначить его пользователю:
+1. Выполните следующие команды, чтобы создать назначение роли и назначить его пользователю:
 
     ```azurepowershell
     New-AzRoleDefinition -InputFile "AzureCosmosKeyOnlyAccess.json"
@@ -82,9 +82,9 @@ Select-AzSubscription $MySubscriptionId
 
 ## <a name="disallow-the-execution-of-non-data-operations"></a>Запретить выполнение операций, не связанных с данными
 
-Следующие команды удаляют возможность использования ключей к:
-- создавать, изменять или удалять ресурсы
-- настройки контейнеров (включая политики индексирования, пропускную емкость и т.д.).
+Следующие команды позволяют удалить возможность использования ключей в следующих разделах:
+- Создание, изменение и удаление ресурсов
+- Обновите параметры контейнера (включая политики индексирования, пропускную способность и т. д.).
 
 ```azurepowershell
 $cdba = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName $MyResourceGroupName -ResourceName $MyAzureCosmosDBAccountName
@@ -94,5 +94,5 @@ $cdba | Set-AzResource -Force
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о [элементах управления доступом на основе роли Cosmos DB](role-based-access-control.md)
-- Получить обзор [безопасного доступа к данным в Cosmos DB](secure-access-to-data.md)
+- Дополнительные сведения об [управлении доступом на основе ролей Cosmos DB](role-based-access-control.md)
+- Получите общие сведения о [безопасном доступе к данным в Cosmos DB](secure-access-to-data.md)

@@ -1,5 +1,5 @@
 ---
-title: Концепции восстановления контрольно-пропускных пунктов и воспроизведения в аналитике Azure Stream Analytics
+title: Основные понятия восстановления контрольной точки и воспроизведения в Azure Stream Analytics
 description: В этой статье описываются концепции контрольных точек и воспроизведения в контексте восстановления заданий в Azure Stream Analytics.
 author: mamccrea
 ms.author: mamccrea
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
 ms.openlocfilehash: f5bb2b97d7da770828c2f4f03167483ad2044c79
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75426391"
 ---
 # <a name="checkpoint-and-replay-concepts-in-azure-stream-analytics-jobs"></a>Концепции контрольных точек и воспроизведения в Azure Stream Analytics

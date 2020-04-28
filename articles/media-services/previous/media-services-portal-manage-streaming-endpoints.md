@@ -1,6 +1,6 @@
 ---
 title: Управление конечными точками потоковой передачи с помощью портала Azure | Документация Майкрософт
-description: В этой статье показано, как управлять конечными точками потоковой передачи с помощью портала Azure.
+description: В этой статье показано, как управлять конечными точками потоковой передачи с помощью портал Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 57ec22cb02512577f8737718cae9175403fb5603
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74900880"
 ---
 # <a name="manage-streaming-endpoints-with-the-azure-portal"></a>Управление конечными точками потоковой передачи с помощью портала Azure 
@@ -55,7 +55,7 @@ ms.locfileid: "74900880"
     Может потребоваться несколько конечных точек потоковой передачи, если вы планируете использовать разные сети CDN (или сеть CDN) и прямой доступ.
 
 2. Чтобы удалить конечную точку потоковой передачи, нажмите кнопку **Удалить** .      
-3. Нажмите кнопку **«Пуск»,** чтобы запустить конечную точку потоковой передачи.
+3. Нажмите кнопку " **Пуск** ", чтобы запустить конечную точку потоковой передачи.
    
     ![конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints2.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "74900880"
 Конечную точку потоковой передачи можно настроить следующим образом.
 
 1. Выберите конечную точку потоковой передачи, которую хотите настроить.
-2. Щелкните **Настройки**.
+2. Щелкните **Параметры**.
 
 Далее представлено краткое описание полей.
 
@@ -87,7 +87,7 @@ ms.locfileid: "74900880"
 
 ## <a name="scale-your-premium-streaming-endpoint"></a>Масштабирование конечной точки потоковой передачи уровня "Премиум"
 
-Для получения дополнительной информации смотрите [эту](media-services-portal-scale-streaming-endpoints.md) статью.
+Дополнительные сведения см. в [этой](media-services-portal-scale-streaming-endpoints.md) статье.
 
 ## <a name="enable-azure-cdn-integration"></a><a id="enable_cdn"></a>Включение интеграции Azure CDN
 
@@ -97,7 +97,7 @@ ms.locfileid: "74900880"
 
 Интеграция CDN включена во всех центрах обработки данных Azure, за исключением Китая и регионов федерального правительства США.
 
-После включения, конфигурация **аутентификации** **подписи Подписи**Akamai и акамай Подпись отключена.
+После включения конфигурация **проверки подлинности** для **контроля доступа**, * * пользовательского имени узла и подписи Akamai отключается.
  
 > [!IMPORTANT]
 > Для конечных точек потоковой передачи уровня "Стандартный" интеграция служб мультимедиа Azure с Azure CDN реализуется на базе **Azure CDN от Verizon**. Конечные точки потоковой передачи уровня "Премиум" можно настроить, используя все **ценовые категории и поставщики Azure CDN**. Дополнительные сведения о возможностях Azure CDN см. в [этом обзоре](../../cdn/cdn-overview.md).
@@ -120,6 +120,6 @@ ms.locfileid: "74900880"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

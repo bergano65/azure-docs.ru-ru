@@ -1,5 +1,5 @@
 ---
-title: Высокочастотная торговля с помощью аналитики Azure Stream
+title: Торговля с высокой частотой с помощью Azure Stream Analytics
 description: Обучение и оценка модели линейной регрессии в задании Stream Analytics
 author: mamccrea
 ms.author: mamccrea
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 06a4bdb8a8ee5d458347d30b53f740952151799e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75426210"
 ---
 # <a name="high-frequency-trading-simulation-with-stream-analytics"></a>Моделирование высокочастотного трейдинга с помощью Stream Analytics
@@ -64,7 +64,7 @@ socket.On(Socket.EVENT_CONNECT, () =>
 >Метка времени события — **lastUpdated** в формате UNIX-времени.
 
 ### <a name="predictive-model-for-high-frequency-trading"></a>Прогнозная модель высокочастотного трейдинга
-Для демонстрации мы используем линейную модель, описанную Дэррилом Шэнем в [его работе.](https://docplayer.net/23038840-Order-imbalance-based-strategy-in-high-frequency-trading.html)
+В целях демонстрации мы используем линейную модель, описанную в Дэррил Shen) в [своем документе](https://docplayer.net/23038840-Order-imbalance-based-strategy-in-high-frequency-trading.html).
 
 Диспропорция объемных биржевых заявок (VOI) — это функция текущей цены бид/аск и объема, а также соотношения цены бид/аск и объема в пределах последнего тика. В документе определяется корреляция между VOI и будущим изменением цены, а также создается линейная модель между предыдущими 5 значениями VOI и изменением цены в течение следующих 10 тиков. Обучение модели выполняется на основе данных предыдущего дня с использованием линейной регрессии. 
 

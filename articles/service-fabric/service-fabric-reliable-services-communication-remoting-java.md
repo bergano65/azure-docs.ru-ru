@@ -1,20 +1,20 @@
 ---
-title: Ремотивация службы с помощью Java в ткани службы Azure
+title: Удаленное взаимодействие служб с помощью Java в Azure Service Fabric
 description: Удаленное взаимодействие Service Fabric позволяет осуществлять обмен данными между службами и клиентами и службами Java с помощью удаленного вызова процедур.
 author: PavanKunapareddyMSFT
 ms.topic: conceptual
 ms.date: 06/30/2017
 ms.author: pakunapa
 ms.openlocfilehash: eef63d7a2c8a4b15938dfbffd7db5f9d1b22d426
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75426638"
 ---
 # <a name="service-remoting-in-java-with-reliable-services"></a>Удаленное взаимодействие службы в Java с Reliable Services
 > [!div class="op_single_selector"]
-> * [C на Windows](service-fabric-reliable-services-communication-remoting.md)
+> * [C# в Windows](service-fabric-reliable-services-communication-remoting.md)
 > * [Java в Linux](service-fabric-reliable-services-communication-remoting-java.md)
 >
 >
@@ -94,7 +94,7 @@ CompletableFuture<String> message = helloWorldClient.helloWorldAsync();
 ServiceProxy обрабатывает все исключения отработки отказа для секции службы, для которого он создан. Он повторно разрешает конечные точки в случае исключений отработки отказа (повторяющихся исключений) и повторяет вызов к правильной конечной точке. Число повторных попыток для исключения отработки отказа не ограничено.
 В случае исключений TransientException только повторяется попытка вызова.
 
-Параметры повтора по умолчанию provied [OperationRetrySettings.](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.communication.client.operationretrysettings)
+Параметры повтора по умолчанию — предоставленного by [OperationRetrySettings](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.communication.client.operationretrysettings).
 Вы можете настроить эти значения, передав объект OperationRetrySettings в конструктор ServiceProxyFactory.
 
 ## <a name="next-steps"></a>Дальнейшие действия

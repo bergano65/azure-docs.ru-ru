@@ -1,5 +1,5 @@
 ---
-title: Выверанка сохраненной процедуры из деятельности по копированию фабрики данных Azure
+title: Вызов хранимой процедуры из действия копирования фабрики данных Azure
 description: Узнайте, как вызвать хранимую процедуру в базе данных SQL Azure или SQL Server из действия копирования в фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: d05c2b03a0c498144f37c9b6205053120a596b09
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74924095"
 ---
 # <a name="invoke-stored-procedure-from-copy-activity-in-azure-data-factory"></a>Вызов хранимой процедуры из действия копирования в фабрике данных Azure
@@ -94,4 +94,4 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
 - [База данных SQL Azure](data-factory-azure-sql-connector.md)
-- [SQL Server](data-factory-sqlserver-connector.md)
+- [SQL Server](data-factory-sqlserver-connector.md)

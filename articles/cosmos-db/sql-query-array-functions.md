@@ -1,6 +1,6 @@
 ---
-title: Функции массива на языке d-запросов Azure Cosmos
-description: Узнайте о том, как функции массива позволяют выполнять операции на массивах в Azure Cosmos DB
+title: Функции массивов в Azure Cosmos DB языке запросов
+description: Сведения о том, как функции массивов позволяют выполнять операции с массивами в Azure Cosmos DB
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,19 +8,19 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: a0256470892d634361498f1632027aff562c7761
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74871811"
 ---
-# <a name="array-functions-azure-cosmos-db"></a>Функции массива (Azure Cosmos DB)
+# <a name="array-functions-azure-cosmos-db"></a>Функции массивов (Azure Cosmos DB)
 
-Функции массива позволяют выполнять операции на массивах в Azure Cosmos DB.
+Функции массивов позволяют выполнять операции с массивами в Azure Cosmos DB.
 
 ## <a name="functions"></a>Функции
 
-Следующие функции масштабирования выполняют операцию на вхотозанном значении массива и возвращают числовое, boolean или значение массива:
+Следующие скалярные функции выполняют операцию над входным значением массива и возвращают числовое, логическое или значение массива:
   
 ||||  
 |-|-|-|  
@@ -30,7 +30,7 @@ ms.locfileid: "74871811"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)
 - [Определенные пользователем функции](sql-query-udfs.md)
 - [Статистические выражения](sql-query-aggregates.md)

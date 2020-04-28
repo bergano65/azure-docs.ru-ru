@@ -9,24 +9,24 @@ ms.date: 11/26/2019
 ms.author: tamram
 ms.custom: include
 ms.openlocfilehash: de79ea50d12ab322d1e28d0ad650df30ecc0c222
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74806594"
 ---
 ## <a name="install-client-library-packages"></a>Установка пакетов клиентской библиотеки
 
 > [!NOTE]
-> Примеры, приведенные здесь, используют версию 12 библиотеки клиентской библиотеки Azure Storage. Библиотека клиентов версии 12 является частью SDK Azure. Более подробную информацию о SDK Azure можно узнать в репозитории Azure SDK на [GitHub.](https://github.com/Azure/azure-sdk)
+> В примерах, показанных здесь, используется клиентская библиотека службы хранилища Azure версии 12. Клиентская библиотека версии 12 является частью пакета SDK для Azure. Дополнительные сведения о пакете SDK для Azure см. в репозитории Azure SDK на сайте [GitHub](https://github.com/Azure/azure-sdk).
 
-Чтобы установить пакет хранения Blob, запустите следующую команду с консоли менеджера пакетов NuGet:
+Чтобы установить пакет хранилища BLOB-объектов, выполните следующую команду в консоли диспетчера пакетов NuGet:
 
 ```powershell
 Install-Package Azure.Storage.Blobs
 ```
 
-Примеры, приведенные здесь, также используют последнюю версию [клиентской библиотеки Azure Identity для проверки](https://www.nuget.org/packages/Azure.Identity/) подлинности с помощью учетных данных Azure AD. Чтобы установить пакет, запустите следующую команду из консоли менеджера пакетов NuGet:
+В примерах, показанных здесь, также используется последняя версия [клиентской библиотеки удостоверений Azure для .NET](https://www.nuget.org/packages/Azure.Identity/) для аутентификации с помощью учетных данных Azure AD. Чтобы установить пакет, выполните следующую команду в консоли диспетчера пакетов NuGet:
 
 ```powershell
 Install-Package Azure.Identity

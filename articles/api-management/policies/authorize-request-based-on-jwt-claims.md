@@ -1,5 +1,5 @@
 ---
-title: Пример политики управления API - Разрешить доступ на основе претензий JWT
+title: Пример политики управления API — авторизация доступа на основе утверждений JWT
 titleSuffix: Azure API Management
 description: Пример политики управления API Azure. Авторизации доступа к определенным методам HTTP API на основе утверждений JWT.
 services: api-management
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 1b84854688fbdcc017b16698dfebfe54a7210110
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75422178"
 ---
 # <a name="authorize-access-based-on-jwt-claims"></a>Авторизация доступа на основе утверждений JWT

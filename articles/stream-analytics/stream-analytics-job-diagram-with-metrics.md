@@ -8,15 +8,15 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/01/2017
 ms.openlocfilehash: 3c0c29e1793e56efae8d13cb01d57faf257d8805
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75426077"
 ---
 # <a name="data-driven-debugging-by-using-the-job-diagram"></a>Отладка на основе данных с помощью схемы заданий
 
-Диаграмма выполнения на лезвии **мониторинга** на портале Azure может помочь вам визуализировать конвейер работы. На ней представлены сведения о входных и выходных данных, а также о шагах запроса. С помощью схемы заданий можно проанализировать метрики на каждом шаге, чтобы быстро выявить источник проблемы при устранении неполадок.
+Схема задания в колонке **мониторинг** портал Azure может помочь визуализировать конвейер заданий. На ней представлены сведения о входных и выходных данных, а также о шагах запроса. С помощью схемы заданий можно проанализировать метрики на каждом шаге, чтобы быстро выявить источник проблемы при устранении неполадок.
 
 ## <a name="using-the-job-diagram"></a>Использование схемы заданий
 
@@ -55,7 +55,7 @@ ms.locfileid: "75426077"
 *   **InputEventsSourcesTotal** содержит число прочитанных единиц данных, например больших двоичных объектов.
 *   Метрика **InputEventsTotal** содержит число прочитанных событий. Эта метрика доступна для каждого раздела.
 *   Метрика **InputEventsInBytesTotal** содержит число прочитанных байтов.
-*   **InputEventsLastArrivalTime** обновляется с каждым полученным событием в приуроченном времени.
+*   **Инпутевентсластарривалтиме** обновляется со временем каждого полученного события в очереди.
  
 ### <a name="is-time-moving-forward-if-actual-events-are-read-punctuation-might-not-be-issued"></a>Отсчитывается ли время? Если фактические события считываются, знаки препинания могут быть опущены.
 
@@ -85,5 +85,5 @@ ms.locfileid: "75426077"
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Начало работы со Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий Stream Analytics](stream-analytics-scale-jobs.md)
-* [Ссылка на язык запроса Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
+* [Справочник по языку запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics)

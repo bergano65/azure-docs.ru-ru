@@ -1,6 +1,6 @@
 ---
-title: Передовые практики Node.js и устранение неполадок
-description: Изучите рекомендации и шаги по устранению неполадок для приложений Node.js, работающих в службе приложений Azure.
+title: Рекомендации по использованию и устранению неполадок в Node. js
+description: Ознакомьтесь с рекомендациями и действиями по устранению неполадок для приложений Node. js, работающих в службе приложений Azure.
 author: msangapu-msft
 ms.assetid: 387ea217-7910-4468-8987-9a1022a99bef
 ms.devlang: nodejs
@@ -9,10 +9,10 @@ ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
 ms.openlocfilehash: 682884d11b298a97e27056af3c10802dfd410e4c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75430568"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
@@ -123,7 +123,7 @@ ms.locfileid: "75430568"
 
 Модуль agentkeepalive следит за тем, чтобы сокеты на виртуальной машине, выполняющей веб-приложение Azure, использовались многократно. Если для каждого исходящего запроса создается новый сокет, нагрузка на приложение возрастает. Применив в приложении механизм повторного использования сокетов для исходящих запросов, вы сможете избежать превышения допустимого числа сокетов (параметр maxSockets), выделяемых для каждой виртуальной машины. В службе приложений Azure мы рекомендуем установить для agentKeepAlive параметр maxSockets со значением 160 сокетов на виртуальную машину (4 экземпляра node.exe \* 40 maxSocket для каждого экземпляра).
 
-Пример [конфигурации agentKeepALive:](https://www.npmjs.com/package/agentkeepalive)
+Пример конфигурации [agentKeepALive](https://www.npmjs.com/package/agentkeepalive) :
 
 ```nodejs
 let keepaliveAgent = new Agent({
@@ -205,7 +205,7 @@ http.createServer(function (req, res) {
 
 ![](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/scm_profile.cpuprofile.png)
 
-Загрузите этот файл и откройте его с помощью средств Chrome (клавиша F12). Нажмите F12 на Chrome, затем выберите **Load** вкладку **Профили.** Выберите загруженный файл profile.cpuprofile. Щелкните только что загруженный профиль.
+Загрузите этот файл и откройте его с помощью средств Chrome (клавиша F12). Нажмите клавишу F12 на Chrome, а затем выберите вкладку **Профили** . Нажмите кнопку **загрузить** . Выберите загруженный файл profile.cpuprofile. Щелкните только что загруженный профиль.
 
 ![](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/chrome_tools_view.png)
 
@@ -273,7 +273,7 @@ NODE.exe поддерживает параметр с именем `NODE_PENDING
 
 Дополнительные сведения о приложениях Node.js в службе приложений Azure см. по следующим ссылкам.
 
-* [Начало работы с веб-приложениями Node.js в службе приложений Azure](app-service-web-get-started-nodejs.md)
+* [Приступая к работе с веб-приложениями Node.js в службе приложений Azure](app-service-web-get-started-nodejs.md)
 * [Отладка веб-приложения Node.js в службе приложений Azure](https://blogs.msdn.microsoft.com/azureossds/2018/08/03/debugging-node-js-apps-on-azure-app-services/)
 * [Использование модулей Node.js с приложениями Azure](../nodejs-use-node-modules-azure-apps.md)
 * [Azure App Service Web Apps: Node.js (Веб-приложения службы приложений Azure: Node.js)](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)

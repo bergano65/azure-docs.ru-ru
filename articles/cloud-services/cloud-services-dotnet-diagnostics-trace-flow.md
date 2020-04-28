@@ -1,5 +1,5 @@
 ---
-title: Отслеживание потока в приложении облачных служб с помощью Azure Diagnostics
+title: Трассировка потока в приложении облачных служб с помощью система диагностики Azure
 titleSuffix: Azure Cloud Services
 description: Добавление сообщений трассировки в приложения Azure для отладки, измерения производительности, мониторинга, анализа трафика и выполнения других задач.
 services: cloud-services
@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 02/20/2016
 ms.author: tagore
 ms.openlocfilehash: 47a33ba27dd6d2df626d93695c421303bace6a0b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75386516"
 ---
 # <a name="trace-the-flow-of-a-cloud-services-application-with-azure-diagnostics"></a>Трассировка потока в приложении облачных служб с помощью системы диагностики Azure
@@ -65,8 +65,8 @@ ms.locfileid: "75386516"
 Добавив прослушиватель, вы можете добавить в код трассировочные операторы.
 
 ### <a name="to-add-trace-statement-to-your-code"></a>Добавление трассировочного оператора в код
-1. Откройте исходный файл приложения. Например, \<файл RoleName>.cs для роли работника или веб-роли.
-2. Добавьте следующую директиву использования, если она еще не добавлена:
+1. Откройте исходный файл приложения. Например, файл \<RoleName>. cs для рабочей роли или веб-роли.
+2. Добавьте следующую директиву using, если она еще не добавлена:
     ```
         using System.Diagnostics;
     ```

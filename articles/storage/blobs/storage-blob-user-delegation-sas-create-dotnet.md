@@ -1,7 +1,7 @@
 ---
-title: Используйте .NET для создания sAS-делегации пользователя для контейнера или капли
+title: Использование .NET для создания SAS делегирования пользователя для контейнера или большого двоичного объекта
 titleSuffix: Azure Storage
-description: Узнайте, как создать SAS с помощью учетных данных Azure Active Directory с помощью клиентской библиотеки .NET для хранения Azure.
+description: Узнайте, как создать SAS делегирования пользователя с учетными данными Azure Active Directory с помощью клиентской библиотеки .NET для службы хранилища Azure.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,31 +11,31 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
 ms.openlocfilehash: 385d2c3b88bc2e4d653dae2dc9670cb9e9388faf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "75371842"
 ---
-# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net"></a>Создание делегации пользователя SAS для контейнера или капли с помощью .NET
+# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS-сообщества пользователей для контейнера или капли с библиотекой клиентов Azure Storage для .NET.
+В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с клиентской библиотекой хранилища Azure для .NET.
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
-## <a name="assign-rbac-roles-for-access-to-data"></a>Назначить роли RBAC для доступа к данным
+## <a name="assign-rbac-roles-for-access-to-data"></a>Назначение ролей RBAC для доступа к данным
 
-Когда принцип безопасности Azure AD пытается получить доступ к данным blob, у этого принципала безопасности должны быть разрешения на ресурс. Независимо от того, является ли принцип безопасности управляемым удостоверением личности в Azure или учетной записью пользователя Azure AD, работающим с кодом в среде разработки, директору безопасности необходимо назначить роль RBAC, которая предоставляет доступ к данным blob в Azure Storage. Для получения информации о назначении разрешений через RBAC см. раздел под названием **Присваивать роли RBAC для прав доступа** в [authorize access to Azure blobs и очередей с помощью Azure Active Directory.](../common/storage-auth-aad.md#assign-rbac-roles-for-access-rights)
+Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль RBAC, которая предоставляет доступ к данным большого двоичного объекта в службе хранилища Azure. Сведения о назначении разрешений через RBAC см. в разделе **назначение РОЛЕЙ RBAC для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-rbac-roles-for-access-rights).
 
 [!INCLUDE [storage-install-packages-blob-and-identity-include](../../../includes/storage-install-packages-blob-and-identity-include.md)]
 
-Чтобы узнать больше о том, как проверить подлинность с помощью клиентской библиотеки Azure Identity из Azure Storage, смотрите раздел под названием **Authenticate с библиотекой идентификаторов Azure,** чтобы [разрешить доступ к каплям и очередям с помощью Active Directory Azure и управляемых идентификаторов для ресурсов Azure.](../common/storage-auth-aad-msi.md?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json#authenticate-with-the-azure-identity-library)
+Дополнительные сведения о проверке подлинности с помощью клиентской библиотеки удостоверений Azure из службы хранилища Azure см. в разделе **Проверка подлинности с помощью библиотеки удостоверений Azure** в статье [авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](../common/storage-auth-aad-msi.md?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json#authenticate-with-the-azure-identity-library).
 
 ## <a name="add-using-directives"></a>Добавление директив using
 
-Добавьте `using` в код следующие директивы, чтобы использовать клиентские библиотеки Azure Identity и Azure Storage.
+Добавьте следующие `using` директивы в код для использования Azure Identity и клиентских библиотек службы хранилища Azure.
 
 ```csharp
 using System;
@@ -48,11 +48,11 @@ using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 ```
 
-## <a name="get-an-authenticated-token-credential"></a>Получить удостоверение подлинности маркера
+## <a name="get-an-authenticated-token-credential"></a>Получение учетных данных маркера, прошедшего проверку подлинности
 
-Чтобы получить учетные данные маркеров, которые код может использовать для авторизации запросов в Хранилище Azure, создайте экземпляр класса [DefaultAzureCredential.](/dotnet/api/azure.identity.defaultazurecredential)
+Чтобы получить учетные данные маркера, которые ваш код может использовать для авторизации запросов в службе хранилища Azure, создайте экземпляр класса [дефаултазурекредентиал](/dotnet/api/azure.identity.defaultazurecredential) .
 
-Следующий фрагмент кода показывает, как получить удостоверение подлинности маркера и использовать его для создания клиента службы для хранения Blob:
+В следующем фрагменте кода показано, как получить учетные данные маркера, прошедшего проверку подлинности, и использовать его для создания клиента службы для хранилища BLOB-объектов:
 
 ```csharp
 // Construct the blob endpoint from the account name.
@@ -63,18 +63,18 @@ BlobServiceClient blobClient = new BlobServiceClient(new Uri(blobEndpoint),
                                                      new DefaultAzureCredential());
 ```
 
-## <a name="get-the-user-delegation-key"></a>Получите ключ от делегации пользователя
+## <a name="get-the-user-delegation-key"></a>Получение ключа делегирования пользователя
 
-Каждый SAS подписывается ключом. Для создания sAS делегации пользователя необходимо сначала запросить ключ делегации пользователя, который затем используется для подписания SAS. Ключ делегации пользователя аналогин ключу учетной записи, используемому для подписания службы SAS или учетной записи SAS, за исключением того, что он опирается на учетные данные Azure AD. Когда клиент запрашивает ключ от делегации пользователя с помощью токена OAuth 2.0, Azure Storage возвращает ключ делегации пользователя от имени пользователя.
+Каждый SAS подписывается ключом. Чтобы создать SAS для делегирования пользователей, необходимо сначала запросить ключ делегирования пользователя, который затем используется для подписания SAS. Ключ делегирования пользователя аналогичен ключу учетной записи, используемому для подписания SAS службы или SAS учетной записи, за исключением того, что он использует учетные данные Azure AD. Когда клиент запрашивает ключ делегирования пользователя с помощью маркера OAuth 2,0, служба хранилища Azure Возвращает ключ делегирования пользователя от имени пользователя.
 
-Если у вас есть ключ для делегирования пользователя, вы можете использовать этот ключ для создания любого количества подписей общего доступа делегации пользователей в течение всего срока службы ключа. Ключ делегации пользователя не зависит от токена OAuth 2.0, используемого для его приобретения, поэтому токен не должен обновляться до тех пор, пока ключ остается в силе. Вы можете указать, что ключ действителен в течение 7 дней.
+После получения ключа делегирования пользователя можно использовать этот ключ, чтобы создать любое количество подписанных URL для общего доступа пользователя в течение времени существования ключа. Ключ делегирования пользователя не зависит от токена OAuth 2,0, используемого для его получения, поэтому токен не нуждается в продлении, пока ключ остается действительным. Можно указать, что ключ действителен в течение периода до 7 дней.
 
-Используйте один из следующих методов для запроса ключа делегации пользователя:
+Используйте один из следующих методов, чтобы запросить ключ делегирования пользователя:
 
-- [GetUserDelegationKey](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.getuserdelegationkey)
-- [GetUserDelegationKeyAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.getuserdelegationkeyasync)
+- [жетусерделегатионкэй](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.getuserdelegationkey)
+- [жетусерделегатионкэйасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.getuserdelegationkeyasync)
 
-Следующий фрагмент кода получает ключ от делегации пользователя и выписывает его свойства:
+Следующий фрагмент кода получает ключ делегирования пользователя и записывает его свойства:
 
 ```csharp
 // Get a user delegation key for the Blob service that's valid for seven days.
@@ -92,9 +92,9 @@ Console.WriteLine("Key signed service: {0}", key.SignedService);
 Console.WriteLine("Key signed version: {0}", key.SignedVersion);
 ```
 
-## <a name="create-the-sas-token"></a>Создание токена SAS
+## <a name="create-the-sas-token"></a>Создание маркера SAS
 
-Следующий фрагмент кода показывает создать новый [BlobSasBuilder](/dotnet/api/azure.storage.sas.blobsasbuilder) и предоставить параметры для пользователя делегации SAS. Фрагмент затем вызывает [Параметры ТоСасКуири,](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) чтобы получить строку маркера SAS. Наконец, код создает полный URI, включая адрес ресурса и токен SAS.
+В следующем фрагменте кода показано создание нового [блобсасбуилдер](/dotnet/api/azure.storage.sas.blobsasbuilder) и указание параметров для SAS делегирования пользователя. Затем фрагмент вызывает [тосаскуерипараметерс](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) для получения строки токена SAS. Наконец, код создает полный универсальный код ресурса (URI), включая адрес ресурса и маркер SAS.
 
 ```csharp
 // Create a SAS token that's valid for one hour.
@@ -123,9 +123,9 @@ UriBuilder fullUri = new UriBuilder()
 };
 ```
 
-## <a name="example-get-a-user-delegation-sas"></a>Пример: Получить делегацию пользователя SAS
+## <a name="example-get-a-user-delegation-sas"></a>Пример. получение SAS для делегирования пользователя
 
-Следующий пример метода показывает полный код для проверки подлинности принципала безопасности и создания делегации пользователя SAS:
+В следующем примере метода показан полный код для проверки подлинности субъекта безопасности и создания SAS для делегирования пользователя.
 
 ```csharp
 async static Task<Uri> GetUserDelegationSasBlob(string accountName, string containerName, string blobName)
@@ -183,9 +183,9 @@ async static Task<Uri> GetUserDelegationSasBlob(string accountName, string conta
 }
 ```
 
-## <a name="example-read-a-blob-with-a-user-delegation-sas"></a>Пример: Прочитайте каплю с делегацией пользователя SAS
+## <a name="example-read-a-blob-with-a-user-delegation-sas"></a>Пример. чтение большого двоичного объекта с помощью SAS делегирования пользователя
 
-Следующий пример тестирует делегацию пользователей SAS, созданную в предыдущем примере из смоделированного клиентского приложения. Если SAS действителен, клиентское приложение может прочитать содержимое капли. Если SAS недействителен, например, если срок ее действия истек, Azure Storage возвращает код ошибки 403 (Запрещено).
+В следующем примере выполняется проверка SAS делегирования пользователя, созданного в предыдущем примере, из имитации клиентского приложения. Если SAS является допустимым, клиентское приложение может прочитать содержимое большого двоичного объекта. Если SAS является недопустимым, например, если срок его действия истек, служба хранилища Azure возвращает код ошибки 403 (запрещено).
 
 ```csharp
 private static async Task ReadBlobWithSasAsync(Uri sasUri)
@@ -237,6 +237,6 @@ private static async Task ReadBlobWithSasAsync(Uri sasUri)
 
 ## <a name="see-also"></a>См. также
 
-- [Предоставляетограниченный доступ к ресурсам хранения Azure с помощью общих подписей доступа (SAS)](../common/storage-sas-overview.md)
-- [Получите операцию ключ к делегированию пользователя](/rest/api/storageservices/get-user-delegation-key)
-- [Создание делегации пользователей SAS (REST API)](/rest/api/storageservices/create-user-delegation-sas)
+- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)
+- [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)
+- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)

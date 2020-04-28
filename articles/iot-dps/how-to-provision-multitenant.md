@@ -1,6 +1,6 @@
 ---
-title: Как обеспечить устройства для мультитенантности в службе обеспечения устройств Концентратора Azure
-description: Как обеспечить устройства для мультитенантности с вашим экземпляром Службы обеспечения устройств (DPS)
+title: Подготовка устройств для многоаренды в службе подготовки устройств для центра Интернета вещей Azure
+description: Как подготовить устройства для многоаренды с помощью экземпляра службы подготовки устройств (DPS)
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/10/2019
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: e0dec0a67ed33186797ccec8066aaad89ceb8dcb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75434741"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Подготовка к мультитенантности 
@@ -191,7 +191,7 @@ ms.locfileid: "75434741"
 
 В этом разделе мы клонируем пакет SDK для языка C Azure IoT на каждой виртуальной машине. Пакет SDK содержит пример, который будет имитировать подготовку устройства клиента из каждого региона.
 
-1. Для каждого VM, установить **CMake**, **g ,** **gcc**, и [Git,](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) используя следующие команды:
+1. Для каждой виртуальной машины установите **CMAK**, **g + +**, **GCC**и [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) с помощью следующих команд:
 
     ```bash
     sudo apt-get update
@@ -420,8 +420,8 @@ J5n4NY2GiBYy7Mp4lDDa5CbEe6zDU/c62rhjCuFWxnc=
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы узнать больше о [IoT Hub Device reprovisioning concepts](concepts-device-reprovision.md) переподготовке, см. 
-- Чтобы узнать больше деобеспечения, [см. Как дезавуировать устройства, которые ранее были автоматически подготовлены](how-to-unprovision-devices.md) 
+- Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
+- Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 
 
 
 

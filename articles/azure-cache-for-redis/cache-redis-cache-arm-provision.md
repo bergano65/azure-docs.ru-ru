@@ -1,16 +1,16 @@
 ---
-title: Развертывание кэша Azure для Redis с помощью менеджера ресурсов Azure
-description: Узнайте, как использовать шаблон управления ресурсами Azure для развертывания кэша Azure для ресурса Redis. Шаблоны предоставляются для общих сценариев.
+title: Развертывание кэша Azure для Redis с помощью Azure Resource Manager
+description: Узнайте, как использовать шаблон Azure Resource Manager для развертывания ресурса кэша Azure для Redis. Для распространенных сценариев предусмотрены шаблоны.
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 01/23/2017
 ms.openlocfilehash: 787edf662aa3a34e167db61b0a89dfc5c2944219
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75412404"
 ---
 # <a name="create-an-azure-cache-for-redis-using-a-template"></a>Создание экземпляра кэша Redis для Azure с помощью шаблона
@@ -30,7 +30,7 @@ ms.locfileid: "75412404"
 > 
 > * [Создание кэша Azure для Redis уровня "Премиум" с кластеризацией](https://azure.microsoft.com/resources/templates/201-redis-premium-cluster-diagnostics/)
 > * [Создание кэша Redis для Azure уровня "Премиум" с сохранением данных](https://azure.microsoft.com/resources/templates/201-redis-premium-persistence/)
-> * [Создание Premium Redis Cache, развернутого в виртуальной сети](https://azure.microsoft.com/resources/templates/201-redis-premium-vnet/)
+> * [Создание кэша Premium Redis, развернутого в виртуальной сети](https://azure.microsoft.com/resources/templates/201-redis-premium-vnet/)
 > 
 > Чтобы узнать о новых шаблонах, обратитесь к статье [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/) и выполните поиск по критерию `Azure Cache for Redis`.
 > 

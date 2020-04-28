@@ -9,10 +9,10 @@ ms.date: 01/15/2017
 ms.author: twooley
 ms.subservice: common
 ms.openlocfilehash: 833b8c79fba57b7129092e084381c0671c396496
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74978872"
 ---
 # <a name="using-the-azure-importexport-service-rest-api"></a>Использование REST API службы импорта и экспорта Azure
@@ -45,9 +45,9 @@ https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<res
 
 [Отмена и удаление заданий](storage-import-export-cancelling-and-deleting-jobs.md)
 
-[Резервное копирование привода манифестов](../storage-import-export-backing-up-drive-manifests.md)
+[Резервное копирование манифестов дисков](../storage-import-export-backing-up-drive-manifests.md)
 
-[Диагностика и восстановление ошибок для рабочих мест импорта/экспорта](../storage-import-export-diagnostics-and-error-recovery.md)
+[Диагностика и восстановление после ошибок для заданий импорта и экспорта](../storage-import-export-diagnostics-and-error-recovery.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Просмотр и присвоение разрешений роли администратора - Azure AD Документы Майкрософт
+title: Просмотр и назначение разрешений роли администратора в Azure AD | Документация Майкрософт
 description: Теперь вы можете просматривать членов роли администратора Azure AD и управлять ими на портале. Для тех, кто часто управляет назначениями ролей.
 services: active-directory
 author: curtand
@@ -14,10 +14,10 @@ ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b2815b496545ca5f920c00df7b2b5b7efe15c12a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74900902"
 ---
 # <a name="view-and-assign-administrator-roles-in-azure-active-directory"></a>Просмотр и назначение ролей администратора в Azure Active Directory
@@ -26,7 +26,7 @@ ms.locfileid: "74900902"
 
 ## <a name="view-all-roles"></a>Просмотр всех ролей
 
-Найдите и выберите **Azure Active Directory**. Выберите **роли и администраторов,** чтобы увидеть список всех доступных ролей.
+Найдите и выберите **Azure Active Directory**. Выберите **роли и администраторы** , чтобы просмотреть список всех доступных ролей.
 
 Нажмите на многоточие справа от каждой строки, чтобы открыть подробное описание роли.
 

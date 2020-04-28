@@ -1,5 +1,5 @@
 ---
-title: Гибридные соединения Azure Ретранслируе - HTTP запросы в .NET
+title: Azure Relay запросы гибридные подключения-HTTP в .NET
 description: 'Написание консольного приложения #C для HTTP-запросов гибридных подключений Azure Relay в .NET.'
 services: service-bus-relay
 documentationcenter: .net
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/01/2018
 ms.author: spelluru
 ms.openlocfilehash: 7c984876c4338b4f6802ba55752c8f612c390e94
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75355167"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-net"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в .NET
@@ -38,8 +38,8 @@ ms.locfileid: "75355167"
 
 Для работы с данным руководством вам потребуется:
 
-* [Визуальная студия 2015 или позже](https://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
-* Подписка Azure. Если у вас его нет, [создайте бесплатную учетную запись,](https://azure.microsoft.com/free/) прежде чем начать.
+* [Visual Studio 2015 или более поздней версии](https://www.visualstudio.com). В описанных в этом руководстве примерах используется Visual Studio 2017.
+* Подписка Azure. Если у вас ее нет, [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , прежде чем начинать работу.
 
 ## <a name="create-a-namespace"></a>Создание пространства имен
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]
@@ -67,7 +67,7 @@ ms.locfileid: "75355167"
 1. Выполните клиентское приложение В окне клиента вы увидите `hello!`. Клиент отправил HTTP-запрос к серверу и получил ответ `hello!`. 
 3. Теперь, чтобы закрыть окна консоли, в обоих ее окнах нажмите клавишу **ВВОД**. 
 
-Поздравляем, вы создали полное приложение Гибридные соединения!
+Поздравляем, вы создали законченное приложение гибридные подключения!
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

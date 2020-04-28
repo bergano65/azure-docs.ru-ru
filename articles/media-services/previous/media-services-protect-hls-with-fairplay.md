@@ -14,23 +14,23 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 873bc4ab5e435b91ff4400a39c92db0d0bb9baa8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74968771"
 ---
 # <a name="protect-your-hls-content-with-apple-fairplay-or-microsoft-playready"></a>Защита содержимого HLS с помощью Apple FairPlay или Microsoft PlayReady
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/)   > никаких новых функций или функциональных возможностей в Media Services v2 не добавляется. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 >
 
 Службы мультимедиа Azure позволяют использовать динамическое шифрование содержимого HTTP Live Streaming (HLS) в следующих форматах:  
 
 * **Незащищенный ключ конверта AES-128**
 
-    Весь фрагмент шифруется в режиме **AES-128 CBC**. Проигрыватели iOS и OS X поддерживают расшифровку потока по умолчанию. Для получения дополнительной информации [см.](media-services-protect-with-aes128.md)
+    Весь фрагмент шифруется в режиме **AES-128 CBC**. Проигрыватели iOS и OS X поддерживают расшифровку потока по умолчанию. Дополнительные сведения см. [в статье Использование динамического шифрования AES-128 и службы доставки ключей](media-services-protect-with-aes128.md).
 * **Apple FairPlay**
 
     Отдельные образцы видео и аудиоданных шифруются в режиме **AES-128 CBC** . **Потоковая передача FairPlay** (FPS): интегрируется в операционные системы устройств и поддерживается iOS и Apple TV по умолчанию. Включение FPS в Safari (OS X) реализуется благодаря поддержке интерфейса расширений зашифрованных носителей (EME).
@@ -51,7 +51,7 @@ ms.locfileid: "74968771"
 
 Для доставки HLS с шифрованием FairPlay и лицензий FairPlay с помощью служб мультимедиа необходимо следующее:
 
-  * Учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)
+  * Учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
   * Учетная запись служб мультимедиа. Чтобы создать эту учетную запись, см. статью [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
   * Регистрация в [программе разработки Apple](https://developer.apple.com/).
   * Корпорация Apple требует от владельца содержимого получить [пакет развертывания](https://developer.apple.com/contact/fps/). Подтвердите, что у вас реализован модуль безопасности ключа (KSM) с использованием служб мультимедиа Azure и что вы подали запрос на окончательный пакет FPS. Окончательный пакет FPS содержит инструкции по сертификации и получению секретного ключа приложения (ASK). ASK используется для настройки FairPlay.
@@ -143,13 +143,13 @@ ms.locfileid: "74968771"
 * Если к файлу был применен только один тип шифрования, в URL-адресе тип шифрования можно не указывать.
 * Тип шифрования вводится без учета регистра.
 * Можно указать следующие типы шифрования:  
-  * **cenc**: Общее шифрование (PlayReady или Widevine)
-  * **cbcs-aapl**: FairPlay
-  * **cbc**: шифрование конвертов AES
+  * **Cenc**: общее шифрование (PlayReady или Widevine)
+  * **CBCS-AAPL**: Fairplay
+  * **CBC**: шифрование конверта AES
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-1. Настройте среду разработки и заполните файл app.config информацией о подключении, как описано в [разработке Media Services с .NET](media-services-dotnet-how-to-use.md). 
+1. Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 2. Добавьте следующие элементы в **appSettings**, определенные в файле app.config:
 
     ```xml
@@ -164,7 +164,7 @@ ms.locfileid: "74968771"
 Замените код в файле Program.cs кодом, приведенным в этом разделе.
 
 >[!NOTE]
->Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Для получения дополнительной информации смотрите [эту](media-services-dotnet-manage-entities.md#limit-access-policies) статью.
+>Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Дополнительные сведения см. в [этой](media-services-dotnet-manage-entities.md#limit-access-policies) статье.
 
 Обязательно обновите переменные, чтобы они указывали на папки, в которых находятся входные файлы.
 
@@ -555,12 +555,12 @@ namespace DynamicEncryptionWithFairPlay
 }
 ```
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps-media-services-learning-paths"></a>Дальнейшие действия: схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

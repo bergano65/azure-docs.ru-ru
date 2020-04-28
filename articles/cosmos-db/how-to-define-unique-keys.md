@@ -1,16 +1,16 @@
 ---
 title: Определение уникальных ключей для контейнера Azure Cosmos
-description: Узнайте, как определить уникальные ключи для контейнера Azure Cosmos с помощью портала Azure, PowerShell, .Net, Java и различных других SDK.
+description: Узнайте, как определить уникальные ключи для контейнера Azure Cosmos с помощью портал Azure, PowerShell, .NET, Java и других пакетов SDK.
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: thweiss
 ms.openlocfilehash: fa62495a7b51c9a06a91102299378c15e811eae0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74872117"
 ---
 # <a name="define-unique-keys-for-an-azure-cosmos-container"></a>Определение уникальных ключей для контейнера Azure Cosmos
@@ -37,7 +37,7 @@ ms.locfileid: "74872117"
 
 ## <a name="use-powershell"></a>С использованием PowerShell
 
-Чтобы создать контейнер с уникальными ключами, [создайте контейнер Azure Cosmos с уникальным ключом и TTL](manage-with-powershell.md#create-container-unique-key-ttl)
+Чтобы создать контейнер с уникальными ключами, см. раздел [Создание контейнера Azure Cosmos с уникальным ключом и TTL](manage-with-powershell.md#create-container-unique-key-ttl)
 
 ## <a name="use-the-net-sdk-v2"></a>Использование пакета SDK для .NET версии 2
 
@@ -59,9 +59,9 @@ client.CreateDocumentCollectionAsync(UriFactory.CreateDatabaseUri("database"), n
 });
 ```
 
-## <a name="use-the-net-sdk-v3"></a>Используйте .NET SDK V3
+## <a name="use-the-net-sdk-v3"></a>Использование пакета SDK для .NET v3
 
-При создании нового контейнера с помощью [.NET SDK v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)используйте свободно управляемый API SDK, чтобы декларировать уникальные ключи кратким и читаемым способом.
+При создании нового контейнера с помощью [пакета SDK для .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)используйте API Fluent пакета SDK, чтобы объявить уникальные ключи в кратком и удобочитаемом виде.
 
 ```csharp
 await client.GetDatabase("database").DefineContainer(name: "container", partitionKeyPath: "/myPartitionKey")
@@ -147,5 +147,5 @@ client.CreateContainer('dbs/' + config['DATABASE'], {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Подробнее о [разделе](partition-data.md)
+- Дополнительные сведения о [секционировании](partition-data.md)
 - [Как работает индексация](index-overview.md)

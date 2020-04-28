@@ -1,7 +1,7 @@
 ---
-title: Используйте Azure CLI для присвоения роли RBAC для доступа к данным
+title: Назначение роли RBAC для доступа к данным с помощью Azure CLI
 titleSuffix: Azure Storage
-description: Узнайте, как использовать Azure CLI для присвоения разрешений директору службы безопасности Active Directory с помощью элемента управления доступом на основе ролей (RBAC). Azure Storage поддерживает встроенные и пользовательские роли RBAC для проверки подлинности через Azure AD.
+description: Узнайте, как использовать Azure CLI для назначения разрешений участнику безопасности Azure Active Directory с помощью управления доступом на основе ролей (RBAC). Служба хранилища Azure поддерживает встроенные и настраиваемые роли RBAC для проверки подлинности с помощью Azure AD.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,37 +11,37 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: abe35f3193e2d7ff9a949ca7cd330cb58da2b78c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74891974"
 ---
-# <a name="use-azure-cli-to-assign-an-rbac-role-for-access-to-blob-and-queue-data"></a>Используйте Azure CLI для присвоения роли RBAC для доступа к данным о каплях и очередях
+# <a name="use-azure-cli-to-assign-an-rbac-role-for-access-to-blob-and-queue-data"></a>Использование Azure CLI для назначения роли RBAC доступа к данным BLOB-объектов и очередей
 
-Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Azure Storage определяет набор встроенных ролей R-БАК, которые охватывают общие наборы разрешений, используемых для доступа к данным капли или очереди.
+Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей.
 
-Когда роль RBAC назначается директору безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого принципа безопасности. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Директором безопасности Azure AD может быть пользователь, группа, директор службы приложений или [управляемый интимент для ресурсов Azure.](../../active-directory/managed-identities-azure-resources/overview.md)
+Когда роль RBAC назначается субъекту безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого субъекта безопасности. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
-В этой статье описывается, как использовать Azure CLI для списка встроенных ролей RBAC и их присвоения пользователям. Для получения дополнительной информации об [Azure Command-Line Interface (CLI)](https://docs.microsoft.com/cli/azure)использовании Azure CLI см.
+В этой статье описывается, как использовать Azure CLI для перечисления встроенных ролей RBAC и их назначения пользователям. Дополнительные сведения об использовании Azure CLI см. в разделе [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure).
 
 ## <a name="rbac-roles-for-blobs-and-queues"></a>Роли RBAC для больших двоичных объектов и очередей
 
 [!INCLUDE [storage-auth-rbac-roles-include](../../../includes/storage-auth-rbac-roles-include.md)]
 
-## <a name="determine-resource-scope"></a>Определение сферы охвата ресурсов
+## <a name="determine-resource-scope"></a>Определение области действия ресурса
 
 [!INCLUDE [storage-auth-resource-scope-include](../../../includes/storage-auth-resource-scope-include.md)]
 
-## <a name="list-available-rbac-roles"></a>Список доступных ролей RBAC
+## <a name="list-available-rbac-roles"></a>Вывод списка доступных ролей RBAC
 
-Чтобы перечислить доступные встроенные роли RBAC с Azure CLI, используйте команду [списка определений группы az:](/cli/azure/role/definition#az-role-definition-list)
+Чтобы получить список доступных встроенных ролей RBAC с Azure CLI, используйте команду [AZ Role Definition List](/cli/azure/role/definition#az-role-definition-list) .
 
 ```azurecli-interactive
 az role definition list --out table
 ```
 
-Вы увидите встроенные роли данных данных хранилища Azure, а также другие встроенные роли для Azure:
+Вы увидите список встроенных ролей данных службы хранилища Azure вместе с другими встроенными ролями Azure:
 
 ```Example
 Storage Blob Data Contributor             Allows for read, write and delete access to Azure Storage blob containers and data
@@ -53,19 +53,19 @@ Storage Queue Data Message Sender         Allows for sending of Azure Storage qu
 Storage Queue Data Reader                 Allows for read access to Azure Storage queues and queue messages
 ```
 
-## <a name="assign-an-rbac-role-to-a-security-principal"></a>Назначить роль RBAC директору службы безопасности
+## <a name="assign-an-rbac-role-to-a-security-principal"></a>Назначение роли RBAC субъекту безопасности
 
-Чтобы назначить роль RBAC директору безопасности, используйте [назначение роли аз](/cli/azure/role/assignment#az-role-assignment-create) создать команду. Формат команды может отличаться в зависимости от объема назначения. Ниже приведены следующие примеры, как назначить роль пользователю в различных областях, но можно использовать одну и ту же команду, чтобы назначить роль любому директору безопасности.
+Чтобы назначить роль RBAC субъекту безопасности, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create) . Формат команды может различаться в зависимости от области назначения. В следующих примерах показано, как назначить роль пользователю в различных областях, но можно использовать ту же команду, чтобы назначить роль любому субъекту безопасности.
 
-### <a name="container-scope"></a>Область контейнеров
+### <a name="container-scope"></a>Область контейнера
 
-Чтобы присвоить область действия контейнеру, укажите строку, содержащую область контейнера `--scope` для параметра. Область для контейнера в форме:
+Чтобы назначить роль для контейнера, укажите строку, содержащую область действия контейнера для `--scope` параметра. Область для контейнера имеет вид:
 
 ```
 /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/blobServices/default/containers/<container>
 ```
 
-Следующий пример присваивает пользователю роль **вкладчика хранилища данных Blob,** приравневакую к уровню контейнера. Убедитесь в том, чтобы заменить значения образца и заполнителя в скобках с вашими собственными значениями:
+В следующем примере роль **участника данных BLOB-объекта хранилища** назначается пользователю в области действия уровня контейнера. Обязательно замените образцы значений и значения заполнителей в квадратных скобках собственными значениями:
 
 ```azurecli-interactive
 az role assignment create \
@@ -76,13 +76,13 @@ az role assignment create \
 
 ### <a name="queue-scope"></a>Область очереди
 
-Чтобы присвоить область действия роли очереди, укажите строку, `--scope` содержащую область очереди для параметра. Область для очереди находится в форме:
+Чтобы назначить роль, ограниченную очередью, укажите строку, содержащую область действия очереди для `--scope` параметра. Область для очереди имеет вид:
 
 ```
 /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/queueServices/default/queues/<queue>
 ```
 
-Следующий пример присваивает пользователю роль **вкладчика очереди хранения** данных, приравневакую к уровню очереди. Убедитесь в том, чтобы заменить значения образца и заполнителя в скобках с вашими собственными значениями:
+В следующем примере роль **участника данных очереди хранилища** назначается пользователю в области действия уровня очереди. Обязательно замените образцы значений и значения заполнителей в квадратных скобках собственными значениями:
 
 ```azurecli-interactive
 az role assignment create \
@@ -91,15 +91,15 @@ az role assignment create \
     --scope "/subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/queueServices/default/queues/<queue>"
 ```
 
-### <a name="storage-account-scope"></a>Область хранения данных
+### <a name="storage-account-scope"></a>Область учетной записи хранения
 
-Чтобы присвоить область действия учетной записи хранилища, укажите `--scope` область ресурса учетной записи хранилища для параметра. Область для учетной записи хранилища находится в форме:
+Чтобы назначить роль, ограниченную учетной записью хранения, укажите область ресурса учетной записи хранения для `--scope` параметра. Область для учетной записи хранения имеет вид:
 
 ```
 /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>
 ```
 
-В следующем примере показано, как назначить роль **читателя данных хранилища** для пользователей на уровне учетной записи хранилища. Убедитесь в том, чтобы заменить значения выборки на свои собственные значения:
+В следующем примере показано, как назначить роль **модуля чтения данных большого двоичного объекта хранилища** пользователю на уровне учетной записи хранения. Обязательно замените образцы значений собственными значениями: \
 
 ```azurecli-interactive
 az role assignment create \
@@ -108,9 +108,9 @@ az role assignment create \
     --scope "/subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>"
 ```
 
-### <a name="resource-group-scope"></a>Область ресурсной группы
+### <a name="resource-group-scope"></a>Область группы ресурсов
 
-Чтобы присвоить группе ресурсов область действия роли, укажите `--resource-group` имя группы ресурсов или идентификатор для параметра. Следующий пример присваивает пользователю роль **чтения данных очереди хранения** данных на уровне группы ресурсов. Убедитесь в том, чтобы заменить образец значения и значения заполнителя в скобках с вашими собственными значениями:
+Чтобы назначить роль, ограниченную группой ресурсов, укажите имя или идентификатор группы ресурсов для `--resource-group` параметра. В следующем примере роль **модуля чтения данных очереди хранилища** назначается пользователю на уровне группы ресурсов. Не забудьте заменить образцы значений и значения заполнителей в квадратных скобках собственными значениями:
 
 ```azurecli-interactive
 az role assignment create \
@@ -119,15 +119,15 @@ az role assignment create \
     --resource-group <resource-group>
 ```
 
-### <a name="subscription-scope"></a>Сфера действия подписки
+### <a name="subscription-scope"></a>Область действия подписки
 
-Чтобы назначить роль, область действия подписки, укажите `--scope` область подписки для параметра. Область подписки в форме:
+Чтобы назначить роль, ограниченную подпиской, укажите область действия подписки для `--scope` параметра. Область для подписки имеет вид:
 
 ```
 /subscriptions/<subscription>
 ```
 
-В следующем примере показано, как назначить роль **читателя данных хранилища** для пользователей на уровне учетной записи хранилища. Убедитесь в том, чтобы заменить значения выборки на свои собственные значения: 
+В следующем примере показано, как назначить роль **модуля чтения данных большого двоичного объекта хранилища** пользователю на уровне учетной записи хранения. Обязательно замените образцы значений собственными значениями: 
 
 ```azurecli-interactive
 az role assignment create \
@@ -139,5 +139,5 @@ az role assignment create \
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
-- [Предоставить доступ к данным Azure blob и очередей с помощью RBAC с помощью Azure PowerShell](storage-auth-aad-rbac-powershell.md)
+- [Предоставление доступа к данным большого двоичного объекта и очереди Azure с помощью RBAC с использованием Azure PowerShell](storage-auth-aad-rbac-powershell.md)
 - [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC на портале Azure](storage-auth-aad-rbac-portal.md)

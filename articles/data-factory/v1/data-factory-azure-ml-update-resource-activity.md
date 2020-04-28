@@ -1,6 +1,6 @@
 ---
-title: Обновление моделей машинного обучения с помощью фабрики данных Azure
-description: Описывает, как создавать прогностические конвейеры с помощью Azure Data Factory и машинного обучения Azure
+title: Обновление моделей Машинное обучение с помощью фабрики данных Azure
+description: Описывает создание прогнозирующих конвейеров с помощью фабрики данных Azure и Машинное обучение Azure
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -12,21 +12,21 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.openlocfilehash: afc79badd19fa180e631f1f8fa9735567a0b1e33
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74978719"
 ---
 # <a name="updating-azure-machine-learning-models-using-update-resource-activity"></a>Обновление моделей машинного обучения Azure с помощью действия "Обновить ресурс"
 
-> [!div class="op_single_selector" title1="Деятельность по трансформации"]
-> * [Активность улья](data-factory-hive-activity.md) 
+> [!div class="op_single_selector" title1="Действия преобразования"]
+> * [Действие Hive](data-factory-hive-activity.md) 
 > * [Действие Pig](data-factory-pig-activity.md)
-> * [КартаУменьшить активность](data-factory-map-reduce.md)
-> * [Активность потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
+> * [Действие MapReduce](data-factory-map-reduce.md)
+> * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие выполнения пакета в службе Машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
 > * [Действие обновления ресурса в службе Машинного обучения](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
@@ -41,8 +41,8 @@ ms.locfileid: "74978719"
 ## <a name="overview"></a>Обзор
 Со временем прогнозные модели из оценивающих экспериментов машинного обучения Azure потребуют повторного обучения с помощью новых наборов входных данных. Когда повторное обучение будет завершено, вам потребуется обновить веб-службу оценки на основании обновленной модели машинного обучения. Для использования новых данных и обновления моделей машинного обучения Azure через веб-службы выполните следующие действия.
 
-1. Создайте эксперимент в [Azure Machine Learning Studio (классический).](https://studio.azureml.net)
-2. Если вы удовлетворены моделью, используйте Azure Machine Learning Studio (классический) для публикации веб-сервисов как для **учебного эксперимента,** так и для скоринга/прогностического**эксперимента.**
+1. Создайте эксперимент в [машинное обучение Azure Studio (классическая модель)](https://studio.azureml.net).
+2. Если вы удовлетворены моделью, используйте Машинное обучение Azure Studio (классическая модель), чтобы опубликовать веб-службы как для **обучающего** , так и для оценки,**прогнозного эксперимента**.
 
 В следующей таблице описаны веб-службы, используемые в данном примере.  Подробные сведения см. в статье [Программное переобучение моделей машинного обучения](../../machine-learning/machine-learning-retrain-models-programmatically.md).
 
@@ -58,7 +58,7 @@ ms.locfileid: "74978719"
 Чтобы обновить веб-службу с помощью заново обученной модели, можно вызвать **веб-службу оценки**, воспользовавшись **действием ресурса обновления машинного обучения Azure**. Ниже приведены примеры определений связанной службы. 
 
 ## <a name="scoring-web-service-is-a-classic-web-service"></a>Веб-служба оценки — классическая веб-служба
-Если веб-сервис скоринга является **классическим веб-сервисом,** создайте вторую **конечную точку без дефолта и updatable** с помощью портала Azure. Инструкции см. в статье [Создание конечных точек](../../machine-learning/machine-learning-create-endpoint.md). Создав обновляемую конечную точку не по умолчанию, выполните следующие действия:
+Если веб-служба оценки является **классической веб-службой**, создайте вторую, **не используемую по умолчанию и обновляемую конечную точку** , используя портал Azure. Инструкции см. в статье [Создание конечных точек](../../machine-learning/machine-learning-create-endpoint.md). Создав обновляемую конечную точку не по умолчанию, выполните следующие действия:
 
 * Щелкните **Выполнение пакета**, чтобы получить значение URI свойства JSON **mlEndpoint**.
 * Затем щелкните **Обновить ресурс**, чтобы получить значение URI свойства JSON **updateResourceEndpoint**. Ключ API указывается на странице конечной точки (в правом нижнем углу).
@@ -88,7 +88,7 @@ ms.locfileid: "74978719"
 https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearning/webServices/{web-service-name}?api-version=2016-05-01-preview. 
 ```
 
-Значения для заполнителей в URL-адресе при выполнении запросов к веб-службе можно найти на [портале веб-служб машинного обучения Azure](https://services.azureml.net/). Для нового типа конечной точки обновления ресурса требуется маркер AAD (Azure Active Directory). Укажите **службуPrincipalId** и **службуPrincipalKey** в связанном с Azure машинном обучении сервисе. Ознакомьтесь со статьей [Создание приложения Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md). Ниже приведен пример определения связанной службы AzureML. 
+Значения для заполнителей в URL-адресе при выполнении запросов к веб-службе можно найти на [портале веб-служб машинного обучения Azure](https://services.azureml.net/). Для нового типа конечной точки обновления ресурса требуется маркер AAD (Azure Active Directory). Укажите **servicePrincipalId** и **сервицепринЦипалкэй** в связанной службе машинное обучение Azure. Ознакомьтесь со статьей [Создание приложения Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md). Ниже приведен пример определения связанной службы AzureML. 
 
 ```json
 {
@@ -138,7 +138,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 ```
 
 ### <a name="training-input-dataset"></a>Входной набор данных для обучения:
-Следующий набор данных представляет данные обучения вводам для веб-сервиса обучения обучению машинazре. Деятельность Azure Machine Learning Batch Execution Использует сяротка принимает этот набор данных в качестве ввода.
+Следующий набор данных представляет входные данные для обучения для веб-службы Машинное обучение Azure Training. Действие выполнения пакета Машинное обучение Azure принимает этот набор данных в качестве входного.
 
 ```JSON
 {
@@ -192,7 +192,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 }
 ```
 
-### <a name="linked-service-for-azure-machine-learning-training-endpoint"></a>Связанный сервис для обучения обучению машинного обучения Azure
+### <a name="linked-service-for-azure-machine-learning-training-endpoint"></a>Связанная служба для Машинное обучение Azureной конечной точки обучения
 Следующий фрагмент JSON определяет связанную службу машинного обучения Azure, которая указывает на конечную точку веб-службы обучения по умолчанию.
 
 ```JSON
@@ -208,12 +208,12 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 }
 ```
 
-В **Azure Machine Learning Studio (классический)**, сделать следующее, чтобы получить значения для **mlEndpoint** и **apiKey**:
+В **машинное обучение Azure Studio (классическая модель)** выполните следующие действия, чтобы получить значения для **mlEndpoint** и **apiKey**:
 
 1. В меню слева щелкните **ВЕБ-СЛУЖБЫ** .
 2. В списке веб-служб выберите **веб-службу обучения** .
 3. Рядом с полем **Ключ API** нажмите кнопку копирования. Вставьте ключ из буфера обмена в редактор JSON фабрики данных.
-4. В **студии машинного обучения Azure (классический)** щелкните ссылку **BATCH EXECUTION.**
+4. В **машинное обучение Azure Studio (классическая модель)** щелкните ссылку **выполнение пакета** .
 5. Скопируйте **URI запроса** из раздела **Запрос** и вставьте его в редактор JSON фабрики данных.   
 
 ### <a name="linked-service-for-azure-ml-updatable-scoring-endpoint"></a>Связанная служба для обновляемой конечной точки оценки машинного обучения Azure

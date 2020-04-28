@@ -1,5 +1,5 @@
 ---
-title: 'Производительность сетевой ссылки: Azure'
+title: 'Устранение неполадок сетевого канала: Azure'
 description: Эта страница содержит сведения о стандартном методе тестирования производительности сетевого соединения Azure.
 services: expressroute
 author: tracsman
@@ -9,10 +9,10 @@ ms.date: 12/20/2017
 ms.author: jonor
 ms.custom: seodec18
 ms.openlocfilehash: bb68919fba731caa32dcca3f4c991b8881afc6f9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74869652"
 ---
 # <a name="troubleshooting-network-performance"></a>Устранение проблем с производительностью сети
@@ -26,7 +26,7 @@ Azure предоставляет стабильные и быстрые спос
 >
 >
 
-## <a name="network-components"></a>Сетевые компоненты
+## <a name="network-components"></a>Компоненты сети
 Прежде чем углубиться в устранение неполадок, рассмотрим некоторые общие понятия и компоненты. Мы упомянем каждый компонент в сквозной цепочке, которая обеспечивает возможность подключения в Azure.
 ![1][1]
 
@@ -198,14 +198,14 @@ Azure предоставляет стабильные и быстрые спос
 \* Задержка передачи данных в Бразилию является хорошим примером того, что прямолинейное расстояние значительно отличается от расстояния протяженности оптоволоконной линии. Я ожидал, что задержка будет примерно 160 мс, а на самом деле она составляет 189 мс. Это отличие может указывать на проблему с сетью, но, скорее всего, сетевая магистраль от Сиэтла до Бразилии не проложена по прямой линии и длиннее прямого расстояния на 1000 км.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-1. Скачать инструмент Azure Connectivity От GitHub по адресу[https://aka.ms/AzCT][ACT]
+1. Скачайте набор средств подключения Azure из GitHub по адресу[https://aka.ms/AzCT][ACT]
 2. Следуйте указаниям по [тестированию производительности сетевого соединения][Performance Doc].
 
 <!--Image References-->
-[1]: ./media/expressroute-troubleshooting-network-performance/network-components.png "Компоненты сети Azure"
-[2]: ./media/expressroute-troubleshooting-network-performance/expressroute-troubleshooting.png "ЭкспрессРут Устранение неполадок"
-[3]: ./media/expressroute-troubleshooting-network-performance/test-diagram.png "Perf Тестовая среда"
-[4]: ./media/expressroute-troubleshooting-network-performance/powershell-output.png "Выход PowerShell"
+[1]: ./media/expressroute-troubleshooting-network-performance/network-components.png "Сетевые компоненты Azure"
+[2]: ./media/expressroute-troubleshooting-network-performance/expressroute-troubleshooting.png "Устранение неполадок ExpressRoute"
+[3]: ./media/expressroute-troubleshooting-network-performance/test-diagram.png "Тестовая среда тестирования производительности"
+[4]: ./media/expressroute-troubleshooting-network-performance/powershell-output.png "Выходные данные PowerShell"
 
 <!--Link References-->
 [Performance Doc]: https://github.com/Azure/NetworkMonitoring/blob/master/AzureCT/PerformanceTesting.md

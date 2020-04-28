@@ -1,6 +1,6 @@
 ---
 title: Создание Центра Интернета вещей Azure с помощью REST API поставщика ресурсов | Документация Майкрософт
-description: Узнайте, как использовать aPI-извне с помощью поставщика ресурсов Для создания и управления программным управлением Концентратором IoT.
+description: Узнайте, как использовать REST API C# поставщика ресурсов для создания центра Интернета вещей и управления им программным способом.
 author: robinsh
 ms.author: robinsh
 ms.service: iot-hub
@@ -9,10 +9,10 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.openlocfilehash: c4cb230c9f0b56e3ff9d81e0d85134a7f192e6e9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75429177"
 ---
 # <a name="create-an-iot-hub-using-the-resource-provider-rest-api-net"></a>Создание Центра Интернета вещей с помощью REST API поставщика ресурсов (.NET)
@@ -27,7 +27,7 @@ ms.locfileid: "75429177"
 
 * приведенному.
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за пару минут.
+* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 * [Azure PowerShell 1.0](https://docs.microsoft.com/powershell/azure/install-Az-ps) или более поздней версии.
 
@@ -95,7 +95,7 @@ ms.locfileid: "75429177"
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
     ```
 
-3. Добавьте в метод **CreateIoTHub** следующий код. Этот код описывает создаваемый Центр Интернета вещей и создает представление JSON. Для текущего списка мест, поддерживающих Концентратор IoT, см. [Статус Azure:](https://azure.microsoft.com/status/)
+3. Добавьте в метод **CreateIoTHub** следующий код. Этот код описывает создаваемый Центр Интернета вещей и создает представление JSON. Текущий список расположений, которые поддерживают центр Интернета вещей, см. в статье [состояние Azure](https://azure.microsoft.com/status/):
 
     ```csharp
     var description = new
@@ -165,10 +165,10 @@ ms.locfileid: "75429177"
 
 3. Щелкните **Отладка** и **Начать отладку** для запуска приложения. Для запуска развертывания может потребоваться несколько минут.
 
-4. Чтобы убедиться, что в приложение добавлен новый Центр Интернета вещей, посетите [портал Azure](https://portal.azure.com/) и просмотрите список ресурсов. Кроме того, используйте смдлет **Get-AzResource** PowerShell.
+4. Чтобы убедиться, что в приложение добавлен новый Центр Интернета вещей, посетите [портал Azure](https://portal.azure.com/) и просмотрите список ресурсов. Кроме того, можно использовать командлет PowerShell **Get-азресаурце** .
 
 > [!NOTE]
-> В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. Когда вы закончите, вы можете удалить концентратор IoT через [портал Azure](https://portal.azure.com/) или с помощью cmdlet **Remove-AzResource** PowerShell, когда вы закончите.
+> В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. По завершении можно удалить центр Интернета вещей с помощью [портал Azure](https://portal.azure.com/) или с помощью командлета PowerShell **Remove-азресаурце** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -182,7 +182,7 @@ ms.locfileid: "75429177"
 
 * [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
 
-* [IoT Hub SDKs](iot-hub-devguide-sdks.md) (Пакеты SDK для Центра Интернета вещей)
+* [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/17/2017
 ms.author: tagore
 ms.openlocfilehash: 23fbb0b4c506b2f72000add9704618337b8b24cf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75386193"
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Построение и развертывание приложения Node.js в облачной службе Azure
@@ -35,7 +35,7 @@ ms.locfileid: "75386193"
 > [!NOTE]
 > В этом учебнике используется Azure PowerShell, для которого требуется операционная система Windows.
 
-* Установка и настройка [Azure Powershell.]
+* Установите и настройте [Azure PowerShell].
 * Скачайте и установите [пакет SDK для Azure для .NET 2.7]. В параметрах установки выберите:
   * MicrosoftAzureAuthoringTools
   * MicrosoftAzureComputeEmulator
@@ -82,7 +82,7 @@ ms.locfileid: "75386193"
 ## <a name="deploy-the-application-to-azure"></a>Развертывание приложения в Azure
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Вы можете [активировать преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или [зарегистрироваться для получения бесплатной версии](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF).
+> Для работы с этим учебником требуется учетная запись Azure. Вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или [зарегистрироваться для использования бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF).
 
 ### <a name="download-the-azure-publishing-settings"></a>Загрузка настроек публикации Azure
 Для развертывания приложения в Azure сначала нужно скачать настройки публикации для вашей подписки Azure.
@@ -161,7 +161,7 @@ ms.locfileid: "75386193"
 
 [веб-сайтами Azure, облачными службами и виртуальными машинами]: /azure/architecture/guide/technology-choices/compute-decision-tree
 [использовать упрощенное веб-приложение]: ../app-service/app-service-web-get-started-nodejs.md
-[Лазурная powershell]: /powershell/azureps-cmdlets-docs
+[Azure PowerShell]: /powershell/azureps-cmdlets-docs
 [пакет SDK для Azure для .NET 2.7]: https://www.microsoft.com/en-us/download/details.aspx?id=48178
 [Подключите PowerShell]: /powershell/azureps-cmdlets-docs
 [nodejs.org]: https://nodejs.org/

@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: tagore
 ms.openlocfilehash: 0b515c630d8a3539cdab1df64b1925e9fcaf206e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75360775"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
@@ -27,7 +27,7 @@ Socket.IO обеспечивает связь в режиме реального
 ## <a name="prerequisites"></a>Предварительные требования
 Убедитесь, что следующие продукты и версии установлены для успешного завершения примера, описанного в этой статье.
 
-* Установка [визуальной студии](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)
+* Установка [Visual Studio](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)
 * Установите [Node.js](https://nodejs.org/download/)
 * Установите [Python версии 2.7.10](https://www.python.org/)
 
@@ -106,9 +106,9 @@ Socket.IO обеспечивает связь в режиме реального
    > [!NOTE]
    > С запуском эмулятора может возникнуть проблема, например во время выполнения команды Start-AzureEmulator произошла непредвиденная ошибка.  Подробные сведения: произошла непредвиденная ошибка. Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя использовать для связи, так как он находится в состоянии Faulted.
    > 
-   > Переустановите AzureAuthoringTools v 2.7.1 и AzureComputeEmulator v 2.7 - убедитесь, что версия совпадает.
+   > Переустановите Азуреаусорингтулс v 2.7.1 и Азурекомпутимулатор v 2,7. Убедитесь, что версия соответствует.
 
-2. Откройте браузер и **http://127.0.0.1**перейдите к .
+2. Откройте браузер и перейдите по **http://127.0.0.1**адресу.
 3. В открывшемся окне браузера введите псевдоним, а затем нажмите клавишу ВВОД.
    Это все, что вам потребуется для отправки сообщений в качестве конкретного псевдонима. Чтобы проверить многопользовательскую функциональность, откройте дополнительные окна браузера, используя тот же URL-адрес, и введите разные псевдонимы.
    
@@ -141,7 +141,7 @@ Socket.IO обеспечивает связь в режиме реального
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом учебнике было рассмотрено создание базового приложения для разговора, размещаемого в облачной службе Azure. Чтобы узнать, как разместить это приложение на веб-сайте Azure, см. статью [Создание приложения для разговора Node.js с Socket.IO на веб-сайте Azure][chatwebsite].
 
 Дополнительные сведения см. также в [центре по разработке для Node.js](https://docs.microsoft.com/azure/javascript/).

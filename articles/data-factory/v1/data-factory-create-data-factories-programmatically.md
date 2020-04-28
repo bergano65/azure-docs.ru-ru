@@ -1,5 +1,5 @@
 ---
-title: Создание конвейеров данных с помощью Azure .NET SDK
+title: Создание конвейеров данных с помощью пакета SDK для Azure .NET
 description: Узнайте, как программным способом создавать, отслеживать и контролировать фабрики данных Azure с помощью пакета SDK фабрики данных.
 services: data-factory
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.openlocfilehash: 9cd3cd60f5d62a0c416b0e05ea408c20483bff13
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74931334"
 ---
 # <a name="create-monitor-and-manage-azure-data-factories-using-azure-data-factory-net-sdk"></a>Создание, отслеживание фабрик данных Azure и управление ими с помощью пакета SDK фабрики данных Azure для .NET
@@ -33,7 +33,7 @@ ms.locfileid: "74931334"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 * Visual Studio 2012, 2013 или 2015
-* Скачать и установить [Azure .NET SDK](https://azure.microsoft.com/downloads/).
+* Скачайте и установите [пакет SDK для Azure .NET](https://azure.microsoft.com/downloads/).
 * Установите Azure PowerShell. Далее, чтобы установить Azure PowerShell на локальном компьютере, следуйте указаниям в разделе [Установка и настройка Azure PowerShell](/powershell/azure/overview) . С помощью Azure PowerShell вы создадите приложение Azure Active Directory.
 
 ### <a name="create-an-application-in-azure-active-directory"></a>Создание приложения в Azure Active Directory
@@ -50,7 +50,7 @@ ms.locfileid: "74931334"
     ```powershell
     Get-AzSubscription
     ```
-4. Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать. Замените ** &lt;NameOfAzureSubscription** &gt; названием подписки Azure.
+4. Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать. Замените ** &lt;nameofazuresubscription именем своей** &gt; именем своей подписки Azure.
 
     ```powershell
     Get-AzSubscription -SubscriptionName <NameOfAzureSubscription> | Set-AzContext
@@ -59,7 +59,7 @@ ms.locfileid: "74931334"
    > [!IMPORTANT]
    > Запишите значения **SubscriptionId** и **TenantId**, указанные в выходных данных этой команды.
 
-5. Создайте группу ресурсов Azure под названием **ADFTutorialResourceGroup,** запустив следующую команду в PowerShell.
+5. Создайте группу ресурсов Azure с именем **ADFTutorialResourceGroup** , выполнив следующую команду в PowerShell.
 
     ```powershell
     New-AzResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
@@ -109,14 +109,14 @@ ms.locfileid: "74931334"
 Действие копирования перемещает данные в фабрике данных Azure. Это действие выполняется с помощью глобально доступной службы, обеспечивающей безопасное, надежное и масштабируемое копирование данных между разными хранилищами. Дополнительные сведения о действии копирования см. в статье [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md).
 
 1. С помощью Visual Studio 2012, 2013 или 2015 создайте консольное приложение C# .NET.
-   1. Запуск **визуальной студии** 2012/2013/2015.
-   2. Нажмите **файл,** укажите на **новый**, и нажмите **проекта**.
-   3. Расширяйте **шаблоны**и выберите **Visual C .** В этом пошаговом руководстве используется C#, но можно использовать любой язык .NET.
+   1. Запустите **Visual Studio** 2012/2013/2015.
+   2. В меню **файл**выберите пункт **создать**и щелкните **проект**.
+   3. Разверните узел **шаблоны**и выберите **Visual C#**. В этом пошаговом руководстве используется C#, но можно использовать любой язык .NET.
    4. Выберите **Консольное приложение** в списке типов проектов справа.
-   5. Введите **DataFactoryAPITestApp** для имени.
+   5. Введите **DataFactoryAPITestApp** в поле имя.
    6. В качестве расположения укажите **C:\ADFGetStarted**.
    7. Нажмите кнопку **ОК**, чтобы создать проект.
-2. Нажмите **Инструменты**, укажите на **NuGet менеджер пакетов**, и нажмите **пакет менеджер консоли**.
+2. В меню **Сервис**выберите **Диспетчер пакетов NuGet**и щелкните **консоль диспетчера пакетов**.
 3. В **консоли диспетчера пакетов** выполните следующие действия.
    1. Выполните следующую команду, чтобы установить пакет фабрики данных: `Install-Package Microsoft.Azure.Management.DataFactories`
    2. Выполните следующую команду, чтобы установить пакет Azure Active Directory (используйте Active Directory API в коде): `Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.19.208020213`
@@ -137,7 +137,7 @@ ms.locfileid: "74931334"
         </appSettings>
     </configuration>
     ```
-5. В файле App.Config обновляйте значения для ** &lt;&gt;идентификатора приложений,** ** &lt;пароля,&gt;** ** &lt;идентификатора&gt;подписки**и ** &lt;идентификатора&gt; клиента** с вашими собственными значениями.
+5. В файле App. config обновите значения ** &lt;идентификатора&gt;приложения**, ** &lt;пароля&gt;**, ** &lt;&gt;идентификатора подписки**и ** &lt;идентификатора&gt; клиента** собственными значениями.
 6. Добавьте следующие инструкции **using** в файл **Program.cs** в проекте.
 
     ```csharp
@@ -453,7 +453,7 @@ ms.locfileid: "74931334"
     John, Doe
     Jane, Doe
     ```
-17. Выполнить образец, нажав **Debug** -> **Начать отладка** в меню. При появлении сообщения **Getting run details of a data slice** (Получение сведений о выполнении для среза данных) подождите несколько минут и нажмите клавишу **ВВОД**.
+17. Запустите пример, выбрав **Отладка** -> **начать отладку** в меню. При появлении сообщения **Getting run details of a data slice** (Получение сведений о выполнении для среза данных) подождите несколько минут и нажмите клавишу **ВВОД**.
 18. Перейдите на портал Azure и убедитесь, что фабрика данных **APITutorialFactory** создана с использованием следующих артефактов:
     * Связанная служба: **AzureStorageLinkedService**.
     * Набор данных: **DatasetBlobSource** и **DatasetBlobDestination**.

@@ -1,5 +1,5 @@
 ---
-title: Пример политики управления API - Добавить заголовок, содержащий идентификатор корреляции
+title: Пример политики управления API — Добавление заголовка, содержащего идентификатор корреляции
 titleSuffix: Azure API Management
 description: Пример политик управления API Azure. Добавление заголовка с идентификатором корреляции во входящий запрос.
 services: api-management
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 79910aa60602a80cbe79c4ce9899f6ff73fbfde9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75422256"
 ---
 # <a name="add-a-header-containing-a-correlation-id"></a>Добавление заголовка, который содержит идентификатор корреляции

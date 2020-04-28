@@ -1,5 +1,5 @@
 ---
-title: Управление учетными записями разработчиков с помощью групп в управлении API Azure
+title: Управление учетными записями разработчиков с помощью групп в службе управления API Azure
 titleSuffix: Azure API Management
 description: Сведения об управлении учетными записями разработчика с помощью групп в службе управления API Azure
 services: api-management
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
 ms.openlocfilehash: 182f0ea93ddfb2ab64de1c15b36958537fa5431f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75430713"
 ---
 # <a name="how-to-create-and-use-groups-to-manage-developer-accounts-in-azure-api-management"></a>Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API
@@ -49,7 +49,7 @@ ms.locfileid: "75430713"
 В этом разделе показано, как добавить новую группу к учетной записи службы управления API.
 
 1. В левой части экрана выберите вкладку **Группы**.
-2. Нажмите **кнопку «Добавить**».
+2. Щелкните **+ Добавить**.
 3. Введите уникальное имя для группы и описание (необязательно).
 4. Нажмите кнопку **Создать**.
 

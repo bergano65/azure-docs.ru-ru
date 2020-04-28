@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 09/10/2018
 ms.openlocfilehash: 255888acf5da6149b6a964b23ed038b99715481c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75364957"
 ---
 # <a name="workspace-expression-in-azure-monitor-log-query"></a>Выражение workspace() в запросе журнала Azure Monitor
@@ -64,6 +64,6 @@ union
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Просмотрите [выражение приложения,](app-expression.md) чтобы отсылать к приложению Application Insights.
+- См. [выражение приложения](app-expression.md) для ссылки на приложение Application Insights.
 - Подробнее о хранении данных Azure Monitor см. в статье [Анализ данных Log Analytics в Azure Monitor](log-query-overview.md).
 - Ознакомьтесь с полной документацией по [языку запросов Kusto](/azure/kusto/query/).

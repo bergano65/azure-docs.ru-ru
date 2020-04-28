@@ -1,6 +1,6 @@
 ---
 title: Реагирование на события Служб мультимедиа Azure | Документация Майкрософт
-description: В этой статье описывается, как использовать Azure Event Grid для подписки на события Media Services.
+description: В этой статье описывается, как подписываться на события служб мультимедиа с помощью службы "Сетка событий Azure".
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 08/08/2019
 ms.author: juliako
 ms.openlocfilehash: e24bacb0ea7ab406442022915872fc77e9cc1a5e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74887890"
 ---
 # <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
@@ -24,7 +24,7 @@ ms.locfileid: "74887890"
 
 Доступность событий Служб мультимедиа привязывается к [доступности](../../event-grid/overview.md) службы "Сетка событий". Эта функция скоро станет доступной в других регионах вместе со службой "Сетка событий".  
 
-## <a name="media-services-events-and-schemas"></a>События и схемы медиа-служб
+## <a name="media-services-events-and-schemas"></a>События и схемы служб мультимедиа
 
 Сетка событий использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. События Служб мультимедиа содержат все сведения, необходимые для реагирования на изменения в данных. Событие Служб мультимедиа можно определить, так как свойство eventType начинается с Microsoft.Media.
 
@@ -40,9 +40,9 @@ ms.locfileid: "74887890"
 * С помощью префикса и суффикса subject события можно ограничить до конкретного.
 
 > [!NOTE]
-> События подпадают под [действие Соглашения об уровне обслуживания событийgridой (SLA).](https://azure.microsoft.com/support/legal/sla/event-grid/v1_0/) Если вы хотите получать уведомления о событиях с помощью AI, см. примеры того, как использовать события, с [помощью .NET SDK](https://github.com/Azure-Samples/media-services-v3-dotnet) или [Java SDK.](https://github.com/Azure-Samples/media-services-v3-java)
+> События подчиняются Соглашение об уровне обслуживанияу "Сетка событий" [(SLA)](https://azure.microsoft.com/support/legal/sla/event-grid/v1_0/). Если вы хотите получать уведомления о событиях с помощью интерфейсов API, см. примеры использования событий с [пакетом](https://github.com/Azure-Samples/media-services-v3-dotnet) SDK для .NET или [Java](https://github.com/Azure-Samples/media-services-v3-java).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Мониторинг событий - портал](monitor-events-portal-how-to.md)
+* [Мониторинг событий — портал](monitor-events-portal-how-to.md)
 * [Мониторинг событий (CLI)](job-state-events-cli-how-to.md)

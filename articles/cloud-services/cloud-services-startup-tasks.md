@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: fa48953e5e86ffa758fe556b7fb1072be9d74647
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75360316"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Как настроить и выполнить задачи запуска для облачной службы
@@ -104,7 +104,7 @@ EXIT /B 0
 
 **taskType** — указывает способ выполнения задачи запуска.
 
-* **Простой**  
+* **простого**  
   Задачи выполняются синхронно, поочередно и в порядке, указанном в файле [ServiceDefinition.csdef] . Если одна задача запуска **simple** завершается **errorlevel**, равным нулю, выполняется следующая задача запуска **simple**. Если больше нет задач запуска **simple** для выполнения, запускается сама роль.   
   
   > [!NOTE]
@@ -113,7 +113,7 @@ EXIT /B 0
   > 
   
     Чтобы убедиться, что пакетный файл завершается нулевым **errorlevel**, выполните команду `EXIT /B 0` в конце обработки пакетного файла.
-* **background**  
+* **днем**  
    Задачи выполняются асинхронно, параллельно с запуском роли.
 * **переднего плана**  
    Задачи выполняются асинхронно, параллельно с запуском роли. Основное различие между задачами **foreground** и **background** состоит в том, что задача **foreground** не разрешает перезапуск или завершение работы роли до завершения задачи. Задачи **background** не имеют этого ограничения.
@@ -153,12 +153,12 @@ EXIT /B 0
 
 [Упакуйте](cloud-services-model-and-package.md) облачную службу.  
 
-[ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
+[ServiceDefinition. csdef]: cloud-services-model-and-package.md#csdef
 [Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
 [Запуск]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Среда выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Среды]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Переменной]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
+[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 

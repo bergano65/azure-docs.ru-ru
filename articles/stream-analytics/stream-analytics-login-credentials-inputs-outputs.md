@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 06/21/2019
 ms.custom: seodec18
 ms.openlocfilehash: 3ae639dd7c5a42fc6880240988f0fb2817b09f43
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75425978"
 ---
 # <a name="rotate-login-credentials-for-inputs-and-outputs-of-a-stream-analytics-job"></a>Смена учетных данных для источников входных данных и мест назначения выходных данных задания Stream Analytics
@@ -31,7 +31,7 @@ ms.locfileid: "75425978"
 4. На портале Azure найдите необходимое задание Stream Analytics, выберите **Stop** (Остановить) и дождитесь остановки задания.    
 5. Найдите входные или выходные данные хранилища BLOB-объектов или таблиц, для которых требуется обновить учетные данные.    
 6. Найдите поле **Ключ учетной записи хранения**, вставьте в него созданный ключ и щелкните **Сохранить**.    
-7. Тест соединения автоматически запускается, когда вы сохраните изменения, вы можете просмотреть его со вкладки уведомлений. Есть два уведомления - одно соответствует сохранению обновления, а другое соответствует тестированию соединения:  
+7. Проверка подключения будет автоматически запускаться при сохранении изменений. ее можно просмотреть на вкладке "уведомления". Существует два уведомления: одно соответствует сохранению обновления, а другое соответствует проверке подключения.  
    ![Уведомления после редактирования ключа](media/stream-analytics-login-credentials-inputs-outputs/edited-key-notifications.png)
 8. Перейдите к разделу [Запуск задания с момента последней остановки](#start-your-job-from-the-last-stopped-time).
 
@@ -82,7 +82,7 @@ ms.locfileid: "75425978"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
+* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

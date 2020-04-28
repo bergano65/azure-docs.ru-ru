@@ -1,5 +1,5 @@
 ---
-title: Разрешить учетные записи разработчиков с помощью OAuth 2.0 в управлении API
+title: Авторизация учетных записей разработчиков с помощью OAuth 2,0 в управлении API
 titleSuffix: Azure API Management
 description: Сведения об авторизации пользователей с помощью OAuth 2.0 в службе управления API.
 services: api-management
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 90c890925378c30ce5688d2713990b4b2cdd20c5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75430676"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
@@ -25,7 +25,7 @@ ms.locfileid: "75430676"
 Многие интерфейсы API поддерживают протокол [OAuth 2.0](https://oauth.net/2/) , позволяющий защитить API, а также и предоставлять доступ только действительным пользователям и только к ресурсам, на которые эти пользователи имеют право. Чтобы использовать интерактивную  консоль разработчика управления API Azure с такими API, служба позволяет настроить экземпляр службы для работы с API с поддержкой OAuth 2.0.
 
 > [!IMPORTANT]
-> Авторизация OAuth 2.0 пока недоступна в интерактивной консоли нового портала разработчиков.
+> Авторизация OAuth 2,0 пока недоступна в интерактивной консоли нового портала разработчика.
 
 ## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные требования
 
@@ -58,7 +58,7 @@ ms.locfileid: "75430676"
 
     Установите нужные флажки в разделе **Типы предоставления авторизации**. **Authorization code** (Код авторизации).
 
-    Введите URL-адрес в поле **Authorization endpoint URL**. Для Active Directory Azure этот URL-адрес будет `<tenant_id>` аналогичен следующему URL-адресу, где он будет заменен идентификатором вашего клиента Azure AD.
+    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, `<tenant_id>` где заменяется идентификатором вашего клиента Azure AD.
 
     `https://login.microsoftonline.com/<tenant_id>/oauth2/authorize`
 
@@ -96,11 +96,11 @@ ms.locfileid: "75430676"
 
     ![Параметры OAuth 2.0](./media/api-management-howto-oauth2/oauth-07.png)
 
-## <a name="legacy-developer-portal---test-the-oauth-20-user-authorization"></a><a name="step3"> </a>Портал разработчиков Legacy - протестировать авторизацию пользователя OAuth 2.0
+## <a name="legacy-developer-portal---test-the-oauth-20-user-authorization"></a><a name="step3"> </a>Устаревший портал разработчика. Тестирование авторизации пользователя OAuth 2,0
 
 [!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
-Настроив сервер авторизации OAuth 2.0 и его использование интерфейсом API, вы можете протестировать сервер, перейдя на портал разработчика и вызвав интерфейс API. Нажмите **на портал разработчиков (наследие)** в верхнем меню со страницы **Обзор** управления API Azure.
+Настроив сервер авторизации OAuth 2.0 и его использование интерфейсом API, вы можете протестировать сервер, перейдя на портал разработчика и вызвав интерфейс API. Щелкните **портал разработчика (прежние версии)** в верхнем меню на странице **обзора** экземпляра службы управления API Azure.
 
 Щелкните **APIs** в меню вверху и выберите **Echo API**.
 
@@ -118,7 +118,7 @@ ms.locfileid: "75430676"
 > [!NOTE]
 > Если всплывающие окна отключены, то в браузере появится запрос на их включение. Включив всплывающие окна, еще раз выберите пункт **Authorization code** , чтобы открыть форму входа.
 
-![Вход][api-management-oauth2-signin]
+![Войти][api-management-oauth2-signin]
 
 После входа поле **Request headers** (Заголовки запроса) заполняется заголовком `Authorization : Bearer`, используемым для авторизации запроса.
 

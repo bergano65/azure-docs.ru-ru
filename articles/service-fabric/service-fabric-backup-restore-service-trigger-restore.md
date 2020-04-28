@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: aagup
 ms.openlocfilehash: 1737102ee652cc2263bd0a908c1336bc93a6757b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75377911"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
@@ -18,23 +18,23 @@ ms.locfileid: "75377911"
 
 Например, можно настроить службу для резервного копирования данных, чтобы защитить ее от следующих сценариев.
 
-- **Случай аварийного восстановления**: Постоянная потеря всего кластера Service Fabric.
-- **Случай потери данных:** Постоянная потеря большинства копий раздела службы.
-- **Случай потери данных:** случайное удаление или порча службы. Например, администратор ошибочно удаляет службу.
-- **Случай повреждения данных**: Ошибки в службе вызывают развращение данных. Например, повреждение данных может произойти, когда после обновления кода служба записывает содержащие ошибки данные в надежную коллекцию. В этом случае может потребоваться восстановить код и данные до предыдущего состояния.
+- **Аварийное восстановление**: постоянная утрата всего Service Fabric кластера.
+- **Регистр потери данных**: постоянная утрата большинства реплик раздела службы.
+- **Случай потери данных**: случайное удаление или повреждение службы. Например, администратор ошибочно удаляет службу.
+- **Повреждение данных**: ошибки в службе приводят к повреждению данных. Например, повреждение данных может произойти, когда после обновления кода служба записывает содержащие ошибки данные в надежную коллекцию. В этом случае может потребоваться восстановить код и данные до предыдущего состояния.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Чтобы активировать восстановление, для кластера должна быть включена _служба анализа сбоев (FAS)_.
 - _Служба резервного копирования и восстановления (BRS)_ создает резервную копию.
 - Восстановление можно активировать только в секции.
-- Установка Microsoft.ServiceFabric.Powershell.Http Модуль «В предварительном просмотре» для совершения вызовов конфигурации.
+- Установите модуль Microsoft. ServiceFabric. PowerShell. http [в предварительной версии] для выполнения вызовов конфигурации.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
 ```
 
-- Убедитесь, что кластер `Connect-SFCluster` подключен с помощью команды, прежде чем делать какой-либо запрос конфигурации с помощью модуля Microsoft.ServiceFabric.Powershell.Http.
+- Убедитесь, что кластер подключен с помощью `Connect-SFCluster` команды перед выполнением любого запроса конфигурации с помощью модуля Microsoft. ServiceFabric. PowerShell. http.
 
 ```powershell
 
@@ -48,7 +48,7 @@ ms.locfileid: "75377911"
 Восстановление может быть активировано в любом из следующих сценариев:
 
 - восстановление данных в случае _аварийного восстановления_;
-- Восстановление данных для _повреждения данных/потери данных._
+- Восстановление данных для _повреждения данных или потери данных_.
 
 ### <a name="data-restore-in-the-case-of-disaster-recovery"></a>Восстановление данных в случае аварийного восстановления
 
@@ -56,14 +56,14 @@ ms.locfileid: "75377911"
 
 В следующем примере предполагается, что потерян кластер, упомянутый в разделе [Включение периодического резервного копирования для надежной службы с отслеживанием состояния и Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). В этом случае `SampleApp` развертывается с включенной политикой резервного копирования, а для хранения резервных копий используется служба хранилища Azure.
 
-#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Powershell с помощью Microsoft.ServiceFabric.Powershell.Http Модуль
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>PowerShell с использованием модуля Microsoft. ServiceFabric. PowerShell. http
 
 ```powershell
 Get-SFBackupsFromBackupLocation -Application -ApplicationName 'fabric:/SampleApp' -AzureBlobStore -ConnectionString 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' -ContainerName 'backup-container'
 
 ```
 
-#### <a name="rest-call-using-powershell"></a>Отдых Вызова с помощью Powershell
+#### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
 Выполните сценарий PowerShell, чтобы вызвать REST API для получения списка резервных копий, созданных для всех секций внутри приложения `SampleApp`. Для вывода списка доступных резервных копий API требуются сведения о хранилище резервных копий.
 
@@ -156,7 +156,7 @@ FailureError            :
 
 При _секционировании по именам_ для определения целевой секции в альтернативном кластере сравниваются значения имен.
 
-#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Powershell с помощью Microsoft.ServiceFabric.Powershell.Http Модуль
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>PowerShell с использованием модуля Microsoft. ServiceFabric. PowerShell. http
 
 ```powershell
 
@@ -164,7 +164,7 @@ Restore-SFPartition  -PartitionId '1c42c47f-439e-4e09-98b9-88b8f60800c6' -Backup
 
 ```
 
-#### <a name="rest-call-using-powershell"></a>Отдых Вызова с помощью Powershell
+#### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
 Запросить восстановление резервной копии секции кластера можно с помощью следующих [API восстановления](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition):
 
@@ -190,18 +190,18 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Можно отслеживать ход восстановления с помощью TrackRestoreProgress.
 
-### <a name="using-service-fabric-explorer"></a>Использование сервисной ткани Explorer
-Вы можете вызвать восстановление от Service Fabric Explorer. Убедитесь, что Расширенный режим включен в настройках Service Fabric Explorer.
-1. Выберите нужные разделы и нажмите на Действия. 
-2. Выберите восстановление раздела триггера и заполните информацию для Azure:
+### <a name="using-service-fabric-explorer"></a>Использование Service Fabric Explorer
+Можно запустить восстановление из Service Fabric Explorer. Убедитесь, что в параметрах Service Fabric Explorer включен расширенный режим.
+1. Выберите нужные секции и щелкните действия. 
+2. Выберите активировать восстановление секций и введите сведения для Azure:
 
-    ![Восстановление раздела триггера][2]
+    ![Активировать восстановление секций][2]
 
-    или FileShare:
+    или общая папка:
 
-    ![Триггер раздел восстановление Fileshare][3]
+    ![Активировать общую папку для восстановления секции][3]
 
-### <a name="data-restore-for-_data-corruption__data-loss_"></a>Восстановление данных для потери _данных в связи с коррупцией_/_данных_
+### <a name="data-restore-for-_data-corruption__data-loss_"></a>Восстановление данных для_потери_ данных при _повреждении_/данных
 
 В случае _потери_ или _повреждения_ данных можно восстановить секции надежной службы с отслеживанием состояния и Reliable Actors из любой выбранной резервной копии (если они были созданы).
 
@@ -209,7 +209,7 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Выберите резервную копию из выходных данных [GetBackupAPI](service-fabric-backuprestoreservice-quickstart-azurecluster.md#list-backups). В этом сценарии резервная копия в прошлом была создана из того же кластера.
 
-Чтобы активировать восстановление, выберите резервную копию из списка. Для текущей/_порчи потерь_ _данных_выберите следующее резервное копирование:
+Чтобы активировать восстановление, выберите резервную копию из списка. Для_повреждения данных_ _потери_/данных выберите следующую резервную копию:
 
 ```
 BackupId                : b0035075-b327-41a5-a58f-3ea94b68faa4
@@ -228,14 +228,14 @@ FailureError            :
 Для API восстановления укажите значения _BackupId_ и _BackupLocation_. Для кластера включено резервное копирование, поэтому _служба восстановления резервных копий_ Service Fabric вычисляет правильное расположение хранилища на основе соответствующей политики резервного копирования.
 
 
-#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Powershell с помощью Microsoft.ServiceFabric.Powershell.Http Модуль
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>PowerShell с использованием модуля Microsoft. ServiceFabric. PowerShell. http
 
 ```powershell
 Restore-SFPartition  -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -BackupId 'b0035075-b327-41a5-a58f-3ea94b68faa4' -BackupLocation 'SampleApp\MyStatefulService\974bd92a-b395-4631-8a7f-53bd4ae9cf22\2018-04-06 21.10.27.zip'
 
 ```
 
-#### <a name="rest-call-using-powershell"></a>Отдых Вызова с помощью Powershell
+#### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
 ```powershell
 $RestorePartitionReference = @{
@@ -255,13 +255,13 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Секция надежной службы с отслеживанием состояния или Reliable Actor в один момент времени может принять только один запрос на восстановление. Секция примет другой запрос только после завершения текущего запроса на восстановление. Но можно выполнять несколько запросов на восстановление одновременно в разных секциях.
 
-#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Powershell с помощью Microsoft.ServiceFabric.Powershell.Http Модуль
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>PowerShell с использованием модуля Microsoft. ServiceFabric. PowerShell. http
 
 ```powershell
     Get-SFPartitionRestoreProgress -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22'
 ```
 
-#### <a name="rest-call-using-powershell"></a>Отдых Вызова с помощью Powershell
+#### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
 ```powershell
 $url = "https://mysfcluster-backup.southcentralus.cloudapp.azure.com:19080/Partitions/974bd92a-b395-4631-8a7f-53bd4ae9cf22/$/GetRestoreProgress?api-version=6.4"
@@ -274,14 +274,14 @@ $restoreResponse | Format-List
 
 Запрос на восстановление обрабатывается в следующем порядке состояний.
 
-1. **Принятое**состояние _восстановления: Допустимое_ состояние восстановления указывает на то, что запрашиваемый раздел был вызван с правильными параметрами запроса.
+1. **Принято**: _допустимое_ состояние восстановления указывает на то, что запрошенная секция была активирована с правильными параметрами запроса.
     ```
     RestoreState  : Accepted
     TimeStampUtc  : 0001-01-01T00:00:00Z
     RestoredEpoch : @{DataLossNumber=131675205859825409; ConfigurationNumber=8589934592}
     RestoredLsn   : 3552
     ```
-2. **InProgress**: Состояние восстановления _InProgress_ указывает на то, что восстановление происходит в разделе с резервным копированием, упомянутым в запросе. Для секции в этот период возвращается состояние _dataloss_.
+2. **Выполняется**: состояние _выполнения_ восстановления указывает на то, что в секции выполняется восстановление с резервной копией, указанной в запросе. Для секции в этот период возвращается состояние _dataloss_.
     ```
     RestoreState  : RestoreInProgress
     TimeStampUtc  : 0001-01-01T00:00:00Z
@@ -289,8 +289,8 @@ $restoreResponse | Format-List
     RestoredLsn   : 3552
     ```
     
-3. **Успех,** **Неудача**, или **Тайм-аут**: Запрошенное восстановление может быть завершено в любом из следующих состояний. Ниже описано значение каждого из этих состояний и подробное описание ответов для них.
-    - **Успех**: Состояние восстановления _успеха_ указывает на восстановленное состояние раздела. Секция возвращает состояния _RestoredEpoch_ и _RestoredLSN_, а также время в формате UTC.
+3. **Успех**, **сбой**или **время ожидания**. запрошенное восстановление можно выполнить в любом из следующих состояний. Ниже описано значение каждого из этих состояний и подробное описание ответов для них.
+    - **Успешно**: состояние _успешного_ восстановления указывает на восстановленное состояние секции. Секция возвращает состояния _RestoredEpoch_ и _RestoredLSN_, а также время в формате UTC.
 
         ```
         RestoreState  : Success
@@ -298,7 +298,7 @@ $restoreResponse | Format-List
         RestoredEpoch : @{DataLossNumber=131675205859825409; ConfigurationNumber=8589934592}
         RestoredLsn   : 3552
         ```        
-    - **Сбой**: Состояние восстановления _сбоя_ указывает на сбой запроса на восстановление. Сообщается причина ошибки.
+    - **Сбой**. состояние _сбоя_ восстановления указывает на сбой запроса на восстановление. Сообщается причина ошибки.
 
         ```
         RestoreState  : Failure
@@ -306,7 +306,7 @@ $restoreResponse | Format-List
         RestoredEpoch : 
         RestoredLsn   : 0
         ```
-    - **Тайм-аут**: Состояние восстановления _тайм-аута_ указывает на то, что запрос имеет тайм-аут. Создайте новый запрос на восстановление с большим значением [RestoreTimeout](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition#backuptimeout). Время ожидания по умолчанию составляет 10 минут. Убедитесь, что раздел вышел из состояния dataloss, прежде чем повторять запрос на восстановление.
+    - **Время**ожидания. состояние восстановления _времени ожидания_ указывает на то, что время ожидания запроса истекло. Создайте новый запрос на восстановление с большим значением [RestoreTimeout](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition#backuptimeout). Время ожидания по умолчанию составляет 10 минут. Убедитесь, что раздел вышел из состояния dataloss, прежде чем повторять запрос на восстановление.
      
         ```
         RestoreState  : Timeout
@@ -317,13 +317,13 @@ $restoreResponse | Format-List
 
 ## <a name="automatic-restore"></a>Автоматическое восстановление
 
-Для секций надежной службы с отслеживанием состояния и Reliable Actors в кластере Service Fabric можно настроить _автоматическое восстановление_. В политике резервного копирования для параметра `AutoRestore` задайте значение _true_. Если для секции включено _автоматическое восстановление_, то при обнаружении потери данных ее данные автоматически восстанавливаются из последней резервной копии. Дополнительные сведения см. в разделе:
+Для секций надежной службы с отслеживанием состояния и Reliable Actors в кластере Service Fabric можно настроить _автоматическое восстановление_. В политике резервного копирования для параметра `AutoRestore` задайте значение _true_. Если для секции включено _автоматическое восстановление_, то при обнаружении потери данных ее данные автоматически восстанавливаются из последней резервной копии. Дополнительные сведения можно найти в разделе
 
 - [Включение автоматического восстановления в политике резервного копирования](service-fabric-backuprestoreservice-configure-periodic-backup.md#auto-restore-on-data-loss)
 - [Справочник по RestorePartition API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition)
 - [Справочник по GetPartitionRestoreProgress API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionrestoreprogress)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 

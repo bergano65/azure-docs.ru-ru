@@ -1,5 +1,5 @@
 ---
-title: Картирование столбцов наборов данных в Azure Data Factory
+title: Сопоставление столбцов набора данных в фабрике данных Azure
 description: Узнайте, как сопоставить исходные столбцы с целевыми столбцами.
 services: data-factory
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 6eb7012e28319ee6cc86de5ee56090743d681068
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74923871"
 ---
 # <a name="map-source-dataset-columns-to-destination-dataset-columns"></a>Сопоставление столбцов исходного набора данных со столбцами целевого набора данных
@@ -135,7 +135,7 @@ ms.locfileid: "74923871"
         }
 }
 ```
-**Поток отображения столбцов:**
+**Поток сопоставления столбцов:**
 
 ![Процесс сопоставления столбцов](./media/data-factory-map-columns/column-mapping-flow.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Настраиваемые пороговые правила в аналитике потоков Azure
+title: Настраиваемые правила на основе пороговых значений в Azure Stream Analytics
 description: В этой статье описывается использование эталонных данных для получения решения для оповещения с правилами на основе настраиваемых порогов в Azure Stream Analytics.
 author: mamccrea
 ms.author: mamccrea
@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.openlocfilehash: 94fdddf11acb6763ed98a4b7e17304fbde0e25dd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75369717"
 ---
 # <a name="process-configurable-threshold-based-rules-in-azure-stream-analytics"></a>Обработка правил на основе настраиваемых порогов в Azure Stream Analytics

@@ -1,6 +1,6 @@
 ---
-title: Создайте частную конечную точку Azure с помощью Azure PowerShell Документы Майкрософт
-description: Узнайте больше о частной ссылке Azure
+title: Создание частной конечной точки Azure с помощью Azure PowerShell | Документация Майкрософт
+description: Сведения о частной ссылке Azure
 services: private-link
 author: malopMSFT
 ms.service: private-link
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 09/16/2019
 ms.author: allensu
 ms.openlocfilehash: 60032677594537f1e7791b7108eebd5d4cfad5b4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75430345"
 ---
 # <a name="create-a-private-endpoint-using-azure-powershell"></a>Создание частной конечной точки с помощью Azure PowerShell
@@ -23,7 +23,7 @@ ms.locfileid: "75430345"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Прежде чем создавать ресурсы, необходимо создать группу ресурсов, в размещении - виртуальную сеть и частную конечную точку с [New-AzResourceGroup.](/powershell/module/az.resources/new-azresourcegroup) Следующий пример создает группу ресурсов под названием *myResourceGroup* в месте *назападе:*
+Перед созданием ресурсов необходимо создать группу ресурсов, в которой размещается виртуальная сеть и частная конечная точка, с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *WestUS* :
 
 ```azurepowershell
 
@@ -33,11 +33,11 @@ New-AzResourceGroup `
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-В этом разделе вы создаете виртуальную сеть и подсеть. Далее вы связываете подсеть с вашей виртуальной сетью.
+В этом разделе вы создадите виртуальную сеть и подсеть. Затем подсеть связывается с виртуальной сетью.
 
 ### <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 
-Создайте виртуальную сеть для вашей частной конечной точки с [Помощью New-AzVirtualNetwork.](/powershell/module/az.network/new-azvirtualnetwork) Следующий пример создает виртуальную сеть под названием *MyVirtualNetwork:*
+Создайте виртуальную сеть для частной конечной точки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *MyVirtualNetwork*:
  
 ```azurepowershell
 
@@ -48,9 +48,9 @@ $virtualNetwork = New-AzVirtualNetwork `
   -AddressPrefix 10.0.0.0/16
 ```
 
-### <a name="add-a-subnet"></a>Добавить подсеть
+### <a name="add-a-subnet"></a>Добавление подсети
 
-Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать подсеть. Создайте конфигурацию подсети под названием *mySubnet* с [помощью Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig). Следующий пример создает подсеть под названием *mySubnet* с частным флагом политики сети конечных точек, установленным для **инвалидов.**
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать подсеть. Создайте конфигурацию подсети с именем *mySubnet* с помощью [Add-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/add-azvirtualnetworksubnetconfig). В следующем примере создается подсеть с именем *mySubnet* с флагом политики сети частной конечной точки, установленным в значение **Disabled (отключено**).
 
 ```azurepowershell
 $subnetConfig = Add-AzVirtualNetworkSubnetConfig `
@@ -61,11 +61,11 @@ $subnetConfig = Add-AzVirtualNetworkSubnetConfig `
 ```
 
 > [!CAUTION]
-> Легко перепутать `PrivateEndpointNetworkPoliciesFlag` параметр с другим доступным `PrivateLinkServiceNetworkPoliciesFlag`флагом, потому что они оба длинные слова и имеют схожий внешний вид.  Убедитесь, что вы используете правильный, `PrivateEndpointNetworkPoliciesFlag`.
+> `PrivateEndpointNetworkPoliciesFlag` Параметр можно легко запутать с другим доступным флагом, `PrivateLinkServiceNetworkPoliciesFlag`так как оба слова являются длинными словами и имеют одинаковый внешний вид.  Убедитесь, что используется правильный, `PrivateEndpointNetworkPoliciesFlag`.
 
-### <a name="associate-the-subnet-to-the-virtual-network"></a>Связать подсеть с виртуальной сетью
+### <a name="associate-the-subnet-to-the-virtual-network"></a>Связывание подсети с виртуальной сетью
 
-Вы можете написать конфигурацию подсети в Виртуальную сеть с [set-AzVirtualNetwork](/powershell/module/az.network/Set-azVirtualNetwork). Эта команда создает подсеть:
+Вы можете записать конфигурацию подсети в виртуальную сеть с помощью [Set-азвиртуалнетворк](/powershell/module/az.network/Set-azVirtualNetwork). Эта команда создает подсеть:
 
 ```azurepowershell
 $virtualNetwork | Set-AzVirtualNetwork
@@ -73,7 +73,7 @@ $virtualNetwork | Set-AzVirtualNetwork
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-Создайте VM в виртуальной сети с [New-AzVM](/powershell/module/az.compute/new-azvm). При запуске приведенной ниже команды запрашиваются учетные данные. Введите имя пользователя и пароль виртуальной машины:
+Создайте виртуальную машину в виртуальной сети с помощью [New-AzVM](/powershell/module/az.compute/new-azvm). При запуске приведенной ниже команды запрашиваются учетные данные. Введите имя пользователя и пароль виртуальной машины:
 
 ```azurepowershell-interactive
 New-AzVm `
@@ -100,7 +100,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 ## <a name="create-a-sql-database-server"></a>Создание сервера базы данных SQL 
 
-Создайте сервер базы данных S'L, используя команду New-AzSqlServer. Помните, что имя вашего сервера базы данных S'L должно быть уникальным в Azure, поэтому замените значение заполнителя в скобках на ваше собственное уникальное значение:
+Создайте сервер базы данных SQL с помощью команды New-Азсклсервер. Помните, что имя сервера базы данных SQL должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
 
 ```azurepowershell-interactive
 $adminSqlLogin = "SqlAdmin"
@@ -120,7 +120,7 @@ New-AzSqlDatabase  -ResourceGroupName "myResourceGroup" `
 
 ## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
 
-Частная конечная точка для сервера базы данных S'L в вашей виртуальной сети с [New-AzPrivateLinkServiceConnection:](/powershell/module/az.network/New-AzPrivateLinkServiceConnection) 
+Частная конечная точка для сервера базы данных SQL в виртуальной сети с помощью [New-азпривателинксервицеконнектион](/powershell/module/az.network/New-AzPrivateLinkServiceConnection): 
 
 ```azurepowershell
 
@@ -142,7 +142,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName "myResourceGroup" `
 ``` 
 
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
-Создайте частную dNS-зону для домена S'L Database Server и создайте связующее звено с виртуальной сетью: 
+Создайте частную зону DNS для домена сервера базы данных SQL и создайте связь связи с виртуальной сетью: 
 
 ```azurepowershell
 
@@ -170,7 +170,7 @@ New-AzPrivateDnsRecordSet -Name $recordName -RecordType A -ZoneName "privatelink
   
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
-Чтобы получить общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/Get-AzPublicIpAddress). Этот пример возвращает общедоступный IP-адрес *myVM* VM:
+Чтобы получить общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/Get-AzPublicIpAddress). В этом примере возвращается общедоступный IP-адрес виртуальной машины *myVM* :
 
 ```azurepowershell
 Get-AzPublicIpAddress `
@@ -178,7 +178,7 @@ Get-AzPublicIpAddress `
   -ResourceGroupName myResourceGroup `
   | Select IpAddress 
 ```  
-Откройте командную строку на локальном компьютере. Выполнить команду mstsc. Замените <publicIpAddress> общедоступным IP-адресом, полученным на последнем шаге: 
+Откройте командную строку на локальном компьютере. Выполните команду mstsc. Замените <publicIpAddress> общедоступным IP-адресом, полученным на последнем шаге: 
 
 
 > [!NOTE]
@@ -190,9 +190,9 @@ mstsc /v:<publicIpAddress>
 1. При появлении запроса выберите **Подключиться**. 
 2. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
   > [!NOTE]
-  > Возможно, вам придется выбрать больше вариантов > использовать другую учетную запись, чтобы указать учетные данные, которые вы ввели при создании VM. 
+  > Вам может потребоваться выбрать дополнительные варианты > использовать другую учетную запись, чтобы указать учетные данные, введенные при создании виртуальной машины. 
   
-3. Нажмите кнопку **ОК**. 
+3. Щелкните **ОК**. 
 4. Вы можете получить предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**. 
 
 ## <a name="access-sql-database-server-privately-from-the-vm"></a>Доступ с виртуальной машины к серверу базы данных SQL в частном порядке
@@ -210,17 +210,17 @@ mstsc /v:<publicIpAddress>
     Aliases:   myserver.database.windows.net
     ```
 3. Установите SQL Server Management Studio
-4. При подключении к серверу введите или выберите эту информацию: Установка типа Value Server Select Database Engine.
-      Имя сервера Выберите myserver.database.windows.net имя пользователя Введите имя пользователя, предоставленное во время создания.
-      Пароль Введите пароль, предоставленный во время создания.
-      Помните, что пароль Выберите Да.
+4. В окне Подключение к серверу введите или выберите эту информацию: Настройка значения тип сервера выберите ядро СУБД.
+      Имя сервера выберите myserver.database.windows.net Username введите имя пользователя, указанное во время создания.
+      Пароль введите пароль, указанный во время создания.
+      Запомнить пароль выберите Да.
 5. Выберите Подключиться.
-6. Просматривайте базы данных из левого меню. 
-7. (По желанию) Создание или запрос информации из базы данных
-8. Закройте удаленное подключение к рабочему столу *на myVM.* 
+6. Просмотр баз данных из левого меню. 
+7. При необходимости Создание или запрос информации из MyDatabase
+8. Закройте подключение к удаленному рабочему столу *myVM*. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
-Когда вы закончите использовать частную конечную точку, сервер базы данных s'L и VM, используйте [Remove-AzResourceGroup,](/powershell/module/az.resources/remove-azresourcegroup) чтобы удалить группу ресурсов и все ресурсы, которые она имеет:
+Завершив использование частной конечной точки, сервера базы данных SQL и виртуальной машины, удалите группу ресурсов и все ресурсы, используя команду [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup -Force

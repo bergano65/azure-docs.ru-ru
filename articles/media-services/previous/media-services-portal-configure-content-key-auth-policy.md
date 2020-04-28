@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 8580bafd4d68ef6567b09fefcaa01c682ae2cafe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74968805"
 ---
 # <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
@@ -33,7 +33,7 @@ ms.locfileid: "74968805"
 
 Когда проигрыватель запрашивает поток, для которого настроено динамическое шифрование, Службы мультимедиа, используя настроенный ключ, выполняют динамическое шифрование содержимого с помощью AES или DRM. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
-Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения см. в разделе:
+Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения можно найти в разделе
 
 * [Настройка политики авторизации ключей содержимого с помощью пакета SDK Служб мультимедиа для .NET](media-services-dotnet-configure-content-key-auth-policy.md)
 * [Настройка политики авторизации ключей содержимого с помощью REST API для Служб мультимедиа](media-services-rest-configure-content-key-auth-policy.md)
@@ -80,14 +80,14 @@ ms.locfileid: "74968805"
 
 Вы можете нажать кнопку **импорта XML-файла политики** и выбрать другой XML-файл, который соответствует XML-схеме, определенной в статье [Обзор шаблонов лицензий PlayReady Служб мультимедиа](media-services-playready-license-template-overview.md).
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png

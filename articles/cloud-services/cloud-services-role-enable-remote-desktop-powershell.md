@@ -1,5 +1,5 @@
 ---
-title: Используйте PowerShell для включения удаленного рабочего стола для роли
+title: Включение удаленный рабочий стол для роли с помощью PowerShell
 titleSuffix: Azure Cloud Services
 description: Как настроить приложение облачной службы Azure для подключений к удаленному рабочему столу с помощью PowerShell
 services: cloud-services
@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
 ms.openlocfilehash: e4e8dca6c5359e865e6a17fc47fe47802b0ee9e6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75386125"
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-powershell"></a>Включение подключения к удаленному рабочему столу для роли в облачных службах Azure с помощью PowerShell
