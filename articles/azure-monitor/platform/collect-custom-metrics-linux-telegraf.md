@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: c5ea32fb198a61391e1be3648d1d2d2e829a7214
-ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
+ms.openlocfilehash: 06c344130156ae5f72f6e65baa519c11adff2bae
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82137269"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82186447"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
 
@@ -32,6 +32,9 @@ Azure Monitor позволяет собирать пользовательски
 В этом руководстве мы развернем виртуальную машину Linux под управлением операционной системы Ubuntu 16.04 LTS. Агент Telegraf поддерживается для большинства операционных систем Linux. Пакеты Debian и RPM с распакованными двоичными файлами Linux доступны на [портале загрузки InfluxData](https://portal.influxdata.com/downloads). Дополнительные инструкции по установке и доступные варианты установки Telegraf см. в этом [руководстве по установке Telegraf](https://docs.influxdata.com/telegraf/v1.8/introduction/installation/). 
 
 Войдите на [портал Azure](https://portal.azure.com).
+
+> [!NOTE]  
+> Если вы хотите перенести классические правила генерации оповещений и использовать существующую виртуальную машину Linux, убедитесь, что для компьютера виртуальную назначено системное удостоверение со значением **On**.
 
 Создайте новую виртуальную машину Linux. 
 
@@ -132,7 +135,7 @@ sudo systemctl start telegraf
 
 Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выберите группу ресурсов для виртуальной машины и нажмите кнопку **Удалить**. Затем подтвердите имя удаляемой группы ресурсов. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 
 

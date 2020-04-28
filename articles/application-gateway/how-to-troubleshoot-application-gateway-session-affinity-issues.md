@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: 9f14521c15c3497bed4ffbeba44cb5d78ee4df7b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: MT
+ms.openlocfilehash: aa3617b30fe1ef9b4d4a6c5fe5aac51bff95bb92
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74047987"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81866674"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Проблемы устранения проблем в области сродства прикладного приложения Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "74047987"
 
 ### <a name="the-application-cannot-handle-cookie-based-affinity"></a>Приложение не может обрабатывать сродство на основе файлов cookie
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Шлюз приложения может выполнять сродство на основе сеансов только с помощью файла cookie.
 
@@ -91,13 +91,13 @@ ms.locfileid: "74047987"
 
 Приложение продолжает пытаться настроить файлы cookie на каждый запрос до тех пор, пока он не получит ответ.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта проблема возникает из-за того, что Internet Explorer и другие браузеры не могут хранить или использовать файлы cookie с URL-адресом с коротким именем.
 
 #### <a name="resolution"></a>Решение
 
-Чтобы устранить эту проблему, для доступа к Шлюзу приложений следует использовать полное доменное имя. Например, [http://website.com](https://website.com/) использовать [http://appgw.website.com](http://appgw.website.com/) или .
+Чтобы устранить эту проблему, для доступа к Шлюзу приложений следует использовать полное доменное имя. Например, [http://website.com](https://website.com/) использовать [http://appgw.website.com](http://website.com/) или .
 
 ## <a name="additional-logs-to-troubleshoot"></a>Дополнительные журналы для устранения неполадок
 

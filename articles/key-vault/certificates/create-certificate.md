@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 21bcaf8636638153ad5e5659ef3e1bff0631d9b8
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 7450dd79247078afe02d1bb63727cfd260d674fc
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81430959"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81866258"
 ---
 # <a name="certificate-creation-methods"></a>Способы создания сертификатов
 
@@ -80,10 +80,10 @@ ms.locfileid: "81430959"
 ## <a name="partnered-ca-providers"></a>Поставщики партнерского центра сертификации
 Создание сертификата может быть выполнено вручную или с помощью издателя Self. Key Vault также сотрудничает с определенными поставщиками издателей, чтобы упростить создание сертификатов. У этих партнеров-поставщиков издателей можно заказать для хранилища ключей следующие сертификаты.  
 
-|Поставщик|Тип сертификата|  
-|--------------|----------------------|  
-|DigiCert;|Key Vault предоставляет OV или EV SSL-сертификаты в DigiCert|
-|GlobalSign;|Key Vault предоставляет OV или EV SSL-сертификаты в GlobalSign|
+|Поставщик|Тип сертификата|Настройка конфигурации  
+|--------------|----------------------|------------------|  
+|DigiCert;|Key Vault предоставляет OV или EV SSL-сертификаты в DigiCert| [Руководство по интеграции](https://docs.digicert.com/certificate-tools/azure-key-vault-integration-guide/)
+|GlobalSign;|Key Vault предоставляет OV или EV SSL-сертификаты в GlobalSign| [Руководство по интеграции](https://support.globalsign.com/digital-certificates/digital-certificate-installation/generating-and-importing-certificate-microsoft-azure-key-vault)
 
  Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.
 

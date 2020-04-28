@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 9f3802ada79ee87d1a04634f7caac3b1b4286dce
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: ac7609d49631fb2ed16fa129f8dc4099cc166247
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74978038"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81769873"
 ---
 # <a name="tutorial-use-custom-vision-with-an-iot-device-to-report-visual-states"></a>Руководство по использованию Пользовательского визуального распознавания с устройством Интернета вещей для сообщения о визуальных состояниях
 
-В этом примере приложения показано, как использовать Пользовательское визуальное распознавание, чтобы обучить устройство с камерой обнаруживать визуальные состояния. Этот сценарий обнаружения можно реализовать на устройстве Интернета вещей с помощью модели ONNX, экспортированной из службы "Пользовательское визуальное распознавание".
+В этом примере приложения показано, как использовать Пользовательское визуальное распознавание, чтобы обучить устройство с камерой обнаруживать визуальные состояния. Этот сценарий обнаружения можно реализовать на устройстве Интернета вещей с помощью экспортированной модели ONNX.
 
 Визуальное состояние описывает содержимое изображения: пустое помещение или комната с людьми, пустое шоссе или с грузовиком и т. д. На приведенном ниже изображении видно, что приложение обнаруживает, когда перед камерой помещается банан или яблоко.
 
@@ -41,7 +41,7 @@ ms.locfileid: "74978038"
 * Вам также потребуется [создать ресурс Центра Интернета вещей](https://ms.portal.azure.com/#create/Microsoft.IotHub) в Azure.
 * [Visual Studio 2015 или более поздней версии](https://www.visualstudio.com/downloads/).
 * При необходимости устройство Интернета вещей под управлением ОС Windows 10 IoT Базовая версии 17763 или более поздней. Можно также запустить приложение непосредственно на компьютере.
-   * Для Raspberry Pi 2 и 3 можно настроить Windows 10 непосредственно в приложении панели мониторинга Интернета вещей. На других устройствах, таких как DrangonBoard, необходимо установить ПО с помощью [метода eMMC](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup#flashing-with-emmc-for-dragonboard-410c-other-qualcomm-devices). Дополнительные сведения о настройке нового устройства см. в [этой статье](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup) в документации по Windows IoT.
+   * Для Raspberry Pi 2 и 3 можно настроить Windows 10 непосредственно в приложении панели мониторинга Интернета вещей. На других устройствах, таких как DrangonBoard, необходимо установить ПО с помощью [метода eMMC](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup#flashing-with-emmc-for-dragonboard-410c-other-qualcomm-devices). Дополнительные сведения о настройке нового устройства см. в статье [Настройка устройства](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup) в документации по Windows IoT.
 
 ## <a name="about-the-visual-alerts-app"></a>Сведения о приложении визуальных оповещений
 

@@ -1,27 +1,27 @@
 ---
-title: Excel & Apache Hadoop с драйвером open Database Connectivity (ODBC) - Azure HDInsight
+title: Excel & Apache Hadoop с драйвером ODBC — Azure HDInsight
 description: Узнайте, как установить и использовать драйвер Microsoft Hive ODBC для Excel, чтобы запрашивать данные в кластерах HDInsight из Microsoft Excel.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive,hdiseo17may2017
+ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: 5aefd2c344565bf6dcb384996c42c1bc30e7291d
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.openlocfilehash: 388f59f5090be43469acfde5197a658942e817f7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82024937"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182452"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
 [!INCLUDE [ODBC-JDBC-selector](../../../includes/hdinsight-selector-odbc-jdbc.md)]
 
-Решение Microsoft big Data интегрирует компоненты Microsoft Business Intelligence (BI) с кластерами Apache Hadoop, развернутыми в HDInsight. Примером может быть возможность подключения Excel к складу данных Hive кластера Hadoop. Подключитесь с помощью драйвера Microsoft Hive Open Database Connectivity (ODBC).
+Решение Microsoft для работы с большими данными интегрирует компоненты бизнес-аналитики Майкрософт с Apache Hadoop кластерами, развернутыми в HDInsight. Примером может быть возможность подключения Excel к хранилищу данных Hive кластера Hadoop. Подключитесь с помощью драйвера Microsoft Hive Open Database Connectivity (ODBC).
 
-Можно подключить данные, связанные с кластером HDInsight от Excel, с надстройкой Microsoft Power Query для Excel. Для получения дополнительной информации [см. Подключите Excel к HDInsight с помощью энергетического запроса](../hdinsight-connect-excel-power-query.md).
+Вы можете подключить данные, связанные с кластером HDInsight, из Excel с помощью надстройки Microsoft Power Query для Excel. Дополнительные сведения см. в статье [Подключение Excel к HDInsight с помощью Power Query](../hdinsight-connect-excel-power-query.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,13 +32,13 @@ ms.locfileid: "82024937"
 
 ## <a name="install-microsoft-hive-odbc-driver"></a>Установка драйвера Microsoft Hive ODBC
 
-Скачать и установить [Microsoft Hive ODBC Драйвер](https://www.microsoft.com/download/details.aspx?id=40886). Выберите версию, которая соответствует версии приложения, где вы будете использовать драйвер ODBC.  Для этой статьи драйвер используется для Office Excel.
+Скачайте и установите [Microsoft Hive ODBC Driver](https://www.microsoft.com/download/details.aspx?id=40886). Выберите версию, соответствующую версии приложения, в которой вы будете использовать драйвер ODBC.  Для этой статьи используется драйвер для Office Excel.
 
 ## <a name="create-apache-hive-odbc-data-source"></a>Создание источника данных Apache Hive ODBC
 
 Ниже показано, как создать источник данных Hive ODBC.
 
-1. От Windows, перейдите к **начать > Windows административные инструменты > ODBC источников данных (32-битный)/(64-разрядный)**.  Это действие открывает окно **администратора источника данных ODBC.**
+1. В Windows перейдите в меню **пуск > средства администрирования windows > источники данных ODBC (32-разрядная версия)/(64-разрядная версия)**.  Это действие открывает окно **Администратор источников данных ODBC** .
 
     ![Администратор источника данных ODBC](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png "Настройка DSN с помощью администратора источников данных ODBC")
 
@@ -51,24 +51,24 @@ ms.locfileid: "82024937"
    | Свойство | Описание |
    | --- | --- |
    |  Имя базы данных-источника |Присвойте имя источнику данных |
-   |  Узлы |Введите `HDInsightClusterName.azurehdinsight.net`. Например, `myHDICluster.azurehdinsight.net`. Примечание: `HDInsightClusterName-int.azurehdinsight.net` поддерживается до тех пор, пока клиент VM заглянул в ту же виртуальную сеть. |
+   |  Узлы |Введите `HDInsightClusterName.azurehdinsight.net`. Например, `myHDICluster.azurehdinsight.net`. Примечание. `HDInsightClusterName-int.azurehdinsight.net` поддерживается до тех пор, пока клиентская виртуальная машина будет соединена с той же виртуальной сетью. |
    |  Порт |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте **значение по умолчанию**. |
    |  Механизм |Выберите **Windows Azure HDInsight Service**. |
    |  Имя пользователя |Введите имя пользователя HTTP кластера HDInsight. Имя пользователя по умолчанию — **admin**. |
    |  Пароль |Введите пароль пользователя кластера HDInsight. Установите флажок **Save Password (Encrypted)** (Сохранить пароль (зашифрованный)).|
 
-1. Дополнительно: Выберите **расширенные варианты...**  
+1. Необязательно: выберите **Дополнительные параметры...**  
 
    | Параметр | Описание |
    | --- | --- |
-   |  Использовать исходный запрос |При выборе этого параметра драйвер ODBC НЕ пытается преобразовать TSQL в HiveQL. Вы должны использовать его, только если вы на 100% уверены, что вы представляете чистые заявления Hive'L. При подключении к серверу SQL Server или базе данных Azure SQL необходимо снять этот флажок. |
+   |  Использовать исходный запрос |При выборе этого параметра драйвер ODBC НЕ пытается преобразовать TSQL в HiveQL. Его следует использовать только в том случае, если у вас 100%, что вы отправляете чистые инструкции HiveQL. При подключении к серверу SQL Server или базе данных Azure SQL необходимо снять этот флажок. |
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |
-   |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Они приводят к неверную информацию, которая будет возвращена из-за потери точности и или усечения. |
+   |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Они приводят к возврату неверных данных из-за потери точности и или усечения. |
 
     ![Дополнительные параметры конфигурации DSN](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Дополнительные параметры конфигурации DSN")
 
-1. Щелкните **Тест** для проверки источника данных. Когда источник данных настроен правильно, результат теста показывает **SUCCESS!**
+1. Щелкните **Тест** для проверки источника данных. Если источник данных настроен правильно, результат теста будет отображаться **успешно.**
 
 1. Нажмите кнопку **ОК**, чтобы закрыть окно тестов.  
 
@@ -84,21 +84,21 @@ ms.locfileid: "82024937"
 
 2. На вкладке **Данные** перейдите к разделу **Получить данные** > **Из других источников** > **Из ODBC**, чтобы открыть окно **Из ODBC**.
 
-    ![Мастер подключения к данным Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png "Мастер подключения к данным Excel")
+    ![Открытие мастера подключения к данным Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png "Открытие мастера подключения к данным Excel")
 
-3. Из списка выпадающих данных выберите имя источника данных, созданное в последнем разделе, а затем выберите **OK.**
+3. В раскрывающемся списке выберите имя источника данных, созданное в последнем разделе, и нажмите кнопку **ОК**.
 
-4. Для первого использования откроется диалог **драйверов ODBC.** Выберите **Windows** из левого меню. Затем выберите **Connect,** чтобы открыть окно **навигатора.**
+4. При первом использовании откроется диалоговое окно **драйвера ODBC** . В меню слева выберите пункт **Windows** . Затем нажмите кнопку **Подключиться** , чтобы открыть окно **навигатора** .
 
 5. В окне **Навигатор** перейдите к **HIVE** > **по умолчанию** > **hivesampletable**, а затем нажмите кнопку **Загрузить**. Для импорта данных в Excel потребуется несколько секунд.
 
-    ![HDInsight Excel Hive ODBC навигатор](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "HDInsight Excel Hive ODBC навигатор")
+    ![Навигатор по ODBC для Hive в HDInsight Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "Навигатор по ODBC для Hive в HDInsight Excel")
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этой статьи вы узнали, как получить данные из службы HDInsight в Excel с помощью драйвера Microsoft Hive ODBC. Аналогичным образом можно получать данные из службы HDInsight в базу данных SQL. Также можно загрузить данные в службу HDInsight. Дополнительные сведения см. на следующих ресурсах:
+В рамках этой статьи вы узнали, как получить данные из службы HDInsight в Excel с помощью драйвера Microsoft Hive ODBC. Аналогичным образом можно получать данные из службы HDInsight в базу данных SQL. Также можно передать данные в службу HDInsight. Дополнительные сведения см. на следующих ресурсах:
 
-* [Визуализируйте данные Apache Hive с помощью Microsoft Power BI в Azure HDInsight.](apache-hadoop-connect-hive-power-bi.md)
+* [Визуализируйте Apache Hive данные с помощью Microsoft Power BI в Azure HDInsight](apache-hadoop-connect-hive-power-bi.md).
 * [Visualize Interactive Query Hive data with Microsoft Power BI using DirectQuery in Azure HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md) (Визуализация данных Hive из кластера Interactive Query с помощью Microsoft Power BI и DirectQuery в Azure HDInsight).
-* [Подключите Excel к Apache Hadoop с помощью power Query](apache-hadoop-connect-excel-power-query.md).
+* [Подключите Excel к Apache Hadoop с помощью Power Query](apache-hadoop-connect-excel-power-query.md).
 * [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью Средств Data Lake для Visual Studio](apache-hadoop-visual-studio-tools-get-started.md)

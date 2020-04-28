@@ -5,20 +5,36 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.date: 10/19/2018
+ms.date: 04/23/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a1b8abf15233c06e8ff9e507b315cc8a3703970
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.openlocfilehash: 11c9d66f891e8f5d53fc2a965e75f095417d20d4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "60454665"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82184016"
 ---
 # <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADSyncTools
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADSyncTools.psm1, который входит в состав Azure AD Connect.
+
+## <a name="install-the-adsynctools-powershell-module"></a>Установка модуля PowerShell Адсинктулс
+Чтобы установить модуль PowerShell Адсинктулс, выполните следующие действия.
+
+1.  Откройте Windows PowerShell с помощью прав администратора
+2.  Введите или скопируйте и вставьте следующий текст: 
+    ``` powershell
+    Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
+    ```
+3.  Нажмите клавишу ВВОД.
+4.  Чтобы проверить, установлен ли модуль, введите или скопируйте и вставьте следующий текст:
+    ```powershell
+    Get-module AdSyncTools
+    ```
+5.  Теперь должны отобразиться сведения о модуле.
+
 
 ## <a name="clear-adsynctoolsconsistencyguid"></a>Clear-ADSyncToolsConsistencyGuid
 

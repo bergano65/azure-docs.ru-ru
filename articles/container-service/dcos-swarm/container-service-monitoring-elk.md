@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: 3d34ebe22344be8acc6ec3cc974071639293e2b3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 586b8d25a9f391487640e9b1f8adb3be0e4be6db
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76277764"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166178"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-cluster-with-elk"></a>Мониторинг кластера службы контейнеров Azure с помощью ELK (не рекомендуется)
 
@@ -28,11 +28,11 @@ ms.locfileid: "76277764"
 Стек ELK представляет собой сочетание Elasticsearch, Logstash и Kibana, которые формируют комплекс средств, используемых для отслеживания и анализа журналов в кластере.
 
 ## <a name="configure-the-elk-stack-on-a-dcos-cluster"></a>Настройка стека ELK в кластере DC/OS
-Доступ к вашему DC [http://localhost:80/](http://localhost:80/) / OS UI через Один раз в DC / OS UI перейти к **Вселенной**. Найдите и установите Elasticsearch, Logstash и Kibana из DC/OS Universe именно в этом порядке. Дополнительные сведения о конфигурации см. разделе **Advanced Installation** (Дополнительные параметры установки).
+Перейдите к пользовательскому интерфейсу DC/OS по адресу `http://localhost:80/`. Затем в пользовательском интерфейсе DC/OS перейдите в раздел **Universe**. Найдите и установите Elasticsearch, Logstash и Kibana из DC/OS Universe именно в этом порядке. Дополнительные сведения о конфигурации см. разделе **Advanced Installation** (Дополнительные параметры установки).
 
 ![ELK1](./media/container-service-monitoring-elk/elk1.PNG) ![ELK2](./media/container-service-monitoring-elk/elk2.PNG) ![ELK3](./media/container-service-monitoring-elk/elk3.PNG) 
 
-После того как контейнеры ELK заработают, необходимо разрешить в Kibana доступ с помощью Marathon-LB. Перейдите к **службам** > **kibana**, и нажмите **Edit,** как показано ниже.
+После того как контейнеры ELK заработают, необходимо разрешить в Kibana доступ с помощью Marathon-LB. Перейдите к **службам** > **kibana**и нажмите кнопку **изменить** , как показано ниже.
 
 ![ELK4](./media/container-service-monitoring-elk/elk4.PNG)
 

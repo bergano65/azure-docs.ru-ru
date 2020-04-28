@@ -3,12 +3,12 @@ title: Руководство. Резервное копирование баз 
 description: В этом руководстве вы узнаете, как создавать резервные копии Базы данных SQL Server, запущенной на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup.
 ms.topic: tutorial
 ms.date: 06/18/2019
-ms.openlocfilehash: 3216404b04647e2fb5f15beb09b9a4ccd6648bba
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f1d76fe0dfa428688714b8383c3974ac63195681
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74171887"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81680727"
 ---
 # <a name="back-up-a-sql-server-database-in-an-azure-vm"></a>Резервное копирование Базы данных SQL Server на виртуальную машину Azure
 
@@ -64,7 +64,7 @@ Azure Backup выполняет ряд операций при настройк�
 * закрывающая квадратная скобка "]".
 * имена баз данных, начинающиеся с "F:\".
 
-Мы поддерживаем присвоение псевдонимов для неподдерживаемых знаков в таблицах Azure, но мы также рекомендуем избегать их. [Подробнее](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN).
+Мы поддерживаем присвоение псевдонимов для неподдерживаемых знаков в таблицах Azure, но мы также рекомендуем избегать их. [Подробнее](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model).
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 

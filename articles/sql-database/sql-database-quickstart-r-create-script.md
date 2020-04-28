@@ -13,12 +13,13 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
-ms.openlocfilehash: 5b2f8231952d25f5858f8e06a957f1056ecc3651
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ROBOTS: NOINDEX
+ms.openlocfilehash: bb6cb6d86933166d2427788d697d9cd38cf04bf0
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76768496"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460177"
 ---
 # <a name="quickstart-create-and-run-simple-r-scripts-in-azure-sql-database-machine-learning-services-preview"></a>Краткое руководство. Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)
 
@@ -30,11 +31,8 @@ ms.locfileid: "76768496"
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [База данных SQL Azure](sql-database-single-database-get-started.md) с [правилом брандмауэра на уровне сервера](sql-database-server-level-firewall-rule.md)
-- [Службы машинного обучения](sql-database-machine-learning-services-overview.md) (с поддержкой R) включены. [Зарегистрируйтесь, чтобы получить предварительную версию](sql-database-machine-learning-services-overview.md#signup).
+- [Службы машинного обучения](sql-database-machine-learning-services-overview.md) (с поддержкой R) включены.
 - [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS).
-
-> [!NOTE]
-> Во время использования общедоступной предварительной версии корпорация Майкрософт подключит вас и включит машинное обучение для имеющейся или новой базы данных.
 
 В этом примере для заключения правильно сформированного сценария R используется хранимая процедура [sp_execute_external_script](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
 

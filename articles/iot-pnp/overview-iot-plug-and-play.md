@@ -1,20 +1,20 @@
 ---
 title: Введение в предварительную версию IoT Plug and Play | Документация Майкрософт
 description: Сведения о предварительной версии IoT Plug and Play. Технология IoT Plug and Play основана на открытом языке моделирования, который позволяет устройствам Интернета вещей объявлять свои возможности. Устройства Интернета вещей предоставляют эту декларацию, именуемую моделью возможностей устройства, при подключении к облачным решениям, таким как Azure IoT Central или партнерским приложениям. Это позволяет облачным решениям автоматически понимать возможности устройства и организовывать взаимодействие с ним даже без дополнительного кода.
-author: ChrisGMsft
-ms.author: chrisgre
+author: Philmea
+ms.author: philmea
 ms.date: 12/23/2019
 ms.topic: overview
 ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 0399e1659fb7cc6a650c6b3c1d0189c8802d4904
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 12f3febac2c5c8ed01b9b156a64dc77f6ed0704f
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80064314"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770436"
 ---
 # <a name="what-is-iot-plug-and-play-preview"></a>Что представляет собой предварительная версия IoT Plug and Play?
 

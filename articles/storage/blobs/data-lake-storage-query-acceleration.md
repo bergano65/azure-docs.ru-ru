@@ -8,12 +8,12 @@ ms.reviewer: jamesbak
 ms.date: 04/21/2020
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 70a087e106e632d697052461928f3e1123a06b1b
-ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
+ms.openlocfilehash: 42eec4a0796a7f07c7e7d1c35571d9d4ddcf69d7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82137541"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82176708"
 ---
 # <a name="azure-data-lake-storage-query-acceleration-preview"></a>Ускорение запросов Azure Data Lake Storage (Предварительная версия)
 
@@ -71,11 +71,11 @@ ms.locfileid: "82137541"
 
 ## <a name="pricing"></a>Цены
 
-В связи с увеличенной нагрузкой вычислений в рамках службы Azure Data Lake Storage модель ценообразования для использования ускорения запросов отличается от обычной Azure Data Lake Storageной модели транзакций. При ускорении запросов взимается плата за объем данных, просканированных, а также затраты на объем данных, возвращаемых вызывающему объекту.
+В связи с увеличенной нагрузкой вычислений в рамках службы Azure Data Lake Storage модель ценообразования для использования ускорения запросов отличается от обычной Azure Data Lake Storageной модели транзакций. При ускорении запросов взимается плата за объем данных, просканированных, а также затраты на объем данных, возвращаемых вызывающему объекту. Дополнительные сведения см. в разделе [цены на Azure Data Lake Storage 2-го поколения](https://azure.microsoft.com/pricing/details/storage/data-lake/).
 
 Несмотря на изменение модели выставления счетов, модель ценообразования для ускорения запросов предназначена для снижения совокупной стоимости владения рабочей нагрузкой, учитывая снижение затрат на виртуальные машины гораздо более затратным.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Форма регистрации ускорения запросов](https://aka.ms/adls/qa-preview-signup)    
 - [Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage (Предварительная версия)](data-lake-storage-query-acceleration-how-to.md)

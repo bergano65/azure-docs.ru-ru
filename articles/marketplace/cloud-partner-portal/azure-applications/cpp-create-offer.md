@@ -7,29 +7,15 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: dsindona
-ms.openlocfilehash: 823c9cbe8c850fbc4170a5734305f9cc5e45be83
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 405593a97571ac5be351011890d162b5c0396966
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80285288"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81865576"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
-В этой статье описывается, как создать и опубликовать запись предложения приложения Azure для Azure Marketplace. Каждое предложение отображается в виде отдельной сущности в Azure Marketplace и состоит из следующих групп ресурсов и вспомогательных услуг: подробные сведения о предложении, номера SKU, маркетинговые артефакты и сведения о поддержке.
+[Облачный партнерский портал](https://cloudpartner.azure.com/) больше не поддерживает создание и управление предложениями приложений Azure. Вместо этого эта функция была перенесена на [портал Microsoft Partner Center.](https://partner.microsoft.com/) Для получения дополнительной информации [см.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-azure-apps-offer)
 
-## <a name="new-offer-form"></a>Форма нового предложения
-
-Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com/), а затем в строке меню слева выберите **+Новое предложение**. Чтобы отобразить форму **Новое предложение** и начать процесс определения ресурсов для нового предложения, в меню "Новое предложение" выберите **Azure Applications** (Приложения Azure).
-
-![Форма нового предложения](./media/azure-new-managedapp-offer.png)
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-На странице "Новое предложение" содержится набор вкладок и поля форм, которые будут использоваться для создания нового предложения. В следующих статьях описывается, как определить группы средств и вспомогательные сервисы для нового предложения.
-
-* [Вкладка Настройки предложения](./cpp-offer-settings-tab.md)
-* [Вкладка "Номера SKU"](./cpp-skus-tab.md)
-* [Вкладка "Тестовый выпуск"](./cpp-testdrive-tab.md)
-* [Вкладка "Marketplace"](./cpp-marketplace-tab.md)
-* [Вкладка "Поддержка"](./cpp-support-tab.md)
+Прежде чем создать новое предложение приложения Azure, следует прочитать [учетную запись «Создай партнерскую центр»,](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) а затем открыть [панель мониторинга Коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **«Обзор».** Следуйте инструкциям в [приложении Create the Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-azure-apps-offer) для создания вашего предложения.

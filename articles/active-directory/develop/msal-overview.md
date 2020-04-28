@@ -1,7 +1,7 @@
 ---
-title: Узнать больше о MSAL Azure
+title: Дополнительные сведения о MSAL | Службы
 titleSuffix: Microsoft identity platform
-description: Библиотека аутентификации Microsoft (MSAL) позволяет разработчикам приложений приобретать токены для вызова защищенных Web-aIS. Эти web-аПО могут быть Microsoft Graph, другими API Майкрософт, сторонними web-API или вашим собственным веб-API. MSAL поддерживает несколько архитектур и платформ приложений.
+description: Библиотека проверки подлинности Майкрософт (MSAL) позволяет разработчикам приложений получать маркеры для вызова защищенных веб-API. Этими веб-API могут быть Microsoft Graph, другие API Майкрософт, сторонние веб-API или собственный веб-API. MSAL поддерживает несколько архитектур и платформ приложений.
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -13,15 +13,15 @@ ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 89c5117e59f7856c3bd572bbea297a836b5ad589
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 7aa7dea65df507c0bb35a30bf2a68049a7625137
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536222"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181789"
 ---
 # <a name="overview-of-microsoft-authentication-library-msal"></a>Обзор библиотеки аутентификации Майкрософт (MSAL)
-Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приобретать [токены](developer-glossary.md#security-token) из конечных точек платформы Майкрософт для доступа к защищенным web-аПО. Эти web-аПО могут быть Microsoft Graph, другими API Майкрософт, сторонними web-API или вашим собственным веб-API. MSAL доступна для .NET, JavaScript, Android и iOS. Она поддерживает множество различных архитектур и платформ приложений.
+Библиотека проверки подлинности Майкрософт (MSAL) позволяет разработчикам получать [токены](developer-glossary.md#security-token) из конечной точки платформы Microsoft Identity, чтобы получить доступ к защищенным веб-API. Этими веб-API могут быть Microsoft Graph, другие API Майкрософт, сторонние веб-API или собственный веб-API. MSAL доступна для .NET, JavaScript, Android и iOS. Она поддерживает множество различных архитектур и платформ приложений.
 
 MSAL предоставляет множество способов для получения маркеров с использованием согласованного API для нескольких платформ. Использование MSAL обеспечивает следующие преимущества:
 
@@ -42,8 +42,8 @@ MSAL можно использовать во многих сценариях п
 * [веб-приложения, в которые могут входить пользователи и которые могут вызывать веб-API от имени пользователя;](scenario-web-app-call-api-overview.md)
 * [защита веб-API, чтобы доступ к нему могли получить только прошедшие аутентификацию пользователи;](scenario-protected-web-api-overview.md)
 * [веб-API, вызывающий другой подчиненный веб-API от имени выполнившего вход пользователя;](scenario-web-api-call-api-overview.md)
-* [Настольное приложение, вызывая веб-API от имени пользователя, вписавшего в нее](scenario-desktop-overview.md)
-* [Мобильное приложение, вызывая веб-API от имени пользователя, который вписался в интерактивно.](scenario-mobile-overview.md)
+* [Классическое приложение, вызывающее веб-API от имени пользователя, выполнившего вход](scenario-desktop-overview.md)
+* [Мобильное приложение, вызывающее веб-API от имени пользователя, выполнившего вход в интерактивном режиме](scenario-mobile-overview.md).
 * [классическая управляющая программа / управляющая программа службы, вызывающая веб-API от своего имени.](scenario-daemon-overview.md)
 
 ## <a name="languages-and-frameworks"></a>Языки и платформы
@@ -51,11 +51,11 @@ MSAL можно использовать во многих сценариях п
 | Библиотека | Поддерживаемые платформы и среды|
 | --- | --- |
 | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)| Платформа .NET Framework, .NET Core, Xamarin Android, Xamarin iOS, универсальная платформа Windows|
-| [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)| Платформы JavaScript/TypeScript, такие как AngularJS, Ember.js или Durandal.js|
+| [MSAL. js](https://github.com/AzureAD/microsoft-authentication-library-for-js)| Платформы JavaScript/TypeScript, такие как AngularJS, Ember.js или Durandal.js|
 | [MSAL для Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)|Android|
 | [MSAL для iOS и MacOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc)|iOS и macOS|
-| [MSAL Java (предварительный просмотр)](https://github.com/AzureAD/microsoft-authentication-library-for-java)|Java|
-| [MSAL Python (предварительный просмотр)](https://github.com/AzureAD/microsoft-authentication-library-for-python)|Python|
+| [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java)|Windows, macOS, Linux|
+| [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)|Windows, macOS, Linux|
 
 ## <a name="differences-between-adal-and-msal"></a>Различия между ADAL и MSAL
 

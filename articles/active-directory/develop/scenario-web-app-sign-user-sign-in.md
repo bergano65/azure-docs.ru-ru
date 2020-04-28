@@ -1,6 +1,6 @@
 ---
-title: Напишите веб-приложение, которое вписывается/выходите на пользователях - платформа идентификации Microsoft Azure
-description: Узнайте, как создать веб-приложение, которое вписывается/выходить из пользователей
+title: Создание веб-приложения, которое входит в систему и выполняет вход пользователей — платформа Microsoft Identity | Службы
+description: Узнайте, как создать веб-приложение, которое входит в систему и выполнит вход пользователей.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,47 +11,53 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 2ab5697ceff612e65174fdb7f9ef6137e2c8b9a5
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 0926f41fb030e27ab8be54a2672ff9ed20e15206
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81537072"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181585"
 ---
-# <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Веб-приложение, которое вписывается в пользователей: Восподписание и выход из системы
+# <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Веб-приложение, которое входит в систему пользователей: вход и выход
 
-Узнайте, как добавить в свой код для веб-приложения, которое подписывается в пользователях. Затем узнайте, как позволить им выйти.
+Узнайте, как добавить вход в код для веб-приложения, который входит в систему пользователей. Затем Узнайте, как разрешить выход.
 
 ## <a name="sign-in"></a>Вход
 
-Регистрация состоит из двух частей:
+Вход состоит из двух частей:
 
-- Кнопка входной системы на странице HTML
-- Действие входа в код-за в контроллере
+- Кнопка входа на HTML-странице
+- Действие входа в коде программной части контроллера
 
-### <a name="sign-in-button"></a>Кнопка вхвора
+### <a name="sign-in-button"></a>Кнопка входа
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-В ASP.NET Core кнопка вхастыва заключается в. `Views\Shared\_LoginPartial.cshtml` Он отображается только в том случае, если нет подлинной учетной записи. То есть, он отображается, когда пользователь еще не зарегистрировался или не зарегистрировался.
+В ASP.NET Core для приложений платформы Microsoft Identity кнопка **входа** предоставляется в `Views\Shared\_LoginPartial.cshtml` (для приложения MVC) или `Pages\Shared\_LoginPartial.cshtm` (для приложения Razor). Он отображается только в том случае, если пользователь не прошел проверку подлинности. То есть он отображается, когда пользователь еще не вошел в приложение или не выполнил выход из него. Напротив, кнопка **выйти** отображается, когда пользователь уже вошел в систему. Обратите внимание, что контроллер учетной записи определен в пакете NuGet **Microsoft. Identity. Web. UI** в области с именем **микрософтидентити**
 
 ```html
-@using Microsoft.Identity.Web
-@if (User.Identity.IsAuthenticated)
-{
- // Code omitted code for clarity
-}
-else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignIn">Sign in</a></li>
-    </ul>
-}
+<ul class="navbar-nav">
+  @if (User.Identity.IsAuthenticated)
+  {
+    <li class="nav-item">
+        <span class="navbar-text text-dark">Hello @User.Identity.Name!</span>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">Sign out</a>
+    </li>
+  }
+  else
+  {
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+    </li>
+  }
+</ul>
 ```
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-В ASP.NET MVC, кнопка выхода `Views\Shared\_LoginPartial.cshtml`выставлена в . Он отображается только при наличии подлинной учетной записи. То есть, он отображается, когда пользователь ранее вписался.
+В ASP.NET MVC кнопка выхода предоставляется в `Views\Shared\_LoginPartial.cshtml`. Он отображается только при наличии учетной записи с проверкой подлинности. То есть он отображается, когда пользователь ранее выполнил вход.
 
 ```html
 @if (Request.IsAuthenticated)
@@ -68,7 +74,7 @@ else
 
 # <a name="java"></a>[Java](#tab/java)
 
-В нашем Java quickstart кнопка вхильярной находится в [файле main/resources/templates/index.html.](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/src/main/resources/templates/index.html)
+В нашем кратком руководстве по Java кнопка входа находится в файле [Main/Resources/Templates/index.HTML](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/src/main/resources/templates/index.html) .
 
 ```html
 <!DOCTYPE html>
@@ -90,7 +96,7 @@ else
 
 # <a name="python"></a>[Python](#tab/python)
 
-В quickstart Python нет кнопки вхастывки. Закодирование автоматически подсказывает пользователю для входиный, когда он достигает корня веб-приложения. Смотрите [приложение.py'L14-L18](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/0.1.0/app.py#L14-L18).
+В кратком руководстве по Python отсутствует кнопка входа. При достижении корня веб-приложения код программной части автоматически предлагает пользователю выполнить вход. См. раздел [app. Корректировка # L14-L18](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/0.1.0/app.py#L14-L18).
 
 ```Python
 @app.route("/")
@@ -102,17 +108,17 @@ def index():
 
 ---
 
-### <a name="signin-action-of-the-controller"></a>`SignIn`действия контроллера
+### <a name="signin-action-of-the-controller"></a>`SignIn`действие контроллера
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-В ASP.NET, выбор кнопки **входа в** веб-приложение `SignIn` запускает `AccountController` действие на контроллере. В предыдущих версиях ASP.NET основных шаблонов `Account` контроллер был встроен в веб-приложение. Это уже не так, потому что контроллер теперь является частью ASP.NET Core.
+В ASP.NET при нажатии кнопки **входа** в веб-приложении действие будет `SignIn` инициировано на `AccountController` контроллере. В предыдущих версиях шаблонов ASP.NET Core `Account` контроллер был внедрен в веб-приложение. Это не так, потому что контроллер теперь входит в пакет NuGet **Microsoft. Identity. Web. UI** . Дополнительные сведения см. в разделе [AccountController.CS](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) .
 
-Код для `AccountController` доступной в репозитории ASP.NET Core [в AccountController.cs.](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs) Управление учетной записью бросает вызов пользователю, перенаправив его на конечную точку платформы Майкрософт. Для получения подробно [ASP.NETй](https://github.com/aspnet/AspNetCore/blob/f3e6b74623d42d5164fd5f97a288792c8ad877b6/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs#L23-L31) информации см.
+Этот контроллер также обрабатывает Azure AD B2C приложения.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-В ASP.NET, выйти из `SignOut()` него срабатывает метод на контроллере (например, [AccountController.cs-L16-L23](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L16-L23)). Этот метод не является частью ASP.NET структуры (вопреки тому, что происходит в ASP.NET Core). Он посылает OpenID войти в вызов после предложения перенаправить URI.
+В ASP.NET выход запускается из `SignOut()` метода на контроллере (например, [AccountController. CS # L16-L23](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L16-L23)). Этот метод не является частью ASP.NET Framework (в отличие от того, что происходит в ASP.NET Core). При предложении URI перенаправления он отправляет запрос на вход OpenID Connect.
 
 ```csharp
 public void SignIn()
@@ -127,7 +133,7 @@ public void SignIn()
 
 # <a name="java"></a>[Java](#tab/java)
 
-В Java, выход обрабатывается путем вызова `logout` платформы идентификации `post_logout_redirect_uri` Microsoft конечную точку непосредственно и предоставление значения. Для получения более [подробной](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L30-L48)информации см.
+В Java выход осуществляется путем прямого вызова конечной точки платформы `logout` Microsoft Identity и предоставления `post_logout_redirect_uri` значения. Дополнительные сведения см. в разделе [ауспажеконтроллер. Java # L30-L48](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L30-L48).
 
 ```Java
 @Controller
@@ -155,7 +161,7 @@ public class AuthPageController {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В отличие от других платформ, MSAL Python заботится о том, чтобы позволить пользователю войти со страницы входа. Смотрите [app.py-L20-L28](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/app.py#L20-L28).
+В отличие от других платформ, MSAL Python берет на себя предоставление пользователю возможности входа со страницы входа. См. раздел [app. Корректировка # L20-L28](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/app.py#L20-L28).
 
 ```Python
 @app.route("/login")
@@ -169,7 +175,7 @@ def login():
     return "<a href='%s'>Login with Microsoft Identity</a>" % auth_url
 ```
 
-Метод `_build_msal_app()` определен в [app.py'L81-L88](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/app.py#L81-L88) следующим образом:
+`_build_msal_app()` Метод определяется в [app. Корректировка # L81-L88](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/app.py#L81-L88) следующим образом:
 
 ```Python
 def _load_cache():
@@ -200,34 +206,34 @@ def _get_token_from_cache(scope=None):
 
 ---
 
-После того, как пользователь впишется в ваше приложение, вы хотите, чтобы позволить ему выйти.
+После входа пользователя в приложение необходимо включить его для выхода из него.
 
 ## <a name="sign-out"></a>Функция выхода
 
-Выход из веб-приложения включает в себя нечто большее, чем удаление информации о вписавшем аккаунте из состояния веб-приложения.
-Веб-приложение также должно перенаправить пользователя на `logout` конечную точку платформы Майкрософт, чтобы выйти из системы.
+Выход из веб-приложения требует больше, чем удаление сведений о учетной записи, выполнившего вход, из состояния веб-приложения.
+Веб-приложение также должно перенаправить пользователя на конечную точку `logout` платформы идентификации Майкрософт для выхода.
 
-Когда веб-приложение перенаправляет пользователя `logout` в конечную точку, эта конечная точка очищает сеанс пользователя от браузера. Если приложение не перешел `logout` в конечную точку, пользователь повторно подключит подлинность к вашему приложению, не введя свои учетные данные снова. Причина в том, что они будут иметь действительный один сеанс ввода с конечным пунктом платформы идентификации Майкрософт.
+Когда веб-приложение перенаправляет пользователя на `logout` конечную точку, эта конечная точка удаляет сеанс пользователя из браузера. Если приложение не пойдет в `logout` конечную точку, пользователь повторно получит повторную проверку подлинности, не вводя учетные данные снова. Причина заключается в том, что у них будет действительный сеанс единого входа с конечной точкой платформы Microsoft Identity.
 
-Чтобы узнать больше, смотрите раздел [«Отправить запрос на вывешение»](v2-protocols-oidc.md#send-a-sign-out-request) в [платформе идентификации Майкрософт и документации протокола OpenID Connect.](v2-protocols-oidc.md)
+Дополнительные сведения см. в разделе [Отправка запроса на](v2-protocols-oidc.md#send-a-sign-out-request) выход на [платформе Microsoft Identity и в документации по протоколу OpenID Connect Connect](v2-protocols-oidc.md) .
 
 ### <a name="application-registration"></a>Регистрация приложения
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Во время регистрации заявления вы регистрируете пост-логит URI. В нашем учебнике `https://localhost:44321/signout-oidc` вы зарегистрировались в поле **URL-адреса Logout** раздела **Расширенные настройки** на странице **аутентификации.** Для получения подробной информации, [см.](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg#register-the-webapp-app-webapp)
+Во время регистрации приложения вы регистрируете URI после выхода. В нашем руководстве вы зарегистрировались `https://localhost:44321/signout-oidc` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка подлинности** ". Дополнительные сведения см. [в разделе Регистрация приложения webApp](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg#register-the-webapp-app-webapp).
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-Во время регистрации заявления вы регистрируете пост-логит URI. В нашем учебнике `https://localhost:44308/Account/EndSession` вы зарегистрировались в поле **URL-адреса Logout** раздела **Расширенные настройки** на странице **аутентификации.** Для получения подробной информации, [см.](https://github.com/Azure-Samples/active-directory-dotnet-web-single-sign-out#register-the-service-app-webapp-distributedsignout-dotnet)
+Во время регистрации приложения вы регистрируете URI после выхода. В нашем руководстве вы зарегистрировались `https://localhost:44308/Account/EndSession` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка подлинности** ". Дополнительные сведения см. [в разделе Регистрация приложения webApp](https://github.com/Azure-Samples/active-directory-dotnet-web-single-sign-out#register-the-service-app-webapp-distributedsignout-dotnet).
 
 # <a name="java"></a>[Java](#tab/java)
 
-Во время регистрации заявления вы регистрируете пост-логит URI. В нашем учебнике `http://localhost:8080/msal4jsample/sign_out` вы зарегистрировались в поле **URL-адреса Logout** раздела **Расширенные настройки** на странице **аутентификации.**
+Во время регистрации приложения вы регистрируете URI после выхода. В нашем руководстве вы зарегистрировались `http://localhost:8080/msal4jsample/sign_out` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка подлинности** ".
 
 # <a name="python"></a>[Python](#tab/python)
 
-Во время регистрации заявки не нужно регистрировать дополнительный URL-адрес входа. Приложение будет отозвано на свой основной URL.
+Во время регистрации приложения не нужно регистрировать дополнительный URL-адрес для выхода. Приложение будет вызываться обратно по его основному URL-адресу.
 
 ---
 
@@ -235,28 +241,31 @@ def _get_token_from_cache(scope=None):
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-В ASP.NET Core кнопка вывески разоблачается в `Views\Shared\_LoginPartial.cshtml`. Он отображается только при наличии подлинной учетной записи. То есть, он отображается, когда пользователь ранее вписался.
+В ASP.NET, нажав кнопку **выйти** в веб-приложении, вы запускаете `SignOut` действие на `AccountController` контроллере (см. ниже).
 
 ```html
-@using Microsoft.Identity.Web
-@if (User.Identity.IsAuthenticated)
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-text">Hello @User.GetDisplayName()!</li>
-        <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignOut">Sign out</a></li>
-    </ul>
-}
-else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignIn">Sign in</a></li>
-    </ul>
-}
+<ul class="navbar-nav">
+  @if (User.Identity.IsAuthenticated)
+  {
+    <li class="nav-item">
+        <span class="navbar-text text-dark">Hello @User.Identity.Name!</span>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">Sign out</a>
+    </li>
+  }
+  else
+  {
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+    </li>
+  }
+</ul>
 ```
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-В ASP.NET MVC, кнопка выхода `Views\Shared\_LoginPartial.cshtml`выставлена в . Он отображается только при наличии подлинной учетной записи. То есть, он отображается, когда пользователь ранее вписался.
+В ASP.NET MVC кнопка выхода предоставляется в `Views\Shared\_LoginPartial.cshtml`. Он отображается только при наличии учетной записи с проверкой подлинности. То есть он отображается, когда пользователь ранее выполнил вход.
 
 ```html
 @if (Request.IsAuthenticated)
@@ -282,7 +291,7 @@ else
 
 # <a name="java"></a>[Java](#tab/java)
 
-В нашем Java quickstart кнопка вывески находится в файле main/resources/templates/auth_page.html.
+В нашем кратком руководстве по Java кнопка выхода находится в файле main/resources/templates/auth_page.html.
 
 ```html
 <!DOCTYPE html>
@@ -297,7 +306,7 @@ else
 
 # <a name="python"></a>[Python](#tab/python)
 
-В quickstart Python кнопка выхода находится в [шаблонах/индексе.html-L10](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/templates/index.html#L10) файла.
+В кратком руководстве по Python кнопка выхода находится в файле [Templates/index. HTML # L10](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/templates/index.html#L10) .
 
 ```html
 <!DOCTYPE html>
@@ -316,27 +325,25 @@ else
 
 ---
 
-### <a name="signout-action-of-the-controller"></a>`SignOut`действия контроллера
+### <a name="signout-action-of-the-controller"></a>`SignOut`действие контроллера
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-В ASP.NET, выбор кнопки **входа** в веб-приложение `SignOut` вызывает `AccountController` действие на контроллере. В предыдущих версиях шаблонов `Account` ASP.NET Core контроллер был встроен в веб-приложение. Это уже не так, потому что контроллер теперь является частью ASP.NET Core.
+В предыдущих версиях шаблонов ASP.NET Core `Account` контроллер был внедрен в веб-приложение. Это не так, потому что контроллер теперь входит в пакет NuGet **Microsoft. Identity. Web. UI** . Дополнительные сведения см. в разделе [AccountController.CS](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) .
 
-Код для `AccountController` этого доступен в ASP.NET основного репозитория [в AccountController.cs.](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs) Контроль учетной записи:
+- Задает универсальный код ресурса (URI `/Account/SignedOut` ) перенаправления OpenID Connect, чтобы контроллер вызывался обратно, когда Azure AD завершает выход.
+- Вызовы `Signout()`, которые позволяют по промежуточного слоя OpenID Connect Connect обращаться к `logout` конечной точке платформы идентификации Майкрософт. Затем конечная точка:
 
-- Устанавливает OpenID перенаправление `/Account/SignedOut` URI на то, чтобы контроллер был отозван, когда Azure AD завершила выйти из системы.
-- Вызовы, `Signout()`что позволяет Посреднику OpenID `logout` Connect связаться с конечной точкой платформы Майкрософт. Конечная точка тогда:
-
-  - Очищает файлcookieо-файловое сеанса от браузера.
-  - Перезванивает URL-адрес выхода. По умолчанию URL-адрес выхода отображает страницу с подписью [SignedOut.html.](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Pages/Account/SignedOut.cshtml) Эта страница также предоставляется в рамках ASP.NET Core.
+  - Удаляет файл cookie сеанса из браузера.
+  - Вызывает обратный URL-адрес выхода. По умолчанию в поле URL-адрес выхода отображается страница выходное представление с [подписью. HTML](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Pages/Account/SignedOut.cshtml). Эта страница также предоставляется как часть MIcrosoft. Identity. Web.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-В ASP.NET, выйти из `SignOut()` него срабатывает метод на контроллере (например, [AccountController.cs-L25-L31](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L25-L31)). Этот метод не является частью ASP.NET структуры, вопреки тому, что происходит в ASP.NET Core. Это:
+В ASP.NET выход запускается из `SignOut()` метода на контроллере (например, [AccountController. CS # L25-l31](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L25-L31)). Этот метод не является частью ASP.NET Framework, в отличие от того, что происходит в ASP.NET Core. Им
 
-- Отправляет openID вызов регистрации.
+- Отправляет запрос на выход из OpenID Connect.
 - Очищает кэш.
-- Перенаправляет на страницу, которую она хочет.
+- Выполняет перенаправление на страницу, которую он хочет.
 
 ```csharp
 /// <summary>
@@ -353,7 +360,7 @@ public void SignOut()
 
 # <a name="java"></a>[Java](#tab/java)
 
-В Java, выход обрабатывается путем вызова `logout` платформы идентификации `post_logout_redirect_uri` Microsoft конечную точку непосредственно и предоставление значения. Для получения более [подробной](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L50-L60)информации см.
+В Java выход осуществляется путем прямого вызова конечной точки платформы `logout` Microsoft Identity и предоставления `post_logout_redirect_uri` значения. Дополнительные сведения см. в разделе [ауспажеконтроллер. Java # L50-L60](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L50-L60).
 
 ```Java
 @RequestMapping("/msal4jsample/sign_out")
@@ -371,7 +378,7 @@ public void SignOut()
 
 # <a name="python"></a>[Python](#tab/python)
 
-Код, который выписывает пользователя, находится в [app.py-L46-L52](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/48637475ed7d7733795ebeac55c5d58663714c60/app.py#L47-L48).
+Код, который входит в систему пользователя, находится в [app. Корректировка # L46-l52](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/48637475ed7d7733795ebeac55c5d58663714c60/app.py#L47-L48).
 
 ```Python
 @app.route("/logout")
@@ -384,25 +391,17 @@ def logout():
 
 ---
 
-### <a name="intercepting-the-call-to-the-logout-endpoint"></a>Перехват вызова в `logout` конечную точку
+### <a name="intercepting-the-call-to-the-logout-endpoint"></a>Перехват вызова к `logout` конечной точке
 
-Пост-выход URI позволяет приложениям участвовать в глобальном выставке.
+URI, выполняемый после выхода, позволяет приложениям участвовать в глобальном выходе.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Программное обеспечение ASP.NET Core OpenID Connect позволяет приложению перехватывать вызов на конечную точку платформы `logout` Майкрософт, предоставляя событие OpenID Connect под названием. `OnRedirectToIdentityProviderForSignOut` Пример того, как подписаться на это событие (для очистки кэша маркеров) можно оценить [microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs-L151-L156](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/faa94fd49c2da46b22d6694c4f5c5895795af26d/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L156).
-
-```csharp
-    // Handling the global sign-out
-    options.Events.OnRedirectToIdentityProviderForSignOut = async context =>
-    {
-        // Forget about the signed-in user
-    };
-```
+По промежуточного слоя ASP.NET Core OpenID Connect Connect позволяет приложению перехватывать вызовы конечной точки платформы `logout` идентификации Майкрософт, предоставляя событие OpenID Connect Connect с именем `OnRedirectToIdentityProviderForSignOut`. Это автоматически обрабатывается службой Microsoft. Identity. Web (которая очищает учетные записи в случае, когда веб-приложение вызывает веб-API).
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-В ASP.NET делегируете промежуточного программное обеспечение для выполнения выхода, очистив файлcookieо-файловик сеанса:
+В ASP.NET вы делегируем по промежуточного слоя, чтобы выполнить выход, очистив файл cookie сеанса:
 
 ```csharp
 public class AccountController : Controller
@@ -419,17 +418,17 @@ public class AccountController : Controller
 
 # <a name="java"></a>[Java](#tab/java)
 
-В Java quickstart, после выхода перенаправить URI просто отображает index.html страницу.
+В кратком руководстве по Java в URI перенаправления после выхода просто отображается страница index. HTML.
 
 # <a name="python"></a>[Python](#tab/python)
 
-В quickstart Python, после выхода перенаправить URI просто отображает index.html страницу.
+В кратком руководстве по Python в URI перенаправления после выхода просто отображается страница index. HTML.
 
 ---
 
 ## <a name="protocol"></a>Протокол
 
-Если вы хотите узнать больше о регистрации, прочитайте протокольную документацию, доступную из [Open ID Connect.](./v2-protocols-oidc.md)
+Если вы хотите узнать больше о выходе, прочитайте документацию по протоколу, доступную по адресу [Open ID Connect](./v2-protocols-oidc.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

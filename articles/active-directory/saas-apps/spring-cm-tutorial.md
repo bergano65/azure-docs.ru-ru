@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bd9ea5565ea64415c00a458236456bed04b6c38
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: be4edfe3262ab74d903384eb00c0282acc7a3299
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74233385"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81867429"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springcm"></a>Руководство. Интеграция Azure Active Directory с SpringCM
 
@@ -202,7 +202,7 @@ ms.locfileid: "74233385"
 Чтобы пользователи Azure Active Directory могли входить в SpringCM, они должны быть подготовлены в SpringCM. В случае SpringCM подготовка выполняется вручную.
 
 > [!NOTE]
-> Дополнительные сведения см. в статье [Create and Edit a SpringCM User](https://knowledge.springcm.com/create-and-edit-a-springcm-user) (Создание и изменение пользователя SpringCM). 
+> Дополнительные сведения см. в статье [Create and Edit a SpringCM User](http://community.springcm.com/s/article/Create-and-Edit-a-SpringCM-User-1619481053) (Создание и изменение пользователя SpringCM). 
 
 **Чтобы подготовить учетную запись пользователя в SpringCM, выполните следующее.**
 

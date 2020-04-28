@@ -13,12 +13,13 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
-ms.openlocfilehash: a54d418f668d8c7292c8332c1b14c4df45e59308
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ROBOTS: NOINDEX
+ms.openlocfilehash: 3c88bdf141e7784837a89c8104574d97c93296dc
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76768467"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460160"
 ---
 # <a name="quickstart-create-and-train-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Краткое руководство. Создание и обучение прогнозной модели на языке R с помощью Служб машинного обучения Azure в Базе данных SQL (предварительная версия)
 
@@ -30,11 +31,8 @@ ms.locfileid: "76768467"
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [База данных SQL Azure](sql-database-single-database-get-started.md) с [правилом брандмауэра на уровне сервера](sql-database-server-level-firewall-rule.md)
-- [Службы машинного обучения](sql-database-machine-learning-services-overview.md) (с поддержкой R) включены. [Зарегистрируйтесь, чтобы получить предварительную версию](sql-database-machine-learning-services-overview.md#signup).
+- [Службы машинного обучения](sql-database-machine-learning-services-overview.md) (с поддержкой R) включены.
 - [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS).
-
-> [!NOTE]
-> Во время использования общедоступной предварительной версии корпорация Майкрософт подключит вас и включит машинное обучение для имеющейся или новой базы данных.
 
 В этом примере используется простая модель регрессии для прогнозирования расстояния до остановки автомобиля на основе скорости с помощью набора данных **автомобилей** (с поддержкой R).
 

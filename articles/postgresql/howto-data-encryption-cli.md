@@ -1,45 +1,45 @@
 ---
-title: Шифрование данных - Azure CLI - для базы данных Azure для PostgreS'L - Единый сервер
-description: Узнайте, как настроить и управлять шифрованием данных для базы данных Azure для одного сервера PostgreS'L с помощью Azure CLI.
+title: Шифрование данных — Azure CLI для базы данных Azure для PostgreSQL — один сервер
+description: Узнайте, как настроить шифрование данных для сервера базы данных Azure для PostgreSQL и управлять им с помощью Azure CLI.
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: fcdd7c13c9e0a5f9e858309bea50bb0264b7b301
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 77c464f51bd17921052b3ae1e9fefb49e777d6c2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81460687"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181911"
 ---
-# <a name="data-encryption-for-azure-database-for-postgresql-single-server-by-using-the-azure-cli"></a>Шифрование данных для базы данных Azure для единого сервера PostgreS'L с помощью Azure CLI
+# <a name="data-encryption-for-azure-database-for-postgresql-single-server-by-using-the-azure-cli"></a>Шифрование данных для одного сервера базы данных Azure для PostgreSQL с помощью Azure CLI
 
-Узнайте, как использовать Azure CLI для настройки и управления шифрованием данных для базы данных Azure для единого сервера PostgreS'L.
+Узнайте, как использовать Azure CLI для настройки и управления шифрованием данных для одного сервера базы данных Azure для PostgreSQL.
 
-## <a name="prerequisites-for-azure-cli"></a>Предпосылки для Azure CLI
+## <a name="prerequisites-for-azure-cli"></a>Необходимые условия для Azure CLI
 
 * Подписка Azure и права администратора для нее.
-* Создайте хранилище ключей и ключ для использования для ключа, управляемого клиентом. Также включите защиту чистки и мягкое удаление на хранилище ключа.
+* Создайте хранилище ключей и ключ, который будет использоваться для ключа, управляемого клиентом. Также включите защиту от очистки и обратимое удаление в хранилище ключей.
 
     ```azurecli-interactive
     az keyvault create -g <resource_group> -n <vault_name> --enable-soft-delete true --enable-purge-protection true
     ```
 
-* В созданном Хранилище ключей Azure создайте ключ, который будет использоваться для шифрования данных базы данных Azure для единого сервера PostgreS'L.
+* В созданном Azure Key Vault создайте ключ, который будет использоваться для шифрования данных на одиночном сервере базы данных Azure для PostgreSQL.
 
     ```azurecli-interactive
     az keyvault key create --name <key_name> -p software --vault-name <vault_name>
     ```
 
-* Для использования существующего хранилища ключей он должен иметь следующие свойства для использования в качестве ключа, управляемого клиентом:
-  * [Мягкое удаление](../key-vault/general/overview-soft-delete.md)
+* Чтобы использовать существующее хранилище ключей, оно должно иметь следующие свойства для использования в качестве ключа, управляемого клиентом:
+  * [Обратимое удаление](../key-vault/general/overview-soft-delete.md)
 
     ```azurecli-interactive
     az resource update --id $(az keyvault show --name \ <key_vault_name> -o tsv | awk '{print $1}') --set \ properties.enableSoftDelete=true
     ```
 
-  * [Очистка защищена](../key-vault/general/overview-soft-delete.md#purge-protection)
+  * [Очистить защищенные](../key-vault/general/overview-soft-delete.md#purge-protection)
 
     ```azurecli-interactive
     az keyvault update --name <key_vault_name> --resource-group <resource_group_name>  --enable-purge-protection true
@@ -48,66 +48,66 @@ ms.locfileid: "81460687"
 * Ключ должен иметь следующие атрибуты для использования в качестве ключа, управляемого клиентом:
   * без даты окончания срока действия;
   * не отключено;
-  * Выполните **получить,** **обернуть** и **развернуть** операции
+  * Выполнение операций **получения**, переноса **и распаковки** **wrap**
 
-## <a name="set-the-right-permissions-for-key-operations"></a>Установка правильных разрешений для ключевых операций
+## <a name="set-the-right-permissions-for-key-operations"></a>Задайте правильные разрешения для операций с ключами.
 
-1. Существует два способа получения управляемой идентификации для базы данных Azure для единого сервера PostgreS'L.
+1. Существует два способа получения управляемого удостоверения для базы данных Azure для PostgreSQL одного сервера.
 
-    ### <a name="create-an-new-azure-database-for-mysql-server-with-a-managed-identity"></a>Создайте новую базу данных Azure для сервера MyS'L с управляемой идентификацией.
+    ### <a name="create-an-new-azure-database-for-mysql-server-with-a-managed-identity"></a>Создайте новый сервер базы данных Azure для MySQL с управляемым удостоверением.
 
     ```azurecli-interactive
     az postgres server create --name -g <resource_group> --location <locations> --storage-size <size>  -u <user>-p <pwd> --backup-retention <7> --sku-name <sku name> --geo-redundant-backup <Enabled/Disabled>  --assign-identity
     ```
 
-    ### <a name="update-an-existing-the-azure-database-for-mysql-server-to-get-a-managed-identity"></a>Обновление существующей базы данных Azure для сервера MyS'L для получения управляемой идентификации.
+    ### <a name="update-an-existing-the-azure-database-for-mysql-server-to-get-a-managed-identity"></a>Обновите существующий сервер базы данных Azure для MySQL, чтобы получить управляемое удостоверение.
 
     ```azurecli-interactive
     az postgres server update –name <server name>  -g <resoure_group> --assign-identity
     ```
 
-2. Установите **ключевые разрешения** (**Получить**, **Оберните**, **Развернуть**) для **главного**, который является именем сервера PostgreS'L одного сервера.
+2. Задайте **разрешения ключа** (**Get**, **Wrap**, **Unwrap**) для **участника**, который представляет собой имя сервера PostgreSQL с одним сервером.
 
     ```azurecli-interactive
     az keyvault set-policy --name -g <resource_group> --key-permissions get unwrapKey wrapKey --object-id <principal id of the server>
     ```
 
-## <a name="set-data-encryption-for-azure-database-for-postgresql-single-server"></a>Установка шифрования данных для базы данных Azure для одного сервера PostgreS'L
+## <a name="set-data-encryption-for-azure-database-for-postgresql-single-server"></a>Настройка шифрования данных для одного сервера базы данных Azure для PostgreSQL
 
-1. Включить шифрование данных для базы данных Azure для одного сервера PostgreS'L с помощью ключа, созданного в Хранилище ключей Azure.
+1. Включите шифрование данных для одного сервера базы данных Azure для PostgreSQL с помощью ключа, созданного в Azure Key Vault.
 
     ```azurecli-interactive
     az postgres server key create –name  <server name>  -g <resource_group> --kid <key url>
     ```
 
-    Ключевой URL:https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>
+    URL-адрес ключа:`https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>`
 
-## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для восстановления или реплики серверов
+## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для серверов восстановления или реплик
 
-После того, как база данных Azure для одного сервера PostgreS'L зашифрована с помощью управляемого ключа клиента, хранящегося в Key Vault, любая вновь созданная копия сервера также шифруется. Эту новую копию можно сделать либо через локальную или геовосстановительную операцию, либо через операцию реплики (локальный/кросс-регион). Таким образом, для зашифрованного сервера СаугсЗЛ с одним сервером можно использовать следующие шаги для создания зашифрованного восстановленного сервера.
+После того как база данных Azure для PostgreSQL с одним сервером шифруется с помощью управляемого ключа клиента, хранящегося в Key Vault, все вновь созданные копии сервера также шифруются. Эту новую копию можно создать с помощью локальной или географической операции либо с помощью операции реплики (локальной или кросс-региона). Поэтому для зашифрованного сервера PostgreSQL с одним сервером можно выполнить следующие действия, чтобы создать зашифрованный восстановленный сервер.
 
-### <a name="creating-a-restoredreplica-server"></a>Создание восстановленного/репликационного сервера
+### <a name="creating-a-restoredreplica-server"></a>Создание восстановленного или сервера-реплики
 
   *  [Создание сервера восстановления](howto-restore-server-cli.md) 
-  *  [Создание сервера считываемых реплик](howto-read-replicas-cli.md) 
+  *  [Создание сервера реплики для чтения](howto-read-replicas-cli.md) 
 
-### <a name="once-the-server-is-restored-revalidate-data-encryption-the-restored-server"></a>После восстановления сервера повторное шифрование данных восстановленного сервера
+### <a name="once-the-server-is-restored-revalidate-data-encryption-the-restored-server"></a>После восстановления сервера повторно проверьте шифрование данных на восстановленном сервере.
 
     ```azurecli-interactive
     az postgres server key create –name  <server name> -g <resource_group> --kid <key url>
     ```
 
-## <a name="additional-capability-for-the-key-being-used-for-the-azure-database-for-postgresql-single-server"></a>Дополнительная возможность для ключа, используемого для базы данных Azure для единого сервера PostgreS'L
+## <a name="additional-capability-for-the-key-being-used-for-the-azure-database-for-postgresql-single-server"></a>Дополнительные возможности для ключа, используемого для одного сервера базы данных Azure для PostgreSQL
 
-### <a name="get-the-key-used"></a>Использовать ключ
+### <a name="get-the-key-used"></a>Получение ключа, используемого
 
     ```azurecli-interactive
     az mysql server key show --name  <server name>  -g <resource_group> --kid <key url>
     ```
 
-    Key url:  https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>
+    Key url:  `https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>`
 
-### <a name="list-the-key-used"></a>Список используемого ключа
+### <a name="list-the-key-used"></a>Список используемых ключей
 
     ```azurecli-interactive
     az postgres server key list --name  <server name>  -g <resource_group>
@@ -118,22 +118,22 @@ ms.locfileid: "81460687"
     ```azurecli-interactive
     az postgres server key delete -g <resource_group> --kid <key url> 
     ```
-## <a name="using-an-azure-resource-manager-template-to-enable-data-encryption"></a>Использование шаблона управления ресурсами Azure для обеспечения шифрования данных
+## <a name="using-an-azure-resource-manager-template-to-enable-data-encryption"></a>Использование шаблона Azure Resource Manager для включения шифрования данных
 
-Помимо портала Azure, вы также можете включить шифрование данных на базе данных Azure для одного сервера PostgreS'L, используя шаблоны Azure Resource Manager для нового и существующего сервера.
+Кроме портал Azure можно включить шифрование данных в базе данных Azure для PostgreSQL на одном сервере с помощью шаблонов Azure Resource Manager для нового и существующего сервера.
 
 ### <a name="for-a-new-server"></a>Для нового сервера
 
-Используйте один из заранее созданных шаблонов Управления ресурсами Azure, чтобы предоставить серверу с включенным шифрованием данных: [Пример с шифрованием данных](https://github.com/Azure/azure-postgresql/tree/master/arm-templates/ExampleWithDataEncryption)
+Используйте один из предварительно созданных шаблонов Azure Resource Manager для подготовки сервера с включенным шифрованием данных: [пример с шифрованием данных](https://github.com/Azure/azure-postgresql/tree/master/arm-templates/ExampleWithDataEncryption) .
 
-Этот шаблон менеджера ресурсов Azure создает базу данных Azure для одного сервера PostgreS'L и использует **KeyVault** и **Key,** пройденные в качестве параметров, чтобы обеспечить шифрование данных на сервере.
+Этот шаблон Azure Resource Manager создает базу данных Azure для одного сервера PostgreSQL и использует **KeyVault** и **ключ** , переданные в качестве параметров для включения шифрования данных на сервере.
 
 ### <a name="for-an-existing-server"></a>Для существующего сервера
-Кроме того, можно использовать шаблоны Azure Resource Manager для включения шифрования данных в существующую базу данных Azure для одиночных серверов PostgreS'L.
+Кроме того, можно использовать шаблоны Azure Resource Manager, чтобы включить шифрование данных в существующей базе данных Azure для PostgreSQL отдельных серверов.
 
-* Передайте идентификатор ресурсов ключу Убежища Azure, который вы скопировали ранее под свойством `Uri` в объекте свойств.
+* Передайте идентификатор ресурса Azure Key Vaultого ключа, скопированный ранее в `Uri` свойстве объекта Properties.
 
-* Используйте *2020-01-01-предварительный просмотр* в качестве версии API.
+* Используйте *2020-01-01-Preview* в качестве версии API.
 
 ```json
 {
@@ -244,4 +244,4 @@ ms.locfileid: "81460687"
 
 ## <a name="next-steps"></a>Следующие шаги
 
- Чтобы узнать больше о [Azure Database for PostgreSQL Single server data encryption with customer-managed key](concepts-data-encryption-postgresql.md)шифровании данных, см.
+ Дополнительные сведения о шифровании данных см. в статье [Шифрование данных единого сервера в базе данных Azure для PostgreSQL с помощью ключа, управляемого клиентом](concepts-data-encryption-postgresql.md).

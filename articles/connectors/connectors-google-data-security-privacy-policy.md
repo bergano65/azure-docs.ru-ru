@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 04/24/2020
-ms.openlocfilehash: 01121612c5574544ef6985d33f56f3e334f8d37c
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: 8c2ef8d174e8449b88f2257074bee69c3f45c6d9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82120656"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181945"
 ---
 # <a name="data-security-and-privacy-policies-for-google-connectors-in-azure-logic-apps"></a>Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps
 
@@ -34,13 +34,13 @@ ms.locfileid: "82120656"
 
 В этой политике при использовании учетной записи потребителя Gmail можно использовать соединитель Gmail только с конкретными утвержденными Google службами, которые могут быть изменены. Наши инженерные группы продолжают работать с Google для добавления дополнительных служб в этот список. В настоящее время ниже приведены утвержденные Google триггеры, действия и соединители, которые можно использовать в одном рабочем процессе приложения логики с соединителем Gmail при использовании учетной записи потребителя Gmail.
 
-* Logic Apps встроенные триггеры и действия: пакетная обработка, управление, операции с данными, Дата и время, неструктурированный файл, жидкость, запрос, расписание, переменные и XML
+* Logic Apps встроенные триггеры и действия: пакетная обработка, управление, операции с данными, Дата и время, неструктурированный файл, HTTP, жидкость, запрос, расписание, переменные и XML
 
 * Службы Google: Gmail, Google календарь, контакты Google, Google Drive, Google и задачи Google
 
 * Утвержденные службы Майкрософт: Dynamics 365, Excel Online, Microsoft Teams, Office 365, OneDrive и SharePoint Online
 
-* Соединители для управляемых клиентом источников данных: FTP, HTTP, RSS, SFTP, SMTP и SQL Server
+* Соединители для управляемых клиентом источников данных: FTP, RSS, SFTP, SMTP и SQL Server
 
 Последние сведения см. в [техническом справочной документации по соединителю Gmail](https://docs.microsoft.com/connectors/gmail/).
 
@@ -95,6 +95,6 @@ ms.locfileid: "82120656"
 
    Теперь соединитель Gmail можно использовать без ограничений в приложении логики.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [соединителе Gmail](https://docs.microsoft.com/connectors/gmail/)

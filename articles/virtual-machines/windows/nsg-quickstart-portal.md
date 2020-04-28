@@ -1,24 +1,18 @@
 ---
 title: Откройте порты для VM с помощью портала Azure
-description: Узнайте, как открыть порт или создать конечную точку для виртуальной машины Windows, используя модель развертывания с помощью Resource Manager и портал Azure.
-services: virtual-machines-windows
-documentationcenter: ''
+description: Узнайте, как открыть порт / создать конечную точку для Windows VM с помощью портала Azure
 author: cynthn
-manager: gwallace
-editor: ''
-ms.assetid: f7cf0319-5ee7-435e-8f94-c484bf5ee6f1
 ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 130d3315b5a9a6f175bd3d67ed33a034ab5f8dda
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 1844236a77b688819832b3fe0bf6736beea4bfae
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75371417"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81865488"
 ---
 # <a name="how-to-open-ports-to-a-virtual-machine-with-the-azure-portal"></a>Как открыть порты для виртуальной машины Windows с помощью портала Azure
 [!INCLUDE [virtual-machines-common-nsg-quickstart](../../../includes/virtual-machines-common-nsg-quickstart.md)]
@@ -31,7 +25,7 @@ ms.locfileid: "75371417"
 
 1. Найдите и выберите группу ресурсов из виртуальной машины, щелкните **Добавить**, а затем найдите и выберите **Группа безопасности сети**.
 
-2. Выберите **Создать**.
+2. Нажмите кнопку **создания**.
 
     Откроется окно **Создать группу безопасности сети**.
 
