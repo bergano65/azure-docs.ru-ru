@@ -9,10 +9,10 @@ ms.date: 06/27/2018
 ms.author: fryu
 ms.subservice: common
 ms.openlocfilehash: 1ad41b0b7391236a15b7c1be7d42ed81aaf5b51a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "61483440"
 ---
 # <a name="azure-storage-compliance-offerings"></a>Предложения для соответствия требованиям в службе хранилища Azure
@@ -34,7 +34,7 @@ ms.locfileid: "61483440"
 * [ISO 9001](https://www.microsoft.com/trustcenter/compliance/iso-9001)
 * [WCAG 2.0](https://www.microsoft.com/trustcenter/compliance/accessibility#WCAG-2-0)
 
-## <a name="us-government"></a>US (США)
+## <a name="us-government"></a>US Government
 
 * [DoD DISA L2, L4, L5](https://www.microsoft.com/trustcenter/compliance/disa)
 * [DoE 10 CFR Part 810](https://aka.ms/AzureCompliance)
@@ -79,7 +79,7 @@ ms.locfileid: "61483440"
 * [ENISA IAF (ЕС)](https://aka.ms/AzureCompliance)
 * [ENS (Испания)](https://www.microsoft.com/trustcenter/compliance/spainens)
 * [Типовые положения ЕС](https://www.microsoft.com/trustcenter/compliance/eu-model-clauses)
-* [ЕС-США Конфиденциальность щит](https://privacy.microsoft.com/en-US/microsoft-eu-us-privacy-shield)
+* [ЕС-U. S. щит конфиденциальности](https://privacy.microsoft.com/en-US/microsoft-eu-us-privacy-shield)
 * [GB 18030 (Китай)](https://www.trustcenter.cn/compliance/default.html#GB18030)
 * [GDPR (ЕС)](https://www.microsoft.com/trustcenter/privacy/gdpr)
 * [IT Grundschutz Workbook (Германия)](https://www.microsoft.com/TrustCenter/Compliance/IT-Grundschutz)

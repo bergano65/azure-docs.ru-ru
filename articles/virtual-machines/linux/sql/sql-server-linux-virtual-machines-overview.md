@@ -13,10 +13,10 @@ ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: d376672336845958fb6434a78177f42aca938229
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70081971"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Обзор SQL Server на виртуальных машинах Azure (Linux)
@@ -38,20 +38,20 @@ SQL Server на виртуальных машинах Azure позволяет �
 
 | Версия | Операционная система | Выпуск |
 | --- | --- | --- |
-| **Сервер S'L 2017** | Red Hat Enterprise Linux (RHEL) 7.4 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonRedHatEnterpriseLinux74), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonRedHatEnterpriseLinux74), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonRedHatEnterpriseLinux74), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonRedHatEnterpriseLinux74), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonRedHatEnterpriseLinux74) |
-| **Сервер S'L 2017** | SUSE Linux Enterprise Server (SLES) версии 12 SP2 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonSLES12SP2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonSLES12SP2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonSLES12SP2), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonSLES12SP2), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonSLES12SP2) |
-| **Сервер S'L 2017** | Ubuntu 16.04 LTS |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonUbuntuServer1604LTS), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonUbuntuServer1604LTS), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonUbuntuServer1604LTS), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonUbuntuServer1604LTS), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonUbuntuServer1604LTS) |
+| **SQL Server 2017** | Red Hat Enterprise Linux (RHEL) 7.4 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonRedHatEnterpriseLinux74), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonRedHatEnterpriseLinux74), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonRedHatEnterpriseLinux74), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonRedHatEnterpriseLinux74), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonRedHatEnterpriseLinux74) |
+| **SQL Server 2017** | SUSE Linux Enterprise Server (SLES) версии 12 SP2 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonSLES12SP2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonSLES12SP2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonSLES12SP2), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonSLES12SP2), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonSLES12SP2) |
+| **SQL Server 2017** | Ubuntu 16.04 LTS |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonUbuntuServer1604LTS), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonUbuntuServer1604LTS), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonUbuntuServer1604LTS), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonUbuntuServer1604LTS), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonUbuntuServer1604LTS) |
 
 > [!NOTE]
 > Сведения о доступных образах виртуальных машин SQL Server на базе Windows см. в статье [Приступая к работе с SQL Server в виртуальных машинах Azure](../../windows/sql/virtual-machines-windows-sql-server-iaas-overview.md).
 
-## <a name="installed-packages"></a><a id="packages"></a> Установленные пакеты
+## <a name="installed-packages"></a><a id="packages"></a>Установленные пакеты
 
 При настройке SQL Server в Linux установите пакет ядра СУБД, а затем некоторые дополнительные пакеты, в зависимости от ваших целей. Образы виртуальных машин Linux для SQL Server автоматически устанавливают большинство пакетов. В следующей таблице показаны установленные пакеты для каждого дистрибутива.
 
-| Distribution | [Двигатель базы данных](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Сервис](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [Агент SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [Полный текст поиска](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [Служб ssis](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [Надстройка для обеспечения высокого уровня доступности](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
+| Distribution | [Компонент Database Engine](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Инструменты](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [Агент SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [Полнотекстовый поиск](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [MSSQL Integration Services](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [Надстройка для обеспечения высокого уровня доступности](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
 |---|---|---|---|---|---|---|
-| RHEL | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
+| RHEL | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
 | SLES | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
 | Ubuntu | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) |
 
@@ -61,11 +61,11 @@ SQL Server на виртуальных машинах Azure позволяет �
 
 * [Обзор виртуальных машин](../overview.md).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 
-* [Введение в хранилище Microsoft Azure](../../../storage/common/storage-introduction.md)
+* [Введение в службу хранилища Microsoft Azure](../../../storage/common/storage-introduction.md)
 
-### <a name="networking"></a>Сети
+### <a name="networking"></a>Сеть
 
 * [Обзор виртуальной сети](../../../virtual-network/virtual-networks-overview.md)
 * [IP-адреса в Azure](../../../virtual-network/virtual-network-ip-addresses-overview-arm.md)
@@ -73,7 +73,7 @@ SQL Server на виртуальных машинах Azure позволяет �
 
 ### <a name="sql"></a>SQL
 
-* [Сервер S'L на Linux документации](https://docs.microsoft.com/sql/linux)
+* [Документация по SQL Server на Linux](https://docs.microsoft.com/sql/linux)
 * [Сравнение со службой "База данных SQL"](../../../sql-database/sql-database-paas-vs-sql-server-iaas.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия

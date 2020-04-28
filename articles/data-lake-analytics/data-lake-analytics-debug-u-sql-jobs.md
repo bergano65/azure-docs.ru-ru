@@ -1,5 +1,5 @@
 ---
-title: Код debug C для заданий Azure Data Lake U-S'L
+title: Отладка кода C# для заданий U-SQL Azure Data Lake
 description: В этой статье описано, как выполнять отладку вершин U-SQL с ошибками с помощью Средств Azure Data Lake для Visual Studio.
 services: data-lake-analytics
 ms.service: data-lake-analytics
@@ -10,10 +10,10 @@ ms.assetid: bcd0b01e-1755-4112-8e8a-a5cabdca4df2
 ms.topic: conceptual
 ms.date: 11/30/2017
 ms.openlocfilehash: 72239fc1679d2ebbfd9c9b5be6b79b58efb760cb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71315817"
 ---
 # <a name="debug-user-defined-c-code-for-failed-u-sql-jobs"></a>Отладка определяемого пользователем кода C# для заданий U-SQL, завершившихся сбоем
@@ -80,7 +80,7 @@ U-SQL поддерживает для C# модель расширяемости
 
 2. Получите путь к папке проекта **FailedVertexDebugHost**. 
 
-3. Щелкните правой кнопкой мыши **Свойства** для добавленного проекта исходного кода сборок. Слева выберите вкладку **Сборка** и вставьте в параметр **Вывод > Выходной путь** скопированный путь, который завершается строкой \bin\debug. Окончательный путь вывода, как `<DataLakeTemp path>\fd91dd21-776e-4729-a78b-81ad85a4fba6\loiu0t1y.mfo\FailedVertexDebug\FailedVertexDebugHost\bin\Debug\`.
+3. Щелкните правой кнопкой мыши **Свойства** для добавленного проекта исходного кода сборок. Слева выберите вкладку **Сборка** и вставьте в параметр **Вывод > Выходной путь** скопированный путь, который завершается строкой \bin\debug. Окончательный путь вывода подобен `<DataLakeTemp path>\fd91dd21-776e-4729-a78b-81ad85a4fba6\loiu0t1y.mfo\FailedVertexDebug\FailedVertexDebugHost\bin\Debug\`.
 
     ![Настройка пути pdb при отладке U-SQL в Azure Data Lake Analytics](./media/data-lake-analytics-debug-u-sql-jobs/data-lake-analytics-set-pdb-path.png)
 

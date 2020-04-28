@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 9bbb7ef46fbde881c8968128870d24a03b046c23
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73176786"
 ---
 # <a name="developer-portal-templates"></a>Шаблоны портала разработчика
@@ -32,21 +32,21 @@ ms.locfileid: "73176786"
 
 ##  <a name="developer-portal-templates"></a><a name="DeveloperPortalTemplates"></a>Шаблоны портала разработчика  
   
--   [Api](api-management-api-templates.md)  
+-   [Программные интерфейсы](api-management-api-templates.md)  
     -   [Список API](api-management-api-templates.md#APIList)  
-    -   [Операции](api-management-api-templates.md#Product)  
+    -   [Операция](api-management-api-templates.md#Product)  
     -   [Примеры кода](api-management-api-templates.md#CodeSamples)  
-        -   [Curl](api-management-api-templates.md#Curl)  
-        -   [C #](api-management-api-templates.md#CSharp)  
+        -   [Листывания](api-management-api-templates.md#Curl)  
+        -   [C#](api-management-api-templates.md#CSharp)  
         -   [Java](api-management-api-templates.md#Stub)  
-        -   [Javascript](api-management-api-templates.md#JavaScript)  
-        -   [Цель C](api-management-api-templates.md#ObjectiveC)  
-        -   [Php](api-management-api-templates.md#PHP)  
+        -   [JavaScript](api-management-api-templates.md#JavaScript)  
+        -   [Цель в](api-management-api-templates.md#ObjectiveC)  
+        -   [PHP](api-management-api-templates.md#PHP)  
         -   [Python](api-management-api-templates.md#Python)  
-        -   [Руби](api-management-api-templates.md#Ruby)  
+        -   [Ruby](api-management-api-templates.md#Ruby)  
 -   [Продукты](api-management-product-templates.md)  
     -   [Список продуктов](api-management-product-templates.md#ProductList)  
-    -   [Продукт](api-management-product-templates.md#Product)  
+    -   [Продукта](api-management-product-templates.md#Product)  
 -   [Приложения](api-management-application-templates.md)  
     -   [Список приложений](api-management-application-templates.md#ProductList)  
     -   [Приложение](api-management-application-templates.md#Application)  
@@ -56,8 +56,8 @@ ms.locfileid: "73176786"
     -   [Профиль](api-management-user-profile-templates.md#Profile)  
     -   [Подписки](api-management-user-profile-templates.md#Subscriptions)  
     -   [Приложения](api-management-user-profile-templates.md#Applications)  
-    -   [Обновленная информация об учетной записи](api-management-user-profile-templates.md#UpdateAccountInfo)  
--   [Страниц](api-management-page-templates.md)  
+    -   [Обновить сведения об учетной записи](api-management-user-profile-templates.md#UpdateAccountInfo)  
+-   [См](api-management-page-templates.md)  
     -   [Войти](api-management-page-templates.md#SignIn)  
     -   [Регистрация](api-management-page-templates.md#SignUp)  
     -   [Страница не найдена](api-management-page-templates.md#PageNotFound)
@@ -67,4 +67,4 @@ ms.locfileid: "73176786"
 + [Справочник по шаблонам](api-management-developer-portal-templates-reference.md)  
 + [Справочник по моделям данных](api-management-template-data-model-reference.md)  
 + [Элементы управления страницы](api-management-page-controls.md)  
-+ [Ресурсы для шаблонов](api-management-template-resources.md)
++ [Ресурсы шаблона](api-management-template-resources.md)

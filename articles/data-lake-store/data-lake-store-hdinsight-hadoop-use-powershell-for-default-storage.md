@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: c57a45145d9abc43d0ca79839ea297dfc025db9b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "66161412"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-as-default-storage-by-using-powershell"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию, с помощью PowerShell
 
 > [!div class="op_single_selector"]
-> * [Воспользуйтесь порталом Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
+> * [Использование портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 > * [Использование PowerShell (для хранилища по умолчанию)](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
 > * [Использование PowerShell (для дополнительного хранилища)](data-lake-store-hdinsight-hadoop-use-powershell.md)
 > * [Использование Resource Manager](data-lake-store-hdinsight-hadoop-use-resource-manager-template.md)
@@ -137,7 +137,7 @@ ms.locfileid: "66161412"
 
         pvk2pfx -pvk mykey.pvk -spc CertFile.cer -pfx CertFile.pfx -po <password>
 
-    При появлении соответствующего запроса введите указанный ранее пароль для закрытого ключа. Значение, указываемое для параметра **-po**, — это пароль, связанный с PFX-файлом. После успешного завершения команды следует также просмотреть **каталог сертификата CertFile.pfx,** указанный вами.
+    При появлении соответствующего запроса введите указанный ранее пароль для закрытого ключа. Значение, указываемое для параметра **-po**, — это пароль, связанный с PFX-файлом. После успешного выполнения команды в указанном каталоге сертификатов также должен отобразиться файл **CertFile. pfx** .
 
 ### <a name="create-an-azure-ad-and-a-service-principal"></a>Создание приложения Azure AD и субъекта-службы
 Следуя инструкциям в этом разделе, вы создадите субъект-службу для приложения Azure Active Directory, назначите роль субъекту-службе и пройдете аутентификацию в качестве субъекта-службы, используя сертификат. Чтобы создать приложение в Azure AD, выполните следующие команды.
@@ -215,7 +215,7 @@ ms.locfileid: "66161412"
     После успешного выполнения командлетов должны отобразиться сведения о кластере.
 
 ## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-data-lake-storage-gen1"></a>Выполнение тестовых заданий в кластере HDInsight для использования Data Lake Storage 1-го поколения
-После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Для этого запустите работу образца Hive для создания таблицы, которая использует данные образца, которые уже доступны в Data Lake Storage Gen1 в * \<кластерном корне>/пример/данные/образец.*
+После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Для этого выполните пример задания Hive, чтобы создать таблицу, использующую образец данных, который уже доступен в Data Lake Storage 1-го поколения в * \<корневом каталоге кластера>/example/Data/Sample.log*.
 
 Следуя инструкциям в этом разделе, вы подключитесь по протоколу Secure Shell (SSH) к созданному кластеру HDInsight на платформе Linux и выполните пример запроса Hive.
 

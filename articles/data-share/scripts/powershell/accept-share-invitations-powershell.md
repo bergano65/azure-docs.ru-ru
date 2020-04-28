@@ -1,6 +1,6 @@
 ---
-title: 'Скрипт PowerShell: Примите приглашение от совместного использования данных Azure (ru) Документы Майкрософт'
-description: Этот скрипт PowerShell принимает приглашения от существующего общего обмена данными.
+title: 'Сценарий PowerShell: принятие приглашения из общей папки данных Azure | Документация Майкрософт'
+description: Этот сценарий PowerShell принимает приглашения от существующей общей папки данных.
 services: data-share
 author: joannapea
 ms.service: data-share
@@ -10,15 +10,15 @@ ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
 ms.openlocfilehash: 246e3550650dfd458b4aeecda3b5b7733e49f017
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70307336"
 ---
-# <a name="use-powershell-to-accept-a-data-share-invitation"></a>Используйте PowerShell для приема приглашения на обмен данными
+# <a name="use-powershell-to-accept-a-data-share-invitation"></a>Использование PowerShell для принятия приглашения для общего доступа к данным
 
-Этот скрипт PowerShell принимает приглашения, отправленные потребителю.
+Этот сценарий PowerShell принимает приглашения, отправленные потребителю.
 
 ## <a name="sample-script"></a>Пример скрипта
 ```powershell
@@ -40,15 +40,15 @@ New-AzDataShareSubscription -ResourceGroupName $resourceGroupName -AccountName $
 
 Этот сценарий использует следующие команды: 
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
-| [Get-AzDataShareInvitation](/powershell/module/az.datashare/get-azdatashareinvitation?view=azps-2.6.0) | Получить и перечислить отправленные данные совместно госприглашениями. |
-| [Подписка New-AzDataShare](/powershell/module/az.datashare/get-azdatasharesubscription?view=azps-2.6.0) | Создайте подписку на обмен данными. |
+| [Get-Аздаташареинвитатион](/powershell/module/az.datashare/get-azdatashareinvitation?view=azps-2.6.0) | Получение и перечисление отправленных приглашений на обмен данными. |
+| [New-Аздаташаресубскриптион](/powershell/module/az.datashare/get-azdatasharesubscription?view=azps-2.6.0) | Создайте подписку на общую папку данных. |
 |||
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 
-Дополнительные образцы скриптов Azure Data Share PowerShell можно найти в [образцах Azure Data Share PowerShell.](../../samples-powershell.md)
+Дополнительные примеры сценариев PowerShell для общего ресурса Azure Data Share можно найти в [примерах PowerShell для общего доступа к данным Azure](../../samples-powershell.md).
 

@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
 ms.openlocfilehash: 154160f9a3fbd485ee6383bf3d5ff1c291520a75
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71088521"
 ---
 # <a name="remote-desktop-license-server-isnt-available-when-you-connect-to-an-azure-vm"></a>Сервер лицензирования удаленных рабочих столов недоступен при подключении к виртуальной машине Azure
@@ -40,7 +40,7 @@ ms.locfileid: "71088521"
 mstsc /v:<Server>[:<Port>] /admin
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Эта проблема возникает, когда сервер лицензирования удаленных рабочих столов недоступен и не может предоставить лицензию для начала удаленного сеанса. Эта проблема может возникнуть в связи с несколькими сценариями, даже если роль узла сеансов удаленных рабочих столов настроена на виртуальной машине.
 

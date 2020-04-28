@@ -11,10 +11,10 @@ ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d6b90ff82601acca1249c7d8c353944e39e89f95
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "66473785"
 ---
 # <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADConnectivityTools
@@ -36,7 +36,7 @@ Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObje
 ### <a name="description"></a>DESCRIPTION
 
 Выполняет тесты подключения к локальной службе DNS.
-Для настройки разъема Active Directory пользователь должен иметь разрешение как имени для леса, к которому он пытается подключиться, так и в контроллерах домена, связанных с этим лесом.
+Чтобы настроить соединитель Active Directory, пользователь должен иметь имя ресолутионсе для леса, к которому они пытаются подключиться, а также контроллеры домена, связанные с этим лесом.
 
 ### <a name="examples"></a>Примеры
 
@@ -309,8 +309,8 @@ Accept wildcard characters: False
 
 #### <a name="-skipdnsport"></a>-SkipDnsPort
 
-Если пользователь не использует DNS-сервисы, предоставляемые AD Site / Logon DC, то они могут захотеть пропустить проверку порта 53.
-Пользователь должен быть в состоянии решить вопрос с _tcp. \<forestfqdn\> для того, чтобы конфигурация active Directory Connector увенчалась успехом.
+Если пользователь не использует службы DNS, предоставляемые сайтом AD и контроллером домена Active Directory, то может потребоваться пропустить проверку порта 53.
+Пользователь по-прежнему должен иметь возможность разрешить значение _. LDAP. _tcp. \<forestfqdn\> для того, чтобы конфигурация соединителя Active Directory была выполнена.
 
 ```yml
 Type: SwitchParameter

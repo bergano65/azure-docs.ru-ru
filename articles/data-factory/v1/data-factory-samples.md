@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 63db1810cbdd2133bc0577530325351997b31f30
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70139267"
 ---
 # <a name="azure-data-factory---samples"></a>Фабрика данных Azure — примеры
@@ -32,7 +32,7 @@ ms.locfileid: "70139267"
 | [Примеры JSON](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/JSON) |В этой выборке представлены примеры кода JSON для распространенных сценариев. |
 | [Пример загрузчика данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HttpDataDownloaderSample) |В этой выборке демонстрируется скачивание данных из конечной точки HTTP в хранилище BLOB-объектов Azure с помощью настраиваемого действия .NET. |
 | [Пример действия перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/CrossAppDomainDotNetActivitySample) |Этот пример позволяет создать настраиваемое действие .NET, не ограниченное версиями сборок, которые используются средством запуска фабрики данных Azure (например, WindowsAzure.Storage версии 4.3.0, Newtonsoft.Json версии 6.0.x и т. д.). |
-| [Выполнить R скрипт](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample) |Этот пример включает пользовательское действие фабрики данных, которое можно использовать для вызова файла RScript.exe. Этот пример работает только с вашим собственным кластером HDInsight (не по требованию), в которое уже установлен R. |
+| [Выполнение скрипта R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample) |Этот пример включает пользовательское действие фабрики данных, которое можно использовать для вызова файла RScript.exe. Этот пример работает только с вашим собственным кластером HDInsight (не по требованию), в которое уже установлен R. |
 | [Вызов заданий Spark в кластере HDInsight Hadoop](https://docs.microsoft.com/azure/data-factory/tutorial-transform-data-spark-portal) |В этом примере показано, как использовать действие MapReduce для запуска программы Spark. Программа Spark просто копирует данные из одного контейнера BLOB-объектов Azure в другой. |
 | [Анализ Twitter с использованием действия пакетной оценки показателей машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-AzureMLBatchScoringActivity) |В этом примере показано, как использовать AzureMLBatchScoringActivity для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
 | [Анализ Twitter с использованием настраиваемого действия](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |В этом примере показано, как использовать настраиваемое действие .NET для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
@@ -80,7 +80,7 @@ ms.locfileid: "70139267"
 
 * Visual Studio 2013 или Visual Studio 2015.
 * Загрузите пакет SDK Azure для Visual Studio 2013 или Visual Studio 2015. Перейдите на [cтраницу загрузки Azure](https://azure.microsoft.com/downloads/) и щелкните **VS 2013** или **VS2015** в разделе **.NET**.
-* Скачайте последнюю версию подключаемого модуля фабрики данных Azure для Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) или [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Если вы используете Visual Studio 2013, вы также можете обновить плагин, делая следующие шаги: В меню, нажмите **Инструменты** -> **Расширения и Обновления** -> **Интернет** -> Visual Studio**Галерея** -> **Microsoft Azure Data Factory Инструменты для визуального обновления studio** -> **Update**.
+* Скачайте последнюю версию подключаемого модуля фабрики данных Azure для Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) или [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Если вы используете Visual Studio 2013, вы также можете обновить подключаемый модуль, выполнив следующие действия: в меню щелкните **Сервис** -> **расширения и обновления** -> в**Интернете** -> **Visual Studio Коллекция** -> **Microsoft Azure инструменты фабрики данных для Visual Studio** -> **Обновление**.
 
 ### <a name="use-data-factory-templates"></a>Использование шаблонов фабрики данных
 1. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**.
@@ -88,7 +88,7 @@ ms.locfileid: "70139267"
 
    1. Выберите **Фабрика данных** в разделе **Шаблоны**.
    2. В правой области выберите **Шаблоны фабрики данных** .
-   3. Введите **название** проекта.
+   3. Введите **имя** проекта.
    4. Выберите **расположение** для проекта.
    5. Нажмите кнопку **ОК**.
 
@@ -103,7 +103,7 @@ ms.locfileid: "70139267"
    3. Выберите **подписку Azure** , в рамках которой вы хотите создать фабрику данных.
    4. Выберите **группу ресурсов** для фабрики данных.
    5. В качестве **региона** выберите **западную часть США**, **восточную часть США** или **Северную Европу**.
-   6. Нажмите кнопку **Далее**.
+   6. Щелкните **Далее**.
 6. На странице **Configure data stores** (Настройка хранилищ данных) укажите существующую **базу данных SQL Azure** и **учетную запись хранения Azure** (или создайте новые), а затем нажмите кнопку "Далее".
 7. На странице **Настройка вычислений** выберите значения по умолчанию и нажмите кнопку **Далее**.
 8. На странице **Сводка** проверьте все параметры и нажмите кнопку **Далее**.

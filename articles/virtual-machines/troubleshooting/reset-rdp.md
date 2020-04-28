@@ -15,10 +15,10 @@ ms.topic: troubleshooting
 ms.date: 03/25/2019
 ms.author: genli
 ms.openlocfilehash: 580ec443dc087f270e30856c336a5699bbf1ae71
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71058448"
 ---
 # <a name="reset-remote-desktop-services-or-its-administrator-password-in-a-windows-vm"></a>Сброс служб удаленных рабочих столов или пароля администратора на виртуальной машине Windows
@@ -45,7 +45,7 @@ ms.locfileid: "71058448"
 
 ### <a name="reset-the-remote-desktop-services-configuration"></a>**Сброс конфигурации служб удаленных рабочих столов**
 
-Этот процесс позволит удаленному настольно-службе в VM и создать правило брандмауэра для порта RDP по умолчанию 3389.
+Этот процесс включит удаленный рабочий столную службу на виртуальной машине и создаст правило брандмауэра для порта RDP 3389 по умолчанию.
 
 1. Выберите нужную виртуальную машину Windows, а затем **Сброс пароля** в разделе **Поддержка и устранение неполадок**. Откроется диалоговое окно **Сброс пароля**. 
 
@@ -92,9 +92,9 @@ ms.locfileid: "71058448"
 
 - Если расширение доступа к виртуальной машине Azure не отвечает и сбросить пароль не удается, вы можете [сбросить локальный пароль Windows в автономном режиме](reset-local-password-without-agent.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Этот метод является более сложным и требует подключения виртуального жесткого диска проблемной виртуальной машины к другой виртуальной машине. Сначала выполните действия, описанные в этой статье, и попытайтесь сбросить пароль в автономном режиме, только если они не помогут.
 
-- [Узнайте о расширениях и функциях Azure VM.](../extensions/features-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+- [Сведения о расширениях и функциях виртуальных машин Azure](../extensions/features-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-- [Подключитесь к виртуальной машине Azure с помощью RDP или SSH.](https://msdn.microsoft.com/library/azure/dn535788.aspx)
+- [Подключитесь к виртуальной машине Azure с помощью RDP или SSH](https://msdn.microsoft.com/library/azure/dn535788.aspx).
 
-- [Устранение проблем удаленного соединения рабочего стола с windows на основе Azure виртуальной машины.](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+- [Устранение неполадок удаленный рабочий стол подключений к виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

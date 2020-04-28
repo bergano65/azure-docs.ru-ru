@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
 ms.openlocfilehash: 9d5d572c3e32e3645e65ba8d6fc28b567b3c1e9a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "65827212"
 ---
 # <a name="configure-access-controls-for-the-time-series-insights-telemetry-explorer"></a>Настройка управления доступом для обозревателя телеметрии Аналитики временных рядов
@@ -39,10 +39,10 @@ ms.locfileid: "65827212"
     ![Управление источником Time Series Insights — "Добавить"](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access2.png)
 
 6. Щелкните **Выбор ролей**. Выберите соответствующую роль доступа для пользователя.
-   - Выберите **contributor,** если вы хотите разрешить пользователю изменять справочные данные и делиться сохраненными запросами и перспективами с другими пользователями среды. 
-   - В противном случае выберите **Reader,** чтобы разрешить данные запроса пользователей в среде и сохранять личные (не общие) запросы в среде.
+   - Выберите **участник** , если хотите разрешить пользователю изменять эталонные данные и предоставить общий доступ к сохраненным запросам и перспективам другим пользователям среды. 
+   - В противном случае выберите **читатель** , чтобы разрешить пользователям запрашивать данные в среде и сохранять личные (не общие) запросы в среде.
 
-     Выберите **Ok,** чтобы подтвердить выбор роли.
+     Нажмите кнопку **ОК** , чтобы подтвердить выбор роли.
 
      ![Управление источником Time Series Insights — "Выбор пользователя"](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access3.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "65827212"
 
 В этой статье вы узнали, как обеспечивается управление доступом для обозревателя Аналитики временных рядов в акселераторе решения для удаленного мониторинга.
 
-Для получения дополнительной концептуальной информации об [Remote Monitoring architecture](iot-accelerators-remote-monitoring-sample-walkthrough.md) ускорителе решений удаленного мониторинга см.
+Дополнительные сведения об ускорителе решений для удаленного мониторинга см. в разделе [архитектура удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md) .
 
 Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md).
 <!-- Next tutorials in the sequence -->

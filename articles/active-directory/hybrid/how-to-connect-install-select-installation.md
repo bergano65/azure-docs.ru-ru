@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 90a624a6b3b4696899af0d8606f653df260cc201
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60348286"
 ---
 # <a name="select-which-installation-type-to-use-for-azure-ad-connect"></a>Выбор типа установки для Azure AD Connect
@@ -47,7 +47,7 @@ ms.locfileid: "60348286"
 - Если вы не хотите синхронизировать все подразделения, то можно по-прежнему использовать экспресс-установку, но на последней странице снимите флажок **Start the synchronization process…*** (Запустить синхронизацию сразу…). Затем снова запустите мастер установки, измените подразделения в [параметрах конфигурации](how-to-connect-installation-wizard.md#customize-synchronization-options) и включите запланированную синхронизацию.
 - Когда вы хотите включить один из компонентов службы Azure AD уровня "Премиум", например компонент обратной записи паролей. Сначала пройдите процесс экспресс-установки, чтобы завершить первоначальную установку. Затем снова запустите мастер установки и измените [параметры конфигурации](how-to-connect-installation-wizard.md#customize-synchronization-options).
 
-## <a name="custom"></a>Другой
+## <a name="custom"></a>Особые настройки
 Пользовательский тип установки предоставляет намного больше возможностей, чем экспресс. Его следует применять в тех случаях, где описанная в предыдущем разделе конфигурация для экспресс-установки не соответствует потребностям вашей организации.
 
 Используйте в следующих ситуациях:

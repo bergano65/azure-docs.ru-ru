@@ -7,15 +7,15 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: 88dc85003fa2a3e41d8a31055ff8ba9b0fcc7492
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71300572"
 ---
 # <a name="how-to-catalog-big-data-in-azure-data-catalog"></a>Как каталогизировать большие данные в каталоге данных Azure
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 **Каталог данных Microsoft Azure** — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных источников данных. Он помогает пользователям обнаруживать, оценивать и использовать источники данных, повышая ценность источников информации, в том числе источников больших данных, для организаций.
 

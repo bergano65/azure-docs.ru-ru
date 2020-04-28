@@ -1,5 +1,5 @@
 ---
-title: Федерирование нескольких Azure AD с одним AD FS - Azure
+title: Федерацию нескольких Azure AD с помощью одного AD FS Azure
 description: Из этого документа вы узнаете, как создать федерацию нескольких экземпляров Azure AD с одним экземпляром AD FS.
 keywords: федерация, ADFS, AD FS, несколько клиентов, один клиент AD FS, один экземпляр ADFS, федерация нескольких клиентов, федерация ADFS с несколькими лесами, AAD Сonnect, федерация, федерация между клиентами
 services: active-directory
@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9122e3a7af2230dc0f68e72b28891d488b01a80a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "65137830"
 ---
 # <a name="federate-multiple-instances-of-azure-ad-with-single-instance-of-ad-fs"></a>Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
@@ -66,4 +66,4 @@ ms.locfileid: "65137830"
 Вышеуказанная операция добавит домен fabrikam.com в федерацию с тем же экземпляром AD FS. Параметры обоих доменов можно проверить с помощью командлета Get-MsolDomainFederationSettings.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Подключение активного каталога с помощью активного каталога Azure](whatis-hybrid-identity.md)
+[Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md)

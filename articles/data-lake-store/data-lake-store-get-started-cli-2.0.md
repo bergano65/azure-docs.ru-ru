@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: 9431cc7fa12b86371ce6b2325aca8e13d264442e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60885352"
 ---
 # <a name="get-started-with-azure-data-lake-store-using-azure-cli"></a>Начало работы с Azure Data Lake Store с помощью Azure CLI
@@ -24,11 +24,11 @@ ms.locfileid: "60885352"
 > [!div class="op_single_selector"]
 > * [Портал](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
-> * [Лазурный CLI](data-lake-store-get-started-cli-2.0.md)
+> * [Azure CLI](data-lake-store-get-started-cli-2.0.md)
 >
 > 
 
-Узнайте, как использовать Azure CLI для создания учетной записи Azure Data Lake Storage Gen1 и выполнения основных операций, таких как создание папок, загрузка и загрузка файлов данных, удаление учетной записи и т.д. Для получения дополнительной информации о хранении данных озера Gen1, [см.](data-lake-store-overview.md)
+Узнайте, как использовать Azure CLI для создания учетной записи Azure Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения о Data Lake Storage 1-го поколения см. в разделе [обзор Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
 Azure CLI — это интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Дополнительные сведения см. в статье [Инфраструктура Azure CLI](https://docs.microsoft.com/cli/azure). Полный список команд и синтаксис см. в [справочнике интерфейса командной строки Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/cli/azure/dls).
 
@@ -40,7 +40,7 @@ Azure CLI — это интерфейс командной строки Azure д
 
 * **Azure CLI**. См. инструкции в статье об [установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 В этой статье используется более простой подход к аутентификации в службе Data Lake Storage 1-го поколения, в которую выполняется вход от имени пользователя. Уровень доступа к учетной записи Data Lake Storage 1-го поколения и файловой системе зависит от уровня доступа пользователя, который вошел в систему. Существуют разные способы аутентификации в Data Lake Storage 1-го поколения, включая **аутентификацию пользователей** и **аутентификацию между службами**. Инструкции и дополнительные сведения об аутентификации см. в разделах [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md) и [Аутентификация между службами](data-lake-store-authenticate-using-active-directory.md).
 
@@ -134,13 +134,13 @@ az dls fs list --account mydatalakestoragegen1 --path /mynewfolder
 
 ## <a name="rename-download-and-delete-data-from-a-data-lake-storage-gen1-account"></a>Переименование, скачивание и удаление данных из учетной записи Data Lake Storage 1-го поколения 
 
-* **Для переименования файла**используйте следующую команду:
+* **Чтобы переименовать файл**, используйте следующую команду:
   
     ```azurecli
     az dls fs move --account mydatalakestoragegen1 --source-path /mynewfolder/vehicle1_09142014.csv --destination-path /mynewfolder/vehicle1_09142014_copy.csv
     ```
 
-* **Чтобы загрузить файл,** используйте следующую команду. Убедитесь, что указанный конечный путь уже существует.
+* **Чтобы скачать файл**, используйте следующую команду. Убедитесь, что указанный конечный путь уже существует.
   
     ```azurecli     
     az dls fs download --account mydatalakestoragegen1 --source-path /mynewfolder/vehicle1_09142014_copy.csv --destination-path "C:\mysampledata\vehicle1_09142014_copy.csv"
@@ -151,7 +151,7 @@ az dls fs list --account mydatalakestoragegen1 --path /mynewfolder
     > 
     >
 
-* **Чтобы удалить файл,** используйте следующую команду:
+* **Чтобы удалить файл**, используйте следующую команду:
   
     ```azurecli
     az dls fs delete --account mydatalakestoragegen1 --path /mynewfolder/vehicle1_09142014_copy.csv

@@ -9,10 +9,10 @@ ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
 ms.openlocfilehash: b6bc0b00579bdef0a358f756b8cf2b6034aca017
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "68688179"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
@@ -37,7 +37,7 @@ ms.locfileid: "68688179"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli)
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -252,7 +252,7 @@ az network public-ip show \
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-images.png)
 
-Измените URL-адрес&lt;http://&gt;IP-адрес:8080/video/test.html, заменив IP-адрес на &lt;IP-адрес,&gt;и вы должны увидеть что-то вроде следующего примера.
+Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Video/Test.HTML, замените IP-адрес &lt;на IP&gt;, и вы увидите нечто вроде приведенного в следующем примере.
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-video.png)
 

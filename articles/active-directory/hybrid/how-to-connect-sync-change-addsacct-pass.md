@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 35e04be046e20883f60c576745a29342add68a81
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "60241598"
 ---
 # <a name="changing-the-ad-ds-account-password"></a>Изменение пароля учетной записи AD DS
@@ -29,7 +29,7 @@ ms.locfileid: "60241598"
 
 * В Synchronization Service Manager любая операция импорта или экспорта с использованием локального каталога AD завершается ошибкой **no-start-credentials**.
 
-* В windows Event Viewer журнал событий приложения содержит ошибку с **Event ID 6000** и **сообщением «Агент управления «contoso.com» не удалось запустить, потому что учетные данные были недействительными».**
+* В Просмотр событий Windows журнал событий приложения содержит ошибку с **идентификатором события 6000** и сообщением **"не удалось запустить агент управления" contoso.com ", так как учетные данные недопустимы**.
 
 
 ## <a name="how-to-update-the-synchronization-service-with-new-password-for-ad-ds-account"></a>Как обновить пароль в службе синхронизации в случае изменения пароля учетной записи AD DS
@@ -42,7 +42,7 @@ ms.locfileid: "60241598"
 
 3. Выберите **соединитель AD**, соответствующий учетной записи AD DS, для которой был изменен пароль.
 
-4. Под **действием**, выберите **Свойства**.
+4. В разделе **действия**выберите **свойства**.
 
 5. Во всплывающем диалоговом окне выберите **Подключиться к лесу Active Directory**.
 

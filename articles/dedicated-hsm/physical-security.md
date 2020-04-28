@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: mbaldwin
 ms.openlocfilehash: ede1af4625d06af4e280eda86d09ae1db3dfdfd1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70881024"
 ---
 # <a name="azure-dedicated-hsm-physical-security"></a>Физическая безопасность выделенного устройства Azure HSM
@@ -55,8 +55,8 @@ ms.locfileid: "70881024"
 
 Мы рекомендуем внимательно ознакомиться с основными концепциями службы (высокий уровень доступности, безопасность и удобство поддержки), прежде чем переходить к подготовке устройств, а также разработке и развертыванию приложений.
 
-* [Высокая доступность](high-availability.md)
-* [Сеть](networking.md)
+* [Обеспечение высокого уровня доступности](high-availability.md)
+* [Сетевое взаимодействие](networking.md)
 * [Возможности поддержки](supportability.md)
-* [Мониторинга](monitoring.md)
+* [Мониторинг](monitoring.md)
 * [Архитектура развертывания](deployment-architecture.md)

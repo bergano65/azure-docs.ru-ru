@@ -1,6 +1,6 @@
 ---
-title: Получите производительность производительности запроса & производительности s'L
-description: Узнайте, как получить метрики выполнения запросов запросов запросов запросов запросов Запросов Azure Cosmos DB, а также производительность выполнения запросов запросов Запросов Azure Cosmos DB, а также производительность запросов запросов запросов Azure Cosmos DB.
+title: Получение метрик выполнения SQL Query &
+description: Узнайте, как получить метрики выполнения запросов SQL и пропрофилировать производительность запросов SQL Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: girobins
 ms.openlocfilehash: 48b9a67de5c870a187ee008bd97265760ca6c341
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70998364"
 ---
-# <a name="get-sql-query-execution-metrics-and-analyze-query-performance-using-net-sdk"></a>Получите метрики выполнения запросов и проанализируйте производительность запроса с помощью .NET SDK
+# <a name="get-sql-query-execution-metrics-and-analyze-query-performance-using-net-sdk"></a>Получение метрик выполнения запросов SQL и анализ производительности запросов с помощью пакета SDK для .NET
 
-В этой статье представлено, как профилировать производительность запроса S'L на Azure Cosmos DB. Это профилирование может `QueryMetrics` быть сделано с помощью извлеченных из .NET SDK и подробно описано здесь. [QueryMetrics](https://msdn.microsoft.com/library/microsoft.azure.documents.querymetrics.aspx) — это сильно набранный объект с информацией о выполнении запроса бэкэнда. Эти показатели более подробно описаны в статье [Tune Query Performance.](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics)
+В этой статье описывается, как профилировать производительность запросов SQL на Azure Cosmos DB. Это профилирование можно выполнить с помощью `QueryMetrics` команды, полученной из пакета SDK для .NET, и подробно описано здесь. [Куериметрикс](https://msdn.microsoft.com/library/microsoft.azure.documents.querymetrics.aspx) — это строго типизированный объект со сведениями о выполнении внутреннего запроса. Эти метрики более подробно описаны в статье [Настройка производительности запросов](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) .
 
-## <a name="set-the-feedoptions-parameter"></a>Установите параметр FeedOptions
+## <a name="set-the-feedoptions-parameter"></a>Задание параметра FeedOptions
 
-Все перегрузки для [DocumentClient.CreateДокументокери](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentquery.aspx) принимают в дополнительном [параметре FeedOptions.](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) Эта опция позволяет настроить и параметризировать выполнение запроса. 
+Все перегрузки для [DocumentClient. CreateDocumentQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentquery.aspx) принимают необязательный параметр [FeedOptions](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) . Этот параметр позволяет настроить и параметризованное выполнение запроса. 
 
-Для сбора метрик выполнения запроса Sql необходимо установить параметр [Populate-EryMetrics](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.populatequerymetrics.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.PopulateQueryMetrics) в [FeedOptions.](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) `true` Установка `PopulateQueryMetrics` на истину сделает `FeedResponse` это так, `QueryMetrics`что будет содержать соответствующие . 
+Для сбора метрик выполнения запросов SQL необходимо задать параметру [популатекуериметрикс](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.populatequerymetrics.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.PopulateQueryMetrics) в [FeedOptions](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) значение `true`. Если `PopulateQueryMetrics` задано значение true, то `FeedResponse` будет содержать соответствующий `QueryMetrics`объект. 
 
-## <a name="get-query-metrics-with-asdocumentquery"></a>Получить метрики запроса с AsDocument'ery()
-В следующем примере кода показано, как сделать извлекать метрики при использовании метода [AsDocument'ery()](https://msdn.microsoft.com/library/microsoft.azure.documents.linq.documentqueryable.asdocumentquery.aspx)
+## <a name="get-query-metrics-with-asdocumentquery"></a>Получение метрик запроса с помощью Асдокументкуери ()
+В следующем примере кода показано, как получить метрики при использовании метода [асдокументкуери ()](https://msdn.microsoft.com/library/microsoft.azure.documents.linq.documentqueryable.asdocumentquery.aspx) :
 
 ```csharp
 // Initialize this DocumentClient and Collection
@@ -60,9 +60,9 @@ while (documentQuery.HasMoreResults)
     }
 }
 ```
-## <a name="aggregating-querymetrics"></a>Агрегирование queryMetrics
+## <a name="aggregating-querymetrics"></a>Статистическая обработка Куериметрикс
 
-В предыдущем разделе обратите внимание, что было несколько вызовов метода [ExecuteNextAsync.](https://msdn.microsoft.com/library/azure/dn850294.aspx) Каждый вызов `FeedResponse` возвращал объект, в `QueryMetrics`который есть словарь; один для каждого продолжения запроса. В следующем примере показано, как их агрегировать `QueryMetrics` с помощью LIN'а:
+В предыдущем разделе Обратите внимание, что существовало несколько вызовов метода [ексекутенекстасинк](https://msdn.microsoft.com/library/azure/dn850294.aspx) . Каждый вызов вернул `FeedResponse` объект с словарем `QueryMetrics`; по одному для каждого продолжения запроса. В следующем примере показано, как выполнить статистическую обработку `QueryMetrics` с помощью LINQ:
 
 ```csharp
 List<QueryMetrics> queryMetricsList = new List<QueryMetrics>();
@@ -82,9 +82,9 @@ QueryMetrics aggregatedQueryMetrics = queryMetricsList.Aggregate((curr, acc) => 
 Console.WriteLine(aggregatedQueryMetrics);
 ```
 
-## <a name="grouping-query-metrics-by-partition-id"></a>Показатели группового запроса по идентификатору раздела
+## <a name="grouping-query-metrics-by-partition-id"></a>Группирование метрик запроса по ИДЕНТИФИКАТОРу секции
 
-Вы можете `QueryMetrics` сгруппировать идентификатор раздела. Группировка по идентификатору раздела позволяет увидеть, вызывает ли определенный раздел проблемы с производительностью по сравнению с другими. В следующем примере `QueryMetrics` показано, как сгруппироваться с ЛИНЗ:
+Можно сгруппировать `QueryMetrics` по идентификатору секции. Группировка по ИДЕНТИФИКАТОРу секции позволяет определить, вызывают ли определенные секции проблемы с производительностью по сравнению с другими. В следующем примере показано, как группировать `QueryMetrics` с помощью LINQ:
 
 ```csharp
 List<KeyValuePair<string, QueryMetrics>> partitionedQueryMetrics = new List<KeyValuePair<string, QueryMetrics>>();
@@ -113,9 +113,9 @@ foreach(IGrouping<string, KeyValuePair<string, QueryMetrics>> grouping in groupe
 }
 ```
 
-## <a name="linq-on-documentquery"></a>ЛИНЗ на ДокументеКери
+## <a name="linq-on-documentquery"></a>LINQ на Документкуери
 
-Вы также можете `FeedResponse` получить от запроса `AsDocumentQuery()` LIN's, используя метод:
+Можно также получить `FeedResponse` из запроса LINQ с помощью `AsDocumentQuery()` метода:
 
 ```csharp
 IDocumentQuery<Document> linqQuery = client.CreateDocumentQuery(collection.SelfLink, feedOptions)
@@ -129,7 +129,7 @@ IReadOnlyDictionary<string, QueryMetrics> queryMetrics = feedResponse.QueryMetri
 
 ## <a name="expensive-queries"></a>Ресурсоемкие запросы
 
-Можно захватить единицы запроса, потребляемые каждым запросом, для исследования дорогих запросов или запросов, потребляемых высокой пропускной однако. Вы можете получить плату за запрос, `FeedResponse`используя свойство [RequestCharge](https://msdn.microsoft.com/library/azure/dn948712.aspx) в . Подробнее о том, как получить плату за запрос, можно узнать с помощью портала Azure и различных SDK, смотрите статью [о взимании платы за единицу запроса.](find-request-unit-charge.md)
+Можно записать единицы запросов, потребляемые каждым запросом, чтобы исследовать ресурсоемкие запросы или запросы, использующие высокую пропускную способность. Плату за запрос можно получить с помощью свойства [RequestCharge](https://msdn.microsoft.com/library/azure/dn948712.aspx) в `FeedResponse`. Дополнительные сведения о том, как получить оплату запросов с помощью портал Azure и различных пакетов SDK, см. в статье найти статью о [расходах единиц запросов](find-request-unit-charge.md) .
 
 ```csharp
 string query = "SELECT * FROM c";
@@ -146,9 +146,9 @@ while (documentQuery.HasMoreResults)
 }
 ```
 
-## <a name="get-the-query-execution-time"></a>Получите время выполнения запроса
+## <a name="get-the-query-execution-time"></a>Получение времени выполнения запроса
 
-При расчете времени, необходимого для выполнения запроса на стороне клиента, убедитесь, что вы включаете только время вызова `ExecuteNextAsync` метода, а не другие части вашей базы кода. Именно эти вызовы помогут вам вычислить, сколько времени занимает выполнение запроса, как показано в следующем примере:
+При вычислении времени, необходимого для выполнения запроса на стороне клиента, убедитесь, что включается только время для вызова `ExecuteNextAsync` метода, а не других частей базы кода. Только эти вызовы помогают вычислить длительность выполнения запроса, как показано в следующем примере:
 
 ```csharp
 string query = "SELECT * FROM c";
@@ -166,11 +166,11 @@ while (documentQuery.HasMoreResults)
 DoSomeLogging(queryExecutionTimeEndToEndTotal.Elapsed);
 ```
 
-## <a name="scan-queries-commonly-slow-and-expensive"></a>Запросы сканирования (обычно медленные и дорогие)
+## <a name="scan-queries-commonly-slow-and-expensive"></a>Сканировать запросы (обычно замедляют и ресурсоемкий)
 
-Запрос сканирования относится к запросу, который не был обслужен индексом, из-за которого многие документы загружаются перед возвратом набора результатов.
+Запрос на сканирование ссылается на запрос, который не был обслужен индексом, из-за чего перед возвратом результирующего набора загружается много документов.
 
-Ниже приведен пример запроса сканирования:
+Ниже приведен пример запроса сканирования.
 
 ```sql
 SELECT VALUE c.description 
@@ -178,7 +178,7 @@ FROM   c
 WHERE UPPER(c.description) = "BABYFOOD, DESSERT, FRUIT DESSERT, WITHOUT ASCORBIC ACID, JUNIOR"
 ```
 
-Этот фильтр запроса использует функцию системы UPPER, которая не подается из индекса. Выполнение этого запроса в отношении большой коллекции привело к следующим показателям запроса для первого продолжения:
+В фильтре запроса используется системная функция UPPER, которая не обрабатывается из индекса. При выполнении этого запроса к большой коллекции были получены следующие метрики запроса для первого продолжения:
 
 ```
 QueryMetrics
@@ -206,22 +206,22 @@ Client Side Metrics
   Request Charge                         :        4,059.95 RUs
 ```
 
-Обратите внимание на следующие значения из вывода метрик запроса:
+Обратите внимание на следующие значения из выходных данных метрик запроса:
 
 ```
 Retrieved Document Count                 :          60,951
 Retrieved Document Size                  :     399,998,938 bytes
 ```
 
-Этот запрос загрузил 60 951 документ, что составило 399 998 938 байтов. Загрузка этого количества байтов приводит к высокой стоимости или сбору единицы запроса. Выполнение запроса занимает много времени, что ясно с общим временем, затраченным на свойство:
+Этот запрос загрузил 60 951 документов, которые были суммированы 399 998 938 байт. Загрузка этого большого числа байтов приводит к высокой стоимости и затратам единиц запросов. Выполнение запроса также занимает много времени, что ясно, когда общее время, затраченное на свойство:
 
 ```
 Total Query Execution Time               :        4,500.34 milliseconds
 ```
 
-Это означает, что выполнение запроса заняло 4,5 секунды (и это было только одно продолжение).
+Это означает, что выполнение запроса заняло 4,5 секунд (и это было только одно продолжение).
 
-Чтобы оптимизировать этот пример запроса, избегайте использования UPPER в фильтре. Вместо этого, когда документы `c.description` создаются или обновляются, значения должны быть вставлены во все символы верхнего регистра. Затем запрос становится: 
+Чтобы оптимизировать этот пример запроса, старайтесь не использовать верхний в фильтре. Вместо этого при создании или обновлении документов необходимо вставлять `c.description` значения во все символы верхнего регистра. Затем запрос выглядит следующим образом: 
 
 ```sql
 SELECT VALUE c.description 
@@ -229,15 +229,15 @@ FROM   c
 WHERE c.description = "BABYFOOD, DESSERT, FRUIT DESSERT, WITHOUT ASCORBIC ACID, JUNIOR"
 ```
 
-Теперь этот запрос может быть подан из индекса.
+Теперь этот запрос может быть обслужен из индекса.
 
-Чтобы узнать больше о производительности тюнинга запроса, смотрите статью [Tune Query Performance.](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics)
+Дополнительные сведения о настройке производительности запросов см. в статье [Настройка производительности запросов](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) .
 
 ## <a name="references"></a><a id="References"></a>Ссылки
 
 - [DocumentDB SQL Syntax](https://go.microsoft.com/fwlink/p/?LinkID=510612) (Синтаксис SQL в DocumentDB)
-- [АНСИ СЗЛ 2011](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
-- [Json](https://json.org/)
+- [ANSI SQL 2011](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
+- [ФОРМАТ](https://json.org/)
 - [LINQ](/previous-versions/dotnet/articles/bb308959(v=msdn.10)) 
 
 ## <a name="next-steps"></a>Дальнейшие действия

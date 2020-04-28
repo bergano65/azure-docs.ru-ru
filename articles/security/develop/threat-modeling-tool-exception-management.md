@@ -16,18 +16,18 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.openlocfilehash: b8fad566b54ab645660011ad3188394b6f8190b0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68728076"
 ---
 # <a name="security-frame-exception-management--mitigations"></a>Механизм безопасности. Управление исключениями | Устранение угроз 
 | Продукт или служба | Статья |
 | --------------- | ------- |
-| **WCF** | <ul><li>[WCF — не добавляйте узел serviceDebug в файл конфигурации](#servicedebug)</li><li>[WCF- Не включайте узел serviceMetadata в файл конфигурации](#servicemetadata)</li></ul> |
-| **Веб-API** | <ul><li>[Убедитесь, что надлежащая обработка исключений выполняется в ASP.NET Web API](#exception)</li></ul> |
-| **Веб-приложение** | <ul><li>[Не разоблачайте данные безопасности в сообщениях об ошибках](#messages)</li><li>[Реализация страницы обработки ошибок по умолчанию](#default)</li><li>[Установка метода развертывания для розничной торговли в IIS](#deployment)</li><li>[Обеспечьте безопасную обработку исключений](#fail)</li></ul> |
+| **WCF** | <ul><li>[WCF — не добавляйте узел serviceDebug в файл конфигурации](#servicedebug)</li><li>[WCF — не включать узел serviceMetadata в файл конфигурации](#servicemetadata)</li></ul> |
+| **Веб-интерфейс API** | <ul><li>[Убедитесь, что в веб-API ASP.NET выполнена правильная обработка исключений.](#exception)</li></ul> |
+| **Веб-приложение** | <ul><li>[Не предоставляйте сведения о безопасности в сообщениях об ошибках](#messages)</li><li>[Реализация страницы обработки ошибок по умолчанию](#default)</li><li>[Установка для метода развертывания Retail в IIS](#deployment)</li><li>[Обеспечьте безопасную обработку исключений](#fail)</li></ul> |
 
 ## <a name="wcf--do-not-include-servicedebug-node-in-configuration-file"></a><a id="servicedebug"></a>WCF — не добавляйте узел serviceDebug в файл конфигурации
 
@@ -68,7 +68,7 @@ ms.locfileid: "68728076"
 
 | Заголовок                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-API | 
+| **Компонент**               | Веб-интерфейс API | 
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Недоступно  |
@@ -180,7 +180,7 @@ public HttpResponseMessage PostProduct(Product item)
 }
 ```
 
-Проверьте ссылки в разделе ссылок на наличие дополнительной информации об исключительной обработке и проверке модели в ASP.NET Web API 
+Просмотрите ссылки в разделе "ссылки", чтобы получить дополнительные сведения об исключительной обработке и проверке модели в веб-API ASP.NET 
 
 ## <a name="do-not-expose-security-details-in-error-messages"></a><a id="messages"></a>Не раскрывайте сведения о безопасности в сообщениях об ошибках
 

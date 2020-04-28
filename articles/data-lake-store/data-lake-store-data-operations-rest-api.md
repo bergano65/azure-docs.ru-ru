@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 351c92f1e1a698893f61004d523ba79ebca253e8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "60878789"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием REST API
 > [!div class="op_single_selector"]
 > * [Пакет SDK для .NET](data-lake-store-data-operations-net-sdk.md)
-> * [пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
+> * [Пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
 > * [REST API](data-lake-store-data-operations-rest-api.md)
 > * [Python](data-lake-store-data-operations-python.md)
 >
@@ -32,9 +32,9 @@ ms.locfileid: "60878789"
 ## <a name="prerequisites"></a>Предварительные требования
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Учетная запись Azure Data Lake Storage Gen1**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
 
-* **[cURL](https://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
+* **[перелистывание](https://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
 
 ## <a name="how-do-i-authenticate-using-azure-active-directory"></a>Как выполнить аутентификацию с помощью Azure Active Directory?
 Существует два способа проверки подлинности с помощью Azure Active Directory.
@@ -46,7 +46,7 @@ ms.locfileid: "60878789"
 ## <a name="create-folders"></a>Создайте папки:
 Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Make_a_Directory).
 
-Используйте следующую команду cURL: Замените ** \<>** с именем учетной записи Data Lake Storage Gen1.
+Используйте следующую команду cURL: Замените ** \<yourstorename>** именем учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -d "" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/?op=MKDIRS'
 
@@ -59,7 +59,7 @@ ms.locfileid: "60878789"
 ## <a name="list-folders"></a>Вывод списка папок
 Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#List_a_Directory).
 
-Используйте следующую команду cURL: Замените ** \<>** с именем учетной записи Data Lake Storage Gen1.
+Используйте следующую команду cURL: Замените ** \<yourstorename>** именем учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -X GET -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/?op=LISTSTATUS'
 
@@ -87,7 +87,7 @@ ms.locfileid: "60878789"
 ## <a name="upload-data"></a>Отправка данных
 Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Create_and_Write_to_a_File).
 
-Используйте следующую команду cURL: Замените ** \<>** с именем учетной записи Data Lake Storage Gen1.
+Используйте следующую команду cURL: Замените ** \<yourstorename>** именем учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -X PUT -L -T 'C:\temp\list.txt' -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/list.txt?op=CREATE'
 
@@ -114,7 +114,7 @@ ms.locfileid: "60878789"
 * Сначала следует отправить запрос GET к конечной точке `https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN`. Будет возвращено расположение для отправки следующего запроса GET.
 * Затем нужно отправить запрос GET к конечной точке `https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN&read=true`. Будет отображено содержимое файла.
 
-Однако поскольку на первом и втором этапе применяются одинаковые входные параметры, для отправки первого запроса можно использовать параметр `-L`. `-L` фактически объединяет два запроса в один, а также позволяет cURL повторно отправить запрос к новому расположению. И наконец, отображаются выходные данные всех вызовов запросов, как показано в следующем фрагменте кода. Замените ** \<>** с именем учетной записи Data Lake Storage Gen1.
+Однако поскольку на первом и втором этапе применяются одинаковые входные параметры, для отправки первого запроса можно использовать параметр `-L`. `-L` фактически объединяет два запроса в один, а также позволяет cURL повторно отправить запрос к новому расположению. И наконец, отображаются выходные данные всех вызовов запросов, как показано в следующем фрагменте кода. Замените ** \<yourstorename>** именем учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -L GET -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN'
 
@@ -133,7 +133,7 @@ ms.locfileid: "60878789"
 ## <a name="rename-a-file"></a>Переименование файла
 Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Rename_a_FileDirectory).
 
-Чтобы переименовать файл, используйте следующую команду cURL: Замените ** \<>** с именем учетной записи Data Lake Storage Gen1.
+Чтобы переименовать файл, используйте следующую команду cURL: Замените ** \<yourstorename>** именем учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -d "" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=RENAME&destination=/mytempdir/myinputfile1.txt'
 
@@ -147,7 +147,7 @@ ms.locfileid: "60878789"
 ## <a name="delete-a-file"></a>Удаление файла
 Эта операция основана на вызове REST API WebHDFS, определенном [здесь](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Delete_a_FileDirectory).
 
-Чтобы удалить файл, используйте следующую команду cURL: Замените ** \<>** с именем учетной записи Data Lake Storage Gen1.
+Чтобы удалить файл, используйте следующую команду cURL: Замените ** \<yourstorename>** именем учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -X DELETE -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile1.txt?op=DELETE'
 

@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: genli
 ms.openlocfilehash: 7d8a7e7e88837214042fb8f1c109c0b93bfe771b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71058203"
 ---
 # <a name="troubleshoot-linux-vm-device-name-changes"></a>Устранение неполадок при изменении имени устройства виртуальной машины Linux
@@ -32,7 +32,7 @@ ms.locfileid: "71058203"
 - Если диски с данными отсоединить и присоединить повторно, имена устройств дисков изменяются.
 - Приложение или сценарий, который ссылается на диск с использованием имени устройства, не работает, так как имя устройства изменилось.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Пути устройств в Linux не обязательно будут согласованы после перезагрузок. Имена устройств состоят из основных номеров (букв) и дополнительных. Если драйвер устройства хранения Linux обнаруживает новое устройство, драйвер назначает устройству основные и дополнительные номера из доступного диапазона. При удалении устройства номера устройства освобождаются для последующего использования.
 
@@ -46,7 +46,7 @@ ms.locfileid: "71058203"
 
 После установки агента Azure Linux на виртуальной машине он использует правила Udev для формирования набора символических ссылок в пути /dev/disk/azure. Приложения и сценарии используют правила Udev для идентификации дисков, подключенных к виртуальной машине, вместе с типом диска и LUN диска.
 
-Если вы уже отредактировали fstab таким образом, что ваш VM не загружается, и вы не можете SSH на ваш VM, вы можете использовать [VM Serial Console](./serial-console-linux.md) для входа в [единый пользовательский режим](./serial-console-grub-single-user-mode.md) и изменения fstab.
+Если вы уже изменили fstab таким образом, что виртуальная машина не загружается и вы не можете SSH-подключение к виртуальной машине, вы можете использовать [последовательную консоль виртуальной машины](./serial-console-linux.md) для входа в [однопользовательский режим](./serial-console-grub-single-user-mode.md) и изменения fstab.
 
 ### <a name="identify-disk-luns"></a>Определение LUN диска
 
@@ -153,7 +153,7 @@ ms.locfileid: "71058203"
 Дополнительные сведения см. в следующих статьях:
 
 - [Для Ubuntu: UsingUUID](https://help.ubuntu.com/community/UsingUUID) (Использование UUID)
-- [Красная шляпа: постоянное наименование](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/persistent_naming.html)
+- [Red Hat: постоянное именование](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/persistent_naming.html)
 - [Для Linux: What UUIDs can do for you](https://www.linux.com/news/what-uuids-can-do-you) (Чем полезны идентификаторы UUID)
 - [Udev: Introduction to Device Management In Modern Linux System](https://www.linux.com/news/udev-introduction-device-management-modern-linux-system) (Udev. Руководство по управлению устройствами в современной системе Linux)
 

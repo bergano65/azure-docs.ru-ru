@@ -16,10 +16,10 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b818fe1d8b6bbc9d2d8c5b460b4d71dccdd39366
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "65825991"
 ---
 # <a name="how-to-assign-users-to-applications"></a>Назначение пользователей для приложений
@@ -44,9 +44,9 @@ ms.locfileid: "65825991"
 
     * Группа ["Все пользователи"](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-dedicated-groups).
 
-3.  Администратор позволяет [доступу к приложениям самообслуживания,](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) чтобы позволить пользователю добавлять приложение с помощью функции приложения [Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) Add **App** без **одобрения бизнеса**
+3.  Администратор включает [самостоятельный доступ к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) , позволяющий пользователю добавлять приложения с помощью [панели доступа к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) **Добавление функции приложения** **без бизнес-утверждения** .
 
-4.  Администратор позволяет [доступу к приложениям самообслуживания,](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) чтобы позволить пользователю добавлять приложение с помощью функции приложения [Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) Add **App,** но только при**предварительном утверждении от выбранного набора бизнес-одобрителей**
+4.  Администратор включает [самостоятельный доступ к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) , позволяющий пользователю добавлять приложения с помощью [панели доступа к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) **Добавить функцию приложения** , но только до версии w**i до утверждения от выбранного набора утверждающих лиц** .
 
 5.  Администратор включает [самостоятельное управление группами](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-self-service-group-management), чтобы позволить пользователям присоединяться к группам, которым назначено приложение, **без бизнес-утверждения**.
 

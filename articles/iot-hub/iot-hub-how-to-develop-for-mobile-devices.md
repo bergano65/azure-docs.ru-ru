@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/16/2018
 ms.author: robinsh
 ms.openlocfilehash: 945b02003a443c04e692fdc06ca5714de362d074
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68883081"
 ---
 # <a name="develop-for-mobile-devices-using-azure-iot-sdks"></a>Разработка для мобильных устройств с помощью пакетов SDK для Центра Интернета вещей Azure
@@ -48,7 +48,7 @@ ms.locfileid: "68883081"
 В этой документации приведены шаги по разработке приложения для устройства или службы на устройстве Android с помощью Gradle и Android Studio.
 
 * [Send telemetry from a device to an IoT hub (Swift)](quickstart-send-telemetry-android.md) (Отправка данных телеметрии с устройства в Центр Интернета вещей (Swift))  
-* [Быстрый запуск: Управление устройством](quickstart-control-device-android.md) 
+* [Краткое руководство. Управление устройством](quickstart-control-device-android.md) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

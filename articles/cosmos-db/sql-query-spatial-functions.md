@@ -1,6 +1,6 @@
 ---
-title: Пространственные функции на языке запросов Azure Cosmos DB
-description: Узнайте о функциях пространственной системы S'L в Azure Cosmos DB.
+title: Пространственные функции в Azure Cosmos DB языке запросов
+description: Сведения о пространственных системных функциях SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 1d523b09cb3d7142a6c375a0ffde77f8ca1153b0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71349455"
 ---
 # <a name="spatial-functions-azure-cosmos-db"></a>Пространственные функции (Azure Cosmos DB)
@@ -30,7 +30,7 @@ Cosmos DB поддерживает следующие встроенные фу�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)
 - [Определенные пользователем функции](sql-query-udfs.md)
 - [Статистические выражения](sql-query-aggregates.md)

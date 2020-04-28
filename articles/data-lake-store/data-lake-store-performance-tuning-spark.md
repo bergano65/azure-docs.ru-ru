@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 12/19/2016
 ms.author: stewu
 ms.openlocfilehash: dc92e7d2fcc911aeb6d92b91dd2d430af3c502ad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "61436517"
 ---
 # <a name="performance-tuning-guidance-for-spark-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Spark в HDInsight и Azure Data Lake Storage 1-го поколения
@@ -26,10 +26,10 @@ ms.locfileid: "61436517"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 1-го поколения**. Для получения инструкций о том, как его создать, [см.](data-lake-store-get-started-portal.md)
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по ее созданию см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Работающий кластер Spark в Data Lake Storage 1-го поколения.**  Дополнительные сведения см. в статье [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-use-with-data-lake-store).
-* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Для общих концепций [Data Lake Storage Gen1 Performance Tuning Guidance](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) производительности см. 
+* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) . 
 
 ## <a name="parameters"></a>Параметры
 
@@ -64,7 +64,7 @@ ms.locfileid: "61436517"
     executor-cores = 4
 Увеличение количества ядер исполнителя обеспечит больший параллелизм, так что можно поэкспериментировать с разным количеством ядер.  Для заданий, которые включают более сложные операции, количество ядер на исполнитель необходимо уменьшить.  Если количество ядер исполнителя превышает 4, тогда сборка мусора может оказаться неэффективной и производительность снизится.
 
-**Шаг 4. Определение объема памяти YARN в кластере.** Информация об этом доступна в Ambari.  Перейдите к YARN и просмотрите вкладку Configs.  Память YARN отображается в этом окне.  
+**Шаг 4. Определение объема памяти YARN в кластере.** Информация об этом доступна в Ambari.  Перейдите по адресу YARN и просмотрите вкладку configs (конфигурации).  В этом окне отображается память YARN.  
 Примечание. В этом окне можно увидеть размер контейнера YARN по умолчанию.  Размер контейнера YARN совпадает со значением параметра объема памяти на исполнителя.
 
     Total YARN memory = nodes * YARN memory per node

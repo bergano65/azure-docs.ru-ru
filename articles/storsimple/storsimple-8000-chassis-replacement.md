@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: 7dfc39f4d08c8a49d1564a0a5bd7e3ef4156e3fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "61312451"
 ---
 # <a name="replace-the-chassis-on-your-storsimple-device"></a>Замена корпуса устройства StorSimple
@@ -41,7 +41,7 @@ ms.locfileid: "61312451"
 4. Извлеките каждый из дисков и запишите номера слотов, из которых они извлекаются. Дополнительные сведения см. в разделе [Снять жесткий диск](storsimple-8000-disk-drive-replacement.md#remove-the-disk-drive).
 5. Для корпуса EBOD (при неисправности корпуса) снимите модули контроллеров EBOD. Дополнительные сведения см. в разделе [Снятие контроллера EBOD](storsimple-8000-ebod-controller-replacement.md#remove-an-ebod-controller).
    
-    Для основного корпуса (при неисправности корпуса) снимите модули контроллеров и запишите номера слотов, в которых они находились. Для получения дополнительной информации [см.](storsimple-8000-controller-replacement.md#remove-a-controller)
+    Для основного корпуса (при неисправности корпуса) снимите модули контроллеров и запишите номера слотов, в которых они находились. Дополнительные сведения см. [в разделе Удаление контроллера](storsimple-8000-controller-replacement.md#remove-a-controller).
 
 ## <a name="install-the-chassis"></a>Установка корпуса
 Чтобы установить корпус устройства StorSimple, выполните следующие действия.

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: d635950c8b34986cd5824660166017317948cbd8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73176909"
 ---
 # <a name="application-templates-in-azure-api-management"></a>Шаблоны приложений в службе управления API Azure
@@ -36,10 +36,10 @@ ms.locfileid: "73176909"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="application-list"></a><a name="ProductList"></a>Список заявок  
+##  <a name="application-list"></a><a name="ProductList"></a>Список приложений  
  Шаблон **списка приложений** позволяет настроить текст страницы со списком приложений на портале разработчика.  
   
- ![Шаблоны портала портала страницы разработчика приложения](./media/api-management-application-templates/APIM-Application-List-Page-Developer-Portal-Templates.png "Шаблоны портала портала страницы разработчика приложений APIM")  
+ ![Шаблоны портала разработчика страницы списка приложений](./media/api-management-application-templates/APIM-Application-List-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для страницы списка приложений APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -76,7 +76,7 @@ ms.locfileid: "73176909"
 ### <a name="controls"></a>Элементы управления  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [контроль над paging](api-management-page-controls.md#paging-control)  
+-   [Управление разбиением на страницы](api-management-page-controls.md#paging-control)  
   
 ### <a name="data-model"></a>Модель данных  
   
@@ -137,10 +137,10 @@ ms.locfileid: "73176909"
 }  
 ```  
   
-##  <a name="application"></a><a name="Application"></a>Приложения  
+##  <a name="application"></a><a name="Application"></a>Приклад  
  Шаблон **приложения** позволяет настроить текст страницы приложения на портале разработчика.  
   
- ![Шаблоны портала портала разработчиков приложений](./media/api-management-application-templates/APIM-Application-Page-Developer-Portal-Templates.png "Шаблоны портала портала веб-порталов разработчиков приложений APIM")  
+ ![Шаблоны портала разработчика страницы приложения](./media/api-management-application-templates/APIM-Application-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика страницы приложения APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   

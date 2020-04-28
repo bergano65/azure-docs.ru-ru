@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: mbaldwin
 ms.openlocfilehash: 3fde577a6b0efb7584e1c9efd57c95583ebe4ec9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70881421"
 ---
 # <a name="azure-dedicated-hsm-monitoring"></a>Мониторинг выделенных устройств HSM Azure
@@ -40,7 +40,7 @@ ms.locfileid: "70881421"
 
 Мы рекомендуем хорошо разобраться в основных понятиях службы, таких как высокий уровень доступности и безопасность, прежде чем переходить к подготовке устройств, разработке или развертыванию приложений. Дополнительные сведения об основных понятиях:
 
-* [Высокая доступность](high-availability.md)
+* [Обеспечение высокого уровня доступности](high-availability.md)
 * [Физическая безопасность](physical-security.md)
-* [Сеть](networking.md)
+* [Сетевое взаимодействие](networking.md)
 * [Возможности поддержки](supportability.md)

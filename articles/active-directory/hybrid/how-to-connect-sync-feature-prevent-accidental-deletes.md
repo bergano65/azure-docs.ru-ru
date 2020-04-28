@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 48f3109b4c87e25444629ca25411894eab8a9d56
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "71827128"
 ---
 # <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Синхронизация Azure AD Connect: предотвращение случайного удаления
@@ -58,9 +58,9 @@ ms.locfileid: "71827128"
 
 ![Пространство поиска соединителя](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
-[!NOTE] Если вы не уверены, что все удаления являются желательными, и хотите пойти по более безопасному маршруту. Вы можете использовать смдлет `Enable-ADSyncExportDeletionThreshold` PowerShell: установить новый порог, а не отключать порог, который может позволить нежелательные удаления. 
+[!NOTE] Если вы не уверены в том, что все операции удаления нужны, и хотите перейти к более безопасному маршруту. Вы можете использовать командлет PowerShell: `Enable-ADSyncExportDeletionThreshold` для установки нового порогового значения вместо отключения порогового значения, которое может привести к нежелательным удалениям. 
 
-## <a name="if-all-deletes-are-desired"></a>Если все удаления являются желательными
+## <a name="if-all-deletes-are-desired"></a>Если требуется все удаления
 Если удаление необходимо, сделайте следующее.
 
 1. Чтобы получить текущее пороговое значение удаления, выполните командлет PowerShell `Get-ADSyncExportDeletionThreshold`. Укажите имя учетной записи и пароль глобального администратора Azure AD. По умолчанию используется значение 500.

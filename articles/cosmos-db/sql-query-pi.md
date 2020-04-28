@@ -1,6 +1,6 @@
 ---
 title: PI на языке запросов Azure Cosmos DB
-description: Узнайте о функции системы ИП в Azure Cosmos DB.
+description: Сведения о функции SQL System PI в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 27832008e8922e339a648985192a58b111555bc9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71349650"
 ---
-# <a name="pi-azure-cosmos-db"></a>PI (Azure Космос DB)
+# <a name="pi-azure-cosmos-db"></a>PI (Azure Cosmos DB)
  Возвращает константное значение PI.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -43,6 +43,6 @@ SELECT PI() AS pi
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

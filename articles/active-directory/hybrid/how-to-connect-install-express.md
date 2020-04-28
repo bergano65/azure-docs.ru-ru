@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 24143f8c94a294da90be84bacfe633db0cd24f85
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60244505"
 ---
 # <a name="getting-started-with-azure-ad-connect-using-express-settings"></a>Приступая к работе с Azure AD Connect с использованием стандартных параметров
@@ -37,15 +37,15 @@ ms.locfileid: "60244505"
 3. На экране приветствия установите флажок, подтверждающий ваше согласие с условиями лицензионного соглашения, и нажмите кнопку **Продолжить**.  
 4. На экране «Стандартные параметры» щелкните **Использовать стандартные параметры**.  
    ![Приветствие мастера установки Azure AD Connect.](./media/how-to-connect-install-express/express.png)
-5. На экране "Подключение к Azure AD" введите имя пользователя и пароль глобального администратора Azure AD. Нажмите кнопку **Далее**.  
+5. На экране "Подключение к Azure AD" введите имя пользователя и пароль глобального администратора Azure AD. Щелкните **Далее**.  
    ![Подключение к Azure AD](./media/how-to-connect-install-express/connectaad.png)  
    Если вы получаете сообщение об ошибке и испытываете проблемы с подключением, см. сведения в статье [Устранение неполадок подключения в Azure AD Connect](tshoot-connect-connectivity.md).
-6. На экране "Подключение к AD DS" введите имя пользователя и пароль учетной записи администратора предприятия. Вы можете указать имя домена в формате NetBios, либо ввести полное доменное имя, т. е. FABRIKAM\administrator или fabrikam.com\administrator. Нажмите кнопку **Далее**.  
+6. На экране "Подключение к AD DS" введите имя пользователя и пароль учетной записи администратора предприятия. Вы можете указать имя домена в формате NetBios, либо ввести полное доменное имя, т. е. FABRIKAM\administrator или fabrikam.com\administrator. Щелкните **Далее**.  
    ![Подключение к AD DS](./media/how-to-connect-install-express/connectad.png)
 7. Страница [**Настройка входа в Azure AD**](plan-connect-user-signin.md#azure-ad-sign-in-configuration) будет отображаться, только если вы не завершили [проверку доменов](../active-directory-domains-add-azure-portal.md) при выполнении [предварительных требований](how-to-connect-install-prerequisites.md).
    ![Непроверенные домены](./media/how-to-connect-install-express/unverifieddomain.png)  
    Если отобразилась эта страница, просмотрите все домены с пометкой **Не добавлено** и **Не проверено**. Убедитесь, что используемые домены прошли проверку в Azure AD. Проверив домены, щелкните значок обновления.
-8. На экране Все готово к настройке щелкните **Установить**.
+8. На экране "Все готово к настройке" нажмите кнопку **Установить**.
    * При необходимости на странице "Готово к настройке" можно снять флажок **Start the synchronization process as soon as configuration completes** (Запустить синхронизацию сразу после завершения настройки). Снимите этот флажок, если нужно настроить дополнительные параметры, например [фильтрацию](how-to-connect-sync-configure-filtering.md). Если отменить выбор этого параметра, мастер настроит синхронизацию, но оставит планировщик отключенным. Он не запустится, пока вы не включите его вручную, [повторно запустив мастер установки](how-to-connect-installation-wizard.md).
    * Если установить флажок **Start the synchronization process as soon as configuration completes** (Начать синхронизацию сразу по завершении настройки), немедленно запустится полная синхронизация всех пользователей, групп и контактов в Azure AD.
    * Если Exchange находится в локальной службе Active Directory, вы также можете включить [**гибридное развертывание Exchange**](https://technet.microsoft.com/library/jj200581.aspx). Этот флажок нужно установить, если почтовые ящики Exchange будут одновременно использоваться в облаке и локальной среде.
@@ -67,7 +67,7 @@ ms.locfileid: "60244505"
 
 Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 
-Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 
 ## <a name="related-documentation"></a>Дополнительная документация
 

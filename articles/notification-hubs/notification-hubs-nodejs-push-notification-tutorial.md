@@ -18,10 +18,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 6e109c5a7f4911893c81c88ae84322fb962fff6e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71213189"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
@@ -82,7 +82,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 Получите значение `connectionstring` подключения на [портале Azure], выполнив следующие действия.
 
 1. В области навигации слева щелкните **Обзор**.
-2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Вы можете обратиться к [учебнику Windows Store Getting Started,](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) если вам нужна помощь в создании нового концентратора уведомлений.
+2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Если вам нужна помощь по созданию нового центра уведомлений, см. [руководство по начало работы магазина Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) .
 3. Выберите **Параметры**.
 4. Щелкните **Политики доступа**. Вы увидите строки подключения как для общего, так и для полного доступа.
 
@@ -108,7 +108,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 - **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 - **Callback** — функция обратного вызова.
 
-Для получения дополнительной информации о [Payload documentation](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload)формате полезной нагрузки см.
+Дополнительные сведения о формате полезных данных см. в [документации по полезной нагрузке](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload).
 
 В следующем коде для отправки push-уведомления всем зарегистрированным клиентам используется экземпляр `GcmService`, предоставляемый `NotificationHubService`.
 
@@ -154,7 +154,7 @@ notificationHubService.apns.send(null, payload, function(error){
 
 - **Tags** — идентификатор тега. Если тег отсутствует, уведомление отправляется всем клиентам.
 - **Payload** — полезные данные XML сообщения.
-- **TargetName**  -  `toast` для уведомлений тостов. `token` для уведомлений на плитке.
+- **TargetName** -  TargetName`toast` для всплывающих уведомлений. `token` для уведомлений на плитке.
 - **NotificationClass** — приоритет уведомления. Допустимые значения см. в разделе **HTTP Header Elements** (Элементы заголовка HTTP) документа [Pushing Notifications from a Server (Windows Phone)](https://msdn.microsoft.com/library/hh221551.aspx) (Push-уведомления от сервера (Windows Phone)).
 - **Options** — необязательные заголовки запроса.
 - **Callback** — функция обратного вызова.
@@ -195,7 +195,7 @@ notificationHubService.wns.send(null, payload , 'wns/toast', function(error){
 });
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 Примеры фрагментов выше позволяют легко создать инфраструктуру службы для отправки push-уведомлений на широкий спектр устройств. Теперь, когда вы познакомились с основами использования центров уведомлений с Node.js, используйте следующие ссылки для получения дополнительных сведений о том, как можно дальше расширить эти возможности.
 

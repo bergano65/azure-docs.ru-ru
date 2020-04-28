@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sngun
 ms.openlocfilehash: 1dbdd428a54ebf38c7b880bb9530935c0f748226
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "69616810"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
@@ -32,11 +32,11 @@ ms.locfileid: "69616810"
 
 * загруженному из GitHub [примеру данных о вулканах](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json);
 
-* [Создайте учетную запись базы данных Azure Cosmos](https://azure.microsoft.com/documentation/articles/create-account/) и импортируйте данные вулкана с помощью [инструмента миграции данных Azure Cosmos DB.](import-data.md) При импорте данных советуем использовать в средстве переноса следующие параметры источника и целевых расположений:
+* [Создайте учетную запись базы данных Azure Cosmos](https://azure.microsoft.com/documentation/articles/create-account/) и импортируйте данные о вулканах с помощью [средства переноса данных Azure Cosmos DB](import-data.md). При импорте данных советуем использовать в средстве переноса следующие параметры источника и целевых расположений:
 
    * **Параметры источника** 
 
-       * **Импорт от:** Файл JSON (ы)
+       * **Импорт из:** JSON-файлы
 
    * **Параметры целевых расположений** 
 
@@ -44,9 +44,9 @@ ms.locfileid: "69616810"
 
       * **Ключ секции**: /страна 
 
-      * **Пропускная часть коллекции:** 1000 
+      * **Пропускная способность коллекции:** 1000 
 
-Для совместного использования отчетов в службе PowerBI.com необходимо настроить учетную запись в PowerBI.com.  Чтобы узнать больше о Power BI [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing)и Power BI Pro, см.
+Для совместного использования отчетов в службе PowerBI.com необходимо настроить учетную запись в PowerBI.com.  Дополнительные сведения о Power BI и Power BI Pro см. в [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing)разделе.
 
 ## <a name="lets-get-started"></a>Начало работы
 Для работы с этим руководством представим, что вы геолог, изучающий вулканы по всему миру. Данные о вулканах хранятся в учетной записи Azure Cosmos DB, а формат документа JSON выглядит следующим образом.
@@ -122,7 +122,7 @@ ms.locfileid: "69616810"
 8. Укажите имя нового столбца, например LatLong.
 9. Затем укажите настраиваемую формулу для нового столбца.  В нашем примере мы соединим значения широты и долготы, разделяя их запятыми, как показано ниже, используя следующую формулу: `Text.From([coordinates]{1})&","&Text.From([coordinates]{0})`. Нажмите кнопку **ОК**.
    
-    Для получения дополнительной информации о выражениях анализа данных (DAX), включая функции DAX, пожалуйста, посетите [DAX Основы в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-quickstart-learn-dax-basics).
+    Дополнительные сведения о выражениях анализа данных (DAX), включая функции DAX, см. в статьях [основы DAX в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-quickstart-learn-dax-basics).
    
     ![Руководство по Power BI для соединителя Power BI Azure Cosmos DB — добавление пользовательского столбца](./media/powerbi-visualize/power_bi_connector_pbicustomlatlong.png)
 

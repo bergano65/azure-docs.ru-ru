@@ -7,14 +7,14 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: 0c5fdac7df41fec3a6206dbd78af74b7f1b58c7f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68736326"
 ---
 # <a name="register-data-sources-in-azure-data-catalog"></a>Регистрация источников данных в каталоге данных Azure
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 Каталог данных Azure — это полностью управляемая облачная служба, выполняющая функции системы регистрации и обнаружения корпоративных источников данных. Проще говоря, каталог данных помогает пользователям находить, оценивать и использовать источники данных, что, в свою очередь, повышает ценность имеющейся информации для организации. Чтобы источник данных можно было обнаружить с помощью каталога данных, этот источник нужно сначала зарегистрировать.
 
 ## <a name="register-data-sources"></a>Регистрация источников данных

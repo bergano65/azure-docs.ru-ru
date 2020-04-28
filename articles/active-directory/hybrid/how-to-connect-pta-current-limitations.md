@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 97dc67d46b08bf5765c59806b45edd82f38720cd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60347756"
 ---
 # <a name="azure-active-directory-pass-through-authentication-current-limitations"></a>Текущие ограничения сквозной проверки подлинности Azure Active Directory
@@ -34,7 +34,7 @@ ms.locfileid: "60347756"
 
 - Вход пользователей в браузерные приложения.
 - Вход пользователей в клиенты Outlook с помощью устаревших протоколов, таких как Exchange ActiveSync, EAS, SMTP, POP и IMAP.
-- Пользователь вписываются в устаревшие клиентские приложения Office и приложения Office, поддерживающие [современную аутентификацию](https://www.microsoft.com/en-us/microsoft-365/blog/2015/11/19/updated-office-365-modern-authentication-public-preview): Office 2013 и 2016 версий.
+- Вход пользователей в устаревшие клиентские приложения Office и приложения Office, поддерживающие [современные проверки подлинности](https://www.microsoft.com/en-us/microsoft-365/blog/2015/11/19/updated-office-365-modern-authentication-public-preview): версии Office 2013 и 2016.
 - Вход пользователей в приложения на основе устаревших протоколов, такие как PowerShell версии 1.0 и пр.
 - Присоединение устройств Windows 10 к Azure AD.
 - Добавление паролей для Многофакторной идентификации.

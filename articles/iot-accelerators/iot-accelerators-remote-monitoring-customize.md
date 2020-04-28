@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 11/09/2018
 ms.topic: conceptual
 ms.openlocfilehash: eb3d5fea68b5b1b6e648943cb3dbaab5857e9e07
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68608008"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решения для удаленного мониторинга
@@ -73,11 +73,11 @@ ms.locfileid: "68608008"
     npm start
     ```
 
-1. Предыдущая команда выполняет uI локально\/на http: /localhost:3000/dashboard. Вы можете изменить код во время работы сайта.Он будет обновляться динамически.
+1. Предыдущая команда запускает пользовательский интерфейс локально по адресу\/http:/ЛОКАЛХОСТ: 3000/Dashboard. Вы можете изменить код во время работы сайта.Он будет обновляться динамически.
 
 ## <a name="customize-the-layout"></a>Настройка макета
 
-Каждая страница в решении для удаленного мониторинга состоит из набора элементов управления, которые называются *панелями* в исходном коде. Страница **панели мониторинга** состоит из пяти панелей: Обзор, Карта, Оповещения, Телеметрия и Аналитика. Исходный код, определяющий каждую страницу и ее панели, находится в репозитории GitHub [pcs-remote-monitoring-webui](https://github.com/Azure/pcs-remote-monitoring-webui). Например, код, определяющий страницу **Панель мониторинга**, ее макет и панели на странице, расположен в папке [src/components/pages/dashboard](https://github.com/Azure/pcs-remote-monitoring-webui/tree/master/src/components/pages/dashboard).
+Каждая страница в решении для удаленного мониторинга состоит из набора элементов управления, которые называются *панелями* в исходном коде. Страница **панели мониторинга** состоит из пяти панелей: обзор, отображение, оповещения, телеметрии и аналитика. Исходный код, определяющий каждую страницу и ее панели, находится в репозитории GitHub [pcs-remote-monitoring-webui](https://github.com/Azure/pcs-remote-monitoring-webui). Например, код, определяющий страницу **Панель мониторинга**, ее макет и панели на странице, расположен в папке [src/components/pages/dashboard](https://github.com/Azure/pcs-remote-monitoring-webui/tree/master/src/components/pages/dashboard).
 
 Так как панели управляют собственным макетом и размером, вы можете без труда изменить макет страницы. Внесите следующие изменения в элемент **PageContent** в файле `src/components/pages/dashboard/dashboard.js`.
 
@@ -502,7 +502,7 @@ See the [Connect an external visualization tool](https://github.com/Azure/azure-
 * [Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-flyout.md)
 * [Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-panel.md)
 
-Для получения дополнительной концептуальной информации об [Remote Monitoring architecture](iot-accelerators-remote-monitoring-sample-walkthrough.md) ускорителе решений удаленного мониторинга см.
+Дополнительные сведения об ускорителе решений для удаленного мониторинга см. в разделе [архитектура удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md) .
 
 Дополнительные сведения о настройке решения для удаленного мониторинга микрослужб см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md).
 <!-- Next tutorials in the sequence -->

@@ -8,10 +8,10 @@ ms.date: 12/14/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 139e3009722761172b7bbd57805a7f5b07e55fc0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "68699393"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
@@ -47,7 +47,7 @@ pip install azure-storage-file
 Другие методы установки см. в статье [Microsoft Azure Storage SDK for Python](https://github.com/Azure/azure-storage-python/) (Пакет SDK службы хранилища Microsoft Azure для Python) на сайте GitHub.
 
 ## <a name="view-the-sample-application"></a>Просмотр примера приложения
-для просмотра и запуска примера приложения, которое показывает, как использовать Python с помощью файлов [Azure,](https://github.com/Azure-Samples/storage-file-python-getting-started)см. 
+е. чтобы просмотреть и запустить пример приложения, в котором показано, как использовать Python с файлами Azure, см. статью Служба [хранилища Azure: Начало работы с файлами Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started). 
 
 Чтобы запустить пример приложения, убедитесь, что установили оба пакета: `azure-storage-file` и `azure-storage-common`.
 
@@ -73,7 +73,7 @@ file_service.create_share('myshare')
 ```
 
 ## <a name="create-a-directory"></a>Создание каталога
-Вы также можете организовать хранилище, помещая файлы в подкаталоги вместо их размещения в корневом каталоге. Служба файлов Azure позволяет создать такое количество каталогов, которое допускается в вашей учетной записи. Приведенный ниже код создаст подкаталог под названием **sampledir** под корневым каталогом.
+Вы также можете организовать хранилище, помещая файлы в подкаталоги вместо их размещения в корневом каталоге. Служба файлов Azure позволяет создать такое количество каталогов, которое допускается в вашей учетной записи. Приведенный ниже код создаст вложенный каталог с именем **SampleDir** в корневом каталоге.
 
 ```python
 file_service.create_directory('myshare', 'sampledir')

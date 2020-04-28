@@ -1,5 +1,5 @@
 ---
-title: Функции управления и мониторинга безопасности - Microsoft Azure Документы Майкрософт
+title: Функции безопасности управления и мониторинга — Microsoft Azure | Документация Майкрософт
 description: Эта статья содержит обзор функций безопасности и служб, предоставляемых Azure для упрощения управления облачными службами Azure и виртуальными машинами, а также их мониторинга.
 services: security
 documentationcenter: na
@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
 ms.openlocfilehash: 7ad7a29a92d25556190b4cf44f4e48158a6f0952
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73162750"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Обзор управления безопасностью Azure и ее мониторинга
@@ -32,7 +32,7 @@ ms.locfileid: "73162750"
 Дополнительные сведения:
 
 * [Блог группы разработчиков Active Directory о RBAC](https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory)
-* [Контроль доступа на основе ролей Azure](../../role-based-access-control/role-assignments-portal.md)
+* [Управление доступом на основе ролей в Azure](../../role-based-access-control/role-assignments-portal.md)
 
 ## <a name="antimalware"></a>Защита от вредоносных программ;
 
@@ -40,7 +40,7 @@ Azure предлагает антивредоносное ПО таких вед
 
 Антивредоносное ПО Майкрософт для облачных служб и виртуальных машин Azure позволяет установить агент защиты от вредоносных программ для ролей PaaS и виртуальных машин. Этот компонент, основанный на System Center Endpoint Protection, переносит проверенные в локальной среде технологии безопасности в облако.
 
-Мы также предлагаем глубокую интеграцию для продуктов [Trend Deep Security](https://www.trendmicro.com/us/enterprise/cloud-solutions/deep-security/) и [SecureCloud](https://www.trendmicro.com/us/enterprise/cloud-solutions/secure-cloud/) в платформе Azure. Deep Security служит для защиты от вирусов, а SecureCloud — для шифрования. Deep Security развертывается в виртуальных машинах с использованием модели расширения. С помощью пользовательского интерфейса портала портал Azure и PowerShell вы можете использовать Deep Security внутри создаваемых виртуальных машин или существующих виртуальных машин, которые уже развернуты.
+Мы также предоставляем глубокую интеграцию для [глубокой безопасности](https://www.trendmicro.com/us/enterprise/cloud-solutions/deep-security/) и продуктов [SecureCloud](https://www.trendmicro.com/us/enterprise/cloud-solutions/secure-cloud/) на платформе Azure. Deep Security служит для защиты от вирусов, а SecureCloud — для шифрования. Deep Security развертывается в виртуальных машинах с использованием модели расширения. С помощью пользовательского интерфейса портала портал Azure и PowerShell вы можете использовать Deep Security внутри создаваемых виртуальных машин или существующих виртуальных машин, которые уже развернуты.
 
 Azure также поддерживает продукт Symantec Endpoint Protection (SEP). Посредством интеграции с порталом можно указать, что вы планируете использовать SEP на виртуальной машине. SEP можно установить на новой виртуальной машине с помощью портала Azure или на имеющейся виртуальной машине с помощью PowerShell.
 
@@ -138,7 +138,7 @@ Intelligent Security Graph в реальном времени предостав
 
 * [Intelligent Security Graph](https://www.microsoft.com/security/intelligence)
 
-## <a name="next-steps"></a>Next Steps
-Узнайте о [модели общей ответственности](shared-responsibility.md) и о том, какие задачи безопасности обрабатываются корпорацией Майкрософт и какие задачи выполняются вами.
+## <a name="next-steps"></a>Дальнейшие действия
+Сведения об [общей модели ответственности](shared-responsibility.md) , а также о том, какие задачи безопасности обрабатываются корпорацией Майкрософт и какие задачи обрабатываются вами.
 
 Дополнительные сведения об управлении безопасностью см. в статье [Управление безопасностью в Azure](management.md).

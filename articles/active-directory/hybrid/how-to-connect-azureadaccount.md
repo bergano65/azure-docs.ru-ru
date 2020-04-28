@@ -1,6 +1,6 @@
 ---
-title: Изменение пароля учетной записи AD-разъема Azure AD (ru) Документы Майкрософт
-description: В этой теме изуверятся, как восстановить учетную запись Azure AD Connector.
+title: Изменение пароля учетной записи соединителя Azure AD | Документация Майкрософт
+description: В этом разделе описывается, как восстановить учетную запись соединителя Azure AD.
 services: active-directory
 documentationcenter: ''
 author: billmath
@@ -17,27 +17,27 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0ea151ee79fccd66f1d9422744d8f57829677ec0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67204532"
 ---
 # <a name="change-the-azure-ad-connector-account-password"></a>Изменение пароля учетной записи соединителя Azure AD
-Учетная запись Azure AD Connector должна быть бесплатной. Если требуется сбросить ее учетные данные, в этой статье вы найдете необходимые сведения. Например, если Глобальный администратор по ошибке сбросить пароль в учетной записи с помощью PowerShell.
+Учетная запись соединителя Azure AD должна быть бесплатной. Если требуется сбросить ее учетные данные, в этой статье вы найдете необходимые сведения. Например, если глобальный администратор по ошибке сбрасывает пароль учетной записи с помощью PowerShell.
 
 ## <a name="reset-the-credentials"></a>Сброс учетных данных
-Если учетная запись Azure AD Connector не может связаться с Azure AD из-за проблем с аутентификацией, пароль может быть спрошен.
+Если учетной записи соединителя Azure AD не удается связаться с Azure AD из-за проблем с проверкой подлинности, пароль можно сбросить.
 
 1. Войдите на сервер синхронизации Azure AD Connect и запустите PowerShell.
-2. Выполните `Add-ADSyncAADServiceAccount`.  
+2. Выполните команду `Add-ADSyncAADServiceAccount`.  
    ![Командлет PowerShell addadsyncaadserviceaccount](./media/how-to-connect-azureadaccount/addadsyncaadserviceaccount.png)
 3. Введите учетные данные глобального администратора Azure AD.
 
 Этот командлет сбрасывает пароль для учетной записи службы и обновляет его в Azure AD и в модуле синхронизации.
 
 ## <a name="known-issues-these-steps-can-solve"></a>Известные проблемы, которые можно решить с помощью описанных действий
-Этот раздел представляет собой список ошибок, о которых сообщают клиенты, исключившие учетные данные, сбросить на учетную запись Azure AD Connector.
+В этом разделе приведен список ошибок, о которых сообщили клиенты, которые были исправлены учетными данными, сброшенными в учетной записи соединителя Azure AD.
 
 ---
 Событие 6900  

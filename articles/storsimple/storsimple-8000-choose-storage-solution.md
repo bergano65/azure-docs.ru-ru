@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: 9456d975ffb6d7726166f9badbcb8fe0ccbe5256
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68965363"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>Сравнение StorSimple с Синхронизацией файлов Azure и параметрами передачи данных Data Box Edge 
 
 [!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
  
-В этом документе представлен обзор вариантов передачи данных в Azure, для сравнения: Data Box Edge против Azure File Sync против серии StorSimple 8000.
+В этом документе представлены общие сведения о параметрах для локальной пересылки данных в Azure, а также сравнение: Data Box Edge и Синхронизация файлов Azure по сравнению с сериями StorSimple 8000.
 
 - **[Data Box Edge](/azure/databox-online/data-box-edge-overview)**. Data Box Edge — это локальное сетевое устройство, которое может перемещать данные на платформу Azure и с нее, а также добавлять пограничные вычисления с использованием ИИ для обработки данных во время передачи. Шлюз Data Box — виртуальная версия устройства с теми же возможностями передачи данных.
 - **[Синхронизация файлов Azure](/azure/storage/files/storage-sync-files-deployment-guide)**. Вы можете использовать службу синхронизации файлов Azure, чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Общедоступный выпуск службы Синхронизация файлов Azure был объявлен ранее в 2018 г.
@@ -35,7 +35,7 @@ ms.locfileid: "68965363"
 |Оборудование         |Физическое устройство, предоставленное корпорацией Майкрософт как часть службы | Предоставляемый пользователем |Физическое устройство, предоставленное корпорацией Майкрософт как часть службы  |
 |Формат данных      |Специальный формат   |Файлы         |Большие двоичные объекты или файлы    |
 |Поддержка протоколов |iSCSI          |SMB, NFS    | SMB или NFS      |
-|Цены          |[StorSimple](https://azure.microsoft.com/pricing/details/storsimple/) |[Служба синхронизации файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/)  |[Data Box Edge](https://azure.microsoft.com/pricing/details/storage/databox/edge/)  |
+|Цены          |[StorSimple](https://azure.microsoft.com/pricing/details/storsimple/) |[Синхронизация файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/)  |[Data Box Edge](https://azure.microsoft.com/pricing/details/storage/databox/edge/)  |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

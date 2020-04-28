@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 2d427a8b40fcb537801ce76aae6bc32fcda3a307
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71056928"
 ---
 # <a name="troubleshooting-failed-to-delete-a-virtual-network-in-azure"></a>Устранение неполадок: не удалось удалить виртуальную сеть в Azure
@@ -29,8 +29,8 @@ ms.locfileid: "71056928"
 
 ## <a name="troubleshooting-guidance"></a>Рекомендации по устранению неполадок 
 
-1. [Проверьте, работает ли виртуальный сетевой шлюз в виртуальной сети.](#check-whether-a-virtual-network-gateway-is-running-in-the-virtual-network)
-2. [Проверьте, работает ли шлюз приложения в виртуальной сети.](#check-whether-an-application-gateway-is-running-in-the-virtual-network)
+1. [Проверьте, работает ли шлюз виртуальной сети в виртуальной сети](#check-whether-a-virtual-network-gateway-is-running-in-the-virtual-network).
+2. [Проверьте, работает ли шлюз приложений в виртуальной сети](#check-whether-an-application-gateway-is-running-in-the-virtual-network).
 3. [Проверьте, включена ли доменная служба Active Directory Azure в виртуальной сети](#check-whether-azure-active-directory-domain-service-is-enabled-in-the-virtual-network).
 4. [Проверьте, подключена ли виртуальная сеть к другому ресурсу](#check-whether-the-virtual-network-is-connected-to-other-resource).
 5. [Проверьте, работает ли виртуальная машина в виртуальной сети](#check-whether-a-virtual-machine-is-still-running-in-the-virtual-network).

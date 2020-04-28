@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 97fe33309f36cd7545f8c9d6c2d34671641caa1f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60877113"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием REST API
@@ -27,12 +27,12 @@ ms.locfileid: "60877113"
 >
 >
 
-В этой статье содержатся сведения о выполнении операций управления учетными записями в Azure Data Lake Storage 1-го поколения с использованием REST API. Операции по управлению счетами включают создание учетной записи Data Lake Storage Gen1, удаляние учетной записи Data Lake Storage Gen1 и т.д. Для получения инструкций о том, как выполнять операции файловой системы на Data Lake Storage Gen1 с помощью REST API, [см.](data-lake-store-data-operations-rest-api.md)
+В этой статье содержатся сведения о выполнении операций управления учетными записями в Azure Data Lake Storage 1-го поколения с использованием REST API. Операции управления учетными записями включают создание учетной записи Data Lake Storage 1-го поколения, удаление учетной записи Data Lake Storage 1-го поколения и т. д. Инструкции по выполнению операций файловой системы в Data Lake Storage 1-го поколения с помощью REST API см. [в разделе операции файловой системы на Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-data-operations-rest-api.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **[cURL](https://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
+* **[перелистывание](https://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
 
 ## <a name="how-do-i-authenticate-using-azure-active-directory"></a>Как выполнить аутентификацию с помощью Azure Active Directory?
 Существует два способа проверки подлинности с помощью Azure Active Directory.
@@ -44,7 +44,7 @@ ms.locfileid: "60877113"
 ## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
 Эта операция основана на вызове REST API, определенном [здесь](https://docs.microsoft.com/rest/api/datalakestore/accounts/create).
 
-Используйте следующую команду cURL: Замените>** \<на** хранилище данных Data Lake Storage Gen1.
+Используйте следующую команду cURL: Замените ** \<yourstoragegen1name>** именем своего Data Lake Storage 1-го поколения.
 
     curl -i -X PUT -H "Authorization: Bearer <REDACTED>" -H "Content-Type: application/json" https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DataLakeStore/accounts/<yourstoragegen1name>?api-version=2015-10-01-preview -d@"C:\temp\input.json"
 
@@ -61,7 +61,7 @@ ms.locfileid: "60877113"
 ## <a name="delete-a-data-lake-storage-gen1-account"></a>Удаление учетной записи Data Lake Storage 1-го поколения
 Эта операция основана на вызове REST API, определенном [здесь](https://docs.microsoft.com/rest/api/datalakestore/accounts/delete).
 
-Чтобы удалить учетную запись Data Lake Storage 1-го поколения, используйте следующую команду cURL. Замените>** \<на хранение** данных Data Lake Storage Gen1.
+Чтобы удалить учетную запись Data Lake Storage 1-го поколения, используйте следующую команду cURL. Замените ** \<yourstoragegen1name>** именем учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -X DELETE -H "Authorization: Bearer <REDACTED>" https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DataLakeStore/accounts/<yourstoragegen1name>?api-version=2015-10-01-preview
 

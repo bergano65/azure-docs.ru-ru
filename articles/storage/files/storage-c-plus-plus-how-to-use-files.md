@@ -8,10 +8,10 @@ ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 97af40bd1f57acb5b26d3b6216984dfb8e3a5181
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "68699799"
 ---
 # <a name="develop-for-azure-files-with-c"></a>Разработка приложений службы файлов Azure с помощью C++
@@ -69,7 +69,7 @@ storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_sto
 
 ## <a name="connecting-to-an-azure-storage-account"></a>Подключение к учетной записи хранилища Azure
 
-Для представления **информации** о учетной записи хранилища можно использовать cloud_storage_account класс. Чтобы получить данные учетной записи хранения из строки подключения хранилища, можно использовать метод **синтаксического анализа** .
+Для представления сведений об учетной записи хранения можно использовать класс **cloud_storage_account** . Чтобы получить данные учетной записи хранения из строки подключения хранилища, можно использовать метод **синтаксического анализа** .
 
 ```cpp
 // Retrieve storage account from connection string.
@@ -107,7 +107,7 @@ if (share.create_if_not_exists()) {
 
 ## <a name="delete-an-azure-file-share"></a>Удаление общей папки Azure
 
-Удалять долю осуществляется путем вызова **метода delete_if_exists** на объекте cloud_file_share. Ниже приведен пример кода, который выполняет это действие.
+Удаление общей папки осуществляется путем вызова метода **delete_if_exists** для объекта cloud_file_share. Ниже приведен пример кода, который выполняет это действие.
 
 ```cpp
 // Get a reference to the share.
@@ -189,7 +189,7 @@ for (auto it = directory.list_files_and_directories(); it != end_of_results; ++i
 
 Общая папка Azure содержит по меньшей мере один каталог для размещения файлов (корневой каталог). В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
-Первым шагом при отправке файла является получение ссылки на каталог, где файл будет находиться. Вы делаете это, вызывая **get_root_directory_reference** метод объекта общего наряда.
+Первым шагом при отправке файла является получение ссылки на каталог, где файл будет находиться. Это делается путем вызова метода **get_root_directory_reference** объекта общего доступа.
 
 ```cpp
 //Get a reference to the root directory for the share.
@@ -220,9 +220,9 @@ file4.upload_from_file(_XPLATSTR("DataFile.txt"));
 
 ## <a name="download-a-file"></a>скачать файл;
 
-Чтобы загрузить файлы, сначала извлекайте ссылку на файл, а затем вызывайте **download_to_stream** метод для переноса содержимого файла на объект потока, который затем можно сохранить в локальном файле. Кроме того, можно использовать метод **download_to_file**, чтобы скачать содержимое файла в локальный файл. Вы можете также использовать метод **download_text**, чтобы скачать содержимое файла в виде текстовой строки.
+Чтобы скачать файлы, сначала извлеките ссылку на файл, а затем вызовите метод **download_to_stream** , чтобы передать содержимое файла в объект потока, который затем можно сохранить в локальный файл. Кроме того, можно использовать метод **download_to_file**, чтобы скачать содержимое файла в локальный файл. Вы можете также использовать метод **download_text**, чтобы скачать содержимое файла в виде текстовой строки.
 
-В следующем примере используются **download_to_stream** и **download_text** методы для демонстрации загрузки файлов, которые были созданы в предыдущих разделах.
+В следующем примере используются методы **download_to_stream** и **download_text** для демонстрации загрузки файлов, которые были созданы в предыдущих разделах.
 
 ```cpp
 // Download as text
@@ -369,5 +369,5 @@ if (share.exists())
 
 * [Клиентская библиотека хранилища для C++](https://github.com/Azure/azure-storage-cpp)
 * [Примеры для службы хранилища файлов Azure на языке C++](https://github.com/Azure-Samples/storage-file-cpp-getting-started)
-* [Исследователь хранения azure](https://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
-* [Документация по хранению данных Azure](https://azure.microsoft.com/documentation/services/storage/)
+* [Обозреватель службы хранилища Azure](https://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
+* [Документация по службе хранилища Azure](https://azure.microsoft.com/documentation/services/storage/)

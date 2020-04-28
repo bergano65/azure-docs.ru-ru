@@ -13,10 +13,10 @@ ms.date: 12/13/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 1e729c608a2cad28c810f8d5236360c909a496b0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70082027"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-linux-azure-virtual-machines"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure
@@ -32,7 +32,7 @@ ms.locfileid: "70082027"
 
 [!INCLUDE [support-disclaimer](../../../../includes/support-disclaimer.md)]
 
-## <a name="images"></a><a id="images"></a>Изображения
+## <a name="images"></a><a id="images"></a>Фотографий
 
 1. **Какие образы доступны в коллекции виртуальных машин SQL Server?**
 
@@ -88,7 +88,7 @@ ms.locfileid: "70082027"
 
 1. **Как выполнить обновление до новой версии или выпуска SQL Server в виртуальной машине Azure?**
 
-   В настоящее время выполнить обновление на месте для SQL Server в виртуальной машине Azure невозможно. Создайте новую виртуальную машину Azure с желаемой версией/изданием сервера S'L, а затем переносите базы данных на новый сервер, используя [стандартные методы миграции данных.](https://docs.microsoft.com/sql/linux/sql-server-linux-migrate-overview)
+   В настоящее время выполнить обновление на месте для SQL Server в виртуальной машине Azure невозможно. Создайте новую виртуальную машину Azure с требуемой версией или выпуском SQL Server, а затем перенесите базы данных на новый сервер с помощью [стандартных методов переноса данных](https://docs.microsoft.com/sql/linux/sql-server-linux-migrate-overview).
 
 ## <a name="general"></a>Общие сведения
 
@@ -98,14 +98,14 @@ ms.locfileid: "70082027"
 
 ## <a name="resources"></a>Ресурсы
 
-**Linux VMs**:
+**Виртуальные машины Linux**:
 
 * [Обзор SQL Server на виртуальных машинах Linux](sql-server-linux-virtual-machines-overview.md).
 * [Подготовка виртуальной машины SQL Server на базе Linux](provision-sql-server-linux-virtual-machine.md).
-* [Сервер S'L на Linux документации](https://docs.microsoft.com/sql/linux/sql-server-linux-overview)
+* [Документация по SQL Server на Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview)
 
-**Windows VMs**:
+**Виртуальные машины Windows**:
 
-* [Обзор сервера S'L на Windows VM](../../windows/sql/virtual-machines-windows-sql-server-iaas-overview.md)
+* [Общие сведения о SQL Server на виртуальной машине Windows](../../windows/sql/virtual-machines-windows-sql-server-iaas-overview.md)
 * [Подготовка виртуальной машины SQL Server на базе Windows](../../windows/sql/virtual-machines-windows-portal-sql-server-provision.md).
 * [Часто задаваемые вопросы (Windows)](../../windows/sql/virtual-machines-windows-sql-server-iaas-faq.md).

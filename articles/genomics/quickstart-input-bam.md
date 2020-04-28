@@ -1,7 +1,7 @@
 ---
-title: Отправить рабочий процесс с помощью ввода файла BAM
+title: Отправка рабочего процесса с использованием входных файлов BAM
 titleSuffix: Microsoft Genomics
-description: В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если ваш файл ввода является единым файлом BAM.
+description: В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если входной файл является отдельным файлом BAM.
 services: genomics
 author: grhuynh
 manager: cgronlun
@@ -10,15 +10,15 @@ ms.service: genomics
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.openlocfilehash: 5145aa0ffdc4095f178a214f63433e5bcece83b6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72249166"
 ---
 # <a name="submit-a-workflow-using-a-bam-file-input"></a>Отправка рабочего процесса с помощью входного BAM-файла
 
-В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если ваш файл ввода является единым файлом BAM. В этом разделе предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно представили рабочий процесс, используя предоставленные данные образца, вы готовы приступить к этой статье. 
+В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics, если входной файл является отдельным файлом BAM. В этом разделе предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с помощью предоставленных примеров данных, можно приступать к работе с этой статьей. 
 
 ## <a name="set-up-upload-your-bam-file-to-azure-storage"></a>Настройка: передача BAM-файла в хранилище Azure
 Предположим, что у вас есть один BAM-файл, *reads.bam*, и вы отправили его в свою учетную запись хранения *myaccount* в Azure как **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/inputs/reads<span></span>.bam<span></span>**. У вас есть URL-адрес API и ключ доступа. Вы хотите разместить выходные данные на странице **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>**.

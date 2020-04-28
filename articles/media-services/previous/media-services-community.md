@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: c4798fa9140f277d5383d2830eefb9bcc8d7c984
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72598331"
 ---
 # <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
@@ -40,7 +40,7 @@ ms.locfileid: "72598331"
 
 ### <a name="twitter"></a>Twitter
 
-Используйте [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) ручку Twitter, чтобы связаться с нами или следить за обновлениями на Twitter. Вы можете [@AzureSupport](https://twitter.com/azuresupport) использовать ручку Twitter, чтобы запросить поддержку на Twitter.  
+Используйте маркер [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) Twitter для связи с нами или следуйте обновлениям в Twitter. Для запроса поддержки в [@AzureSupport](https://twitter.com/azuresupport) Twitter можно использовать маркер Twitter.  
 
 ### <a name="online-forums"></a>Интернет-форумы
 
@@ -48,15 +48,15 @@ ms.locfileid: "72598331"
 
 Сейчас MSDN —это основной форум сообщества разработчиков Служб мультимедиа.
 
-[![Msdn](./media/media-services-community/msdn.png)](https://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices) 
+[![MSDN](./media/media-services-community/msdn.png)](https://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices) 
 
 Команда разработчиков также отслеживает вопросы с тегом "azure-media-services" на сайте Stack Overflow.
 
-[![СтекОверflow](./media/media-services-community/stack-overflow.png)](https://stackoverflow.com/questions/tagged/azure-media-services) 
+[![StackOverflow](./media/media-services-community/stack-overflow.png)](https://stackoverflow.com/questions/tagged/azure-media-services) 
 
 ## <a name="need-help"></a>Требуется помощь?
 
-Вы можете открыть билет поддержки, перенаправившись в [Новый запрос поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
+Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 12/12/2018
 ms.author: genli
 ms.openlocfilehash: 660c7fa0051654fd9b0012740ce7ed3ee1e91531
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71059171"
 ---
 # <a name="troubleshoot-azure-virtual-machines-boot-errors"></a>Устранение ошибок при загрузке виртуальных машин Azure
@@ -28,7 +28,7 @@ ms.locfileid: "71059171"
 * [Ошибки загрузки BitLocker на виртуальной машине Azure](troubleshoot-bitlocker-boot-error.md) 
 * [Отображение в Windows уведомления "Проверка файловой системы" при загрузке виртуальной машины Azure](troubleshoot-check-disk-boot-error.md)
 * [Ошибки "синий экран"](troubleshoot-common-blue-screen-error.md)
-* [VM стартап застрял на "Получение Windows Готовые](troubleshoot-vm-boot-configure-update.md)
+* [Запуск виртуальной машины зависает в состоянии "Подготовка Windows"](troubleshoot-vm-boot-configure-update.md)
 * [Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure](troubleshoot-critical-service-failed-boot-error.md)
 * [Цикл перезагрузки Windows на виртуальной машине Azure](troubleshoot-reboot-loop.md)
 * [Зависание виртуальной машины при запуске во время обновления Windows](troubleshoot-stuck-updating-boot-error.md)

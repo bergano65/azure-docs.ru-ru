@@ -16,10 +16,10 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 441aa9805f2a453e22f207238315125d2a281838
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "60280406"
 ---
 # <a name="tutorial-configure-concur-for-automatic-user-provisioning"></a>Руководство по настройке Concur для автоматической подготовки пользователей
@@ -93,13 +93,13 @@ ms.locfileid: "60280406"
    
     ![Подтверждение действия](./media/concur-provisioning-tutorial/ic721732.png "Подтверждение действия")
 
-6. На [портале Azure](https://portal.azure.com)посетите раздел **Azure Active Directory > Enterprise Apps > всех приложений.**
+6. В [портал Azure](https://portal.azure.com)перейдите в раздел **Azure Active Directory > корпоративные приложения > все приложения** .
 
 7. Если в Concur уже настроен единый вход, найдите свой экземпляр Concur с помощью поля поиска. В противном случае щелкните **Добавить** и выполните поиск **Concur** в коллекции приложений. Выберите Concur в результатах поиска и добавьте его в список приложений.
 
 8. Выберите экземпляр Concur, а затем перейдите на вкладку **Подготовка**.
 
-9. Установите **режим обеспечения** **автоматического.** 
+9. Установите для **режима подготовки** значение **автоматически**. 
  
     ![Подготовка](./media/concur-provisioning-tutorial/provisioning.png)
 
@@ -109,7 +109,7 @@ ms.locfileid: "60280406"
 
 12. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок.
 
-13. Нажмите **Сохранить.**
+13. Нажмите кнопку **Сохранить.**
 
 14. В разделе сопоставления выберите **Synchronize Azure Active Directory Users to Concur** (Синхронизировать пользователей Azure Active Directory с Concur).
 
@@ -117,13 +117,13 @@ ms.locfileid: "60280406"
 
 16. Чтобы включить службу подготовки Azure AD для Concur, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
-17. Нажмите **Сохранить.**
+17. Нажмите кнопку **Сохранить.**
 
 Теперь можно создать тестовую учетную запись. Подождите примерно 20 минут, чтобы убедиться, что учетная запись была синхронизирована с Concur.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
-* [Настройка единого ввоза](concur-tutorial.md)
+* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+* [Настройка единого входа](concur-tutorial.md)
 

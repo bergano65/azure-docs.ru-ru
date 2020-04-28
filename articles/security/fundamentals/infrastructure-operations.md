@@ -1,6 +1,6 @@
 ---
-title: Управление производственной сетью Azure - Microsoft Azure
-description: В этой статье описывается, как корпорация Майкрософт управляет и управляет производственной сетью Azure для обеспечения безопасности центров обработки данных Azure.
+title: Управление рабочей сетью Azure — Microsoft Azure
+description: В этой статье описывается, как корпорация Майкрософт управляет рабочей сетью Azure и работает с ней для защиты центров обработки данных Azure.
 services: security
 documentationcenter: n
 author: TerryLanfear
@@ -16,16 +16,16 @@ ms.workload: na
 ms.date: 05/30/2019
 ms.author: terrylan
 ms.openlocfilehash: d41fe409b4a44a4c2af3670d76dd3a83a300feae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68727115"
 ---
-# <a name="management-and-operation-of-the-azure-production-network"></a>Управление и эксплуатация производственной сети Azure    
-В этой статье описывается, как корпорация Майкрософт управляет и управляет производственной сетью Azure для обеспечения безопасности центров обработки данных Azure.
+# <a name="management-and-operation-of-the-azure-production-network"></a>Управление и эксплуатация рабочей сети Azure    
+В этой статье описывается, как корпорация Майкрософт управляет рабочей сетью Azure и работает с ней для защиты центров обработки данных Azure.
 
-## <a name="monitor-log-and-report"></a>Мониторинг, журнал и отчет
+## <a name="monitor-log-and-report"></a>Монитор, журнал и отчет
 
 Эксплуатация производственной сети Azure и управление ею — это скоординированная работа операционных команд Azure и Базы данных SQL Azure. В среде командами используются несколько инструментов мониторинга производительности приложений и систем. Они используют соответствующие инструменты для контроля сетевых устройств, серверов, служб и процессов приложений.
 
@@ -58,7 +58,7 @@ ms.locfileid: "68727115"
 - [Компоненты и границы информационной системы Azure](infrastructure-components.md)
 - [Сетевая архитектура Azure](infrastructure-network.md)
 - [Рабочая сеть Azure](production-network.md)
-- [Функции безопасности базы данных Лазурного средства данных](infrastructure-sql.md)
+- [Функции безопасности базы данных SQL Azure](infrastructure-sql.md)
 - [Мониторинг инфраструктуры Azure](infrastructure-monitoring.md)
 - [Целостность инфраструктуры Azure](infrastructure-integrity.md)
 - [Защита данных клиентов в Azure](protection-customer-data.md)
