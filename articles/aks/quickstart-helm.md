@@ -1,40 +1,40 @@
 ---
-title: Разработка на Сервисе Azure Kubernetes (AKS) с помощью Helm
-description: Используйте шлем с AKS и реестром контейнеров Azure для упаковки и запуска контейнеров приложений в кластере.
+title: Разработка в Azure Kubernetes Service (AKS) с помощью Helm
+description: Используйте Helm с AKS и реестром контейнеров Azure для упаковки и запуска контейнеров приложений в кластере.
 services: container-service
 author: zr-msft
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: zarhoads
-ms.openlocfilehash: 77627ab846999ea5ba42fde7a9c49b9cc7559fba
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.openlocfilehash: 1f67605918e093e9ab28aa88be777d27acd831ef
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81873437"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82169574"
 ---
-# <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-helm"></a>Быстрый запуск: Разработка на Azure Kubernetes службы (AKS) с хелмом
+# <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-helm"></a>Краткое руководство. Разработка в службе Azure Kubernetes Service (AKS) с помощью Helm
 
 [Helm][helm] — это средство упаковки с открытым кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как *APT* и *Yum*, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes.
 
-В этой статье показано, как использовать Helm для упаковки и запуска приложения на AKS. Для получения более подробной информации об установке существующего приложения с использованием Helm [см.][helm-existing]
+В этой статье показано, как использовать Helm для упаковки и запуска приложения в AKS. Дополнительные сведения об установке существующего приложения с помощью Helm см. [в статье Установка существующих приложений с использованием Helm в AKS][helm-existing].
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас нет подписки НаAz, можно создать [бесплатную учетную запись.](https://azure.microsoft.com/free)
+* Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
-* Докер установлен и настроен. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
-* [Шлем v3 установлен][helm-install].
+* DOCKER установлен и настроен. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
+* [Установлен Helm v3][helm-install].
 
 ## <a name="create-an-azure-container-registry"></a>Создание реестра контейнеров Azure
-Для использования Helm для запуска приложения в кластере AKS необходим реестр контейнеров Azure для хранения изображений контейнеров. Ниже приведен пример использует [az acr создать][az-acr-create] для создания ACR имени *MyHelmACR* в группе ресурсов *MyResourceGroup* с *Basic* SKU. Вы должны предоставить свое уникальное имя реестра. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. SKU *Базовый* — это оптимизированная по стоимости точка входа для целей разработки, обеспечивающая баланс ресурсов хранения и пропускной способности.
+Чтобы использовать Helm для запуска приложения в кластере AKS, вам понадобится реестр контейнеров Azure для хранения образов контейнеров. В приведенном ниже примере с помощью команды [AZ запись контроля][az-acr-create] доступа создается для создания записи контроля доступа с именем *михелмакр* в группе ресурсов *MyResourceGroup* с номером SKU *Basic* . Необходимо указать собственное уникальное имя реестра. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. SKU *Базовый* — это оптимизированная по стоимости точка входа для целей разработки, обеспечивающая баланс ресурсов хранения и пропускной способности.
 
 ```azurecli
 az group create --name MyResourceGroup --location eastus
 az acr create --resource-group MyResourceGroup --name MyHelmACR --sku Basic
 ```
 
-Результат будет похож на следующий пример. Обратите внимание на значение *входа в* сервер для вашего ACR, так как он будет использоваться на более позднем этапе. В приведенном ниже примере *myhelmacr.azurecr.io* является *логинСервер* для *MyHelmACR*.
+Результат будет похож на следующий пример. Запишите значение *loginServer* для записи контроля доступа, так как оно будет использоваться на более позднем этапе. В приведенном ниже примере *myhelmacr.azurecr.IO* является *loginServer* для *михелмакр*.
 
 ```console
 {
@@ -58,23 +58,23 @@ az acr create --resource-group MyResourceGroup --name MyHelmACR --sku Basic
 }
 ```
 
-Чтобы использовать экземпляр ACR, необходимо сначала войти в систему. Используйте команду [входа в систему az acr][az-acr-login] для входа. Ниже приведен пример будет войти в ACR имени *MyHelmACR*.
+Чтобы использовать экземпляр записи контроля доступа, необходимо сначала войти в систему. Для входа используйте команду [AZ запись контроля][az-acr-login] доступа. В приведенном ниже примере выполняется вход в запись контроля доступа с именем *михелмакр*.
 
 ```azurecli
 az acr login --name MyHelmACR
 ```
 
-Команда возвращает сообщение *Логин Успешно* после завершения.
+Команда возвращает сообщение *Login "успешно выполнено* " после завершения.
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
-Создайте кластер AKS. Ниже приведенная команда создает кластер AKS под названием MyAKS и прикрепляет MyHelmACR.
+Создайте кластер AKS. Приведенная ниже команда создает кластер AKS с именем Мякс и присоединяет Михелмакр.
 
 ```azurecli
 az aks create -g MyResourceGroup -n MyAKS --location eastus  --attach-acr MyHelmACR --generate-ssh-keys
 ```
 
-Кластеру AKS необходим доступ к ACR, чтобы вытащить изображения контейнеров и запустить их. Вышеупомянутая команда также предоставляет *кластеру MyAKS* доступ к вашему *MyHelmACR* ACR.
+Кластеру AKS требуется доступ к записи контроля доступа для извлечения образов контейнеров и их запуска. Приведенная выше команда также предоставляет кластеру *мякс* доступ к записи контроля доступа *михелмакр* .
 
 ## <a name="connect-to-your-aks-cluster"></a>Подключение к кластеру AKS
 
@@ -86,7 +86,7 @@ az aks create -g MyResourceGroup -n MyAKS --location eastus  --attach-acr MyHelm
 az aks install-cli
 ```
 
-Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][]. Следующий пример получает учетные данные для кластера AKS под названием *MyAKS* в *MyResourceGroup:*
+Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][]. Следующий пример получает учетные данные для кластера AKS с именем *мякс* в *MyResourceGroup*:
 
 ```azurecli
 az aks get-credentials --resource-group MyResourceGroup --name MyAKS
@@ -94,7 +94,7 @@ az aks get-credentials --resource-group MyResourceGroup --name MyAKS
 
 ## <a name="download-the-sample-application"></a>Загрузка примера приложения
 
-Этот быстрый запуск использует [пример приложения Node.js из репозитория образца Azure Dev Spaces.][example-nodejs] Клонировать приложение от GitHub и `dev-spaces/samples/nodejs/getting-started/webfrontend` перейти к каталогу.
+В этом кратком руководстве используется [пример приложения Node. js из Azure dev Spaces примера репозитория][example-nodejs]. Клонирование приложения из GitHub и переход к `dev-spaces/samples/nodejs/getting-started/webfrontend` каталогу.
 
 ```console
 git clone https://github.com/Azure/dev-spaces
@@ -103,7 +103,7 @@ cd dev-spaces/samples/nodejs/getting-started/webfrontend
 
 ## <a name="create-a-dockerfile"></a>Создание Dockerfile
 
-Создайте новый файл *Dockerfile,* используя следующее:
+Создайте новый файл *Dockerfile* , используя следующую команду:
 
 ```dockerfile
 FROM node:latest
@@ -120,15 +120,15 @@ EXPOSE 80
 CMD ["node","server.js"]
 ```
 
-## <a name="build-and-push-the-sample-application-to-the-acr"></a>Сборка и нажатие образца приложения в ACR
+## <a name="build-and-push-the-sample-application-to-the-acr"></a>Создание и отправка примера приложения в запись контроля доступа
 
-Получите адрес сервера входа с помощью команды [списка az acr][az-acr-list] и запроса для *loginServer:*
+Получите адрес сервера входа с помощью команды [AZ login List][az-acr-list] и запросите *loginServer*:
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
 ```
 
-Используйте Docker для сборки, тегов и нажатия контейнера для применения образца в ACR:
+Используйте DOCKER для создания, пометки и отправки примера контейнера приложения в запись контроля доступа:
 
 ```console
 docker build -t webfrontend:latest .
@@ -136,15 +136,15 @@ docker tag webfrontend <acrLoginServer>/webfrontend:v1
 docker push <acrLoginServer>/webfrontend:v1
 ```
 
-## <a name="create-your-helm-chart"></a>Создайте диаграмму helm
+## <a name="create-your-helm-chart"></a>Создание диаграммы Helm
 
-Создайте диаграмму `helm create` helm с помощью команды.
+Создайте диаграмму Helm с помощью `helm create` команды.
 
 ```console
 helm create webfrontend
 ```
 
-Сделайте следующие обновления для *webfrontend/values.yaml:*
+Выполните следующие обновления для *интерфейсов YAML*:
 
 * Измените `image.repository` на `<acrLoginServer>/webfrontend`.
 * Измените `service.type` на `LoadBalancer`.
@@ -168,7 +168,7 @@ service:
 ...
 ```
 
-Обновление `appVersion` `v1` в *webfrontend/Chart.yaml*. Например.
+`appVersion` Обновите `v1` в в *интерфейсе YAML*. Например:
 
 ```yml
 apiVersion: v2
@@ -179,9 +179,9 @@ name: webfrontend
 appVersion: v1
 ```
 
-## <a name="run-your-helm-chart"></a>Запустите диаграмму руля
+## <a name="run-your-helm-chart"></a>Запуск диаграммы Helm
 
-Используйте `helm create` команду для установки приложения с помощью диаграммы Helm.
+Используйте `helm install` команду, чтобы установить приложение с помощью диаграммы Helm.
 
 ```console
 helm install webfrontend webfrontend/
@@ -198,11 +198,11 @@ webfrontend         LoadBalancer  10.0.141.72   <pending>     80:32150/TCP   2m
 webfrontend         LoadBalancer  10.0.141.72   <EXTERNAL-IP> 80:32150/TCP   7m
 ```
 
-Перейдите к балансу нагрузочно-разгрузчик приложения в браузере, `<EXTERNAL-IP>` используя для просмотра образца приложения.
+Перейдите к подсистеме балансировки нагрузки приложения в браузере, `<EXTERNAL-IP>` используя для просмотра примера приложения.
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
 
-Когда кластер больше не нужен, используйте команду [удаления группы аз для][az-group-delete] удаления группы ресурсов, кластера AKS, реестра контейнеров, сохраненных там изображений контейнеров и всех связанных ресурсов.
+Если кластер больше не нужен, используйте команду [AZ Group Delete][az-group-delete] , чтобы удалить группу ресурсов, кластер AKS, реестр контейнеров, хранящиеся в нем образы контейнеров и все связанные с ним ресурсы.
 
 ```azurecli-interactive
 az group delete --name MyResourceGroup --yes --no-wait
@@ -213,7 +213,7 @@ az group delete --name MyResourceGroup --yes --no-wait
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для получения дополнительной информации об использовании Helm, см документация Helm.
+Дополнительные сведения об использовании Helm см. в документации по Helm.
 
 > [!div class="nextstepaction"]
 > [Документация по Helm][helm-documentation]

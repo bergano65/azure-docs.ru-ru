@@ -7,12 +7,12 @@ ms.date: 01/27/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: c883653754e1f69d3b2d79b256d57a036c70b58e
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 15e0eaaeb407ad22220faa7d085eea805fe62679
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78330151"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81731340"
 ---
 # <a name="quickstart-manage-blobs-with-java-v12-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12
 
@@ -355,4 +355,4 @@ Done
 > [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-blob/src/samples/java/com/azure/storage/blob)
 
 * Чтобы узнать больше, ознакомьтесь с [пакетом SDK Azure для Java](https://github.com/Azure/azure-sdk-for-java/blob/master/README.md).
-* Учебники, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков облачных решений Java](/azure/java/).
+* Учебники, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков облачных решений Java](/azure/developer/java/).

@@ -9,12 +9,12 @@ ms.date: 02/27/2020
 ms.topic: quickstart
 ms.service: event-grid
 ms.custom: subject-armqs
-ms.openlocfilehash: 343ed57c87ea6df5db4cde0978132af31419f905
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 86dc7a4ed05ceae5c7a641ffef23bd75ec48ceea
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78303347"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605556"
 ---
 # <a name="route-blob-storage-events-to-web-endpoint-by-using-azure-resource-manager-template"></a>Маршрутизация событий хранилища больших двоичных объектов в конечную веб-точку с помощью шаблона Azure Resource Manager
 
@@ -22,9 +22,9 @@ ms.locfileid: "78303347"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
 
@@ -56,7 +56,7 @@ ms.locfileid: "78303347"
 
 1. Выберите следующую ссылку, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-event-grid-subscription-and-storage%2Fazuredeploy.json"><img src="./media/blob-event-quickstart-template/deploy-to-azure.png" alt="deploy to azure"/></a>
+    [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-event-grid-subscription-and-storage%2Fazuredeploy.json)
 
 2. Укажите **конечную точку**: предоставьте URL-адрес веб-приложения и добавьте `api/updates` к URL-адресу домашней страницы.
 3. Щелкните **Приобрести**, чтобы развернуть шаблон.

@@ -8,13 +8,15 @@ ms.service: iot-hub
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 06/28/2019
-ms.custom: mvc
-ms.openlocfilehash: fdd2eb2ca1a0e6b93cd3f7a75beeb8057a4ea19c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom:
+- mvc
+- mqtt
+ms.openlocfilehash: 2eec96eee943d6fe291d054e1d73876e38f61d6d
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78674379"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81769963"
 ---
 # <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство по реализации процесса обновления встроенного ПО устройства
 
@@ -34,7 +36,7 @@ ms.locfileid: "78674379"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>предварительные требования
 

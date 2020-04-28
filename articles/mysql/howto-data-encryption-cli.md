@@ -1,45 +1,45 @@
 ---
-title: Шифрование данных - Azure CLI - База данных Azure для MyS'L
-description: Узнайте, как настроить и управлять шифрованием данных для базы данных Azure для MyS'L с помощью Azure CLI.
+title: Шифрование данных — Azure CLI — база данных Azure для MySQL
+description: Узнайте, как настроить шифрование данных для базы данных Azure для MySQL и управлять им с помощью Azure CLI.
 author: kummanish
 ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: 37f6f0dc9c1221207273110252bff445d2e1245b
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 3c33fdb114356af7707c1aae2eddefd81bf10b9f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81459106"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82185835"
 ---
-# <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-cli"></a>Шифрование данных для базы данных Azure для MyS'L с помощью Azure CLI
+# <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-cli"></a>Шифрование данных для базы данных Azure для MySQL с помощью Azure CLI
 
-Узнайте, как использовать Azure CLI для настройки и управления шифрованием данных для базы данных Azure для MyS'L.
+Узнайте, как использовать Azure CLI для настройки и управления шифрованием данных для базы данных Azure для MySQL.
 
-## <a name="prerequisites-for-azure-cli"></a>Предпосылки для Azure CLI
+## <a name="prerequisites-for-azure-cli"></a>Необходимые условия для Azure CLI
 
 * Подписка Azure и права администратора для нее.
-* Создайте хранилище ключей и ключ для использования для ключа, управляемого клиентом. Также включите защиту чистки и мягкое удаление на хранилище ключа.
+* Создайте хранилище ключей и ключ, который будет использоваться для ключа, управляемого клиентом. Также включите защиту от очистки и обратимое удаление в хранилище ключей.
 
     ```azurecli-interactive
     az keyvault create -g <resource_group> -n <vault_name> --enable-soft-delete true --enable-purge-protection true
     ```
 
-* В созданном Убежище ключей Azure создайте ключ, который будет использоваться для шифрования данных базы данных Azure для MyS'L.
+* В созданном Azure Key Vault создайте ключ, который будет использоваться для шифрования данных базы данных Azure для MySQL.
 
     ```azurecli-interactive
     az keyvault key create --name <key_name> -p software --vault-name <vault_name>
     ```
 
-* Для использования существующего хранилища ключей он должен иметь следующие свойства для использования в качестве ключа, управляемого клиентом:
-  * [Мягкое удаление](../key-vault/general/overview-soft-delete.md)
+* Чтобы использовать существующее хранилище ключей, оно должно иметь следующие свойства для использования в качестве ключа, управляемого клиентом:
+  * [Обратимое удаление](../key-vault/general/overview-soft-delete.md)
 
     ```azurecli-interactive
     az resource update --id $(az keyvault show --name \ <key_vault_name> -o tsv | awk '{print $1}') --set \ properties.enableSoftDelete=true
     ```
 
-  * [Очистка защищена](../key-vault/general/overview-soft-delete.md#purge-protection)
+  * [Очистить защищенные](../key-vault/general/overview-soft-delete.md#purge-protection)
 
     ```azurecli-interactive
     az keyvault update --name <key_vault_name> --resource-group <resource_group_name>  --enable-purge-protection true
@@ -48,66 +48,66 @@ ms.locfileid: "81459106"
 * Ключ должен иметь следующие атрибуты для использования в качестве ключа, управляемого клиентом:
   * без даты окончания срока действия;
   * не отключено;
-  * Выполните **получить,** **обернуть,** **развернуть** операции
+  * Выполнение операций **получения**, **переноса**и **распаковки**
 
-## <a name="set-the-right-permissions-for-key-operations"></a>Установка правильных разрешений для ключевых операций
+## <a name="set-the-right-permissions-for-key-operations"></a>Задайте правильные разрешения для операций с ключами.
 
-1. Существует два способа получения управляемой идентификации для базы данных Azure для MyS'L.
+1. Существует два способа получения управляемого удостоверения для базы данных Azure для MySQL.
 
-    ### <a name="create-an-new-azure-database-for-mysql-server-with-a-managed-identity"></a>Создайте новую базу данных Azure для сервера MyS'L с управляемой идентификацией.
+    ### <a name="create-an-new-azure-database-for-mysql-server-with-a-managed-identity"></a>Создайте новый сервер базы данных Azure для MySQL с управляемым удостоверением.
 
     ```azurecli-interactive
     az mysql server create --name -g <resource_group> --location <locations> --storage-size <size>  -u <user>-p <pwd> --backup-retention <7> --sku-name <sku name> --geo-redundant-backup <Enabled/Disabled>  --assign-identity
     ```
 
-    ### <a name="update-an-existing-the-azure-database-for-mysql-server-to-get-a-managed-identity"></a>Обновление существующей базы данных Azure для сервера MyS'L для получения управляемой идентификации.
+    ### <a name="update-an-existing-the-azure-database-for-mysql-server-to-get-a-managed-identity"></a>Обновите существующий сервер базы данных Azure для MySQL, чтобы получить управляемое удостоверение.
 
     ```azurecli-interactive
     az mysql server update --name  <server name>  -g <resource_group> --assign-identity
     ```
 
-2. Установите **ключевые разрешения** (**Получить**, **Оберните**, **Развернуть**) для **главного**, который является названием сервера MyS'L.
+2. Задайте **разрешения ключа** (**Get**, **Wrap**, **Unwrap**) для **участника**, который является именем сервера MySQL.
 
     ```azurecli-interactive
     az keyvault set-policy --name -g <resource_group> --key-permissions get unwrapKey wrapKey --object-id <principal id of the server>
     ```
 
-## <a name="set-data-encryption-for-azure-database-for-mysql"></a>Установка шифрования данных для базы данных Azure для MyS'L
+## <a name="set-data-encryption-for-azure-database-for-mysql"></a>Настройка шифрования данных для базы данных Azure для MySQL
 
-1. Включить шифрование данных для базы данных Azure для MyS'L с помощью ключа, созданного в Хранилище ключей Azure.
+1. Включите шифрование данных для базы данных Azure для MySQL с помощью ключа, созданного в Azure Key Vault.
 
     ```azurecli-interactive
     az mysql server key create –name  <server name>  -g <resource_group> --kid <key url>
     ```
 
-    Ключевой URL:https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>
+    URL-адрес ключа:`https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>`
 
-## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для восстановления или реплики серверов
+## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для серверов восстановления или реплик
 
-После того, как база данных Azure для MyS'L зашифрована с помощью управляемого ключа клиента, хранящегося в Key Vault, любая вновь созданная копия сервера также шифруется. Эту новую копию можно сделать либо через локальную или геовосстановительную операцию, либо через операцию реплики (локальный/кросс-регион). Таким образом, для зашифрованного сервера MyS'L вы можете использовать следующие шаги для создания зашифрованного восстановленного сервера.
+После того как база данных Azure для MySQL шифруется с помощью управляемого ключа клиента, хранящегося в Key Vault, все вновь созданные копии сервера также шифруются. Эту новую копию можно создать с помощью локальной или географической операции либо с помощью операции реплики (локальной или кросс-региона). Для зашифрованного сервера MySQL можно выполнить следующие действия, чтобы создать зашифрованный восстановленный сервер.
 
-### <a name="creating-a-restoredreplica-server"></a>Создание восстановленного/репликационного сервера
+### <a name="creating-a-restoredreplica-server"></a>Создание восстановленного или сервера-реплики
 
   *  [Создание сервера восстановления](howto-restore-server-cli.md) 
-  *  [Создание сервера считываемых реплик](howto-read-replicas-cli.md) 
+  *  [Создание сервера реплики для чтения](howto-read-replicas-cli.md) 
 
-### <a name="once-the-server-is-restored-revalidate-data-encryption-the-restored-server"></a>После восстановления сервера повторное шифрование данных восстановленного сервера
+### <a name="once-the-server-is-restored-revalidate-data-encryption-the-restored-server"></a>После восстановления сервера повторно проверьте шифрование данных на восстановленном сервере.
 
     ```azurecli-interactive
     az mysql server key create –name  <server name> -g <resource_group> --kid <key url>
     ```
 
-## <a name="additional-capability-for-the-key-being-used-for-the-azure-database-for-mysql"></a>Дополнительная возможность для ключа, используемого для базы данных Azure для MyS'L
+## <a name="additional-capability-for-the-key-being-used-for-the-azure-database-for-mysql"></a>Дополнительные возможности для ключа, используемого для базы данных Azure для MySQL
 
-### <a name="get-the-key-used"></a>Использовать ключ
+### <a name="get-the-key-used"></a>Получение ключа, используемого
 
     ```azurecli-interactive
     az mysql server key show --name  <server name>  -g <resource_group> --kid <key url>
     ```
 
-    Key url:  https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>
+    Key url:  `https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>`
 
-### <a name="list-the-key-used"></a>Список используемого ключа
+### <a name="list-the-key-used"></a>Список используемых ключей
 
     ```azurecli-interactive
     az mysql server key list --name  <server name>  -g <resource_group>
@@ -119,22 +119,22 @@ ms.locfileid: "81459106"
     az mysql server key delete -g <resource_group> --kid <key url> 
     ```
 
-## <a name="using-an-azure-resource-manager-template-to-enable-data-encryption"></a>Использование шаблона управления ресурсами Azure для обеспечения шифрования данных
+## <a name="using-an-azure-resource-manager-template-to-enable-data-encryption"></a>Использование шаблона Azure Resource Manager для включения шифрования данных
 
-Помимо портала Azure, вы также можете включить шифрование данных на вашем сервере Azure для сервера MyS'L, используя шаблоны Azure Resource Manager для новых и существующих серверов.
+Помимо портал Azure можно также включить шифрование данных на сервере базы данных Azure для MySQL с помощью шаблонов Azure Resource Manager для новых и существующих серверов.
 
 ### <a name="for-a-new-server"></a>Для нового сервера
 
-Используйте один из заранее созданных шаблонов Управления ресурсами Azure, чтобы предоставить серверу с включенным шифрованием данных: [Пример с шифрованием данных](https://github.com/Azure/azure-mysql/tree/master/arm-templates/ExampleWithDataEncryption)
+Используйте один из предварительно созданных шаблонов Azure Resource Manager для подготовки сервера с включенным шифрованием данных: [пример с шифрованием данных](https://github.com/Azure/azure-mysql/tree/master/arm-templates/ExampleWithDataEncryption) .
 
-Этот шаблон менеджера ресурсов Azure создает базу данных Azure для сервера MyS'L и использует **KeyVault** и **key,** пройденные в качестве параметров, чтобы включить шифрование данных на сервере.
+Этот шаблон Azure Resource Manager создает сервер базы данных Azure для MySQL и использует **KeyVault** и **ключ** , переданные в качестве параметров для включения шифрования данных на сервере.
 
 ### <a name="for-an-existing-server"></a>Для существующего сервера
-Кроме того, можно использовать шаблоны Azure Resource Manager для включения шифрования данных в существующую базу данных Azure для серверов MyS'L.
+Кроме того, вы можете использовать шаблоны Azure Resource Manager, чтобы включить шифрование данных на существующих серверах базы данных Azure для MySQL.
 
-* Передайте идентификатор ресурсов ключу Убежища Azure, который вы скопировали ранее под свойством `Uri` в объекте свойств.
+* Передайте идентификатор ресурса Azure Key Vaultого ключа, скопированный ранее в `Uri` свойстве объекта Properties.
 
-* Используйте *2020-01-01-предварительный просмотр* в качестве версии API.
+* Используйте *2020-01-01-Preview* в качестве версии API.
 
 ```json
 {
@@ -244,6 +244,6 @@ ms.locfileid: "81459106"
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
- Чтобы узнать больше о [Azure Database for MySQL data encryption with customer-managed key](concepts-data-encryption-mysql.md)шифровании данных, см.
+ Дополнительные сведения о шифровании данных см. в статье [Шифрование данных в базе данных Azure для MySQL с помощью ключа, управляемого клиентом](concepts-data-encryption-mysql.md).

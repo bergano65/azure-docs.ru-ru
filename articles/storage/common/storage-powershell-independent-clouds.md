@@ -1,7 +1,7 @@
 ---
-title: Используйте PowerShell для управления данными в независимых облаках Azure
+title: Использование PowerShell для управления данными в независимых облаках Azure
 titleSuffix: Azure Storage
-description: Управление хранением данных в китайском облаке, правительственном облаке и немецком облаке с помощью Azure PowerShell.
+description: Управление хранилищем в облаке, правительственном облаке и немецком облаке с помощью Azure PowerShell.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,19 +9,19 @@ ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 5fa515515c06466e121a5c0ee925fd4d14245363
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0bc8da02a523479c3c543eff28a376136e29098f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74895232"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82176215"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
 Большинство людей используют общедоступное облако Azure для глобального развертывания Azure. Но есть и независимые развертывания Microsoft Azure для обеспечения автономности и других целей. Такие независимые развертывания называются средами. Ниже приведен список независимых облаков, доступных в настоящее время:
 
 * [Azure Government Cloud (Облако Azure для государственных организаций)](https://azure.microsoft.com/features/gov/)
-* [Облако Azure China 21Vianet эксплуатируется 21Vianet в Китае](http://www.windowsazure.cn/)
+* [Облако Azure Китая 21Vianet, управляемое 21Vianet, в Китае](http://www.windowsazure.cn/)
 * [Облако Azure для Германии](../../germany/germany-welcome.md).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -74,7 +74,7 @@ Get-AzLocation | select Location, DisplayName
 
 Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.accounts/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*.
 
-Следующие фрагменты кода показывают, как получить суффикс конечных точек. Все эти команды возвращают что-то вроде "core.cloudapp.net" или "core.cloudapi.de" и т.д. Привизите суффикс к службе хранения, чтобы получить доступ к этой службе. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
+В следующих фрагментах кода показано, как получить суффикс конечной точки. Все эти команды возвращают нечто вроде "core.cloudapp.net" или "core.cloudapi.de" и т. д. Добавьте суффикс в службу хранилища для доступа к этой службе. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
 
 Этот фрагмент кода позволяет получить все среды и суффикс конечной точки для каждой из них.
 
@@ -84,7 +84,7 @@ Get-AzEnvironment | select Name, StorageEndpointSuffix
 
 Эта команда возвращает следующие результаты:
 
-| name| StorageEndpointSuffix|
+| Имя| StorageEndpointSuffix|
 |----|----|
 | AzureChinaCloud; | core.chinacloudapi.cn|
 | AzureCloud; | core.windows.net |
@@ -97,11 +97,11 @@ Get-AzEnvironment | select Name, StorageEndpointSuffix
 Get-AzEnvironment -Name AzureGermanCloud
 ```
 
-Результаты аналогичны следующим значениям:
+Результаты похожи на следующие значения:
 
 |Имя свойства|Значение|
 |----|----|
-| name | `AzureGermanCloud` |
+| Имя | `AzureGermanCloud` |
 | EnableAdfsAuthentication | `False` |
 | ActiveDirectoryServiceEndpointResourceI | `http://management.core.cloudapi.de/` |
 | GalleryURL | `https://gallery.cloudapi.de/` |
@@ -125,7 +125,7 @@ Write-Host "Storage EndPoint Suffix = " $environment.StorageEndpointSuffix
 
 ### <a name="get-endpoint-from-a-storage-account"></a>Получение конечной точки из учетной записи хранения
 
-Вы также можете изучить свойства учетной записи хранилища для получения конечных точек:
+Вы также можете проверить свойства учетной записи хранения, чтобы получить конечные точки:
 
 ```powershell
 # Get a reference to the storage account.
@@ -141,7 +141,7 @@ Write-Host "queue endpoint = " $storageAccount.PrimaryEndPoints.Queue
 Write-Host "table endpoint = " $storageAccount.PrimaryEndPoints.Table
 ```
 
-Для учетной записи хранилища в правительственном облаке эта команда возвращает следующий вывод:
+Для учетной записи хранения в облаке для государственных организаций эта команда возвращает следующие выходные данные:
 
 ```
 blob endpoint = http://myexistingstorageaccount.blob.core.usgovcloudapi.net/
@@ -152,11 +152,11 @@ table endpoint = http://myexistingstorageaccount.table.core.usgovcloudapi.net/
 
 ## <a name="after-setting-the-environment"></a>После настройки среды
 
-Теперь вы можете использовать тот же скрипт PowerShell, с помощью которого управляли учетными записями хранения и осуществляли доступ к плоскости данных, как описано в статье [Использование Azure PowerShell со службой хранилища Azure](storage-powershell-guide-full.md).
+Теперь вы можете использовать PowerShell для управления учетными записями хранения и доступа к данным больших двоичных объектов, очередей, файлов и таблиц. Дополнительные сведения см. в разделе [AZ. Storage](/powershell/module/az.storage).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы создали новую группу ресурсов и учетную запись хранилища для этого упражнения, можно удалить оба ресурса, удалив группу ресурсов. Удаление группы ресурсов приведет к удалению всех ресурсов, которые она содержит.
+Если вы создали новую группу ресурсов и учетную запись хранения для этого упражнения, вы можете удалить оба ресурса, удалив группу ресурсов. Удаление группы ресурсов приведет к удалению всех ресурсов, которые она содержит.
 
 ```powershell
 Remove-AzResourceGroup -Name $resourceGroup
@@ -165,7 +165,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование учетных данных для входа в разных сеансах PowerShell](/powershell/azure/context-persistence).
-* [Хранилище правительства Azure](../../azure-government/documentation-government-services-storage.md)
+* [Хранилище Azure для государственных организаций](../../azure-government/documentation-government-services-storage.md)
 * [Руководство для разработчиков Microsoft Azure Government](../../azure-government/documentation-government-developer-guide.md)
-* [Разработчик отмечает для приложений Azure China 21Vianet](https://msdn.microsoft.com/library/azure/dn578439.aspx)
+* [Примечания для разработчиков для приложений Azure для Китая в Китае](https://msdn.microsoft.com/library/azure/dn578439.aspx)
 * [Документация по Azure для Германии](../../germany/germany-welcome.md).

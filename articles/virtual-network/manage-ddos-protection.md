@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: 454278f0f45a73ec99f52d3f7e9e0c5ce95ecf7a
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.openlocfilehash: f208119ce80d6b728030ea96f13d6c3d0375e74a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82133292"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182945"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "82133292"
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 2. Выполните поиск *DDoS*. Когда в результатах поиска появится элемент **Планы защиты от атак DDoS**, щелкните его.
-3. Щелкните **Создать**.
+3. Нажмите кнопку **создания**.
 4. Введите или выберите собственные значения либо введите или выберите значения из примера, а затем щелкните **Создать**.
 
     |Параметр        |Значение                                              |
@@ -230,7 +230,7 @@ ms.locfileid: "82133292"
 
 Для работы с планами защиты от атак DDoS учетной записи должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие разрешения, перечисленные в таблице ниже.
 
-| Действие                                            | Название                                     |
+| Действие                                            | Имя                                     |
 | ---------                                         | -------------                            |
 | Microsoft.Network/ddosProtectionPlans/read        | Чтение плана защиты от атак DDoS.              |
 | Microsoft.Network/ddosProtectionPlans/write       | Создание или обновление плана защиты от атак DDoS.  |
@@ -239,6 +239,6 @@ ms.locfileid: "82133292"
 
 Чтобы включить защиту от атак DDoS для виртуальной сети, учетной записи также должны быть назначены соответствующие [действия для виртуальных сетей](manage-virtual-network.md#permissions).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Создайте и примените [политику Azure](policy-samples.md) для виртуальных сетей.
+- Создание и назначение [политики Azure определения](policy-samples.md) для виртуальных сетей

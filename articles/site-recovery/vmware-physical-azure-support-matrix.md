@@ -1,157 +1,158 @@
 ---
-title: Матрица поддержки для VMware/восстановление физических последствий в восстановлении сайта Azure
-description: Обобщает поддержку аварийного восстановления VM vmw и физического сервера для Azure с помощью Azure Site Recovery.
+title: Матрица поддержки для VMware или физического аварийного восстановления в Azure Site Recovery
+description: Содержит сводку по поддержке аварийного восстановления виртуальных машин VMware и физического сервера в Azure с помощью Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 2/24/2020
-ms.openlocfilehash: 02448754abd92eab9e095a5eaff10861f8b5e5e4
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: eb78f6073d2bcb7289f13d5c994cff8c13f9a6e0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81606034"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82185801"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
-В этой статье кратко излагаются поддерживаемые компоненты и параметры для аварийного восстановления VMw и физических серверов в Azure с помощью [Azure Site Recovery.](site-recovery-overview.md)
+В этой статье перечислены поддерживаемые компоненты и параметры для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
 
-- [Узнайте больше](vmware-azure-architecture.md) об архитектуре аварийного восстановления VMware VM/физического сервера.
-- Следуйте нашим [учебникам,](tutorial-prepare-azure.md) чтобы опробовать аварийное восстановление.
+- [Узнайте больше](vmware-azure-architecture.md) об архитектуре аварийного восстановления виртуальных машин VMware или физических серверов.
+- Следуйте нашим [руководствам](tutorial-prepare-azure.md) , чтобы испытать аварийное восстановление.
 
 ## <a name="deployment-scenarios"></a>Сценарии развертывания
 
 **Сценарий** | **Сведения**
 --- | ---
-Аварийное восстановление VMware VMs | Репликация локальных виртуальных машин VMware в Azure. Вы можете развернуть этот сценарий на портале Azure или с помощью [PowerShell.](vmware-azure-disaster-recovery-powershell.md)
+Аварийное восстановление виртуальных машин VMware | Репликация локальных виртуальных машин VMware в Azure. Этот сценарий можно развернуть в портал Azure или с помощью [PowerShell](vmware-azure-disaster-recovery-powershell.md).
 Аварийное восстановление физических серверов | Репликация локальных физических серверов Windows или Linux в Azure. Этот сценарий можно развернуть с помощью портала Azure.
 
 ## <a name="on-premises-virtualization-servers"></a>Локальные серверы виртуализации
 
 **Server** | **Требования** | **Сведения**
 --- | --- | ---
-с сервером vCenter | Версия 6.7, 6.5, 6.0, или 5.5 | Мы рекомендуем использовать сервер vCenter при развертывании аварийного развертывания.
-Узлы vSphere | Версия 6.7, 6.5, 6.0, или 5.5 | Мы рекомендуем размещать узлы vSphere и серверы vCenter в той же сети, в которой находится сервер обработки. По умолчанию сервер процесса работает на сервере конфигурации. [Подробнее](vmware-physical-azure-config-process-server-overview.md).
+с сервером vCenter | Версии 6,7, 6,5, 6,0 или 5,5 | Рекомендуется использовать vCenter Server в развертывании аварийного восстановления.
+Узлы vSphere | Версии 6,7, 6,5, 6,0 или 5,5 | Мы рекомендуем размещать узлы vSphere и серверы vCenter в той же сети, в которой находится сервер обработки. По умолчанию сервер обработки запускается на сервере конфигурации. [Подробнее](vmware-physical-azure-config-process-server-overview.md).
 
 
 ## <a name="site-recovery-configuration-server"></a>Сервер конфигурации Site Recovery
 
 Сервер конфигурации размещается на локальном компьютере, где выполняются компоненты Site Recovery, включая сервер конфигурации, сервер обработки и главный целевой сервер.
 
-- Для VMware VMs вы устанавливаете сервер конфигурации, загружая шаблон OVF для создания VMware VM.
-- Для физических серверов вы настраиваете машину сервера конфигурации вручную.
+- Для виртуальных машин VMware необходимо настроить сервер конфигурации, загрузив шаблон OVF, чтобы создать виртуальную машину VMware.
+- Для физических серверов Настройка компьютера сервера конфигурации выполняется вручную.
 
 **Компонент** | **Требования**
 --- |---
 Ядра ЦП | 8
 ОЗУ | 16 ГБ
 Количество дисков | 3 диска<br/><br/> В состав дисков входят: диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения).
-Свободное место на диске | 600 ГБ места для кэша сервера процесса.
-Свободное место на диске | 600 ГБ места для удержания диска.
-Операционная система  | Windows Server 2012 R2, или Windows Server 2016 с настольным интерфейсом <br/><br> Если вы планируете использовать встроенный Master Target этого прибора для сбоя, убедитесь, что версия ОС такая же или выше, чем реплицированные элементы.|
+Свободное место на диске | 600 ГБ пространства для кэша сервера обработки.
+Свободное место на диске | 600 ГБ пространства для диска хранения.
+Операционная система  | Windows Server 2012 R2 или Windows Server 2016 с возможностями рабочего стола <br/><br> Если вы планируете использовать встроенный главный целевой сервер для восстановления размещения, убедитесь, что версия ОС совпадает с версией реплицированных элементов или выше нее.|
 Язык операционной системы | Английский (en-us)
-[PowerCLI](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1) | Не требуется для конфигурации сервера версия [9.14](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery) или позже.
-Роли Windows Server | Не включайте службы домена Active Directory; Информационные услуги Интернета (IIS) или Hyper-V.
+[PowerCLI](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1) | Не требуется для сервера конфигурации [9,14](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery) или более поздней версии.
+Роли Windows Server | Не включайте службы домен Active Directory; Службы IIS (IIS) или Hyper-V.
 Групповые политики| — запрет на использование командной строки; <br/> — запрет на использование инструментов редактирования реестра; <br/> — логика доверия для вложенных файлов; <br/> — включение выполнения скриптов. <br/> - [Подробнее](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)|
-IIS | Не забудьте выполнить следующие действия.<br/><br/> - Не имеете уже существующий веб-сайт по умолчанию <br/> — включите [анонимную аутентификацию](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx); <br/> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx);  <br/> — убедитесь, что отсутствует предварительно созданный веб-сайт или приложение, ожидающее передачи данных через порт 443.<br/>
+IIS | Не забудьте выполнить следующие действия.<br/><br/> -У вас нет предварительно существующего веб-сайта по умолчанию <br/> — включите [анонимную аутентификацию](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx); <br/> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx);  <br/> — убедитесь, что отсутствует предварительно созданный веб-сайт или приложение, ожидающее передачи данных через порт 443.<br/>
 Тип сетевой карты | VMXNET3 (при развертывании в качестве виртуальной машины VMware)
 Тип IP-адреса | Статические
-порты; | 443 используется для организации каналов управления<br/>9443 для передачи данных
+Порты | 443 используется для оркестрации канала управления<br/>9443 для транспорта данных
 
 ## <a name="replicated-machines"></a>Реплицируемые компьютеры
 
 Site Recovery поддерживает репликацию любой рабочей нагрузки, выполняемой на поддерживаемом компьютере.
 
 > [!Note]
-> В следующей таблице перечислена поддержка машин с загрузкой BIOS. Пожалуйста, обратитесь в раздел [Хранение](#storage) для поддержки на машинах на базе UEFI.
+> В следующей таблице перечислены поддерживаемые компьютеры с загрузкой BIOS. Сведения о поддержке на компьютерах на основе UEFI см. в разделе " [хранилище](#storage) ".
 
 **Компонент** | **Сведения**
 --- | ---
 Параметры компьютера | Компьютеры, которые реплицируются в Azure, должны соответствовать [требованиям Azure](#azure-vm-requirements).
 Рабочая нагрузка компьютера | Site Recovery поддерживает репликацию любой рабочей нагрузки, выполняемой на поддерживаемом компьютере. [Подробнее](https://aka.ms/asr_workload).
-Имя компьютера | Убедитесь, что имя отображения машины не подпадает под [зарезервированные названия ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/error-reserved-resource-name)<br/><br/> Логические имена тома не чувствительны к случаям. Убедитесь, что нет двух томов на устройстве имеют одно и то же имя. Напротив: Объемы с названиями "voLUME1", "том1" не могут быть защищены с помощью восстановления сайта Azure.
-Windows Server 2019 | Поддерживается от [обновления свертывания 34](https://support.microsoft.com/help/4490016) (версия 9.22 службы мобильности) и далее.
-Windows Server 2016 64-разрядный | Поддерживается для серверного ядра, сервера с опытом работы на рабочем столе.
-Windows Server 2012 R2 / Windows Server 2012 | Поддерживается.
-Windows Server 2008 R2 с SP1. | Поддерживается.<br/><br/> Из версии [9.30](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery) агента службы мобильности необходимо [обновить стек (SSU)](https://support.microsoft.com/help/4490628) и [SHA-2,](https://support.microsoft.com/help/4474419) установленные на машинах под управлением Windows 2008 R2 с SP1 или позже. SHA-1 не поддерживается с сентября 2019 года, и если подписание кода SHA-2 не включено, расширение агента не будет устанавливаться/обновляться, как ожидалось. Узнайте больше об [обновлении SHA-2 и требованиях.](https://aka.ms/SHA-2KB)
-Windows Server 2008 с SP2 или более поздними (64-битный/32-битный) |  Поддерживается только для миграции. [Подробнее](migrate-tutorial-windows-server-2008.md).<br/><br/> Из версии [9.30](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery) агента службы мобильности необходимо [обновление стека (SSU)](https://support.microsoft.com/help/4493730) и [SHA-2,](https://support.microsoft.com/help/4474419) установленное на компьютерах Windows 2008 SP2. ISHA-1 не поддерживается с сентября 2019 года, и если подписание кода SHA-2 не включено, расширение агента не будет устанавливаться/обновляться, как ожидалось. Узнайте больше об [обновлении SHA-2 и требованиях.](https://support.microsoft.com/en-us/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus)
+Имя компьютера | Убедитесь, что отображаемое имя компьютера не попадает в [зарезервированные имена ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/error-reserved-resource-name) .<br/><br/> В именах логических томов регистр не учитывается. Убедитесь, что имена двух томов на устройстве не совпадают. Пример: тома с именами "voLUME1", "voLUME1" не могут быть защищены с помощью Azure Site Recovery.
+Windows Server 2019 | Поддерживается из [накопительного пакета обновления 34](https://support.microsoft.com/help/4490016) (версия 9,22 службы Mobility Service), начиная с версии.
+Windows Server 2016 64-bit | Поддерживается для Server Core, Server с возможностями рабочего стола.
+Windows Server 2012 R2 или Windows Server 2012 | Поддерживается.
+Windows Server 2008 R2 с пакетом обновления 1 (SP1) — назад. | Поддерживается.<br/><br/> В версии [9,30](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery) агента службы Mobility Service требуется [Обновление стека обслуживания (SSU)](https://support.microsoft.com/help/4490628) и [Обновление SHA-2](https://support.microsoft.com/help/4474419) , установленные на компьютерах под управлением Windows 2008 R2 с пакетом обновления 1 (SP1) или более поздней версии. SHA-1 не поддерживается с 2019 сентября, а если подпись кода SHA-2 не включена, расширение агента не будет устанавливаться и обновляться должным образом. Дополнительные сведения об [обновлении и требованиях SHA-2](https://aka.ms/SHA-2KB).
+Windows Server 2008 с пакетом обновления 2 (SP2) или более поздней версии (64-или 32-разрядная версия) |  Поддерживается только для миграции. [Подробнее](migrate-tutorial-windows-server-2008.md).<br/><br/> В версии [9,30](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery) агента службы Mobility Service требуется [Обновление стека обслуживания (SSU)](https://support.microsoft.com/help/4493730) и [Обновление SHA-2](https://support.microsoft.com/help/4474419) , установленные на компьютерах под управлением Windows 2008 с пакетом обновления 2 (SP2). ИША-1 не поддерживается в сентябре 2019, и если не включено подписывание кода SHA-2, расширение агента не будет устанавливаться и обновляться должным образом. Дополнительные сведения об [обновлении и требованиях SHA-2](https://support.microsoft.com/en-us/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
 Windows 10, Windows 8.1, Windows 8 | Поддерживается.
-Windows 7 с 64-разрядной SP1 | Поддерживается от [обновления свертывания 36](https://support.microsoft.com/help/4503156) (версия 9.22 службы мобильности) и далее. </br></br> С [9.30](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery) агента службы Мобильности необходимо [обновить стек (SSU)](https://support.microsoft.com/help/4490628) и [SHA-2,](https://support.microsoft.com/help/4474419) установленные на компьютерах Windows 7 SP1.  SHA-1 не поддерживается с сентября 2019 года, и если подписание кода SHA-2 не включено, расширение агента не будет устанавливаться/обновляться, как ожидалось. Узнайте больше об [обновлении SHA-2 и требованиях.](https://support.microsoft.com/en-us/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus)
-Linux | Поддерживается только 64-битная система. 32-битная система не поддерживается.<br/><br/>Каждый сервер Linux должен иметь [компоненты Linux Integration Services (LIS).](https://www.microsoft.com/download/details.aspx?id=55106) Это необходимо для загрузки сервера в Azure после отказа теста/неудачи. Если компоненты LIS отсутствуют, убедитесь, что [установить компоненты](https://www.microsoft.com/download/details.aspx?id=55106) перед включением репликации для машин для загрузки в Azure. <br/><br/> Site Recovery координирует отработку отказа для запуска серверов Linux в Azure. Но поставщики Linux могут поддерживать только те версии дистрибутивов, срок поддержки которых еще не окончился.<br/><br/> Поддерживаются только дистрибутивы Linux на основе номенклатурных ядер, которые являются частью выпуска или обновления дополнительной версии.<br/><br/> Обновление защищенных виртуальных машин с основной версией дистрибутивов Linux не поддерживается. Для обновления отключите репликацию, обновите операционную систему и включите репликацию снова.<br/><br/> [Узнайте больше](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) о поддержке Linux и технологии с открытым исходным кодом в Azure.
-Linux Red Hat Enterprise | от 5,2 до 5,11</b><br/> от 6,1 до 6,10</b> </br> 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, [7.7,](https://support.microsoft.com/help/4528026/update-rollup-41-for-azure-site-recovery) [8.0](https://support.microsoft.com/help/4531426/update-rollup-42-for-azure-site-recovery), 8.1 <br/> Серверы под управлением Red Hat Enterprise Linux 5.2-5.11 & 6.1-6.10 не имеют [предустановленных компонентов Linux Integration Services (LIS).](https://www.microsoft.com/download/details.aspx?id=55106) Убедитесь в установке [компонентов](https://www.microsoft.com/download/details.aspx?id=55106) перед включением репликации для загрузки машин в Azure.
-Linux: CentOS | от 5,2 до 5,11</b><br/> от 6,1 до 6,10</b><br/> от 7,0 до 7,6<br/> <br/> от 8,0 до 8,1<br/><br/> Серверы под управлением CentOS 5.2-5.11 & 6.1-6.10 не имеют [предустановленных компонентов Linux Integration Services (LIS).](https://www.microsoft.com/download/details.aspx?id=55106) Убедитесь в установке [компонентов](https://www.microsoft.com/download/details.aspx?id=55106) перед включением репликации для загрузки машин в Azure.
-Ubuntu | Ubuntu 14.04 LTS-сервер [(обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions)<br/><br/>Ubuntu 16.04 LTS-сервер [(обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions) </br> Ubuntu 18.04 LTS-сервер [(обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions)
-Debian | Debian 7/Debian 8 [(обзор поддерживаемых версий ядра)](#debian-kernel-versions)
-SUSE Linux | SUSE Linux Enterprise Server 12 SP1, SP2, SP3, SP4 [(обзор поддерживаемых версий ядра)](#suse-linux-enterprise-server-12-supported-kernel-versions) <br/> SUSE Linux Enterprise Server 15, 15 SP1 [(обзор поддерживаемых версий ядра)](#suse-linux-enterprise-server-15-supported-kernel-versions)<br/> SUSE Linux Enterprise Server 11 с пакетом обновления 3 или SUSE Linux Enterprise Server 11 с пакетом обновления 4<br/> Обновление реплицированных виртуальных машин с SUSE Linux Enterprise Server 11 SP3 до SP4 не поддерживается. Для обновления отключите репликацию и повторное включение после обновления.
-Oracle Linux | 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, [7.7](https://support.microsoft.com/help/4531426/update-rollup-42-for-azure-site-recovery)<br/><br/> Запуск совместимого ядра Red Hat или Unbreakable Enterprise Kernel Release 3, 4 & 5 (UEK3, UEK4, UEK5)
+Windows 7 с пакетом обновления 1 (SP1) 64-bit | Поддерживается из [накопительного пакета обновления 36](https://support.microsoft.com/help/4503156) (версия 9,22 службы Mobility Service), начиная с версии. </br></br> С [9,30](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery) агента службы Mobility Service требуется [Обновление стека обслуживания (SSU)](https://support.microsoft.com/help/4490628) и [Обновление SHA-2](https://support.microsoft.com/help/4474419) на компьютерах под управлением Windows 7 с пакетом обновления 1 (SP1).  SHA-1 не поддерживается с 2019 сентября, а если подпись кода SHA-2 не включена, расширение агента не будет устанавливаться и обновляться должным образом. Дополнительные сведения об [обновлении и требованиях SHA-2](https://support.microsoft.com/en-us/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
+Linux | Поддерживается только 64-разрядная система. 32-разрядная система не поддерживается.<br/><br/>На каждом сервере Linux должны быть установлены [компоненты Linux Integration Services (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . После тестовой отработки отказа или отработки отказа необходимо загрузить сервер в Azure. Если в системе отсутствуют встроенные компоненты LIS, установите [их перед](https://www.microsoft.com/download/details.aspx?id=55106) включением репликации для загрузки виртуальных машин в Azure. <br/><br/> Site Recovery координирует отработку отказа для запуска серверов Linux в Azure. Но поставщики Linux могут поддерживать только те версии дистрибутивов, срок поддержки которых еще не окончился.<br/><br/> Поддерживаются только дистрибутивы Linux на основе номенклатурных ядер, которые являются частью выпуска или обновления дополнительной версии.<br/><br/> Обновление защищенных виртуальных машин с основной версией дистрибутивов Linux не поддерживается. Для обновления отключите репликацию, обновите операционную систему и включите репликацию снова.<br/><br/> Дополнительные [сведения](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) о поддержке Linux и технологии с открытым кодом в Azure.
+Linux Red Hat Enterprise | от 5,2 до 5,11</b><br/> от 6,1 до 6,10</b> </br> 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, [7,7](https://support.microsoft.com/help/4528026/update-rollup-41-for-azure-site-recovery), [8,0](https://support.microsoft.com/help/4531426/update-rollup-42-for-azure-site-recovery), 8,1 <br/> Несколько старых ядер на серверах, на которых работает Red Hat Enterprise Linux 5.2 — 5.11 & 6.1-6.10, не имеют предварительно установленных [компонентов Linux Integration Services (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . Если в системе отсутствуют встроенные компоненты LIS, установите [их перед](https://www.microsoft.com/download/details.aspx?id=55106) включением репликации для загрузки виртуальных машин в Azure.
+Linux: CentOS | от 5,2 до 5,11</b><br/> от 6,1 до 6,10</b><br/> от 7,0 до 7,6<br/> <br/> от 8,0 до 8,1<br/><br/> Несколько старых ядер на серверах с CentOS 5.2 — 5.11 & 6.1-6.10 не имеют предварительно установленных [компонентов Integration Services Linux (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . Если в системе отсутствуют встроенные компоненты LIS, установите [их перед](https://www.microsoft.com/download/details.aspx?id=55106) включением репликации для загрузки виртуальных машин в Azure.
+Ubuntu | Ubuntu 14,04 LTS Server [(Обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions)<br/><br/>Ubuntu 16,04 LTS Server [(Обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions) </br> Ubuntu 18,04 LTS Server [(Обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions)
+Debian | Debian 7/Debian 8 [(Обзор поддерживаемых версий ядра)](#debian-kernel-versions)
+SUSE Linux | SUSE Linux Enterprise Server 12 SP1, SP2, SP3, SP4 [(Обзор поддерживаемых версий ядра)](#suse-linux-enterprise-server-12-supported-kernel-versions) <br/> SUSE Linux Enterprise Server 15, 15 с пакетом обновления 1 [(SP1) (Обзор поддерживаемых версий ядра)](#suse-linux-enterprise-server-15-supported-kernel-versions)<br/> SUSE Linux Enterprise Server 11 с пакетом обновления 3 или SUSE Linux Enterprise Server 11 с пакетом обновления 4<br/> Обновление реплицированных виртуальных машин с SUSE Linux Enterprise Server 11 SP3 до SP4 не поддерживается. Чтобы выполнить обновление, отключите репликацию и снова включите ее после обновления.
+Oracle Linux | 6,4, 6,5, 6,6, 6,7, 6,8, 6,9, 6,10, 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, [7,7](https://support.microsoft.com/help/4531426/update-rollup-42-for-azure-site-recovery)<br/><br/> Запуск ядра, совместимого с Red Hat, или неразрывный выпуск Enterprise ядра 3, 4 & 5 (UEK3, UEK4, UEK5)
 
 > [!Note]
-> Для каждой версии Windows восстановление сайта Azure поддерживает только [сборки каналов долгосрочного обслуживания (LTSC).](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc)  [Полугодовые](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) релизы канала в настоящее время не поддерживаются в настоящее время.
+> Для каждой версии Windows Azure Site Recovery поддерживает только [долгосрочные сборки канала обслуживания (LTSC)](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) .  В настоящее время не поддерживается [полугодовые](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) выпуски канала.
 
 ### <a name="ubuntu-kernel-versions"></a>Версии ядра Ubuntu
 
 **Поддерживаемый выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-14.04 LTS | [9.32][9.32 UR] | 3.13.0-24-общий до 3.13.0-170-родовой,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-общий до 4.4.0-148-родовой,<br/>4.15.0-1023-azure до 4.15.0-1045-azure |
-14.04 LTS | [9.31][9.31 UR] | 3.13.0-24-общий до 3.13.0-170-родовой,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-общий до 4.4.0-148-родовой,<br/>4.15.0-1023-azure до 4.15.0-1045-azure |
-14.04 LTS | [9.30][9.30 UR] | 3.13.0-24-общий до 3.13.0-170-родовой,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-общий до 4.4.0-148-родовой,<br/>4.15.0-1023-azure до 4.15.0-1045-azure |
-14.04 LTS | [9.29][9.29 UR]| 3.13.0-24-общий до 3.13.0-170-родовой,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-общий до 4.4.0-148-родовой,<br/>4.15.0-1023-azure до 4.15.0-1045-azure |
+14.04 LTS | [9,32][9.32 UR] | 3.13.0-24-Generic для 3.13.0-170-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic для 4.4.0-148-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1045-Azure |
+14.04 LTS | [9,31][9.31 UR] | 3.13.0-24-Generic для 3.13.0-170-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic для 4.4.0-148-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1045-Azure |
+14.04 LTS | [9,30][9.30 UR] | 3.13.0-24-Generic для 3.13.0-170-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic для 4.4.0-148-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1045-Azure |
+14.04 LTS | [9,29][9.29 UR]| 3.13.0-24-Generic для 3.13.0-170-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic для 4.4.0-148-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1045-Azure |
 |||
-16.04 LTS | [9.32][9.32 UR] | 4.4.0-21-общий до 4.4.0-171-родовой,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-общий до 4.15.0-74-родовой<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-azure до 4.15.0-1066-azure|
-16.04 LTS | [9.31][9.31 UR] | 4.4.0-21-общий до 4.4.0-170-родовой,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-общий до 4.15.0-72-родовой<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-azure до 4.15.0-1063-azure|
-16.04 LTS | [9.30][9.30 UR] | 4.4.0-21-общий до 4.4.0-166-родовой,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-общий до 4.15.0-66-родовой<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-azure до 4.15.0-1061-azure|
-16.04 LTS | [9.29][9.29 UR] | 4.4.0-21-общий до 4.4.0-164-родовой,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-общий до 4.15.0-64-родовой<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-azure до 4.15.0-1059-azure|
+16.04 LTS | [9,32][9.32 UR] | 4.4.0-21-Generic для 4.4.0-171-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic для 4.15.0-74-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012-Azure в 4.15.0-1066-Azure|
+16.04 LTS | [9,31][9.31 UR] | 4.4.0-21-Generic — 4.4.0-170-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic — 4.15.0-72-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1063 — Azure|
+16.04 LTS | [9,30][9.30 UR] | 4.4.0-21-Generic для 4.4.0-166-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic для 4.15.0-66-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1061 — Azure|
+16.04 LTS | [9,29][9.29 UR] | 4.4.0-21-Generic для 4.4.0-164-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic — 4.15.0-64-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1059 — Azure|
 |||
-18.04 LTS | [9.32][9.32 UR]| 4.15.0-20-родовой до 4.15.0-74-родовой </br> 4.18.0-13-общий до 4.18.0-25-родовой </br> 5.0.0-15-родовой до 5.0.0-37-родовой </br> 5.3.0-19-родовой до 5.3.0-24-родовой </br> 4.15.0-1009-azure до 4.15.0-1037-azure </br> 4.18.0-1006-azure до 4.18.0-1025-azure </br> 5.0.0-1012-azure до 5.0.0-1028-azure </br> 5.3.0-1007-azure до 5.3.0-1009-azure|
-18.04 LTS | [9.31][9.31 UR]| 4.15.0-20-родовой до 4.15.0-72-родовой </br> 4.18.0-13-общий до 4.18.0-25-родовой </br> 5.0.0-15-родовой до 5.0.0-37-родовой </br> 5.3.0-19-родовой до 5.3.0-24-родовой </br> 4.15.0-1009-azure до 4.15.0-1037-azure </br> 4.18.0-1006-azure до 4.18.0-1025-azure </br> 5.0.0-1012-azure до 5.0.0-1025-azure </br> 5.3.0-1007-лазурный|
-18.04 LTS | [9.30][9.30 UR] | 4.15.0-20-родовой до 4.15.0-66-родовой </br> 4.18.0-13-общий до 4.18.0-25-родовой </br> 5.0.0-15-родовой до 5.0.0-32-родовой </br> 4.15.0-1009-azure до 4.15.0-1037-azure </br> 4.18.0-1006-azure до 4.18.0-1025-azure </br> 5.0.0-1012-azure до 5.0.0-1023-azure|
-18.04 LTS | [9.29][9.29 UR] | 4.15.0-20-родовой до 4.15.0-62-родовой </br> 4.18.0-13-общий до 4.18.0-25-родовой </br> 5.0.0-15-родовой до 5.0.0-27-родовой </br> 4.15.0-1009-azure до 4.15.0-1037-azure </br> 4.18.0-1006-azure до 4.18.0-1025-azure </br> 5.0.0-1012-azure до 5.0.0-1018-azure|
+18,04 LTS | [9,32][9.32 UR]| 4.15.0-20-Generic для 4.15.0-74-Generic </br> 4.18.0-13-Generic для 4.18.0-25-Generic </br> 5.0.0-15-Generic до 5.0.0-37-Generic </br> 5.3.0-19-Generic для 5.3.0-24-Generic </br> 4.15.0-1009-Azure в 4.15.0-1037-Azure </br> 4.18.0-1006 — Azure — 4.18.0-1025 — Azure </br> 5.0.0-1012 — Azure — 5.0.0-1028 — Azure </br> 5.3.0-1007-Azure в 5.3.0-1009-Azure|
+18,04 LTS | [9,31][9.31 UR]| 4.15.0-20-Generic для 4.15.0-72-Generic </br> 4.18.0-13-Generic для 4.18.0-25-Generic </br> 5.0.0-15-Generic до 5.0.0-37-Generic </br> 5.3.0-19-Generic для 5.3.0-24-Generic </br> 4.15.0-1009-Azure в 4.15.0-1037-Azure </br> 4.18.0-1006 — Azure — 4.18.0-1025 — Azure </br> 5.0.0-1012 — Azure — 5.0.0-1025 — Azure </br> 5.3.0-1007 — Azure|
+18,04 LTS | [9,30][9.30 UR] | 4.15.0-20-Generic для 4.15.0-66-Generic </br> 4.18.0-13-Generic для 4.18.0-25-Generic </br> 5.0.0-15-Generic до 5.0.0-32-Generic </br> 4.15.0-1009-Azure в 4.15.0-1037-Azure </br> 4.18.0-1006 — Azure — 4.18.0-1025 — Azure </br> 5.0.0-1012 — Azure — 5.0.0-1023 — Azure|
+18,04 LTS | [9,29][9.29 UR] | 4.15.0-20-Generic — 4.15.0-62-Generic </br> 4.18.0-13-Generic для 4.18.0-25-Generic </br> 5.0.0-15-Generic до 5.0.0-27-Generic </br> 4.15.0-1009-Azure в 4.15.0-1037-Azure </br> 4.18.0-1006 — Azure — 4.18.0-1025 — Azure </br> 5.0.0-1012-Azure – 5.0.0-1018-Azure|
 
 ### <a name="debian-kernel-versions"></a>Версии ядра Debian
 
 
 **Поддерживаемый выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-Debian 7 | [9.29][9.29 UR], [9.30][9.30 UR], [9.31][9.31 UR], [9.32][9.32 UR]| С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
+Debian 7 | [9,29][9.29 UR], [9,30][9.30 UR], [9,31][9.31 UR], [9,32][9.32 UR]| С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
 |||
-Debian 8 | [9.30][9.30 UR], [9.31][9.31 UR], [9.32][9.32 UR] | 3.16.0-4-amd64 до 3.16.0-10-amd64, 4.9.0-0.bd64 |
-Debian 8 | [9.29][9.29 UR] | 3.16.0-4-amd64 до 3.16.0-10-amd64, 4.9.0-0.bpo64 до 4.9.0-0.bpo.9-amd64 |
+Debian 8 | [9,30][9.30 UR], [9,31][9.31 UR], [9,32][9.32 UR] | 3.16.0-4-AMD64 – 3.16.0-10-AMD64, 4.9.0 -0. BPO. 4-AMD64 до 4.9.0 -0. BPO. 11 — AMD64 |
+Debian 8 | [9,29][9.29 UR] | 3.16.0-4-AMD64 – 3.16.0-10-AMD64, 4.9.0 -0. BPO. 4-AMD64 до 4.9.0 -0. BPO. 9 — AMD64 |
 
 ### <a name="suse-linux-enterprise-server-12-supported-kernel-versions"></a>Поддерживаемые версии ядра SUSE Linux Enterprise Server 12
 
-**Release** | **Версия службы Mobility Service** | **Версия ядра** |
+**Отпускании** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9.28][9.28 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-дефолт до 3.12.74-60.64.118-дефолт</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (LTSS) 4.4.121-92.73-дефолт до 4.4.121-92.117-дефолт</br></br>SP3 4.4.73-5-дефолт до 4.4.180-94.100-дефолт</br></br>SP3 4.4.138-4.7-azure 4.4.180-4.31-azure</br></br>SP4 4.12.14-94.41-дефолт до 4.12.14-95.29-дефолт</br>SP4 4.12.14-6.3-azure 4.12.14-6.23-azure |
-SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9.27][9.27 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1 (LTSS) 3.12.74-60.64.45-дефолт до 3.12.74-60.64.115-дефолт</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (LTSS) 4.4.121-92.73-дефолт до 4.4.121-92.114-дефолт</br></br>SP3 4.4.73-5-дефолт до 4.4.180-94.97-дефолт</br></br>SP3 4.4.138-4.7-azure 4.4.180-4.31-azure</br></br>SP4 4.12.14-94.41-дефолт до 4.12.14-95.19-дефолт</br>SP4 4.12.14-6.3-azure 4.12.14-6.15-azure |
-SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9.26][9.26 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1(LTSS) 3.12.74-60.64.45-дефолт до 3.12.74-60.64.110-дефолт</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (LTSS) 4.4.121-92.73-дефолт до 4.4.121-92.109-дефолт</br></br>SP3 4.4.73-5-дефолт до 4.4.178-94.91-дефолт</br></br>SP3 4.4.138-4.7-azure 4.4.178-4.28-azure</br></br>SP4 4.12.14-94.41-дефолт до 4.12.14-95.16-дефолт</br>SP4 4.12.14-6.3-azure 4.12.14-6.9-azure |
-SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9.25][9.25 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (LTSS) 4.4.121-92.73-дефолт до 4.4.121-92.104-дефолт</br></br>SP3 4.4.73-5-дефолт до 4.4.176-94.88-дефолт</br></br>SP3 4.4.138-4.7-azure 4.4.176-4.25-azure</br></br>SP4 4.12.14-94.41-дефолт до 4.12.14-95.13-дефолт</br>SP4 4.12.14-6.3-azure 4.12.14-6.9-azure |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9,28][9.28 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1 (ЛТСС) 3.12.74-60.64.45-по умолчанию — 3.12.74-60.64.118 — по умолчанию</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.117 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.180-94.100-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.180-4.31-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.29-Default</br>SP4 4.12.14-6.3-Azure в 4.12.14-6.23-Azure |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9,27][9.27 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1 (ЛТСС) 3.12.74-60.64.45-по умолчанию — 3.12.74-60.64.115 — по умолчанию</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.114 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.180-94.97-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.180-4.31-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.19-Default</br>SP4 4.12.14-6.3-Azure в 4.12.14-6.15-Azure |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9,26][9.26 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1 (ЛТСС) 3.12.74-60.64.45-по умолчанию — 3.12.74-60.64.110 — по умолчанию</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.109 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.178-94.91-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.178-4,28-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.16-Default</br>SP4 4.12.14-6.3-Azure до 4.12.14-6,9-Azure |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | [9,25][9.25 UR] | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.104 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.176-94.88-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.176-4.25-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.13-Default</br>SP4 4.12.14-6.3-Azure до 4.12.14-6,9-Azure |
 
-### <a name="suse-linux-enterprise-server-15-supported-kernel-versions"></a>SUSE Linux Enterprise Server 15 поддерживает версии ядра
+### <a name="suse-linux-enterprise-server-15-supported-kernel-versions"></a>SUSE Linux Enterprise Server 15 поддерживаемых версий ядра
 
-**Release** | **Версия службы Mobility Service** | **Версия ядра** |
+**Отпускании** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-SUSE Linux Enterprise Server 15 и 15 SP1 | [9.32](https://support.microsoft.com/help/4550047/) | Все акции SUSE 15 и 15 ядер поддерживаются. </br></br> 4.12.14-5.5-azure до 4.12.14-8.22-azure
+SUSE Linux Enterprise Server 15 и 15 с пакетом обновления 1 | [9,32](https://support.microsoft.com/help/4550047/) | Поддерживаются все ядра для SUSE 15 и 15 ядер. </br></br> 4.12.14-5.5 — Azure — 4.12.14 — 8.22 — Azure
 
 ## <a name="linux-file-systemsguest-storage"></a>Файловые системы Linux и гостевое хранилище
 
 **Компонент** | **Поддерживается**
 --- | ---
-Файловые системы | ext3, ext4, XFS, BTRFS (условия, применимые в соответствии с этой таблицей)
-Диспетчер томов | - LVM поддерживается.<br/> - /загрузка на LVM поддерживается от [обновления Rollup 31](https://support.microsoft.com/help/4478871/) (версия 9.20 службы мобильности) и далее. Он не поддерживается в более ранних версиях службы Mobility.<br/> - Несколько дисков ОС не поддерживаются.
+Файловые системы | ext3, ext4, XFS, БТРФС (условия, применимые в этой таблице)
+Подготовка управления логическими томами (LVM)| Толстая инициализация — да <br></br> Тонкая инициализация — нет
+Диспетчер томов | -LVM поддерживается.<br/> параметр-/Boot в LVM поддерживается начиная с [накопительного пакета обновления 31](https://support.microsoft.com/help/4478871/) (версия 9,20 службы Mobility Service). Она не поддерживается в предыдущих версиях службы Mobility Service.<br/> -Несколько дисков ОС не поддерживаются.
 Паравиртуализированные запоминающие устройства | Устройства, экспортированные с помощью паравиртуализированных драйверов, не поддерживаются.
 Блочные устройства ввода-вывода с несколькими очередями | Не поддерживается.
 Физические серверы с контроллером хранилища HP CCISS | Не поддерживается.
-Соглашение об именовании точки устройства/подключения | Имя устройства или точки подключения должно быть уникальным.<br/> Убедитесь, что ни одно из двух устройств/точек крепления не имеет имен, чувствительных к случаям. Например, именование устройств для того же VM, что *и device1,* не *поддерживается.*
-Каталоги | Если вы работаете версию службы Mobility раньше версии 9.20 (выпущена в [Update Rollup 31),](https://support.microsoft.com/help/4478871/)то эти ограничения применяются:<br/><br/> - Эти каталоги (если они настроены как отдельные разделы/файл-системы) должны находиться на одном и том же диске ОС на исходном сервере: /(корень), /загрузка, /usr, /usr/local, /var, /etc.</br> - Каталог /загрузки должен быть на дисковой перегородке и не быть объемом LVM.<br/><br/> Начиная с версии 9.20 эти ограничения не применяются. 
-Каталог загрузок | - Загрузочные диски не должны быть в формате раздела GPT. Это ограничение архитектуры Azure. Диски GPT поддерживаются в виде дисков данных.<br/><br/> Несколько загрузочных дисков на VM не поддерживаются<br/><br/> - /загрузка на громкости LVM на более чем одном диске не поддерживается.<br/> - Машина без загрузочного диска не может быть воспроизведена.
+Соглашение об именовании точки устройства/подключения | Имя устройства или точки подключения должно быть уникальным.<br/> Убедитесь, что имена двух устройств и точек подключения не содержат учет регистра. Например, имена устройств для одной виртуальной машины с *device1* и *device1* не поддерживаются.
+Каталоги | Если вы используете версию службы Mobility Service, предшествующую версии 9,20 (выпущенную в [накопительном пакете обновления 31](https://support.microsoft.com/help/4478871/)), то действуют следующие ограничения.<br/><br/> — Эти каталоги (если они настроены как отдельные разделы и файловые системы) должны находиться на одном диске ОС на исходном сервере:/(root),/Boot,/usr,/usr/local,/var,/etc.</br> — Каталог/boot должен находиться в разделе диска, а не в томе LVM.<br/><br/> Начиная с версии 9,20 эти ограничения не применяются. 
+Каталог загрузок | — Загрузочные диски не должны должны быть в формате раздела GPT. Это ограничение архитектуры Azure. Диски GPT поддерживаются в качестве дисков данных.<br/><br/> Несколько загрузочных дисков на виртуальной машине не поддерживаются.<br/><br/> -/Boot на томе LVM на нескольких дисках не поддерживается.<br/> — Невозможно реплицировать компьютер без загрузочного диска.
 Требования к свободному месту| 2 ГБ в разделе /root <br/><br/> 250 МБ в папке установки
-XFSv5 | Функции XFSv5 в файловых системах XFS, такие как проверка метаданных, поддерживаются (версия службы мобильности 9.10 далее).<br/> Используйте служебную программу xfs_info, чтобы проверить системный блок XFS для раздела. Если `ftype` установлен на 1, то функции XFSv5 используются.
-BTRFS | BTRFS поддерживается от [обновления Rollup 34](https://support.microsoft.com/help/4490016) (версия 9.22 службы мобильности) и далее. BTRFS не поддерживается, если:<br/><br/> - Подтом файловой системы BTRFS изменяется после включения защиты.</br> - Файловая система BTRFS распространяется на несколько дисков.</br> - Файловая система BTRFS поддерживает RAID.
+XFSv5 | Поддерживаются функции XFSv5 в файловых системах XFS, таких как контрольная сумма метаданных (служба Mobility Service версии 9,10).<br/> Используйте служебную программу xfs_info, чтобы проверить системный блок XFS для раздела. Если `ftype` параметр имеет значение 1, то используются XFSv5 компоненты.
+бтрфс | БТРФС поддерживается из [накопительного пакета обновления 34](https://support.microsoft.com/help/4490016) (версия 9,22 службы Mobility Service). БТРФС не поддерживается, если:<br/><br/> — БТРФС файловая система файловой системы изменяется после включения защиты.</br> — Файловая система БТРФС распределена по нескольким дискам.</br> — Файловая система БТРФС поддерживает RAID.
 
 ## <a name="vmdisk-management"></a>Управление виртуальной машиной и диском
 
 **Действие** | **Сведения**
 --- | ---
-Изменение размера диска на реплицируемой виртуальной машине | Поддерживается на источнике VM до сбоя, непосредственно в свойствах VM. Нет необходимости отключать/повторно включить репликацию.<br/><br/> Если вы измените исходный vM после сбоя, изменения не будут отражены.<br/><br/> Если вы измените размер диска на Azure VM после сбоя, когда вы сбой назад, восстановление сайта создает новый VM с обновлениями.
-Добавление диска к реплицируемой виртуальной машине | Не поддерживается.<br/> Отключите репликацию для VM, добавьте диск, а затем повторно включить репликацию.
+Изменение размера диска на реплицируемой виртуальной машине | Поддерживается на исходной виртуальной машине перед отработкой отказа непосредственно в свойствах виртуальной машины. Отключение и повторное включение репликации не требуется.<br/><br/> При изменении исходной виртуальной машины после отработки отказа изменения не фиксируются.<br/><br/> При изменении размера диска на виртуальной машине Azure после отработки отказа при восстановлении после сбоя Site Recovery создает новую виртуальную машину с обновлениями.
+Добавление диска к реплицируемой виртуальной машине | Не поддерживается.<br/> Отключите репликацию для виртуальной машины, добавьте диск, а затем снова включите репликацию.
 
 ## <a name="network"></a>Сеть
 
@@ -176,50 +177,51 @@ IPv6-адрес cети клиента или сервера | Нет.
 Azure ExpressRoute | Да
 Внутренний балансировщик нагрузки | Да
 Внешний балансировщик нагрузки | Да
-Azure Traffic Manager | Да
+Диспетчер трафика Azure | Да
 Несколько сетевых адаптеров | Да
 Зарезервированный IP-адрес | Да
 IPv4 | Да
 Сохранение исходного IP-адреса | Да
 Конечные точки служб для виртуальной сети Azure<br/> | Да
-Ускорение работы в сети | нет
+Ускорение работы в сети | Нет
 
 ## <a name="storage"></a>Память
 **Компонент** | **Поддерживается**
 --- | ---
 Динамический диск | Диск ОС должен быть базовым диском. <br/><br/>Диски данных могут быть динамическими дисками.
-Конфигурация дисков Docker | нет
+Конфигурация дисков Docker | Нет
 NFS узла | Да для VMware<br/><br/> Нет для физических серверов
 SAN узла (ISCSI или FC) | Да
 vSAN узла | Да для VMware<br/><br/> Недоступно для физических серверов.
 Операции многопутевого ввода-вывода (MPIO) для узла | Да — протестировано с помощью Microsoft DSM, EMC PowerPath 5.7 SP4 и EMC PowerPath DSM для CLARiiON
 Виртуальные тома узла (VVol) | Да для VMware<br/><br/> Недоступно для физических серверов.
 VMDK клиента или сервера | Да
-Общий диск кластера клиента или сервера | нет
-Зашифрованный диск клиента или сервера | нет
-NFS клиента или сервера | нет
-Гость/сервер iSCSI | Для миграции - Да<br/>Для аварийного восстановления - Нет, iSCSI выйдет из строя в качестве прикрепленного диска к VM
-SMB 3.0 клиента или сервера | нет
+Общий диск кластера клиента или сервера | Нет
+Зашифрованный диск клиента или сервера | Нет
+NFS клиента или сервера | Нет
+ISCSI гостя или сервера | Для миграции — да<br/>Для аварийного восстановления — нет, iSCSI выполнит восстановление размещения в качестве подключенного диска для виртуальной машины.
+SMB 3.0 клиента или сервера | Нет
 RDM клиента или сервера | Да<br/><br/> Недоступно для физических серверов.
-Диск размером более 1 ТБ для клиента или сервера | Да, диск должен быть больше, чем 1024 МБ<br/><br/>До 8192 ГБ при репликации на управляемых дисках (9,26 версии далее)<br></br> До 4095 ГБ при репликации на учетные записи хранения
-Диск клиента или сервера с физическими и логическими секторами с размером в 4 КБ | нет
-Гостевой/серверный диск с 4K логическим и 512-байтами физического размера сектора | нет
-Том с чередующимся диском размером более 4 ТБ для гостевой системы или сервера <br/><br/>Управление логическими томами (LVM)| Да
-Дисковые пространства для гостя или сервера | нет
-"Горячее" добавление и удаление дисков для гостя или сервера | нет
+Диск размером более 1 ТБ для клиента или сервера | Да, диск должен быть больше 1024 МБ<br/><br/>До 8 192 ГБ при репликации на управляемые диски (9,26 версии)<br></br> До 4 095 ГБ при репликации в учетные записи хранения
+Диск клиента или сервера с физическими и логическими секторами с размером в 4 КБ | Нет
+Диск гостя или сервера с логическим размером 4 КБ и 512-байтами физический сектор | Нет
+Том с чередующимся диском размером более 4 ТБ для гостевой системы или сервера | Да
+Управление логическими томами (LVM)| Толстая подготовка — да <br></br> Тонкая подготовка — нет
+Дисковые пространства для гостя или сервера | Нет
+"Горячее" добавление и удаление дисков для гостя или сервера | Нет
 Исключение диска для гостя или сервера | Да
-Поддержка операций многопутевого ввода-вывода (MPIO) для гостевой системы или сервера | нет
-Гость/сервер GPT перегородки | Пять разделов поддерживаются из [Update Rollup 37](https://support.microsoft.com/help/4508614/) (версия 9.25 службы мобильности). Ранее четыре были поддержаны.
-ReFS | Устойчивая файловая система поддерживается с версией службы мобильности 9.23 или выше
-Загрузка для гостей/серверов EFI/UEFI | - Поддерживается для Windows Server 2012 или более поздней версии, SLES 12 SP4 и RHEL 8.0 с версией агента мобильности 9.30 года<br/> - Безопасный тип загрузки UEFI не поддерживается.
+Поддержка операций многопутевого ввода-вывода (MPIO) для гостевой системы или сервера | Нет
+Разделы GPT для гостевых и серверных систем | Из [накопительного пакета обновления 37](https://support.microsoft.com/help/4508614/) (версия 9,25 службы Mobility Service) поддерживаются пять секций. Поддерживались четыре ранее.
+ReFS | Отказоустойчивая файловая система поддерживается в службе Mobility Service версии 9,23 или более поздней
+Загрузка из виртуальной машины/сервера EFI/UEFI | — Поддерживается для Windows Server 2012 или более поздней версии, SLES 12 SP4 и RHEL 8,0 с агентом Mobility Service версии 9,30 и выше<br/> -Безопасный тип загрузки UEFI не поддерживается.
 
 ## <a name="replication-channels"></a>Каналы репликации
 
 |**Тип репликации**   |**Поддерживается**  |
 |---------|---------|
-|Разгруженная передача данных (ODX)    |       нет  |
-|Оффлайн Посев        |   нет      |
-| Azure Data Box | нет
+|Разгрузка передачи данных (ODX)    |       Нет  |
+|Автономное заполнение        |   Нет      |
+| Azure Data Box | Нет
 
 ## <a name="azure-storage"></a>Хранилище Azure
 
@@ -228,28 +230,28 @@ ReFS | Устойчивая файловая система поддержива
 Локально избыточное хранилище | Да
 Геоизбыточное хранилище | Да
 Геоизбыточное хранилище с доступом для чтения | Да
-"Холодное" хранилище | нет
-"Горячее" хранилище| нет
-Blob-блоки | нет
-Шифрование на отдыхе (SSE)| Да
-Шифрование на отдыхе (CMK)| Да (через модуль PowerShell Az 3.3.0 и далее)
+"Холодное" хранилище | Нет
+"Горячее" хранилище| Нет
+Blob-блоки | Нет
+Шифрование неактивных (SSE)| Да
+Шифрование неактивных (CMK)| Да (с помощью PowerShell AZ 3.3.0 Module)
 Хранилище уровня "Премиум" | Да
-Служба импорта и экспорта | нет
-Брандмауэры хранения azure для VNets | Да.<br/> Настроен на учетную запись целевого хранения/кэша (используется для хранения данных репликации).
-Учетные записи v2 общего назначения (горячие и холодные уровни) | Да (транзакционные затраты значительно выше для V2 по сравнению с V1)
+Служба импорта и экспорта | Нет
+Брандмауэры службы хранилища Azure для виртуальных сетей | Да.<br/> Настроена для целевой учетной записи хранения или кэша (используется для хранения данных репликации).
+Учетные записи хранения общего назначения версии 2 (горячий и холодно-уровни) | Да (затраты на транзакции значительно выше для версии 2 по сравнению с v1)
 
 ## <a name="azure-compute"></a>Служба вычислений Azure
 
 **Компонент** | **Поддерживается**
 --- | ---
 Группы доступности | Да
-Зоны доступности | нет
+Зоны доступности | Нет
 Концентратор | Да
 Управляемые диски | Да
 
 ## <a name="azure-vm-requirements"></a>Требования для виртуальных машин Azure
 
-Предприимчивые VM, реплицированные в Azure, должны соответствовать требованиям Azure VM, обобщенным в этой таблице. Когда восстановление сайта выполняет проверку предпосылок для репликации, проверка не сработает, если некоторые требования не будут выполнены.
+Локальные виртуальные машины, реплицируемые в Azure, должны соответствовать требованиям к виртуальным машинам Azure, приведенным в этой таблице. Если Site Recovery выполняет проверку предварительных требований для репликации, проверка завершится ошибкой, если некоторые требования не будут выполнены.
 
 **Компонент** | **Требования** | **Сведения**
 --- | --- | ---
@@ -258,7 +260,7 @@ Blob-блоки | нет
 Размер диска операционной системы | До 2048 ГБ | Если не поддерживается, проверка завершается ошибкой.
 Число дисков операционной системы | 1 | Если не поддерживается, проверка завершается ошибкой.
 Число дисков с данными | 64 ГБ и меньше | Если не поддерживается, проверка завершается ошибкой.
-Размер диска данных | До 8192 ГБ при репликации на управляемый диск (9,26 версии далее)<br></br>До 4095 ГБ при репликации на учетную запись хранения| Если не поддерживается, проверка завершается ошибкой.
+Размер диска данных | До 8 192 ГБ при репликации на управляемый диск (9,26 версии)<br></br>До 4 095 ГБ при репликации в учетную запись хранения| Если не поддерживается, проверка завершается ошибкой.
 Сетевые адаптеры | Поддерживаются несколько адаптеров. |
 Общий виртуальный жесткий диск | Не поддерживается. | Если не поддерживается, проверка завершается ошибкой.
 Диск FC | Не поддерживается. | Если не поддерживается, проверка завершается ошибкой.
@@ -267,20 +269,20 @@ BitLocker | Не поддерживается. | Прежде чем включ�
 
 ## <a name="resource-group-limits"></a>Ограничения группы ресурсов
 
-Чтобы понять количество виртуальных машин, которые могут быть защищены под одной группой ресурсов, обратитесь к статье об [ограничениях подписки и квотах.](/azure/azure-resource-manager/management/azure-subscription-service-limits#resource-group-limits)
+Сведения о количестве виртуальных машин, которые можно защитить в одной группе ресурсов, см. в статье [ограничения и квоты подписки](/azure/azure-resource-manager/management/azure-subscription-service-limits#resource-group-limits).
 
-## <a name="churn-limits"></a>Ограничения на отток
+## <a name="churn-limits"></a>Ограничения на обновление
 
 В таблице ниже приведены ограничения Azure Site Recovery.
-- Эти ограничения основаны на наших тестах, но не охватывают все возможные комбинации ввок/о приложений.
+- Эти ограничения основаны на наших тестах, но не охватывают все возможные сочетания операций ввода-вывода в приложении.
 - Фактические результаты зависят от сочетания операций ввода-вывода приложения.
-- Для достижения наилучших результатов мы настоятельно рекомендуем запустить [инструмент Deployment Planner](site-recovery-deployment-planner.md)и провести обширное тестирование приложений с помощью тестового совок, чтобы получить истинное изображение производительности для вашего приложения.
+- Для получения наилучших результатов настоятельно рекомендуется запустить [средство планировщик развертывания](site-recovery-deployment-planner.md)и выполнить расширенное тестирование приложений с помощью тестовой отработки отказа, чтобы получить истинную картину производительности приложения.
 
-**Цель репликации** | **Средний размер ввода-вывода исходного диска** |**Средняя скорость обработки данных исходного диска** | **Общий отток исходных дисков в день**
+**Целевой объект репликации** | **Средний размер ввода-вывода исходного диска** |**Средняя скорость обработки данных исходного диска** | **Общее число обработанных данных с диска источника в день**
 ---|---|---|---
 Хранилище уровня "Стандартный" | 8 КБ    | 2 МБ/с | 168 ГБ на диск
 Диск P10 или P15 класса Premium | 8 КБ    | 2 МБ/с | 168 ГБ на диск
-Диск P10 или P15 класса Premium | 16 КБ | 4 МБ/с |    336 ГБ на диск
+Диск P10 или P15 класса Premium | 16 КБ | 4 МБ/с |    336 ГБ на диск
 Диск P10 или P15 класса Premium | 32 КБ или выше | 8 МБ/с | 672 ГБ на диск
 Диск P20, P30, P40 или P50 класса Premium | 8 КБ    | 5 МБ/с | 421 ГБ на диск
 Диск P20, P30, P40 или P50 класса Premium | 16 КБ или выше |20 МБ/с | 1684 ГБ на диск
@@ -293,25 +295,25 @@ BitLocker | Не поддерживается. | Прежде чем включ�
 
 - В указанных средних значениях предполагается 30-процентное перекрытие операций ввода-вывода.
 - В зависимости от коэффициента перекрытия, размера записи и фактической рабочей нагрузки ввода-вывода Site Recovery может обрабатывать более высокую пропускную способность.
-- Эти цифры предполагают типичное отставание примерно в пять минут. то есть после передачи выполняется обработка данных, а созданная точка восстановления составляет 5 минут.
+- Эти числа предполагают типичную невыполненную работу примерно через пять минут. то есть после передачи выполняется обработка данных, а созданная точка восстановления составляет 5 минут.
 
 ## <a name="vault-tasks"></a>Задачи хранилища
 
 **Действие** | **Поддерживается**
 --- | ---
-Перемещение хранилища между группами ресурсов | нет
-Перемещение хранилища внутри и через подписки | нет
-Перемещение хранилищ, сетей, виртуальных машин Azure между группами ресурсов | нет
-Перемещение хранилища, сети, Пазуры ВМ внутри и через подписки. | нет
+Перемещение хранилища между группами ресурсов | Нет
+Перемещение хранилища между подписками и между ними | Нет
+Перемещение хранилищ, сетей, виртуальных машин Azure между группами ресурсов | Нет
+Перемещение хранилища, сети, виртуальных машин Azure в рамках и между подписками. | Нет
 
 
-## <a name="obtain-latest-components"></a>Получение новейших компонентов
+## <a name="obtain-latest-components"></a>Получение последних компонентов
 
-**имя**; | **Описание** | **Сведения**
+**Имя** | **Описание** | **Сведения**
 --- | --- | ---
-Сервер конфигурации | Устанавливается на территории.<br/> Координирует связь между серверами VMware или физическими машинами, а также Azure. | - [Узнайте о](vmware-physical-azure-config-process-server-overview.md) сервере конфигурации.<br/> - [Узнайте о](vmware-azure-manage-configuration-server.md#upgrade-the-configuration-server) обновлении до последней версии.<br/> - [Подробнее о](vmware-azure-deploy-configuration-server.md) настройке сервера конфигурации.
-Сервер обработки | По умолчанию устанавливается на сервере конфигурации.<br/> Получает данные репликации, оптимизирует их с помощью кэширования, сжатия и шифрования и отправляет их в Azure.<br/> По мере роста развертывания можно добавлять дополнительные серверы процессов для обработки больших объемов трафика репликации. | - [Узнайте о](vmware-physical-azure-config-process-server-overview.md) сервере процесса.<br/> - [Узнайте о](vmware-azure-manage-process-server.md#upgrade-a-process-server) обновлении до последней версии.<br/> - [Узнайте о](vmware-physical-large-deployment.md#set-up-a-process-server) настройке серверов масштабирования.
-Служба Mobility Service | Устанавливается на VMware VM или физических серверах, которые вы хотите воспроизвести.<br/> Координирует репликацию между серверами/физическими серверами VMware и Azure.| - [Узнайте больше об](vmware-physical-mobility-service-overview.md) услуге Mobility.<br/> - [Узнайте о](vmware-physical-manage-mobility-service.md#update-mobility-service-from-azure-portal) обновлении до последней версии.<br/>
+Сервер конфигурации | Установлен локально.<br/> Координирует обмен данными между локальными серверами VMware или физическими компьютерами и Azure. | - [Сведения о](vmware-physical-azure-config-process-server-overview.md) сервере конфигурации.<br/> - [Сведения об](vmware-azure-manage-configuration-server.md#upgrade-the-configuration-server) обновлении до последней версии.<br/> - [Сведения о](vmware-azure-deploy-configuration-server.md) настройке сервера конфигурации.
+Сервер обработки | По умолчанию устанавливается на сервере конфигурации.<br/> Получает данные репликации, оптимизирует их с помощью кэширования, сжатия и шифрования и отправляет в Azure.<br/> По мере роста развертывания можно добавить дополнительные серверы обработки для обработки больших объемов трафика репликации. | - [Сведения о](vmware-physical-azure-config-process-server-overview.md) сервере обработки.<br/> - [Сведения об](vmware-azure-manage-process-server.md#upgrade-a-process-server) обновлении до последней версии.<br/> - [Дополнительные сведения о](vmware-physical-large-deployment.md#set-up-a-process-server) настройке серверов обработки масштабирования.
+Служба Mobility Service | Устанавливается на виртуальных машинах VMware или физических серверах, которые необходимо реплицировать.<br/> Координирует репликацию между локальными серверами VMware или физическими серверами и Azure.| - [Сведения о](vmware-physical-mobility-service-overview.md) службе Mobility Service.<br/> - [Сведения об](vmware-physical-manage-mobility-service.md#update-mobility-service-from-azure-portal) обновлении до последней версии.<br/>
 
 
 
