@@ -4,10 +4,10 @@ description: Владельцы, участники и читатели Insights
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.openlocfilehash: 1e57af269c4052d0dcd4a8f7970ca23017024299
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79473138"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
@@ -15,7 +15,7 @@ ms.locfileid: "79473138"
 Вы можете управлять доступом на чтение и обновлять права доступа к данным в Azure [Application Insights][start], используя [Управление доступом на основе ролей в Microsoft Azure](../../role-based-access-control/role-assignments-portal.md).
 
 > [!IMPORTANT]
-> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. Ознакомьтесь с [дополнительными сведениями](#access).
+> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Подробнее](#access).
 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "79473138"
 
 * **Ресурс** — это экземпляр службы Microsoft Azure. Ресурс Application Insights собирает, анализирует и отображает данные телеметрии, отправленные приложением.  Другие типы ресурсов Azure включают в себя веб-приложения, базы данных и виртуальные машины.
   
-    Чтобы увидеть свои ресурсы, откройте [портал Azure,][portal]вопийте и нажмите на все ресурсы. Чтобы найти ресурс, введите часть его имени в поле фильтра.
+    Чтобы просмотреть ресурсы, откройте [портал Azure][portal], войдите и щелкните все ресурсы. Чтобы найти ресурс, введите часть его имени в поле фильтра.
   
     ![Список ресурсов Azure](./media/resources-roles-access-control/10-browse.png)
 
@@ -39,7 +39,7 @@ ms.locfileid: "79473138"
 
 ## <a name="control-access-in-the-resource-group"></a><a name="access"></a> Контроль доступа в группе ресурсов
 
-Важно понимать, что кроме ресурса, созданного для приложения, существуют также отдельные скрытые ресурсы для оповещений и веб-тестов. Они прикреплены к той же [группе ресурсов,](#resource-group) что и ресурс Application Insights. В нее также можно поместить другие службы Azure, такие как веб-сайты или службы хранилища.
+Важно понимать, что кроме ресурса, созданного для приложения, существуют также отдельные скрытые ресурсы для оповещений и веб-тестов. Они присоединены к той же [группе ресурсов](#resource-group) , что и ресурс Application Insights. В нее также можно поместить другие службы Azure, такие как веб-сайты или службы хранилища.
 
 Поэтому для контроля доступа к этим ресурсам рекомендуем:
 
@@ -76,7 +76,7 @@ ms.locfileid: "79473138"
 | --- | --- |
 | [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) |Может менять любые параметры, в том числе права доступа пользователей. |
 | [Участник](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) |Может изменять любое содержимое, в том числе любые ресурсы. |
-| [Компонент приложения Insights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#application-insights-component-contributor) |Можно отсылать ресурсы Application Insights. |
+| [Участник компонента Application Insights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#application-insights-component-contributor) |Может изменять ресурсы Application Insights. |
 | [Читатель](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) |Может просматривать содержимое, но нельзя ничего изменять. |
 | [Отладчик моментальных снимков Application Insights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#application-insights-snapshot-debugger) | Предоставляет пользователю разрешение на использование функций Snapshot Debugger Application Insights. Обратите внимание на то, что эта роль не включает в себя ни роль "Владелец", ни роль "Участник". |
 | Участник управления выпусками развертывания служб Azure | Роль участника для развертывания служб с помощью функции развертывания служб Azure. |
@@ -89,14 +89,14 @@ ms.locfileid: "79473138"
 | [Издатель метрик мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-metrics-publisher) | Включает публикацию метрик ресурсов Azure. |
 | [Monitoring Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) (Читатель данных мониторинга) | Может читать все данные мониторинга. |
 | Участник политики ресурсов (предварительная версия) | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки, а также чтение ресурсов и иерархии.  |
-| [Администратор доступа пользователя](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) | Позволяет пользователю управлять доступом других пользователей к ресурсам Azure.|
+| [Администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) | Позволяет пользователю управлять доступом других пользователей к ресурсам Azure.|
 | [Участник веб-сайта](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#website-contributor) | Позволяет управлять веб-сайтами (не веб-планами), но не доступом к ним.|
 
 «Изменение» включает в себя создание, удаление и обновление:
 
 * Ресурсы
 * Веб-тесты
-* видны узлы
+* Предупреждения
 * Непрерывный экспорт
 
 #### <a name="select-the-user"></a>Выбор пользователя
@@ -104,7 +104,7 @@ ms.locfileid: "79473138"
 Если в каталоге нет необходимого пользователя, вы можете пригласить любого пользователя с учетной записью Майкрософт
 (если он использует такие службы, как Outlook.com, OneDrive, Windows Phone или XBox Live, значит, у него есть учетная запись Майкрософт).
 
-## <a name="related-content"></a>Связанная информация
+## <a name="related-content"></a>Связанное содержимое
 
 * [Управление доступом на основе ролей в Azure](../../role-based-access-control/role-assignments-portal.md)
 
