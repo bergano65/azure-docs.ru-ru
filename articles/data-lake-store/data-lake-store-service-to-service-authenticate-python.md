@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 009aff2703829e6d30f93b3c8e3696724594f29b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79260297"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-python"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с использованием Python
@@ -30,7 +30,7 @@ ms.locfileid: "79260297"
 В этой статье описывается, как использовать пакет SDK для Python для аутентификации между службами в Azure Data Lake Storage 1-го поколения. Дополнительные сведения об аутентификации пользователей в Azure Data Lake Storage 1-го поколения с помощью Python см. статье [Аутентификация пользователей в Data Lake Storage 1-го поколения с использованием Python](data-lake-store-end-user-authenticate-python.md).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
@@ -44,7 +44,7 @@ ms.locfileid: "79260297"
 
 * Модуль `azure-mgmt-resource`, который включает в себя модули Azure для Active Directory и т. д.
 * Модуль `azure-mgmt-datalake-store`, который включает в себя операции по управлению учетной записью Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю управления Azure Data Lake Storage 1-го поколения](/python/api/azure-mgmt-datalake-store/).
-* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Data Lake Storage 1-го поколения. Для получения дополнительной информации об этом модуле, см [Azure-Datalake-магазин Filesystem модуль модуля .](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core/)
+* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Data Lake Storage 1-го поколения. Дополнительные сведения об этом модуле см. в статье [Справочник по модулю файловой системы Azure-Lake-Store](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core/).
 
 Чтобы установить модули, используйте следующие команды.
 
@@ -84,7 +84,7 @@ pip install azure-datalake-store
 
 ## <a name="service-to-service-authentication-with-client-secret-for-account-management"></a>Проверки подлинности через секрет клиента со взаимодействием между службами для управления учетными записями
 
-Используйте этот фрагмент для проверки подлинности с помощью Azure AD для операций управления учетными данными data Lake Storage Gen1, таких как создание учетной записи Data Lake Storage Gen1, удаление учетной записи Data Lake Storage Gen1 и т.д. Следующий фрагмент может быть использован для проверки подлинности приложения неинтерактивно, используя секрет клиента для приложения / сервис-директора существующего приложения Azure AD "Web App".
+Используйте этот фрагмент кода для проверки подлинности в Azure AD для операций управления учетными записями Data Lake Storage 1-го поколения таких как создание учетной записи Data Lake Storage 1-го поколения, удаление учетной записи Data Lake Storage 1-го поколения и т. д. Следующий фрагмент кода можно использовать для проверки подлинности приложения в неинтерактивном режиме, используя секрет клиента для субъекта приложения или службы существующего приложения Azure AD "веб-приложение".
 
     authority_host_uri = 'https://login.microsoftonline.com'
     tenant = '<TENANT>'
@@ -99,7 +99,7 @@ pip install azure-datalake-store
 
 ## <a name="service-to-service-authentication-with-client-secret-for-filesystem-operations"></a>Проверка подлинности между службами через секрет клиента для операций файловой системы
 
-Используйте следующий фрагмент для проверки подлинности с помощью Azure AD для операций файловой системы на Data Lake Storage Gen1, таких как создание папки, загрузка файла и т.д. Следующий фрагмент может быть использован для проверки подлинности приложения неинтерактивно, используя секрет клиента для приложения / основной службы. Примените этот фрагмент кода к существующему веб-приложению Azure AD.
+Используйте следующий фрагмент кода для проверки подлинности в Azure AD для операций файловой системы на Data Lake Storage 1-го поколения таких как создание папки, передача файла и т. д. Следующий фрагмент кода можно использовать для проверки подлинности приложения в неинтерактивном режиме с помощью секрета клиента для приложения или субъекта-службы. Примените этот фрагмент кода к существующему веб-приложению Azure AD.
 
     tenant = '<TENANT>'
     RESOURCE = 'https://datalake.azure.net/'
@@ -127,7 +127,7 @@ Use this snippet to authenticate with Azure AD for account management operations
     mgmt_token = context.acquire_token_with_client_certificate(resource_uri, client_id, client_cert, client_cert_thumbprint)
     credentials = AADTokenCredentials(mgmt_token, client_id) -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы узнали, как использовать аутентификацию между службами, чтобы реализовать аутентификацию в Data Lake Storage 1-го поколения с использованием Python. Дополнительные сведения об использовании Python для работы с Data Lake Storage 1-го поколения см. в следующих статьях.
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-get-started-python.md)

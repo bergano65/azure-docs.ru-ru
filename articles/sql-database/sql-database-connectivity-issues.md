@@ -14,13 +14,13 @@ ms.author: ninarn
 ms.reviewer: carlrab, vanto
 ms.date: 01/14/2020
 ms.openlocfilehash: d2b56e259f551f7655936c975a7a864a27a1df79
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79269085"
 ---
-# <a name="troubleshooting-transient-connection-errors-to-sql-database"></a>Устранение временных ошибок соединения в базе данных S'L
+# <a name="troubleshooting-transient-connection-errors-to-sql-database"></a>Устранение временных ошибок подключения к базе данных SQL
 
 Эта статья содержит информацию о предотвращении, диагностике и устранении ошибок подключения и временных ошибок, которые происходят в клиентском приложении во время взаимодействия с базой данных SQL Azure. Узнайте, как настроить логику повторных попыток, создать строку подключения и настроить другие параметры подключения.
 
@@ -77,7 +77,7 @@ ms.locfileid: "79269085"
 
 Образцы кода с логикой повторных попыток доступны по ссылкам:
 
-- [Подключите устойчиво к S'L с помощью ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
+- [Выполнение устойчивого подключения к SQL с помощью ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
 - [Выполнение устойчивого подключения к SQL с помощью PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
 
 <a id="k-test-retry-logic" name="k-test-retry-logic"></a>
@@ -93,7 +93,7 @@ ms.locfileid: "79269085"
 - **SqlException.Number** = 11001
 - Сообщение: "Данный узел неизвестен."
 
-В рамках первой попытки повторная попытка, вы можете подключить компьютер клиента к сети, а затем попытаться подключиться.
+В рамках первой повторной попытки можно подключить клиентский компьютер к сети и попытаться подключиться.
 
 Чтобы сделать это тестирование практичным, следует отключить компьютер от сети, прежде чем запускать программу. Программа распознает параметр среды выполнения, после чего делает следующее.
 
@@ -133,9 +133,9 @@ ms.locfileid: "79269085"
 
 При создании [строки подключения](https://msdn.microsoft.com/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx) для объекта **SqlConnection** нужно правильно настроить значения следующих параметров.
 
-- **ConnectRetryCount**&nbsp;&nbsp;: По умолчанию 1. Диапазон — от 0 до 255.
-- **ConnectRetryInterval**&nbsp;&nbsp;: По умолчанию составляет 10 секунд. Диапазон — от 1 до 60.
-- **Время подключения**&nbsp;&nbsp;: По умолчанию составляет 15 секунд. Диапазон — от 0 до 2147483647.
+- **ConnectRetryCount**:&nbsp;&nbsp;значение по умолчанию — 1. Диапазон — от 0 до 255.
+- **ConnectRetryInterval**:&nbsp;&nbsp;значение по умолчанию — 10 секунд. Диапазон — от 1 до 60.
+- **Время ожидания подключения**:&nbsp;&nbsp;по умолчанию — 15 секунд. Диапазон — от 0 до 2147483647.
 
 В частности, выбранные значения должны обеспечивать равенство Connection Timeout = ConnectRetryCount * ConnectionRetryIntervall.
 
@@ -188,7 +188,7 @@ ms.locfileid: "79269085"
 Например, если ваша клиентская программа размещена на компьютере Windows, можно использовать брандмауэр Windows на этом узле, чтобы открыть порт 1433.
 
 1. Откройте панель управления.
-2. Выберите **все элементы** > панели управления**Windows Firewall** > **Расширенные настройки** > **Исходящие правила** > **Действия** > **Новое правило.**
+2.  > Выберите **все элементы панели управления****брандмауэр** > **Windows Дополнительные параметры** > **правила** > для исходящих подключений**действия** > **новое правило**.
 
 Если клиентская программа находится на виртуальной машине Azure, см. статью [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
 
@@ -338,11 +338,11 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 
 Следующие классы EntLib60 особенно полезны для логики повторных ошибок. Все эти классы входят в пространство имен **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** или во вложенные пространства.
 
-В пространстве имен **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling**:
+В пространстве имен **Microsoft. Practices. EnterpriseLibrary. TransientFaultHandling**:
 
 - **RetryPolicy** ;
   - **ExecuteAction** ;
-- **ЭкспоненциальныйКлассBackoff**
+- Класс **exponentialbackoff;**
 - **SqlDatabaseTransientErrorDetectionStrategy** ;
 - **ReliableSqlConnection** ;
   - **ExecuteCommand** ;
@@ -442,10 +442,10 @@ public bool IsTransient(Exception ex)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Библиотеки подключений для Базы данных SQL и SQL Server](sql-database-libraries.md)
-- [Объединение соединения сервера S'L (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling)
+- [Пулы соединений SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling)
 - [*Retrying* — это лицензированная общая библиотека Apache 2.0 для повторных попыток, написанная на языке Python](https://pypi.python.org/pypi/retrying), которая позволяет легко добавить режим повтора куда угодно.
 
 <!-- Link references. -->

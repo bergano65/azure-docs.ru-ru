@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 2ff987448e3900c2a533789b2f38fd3ced71ce72
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79267460"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>Развертывание службы диспетчера устройств StorSimple для виртуального массива StorSimple
@@ -70,10 +70,10 @@ ms.locfileid: "79267460"
 
 #### <a name="to-delete-a-service"></a>Удаление службы
 
-1. Перейти на **все ресурсы**. Найдите службу диспетчера устройств StorSimple. Выберите службу, которую требуется удалить.
+1. Перейдите ко **всем ресурсам**. Найдите службу диспетчера устройств StorSimple. Выберите службу, которую требуется удалить.
    
     ![Выбор службы, которую необходимо удалить](./media/storsimple-virtual-array-manage-service/deleteservice2.png)
-2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Выберите команду **Удалить**.
+2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Щелкните **Удалить**.
    
     ![Удаление службы](./media/storsimple-virtual-array-manage-service/deleteservice3.png)
 
@@ -122,7 +122,7 @@ ms.locfileid: "79267460"
    
    Скопируйте этот ключ и сохраните его для регистрации новых устройств в службе.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте, как [начать работу](storsimple-virtual-array-deploy1-portal-prep.md) с виртуальным массивом StorSimple.
+## <a name="next-steps"></a>Дальнейшие шаги
+* Узнайте, как [приступить к работе](storsimple-virtual-array-deploy1-portal-prep.md) с виртуальным массивом StorSimple.
 * Узнайте, как [администрировать устройство StorSimple](storsimple-ova-web-ui-admin.md).
 

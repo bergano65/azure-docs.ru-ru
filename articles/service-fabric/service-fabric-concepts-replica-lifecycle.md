@@ -1,15 +1,15 @@
 ---
-title: Реплики и экземпляры в ткани службы Azure
-description: Узнайте о репликах и экземплярах в Service Fabric, включая обзор их жизненного цикла и функций.
+title: Реплики и экземпляры в Azure Service Fabric
+description: Узнайте о репликах и экземплярах в Service Fabric, включая обзор их жизненных циклов и функций.
 author: appi101
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: aprameyr
 ms.openlocfilehash: cf21af43de553a2802289e44eaece12952d077d3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79258568"
 ---
 # <a name="replicas-and-instances"></a>Реплики и экземпляры 
@@ -132,7 +132,7 @@ Service Fabric открывает нерабочую реплику должны
 > Модели программирования более высокого уровня, такие как [Reliable Actors](service-fabric-reliable-actors-introduction.md) и [Reliable Services](service-fabric-reliable-services-introduction.md), скрывают представление о роли реплики от разработчика. В Reliable Actors понятие роли не требуется. В Reliable Services оно сильно упрощено для большинства сценариев.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о понятиях Service Fabric см. в следующих статьях:
 
 [Жизненный цикл Reliable Services (C#)](service-fabric-reliable-services-lifecycle.md)

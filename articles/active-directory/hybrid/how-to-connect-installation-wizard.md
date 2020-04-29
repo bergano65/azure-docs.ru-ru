@@ -18,21 +18,21 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5440c54b01f62b3ad61b355f4c622a31910a65c1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79261337"
 ---
 # <a name="azure-ad-connect-sync-running-the-installation-wizard-a-second-time"></a>Синхронизация Azure AD Connect sync: повторный запуск мастера установки
 При первом запуске мастера установки Azure AD Connect выполняется пошаговая настройка установки. При повторном запуске мастера установки предлагается настроить параметры обслуживания.
 
 >[!IMPORTANT]
->Имейте в виду, что вы не можете запустить мастер установки во время синхронизации.  Пожалуйста, убедитесь, что синхронизация не запускается перед запуском мастера.
+>Имейте в виду, что мастер установки нельзя запустить во время выполнения синхронизации.  Перед запуском мастера убедитесь, что синхронизация не запущена.
 
 Мастер установки можно найти в меню "Пуск" с именем **Azure AD Connect**.
 
-![Меню «Пуск»](./media/how-to-connect-installation-wizard/startmenu.png)
+![Меню "Пуск"](./media/how-to-connect-installation-wizard/startmenu.png)
 
 При запуске мастера установки появится страница со следующими параметрами:
 
@@ -89,7 +89,7 @@ ms.locfileid: "79261337"
 
 Дополнительные сведения о входе пользователя см. [здесь](plan-connect-user-signin.md#changing-the-user-sign-in-method).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о модели конфигурации, используемой в синхронизации Azure AD Connect, см. в статье о [принципах декларативной подготовки](concept-azure-ad-connect-sync-declarative-provisioning.md).
 
 **Обзорные статьи**

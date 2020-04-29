@@ -1,5 +1,5 @@
 ---
-title: Управление схемой в приложении с одним арендатором
+title: Управление схемой в приложении с одним клиентом
 description: Сведения об управлении схемой для нескольких клиентов в однотенантном приложении, использующем службу "База данных SQL Azure".
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: billgib
 ms.date: 09/19/2018
 ms.openlocfilehash: b6802d97b964b8863f6c2fce0cebfe16782b46fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79269215"
 ---
 # <a name="manage-schema-in-a-saas-application-using-the-database-per-tenant-pattern-with-azure-sql-database"></a>Управление схемой в приложении SaaS с помощью шаблона с однотенантной базой данных с использованием Базы данных SQL Azure
@@ -38,7 +38,7 @@ ms.locfileid: "79269215"
 
 * Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. См. инструкции из руководства по быстрому [развертыванию SaaS-приложения Wingtip Tickets c однотенантной БД](saas-dbpertenant-get-started-deploy.md).
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
-* Установите последнюю версию SQL Server Management Studio (SSMS). [Скачать и установить SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)
+* Установите последнюю версию SQL Server Management Studio (SSMS). [Скачивание и установка SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)
 
 > [!NOTE]
 > В этом руководстве используются функции службы базы данных SQL в ограниченной предварительной версии (задания обработки эластичных баз данных). Если вы хотите изучить это руководство, отправьте идентификатор своей подписки по адресу SaaSFeedback@microsoft.com с темой "Задания обработки эластичных баз данных (предварительная версия)". Получив подтверждение о включении подписки, [скачайте и установите предварительную версию командлетов заданий](https://github.com/jaredmoo/azure-powershell/releases). Это ограниченная предварительная версия, поэтому если у вас возникнут вопросы или необходимость получить поддержку, напишите по адресу SaaSFeedback@microsoft.com.
@@ -105,12 +105,12 @@ ms.locfileid: "79269215"
 Создайте задание, используя те же системно хранимые процедуры задания.
 
 1. Откройте среду SSMS и подключитесь к серверу _catalog-dpt-&lt;пользователь&gt;.database.windows.net_.
-1. Откройте файл _... Учебные\\модули\\Schema Management OnlineReindex.sql \\_
+1. Откройте файл _... Learning modules\\Schema\\Management OnlineReindex. SQL \\_
 1. Щелкните правой кнопкой мыши, выберите "Подключение" и подключитесь к серверу _catalog-dpt-&lt;пользователь&gt;.database.windows.net_, если вы еще не сделали это.
 1. Убедитесь, что вы подключены к базе данных _jobagent_, и нажмите клавишу **F5** для запуска скрипта.
 
 В скрипте _OnlineReindex.sql_ обратите внимание на следующие элементы:
-* **sp\_\_добавить работу** создает новую работу\_\_под названием "Онлайн Reindex PK VenueTyp\_\_265E44FD7FD4C885"
+* **При\_добавлении\_задания SP** создается новое задание с именем "оперативный переиндекс\_\_PK\_\_VenueTyp 265E44FD7FD4C885".
 * **sp\_add\_jobstep** создает шаг задания, содержащий текст команды T-SQL для обновления индекса
 * Остальные представления в скрипте отслеживают выполнение задания. С помощью этих запросов можно просмотреть значение состояния в столбце **lifecycle**, чтобы определить, когда задание будет успешно завершено во всех целевых элементах группы.
 
@@ -126,10 +126,10 @@ ms.locfileid: "79269215"
 > * Обновление ссылочных данных во всех базах данных клиента.
 > * Создание индекса для таблицы во всех базах данных клиента.
 
-Затем попробуйте [специальный учебник по отчетности](saas-tenancy-cross-tenant-reporting.md) для изучения запущенных распределенных запросов в базах данных арендаторов.
+Затем ознакомьтесь с [руководством по автоматизированной системе отчетности](saas-tenancy-cross-tenant-reporting.md) , чтобы исследовать выполнение распределенных запросов между базами данных клиентов.
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Дополнительные учебники, которые основывается на Wingtip Билеты SaaS База данных на арендатора развертывания приложений](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
+* [Дополнительные руководства, основанные на развертывании приложения SaaS Wingtip Tickets на основе базы данных для каждого клиента](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
 * [Управление масштабируемыми облачными базами данных](elastic-jobs-overview.md)

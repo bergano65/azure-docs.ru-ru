@@ -1,5 +1,5 @@
 ---
-title: Настройка управляемых идентификаторов с помощью портала Azure - Azure AD
+title: Настройка управляемых удостоверений с помощью портал Azure Azure AD
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью портала Azure.
 services: active-directory
 documentationcenter: ''
@@ -16,10 +16,10 @@ ms.date: 11/10/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 75971dbd35a6b29306bc87988423ab662a343705
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79266667"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-vm-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure
@@ -30,7 +30,7 @@ ms.locfileid: "79266667"
 
 Из этой статьи вы узнаете, как включать и отключать управляемые удостоверения, назначаемые пользователем и назначаемые системой, для виртуальной машины Azure с помощью портала Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -114,7 +114,7 @@ ms.locfileid: "79266667"
 
    ![Удаление управляемого удостоверения, назначаемого пользователем, из виртуальной машины](./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vm-screenshot.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - С помощью портала Azure предоставьте управляемому удостоверению виртуальной машины Azure [доступ к другому ресурсу Azure](howto-assign-access-portal.md).
 

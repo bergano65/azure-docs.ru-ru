@@ -4,10 +4,10 @@ description: Сведения о способах проверки подлин�
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.openlocfilehash: a1f4abbabe428a09492efefca4a8da9801b9f68d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79258581"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Безопасное подключение к кластеру
@@ -344,7 +344,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 `https://<your-cluster-endpoint>:19080/Explorer`
 
-Вам автоматически предлагается войти в систему AAD.
+Вам будет автоматически предложено войти в систему с помощью AAD.
 
 ### <a name="connect-to-a-secure-cluster-using-a-client-certificate"></a>Подключение к защищенному кластеру с использованием сертификата клиента
 
@@ -378,7 +378,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 * В Mac: дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)
 * [Управление приложениями Service Fabric в Visual Studio](service-fabric-manage-application-in-visual-studio.md)

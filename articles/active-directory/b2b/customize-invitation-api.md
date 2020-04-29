@@ -1,5 +1,5 @@
 ---
-title: B2B aPI и настройка - Активный каталог Azure
+title: API совместной работы B2B и настройка — Azure Active Directory
 description: Служба совместной работы Azure Active Directory B2B поддерживает взаимодействие между компаниями, позволяя предоставлять бизнес-партнерам выборочный доступ к вашим корпоративным приложениям.
 services: active-directory
 ms.service: active-directory
@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3a090ee3f9588ff6bff01e12db469bf04407a7fc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79263469"
 ---
 # <a name="azure-active-directory-b2b-collaboration-api-and-customization"></a>API службы совместной работы Azure Active Directory B2B и настройка
@@ -117,11 +117,11 @@ Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Proper
 
 ## <a name="see-also"></a>См. также
 
-Ознакомьтесь с ссылкой на API приглашения в [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation)разделе .
+Ознакомьтесь с справочником по API приглашения [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation)в.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Что такое сотрудничество Azure AD B2B?](what-is-b2b.md)
+- [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Элементы сообщения с приглашением в службу совместной работы B2B](invitation-email-elements.md)
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)
 - [Добавление пользователей службы совместной работы B2B без приглашения](add-user-without-invite.md)

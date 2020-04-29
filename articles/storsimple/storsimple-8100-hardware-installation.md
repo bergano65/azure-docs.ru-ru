@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 113b72ddf7e5d508c8a0b577d4004d4fbd83e8e5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79267590"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8100-device"></a>Распаковка, установка в стойку и подключение устройства StorSimple 8100
@@ -153,7 +153,7 @@ Microsoft Azure StorSimple 8100 представляет собой единый
 ## <a name="cable-your-storsimple-8100-device"></a>Подключение кабельного хозяйства к устройству StorSimple 8100
 В следующих процедурах описывается процесс подключения питания, сети и соединения последовательного доступа к устройству StorSimple 8100.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 Перед началом подключения кабельного хозяйства к устройству, необходимо иметь:
 
 * Полностью распакованное и установленное в стойку устройство хранения.
@@ -199,7 +199,7 @@ Microsoft Azure StorSimple 8100 представляет собой единый
    |----- | ----------- |
    | Объект    | Локальная сеть с доступом к Интернету |
    | B    | Контроллер 0 |
-   | C    | PCM 0 |
+   | В    | PCM 0 |
    | D    | Контроллер 1 |
    | E    | PCM 1 |
    | F, G | Узлы |
@@ -242,6 +242,6 @@ Microsoft Azure StorSimple 8100 представляет собой единый
 
 Устройство теперь подключено к источнику питания, к сети и к последовательному соединению. Следующим шагом является настройка программного обеспечения и развертывание устройства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте, как [развернуть и настроить локальное устройство StorSimple](storsimple-8000-deployment-walkthrough-u2.md).
 

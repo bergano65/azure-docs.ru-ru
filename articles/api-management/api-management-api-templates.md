@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: eee95a2b6acde3ad3b7d94cf5cdd0f74f9f09fd9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79265965"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
@@ -27,16 +27,16 @@ ms.locfileid: "79265965"
 С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц API на портале разработчика.  
   
 -   [Список API](#APIList)  
--   [Операции](#Product)  
+-   [Операция](#Product)  
 -   [Примеры кода](#CodeSamples)  
-    -   [Curl](#Curl)  
-    -   [C #](#CSharp)  
+    -   [Листывания](#Curl)  
+    -   [C#](#CSharp)  
     -   [Java](#Stub)  
-    -   [Javascript](#JavaScript)  
-    -   [Цель C](#ObjectiveC)  
-    -   [Php](#PHP)  
+    -   [JavaScript](#JavaScript)  
+    -   [Цель в](#ObjectiveC)  
+    -   [PHP](#PHP)  
     -   [Python](#Python)  
-    -   [Руби](#Ruby)  
+    -   [Ruby](#Ruby)  
 
 > [!NOTE]
 >  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
@@ -48,7 +48,7 @@ ms.locfileid: "79265965"
 ## <a name="api-list"></a><a name="APIList"></a>Список API  
  Шаблон **списка API** позволяет настроить текст страницы со списком API на портале разработчика.  
   
- ![Список API портала разработчиков](./media/api-management-api-templates/APIM-Developer-Portal-Templates-API-List.png "APIM Разработчик Портал Шаблоны API Список")  
+ ![Список API портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-API-List.png "Список API шаблонов портала разработчика APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -83,13 +83,13 @@ ms.locfileid: "79265965"
 ### <a name="controls"></a>Элементы управления  
  В шаблоне `API list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [контроль над paging](api-management-page-controls.md#paging-control)  
+-   [Управление разбиением на страницы](api-management-page-controls.md#paging-control)  
   
--   [поиск-контроль](api-management-page-controls.md#search-control)  
+-   [Поиск — контроль](api-management-page-controls.md#search-control)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
 |`apis`|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
   
@@ -113,10 +113,10 @@ ms.locfileid: "79265965"
 }  
 ```  
   
-## <a name="operation"></a><a name="Product"></a>Операции  
+## <a name="operation"></a><a name="Product"></a>Операцию  
  Шаблон **операции** позволяет настроить текст страницы операции на портале разработчика.  
   
- ![Страница операции портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-templates-Operation-page.png "Шаблоны APIM Developer Portal")  
+ ![Страница операций портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-templates-Operation-page.png "Страница "операция" шаблонов портала разработчика APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -344,15 +344,15 @@ ms.locfileid: "79265965"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
 |`apiId`|строка|Идентификатор текущего API.|  
 |`apiName`|строка|Имя API.|  
 |`apiDescription`|строка|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
-|`operation`|[Операции](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
+|`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
 |`sampleUrl`|строка|URL-адрес текущей операции.|  
-|`operationMenu`|[Меню операции](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
+|`operationMenu`|[Меню "операция"](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
 |`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
 |`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
   
@@ -643,28 +643,28 @@ ms.locfileid: "79265965"
 }  
 ```  
   
-## <a name="code-samples"></a><a name="CodeSamples"></a> Примеры кода  
+## <a name="code-samples"></a><a name="CodeSamples"></a>Примеры кода  
  Следующие шаблоны позволяют настроить текст отдельных примеров кода на странице операции.  
   
- ![Образцы кода шаблонов портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-Code-samples.png "ApIM Разработчик Портал шаблоны образцы кода")  
+ ![Примеры кода для шаблонов портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-Code-samples.png "Примеры кода для шаблонов портала разработчика APIM")  
   
--   [Curl](#Curl)  
+-   [Листывания](#Curl)  
   
--   [C #](#CSharp)  
+-   [C#](#CSharp)  
   
 -   [Java](#Stub)  
   
--   [Javascript](#JavaScript)  
+-   [JavaScript](#JavaScript)  
   
--   [Цель C](#ObjectiveC)  
+-   [Цель в](#ObjectiveC)  
   
--   [Php](#PHP)  
+-   [PHP](#PHP)  
   
 -   [Python](#Python)  
   
--   [Руби](#Ruby)  
+-   [Ruby](#Ruby)  
   
-### <a name="curl"></a><a name="Curl"></a>Curl  
+### <a name="curl"></a><a name="Curl"></a>Листывания  
  Шаблон **DocumentationSamplesCurl** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -717,7 +717,7 @@ curl -v -X {{method}} "{{scheme}}://{{host}}{{path}}{{query | escape }}"
 }  
 ```  
   
-### <a name="c"></a><a name="CSharp"></a>C #  
+### <a name="c"></a><a name="CSharp"></a>Ц #  
  Шаблон **DocumentationSamplesCsharp** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -992,7 +992,7 @@ public class JavaSample
 }  
 ```  
   
-### <a name="javascript"></a><a name="JavaScript"></a>Javascript  
+### <a name="javascript"></a><a name="JavaScript"></a>Скриптов  
  Шаблон **DocumentationSamplesJs** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1193,7 +1193,7 @@ int main(int argc, const char * argv[])
 }  
 ```  
   
-### <a name="php"></a><a name="PHP"></a>Php  
+### <a name="php"></a><a name="PHP"></a>ТИПЫ  
  Шаблон **DocumentationSamplesPhp** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1283,7 +1283,7 @@ catch (HttpException $ex)
 }  
 ```  
   
-### <a name="python"></a><a name="Python"></a>Python  
+### <a name="python"></a><a name="Python"></a>Языке  
  Шаблон **DocumentationSamplesPython** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1401,7 +1401,7 @@ except Exception as e:
 }  
 ```  
   
-### <a name="ruby"></a><a name="Ruby"></a> Ruby  
+### <a name="ruby"></a><a name="Ruby"></a>Ruby  
  Шаблон **DocumentationSamplesRuby** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1472,5 +1472,5 @@ puts response.body
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

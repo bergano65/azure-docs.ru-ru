@@ -1,5 +1,5 @@
 ---
-title: Миграция базы данных серверов S'L Server в единую/объединенную базу данных
+title: SQL Server миграции базы данных в одну базу данных или в составе пула
 description: Сведения о том, как выполнить миграцию базы данных SQL Server в отдельную базу данных или эластичный пул в Базе данных SQL Azure.
 keywords: миграция базы данных, миграция базы данных SQL Server, средства миграции базы данных, миграция базы данных, миграция базы данных SQL
 services: sql-database
@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 02/11/2019
 ms.openlocfilehash: 9cec91ccc80b9072b1a3da756f26f47eb88b951c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79268617"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
@@ -84,14 +84,14 @@ ms.locfileid: "79268617"
 
 1. Настройка распространения
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_1).
-   - [Использование Трансакт-СЗЛ](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_2)
+   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_2)
 
 2. Создание публикации
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_1).
-   - [Использование Трансакт-СЗЛ](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2)
+   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2)
 3. Создавать подписку
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_0).
-   - [Использование Трансакт-СЗЛ](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1)
+   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1)
 
 Некоторые советы и описание различий при миграции в базу данных SQL
 
@@ -107,9 +107,9 @@ ms.locfileid: "79268617"
 Существует широкий спектр проблем совместимости, которые могут возникнуть в зависимости от версии исходной базы данных SQL Server и сложности базы данных, для которой выполняется миграция. В более старых версиях SQL Server имеются дополнительные проблемы совместимости. Воспользуйтесь поиском в Интернете, а также следующими ресурсами:
 
 - [Функции базы данных SQL Server, которые не поддерживаются в Базе данных SQL Azure](sql-database-transact-sql-information.md)
-- [Нерекомендуемые функции ядра СУБД в SQL Server 2016](https://msdn.microsoft.com/library/ms144262%28v=sql.130%29)
-- [Прекратив функцию движка базы данных в сервере S'L 2014](https://msdn.microsoft.com/library/ms144262%28v=sql.120%29)
-- [Прекратив функцию движка базы данных в сервере S'L 2012](https://msdn.microsoft.com/library/ms144262%28v=sql.110%29)
+- [Неподдерживаемые функции ядра СУБД в SQL Server 2016](https://msdn.microsoft.com/library/ms144262%28v=sql.130%29)
+- [Неподдерживаемые функции ядро СУБД в SQL Server 2014](https://msdn.microsoft.com/library/ms144262%28v=sql.120%29)
+- [Неподдерживаемые функции ядро СУБД в SQL Server 2012](https://msdn.microsoft.com/library/ms144262%28v=sql.110%29)
 - [Неподдерживаемые функции ядра СУБД в SQL Server 2008 R2](https://msdn.microsoft.com/library/ms144262%28v=sql.105%29)
 - [Неподдерживаемые функции ядра СУБД в SQL Server 2005](https://msdn.microsoft.com/library/ms144262%28v=sql.90%29)
 
@@ -118,7 +118,7 @@ ms.locfileid: "79268617"
 > [!IMPORTANT]
 > Служба "Управляемый экземпляр Базы данных SQL" позволяет перенести существующий экземпляр SQL Server и его базы данных с минимальными проблемами совместимости или вовсе без них. См. раздел [Общие сведения об Управляемом экземпляре Базы данных SQL Azure (предварительная версия)](sql-database-managed-instance.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/12/28/lesson-learned-10-monitoring-tempdb-usage/).
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](https://docs.microsoft.com/archive/blogs/azuresqlemea/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database).
