@@ -1,6 +1,6 @@
 ---
-title: Управляемость и мониторинг - обзор
-description: Обзор мониторинга и управляемости для использования ресурсов, деятельности журналов и запросов, рекомендаций и защиты данных (резервное копирование и восстановление) с помощью пула Synapse S'L.
+title: Управление и мониторинг — обзор
+description: Общие сведения о мониторинге использования ресурсов, действиях журналов и запросов, рекомендации и защите данных (резервное копирование и восстановление) с помощью пула синапсе SQL.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -12,15 +12,15 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: e41bf003af7d0926aab04ffed86bf6ec5031c4f7
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80586421"
 ---
-# <a name="manageability-and-monitoring-with-synapse-sql-pool"></a>Управляемость и мониторинг с помощью пула Synapse S'L
+# <a name="manageability-and-monitoring-with-synapse-sql-pool"></a>Управляемость и мониторинг с помощью пула SQL синапсе
 
-Синапсе S'L позволяет предоставлять хранилище данных через пул S'L. Статьи, которые следуют поможет вам управлять и контролировать ваш склад данных. Вы также узнаете, как оптимизировать использование и производительность хранилища данных.
+Синапсе SQL позволяет подготавливать хранилище данных через пул SQL. Приведенные ниже статьи помогут вам управлять хранилищем данных и отслеживать его. Кроме того, вы узнаете о способах оптимизации использования и производительности хранилища данных.
 
 ## <a name="overview"></a>Обзор
 
@@ -32,5 +32,5 @@ ms.locfileid: "80586421"
 * [Устранение неполадок хранилища данных SQL Azure](sql-data-warehouse-troubleshoot.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
-Для руководства How-to, [см. монитор и настройте свой пул S'L.](sql-data-warehouse-manage-monitor.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+Практические руководства см. в разделе [мониторинг и Настройка пула SQL](sql-data-warehouse-manage-monitor.md).

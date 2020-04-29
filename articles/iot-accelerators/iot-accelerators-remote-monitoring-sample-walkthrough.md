@@ -1,6 +1,6 @@
 ---
 title: Обзор акселератора решения для удаленного мониторинга — Azure | Документация Майкрософт
-description: В этой статье представлен обзор некоторых ключевых элементов решения удаленного мониторинга, позволяющий понять, как это работает.
+description: В этой статье представлен обзор некоторых ключевых элементов решения для удаленного мониторинга, позволяющих понять, как это работает.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
 ms.openlocfilehash: f501eb55f72811063ddf1d8e02a0ce2137d598f3
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80546310"
 ---
 # <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решения для удаленного мониторинга
@@ -32,7 +32,7 @@ ms.locfileid: "80546310"
 
 ## <a name="logical-architecture"></a>Логическая архитектура
 
-На следующей диаграмме изложены логические компоненты ускорителя решения удаленного мониторинга, наложенного на [архитектуру IoT:](../iot-fundamentals/iot-introduction.md)
+На следующей схеме описаны логические компоненты ускорителя решений для удаленного мониторинга, наложенного на [архитектуру IOT](../iot-fundamentals/iot-introduction.md).
 
 ![Логическая архитектура](./media/iot-accelerators-remote-monitoring-sample-walkthrough/remote-monitoring-architecture.png)
 
@@ -157,7 +157,7 @@ ms.locfileid: "80546310"
 
 Микрослужба конфигурации обеспечивает сохранение и извлечение параметров конфигурации пользовательским интерфейсом.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы хотите просмотреть исходный код и документацию разработчика, начните с одного из двух репозиториев GitHub:
 
@@ -167,4 +167,4 @@ ms.locfileid: "80546310"
 Подробные схемы архитектуры решения:
 * [Архитектура акселератора решения для удаленного мониторинга](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Architecture).
 
-Для получения дополнительной концептуальной информации об [Customize the solution accelerator](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md)ускорителе решений удаленного мониторинга см.
+Дополнительные сведения об ускорителе решений для удаленного мониторинга см. в разделе [Настройка акселератора решений](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md).

@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 04/01/2020
 ms.openlocfilehash: 265179909c8ae4a6fa630b835bc9993f042d6460
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80585698"
 ---
 # <a name="azure-monitor-log-query-language-differences"></a>Различия в языках запросов журнала Azure Monitor
@@ -29,32 +29,32 @@ ms.locfileid: "80585698"
 
 ### <a name="functions-not-supported-in-azure-monitor"></a>Функции, которые не поддерживаются в Azure Monitor:
 
-* [кластера()](/azure/kusto/query/clusterfunction)
+* [cluster()](/azure/kusto/query/clusterfunction)
 * [cursor_after()](/azure/kusto/query/cursorafterfunction)
-* [cursor_before_or_at()](/azure/kusto/query/cursorbeforeoratfunction);
+* [cursor_before_or_at()](/azure/kusto/query/cursorbeforeoratfunction)
 * [cursor_current(), current_cursor()](/azure/kusto/query/cursorcurrent);
-* [база данных()](/azure/kusto/query/databasefunction)
+* [database()](/azure/kusto/query/databasefunction)
 * [current_principal()](/azure/kusto/query/current-principalfunction)
-* [extent_id()](/azure/kusto/query/extentidfunction);
-* [extent_tags()](/azure/kusto/query/extenttagsfunction).
+* [extent_id()](/azure/kusto/query/extentidfunction)
+* [extent_tags()](/azure/kusto/query/extenttagsfunction)
 
 ### <a name="operators-not-supported-in-azure-monitor"></a>Операторы, которые не поддерживаются в Azure Monitor:
 
-* [Кросс-кластерНое соединение](/azure/kusto/query/joincrosscluster)
+* [Соединение между кластерами](/azure/kusto/query/joincrosscluster)
 
 ### <a name="plugins-not-supported-in-azure-monitor"></a>Подключаемые модули, которые не поддерживаются в Azure Monitor:
 
-* [Плагин Python](/azure/kusto/query/pythonplugin)
+* [Подключаемый модуль Python](/azure/kusto/query/pythonplugin)
 * [модуль sql_request](/azure/kusto/query/sqlrequestplugin).
 
 
 ## <a name="additional-operators-in-azure-monitor"></a>Дополнительные операторы в Azure Monitor
 Следующие операторы поддерживают конкретные функции Azure Monitor и недоступны вне Azure Monitor.
 
-* [приложение()](app-expression.md)
-* [рабочее пространство()](workspace-expression.md)
+* [приложение ()](app-expression.md)
+* [Рабочая область ()](workspace-expression.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](query-language.md).
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).

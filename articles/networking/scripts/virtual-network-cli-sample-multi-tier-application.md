@@ -1,5 +1,5 @@
 ---
-title: Образец сценария Azure CLI - Создание сети для многоуровневых приложений
+title: Azure CLI пример скрипта. Создание сети для многоуровневых приложений
 description: Пример скрипта Azure CLI. Создание сети для многоуровневых приложений.
 services: virtual-network
 documentationcenter: virtual-network
@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
 ms.openlocfilehash: 97e26eaed72bc15ebc46a893d269b05484d8a064
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80521540"
 ---
 # <a name="create-a-network-for-multi-tier-applications"></a>Создание сети для многоуровневых приложений
@@ -45,7 +45,7 @@ az group delete --name MyResourceGroup --yes
 
 Для создания группы ресурсов, виртуальной сети и групп безопасности сети этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](/cli/azure/network/vnet) | Создает виртуальную сеть Azure и интерфейсную подсеть. |
@@ -61,4 +61,4 @@ az group delete --name MyResourceGroup --yes
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные образцы скриптов CLI сетей можно найти в [документации Azure Networking Overview](../cli-samples.md)
+Дополнительные примеры скриптов для сетевых интерфейсов CLI можно найти в [обзорной документации по сети Azure](../cli-samples.md) .

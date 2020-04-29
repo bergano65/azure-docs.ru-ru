@@ -1,5 +1,5 @@
 ---
-title: 'ExpressRoute: Свяжите VNet с схемой: Azure PowerShell'
+title: 'ExpressRoute: связывание виртуальной сети с цепью: Azure PowerShell'
 description: В этом документе содержатся общие сведения о связывании виртуальных сетей с каналами ExpressRoute с помощью модели развертывания Resource Manager и PowerShell.
 services: expressroute
 author: charwen
@@ -9,10 +9,10 @@ ms.date: 05/20/2018
 ms.author: charwen
 ms.custom: seodec18
 ms.openlocfilehash: 755b1898ee4cbc32de3a65a6bbc368ecf3eb3acf
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80616382"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>Подключение виртуальной сети к каналу ExpressRoute
@@ -20,8 +20,8 @@ ms.locfileid: "80616382"
 > * [Портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-linkvnet-arm.md)
 > * [Azure CLI](howto-linkvnet-cli.md)
-> * [Видео - Портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
-> * [PowerShell (классический)](expressroute-howto-linkvnet-classic.md)
+> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
+> * [PowerShell (классическая модель)](expressroute-howto-linkvnet-classic.md)
 >
 
 Эта статья поможет вам связать виртуальные сети с каналами Azure ExpressRoute с помощью модели развертывания Resource Manager и PowerShell. Виртуальные сети могут входить в одну и ту же подписку или в разные подписки. В этой статье также показано, как обновить связь виртуальной сети.
@@ -33,7 +33,7 @@ ms.locfileid: "80616382"
 * Если включить надстройку канала ExpressRoute Premium, вы сможете подключить к каналу ExpressRoute больше виртуальных сетей, включая сети из других геополитических регионов. Дополнительную информацию о надстройке Premium см. в разделе [Вопросы и ответы](expressroute-faqs.md).
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 * Прежде чем приступить к настройке, изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
 
@@ -176,10 +176,10 @@ Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connecti
 
 Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
 
-## <a name="configure-expressroute-fastpath"></a>Настройка ExpressRoute FastPath 
-Вы можете включить [ExpressRoute FastPath,](expressroute-about-virtual-network-gateways.md) если ваш виртуальный сетевой шлюз Ultra Performance или ErGw3A. FastPath улучшает производительность пути передачи данных, такие как пакеты в секунду и соединения в секунду между вашей предварительной сетью и виртуальной сетью. 
+## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
+Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если шлюз виртуальной сети имеет значение Ultra Performance или ErGw3AZ. Фастпас улучшает производительность пути к данным, например количество пакетов в секунду и число подключений в секунду между локальной сетью и виртуальной сетью. 
 
-**Настройка FastPath на новом подключении**
+**Настройка Фастпас для нового подключения**
 
 ```azurepowershell-interactive 
 $circuit = Get-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG" 
@@ -187,7 +187,7 @@ $gw = Get-AzVirtualNetworkGateway -Name "MyGateway" -ResourceGroupName "MyRG"
 $connection = New-AzVirtualNetworkGatewayConnection -Name "MyConnection" -ResourceGroupName "MyRG" -ExpressRouteGatewayBypass -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute -Location "MyLocation" 
 ``` 
 
-**Обновление существующего соединения для включения FastPath**
+**Обновление существующего подключения для включения Фастпас**
 
 ```azurepowershell-interactive 
 $connection = Get-AzVirtualNetworkGatewayConnection -Name "MyConnection" -ResourceGroupName "MyRG" 
@@ -195,5 +195,5 @@ $connection.ExpressRouteGatewayBypass = $True
 Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection
 ``` 
 
-## <a name="next-steps"></a>Следующие шаги
-Для получения дополнительной информации о ExpressRoute, [см.](expressroute-faqs.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+Дополнительные сведения об ExpressRoute см. в статье [вопросы и ответы по expressroute](expressroute-faqs.md).

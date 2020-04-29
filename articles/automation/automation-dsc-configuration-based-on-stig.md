@@ -1,6 +1,6 @@
 ---
-title: Конфигурация на основе STIG для использования в конфигурации состояния - Azure Automation
-description: Узнайте о конфигурациях, основанных на STIG для конфигурации состояния в Azure Automation.
+title: Конфигурация на основе Стиг для использования в конфигурации состояния — служба автоматизации Azure
+description: Сведения о конфигурациях, основанных на Стиг, для настройки состояния в службе автоматизации Azure.
 keywords: dsc,powershell,конфигурация,установка
 services: automation
 ms.service: automation
@@ -11,38 +11,38 @@ ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: d6d257198fcae54b1214d77f6b905d876d2687f5
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80585531"
 ---
 # <a name="configuration-based-on-stig"></a>Использование конфигурации на основе STIG
 
-> Применяется к: Windows PowerShell 5.1
+> Область применения: Windows PowerShell 5,1
 
-Создание содержимого конфигурации впервые может оказаться непростой задачей.
-Во многих случаях цель заключается в автоматизации конфигурации серверов после "базовой линии", которая, как мы надеемся, соответствует рекомендации отрасли.
+Создание содержимого конфигурации в первый раз может быть непростой задачей.
+Во многих случаях цель состоит в том, чтобы автоматизировать настройку серверов после "базовой", которая, надеюсь, соответствует отраслевым рекомендациям.
 
 > [!NOTE]
-> Эта статья относится к решению, которое поддерживается сообществом open Source.
-> Поддержка доступна только в форме совместной работы GitHub, а не от корпорации Майкрософт.
+> В этой статье рассматривается решение, поддерживаемое сообществом с открытым исходным кодом.
+> Поддержка доступна только в форме службы совместной работы GitHub, а не корпорацией Майкрософт.
 
-## <a name="community-project-powerstig"></a>Общественный проект: PowerSTIG
+## <a name="community-project-powerstig"></a>Проект сообщества: Поверстиг
 
-Общинный проект под названием [PowerSTIG](https://github.com/microsoft/powerstig) направлен на решение этой проблемы путем создания контента DSC на основе [публичной информации](https://public.cyber.mil/stigs/) о STIG (Руководство по технической реализации безопасности),
+Проект сообщества с именем [поверстиг](https://github.com/microsoft/powerstig) предназначен для решения этой проблемы путем создания содержимого DSC на основе [общедоступной информации](https://public.cyber.mil/stigs/) о Стиг (руководству по технической реализации по безопасности).
 
-Работа с базовыми линиями сложнее, чем кажется.
-Многим организациям необходимо [документировать исключения](https://github.com/microsoft/powerstig#powerstigdata) из правил и управлять этими данными в масштабе.
-PowerSTIG решает проблему, предоставляя [композитные ресурсы](https://github.com/microsoft/powerstig#powerstigdsc) для решения каждой области конфигурации, а не пытаясь решить весь диапазон параметров в одном большом файле.
+Работа с базовыми показателями сложнее, чем она звучит.
+Многим организациям необходимо [документировать исключения](https://github.com/microsoft/powerstig#powerstigdata) в правилах и управлять этими данными в масштабе.
+Поверстиг решает проблему, предоставляя [Составные ресурсы](https://github.com/microsoft/powerstig#powerstigdsc) для решения каждой области конфигурации, не пытаясь обращаться ко всему диапазону параметров в одном большом файле.
 
-После создания конфигураций можно использовать [скрипты Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations) для генерации файлов MOF и [загрузки файлов MOF в Azure Automation.](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation)
-Затем зарегистрируйте серверы либо в [помещении,](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) либо [в Azure,](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) чтобы вытащить конфигурации.
+После создания конфигураций можно использовать [сценарии конфигурации DSC](/powershell/scripting/dsc/configurations/configurations) для создания MOF-файлов и [передачи MOF-файлов в службу автоматизации Azure](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation).
+Затем зарегистрируйте серверы из [локальной](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) среды или [в Azure](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) для извлечения конфигураций.
 
-Чтобы опробовать PowerSTIG, посетите [галерею PowerShell](https://www.powershellgallery.com) и загрузите решение или нажмите "Сайт проекта", чтобы просмотреть [документацию.](https://github.com/microsoft/powerstig)
+Чтобы испытать Поверстиг, перейдите на [коллекция PowerShell](https://www.powershellgallery.com) и скачайте решение или щелкните "сайт проекта", чтобы просмотреть [документацию](https://github.com/microsoft/powerstig).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview)
 - [Ресурсы DSC](/powershell/scripting/dsc/resources/resources)
-- [Настройка локального менеджера конфигурации](/powershell/scripting/dsc/managing-nodes/metaconfig)
+- [Настройка локального Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaconfig)

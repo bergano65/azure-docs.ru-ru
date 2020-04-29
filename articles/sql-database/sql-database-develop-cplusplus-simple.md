@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/12/2018
 ms.openlocfilehash: ed8e5eaa0ff9b58f80473b052aacfb9f01d45055
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80529220"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Подключение к базе данных SQL с помощью C и C++
@@ -27,11 +27,11 @@ ms.locfileid: "80529220"
 Убедитесь, что у вас есть указанные ниже компоненты.
 
 * Активная учетная запись Azure. Если у вас нет такой учетной записи, вы можете зарегистрироваться для использования [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* [Визуальная студия](https://www.visualstudio.com/downloads/). Для разработки и запуска этого примера необходимо установить компоненты языка C++.
+* [Visual Studio](https://www.visualstudio.com/downloads/). Для разработки и запуска этого примера необходимо установить компоненты языка C++.
 * [Инструменты разработки Visual Studio для Linux](https://docs.microsoft.com/cpp/linux/?view=vs-2019). Если вы разрабатываете приложение на платформе Linux, необходимо также установить расширение Linux для Visual Studio.
 
 ## <a name="azure-sql-database-and-sql-server-on-virtual-machines"></a><a id="AzureSQL"></a>База данных SQL Azure и SQL Server на виртуальных машинах
-Компоненты Azure SQL основаны на Microsoft SQL Server и предназначены для обеспечения высокой доступности, производительности и масштабируемости служб. Использование SQL Azure с собственной локальной базой данных дает множество преимуществ. С помощью S'L Azure вам не нужно устанавливать, настраивать, обслуживать или управлять базой данных, а только содержимое и структуру базы данных. В нее встроены такие возможности, как отказоустойчивость и избыточность, которые так важны при работе с базами данных.
+Компоненты Azure SQL основаны на Microsoft SQL Server и предназначены для обеспечения высокой доступности, производительности и масштабируемости служб. Использование SQL Azure с собственной локальной базой данных дает множество преимуществ. В SQL Azure нет необходимости устанавливать, настраивать и обслуживать базу данных, а также управлять ею только содержимым и структурой базы данных. В нее встроены такие возможности, как отказоустойчивость и избыточность, которые так важны при работе с базами данных.
 
 В данный момент Azure предлагает два варианта для обработки рабочих нагрузок сервера SQL: база данных SQL Azure (база данных как услуга) и сервер SQL на виртуальных машинах. Мы не будем подробно рассматривать различия между этими двумя вариантами, однако отметим, что база данных Azure SQL является лучшим решением для новых облачных приложений, так как она позволяет экономить средства и оптимизировать производительность облачных служб. Если вы рассматриваете возможность переноса или расширения своих локальных приложений в облако, сервер SQL на виртуальной машине Azure может быть хорошим выбором. Чтобы было проще следовать инструкциям в этой статье, создадим базу данных SQL Azure.
 
@@ -77,7 +77,7 @@ ms.locfileid: "80529220"
 Поздравляем! Вы успешно установили подключение к базе данных SQL Azure при помощи C++ и ODBC в Windows. Чтобы сделать то же самое для платформы Linux, см. сведения дальше в этой статье.
 
 ## <a name="step-5-connecting-from-a-linux-cc-application"></a><a id="Linux"></a>Шаг 5. Подключение из приложения Linux C/C++
-В случае, если вы еще не слышали новости, Visual Studio теперь позволяет разрабатывать и приложение СЗ Linux. Об этой новой возможности можно прочитать в записи блога [Visual C++ for Linux Development](https://blogs.msdn.microsoft.com/vcblog/20../../visual-c-for-linux-development/) (Разработка Visual C++ для Linux). Чтобы создавать приложения для Linux, необходим удаленный компьютер, на котором запущен дистрибутив Linux. Если у вас нет такого, вы можете быстро настроить его с помощью [виртуальных машин Linux Azure.](../virtual-machines/linux/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+Если вы еще не слышали новости, Visual Studio теперь позволяет разрабатывать приложения C++ Linux. Об этой новой возможности можно прочитать в записи блога [Visual C++ for Linux Development](https://blogs.msdn.microsoft.com/vcblog/20../../visual-c-for-linux-development/) (Разработка Visual C++ для Linux). Чтобы создавать приложения для Linux, необходим удаленный компьютер, на котором запущен дистрибутив Linux. Если у вас ее нет, вы можете быстро настроить ее с помощью [виртуальных машин Linux в Azure](../virtual-machines/linux/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Для выполнения инструкций этого руководства предположим, что у вас настроен дистрибутив Linux Ubuntu 16.04. Описанные здесь действия также должны работать для Ubuntu 15.10, Red Hat 6 и Red Hat 7.
 
@@ -127,8 +127,8 @@ ms.locfileid: "80529220"
 * [образец ODBC C++ Windows](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28windows%29) — загрузите образец ODBC C++ Windows для подключения к Azure SQL;
 * [образец ODBC C++ Linux](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28linux%29) — загрузите образец ODBC C++ Linux для подключения к Azure SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Обзор [обзора разработки базы данных S'L](sql-database-develop-overview.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Обзор разработки базы данных SQL](sql-database-develop-overview.md)
 * См. дополнительные сведения в [справочнике по API ODBC](https://docs.microsoft.com/sql/odbc/reference/syntax/odbc-api-reference/)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

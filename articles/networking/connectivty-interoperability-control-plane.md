@@ -1,5 +1,5 @@
 ---
-title: 'Совместимость в Azure : Анализ плоскости управления'
+title: 'Взаимодействие в Azure: анализ плоскости управления'
 description: В этой статье описывается анализ на уровне управления для тестовой конфигурации, с помощью которой можно выполнять анализ взаимодействия между ExpressRoute, VPN типа "сеть — сеть" и пирингом виртуальных сетей в Azure.
 documentationcenter: na
 services: networking
@@ -11,13 +11,13 @@ ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
 ms.openlocfilehash: 5e41bc86533815c394077bf5276d930fe958cd19
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80518269"
 ---
-# <a name="interoperability-in-azure--control-plane-analysis"></a>Совместимость в Azure : Анализ плоскости управления
+# <a name="interoperability-in-azure--control-plane-analysis"></a>Взаимодействие в Azure: анализ плоскости управления
 
 В этой статьей описывается анализ на уровне управления для [тестовой конфигурации][Setup]. Вы также можете просмотреть [настройки][Configuration] и [анализ на уровне данных][Data-Analysis] для тестовой конфигурации.
 
@@ -29,7 +29,7 @@ ms.locfileid: "80518269"
 
 ![1][1]
 
-ASN шлюза Azure ExpressRoute виртуальной сети отличается от ASN других корпоративных пограничных маршрутизаторов Microsoft Enterprise (MSEE). Шлюз ExpressRoute использует частный ASN (значение **65515**), а MSEE используют общедоступный ASN (значение **12076**) глобально. При настройке ExpressRoute вглядываясь, потому что MSEE является одноранговой, вы используете **12076** в качестве одноранговой ASN. На стороне Azure MSEE устанавливает пиринг eBGP со шлюзом ExpressRoute. Двойной пиринг eBGP, который MSEE устанавливает для каждого пирингового подключения ExpressRoute, прозрачен на уровне управления. Поэтому при просмотре таблицы маршрутов ExpressRoute вы видите шлюз ExpressRoute VNet ASN для префиксов VNet. 
+ASN шлюза Azure ExpressRoute виртуальной сети отличается от ASN других корпоративных пограничных маршрутизаторов Microsoft Enterprise (MSEE). Шлюз ExpressRoute использует частный ASN (значение **65515**), а MSEE используют общедоступный ASN (значение **12076**) глобально. При настройке пиринга ExpressRoute, так как MSEE является одноранговым узлом, в качестве однорангового ASN используется **12076** . На стороне Azure MSEE устанавливает пиринг eBGP со шлюзом ExpressRoute. Двойной пиринг eBGP, который MSEE устанавливает для каждого пирингового подключения ExpressRoute, прозрачен на уровне управления. Таким образом, при просмотре таблицы маршрутов ExpressRoute вы видите шлюз ExpressRoute виртуальной сети ASN для префиксов виртуальной сети. 
 
 На следующем рисунке показан пример таблицы маршрутов ExpressRoute: 
 
@@ -45,7 +45,7 @@ ASN шлюза Azure ExpressRoute виртуальной сети отличае
 
 ## <a name="on-premises-location-1-and-the-branch-vnet-perspective-via-a-site-to-site-vpn"></a>Схема подключения локального расположения 1 к виртуальной сети филиала через VPN-подключение типа "сеть — сеть"
 
-Как локальные расположение 1, так и филиал VNet подключены к VPN-шлюзу концентратора VNet через VPN-соединение от сайта к сайту. Они имеют одинаковую схему топологии, как показано на рисунке, приведенном ниже:
+Локальное расположение 1 и виртуальная сеть филиала подключены к VPN-шлюзу концентратора виртуальной сети через VPN-подключение типа "сеть — сеть". Они имеют одинаковую схему топологии, как показано на рисунке, приведенном ниже:
 
 ![3][3]
 
@@ -83,7 +83,7 @@ ExpressRoute предоставляется в виде пары каналов,
 
 Дополнительные сведения см. в статьях [Сведения о VPN-шлюзе][VPN] и [Развертывание высокодоступных виртуальных сетевых модулей][Deploy-NVA].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об анализе на уровне данных для конфигурации теста и представлениях функций мониторинга сети Azure см. в [этой статье][Data-Analysis].
 
@@ -94,10 +94,10 @@ ExpressRoute предоставляется в виде пары каналов,
 
 
 <!--Image References-->
-[1]: ./media/backend-interoperability/HubView.png "Концентратор и говорил VNet точки зрения топологии"
-[2]: ./media/backend-interoperability/Loc1ExRView.png "Расположение 1 и удаленная перспектива VNet топологии через ExpressRoute 1"
-[3]: ./media/backend-interoperability/Loc1VPNView.png "Расположение 1 и ветвь VNet перспектива топологии через сайт на сайт VPN"
-[4]: ./media/backend-interoperability/Loc2View.png "Место 2 перспектива топологии"
+[1]: ./media/backend-interoperability/HubView.png "Перспектива топологии HUB и периферийной виртуальной сети"
+[2]: ./media/backend-interoperability/Loc1ExRView.png "Расположение 1 и удаленная виртуальная сеть с точки зрения топологии через ExpressRoute 1"
+[3]: ./media/backend-interoperability/Loc1VPNView.png "Расположение 1 и виртуальная сеть филиалов топологии через VPN-подключение типа "сеть — сеть""
+[4]: ./media/backend-interoperability/Loc2View.png "Расположение 2 точки топологии"
 [5]: ./media/backend-interoperability/ExR1-RouteTable.png "Таблица маршрутов ExpressRoute 1"
 
 <!--Link References-->

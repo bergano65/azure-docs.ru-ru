@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
 ms.openlocfilehash: 89bae60c30cfe82d38c61f385dbaef574b4152d8
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80547782"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager
@@ -177,15 +177,15 @@ ms.locfileid: "80547782"
 
 ## <a name="details"></a>Сведения
 
-| Имя свойства | Тип | Описание |
+| Имя свойства. | Type | Описание |
 | --- | --- | --- |
-| settings.wmfVersion |строка |Указывает версию Windows Management Framework (WMF), которую необходимо установить на виртуальной машине. Установка этого свойства на **последнюю** установку последней версии WMF. В настоящее время для этого свойства доступны только такие значения: **4.0**, **5.0**, **5.1** и **latest**. Возможные значения зависят от обновлений. Значение по умолчанию является **последним.** |
+| settings.wmfVersion |строка |Указывает версию Windows Management Framework (WMF), которую необходимо установить на виртуальной машине. Установка для этого свойства значения **Последняя** устанавливает последнюю версию WMF. В настоящее время для этого свойства доступны только такие значения: **4.0**, **5.0**, **5.1** и **latest**. Возможные значения зависят от обновлений. Значение по умолчанию — **Latest**. |
 | settings.configuration.url |строка |Указывает URL-адрес расположения, из которого можно скачать ZIP-файл конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, задайте для свойства **protectedSettings.configurationUrlSasToken** значение маркера SAS. Это свойство обязательное, если заданы свойства **settings.configuration.script** или **settings.configuration.function**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных диспетчера конфигурации расположения (LCM) и аргументов. |
 | settings.configuration.script |строка |Указывает имя файла скрипта, содержащего определение вашей конфигурации DSC. Этот скрипт должен находиться в корневом каталоге ZIP-файла, скачанного по URL-адресу, указанному в свойстве **settings.configuration.url**. Это свойство обязательное, если заданы свойства **settings.configuration.url** или **settings.configuration.script**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных LCM и аргументов. |
 | settings.configuration.function |строка |Указывает имя вашей конфигурации DSC. Указанную конфигурацию необходимо добавить в скрипт, который определяет свойство **settings.configuration.script**. Это свойство обязательное, если заданы свойства **settings.configuration.url** или **settings.configuration.function**. Если для этих свойств значение не задано, необходимо предоставить расширение, которое вызывает скрипт конфигурации по умолчанию для установки метаданных LCM и аргументов. |
 | settings.configurationArguments |Collection |Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство не зашифровано. |
 | settings.configurationData.url |строка |Указывает URL-адрес расположения, из которого можно скачать файл данных конфигурации (в формате PDS1), используемый в качестве входных данных для вашей конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, задайте для свойства **protectedSettings.configurationDataUrlSasToken** значение маркера SAS. |
-| settings.privacy.dataCollection |строка |Включает или отключает сбор данных телеметрии. Единственными возможными значениями для этого свойства являются **Включить,** **Отключить**, **''**, или **$null.** Если для этого свойства не задано значение или задано значение null, сбор данных телеметрии будет выполняться. Значение по умолчанию **''**. Дополнительные сведения см. в записи блога [Azure DSC Extension Data Collection](https://blogs.msdn.microsoft.com/powershell/2016/02/02/azure-dsc-extension-data-collection-2/) (Коллекция данных расширения DSC Azure). |
+| settings.privacy.dataCollection |строка |Включает или отключает сбор данных телеметрии. Единственными возможными значениями для этого свойства являются **Enable**, **Disable**, **""** или **$null**. Если для этого свойства не задано значение или задано значение null, сбор данных телеметрии будет выполняться. Значение по умолчанию — **""**. Дополнительные сведения см. в записи блога [Azure DSC Extension Data Collection](https://blogs.msdn.microsoft.com/powershell/2016/02/02/azure-dsc-extension-data-collection-2/) (Коллекция данных расширения DSC Azure). |
 | settings.advancedOptions.downloadMappings |Collection |Определяет альтернативные расположения для скачивания Windows Management Framework. Дополнительные сведения см. в записи блога [Azure DSC Extension 2.8 & How to map downloads of the extension dependencies to your own location](https://blogs.msdn.com/b/powershell/archive/2015/10/21/azure-dsc-extension-2-2-amp-how-to-map-downloads-of-the-extension-dependencies-to-your-own-location.aspx) (Расширение DSC Azure версии 2.8. Сведения о сопоставлении загрузок зависимостей расширения с вашим расположением). |
 | protectedSettings.configurationArguments |Collection |Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство зашифровано. |
 | protectedSettings.configurationUrlSasToken |строка |Указывает маркер SAS для доступа к URL-адресу, который определяет свойство **settings.configuration.url**. Это свойство зашифровано. |
@@ -196,17 +196,17 @@ ms.locfileid: "80547782"
 Дополнительные сведения об указанных ниже значениях см. в разделе [Базовые параметры](/powershell/scripting/dsc/managing-nodes/metaConfig#basic-settings).
 С помощью скрипта конфигурации по умолчанию расширения DSC можно настроить только свойства LCM, указанные в следующей таблице.
 
-| Имя свойства | Тип | Описание |
+| Имя свойства. | Type | Описание |
 | --- | --- | --- |
 | protectedSettings.configurationArguments.RegistrationKey |PSCredential |Обязательное свойство. Определяет ключ, используемый узлом для регистрации в службе автоматизации Azure в качестве пароля для объекта учетных данных PowerShell. Это значение можно автоматически обнаружить с помощью метода **listkeys** в учетной записи службы автоматизации.  См. [пример](#example-using-referenced-azure-automation-registration-values). |
 | settings.configurationArguments.RegistrationUrl |строка |Обязательное свойство. Указывает URL-адрес конечной точки службы автоматизации, в которой пытается зарегистрироваться узел. Это значение можно автоматически обнаружить с помощью метода **reference** в учетной записи службы автоматизации. |
 | settings.configurationArguments.NodeConfigurationName |строка |Обязательное свойство. Указывает конфигурацию узла в учетной записи службы автоматизации, которая будет присвоена узлу. |
 | settings.configurationArguments.ConfigurationMode |строка |Указывает режим для LCM. Допустимые значения: **ApplyOnly**, **ApplyandMonitior** и **ApplyandAutoCorrect**.  Значение по умолчанию — **ApplyAndMonitor**. |
-| settings.configurationArguments.RefreshFrequencyMins | uint32 | Указывает, как часто LCM пытается проверить учетную запись службы автоматизации на наличие обновлений.  Значение по умолчанию составляет **30**.  Минимальное значение — **15**. |
+| settings.configurationArguments.RefreshFrequencyMins | uint32 | Указывает, как часто LCM пытается проверить учетную запись службы автоматизации на наличие обновлений.  Значение по умолчанию — **30**.  Минимальное значение — **15**. |
 | settings.configurationArguments.ConfigurationModeFrequencyMins | uint32 | Указывает, как часто LCM проверяет текущую конфигурацию. Значение по умолчанию — **15**. Минимальное значение — **15**. |
-| settings.configurationArguments.RebootNodeIfNeeded | Логическое | Указывает, может ли узел автоматически перезагружаться по запросу операции DSC. Значение по умолчанию **является ложным.** |
+| settings.configurationArguments.RebootNodeIfNeeded | Логическое | Указывает, может ли узел автоматически перезагружаться по запросу операции DSC. Значение по умолчанию — **false**. |
 | settings.configurationArguments.ActionAfterReboot | строка | Указывает, что происходит после перезагрузки при применении конфигурации. Допустимые значения: **ContinueConfiguration** и **StopConfiguration**. Значение по умолчанию: **ContinueConfiguration**. |
-| settings.configurationArguments.AllowModuleOverwrite | Логическое | Указывает, перезаписывает ли LCM имеющиеся модули на узле. Значение по умолчанию **является ложным.** |
+| settings.configurationArguments.AllowModuleOverwrite | Логическое | Указывает, перезаписывает ли LCM имеющиеся модули на узле. Значение по умолчанию — **false**. |
 
 ## <a name="settings-vs-protectedsettings"></a>Сравнение разделов settings и protectedSettings
 
@@ -255,7 +255,7 @@ ms.locfileid: "80547782"
 
 Указанный ниже пример основан на примере конфигурации в статье [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md).
 В этом примере для развертывания расширения используются шаблоны Resource Manager, а не командлеты.
-Сохраните конфигурацию IisInstall.ps1, поместите ее в `iisinstall.zip`файл .zip (пример: ), а затем загрузите файл в доступный URL.
+Сохраните конфигурацию IisInstall. ps1, поместите ее в ZIP-файл (пример: `iisinstall.zip`), а затем отправьте файл в доступном URL-адресе.
 В этом примере используется хранилище BLOB-объектов Azure, но ZIP-файл можно скачать из любого произвольного расположения.
 
 В шаблоне Resource Manager следующий код указывает виртуальной машине скачать правильный файл и выполнить соответствующую функцию PowerShell.
@@ -356,18 +356,18 @@ ms.locfileid: "80547782"
 "WmfVersion имеет значение "{0}".
 Возможные значения: … и "latest".
 
-**Проблема**: Предоставленное значение не допускается.
+**Проблема**: указанное значение недопустимо.
 
-**Решение**: Изменение значения недействительного на допустимое значение.
+**Решение**. Измените недопустимое значение на допустимое.
 Дополнительные сведения см. в таблице раздела [Сведения](#details).
 
 ### <a name="invalid-url"></a>Недопустимый URL-адрес
 
 "ConfigurationData.url имеет значение "{0}". Это недопустимый URL-адрес." "DataBlobUri имеет значение "{0}". Это недопустимый URL-адрес." "Configuration.url имеет значение "{0}". This is not a valid URL" (Значение свойства Configuration.url — "{0}". Это недопустимый URL-адрес).
 
-**Проблема:** предоставленный URL не действителен.
+**Проблема**. предоставлен недопустимый URL-адрес.
 
-**Решение**: Проверьте все предоставленные URL-адреса.
+**Решение**. Проверьте все указанные URL-адреса.
 Убедитесь, что все URL-адреса разрешаются в допустимые расположения, к которым расширение может получить доступ на удаленном компьютере.
 
 ### <a name="invalid-registrationkey-type"></a>Недопустимый тип RegistrationKey
@@ -402,7 +402,7 @@ ms.locfileid: "80547782"
 
 **Проблема.** Свойства *ConfigurationArguments* из общедоступной схемы settings и *ConfigurationArguments* из защищенной схемы settings имеют свойства с одинаковыми именами.
 
-**Решение**: Удалите одно из дублирующих свойств.
+**Решение**. Удалите одно из повторяющихся свойств.
 
 ### <a name="missing-properties"></a>Отсутствующие свойства
 
@@ -420,12 +420,12 @@ ms.locfileid: "80547782"
 
 **Проблема.** Для заданного свойства требуется другое свойство, которое отсутствует.
 
-**Решения:**
+**Решения**:
 
 - Укажите отсутствующее свойство.
 - Удалите свойство, требующее отсутствующего свойства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше об [использовании наборов масштабирования виртуальных машин с помощью расширения Azure DSC](../../virtual-machine-scale-sets/virtual-machine-scale-sets-dsc.md).
 - Получите дополнительные сведения о [безопасном управлении учетными данными посредством DSC](dsc-credentials.md).

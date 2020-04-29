@@ -1,5 +1,5 @@
 ---
-title: 'Совместимость в Azure : Тестовая установка Документы Майкрософт'
+title: 'Взаимодействие в Azure: Настройка теста | Документация Майкрософт'
 description: В этой статье описана настройка теста, с помощью которой можно выполнять анализ взаимодействия между ExpressRoute, VPN типа "сеть — сеть" и пирингом виртуальной сети в Azure.
 documentationcenter: na
 services: networking
@@ -11,13 +11,13 @@ ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
 ms.openlocfilehash: 3aec41a145d2c94a45a453393831902069b9c41b
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80518190"
 ---
-# <a name="interoperability-in-azure--test-setup"></a>Совместимость в Azure : Тестовая настройка
+# <a name="interoperability-in-azure--test-setup"></a>Взаимодействие в Azure: Настройка тестирования
 
 В этой статье описывается настройка теста, с помощью которой можно выполнять анализ взаимодействия сетевых служб Azure на уровне управления и уровне данных. Давайте вкратце рассмотрим сетевые компоненты Azure:
 
@@ -67,7 +67,7 @@ ExpressRoute предоставляется в виде пары каналов,
 
 Дополнительные сведения см. в статьях [Сведения о VPN-шлюзе][VPN] и [Развертывание высокодоступных виртуальных сетевых модулей][Deploy-NVA].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со [сведениями о конфигурации для тестовой топологии][Configuration].
 
@@ -82,7 +82,7 @@ ExpressRoute предоставляется в виде пары каналов,
 
 
 <!--Image References-->
-[1]: ./media/backend-interoperability/TestSetup.png "Диаграмма тестовой топологии"
+[1]: ./media/backend-interoperability/TestSetup.png "Схема топологии тестирования"
 
 <!--Link References-->
 [ExpressRoute]: https://docs.microsoft.com/azure/expressroute/expressroute-introduction
