@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 04/14/2020
 ms.author: Zhchia
 ms.openlocfilehash: 3197ac3033c6550b72bdfdf39fd23c55dda20d90
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82134238"
 ---
 # <a name="tutorial-configure-new-relic-by-organization-for-automatic-user-provisioning"></a>Руководство по настройке новых Relic по организации для автоматической подготовки пользователей
@@ -107,7 +107,7 @@ ms.locfileid: "82134238"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе " **сопоставления** " выберите **синхронизировать Azure Active Directory пользователей с новым Relic по организации**.
 
@@ -117,7 +117,7 @@ ms.locfileid: "82134238"
    |---|---|
    |userName|Строка|
    |externalId|Строка|
-   |active|Логическое|
+   |active|Логическое значение|
    |emails[type eq "work"].value|Строка|
    |name.givenName|Строка|
    |Name. форматируются|Строка|
@@ -162,6 +162,6 @@ ms.locfileid: "82134238"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

@@ -1,42 +1,42 @@
 ---
-title: Установка существующих приложений с шлемом в AKS
-description: Узнайте, как использовать инструмент упаковки Helm для развертывания контейнеров в кластере Службы Azure Kubernetes (AKS)
+title: Установка существующих приложений с помощью Helm в AKS
+description: Узнайте, как использовать средство упаковки Helm для развертывания контейнеров в кластере службы Kubernetes Azure (AKS).
 services: container-service
 author: zr-msft
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: zarhoads
 ms.openlocfilehash: e46bed5fc9fd83a907f8c9e716317a54548c58cc
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81870254"
 ---
-# <a name="install-existing-applications-with-helm-in-azure-kubernetes-service-aks"></a>Установка существующих приложений с помощью службы «Хелм» в Azure Kubernetes Service (AKS)
+# <a name="install-existing-applications-with-helm-in-azure-kubernetes-service-aks"></a>Установка существующих приложений с помощью Helm в службе Kubernetes Azure (AKS)
 
 [Helm][helm] — это средство упаковки с открытым кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как *APT* и *Yum*, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes.
 
 В этой статье показано, как настроить и использовать Helm в кластере Kubernetes в AKS.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Вам также необходимо установить Helm CLI, который является клиентом, который работает на вашей системе разработки. Это позволяет запускать, останавливать и управлять приложениями с помощью Helm. Если вы используете Azure Cloud Shell, интерфейс командной строки Helm уже установлен. Для инструкций по установке на локальной платформе [см.][helm-install]
+Также необходимо установить Helm CLI, который является клиентом, работающим в системе разработки. Она позволяет запускать, прекращать работу приложений и управлять ими с помощью Helm. Если вы используете Azure Cloud Shell, интерфейс командной строки Helm уже установлен. Инструкции по установке на локальной платформе см. в разделе [Installing Helm][helm-install].
 
 > [!IMPORTANT]
-> Helm предназначен для запуска на узлах Linux. Если в кластере есть узлы Windows Server, необходимо убедиться, что стручки Helm будут запущены только на узлах Linux. Также необходимо убедиться, что все установленные диаграммы Helm также запланированы для запуска на правильных узлах. Команды в этой статье используют [селекторы узлов,][k8s-node-selector] чтобы убедиться, что стручки запланированы к правильным узлам, но не все диаграммы Helm могут подвергать селектору узлов. Вы также можете рассмотреть возможность использования других параметров в кластере, таких как [порча.][taints]
+> Helm предназначен для работы на узлах Linux. Если в кластере есть узлы Windows Server, необходимо убедиться, что Helm Pod планируется запускать только на узлах Linux. Также необходимо убедиться, что все устанавливаемые Helm диаграммы запланированы на правильных узлах. Команды, приведенные в этой статье, используют селекторы [узлов][k8s-node-selector] , чтобы убедиться, что модули Pod запланированы для правильных узлов, но не все Helm диаграммы могут предоставлять выбор узла. Можно также использовать другие параметры в кластере, например [таинтс][taints].
 
-## <a name="verify-your-version-of-helm"></a>Проверить версию helm
+## <a name="verify-your-version-of-helm"></a>Проверка версии Helm
 
-Используйте `helm version` команду для проверки установленной версии Helm:
+Используйте `helm version` команду, чтобы проверить установленную версию Helm:
 
 ```console
 helm version
 ```
 
-Следующий пример показывает Руль версия 3.0.0 установлен:
+В следующем примере показана установленная версия 3.0.0 Helm:
 
 ```console
 $ helm version
@@ -44,13 +44,13 @@ $ helm version
 version.BuildInfo{Version:"v3.0.0", GitCommit:"e29ce2a54e96cd02ccfce88bee4f58bb6e2a28b6", GitTreeState:"clean", GoVersion:"go1.13.4"}
 ```
 
-Для Helm v3 следуйте за шагами в [разделе Helm v3](#install-an-application-with-helm-v3). Для Helm v2 следуйте за шагами в [разделе Helm v2](#install-an-application-with-helm-v2)
+Для Helm v3 выполните действия, описанные в [разделе Helm v3](#install-an-application-with-helm-v3). Для Helm v2 выполните действия, описанные в [разделе Helm v2](#install-an-application-with-helm-v2) .
 
-## <a name="install-an-application-with-helm-v3"></a>Установите приложение с Helm v3
+## <a name="install-an-application-with-helm-v3"></a>Установка приложения с помощью Helm v3
 
-### <a name="add-the-official-helm-stable-charts-repository"></a>Добавить официальное хранилище стабильных графиков Helm
+### <a name="add-the-official-helm-stable-charts-repository"></a>Добавление официального репозитория Helm стабильных диаграмм
 
-Используйте команду [репо руля,][helm-repo-add] чтобы добавить официальное хранилище стабильных графиков Helm.
+Используйте команду [репозитория Helm][helm-repo-add] , чтобы добавить официальный репозиторий Helm стабильных диаграмм.
 
 ```console
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
@@ -58,7 +58,7 @@ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 
 ### <a name="find-helm-charts"></a>Поиск чартов Helm
 
-Чарты Helm используются для развертывания приложений в кластере Kubernetes. Для поиска предварительно созданных диаграмм Helm используйте команду [поиска руля:][helm-search]
+Чарты Helm используются для развертывания приложений в кластере Kubernetes. Чтобы найти предварительно созданные диаграммы Helm, используйте команду [поиска Helm][helm-search] :
 
 ```console
 helm search repo stable
@@ -126,7 +126,7 @@ Update Complete. ⎈ Happy Helming!⎈
 
 ### <a name="run-helm-charts"></a>Выполнение чартов Helm
 
-Чтобы установить диаграммы с helm, используйте команду [установки руля][helm-install-command] и укажите имя релиза и название диаграммы для установки. Чтобы увидеть установку диаграммы Helm в действии, давайте установим базовое развертывание nginx с помощью диаграммы Helm.
+Чтобы установить диаграммы с помощью Helm, используйте команду [Helm Install][helm-install-command] и укажите имя выпуска и имя диаграммы для установки. Чтобы увидеть, как установить Helm диаграмму в действии, давайте установим базовое развертывание nginx с помощью диаграммы Helm.
 
 ```console
 helm install my-nginx-ingress stable/nginx-ingress \
@@ -154,7 +154,7 @@ You can watch the status by running 'kubectl --namespace default get services -o
 ...
 ```
 
-Используйте `kubectl get services` команду, чтобы получить *EXTERNAL-IP* вашей службы. Например, ниже команда показывает *EXTERNAL-IP* для *моего-nginx-ingress-контроллер* службы:
+Используйте `kubectl get services` команду, чтобы получить *внешний IP-адрес* службы. Например, приведенная ниже команда демонстрирует *внешний IP-адрес* для службы *My-nginx-входящий-Controller* :
 
 ```console
 $ kubectl --namespace default get services -o wide -w my-nginx-ingress-controller
@@ -163,15 +163,15 @@ NAME                          TYPE           CLUSTER-IP     EXTERNAL-IP     PORT
 my-nginx-ingress-controller   LoadBalancer   10.0.123.1     <EXTERNAL-IP>   80:31301/TCP,443:31623/TCP   96s   app=nginx-ingress,component=controller,release=my-nginx-ingress
 ```
 
-### <a name="list-releases"></a>Список релизов
+### <a name="list-releases"></a>Вывод списка выпусков
 
-Чтобы увидеть список релизов, установленных `helm list` в кластере, используйте команду.
+Чтобы просмотреть список выпусков, установленных в кластере, используйте `helm list` команду.
 
 ```console
 helm list
 ```
 
-Следующий пример показывает *мой-nginx-вход* релиз развернуты в предыдущем шаге:
+В следующем примере показан выпуск *My-nginx-* входящий, развернутый на предыдущем шаге:
 
 ```console
 $ helm list
@@ -182,13 +182,13 @@ my-nginx-ingress    default     1           2019-11-22 10:08:06.048477 -0600 CST
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Чтобы очистить эти ресурсы, используйте команду [удаления руля][helm-cleanup] и укажите имя релиза, как это было в предыдущей `helm list` команде.
+При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Чтобы очистить эти ресурсы, используйте команду [удаления Helm][helm-cleanup] и укажите имя выпуска, как указано в предыдущей `helm list` команде.
 
 ```console
 helm uninstall my-nginx-ingress
 ```
 
-Следующий пример показывает, что релиз под названием *my-nginx-ingress* был неустановлен:
+В следующем примере показан выпуск с именем *My-nginx-* входящий, который был удален:
 
 ```console
 $ helm uninstall my-nginx-ingress
@@ -196,7 +196,7 @@ $ helm uninstall my-nginx-ingress
 release "my-nginx-ingress" uninstalled
 ```
 
-## <a name="install-an-application-with-helm-v2"></a>Установите приложение с Helm v2
+## <a name="install-an-application-with-helm-v2"></a>Установка приложения с помощью Helm v2
 
 ### <a name="create-a-service-account"></a>Создание учетной записи службы
 
@@ -239,7 +239,7 @@ kubectl apply -f helm-rbac.yaml
 
 ### <a name="configure-helm"></a>Настройка Helm
 
-Чтобы развернуть базовую службу Tiller в кластере AKS, используйте команду [helm init][helm2-init]. Если в кластере не включена поддержка RBAC, удалите значение и аргумент `--service-account`. Следующие примеры также установить [историю-максимум][helm2-history-max] до 200.
+Чтобы развернуть базовую службу Tiller в кластере AKS, используйте команду [helm init][helm2-init]. Если в кластере не включена поддержка RBAC, удалите значение и аргумент `--service-account`. В следующих примерах также задается [Журнал — максимум —][helm2-history-max] 200.
 
 Если вы настроили TLS/SSL для Tiller и Helm, пропустите эту процедуру базовой инициализации и укажите необходимый `--tiller-tls-`, как показано в следующем примере.
 
@@ -263,7 +263,7 @@ helm init \
 
 ### <a name="find-helm-charts"></a>Поиск чартов Helm
 
-Чарты Helm используются для развертывания приложений в кластере Kubernetes. Для поиска предварительно созданных диаграмм Helm используйте команду [поиска руля:][helm2-search]
+Чарты Helm используются для развертывания приложений в кластере Kubernetes. Чтобы найти предварительно созданные диаграммы Helm, используйте команду [поиска Helm][helm2-search] :
 
 ```console
 helm search
@@ -317,7 +317,7 @@ Update Complete.
 
 ### <a name="run-helm-charts"></a>Выполнение чартов Helm
 
-Чтобы установить чарты с помощью Helm, используйте команду [helm install][helm2-install-command] и укажите имя чарта для установки. Чтобы увидеть установку диаграммы Helm в действии, давайте установим базовое развертывание nginx с помощью диаграммы Helm. Если вы настроили TLS/SSL, добавьте параметр `--tls`, чтобы использовать сертификат клиента Helm.
+Чтобы установить чарты с помощью Helm, используйте команду [helm install][helm2-install-command] и укажите имя чарта для установки. Чтобы увидеть, как установить Helm диаграмму в действии, давайте установим базовое развертывание nginx с помощью диаграммы Helm. Если вы настроили TLS/SSL, добавьте параметр `--tls`, чтобы использовать сертификат клиента Helm.
 
 ```console
 helm install stable/nginx-ingress \
@@ -352,11 +352,11 @@ flailing-alpaca-nginx-ingress-default-backend  ClusterIP     10.0.44.97  <none> 
 ...
 ```
 
-Это займет минуту или две для *EXTERNAL-IP-адрес* службы nginx-ingress-контроллер, чтобы быть заселен и позволит вам получить к нему доступ с помощью веб-браузера.
+Для заполнения *внешнего IP* -адреса службы контроллера nginx-входящий-Controller и предоставления доступа к ней через веб-браузер требуется около двух минут.
 
 ### <a name="list-helm-releases"></a>Список выпусков Helm
 
-Чтобы просмотреть список выпусков, установленных в кластере, используйте команду [helm list][helm2-list]. Ниже приводится следующий пример, в ходе этого года- релиз nginx-ingress, развернутый на предыдущем этапе. Если вы настроили TLS/SSL, добавьте параметр `--tls`, чтобы использовать сертификат клиента Helm.
+Чтобы просмотреть список выпусков, установленных в кластере, используйте команду [helm list][helm2-list]. В следующем примере показан выпуск nginx-входящий, развернутый на предыдущем шаге. Если вы настроили TLS/SSL, добавьте параметр `--tls`, чтобы использовать сертификат клиента Helm.
 
 ```console
 $ helm list
@@ -367,7 +367,7 @@ flailing-alpaca   1         Thu May 23 12:55:21 2019    DEPLOYED    nginx-ingres
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Для очистки этих ресурсов используйте команду `helm delete` и укажите имя выпуска, как описано в предыдущей команде `helm list`. Следующий пример удаляет релиз под названием *flailing-alpaca:*
+При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Для очистки этих ресурсов используйте команду `helm delete` и укажите имя выпуска, как описано в предыдущей команде `helm list`. В следующем примере удаляется выпуск с именем *флаилинг-алпака*:
 
 ```console
 $ helm delete flailing-alpaca
@@ -375,7 +375,7 @@ $ helm delete flailing-alpaca
 release "flailing-alpaca" deleted
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении развертываниями приложений Kubernetes с помощью Helm см. в документации по Helm.
 

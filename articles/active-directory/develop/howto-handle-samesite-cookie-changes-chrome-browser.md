@@ -1,7 +1,7 @@
 ---
-title: Как обрабатывать изменения cookie SameSite в браузере Chrome Azure
+title: Как управлять изменениями файлов cookie SameSite в браузере Chrome | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте, как обрабатывать изменения файлов cookie SameSite в браузере Chrome.
+description: Узнайте, как управлять изменениями файлов cookie SameSite в браузере Chrome.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -14,53 +14,53 @@ ms.author: jmprieur
 ms.reviewer: kkrishna
 ms.custom: aaddev
 ms.openlocfilehash: f28d3722d56582bd925d31b43b4a0219bca2ae30
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81534607"
 ---
 # <a name="handle-samesite-cookie-changes-in-chrome-browser"></a>Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
 
 ## <a name="what-is-samesite"></a>Что такое SameSite?
 
-`SameSite`— это свойство, которое можно установить в файлах HTTP для предотвращения атак Cross Site Request Forgery (CSRF) в веб-приложениях:
+`SameSite`— Это свойство, которое можно задать в cookie-файлах HTTP для предотвращения атак с подделкой межсайтовых запросов (CSRF) в веб-приложениях:
 
-- Когда `SameSite` установлен **лакса,** cookie отправляется в запросах в том же сайте и в GET запросы с других сайтов. Он не отправляется в запросах GET, которые являются кросс-доменом.
-- Значение **Strict** гарантирует, что файлы cookie отправляются в запросах только на том же сайте.
+- Если `SameSite` параметр имеет значение " **нестрогий**", файл cookie отправляется в запросах на том же сайте и в запросах GET от других сайтов. Он не отправляется в запросах GET между доменами.
+- Значение **, равное, гарантирует,** что файл cookie отправляется в запросах только в пределах того же сайта.
 
-По умолчанию `SameSite` значение НЕ устанавливается в браузерах, и поэтому нет никаких ограничений на файлы cookie, отправляемые в запросах. Заявка должна будет отказаться от защиты CSRF, установив **Lax** или **Strict** в соответствии с их требованиями.
+По умолчанию `SameSite` значение не задано в браузерах, поэтому нет никаких ограничений на отправку файлов cookie в запросах. Приложению нужно будет присоединиться к защите CSRF, **задав строгие или** **строгие** требования в соответствии с требованиями.
 
-## <a name="samesite-changes-and-impact-on-authentication"></a>Изменения SameSite и влияние на аутентификацию
+## <a name="samesite-changes-and-impact-on-authentication"></a>SameSite изменения и влияние на проверку подлинности
 
-Последние [обновления стандартов на SameSite](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) предлагают защитить приложения, сделав поведение по умолчанию, `SameSite` когда не значение установлено лаке. Это смягчение означает, что файлы cookie будут ограничены в запросах HTTP, за исключением GET, сделанных с других сайтов. Кроме того, для снятия ограничений на отправку файлов файлов вводится значение **None** None. Эти обновления скоро будут выпущены в предстоящей версии браузера Chrome.
+Последние [обновления стандартов в SameSite](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) предлагают защиту приложений, представляя поведение по умолчанию, `SameSite` если значение не задано как слабое. Это означает, что файлы cookie будут ограничены HTTP-запросами, за исключением случаев, выполненных с других сайтов. Кроме того, для удаления ограничений на отправляемые файлы cookie введено значение **None** . Эти обновления вскоре будут выпущены в следующей версии браузера Chrome.
 
-Когда веб-приложения аутентифицируются с помощью платформы Microsoft Identity, используя режим ответа "form_post", сервер входа реагирует на приложение с помощью HTTP POST для отправки токенов или auth code. Поскольку этот запрос является запросом `login.microsoftonline.com` на перекрестный `https://contoso.com/auth`домен (например, из вашего домена), файлы cookie, установленные вашим приложением, теперь подпадают под новые правила в Chrome. Файлы cookie, которые должны использоваться в сценариях кросс-сайтов, — это файлы cookie, в которых хранятся значения *состояния* и *nonce,* которые также отправляются в запросе входа. Есть и другие файлы cookie, выброшенные Azure AD для проведения сеанса.
+Когда веб-приложения проходят проверку подлинности с помощью платформы Microsoft Identity, используя режим ответа "form_post", сервер входа отвечает на приложение, используя HTTP-запрос POST для отправки токенов или кода проверки подлинности. Так как этот запрос является междоменным запросом ( `login.microsoftonline.com` от вашего домена к примеру `https://contoso.com/auth`), файлы cookie, заданные приложением, теперь будут находиться под новыми правилами в Chrome. Файлы cookie, которые необходимо использовать в сценариях с несколькими узлами, — это файлы cookie, содержащие значения *State* и *nonce* , которые также отправляются в запросе на вход. Azure AD отбрасывает другие файлы cookie для хранения сеанса.
 
-Если вы не обновите веб-приложения, это новое поведение приведет к сбоям в аутентификации.
+Если вы не обновите веб-приложения, это новое поведение приведет к сбоям проверки подлинности.
 
-## <a name="mitigation-and-samples"></a>Смягчение последствий и образцы
+## <a name="mitigation-and-samples"></a>Устранение рисков и примеры
 
-Чтобы преодолеть сбои аутентификации, веб-приложения, `SameSite` аутентифицированные с платформой идентификации Майкрософт, могут настроить свойство `None` для файлов cookie, которые используются в сценариях кросс-домена при работе в браузере Chrome.
-Другие браузеры [(см. здесь](https://www.chromium.org/updates/same-site/incompatible-clients) полный `SameSite` список) следуют предыдущему `SameSite=None` поведению и не будут включать файлы cookie, если они установлены.
-Вот почему, для поддержки аутентификации на нескольких `SameSite` браузерах `None` веб-приложений придется установить значение только на Chrome и оставить значение пустым на других браузерах.
+Чтобы преодолеть ошибки проверки подлинности, веб-приложения, прошедшие проверку подлинности `SameSite` на платформе `None` Microsoft Identity, могут задать для свойства значение для файлов cookie, которые используются в междоменных сценариях при запуске в браузере Chrome.
+Другие браузеры (см. [здесь](https://www.chromium.org/updates/same-site/incompatible-clients) полный список) следуют предыдущему поведению `SameSite` и не включают файлы cookie, `SameSite=None` если задан параметр.
+Поэтому для поддержки проверки подлинности в нескольких браузерах веб-приложения необходимо установить `SameSite` значение `None` только для Chrome и оставить значение пустым в других браузерах.
 
-Этот подход демонстрируется в наших образцах кода ниже.
+Этот подход показан в примерах кода ниже.
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-В таблице ниже представлены запросы на вытягивание, которые работали вокруг изменений SameSite в наших образцах ASP.NET и ASP.NET Core.
+В следующей таблице представлены запросы на включение внесенных изменений, обработавшие изменения SameSite в наших примерах ASP.NET и ASP.NET Core.
 
 | Пример | Запрос на вытягивание |
 | ------ | ------------ |
-|  [ASP.NET Core веб-приложение инкрементный учебник](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2)  |  [Тот же сайт печенье исправить #261](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/pull/261)  |
-|  [ASP.NET образец веб-приложения MVC](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect)  |  [Тот же сайт печенье исправить #35](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/pull/35)  |
-|  [активный-каталог-dotnet-админ-ограниченные-области-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2)  |  [Тот же сайт печенье исправить #28](https://github.com/Azure-Samples/active-directory-dotnet-admin-restricted-scopes-v2/pull/28)  |
+|  [Пошаговое руководство по ASP.NET Core веб-приложения](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2)  |  [Исправление файла cookie того же сайта #261](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/pull/261)  |
+|  [Пример веб-приложения ASP.NET MVC](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect)  |  [Исправление файла cookie того же сайта #35](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/pull/35)  |
+|  [Active-Directory-DotNet-Admin-ограниченные области — v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2)  |  [Исправление файла cookie того же сайта #28](https://github.com/Azure-Samples/active-directory-dotnet-admin-restricted-scopes-v2/pull/28)  |
 
-для получения подробной информации о том, как обрабатывать файлы cookie SameSite в ASP.NET и ASP.NET Core, см.
+Дополнительные сведения об обработке файлов cookie SameSite в ASP.NET и ASP.NET Core см. в разделе также:
 
-- [Работайте с cookie-файлами SameSite в ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/samesite) .
-- [ASP.NET блог на SameSite вопрос](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
+- [Работа с файлами cookie SameSite в ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/samesite) .
+- [Блог ASP.NET о проблемах SameSite](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -72,20 +72,20 @@ ms.locfileid: "81534607"
 
 | Пример | Запрос на вытягивание |
 | ------ | ------------ |
-|  [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp)  | [Тот же сайт печенье исправить #24](https://github.com/Azure-Samples/ms-identity-java-webapp/pull/24)
-|  [ms-identity-java-webapi](https://github.com/Azure-Samples/ms-identity-java-webapi)  | [Тот же сайт печенье исправить #4](https://github.com/Azure-Samples/ms-identity-java-webapi/pull/4)
+|  [MS-Identity-Java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp)  | [Исправление файла cookie того же сайта #24](https://github.com/Azure-Samples/ms-identity-java-webapp/pull/24)
+|  [MS-Identity-Java-webapi](https://github.com/Azure-Samples/ms-identity-java-webapi)  | [Исправление файла cookie того же сайта #4](https://github.com/Azure-Samples/ms-identity-java-webapi/pull/4)
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Подробнее о SameSite и сценарии веб-приложений:
-
-> [!div class="nextstepaction"]
-> [Часто задаваемые вопросы Google Chrome на SameSite](https://www.chromium.org/updates/same-site/faq)
+Дополнительные сведения о SameSite и сценарии веб-приложения:
 
 > [!div class="nextstepaction"]
-> [Страница Хром SameSite](https://www.chromium.org/updates/same-site)
+> [Вопросы и ответы о Google Chrome в SameSite](https://www.chromium.org/updates/same-site/faq)
 
 > [!div class="nextstepaction"]
-> [Сценарий: Веб-приложение, которое подписывает в пользователях](scenario-web-app-sign-user-overview.md)
+> [Страница Chromium SameSite](https://www.chromium.org/updates/same-site)
+
+> [!div class="nextstepaction"]
+> [Сценарий: веб-приложение, которое входит в систему пользователей](scenario-web-app-sign-user-overview.md)

@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/18/2019
 ms.openlocfilehash: 732c405cad20aef3485b521fa245cb504a809c40
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82129065"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Автоматическое масштабирование кластера в соответствии с требованиями приложения в Службе контейнеров Azure
@@ -262,7 +262,7 @@ az aks nodepool update \
 
 Если вы хотите повторно включить Автомасштабирование кластера в существующем кластере, можно повторно включить его с помощью команды [AZ AKS нодепул Update][az-aks-nodepool-update] , указав параметры *--Enable-Cluster-автомасштабирования*, *--min-Count*и *--Max-Count* .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как автоматически масштабировать количество узлов AKS. Также вы можете использовать средство горизонтального автомасштабирования pod для автоматической настройки числа pod, на которых выполняется приложение. Инструкции по использованию средства горизонтального автомасштабирования pod см. в статье [Руководство. Масштабирование приложений в Службе Azure Kubernetes (AKS)][aks-scale-apps].
 

@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: allensu
-ms.openlocfilehash: 46ecf1bf2f5bd7900677cd115f8571ec3551a874
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.openlocfilehash: 477a5ffa971120d1a98c09ac4ae8ebda1c82b770
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82134277"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209032"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>Конфигурация DNS для частной конечной точки Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "82134277"
 |База данных Azure для MySQL (Microsoft. Дбформискл/Servers)|mysqlServer|privatelink.mysql.database.azure.com|
 |База данных Azure для MariaDB (Microsoft. Дбформариадб/Servers)|мариадбсервер|privatelink.mariadb.database.azure.com|
 |Azure Key Vault (Microsoft. KeyVault/Vault)|Хранилище|privatelink.vaultcore.azure.net|
-|Azure Kubernetes Service — API Kubernetes (Microsoft. ContainerService/Манажедклустерс)    | манажедклустер | {GUID}. привателинк. <region>. azmk8s.IO|
+|Azure Kubernetes Service — API Kubernetes (Microsoft. ContainerService/Манажедклустерс)    | манажедклустер | {GUID}. привателинк. {Region}. azmk8s. IO|
 |Поиск Azure (Microsoft. Search/Сеарчсервицес)|сеарчсервице|privatelink.search.windows.net|   
 |Реестр контейнеров Azure (Microsoft. ContainerRegistry/реестров) | реестр | privatelink.azurecr.io |
 |Настройка приложений Azure (Microsoft. Аппконфигуратион/Конфигуратионсторес)| configurationStore | privatelink.azconfig.io|
@@ -111,5 +111,5 @@ DNS является критически важным компонентом, �
 :::image type="content" source="media/private-endpoint-dns/hub-and-spoke-azure-dns.png" alt-text="концентраторы и резервные службы, предоставляемые Azure":::
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Сведения о частных конечных точках](private-endpoint-overview.md)

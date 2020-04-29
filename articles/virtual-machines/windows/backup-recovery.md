@@ -1,5 +1,5 @@
 ---
-title: Обзор параметров резервного копирования
+title: Общие сведения о параметрах резервного копирования
 description: Обзор параметров резервного копирования для виртуальных машин Windows в Azure.
 author: cynthn
 ms.service: virtual-machines
@@ -10,10 +10,10 @@ ms.workload: infrastructure
 ms.date: 09/13/2017
 ms.author: cynthn
 ms.openlocfilehash: 79ce6ee6b15b0e9bdf5e0f48c44731c476069d93
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82083569"
 ---
 # <a name="backup-and-restore-options-for-virtual-machines-in-azure"></a>Параметры резервного копирования и восстановления для виртуальных машин в Azure

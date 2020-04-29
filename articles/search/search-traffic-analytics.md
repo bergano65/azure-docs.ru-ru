@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/18/2020
 ms.openlocfilehash: 7c843b45b5a398aaaa1aab66f80961560477cf18
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82128065"
 ---
 # <a name="collect-telemetry-data-for-search-traffic-analytics"></a>Сбор данных телеметрии для аналитики поиска трафика
@@ -230,7 +230,7 @@ appInsights.trackEvent("Click", {
 
 ![Power BI панели мониторинга для Когнитивный поиск Azure](./media/search-traffic-analytics/azuresearch-powerbi-dashboard.png "Power BI панели мониторинга для Когнитивный поиск Azure")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Выполните инструментирование приложения поиска для получения детальных и полезных сведений о службе поиска.
 

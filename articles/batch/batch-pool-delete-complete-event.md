@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.author: labrenne
 ms.openlocfilehash: d28223c79f96f35a6ee11f98e0f09f21d7db4451
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115947"
 ---
 # <a name="pool-delete-complete-event"></a>Событие завершения удаления пула
@@ -28,8 +28,8 @@ ms.locfileid: "82115947"
 |Элемент|Тип|Примечания|
 |-------------|----------|-----------|
 |`id`|Строка|Идентификатор пула.|
-|`startTime`|Дата и время|Время, когда было начато удаление пула.|
-|`endTime`|Дата и время|Время, когда удаление пула было завершено.|
+|`startTime`|DateTime|Время, когда было начато удаление пула.|
+|`endTime`|DateTime|Время, когда удаление пула было завершено.|
 
 ## <a name="remarks"></a>Remarks
 Дополнительные сведения о состояниях и кодах ошибок для операции изменения размера пула см. в статье [Удаление пула из учетной записи](https://docs.microsoft.com/rest/api/batchservice/delete-a-pool-from-an-account).

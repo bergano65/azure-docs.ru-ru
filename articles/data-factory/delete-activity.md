@@ -13,20 +13,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.openlocfilehash: d90f38f83bd4d2d5311f277fcc928e442d7ea793
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81416384"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 
-Для удаления файлов или папок из наемных хранилищ или облачных хранилищ можно использовать действие Delete Activity in Azure Data Factory. Это действие используется для очистки или архивации ненужных файлов.
+Действие удаление в фабрике данных Azure можно использовать для удаления файлов или папок из локальных хранилищ хранилищ или облачных хранилищ хранилища. Это действие используется для очистки или архивации ненужных файлов.
 
 > [!WARNING]
-> Удаленные файлы или папки не могут быть восстановлены (если в хранилище включено мягкое удаление). Учитывайте это при использовании действия Delete для удаления файлов или папок.
+> Удаленные файлы или папки нельзя восстановить (если только в хранилище не включено обратимое удаление). Учитывайте это при использовании действия Delete для удаления файлов или папок.
 
 ## <a name="best-practices"></a>Рекомендации
 
@@ -38,11 +38,11 @@ ms.locfileid: "81416384"
 
 -   Убедитесь, что вы не удаляете файлы, которые тем временем записываются. 
 
--   Если вы хотите удалить файлы или папку из собственной системы, убедитесь, что вы используете самостоятельно размещенную время выполнения интеграции с версией больше, чем 3.14.
+-   Если вы хотите удалить файлы или папки из локальной системы, убедитесь, что вы используете локальную среду выполнения интеграции с версией более 3,14.
 
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
--   [Хранение Azure Blob](connector-azure-blob-storage.md)
+-   [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md)
 -   [Хранилище Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md)
 -   [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)
 -   [Хранилище файлов Azure](connector-azure-file-storage.md)
@@ -82,17 +82,17 @@ ms.locfileid: "81416384"
 
 ## <a name="type-properties"></a>Свойства типа
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
 | набор данных | Предоставляет ссылку на набор данных, чтобы определить, какие файлы или папки должны быть удалены. | Да |
-| recursive | Указывает, откуда файлы удаляются рекурсивно: из вложенных папок или только из указанной папки.  | Нет. Значение по умолчанию — `false`. |
-| maxConcurrentConnections | Количество одновременных подключений к хранилищу с целью удаления папок или файлов.   |  Нет. Значение по умолчанию — `1`. |
-| enablelogging | Указывает, нужно ли записывать имена удаленных папок или файлов. Если значение равно true, необходимо дополнительно предоставить учетную запись хранения для сохранения файла журнала, чтобы можно было в нем отслеживать поведение действия Delete. | нет |
-| logStorageSettings | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Группа свойств хранилища, в котором будет храниться файл журнала, содержащий имена файлов и папок, которые были удалены действием Delete. | нет |
-| linkedServiceName | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Связанная служба [хранения Azure,](connector-azure-blob-storage.md#linked-service-properties) [Azure Data Lake Storage Gen1](connector-azure-data-lake-store.md#linked-service-properties)или [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md#linked-service-properties) для хранения файла журнала, содержащего папку или имена файлов, удаленные в ходе действия Delete. Имейте в виду, что он должен быть настроен с тем же типом Интеграции Runtime от той, которая используется деятельностью удаления для удаления файлов. | нет |
-| path | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Путь, по которому хранится файл журнала в учетной записи хранения. Если путь не указан, служба создаст контейнер самостоятельно. | нет |
+| recursive | Указывает, откуда файлы удаляются рекурсивно: из вложенных папок или только из указанной папки.  | Нет. Значение по умолчанию — `false`. |
+| maxConcurrentConnections | Количество одновременных подключений к хранилищу с целью удаления папок или файлов.   |  Нет. Значение по умолчанию — `1`. |
+| enablelogging | Указывает, нужно ли записывать имена удаленных папок или файлов. Если значение равно true, необходимо дополнительно предоставить учетную запись хранения для сохранения файла журнала, чтобы можно было в нем отслеживать поведение действия Delete. | Нет |
+| logStorageSettings | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Группа свойств хранилища, в котором будет храниться файл журнала, содержащий имена файлов и папок, которые были удалены действием Delete. | Нет |
+| linkedServiceName | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Связанная служба [хранилища Azure](connector-azure-blob-storage.md#linked-service-properties), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#linked-service-properties)или [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#linked-service-properties) для хранения файла журнала, содержащего имя папки или файла, которые были удалены действием удаления. Следует иметь в виду, что для удаления файлов необходимо настроить тот же тип Integration Runtime из того, который использовался действием DELETE. | Нет |
+| path | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Путь, по которому хранится файл журнала в учетной записи хранения. Если путь не указан, служба создаст контейнер самостоятельно. | Нет |
 
-## <a name="monitoring"></a>Наблюдение
+## <a name="monitoring"></a>Мониторинг
 
 Отслеживать результаты действия Delete можно в двух местах: 
 -   выходные данные действия Delete;
@@ -118,12 +118,12 @@ ms.locfileid: "81416384"
 
 ### <a name="sample-log-file-of-the-delete-activity"></a>Пример файла журнала действия Delete
 
-| Имя | Категория | Состояние | Error |
+| Имя | Категория | Состояние | Ошибка |
 |:--- |:--- |:--- |:--- |
-| test1/yyy.json | Файл | Deleted |  |
-| test2/hello789.txt | Файл | Deleted |  |
-| test2/test3/hello000.txt | Файл | Deleted |  |
-| test2/test3/zzz.json | Файл | Deleted |  |
+| test1/yyy. JSON | Файл | Deleted |  |
+| test2/hello789. txt | Файл | Deleted |  |
+| test2/test3/hello000. txt | Файл | Deleted |  |
+| test2/test3/ZZZ. JSON | Файл | Deleted |  |
 
 ## <a name="examples-of-using-the-delete-activity"></a>Примеры использования действия Delete
 
@@ -137,10 +137,10 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 | folderPath (из набора данных) | fileName (из набора данных) | recursive (из действия Delete) | Выходные данные |
 |:--- |:--- |:--- |:--- |
-| Root/ Folder_A_2 | NULL | False | Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>4.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>5.csv</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.txt |
-| Root/ Folder_A_2 | NULL | True | Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;<strike>Folder_A_2/</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>4.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>5.csv</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>Folder_B_1/</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>6.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>7.csv</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>Folder_B_2/</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>8.txt</strike> |
+| Root/ Folder_A_2 | NULL | False | Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>4.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>5. CSV</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.txt |
+| Root/ Folder_A_2 | NULL | True | Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;<strike>Folder_A_2/</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>4.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>5. CSV</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>Folder_B_1/</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>6. txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>7. CSV</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>Folder_B_2/</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>8.txt</strike> |
 | Root/ Folder_A_2 | *.txt | False | Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>4.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.txt |
-| Root/ Folder_A_2 | *.txt | True | Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>4.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>6.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>8.txt</strike> |
+| Root/ Folder_A_2 | *.txt | True | Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.txt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>4.txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>6. txt</strike><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folder_B_2/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>8.txt</strike> |
 
 ### <a name="periodically-clean-up-the-time-partitioned-folder-or-files"></a>Периодическое очищение разделенных по времени папок или файлов
 
@@ -264,7 +264,7 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### <a name="clean-up-the-expired-files-that-were-last-modified-before-201811"></a>Очистите файлы с истекшим сроком хранения, которые подвергались модификации еще до 1 января 2018 г.
 
-Можно создать конвейер для очистки старых или просроченных файлов, используя фильтр атрибутов файла: "LastModified" в наборе данных.  
+Вы можете создать конвейер для очистки старых или устаревших файлов, используя фильтр атрибутов файлов: "LastModified" в наборе данных.  
 
 #### <a name="sample-pipeline"></a>Пример конвейера
 
@@ -326,7 +326,7 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### <a name="move-files-by-chaining-the-copy-activity-and-the-delete-activity"></a>Перемещение файлов с помощью связывания действия копирования и действия Delete
 
-Можно переместить файл, используя действие копии для копирования файла, а затем удалить действие для удаления файла в конвейере.  Если вы хотите переместить несколько файлов, можно использовать действие GetMetadata + действие Filter + действие ForEach + действие копирования + действие Delete, как показано в следующем примере.
+Вы можете переместить файл, используя действие копирования, чтобы скопировать файл, а затем действие удаления для удаления файла в конвейере.  Если вы хотите переместить несколько файлов, можно использовать действие GetMetadata + действие Filter + действие ForEach + действие копирования + действие Delete, как показано в следующем примере.
 
 > [!NOTE]
 > Нужно быть осторожным, если вы хотите переместить всю папку, определив набор данных, содержащий только путь к папке, а затем используя действие копирования и действие Delete для указания ссылки на тот же набор данных, представляющий папку. Дело в том, что новые файлы НЕ должны поступать в папку между операциями копирования и удаления.  Если же в папку поступили новые файлы сразу после того, как действие копирования завершило копирование файлов, а действие Delete еще не начало работу, вероятно, что действие Delete удалит новые файлы, которые еще НЕ успели скопироваться в назначенное место. 
@@ -567,16 +567,16 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 }
 ```
 
-Вы также можете получить шаблон для перемещения файлов [отсюда](solution-template-move-files.md).
+Кроме того, можно получить шаблон для перемещения файлов [отсюда](solution-template-move-files.md).
 
 ## <a name="known-limitation"></a>Известные ограничения
 
--   Действие Удаления не поддерживает удаление списка папок, описанных подстановочным искаргом.
+-   Действие удаления не поддерживает удаление списка папок, описанных с помощью подстановочных знаков.
 
--   При использовании фильтра атрибутов файлов: модифицированныйDatetimeStart и модифицированныйDatetimeEnd для выбора файлов, которые будут удалены, убедитесь, что установить "fileName": "Я" в наборе данных.
+-   При использовании фильтра атрибутов файлов: Модифиеддатетиместарт и Модифиеддатетиминд чтобы выбрать файлы для удаления, убедитесь, что в наборе данных задано "fileName": "*".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Подробнее о перемещении файлов на фабрике данных Azure.
+Дополнительные сведения о перемещении файлов в фабрике данных Azure.
 
 -   [Инструмент копирования данных в Фабрике данных Azure](copy-data-tool.md)

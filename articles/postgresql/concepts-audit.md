@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.openlocfilehash: 165e7984c21b74fa7730fc02756b9e75b4b33aa7
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82131248"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — один сервер
@@ -102,6 +102,6 @@ AzureDiagnostics
 | where Message contains "AUDIT:"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Сведения о ведении журнала в базе данных Azure для PostgreSQL](concepts-server-logs.md)
 - Узнайте, как задать параметры с помощью [портал Azure](howto-configure-server-parameters-using-portal.md), [Azure CLI](howto-configure-server-parameters-using-cli.md)или [REST API](/rest/api/postgresql/configurations/createorupdate).

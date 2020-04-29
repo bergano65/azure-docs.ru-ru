@@ -1,6 +1,6 @@
 ---
-title: Точки восстановления, определяемые пользователем
-description: Как создать точку восстановления для пула S'L.
+title: Определенные пользователем точки восстановления
+description: Создание точки восстановления для пула SQL.
 services: synapse-analytics
 author: anumjs
 manager: craigg
@@ -12,21 +12,21 @@ ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 5c9b7eb1b03b6b6e3721c13f9ebf7da25dd2e376
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80745054"
 ---
-# <a name="user-defined-restore-points"></a>Точки восстановления, определяемые пользователем
+# <a name="user-defined-restore-points"></a>Определенные пользователем точки восстановления
 
-В этой статье вы научитесь создавать новую точку восстановления, определяемую пользователем, для пула S'L в Azure Synapse Analytics с помощью PowerShell и портала Azure.
+Из этой статьи вы узнаете, как создать новую определяемую пользователем точку восстановления для пула SQL в Azure синапсе Analytics с помощью PowerShell и портал Azure.
 
-## <a name="create-user-defined-restore-points-through-powershell"></a>Создание точек восстановления, определяемых пользователем, через PowerShell
+## <a name="create-user-defined-restore-points-through-powershell"></a>Создание определяемых пользователем точек восстановления с помощью PowerShell
 
-Для создания определяемой пользователем точки восстановления используйте смдлет [New-AzSqlDatabaseRestorePoint](/powershell/module/az.sql/new-azsqldatabaserestorepoint?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) PowerShell.
+Чтобы создать определенную пользователем точку восстановления, используйте командлет PowerShell [New-азсклдатабасересторепоинт](/powershell/module/az.sql/new-azsqldatabaserestorepoint?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
-1. Перед тем, как начать, не забудьте [установить Azure PowerShell.](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
+1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Откройте PowerShell.
 3. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
 4. Выберите подписку, содержащую базу данных, которую нужно восстановить.
@@ -49,32 +49,32 @@ New-AzSqlDatabaseRestorePoint -ResourceGroupName $ResourceGroupName -ServerName 
 
 ```
 
-6. Смотрите список всех существующих точек восстановления.
+6. Просмотрите список всех существующих точек восстановления.
 
 ```Powershell
 # List all restore points
 Get-AzSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
 ```
 
-## <a name="create-user-defined-restore-points-through-the-azure-portal"></a>Создание точек восстановления, определяемых пользователем, через портал Azure
+## <a name="create-user-defined-restore-points-through-the-azure-portal"></a>Создание определяемых пользователем точек восстановления с помощью портал Azure
 
-Точки восстановления, определяемые пользователем, также могут быть созданы через портал Azure.
+Пользовательские точки восстановления также можно создавать с помощью портал Azure.
 
-1. Вопийте на свой [портал Azure.](https://portal.azure.com/)
+1. Войдите в учетную запись [портал Azure](https://portal.azure.com/) .
 
-2. Перейдите к пулу S'L, для которого необходимо создать точку восстановления.
+2. Перейдите в пул SQL, для которого необходимо создать точку восстановления.
 
-3. Выберите **Обзор** из левой панели, выберите **новую точку восстановления.** Если кнопка «Новая точка восстановления» не включена, убедитесь, что пул S'L не приостанавливаемый.
+3. На панели слева выберите **Обзор** и щелкните **+ создать точку восстановления**. Если кнопка Создать точку восстановления не включена, убедитесь, что пул SQL не приостановлен.
 
     ![Новая точка восстановления](./media/sql-data-warehouse-restore-points/creating-restore-point-01.png)
 
-4. Укажите имя для точки восстановления, определяемой пользователем, и нажмите **Apply**. Точки восстановления, определяемые пользователем, имеют период удержания по умолчанию в семь дней.
+4. Укажите имя для определенной пользователем точки восстановления и нажмите кнопку **Применить**. Срок хранения по умолчанию для определенных пользователем точек восстановления составляет семь дней.
 
     ![Имя точки восстановления](./media/sql-data-warehouse-restore-points/creating-restore-point-11.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Восстановление существующего пула S'L](sql-data-warehouse-restore-active-paused-dw.md)
-- [Восстановление удаленного пула S'L](sql-data-warehouse-restore-deleted-dw.md)
-- [Восстановление из пула георезервного копирования S'L](sql-data-warehouse-restore-from-geo-backup.md)
+- [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
+- [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)
 

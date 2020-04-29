@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: corywink
 ms.openlocfilehash: 7cb80b54c75d637842c5f50d9336629dedf758fa
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100130"
 ---
 # <a name="create-webhook-actions-on-rules-in-azure-iot-central"></a>Создание действий веб-перехватчика на правилах Azure IoT Central
@@ -156,6 +156,6 @@ ms.locfileid: "82100130"
 
 Если у вас есть идеи по улучшению этой функции, опубликуйте свои предложения на [форуме пользовательских голосов](https://feedback.azure.com/forums/911455-azure-iot-central).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как настраивать и использовать веб-перехватчики, предлагаем следующий шаг: изучение [настройки групп действий Azure Monitor](howto-use-action-groups.md).

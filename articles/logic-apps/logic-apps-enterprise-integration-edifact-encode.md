@@ -9,10 +9,10 @@ ms.reviewer: jonfan, divswa, logicappspm
 ms.topic: article
 ms.date: 04/22/2020
 ms.openlocfilehash: cee97fddc619840de821ebb70d32e0cab1bbe040
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82106531"
 ---
 # <a name="encode-edifact-messages-for-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений EDIFACT для Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -95,6 +95,6 @@ ms.locfileid: "82106531"
 ## <a name="view-swagger-file"></a>Просмотр файла Swagger
 Дополнительные сведения о Swagger для соединителя EDIFACT см.в [этой статье](/connectors/edifact/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
 

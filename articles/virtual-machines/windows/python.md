@@ -8,15 +8,15 @@ ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
 ms.openlocfilehash: b2172d44b4136b51c0ea459868ebd5b0572bb004
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82098074"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы узнаете, как выполнять следующие задачи:
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы научитесь:
 
 > [!div class="checklist"]
 > * Создание проекта Visual Studio
@@ -25,7 +25,7 @@ ms.locfileid: "82098074"
 > * Создание ресурсов
 > * Выполнение задач управления.
 > * Удаление ресурсов
-> * Запуск приложения
+> * Выполнение приложения
 
 На выполнение этих действий требуется примерно 20 минут.
 
@@ -554,7 +554,7 @@ compute_client = ComputeManagementClient(
 
 3. Сохраните *myPythonProject.py*.
 
-## <a name="run-the-application"></a>Запуск приложения
+## <a name="run-the-application"></a>Выполнение приложения
 
 1. Чтобы запустить консольное приложение, нажмите кнопку **Запустить** в Visual Studio.
 
@@ -563,7 +563,7 @@ compute_client = ComputeManagementClient(
     На полное выполнение этого консольного приложения потребуется примерно 5 минут. После закрытия приложения на удаление ресурсов и групп ресурсов может потребоваться несколько минут.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Если возникли проблемы с развертыванием, на следующем шаге будет рассмотрено [Устранение неполадок развертывания группы ресурсов с портал Azure](../../resource-manager-troubleshoot-deployments-portal.md)
 - Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).

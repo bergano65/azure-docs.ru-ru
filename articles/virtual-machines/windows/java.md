@@ -1,5 +1,5 @@
 ---
-title: Создание и управление виртуальной машиной Azure с использованием Java
+title: Создание виртуальной машины Azure и управление ею с помощью Java
 description: Развертывание виртуальной машины и всех ее вспомогательных ресурсов с помощью Java и Azure Resource Manager.
 services: virtual-machines-windows
 author: cynthn
@@ -9,15 +9,15 @@ ms.topic: how-to
 ms.date: 07/17/2017
 ms.author: cynthn
 ms.openlocfilehash: a99924983bf0e78bd8c8901e25819a363583169a
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81870032"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-java"></a>Создание виртуальных машин Windows в Azure и управление ими с помощью Java
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы узнаете, как выполнять следующие задачи:
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы научитесь:
 
 > [!div class="checklist"]
 > * Создание проекта Maven
@@ -33,7 +33,7 @@ ms.locfileid: "81870032"
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
 1. Установите [Java](https://aka.ms/azure-jdks), если это еще не сделано.
-2. Установка [Maven](https://maven.apache.org/download.cgi).
+2. Установите [Maven](https://maven.apache.org/download.cgi).
 3. Создайте папку и проект:
     
     ```
@@ -127,7 +127,7 @@ ms.locfileid: "81870032"
     graphURL=https://graph.microsoft.com/
     ```
 
-    ** &lt;Замените идентификатор&gt; подписки** идентификатором подписки, ** &lt;&gt; идентификатор приложения Active** Directory, ** &lt;&gt; ** ** &lt;ключ проверки подлинности&gt; ** с ключом приложения и идентификатор клиента с идентификатором клиента.
+    Замените ** &lt;Subscription-ID&gt; ** идентификатором подписки, ** &lt;Application-ID&gt; ** — идентификатором приложения Active Directory, ** &lt;ключом&gt; проверки подлинности** с ключом приложения, а ** &lt;идентификатором&gt; клиента** — идентификатором клиента.
 
 2. Сохраните файл.
 3. Задайте в оболочке переменную среды AZURE_AUTH_LOCATION и укажите полный путь к файлу аутентификации.
@@ -182,7 +182,7 @@ ms.locfileid: "81870032"
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 
-Все ресурсы должны содержаться в [группе ресурсов.](../../azure-resource-manager/management/overview.md)
+Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/management/overview.md).
 
 Чтобы определить значения для приложения и создать группу ресурсов, добавьте этот код в блок Try метода Main:
 
@@ -464,6 +464,6 @@ input.nextLine();
 2. Прежде чем нажать клавишу **ВВОД** и начать удаление ресурсов, потратьте несколько минут и проверьте на портале Azure, созданы ли эти ресурсы. Щелкните состояние развертывания, чтобы просмотреть сведения о развертывании.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения об использовании библиотек Azure для Java см. в [этой статье](https://docs.microsoft.com/java/azure/java-sdk-azure-overview).
 

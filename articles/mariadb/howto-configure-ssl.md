@@ -1,5 +1,5 @@
 ---
-title: Настройка SSL - База данных Azure для MariaDB
+title: Настройка SSL — база данных Azure для MariaDB
 description: Инструкции по настройке базы данных Azure для MariaDB и связанных приложений для правильного использования SSL-соединений
 author: ajlam
 ms.author: andrela
@@ -7,33 +7,33 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 4/21/2020
 ms.openlocfilehash: 0af94d04f4e50fd039f01c5746b3a5d47a3698b3
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81769940"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mariadb"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных Azure для MariaDB к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
 ## <a name="obtain-ssl-certificate"></a>Получение SSL-сертификата
-Загрузите сертификат, необходимый для связи по SSL с [https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) вашей базой данных Azure для сервера MariaDB с сервера MariaDB и сохраните файл сертификата на локальном диске (например, в этом учебнике используется c:ssl).
+Скачайте сертификат, необходимый для обмена данными по протоколу SSL с сервером базы данных Azure [https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) для MariaDB, и сохраните файл сертификата на локальном диске (например, в этом руководстве используется используем c:\ssl).
 **Для браузеров Microsoft Internet Explorer и Microsoft Edge:** по завершении скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
 
 ## <a name="bind-ssl"></a>Привязка SSL
 
-### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MyS'L Workbench над SSL
+### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MySQL Workbench по протоколу SSL
 Настройте MySQL Workbench, чтобы безопасно подключаться по протоколу SSL. 
 
 1. В диалоговом окне Setup New Connection (Настройка нового подключения) откройте вкладку **SSL**. 
 
-1. Обновление поля **использования SSL** до "Требовать".
+1. Обновите поле " **использовать SSL** " для "обязательно".
 
 1. Введите расположение файла **BaltimoreCyberTrustRoot.crt.pem** в поле **SSL CA File:** (Файл центра сертификации SSL-сертификата). 
     
     ![Сохранить конфигурацию SSL](./media/howto-configure-ssl/mysql-workbench-ssl.png)
 
-Для существующих соединений можно связать SSL, нажав правой кнопкой на значок соединения и выбрать исправление. Откройте вкладку **SSL** и привяжите файл сертификата.
+Для существующих подключений можно привязать SSL, щелкнув правой кнопкой мыши значок подключения и выбрав пункт изменить. Откройте вкладку **SSL** и привяжите файл сертификата.
 
 ### <a name="connecting-to-server-using-the-mysql-cli-over-ssl"></a>Подключение к серверу с помощью интерфейса командной строки MySQL по протоколу SSL
 Кроме того, можно привязать SSL-сертификат при помощи интерфейса командной строки MySQL, выполнив следующие команды. 

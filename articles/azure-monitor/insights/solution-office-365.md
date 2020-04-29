@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
 ms.openlocfilehash: 2c6eb5407ec62b6e9e771ce257b66fca2a91e0a5
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82023611"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
@@ -18,34 +18,34 @@ ms.locfileid: "82023611"
 ![Логотип Office 365](media/solution-office-365/icon.png)
 
 > [!IMPORTANT]
-> ## <a name="solution-update"></a>Обновление решений
-> Это решение было заменено решением [Office 365](../../sentinel/connect-office-365.md) General Availability в [Azure Sentinel](../../sentinel/overview.md) и решением для [мониторинга AD Azure AD.](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md) Вместе они предоставляют обновленную версию предыдущего решения Azure Monitor Office 365 с улучшенным опытом конфигурации. Вы можете продолжать использовать существующее решение до 30 июля 2020 года.
+> ## <a name="solution-update"></a>Обновление решения
+> Это решение заменено решением "общедоступная доступность [Office 365](../../sentinel/connect-office-365.md) " в [Azure Sentinel](../../sentinel/overview.md) , а также [решением Azure AD Reporting and Monitoring](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md). Вместе они предоставляют обновленную версию предыдущего решения Azure Monitor Office 365 с улучшенными возможностями настройки. Вы можете продолжать использовать существующее решение до 30 июля 2020 г.
 > 
-> Azure Sentinel — это облачное решение для обеспечения информации и управления событиями, которое глотает журналы и предоставляет дополнительные функциональные возможности SIEM, включая обнаружение, исследования, охоту и машинное обучение. Теперь с помощью Azure Sentinel вам будет использоваться журналы активности Office 365 SharePoint и Exchange Management.
+> Azure Sentinel — это облачная собственная информация о безопасности и решение для управления событиями, которое принимает журналы и предоставляет дополнительные функции SIEM, в том числе обнаружения, исследования, поиска и анализа машинного обучения. С помощью Sentinel Azure вы получите возможность приема данных об активности Office 365 SharePoint и журналах управления Exchange.
 > 
-> Отчетность Azure AD предоставляет более полное представление журналов из деятельности Azure AD в вашей среде, включая знак в событиях, события аудита и изменения в каталоге. Для подключения журналов Azure AD можно использовать [разъем Azure Sentinel AD](../../sentinel/connect-azure-active-directory.md) или настроить [интеграцию журналов Azure AD с Azure Monitor.](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md) 
+> Служба отчетов Azure AD предоставляет более исчерпывающее представление журналов из действия Azure AD в вашей среде, включая события входа, события аудита и изменения в каталоге. Чтобы подключить журналы Azure AD, можно использовать [Azure AD Sentinel Connector](../../sentinel/connect-azure-active-directory.md) или настроить [ИНТЕГРАЦИЮ журналов azure AD с Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md). 
 >
-> Коллекция журнала Azure AD подвергается ценам Azure Monitor.  Для получения дополнительной информации [оценивайте цены Azure Monitor.](https://azure.microsoft.com/pricing/details/monitor/)
+> Сбор данных журнала Azure AD зависит от Azure Monitor цен.  Дополнительные сведения см. в разделе [Azure Monitor цены](https://azure.microsoft.com/pricing/details/monitor/) .
 >
-> Для использования решения Azure Sentinel Office 365:
-> 1. Использование разъема Office 365 в Azure Sentinel влияет на цены рабочего пространства. Для получения дополнительной [Azure Sentinel pricing](https://azure.microsoft.com/pricing/details/azure-sentinel/)информации см.
-> 2. Если вы уже используете решение Azure Monitor Office 365, необходимо сначала удалить его с помощью скрипта в [разделе Uninstall ниже.](#uninstall)
-> 3. [Включите решение Azure Sentinel](../../sentinel/quickstart-onboard.md) в рабочем пространстве.
-> 4. Перейдите на страницу **разъемов данных** в Azure Sentinel и включите разъем **Office 365.**
+> Чтобы использовать Azure Sentinel Office 365, выполните следующие действия.
+> 1. Использование соединителя Office 365 в Azure Sentinel влияет на цены на вашу рабочую область. Дополнительные сведения см. в статье о [ценах на Sentinel Azure](https://azure.microsoft.com/pricing/details/azure-sentinel/).
+> 2. Если вы уже используете решение Azure Monitor Office 365, сначала удалите его с помощью сценария в [разделе Удаление ниже](#uninstall).
+> 3. [Включите решение Sentinel для Azure](../../sentinel/quickstart-onboard.md) в рабочей области.
+> 4. Перейдите на страницу **соединителей данных** в Azure Sentinel и включите соединитель **Office 365** .
 >
 > ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 > 
-> ### <a name="q-is-it-possible-to-on-board-the-office-365-azure-monitor-solution-between-now-and-july-30th"></a>В: Возможно ли на борту решения Office 365 Azure Monitor в период до 30 июля?
-> Нет, решение Azure Monitor Office 365, наносящее на бортскрипты, больше не доступно. Решение будет удалено 30 июля.
+> ### <a name="q-is-it-possible-to-on-board-the-office-365-azure-monitor-solution-between-now-and-july-30th"></a>Вопрос. можно ли подключить решение Office 365 Azure Monitor между сейчас и 30 июля?
+> Нет, сценарии адаптации решения Azure Monitor Office 365 больше не доступны. Решение будет удалено 30 июля.
 > 
-> ### <a name="q-will-the-tables-and-schemas-be-changed"></a>В: Будут ли изменены таблицы и схемы?
-> Имя таблицы **OfficeActivity** и схема останутся такими же, как и в текущем решении. Вы можете продолжить использование тех же запросов в новом решении, исключая запросы, ссылающиеся на данные Azure AD.
+> ### <a name="q-will-the-tables-and-schemas-be-changed"></a>Вопрос. будут ли изменены таблицы и схемы?
+> Имя и схема таблицы **оффицеактивити** останутся такими же, как и в текущем решении. Вы можете продолжать использовать те же запросы в новом решении, за исключением запросов, которые ссылаются на данные Azure AD.
 > 
-> Новые журналы [отчетов и решений Azure AD](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md) будут входить в таблицы [SigninLogs](../../active-directory/reports-monitoring/concept-sign-ins.md) и [AuditLogs](../../active-directory/reports-monitoring/concept-audit-logs.md) вместо **OfficeActivity.** Для получения дополнительной информации узнайте, [как анализировать журналы Azure AD,](../../active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics.md)которые также актуальны для пользователей Azure Sentinel и Azure Monitor.
+> Новые журналы [решений Azure AD Reporting и Monitoring](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md) будут применяться к таблицам [сигнинлогс](../../active-directory/reports-monitoring/concept-sign-ins.md) и [AuditLogs](../../active-directory/reports-monitoring/concept-audit-logs.md) вместо **оффицеактивити**. Дополнительные сведения см. [в статье анализ журналов Azure AD](../../active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics.md), который также относится к Azure Sentinel и Azure Monitor пользователям.
 > 
-> Ниже приведены образцы для преобразования запросов от **OfficeActivity** к **SigninLogs:**
+> Ниже приведены примеры преобразования запросов из **оффицеактивити** в **сигнинлогс**.
 > 
-> **Запрос не удалось войти в систему, пользователем:**
+> **Неудачные попытки входа в запрос от пользователя:**
 > 
 > ```Kusto
 > OfficeActivity
@@ -75,41 +75,41 @@ ms.locfileid: "82023611"
 > | summarize count() by OperationName
 > ```
 > 
-> ### <a name="q-how-can-i-on-board-azure-sentinel"></a>В: Как я могу на борту Azure Sentinel?
-> Azure Sentinel — это решение, которое можно включить в новое или существующее рабочее пространство для анализа журналов. Чтобы узнать больше, смотрите [документацию на посадку на посадку Azure Sentinel.](../../sentinel/quickstart-onboard.md)
+> ### <a name="q-how-can-i-on-board-azure-sentinel"></a>Вопрос. как можно настроить метку Azure?
+> Azure Sentinel — это решение, которое можно включить в новой или существующей рабочей области Log Analytics. Дополнительные сведения см. [в документации по Azure Sentinel](../../sentinel/quickstart-onboard.md).
 >
-> ### <a name="q-do-i-need-azure-sentinel-to-connect-the-azure-ad-logs"></a>В: Нужен ли мне Azure Sentinel для подключения журналов Azure AD?
-> Можно настроить [интеграцию журналов Azure AD с Azure Monitor,](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)которая не связана с решением Azure Sentinel. Azure Sentinel предоставляет нативный разъем и содержимое коробок для журналов Azure AD. Для получения дополнительной информации смотрите вопрос ниже на нестандартном контенте, ориентированном на безопасность.
+> ### <a name="q-do-i-need-azure-sentinel-to-connect-the-azure-ad-logs"></a>Вопрос. нужно ли мне использовать метку Azure для подключения журналов Azure AD?
+> Вы можете настроить [интеграцию журналов Azure AD с Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md), которая не связана с решением Sentinel Azure. Azure Sentinel предоставляет собственный соединитель и готовые материалы для журналов Azure AD. Дополнительные сведения см. в разделе, посвященном встроенному содержимому, ориентированному на безопасность.
 >
-> ###    <a name="q-what-are-the-differences-when-connecting-azure-ad-logs-from-azure-sentinel-and-azure-monitor"></a>В: В чем разница при подключении журналов Azure AD из Azure Sentinel и Azure Monitor?
-> Azure Sentinel и Azure Monitor подключаются к журналам Azure AD на основе того же [решения для отчетности и мониторинга Azure AD.](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md) Azure Sentinel предоставляет нативную разъем с одним щелчком мыши, который соединяет одни и те же данные и предоставляет информацию о мониторинге.
+> ###    <a name="q-what-are-the-differences-when-connecting-azure-ad-logs-from-azure-sentinel-and-azure-monitor"></a>Вопрос. Каковы различия при подключении журналов Azure AD с помощью Sentinel и Azure Monitor в Azure?
+> Azure Sentinel и Azure Monitor подключаются к журналам Azure AD на основе того же [решения Azure AD Reporting и мониторинга](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md). Azure Sentinel предоставляет один и тот же собственный соединитель, который подключает те же данные и предоставляет данные мониторинга.
 >
-> ###    <a name="q-what-do-i-need-to-change-when-moving-to-the-new-azure-ad-reporting-and-monitoring-tables"></a>В: Что нужно изменить при переходе на новые таблицы отчетов и мониторинга Azure AD?
-> Все запросы с использованием данных Azure AD, включая запросы в оповещениях, панели мониторинга и любой контент, созданный с помощью данных Office 365 Azure AD, должны быть воссозданы с помощью новых таблиц.
+> ###    <a name="q-what-do-i-need-to-change-when-moving-to-the-new-azure-ad-reporting-and-monitoring-tables"></a>Вопрос. что нужно изменить при переходе к новым таблицам отчетов и мониторинга Azure AD?
+> Все запросы, использующие данные Azure AD, включая запросы в оповещениях, панелях мониторинга и любое содержимое, созданное с помощью Office 365 Azure AD, необходимо создать повторно с помощью новых таблиц.
 >
-> Azure Sentinel и Azure AD предоставляют встроенный контент, который можно использовать при переходе к решению для отчетов и мониторинга Azure AD. Для получения дополнительной информации смотрите следующий вопрос о нестандартном контенте, ориентированном на безопасность, и [как использовать рабочие книги Azure Monitor для отчетов Active Directory Azure.](../../active-directory/reports-monitoring/howto-use-azure-monitor-workbooks.md) 
+> Azure AD Sentinel и Azure Active Directory предоставляют встроенное содержимое, которое можно использовать при переходе к решению для мониторинга и отслеживания Azure AD. Дополнительные сведения см. в следующем вопросе встроенного содержимого, ориентированного на безопасность, и [об использовании Azure Monitor книг для Azure Active Directoryных отчетов](../../active-directory/reports-monitoring/howto-use-azure-monitor-workbooks.md). 
 >
-> ### <a name="q-how-i-can-use-the-azure-sentinel-out-of-the-box-security-oriented-content"></a>В: Как я могу использовать контент, ориентированный на безопасность Azure Sentinel, вне коробки?
-> Azure Sentinel предоставляет готовые панели мониторинга, запросы на заказ, запросы на охоту, запросы на исследования и автоматизированные возможности реагирования на основе журналов Office 365 и Azure AD. Узнайте больше о Azure Sentinel GitHub и учебниках:
+> ### <a name="q-how-i-can-use-the-azure-sentinel-out-of-the-box-security-oriented-content"></a>Вопрос. как можно использовать предварительно встроенное содержимое, ориентированное на Azure?
+> Azure Sentinel предоставляет готовые панели мониторинга, ориентированные на безопасность, пользовательские запросы оповещений, запросы на поиск, исследование и автоматизированные возможности реагирования на основе журналов Office 365 и Azure AD. Дополнительные сведения см. в статье об Azure Sentinel GitHub и руководствах.
 >
-> - [Обнаружение угроз вне коробки](../../sentinel/tutorial-detect-threats-built-in.md)
+> - [Обнаружение встроенных угроз](../../sentinel/tutorial-detect-threats-built-in.md)
 > - [Создание настраиваемых правил аналитики для обнаружения потенциальных угроз](../../sentinel/tutorial-detect-threats-custom.md)
 > - [Мониторинг данных](../../sentinel/tutorial-monitor-your-data.md)
-> - [Расследовать инциденты с Azure Sentinel](../../sentinel/tutorial-investigate-cases.md)
+> - [Изучение инцидентов с помощью Azure Sentinel](../../sentinel/tutorial-investigate-cases.md)
 > - [настройке автоматического реагирования на угрозы в Azure Sentinel](../../sentinel/tutorial-respond-threats-playbook.md)
 > - [Сообщество Azure Sentinel GitHub](https://github.com/Azure/Azure-Sentinel/tree/master/Playbooks)
 > 
-> ### <a name="q-does-azure-sentinel-provide-additional-connectors-as-part-of-the-solution"></a>В: Предоставляет ли Azure Sentinel дополнительные разъемы в рамках решения?
-> Да, см. Доступ К источникам [данных Azure Sentinel.](../../sentinel/connect-data-sources.md)
+> ### <a name="q-does-azure-sentinel-provide-additional-connectors-as-part-of-the-solution"></a>Вопрос. поддерживает ли Azure Sentinel дополнительные соединители в рамках решения?
+> Да, см. статью [Azure Sentinel Connect Data Sources](../../sentinel/connect-data-sources.md).
 > 
-> ###    <a name="q-what-will-happen-on-july-30-do-i-need-to-offboard-beforehand"></a>В: Что произойдет 30 июля? Нужно ли мне заранее выходить за борт?
+> ###    <a name="q-what-will-happen-on-july-30-do-i-need-to-offboard-beforehand"></a>Вопрос. что произойдет 30 июля? Нужно ли отключение заранее?
 > 
-> - Вы не сможете получать данные из решения **Office365.** Решение больше не будет доступно в Marketplace
-> - Для клиентов Azure Sentinel решение рабочего пространства **Office365** будет включено в решение Azure Sentinel **SecurityInsights.**
-> - Если вы не отключите решение вручную, ваши данные будут автоматически отключены 30 июля.
+> - Вы не сможете получать данные из решения **Office 365** . Решение больше не будет доступно в Marketplace
+> - Для клиентов с метками Azure **Office 365** в решение Azure Sentinel **секуритинсигхтс** будет включена log Analyticsная Рабочая область.
+> - Если вы не отключение свое решение вручную, данные будут автоматически отключены 30 июля.
 > 
-> ### <a name="q-will-my-data-transfer-to-the-new-solution"></a>В: Переведут ли мои данные в новое решение?
-> Да. При удалении решения **Office 365** из рабочего пространства его данные временно станут недоступными из-за удаления схемы. При входе нового разъема **Office 365** в Sentinel схема будет восстановлена в рабочей области и любые уже собранные данные станут доступными. 
+> ### <a name="q-will-my-data-transfer-to-the-new-solution"></a>Вопрос. будет ли переносить данные в новое решение?
+> Да. При удалении решения **Office 365** из рабочей области его данные становятся временно недоступными из-за удаления схемы. При включении нового соединителя **Office 365** в метку схема восстанавливается в рабочую область, а все собранные данные становятся доступными. 
  
 
 Решение по управлению Office 365 позволяет выполнять мониторинг среды Office 365 в Azure Monitor.
@@ -121,7 +121,7 @@ ms.locfileid: "82023611"
 - Оперативно устраняйте неполадки с помощью [запросов журнала](../log-query/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
 
 
-## <a name="uninstall"></a>Удаление
+## <a name="uninstall"></a>Uninstall
 
 Вы можете удалить решение по управлению Office 365 с помощью процесса, описанного в этом [разделе](solutions.md#remove-a-monitoring-solution). Однако это не остановит сбор данных в Office 365 и последующую их отправку в Azure Monitor. Выполните процедуру ниже, чтобы отменить подписку на Office 365 и прекратить сбор данных.
 
@@ -218,15 +218,15 @@ ms.locfileid: "82023611"
     .\office365_unsubscribe.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeTennantID <Tenant ID> 
     ```
 
-    Пример
+    Пример:
 
     ```powershell
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
     ```
 
-Вам будет предложено для учетных данных. Предоставьте учетные данные для рабочего пространства Log Analytics.
+Вам будет предложено ввести учетные данные. Укажите учетные данные для рабочей области Log Analytics.
 
-## <a name="data-collection"></a>сбор данных
+## <a name="data-collection"></a>Сбор данных
 
 Для сбора данных может потребоваться несколько часов. После запуска сбора при создании каждой записи Office 365 отправляет в службу Azure Monitor [уведомление веб-перехватчика](https://msdn.microsoft.com/office-365/office-365-management-activity-api-reference#receiving-notifications) с подробными данными. Эта запись становится доступной в Azure Monitor в течение нескольких минут после ее получения.
 
@@ -247,7 +247,7 @@ ms.locfileid: "82023611"
 |:--|:--|
 | Операции | Предоставляет сведения об активных пользователях из всех отслеживаемых подписок Office 365. Также можно просмотреть количество действий, выполненных за определенный период времени.
 | Exchange | Отображает разбивку по действиям Exchange Server, таким как Add-MailboxPermission (Добавление разрешения для почтового ящика) или Set-Mailbox (Настройка почтового ящика). |
-| SharePoint | Отображает основные действия, выполняемые пользователями в отношении документов SharePoint. Если выполнить детализацию из этого элемента, то на странице поиска отобразятся сведения об этих действиях, такие как целевой документ и расположение действия. Например, для события доступа к файлам можно будет увидеть документ, к которым можно получить доступ, связанное с ним имя учетной записи и IP-адрес. |
+| SharePoint | Отображает основные действия, выполняемые пользователями в отношении документов SharePoint. Если выполнить детализацию из этого элемента, то на странице поиска отобразятся сведения об этих действиях, такие как целевой документ и расположение действия. Например, для события с доступом к файлу вы сможете увидеть документ, к которому осуществляется доступ, имя связанной учетной записи и IP-адрес. |
 | Azure Active Directory | Включает в себя основные действия пользователей, такие как сброс пароля пользователя и попытка входа в систему. Если выполнить детализацию, то можно просмотреть подробные сведения об этих действиях, такие как состояние результата. Это полезно, в основном, для отслеживания подозрительных действий в Azure Active Directory. |
 
 
@@ -263,7 +263,7 @@ ms.locfileid: "82023611"
 
 | Свойство | Описание |
 |:--- |:--- |
-| Тип | *OfficeActivity* |
+| Type | *OfficeActivity* |
 | ClientIP | IP-адрес устройства, которое использовалось при записи действия в журнал. IP-адрес отображается в формате IPv4- или IPv6-адреса. |
 | OfficeWorkload | Служба Office 365, к которой относится запись.<br><br>AzureActiveDirectory<br>Exchange<br>SharePoint|
 | Операция | Имя действия пользователя или администратора.  |
@@ -272,7 +272,7 @@ ms.locfileid: "82023611"
 | ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceeded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
 | UserId | Имя участника-пользователя (UPN) для пользователя, который выполнил действие, приведшее к регистрации в журнале данной записи. Например, my_name@my_domain_name. Обратите внимание, что сюда также включаются записи для действий, выполняемых системными учетными записями (такими как SHAREPOINT\system или NTAUTHORITY\SYSTEM). | 
 | UserKey | Альтернативный идентификатор пользователя, определенного в свойстве UserId.  Например, значение этого свойства может заполняться уникальным идентификатором Passport (PUID) для событий, выполняемых пользователями в SharePoint, OneDrive для бизнеса и Exchange. Это свойство также может указывать то же значение, что и свойство UserID событий, происходящих в других службах, и событий, выполняемых системными учетными записями.|
-| UserType | Тип пользователя, выполнившего операцию.<br><br>Административный<br>Приложение<br>DcAdmin<br>Обычный<br>Reserved<br>ServicePrincipal<br>Система |
+| UserType | Тип пользователя, выполнившего операцию.<br><br>Администратор<br>Приложение<br>DcAdmin<br>Обычный<br>Reserved<br>ServicePrincipal<br>система |
 
 
 ### <a name="azure-active-directory-base"></a>Основа Azure Active Directory
@@ -458,20 +458,20 @@ ms.locfileid: "82023611"
 
 
 
-## <a name="sample-log-queries"></a>Запросы образцов журналов
+## <a name="sample-log-queries"></a>Примеры запросов журналов
 
-В следующей таблице приведены примеры запросов журнала для записей обновления, собранных этим решением.
+В следующей таблице приведены примеры запросов к журналу для записей обновления, собранных этим решением.
 
-| Запрос | Описание |
+| query | Описание |
 | --- | --- |
 |Количество всех операций для подписки Office 365 |OfficeActivity &#124; summarize count() by Operation |
-|Использование сайтов SharePoint|OfficeActivity &#124;, где OfficeWorkload - "точка обмена" &#124; \| суммировать количество () по сортировке SiteUrl по Count asc|
-|Операции доступа к файлам по типу пользователя | OfficeActivity &#124; суммировать подсчет () по UserType |
+|Использование сайтов SharePoint|Оффицеактивити &#124;, где Оффицеворклоад = ~ "SharePoint" &#124; суммировать Count () путем SiteUrl \| сортировки по убыванию|
+|Операции доступа к файлам по типу пользователя | Оффицеактивити &#124; суммировать Count () по UserType |
 |Мониторинг внешних действий в отношении Exchange|OfficeActivity &#124; where OfficeWorkload =~ "exchange" and ExternalAccess == true|
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
 * [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.

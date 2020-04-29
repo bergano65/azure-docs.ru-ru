@@ -1,26 +1,26 @@
 ---
-title: AБИИ Azure Frontend для проверки подлинности
-description: Объясняет, как использовать aPI-фронтовую проверку для проверки подлинности
+title: Интерфейсные API Azure для проверки подлинности
+description: Объясняется, как использовать интерфейсный API C# для проверки подлинности.
 author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2010
 ms.topic: how-to
 ms.openlocfilehash: 04296a3dab61fdb569126abc1bc1f975d69e226d
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80681354"
 ---
-# <a name="use-the-azure-frontend-apis-for-authentication"></a>Используйте AIS Azure Frontend для проверки подлинности
+# <a name="use-the-azure-frontend-apis-for-authentication"></a>Использование внешних API Azure для проверки подлинности
 
-В этом разделе мы опишите, как использовать API для проверки подлинности.
+В этом разделе мы рассмотрим, как использовать API C# для проверки подлинности.
 
-## <a name="azurefrontendaccountinfo"></a>AzureFrontFrontendAccountInfo
+## <a name="azurefrontendaccountinfo"></a>азурефронтендаккаунтинфо
 
-AzureFrontfrontendAccountInfo используется для настройки информации ```AzureFrontend``` о проверке подлинности для экземпляра в SDK.
+Азурефронтендаккаунтинфо используется для настройки данных проверки подлинности для ```AzureFrontend``` экземпляра в пакете SDK.
 
-Важными областями являются:
+Ниже перечислены важные поля.
 
 ```cs
 
@@ -41,29 +41,29 @@ AzureFrontfrontendAccountInfo используется для настройки
 
 ```
 
-Для _части региона_ в домене используйте [ближайший к вам регион.](../reference/regions.md)
+Для части _региона_ в домене используйте [ближайший к вам регион](../reference/regions.md).
 
-Информация об учетной записи может быть получена на портале, как описано в пункте [получения информации об учетной записи.](create-an-account.md#retrieve-the-account-information)
+Сведения об учетной записи можно получить на портале, как описано в абзаце [Получение сведений об учетной записи](create-an-account.md#retrieve-the-account-information) .
 
-## <a name="azure-frontend"></a>Лазурный фронтенд
+## <a name="azure-frontend"></a>Интерфейсный сервер Azure
 
-Соответствующие классы ```AzureSession```и ```AzureFrontend``` . ```AzureFrontend```используется для управления учетной записью и функциональности уровня учетной записи, которая включает в себя: преобразование активов и создание сеанса рендеринга. ```AzureSession```используется для функциональности уровня сессии и включает в себя: обновление сеанса, запросы, обновление и вывод из эксплуатации.
+Соответствующие классы — ```AzureFrontend``` и ```AzureSession```. ```AzureFrontend```используется для функций управления учетными записями и уровня учетной записи, которые включают в себя преобразование ресурсов и создание сеансов отрисовки. ```AzureSession```используется для функциональности уровня сеанса и включает в себя обновление сеанса, запросы, обновление и списание.
 
-Каждый открытый/созданный ```AzureSession``` будет держать ссылку на фронт, который создал его. Чтобы очистить, все сеансы должны быть разобраны до того, как фасад будет разобран.
+Каждый открытый/созданный ```AzureSession``` объект сохранит ссылку на интерфейс, который его создал. Чтобы аккуратно завершить работу, необходимо освободить все сеансы, прежде чем будет освобожден внешний интерфейс.
 
-Сделка с сеансом не остановит VM `AzureSession.StopAsync` на Azure, должен быть прямо вызван.
+При отмене выделения сеанса виртуальная машина в Azure `AzureSession.StopAsync` не будет вызываться явным образом.
 
-После создания сеанса и пометки его состояния как готового, он `AzureSession.ConnectToRuntime`может подключиться к удаленному времени выполнения рендеринга с помощью .
+После создания сеанса и его состояния, которое было помечено как готовое, оно может подключиться к удаленной среде выполнения отрисовки `AzureSession.ConnectToRuntime`с помощью.
 
 ### <a name="threading"></a>Потоки
 
-Все вызовы AzureSession и AzureFrontend выполняются в фоновом потоке, а не в основном потоке приложения.
+Все асинхронные вызовы Азуресессион и Азурефронтенд выполняются в фоновом потоке, а не в главном потоке приложения.
 
-### <a name="conversion-apis"></a>Конверсионные AIS
+### <a name="conversion-apis"></a>API-интерфейсы преобразования
 
-Для получения дополнительной информации [the model conversion REST API](conversion/conversion-rest-api.md)об услуге преобразования см.
+Дополнительные сведения о службе преобразования см. в разделе [Преобразование модели REST API](conversion/conversion-rest-api.md).
 
-#### <a name="start-asset-conversion"></a>Начало конверсии активов
+#### <a name="start-asset-conversion"></a>Начать преобразование ресурса
 
 ``` cs
 private StartConversionAsync _pendingAsync = null;
@@ -89,7 +89,7 @@ void StartAssetConversion(AzureFrontend frontend, string modelName, string model
 }
 ```
 
-#### <a name="get-conversion-status"></a>Получить статус конверсии
+#### <a name="get-conversion-status"></a>Получение состояния преобразования
 
 ``` cs
 private ConversionStatusAsync _pendingAsync = null
@@ -113,13 +113,13 @@ void GetConversionStatus(AzureFrontend frontend, string assetId)
 }
 ```
 
-### <a name="rendering-apis"></a>Рендеринг AIS
+### <a name="rendering-apis"></a>API-интерфейсы подготовки отчетов
 
-Подробную информацию об управлении сеансами можно узнать [о руководстве сеансами.](session-rest-api.md)
+Дополнительные сведения об управлении сеансами см. [в REST API управления сеансами](session-rest-api.md) .
 
-Сеанс рендеринга может быть создан динамически в службе, либо уже существующий идентификатор сеанса может быть "открыт" в объект AzureSession.
+Сеанс отрисовки может быть создан либо динамически в службе, либо уже существующий идентификатор сеанса можно открыть в объекте Азуресессион.
 
-#### <a name="create-rendering-session"></a>Создание сеанса рендеринга
+#### <a name="create-rendering-session"></a>Создание сеанса подготовки к просмотру
 
 ``` cs
 private CreateSessionAsync _pendingAsync = null;
@@ -144,9 +144,9 @@ void CreateRenderingSession(AzureFrontend frontend, RenderingSessionVmSize vmSiz
 }
 ```
 
-#### <a name="open-an-existing-rendering-session"></a>Открыть существующую сессию рендеринга
+#### <a name="open-an-existing-rendering-session"></a>Открытие существующего сеанса подготовки к просмотру
 
-Открытие существующего сеанса является синхронным вызовом.
+Открытие существующего сеанса — это синхронный вызов.
 
 ``` cs
 void CreateRenderingSession(AzureFrontend frontend, string sessionId)
@@ -156,7 +156,7 @@ void CreateRenderingSession(AzureFrontend frontend, string sessionId)
 }
 ```
 
-#### <a name="get-current-rendering-sessions"></a>Получить текущие сеансы рендеринга
+#### <a name="get-current-rendering-sessions"></a>Получение текущих сеансов отрисовки
 
 ``` cs
 private SessionPropertiesArrayAsync _pendingAsync = null;
@@ -179,9 +179,9 @@ void GetCurrentRenderingSessions(AzureFrontend frontend)
 }
 ```
 
-### <a name="session-apis"></a>Сессионные AIS
+### <a name="session-apis"></a>API-интерфейсы сеанса
 
-#### <a name="get-rendering-session-properties"></a>Получить свойства сеанса рендеринга
+#### <a name="get-rendering-session-properties"></a>Получение свойств сеанса отрисовки
 
 ``` cs
 private SessionPropertiesAsync _pendingAsync = null;
@@ -204,7 +204,7 @@ void GetRenderingSessionProperties(AzureSession session)
 }
 ```
 
-#### <a name="update-rendering-session"></a>Сеанс отобрасывания обновления
+#### <a name="update-rendering-session"></a>Обновить сеанс отрисовки
 
 ``` cs
 private SessionAsync _pendingAsync;
@@ -228,7 +228,7 @@ void UpdateRenderingSession(AzureSession session, ARRTimeSpan updatedLease)
 }
 ```
 
-#### <a name="stop-rendering-session"></a>Остановка сеанса рендеринга
+#### <a name="stop-rendering-session"></a>Прерывать сеанс подготовки к просмотру
 
 ``` cs
 private SessionAsync _pendingAsync;
@@ -286,7 +286,7 @@ void ConnectToArrInspector(AzureSession session, string hostname)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание учетной записи](create-an-account.md)
-* [Пример скриптов PowerShell](../samples/powershell-example-scripts.md)
+* [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)

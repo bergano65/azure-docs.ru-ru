@@ -6,10 +6,10 @@ ms.author: jakras
 ms.date: 04/22/2020
 ms.topic: troubleshooting
 ms.openlocfilehash: 8c471687579dfe30b913197c6f080a450f5f3449
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82107450"
 ---
 # <a name="azure-remote-rendering-support-options"></a>Варианты поддержки для удаленной подготовки к просмотру Azure
@@ -53,6 +53,6 @@ ms.locfileid: "82107450"
 
 Чтобы предоставить отзыв, поделиться идеями или предложением для удаленной подготовки к просмотру Azure или проголосовать за идеи, отправленные другими пользователями, посетите [Форум обратной связи по удаленному отображению Azure](https://feedback.azure.com/forums/928696-azure-remote-rendering).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Диагностика](troubleshoot.md)
+* [Устранение неполадок](troubleshoot.md)

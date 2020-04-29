@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/19/2020
 ms.openlocfilehash: cfe35f81526a729092edf522f693ccd18494d1ec
-ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82137830"
 ---
 # <a name="multiclass-boosted-decision-tree"></a>Мультиклассовое увеличивающееся дерево принятия решений
@@ -70,6 +70,6 @@ ms.locfileid: "82137830"
     > 
     > Если выбрать параметр **диапазон параметров** и ввести одно значение для любого параметра, это единственное заданное значение будет использоваться во время очистки, даже если другие параметры меняются в диапазоне значений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

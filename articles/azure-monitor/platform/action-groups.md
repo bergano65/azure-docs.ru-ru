@@ -7,10 +7,10 @@ ms.date: 4/17/2020
 ms.author: dukek
 ms.subservice: alerts
 ms.openlocfilehash: 339b11664308962962c59b2e9386ff122681293a
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82116219"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
@@ -93,7 +93,7 @@ ms.locfileid: "82116219"
 
 У вас может быть ограниченное количество действий электронной почты в группе действий. См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
-### <a name="function"></a>Компонент
+### <a name="function"></a>Функция
 Вызывает существующую конечную точку триггера HTTP в [функциях Azure](../../azure-functions/functions-create-first-azure-function.md#create-a-function-app).
 
 У вас может быть ограниченное число действий функций в группе действий.

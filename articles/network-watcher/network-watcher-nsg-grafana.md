@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: damendo
 ms.openlocfilehash: f038412079ad0620a445b85e4bbc3c325e1aa211
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100113"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-using-network-watcher-and-grafana"></a>Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana
@@ -205,7 +205,7 @@ sudo service grafana-server start
 
 Интеграция наблюдателя за сетями с ElasticSearch и Grafana обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и другими данными, а также возможность их визуализации. Grafana располагает рядом других мощных графических возможностей, которые можно использовать для дальнейшего управления журналами потоков, а также анализа сетевого трафика. Теперь, когда вы настроили экземпляр Grafana и подключили его к Azure, можно продолжить изучение других функций, предлагаемых Grafana.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше об использовании [наблюдателя за сетями](network-watcher-monitoring-overview.md).
 

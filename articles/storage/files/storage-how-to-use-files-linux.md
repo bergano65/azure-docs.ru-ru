@@ -8,10 +8,10 @@ ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: fcc9876caf0c002650ab30b7eaed7dc44e2f135e
-ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82137745"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
@@ -24,7 +24,7 @@ ms.locfileid: "82137745"
 | Ubuntu | 14.04 или более поздней версии | 16.04+ |
 | Red Hat Enterprise Linux (RHEL) | 7 или выше | 7.5 или выше |
 | CentOS | 7 или выше |  7.5 или выше |
-| Debian | 8 или выше | 10+ |
+| Debian | 8+ | 10+ |
 | openSUSE | 13.2 или выше | 42.3 или выше |
 | SUSE Linux Enterprise Server | 12+ | 12 SP3 или выше |
 
@@ -249,7 +249,7 @@ uname -r
 | Distribution | Можно отключить SMB 1 |
 |--------------|-------------------|
 | Ubuntu 14.04 — 16.04 | Нет |
-| Ubuntu 18.04 | Да |
+| Ubuntu 18.04 | Да |
 | Ubuntu 19.04 + | Да |
 | Debian 8-9 | Нет |
 | Debian 10 + | Да |
@@ -320,7 +320,7 @@ sudo modprobe cifs
 cat /sys/module/cifs/parameters/disable_legacy_dialects
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)

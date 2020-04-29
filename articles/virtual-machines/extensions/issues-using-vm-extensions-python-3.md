@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.assetid: 3cd520fd-eaf7-4ef9-b4d3-4827057e5028
 ms.openlocfilehash: 944abc62f25473ea52836af7dc1fdcd1e16d9269
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82120786"
 ---
 # <a name="issues-using-vm-extensions-in-python-3-enabled-linux-azure-virtual-machines-systems"></a>Проблемы с использованием расширений виртуальной машины в системах на виртуальных машинах Linux с поддержкой Python 3
@@ -41,7 +41,7 @@ ms.locfileid: "82120786"
 
 Обновления на месте, например обновление с **ubuntu 18,04 LTS** до **Ubuntu 20,04 LTS**, должны сохранять `/usr/bin/python` символьную ссылку и остаться без изменений.
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 Перед развертыванием расширений в известных сценариях, описанных выше в сводке, учитывайте следующие общие рекомендации.
 

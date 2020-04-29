@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: rohogue
 ms.openlocfilehash: 4508ef7583760a7ef7503f8a6f37202af2684d81
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82106514"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Необходимые условия для кэша HPC для Azure
 
 Прежде чем использовать портал Azure для создания нового кэша Azure HPC, убедитесь, что среда соответствует этим требованиям.
 
-## <a name="azure-subscription"></a>Подписка Azure.
+## <a name="azure-subscription"></a>Подписка Azure
 
 Рекомендуется использовать платную подписку.
 
@@ -144,6 +144,6 @@ ms.locfileid: "82106514"
 
 * Серверное хранилище NFS должно быть совместимой аппаратной или программной платформой. Для получения дополнительных сведений обратитесь к группе кэша HPC Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание экземпляра кэша Azure HPC](hpc-cache-create.md) из портал Azure

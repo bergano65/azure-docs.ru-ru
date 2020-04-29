@@ -4,10 +4,10 @@ description: Из этой статьи вы узнаете, как выполн
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.openlocfilehash: 865cfc6daa7568236b0306ba591b42a9f7704dd4
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82101184"
 ---
 # <a name="back-up-azure-files-with-powershell"></a>Резервное копирование файлов Azure с помощью PowerShell
@@ -293,6 +293,6 @@ testAzureFS       Backup               Completed            11/12/2018 2:42:07 P
 >[!NOTE]
 > Политика резервного копирования файловых ресурсов Azure теперь поддерживает настройку резервного копирования с ежедневными, еженедельными, ежемесячными и ежегодными сроками хранения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Сведения о](backup-afs.md) резервном копировании файлов Azure в портал Azure.

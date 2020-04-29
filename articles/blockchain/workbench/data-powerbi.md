@@ -5,21 +5,21 @@ ms.date: 04/22/2020
 ms.topic: article
 ms.reviewer: sunri
 ms.openlocfilehash: 4245603fee5b3d24488426c3dc2d026a3c0d7848
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82082532"
 ---
 # <a name="using-azure-blockchain-workbench-data-with-microsoft-power-bi"></a>Использование данных Azure Blockchain Workbench с помощью Microsoft Power BI
 
-Microsoft Power BI обеспечивает возможность легко генерировать мощные отчеты из баз данных [https://www.powerbi.com](https://www.powerbi.com)S'L DB с помощью Power BI Desktop, а затем публиковать их.
+Microsoft Power BI предоставляет возможность легко создавать эффективные отчеты из баз данных SQL с помощью Power BI Desktop, а затем публиковать их в [https://www.powerbi.com](https://www.powerbi.com).
 
 В этой статье содержится пошаговое руководство по подключению к базе данных SQL Azure Blockchain Workbench из PowerBI Desktop, созданию отчета и его развертыванию на сайте powerbi.com.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Скачать [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
+* Скачайте [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
 ## <a name="connecting-power-bi-to-data-in-azure-blockchain-workbench"></a>Подключение к данным Power BI в Azure Blockchain Workbench
 
@@ -29,7 +29,7 @@ Microsoft Power BI обеспечивает возможность легко г
     ![Получение данных](./media/data-powerbi/get-data.png)
 3.  Выберите **SQL Server** в списке типов источников данных.
 
-4.  В диалоговом окне укажите имя сервера и базы данных. Укажите, следует ли импортировать данные или выполнять **DirectQuery**. Щелкните **ОК**.
+4.  В диалоговом окне укажите имя сервера и базы данных. Укажите, следует ли импортировать данные или выполнять **DirectQuery**. Нажмите кнопку **OK**.
 
     ![Выбор SQL Server](./media/data-powerbi/select-sql.png)
 
@@ -49,7 +49,7 @@ Microsoft Power BI обеспечивает возможность легко г
 
 Теперь вы можете создавать и публиковать отчеты как обычно, с помощью Power BI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

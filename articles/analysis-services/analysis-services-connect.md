@@ -8,24 +8,24 @@ ms.date: 04/17/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: cc671629934d80b3e727ca69f9026f534d05e160
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81676649"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
-В этой статье описывается подключение к серверу с помощью моделирования данных и приложений управления, таких как S'L Server Management Studio (SSMS) или Visual Studio с проектами аналитических служб, или с приложениями для обслуживания клиентов, такими как Microsoft Excel, Power BI Desktop или пользовательские приложения. Для подключений к службам Azure Analysis Services используется протокол HTTPS.
+В этой статье описывается подключение к серверу с помощью приложений моделирования данных и управления, таких как SQL Server Management Studio (SSMS) или Visual Studio с Analysis Services проектами, а также с клиентскими приложениями для создания отчетов, такими как Microsoft Excel, Power BI Desktop или пользовательские приложения. Для подключений к службам Azure Analysis Services используется протокол HTTPS.
 
 ## <a name="client-libraries"></a>Клиентские библиотеки
 
 [Получение последних версий клиентских библиотек](analysis-services-data-providers.md)
 
-Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, Visual Studio, Excel 2016 и более поздних версий и Power BI последние клиентские библиотеки устанавливаются или обновляются ежемесячными релизами. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, такое возможно, если обновление откладывается политикой либо если обновление Office 365 производится по отложенному каналу.
+Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, Visual Studio, Excel 2016 и более поздних версий и Power BI последние клиентские библиотеки устанавливаются или обновляются в ежемесячных выпусках. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, такое возможно, если обновление откладывается политикой либо если обновление Office 365 производится по отложенному каналу.
 
 > [!NOTE]
-> Библиотеки клиентов не могут подключаться к службам анализа Azure через прокси-серверы, требующие имени пользователя и пароля. 
+> Клиентские библиотеки не могут подключаться к Azure Analysis Services через прокси-серверы, для которых требуется имя пользователя и пароль. 
 
 ## <a name="server-name"></a>Имя сервера
 
@@ -43,9 +43,9 @@ ms.locfileid: "81676649"
 ![Получение имени сервера в Azure](./media/analysis-services-deploy/aas-deploy-get-server-name.png)
 
 > [!NOTE]
-> Протокол для Восточного США 2 регионе **aspaaseastus2**.
+> Протокол для региона "Восточная часть США 2" — **aspaaseastus2**.
 
-## <a name="connection-string"></a>Строка подключения
+## <a name="connection-string"></a>Строка подключения.
 
 При подключении к службам Azure Analysis Services с помощью модели табличного объекта используйте следующие форматы строки подключения:
 
@@ -77,9 +77,9 @@ ms.locfileid: "81676649"
 Пользователи предыдущих версий Excel могут подключаться к серверу Azure Analysis Services с помощью файла подключения к данным Office (ODC). Дополнительные сведения см. в разделе [Создание файла подключения к данным Office (ODC-файла)](analysis-services-odc.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Связь с Excel](analysis-services-connect-excel.md)    
-[Связь с Power BI](analysis-services-connect-pbi.md)   
+[Подключение к Excel](analysis-services-connect-excel.md)    
+[Подключение с помощью Power BI](analysis-services-connect-pbi.md)   
 [Управление службами Analysis Services](analysis-services-manage.md)   
 

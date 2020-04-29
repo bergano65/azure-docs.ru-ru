@@ -11,10 +11,10 @@ ms.workload: genomics
 ms.topic: troubleshooting
 ms.date: 10/29/2018
 ms.openlocfilehash: c508c10d619cde1a16d89b446c5cfd1a3ce81daf
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100912"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
@@ -140,6 +140,6 @@ msgen status -w 1001 -f "config.txt"
 
 Если у вас по-прежнему возникают проблемы с заданием или у вас есть другие вопросы, обратитесь в службу поддержки Microsoft Genomics с портала Azure. Дополнительные сведения о том, как отправить запрос в службу поддержки, см. [здесь](file-support-ticket-genomics.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как устранять распространенные проблемы с помощью службы Microsoft Genomics. Дополнительные сведения и ответы на общие вопросы см. в статье [Microsoft Genomics: часто задаваемые вопросы](frequently-asked-questions-genomics.md). 

@@ -9,10 +9,10 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: cynthn
 ms.openlocfilehash: 9da3a531766e74398f4b54f1c777f9a5c65892e1
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100691"
 ---
 # <a name="create-a-shared-image-gallery-with-azure-powershell"></a>Создание коллекции общих образов с помощью Azure PowerShell 
@@ -34,7 +34,7 @@ ms.locfileid: "82100691"
 
 Для каждых 20 виртуальных машин, которые вы создаете параллельно, рекомендуется использовать одну реплику. Например, если вы создаете виртуальные машины 120 параллельно с помощью одного и того же образа в регионе, мы рекомендуем разместить по крайней мере 6 реплик образа. Дополнительные сведения см. в разделе [масштабирование](/azure/virtual-machines/windows/shared-image-galleries#scaling).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Чтобы выполнить пример из этой статьи, вам нужен существующий управляемый образ. Вы можете следовать указаниям в [учебнике Создание пользовательского образа виртуальной машины Azure с Azure PowerShell](tutorial-custom-images.md) , чтобы создать его при необходимости. Если управляемый образ содержит диск данных, размер диска данных не может превышать 1 ТБ.
 
@@ -89,7 +89,7 @@ New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 
 [!INCLUDE [virtual-machines-common-shared-images-update-delete-ps](../../../includes/virtual-machines-common-shared-images-update-delete-ps.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 С помощью [построителя образов Azure (Предварительная версия)](image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](image-builder-gallery-update-image-version.md). 
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 

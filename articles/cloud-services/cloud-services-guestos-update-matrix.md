@@ -13,10 +13,10 @@ ms.workload: tbd
 ms.date: 4/22/2020
 ms.author: yohaddad
 ms.openlocfilehash: 83ecbf05ab892e0673b31df893f66b03373957b7
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82101507"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK
@@ -176,7 +176,7 @@ ms.locfileid: "82101507"
 |~~WA-GUEST-OS-5.23_201809-01~~ |12 октября 2018 г. |14 декабря 2018 г. |
 
 ## <a name="family-4-releases"></a>Выпуски семейства 4
-**Windows Server 2012 R2**
+**Windows Server 2012 R2**
 
 .NET Framework установлен: 3,5, 4.5.1, 4.5.2
 
@@ -203,7 +203,7 @@ ms.locfileid: "82101507"
 |~~WA-GUEST-OS-4.58_201809-01~~ |12 октября 2018 г. |14 декабря 2018 г. |
 
 ## <a name="family-3-releases"></a>Выпуски семейства 3
-**Windows Server 2012**
+**Windows Server 2012**
 
 Версии установленной платформы .NET Framework: 3.5, 4.5
 
@@ -334,4 +334,4 @@ ms.locfileid: "82101507"
 [fam1retire]: cloud-services-guestos-family1-retirement.md
 [fix]: https://technet.microsoft.com/library/security/ms17-010.aspx
 [Windows Azure SDK]: https://www.microsoft.com/en-us/download/details.aspx?id=54917
-[удобн]: https://docs.microsoft.com/azure/cloud-services/applications-dont-support-tls-1-2  
+[more]: https://docs.microsoft.com/azure/cloud-services/applications-dont-support-tls-1-2  

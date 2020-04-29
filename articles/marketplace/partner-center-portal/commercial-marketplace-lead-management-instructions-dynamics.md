@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: dsindona
 ms.openlocfilehash: b9158f7b2e3fc73a2fe2a9b20ead2558b7467f6f
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82131060"
 ---
 # <a name="configure-lead-management-for-dynamics-365-customer-engagement"></a>Настройка управления интересами для служб взаимодействия с клиентами Dynamics 365
@@ -124,7 +124,7 @@ ms.locfileid: "82131060"
 
     ![Microsoft 365 "добавить пользователя" в центре администрирования](./media/commercial-marketplace-lead-management-instructions-dynamics/ms-365-add-user.png)
 
-1. Создайте пользователя для службы модуля записи интересов. Настройте следующие параметры:
+1. Создайте пользователя для службы модуля записи интересов. Настройте следующие параметры.
 
     * Введите имя пользователя.
     * Введите пароль и снимите флажок **сделать этот пользователь сменой пароля при первом входе** .
@@ -192,7 +192,7 @@ ms.locfileid: "82131060"
     ![Поле имени пользователя Office 365](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-authentication.png)
 
 1. В качестве **контактного сообщения электронной почты**введите адреса электронной почты сотрудников компании, которые должны получать уведомления по электронной почте при получении нового интереса. Можно ввести несколько адресов электронной почты, разделяя их точкой с запятой.
-1. Щелкните **ОК**.
+1. Нажмите кнопку **OK**.
 
 Чтобы убедиться, что вы успешно подключились к цели назначения, нажмите кнопку **проверить** . В случае успеха вы получите руководителя тестирования в целевом месте назначения.
 

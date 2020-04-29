@@ -1,6 +1,6 @@
 ---
-title: Запрос ы JSON файлы с помощью S'L по требованию (предварительный просмотр)
-description: В этом разделе рассказывается о том, как читать файлы JSON с помощью S'L по запросу в Azure Synapse Analytics.
+title: Запрос JSON-файлов с помощью SQL по запросу (Предварительная версия)
+description: В этом разделе объясняется, как читать JSON-файлы с помощью SQL по запросу в Azure синапсе Analytics.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -10,26 +10,26 @@ ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
 ms.openlocfilehash: 645baf9102785d223fd1f23ae52a4609725f795b
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81770808"
 ---
-# <a name="query-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Файлы запроса JSON с использованием S'L по требованию (предварительный просмотр) в Azure Synapse Analytics
+# <a name="query-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос JSON-файлов с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics
 
-В этой статье вы узнаете, как написать запрос с помощью S'L по требованию (предварительный просмотр) в Azure Synapse Analytics. Целью запроса является чтение файлов JSON.
+В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics. Целью запроса является чтение JSON-файлов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-Прежде чем читать остальную часть этой статьи, просмотрите следующие статьи:
+Прежде чем читать оставшуюся часть этой статьи, ознакомьтесь со следующими статьями:
 
-- [Первая установка](query-data-storage.md#first-time-setup)
+- [Изначальная настройка](query-data-storage.md#first-time-setup)
 - [Предварительные требования](query-data-storage.md#prerequisites)
 
-## <a name="sample-json-files"></a>Пример jSON файлов
+## <a name="sample-json-files"></a>Примеры файлов JSON
 
-В разделе ниже содержится пример скриптов для чтения файлов JSON. Файлы хранятся в контейнере *json,* *папках*и содержат одну запись книги со следующей структурой:
+В разделе ниже приведены примеры сценариев для чтения файлов JSON. Файлы хранятся в контейнере *JSON* , в папке *Books*и содержат одну запись книги со следующей структурой:
 
 ```json
 {
@@ -47,9 +47,9 @@ ms.locfileid: "81770808"
 }
 ```
 
-## <a name="read-json-files"></a>Читать файлы JSON
+## <a name="read-json-files"></a>Чтение JSON файлов
 
-Для обработки файлов JSON с использованием JSON_VALUE и [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), необходимо прочитать файл JSON из хранилища в виде одного столбца. Следующий скрипт читает файл *book1.json* в виде одной колонки:
+Для обработки JSON-файлов с помощью JSON_VALUE и [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)необходимо прочитать JSON-файл из хранилища в виде одного столбца. Следующий скрипт считывает файл *book1. JSON* как один столбец:
 
 ```sql
 SELECT
@@ -68,11 +68,11 @@ FROM
 ```
 
 > [!NOTE]
-> Вы читаете весь файл JSON как одну строку или столбец. Так, ФИЛЕТЕРМИНАТОР, ФИЛЕЛСЦИТЕиТЕРИТТЕР и ROWTERMINATOR настроены на 0x0b.
+> Вы читаете весь файл JSON в виде одной строки или столбца. Таким образом, FIELDTERMINATOR, ФИЕЛДКУОТЕ и ROWTERMINATOR имеют значение 0x0B.
 
-## <a name="query-json-files-using-json_value"></a>Запрос ы JSON файлы с использованием JSON_VALUE
+## <a name="query-json-files-using-json_value"></a>Запрос JSON файлов с помощью JSON_VALUE
 
-Запрос ниже показывает, как использовать [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения скалярных значений (название, издатель) из книги, озаглавленной *Вероятностные и статистические методы в криптологии, Введение выбранных статей*:
+В следующем запросе показано, как использовать [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения скалярных значений (Title, Publisher) из книги, озаглавленной *вероятностная, и статистических методов в криптологи, введения по выбранным статьям*:
 
 ```sql
 SELECT
@@ -94,9 +94,9 @@ WHERE
     JSON_VALUE(jsonContent, '$.title') = 'Probabilistic and Statistical Methods in Cryptology, An Introduction by Selected Topics';
 ```
 
-## <a name="query-json-files-using-json_query"></a>Запрос ы JSON файлы с использованием JSON_QUERY
+## <a name="query-json-files-using-json_query"></a>Запрос JSON файлов с помощью JSON_QUERY
 
-Следующий запрос показывает, как использовать [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для извлечения объектов и массивов (авторов) из книги, озаглавленной *Вероятностные и статистические методы в криптологии, Введение выбранных тем:*
+В следующем запросе показано, как использовать [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения объектов и массивов (авторов) из книги, озаглавленной *вероятностная, и статистических методов в криптологи, введения по выбранным темам*:
 
 ```sql
 SELECT
@@ -117,9 +117,9 @@ WHERE
     JSON_VALUE(jsonContent, '$.title') = 'Probabilistic and Statistical Methods in Cryptology, An Introduction by Selected Topics';
 ```
 
-## <a name="query-json-files-using-openjson"></a>Запрос ы JSON файлы с помощью OPENJSON
+## <a name="query-json-files-using-openjson"></a>Запрос JSON файлов с помощью OPENJSON
 
-В следующем запросе используется [OPENJSON](/sql/t-sql/functions/openjson-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Он будет получать объекты и свойства в книге, озаглавленной *Вероятностные и статистические методы в криптологии, Введение по выбранным статьям*:
+В следующем запросе используется [OPENJSON](/sql/t-sql/functions/openjson-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Он будет извлекать объекты и свойства в книге с правом *вероятностная и статистическими методами в криптологи, а также введением по выбранным статьям*:
 
 ```sql
 SELECT
@@ -140,9 +140,9 @@ WHERE
     JSON_VALUE(jsonContent, '$.title') = 'Probabilistic and Statistical Methods in Cryptology, An Introduction by Selected Topics';
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Следующие статьи в этой серии продемонстрируют, как:
+В следующих статьях этой серии показано, как:
 
-- [Папки запросов и несколько файлов](query-folders-multiple-csv-files.md)
+- [Запросы к папкам и нескольким файлам](query-folders-multiple-csv-files.md)
 - [Создание и использование представлений](create-use-views.md)

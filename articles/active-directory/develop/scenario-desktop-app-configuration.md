@@ -1,6 +1,6 @@
 ---
-title: Настройка настольных приложений, которые вызывают веб-AI - платформа идентификации Майкрософт (ru) Azure
-description: Узнайте, как настроить код настольного приложения, которое вызывает web-аПО
+title: Настройка классических приложений, вызывающих веб-API — платформа Microsoft Identity | Службы
+description: Узнайте, как настроить код для классического приложения, вызывающего веб-API
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,47 +12,47 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: e0b43f7563c9dfac6374590f6b081197536fe31e
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81869012"
 ---
-# <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Настольное приложение, которое вызывает веб-AIS: конфигурация кода
+# <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Классическое приложение, вызывающее веб-API: конфигурация кода
 
-Теперь, когда вы создали приложение, вы узнаете, как настроить код с координатами приложения.
+Теперь, когда вы создали приложение, вы узнаете, как настроить код с помощью координат приложения.
 
-## <a name="microsoft-authentication-libraries"></a>Библиотеки аутентификации Майкрософт
+## <a name="microsoft-authentication-libraries"></a>Библиотеки проверки подлинности Майкрософт
 
-Следующие библиотеки аутентификации Майкрософт (MSALs) поддерживают настольные приложения.
+Следующие библиотеки проверки подлинности Майкрософт (Мсалс) поддерживают классические приложения.
 
   Библиотека проверки подлинности Майкрософт | Описание
   ------------ | ----------
-  ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживает создание настольного приложения на нескольких платформах, таких как Linux, Windows и macOS.
-  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддерживает создание настольного приложения на нескольких платформах.
-  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Поддерживает создание настольного приложения на нескольких платформах.
-  ![MSAL iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL iOS | Поддерживает настольные приложения, работающие только на macOS.
+  ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживает создание классических приложений на нескольких платформах, таких как Linux, Windows и macOS.
+  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддерживает создание классических приложений на нескольких платформах.
+  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Поддерживает создание классических приложений на нескольких платформах.
+  ![MSAL iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL iOS | Поддерживает классические приложения, работающие только на macOS.
 
-## <a name="public-client-application"></a>Публичное приложение клиента
+## <a name="public-client-application"></a>Общедоступное клиентское приложение
 
-С точки зрения кода настольные приложения являются общедоступными приложениями для клиентов. Конфигурация будет немного отличаться в зависимости от того, используете ли вы интерактивную аутентификацию или нет.
+С точки зрения кода, классические приложения являются общедоступными клиентскими приложениями. Конфигурация будет немного отличаться в зависимости от того, используется ли Интерактивная проверка подлинности.
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-Вам нужно будет строить и `IPublicClientApplication`манипулировать MSAL.NET .
+Вам потребуется создать MSAL.NET `IPublicClientApplication`и управлять им.
 
-![IPublicКлиентПриложение](media/scenarios/public-client-application.png)
+![ипубликклиентаппликатион](media/scenarios/public-client-application.png)
 
-### <a name="exclusively-by-code"></a>Исключительно по коду
+### <a name="exclusively-by-code"></a>Исключительно в коде
 
-Следующий код мгновенно выполняет публичное клиентское приложение и подписывается в общедоступном облаке Microsoft Azure с рабочей или школьной учетной записью или личной учетной записью Майкрософт.
+Следующий код создает открытое клиентское приложение и выполняет вход пользователей в Microsoft Azure общедоступное облако с рабочей или учебной учетной записью или личным учетная запись Майкрософт.
 
 ```csharp
 IPublicClientApplication app = PublicClientApplicationBuilder.Create(clientId)
     .Build();
 ```
 
-Если вы собираетесь использовать интерактивную аутентификацию или `.WithRedirectUri` поток кода устройства, как видно ранее, используйте модификатор.
+Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано `.WithRedirectUri` выше, используйте модификатор.
 
 ```csharp
 IPublicClientApplication app;
@@ -63,7 +63,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
 
 ### <a name="use-configuration-files"></a>Использование файлов конфигурации
 
-Следующий код мгновенно выполняет публичное клиентское приложение от объекта конфигурации, которое может быть заполнено программно или прочитано из файла конфигурации.
+Следующий код создает экземпляр общедоступного клиентского приложения на основе объекта конфигурации, который может быть заполнен программно или прочитан из файла конфигурации.
 
 ```csharp
 PublicClientApplicationOptions options = GetOptions(); // your own method
@@ -72,9 +72,9 @@ IPublicClientApplication app = PublicClientApplicationBuilder.CreateWithApplicat
         .Build();
 ```
 
-### <a name="more-elaborated-configuration"></a>Более продуманная конфигурация
+### <a name="more-elaborated-configuration"></a>Более подробная конфигурация
 
-Вы можете разработать здание приложения, добавив ряд модификаторов. Например, если вы хотите, чтобы ваше приложение было мультитенантным приложением в национальном облаке, например, правительство США показано здесь, вы можете написать:
+Вы можете развить сборку приложений, добавив несколько модификаторов. Например, если вы хотите, чтобы приложение было многоклиентским приложением в национальной облаке, например, в этом примере, мы можем написать следующее:
 
 ```csharp
 IPublicClientApplication app;
@@ -85,7 +85,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-MSAL.NET также содержит модификатор для служб Active Directory Federation 2019:
+MSAL.NET также содержит модификатор для службы федерации Active Directory (AD FS) 2019:
 
 ```csharp
 IPublicClientApplication app;
@@ -94,7 +94,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-Наконец, если вы хотите приобрести токены для клиента B2C Active Directory (Azure AD), укажите арендатора, как показано в следующем фрагменте кода:
+Наконец, если вы хотите получить токены для клиента B2C (Azure AD) в Azure Active Directory, укажите клиент, как показано в следующем фрагменте кода:
 
 ```csharp
 IPublicClientApplication app;
@@ -105,14 +105,14 @@ app = PublicClientApplicationBuilder.Create(clientId)
 
 ### <a name="learn-more"></a>Дополнительные сведения
 
-Чтобы узнать больше о том, как настроить MSAL.NET настольное приложение:
+Дополнительные сведения о настройке классического приложения MSAL.NET:
 
-- Список всех модификаторов, доступных на `PublicClientApplicationBuilder`, см справочная документация [PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
-- Для описания всех вариантов, `PublicClientApplicationOptions`приведенных в , см. [PublicClientApplicationOptions](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions) в справочной документации.
+- Список всех модификаторов, доступных в `PublicClientApplicationBuilder`, см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
+- Описание всех параметров, предоставляемых в `PublicClientApplicationOptions`, см. в разделе [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions) в справочной документации.
 
-### <a name="complete-example-with-configuration-options"></a>Полный пример с вариантами конфигурации
+### <a name="complete-example-with-configuration-options"></a>Полный пример с параметрами конфигурации
 
-Представьте себе консольное приложение `appsettings.json` .NET Core, которое имеет следующий файл конфигурации:
+Представьте себе консольное приложение .NET Core, которое имеет `appsettings.json` следующий файл конфигурации:
 
 ```json
 {
@@ -128,7 +128,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
 }
 ```
 
-У вас есть мало кода для чтения в этом файле с помощью . Платформа конфигурации, предоставленная NET:
+У вас есть немало кода для чтения в этом файле с помощью. Инфраструктура конфигурации, предоставленная NET:
 
 ```csharp
 public class SampleConfiguration
@@ -180,11 +180,11 @@ var app = PublicClientApplicationBuilder.CreateWithApplicationOptions(config.Pub
            .Build();
 ```
 
-Перед вызовом `.Build()` к методу можно переопределить конфигурацию с помощью вызовов к `.WithXXX` методам, как это было видно ранее.
+Перед вызовом `.Build()` метода можно переопределить конфигурацию с помощью вызовов `.WithXXX` методов, как показано выше.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Вот класс, используемый в образцах разработки MSAL Java для настройки образцов: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
 
 ```Java
 PublicClientApplication pca = PublicClientApplication.builder(CLIENT_ID)
@@ -207,9 +207,9 @@ app = msal.PublicClientApplication(
 
 # <a name="macos"></a>[MacOS](#tab/macOS)
 
-Следующий код мгновенно выполняет публичное клиентское приложение и подписывается в общедоступном облаке Microsoft Azure с рабочей или школьной учетной записью или личной учетной записью Майкрософт.
+Следующий код создает открытое клиентское приложение и выполняет вход пользователей в Microsoft Azure общедоступное облако с рабочей или учебной учетной записью или личным учетная запись Майкрософт.
 
-### <a name="quick-configuration"></a>Быстрая конфигурация
+### <a name="quick-configuration"></a>Быстрая настройка
 
 Objective-C.
 
@@ -226,9 +226,9 @@ let config = MSALPublicClientApplicationConfig(clientId: "<your-client-id-here>"
 if let application = try? MSALPublicClientApplication(configuration: config){ /* Use application */}
 ```
 
-### <a name="more-elaborated-configuration"></a>Более продуманная конфигурация
+### <a name="more-elaborated-configuration"></a>Более подробная конфигурация
 
-Вы можете разработать здание приложения, добавив ряд модификаторов. Например, если вы хотите, чтобы ваше приложение было мультитенантным приложением в национальном облаке, например, правительство США показано здесь, вы можете написать:
+Вы можете развить сборку приложений, добавив несколько модификаторов. Например, если вы хотите, чтобы приложение было многоклиентским приложением в национальной облаке, например, в этом примере, мы можем написать следующее:
 
 Objective-C.
 
@@ -259,7 +259,7 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Приобретение токена для настольного приложения](scenario-desktop-acquire-token.md)
+> [Получение маркера для классического приложения](scenario-desktop-acquire-token.md)

@@ -1,5 +1,5 @@
 ---
-title: Пример прохождения инфраструктуры Azure
+title: Примеры инфраструктуры Azure
 description: Изучите основные рекомендации по проектированию и реализации, касающиеся развертывания примера инфраструктуры в Azure.
 author: cynthn
 ms.service: virtual-machines-windows
@@ -9,10 +9,10 @@ ms.date: 12/15/2017
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 43e96b891e60dfcf8bc3c29b202bb60213905372
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81869468"
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-windows-vms"></a>Пошаговое руководство по примеру инфраструктуры Azure для виртуальных машин Windows
@@ -45,7 +45,7 @@ Adventure Works Cycles хочет создать приложение интер
 Все вышеуказанное соответствует соглашению об именовании.
 
 * В Adventure Works Cycles используется префикс **[рабочая нагрузка ИТ-среды]-[расположение]-[ресурс Azure]** .
-  * Для этого примера, «**azos»**(Azure Online Store) — название Рабочей нагрузки ИТ, а **«использование»**(East US 2) — это местоположение
+  * В этом примере «**azos**» (Azure Online Store) — это имя рабочей нагрузки ИТ-службы, а «**use**» (Восточная часть США 2) — это расположение.
 * Для виртуальных сетей используется формат AZOS-USE-VN **[номер]**.
 * Для групп доступности используется формат azos-use-as-**[роль]**.
 * Для имен виртуальных машин используется формат use azos-use-vm-**[имя_виртуальной_машины]**.

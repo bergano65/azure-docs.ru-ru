@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 05/10/2018
 ms.reviewer: sdash
 ms.openlocfilehash: 873fc41585c387246d83008a8f97d6c4d9a32c3b
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80985071"
 ---
 # <a name="monitor-performance-in-web-applications"></a>Отслеживание производительности в веб-приложениях
@@ -102,7 +102,7 @@ HTTP-запросы включают в себя все запросы GET и PO
 * сравните число запросов с другими метриками, чтобы узнать, не связаны ли сбои или медленный ответ с нагрузкой;
 * [вставьте в код инструкции трассировки и выполняйте поиск по ним][diagnostic], чтобы упростить выявление проблем.
 * Отслеживайте работу веб-приложения с помощью [Live Metrics Stream][livestream].
-* Захват состояния вашего приложения .NET с [помощью Snapshot Debugger][snapshot].
+* Запишите состояние приложения .NET с [snapshot Debugger][snapshot].
 
 ## <a name="find-and-fix-performance-bottlenecks-with-performance-investigation-experience"></a>Поиск и устранение узких мест производительности с помощью исследования производительности
 
@@ -129,7 +129,7 @@ HTTP-запросы включают в себя все запросы GET и PO
 ![Три пика длительности операции с диапазоном времени 7 дней и временным окном](./media/web-monitor-performance/Performance30DayOveralllnsights.png)
 
 
-## <a name="next-steps"></a><a name="next"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 [Веб-тесты][availability] — настройте отправку веб-запросов к приложению через равные интервалы из разных точек мира.
 
 [Сбор данных трассировки диагностики и поиск по ним][diagnostic] — добавьте вызовы трассировки и анализируйте результаты для выявления проблем.

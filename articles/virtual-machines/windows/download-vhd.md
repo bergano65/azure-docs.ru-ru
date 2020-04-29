@@ -10,28 +10,28 @@ ms.topic: article
 ms.date: 01/13/2019
 ms.author: cynthn
 ms.openlocfilehash: e87f2436f69abed4c0d0ee415226f99b52f2e804
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82085371"
 ---
 # <a name="download-a-windows-vhd-from-azure"></a>Скачивание виртуального жесткого диска Windows из Azure
 
 В этой статье описано, как скачать файл виртуального жесткого диска (VHD) Windows из Azure, используя портал Azure.
 
-## <a name="optional-generalize-the-vm"></a>Дополнительно: Обобщить VM
+## <a name="optional-generalize-the-vm"></a>Необязательно: Подготовка виртуальной машины к использованию
 
-Если вы хотите использовать VHD в качестве [изображения](tutorial-custom-images.md) для создания других vMs, вы должны использовать [Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation) для обобщения операционной системы. 
+Если вы хотите использовать VHD в качестве [образа](tutorial-custom-images.md) для создания других виртуальных машин, следует использовать [Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation) для обобщения операционной системы. 
 
-Чтобы использовать VHD в качестве изображения для создания других VM, обобщить VM.
+Чтобы использовать VHD в качестве образа для создания других виртуальных машин, подготовьте виртуальную машину к использованию.
 
-1. Если вы еще не сделали этого, вопийте на [порталaz.](https://portal.azure.com/)
-2. [Подключайтесь к VM](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
+1. Войдите в [портал Azure](https://portal.azure.com/), если вы еще этого не сделали.
+2. [Подключитесь к виртуальной машине](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 3. На виртуальной машине откройте окно командной строки с правами администратора.
 4. Измените каталог на *%windir%\system32\sysprep* и запустите файл sysprep.exe.
 5. В диалоговом окне "Программа подготовки системы" выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
-6. В опциях выключения выберите **Shutdown,** а затем нажмите **OK**. 
+6. В окне Параметры завершения работы выберите **Завершение работы**и нажмите кнопку **ОК**. 
 
 
 ## <a name="stop-the-vm"></a>Остановка виртуальной машины
@@ -43,14 +43,14 @@ VHD невозможно скачать из Azure, если он подключ
 1. В колонке виртуальной машины нажмите кнопку **Остановить**.
 
 
-## <a name="generate-download-url"></a>Создание URL-адреса загрузки
+## <a name="generate-download-url"></a>Создать URL-адрес для скачивания
 
-Чтобы загрузить файл VHD, необходимо создать [URL-адрес общей подписи доступа (SAS).](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) Когда этот URL-адрес создан, ему назначается срок действия.
+Чтобы скачать VHD-файл, необходимо создать URL для [подписи общего доступа (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) . Когда этот URL-адрес создан, ему назначается срок действия.
 
-1. На странице для VM щелкните **диски** в левом меню.
-1. Выберите диск операционной системы для VM.
-1. На странице диска выберите **Диск Экспорт** из левого меню.
-1. Время истечения срока действия URL-адреса по умолчанию составляет *3600* секунд. Увеличьте этот срок до **36000** для дисков ОС Windows.
+1. На странице виртуальной машины в меню слева щелкните **диски** .
+1. Выберите диск операционной системы для виртуальной машины.
+1. На странице диска выберите **Экспорт диска** в меню слева.
+1. Срок действия URL-адреса по умолчанию составляет *3600* секунд. Увеличьте это значение до **36000** для дисков ОС Windows.
 1. Нажмите кнопку **Создать URL-адрес**.
 
 > [!NOTE]
@@ -61,11 +61,11 @@ VHD невозможно скачать из Azure, если он подключ
 ## <a name="download-vhd"></a>Скачивание VHD
 
 1. Под созданным URL-адресом щелкните ссылку "Скачать VHD-файл".
-1. Возможно, вам придется нажать **Сохранить** в вашем браузере, чтобы начать загрузку. По умолчанию VHD-файлу присваивается имя *abcd*.
+1. Чтобы начать загрузку, может потребоваться нажать кнопку **сохранить** в браузере. По умолчанию VHD-файлу присваивается имя *abcd*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [передать VHD-файл в Azure](upload-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
-- [Создавайте управляемые диски из неуправляемых дисков в учетной записи хранилища.](attach-disk-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-- [Управляйте дисками Azure с помощью PowerShell.](tutorial-manage-data-disk.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+- [Создание управляемых дисков из неуправляемых дисков в учетной записи хранения](attach-disk-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+- [Управление дисками Azure с помощью PowerShell](tutorial-manage-data-disk.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

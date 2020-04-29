@@ -4,40 +4,40 @@ description: В этой статье описывается создание г
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.openlocfilehash: 6bec29a07653ff5ad7d1e2f8317246049e127c8c
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81605010"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
-Чтобы упростить управление ресурсами в подписке Azure, можно определить и назначить [политики](../../governance/policy/overview.md) или [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) в подписке. С шаблонами уровня подписки вы декларативно применяете политики и назначаете роли в подписке. Можно также создавать группы ресурсов и развертывать ресурсы.
+Чтобы упростить управление ресурсами в подписке Azure, можно определить и назначить [политики](../../governance/policy/overview.md) или [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) в рамках подписки. С помощью шаблонов уровня подписки декларативно применяются политики и назначаются роли в подписке. Вы также можете создавать группы ресурсов и развертывать ресурсы.
 
-Для развертывания шаблонов на уровне подписки используйте Azure CLI, PowerShell или REST API. Портал Azure не поддерживает развертывания на уровне подписки.
+Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell или REST API. Портал Azure не поддерживает развертывания на уровне подписки.
 
 ## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
-Вы можете развернуть следующие типы ресурсов на уровне подписки:
+На уровне подписки можно развернуть следующие типы ресурсов:
 
-* [Бюджетов](/azure/templates/microsoft.consumption/budgets)
-* [развертывание](/azure/templates/microsoft.resources/deployments) - для вложенных шаблонов, которые развертываются в группы ресурсов.
+* [увеличен](/azure/templates/microsoft.consumption/budgets)
+* [развертывания](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в группах ресурсов.
 * [eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions)
-* [peerAsns](/azure/templates/microsoft.peering/2019-09-01-preview/peerasns)
-* [политикаНазначения](/azure/templates/microsoft.authorization/policyassignments)
+* [пираснс](/azure/templates/microsoft.peering/2019-09-01-preview/peerasns)
+* [полициассигнментс](/azure/templates/microsoft.authorization/policyassignments)
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
 * [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions)
-* [восстановительные работы](/azure/templates/microsoft.policyinsights/2019-07-01/remediations)
-* [ресурсгруппы](/azure/templates/microsoft.resources/resourcegroups)
-* [ролевыеназначения](/azure/templates/microsoft.authorization/roleassignments)
+* [исправления](/azure/templates/microsoft.policyinsights/2019-07-01/remediations)
+* [resourceGroups](/azure/templates/microsoft.resources/resourcegroups)
+* [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
-* [сфераНазначения](/azure/templates/microsoft.managednetwork/scopeassignments)
-* [supportPlanTypes](/azure/templates/microsoft.addons/supportproviders/supportplantypes)
-* [Теги](/azure/templates/microsoft.resources/tags)
+* [скопеассигнментс](/azure/templates/microsoft.managednetwork/scopeassignments)
+* [суппортплантипес](/azure/templates/microsoft.addons/supportproviders/supportplantypes)
+* [Тэги](/azure/templates/microsoft.resources/tags)
 
 ### <a name="schema"></a>схема
 
-Схема, используемая для развертывания на уровне подписки, отличается от схемы для развертывания групп ресурсов.
+Схема, используемая для развертываний на уровне подписки, отличается от схемы развертываний группы ресурсов.
 
 Для шаблонов используйте:
 
@@ -45,7 +45,7 @@ ms.locfileid: "81605010"
 https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#
 ```
 
-Схема для файла параметров одинакова для всех областей развертывания. Для параметров используйте:
+Схема для файла параметров одинакова для всех областей развертывания. Для файлов параметров используйте:
 
 ```json
 https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
@@ -53,9 +53,9 @@ https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json
 
 ## <a name="deployment-commands"></a>Команды развертывания
 
-Команды для развертывания на уровне подписки отличаются от команд для развертывания групп ресурсов.
+Команды для развертываний на уровне подписки отличаются от команд для развертываний групп ресурсов.
 
-Для Azure CLI используйте [подгруппу развертывания az.](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-create) Следующий пример развертывает шаблон для создания группы ресурсов:
+Для Azure CLI используйте команду [AZ Deployment подсоздание](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurecli-interactive
 az deployment sub create \
@@ -65,7 +65,7 @@ az deployment sub create \
   --parameters rgName=demoResourceGroup rgLocation=centralus
 ```
 
-Для команды развертывания PowerShell используйте [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) или **New-AzSubscriptionDeployment.** Следующий пример развертывает шаблон для создания группы ресурсов:
+Для команды развертывания PowerShell используйте [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment) или **New-азсубскриптиондеплоймент**. В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurepowershell-interactive
 New-AzSubscriptionDeployment `
@@ -76,15 +76,15 @@ New-AzSubscriptionDeployment `
   -rgLocation centralus
 ```
 
-Для REST API используйте [развертывания - Создайте область подписки.](/rest/api/resources/deployments/createorupdateatsubscriptionscope)
+Для REST API используйте [развертывания — создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope).
 
-## <a name="deployment-location-and-name"></a>Местоположение и имя развертывания
+## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
 
-Для развертывания уровня подписки необходимо учесть место развертывания. Расположение развертывания отделено от местоположения развертываемых ресурсов. Местоположение развертывания определяет, где хранить данные развертывания.
+Для развертываний на уровне подписки необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
 
-Имя развертывания можно усваить или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
 
-Для каждого имени развертывания местоположение неизменяемо. Развертывание не может быть создано в одном месте, когда есть существующее развертывание с тем же именем в другом месте. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+Для каждого имени развертывания расположение является неизменяемым. Нельзя создать развертывание в одном месте, если существует развертывание с тем же именем в другом расположении. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
 ## <a name="use-template-functions"></a>Использование функций шаблонов
 
@@ -92,15 +92,15 @@ New-AzSubscriptionDeployment `
 
 * Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
 * Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Используйте функцию [subscriptionResourceId()](template-functions-resource.md#subscriptionresourceid) для получения идентификатора ресурсов для ресурсов, развернутых на уровне подписки.
+* Используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
 
-  Например, чтобы получить идентификатор ресурсов для определения политики, используйте:
+  Например, чтобы получить идентификатор ресурса для определения политики, используйте:
   
   ```json
   subscriptionResourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))
   ```
   
-  Идентификатор возвращенного ресурса имеет следующий формат:
+  Возвращенный идентификатор ресурса имеет следующий формат:
 
   ```json
   /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
@@ -173,7 +173,7 @@ New-AzSubscriptionDeployment `
 }
 ```
 
-Для получения информации об итерации ресурсов см. [Развертывание нескольких экземпляров ресурса в шаблонах управления ресурсами Azure](./copy-resources.md)и [учебное: Создание нескольких экземпляров ресурсов с шаблонами «Менеджер ресурсов».](./template-tutorial-create-multiple-instances.md)
+Дополнительные сведения о итерации ресурсов см. [в разделе Развертывание нескольких экземпляров ресурса в Azure Resource Manager шаблонах](./copy-resources.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов диспетчер ресурсов](./template-tutorial-create-multiple-instances.md).
 
 ## <a name="resource-group-and-resources"></a>Группа ресурсов и ресурсы
 
@@ -377,12 +377,12 @@ New-AzSubscriptionDeployment `
 
 ## <a name="template-samples"></a>Примеры шаблона
 
-* [Создайте группу ресурсов, заблокируйте ее и дайте ей разрешения.](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment)
-* [Создайте группу ресурсов, политику и назначение политики.](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json)
+* [Создайте группу ресурсов, заблокируйте ее и предоставьте ей разрешения](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment).
+* [Создайте группу ресурсов, политику и назначение политики](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Чтобы узнать о назначении ролей, [см. Управление доступом к ресурсам Azure с помощью шаблонов RBAC и azure Resource Manager.](../../role-based-access-control/role-assignments-template.md)
+* Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
-* Образцы шаблонов можно найти на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
-* Вы также можете развернуть шаблоны на [уровне группы управления](deploy-to-management-group.md) и [на уровне арендаторов.](deploy-to-tenant.md)
+* Примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
+* Вы также можете развернуть шаблоны на уровне [группы управления](deploy-to-management-group.md) и на [уровне клиента](deploy-to-tenant.md).

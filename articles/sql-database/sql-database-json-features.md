@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 04/19/2020
 ms.openlocfilehash: 992c981d49e7c6fbf8b6156570f6554a05caab5d
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81687754"
 ---
 # <a name="getting-started-with-json-features-in-azure-sql-database"></a>Приступая к работе с функциями JSON в Базе данных SQL Azure
@@ -69,7 +69,7 @@ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
 }
 ```
 
-В этом примере мы вернули один объект JSON вместо массива, указав [WITHOUT_ARRAY_WRAPPER](https://msdn.microsoft.com/library/mt631354.aspx) опцию. Этот параметр можно использовать, если вы знаете, что результатом запроса является отдельный объект.
+В этом примере мы возвратили один объект JSON вместо массива, указав параметр [WITHOUT_ARRAY_WRAPPER](https://msdn.microsoft.com/library/mt631354.aspx) . Этот параметр можно использовать, если вы знаете, что результатом запроса является отдельный объект.
 
 Основная ценность предложения FOR JSON заключается в том, что оно дает возможность возвращать сложные иерархические данные из базы данных в виде вложенных объектов JSON или массивов JSON. В приведенном ниже примере показано, как добавить строки из таблицы `Orders`, принадлежащие `Customer`, в виде вложенного массива объектов `Orders`.
 
@@ -185,7 +185,7 @@ END
 
 Набор заказов, отформатированный как массив JSON и указанный в качестве параметра хранимой процедуры, можно проанализировать и вставить в таблицу Orders.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Чтобы узнать, как интегрировать JSON в приложение, ознакомьтесь с приведенным ниже материалами.
 
 * [Блог TechNet](https://blogs.technet.microsoft.com/dataplatforminsider/20../../json-in-sql-server-2016-part-1-of-4/)

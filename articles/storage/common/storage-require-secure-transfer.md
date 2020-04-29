@@ -1,7 +1,7 @@
 ---
-title: Требуется безопасная передача для обеспечения безопасных подключений
+title: Требовать безопасное перемещение для обеспечения безопасных соединений
 titleSuffix: Azure Storage
-description: Узнайте, как потребовать безопасной передачи запросов в Хранилище Azure. Когда требуется безопасная передача для учетной записи хранилища, любые запросы, поступающие из небезопасного соединения, отклоняются.
+description: Узнайте, как требовать безопасной пересылки запросов в службу хранилища Azure. Если для учетной записи хранения требуется безопасное перемещение, все запросы, поступающие от небезопасного подключения, отклоняются.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,28 +11,28 @@ ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
 ms.openlocfilehash: 125f4188ed3f12f366c619af9efe3aa203987c19
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81870519"
 ---
-# <a name="require-secure-transfer-to-ensure-secure-connections"></a>Требуется безопасная передача для обеспечения безопасных подключений
+# <a name="require-secure-transfer-to-ensure-secure-connections"></a>Требовать безопасное перемещение для обеспечения безопасных соединений
 
-Вы можете настроить учетную запись хранилища для приема запросов от защищенных подключений только путем установки необходимого свойства **Безопасной передачи** для учетной записи хранилища. При требуется безопасная передача, любые запросы, поступающие из небезопасного соединения, отклоняются. Корпорация Майкрософт рекомендует всегда требовать безопасного перевода для всех учетных записей хранения данных.
+Вы можете настроить учетную запись хранения для приема запросов только от безопасных подключений, задав для учетной записи хранения свойство **требуется безопасное перемещение** . При необходимости безопасной пересылки все запросы, исходящие из незащищенного соединения, отклоняются. Корпорация Майкрософт рекомендует всегда требовать безопасной пересылки для всех учетных записей хранения.
 
-При необходимости безопасной передачи на операцию API-извне Хранилища Azure необходимо сделать через HTTPS. Любой запрос, сделанный по HTTP, отклоняется.
+Если требуется безопасная операция передачи, вызов операции REST API службы хранилища Azure должен выполняться по протоколу HTTPS. Любой запрос, отправленный по протоколу HTTP, отклоняется.
 
-Подключение к совместной акции Azure File через SMB без шифрования не удается, когда для учетной записи хранилища требуется безопасная передача. Примеры небезопасных соединений включают в себя те, сделанные более SMB 2.1, SMB 3.0 без шифрования, или некоторые версии клиента Linux SMB.
+Подключение к файловому ресурсу Azure через SMB без шифрования завершается сбоем, если для учетной записи хранения требуется безопасная отправка. Примеры небезопасных подключений включают в себя протоколы SMB 2,1, SMB 3,0 без шифрования или некоторые версии клиента SMB для Linux.
 
-По умолчанию при создании учетной записи хранилища включено необходимое свойство **безопасной передачи.**
+По умолчанию при создании учетной записи хранения включается свойство **Обязательное безопасное перемещение** .
 
 > [!NOTE]
 > Так как служба хранилища Azure не поддерживает протокол HTTPS для имен личных доменов, при использовании данных имен этот параметр не применяется. Классические учетные записи хранения не поддерживаются.
 
-## <a name="require-secure-transfer-in-the-azure-portal"></a>Требуется безопасная передача на портале Azure
+## <a name="require-secure-transfer-in-the-azure-portal"></a>Требовать безопасной пересылки в портал Azure
 
-При создании учетной записи хранилища на [портале Azure](https://portal.azure.com)можно включить требуемое свойство **secure transfer.** Его также можно включить для имеющихся учетных записей хранения.
+При создании учетной записи хранения в [портал Azure](https://portal.azure.com)можно включить свойство **требуется безопасное перемещение** . Его также можно включить для имеющихся учетных записей хранения.
 
 ### <a name="require-secure-transfer-for-a-new-storage-account"></a>Включение требования безопасной передачи для новой учетной записи хранения
 
@@ -49,19 +49,19 @@ ms.locfileid: "81870519"
 
    ![Область меню учетной записи хранения](./media/storage-require-secure-transfer/secure_transfer_field_in_portal_en_2.png)
 
-## <a name="require-secure-transfer-from-code"></a>Требуется безопасная передача из кода
+## <a name="require-secure-transfer-from-code"></a>Требовать безопасной перенос из кода
 
-Чтобы требовать безопасной передачи программно, установите _свойство supportsHttpsTrafficOnly_ на учетную запись хранения. Вы можете установить это свойство с помощью aPI-ипой REST-поставщика ресурсов хранения данных, клиентских библиотек или инструментов:
+Чтобы настроить безопасную пересылку программно, установите свойство _supportsHttpsTrafficOnly_ в учетной записи хранения. Это свойство можно задать с помощью REST API поставщика ресурсов хранилища, клиентских библиотек или средств.
 
 * [REST API](/rest/api/storagerp/storageaccounts)
 * [PowerShell](/powershell/module/az.storage/set-azstorageaccount)
 * [CLI](/cli/azure/storage/account)
 * [NodeJS](https://www.npmjs.com/package/azure-arm-storage/)
 * [Пакет SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage)
-* [Питон SDK](https://pypi.org/project/azure-mgmt-storage)
+* [Пакет SDK для Python](https://pypi.org/project/azure-mgmt-storage)
 * [Пакет SDK для Ruby](https://rubygems.org/gems/azure_mgmt_storage)
 
-## <a name="require-secure-transfer-with-powershell"></a>Требуется безопасная передача с PowerShell
+## <a name="require-secure-transfer-with-powershell"></a>Требовать безопасное перемещение с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -91,13 +91,13 @@ EnableHttpsTrafficOnly : True
 
 ```
 
-## <a name="require-secure-transfer-with-azure-cli"></a>Требуется безопасная передача с Azure CLI
+## <a name="require-secure-transfer-with-azure-cli"></a>Требовать безопасное перемещение с помощью Azure CLI
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
- Используйте следующую команду, чтобы проверить настройки:
+ Для проверки параметра используйте следующую команду:
 
 ```azurecli-interactive
 az storage account show -g {ResourceGroupName} -n {StorageAccountName}
@@ -110,7 +110,7 @@ az storage account show -g {ResourceGroupName} -n {StorageAccountName}
 
 ```
 
-Используйте следующую команду, чтобы включить настройку:
+Чтобы включить этот параметр, используйте следующую команду:
 
 ```azurecli-interactive
 az storage account update -g {ResourceGroupName} -n {StorageAccountName} --https-only true
@@ -123,6 +123,6 @@ az storage account update -g {ResourceGroupName} -n {StorageAccountName} --https
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Рекомендации по безопасности для хранения Blob](../blobs/security-recommendations.md)
+[Рекомендации по безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

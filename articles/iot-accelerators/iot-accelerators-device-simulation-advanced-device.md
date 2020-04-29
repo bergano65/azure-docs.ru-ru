@@ -13,10 +13,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: c568dddcbbf57ebd6ed5906bb83af01a84dafa41
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81683830"
 ---
 # <a name="create-an-advanced-device-model"></a>Создание расширенной модели устройства
@@ -126,7 +126,7 @@ ms.locfileid: "81683830"
 Функция, которая генерирует состояние, также получает в качестве входных данных:
 
 * идентификатор устройства;
-* модель устройства;
+* Модель устройства.
 * Текущее время. Это значение позволяет создавать разные данные в зависимости от конкретного устройства и текущего времени.
 
 ### <a name="generating-telemetry-messages"></a>Формирование сообщений телеметрии
@@ -164,11 +164,11 @@ ms.locfileid: "81683830"
 
 * Object — можно сериализовать с помощью JSON.
 * Binary — можно сериализовать с помощью Base64.
-* текст
-* Логическое
+* Text
+* Логическое значение
 * Целое число
 * Double
-* Дата и время
+* DateTime
 
 ### <a name="supported-methods"></a>Поддерживаемые методы
 
@@ -517,6 +517,6 @@ function main(context, state) {
 
 ![Сохранять](media/iot-accelerators-device-simulation-advanced-device/validated.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом практическом руководстве вы познакомились с файлами модели устройства, которые используются симулятором устройств, и научились создавать расширенную модель устройства. Теперь вы можете перейти к руководству [Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств](https://docs.microsoft.com/azure/iot-accelerators/iot-accelerators-device-simulation-time-series-insights)
