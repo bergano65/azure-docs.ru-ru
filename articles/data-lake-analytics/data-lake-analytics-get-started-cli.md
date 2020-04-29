@@ -1,5 +1,5 @@
 ---
-title: Создание & запроса на аналитику озер данных Azure - Azure CLI
+title: Создание & запроса Azure Data Lake Analytics Azure CLI
 description: Узнайте, как использовать интерфейс командной строки Azure для создания учетной записи Data Lake Analytics и отправки задания U-SQL.
 ms.service: data-lake-analytics
 author: saveenr
@@ -8,10 +8,10 @@ ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 06/18/2017
 ms.openlocfilehash: d9fc9bee98391f7272a417324b9c3a540b6adbe6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79474515"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
@@ -19,17 +19,17 @@ ms.locfileid: "79474515"
 
 В этой статье описано, как использовать Azure CLI для создания учетной записи Data Lake Analytics, а также отправки заданий и каталогов U-SQL. Задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для работы вам понадобится следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Для этой статьи требуется Azure CLI версии 2.0 или более поздней версии. Если вам нужно установить или обновить, [см.]( /cli/azure/install-azure-cli) 
+* Для этой статьи требуется Azure CLI версии 2.0 или более поздней версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Чтобы войти в подписку Azure:
+Чтобы войти в подписку Azure, выполните следующие действия.
 
 ```azurecli
 az login
@@ -48,7 +48,7 @@ az account set --subscription <subscription id>
 ## <a name="create-data-lake-analytics-account"></a>Создание учетной записи аналитики озера данных
 Для выполнения любых заданий требуется учетная запись Data Lake Analytics. Для создания учетной записи Data Lake Analytics необходимо указать следующие данные.
 
-* **Ресурсная группа Azure**. В группе ресурсов Azure необходимо создать учетную запись Data Lake Analytics. [Менеджер ресурсов Azure](../azure-resource-manager/management/overview.md) позволяет работать с ресурсами в приложении в группе. Вы можете развертывать, обновлять или удалять все ресурсы для приложения в рамках одной скоординированной операции.  
+* **Группа ресурсов Azure**. В группе ресурсов Azure необходимо создать учетную запись Data Lake Analytics. [Azure Resource Manager](../azure-resource-manager/management/overview.md) позволяет работать с ресурсами в приложении в виде группы. Вы можете развертывать, обновлять или удалять все ресурсы для приложения в рамках одной скоординированной операции.  
 
 Чтобы отобразить существующие группы ресурсов в своей подписке выполните следующую команду:
 

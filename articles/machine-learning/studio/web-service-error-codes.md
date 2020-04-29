@@ -1,35 +1,35 @@
 ---
-title: Коды ошибок REST API - Студия машинного обучения Azure (классический) Документы Майкрософт
+title: Коды ошибок REST API
+titleSuffix: ML Studio (classic) - Azure
 description: Эти коды ошибок могут быть возвращены операцией с веб-службой машинного обучения Azure.
 keywords: ''
 services: machine-learning
-author: xiaoharper
-ms.custom: seodec18
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 editor: cgronlun
 ms.assetid: 0923074b-3728-439d-a1b8-8a7245e39be4
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: reference
 ms.date: 11/16/2016
-ms.openlocfilehash: 9e25f2fbc10eb07cc71f2a7bd34247c0191f61b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a47550771180411277d21f7acf47ad0a28b6fb9e
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "79217761"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209525"
 ---
-# <a name="azure-machine-learning-studio-classic-rest-api-error-codes"></a>Студия машинного обучения Azure (классический) коды ошибок API REST
+# <a name="azure-machine-learning-studio-classic-rest-api-error-codes"></a>Коды ошибок Машинное обучение Azure Studio (классическая модель) REST API
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
  
-Следующие коды ошибок могут быть возвращены с помощью операции на веб-сервисе Azure Machine Learning Studio (классический).
+Следующие коды ошибок могут возвращаться операцией в веб-службе Машинное обучение Azure Studio (классической).
  
 ## <a name="badargument-http-status-code-400"></a>BadArgument (код состояния HTTP: 400)
  
 Указан недопустимый аргумент.
  
-Ошибки этого класса означают, что указанный где-то аргумент является недопустимым. Это могут быть учетные данные или расположение службы хранилища Azure, передаваемое в веб-службу. Пожалуйста, посмотрите на поле "код" ошибки в разделе "Подробности", чтобы диагностировать, какой конкретный аргумент был недействительным.
+Ошибки этого класса означают, что указанный где-то аргумент является недопустимым. Это могут быть учетные данные или расположение службы хранилища Azure, передаваемое в веб-службу. Ознакомьтесь с полем "Code" (код) ошибки в разделе "сведения", чтобы определить, какой из аргументов является недопустимым.
  
 | Код ошибки | Сообщение для пользователя |
 | ---------- |--------------|
@@ -67,7 +67,7 @@ ms.locfileid: "79217761"
 | MissingWebServicePackage | Не указан пакет веб-службы. Укажите допустимый пакет веб-службы и повторите попытку. |
 | MissingWorkspaceId | Не указан идентификатор рабочей области. Укажите допустимый идентификатор рабочей области и повторите попытку. |
 | ModelConfigurationInvalid | Недопустимая конфигурации модели в пакете модели. Убедитесь, конфигурация модели содержит определение конечных точек вывода, конечную точку ошибок STD и конечную точку вывода STD, затем повторите попытку. |
-| ModelPackageIdInvalid | Недействительный пакет моделей Id. Убедите, что идентификатор пакета модели является правильным, и повторите попытку. |
+| ModelPackageIdInvalid | Недопустимый идентификатор пакета модели. Проверьте правильность идентификатора пакета модели и повторите попытку. |
 | RequestBodyInvalid | Не указан текст запроса, или при десериализации текста запроса произошла ошибка. |
 | RequestIsEmpty | Запрос не указан. Укажите допустимый запрос и повторите попытку. |
 | UnexpectedParameter | Указан непредвиденный параметр. Проверьте, что имена всех параметров указаны правильно и что передаются только ожидаемые параметры, после чего повторите попытку. |

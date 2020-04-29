@@ -5,14 +5,14 @@ services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/21/2019
+ms.date: 04/28/2020
 ms.author: spelluru
-ms.openlocfilehash: ce1bb3760ae73a9eaeee3cde957cc94841ebdf29
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: ab5dd716253875e4a992b94a4e143cb3e806a4b0
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81731935"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509658"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -43,7 +43,7 @@ ms.locfileid: "81731935"
 
 При публикации событий в пользовательских разделах создавайте темы для событий, чтобы подписчикам было проще определить, представляет ли событие для них интерес. Подписчики могут использовать свойство темы для фильтрации и маршрутизации событий. Можно добавить путь к расположению, в котором произошло событие, чтобы подписчики могли выполнять фильтрацию по сегментам этого пути. Путь позволяет подписчикам сузить или расширить область фильтрации. Например, если указать в теме трехсегментный путь, такой как `/A/B/C`, подписчики смогут выполнить фильтрацию по первому сегменту `/A`, чтобы получить широкий набор событий. Эти подписчики получат события с такими темами, как `/A/B/C` или `/A/D/E`. Другие подписчики могут выполнить фильтрацию по `/A/B`, чтобы получить более узкий набор событий.
 
-Синтаксис JSON для фильтрации по субъекту:
+Для фильтрации по теме используется следующий синтаксис JSON:
 
 ```json
 "filter": {
@@ -59,9 +59,9 @@ ms.locfileid: "81731935"
 
 * operatorType — тип сравнения;
 * ключ — поле в данных события, которое используется для фильтрации (это может быть число, логическое значение или строка);
-* значения - значение или значения для сравнения с ключом.
+* Values — значение или значения, сравниваемые с ключом.
 
-Если вы указываете один фильтр с несколькими значениями, выполняется **или выполняется** операция OR, поэтому значение ключевого поля должно быть одним из этих значений. Например:
+Если указать один фильтр с несколькими значениями, то выполняется операция **или** , поэтому значением ключевого поля должно быть одно из следующих значений. Например:
 
 ```json
 "advancedFilters": [
@@ -76,7 +76,7 @@ ms.locfileid: "81731935"
 ]
 ```
 
-Если вы указываете несколько различных фильтров, выполняется **и** операция, поэтому каждое условие фильтра должно быть выполнено. Например: 
+При указании нескольких различных фильтров выполняется операция **и** , поэтому должно выполняться каждое условие фильтра. Например: 
 
 ```json
 "advancedFilters": [
@@ -97,9 +97,9 @@ ms.locfileid: "81731935"
 ]
 ```
 
-### <a name="operator"></a>Оператор
+### <a name="operators"></a>Операторы
 
-Доступны такие операторы для чисел:
+Доступные для **чисел** операторы:
 
 * NumberGreaterThan;
 * NumberGreaterThanOrEquals;
@@ -108,9 +108,10 @@ ms.locfileid: "81731935"
 * NumberIn;
 * NumberNotIn.
 
-Доступные операторы для логических значений: BoolEquals.
+Ниже приведен допустимый оператор для **логических** значений. 
+- BoolEquals
 
-Доступные операторы для строк:
+Ниже приведены доступные операторы для **строк** .
 
 * StringContains;
 * StringBeginsWith;
@@ -118,7 +119,7 @@ ms.locfileid: "81731935"
 * StringIn;
 * StringNotIn.
 
-При сравнении строк учитывается регистр.
+Все сравнения строк **не** учитывают регистр.
 
 ### <a name="key"></a>Ключ
 
@@ -159,6 +160,155 @@ ms.locfileid: "81731935"
 * пять значений для операторов **in** и **not in**;
 
 Один ключ можно использовать в нескольких фильтрах.
+
+### <a name="examples"></a>Примеры
+
+### <a name="stringcontains"></a>StringContains;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringContains",
+    "key": "data.key1",
+    "values": [
+        "microsoft", 
+        "azure"
+    ]
+}]
+```
+
+### <a name="stringbeginswith"></a>StringBeginsWith;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringBeginsWith",
+    "key": "data.key1",
+    "values": [
+        "event", 
+        "grid"
+    ]
+}]
+```
+
+### <a name="stringendswith"></a>StringEndsWith;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringEndsWith",
+    "key": "data.key1",
+    "values": [
+        "jpg", 
+        "jpeg", 
+        "png"
+    ]
+}]
+```
+
+### <a name="stringin"></a>StringIn;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringIn",
+    "key": "data.key1",
+    "values": [
+        "exact", 
+        "string", 
+        "matches"
+    ]
+}]
+```
+
+### <a name="stringnotin"></a>StringNotIn.
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringNotIn",
+    "key": "data.key1",
+    "values": [
+        "aws", 
+        "bridge"
+    ]
+}]
+```
+
+### <a name="numberin"></a>NumberIn;
+
+```json
+
+"advancedFilters": [{
+    "operatorType": "NumberIn",
+    "key": "data.counter",
+    "values": [
+        5,
+        1
+    ]
+}]
+
+```
+
+### <a name="numbernotin"></a>NumberNotIn.
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberNotIn",
+    "key": "data.counter",
+    "values": [
+        41,
+        0,
+        0
+    ]
+}]
+```
+
+### <a name="numberlessthan"></a>NumberLessThan;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberLessThan",
+    "key": "data.counter",
+    "value": 100
+}]
+```
+
+### <a name="numbergreaterthan"></a>NumberGreaterThan;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberGreaterThan",
+    "key": "data.counter",
+    "value": 20
+}]
+```
+
+### <a name="numberlessthanorequals"></a>NumberGreaterThanOrEquals;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberLessThanOrEquals",
+    "key": "data.counter",
+    "value": 100
+}]
+```
+
+### <a name="numbergreaterthanorequals"></a>NumberGreaterThanOrEquals;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberGreaterThanOrEquals",
+    "key": "data.counter",
+    "value": 30
+}]
+```
+
+### <a name="boolequals"></a>BoolEquals
+
+```json
+"advancedFilters": [{
+    "operatorType": "BoolEquals",
+    "key": "data.isEnabled",
+    "value": true
+}]
+```
+
 
 ## <a name="next-steps"></a>Следующие шаги
 

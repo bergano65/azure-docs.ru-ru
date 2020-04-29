@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9f52dfd92d430abffe5857d231898dd4b0e7745e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 701a5aab7a0061f8b5abfaac1b699034db2671b9
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81679919"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82508995"
 ---
 # <a name="manage-python-2-packages-in-azure-automation"></a>Управление пакетами Python 2 в службе автоматизации Azure
 
@@ -46,7 +46,7 @@ C:\Python27\Scripts\pip2.7.exe download -d <output dir> <package name>
 
 ### <a name="runbook"></a>Модуль Runbook
 
-Импортировать модуль Runbook Python [Импорт пакетов Python 2 из PyPI в учетную запись службы автоматизации Azure](https://gallery.technet.microsoft.com/scriptcenter/Import-Python-2-packages-57f7d509) из коллекции в учетную запись службы автоматизации. Убедитесь, что для параметров запуска задано значение **Azure** , и запустите модуль Runbook с параметрами. Для работы модуля Runbook требуется учетная запись запуска от имени, чтобы учетная запись службы автоматизации работала. Для каждого параметра убедитесь, что вы запускаете его с помощью параметра, как показано в следующем списке и на рисунке:
+ Чтобы получить модуль Runbook, [импортируйте пакеты Python 2 из PyPI в учетную запись службы автоматизации Azure](https://gallery.technet.microsoft.com/scriptcenter/Import-Python-2-packages-57f7d509) из коллекции в учетную запись службы автоматизации. Убедитесь, что для параметров запуска задано значение **Azure** , и запустите модуль Runbook с параметрами. Для работы модуля Runbook требуется учетная запись запуска от имени, чтобы учетная запись службы автоматизации работала. Для каждого параметра убедитесь, что вы запускаете его с помощью параметра, как показано в следующем списке и на рисунке:
 
 * -s \<SubscriptionId\>
 * -g \<resourceGroup\>
@@ -85,8 +85,8 @@ for group in groups:
 
 ## <a name="develop-and-test-runbooks-offline"></a>Разработка и тестирование модулей runbook в автономном режиме
 
-Для разработки и тестирования модулей runbook Python 2 в автономном режиме можно использовать модуль [эмулируемых ресурсов Python для службы автоматизации Azure](https://github.com/azureautomation/python_emulated_assets) в GitHub. Он позволяет ссылаться на общие ресурсы, такие как учетные данные, переменные, подключения и сертификаты.
+Для разработки и тестирования модулей Runbook Python 2 в автономном режиме можно использовать модуль [эмуляции ресурсов Python в службе автоматизации Azure](https://github.com/azureautomation/python_emulated_assets) на сайте GitHub. Он позволяет ссылаться на общие ресурсы, такие как учетные данные, переменные, подключения и сертификаты.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к работе с модулями Runbook Python 2, ознакомьтесь с [моим первым модулем Runbook Python 2](automation-first-runbook-textual-python2.md).

@@ -14,12 +14,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: jonbeck
-ms.openlocfilehash: 7e1e0d488844a94bd0be2b91398678e620295729
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 73a878d791997169b0823bb949e78bdced77cae6
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77913588"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509692"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -35,11 +35,13 @@ ms.locfileid: "77913588"
 
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 
-Чтобы воспользоваться преимуществами возможностей GPU виртуальных машин Azure серии N, необходимо установить драйверы GPU NVIDIA.
+Чтобы воспользоваться преимуществами возможностей GPU виртуальных машин Azure серии N, необходимо установить драйверы NVIDIA или AMD GPU.
 
 [Расширение драйвера GPU NVIDIA](/azure/virtual-machines/extensions/hpccompute-gpu-windows) устанавливает необходимые драйверы CUDA или GRID NVIDIA на виртуальную машину серии N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](/azure/virtual-machines/extensions/hpccompute-gpu-windows). Общие сведения о расширениях виртуальных машин см. в статье [Расширения и компоненты виртуальных машин Azure](/azure/virtual-machines/extensions/overview).
 
 Если вы решили установить драйверы NVIDIA GPU вручную, см. раздел [Установка драйвера GPU серии n для Windows](/azure/virtual-machines/windows/n-series-driver-setup) или [Установка драйвера GPU для Linux](/azure/virtual-machines/linux/n-series-driver-setup) для поддерживаемых операционных систем, драйверов, установки и проверки.
+
+Чтобы вручную установить драйверы AMD GPU, см. раздел [Установка драйвера GPU AMD серии N для Windows](/azure/virtual-machines/windows/n-series-amd-driver-setup) для поддерживаемых операционных систем, драйверов, установки и шагов проверки.
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
@@ -62,6 +64,6 @@ ms.locfileid: "77913588"
 - [Оптимизированные для хранилища](sizes-storage.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

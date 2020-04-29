@@ -1,6 +1,6 @@
 ---
-title: Создайте изображение виртуальной машины и используйте управляемое удостоверение, назначенное пользователем, для доступа к файлам в Хранилище Azure (предварительный просмотр)
-description: Создавайте виртуальное изображение машины с помощью Azure Image Builder, которое может получать доступ к файлам, хранящимся в Хранилище Azure, используя управляемую изнача для пользователей.
+title: Создание образа виртуальной машины и использование управляемого удостоверения, назначенного пользователем, для доступа к файлам в службе хранилища Azure (Предварительная версия)
+description: Создание образа виртуальной машины с помощью Azure Image Builder, который может получать доступ к файлам, хранящимся в службе хранилища Azure, с помощью управляемого удостоверения, назначенного пользователем.
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
@@ -9,39 +9,39 @@ ms.service: virtual-machines-linux
 ms.subservice: imaging
 manager: gwallace
 ms.openlocfilehash: 27f4073efc8647d331faa14afbda0e15f92b8d50
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80060752"
 ---
-# <a name="create-an-image-and-use-a-user-assigned-managed-identity-to-access-files-in-azure-storage"></a>Создание изображения и использование управляемого идентификатора, назначенного пользователем, для доступа к файлам в хранилище Azure 
+# <a name="create-an-image-and-use-a-user-assigned-managed-identity-to-access-files-in-azure-storage"></a>Создание образа и использование управляемого удостоверения, назначенного пользователем, для доступа к файлам в службе хранилища Azure 
 
-Azure Image Builder поддерживает использование скриптов или копирование файлов из нескольких мест, таких как Хранение GitHub и Azure и т.д. Чтобы использовать их, они должны быть внешне доступны для системы изображения Azure, но можно защитить капли хранения Azure с помощью токенов SAS.
+Построитель образов Azure поддерживает использование сценариев или копирование файлов из нескольких расположений, таких как GitHub и хранилище Azure, и т. д. Чтобы использовать их, они должны быть доступны для построителя образов Azure извне, но вы можете защитить большие двоичные объекты службы хранилища Azure с помощью маркеров SAS.
 
-В этой статье показано, как создать настраиваемый образ с помощью Azure VM Image Builder, где служба будет использовать [управляемую идентификацию пользователя](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для доступа к файлам в хранилище Azure для настройки изображения, без необходимости делать файлы общедоступными или настраивать токены SAS.
+В этой статье показано, как создать настраиваемый образ с помощью построителя образов виртуальных машин Azure, где служба будет использовать [назначенное пользователем управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для доступа к файлам в службе хранилища Azure для настройки образа без необходимости делать эти файлы общедоступными или настроить маркеры SAS.
 
-В приведенном ниже примере вы создадите две группы ресурсов, одна из которой будет использоваться для пользовательского изображения, а другая будет размещать учетную запись хранения Azure, содержащую файл скрипта. Это имитирует реальный сценарий, где могут быть артефакты или файлы изображений в различных учетных записях хранения, за пределами Image Builder. Вы создадите удостоверение, назначенное пользователем, а затем предоставите разрешения на чтение файла скрипта, но не установите общедоступный доступ к этому файлу. Затем вы будете использовать настройку Shell для загрузки и запуска этого скрипта из учетной записи хранилища.
+В приведенном ниже примере вы создадите две группы ресурсов, одна из которых будет использоваться для пользовательского образа, а другая будет размещать учетную запись хранения Azure, содержащую файл скрипта. Это имитирует реальный сценарий, в котором могут находиться артефакты сборки или файлы изображений в разных учетных записях хранения вне построителя образов. Вы создадите пользовательское удостоверение, затем предоставите ему разрешения на чтение файла скрипта, но не будете устанавливать общий доступ к этому файлу. Затем с помощью программы настройки оболочки вы сможете скачать и запустить этот скрипт из учетной записи хранения.
 
 
 > [!IMPORTANT]
-> В настоящее время Azure Image Builder находится в открытом доступе.
+> Azure Image Builder сейчас находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="register-the-features"></a>Регистрация функций
-Для использования Azure Image Builder во время предварительного просмотра необходимо зарегистрировать новую функцию.
+## <a name="register-the-features"></a>Регистрация компонентов
+Чтобы использовать Azure Image Builder во время предварительной версии, необходимо зарегистрировать новую функцию.
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview
 ```
 
-Проверьте состояние регистрации функций.
+Проверьте состояние регистрации компонента.
 
 ```azurecli-interactive
 az feature show --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview | grep state
 ```
 
-Проверьте свою регистрацию.
+Проверьте регистрацию.
 
 ```azurecli-interactive
 az provider show -n Microsoft.VirtualMachineImages | grep registrationState
@@ -49,7 +49,7 @@ az provider show -n Microsoft.VirtualMachineImages | grep registrationState
 az provider show -n Microsoft.Storage | grep registrationState
 ```
 
-Если они не говорят зарегистрированы, запустить следующее:
+Если они не зарегистрированы, выполните следующую команду:
 
 ```azurecli-interactive
 az provider register -n Microsoft.VirtualMachineImages
@@ -60,7 +60,7 @@ az provider register -n Microsoft.Storage
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Мы будем использовать некоторые части информации неоднократно, поэтому мы создадим некоторые переменные для хранения этой информации.
+Мы будем использовать несколько фрагментов информации повторно, поэтому мы создадим некоторые переменные для хранения этих данных.
 
 
 ```console
@@ -76,13 +76,13 @@ imageName=aibCustLinuxImgMsi01
 runOutputName=u1804ManImgMsiro
 ```
 
-Создайте переменную для идентификатора подписки. Вы можете получить `az account show | grep id`это с помощью .
+Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
 
 ```console
 subscriptionID=<Your subscription ID>
 ```
 
-Создавайте группы ресурсов как для изображения, так и для хранения скриптов.
+Создайте группы ресурсов для образа и хранилища скриптов.
 
 ```console
 # create resource group for image template
@@ -92,7 +92,7 @@ az group create -n $strResourceGroup -l $location
 ```
 
 
-Создайте хранилище и скопируйте образец сценария в него с GitHub.
+Создайте хранилище и скопируйте в него пример скрипта из GitHub.
 
 ```azurecli-interactive
 # script storage account
@@ -119,7 +119,7 @@ az storage blob copy start \
 
 
 
-Дайте Image Builder разрешение на создание ресурсов в группе ресурсов изображений. Значение `--assignee` — идентификатор регистрации приложения для службы Image Builder. 
+Предоставьте разрешение Image Builder для создания ресурсов в группе ресурсов образа. `--assignee` Значение представляет собой идентификатор регистрации приложения для службы "Построитель образов". 
 
 ```azurecli-interactive
 az role assignment create \
@@ -131,7 +131,7 @@ az role assignment create \
 
 ## <a name="create-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначенного пользователем
 
-Создайте идентификацию и присвоите разрешения для учетной записи хранения скриптов. Для получения дополнительной информации смотрите [Управляемый итог пользователя.](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity)
+Создайте удостоверение и назначьте разрешения для учетной записи хранения скрипта. Дополнительные сведения см. в разделе [назначенное пользователем управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity).
 
 ```azurecli-interactive
 # Create the user assigned identity 
@@ -150,7 +150,7 @@ imgBuilderId=/subscriptions/$subscriptionID/resourcegroups/$imageResourceGroup/p
 
 ## <a name="modify-the-example"></a>Изменение примера
 
-Загрузите файл .json и навядите его с созданными переменными.
+Скачайте файл example. JSON и настройте его с помощью созданных вами переменных.
 
 ```console
 curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/7_Creating_Custom_Image_using_MSI_to_Access_Storage/helloImageTemplateMsi.json -o helloImageTemplateMsi.json
@@ -165,7 +165,7 @@ sed -i -e "s%<runOutputName>%$runOutputName%g" helloImageTemplateMsi.json
 
 ## <a name="create-the-image"></a>Создание образа
 
-Отправьте конфигурацию изображения в службу Azure Image Builder.
+Отправьте конфигурацию образа в службу Azure Image Builder.
 
 ```azurecli-interactive
 az resource create \
@@ -176,7 +176,7 @@ az resource create \
     -n helloImageTemplateMsi01
 ```
 
-Начало сборки изображения.
+Запустите сборку образа.
 
 ```azurecli-interactive
 az resource invoke-action \
@@ -190,7 +190,7 @@ az resource invoke-action \
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Создайте VM из изображения. 
+Создайте виртуальную машину из образа. 
 
 ```azurecli
 az vm create \
@@ -202,13 +202,13 @@ az vm create \
   --generate-ssh-keys
 ```
 
-После создания VM начните сеанс SSH с VM.
+После создания виртуальной машины запустите сеанс SSH с виртуальной машиной.
 
 ```console
 ssh aibuser@<publicIp>
 ```
 
-Вы должны увидеть, что изображение было настроено с Посланием Дня, как только ваше соединение SSH установлено!
+Вы должны увидеть, что образ был настроен с сообщением дня, как только подключение SSH установлено.
 
 ```output
 
@@ -221,7 +221,7 @@ ssh aibuser@<publicIp>
 
 ## <a name="clean-up"></a>Очистка
 
-Когда вы закончите, вы можете удалить ресурсы, если они больше не нужны.
+По завершении вы можете удалить ресурсы, если они больше не нужны.
 
 ```azurecli-interactive
 az identity delete --ids $imgBuilderId
@@ -233,6 +233,6 @@ az group delete -n $imageResourceGroup
 az group delete -n $strResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Если у вас возникли проблемы с работой с Azure Image Builder, [см.](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md?toc=%2fazure%2fvirtual-machines%context%2ftoc.json)
+Если у вас возникли проблемы с построителем образов Azure, см. раздел [Устранение неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md?toc=%2fazure%2fvirtual-machines%context%2ftoc.json).

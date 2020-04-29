@@ -3,12 +3,12 @@ title: Мониторинг приложений Java в любом месте A
 description: Наблюдение за производительностью приложений Java, работающих в любой среде, без инструментирования приложения. Найдите основную причину проблем d с помощью распределенной трассировки и схемы приложения.
 ms.topic: conceptual
 ms.date: 04/16/2020
-ms.openlocfilehash: 5d930d349a2ab1efbd7a61904874bf6bdb411889
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 478e42669339ac015076c89da103d91080090685
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81641892"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509216"
 ---
 # <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
 
@@ -33,14 +33,14 @@ ms.locfileid: "81641892"
 
 ## <a name="configuration-file-path"></a>Путь к файлу конфигурации
 
-По умолчанию Application Insights Java 3,0 Preview ждет, что файл конфигурации имеет имя `ApplicationInsights.json`и находится в том же каталоге, что `applicationinsights-agent-3.0.0-PREVIEW.jar`и.
+По умолчанию Application Insights Java 3,0 Preview ждет, что файл конфигурации имеет имя `ApplicationInsights.json`и находится в том же каталоге, что `applicationinsights-agent-3.0.0-PREVIEW.4.jar`и.
 
 Можно указать собственный путь к файлу конфигурации, используя либо
 
 * `APPLICATIONINSIGHTS_CONFIGURATION_FILE`переменная среды или
 * `applicationinsights.configurationFile`Системное свойство Java
 
-Если указан относительный путь, он будет разрешаться относительно каталога, в `applicationinsights-agent-3.0.0-PREVIEW.jar` котором находится.
+Если указан относительный путь, он будет разрешаться относительно каталога, в `applicationinsights-agent-3.0.0-PREVIEW.4.jar` котором находится.
 
 ## <a name="connection-string"></a>Строка подключения.
 
@@ -150,11 +150,13 @@ Application Insights Предварительная версия Java 3,0 авт
 }
 ```
 
-## <a name="micrometer"></a>Micrometer
+## <a name="micrometer-including-metrics-from-spring-boot-actuator"></a>Микрометер (включая метрики с пружинного загрузочного выключателя)
 
-По умолчанию, если приложение использует [микрометер](https://micrometer.io), Application Insights 3,0 (начиная с предварительной версии. 2) теперь добавляет себя в глобальный реестр микрометер и захватывает метрики микрометер.
+Если приложение использует [микрометер](https://micrometer.io), Application Insights 3,0 (начиная с предварительной версии. 2) теперь собирает метрики, отправленные в глобальный реестр микрометер.
 
-Если вы хотите отключить эту функцию:
+Если приложение использует [пружинный выключатель загрузки](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html), то Application Insights 3,0 (начиная с предварительной версии. 4) теперь захватывает метрики, настроенные с помощью программы-загрузчика пружины (которая использует микрометер, но не использует глобальный реестр микрометер).
+
+Если вы хотите отключить эти функции, выполните следующие действия.
 
 ```json
 {

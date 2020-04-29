@@ -3,29 +3,27 @@ title: Шаблоны развертывания что если (Предвар
 description: Прежде чем развертывать шаблон Azure Resource Manager, определите, какие изменения будут выполнены для ресурсов.
 author: mumian
 ms.topic: conceptual
-ms.date: 04/27/2020
+ms.date: 04/28/2020
 ms.author: jgao
-ms.openlocfilehash: b5b19bf9d630230fbdb8cec41cc77718bbbb4585
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f13789912e5b801295f1f926a12db50849cd75d8
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192388"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509590"
 ---
 # <a name="arm-template-deployment-what-if-operation-preview"></a>Операция "что-если" развертывания шаблона ARM (Предварительная версия)
 
-Перед развертыванием шаблона Azure Resource Manager (ARM) может потребоваться предварительный просмотр изменений, которые будут выполняться. Azure Resource Manager предоставляет операцию "что если", которая позволяет увидеть, как ресурсы изменятся при развертывании шаблона. Операция "что если" не вносит изменения в существующие ресурсы. Вместо этого он прогнозирует изменения, если заданный шаблон развернут.
+Перед развертыванием шаблона Azure Resource Manager (ARM) можно просмотреть изменения, которые будут выполняться. Azure Resource Manager предоставляет операцию "что если", которая позволяет увидеть, как ресурсы изменятся при развертывании шаблона. Операция "что если" не вносит изменения в существующие ресурсы. Вместо этого он прогнозирует изменения, если заданный шаблон развернут.
 
 > [!NOTE]
 > Операция "что если" сейчас находится в предварительной версии. В качестве предварительной версии результаты могут показывать, что ресурс изменится, когда фактическое изменение не произойдет. Мы работаем над сокращением этих проблем, но нам нужна ваша помощь. Сообщите об этих проблемах по [https://aka.ms/whatifissues](https://aka.ms/whatifissues)адресу.
 
-Вы можете использовать операцию "что если" с командами PowerShell или операциями REST API.
+Операцию "что если" можно использовать с операциями Azure PowerShell, Azure CLI или REST API.
 
 ## <a name="install-powershell-module"></a>Установка модуля PowerShell
 
-Чтобы использовать то, что используется в PowerShell, необходимо иметь PowerShell Core (6. x или 7. x). Если у вас есть PowerShell 5. x или более ранней [версии, обновите версию PowerShell](/powershell/scripting/install/installing-powershell).
-
-Убедившись, что у вас установлена правильная версия PowerShell, установите предварительную версию модуля AZ. Resources из коллекции PowerShell.
+Чтобы использовать то, что в PowerShell, необходимо установить предварительную версию модуля AZ. Resources из коллекции PowerShell. Но перед установкой модуля убедитесь, что у вас есть PowerShell Core (6. x или 7. x). Если у вас есть PowerShell 5. x или более ранней [версии, обновите версию PowerShell](/powershell/scripting/install/installing-powershell). Вы не можете установить модуль предварительной версии в PowerShell 5. x или более ранней версии.
 
 ### <a name="install-preview-version"></a>Установить предварительную версию
 
@@ -60,9 +58,13 @@ Install-Module Az.Resources -RequiredVersion 1.12.1-preview -AllowPrerelease
 
 Все готово к использованию.
 
+## <a name="install-azure-cli-module"></a>Установка модуля Azure CLI
+
+Чтобы использовать то, что в Azure CLI, необходимо иметь Azure CLI 2.5.0 или более поздней версии. При необходимости [установите последнюю версию Azure CLI](/cli/azure/install-azure-cli).
+
 ## <a name="see-results"></a>Просмотр результатов
 
-В PowerShell выходные данные содержат кодированные цветом результаты, которые помогают увидеть различные типы изменений.
+При использовании функции что если в PowerShell или Azure CLI, выходные данные включают цветовые результаты, которые помогают увидеть различные типы изменений.
 
 ![диспетчер ресурсов развертывания шаблона что такое операция фуллресаурцепайлоад и изменение типов](./media/template-deploy-what-if/resource-manager-deployment-whatif-change-types.png)
 
@@ -97,11 +99,9 @@ Resource changes: 1 to modify.
 
 ## <a name="what-if-commands"></a>Команды "что если"
 
-Для операции "что если" можно использовать либо Azure PowerShell, либо REST API Azure.
-
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Чтобы предварительно просмотреть изменения перед развертыванием шаблона, добавьте параметр `-Whatif` Switch в команду развертывания.
+Чтобы просмотреть изменения перед развертыванием шаблона, добавьте параметр `-Whatif` Switch в команду развертывания.
 
 * `New-AzResourceGroupDeployment -Whatif`для развертываний группы ресурсов
 * `New-AzSubscriptionDeployment -Whatif`и `New-AzDeployment -Whatif` для развертываний на уровне подписки
@@ -115,6 +115,23 @@ Resource changes: 1 to modify.
 
 * `$results = Get-AzResourceGroupDeploymentWhatIfResult`для развертываний группы ресурсов
 * `$results = Get-AzSubscriptionDeploymentWhatIfResult`или `$results = Get-AzDeploymentWhatIfResult` для развертываний на уровне подписки
+
+### <a name="azure-cli"></a>Azure CLI
+
+Чтобы просмотреть изменения перед развертыванием шаблона, используйте `what-if` команду с командой развертывания.
+
+* `az deployment group what-if`для развертываний группы ресурсов
+* `az deployment sub what-if`для развертываний на уровне подписки
+
+Можно также использовать `--confirm-with-what-if` параметр для предварительного просмотра изменений и получить запрос на продолжение развертывания.
+
+* `az deployment group create --confirm-with-what-if`для развертываний группы ресурсов
+* `az deployment sub create --confirm-with-what-if`для развертываний на уровне подписки
+
+Приведенные выше команды возвращают текстовую сводку, которую можно проверить вручную. Чтобы получить объект JSON, который можно программно проверить на наличие изменений, используйте:
+
+* `az deployment group what-if --no-pretty-print`для развертываний группы ресурсов
+* `az deployment sub what-if --no-pretty-print`для развертываний на уровне подписки
 
 ### <a name="azure-rest-api"></a>REST API Azure
 
@@ -141,10 +158,17 @@ Resource changes: 1 to modify.
 
 ## <a name="result-format"></a>Формат результата
 
-Можно контролировать уровень детализации, возвращаемый о прогнозируемых изменениях. В командах развертывания (`New-Az*Deployment`) используйте параметр **-вхатифресултформат** . В командах программных объектов`Get-Az*DeploymentWhatIf`() используйте параметр **ресултформат** .
+Вы управляете уровнем детализации, который возвращается о прогнозируемых изменениях. Имеются две возможности.
 
-Задайте для параметра Format значение **фуллресаурцепайлоадс** , чтобы получить список ресурсов, которые будут изменены, и сведения о свойствах, которые будут изменены. Задайте для параметра Format значение **ресаурцеидонли** , чтобы получить список ресурсов, которые будут изменены. Значение по умолчанию — **фуллресаурцепайлоадс**.  
+* **Фуллресаурцепайлоадс** — возвращает список ресурсов, которые будут изменены, и сведения о свойствах, которые будут изменены.
+* **Ресаурцеидонли** — возвращает список ресурсов, которые будут изменены
 
+Значение по умолчанию — **фуллресаурцепайлоадс**.
+
+Для команд развертывания PowerShell используйте `-WhatIfResultFormat` параметр. В командах программного объекта используйте `ResultFormat` параметр.
+
+В Azure CLI используйте параметр `--result-format`.
+ 
 Следующие результаты показывают два разных формата выходных данных:
 
 - Полные полезные данные ресурсов
@@ -197,6 +221,8 @@ Resource changes: 1 to modify.
 
 Чтобы узнать, как работает, давайте выполним некоторые тесты. Сначала разверните [шаблон, который создает виртуальную сеть](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/what-if/what-if-before.json). Эта виртуальная сеть будет использоваться для тестирования того, как сообщения о внесении изменений сообщаются в.
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell
 New-AzResourceGroup `
   -Name ExampleGroup `
@@ -206,9 +232,24 @@ New-AzResourceGroupDeployment `
   -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-before.json"
 ```
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli
+az group create \
+  --name ExampleGroup \
+  --location "Central US"
+az deployment group create \
+  --resource-group ExampleGroup \
+  --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-before.json"
+```
+
+---
+
 ### <a name="test-modification"></a>Изменение теста
 
-После завершения развертывания вы можете протестировать операцию "что если". На этот раз разверните [шаблон, который изменяет виртуальную сеть](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/what-if/what-if-after.json). В ней отсутствует один исходный тег, подсеть удалена, а префикс адреса изменился.
+После завершения развертывания вы можете протестировать операцию "что если". На этот раз вы развертываете [шаблон, который изменяет виртуальную сеть](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/what-if/what-if-after.json). В ней отсутствует один исходный тег, подсеть удалена, а префикс адреса изменился.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -216,6 +257,16 @@ New-AzResourceGroupDeployment `
   -ResourceGroupName ExampleGroup `
   -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-after.json"
 ```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group what-if \
+  --resource-group ExampleGroup \
+  --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-after.json"
+```
+
+---
 
 Результат выглядит примерно так:
 
@@ -260,6 +311,8 @@ Resource changes: 1 to modify.
 
 Теперь давайте программно выберем результаты, если присвоить команде значение переменной.
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell
 $results = Get-AzResourceGroupDeploymentWhatIfResult `
   -ResourceGroupName ExampleGroup `
@@ -275,19 +328,41 @@ foreach ($change in $results.Changes)
 }
 ```
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli
+results=$(az deployment group what-if --resource-group ExampleGroup --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-after.json" --no-pretty-print)
+```
+
+---
+
 ## <a name="confirm-deletion"></a>Подтверждение удаления
 
 Операция "что если" поддерживает использование [режима развертывания](deployment-modes.md). Если задано значение полного режима, ресурсы, отсутствующие в шаблоне, удаляются. В следующем примере выполняется развертывание [шаблона, не имеющего ресурсов, определенных](https://github.com/Azure/azure-docs-json-samples/blob/master/empty-template/azuredeploy.json) в полном режиме.
 
 Чтобы просмотреть изменения перед развертыванием шаблона, используйте параметр `-Confirm` Switch с командой развертывания. Если изменения ожидаемы, подтвердите, что развертывание должно завершиться.
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell
 New-AzResourceGroupDeployment `
-  -Confirm `
   -ResourceGroupName ExampleGroup `
-  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/empty-template/azuredeploy.json" `
-  -Mode Complete
+  -Mode Complete `
+  -Confirm `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/empty-template/azuredeploy.json"
 ```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group create \
+  --resource-group ExampleGroup \
+  --mode Complete \
+  --confirm-with-what-if \
+  --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/empty-template/azuredeploy.json"
+```
+
+---
 
 Так как в шаблоне не определены ресурсы, а для режима развертывания задано значение "завершено", виртуальная сеть будет удалена.
 
@@ -322,8 +397,9 @@ Are you sure you want to execute the deployment?
 
 Вы увидите ожидаемые изменения и можете подтвердить, что вы хотите выполнить развертывание.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Если вы заметили неверные результаты в предварительной версии, то сообщите о проблемах по адресу [https://aka.ms/whatifissues](https://aka.ms/whatifissues).
 - Сведения о развертывании шаблонов с помощью Azure PowerShell см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md).
+- Сведения о развертывании шаблонов с помощью Azure CLI см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure CLI](deploy-cli.md).
 - Сведения о развертывании шаблонов с помощью RESTFUL см. в статье [развертывание ресурсов с помощью шаблонов ARM и диспетчер ресурсов REST API](deploy-rest.md).

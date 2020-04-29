@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 07/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 21f6ff8078d5a1db88b2fde33c9063a56b3ee43a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 0058c0a0cedf2ea3f6c32f8f8368cca5b8dc6e3c
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81682904"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509012"
 ---
 # <a name="use-the-azure-automation-graphical-runbook-sdk"></a>Использование графического пакета SDK модуля Runbook службы автоматизации Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "81682904"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Импортируйте `Microsoft.Azure.Automation.GraphicalRunbook.Model` пакет в проект.
+Импортируйте `Microsoft.Azure.Management.Automation.GraphicalRunbook.Model` пакет в проект.
 
 ## <a name="create-a-runbook-object-instance"></a>Создание экземпляра объекта runbook
 
@@ -139,6 +139,6 @@ var serialized = RunbookSerializer.Serialize(runbook);
 Эту строку можно сохранить в файл с расширением **graphrunbook** . Соответствующий модуль Runbook можно импортировать в службу автоматизации Azure.
 Сериализованный формат может измениться в будущих версиях `Orchestrator.GraphRunbook.Model.dll`. Мы гарантируем обратную совместимость: любой runbook, сериализованный с использованием более старой версии `Orchestrator.GraphRunbook.Model.dll`, может быть десериализован с использованием любой более поздней версии. Прямая совместимость не гарантируется: runbook, сериализованный с использованием более поздней версии, не может быть десериализован с использованием старых версий.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о графических модулях Runbook в службе автоматизации Azure см. в статье [Введение в графические средства разработки](automation-graphical-authoring-intro.md).

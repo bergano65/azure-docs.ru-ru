@@ -8,17 +8,17 @@ ms.date: 07/16/2018
 ms.author: iainfou
 ms.custom: ''
 ms.openlocfilehash: d4bbd5560681aa73709019e87c6c22470a64ad78
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79481744"
 ---
 # <a name="deprecated-deploy-docker-ce-cluster"></a>Развертывание кластера Docker CE (устаревшие материалы)
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
-В этом быстром запуске кластер Docker CE развертывается с помощью Azure CLI. Затем в кластере будет развернуто и запущено многоконтейнерное приложение, состоящее из веб-интерфейса и экземпляра Redis. По завершении приложение будет доступно через Интернет.
+В этом кратком руководстве кластер DOCKER CE развертывается с помощью Azure CLI. Затем в кластере будет развернуто и запущено многоконтейнерное приложение, состоящее из веб-интерфейса и экземпляра Redis. По завершении приложение будет доступно через Интернет.
 
 Выпуск Docker CE в службе контейнеров Azure находится на стадии предварительной версии и **его не следует использовать для рабочих нагрузок в рабочей среде**.
 
@@ -53,7 +53,7 @@ az group create --name myResourceGroup --location westus2
 
 ## <a name="create-docker-swarm-cluster"></a>Создание кластера Docker Swarm
 
-Создайте кластер Docker CE в службе контейнеров Azure с помощью команды [az acs create](/cli/azure/acs#az-acs-create). Для получения информации о наличии [ACS regions for Docker CE](https://github.com/Azure/ACS/blob/master/announcements/2017-08-04_additional_regions.md) docker CE в регионе см.
+Создайте кластер Docker CE в службе контейнеров Azure с помощью команды [az acs create](/cli/azure/acs#az-acs-create). Сведения о доступности по регионам DOCKER CE см. в статье [регионы ACS для DOCKER CE](https://github.com/Azure/ACS/blob/master/announcements/2017-08-04_additional_regions.md) .
 
 В следующем примере создается кластер *mySwarmCluster* с одним главным узлом Linux и тремя узлами агентов Linux.
 
@@ -67,7 +67,7 @@ az acs create --name mySwarmCluster --orchestrator-type dockerce --resource-grou
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 
-На протяжении всего этого quickstart, вам нужно F'DN как докер Роя мастер и докер агент бассейн. Выполните следующую команду для получения полных доменных имен примера и агента.
+В рамках этого краткого руководства вам потребуется полное доменное имя для главного сервера DOCKER Swarm и пула агентов DOCKER. Выполните следующую команду для получения полных доменных имен примера и агента.
 
 ```azurecli
 az acs list --resource-group myResourceGroup --query '[*].{Master:masterProfile.fqdn,Agent:agentPoolProfiles[0].fqdn}' -o table
@@ -159,13 +159,13 @@ az group delete --name myResourceGroup --yes --no-wait
 
 ## <a name="get-the-code"></a>Получение кода
 
-В этом быстром запуске для создания службы Docker использовались предварительно созданные изображения контейнеров. Связанный с приложением код, Dockerfile и файл Compose доступны на сайте GitHub.
+В этом кратком руководстве для создания службы DOCKER использовались предварительно созданные образы контейнеров. Связанный с приложением код, Dockerfile и файл Compose доступны на сайте GitHub.
 
 [https://github.com/Azure-Samples/azure-voting-app-redis](https://github.com/Azure-Samples/azure-voting-app-redis.git)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-В этом быстром запуске вы развернули кластер Docker Swarm и развернули к нему многоконтейнерное приложение.
+В этом кратком руководстве вы развернули кластер DOCKER Swarm и развернули в нем приложение с несколькими контейнерами.
 
 Чтобы получить дополнительные сведения об интеграции Docker Swarm с Azure DevOps, используйте CI/CD с помощью Docker Swarm и Azure DevOps.
 
