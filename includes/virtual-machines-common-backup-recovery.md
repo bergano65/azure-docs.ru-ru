@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: cynthn
@@ -9,10 +9,10 @@ ms.date: 03/09/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: be71b269e618d13a126e4005754b307e9c6517d7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67185281"
 ---
 ## <a name="azure-backup"></a>Azure Backup
@@ -38,10 +38,10 @@ Azure Site Recovery позволяет защитить виртуальные �
 
 Дополнительные сведения о создании моментальных снимков см. в следующих статьях:
 
-* [Создание копии VHD, хранящегося в виде управляемого диска с помощью снимков в Windows](../articles/virtual-machines/windows/snapshot-copy-managed-disk.md)
-* [Создание копии VHD, хранящегося в виде управляемого диска с помощью моментальных снимков в Linux](../articles/virtual-machines/linux/snapshot-copy-managed-disk.md)
+* [Создание копии VHD, хранящейся в качестве управляемого диска, с помощью моментальных снимков в Windows](../articles/virtual-machines/windows/snapshot-copy-managed-disk.md)
+* [Создание копии VHD, хранящейся в качестве управляемого диска, с помощью моментальных снимков в Linux](../articles/virtual-machines/linux/snapshot-copy-managed-disk.md)
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Вы можете опробовать Azure Backup, следуя инструкциям из руководств по резервному копированию виртуальных машин для [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) или [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md).

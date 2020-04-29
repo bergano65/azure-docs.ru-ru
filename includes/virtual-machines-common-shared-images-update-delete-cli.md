@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: cynthn
@@ -9,15 +9,15 @@ ms.date: 04/25/2019
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 8d0f9866864ca4b02ca6238be2ac44537a586c2d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185299"
 ---
 ## <a name="update-resources"></a>Обновление ресурсов
 
-Есть некоторые ограничения на то, что может быть обновлено. Следующие элементы могут быть обновлены: 
+Существуют некоторые ограничения на то, что можно обновить. Можно обновить следующие элементы: 
 
 Коллекция общих образов
 - Описание
@@ -34,9 +34,9 @@ ms.locfileid: "67185299"
 - Исключения из последней версии
 - Дата окончания жизненного цикла
 
-Если вы планируете добавлять регионы реплик, не удаляйте управляемое исходным изображением. Для воспроизведения версии изображения в дополнительных регионах требуется исходное управляемое изображение. 
+Если вы планируете добавить регионы реплик, не удаляйте исходный управляемый образ. Исходный управляемый образ необходим для репликации версии образа в дополнительные регионы. 
 
-Обновление описания галереи с помощью ([az SIG обновление](https://docs.microsoft.com/cli/azure/sig?view=azure-cli-latest#az-sig-update). 
+Обновите описание коллекции с помощью команды ([AZ SIG Update](https://docs.microsoft.com/cli/azure/sig?view=azure-cli-latest#az-sig-update). 
 
 ```azurecli-interactive
 az sig update \
@@ -46,7 +46,7 @@ az sig update \
 ```
 
 
-Обновите описание определения изображения с помощью [обновления определения изображения az sig.](https://docs.microsoft.com/cli/azure/sig/image-definition?view=azure-cli-latest#az-sig-image-definition-update)
+Обновите описание определения образа с помощью команды [AZ SIG Image-Definition Update](https://docs.microsoft.com/cli/azure/sig/image-definition?view=azure-cli-latest#az-sig-image-definition-update).
 
 ```azurecli-interactive
 az sig image-definition update \
@@ -56,7 +56,7 @@ az sig image-definition update \
    --set description="My updated description."
 ```
 
-Обновление версии изображения, чтобы добавить область, чтобы воспроизвести с помощью [az sig обновления изображения-версии.](https://docs.microsoft.com/cli/azure/sig/image-definition?view=azure-cli-latest#az-sig-image-definition-update) Это изменение займет некоторое время, как изображение получает реплицируется в новый регион.
+Обновите версию образа, чтобы добавить регион для репликации, с помощью команды [AZ SIG Image-Version Update](https://docs.microsoft.com/cli/azure/sig/image-definition?view=azure-cli-latest#az-sig-image-definition-update). Это изменение займет некоторое время, так как образ реплицируется в новый регион.
 
 ```azurecli-interactive
 az sig image-version update \
@@ -69,9 +69,9 @@ az sig image-version update \
 
 ## <a name="delete-resources"></a>Удаление ресурсов
 
-Вы должны удалить ресурсы в обратном порядке, удалив версию изображения в первую очередь. После удаления всех версий образа вы можете удалить определение образа. Затем вы можете удалить коллекцию. 
+Необходимо удалить ресурсы в порядке, удалив сначала версию образа. После удаления всех версий образа вы можете удалить определение образа. Затем вы можете удалить коллекцию. 
 
-Удалите версию изображения с помощью [az sig-версии изображения.](https://docs.microsoft.com/cli/azure/sig/image-version?view=azure-cli-latest#az-sig-image-version-delete)
+Удалите версию образа с помощью команды [AZ SIG Image-Version Delete](https://docs.microsoft.com/cli/azure/sig/image-version?view=azure-cli-latest#az-sig-image-version-delete).
 
 ```azurecli-interactive
 az sig image-version delete \
@@ -81,7 +81,7 @@ az sig image-version delete \
    --gallery-image-version 1.0.0 
 ```
 
-Удалите определение изображения с помощью [удаления изображения az sig.](https://docs.microsoft.com/cli/azure/sig/image-definition?view=azure-cli-latest#az-sig-image-definition-delete)
+Удалите определение образа с помощью команды [AZ SIG Image-Definition Delete](https://docs.microsoft.com/cli/azure/sig/image-definition?view=azure-cli-latest#az-sig-image-definition-delete).
 
 ```azurecli-interactive
 az sig image-definition delete \
@@ -91,7 +91,7 @@ az sig image-definition delete \
 ```
 
 
-Удалите галерею изображений с помощью [удаления az sig.](https://docs.microsoft.com/cli/azure/sig?view=azure-cli-latest#az-sig-delete)
+Удалите коллекцию образов с помощью команды [AZ SIG Delete](https://docs.microsoft.com/cli/azure/sig?view=azure-cli-latest#az-sig-delete).
 
 ```azurecli-interactive
 az sig delete \

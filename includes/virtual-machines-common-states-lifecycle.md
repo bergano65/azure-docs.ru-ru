@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: shandilvarun
@@ -9,10 +9,10 @@ ms.date: 08/09/2018
 ms.author: vashan, cynthn, rajsqr
 ms.custom: include file
 ms.openlocfilehash: 57f557a812ec5e4eea75b76ca1394ca360a85d30
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67185226"
 ---
 Виртуальные машины Azure проходят различные состояния, которые могут быть отнесены к состояниям *подготовки* и состояниям *включения*. Цель этой статьи — описать эти состояния и показать, когда клиентам будет выставлен счет, например, за использование экземпляра. 
@@ -29,7 +29,7 @@ ms.locfileid: "67185226"
 <table>
 <tr>
 <th>
-Штат
+Состояние
 </th>
 <th>
 Описание
@@ -40,7 +40,7 @@ ms.locfileid: "67185226"
 </tr>
 <tr>
 <td>
-<p><b>Начиная</b></p>
+<p><b>Запуск</b></p>
 </td>
 <td>
 <p>Выполняется запуск виртуальной машины.</p>
@@ -71,7 +71,7 @@ ms.locfileid: "67185226"
  ]</code><br>
 </td>
 <td>
-<p><b>Выставлен счет</b></p>
+<p><b>Выставляются</b></p>
 </td>
 </tr>
 <tr>
@@ -89,12 +89,12 @@ ms.locfileid: "67185226"
  ]</code><br>
 </td>
 <td>
-<p><b>Выставлен счет</b></p>
+<p><b>Выставляются</b></p>
 </td>
 </tr>
 <tr>
 <td>
-<p><b>Остановился</b></p>
+<p><b>Остановлена</b></p>
 </td>
 <td>
 <p>Виртуальная машина была отключена из гостевой ОС или с помощью API PowerOff.</p>
@@ -113,7 +113,7 @@ ms.locfileid: "67185226"
 </tr>
 <tr>
 <td>
-<p><b>Освобождение</b></p>
+<p><b>Отмена выделения</b></p>
 </td>
 <td>
 <p>Переходное состояние. По завершении виртуальная машина будет отображаться как **Освобождена**.</p>
@@ -210,7 +210,7 @@ ms.locfileid: "67185226"
 </tr>
 <tr>
 <td width="162">
-<p><b>Удаление</b></p>
+<p><b>Саму</b></p>
 </td>
 <td width="366">
 <code>"statuses": [<br>
