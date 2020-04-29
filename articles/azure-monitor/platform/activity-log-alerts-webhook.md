@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 03/31/2017
 ms.subservice: alerts
 ms.openlocfilehash: c076b8dcea350f9ddd66977e89ce99b81f377b17
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77669052"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Веб-перехватчики для оповещений журнала действий Azure
@@ -19,7 +19,7 @@ ms.locfileid: "77669052"
 Сведения о группах действия см. в разделе [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
 
 > [!NOTE]
-> Вы также можете использовать [общую схему оповещения,](https://aka.ms/commonAlertSchemaDocs)которая обеспечивает преимущество наличия единой расширяемой и единой полезной нагрузки оповещения во всех службах оповещения в Azure Monitor для интеграции веб-крючка. [Узнайте об общих определениях схемы оповещения.](https://aka.ms/commonAlertSchemaDefinitions)
+> Вы также можете использовать [общую схему предупреждений](https://aka.ms/commonAlertSchemaDocs), которая предоставляет преимущества единого расширяемого и унифицированного набора полезных данных оповещений во всех службах предупреждений в Azure Monitor для интеграции веб-перехватчика. [Сведения об общих определениях схемы предупреждений.](https://aka.ms/commonAlertSchemaDefinitions)
 
 
 ## <a name="authenticate-the-webhook"></a>Аутентификация веб-перехватчика
@@ -286,9 +286,9 @@ ms.locfileid: "77669052"
 
 Сведения о схеме для остальных оповещений журнала действий см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/platform-logs-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Подробнее о журнале действий](../../azure-monitor/platform/platform-logs-overview.md).
-* [Выполняйте скрипты автоматизации Azure (Runbooks) на оповещениях Azure.](https://go.microsoft.com/fwlink/?LinkId=627081)
+## <a name="next-steps"></a>Дальнейшие шаги
+* Дополнительные [сведения о журнале действий](../../azure-monitor/platform/platform-logs-overview.md).
+* [Выполнение скриптов службы автоматизации Azure (модулей Runbook) в оповещениях Azure](https://go.microsoft.com/fwlink/?LinkId=627081).
 * [Logic app that sends a text message when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app) (Приложение логики, которое отправляет текстовое сообщение при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.
 * [Logic app that posts a message to a slack channel when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app) (Приложение логики, которое отправляет сообщение в канал Slack при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.
 * [Logic app that adds an item to a queue when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app) (Приложение логики, добавляющее элемент в очередь при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.

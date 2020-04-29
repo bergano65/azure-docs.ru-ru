@@ -1,6 +1,6 @@
 ---
-title: Создание задания медиаслужбы Azure с несколькими трансформаторными выходами
-description: В этой теме показано, как создать задание мультимедиа Azure с несколькими трансформативными выходами.
+title: Создание задания служб мультимедиа Azure с несколькими выходами преобразования
+description: В этом разделе показано, как создать задание служб мультимедиа Azure с несколькими выходами преобразования.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -12,23 +12,23 @@ ms.topic: article
 ms.date: 02/17/2020
 ms.author: juliako
 ms.openlocfilehash: dbbeeb33ee46b37ec920fe598483c332d3439689
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77563145"
 ---
-# <a name="create-a-job-with-multiple-transform-outputs"></a>Создание задания с несколькими выводами преобразования
+# <a name="create-a-job-with-multiple-transform-outputs"></a>Создание задания с несколькими выходами преобразования
 
-В этой теме показано, как создать Преобразование с двумя выходами Transform. Первый требует кодирования ввода для адаптивной битратной потоковой передачи со встроенным предустановленным набором [AdaptiveStreaming.](encoding-concept.md#builtinstandardencoderpreset) Второй требует, чтобы звуковой сигнал в входном видео обрабатывались с [помощью AudioAnalyzerPreset.](analyzing-video-audio-files-concept.md#built-in-presets) После создания Transform вы можете отправить задание, которое будет обрабатывать ваше видео соответствующим образом. Поскольку в этом примере мы указываем два вывода Transform, мы должны указать два вывода рабочих мест. Вы можете направить оба вывода о работе в один и тот же актив (как показано ниже), или вы можете записать результаты для разделения активов.
+В этом разделе показано, как создать преобразование с двумя выходами преобразования. Первый из них вызывает для кодирования входных данных для потоковой передачи с адаптивной скоростью с помощью встроенной предустановки [адаптивестреаминг](encoding-concept.md#builtinstandardencoderpreset) . Второй вызов для звукового сигнала во входном видео обрабатывается с помощью [аудиоанализерпресет](analyzing-video-audio-files-concept.md#built-in-presets). После создания преобразования можно отправить задание, которое будет обрабатывать видео соответствующим образом. Поскольку в этом примере мы указываем два выхода преобразования, необходимо указать два выходных данных задания. Вы можете направить выходные данные задания в один и тот же ресурс (как показано ниже), а также можно записать результаты в отдельные активы.
  
 
 > [!TIP]
-> Прежде чем приступить к разработке, просмотрите [разработку с помощью AIS Media Services v3](media-services-apis-overview.md) (включает информацию о доступе к AIS, именования конвенций и т.д.)
+> Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md) (содержит сведения о доступе к API, соглашения об именовании и т. д.).
 
 ## <a name="create-a-transform"></a>Создание преобразования
 
-Следующий код показывает, как создать преобразование, которое производит два вывода.
+В следующем коде показано, как создать преобразование, которое создает два выхода.
 
 ```csharp
 private static async Task<Transform> GetOrCreateTransformAsync(
@@ -67,7 +67,7 @@ private static async Task<Transform> GetOrCreateTransformAsync(
 ```
 ## <a name="submit-a-job"></a>Отправка задания
 
-Создайте задание с ввозам URL HTTPS и двумя выходными работами.
+Создайте задание с входными URL-адресами HTTPS и двумя выходными данными задания.
 
 ```csharp
 private static async Task<Job> SubmitJobAsync(IAzureMediaServicesClient client,
@@ -133,6 +133,6 @@ private static async Task<Job> SubmitJobAsync(IAzureMediaServicesClient client,
 
 См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Лазурные медиа-сервисы v3 с помощью .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/) 
+[Примеры для служб мультимедиа Azure v3 с использованием .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/) 

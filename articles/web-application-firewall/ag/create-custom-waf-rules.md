@@ -1,7 +1,7 @@
 ---
-title: Создание и использование пользовательских правил v2
+title: Создание и использование настраиваемых правил v2
 titleSuffix: Azure Web Application Firewall
-description: В этой статье содержится информация о том, как создать пользовательские правила Web Application Firewall (WAF) v2 в azure Application Gateway.
+description: В этой статье содержатся сведения о создании настраиваемых правил брандмауэра веб-приложения (WAF) v2 в шлюзе приложений Azure.
 services: web-application-firewall
 ms.topic: article
 author: vhorne
@@ -9,17 +9,17 @@ ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: bfa6690c636e15fa933f50698cd81359600b5c05
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77368301"
 ---
-# <a name="create-and-use-web-application-firewall-v2-custom-rules-on-application-gateway"></a>Создание и использование пользовательских правил Web Application Firewall v2 на шлюзе приложений
+# <a name="create-and-use-web-application-firewall-v2-custom-rules-on-application-gateway"></a>Создание и использование настраиваемых правил брандмауэра веб-приложения V2 на шлюзе приложений
 
-Веб-приложение Firewall (WAF) v2 на Azure Application Gateway обеспечивает защиту для веб-приложений. Эта защита обеспечивается базовым набором основных правил (CRS) проекта «Открытая веб-безопасность приложений» (OWASP). В некоторых случаях может потребоваться создать свои собственные пользовательские правила для удовлетворения ваших конкретных потребностей. Для получения дополнительной информации о пользовательских правилах WAF, см [пользовательских правил брандмауэра веб-приложений](custom-waf-rules-overview.md).
+Брандмауэр веб-приложения (WAF) версии 2 в шлюзе приложений Azure обеспечивает защиту для веб-приложений. Эта защита обеспечивается с помощью открытого набора правил (CR) для проекта безопасности веб-приложений (OWASP). В некоторых случаях может потребоваться создать собственные настраиваемые правила для удовлетворения конкретных потребностей. Дополнительные сведения о настраиваемых правилах WAF см. в разделе [Общие сведения о пользовательских правилах брандмауэра веб-приложения](custom-waf-rules-overview.md).
 
-В этой статье показаны некоторые примеры пользовательских правил, которые можно создавать и использовать с помощью v2 WAF. Чтобы узнать, как развернуть WAF с пользовательским правилом с помощью Azure PowerShell, [см.](configure-waf-custom-rules.md)
+В этой статье приведены некоторые примеры настраиваемых правил, которые можно создать и использовать с WAF v2. Сведения о развертывании WAF с настраиваемым правилом с помощью Azure PowerShell см. в статье [Настройка пользовательских правил брандмауэра веб-приложения с помощью Azure PowerShell](configure-waf-custom-rules.md).
 
 >[!NOTE]
 > Если шлюз приложений не использует уровень WAF, на правой панели будет предоставлена возможность обновить шлюз приложений до уровня WAF.
@@ -28,9 +28,9 @@ ms.locfileid: "77368301"
 
 ## <a name="example-1"></a>Пример 1
 
-Вы знаете, есть бот по имени *evilbot,* что вы хотите блокировать от сканирования вашего сайта. В этом случае вы заблокируете злоботомых пользователей-агентов в заголовках запросов. *evilbot*
+Известно, что у вас есть робот с именем *евилбот* , который вы хотите заблокировать для обхода содержимого веб-сайта. В этом случае вы заблокируете *Евилбот* агента пользователя в заголовках запроса.
 
-Логика: р
+Логика: p
 
 ```azurepowershell
 $variable = New-AzApplicationGatewayFirewallMatchVariable `
@@ -52,7 +52,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-А вот соответствующий JSON:
+Вот соответствующий код JSON:
 
 ```json
   {
@@ -76,11 +76,11 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-Чтобы увидеть WAF, развернутый с помощью этого пользовательского правила, [см. Наверстное правило веб-приложений Firewall с помощью Azure PowerShell.](configure-waf-custom-rules.md)
+Чтобы просмотреть WAF, развернутые с помощью этого настраиваемого правила, см. раздел [Настройка настраиваемого правила брандмауэра веб-приложения с помощью Azure PowerShell](configure-waf-custom-rules.md).
 
-### <a name="example-1a"></a>Пример 1a
+### <a name="example-1a"></a>Пример 1A
 
-Вы можете сделать то же самое, используя регулярное выражение:
+То же самое можно сделать с помощью регулярного выражения:
 
 ```azurepowershell
 $variable = New-AzApplicationGatewayFirewallMatchVariable `
@@ -102,7 +102,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-И соответствующий JSON:
+И соответствующий код JSON:
 
 ```json
   {
@@ -128,7 +128,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
 
 ## <a name="example-2"></a>Пример 2
 
-Вы хотите разрешить трафик из США с помощью оператора GeoMatch:
+Вы хотите разрешить трафик из США с помощью оператора геосоответствия:
 
 ```azurepowershell
 $variable = New-AzApplicationGatewayFirewallMatchVariable `
@@ -149,7 +149,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
    -Action Allow
 ```
 
-И соответствующий JSON:
+И соответствующий код JSON:
 
 ```json
   {
@@ -177,11 +177,11 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
 
 ## <a name="example-3"></a>Пример 3
 
-Вы хотите заблокировать все запросы с IP-адресов в диапазоне 198.168.5.0/24.
+Необходимо заблокировать все запросы с IP-адресов в диапазоне 198.168.5.0/24.
 
-В этом примере вы будете блокировать весь трафик, который поступает из диапазона IP-адресов. Название правила *myrule1* и приоритет установлен до 10.
+В этом примере вы блокируете весь трафик, поступающий из диапазона IP-адресов. Имя правила — *myrule1* , а для параметра приоритет — значение 10.
 
-Логика: р
+Логика: p
 
 ```azurepowershell
 $variable1 = New-AzApplicationGatewayFirewallMatchVariable `
@@ -225,13 +225,13 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-Соответствующее правило CRS:`SecRule REMOTE_ADDR "@ipMatch 192.168.5.0/24" "id:7001,deny"`
+Соответствующее правило CR:`SecRule REMOTE_ADDR "@ipMatch 192.168.5.0/24" "id:7001,deny"`
 
 ## <a name="example-4"></a>Пример 4
 
-Для этого, например, вы хотите заблокировать User-Agent *evilbot,* и трафик в диапазоне 192.168.5.0/24. Для этого можно создать два отдельных условия совпадения и поместить их в одно и то же правило. Это гарантирует, что если оба *evilbot* в заголовок пользователя-агента **и** IP-адреса из диапазона 192.168.5.0/24 совпадают, то запрос заблокирован.
+В этом примере необходимо заблокировать *Евилбот*агента пользователя и трафик в диапазоне 192.168.5.0/24. Для этого можно создать два отдельных условия соответствия и разместить их в одном правиле. Это гарантирует, что если оба *евилбот* в заголовке пользователя **и** IP-адрес из диапазона 192.168.5.0/24 совпадают, запрос блокируется.
 
-Логика: р **и** q
+Логика: p **и** q
 
 ```azurepowershell
 $variable1 = New-AzApplicationGatewayFirewallMatchVariable `
@@ -301,9 +301,9 @@ $condition2 = New-AzApplicationGatewayFirewallCondition `
 
 ## <a name="example-5"></a>Пример 5
 
-В этом примере требуется заблокировать, если запрос находится за пределами диапазона IP-адресов *192.168.5.0/24,* или строка агента пользователя не *хромирована* (то есть пользователь не использует браузер Chrome). Поскольку эта логика использует **или**, эти два условия находятся в отдельных правилах, как видно в следующем примере. *myrule1* и *myrule2* оба должны соответствовать, чтобы заблокировать трафик.
+В этом примере необходимо заблокировать, если запрос находится вне диапазона IP-адресов *192.168.5.0/24*или строка агента пользователя не является *хромом* (то есть пользователь не использует браузер Chrome). Так как эта логика использует **или**, два условия находятся в отдельных правилах, как показано в следующем примере. *myrule1* и *myrule2* должны соответствовать друг другу для блокировки трафика.
 
-Логика: **нет** (p **и** q) - **не** р **или нет.**
+Logic: **Not** (p **и** q) = **Not** p **или not** q.
 
 ```azurepowershell
 $variable1 = New-AzApplicationGatewayFirewallMatchVariable `
@@ -341,7 +341,7 @@ $rule2 = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-И соответствующий JSON:
+И соответствующий код JSON:
 
 ```json
 {
@@ -388,9 +388,9 @@ $rule2 = New-AzApplicationGatewayFirewallCustomRule `
 
 ## <a name="example-6"></a>Пример 6
 
-Вы хотите заблокировать пользовательский S'LI. Поскольку логика, используемая здесь, есть **или**, и все значения находятся в *RequestUri*, все *MatchValues* может быть в списке, разделенном запятой.
+Вы хотите заблокировать пользовательский скрытых. Так как используемая здесь логика имеет значение **или**, а все значения находятся в *RequestUri*, все *матчвалуес* могут находиться в списке с разделителями-запятыми.
 
-Логика: р **или** д **или** р
+Логика: p **или** q **или** r
 
 ```azurepowershell
 $variable1 = New-AzApplicationGatewayFirewallMatchVariable `
@@ -409,7 +409,7 @@ $rule1 = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-Корреспондент JSON:
+Соответствующий JSON:
 
 ```json
   {
@@ -435,7 +435,7 @@ $rule1 = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-Альтернативная Azure PowerShell:
+Альтернативные Azure PowerShell:
 
 ```azurepowershell
 $variable1 = New-AzApplicationGatewayFirewallMatchVariable `
@@ -486,7 +486,7 @@ $rule3 = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-Корреспондент JSON:
+Соответствующий JSON:
 
 ```json
   {
@@ -543,8 +543,8 @@ $rule3 = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-После создания пользовательских правил вы сможете узнать, как просматривать журналы WAF. Для получения дополнительной [информации](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging)см.
+После создания настраиваемых правил можно узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Диагностика шлюза приложений](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 
 [fig1]: ../media/create-custom-waf-rules/1.png

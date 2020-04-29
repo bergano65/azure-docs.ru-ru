@@ -1,6 +1,6 @@
 ---
-title: Коды ошибок событий в живых службах мультимедиа Azure (ru) Документы Майкрософт
-description: В этой статье перечислены живые коды ошибок событий.
+title: Коды ошибок динамических событий служб мультимедиа Azure | Документация Майкрософт
+description: В этой статье перечислены коды динамических событий.
 author: Juliako
 manager: femila
 editor: ''
@@ -14,36 +14,36 @@ ms.topic: article
 ms.date: 02/25/2020
 ms.author: juliako
 ms.openlocfilehash: f9067562f67190b8bc04392f33078d4d3262f986
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77654585"
 ---
-# <a name="media-services-live-event-error-codes"></a>Коды ошибок media Services Live Event
+# <a name="media-services-live-event-error-codes"></a>Коды ошибок динамических событий служб мультимедиа
 
-В таблицах в этом разделе перечисляются коды ошибок [Live Event.](live-events-outputs-concept.md)
+В таблицах этого раздела перечислены коды [динамических событий](live-events-outputs-concept.md) .
 
 ## <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected;
 
-Когда вы подписываетесь на события [Event Grid](https://docs.microsoft.com/azure/event-grid/) для живого события, вы можете увидеть одну из следующих ошибок из события [LiveEventConnectionRejected.](media-services-event-schemas.md#liveeventconnectionrejected)
+При оформлении подписки на события [сетки событий](https://docs.microsoft.com/azure/event-grid/) для события в реальном времени может появиться одна из следующих ошибок события [лививентконнектионрежектед](media-services-event-schemas.md#liveeventconnectionrejected) .
 
 | Код результата | Описание |
 | ----------- | ----------- |
 | MPE_RTMP_APPID_AUTH_FAILURE | Неправильный URL-адрес приема. |
 | MPE_INGEST_ENCODER_CONNECTION_DENIED | IP-адрес кодировщика отсутствует в настроенном списке разрешенных IP-адресов. |
-| MPE_INGEST_RTMP_SETDATAFRAME_NOT_RECEIVED | Коделер RTMP не отправлял команду setDataFrame. |
+| MPE_INGEST_RTMP_SETDATAFRAME_NOT_RECEIVED | Кодировщику RTMP не удалось отправить команду Сетдатафраме. |
 | MPE_INGEST_CODEC_NOT_SUPPORTED | Указанный кодек не поддерживается. |
-| MPE_INGEST_DESCRIPTION_INFO_NOT_RECEIVED |Информация о описании средств массовой информации не была получена до того, как были предоставлены фактические данные сми.|
-| MPE_INGEST_MEDIA_QUALITIES_EXCEEDED |Количество качеств для аудио или видео типа превысило максимально допустимый предел.|
-| MPE_INGEST_BITRATE_AGGREGATED_EXCEEDED |Общий входящий битр в живом событии или услуге канала превысил максимально допустимый предел.|
+| MPE_INGEST_DESCRIPTION_INFO_NOT_RECEIVED |Сведения о описании носителя не были получены до доставки фактических данных мультимедиа.|
+| MPE_INGEST_MEDIA_QUALITIES_EXCEEDED |Число качеств для типа звука или видео превысило максимально допустимое значение.|
+| MPE_INGEST_BITRATE_AGGREGATED_EXCEEDED |Общая скорость входящей скорости в интерактивной службе событий или канала превысила максимально допустимый предел.|
 | MPE_RTMP_FLV_TAG_TIMESTAMP_INVALID | Метка времени из кодировщика RTMP для FLVTag видео или аудио недействительна. |
-| MPE_INGEST_FRAMERATE_EXCEEDED | Входящий кодер просачивал потоки с частотой кадров, превысил максимально допустимые 30fps для кодирования живых событий/каналов.|
-| MPE_INGEST_VIDEO_RESOLUTION_NOT_SUPPORTED | Входящий кодеру попадает потоки превысил следующие допустимые резолюции: 1920x1088 для кодирования живых событий / каналов и 4096 х 2160 для сквозных живых событий / каналов.|
+| MPE_INGEST_FRAMERATE_EXCEEDED | Входящий кодировщик, принимающий потоки с фрамератес, превысил максимально допустимый 30fps для кодирования динамических событий и каналов.|
+| MPE_INGEST_VIDEO_RESOLUTION_NOT_SUPPORTED | Поток входящих потоков, принимающих входящие кодировщики, превысил следующие допустимые разрешения: 1920x1088 для кодирования динамических событий и каналов и 4096 x 2160 для сквозных динамических событий и каналов.|
 
 ## <a name="liveeventencoderdisconnected"></a>LiveEventEncoderDisconnected.
 
-Вы можете увидеть одну из следующих ошибок из события [LiveEventEncoderDisconnected.](media-services-event-schemas.md#liveeventencoderdisconnected)
+Может появиться одна из следующих ошибок события [лививентенкодердисконнектед](media-services-event-schemas.md#liveeventencoderdisconnected) .
 
 |Код результата|Описание|
 |---|---|
@@ -55,8 +55,8 @@ ms.locfileid: "77654585"
 
 ## <a name="see-also"></a>См. также
 
-[Коды ошибок потоковой передачи (Origin)](streaming-endpoint-error-codes.md)
+[Коды ошибок конечной точки потоковой передачи (исходного кода)](streaming-endpoint-error-codes.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Учебник: Поток жить со средствами массовой информации](stream-live-tutorial-with-api.md)
+[Руководство. потоковая передача в реальном времени с помощью служб мультимедиа](stream-live-tutorial-with-api.md)

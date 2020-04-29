@@ -4,13 +4,13 @@ description: Счетчики производительности, событи
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.openlocfilehash: 5ff3d6a2b31425a3fb6857c8c6aed45f7ef18d64
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77669613"
 ---
-# <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений Docker в application Insights (Обезвреженные)
+# <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений DOCKER в Application Insights (не рекомендуется)
 
 > [!NOTE]
 > Эта статья признана устаревшей. Дополнительные сведения о наших текущих инвестициях в мониторинг контейнеров см. в статье [Общие сведения об Azure Monitor для контейнеров (предварительная версия)](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).

@@ -8,10 +8,10 @@ ms.author: daviste
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 6d97e40bf2bf2298fb53609621db8ff2c6f1038f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77663544"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)
@@ -46,10 +46,10 @@ ms.locfileid: "77663544"
 
    |         |          |
    | ---------------- |:-----|
-   | [**Оповещения**](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts)      |  Просмотр, создание оповещений и управление ими. |
+   | [**Предупреждения**](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts)      |  Просмотр, создание оповещений и управление ими. |
    | [**Метрики**](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics) | Визуализация и просмотр данных на основе метрик.    |
-   | [**Журналы активности**](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) | События на уровне подписки, которые произошли в Azure.  |
-   | [**Карта приложения**](https://docs.microsoft.com/azure/application-insights/app-insights-app-map) | Перейдите к топологии распределенного приложения, чтобы идентифицировать сбои и проблемы с производительностью. |
+   | [**Журналы действий**](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) | События на уровне подписки, которые произошли в Azure.  |
+   | [**Схема приложения**](https://docs.microsoft.com/azure/application-insights/app-insights-app-map) | Перейдите к топологии распределенного приложения, чтобы идентифицировать сбои и проблемы с производительностью. |
 
 ## <a name="failures-and-performance"></a>Сбои и производительность
 
@@ -115,7 +115,7 @@ Azure Monitor для групп ресурсов зависит от систе�
 * Откройте Azure Monitor для любой группы ресурсов в подписке
 * или перейдите к подписке, нажав кнопку **Поставщики ресурсов**, выбрав **Регистрация для Управления оповещениями**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-usage-workbooks)
 - [Служба работоспособности ресурса Azure](https://docs.microsoft.com/azure/service-health/resource-health-overview)

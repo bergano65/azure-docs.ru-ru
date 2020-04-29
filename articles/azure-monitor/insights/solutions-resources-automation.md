@@ -8,10 +8,10 @@ ms.author: bwren
 ms.date: 05/24/2017
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8ef9f27546e9db95d5a41769e1b5bc7bc0c2f851
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77663068"
 ---
 # <a name="adding-azure-automation-resources-to-a-management-solution-preview"></a>Добавление ресурсов службы автоматизации Azure в решение по управлению (предварительная версия)
@@ -25,7 +25,7 @@ ms.locfileid: "77663068"
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)]( solutions-creating.md). 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 В этой статье предполагается, что вы уже знакомы со следующими сведениями.
 
 - Как [создать решение по управлению]( solutions-creating.md).
@@ -165,7 +165,7 @@ ms.locfileid: "77663068"
 | Свойство | Описание |
 |:--- |:--- |
 | userName |Имя пользователя для учетных данных. |
-| password |Пароль для учетных данных. |
+| пароль |Пароль для учетных данных. |
 
 
 ## <a name="schedules"></a>Расписания
@@ -642,5 +642,5 @@ ms.locfileid: "77663068"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Добавьте представление в решение]( solutions-resources-views.md) для визуализации собранных данных.

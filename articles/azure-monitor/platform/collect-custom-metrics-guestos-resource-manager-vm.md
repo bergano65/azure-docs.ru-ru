@@ -1,5 +1,5 @@
 ---
-title: Сбор метрик Windows VM в Azure Monitor с помощью шаблона
+title: Получение метрик виртуальной машины Windows в Azure Monitor с помощью шаблона
 description: Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для виртуальной машины Windows
 author: anirudhcavale
 services: azure-monitor
@@ -8,10 +8,10 @@ ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: e747ca89912c36538bfb9d02986629fe57c5adcb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77657373"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-using-a-resource-manager-template-for-a-windows-virtual-machine"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для виртуальной машины Windows
@@ -26,13 +26,13 @@ ms.locfileid: "77657373"
 
 Если вы не знакомы с шаблонами Resource Manager, изучите сведения о [развертывании шаблонов](../../azure-resource-manager/management/overview.md), их структуре и синтаксисе.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Ваша подписка должна быть зарегистрирована в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+- Ваша подписка должна быть зарегистрирована в [Microsoft. Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
 - Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-- Ваш ресурс VM должен находиться в [регионе, поддерживающем пользовательские метрики.](metrics-custom-overview.md#supported-regions) 
+- Ресурс виртуальной машины должен находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions). 
 
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Настройка Azure Monitor в качестве приемника данных
@@ -48,7 +48,7 @@ ms.locfileid: "77657373"
 Скачайте и сохраните оба файла в локальном расположении.
 
 ### <a name="modify-azuredeployparametersjson"></a>Изменение файла azuredeploy.parameters.json
-Откройте файл *azuredeploy.parameters.json*
+Откройте файл *azuredeploy. parameters. JSON.*
 
 1. Введите значения **adminUsername** и **adminPassword** для виртуальной машины. Эти параметры используются для удаленного доступа к виртуальной машине. НЕ ИСПОЛЬЗУЙТЕ значения, указанные в этом шаблоне, во избежание перехвата виртуальной машины. Боты сканируют Интернет на наличие имен пользователей и паролей в общедоступных репозиториях GitHub. Вероятно, они будут тестировать виртуальные машины с этими значениями по умолчанию.
 
@@ -56,9 +56,9 @@ ms.locfileid: "77657373"
 
 ### <a name="modify-azuredeployjson"></a>Изменение файла azuredeploy.json
 
-Откройте файл *azuredeploy.json*
+Открытие файла *azuredeploy. JSON*
 
-Добавьте идентификатор учетной **записи** хранилища в раздел переменных шаблона после вступления для **храненияAccountName.**
+Добавьте идентификатор учетной записи хранения в раздел **Variables** шаблона после записи для **storageAccountName.**
 
 ```json
 // Find these lines.
@@ -69,7 +69,7 @@ ms.locfileid: "77657373"
     "accountid": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
 ```
 
-Добавьте это расширение Управляемой службы (MSI) к шаблону в верхней части раздела **ресурсов.** Это расширение гарантирует, что Azure Monitor принимает исходящие метрики.
+Добавьте это расширение Управляемое удостоверение службы (MSI) в шаблон в верхней части раздела **ресурсов** . Это расширение гарантирует, что Azure Monitor принимает исходящие метрики.
 
 ```json
 //Find this code.
@@ -234,7 +234,7 @@ ms.locfileid: "77657373"
 ## <a name="deploy-the-resource-manager-template"></a>Развертывание шаблона Resource Manager
 
 > [!NOTE]
-> Вы должны запустить версию расширения Azure Diagnostics 1.5 или выше и иметь **autoUpgradeMinorMinorVersion:** свойство, установленное на "истинное" в шаблоне Resource Manager. Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон.
+> Необходимо запустить расширение система диагностики Azure версии 1,5 или более поздней и задать для свойства **autoUpgradeMinorVersion**: "true" в шаблоне диспетчер ресурсов. Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон.
 
 
 Для развертывания шаблона Resource Manager мы используем Azure PowerShell.
@@ -253,7 +253,7 @@ ms.locfileid: "77657373"
     New-AzResourceGroup -Name "<Name of Resource Group>" -Location "<Azure Region>"
    ```
    > [!NOTE]
-   > Не забудьте [использовать область Azure, которая включена для пользовательских метрик.](metrics-custom-overview.md)
+   > Не забудьте [использовать регион Azure, для которого разрешены пользовательские метрики](metrics-custom-overview.md).
 
 1. Выполните следующие команды, чтобы развернуть виртуальную машину на основе шаблона Resource Manager.
    > [!NOTE]
@@ -287,6 +287,6 @@ ms.locfileid: "77657373"
 7. В раскрывающемся меню метрик выберите **Память > \%выделенных байт в использовании**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

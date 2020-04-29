@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 09/24/2018
 ms.openlocfilehash: d7077e51282864f1208080838a1bb94ddd773b7d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77667471"
 ---
 # <a name="manage-smart-groups"></a>Управление смарт-группами
@@ -21,10 +21,10 @@ ms.locfileid: "77667471"
     ![Мониторинг](./media/alerts-managing-smart-groups/sg-alerts-summary.jpg)
     
      1. Щелкните Alerts by Smart Groups (Оповещения по смарт-группам) на странице "Все оповещения".   
-     ![Наблюдение](./media/alerts-managing-smart-groups/sg-all-alerts.jpg)
+     ![Мониторинг](./media/alerts-managing-smart-groups/sg-all-alerts.jpg)
 
 2. Отобразится список всех смарт-групп, созданных из экземпляров оповещений. Теперь вместо работы с индивидуальными оповещениями можно оперировать их смарт-группами.   
-![Наблюдение](./media/alerts-managing-smart-groups/sg-list.jpg)
+![Мониторинг](./media/alerts-managing-smart-groups/sg-list.jpg)
 
 3. При щелчке смарт-группы откроется страница со сведениями о ней, такими как критерий группировки, а также списком всех оповещений в группе. Такое объединение позволяет сконцентрироваться на отдельных группах оповещений, а не работать со множеством индивидуальных оповещений.   
-![Наблюдение](./media/alerts-managing-smart-groups/sg-details.jpg)
+![Мониторинг](./media/alerts-managing-smart-groups/sg-details.jpg)

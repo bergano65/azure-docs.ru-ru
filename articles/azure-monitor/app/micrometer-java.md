@@ -6,10 +6,10 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 11/01/2018
 ms.openlocfilehash: dd04087db32f0bbfa75dafa7e12c355e5ab7b515
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670072"
 ---
 # <a name="how-to-use-micrometer-with-azure-application-insights-java-sdk"></a>Как использовать Micrometer с пакетом SDK Azure Application Insights для Java
@@ -17,7 +17,7 @@ ms.locfileid: "77670072"
 
 ## <a name="using-spring-boot-15x"></a>Использование Spring Boot 1.5x
 Добавьте следующие зависимости в файл pom.xml или build.gradle: 
-* [Приложение Исследования весной загрузки-стартер](https://github.com/Microsoft/ApplicationInsights-Java/tree/master/azure-application-insights-spring-boot-starter) 2.5.0 или позже
+* [Application Insights пружины-Boot-Starter](https://github.com/Microsoft/ApplicationInsights-Java/tree/master/azure-application-insights-spring-boot-starter) 2.5.0 или более поздней версии
 * Реестр Azure Micrometer 1.1.0 или более поздней версии.
 * [Micrometer Spring Legacy](https://micrometer.io/docs/ref/spring/1.5) 1.1.0 или более поздней версии (возвращение кода автонастройки на платформе Spring к более ранней версии).
 * [Ресурс ApplicationInsights](../../azure-monitor/app/create-new-resource.md )
@@ -57,8 +57,8 @@ ms.locfileid: "77670072"
 Добавьте следующие зависимости в файл pom.xml или build.gradle:
 
 * spring-boot-starter для Application Insights версии 2.1.2 или более поздней.
-* Azure-весна-загрузка-метрики-стартеры 2.0.7 или более поздно
-* [Ресурс Insights приложений](../../azure-monitor/app/create-new-resource.md )
+* Azure-пружины-Boot — метрики — начальные 2.0.7 или более поздние версии
+* [Ресурс Application Insights](../../azure-monitor/app/create-new-resource.md )
 
 Шаги:
 
@@ -80,9 +80,9 @@ ms.locfileid: "77670072"
 Метрики по умолчанию:
 
 *    Автоматически настроенные метрики для Tomcat, виртуальной машины Java, метрики Logback, Log4J, метрики работоспособности системы, метрики процессора, FileDescriptorMetrics.
-*    Например, если Netflix Hystrix присутствует на пути класса мы получаем эти метрики, а также. 
+*    Например, если Netflix Hystrix есть в пути к классу, эти метрики также будут получены. 
 *    Доступ к следующим метрикам можно получить, добавив соответствующие компоненты. 
-        - CacheMetrics (CaffeineCache, EhCache2, GuavaCache, HazelcastCache, JCache)     
+        - Качеметрикс (Каффеинекаче, EhCache2, Гуавакаче, Хазелкасткаче, Жкаче)     
         - DataBaseTableMetrics 
         - HibernateMetrics 
         - JettyMetrics 
@@ -115,9 +115,9 @@ ms.locfileid: "77670072"
 
 Добавьте следующие зависимости в файл pom.xml или build.gradle:
 
-* Приложение Insights Web Auto 2.5.0 или позже
+* Application Insights Web Auto 2.5.0 или более поздней версии
 * Реестр Azure Micrometer 1.1.0 или более поздней версии.
-* [Ресурс Insights приложений](../../azure-monitor/app/create-new-resource.md )
+* [Ресурс Application Insights](../../azure-monitor/app/create-new-resource.md )
 
 Шаги:
 
@@ -137,7 +137,7 @@ ms.locfileid: "77670072"
         </dependency>
      ```
 
-2. Поместите `ApplicationInsights.xml` файл в папку ресурсов:
+2. Разместить `ApplicationInsights.xml` файл в папке ресурсов:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -246,7 +246,7 @@ ms.locfileid: "77670072"
 
 Дополнительные сведения о метриках см. в статье [Micrometer documentation](https://micrometer.io/docs/) (Документация по Micrometer).
 
-Другие примеры кода о том, как создавать различные типы метрик, можно найти в[официальном репо Micrometer GitHub.](https://github.com/micrometer-metrics/micrometer/tree/master/samples/micrometer-samples-core/src/main/java/io/micrometer/core/samples)
+Другой пример кода для создания различных типов метрик можно найти в[официальном репозитории Микрометер GitHub](https://github.com/micrometer-metrics/micrometer/tree/master/samples/micrometer-samples-core/src/main/java/io/micrometer/core/samples).
 
 ## <a name="how-to-bind-additional-metrics-collection"></a>Связывание дополнительной коллекции метрик
 
@@ -260,7 +260,7 @@ ms.locfileid: "77670072"
         Return new GuavaCacheMetrics();
     }
 ```
-Несколько метрик не включены по умолчанию, но их можно связать указанным выше способом. Для получения полного списка, обратитесь к [официальному Micrometer GitHub репо](https://github.com/micrometer-metrics/micrometer/tree/master/micrometer-core/src/main/java/io/micrometer/core/instrument/binder ).
+Несколько метрик не включены по умолчанию, но их можно связать указанным выше способом. Полный список см. в [официальном репозитории GitHub микрометер](https://github.com/micrometer-metrics/micrometer/tree/master/micrometer-core/src/main/java/io/micrometer/core/instrument/binder ).
 
 ### <a name="non-spring-apps"></a>Стороннее приложение
 Добавьте следующий код привязки в файл конфигурации:
@@ -268,7 +268,7 @@ ms.locfileid: "77670072"
     New GuavaCacheMetrics().bind(registry);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Чтобы узнать больше о Micrometer, смотрите официальную [документацию Micrometer](https://micrometer.io/docs).
-* Чтобы узнать о Spring on Azure, смотрите официальную [документацию Spring on Azure.](https://docs.microsoft.com/java/azure/spring-framework/?view=azure-java-stable)
+* Дополнительные сведения о Микрометер см. в официальной [документации микрометер](https://micrometer.io/docs).
+* Дополнительные сведения о пружины в Azure см. в официальной [пружине в документации по Azure](https://docs.microsoft.com/java/azure/spring-framework/?view=azure-java-stable).

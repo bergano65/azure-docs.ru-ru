@@ -1,7 +1,7 @@
 ---
-title: "Известные проблемы: Онлайн-миграция в базу данных S'L"
+title: 'Известные проблемы: оперативная миграция в базу данных SQL'
 titleSuffix: Azure Database Migration Service
-description: Узнайте об известных проблемах/ограничениях миграции с помощью онлайн-миграций в базу данных Azure S'L с помощью миграционной службы базы данных Azure.
+description: Сведения об известных проблемах и ограничениях миграции при оперативной миграции в базу данных SQL Azure с помощью Azure Database Migration Service.
 services: database-migration
 author: pochiraju
 ms.author: rajpo
@@ -13,18 +13,18 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
 ms.openlocfilehash: e7efdb7244e2c7e4651a4507b538123f8d320c1e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77650781"
 ---
-# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database"></a>Известные проблемы/ограничения миграции с миграцией в интернет-сети в базу данных Azure S'L
+# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database"></a>Известные проблемы и ограничения миграции при оперативной миграции в базу данных SQL Azure
 
 В следующих разделах описываются известные проблемы и ограничения, связанные с сетевыми миграциями из SQL Server в Базу данных SQL Azure.
 
 > [!IMPORTANT]
-> При миграции онлайн-сервера в базу данных Azure S'L не поддерживается миграция SQL_variant типов данных.
+> Миграция SQL Server в базу данных SQL Azure в сети, перенос SQL_variant типов данных не поддерживается.
 
 ### <a name="migration-of-temporal-tables-not-supported"></a>Перемещение темпоральных таблиц не поддерживается
 
@@ -38,7 +38,7 @@ ms.locfileid: "77650781"
 
  ![Примеры ошибок темпоральной таблицы](media/known-issues-azure-sql-online/dms-temporal-tables-errors.png)
 
-**Решение**
+**Обходное решение**
 
 Выполните следующие действия.
 
@@ -64,7 +64,7 @@ ms.locfileid: "77650781"
 
 ![Пример ошибок hierarchyid](media/known-issues-azure-sql-online/dms-hierarchyid-errors.png)
 
-**Решение**
+**Обходное решение**
 
 Выполните следующие действия.
 
@@ -80,7 +80,7 @@ ms.locfileid: "77650781"
 
 ### <a name="migration-failures-with-various-integrity-violations-with-active-triggers-in-the-schema-during-full-data-load-or-incremental-data-sync"></a>Сбои миграции с различными нарушениями целостности при активных триггерах в схеме во время операции полной загрузки данных или добавочной синхронизации данных
 
-**Решение**
+**Обходное решение**
 
 Выполните следующие действия.
 
@@ -104,31 +104,31 @@ ms.locfileid: "77650781"
 SELECT max(DATALENGTH(ColumnName)) as LEN from TableName
 ```
 
-**Решение**
+**Обходное решение**
 
-Если у вас есть столбец LOB, который больше 32 кБ, свяжитесь с командой инженеров [в Ask Azure Database Migrations.](mailto:AskAzureDatabaseMigrations@service.microsoft.com)
+Если у вас есть столбец LOB, размер которого превышает 32 КБ, обратитесь к группе разработчиков по адресу [запросите миграцию базы данных Azure](mailto:AskAzureDatabaseMigrations@service.microsoft.com).
 
 ### <a name="issues-with-timestamp-columns"></a>Проблемы со столбцами меток времени
 
 **Симптом**
 
-Миграционная служба базы данных Azure не мигрирует со значением исходной метки; вместо этого служба миграции базы данных Azure создает новое значение метки времени в целевой таблице.
+Azure Database Migration Service не выполняет миграцию исходного значения timestamp; Вместо этого Azure Database Migration Service создает новое значение timestamp в целевой таблице.
 
-**Решение**
+**Обходное решение**
 
-Если вам нужна миграционная служба базы данных Azure для переноса точного значения временной метки, хранящегося в исходной таблице, обратитесь в инженерную группу [ask Azure Database Migrations.](mailto:AskAzureDatabaseMigrations@service.microsoft.com)
+Если требуется Azure Database Migration Service для переноса точного значения метки времени, хранящегося в исходной таблице, обратитесь к группе инженеров, [запросив миграцию базы данных Azure](mailto:AskAzureDatabaseMigrations@service.microsoft.com).
 
-### <a name="data-migration-errors-dont-provide-additional-details-on-the-database-detailed-status-blade"></a>Ошибки миграции данных не предоставляют дополнительных сведений о лопасти подробного состояния базы данных
+### <a name="data-migration-errors-dont-provide-additional-details-on-the-database-detailed-status-blade"></a>В колонке "подробное состояние базы данных" не представлены дополнительные сведения об ошибках переноса данных
 
 **Симптом**
 
-При сбоях в сбоях миграции в представлении статуса данных сведения о базах данных, выбор ссылки **на ошибки миграции данных** на верхней ленте может не предоставить дополнительные сведения, относящиеся к сбоям миграции.
+При возникновении ошибок миграции в представлении состояние сведений о базах данных выбор ссылки **ошибки переноса данных** на верхней ленте может не дать дополнительных сведений, относящихся к сбоям миграции.
 
 ![пример ошибок перемещения данных: нет сведений](media/known-issues-azure-sql-online/dms-data-migration-errors-no-details.png)
 
-**Решение**
+**Обходное решение**
 
-Чтобы получить конкретные сведения о сбое, используйте следующие шаги.
+Чтобы получить сведения о конкретных сбоях, выполните следующие действия.
 
 1. Закройте колонку подробностей о состоянии базы данных, чтобы отобразить экран действия миграции.
 
@@ -136,26 +136,26 @@ SELECT max(DATALENGTH(ColumnName)) as LEN from TableName
 
 2. Щелкните **См. сведения об ошибке**, чтобы увидеть сообщения об ошибках миграции, которые помогут вам устранить их.
 
-### <a name="geography-datatype-not-supported-in-sqldb-online-migration"></a>Тип данных географии, не поддерживаемый в онлайн-миграции S'LDB
+### <a name="geography-datatype-not-supported-in-sqldb-online-migration"></a>Тип данных geography не поддерживается в оперативной миграции SQLDB
 
 **Симптом**
 
-Миграция завершается субой с сообщением об ошибке, содержащим следующий текст:
+Сбой миграции с сообщением об ошибке, содержащим следующий текст:
 
      “** encountered a fatal error”, "errorEvents":<Table>.<Column> is of type 'GEOGRAPHY', which is not supported by 'Full Load' under 'Full LOB' support mode."
 
-**Решение**
+**Обходное решение**
 
-В то время как служба миграции базы данных Azure поддерживает тип данных географии для автономных миграций в базу данных Azure S'L, для онлайн-миграций тип данных географии не поддерживается. Попробуйте альтернативные методы, чтобы изменить тип данных в источнике на поддерживаемый тип, прежде чем пытаться использовать службу миграции базы данных Azure для онлайн-миграции этой базы данных.
+Хотя Azure Database Migration Service поддерживает тип данных geography для автономных миграций в базу данных SQL Azure, для оперативной миграции тип данных geography не поддерживается. Попробуйте использовать альтернативные методы для изменения типа данных в источнике на поддерживаемый тип перед использованием Azure Database Migration Service для оперативной миграции этой базы данных.
 
 ### <a name="supported-editions"></a>Поддерживаемые выпуски
 
 **Симптом**
 
-Миграция завершается субой с сообщением об ошибке, содержащим следующий текст:
+Сбой миграции с сообщением об ошибке, содержащим следующий текст:
 
     Migration settings validation error: The edition of the server [Business Intelligence Edition (64-bit)] does not match the supported edition(s) [Enterprise,Standard,Developer].
 
-**Решение**
+**Обходное решение**
 
-Поддержка миграций в интернет-сети в базу данных Azure S'L с помощью службы миграции баз данных Azure распространяется только на издания Enterprise, Standard и Developer. Убедитесь, что перед началом процесса миграции вы используете поддерживаемое издание.
+Поддержка оперативной миграции в базу данных SQL Azure с помощью Azure Database Migration Service распространяется только на выпуски Enterprise, Standard и Developer. Убедитесь, что вы используете поддерживаемый выпуск, прежде чем начать процесс миграции.

@@ -7,16 +7,16 @@ author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: 2dace6968fbbe69f806c27fb7a46e60c63f78b4f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670208"
 ---
 # <a name="joins-in-azure-monitor-log-queries"></a>Объединения в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Перед завершением этого урока необходимо завершить работу с журналами [Azure Monitor Log Analytics](get-started-portal.md) и [журналами Azure Monitor.](get-started-queries.md)
+> Перед выполнением этого занятия необходимо завершить [работу с Azure Monitor log Analytics](get-started-portal.md) и [Azure Monitor запросов к журналу](get-started-queries.md) .
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -97,12 +97,12 @@ SecurityEvent
 - Если одна таблица меньше другой, используйте ее в качестве левой части объединенных данных.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала Azure Monitor.
 
-- [Работа со строками](string-operations.md)
-- [Функции агрегирования](aggregations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
-- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
+- [Операции со строками](string-operations.md)
+- [Агрегатные функции](aggregations.md)
+- [Расширенные агрегатные функции](advanced-aggregations.md)
+- [JSON и структуры данных](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
 - [Диаграммы](charts.md)

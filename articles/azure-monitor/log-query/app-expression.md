@@ -1,16 +1,16 @@
 ---
 title: Выражение app() в запросах журнала Azure Monitor | Документация Майкрософт
-description: Выражение приложения используется в журнале Azure Monitor для получения данных из определенного приложения Insights в той же группе ресурсов, другой группе ресурсов или другой подписке.
+description: Выражение приложения используется в Azure Monitor запросе журнала для получения данных из определенного приложения Application Insights в той же группе ресурсов, в другой группе ресурсов или в другой подписке.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/25/2019
 ms.openlocfilehash: 5502df1cd119c0f63c65945d73431a17282ebc0c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670266"
 ---
 # <a name="app-expression-in-azure-monitor-query"></a>Выражение app() в запросах Azure Monitor
@@ -69,7 +69,7 @@ union
 | where TimeGenerated between(todatetime("2018-02-08 15:00:00") .. todatetime("2018-12-08 15:05:00"))
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о рабочей области Log Analytics см. в статье [Выражение workspace() в запросах Log Analytics](workspace-expression.md).
 - Подробнее о хранении данных Azure Monitor см. в статье [Анализ данных Log Analytics в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).

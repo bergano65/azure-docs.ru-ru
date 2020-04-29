@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 09/10/2019
 ms.openlocfilehash: 57c474c8391168702154b71e0c454253ab921dc1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77667233"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-azure-monitor"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Azure Monitor
@@ -33,20 +33,20 @@ ms.locfileid: "77667233"
 
 ![Изображение панели мониторинга "Проверка работоспособности AD"](./media/ad-assessment/ad-healthcheck-dashboard-01.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Решение Active Directory Health Check требует поддерживаемой версии .NET Framework 4.6.2 или выше, установленной на каждом компьютере с установленным агентом Log Analytics для Windows (также именуемым агентом мониторинга Майкрософт (MMA)...  Агент используется System Center 2016 - Менеджером по операциям, операционным менеджером 2012 R2 и Azure Monitor.
+* Для решения Active Directory проверки работоспособности требуется поддерживаемая версия .NET Framework 4.6.2 или более поздней версии на каждом компьютере, где установлен агент Log Analytics для Windows (также называемый Microsoft Monitoring Agent (MMA)).  Агент используется System Center 2016-Operations Manager, Operations Manager 2012 R2 и Azure Monitor.
 * Решение поддерживает контроллеры домена под управлением Windows Server 2008 и 2008 R2, Windows Server 2012 и 2012 R2, а также Windows Server 2016.
-* Рабочая область Log Analytics для добавления решения проверки работоспособности Active Directory в Azure Marketplace на портале Azure. Дополнительная конфигурация не требуется.
+* Рабочая область Log Analytics для добавления решения проверки работоспособности Active Directory в Azure Marketplace на портале Azure. Дополнительная настройка не требуется.
 
   > [!NOTE]
   > После добавления решения на серверы с агентами добавляется файл AdvisorAssessment.exe. Данные конфигурации считываются и отправляются на обработку в Azure Monitor в облаке. К полученным данным применяется логика и облачная служба записывает данные.
   >
   >
 
-Для выполнения проверки работоспособности в отношении контроллеров доменов, которые являются членами домена, которые должны быть оценены, каждый контроллер домена в этом домене требует агента и подключения к Azure Monitor с помощью одного из следующих поддерживаемых методов:
+Для проверки работоспособности контроллеров домена, которые являются членами домена для оценки, каждому контроллеру домена в этом домене требуется агент и возможность подключения к Azure Monitor с помощью одного из следующих поддерживаемых методов:
 
-1. Установите [агент Log Analytics для Windows,](../../azure-monitor/platform/agent-windows.md) если контроллер домена еще не контролируется System Center 2016 - Менеджером операций или менеджером операций 2012 R2.
+1. Установите [агент log Analytics для Windows](../../azure-monitor/platform/agent-windows.md) , если контроллер домена еще не отслеживается System Center 2016-Operations Manager или Operations Manager 2012 R2.
 2. Если сервер отслеживается решением System Center 2016 Operations Manager или Operations Manager 2012 R2 и группа управления не интегрирована с Azure Monitor, контроллер домена может использоваться как многосетевой. С помощью Azure Monitor данные будут собираться и пересылаться в службу, а контроллер домена по-прежнему будет отслеживаться решением Operations Manager.  
 3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-azure-monitor).  
 
@@ -134,7 +134,7 @@ ms.locfileid: "77667233"
 ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation
 ```
 
-Вот скриншот, показывающий запрос журнала: <
+Ниже приведен снимок экрана, показывающий запрос журнала: <
 
 ![невыполненные рекомендации](media/ad-assessment/ad-failed-recommendations.png)
 
@@ -166,7 +166,7 @@ ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Co
 
 ## <a name="ad-health-check-solutions-faq"></a>Вопросы и ответы по решению "Проверка работоспособности AD"
 
-*Какие проверки выполняется решением AD Assessment?*
+*Какие проверки выполняются Оценка ADным решением?*
 
 * В следующем запросе показано описание всех проверок, которые выполняются в настоящее время:
 
@@ -193,7 +193,7 @@ ADAssessmentRecommendation
 
 * Если сервер не отправляет данные в течение 3 недель, то он удаляется.
 
-*Как называется процесс сбора данных?*
+*Имя процесса, который выполняет сбор данных*
 
 * AdvisorAssessment.exe
 
@@ -201,7 +201,7 @@ ADAssessmentRecommendation
 
 * Время сбора данных на сервере занимает примерно 1 час. На серверах, которые имеют большое количество серверов Active Directory, процесс сбора может занять больше времени.
 
-*Есть ли способ настроить, когда данные собираются?*
+*Есть ли способ настроить время сбора данных?*
 
 * На данный момент нет.
 
@@ -213,6 +213,6 @@ ADAssessmentRecommendation
 
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности AD, см. статью [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).

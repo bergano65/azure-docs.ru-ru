@@ -4,10 +4,10 @@ description: Мониторинг приложений с помощью Azure A
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.openlocfilehash: e5188972d9058b85a9765c7d33f6209b37245d7e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77669902"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
@@ -20,7 +20,7 @@ Application Insights всегда предоставляло сводную па
 
 ![Область панели мониторинга общих сведений](./media/overview-dashboard/overview.png)
 
-## <a name="better-performance"></a>Повышенная производительность
+## <a name="better-performance"></a>более высокая производительность;
 
 Выбор диапазона времени упростили, создав интерфейс с возможностью работы одним щелчком.
 
@@ -53,10 +53,10 @@ Application Insights всегда предоставляло сводную па
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Если вы **выберете настройки плитки** и установите пользовательский диапазон времени свыше 31 дня, панель мониторинга не будет отображаться за 31 дней данных, даже при сохранении данных по умолчанию в 90 дней. В настоящее время нет обходного пути для этого поведения.
+Если выбрать **параметр настроить параметры плитки** и задать настраиваемый диапазон времени, превышающий 31 день, на панели мониторинга не будут отображаться данные за 31 день, даже если срок хранения данных по умолчанию 90 дней. В настоящее время обходной путь для этого поведения отсутствует.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Воронки](../../azure-monitor/app/usage-funnels.md)
-- [Хранения](../../azure-monitor/app/usage-retention.md)
+- [Сохранение](../../azure-monitor/app/usage-retention.md)
 - [Маршруты пользователей](../../azure-monitor/app/usage-flows.md)

@@ -1,70 +1,70 @@
 ---
 title: Кнопка "Развертывание в Azure"
-description: Используйте кнопку для развертывания шаблонов Управления ресурсами Azure из репозитория GitHub.
+description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.openlocfilehash: 88436eac970b252d7b0bc7bccee4131e06e9e0cf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77109049"
 ---
-# <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Используйте кнопку развертывания для развертывания шаблонов из репозитория GitHub
+# <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
-В этой статье описывается, как использовать кнопку **«Развертывание в Azure»** для развертывания шаблонов из репозитория GitHub. Кнопку можно добавить непосредственно в README.md файл в репозитории GitHub или на веб-страницу, которая ссылается на репозиторий.
+В этой статье описывается, как использовать кнопку **развертывание в Azure** для развертывания шаблонов из репозитория GitHub. Вы можете добавить кнопку непосредственно в файл README.md в репозитории GitHub или на веб-страницу, которая ссылается на репозиторий.
 
-## <a name="use-common-image"></a>Использование общего изображения
+## <a name="use-common-image"></a>Использовать общий образ
 
-Чтобы добавить кнопку на веб-страницу или репозиторий, используйте следующее изображение:
+Чтобы добавить кнопку на веб-страницу или в репозиторий, используйте следующий рисунок:
 
 ```html
 <img src="https://aka.ms/deploytoazurebutton"/>
 ```
 
-Изображение отображается как:
+Изображение выглядит следующим образом:
 
 ![Кнопка "Развертывание в Azure"](https://aka.ms/deploytoazurebutton)
 
 ## <a name="create-url-for-deploying-template"></a>Создание URL-адреса для развертывания шаблона
 
-Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репо:
+Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репозитории:
 
 ```html
 https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
 ```
 
-Затем URL-адрес кодирует его. Вы можете использовать онлайн-кодера или запустить команду. Следующий пример PowerShell показывает, как КОДировать значение.
+Затем URL-адрес кодирует его. Можно использовать интерактивный кодировщик или выполнить команду. В следующем примере PowerShell показано, как кодировать значение в URL-адрес.
 
 ```powershell
 [uri]::EscapeDataString($url)
 ```
 
-URL-адрес примера имеет следующее значение при кодировании URL-адреса.
+URL-адрес в примере имеет следующее значение при кодировании URL-адреса.
 
 ```html
 https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json
 ```
 
-Каждая ссылка начинается с одного и того же базового URL:
+Каждая ссылка начинается с того же базового URL-адреса:
 
 ```html
 https://portal.azure.com/#create/Microsoft.Template/uri/
 ```
 
-Добавьте ссылку шаблона, закодированную URL, к концу базового URL-адреса.
+Добавьте ссылку на шаблон в кодировке URL-адреса в конец базового URL-адреса.
 
 ```html
 https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json
 ```
 
-У вас есть полный URL для ссылки.
+У вас есть полный URL-адрес ссылки.
 
-## <a name="create-deploy-to-azure-button"></a>Создание кнопки «Развертывание в Azure»
+## <a name="create-deploy-to-azure-button"></a>Кнопка "создать развертывание в Azure"
 
-Наконец, поместите ссылку и изображение вместе.
+Наконец, разместите ссылку и изображение вместе.
 
-Чтобы добавить кнопку с Markdown в README.md файл в репозитории GitHub или на веб-странице, используйте:
+Чтобы добавить кнопку с Markdown в файл README.md в репозитории GitHub или на веб-странице, используйте:
 
 ```markdown
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
@@ -80,14 +80,14 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Чтобы протестировать полное решение, выберите следующую кнопку:
+Чтобы протестировать полное решение, нажмите следующую кнопку:
 
 [![Развертывание в Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
 
-Портал отображает панель, которая позволяет легко обеспечить значения параметров. Параметры предварительно заполнены значениями по умолчанию из шаблона.
+На портале отображается панель, с помощью которой можно легко указать значения параметров. Параметры предварительно заполняются значениями по умолчанию из шаблона.
 
-![Используйте портал для развертывания](./media/deploy-to-azure-button/portal.png)
+![Развертывание с помощью портала](./media/deploy-to-azure-button/portal.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Чтобы узнать больше о [Understand the structure and syntax of Azure Resource Manager templates](template-syntax.md)шаблонах, см.
+- Дополнительные сведения о шаблонах см. [в разделе Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).

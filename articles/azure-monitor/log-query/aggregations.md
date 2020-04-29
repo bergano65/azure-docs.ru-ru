@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: d164c53e7e2be55f3cede389901a256ba388808d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670310"
 ---
 # <a name="aggregations-in-azure-monitor-log-queries"></a>Агрегирование в запросах к журналам Azure Monitor
@@ -72,7 +72,7 @@ Heartbeat
 ```
 
 ### <a name="evaluating-subgroups"></a>Оценка подгрупп
-Чтобы выполнить подсчет или другие агрегирования с подгруппами в данных, используйте ключевое слово `by`. Например, подсчитать количество различных компьютеров Linux, которые посылали биения сердца в каждой стране/регионе:
+Чтобы выполнить подсчет или другие агрегирования с подгруппами в данных, используйте ключевое слово `by`. Например, чтобы подсчитать количество уникальных компьютеров Linux, которые отправляли пульсы в каждой стране или регионе, сделайте следующее:
 
 ```Kusto
 Heartbeat 
@@ -89,7 +89,7 @@ Heartbeat
 |Нидерланды      | 2                   |
 
 
-Чтобы проанализировать меньшие подгруппы данных, добавьте имена дополнительных столбцов в раздел `by`. Например, можно подсчитать различные компьютеры из каждой страны/региона на OSType:
+Чтобы проанализировать меньшие подгруппы данных, добавьте имена дополнительных столбцов в раздел `by`. Например, может потребоваться подсчитать различные компьютеры из каждой страны или региона на OSType:
 
 ```Kusto
 Heartbeat 
@@ -142,10 +142,10 @@ Perf
 
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
-- [Работа со строками](string-operations.md)
-- [Работа со значениями даты и времени](datetime-operations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
-- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
+- [Операции со строками](string-operations.md)
+- [Операции с датой и временем](datetime-operations.md)
+- [Расширенные агрегатные функции](advanced-aggregations.md)
+- [JSON и структуры данных](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
 - [Соединения](joins.md)
 - [Диаграммы](charts.md)

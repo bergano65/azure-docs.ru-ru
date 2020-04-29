@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 02/06/2020
 ms.author: amsriva
 ms.openlocfilehash: c1a75630c6419816b048495ee87d24c81979af16
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77064773"
 ---
 # <a name="vpn-gateway-classic-to-resource-manager-migration"></a>Перенос VPN-шлюза из классической модели развертывания в модель Resource Manager
@@ -65,6 +65,6 @@ VPN-шлюзы в топологии можно настроить таким о
 * Включите BGP на VPN-шлюзах, подключенных друг к другу и к локальным ресурсам. Включение BGP восстанавливает подключение без изменения конфигурации, так как маршруты выясняются и объявляются между шлюзами виртуальной сети. Обратите внимание, что использование BGP доступно только в SKU "Стандартный" и выше.
 * Установите явное подключение между затронутой виртуальной сетью и шлюзом локальной сети, представляющим локальное расположение. Для этого также потребуется изменить конфигурацию локального маршрутизатора, чтобы создать и настроить туннель IPsec.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Изучив сведения о поддержке при переносе VPN-шлюза, ознакомьтесь со статьей [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](../virtual-machines/windows/migration-classic-resource-manager-ps.md), чтобы приступить к работе.
 

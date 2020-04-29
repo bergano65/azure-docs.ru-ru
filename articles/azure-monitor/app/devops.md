@@ -1,13 +1,13 @@
 ---
-title: Мониторинг производительности веб-приложений - Azure Application Insights
+title: Наблюдение за производительностью веб-приложений в Azure Application Insights
 description: Как Application Insights встраивается в цикл разработки и операций (DevOps)
 ms.topic: conceptual
 ms.date: 12/21/2018
 ms.openlocfilehash: 24095aade80022d1e1ebb38357971512bfc873c0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77669698"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Углубленная диагностика для веб-приложений и служб с помощью Application Insights
@@ -157,7 +157,7 @@ Visual Studio и Eclipse оснащены инструментами для на
 ## <a name="next-steps"></a>Дальнейшие действия
 Начать работу с Application Insights легко. Ниже перечислены основные возможности.
 
-* [IIS-серверы,](../../azure-monitor/app/monitor-performance-live-website-now.md)а также для [службы приложений Azure](../../azure-monitor/app/app-insights-overview.md).
+* [Серверы IIS](../../azure-monitor/app/monitor-performance-live-website-now.md), а также [служба приложений Azure](../../azure-monitor/app/app-insights-overview.md).
 * Инструментирование проекта во время разработки. Это можно сделать для приложений [ASP.NET](../../azure-monitor/app/asp-net.md) или [Java](../../azure-monitor/app/java-get-started.md), а также для [Node.js](../../azure-monitor/app/nodejs.md) и узлов [других типов](../../azure-monitor/app/platforms.md). 
 * Инструментирование [любой веб-страницы](../../azure-monitor/app/javascript.md) с помощью добавления небольшого фрагмента кода.
 
