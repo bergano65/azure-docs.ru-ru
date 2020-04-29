@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: efc116c278bfe72419800603a3b365f461fe0a28
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79267967"
 ---
 # <a name="configure-chap-for-your-storsimple-device"></a>Настроить CHAP для устройства StorSimple.
@@ -59,7 +59,7 @@ CHAP лучше всего использовать для повышения б
    3. Подтвердите пароль.
 
        ![Инициатор CHAP](./media/storsimple-8000-configure-chap/configure-chap6.png)
-3. Нажмите **Сохранить**. Вы увидите сообщение с подтверждением. Чтобы сохранить изменения, нажмите кнопку **ОК**.
+3. Нажмите кнопку **Сохранить**. Вы увидите сообщение с подтверждением. Чтобы сохранить изменения, нажмите кнопку **ОК**.
 
 #### <a name="to-configure-one-way-authentication-on-the-windows-host-server"></a>Для настройки односторонней проверки подлинности на сервере узла Windows выполните следующие действия.
 1. Запустите инициатор iSCSI на сервере узла Windows.
@@ -113,7 +113,7 @@ CHAP лучше всего использовать для повышения б
    3. Подтвердите пароль.
 
        ![Инициатор CHAP](./media/storsimple-8000-configure-chap/configure-chap11.png)
-4. Нажмите **Сохранить**. Вы увидите сообщение с подтверждением. Чтобы сохранить изменения, нажмите кнопку **ОК**.
+4. Нажмите кнопку **Сохранить**. Вы увидите сообщение с подтверждением. Чтобы сохранить изменения, нажмите кнопку **ОК**.
 
 #### <a name="to-configure-bidirectional-authentication-on-the-windows-host-server"></a>Для настройки двунаправленной проверки подлинности на сервере узла Windows выполните следующие действия.
 
@@ -167,7 +167,7 @@ CHAP лучше всего использовать для повышения б
    
     ![Сведения об избранном целевом устройстве](./media/storsimple-configure-chap/IC740952.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о [безопасности StorSimple](storsimple-8000-security.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

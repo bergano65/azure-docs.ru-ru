@@ -1,7 +1,7 @@
 ---
-title: Развертывание студии (классическое) рабочее пространство с менеджером ресурсов Azure
+title: Развертывание рабочей области Studio (классической) с Azure Resource Manager
 titleSuffix: ML Studio (classic) - Azure
-description: Как развернуть рабочее пространство для студии машинного обучения Azure (классический) с помощью шаблона Azure Resource Manager
+description: Развертывание рабочей области для Машинное обучение Azure Studio (классическая модель) с помощью шаблона Azure Resource Manager
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -11,22 +11,22 @@ ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/05/2018
 ms.openlocfilehash: 34333d4fe6e9b34a0c8b56cca8123f4ed93a917a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79218121"
 ---
-# <a name="deploy-azure-machine-learning-studio-classic-workspace-using-azure-resource-manager"></a>Развертывание студии машинного обучения Azure (классическое) рабочее пространство с помощью менеджера ресурсов Azure
+# <a name="deploy-azure-machine-learning-studio-classic-workspace-using-azure-resource-manager"></a>Развертывание рабочей области Машинное обучение Azure Studio (классическая модель) с помощью Azure Resource Manager
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
-Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Например, для настройки рабочей студии Azure Machine Learning Studio (классические) рабочие места необходимо сначала настроить учетную запись хранения Azure, а затем развернуть рабочее пространство. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Проще йога — использовать шаблон Azure Resource Manager для развертывания рабочего пространства студии (классического) и всех его зависимостей. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md).
+Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Например, чтобы настроить рабочие области Машинное обучение Azure Studio (классические), необходимо сначала настроить учетную запись хранения Azure, а затем развернуть рабочую область. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Более простой альтернативой является использование шаблона Azure Resource Manager для развертывания рабочей области Studio (классической) и всех ее зависимостей. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="step-by-step-create-a-machine-learning-workspace"></a>Пошаговое создание рабочей области машинного обучения
-Мы создадим группу ресурсов Azure, а затем разместим новую учетную запись хранения Azure и новую рабочую студию Azure Machine Learning Studio с помощью шаблона «Менеджер ресурсов». После завершения развертывания мы выведем важные сведения о созданных рабочих областях (первичный ключ, идентификатор и URL-адрес рабочей области).
+Мы создадим группу ресурсов Azure, развернув новую учетную запись хранения Azure и новую рабочую область Машинное обучение Azure Studio (классическая модель) с помощью шаблона диспетчер ресурсов. После завершения развертывания мы выведем важные сведения о созданных рабочих областях (первичный ключ, идентификатор и URL-адрес рабочей области).
 
 ### <a name="create-an-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
 
@@ -114,7 +114,7 @@ $rg = New-AzResourceGroup -Name "uniquenamerequired523" -Location "South Central
 $rg
 ```
 
-Убедитесь, что группа ресурсов должным образом подготовлена к работе. **Положение должно** быть "Успешно".
+Убедитесь, что группа ресурсов должным образом подготовлена к работе. **ProvisioningState** должен быть "успех".
 Шаблон использует имя группы ресурсов для создания имени учетной записи хранения. Имя учетной записи хранения должно содержать от 3 до 24 знаков и состоять только из цифр и букв нижнего регистра.
 
 ![Группа ресурсов](./media/deploy-with-resource-manager-template/resourcegroupprovisioning.png)
@@ -133,15 +133,15 @@ $rgd = New-AzResourceGroupDeployment -Name "demo" -TemplateFile "C:\temp\mlworks
 $rgd.Outputs.mlWorkspaceToken.Value
 ```
 
-Еще один способ получения токенов существующего рабочего пространства — использование команды Invoke-AzResourceAction. Например, можно отобразить список основных и дополнительных маркеров всех рабочих областей.
+Другим способом получения маркеров существующей рабочей области является использование команды Invoke-Азресаурцеактион. Например, можно отобразить список основных и дополнительных маркеров всех рабочих областей.
 
 ```powershell
 # List the primary and secondary tokens of all workspaces
 Get-AzResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |ForEach-Object { Invoke-AzResourceAction -ResourceId $_.ResourceId -Action listworkspacekeys -Force}
 ```
-После того, как рабочее пространство подготовлено, вы также можете автоматизировать многие задачи Azure Machine Learning Studio (классические) с помощью [модуля PowerShell для студии машинного обучения Azure (классический).](https://aka.ms/amlps)
+После подготовки рабочей области можно автоматизировать многие задачи Машинное обучение Azure Studio (классические) с помощью [модуля PowerShell для машинное обучение Azure Studio (классическая модель)](https://aka.ms/amlps).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 * Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).

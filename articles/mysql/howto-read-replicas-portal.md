@@ -1,23 +1,23 @@
 ---
-title: Управление репликами чтения - Портал Azure - База данных Azure для MyS'L
-description: Узнайте, как настроить и управлять репликами чтения в базе данных Azure для MyS'L с помощью портала Azure.
+title: Управление репликами чтения — портал Azure — база данных Azure для MySQL
+description: Узнайте, как настраивать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью портал Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: b7226e5ae8c468339e02dbe87e279266e4609da8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80063477"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью портала Azure
 
-В этой статье вы узнаете, как создавать и управлять считывательными репликами в базе данных Azure для службы MyS'L с помощью портала Azure.
+В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MySQL" с помощью портал Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md), который будет использоваться в качестве главного сервера.
 
@@ -28,7 +28,7 @@ ms.locfileid: "80063477"
 
 Чтобы создать сервер-реплику чтения, выполните следующие действия.
 
-1. Войти на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Выберите имеющийся сервер базы данных Azure для MySQL, который будет главным сервером. Откроется страница **Обзор**.
 
@@ -38,18 +38,18 @@ ms.locfileid: "80063477"
 
    ![База данных Azure для MySQL — репликация](./media/howto-read-replica-portal/add-replica.png)
 
-5. Введите имя для сервера реплики.
+5. Введите имя сервера реплики.
 
-    ![База данных Azure для MyS'L - имя реплики](./media/howto-read-replica-portal/replica-name.png)
+    ![База данных Azure для MySQL — имя реплики](./media/howto-read-replica-portal/replica-name.png)
 
-6. Выберите местоположение для сервера реплики. Местоположение по умолчанию такое же, как и у главного сервера.
+6. Выберите расположение сервера реплики. Расположение по умолчанию совпадает с местоположением главного сервера.
 
-    ![База данных Azure для MyS'L - Местоположение реплики](./media/howto-read-replica-portal/replica-location.png)
+    ![База данных Azure для MySQL — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
    > [!NOTE]
-   > Чтобы узнать больше о том, в каких регионах можно создать копию, посетите [статью о концепциях ремиссий.](concepts-read-replicas.md) 
+   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
 
-7. Выберите **OK,** чтобы подтвердить создание реплики.
+7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
 
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Чтобы сервер-реплика мог работать с главным сервером, рекомендуется, чтобы значения конфигурации сервера-реплики были равны или превосходили значения конфигурации главного сервера.
@@ -73,7 +73,7 @@ ms.locfileid: "80063477"
 
    ![База данных Azure для MySQL — выбор сервера, для которого нужно остановить репликацию](./media/howto-read-replica-portal/stop-replication-select.png)
 
-4. Выберите **Stop репликации.**
+4. Выберите пункт " **отменить репликацию**".
 
    ![База данных Azure для MySQL — остановка репликации](./media/howto-read-replica-portal/stop-replication.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "80063477"
 
    ![База данных Azure для MySQL — выбор удаляемого сервера-реплики](./media/howto-read-replica-portal/delete-replica-select.png)
 
-4. Выберите **реплику удалить**
+4. Выбор **удаления реплики**
 
    ![База данных Azure для MySQL — удаление реплики](./media/howto-read-replica-portal/delete-replica.png)
 
@@ -136,6 +136,6 @@ ms.locfileid: "80063477"
 
    ![Выбор диапазона времени](./media/howto-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [репликах чтения](concepts-read-replicas.md)

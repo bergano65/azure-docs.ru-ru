@@ -1,5 +1,5 @@
 ---
-title: Создание Linux Azure VM images с помощью Packer
+title: Создание образов виртуальных машин Azure Linux с помощью пакета Pack
 description: Сведения об использовании Packer для создания образов виртуальных машин Linux в Azure
 author: cynthn
 ms.service: virtual-machines-linux
@@ -8,23 +8,23 @@ ms.workload: infrastructure
 ms.date: 05/07/2019
 ms.author: cynthn
 ms.openlocfilehash: 3aec50b8c8f2033b7340bde15ea7670c1a0b6bb9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79534225"
 ---
 # <a name="how-to-use-packer-to-create-linux-virtual-machine-images-in-azure"></a>Создание образов виртуальных машин Linux в Azure с помощью Packer
 Каждая виртуальная машина в Azure создается из образа, определяющего дистрибутив Linux и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием средства с открытым кодом [Packer](https://www.packer.io/).
 
 > [!NOTE]
-> Теперь у Azure есть служба Azure Image Builder (предварительный просмотр) для определения и создания собственных пользовательских изображений. Azure Image Builder построен на Packer, так что вы даже можете использовать существующие скрипты обеспечения оболочки Packer с ним. Чтобы начать работу с Azure Image Builder, смотрите [Создать Linux VM с Azure Image Builder.](image-builder.md)
+> Azure теперь имеет службу, Azure Image Builder (Предварительная версия) для определения и создания собственных пользовательских образов. Построитель образов Azure создан на основе пакета Pack, поэтому вы можете даже использовать существующие сценарии подготовки оболочки упаковки. Чтобы приступить к работе с построителем образов Azure, см. статью [Создание виртуальной машины Linux с помощью Azure Image Builder](image-builder.md).
 
 
 ## <a name="create-azure-resource-group"></a>Создание группы ресурсов Azure
 В процессе сборки исходной виртуальной машины Packer создает временные ресурсы Azure. Чтобы сохранить эту исходную виртуальную машину для использования в качестве образа, необходимо определить группу ресурсов. Выходные данные процесса сборки Packer хранятся в этой группе ресурсов.
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Следующий пример создает группу ресурсов под названием *myResourceGroup* в *восточном* месте:
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli
 az group create -n myResourceGroup -l eastus
@@ -226,5 +226,5 @@ az vm open-port \
 ![Сайт NGINX по умолчанию](./media/build-image-with-packer/nginx.png) 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-Вы также можете использовать существующие скрипты обеспечения Packer с [azure Image Builder.](image-builder.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+Вы также можете использовать существующие скрипты подготовки пакета с помощью [Azure Image Builder](image-builder.md).

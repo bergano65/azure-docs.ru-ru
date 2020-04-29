@@ -7,37 +7,37 @@ ms.topic: article
 ms.date: 06/24/2019
 ms.author: guybo
 ms.openlocfilehash: 5fa3415d8663f358bf0ae48be46ac52b8f8b4b06
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80066731"
 ---
 # <a name="prepare-an-ubuntu-virtual-machine-for-azure"></a>Подготовка виртуальной машины Ubuntu для Azure
 
 
-Ubuntu теперь публикует официальные Azure VHDs для скачивания на [https://cloud-images.ubuntu.com/](https://cloud-images.ubuntu.com/). Если вам нужно создать свой собственный, особый образ Ubuntu для Azure, не выполняйте описанную ниже процедуру, а начните с таких заведомо рабочих виртуальных жестких дисков и настройте их так, как вам требуется. Последние выпуски образов можно всегда найти в следующих расположениях:
+Теперь Ubuntu публикует официальные виртуальные жесткие диски Azure для загрузки [https://cloud-images.ubuntu.com/](https://cloud-images.ubuntu.com/)по адресу. Если вам нужно создать свой собственный, особый образ Ubuntu для Azure, не выполняйте описанную ниже процедуру, а начните с таких заведомо рабочих виртуальных жестких дисков и настройте их так, как вам требуется. Последние выпуски образов можно всегда найти в следующих расположениях:
 
 * Ubuntu 12.04/Precise: [ubuntu-12.04-server-cloudimg-amd64-disk1.vhd.zip](https://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.vhd.zip)
 * Ubuntu 14.04/Trusty: [ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip](https://cloud-images.ubuntu.com/releases/trusty/release/ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip)
-* Ubuntu 16.04/Xenial: [ubuntu-16.04-server-cloudimg-amd64-disk1.vmdk](https://cloud-images.ubuntu.com/releases/xenial/release/ubuntu-16.04-server-cloudimg-amd64-disk1.vmdk)
-* Ubuntu 18.04/Bionic: [бионический-сервер-cloudimg-amd64.vmdk](https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.vmdk)
+* Ubuntu 16.04/Xenial: [Ubuntu-16,04-Server-клаудимг-AMD64-disk1. vmdk](https://cloud-images.ubuntu.com/releases/xenial/release/ubuntu-16.04-server-cloudimg-amd64-disk1.vmdk)
+* Ubuntu 18.04/Бионик: [Бионик-Server-клаудимг-AMD64. vmdk](https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.vmdk)
 * Ubuntu 18.10/Cosmic: [cosmic-server-cloudimg-amd64.vhd.zip](http://cloud-images.ubuntu.com/releases/cosmic/release/ubuntu-18.10-server-cloudimg-amd64.vhd.zip)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 В этой статье предполагается, что вы уже установили операционную систему Ubuntu Linux на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 **Замечания по установке Ubuntu**
 
 * Дополнительные сведения о подготовке Linux для Azure см. в разделе [Общие замечания по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 * Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd.
-* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) могут быть использованы на дисках данных, если предпочтительнее.
+* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) могут использоваться на дисках данных, если они предпочтительны.
 * Не настраивайте раздел подкачки на диске с ОС. Можно настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны далее.
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. См. дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 
 ## <a name="manual-steps"></a>Создание вручную
 > [!NOTE]
-> Прежде чем пытаться создать свой собственный пользовательский образ Ubuntu для Azure, пожалуйста, подумайте об использовании предварительно построенных и протестированных изображений. [https://cloud-images.ubuntu.com/](https://cloud-images.ubuntu.com/)
+> Прежде чем создавать собственный пользовательский образ Ubuntu для Azure, рекомендуется использовать предварительно созданные и проверенные образы [https://cloud-images.ubuntu.com/](https://cloud-images.ubuntu.com/) .
 > 
 > 
 
@@ -45,7 +45,7 @@ Ubuntu теперь публикует официальные Azure VHDs для 
 
 2. Щелкните **Подключиться**, чтобы открыть окно для виртуальной машины.
 
-3. Замените текущие репозитории на изображении, чтобы использовать репозиторий Azure Ubuntu. Эти действия могут незначительно отличаться в зависимости от версии Ubuntu.
+3. Замените текущие репозитории в образе, чтобы использовать репозиторий Azure Ubuntu. Эти действия могут незначительно отличаться в зависимости от версии Ubuntu.
    
     Перед редактированием `/etc/apt/sources.list` рекомендуется сделать резервную копию:
    
@@ -94,7 +94,7 @@ Ubuntu теперь публикует официальные Azure VHDs для 
 
         # sudo reboot
     
-    Ubuntu 18.04.04:
+    18.04.04 Ubuntu:
     
         # sudo apt-get update
         # sudo apt-get install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04
@@ -103,7 +103,7 @@ Ubuntu теперь публикует официальные Azure VHDs для 
 
         # sudo reboot
     
-    **Смотрите также:**
+    **См. также:**
     - [https://wiki.ubuntu.com/Kernel/LTSEnablementStack](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
     - [https://wiki.ubuntu.com/Kernel/RollingLTSEnablementStack](https://wiki.ubuntu.com/Kernel/RollingLTSEnablementStack)
 
@@ -131,11 +131,11 @@ Ubuntu теперь публикует официальные Azure VHDs для 
         # export HISTSIZE=0
         # logout
 
-1. Нажмите **Action -> Выключите** в Hyper-V Manager. Виртуальный жесткий диск Linux готов к передаче в Azure.
+1. В диспетчере Hyper-V щелкните **действие-> завершить работу** . Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ## <a name="references"></a>Ссылки
 [Ядро Ubuntu с расширенной поддержкой оборудования (HWE)](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь виртуальный жесткий диск Ubuntu Linux можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

@@ -1,5 +1,5 @@
 ---
-title: Высокая доступность - База данных Azure для MyS'L
+title: Высокий уровень доступности — база данных Azure для MySQL
 description: Этот раздел содержит сведения о высоком уровне доступности при использовании базы данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: a793de35ffff84009d362f005e599b4419f0763f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79532779"
 ---
 # <a name="high-availability-concepts-in-azure-database-for-mysql"></a>Основные понятия высокого уровня доступности в базе данных Azure для MySQL
@@ -31,6 +31,6 @@ ms.locfileid: "79532779"
 
 Во время операции масштабирования происходит прерывание подключений к базе данных. Клиентские приложения отключаются, а открытые незафиксированные транзакции отменяются. Когда клиентское приложение предпринимает попытку восстановить подключение или устанавливает новое подключение, шлюз направляет это подключение к экземпляру с новым размером. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Ознакомьтесь с дополнительными сведениями об [обработке временных ошибок подключения](concepts-connectivity.md).
 - Чтобы узнать, как реплицировать данные с репликами для чтения, см. [здесь](howto-read-replicas-portal.md).

@@ -8,15 +8,15 @@ ms.date: 03/19/2020
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: c577859f6e8a44dd3573537aecadba638a5f6fa6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80059388"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure PowerShell
 
-Для настройки [правил маршрутизации на основе URL-адресов](application-gateway-url-route-overview.md) при создании [шлюза приложений](application-gateway-introduction.md) можно использовать Azure PowerShell. В этой статье вы создаете пулы бэкэнда с использованием [виртуальных наборов масштабов машин.](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) Затем вы создадите правила маршрутизации на основе URL-адресов, которые обеспечивают перенаправление веб-трафика в соответствующий внутренний пул.
+Для настройки [правил маршрутизации на основе URL-адресов](application-gateway-url-route-overview.md) при создании [шлюза приложений](application-gateway-introduction.md) можно использовать Azure PowerShell. В этой статье вы создадите серверные пулы с помощью [масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). Затем вы создадите правила маршрутизации на основе URL-адресов, которые обеспечивают перенаправление веб-трафика в соответствующий внутренний пул.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -38,7 +38,7 @@ ms.locfileid: "80059388"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решите установить и использовать PowerShell локально, эта процедура требует версии модуля Azure PowerShell 1.0.0 или позже. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, для этой процедуры требуется модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -129,7 +129,7 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 ### <a name="create-the-default-listener-and-rule"></a>Создание прослушивателя по умолчанию и правила
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик во внутренний пул. В этой статье вы создаете несколько слушателей. Первый базовый слушатель ожидает трафик с корневого URL-адреса. Другие прослушиватели ожидают трафик с определенных URL-адресов, например с `http://52.168.55.24:8080/images/` или `http://52.168.55.24:8081/video/`.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик во внутренний пул. В этой статье вы создадите несколько прослушивателей. Первый базовый слушатель ожидает трафик с корневого URL-адреса. Другие прослушиватели ожидают трафик с определенных URL-адресов, например с `http://52.168.55.24:8080/images/` или `http://52.168.55.24:8081/video/`.
 
 Создайте прослушиватель *defaultListener* с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener). Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
@@ -516,7 +516,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о возможностях шлюза приложений](application-gateway-introduction.md)

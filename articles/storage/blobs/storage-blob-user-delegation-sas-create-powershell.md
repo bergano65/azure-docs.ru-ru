@@ -1,7 +1,7 @@
 ---
-title: Используйте PowerShell для создания делегации пользователя SAS для контейнера или капли
+title: Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell
 titleSuffix: Azure Storage
-description: Узнайте, как создать SAS-делегации пользователей с помощью учетных данных Active Directory С помощью PowerShell.
+description: Узнайте, как создать SAS делегирования пользователя с учетными данными Azure Active Directory с помощью PowerShell.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,23 +11,23 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
 ms.openlocfilehash: 5250a27e6c5fcf012207f1edb95ad46c0aabfe63
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79536179"
 ---
-# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell"></a>Создание делегации пользователя SAS для контейнера или капли с Помощью PowerShell
+# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать учетные данные Active Directory (Azure AD) для создания SAS-сообщества пользователей для контейнера или капли с Azure PowerShell.
+В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure PowerShell.
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
 ## <a name="install-the-powershell-module"></a>Установка модуля PowerShell
 
-Чтобы создать делегацию пользователей SAS с PowerShell, установите версию 1.10.0 или более позднюю модуль Az.Storage. Выполните следующие действия, чтобы установить последнюю версию модуля:
+Чтобы создать SAS для делегирования пользователей с помощью PowerShell, установите версию 1.10.0 или более позднюю версию модуля AZ. Storage. Чтобы установить последнюю версию модуля, выполните следующие действия.
 
 1. Удалите все ранее установленные версии Azure PowerShell.
 
@@ -48,7 +48,7 @@ ms.locfileid: "79536179"
     Install-Module Az –Repository PSGallery –AllowClobber
     ```
 
-1. Убедитесь, что вы установили версию Azure PowerShell 3.2.0 или позже. Выполнить следующую команду для установки последней версии модуля Azure Storage PowerShell:
+1. Убедитесь, что установлен Azure PowerShell версии 3.2.0 или более поздней. Выполните следующую команду, чтобы установить последнюю версию модуля PowerShell для службы хранилища Azure:
 
     ```powershell
     Install-Module -Name Az.Storage -Repository PSGallery -Force
@@ -56,31 +56,31 @@ ms.locfileid: "79536179"
 
 1. Закройте и снова откройте окно PowerShell.
 
-Чтобы проверить, какая версия модуля Az.Storage установлена, запустите следующую команду:
+Чтобы проверить, какая версия модуля AZ. Storage установлена, выполните следующую команду:
 
 ```powershell
 Get-Module -ListAvailable -Name Az.Storage -Refresh
 ```
 
-Для получения дополнительной информации об установке Azure PowerShell [см.](/powershell/azure/install-az-ps)
+Дополнительные сведения об установке Azure PowerShell см. в [статье установка Azure PowerShell с помощью PowerShellGet](/powershell/azure/install-az-ps).
 
-## <a name="sign-in-to-azure-powershell-with-azure-ad"></a>Вопием в Azure PowerShell с помощью Azure AD
+## <a name="sign-in-to-azure-powershell-with-azure-ad"></a>Вход в Azure PowerShell с помощью Azure AD
 
-Позвоните в команду [Connect-AzAccount,](/powershell/module/az.accounts/connect-azaccount) чтобы войти в учетную запись Azure AD:
+Чтобы войти с помощью своей учетной записи Azure AD, вызовите команду [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) :
 
 ```powershell
 Connect-AzAccount
 ```
 
-Для получения дополнительной информации о вхере в PowerShell, [см.](/powershell/azure/authenticate-azureps)
+Дополнительные сведения о входе в систему с помощью PowerShell см. [в разделе Вход с помощью Azure PowerShell](/powershell/azure/authenticate-azureps).
 
-## <a name="assign-permissions-with-rbac"></a>Назначать разрешения с RBAC
+## <a name="assign-permissions-with-rbac"></a>Назначение разрешений с помощью RBAC
 
-Для создания делегации пользователей SAS из Azure PowerShell учетная запись Azure AD, используемая для вхушки в PowerShell, должна быть назначена роль, включавв в себя действия **Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey.** Это разрешение позволяет учетной записи Azure AD запросить *ключ делегации пользователя.* Ключ делегирования пользователя используется для подписания делегации пользователя SAS. Роль, обеспечивающая действие **Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey,** должно быть отнесено на уровне учетной записи хранилища, группы ресурсов или подписки. Для получения дополнительной информации о разрешениях RBAC на **Assign permissions with RBAC** создание SAS представительства [Create a user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)пользователей см.
+Чтобы создать SAS для делегирования пользователей из Azure PowerShell, учетной записи Azure AD, используемой для входа в PowerShell, должна быть назначена роль, включающая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Это разрешение позволяет этой учетной записи Azure AD запрашивать *ключ делегирования пользователя*. Ключ делегирования пользователя используется для подписи SAS делегирования пользователя. Роль, предоставляющая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , должна быть назначена на уровне учетной записи хранения, группы ресурсов или подписки. Дополнительные сведения о разрешениях RBAC для создания SAS для делегирования пользователей см. в разделе **Назначение разрешений с помощью RBAC** статьи [Создание SAS для делегирования пользователей](/rest/api/storageservices/create-user-delegation-sas).
 
-Если у вас нет достаточных разрешений на присвоение ролей RBAC директору безопасности Azure AD, может потребоваться попросить владельца учетной записи или администратора назначить необходимые разрешения.
+Если у вас нет достаточных разрешений для назначения ролей RBAC субъекту безопасности Azure AD, может потребоваться попросить владельца или администратора учетной записи назначить необходимые разрешения.
 
-Следующий пример присваивает роль **вкладчика хранилища данных Blob,** которая включает в себя **Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey** действий. Роль приравнивается на уровне учетной записи хранилища.
+В следующем примере назначается роль **участника данных BLOB-объекта хранилища** , которая включает действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Роль ограничивается уровнем учетной записи хранения.
 
 Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -90,15 +90,15 @@ New-AzRoleAssignment -SignInName <email> `
     -Scope  "/subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>"
 ```
 
-Для получения дополнительной информации о встроенных ролях, включающие действия **Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey,** [см.](../../role-based-access-control/built-in-roles.md)
+Дополнительные сведения о встроенных ролях, включающих действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , см. в статье [встроенные роли для ресурсов Azure](../../role-based-access-control/built-in-roles.md).
 
-## <a name="use-azure-ad-credentials-to-secure-a-sas"></a>Используйте учетные данные Azure AD для обеспечения безопасности SAS
+## <a name="use-azure-ad-credentials-to-secure-a-sas"></a>Использование учетных данных Azure AD для защиты SAS
 
-При создании делегации пользователей SAS с Azure PowerShell ключ для регистрации SAS создается для вас неявно. Время начала и время истечения времени, указанное для SAS, также используется в качестве времени начала и истечения времени для ключа делегации пользователя. 
+При создании SAS делегирования пользователя с Azure PowerShell ключ делегирования пользователя, используемый для подписи SAS, создается неявно. Время начала и окончания срока действия, заданное для SAS, также используются в качестве времени начала и срока действия для ключа делегирования пользователя. 
 
-Поскольку максимальный интервал, в течение которого действует ключ делегации пользователя, составляет 7 дней с даты начала, следует указать время истечения срока действия SAS, которое составляет 7 дней после начала. SAS является недействительным после истечения срока действия ключа делегации пользователя, поэтому SAS со сроком действия более 7 дней будет по-прежнему действителен только в течение 7 дней.
+Так как максимальный интервал, по истечении которого ключ делегирования пользователя является допустимым, — 7 дней с даты начала, необходимо указать время окончания срока действия для SAS в течение 7 дней с момента запуска. После истечения срока действия ключа делегирования пользователя SAS является недействительным, поэтому срок действия SAS с временем окончания срока хранения более 7 дней будет действительным только в течение 7 дней.
 
-Для создания sAS-делегации пользователя для контейнера или капли с Azure PowerShell сначала создайте новый контекстный объект Azure Storage с указанием `-UseConnectedAccount` параметра. Параметр `-UseConnectedAccount` указывает, что команда создает объект контекста в учетной записи Azure AD, в которую вы входите.
+Чтобы создать SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure PowerShell, сначала создайте новый объект контекста службы хранилища Azure, `-UseConnectedAccount` указав параметр. `-UseConnectedAccount` Параметр указывает, что команда создает объект контекста в учетной записи Azure AD, с которой вы вошли.
 
 Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -106,11 +106,11 @@ New-AzRoleAssignment -SignInName <email> `
 $ctx = New-AzStorageContext -StorageAccountName <storage-account> -UseConnectedAccount
 ```
 
-### <a name="create-a-user-delegation-sas-for-a-container"></a>Создание sAS-делегации пользователя для контейнера
+### <a name="create-a-user-delegation-sas-for-a-container"></a>Создание SAS для делегирования пользователя для контейнера
 
-Чтобы вернуть токен SAS делегации пользователя в контейнер, позвоните в команду [New-AzStorageContainerSASToken,](/powershell/module/az.storage/new-azstoragecontainersastoken) передав объект контекста Хранения Azure, созданный ранее.
+Чтобы вернуть маркер SAS делегирования пользователя для контейнера, вызовите команду [New-азсторажеконтаинерсастокен](/powershell/module/az.storage/new-azstoragecontainersastoken) , передав созданный ранее объект контекста службы хранилища Azure.
 
-Следующий пример возвращает токен SAS делегации пользователя sAS для контейнера. Не забудьте заменить значения заполнителя в скобках на свои собственные значения:
+В следующем примере возвращается маркер SAS для делегирования пользователя для контейнера. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
 ```powershell
 New-AzStorageContainerSASToken -Context $ctx `
@@ -119,18 +119,18 @@ New-AzStorageContainerSASToken -Context $ctx `
     -ExpiryTime <date-time>
 ```
 
-Возврат токенов SAS будет аналогичен:
+Возвращаемый токен SAS для делегирования пользователя будет выглядеть следующим образом:
 
 ```output
 ?sv=2018-11-09&sr=c&sig=<sig>&skoid=<skoid>&sktid=<sktid>&skt=2019-08-05T22%3A24%3A36Z&ske=2019-08-07T07%3A
 00%3A00Z&sks=b&skv=2018-11-09&se=2019-08-07T07%3A00%3A00Z&sp=rwdl
 ```
 
-### <a name="create-a-user-delegation-sas-for-a-blob"></a>Создание делегации пользователя SAS для капли
+### <a name="create-a-user-delegation-sas-for-a-blob"></a>Создание SAS делегирования пользователя для большого двоичного объекта
 
-Чтобы вернуть токен SAS для получения капли, позвоните в команду [New-AzStorageBlobSASToken,](/powershell/module/az.storage/new-azstorageblobsastoken) передав объект контекста хранения Azure, созданный ранее.
+Чтобы вернуть маркер SAS для делегирования пользователя для большого двоичного объекта, вызовите команду [New-азсторажеблобсастокен](/powershell/module/az.storage/new-azstorageblobsastoken) , передав созданный ранее объект контекста службы хранилища Azure.
 
-Следующий синтаксис возвращает делегацию пользователя SAS за каплей. Пример определяет `-FullUri` параметр, который возвращает blob URI с приложеным токеном SAS. Не забудьте заменить значения заполнителя в скобках на свои собственные значения:
+Следующий синтаксис возвращает SAS делегирования пользователя для большого двоичного объекта. В примере указывается `-FullUri` параметр, который возвращает URI большого двоичного объекта с добавленным маркером SAS. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
 ```powershell
 New-AzStorageBlobSASToken -Context $ctx `
@@ -141,18 +141,18 @@ New-AzStorageBlobSASToken -Context $ctx `
     -FullUri
 ```
 
-Делегация пользователя SAS URI вернулась будет аналогична:
+Возвращаемый URI SAS для делегирования пользователя будет выглядеть примерно так:
 
 ```output
 https://storagesamples.blob.core.windows.net/sample-container/blob1.txt?sv=2018-11-09&sr=b&sig=<sig>&skoid=<skoid>&sktid=<sktid>&skt=2019-08-06T21%3A16%3A54Z&ske=2019-08-07T07%3A00%3A00Z&sks=b&skv=2018-11-09&se=2019-08-07T07%3A00%3A00Z&sp=racwd
 ```
 
 > [!NOTE]
-> Делегация пользователя SAS не поддерживает определение разрешений с политикой сохраненного доступа.
+> SAS пользователя, поддерживающий делегирование, не поддерживает определение разрешений с помощью хранимой политики доступа.
 
-## <a name="revoke-a-user-delegation-sas"></a>Отозвать делегацию пользователей SAS
+## <a name="revoke-a-user-delegation-sas"></a>Отзыв SAS для делегирования пользователя
 
-Чтобы отозвать делегацию пользователя SAS из Azure PowerShell, позвоните в команду **Revoke-AzStorageAccountUserDelegationDelegationKeys.** Эта команда аннулирует все ключи делегации пользователя, связанные с указанной учетной записью хранения. Любые подписи общего доступа, связанные с этими ключами, аннулируются.
+Чтобы отозвать SAS для делегирования пользователя из Azure PowerShell, вызовите команду **REVOKE-азсторажеаккаунтусерделегатионкэйс** . Эта команда отменяет все ключи делегирования пользователя, связанные с указанной учетной записью хранения. Все подписанные URL, связанные с этими ключами, становятся недействительными.
 
 Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -162,9 +162,9 @@ Revoke-AzStorageAccountUserDelegationKeys -ResourceGroupName <resource-group> `
 ```
 
 > [!IMPORTANT]
-> Как ключевые ключевые функции делегации пользователя, так и назначения ролей RBAC кэшируются Хранилищем Azure, поэтому может быть задержка между тем, когда вы инициируете процесс отзыва, и когда существующая делегация пользователя SAS становится недействительной.
+> Как ключ делегирования пользователя, так и назначение ролей RBAC кэшируются службой хранилища Azure, поэтому при инициации процесса отзыва может возникнуть задержка, и если существующее сопоставление безопасности делегирования пользователя станет недействительным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Создание делегации пользователей SAS (REST API)](/rest/api/storageservices/create-user-delegation-sas)
-- [Получите операцию ключ к делегированию пользователя](/rest/api/storageservices/get-user-delegation-key)
+- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)
+- [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

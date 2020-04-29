@@ -1,6 +1,6 @@
 ---
 title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API
-description: Узнайте, как перечислить, создать, обновить или удалить пользовательские роли с помощью элемента управления доступом на основе ролей (RBAC) для ресурсов Azure с помощью API REST.
+description: Узнайте, как перечислять, создавать, обновлять и удалять пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure, используя REST API.
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -16,24 +16,24 @@ ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: fda0400310f46da64322654c42af75521746d679
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80062187"
 ---
-# <a name="create-or-update-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью API REST
+# <a name="create-or-update-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API
 
 > [!IMPORTANT]
-> Добавление группы `AssignableScopes` управления в настоящее время находится в предварительном просмотре.
+> Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Если [встроенные роли для ресурсов Azure](built-in-roles.md) не отвечают конкретным потребностям организации, можно создать собственные пользовательские роли. В этой статье описывается, как перечислять, создавать, обновлять или удалять пользовательские роли с помощью API REST.
+Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью REST API.
 
 ## <a name="list-custom-roles"></a>Вывод списка настраиваемых ролей
 
-Чтобы перечислить все пользовательские роли в каталоге, используйте [определения ролей - Список](/rest/api/authorization/roledefinitions/list) REST API.
+Чтобы получить список всех пользовательских ролей в каталоге, используйте REST API [списка "определения ролей](/rest/api/authorization/roledefinitions/list) ".
 
 1. Можете начать со следующего запроса:
 
@@ -41,16 +41,16 @@ ms.locfileid: "80062187"
     GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitions?api-version=2015-07-01&$filter={filter}
     ```
 
-1. Замените *«фильтр»* типом роли.
+1. Замените *{Filter}* типом роли.
 
     > [!div class="mx-tableFixed"]
     > | Filter | Описание |
     > | --- | --- |
-    > | `$filter=type+eq+'CustomRole'` | Фильтр на основе типа CustomRole |
+    > | `$filter=type+eq+'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
-## <a name="list-custom-roles-at-a-scope"></a>Список пользовательских ролей в области
+## <a name="list-custom-roles-at-a-scope"></a>Вывод списка пользовательских ролей в области
 
-Чтобы перечислить пользовательские роли в области, используйте [определения ролей - Список](/rest/api/authorization/roledefinitions/list) REST API.
+Чтобы получить список пользовательских ролей в области, используйте REST API [списка "определения ролей](/rest/api/authorization/roledefinitions/list) ".
 
 1. Можете начать со следующего запроса:
 
@@ -61,23 +61,23 @@ ms.locfileid: "80062187"
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}/providers/Microsoft.Web/sites/{site1}` | Ресурс |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
 
-1. Замените *«фильтр»* типом роли.
+1. Замените *{Filter}* типом роли.
 
     > [!div class="mx-tableFixed"]
     > | Filter | Описание |
     > | --- | --- |
-    > | `$filter=type+eq+'CustomRole'` | Фильтр на основе типа CustomRole |
+    > | `$filter=type+eq+'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
-## <a name="list-a-custom-role-definition-by-name"></a>Перечислите пользовательское определение роли по имени
+## <a name="list-a-custom-role-definition-by-name"></a>Вывод пользовательского определения роли по имени
 
-Чтобы получить информацию о пользовательской роли по названию дисплея, используйте [Определения ролей - Get](/rest/api/authorization/roledefinitions/get) REST API.
+Чтобы получить сведения о пользовательской роли по ее отображаемому имени, используйте [определения ролей — get](/rest/api/authorization/roledefinitions/get) REST API.
 
 1. Можете начать со следующего запроса:
 
@@ -88,23 +88,23 @@ ms.locfileid: "80062187"
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}/providers/Microsoft.Web/sites/{site1}` | Ресурс |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
 
-1. Замените *«фильтр»* на имя дисплея для роли.
+1. Замените *{Filter}* отображаемым именем роли.
 
     > [!div class="mx-tableFixed"]
     > | Filter | Описание |
     > | --- | --- |
     > | `$filter=roleName+eq+'{roleDisplayName}'` | Используйте точное отображаемое имя роли в формате URL-адреса. Например, `$filter=roleName+eq+'Virtual%20Machine%20Contributor'` |
 
-## <a name="list-a-custom-role-definition-by-id"></a>Перечислите пользовательское определение роли по идентификатору
+## <a name="list-a-custom-role-definition-by-id"></a>Вывод определения пользовательской роли по ИДЕНТИФИКАТОРу
 
-Чтобы получить информацию о пользовательской роли по уникальному идентификатору, используйте [Определение ролей - Get](/rest/api/authorization/roledefinitions/get) REST API.
+Чтобы получить сведения о пользовательской роли по ее уникальному идентификатору, используйте [определения ролей — get](/rest/api/authorization/roledefinitions/get) REST API.
 
 1. Для получения идентификатора GUID роли используйте REST API [Определения ролей — список](/rest/api/authorization/roledefinitions/list).
 
@@ -117,18 +117,18 @@ ms.locfileid: "80062187"
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}/providers/Microsoft.Web/sites/{site1}` | Ресурс |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
 
-1. Замените *«roleDefinitionId»* идентификатором GUID определения роли.
+1. Замените *{roleDefinitionId}* идентификатором GUID определения роли.
 
-## <a name="create-a-custom-role"></a>Создание настраиваемой роли
+## <a name="create-a-custom-role"></a>Создание пользовательской роли
 
-Чтобы создать пользовательскую роль, используйте REST API [Определения ролей — создание или обновление](/rest/api/authorization/roledefinitions/createorupdate). Чтобы вызвать этот API, необходимо ввести в набор пользователя, `Microsoft.Authorization/roleDefinitions/write` которым назначена `assignableScopes`роль, на которую есть разрешение на все : Из встроенных ролей только [владелец](built-in-roles.md#owner) и [администратор пользовательского доступа](built-in-roles.md#user-access-administrator) включают это разрешение.
+Чтобы создать пользовательскую роль, используйте REST API [Определения ролей — создание или обновление](/rest/api/authorization/roledefinitions/createorupdate). Чтобы вызвать этот API, необходимо войти в систему с помощью пользователя, которому назначена роль, имеющая `Microsoft.Authorization/roleDefinitions/write` разрешение на доступ ко всем `assignableScopes`. Из встроенных ролей это разрешение включает только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator) .
 
 1. Просмотрите список доступных [операций поставщиков ресурсов](resource-provider-operations.md) для создания разрешений для пользовательской роли.
 
@@ -171,19 +171,19 @@ ms.locfileid: "80062187"
 1. В URI замените *{scope}* на первую область `assignableScopes` пользовательской роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
 
-1. Замените *«roleDefinitionId»* идентификатором графической роли.
+1. Замените *{roleDefinitionId}* идентификатором GUID настраиваемой роли.
 
-1. В органе запроса замените *«roleDefinitionId»* идентификатором GUID.
+1. В тексте запроса замените *{roleDefinitionId}* идентификатором GUID.
 
-1. Если `assignableScopes` это подписка или ресурсная группа, замените экземпляры *«subscriptionId»* или *«resourceGroup»* на идентификаторы.
+1. Если `assignableScopes` является подпиской или группой ресурсов, замените экземпляры *{SubscriptionId}* или *{resourceGroup}* идентификаторами.
 
-1. Если `assignableScopes` это группа управления, замените экземпляр *«groupId»* идентификатором группы управления. Добавление группы `assignableScopes` управления в настоящее время находится в предварительном просмотре.
+1. Если `assignableScopes` является группой управления, замените экземпляр *{groupId}* идентификатором группы управления. Добавление группы управления в сейчас `assignableScopes` находится на этапе предварительной версии.
 
 1. В свойстве `actions` добавьте операции, которые разрешают выполнение роли.
 
@@ -227,9 +227,9 @@ ms.locfileid: "80062187"
 
 ## <a name="update-a-custom-role"></a>Обновление пользовательской роли
 
-Чтобы обновить пользовательскую роль, используйте REST API [Определения ролей — создание или обновление](/rest/api/authorization/roledefinitions/createorupdate). Чтобы вызвать этот API, необходимо ввести в набор пользователя, `Microsoft.Authorization/roleDefinitions/write` которым назначена `assignableScopes`роль, на которую есть разрешение на все : Из встроенных ролей только [владелец](built-in-roles.md#owner) и [администратор пользовательского доступа](built-in-roles.md#user-access-administrator) включают это разрешение.
+Чтобы обновить пользовательскую роль, используйте REST API [Определения ролей — создание или обновление](/rest/api/authorization/roledefinitions/createorupdate). Чтобы вызвать этот API, необходимо войти в систему с помощью пользователя, которому назначена роль, имеющая `Microsoft.Authorization/roleDefinitions/write` разрешение на доступ ко всем `assignableScopes`. Из встроенных ролей это разрешение включает только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator) .
 
-1. Чтобы получить сведения о пользовательской роли, используйте REST API [Определения ролей — список](/rest/api/authorization/roledefinitions/list) или [Определения ролей — получение](/rest/api/authorization/roledefinitions/get). Для получения дополнительной информации смотрите более ранний раздел [пользовательских ролей списка.](#list-custom-roles)
+1. Чтобы получить сведения о пользовательской роли, используйте REST API [Определения ролей — список](/rest/api/authorization/roledefinitions/list) или [Определения ролей — получение](/rest/api/authorization/roledefinitions/get). Дополнительные сведения см. в разделе более ранние [пользовательские роли списка](#list-custom-roles) .
 
 1. Можете начать со следующего запроса:
 
@@ -240,13 +240,13 @@ ms.locfileid: "80062187"
 1. В URI замените *{scope}* на первую область `assignableScopes` пользовательской роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
 
-1. Замените *«roleDefinitionId»* идентификатором графической роли.
+1. Замените *{roleDefinitionId}* идентификатором GUID настраиваемой роли.
 
 1. На основе сведений о пользовательской роли создайте текст запроса в следующем формате:
 
@@ -317,9 +317,9 @@ ms.locfileid: "80062187"
 
 ## <a name="delete-a-custom-role"></a>Удаление настраиваемой роли
 
-Чтобы удалить пользовательскую роль, используйте REST API [Определения ролей — удаление](/rest/api/authorization/roledefinitions/delete). Чтобы вызвать этот API, необходимо ввести в набор пользователя, `Microsoft.Authorization/roleDefinitions/delete` которым назначена `assignableScopes`роль, на которую есть разрешение на все : Из встроенных ролей только [владелец](built-in-roles.md#owner) и [администратор пользовательского доступа](built-in-roles.md#user-access-administrator) включают это разрешение.
+Чтобы удалить пользовательскую роль, используйте REST API [Определения ролей — удаление](/rest/api/authorization/roledefinitions/delete). Чтобы вызвать этот API, необходимо войти в систему с помощью пользователя, которому назначена роль, имеющая `Microsoft.Authorization/roleDefinitions/delete` разрешение на доступ ко всем `assignableScopes`. Из встроенных ролей это разрешение включает только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator) .
 
-1. Чтобы получить идентификатор GUID пользовательской роли, используйте REST API [Определения ролей — список](/rest/api/authorization/roledefinitions/list) или [Определения ролей — получение](/rest/api/authorization/roledefinitions/get). Для получения дополнительной информации смотрите более ранний раздел [пользовательских ролей списка.](#list-custom-roles)
+1. Чтобы получить идентификатор GUID пользовательской роли, используйте REST API [Определения ролей — список](/rest/api/authorization/roledefinitions/list) или [Определения ролей — получение](/rest/api/authorization/roledefinitions/get). Дополнительные сведения см. в разделе более ранние [пользовательские роли списка](#list-custom-roles) .
 
 1. Можете начать со следующего запроса:
 
@@ -330,16 +330,16 @@ ms.locfileid: "80062187"
 1. В URI замените *{scope}* на область, для которой нужно удалить пользовательскую роль.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Тип |
+    > | Область | Type |
     > | --- | --- |
     > | `subscriptions/{subscriptionId1}` | Подписка |
     > | `subscriptions/{subscriptionId1}/resourceGroups/{resourceGroup1}` | Группа ресурсов |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
 
-1. Замените *«roleDefinitionId»* идентификатором графической роли.
+1. Замените *{roleDefinitionId}* идентификатором GUID настраиваемой роли.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
 - [Управление доступом к ресурсам Azure с помощью RBAC и REST API](role-assignments-rest.md)
-- [Ссылка на API Azure REST](/rest/api/azure/)
+- [Справочник по REST API Azure](/rest/api/azure/)

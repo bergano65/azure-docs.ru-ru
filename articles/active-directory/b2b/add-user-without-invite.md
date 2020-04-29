@@ -1,5 +1,5 @@
 ---
-title: Добавить B2B гостей без ссылки приглашения или электронной почты - Azure AD
+title: Добавление гостей B2B без ссылки на приглашение или электронной почты — Azure AD
 description: Вы можете разрешить гостевому пользователю добавлять других гостевых пользователей в Azure AD без активации приглашения в службу совместной работы Azure Active Directory B2B.
 documentationcenter: ''
 services: active-directory
@@ -13,13 +13,13 @@ manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 42c9caaf581fab37e2e55cbe408db6d6d846622a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80050904"
 ---
-# <a name="add-b2b-collaboration-guest-users-without-an-invitation-link-or-email"></a>Добавить B2B сотрудничество гостевых пользователей без приглашения ссылку или электронную почту
+# <a name="add-b2b-collaboration-guest-users-without-an-invitation-link-or-email"></a>Добавление гостевых пользователей службы совместной работы B2B без ссылки на приглашение или сообщения электронной почты
 
 Теперь вы можете приглашать гостевых пользователей, выслав им прямую ссылку на общее приложение. Таким образом, гостевым пользователям больше не нужно использовать электронное приглашение, за исключением особых случаев. Гостевому пользователю нужно щелкнуть ссылку на приложение, просмотреть и принять условия конфиденциальности, после чего он получит доступ к приложению. Дополнительные сведения см. в статье [Активация приглашения службы совместной работы Azure Active Directory B2B](redemption-experience.md).   
 
@@ -33,9 +33,9 @@ ms.locfileid: "80050904"
 
 Если вы пригласили пользователя в каталог, гостевому пользователю необходимо напрямую перейти по URL-адресу определенного клиента ресурса на портале Azure (например, https://portal.azure.com/*клиент_ресурса*.onmicrosoft.com), чтобы он мог просмотреть и принять условия конфиденциальности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Что такое сотрудничество Azure AD B2B?](what-is-b2b.md)
+- [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)
 - [Делегирование приглашений для службы совместной работы Azure Active Directory B2B](delegate-invitations.md)
 - [Как информационные работники могут добавить пользователей службы совместной работы B2B в Azure Active Directory?](add-users-information-worker.md)

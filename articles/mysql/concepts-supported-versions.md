@@ -1,16 +1,16 @@
 ---
-title: Поддерживаемые версии - База данных Azure для MyS'L
-description: Узнайте, какие версии сервера MyS'L поддерживаются в базе данных Azure для службы MyS'L.
+title: Поддерживаемые версии — база данных Azure для MySQL
+description: Узнайте, какие версии сервера MySQL поддерживаются в службе "база данных Azure для MySQL".
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 197b3100190711a51cfe125fe1214a59c18e1491
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79536978"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
@@ -26,27 +26,27 @@ MySQL использует схему именования X.Y.Z. X являет
 
 ## <a name="mysql-version-56"></a>MySQL версии 5.6
 
-Исправление ошибки релиз: 5.6.45
+Исправление ошибки: 5.6.45
 
-Обратитесь к [примечаниям к выпуску](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-45.html) MyS'L, чтобы узнать больше об улучшениях и исправлениях в этой версии.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-45.html) MySQL.
 
 ## <a name="mysql-version-57"></a>MySQL версии 5.7
 
-Исправление ошибки релиз: 5.7.27
+Исправление ошибки: 5.7.27
 
-Обратитесь к [примечаниям к выпуску](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-27.html) MyS'L, чтобы узнать больше об улучшениях и исправлениях в этой версии.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-27.html) MySQL.
 
-## <a name="mysql-version-80"></a>Версия MyS'L 8.0
+## <a name="mysql-version-80"></a>MySQL версии 8,0
 
 Исправление ошибки: 8.0.15
 
-Обратитесь к [примечаниям к выпуску](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) MyS'L, чтобы узнать больше об улучшениях и исправлениях в этой версии.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) MySQL.
 
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 Служба автоматически управляет установкой исправлений для обновления версии исправлений. Например, с версии 5.7.20 до 5.7.21.  
 
 Сейчас обновления основного и дополнительного номера версии не поддерживаются. Например, обновление с версии MySQL 5.6 до MySQL 5.7 не поддерживается. Чтобы выполнить обновление с версии 5.6 до 5.7, создайте дамп и восстановите его на сервере, который был создан с новой версией ядра. Для дополнительных сведений см. [эту статью](./concepts-migrate-dump-restore.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения информации о конкретных квотах и ограничениях ресурсов, основанных на **уровне обслуживания,** [см.](./concepts-pricing-tiers.md)
+Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](./concepts-pricing-tiers.md) .

@@ -1,6 +1,6 @@
 ---
-title: PowerShell для конечных точек VNet и правил для единых и объединенных баз данных
-description: Предоставляет скрипты PowerShell для создания и управления конечными точками виртуального сервиса для базы данных Azure S'L и Azure Synapse.
+title: PowerShell для конечных точек и правил виртуальной сети для одной и для баз данных в составе пула
+description: Предоставляет скрипты PowerShell для создания конечных точек виртуальных служб и управления ими для базы данных SQL Azure и Azure синапсе.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -12,18 +12,18 @@ ms.reviewer: genemi, vanto
 ms.date: 03/12/2019
 tags: azure-synapse
 ms.openlocfilehash: 1e8ec394eab1df0aebe394b8acebc74c7ed49e9c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80124704"
 ---
 # <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell: создание конечной точки службы и правила виртуальной сети для SQL
 
-*Виртуальные сетевые правила* — это одна функция безопасности брандмауэра, которая контролирует, принимает ли сервер базы данных для одной базы данных и упругого пульпа в базе данных Azure [S'L](sql-database-technical-overview.md) или базы данных в [Azure Synapse](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) сообщения, отправляемые из определенных подсетей в виртуальных сетях.
+*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая определяет, принимает ли сервер базы данных для отдельных баз данных и эластичных пулов в [базе данных SQL](sql-database-technical-overview.md) Azure или для баз данных в [Azure синапсе](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) связь, отправляемую из определенных подсетей в виртуальных сетях.
 
 > [!IMPORTANT]
-> Эта статья относится как к серверу Azure S'L, так и к базе данных и складу данных в Azure Synapse, которые создаются на сервере Azure S'L. Для простоты используется база данных S'L, когда речь идет как о базе данных S'L, так и о Azure Synapse. Эта статья *не* применяется к развертыванию **управляемого экземпляра** в Базе данных SQL Azure, так как с ним не связана конечная точка службы.
+> Эта статья относится к Azure SQL Server и к базе данных SQL и хранилищу данных в Azure синапсе, которые создаются на сервере Azure SQL. Для простоты база данных SQL используется при обращении к базе данных SQL и Azure синапсе. Эта статья *не* применяется к развертыванию **управляемого экземпляра** в Базе данных SQL Azure, так как с ним не связана конечная точка службы.
 
 В этой статье предлагается и описывается сценарий PowerShell, который выполняет следующие действия:
 
@@ -38,19 +38,19 @@ ms.locfileid: "80124704"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных Azure S'L, но все будущие разработки предназначены для модуля Az.Sql. Для этих cmdlets, см [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модулях Azrm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 ## <a name="major-cmdlets"></a>Основные командлеты
 
-В этой статье подчеркивается, что смдlet **New-AzSqlServerVirtualNetworkRule** добавляет конечную точку подсети в список управления доступом (ACL) вашего сервера базы данных Azure S'L, создавая тем самым правило.
+В этой статье рассматривается командлет **New-азсклсервервиртуалнетворкруле** , который добавляет конечную точку подсети в список управления доступом (ACL) сервера базы данных SQL Azure, тем самым создавая правило.
 
-В следующем списке показана последовательность других *крупных* cmdlets, которые необходимо запустить, чтобы подготовиться к вызову **в New-AzSqlServerVirtualNetworkRule.** В этой статье эти вызовы выполняются в [сценарии 3 "Правило виртуальной сети"](#a-script-30):
+В следующем списке показана последовательность других *основных* командлетов, которые необходимо выполнить для подготовки к вызову командлета **New-азсклсервервиртуалнетворкруле**. В этой статье эти вызовы выполняются в [сценарии 3 "Правило виртуальной сети"](#a-script-30):
 
-1. [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig): Создает объект подсети.
-2. [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork): Создает виртуальную сеть, придавая ей подсеть.
-3. [Set-AzVirtualNetworkSubNetConfig:](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetworkSubnetConfig)Присваивает конечную точку виртуальной службы вашей подсети.
-4. [Set-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetwork): Упорные обновления, сделанные в вашей виртуальной сети.
-5. [New-AzSqlServerVirtualNetworkRule](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlservervirtualnetworkrule): После того, как ваша подсеть является конечной точкой, добавляет подсеть в качестве виртуального сетевого правила в ACL вашего сервера базы данных Azure S'L.
+1. [New-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig): создает объект подсети.
+2. [New-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork): создает виртуальную сеть, предоставляя ей подсеть.
+3. [Set-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetworkSubnetConfig): назначает конечную точку виртуальной службы вашей подсети.
+4. [Set-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetwork): сохраняет обновления, внесенные в виртуальную сеть.
+5. [New-азсклсервервиртуалнетворкруле](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlservervirtualnetworkrule). После того как подсеть является конечной, добавляет подсеть в качестве правила виртуальной сети в список управления доступом сервера базы данных SQL Azure.
    - В версии 5.1.1 модуля Azure RM PowerShell и последующих версиях командлет предоставляет параметр **-IgnoreMissingVnetServiceEndpoint**.
 
 ## <a name="prerequisites-for-running-powershell"></a>Предварительные требования для запуска PowerShell

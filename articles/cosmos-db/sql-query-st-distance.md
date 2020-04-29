@@ -1,6 +1,6 @@
 ---
-title: ST_DISTANCE на языке запросов Запроса Azure Cosmos DB
-description: Узнайте о функциях системы S'L ST_DISTANCE в Azure Cosmos DB.
+title: ST_DISTANCE языка запросов Azure Cosmos DB
+description: Сведения о ST_DISTANCE системных функций SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,14 +8,14 @@ ms.date: 03/12/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 02844569137a46ea030b2189191b84a9db24ed22
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79537301"
 ---
 # <a name="st_distance-azure-cosmos-db"></a>ST_DISTANCE (Azure Cosmos DB)
- Возвращает расстояние между двумя выражениями GeoJSON Point, Polygon, MultiPolygon или LineString. Чтобы узнать больше, смотрите статью [о геопространственных данных и данных о местоположении Geospatial и GeoJSON.](sql-query-geospatial-intro.md)
+ Возвращает расстояние между двумя геоточечными выражениями, многоугольниками, несколькими многоугольниками и LineString. Дополнительные сведения см. в статье [сведения о геопространственном и географическом расположении данных расположения](sql-query-geospatial-intro.md) .
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -34,7 +34,7 @@ ST_DISTANCE (<spatial_expr>, <spatial_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как вернуть все семейные документы, `ST_DISTANCE` которые находятся в пределах 30 км от указанного местоположения, используя встроенную функцию. .  
+  В следующем примере показано, как вернуть все документы семейства, которые находятся в пределах 30 км из указанного расположения, `ST_DISTANCE` используя встроенную функцию. .  
   
 ```sql
 SELECT f.id
@@ -52,10 +52,10 @@ WHERE ST_DISTANCE(f.location, {'type': 'Point', 'coordinates':[31.9, -4.8]}) < 3
 
 ## <a name="remarks"></a>Remarks
 
-Эта функция системы будет пользоваться [геопространственным индексом.](index-policy.md#spatial-indexes)
+Эта системная функция будет полезна из [геопространственных индексов](index-policy.md#spatial-indexes).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

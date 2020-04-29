@@ -1,6 +1,6 @@
 ---
-title: Управление ограничениями контекста безопасности в Azure Red Hat OpenShift (ru) Документы Майкрософт
-description: Ограничения контекста безопасности для администраторов кластеров Azure Red Hat OpenShift
+title: Управление ограничениями контекста безопасности в Azure Red Hat OpenShift | Документация Майкрософт
+description: Ограничения контекста безопасности для администраторов кластера Azure Red Hat OpenShift
 services: container-service
 author: troy0820
 ms.author: b-trconn
@@ -8,19 +8,19 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/25/2019
 ms.openlocfilehash: 24163adcec889e9eedc2362ff1f01f00257a98f3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80063177"
 ---
 # <a name="manage-security-context-constraints-in-azure-red-hat-openshift"></a>Управление ограничениями контекста безопасности в Azure Red Hat OpenShift 
 
-Ограничения контекста безопасности (SCC) позволяют администраторам кластеров контролировать разрешения для стручков. Чтобы узнать больше об этом [architecture documentation for SCCs](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html)типе API, см. Вы можете управлять SCCs в вашем экземпляре как обычные объекты API с помощью CLI.
+Ограничения контекста безопасности (SCC) позволяют администраторам кластера управлять разрешениями для модулей Pod. Дополнительные сведения об этом типе API см. в [документации по архитектуре для SCC](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html). Вы можете управлять SCC в экземпляре как обычные объекты API с помощью интерфейса командной строки.
 
-## <a name="list-security-context-constraints"></a>Список ограничений контекста безопасности
+## <a name="list-security-context-constraints"></a>Перечисление ограничений контекста безопасности
 
-Чтобы получить текущий список SCCs, используйте эту команду: 
+Чтобы получить текущий список SCC, используйте следующую команду: 
 
 ```bash
 $ oc get scc
@@ -35,9 +35,9 @@ privileged         true      [*]       RunAsAny    RunAsAny           RunAsAny  
 restricted         false     []        MustRunAs   MustRunAsRange     MustRunAs   RunAsAny    <none>     false            [configMap downwardAPI emptyDir persistentVolumeClaim secret]
 ```
 
-## <a name="examine-an-object-for-security-context-constraints"></a>Изучение объекта для ограничений контекста безопасности
+## <a name="examine-an-object-for-security-context-constraints"></a>Проверка объекта на наличие ограничений контекста безопасности
 
-Для изучения конкретного SCC, использование `oc get`, `oc describe`или `oc edit`.  Например, для изучения **ограниченного** SCC используйте эту команду:
+Чтобы проверить определенную SCC, используйте `oc get`, `oc describe`или `oc edit`.  Например, чтобы проверить **ограниченную** SCC, используйте следующую команду:
 ```bash
 $ oc describe scc restricted
 Name:                    restricted
@@ -71,6 +71,6 @@ Settings:
   Supplemental Groups Strategy: RunAsAny
     Ranges:                <none>
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]
 > [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) 

@@ -1,6 +1,6 @@
 ---
-title: Создание Linux VM с помощью системы создания изображений Azure (предварительный просмотр)
-description: Создайте Linux VM с помощью системы azure Image Builder.
+title: Создание виртуальной машины Linux с помощью Azure Image Builder (Предварительная версия)
+description: Создание виртуальной машины Linux с помощью построителя образов Azure.
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
@@ -8,42 +8,42 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.openlocfilehash: 0d36d7db4d85ece8de77040925c535305951562b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80066687"
 ---
-# <a name="preview-create-a-linux-vm-with-azure-image-builder"></a>Предварительный просмотр: Создайте Linux VM с помощью системы создания изображений Azure
+# <a name="preview-create-a-linux-vm-with-azure-image-builder"></a>Предварительная версия: создание виртуальной машины Linux с помощью Azure Image Builder
 
-В этой статье показано, как можно создать настраиваемый образ Linux с помощью системы «Разжитель изображений» и Azure CLI. Пример в этой статье использует три различных [настройки](image-builder-json.md#properties-customize) для настройки изображения:
+В этой статье показано, как создать настраиваемый образ Linux с помощью построителя образов Azure и Azure CLI. В примере, приведенном в этой статье, для настройки изображения используются три различных [настраиваемых](image-builder-json.md#properties-customize) способа.
 
-- Shell (ScriptUri) - загружает и запускает [сценарий оболочки](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/customizeScript.sh).
-- Shell (в строке) - выполняет определенные команды. В этом примере внеочередные команды включают создание каталога и обновление ОС.
-- Файл - копии [файла с GitHub](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/exampleArtifacts/buildArtifacts/index.html) в каталог на VM.
+- Shell (Скриптури) — загружает и запускает [сценарий оболочки](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/customizeScript.sh).
+- Shell (inline) — выполняет определенные команды. В этом примере встроенные команды включают создание каталога и обновление операционной системы.
+- Файл — копирует [файл из GitHub](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/exampleArtifacts/buildArtifacts/index.html) в каталог на виртуальной машине.
 
-Вы также можете `buildTimeoutInMinutes`указать . По умолчанию 240 минут, и вы можете увеличить время сборки, чтобы позволить более длительные сборки.
+Можно также указать `buildTimeoutInMinutes`. Значение по умолчанию — 240 минут. Вы можете увеличить время сборки, чтобы обеспечить более длительное выполнение сборок.
 
-Мы будем использовать образец шаблона .json для настройки изображения. Файл .json, который мы используем, здесь: [helloImageTemplateLinux.json](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Linux_Managed_Image/helloImageTemplateLinux.json). 
+Мы будем использовать шаблон Sample. JSON для настройки образа. JSON-файл, который мы используем: [хеллоимажетемплателинукс. JSON](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Linux_Managed_Image/helloImageTemplateLinux.json). 
 
 > [!IMPORTANT]
-> В настоящее время Azure Image Builder находится в открытом доступе.
+> Azure Image Builder сейчас находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="register-the-features"></a>Регистрация функций
-Для использования Azure Image Builder во время предварительного просмотра необходимо зарегистрировать новую функцию.
+## <a name="register-the-features"></a>Регистрация компонентов
+Чтобы использовать Azure Image Builder во время предварительной версии, необходимо зарегистрировать новую функцию.
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview
 ```
 
-Проверьте состояние регистрации функций.
+Проверьте состояние регистрации компонента.
 
 ```azurecli-interactive
 az feature show --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview | grep state
 ```
 
-Проверьте свою регистрацию.
+Проверьте регистрацию.
 
 ```azurecli-interactive
 az provider show -n Microsoft.VirtualMachineImages | grep registrationState
@@ -51,7 +51,7 @@ az provider show -n Microsoft.VirtualMachineImages | grep registrationState
 az provider show -n Microsoft.Storage | grep registrationState
 ```
 
-Если они не говорят зарегистрированы, запустить следующее:
+Если они не зарегистрированы, выполните следующую команду:
 
 ```azurecli-interactive
 az provider register -n Microsoft.VirtualMachineImages
@@ -59,9 +59,9 @@ az provider register -n Microsoft.VirtualMachineImages
 az provider register -n Microsoft.Storage
 ```
 
-## <a name="setup-example-variables"></a>Настройка примера переменных
+## <a name="setup-example-variables"></a>Примеры переменных программы установки
 
-Мы будем использовать некоторые части информации неоднократно, поэтому мы создадим некоторые переменные для хранения этой информации.
+Мы будем использовать несколько фрагментов информации повторно, поэтому мы создадим некоторые переменные для хранения этих данных.
 
 
 ```console
@@ -75,23 +75,23 @@ imageName=myBuilderImage
 runOutputName=aibLinux
 ```
 
-Создайте переменную для идентификатора подписки. Вы можете получить `az account show | grep id`это с помощью .
+Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
 
 ```console
 subscriptionID=<Your subscription ID>
 ```
 
 ## <a name="create-the-resource-group"></a>Создайте группу ресурсов.
-Это используется для хранения артефакта шаблона конфигурации изображения и изображения.
+Используется для хранения артефакта шаблона конфигурации образа и образа.
 
 ```azurecli-interactive
 az group create -n $imageResourceGroup -l $location
 ```
 
-## <a name="set-permissions-on-the-resource-group"></a>Установка разрешений в группе ресурсов
-Дайте «вкладчику» изображения разрешение на создание изображения в группе ресурсов. Без соответствующих разрешений сборка изображения завершится неудачей. 
+## <a name="set-permissions-on-the-resource-group"></a>Задание разрешений для группы ресурсов
+Предоставьте разрешение "участник" построителя образов для создания образа в группе ресурсов. Без соответствующих разрешений сборка образа завершится ошибкой. 
 
-Значение `--assignee` — идентификатор регистрации приложения для службы Image Builder. 
+`--assignee` Значение представляет собой идентификатор регистрации приложения для службы "Построитель образов". 
 
 ```azurecli-interactive
 az role assignment create \
@@ -102,7 +102,7 @@ az role assignment create \
 
 ## <a name="download-the-template-example"></a>Скачать пример шаблона
 
-Для использования создан параметризированный шаблон конфигурации изображения образца. Загрузите образец файла .json и настроили его с переменными, которые вы установили ранее.
+Для использования создан шаблон конфигурации с параметризованным примером образа. Скачайте файл Sample. JSON и настройте его с помощью переменных, заданных ранее.
 
 ```bash
 curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Linux_Managed_Image/helloImageTemplateLinux.json -o helloImageTemplateLinux.json
@@ -114,20 +114,20 @@ sed -i -e "s/<imageName>/$imageName/g" helloImageTemplateLinux.json
 sed -i -e "s/<runOutputName>/$runOutputName/g" helloImageTemplateLinux.json
 ```
 
-Вы можете изменить этот пример .json по мере необходимости. Например, можно увеличить значение `buildTimeoutInMinutes` для более длительных запусков. Вы можете отредакивать файл в `vi`облачной оболочке с помощью текстового редактора, как .
+При необходимости можно изменить этот пример. JSON. Например, можно увеличить значение, `buildTimeoutInMinutes` чтобы обеспечить более длительное выполнение сборок. Файл можно изменить в Cloud Shell с помощью текстового редактора, например `vi`.
 
 ```bash
 vi helloImageTemplateLinux.json
 ```
 
 > [!NOTE]
-> Для исходного изображения необходимо всегда [указывать версию,](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-version-failure)несную. `latest`
+> Для исходного образа необходимо всегда [указывать версию](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-version-failure), но нельзя использовать `latest`.
 >
-> При добавлении или изменении группы ресурсов, в которой распространяется изображение, необходимо убедиться, что [разрешения настроены для группы ресурсов.](#set-permissions-on-the-resource-group)
+> При добавлении или изменении группы ресурсов, в которой распространяется образ, необходимо убедиться, что [для группы ресурсов заданы разрешения](#set-permissions-on-the-resource-group).
 
 
-## <a name="submit-the-image-configuration"></a>Отправить конфигурацию изображения
-Отправить конфигурацию изображения в службу VM Image Builder
+## <a name="submit-the-image-configuration"></a>Отправка конфигурации образа
+Отправка конфигурации образа в службу "Построитель образов виртуальных машин"
 
 ```azurecli-interactive
 az resource create \
@@ -138,14 +138,14 @@ az resource create \
     -n helloImageTemplateLinux01
 ```
 
-Если он успешно завершается, он вернет сообщение об успехе и создаст артефакт шаблона шаблона шаблона шаблона шаблона создания изображений в $imageResourceGroup. Вы можете увидеть группу ресурсов на портале, если включить "Показать скрытые типы".
+При успешном завершении он возвратит сообщение об успешном выполнении и создаст артефакт шаблона конфигурации построителя образов в $imageResourceGroup. Группу ресурсов на портале можно увидеть, если включить параметр "Показать скрытые типы".
 
-Кроме того, в фоновом режиме Image Builder создает группу промежуточных ресурсов в вашей подписке. Image Builder использует группу промежуточных ресурсов для создания изображения. Название ресурсной группы будет в `IT_<DestinationResourceGroup>_<TemplateName>`этом формате: .
+Кроме того, в фоновом режиме построитель изображений создает промежуточную группу ресурсов в подписке. Построитель образов использует группу ресурсов промежуточного хранения для сборки образа. Имя группы ресурсов будет иметь следующий формат: `IT_<DestinationResourceGroup>_<TemplateName>`.
 
 > [!IMPORTANT]
-> Не удаляйте группу промежуточных ресурсов напрямую. Если вы удалите артефакт шаблона изображения, он автоматически удалит группу промежуточных ресурсов. Для получения дополнительной информации смотрите раздел [«Очистка»](#clean-up) в конце этой статьи.
+> Не удаляйте промежуточную группу ресурсов напрямую. Если удалить артефакт шаблона образа, он автоматически удалит промежуточную группу ресурсов. Дополнительные сведения см. в разделе [Очистка](#clean-up) в конце этой статьи.
 
-Если служба сообщает о сбое во время представления шаблона конфигурации изображения, обратитесь к шагам [устранения неполадок.](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#template-submission-errors--troubleshooting) Вам также нужно будет удалить шаблон перед повторной отправкой сборки. Чтобы удалить шаблон:
+Если служба сообщает о сбое во время отправки шаблона конфигурации образа, см. инструкции по [устранению неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#template-submission-errors--troubleshooting) . Кроме того, необходимо удалить шаблон, прежде чем повторять попытку отправки сборки. Чтобы удалить шаблон, выполните следующие действия.
 
 ```azurecli-interactive
 az resource delete \
@@ -154,9 +154,9 @@ az resource delete \
     -n helloImageTemplateLinux01
 ```
 
-## <a name="start-the-image-build"></a>Начало сборки изображения
+## <a name="start-the-image-build"></a>Запуск сборки образа
 
-Начало сборки изображения.
+Запустите сборку образа.
 
 
 ```azurecli-interactive
@@ -167,14 +167,14 @@ az resource invoke-action \
      --action Run 
 ```
 
-Подождите, пока сборка будет завершена, например, это может занять 10-15 минут.
+Дождитесь завершения сборки. в этом примере это может занять 10-15 минут.
 
-Если вы столкнулись с ошибками, пожалуйста, просмотрите эти шаги [устранения неполадок.](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-build-errors--troubleshooting)
+При возникновении ошибок ознакомьтесь с этими действиями по [устранению неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-build-errors--troubleshooting) .
 
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины
 
-Создайте VM с помощью созданного изображения.
+Создайте виртуальную машину с помощью созданного образа.
 
 ```azurecli-interactive
 az vm create \
@@ -186,13 +186,13 @@ az vm create \
   --generate-ssh-keys
 ```
 
-Получите IP-адрес от вывода создания VM и использовать его для SSH для VM.
+Получите IP-адрес из выходных данных по созданию виртуальной машины и используйте его для подключения к виртуальной машине по протоколу SSH.
 
 ```bash
 ssh azureuser@<pubIp>
 ```
 
-Вы должны увидеть, что изображение было настроено с Посланием Дня, как только ваше соединение SSH установлено!
+Вы должны увидеть, что образ был настроен с сообщением дня, как только подключение SSH установлено.
 
 ```output
 
@@ -203,23 +203,23 @@ ssh azureuser@<pubIp>
 *******************************************************
 ```
 
-Введите, `exit` когда вы сделали, чтобы закрыть соединение SSH.
+Введите `exit` , когда завершите подключение SSH.
 
-## <a name="check-the-source"></a>Проверьте источник
+## <a name="check-the-source"></a>Проверка источника
 
-В шаблоне Image Builder template в «Свойствах» вы увидите исходное изображение, сценарий настройки, который он запускает, и место его распространения.
+В шаблоне Image Builder в разделе "Свойства" вы увидите исходное изображение, сценарий настройки, который он запускает, и где он распределен.
 
 ```bash
 cat helloImageTemplateLinux.json
 ```
 
-Для получения более подробной информации [Image builder template reference](image-builder-json.md) об этом файле .json см.
+Более подробные сведения об этом JSON файле см. в статье [Справочник по шаблонам в конструкторе образов](image-builder-json.md)
 
 ## <a name="clean-up"></a>Очистка
 
-Когда вы закончите, вы можете удалить ресурсы.
+По завершении можно удалить ресурсы.
 
-Удалите шаблон шаблона шаблона шаблона шаблона шаблона шаблона шаблона шаблона
+Удалите шаблон построителя образов.
 
 ```azurecli-interactive
 az resource delete \
@@ -228,13 +228,13 @@ az resource delete \
     -n helloImageTemplateLinux01
 ```
 
-Удалить группу ресурсов изображений.
+Удалите группу ресурсов образа.
 
 ```azurecli
 az group delete -n $imageResourceGroup
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы узнать больше о компонентах файла .json, используемого в этой статье, [см.](image-builder-json.md)
+Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](image-builder-json.md).

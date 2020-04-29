@@ -1,6 +1,6 @@
 ---
-title: Откройте порты для VM с Azure CLI
-description: Узнайте, как открыть порт/ создать конечную точку для вашего VM с помощью Azure CLI.
+title: Открытие портов для виртуальной машины с Azure CLI
+description: Узнайте, как открыть порт или создать конечную точку для виртуальной машины с помощью Azure CLI.
 author: cynthn
 manager: gwallace
 ms.service: virtual-machines
@@ -10,13 +10,13 @@ ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: cynthn
 ms.openlocfilehash: c29fb075fc2d8b512070d7a6cf3fef949def5894
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80066629"
 ---
-# <a name="open-ports-and-endpoints-to-a-vm-with-the-azure-cli"></a>Откройте порты и конечные точки для VM с Azure CLI
+# <a name="open-ports-and-endpoints-to-a-vm-with-the-azure-cli"></a>Откройте порты и конечные точки для виртуальной машины с помощью Azure CLI
 
 Чтобы открыть порт или создать конечную точку для виртуальной машины в Azure, создайте сетевой фильтр для подсети или сетевого интерфейса виртуальной машины. Эти фильтры, контролирующие входящий и исходящий трафик, добавляются в группу безопасности сети и присоединяются к ресурсу, который будет получать трафик. Давайте используем распространенный пример веб-трафика через порт 80. В этой статье показано, как открыть порт для виртуальной машины с помощью Azure CLI. 
 
@@ -37,7 +37,7 @@ az vm open-port --resource-group myResourceGroup --name myVM --port 80
 
 
 ## <a name="create-a-network-security-group-and-rules"></a>Создание группы безопасности сети и правил
-Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg). Следующий пример создает группу сетевой безопасности под названием *myNetworkSecurityGroup* в *восточном* месте:
+Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg). В следующем примере создается группа безопасности сети с именем *myNetworkSecurityGroup* в расположении *eastus* :
 
 ```azurecli
 az network nsg create \
@@ -84,8 +84,8 @@ az network vnet subnet update \
 
 Для веб-приложений с высокой доступностью необходимо поместить виртуальную машину за Azure Load Balancer. Балансировщик нагрузки распределяет трафик между виртуальными машинами с группой безопасности сети, обеспечивающей фильтрацию трафика. Подробные сведения см. в статье [Балансировка нагрузки виртуальных машин Windows в Azure для создания высокодоступного приложения](tutorial-load-balancer.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом примере создано простое правило, разрешающее трафик HTTP. Информацию о создании более детализированных сред можно найти в следующих статьях.
 
-* [Обзор менеджера ресурсов Azure](../../azure-resource-manager/management/overview.md)
+* [Обзор Azure Resource Manager](../../azure-resource-manager/management/overview.md)
 * [Что такое группа безопасности сети (NSG)?](../../virtual-network/security-overview.md)

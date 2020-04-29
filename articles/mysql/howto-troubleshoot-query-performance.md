@@ -1,16 +1,16 @@
 ---
-title: Производительность запроса на устранение проблем - База данных Azure для MyS'L
-description: Узнайте, как использовать EXPLAIN для устранения производительности запроса в базе данных Azure для MyS'L.
+title: Устранение неполадок с производительностью запросов — База данных Azure для MySQL
+description: Узнайте, как использовать объяснение для устранения неполадок с производительностью запросов в базе данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/18/2020
 ms.openlocfilehash: 6b27e47339b80cc46290065c4d17150a301f2534
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80067841"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mysql"></a>Использование инструкции EXPLAIN для профилирования производительности запросов в службе "База данных Azure для MySQL"
@@ -163,8 +163,8 @@ possible_keys: NULL
  
 ## <a name="conclusion"></a>Заключение
  
-Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Наличие индекса на столе не обязательно означает, что MyS'L сможет использовать его для ваших запросов. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
+Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Наличие индекса в таблице не обязательно означает, что MySQL сможет использовать ее для ваших запросов. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).

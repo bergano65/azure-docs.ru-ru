@@ -1,6 +1,6 @@
 ---
-title: 'Azure ExpressRoute: Настройка Expressroute Прямая: CLI'
-description: Эта статья поможет настроить ExpressRoute Direct с помощью Azure CLI
+title: 'Azure ExpressRoute: Настройка Direct для ExpressRoute: CLI'
+description: Эта статья поможет вам настроить функцию ExpressRoute Direct с помощью Azure CLI
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: cherylmc
 ms.openlocfilehash: dcca1417aec52fb4bf99d5c480d81995154a68b0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79481982"
 ---
-# <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Направьте ExpressRoute Direct с помощью Azure CLI
+# <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
 С помощью ExpressRoute Direct вы можете напрямую подключиться к глобальной сети корпорации Майкрософт в стратегически распределенных по всему миру расположениях пиринга. Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).
 
@@ -38,7 +38,7 @@ ms.locfileid: "79481982"
    az account set --subscription "<subscription ID>"
    ```
 
-2. Перерегистрация подписки на Microsoft.Network для доступа к apIs expressrouteportsи и экспресс-маршруту
+2. Повторно зарегистрируйте подписку в Microsoft. Network для доступа к API-интерфейсам експрессраутепортслокатион и експрессраутепорт.
 
    ```azurecli
    az provider register --namespace Microsoft.Network
@@ -49,7 +49,7 @@ ms.locfileid: "79481982"
    az network express-route port location list
    ```
 
-   **Вывод примера**
+   **Пример выходных данных**
   
    ```output
    [
@@ -116,7 +116,7 @@ ms.locfileid: "79481982"
    az network express-route port location show -l "Equinix-Ashburn-DC2"
    ```
 
-   **Вывод примера**
+   **Пример выходных данных**
 
    ```output
    {
@@ -154,7 +154,7 @@ ms.locfileid: "79481982"
    > Атрибуту **Encapsulation** (Инкапсуляция) также можно присвоить значение **Dot1Q**. 
    >
 
-   **Вывод примера**
+   **Пример выходных данных**
 
    ```output
    {
@@ -222,7 +222,7 @@ ms.locfileid: "79481982"
    ```azurecli
    az network express-route port update -n Contoso-Direct -g Contoso-Direct-rg --set links[1].adminState="Enabled"
    ```
-   **Вывод примера**
+   **Пример выходных данных**
 
    ```output
    {
@@ -284,9 +284,9 @@ ms.locfileid: "79481982"
 
 Вы можете добавить дополнительную пропускную способность в ExpressRoute Direct только для тех сценариев, которые описаны в этой статье. Поддерживаются варианты пропускной способности 40 Гбит/с и 100 Гбит/с.
 
-**SkuTier** может быть местным, стандартным или премиум.
+**Скутиер** может быть локальным, стандартным или Premium.
 
-**SkuFamily** должен быть MeteredData только в качестве неограниченного не поддерживается на ExpressRoute Direct.
+**Скуфамили** должен быть MeteredData только как неограниченный. в ExpressRoute Direct не поддерживается.
 Создайте канал в ресурсе ExpressRoute Direct:
 
   ```azurecli
@@ -295,7 +295,7 @@ ms.locfileid: "79481982"
 
   Также поддерживаются такие значения пропускной способности: 5 Гбит/с, 10 Гбит/с и 40 Гбит/с.
 
-  **Вывод примера**
+  **Пример выходных данных**
 
   ```output
   {
@@ -331,6 +331,6 @@ ms.locfileid: "79481982"
   }  
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [сведений о подключении ExpressRoute Direct](expressroute-erdirect-about.md).
