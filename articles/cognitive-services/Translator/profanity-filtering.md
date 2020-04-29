@@ -1,7 +1,7 @@
 ---
 title: Фильтр ненормативной лексики — API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Используйте ненормативную лексику для определения уровня ненормативной лексики, переведенной в текст в API текста переводчика когнитивных служб Azure.
+description: Используйте фильтрацию ненормативной лексики, чтобы определить уровень ненормативной лексики, переведенный в текст в API перевода текстов Cognitive Services Azure.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
 ms.openlocfilehash: e7e2097e0d3daf360f1fa0f30bf3fd2c62c07163
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73836229"
 ---
 # <a name="add-profanity-filtering-with-the-translator-text-api"></a>Добавление фильтра ненормативной лексики в API перевода текстов
@@ -32,6 +32,6 @@ ms.locfileid: "73836229"
 | Marked | Оскорбительные слова выделены XML тегами \<profanity> ... \</profanity>. | 彼は変態です。 | Он \<нецензурная лексика>jerk\</profanity >. |
 | Deleted | Оскорбительные слова удаляются из выходных данных без замены. | 彼は。 | Он — . |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Применение фильтра ненормативной лексики с помощью вызова API переводчика](reference/v3-0-translate.md)

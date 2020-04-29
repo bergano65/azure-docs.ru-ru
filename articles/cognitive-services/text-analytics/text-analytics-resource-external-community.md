@@ -1,7 +1,7 @@
 ---
 title: Внешнее содержимое и материалы сообщества для API анализа текста
 titleSuffix: Azure Cognitive Services
-description: Блоги партнеров, видео YouTube, обучение API по анализу текстовых аналитики Когнитивных Служб Azure.
+description: Блоги партнеров, видео YouTube, обучение для Azure Cognitive Services API анализа текста.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/02/2019
 ms.author: aahi
 ms.openlocfilehash: 4cdf58974cd8fa9d7813df7e970caea260409225
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78251309"
 ---
 # <a name="external--community-content-for-the-text-analytics-cognitive-service"></a>Внешнее содержимое и материалы сообщества для API анализа текста (Cognitive Service)
@@ -33,9 +33,9 @@ ms.locfileid: "78251309"
 
 + [Анализ тональности с помощью Dynamics 365 CRM Online (блог MSDN)](https://blogs.msdn.microsoft.com/geoffreyinnis/2016/07/11/sentiment-analysis-in-usd-with-cognitive-services-text-analytics/) 
 
-+ Power BI блог: Извлечение ключевых фраз из сообщений Facebook: [Часть 1](https://community.powerbi.com/t5/Community-Blog/Text-Analytics-in-Power-BI-Extraction-of-key-phrases-from/ba-p/88483) и [часть 2](https://community.powerbi.com/t5/Community-Blog/Text-Analytics-in-Power-BI-Extraction-of-key-phrases-from/ba-p/88487)
++ Блог Power BI. Извлечение ключевых фраз из сообщений Facebook: [часть 1](https://community.powerbi.com/t5/Community-Blog/Text-Analytics-in-Power-BI-Extraction-of-key-phrases-from/ba-p/88483) и [часть 2](https://community.powerbi.com/t5/Community-Blog/Text-Analytics-in-Power-BI-Extraction-of-key-phrases-from/ba-p/88487)
 
-+ [Определите настроения комментариев в группе Yammer с MS Flow (техническое сообщество Microsoft)](https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure)
++ [Поиск тональности комментариев в группе Yammer с помощью MS Flow (Майкрософт Technical Community)](https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure)
 
 
 
@@ -47,11 +47,11 @@ ms.locfileid: "78251309"
 
 + [Анализ текста с извлечением ключевых фраз с помощью Power BI и Microsoft Cognitive Services](https://www.youtube.com/watch?v=R_-1TB2BF14)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ищете сведения о функции или примере использования, о которых мы не упомянули? Вы можете оставить запрос или участвовать в голосовании на сайте [User Voice](https://cognitive.uservoice.com/forums/555922-text-analytics). 
 
 ## <a name="see-also"></a>См. также
 
- [StackOverflow: API анализа текста Azure](https://stackoverflow.com/questions/tagged/text-analytics-api)   
+ [StackOverflow: Azure API анализа текста](https://stackoverflow.com/questions/tagged/text-analytics-api)   
  [StackOverflow: Azure Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)

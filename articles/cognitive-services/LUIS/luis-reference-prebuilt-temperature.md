@@ -1,5 +1,5 @@
 ---
-title: Температура Предварительно построенная сущность - LUIS
+title: Предварительно созданная сущность температуры — LUIS
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность temperature в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -12,17 +12,17 @@ ms.topic: reference
 ms.date: 10/14/2019
 ms.author: diberry
 ms.openlocfilehash: 7e2b48c6353f56ab2269a8718146cb765797adba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78270366"
 ---
 # <a name="temperature-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность temperature для приложения LUIS
 Сущность temperature извлекает различные типы температурных данных. Так как эта сущность уже обучена, добавлять в приложение примеры фраз, содержащие сущности temperature, не нужно. Сущность temperature поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md).
 
 ## <a name="types-of-temperature"></a>Типы сущностей temperature
-Температура управляется из репозитория [Распознавания-текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-NumbersWithUnit.yaml#L819) GitHub
+Температура управляется из репозитория [распознаваемого текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-NumbersWithUnit.yaml#L819) GitHub.
 
 ## <a name="resolution-for-prebuilt-temperature-entity"></a>Разрешение для предварительно созданной сущности temperature
 
@@ -31,9 +31,9 @@ ms.locfileid: "78270366"
 `set the temperature to 30 degrees`
 
 
-#### <a name="v3-response"></a>[Ответ V3](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий JSON с `verbose` параметром, установленным для: `false`
+Следующий код JSON имеет `verbose` параметр со значением: `false`
 
 ```json
 "entities": {
@@ -45,8 +45,8 @@ ms.locfileid: "78270366"
     ]
 }
 ```
-#### <a name="v3-verbose-response"></a>[V3 многословный ответ](#tab/V3-verbose)
-Следующий JSON с `verbose` параметром, установленным для: `true`
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
+Следующий код JSON имеет `verbose` параметр со значением: `true`
 
 ```json
 "entities": {
@@ -73,7 +73,7 @@ ms.locfileid: "78270366"
     }
 }
 ```
-#### <a name="v2-response"></a>[V2 ответ](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.temperature**.
 
@@ -93,7 +93,7 @@ ms.locfileid: "78270366"
 ```
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

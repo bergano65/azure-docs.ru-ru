@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: cf0d96414c40784210723e315da5d885d61198c5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68595574"
 ---
 # <a name="view-document-details"></a>Просмотр сведений о документе
@@ -40,6 +40,6 @@ ms.locfileid: "68595574"
 
     ![Подтверждение удаления](media/how-to/how-to-delete-document-confirm.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об обучении модели см. в [этой статье](how-to-train-model.md).

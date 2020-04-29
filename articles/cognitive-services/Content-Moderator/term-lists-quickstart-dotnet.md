@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
 ms.openlocfilehash: 68da335875752d326ee718cade3d501623c70b49
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72935955"
 ---
 # <a name="check-text-against-a-custom-term-list-in-c"></a>Проверка текста с помощью списка пользовательских терминов на C#
 
 Стандартный глобальный список терминов в Azure Content Moderator достаточен для большинства задач модерации контента. Тем не менее может потребоваться проверка специальных терминов, относящихся к вашей организации. Например, может потребоваться добавить теги с названиями конкурентов для более тщательной проверки. 
 
-Вы можете использовать [SDK модератора контента для .NET для](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) создания пользовательских списков терминов для использования с API модератора текста.
+С помощью [пакета SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) можно создавать настраиваемые списки терминов для использования с API-интерфейсом контроля текста.
 
 В этой статье содержатся сведения и примеры кода, которые помогут приступить к работе с пакетом SDK Content Moderator для .NET в следующих целях:
 - Создание списка
@@ -69,7 +69,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки. `AzureEndpoint` Обновление `CMSubscriptionKey` и поля со значениями вашего URL-адреса и ключа подписки. Вы можете найти их в вкладке **Быстрого запуска** ресурса на портале Azure.
+Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки. Обновите `AzureEndpoint` поля `CMSubscriptionKey` и, указав значения URL-адреса конечной точки и ключа подписки. Их можно найти на вкладке **Быстрый запуск** ресурса в портал Azure.
 
 ```csharp
 /// <summary>
@@ -264,7 +264,7 @@ static void RefreshSearchIndex (ContentModeratorClient client, string list_id)
 - Тип MIME: "text/html", "text/xml", "text/markdown" или "text/plain".
 - Текст для проверки.
 - Логическое значение. Задайте для этого поля значение **true**, чтобы выполнить автозамену в тексте перед проверкой.
-- Логическое значение. Установите это поле **для** обнаружения личных данных в тексте.
+- Логическое значение. Задайте для этого поля **значение true** , чтобы определить персональные данные в тексте.
 - Идентификатор списка терминов.
 
 Дополнительные сведения см. в [справочнике по API](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f).
@@ -362,7 +362,7 @@ static void DeleteTermList (ContentModeratorClient client, string list_id)
 }
 ```
 
-## <a name="compose-the-main-method"></a>Составьте основной метод
+## <a name="compose-the-main-method"></a>Создание метода Main
 
 Добавьте определение метода **Main** в пространство имен **TermLists** в классе **Program**. Наконец, закройте класс **Program** и пространство имен **TermLists**.
 
@@ -404,7 +404,7 @@ static void Main(string[] args)
 
 ## <a name="run-the-application-to-see-the-output"></a>Запустите приложение, чтобы просмотреть выходные данные.
 
-Выход консоли будет выглядеть следующим образом:
+Выходные данные консоли будут выглядеть следующим образом:
 
 ```console
 Creating term list.
@@ -436,6 +436,6 @@ Deleting term list with ID 252.
 Press ENTER to close the application.
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

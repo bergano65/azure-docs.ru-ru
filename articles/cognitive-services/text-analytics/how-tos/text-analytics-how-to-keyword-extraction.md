@@ -11,13 +11,13 @@ ms.topic: article
 ms.date: 07/29/2019
 ms.author: raymondl
 ms.openlocfilehash: ec5ff756d7e732430675676868bc754627a2a4a1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72429022"
 ---
-# <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример: Как извлечь ключевые фразы с помощью text Analytics
+# <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример. Извлечение ключевых фраз с помощью Анализ текста
 
 [API извлечения ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) оценивает неструктурированный текст и для каждого документа JSON возвращает список ключевых фраз.
 
@@ -32,7 +32,7 @@ ms.locfileid: "72429022"
 
 Извлечение ключевых фраз лучше всего работает с большими фрагментами текста, в отличие от анализа тональности, который эффективнее работает на маленьких блоках текста. Для получения наилучших результатов обеих операций советуем реструктуризировать входные данные соответствующим образом.
 
-Вы должны иметь документы JSON в этом формате: ID, текст, язык
+Необходимо иметь документы JSON в следующем формате: ID, Text, Language.
 
 Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример иллюстрации содержимого, которое можно отправлять для извлечения ключевых фраз.
 
@@ -72,7 +72,7 @@ ms.locfileid: "72429022"
 
 Дополнительные сведения об определении запроса см. в статье [How to call the Text Analytics API](text-analytics-how-to-call-api.md) (Как вызвать REST API службы "Анализ текста"). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Просмотрите документацию API для этого запроса: [Ключевые фразы API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6).
++ Создайте запрос **POST**. Ознакомьтесь с документацией по API для этого запроса: [Ключевые фразы API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6).
 
 + Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v2.1/keyPhrases`. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v2.1/keyPhrases`.
 
@@ -91,7 +91,7 @@ ms.locfileid: "72429022"
 
 ## <a name="step-3-view-results"></a>Шаг 3. Просмотр результатов
 
-Все запросы POST вернут ответ в формате JSON с идентификаторами и обнаруженными свойствами. Порядок возвращенных ключевых фраз определяется внутренне, моделью.
+Все запросы POST вернут ответ в формате JSON с идентификаторами и обнаруженными свойствами. Порядок возвращаемых ключевых фраз определяется в модели внутренним образом.
 
 Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими.
 
@@ -162,7 +162,7 @@ ms.locfileid: "72429022"
  API анализа текста: [общие сведения и ](../overview.md) [вопросы и ответы](../text-analytics-resource-faq.md)</br>
  [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [АPI аналитики текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6)
+> [API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6)

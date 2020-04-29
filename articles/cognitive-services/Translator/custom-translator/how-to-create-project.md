@@ -1,7 +1,7 @@
 ---
-title: Как создать проект - Пользовательский переводчик
+title: Создание проекта — настраиваемый переводчик
 titleSuffix: Azure Cognitive Services
-description: В этой статье рассказывается о том, как создавать и управлять проектом в пользовательском переводчике Azure Cognitive Services.
+description: В этой статье описывается создание проекта и управление им в пользовательском трансляторе Azure Cognitive Services.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: 5b3a6f2e903d8178554b7a076ae1277633569353
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73836567"
 ---
 # <a name="create-a-project"></a>Создание проекта
@@ -30,7 +30,7 @@ ms.locfileid: "73836567"
 
 2.  В диалоговом окне введите сведения о проекте в указанные ниже поля:
 
-    а.  "Имя проекта" (обязательно). Присвойте проекту понятное уникальное имя. В названии не нужно упоминать языки.
+    a.  "Имя проекта" (обязательно). Присвойте проекту понятное уникальное имя. В названии не нужно упоминать языки.
 
     b.  "Описание". Краткие сведения о проекте. Это описание не влияет на поведение Custom Translator или конечной пользовательской системы, но может помочь отличать этот проект от других.
 
@@ -62,7 +62,7 @@ ms.locfileid: "73836567"
 
     ![Просмотр сведений о проекте](media/how-to/how-to-view-project.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, [как выполнять поиск проекта, изменять и удалять его](how-to-search-edit-delete-projects.md).
 - Узнайте, [как отправлять документ](how-to-upload-document.md) для создания моделей перевода.

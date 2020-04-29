@@ -1,7 +1,7 @@
 ---
 title: Глоссарий. Custom Translator
 titleSuffix: Azure Cognitive Services
-description: Пользовательский переводчик Глоссарий поможет вам понять термины, используемые в статьях, в то время как вы узнаете, как использовать службу.
+description: Пользовательский Глоссарий переводчика поможет вам понять термины, используемые в статьях, а также узнать, как использовать эту службу.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: reference
 ms.openlocfilehash: caf4a4b038cab81333ca78cd355bb2033891da00
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73888137"
 ---
 # <a name="custom-translator-glossary"></a>Глоссарий Custom Translator

@@ -1,7 +1,7 @@
 ---
-title: Мигрируйте данные лица через подписки - Лицо
+title: Перенос данных о лицах между подписками — лицом
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как перенести сохраненные данные лица из одной подписки Face в другую.
+description: В этом руководство показано, как перенести сохраненные данные о лицах из одной подписки в другую.
 services: cognitive-services
 author: lewlu
 manager: nitinme
@@ -11,37 +11,37 @@ ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: lewlu
 ms.openlocfilehash: e5ca51da7322e4eab4ea364ec5da086a1068fa9a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76169809"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Перенос данных распознавания лиц в другую подписку API распознавания лиц
 
-В этом руководстве показано, как перемещать данные лица, например, сохраненный объект PersonGroup с лицами, в другую подписку Azure Cognitive Services Face. Для перемещения данных используется функция Snapshot. Таким образом, при перемещении или расширении операций вам не приходится постоянно создавать и обучать объект PersonGroup или FaceList. Например, возможно, вы создали объект PersonGroup с помощью бесплатной пробной подписки и теперь хотите перенести его на платную подписку. Или может потребоваться синхронизация данных о лицах между подписями в разных регионах для крупной операции предприятия.
+В этом руководство показано, как переместить данные о лицах, например сохраненный объект Персонграуп с лицами, в другую подписку Azure Cognitive Services Face. Для перемещения данных используется функция моментального снимка. Это позволит избежать многократного создания и обучения объекта Персонграуп или Фацелист при перемещении или расширении операций. Например, вы создали объект Персонграуп с помощью бесплатной пробной подписки и теперь хотите перенести ее в платную подписку. Или может потребоваться синхронизация данных о лицах между подписками в разных регионах для крупных корпоративных операций.
 
-Эта же стратегия переноса применяется к объектам LargePersonGroup и LargeFaceList. Если вы не знакомы с понятиями в этом руководстве, ознакомьтесь с их определениями в руководстве по [распознаванию лиц.](../concepts/face-recognition.md) В этом руководстве используется клиентская библиотека Face .NET с C..
+Эта же стратегия переноса применяется к объектам LargePersonGroup и LargeFaceList. Если вы не знакомы с понятиями, изложенными в этом пошаговом окне, см. их определения в разделе " [Основные понятия распознавания лиц](../concepts/face-recognition.md) ". В этом руководство используется клиентская библиотека .NET для языка C#.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вам нужны следующие элементы:
+Вам потребуются следующие элементы:
 
-- Два ключа подписки Face, один с существующими данными и один для миграции. Чтобы подписаться на сервис Face и получить ключ, следуйте инструкциям в [учетной записи «Создайте когнитивные услуги».](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)
-- Строка идентификатора подписки Face, соответствующая целевой подписке. Чтобы найти его, выберите **Обзор** на портале Azure. 
-- Любое издание [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
+- Ключи подписки двух лиц, одна с существующими данными, а другая — для миграции. Чтобы подписаться на службу лиц и получить ключ, следуйте инструкциям в разделе [Создание учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+- Строка идентификатора подписки лица, соответствующая целевой подписке. Чтобы найти его, выберите **Обзор** в портал Azure. 
+- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 
 ## <a name="create-the-visual-studio-project"></a>Создание проекта Visual Studio
 
-В этом руководстве используется простое приложение для запуска миграции данных лица. Для полной реализации см. [образец снимка лица](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) на GitHub.
+В этом руководством для выполнения переноса данных о лицах используется простое консольное приложение. Полную реализацию см. в [образце моментальных снимков для лиц](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) на GitHub.
 
-1. В Visual Studio создайте новое приложение Console.NET Framework project. Назовите его **FaceApiSnapshotSample**.
-1. Получите необходимые пакеты NuGet. Нажмите правой кнопкой мыши вашего проекта в Solution Explorer и выберите **Пакеты Управления NuGet.** Выберите вкладку **«Просмотр»** и **выберите Пререлиз «Включите».** Найдите и установите следующий пакет:
+1. В Visual Studio создайте новое консольное приложение .NET Framework проекте. Назовите его **фацеаписнапшотсампле**.
+1. Получите необходимые пакеты NuGet. Щелкните правой кнопкой мыши проект в обозреватель решений и выберите **Управление пакетами NuGet**. Перейдите на вкладку **Обзор** и выберите **включить предварительные выпуски**. Найдите и установите следующий пакет:
     - [Microsoft.Azure.CognitiveServices.Vision.Face 2.3.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview).
 
 ## <a name="create-face-clients"></a>Создание клиентов для распознавания лиц
 
-В методе **Main** в файле *Program.cs* создайте два экземпляра [FaceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) для исходной и целевой подписок. В этом примере в качестве источника используется подписка Face в регионе Восточной Азии и подписка на Запад США. В этом примере показано, как прегнетать данные из одного региона Azure в другой. 
+В методе **Main** в файле *Program.cs* создайте два экземпляра [FaceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) для исходной и целевой подписок. В этом примере используется подписка на лицо в регионе Восточная Азия в качестве источника и подписке "Западная часть США" в качестве цели. В этом примере показано, как перенести данные из одного региона Azure в другой. 
 
 [!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -57,21 +57,21 @@ var FaceClientWestUS = new FaceClient(new ApiKeyServiceClientCredentials("<West 
     };
 ```
 
-Заполните значения ключевых значений подписки и URL-адреса конечных точек для исходных и целевых подписок.
+Укажите значения ключей подписки и URL-адреса конечных точек для исходной и целевой подписок.
 
 
 ## <a name="prepare-a-persongroup-for-migration"></a>Подготовка PersonGroup для переноса
 
-Вам потребуется идентификатор объекта PersonGroup в вашей исходной подписке, чтобы перенести его в целевую подписку. Используйте метод [PersonGroupOperationsExtensions.ListAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperationsextensions.listasync?view=azure-dotnet) для получения списка объектов PersonGroup. Затем получите недвижимость [PersonGroup.PersonGroupId.](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.persongroup.persongroupid?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_Models_PersonGroup_PersonGroupId) Этот процесс выглядит по-разному в зависимости от того, какие объекты PersonGroup у вас есть. В этом руководстве хранится идентификатор источника PersonGroup `personGroupId`ID.
+Вам потребуется идентификатор объекта PersonGroup в вашей исходной подписке, чтобы перенести его в целевую подписку. Используйте метод [персонграупоператионсекстенсионс. ListAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperationsextensions.listasync?view=azure-dotnet) для получения списка объектов персонграуп. Затем получите свойство [персонграуп. персонграупид](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.persongroup.persongroupid?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_Models_PersonGroup_PersonGroupId) . Этот процесс выглядит по-разному в зависимости от того, какие объекты Персонграуп у вас есть. В этом руководством идентификатор источника Персонграуп хранится в `personGroupId`.
 
 > [!NOTE]
-> [Код образца](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) создает и обучает новую Группу лиц для миграции. В большинстве случаев, вы уже должны иметь PersonGroup для использования.
+> [Пример кода](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) создает и обучает новый персонграуп для миграции. В большинстве случаев у вас уже должен быть Персонграуп для использования.
 
-## <a name="take-a-snapshot-of-a-persongroup"></a>Сделать снимок PersonGroup
+## <a name="take-a-snapshot-of-a-persongroup"></a>Создание моментального снимка Персонграуп
 
-Снимок — это временное удаленное хранилище для определенных типов данных Face. Он функционирует как своего рода буфер обмена для копирования данных из одной подписки в другую. Во-первых, вы делаете снимок данных в подписке на исход. Затем вы применяете его к новому объекту данных в целевой подписке.
+Моментальный снимок является временным удаленным хранилищем для определенных типов данных лиц. Он функционирует как своего рода буфер обмена для копирования данных из одной подписки в другую. Сначала необходимо создать моментальный снимок данных в исходной подписке. Затем вы примените его к новому объекту данных в целевой подписке.
 
-Используйте экземпляр FaceClient подписки для снимка PersonGroup. Используйте [TakeAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperationsextensions.takeasync?view=azure-dotnet) с идентификатором PersonGroup и идентификатором целевой подписки. Если у вас есть несколько целевых подписок, добавьте их в качестве блоки в третьем параметре.
+Используйте экземпляр Фацеклиент исходной подписки, чтобы создать моментальный снимок Персонграуп. Используйте [такеасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperationsextensions.takeasync?view=azure-dotnet) с идентификатором ПЕРСОНГРАУП и идентификатором целевой подписки. Если у вас есть несколько целевых подписок, добавьте их в качестве записей массива в третий параметр.
 
 ```csharp
 var takeSnapshotResult = await FaceClientEastAsia.Snapshot.TakeAsync(
@@ -81,11 +81,11 @@ var takeSnapshotResult = await FaceClientEastAsia.Snapshot.TakeAsync(
 ```
 
 > [!NOTE]
-> Процесс приема и применения снимков не нарушает регулярных вызовов в исходные группы или целевые группы лиц или FaceLists. Не делайте одновременных вызовов, которые меняют исходный объект, [например, вызовы управления FaceList](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet) или вызов [PersonGroup Train.](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet) Операция моментального снимка может работать до или после этих операций или может столкнуться с ошибками.
+> Процесс создания и применения моментальных снимков не нарушает обычные вызовы исходного или целевого Персонграупс или Фацелистс. Не делайте одновременных вызовов, изменяющих исходный объект, например [вызовы управления фацелист](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet) или вызов [персонграуп](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet) Train. Операция моментального снимка может выполняться до или после этих операций или может столкнуться с ошибками.
 
-## <a name="retrieve-the-snapshot-id"></a>Извлечение идентификатора моментального снимка
+## <a name="retrieve-the-snapshot-id"></a>Получение идентификатора моментального снимка
 
-Метод, используемый для снимков, асинхронный, поэтому необходимо дождаться его завершения. Операции моментального снимка не могут быть отменены. В этом коде `WaitForOperation` метод отслеживает асинхронный вызов. Он проверяет статус каждые 100 мс. После завершения операции извлеките идентификатор `OperationLocation` операции, разогнав поле. 
+Метод, используемый для создания моментальных снимков, является асинхронным, поэтому необходимо дождаться его завершения. Операции с моментальными снимками не могут быть отменены. В этом коде `WaitForOperation` метод отслеживает асинхронный вызов. Он проверяет состояние каждые 100 мс. После завершения операции получите идентификатор операции, анализируя `OperationLocation` поле. 
 
 ```csharp
 var takeOperationId = Guid.Parse(takeSnapshotResult.OperationLocation.Split('/')[2]);
@@ -127,7 +127,7 @@ private static async Task<OperationStatus> WaitForOperation(IFaceClient client, 
 }
 ```
 
-После отображаемого `Succeeded`состояния операции, получите идентификатор моментального момента, разобрав `ResourceLocation` поле возвращенного экземпляра OperationStatus.
+После отображения `Succeeded`состояния операции получите идентификатор моментального снимка, анализируя `ResourceLocation` поле возвращенного экземпляра значение operationstatus.
 
 ```csharp
 var snapshotId = Guid.Parse(operationStatus.ResourceLocation.Split('/')[2]);
@@ -139,9 +139,9 @@ var snapshotId = Guid.Parse(operationStatus.ResourceLocation.Split('/')[2]);
 "/snapshots/e58b3f08-1e8b-4165-81df-aa9858f233dc"
 ```
 
-## <a name="apply-a-snapshot-to-a-target-subscription"></a>Приложить снимок к целевой подписке
+## <a name="apply-a-snapshot-to-a-target-subscription"></a>Применение моментального снимка к целевой подписке
 
-Затем создайте новую PersonGroup в целевой подписке, используя случайно сгенерированный идентификатор. Затем используйте экземпляр FaceClient целевой подписки, чтобы применить снимок к этой PersonGroup. Передайте идентификатор моментального снимка и новый идентификатор PersonGroup.
+Затем создайте новый Персонграуп в целевой подписке, используя сгенерированный случайным образом идентификатор. Затем используйте экземпляр Фацеклиент целевой подписки для применения моментального снимка к этому Персонграуп. Передайте идентификатор моментального снимка и новый идентификатор Персонграуп.
 
 ```csharp
 var newPersonGroupId = Guid.NewGuid().ToString();
@@ -150,15 +150,15 @@ var applySnapshotResult = await FaceClientWestUS.Snapshot.ApplyAsync(snapshotId,
 
 
 > [!NOTE]
-> Объект моментального снимка действителен только 48 часов. Только если вы собираетесь использовать его для миграции данных вскоре после этого.
+> Объект моментального снимка действителен только в 48 часа. Создавайте моментальные снимки только в том случае, если планируется использовать его для переноса данных вскоре после.
 
-Запрос на применение моментального снимка возвращает другой идентификатор операции. Чтобы получить этот идентификатор, разобрать `OperationLocation` поле возвращенного экземпляраSnapshotResult. 
+Запрос на применение моментального снимка возвращает другой идентификатор операции. Чтобы получить этот идентификатор, проанализируйте `OperationLocation` поле возвращенного экземпляра апплиснапшотресулт. 
 
 ```csharp
 var applyOperationId = Guid.Parse(applySnapshotResult.OperationLocation.Split('/')[2]);
 ```
 
-Процесс применения моментального снимка также асинхронный, поэтому снова используйте, `WaitForOperation` чтобы дождаться его завершения.
+Процесс приложения моментального снимка также является асинхронным, `WaitForOperation` поэтому снова используйте для ожидания его завершения.
 
 ```csharp
 operationStatus = await WaitForOperation(FaceClientWestUS, applyOperationId);
@@ -166,9 +166,9 @@ operationStatus = await WaitForOperation(FaceClientWestUS, applyOperationId);
 
 ## <a name="test-the-data-migration"></a>Проверка переноса данных
 
-После применения снимка новая PersonGroup в целевой подписке заполняется исходными данными о лице. По умолчанию результаты обучения также копируются. Новая PersonGroup готова к вызовам идентификации лиц без переподготовки.
+После применения моментального снимка новый Персонграуп в целевой подписке заполняется данными исходного лица. По умолчанию результаты обучения также копируются. Новая Персонграуп готова к идентификационным звонкам лиц без необходимости повторного обучения.
 
-Чтобы протестировать миграцию данных, запустите следующие операции и сравните результаты, которые они печатают, с консолью:
+Чтобы протестировать перенос данных, выполните следующие операции и сравните результаты, которые они печатают на консоли:
 
 ```csharp
 await DisplayPersonGroup(FaceClientEastAsia, personGroupId);
@@ -216,24 +216,24 @@ private static async Task IdentifyInPersonGroup(IFaceClient client, string perso
 }
 ```
 
-Теперь вы можете использовать новую PersonGroup в целевой подписке. 
+Теперь вы можете использовать новый Персонграуп в целевой подписке. 
 
-Чтобы обновить целевую группу PersonGroup снова в будущем, создайте новую PersonGroup для получения снимка. Для этого следуйте шагам в этом руководстве. Один объект PersonGroup может иметь снимок, применяемый к нему только один раз.
+Чтобы снова обновить целевой Персонграуп в будущем, создайте новый Персонграуп для получения моментального снимка. Для этого выполните действия, описанные в этом руководстве. К одному объекту Персонграуп можно применить моментальный снимок только один раз.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-После завершения миграции данных лица вручную удалите объект моментального снимка.
+После завершения переноса данных о лицах вручную удалите объект моментального снимка.
 
 ```csharp
 await FaceClientEastAsia.Snapshot.DeleteAsync(snapshotId);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Далее ознакомьтесь с соответствующей справочной документацией API, изучите пример приложения, использующего функцию Snapshot, или следуйте руководству по началу использования других операций API, упомянутых здесь:
+Затем ознакомьтесь с соответствующей справочной документацией по API, изучите пример приложения, использующего функцию создания моментальных снимков, или следуйте инструкциям по началу работы с другими операциями API, упомянутыми здесь:
 
 - [Справочная документация по моментальным снимкам (SDK для .NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperations?view=azure-dotnet)
-- [Образец снимка лица](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample)
+- [Пример снимка грани](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample)
 - [Добавление лиц](how-to-add-faces.md)
-- [Обнаружение лиц на изображении](HowtoDetectFacesinImage.md)
+- [Определение лиц на изображении](HowtoDetectFacesinImage.md)
 - [Идентификация лиц на изображении](HowtoIdentifyFacesinImage.md)

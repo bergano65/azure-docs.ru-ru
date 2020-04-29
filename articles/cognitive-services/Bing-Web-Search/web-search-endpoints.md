@@ -1,7 +1,7 @@
 ---
 title: Конечная точка для веб-поиска
 titleSuffix: Azure Cognitive Services
-description: Чтобы получить результаты веб-поиска, отправьте запрос в следующую конечную `GET` точку. Заголовки и параметры URL-адреса определяют дополнительные спецификации.
+description: Чтобы получить результаты поиска в Интернете, отправьте `GET` запрос в следующую конечную точку. Заголовки и параметры URL-адреса определяют дополнительные спецификации.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: aahi
 ms.openlocfilehash: 2edc6a4cf4d4fb174c1b2067d8b3fb3b6f31859f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74111335"
 ---
 # <a name="web-search-endpoint"></a>Конечная точка для поиска в Интернете
@@ -37,7 +37,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/search
 
 Ответ на запрос на поиск в Интернете содержит результаты в виде объектов JSON. Для анализа результатов требуются процедуры обработки элементов каждого типа. Чтобы ознакомиться с примерами, изучите это [руководство](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/tutorial-bing-web-search-single-page-app) и [исходный код](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/Tutorials/Bing-Web-Search).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Интерфейсы API **Bing** поддерживают действия поиска, которые возвращают результаты определенного типа.Все конечные точки поиска возвращают результаты в виде объектов ответа JSON. Все конечные точки поддерживают запросы, которые возвращают результаты с учетом языка и местоположения по значениям долготы, широты и радиуса поиска.
 

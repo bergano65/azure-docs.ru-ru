@@ -1,7 +1,7 @@
 ---
 title: Переход на API перевода текстов версии 3
 titleSuffix: Azure Cognitive Services
-description: В этой статье приведены шаги, помогая вам перейти с V2 на V3 из API текста переводчика когнитивных служб Azure.
+description: Эта статья содержит инструкции по переходу с версии v2 на версию 3 API перевода текстов Cognitive Services Azure.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: swmachan
 ms.openlocfilehash: eb43d549d3e0cd449c865d533fc8701c4c3912fd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73837310"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
 > [!NOTE]
-> V2 был обезвлечен 30 апреля 2018 года. Пожалуйста, переносите свои приложения на V3, чтобы воспользоваться преимуществами новой функциональности, доступной исключительно в V3.
+> Версия 2 устарела до 30 апреля 2018 г. Перенесите приложения на версию 3, чтобы воспользоваться преимуществами новых функций, доступных исключительно в версии 3.
 > 
-> Microsoft Translator Hub будет выведен из эксплуатации 17 мая 2019 года. [Просмотр важной информации о миграции и датах](https://www.microsoft.com/translator/business/hub/).  
+> Центр Microsoft Translator будет снят с учета 17 мая 2019. [Просмотр важных сведений о миграции и дат](https://www.microsoft.com/translator/business/hub/).  
 
 Команда разработчиков Microsoft Translator выпустила API перевода текстов версии 3. Этот выпуск включает новые возможности и новый формат отправки данных в службу Microsoft Translator и получения их из нее. Кроме того, в этом выпуске исключены некоторые устаревшие методы. В этом документе содержатся сведения об изменении конфигурации приложений с целью реализации поддержки версии 3. 
 
@@ -49,8 +49,8 @@ ms.locfileid: "73837310"
 | `GetLanguagesForTranslate`     | [Языки](reference/v3-0-languages.md)       |
 | `GetLanguagesForSpeak`      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
 | `Speak`     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
-| `Detect`     | [Detect](reference/v3-0-detect.md)         |
-| `DetectArray`     | [Detect](reference/v3-0-detect.md)         |
+| `Detect`     | [Определение](reference/v3-0-detect.md)         |
+| `DetectArray`     | [Определение](reference/v3-0-detect.md)         |
 | `AddTranslation`     | Компонент больше не поддерживается.       |
 | `AddTranslationArray`    | Компонент больше не поддерживается.          |
 | `BreakSentences`      | [BreakSentence](reference/v3-0-break-sentence.md)       |
@@ -65,7 +65,7 @@ ms.locfileid: "73837310"
 
 Метод Languages не требует проверки подлинности. Чтобы просмотреть все сведения о языке для версии 3 в формате JSON, перейдите по следующей ссылке:
 
-[https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation,словарь, транслитерация](https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation,dictionary,transliteration)
+[https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation, словарь, Транслитерация](https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation,dictionary,transliteration)
 
 ## <a name="authentication-key"></a>Ключ проверки подлинности
 
@@ -110,7 +110,7 @@ Global
 
 > [!NOTE]
 > 
-> Microsoft Translator Hub будет выведен из эксплуатации 17 мая 2019 года. [Просмотр важной информации о миграции и датах](https://www.microsoft.com/translator/business/hub/).   
+> Центр Microsoft Translator будет снят с учета 17 мая 2019. [Просмотр важных сведений о миграции и дат](https://www.microsoft.com/translator/business/hub/).   
 
 По умолчанию служба Microsoft Translator версии 3 использует технологию нейронного машинного перевода. Поэтому она не может использоваться центром Microsoft Translator Hub. Translator Hub поддерживает только устаревший статистический машинный перевод. Функцию перевода с использованием нейронных сетей можно настроить с помощью пользовательского переводчика. [Узнайте больше о настройке нейронного машинного перевода](custom-translator/overview.md)
 
@@ -118,8 +118,8 @@ Global
 
 | |Конечная точка|    Соответствие требованиям процессора GDPR|  Использование Translator Hub| Использование Пользовательского переводчика (предварительная версия)|
 |:-----|:-----|:-----|:-----|:-----|
-|API перевода текстов версии 2| api.microsofttranslator.com|    нет  |Да    |нет|
-|API перевода текстов версии 3| api.cognitive.microsofttranslator.com|  Да|    нет| Да|
+|API перевода текстов версии 2| api.microsofttranslator.com|    Нет  |Да    |Нет|
+|API перевода текстов версии 3| api.cognitive.microsofttranslator.com|  Да|    Нет| Да|
 
 **API перевода текстов версии 3**
 * Является общедоступным и полностью поддерживается.
@@ -143,7 +143,7 @@ Global
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)
 * [Условия служб Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [API перевода текстов версии 3.0](reference/v3-0-reference.md)

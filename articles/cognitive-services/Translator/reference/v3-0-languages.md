@@ -1,7 +1,7 @@
 ---
 title: Метод Languages в API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Метод Languages получает набор языков, поддерживаемых в настоящее время другими операциями API Текста Переводчика.
+description: Метод Languages получает набор языков, которые в настоящее время поддерживаются другими операциями API перевода текстов.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
 ms.openlocfilehash: 37f70399e8125db559098869cdfffdf4533498d7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73835829"
 ---
 # <a name="translator-text-api-30-languages"></a>API перевода текстов 3.0: Languages
@@ -37,11 +37,11 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   <th>Описание</th>
   <tr>
     <td>api-version</td>
-    <td><em>Обязательный параметр.</em><br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
+    <td><em>Обязательный параметр</em>.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
-    <td>область</td>
-    <td>*Дополнительный параметр*.<br/>Список имен, разделенных запятыми, определяющий возвращаемую группу языков. Допустимые имена групп: `translation`, `transliteration` и `dictionary`. Если область не задана, то возвращаются все группы, которые эквивалентны передаче `scope=translation,transliteration,dictionary`. Чтобы решить, какой набор поддерживаемых языков подходит для сценария, см. описание [объекта ответа](#response-body).</td>
+    <td>scope</td>
+    <td>*Необязательный параметр*.<br/>Список имен, разделенных запятыми, определяющий возвращаемую группу языков. Допустимые имена групп: `translation`, `transliteration` и `dictionary`. Если область не задана, то возвращаются все группы, которые эквивалентны передаче `scope=translation,transliteration,dictionary`. Чтобы решить, какой набор поддерживаемых языков подходит для сценария, см. описание [объекта ответа](#response-body).</td>
   </tr>
 </table> 
 
@@ -93,7 +93,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 Для каждого свойства существуют следующие значения.
 
-* Свойство `translation`
+* Свойство`translation`
 
   Значение свойства `translation` представляет собой словарь (ключ, значение) пары. Каждый ключ является языковым тегом BCP-47. Ключ идентифицирует язык, с которого или на который текст может быть переведен. Значение, связанное с ключом, является JSON-объектом со свойствами, которые описывают язык.
 
@@ -119,7 +119,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   }
   ```
 
-* Свойство `transliteration`
+* Свойство`transliteration`
 
   Значение свойства `transliteration` представляет собой словарь (ключ, значение) пары. Каждый ключ является языковым тегом BCP-47. Ключ идентифицирует язык, для которого текст может быть преобразован из одного сценария в другой. Значение, связанное с ключом, является JSON-объектом со свойствами, которые описывают язык и его поддерживаемые сценарии.
 
@@ -184,7 +184,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   }
   ```
 
-* Свойство `dictionary`
+* Свойство`dictionary`
 
   Значение свойства `dictionary` представляет собой словарь (ключ, значение) пары. Каждый ключ является языковым тегом BCP-47. Ключ идентифицирует язык, для которого доступны альтернативные и обратные переводы. Значение — это JSON-объект, описывающий язык исходного и целевого языков с возможными переводами.
 
@@ -263,7 +263,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Сервер отклонил запрос из-за превышения лимита запроса.</td>
+    <td>Сервер отклонил запрос, так как клиент превысил лимиты запросов.</td>
   </tr>
   <tr>
     <td>500</td>

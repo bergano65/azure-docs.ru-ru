@@ -1,7 +1,7 @@
 ---
 title: Метод транслитерации в API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Преобразование текста на одном языке с одного скрипта на другой с помощью метода Transliterate Translator Text.
+description: Преобразование текста на одном языке из одного скрипта в другой с помощью API перевода текстовного метода.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
 ms.openlocfilehash: e6bb1541b2b668796b352bebc68d59b4ade143e3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73837277"
 ---
 # <a name="translator-text-api-30-transliterate"></a>API перевода текстов 3.0: транслитерация
@@ -38,19 +38,19 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   <th>Описание</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр.*<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
+    <td>*Обязательный параметр*.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
     <td>Язык</td>
-    <td>*Обязательный параметр.*<br/>Указывает язык текста, преобразуемого из одного набора символов в другой. Возможные языки перечисляются в области `transliteration`, получаемой путем отправки запроса к службе на предмет [поддерживаемых языков](./v3-0-languages.md).</td>
+    <td>*Обязательный параметр*.<br/>Указывает язык текста, преобразуемого из одного набора символов в другой. Возможные языки перечисляются в области `transliteration`, получаемой путем отправки запроса к службе на предмет [поддерживаемых языков](./v3-0-languages.md).</td>
   </tr>
   <tr>
     <td>fromScript</td>
-    <td>*Обязательный параметр.*<br/>Указывает набор символов, используемый во входном тексте. Определите [поддерживаемые языки](./v3-0-languages.md) с помощью области `transliteration`, чтобы найти доступные входные наборы символов для выбранного языка.</td>
+    <td>*Обязательный параметр*.<br/>Указывает набор символов, используемый во входном тексте. Определите [поддерживаемые языки](./v3-0-languages.md) с помощью области `transliteration`, чтобы найти доступные входные наборы символов для выбранного языка.</td>
   </tr>
   <tr>
     <td>toScript</td>
-    <td>*Обязательный параметр.*<br/>Указывает выходной набор символов. Определите [поддерживаемые языки](./v3-0-languages.md) с помощью области `transliteration`, чтобы найти доступные выходные наборы символов для выбранного сочетания входного языка и входного набора символов.</td>
+    <td>*Обязательный параметр*.<br/>Указывает выходной набор символов. Определите [поддерживаемые языки](./v3-0-languages.md) с помощью области `transliteration`, чтобы найти доступные выходные наборы символов для выбранного сочетания входного языка и входного набора символов.</td>
   </tr>
 </table> 
 
@@ -60,7 +60,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   <th width="20%">Заголовки</th>
   <th>Описание</th>
   <tr>
-    <td>Заголовок аутентификации (ы)</td>
+    <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
   </tr>
   <tr>
@@ -147,7 +147,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Сервер отклонил запрос из-за превышения лимита запроса.</td>
+    <td>Сервер отклонил запрос, так как клиент превысил лимиты запросов.</td>
   </tr>
   <tr>
     <td>500</td>

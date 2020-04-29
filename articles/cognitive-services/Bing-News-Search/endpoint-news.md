@@ -1,7 +1,7 @@
 ---
 title: Конечные точки API Поиска новостей Bing
 titleSuffix: Azure Cognitive Services
-description: В этой статье приводится краткое изложение конечных точек API поиска новостей; новости, главные новости и трендовые новости.
+description: В этой статье содержится сводка конечных точек API поиска новостей. Новости, лучшие новости и тенденции.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 1/10/2019
 ms.author: aahi
 ms.openlocfilehash: dc7d16fe809e3e324f384b0d9e088dd7e6ab261c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74111488"
 ---
 # <a name="bing-news-search-api-endpoints"></a>Конечные точки API Bing для поиска новостей
@@ -31,7 +31,7 @@ ms.locfileid: "74111488"
 GET https://api.cognitive.microsoft.com/bing/v7.0/news/search
 ```
 
-Возвращает новости на основе поискового запроса. Если отправить пустой поисковый запрос, то API вернет самые популярные новостные статьи из разных категорий. Отправьте запрос по URL-адресу, кодирующему ваш поисковый запрос и добавляющему его к параметру `q=""`. Для доступности [см.](language-support.md#supported-markets-for-news-search-endpoint)
+Возвращает новости на основе поискового запроса. Если отправить пустой поисковый запрос, то API вернет самые популярные новостные статьи из разных категорий. Отправьте запрос по URL-адресу, кодирующему ваш поисковый запрос и добавляющему его к параметру `q=""`. Сведения о доступности см. в разделе [Поддерживаемые страны, регионы и рынки](language-support.md#supported-markets-for-news-search-endpoint).
 
 ### <a name="top-news-items-by-category"></a>Самые популярные новости по категориям.
 
@@ -39,7 +39,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/news/search
 GET https://api.cognitive.microsoft.com/bing/v7.0/news  
 ```
 
-Возвращает самые популярные новости по категориям. Например, можно запросить главные статьи на тему бизнеса, спорта или развлечений, используя значения `category=business`, `category=sports` или `category=entertainment`. Параметр `category` можно использовать только с URL-адресом `/news`. Существуют некоторые формальные требования для указания категорий. Ознакомьтесь с разделом `category` в документации по [параметрам запроса](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query-parameters). Отправьте запрос по URL-адресу, кодирующему ваш поисковый запрос и добавляющему его к параметру `q=""`. Для доступности [см.](language-support.md#supported-markets-for-news-endpoint)
+Возвращает самые популярные новости по категориям. Например, можно запросить главные статьи на тему бизнеса, спорта или развлечений, используя значения `category=business`, `category=sports` или `category=entertainment`. Параметр `category` можно использовать только с URL-адресом `/news`. Существуют некоторые формальные требования для указания категорий. Ознакомьтесь с разделом `category` в документации по [параметрам запроса](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query-parameters). Отправьте запрос по URL-адресу, кодирующему ваш поисковый запрос и добавляющему его к параметру `q=""`. Сведения о доступности см. в разделе [Поддерживаемые страны, регионы и рынки](language-support.md#supported-markets-for-news-endpoint).
 
 ### <a name="trending-news-topics"></a>Новости, набирающие популярность. 
 
@@ -47,9 +47,9 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/news
 GET https://api.cognitive.microsoft.com/bing/v7.0/news/trendingtopics
 ```
 
-Возвращает темы новостей, которые в данный момент набирают популярности в социальных сетях. Когда параметр `/trendingtopics` включен, поиск Bing игнорирует некоторые другие параметры, такие как `freshness` и `?q=""`. Для доступности [см.](language-support.md#supported-markets-for-news-trending-endpoint)
+Возвращает темы новостей, которые в данный момент набирают популярности в социальных сетях. Когда параметр `/trendingtopics` включен, поиск Bing игнорирует некоторые другие параметры, такие как `freshness` и `?q=""`. Сведения о доступности см. в разделе [Поддерживаемые страны, регионы и рынки](language-support.md#supported-markets-for-news-trending-endpoint).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. п. вы найдете в справочнике [по API Bing для поиска новостей версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference).
 

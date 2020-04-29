@@ -1,7 +1,7 @@
 ---
 title: Что такое оценка BLEU? — Custom Translator
 titleSuffix: Azure Cognitive Services
-description: BLEU представляет собой измерение различий между машинным переводом и созданными человеком справочными переводами одного и того же исходного предложения.
+description: БЛЕУ — это мера различий между машинным переводом и переводами ссылок, созданными пользователем, для одного и того же исходного предложения.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.openlocfilehash: 85c4ee27a828a05c64ca6cbf84bff438535328be
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73647362"
 ---
 # <a name="what-is-a-bleu-score"></a>Что такое оценка BLEU?

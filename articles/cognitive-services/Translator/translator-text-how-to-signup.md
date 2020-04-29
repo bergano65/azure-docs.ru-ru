@@ -1,7 +1,7 @@
 ---
 title: Начало работы с API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: В этой статье будет уотена возможность подписаться на API текста переводчика когнитивных служб Azure и получить ключ подписки.
+description: В этой статье показано, как зарегистрироваться для Cognitive Services Azure API перевода текстов и получить ключ подписки.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -12,10 +12,10 @@ ms.date: 06/04/2019
 ms.author: swmachan
 ms.custom: seodec18
 ms.openlocfilehash: cfae5318213e8af164c8d0cc9ed378705a5644b0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73835695"
 ---
 # <a name="how-to-sign-up-for-the-translator-text-api"></a>Регистрация для использования API перевода текстов
@@ -29,7 +29,7 @@ ms.locfileid: "73835695"
 
 После входа на портал создайте подписку на API перевода текстов, выполнив следующие действия.
 
-1. Выберите **и создайте ресурс.**
+1. Выберите **+ создать ресурс**.
 1. В поле поиска **Search the Marketplace** (Поиск в Marketplace) введите **Перевод текстов** и выберите его из списка результатов.
 1. Нажмите кнопку **Создать**, чтобы определить сведения для подписки.
 1. В списке **Ценовая категория** выберите ценовую категорию, которая лучше всего соответствует вашим потребностям.
@@ -54,7 +54,7 @@ Microsoft Translator обычно выполняет первые несколь
 
 ## <a name="pricing-options"></a>Варианты оплаты
 
-- [API перевода текстов](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
+- [API Перевода текстов](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
 
 ## <a name="customization"></a>Настройка
 

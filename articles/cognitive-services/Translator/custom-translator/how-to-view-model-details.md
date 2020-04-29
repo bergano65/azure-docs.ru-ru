@@ -10,17 +10,17 @@ ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: 64f446c3b331c1aa6ddaae9081b7f61943f74ab2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68595561"
 ---
 # <a name="view-model-details"></a>Просмотр сведений о модели
 
 На вкладке "Модели" в проекте показаны все модели в этом проекте. Все модели, обученные для этого проекта, перечислены на этой вкладке.
 
-Для каждой модели в проекте отображаются эти детали.
+Для каждой модели в проекте отображаются эти сведения.
 
 1.  Название модели: показывает имя данной модели.
 
@@ -91,6 +91,6 @@ ms.locfileid: "68595561"
 
 2.  **Тестирование:** на этой вкладке отображаются сведения о тестировании успешно обученной модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Просмотрите [результаты тестирования](how-to-view-system-test-results.md) и проанализируйте результаты обучения.

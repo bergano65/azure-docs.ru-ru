@@ -12,10 +12,10 @@ ms.date: 04/24/2018
 ms.author: aahi
 ms.custom: seodec2018
 ms.openlocfilehash: ad33b5a28728a8e7f9c0a70ff81ea5a9e65624bd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74072644"
 ---
 # <a name="search-for-gif-images"></a>Поиск GIF-изображений 
@@ -207,6 +207,6 @@ class SearchResults{
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Краткое руководство для C#](quickstarts/csharp.md)
 - [Руководство по одностраничным веб-приложениям](tutorial-bing-image-search-single-page-app.md)

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: aahi
 ms.openlocfilehash: f59c924caca86505e9f1e91bf58095b271475794
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75383725"
 ---
 # <a name="sending-queries-to-the-bing-news-search-api"></a>Отправка запросов в API Bing для поиска новостей
@@ -39,10 +39,10 @@ https://api.cognitive.microsoft.com/bing/v7.0/news/search
 
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:
 
-- [Пользователь-агент](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#useragent)
+- [Агент пользователя](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#useragent)
 - [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#clientid)
 - [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#clientip)
-- [X-Поиск-Местоположение](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#location)
+- [X-Search-расположение](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#location)
 
 Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.
 
@@ -282,9 +282,9 @@ BingAPIs-Market: en-US
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Что такое поиск новостей Bing?](../search-the-web.md). 
+* [Что такое Поиск новостей Bing?](../search-the-web.md). 
 * [Получение главных новостей за сегодня](search-for-news.md#get-todays-top-news)
 * [Получение новостей по категориям](search-for-news.md#get-news-by-category)
 * [Получение популярных новостей](search-for-news.md#get-trending-news)

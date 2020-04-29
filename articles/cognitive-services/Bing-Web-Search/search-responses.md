@@ -12,15 +12,15 @@ ms.date: 06/25/2019
 ms.author: aahi
 ms.custom: seodec2018
 ms.openlocfilehash: 95ebfaef863a1fa05e8a5d3b46fca9659c61f6b7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74110615"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
 
-При отправке запроса на поиск Bing [`SearchResponse`](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#searchresponse) Web Search возвращает объект в тело ответа. Объект содержит поле для каждого ответа, который система Bing посчитала соответствующим запросу. Этот пример иллюстрирует объект отклика, если система Bing вернула все ответы:
+При отправке Поиск в Интернете Bing поискового запроса он возвращает [`SearchResponse`](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#searchresponse) объект в тексте ответа. Объект содержит поле для каждого ответа, который система Bing посчитала соответствующим запросу. Этот пример иллюстрирует объект отклика, если система Bing вернула все ответы:
 
 ```json
 {
@@ -38,7 +38,7 @@ ms.locfileid: "74110615"
 }, ...
 ```
 
-Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если термин запроса был *парусным dinghies*, ответ может включать, `webPages` `images`и `rankingResponse`. Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
+Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если термин запроса был *гоночные дингхиес*, ответ может включать `webPages`, `images`и. `rankingResponse` Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
 
 [!INCLUDE [cognitive-services-bing-url-note](../../../includes/cognitive-services-bing-url-note.md)]
 
@@ -296,11 +296,11 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 |-|Вычитание|
 |/|Деление|
 |*|Умножение|
-|^|Power|
+|^|Питание|
 |!|Факториал|
 |.|Decimal|
 |()|Группирование по приоритету|
-|[]|Компонент|
+|[]|Функция|
 
 Математическое выражение может содержать следующие константы:
 
@@ -332,7 +332,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 
 В ответе `timeZone` указываются название региона, текущие дата и время в формате UTC в указанном местоположении, а также смещение от UTC. Если границы географического региона находятся в нескольких временных поясах, то ответ содержит текущие дату и время в формате UTC для всех часовых поясов в рамках этой границы. Например, так как штат Флорида находится в двух часовых поясах, ответ содержит локальные дату и время обоих часовых поясов.  
 
-Если запрос запрашивает время состояния или страны/региона, Bing определяет основной город в пределах географической `primaryCityTime` границы расположения и возвращает его в поле. Если в границах находится несколько часовых поясов, остальные часовые пояса возвращаются в поле `otherCityTimes`.
+Если запрос запрашивает время состояния или страны или региона, Bing определяет основной город в пределах географической границы расположения и возвращает его в `primaryCityTime` поле. Если в границах находится несколько часовых поясов, остальные часовые пояса возвращаются в поле `otherCityTimes`.
 
 Ниже показаны примеры запросов, возвращающих ответ `timeZone`.
 
@@ -473,7 +473,7 @@ Query: What time is it in the U.S.
 
 ![Пример предложения правописания Bing](./media/cognitive-services-bing-web-api/bing-web-spellingsuggestion.GIF)  
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
 * Ознакомьтесь с документацией по [регулированию запросов](throttling-requests.md).  
 

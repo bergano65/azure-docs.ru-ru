@@ -1,7 +1,7 @@
 ---
 title: Конечные точки для API Bing для поиска изображений
 titleSuffix: Azure Cognitive Services
-description: API поиска изображений включает в себя три конечные точки. Конечная точка 1 возвращает изображения из Интернета. Конечная точка 2 возвращает ImageInsights (аналитические сведения об изображениях). Конечная точка 3 возвращает популярные видео.
+description: Поиск изображений API содержит три конечных точки. Конечная точка 1 возвращает изображения из Интернета. Конечная точка 2 возвращает ImageInsights (аналитические сведения об изображениях). Конечная точка 3 возвращает популярные видео.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
 ms.openlocfilehash: 38416f6a580d270aefc287de0c198bd418a44db9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74072631"
 ---
 # <a name="endpoints-for-the-bing-image-search-api"></a>Конечные точки для API Bing для поиска изображений
@@ -50,7 +50,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/images/trending
 ## <a name="response-json"></a>Ответ в формате JSON
 Ответ на запрос на поиск изображений содержит результаты в виде объектов JSON. Примеры синтаксического анализа результатов см. в этом [руководстве](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/tutorial-bing-image-search-single-page-app) и [исходном коде](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/tutorial-bing-image-search-single-page-app-source).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Интерфейсы API **Bing** поддерживают действия поиска, которые возвращают результаты определенного типа.Все конечные точки поиска возвращают результаты в виде объектов ответа JSON. Все конечные точки поддерживают запросы, которые возвращают результаты с учетом языка и (или) местоположения по значениям долготы, широты и радиуса поиска.
 
 Полные сведения о параметрах, поддерживаемых каждой конечной точкой, приведены в справочной документации по каждому типу.

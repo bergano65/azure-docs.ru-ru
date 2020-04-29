@@ -1,7 +1,7 @@
 ---
 title: Отправка запросов к API Автозаполнения Bing
 titleSuffix: Azure Cognitive Services
-description: API "Автозаполнение Bing" возвращает список предлагаемых запросов на основе частично введенной строки запроса в поле поиска. Подробнее об отправке запросов.
+description: API "Автозаполнение Bing" возвращает список предлагаемых запросов на основе частично введенной строки запроса в поле поиска. Дополнительные сведения об отправке запросов.
 services: cognitive-services
 author: swhite-msft
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: scottwhi
 ms.openlocfilehash: d479548e682e814345e13d9416d08ec453f90304
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74072847"
 ---
 # <a name="sending-requests-to-the-bing-autosuggest-api"></a>Отправка запросов к API Автозаполнения Bing.
@@ -27,7 +27,7 @@ ms.locfileid: "74072847"
 
 Чтобы получить предложенные запросы с помощью API Bing, отправьте запрос `GET` на указанную ниже конечную точку. Для определения дополнительных спецификаций используйте заголовки и параметры URL-адреса.
 
-**Конечная точка:** Возвращает предложения поиска в виде результатов JSON, которые `?q=""`имеют отношение к вхданным пользователям, определяемому .
+**Конечная точка:** Возвращает варианты поиска в виде результатов JSON, которые относятся к входным данным пользователя, `?q=""`определенным в.
 
 ```http
 GET https://api.cognitive.microsoft.com/bing/v7.0/Suggestions 
@@ -52,10 +52,10 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/Suggestions
 
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:
 
-- [Пользователь-агент](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#useragent)
+- [Агент пользователя](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#useragent)
 - [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientid)
 - [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#clientip)
-- [X-Поиск-Местоположение](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#location)
+- [X-Search-расположение](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference#location)
 
 Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.
 
@@ -167,8 +167,8 @@ BingAPIs-Market: en-US
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Что такое API Автозаполнения Bing?](../get-suggested-search-terms.md)
+- [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
 - [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)
 - [Предложение терминов запроса](get-suggestions.md)

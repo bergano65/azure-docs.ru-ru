@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
 ms.openlocfilehash: 2cc89bf57167db75404c044f58d18ab48edfaf38
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68854084"
 ---
 # <a name="configure-your-hosted-ui-experience"></a>Настройка размещенного пользовательского интерфейса
@@ -104,7 +104,7 @@ ms.locfileid: "68854084"
 |Подпись изображения   | Определяет, отображаются ли изображения в результатах поиска.|
 
 
-Следующие конфигурации отображаются при нажатии **На продвинутые конфигурации Show:**
+Если щелкнуть **Показать расширенные конфигурации**, отображаются следующие конфигурации:
 
 
 |  | |
@@ -163,7 +163,7 @@ ms.locfileid: "68854084"
 - "Logo URL" (URL-адрес логотипа).
 - "Favicon URL" (URL-адрес значка).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Use decoration markers to highlight text](../bing-web-search/hit-highlighting.md) (Использование маркеров оформления для выделения текста)
 - [Отображение веб-страниц на страницах](./page-webpages.md)

@@ -1,7 +1,7 @@
 ---
 title: Метод BreakSentence в API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Метод Translator Text API BreakSentence определяет позиционирование границ предложения в фрагменте текста.
+description: Метод API перевода текстов Бреаксентенце определяет положение границ предложения в фрагменте текста.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 01/21/2020
 ms.author: swmachan
 ms.openlocfilehash: 4c314148b8e1495a8b5a12c42d4989d13cdd6a08
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76548124"
 ---
 # <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
@@ -43,7 +43,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 | Заголовки | Описание |
 | ------- | ----------- |
-| Заголовок аутентификации (ы) <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
+| Заголовки проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
 | Content-Type | **Обязательный заголовок запроса**.<br/>Указывает тип содержимого для полезных данных. Возможные значения: `application/json`. |
 | Content-Length    | **Обязательный заголовок запроса**.<br/>Длина текста запроса.  | 
 | X-ClientTraceId   | **Необязательно**.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Обратите внимание, что этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем `ClientTraceId`.  | 
@@ -129,7 +129,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Сервер отклонил запрос из-за превышения лимита запроса.</td>
+    <td>Сервер отклонил запрос, так как клиент превысил лимиты запросов.</td>
   </tr>
   <tr>
     <td>500</td>

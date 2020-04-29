@@ -1,7 +1,7 @@
 ---
 title: Метод Dictionary Examples в API перевода текстов
 titleSuffix: Azure Cognitive Services
-description: Метод Примеров словаря API текста переводчика приводит примеры, показывают, как термины в словаре используются в контексте.
+description: В API перевода текстов словарные примеры приведены примеры, демонстрирующие использование терминов в словаре в контексте.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 01/21/2020
 ms.author: swmachan
 ms.openlocfilehash: b3551a8df19e47178c7bacd9218cfa60b66d81f9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76548073"
 ---
 # <a name="translator-text-api-30-dictionary-examples"></a>API перевода текстов 3.0: Dictionary Examples
@@ -35,15 +35,15 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 
 | Параметр запроса | Описание |
 | --------- | ----------- |
-| api-version <img width=200/> | **Обязательный параметр.**<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`. |
-| из | **Обязательный параметр.**<br/>Определяет язык оригинального текста. Исходный язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`. |
-| значение | **Обязательный параметр.**<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`.  | 
+| api-version <img width=200/> | **Обязательный параметр**.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`. |
+| из | **Обязательный параметр**.<br/>Определяет язык оригинального текста. Исходный язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`. |
+| значение | **Обязательный параметр**.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`.  | 
 
 Заголовки запроса:
 
 | Заголовки  | Описание |
 | ------ | ----------- |
-| Заголовок аутентификации (ы) <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
+| Заголовки проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
 | Content-Type | **Обязательный заголовок запроса**.<br/>Указывает тип содержимого для полезных данных. Возможные значения: `application/json`. |
 | Content-Length   | **Обязательный заголовок запроса**.<br/>Длина текста запроса. |
 | X-ClientTraceId   | **Необязательно**.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем `ClientTraceId`. |

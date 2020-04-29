@@ -1,7 +1,7 @@
 ---
-title: Экспорт или удаление пользовательских данных - Модератор контента
+title: Экспорт или удаление данных пользователя Content Moderator
 titleSuffix: Azure Cognitive Services
-description: Вы имеете полный контроль над своими данными. Узнайте, как просматривать, экспортировать или удалять данные в Модераторе содержимого.
+description: Вы имеете полный контроль над данными. Узнайте, как просматривать, экспортировать или удалять данные в Content Moderator.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: pafarley
 ms.openlocfilehash: 81713bf8d424b9f272f6b1bccf3657810160d4cf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73744793"
 ---
 # <a name="export-or-delete-user-data-in-content-moderator"></a>Экспорт и удаление данных пользователя в Content Moderator

@@ -8,11 +8,11 @@ ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: mimckitt
-ms.openlocfilehash: 66fd656b5175547641150a048e57c978dc06d291
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: af5998a4207521d49ea4fd7956256aa6c880e6e9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79476830"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Изменение масштабируемого набора виртуальных машин
@@ -80,13 +80,13 @@ az vmss show --resource-group myResourceGroup --name myScaleSet
     Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceView
     ```
 
-- Azure CLI с [az vmss получить-экземпляр-вид:](/cli/azure/vmss)
+- Azure CLI с помощью команды [AZ vmss Get-instance-View](/cli/azure/vmss):
 
     ```azurecli
     az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet
     ```
 
-- Вы также можете использовать [resources.azure.com](https://resources.azure.com) или языковые [SDK Azure](https://azure.microsoft.com/downloads/)
+- Вы также можете использовать [Resources.Azure.com](https://resources.azure.com) или [пакеты SDK Azure](https://azure.microsoft.com/downloads/) для конкретного языка.
 
 Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI.
 
@@ -180,7 +180,7 @@ $ az vmss show --resource-group myResourceGroup --name myScaleSet
     az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet --instance-id instanceId
     ```
 
-- Вы также можете использовать [resources.azure.com](https://resources.azure.com) или [SDK Azure](https://azure.microsoft.com/downloads/)
+- Вы также можете использовать [Resources.Azure.com](https://resources.azure.com) или [пакеты SDK Azure](https://azure.microsoft.com/downloads/) .
 
 Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI.
 
@@ -309,9 +309,9 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 - Можно также использовать [пакеты SDK Azure](https://azure.microsoft.com/downloads/) для конкретного языка.
 
 >[!NOTE]
-> В кластерах Service Fabric можно использовать только *автоматический* режим, но обновление обрабатывается по-разному. Для получения дополнительной [информации](../service-fabric/service-fabric-application-upgrade.md)см.
+> В кластерах Service Fabric можно использовать только *автоматический* режим, но обновление обрабатывается по-разному. Дополнительные сведения см. в разделе [Service Fabric обновления приложения](../service-fabric/service-fabric-application-upgrade.md).
 
-Существует один тип изменения глобальных свойств масштабируемого набора, который не соответствует политике обновления. Изменения в наборе шкалы ОС и профиля диска данных (например, имя пользователя администратора и пароль) могут быть изменены только в версии API *2017-12-01* или позже. Эти изменения применяются только к виртуальным машинам, созданным после изменения модели масштабируемого набора. Чтобы обеспечить актуальность существующих виртуальных машин, необходимо пересоздать образ каждой существующей виртуальной машины. Это можно сделать следующим образом.
+Существует один тип изменения глобальных свойств масштабируемого набора, который не соответствует политике обновления. Изменения в профилях ОС и дисков данных масштабируемого набора (например, имя пользователя и пароль администратора) можно изменить только в API версии *2017-12-01* или более поздней. Эти изменения применяются только к виртуальным машинам, созданным после изменения модели масштабируемого набора. Чтобы обеспечить актуальность существующих виртуальных машин, необходимо пересоздать образ каждой существующей виртуальной машины. Это можно сделать следующим образом.
 
 - Можно использовать REST API с [compute/virtualmachinescalesets/reimage](/rest/api/compute/virtualmachinescalesets/reimage), как показано ниже.
 
@@ -342,7 +342,6 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 - зоны доступности;
 - издатель ссылки на образ;
 - предложение ссылки на образ.
-- Ссылка на изображения sku
 - тип учетной записи хранения управляемого диска ОС.
 
 ### <a name="properties-that-can-only-be-changed-based-on-the-current-value"></a>Свойства, которые можно изменить только на основе текущего значения
@@ -450,5 +449,5 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 > Эти команды предполагают наличие только одной конфигурации IP и балансировщика нагрузки в масштабируемом наборе. Если их несколько, может потребоваться использовать индекс списка, отличный от *0*.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Общие задачи управления масштабируемыми наборами можно также выполнять с помощью [Azure CLI](virtual-machine-scale-sets-manage-cli.md) или [Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md).

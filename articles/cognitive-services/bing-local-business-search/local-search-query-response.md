@@ -1,5 +1,5 @@
 ---
-title: Отправка и использование aPI запросов и ответов - Bing Local Business Search
+title: Отправка и использование API-запросов и ответов. локальный поиск в Bing для бизнеса
 titleSuffix: Azure Cognitive Services
 description: В этой статье вы узнаете, как с помощью API Bing Local Business Search отправлять и использовать запросы поиска.
 services: cognitive-services
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: rosh
 ms.openlocfilehash: 25bcdb89002fec4f9b67b091996d7bf80bcf21c8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74326725"
 ---
 # <a name="sending-and-using-bing-local-business-search-api-queries-and-responses"></a>Отправка и использование запросов и ответов API Bing Local Business Search
@@ -146,8 +146,8 @@ Expires: Tue, 16 Oct 2018 16:25:15 GMT
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../includes/cognitive-services-bing-throttling-requests.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
-- [Местный бизнес Поиск Java быстрый запуск](quickstarts/local-search-java-quickstart.md)
+- [Краткое руководство. Отправка запроса в API Bing для поиска местных компаний с помощью Java](quickstarts/local-search-java-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью Node](quickstarts/local-search-node-quickstart.md)
 - [Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python](quickstarts/local-search-python-quickstart.md)

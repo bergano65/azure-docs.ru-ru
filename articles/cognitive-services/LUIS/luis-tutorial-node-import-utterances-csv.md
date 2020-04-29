@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: diberry
 ms.openlocfilehash: ef5f6967b7ad9500672d00d93dd8acaca99e5948
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73499464"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
@@ -28,11 +28,11 @@ ms.locfileid: "73499464"
 
 * Войдите на веб-сайт [LUIS](luis-reference-regions.md) и в параметрах учетной записи найдите [ключ разработки](luis-concept-keys.md#authoring-key). Этот ключ используется для вызова API разработки.
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-* Эта статья начинается с CSV для гипотетических файлов журнала компании запросов пользователей. Его можно скачать [здесь](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
+* Эта статья начинается с CSV-файла для гипотетических файлов журналов запросов пользователей. Его можно скачать [здесь](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
 * Установите Node.js последней версии с NPM. Скачать эту версию можно [здесь](https://nodejs.org/en/download/).
 * **(Рекомендуется)** Visual Studio Code для применения функции IntelliSense и отладки. Скачать Visual Studio Code бесплатно можно [здесь](https://code.visualstudio.com/).
 
-Весь код в этой статье доступен в [репозитории языка Azure-Samples Understanding GitHub.](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv) 
+Весь код в этой статье доступен в [репозитории Azure-samples Language Understanding GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv). 
 
 ## <a name="map-preexisting-data-to-intents-and-entities"></a>Сопоставление существующих данных с намерениями и сущностями
 Даже если у вас есть система, которая была создана без учета LUIS, и если она содержит текстовые данные, сопоставляемые с разными задачами, которые хотят выполнять пользователи, вы можете осуществлять сопоставления из существующих категорий пользовательского ввода с намерениями в LUIS. Если вы можете определить важные слова или фразы в речи пользователя, эти слова можно сопоставлять с сущностями.
@@ -186,7 +186,7 @@ upload done
 ![Намерение TurnOn](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Проверьте и обучите свое приложение на веб-сайте LUIS](luis-interactive-test.md)
@@ -195,6 +195,6 @@ upload done
 
 В этом примере приложения используются следующие API LUIS:
 - [создать приложение](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)
-- [добавить намерения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0c)
-- [добавить сущности](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0e) 
-- [добавить высказывания](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09)
+- [Добавление целей](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0c)
+- [Добавление сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0e) 
+- [Добавить фразы продолжительностью](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09)

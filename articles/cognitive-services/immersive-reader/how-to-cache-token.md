@@ -1,7 +1,7 @@
 ---
 title: Кэширование маркера проверки подлинности
 titleSuffix: Azure Cognitive Services
-description: В этой статье будет показан способ кэширования маркера проверки подлинности.
+description: В этой статье показано, как кэшировать маркер проверки подлинности.
 author: metanMSFT
 manager: guillasi
 ms.service: cognitive-services
@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: metan
 ms.openlocfilehash: e652aa29b1c1935fcc4887dbe13ef9b683a8bd05
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75946169"
 ---
-# <a name="how-to-cache-the-authentication-token"></a>Как кэшировать токен проверки подлинности
+# <a name="how-to-cache-the-authentication-token"></a>Кэширование маркера проверки подлинности
 
-В этой статье показано, как кэшировать токен проверки подлинности, чтобы повысить производительность приложения.
+В этой статье показано, как кэшировать маркер проверки подлинности для повышения производительности приложения.
 
 ## <a name="using-aspnet"></a>Использование ASP.NET
 
-Импортируйте пакет **Microsoft.IdentityModel.Customers.ActiveDirectory** NuGet, который используется для приобретения токена. Затем используйте следующий код `AuthenticationResult`для приобретения, используя значения аутентификации, которые вы получили при [создании ресурса Immersive Reader.](./how-to-create-immersive-reader.md)
+Импортируйте пакет NuGet **Microsoft. IdentityModel. Clients. ActiveDirectory** , который используется для получения маркера. Затем используйте следующий код `AuthenticationResult`, чтобы получить, используя значения проверки подлинности, которые были получены при [создании иммерсивного ресурса чтения](./how-to-create-immersive-reader.md).
 
 ```csharp
 private async Task<AuthenticationResult> GetTokenAsync()
@@ -34,11 +34,11 @@ private async Task<AuthenticationResult> GetTokenAsync()
 }
 ```
 
-Объект `AuthenticationResult` имеет `AccessToken` свойство, которое является фактическим маркером, который вы будете использовать при запуске Immersive Reader с помощью SDK. Он также `ExpiresOn` имеет свойство, которое обозначает, когда срок действия токена истечет. Перед запуском Immersive Reader вы можете проверить, истек ли срок действия токена, и приобрести новый токен только в том случае, если он истек.
+`AuthenticationResult` Объект имеет `AccessToken` свойство, которое является фактическим маркером, который будет использоваться при запуске иммерсивное средство чтения с помощью пакета SDK. Он также имеет `ExpiresOn` свойство, которое обозначает, когда истечет срок действия маркера. Перед запуском иммерсивное средство чтения можно проверить, истек ли срок действия маркера, и получить новый токен, только если срок его действия истек.
 
-## <a name="using-nodejs"></a>Использование Node.JS
+## <a name="using-nodejs"></a>Использование Node. JS
 
-Добавьте пакет [**запроса**](https://www.npmjs.com/package/request) npm в проект. Используйте следующий код для приобретения маркера, используя значения аутентификации, которые вы получили при [создании ресурса Immersive Reader.](./how-to-create-immersive-reader.md)
+Добавьте пакет [**request**](https://www.npmjs.com/package/request) NPM в проект. Используйте следующий код, чтобы получить маркер, используя значения проверки подлинности, полученные при [создании иммерсивного ресурса чтения](./how-to-create-immersive-reader.md).
 
 ```javascript
 router.get('/token', function(req, res) {
@@ -64,7 +64,7 @@ router.get('/token', function(req, res) {
 });
 ```
 
-Свойство `expires_on` является датой и временем, в которое истекает срок истечения токена, выраженным как количество секунд с 1 января 1970 UTC. Используйте это значение, чтобы определить, истек ли срок действия токена перед попыткой приобрести новый.
+`expires_on` Свойство — это дата и время истечения срока действия маркера, выраженное в виде числа секунд, прошедших с 1 января 1970. в формате UTC. Используйте это значение, чтобы определить, истек ли срок действия токена, прежде чем пытаться получить новый.
 
 ```javascript
 async function getToken() {
@@ -75,6 +75,6 @@ async function getToken() {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со справочной документацией по [пакету SDK для иммерсивного средства чтения](./reference.md).

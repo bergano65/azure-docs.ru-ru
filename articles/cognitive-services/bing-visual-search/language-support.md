@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: scottwhi
 ms.openlocfilehash: b17341bc234ff3dfecc2c6dcd84ef77116a95d61
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68883545"
 ---
 # <a name="language-and-region-support-for-the-bing-visual-search-api"></a>Поддержка языков и регионов в API визуального поиска Bing
@@ -34,9 +34,9 @@ API Bing Visual Search поддерживает более трех десятк
 > - Рецепты, покупки и страницы с аналитическими сведениями доступны только на рынке en-US.
 
 
-## <a name="countriesregions"></a>Страны/Регионы
+## <a name="countriesregions"></a>Страны и регионы
 
-|Страна или регион|Код|
+|Страна|Код|
 |-------|----|
 |Аргентина|AR|
 |Австралия|AU|
@@ -52,7 +52,7 @@ API Bing Visual Search поддерживает более трех десятк
 |Гонконг, САР|HK|
 |Индия|IN|
 |Индонезия|ID|
-|Италия|IT|
+|Италия|ИТ-отдел|
 |Япония|JP|
 |Корея|KR|
 |Малайзия|MY|
@@ -78,7 +78,7 @@ API Bing Visual Search поддерживает более трех десятк
 
 ## <a name="markets"></a>Рынки
 
-|Страна или регион|Язык|Код рынка|
+|Страна|Язык|Код рынка|
 |-------|--------|-----------|
 |Аргентина|Испанский|es-AR|
 |Австралия|Английский|en-AU|

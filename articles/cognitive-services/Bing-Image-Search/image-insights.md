@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: scottwhi
 ms.openlocfilehash: f84c6329c2a4dd0a9ad9e81f3700c9e31de95a2a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68883429"
 ---
 # <a name="get-image-insights-with-the-bing-image-search-api"></a>Получение аналитических сведений об изображениях с помощью API Bing для поиска изображений
@@ -374,7 +374,7 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="finding-visually-similar-products"></a>Поиск визуально похожих продуктов  
 
-Чтобы найти изображения, содержащие продукты, визуально похожие на продукты, найденные в исходном изображении, установите параметр [запроса модулей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#modulesrequested) на SimilarProducts.  
+Чтобы найти изображения, содержащие продукты, которые визуально похожи на продукты, найденные на исходном изображении, задайте для параметра запроса [модулей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#modulesrequested) значение симиларпродуктс.  
 
 Следующий запрос показывает способ получения изображений визуально похожих продуктов. Запрос использует параметр запроса [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#insightstoken) для идентификации исходного изображения, которое было возвращено в предыдущем запросе. Чтобы повысить релевантность, следует включить строку запроса пользователя.  
 

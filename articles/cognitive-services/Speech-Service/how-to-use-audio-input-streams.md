@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: fmegen
 ms.openlocfilehash: 3039276a49e7bb41660d114e78ca047a3f77f279
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74109934"
 ---
 # <a name="about-the-speech-sdk-audio-input-stream-api"></a>Об API входного аудиопотока в пакете SDK для службы "Речь"
 
-Аудио **входной поток** API речи SDK обеспечивает способ потоковой передачи звука в распознавателей вместо использования микрофона или входного файла API.
+API **потока входных данных** РЕЧЕВОГО пакета SDK предоставляет способ потоковой передачи в распознаватели вместо использования микрофона или API-интерфейсов входного файла.
 
 При использовании входных аудиопотоков выполняется следующая процедура.
 

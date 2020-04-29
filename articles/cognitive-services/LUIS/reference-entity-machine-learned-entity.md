@@ -1,7 +1,7 @@
 ---
-title: Машинно-выученный тип сущности - LUIS
+title: Тип сущности, изученной компьютером — LUIS
 titleSuffix: Azure Cognitive Services
-description: Машино-изученная сущность является предпочтительным объектом для создания приложений LUIS.
+description: Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,24 +11,24 @@ ms.topic: reference
 ms.date: 12/30/2019
 ms.author: diberry
 ms.openlocfilehash: aac4ba3ec63d425cac782f5db65bba923d24ed71
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75552004"
 ---
 # <a name="machine-learned-entity"></a>Сущность, прошедшая машинное обучение
 
-Машино-изученная сущность является предпочтительным объектом для создания приложений LUIS.
+Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
 
 
 ## <a name="example-json"></a>Пример JSON
 
-Предположим, что приложение принимает заказы на пиццу, такие как [разлагаемое руководство учебник.](tutorial-machine-learned-entity.md) Каждый заказ может включать в себя несколько различных пицц, в том числе различных размеров.
+Предположим, что приложение принимает заказы на пиццу, например [учебник по сущностям делимыми](tutorial-machine-learned-entity.md). Каждый заказ может включать несколько различных пицц, включая различные размеры.
 
 Ниже приведены примеры фраз.
 
-|Пример высказываний для приложения для пиццы|
+|Пример фразы продолжительностью для приложения пиццы|
 |--|
 |`Can I get a pepperoni pizza and a can of coke please`|
 |`can I get a small pizza with onions peppers and olives`|
@@ -38,13 +38,13 @@ ms.locfileid: "75552004"
 
 #### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-Поскольку объект, обученный машиной, может иметь много подкомпонентов с ограничениями и дескрипторами, это только пример. Он должен рассматриваться как руководство для того, что ваша сущность вернется.
+Поскольку сущность, предназначенная для компьютера, может иметь множество компонентов с ограничениями и дескрипторами, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
 
 Рассмотрим запрос:
 
 `deliver 1 large cheese pizza on thin crust and 2 medium pepperoni pizzas on deep dish crust`
 
-Это JSON, `verbose=false` если установлен в строке запроса:
+Это JSON, если `verbose=false` в строке запроса задано:
 
 ```json
 "entities": {
@@ -102,7 +102,7 @@ ms.locfileid: "75552004"
 
 ```
 
-Это JSON, `verbose=true` если установлен в строке запроса:
+Это JSON, если `verbose=true` в строке запроса задано:
 
 ```json
 "entities": {
@@ -343,11 +343,11 @@ ms.locfileid: "75552004"
 ```
 #### <a name="v2-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
 
-Эта сущность недоступна во время выполнения прогноза V2.
+Эта сущность недоступна в среде выполнения прогнозирования версии 2.
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Узнайте больше о машинно-изученной сущности, включая [учебник,](tutorial-machine-learned-entity.md) [концепции](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководства.](luis-how-to-add-entities.md#create-a-machine-learned-entity)
+Узнайте больше о сущности, занятой компьютером, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
 
-Узнайте о сущности [списка](reference-entity-list.md) и [сущности регулярного выражения.](reference-entity-regular-expression.md)
+Сведения о сущности [списка](reference-entity-list.md) и сущности [регулярного выражения](reference-entity-regular-expression.md) .

@@ -1,7 +1,7 @@
 ---
 title: Конечные точки Пользовательского поиска Bing
 titleSuffix: Azure Cognitive Services
-description: Создавайте индивидуальный поиск по темам, которые вас волнуют. Пользователи видят результаты поиска с учетом содержимого, который им небезразличен.
+description: Создавайте специализированные средства поиска по тем темам, которые вас интересуют. Пользователи видят результаты поиска, связанные с содержимым, о котором они интересуют.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
 ms.openlocfilehash: 03ec22caedd4e317b9e1fe781dc3d983febc7a6d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74072782"
 ---
 # <a name="custom-search"></a>Пользовательский поиск
@@ -57,7 +57,7 @@ https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/images/search
 
 Сведения о настройке экземпляра пользовательского поиска см. в [этой статье](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/define-your-custom-view).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Интерфейсы API **Bing** поддерживают действия поиска, которые возвращают результаты определенного типа.Все конечные точки поиска возвращают результаты в виде объектов ответа JSON. Все конечные точки поддерживают запросы, которые возвращают результаты с учетом языка и (или) местоположения по значениям долготы, широты и радиуса поиска.
 
 Полные сведения о параметрах, поддерживаемых каждой конечной точкой, приведены в справочной документации по каждому типу.

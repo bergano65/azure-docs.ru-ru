@@ -12,10 +12,10 @@ ms.date: 04/17/2019
 ms.author: kefre
 ms.custom: seodec18
 ms.openlocfilehash: e8ab205a43e5cb1e8e2b96dbd9600e1fceb29403
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68564593"
 ---
 # <a name="computer-vision-api-frequently-asked-questions"></a>Часто задаваемые вопросы об API компьютерного зрения
@@ -25,7 +25,7 @@ ms.locfileid: "68564593"
 
 ---
 
-**Вопрос:** *Могу ли я обучить Computer Vision API использованию пользовательских тегов?  Например, я хотел бы кормить в фотографии кошки породы "обучить" ИИ, а затем получить значение породы по запросу ИИ.*
+**Вопрос**. *можно ли обучить API компьютерного зрения использовать пользовательские теги?  Например, я хотел бы передать в виде изображений категории CAT, чтобы "обучать" AI, а затем получил значение в запросе AI.*
 
 **Ответ**. Эта функция сейчас недоступна. Тем не менее наши инженеры работают над тем, чтобы добавить ее в API компьютерного зрения.
 

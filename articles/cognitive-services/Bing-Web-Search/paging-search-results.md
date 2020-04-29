@@ -1,7 +1,7 @@
 ---
-title: Как страницу через результаты поиска - Bing Поиск AIS
+title: Просмотр результатов поиска с помощью API-интерфейсы поиска Bing
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как просматривать результаты поиска с помощью ApIs поиска Bing.
+description: Сведения о просмотре результатов поиска из API-интерфейсы поиска Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: aahi
 ms.openlocfilehash: ea883bb294a8769b3c9be1e0eafc2e3e7c811b48
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73481729"
 ---
-# <a name="how-to-page-through-results-from-the-bing-search-apis"></a>Как просматривать результаты apIs поиска Bing
+# <a name="how-to-page-through-results-from-the-bing-search-apis"></a>Как пролистывать результаты из API-интерфейсы поиска Bing
 
-При отправке вызова в ATUBE Bing Web, Custom, Image, News или Video Search Bing возвращает подмножество общего числа результатов, которые могут иметь отношение к запросу. Чтобы получить предполагаемое общее количество доступных результатов, получите доступ к `totalEstimatedMatches` полю объекта ответа. 
+При отправке вызова в API Bing для веб-приложений, пользовательских интерфейсов, изображений, новостей или Поиск видеоов Bing возвращает подмножество общего количества результатов, которые могут быть актуальны для запроса. Чтобы получить оценочное общее число доступных результатов, получите доступ к `totalEstimatedMatches` полю объекта ответа. 
 
 Пример: 
 
@@ -35,21 +35,21 @@ ms.locfileid: "73481729"
 }  
 ```
 
-## <a name="paging-through-search-results"></a>Прогон с помощью результатов поиска
+## <a name="paging-through-search-results"></a>Разбиение по страницам результатов поиска
 
-Чтобы получить страницу по `count` имеющимся результатам, используйте параметры `offset` запроса при отправке запроса.  
+Чтобы просмотреть доступные результаты, используйте параметры запроса `count` и `offset` при отправке запроса.  
 
 > [!NOTE]
 >
-> * Paging с Bing Video, Image и News AIS применяется только к общему видео (),`/video/search`новости ( )`/news/search`и изображения ( )`/image/search`поиск. Прописка по трендовым темам и категориям не поддерживается.  
-> * Поле `TotalEstimatedMatches` представляет собой оценку общего числа результатов поиска для текущего запроса. При настройке `count` `offset` параметров эта оценка может измениться.
+> * Подкачка интерфейсов API Bing Video, Image и News применяется только к основным операциям`/video/search`поиска видео ()`/news/search`, новостей ()`/image/search`и Image (). Разбиение по страницам разделов и категорий тенденций не поддерживается.  
+> * `TotalEstimatedMatches` Поле представляет собой оценку общего количества результатов поиска для текущего запроса. При задании параметров `count` и `offset` эта оценка может измениться.
 
 | Параметр | Описание                                                                                                                                                                |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `count`   | Задает количество результатов, возвращаемых в ответе. Обратите `count`внимание, что значение значения по умолчанию и максимальное количество результатов, которые вы можете запросить, варьируются в зависимости от API. Эти значения можно найти в справочной документации в соответствии с [следующими шагами.](#next-steps) |
+| `count`   | Задает количество результатов, возвращаемых в ответе. Обратите внимание, что значение `count`по умолчанию и максимальное количество результатов, которые можно запросить, зависят от API. Эти значения можно найти в справочной документации в разделе [дальнейшие действия](#next-steps). |
 | `offset`  | Задает количество пропускаемых результатов. Значение `offset` начинается с нуля и должно быть меньше (`totalEstimatedMatches` - `count`).                                           |
 
-Например, если вы хотите отобразить 15 `count` результатов на `offset` страницу, вы установите 15 и до 0, чтобы получить первую страницу результатов. Для каждого последующего вызова API `offset` вы будете приравливать на 15. В следующем примере запрашиваются 15 веб-страниц с начальным смещением в 45 результатов.
+Например, если вы хотите отобразить 15 результатов на странице, для получения первой страницы результатов необходимо `count` задать значение 15 `offset` и значение 0. Для каждого последующего вызова API значение будет увеличено `offset` на 15. В следующем примере запрашиваются 15 веб-страниц с начальным смещением в 45 результатов.
 
 ```  
 GET https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies&count=15&offset=45&mkt=en-us HTTP/1.1  
@@ -57,7 +57,7 @@ Ocp-Apim-Subscription-Key: 123456789ABCDE
 Host: api.cognitive.microsoft.com  
 ```
 
-При использовании `count` значения по умолчанию необходимо `offset` указать параметр запроса в вызовах API.  
+Если используется значение по умолчанию `count` , необходимо только указать параметр `offset` запроса в вызовах API.  
 
 ```  
 GET https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies&offset=45&mkt=en-us HTTP/1.1  
@@ -65,18 +65,18 @@ Ocp-Apim-Subscription-Key: 123456789ABCDE
 Host: api.cognitive.microsoft.com  
 ```
 
-При использовании AAP-изображений и видео `nextOffset` Bing можно использовать значение, чтобы избежать дублирования результатов поиска. Получите значение `Images` от `Videos` объектов или ответов и `offset` используйте его в своих запросах с параметром.  
+При использовании API-интерфейсов изображений и видео Bing можно использовать `nextOffset` значение, чтобы избежать дублирования результатов поиска. Получите значение из объектов ответов `Images` или `Videos` и используйте его в запросах с `offset` параметром.  
 
 > [!NOTE]
-> API поиска в Интернете возвращает результаты поиска, которые могут включать веб-страницы, изображения, видео и новости. Когда вы просматриваете результаты поиска с помощью API веб-поиска Bing, вы просматриваете только [WebPages,](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webpage)а не другие типы ответов, такие как изображения или новости. Результаты `WebPage` поиска на объектах могут включать результаты, которые отображаются и в других типах ответов.
+> API Bing для поиска в Интернете возвращает результаты поиска, которые могут включать веб-страницы, изображения, видео и новости. При просмотре результатов поиска из API Bing для поиска в Интернете отображаются только [веб-страницы](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webpage), а не другие типы ответов, такие как изображения или Новости. Результаты поиска в `WebPage` объектах могут содержать результаты, которые также отображаются в других типах ответов.
 >
-> Если вы `responseFilter` используете параметр запроса без указания значений `count` фильтра, не используйте параметры и `offset` параметры. 
+> Если вы используете параметр `responseFilter` запроса без указания каких бы то ни было значений фильтра, `count` не `offset` используйте параметры и. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Что такое AIS веб-поиска Bing?](bing-api-comparison.md)
+* [Что такое Поиск в Интернете Bing API?](bing-api-comparison.md)
 * [Справка по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference)
-* [Ссылка на API пользовательского поиска Bing](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference)
-* [Bing Новости Поиск API v7 ссылка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference)
-* [Bing Видео Поиск API v7 ссылка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference)
-* [Ссылка на API поиска изображений Bing](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Справочник по API пользовательского поиска Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference)
+* [Справочник по API Bing для поиска новостей версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference)
+* [Справочник по API Bing для поиска видео версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference)
+* [Справочник по API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

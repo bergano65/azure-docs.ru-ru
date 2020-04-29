@@ -1,5 +1,5 @@
 ---
-title: Номер Предварительно построенного объекта - LUIS
+title: Номер предварительно созданной сущности — LUIS
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность number в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -12,21 +12,21 @@ ms.topic: reference
 ms.date: 09/27/2019
 ms.author: diberry
 ms.openlocfilehash: 85e3589d7467691e2b9a11879510ab980bbd875a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78273464"
 ---
 # <a name="number-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность number для приложения LUIS
 Существует множество способов использования числовых значений для подсчета, выражения и описания фрагментов информации. В этой статье рассматриваются только некоторые возможные примеры. Служба LUIS интерпретирует вариации в фразах пользователя и возвращает согласованные числовые значения. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие сущность number, не нужно.
 
 ## <a name="types-of-number"></a>Типы сущности number
-Номер управляется из репозитория [Распознавания-текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-Numbers.yaml) GitHub
+Число управляется из репозитория [распознавания текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-Numbers.yaml) GitHub
 
 ## <a name="examples-of-number-resolution"></a>Примеры разрешения сущности number
 
-| Фраза        | Сущность   | Решение |
+| Фраза        | Объект   | Решение |
 | ------------- |:----------------:| --------------:|
 | ```one thousand times```  | ```"one thousand"``` |   ```"1000"```      |
 | ```1,000 people```        | ```"1,000"```    |   ```"1000"```      |
@@ -38,7 +38,7 @@ ms.locfileid: "78273464"
 | ```buy two dozen eggs```    | ```"two dozen"``` | ```"24"``` |
 
 
-LUIS включает в себя **`builtin.number`** признанную `resolution` ценность сущности в поле ответа JSON, который она возвращает.
+LUIS включает распознанное значение **`builtin.number`** сущности в `resolution` поле возвращаемого ответа JSON.
 
 ## <a name="resolution-for-prebuilt-number"></a>Разрешение для предварительно созданной сущности number
 
@@ -46,9 +46,9 @@ LUIS включает в себя **`builtin.number`** признанную `res
 
 `order two dozen eggs`
 
-#### <a name="v3-response"></a>[Ответ V3](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий JSON с `verbose` параметром, установленным для: `false`
+Следующий код JSON имеет `verbose` параметр со значением: `false`
 
 ```json
 "entities": {
@@ -57,9 +57,9 @@ LUIS включает в себя **`builtin.number`** признанную `res
     ]
 }
 ```
-#### <a name="v3-verbose-response"></a>[V3 многословный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 
-Следующий JSON с `verbose` параметром, установленным для: `true`
+Следующий код JSON имеет `verbose` параметр со значением: `true`
 
 ```json
 "entities": {
@@ -83,7 +83,7 @@ LUIS включает в себя **`builtin.number`** признанную `res
     }
 }
 ```
-#### <a name="v2-response"></a>[V2 ответ](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показан ответ LUIS в формате JSON, который содержит расшифровку высказывания "two dozen" (две дюжины) в значение 24.
 
@@ -103,7 +103,7 @@ LUIS включает в себя **`builtin.number`** признанную `res
 ```
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

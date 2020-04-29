@@ -1,5 +1,5 @@
 ---
-title: Ординальное заранее построенное лицо - LUIS
+title: Порядковый номер предварительно созданной сущности — LUIS
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность ordinal в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -12,17 +12,17 @@ ms.topic: reference
 ms.date: 10/14/2019
 ms.author: diberry
 ms.openlocfilehash: bb3bb27db48255f534e873ed4e93ac62f07016af
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78273450"
 ---
 # <a name="ordinal-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность ordinal для приложения LUIS
 Порядковый номер — это числовое представление объекта внутри набора: `first`, `second`, `third`. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности ordinal, не нужно. Сущность ordinal поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md).
 
 ## <a name="types-of-ordinal"></a>Типы сущностей ordinal
-Ordinal управляется из репозитория [Распознавания-текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-Numbers.yaml#L45) GitHub
+Порядковый номер управляется из репозитория [распознавания текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-Numbers.yaml#L45) GitHub
 
 ## <a name="resolution-for-prebuilt-ordinal-entity"></a>Разрешение для предварительно созданной сущности ordinal
 
@@ -30,9 +30,9 @@ Ordinal управляется из репозитория [Распознава
 
 `Order the second option`
 
-#### <a name="v3-response"></a>[Ответ V3](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий JSON с `verbose` параметром, установленным для: `false`
+Следующий код JSON имеет `verbose` параметр со значением: `false`
 
 ```json
 "entities": {
@@ -41,8 +41,8 @@ Ordinal управляется из репозитория [Распознава
     ]
 }
 ```
-#### <a name="v3-verbose-response"></a>[V3 многословный ответ](#tab/V3-verbose)
-Следующий JSON с `verbose` параметром, установленным для: `true`
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
+Следующий код JSON имеет `verbose` параметр со значением: `true`
 
 ```json
 "entities": {
@@ -67,7 +67,7 @@ Ordinal управляется из репозитория [Распознава
 }
 ```
 
-#### <a name="v2-response"></a>[V2 ответ](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.ordinal**.
 
@@ -86,8 +86,8 @@ Ordinal управляется из репозитория [Распознава
 ```
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
-Узнайте больше о [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md), [номер телефона,](luis-reference-prebuilt-phonenumber.md)и [температуры](luis-reference-prebuilt-temperature.md) лиц.
+Сведения о [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md), [номере телефона](luis-reference-prebuilt-phonenumber.md)и [температуре](luis-reference-prebuilt-temperature.md) .

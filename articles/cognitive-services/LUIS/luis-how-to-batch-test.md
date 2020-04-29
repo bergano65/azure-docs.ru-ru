@@ -1,5 +1,5 @@
 ---
-title: Как выполнить пакетный тест - LUIS
+title: Выполнение пакетного теста — LUIS
 titleSuffix: Azure Cognitive Services
 description: Использование наборов высказываний для пакетного тестирования Интеллектуальной службы распознавание речи (LUIS) для поиска фрагментов речи с неправильными намерениями и сущностями.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: diberry
 ms.openlocfilehash: bfef7eae7158a05b09a3534e8fb44335333d8cf1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73904355"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
@@ -38,7 +38,7 @@ ms.locfileid: "73904355"
 
 3. В поле **Dataset Name** (Имя набора данных) введите имя для набора данных. Файл набора данных содержит **массив высказываний**, включая *помеченное намерение* и *сущности*. Просмотрите синтаксис [примера пакетного файла](luis-concept-batch-test.md#batch-file-format). 
 
-4. Выберите **готовое**. Будет добавлен файл набора данных.
+4. Нажмите кнопку **Готово**. Будет добавлен файл набора данных.
 
 ## <a name="run-rename-export-or-delete-dataset"></a>Запуск, переименование, экспорт и удаление набора данных
 
@@ -54,7 +54,7 @@ ms.locfileid: "73904355"
 
 Скачиваемый набор данных — это тот же файл, который был отправлен для пакетного тестирования.
 
-|Штат|Значение|
+|Состояние|Значение|
 |--|--|
 |![Зеленый круглый значок успешного выполнения теста](./media/luis-how-to-batch-test/batch-test-result-green.png)|Все высказывания успешно протестированы.|
 |![Красный значок x неудачно выполненного теста](./media/luis-how-to-batch-test/batch-test-result-red.png)|По меньшей мере одно намерение высказывания не соответствует прогнозированию.|
@@ -100,7 +100,7 @@ ms.locfileid: "73904355"
 
 [!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты. 
 

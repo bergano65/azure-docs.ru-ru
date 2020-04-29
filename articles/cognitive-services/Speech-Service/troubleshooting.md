@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot речи SDK - Речевая служба
+title: Устранение неполадок речевого пакета SDK — речевая служба
 titleSuffix: Azure Cognitive Services
 description: В этой статье содержится информация, которая поможет решить неполадки, которые могут возникнуть при использовании пакета SDK для распознавания речи.
 services: cognitive-services
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: jhakulin
 ms.openlocfilehash: 421b9adf4ae5d2c641484e646bea096716d46cca
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74815411"
 ---
 # <a name="troubleshoot-the-speech-sdk"></a>Устранение неполадок с пакетом SDK для службы "Речь"
@@ -123,6 +123,6 @@ ms.locfileid: "74815411"
 
 * Аудиозапись создана с помощью неподдерживаемого кодека, что приводит к тому, что аудиоданные воспринимаются как тишина.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Просмотр заметки о выпуске](releasenotes.md)

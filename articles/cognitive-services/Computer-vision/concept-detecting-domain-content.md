@@ -1,5 +1,5 @@
 ---
-title: Содержание для домена - Компьютерное зрение
+title: Содержимое, зависящее от домена — Компьютерное зрение
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как указать область классификации изображений, чтобы получить более подробные сведения об изображении.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 8d6dc91ae7bb0f6d7a24064749d9295558a7d39c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68946338"
 ---
 # <a name="detect-domain-specific-content"></a>Обнаружение содержимого, связанного с определенными предметными областями
@@ -30,7 +30,7 @@ ms.locfileid: "68946338"
 
 Ниже приведен пример ответа JSON, возвращаемого API **models/celebrities/analysis** для следующего изображения.
 
-![Сатья Наделла стоит, улыбаясь](./images/satya.jpeg)
+![Сатья Наделла, улыбающаяся](./images/satya.jpeg)
 
 ```json
 {
@@ -100,7 +100,7 @@ ms.locfileid: "68946338"
 
 Сейчас Компьютерное зрение поддерживает следующие модели для предметной области.
 
-| name | Описание |
+| Имя | Описание |
 |------|-------------|
 | celebrities | Распознавание знаменитостей; поддерживается для изображений, которые были классифицированы как относящиеся к категории `people_` |
 | landmarks | Распознавание ориентиров; поддерживается для изображений, которые были классифицированы как относящиеся к категории `outdoor_` или `building_` |
@@ -137,6 +137,6 @@ ms.locfileid: "68946338"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о концепциях [классификации изображений](concept-categorizing-images.md).

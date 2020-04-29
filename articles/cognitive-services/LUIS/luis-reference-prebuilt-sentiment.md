@@ -12,17 +12,17 @@ ms.topic: reference
 ms.date: 10/22/2019
 ms.author: diberry
 ms.openlocfilehash: dee07859da97f76d9a2db3ccbb71ae74d8ff4846
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78270424"
 ---
-# <a name="sentiment-analysis"></a>Анализ тональности
+# <a name="sentiment-analysis"></a>Анализ мнений
 Если настроен анализ тональности, он входит в ответ JSON LUIS. Дополнительные сведения об анализе тональности см. в документации по [анализу текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/).
 
 
-## <a name="resolution-for-sentiment"></a>Разрешение для настроения
+## <a name="resolution-for-sentiment"></a>Решение для тональности
 
 Данные тональности представляют собой оценку между 1 и 0, означающую положительную (ближе к 1) или отрицательную (ближе к 0) тональность данных.
 
@@ -48,7 +48,7 @@ ms.locfileid: "78270424"
 ```
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

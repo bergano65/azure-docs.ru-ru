@@ -5,19 +5,19 @@ ms.topic: include
 ms.date: 06/24/2019
 ms.author: aahi
 ms.openlocfilehash: d5ed36700e2aea623fb259816e5baddff5215361
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "70381752"
 ---
 <!-- > [!NOTE]
 > Subscription owners can disable the creation of Cognitive Services resources for resource groups and subscriptions by applying [Azure policy](https://docs.microsoft.com/azure/governance/policy/overview#policy-definition), assigning a “Not allowed resource types” policy definition, and specifying **Microsoft.CognitiveServices/accounts** as the target resource type. -->
-Вы можете получить доступ к когнитивным службам Azure через два различных ресурса: ресурс мультислужбы или односервисный.
+Вы можете получить доступ к Cognitive Services Azure с помощью двух различных ресурсов: ресурса с несколькими службами или одной службы.
 
-* Ресурс мультисервисов:
-    * Получите доступ к нескольким когнитивным службам Azure с одним ключом и конечным пунктом.
-    * Консолидирует выставление счетов из служб, которые вы используете.
-* Ресурс для единого обслуживания:
-    * Получите доступ к одной когнитивной службе Azure с уникальным ключом и конечным пунктом для каждой созданной службы. 
-    * Используйте бесплатный уровень, чтобы опробовать услугу.   
+* Ресурс с несколькими службами:
+    * Доступ к нескольким Cognitive Services Azure с одним ключом и конечной точкой.
+    * Консолидация счетов из используемых вами служб.
+* Ресурс одной службы:
+    * Получите доступ к единой службе "Поиск Azure" с уникальным ключом и конечной точкой для каждой созданной службы. 
+    * Используйте уровень Free, чтобы испытать службу.   

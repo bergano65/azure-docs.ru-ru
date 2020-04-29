@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pafarley
 ms.openlocfilehash: 27d9b12d9e1a0237050243c2b5f07edaa8d8857a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72757196"
 ---
 # <a name="moderate-with-custom-image-lists-in-the-api-console"></a>Модерация с помощью настраиваемых списков изображений в консоли API
@@ -164,6 +164,6 @@ API управления списками можно использовать д
    ![Внесение изменений в поле "Request body" (Текст запроса) в консоли "Image Lists - Update Details" (Списки изображений — обновление сведений)](images/try-terms-list-change-1.png)
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте в коде REST API или начните с [краткого руководства по работе со списками изображений с помощью .NET](image-lists-quickstart-dotnet.md), чтобы интегрировать эту функцию в приложение.
