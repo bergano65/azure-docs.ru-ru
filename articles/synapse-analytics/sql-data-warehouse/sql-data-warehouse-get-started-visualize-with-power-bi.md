@@ -12,10 +12,10 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 7e764eeab6f681d90e1a602f02cdb03330d6fd3d
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80350948"
 ---
 # <a name="visualize-data-with-power-bi"></a>Визуализация данных с помощью Power BI
@@ -25,15 +25,15 @@ ms.locfileid: "80350948"
 > 
 > 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для пошагового изучения этого учебника потребуется следующее:
 
 * Хранилище данных SQL, в которое предварительно загружена база данных AdventureWorksDW. Для подготовки хранилища данных см. статью [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) и выберите загрузку демонстрационных данных. Если хранилище данных уже существует, но в нем нет демонстрационных данных, вы можете [загрузить WideWorldImportersDW](load-data-wideworldimportersdw.md).
 
-## <a name="1-connect-to-your-database"></a>1. Подключите к базе данных
+## <a name="1-connect-to-your-database"></a>1. подключение к базе данных
 Чтобы открыть Power BI и подключиться к базе данных AdventureWorksDW, выполните следующие действия.
 
-1. Войти на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Щелкните **Базы данных SQL** и выберите базу данных хранилища данных SQL AdventureWorks.
    
     ![Поиск базы данных](./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-find-database.png)
@@ -93,5 +93,5 @@ ms.locfileid: "80350948"
 
 Эти ограничения и примечания могут измениться по мере улучшения работы продукта.
 
-## <a name="next-steps"></a>Дальнейшие действия
-Теперь, когда мы дали вам некоторое время, чтобы разогреться с образцами данных, посмотреть, как [разработать](sql-data-warehouse-overview-develop.md) или [загрузить](design-elt-data-loading.md). Кроме того, рекомендуем ознакомиться с [веб-сайтом Power BI](https://www.powerbi.com/).
+## <a name="next-steps"></a>Дальнейшие шаги
+Теперь, когда мы предоставили вам некоторое время, чтобы получить демонстрационные данные, см. статью как [разработать](sql-data-warehouse-overview-develop.md) или [загрузить](design-elt-data-loading.md). Кроме того, рекомендуем ознакомиться с [веб-сайтом Power BI](https://www.powerbi.com/).

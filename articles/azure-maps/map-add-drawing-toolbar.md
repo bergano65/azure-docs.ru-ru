@@ -1,6 +1,6 @@
 ---
-title: Добавьте панель инструментов для рисования на карту Карты Microsoft Azure
-description: Как добавить панель инструментов для рисования на карту с помощью Azure Maps Web SDK
+title: Добавление панели инструментов рисования в карту | Карты Microsoft Azure
+description: Добавление панели инструментов рисования в карту с помощью веб-пакета SDK Azure Maps
 author: philmea
 ms.author: philmea
 ms.date: 09/04/2019
@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: bebf1ddfbca3aec5a551193609381cf3510bc3ac
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80334499"
 ---
-# <a name="add-a-drawing-tools-toolbar-to-a-map"></a>Добавление панели инструментов рисования на карту
+# <a name="add-a-drawing-tools-toolbar-to-a-map"></a>Добавление панели инструментов средств рисования на карту
 
-В этой статье показано, как использовать модуль Drawing Tools и отображать панель инструментов рисования на карте. Элемент управления [DrawingToolbar](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest) добавляет панель инструментов для рисования на карте. Вы узнаете, как создавать карты только с одним и всеми инструментами рисования и как настроить визуализацию фигур чертежа в менеджере чертежа.
+В этой статье показано, как использовать модуль средств рисования и отображать панель инструментов рисования на карте. Элемент управления [дравингтулбар](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest) добавляет панель инструментов рисования на карте. Вы узнаете, как создавать карты с одним и всеми инструментами рисования, а также как настраивать отрисовку графических фигур в диспетчере рисунков.
 
 ## <a name="add-drawing-toolbar"></a>Добавление панели инструментов рисования
 
-Следующий код создает экземпляр менеджера чертежа и отображает панель инструментов на карте.
+Следующий код создает экземпляр диспетчера рисунков и отображает панель инструментов на карте.
 
 ```javascript
 //Create an instance of the drawing manager and display the drawing toolbar.
@@ -33,18 +33,18 @@ drawingManager = new atlas.drawing.DrawingManager(map, {
     });
 ```
 
-Ниже приводится полный приведен образец кода работает над ним:
+Ниже приведен полный пример выполнения кода функции, приведенной выше.
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Добавление панели инструментов рисования" src="//codepen.io/azuremaps/embed/ZEzLeRg/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Смотрите <a href='https://codepen.io/azuremaps/pen/ZEzLeRg/'>панель инструментов</a> Pen Add drawing<a href='https://codepen.io/azuremaps'>@azuremaps</a>на Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/ZEzLeRg/'>Добавление панели инструментов рисования</a> с помощью<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
-## <a name="limit-displayed-toolbar-options"></a>Ограничьте отображаемые параметры панели инструментов
+## <a name="limit-displayed-toolbar-options"></a>Параметр "ограничить отображаемые параметры панели инструментов"
 
-Следующий код создает экземпляр менеджера чертежа и отображает панель инструментов с помощью инструмента для рисования полигона на карте. 
+Следующий код создает экземпляр диспетчера рисунков и отображает панель инструментов, используя только инструмент рисования многоугольников на карте. 
 
 ```javascript
 //Create an instance of the drawing manager and display the drawing toolbar with polygon drawing tool.
@@ -57,20 +57,20 @@ drawingManager = new atlas.drawing.DrawingManager(map, {
     });
 ```
 
-Ниже приводится полный приведен образец кода работает над ним:
+Ниже приведен полный пример выполнения кода функции, приведенной выше.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Добавить инструмент для рисования полигона" src="//codepen.io/azuremaps/embed/OJLWWMy/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Смотрите Pen <a href='https://codepen.io/azuremaps/pen/OJLWWMy/'>Добавить полигон рисунок инструмент</a> Azure Maps ( )<a href='https://codepen.io/azuremaps'>@azuremaps</a>на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление инструмента рисования многоугольников" src="//codepen.io/azuremaps/embed/OJLWWMy/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Ознакомьтесь с пером <a href='https://codepen.io/azuremaps/pen/OJLWWMy/'>Добавление инструмента рисования многоугольника</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
-## <a name="change-drawing-rendering-style"></a>Изменение стиля визуализации рисунка
+## <a name="change-drawing-rendering-style"></a>Изменить стиль отрисовки изображения
 
-Стиль нарисованных фигур можно настроить путем извлечения основных слоев менеджера рисования с помощью `drawingManager.getLayers()` функции, а затем настройки параметров на отдельных слоях. Ручки перетаскивания, которые появляются для координат при редактировании формы, являются HTML маркерами. Стиль перетаскивания можно настроить, передавая параметры HTML-маркера `dragHandleStyle` в `secondaryDragHandleStyle` и варианты менеджера рисования.  
+Стиль рисуемых фигур можно настроить, извлекая нижележащие слои диспетчера рисунков с помощью `drawingManager.getLayers()` функции, а затем устанавливая параметры на отдельных слоях. Маркеры перетаскивания, которые отображаются для координат при редактировании фигуры, являются HTML-маркерами. Стиль маркеров перетаскивания можно настроить, передав параметры маркера HTML в параметры `dragHandleStyle` и `secondaryDragHandleStyle` диспетчера рисунков.  
 
-Следующий код получает слои рендеринга от менеджера рисования и изменяет их параметры, чтобы изменить стиль рендеринга для рисования. В этом случае точки будут отображаться с синим значком маркера. Линии будут красными и четыре пикселя в ширину. Полигоны будут иметь зеленый цвет заполнения и оранжевый контур. Затем он изменяет стили перетаскивания, чтобы быть квадратными иконками. 
+Следующий код получает слои подготовки отчетов из диспетчера рисунков и изменяет их параметры, чтобы изменить стиль отрисовки для рисования. В этом случае точки отображаются с синим значком маркера. Линии будут иметь красный и четыре пиксела в ширину. Многоугольники будут иметь зеленый цвет заливки и оранжевый контур. После этого стили маркеров перетаскивания меняются на квадратные значки. 
 
 ```javascript
 //Get rendering layers of drawing manager.
@@ -117,18 +117,18 @@ drawingManager.setOptions({
 });  
 ```
 
-Ниже приводится полный приведен образец кода работает над ним:
+Ниже приведен полный пример выполнения кода функции, приведенной выше.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Изменение стиля визуализации рисунка" src="//codepen.io/azuremaps/embed/OJLWpyj/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Смотрите <a href='https://codepen.io/azuremaps/pen/OJLWpyj/'>стиль визуализации рисунка Pen</a> Change<a href='https://codepen.io/azuremaps'>@azuremaps</a>по средством Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Изменить стиль отрисовки изображения" src="//codepen.io/azuremaps/embed/OJLWpyj/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел <a href='https://codepen.io/azuremaps/pen/OJLWpyj/'>изменение перьевого отображения рисунка</a> с помощью<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Узнайте, как использовать дополнительные функции модуля инструментов рисования:
+Узнайте, как использовать дополнительные функции модуля "инструменты рисования":
 
 > [!div class="nextstepaction"]
 > [Получение данных о фигуре](map-get-shape-data.md)
@@ -142,10 +142,10 @@ drawingManager.setOptions({
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Карта](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Таблица](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest)
 
 > [!div class="nextstepaction"]
-> [Менеджер по рисованию](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest)
+> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest)

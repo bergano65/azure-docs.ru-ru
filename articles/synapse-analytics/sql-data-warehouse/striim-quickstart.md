@@ -1,5 +1,5 @@
 ---
-title: Быстрый старт Striim
+title: Быстрый запуск Стриим
 description: Быстро приступите к работе со Striim и хранилищем данных SQL Azure.
 services: synapse-analytics
 author: mlee3gsd
@@ -12,10 +12,10 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: e963d62df8d2c416726852ee3d46daf1cd22936e
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80349943"
 ---
 # <a name="striim-azure-sql-dw-marketplace-offering-install-guide"></a>Руководство по установке Striim для хранилища данных SQL Azure
@@ -30,7 +30,7 @@ ms.locfileid: "80349943"
 
 ![Настройка Striim][configure]
 
-После развертывания нажмите \<на VM Name>-masternode на портале Azure, нажмите Connect и скопируйте Логин с помощью локальной учетной записи VM 
+После развертывания щелкните имя \<виртуальной машины>-мастерноде в портал Azure, щелкните подключить и скопируйте имя входа с помощью локальной учетной записи виртуальной машины. 
 
 ![Подключение Striim к хранилищу данных SQL Azure][connect]
 
@@ -56,7 +56,7 @@ ms.locfileid: "80349943"
 
 ![Запуск кластера Striim][start-striim]
 
-Теперь откройте свой любимый браузер и перейдите на \<DNS Name>:9080
+Теперь откройте свой любимый браузер и перейдите к \<DNS-имени>:9080
 
 ![Переход на экран входа][navigate]
 

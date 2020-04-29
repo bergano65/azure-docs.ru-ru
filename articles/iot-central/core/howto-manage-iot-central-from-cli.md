@@ -1,6 +1,6 @@
 ---
-title: Управление IoT Центральной от Azure CLI (ru) Документы Майкрософт
-description: В этой статье описывается, как создавать и управлять приложением IoT Central с помощью CLI. Вы можете просматривать, изменять и удалять приложение с помощью CLI.
+title: Управление IoT Central из Azure CLI | Документация Майкрософт
+description: В этой статье описывается создание приложения IoT Central и управление им с помощью интерфейса командной строки. Вы можете просматривать, изменять и удалять приложения с помощью интерфейса командной строки.
 services: iot-central
 ms.service: iot-central
 author: dominicbetts
@@ -9,17 +9,17 @@ ms.date: 03/27/2020
 ms.topic: how-to
 manager: philmea
 ms.openlocfilehash: df24a2dc6e9bd058a2f8b1355b8760653ed3128a
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80365527"
 ---
-# <a name="manage-iot-central-from-azure-cli"></a>Управление IoT Central от Azure CLI
+# <a name="manage-iot-central-from-azure-cli"></a>Управление IoT Central из Azure CLI
 
 [!INCLUDE [iot-central-selector-manage](../../../includes/iot-central-selector-manage.md)]
 
-Вместо создания и управления приложениями IoT Central на [веб-сайте менеджера приложений Azure IoT,](https://aka.ms/iotcentral) вы можете использовать [Azure CLI](/cli/azure/) для управления приложениями.
+Вместо создания приложений IoT Central и управления ими на веб-сайте [диспетчера приложений Azure IOT Central](https://aka.ms/iotcentral) можно использовать [Azure CLI](/cli/azure/) для управления приложениями.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,14 +27,14 @@ ms.locfileid: "80365527"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы предпочитаете запускать Azure CLI на локальной машине, [см.](/cli/azure/install-azure-cli) При локальном запуске Azure CLI используйте команду **входа в Az,** чтобы войти в Azure, прежде чем пытаться использовать команды в этой статье.
+Если вы предпочитаете запускать Azure CLI на локальном компьютере, см. статью [установка Azure CLI](/cli/azure/install-azure-cli). При запуске Azure CLI локально используйте команду **AZ login** для входа в Azure перед выполнением команд, описанных в этой статье.
 
 > [!TIP]
-> Если вам нужно запустить команды CLI в другой подписке Azure, [см.](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#change-the-active-subscription)
+> Если вам нужно выполнить команды интерфейса командной строки в другой подписке Azure, см. статью [Изменение активной подписки](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#change-the-active-subscription).
 
 ## <a name="install-the-extension"></a>Установка расширения
 
-Команды в этой статье являются частью расширения **CLI лазурного ят.** Выполнить следующую команду для установки расширения:
+Команды, приведенные в этой статье, входят в состав расширения **Azure-IOT** CLI. Выполните следующую команду, чтобы установить расширение:
 
 ```azurecli-interactive
 az extension add --name azure-iot
@@ -42,7 +42,7 @@ az extension add --name azure-iot
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Используйте [команду создания приложения az iotcentral](/cli/azure/iotcentral/app#az-iotcentral-app-create) для создания центрального приложения IoT в подписке Azure. Пример:
+Используйте команду [AZ иотцентрал App Create](/cli/azure/iotcentral/app#az-iotcentral-app-create) , чтобы создать приложение IOT Central в подписке Azure. Пример:
 
 ```azurecli-interactive
 # Create a resource group for the IoT Central application
@@ -59,15 +59,15 @@ az iotcentral app create \
   --display-name "My Custom Display Name"
 ```
 
-Эти команды сначала создают группу ресурсов в восточном регионе США для приложения. В следующей таблице описаны параметры, используемые с помощью команды приложения **az iotcentral:**
+Сначала эти команды создают группу ресурсов в регионе "Восточная часть США" для приложения. В следующей таблице описаны параметры, используемые командой **AZ иотцентрал App Create** .
 
 | Параметр         | Описание |
 | ----------------- | ----------- |
 | resource-group    | Группа ресурсов, в которой содержится приложение. В подписке уже должна существовать эта группа ресурсов. |
-| location          | По умолчанию эта команда использует местоположение из группы ресурсов. В настоящее время вы можете создать ioT Центральное приложение в **Австралии,** **Азиатско-Тихоокеанском регионе,** **Европе,** **США,** **Великобритании**и **Японии.** |
+| location          | По умолчанию эта команда использует расположение из группы ресурсов. В настоящее время вы можете создать IoT Centralное приложение в **странах Австралии**, **Азиатско-Тихоокеанский регион**, **Европе**, США **, Великобритании**и **Японии** . **United States** |
 | name              | Имя приложения на портале Azure. |
-| Поддомен         | Поддомен в URL-адресе приложения. В примере URL-адрес приложения — `https://mysubdomain.azureiotcentral.com`. |
-| sku               | В настоящее время вы можете использовать либо **ST1** или **ST2**. Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
+| поддомен         | Поддомен в URL-адресе приложения. В примере URL-адрес приложения — `https://mysubdomain.azureiotcentral.com`. |
+| sku               | В настоящее время можно использовать либо **ST1** , либо **ST2**. Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
 | шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
 | display-name      | Имя приложения, отображаемое на пользовательском интерфейсе. |
 
@@ -75,11 +75,11 @@ az iotcentral app create \
 
 ## <a name="view-your-applications"></a>Просмотр приложений
 
-Используйте команду [списка приложений az iotcentral,](/cli/azure/iotcentral/app#az-iotcentral-app-list) чтобы перечислить ваши приложения IoT Central и просматривать метаданные.
+Используйте команду [AZ иотцентрал App List](/cli/azure/iotcentral/app#az-iotcentral-app-list) , чтобы получить список приложений IOT Central и просматривать метаданные.
 
 ## <a name="modify-an-application"></a>Изменение приложения
 
-Используйте команду [обновления приложения az iotcentral](/cli/azure/iotcentral/app#az-iotcentral-app-update) для обновления метаданных центрального приложения IoT. Например, чтобы изменить отображаемое имя приложения:
+Используйте команду [AZ иотцентрал App Update](/cli/azure/iotcentral/app#az-iotcentral-app-update) , чтобы обновить метаданные приложения IOT Central. Например, чтобы изменить отображаемое имя приложения:
 
 ```azurecli-interactive
 az iotcentral app update --name myiotcentralapp \
@@ -89,7 +89,7 @@ az iotcentral app update --name myiotcentralapp \
 
 ## <a name="remove-an-application"></a>Удаление приложения
 
-Используйте команду [удаления приложения az iotcentral,](/cli/azure/iotcentral/app#az-iotcentral-app-delete) чтобы удалить приложение IoT Central. Пример:
+Чтобы удалить IoT Central приложение, используйте команду [AZ иотцентрал App Delete](/cli/azure/iotcentral/app#az-iotcentral-app-delete) . Пример:
 
 ```azurecli-interactive
 az iotcentral app delete --name myiotcentralapp \
@@ -98,7 +98,7 @@ az iotcentral app delete --name myiotcentralapp \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как управлять приложениями Azure IoT Central из Azure CLI, вот следующий шаг:
+Теперь, когда вы узнали, как управлять приложениями IoT Central Azure из Azure CLI, предлагаем следующий шаг:
 
 > [!div class="nextstepaction"]
 > [Администрирование приложения](howto-administer.md)

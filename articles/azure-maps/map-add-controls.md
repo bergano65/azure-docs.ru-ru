@@ -1,6 +1,6 @@
 ---
-title: Добавление элементов управления на карту Карты Microsoft Azure
-description: Как добавить элемент управления масштабирования, управление шагом, повернуть управление и сборщик стилей на карту в Microsoft Azure Maps.
+title: Добавление элементов управления в карту | Карты Microsoft Azure
+description: Добавление элемента управления "Масштаб", элемента управления "высота", элемента управления "поворот" и выбора стиля на карту в Microsoft Azure Maps.
 author: philmea
 ms.author: philmea
 ms.date: 07/29/2019
@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: 094dc9fd01ec71f378a173a2b4fa64cc672d7c97
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80334558"
 ---
 # <a name="add-controls-to-a-map"></a>Добавление элементов управления на карту
 
-В этой статье показано, как добавить элементы управления на карту. Вы также узнаете, как создать карту со всеми элементами управления и [сборщиком стилей.](https://docs.microsoft.com/azure/azure-maps/choose-map-style)
+В этой статье показано, как добавить элементы управления на карту. Вы также узнаете, как создать карту со всеми элементами управления и [выбором стиля](https://docs.microsoft.com/azure/azure-maps/choose-map-style).
 
 ## <a name="add-zoom-control"></a>Добавление элемента управления масштабом
 
-Управление масштабированием добавляет кнопки для увеличения и изготавливание карты. Следующий пример кода создает экземпляр класса [ЗумКонтроль](/javascript/api/azure-maps-control/atlas.control.zoomcontrol) и добавляет его в правый нижний угол карты.
+Элемент управления Zoom добавляет кнопки для масштабирования и отображения карт. В следующем примере кода создается экземпляр класса [зумконтрол](/javascript/api/azure-maps-control/atlas.control.zoomcontrol) , который добавляется в правый нижний угол на карте.
 
 ```javascript
 //Construct a zoom control and add it to the map.
@@ -30,7 +30,7 @@ map.controls.add(new atlas.control.ZoomControl(), {
 });
 ```
 
-Ниже приводится полный выборка кода приведена вышеуказанной функциональности.
+Ниже приведен полный пример выполнения кода описанной выше функциональности.
 
 <br/>
 
@@ -39,7 +39,7 @@ map.controls.add(new atlas.control.ZoomControl(), {
 
 ## <a name="add-pitch-control"></a>Добавление элемента управления наклоном
 
-Управление шагом добавляет кнопки для наклона поля для отображения относительно горизонта. Следующий пример кода создает экземпляр класса [PitchControl.](/javascript/api/azure-maps-control/atlas.control.pitchcontrol) Он добавляет PitchControl в верхний правый угол карты.
+Элемент управления "тон" добавляет кнопки для наклона высоты для отображения относительно горизонта. В следующем примере кода создается экземпляр класса [питчконтрол](/javascript/api/azure-maps-control/atlas.control.pitchcontrol) . Он добавляет Питчконтрол в правый верхний угол на карте.
 
 ```javascript
 //Construct a pitch control and add it to the map.
@@ -48,7 +48,7 @@ map.controls.add(new atlas.control.PitchControl(), {
 });
 ```
 
-Ниже приводится полный выборка кода приведена вышеуказанной функциональности.
+Ниже приведен полный пример выполнения кода описанной выше функциональности.
 
 <br/>
 
@@ -57,7 +57,7 @@ map.controls.add(new atlas.control.PitchControl(), {
 
 ## <a name="add-compass-control"></a>Добавление элемента управления расстоянием
 
-Управление компасом добавляет кнопку для вращения карты. Следующий пример кода создает экземпляр класса [Compass Control](/javascript/api/azure-maps-control/atlas.control.compasscontrol) и добавляет его в левый нижний угол карты.
+Элемент управления компаса добавляет кнопку для поворота схемы. Следующий пример кода создает экземпляр класса [элемента управления компас](/javascript/api/azure-maps-control/atlas.control.compasscontrol) и добавляет его в левый нижний угол на карте.
 
 ```javascript
 //Construct a compass control and add it to the map.
@@ -66,7 +66,7 @@ map.controls.add(new atlas.control.Compass(), {
 });
 ```
 
-Ниже приводится полный выборка кода приведена вышеуказанной функциональности.
+Ниже приведен полный пример выполнения кода описанной выше функциональности.
 
 <br/>
 
@@ -75,7 +75,7 @@ map.controls.add(new atlas.control.Compass(), {
 
 ## <a name="a-map-with-all-controls"></a>Карта со всеми элементами управления
 
-Несколько элементов управления могут быть помещены в массив и добавлены на карту все сразу и расположены в той же области карты для упрощения разработки. Следующие добавлены стандартные элементы управления навигацией на карту, используя этот подход.
+Несколько элементов управления могут быть помещены в массив и добавлены в карту сразу и расположены в одной области на карте, чтобы упростить разработку. Следующий пример добавляет стандартные элементы управления навигацией в карту с помощью этого подхода.
 
 ```javascript
 map.controls.add([
@@ -88,33 +88,33 @@ map.controls.add([
 });
 ```
 
-Следующий пример кода добавляет зум, компас, шаг и элементы управления сборщиком стилей в верхний правый угол карты. Обратите внимание, как они автоматически складываются. Порядок выполнения элементов управления из сценария определяет их порядок появления на карте. Чтобы изменить порядок элементов управления на карте, можно изменить их порядок в массиве.
+В следующем примере кода добавляются элементы управления "Масштаб", "Компас", "высота" и "Выбор стиля" в правый верхний угол сопоставлений. Обратите внимание, как они автоматически располагаются в стеке. Порядок выполнения элементов управления из сценария определяет их порядок появления на карте. Чтобы изменить порядок элементов управления на карте, можно изменить их порядок в массиве.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Карта со всеми элементами управления' src='//codepen.io/azuremaps/embed/qyjbOM/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/qyjbOM/'>Карта со всеми элементами управления </a> в службе Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Управление сборщиком стилей определяется классом [StyleControl.](/javascript/api/azure-maps-control/atlas.control.stylecontrol) Для получения дополнительной информации об использовании управления сборщиком стилей [см.](choose-map-style.md)
+Элемент управления выбора стиля определяется классом [стилеконтрол](/javascript/api/azure-maps-control/atlas.control.stylecontrol) . Дополнительные сведения об использовании элемента управления "Выбор стиля" см. в разделе [Выбор стиля схемы](choose-map-style.md).
 
 ## <a name="customize-controls"></a>Настройка элементов управления
 
-Вот инструмент для проверки различных вариантов настройки элементов управления.
+Ниже приведено средство для проверки различных параметров настройки элементов управления.
 
 <br/>
 
-<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры управления навигацией" src="//codepen.io/azuremaps/embed/LwBZMx/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Ознакомьтесь <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>с вариантами управления навигацией</a> pen по картам Azure Maps ()<a href='https://codepen.io/azuremaps'>@azuremaps</a>на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры элемента управления навигацией" src="//codepen.io/azuremaps/embed/LwBZMx/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>Параметры навигации по управлению</a> пером<a href='https://codepen.io/azuremaps'>@azuremaps</a>с помощью Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Если вы хотите создать индивидуальные элементы навигации, `atlas.Control` создайте класс, который простирается от класса или создайте html элемент и расположите его над картой div. Поиметь этот элемент управления `setCamera` uI вызова карты функции для перемещения карты. 
+Если необходимо создать настраиваемые элементы управления навигацией, создайте класс, который расширяется из `atlas.Control` класса, или Создайте HTML-элемент и поместите его над элементом div Map. Этот элемент управления пользовательского интерфейса вызывает функцию `setCamera` Maps для перемещения карты. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Компас управления](/javascript/api/azure-maps-control/atlas.control.compasscontrol)
+> [Элемент управления компас](/javascript/api/azure-maps-control/atlas.control.compasscontrol)
 
 > [!div class="nextstepaction"]
 > [PitchControl](/javascript/api/azure-maps-control/atlas.control.pitchcontrol); 
@@ -140,5 +140,5 @@ map.controls.add([
 > [Добавление слоя многоугольников](map-add-shape.md)
 
 > [!div class="nextstepaction"]
-> [Добавить слой пузыря](map-add-bubble-layer.md)
+> [Добавить пузырьковый слой](map-add-bubble-layer.md)
 

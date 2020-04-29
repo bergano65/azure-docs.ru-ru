@@ -1,6 +1,6 @@
 ---
-title: Создание ввода задания задания мультимедиа Azure из локального файла Документы Майкрософт
-description: В этой статье показано, как создать рабочий ввод задания службы Мультий Азовиз из локального файла.
+title: Создание входных данных задания служб мультимедиа Azure из локального файла | Документация Майкрософт
+description: В этой статье показано, как создать входные данные задания служб мультимедиа Azure из локального файла.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 03/26/2020
 ms.author: juliako
 ms.openlocfilehash: aba987ba232a29ffc240f72039b1e24bb87a2ed4
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80345905"
 ---
 # <a name="create-a-job-input-from-a-local-file"></a>Создание входных данных задания из локального файла
@@ -25,23 +25,23 @@ ms.locfileid: "80345905"
 ## <a name="prerequisites"></a>Предварительные требования 
 
 * [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
-* Обзор [управления активами.](manage-asset-concept.md)
+* Изучите, как [управлять активами](manage-asset-concept.md).
 
 ## <a name="net-sample"></a>Пример кода .NET
 
 С помощью приведенного ниже кода можно создать входной ресурс и использовать его в качестве входных данных задания. Функция CreateInputAsset выполняет следующие задачи:
 
 * создает ресурс;
-* Получает writable [URL SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) в [контейнер](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#upload-blobs-to-a-container) актива в хранилище
+* Получает доступный для записи [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) [контейнера ресурса в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#upload-blobs-to-a-container) .
 * отправляет файл в контейнер в хранилище через URL-адрес SAS.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CreateInputAsset)]
 
-Следующий фрагмент кода создает выходный актив, если он еще не существует:
+Следующий фрагмент кода создает выходной ресурс, если он еще не существует:
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CreateOutputAsset)]
 
-Следующий фрагмент кода представляет задание кодирования:
+Следующий фрагмент кода отправляет задание кодирования:
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#SubmitJob)]
 
@@ -49,6 +49,6 @@ ms.locfileid: "80345905"
 
 См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Создание ввода задания из URL HTTPS.](job-input-from-http-how-to.md)
+[Создайте входные данные задания на основе URL-адреса HTTPS](job-input-from-http-how-to.md).

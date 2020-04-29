@@ -1,6 +1,6 @@
 ---
 title: Управление IoT Central в Azure PowerShell | Документация Майкрософт
-description: В этой статье описывается, как создавать и управлять приложениями IoT Central от Azure PowerShell.
+description: В этой статье описывается создание приложений IoT Central и управление ими из Azure PowerShell.
 services: iot-central
 ms.service: iot-central
 author: dominicbetts
@@ -9,17 +9,17 @@ ms.date: 03/27/2020
 ms.topic: how-to
 manager: philmea
 ms.openlocfilehash: 42d853c9cf53c1c6921fbd1816ec2298c9c3583e
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80365540"
 ---
 # <a name="manage-iot-central-from-azure-powershell"></a>Управление IoT Central в Azure PowerShell
 
 [!INCLUDE [iot-central-selector-manage](../../../includes/iot-central-selector-manage.md)]
 
-Вместо создания и управления приложениями IoT Central на веб-сайте [менеджера приложений Azure IoT](https://aka.ms/iotcentral) Central можно использовать [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) для управления приложениями.
+Вместо создания приложений IoT Central и управления ими на веб-сайте [диспетчера приложений Azure IOT Central](https://aka.ms/iotcentral) можно использовать [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) для управления приложениями.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,7 +30,7 @@ ms.locfileid: "80365540"
 Если вы хотите запустить Azure PowerShell на локальном компьютере, ознакомьтесь с разделом об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). При локальном запуске Azure PowerShell используйте командлет **Connect-AzAccount**, чтобы войти в Azure, прежде чем использовать командлеты, представленные в этой статье.
 
 > [!TIP]
-> Если вам нужно запустить команды PowerShell в другой подписке Azure, [см.](/powershell/azure/manage-subscriptions-azureps?view=azps-3.4.0#change-the-active-subscription)
+> Если вам нужно выполнить команды PowerShell в другой подписке Azure, см. статью [Изменение активной подписки](/powershell/azure/manage-subscriptions-azureps?view=azps-3.4.0#change-the-active-subscription).
 
 ## <a name="install-the-iot-central-module"></a>Установка модуля IoT Central
 
@@ -69,10 +69,10 @@ New-AzIotCentralApp -ResourceGroupName "MyIoTCentralResourceGroup" `
 |Параметр         |Описание |
 |------------------|------------|
 |ResourceGroupName |Группа ресурсов, в которой содержится приложение. В подписке уже должна существовать эта группа ресурсов. |
-|Расположение |По умолчанию этот командлет использует расположение из группы ресурсов. В настоящее время вы можете создать ioT Центральное приложение в **Австралии,** **Азиатско-Тихоокеанском регионе,** **Европе,** **США,** **Великобритании**и **Японии.** |
-|name              |Имя приложения на портале Azure. |
+|Расположение |По умолчанию этот командлет использует расположение из группы ресурсов. В настоящее время вы можете создать IoT Centralное приложение в **странах Австралии**, **Азиатско-Тихоокеанский регион**, **Европе**, США **, Великобритании**и **Японии** . **United States** |
+|Имя              |Имя приложения на портале Azure. |
 |Поддомен         |Поддомен в URL-адресе приложения. В примере URL-адрес приложения — `https://mysubdomain.azureiotcentral.com`. |
-|Sku               |В настоящее время вы можете использовать либо **ST1** или **ST2**. Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
+|Sku               |В настоящее время можно использовать либо **ST1** , либо **ST2**. Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
 |Шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
 |DisplayName       |Имя приложения, отображаемое на пользовательском интерфейсе. |
 

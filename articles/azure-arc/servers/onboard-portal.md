@@ -9,10 +9,10 @@ ms.author: magoedte
 ms.date: 03/24/2020
 ms.topic: conceptual
 ms.openlocfilehash: 40885e1de4ff4c16d2a50399c654d8596396ab53
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80366364"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Подключение гибридных компьютеров к Azure на портале Azure
@@ -43,11 +43,11 @@ ms.locfileid: "80366364"
     >- WestEurope
     >- WestAsia
     >
-    >Просмотрите дополнительные соображения при выборе региона [здесь,](overview.md#supported-regions) в статье Обзор.
+    >Ознакомьтесь с дополнительными замечаниями при [выборе региона в](overview.md#supported-regions) статье Обзор.
 
 1. На странице **Создать скрипт** в раскрывающемся списке **Операционная система** выберите операционную систему, для которой будет выполняться скрипт.
 
-1. Если машина общается через прокси-сервер для подключения к Интернету, выберите **Next: Proxy Server.** 
+1. Если компьютер обменивается данными через прокси-сервер для подключения к Интернету, нажмите кнопку **Далее: прокси-сервер**. 
 1. На вкладке **Прокси-сервер** укажите IP-адрес прокси-сервера или имя и номер порта, которые будет использовать компьютер для связи с прокси-сервером. Введите значение в формате `http://<proxyURL>:<proxyport>`. 
 1. Выберите вкладку **Проверка и создание**.
 
@@ -65,21 +65,21 @@ ms.locfileid: "80366364"
 
 Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную далее в этой статье. Она задает переменную системной среды для прокси-сервера `https_proxy`.
 
-Если вы не знакомы с вариантами командной строки для пакетов Windows Installer, просмотрите [стандартные параметры командной строки Msiexec](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options) и [параметры командной строки Msiexec.](https://docs.microsoft.com/windows/win32/msi/command-line-options)
+Если вы не знакомы с параметрами командной строки для пакетов установщик Windows, ознакомьтесь со [стандартными параметрами командной строки Msiexec](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options) и [параметрами командной строки Msiexec](https://docs.microsoft.com/windows/win32/msi/command-line-options).
 
-Например, запустите программу `/?` установки с параметром для просмотра справки и опции быстрого отсчета. 
+Например, запустите программу установки с `/?` параметром, чтобы ознакомиться с параметром Справка и краткий справочник. 
 
 ```dos
 msiexec.exe /i AzureConnectedMachineAgent.msi /?
 ```
 
-Чтобы установить агент бесшумно и создать `C:\Support\Logs` файл журнала настройки в папке, запустите следующую команду.
+Чтобы автоматически установить агент и создать файл журнала установки в `C:\Support\Logs` папке, выполните следующую команду.
 
 ```dos
 msiexec.exe /i AzureConnectedMachineAgent.msi /qn /l*v "C:\Support\Logs\Azcmagentsetup.log"
 ```
 
-Файлы для агента Connected Machine устанавливаются по умолчанию в *C: «Файлы программы»AzureConnectedMachineAgent*. Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. Каталог журнала — *%Programfiles%\AzureConnectedMachineAgentAgent\logs*.
+Файлы для агента подключенного компьютера устанавливаются по умолчанию в папке *C:\Program филес\азуреконнектедмачинеажент*. Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. Каталог журнала — *%Programfiles%\AzureConnectedMachineAgentAgent\logs*.
 
 ### <a name="install-with-the-scripted-method"></a>Установка с помощью метода скрипта
 
@@ -154,8 +154,8 @@ bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
 
 ![Успешное соединение с сервером](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Узнайте, как управлять машиной с помощью [azure Policy,](../../governance/policy/overview.md)для таких вещей, как [конфигурация гостевых VM,](../../governance/policy/concepts/guest-configuration.md)проверка того, что машина отчитывается перед ожидаемым рабочим пространством Log Analytics, позволяет осуществлять мониторинг с помощью [Azure Monitor с помощью vMs](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md)и многое другое.
+- Узнайте, как управлять компьютером с помощью [политики Azure](../../governance/policy/overview.md), например [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md)виртуальной машины, проверки того, что компьютер сообщает о предполагаемой log Analytics рабочей области, включить мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md)и многое другое.
 
-- Подробнее об [агенте Log Analytics.](../../azure-monitor/platform/log-analytics-agent.md) Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-intro.md).
+- Дополнительные сведения об [агенте log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-intro.md).

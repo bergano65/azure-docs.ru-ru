@@ -1,6 +1,6 @@
 ---
-title: Показать данные о трафике на карте Андроида (ru) Карты Microsoft Azure
-description: В этой статье вы узнаете, как отображать данные о трафике на карте с помощью Microsoft Azure Maps Android SDK.
+title: Отображение данных трафика на карте Android | Карты Microsoft Azure
+description: Из этой статьи вы узнаете, как отображать данные трафика на карте с помощью Microsoft Azure карт пакет SDK для Android.
 author: philmea
 ms.author: philmea
 ms.date: 02/27/2020
@@ -9,29 +9,29 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: e5611eeb08ac370e12cf452d57a87e449fbd80da
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80335376"
 ---
-# <a name="show-traffic-data-on-the-map-using-azure-maps-android-sdk"></a>Отображение данных о трафике на карте с помощью Azure Maps Android SDK
+# <a name="show-traffic-data-on-the-map-using-azure-maps-android-sdk"></a>Отображение данных трафика на карте с помощью Azure Maps пакет SDK для Android
 
-Данные потока и данные об инцидентах являются двумя типами данных о трафике, которые могут отображаться на карте. В этом руководстве показано, как отобразить оба типа данных о трафике. Данные об инцидентах состоят из точечных и линейных данных для таких вещей, как строительство, закрытие дорог и несчастные случаи. Данные потока показывают метрики о потоке трафика на дороге.
+Данные потока и инциденты — это два типа данных трафика, которые могут отображаться на карте. В этом руководство показано, как отобразить оба типа данных трафика. Данные инцидентов состоят из данных на основе точек и строк для таких вещей, как конструкции, замыкания на пути и всякое. Данные о потоке показывают метрики потока трафика в дороге.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-Прежде чем показать трафик на карте, необходимо [создать учетную запись Azure](quick-demo-map-app.md#create-an-account-with-azure-maps)и [получить ключ подписки.](quick-demo-map-app.md#get-the-primary-key-for-your-account) Затем вам нужно установить [Azure Maps Android SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
+Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-account-with-azure-maps)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
 
-## <a name="incidents-traffic-data"></a>Данные о трафике инцидентов 
+## <a name="incidents-traffic-data"></a>Данные трафика инцидентов 
 
-Для вызова `setTraffic` и: `incidents`
+Вам потребуется импортировать следующие библиотеки для вызова `setTraffic` и: `incidents`
 
 ```java
 import static com.microsoft.com.azure.maps.mapcontrol.options.TrafficOptions.incidents;
 ```
 
- Следующий фрагмент кода показывает, как отобразить данные о трафике на карте. Мы передаем boolean `incidents` значение метода, и `setTraffic` передать, что метод. 
+ В следующем фрагменте кода показано, как отобразить данные трафика на карте. Мы передаем логическое значение в `incidents` метод и передаем его в `setTraffic` метод. 
 
 ```java
 protected void onCreate(Bundle savedInstanceState) {
@@ -42,23 +42,23 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-## <a name="flow-traffic-data"></a>Данные о движении потока
+## <a name="flow-traffic-data"></a>Потоковая передача данных
 
-Сначала необходимо импортировать следующие библиотеки `setTraffic` `flow`для вызова и:
+Сначала необходимо импортировать следующие библиотеки для вызова `setTraffic` и: `flow`
 
 ```java
 import com.microsoft.azure.maps.mapcontrol.options.TrafficFlow;
 import static com.microsoft.azure.maps.mapcontrol.options.TrafficOptions.flow;
 ```
 
-Используйте следующий фрагмент кода для настройки данных о движении трафика. Подобно коду в предыдущем разделе, мы передаем `flow` значение `setTraffic` возврата метода методу. Есть четыре `flow`значения, которые могут быть переданы, `flow` и каждое значение вызовет, чтобы вернуть соответствующее значение. Возвратное `flow` значение будет затем передано `setTraffic`в качестве аргумента . Смотрите таблицу ниже для этих четырех значений:
+Используйте следующий фрагмент кода для задания данных потока трафика. Аналогично коду в предыдущем разделе, мы передаем возвращаемое значение `flow` метода `setTraffic` методу. В `flow`можно передать четыре значения, и каждое значение будет `flow` возвращать соответствующее значение. Возвращаемое значение `flow` будет передано в качестве аргумента в `setTraffic`. Следующие четыре значения приведены в следующей таблице:
 
 | | |
 | :-- | :-- |
-| TrafficFlow.NONE | Не отображает данные о трафике на карте |
-| TrafficFlow.RELATIVE | Отображает данные о трафике, которые относительно скорости свободного потока дороги |
-| TrafficFlow.RELATIVE_DELAY | Отображает области, которые медленнее, чем средняя ожидаемая задержка |
-| TrafficFlow.ABSOLUTE | Показывает абсолютную скорость всех транспортных средств на дороге |
+| Траффикфлов. NONE | Не отображает данные трафика на карте |
+| Траффикфлов. RELATIVE | Показывает данные трафика, относящиеся к скорости произвольного потока в дороге |
+| Траффикфлов. RELATIVE_DELAY | Отображает области, которые выполняются медленнее среднего ожидаемого значения задержки |
+| Траффикфлов. ABSOLUTE | Показывает абсолютную скорость всех транспортных средств в дороге |
 
 ```java
 protected void onCreate(Bundle savedInstanceState) {
@@ -69,11 +69,11 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-## <a name="show-incident-traffic-data-by-clicking-a-feature"></a>Отображать данные о трафике инцидентов, нажав на функцию
+## <a name="show-incident-traffic-data-by-clicking-a-feature"></a>Отображение данных о трафике инцидента щелчком компонента
 
-Чтобы получить инциденты для конкретной функции, вы можете использовать код ниже. При нажатии на объект логика кода проверяет инциденты и создает сообщение об инциденте. Сообщение отображается в нижней части экрана с деталями.
+Чтобы получить инциденты для определенного компонента, можно использовать приведенный ниже код. При нажатии на эту функцию логика кода проверяет наличие инцидентов и создает сообщение об инциденте. В нижней части экрана появится сообщение с подробными сведениями.
 
-1. Во-первых, вам нужно отойти **от res > макет> activity_main.xml,** так что он выглядит как один ниже. Вы можете `mapcontrol_centerLat` `mapcontrol_centerLng`заменить, `mapcontrol_zoom` и с желаемыми значениями. Напомним, уровень зума составляет значение от 0 до 22. На уровне увеличения 0 весь мир помещается на одну плитку.
+1. Во-первых, необходимо изменить **Макет res > > activity_main. XML**, чтобы он выглядел так, как показано ниже. Вы можете заменить `mapcontrol_centerLat`, `mapcontrol_centerLng`и `mapcontrol_zoom` нужными значениями. Помните, что уровень масштаба — это значение в диапазоне от 0 до 22. На уровне масштабирования 0 весь мир занимает одну плитку.
 
    ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -96,7 +96,7 @@ protected void onCreate(Bundle savedInstanceState) {
    </FrameLayout>
    ```
 
-2. Добавьте следующий код в файл **MainActivity.java.** Пакет включен по умолчанию, поэтому убедитесь, что вы держите ваш пакет в верхней части.
+2. Добавьте следующий код в файл **MainActivity. Java** . Пакет включен по умолчанию, поэтому убедитесь, что пакет находится в верхней части.
 
    ```java
    package <yourpackagename>;
@@ -221,17 +221,17 @@ protected void onCreate(Bundle savedInstanceState) {
    }
    ```
 
-3. После включения вышеуказанного кода в приложение вы сможете нажать на функцию и увидеть детали дорожно-транспортных происшествий. В зависимости от широты, долготы и значений уровня масштабирования, которые вы использовали в файле **activity_main.xml,** вы увидите результаты, аналогичные следующему изображению:
+3. После включения приведенного выше кода в приложение вы сможете выбрать функцию и просмотреть подробные сведения о событиях трафика. В зависимости от широты, долготы и значений масштаба, используемых в файле **activity_main. XML** , вы увидите результаты, аналогичные приведенным на следующем рисунке:
 
    <center>
 
-   ![Инцидент-трафик на карте](./media/how-to-show-traffic-android/android-traffic.png)
+   ![Инцидент — трафик на карте](./media/how-to-show-traffic-android/android-traffic.png)
 
    </center>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Посмотреть следующие руководства, чтобы узнать, как добавить больше данных на карту:
+Чтобы узнать, как добавить дополнительные данные на карту, ознакомьтесь со следующими руководствами.
 
 > [!div class="nextstepaction"]
 > [Добавление слоя символов](how-to-add-symbol-to-android-map.md)
@@ -240,7 +240,7 @@ protected void onCreate(Bundle savedInstanceState) {
 > [Добавление слоя фрагментов](how-to-add-tile-layer-android-map.md)
 
 > [!div class="nextstepaction"]
-> [Добавить фигуры на карту андроида](how-to-add-shapes-to-android-map.md)
+> [Добавить фигуры в карту Android](how-to-add-shapes-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Отображение сведений о компоненте](display-feature-information-android.md)
