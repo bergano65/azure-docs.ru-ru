@@ -1,15 +1,15 @@
 ---
-title: Развертывание сетки Службы обслуживания Azure Fabric CLI-
-description: Узнайте о интерфейсе командной строки Sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для создания ресурсов Service Fabric Mesh.
+title: Azure Service Fabric CLI — развертывание сетки sfctl
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для создания Service Fabricных ресурсов сетки.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 108389407221779ed20e81310f084b7b5c23b8c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76906026"
 ---
 # <a name="sfctl-mesh-deployment"></a>sfctl mesh deployment
@@ -28,8 +28,8 @@ ms.locfileid: "76906026"
 
 |Аргумент|Описание|
 | --- | --- |
-| --input-yaml-files [обязательный] | Запятые-отделенные относительные или абсолютные пути файла всех файлов yaml или относительного или абсолютного пути каталога (рекурсивного), которые содержат файлы yaml. |
-| --parameters | Относительный или абсолютный путь к файлу yaml или объекту json, который содержит параметры, которые необходимо переопределить. |
+| --input-yaml-files [обязательный] | Относительные или абсолютные пути к файлам всех файлов YAML или относительный или абсолютный путь к каталогу (с рекурсией), который содержит файлы YAML. |
+| --parameters | Относительный или абсолютный путь к YAML-файлу или объекту JSON, который содержит параметры, которые необходимо переопределить. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
@@ -55,12 +55,12 @@ sfctl mesh deployment create --input-yaml-files ./app.yaml,./network.yaml --para
 sfctl mesh deployment create --input-yaml-files ./resources --parameters ./param.yaml
 ```
 
-Консолидация и развертывание всех ресурсов в каталоге для кластера путем переопределения параметров, которые передаются непосредственно как объект json
+Объединяет и развертывает все ресурсы в каталоге в кластере путем переопределения параметров, передаваемых непосредственно в виде объекта JSON.
 ``` 
 sfctl mesh deployment create --input-yaml-files ./resources --parameters "{ 'my_param' :    
 {'value' : 'my_value'} }"   
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Настройка](service-fabric-cli.md) службы Ткань CLI.
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Настройте](service-fabric-cli.md) Service Fabric CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

@@ -1,6 +1,6 @@
 ---
-title: Публикация, подписка на события в облаке - Azure Event Grid IoT Edge Документы Майкрософт
-description: Публикация, подписка на события в облаке с помощью Webhook с Event Grid на IoT Edge
+title: Публикация, подписка на события в облаке — сетка событий Azure IoT Edge | Документация Майкрософт
+description: Публикация, подписка на события в облаке с помощью веб-перехватчика со службой "Сетка событий" на IoT Edge
 author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
@@ -10,29 +10,29 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: c82f1edfc3acd73c1d38425f963aaaf2976a1cc5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76844601"
 ---
-# <a name="tutorial-publish-subscribe-to-events-in-cloud"></a>Учебник: Публикуйте, подписывайтесь на события в облаке
+# <a name="tutorial-publish-subscribe-to-events-in-cloud"></a>Учебник. Публикация, подписка на события в облаке
 
-В этой статье проходят все этапы, необходимые для публикации и подписки на события с помощью Event Grid on IoT Edge. В этом учебнике используется функция Azure в качестве обработчика событий. Для дополнительных типов [event handlers](event-handlers.md)назначения см.
+В этой статье рассматриваются все шаги, необходимые для публикации и подписки на события с помощью сетки событий на IoT Edge. В этом руководстве используется и функция Azure в качестве обработчика событий. Дополнительные типы назначения см. в разделе [обработчики событий](event-handlers.md).
 
-Просмотрите [концепции Event Grid,](concepts.md) чтобы понять, что такое тема сетки событий и подписка, прежде чем продолжить работу.
+Прежде чем продолжать, ознакомьтесь со статьей [Основные понятия сетки событий](concepts.md) .
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
-* **Подписка Azure** - Создайте [бесплатную учетную запись,](https://azure.microsoft.com/free) если у вас ее еще нет. 
-* **Устройство Azure IoT Hub и IoT Edge** - Выполните последующие шаги в быстром запуске для устройств [Linux](../../iot-edge/quickstart-linux.md) или [Windows,](../../iot-edge/quickstart.md) если у вас его еще нет.
+* **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
+* **Центр Интернета вещей Azure и устройство IOT Edge** . выполните действия, описанные в разделе Краткое руководство для устройств [Linux](../../iot-edge/quickstart-linux.md) или [Windows](../../iot-edge/quickstart.md) , если у вас его еще нет.
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-deploy-iot-edge.md)]
 
-## <a name="create-an-azure-function-in-the-azure-portal"></a>Создание функции Azure на портале Azure
+## <a name="create-an-azure-function-in-the-azure-portal"></a>Создание функции Azure в портал Azure
 
-Выполните действия, изложенные в [учебнике,](../../azure-functions/functions-create-first-azure-function.md) чтобы создать функцию Azure. 
+Выполните действия, описанные в этом [руководстве](../../azure-functions/functions-create-first-azure-function.md) , чтобы создать функцию Azure. 
 
 Замените фрагмент кода следующим кодом:
 
@@ -58,16 +58,16 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 }
 ```
 
-В новой функции выберите **URL-адрес функции** в правом верхнем виде, выберите ключ по умолчанию **(Функция),** а затем выберите **Copy.** Вы будете использовать значение URL функции позже в учебнике.
+В новой функции выберите **получить URL-адрес функции** в правом верхнем углу, выберите значение по умолчанию (**функциональная клавиша**), а затем щелкните **Копировать**. Значение URL-адреса функции будет использоваться позже в этом руководстве.
 
 > [!NOTE]
-> Обратитесь к документации [Azure Functions](../../azure-functions/functions-overview.md) для получения дополнительных примеров и учебников по реагированию на события, использующие триггеры событий EventGrid.
+> Дополнительные примеры и руководства по выполнению событий с помощью триггеров событий EventGrid см. в документации по [функциям Azure](../../azure-functions/functions-overview.md) .
 
 ## <a name="create-a-topic"></a>Создание раздела
 
-Как издатель события, необходимо создать тему сетки событий. Тема относится к конечной точке, где издатели могут отправлять события.
+Как издатель события, необходимо создать раздел «Сетка событий». Раздел относится к конечной точке, в которой издатели могут отсылать события.
 
-1. Создайте topic2.json со следующим содержанием. Ознакомиться с нашими [документами API](api.md) можно с информацией о полезной нагрузке.
+1. Создайте topic2. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
          {
@@ -77,12 +77,12 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
           }
         }
     ```
-1. Выполнить следующую команду, чтобы создать тему. КОД статуса HTTP 200 OK должен быть возвращен.
+1. Выполните следующую команду, чтобы создать раздел. Должен возвращаться код состояния HTTP, 200 ОК.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X PUT -g -d @topic2.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2?api-version=2019-01-01-preview
     ```
-1. Выполнить следующую команду для проверки темы был создан успешно. КОД статуса HTTP 200 OK должен быть возвращен.
+1. Выполните следующую команду, чтобы проверить, успешно ли создан раздел. Должен возвращаться код состояния HTTP, 200 ОК.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2?api-version=2019-01-01-preview
@@ -106,11 +106,11 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 
 ## <a name="create-an-event-subscription"></a>Создание подписки на событие
 
-Подписчики могут зарегистрироваться на события, опубликованные на тему. Чтобы получить любое событие, подписчикам необходимо создать подписку на сетку событий по интересуемым.
+Подписчики могут регистрироваться для событий, опубликованных в разделе. Чтобы получить любое событие, подписчикам нужно будет создать подписку на сетку событий в интересующей теме.
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
-1. Создание subscription2.json со следующим содержанием. Для получения подробной информации о полезной нагрузке обратитесь к нашей [документации API.](api.md)
+1. Создайте subscription2. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         {
@@ -126,13 +126,13 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     ```
 
    >[!NOTE]
-   > Конечная **точкаType** указывает, что абонент webhook.  Конечная **точкаUrl** определяет URL, на котором абонент слушает события. Этот URL-адрес соответствует образицы функции Azure, который вы установили ранее.
-2. Выполнить следующую команду для создания подписки. КОД статуса HTTP 200 OK должен быть возвращен.
+   > **EndpointType** указывает, что подписчик является веб-перехватчиком.  **EndpointUrl** указывает URL-адрес, по которому подписчик прослушивает события. Этот URL-адрес соответствует образцу функции Azure, который вы настроили ранее.
+2. Выполните следующую команду, чтобы создать подписку. Должен возвращаться код состояния HTTP, 200 ОК.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X PUT -g -d @subscription2.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2/eventSubscriptions/sampleSubscription2?api-version=2019-01-01-preview
     ```
-3. Выполнить следующую команду для проверки подписки был создан успешно. КОД статуса HTTP 200 OK должен быть возвращен.
+3. Выполните следующую команду, чтобы проверить, успешно ли создана подписка. Должен возвращаться код состояния HTTP, 200 ОК.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2/eventSubscriptions/sampleSubscription2?api-version=2019-01-01-preview
@@ -159,7 +159,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 
 ## <a name="publish-an-event"></a>Публикация события
 
-1. Создайте event2.json со следующим содержанием. Для получения подробной информации о полезной нагрузке обратитесь к нашей [документации API.](api.md)
+1. Создайте event2. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         [
@@ -176,7 +176,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
           }
         ]
     ```
-1. Выполнить следующую команду для публикации события
+1. Выполните следующую команду для публикации события
 
     ```sh
     curl -k -H "Content-Type: application/json" -X POST -g -d @event2.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2/events?api-version=2019-01-01-preview
@@ -184,25 +184,25 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 
 ## <a name="verify-event-delivery"></a>Проверка доставки событий
 
-Вы можете просмотреть событие, представленное на портале Azure, в соответствии с опцией **Monitor** вашей функции.
+Вы можете просмотреть событие, доставленное в портал Azure в разделе " **мониторинг** " функции.
 
 ## <a name="cleanup-resources"></a>Очистка ресурсов
 
-* Выполнить следующую команду, чтобы удалить тему и все ее подписки
+* Выполните следующую команду, чтобы удалить раздел и все его подписки
 
     ```sh
     curl -k -H "Content-Type: application/json" -X DELETE https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2?api-version=2019-01-01-preview
     ```
 
-* Удалите функцию Azure, созданную на портале Azure.
+* Удалите функцию Azure, созданную в портал Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-В этом уроке вы создали тему сетки событий, подписку и опубликованные события. Теперь, когда вы знаете основные шаги, смотрите следующие статьи:
+В этом руководстве вы создали раздел, подписку и опубликованные события сетки событий. Теперь, когда вы знакомы с основными шагами, ознакомьтесь со следующими статьями:
 
-* Для устранения неполадок с использованием Azure Event Grid на IoT Edge [см.](troubleshoot.md)
-* Создание/обновление подписки с [помощью фильтров.](advanced-filtering.md)
-* Настройка сохранения модуля Event Grid на [linux](persist-state-linux.md) или [Windows](persist-state-windows.md)
-* Следуйте [документации](configure-client-auth.md) для настройки проверки подлинности клиента
-* Перенаправляйте события в Azure Event Grid в облаке, следуя этому [учебнику](forward-events-event-grid-cloud.md)
-* [Мониторинг тем и подписки на краю](monitor-topics-subscriptions.md)
+* Сведения об устранении неполадок с использованием службы "Сетка событий Azure" на IoT Edge см. в разделе [руководство по устранению неполадок](troubleshoot.md).
+* Создайте или обновите подписку с помощью [фильтров](advanced-filtering.md).
+* Настройка сохраняемости модуля службы "Сетка событий" в [Linux](persist-state-linux.md) или [Windows](persist-state-windows.md)
+* Следуйте инструкциям [по](configure-client-auth.md) настройке проверки подлинности клиента
+* Пересылка событий в службу "Сетка событий Azure" в облаке, следуя этому [учебнику](forward-events-event-grid-cloud.md)
+* [Мониторинг разделов и подписок на границе](monitor-topics-subscriptions.md)

@@ -1,6 +1,6 @@
 ---
-title: Миграция приложений из служб BizTalk в логические приложения Azure
-description: Как переместить приложения и решения из служб Microsoft Azure BizTalk (MABS) в приложения логики Azure
+title: Перенос приложений из служб BizTalk в Azure Logic Apps
+description: Как переместить приложения и решения из службы BizTalk Microsoft Azure (MABS) в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: jonfancey
@@ -9,17 +9,17 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/30/2017
 ms.openlocfilehash: 97399635399c12022006ac95e60c5828bf2a9dc5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76905434"
 ---
-# <a name="migrate-your-apps-and-solutions-from-biztalk-services-to-azure-logic-apps"></a>Перенести свои приложения и решения из служб BizTalk в логические приложения Azure
+# <a name="migrate-your-apps-and-solutions-from-biztalk-services-to-azure-logic-apps"></a>Перенос приложений и решений из служб BizTalk в Azure Logic Apps
 
 Службы Microsoft Azure BizTalk Services (MABS) находятся на этапе прекращения использования. Чтобы переместить решения интеграции MABS в службу [Azure Logic Apps](../logic-apps/logic-apps-overview.md), выполните инструкции в этой статье. 
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 Службы BizTalk состоят из двух вложенных служб:
 
@@ -51,7 +51,7 @@ ms.locfileid: "76905434"
 
 ## <a name="connectors"></a>Соединители
 
-Соединители в службах BizTalk помогают мостам отправлять и получать данные, включая двусторонние мосты, поддерживающие взаимодействие типа "запрос — ответ" на основе HTTP. Logic Apps использует ту же терминологию и имеет сотни разъемов, которые служат той же цели, подключившись к широкому спектру технологий и услуг. Например, соединители доступны для облачных служб SaaS и PaaS, таких как OneDrive, Office365, Dynamics CRM и т. д., а также локальных систем через локальный шлюз данных (вместо службы адаптера BizTalk для служб BizTalk). Источники в службах BizTalk ограничены FTP, SFTP и подпиской на очереди или разделы служебной шины.
+Соединители в службах BizTalk помогают мостам отправлять и получать данные, включая двусторонние мосты, поддерживающие взаимодействие типа "запрос — ответ" на основе HTTP. Logic Apps использует ту же терминологию и имеет сотни соединителей, которые служат одной и той же целью, подключаясь к широкому спектру технологий и служб. Например, соединители доступны для облачных служб SaaS и PaaS, таких как OneDrive, Office365, Dynamics CRM и т. д., а также локальных систем через локальный шлюз данных (вместо службы адаптера BizTalk для служб BizTalk). Источники в службах BizTalk ограничены FTP, SFTP и подпиской на очереди или разделы служебной шины.
 
 ![](media/logic-apps-move-from-mabs/sources.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "76905434"
 
 ## <a name="manage-and-monitor"></a>Управление и мониторинг
 
-Выделенный портал служб BizTalk предоставлял возможности отслеживания для мониторинга и устранения неполадок. Logic Apps предоставляет более богатые возможности отслеживания и мониторинга для [мониторинга логических приложений на портале Azure](../logic-apps/monitor-logic-apps.md)и включает в себя мобильное приложение для наблюдения за вещами, когда вы находитесь в движении.
+Выделенный портал служб BizTalk предоставлял возможности отслеживания для мониторинга и устранения неполадок. Logic Apps предоставляет более широкие возможности отслеживания и мониторинга для [мониторинга приложений логики в портал Azure](../logic-apps/monitor-logic-apps.md)и включает в себя мобильное приложение, позволяющее следить за тем, когда вы находитесь в процессе перемещения.
 
 ## <a name="high-availability"></a>Высокий уровень доступности
 
@@ -133,7 +133,7 @@ ms.locfileid: "76905434"
 
 Для аварийного восстановления за пределами региона для обработки B2B в службах BizTalk необходимо реализовать процесс резервного копирования и восстановления. Для обеспечения непрерывности бизнес-процессов в службе Logic Apps предоставляется [возможность активного или пассивного аварийного восстановления](../logic-apps/logic-apps-enterprise-integration-b2b-business-continuity.md) в разных регионах. Это позволяет выполнять синхронизацию данных B2B в учетных записях интеграции в разных регионах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 * [Создайте свое первое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) или приступите к работе, используя [готовый шаблон](../logic-apps/logic-apps-create-logic-apps-from-templates.md).  

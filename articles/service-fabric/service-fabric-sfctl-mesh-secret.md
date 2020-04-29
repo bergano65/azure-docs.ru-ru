@@ -1,15 +1,15 @@
 ---
-title: Лазурный сервис Ткань CLI- sfctl сетки секрет
-description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает в себя список команд для получения и удаляния секретных ресурсов Службы Fabric Mesh.
+title: Azure Service Fabric CLI — секрет сети sfctl
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для получения и удаления Service Fabricных секретных ресурсов сети.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: fab388ff223eb95020e2ba0945c76532bc54f224
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76905987"
 ---
 # <a name="sfctl-mesh-secret"></a>sfctl mesh secret
@@ -19,9 +19,9 @@ ms.locfileid: "76905987"
 
 |Команда|Описание|
 | --- | --- |
-| удалить | Удаляет ресурс секрета. |
+| "Удалить" | Удаляет ресурс секрета. |
 | list | Составляет список всех ресурсов секрета. |
-| show | Предоставляет ресурс секрета с заданным именем. |
+| показать | Предоставляет ресурс секрета с заданным именем. |
 
 ## <a name="sfctl-mesh-secret-delete"></a>sfctl mesh secret delete
 Удаляет ресурс секрета.
@@ -81,6 +81,6 @@ ms.locfileid: "76905987"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Настройка](service-fabric-cli.md) службы Ткань CLI.
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Настройте](service-fabric-cli.md) Service Fabric CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

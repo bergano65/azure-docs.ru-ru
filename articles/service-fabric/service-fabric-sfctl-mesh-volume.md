@@ -1,15 +1,15 @@
 ---
-title: Лазурный сервис Ткань CLI- sfctl объем сетки
-description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для получения и удаляния ресурсов объема.
+title: Azure Service Fabric CLI — sfctl сетчатый том
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для получения и удаления ресурсов тома.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 0e5ba1a311bd0480c56ee40edf01fc13ec01664a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76905915"
 ---
 # <a name="sfctl-mesh-volume"></a>sfctl mesh volume
@@ -19,9 +19,9 @@ ms.locfileid: "76905915"
 
 |Команда|Описание|
 | --- | --- |
-| удалить | Удаляет ресурс тома. |
+| "Удалить" | Удаляет ресурс тома. |
 | list | Выводит список всех ресурсов тома. |
-| show | Предоставляет ресурс тома с заданным именем. |
+| показать | Предоставляет ресурс тома с заданным именем. |
 
 ## <a name="sfctl-mesh-volume-delete"></a>sfctl mesh volume delete
 Удаляет ресурс тома.
@@ -81,6 +81,6 @@ ms.locfileid: "76905915"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Настройка](service-fabric-cli.md) службы Ткань CLI.
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Настройте](service-fabric-cli.md) Service Fabric CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

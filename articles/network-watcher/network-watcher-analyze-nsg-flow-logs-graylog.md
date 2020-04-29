@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: damendo
 ms.openlocfilehash: 1e597a81967a8fb6be2959d53e65ad01135e5e25
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76842909"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog
@@ -244,6 +244,6 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
 Интеграция Наблюдателя за сетями с Graylog обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и позволяет визуализировать данные журналов. Graylog располагает рядом мощных возможностей, таких как потоки данных и предупреждения. Они помогают в управлении журналами потоков и анализе сетевого трафика. Мы завершили настройку системы Graylog и подключили ее к Azure. Теперь можно приступать к изучению ее функций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье  [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md).

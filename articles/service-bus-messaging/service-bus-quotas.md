@@ -1,6 +1,6 @@
 ---
-title: Квоты и ограничения Microsoft Azure Service Bus
-description: В этой статье перечислены основные квоты и пороги регулирования в сообщениях Azure Service Bus. Например - максимальное количество именных пространств за подписку.
+title: Квоты и ограничения служебная шина Microsoft Azure
+description: В этой статье перечислены основные квоты и пороговые значения регулирования в обмене сообщениями через служебную шину Azure. Например, максимальное количество пространств имен на подписку.
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 7a6d8e56d7f70d637b2c963814b66e6e7cb3a907
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76759573"
 ---
 # <a name="service-bus-quotas"></a>Квоты на служебную шину

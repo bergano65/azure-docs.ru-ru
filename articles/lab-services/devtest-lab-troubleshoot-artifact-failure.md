@@ -1,6 +1,6 @@
 ---
-title: Диагностика сбоев артефактов в виртуальной машине Azure DevTest Labs
-description: DevTest Labs предоставляют информацию, которую можно использовать для диагностики сбоя артефакта. В этой статье показано, как устранить сбои артефактов.
+title: Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs
+description: DevTest Labs предоставляют сведения, которые можно использовать для диагностики сбоя артефакта. В этой статье показано, как устранять неполадки артефактов.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 7229f1ee4061eb38b7c6da09df21102ab302ab42
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76760323"
 ---
 # <a name="diagnose-artifact-failures-in-the-lab"></a>Диагностика сбоев артефактов в лаборатории 
@@ -52,12 +52,12 @@ ms.locfileid: "76760323"
 
 3. Откройте файл **состояния**.
 
-Для получения инструкций по поиску файлов журнала на **Linux** VM, см. [Use the Azure Custom Script Extension Version 2 with Linux virtual machines](../virtual-machines/extensions/custom-script-linux.md#troubleshooting)
+Инструкции по поиску файлов журналов на виртуальной машине **Linux** см. в следующей статье: [Использование расширения пользовательских сценариев Azure версии 2 с виртуальными машинами Linux](../virtual-machines/extensions/custom-script-linux.md#troubleshooting) .
 
 
 ## <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте, как [добавить в лабораторию репозиторий Git](devtest-lab-add-artifact-repo.md).
 

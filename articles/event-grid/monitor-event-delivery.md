@@ -1,6 +1,6 @@
 ---
 title: Мониторинг доставки сообщений Сетки событий Azure
-description: В этой статье описывается, как использовать портал Azure для просмотра состояния доставки сообщений Azure Event Grid.
+description: В этой статье описывается, как использовать портал Azure для просмотра состояния доставки сообщений службы "Сетка событий Azure".
 services: event-grid
 author: spelluru
 manager: timlt
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: spelluru
 ms.openlocfilehash: 16587feaca65aa21836d9be1c44e00faa0f4f8d8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76722141"
 ---
 # <a name="monitor-event-grid-message-delivery"></a>Мониторинг доставки сообщений Сетки событий 
@@ -78,11 +78,11 @@ ms.locfileid: "76722141"
 
 ## <a name="set-alerts"></a>Задание предупреждений
 
-Можно настроить оповещения по тематике и метрикам уровня домена для пользовательских тем и доменов событий. В лезвии обзора для того, чтобы выберите **оповещения** слева, было меню ресурсов для просмотра, управления и создания правил оповещения. [Подробнее о оповещениях azure Monitor](../azure-monitor/platform/alerts-overview.md)
+Вы можете настроить оповещения для разделов и метрик уровня домена для пользовательских разделов и доменов событий. В колонке "Обзор" для выберите **оповещения** в левом меню ресурсов, чтобы просматривать, управлять и создавать правила генерации оповещений. [Дополнительные сведения об оповещениях Azure Monitor](../azure-monitor/platform/alerts-overview.md)
 
 ![Просмотр метрик событий](./media/monitor-event-delivery/select-alerts.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

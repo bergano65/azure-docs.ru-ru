@@ -1,15 +1,15 @@
 ---
-title: Служба обслуживания Azure Fabric CLI - копия службы sfctl сетки
-description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для получения деталей реплики для ресурсов приложения.
+title: Azure Service Fabric CLI — служба сетки sfctl — реплика
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для получения сведений о репликах для ресурсов приложения.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: ac604ec0a854964746ef34627b054e853662265f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76905951"
 ---
 # <a name="sfctl-mesh-service-replica"></a>sfctl mesh service-replica
@@ -20,7 +20,7 @@ ms.locfileid: "76905951"
 |Команда|Описание|
 | --- | --- |
 | list | Выводит список всех реплик службы. |
-| show | Получает заданную реплику службы приложения. |
+| показать | Получает заданную реплику службы приложения. |
 
 ## <a name="sfctl-mesh-service-replica-list"></a>sfctl mesh service-replica list
 Выводит список всех реплик службы.
@@ -68,6 +68,6 @@ ms.locfileid: "76905951"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Настройка](service-fabric-cli.md) службы Ткань CLI.
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Настройте](service-fabric-cli.md) Service Fabric CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

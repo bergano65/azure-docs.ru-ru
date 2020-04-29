@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines-windows, virtual-machines-linux
 author: cynthn
@@ -9,10 +9,10 @@ ms.date: 10/09/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 98d765e2f6909f00f8dfe76d06aef017aad67adf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71174987"
 ---
 ## <a name="terminology"></a>Терминология
@@ -21,7 +21,7 @@ ms.locfileid: "71174987"
 
 * **Издатель.** Организация, создавшая образ. Примеры: Canonical, MicrosoftWindowsServer.
 * **Предложение.** Имя группы связанных образов, созданных издателем. Примеры: UbuntuServer, WindowsServer
-* **Номер SKU.** Экземпляр предложения, например основной выпуск дистрибутива. Примеры: 18.04-LTS, 2019-Центр
+* **Номер SKU.** Экземпляр предложения, например основной выпуск дистрибутива. Примеры: 18,04-LTS, 2019-Datacenter
 * **Версия.** Номер версии SKU образа. 
 
 Чтобы определить образ Marketplace при программном развертывании виртуальной машины, укажите эти значения как отдельные параметры. Некоторые средства принимают *URN* образа, который объединяет эти значения, разделенные двоеточием (:): *Издатель*:*Предложение*:*Номер SKU*:*Версия*. В URN номер версии можно заменить ключевым словом "latest". В этом случае будет выбрана последняя версия образа. 

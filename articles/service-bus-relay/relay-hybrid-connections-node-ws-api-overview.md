@@ -1,6 +1,6 @@
 ---
 title: Обзор API-интерфейсов Node для ретранслятора Azure | Документация Майкрософт
-description: В этой статье содержится обзор API OfFor Node.js для службы ретранслятора Azure. Он также показывает, как использовать hyco-ws Узла пакет.
+description: В этой статье представлен обзор API Node. js для службы Azure Relay. В нем также показано, как использовать пакет узла HYCO-WS.
 services: service-bus-relay
 documentationcenter: na
 author: spelluru
@@ -15,17 +15,17 @@ ms.workload: na
 ms.date: 01/21/2020
 ms.author: spelluru
 ms.openlocfilehash: 2877284c419da4999e23490fc986e5da44e5d92e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76514516"
 ---
 # <a name="relay-hybrid-connections-node-api-overview"></a>Общие сведения об API Node для гибридных подключений ретранслятора
 
 ## <a name="overview"></a>Обзор
 
-Пакет [`hyco-ws`](https://www.npmjs.com/package/hyco-ws) узлов для гибридных соединений Azure Relay построен на и расширяет пакет [NPM 'ws'.](https://www.npmjs.com/package/ws) Этот пакет повторно экспортирует все, что отправляется из этого базового пакета, и добавляет новый экспорт, который обеспечивает интеграцию с функцией гибридных подключений службы ретранслятора Azure. 
+Пакет [`hyco-ws`](https://www.npmjs.com/package/hyco-ws) узла для Azure Relay гибридные подключения построен на основе и расширяет пакет NPM ["ws"](https://www.npmjs.com/package/ws) . Этот пакет повторно экспортирует все, что отправляется из этого базового пакета, и добавляет новый экспорт, который обеспечивает интеграцию с функцией гибридных подключений службы ретранслятора Azure. 
 
 Вместо этого существующие приложения, которые требуют ws (`require('ws')`), могут использовать данный пакет с `require('hyco-ws')`, что также обеспечивает поддержку гибридных сценариев, в которых приложение может прослушивать подключения WebSocket локально (внутри брандмауэра), а также одновременно с помощью гибридных подключений.
   
@@ -143,7 +143,7 @@ function(headers)
 
 Событие `headers` возникает непосредственно перед тем, как принимается входящее подключение, позволяя изменять заголовки для отправки клиенту. 
 
-##### <a name="connection"></a>соединение
+##### <a name="connection"></a>подключение
 
 ```JavaScript
 function(socket)
@@ -208,7 +208,7 @@ WebSocket.relayedConnect(
 );
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
 * [Что такое ретранслятор Azure?](relay-what-is-it.md)
 * [Available Relay APIs](relay-api-overview.md) (Доступные API-интерфейсы ретранслятора)

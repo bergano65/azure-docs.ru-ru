@@ -1,6 +1,6 @@
 ---
 title: Асинхронный обмен сообщениями в служебной шине | Документация Майкрософт
-description: Узнайте, как Azure Service Bus поддерживает асинхронизм через магазин и вперед механизм с очередями, темами и подписками.
+description: Узнайте, как служебная шина Azure поддерживает асинчронисм с помощью механизма хранения и переадресации с очередями, разделами и подписками.
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 554260f403104d815b9b63c576c7ba0a2f3cf1e1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76761038"
 ---
 # <a name="asynchronous-messaging-patterns-and-high-availability"></a>Шаблоны асинхронного обмена сообщениями и высокий уровень доступности
@@ -64,7 +64,7 @@ ms.locfileid: "76761038"
 
 В таких случаях клиентское приложение создает исключение [System.TimeoutException][System.TimeoutException] или исключение [MessagingException][MessagingException]. Служебная шина содержит средство для устранения этой проблемы, которое реализовано в виде автоматизированной логики повтора для клиента. Если период повторных попыток исчерпан, а сообщение все еще не доставлено, можно использовать другие возможности, описанные в статье [Рекомендации по изолированию приложений от простоев и аварий служебной шины][handling outages and disasters].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Вы ознакомились с основами асинхронного обмена сообщениями в служебной шине. Дополнительные сведения см. в статье [Рекомендации по изолированию приложений от простоев и аварий служебной шины][handling outages and disasters].
 
 [ServerBusyException]: /dotnet/api/microsoft.servicebus.messaging.serverbusyexception

@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/22/2020
 ms.openlocfilehash: 733901d38703e02ab7dbe811b0f80a1dfedf03d5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76705791"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Глоссарий терминов для Базы данных SQL Azure
@@ -23,16 +23,16 @@ ms.locfileid: "76705791"
 |Контекст|Термин|Дополнительные сведения|
 |:---|:---|:---|
 |Служба Azure|База данных SQL Azure или База данных SQL|[Служба "База данных SQL Azure"](sql-database-technical-overview.md)|
-|Модель приобретения|Модель приобретения на основе единиц DTU|[Модель закупок на основе DTU](sql-database-service-tiers-dtu.md)|
-||Модель приобретения на основе виртуальных ядер|[vCore-модель покупки](sql-database-service-tiers-vcore.md)|
-|Опция развертывания |Отдельная база данных|[Отдельные базы данных](sql-database-single-database.md)|
-||Эластичный пул|[Упругий бассейн](sql-database-elastic-pool.md)|
-||управляемый экземпляр|[Управляемый экземпляр](sql-database-managed-instance.md)|
-|Уровень служб|Базовый, Стандартный, Премиум, Общее назначение, Гипермасштаб, Бизнес Критический|Для уровней обслуживания в модели vCore см. [единую базу данных и эластичный пул](sql-database-service-tiers-vcore.md#service-tiers) и [управляемый экземпляр.](sql-database-managed-instance.md#managed-instance-service-tiers) Для сервисных уровней в модели [DTU model](sql-database-service-tiers-dtu.md#compare-the-dtu-based-service-tiers)DTU см.|
+|Модель приобретения|Модель приобретения на основе единиц DTU|[Модель приобретения на основе DTU](sql-database-service-tiers-dtu.md)|
+||Модель приобретения на основе виртуальных ядер|[модель приобретения на основе виртуальное ядро](sql-database-service-tiers-vcore.md)|
+|Параметр развертывания |Отдельная база данных|[Отдельные базы данных](sql-database-single-database.md)|
+||Эластичный пул|[Эластичный пул](sql-database-elastic-pool.md)|
+||управляемый экземпляр|[управляемый экземпляр](sql-database-managed-instance.md)|
+|Уровень служб|Базовый, Стандартный, премиум, общего назначения, масштабирование, критически важный для бизнеса|Для уровней служб в модели Виртуальное ядро см. раздел [единственная база данных и эластичный пул](sql-database-service-tiers-vcore.md#service-tiers) и [управляемый экземпляр](sql-database-managed-instance.md#managed-instance-service-tiers). Сведения об уровнях служб в модели DTU см. в разделе [модель DTU](sql-database-service-tiers-dtu.md#compare-the-dtu-based-service-tiers).|
 |Уровень вычислений|Бессерверные вычисления|[Бессерверные вычисления](sql-database-service-tiers-vcore.md#compute-tiers)
 ||Подготовленные вычисления|[Подготовленные вычисления](sql-database-service-tiers-vcore.md#compute-tiers)
-|Поколение вычислительных ресурсов|Gen5, M-серия, Fsv2-серия|[Поколения оборудования](sql-database-service-tiers-vcore.md#hardware-generations)
-|Сущность сервера|Сервер Базы данных SQL или сервер базы данных|[Сервер базы данных](sql-database-servers.md)|
-||Сервер управляемого экземпляра Базы данных SQL, сервер управляемого экземпляра или сервер экземпляра|[Управляемый экземпляр](sql-database-managed-instance.md)|
-|Тип ресурса|Виртуальное ядро|Ядро процессора, предоставляемое ресурсу вычислений для единой базы данных, эластичного пула или управляемого экземпляра.|
-||Вычислить размер и объем хранилища|Размер вычисления — это максимальное количество процессора, памяти и других ресурсов, не связанных с хранением, доступных для одной базы данных, эластичного пула или управляемого экземпляра.  Размер хранилища — это максимальное количество хранилища, доступное для одной базы данных, эластичного пула или управляемого экземпляра.  Для вариантов размеров в модели vcore см. [vCore,](sql-database-vcore-resource-limits-single-databases.md) [эластичные пулы vCore](sql-database-vcore-resource-limits-elastic-pools.md) и [управляемые экземпляры.](sql-database-managed-instance-resource-limits.md)  Для вариантов размеров в модели DTU [см.](sql-database-dtu-resource-limits-single-databases.md) [DTU elastic pools](sql-database-dtu-resource-limits-elastic-pools.md)
+|Поколение вычислительных ресурсов|Серии го поколения, M, серия fsv2|[Поколения оборудования](sql-database-service-tiers-vcore.md#hardware-generations)
+|Серверная сущность|Сервер Базы данных SQL или сервер базы данных|[Сервер базы данных](sql-database-servers.md)|
+||Сервер управляемого экземпляра Базы данных SQL, сервер управляемого экземпляра или сервер экземпляра|[управляемый экземпляр](sql-database-managed-instance.md)|
+|Тип ресурса|Виртуальное ядро|Ядро ЦП, предоставляемое вычислительному ресурсу для отдельной базы данных, эластичного пула или управляемого экземпляра.|
+||Размер вычислений и объем хранилища|Размер вычислений — это максимальный объем ресурсов ЦП, памяти и других устройств, не связанных с хранилищем, доступных для отдельной базы данных, эластичного пула или управляемого экземпляра.  Размер хранилища — это максимальный объем хранилища, доступный для отдельной базы данных, эластичного пула или управляемого экземпляра.  Параметры изменения размера в модели Виртуальное ядро см. в разделе [Виртуальное ядро Single databases](sql-database-vcore-resource-limits-single-databases.md), [Виртуальное ядро эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md) и [управляемые экземпляры](sql-database-managed-instance-resource-limits.md).  Сведения о параметрах изменения размера в модели DTU см. в разделе [DTU Single databases](sql-database-dtu-resource-limits-single-databases.md) and [DTU эластичные пулы](sql-database-dtu-resource-limits-elastic-pools.md).

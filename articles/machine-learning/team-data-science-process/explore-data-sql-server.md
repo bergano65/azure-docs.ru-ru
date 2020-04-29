@@ -12,15 +12,15 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: ae8c7c43ecbf9bc625e1e46be3e2c71c8d57b6f7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76720101"
 ---
 # <a name="explore-data-in-sql-server-virtual-machine-on-azure"></a>Просмотр данных в виртуальной машине SQL Server на платформе Azure
 
-В этой статье описывается, как просматривать данные, хранящиеся в виртуальной машине SQL Server на платформе Azure. Для изучения данных используйте S'L или Python.
+В этой статье описывается, как просматривать данные, хранящиеся в виртуальной машине SQL Server на платформе Azure. Используйте SQL или Python для проверки данных.
 
 Эта задача является одним из этапов [процесса обработки и анализа данных группы](overview.md).
 
@@ -51,7 +51,7 @@ ms.locfileid: "76720101"
 > 
 
 ## <a name="explore-sql-data-with-python"></a><a name="python"></a>Просмотр данных SQL с помощью Python
-Использование Python для изучения данных и генерации функций, когда данные находится в сервере S'L, аналогично обработке данных в Azure blob с помощью Python, как это описано в [данных Process Azure Blob в вашей среде науки о данных.](data-blob.md) Загрузите данные из базы данных в панды DataFrame, а затем могут быть обработаны дальше. В этом разделе задокументирован процесс подключения к базе данных и загрузки данных в кадр данных.
+Использование Python для просмотра данных и создания функций при работе с данными в SQL Server аналогично обработке данных в большом двоичном объекте Azure с помощью Python, как описано в статье [обработка данных BLOB-объектов Azure в среде обработки и анализа данных](data-blob.md). Загрузить данные из базы данных в Pandas таблицу данных, а затем обработать их дальше. В этом разделе задокументирован процесс подключения к базе данных и загрузки данных в кадр данных.
 
 Для подключения к базе данных SQL Server из языка Python с использованием pyodbc можно применить следующий формат строки подключения (замените servername, dbname, username и password соответствующими значениями имени сервера, имени БД, имени пользователя и пароля):
 
@@ -59,7 +59,7 @@ ms.locfileid: "76720101"
     import pyodbc    
     conn = pyodbc.connect('DRIVER={SQL Server};SERVER=<servername>;DATABASE=<dbname>;UID=<username>;PWD=<password>')
 
-[Библиотека Pandas](https://pandas.pydata.org/) в Python предоставляет богатый набор структур данных и инструментов анализа данных для манипуляций с данными для программирования Python. Следующий код считывает результаты, возвращенные из базы данных SQL Server, в кадр данных Pandas:
+[Библиотека Pandas](https://pandas.pydata.org/) в Python предоставляет обширный набор структур данных и средств анализа данных для манипулирования данными при программировании на Python. Следующий код считывает результаты, возвращенные из базы данных SQL Server, в кадр данных Pandas:
 
     # Query database and load the returned results in pandas data frame
     data_frame = pd.read_sql('''select <columnname1>, <columnname2>... from <tablename>''', conn)

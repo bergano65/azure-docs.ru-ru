@@ -1,5 +1,5 @@
 ---
-title: Обработка сбоя службы Azure, которая влияет на облачные службы Azure
+title: Обработка прерываний служб Azure, влияющих на облачные службы Azure
 titleSuffix: Azure Cloud Services
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на облачные службы Azure.
 services: cloud-services
@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/04/2017
 ms.author: memccror
 ms.openlocfilehash: e3f0fd88eb302dac208f43d0622ae28b31dcddc2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77157513"
 ---
 # <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
@@ -46,14 +46,14 @@ ms.locfileid: "77157513"
 
 В зависимости от источников данных приложения может потребоваться проверка процедур восстановления для источника данных приложения.
 
-* В источниках данных хранилища Azure см. [избыточность хранилища Azure,](../storage/common/storage-redundancy.md) чтобы проверить параметры, доступные на основе выбранной модели избыточности для приложения.
+* Источники данных службы хранилища Azure см. в статье [избыточность службы хранилища Azure](../storage/common/storage-redundancy.md) для проверки доступных параметров на основе выбранной модели избыточности для вашего приложения.
 * Аналогичные сведения для источников данных базы данных SQL приведены в разделе [Обзор. Непрерывность облачных бизнес-процессов и аварийное восстановление баз данных с базой данных SQL](../sql-database/sql-database-business-continuity.md) .
 
 
 ## <a name="option-3-wait-for-recovery"></a>Вариант 3. Ожидание восстановления
 В этом случае вам не нужно ничего делать. Однако служба будет недоступна до восстановления региона. Текущее состояние службы можно просмотреть на [панели мониторинга работоспособности служб Azure](https://azure.microsoft.com/status/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Чтобы больше узнать о том, как реализовать стратегию обеспечения аварийного восстановления и высокого уровня доступности, ознакомьтесь с разделом [Аварийное восстановление и высокий уровень доступности для приложений на платформе Azure](../resiliency/resiliency-disaster-recovery-high-availability-azure-applications.md).
 
 Возможности облачной платформы подробно описаны в [техническом руководстве по обеспечению непрерывности бизнес-процессов Azure](/azure/architecture/checklist/resiliency-per-service).

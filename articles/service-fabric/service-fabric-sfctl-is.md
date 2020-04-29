@@ -1,15 +1,15 @@
 ---
-title: Лазурная служба Ткань CLI- sfctl является
-description: Узнайте о интерфейсе командной строки Sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для управления инфраструктурой.
+title: Azure Service Fabric CLI — sfctl
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для управления инфраструктурой.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: a64aaca97c9df61d795c82d64e6048d6f9ae032f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76906074"
 ---
 # <a name="sfctl-is"></a>sfctl is
@@ -69,6 +69,6 @@ ms.locfileid: "76906074"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Настройка](service-fabric-cli.md) службы Ткань CLI.
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Настройте](service-fabric-cli.md) Service Fabric CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

@@ -1,6 +1,6 @@
 ---
 title: Использование Azure DevTest Labs для разработчиков | Документация Майкрософт
-description: Узнайте о функциях Azure DevTest Labs, которые могут быть использованы для удовлетворения требований разработчиков, и подробных шагах, которые можно извлечь для создания лаборатории.
+description: Узнайте о функциях Azure DevTest Labs, которые можно использовать для удовлетворения требований разработчика, и подробное описание действий, которые можно выполнить для настройки лаборатории.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: ae44696f62a085bf1e798f0915e2bd1e27c3a78f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76760153"
 ---
 # <a name="use-azure-devtest-labs-for-developers"></a>Использование Azure DevTest Labs для разработчиков
@@ -85,7 +85,7 @@ Azure DevTest Labs можно использовать для реализаци
    | [Создание пользовательских артефактов для виртуальной машины DevTest Labs](devtest-lab-artifact-author.md) |Как создавать пользовательские артефакты для виртуальных машин в лаборатории.|
    | [Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Azure Resource Manager в Azure DevTest Labs](devtest-lab-add-artifact-repo.md) |Как сохранять пользовательские артефакты в частном репозитории Git.|
 
-5. **Контроль расходов**
+5. **Управление затратами**
    
     Azure DevTest Labs позволяет задать в лаборатории политику, указывающую максимальное число виртуальных машин, которые может создать разработчик. 
    

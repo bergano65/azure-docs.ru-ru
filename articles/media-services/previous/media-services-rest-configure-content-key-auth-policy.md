@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 8942ad8bdc4f9fc37a88d09871c983f63cd8c1b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76773693"
 ---
 # <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: настройка политики для авторизации ключа содержимого  
@@ -53,7 +53,7 @@ ms.locfileid: "76773693"
 > [!NOTE]
 > При работе с REST API служб мультимедиа руководствуйтесь следующими рекомендациями.
 > 
-> При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Для получения дополнительной информации [см. Setup для медиа-услуг REST API развития](media-services-rest-how-to-use.md).
+> При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Дополнительные сведения см. в статье [Настройка служб мультимедиа REST API разработки](media-services-rest-how-to-use.md).
 > 
 > 
 > 
@@ -135,7 +135,7 @@ ms.locfileid: "76773693"
 
     {"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:57829b17-1101-4797-919b-f816f4a007b7","Name":"policy","KeyDeliveryType":2,"KeyDeliveryConfiguration":"","Restrictions":[{"Name":"HLS Open Authorization Policy","KeyRestrictionType":0,"Requirements":null}]}
 
-#### <a name="link-contentkeyauthorizationpolicies-with-options"></a><a id="LinkContentKeyAuthorizationPoliciesWithOptions"></a>Ссылка ContentKeyАвтористиацияПолитика с опциями
+#### <a name="link-contentkeyauthorizationpolicies-with-options"></a><a id="LinkContentKeyAuthorizationPoliciesWithOptions"></a>Связывание ContentKeyAuthorizationPolicies с параметрами
 Запрос:
 
     POST https://wamsbayclus001rest-hs.cloudapp.net/api/ContentKeyAuthorizationPolicies('nb%3Ackpid%3AUUID%3A0baa438b-8ac2-4c40-a53c-4d4722b78715')/$links/Options HTTP/1.1
@@ -283,7 +283,7 @@ ms.locfileid: "76773693"
 ## <a name="playready-dynamic-encryption"></a>Динамическое шифрование PlayReady
 С помощью служб мультимедиа можно настроить права и ограничения, которые должны применяться в среде выполнения PlayReady DRM при попытке пользователя воспроизвести защищенное содержимое. 
 
-Когда вы защищаете свой контент с помощью PlayReady, одна из вещей, которые необходимо указать в вашей политике авторизации, это строка XML, которая определяет [шаблон лицензии PlayReady.](media-services-playready-license-template-overview.md) 
+При защите содержимого с помощью PlayReady необходимо указать в политике авторизации строку XML, определяющую [шаблон лицензии PlayReady](media-services-playready-license-template-overview.md). 
 
 ### <a name="open-restriction"></a>Ограничение открытого типа
 Ограничение открытого типа означает, что система доставляет ключ всем, кто подает на него запрос. Это ограничение подходит для тестирования.
@@ -440,16 +440,16 @@ ms.locfileid: "76773693"
         Widevine = 3
     }
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда политика авторизации для ключа содержимого настроена, перейдите к статье о [настройке политики для доставки ресурсов](media-services-rest-configure-asset-delivery-policy.md).
 

@@ -1,6 +1,6 @@
 ---
 title: Управление ресурсами служебной шины Azure с помощью PowerShell | Документация Майкрософт
-description: В этой статье объясняется, как использовать модуль Azure PowerShell для создания и управления объектами service Bus (пространства имен, очереди, темы, подписки).
+description: В этой статье объясняется, как использовать модуль Azure PowerShell для создания сущностей служебной шины и управления ими (пространства имен, очереди, разделы, подписки).
 services: service-bus-messaging
 documentationcenter: .NET
 author: axisc
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: e333dfb109840538fd5dec8110e1c32adedce989
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76759267"
 ---
 # <a name="use-powershell-to-manage-service-bus-resources"></a>Управление ресурсами служебной шины с помощью модуля PowerShell
@@ -29,7 +29,7 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы проверьте следующие необходимые компоненты:
 
@@ -43,7 +43,7 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 ## <a name="provision-a-service-bus-namespace"></a>Подготовка пространства имен Service Bus
 
-При работе с пространствами имен Service Bus вы можете использовать [Get-AzServiceBusNamespace,](/powershell/module/az.servicebus/get-azservicebusnamespace) [New-AzServiceBusNamespace,](/powershell/module/az.servicebus/new-azservicebusnamespace) [Remove-AzServiceBusNamespace](/powershell/module/az.servicebus/remove-azservicebusnamespace)и [Set-AzServiceBusNamespace](/powershell/module/az.servicebus/set-azservicebusnamespace) cmdlets.
+При работе с пространствами имен служебной шины можно использовать командлеты [Get-азсервицебуснамеспаце](/powershell/module/az.servicebus/get-azservicebusnamespace), [New-азсервицебуснамеспаце](/powershell/module/az.servicebus/new-azservicebusnamespace), [Remove-азсервицебуснамеспаце](/powershell/module/az.servicebus/remove-azservicebusnamespace)и [Set-азсервицебуснамеспаце](/powershell/module/az.servicebus/set-azservicebusnamespace) .
 
 В этом примере мы создадим несколько локальных переменных в сценарии, в частности `$Namespace` и `$Location`.
 
@@ -83,7 +83,7 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 ### <a name="create-a-namespace-authorization-rule"></a>Создание правила авторизации для пространства имен
 
-В следующем примере показано, как управлять правилами авторизации имен с помощью [New-AzServiceBusАвторитив,](/powershell/module/az.servicebus/new-azservicebusauthorizationrule) [Get-AzServiceBusАвторитив,](/powershell/module/az.servicebus/get-azservicebusauthorizationrule) [Set-AzServiceBusАвторитивуИру и](/powershell/module/az.servicebus/set-azservicebusauthorizationrule) [Удалить-AzServiceBusАвторитивусС.](/powershell/module/az.servicebus/remove-azservicebusauthorizationrule)
+В следующем примере показано, как управлять правилами авторизации пространства имен с помощью командлетов [New-азсервицебусаусоризатионруле](/powershell/module/az.servicebus/new-azservicebusauthorizationrule), [Get-азсервицебусаусоризатионруле](/powershell/module/az.servicebus/get-azservicebusauthorizationrule), [Set-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/set-azservicebusauthorizationrule)и [Remove-AzServiceBusAuthorizationRule](/powershell/module/az.servicebus/remove-azservicebusauthorizationrule) .
 
 ```powershell
 # Query to see if rule exists
@@ -147,7 +147,7 @@ else
 
 ### <a name="modify-queue-properties"></a>Изменение свойств очереди
 
-После выполнения скрипта в предыдущем разделе можно использовать [cmdlet Set-AzServiceBusQueue](/powershell/module/az.servicebus/set-azservicebusqueue) для обновления свойств очереди, как в следующем примере:
+После выполнения скрипта, описанного в предыдущем разделе, можно использовать командлет [Set-азсервицебускуеуе](/powershell/module/az.servicebus/set-azservicebusqueue) для обновления свойств очереди, как показано в следующем примере:
 
 ```powershell
 $CurrentQ.DeadLetteringOnMessageExpiration = $True
@@ -162,7 +162,7 @@ Set-AzServiceBusQueue -ResourceGroup $ResGrpName -NamespaceName $Namespace -Queu
 
 Можно использовать [модуль PowerShell для служебной шины](/powershell/module/az.servicebus) для подготовки других сущностей, таких как разделы и подписки. Эти командлеты синтаксически аналогичны командлетам создания очередей, показанным в предыдущем разделе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - С полной документацией по модулю Resource Manager PowerShell для служебной шины можно ознакомиться [здесь](/powershell/module/az.servicebus). На этой странице перечислены все доступные командлеты.
 - Дополнительные сведения об использовании шаблонов Azure Resource Manager см. в статье [Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager](service-bus-resource-manager-overview.md).

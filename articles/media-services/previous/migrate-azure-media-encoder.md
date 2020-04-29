@@ -1,6 +1,6 @@
 ---
-title: Миграция из медиа-кодадера Azure в стандарт Media Encoder (ru) Документы Майкрософт
-description: В этой теме обсуждается, как перейти от мультимедиа-кодареaz Azure media Encoder к медиапроцессору Media Encoder Standard.
+title: Миграция из кодировщика мультимедиа Azure в Media Encoder Standard | Документация Майкрософт
+description: В этом разделе описано, как выполнить миграцию из кодировщика мультимедиа Azure в обработчик Media Encoder Standard мультимедиа.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -14,21 +14,21 @@ ms.topic: article
 ms.date: 08/21/2019
 ms.author: juliako
 ms.openlocfilehash: f8fe1b13db6473e80f0d7cdc638b775a0c8062c7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76513507"
 ---
-# <a name="migrate-from-azure-media-encoder-to-media-encoder-standard"></a>Переход от медиа-кодера Azure в стандарт медиа-кодаре
+# <a name="migrate-from-azure-media-encoder-to-media-encoder-standard"></a>Миграция из кодировщика мультимедиа Azure в Media Encoder Standard
 
-В этой статье рассматриваются шаги для перехода от устаревшего медиапроцессора Azure Media Encoder (AME) (который в настоящее время отставает) к медиапроцессору Media Encoder Standard. Для даты выхода на [legacy components](legacy-components.md) пенсию см.
+В этой статье рассматриваются действия по переходу с старого обработчика мультимедиа Azure Media Encoder (\) (который будет снят с учета) на процессор Media Encoder Standard Media. Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) .
 
-При кодировании файлов с Помощью AME клиенты `H264 Adaptive Bitrate MP4 Set 1080p`обычно используют именованную предустановленную строку, такую как. Для того, чтобы мигрировать, ваш код должен быть обновлен, чтобы использовать **медиа-процессор Encoder** `H264 Multiple Bitrate 1080p`Standard вместо AME, и один из эквивалентных [пресетов системы,](media-services-mes-presets-overview.md) как. 
+При кодировании файлов с именем в клиентах обычно используется именованная предустановленная строка, например `H264 Adaptive Bitrate MP4 Set 1080p`. Чтобы выполнить миграцию, необходимо обновить код для использования **Media Encoder Standardного** обработчика мультимедиа вместо «имя», а также одной из эквивалентных [системных предустановок](media-services-mes-presets-overview.md) , `H264 Multiple Bitrate 1080p`таких как. 
 
-## <a name="migrating-to-media-encoder-standard"></a>Миграция к медиа-стандарту
+## <a name="migrating-to-media-encoder-standard"></a>Переход на Media Encoder Standard
 
-Вот типичный образец кода СЗ, который использует устаревший медиапроцессор. 
+Ниже приведен типичный пример кода C#, в котором используется устаревший обработчик мультимедиа. 
 
 ```csharp
 // Declare a new job. 
@@ -45,7 +45,7 @@ ITask task = job.Tasks.AddNew("My encoding task",
     TaskOptions.None); 
 ```
 
-Вот обновленная версия, которая использует Media Encoder Standard.
+Ниже приведена обновленная версия, использующая Media Encoder Standard.
 
 ```csharp
 // Declare a new job. 
@@ -64,15 +64,15 @@ ITask task = job.Tasks.AddNew("My encoding task",
 
 ### <a name="advanced-scenarios"></a>Сложные сценарии 
 
-Если вы создали свой собственный предустановленный кодирование для AME, используя свою схему, есть [эквивалентная схема для Media Encoder Standard.](media-services-mes-schema.md) Если у вас есть вопросы о том, как сопоставить старые настройки с новым кодером, пожалуйста, обратитесь к нам черезmailto:amshelp@microsoft.com  
+Если вы создали собственную предустановку кодирования для \ "имя \", используя схему, то [для Media Encoder Standard существует эквивалентная схема](media-services-mes-schema.md). Если у вас возникли вопросы по сопоставлению старых параметров с новым кодировщиком, свяжитесь с нами по адресуmailto:amshelp@microsoft.com  
 ## <a name="known-differences"></a>Известные различия 
 
-Media Encoder Standard является более надежным, надежным, имеет более высокую производительность и обеспечивает более высокое качество продукции, чем устаревший кодер AME. Кроме того, примите во внимание: 
+Media Encoder Standard более надежна, надежна, имеет лучшую производительность и обеспечивает лучшую качество вывода, чем кодировщик устаревшей версии. Кроме того, примите во внимание: 
 
-* Media Encoder Standard производит выходные файлы с другой конвенцией именования, чем AME.
-* Media Encoder Standard производит артефакты, такие как файлы, содержащие [метаданные ввода и](media-services-input-metadata-schema.md) [метаданные вывода (s)](media-services-output-metadata-schema.md).
+* Media Encoder Standard создает выходные файлы с другим соглашением об именовании, чем имя в имени.
+* Media Encoder Standard создает такие артефакты, как файлы, содержащие [метаданные входного файла](media-services-input-metadata-schema.md) и [метаданные выходных файлов](media-services-output-metadata-schema.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устаревшие компоненты](legacy-components.md)
 * [Страница цен](https://azure.microsoft.com/pricing/details/media-services/#encoding)

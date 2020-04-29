@@ -1,6 +1,6 @@
 ---
-title: Выход и конечные точки - Azure Цифровые Близнецы (ru) Документы Майкрософт
-description: Узнайте, как создавать и выходить конечные точки событий в Azure Digital Twins.
+title: Исходящие и конечные точки — Azure Digital двойников | Документация Майкрософт
+description: Узнайте, как создавать и исходящие конечные точки событий в Azure Digital двойников.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -9,13 +9,13 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.openlocfilehash: 3803802a3d81655091d8be543ae9cb17221a98d8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76511575"
 ---
-# <a name="egress-and-endpoints-in-azure-digital-twins"></a>Выход и конечные точки в Azure Digital Twins
+# <a name="egress-and-endpoints-in-azure-digital-twins"></a>Исходящие и конечные точки в цифровом двойников Azure
 
 *Конечные точки* Azure Digital Twins представляют собой брокер сообщений или событий в пользовательской подписке Azure. События и сообщения могут отправляться в Центры событий Azure, Сетку событий Azure и в разделы служебной шины Azure.
 
@@ -47,11 +47,11 @@ ms.locfileid: "76511575"
 }
 ```
 
-| Атрибут | Тип | Описание |
+| attribute | Тип | Описание |
 | --- | --- | --- |
 | идентификатор | строка | Уникальный идентификатор события. |
 | subject | строка | Определенный издателем путь к субъекту событий. |
-| . | объект | Данные события, относящиеся к поставщику ресурсов. |
+| . | object | Данные события, относящиеся к поставщику ресурсов. |
 | eventType | строка | Один из зарегистрированных типов событий для этого источника событий. |
 | eventTime | строка | Время создания события с учетом времени поставщика в формате UTC. |
 | dataVersion | строка | Версия схемы для объекта данных. Версию схемы определяет издатель. |
@@ -85,7 +85,7 @@ ms.locfileid: "76511575"
 - ExtendedPropertyKey
 - ExtendedType
 - KeyStore
-- Report
+- Отчет
 - RoleDefinition
 - Датчик
 - SensorBlobMetadata
@@ -95,8 +95,8 @@ ms.locfileid: "76511575"
 - SpaceExtendedProperty
 - SpaceResource
 - SpaceRoleAssignment
-- Система
-- Пользователь
+- система
+- User (Пользователь)
 - UserBlobMetadata
 - UserExtendedProperty
 
@@ -246,7 +246,7 @@ ms.locfileid: "76511575"
 >[!IMPORTANT]
 > Обратите особое внимание на атрибут **eventTypes**. Он определяет, какие типы событий обрабатываются конечной точкой и, таким образом, определяет ее маршрутизацию.
 
-Проверенный запрос HTTP POST против:
+Прошедший проверку подлинности запрос HTTP POST к:
 
 ```URL
 YOUR_MANAGEMENT_API_URL/endpoints
@@ -320,7 +320,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
     | YOUR_SECONDARY_KEY | Вторичная строка подключения, которая используется для аутентификации |
     | YOUR_EVENT_HUB_NAME | Имя концентратора событий |
 
-- Направляйте в Центры событий события следующих типов: **DeviceMessage**. Включение `EntityPath` в **соединениеСт** является обязательным:
+- Направляйте в Центры событий события следующих типов: **DeviceMessage**. Включение `EntityPath` в **ConnectionString** является обязательным:
 
   ```JSON
   {
@@ -356,7 +356,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
 
 Если конечная точка недоступна, система перейдет в экспоненциальную задержку со временем ожидания до 30 минут. События будут удаляться при каждом активированном времени ожидания задержки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения см. в статье [Использование Swagger с Digital Twins](how-to-use-swagger.md).
 

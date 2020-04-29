@@ -12,19 +12,19 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 4c47dfb8b221b6cb4b6237669ecd17c1637107a2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76721104"
 ---
 # <a name="process-azure-blob-data-with-advanced-analytics"></a><a name="heading"></a>Обработка данных больших двоичных объектов Azure с применением методов расширенного анализа
 Этот документ содержит сведения о работе с данными в хранилище больших двоичных объектов Azure и создании характеристик на их основе. 
 
 ## <a name="load-the-data-into-a-pandas-data-frame"></a>Загрузка данных во фрейм данных Pandas
-Для того, чтобы исследовать и манипулировать набором данных, он должен быть загружен из источника капли в локальный файл, который затем может быть загружен в рамку данных Pandas. Ниже приведен порядок выполнения данной процедуры.
+Чтобы исследовать и манипулировать набором данных, его необходимо загрузить из источника BLOB-объектов в локальный файл, который затем можно загрузить в кадр данных Pandas. Ниже приведен порядок выполнения данной процедуры.
 
-1. Загрузите данные из Azure blob со следующим примером кода Python с помощью службы Blob. Замените переменные этого кода своими значениями. 
+1. Скачайте данные из большого двоичного объекта Azure с помощью следующего примера кода Python, используя службу BLOB-объектов. Замените переменные этого кода своими значениями. 
    
         from azure.storage.blob import BlobService
         import tables
@@ -94,7 +94,7 @@ ms.locfileid: "76721104"
         #correlation between column_a and column_b
         dataframe_blobdata[['<column_a>', '<column_b>']].corr()
 
-## <a name="feature-generation"></a><a name="blob-featuregen"></a>Поколение функций
+## <a name="feature-generation"></a><a name="blob-featuregen"></a>Создание компонентов
 Создавать функции с помощью Python вы можете приведенным ниже способом.
 
 ### <a name="indicator-value-based-feature-generation"></a><a name="blob-countfeature"></a>Создание признаков со значениями индикатора
@@ -131,7 +131,7 @@ ms.locfileid: "76721104"
         dataframe_blobdata_with_bin_bool = dataframe_blobdata.join(dataframe_blobdata_bin_bool)    
 
 ## <a name="writing-data-back-to-azure-blob-and-consuming-in-azure-machine-learning"></a><a name="sql-featuregen"></a>Запись данных обратно в большой двоичный объект Azure и их использование в Студии машинного обучения Azure
-После изучения данных и создания необходимых функций вы можете загрузить данные (отобранные или featurized) в azure blob и потреблять их в Azure Machine Learning, используя следующие шаги: Дополнительные функции могут быть созданы в Azure Machine Learning Студия (классическая), а также. 
+После изучения данных и создания необходимых компонентов можно передать данные (Samples или признаками) в большой двоичный объект Azure и использовать их в Машинное обучение Azure выполните следующие действия. Дополнительные компоненты можно создать в Машинное обучение Azure Studio (классическая модель). 
 
 1. Запишите блок данных в локальный файл.
    

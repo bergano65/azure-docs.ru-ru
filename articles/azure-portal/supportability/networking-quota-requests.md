@@ -1,5 +1,5 @@
 ---
-title: Увеличение лимита сети Документы Майкрософт
+title: Увеличение ограничения сети | Документация Майкрософт
 description: Увеличение лимита сети
 author: anavinahar
 ms.author: anavin
@@ -8,85 +8,85 @@ ms.topic: article
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
 ms.openlocfilehash: 9b5c7043b06172c2d4931ca1c3fd3ac5d0e80883
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76547811"
 ---
 # <a name="networking-limit-increase"></a>Увеличение лимита сети
 
-Используйте [портал Azure,](https://portal.azure.com) чтобы увеличить квоту сетей.
+Используйте [портал Azure](https://portal.azure.com) , чтобы увеличить квоту сети.
 
-Чтобы просмотреть текущее использование сети и квоту на портале Azure, откройте подписку, а затем выберите **квоты Usages и** Вы также можете использовать следующие параметры для просмотра использования сети и ограничений.
+Чтобы просмотреть текущие сведения об использовании и квоте сети в портал Azure, откройте подписку, а затем выберите **использование и квоты**. Можно также использовать следующие параметры для просмотра использования и ограничений сети.
 
-* [Использование CLI](/cli/azure/network#az-network-list-usages)
+* [Интерфейс командной строки использования](/cli/azure/network#az-network-list-usages)
 * [PowerShell](/powershell/module/azurerm.network/get-azurermnetworkusage)
 * [API использования сети](/rest/api/virtualnetwork/virtualnetworks/listusage)
 
-Вы можете запросить увеличение, используя **справку и поддержку** или в **использовании квот на** портале.
+Вы можете запросить увеличение с помощью команды **Справка и поддержка** или в области **использование и квоты** на портале.
 
 > [!Note]
-> Чтобы изменить размер **общедоступных префиксов IP**по умолчанию, выберите **длину префикса Min Public IP InterNetwork** из списка выпадающих.
+> Чтобы изменить размер по умолчанию для префиксов общедоступного **IP-адреса**, в раскрывающемся списке выберите значение **Минимальная длина префикса объединенной IP-адреса** .
 
-## <a name="request-networking-quota-increase-at-subscription-level-using-help--support"></a>Запрос сетевой квоты увеличение на уровне подписки с помощью справки и поддержки
+## <a name="request-networking-quota-increase-at-subscription-level-using-help--support"></a>Запрос увеличения квоты сети на уровне подписки с помощью справки и поддержки
 
-Следуйте инструкциям ниже, чтобы создать запрос на поддержку, используя **поддержку Справки и на** портале Azure.
+Следуйте приведенным ниже инструкциям, чтобы создать запрос в службу поддержки, используя **справку и поддержку** в портал Azure.
 
-1. Вопийте на [портале Azure,](https://portal.azure.com)а затем выберите **поддержку справки** из меню портала Azure или ищите и выберите **поддержку Справки.**
+1. Войдите в [портал Azure](https://portal.azure.com), а затем выберите **Справка и поддержка** в меню портал Azure или выполните поиск и выберите Справка и **Поддержка**.
 
     ![Справка и поддержка](./media/networking-quota-request/help-plus-support.png)
 
-1. Выберите **новый запрос на поддержку**.
+1. Выберите **новый запрос в службу поддержки**.
 
     ![Новый запрос на техническую поддержку](./media/networking-quota-request/new-support-request.png)
 
-1. Для **типа выпуска**выберите ограничения **службы и подписки (квоты).**
+1. В качестве **типа проблемы**выберите **пределы службы и подписки (квоты)**.
 
-    ![Выберите ограничения подписки из отбрасываемого типа проблемы](./media/networking-quota-request/select-quota-issue-type.png)
+    ![Раскрывающийся список "ограничения подписки из типа проблемы"](./media/networking-quota-request/select-quota-issue-type.png)
 
 1. Выберите подписку, которая требует увеличенную квоту.
 
-    ![Выберите подписку newSR](./media/networking-quota-request/select-subscription-support-request.png)
+    ![Выберите Новости подписки](./media/networking-quota-request/select-subscription-support-request.png)
 
-1. В **типе квоты**выберите **Сеть**. Выберите **далее: Решения**.
+1. В поле **тип квоты**выберите **сеть**. Нажмите кнопку **Далее: решения**.
 
     ![Выберите тип квоты](./media/networking-quota-request/select-quota-type-network.png)
 
-1. В **PROBLEM DETAILS**выберите **предоставить подробную информацию** и заполнить дополнительную информацию, чтобы помочь обработать ваш запрос.
+1. В окне **сведения о проблеме**выберите **Укажите сведения** и введите дополнительные сведения, которые помогут обработать запрос.
 
-    ![Предоставить подробную информацию](./media/networking-quota-request/provide-details-link.png)
+    ![Укажите сведения](./media/networking-quota-request/provide-details-link.png)
 
-1. В панели **деталей квоты** выберите модель развертывания, местоположение и ресурсы для включения в запрос.
+1. На панели **сведения о квоте** выберите модель развертывания, расположение и ресурсы для включения в запрос.
 
-    ![Квота Подробная информация DM](./media/networking-quota-request/quota-details-network.png)
+    ![Сведения о квоте DM](./media/networking-quota-request/quota-details-network.png)
 
-1. Введите желаемые ограничения для подписки. Чтобы удалить строку, отображайте ресурс из меню **Ресурсов** или выберите значок отбрасываемого "x". После ввода квоты для каждого ресурса выберите **Сохранить и продолжить** работу с созданием запроса поддержки.
+1. Введите желаемые ограничения для подписки. Чтобы удалить линию, отмените выбор ресурса в меню **ресурсы** или выберите значок отклонить "x". После ввода квоты для каждого ресурса нажмите кнопку **сохранить и продолжайте** , чтобы продолжить создание запроса на поддержку.
 
-    ![Новые границы](./media/networking-quota-request/network-new-limits.png)
+    ![Новые ограничения](./media/networking-quota-request/network-new-limits.png)
 
-## <a name="request-networking-quota-increase-at-subscription-level-using-usages--quotas"></a>Запрос сетевой квоты увеличение на уровне подписки с использованием Usages и квоты
+## <a name="request-networking-quota-increase-at-subscription-level-using-usages--quotas"></a>Запрос увеличения квоты сети на уровне подписки с использованием использования + квоты
 
-Следуйте этим инструкциям для создания запроса на поддержку, используя **квоту «Использование»** на портале Azure.
+Выполните эти инструкции, чтобы создать запрос в службу поддержки с помощью функции " **использование и квота** " в портал Azure.
 
-1. От, https://portal.azure.comпоиск и выберите **Подписки**.
+1. В https://portal.azure.comнайдите и выберите **подписки**.
 
-    ![Подписки](./media/networking-quota-request/search-for-suscriptions.png)
+    ![Subscriptions](./media/networking-quota-request/search-for-suscriptions.png)
 
 1. Выберите подписку, которая требует увеличенную квоту.
 
     ![Выбор подписки](./media/networking-quota-request/select-subscription-change-quota.png)
 
-1. Выберите **Квоты использования**
+1. Выбор **использования + квоты**
 
     ![Использование и квоты](./media/networking-quota-request/select-usage-plus-quotas.png)
 
-1. В правом верхнем углу выберите **увеличение запроса.**
+1. В правом верхнем углу выберите **запросить увеличение**.
 
     ![Запросить увеличение](./media/networking-quota-request/request-increase-from-subscription.png)
 
-1. Выполните шаги, начиная с шага 3 в [увеличении квоты Сети Запроса на уровне подписки.](#request-networking-quota-increase-at-subscription-level-using-help--support)
+1. Выполните шаги, начиная с шага 3 в разделе [запрос на увеличение квоты сети на уровне подписки](#request-networking-quota-increase-at-subscription-level-using-help--support).
 
-## <a name="about-networking-limits"></a>О пределах сетей
+## <a name="about-networking-limits"></a>Ограничения сети
 
-Чтобы узнать больше о сетевых ограничениях, смотрите [раздел Сети](../../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits) страницы limits или наши задаваемые вопросы для сетевых ограничений.
+Дополнительные сведения об ограничениях сети см. в [разделе "сети](../../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits) " страницы "ограничения" или на странице "ограничения сети".

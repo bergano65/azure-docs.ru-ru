@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: b8a01b5f2f5ec64fea014468356408220f9c4f1a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76721376"
 ---
 # <a name="move-data-to-sql-server-on-an-azure-virtual-machine"></a>Перемещение данных в SQL Server на виртуальной машине Azure
@@ -26,12 +26,12 @@ ms.locfileid: "76721376"
 
 В следующей таблице перечислены варианты перемещения данных в SQL Server на виртуальной машине Azure.
 
-| <b>Источник</b> | <b>НАЗНАЧЕНИЕ: SQL Server на виртуальной машине Azure</b> |
+| <b>ИСТОЧНИКА</b> | <b>НАЗНАЧЕНИЕ: SQL Server на виртуальной машине Azure</b> |
 | --- | --- |
-| <b>Неструктурированный файл</b> |1. <a href="#insert-tables-bcp">Командная линия объемной копии утилиты (BCP)</a><br> 2. <a href="#insert-tables-bulkquery">Массовая вставка СЗЛ Кери</a><br> 3. <a href="#sql-builtin-utilities">Графические встроенные утилиты в сервере S'L</a> |
-| <b>Локальный сервер SQL Server</b> |1. <a href="#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard">Развертывание базы данных серверов S'L для мастера VM Microsoft Azure</a><br> 2. <a href="#export-flat-file">Экспорт в плоский файл</a><br> 3. <a href="#sql-migration">Мастер миграции базы данных S'L</a> <br> 4. <a href="#sql-backup">Резервное копирование и восстановление базы данных</a><br> |
+| <b>Неструктурированный файл</b> |1. <a href="#insert-tables-bcp">программа для выполнения операций с массовым копированием из командной строки (BCP)</a><br> 2. <a href="#insert-tables-bulkquery">SQL — запрос на выполнение инструкций групповой вставки</a><br> 3. <a href="#sql-builtin-utilities">графические Встроенные служебные программы в SQL Server</a> |
+| <b>Локальный сервер SQL Server</b> |1. <a href="#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard">развертывание SQL Server базы данных в мастере Microsoft Azure виртуальной машины</a><br> 2. <a href="#export-flat-file">Экспорт в неструктурированный файл</a><br> 3. <a href="#sql-migration">Мастер миграции баз данных SQL</a> <br> 4. <a href="#sql-backup">резервное копирование и восстановление базы данных</a><br> |
 
-Этот документ предполагает, что команды S'L выполняются из студии управления серверами S'L или Visual Studio Database Explorer.
+В этом документе предполагается, что команды SQL выполняются из SQL Server Management Studio или Visual Studio обозреватель базы данных.
 
 > [!TIP]
 > Вы также можете воспользоваться [фабрикой данных Azure](https://azure.microsoft.com/services/data-factory/), чтобы создать и назначить конвейер, который переносит данные в виртуальную машину SQL Server в среде Azure. Дополнительные сведения см. в статье [Перемещение данных с помощью действия копирования](../../data-factory/copy-activity-overview.md).
@@ -42,19 +42,19 @@ ms.locfileid: "76721376"
 Для выполнения действий, описанных в этом учебнике, вам необходимо следующее.
 
 * **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранения Azure**. Учетная запись хранения Azure будет использоваться для хранения данных в этом учебнике. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-account-create.md). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. Смотрите [ключи доступа к учетной записи хранилища.](../../storage/common/storage-account-keys-manage.md)
+* **Учетная запись хранения Azure**. Учетная запись хранения Azure будет использоваться для хранения данных в этом учебнике. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-account-create.md). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. См. [раздел Управление ключами доступа учетной записи хранения](../../storage/common/storage-account-keys-manage.md).
 * Подготовленный **SQL Server на виртуальной машине Azure**. Инструкции см. в статье [Настройка SQL Server на виртуальной машине Azure как сервера IPython Notebook для расширенной аналитики](../data-science-virtual-machine/setup-sql-server-virtual-machine.md).
 * Установленная и настроенная локальная среда **Azure PowerShell**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
 
 ## <a name="moving-data-from-a-flat-file-source-to-sql-server-on-an-azure-vm"></a><a name="filesource_to_sqlonazurevm"></a> Перемещение данных из неструктурированного файла на сервер SQL Server на виртуальной машине Azure
 Если данные (упорядоченные по строкам и столбцам) хранятся в неструктурированном файле, этот файл можно переместить в виртуальную машину SQL Server в Azure с помощью следующих средств:
 
-1. [Утилита копирования навалом командной линии (BCP)](#insert-tables-bcp)
+1. [Программа командной строки для выполнения операций с массовым копированием (BCP)](#insert-tables-bcp)
 2. [SQL-запрос на массовую вставку](#insert-tables-bulkquery)
 3. [Графические служебные программы, встроенные в SQL Server (импорт или экспорт, службы SSIS)](#sql-builtin-utilities)
 
 ### <a name="command-line-bulk-copy-utility-bcp"></a><a name="insert-tables-bcp"></a>Служебная программа командной строки для массового копирования (BCP)
-BCP — это служебная программа командной строки, устанавливаемая вместе с SQL Server, которая предоставляет один из самых быстрых способов перемещения данных. Он работает во всех трех вариантах сервера S'L (на территории сервера S'L, S'L Azure и S'L Server VM на Azure).
+BCP — это служебная программа командной строки, устанавливаемая вместе с SQL Server, которая предоставляет один из самых быстрых способов перемещения данных. Он работает во всех трех вариантах SQL Server (локальных SQL Server, SQL Azure и виртуальных машин SQL Server в Azure).
 
 > [!NOTE]
 > **Где следует размещать данные для программы BCP?**  
@@ -75,10 +75,10 @@ BCP — это служебная программа командной стро
     )
     ```
 
-1. Создайте файл формата, описывающий схему для таблицы, выпустив следующую команду из командной строки машины, где установлен bcp.
+1. Создайте файл форматирования, описывающий схему для таблицы, выполнив следующую команду из командной строки компьютера, на котором установлена программа bcp.
 
     `bcp dbname..tablename format nul -c -x -f exportformatfilename.xml -S servername\sqlinstance -T -t \t -r \n`
-1. Вставьте данные в базу данных с помощью команды bcp, которая должна работать с командной строки при установке сервера S'L на ту же машину:
+1. Вставьте данные в базу данных с помощью команды bcp, которая должна работать из командной строки, если SQL Server установлена на одном компьютере:
 
     `bcp dbname..tablename in datafilename.tsv -f exportformatfilename.xml -S servername\sqlinstancename -U username -P password -b block_size_to_move_in_single_attempt -t \t -r \n`
 
@@ -87,7 +87,7 @@ BCP — это служебная программа командной стро
 >
 
 ### <a name="parallelizing-inserts-for-faster-data-movement"></a><a name="insert-tables-bulkquery-parallel"></a>Распараллеливание операций вставки для ускорения перемещения данных
-Если движущиеся данные большие, можно ускорить выполнение нескольких команд BCP параллельно в скрипте PowerShell.
+Если перемещаемые данные велики, можно ускорить выполнение нескольких команд BCP в параллельном режиме в сценарии PowerShell.
 
 > [!NOTE]
 > **Прием данных большого размера.** Чтобы оптимизировать загрузку больших и очень больших наборов данных, разбейте таблицы логических и физических баз данных на разделы, используя несколько групп файлов и секционированных таблиц. Дополнительные сведения о создании секционированных таблиц и загрузке в них данных см. в статье [Параллельный массовый импорт данных с использованием таблиц секционирования SQL](parallel-load-sql-partitioned-tables.md).
@@ -157,7 +157,7 @@ Set-ExecutionPolicy Restricted #reset the execution policy
     ```
 
 ### <a name="built-in-utilities-in-sql-server"></a><a name="sql-builtin-utilities"></a>Служебные программы, встроенные в SQL Server
-Службы интеграции серверов (SSIS) можно использовать для импорта данных в VM сервера S'L на Azure из плоского файла.
+SQL Server Integration Services (SSIS) можно использовать для импорта данных в виртуальную машину SQL Server в Azure из неструктурированного файла.
 Службы SSIS доступны в двух средах Studio. Дополнительные сведения см. в статье [Разработка Integration Services (SSIS) и средства управления](https://technet.microsoft.com/library/ms140028.aspx):
 
 * сведения о SQL Server Data Tools см. в статье [Скачать SQL Server Data Tools (SSDT)](https://msdn.microsoft.com/data/tools.aspx);  
@@ -168,10 +168,10 @@ Set-ExecutionPolicy Restricted #reset the execution policy
 
 1. [Мастер развертывания Базы данных SQL Server на виртуальной машине Microsoft Azure](#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard)
 2. [Экспорт в неструктурированный файл](#export-flat-file)
-3. [Мастер миграции базы данных S'L](#sql-migration)
+3. [Мастер миграции баз данных SQL](#sql-migration)
 4. [Резервное копирование и восстановление базы данных](#sql-backup)
 
-Мы описываем каждый из этих вариантов ниже:
+Описание каждого из этих параметров приведено ниже.
 
 ### <a name="deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard"></a>Мастер развертывания Базы данных SQL Server на виртуальной машине Microsoft Azure
 **Мастер развертывания базы данных SQL Server на виртуальной машине Microsoft Azure** представляет собой простой и рекомендуемый способ перемещения данных из локального экземпляра SQL Server на сервер SQL Server на виртуальной машине Azure. Подробные инструкции, а также описание других вариантов см. в статье [Миграция базы данных SQL Server в экземпляр SQL Server на виртуальной машине Azure](../../virtual-machines/windows/sql/virtual-machines-windows-migrate-sql.md).
@@ -212,7 +212,7 @@ SQL Server поддерживает:
 ## <a name="resources"></a>Ресурсы
 [Миграция базы данных в SQL Server на виртуальной машине Azure](../../virtual-machines/windows/sql/virtual-machines-windows-migrate-sql.md)
 
-[Обзор сервера СЗЛ на виртуальных машинах Azure](../../virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview.md)
+[Обзор SQL Server на виртуальных машинах Azure](../../virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview.md)
 
 [1]: ./media/move-sql-server-virtual-machine/sqlserver_builtin_utilities.png
 [2]: ./media/move-sql-server-virtual-machine/database_migration_wizard.png

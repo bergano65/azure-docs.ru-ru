@@ -1,6 +1,6 @@
 ---
 title: Масштабирование квот и ограничений в лаборатории в Azure DevTest Labs | Документация Майкрософт
-description: В этой статье описывается, как можно масштабировать свою лабораторию в Лабораториях Azure DevTest Labs. Просмотр квот и лимитов использования и запрос на увеличение.
+description: В этой статье описывается, как можно масштабировать лабораторию в Azure DevTest Labs. Просмотр квот и ограничений использования, а затем запрос на увеличение.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: f3299c24bc751263ccd284a4fddb492fba5dd1e0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76761191"
 ---
 # <a name="scale-quotas-and-limits-in-devtest-labs"></a>Масштабирование квот и ограничений в DevTest Labs
@@ -38,7 +38,7 @@ ms.locfileid: "76761191"
 1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Больше служб**, а затем выберите в списке **Выставление счетов**.
 1. В колонке "Выставление счетов" выберите подписку.
-4. Выберите **Квоты использования и квоты**.
+4. Выберите **использование + квоты**.
 
    ![Кнопка "Использование и квоты"](./media/devtest-lab-scale-lab/devtestlab-usage-and-quotas.png)
 
@@ -66,5 +66,5 @@ ms.locfileid: "76761191"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-### <a name="next-steps"></a>Дальнейшие действия
-* Исследуйте [галерею шаблонов DevTest Labs Azure Resource Manager в галерее быстрого запуска.](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates)
+### <a name="next-steps"></a>Дальнейшие шаги
+* Изучите [коллекцию шаблонов быстрого запуска DevTest Labs Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

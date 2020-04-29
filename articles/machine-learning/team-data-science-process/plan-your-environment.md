@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: b0b811a2b7ed432b7fc5015886b28337ca33424e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76710327"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
@@ -48,7 +48,7 @@ ms.locfileid: "76710327"
 * общедоступный HTTP-адрес;
 * локальное или сетевое расположение файла;
 * база данных SQL Server;
-* контейнер для хранения Azure
+* контейнер службы хранилища Azure
 
 ### <a name="what-is-the-azure-destination"></a>Какое целевое расположение Azure будет использоваться?
 
@@ -66,7 +66,7 @@ ms.locfileid: "76710327"
 Процедуры и ресурсы, необходимые для приема и загрузки данных в различные среды хранения и обработки, описаны в следующих статьях:
 
 * [Загрузка данных в среды хранения для аналитики](ingest-data.md)
-* [Импортируйте свои обучающие данные в студию машинного обучения Azure (классический) из различных источников данных](../studio/import-data.md)
+* [Импорт обучающих данных в Машинное обучение Azure Studio (классическая модель) из различных источников данных](../studio/import-data.md)
 
 ### <a name="does-the-data-need-to-be-moved-on-a-regular-schedule-or-modified-during-migration"></a>Требуется ли перемещать данные регулярно или менять их во время переноса?
 
@@ -75,11 +75,11 @@ ms.locfileid: "76710327"
 * если задействован гибридный сценарий, при котором осуществляется доступ к локальным и облачным ресурсам;
 * когда в процессе переноса данные необходимо обработать, изменить или добавить к ним операции бизнес-логики.
 
-Для получения дополнительной информации [переместите данные с внутреннего сервера S'L в Azl Azure с Azure Data Factory.](move-sql-azure-adf.md)
+Дополнительные сведения см. в статье [Перемещение данных из локального сервера SQL Server в SQL Azure с помощью фабрики данных Azure](move-sql-azure-adf.md).
 
 ### <a name="how-much-of-the-data-is-to-be-moved-to-azure"></a>Сколько данных требуется переместить в Azure?
 
-Большие наборы данных могут превышать емкость хранилища определенных сред. Например, в следующем разделе смотрите обсуждение ограничений по размеру для студии машинного обучения (классический). В таких случаях при проведении анализа можно использовать выборку данных. Чтобы узнать о том, как уменьшить выборку данных из набора данных в различных средах Azure, ознакомьтесь с [выборкой данных в процессе обработки и анализа данных группы](sample-data.md).
+Большие наборы данных могут превысить емкость хранилища в определенных средах. Пример см. в статье обсуждение ограничений размера для Машинное обучение Studio (классическая модель) в следующем разделе. В таких случаях при проведении анализа можно использовать выборку данных. Чтобы узнать о том, как уменьшить выборку данных из набора данных в различных средах Azure, ознакомьтесь с [выборкой данных в процессе обработки и анализа данных группы](sample-data.md).
 
 ## <a name="data-characteristics-questions-type-format-and-size"></a>Вопросы, касающиеся характеристик данных: тип, формат и размер
 
@@ -106,7 +106,7 @@ ms.locfileid: "76710327"
 * Средний: более 2 ГБ, но менее 10 ГБ.
 * Большой: более 10 ГБ.
 
-Возьмем, к примеру, среду Azure Machine Learning Studio (классическая):
+Возьмем среду Машинное обучение Azure Studio (классическая модель), например:
 
 * Список форматов и типов данных, поддерживаемых Студией машинного обучения Azure, см. в разделе [Поддерживаемые форматы и типы данных](../studio/import-data.md#supported-data-formats-and-data-types).
 * Дополнительные сведения об ограничениях других служб Azure, используемых в процессе аналитики, см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).
@@ -141,24 +141,24 @@ ms.locfileid: "76710327"
 
 * R
 * Python
-* SQL
+* SQL-код
 
 ### <a name="what-tools-should-you-use-for-data-analysis"></a>Какие средства следует использовать для анализа данных?
 
-* [Microsoft Azure Powershell](/powershell/azure/overview) - язык скриптов, используемый для администрирования ресурсов Azure на языке скриптов
-* [Студия машинного обучения Azure](../studio/what-is-ml-studio.md)
+* [Microsoft Azure PowerShell](/powershell/azure/overview) — язык сценариев, используемый для администрирования ресурсов Azure на языке сценариев
+* [Машинное обучение Azure Studio](../studio/what-is-ml-studio.md)
 * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
 * [RStudio](https://www.rstudio.com)
 * [Инструменты Python для Visual Studio](https://aka.ms/ptvsdocs)
 * [Anaconda](https://www.continuum.io/why-anaconda)
-* [Ноутбуки Jupyter](https://jupyter.org/)
+* [Записные книжки Jupyter](https://jupyter.org/)
 * [Microsoft Power BI](https://powerbi.microsoft.com)
 
 ## <a name="identify-your-advanced-analytics-scenario"></a>Определение сценария расширенной аналитики
 
 Ответив на вопросы в предыдущем разделе, вы сможете определить сценарий, наиболее соответствующий вашей ситуации. Примеры сценариев приведены в статье [Сценарии для расширенной аналитики в Машинном обучении Azure](plan-sample-scenarios.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md)

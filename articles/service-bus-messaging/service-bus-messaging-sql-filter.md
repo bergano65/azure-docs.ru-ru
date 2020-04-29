@@ -1,6 +1,6 @@
 ---
 title: Справочник по синтаксису SQLFilter для служебной шины Azure | Документация Майкрософт
-description: В этой статье приводится подробная информация о грамматике S'LFilter. SqlFilter поддерживает подмножество стандарта SQL-92.
+description: В этой статье содержатся сведения о грамматике SQLFilter. SqlFilter поддерживает подмножество стандарта SQL-92.
 services: service-bus-messaging
 documentationcenter: na
 author: spelluru
@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/05/2018
 ms.author: spelluru
 ms.openlocfilehash: d5a8e165fcee23c5feecd5935983dd77d3ec6c30
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76759669"
 ---
 # <a name="sqlfilter-syntax"></a>Синтаксис SQLFilter
@@ -60,7 +60,7 @@ ms.locfileid: "76759669"
   
 ## <a name="arguments"></a>Аргументы  
   
--   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` или `user`. Значение `sys` указывает область `<property_name>` системы, где является наименованием государственной собственности [класса BrokeredMessage.](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) `user`указывает область `<property_name>` пользовательского охвата, где находится ключ словаря [класса BrokeredMessage.](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) Область `user` используется по умолчанию, если аргумент `<scope>` не указан.  
+-   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` или `user`. `sys` Значение указывает область системы, где `<property_name>` — это имя общедоступного свойства [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). `user`Указывает область пользователя, `<property_name>` где является ключом словаря [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) . Область `user` используется по умолчанию, если аргумент `<scope>` не указан.  
   
 ## <a name="remarks"></a>Remarks
 
@@ -239,11 +239,11 @@ ms.locfileid: "76759669"
   
   Неизвестный результат вычисления в `[NOT] LIKE`:  
   
-- Если какая-либо операнд оценивается как **неизвестная,** то результат **неизвестен.**  
+- Если какой-либо операнд вычисляется как **неизвестный**, результат будет **неизвестным**.  
   
   Неизвестный результат вычисления в `[NOT] IN`:  
   
-- Если левая операндоценивается как **неизвестная,** то результат **неизвестен.**  
+- Если левый операнд вычисляется как **неизвестный**, результат будет **неизвестным**.  
   
   Неизвестный результат вычисления в операторе **AND**:  
   
@@ -279,7 +279,7 @@ ms.locfileid: "76759669"
   
 -   Арифметические операторы, такие как `+`, `-`, `*`, `/` и `%` следуют той же семантике, что и операторы C#: связываются повышения типов данных и неявные преобразования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Класс SQLFilter (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)
 - [Класс SQLFilter (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlfilter)

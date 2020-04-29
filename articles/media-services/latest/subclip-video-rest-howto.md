@@ -1,6 +1,6 @@
 ---
-title: Subclip видео при кодировании с Azure Медиа Услуги REST
-description: В этой теме описывается, как подстегивать видео при кодировании с помощью медиа-служб Azure с помощью REST
+title: Подрезать видео при кодировании с помощью служб мультимедиа Azure (ЧАСТное)
+description: В этом разделе описывается, как подрезать видео при кодировании со службами мультимедиа Azure с помощью функции RESTFUL.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,40 +14,40 @@ ms.topic: article
 ms.date: 06/10/2019
 ms.author: juliako
 ms.openlocfilehash: c39aded55fe36cb130459a4f6f119f872b1adbc4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76514329"
 ---
-# <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Subclip видео при кодировании со средствами массовой информации - ВЕДОМОСТИ
+# <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Подрезать видео при кодировании со службами мультимедиа — остальное
 
-Вы можете обрезать или подстричь видео при кодировании его с помощью [работы.](https://docs.microsoft.com/rest/api/media/jobs) Эта функциональность работает [Transform](https://docs.microsoft.com/rest/api/media/transforms) с любым преобразованием, который построен с использованием либо presets [builtInStandardset,](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) либо пресетов [StandardEnCoderPreset.](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) 
+Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms) , построенным с помощью предустановок [буилтинстандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [стандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) . 
 
-Пример REST в этой теме создает задание, которое обрезает видео при отправке задания кодирования. 
+Пример RESTFUL в этом разделе создает задание, которое обрезает видео по мере отправки задания кодирования. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
-- [Создайте учетную запись Медиа-службы Azure.](create-account-cli-how-to.md)
+- [Создайте учетную запись служб мультимедиа Azure](create-account-cli-how-to.md).
 - [Настройте Postman для вызовов REST API Служб мультимедиа Azure](media-rest-apis-with-postman.md).
     
     Не забудьте выполнить последний шаг, указанный в разделе [Получение токена Azure AD](media-rest-apis-with-postman.md#get-azure-ad-token). 
-- Создайте трансформатор и выходные активы. Вы можете увидеть, как создать Преобразование и выходные активы в [Кодировании удаленного файла на основе URL и потокового видео - REST](stream-files-tutorial-with-rest.md) учебник.
-- Просмотрите тему [концепции кодирования.](encoding-concept.md)
+- Создание преобразования и выходных ресурсов. Вы можете увидеть, как создать преобразование и выходные ресурсы в [кодировке удаленного файла на основе URL-адреса и потока руководства по](stream-files-tutorial-with-rest.md) работе с видео.
+- Ознакомьтесь с разделом [концепция кодирования](encoding-concept.md) .
 
-## <a name="create-a-subclipping-job"></a>Создать задание подсечения
+## <a name="create-a-subclipping-job"></a>Создание задания подрезки
 
-1. В коллекции Postman, которую вы скачали, выберите **Преобразования и задания** -> **Создать работу с помощью Sub Clipping.**
+1. В скачанной коллекции после этого выберите **преобразования и задания** -> **создать задание с вложенной обрезки**.
     
-    Запрос **PUT** выглядит следующим образом:
+    Запрос на **Размещение** выглядит следующим образом:
     
     ```
     https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs/:jobName?api-version={{api-version}}
     ```
-1. Обновите значение переменной среды "transformName" с помощью имени преобразования. 
-1. Выберите вкладку **Body** и обновите "myOutputAsset" с вашим выходным именем актива.
+1. Обновите значение переменной среды "Трансформнаме", указав имя преобразования. 
+1. Перейдите на вкладку **текст** и измените "мйоутпутассет" на имя выходного ресурса.
 
     ```
     {
@@ -82,8 +82,8 @@ ms.locfileid: "76514329"
     ```
 1. Нажмите кнопку **Отправить**.
 
-    Вы видите **ответ** с информацией о работе, которая была создана и представлена, и статусе задания. 
+    Вы увидите **ответ** с информацией о созданном и отправленном задании, а также о состоянии задания. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Как закодировать с помощью пользовательского преобразования](custom-preset-rest-howto.md) 
+[Кодирование с помощью пользовательского преобразования](custom-preset-rest-howto.md) 

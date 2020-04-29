@@ -1,6 +1,6 @@
 ---
-title: Конфигурация - Azure Event Grid IoT Edge (ru) Документы Майкрософт
-description: Конфигурация в Event Grid на IoT Edge.
+title: Настройка — служба "Сетка событий Azure" IoT Edge | Документация Майкрософт
+description: Настройка в сетке событий на IoT Edge.
 author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
@@ -10,80 +10,80 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 841b5092775353bbe3340dbbd55610026f998a15
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76846470"
 ---
 # <a name="event-grid-configuration"></a>Конфигурация сетки событий
 
-Event Grid предоставляет множество конфигураций, которые могут быть изменены в среде. Следующий раздел является ссылкой на все доступные варианты и их по умолчанию.
+Сетка событий предоставляет множество конфигураций, которые можно изменять для каждой среды. В следующем разделе приведена ссылка на все доступные параметры и их значения по умолчанию.
 
 ## <a name="tls-configuration"></a>Конфигурация TLS
 
-Чтобы узнать о проверке подлинности клиента в целом, [см.](security-authentication.md) Примеры его использования можно найти в [этой статье](configure-api-protocol.md).
+Общие сведения о проверке подлинности клиента см. в разделе [безопасность и проверка подлинности](security-authentication.md). Примеры использования можно найти в [этой статье](configure-api-protocol.md).
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-|`inbound__serverAuth__tlsPolicy`| Политика TLS модуля Event Grid. Значение по умолчанию только HTTPS.
-|`inbound__serverAuth__serverCert__source`| Источник серверного сертификата, используемого модулем Event Grid для его конфигурации TLS. Значение по умолчанию — это IoT Edge.
+|`inbound__serverAuth__tlsPolicy`| Политика TLS модуля "Сетка событий". Значение по умолчанию — только HTTPS.
+|`inbound__serverAuth__serverCert__source`| Источник сертификата сервера, используемый модулем сетки событий для своей конфигурации TLS. Значение по умолчанию — IoT Edge.
 
-## <a name="incoming-client-authentication"></a>Входящие проверки подлинности клиента
+## <a name="incoming-client-authentication"></a>Входящая проверка подлинности клиента
 
-Чтобы узнать о проверке подлинности клиента в целом, [см.](security-authentication.md) Примеры можно найти в [этой статье](configure-client-auth.md).
+Общие сведения о проверке подлинности клиента см. в разделе [безопасность и проверка подлинности](security-authentication.md). Примеры можно найти в [этой статье](configure-client-auth.md).
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-|`inbound__clientAuth__clientCert__enabled`| Включить/выключить проверку подлинности клиента на основе сертификата. Значение по умолчанию — true.
-|`inbound__clientAuth__clientCert__source`| Источник проверки сертификатов клиента. Значение по умолчанию — это IoT Edge.
-|`inbound__clientAuth__clientCert__allowUnknownCA`| Политика, позволяющая самостоятельно подписать сертификат клиента. Значение по умолчанию — true.
-|`inbound__clientAuth__sasKeys__enabled`| Включить/выключить проверку подлинности клиента на основе клавиш SAS. Значение по умолчанию выключено.
+|`inbound__clientAuth__clientCert__enabled`| Включение и отключение проверки подлинности клиента на основе сертификата. Значение по умолчанию — true.
+|`inbound__clientAuth__clientCert__source`| Источник для проверки сертификатов клиента. Значение по умолчанию — IoT Edge.
+|`inbound__clientAuth__clientCert__allowUnknownCA`| Политика, разрешающая самозаверяющий сертификат клиента. Значение по умолчанию — true.
+|`inbound__clientAuth__sasKeys__enabled`| Включение/выключение проверки подлинности клиента на основе ключа SAS. Значение по умолчанию — OFF.
 |`inbound__clientAuth__sasKeys__key1`| Одно из значений для проверки входящих запросов.
-|`inbound__clientAuth__sasKeys__key2`| Дополнительное второе значение для проверки входящих запросов.
+|`inbound__clientAuth__sasKeys__key2`| Необязательное второе значение для проверки входящих запросов.
 
-## <a name="outgoing-client-authentication"></a>Исходящие проверки подлинности клиента
-Чтобы узнать о проверке подлинности клиента в целом, [см.](security-authentication.md) Примеры можно найти в [этой статье](configure-identity-auth.md).
-
-| Имя свойства | Описание |
-| ---------------- | ------------ |
-|`outbound__clientAuth__clientCert__enabled`| Включить/выключить присоединение сертификата идентификации для исходящих запросов. Значение по умолчанию — true.
-|`outbound__clientAuth__clientCert__source`| Источник для получения исходящего сертификата модуля Event Grid. Значение по умолчанию — это IoT Edge.
-
-## <a name="webhook-event-handlers"></a>Обработчики событий Webhook
-
-Чтобы узнать о проверке подлинности клиента в целом, [см.](security-authentication.md) Примеры можно найти в [этой статье](configure-webhook-subscriber-auth.md).
+## <a name="outgoing-client-authentication"></a>Исходящая проверка подлинности клиента
+Общие сведения о проверке подлинности клиента см. в разделе [безопасность и проверка подлинности](security-authentication.md). Примеры можно найти в [этой статье](configure-identity-auth.md).
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-|`outbound__webhook__httpsOnly`| Политика для контроля, будут ли разрешены только абоненты HTTPS. Значение по умолчанию верно (только HTTPS).
-|`outbound__webhook__skipServerCertValidation`| Пометить, чтобы проверить, следует ли проверить сертификат абонента. Значение по умолчанию — true.
-|`outbound__webhook__allowUnknownCA`| Политика для контроля того, может ли самоподписанный сертификат быть представлен абонентом. Значение по умолчанию — true. 
+|`outbound__clientAuth__clientCert__enabled`| Включение и отключение подключения сертификата удостоверения для исходящих запросов. Значение по умолчанию — true.
+|`outbound__clientAuth__clientCert__source`| Источник для получения исходящего сертификата модуля сетки событий. Значение по умолчанию — IoT Edge.
+
+## <a name="webhook-event-handlers"></a>Обработчики событий веб-перехватчика
+
+Общие сведения о проверке подлинности клиента см. в разделе [безопасность и проверка подлинности](security-authentication.md). Примеры можно найти в [этой статье](configure-webhook-subscriber-auth.md).
+
+| Имя свойства | Описание |
+| ---------------- | ------------ |
+|`outbound__webhook__httpsOnly`| Политика, определяющая, будут ли разрешены только подписчики HTTPS. Значение по умолчанию — true (только HTTPS).
+|`outbound__webhook__skipServerCertValidation`| Флаг, определяющий, следует ли проверять сертификат подписчика. Значение по умолчанию — true.
+|`outbound__webhook__allowUnknownCA`| Политика для управления тем, может ли подписчик предоставлять самозаверяющий сертификат. Значение по умолчанию — true. 
 
 ## <a name="delivery-and-retry"></a>Доставка и повторные попытки доставки
 
-Чтобы узнать об этой функции в целом, см [Доставка и Retry](delivery-retry.md).
+Общие сведения об этой функции см. в разделе [Доставка и повторная попытка](delivery-retry.md).
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-| `broker__defaultMaxDeliveryAttempts` | Максимальное количество попыток доставить событие. Значение по умолчанию — 30.
-| `broker__defaultEventTimeToLiveInSeconds` | Время в жизни (TTL) в секундах, после чего событие будет удалено, если не доставлено. Значение по умолчанию составляет **7200** секунд
+| `broker__defaultMaxDeliveryAttempts` | Максимальное число попыток доставки события. Значение по умолчанию — 30.
+| `broker__defaultEventTimeToLiveInSeconds` | Срок жизни (TTL) (в секундах), после которого событие будет удалено, если оно не доставлено. Значение по умолчанию — **7200** секунд.
 
 ## <a name="output-batching"></a>Пакетная обработка выходных данных
 
-Чтобы узнать об этой функции в целом, см [Доставка и выход пакетирования](delivery-output-batching.md).
+Общие сведения об этой функции см. в статье [Пакетная обработка доставки и вывода данных](delivery-output-batching.md).
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-| `api__deliveryPolicyLimits__maxBatchSizeInBytes` | Максимальное значение, `ApproxBatchSizeInBytes` допустимое для ручки. Значение по умолчанию: `1_058_576`.
-| `api__deliveryPolicyLimits__maxEventsPerBatch` | Максимальное значение, `MaxEventsPerBatch` допустимое для ручки. Значение по умолчанию: `50`.
-| `broker__defaultMaxBatchSizeInBytes` | Максимальный размер запроса на доставку, когда указано только. `MaxEventsPerBatch` Значение по умолчанию: `1_058_576`.
-| `broker__defaultMaxEventsPerBatch` | Максимальное количество событий, чтобы добавить к пакету, когда только `MaxBatchSizeInBytes` указано. Значение по умолчанию: `10`.
+| `api__deliveryPolicyLimits__maxBatchSizeInBytes` | Максимальное значение, `ApproxBatchSizeInBytes` допустимое для регулятора. Значение по умолчанию — `1_058_576`.
+| `api__deliveryPolicyLimits__maxEventsPerBatch` | Максимальное значение, `MaxEventsPerBatch` допустимое для регулятора. Значение по умолчанию — `50`.
+| `broker__defaultMaxBatchSizeInBytes` | Максимальный размер запроса на доставку, `MaxEventsPerBatch` если указан только. Значение по умолчанию — `1_058_576`.
+| `broker__defaultMaxEventsPerBatch` | Максимальное число событий, добавляемых в пакет, если указано `MaxBatchSizeInBytes` только значение. Значение по умолчанию — `10`.
 
 ## <a name="metrics"></a>Метрики
 
-Чтобы узнать об использовании метрик с [monitor topics and subscriptions](monitor-topics-subscriptions.md) Event Grid на IoT Edge, см.
+Дополнительные сведения об использовании метрик с таблицей событий в IoT Edge см. в разделе [мониторинг разделов и подписок](monitor-topics-subscriptions.md) .
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-| `metrics__reporterType` | Тип репортера для метрик enpoint. По `none` умолчанию есть и отстраняет метрики. Настройка `prometheus` для вхотливых метрик в формате экспозиции Prometheus.
+| `metrics__reporterType` | Тип создателя для метрик енпоинт. Значение по `none` умолчанию — и отключает метрики. Значение, `prometheus` чтобы включить метрики в формате Prometheus демонстрации.

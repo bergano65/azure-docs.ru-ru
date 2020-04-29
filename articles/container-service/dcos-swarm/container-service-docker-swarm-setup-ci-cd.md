@@ -8,10 +8,10 @@ ms.date: 12/08/2016
 ms.author: jucoriol
 ms.custom: mvc
 ms.openlocfilehash: 11a6debe735459b617f6f93c3f67a32350dd4623
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76549059"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>Полный конвейер средств непрерывной интеграции и доставки для развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps Services (не рекомендуется)
@@ -38,7 +38,7 @@ ms.locfileid: "76549059"
 1. Docker Swarm в кластере извлекает последнюю версию образов. 
 1. Развертывается новая версия приложения с помощью Docker Compose. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
@@ -80,7 +80,7 @@ ms.locfileid: "76549059"
 
     ![Azure DevOps Services — внешнее подключение](./media/container-service-docker-swarm-setup-ci-cd/vsts-services-menu.png)
 
-1. Слева щелкните **New Service Endpoint** > **GitHub**.
+1. В левой части щелкните **создать конечную точку** > службы**GitHub**.
 
     ![Azure DevOps Services — GitHub](./media/container-service-docker-swarm-setup-ci-cd/vsts-github.png)
 
@@ -132,7 +132,7 @@ ms.locfileid: "76549059"
 Дальнейшие действия определяют рабочий процесс сборки. Для сборки приложения *MyShop* доступно пять образов контейнера. Каждый образ создается с помощью Dockerfile, расположенного в папках проекта:
 
 * ProductsApi;
-* Прокси-сервер
+* Прокси
 * RatingsApi;
 * RecommendationsApi;
 * ShopFront.
@@ -159,7 +159,7 @@ ms.locfileid: "76549059"
 
 1. Настроив действия сборки и принудительной отправки для каждого из пяти образов, добавьте еще два действия в рабочий процесс сборки.
 
-    а. Задача командной строки, использующая скрипт Bash для замены возникновения *BuildNumber* в файле docker-compose.yml с текущим идокол сборки. Подробности смотрите на следующем экране.
+    a. Задача командной строки, использующая скрипт Bash для замены экземпляра *BuildNumber* в файле DOCKER-Compose. yml текущим идентификатором сборки. Дополнительные сведения см. на следующем экране.
 
     ![Azure DevOps Services — обновление файла Compose](./media/container-service-docker-swarm-setup-ci-cd/vsts-build-replace-build-number.png)
 
@@ -177,9 +177,9 @@ Azure DevOps Services позволяет [управлять выпусками 
 
 ### <a name="initial-release-setup"></a>Начальная настройка выпуска
 
-1. Чтобы создать конвейер выпуска, нажмите **«Релизы»** > **и «Выпуск**
+1. Чтобы создать конвейер выпуска, щелкните **выпуски** > **+ выпуск** .
 
-1. Чтобы настроить источник **артефакта,** > нажмите Артефакты**Ссылка источник артефакта**. Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
+1. Чтобы настроить источник артефакта, щелкните **артефакты** > **связать источник артефакта**. Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
 
     ![Azure DevOps Services — артефакты выпуска](./media/container-service-docker-swarm-setup-ci-cd/vsts-release-artefacts.png) 
 
@@ -220,6 +220,6 @@ Azure DevOps Services позволяет [управлять выпусками 
 
 Теперь после выполнения настройки пришло время протестировать этот новый конвейер CI/CD. Самый простой способ сделать это — обновить исходный код и сохранить изменения в репозитории GitHub. Через несколько секунд после отправки кода в Azure DevOps Services появится новая сборка. После успешного выполнения новый выпуск будет активирован и развернет новую версию приложения в кластере Службы контейнеров Azure.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Более подробную информацию о CI/CD с помощью служб Azure DevOps можно узнать в статье [Azure Pipelines Documentation.](/azure/devops/pipelines/?view=azure-devops)
+* Дополнительные сведения о CI/CD с Azure DevOps Services см. в статье [Azure pipelines документация](/azure/devops/pipelines/?view=azure-devops) .

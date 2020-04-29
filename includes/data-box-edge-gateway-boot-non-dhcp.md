@@ -5,18 +5,18 @@ ms.topic: include
 ms.date: 03/05/2019
 ms.author: alkohli
 ms.openlocfilehash: 880b630ae48eda086f6454f0d7108d27d3403b77
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185955"
 ---
-Если вы загружаетесь в среде, не относящемся к DHCP, выполните следующие действия, чтобы развернуть виртуальную машину для шлюза Box Data.
+При загрузке в среде без DHCP выполните следующие действия, чтобы развернуть виртуальную машину для Шлюз Data Box.
 
-1. [Подключитесь к интерфейсу устройства Windows PowerShell.](#connect-to-the-powershell-interface)
-2. Используйте `Get-HcsIpAddress` cmdlet, чтобы перечислить сетевые интерфейсы, включенные на вашем виртуальном устройстве. Если на устройстве включен один сетевой интерфейс, по умолчанию ему назначается имя `Ethernet`.
+1. [Подключитесь к интерфейсу Windows PowerShell устройства](#connect-to-the-powershell-interface).
+2. Используйте командлет `Get-HcsIpAddress` , чтобы вывести список сетевых интерфейсов, включенных на вашем виртуальном устройстве. Если на устройстве включен один сетевой интерфейс, по умолчанию ему назначается имя `Ethernet`.
 
-    Следующий пример показывает использование этого cmdlet:
+    В следующем примере показано использование этого командлета:
 
     ```
     [10.100.10.10]: PS>Get-HcsIpAddress

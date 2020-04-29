@@ -1,5 +1,5 @@
 ---
-title: 'Портал Azure: Динамическая маскировка данных'
+title: 'Портал Azure: Динамическое маскирование данных'
 description: Как приступить к работе с динамическим маскированием данных в базе данных SQL на портале Azure.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 03/04/2018
 ms.openlocfilehash: a8098b31c6b389b640fc03e756da44c70d9f3a70
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76722124"
 ---
 # <a name="get-started-with-sql-database-dynamic-data-masking-with-the-azure-portal"></a>Приступая к работе с динамическим маскированием данных в базе данных SQL на портале Azure
@@ -24,7 +24,7 @@ ms.locfileid: "76722124"
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-the-azure-portal"></a>Настройка динамического маскирования данных для базы данных с помощью портала Azure
 
-1. Запуск портала Azure на [https://portal.azure.com](https://portal.azure.com).
+1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. Перейдите на страницу с параметрами базы данных, которая содержит конфиденциальные данные, которые нужно маскировать.
 3. Щелкните элемент **Динамическое маскирование данных**. Откроется страница настройки **Динамическое маскирование данных**.
 
@@ -55,7 +55,7 @@ ms.locfileid: "76722124"
 
 10. Щелкните **Сохранить** на странице настройки маскирования данных, чтобы сохранить новую или обновленную политику маскирования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Обзор динамического маскирования данных см. в разделе [Динамическое маскирование данных](sql-database-dynamic-data-masking-get-started.md).
 * Динамическое маскирование данных можно также реализовать с помощью [командлетов для Базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql/) или [REST API](https://docs.microsoft.com/rest/api/sql/).

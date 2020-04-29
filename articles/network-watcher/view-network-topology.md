@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 05/09/2018
 ms.author: damendo
 ms.openlocfilehash: 675919db55932d3ccc04fd5397f6f673832b4900
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76840576"
 ---
 # <a name="view-the-topology-of-an-azure-virtual-network"></a>Просмотр топологии виртуальной сети Azure
@@ -84,17 +84,17 @@ ms.locfileid: "76840576"
 
 Выполнять команды можно одним из следующих способов:
 - В Azure Cloud Shell выберите **Попробовать** вверху справа от любой команды. Azure Cloud Shell — это бесплатная интерактивная оболочка, в которой предустановлены и настроены для использования с вашей учетной записью стандартные средства Azure.
-- Запустите PowerShell с компьютера. Если вы запустите PowerShell с компьютера, эта `Az` статья требует модуль Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+- Запустите PowerShell с компьютера. При запуске PowerShell с компьютера для работы с этой статьей требуется модуль `Az` Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Используемая учетная запись должна предоставлять необходимые [разрешения](required-rbac-permissions.md).
 
-1. Если в регионе виртуальной сети, для которой нужно создать топологию, уже есть наблюдатель за сетями, перейдите к шагу 3. Создайте группу ресурсов, содержащую сетевого наблюдателя с [Помощью New-AzResourceGroup.](/powershell/module/az.Resources/New-azResourceGroup) В следующем примере создается группа ресурсов в регионе *eastus*:
+1. Если в регионе виртуальной сети, для которой нужно создать топологию, уже есть наблюдатель за сетями, перейдите к шагу 3. Создайте группу ресурсов, которая будет содержать наблюдатель за сетями с помощью [New-азресаурцеграуп](/powershell/module/az.Resources/New-azResourceGroup). В следующем примере создается группа ресурсов в регионе *eastus*:
 
     ```azurepowershell-interactive
     New-AzResourceGroup -Name NetworkWatcherRG -Location EastUS
     ```
 
-2. Создайте сетевой наблюдатель с [помощью New-AzNetworkWatcher.](/powershell/module/az.network/new-aznetworkwatcher) В следующем примере создается наблюдатель за сетями в регионе eastus:
+2. Создайте наблюдатель за сетями с помощью [New-азнетворкватчер](/powershell/module/az.network/new-aznetworkwatcher). В следующем примере создается наблюдатель за сетями в регионе eastus:
 
     ```azurepowershell-interactive
     New-AzNetworkWatcher `
@@ -102,7 +102,7 @@ ms.locfileid: "76840576"
       -ResourceGroupName NetworkWatcherRG
     ```
 
-3. Извлекайте экземпляр Сетевого наблюдателя с [помощью Get-AzNetworkWatcher.](/powershell/module/az.network/get-aznetworkwatcher) В следующем примере выполняется получение наблюдателя за сетями в регионе "Восточная часть США":
+3. Получите экземпляр наблюдателя за сетями с помощью [Get-азнетворкватчер](/powershell/module/az.network/get-aznetworkwatcher). В следующем примере выполняется получение наблюдателя за сетями в регионе "Восточная часть США":
 
     ```azurepowershell-interactive
     $nw = Get-AzResource `
@@ -112,7 +112,7 @@ ms.locfileid: "76840576"
       -ResourceGroupName $nw.ResourceGroupName
     ```
 
-4. Извлекайте топологию с [помощью Get-AzNetworkWatcherTopology.](/powershell/module/az.network/get-aznetworkwatchertopology) В следующем примере выполняется получение топологии для виртуальной сети в группе ресурсов с именем *MyResourceGroup*:
+4. Получите топологию с помощью [Get-азнетворкватчертопологи](/powershell/module/az.network/get-aznetworkwatchertopology). В следующем примере выполняется получение топологии для виртуальной сети в группе ресурсов с именем *MyResourceGroup*:
 
     ```azurepowershell-interactive
     Get-AzNetworkWatcherTopology `
@@ -124,7 +124,7 @@ ms.locfileid: "76840576"
 
    Изучите дополнительные сведения об отношениях и [свойствах](#properties) в возвращаемых выходных данных. Если у вас нет виртуальной сети для просмотра топологии, можно создать ее с помощью примера скрипта для [маршрутизации трафика через сетевой виртуальный модуль](../virtual-network/scripts/virtual-network-powershell-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). Чтобы просмотреть схему топологии и скачать ее в виде редактируемого файла, используйте [портал](#azure-portal).
 
-## <a name="relationships"></a>Связи
+## <a name="relationships"></a>Отношения
 
 Все ресурсы, возвращаемые в топологии, имеют один из следующих типов отношений с другим ресурсом:
 
@@ -133,7 +133,7 @@ ms.locfileid: "76840576"
 | Containment       | Виртуальная сеть содержит подсеть. Подсеть содержит сетевой интерфейс.                            |
 | Связь        | Сетевой интерфейс связывается с виртуальной машиной. Общедоступный IP-адрес связывается с сетевым интерфейсом. |
 
-## <a name="properties"></a>Свойства
+## <a name="properties"></a>Элемент Property
 
 Все ресурсы, возвращаемые в топологии, имеют следующие свойства:
 
@@ -145,7 +145,7 @@ ms.locfileid: "76840576"
     - **Name** (Имя): имя ресурса, на который указывает ссылка.
     - **ResourceId** (Идентификатор ресурса): универсальный код ресурса (URI), на который добавляется ссылка при установке связи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [диагностировать проблему фильтрации входящего и исходящего трафика виртуальной машины](diagnose-vm-network-traffic-filtering-problem.md), используя функцию для проверки потока IP в Наблюдателе за сетями.
 - Узнайте, как [диагностировать проблему маршрутизации исходящего трафика виртуальной машины](diagnose-vm-network-routing-problem.md), используя функцию следующего прыжка в Наблюдателе за сетями.

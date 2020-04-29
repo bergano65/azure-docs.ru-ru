@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 1f17463125cead64bd58a2d07e53eee4d3cfcd70
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76840814"
 ---
 # <a name="introduction-to-variable-packet-capture-in-azure-network-watcher"></a>Общие сведения о возможностях записи пакетов в Наблюдателе за сетями Azure
@@ -41,13 +41,13 @@ ms.locfileid: "76840814"
 
 |Свойство|Описание|
 |---|---|
-|**Протокол** | Протокол фильтрации для записи пакетов. Возможны такие значения: TCP, UDP и все.|
+|**протокол**; | Протокол фильтрации для записи пакетов. Возможны такие значения: TCP, UDP и все.|
 |**Локальный IP-адрес** | Это значение фильтрует запись пакетов по указанному локальному IP-адресу.|
 |**Локальный порт** | Это значение фильтрует запись пакетов по указанному локальному порту.|
 |**Удаленный IP-адрес** | Это значение фильтрует запись пакетов по указанному удаленному IP-адресу.|
 |**Удаленный порт** | Это значение фильтрует запись пакетов по указанному удаленному порту.|
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие шаги
 
 См. дополнительные сведения об управлении записью пакетов [на портале Azure](network-watcher-packet-capture-manage-portal.md) и [с помощью PowerShell](network-watcher-packet-capture-manage-powershell.md).
 

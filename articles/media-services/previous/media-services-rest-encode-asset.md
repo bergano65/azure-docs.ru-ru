@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 6854400f2152a5952a7b24dbd860d7ad4bfc943d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76774920"
 ---
 # <a name="how-to-encode-an-asset-by-using-media-encoder-standard"></a>Как закодировать ресурс с помощью Media Encoder Standard
 > [!div class="op_single_selector"]
 > * [.NET](media-services-dotnet-encode-with-media-encoder-standard.md)
-> * [Остальные](media-services-rest-encode-asset.md)
+> * [REST](media-services-rest-encode-asset.md)
 > * [Портал](media-services-portal-encode.md)
 >
 >
@@ -42,7 +42,7 @@ ms.locfileid: "76774920"
 
 Мы рекомендуем всегда кодировать исходные файлы в набор MP4-файлов с переменной скоростью, а затем преобразовывать его в нужный формат, используя [динамическую упаковку](media-services-dynamic-packaging-overview.md).
 
-Если выходной ресурс зашифрован в хранилище, необходимо настроить политику доставки ресурсов. Для получения дополнительной [Configuring asset delivery policy](media-services-rest-configure-asset-delivery-policy.md)информации см.
+Если выходной ресурс зашифрован в хранилище, необходимо настроить политику доставки ресурсов. Дополнительные сведения см. в разделе [Настройка политики доставки ресурсов](media-services-rest-configure-asset-delivery-policy.md).
 
 ## <a name="considerations"></a>Рекомендации
 
@@ -59,7 +59,7 @@ ms.locfileid: "76774920"
 > [!NOTE]
 > При работе с REST API служб мультимедиа следует руководствоваться следующими рекомендациями.
 >
-> При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Для получения дополнительной информации [см. Setup для медиа-услуг REST API развития](media-services-rest-how-to-use.md).
+> При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Дополнительные сведения см. в статье [Настройка служб мультимедиа REST API разработки](media-services-rest-how-to-use.md).
 >
 > Если вы используете JSON и указали ключевое слово **__metadata** в запросе (например, для ссылки на связанный объект), вам НЕОБХОДИМО задать для заголовка **Accept**[подробный формат JSON](https://www.odata.org/documentation/odata-version-3-0/json-verbose-format/): Accept: application/json;odata=verbose.
 >
@@ -273,10 +273,10 @@ ms.locfileid: "76774920"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы узнали, как создать задание для кодирования ресурса, ознакомьтесь со статьей [Практическое руководство. Проверка хода выполнения задания](media-services-rest-check-job-progress.md).
 
 ## <a name="see-also"></a>См. также

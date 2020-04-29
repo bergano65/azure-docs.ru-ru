@@ -1,6 +1,6 @@
 ---
-title: Шины службы Azure - Переход к авторизации общей подписи доступа
-description: Узнайте о переходе из службы управления доступом Active Directory Control Service в систему общей авторизации подписи доступа.
+title: Служебная шина Azure — миграция на авторизацию подписанного URL-доступа
+description: Сведения о миграции из службы контроля доступа Azure Active Directory в авторизацию подписанного URL.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -13,13 +13,13 @@ ms.topic: article
 ms.date: 01/27/2020
 ms.author: aschhab
 ms.openlocfilehash: 532bbaf0b983b2d4310780686777cbe895afebe4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76774620"
 ---
-# <a name="service-bus---migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Сервисный автобус - Переход от службы управления доступом к активному каталогу Azure к авторизации общей подписи доступа
+# <a name="service-bus---migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Служебная шина — миграция из службы контроля доступа Azure Active Directory в авторизацию подписанного URL-доступа
 
 В приложениях служебной шины раньше было доступно две модели авторизации: модель токена [подписанного URL-адреса (SAS)](service-bus-sas.md), предоставляемая служебной шиной, и федеративная модель, где управление правилами выполняется внутри с помощью службы контроля доступа (ACS) [Azure Active Directory](/azure/active-directory/). Токены, полученные из службы ACS, передаются в служебную шину для авторизации доступа к необходимым компонентам.
 
@@ -59,7 +59,7 @@ ACS и служебная шина интегрируются за счет из
 
 Правила SAS не считаются учетными записями. Это именованные ключи подписи, связанные с правами. Таким образом в сценариях, в которых приложение создает множество удостоверений службы и предоставляет им права доступа к нескольким сущностям или ко всему пространству имен, по-прежнему требуется посредник, выпускающий токены. Рекомендации по поводу такого посредника можно получить у [специалистов службы поддержки](https://azure.microsoft.com/support/options/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об аутентификации с помощью служебной шины см. в следующих разделах:
 

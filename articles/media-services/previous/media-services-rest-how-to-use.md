@@ -1,6 +1,6 @@
 ---
 title: Обзор REST API операций служб мультимедиа | Документация Майкрософт
-description: API "Media Services Operations REST" используется для создания вакансий, активов, каналов в реальном времени и других ресурсов в учетной записи Медиа-услуг. В этой статье представлен обзор API API Azure Media Services v2 REST.
+description: API-интерфейс "операции служб мультимедиа" используется для создания заданий, ресурсов, динамических каналов и других ресурсов в учетной записи служб мультимедиа. В этой статье содержатся общие сведения о REST API служб мультимедиа Azure v2.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -16,16 +16,16 @@ ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: johndeu
 ms.openlocfilehash: 597839f633ed2b925b86c5f859a0fb2d3b64dd59
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76773662"
 ---
 # <a name="media-services-operations-rest-api-overview"></a>Обзор REST API операций служб мультимедиа 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 **REST API операций Служб мультимедиа** позволяет создавать задания, ресурсы, динамические каналы и другие компоненты в учетной записи Служб мультимедиа. Дополнительные сведения см. в статье [Media Services Operations REST API Reference](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference) (Справочник по REST API операций служб мультимедиа).
 
@@ -120,12 +120,12 @@ ms.locfileid: "76773662"
 
 Дополнительные сведения о написании кода, который позволяет подключиться к REST API с помощью проверки подлинности Azure AD, см. в статье [Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST](media-services-rest-connect-with-aad.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте, как использовать проверку подлинности Azure AD в REST API Служб мультимедиа, изучив сведения из [этой статьи](media-services-rest-connect-with-aad.md).
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

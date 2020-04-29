@@ -1,6 +1,6 @@
 ---
 title: Библиотеки управления служебной шины Azure | Документация Майкрософт
-description: В этой статье объясняется, как использовать библиотеки управления azure Service Bus для динамического предоставления областей и образований службы управления автобусом.
+description: В этой статье объясняется, как использовать библиотеки управления служебной шины Azure для динамической инициализации пространств имен и сущностей служебной шины.
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: d0e90d9278ede97de04ad8efeaa59d94a4567f66
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76756272"
 ---
 # <a name="service-bus-management-libraries"></a>Библиотеки управления служебной шины
@@ -32,11 +32,11 @@ ms.locfileid: "76756272"
 * Создание, обновление, удаление раздела.
 * Создание, обновление, удаление подписки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы приступить к работе с библиотеками управления служебной шины, нужно пройти аутентификацию в службе Azure Active Directory (Azure AD). Azure AD требует выполнять аутентификацию в качестве субъекта-службы, который предоставляет доступ к вашим ресурсам Azure. Сведения о создании субъекта-службы см. в одной из приведенных ниже статей:  
 
-* [Используйте портал Azure для создания приложения Active Directory и основного обслуживания, которые могут получить доступ к ресурсам](/azure/azure-resource-manager/resource-group-create-service-principal-portal)
+* [Используйте портал Azure, чтобы создать Active Directory приложения и субъекта-службы, которые могут получать доступ к ресурсам.](/azure/azure-resource-manager/resource-group-create-service-principal-portal)
 * [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](/azure/azure-resource-manager/resource-group-authenticate-service-principal)
 * [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
 
@@ -76,8 +76,8 @@ ms.locfileid: "76756272"
    await sbClient.Queues.CreateOrUpdateAsync(resourceGroupName, namespaceName, QueueName, queueParams);
    ```
 
-## <a name="complete-code-to-create-a-queue"></a>Полный код для создания очереди
-Вот полный код для создания очереди Service Bus: 
+## <a name="complete-code-to-create-a-queue"></a>Завершение кода для создания очереди
+Ниже приведен полный код для создания очереди служебной шины. 
 
 ```csharp
 using System;
@@ -164,7 +164,7 @@ namespace SBusADApp
 ```
 
 > [!IMPORTANT]
-> Для полного примера [см.](https://github.com/Azure-Samples/service-bus-dotnet-management/) 
+> Полный пример см. в [примере управления .NET на сайте GitHub](https://github.com/Azure-Samples/service-bus-dotnet-management/). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Справочник по API Microsoft.Azure.Management.ServiceBus](/dotnet/api/Microsoft.Azure.Management.ServiceBus)

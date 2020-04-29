@@ -1,6 +1,6 @@
 ---
 title: Как проверить ход выполнения задания с помощью REST API | Документация Майкрософт
-description: В этой статье показано, как проверить ход выполнения работ с помощью Azure Media Services v2 REST API.
+description: В этой статье показано, как проверить ход выполнения задания с помощью REST API служб мультимедиа Azure версии 2.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: cac8622c95ca2cb08ef412ac7117caac0c52ca56
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76773611"
 ---
 # <a name="how-to-check-job-progress"></a>Практическое руководство. Проверка хода выполнения задания
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. Состояние задания можно узнать с помощью свойства State задания. Дополнительные сведения о свойстве State см. в разделе [Свойства объекта Job](https://docs.microsoft.com/rest/api/media/operations/job#job_entity_properties).
 
@@ -65,9 +65,9 @@ ms.locfileid: "76773611"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также
 
-[Медиа-услуги операций REST API обзор](media-services-rest-how-to-use.md)
+[Общие сведения об операциях служб мультимедиа REST API](media-services-rest-how-to-use.md)
