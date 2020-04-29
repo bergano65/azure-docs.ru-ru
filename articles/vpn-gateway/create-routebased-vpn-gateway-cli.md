@@ -1,5 +1,5 @@
 ---
-title: 'Создание маршрутного VPN шлюза Azure: CLI'
+title: 'Создание VPN-шлюза Azure на основе маршрутов: CLI'
 description: Краткое руководство по созданию VPN-шлюза с использованием интерфейса CLI
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/04/2018
 ms.author: cherylmc
 ms.openlocfilehash: 121790fce220874babedf67cd72471caa7e92ae6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80241102"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-cli"></a>Создание VPN-шлюза на основе маршрута с помощью CLI
@@ -59,7 +59,7 @@ az network vnet subnet create \
   --address-prefix 10.1.255.0/27 
 ```
 
-## <a name="request-a-public-ip-address"></a><a name="PublicIP"></a>Запрос публичного IP-адреса
+## <a name="request-a-public-ip-address"></a><a name="PublicIP"></a>Запрос общедоступного IP-адреса
 
 VPN-шлюз должен иметь динамически выделяемый общедоступный IP-адрес. VPN-шлюзу, созданному для виртуальной сети, выделяется общедоступный IP-адрес. Воспользуйтесь следующим примером для запроса общедоступного IP-адреса:
 
@@ -70,7 +70,7 @@ az network public-ip create \
   --allocation-method Dynamic 
 ```
 
-## <a name="create-the-vpn-gateway"></a><a name="CreateGateway"></a>Создание VPN шлюза
+## <a name="create-the-vpn-gateway"></a><a name="CreateGateway"></a>Создание VPN-шлюза
 
 Чтобы создать VPN-шлюз, используйте команду [az network vnet-gateway create](/cli/azure/group).
 
@@ -179,7 +179,7 @@ az network public-ip show \
 az group delete --name TestRG1 --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создав шлюз, можно создать подключение между вашей и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением.
 
