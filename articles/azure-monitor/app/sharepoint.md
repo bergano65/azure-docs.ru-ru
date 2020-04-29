@@ -4,10 +4,10 @@ description: Начало мониторинга нового приложени
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.openlocfilehash: 395e8d667985318f4a084428c6fd4c395ee8b956
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77671449"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
@@ -39,7 +39,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 </script>
 ```
 
-Вставьте сценарий &lt;прямо&gt; перед / голова теги каждой странице вы хотите отслеживать. Если ваш сайт имеет главную страницу, вы можете поместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
+Вставьте сценарий непосредственно перед тегом &lt;/ХЕАД&gt; каждой страницы, которую требуется отвести от него. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
 
 Сценарий содержит ключ инструментирования, который направляет данные телеметрии к ресурсу Application Insights.
 
@@ -132,7 +132,7 @@ function onRequestFail(sender, args) {
 
 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Использование веб-тестов](../../azure-monitor/app/monitor-web-app-availability.md) для мониторинга доступности сайта.
 * [Использование Application Insights](../../azure-monitor/app/app-insights-overview.md) для других типов приложений.
 

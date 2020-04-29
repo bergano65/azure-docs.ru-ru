@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
 ms.openlocfilehash: ac3904284ebf20fa1d5e75f9249732be3963f677
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78206288"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API
 
-Узнайте, как использовать [Apache Livy](https://livy.incubator.apache.org/), интерфейс Apache Spark REST API, который применяется для удаленной отправки заданий в кластер Azure HDInsight Spark. Для получения подробной [документации см.](https://livy.incubator.apache.org/docs/latest/rest-api.html)
+Узнайте, как использовать [Apache Livy](https://livy.incubator.apache.org/), интерфейс Apache Spark REST API, который применяется для удаленной отправки заданий в кластер Azure HDInsight Spark. Подробную документацию см. на [Apache Livy](https://livy.incubator.apache.org/docs/latest/rest-api.html).
 
 Вы можете использовать Livy для выполнения интерактивных оболочек Spark или отправки пакетных заданий для запуска в кластере Spark. В статье рассматривается использование Livy для отправки пакетных заданий. Во фрагментах кода в этой статье используется Curl для отправки вызовов REST API к конечной точке Livy Spark.
 
@@ -35,7 +35,7 @@ curl -k --user "admin:password" -v -H "Content-Type: application/json" -X POST -
 
 ### <a name="examples"></a>Примеры
 
-* Если файл банки находится на кластерном хранилище (WASBS)
+* Если JAR-файл находится в хранилище кластера (WASBS)
 
     ```cmd  
     curl -k --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST -d '{ "file":"wasbs://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
@@ -63,7 +63,7 @@ curl -k --user "admin:password" -v -X GET "https://<spark_cluster_name>.azurehdi
     curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches"
     ```
 
-* Если вы хотите получить определенную партию с данным идентификатором партии
+* Если требуется получить конкретный пакет с заданным ИДЕНТИФИКАТОРом пакета
 
     ```cmd
     curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches/{batchId}"
@@ -77,7 +77,7 @@ curl -k --user "admin:mypassword1!" -v -X DELETE "https://<spark_cluster_name>.a
 
 ### <a name="example"></a>Пример
 
-Удаляем пакетное `5`задание с помощью идентификатора пакетов.
+Удаление пакетного задания с ИДЕНТИФИКАТОРом `5`пакета.
 
 ```cmd
 curl -k --user "admin:mypassword1!" -v -X DELETE "https://mysparkcluster.azurehdinsight.net/livy/batches/5"
@@ -87,26 +87,26 @@ curl -k --user "admin:mypassword1!" -v -X DELETE "https://mysparkcluster.azurehd
 
 Livy обеспечивает высокую доступность заданий Spark, выполняемых в кластере. Вот несколько примеров.
 
-* Если служба Livy выходит из строя после того, как вы удаленно отправили задание в кластер Spark, задание продолжает работать в фоновом режиме. Выполняя резервное копирование, служба Livy восстанавливает состояние задания и отправляет отчет.
+* Если после удаленной отправки задания в кластер Spark служба Livy перестает работать, задание продолжит выполняться в фоновом режиме. Выполняя резервное копирование, служба Livy восстанавливает состояние задания и отправляет отчет.
 * Служба Livy в серверной части обеспечивает работу записных книжек Jupyter для HDInsight. Если записная книжка выполняет задание Spark, а служба Livy перезапускается, записная книжка продолжит выполнять ячейки кода.
 
 ## <a name="show-me-an-example"></a>Показать пример
 
-В этом разделе мы рассмотрим примеры использования Livy Spark для отправки пакетного задания, проследим за ходом выполнения задания, а затем удалим это задание. В примере используется приложение, разработанное в статье [Создание автономного приложения Scala для работы в кластере HDInsight Spark (Linux)](apache-spark-create-standalone-application.md). Шаги здесь предполагают:
+В этом разделе мы рассмотрим примеры использования Livy Spark для отправки пакетного задания, проследим за ходом выполнения задания, а затем удалим это задание. В примере используется приложение, разработанное в статье [Создание автономного приложения Scala для работы в кластере HDInsight Spark (Linux)](apache-spark-create-standalone-application.md). Здесь предполагается следующее:
 
-* Вы уже скопировали банку приложения на учетную запись хранения, связанную с кластером.
-* Вы CuRL установлен на компьютере, где вы пытаетесь эти шаги.
+* Вы уже скопировали JAR-файл приложения в учетную запись хранения, связанную с кластером.
+* Вы установили фигурные скобки на компьютере, где вы пытаетесь выполнить эти действия.
 
 Выполните следующие действия:
 
-1. Для удобства использования установите переменные среды. Этот пример основан на среде Windows, пересматривайте переменные по мере необходимости для вашей среды. `CLUSTERNAME`Заменить, `PASSWORD` и с соответствующими значениями.
+1. Для простоты использования задайте переменные среды. Этот пример основан на среде Windows, изменяя переменные по мере необходимости для вашей среды. Замените `CLUSTERNAME`и `PASSWORD` соответствующими значениями.
 
     ```cmd
     set clustername=CLUSTERNAME
     set password=PASSWORD
     ```
 
-1. Убедитесь, что Livy Spark работает на кластере. Для этого получите список выполняемых пакетов. Если вы работаете работу с использованием Livy в первый раз, выход должен вернуться ноль.
+1. Убедитесь, что в кластере выполняется Livy Spark. Для этого получите список выполняемых пакетов. Если вы запускаете задание с помощью Livy в первый раз, выходные данные должны вернуть ноль.
 
     ```cmd
     curl -k --user "admin:%password%" -v -X GET "https://%clustername%.azurehdinsight.net/livy/batches"
@@ -128,7 +128,7 @@ Livy обеспечивает высокую доступность задани
 
     Обратите внимание на то, что последняя строка выходных данных содержит значение **total:0**, означающее, что никакие пакеты не выполняются.
 
-1. Теперь отправим пакетное задание. В приведенном ниже фрагменте кода для передачи имени JAR-файла и имени класса в качестве параметров используется входной файл (input.txt). Если вы используете эти шаги с компьютера Windows, использование файла ввода является рекомендуемым подходом.
+1. Теперь отправим пакетное задание. В приведенном ниже фрагменте кода для передачи имени JAR-файла и имени класса в качестве параметров используется входной файл (input.txt). Если вы выполняете эти действия на компьютере Windows, рекомендуется использовать входной файл.
 
     ```cmd
     curl -k --user "admin:%password%" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://%clustername%.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
@@ -199,7 +199,7 @@ Livy обеспечивает высокую доступность задани
     {"msg":"deleted"}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
     ```
 
-    Последняя строка выходных данных показывает, что пакет удален. Удаляние работы, пока она работает, также убивает работу. Если задание удаляется после завершения (независимо от успешности выполнения), удаляются все данные об этом задании.
+    Последняя строка выходных данных показывает, что пакет удален. Удаление задания во время его выполнения также ликвидирует задание. Если задание удаляется после завершения (независимо от успешности выполнения), удаляются все данные об этом задании.
 
 ## <a name="updates-to-livy-configuration-starting-with-hdinsight-35-version"></a>Обновления конфигурации Livy, начиная с версии HDInsight 3.5
 
@@ -209,7 +209,7 @@ Livy обеспечивает высокую доступность задани
 
 При подключении к кластеру HDInsight Spark из виртуальной сети Azure можно напрямую подключаться к Livy в кластере. В этом случае URL-адрес для конечной точки Livy — `http://<IP address of the headnode>:8998/batches`. Здесь **8998** — это порт, на котором выполняется Livy на головном узле кластера. Дополнительные сведения о доступе к службам через порты, не являющиеся общедоступными, см. в разделе [Порты, используемые службами Hadoop в HDInsight](../hdinsight-hadoop-port-settings-for-services.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Документация по Apache Livy REST API](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Управление ресурсами кластера Apache Spark в Azure HDInsight](apache-spark-resource-manager.md)

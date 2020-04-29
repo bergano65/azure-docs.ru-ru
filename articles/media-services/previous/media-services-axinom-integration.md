@@ -16,10 +16,10 @@ ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: Mingfeiy;rajputam;Juliako
 ms.openlocfilehash: 2ec3276b9b02c29b80d46e5fd31298c909857182
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78197170"
 ---
 # <a name="using-axinom-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование Axinom для доставки лицензий Widevine в службы мультимедиа Azure 
@@ -56,7 +56,7 @@ ms.locfileid: "78197170"
 
 ### <a name="considerations"></a>Рекомендации
 1. Чтобы создать ключ содержимого для настройки службы доставки ключей, необходимо использовать заданное начальное значение Axinom (8888000000000000000000000000000000000000) и созданный или выбранный идентификатор ключа. Сервер лицензирования Axinom выдает все лицензии, содержащие ключи содержимого на основе одного начального значения, которое является допустимым как для тестирования, так и для рабочих задач.
-2. URL-адрес приобретения лицензии [https://drm-widevine-licensing.axtest.net/AcquireLicense](https://drm-widevine-licensing.axtest.net/AcquireLicense)Widevine для тестирования: . Допускается использование HTTP и HTTPS.
+2. URL-адрес для получения лицензии Widevine для [https://drm-widevine-licensing.axtest.net/AcquireLicense](https://drm-widevine-licensing.axtest.net/AcquireLicense)тестирования:. Допускается использование HTTP и HTTPS.
 
 ## <a name="azure-media-player-preparation"></a>Подготовка Проигрывателя мультимедиа Azure
 Проигрыватель AMP 1.4.0 поддерживает воспроизведение содержимого AMS, которое динамически упаковывается с помощью DRM PlayReady и Widevine.
@@ -195,14 +195,14 @@ ms.locfileid: "78197170"
 | URL-адрес для приобретения лицензии Widevine |Должен использоваться при настройке политики доставки ресурсов для потоковой передачи DASH ([подробнее](media-services-axinom-integration.md#content-protection)). |
 | Идентификатор ключа содержимого |Должен быть включен в значение утверждения сообщения об обслуживании маркера JWT ([подробнее](media-services-axinom-integration.md#jwt-token-generation)). |
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ### <a name="acknowledgments"></a>Благодарности

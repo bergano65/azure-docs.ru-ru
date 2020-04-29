@@ -1,5 +1,5 @@
 ---
-title: Тестируйте запросы Azure Stream Analytics локально в Visual Studio
+title: Тестирование Azure Stream Analytics запросов локально в Visual Studio
 description: В этой статье описывается, как локально протестировать запросы с помощью инструментов Azure Stream Analytics для Visual Studio.
 author: su-jie
 ms.author: sujie
@@ -8,15 +8,15 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 07/10/2018
 ms.openlocfilehash: 34c8555356d5c0142d7b677c8119fe66806ab064
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76834915"
 ---
 # <a name="test-stream-analytics-queries-locally-with-visual-studio"></a>Локальное тестирование запросов Stream Analytics с помощью Visual Studio
 
-Инструменты Azure Stream Analytics для Visual Studio можно использовать для визуальной студии для локальной проверки заданий Stream Analytics с помощью выборочных данных или [данных в реальном времени.](stream-analytics-live-data-local-testing.md) 
+Azure Stream Analytics инструменты для Visual Studio можно использовать для локального тестирования заданий Stream Analytics с помощью демонстрационных данных или [динамических данных](stream-analytics-live-data-local-testing.md). 
 
 В этом [кратком руководстве](stream-analytics-quick-create-vs.md) вы узнаете, как создать задание Stream Analytics с помощью Visual Studio.
 
@@ -58,7 +58,7 @@ ms.locfileid: "76834915"
    
 
 ### <a name="sample-input"></a>Пример ввода
-Вы также можете применить выборку примеров входных данных из источников к локальному файлу. Нажмите правой кнопкой мыши файл конфигурации ввода и выберите **пример данных.** 
+Вы также можете применить выборку примеров входных данных из источников к локальному файлу. Щелкните правой кнопкой мыши входной файл конфигурации и выберите пункт **образец данных**. 
 
 ![Образец данных](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-sample-data-01.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "76834915"
 
 ![Выходные данные для примера данных](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-sample-data-03.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
 * [Просмотр заданий Azure Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools.md)

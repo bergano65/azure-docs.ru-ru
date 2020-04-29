@@ -15,16 +15,16 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 79c24eb078cc3de764ecc1c814e5b8772777eab6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78199501"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Использование общего динамического шифрования PlayReady и (или) Widevine DRM
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/)   > никаких новых функций или функциональных возможностей в Media Services v2 не добавляется. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 >   
 
 ## <a name="overview"></a>Обзор
@@ -39,11 +39,11 @@ ms.locfileid: "78199501"
 * [EZDRM](https://ezdrm.com/); 
 * [castLabs](https://castlabs.com/company/partners/azure/) 
 
-Для получения дополнительной информации, см интеграции с [Axinom](media-services-axinom-integration.md) и [castLabs](media-services-castlabs-integration.md).
+Дополнительные сведения см. в разделе Интеграция с [Axinom](media-services-axinom-integration.md) и [castLabs](media-services-castlabs-integration.md).
 
-Службы мультимедиа поддерживают несколько способов авторизации пользователей, которые запрашивают ключи. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Медиа-сервисы поддерживают токены в [простых форматах веб-токенов](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2) (SWT) и [JSON Web Token](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3) (JWT). 
+Службы мультимедиа поддерживают несколько способов авторизации пользователей, которые запрашивают ключи. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в форматах [простого веб-маркера](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2) (SWT) и [JSON Web Token](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3) (JWT). 
 
-Для получения дополнительной информации [см.](media-services-protect-with-aes128.md#configure_key_auth_policy)
+Дополнительные сведения см. [в статье Настройка политики авторизации для ключа содержимого](media-services-protect-with-aes128.md#configure_key_auth_policy).
 
 Чтобы воспользоваться преимуществами динамического шифрования, требуется ресурс, содержащий набор многоскоростных MP4-файлов или многоскоростных исходных файлов Smooth Streaming. Вам также потребуется настроить политику доставки для ресурса (описывается далее в этой статье). В зависимости от формата, указанного в URL-адресе потоковой передачи, сервер потокового воспроизведения по запросу обеспечивает доставку содержимого по выбранному протоколу. Благодаря этому можно хранить и оплачивать файлы в одном формате хранения. Службы мультимедиа создают и обрабатывают соответствующий ответ HTTP на каждый запрос клиента.
 
@@ -103,7 +103,7 @@ ms.locfileid: "78199501"
 
 Дополнительные сведения см. в руководстве по [созданию ключей содержимого](media-services-dotnet-create-contentkey.md).
 
-## <a name="configure-the-content-keys-authorization-policy"></a><a id="configure_key_auth_policy"></a>Настройка политики авторизации ключа содержимого
+## <a name="configure-the-content-keys-authorization-policy"></a><a id="configure_key_auth_policy"></a>Настройка политики авторизации для ключа содержимого
 Службы мультимедиа поддерживают несколько способов аутентификации пользователей, которые запрашивают ключи. Потребуется настроить политику авторизации для ключа содержимого. Прежде чем ключ будет доставлен в клиент (проигрыватель), его нужно привести в соответствие с политикой. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера.
 
 Дополнительную информацию см. в статье о [настройке политики авторизации для ключа содержимого](media-services-dotnet-configure-content-key-auth-policy.md#playready-dynamic-encryption).
@@ -605,15 +605,15 @@ namespace DynamicEncryptionWithDRM
 }
 ```
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

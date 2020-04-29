@@ -1,5 +1,5 @@
 ---
-title: Отладка в визуальной студии с Azure Application Insights
+title: Отладка в Visual Studio с помощью Application Insights Azure
 description: Анализ производительности веб-приложения и диагностика во время отладки и в рабочей среде.
 ms.topic: conceptual
 author: NumberByColors
@@ -8,10 +8,10 @@ ms.date: 07/07/2017
 ms.reviewer: mbullwin
 ms.custom: vs-azure
 ms.openlocfilehash: 8905222214d58eeba24ecf50da768ffa1d65c39d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670888"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Отладка приложений с помощью Azure Application Insights в Visual Studio
@@ -90,12 +90,12 @@ ms.locfileid: "77670888"
 * *Сначала мы полностью настроили Application Insights для отправки данных телеметрии на портал. Но теперь нужно, чтобы данные телеметрии отображались только в Visual Studio.*
   
   * В параметрах окна поиска можно включить поиск локальной диагностики, который будет выполняться, даже если ваше приложение отправляет данные телеметрии на портал.
-  * Чтобы остановить телеметрию, отправляемую `<instrumentationkey>...` на портал, прокомментируйте строку с ApplicationInsights.config. Когда вы будете готовы отправить телеметрию на портал снова, не комментируйте его.
+  * Чтобы отключить отправку данных телеметрии на портал, закомментируйте `<instrumentationkey>...` строку из ApplicationInsights. config. Когда вы будете готовы отправить данные телеметрии на портал, раскомментируйте его.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 |  |  |
 | --- | --- |
-| **[Добавление данных](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio/64.png) |
+| **[Добавить дополнительные данные](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio/64.png) |
 | **[Работа с порталом Application Insights](../../azure-monitor/app/overview-dashboard.md)**<br/>Просмотр панелей мониторинга, эффективных средств диагностики и анализа, оповещений, карты динамических зависимостей приложения, а также экспортированных данных телеметрии. |![Visual studio](./media/visual-studio/62.png) |
 

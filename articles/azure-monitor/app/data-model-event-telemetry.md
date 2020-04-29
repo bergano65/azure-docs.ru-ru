@@ -5,19 +5,19 @@ ms.topic: conceptual
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: bd8b2581f7642f6825aaf0d1b51c8e94d4333d33
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77671890"
 ---
 # <a name="event-telemetry-application-insights-data-model"></a>Телеметрия событий: модель данных Application Insights
 
 Элементы телеметрии событий, которые можно создавать в [Application Insights](../../azure-monitor/app/app-insights-overview.md), представляют событие, произошедшее в приложении. Обычно это взаимодействие с пользователем, например нажатие кнопки или оформление заказа. Кроме того, это может быть событие жизненного цикла приложения, такое как инициализация или изменение конфигурации. 
 
-Семантически события могут как коррелировать, так и не коррелировать с запросами. Однако при правильном использовании телеметрия событий важнее, чем запросы или трассировки. События представляют бизнес-телеметрии и должны быть предметом отдельной, менее агрессивной [выборки.](../../azure-monitor/app/api-filtering-sampling.md)
+Семантически события могут как коррелировать, так и не коррелировать с запросами. Однако при правильном использовании телеметрия событий важнее, чем запросы или трассировки. События представляют бизнес-данные телеметрии и должны быть предметом отдельной, менее агрессивной [выборки](../../azure-monitor/app/api-filtering-sampling.md).
 
-## <a name="name"></a>name
+## <a name="name"></a>Имя
 
 Имя события. Чтобы обеспечить правильную группировку и значимость метрик, настройте в приложении создание небольшого количества имен отдельных событий. Например, не используйте отдельное имя для каждого созданного экземпляра события.
 
@@ -31,7 +31,7 @@ ms.locfileid: "77671890"
 
 [!INCLUDE [application-insights-data-model-measurements](../../../includes/application-insights-data-model-measurements.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.
 - [Написание пользовательской телеметрии событий](../../azure-monitor/app/api-custom-events-metrics.md#trackevent)

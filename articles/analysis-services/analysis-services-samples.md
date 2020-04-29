@@ -1,6 +1,6 @@
 ---
 title: Примеры кода, проектов и баз данных для служб Azure Analysis Services | Документация Майкрософт
-description: В этой статье описаны ресурсы, чтобы узнать о образцах кода, проекта и базы данных для служб анализа Azure.
+description: В этой статье описываются ресурсы, посвященные примерам кода, проекта и базы данных для Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 2b5b95349b8a84cc8294dbcf9ab80eff8c7b86b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78247837"
 ---
 # <a name="azure-analysis-services-samples"></a>Примеры для служб Azure Analysis Services
@@ -26,9 +26,9 @@ ms.locfileid: "78247837"
 
 [Adventure Works для служб Analysis Services](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks-analysis-services) на GitHub — это самый используемый пример проекта табличной модели. Вы можете скачать проект VS или полный пример базы данных табличной модели.
 
-## <a name="sample-database-on-azure"></a>Пример базы данных на Azure
+## <a name="sample-database-on-azure"></a>Образец базы данных в Azure
 
-Azure Synapse Analytics (Хранилище данных S'L) предоставляет образец базы данных AdventureWorksDW, которая может быть включена в подготовленный ресурс. Чтобы узнать больше, [см.](/azure/sql-data-warehouse/create-data-warehouse-portal)
+Azure синапсе Analytics (хранилище данных SQL) предоставляет образец базы данных AdventureWorksDW, который можно добавить в подготовленный ресурс. Дополнительные сведения см. в разделе [Краткое руководство. Создание пула SQL Azure синапсе Analytics и выполнение запросов](/azure/sql-data-warehouse/create-data-warehouse-portal)к нему.
 
 ## <a name="sample-databases-on-github"></a>Примеры баз данных на GitHub
 
@@ -44,7 +44,7 @@ Azure Synapse Analytics (Хранилище данных S'L) предостав
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Руководство Adventure Works](https://docs.microsoft.com/analysis-services/tutorial-tabular-1400/as-adventure-works-tutorial)   
+[Учебник по Adventure Works](https://docs.microsoft.com/analysis-services/tutorial-tabular-1400/as-adventure-works-tutorial)   
 [Локальный шлюз данных Azure](analysis-services-gateway.md)  

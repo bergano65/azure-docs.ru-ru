@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 11889bd6df0bcc9564c17fdaacc333df1d418660
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77918348"
 ---
 # <a name="use-azure-media-analytics-to-convert-text-content-in-video-files-into-digital-text"></a>Преобразование текстового содержимого в видеофайлах в цифровой текст с помощью медиа-аналитики Azure  
 
 > [!NOTE]
-> Медиапроцессор **Azure Media OCR** будет удален. Для даты выхода на [legacy components](legacy-components.md) пенсию см.
+> Процессор мультимедиа **Azure Media OCR** будет снят с учета. Дату выбытия см. в разделе [устаревшие компоненты](legacy-components.md) .
 
 ## <a name="overview"></a>Обзор
 Если требуется извлечь текстовое содержимое из файлов видео и создать редактируемый и доступный для поиска цифровой текст, воспользуйтесь функцией OCR (оптическое распознавание символов) медиа-аналитики Azure. Этот обработчик мультимедиа Azure обнаруживает текстовое содержимое в видеофайлах и создает текстовые файлы, готовые к использованию. Функция OCR позволяет автоматически извлекать значимые метаданные из видеосигнала файлов мультимедиа.
@@ -39,7 +39,7 @@ ms.locfileid: "77918348"
 Видеофайлы. Сейчас поддерживаются следующие форматы: MP4, MOV и WMV.
 
 ## <a name="task-configuration"></a>Конфигурация задачи
-Конфигурация задачи (предустановка). При создании задачи с **Azure Media OCR**необходимо указать предустановленную конфигурацию с помощью JSON или XML. 
+Конфигурация задачи (предустановка). При создании задачи с помощью **оптического распознавания мультимедиа Azure**необходимо указать предустановку конфигурации с помощью JSON или XML. 
 
 >[!NOTE]
 >Подсистема распознавания текста принимает в качестве допустимых входных данных только область изображения от 40 до 32 000 пикселей в высоту и ширину.
@@ -48,7 +48,7 @@ ms.locfileid: "77918348"
 ### <a name="attribute-descriptions"></a>Описания атрибутов
 | Имя атрибута | Описание |
 | --- | --- |
-|AdvancedOutput| Если для атрибута AdvancedOutput задано значение true, выходные данные JSON будут содержать данные о положении для каждого отдельного слова (помимо фраз и регионов). Если вы не хотите видеть эти сведения, установите значение false. Значение по умолчанию — false. Для получения дополнительной информации, смотрите [этот блог](https://azure.microsoft.com/blog/azure-media-ocr-simplified-output/).|
+|AdvancedOutput| Если для атрибута AdvancedOutput задано значение true, выходные данные JSON будут содержать данные о положении для каждого отдельного слова (помимо фраз и регионов). Если вы не хотите видеть эти сведения, установите значение false. Значение по умолчанию — false. Дополнительные сведения см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-ocr-simplified-output/).|
 | Язык |(необязательно) Описывает язык искомого текста. Возможные значения: AutoDetect (по умолчанию), Arabic, ChineseSimplified, ChineseTraditional, Czech Danish, Dutch, English, Finnish, French, German, Greek, Hungarian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian, SerbianCyrillic, SerbianLatin, Slovak, Spanish, Swedish, Turkish. |
 | TextOrientation |(необязательно) Описывает ориентацию искомого текста.  "Left" означает, что верхняя часть всех букв направлена влево.  По умолчанию текст (как, например, в книге) имеет ориентацию "Up", то есть буквы направлены вверх.  Возможные значения: AutoDetect (по умолчанию), Up, Right, Down, Left. |
 | TimeInterval |(необязательно) Описывает частоту выборки.  Значение по умолчанию — каждые полсекунды.<br/>Формат JSON — ЧЧ:мм:сс.ССС (по умолчанию — 00:00:00.500)<br/>Формат XML: минимальная длительность W3C XSD (по умолчанию — PT0.5). |
@@ -193,7 +193,7 @@ ms.locfileid: "77918348"
    
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл app.config информацией о подключении, как описано в [разработке Media Services с .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 
@@ -369,7 +369,7 @@ namespace OCR
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

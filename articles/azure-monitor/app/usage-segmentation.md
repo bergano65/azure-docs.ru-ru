@@ -7,10 +7,10 @@ ms.author: daviste
 ms.date: 01/24/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 56059304026b060e2215ce73e0e94e3200573a14
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670990"
 ---
 # <a name="users-sessions-and-events-analysis-in-application-insights"></a>Анализ пользователей, сеансов и событий в Application Insights
@@ -55,12 +55,12 @@ ms.locfileid: "77670990"
 
 В разделе **Meet your users** (Знакомство с пользователями) отображаются пять примеров пользователей, отвечающих вашему текущему запросу. Учитывая и изучая поведение отдельных экземпляров помимо агрегатов, можно узнать, как люди на самом деле используют приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Воронки](usage-funnels.md)
-    - [Хранения](usage-retention.md)
+    - [Сохранение](usage-retention.md)
     - [Маршруты пользователей](usage-flows.md)
-    - [книги](../../azure-monitor/app/usage-workbooks.md)
+    - [Workbooks](../../azure-monitor/app/usage-workbooks.md)
     - [Добавление контекста пользователей](usage-send-user-context.md)

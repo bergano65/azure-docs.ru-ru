@@ -1,6 +1,6 @@
 ---
-title: Развертывание задания Azure Stream Analytics с помощью пакета CI/CD npm
-description: В этой статье описывается, как использовать пакет Azure Stream Analytics CI/CD npm для настройки непрерывного процесса интеграции и развертывания.
+title: Развертывание задания Azure Stream Analytics с помощью пакета CI/CD NPM
+description: В этой статье описывается, как Azure Stream Analytics использовать пакет NPM CI/CD для настройки процесса непрерывной интеграции и развертывания.
 services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
@@ -9,25 +9,25 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.openlocfilehash: deb6c2439cc84f196b7f42fd9f49d3ebfd057cbb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76962227"
 ---
-# <a name="deploy-an-azure-stream-analytics-job-using-cicd-npm-package"></a>Развертывание задания Azure Stream Analytics с помощью пакета CI/CD npm 
+# <a name="deploy-an-azure-stream-analytics-job-using-cicd-npm-package"></a>Развертывание задания Azure Stream Analytics с помощью пакета CI/CD NPM 
 
-Для настройки непрерывного процесса интеграции и развертывания для заданий Stream Analytics можно использовать пакет Azure Stream Analytics CI/CD npm. В этой статье описывается, как использовать пакет npm в целом с любой системой CI/CD, а также конкретные инструкции по развертыванию с azure Pipelines.
+С помощью пакета Azure Stream Analytics CI/CD NPM можно настроить процесс непрерывной интеграции и развертывания для заданий Stream Analytics. В этой статье описывается использование пакета NPM в целом с любой системой CI/CD, а также приведены инструкции по развертыванию с помощью Azure Pipelines.
 
-Для получения дополнительной информации о развертывании с Powershell см. [развертывание с файлом шаблона менеджера ресурсов и Azure PowerShell.](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy) Вы также можете узнать больше о том, как [использовать объект в качестве параметра в шаблоне resource Manager.](https://docs.microsoft.com/azure/architecture/building-blocks/extending-templates/objects-as-parameters)
+Дополнительные сведения о развертывании с помощью PowerShell см. в статье [развертывание с помощью Диспетчер ресурсов файла шаблона и Azure PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy). Вы также можете узнать больше об [использовании объекта в качестве параметра в шаблоне диспетчер ресурсов](https://docs.microsoft.com/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
 
-## <a name="build-the-vs-code-project"></a>Построить проект VS Code
+## <a name="build-the-vs-code-project"></a>Построение проекта VS Code
 
-Можно обеспечить непрерывную интеграцию и развертывание заданий Azure Stream Analytics с помощью пакета **asa-streamanalytics-cicd** npm. Пакет npm предоставляет инструменты для создания шаблонов Управления ресурсами Azure для [проектов Code Analytics Visual Studio Code.](quick-create-vs-code.md) Он может быть использован на Windows, macOS и Linux без установки визуального кода студии.
+Вы можете включить непрерывную интеграцию и развертывание для Azure Stream Analytics заданий с помощью пакета **ASA-streamanalytics-cicd** NPM. Пакет NPM предоставляет средства для создания шаблонов Azure Resource Manager [Stream Analytics Visual Studio Code проектов](quick-create-vs-code.md). Его можно использовать в Windows, macOS и Linux без установки Visual Studio Code.
 
-Вы можете [загрузить пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его по [всему миру](https://docs.npmjs.com/downloading-and-installing-packages-globally) через `npm install -g azure-streamanalytics-cicd` команду. Это рекомендуемый подход, который также может быть использован в задаче сценария PowerShell или Azure CLI для **сборки конвейера в Azure Pipelines.**
+Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с `npm install -g azure-streamanalytics-cicd` помощью команды. Это рекомендуемый подход, который также можно использовать в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines**.
 
-После установки пакета используйте следующую команду для вывода шаблонов управления ресурсами Azure. Аргумент **scriptPath** — это абсолютный путь к файлу **asaql** в вашем проекте. Убедитесь, что файлы asaproj.json и JobConfig.json находятся в одной папке с файлом скрипта. Если **выводной путь** не указан, шаблоны будут помещены в папку **Deploy** в папке **ячейки** проекта.
+После установки пакета используйте следующую команду для вывода шаблонов Azure Resource Manager. Аргумент **scriptPath** — это абсолютный путь к файлу **asaql** в проекте. Убедитесь, что файлы асапрож. JSON и Жобконфиг. JSON находятся в одной папке с файлом скрипта. Если **outputPath** не указан, шаблоны будут помещены в папку **deploy** в папке **bin** проекта.
 
 ```powershell
 azure-streamanalytics-cicd build -scriptPath <scriptFullPath> -outputPath <outputPath>
@@ -37,7 +37,7 @@ azure-streamanalytics-cicd build -scriptPath <scriptFullPath> -outputPath <outpu
 azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/script.asaql" 
 ```
 
-Когда проект Stream Analytics Visual Studio Code успешно строится, он генерирует следующие два шаблона шаблона Azure Resource Manager под **ячейкой/"Debug/Retail/Deploy:"** 
+Когда проект Stream Analytics Visual Studio Code успешно строится, он создает следующие два файла шаблонов Azure Resource Manager в папке **bin/[Debug/Retail]/Deploy** : 
 
 *  файл шаблона Resource Manager;
 
@@ -47,7 +47,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
        [ProjectName].JobTemplate.parameters.json   
 
-Параметры по умолчанию в файле parameters.json взяты из настроек в проекте Visual Studio Code. При необходимости развертывания в другой среде замените соответствующие параметры.
+Параметры по умолчанию в файле Parameters. JSON относятся к параметрам в проекте Visual Studio Code. При необходимости развертывания в другой среде замените соответствующие параметры.
 
 > [!NOTE]
 > Для всех учетных данных значения по умолчанию имеют значение NULL. Их **необходимо** установить перед развертыванием в облаке.
@@ -60,41 +60,41 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
 ## <a name="deploy-with-azure-pipelines"></a>Развертывание с использованием Azure Pipelines
 
-В этом разделе подробно описано, как создавать [и](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav) [выпускать](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) конвейеры Azure с помощью npm.
+В этом разделе подробно описано, как создавать конвейеры [сборки](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav) и [выпуска](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) Azure pipelines с помощью NPM.
 
-Откройте веб-браузер и перейдите к проекту Azure Stream Analytics Visual Studio Code.
+Откройте веб-браузер и перейдите к Azure Stream Analytics Visual Studio Code проекта.
 
-1. Под **трубопроводами** в левом меню навигации выберите **сборки**. Затем выберите **Новый конвейер**
+1. В разделе **конвейеры** в меню навигации слева выберите **сборки**. Выберите **Новый конвейер** .
 
-   ![Создание нового трубопровода Azure](./media/setup-cicd-vs-code/new-pipeline.png)
+   ![Создание нового конвейера Azure](./media/setup-cicd-vs-code/new-pipeline.png)
 
-2. Выберите **Используйте классический редактор** для создания конвейера без YAML.
+2. Выберите **использовать классический редактор** для создания конвейера без YAML.
 
-3. Выберите тип исходного кода, проект команды и репозиторий. Затем выберите **Продолжить**.
+3. Выберите тип источника, командный проект и репозиторий. Затем нажмите **Продолжить**.
 
-   ![Выберите проект Azure Stream Analytics](./media/setup-cicd-vs-code/select-repo.png)
+   ![Выбор проекта Azure Stream Analytics](./media/setup-cicd-vs-code/select-repo.png)
 
-4. На странице **«Выбрать шаблон»** выберите **«Пустое задание».**
+4. На странице **Выбор шаблона** выберите **пустое задание**.
 
-### <a name="add-npm-task"></a>Добавление задачи npm
+### <a name="add-npm-task"></a>Добавить задачу NPM
 
-1. На странице **Задачи** выберите знак плюс рядом с **работой агента 1.** Введите "npm" в поиске задач и выберите **npm.**
+1. На странице **задачи** щелкните знак «плюс» рядом с **заданием агента 1**. В области поиска задач введите "NPM" и выберите **NPM**.
 
-   ![Выберите задачу npm](./media/setup-cicd-vs-code/search-npm.png)
+   ![Выбор задачи NPM](./media/setup-cicd-vs-code/search-npm.png)
 
-2. Дайте задаче **имя дисплея.** Измените опцию **командования** на *пользовательский* и введите следующую команду в **Командовании и аргументах.** Оставьте оставшиеся параметры по умолчанию.
+2. Присвойте задаче **Отображаемое имя**. Измените параметр **команды** на *Custom* и введите следующую команду в **команде и аргументах**. Оставьте остальные параметры по умолчанию.
 
    ```cmd
    install -g azure-streamanalytics-cicd
    ```
 
-   ![Введите конфигурации для задачи npm](./media/setup-cicd-vs-code/npm-config.png)
+   ![Введите конфигурации для задачи NPM](./media/setup-cicd-vs-code/npm-config.png)
 
-### <a name="add-command-line-task"></a>Добавление задачи командной строки
+### <a name="add-command-line-task"></a>Добавить задачу командной строки
 
-1. На странице **Задачи** выберите знак плюс рядом с **работой агента 1.** Поиск **командной строки**.
+1. На странице **задачи** щелкните знак «плюс» рядом с **заданием агента 1**. Найдите **командную строку**.
 
-2. Дайте задаче **имя дисплея** и введите следующий сценарий. Измените сценарий с вашим именем репозитория и именем проекта.
+2. Присвойте задаче **Отображаемое имя** и введите следующий скрипт. Измените сценарий, указав имя репозитория и имя проекта.
 
    ```cmd
    azure-streamanalytics-cicd build -scriptPath $(Build.SourcesDirectory)/myASAProject/myASAProj.asaql
@@ -102,94 +102,94 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
    ![Введите конфигурации для задачи командной строки](./media/setup-cicd-vs-code/commandline-config.png)
 
-### <a name="add-copy-files-task"></a>Добавление задачи файлов копирования
+### <a name="add-copy-files-task"></a>Задача "добавить файлы копирования файлов"
 
-1. На странице **Задачи** выберите знак плюс рядом с **работой агента 1.** Поиск **файлов копирования**. Затем введите следующие конфигурации.
+1. На странице **задачи** щелкните знак «плюс» рядом с **заданием агента 1**. Поиск **копий файлов**. Затем введите следующие конфигурации.
 
    |Параметр|Входные данные|
    |-|-|
-   |Отображаемое имя|Копирование файлов по: $(build.artifactstagingdirectory)|
+   |Отображаемое имя|Копировать файлы в: $ (Build. artifactstagingdirectory)|
    |Исходная папка|`$(system.defaultworkingdirectory)`| 
    |Содержимое| `**\Deploy\**` |
-   |Целевой Фолдер| `$(build.artifactstagingdirectory)`|
+   |Целевая папка| `$(build.artifactstagingdirectory)`|
 
    ![Введите конфигурации для задачи копирования](./media/setup-cicd-vs-code/copy-config.png)
 
-### <a name="add-publish-build-artifacts-task"></a>Добавление задачи артефактов сборки публикации
+### <a name="add-publish-build-artifacts-task"></a>Задача "Добавление артефактов сборки публикации"
 
-1. На странице **Задачи** выберите знак плюс рядом с **работой агента 1.** Поиск **артефактов сборки публикации** и выберите опцию с черной иконой стрелки. 
+1. На странице **задачи** щелкните знак «плюс» рядом с **заданием агента 1**. Выполните поиск по запросу **Публикация артефактов сборки** и выберите параметр со значком с черной стрелкой. 
 
-2. Не изменяйте ни одной из конфигураций по умолчанию.
+2. Не изменяйте конфигурации по умолчанию.
 
 ### <a name="save-and-run"></a>Сохранение и запуск
 
-После того как вы закончите добавлять npm, командную строку, копировать файлы и публиковать задачи артефактов сборки, выберите **Очередь Сохранить &.** Когда вам будет предложено, введите комментарий сохранить и выберите **Сохранить и запустить**.
+После завершения добавления задач NPM, Командная строка, копирование файлов и публикация артефактов сборки выберите **сохранить & очередь**. При появлении запроса введите комментарий и выберите **сохранить и выполнить**.
 
-## <a name="release-with-azure-pipelines"></a>Выпуск с помощью трубопроводов Azure
+## <a name="release-with-azure-pipelines"></a>Выпуск с Azure Pipelines
 
-Откройте веб-браузер и перейдите к проекту Azure Stream Analytics Visual Studio Code.
+Откройте веб-браузер и перейдите к Azure Stream Analytics Visual Studio Code проекта.
 
-1. Под **трубопроводами** в левом меню навигации выберите **Релизы**. Затем выберите **Новый конвейер**.
+1. В разделе **конвейеры** в меню навигации слева выберите **выпуски**. Затем выберите **создать конвейер**.
 
-2. Выберите **начало с пустой задания.**
+2. Выберите **начать с пустого задания**.
 
-3. В поле **Артефакты** выберите **и добавьте артефакт.** Под **Source**выберите только что созданный конвейер сборки и выберите **Добавить.**
+3. В поле **артефакты** выберите **+ Добавить артефакт**. В разделе **источник**выберите только что созданный конвейер сборки и нажмите кнопку **Добавить**.
 
    ![Введите артефакт конвейера сборки](./media/setup-cicd-vs-code/build-artifact.png)
 
-4. Измените название **этапа 1** для развертывания **задания для тестирования среды.**
+4. Измените имя **этапа 1** , чтобы **развернуть задание в тестовую среду**.
 
-5. Добавьте новый этап и назовите **его задание развертыванием в производственную среду.**
+5. Добавьте новый этап и присвойте ему имя **Развертывание задания в рабочей среде**.
 
 ### <a name="add-tasks"></a>Добавление задач
 
-1. Из задачи отсева выберите **задание развертывание для тестирования среды.** 
+1. В раскрывающемся списке задачи выберите **развернуть задание в тестовой среде**. 
 
-2. Выберите **+** следующую **работу «Агент»** и ищите *развертывание группы ресурсов Azure.* Задайте следующие параметры:
-
-   |Параметр|Значение|
-   |-|-|
-   |Отображаемое имя| *Развертывание myASAJob*|
-   |Подписка Azure.| Выберите свою подписку.|
-   |Действие| *Создание или изменение группы ресурсов*|
-   |Группа ресурсов| Выберите имя для группы ресурсов тестирования, которая будет содержать задание Stream Analytics.|
-   |Расположение|Выберите местоположение группы ресурсов тестирования.|
-   |Расположение шаблона| *Связанный артефакт*|
-   |Шаблон| $(Build.ArtifactStagingDirectory) |
-   |Параметры шаблона|($(Build.ArtifactStagingDirectory)|
-   |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $(test_eventhubname)|
-   |Режим развертывания|Добавочное|
-
-3. От выпадения задач выберите **задание Развертывание в производственную среду.**
-
-4. Выберите **+** следующую **работу «Агент»** и ищите *развертывание группы ресурсов Azure.* Задайте следующие параметры:
+2. Выберите **+** рядом с **заданием агента** и выполните поиск по запросу *Развертывание группы ресурсов Azure*. Задайте следующие параметры:
 
    |Параметр|Значение|
    |-|-|
-   |Отображаемое имя| *Развертывание myASAJob*|
-   |Подписка Azure.| Выберите свою подписку.|
+   |Отображаемое имя| *Развертывание Мясажоб*|
+   |Подписка Azure| Выберите свою подписку.|
    |Действие| *Создание или изменение группы ресурсов*|
-   |Группа ресурсов| Выберите название для группы производственных ресурсов, которая будет содержать задание Stream Analytics.|
-   |Расположение|Выберите местоположение группы производственных ресурсов.|
+   |Группа ресурсов| Выберите имя для тестовой группы ресурсов, которая будет содержать задание Stream Analytics.|
+   |Расположение|Выберите расположение группы тестовых ресурсов.|
    |Расположение шаблона| *Связанный артефакт*|
-   |Шаблон| $(Build.ArtifactStagingDirectory) |
-   |Параметры шаблона|($(Build.ArtifactStagingDirectory)|
-   |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $(событие)|
+   |Шаблон| \Дроп\мясажоб.жобтемплате.жсон $ (Build. ArtifactStagingDirectory) |
+   |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \Дроп\мясажоб.жобтемплате.параметерс.жсон|
+   |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $ (test_eventhubname)|
    |Режим развертывания|Добавочное|
 
-### <a name="create-release"></a>Создание релиза
+3. В раскрывающемся списке задачи выберите **развернуть задание в рабочей среде**.
 
-Чтобы создать релиз, выберите **Создать релиз** в правом верхнем углу.
+4. Выберите **+** рядом с **заданием агента** и выполните поиск по запросу *Развертывание группы ресурсов Azure*. Задайте следующие параметры:
 
-![Создание выпуска с помощью проводов Azure](./media/setup-cicd-vs-code/create-release.png)
+   |Параметр|Значение|
+   |-|-|
+   |Отображаемое имя| *Развертывание Мясажоб*|
+   |Подписка Azure| Выберите свою подписку.|
+   |Действие| *Создание или изменение группы ресурсов*|
+   |Группа ресурсов| Выберите имя рабочей группы ресурсов, которая будет содержать задание Stream Analytics.|
+   |Расположение|Выберите расположение рабочей группы ресурсов.|
+   |Расположение шаблона| *Связанный артефакт*|
+   |Шаблон| \Дроп\мясажоб.жобтемплате.жсон $ (Build. ArtifactStagingDirectory) |
+   |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \Дроп\мясажоб.жобтемплате.параметерс.жсон|
+   |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $ (eventhubname)|
+   |Режим развертывания|Добавочное|
+
+### <a name="create-release"></a>Создать выпуск
+
+Чтобы создать выпуск, выберите **создать выпуск** в правом верхнем углу.
+
+![Создание выпуска с помощью Azure Pipelines](./media/setup-cicd-vs-code/create-release.png)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 Чтобы в качестве приемника выходных данных использовать управляемое удостоверение для Azure Data Lake Storage 1-го поколения, предоставите доступ субъекту-службе с помощью PowerShell перед развертыванием в Azure. Дополнительные сведения см. в разделе о [развертывании ADLS 1-го поколения с управляемым удостоверением с помощью шаблона Resource Manager](stream-analytics-managed-identities-adls.md#resource-manager-template-deployment).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Быстрый запуск: Создание облачной работы Azure Stream Analytics в коде Visual Studio (Предварительный просмотр)](quick-create-vs-code.md)
-* [Тестовая аналитика потока запрашивает локально с помощью визуального кода studio (Предварительный просмотр)](visual-studio-code-local-run.md)
-* [Исследуйте аналитику потоков Azure с помощью визуального кода студии (Предварительный просмотр)](visual-studio-code-explore-jobs.md)
+* [Краткое руководство. Создание Azure Stream Analytics облачного задания в Visual Studio Code (Предварительная версия)](quick-create-vs-code.md)
+* [Тестирование Stream Analytics запросов локально с Visual Studio Code (Предварительная версия)](visual-studio-code-local-run.md)
+* [Изучение Azure Stream Analytics с Visual Studio Code (Предварительная версия)](visual-studio-code-explore-jobs.md)

@@ -1,6 +1,6 @@
 ---
-title: Образцы анализа журналов Azure Firewall
-description: Для анализа брандмауэра Azure Firewall можно использовать журналы Azure Monitor. Пример файла построен в «Дизайнере представления» в Azure Monitor.
+title: Примеры журналов в Azure Firewall для анализа
+description: Журналы Azure Monitor можно использовать для анализа брандмауэра Azure. Пример файла создается в конструкторе представлений Azure Monitor.
 services: firewall
 author: vhorne
 ms.service: firewall
@@ -8,29 +8,29 @@ ms.topic: article
 ms.date: 01/23/2020
 ms.author: victorh
 ms.openlocfilehash: bc34afe82c1b73afb5f3d5d1a07f2a5059590146
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76706003"
 ---
-# <a name="azure-firewall-log-analytics-samples"></a>Образцы анализа журналов Azure Firewall
+# <a name="azure-firewall-log-analytics-samples"></a>Примеры журналов в Azure Firewall для анализа
 
-Следующие образцы журналов Azure Monitor можно использовать для анализа журналов Azure Firewall. Пример файла построен в View Designer в Azure Monitor, в статье [View Designer in Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-view-designer) есть более подробная информация о концепции дизайна представления.
+Для анализа журналов брандмауэра Azure можно использовать следующие примеры журналов Azure Monitor. Пример файла создан в конструкторе представлений Azure Monitor, [Конструктор представлений в Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-view-designer) статье содержит дополнительные сведения о концепции представления.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="azure-monitor-logs-view"></a>Представление журналов Azure Monitor
 
-Вот как можно настроить визуализацию журналов Azure Monitor. Этот пример визуализации можно скачать из репозитория [azure-docs-json-samples](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-firewall/AzureFirewall.omsview). Проще всего щелкнуть правой кнопкой мыши гиперссылку на этой странице, выбрать действие *Сохранить как* и выбрать для файла имя, например **AzureFirewall.omsview**. 
+Ниже показано, как можно настроить пример визуализации журналов Azure Monitor. Этот пример визуализации можно скачать из репозитория [azure-docs-json-samples](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-firewall/AzureFirewall.omsview). Проще всего щелкнуть правой кнопкой мыши гиперссылку на этой странице, выбрать действие *Сохранить как* и выбрать для файла имя, например **AzureFirewall.omsview**. 
 
-Выполните следующие шаги, чтобы добавить представление в рабочее пространство Log Analytics:
+Чтобы добавить представление в рабочую область Log Analytics, выполните следующие действия:
 
-1. Откройте рабочее пространство для анализа журналов на портале Azure.
+1. Откройте рабочую область Log Analytics в портал Azure.
 2. Откройте **Конструктор представлений** под разделом **Общие**.
-3. Нажмите кнопку **Импорт**.
+3. Щелкните **Импорт**.
 4. Найдите и выберите файл **AzureFirewall.omsview**, который вы скачали ранее.
-5. Нажмите **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 Вот как выглядит представление данных из журнала правил приложений:
 
@@ -40,7 +40,7 @@ ms.locfileid: "76706003"
 
 ![Данные журнала правил сети]( ./media/log-analytics-samples/azurefirewall-networkrulelogstats.png)
 
-Azure Firewall регистрирует данные ниже AzureDiagnostics с категорией как **AzureFirewallApplicationRule** или **AzureFirewallNetworkRule.** Подробные сведения сохраняются в поле msg_s. С помощью оператора [parse](https://docs.microsoft.com/azure/kusto/query/parseoperator) мы можем извлечь важные свойства из поля msg_s. Приведенные ниже запросы позволяют извлечь сведения по обеим категориям.
+Брандмауэр Azure регистрирует данные ниже AzureDiagnostics с категорией как **азурефиреваллаппликатионруле** или **азурефиреваллнетворкруле**. Подробные сведения сохраняются в поле msg_s. С помощью оператора [parse](https://docs.microsoft.com/azure/kusto/query/parseoperator) мы можем извлечь важные свойства из поля msg_s. Приведенные ниже запросы позволяют извлечь сведения по обеим категориям.
 
 ## <a name="application-rules-log-data-query"></a>Запрос к данным из журнала правил приложений
 
@@ -100,7 +100,7 @@ RuleCollection = case(RuleCollection2b == "",case(RuleCollection2a == "","No rul
 
 ## <a name="network-rules-log-data-query"></a>Запрос данных из журнала правил сети
 
-Следующий запрос разбирает данные журнала сетевого правила. Этот пример содержит строки комментариев с некоторыми рекомендациями по созданию такого запроса:
+Следующий запрос анализирует данные журнала сетевых правил. Этот пример содержит строки комментариев с некоторыми рекомендациями по созданию такого запроса:
 
 ```Kusto
 AzureDiagnostics
@@ -151,9 +151,9 @@ AzureDiagnostics
 | project TimeGenerated, msg_s, Protocol, SourceIP,SourcePort,TargetIP,TargetPort,Action, NatDestination
 ```
 
-## <a name="threat-intelligence-log-data-query"></a>Запрос данных журнала «Угроза разведки»
+## <a name="threat-intelligence-log-data-query"></a>Запрос данных журнала аналитики угроз
 
-Следующий запрос разбирает данные правила Threat Intelligence:
+Следующий запрос анализирует данные журнала правила аналитики угроз:
 
 ```Kusto
 AzureDiagnostics
@@ -168,13 +168,13 @@ AzureDiagnostics
 
 ## <a name="sample-logs"></a>Примеры журналов
 
-Следующие образцы журнала показывают данные, включенные в запись журнала.
+В следующих примерах журнала показаны данные, содержащиеся в записи журнала.
 
 ![запись журнала](media/log-analytics-samples/log1.png)
 
 ![запись журнала](media/log-analytics-samples/log2.png)
 
 ![запись журнала](media/log-analytics-samples/log3.png)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в [руководстве по мониторингу журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).

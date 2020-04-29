@@ -1,21 +1,21 @@
 ---
-title: Модель данных о зависимостях приложений Azure Monitor
+title: Модель данных зависимостей Application Insights Azure Monitor
 description: Модель данных Application Insights для телеметрии зависимостей
 ms.topic: conceptual
 ms.date: 04/17/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: ba0d848904d1ba885dc53e2941953d8dfb4864cf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77671925"
 ---
 # <a name="dependency-telemetry-application-insights-data-model"></a>Телеметрия зависимостей: модель данных Application Insights
 
 Телеметрия зависимостей (в [Application Insights](../../azure-monitor/app/app-insights-overview.md)) представляет взаимодействие отслеживаемого компонента с удаленным, таким как SQL или конечная точка HTTP.
 
-## <a name="name"></a>name
+## <a name="name"></a>Имя
 
 Имя команды, инициированной этим вызовом зависимости. Низкое значение кратности. Примерами являются имя хранимой процедуры и шаблон пути URL-адреса.
 
@@ -27,7 +27,7 @@ ms.locfileid: "77671925"
 
 Команда, инициированная этим вызовом зависимости. Примерами являются оператор SQL и HTTP URL со всеми параметрами запроса.
 
-## <a name="type"></a>Тип
+## <a name="type"></a>Type
 
 Имя типа зависимости. Низкое значение кратности для логической группировки зависимостей и интерпретации других полей, таких как commandName и resultCode. Примерами являются SQL, таблица Azure и HTTP.
 
@@ -43,7 +43,7 @@ ms.locfileid: "77671925"
 
 Код результата для вызова зависимости. Примерами являются код ошибки SQL и код состояния HTTP.
 
-## <a name="success"></a>Успешно
+## <a name="success"></a>Успех
 
 Указание того, был ли вызов успешным.
 
@@ -56,7 +56,7 @@ ms.locfileid: "77671925"
 [!INCLUDE [application-insights-data-model-measurements](../../../includes/application-insights-data-model-measurements.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md)
 - Настройка отслеживания зависимостей для платформы [Java](../../azure-monitor/app/java-agent.md)

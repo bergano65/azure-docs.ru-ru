@@ -1,5 +1,5 @@
 ---
-title: Рабочие процессы Apache Oozie & корпоративной безопасности - Azure HDInsight
+title: Рабочие процессы Apache Oozie & Корпоративная безопасность — Azure HDInsight
 description: Защита рабочих процессов Apache Oozie с помощью Корпоративного пакета безопасности для Azure HDInsight Узнайте, как определить рабочий процесс и отправить задание для Oozie.
 author: omidm1
 ms.author: omidm
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seodec18
 ms.date: 12/09/2019
 ms.openlocfilehash: 9ef54707f7fac3dd1328e29f6d05f62c1dee2561
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78194909"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
@@ -31,7 +31,7 @@ Apache Oozie — это система рабочих процессов и ко
 Кластер Azure HDInsight Hadoop с Корпоративным пакетом безопасности (ESP). Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
 > [!NOTE]  
-> Подробные инструкции по использованию Oozie в кластерах, не связанных с ESP, можно узнать [в Linux-Azure HDInsight.](../hdinsight-use-oozie-linux-mac.md)
+> Подробные инструкции по использованию Oozie в кластерах, отличных от ESP, см. [в статье Использование рабочих процессов Apache Oozie в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="connect-to-an-esp-cluster"></a>Подключение к кластеру ESP
 
@@ -69,7 +69,7 @@ Apache Oozie — это система рабочих процессов и ко
 
    Замените `DomainUser` именем пользователя домена.
    Замените `DomainUserPath` путем к домашнему каталогу для пользователя домена.
-   Замените `ClusterVersion` версию платформы кластерных данных.
+   Замените `ClusterVersion` версией платформы данных кластера.
 
 2. Для создания и открытия файла выполните следующий запрос:
 
@@ -178,17 +178,17 @@ Apache Oozie — это система рабочих процессов и ко
 
 4. Замените `clustername` именем кластера.
 
-5. Для сохранения файла выберите **Ctrl-X**. Введите **Y**. Затем выберите **Enter**.
+5. Чтобы сохранить файл, нажмите **клавиши CTRL + X**. Введите **Y**. Затем нажмите клавишу **Ввод**.
 
     Рабочий процесс состоит из двух частей:
 
-   - **Учетных данных.** Этот раздел принимает учетные данные, которые используются для проверки подлинности действий Oozie:
+   - **Записям.** Этот раздел принимает учетные данные, которые используются для проверки подлинности действий Oozie:
 
      В этом примере используется проверка подлинности для действий Hive. Дополнительные сведения см. в статье о [проверке подлинности действий](https://oozie.apache.org/docs/4.2.0/DG_ActionAuthentication.html).
 
      Служба учетных данных позволяет действиям Oozie олицетворять пользователя для доступа к службам Hadoop.
 
-   - **Действий.** В этом разделе содержатся три действия: map-reduce, действия сервера Hive 2 и сервера Hive 1:
+   - **Поддержки.** В этом разделе содержатся три действия: map-reduce, действия сервера Hive 2 и сервера Hive 1:
 
      - Действие map-reduce запускает пример из пакета Oozie для выполнения операции map-reduce, в результате которой вы получаете общее количество слов.
 
@@ -230,7 +230,7 @@ Apache Oozie — это система рабочих процессов и ко
    hiveOutputDirectory2=${nameNode}/user/${user.name}/hiveresult2
    ```
 
-   - Используйте URI `adl://home` для свойства `nameNode`, если в качестве основного хранилища кластера используется Azure Data Lake Storage 1-го поколения. Если вы используете хранилище Azure Blob, `wasb://home`измените это на . Если вы используете Хранилище озера Лазурных Данных `abfs://home`Gen2, измените это на .
+   - Используйте URI `adl://home` для свойства `nameNode`, если в качестве основного хранилища кластера используется Azure Data Lake Storage 1-го поколения. Если вы используете хранилище BLOB-объектов Azure, измените его на `wasb://home`. Если вы используете Azure Data Lake Storage 2-го поколения, измените его на `abfs://home`.
    - Замените `domainuser` на свое имя пользователя для домена.  
    - Замените `ClusterShortName` коротким именем кластера. Например, если имя кластера — sechadoopcontoso.azurehdisnight.net (https://*[пример ссылки]*), `clustershortname` представляет собой первые шесть букв имени кластера: **sechad**.  
    - Замените `jdbcurlvalue` на URL-адрес JDBC из файла конфигурации Hive. Например, jdbc:hive2://headnodehost:10001/;transportMode=http.
@@ -345,7 +345,7 @@ ID                      Status  Ext ID          ExtStatus   ErrCode
 
 2. Следовать инструкциям в [веб-интерфейсе Oozie](../hdinsight-use-oozie-linux-mac.md), чтобы включить туннелирование SSH для граничного узла и получить доступ к пользовательскому веб-интерфейсу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Используйте Apache Oozie с Apache Hadoop для определения и запуска рабочего процесса на основе Linux Azure HDInsight.](../hdinsight-use-oozie-linux-mac.md)
+- [Используйте Apache Oozie с Apache Hadoop, чтобы определить и запустить рабочий процесс в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 - [Подключитесь к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md#authentication-domain-joined-hdinsight).

@@ -1,5 +1,5 @@
 ---
-title: Иносы контекста пользователя для отслеживания действий - Azure Application Insights
+title: Идентификаторы контекста пользователя для мониторинга активности — Azure Application Insights
 description: Отслеживайте, как пользователи перемещаются по службе, назначив каждому из них строку уникального постоянного идентификатора в Application Insights.
 ms.topic: conceptual
 author: NumberByColors
@@ -7,10 +7,10 @@ ms.author: daviste
 ms.date: 01/03/2019
 ms.reviewer: abgreg;mbullwin
 ms.openlocfilehash: beb5a0f7ad3733aaf12b0880af4fba23a705a7e8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670939"
 ---
 # <a name="send-user-context-ids-to-enable-usage-experiences-in-azure-application-insights"></a>Отправка идентификаторов контекста пользователей для обеспечения оптимальной работы в Azure Application Insights
@@ -22,7 +22,7 @@ Application Insights позволяет отслеживать пользова�
 - [Пользователи, сеансы, события](https://docs.microsoft.com/azure/application-insights/app-insights-usage-segmentation)
 - [Воронки](https://docs.microsoft.com/azure/application-insights/usage-funnels)
 - Когорты [удержания](https://docs.microsoft.com/azure/application-insights/app-insights-usage-retention)
-- [книги](https://docs.microsoft.com/azure/application-insights/app-insights-usage-workbooks)
+- [Workbooks](https://docs.microsoft.com/azure/application-insights/app-insights-usage-workbooks)
 
 Для отслеживания действий пользователя за определенный период Application Insights требуется идентификатор для каждого пользователя или сеанса. Добавьте приведенные идентификаторы в каждое пользовательское событие или представление страницы.
 
@@ -126,12 +126,12 @@ namespace MvcWebRole.Telemetry
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Общие сведения об использовании](usage-overview.md)
-    - [Пользователи, сессии и события](usage-segmentation.md)
+    - [Пользователи, сеансы и события](usage-segmentation.md)
     - [Воронки](usage-funnels.md)
-    - [Хранения](usage-retention.md)
-    - [книги](../../azure-monitor/app/usage-workbooks.md)
+    - [Сохранение](usage-retention.md)
+    - [Workbooks](../../azure-monitor/app/usage-workbooks.md)

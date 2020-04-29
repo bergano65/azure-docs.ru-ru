@@ -1,5 +1,5 @@
 ---
-title: Создайте классический Сервер VM (PowerShell)
+title: Создание классической SQL Server виртуальной машины (PowerShell)
 description: Содержит описание действий и сценарии PowerShell для создания виртуальной машины Azure на основе образа из коллекции образов виртуальных машин SQL Server. В этом разделе используется классическая модель развертывания.
 services: virtual-machines-windows
 documentationcenter: na
@@ -16,10 +16,10 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 5bfdcfab37091a5f581ce147c0a6af5ccd8147a0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77914795"
 ---
 # <a name="provision-a-sql-server-virtual-machine-using-azure-powershell-classic"></a>Подготовка виртуальной машины SQL Server к работе с помощью Azure PowerShell (классическая модель)
@@ -29,7 +29,7 @@ ms.locfileid: "77914795"
 В данной статье описаны шаги по созданию виртуальной машины SQL Server в Azure с помощью командлетов PowerShell.
 
 > [!NOTE] 
-> Azure имеет две различные модели развертывания для создания и работы с ресурсами: [менеджер ресурсов и Classic.](../../../azure-resource-manager/management/deployment-models.md) В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
+> В Azure предусмотрены две различные модели развертывания для создания ресурсов и работы с ними: [Диспетчер ресурсов и Classic](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
 
 Версию этой статьи для модели Resource Manager см. в статье [Подготовка виртуальной машины SQL Server к работе с помощью Azure PowerShell (в Resource Manager)](../sql/virtual-machines-windows-ps-sql-create.md).
 
@@ -199,7 +199,7 @@ New-AzureVM –ServiceName $svcname -VMs $vm1
 
 Войдя в виртуальную машину с помощью удаленного рабочего стола, настройте SQL Server в соответствии с указаниями в подразделе [Действия по настройке подключения к SQL Server на виртуальной машине Azure](virtual-machines-windows-classic-sql-connect.md#steps-for-configuring-sql-server-connectivity-in-an-azure-vm).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные инструкции по подготовке виртуальных машин с помощью PowerShell можно найти в [документации по виртуальным машинам](../classic/create-powershell.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 

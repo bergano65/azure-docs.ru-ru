@@ -8,10 +8,10 @@ ms.date: 03/17/2017
 ms.reviewer: mbullwin
 ms.custom: vs-azure
 ms.openlocfilehash: dc334932bfd57bc81a58314ee68f02aeed520f41
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77670956"
 ---
 # <a name="application-insights-telemetry-in-visual-studio-codelens"></a>Телеметрия Application Insights в Visual Studio CodeLens
@@ -67,10 +67,10 @@ ms.locfileid: "77670956"
 * Выберите **Тренд** , чтобы просмотреть тренды запросов, невыполненных запросов или среднего времени ответа за последние 24 часа.
 * Выберите имя ресурса Application Insights в верхнем левом углу подробного представления CodeLens, чтобы изменить ресурс, который является источником данных CodeLens.
 
-## <a name="next-steps"></a><a name="next"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 |  |  |
 | --- | --- |
 | **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio |![Щелкните проект правой кнопкой мыши и последовательно выберите пункты "Application Insights" и "Поиск".](./media/visual-studio-codelens/34.png) |
-| **[Добавление данных](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-codelens/64.png) |
+| **[Добавить дополнительные данные](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-codelens/64.png) |
 | **[Работа с порталом Application Insights](../../azure-monitor/app/overview-dashboard.md)**<br/>Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. |![Visual studio](./media/visual-studio-codelens/62.png) |
 

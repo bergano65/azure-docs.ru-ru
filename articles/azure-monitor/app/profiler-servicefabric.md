@@ -1,5 +1,5 @@
 ---
-title: Профиль жить Azure Службы Ткань приложений с приложениями Исследования
+title: Профилирование Live Service Fabric приложений Azure с помощью Application Insights
 description: Включение Profiler для приложения Service Fabric
 ms.topic: conceptual
 author: cweining
@@ -7,18 +7,18 @@ ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 664d6eb377185613a1a5670daf6747b482c79d9d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77671619"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
 Вы можете развернуть Application Insights Profiler для следующих служб:
 * [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Облачные службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
-* [Виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json);
 
 ## <a name="set-up-the-environment-deployment-definition"></a>Настройка определения развертывания среды
 
@@ -26,7 +26,7 @@ Application Insights Profiler поставляется в комплекте с 
 
 Чтобы настроить среду, выполните следующие действия.
 
-1. Profiler поддерживает .NET Framework и .Net Core. Если вы используете систему .NET, убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или позже. Достаточно подтвердить, что развернутая ОС `Windows Server 2012 R2` является или более поздней. Profiler поддерживает .NET Core 2.1 и новые приложения.
+1. Profiler поддерживает .NET Framework и .Net Core. Если вы используете .NET Framework, убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно подтвердить, что развернутая ОС является `Windows Server 2012 R2` или более поздней. Profiler поддерживает приложения .NET Core 2,1 и более поздние версии.
 
 1. Найдите расширение [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) в файле шаблона развертывания.
 
@@ -49,13 +49,13 @@ Application Insights Profiler поставляется в комплекте с 
   Если все параметры верны, при установке расширения системы диагностики Azure будет установлен и включен Application Insights Profiler. 
 
 1. Добавьте Application Insights в приложение Service Fabric.  
-  Для того чтобы Profiler собирал профили для ваших запросов, ваше приложение должно отслеживать операции с помощью Application Insights. Для AIS без состояния можно ссылаться на инструкции по [отслеживанию запросов на профилирование.](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json) Для получения дополнительной информации о отслеживании пользовательских операций в других видах приложений, смотрите [отслеживать пользовательские операции с Application Insights .NET SDK](custom-operations-tracking.md?toc=/azure/azure-monitor/toc.json).
+  Чтобы профилировщик составил профили для запросов, приложение должно отслеживать операции с Application Insights. Для API без отслеживания состояния можно ознакомиться с инструкциями по [отслеживанию запросов профилирования](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json). Дополнительные сведения об отслеживании пользовательских операций в других видах приложений см. в разделе [Отслеживание настраиваемых операций с помощью пакета SDK для .net Application Insights](custom-operations-tracking.md?toc=/azure/azure-monitor/toc.json).
 
 1. Разверните приложение заново.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
-* Смотрите [следы Profiler](profiler-overview.md?toc=/azure/azure-monitor/toc.json) на портале Azure.
+* См. раздел [трассировки профайлера](profiler-overview.md?toc=/azure/azure-monitor/toc.json) в портал Azure.
 * Сведения об устранении неполадок профилировщика см. в статье [Устранение неполадок по включению и просмотру Application Insights Profiler](profiler-troubleshooting.md?toc=/azure/azure-monitor/toc.json).

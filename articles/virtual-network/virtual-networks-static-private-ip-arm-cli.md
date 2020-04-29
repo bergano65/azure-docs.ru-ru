@@ -1,5 +1,5 @@
 ---
-title: Настройка частных IP-адресов для VMs - Azure CLI
+title: Настройка частных IP-адресов для виртуальных машин — Azure CLI
 description: Узнайте, как настроить частные IP-адреса для виртуальных машин с помощью интерфейса командной строки (CLI) Azure.
 services: virtual-network
 documentationcenter: na
@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/16/2017
 ms.author: kumud
 ms.openlocfilehash: f4643aae0b28861f4ddb99d8dace749e62f930b8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78199484"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-cli"></a>Настройка частных IP-адресов для виртуальной машины с помощью Azure CLI
@@ -30,7 +30,7 @@ ms.locfileid: "78199484"
 [!INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
 > [!NOTE]
-> Для работы приведенных в этом руководстве команд Azure CLI требуется наличие готовой среды. Если требуется запустить команды по мере отображения в этом документе, сначала создайте тестовую среду, описанную в [vnet.](quick-create-cli.md)
+> Для работы приведенных в этом руководстве команд Azure CLI требуется наличие готовой среды. Если вы хотите выполнить команды в том виде, в котором они отображаются в этом документе, сначала создайте тестовую среду, описанную в разделе [Создание виртуальной сети](quick-create-cli.md).
 
 ## <a name="specify-a-static-private-ip-address-when-creating-a-vm"></a>Указание статического частного IP-адреса при создании виртуальной машины
 
@@ -264,6 +264,6 @@ rivateIpAllocationMethod,PublicAddress:publicIpAddress}'
     > [!NOTE]
     > Если размер виртуальной машины позволяет подключить несколько сетевых карт, выполните команду **azure network nic delete**, чтобы удалить старую сетевую карту.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с дополнительными сведениями об управлении [параметрами IP-адресов](virtual-network-network-interface-addresses.md).

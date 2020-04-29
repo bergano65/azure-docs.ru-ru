@@ -1,19 +1,19 @@
 ---
-title: Устранение проблем Azure Application Insights Снимок Отудачный
-description: В этой статье представлены шаги по устранению неполадок и информация, чтобы помочь разработчикам, у которых возникли проблемы с включением или использованием приложения Insights Snapshot Debugger.
+title: Устранение неполадок Application Insights Azure Snapshot Debugger
+description: В этой статье представлены действия по устранению неполадок и сведения, помогающие разработчикам, которые могут столкнуться с проблемами при включении или использовании Application Insights Snapshot Debugger.
 ms.topic: conceptual
 author: brahmnes
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: 485f35ed249ab7f6bbb987d8c79afe20287cd25a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77671415"
 ---
-# <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a>Проблемы устранения неполадок, позволяющие создавать снимки приложений или просматривать снимки
-Если вы включили приложение Insights Snapshot Debugger для вашего приложения, но не видите моментальных снимков для исключений, вы можете использовать эти инструкции для устранения неполадок. Существует много различных причин, почему снимки не генерируются. Можно выполнить проверку работоспособности моментального снимка, чтобы определить некоторые из возможных распространенных причин.
+# <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a>Устранение неполадок, связанных с включением Application Insights Snapshot Debugger или просмотром моментальных снимков
+Если вы включили Application Insights Snapshot Debugger для приложения, но не видите моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок. Создание моментальных снимков может быть вызвано множеством разных причин. Проверку работоспособности моментальных снимков можно выполнить для определения некоторых возможных распространенных причин.
 
 ## <a name="use-the-snapshot-health-check"></a>Использование проверки работоспособности моментальных снимков
 Из-за некоторых распространенных проблем окно "Открыть моментальный снимок отладки" может не отображаться. Например, из-за использования устаревшего сборщика моментальных снимков, достижения ежедневного лимита отправки или длительного времени передачи моментального снимка. Для устранения распространенных неполадок можно использовать проверку работоспособности моментальных снимков.
@@ -32,13 +32,13 @@ ms.locfileid: "77671415"
 
 Убедитесь, что в опубликованном приложении используется правильный ключ инструментирования. Как правило, ключ инструментирования считывается из файла ApplicationInsights.config. Убедитесь, что его значение такое же, что и у ключа инструментирования для ресурса Application Insights, который отображается на портале.
 
-## <a name="preview-versions-of-net-core"></a>Предварительный просмотр версий ядра .NET
-Если приложение использует предварительную версию ядра .NET, и snapshot Debugger был включен через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) на портале, то Snapshot Debugger может не начаться. Следуйте инструкциям на [Enable Snapshot Debugger для других сред,](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) сначала включите пакет [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet с приложением ***в дополнение*** к включению через панель [Application Insights.](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
+## <a name="preview-versions-of-net-core"></a>Предварительные версии .NET Core
+Если приложение использует предварительную версию .NET Core и Snapshot Debugger было включено через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) на портале, Snapshot Debugger может не запуститься. Следуйте инструкциям в разделе [включение snapshot Debugger для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , чтобы включить пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) с приложением ***в дополнение*** к включению через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
 
 
 ## <a name="upgrade-to-the-latest-version-of-the-nuget-package"></a>Обновление пакета NuGet до последней версии
 
-Если snapshot Debugger был включен через [панель Application Insights на портале,](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)то ваше приложение уже должно запускать последний пакет NuGet. Если snapshot Debugger был включен путем включения пакета [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet, используйте менеджер пакета NuGet Visual Studio, чтобы убедиться, что вы используете последнюю версию Microsoft.ApplicationInsights.SnapshotCollector. Заметки о выпуске можно найти на странице https://github.com/Microsoft/ApplicationInsights-Home/issues/167
+Если Snapshot Debugger был включен с помощью [панели Application Insights на портале](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json), то в приложении должен быть уже установлен последний пакет NuGet. Если Snapshot Debugger был включен, включив пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) , используйте диспетчер пакетов NuGet Visual Studio, чтобы убедиться, что вы используете последнюю версию Microsoft. ApplicationInsights. SnapshotCollector. Заметки о выпуске можно найти на странице https://github.com/Microsoft/ApplicationInsights-Home/issues/167
 
 ## <a name="check-the-uploader-logs"></a>Проверьте журналы отправителя
 
@@ -84,7 +84,7 @@ SnapshotUploader.exe Information: 0 : Deleted D:\local\Temp\Dumps\c12a605e73c443
 В предыдущем примере, ключ инструментирования — это `c12a605e73c44346a984e00000000000`. Это значение должно соответствовать ключу инструментирования для вашего приложения.
 Минидамп связан с моментальным снимком с идентификатором `139e411a23934dc0b9ea08a626db16c5`. Позже этот идентификатор можно использовать для поиска связанной телеметрии исключений в аналитике Application Insights.
 
-Отправитель проверяет наличие новых PDB-файлов примерно один раз каждые 15 минут. Ниже приведен пример:
+Отправитель проверяет наличие новых PDB-файлов примерно один раз каждые 15 минут. Пример:
 
 ```
 SnapshotUploader.exe Information: 0 : PDB rescan requested.
@@ -216,4 +216,4 @@ Snapshot Collector проверяет несколько известных ра
 
 ## <a name="edit-network-proxy-or-firewall-rules"></a>Изменение правил прокси-сервера сети или брандмауэра
 
-Если приложение подключается к Интернету через прокси-сервер или брандмауэр, может потребоваться изменить правила, чтобы разрешить приложению взаимодействовать со службой Snapshot Debugger. ИТ-г., используемые Snapshot Debugger, включены в тег службы Azure Monitor.
+Если приложение подключается к Интернету через прокси-сервер или брандмауэр, может потребоваться изменить правила, чтобы разрешить приложению взаимодействовать со службой Snapshot Debugger. IP-адреса, используемые Snapshot Debugger, включены в тег службы Azure Monitor.

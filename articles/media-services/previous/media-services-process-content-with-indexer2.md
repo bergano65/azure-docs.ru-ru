@@ -15,16 +15,16 @@ ms.date: 09/22/2019
 ms.author: juliako
 ms.reviewer: adsolank
 ms.openlocfilehash: c24218dc116803ca0e0a1f166b7b54b24fc4d5ef
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78163800"
 ---
 # <a name="indexing-media-files-with-azure-media-indexer-2-preview"></a>Индексирование файлов мультимедиа с помощью индексатора мультимедийных данных Azure 2 (предварительная версия)
 
 > [!NOTE]
-> Медиапроцессор **Azure Media Indexer 2** будет удален. Для даты выхода на [legacy components](legacy-components.md) пенсию см. [Видеоиндекс Медиа Службы Мультимедиа](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет этот устаревший медиапроцессор. Для получения дополнительной информации [см.](migrate-indexer-v1-v2.md)
+> Процессор мультимедиа **Azure Media indexer 2** будет снят с учета. Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) . [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет этот устаревший обработчик мультимедиа. Дополнительные сведения см. в статье [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
 
 Обработчик мультимедиа **индексатор мультимедийных данных Azure 2 (предварительная версия)** позволяет сделать мультимедийные файлы и содержимое доступными для поиска, а также создавать дорожки для субтитров. По сравнению с предыдущей версией [индексатора мультимедийных данных](media-services-index-content.md), **индексатор мультимедийных данных Azure 2 (предварительная версия)** быстрее выполняет индексирование и предлагает более широкую поддержку языков. В число поддерживаемых языков входят английский, испанский, французский, немецкий, итальянский, китайский (мандаринский диалект, упрощенное письмо), португальский, арабский, русский и японский.
 
@@ -36,7 +36,7 @@ ms.locfileid: "78163800"
 
 Действительны следующие условия.
  
-* Индекс2 не поддерживается в Azure China 21Vianet и Azure Government.
+* Индексатор 2 не поддерживается в Azure Китая 21Vianet и Azure для государственных организаций.
 * При индексировании содержимого обязательно используйте файлы мультимедиа, содержащие отчетливую речь (без фоновой музыки, шума, эффектов или шипения микрофона). Примерами подходящего содержимого могут служить записи собраний, лекций или презентаций. Для индексирования, как правило, не подходит такое содержимое, как фильмы, телепередачи, любые материалы со смешанными аудио- и звуковыми эффектами, записи плохого качества с фоновым шумом (шипением).
  
 ## <a name="input-and-output-files"></a>Входные и выходные файлы
@@ -86,7 +86,7 @@ ms.locfileid: "78163800"
 * японский [JaJp].
 * русский [RuRu];
 * британский английский [EnGb];
-* Испанский (Мексика) (EsMx) 
+* Испанский (Мексика) [Есмкс] 
 
 ## <a name="supported-file-types"></a>Поддерживаемые типы файлов
 
@@ -119,7 +119,7 @@ ms.locfileid: "78163800"
    
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл app.config информацией о подключении, как описано в [разработке Media Services с .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 
@@ -294,7 +294,7 @@ namespace IndexContent
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки
