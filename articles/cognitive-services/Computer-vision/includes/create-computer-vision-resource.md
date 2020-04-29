@@ -9,25 +9,25 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: 2647c604bebc2885f5c8516eb997792b65751e88
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80876102"
 ---
-## <a name="create-an-computer-vision-resource"></a>Создание ресурса компьютерного зрения
+## <a name="create-an-computer-vision-resource"></a>Создание ресурса Компьютерное зрение
 
-1. Войти на [портал Azure](https://portal.azure.com).
-1. Нажмите Создать ресурс [ **компьютерного зрения.** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision)
-1. Введите все необходимые настройки:
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Щелкните [создать **компьютерное зрение** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision) ресурс.
+1. Введите все необходимые параметры:
 
     |Параметр|Значение|
     |--|--|
     |Имя|Требуемое имя (от 2 до 64 символов)|
     |Подписка|Выберите соответствующую подписку|
-    |Местоположение|Выберите доступное поблизости расположение|
+    |Расположение|Выберите доступное поблизости расположение|
     |Ценовая категория|`F0` — минимальная ценовая категория|
     |Группа ресурсов|Выберите доступную группу ресурсов|
 
 1. Щелкните **Создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
-1. Соберите `{ENDPOINT_URI}` настроенные и, `{API_KEY}`увидеть [сбор необходимых параметров](../computer-vision-how-to-install-containers.md#gathering-required-parameters) для деталей.
+1. Собирать настройки `{ENDPOINT_URI}` и `{API_KEY}`, см. Дополнительные сведения в разделе [сбор обязательных параметров](../computer-vision-how-to-install-containers.md#gathering-required-parameters) .

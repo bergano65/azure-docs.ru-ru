@@ -1,7 +1,7 @@
 ---
-title: Примеры контейнерных докеров анализа настроений
+title: Примеры анализ тональности контейнера DOCKER
 titleSuffix: Azure Cognitive Services
-description: Примеры контейнерных докеров анализа настроений
+description: Примеры анализ тональности контейнера DOCKER
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,15 +10,15 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: e1d80f2ee869b2d71a536e499f900c7e8d6e425d
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80878692"
 ---
-### <a name="sentiment-analysis-container-docker-examples"></a>Примеры контейнерных докеров анализа настроений
+### <a name="sentiment-analysis-container-docker-examples"></a>Примеры анализ тональности контейнера DOCKER
 
-Следующие примеры докера приведены для контейнера анализа настроений.
+Следующие примеры DOCKER предназначены для контейнера анализ тональности.
 
 #### <a name="basic-example"></a>Простой пример 
 

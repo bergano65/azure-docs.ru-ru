@@ -1,7 +1,7 @@
 ---
-title: Запустите контейнер детектор аномалий в экземплярах контейнеров Azure
+title: Запуск контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"
 titleSuffix: Azure Cognitive Services
-description: Развернуть контейнер Anomaly Detector в экземпляр контейнера Azure и протестировать его в веб-браузере.
+description: Разверните контейнер детектора аномалий в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,21 +11,21 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: a4973254c8a53917d99daf38b0d11e5dbecbb731
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80875143"
 ---
-# <a name="deploy-an-anomaly-detector-container-to-azure-container-instances"></a>Развертывание контейнера детектора аномалий в экземплярах контейнеров Azure
+# <a name="deploy-an-anomaly-detector-container-to-azure-container-instances"></a>Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"
 
-Узнайте, как развернуть контейнер [детектор аномалий](../anomaly-detector-container-howto.md) когнитивных служб в [контейнерных инстанциях](https://docs.microsoft.com/azure/container-instances/)Azure. Эта процедура демонстрирует создание ресурса детектора аномалий. Затем мы обсуждаем потянув связанных изображения контейнера. Наконец, мы подчеркиваем возможность осуществлять оркестровку двух из браузера. Использование контейнеров может сместить внимание разработчиков от управления инфраструктурой к сосредоточению внимания на разработке приложений.
+Узнайте, как развернуть контейнер [детектора Cognitive Services аномалии](../anomaly-detector-container-howto.md) в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса детектора аномалий. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
 
 [!INCLUDE [Prerequisites](../../containers/includes/container-preview-prerequisites.md)]
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
-Сначала необходимо заполнить и отправить [форму запроса на контейнер Anomaly Detector,](https://aka.ms/adcontainer) чтобы запросить доступ к контейнеру.
+Сначала необходимо завершить и отправить [форму запроса контейнера детектора аномалий](https://aka.ms/adcontainer) , чтобы запросить доступ к контейнеру.
 
 [!INCLUDE [Request access](../../../../includes/cognitive-services-containers-request-access-only.md)]
 
@@ -35,8 +35,8 @@ ms.locfileid: "80875143"
 
 [!INCLUDE [API documentation](../../../../includes/cognitive-services-containers-api-documentation.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Просмотрите [установку и запуск контейнеров](../anomaly-detector-container-configuration.md) для вытягивания изображения контейнера и запуска контейнера
+* Проверьте раздел [Установка и запуск контейнеров](../anomaly-detector-container-configuration.md) , чтобы получить образ контейнера и запустить контейнер.
 * Ознакомьтесь со статьей о [конфигурации контейнеров](../anomaly-detector-container-configuration.md).
-* [Подробнее об услуге API Anomaly Detector API](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)
+* [Дополнительные сведения о службе API детектора аномалий](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)

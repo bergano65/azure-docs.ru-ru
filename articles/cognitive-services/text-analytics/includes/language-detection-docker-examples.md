@@ -1,7 +1,7 @@
 ---
-title: Примеры докеров контейнеров Language Detection
+title: Примеры распознавание языка контейнера DOCKER
 titleSuffix: Azure Cognitive Services
-description: Примеры докеров контейнеров Language Detection
+description: Примеры распознавание языка контейнера DOCKER
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,15 +10,15 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: 01863bfd1bf1c2c6f5688145ac5cbf74d1d2dfc1
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80878691"
 ---
-### <a name="language-detection-container-docker-examples"></a>Примеры докеров контейнеров Language Detection
+### <a name="language-detection-container-docker-examples"></a>Примеры распознавание языка контейнера DOCKER
 
-Следующие примеры докеров относятся к контейнеру Language Detection.
+Следующие примеры DOCKER предназначены для контейнера распознавание языка.
 
 #### <a name="basic-example"></a>Простой пример 
 

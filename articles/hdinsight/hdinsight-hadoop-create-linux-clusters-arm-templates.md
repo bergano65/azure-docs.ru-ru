@@ -1,5 +1,5 @@
 ---
-title: Создание кластеров Apache Hadoop с помощью шаблонов - Azure HDInsight
+title: Создание кластеров Apache Hadoop с помощью шаблонов Azure HDInsight
 description: Узнайте о создании кластеров для HDInsight с помощью шаблонов Resource Manager.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,30 +9,30 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/07/2020
 ms.openlocfilehash: 67d5481b82b7469c5ae55704768ce494dbc9dca5
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80879145"
 ---
 # <a name="create-apache-hadoop-clusters-in-hdinsight-by-using-resource-manager-templates"></a>Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager
 
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
-В этой статье вы узнаете несколько способов создания кластеров Azure HDInsight с помощью [шаблонов Azure Resource Manager.](../azure-resource-manager/templates/deploy-powershell.md) Чтобы узнать о других инструментах и функциях создания кластеров, щелкните селектор вкладок в верхней части этой страницы. Смотрите также, [методы создания кластера](hdinsight-hadoop-provision-linux-clusters.md#cluster-setup-methods).
+Из этой статьи вы узнаете несколько способов создания кластеров Azure HDInsight с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/templates/deploy-powershell.md). Чтобы узнать о других средствах и функциях создания кластера, щелкните селектор вкладок в верхней части этой страницы. См. также [методы создания кластера](hdinsight-hadoop-provision-linux-clusters.md#cluster-setup-methods).
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## <a name="resource-manager-templates"></a>Шаблоны Resource Manager
 
-Шаблон менеджера ресурсов упрощает создание следующих ресурсов для приложения в одной скоординированной операции:
+Шаблон диспетчер ресурсов позволяет легко создавать следующие ресурсы для приложения в одной координированной операции:
 
 * кластеры HDInsight и зависимые ресурсы (например, учетная запись хранения по умолчанию);
 * другие ресурсы (например, база данных SQL Azure для использования [Apache Sqoop](https://sqoop.apache.org/)).
 
 В шаблоне определяются ресурсы, необходимые для приложения. Можно также указать параметры развертывания в качестве входных значений для различных сред. Шаблон состоит из кода JSON и выражений, на основе которых можно создавать значения для развертывания.
 
-Вы можете найти образцы шаблонов HDInsight в [шаблонах быстрого запуска Azure.](https://azure.microsoft.com/resources/templates/?term=hdinsight) Используйте кроссплатформенный редактор [Visual Studio Code](https://code.visualstudio.com/#alt-downloads) с [расширением Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) или текстовый редактор, чтобы сохранить шаблон в файл на своей рабочей станции.
+Примеры шаблонов HDInsight можно найти в статье [шаблоны](https://azure.microsoft.com/resources/templates/?term=hdinsight)быстрого запуска Azure. Используйте кроссплатформенный редактор [Visual Studio Code](https://code.visualstudio.com/#alt-downloads) с [расширением Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) или текстовый редактор, чтобы сохранить шаблон в файл на своей рабочей станции.
 
 Дополнительные сведения о шаблонах Resource Manager см. в перечисленных ниже статьях и примерах:
 
@@ -43,7 +43,7 @@ ms.locfileid: "80879145"
 
 ## <a name="generate-templates"></a>Создание шаблонов
 
-Resource Manager позволяет экспортировать шаблон Resource Manager из имеющихся ресурсов в подписке, используя различные инструменты. Используя созданный шаблон, можно изучить синтаксис шаблонов или при необходимости автоматизировать повторное развертывание решения. Для получения дополнительной [информации см.](../azure-resource-manager/templates/export-template-portal.md)
+Resource Manager позволяет экспортировать шаблон Resource Manager из имеющихся ресурсов в подписке, используя различные инструменты. Используя созданный шаблон, можно изучить синтаксис шаблонов или при необходимости автоматизировать повторное развертывание решения. Дополнительные сведения см. в разделе [Экспорт шаблонов](../azure-resource-manager/templates/export-template-portal.md).
 
 ## <a name="deploy-using-the-portal"></a>Развертывание с помощью портала
 
@@ -67,15 +67,15 @@ Resource Manager позволяет экспортировать шаблон Re
 
 Обзорные сведения об использовании групп ресурсов в Visual Studio см. в статье [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../azure-resource-manager/templates/create-visual-studio-deployment-project.md).
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-hadoop-customize-cluster-linux.md#access-control).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы ознакомились с несколькими способами создания кластера HDInsight. Дополнительные сведения см. в следующих статьях:
 
-* Дополнительные шаблоны, связанные с HDInsight, [см.](https://azure.microsoft.com/resources/templates/?term=hdinsight)
+* Дополнительные шаблоны, связанные с HDInsight, см. в статье шаблоны быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/?term=hdinsight).
 * Пример развертывания ресурсов с помощью клиентской библиотеки .NET см. в статье [Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager](../virtual-machines/windows/csharp-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Подробный пример развертывания приложения см. в статье [Предсказуемые подготовка и развертывание микрослужб в Azure](../app-service/deploy-complex-application-predictably.md).
 * Инструкции по развертыванию своего решения в различных средах см. в статье [Среды разработки и тестирования в Microsoft Azure](../solution-dev-test-environments.md).

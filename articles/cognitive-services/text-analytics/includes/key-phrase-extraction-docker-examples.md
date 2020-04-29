@@ -1,7 +1,7 @@
 ---
-title: Ключевые фразы Извлечение контейнер докер примеры
+title: Примеры извлечение ключевых фраз контейнера DOCKER
 titleSuffix: Azure Cognitive Services
-description: Ключевые фразы Извлечение контейнер докер примеры
+description: Примеры извлечение ключевых фраз контейнера DOCKER
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,15 +10,15 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: 1c079df3171d89da4ef40e5008aaeb08b6504e66
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80878693"
 ---
-### <a name="key-phrase-extraction-container-docker-examples"></a>Ключевые фразы Извлечение контейнер докер примеры
+### <a name="key-phrase-extraction-container-docker-examples"></a>Примеры извлечение ключевых фраз контейнера DOCKER
 
-Следующие примеры докера приведены для контейнера Key Phrase Extraction.
+Следующие примеры DOCKER предназначены для контейнера извлечение ключевых фраз.
 
 #### <a name="basic-example"></a>Простой пример 
 

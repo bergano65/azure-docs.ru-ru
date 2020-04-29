@@ -1,5 +1,5 @@
 ---
-title: Уведомления концентраторов TLS обновления
+title: Обновления TLS концентраторов уведомлений
 description: Узнайте о поддержке TLS в центрах уведомлений Azure.
 services: notification-hubs
 documentationcenter: .net
@@ -15,28 +15,28 @@ ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 01/28/2020
 ms.openlocfilehash: 4da96df50e961f4291029a37e883fdcf88c6c87f
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80885758"
 ---
 # <a name="transport-layer-security-tls"></a>Протокол TLS
 
-Для обеспечения более высокого уровня безопасности, Notification Hubs отстранят поддержку версий TLS 1.0 и 1.1 31 мая 2020 года (продлен с 30 апреля 2020 года). Эти старые протоколы обеспечивают слабую криптографию и уязвимы для атак BEAST и POODLE. Приложения, развернутые на устройствах под управлением Android-версии 5 или больше, или iOS-версии 5 или больше, не влияют на это изменение, поскольку эти операционные системы поддерживают TLS 1.2, а клиент и сервер будут вести переговоры о самой высокой взаимно поддерживаемой версии протокола при подключении.
+Чтобы обеспечить более высокий уровень безопасности, концентраторы уведомлений будут отключать поддержку TLS версий 1,0 и 1,1 на 31 мая 2020 (продлена с 30 апреля 2020 г.). Эти старые протоколы обеспечивают слабую криптографию и уязвимы для атак МОНСТРУ и пудель. Эти изменения не влияют на приложения, развернутые на устройствах под управлением Android версии 5 или более поздней версии или iOS с версией 5 или более поздней, так как эти операционные системы поддерживают протокол TLS 1,2, а клиент и сервер будут согласовывать наивысшую взаимоподдерживаемую версию протокола при подключении.
 
-Мы рекомендуем просмотреть все приложения, которые используют концентраторы уведомлений Azure, чтобы убедиться, что они используют наиболее применимые библиотеки и tLS стеки, которые поддерживают TLS 1.2.
+Рекомендуется просматривать все приложения, использующие центры уведомлений Azure, чтобы убедиться, что они используют наиболее подходящие библиотеки и стеки TLS, поддерживающие TLS 1,2.
 
 ## <a name="update-apps"></a>Обновление приложений
 
-Вы можете убедиться, что ваши приложения для iOS используют TLS 1.2 с помощью функции сетевой безопасности Apple под названием App Transport Security (ATS). ATS не может быть использован для SDKs старше iOS 9.0 или macOS 10.11, и вы можете прочитать об этом далее из [документации Apple](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
+Вы можете убедиться, что приложения iOS используют TLS 1,2 с помощью функции безопасности сети Apple, именуемой безопасностью транспорта приложений (ATS). ATS нельзя использовать для пакетов SDK старше iOS 9,0 или macOS 10,11. Дополнительные сведения см. в [документации Apple](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
 
-Для приложений Android, использующих экземпляры SSLSocket, набор включенных протоколов на каждом экземпляре SSLSocket, как указано в [setEnabledProtocols.](https://developer.android.com/reference/javax/net/ssl/SSLSocket#setEnabledProtocols(java.lang.String%5B%5D))
+Для приложений Android, использующих экземпляры Сслсоккет, установите включенные протоколы для каждого экземпляра Сслсоккет, как указано в [сетенабледпротоколс](https://developer.android.com/reference/javax/net/ssl/SSLSocket#setEnabledProtocols(java.lang.String%5B%5D)).
 
-Таблица на странице поддержки [совместимости протоколов TLS](https://support.globalsign.com/customer/portal/articles/2934392-tls-protocol-compatibility) помогает сопоставить операционные системы с совместимыми версиями TLS.
+Таблица на странице Поддержка [совместимости протокола TLS](https://support.globalsign.com/customer/portal/articles/2934392-tls-protocol-compatibility) помогает сопоставлять операционные системы с совместимыми версиями TLS.
 
-Для получения дополнительной информации смотрите обзор [поддержки протоколов TLS на Windows.](https://docs.microsoft.com/archive/blogs/kaushal/support-for-ssltls-protocols-on-windows)
+Дополнительные сведения см. в обзоре [поддержки протоколов TLS в Windows](https://docs.microsoft.com/archive/blogs/kaushal/support-for-ssltls-protocols-on-windows).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Обзор концентратов уведомлений](notification-hubs-push-notification-overview.md)
+- [Общие сведения о концентраторах уведомлений](notification-hubs-push-notification-overview.md)

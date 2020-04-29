@@ -1,7 +1,7 @@
 ---
-title: Развертывание контейнера LUIS в экземплярах контейнера Azure
+title: Развертывание контейнера LUIS в службе "экземпляры контейнеров Azure"
 titleSuffix: Azure Cognitive Services
-description: Развернуть контейнер LUIS в экземпляр Azure Container и протестировать его в веб-браузере.
+description: Разверните контейнер LUIS в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: aahi
 ms.openlocfilehash: 08af17106846a0f5f7a0ccc2b01da1b2e15c1143
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80879224"
 ---
-# <a name="deploy-the-language-understanding-luis-container-to-azure-container-instances"></a>Развертывание контейнера для понимания языка (LUIS) в экземплярах контейнеров Azure
+# <a name="deploy-the-language-understanding-luis-container-to-azure-container-instances"></a>Развертывание контейнера Language Understanding (LUIS) в службе "экземпляры контейнеров Azure"
 
-Узнайте, как развернуть контейнер Cognitive Services [LUIS](luis-container-howto.md) в [экземплярах Контейнера](https://docs.microsoft.com/azure/container-instances/)Azure. Эта процедура демонстрирует создание ресурса детектора аномалий. Затем мы обсуждаем потянув связанных изображения контейнера. Наконец, мы подчеркиваем возможность осуществлять оркестровку двух из браузера. Использование контейнеров может сместить внимание разработчиков от управления инфраструктурой к сосредоточению внимания на разработке приложений.
+Узнайте, как развернуть контейнер Cognitive Services [Luis](luis-container-howto.md) в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса детектора аномалий. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
 
 [!INCLUDE [Prerequisites](../containers/includes/container-prerequisites.md)]
 
@@ -29,16 +29,16 @@ ms.locfileid: "80879224"
 
 ## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 
-Контейнер LUIS требует `.gz` файла модели, который втягивается во время выполнения. Контейнер должен иметь доступ к файлу этой модели через объемное крепление из экземпляра Контейнера. Для получения информации о создании [create a file share](../../storage/files/storage-how-to-create-file-share.md)общего файла Azure см. Обратите внимание на имя учетной записи, ключ и имя файла, которое понадобится позже.
+Для контейнера LUIS требуется файл `.gz` модели, который извлекается во время выполнения. Контейнер должен иметь возможность доступа к этому файлу модели через подключение тома из экземпляра контейнера. Сведения о создании файлового ресурса Azure см. в разделе [Создание общей папки](../../storage/files/storage-how-to-create-file-share.md). Запишите имя учетной записи хранения Azure, ключ и имя общей папки, так как они понадобятся вам позже.
 
-### <a name="export-and-upload-packaged-luis-app"></a>Экспорт и загрузка упакованное приложение LUIS
+### <a name="export-and-upload-packaged-luis-app"></a>Экспорт и передача упакованного приложения LUIS
 
-Для того, чтобы загрузить модель LUIS (упакованное приложение) в раздел файлов Azure, сначала необходимо <a href="luis-container-howto.md#export-packaged-app-from-luis" target="_blank" rel="noopener">экспортировать ее с портала <span class="docon docon-navigate-external x-hidden-focus"> </span>LUIS. </a> С портала Azure перейдите на страницу **Обзора** ресурса учетной записи хранилища и выберите **доли файлов.** Выберите имя файла общего доступа, которое вы недавно создали, а затем выберите кнопку **Загрузка.**
+Чтобы передать модель LUIS (упакованное приложение) в общую папку Azure, <a href="luis-container-howto.md#export-packaged-app-from-luis" target="_blank" rel="noopener">сначала <span class="docon docon-navigate-external x-hidden-focus"> </span>необходимо экспортировать ее с портала Luis </a>. На портал Azure перейдите на страницу **Обзор** ресурса учетной записи хранения и выберите **файловые ресурсы**. Выберите имя общей папки, которое вы недавно создали, а затем нажмите кнопку **Отправить** .
 
 > [!div class="mx-imgBorder"]
-> ![Загрузка в файл общего обмена](media/luis-how-to-deploy-to-aci/upload-file-share.png)
+> ![Отправить в общую папку](media/luis-how-to-deploy-to-aci/upload-file-share.png)
 
-Загрузите файл модели LUIS.
+Отправьте файл модели LUIS.
 
 [!INCLUDE [Create LUIS Container instance resource](../containers/includes/create-container-instances-resource-from-azure-cli.md)]
 
