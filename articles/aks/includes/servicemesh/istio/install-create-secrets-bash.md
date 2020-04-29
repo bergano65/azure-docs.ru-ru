@@ -4,15 +4,15 @@ ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
 ms.openlocfilehash: e8b94b4adc39de81dbdf17dfd24fcff39532b482
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77594029"
 ---
-### <a name="add-grafana-secret"></a>Добавить Графана Секрет
+### <a name="add-grafana-secret"></a>Добавить секрет Grafana
 
-Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркер паролем и запустите следующие команды:
+Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркер паролем и выполните следующие команды:
 
 ```bash
 GRAFANA_USERNAME=$(echo -n "grafana" | base64)
@@ -33,9 +33,9 @@ data:
 EOF
 ```
 
-### <a name="add-kiali-secret"></a>Добавить Киали Секрет
+### <a name="add-kiali-secret"></a>Добавить секрет Киали
 
-Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркер паролем и запустите следующие команды:
+Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркер паролем и выполните следующие команды:
 
 ```bash
 KIALI_USERNAME=$(echo -n "kiali" | base64)

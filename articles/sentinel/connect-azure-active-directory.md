@@ -1,6 +1,6 @@
 ---
-title: Подключение данных Azure AD к Azure Sentinel Документы Майкрософт
-description: Узнайте, как подключить данные Active Directory Azure к Azure Sentinel.
+title: Подключение данных Azure AD к Azure Sentinel | Документация Майкрософт
+description: Узнайте, как подключить данные Azure Active Directory к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -16,41 +16,41 @@ ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
 ms.openlocfilehash: be9241a6156621d3f90dbab2da5bebeb463b4232
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77588626"
 ---
-# <a name="connect-data-from-azure-active-directory"></a>Подключение данных из active-каталога Azure
+# <a name="connect-data-from-azure-active-directory"></a>Подключение данных из Azure Active Directory
 
 
 
-Azure Sentinel позволяет собирать данные из [Active Directory Azure](../active-directory/fundamentals/active-directory-whatis.md) и передавать их в Azure Sentinel. Вы можете выбрать поток [журналов входа и](../active-directory/reports-monitoring/concept-sign-ins.md) [журналов аудита.](../active-directory/reports-monitoring/concept-audit-logs.md)
+Azure Sentinel позволяет получать данные из [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) и передавать их в Azure Sentinel. Вы можете выбрать потоковую передачу [журналов входа](../active-directory/reports-monitoring/concept-sign-ins.md) и [журналов аудита](../active-directory/reports-monitoring/concept-audit-logs.md) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Если вы хотите экспортировать данные о ввоза из Active Directory, вы должны иметь лицензию Azure AD P1 или P2.
+- Если вы хотите экспортировать данные входа из Active Directory, необходимо иметь лицензию Azure AD P1 или P2.
 
-- Пользователь с глобальными разрешениями админа или админ-аминона безопасности на арендатора, с помощью чего вы хотите передавать журналы.
+- Пользователь с разрешениями глобального администратора или администратора безопасности в клиенте, из которого нужно выполнять потоковую передачу журналов.
 
-- Чтобы увидеть состояние соединения, необходимо иметь разрешение на доступ к диагностическим журналам Azure AD. 
+- Чтобы иметь возможность видеть состояние подключения, необходимо иметь разрешение на доступ к журналам диагностики Azure AD. 
 
 
 ## <a name="connect-to-azure-ad"></a>Подключение к Azure AD
 
-1. В Azure Sentinel выберите **разъемы данных,** а затем щелкните плитку **Active Directory Azure.**
+1. В поле Sentinel Azure выберите **соединители данных** , а затем щелкните плитку **Azure Active Directory** .
 
-1. Рядом с журналами, которые вы хотите транслировать в Azure Sentinel, нажмите **Connect.**
+1. Рядом с журналами, которые вы хотите передавать в Azure Sentinel, нажмите кнопку **подключить**.
 
-1. Можно выбрать, хотите ли оповещения из Azure AD автоматически генерировать инциденты в Azure Sentinel. В разделе **Создать инциденты** выберите **Разрешить**, чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе оповещений, созданных в подключенной службе безопасности. Затем это правило можно изменить в разделе **Аналитика**, а затем **Активные правила**.
+1. Вы можете выбрать, будут ли оповещения из Azure AD автоматически создавать инциденты в Azure Sentinel. В разделе **Создать инциденты** выберите **Разрешить**, чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе оповещений, созданных в подключенной службе безопасности. Затем это правило можно изменить в разделе **Аналитика**, а затем **Активные правила**.
 
-1. Чтобы использовать соответствующую схему в журнале Analytics для предупреждений Azure AD, ищите **данные о Входах** в журнал и **аудиты.**
-
-
+1. Чтобы использовать соответствующую схему в Log Analytics оповещений Azure AD, выполните поиск по запросу **сигнинлогс** и **AuditLogs**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+
+
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить Azure AD к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

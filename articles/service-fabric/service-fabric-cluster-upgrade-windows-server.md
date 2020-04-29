@@ -1,15 +1,15 @@
 ---
-title: Обновление версии отдельного кластера
+title: Обновление версии автономного кластера
 description: Обновление кода Azure Service Fabric в автономном кластере Service Fabric.
 author: dkkapur
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
 ms.openlocfilehash: 489a90180454e2b4a9dad34730fbd3c4f235a2ad
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77598108"
 ---
 # <a name="upgrade-the-service-fabric-version-that-runs-on-your-cluster"></a>Изменение версии Service Fabric в кластере 
@@ -29,7 +29,7 @@ ms.locfileid: "77598108"
 Чтобы настроить кластер для скачивания обновлений Service Fabric после того, как корпорация Майкрософт выпускает новую версию, присвойте параметру кластера `fabricClusterAutoupgradeEnabled` значение *true*. Чтобы выбрать поддерживаемую версию Service Fabric для кластера вручную, присвойте параметру кластера `fabricClusterAutoupgradeEnabled` значение *false*.
 
 ## <a name="upgrade-clusters-that-have-connectivity-to-download-the-latest-code-and-configuration"></a>Обновление кластеров с возможностью подключения для скачивания последней версии кода и конфигурации
-Используйте эти действия для обновления кластера до поддерживаемой версии, если узлы кластера имеют подключение к Интернету [в Центре загрузки Майкрософт.](https://download.microsoft.com)
+Выполните следующие действия, чтобы обновить кластер до поддерживаемой версии, если узлы кластера имеют подключение к Интернету в [центре загрузки Майкрософт](https://download.microsoft.com).
 
 Для кластеров с возможностью подключения к [Центру загрузки Майкрософт](https://download.microsoft.com) корпорация Майкрософт рекомендует периодически проверять наличие новых версий Service Fabric.
 
@@ -89,7 +89,7 @@ ms.locfileid: "77598108"
 Выполните следующие действия, чтобы обновить до поддерживаемой версии кластер без возможности интернет-подключения к [Центру загрузки Майкрософт](https://download.microsoft.com).
 
 > [!NOTE]
-> Если вы работаете кластер, который не подключен к Интернету, вы должны контролировать [блог команды Service Fabric,](https://blogs.msdn.microsoft.com/azureservicefabric/) чтобы узнать о новых версиях. Система не будет показывать предупреждения о работоспособности кластера, чтобы оповещать вас о новых выпусках.  
+> Если вы используете кластер, который не подключен к Интернету, необходимо проследить [Service Fabric блоге группы](https://blogs.msdn.microsoft.com/azureservicefabric/) , чтобы узнать о новых выпусках. Система не будет показывать предупреждения о работоспособности кластера, чтобы оповещать вас о новых выпусках.  
 >
 >
 
@@ -98,7 +98,7 @@ ms.locfileid: "77598108"
 
 Для выполнения операций вручную сделайте следующее.
 
-Измените конфигурацию кластера, чтобы установить следующее свойство на *ложное* перед началом обновления конфигурации:
+Измените конфигурацию кластера, чтобы присвоить следующему свойству значение *false* перед началом обновления конфигурации:
 
 ```json
 "fabricClusterAutoupgradeEnabled": false,
@@ -112,7 +112,7 @@ ms.locfileid: "77598108"
 
 ### <a name="cluster-upgrade-workflow"></a>Рабочий процесс обновления кластера
 
-1. Выполнить [Get-ServiceFabricClusterUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricclusterupgrade) из одного из узлов кластера и обратите внимание на *TargetCodeVersion.*
+1. Выполните команду [Get-ServiceFabricClusterUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricclusterupgrade) с одного из узлов в кластере и обратите внимание на *таржеткодеверсион*.
 
 2. Выполните следующую команду с компьютера, подключенного к Интернету, чтобы получить список всех версий, совместимых с обновлением, для текущей версии и скачайте соответствующий пакет с помощью связанных ссылок для загрузки.
 
@@ -159,7 +159,7 @@ ms.locfileid: "77598108"
 
     Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Обновление конфигурации изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md)
 * [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
 * [Масштабирование кластера](service-fabric-cluster-scale-up-down.md).

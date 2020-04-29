@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: damendo
 ms.openlocfilehash: 47d927f9f17580767526ec6683e819256fc5e994
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77619915"
 ---
 # <a name="read-nsg-flow-logs"></a>Чтение журналов потоков NSG
@@ -184,11 +184,11 @@ A","1497646742,10.0.0.4,168.62.32.14,44942,443,T,O,A","1497646742,10.0.0.4,52.24
 
 Этот сценарий является примером того, как прочитать записи в журналах потоков NSG, не анализируя весь журнал. Вы можете считывать новые записи в журнале по мере их записывания, используя идентификатор блока или отслеживая длину блоков, сохраненных в блочном BLOB-объекте. Это позволяет считывать только новые записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 
-Для дополнительных сведений о способах просмотра журналов потоков NSG см. статьи [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana](network-watcher-nsg-grafana.md), и [Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md). Подход функции Open Source Azure, связанный с непосредственной имитирующей капли для различных потребителей аналитики журналов, можно найти здесь: [Azure Network Watcher NSG Flow Logs Connector.](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector)
+Для дополнительных сведений о способах просмотра журналов потоков NSG см. статьи [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana](network-watcher-nsg-grafana.md), и [Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md). Функция Azure с открытым исходным кодом для использования больших двоичных объектов, которые можно использовать непосредственно и передать различным потребителям log Analytics, находится здесь: [соединитель журналов потоков NSG для наблюдателя за сетями Azure](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector).
 
-Для получения информации о потоках трафика можно использовать [аналитику Azure Traffic Analytics.](https://docs.microsoft.com/azure/network-watcher/traffic-analytics) Аналитика трафика использует [Log Analytics,](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) чтобы сделать ваш поток трафика заданным.
+[Аналитика трафика Azure](https://docs.microsoft.com/azure/network-watcher/traffic-analytics) можно использовать для получения ценной информации о потоках трафика. Аналитика трафика использует [log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) , чтобы сделать запрос трафика необработанным.
 
 Дополнительные сведения о больших двоичных объектах хранилища см. в статье [Привязки хранилища BLOB-объектов для Функций Azure](../azure-functions/functions-bindings-storage-blob.md).

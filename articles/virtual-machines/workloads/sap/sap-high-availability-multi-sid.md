@@ -17,10 +17,10 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d7938f7db22f004a0bf6cdf2e22dc8e103896719
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77617399"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
@@ -55,7 +55,7 @@ ms.locfileid: "77617399"
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Необходимо настроить кластер WSFC, используемый для одного экземпляра SAP ASCS/SCS, как описано в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по обеспечению высокого уровня доступности][sap-ha-guide] и как показано на этой диаграмме:
 
 ![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
@@ -241,10 +241,10 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 Основные действия:
 
-1. [Установите первый кластерный узлы SAP.][sap-ha-guide-9.1.2]  
- На этом этапе вы устанавливаете SAP с высокой доступностью экземпляра ASCS/SCS на **кластерном узле EXISTING WSFC 1.**
+1. [Установите первый узел кластера SAP][sap-ha-guide-9.1.2].  
+ На этом шаге вы устанавливаете SAP с экземпляром ASCS/SCS высокого уровня доступности на **существующем узле 1 кластера WSFC**.
 
-2. [Измените профиль SAP экземпляра ASCS/SCS.][sap-ha-guide-9.1.3]
+2. [Измените профиль SAP экземпляра ASCS/SCS][sap-ha-guide-9.1.3].
 
 3. [Настройка порта пробы][sap-ha-guide-9.1.4].  
  На этом шаге настраивается порт пробы SAP-SID2-IP кластерного ресурса SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS.
@@ -259,15 +259,15 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
  На обоих узлах кластера, используемых для экземпляров SAP ASCS/SCS, откройте все порты брандмауэра Windows, используемые SAP ASCS/SCS. Эти порты подробно описаны в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по обеспечению высокого уровня доступности][sap-ha-guide-8.8].  
  Кроме того, откройте порт пробы внутренней подсистемы балансировки нагрузки Azure. В нашем случае это порт 62350.
 
-7. [Измените тип запуска экземпляра службы SAP ERS Windows.][sap-ha-guide-9.4]
+7. [Измените тип запуска экземпляра службы Windows SAP ERS][sap-ha-guide-9.4].
 
 8. [Установка основного сервера приложений SAP][sap-ha-guide-9.5] на новой выделенной виртуальной машине.
 
 9. [Установка дополнительного сервера приложений SAP][sap-ha-guide-9.6] на новой выделенной виртуальной машине.
 
-10. [Проверьте сбой экземпляра SAP ASCS/SCS и репликацию SIOS.][sap-ha-guide-10]
+10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-ha-guide-10].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]

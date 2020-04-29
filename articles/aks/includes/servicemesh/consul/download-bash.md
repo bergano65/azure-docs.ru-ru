@@ -4,13 +4,13 @@ ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
 ms.openlocfilehash: a6b915e2735b45ac876ca98d279a15e4a371fbfd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77594286"
 ---
-В баш-оболочке на Linux, [Подсистеме Windows][install-wsl] для `curl` Linux или MacOS, используйте для загрузки диаграммы Consul Helm следующим образом:
+В оболочке на основе Bash в Linux, [подсистеме Windows для Linux][install-wsl] или MacOS используйте `curl` для загрузки выпуска Consul Helm Chart следующим образом:
 
 ```bash
 # Specify the Consul Helm chart version that will be leveraged throughout these instructions

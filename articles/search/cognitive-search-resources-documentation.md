@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.openlocfilehash: d2b25fb93a1e35ffa82cf49c60d181b841b1692d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77616196"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
@@ -23,9 +23,9 @@ ms.locfileid: "77616196"
 
 ## <a name="getting-started"></a>Начало работы
 + [Общие сведения об ИИ в Когнитивном поиске Azure](cognitive-search-concept-intro.md)
-+ [Быстрый запуск: Создайте когнитивный набор навыков на портале Azure](cognitive-search-quickstart-blob.md)
-+ [Учебник: Обогащенная индексация с помощью ИИ](cognitive-search-tutorial-blob.md)
-+ [Пример: Создание пользовательского навыка для обогащения ИИ](cognitive-search-create-custom-skill-example.md)
++ [Краткое руководство. Создание набора квалификационных навыков в портал Azure](cognitive-search-quickstart-blob.md)
++ [Учебник. обогащенное индексирование с помощью искусственного интеллекта](cognitive-search-tutorial-blob.md)
++ [Пример. Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md)
 
 ## <a name="how-to-guidance"></a>Практические руководства
 + [Определение набора навыков](cognitive-search-defining-skillset.md)

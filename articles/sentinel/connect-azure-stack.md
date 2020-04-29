@@ -1,6 +1,6 @@
 ---
-title: На борту виртуальных машин Azure Stack в Azure Sentinel Документы Майкрософт
-description: В этой статье показано, как обеспечить расширение виртуального управления azure Monitor, Update и Configuration Management на виртуальных машинах Azure Stack и начать мониторинг их с помощью Sentinel.
+title: Подключение Azure Stack виртуальных машин к Azure Sentinel | Документация Майкрософт
+description: В этой статье показано, как подготавливать расширение виртуальной машины Azure Monitor, Update и Configuration Management на Azure Stack виртуальных машинах и приступить к их мониторингу с помощью Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -13,47 +13,47 @@ ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
 ms.openlocfilehash: a8213bd57936f95870324950204dbd6c1473739a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77588524"
 ---
-# <a name="connect-azure-stack-virtual-machines-to-azure-sentinel"></a>Подключите виртуальные машины Azure Stack к Azure Sentinel
+# <a name="connect-azure-stack-virtual-machines-to-azure-sentinel"></a>Подключение Azure Stack виртуальных машин к Azure Sentinel
 
 
 
 
-С помощью Azure Sentinel вы можете отслеживать свои вм- управления, работающие на Azure и Azure Stack в одном месте. Чтобы на борт машин Azure Stack перейти в Azure Sentinel, сначала необходимо добавить расширение виртуальной машины к существующим виртуальным машинам Azure Stack. 
+С помощью Sentinel Azure можно отслеживать виртуальные машины, работающие в Azure, и Azure Stack в одном месте. Чтобы подключить Azure Stack машины к Azure Sentinel, сначала необходимо добавить расширение виртуальной машины к существующим Azure Stackным виртуальным машинам. 
 
-После подключения машин Azure Stack выберите галерею панелей мониторинга, которые на основе данных посевные данные. Эти панели мониторинга могут быть легко настроены под ваши потребности.
+После подключения Azure Stack машины выберите из коллекции панели мониторинга, в которой отображаются сведения на основе данных. Эти панели мониторинга можно легко настроить в своих нуждах.
 
 
 
-## <a name="add-the-virtual-machine-extension"></a>Добавить расширение виртуальной машины 
+## <a name="add-the-virtual-machine-extension"></a>Добавление расширения виртуальной машины 
 
-Добавьте расширение виртуального автомата **Azure Monitor, Update and Configuration Management** в виртуальные машины, работающие на вашем Azure Stack. 
+Добавьте расширение виртуальной машины **Azure Monitor, Update и Configuration Management** в виртуальные машины, работающие на Azure Stack. 
 
-1. Во введении в новую вкладку браузера войдите на [портал Azure Stack.](https://docs.microsoft.com/azure-stack/user/azure-stack-use-portal#access-the-portal)
-2. Перейдите на страницу **виртуальных машин,** выберите виртуальную машину, которую вы хотите защитить с помощью Azure Sentinel. Для получения информации о том, как создать виртуальную машину на Azure Stack, [см. Создать сервер Windows VM с порталом Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-windows-portal) или создать [Linux-сервер VM с помощью портала Azure Stack.](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-linux-portal)
-3. Выберите **расширения.** Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
-4. Нажмите на вкладку **Добавить.** Лопасти меню **«Новый ресурс»** открывается и показывает список доступных виртуальных расширений машины. 
-5. Выберите расширение **Azure Monitor, обновление и управление конфигурацией** и нажмите **«Создать».** Открывается окно конфигурации **расширения Установки.**
+1. На новой вкладке браузера Войдите на [портал Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-use-portal#access-the-portal).
+2. Перейдите на страницу **виртуальные машины** , выберите виртуальную машину, которую необходимо защитить с помощью Azure Sentinel. Сведения о том, как создать виртуальную машину на Azure Stack, см. в статье Создание виртуальной машины [Windows Server с помощью портала Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-windows-portal) или [Создание виртуальной машины сервера Linux с помощью портала Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-linux-portal).
+3. Выберите **расширения**. Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
+4. Щелкните вкладку **Добавить** . Откроется колонка меню **новый ресурс** , в которой будет показан список доступных расширений виртуальной машины. 
+5. Выберите расширение **управления Azure Monitor, обновление и настройка** и нажмите кнопку **создать**. Откроется окно **Установка расширения** конфигурации.
 
-   ![Настройки монитора, обновления и управления конфигурацией Azure](./media/connect-azure-stack/azure-monitor-extension-fix.png)  
+   ![Параметры управления Azure Monitor, обновления и конфигурации](./media/connect-azure-stack/azure-monitor-extension-fix.png)  
 
    >[!NOTE]
-   > Если вы не видите расширение **Azure Monitor, Update and Configuration Management,** указанное на вашем рынке, обратитесь к оператору Azure Stack, чтобы сделать его доступным.
+   > Если вы не видите расширение **управления Azure Monitor, обновления и настройки** , указанное в Marketplace, обратитесь к оператору Azure Stack, чтобы сделать его доступным.
 
-6. В меню Azure Sentinel выберите **параметры рабочего пространства,** за которыми следует **Advanced,** и скопируйте **идентификатор рабочего пространства** и **ключ рабочего пространства (Primary Key)**. 
-1. В окне расширения Azure Stack **Установить** их вуказанные поля и нажмите **OK**.
-1. После завершения установки расширения ее статус отображается как **Подготовка Успешно.** Появление виртуальной машины на портале Azure Sentinel может занять до одного часа.
+6. В меню Sentinel Azure выберите **параметры рабочей области** , а затем — **Дополнительно**и скопируйте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)**. 
+1. В окне Azure Stack **установить расширение** вставьте их в указанные поля и нажмите кнопку **ОК**.
+1. После завершения установки расширения его состояние отображается как **Подготовка выполнена**. Для отображения виртуальной машины на портале Sentinel Azure может потребоваться до одного часа.
 
-Для получения дополнительной информации об установке и настройке агента для Windows [см.](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard)
+Дополнительные сведения об установке и настройке агента для Windows см. в разделе [Подключение компьютеров Windows](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard).
 
 Сведения об устранении неполадок с агентами Linux см. в статье [Устранение неполадок с агентом Log Analytics для Linux](../azure-monitor/platform/agent-linux-troubleshoot.md).
 
-На портале Azure Sentinel на Azure, под **виртуальными машинами,** у вас есть обзор всех виртуальных технологий и компьютеров, а также их статус. 
+На портале Sentinel Azure в Azure в разделе **виртуальные машины**представлены общие сведения обо всех виртуальных машинах и компьютерах, а также их состояние. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Если расширение больше не нужно, можете удалить его с виртуальной машины на портале Azure Stack.
@@ -63,9 +63,9 @@ ms.locfileid: "77588524"
 1. Откройте **портал Azure Stack**.
 2. Перейдите к странице **Виртуальные машины**, выберите виртуальную машину, с которой нужно удалить расширение.
 3. Выберите **Расширения** и щелкните расширение **Microsoft.EnterpriseCloud.Monitoring**.
-4. Нажмите на **Uninstall**и подтвердите свой выбор.
+4. Щелкните **Удалить**и подтвердите выбор.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

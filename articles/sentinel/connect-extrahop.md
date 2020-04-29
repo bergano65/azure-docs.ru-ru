@@ -1,6 +1,6 @@
 ---
-title: Подключите ExtraHop Reveal (x) к Azure Sentinel Документы Майкрософт
-description: Узнайте, как подключить ExtraHop Reveal (x) к Azure Sentinel.
+title: Подключить Екстрахоп (x) к Azure Sentinel | Документация Майкрософт
+description: Узнайте, как подключить Екстрахоп "обнаружить (x)" к Sentinel Azure.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,35 +15,35 @@ ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
 ms.openlocfilehash: 8d82d8c5a76c34875e9a4aae22c547aec897c18a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77588303"
 ---
 # <a name="connect-extrahop-revealx"></a>Подключение ExtraHop Reveal(x)
 
-Разъем данных ExtraHop Reveal (x) позволяет легко подключить систему Reveal(x) с Azure Sentinel для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения исследования. Эта интеграция дает вам возможность получить представление о сети вашей организации и улучшить возможности работы службы безопасности.
+Соединитель Екстрахоп (x) Data Connector позволяет легко подключить систему отображения (x) с помощью Sentinel Azure для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения расследования. Такая интеграция дает возможность получить представление о сети организации и улучшить возможности обеспечения безопасности.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Прочитайте и напишите разрешения в рабочее пространство Azure Sentinel.
+- Разрешения на чтение и запись в рабочей области "Sentinel" Azure.
 
-- ExtraHop Discover или Command с прошивкой версии 7.8 или позже с учетной записью пользователя, которая имеет неограниченные (администраторские) привилегии.
+- Екстрахоп обнаружение или командное устройство с встроенным по 7,8 или более поздней версией с учетной записью пользователя с неограниченными правами (администратор).
 
-## <a name="connect-azure-sentinel-to-extrahop-revealx"></a>Подключите Azure Sentinel к ExtraHop Reveal (x)
+## <a name="connect-azure-sentinel-to-extrahop-revealx"></a>Подключение метки Azure к Екстрахоп раскрытия (x)
 
-1. На портале Azure перейдите на**разъемы данных** **Azure Sentinel** > Data, а затем выберите разъем **ExtraHop Reveal (x).**
+1. В портал Azure перейдите к**соединителям данных** **Azure Sentinel** > и выберите соединитель **раскрытия (x) екстрахоп** .
 
-2. Выберите **страницу Open connector**.
+2. Выберите **открыть страницу соединителя**.
 
-3. Следуйте инструкциям на странице **ExtraHop Reveal (x).**
+3. Следуйте инструкциям на странице **Екстрахоп раскрыть (x)** .
 
-## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы узнали, как подключить ExtraHop Reveal (x) к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
+## <a name="next-steps"></a>Дальнейшие шаги
+В этом документе вы узнали, как подключить Екстрахоп "обнаружить (x)" к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте трудовые книжки](tutorial-monitor-your-data.md) для мониторинга данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
 
 

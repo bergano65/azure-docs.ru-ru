@@ -1,23 +1,23 @@
 ---
 title: Представление журналов kubelet в Службе Azure Kubernetes (AKS)
-description: Узнайте, как просматривать информацию об устранении неполадок в журналах kubelet из узлов Службы Azure Kubernetes (AKS)
+description: Узнайте, как просматривать сведения об устранении неполадок в журналах kubelet из узлов службы Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
 ms.date: 03/05/2019
 ms.openlocfilehash: b7a74803af916f9e9de72dd528273007ce37832f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77595388"
 ---
 # <a name="get-kubelet-logs-from-azure-kubernetes-service-aks-cluster-nodes"></a>Получение журналов kubelet из узлов кластера Службы Azure Kubernetes (AKS)
 
-В рамках работы кластера AKS может потребоваться просмотреть журналы для устранения неполадок. Встроенный в портал Azure — это возможность просмотра журналов для компонентов или [контейнеров AKS][aks-master-logs] [в кластере AKS.][azure-container-logs] Иногда вам может понадобиться получить *кубелет* журналы из узла AKS для устранения неполадок целей.
+В рамках работы кластера AKS может потребоваться проверить журналы, чтобы устранить проблему. Встроенная портал Azure — возможность просмотра журналов для [главных компонентов][aks-master-logs] или [контейнеров AKS в кластере AKS][azure-container-logs]. Иногда для устранения неполадок может потребоваться получить журналы *kubelet* из узла AKS.
 
-В этой статье показано, `journalctl` как можно использовать для просмотра журналов *кубелета* на узле AKS.
+В этой статье показано, как можно использовать `journalctl` для просмотра журналов *KUBELET* на узле AKS.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
@@ -27,7 +27,7 @@ ms.locfileid: "77595388"
 
 ## <a name="get-kubelet-logs"></a>Получение журналов kubelet
 
-После подключения к узле выключите следующую команду, чтобы вытащить журналы *кубелета:*
+После подключения к узлу выполните следующую команду, чтобы извлечь журналы *kubelet* :
 
 ```console
 sudo journalctl -u kubelet -o cat
@@ -59,7 +59,7 @@ I0508 12:28:48.321952    8672 kubelet_node_status.go:497] Using Node Hostname fr
 I0508 12:28:58.344656    8672 kubelet_node_status.go:497] Using Node Hostname from cloudprovider: "aks-agentpool-11482510-0"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об устранении неполадок с главного сервера Kubernetes, см. в статье [Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)][aks-master-logs].
 

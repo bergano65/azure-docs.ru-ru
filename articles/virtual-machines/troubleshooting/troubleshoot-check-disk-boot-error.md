@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 08/31/2018
 ms.author: genli
 ms.openlocfilehash: 86938c582745cb0759eda9cd0693f407471a0529
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77921493"
 ---
 # <a name="windows-shows-checking-file-system-when-booting-an-azure-vm"></a>Отображение в Windows уведомления "Проверка файловой системы" при загрузке виртуальной машины Azure
@@ -39,7 +39,7 @@ ms.locfileid: "77921493"
 
 Windows будет загружаться нормально после завершения процесса проверки диска. Если виртуальная машина зависает в процессе проверки диска, попробуйте запустить проверку диска на виртуальной машине в автономном режиме.
 1.  Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
-2.  [Прикрепите диск ОС к восстановлению VM.](troubleshoot-recovery-disks-portal-windows.md)  
+2.  [Подключите диск операционной системы к виртуальной машине восстановления](troubleshoot-recovery-disks-portal-windows.md).  
 3.  Для восстановления виртуальной машины запустите проверку диска на подключенном диске ОС. В следующем примере имя драйвера подключенного диска ОС является папка E. 
         
         chkdsk E: /f

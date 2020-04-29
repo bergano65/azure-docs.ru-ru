@@ -14,10 +14,10 @@ ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
 ms.openlocfilehash: 90034a56fcf5211059d37270e12391249f7a16b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77920167"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
@@ -26,7 +26,7 @@ ms.locfileid: "77920167"
 
 ## <a name="symptom"></a>Симптом
 
-Вы включаете [принудительное туннелирование](../../vpn-gateway/vpn-gateway-forced-tunneling-rm.md) в подсетях виртуальной сети Azure, чтобы направить весь интернет-трафик обратно в локальную сеть. В этом сценарии виртуальные машины Azure (VMs), запускающие Windows, не активируют Windows.
+Вы включаете [принудительное туннелирование](../../vpn-gateway/vpn-gateway-forced-tunneling-rm.md) в подсетях виртуальной сети Azure, чтобы направить весь интернет-трафик обратно в локальную сеть. В этом случае виртуальные машины Azure, на которых выполняется Windows, не смогут активировать Windows.
 
 ## <a name="cause"></a>Причина
 
@@ -53,7 +53,7 @@ IP-адрес сервера управления ключами для глоб
  
 
 > [!NOTE] 
-> Активация использует общедоступные IP-адреса и будет зависеть от конфигурации Standard SKU Load Balancer. Внимательно просмотрите [исходящие соединения в Azure,](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) чтобы узнать о требованиях.
+> Активация использует общедоступные IP-адреса и будет зависеть от конфигурации "Стандартный" SKU Load Balancer. Внимательно ознакомьтесь с [исходящими подключениями в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , чтобы узнать о требованиях.
 
 1. Откройте Azure PowerShell и [войдите в свою подписку Azure](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 2. Выполните следующие команды:
@@ -111,9 +111,9 @@ IP-адрес сервера управления ключами для глоб
 
 4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Ключи установки клиента сервера управления ключами](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
+- [Ключи установки клиента KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
 )
 - [Просмотр и выбор методов активации](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11)
 )

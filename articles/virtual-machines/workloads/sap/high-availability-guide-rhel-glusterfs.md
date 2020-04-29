@@ -1,5 +1,5 @@
 ---
-title: GlusterFS на Azure VMs на RHEL для SAP NetWeaver (ru) Документы Майкрософт
+title: Глустерфс на виртуальных машинах Azure в RHEL для SAP NetWeaver | Документация Майкрософт
 description: GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: radeltch
 ms.openlocfilehash: 388a2db2c888be541d89c5f4274bd38b37e4ca28
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77591920"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
@@ -62,7 +62,7 @@ ms.locfileid: "77591920"
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes), содержащий все необходимые примечания к SAP для Linux;
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание виртуальных машин Azure для SAP на Linux (эта статья)][deployment-guide]
+* [Развертывание виртуальных машин Azure для SAP в Linux (Эта статья)][deployment-guide]
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
 * [Документация по хранилищу Red Hat Gluster](https://access.redhat.com/documentation/red_hat_gluster_storage/)
 * Общая документация по RHEL
@@ -86,7 +86,7 @@ ms.locfileid: "77591920"
 ### <a name="deploy-linux-via-azure-template"></a>Развертывание Linux с помощью шаблон Azure
 
 В Azure Marketplace доступен образ для Red Hat Enterprise Linux, который можно использовать для развертывания новых виртуальных машин.
-Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, набор доступности и т.д. Выполните следующие действия, чтобы развернуть шаблон:
+Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, группу доступности и т. д. Чтобы развернуть шаблон, выполните следующие действия.
 
 1. Откройте [шаблон файлового сервера SAP][template-file-server] на портале Azure.
 1. Задайте следующие параметры.
@@ -98,11 +98,11 @@ ms.locfileid: "77591920"
    4. Имя пользователя и пароль администратора или ключ SSH  
       Создается учетная запись пользователя, которую можно использовать для входа на компьютер.
    5. Идентификатор подсети  
-      Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно выглядит как /подписка**&lt;&gt;ID**/ ресурсгруппы /**&lt;название&gt;группы ресурсов**/ провайдеры / Microsoft.Network/virtualNetworks /**&lt;виртуальное название&gt;сети**/subnets/**&lt;название&gt; подсети**
+      Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно выглядит так:/Subscriptions/**&lt;Subscription ID&gt;**/resourceGroups/**&lt;имя&gt;группы ресурсов**/провидерс/Микрософт.Нетворк/виртуалнетворкс/**&lt;имя виртуальной сети&gt;**/субнетс/**&lt;имя&gt; подсети** .
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Развертывание Linux вручную с помощью портала Azure
 
-Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Мы рекомендуем [стандартный балансер нагрузки.](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview)  
+Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Рекомендуется использовать [стандартную подсистему балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).  
 
 1. Создание группы ресурсов
 1. Создайте виртуальную сеть
@@ -348,7 +348,7 @@ ms.locfileid: "77591920"
    sudo gluster volume start <b>NW2</b>-aers
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-rhel.md)
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]

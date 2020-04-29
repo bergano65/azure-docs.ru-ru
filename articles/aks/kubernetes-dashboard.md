@@ -5,19 +5,19 @@ services: container-service
 ms.topic: article
 ms.date: 10/08/2018
 ms.openlocfilehash: 15fcf765be0a754575713eebcdaa7d68e1c299b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77595354"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
 Служба Kubernetes включает в себя веб-панель мониторинга, которая может использоваться для базовых операций управления. Эта панель мониторинга позволяет просматривать базовое состояние работоспособности и метрики для приложений, создавать и развертывать службы, а также изменять существующие приложения. В этом документе рассматривается запуск панели мониторинга Kubernetes с помощью Azure CLI, а также некоторые основные операции с ней.
 
-Для получения дополнительной информации о панели мониторинга Kubernetes [см.][kubernetes-dashboard]
+Дополнительные сведения о панели мониторинга Kubernetes см. в разделе [панель мониторинга пользовательского веб-интерфейса Kubernetes][kubernetes-dashboard].
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В действиях, описанных в этом документе, предполагается, что создан кластер AKS и с ним установлено подключение `kubectl`. Если необходимо создать кластер AKS, см. раздел [AKS quickstart][aks-quickstart] (Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)).
 
@@ -67,7 +67,7 @@ After you choose a method to sign in, the Kubernetes dashboard is displayed. If 
 > [!IMPORTANT]
 > Если кластер AKS использует RBAC, необходимо создать *ClusterRoleBinding*(связи кластерных ролей) прежде чем правильно подключиться к панели мониторинга. По умолчанию панель мониторинга Kubernetes развертывается с минимальными правами доступа на чтение и отображает сообщения об ошибках доступа RBAC. Сейчас панель мониторинга Kubernetes не поддерживает пользовательские учетные данные для определения уровня доступа. Вместо этого она использует роли, предоставленные учетной записи службы. Администратор кластера может предоставить дополнительный доступ к учетной записи службы *kubernetes-dashboard*, однако это может послужить вектором для эскалации привилегий. Вы также можете интегрировать аутентификацию Azure Active Directory, чтобы предоставить более детальный уровень доступа.
 > 
-> Чтобы создать привязку, используйте [kubectl создать команду clusterrolebinding.][kubectl-create-clusterrolebinding] Следующий пример показывает, как создать привязку образца, однако, эта привязка образца не применяется каких-либо дополнительных компонентов аутентификации и может привести к небезопасному использованию. Панель мониторинга Kubernetes доступна для любого пользователя, имеющего доступ к URL-адресу. Не предоставляйте публичный доступ к панели мониторинга Kubernetes.
+> Чтобы создать привязку, используйте команду [kubectl Create клустерролебиндинг][kubectl-create-clusterrolebinding] . В следующем примере показано, как создать пример привязки, однако этот пример привязки не применяет какие-либо дополнительные компоненты проверки подлинности и может привести к небезопасному использованию. Панель мониторинга Kubernetes доступна для любого пользователя, имеющего доступ к URL-адресу. Не предоставляйте публичный доступ к панели мониторинга Kubernetes.
 >
 > ```console
 > kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
@@ -125,7 +125,7 @@ After you choose a method to sign in, the Kubernetes dashboard is displayed. If 
 
 ![Просмотр сведений о наборе реплик](./media/kubernetes-dashboard/view-replica-set.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о веб-панели мониторинга Kubernetes см. в [этой статье][kubernetes-dashboard].
 

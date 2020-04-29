@@ -1,6 +1,6 @@
 ---
-title: Общие шаблоны запросов - Azure Digital Twins Документы Майкрософт
-description: Изучите несколько общих шаблонов запросов API для ApIs управления управлением цифровыми близнецами Azure.
+title: Общие шаблоны запросов в Azure Digital двойников | Документация Майкрософт
+description: Узнайте о нескольких распространенных шаблонах запросов API для API управления цифровыми двойников Azure.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -9,10 +9,10 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 02/24/2020
 ms.openlocfilehash: 133c0e0dcc07afb85a0f3af9ae51d2207abac293
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77589119"
 ---
 # <a name="how-to-query-azure-digital-twins-apis-for-common-tasks"></a>Как запросить API Azure Digital Twins для выполнения общих задач
@@ -234,8 +234,8 @@ ms.locfileid: "77589119"
     YOUR_MANAGEMENT_API_URL/users/ANY_USER_ID
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об аутентификации с помощью API управления см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 
-Чтобы узнать больше о ваших конечных точках API, прочитайте [Как использовать Digital Twins Swagger](./how-to-use-swagger.md).
+Дополнительные сведения о конечных точках API см. в статье [Использование цифрового двойников Swagger](./how-to-use-swagger.md).

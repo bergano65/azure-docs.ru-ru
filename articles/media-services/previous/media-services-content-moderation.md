@@ -1,6 +1,6 @@
 ---
 title: Использование Azure Media Content Moderator для обнаружения материалов, потенциально предназначенных для взрослых и носящих непристойный характер | Документация Майкрософт
-description: Медиапроцессор Azure Media Content Moderator помогает обнаруживать потенциальный контент для взрослых и колоритный контент в видео.
+description: Обработчик мультимедиа Azure Media Content Moderator помогает обнаруживать потенциальное содержимое для взрослых и носящих непристойный характер в видео.
 services: media-services
 documentationcenter: ''
 author: sanjeev3
@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: sajagtap
 ms.openlocfilehash: 83fe7867a3128ac82597c028452863a1ad681ace
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77914336"
 ---
 # <a name="use-azure-media-content-moderator-to-detect-possible-adult-and-racy-content"></a>Использование Azure Media Content Moderator для обнаружения материалов, потенциально предназначенных для взрослых и носящих непристойный характер 
 
 > [!NOTE]
-> Медиапроцессор **Azure Media Content Moderator** будет удален. Для даты выхода на [legacy components](legacy-components.md) пенсию см.
+> Обработчик мультимедиа **Azure media Content Moderator** будет снят с учета. Дату выбытия см. в разделе [устаревшие компоненты](legacy-components.md) .
 
 ## <a name="overview"></a>Обзор
-Медиапроцессор **Azure Media Content Moderator** (MP) позволяет использовать режим модерации с помощью машины для видео. Например, вы хотите, чтобы ваша команда модераторов определила в видеороликах материалы, потенциально предназначенные для взрослых и носящие непристойный характер, а затем проверила помеченное содержимое.
+Обработчик мультимедиа **Azure media Content Moderator** Media (MP) позволяет использовать для видео контрольное разрешение. Например, вы хотите, чтобы ваша команда модераторов определила в видеороликах материалы, потенциально предназначенные для взрослых и носящие непристойный характер, а затем проверила помеченное содержимое.
 
 Сейчас обработчик мультимедиа **Azure Media Content Moderator** доступен в предварительной версии.
 
@@ -49,14 +49,14 @@ ms.locfileid: "77914336"
 
 | Элемент | Описание |
 | --- | --- |
-| version |Версия Content Moderator. |
+| Версия |Версия Content Moderator. |
 | timescale |Количество тактов в секунду видео. |
 | offset |Смещение времени для меток времени. В API поиска видео версии 1.0 это значение всегда равно 0. В будущем оно может измениться. |
 | framerate |Количество кадров в секунду видео. |
 | width |Ширина выходного видеокадра в пикселях.|
 | height |Высота выходного видеокадра в пикселях.|
 | totalDuration |Длительность входного видео в тактах. |
-| [Фрагменты](#fragments-json-elements) |Метаданные разделены на разные сегменты, называемые фрагментами. Каждый фрагмент является автоматически обнаруженным снимком с указанием начала, длительности, номера интервала и событий. |
+| [частей](#fragments-json-elements) |Метаданные разделены на разные сегменты, называемые фрагментами. Каждый фрагмент является автоматически обнаруженным снимком с указанием начала, длительности, номера интервала и событий. |
 
 ### <a name="fragments-json-elements"></a>Элементы JSON фрагментов
 
@@ -65,7 +65,7 @@ ms.locfileid: "77914336"
 | start |Время начала первого события в тактах. |
 | длительность |Продолжительность фрагмента в тактах. |
 | interval |Интервал каждой записи события внутри фрагмента в тактах. |
-| [События](#events-json-elements) |Каждое событие представляет собой клип, который состоит из опорных кадров, обнаруженных и отслеженных в пределах заданного периода времени. Оно представляет собой массив событий. Внешний массив представляет один интервал времени. Внутренний массив состоит из нуля или более событий, которые выполнялись в этот момент времени.|
+| [событиях](#events-json-elements) |Каждое событие представляет собой клип, который состоит из опорных кадров, обнаруженных и отслеженных в пределах заданного периода времени. Оно представляет собой массив событий. Внешний массив представляет один интервал времени. Внутренний массив состоит из нуля или более событий, которые выполнялись в этот момент времени.|
 
 ### <a name="events-json-elements"></a>Элементы JSON событий
 
@@ -223,7 +223,7 @@ The following example of a Content Moderator JSON output was truncated.
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки
@@ -231,7 +231,7 @@ The following example of a Content Moderator JSON output was truncated.
 
 [Демонстрационные материалы для медиааналитики Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. дополнительные сведения о [решении для модерации и проверки видео](../../cognitive-services/Content-Moderator/video-moderation-human-review.md) с помощью Content Moderator.
 

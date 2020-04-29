@@ -14,16 +14,16 @@ ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4060dbe936af8ff1f9dd8c958f64834cb06525de
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77615087"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
 
-**Отказ от ответственности:** *Это руководство получено путем тестирования настройки в среде Microsoft HANA Large Instances, которая успешно работает. Поскольку команда Microsoft Service Management для HANA Large Instances не поддерживает операционную систему, возможно, потребуется связаться с SUSE для дальнейших устранений неполадок или уточнения на уровне операционной системы. Команда управления службами Майкрософт настраивает устройство STONITH и полностью поддерживает и может быть задействована для устранения неполадок в связи с проблемами устройств STONITH.*
+**Заявление об отказе.** *это руководство является производным от проверки установки в среде крупных экземпляров Microsoft Hana, которая успешно работает. Поскольку Группа управления службами Майкрософт для крупных экземпляров HANA не поддерживает операционную систему, может потребоваться обратиться в SUSE для дальнейшего устранения неполадок или уточнений на уровне операционной системы. Группа управления службами Майкрософт настраивает устройство STONITH и полностью поддерживает и может использоваться для устранения неполадок, связанных с устройствами STONITH.*
 ## <a name="overview"></a>Обзор
 Для настройки высокого уровня доступности с помощью кластеризации SUSE необходимо выполнить следующие предварительные требования.
 ### <a name="pre-requisites"></a>Предварительные требования
@@ -63,7 +63,7 @@ ms.locfileid: "77615087"
 7.  Настройка ресурсов в кластере.
 8.  Протестируйте процесс отработки отказа.
 
-## <a name="1---identify-the-sbd-device"></a>1. Определить устройство SBD
+## <a name="1---identify-the-sbd-device"></a>1. Указание устройства SBD
 В этом разделе описывается, как определить устройство SBD для установки после того, как команда управления службами Майкрософт настроила STONITH. **Этот раздел относится только к имеющимся клиентам**. Команда управления службами Майкрософт предоставляет новым клиентам имя устройства SBD, поэтому они могут пропустить этот раздел.
 
 1.1. Измените */etc/iscsi/initiatorname.isci* на 
@@ -92,7 +92,7 @@ iscsiadm -m node -l
 ```
 ![iSCSIadmLogin.png](media/HowToHLI/HASetupWithStonith/iSCSIadmLogin.png)
 
-1.5 Выполните сценарий повтора: *rescan-scsi-bus.sh*.  Этот скрипт показывает вам новые диски, созданные для вас.  Запустите ее на обоих узлах. Отобразится номер LUN больше нуля (например, 1, 2 и т. д.).
+1,5. Выполните скрипт повторного сканирования: *Rescan-SCSI-Bus.sh*.  Этот сценарий показывает новые созданные диски.  Запустите ее на обоих узлах. Отобразится номер LUN больше нуля (например, 1, 2 и т. д.).
 
 ```
 rescan-scsi-bus.sh
@@ -143,10 +143,10 @@ zypper in SAPHanaSR SAPHanaSR-doc
 
 ![yast-hawk-continue.png](media/HowToHLI/HASetupWithStonith/yast-hawk-continue.png)
 
-Нажмите **Продолжить**
+Нажмите кнопку **продолжить** .
 
-Ожидаемое значение »Количество развернутых узлов (в ![](media/HowToHLI/HASetupWithStonith/yast-Cluster-Security.png) данном случае 2) yast-Cluster-Security.png Нажмите **Следующая**
-![yast-кластер-настройка-csync2.png](media/HowToHLI/HASetupWithStonith/yast-cluster-configure-csync2.png) Добавить имена узлов, а затем нажмите кнопку "Добавить предлагаемые файлы"
+Ожидаемое значение = число развернутых узлов (в данном случае ![2) яст-клустер-секурити](media/HowToHLI/HASetupWithStonith/yast-Cluster-Security.png) . **Next**
+![PNG нажмите кнопку Next](media/HowToHLI/HASetupWithStonith/yast-cluster-configure-csync2.png) YaST-Cluster-configure-csync2. png добавить имена узлов и нажмите кнопку "добавить предложенные файлы".
 
 Щелкните Turn csync2 ON (Включить csync2).
 
@@ -154,19 +154,19 @@ zypper in SAPHanaSR SAPHanaSR-doc
 
 ![yast-key-file.png](media/HowToHLI/HASetupWithStonith/yast-key-file.png)
 
-Нажмите кнопку **ОК**
+Нажмите кнопку **ОК**.
 
 Аутентификация выполняется с помощью IP-адреса и предопределенных ключей в Csync2. Файл ключа создается с помощью csync2 -k /etc/csync2/key_hagroup. Файл key_hagroup нужно скопировать во все элементы кластера вручную после его создания. **Убедитесь, что файл скопирован с узла 1 на узел 2**.
 
 ![yast-cluster-conntrackd.png](media/HowToHLI/HASetupWithStonith/yast-cluster-conntrackd.png)
 
-Нажмите **Кнопка Следующая**
-![yast-кластер-service.png](media/HowToHLI/HASetupWithStonith/yast-cluster-service.png)
+Нажмите кнопку **Next**
+![яст-клустер-сервице. png.](media/HowToHLI/HASetupWithStonith/yast-cluster-service.png)
 
 В параметрах по умолчанию загрузка была отключена, поэтому измените значение на "ВКЛ.", чтобы Pacemaker запускался во время загрузки. Выбор можно сделать на основе требований к установке.
 Щелкните **Далее** и настройка кластера будет завершена.
 
-## <a name="4---setting-up-the-softdog-watchdog"></a>4. Настройка Softdog Watchdog
+## <a name="4---setting-up-the-softdog-watchdog"></a>4. Настройка устройства наблюдения Softdog
 В этом разделе описана настройка службы наблюдения (softdog).
 
 4.1. Добавьте следующую строку в */etc/init.d/boot.local* на **обоих** узлах.
@@ -233,7 +233,7 @@ systemctl start pacemaker
 
 Если служба pacemaker *завершается с ошибкой*, дополнительные сведения см. в разделе *Сценарий 5. Сбой службы Pacemaker*.
 
-## <a name="5---joining-the-cluster"></a>5. Присоединение к кластеру
+## <a name="5---joining-the-cluster"></a>5. присоединение к кластеру
 В этом разделе описано, как соединить узел с кластером.
 
 ### <a name="51-add-the-node"></a>5.1. Добавление узла.
@@ -257,7 +257,7 @@ systemctl start pacemaker
 ```
 crm_mon
 ```
-![crm-mon.png](media/HowToHLI/HASetupWithStonith/crm-mon.png) Вы также можете войти в ястреб, чтобы проверить статус кластера *https://\<узла IP>:7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
+![КРМ-Мон. png](media/HowToHLI/HASetupWithStonith/crm-mon.png) вы также можете войти в Hawk, чтобы проверить состояние кластера *https://\<узел IP>:7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Настройка свойств и ресурсов кластера 
 В этом разделе описаны действия по настройке кластерных ресурсов.
@@ -322,23 +322,23 @@ crm configure load update crm-vip.txt
 При выполнении команды *crm_mon* отобразится два ресурса.
 ![crm_mon_command.png](media/HowToHLI/HASetupWithStonith/crm_mon_command.png)
 
-Кроме того, вы можете увидеть статус на *IP-адресе https://\<узла>:7630/cib/live/state*
+Кроме того, состояние можно увидеть на *узле HTTPS://\<IP Address>:7630/ЦИБ/Live/State.*
 
 ![hawlk-status-page.png](media/HowToHLI/HASetupWithStonith/hawlk-status-page.png)
 
-## <a name="8-testing-the-failover-process"></a>8. Тестирование процесса неудачи
+## <a name="8-testing-the-failover-process"></a>8. Тестирование процесса отработки отказа
 Чтобы протестировать процесс отработки отказа, остановите службу Pacemaker на node1 и отработку отказа ресурсов на node2.
 ```
 Service pacemaker stop
 ```
 Теперь остановите службу Pacemaker на узле **node2**. После этого произойдет отработка отказа ресурсов на узле **node1**.
 
-**Перед неудачей**  
-![Перед failover.png](media/HowToHLI/HASetupWithStonith/Before-failover.png)  
+**Перед отработкой отказа**  
+![Бефоре-фаиловер. png](media/HowToHLI/HASetupWithStonith/Before-failover.png)  
 
-**После неудачи**  
-![after-failover.png](media/HowToHLI/HASetupWithStonith/after-failover.png)  
-![crm-mon-after-failover.png](media/HowToHLI/HASetupWithStonith/crm-mon-after-failover.png)  
+**После отработки отказа**  
+![Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/after-failover.png)  
+![КРМ-Мон-Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/crm-mon-after-failover.png)  
 
 
 ## <a name="9-troubleshooting"></a>9. Устранение неполадок
@@ -375,7 +375,7 @@ Login to [iface: default, target: iqn.1992-08.com.netapp:hanadc11:1:t020, portal
 
 ![yast2-qt-gui-error.png](media/HowToHLI/HASetupWithStonith/yast2-qt-gui-error.png)
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![yast-control-center.png](media/HowToHLI/HASetupWithStonith/yast-control-center.png)
 
@@ -436,11 +436,11 @@ zypper -n install libyui-qt
 ![yast-pattern1.png](media/HowToHLI/HASetupWithStonith/yast-pattern1.png)
 ![yast-pattern2.png](media/HowToHLI/HASetupWithStonith/yast-pattern2.png)
 
-Нажмите кнопку **Принять**.
+Нажмите кнопку **принять** .
 
 ![yast-changed-packages.png](media/HowToHLI/HASetupWithStonith/yast-changed-packages.png)
 
-Нажмите **Продолжить**
+Нажмите кнопку **продолжить** .
 
 ![yast2-performing-installation.png](media/HowToHLI/HASetupWithStonith/yast2-performing-installation.png)
 
@@ -533,7 +533,7 @@ cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
 ![ha-cluster-join-fix.png](media/HowToHLI/HASetupWithStonith/ha-cluster-join-fix.png)
 
-## <a name="10-general-documentation"></a>10. Общие документы
+## <a name="10-general-documentation"></a>10. Общая документация
 Дополнительные сведения об установке SUSE HA можно найти в следующих статьях: 
 
 - [SAP HANA SR Performance Optimized Scenario](https://www.suse.com/docrep/documents/ir8w88iwu7/suse_linux_enterprise_server_for_sap_applications_12_sp1.pdf ) (Сценарий оптимизации производительности системной репликации SAP HANA)
