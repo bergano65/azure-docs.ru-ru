@@ -1,33 +1,33 @@
 ---
-title: Управление сеансами REST API
-description: Описывает, как управлять сеансами
+title: REST API управления сеансами
+description: Описывает управление сеансами
 author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
 ms.openlocfilehash: 46560f067e020236031487677ad4f48a9560d4e1
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80681250"
 ---
-# <a name="use-the-session-management-rest-api"></a>Использование aPI управления сеансами REST API
+# <a name="use-the-session-management-rest-api"></a>Использование REST API управления сеансами
 
-Для использования функциональности удаленного рендеринга Azure необходимо создать *сеанс.* Каждый сеанс соответствует виртуальной машине (VM), которая выделяется в Azure и ждет подключения клиентского устройства. При подключении устройства VM предоставляет запрашиваемые данные и служит результат у видеопотока. Во время создания сеанса вы выбрали, на каком сервере вы хотите работать, который определяет цены. После того, как сеанс больше не нужен, его следует прекратить. Если не остановить вручную, он будет автоматически закрыт по истечении *срока аренды* сеанса.
+Чтобы использовать функции удаленной подготовки к просмотру Azure, необходимо создать *сеанс*. Каждый сеанс соответствует виртуальной машине, выделенной в Azure, и ожидает подключения клиентского устройства. При подключении устройства виртуальная машина отображает запрошенные данные и передает результат в виде видеопотока. Во время создания сеанса выбирается тип сервера, на котором будет выполняться, который определяет цены. Когда сеанс больше не нужен, он должен быть остановлен. Если этот параметр не был остановлен вручную, он будет автоматически закрыт по истечении срока *аренды* сеанса.
 
-Мы предоставляем скрипт PowerShell в [репозитории образцов ARR](https://github.com/Azure/azure-remote-rendering) в папке *Скриптов* под названием *RenderingSession.ps1*, что демонстрирует использование нашего сервиса. Сценарий и его конфигурация описаны здесь: [Пример скриптов PowerShell](../samples/powershell-example-scripts.md)
+Мы предоставляем скрипт PowerShell в [репозитории образцов arr](https://github.com/Azure/azure-remote-rendering) в папке *Scripts* , именуемый *рендерингсессион. ps1*, который демонстрирует использование нашей службы. Скрипт и его конфигурация описаны здесь: [примеры сценариев PowerShell](../samples/powershell-example-scripts.md)
 
 > [!TIP]
-> Команды PowerShell, перечисленные на этой странице, предназначены для дополнения друг друга. Если вы запустите все скрипты последовательно в рамках одного и того же запроса команды PowerShell, они будут строиться друг на друге.
+> Команды PowerShell, перечисленные на этой странице, предназначены для дополнения друг к другу. Если все скрипты выполняются последовательно в одной командной строке PowerShell, они будут построены поверх других.
 
 ## <a name="regions"></a>Регионы
 
-Ознакомьтесь со [списком доступных регионов](../reference/regions.md) для базовых URL-адресов для отправки запросов.
+См. [список доступных регионов](../reference/regions.md) для базовых URL-адресов, на которые отправляются запросы.
 
-Для примера сценариев ниже мы выбрали регион *westus2*.
+Для примеров сценариев ниже мы выбрали регион *westus2*.
 
-### <a name="example-script-choose-an-endpoint"></a>Пример сценария: Выберите конечную точку
+### <a name="example-script-choose-an-endpoint"></a>Пример скрипта. Выбор конечной точки
 
 ```PowerShell
 $endPoint = "https://remoterendering.westus2.mixedreality.azure.com"
@@ -35,9 +35,9 @@ $endPoint = "https://remoterendering.westus2.mixedreality.azure.com"
 
 ## <a name="accounts"></a>Учетные записи
 
-Если у вас нет учетной записи удаленного рендеринга, [создайте ее.](create-an-account.md) Каждый ресурс идентифицируется *учетной*записьюId, который используется на протяжении всей сессии AIS.
+Если у вас нет учетной записи удаленной подготовки, [создайте ее](create-an-account.md). Каждый ресурс идентифицируется путем *accountId*, который используется во всех интерфейсах API сеанса.
 
-### <a name="example-script-set-accountid-and-accountkey"></a>Пример сценария: Установите accountId и accountKey
+### <a name="example-script-set-accountid-and-accountkey"></a>Пример скрипта: Set accountId и accountKey
 
 ```PowerShell
 $accountId = "********-****-****-****-************"
@@ -46,9 +46,9 @@ $accountKey = "*******************************************="
 
 ## <a name="common-request-headers"></a>Общие заголовки запросов
 
-* Заголовок *авторизации* должен иметь`Bearer TOKEN`значение ",`TOKEN`где " является токен омовения подлинности, [возвращенный службой Secure Token.](tokens.md)
+* Заголовок *авторизации* должен иметь значение "`Bearer TOKEN`", где "`TOKEN`" — токен проверки подлинности, [возвращаемый службой маркеров безопасности](tokens.md).
 
-### <a name="example-script-request-a-token"></a>Пример сценария: Запрос маркера
+### <a name="example-script-request-a-token"></a>Пример скрипта: запрос маркера
 
 ```PowerShell
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
@@ -59,29 +59,29 @@ $token = $response.AccessToken;
 
 ## <a name="common-response-headers"></a>Общие заголовки ответов
 
-* Заголовок *MS-CV* может быть использован группой разработчиков для отслеживания вызова в службе.
+* Команда разработчиков может использовать заголовок *MS-КП* для трассировки вызова в рамках службы.
 
 ## <a name="create-a-session"></a>Создание сеанса
 
-Эта команда создает сеанс. Он возвращает идентификатор новой сессии. Идентификатор сеанса необходим для всех других команд.
+Эта команда создает сеанс. Он возвращает идентификатор нового сеанса. Для всех остальных команд требуется идентификатор сеанса.
 
 | URI | Метод |
 |-----------|:-----------|
-| /v1/account/*accountId*accountId/сессии/создание | POST |
+| /v1/Accounts/*accountId*/Сессионс/креате | POST |
 
-**Тело запроса:**
+**Текст запроса:**
 
-* maxLeaseTime (время): значение тайм-аута, когда VM будет списан автоматически
-* модели (массив): URL-адреса контейнера активов для предварительной загрузки
-* размер (строка): размер VM **("стандартный"** или **"премиум").** Смотрите конкретные [ограничения размера VM.](../reference/limits.md#overall-number-of-polygons)
+* Макслеасетиме (TimeSpan) — значение времени ожидания, когда виртуальная машина будет списана автоматически
+* модели (массив): URL-адреса контейнеров ресурсов для предварительной загрузки
+* Размер (строка): размер виртуальной машины (**"Стандартный"** или **"Премиум"**). Ознакомьтесь с [ограничениями на конкретные размеры виртуальных машин](../reference/limits.md#overall-number-of-polygons).
 
-**Ответы:**
+**Правляют**
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 202 | - sessionId: GUID | Успешно |
+| 202 | -sessionId: GUID | Успех |
 
-### <a name="example-script-create-a-session"></a>Пример сценария: Создание сеанса
+### <a name="example-script-create-a-session"></a>Пример сценария. Создание сеанса
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/create" -Method Post -ContentType "application/json" -Body "{ 'maxLeaseTime': '4:0:0', 'models': [], 'size': 'standard' }" -Headers @{ Authorization = "Bearer $token" }
@@ -109,9 +109,9 @@ ParsedHtml        : mshtml.HTMLDocumentClass
 RawContentLength  : 52
 ```
 
-### <a name="example-script-store-sessionid"></a>Пример сценария: Store sessionId
+### <a name="example-script-store-sessionid"></a>Пример скрипта: хранилище sessionId
 
-Ответ от запроса выше включает в себя **sessionId**, который вам нужно для всех запросов последующих.
+Ответ из приведенного выше запроса включает **идентификатор сеанса**, который необходим для всех дальнейших запросов.
 
 ```PowerShell
 $sessionId = "d31bddca-dab7-498e-9bc9-7594bc12862f"
@@ -119,26 +119,26 @@ $sessionId = "d31bddca-dab7-498e-9bc9-7594bc12862f"
 
 ## <a name="update-a-session"></a>Обновление сеанса
 
-Эта команда обновляет параметры сеанса. В настоящее время вы можете только продлить время аренды сессии.
+Эта команда обновляет параметры сеанса. В настоящее время можно продлить время аренды сеанса.
 
 > [!IMPORTANT]
-> Время аренды всегда дается как общее время с начала сессии. Это означает, что если вы создали сеанс с временем аренды в один час, и вы хотите продлить время аренды еще на час, вы должны обновить его maxLeaseTime до двух часов.
+> Время аренды всегда указывается как общее время с момента начала сеанса. Это означает, что если вы создали сеанс со временем аренды, равным одному часу, и хотите продлить время аренды на другой час, необходимо обновить его Макслеасетиме до двух часов.
 
 | URI | Метод |
 |-----------|:-----------|
-| /v1/account/*accountID/сессии/**sessionId* | PATCH |
+| /v1/Accounts/*accountID*/Сессионс/*SessionID* | PATCH |
 
-**Тело запроса:**
+**Текст запроса:**
 
-* maxLeaseTime (время): значение тайм-аута, когда VM будет списан автоматически
+* Макслеасетиме (TimeSpan) — значение времени ожидания, когда виртуальная машина будет списана автоматически
 
-**Ответы:**
+**Правляют**
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 200 | | Успешно |
+| 200 | | Успех |
 
-### <a name="example-script-update-a-session"></a>Пример сценария: Обновление сеанса
+### <a name="example-script-update-a-session"></a>Пример скрипта. обновление сеанса
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/$sessionId" -Method Patch -ContentType "application/json" -Body "{ 'maxLeaseTime': '5:0:0' }" -Headers @{ Authorization = "Bearer $token" }
@@ -160,21 +160,21 @@ Headers           : {[MS-CV, Fe+yXCJumky82wuoedzDTA.0], [Content-Length, 0], [Da
 RawContentLength  : 0
 ```
 
-## <a name="get-active-sessions"></a>Получайте активные сеансы
+## <a name="get-active-sessions"></a>Получение активных сеансов
 
 Эта команда возвращает список активных сеансов.
 
 | URI | Метод |
 |-----------|:-----------|
-| /v1/account/*accountId/сессии* | GET |
+| /v1/Accounts/*accountId*/Сессионс | GET |
 
-**Ответы:**
+**Правляют**
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 200 | - сеансы: массив свойств сеансов | см. раздел "Получить свойства сеанса" для описания свойств сеанса |
+| 200 | -Sessions: массив свойств сеанса | Описание свойств сеанса см. в разделе "получение свойств сеанса". |
 
-### <a name="example-script-query-active-sessions"></a>Пример сценария: Активные сеансы запроса
+### <a name="example-script-query-active-sessions"></a>Пример скрипта: запрос активных сеансов
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions" -Method Get -Headers @{ Authorization = "Bearer $token" }
@@ -203,21 +203,21 @@ ParsedHtml        : mshtml.HTMLDocumentClass
 RawContentLength  : 2
 ```
 
-## <a name="get-sessions-properties"></a>Получить свойства сеансов
+## <a name="get-sessions-properties"></a>Получение свойств сеансов
 
-Эта команда возвращает информацию о сеансе, например, его хост-имя VM.
+Эта команда возвращает сведения о сеансе, например имя узла виртуальной машины.
 
 | URI | Метод |
 |-----------|:-----------|
-| /v1/account/*accountId*/sessions/*sessionId/properties* | GET |
+| /v1/Accounts/*accountId*/Сессионс/*SessionID*/пропертиес | GET |
 
-**Ответы:**
+**Правляют**
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 200 | - сообщение: строка<br/>- сессияElapsedTime: временной промежуток<br/>- sessionHostname: строка<br/>- sessionId: строка<br/>- sessionMaxLeaseTime: время промежутка времени<br/>- sessionSize: enum<br/>- сессияСтатус: enum | enum sessionStatus - запуск, готовность, остановка, остановка, истек, ошибка<br/>Если статус "ошибка" или "исчерпан", сообщение будет содержать больше информации |
+| 200 | -Message: строка<br/>-Сессионелапседтиме: TimeSpan<br/>-Сессионхостнаме: строка<br/>-sessionId: строка<br/>-Сессионмакслеасетиме: TimeSpan<br/>-Сессионсизе: Enum<br/>-Сессионстатус: Enum | Enum Сессионстатус {Start, Ready, остановка, остановлена, срок действия истек, ошибка}<br/>Если состояние — "ошибка" или "срок действия истек", сообщение будет содержать дополнительные сведения |
 
-### <a name="example-script-get-session-properties"></a>Пример сценария: Получить свойства сеанса
+### <a name="example-script-get-session-properties"></a>Пример скрипта. получение свойств сеанса
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/$sessionId/properties" -Method Get -Headers @{ Authorization = "Bearer $token" }
@@ -248,19 +248,19 @@ RawContentLength  : 60
 
 ## <a name="stop-a-session"></a>Остановка сеанса
 
-Эта команда останавливает сеанс. Выделенный VM будет восстановлен вскоре после этого.
+Эта команда останавливает сеанс. Выделенная виртуальная машина будет освобождена вскоре после.
 
 | URI | Метод |
 |-----------|:-----------|
-| /v1/account/*accountId*/сессии/*sessionId* | DELETE |
+| /v1/Accounts/*accountId*/Сессионс/*SessionID* | DELETE |
 
-**Ответы:**
+**Правляют**
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 204 | | Успешно |
+| 204 | | Успех |
 
-### <a name="example-script-stop-a-session"></a>Пример сценария: Остановка сеанса
+### <a name="example-script-stop-a-session"></a>Пример скрипта. Завершение сеанса
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/$sessionId" -Method Delete -Headers @{ Authorization = "Bearer $token" }
@@ -281,6 +281,6 @@ Headers           : {[MS-CV, YDxR5/7+K0KstH54WG443w.0], [Date, Thu, 09 May 2019 
 RawContentLength  : 0
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Пример скриптов PowerShell](../samples/powershell-example-scripts.md)
+* [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)

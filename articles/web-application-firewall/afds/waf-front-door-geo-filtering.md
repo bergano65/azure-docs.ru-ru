@@ -1,5 +1,5 @@
 ---
-title: Геофильтрация на домене для службы передних дверей Azure
+title: Географическая фильтрация в домене для службы "Передняя дверца Azure"
 description: В этой статье вы узнаете о политике геофильтрации для Azure Front Door Service.
 services: web-application-firewall
 author: vhorne
@@ -9,10 +9,10 @@ ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
 ms.openlocfilehash: e287da94a71fccabddb90f3f5a3699f4c4cf22a5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79472611"
 ---
 # <a name="what-is-geo-filtering-on-a-domain-for-azure-front-door"></a>Сведения о геофильтрации в домене для Azure Front Door
@@ -105,7 +105,7 @@ ms.locfileid: "79472611"
 | IQ | Ирак|
 | IR | Иран, Исламская Республика|
 | IS | Исландия|
-| IT | Италия|
+| ИТ-отдел | Италия|
 | JM | Ямайка|
 | JO | Иордания|
 | JP | Япония|
@@ -140,7 +140,7 @@ ms.locfileid: "79472611"
 | Магический квадрант | Мартиника|
 | MR | Мавритания|
 | MT | Мальта|
-| MV | Мальдивские острова|
+| MV | Мальдивы|
 | MW | Малави|
 | MX | Мексика|
 | MY | Малайзия|
@@ -205,7 +205,7 @@ ms.locfileid: "79472611"
 | ZM | Замбия|
 | ZW | Зимбабве|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Защита на прикладном уровне с помощью Front Door](../../frontdoor/front-door-application-security.md).
 - Дополнительные сведения о [создании Front Door](../../frontdoor/quickstart-create-front-door.md).

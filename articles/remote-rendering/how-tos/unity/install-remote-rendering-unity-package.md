@@ -1,28 +1,28 @@
 ---
-title: Установка пакета удаленного рендеринга для Unity
-description: Объясняет, как установить DLL-клиент удаленной визуализации для Unity
+title: Установка пакета Удаленной отрисовки для Unity
+description: Объясняет, как установить клиентские библиотеки DLL удаленной подготовки к просмотру для Unity.
 author: florianborn71
 ms.author: flborn
 ms.date: 02/26/2020
 ms.topic: how-to
 ms.openlocfilehash: 86ffe47c009f9e0ae121ffc6ab57bff8fb73210f
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80681185"
 ---
-# <a name="install-the-remote-rendering-package-for-unity"></a>Установка пакета удаленного рендеринга для Unity
+# <a name="install-the-remote-rendering-package-for-unity"></a>Установка пакета Удаленной отрисовки для Unity
 
-Удаленный отрисование Azure использует пакет Unity для инкапсулирования интеграции в Unity.
+Удаленная визуализация Azure использует пакет Unity для инкапсуляции интеграции в Unity.
 
-## <a name="manage-the-remote-rendering-packages-in-unity"></a>Управление пакетами удаленной визуализации в Unity
+## <a name="manage-the-remote-rendering-packages-in-unity"></a>Управление пакетами удаленной подготовки к просмотру в Unity
 
-Пакеты Unity — это контейнеры, которыми можно управлять через [менеджер пакетов](https://docs.unity3d.com/Packages/com.unity.package-manager-ui@1.8/manual/index.html)Unity.
-Этот пакет содержит весь API C'API, а также все связные файлы плагинов, необходимые для использования удаленного рендеринга Azure с Unity.
-Следуя схеме именования Unity для пакетов, пакет называется **com.microsoft.azure.remote-rendering.**
+Пакеты Unity — это контейнеры, которыми можно управлять через [Диспетчер пакетов](https://docs.unity3d.com/Packages/com.unity.package-manager-ui@1.8/manual/index.html)Unity.
+Этот пакет содержит весь API C#, а также все двоичные файлы подключаемого модуля, необходимые для использования удаленной отрисовки Azure с Unity.
+В следующей схеме именования Unity для пакетов пакет называется **com. Microsoft. Azure. Remote-Rendering**.
 
-Пакет не является частью [репозитория образцов ARR](https://github.com/Azure/azure-remote-rendering)и недоступен во внутреннем реестре пакетов Unity. Чтобы добавить его в проект, необходимо вручную отсутсвие файла `manifest.md` проекта, чтобы добавить следующее:
+Пакет не является частью [репозитория примеров arr](https://github.com/Azure/azure-remote-rendering)и недоступен из внутреннего реестра пакетов Unity. Чтобы добавить его в проект, необходимо вручную изменить `manifest.md` файл проекта, добавив в него следующее:
 ```json
 {
   "scopedRegistries": [
@@ -38,16 +38,16 @@ ms.locfileid: "80681185"
   }
 }
 ```
-После добавления этого пакета можно использовать менеджер пакета Unity, чтобы убедиться, что у вас есть последняя версия.
-Более полные инструкции приведены в [учебнике: Настройка проекта Unity с нуля.](../../tutorials/unity/project-setup.md)
+После добавления этого можно использовать диспетчер пакетов Unity, чтобы убедиться в наличии последней версии.
+Более полные инструкции приведены в руководстве по [настройке проекта Unity с нуля](../../tutorials/unity/project-setup.md).
 
-## <a name="unity-render-pipelines"></a>Конвейеры визуализации unity
+## <a name="unity-render-pipelines"></a>Конвейеры отрисовки Unity
 
-Дистанционное рендерирование работает как с **конвейером Universal,** так и со **стандартным конвейером рендеринга.** По причинам производительности рекомендуется конвейер Универсального рендера.
+Удаленная визуализация работает как с **универсальным конвейером отрисовки** , так и с **стандартным конвейером отрисовки**. По соображениям производительности рекомендуется использовать универсальный конвейер отрисовки.
 
-Для использования **конвейера универсального рендера**его пакет должен быть установлен в Unity. Это можно сделать в **uI-едином** пакетном менеджере Unity (название пакета **Universal RP,** версия 7.2.1 или более новый), либо через `Packages/manifest.json` файл, как описано в [учебнике по настройке проекта Unity.](../../tutorials/unity/project-setup.md#configure-the-projects-manifest)
+Для использования **универсального конвейера отрисовки**его пакет должен быть установлен в Unity. Это можно сделать в пользовательском интерфейсе **диспетчера пакетов** ( **Universal RP**, версии 7.2.1 или более новой) или с помощью `Packages/manifest.json` файла, как описано в руководстве по [установке проекта Unity](../../tutorials/unity/project-setup.md#configure-the-projects-manifest).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Объекты и компоненты Unity](objects-components.md)
-* [Учебник: Настройка проекта Unity с нуля](../../tutorials/unity/project-setup.md)
+* [Игровые объекты и компоненты Unity](objects-components.md)
+* [Руководство. Настройка проекта Unity с нуля](../../tutorials/unity/project-setup.md)

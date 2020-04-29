@@ -1,7 +1,7 @@
 ---
-title: Настройка всегда-на VPN туннель
+title: Настройка постоянного VPN-туннеля
 titleSuffix: Azure VPN Gateway
-description: Шаги для настройки Всегда на VPN туннель для VPN шлюз
+description: Действия по настройке VPN-туннеля Always On для VPN-шлюза
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/12/2020
 ms.author: cherylmc
 ms.openlocfilehash: 9036992a354b41cd75735e5ccd895d7287a00e91
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79371777"
 ---
 # <a name="configure-an-always-on-vpn-device-tunnel"></a>Настройка туннеля Always On VPN для устройства
@@ -21,7 +21,7 @@ ms.locfileid: "79371777"
 
 ## <a name="configure-the-gateway"></a>Настройка шлюза
 
-Настройте VPN шлюз для использования IKEv2 и проверки подлинности на основе сертификатов с помощью статьи [настройки VPN-соединения от точки к сайту.](vpn-gateway-howto-point-to-site-resource-manager-portal.md)
+Настройте VPN-шлюз для использования IKEv2 и аутентификацию на основе сертификата с помощью инструкции " [Настройка VPN-подключения типа" точка — сеть](vpn-gateway-howto-point-to-site-resource-manager-portal.md) ".
 
 ## <a name="configure-the-device-tunnel"></a>Настройка туннеля устройства
 
@@ -29,10 +29,10 @@ ms.locfileid: "79371777"
 
 ## <a name="to-remove-a-profile"></a>Удаление профиля
 
-Чтобы удалить профиль, запустите следующую команду:
+Чтобы удалить профиль, выполните следующую команду:
 
 ![Очистка](./media/vpn-gateway-howto-always-on-device-tunnel/cleanup.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-При устранении [Azure point-to-site connection problems](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md) неполадок см.
+Сведения об устранении неполадок см. [в статье проблемы с подключением "точка — сеть" в Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md) .

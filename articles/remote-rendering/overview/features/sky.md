@@ -1,43 +1,43 @@
 ---
 title: Отражения неба
-description: Описывает, как настроить карты среды для отражения неба
+description: Описывает, как настроить карты среды для переотражений.
 author: florianborn71
 ms.author: flborn
 ms.date: 02/07/2020
 ms.topic: article
 ms.openlocfilehash: 7316df7bcf78e3a154510e69116c288b2b293d4c
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80680613"
 ---
 # <a name="sky-reflections"></a>Отражения неба
 
-В удаленном рендере Azure текстура неба используется для реалистичного освещения объектов. Для приложений дополненной реальности эта текстура должна напоминать ваше реальное окружение, чтобы объекты казались убедительными. В этой статье описывается, как изменить текстуру неба.
+В удаленной отрисовке Azure для реалистичного освещения объектов используется высокоплотная текстура. Для приложений с расширенной реальности эта текстура должна напоминать реальную окружающую функцию, чтобы объекты были убедительными. В этой статье описывается, как изменить геотекстуру.
 
 > [!NOTE]
-> Текстура неба также называется *картой окружающей среды.* Эти термины используются взаимозаменяемо.
+> Текстура небесной заливки также называется *картой среды*. Эти термины взаимозаменяемы.
 
 ## <a name="object-lighting"></a>Освещение объектов
 
-Azure Remote Rendering использует *физические визуализации* (PBR) для реалистичных вычислений освещения. Хотя вы можете добавить [источники света](lights.md) к вашей сцене, используя хорошую текстуру неба имеет наибольшее влияние.
+Удаленная визуализация Azure использует *физическую отрисовку* (PBR) для реалистичных вычислений освещения. Несмотря на то, что вы можете добавить источники освещения в сцену, использование хорошей текстуры с высокой [интенсивностью](lights.md) оказывает наибольшее влияние.
 
-На приведенных ниже изображениях показаны результаты освещения различных поверхностей только с текстурой неба:
+На рисунках ниже показаны результаты освещения разных поверхностей только с помощью высокотекстурной текстуры:
 
-| Шероховатости  | 0                                        | 0,25                                          | 0,5                                          | 0.75                                          | 1                                          |
+| Неровность  | 0                                        | 0,25                                          | 0,5                                          | 0.75                                          | 1                                          |
 |:----------:|:----------------------------------------:|:---------------------------------------------:|:--------------------------------------------:|:---------------------------------------------:|:------------------------------------------:|
-| Неметаллические  | ![Диэлектрик0](media/dielectric-0.png)   | ![ГринПойнтПарк](media/dielectric-0.25.png)  | ![ГринПойнтПарк](media/dielectric-0.5.png)  | ![ГринПойнтПарк](media/dielectric-0.75.png)  | ![ГринПойнтПарк](media/dielectric-1.png)  |
-| Metal      | ![ГринПойнтПарк](media/metallic-0.png)  | ![ГринПойнтПарк](media/metallic-0.25.png)    | ![ГринПойнтПарк](media/metallic-0.5.png)    | ![ГринПойнтПарк](media/metallic-0.75.png)    | ![ГринПойнтПарк](media/metallic-1.png)    |
+| Без металла  | ![Dielectric0](media/dielectric-0.png)   | ![гринпоинтпарк](media/dielectric-0.25.png)  | ![гринпоинтпарк](media/dielectric-0.5.png)  | ![гринпоинтпарк](media/dielectric-0.75.png)  | ![гринпоинтпарк](media/dielectric-1.png)  |
+| Metal      | ![гринпоинтпарк](media/metallic-0.png)  | ![гринпоинтпарк](media/metallic-0.25.png)    | ![гринпоинтпарк](media/metallic-0.5.png)    | ![гринпоинтпарк](media/metallic-0.75.png)    | ![гринпоинтпарк](media/metallic-1.png)    |
 
-Для получения дополнительной информации о [materials](../../concepts/materials.md) модели освещения, см.
+Дополнительные сведения о модели освещения см. в главе [материалы](../../concepts/materials.md) .
 
 > [!IMPORTANT]
-> Azure Remote Rendering использует текстуру неба только для моделей освещения. Он не делает небо фоном, так как приложения дополненной реальности уже имеют надлежащий фон - реальный мир.
+> Удаленная визуализация Azure использует текстуру небесно только для моделей освещения. Он не отображает перевозки в качестве фона, так как расширенные приложения реально уже имеют правильный фон — реальный мир.
 
-## <a name="changing-the-sky-texture"></a>Изменение текстуры неба
+## <a name="changing-the-sky-texture"></a>Изменение текстуры перевозки
 
-Чтобы изменить карту среды, все, что вам нужно сделать, это [загрузить текстуру](../../concepts/textures.md) и изменить `SkyReflectionSettings`сеанс:
+Чтобы изменить карту среды, достаточно [Загрузить текстуру](../../concepts/textures.md) и изменить значение сеанса `SkyReflectionSettings`:
 
 ``` cs
 LoadTextureAsync _skyTextureLoad = null;
@@ -66,54 +66,54 @@ void ChangeEnvironmentMap(AzureSession session)
 }
 ```
 
-Обратите внимание, что `LoadTextureFromSASAsync` вариант используется выше, потому что встроенная текстура загружается. В случае загрузки из [связанных хранилищ капли,](../../how-tos/create-an-account.md#link-storage-accounts)используйте `LoadTextureAsync` вариант.
+Обратите внимание `LoadTextureFromSASAsync` , что этот вариант используется выше, так как загружается встроенная текстура. Если загрузка производится из [связанных хранилищ BLOB-объектов](../../how-tos/create-an-account.md#link-storage-accounts), используйте вариант `LoadTextureAsync`.
 
-## <a name="sky-texture-types"></a>Типы текстуры неба
+## <a name="sky-texture-types"></a>Типы небесных текстур
 
-В качестве карт среды можно использовать как *[кубические карты,](https://en.wikipedia.org/wiki/Cube_mapping)* так и *2D текстуры.*
+В качестве карт среды можно использовать как *[кубемапс](https://en.wikipedia.org/wiki/Cube_mapping)* , так и *2D-текстуры* .
 
-Все текстуры должны быть в [поддерживаемом формате текстуры.](../../concepts/textures.md#supported-texture-formats) Вам не нужно предоставлять mipmaps для текстур неба.
+Все текстуры должны быть в [поддерживаемом формате текстуры](../../concepts/textures.md#supported-texture-formats). Вам не нужно предоставлять MIP-карты для небесных текстур.
 
-### <a name="cube-environment-maps"></a>Карты среды кубов
+### <a name="cube-environment-maps"></a>Карты среды Куба
 
-Для справки, вот развернутая кубика:
+Для справки ниже приведен неупакованный кубической карты:
 
-![Необернутый кубик](media/Cubemap-example.png)
+![Развернутый кубической карты](media/Cubemap-example.png)
 
-`AzureSession.Actions.LoadTextureAsync` /  `LoadTextureFromSASAsync` Используйте `TextureType.CubeMap` с для загрузки текстур cubemap.
+`AzureSession.Actions.LoadTextureAsync` /  Используйте `LoadTextureFromSASAsync` с `TextureType.CubeMap` для загрузки текстур кубической карты.
 
-### <a name="sphere-environment-maps"></a>Карты среды сферы
+### <a name="sphere-environment-maps"></a>Карты среды Sphere
 
-При использовании 2D-текстуры в качестве карты среды изображение должно находиться в [пространстве сферических координат.](https://en.wikipedia.org/wiki/Spherical_coordinate_system)
+При использовании двухмерной текстуры в качестве схемы среды изображение должно находиться в [сферической области координат](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
 
-![Изображение неба в сферических координатах](media/spheremap-example.png)
+![Перенебесное изображение в сферных координатах](media/spheremap-example.png)
 
-`AzureSession.Actions.LoadTextureAsync` Используйте `TextureType.Texture2D` с для загрузки сферических карт среды.
+Используйте `AzureSession.Actions.LoadTextureAsync` с `TextureType.Texture2D` для загрузки карт сферического окружения.
 
 ## <a name="built-in-environment-maps"></a>Встроенные карты среды
 
-Azure Remote Rendering предоставляет несколько встроенных карт среды, которые всегда доступны. Все встроенные карты среды являются кубиками.
+Удаленная визуализация Azure предоставляет несколько встроенных схем среды, которые всегда доступны. Все встроенные карты среды являются кубемапс.
 
 |Идентификатор                         | Описание                                              | Рисунки                                                      |
 |-----------------------------------|:---------------------------------------------------------|:-----------------------------------------------------------------:|
-|builtin://Autoshop                 | Разнообразие полосатых огней, яркое крытое базовое освещение    | ![Автомагазин](media/autoshop.png)
-|builtin://BoilerRoom               | Яркий крытый свет настройки, несколько оконных фонарей      | ![BoilerRoom](media/boiler-room.png)
-|builtin://ColorfulStudio           | Разнообразие цветные огни в среде света в помещении настройки  | ![Красочнаястудия](media/colorful-studio.png)
-|builtin://Hangar                   | Умеренно яркий свет окружающего зала                     | ![МалыйХангар](media/hangar.png)
-|builtin://IndustrialPipeAndValve   | Тусклый крытый параметр со светлым контрастом              | ![ПромышленныйпипэндВванв](media/industrial-pipe-and-valve.png)
-|builtin://Lebombo                  | Дневной свет окружающей комнаты, яркий свет области окна     | ![Лебомбо](media/lebombo.png)
-|builtin://SataraNight              | Темное ночное небо и земля со многими окружающими огнями   | ![SataraNight](media/satara-night.png)
-|builtin://SunnyVondelpark          | Яркий солнечный свет и контраст теней                      | ![СанниВондельпарк](media/sunny-vondelpark.png)
-|builtin://Syferfontein             | Ясное небо свет с умеренным наземным освещением            | ![Сиферфонтейн](media/syferfontein.png)
-|builtin://TearsOfSteelBridge       | Умеренно меняющиеся солнце и тень                         | ![TearsofsteelBridge](media/tears-of-steel-bridge.png)
-|builtin://VeniceSunset             | Вечерний закат света приближается сумерки                    | ![ВенецияЗакат](media/venice-sunset.png)
-|builtin://WhippleCreekRegionalPark | Яркие, пышные и белые светлые тона, затемненные земли | ![УипплКрикРегиональныйПарк](media/whipple-creek-regional-park.png)
-|builtin://WinterRiver              | Дневное время с ярким окружающим наземным светом                 | ![УинтерРивер](media/winter-river.png)
-|builtin://DefaultSky               | То же, что TearsOfSteelBridge                               | ![По умолчаниюСки](media/tears-of-steel-bridge.png)
+|builtin://Autoshop                 | Разнообразные индикаторы с чередованием, яркий базовый свет освещения    | ![Автомагазин](media/autoshop.png)
+|builtin://BoilerRoom               | Яркий параметр освещения, несколько световых окон      | ![боилеррум](media/boiler-room.png)
+|builtin://ColorfulStudio           | Разноцветные световые индикаторы в средней освещенности  | ![колорфулстудио](media/colorful-studio.png)
+|builtin://Hangar                   | Умеренный яркий световой зал                     | ![смаллхангар](media/hangar.png)
+|builtin://IndustrialPipeAndValve   | Настройка «затемнение» с светло-темным контрастом              | ![индустриалпипеандвалве](media/industrial-pipe-and-valve.png)
+|builtin://Lebombo                  | Постоянную наружное окружение, ярко-светлая область окна     | ![лебомбо](media/lebombo.png)
+|builtin://SataraNight              | Темно-ночный небесно-голубой и земля со многими окружающими индикаторами   | ![сатаранигхт](media/satara-night.png)
+|builtin://SunnyVondelpark          | Яркий солнечный свет и контрастность тени                      | ![суннивонделпарк](media/sunny-vondelpark.png)
+|builtin://Syferfontein             | Снятие небесного света с умеренным освещением от заземления            | ![сиферфонтеин](media/syferfontein.png)
+|builtin://TearsOfSteelBridge       | Умеренное изменение Sun и затенения                         | ![теарсофстилбридже](media/tears-of-steel-bridge.png)
+|builtin://VeniceSunset             | Вечером-светло-Закатный подход к Сумерки                    | ![веницесунсет](media/venice-sunset.png)
+|builtin://WhippleCreekRegionalPark | Яркие, Луш-зеленый и белый световые тона, затемненное заземление | ![вхипплекрикрегионалпарк](media/whipple-creek-regional-park.png)
+|builtin://WinterRiver              | Постоянную с ярко-светлым заземлением                 | ![винтерривер](media/winter-river.png)
+|builtin://DefaultSky               | То же, что и Теарсофстилбридже                               | ![дефаултски](media/tears-of-steel-bridge.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Огни](../../overview/features/lights.md)
+* [Освещение](../../overview/features/lights.md)
 * [Материалы](../../concepts/materials.md)
 * [Текстуры](../../concepts/textures.md)
-* [Инструмент командной строки TexConv](../../resources/tools/tex-conv.md)
+* [Программа командной строки Тексконв](../../resources/tools/tex-conv.md)

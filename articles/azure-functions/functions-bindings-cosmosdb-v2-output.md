@@ -1,26 +1,26 @@
 ---
-title: ВыходAzа Космос DB для функций 2.x
-description: Научитесь использовать связывание вывода Azure Cosmos DB в функциях Azure.
+title: Выходная привязка Azure Cosmos DB для функций 2. x
+description: Узнайте, как использовать выходную привязку Azure Cosmos DB в функциях Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.openlocfilehash: 636903c20e07f11a2fd919654cfaa62037171f20
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79277769"
 ---
-# <a name="azure-cosmos-db-output-binding-for-azure-functions-2x"></a>ВыходAzure Cosmos DB для Azure Functions 2.x
+# <a name="azure-cosmos-db-output-binding-for-azure-functions-2x"></a>Выходная привязка Azure Cosmos DB для функций Azure 2. x
 
 Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL.
 
-Для получения информации о настройке и деталях конфигурации, [см.](./functions-bindings-cosmosdb-v2.md)
+Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](./functions-bindings-cosmosdb-v2.md).
 
 <a id="example" name="example"></a>
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Этот раздел содержит следующие примеры.
 
@@ -247,7 +247,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана выходная привязка Azure Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция использует входную привязку очереди для очереди, которую получает JSON в следующем формате:
 
@@ -304,9 +304,9 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показано, как записать документ в базу данных Azure CosmosDB в качестве вывода функции.
+В следующем примере показано, как записать документ в базу данных Azure CosmosDB в качестве выходных данных функции.
 
-Связывающее определение определяется в *function.json,* где *тип* установлен на `cosmosDB`.
+Определение привязки определяется в *Function. JSON* , где *тип* имеет значение `cosmosDB`.
 
 ```json
 {
@@ -340,7 +340,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 }
 ```
 
-Чтобы записать в базу данных, `set` передайте объект документа методу параметра базы данных.
+Для записи в базу данных передайте объект документа в `set` метод параметра базы данных.
 
 ```python
 import azure.functions as func
@@ -426,7 +426,7 @@ public String cosmosDbQueryById(
 
 ### <a name="http-trigger-save-one-document-to-database-via-outputbinding"></a>Триггер HTTP, сохранение одного документа в базе данных через OutputBinding
 
-В следующем примере показана функция Java, которая записывает документ в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. В этом примере ```outputItem``` параметр должен быть ```@CosmosDBOutput```аннотирован, а не подписью функции. ```OutputBinding<T>``` позволяет использовать привязку для записи документа в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
+В следующем примере показана функция Java, которая записывает документ в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. В этом примере ```outputItem``` параметр должен быть снабжен заметками ```@CosmosDBOutput```, а не сигнатурой функции. ```OutputBinding<T>``` позволяет использовать привязку для записи документа в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
 
 ```java
     @FunctionName("WriteOneDocOutputBinding")
@@ -472,7 +472,7 @@ public String cosmosDbQueryById(
 
 ### <a name="http-trigger-save-multiple-documents-to-database-via-outputbinding"></a>Триггер HTTP, сохранение нескольких документов в базе данных через OutputBinding
 
-В следующем примере показана функция Java, которая записывает несколько документов в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. В этом примере ```outputItem``` параметр аннотируется с ```@CosmosDBOutput```не сигнатурой функции. Выходной параметр ```outputItem``` содержит список объектов ```ToDoItem``` в качестве типа параметра шаблона. ```OutputBinding<T>``` позволяет использовать привязку для записи документов в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
+В следующем примере показана функция Java, которая записывает несколько документов в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. В этом примере ```outputItem``` параметр снабжен заметками ```@CosmosDBOutput```, а не сигнатурой функции. Выходной параметр ```outputItem``` содержит список объектов ```ToDoItem``` в качестве типа параметра шаблона. ```OutputBinding<T>``` позволяет использовать привязку для записи документов в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
 
 ```java
     @FunctionName("WriteMultipleDocsOutputBinding")
@@ -523,9 +523,9 @@ public String cosmosDbQueryById(
 
 ---
 
-## <a name="attributes-and-annotations"></a>Атрибуты и аннотации
+## <a name="attributes-and-annotations"></a>Атрибуты и заметки
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [CosmosDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/master/WebJobs.Extensions.CosmosDB/CosmosDBAttribute.cs).
 
@@ -543,39 +543,39 @@ public String cosmosDbQueryById(
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C'.
+Атрибуты не поддерживаются скриптом C#.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются JavaScript.
+Атрибуты не поддерживаются в JavaScript.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются Python.
+Атрибуты не поддерживаются в Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Аннотация `CosmosDBOutput` доступна для записи данных в Cosmos DB. Аннотация может быть применена к функции или к отдельному параметру функции. При использовании в методе функции, значение возврата функции является то, что написано в Космос DB. При использовании аннотации с параметром тип параметра должен `OutputBinding<T>` быть `T` объявлен как родной тип Java или POJO.
+`CosmosDBOutput` Заметка доступна для записи данных в Cosmos DB. Заметку можно применить к функции или к отдельному параметру функции. При использовании в методе функции возвращаемое значение функции записывается в Cosmos DB. Если вы используете заметку с параметром, тип параметра должен быть объявлен в качестве `OutputBinding<T>` `T` собственного типа Java или POJO.
 
 ---
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
-В следующей таблице объясняется свойства связывающей конфигурации, `CosmosDB` установленные в файле *function.json* и атрибуте.
+В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `CosmosDB` атрибуте.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**тип**     | Недоступно | Нужно задать значение `cosmosDB`.        |
-|**direction**     | Недоступно | Нужно задать значение `out`.         |
-|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
-|**databaseName** | **Databasename**|База данных, содержащая коллекцию, в которой создается документ.     |
-|**сборИмя** |**CollectionName**  | Имя коллекции, в которой создается документ. |
-|**createifNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Для получения дополнительной информации смотрите [страницу ценообразования](https://azure.microsoft.com/pricing/details/cosmos-db/).  |
-|**Partitionkey**|**PartitionKey** |Когда `CreateIfNotExists` это верно, он определяет путь ключа раздела для созданной коллекции.|
-|**collectionThroughput**|**CollectionThroughput**| Когда `CreateIfNotExists` это правда, он определяет [пропускную стоимость](../cosmos-db/set-throughput.md) созданной коллекции.|
-|**подключениеСтнетНастройка**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
-|**предпочтительныеЛокации**| **ПредпочтительныеМеста**| (Необязательно) Определяет предпочтительные местоположения (регионы) для геореплицированных учетных записей баз данных в службе Azure Cosmos DB. Значения должны быть разделены запятой. Например, "Восточные США, южная центральная часть США, Северная Европа". |
-|**useMultipleWriteLocations**| **ИспользоватьМноеМестоляемыеместа**| (Необязательно) При установке `true` `PreferredLocations`вместе с, он может использовать [многорегионковые записи](../cosmos-db/how-to-manage-database-account.md#configure-multiple-write-regions) в службе Azure Cosmos DB. |
+|**type**     | н/д | Нужно задать значение `cosmosDB`.        |
+|**двух**     | н/д | Нужно задать значение `out`.         |
+|**name**     | н/д | Имя параметра привязки, представляющего документ в функции.  |
+|**Имя** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
+|**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
+|**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cosmos-db/).  |
+|**partitionKey**|**PartitionKey** |Если `CreateIfNotExists` имеет значение true, он определяет путь к ключу раздела для созданной коллекции.|
+|**collectionThroughput**|**CollectionThroughput**| Если `CreateIfNotExists` имеет значение true, он определяет [пропускную способность](../cosmos-db/set-throughput.md) созданной коллекции.|
+|**коннектионстрингсеттинг**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
+|**preferredLocations**| **PreferredLocations**| Используемых Определяет предпочтительные расположения (регионы) для геореплицированных учетных записей базы данных в службе Azure Cosmos DB. Значения должны быть разделены запятыми. Например, "Восточная часть США, Юго-Центральный регион США, Северная Европа". |
+|**усемултиплеврителокатионс**| **усемултиплеврителокатионс**| Используемых Если задано `true` значение вместе `PreferredLocations`с, оно может использовать [операции записи в несколько регионов](../cosmos-db/how-to-manage-database-account.md#configure-multiple-write-regions) в службе Azure Cosmos DB. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -613,13 +613,13 @@ public String cosmosDbQueryById(
 }
 ```
 
-|Свойство  |Значение по умолчанию | Описание |
+|Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
 |GatewayMode|Шлюз|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
 |Протокол|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)|
-|leasePrefix|Недоступно|Префикс аренды для использования во всех функциях приложения.|
+|leasePrefix|н/д|Префикс аренды для использования во всех функциях приложения.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Выполнить функцию при создании или изменении документа Azure Cosmos DB (Trigger)](./functions-bindings-cosmosdb-v2-trigger.md)
-- [Прочитайте документ Azure Cosmos DB (связывание ввода)](./functions-bindings-cosmosdb-v2-input.md)
+- [Выполнение функции при создании или изменении документа Azure Cosmos DB (триггер)](./functions-bindings-cosmosdb-v2-trigger.md)
+- [Чтение Azure Cosmos DB документа (входная привязка)](./functions-bindings-cosmosdb-v2-input.md)

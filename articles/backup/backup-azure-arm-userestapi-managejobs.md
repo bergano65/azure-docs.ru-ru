@@ -1,23 +1,23 @@
 ---
 title: Управление заданиями резервного копирования с помощью REST API
-description: В этой статье узнайте, как отслеживать и управлять резервным копированием и восстанавливать задания резервного копирования Azure с помощью REST API.
+description: Из этой статьи вы узнаете, как отслеживание заданий резервного копирования и восстановления Azure Backup с помощью REST API и управление ими.
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
 ms.openlocfilehash: 628569c547aa776ec2fbb7ec7e32edad7c1fe7dd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79273531"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Отслеживание заданий резервного копирования и восстановления с помощью REST API
 
-Служба резервного копирования Azure запускает задания, которые работают в фоновом режиме в различных сценариях, таких как запуск резервного копирования, восстановление операций, отключение резервного копирования. Эти задания можно отслеживать с помощью идентификаторов.
+Azure Backup служба активирует задания, выполняемые в фоновом режиме, в различных сценариях, таких как запуск резервного копирования, операции восстановления, отключение резервного копирования. Эти задания можно отслеживать с помощью идентификаторов.
 
 ## <a name="fetch-job-information-from-operations"></a>Получение информации о задании из операций
 
-Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Например: Окончательный ответ [операции резервного копирования REST API:](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3)
+Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Например: окончательный ответ [триггера REST API операции резервного копирования](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) выглядит следующим образом:
 
 ```http
 {
@@ -45,7 +45,7 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="response"></a>Ответ
 
-|name  |Тип  |Описание  |
+|Имя  |Type  |Описание  |
 |---------|---------|---------|
 |200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | OK        |
 

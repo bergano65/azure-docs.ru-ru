@@ -1,5 +1,5 @@
 ---
-title: Дизайнер представления Azure Monitor для примеров преобразования трудовых книжек
+title: Примеры преобразования конструктора представлений в Azure Monitor книги
 description: ''
 author: austonli
 ms.author: aul
@@ -7,19 +7,19 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.openlocfilehash: b50d8cfa4731c487997e2bf431a9c71eff08f5d1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79274168"
 ---
-# <a name="view-designer-conversion-examples"></a>Просмотр примеров преобразования конструктора
+# <a name="view-designer-conversion-examples"></a>Примеры преобразования конструктора представлений
 
-Чтобы воспроизвести таблицу рабочей книги, скопируйте и вставьте следующий код в Расширенный редактор, обозначенный символом </> в панели инструментов
+Чтобы реплицировать книгу с вкладками конструктора представлений, скопируйте и вставьте следующий код в расширенный редактор, обозначенный символом </> на панели инструментов.
 
-![Расширенная панель инструментов редактора](media/view-designer-conversion-examples/toolbar.png)
+![Панель инструментов Расширенный редактор](media/view-designer-conversion-examples/toolbar.png)
 
-Пользователям может потребоваться обновить настройки запросов и подписки на собственные доступные ресурсы
+Пользователям может потребоваться обновить параметры запроса и подписки на свои собственные доступные ресурсы.
 
 ## <a name="vertical"></a>Vertical
 
@@ -337,7 +337,7 @@ ms.locfileid: "79274168"
 }
 ```
 
-## <a name="tabbed"></a>Со вкладками 
+## <a name="tabbed"></a>С вкладками 
 
 ```Json
 {

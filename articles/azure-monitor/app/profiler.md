@@ -7,31 +7,31 @@ ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: ba9a2aca73dbdb8de298b68670fd6ab16f810a4d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79275780"
 ---
 # <a name="profile-live-azure-app-service-apps-with-application-insights"></a>Профилирование динамических приложений службы приложений Azure с помощью Application Insights
 
-Вы можете запускать Profiler на ASP.NET и ASP.NET основных приложений, которые работают на Azure App Service с использованием базового уровня обслуживания или выше. Сейчас включить средство Profiler на платформе Linux можно с помощью [этого метода](profiler-aspnetcore-linux.md).
+Вы можете запустить профилировщик на ASP.NET и ASP.NET Core приложениях, работающих в службе приложений Azure, с использованием уровня служб "базовый" или выше. Сейчас включить средство Profiler на платформе Linux можно с помощью [этого метода](profiler-aspnetcore-linux.md).
 
 ## <a name="enable-profiler-for-your-app"></a><a id="installation"></a> Включение Profiler для приложений
-Чтобы включить Profiler для приложения, сделайте следующее. Если вы работаете с другим типом службы Azure, вот инструкции для включения Profiler на других поддерживаемых платформах:
+Чтобы включить Profiler для приложения, сделайте следующее. Если вы используете другой тип службы Azure, ниже приведены инструкции по включению профайлера на других поддерживаемых платформах.
 * [Облачные службы](../../azure-monitor/app/profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Приложения Service Fabric](../../azure-monitor/app/profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Виртуальные машины](../../azure-monitor/app/profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
-Приложение Insights Profiler предварительно устанавливается как часть времени выполнения служб ы App. Приведенные ниже приведенные ниже шаги покажут, как включить его для службы приложений. Выполните следующие действия, даже если вы включили App Insights SDK в приложение во время сборки.
+Application Insights Profiler предварительно устанавливается в составе среды выполнения служб приложений. Ниже показано, как включить его для службы приложений. Выполните эти действия, даже если вы включили пакет SDK для App Insights в приложение во время сборки.
 
-1. Включите настройки "Всегда на" для службы приложений. Можно обновить настройки на странице конфигурации Службы app в соответствии с общими настройками.
+1. Включите параметр "Always On" для службы приложений. Этот параметр можно изменить на странице Конфигурация службы приложений в разделе Общие параметры.
 1. Перейдите к панели **служб приложений** на портале Azure.
 1. Выберите **Параметры > Application Insights**.
 
    ![Включение Application Insights на портале служб приложений](./media/profiler/AppInsights-AppServices.png)
 
-1. Следуйте инструкциям на панели, чтобы создать ресурс Application Insights или выбрать имеющийся ресурс для отслеживания приложения. Также убедитесь, что средство Profiler **включено**. Если ресурс Application Insights находится в другой подписке от Службы приложения, вы не можете использовать эту страницу для настройки приложений. Вы все еще можете сделать это вручную, хотя, создавая необходимые настройки приложения вручную. [Следующий раздел содержит инструкции для ручного включения Profiler.](#enable-profiler-manually-or-with-azure-resource-manager) 
+1. Следуйте инструкциям на панели, чтобы создать ресурс Application Insights или выбрать имеющийся ресурс для отслеживания приложения. Также убедитесь, что средство Profiler **включено**. Если ресурс Application Insights находится в другой подписке из службы приложений, вы не сможете настроить Application Insights с помощью этой страницы. Вы по-прежнему можете сделать это вручную, создав необходимые параметры приложения вручную. [В следующем разделе приведены инструкции по включению профилировщика вручную.](#enable-profiler-manually-or-with-azure-resource-manager) 
 
    ![Добавление расширения сайта Application Insights][Enablement UI]
 
@@ -39,27 +39,27 @@ ms.locfileid: "79275780"
 
     ![Параметр приложения для профилировщика][profiler-app-setting]
 
-## <a name="enable-profiler-manually-or-with-azure-resource-manager"></a>Включить Профилер вручную или с менеджером ресурсов Azure
-Профиль приложения Insights можно сделать, создав настройки приложений для службы приложений Azure. Страница с параметрами, показанными выше, создает эти настройки приложения для вас. Но вы можете автоматизировать создание этих настроек с помощью шаблона или другими средствами. Эти настройки также будут работать, если ресурс Application Insights находится в другой подписке от службы приложений Azure.
-Вот параметры, необходимые для включения профайлера:
+## <a name="enable-profiler-manually-or-with-azure-resource-manager"></a>Включение профайлера вручную или с помощью Azure Resource Manager
+Application Insights Profiler можно включить, создав параметры приложения для службы приложений Azure. Страница с приведенными выше параметрами создает эти параметры приложения. Но вы можете автоматизировать создание этих параметров с помощью шаблона или других средств. Эти параметры также будут работать, если ресурс Application Insights находится в другой подписке из службы приложений Azure.
+Ниже приведены параметры, необходимые для включения профилировщика.
 
 |Параметр приложения    | Значение    |
 |---------------|----------|
 |APPINSIGHTS_INSTRUMENTATIONKEY         | iKey для ресурса Application Insights    |
 |APPINSIGHTS_PROFILERFEATURE_VERSION | 1.0.0 |
-|DiagnosticServices_EXTENSION_VERSION | No 3 |
+|DiagnosticServices_EXTENSION_VERSION | ~ 3 |
 
 
-Вы можете установить эти значения с помощью [шаблонов управления ресурсами Azure,](../../azure-monitor/app/azure-web-apps.md#app-service-application-settings-with-azure-resource-manager) [Azure Powershell,](https://docs.microsoft.com/powershell/module/az.websites/set-azwebapp) [Azure CLI.](https://docs.microsoft.com/cli/azure/webapp/config/appsettings?view=azure-cli-latest)
+Эти значения можно задать с помощью [шаблонов Azure Resource Manager](../../azure-monitor/app/azure-web-apps.md#app-service-application-settings-with-azure-resource-manager), [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.websites/set-azwebapp) [Azure CLI](https://docs.microsoft.com/cli/azure/webapp/config/appsettings?view=azure-cli-latest).
 
-### <a name="enabling-profiler-for-other-clouds-manually"></a>Включение профилера для других облаков вручную
+### <a name="enabling-profiler-for-other-clouds-manually"></a>Включение профилировщика для других облаков вручную
 
-Если вы хотите включить профайлер для других облаков, вы можете использовать настройки ниже приложения.
+Если вы хотите включить профилировщик для других облаков, можно использовать приведенные ниже параметры приложения.
 
-|Параметр приложения    | Ценности правительства США| Облако Китая |   
+|Параметр приложения    | Значения правительства США| Облако для Китая |   
 |---------------|---------------------|-------------|
-|ApplicationInsightsProfilerEndpoint         | https://agent.serviceprofiler.azure.us    | https://profiler.applicationinsights.azure.cn |
-|ApplicationInsightsEndpoint | https://dc.applicationinsights.us | https://dc.applicationinsights.azure.cn |
+|аппликатионинсигхтспрофилерендпоинт         | https://agent.serviceprofiler.azure.us    | https://profiler.applicationinsights.azure.cn |
+|аппликатионинсигхтсендпоинт | https://dc.applicationinsights.us | https://dc.applicationinsights.azure.cn |
 
 ## <a name="disable-profiler"></a>Отключение профилировщика
 
@@ -69,10 +69,10 @@ ms.locfileid: "79275780"
 
 Мы рекомендуем включить Profiler для всех приложений, чтобы обеспечить максимально быстрое обнаружение проблем производительности.
 
-Файлы протеже могут быть удалены при использовании WebDeploy для развертывания изменений в веб-приложении. Можно предотвратить удаление, исключив App_Data папку от удаления во время развертывания. 
+Файлы профилировщика можно удалить при использовании WebDeploy для развертывания изменений в веб-приложении. Можно предотвратить удаление, исключив App_Data папку во время развертывания. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Работа с Application Insights в Visual Studio](https://docs.microsoft.com/azure/application-insights/app-insights-visual-studio)
 

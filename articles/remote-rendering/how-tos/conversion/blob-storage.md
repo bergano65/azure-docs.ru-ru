@@ -1,86 +1,86 @@
 ---
-title: Используйте хранилище Azure Blob для преобразования модели
-description: Описывает общие шаги по настройке и использованию хранилища кабов для преобразования модели.
+title: Использование хранилища BLOB-объектов Azure для преобразования модели
+description: Описание общих действий по настройке и использованию хранилища BLOB-объектов для преобразования модели.
 author: jakrams
 ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
 ms.openlocfilehash: 6f0605077bd131c54f27e3bf46240331557fd92e
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80681653"
 ---
-# <a name="use-azure-blob-storage-for-model-conversion"></a>Используйте хранилище Azure Blob для преобразования модели
+# <a name="use-azure-blob-storage-for-model-conversion"></a>Использование хранилища BLOB-объектов Azure для преобразования модели
 
-Служба [преобразования моделей](model-conversion.md) требует доступа к хранилищу Azure blob, чтобы можно было получать входные данные и хранить выходные данные. В этой статье описывается, как сделать наиболее распространенные шаги.
+Службе [преобразования модели](model-conversion.md) требуется доступ к хранилищу BLOB-объектов Azure, чтобы он мог получать входные данные и сохранять выходные данные. В этой статье описывается, как выполнять самые распространенные действия.
 
 ## <a name="prepare-azure-storage-accounts"></a>Подготовка учетных записей хранения Azure
 
-- Создание учетной записи хранилища (StorageV2)
-- Создание вхотоза ввода контейнера капли в учетной записи хранения (например, под названием "arrinput")
-- Создание контейнера выходной капли в учетной записи хранилища (например, под названием "arroutput")
+- Создание учетной записи хранения (StorageV2)
+- Создайте входной контейнер больших двоичных объектов в учетной записи хранения (например, с именем "арринпут").
+- Создайте выходной контейнер больших двоичных объектов в учетной записи хранения (например, с именем "арраутпут").
 
 > [!TIP]
-> Для пошаговых инструкций по настройке учетной записи хранилища, взгляните на [кнопку «Быстрый старт: Преобразуйте модель для рендеринга»](../../quickstarts/convert-model.md)
+> Пошаговые инструкции по настройке учетной записи хранения см [. в кратком руководстве по преобразованию модели для подготовки к просмотру.](../../quickstarts/convert-model.md)
 
-Создание учетной записи хранения и контейнеров с каплями может быть сделано с помощью одного из следующих инструментов:
+Создание учетной записи хранения и контейнеров больших двоичных объектов можно выполнить с помощью одного из следующих средств:
 
 - [Портал Azure](https://portal.azure.com)
-- [az командная линия](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [AZ — Командная строка](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
-- SDKs (КЗ, Python ... )
+- Пакеты SDK (C#, Python...)
 
-## <a name="ensure-azure-remote-rendering-can-access-your-storage-account"></a>Убедитесь, что удаленное рендерирование Azure может получить доступ к учетной записи хранилища
+## <a name="ensure-azure-remote-rendering-can-access-your-storage-account"></a>Убедитесь, что служба удаленной подготовки Azure может получить доступ к вашей учетной записи хранения.
 
-Azure Remote Rending необходимо извлекать данные модели из учетной записи хранения и записывать данные обратно в нее.
+Служба удаленного отрисовки Azure должна получить данные модели из учетной записи хранения и записать в нее данные.
 
-Вы можете предоставить Azure Remote Rendering доступ к учетной записи хранилища следующим и двумя способами:
+Доступ к учетной записи хранения можно предоставить для удаленной отрисовки Azure следующими двумя способами.
 
-### <a name="connect-your-azure-storage-account-with-your-azure-remote-rendering-account"></a>Подключите учетную запись хранения Azure с учетной записью удаленного отреживания Azure
+### <a name="connect-your-azure-storage-account-with-your-azure-remote-rendering-account"></a>Подключение учетной записи хранения Azure к учетной записи удаленной подготовки Azure
 
-Выполните действия, приведенные в разделе [«Создание учетной записи».](../create-an-account.md#link-storage-accounts)
+Выполните действия, указанные в разделе [Создание учетной записи](../create-an-account.md#link-storage-accounts) .
 
-### <a name="retrieve-sas-for-the-storage-containers"></a>Извлекайs SAS для контейнеров для хранения
+### <a name="retrieve-sas-for-the-storage-containers"></a>Получение SAS для контейнеров хранилища
 
-Сохраненные подписи доступа (SAS) используются для предоставления доступа к считыванию для ввода и записи доступа для вывода. Мы рекомендуем создавать новые УРИ при каждом преобразовании модели. Поскольку срок действия URIs истекает через некоторое время, сохранение их в течение более длительного времени может привести к неожиданному взлому приложения.
+Сохраненные подписи доступа (SAS) используются для предоставления доступа для чтения входных данных и доступа на запись для выходных данных. Мы советуем создавать новые коды URI при каждом преобразовании модели. Так как URI истекает через некоторое время, сохранение их в течение более длительного времени может привести к неожиданному повреждению приложения.
 
-Подробную информацию о SAS можно найти в [документации SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
+Сведения о SAS см. в [документации SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
 
-SAS URI может быть создан с помощью:
+URI SAS можно создать с помощью одного из следующих средств:
 
-- модуль az PowerShell
-  - см. [пример скриптов PowerShell](../../samples/powershell-example-scripts.md)
-- [az командная линия](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+- AZ PowerShell Module
+  - см. [примеры сценариев PowerShell](../../samples/powershell-example-scripts.md) .
+- [AZ — Командная строка](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
-  - нажмите право езду на контейнере "Получить общую подпись доступа" (читай, список доступа для входного контейнера, написать доступ для выходного контейнера)
-- SDKs (КЗ, Python ... )
+  - Щелкните правой кнопкой мыши контейнер "получить подписанный URL-доступ" (чтение, получение списка доступа для входного контейнера, доступ на запись для контейнера выходных данных).
+- Пакеты SDK (C#, Python...)
 
-Пример использования общих подписей доступа при преобразовании активов показан в Conversion.ps1 [примеров Powershell.](../../samples/powershell-example-scripts.md#script-conversionps1)
+Пример использования подписанных URL-символов в преобразовании ресурса показан в примере преобразования. ps1 для [сценариев PowerShell](../../samples/powershell-example-scripts.md#script-conversionps1).
 
-## <a name="upload-an-input-model"></a>Загрузить вхотливую модель
+## <a name="upload-an-input-model"></a>Отправка входной модели
 
-Чтобы начать конвертацию модели, необходимо загрузить ее, используя один из следующих вариантов:
+Чтобы начать преобразование модели, необходимо передать его с помощью одного из следующих параметров:
 
-- [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) - удобный файл управления для загрузки/загрузки/управления файлами на лазурном хранилище капли
+- [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) — удобный пользовательский интерфейс для отправки, скачивания и управления файлами в хранилище BLOB-объектов Azure.
 - [Командная строка Azure](https://docs.microsoft.com/azure/storage/common/storage-azure-cli)
 - [модуль Azure PowerShell;](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-2.2.0)
-  - [см. пример скриптов PowerShell](../../samples/powershell-example-scripts.md)
-- [Использование хранилища SDK (Python, C . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .](https://docs.microsoft.com/azure/storage/)
-- [Использование apIs Rest хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)
+  - см. [примеры сценариев PowerShell](../../samples/powershell-example-scripts.md) .
+- [Использование пакета SDK для хранилища (Python, C#...)](https://docs.microsoft.com/azure/storage/)
+- [Использование API-интерфейсов службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)
 
-Для примера того, как загрузить данные для преобразования, обратитесь к Conversion.ps1 [из сценариев Примеры Powershell.](../../samples/powershell-example-scripts.md#script-conversionps1)
+Пример передачи данных для преобразования см. в разделе Преобразование. ps1 в [примерах сценариев PowerShell](../../samples/powershell-example-scripts.md#script-conversionps1).
 
-## <a name="get-a-sas-uri-for-the-converted-model"></a>Получите SAS URI для преобразованной модели
+## <a name="get-a-sas-uri-for-the-converted-model"></a>Получение URI SAS для преобразованной модели
 
-Этот шаг аналогичен [извлечению SAS для контейнеров для хранения.](#retrieve-sas-for-the-storage-containers) Однако на этот раз необходимо получить SAS URI для файла модели, который был записан в выходной контейнер.
+Этот шаг аналогичен [извлечению SAS для контейнеров хранилища](#retrieve-sas-for-the-storage-containers). Однако на этот раз необходимо получить URI SAS для файла модели, который был записан в контейнер выходных данных.
 
-Например, для получения SAS URI через [Azure Storage Explorer,](https://azure.microsoft.com/features/storage-explorer/)нажмите правой кнопкой мыши на файл модели и выберите "Получить общую подпись доступа".
+Например, чтобы получить URI SAS через [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/), щелкните правой кнопкой мыши файл модели и выберите "получить подпись общего доступа".
 
-Для загрузки моделей необходима общая подпись доступа (SAS), если вы не подключили учетную запись хранилища к учетной записи удаленного рендеринга Azure. Вы можете узнать, как подключить учетную запись в [Создать учетную запись](../create-an-account.md#link-storage-accounts).
+Подписанный URL-адрес (SAS) требуется для загрузки моделей, если учетная запись хранения не была подключена к учетной записи удаленной отрисовки Azure. Вы можете узнать, как подключить учетную запись в статье [Создание учетной записи](../create-an-account.md#link-storage-accounts).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка преобразования модели](configure-model-conversion.md)
-- [Конверсия модели REST API](conversion-rest-api.md)
+- [Преобразование модели REST API](conversion-rest-api.md)
