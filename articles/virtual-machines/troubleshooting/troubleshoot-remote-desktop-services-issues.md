@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
 ms.openlocfilehash: 4b314fbdb9cbc0c0b797cbee8e92ee4702bbea81
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77919470"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
@@ -34,14 +34,14 @@ ms.locfileid: "77919470"
 
 - Вы удаленно просматриваете журналы событий в виртуальной машине c помощью средства "Просмотр событий". Вы увидите, что службы удаленных рабочих столов (TermService) не запускаются или происходит сбой запуска. Ниже приведен пример журнала:
 
-    **Имя журнала**: Система </br>
-    **Источник**: Менеджер управления обслуживанием </br>
+    **Имя журнала**: System </br>
+    **Источник**: диспетчер управления службами </br>
     **Дата**: 16.12.2017 11:19:36</br>
-    **Идентификатор событий**: 7022</br>
+    **Идентификатор события**: 7022</br>
     **Категория задачи**: Отсутствует</br>
-    **Уровень**: Ошибка</br>
-    **Ключевые слова**: Классический</br>
-    **Пользователь**: N/A</br>
+    **Уровень**: ошибка</br>
+    **Ключевые слова**: классические</br>
+    **Пользователь**: н/д</br>
     **Компьютер**: vm.contoso.com</br>
     **Описание**: Служба "Службы удаленных рабочих столов" зависла при запуске. 
 
@@ -54,8 +54,8 @@ ms.locfileid: "77919470"
 Эта проблема возникает, потому что службы удаленных рабочих столов не запущены на виртуальной машине. Причина может быть в следующем: 
 
 - Служба TermService **отключена**. 
-- Служба TermService выходит из строя или не реагирует. 
-- TermService не запускается из-за неправильной конфигурации.
+- Служба TermService работает со сбоем или не отвечает. 
+- TermService не запускается из-за неверной конфигурации.
 
 ## <a name="solution"></a>Решение
 
@@ -94,24 +94,24 @@ ms.locfileid: "77919470"
    ```
 8. Если служба не запускается, выполните поиск решения на основе полученного сообщения об ошибке:
 
-    |  Error |  Предложение |
+    |  Ошибка |  Предложение |
     |---|---|
     |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termservice-service-is-stopped-because-of-an-access-denied-problem). |
-    |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |[См. Службу TermService отключено.](#termservice-service-is-disabled)  |  
+    |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |См. раздел [Служба TermService отключена](#termservice-service-is-disabled).  |  
     |1058 — ERROR_SERVICE_DISABLED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs).  |
-    |1059 — ERROR_CIRCULAR_DEPENDENCY |[Обратитесь в службу поддержки,](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) чтобы быстро решить проблему.|
+    |1059 — ERROR_CIRCULAR_DEPENDENCY |[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему.|
     |1067 — ERROR_PROCESS_ABORTED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs).  |
-    |1068 — ERROR_SERVICE_DEPENDENCY_FAIL|[Обратитесь в службу поддержки,](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) чтобы быстро решить проблему.|
+    |1068 — ERROR_SERVICE_DEPENDENCY_FAIL|[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему.|
     |1069 — ERROR_SERVICE_LOGON_FAILED  |Ознакомьтесь с разделом [Происходит сбой службы TermService из-за ошибки входа в систему](#termservice-service-fails-because-of-logon-failure). |
     |1070 — ERROR_SERVICE_START_HANG   | Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs). |
-    |1077 — ERROR_SERVICE_NEVER_STARTED   | [См. Службу TermService отключено.](#termservice-service-is-disabled)  |
-    |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   |[Обратитесь в службу поддержки,](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) чтобы быстро решить проблему. |
-    |1753   |[Обратитесь в службу поддержки,](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) чтобы быстро решить проблему.   |
+    |1077 — ERROR_SERVICE_NEVER_STARTED   | См. раздел [Служба TermService отключена](#termservice-service-is-disabled).  |
+    |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   |[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему. |
+    |1753   |[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему.   |
     
 #### <a name="termservice-service-is-stopped-because-of-an-access-denied-problem"></a>Служба TermService остановлена из-за отказа в доступе
 
 1. Подключитесь к [последовательной консоли](serial-console-windows.md) и откройте экземпляр PowerShell.
-2. Загрузите инструмент Process Monitor, запустив следующий сценарий:
+2. Загрузите средство "монитор процессов", выполнив следующий скрипт:
 
    ```
    remove-module psreadline  
@@ -121,7 +121,7 @@ ms.locfileid: "77919470"
    $wc.DownloadFile($source,$destination) 
    ```
 
-3. Теперь начните **прокмон** след:
+3. Теперь запустите трассировку **Procmon** :
 
    ```
    procmon /Quiet /Minimized /BackingFile c:\temp\ProcMonTrace.PML 
@@ -139,16 +139,16 @@ ms.locfileid: "77919470"
    procmon /Terminate 
    ```
 
-5. Соберите файл **c: -Темп-ProcMonTrace.PML**:
+5. Собирайте файл **к:\темп\прокмонтраце.ПМЛ**:
 
     1. [Подключение диска данных к виртуальной машине](../windows/attach-managed-disk-portal.md
 ).
     2. С помощью последовательной консоли можно скопировать файл на новый диск. Например, `copy C:\temp\ProcMonTrace.PML F:\`. В этой команде F является буквой подключенного диска данных.
     3. Отключите диск данных и подключите его на работающей виртуальной машине, на которой установлено средство ubstakke Process Monitor.
 
-6. Откройте **ProcMonTrace.PML** с помощью Process Monitor рабочей виртуальной машины. Затем фильтр **по результату ACCESS DENIED**, как показано на следующем скриншоте:
+6. Откройте **ProcMonTrace.PML** с помощью Process Monitor рабочей виртуальной машины. Затем для фильтра по **результату будет отказано в доступе**, как показано на следующем снимке экрана:
 
-    ![Фильтр по результатам в process Monitor](./media/troubleshoot-remote-desktop-services-issues/process-monitor-access-denined.png)
+    ![Фильтр по результату в мониторе обработки](./media/troubleshoot-remote-desktop-services-issues/process-monitor-access-denined.png)
 
  
 6. Исправьте разделы реестра, папки или файлы, которые включены в выходные данные. Обычно эта проблема возникает, если у учетной записи, использованной для входа в систему, нет разрешения ACL на доступ к этим объектам. Чтобы узнать правильное разрешение в ACL для учетной записи, используемой для входа в систему, просмотрите данные на исправной виртуальной машине. 
@@ -201,9 +201,9 @@ ms.locfileid: "77919470"
 
 #### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
-1. [Прикрепите диск ОС к восстановлению VM.](../windows/troubleshoot-recovery-disks-portal.md)
+1. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. Убедитесь, что в консоли "Управление дисками" для подключенного диска отображается состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
-3. Откройте экземпляр повышенной команды быстрого запроса **(Запуск в качестве администратора**). Затем выполните следующий сценарий. Мы предполагаем, что дисковая буква, назначенная на прикрепленный диск ОС, является **F.** Замените его соответствующим значением в вашем VM. 
+3. Откройте экземпляр командной строки с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. Предполагается, что буква диска, назначенная подключенному диску ОС, — **F**. Замените его соответствующим значением в виртуальной машине. 
 
    ```
    reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv

@@ -10,10 +10,10 @@ ms.author: sstein
 ms.reviewer: genemi
 ms.date: 11/14/2019
 ms.openlocfilehash: 741906bbe9de68459b2e4a704a243fde4771b3a2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80067329"
 ---
 # <a name="sql-database-application-development-overview"></a>Обзор разработки приложений базы данных SQL
@@ -50,13 +50,13 @@ ms.locfileid: "80067329"
 
 Дополнительные сведения о подготовке к запланированным событиям по обслуживанию базы данных SQL Azure см. в статье [Планирование событий обслуживания Azure в Базе данных SQL Azure](sql-database-planned-maintenance.md).
 
-## <a name="network-considerations"></a>Рекомендации относительно сети
+## <a name="network-considerations"></a>Рекомендации по сети
 
 - На компьютере с вашей клиентской программой убедитесь, что брандмауэр разрешает исходящие TCP-соединения через порт 1433.  Дополнительные сведения: [Настройка брандмауэра Базы данных SQL Azure](sql-database-configure-firewall-settings.md).
-- Если клиентская программа подключается к базе данных SQL, а клиент работает на виртуальной машине Azure, необходимо открыть на ней определенные диапазоны портов. Дополнительная информация: [Порты за 1433 для ADO.NET 4.5 и база данных S'L](sql-database-develop-direct-route-ports-adonet-v12.md).
+- Если клиентская программа подключается к базе данных SQL, а клиент работает на виртуальной машине Azure, необходимо открыть на ней определенные диапазоны портов. Дополнительные сведения: [порты свыше 1433 для ADO.NET 4,5 и базы данных SQL](sql-database-develop-direct-route-ports-adonet-v12.md).
 - Клиентские подключения к базе данных SQL Azure иногда обходят прокси-сервер и взаимодействуют непосредственно с базой данных. Порты, отличные от 1433, становятся важными. Дополнительные сведения см. в статьях [Архитектура подключений к базе данных SQL Azure](sql-database-connectivity-architecture.md) и [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
-- Для конфигурации сетей для управляемого экземпляра см. [конфигурацию сети для управляемых экземпляров.](sql-database-howto-managed-instance.md#network-configuration)
+- Сведения о конфигурации сети для управляемого экземпляра см. в разделе [Сетевая конфигурация для управляемых экземпляров](sql-database-howto-managed-instance.md#network-configuration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Исследуйте все [возможности базы данных S'L](sql-database-technical-overview.md).
+Изучите все [возможности базы данных SQL](sql-database-technical-overview.md).

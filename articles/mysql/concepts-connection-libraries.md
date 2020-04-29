@@ -1,5 +1,5 @@
 ---
-title: Библиотеки подключения - База данных Azure для MyS'L
+title: Библиотеки подключений — база данных Azure для MySQL
 description: В этой статье приведены все библиотеки и драйверы, с помощью которых клиентские программы могут подключиться к базе данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 5f83f937b8d9ec50ec7dc6ec781bff1f435eb45a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79537199"
 ---
 # <a name="connection-libraries-for-azure-database-for-mysql"></a>Библиотеки подключений для базы данных Azure для MySQL
@@ -28,12 +28,12 @@ MySQL предлагает возможность подключения к ба
 | Node.js | Windows, Linux, Mac OS X | [sidorares/node-mysql2](https://github.com/sidorares/node-mysql2/tree/master/documentation) | [Скачать](https://github.com/sidorares/node-mysql2) |
 | Python | Windows, Linux, Mac OS X | [Руководство разработчика MySQL Connector/Python](https://dev.mysql.com/doc/connector-python/en/) | [Скачать](https://dev.mysql.com/downloads/connector/python/) |
 | C++ | Windows, Linux, Mac OS X | [Руководство разработчика MySQL Connector/C++](https://dev.mysql.com/doc/connector-cpp/en/) | [Скачать](https://dev.mysql.com/downloads/connector/python/) |
-| C | Windows, Linux, Mac OS X | [Руководство по разъединению/C Разработчикм MyS'L](https://dev.mysql.com/doc/refman/8.0/en/c-api.html) | [Скачать](https://dev.mysql.com/downloads/connector/c/)
-| Perl; | Платформы Windows, Linux, Mac OS X и Unix | [DBD::MySQL](https://metacpan.org/pod/DBD::mysql) | [Скачать](https://metacpan.org/pod/DBD::mysql) |
+| В | Windows, Linux, Mac OS X | [Руководством для разработчиков MySQL Connector/C](https://dev.mysql.com/doc/refman/8.0/en/c-api.html) | [Скачать](https://dev.mysql.com/downloads/connector/c/)
+| Perl | Платформы Windows, Linux, Mac OS X и Unix | [DBD::MySQL](https://metacpan.org/pod/DBD::mysql) | [Скачать](https://metacpan.org/pod/DBD::mysql) |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с этими краткими руководствами по подключению к базе данных Azure для MySQL и выполнению запросов к ней, выбрав язык по своему усмотрению.
 
-[PHP](./connect-php.md) | [Java](./connect-java.md) |  [.NET (КЗ)](./connect-csharp.md) | [Python](./connect-python.md) | [Node.JS](./connect-nodejs.md) | [Ruby](./connect-ruby.md) | [C](connect-cpp.md) | [Go](./connect-go.md)
+[PHP](./connect-php.md) | [Java](./connect-java.md) | [Ruby](./connect-ruby.md) | [Python](./connect-python.md) |  | [Go](./connect-go.md) [.NET (C#)](./connect-csharp.md) | [C++](connect-cpp.md)[Node.JS](./connect-nodejs.md).NET (C#) Python Node. js Ruby C++ Go |  
 

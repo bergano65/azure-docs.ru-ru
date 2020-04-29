@@ -1,5 +1,5 @@
 ---
-title: Получите ключ подписи от политики с помощью Службы мультимедиа Azure v3 .NET
+title: Получение ключа подписывания из политики с помощью служб мультимедиа Azure v3 .NET
 description: В этом разделе показано, как получить ключ подписи из существующей политики с помощью пакета SDK для .NET Служб мультимедиа v3.
 services: media-services
 documentationcenter: ''
@@ -13,19 +13,19 @@ ms.date: 04/15/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 2dea262fadb61adc9e219b76f9ac048c11e650d5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80065964"
 ---
 # <a name="get-a-signing-key-from-the-existing-policy"></a>Получение ключа подписи из существующей политики
 
-Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. aIS v3 не возвращают секреты или учетные данные в операциях **Get** или **List.** Подробнее об этом читайте в приведенном ниже: Более подробную информацию можно узнать из [аккаунтов RBAC и Media Services](rbac-overview.md)
+Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API V3 не возвращают секреты или учетные данные при операциях **Get** или **List** . См. подробное описание этой статье. Дополнительные сведения см. в разделе [учетные записи RBAC и служб мультимедиа](rbac-overview.md) .
 
 В примере этой статьи показано, как использовать .NET для получения ключа подписи из существующей политики. 
  
-## <a name="download"></a>Скачивание 
+## <a name="download"></a>Скачать 
 
 Клонируйте репозиторий GitHub, содержащий пример .NET, на компьютер с помощью следующей команды.  
 
@@ -41,6 +41,6 @@ ms.locfileid: "80065964"
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithDRM/Program.cs#GetOrCreateContentKeyPolicy)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md) 

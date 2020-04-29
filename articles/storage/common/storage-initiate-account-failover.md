@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 0c619224201d6225d5e5c127b342f71f2f7fced9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79535358"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
@@ -27,11 +27,11 @@ ms.locfileid: "79535358"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-Прежде чем вы сможете выполнить сбой учетной записи в учетной записи, убедитесь, что вы выполнили следующий шаг:
+Прежде чем можно будет выполнить отработку отказа учетной записи хранения, убедитесь, что выполнены следующие действия.
 
-- Убедитесь, что ваша учетная запись хранения настроена для использования геоизбыточного хранилища (GRS) или геоизбыточного хранилища с доступом для чтения (RA-GRS). Для получения дополнительной информации о гео-избыточном хранилище [см.](storage-redundancy.md)
+- Убедитесь, что ваша учетная запись хранения настроена для использования геоизбыточного хранилища (GRS) или геоизбыточного хранилища с доступом для чтения (RA-GRS). Дополнительные сведения о геоизбыточном хранилище см. в статье [избыточность хранилища Azure](storage-redundancy.md).
 
 ## <a name="important-implications-of-account-failover"></a>Важные последствия отработки отказа учетной записи
 
@@ -82,7 +82,7 @@ ms.locfileid: "79535358"
     Install-Module Az –Repository PSGallery –AllowClobber
     ```
 
-1. Установите модуль предварительного просмотра хранилища Azure, который поддерживает отказ учетной записи:
+1. Установите модуль предварительной версии службы хранилища Azure, поддерживающий отработку отказа учетной записи.
 
     ```powershell
     Install-Module Az.Storage –Repository PSGallery -RequiredVersion 1.1.1-preview –AllowPrerelease –AllowClobber –Force 
@@ -96,7 +96,7 @@ ms.locfileid: "79535358"
 Invoke-AzStorageAccountFailover -ResourceGroupName <resource-group-name> -Name <account-name> 
 ```
 
-## <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
+## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для отработки отказа с помощью интерфейса командной строки Azure выполните следующие команды.
 
@@ -107,8 +107,8 @@ az storage account failover \ --name accountName
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Disaster recovery and storage account failover (preview) in Azure Storage](storage-disaster-recovery-guidance.md) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure)
-- [Разработка высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
-- [Учебник: Создайте высокодоступное приложение с помощью хранилища Blob](../blobs/storage-create-geo-redundant-storage.md) 
+- [Проектирование высокодоступных приложений с помощью RA-GRS](storage-designing-ha-apps-with-ragrs.md)
+- [Руководство. Создание высокодоступного приложения с хранилищем BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md) 

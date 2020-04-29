@@ -1,22 +1,22 @@
 ---
-title: Расположение ресурсов шаблона
-description: Описывает, как установить местоположение ресурсов в шаблоне управления ресурсами Azure.
+title: Расположение ресурса шаблона
+description: Описывает, как задать расположение ресурса в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.openlocfilehash: a8324dac1232eecd5624e5f1dc0e6656295c0a10
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80156435"
 ---
-# <a name="set-resource-location-in-arm-template"></a>Установка местоположения ресурсов в шаблоне ARM
+# <a name="set-resource-location-in-arm-template"></a>Задание расположения ресурса в шаблоне ARM
 
-При развертывании шаблона Azure Resource Manager (ARM) необходимо учесть местоположение для каждого ресурса. Местоположение не должно быть таким же местом, как расположение группы ресурсов.
+При развертывании шаблона Azure Resource Manager (ARM) необходимо указать расположение для каждого ресурса. Расположение не должно совпадать с расположением группы ресурсов.
 
-## <a name="get-available-locations"></a>Упомяните доступные места
+## <a name="get-available-locations"></a>Получить доступные расположения
 
-Различные типы ресурсов поддерживаются в разных расположениях. Чтобы получить поддерживаемые местоположения для типа ресурсов, используйте Azure PowerShell или Azure CLI.
+Различные типы ресурсов поддерживаются в разных расположениях. Чтобы получить поддерживаемые расположения для типа ресурса, используйте Azure PowerShell или Azure CLI.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -25,7 +25,7 @@ ms.locfileid: "80156435"
   | Where-Object ResourceTypeName -eq batchAccounts).Locations
 ```
 
-# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az provider show \
@@ -36,9 +36,9 @@ az provider show \
 
 ---
 
-## <a name="use-location-parameter"></a>Использование параметра местоположения
+## <a name="use-location-parameter"></a>Использовать параметр location
 
-Чтобы обеспечить гибкость при развертывании шаблона, используйте параметр для указания местоположения ресурсов. Установите значение параметра `resourceGroup().location`по умолчанию.
+Чтобы обеспечить гибкость при развертывании шаблона, используйте параметр, чтобы указать расположение ресурсов. Задайте для `resourceGroup().location`параметра значение по умолчанию.
 
 В следующем примере показана учетная запись хранения, которая развертывается в расположении, указанном как параметр:
 
@@ -93,7 +93,7 @@ az provider show \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Полный список функций шаблонов см. в статье [Функции шаблонов диспетчера ресурсов Azure](template-functions.md).
-* Для получения дополнительной информации о файлах [шаблонов см.](template-syntax.md)
+* Дополнительные сведения о файлах шаблонов см. [в разделе сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

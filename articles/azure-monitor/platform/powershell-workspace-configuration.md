@@ -1,21 +1,21 @@
 ---
-title: Создайте & настроить аналитику журналов с помощью PowerShell
-description: Рабочие области журналов Analytics в Azure Monitor хранят данные с серверов в вашей постоянной или облачной инфраструктуре. При генерировании системой диагностики Azure можно брать данные компьютера из хранилища Azure.
+title: Создание & Настройка Log Analytics с помощью PowerShell
+description: Log Analytics рабочие области в Azure Monitor хранят данные с серверов в локальной или облачной инфраструктуре. При генерировании системой диагностики Azure можно брать данные компьютера из хранилища Azure.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/19/2019
 ms.openlocfilehash: 2584cedceab1386cbab9c72bb4b510eebe2122bd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80054696"
 ---
-# <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочим пространством аналитики журналов в Azure Monitor с помощью PowerShell
+# <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
 
-[Смдлеты Log Analytics PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/) можно использовать для выполнения различных функций в рабочем пространстве log Analytics в Azure Monitor из командной строки или как часть скрипта.  Примеры задач, которые можно выполнять с помощью PowerShell.
+[Командлеты PowerShell log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/) можно использовать для выполнения различных функций в log Analytics рабочей области в Azure Monitor из командной строки или в составе скрипта.  Примеры задач, которые можно выполнять с помощью PowerShell.
 
 * Создание рабочей области
 * Добавление или удаление решения
@@ -36,8 +36,8 @@ ms.locfileid: "80054696"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
-Эти примеры работают с версией 1.0.0 или позже модуля Az.OperationalInsights.
+## <a name="prerequisites"></a>Предварительные условия
+Эти примеры работают с версией 1.0.0 или более поздней версии модуля AZ. OperationalInsights.
 
 
 ## <a name="create-and-configure-a-log-analytics-workspace"></a>Создание и настройка рабочей области Log Analytics
@@ -178,7 +178,7 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 ```
 
 > [!NOTE]
-> Формат параметра **CustomLogRawJson,** определяющий конфигурацию для пользовательского журнала, может быть сложным. Используйте [Get-AzOperationalInsightsDataSource](https://docs.microsoft.com/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0) для получения конфигурации для существующего пользовательского журнала. Свойство **Свойство** — это конфигурация, необходимая для параметра **CustomLogRawJson.**
+> Формат параметра **кустомлогравжсон** , который определяет конфигурацию для пользовательского журнала, может быть сложным. Используйте [Get-азоператионалинсигхтсдатасаурце](https://docs.microsoft.com/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0) , чтобы получить конфигурацию для существующего пользовательского журнала. Свойство **Properties** является конфигурацией, необходимой для параметра **кустомлогравжсон** .
 
 В указанном примере regexDelimiter был определен как \\n для новой строки. Разделителем журнала также может служить метка времени.  Далее приведены поддерживаемые форматы.
 
@@ -196,8 +196,8 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 | `dd/MMM/yyyy:HH:mm:ss +zzzz` <br> где "+" обозначает "+" или "-" <br> смещение времени часового пояса | `(([0-2][1-9]|[3][0-1])\\/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\/((19|20)[0-9][0-9]):([0][0-9]|[1][0-2]):([0-5][0-9]):([0-5][0-9])\\s[\\+|\\-][0-9]{4})` | | |
 | `yyyy-MM-ddTHH:mm:ss` <br> T является литералом буквы T | `((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))T((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]` | | |
 
-## <a name="configuring-log-analytics-to-send-azure-diagnostics"></a>Настройка аналитики журналов для отправки диагностики Azure
-Для отслеживания ресурсов Azure без использования агента необходимо включить для этих ресурсов систему диагностики Azure и настроить ее для записи данных в рабочую область Log Analytics. Этот подход отправляет данные непосредственно в рабочее пространство и не требует записи данных на учетную запись хранилища. Ниже перечислены поддерживаемые ресурсы:
+## <a name="configuring-log-analytics-to-send-azure-diagnostics"></a>Настройка Log Analytics для отправки системы диагностики Azure
+Для отслеживания ресурсов Azure без использования агента необходимо включить для этих ресурсов систему диагностики Azure и настроить ее для записи данных в рабочую область Log Analytics. Этот подход отправляет данные непосредственно в рабочую область и не требует записи данных в учетную запись хранения. Ниже перечислены поддерживаемые ресурсы:
 
 | Тип ресурса | Журналы | Метрики |
 | --- | --- | --- |
@@ -222,7 +222,7 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 
 Дополнительные сведения о доступных метриках см. в разделе [Метрики, поддерживаемые Azure Monitor](../../azure-monitor/platform/metrics-supported.md).
 
-Для получения подробной информации о доступных журналах обратитесь к [поддерживаемым службам и схемам для журналов ресурсов.](../../azure-monitor/platform/diagnostic-logs-schema.md)
+Сведения о доступных журналах см. в статье [Поддерживаемые службы и схема для журналов ресурсов](../../azure-monitor/platform/diagnostic-logs-schema.md).
 
 ```powershell
 $workspaceId = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/resourcegroups/oi-default-east-us/providers/microsoft.operationalinsights/workspaces/rollingbaskets"
@@ -235,15 +235,15 @@ Set-AzDiagnosticSetting -ResourceId $resourceId -WorkspaceId $workspaceId -Ena
 Кроме того, вы можете использовать предыдущий командлет для сбора журналов из ресурсов, которые находятся в разных подписках. Этот командлет может работать в нескольких подписках, так как вы предоставляете идентификаторы ресурса, для которого создаются журналы, и рабочей области, в которую они отправляются.
 
 
-## <a name="configuring-log-analytics-workspace-to-collect-azure-diagnostics-from-storage"></a>Настройка рабочего пространства log Analytics для сбора диагностики Azure из хранилища
-Для сбора данных журнала из работающего экземпляра классической облачной службы или кластера Service Fabric необходимо сначала записать данные в службу хранилища Azure. Затем для сбора журналов из учетной записи хранилища настраивается рабочее пространство «Аналитика журнала». Ниже перечислены поддерживаемые ресурсы:
+## <a name="configuring-log-analytics-workspace-to-collect-azure-diagnostics-from-storage"></a>Настройка рабочей области Log Analytics для получения сведений о диагностике Azure из хранилища
+Для сбора данных журнала из работающего экземпляра классической облачной службы или кластера Service Fabric необходимо сначала записать данные в службу хранилища Azure. Затем настраивается рабочая область Log Analytics для получения журналов из учетной записи хранения. Ниже перечислены поддерживаемые ресурсы:
 
 * классические облачные службы (рабочие и веб-роли);
 * кластеры Service Fabric;
 
 В приведенном ниже примере показано, как выполнить следующие задачи.
 
-1. Перечислите существующие учетные записи и местоположения, которые рабочее пространство будет индексировать данные из
+1. Вывод списка существующих учетных записей хранения и расположений, из которых Рабочая область будет индексировать данные
 2. Создание конфигурации для чтения из учетной записи хранения.
 3. Обновление созданной конфигурации для индексирования данных из дополнительных расположений
 4. Удаление созданной конфигурации.
@@ -273,6 +273,6 @@ Remove-AzOperationalInsightsStorageInsight -ResourceGroupName $workspace.Resourc
 Кроме того, вы можете использовать предыдущий сценарий для сбора журналов из учетных записей хранения, которые находятся в разных подписках. Этот сценарий может работать в нескольких подписках, так как вы предоставляете идентификатор ресурса учетной записи хранения и соответствующий ключ доступа. При изменении ключа доступа необходимо обновить данные хранилища с учетом нового ключа.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/).
 

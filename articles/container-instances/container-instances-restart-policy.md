@@ -1,13 +1,13 @@
 ---
-title: Политика перезагрузки задач запуска
+title: Политика перезапуска для задач однократного запуска
 description: Узнайте, как использовать Экземпляры контейнеров Azure для задач, выполняемых до завершения, включая сборку, тестирование или преобразование изображений.
 ms.topic: article
 ms.date: 04/15/2019
 ms.openlocfilehash: 8ef4ef228038242f53abc8041470f7f596ab1157
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80131493"
 ---
 # <a name="run-containerized-tasks-with-restart-policies"></a>Выполнение контейнерных задач с помощью политики перезапуска
@@ -42,7 +42,7 @@ az container create \
 
 ## <a name="run-to-completion-example"></a>Пример выполнения до завершения
 
-Чтобы увидеть политику перезагрузки в действии, создайте экземпляр контейнера из изображения `OnFailure` [Microsoft aci-wordcount][aci-wordcount-image] и укажите политику перезагрузки. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
+Чтобы увидеть политику перезапуска в действии, создайте экземпляр контейнера из образа Microsoft [ACI-WordCount][aci-wordcount-image] и укажите политику `OnFailure` перезапуска. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
 
 Запустите этот контейнер с помощью команды [az container create][az-container-create], как показано ниже.
 
@@ -92,9 +92,9 @@ az container logs --resource-group myResourceGroup --name mycontainer
 
 В нашем примере вы увидите выходные данные, отправленные скриптом в STDOUT. Но задачи, заключенные в контейнер, могут записывать выходные данные в постоянное хранилище, чтобы их можно было использовать позднее. Например, их можно отправить в [файловый ресурс Azure](container-instances-mounting-azure-files-volume.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Сценарии, основанные на задачах, такие как пакетная обработка большого набора данных с несколькими контейнерами, могут использовать [пользовательские переменные среды](container-instances-environment-variables.md) или [командные строки](container-instances-start-command.md) во время выполнения.
+Сценарии на основе задач, такие как пакетная обработка большого набора данных с несколькими контейнерами, могут воспользоваться преимуществами пользовательских [переменных среды](container-instances-environment-variables.md) или [командных строк](container-instances-start-command.md) во время выполнения.
 
 Дополнительные сведения о том, как сохранить выходные данные контейнеров, которые выполняются до завершения, вы найдете в статье [Подключение файлового ресурса Azure с помощью Экземпляров контейнеров Azure](container-instances-mounting-azure-files-volume.md).
 

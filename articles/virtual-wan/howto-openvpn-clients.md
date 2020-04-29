@@ -1,6 +1,6 @@
 ---
-title: Настройка openVPN клиентов для Azure Virtual WAN
-description: Шаги по настройке клиентов OpenVPN для Azure Virtual WAN
+title: Настройка клиентов Опенвпн для виртуальной глобальной сети Azure
+description: Действия по настройке клиентов Опенвпн для виртуальной глобальной сети Azure
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 03/18/2020
 ms.author: cherylmc
 ms.openlocfilehash: 133ce2f735344bb636015ec5bc261e661045afc8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80108891"
 ---
-# <a name="configure-an-openvpn-client-for-azure-virtual-wan"></a>Нанастройка клиента OpenVPN для Azure Virtual WAN
+# <a name="configure-an-openvpn-client-for-azure-virtual-wan"></a>Настройка клиента Опенвпн для виртуальной глобальной сети Azure
 
-Эта статья поможет настроить клиентов ** &reg; OpenVPN Protocol.**
+Эта статья поможет вам настроить **клиенты &reg; протокола опенвпн** .
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Создайте конфигурацию VPN пользователя (точка к сайту). Убедитесь, что вы выбираете "OpenVPN" для типа туннеля. Для шагов [см. Создать конфигурацию P2S для Azure Virtual WAN.](virtual-wan-point-to-site-portal.md#p2sconfig)
+Создайте конфигурацию VPN пользователя (подключение типа "точка — сеть"). Убедитесь, что для типа туннеля выбрано значение "Опенвпн". Инструкции см. [в статье Создание конфигурации P2S для виртуальной глобальной сети Azure](virtual-wan-point-to-site-portal.md#p2sconfig).
 
 [!INCLUDE [configuration steps](../../includes/vpn-gateway-vwan-config-openvpn-clients.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения дополнительной информации о пользовательском VPN (точка на сайт), [см.](virtual-wan-point-to-site-portal.md)
+Дополнительные сведения о VPN пользователей (точка-сеть) см. в разделе [Создание VPN-подключений пользователей](virtual-wan-point-to-site-portal.md).
 
-**"OpenVPN" является торговой маркой openVPN Inc.**
+**"Опенвпн" является товарным знаком Опенвпн Inc.**

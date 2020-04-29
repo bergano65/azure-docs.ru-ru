@@ -1,6 +1,6 @@
 ---
-title: Добавьте слой полигона на карту Карты Microsoft Azure
-description: В этой статье вы узнаете, как сделать полигон и мультиполигон на карте в Microsoft Azure Maps Web SDK.
+title: Добавление слоя многоугольников в карту | Карты Microsoft Azure
+description: В этой статье вы узнаете, как визуализировать многоугольник и несколько многоугольников на карте в веб-пакете SDK Microsoft Azure Maps.
 author: jinzh-azureiot
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -10,19 +10,19 @@ services: azure-maps
 manager: ''
 ms.custom: codepen
 ms.openlocfilehash: 9191f054ca3c7374bcbc7bec46573289a512612c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79535058"
 ---
-# <a name="add-a-polygon-layer-to-the-map"></a>Добавьте на карту слой полигона
+# <a name="add-a-polygon-layer-to-the-map"></a>Добавление слоя многоугольников на карту
 
-В этой статье показано, как `Polygon` `MultiPolygon` отобразить области и объекты геометрии на карте с помощью полигонного слоя. Веб-SDK Azure Maps также поддерживает создание геометрий Круга, как это определено в [расширенной схеме GeoJSON.](extend-geojson.md#circle) Эти круги трансформируются в полигоны при отображении на карте. Все функции геометрии могут быть легко обновлены при завернутый с [атласом. Класс формы.](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape?view=azure-iot-typescript-latest)
+В этой статье показано, как визуализировать области `Polygon` и `MultiPolygon` геометрические объекты на карте с помощью слоя многоугольников. Azure Maps веб-пакет SDK также поддерживает создание круговых геометрических объектов, как определено в [расширенной схеме геоjson](extend-geojson.md#circle). Эти круги преобразуются в многоугольники при отображении на карте. Все геометрические функции можно легко обновить при помощи [Atlas. Класс Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape?view=azure-iot-typescript-latest) .
 
-## <a name="use-a-polygon-layer"></a>Используйте слой полигона 
+## <a name="use-a-polygon-layer"></a>Использование слоя многоугольников 
 
-Когда слой полигона подключен к источнику данных и загружается на `Polygon` `MultiPolygon` карту, он отображает область с и особенностей. Чтобы создать полигон, добавьте его в источник данных и свизуруйте с помощью многогонных слоев с помощью класса [PolygonLayer.](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest)
+Если слой многоугольников подключен к источнику данных и загружен на карту, он отображает область с `Polygon` компонентами и. `MultiPolygon` Чтобы создать многоугольник, добавьте его в источник данных и выводите на слой многоугольников с помощью класса [полигонлайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest) .
 
 ```javascript
 //Create a data source and add it to the map.
@@ -47,33 +47,33 @@ map.layers.add(new atlas.layer.PolygonLayer(dataSource, null,{
 }), 'labels');
 ```
 
-Ниже приведен полный и запущенный образец вышеуказанного кода.
+Ниже приведен полный и выполняемый пример приведенного выше кода.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Добавление многоугольника на карту ' src='//codepen.io/azuremaps/embed/yKbOvZ/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/yKbOvZ/'>Добавление многоугольника на карту</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="use-a-polygon-and-line-layer-together"></a>Используйте полигон и линейный слой вместе
+## <a name="use-a-polygon-and-line-layer-together"></a>Совместное использование многоугольника и многострочного слоя
 
-Для визуализации контуров полигонов используется линейный слой. Следующий пример кода отображает полигон, как предыдущий пример, но теперь добавляет слой строки. Этот линейный слой представляет собой второй слой, подключенный к источнику данных.  
+Слой линий используется для отрисовки контура многоугольников. Следующий пример кода визуализирует многоугольник, как в предыдущем примере, но теперь добавляет слой линии. Этот слой линии является вторым слоем, подключенным к источнику данных.  
 
 <iframe height='500' scrolling='no' title='Слои многоугольников и линий для добавления многоугольника' src='//codepen.io/azuremaps/embed/aRyEPy/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. фрагмент кода для <a href='https://codepen.io/azuremaps/pen/aRyEPy/'>добавления многоугольников с помощью слоев многоугольников и линий</a> от разработчиков Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="fill-a-polygon-with-a-pattern"></a>Заполните полигон узором
+## <a name="fill-a-polygon-with-a-pattern"></a>Заливка многоугольника с помощью узора
 
-В дополнение к заполнению полигона с цветом, вы можете использовать шаблон изображения для заполнения полигона. Загрузите рисунок изображения в ресурсы спрайта `fillPattern` изображения карт, а затем отображение этого изображения с свойством полигонного слоя.
+Кроме заполнения многоугольника цветом, можно использовать узор изображения для заполнения многоугольника. Загрузите шаблон изображения в ресурсы с изображением Sprite, а затем сослаться на этот образ `fillPattern` со свойством слоя многоугольников.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Шаблон заполнения полигона" src="//codepen.io/azuremaps/embed/JzQpYX/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Смотрите шаблон заполнения Pen <a href='https://codepen.io/azuremaps/pen/JzQpYX/'>Polygon</a> по<a href='https://codepen.io/azuremaps'>@azuremaps</a>Картам Azure () на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Шаблон заливки многоугольника" src="//codepen.io/azuremaps/embed/JzQpYX/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. <a href='https://codepen.io/azuremaps/pen/JzQpYX/'>шаблон заливка многоугольника</a> пера Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
 > [!TIP]
-> Веб-SDK Azure Maps предоставляет несколько настраиваемых шаблонов изображений, которые можно использовать в качестве шаблонов заполнения. Для получения дополнительной информации смотрите документ [«Как использовать шаблоны изображений».](how-to-use-image-templates-web-sdk.md)
+> Веб-пакет SDK Azure Maps предоставляет несколько настраиваемых шаблонов изображений, которые можно использовать в качестве шаблонов заливки. Дополнительные сведения см. в документе [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md) .
 
 ## <a name="customize-a-polygon-layer"></a>Настройка слоя многоугольников
 
@@ -88,7 +88,7 @@ map.layers.add(new atlas.layer.PolygonLayer(dataSource, null,{
 
 ## <a name="add-a-circle-to-the-map"></a>Добавление окружности на карту
 
-Azure Maps использует расширенную версию схемы GeoJSON, которая содержит определение для кругов, как отмечено [здесь.](extend-geojson.md#circle) Круг отображается на карте путем `Point` создания функции. Это `Point` свойство `subType` со значением `"Circle"` и свойство `radius` с номером, который представляет радиус в метрах. 
+Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](extend-geojson.md#circle). Круг отображается на карте путем создания `Point` функции. `Point` У него есть `subType` свойство со значением `"Circle"` и `radius` свойство с числом, представляющим радиус в метрах. 
 
 ```javascript
 {
@@ -104,16 +104,16 @@ Azure Maps использует расширенную версию схемы G
 }  
 ```
 
-Веб-SDK Azure Maps `Point` преобразует `Polygon` эти функции в функции. Затем эти функции отображаются на карте с использованием многоугольных и линейных слоев, как показано в следующем образце кода.
+Azure Maps веб-пакет SDK преобразует `Point` эти функции `Polygon` в компоненты. Затем эти функции отображаются на карте с использованием многоугольников и слоев линий, как показано в следующем примере кода.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Добавление круга на карту' src='//codepen.io/azuremaps/embed/PRmzJX/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/PRmzJX/'>Добавление круга на карту</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="make-a-geometry-easy-to-update"></a>Упростите обновление геометрии
+## <a name="make-a-geometry-easy-to-update"></a>Упрощение обновления геометрии
 
-Класс `Shape` обертывает [геометрию](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.geometry?view=azure-iot-typescript-latest) или [функцию](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature?view=azure-iot-typescript-latest) и упрощает обновление и обслуживание этих функций. Чтобы мгновенно изменить форму, передайте геометрию или набор свойств конструктору формы.
+`Shape` Класс инкапсулирует [геометрию](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.geometry?view=azure-iot-typescript-latest) или [функцию](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature?view=azure-iot-typescript-latest) и упрощает обновление и поддержку этих функций. Чтобы создать экземпляр переменной Shape, передайте геометрию или набор свойств в Конструктор Shape.
 
 ```javascript
 //Creating a shape by passing in a geometry and a object containing properties.
@@ -123,25 +123,25 @@ var shape1 = new atlas.Shape(new atlas.data.Point[0,0], { myProperty: 1 });
 var shape2 = new atlas.Shape(new atlas.data.Feature(new atlas.data.Point[0,0], { myProperty: 1 });
 ```
 
-Следующий пример кода показывает, как обернуть круг объекта GeoJSON с классом формы. По мере изменения значения радиуса в форме круг автоматически отображается на карте.
+В следующем образце кода показано, как обернуть объект-геоклассического объекта Circle с помощью класса Shape. При изменении значения радиуса в фигуре круг автоматически отображается на карте.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Обновление свойств фигуры' src='//codepen.io/azuremaps/embed/ZqMeQY/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. фрагмент кода для <a href='https://codepen.io/azuremaps/pen/ZqMeQY/'>обновления свойств фигуры</a> от разработчиков Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Полигона](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.polygon?view=azure-iot-typescript-latest)
+> [Многоугольник](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.polygon?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [ПолигонСлой](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest)
+> [полигонлайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [ПолигонLayerOptions](/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest)
+> [полигонлайероптионс](/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
@@ -163,4 +163,4 @@ var shape2 = new atlas.Shape(new atlas.data.Feature(new atlas.data.Point[0,0], {
 Дополнительные ресурсы:
 
 > [!div class="nextstepaction"]
-> [Расширение спецификации Azure Maps GeoJSON](extend-geojson.md#circle)
+> [Расширение спецификации геоjson Azure Maps](extend-geojson.md#circle)

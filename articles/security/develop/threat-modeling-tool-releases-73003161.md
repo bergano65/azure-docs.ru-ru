@@ -1,5 +1,5 @@
 ---
-title: Microsoft Угроза Моделирования Релиз 03/22/2020 - Azure
+title: Microsoft Threat Modeling Tool выпуск 03/22/2020 — Azure
 description: Документирование заметок о выпуске средства моделирования угроз
 author: jegeib
 ms.author: jegeib
@@ -7,50 +7,50 @@ ms.service: security
 ms.topic: article
 ms.date: 03/22/2020
 ms.openlocfilehash: 6fea4d48b62d6ea429d37924ffd15855db6294cc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80146866"
 ---
-# <a name="threat-modeling-tool-update-release-73003161---03222020"></a>Угроза Моделирование Инструмент обновления релиз 7.3.00316.1 - 03/22/2020
+# <a name="threat-modeling-tool-update-release-73003161---03222020"></a>Threat Modeling Tool обновления выпуска 7.3.00316.1 — 03/22/2020
 
-Версия 7.3.00316.1 инструмента моделирования угроз Microsoft (TMT) была выпущена 22 марта 2020 года и содержит следующие изменения:
+Версия 7.3.00316.1 Microsoft Threat Modeling Tool (ТМТ) была выпущена 22 2020 марта и содержит следующие изменения:
 
-- Улучшение специальных возможностей
+- Улучшения специальных возможностей
 - Исправления ошибок
-- Новая функция ДиаграммаРидер
+- Новая функция Диаграмреадер
 
-## <a name="notable-bug-fixes"></a>Известные исправления ошибок
+## <a name="notable-bug-fixes"></a>Исправления важных ошибок
 
-### <a name="exporting-the-threat-list-to-csv"></a>Экспорт списка угроз в CSV
+### <a name="exporting-the-threat-list-to-csv"></a>Экспорт списка угроз в CSV-файл
 
-Экспорт в функцию CSV непоследовательно выбирал, какие месторождения из списка угроз будут экспортироваться. Теперь все поля из списка угроз будут экспортироваться в файл CSV. 
+Функция экспорта в CSV была непоследовательно выбирать поля из списка угроз, которые будут экспортированы. Теперь все поля из списка угроз будут экспортированы в CSV-файл. 
 
-### <a name="ux-bugs"></a>ОШИБКи UX
+### <a name="ux-bugs"></a>Ошибки UX
 
-- Меню справки в основном рабочем процессе (создание/открытие/анализ) и опыт редактора шаблонов теперь имеют согласованные параметры меню.
-- Панель поиска в трафаретном стекле теперь имеет стандартный курсор и соответствующие метки были добавлены.
+- Меню справки в основном рабочем процессе (создание, открытие и анализ) и интерфейс редактора шаблонов теперь имеют единообразные параметры меню.
+- На панели "наборы элементов" теперь имеется стандартный курсор и добавлены соответствующие метки.
 
-## <a name="new-features"></a>новые функции;
+## <a name="new-features"></a>Новые функции
 
-### <a name="diagramreader-feature-has-been-added"></a>Добавлена функция ДиаграммаReader
+### <a name="diagramreader-feature-has-been-added"></a>Добавлена функция Диаграмреадер
 
-Новая функция Диаграммарид была добавлена в основное меню во время открытия модели. Эта функция преобразует графическое представление модели в текстовое повествование. 
+В главном меню была добавлена новая функция Диаграмреадер, когда модель открыта. Эта функция преобразует графическое представление модели в текстовое сообщение. 
 
 ## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы:
-  - [Microsoft Windows 10 Годовщина Обновление](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или позже
+  - [Юбилейное обновление Microsoft Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или более поздняя версия
 - Требуется версия .NET:
-  - [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или позже
+  - [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или более поздней версии
 - Дополнительные требования:
-  - Подключение к Интернету для получения обновлений для инструмента, а также шаблонов
+  - Подключение к Интернету для получения обновлений средства, а также шаблонов
 
 ## <a name="documentation-and-feedback"></a>Документация и отзывы
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool) и содержит информацию [об использовании средства](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool-getting-started).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

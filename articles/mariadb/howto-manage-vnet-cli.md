@@ -1,5 +1,5 @@
 ---
-title: Управление конечными точками VNet - Azure CLI - База данных Azure для MariaDB
+title: Управление конечными точками виртуальной сети — Azure CLI — база данных Azure для MariaDB
 description: В этой статье описывается, как создать конечные точки службы виртуальной сети и правила Базы данных Azure для MariaDB и управлять ими с помощью командной строки Azure CLI.
 author: ajlam
 ms.author: andrela
@@ -8,20 +8,20 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 46bfab6935d08ac28ced7f392892ade6f68a0492
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79530858"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-vnet-service-endpoints-using-azure-cli"></a>Создание конечных точек службы виртуальной сети Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 
 Правила и конечные точки служб виртуальной сети позволяют расширить частное адресное пространство виртуальной сети, чтобы охватить сервер Базы данных Azure для MariaDB. С помощью удобных команд интерфейса командной строки Azure (CLI) можно создавать, обновлять, удалять, выводить списки и просматривать правила и конечные точки службы виртуальной сети для управления сервером. Общие сведения о конечных точках службы виртуальной сети Базы данных Azure для MariaDB, включая ограничения, см. в [этой статье](concepts-data-access-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах Базы данных Azure для MariaDB.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - Установите [Azure CLI](/cli/azure/install-azure-cli) или используйте Azure Cloud Shell в браузере.
-- [База данных Azure для сервера и базы данных MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md).
+- [Сервер базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
 > [!NOTE]
 > Поддержка конечных точек службы виртуальной сети предназначена только для серверов общего назначения и серверов, оптимизированных для операций в памяти.
@@ -29,7 +29,7 @@ ms.locfileid: "79530858"
 ## <a name="configure-vnet-service-endpoints"></a>Настройка конечных точек служб виртуальной сети
 Для настройки виртуальных сетей используется команда [az network vnet](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest).
 
-Если у вас нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись перед началом.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
@@ -50,7 +50,7 @@ az login
 
 Узнайте больше о [встроенных ролях](https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles) и назначении разрешений, определенных для [настраиваемых ролей](https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles).
 
-Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если виртуальные сети и ресурсы служб Azure находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD). Убедитесь, что обе подписки зарегистрированы поставщиком ресурсов **Microsoft.Sql.** Для получения дополнительной информации обратитесь [к ресурс-менеджер-регистрация][resource-manager-portal]
+Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если виртуальные сети и ресурсы служб Azure находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD). Убедитесь, что у обеих подписок есть зарегистрированный поставщик ресурсов **Microsoft. SQL** . Дополнительные сведения см. в статье [Регистрация в диспетчере ресурсов][resource-manager-portal] .
 
 > [!IMPORTANT]
 > Прежде чем настраивать конечные точки службы, настоятельно рекомендуется прочитать эту статью о конфигурациях конечной точки службы и рекомендациях: **Конечная точка службы для виртуальной сети**. [Конечная точка службы для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md) — это подсеть, значения свойств которой включают в себя одно или несколько формальных имен типов службы Azure. Конечные точки службы виртуальной сети используют имя типа службы **Microsoft.Sql**, которое относится к службе Azure, которая называется "База данных SQL". Этот тег службы также применяется к Базе данных SQL Azure, Базе данных Azure для MariaDB, PostgreSQL и MySQL. Важно отметить, что при применении тега службы **Microsoft.Sql** к конечной точке службы виртуальной сети настраивается трафик конечной точки службы для всех служб баз данных Azure, в том числе для Базы данных SQL Azure, Базы данных Azure для MariaDB, Базы данных Azure для PostgreSQL и Базы данных Azure для MySQL в подсети.

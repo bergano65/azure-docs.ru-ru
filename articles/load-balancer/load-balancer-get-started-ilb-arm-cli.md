@@ -1,7 +1,7 @@
 ---
 title: Создание внутренней подсистемы балансировки нагрузки уровня "Базовый" с помощью Azure CLI
 titleSuffix: Azure Load Balancer
-description: В этой статье узнайте, как создать внутренний баланселизатор нагрузки с помощью Azure CLI
+description: Из этой статьи вы узнаете, как создать внутреннюю подсистему балансировки нагрузки с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 06/27/2018
 ms.author: allensu
 ms.openlocfilehash: 51df1936e5d8725b2243e7c0084973370139c540
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79457017"
 ---
 # <a name="create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
@@ -26,7 +26,7 @@ ms.locfileid: "79457017"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.]( /cli/azure/install-azure-cli)
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -42,7 +42,7 @@ ms.locfileid: "79457017"
 
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть под названием *myVnet* с подсетью под названием *mySubnet* в *myResourceGroup* с помощью [az сети vnet создать](https://docs.microsoft.com/cli/azure/network/vnet).
+Создайте виртуальную сеть с именем *myVnet* с подсетью с именем *mySubnet* в *myResourceGroup* с помощью команды [AZ Network vnet Create](https://docs.microsoft.com/cli/azure/network/vnet).
 
 ```azurecli-interactive
   az network vnet create \
@@ -62,7 +62,7 @@ ms.locfileid: "79457017"
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-Создайте внутренний балансоровый баланс с [az сетевой фунт создать](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) под названием **myLoadBalancer,** который включает в себя конфигурацию переднего IP имени **myFrontEnd**, бэк-энд бассейн под названием **myBackEndPool,** который связан с частным IP-адресом No 10.0.0.0.7.
+Создайте внутренний Load Balancer с помощью команды [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **myLoadBalancer** , которая включает внешнюю IP-конфигурацию с именем **myFrontEnd**, внутренний пул с именем **myBackEndPool** , связанный с частным IP-адресом * * 10.0.0.7.
 
 ```azurecli-interactive
   az network lb create \
@@ -77,7 +77,7 @@ ms.locfileid: "79457017"
 
 ### <a name="create-the-health-probe"></a>Создание зонда работоспособности
 
-Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд здоровья с [az зондом lb сети создать](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) для того чтобы контролировать работоспособность фактически машин. 
+Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте пробу работоспособности с помощью команды [AZ Network фунтов зонда Create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) , чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli-interactive
   az network lb probe create \
@@ -131,7 +131,7 @@ done
 
 ### <a name="create-an-availability-set"></a>Создание группы доступности
 
-Создание набора доступности с [созданием доступности az vm](/cli/azure/network/nic)
+Создание группы доступности с помощью команды [AZ VM Availability](/cli/azure/network/nic) Set
 
 ```azurecli-interactive
   az vm availability-set create \
@@ -238,5 +238,5 @@ for i in `seq 1 2`; do
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы создали внутреннюю подсистему балансировки нагрузки уровня "Базовый", подключили к ней виртуальные машины, настроили правило трафика подсистемы балансировки нагрузки, зонд работоспособности, а также проверили работу подсистемы балансировки нагрузки. Дополнительные сведения о подсистемах балансировки нагрузки и связанных с ними ресурсах см. в статьях с инструкциями.

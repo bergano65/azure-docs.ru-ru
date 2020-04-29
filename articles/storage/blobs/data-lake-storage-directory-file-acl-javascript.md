@@ -1,6 +1,6 @@
 ---
-title: Используйте JavaScript для файлов & ВАК в Azure Data Lake Storage2
-description: Используйте библиотеку клиентов Azure Storage Data Lake для JavaScript для управления каталогами и списками управления доступом файлов и каталогов (ACL) в учетных записях хранения с включенным иерархическим пространством имен (HNS).
+title: Использование JavaScript для файлов & ACL в Azure Data Lake Storage 2-го поколения
+description: Используйте клиентскую библиотеку службы хранилища Azure Data Lake для JavaScript, чтобы управлять каталогами и списками управления доступом к файлам и каталогам (ACL) в учетных записях хранения с включенным иерархическое пространством имен (HNS).
 author: normesta
 ms.service: storage
 ms.date: 03/20/2020
@@ -9,34 +9,34 @@ ms.topic: conceptual
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.openlocfilehash: 04d0d23bdbdaeda6a4823c900badb3133ba9eeae
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80061538"
 ---
-# <a name="use-javascript-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Используйте JavaScript для управления каталогами, файлами и ACL в Azure Data Lake Storage2
+# <a name="use-javascript-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование JavaScript для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
-В этой статье показано, как использовать JavaScript для создания и управления каталогами, файлами и разрешениями в учетных записях хранения с включенным иерархическим пространством имен (HNS). 
+В этой статье показано, как использовать JavaScript для создания каталогов, файлов и разрешений в учетных записях хранения с включенным иерархическое пространством имен (HNS) и управления ими. 
 
-[Пакет (менеджер узла пакета)](https://www.npmjs.com/package/@azure/storage-file-datalake) | [Образцы](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples) | [Дают обратную связь](https://github.com/Azure/azure-sdk-for-java/issues)
+[Пакеты (диспетчер пакетов узлов)](https://www.npmjs.com/package/@azure/storage-file-datalake) | [Samples](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples) | , которые[предоставляют отзыв](https://github.com/Azure/azure-sdk-for-java/issues)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * Учетная запись хранилища с включенным иерархическим пространством имен (HNS). Следуйте [этим](data-lake-storage-quickstart-create-account.md) инструкциям, чтобы создать один.
-> * Если вы используете этот пакет в приложении Node.js, вам понадобится Node.js 8.0.0 или выше.
+> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его [, выполните следующие](data-lake-storage-quickstart-create-account.md) инструкции.
+> * Если вы используете этот пакет в приложении Node. js, вам потребуется Node. js 8.0.0 или более поздней версии.
 
 ## <a name="set-up-your-project"></a>Настройка проекта
 
-Установите клиентскую библиотеку Data Lake для JavaScript, открыв окно терминала, а затем введя следующую команду.
+Установите Data Lake клиентскую библиотеку для JavaScript, открыв окно терминала, а затем введя следующую команду.
 
 ```javascript
 npm install @azure/storage-file-datalake
 ```
 
-Импортируйте `storage-file-datalake` пакет, разместив это заявление в верхней части файла кода. 
+Импортируйте `storage-file-datalake` пакет, поместив этот оператор в начало файла кода. 
 
 ```javascript
 const AzureStorageDataLake = require("@azure/storage-file-datalake");
@@ -44,13 +44,13 @@ const AzureStorageDataLake = require("@azure/storage-file-datalake");
 
 ## <a name="connect-to-the-account"></a>Подключение к учетной записи 
 
-Чтобы использовать фрагменты в этой статье, необходимо создать экземпляр **DataLakeServiceClient,** представляющий учетную запись хранилища. 
+Чтобы использовать фрагменты кода в этой статье, необходимо создать экземпляр **даталакесервицеклиент** , представляющий учетную запись хранения. 
 
 ### <a name="connect-by-using-an-account-key"></a>Подключение с помощью ключа учетной записи
 
 Это самый простой способ подключения к учетной записи. 
 
-Этот пример создает экземпляр **DataLakeServiceClient** с помощью ключа учетной записи.
+В этом примере создается экземпляр **даталакесервицеклиент** с помощью ключа учетной записи.
 
 ```javascript
 
@@ -67,13 +67,13 @@ function GetDataLakeServiceClient(accountName, accountKey) {
 
 ```
 > [!NOTE]
-> Этот метод авторизации работает только для приложений Node.js. Если вы планируете запустить свой код в браузере, вы можете авторизовать с помощью Active Directory (AD) Azure Active. 
+> Этот метод авторизации работает только для приложений Node. js. Если вы планируете выполнять код в браузере, можно авторизовать с помощью Azure Active Directory (AD). 
 
-### <a name="connect-by-using-azure-active-directory-ad"></a>Подключение с помощью активного каталога Azure (AD)
+### <a name="connect-by-using-azure-active-directory-ad"></a>Подключение с помощью Azure Active Directory (AD)
 
-Для проверки подлинности приложения с помощью Azure AD можно использовать [библиотеку клиентов итогов Azure.](https://www.npmjs.com/package/@azure/identity)
+Вы можете использовать [клиентскую библиотеку Azure Identity для JS](https://www.npmjs.com/package/@azure/identity) для проверки подлинности приложения в Azure AD.
 
-Этот пример создает экземпляр **DataLakeServiceClient,** используя идентификатор клиента, секрет клиента и идентификатор клиента.  Чтобы получить эти значения, [см. Приобрести токен из Azure AD для авторизации запросов из клиентского приложения.](../common/storage-auth-aad-app.md)
+В этом примере создается экземпляр **даталакесервицеклиент** с использованием идентификатора клиента, секрета клиента и идентификатора клиента.  Чтобы получить эти значения, см. статью [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](../common/storage-auth-aad-app.md).
 
 ```javascript
 function GetDataLakeServiceClientAD(accountName, clientID, clientSecret, tenantID) {
@@ -88,13 +88,13 @@ function GetDataLakeServiceClientAD(accountName, clientID, clientSecret, tenantI
 ```
 
 > [!NOTE]
-> Для получения дополнительных примеров можно найти [библиотеку клиентов иотек Иждиaz для](https://www.npmjs.com/package/@azure/identity) документации JS.
+> Дополнительные примеры см. в документации по [клиентской библиотеке удостоверений Azure для JS](https://www.npmjs.com/package/@azure/identity) .
 
 ## <a name="create-a-file-system"></a>Создание файловой системы
 
-Файловая система действует как контейнер для файлов. Вы можете создать один, получив экземпляр **FileSystemClient,** а затем позвонив в **Метод FileSystemClient.Create.**
+Файловая система выступает в качестве контейнера для файлов. Его можно создать, получив экземпляр **филесистемклиент** , а затем вызвав метод **филесистемклиент. Create** .
 
-Этот пример создает файловую систему под названием `my-file-system`. 
+В этом примере создается файловая система `my-file-system`с именем. 
 
 ```javascript
 async function CreateFileSystem(datalakeServiceClient) {
@@ -110,9 +110,9 @@ async function CreateFileSystem(datalakeServiceClient) {
 
 ## <a name="create-a-directory"></a>Создание каталога
 
-Создайте ссылку каталога, получив экземпляр **directoryClient,** а затем позвонив в метод **DirectoryClient.create.**
+Создайте ссылку на каталог, получив экземпляр **директориклиент** , а затем вызвав метод **директориклиент. Create** .
 
-Этот пример добавляет каталог, названный `my-directory` в файловую систему. 
+В этом примере в файловую `my-directory` систему добавляется каталог с именем. 
 
 ```javascript
 async function CreateDirectory(fileSystemClient) {
@@ -126,9 +126,9 @@ async function CreateDirectory(fileSystemClient) {
 
 ## <a name="rename-or-move-a-directory"></a>Переименование или перемещение каталога
 
-Переименуй или переместите каталог, позвонив в метод **каталогаClient.rename.** Передайте путь желаемого каталога параметру. 
+Переименуйте или переместите каталог, вызвав метод **директориклиент. Rename** . Передайте путь к нужному каталогу параметру. 
 
-Этот пример переименовывает подкаталог `my-directory-renamed`к имени .
+В этом примере подкаталог переименовывается в имя `my-directory-renamed`.
 
 ```javascript
 async function RenameDirectory(fileSystemClient) {
@@ -139,7 +139,7 @@ async function RenameDirectory(fileSystemClient) {
 }
 ```
 
-Этот пример перемещает каталог `my-directory-renamed` с именем в подкаталог `my-directory-2`каталог аменем . 
+В этом примере каталог с именем `my-directory-renamed` перемещается в подкаталог каталога с именем `my-directory-2`. 
 
 ```javascript
 async function MoveDirectory(fileSystemClient) {
@@ -152,9 +152,9 @@ async function MoveDirectory(fileSystemClient) {
 
 ## <a name="delete-a-directory"></a>Удаление каталога
 
-Удалить каталог, позвонив в метод **DirectoryClient.delete.**
+Удалите каталог, вызвав метод **директориклиент. Delete** .
 
-Этот пример удаляет каталог `my-directory`с именем .   
+В этом примере удаляется каталог `my-directory`с именем.   
 
 ```javascript
 async function DeleteDirectory(fileSystemClient) {
@@ -165,12 +165,12 @@ async function DeleteDirectory(fileSystemClient) {
 }
 ```
 
-## <a name="manage-a-directory-acl"></a>Управление каталогом ACL
+## <a name="manage-a-directory-acl"></a>Управление ACL каталога
 
-Этот пример получает, а затем устанавливает ACL каталога с именем `my-directory`. Этот пример дает пользователю-владельцев читать, писать и выполнять разрешения, дает группе владельцев только читать и выполнять разрешения, и дает всем другим доступ к чтению.
+В этом примере получается и затем задается список ACL `my-directory`для каталога с именем. В этом примере предоставляются права владельца «чтение», «запись» и «выполнение», которая предоставляет группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ для чтения.
 
 > [!NOTE]
-> Если приложение разрешает доступ с помощью Active Directory Azure (Azure AD), убедитесь, что принципбезопасности, который приложение использует для авторизации доступа, был назначен [роль владельца данных Storage Blob.](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) Чтобы узнать больше о том, как применяются разрешения [Access control in Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)ACL и о последствиях их изменения, см.
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и их влиянии на их изменение см. в разделе [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
 ```javascript
 async function ManageDirectoryACLs(fileSystemClient) {
@@ -219,11 +219,11 @@ async function ManageDirectoryACLs(fileSystemClient) {
 }
 ```
 
-## <a name="upload-a-file-to-a-directory"></a>Загрузить файл в каталог
+## <a name="upload-a-file-to-a-directory"></a>Передача файла в каталог
 
-Во-первых, прочитайте файл. В этом примере используется `fs` модуль Node.js. Затем создайте ссылку на файл в целевом каталоге, создав экземпляр **FileClient,** а затем вызывая метод **FileClient.create.** Загрузите файл, позвонив в метод **FileClient.append.** Убедитесь в том, чтобы завершить загрузку, позвонив в **метод FileClient.flush.**
+Сначала Считайте файл. В этом примере используется модуль Node. `fs` JS. Затем создайте ссылку на файл в целевом каталоге, создав экземпляр **филеклиент** , а затем вызвав метод **филеклиент. Create** . Отправьте файл, вызвав метод **филеклиент. append** . Обязательно завершите передачу, вызвав метод **филеклиент. Flush** .
 
-Этот пример загружает текстовый `my-directory`файл в каталог с именем .
+В этом примере текстовый файл перегружается в каталог с именем `my-directory`.
 
 ```javascript
 async function UploadFile(fileSystemClient) {
@@ -247,12 +247,12 @@ async function UploadFile(fileSystemClient) {
 }
 ```
 
-## <a name="manage-a-file-acl"></a>Управление файлом ACL
+## <a name="manage-a-file-acl"></a>Управление ACL файла
 
-Этот пример получает, а затем устанавливает `upload-file.txt`ACL файла с именем. Этот пример дает пользователю-владельцев читать, писать и выполнять разрешения, дает группе владельцев только читать и выполнять разрешения, и дает всем другим доступ к чтению.
+Этот пример получает и затем задает список управления доступом для файла с `upload-file.txt`именем. В этом примере предоставляются права владельца «чтение», «запись» и «выполнение», которая предоставляет группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ для чтения.
 
 > [!NOTE]
-> Если приложение разрешает доступ с помощью Active Directory Azure (Azure AD), убедитесь, что принципбезопасности, который приложение использует для авторизации доступа, был назначен [роль владельца данных Storage Blob.](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) Чтобы узнать больше о том, как применяются разрешения [Access control in Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)ACL и о последствиях их изменения, см.
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и их влиянии на их изменение см. в разделе [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
 ```javascript
 async function ManageFileACLs(fileSystemClient) {
@@ -303,10 +303,10 @@ await fileClient.setAccessControl(acl);
 
 ## <a name="download-from-a-directory"></a>Скачать из каталога
 
-Во-первых, создайте экземпляр **FileSystemClient,** представляющий файл, который вы хотите загрузить. Используйте метод **FileSystemClient.read** для чтения файла. Затем напишите файл. Для этого в этом примере используется модуль Node.js. `fs` 
+Сначала создайте экземпляр **филесистемклиент** , представляющий файл, который требуется скачать. Для чтения файла используйте метод **филесистемклиент. Read** . Затем запишите файл. В этом примере для этого используется модуль `fs` Node. js. 
 
 > [!NOTE]
-> Этот метод загрузки файла работает только для приложений Node.js. Если вы планируете запустить свой код в браузере, смотрите [в библиотеке клиентов Azure Storage File Data Lake для](https://www.npmjs.com/package/@azure/storage-file-datalake) файла чтения JavaScript для примера того, как это сделать в браузере. 
+> Этот метод загрузки файла работает только для приложений Node. js. Если вы планируете выполнять код в браузере, см. пример того, как это сделать в браузере, с помощью файла сведений о [библиотеке Data Lake клиентской библиотеки для JavaScript](https://www.npmjs.com/package/@azure/storage-file-datalake) . 
 
 ```javascript
 async function DownloadFile(fileSystemClient) {
@@ -341,7 +341,7 @@ async function DownloadFile(fileSystemClient) {
 
 ## <a name="list-directory-contents"></a>Вывод содержимого каталогов
 
-Этот пример печатает имена каждого каталога и файла, который `my-directory`находится в каталоге с именем .
+В этом примере выводятся имена каждого каталога и файла, расположенного в каталоге с именем `my-directory`.
 
 ```javascript
 async function ListFilesInDirectory(fileSystemClient) {
@@ -360,6 +360,6 @@ async function ListFilesInDirectory(fileSystemClient) {
 
 ## <a name="see-also"></a>См. также
 
-* [Пакет (менеджер узла пакета)](https://www.npmjs.com/package/@azure/storage-file-datalake)
+* [Пакет (диспетчер пакетов node)](https://www.npmjs.com/package/@azure/storage-file-datalake)
 * [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples)
-* [Дайте обратную связь](https://github.com/Azure/azure-sdk-for-java/issues)
+* [Отправить отзыв](https://github.com/Azure/azure-sdk-for-java/issues)
