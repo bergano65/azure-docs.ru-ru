@@ -1,39 +1,39 @@
 ---
-title: Настройка приложений Linux ASP.NET Core
-description: Узнайте, как настроить предварительно построенный ASP.NET контейнер Core для вашего приложения. В этой статье показаны наиболее распространенные задачи настройки.
+title: Настройка приложений ASP.NET Core Linux
+description: Узнайте, как настроить предварительно созданный контейнер ASP.NET Core для приложения. В этой статье показаны наиболее распространенные задачи настройки.
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/13/2019
 ms.openlocfilehash: b1d9e59109f5ace25abb9840b48e44ff03d394e7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78255908"
 ---
-# <a name="configure-a-linux-aspnet-core-app-for-azure-app-service"></a>Настройте приложение Linux ASP.NET Core для службы приложений Azure
+# <a name="configure-a-linux-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core Linux для службы приложений Azure
 
-ASP.NET основные приложения должны быть развернуты в виде компилированных бинарных файлов. Инструмент публикации Visual Studio создает решение, а затем развертывает компилированные файлы напрямую, в то время как движок развертывания Службы App развертывает сначала репозиторий кода, а затем компилирует файлы.
+ASP.NET Core приложения должны быть развернуты в виде скомпилированных двоичных файлов. Средство публикации Visual Studio создает решение, а затем развертывает скомпилированные двоичные файлы напрямую, в то время как модуль развертывания службы приложений сначала развертывает репозиторий кода, а затем компилирует двоичные файлы.
 
-В этом руководстве содержатся ключевые концепции и инструкции для разработчиков ASP.NET Core, которые используют встроенный контейнер Linux в App Service. Если вы никогда не пользовались службой приложений Azure, следуйте [ASP.NET Core,](quickstart-dotnetcore.md) а [ASP.NET Core с помощью учебника по базам данных S'L.](tutorial-dotnetcore-sqldb-app.md)
+Это краткое описание содержит основные понятия и инструкции для ASP.NET Core разработчиков, использующих встроенный контейнер Linux в службе приложений. Если вы никогда не использовали службу приложений Azure, сначала следуйте инструкциям в руководстве по [ASP.NET Core](quickstart-dotnetcore.md) и [ASP.NET Core с базой данных SQL](tutorial-dotnetcore-sqldb-app.md) .
 
-## <a name="show-net-core-version"></a>Показать ядра версии .NET
+## <a name="show-net-core-version"></a>Показывать версию .NET Core
 
-Чтобы показать текущую версию .NET Core, запустите следующую команду в [облачной оболочке:](https://shell.azure.com)
+Чтобы отобразить текущую версию .NET Core, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config show --resource-group <resource-group-name> --name <app-name> --query linuxFxVersion
 ```
 
-Чтобы показать все поддерживаемые версии .NET Core, запустите следующую команду в [облачной оболочке:](https://shell.azure.com)
+Чтобы отобразить все поддерживаемые версии .NET Core, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp list-runtimes --linux | grep DOTNETCORE
 ```
 
-## <a name="set-net-core-version"></a>Набор ядовитого варианта .NET
+## <a name="set-net-core-version"></a>Задать версию .NET Core
 
-Запустите следующую команду в [облачной оболочке,](https://shell.azure.com) чтобы настроить версию .NET Core до 2.1:
+Выполните следующую команду в [Cloud Shell](https://shell.azure.com) , чтобы установить версию .NET Core равным 2,1:
 
 ```azurecli-interactive
 az webapp config set --name <app-name> --resource-group <resource-group-name> --linux-fx-version "DOTNETCORE|2.1"
@@ -41,29 +41,29 @@ az webapp config set --name <app-name> --resource-group <resource-group-name> --
 
 ## <a name="customize-build-automation"></a>Настройка автоматизации сборки
 
-Если развертывать приложение с помощью пакетов Git или zip с включенной автоматизацией сборки, служба App Service выполняет этапы автоматизации через следующую последовательность:
+Если приложение развертывается с использованием Git или zip-пакетов с включенной автоматизацией сборки, то Автоматизация сборки службы приложений проходит через следующую последовательность:
 
-1. Выполнить пользовательский `PRE_BUILD_SCRIPT_PATH`скрипт, если указано .
-1. Запуск `dotnet restore` для восстановления зависимостей NuGet.
-1. Выполнить, `dotnet publish` чтобы построить двоичный для производства.
-1. Выполнить пользовательский `POST_BUILD_SCRIPT_PATH`скрипт, если указано .
+1. Запустить пользовательский скрипт, если он `PRE_BUILD_SCRIPT_PATH`указан в.
+1. Выполните `dotnet restore` команду, чтобы восстановить зависимости NuGet.
+1. Выполните `dotnet publish` команду, чтобы создать двоичный файл для рабочей среды.
+1. Запустить пользовательский скрипт, если он `POST_BUILD_SCRIPT_PATH`указан в.
 
-`PRE_BUILD_COMMAND`и `POST_BUILD_COMMAND` являются переменными среды, которые по умолчанию пусты. Чтобы запустить команды предварительной `PRE_BUILD_COMMAND`сборки, определите. Чтобы запустить команды после сборки, определите. `POST_BUILD_COMMAND`
+`PRE_BUILD_COMMAND`и `POST_BUILD_COMMAND` представляют собой переменные среды, которые по умолчанию являются пустыми. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
 
-В следующем примере указаны две переменные к серии команд, разделенных запятыми.
+В следующем примере указываются две переменные для ряда команд, разделенных запятыми.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PRE_BUILD_COMMAND="echo foo, scripts/prebuild.sh"
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings POST_BUILD_COMMAND="echo foo, scripts/postbuild.sh"
 ```
 
-Для дополнительных переменных среды для [Oryx configuration](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md)настройки автоматизации сборки см.
+Дополнительные переменные среды для настройки автоматизации сборки см. в разделе [Орикс Configuration](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
 
-Для получения дополнительной информации о том, как Служба приложений работает и создает ASP.NET основных приложений в Linux, [см.](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/dotnetcore.md)
+Дополнительные сведения о том, как служба приложений работает и создает ASP.NET Core приложений в Linux, см. в [документации по Орикс: как обнаруживаются и строятся приложения .NET Core](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/dotnetcore.md).
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Затем вы можете получить к ним доступ в любом классе, используя стандартный ASP.NET шаблон инъекций основных зависимостей:
+В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Затем к ним можно обращаться в любом классе, используя стандартный шаблон внедрения зависимостей ASP.NET Core:
 
 ```csharp
 using Microsoft.Extensions.Configuration;
@@ -90,11 +90,11 @@ namespace SomeNamespace
 }
 ```
 
-Например, если настроить настройку приложения с тем же именем в Службе app и в *appsettings.json,* значение Службы app имеет приоритет над значением *appsettings.json.* Значение *локального appsettings.json* позволяет отладить приложение локально, но значение Службы app позволяет вам запускать приложение в продукте с настройками производства. Строки соединения работают таким же образом. Таким образом, вы можете хранить секреты приложения за пределами репозитория кода и получать доступ к соответствующим значениям без изменения кода.
+Например, если настроить параметр приложения с тем же именем в службе приложений и в *appSettings. JSON*, то значение службы приложений имеет приоритет над значением *appSettings. JSON* . Локальное значение *appSettings. JSON* позволяет выполнять отладку приложения локально, но значение службы приложений позволяет запускать приложение в продукте с параметрами рабочей среды. Строки подключения работают таким же образом. Таким образом вы сможете защитить секреты приложения за пределами репозитория кода и получить доступ к соответствующим значениям без изменения кода.
 
-## <a name="get-detailed-exceptions-page"></a>Получить подробную страницу исключений
+## <a name="get-detailed-exceptions-page"></a>Страница «Получение подробных сведений об исключениях»
 
-Когда приложение ASP.NET генерирует исключение в отладчике Visual Studio, браузер отображает подробную страницу исключения, но в Службе приложения эта страница заменяется общей ошибкой **HTTP 500** или **ошибкой, возникшой при обработке запроса.** . Чтобы отобразить подробную страницу `ASPNETCORE_ENVIRONMENT` исключения в Службе приложения, добавьте настройку приложения в приложение, запустив следующую команду в <a target="_blank" href="https://shell.azure.com" >облачной оболочке.</a>
+Когда приложение ASP.NET создает исключение в отладчике Visual Studio, браузер отображает подробное сообщение об исключении, но в службе приложений эта страница заменяется общей ошибкой **HTTP 500** или **при обработке запроса произошла ошибка.** !". Чтобы отобразить страницу подробного исключения в службе приложений, добавьте параметр `ASPNETCORE_ENVIRONMENT` приложения в приложение, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings ASPNETCORE_ENVIRONMENT="Development"
@@ -102,13 +102,13 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ## <a name="detect-https-session"></a>Обнаружение сеанса HTTPS
 
-В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логике приложения необходимо знать, зашифрованы запросы пользователей или нет, наймите программу Forwarded Headers Middleware в *Startup.cs:*
+В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика приложения должна определить, зашифрованы ли запросы пользователя, настройте по промежуточного слоя перенаправляемых заголовков в *Startup.CS*:
 
 - Настройте ПО промежуточного слоя с помощью [ForwardedHeadersOptions](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions), чтобы заголовки `X-Forwarded-For` и `X-Forwarded-Proto` перенаправлялись в `Startup.ConfigureServices`.
-- Добавьте частные диапазоны IP-адресов в известные сети, чтобы посредник мог доверять балансеру нагрузки Службы App Service.
-- Вызовите метод [UseForwardedHeaders,](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) `Startup.Configure` прежде чем вызывать другие промежуточники.
+- Добавьте в известные сети диапазоны частных IP-адресов, чтобы по промежуточного слоя можно было доверять подсистеме балансировки нагрузки службы приложений.
+- Вызовите метод [усефорвардедхеадерс](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) в `Startup.Configure` перед вызовом других по промежуточного слоя.
 
-Объединяя все три элемента, код выглядит следующим примером:
+Поместив все три элемента вместе, код будет выглядеть следующим образом:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -137,24 +137,24 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 Дополнительные сведения см. в разделе [Настройка ASP.NET Core для работы с прокси-серверами и подсистемами балансировки нагрузки](https://docs.microsoft.com/aspnet/core/host-and-deploy/proxy-load-balancer).
 
-## <a name="deploy-multi-project-solutions"></a>Развертывание многопроектных решений
+## <a name="deploy-multi-project-solutions"></a>Развертывание решений с несколькими проектами
 
-При развертывании ASP.NET репозитория в движок развертывания с файлом *.csproj* в корневом каталоге, движок развертывает проект. При развертывании ASP.NET репозитория с файлом *.sln* в корневом каталоге движок выбирает первый веб-сайт или проект web Application, который он находит в качестве приложения Службы Приложения. Двигатель может не выбрать нужный проект.
+При развертывании репозитория ASP.NET в подсистеме развертывания с файлом *CSPROJ* в корневом каталоге обработчик развертывает проект. При развертывании репозитория ASP.NET с расширением *SLN* в корневом каталоге подсистема выбирает первый веб-сайт или проект веб-приложения, который он находит в качестве приложения службы приложений. Подсистема может не выбирать нужный проект.
 
-Для развертывания многопроектного решения можно указать проект для использования в Службе приложений двумя различными способами:
+Чтобы развернуть многопроектное решение, можно указать проект для использования в службе приложений двумя разными способами.
 
-### <a name="using-deployment-file"></a>Использование файла развертывания .
+### <a name="using-deployment-file"></a>Использование файла. Deployment
 
-Добавьте файл *развертывания .в* корень репозитория и добавьте следующий код:
+Добавьте файл *. Deployment* в корень репозитория и добавьте следующий код:
 
 ```
 [config]
 project = <project-name>/<project-name>.csproj
 ```
 
-### <a name="using-app-settings"></a>Использование настроек приложения
+### <a name="using-app-settings"></a>Использование параметров приложения
 
-В <a target="_blank" href="https://shell.azure.com">облачной оболочке Azure</a>добавьте настройку приложения в приложение App Service, запустив следующую команду CLI. Замените * \<>, * * \<>группы ресурсов *и * \<>с* именами проектов соответствующими значениями.
+В <a target="_blank" href="https://shell.azure.com">Azure Cloud Shell</a>добавьте параметр приложения в приложение службы приложений, выполнив следующую команду CLI. Замените * \<имя приложения>*, * \<Resource-Group-Name>* и * \<именем проекта>* соответствующими значениями.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PROJECT="<project-name>/<project-name>.csproj"
@@ -173,7 +173,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Учебник: ASP.NET основное приложение с базой данных S'L](tutorial-dotnetcore-sqldb-app.md)
+> [Руководство. по приложению ASP.NET Core с Базой данных SQL](tutorial-dotnetcore-sqldb-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

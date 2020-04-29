@@ -1,5 +1,5 @@
 ---
-title: 'Создание vpn шлюза на основе маршрута: портал'
+title: Создание VPN-шлюза на основе маршрутов. портал
 titleSuffix: Azure VPN Gateway
 description: Создание VPN-шлюза на основе маршрутов с помощью портала Azure
 services: vpn-gateway
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/03/2020
 ms.author: cherylmc
 ms.openlocfilehash: 6156d689a29ee348f9b1974d1520eb7d186a8d8d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78331355"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-the-azure-portal"></a>Создание VPN-шлюза на основе маршрутов с помощью портала Azure
@@ -25,7 +25,7 @@ ms.locfileid: "78331355"
 
 [!INCLUDE [Basic Point-to-Site VNet](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
 
-## <a name="configure-and-create-the-gateway"></a><a name="gwvalues"></a>Налаживание и создание шлюза
+## <a name="configure-and-create-the-gateway"></a><a name="gwvalues"></a>Настройка и создание шлюза
 
 На этом шаге вы создадите шлюз для своей виртуальной сети. Создание шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU шлюза.
 
@@ -34,7 +34,7 @@ ms.locfileid: "78331355"
 [!INCLUDE [Create a gateway](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
 >[!NOTE]
->Базовый шлюз SKU не поддерживает проверку подлинности IKEv2 или RADIUS. Если вы планируете подключить клиентов Mac к виртуальной сети, не используйте Basic SKU.
+>Базовый номер SKU шлюза не поддерживает проверку подлинности IKEv2 или RADIUS. Если вы планируете подключение клиентов Mac к виртуальной сети, не используйте SKU "базовый".
 
 [!INCLUDE [NSG warning](../../includes/vpn-gateway-no-nsg-include.md)]
 
@@ -46,9 +46,9 @@ ms.locfileid: "78331355"
 
 2. В списке устройств щелкните **VNet1GW**, чтобы получить дополнительные сведения.
 
-   ![Просмотр VPN шлюза](./media/create-routebased-vpn-gateway-portal/view-gateway.png "Просмотр VPN шлюза")
+   ![Просмотр VPN-шлюза](./media/create-routebased-vpn-gateway-portal/view-gateway.png "Просмотр VPN-шлюза")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создав шлюз, можно создать подключение между вашей и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением.
 

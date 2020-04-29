@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 12/15/2017
 ms.author: cynthn
 ms.openlocfilehash: 6040bf8862131f5a8a5564cd2f5d845fa0490a95
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78944904"
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-linux-vms"></a>Пошаговое руководство по примеру инфраструктуры Azure для виртуальных машин Linux
@@ -52,7 +52,7 @@ Adventure Works Cycles хочет создать приложение интер
 ## <a name="azure-subscriptions-and-accounts"></a>Подписки и учетные записи Azure
 Компания Adventure Works Cycles использует подписку Enterprise Subscription под названием "Adventure Works Enterprise Subscription" для выставления счетов за эту рабочую нагрузку ИТ-среды.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 В компании Adventure Works Cycles решили использовать Управляемые диски Azure. При создании виртуальных машин используются хранилища обоих уровней:
 
 * **хранилище уровня "Стандартный"** для веб-серверов, серверов приложений, контроллеров домена и их дисков данных;

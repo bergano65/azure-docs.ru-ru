@@ -1,6 +1,6 @@
 ---
 title: ATN2 на языке запросов Azure Cosmos DB
-description: Узнайте о том, как система ATN2 S'L в Azure Cosmos DB возвращает основное значение дуги касательной y/x, выраженное в радиане
+description: Узнайте о том, как системная функция ATN2 SQL в Azure Cosmos DB возвращает основное значение тангенса дуги y/x, выраженное в радианах.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 696e14e75998ead04c99fab2b84fc4c742d5f54a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78302667"
 ---
-# <a name="atn2-azure-cosmos-db"></a>ATN2 (Azure Космос DB)
+# <a name="atn2-azure-cosmos-db"></a>ATN2 (Azure Cosmos DB)
  Возвращает основное значение арктангенса y/x, выраженное в радианах.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -48,10 +48,10 @@ SELECT ATN2(35.175643, 129.44) AS atn2
 
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

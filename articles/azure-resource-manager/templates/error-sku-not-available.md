@@ -1,18 +1,18 @@
 ---
-title: SKU недоступные ошибки
-description: Описывает, как устранить ошибку SKU, недоступная при развертывании ресурсов с помощью менеджера ресурсов Azure.
+title: Ошибки недоступности SKU
+description: В этой статье описывается, как устранить ошибку недоступности номера SKU при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 02/18/2020
 ms.openlocfilehash: 3dcc26f2d74799a6d282ee4bd733d36bec7b05e4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78942726"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Устранение ошибок, связанных с недоступностью номера SKU
 
-В этой статье объясняется, как устранить ошибку **SkuNotAvailable**. Если вы не можете найти подходящий SKU в этом регионе/зоне или альтернативный регион/зону, удовлетворяющие ваши бизнес-потребности, отправьте [запрос SKU](https://aka.ms/skurestriction) в службу поддержки Azure.
+В этой статье объясняется, как устранить ошибку **SkuNotAvailable**. Если вы не можете найти подходящий SKU в этом регионе или зоне или в альтернативном регионе или зоне, который соответствует вашим потребностям вашего бизнеса, отправьте [запрос SKU](https://aka.ms/skurestriction) в службу поддержки Azure.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -30,11 +30,11 @@ for subscription '<subscriptionID>'. Please try another tier or deploy to a diff
 
 Эта ошибка возникает, когда выбранный номер SKU ресурса (например, размер виртуальной машины) не доступен для указанного расположения.
 
-При развертывании набора Azure Spot VM или Spot- масштаба нет какой-либо емкости для Azure Spot в этом местоположении. Для получения дополнительной [Spot error messages](../../virtual-machines/error-codes-spot.md)информации см.
+Если вы развертываете экземпляр виртуальной машины Azure или экземпляра смесевой масштабируемого набора, в этом расположении нет никакой емкости для точки Azure. Дополнительные сведения см. в разделе [сообщения об ошибках](../../virtual-machines/error-codes-spot.md).
 
 ## <a name="solution-1---powershell"></a>Решение 1 — PowerShell
 
-Чтобы определить, какие Ски доступны в регионе/зоне, используйте команду [Get-AzComputeResourceSku.](/powershell/module/az.compute/get-azcomputeresourcesku) Отфильтруйте результаты по расположению. Эта команда поддерживается только в Azure PowerShell последней версии.
+Чтобы определить, какие номера SKU доступны в регионе или зоне, используйте команду [Get-азкомпутересаурцеску](/powershell/module/az.compute/get-azcomputeresourcesku) . Отфильтруйте результаты по расположению. Эта команда поддерживается только в Azure PowerShell последней версии.
 
 ```azurepowershell-interactive
 Get-AzComputeResourceSku | where {$_.Locations -icontains "centralus"}
@@ -51,14 +51,14 @@ virtualMachines       Standard_A2    centralus             NotAvailableForSubscr
 virtualMachines       Standard_D1_v2 centralus   {2, 1, 3}                                  MaxResourceVolumeMB
 ```
 
-Некоторые дополнительные образцы:
+Некоторые дополнительные примеры:
 
 ```azurepowershell-interactive
 Get-AzComputeResourceSku | where {$_.Locations.Contains("centralus") -and $_.ResourceType.Contains("virtualMachines") -and $_.Name.Contains("Standard_DS14_v2")}
 Get-AzComputeResourceSku | where {$_.Locations.Contains("centralus") -and $_.ResourceType.Contains("virtualMachines") -and $_.Name.Contains("v3")} | fc
 ```
 
-Приложение "fc" в конце возвращает более подробную информацию.
+Добавление «FC» в конце Возвращает дополнительные сведения.
 
 ## <a name="solution-2---azure-cli"></a>Решение 2 — Azure CLI
 

@@ -1,6 +1,6 @@
 ---
-title: ABS на языке запросов Azure Cosmos DB
-description: Узнайте о том, как система Абсолют (ABS) S-L в Azure Cosmos DB возвращает положительное значение указанного численного выражения
+title: Язык запросов ABS в Azure Cosmos DB
+description: Сведения о том, как абсолютная (ABS) системная функция SQL в Azure Cosmos DB возвращает положительное значение указанного числового выражения
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/04/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 6d173827f2695cc20fa208d390731acf0edb3848
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78301103"
 ---
-# <a name="abs-azure-cosmos-db"></a>ABS (Azure Космос DB)
+# <a name="abs-azure-cosmos-db"></a>ABS (Azure Cosmos DB)
  Возвращает модуль (положительное значение) указанного числового выражения.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -34,7 +34,7 @@ ABS (<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  Ниже приведены результаты использования `ABS` функции на трех разных числах.  
+  В следующем примере показаны результаты использования `ABS` функции для трех различных чисел.  
   
 ```sql
 SELECT ABS(-1) AS abs1, ABS(0) AS abs2, ABS(1) AS abs3 
@@ -48,10 +48,10 @@ SELECT ABS(-1) AS abs1, ABS(0) AS abs2, ABS(1) AS abs3
 
 ## <a name="remarks"></a>Remarks
 
-Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

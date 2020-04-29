@@ -1,6 +1,6 @@
 ---
 title: STARTSWITH на языке запросов Azure Cosmos DB
-description: Узнайте о функции системы S'L STARTSWITH в Azure Cosmos DB.
+description: Дополнительные сведения о функции SQL System STARTSWITH в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 9ed49c067946186f8b79f67bad0a460113eacb73
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78295714"
 ---
-# <a name="startswith-azure-cosmos-db"></a>STARTSWITH (Azure Космос DB)
+# <a name="startswith-azure-cosmos-db"></a>STARTSWITH (Azure Cosmos DB)
  Возвращает значение логического типа, указывающее, начинается ли первое строковое выражение вторым.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -26,10 +26,10 @@ STARTSWITH(<str_expr1>, <str_expr2>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr1*  
-   Является выражением строки.
+   Является строковым выражением.
   
 *str_expr2*  
-   Является ли строка выражение по сравнению с началом *str_expr1*.
+   Строковое выражение, сравниваемое с началом *str_expr1*.
 
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -51,10 +51,10 @@ SELECT STARTSWITH("abc", "b") AS s1, STARTSWITH("abc", "a") AS s2
 
 ## <a name="remarks"></a>Remarks
 
-Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Строка функции Azure Космос DB](sql-query-string-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

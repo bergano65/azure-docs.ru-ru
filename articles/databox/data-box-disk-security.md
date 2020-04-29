@@ -1,6 +1,6 @@
 ---
-title: Функции безопасности Microsoft Azure Data Box Disk (ru) Документы Майкрософт в данных
-description: Описывает функции безопасности, реализованные для Azure Data Box Disk, облачного решения, которое позволяет передавать большие объемы данных в Azure
+title: Microsoft Azure функции безопасности Диск Data Box | Документация Майкрософт данных
+description: Описание функций безопасности, реализованных для Диск Azure Data Box, облачного решения, которое позволяет передавать большие объемы данных в Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: alkohli
 ms.openlocfilehash: 59cce6d89bc863ad489a8ed37c7f284d3085c775
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79117266"
 ---
 # <a name="azure-data-box-disk-security-and-data-protection"></a>Безопасность работы Диска Azure Data Box и защита данных
@@ -71,12 +71,12 @@ ms.locfileid: "79117266"
 - **Сведения о заказе**. После создания заказа адрес доставки, электронная почта, контактная информация пользователей хранятся на портале Azure. Сохраненная информация включает следующее.
 
   - имя контактного лица;
-  - номер телефона.
-  - Email
-  - почтовый адрес;
+  - Номер телефона
+  - Электронная почта
+  - Адрес по улице
   - Город
   - почтовый индекс;
-  - Штат
+  - Состояние
   - страна, область, край, округ, регион;
   - идентификатор диска;
   - номер счета перевозчика;
@@ -89,7 +89,7 @@ ms.locfileid: "79117266"
 Дополнительные сведения см. в политике конфиденциальности Майкрософт в [центре управления безопасностью](https://www.microsoft.com/trustcenter).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Знакомство с [требованиями диска Data Box](data-box-disk-system-requirements.md).
 - Объяснение [ограничений диска Data Box](data-box-disk-limits.md).

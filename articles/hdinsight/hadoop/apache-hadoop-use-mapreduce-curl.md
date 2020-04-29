@@ -9,26 +9,26 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/13/2020
 ms.openlocfilehash: abc3cc8c526e37e18f1e67b109a9a8e15ff8c989
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78302718"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-rest"></a>Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST
 
-Узнайте, как использовать Apache Hive WebHCat REST API для выполнения задания MapReduce в кластере Apache Hadoop в кластере HDInsight. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью необработанных HTTP-запросов для выполнения заданий MapReduce, их мониторинга и получения их результатов.
+Узнайте, как использовать Apache Hive WebHCat REST API для выполнения заданий MapReduce на Apache Hadoop кластере HDInsight. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью необработанных HTTP-запросов для выполнения заданий MapReduce, их мониторинга и получения их результатов.
 
 > [!NOTE]  
 > Если вы уже знакомы с использованием серверов Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь с документом [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Кластер Apache Hadoop в HDInsight. [См. Создать кластеры Apache Hadoop с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
+* Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
 Одно из двух:
   * Windows PowerShell или,
-  * [Curl](https://curl.haxx.se/) с [jq](https://stedolan.github.io/jq/)
+  * [Перелистывание](https://curl.haxx.se/) с [JQ](https://stedolan.github.io/jq/)
 
 ## <a name="run-a-mapreduce-job"></a>Выполнение задания MapReduce
 
@@ -39,7 +39,7 @@ ms.locfileid: "78302718"
 
 ### <a name="curl"></a>Curl
 
-1. Для удобства использования установите переменные ниже. Этот пример основан на среде Windows, пересматривайте по мере необходимости для вашей среды.
+1. Для простоты использования задайте переменные ниже. Этот пример основан на среде Windows, исправлять ее в соответствии с потребностями среды.
 
     ```cmd
     set CLUSTERNAME=
@@ -65,7 +65,7 @@ ms.locfileid: "78302718"
     {"version":"v1","status":"ok"}
     ```
 
-1. Чтобы отправить задание MapReduce, используйте следующую команду. Изменение пути к **jq** по мере необходимости.
+1. Чтобы отправить задание MapReduce, используйте следующую команду. При необходимости измените путь на **JQ** .
 
     ```cmd
     curl -u admin:%PASSWORD% -d user.name=admin ^
@@ -77,7 +77,7 @@ ms.locfileid: "78302718"
 
     Конец универсального кода ресурса (/mapreduce/jar) сообщает WebHCat, что этот запрос запускает задание MapReduce из класса в JAR-файле. Ниже приведены параметры, используемые в этой команде:
 
-   * **-d** `-G` : не используется, поэтому запрос по умолчанию по умолчанию к методу POST. `-d` задает значения данных, отправляемые в запросе.
+   * **-d**: `-G` не используется, поэтому запрос по умолчанию использует метод POST. `-d` задает значения данных, отправляемые в запросе.
      * **user.name**— пользователь, выполняющий команду.
      * **jar**: расположение JAR-файла, содержащего класс для запуска.
      * **class**: класс, содержащий логику MapReduce.
@@ -87,7 +87,7 @@ ms.locfileid: "78302718"
 
        job_1415651640909_0026
 
-1. Чтобы проверить состояние задания, используйте следующую команду. Замените значение `JOBID` для **с фактическим** значением, возвращенным на предыдущем этапе. Пересмотрите расположение **jq** по мере необходимости.
+1. Чтобы проверить состояние задания, используйте следующую команду. Замените значение `JOBID` на **фактическое** значение, возвращенное на предыдущем шаге. При необходимости измените расположение **JQ** .
 
     ```cmd
     set JOBID=job_1415651640909_0026
@@ -98,14 +98,14 @@ ms.locfileid: "78302718"
 
 ### <a name="powershell"></a>PowerShell
 
-1. Для удобства использования установите переменные ниже. Замените `CLUSTERNAME` свое реальное имя кластера. Выполните команду и введите пароль входа кластера при запросе.
+1. Для простоты использования задайте переменные ниже. Замените `CLUSTERNAME` фактическим именем кластера. Выполните команду и введите пароль для входа в кластер при появлении запроса.
 
     ```powershell
     $clusterName="CLUSTERNAME"
     $creds = Get-Credential -UserName admin -Message "Enter the cluster login password"
     ```
 
-1. используйте следующую команду, чтобы убедиться, что вы можете подключиться к кластеру HDInsight:
+1. Используйте следующую команду, чтобы убедиться, что вы можете подключиться к кластеру HDInsight:
 
     ```powershell
     $resp = Invoke-WebRequest -Uri "https://$clustername.azurehdinsight.net/templeton/v1/status" `
@@ -171,9 +171,9 @@ ms.locfileid: "78302718"
 
 1. После изменения состояния задания на `SUCCEEDED` результаты задания можно получить из хранилища BLOB-объектов Azure. Параметр `statusdir`, передаваемый в запросе, содержит расположение выходного файла. В данном случае это `/example/curl`. Этот адрес задает каталог `/example/curl` для сохранения выходных данных задания, который размещен в хранилище по умолчанию для кластера.
 
-Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](/cli/azure/install-azure-cli). Для получения дополнительной информации об использовании Azure CLI [Quickstart: Create, download, and list blobs with Azure CLI](../../storage/blobs/storage-quickstart-blobs-cli.md)для работы с хранилищем Azure Blob см.
+Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI для работы с хранилищем BLOB-объектов Azure см. в разделе [Краткое руководство. Создание, скачивание и перечисление больших двоичных объектов с помощью Azure CLI](../../storage/blobs/storage-quickstart-blobs-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight:
 

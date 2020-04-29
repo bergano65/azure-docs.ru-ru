@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 05/12/2017
 ms.author: rclaus
 ms.openlocfilehash: 253f2ab1b192d22f43e4082766adf4ec4f86fe71
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78969248"
 ---
 # <a name="common-azure-cli-commands-for-managing-azure-resources"></a>Основные команды Azure CLI для управления ресурсами Azure
@@ -58,7 +58,7 @@ Azure CLI позволяет создавать ресурсы Azure в macOS, L
 | Создание виртуальной машины на основе образа | `az vm create --resource-group myResourceGroup --name myNewVM --image myImage` |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о примерах команд интерфейса командной строки см. в руководстве по [созданию виртуальных машин Linux и управлению ими с помощью Azure CLI](tutorial-manage-vm.md).
 
 

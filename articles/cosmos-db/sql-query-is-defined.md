@@ -1,6 +1,6 @@
 ---
-title: IS_DEFINED на языке запросов Запроса Azure Cosmos DB
-description: Узнайте о функциях системы S'L IS_DEFINED в Azure Cosmos DB.
+title: IS_DEFINED языка запросов Azure Cosmos DB
+description: Сведения о IS_DEFINED системных функций SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: a5fcaf52d8e9e6b942a95f0b0c43f3f654c5d5d2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78303857"
 ---
 # <a name="is_defined-azure-cosmos-db"></a>IS_DEFINED (Azure Cosmos DB)
@@ -26,7 +26,7 @@ IS_DEFINED(<expr>)
 ## <a name="arguments"></a>Аргументы
   
 *expr*  
-   Есть любое выражение.  
+   Любое выражение.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -48,10 +48,10 @@ SELECT IS_DEFINED({ "a" : 5 }.a) AS isDefined1, IS_DEFINED({ "a" : 5 }.b) AS isD
 
 ## <a name="remarks"></a>Remarks
 
-Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Функции проверки типа Azure Cosmos DB](sql-query-type-checking-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Функции проверки типов Azure Cosmos DB](sql-query-type-checking-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

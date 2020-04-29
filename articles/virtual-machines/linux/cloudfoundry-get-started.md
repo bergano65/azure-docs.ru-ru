@@ -1,5 +1,5 @@
 ---
-title: Начало работы с облачным литейным заводом в Microsoft Azure
+title: начало работы с Cloud Foundry на Microsoft Azure
 description: Запуск OSS или Pivotal Cloud Foundry в Microsoft Azure
 author: seanmck
 ms.service: virtual-machines-linux
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 01/19/2017
 ms.author: seanmck
 ms.openlocfilehash: ba0b4a636d8f785f1c169e4066c9cf6d25ba81db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78970055"
 ---
 # <a name="cloud-foundry-on-azure"></a>Cloud Foundry в Azure
@@ -55,7 +55,7 @@ Cloud Foundry придерживается методики [12-факторно
 
 Cloud Foundry идеально подходит для гибкой разработки программного обеспечения, включая использование непрерывной интеграции (CI) и непрерывной доставки (CD). Если вы используете Azure DevOps Services для управления проектами и хотите установить конвейер CI/CD, нацеленный на Cloud Foundry, то можете использовать [расширение для сборки Cloud Foundry для Azure DevOps Services](https://marketplace.visualstudio.com/items?itemName=ms-vsts.cloud-foundry-build-extension). Этот подключаемый модуль упрощает настройку и автоматизацию развертываний на платформе Cloud Foundry, работающей в Azure или в другой среде.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Pivotal Cloud Foundry on Microsoft Azure](https://azure.microsoft.com/marketplace/partners/pivotal/pivotal-cloud-foundryazure-pcf/) (Pivotal Cloud Foundry в Microsoft Azure)
 - [Развертывание первого приложения в Cloud Foundry в Microsoft Azure](./cloudfoundry-deploy-your-first-app.md)

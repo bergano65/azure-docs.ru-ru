@@ -1,6 +1,6 @@
 ---
-title: ARRAY_LENGTH на языке запросов Запроса Azure Cosmos DB
-description: Узнайте о том, как система длины массива S'L в Azure Cosmos DB возвращает количество элементов заданного выражения массива
+title: ARRAY_LENGTH языка запросов Azure Cosmos DB
+description: Сведения о том, как системная функция SQL Length массива в Azure Cosmos DB возвращает число элементов указанного выражения массива
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 3596ce4bc702d5e54225d8c90db2f9563feab670
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78303993"
 ---
 # <a name="array_length-azure-cosmos-db"></a>ARRAY_LENGTH (Azure Cosmos DB)
@@ -26,7 +26,7 @@ ARRAY_LENGTH(<arr_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *arr_expr*  
-   Является выражением массива.  
+   Выражение массива.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -34,7 +34,7 @@ ARRAY_LENGTH(<arr_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  Следующий пример, как получить длину `ARRAY_LENGTH`массива с помощью.  
+  В следующем примере показано, как получить длину массива с помощью `ARRAY_LENGTH`.  
   
 ```sql
 SELECT ARRAY_LENGTH(["apples", "strawberries", "bananas"]) AS len  
@@ -48,10 +48,10 @@ SELECT ARRAY_LENGTH(["apples", "strawberries", "bananas"]) AS len
   
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Array функции Azure Космос DB](sql-query-array-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

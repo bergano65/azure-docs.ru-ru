@@ -1,6 +1,6 @@
 ---
-title: IS_STRING на языке запросов Запроса Azure Cosmos DB
-description: Узнайте о функции системы S'L IS_STRING в Azure Cosmos DB.
+title: IS_STRING языка запросов Azure Cosmos DB
+description: Сведения о IS_STRING системных функций SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: a717f343b0f46522a3ce2bb56c32e3f15998d777
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78303772"
 ---
-# <a name="is_string-azure-cosmos-db"></a>IS_STRING (Azure Космос DB)
+# <a name="is_string-azure-cosmos-db"></a>IS_STRING (Azure Cosmos DB)
  Возвращает логическое значение, указывающее, является ли указанное выражение строковым значением.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -26,7 +26,7 @@ IS_STRING(<expr>)
 ## <a name="arguments"></a>Аргументы
   
 *expr*  
-   Есть любое выражение.  
+   Любое выражение.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -34,7 +34,7 @@ IS_STRING(<expr>)
   
 ## <a name="examples"></a>Примеры
   
-  Следующий пример проверяет объекты JSON Boolean, число, строку, null, `IS_STRING` объект, массив и неопределенные типы с помощью функции.  
+  В следующем примере выполняется проверка объектов логического типа, числа, строки, null, объекта, массива и неопределенных типов с помощью `IS_STRING` функции.  
   
 ```sql
 SELECT   
@@ -55,10 +55,10 @@ SELECT
 
 ## <a name="remarks"></a>Remarks
 
-Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Функции проверки типа Azure Cosmos DB](sql-query-type-checking-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Функции проверки типов Azure Cosmos DB](sql-query-type-checking-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

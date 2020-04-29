@@ -17,14 +17,14 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5585f0cd04dca4145f0322db9d625e35372b24b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78298349"
 ---
 # <a name="identity-synchronization-and-duplicate-attribute-resiliency"></a>Синхронизация удостоверений и устойчивость повторяющихся атрибутов
-Дублирование атрибутики — это функция в Active Directory Azure, которая устранит трение, вызванное конфликтами **UserPrincipalName** и SMTP **ProxyAddress** при запуске одного из инструментов синхронизации Microsoft.
+Устойчивость повторяющихся атрибутов — это функция в Azure Active Directory, которая устраняет трение, вызванное **userPrincipalName** и **proxyAddress** конфликтов SMTP при выполнении одного из средств синхронизации Майкрософт.
 
 Эти два атрибута обычно должны быть уникальными для всех объектов **Пользователь**, **Группа** и **Контакт** в заданном клиенте Azure Active Directory.
 
@@ -40,9 +40,9 @@ ms.locfileid: "78298349"
 
 ## <a name="behavior-with-duplicate-attribute-resiliency"></a>Поведение с устойчивостью повторяющихся атрибутов
 Azure Active Directory не завершает сбоем подготовку или обновление объекта с повторяющимся атрибутом. Вместо этого Azure Active Directory "помещает на карантин" повторяющийся атрибут, который нарушает ограничение уникальности. Если этот атрибут необходим для подготовки, как, например UserPrincipalName, служба назначает значение заполнителя. Формат этих временных значений следующий:  
-OriginalPrefix>_**4DigitNumber \@ \<\<>InitialTenantDomain>.onmicrosoft.com . \<**_
+_** \@ \<Оригиналпрефикс>+\<4DigitNumber>инитиалтенантдомаин>. onmicrosoft.com. \<**_
 
-Процесс устойчивости атрибутов обрабатывает только значения UPN и SMTP **ProxyAddress.**
+Процесс устойчивости атрибута обрабатывает только значения UPN и SMTP **proxyAddress** .
 
 Если атрибут не обязателен (например, **ProxyAddress**), то Azure Active Directory просто помещает конфликтующий атрибут в карантин и приступает к созданию или обновлению объекта.
 
@@ -69,7 +69,7 @@ OriginalPrefix>_**4DigitNumber \@ \<\<>InitialTenantDomain>.onmicrosoft.com . \<
 > С помощью командлета Set-MsolDirSyncFeature больше нельзя упреждающе включать функцию "Устойчивость повторяющихся атрибутов", прежде чем она будет включена для вашего клиента. Чтобы протестировать эту функцию, необходимо создать клиент Azure Active Directory.
 
 ## <a name="identifying-objects-with-dirsyncprovisioningerrors"></a>Идентификация объектов с DirSyncProvisioningErrors
-В настоящее время существует два метода идентификации объектов, которые имеют эти ошибки из-за дублирующих конфликтов свойств, Azure Active Directory PowerShell и [центр админирования Microsoft 365.](https://admin.microsoft.com) В будущем планируется добавить к этим средствам создание отчетов на портале.
+В настоящее время существует два метода для обнаружения объектов, имеющих эти ошибки из-за повторяющихся конфликтов свойств, Azure Active Directory PowerShell и [центра администрирования Microsoft 365](https://admin.microsoft.com). В будущем планируется добавить к этим средствам создание отчетов на портале.
 
 ### <a name="azure-active-directory-powershell"></a>PowerShell Azure Active Directory
 Для командлетов PowerShell, упомянутых в этой статье, верны следующие утверждения:
@@ -81,12 +81,12 @@ OriginalPrefix>_**4DigitNumber \@ \<\<>InitialTenantDomain>.onmicrosoft.com . \<
 
 Затем используйте следующие командлеты и операторы для просмотра ошибок разными способами.
 
-1. [Посмотреть все](#see-all)
+1. [Просмотреть все](#see-all)
 2. [По типу свойства](#by-property-type)
-3. [По конфликтующей ценности](#by-conflicting-value)
-4. [Использование строки поиска](#using-a-string-search)
+3. [По конфликтующему значению](#by-conflicting-value)
+4. [Использование поиска по строкам](#using-a-string-search)
 5. Сортированные.
-6. [В ограниченном количестве или во всех](#in-a-limited-quantity-or-all)
+6. [В ограниченном количестве или все](#in-a-limited-quantity-or-all)
 
 #### <a name="see-all"></a>Смотреть все
 Чтобы просмотреть общий список ошибок подготовки атрибутов в клиенте, после подключения запустите следующий командлет.
@@ -101,7 +101,7 @@ OriginalPrefix>_**4DigitNumber \@ \<\<>InitialTenantDomain>.onmicrosoft.com . \<
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName UserPrincipalName`
 
-либо
+Или
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
@@ -116,17 +116,17 @@ OriginalPrefix>_**4DigitNumber \@ \<\<>InitialTenantDomain>.onmicrosoft.com . \<
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -SearchString User`
 
 #### <a name="in-a-limited-quantity-or-all"></a>В ограниченном количестве или все.
-1. **>\<MaxResults Int** можно использовать для ограничения запроса определенным количеством значений.
+1. **MaxResults \<int>** можно использовать для ограничения запроса на определенное количество значений.
 2. **All** гарантирует получение всех результатов в случае большого количества ошибок.
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -MaxResults 5`
 
 ## <a name="microsoft-365-admin-center"></a>Центр администрирования Microsoft 365
-Ошибки синхронизации каталогов можно просмотреть в центре админирования Microsoft 365. Отчет в центре админ-сообщения Microsoft 365 отображает только объекты **пользователей,** которые имеют эти ошибки. Этот отчет не содержит сведений о конфликтах между такими объектами, как **Группы** и **Контакты**.
+Ошибки синхронизации службы каталогов можно просмотреть в центре администрирования Microsoft 365. В отчете в центре администрирования Microsoft 365 отображаются только те объекты **пользователя** , которые содержат эти ошибки. Этот отчет не содержит сведений о конфликтах между такими объектами, как **Группы** и **Контакты**.
 
 ![Активные пользователи](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/1234.png "Активные пользователи")
 
-Для получения инструкций о том, как просматривать ошибки синхронизации каталогов в центре админизации Microsoft 365, [см.](https://support.office.com/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067)
+Инструкции по просмотру ошибок синхронизации каталогов в центре администрирования Microsoft 365 см. в разделе [Определение ошибок синхронизации каталогов в Office 365](https://support.office.com/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067).
 
 ### <a name="identity-synchronization-error-report"></a>Отчет об ошибках синхронизации удостоверений
 Когда объект с конфликтом повторяющихся атрибутов обрабатывается с помощью нового поведения, в электронное письмо, содержащее стандартный отчет об ошибках синхронизации удостоверений, добавляется уведомление. Это письмо отправляется контакту клиента, предназначенному для технических уведомлений. Но в этом поведении есть важные изменения. Раньше сведения о конфликте повторяющихся атрибутов включались в каждый отчет об ошибках до тех пор, пока конфликт не разрешался. После включения нового поведения уведомление об ошибке, связанное с тем или иным конфликтом, отображается только один раз: когда конфликтующий атрибут помещается на карантин.
@@ -147,9 +147,9 @@ OriginalPrefix>_**4DigitNumber \@ \<\<>InitialTenantDomain>.onmicrosoft.com . \<
 1. Объекты с определенными конфигурациями атрибутов по-прежнему вызывают ошибки экспорта вместо помещения в карантин повторяющихся атрибутов.  
    Пример:
    
-    а. Новый пользователь создается в AD с UPN **\@Джо contoso.com** и ProxyAddress **smtp:Joe\@contoso.com**
+    a. Новый пользователь создается в AD с именем участника-пользователя **джо\@contoso.com** и ProxyAddress **SMTP: Джо\@contoso.com**
    
-    b. Свойства этого объекта противоречат существующей группе, где ProxyAddress является **\@SMTP:Joe contoso.com**.
+    b. Свойства этого объекта конфликтуют с существующей группой, где ProxyAddress — это **SMTP: джо\@contoso.com**.
    
     c. После экспорта отображается ошибка о **конфликте ProxyAddress** , при этом конфликтующие атрибуты не помещаются на карантин. Операция повторяется после каждого цикла синхронизации, как это и происходило до включения компонента устойчивости.
 2. Если локально создаются две группы с одним и тем же адресом SMTP, то одну группу не удается подготовить с первой попытки из-за стандартной ошибки повторяющихся значений **ProxyAddress** . Но на следующем цикле синхронизации повторяющиеся значения будут правильно помещены на карантин.
@@ -159,23 +159,23 @@ OriginalPrefix>_**4DigitNumber \@ \<\<>InitialTenantDomain>.onmicrosoft.com . \<
 1. Подробное сообщение об ошибке для двух объектов в конфликте, связанном с именем UPN, содержит одинаковые сведения. Это означает, что свойство UPN обоих объектов изменено или помещено на карантин, но на самом деле данные изменились только в одном объекте.
 2. Подробное сообщение об ошибке, связанное с конфликтом UPN, показывает неправильное свойство displayName пользователя, имя UPN которого изменено или помещено на карантин. Пример:
    
-    а. **Пользователь A** синхронизируется первым с **UPN\@и contoso.com пользователя**.
+    a. Сначала **пользователь A** выполняет синхронизацию с **UPN = user\@contoso.com**.
    
-    b. **Пользователь B** пытается быть синхронизированы рядом с **UPN\@- пользователь contoso.com**.
+    b. Попытка синхронизации **пользователя б** выполняется следующим с **именем участника-пользователя (UPN =\@user contoso.com**).
    
-    c. **Пользователь B's** UPN изменен на **User1234\@contoso.onmicrosoft.com** и **contoso.com пользователей\@** добавляется в **DirSyncProvisioningErrors.**
+    c. **Пользователь б** Имя участника-пользователя изменено на **User1234\@contoso.onmicrosoft.com** , а **\@пользователь Contoso.com** добавляется в **дирсинкпровисионинжеррорс**.
    
-    d. Сообщение об ошибке для **пользователя B** должно указывать, что **пользователь A** уже имеет contoso.com **пользователя\@** как UPN, но он показывает собственное displayName **пользователя B.**
+    d. Сообщение об ошибке для **пользователя б** должно означать, что пользователь **A** уже имеет **\@contoso.com** в качестве имени участника-пользователя, но в нем отображается имя **пользователя b** .
 
 **Отчет об ошибках синхронизации удостоверений**.
 
 Ссылка на *указания по устранению этой проблемы* неправильная.  
     ![Активные пользователи](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/6.png "Активные пользователи")  
 
-Он должен [https://aka.ms/duplicateattributeresiliency](https://aka.ms/duplicateattributeresiliency)указать на .
+Он должен указывать на [https://aka.ms/duplicateattributeresiliency](https://aka.ms/duplicateattributeresiliency).
 
 ## <a name="see-also"></a>См. также
-* [Синхронизация azure AD Connect](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
 * [Определение ошибок синхронизации службы каталогов в Office 365](https://support.office.com/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067)
 

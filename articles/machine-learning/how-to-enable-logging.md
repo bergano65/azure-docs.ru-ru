@@ -1,6 +1,6 @@
 ---
-title: Включить регистрацию в машинном обучении Azure
-description: Узнайте, как включить журнал в Azure Machine Learning, используя как пакет регистрации Python по умолчанию, так и с помощью функциональности SDK.
+title: Включение ведения журнала в Машинное обучение Azure
+description: Узнайте, как включить ведение журнала в Машинное обучение Azure с помощью пакета ведения журнала Python по умолчанию, а также с помощью функций, характерных для пакета SDK.
 ms.author: trbye
 author: trevorbye
 services: machine-learning
@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.reviewer: trbye
 ms.date: 03/05/2020
 ms.openlocfilehash: 73b9ae6bc3c15526bfdafd74330c7b86286631b1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78396137"
 ---
-# <a name="enable-logging-in-azure-machine-learning"></a>Включить регистрацию в машинном обучении Azure
+# <a name="enable-logging-in-azure-machine-learning"></a>Включение ведения журнала в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Пакет SDK Python для Машинного обучения Azure позволяет настроить ведение журнала, используя стандартный пакет ведения журнала для Python или собственные функции пакета SDK. Можно вести журналы как локально, так и в рабочей области на портале. Журналы предоставляют разработчикам сведения о состоянии приложения в реальном времени и могут помочь в диагностике ошибок или предупреждений. Из этой статьи вы узнаете:
@@ -27,7 +27,7 @@ ms.locfileid: "78396137"
 > * как включить ведение журнала для развернутых моделей:
 > * как задать параметры `logging` в Python.
 
-[Создайте рабочее пространство для машинного обучения Azure.](how-to-manage-workspace.md) Используйте [руководство](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) для получения дополнительной информации SDK.
+[Создайте рабочую область машинное обучение Azure](how-to-manage-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
 
 ## <a name="training-models-and-compute-target-logging"></a>Ведение журнала для обучаемых моделей и целевых объектов вычислений
 
@@ -41,7 +41,7 @@ run = exp.start_logging()
 run.log("test-val", 10)
 ```
 
-Ознакомьтесь с справочной документацией для класса [Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py) для дополнительных функций регистрации.
+Дополнительные функции ведения журнала см. в справочной документации по классу [Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py) .
 
 Чтобы сохранять сведения о состоянии приложения в ходе обучения в локальный журнал, используйте параметр `show_output`. Подробное ведение журналов позволяет получить сведения об обучении, а также об удаленных ресурсах и целевых объектах вычислений. С помощью приведенного ниже кода можно настроить сохранение данных в журнал при отправке эксперимента.
 
@@ -101,7 +101,7 @@ logs = service.get_logs()
 service.update(enable_app_insights=True)
 ```
 
-Для получения дополнительной информации [см. Монитор и сбор данных из конечных точек веб-сервиса ML](how-to-enable-app-insights.md).
+Дополнительные сведения см. в статье [мониторинг и получение данных из конечных точек веб-службы ML](how-to-enable-app-insights.md).
 
 ## <a name="python-native-logging-settings"></a>Параметры собственного ведения журнала Python
 
@@ -112,6 +112,6 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Мониторинг и сбор данных с конечных точек веб-сервиса ML](how-to-enable-app-insights.md)
+* [Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения](how-to-enable-app-insights.md)

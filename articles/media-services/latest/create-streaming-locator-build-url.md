@@ -1,6 +1,6 @@
 ---
-title: Создание потокового локатора и создание URL-адресов - Azure Media Services
-description: В этой статье показано, как создать потоковое локатор и создавать URL-адреса.
+title: Создание указателя потоковой передачи и URL-адресов сборки с помощью служб мультимедиа Azure
+description: В этой статье показано, как создать указатель потоковой передачи и URL-адреса сборки.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -12,21 +12,21 @@ ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
 ms.openlocfilehash: 2972c60aa5874c21a6f7bce21020ad58b5f3b556
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78304567"
 ---
-# <a name="create-a-streaming-locator-and-build-urls"></a>Создание потокового локатора и создание URL-адресов
+# <a name="create-a-streaming-locator-and-build-urls"></a>Создание указателя потоковой передачи и формирование URL-адресов
 
-Чтобы создать URL-адрес потоковой передачи, необходимо сначала создать [потоковое locator.](streaming-locators-concept.md) Затем вы конкретируете имя хоста [потоковой точки](https://docs.microsoft.com/rest/api/media/streamingendpoints) и путь **потокового локатора.** В этом примере используется **конечная точка потоковой передачи** *по умолчанию.* При первом создании учетной записи Media Service эта **конечная точка потоковой передачи** *по умолчанию* будет находиться в остановленном состоянии, поэтому необходимо вызвать **Start,** чтобы начать потоковую передачу.
+Чтобы создать URL-адрес потоковой передачи в службах мультимедиа Azure, сначала необходимо создать [указатель потоковой передачи](streaming-locators-concept.md). Затем вы объединяете имя узла [конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints) и путь **указателя потоковой передачи** . В этом примере используется **конечная точка потоковой передачи** *по умолчанию*. При первом создании учетной записи службы мультимедиа эта **Конечная точка потоковой передачи** *по умолчанию* будет находиться в остановленном состоянии, поэтому необходимо вызвать метод **Start** для запуска потоковой передачи.
 
-В этой статье показано, как создать потоковое локаторио и создать URL-адрес потоковой передачи с помощью Java и SDK .NET.
+В этой статье показано, как создать указатель потоковой передачи и создать URL-адрес потоковой передачи с помощью пакетов SDK для Java и .NET.
 
 ## <a name="prerequisite"></a>Предварительные требования 
 
-Предварительная [динамическая упаковка](dynamic-packaging-overview.md)
+Предварительный просмотр [динамической упаковки](dynamic-packaging-overview.md)
 
 ## <a name="java"></a>Java
 
@@ -85,7 +85,7 @@ private static List<String> getStreamingUrls(MediaManager manager, String resour
 }
 ```
 
-Посмотреть полный пример кода: [КодированиеСМЕСПредопределениеПредсет](https://github.com/Azure-Samples/media-services-v3-java/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/src/main/java/sample/EncodingWithMESPredefinedPreset.java)
+См. полный пример кода: [енкодингвисмеспредефинедпресет](https://github.com/Azure-Samples/media-services-v3-java/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/src/main/java/sample/EncodingWithMESPredefinedPreset.java)
 
 ## <a name="net"></a>.NET
 
@@ -158,7 +158,7 @@ private static async Task<IList<string>> GetStreamingUrlsAsync(
 }
 ```
 
-Посмотреть полный пример кода: [КодированиеСМЕСПредопределениеПредсет](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/Program.cs)
+См. полный пример кода: [енкодингвисмеспредефинедпресет](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/Program.cs)
 
 ## <a name="see-also"></a>См. также
 
@@ -166,6 +166,6 @@ private static async Task<IList<string>> GetStreamingUrlsAsync(
 * [Создание фильтров с помощью REST](filters-dynamic-manifest-rest-howto.md)
 * [Create filters with CLI](filters-dynamic-manifest-cli-howto.md) (Создание фильтров с помощью .NET)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Защитите содержимое DRM.](protect-with-drm.md)
+[Защитите содержимое с помощью DRM](protect-with-drm.md).

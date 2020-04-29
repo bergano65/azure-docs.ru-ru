@@ -1,6 +1,6 @@
 ---
 title: CONCAT на языке запросов Azure Cosmos DB
-description: Узнайте о том, как система CONCAT S'L в Azure Cosmos DB возвращает строку, которая является результатом совмещения двух или более значений строки
+description: Узнайте, как системная функция CONCAT SQL в Azure Cosmos DB возвращает строку, которая является результатом сцепления двух или более строковых значений.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: c8a0941376ed74d7f8cb819d78df43eb9f0b7bd1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78302616"
 ---
-# <a name="concat-azure-cosmos-db"></a>КОНКАТ (Azure Космос DB)
+# <a name="concat-azure-cosmos-db"></a>CONCAT (Azure Cosmos DB)
  Возвращает строку, являющуюся результатом объединения двух или более строковых значений.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -26,7 +26,7 @@ CONCAT(<str_expr1>, <str_expr2> [, <str_exprN>])
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Является выражением строки, чтобы примириться с другими значениями. Функция `CONCAT` требует по крайней мере двух *str_expr* аргументов.  
+   Строковое выражение для объединения с другими значениями. `CONCAT` Функции требуется по крайней мере два аргумента *str_expr* .  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -48,10 +48,10 @@ SELECT CONCAT("abc", "def") AS concat
   
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Строка функции Azure Космос DB](sql-query-string-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

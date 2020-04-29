@@ -1,6 +1,6 @@
 ---
 title: COT на языке запросов Azure Cosmos DB
-description: Узнайте о том, как система Cotangent (COT) S'L в Azure Cosmos DB возвращает тригонометрический котанген указанного угла, в радианах, в указанном численном выражении
+description: Сведения о том, как системная функция SQL котангенса (COT) в Azure Cosmos DB возвращает тригонометрический котангенс указанного угла в радианах в указанном числовом выражении
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 25c907644f58ee40ea08e5636d68dc0e84564a28
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78299493"
 ---
-# <a name="cot-azure-cosmos-db"></a>COT (Azure Космос DB)
+# <a name="cot-azure-cosmos-db"></a>COT (Azure Cosmos DB)
  Возвращает тригонометрический котангенс указанного угла в радианах в указанном числовом выражении.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -34,7 +34,7 @@ COT(<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  Следующий пример вычисляет `COT` указанный угол.  
+  В следующем примере вычисляется `COT` указанный угол.  
   
 ```sql
 SELECT COT(124.1332) AS cot  
@@ -48,10 +48,10 @@ SELECT COT(124.1332) AS cot
 
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

@@ -1,47 +1,47 @@
 ---
-title: Функции Azure на Kubernetes с KEDA
-description: Понять, как запускать функции Azure в Kubernetes в облаке или на месте с помощью KEDA, kubernetes на основе автоматического масштабирования событий.
+title: Функции Azure в Kubernetes с Кеда
+description: Узнайте, как выполнять функции Azure в Kubernetes в облаке или локальной среде с помощью Кеда, управляемого событиями автоматического масштабирования на основе Kubernetes.
 author: jeffhollan
 ms.topic: conceptual
 ms.date: 11/18/2019
 ms.author: jehollan
 ms.openlocfilehash: 2c06fdba8f60243acf4e0fabd23df8b832c210db
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78301681"
 ---
-# <a name="azure-functions-on-kubernetes-with-keda"></a>Функции Azure на Kubernetes с KEDA
+# <a name="azure-functions-on-kubernetes-with-keda"></a>Функции Azure в Kubernetes с Кеда
 
-Время выполнения функций Azure обеспечивает гибкость в хостинге, где и как вы хотите.  [KEDA](https://keda.sh) (Kubernetes на основе Event Driven Autoscaling) плавно сочетается с временем выполнения функций Azure и инструментарием, чтобы обеспечить масштаб событий в Kubernetes.
+Среда выполнения функций Azure обеспечивает гибкость при размещении, где и как вам нужно.  [Кеда](https://keda.sh) (автоматическое масштабирование, управляемое событиями на основе Kubernetes) легко с помощью среды выполнения функций Azure и инструментария для обеспечения масштабирования на основе событий в Kubernetes.
 
-## <a name="how-kubernetes-based-functions-work"></a>Как работают функции, основанные на Kubernetes
+## <a name="how-kubernetes-based-functions-work"></a>Принципы работы функций на основе Kubernetes
 
-Служба Функции Azure состоит из двух ключевых компонентов: времени выполнения и контроллера масштаба.  Время выполнения функций выполняется и выполняет сядек.  Время выполнения включает в себя логику, как вызвать, войти и управлять выполнением функций.  Время выполнения функций Azure может выполняться *в любом месте.*  Другим компонентом является контроллер масштаба.  Контроллер масштаба отслеживает скорость событий, ориентированных на вашу функцию, и активно масштабирует количество экземпляров, запускаемых приложением.  Дополнительные сведения см. в статье [Масштабирование и размещение Функций Azure](functions-scale.md).
+Служба "функции Azure" состоит из двух ключевых компонентов: среды выполнения и контроллера масштабирования.  Среда выполнения функций выполняет и выполняет код.  Среда выполнения включает в себя логику для активации, ведения журнала и управления выполнением функций.  Среда выполнения функций Azure может работать *где угодно*.  Другой компонент является контроллером масштабирования.  Контроллер масштабирования отслеживает скорость событий, предназначенных для функции, и заранее масштабирует количество экземпляров, в которых выполняется приложение.  Дополнительные сведения см. в статье [Масштабирование и размещение Функций Azure](functions-scale.md).
 
-Функции, основанные на Kubernetes, обеспечивают время выполнения функций в [контейнере Docker](functions-create-function-linux-custom-image.md) с масштабированием на основе событий через KEDA.  KEDA может масштабироваться до 0 экземпляров (когда никаких событий не происходит) и до *n* экземпляров. Он делает это, подвергая пользовательские метрики для kubernetes autoscaler (Horizontal Pod Autoscaler).  Использование контейнеров Функции с KEDA позволяет воспроизводить возможности серверных функций в любом кластере Kubernetes.  Эти функции также могут быть развернуты с помощью [функции виртуальных узлов Azure Kubernetes Services (AKS)](../aks/virtual-nodes-cli.md) для инфраструктуры без серверов.
+Функции на основе Kubernetes предоставляют среду выполнения функций в [контейнере DOCKER](functions-create-function-linux-custom-image.md) с масштабированием на основе событий через Кеда.  Кеда может масштабироваться до 0 экземпляров (если события не происходят) и до *n* экземпляров. Это достигается за счет предоставления пользовательских метрик для автомасштабирования Kubernetes (горизонтальный Автомасштабирование Pod).  Использование контейнеров функций с Кеда позволяет реплицировать функции бессерверных функций в любом кластере Kubernetes.  Эти функции также можно развернуть с помощью [виртуальных узлов Azure Kubernetes Services (AKS)](../aks/virtual-nodes-cli.md) для бессерверной инфраструктуры.
 
-## <a name="managing-keda-and-functions-in-kubernetes"></a>Управление KEDA и функции в Kubernetes
+## <a name="managing-keda-and-functions-in-kubernetes"></a>Управление Кеда и функциями в Kubernetes
 
-Для выполнения функций в кластере Kubernetes необходимо установить компонент KEDA. Вы можете установить этот компонент с помощью [основных инструментов Azure Functions.](functions-run-local.md)
+Для запуска функций в кластере Kubernetes необходимо установить компонент Кеда. Этот компонент можно установить с помощью [Azure functions Core Tools](functions-run-local.md).
 
-### <a name="installing-with-helm"></a>Установка с шлемом
+### <a name="installing-with-helm"></a>Установка с помощью Helm
 
-Существуют различные способы установки KEDA в любом кластере Kubernetes, включая Helm.  Параметры развертывания задокументированы на [сайте KEDA.](https://keda.sh/deploy/)
+Существует несколько способов установки Кеда в любом кластере Kubernetes, включая Helm.  Параметры развертывания описаны на [сайте Кеда](https://keda.sh/deploy/).
 
-## <a name="deploying-a-function-app-to-kubernetes"></a>Развертывание приложения функции в Kubernetes
+## <a name="deploying-a-function-app-to-kubernetes"></a>Развертывание приложения-функции в Kubernetes
 
-Можно развернуть любое функциональное приложение в кластер Kubernetes под управлением KEDA.  Так как ваши функции работают в `Dockerfile`контейнере Docker, ваш проект нуждается в .  Если его еще нет, можно добавить Dockerfile, запустив следующую команду в корне проекта Функции:
+Вы можете развернуть любое приложение-функцию в кластере Kubernetes, работающем под Кеда.  Так как функции выполняются в контейнере DOCKER, вашему проекту требуется `Dockerfile`.  Если у вас ее еще нет, можно добавить Dockerfile, выполнив следующую команду в корне проекта функций:
 
 ```cli
 func init --docker-only
 ```
 
-Чтобы создать изображение и развернуть свои функции в Kubernetes, запустите следующую команду:
+Чтобы создать образ и развернуть функции в Kubernetes, выполните следующую команду:
 
 > [!NOTE]
-> Основные инструменты будут использовать докер CLI для создания и публикации изображения. Обязательно установить докер уже и подключиться `docker login`к вашей учетной записи с .
+> Основные инструменты будут использовать DOCKER CLI для создания и публикации образа. Убедитесь, что DOCKER уже установлен и подключен к вашей учетной записи с `docker login`помощью.
 
 ```cli
 func kubernetes deploy --name <name-of-function-deployment> --registry <container-registry-username>
@@ -49,15 +49,15 @@ func kubernetes deploy --name <name-of-function-deployment> --registry <containe
 
 > Замените `<name-of-function-deployment>` на имя приложения-функции.
 
-Это создает ресурс `Deployment` Kubernetes, `ScaledObject` ресурс `Secrets`и , который включает переменные среды, импортируемые из файла. `local.settings.json`
+При этом создается ресурс `Deployment` Kubernetes, `ScaledObject` ресурс и `Secrets`, который включает переменные среды, импортированные из `local.settings.json` файла.
 
-### <a name="deploying-a-function-app-from-a-private-registry"></a>Развертывание функционального приложения из частного реестра
+### <a name="deploying-a-function-app-from-a-private-registry"></a>Развертывание приложения-функции из частного реестра
 
-Вышеуказанный поток работает и для частных реестров.  Если вы тянете ваш контейнер изображения из `--pull-secret` частного реестра, включите флаг, который ссылается `func kubernetes deploy`на Kubernetes секрет проведения частных учетных данных реестра при запуске.
+Приведенный выше поток работает и для закрытых реестров.  Если вы извлекаете образ контейнера из частного реестра, включите `--pull-secret` флаг, который ссылается на секрет Kubernetes, содержащий частные учетные данные реестра при запуске `func kubernetes deploy`.
 
-## <a name="removing-a-function-app-from-kubernetes"></a>Удаление приложения функции из Kubernetes
+## <a name="removing-a-function-app-from-kubernetes"></a>Удаление приложения-функции из Kubernetes
 
-После развертывания можно удалить функцию, удалив `Secrets` связанную `Deployment`с `ScaledObject`ним возможность.
+После развертывания можно удалить функцию, удалив связанную `Deployment`, `ScaledObject` `Secrets` созданную.
 
 ```cli
 kubectl delete deploy <name-of-function-deployment>
@@ -65,27 +65,27 @@ kubectl delete ScaledObject <name-of-function-deployment>
 kubectl delete secret <name-of-function-deployment>
 ```
 
-## <a name="uninstalling-keda-from-kubernetes"></a>Установка KEDA из Кубернете
+## <a name="uninstalling-keda-from-kubernetes"></a>Удаление Кеда из Kubernetes
 
-Шаги по удалению KEDA задокументированы [на сайте KEDA.](https://keda.sh/deploy/)
+Действия по удалению Кеда описаны [на сайте Кеда](https://keda.sh/deploy/).
 
-## <a name="supported-triggers-in-keda"></a>Поддерживаемые триггеры в KEDA
+## <a name="supported-triggers-in-keda"></a>Поддерживаемые триггеры в Кеда
 
-KEDA поддерживает следующие триггеры функции Azure:
+Кеда поддерживает следующие триггеры функций Azure:
 
 * [Очереди службы хранилища Azure](functions-bindings-storage-queue.md)
-* [Очереди автобусов Azure](functions-bindings-service-bus.md)
-* [Событие Azure / Концентраторы IoT](functions-bindings-event-hubs.md)
-* [Апач Кафка](https://github.com/azure/azure-functions-kafka-extension)
-* [Очередь КроликаМЗ](https://github.com/azure/azure-functions-rabbitmq-extension)
+* [Очереди служебной шины Azure](functions-bindings-service-bus.md)
+* [Центры событий Azure и центры Интернета вещей](functions-bindings-event-hubs.md)
+* [Apache Kafka](https://github.com/azure/azure-functions-kafka-extension)
+* [Очередь RabbitMQ](https://github.com/azure/azure-functions-rabbitmq-extension)
 
-### <a name="http-trigger-support"></a>Поддержка триггера HTTP
+### <a name="http-trigger-support"></a>Поддержка триггеров HTTP
 
-Функции Azure могут разоблачать триггеры HTTP, но KEDA напрямую ими не управляет.  Вы можете использовать триггер KEDA prometheus для [масштабирования функций HTTP Azure от 1 до *n* экземпляров.](https://dev.to/anirudhgarg_99/scale-up-and-down-a-http-triggered-function-app-in-kubernetes-using-keda-4m42)
+Вы можете использовать функции Azure, которые предоставляют триггеры HTTP, но Кеда не управляют ими напрямую.  Вы можете использовать триггер Prometheus Кеда для [масштабирования функций HTTP Azure от 1 до *n* экземпляров](https://dev.to/anirudhgarg_99/scale-up-and-down-a-http-triggered-function-app-in-kubernetes-using-keda-4m42).
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения см. в следующих ресурсах:
 
-* [Создание функции с помощью пользовательского изображения](functions-create-function-linux-custom-image.md)
+* [Создание функции с помощью пользовательского образа](functions-create-function-linux-custom-image.md)
 * [Как программировать и тестировать функции Azure в локальной среде](functions-develop-local.md)
 * [Как работает план потребления функций Azure](functions-scale.md)

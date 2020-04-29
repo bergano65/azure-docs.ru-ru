@@ -1,6 +1,6 @@
 ---
-title: ROUND на языке запросов Azure Cosmos DB
-description: Узнайте о функции системы ROUND в Azure Cosmos DB.
+title: Язык запросов ROUND Azure Cosmos DB
+description: Дополнительные сведения о функции SQL System ROUND в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: b6aac5a963d0f58a3b21b9fb0958793169a3d444
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78302123"
 ---
 # <a name="round-azure-cosmos-db"></a>ROUND (Azure Cosmos DB)
@@ -34,14 +34,14 @@ ROUND(<numeric_expr>)
   
 ## <a name="remarks"></a>Remarks
   
-  Выполненная операция округления следует за серединой округления от нуля. Если входный данный является числовым выражением, которое падает точно между двумя множеством, то результат будет ближайшим рядовым значением от нуля.  
+  Операция округления выполняется после среднего значения, округленного от нуля. Если входное значение является числовым выражением, которое находится в точности между двумя целыми числами, результатом будет ближайшее целое число от нуля.  
   
-  |<numeric_expr>|Округлые|
+  |<numeric_expr>|Округляется|
   |-|-|
-  |-6.5000|-7|
-  |-0.5|-1|
+  |— 6,5000|-7|
+  |— 0,5|-1|
   |0,5|1|
-  |6.5000|7||
+  |6,5000|7||
   
 ## <a name="examples"></a>Примеры
   
@@ -59,10 +59,10 @@ SELECT ROUND(2.4) AS r1, ROUND(2.6) AS r2, ROUND(2.5) AS r3, ROUND(-2.4) AS r4, 
 
 ## <a name="remarks"></a>Remarks
 
-Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

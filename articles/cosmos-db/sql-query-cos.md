@@ -1,6 +1,6 @@
 ---
 title: COS на языке запросов Azure Cosmos DB
-description: Узнайте о том, как система Cosine (COS) S'L в Azure Cosmos DB возвращает тригонометрический косин указанного угла, в радиане, в указанном выражении
+description: Сведения о том, как косинус (COS) SQL System в Azure Cosmos DB возвращает тригонометрический косинус указанного угла в радианах в указанном выражении
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 40d277ff38691e2cb74bd4d5d78a666c304acfcd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78304027"
 ---
 # <a name="cos-azure-cosmos-db"></a>COS (Azure Cosmos DB)
@@ -34,7 +34,7 @@ COS(<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  Следующий пример вычисляет `COS` указанный угол.  
+  В следующем примере вычисляется `COS` указанный угол.  
   
 ```sql
 SELECT COS(14.78) AS cos  
@@ -48,10 +48,10 @@ SELECT COS(14.78) AS cos
 
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

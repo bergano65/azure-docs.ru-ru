@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 08/01/2017
 ms.author: gwallace
 ms.openlocfilehash: 4b49a9b391eeca2d2e249b171d99f231bda6fdff
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78329126"
 ---
 # <a name="upload-an-azure-service-management-certificate"></a>Передача сертификата управления службами Azure
@@ -42,14 +42,14 @@ ms.locfileid: "78329126"
 3. Обязательно выберите именно ту подписку, с которой необходимо связать сертификат.     
 4. Выбрав правильную подписку, щелкните **Сертификаты управления** в группе _Параметры_.
 
-    ![Параметры](./media/azure-api-management-certs/mgmtcerts_menu.png)
+    !["Настройки"](./media/azure-api-management-certs/mgmtcerts_menu.png)
 
 5. Нажмите кнопку **Отправить** .
 
     ![Кнопка "Отправить" на странице сертификатов](./media/azure-api-management-certs/certificates_page.png)
 6. Укажите сведения в диалоговом окне и нажмите кнопку **Отправить**.
 
-    ![Параметры](./media/azure-api-management-certs/certificate_details.png)
+    !["Настройки"](./media/azure-api-management-certs/certificate_details.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Связав сертификат управления с подпиской и установив соответствующий сертификат локально, вы можете программно подключаться к [REST API классической модели управления](/azure/?pivot=sdkstools) и автоматизировать различные ресурсы Azure, связанные с этой же подпиской.

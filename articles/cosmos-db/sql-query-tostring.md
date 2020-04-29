@@ -1,6 +1,6 @@
 ---
 title: ToString на языке запросов Azure Cosmos DB
-description: Узнайте о функции системы S'L ToString в Azure Cosmos DB.
+description: Дополнительные сведения о функции SQL System ToString в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/04/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 293449b1616e7124245d91c647177b958006009e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78304265"
 ---
 # <a name="tostring-azure-cosmos-db"></a>ToString (Azure Cosmos DB)
@@ -26,7 +26,7 @@ ToString(<expr>)
 ## <a name="arguments"></a>Аргументы
   
 *expr*  
-   Является ли любое масштабируемое выражение.  
+   Любое скалярное выражение.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -34,7 +34,7 @@ ToString(<expr>)
   
 ## <a name="examples"></a>Примеры
   
-  Ниже приводится `ToString` следующий пример, как ведет себя в разных типах.   
+  В следующем примере показано, `ToString` как ведет себя в разных типах.   
   
 ```sql
 SELECT 
@@ -57,7 +57,7 @@ SELECT
 ```json
 {"Products":[{"ProductID":1,"Weight":4,"WeightUnits":"lb"},{"ProductID":2,"Weight":32,"WeightUnits":"kg"},{"ProductID":3,"Weight":400,"WeightUnits":"g"},{"ProductID":4,"Weight":8999,"WeightUnits":"mg"}]}
 ```    
- Ниже приведен пример, как `ToString` можно использовать `CONCAT`другие функции строки, такие как.   
+ В следующем примере показано, `ToString` как можно использовать с другими строковыми функциями `CONCAT`, такими как.   
  
 ```sql
 SELECT 
@@ -78,7 +78,7 @@ FROM p in c.Products
 ```json
 {"id":"08259","description":"Cereals ready-to-eat, KELLOGG, KELLOGG'S CRISPIX","nutrients":[{"id":"305","description":"Caffeine","units":"mg"},{"id":"306","description":"Cholesterol, HDL","nutritionValue":30,"units":"mg"},{"id":"307","description":"Sodium, NA","nutritionValue":612,"units":"mg"},{"id":"308","description":"Protein, ABP","nutritionValue":60,"units":"mg"},{"id":"309","description":"Zinc, ZN","nutritionValue":null,"units":"mg"}]}
 ```
-Ниже приведен пример, как `ToString` можно использовать `REPLACE`другие функции строки, такие как.   
+В следующем примере показано, `ToString` как можно использовать с другими строковыми функциями `REPLACE`, такими как.   
 ```sql
 SELECT 
     n.id AS nutrientID,
@@ -97,10 +97,10 @@ JOIN n IN food.nutrients
 
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Строка функции Azure Космос DB](sql-query-string-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

@@ -1,6 +1,6 @@
 ---
 title: ACOS на языке запросов Azure Cosmos DB
-description: Узнайте о том, как система ACOS (arccosice) S'L в Azure Cosmos DB возвращает угол, в радианах, чей косин является указанным числовым выражением
+description: Сведения о том, как системная функция SQL ACOS (арккосице) в Azure Cosmos DB возвращает угол в радианах, косинус которого является указанным числовым выражением
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,13 +8,13 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 733d6b009f03d61c37170cc506a3b2ec842d7c47
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78300967"
 ---
-# <a name="acos-azure-cosmos-db"></a>ACOS (Azure Космос DB)
+# <a name="acos-azure-cosmos-db"></a>ACOS (Azure Cosmos DB)
  Возвращает угол в радианах, косинус которого равен указанному числовому выражению; также называется арккосинусом.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -34,7 +34,7 @@ ACOS(<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  Следующий пример `ACOS` возвращает -1.  
+  В следующем примере возвращается значение `ACOS` , равное-1.  
   
 ```sql
 SELECT ACOS(-1) AS acos 
@@ -48,10 +48,10 @@ SELECT ACOS(-1) AS acos
 
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Математические функции Azure Космос DB](sql-query-mathematical-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

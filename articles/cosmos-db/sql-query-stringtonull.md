@@ -1,6 +1,6 @@
 ---
-title: StringToNull на языке запросов Azure Cosmos DB
-description: Узнайте о функции системы S'L StringToNull в Azure Cosmos DB.
+title: Стрингтонулл на языке запросов Azure Cosmos DB
+description: Дополнительные сведения о функции SQL System Стрингтонулл в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,14 +8,14 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 7e17547f88465103b61eabec04978ea806ffa2c9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78296445"
 ---
-# <a name="stringtonull-azure-cosmos-db"></a>StringToNull (Azure Cosmos DB)
- Возвращает выражение, переведенное на нулевую. Если выражение не может быть переведено, возвращается неопределенным.  
+# <a name="stringtonull-azure-cosmos-db"></a>Стрингтонулл (Azure Cosmos DB)
+ Возвращает выражение, преобразованное в значение null. Если выражение не может быть преобразовано, возвращает значение undefine.  
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -26,19 +26,19 @@ StringToNull(<str_expr>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Является ли выражение строки, чтобы быть разогнаны как недействительное выражение.
+   Строковое выражение, анализируемое как выражение null.
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
-  Возвращает нулевое выражение или неопределенный.  
+  Возвращает пустое или неопределенное выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  Ниже приводится `StringToNull` следующий пример, как ведет себя в разных типах. 
+  В следующем примере показано, `StringToNull` как ведет себя в разных типах. 
 
-Ниже приведены примеры с допустимыми входными мерами.
+Ниже приведены примеры с допустимыми входными данными.
 
- Whitespace допускается только до или после "null".
+ Пробелы допускаются только до или после "null".
 
 ```sql
 SELECT 
@@ -53,9 +53,9 @@ SELECT
 [{"n1": null, "n2": null, "n3": true}]
 ```  
 
-Ниже приведены примеры с недействительными входными.
+Ниже приведены примеры с недопустимыми входными данными.
 
-Null является чувствительным к делу и должен быть написан со всеми символами нижнего регистра, т.е. "null".
+NULL учитывается с учетом регистра и должен быть записан со всеми символами нижнего регистра, например "null".
 
 ```sql
 SELECT    
@@ -69,7 +69,7 @@ SELECT
 [{}]
 ```  
 
-Пройденое выражение будет разогнано как нулевое выражение; эти входные данные не оцениваются для ввода нулевых и, таким образом, возврата неопределенными.
+Переданное выражение будет проанализировано как выражение null; Эти входные данные не вычисляют значение NULL и, таким же, возвращают неопределенный тип.
 
 ```sql
 SELECT    
@@ -87,10 +87,10 @@ SELECT
 
 ## <a name="remarks"></a>Remarks
 
-Эта система функция не будет использовать индекс.
+Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Строка функции Azure Космос DB](sql-query-string-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)
