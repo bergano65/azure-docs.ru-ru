@@ -5,21 +5,21 @@ ms.topic: include
 ms.date: 01/28/2020
 ms.author: larryfr
 ms.openlocfilehash: 5102e8f75da14c58e948e81aaa418539dd18869a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80159423"
 ---
-Записи в `inferenceconfig.json` карте документа по параметрам для класса [InferenceConfig.](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) В следующей таблице описывается отображение между сущностями в документе JSON и параметры метода:
+Записи в `inferenceconfig.json` документе сопоставляются с параметрами класса [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) . В следующей таблице описано сопоставление между сущностями в документе JSON и параметрами метода.
 
-| Лицо JSON | Параметр метода | Описание |
+| Сущность JSON | Параметр метода | Описание |
 | ----- | ----- | ----- |
-| `entryScript` | `entry_script` | Путь к локальному файлу, содержащему код для запуска изображения. |
-| `sourceDirectory` | `source_directory` | Необязательный параметр. Путь к папкам, которые содержат все файлы для создания изображения, что делает его легким для доступа к любым файлам в этой папке или subfolder. Вы можете загрузить всю папку из локальной машины в качестве зависимостей для Webservice. Примечание: ваши entry_script, conda_file и extra_docker_file_steps пути являются относительными путями к source_directory пути. |
-| `environment` | `environment` | Необязательный параметр.  [Среда](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py)машинного обучения Azure .|
+| `entryScript` | `entry_script` | Путь к локальному файлу, содержащему код для выполнения для образа. |
+| `sourceDirectory` | `source_directory` | Необязательный параметр. Путь к папкам, содержащим все файлы для создания образа, что упрощает доступ к любым файлам в этой папке или вложенной папке. Вы можете отправить всю папку с локального компьютера в качестве зависимостей для веб – службы. Примечание. entry_script, conda_file и пути extra_docker_file_steps являются относительными путями к source_directory пути. |
+| `environment` | `environment` | Необязательный параметр.  [Среда](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py)машинное обучение Azure.|
 
-Можно включить полные спецификации [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) машинного обучения Azure в файл конфигурации выводов. Если эта среда не существует в рабочей области, azure Machine Learning создаст ее. В противном случае, Azure Machine Learning при необходимости обновит среду. Следующий JSON является примером:
+В файл конфигурации вывода можно включить полные спецификации Машинное обучение Azureной [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) . Если эта среда не существует в рабочей области, Машинное обучение Azure создаст ее. В противном случае при необходимости Машинное обучение Azure обновит среду. Пример JSON приведен ниже.
 
 ```json
 {
@@ -65,7 +65,7 @@ ms.locfileid: "80159423"
 }
 ```
 
-Можно также использовать существующую [среду](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) машинного обучения Azure в разделенных параметрах CLI и удалить ключ "окружающей среды" из файла конфигурации выводов. Используйте -e для названия среды и --ev для версии среды. Если вы не укажете --ev, последняя версия будет использоваться. Вот пример файла конфигурации выводов:
+Можно также использовать существующую [среду](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) машинное обучение Azure в разделе параметров CLI и удалить ключ "среда" из файла конфигурации вывода. Используйте параметр-e для имени среды и--EV для версии среды. Если не указать--EV, будет использоваться последняя версия. Ниже приведен пример файла конфигурации вывода.
 
 ```json
 {
@@ -74,9 +74,9 @@ ms.locfileid: "80159423"
 }
 ```
 
-Следующая команда демонстрирует, как развернуть модель с помощью предыдущего файла конфигурации выводов (названный myInferenceConfig.json). 
+Следующая команда демонстрирует развертывание модели с помощью предыдущего файла конфигурации вывода (с именем Минференцеконфиг. JSON). 
 
-Он также использует последнюю версию существующей [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) машинного обучения Azure (названной AzureML-Minimal).
+Он также использует последнюю версию существующей [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) машинное обучение Azure (с именем AzureML-минимум).
 
 ```azurecli-interactive
 az ml model deploy -m mymodel:1 --ic myInferenceConfig.json -e AzureML-Minimal --dc deploymentconfig.json
