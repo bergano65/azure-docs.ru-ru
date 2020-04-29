@@ -1,5 +1,5 @@
 ---
-title: Настройка уведомлений и шаблонов электронной почты
+title: Настройка уведомлений и шаблонов сообщений электронной почты
 titleSuffix: Azure API Management
 description: Сведения о настройке уведомлений и шаблонов писем в службе управления API Azure
 services: api-management
@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: apimpm
 ms.openlocfilehash: 786a9e26003a7afb98307e0bd7fae94c42a2f00d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79244073"
 ---
 # <a name="how-to-configure-notifications-and-email-templates-in-azure-api-management"></a>Как настраивать уведомления и почтовые шаблоны в Azure API Management
 
 Служба управления API позволяет настраивать уведомления для определенных событий, а также почтовые шаблоны, которые используются для связи с администраторами и разработчиками экземпляра службы управления API. В этой статье показано, как настраивать уведомления и почтовые шаблоны для доступных событий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Если у вас нет экземпляра службы управления API, выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 
@@ -32,7 +32,7 @@ ms.locfileid: "79244073"
 
 ## <a name="configure-notifications"></a><a name="publisher-notifications"> </a>Настройка уведомлений
 
-1.  Выберите экземпляр **API MANAGEMENT.**
+1.  Выберите экземпляр **управления API** .
 2.  Нажмите кнопку **Уведомления**, чтобы просмотреть доступные уведомления.
 
     ![Уведомления издателя][api-management-publisher-notifications]
@@ -48,7 +48,7 @@ ms.locfileid: "79244073"
     -   **Приближается предельная квота подписок** - Указанные получатели электронной почты и пользователи будут получать почтовые уведомления, когда использование подписок приблизится к квоте использования.
 
         > [!NOTE]
-        > Уведомления запускаются квотой только по политике [подписки.](api-management-access-restriction-policies.md#SetUsageQuota) [Квота по ключевой](api-management-access-restriction-policies.md#SetUsageQuotaByKey) политике не генерирует уведомлений.
+        > Уведомления активируются только политикой [подписки](api-management-access-restriction-policies.md#SetUsageQuota) . Политика [квоты по ключу](api-management-access-restriction-policies.md#SetUsageQuotaByKey) не создает уведомления.
 
     Для каждого события можно указать получателей электронной почты с помощью текстового поля адреса электронной почты или можно выбрать пользователей в списке.
 
@@ -77,7 +77,7 @@ ms.locfileid: "79244073"
 
 Чтобы просмотреть и настроить шаблоны сообщений электронной почты для вашего экземпляра службы управления API, щелкните **Шаблоны уведомлений**.
 
-![Почтовые шаблоны][api-management-email-templates]
+![Шаблоны для электронной почты][api-management-email-templates]
 
 Каждый почтовый шаблон имеет тему в формате обычного текста и определение тела в формате HTML. При необходимости, можно настраивать каждый элемент.
 

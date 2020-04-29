@@ -1,7 +1,7 @@
 ---
-title: Триггер запуска провода ML из logic App
+title: Запуск конвейера машинного обучения из приложения логики
 titleSuffix: Azure Machine Learning
-description: Узнайте, как запустить запуск конвейера ML с помощью приложений Azure Logic Apps.
+description: Узнайте, как активировать выполнение конвейера машинного обучения с помощью Azure Logic Apps.
 services: machine-learning
 author: sanpil
 ms.author: sanpil
@@ -11,21 +11,21 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.openlocfilehash: 6bb976b8b310fb3eb4d0247a8d745599f688d7b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77122861"
 ---
-# <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Триггер запуска трубопровода машинного обучения из приложения логики
+# <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Запуск конвейера Машинное обучение из приложения логики
 
-Запуск конвейера машинного обучения Azure при пояслом новых данных. Например, при пояснении новых данных в учетной записи хранилища blob может потребоваться запуск конвейера для обучения новой модели. Настройка триггера с [помощью приложений Azure Logic Apps.](../logic-apps/logic-apps-overview.md)
+Запуск конвейера Машинное обучение Azure при появлении новых данных. Например, может потребоваться активировать конвейер для обучения новой модели при появлении новых данных в учетной записи хранения BLOB-объектов. Настройте триггер с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Рабочая область машинного обучения Azure. Для получения дополнительной информации [см.](how-to-manage-workspace.md)
+* Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
-* Конечная точка REST для опубликованного конвейера машинного обучения. [Создайте и опубликуйте конвейер.](how-to-create-your-first-pipeline.md) Затем найдите конечную точку REST вашего PublishedPipeline с помощью идентификатора конвейера:
+* Конечная точка RESTFUL для опубликованного конвейера Машинное обучение. [Создайте и опубликуйте свой конвейер](how-to-create-your-first-pipeline.md). Затем найдите конечную точку RESTFUL Публишедпипелине с помощью идентификатора конвейера:
     
      ```
     # You can find the pipeline ID in Azure Machine Learning studio
@@ -33,46 +33,46 @@ ms.locfileid: "77122861"
     published_pipeline = PublishedPipeline.get(ws, id="<pipeline-id-here>")
     published_pipeline.endpoint 
     ```
-* [Хранилище azure blob](../storage/blobs/storage-blobs-overview.md) для хранения данных.
-* [Хранилище данных](how-to-access-data.md) в рабочем пространстве, содержащее сведения о вашей учетной записи для хранения капли.
+* [Хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-overview.md) для хранения данных.
+* [Хранилище](how-to-access-data.md) данных в рабочей области, содержащее сведения о вашей учетной записи хранилища BLOB-объектов.
 
 ## <a name="create-a-logic-app"></a>Создание приложения логики
 
-Теперь создайте экземпляр [приложения Azure Logic App.](../logic-apps/logic-apps-overview.md) При желании [воспользуйтесь средой служб ы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment.md) и [настройте ключ, управляемый клиентом,](../logic-apps/customer-managed-keys-integration-service-environment.md) для использования вашим приложением Logic App.
+Теперь создайте экземпляр [приложения логики Azure](../logic-apps/logic-apps-overview.md) . При желании [Используйте среду службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment.md) и [Настройте управляемый клиентом ключ](../logic-apps/customer-managed-keys-integration-service-environment.md) для использования приложением логики.
 
-После того, как приложение Logic App будет подготовлено, используйте эти шаги для настройки триггера для конвейера:
+После подготовки приложения логики выполните следующие действия, чтобы настроить триггер для конвейера.
 
-1. [Создайте системную управляемую идентификацию,](../logic-apps/create-managed-service-identity.md) чтобы дать приложению доступ к рабочему пространству машинного обучения Azure.
+1. Чтобы предоставить приложению доступ к рабочая область машинного обучения Azure, [Создайте управляемое удостоверение, назначенное системой](../logic-apps/create-managed-service-identity.md) .
 
-1. Перейдите к представлению Logic App Designer и выберите шаблон Blank Logic App. 
+1. Перейдите в представление конструктора приложений логики и выберите шаблон Пустое приложение логики. 
     > [!div class="mx-imgBorder"]
     > ![пустой шаблон.](media/how-to-trigger-published-pipeline/blank-template.png)
 
-1. В дизайнер, поиск **капли**. Выберите **при добавлении или изменении капли (только для свойств)** триггера и добавьте этот триггер в logic App.
+1. В конструкторе найдите BLOB- **объект**. Выберите **при добавлении или изменении большого двоичного объекта (только свойства)** и добавьте этот триггер в приложение логики.
     > [!div class="mx-imgBorder"]
     > ![Добавление триггера](media/how-to-trigger-published-pipeline/add-trigger.png)
 
-1. Заполните информацию о подключении для учетной записи хранилища Blob, которую вы хотите контролировать для дополнений или модификаций blob. Выберите контейнер для мониторинга. 
+1. Укажите сведения о подключении для учетной записи хранения BLOB-объектов, которую вы хотите отслеживать для добавления или изменения больших двоичных объектов. Выберите контейнер для отслеживания. 
  
-    Выберите **Интервал** и **частота** для опроса для обновлений, которые работают для вас.  
+    Выберите **интервал** и **частоту** опроса обновлений, которые работают за вас.  
 
     > [!NOTE]
-    > Этот триггер будет контролировать выбранный контейнер, но не будет контролировать субфолители.
+    > Этот триггер будет отслеживать выбранный контейнер, но не будет отслеживать вложенные папки.
 
-1. Добавьте действие HTTP, которое будет работать при обнаружении новой или измененной капли. Выберите **новый шаг,** затем ищите и выберите действие HTTP.
+1. Добавьте действие HTTP, которое будет выполняться при обнаружении нового или измененного большого двоичного объекта. Выберите **+ новый шаг**, затем найдите и выберите действие HTTP.
 
   > [!div class="mx-imgBorder"]
-  > ![Поиск действий HTTP](media/how-to-trigger-published-pipeline/search-http.png)
+  > ![Поиск действия HTTP](media/how-to-trigger-published-pipeline/search-http.png)
 
-  Используйте следующие настройки для настройки действия:
+  Для настройки действия используйте следующие параметры:
 
   | Параметр | Значение | 
   |---|---|
   | Действие HTTP | POST |
-  | URI |конечная точка опубликованного конвейера, которую вы нашли в качестве [предпосылки](#prerequisites) |
+  | URI |Конечная точка для опубликованного конвейера, которую вы нашли в качестве [необходимого компонента](#prerequisites) |
   | Режим проверки подлинности | Управляемое удостоверение |
 
-1. Назначьте расписание, чтобы установить значение любых [параметров трубопровода DataPath,](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-datapath-and-pipelineparameter.ipynb) которые у вас могут быть:
+1. Настройте расписание, чтобы задать значение любого [пути PipelineParameters](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-datapath-and-pipelineparameter.ipynb) , который вы имеете в наличии:
 
     ```json
     "DataPathAssignments": { 
@@ -87,9 +87,9 @@ ms.locfileid: "77122861"
     },
     ```
 
-    Используйте `DataStoreName` добавленное в рабочее пространство в качестве [предварительного условия.](#prerequisites)
+    `DataStoreName` Используйте добавленные в рабочую область в качестве [необходимого компонента](#prerequisites).
      
     > [!div class="mx-imgBorder"]
     > ![Параметры HTTP](media/how-to-trigger-published-pipeline/http-settings.png)
 
-1. Выберите **Сохранить** и ваше расписание теперь готово.
+1. Выберите **сохранить** , и ваше расписание теперь готово.

@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: ff608cac9786ebc0d3908ce4d88fb501e621be6c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79244021"
 ---
 # <a name="azure-api-management-page-controls"></a>Элементы управления страницей в службе управления API Azure
@@ -38,19 +38,19 @@ ms.locfileid: "79244021"
   
 ## <a name="developer-portal-template-page-controls"></a>Элементы управления страницей в шаблонах портала разработчика  
   
--   [приложение-действия](#app-actions)  
--   [базовый-сизин](#basic-signin)  
--   [контроль над paging](#paging-control)  
--   [providers](#providers)  
--   [поиск-контроль](#search-control)  
+-   [App-действия](#app-actions)  
+-   [Базовый — вход](#basic-signin)  
+-   [Управление разбиением на страницы](#paging-control)  
+-   [поставщик](#providers)  
+-   [Поиск — контроль](#search-control)  
 -   [sign-up](#sign-up)  
 -   [кнопка подписки](#subscribe-button)  
--   [отмена подписки](#subscription-cancel)  
+-   [подписка — Отмена](#subscription-cancel)  
   
 ##  <a name="app-actions"></a><a name="app-actions"></a> app-actions  
  Элемент управления `app-actions` предоставляет пользовательский интерфейс для взаимодействия с приложениями на странице профиля пользователя на портале разработчика.  
   
- ![app&#45;управления действиями](./media/api-management-page-controls/APIM-app-actions-control.png "ApIM управление действиями приложения APIM")  
+ ![Управление действиями&#45;приложений](./media/api-management-page-controls/APIM-app-actions-control.png "Элемент управления APIM App-Actions")  
   
 ### <a name="usage"></a>Использование  
   
@@ -72,7 +72,7 @@ ms.locfileid: "79244021"
 ##  <a name="basic-signin"></a><a name="basic-signin"></a> basic-signin  
  Элемент управления `basic-signin` предоставляет интерфейс для сбора учетных данных пользователей на странице входа на портал разработчика.  
   
- ![основные&#45;контроль signin](./media/api-management-page-controls/APIM-basic-signin-control.png "APIM базовый-сипин управления")  
+ ![Базовый&#45;элемент управления для входа](./media/api-management-page-controls/APIM-basic-signin-control.png "APIM Basic — элемент управления для входа")  
   
 ### <a name="usage"></a>Использование  
   
@@ -81,7 +81,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет.  
+ Отсутствует.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `basic-signin` можно использовать в следующих шаблонах портала разработчика:  
@@ -91,7 +91,7 @@ ms.locfileid: "79244021"
 ##  <a name="paging-control"></a><a name="paging-control"></a> paging-control  
  Элемент `paging-control` предоставляет функцию разбиения по страницам, которую можно использовать на страницах со списками на портале разработчика.  
   
- ![контроль paging](./media/api-management-page-controls/APIM-paging-control.png "ApIM контроль paging")  
+ ![элемент управления разбиением на страницы](./media/api-management-page-controls/APIM-paging-control.png "Элемент управления разбиением на страницы APIM")  
   
 ### <a name="usage"></a>Использование  
   
@@ -100,7 +100,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет.  
+ Отсутствует.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `paging-control` можно использовать в следующих шаблонах портала разработчика:  
@@ -111,10 +111,10 @@ ms.locfileid: "79244021"
   
 -   [Список продуктов](api-management-product-templates.md#ProductList)  
   
-##  <a name="providers"></a><a name="providers"></a>Поставщиков  
+##  <a name="providers"></a><a name="providers"></a>поставщик  
  Элемент управления `providers` предоставляет интерфейс для выбора поставщика проверки подлинности на странице входа на портал разработчика.  
   
- ![контроль поставщиков](./media/api-management-page-controls/APIM-providers-control.png "Контроль поставщиков APIM")  
+ ![элемент управления providers](./media/api-management-page-controls/APIM-providers-control.png "Элемент управления поставщиками APIM")  
   
 ### <a name="usage"></a>Использование  
   
@@ -123,7 +123,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет.  
+ Отсутствует.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `providers` можно использовать в следующих шаблонах портала разработчика:  
@@ -133,7 +133,7 @@ ms.locfileid: "79244021"
 ##  <a name="search-control"></a><a name="search-control"></a> search-control  
  Элемент `search-control` предоставляет функцию поиска, которую можно использовать на страницах со списками на портале разработчика.  
   
- ![Управление поиском](./media/api-management-page-controls/APIM-search-control.png "Контроль поиска APIM")  
+ ![элемент управления поиском](./media/api-management-page-controls/APIM-search-control.png "Элемент управления APIM Search")  
   
 ### <a name="usage"></a>Использование  
   
@@ -142,7 +142,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет.  
+ Отсутствует.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `search-control` можно использовать в следующих шаблонах портала разработчика:  
@@ -151,10 +151,10 @@ ms.locfileid: "79244021"
   
 -   [Список продуктов](api-management-product-templates.md#ProductList)  
   
-##  <a name="sign-up"></a><a name="sign-up"></a>Регистрация  
+##  <a name="sign-up"></a><a name="sign-up"></a>регистрация  
  Элемент управления `sign-up` предоставляет интерфейс для сбора информации о профиле пользователя на странице регистрации на портале разработчика.  
   
- ![подписать&#45;управление](./media/api-management-page-controls/APIM-sign-up-control.png "Контроль регистрации APIM")  
+ ![знаком&#45;управления](./media/api-management-page-controls/APIM-sign-up-control.png "Управление регистрацией APIM")  
   
 ### <a name="usage"></a>Использование  
   
@@ -163,7 +163,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет.  
+ Отсутствует.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `sign-up` можно использовать в следующих шаблонах портала разработчика:  
@@ -173,7 +173,7 @@ ms.locfileid: "79244021"
 ##  <a name="subscribe-button"></a><a name="subscribe-button"></a> subscribe-button  
  Элемент `subscribe-button` предоставляет функцию оформления подписки пользователя на продукт.  
   
- ![подписаться&#45;кнопку управления](./media/api-management-page-controls/APIM-subscribe-button-control.png "APIM управление подпиской кнопки")  
+ ![Subscribe&#45;элемент управления Button](./media/api-management-page-controls/APIM-subscribe-button-control.png "Элемент управления "Подписка" APIM")  
   
 ### <a name="usage"></a>Использование  
   
@@ -182,17 +182,17 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет.  
+ Отсутствует.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `subscribe-button` можно использовать в следующих шаблонах портала разработчика:  
   
--   [Продукт](api-management-product-templates.md#Product)  
+-   [Продукта](api-management-product-templates.md#Product)  
   
 ##  <a name="subscription-cancel"></a><a name="subscription-cancel"></a> subscription-cancel  
  Элемент управления `subscription-cancel` предоставляет интерфейс для отмены подписки на продукт на странице профиля пользователя на портале разработчика.  
   
- ![подписка&#45;отменить контроль](./media/api-management-page-controls/APIM-subscription-cancel-control.png "ApIM контроль подписки-отмена")  
+ ![элемент управления&#45;отмены подписки](./media/api-management-page-controls/APIM-subscription-cancel-control.png "Подписка APIM — отмена элемента управления")  
   
 ### <a name="usage"></a>Использование  
   
@@ -206,13 +206,13 @@ ms.locfileid: "79244021"
   
 |Параметр|Описание|  
 |---------------|-----------------|  
-|subscriptionId|Идентификатор подписки для отмены.|  
+|subscriptionId|Идентификатор подписки, которую нужно отменить.|  
 |cancelUrl|URL-адрес для отмены подписки.|  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `subscription-cancel` можно использовать в следующих шаблонах портала разработчика:  
   
--   [Продукт](api-management-product-templates.md#Product)
+-   [Продукта](api-management-product-templates.md#Product)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

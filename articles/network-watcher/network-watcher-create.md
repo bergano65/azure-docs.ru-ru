@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 77812a3765a027152c957f6dbb7c9b3811a2278f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77191175"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Создание экземпляра Наблюдателя за сетями Azure
@@ -49,7 +49,7 @@ az provider register -n Microsoft.Network
 
 ## <a name="create-a-network-watcher-in-the-portal"></a>Создание Наблюдателя за сетями на портале
 
-Перейдите на **все услуги** > **сетевой** > **сети Watcher**. Можно выбрать все подписки, для которых необходимо включить Наблюдатель за сетями. Это действие создаст экземпляр Наблюдателя за сетями в каждом регионе, который доступен.
+Последовательно выберите **все службы** > **сеть** > **наблюдатель за сетями**. Можно выбрать все подписки, для которых необходимо включить Наблюдатель за сетями. Это действие создаст экземпляр Наблюдателя за сетями в каждом регионе, который доступен.
 
 ![Создание Наблюдателя за сетями](./media/network-watcher-create/figure1.png)
 
@@ -101,19 +101,19 @@ $requestBody = @"
 armclient put "https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.Network/networkWatchers/${networkWatcherName}?api-version=${api-version}" $requestBody
 ```
 
-## <a name="delete-a-network-watcher-in-the-portal"></a>Удалить сетевого наблюдателя на портале
+## <a name="delete-a-network-watcher-in-the-portal"></a>Удаление наблюдателя за сетями на портале
 
-Перейдите на **все услуги** > **сетевой** > **сети Watcher**.
+Последовательно выберите **все службы** > **сеть** > **наблюдатель за сетями**.
 
-Выберите вкладку обзора, если вы еще не там. Используйте выпадение, чтобы выбрать подписку, в ней вы хотите отключить сетевого наблюдателя.
-Расширьте список регионов для выбранной подписки, нажав на стрелку. Для любого данного, используйте 3 точки на право доступа к контексту меню.
-Нажмите на кнопку "Отключение сетевого наблюдателя", чтобы начать отключение. Вам будет предложено подтвердить этот шаг. Для продолжения нажмите кнопку Да.
-На портале, вы должны будете сделать это индивидуально для каждого региона в каждой подписке.
+Перейдите на вкладку Обзор, если она еще не установлена. В раскрывающемся списке выберите подписку, для которой нужно отключить наблюдатель за сетями.
+Разверните список регионов для выбранной подписки, щелкнув стрелку. Для любого из этих данных используйте три точки справа для доступа к контекстному меню.
+Щелкните "отключить наблюдатель за сетями", чтобы начать отключение. Вам будет предложено подтвердить этот шаг. Для продолжения нажмите кнопку Да.
+На портале это необходимо сделать отдельно для каждого региона в каждой подписке.
 
 
-## <a name="delete-a-network-watcher-with-powershell"></a>Удалить сетевой наблюдатель с Помощью PowerShell
+## <a name="delete-a-network-watcher-with-powershell"></a>Удаление наблюдателя за сетями с помощью PowerShell
 
-Чтобы удалить экземпляр Network Watcher, запустите следующий пример:
+Чтобы удалить экземпляр наблюдателя за сетями, выполните следующий пример:
 
 ```powershell
 New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
@@ -121,13 +121,13 @@ New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWa
 Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, имея экземпляр Наблюдателя за сетями, узнайте о его возможностях:
 
-* [Топологии](network-watcher-topology-overview.md)
+* [Топология](network-watcher-topology-overview.md)
 * [Запись пакетов](network-watcher-packet-capture-overview.md)
-* [Проверка потока IP](network-watcher-ip-flow-verify-overview.md)
+* [Проверка IP-потока](network-watcher-ip-flow-verify-overview.md)
 * [Следующий прыжок](network-watcher-next-hop-overview.md)
 * [Представление группы безопасности](network-watcher-security-group-view-overview.md)
 * [Ведение журнала потоков NSG](network-watcher-nsg-flow-logging-overview.md)

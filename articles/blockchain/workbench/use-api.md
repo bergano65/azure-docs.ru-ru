@@ -1,54 +1,54 @@
 ---
-title: Использование Azure Blockchain Workbench REST APIS
-description: Сценарии использования Azure Blockchain Workbench Предварительный REST API
+title: Использование интерфейсов API службы Azure Блокчейн Workbench
+description: Сценарии использования предварительной версии Azure Блокчейн Workbench REST API
 ms.date: 03/05/2020
 ms.topic: article
 ms.reviewer: brendal
 ms.openlocfilehash: 3084fcf343bc42fe01bf352b6791916d62f63540
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78672752"
 ---
-# <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Использование Azure Blockchain Workbench Предварительный REST API
+# <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Использование предварительной версии Azure Блокчейн Workbench REST API
 
-Azure Blockchain Workbench Preview REST API предоставляет разработчикам и информационным работникам способ построения богатой интеграции в блокчейн-приложения. В этой статье освещаются несколько сценариев использования API Workbench REST. Например, предположим, что вы хотите создать пользовательский блокчейн-клиент, который позволяет подписным пользователям просматривать и взаимодействовать с назначенными ими блокчейн-приложениями. Клиент может использовать API Blockchain Workbench для просмотра примеров контрактов и действий по смарт-контрактам.
+Azure Блокчейн Workbench Preview REST API предоставляет разработчикам и информационным работникам способ создания богатой интеграции с приложениями блокчейн. В этой статье описываются несколько сценариев использования REST API Workbench. Например, предположим, что вы хотите создать настраиваемый клиент блокчейн, позволяющий войти в пользователей для просмотра назначенных им приложений блокчейн и взаимодействия с ними. Клиент может использовать API Блокчейн Workbench для просмотра экземпляров контракта и выполнения действий с интеллектуальными контрактами.
 
-## <a name="blockchain-workbench-api-endpoint"></a>Блокчейн Workbench API конечная точка
+## <a name="blockchain-workbench-api-endpoint"></a>Конечная точка API блокчейн Workbench
 
-Блокчейн Workbench AIS доступны через конечную точку для развертывания. Чтобы получить URL-адрес aPI для развертывания:
+Доступ к API-интерфейсам блокчейн Workbench осуществляется через конечную точку развертывания. Чтобы получить URL-адрес конечной точки API для развертывания, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. В левом навигационном стеле выберите **группы ресурсов.**
-1. Выберите группу ресурсов, назовунию развернутую Blockchain Workbench.
+1. В области навигации слева выберите **группы ресурсов**.
+1. Выберите имя группы ресурсов, в которой развернута Блокчейн Workbench.
 1. Щелкните заголовок столбца **Тип**, чтобы отсортировать список в алфавитном порядке.
-1. Существует два ресурса с типом **Служба приложений**. Выберите ресурс типа **App Service** *с* суффиксом «-api».
-1. В **обзоре**службы приложений скопируйте значение **URL,которое** представляет URL-адрес API для развернутой блокчейн Workbench.
+1. Существует два ресурса с типом **Служба приложений**. Выберите ресурс типа **служба приложений** *с* суффиксом-API.
+1. В разделе **Обзор**службы приложений скопируйте значение **URL-адреса** , которое представляет URL-адрес конечной точки API для развернутого блокчейн Workbench.
 
-    ![API-конечная точка службы App](media/use-api/app-service-api.png)
+    ![URL-адрес конечной точки API службы приложений](media/use-api/app-service-api.png)
 
 ## <a name="authentication"></a>Проверка подлинности
 
-Запросы на API Blockchain Workbench REST защищены с помощью Active Directory Azure (Azure AD).
+Запросы к Блокчейн Workbench REST API защищены с помощью Azure Active Directory (Azure AD).
 
-Чтобы сделать аутентифицированный запрос на АДИ-аДИ REST, клиентский код требует аутентификации с действительными учетными данными, прежде чем вы сможете позвонить в API. Аутентификация координируется между различными субъектами Azure AD и предоставляет клиенту [токен доступа](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#access-token) в качестве доказательства проверки подлинности. Затем токен отправляется в заголовке авторизации HTTP запросов REST API. Чтобы узнать больше об аутентификации Azure AD, смотрите [active Directory Для разработчиков.](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)
+Чтобы выполнить запрос, прошедший проверку подлинности в API-интерфейсах, клиентский код требует проверки подлинности с действительными учетными данными перед вызовом API. Проверка подлинности согласовывается между различными субъектами Azure AD и предоставляет клиенту [маркер доступа](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#access-token) в качестве подтверждения проверки подлинности. Затем маркер отправляется в заголовке авторизации HTTP запросов REST API. Дополнительные сведения о проверке подлинности Azure AD см. в статье [Azure Active Directory для разработчиков](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide).
 
-Ознакомиться с примерами проверки подлинности можно найти [образцы REST API.](https://github.com/Azure-Samples/blockchain/tree/master/blockchain-workbench/rest-api-samples)
+Примеры проверки подлинности см. в разделе [REST API Samples](https://github.com/Azure-Samples/blockchain/tree/master/blockchain-workbench/rest-api-samples) .
 
 ## <a name="using-postman"></a>Использование Postman
 
-Если вы хотите протестировать или поэкспериментировать с API Workbench, вы можете использовать [Postman](https://www.postman.com) для вызова API для развертывания. [Загрузите образец коллекции Postman запросов Workbench API](https://github.com/Azure-Samples/blockchain/tree/master/blockchain-workbench/rest-api-samples/postman) от GitHub. Подробнее о проверке подлинности и использовании примерных запросов API читайте в файле README.
+Если вы хотите протестировать или поэкспериментировать с API-интерфейсами Workbench, вы можете использовать [POST](https://www.postman.com) для выполнения вызовов API к развертыванию. [Скачайте пример коллекции запросов API Workbench](https://github.com/Azure-Samples/blockchain/tree/master/blockchain-workbench/rest-api-samples/postman) из GitHub. Дополнительные сведения о проверке подлинности и использовании примеров запросов API см. в файле сведений.
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Для создания приложения Blockchain Workbench используются два вызова API. Этот метод может быть выполнен только пользователями, которые являются администраторами Workbench.
+Для создания приложения Блокчейн Workbench используются два вызова API. Этот метод может выполняться только пользователями, которые являются администраторами Workbench.
 
-Используйте [Приложение POST API,](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/applicationspost) чтобы загрузить файл JSON приложения и получить идентификатор приложения.
+Используйте [API-интерфейс передачи приложений](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/applicationspost) , чтобы передать JSON-файл приложения и получить идентификатор приложения.
 
-### <a name="applications-post-request"></a>Заявки POST запрос
+### <a name="applications-post-request"></a>Запросы приложений POST
 
-Используйте параметр **appFile** для отправки файла конфигурации как часть тела запроса.
+Используйте параметр **аппфиле** , чтобы отправить файл конфигурации как часть текста запроса.
 
 ``` http
 POST /api/v1/applications
@@ -58,9 +58,9 @@ Content-Disposition: form-data; name="appFile"; filename="/C:/smart-contract-sam
 Content-Type: application/json
 ```
 
-### <a name="applications-post-response"></a>Ответы на приложения POST
+### <a name="applications-post-response"></a>Ответ после ответа приложений
 
-Созданный идентификатор приложения возвращается в ответ. Идентификатор приложения должен связать файл конфигурации с файлом кода при вызове следующего API.
+Созданный идентификатор приложения возвращается в ответе. Идентификатор приложения необходим для связывания файла конфигурации с файлом кода при вызове следующего API.
 
 ``` http
 HTTP/1.1 200 OK
@@ -68,16 +68,16 @@ Content-Type: "application/json"
 1
 ```
 
-### <a name="contract-code-post-request"></a>Запрос почтового кода контракта
+### <a name="contract-code-post-request"></a>Запрос POST кода контракта
 
-Используйте [контрактный код Приложения POST API,](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/contractcodepost) передав идентификатор приложения, чтобы загрузить файл кода Solidity приложения. Полезная нагрузка может быть одним файлом Solidity или файлом на молнии, содержащим файлы Solidity.
+Используйте [API-интерфейс POST кода контракта приложений](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/contractcodepost) , передав идентификатор приложения, чтобы отправить файл кода для надежной работы приложения. Полезной нагрузкой может быть файл с одним расширением или сжатый ZIP-файл, содержащий файлы со сплошной плотностью.
 
 Измените следующие значения:
 
 | Параметр | Значение |
 |-----------|-------|
-| (applicationId) | Возврат значения из приложений POST API. |
-| (леджерид) | Индекс книги. Значение обычно 1. Вы также можете проверить [таблицу книги](data-sql-management-studio.md) для значения. |
+| Кодов | Возвращаемое значение из API-интерфейса POST приложений. |
+| {Леджерид} | Индекс книги учета. Значение обычно равно 1. Кроме того, можно проверить [таблицу книги](data-sql-management-studio.md) на наличие значения. |
 
 ``` http
 POST /api/v1/applications/{applicationId}/contractCode?ledgerId={ledgerId}
@@ -86,9 +86,9 @@ Authorization : Bearer {access token}
 Content-Disposition: form-data; name="contractFile"; filename="/C:/smart-contract-samples/HelloWorld.sol"
 ```
 
-### <a name="contract-code-post-response"></a>Ответ POST код контракта
+### <a name="contract-code-post-response"></a>Ответ на POST код контракта
 
-В случае успеха ответ включает в себя созданный идентификатор кода контракта из [таблицы ContractCode.](data-sql-management-studio.md)
+В случае успеха ответ включает созданный идентификатор кода контракта из [таблицы контракткоде](data-sql-management-studio.md).
 
 ``` http
 HTTP/1.1 200 OK
@@ -98,17 +98,17 @@ Content-Type: "application/json"
 
 ## <a name="assign-roles-to-users"></a>Назначение ролей пользователям
 
-Используйте [ролевые назначения Приложений POST API,](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/roleassignmentspost) передавая идентификатор приложения, идентификатор пользователя и идентификатор роли приложения, чтобы создать отображение от пользователя к роли в указанном приложении блокчейн. Этот метод может быть выполнен только пользователями, которые являются администраторами Workbench.
+Используйте [API назначения ролей приложений](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/roleassignmentspost) , передав идентификатор приложения, идентификатор пользователя и идентификатор роли приложения, чтобы создать сопоставление пользователя с ролью в указанном приложении блокчейн. Этот метод может выполняться только пользователями, которые являются администраторами Workbench.
 
-### <a name="role-assignments-post-request"></a>Назначение ролей POST-запрос
+### <a name="role-assignments-post-request"></a>Запрос POST назначений ролей
 
 Измените следующие значения:
 
 | Параметр | Значение |
 |-----------|-------|
-| (applicationId) | Возврат значения из приложения POST API. |
-| «userId» | Значение идентификатора пользователя из [таблицы пользователя.](data-sql-management-studio.md) |
-| (применениеRoleId) | Значение идентификатора роли приложения, связанное с идентификатором приложения из [таблицы ApplicationRole.](data-sql-management-studio.md) |
+| Кодов | Возвращаемое значение из API-интерфейса POST приложений. |
+| {userId} | Значение идентификатора пользователя из [пользовательской таблицы](data-sql-management-studio.md). |
+| {Аппликатионролеид} | Значение идентификатора роли приложения, связанное с ИДЕНТИФИКАТОРом приложения из [таблицы ApplicationRole](data-sql-management-studio.md). |
 
 ``` http
 POST /api/v1/applications/{applicationId}/roleAssignments
@@ -121,9 +121,9 @@ Authorization : Bearer {access token}
 }
 ```
 
-### <a name="role-assignments-post-response"></a>Роли заданий POST ответ
+### <a name="role-assignments-post-response"></a>Назначение ролей после ответа
 
-В случае успеха ответ включает в себя созданный идентификатор назначения ролей из [таблицы Ролевназначения.](data-sql-management-studio.md)
+В случае успеха ответ включает созданный идентификатор назначения роли из [таблицы RoleAssignment](data-sql-management-studio.md).
 
 ``` http
 HTTP/1.1 200
@@ -132,21 +132,21 @@ HTTP/1.1 200
 
 ## <a name="list-applications"></a>Список приложений
 
-Используйте [API приложений GET](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/applicationsget) для получения всех приложений Blockchain Workbench для пользователя. В этом примере пользователь, вписав в него, имеет доступ к двум приложениям:
+Используйте [API Get Applications](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/applicationsget) для получения всех приложений блокчейн Workbench для пользователя. В этом примере у пользователя, выполнившего вход, есть доступ к двум приложениям:
 
 - [Передача активов](https://github.com/Azure-Samples/blockchain/blob/master/blockchain-workbench/application-and-smart-contract-samples/asset-transfer/readme.md)
 - [Транспортировка с охлаждением](https://github.com/Azure-Samples/blockchain/blob/master/blockchain-workbench/application-and-smart-contract-samples/refrigerated-transportation/readme.md)
 
-### <a name="applications-get-request"></a>Заявки GET запрос
+### <a name="applications-get-request"></a>Запрос на получение приложений
 
 ``` http
 GET /api/v1/applications
 Authorization : Bearer {access token}
 ```
 
-### <a name="applications-get-response"></a>Приложения GET ответ
+### <a name="applications-get-response"></a>ПОЛУЧЕНИЕ ответа приложениями
 
-Ответ содержит список всех приложений на базе блокчейна, к которым пользователь имеет доступ в Blockchain Workbench. Администраторы Blockchain Workbench получают все блокчейн-приложения. Администраторы, не связанные с Работой, получают все блокчейн-приложения, для которых они имеют по крайней мере одну связанную роль приложения или связанную роль экземпляра смарт-контрактов.
+Ответ содержит список всех приложений на базе блокчейна, к которым пользователь имеет доступ в Blockchain Workbench. Администраторы Blockchain Workbench получают все блокчейн-приложения. Администраторы, не являющиеся администраторами Workbench, получают все блокчейн приложения, для которых у них есть по крайней мере одна связанная роль приложения или связанная роль экземпляра смарт-контракта.
 
 ``` http
 HTTP/1.1 200 OK
@@ -180,16 +180,16 @@ Content-type: application/json
 
 ## <a name="list-workflows-for-an-application"></a>Получение списка рабочих процессов для приложения
 
-Используйте [Приложения Workflows GET API,](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/workflowsget) чтобы перечислить все рабочие процессы указанного приложения blockchain, к которому пользователь имеет доступ в Blockchain Workbench. Для каждого приложения на базе блокчейна доступен один или несколько рабочих процессов, и для каждого рабочего процесса могут быть доступны экземпляры смарт-контракта. Для клиентского приложения на базе блокчейна, у которого есть только один рабочий процесс, мы рекомендуем пропустить поток взаимодействия с пользователем, позволяющий пользователям выбрать соответствующий рабочий процесс.
+Использование [рабочих процессов приложения получение API](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/applications/workflowsget) для перечисления всех рабочих процессов указанного приложения блокчейн, к которым пользователь имеет доступ в блокчейн Workbench. Для каждого приложения на базе блокчейна доступен один или несколько рабочих процессов, и для каждого рабочего процесса могут быть доступны экземпляры смарт-контракта. Для клиентского приложения на базе блокчейна, у которого есть только один рабочий процесс, мы рекомендуем пропустить поток взаимодействия с пользователем, позволяющий пользователям выбрать соответствующий рабочий процесс.
 
-### <a name="application-workflows-request"></a>Запрос рабочих процессов приложений
+### <a name="application-workflows-request"></a>Запрос рабочих процессов приложения
 
 ``` http
 GET /api/v1/applications/{applicationId}/workflows
 Authorization: Bearer {access token}
 ```
 
-### <a name="application-workflows-response"></a>Ответ на рабочие процессы приложений
+### <a name="application-workflows-response"></a>Ответ рабочих процессов приложения
 
 Администраторы Blockchain Workbench получают все рабочие процессы блокчейна. Остальные администраторы (не Workbench) получают все рабочие процессы, для которых у них есть по крайней мере одна роль связанного приложения или экземпляра смарт-контракта.
 
@@ -212,29 +212,29 @@ Content-type: application/json
 }
 ```
 
-## <a name="create-a-contract-instance"></a>Создание примера контракта
+## <a name="create-a-contract-instance"></a>Создание экземпляра контракта
 
-Используйте [Контракты V2 POST API](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/contractsv2/contractpost) для создания нового экземпляра смарт-контрактов для рабочего процесса. Пользователи могут создать новый экземпляр смарт-контракта только в том случае, если пользователь связан с ролью приложения, которая может инициировать экземпляр смарт-контракта для рабочего процесса.
+Используйте [API контрактов версии 2](https://docs.microsoft.com/rest/api/azure-blockchain-workbench/contractsv2/contractpost) , чтобы создать новый экземпляр смарт-контракта для рабочего процесса. Пользователи могут создать новый экземпляр смарт-контракта только в том случае, если пользователь связан с ролью приложения, который может инициировать для рабочего процесса экземпляр интеллектуального контракта.
 
 > [!NOTE]
-> В этом примере используется версия 2 API. AA-аДИ контракта версии 2 обеспечивают большую детализацию для связанных полей ProvisioningStatus.
+> В этом примере используется версия 2 API. API-интерфейсы контракта версии 2 обеспечивают более подробную детализацию для связанных полей Провисионингстатус.
 
-### <a name="contracts-post-request"></a>Запрос контрактов POST
+### <a name="contracts-post-request"></a>Запрос POST контрактов
 
 Измените следующие значения:
 
 | Параметр | Значение |
 |-----------|-------|
-| (рабочий процессId) | Значение идентификатора рабочего процесса является конструктором контракта из [таблицы Рабочего процесса.](data-sql-management-studio.md) |
-| (контрактCodeId) | Идентификатор кода контракта из [таблицы ContractCode.](data-sql-management-studio.md) Соотвествуйте идентификатор приложения и идентификатор книги для экземпляра контракта, который вы хотите создать. |
-| (соединениеId) | Значение идентификатора соединения из [таблицы подключения.](data-sql-management-studio.md) |
+| WorkflowId | Значение идентификатора рабочего процесса — это Конструкторид контракта из [таблицы рабочего процесса](data-sql-management-studio.md). |
+| {Контракткодеид} | Значение идентификатора кода контракта из [таблицы контракткоде](data-sql-management-studio.md). Сопоставьте идентификатор приложения и идентификатор книги учета для создаваемого экземпляра контракта. |
+| ConnectionId | Значение идентификатора соединения из [таблицы подключения](data-sql-management-studio.md). |
 
-Для тела запроса установите значения, используя следующую информацию:
+Для текста запроса задайте значения, используя следующие сведения:
 
 | Параметр | Значение |
 |-----------|-------|
-| рабочий процессФункционID | Идентификатор из [таблицы WorkflowFunction](data-sql-management-studio.md). |
-| рабочий процессДействия Параметры | Именные значения пар параметров передаются конструктору. Для каждого параметра используйте значение рабочего процессаФункциональный параметр id из таблицы [WorkflowFunctionParameter.](data-sql-management-studio.md) |
+| воркфловфунктионид | ИДЕНТИФИКАТОР из [таблицы воркфловфунктион](data-sql-management-studio.md). |
+| воркфловактионпараметерс | Пары "имя значение" параметров, переданных конструктору. Для каждого параметра используйте значение Воркфловфунктионпараметерид из таблицы [воркфловфунктионпараметер](data-sql-management-studio.md) . |
 
 ``` http
 POST /api/v2/contracts?workflowId={workflowId}&contractCodeId={contractCodeId}&connectionId={connectionId}
@@ -253,9 +253,9 @@ Authorization : Bearer {access token}
 }
 ```
 
-### <a name="contracts-post-response"></a>Контракты POST ответ
+### <a name="contracts-post-response"></a>Ответ POST контрактов
 
-В случае успеха API назначений ролей возвращает ContractActionID из [таблицы ContractActionParameter.](data-sql-management-studio.md)
+В случае успеха API назначения ролей возвращает Контрактактионид из [таблицы контрактактионпараметер](data-sql-management-studio.md).
 
 ``` http
 HTTP/1.1 200 OK
@@ -264,7 +264,7 @@ HTTP/1.1 200 OK
 
 ## <a name="list-smart-contract-instances-for-a-workflow"></a>Вывести список экземпляров смарт-контракта для рабочего процесса.
 
-Используйте [контракты GET API,](/rest/api/azure-blockchain-workbench/contractsv2/contractsget) чтобы показать все экземпляры смарт-контрактов для рабочего процесса. Кроме того, можно разрешить пользователям изучить любой из отображаемых экземпляров смарт-контрактов.
+Используйте [контракты Get API](/rest/api/azure-blockchain-workbench/contractsv2/contractsget) , чтобы отобразить все экземпляры смарт-контракта для рабочего процесса. Кроме того, можно разрешить пользователям изучить любой из отображаемых экземпляров смарт-контрактов.
 
 ### <a name="contracts-request"></a>Запрос контрактов
 
@@ -275,9 +275,9 @@ GET api/v1/contracts?workflowId={workflowId}
 Authorization: Bearer {access token}
 ```
 
-### <a name="contracts-response"></a>Ответы на контракты
+### <a name="contracts-response"></a>Ответ контрактов
 
-В ответе перечислены все экземпляры смарт-контрактов указанного рабочего процесса. Администраторы Workbench получают все экземпляры смарт-контрактов. Остальные администраторы (не Workbench) получают все экземпляры смарт-контрактов, для которых у них есть по крайней мере одна роль связанного приложения или экземпляра смарт-контракта.
+В ответе перечисляются все экземпляры смарт-контракта указанного рабочего процесса. Администраторы Workbench получают все экземпляры смарт-контрактов. Остальные администраторы (не Workbench) получают все экземпляры смарт-контрактов, для которых у них есть по крайней мере одна роль связанного приложения или экземпляра смарт-контракта.
 
 ``` http
 HTTP/1.1 200 OK
@@ -367,9 +367,9 @@ Content-type: application/json
 
 ## <a name="list-available-actions-for-a-contract"></a>Получение списка доступных действий для контракта
 
-Используйте [Contract Action GET API,](/rest/api/azure-blockchain-workbench/contractsv2/contractactionget) чтобы показать доступные действия пользователя с учетом состояния контракта. 
+Использование [действия контракта Get API](/rest/api/azure-blockchain-workbench/contractsv2/contractactionget) для отображения доступных действий пользователя по состоянию контракта. 
 
-### <a name="contract-action-request"></a>Запрос действий по контракту
+### <a name="contract-action-request"></a>Запрос действия контракта
 
 В этом примере пользователь просматривает все доступные действия для нового смарт-контракта, который они создали.
 
@@ -378,7 +378,7 @@ GET /api/v1/contracts/{contractId}/actions
 Authorization: Bearer {access token}
 ```
 
-### <a name="contract-action-response"></a>Ответ на действия по контракту
+### <a name="contract-action-response"></a>Ответ действия контракта
 
 Ответ содержит список всех действий, к которым пользователь может применить текущее состояние указанного экземпляра смарт-контракта.
 
@@ -440,11 +440,11 @@ Content-type: application/json
 
 ## <a name="execute-an-action-for-a-contract"></a>Выполнение действия для контракта
 
-Используйте [Contract Action POST API](/rest/api/azure-blockchain-workbench/contractsv2/contractactionpost) для принятия мер для указанного экземпляра смарт-контракта.
+Используйте [API действия контракта](/rest/api/azure-blockchain-workbench/contractsv2/contractactionpost) , чтобы выполнить действие для указанного экземпляра смарт-контракта.
 
 ### <a name="contract-action-post-request"></a>Запрос POST действия контракта
 
-В этом случае рассмотрим сценарий, при котором пользователь хотел бы изменить описание и цену актива.
+В этом случае рассмотрим сценарий, в котором пользователь хочет изменить описание и цену ресурса.
 
 ``` http
 POST /api/v1/contracts/{contractId}/actions
@@ -466,7 +466,7 @@ actionInformation: {
 
 Пользователи могут выполнить действие только с учетом текущего состояния указанного экземпляра смарт-контракта и роли связанного приложения или экземпляра смарт-контракта пользователя.
 
-### <a name="contract-action-post-response"></a>Ответ POST по контракту
+### <a name="contract-action-post-response"></a>Ответ на запрос POST действия контракта
 
 При успешном выполнении вызова POST возвращается ответ HTTP 200 OK без текста ответа.
 
@@ -475,6 +475,6 @@ HTTP/1.1 200 OK
 Content-type: application/json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения справочной информации по [Azure Blockchain Workbench REST API reference](https://docs.microsoft.com/rest/api/azure-blockchain-workbench)API Blockchain Workbench см.
+Справочные сведения об API-интерфейсах Блокчейн Workbench см. в [справочнике по Azure Блокчейн workbench REST API](https://docs.microsoft.com/rest/api/azure-blockchain-workbench).

@@ -1,5 +1,5 @@
 ---
-title: Иерархия стран/регионов, используемая географическим трафиком - Менеджер трафика Azure
+title: Иерархия стран или регионов, используемая географической маршрутизацией — диспетчер трафика Azure
 description: В этой статье приведена иерархия стран и регионов, используемая для географической маршрутизации в диспетчере трафика Azure.
 services: traffic-manager
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2017
 ms.author: rohink
 ms.openlocfilehash: 19445c06ccf08d2d7916545ad495c56883616c7a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76938644"
 ---
 # <a name="countryregion-hierarchy-used-by-azure-traffic-manager-for-geographic-traffic-routing-method"></a>Иерархия стран и регионов, используемая диспетчером трафика Azure для географической маршрутизации трафика
@@ -99,7 +99,7 @@ ms.locfileid: "76938644"
 
         - ME (Черногория)
 
-        - МК (Северная Македония)
+        - MK (Северный Македония)
 
         - MT (Мальта)
 
@@ -128,7 +128,7 @@ ms.locfileid: "76938644"
         - SM (Сан-Марино)
 
         - UA (Украина)
-            - Крымская область
+            - Регион Крым
 
         - VA (Ватикан)
 
@@ -270,7 +270,7 @@ ms.locfileid: "76938644"
 
         - TT (Тринидад и Тобаго)
 
-        - UM (Американские удаленные острова)
+        - UM (Малые Тихоокеанские отдаленные острова США)
 
         - US (США)
 
@@ -380,7 +380,7 @@ ms.locfileid: "76938644"
 
         - VG (Виргинские о-ва (Великобритания))
 
-        - VI (Американские Виргинские острова)
+        - VI (Виргинские острова США)
 
         - XE (Синт-Эстатиус)
 
@@ -688,6 +688,6 @@ ms.locfileid: "76938644"
 
         - WS (Самоа)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [методе географической маршрутизации трафика в диспетчере трафика Azure](traffic-manager-routing-methods.md#geographic).

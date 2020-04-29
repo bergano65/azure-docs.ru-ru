@@ -1,6 +1,6 @@
 ---
-title: Как использовать единый вок-на с облачным подготовкой
-description: В этой статье описывается, как установить и использовать sso с облачным прокладкой.
+title: Как использовать единый вход с облачной подготовкой
+description: В этой статье описывается, как установить и использовать единый вход с облачной подготовкой.
 services: active-directory
 author: billmath
 manager: daveba
@@ -12,14 +12,14 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3667dd529ce5542be84c5e357053d8cd11eb91e9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76908995"
 ---
-# <a name="using-single-sign-on-with-cloud-provisioning"></a>Использование единого знака с облачным обеспечением
-В следующем документе описывается, как использовать один знак с облачным обеспечением.
+# <a name="using-single-sign-on-with-cloud-provisioning"></a>Использование единого входа с облачной подготовкой
+В следующем документе описано, как использовать единый вход с облачной подготовкой.
 
 [!INCLUDE [active-directory-cloud-provisioning-sso.md](../../../includes/active-directory-cloud-provisioning-sso.md)]
 
@@ -30,4 +30,4 @@ ms.locfileid: "76908995"
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [Что такое подготовка облака Azure AD Connect?](what-is-cloud-provisioning.md)
+- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)

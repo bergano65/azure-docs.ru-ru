@@ -1,6 +1,6 @@
 ---
-title: Невозможно создать ноутбук Jupyter в Azure HDInsight
-description: Описывает шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
+title: Не удалось создать записную книжку Jupyter в Azure HDInsight
+description: Описывает шаги по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,19 +8,19 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/11/2020
 ms.openlocfilehash: 61e7cd8d37108b8f4eea88c4f6b6b2a8cdbfd605
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77186805"
 ---
-# <a name="unable-to-create-jupyter-notebook-in-azure-hdinsight"></a>Невозможно создать ноутбук Jupyter в Azure HDInsight
+# <a name="unable-to-create-jupyter-notebook-in-azure-hdinsight"></a>Не удалось создать записную книжку Jupyter в Azure HDInsight
 
-В этой статье описаны шаги устранения неполадок и возможные решения проблем при взаимодействии с кластерами Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
 ## <a name="issue"></a>Проблема
 
-При запуске записного книжки Jupyter вы получаете сообщение об ошибке, содержащее:
+При запуске записной книжки Jupyter появляется сообщение об ошибке, содержащее следующее:
 
 ```error
 Cannot convert notebook to v5 because that version doesn't exist
@@ -28,40 +28,40 @@ Cannot convert notebook to v5 because that version doesn't exist
 
 ## <a name="cause"></a>Причина
 
-Несоответствие версии.
+Несовпадение версий.
 
 ## <a name="resolution"></a>Решение
 
-1. Используйте [команду ssh](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Отоверьте приведенную ниже команду, заменив CLUSTERNAME на имя кластера, а затем введите команду:
+1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
-1. Открыть, `_version.py` выполняя следующую команду:
+1. Откройте `_version.py` , выполнив следующую команду:
 
     ```bash
     sudo nano /usr/bin/anaconda/lib/python2.7/site-packages/nbformat/_version.py
     ```
 
-1. Изменение **5** к **4,** так что измененная линия отображается следующим образом:
+1. Измените значение **5** на **4** , чтобы измененная строка выявлялась следующим образом:
 
     ```python
     version_info = (4, 0, 3)
     ```
 
-    Сохранить изменения, введя **Ctrl X**, **Y**, **Введите**.
+    Сохраните изменения, введя **CTRL + X**, **Y**, **введите**.
 
-1. Из веб-браузера, `https://CLUSTERNAME.azurehdinsight.net/#/main/services/JUPYTER`перейдите к , где `CLUSTERNAME` имя вашего кластера.
+1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net/#/main/services/JUPYTER`, где `CLUSTERNAME` — это имя вашего кластера.
 
 1. Перезапустите службу Jupyter.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [поддержку сообщества Azure.](https://azure.microsoft.com/support/community/)
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Связаться [@AzureSupport](https://twitter.com/azuresupport) с - официальная учетная запись Microsoft Azure для улучшения обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, вы можете отправить запрос на поддержку с [портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **поддержку** из бара меню или откройте концентратор **поддержки Справка и.** Для получения более подробной информации просмотрите [Как создать запрос поддержки Azure.](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) Доступ к управлению подпиской и поддержке выставления счетов включен в подписку Microsoft Azure, а техническая поддержка обеспечивается через один из [планов поддержки Azure.](https://azure.microsoft.com/support/plans/)
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

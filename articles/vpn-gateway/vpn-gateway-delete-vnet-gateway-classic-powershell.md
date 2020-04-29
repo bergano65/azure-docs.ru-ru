@@ -1,5 +1,5 @@
 ---
-title: 'Удаление виртуального сетевого шлюза: классический Azure'
+title: 'Удаление шлюза виртуальной сети: классический класс Azure'
 description: Удаление шлюза виртуальной сети с помощью PowerShell в классической модели развертывания.
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: cherylmc
 ms.openlocfilehash: e7283f5e28edc6f7beaad3a2743aa155f6ea6e14
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77198655"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)
@@ -27,7 +27,7 @@ ms.locfileid: "77198655"
 
 ## <a name="step-1-connect-to-azure"></a><a name="connect"></a>Шаг 1. Подключение к Azure
 
-### <a name="1-install-the-latest-powershell-cmdlets"></a>1. Установите новейшие смдлеты PowerShell.
+### <a name="1-install-the-latest-powershell-cmdlets"></a>1. Установите последние командлеты PowerShell.
 
 [!INCLUDE [vpn-gateway-classic-powershell](../../includes/vpn-gateway-powershell-classic-locally.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "77198655"
 
 Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
-1. Откройте консоль PowerShell с повышенными правами. Чтобы перейти к управлению службами, используйте эту команду:
+1. Откройте консоль PowerShell с повышенными правами. Чтобы переключиться на управление службами, используйте следующую команду:
 
    ```powershell
    azure config mode asm
@@ -56,7 +56,7 @@ ms.locfileid: "77198655"
 Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ```
 
-Откройте файл в текстовом редакторе и просмотрите имя для классической виртуальной сети. При создании виртуальной сети на портале Azure полное имя, которое используется Azure, не отображается на портале. Например, если виртуальной сеть отображается на портале Azure с именем ClassicVNet1, то в файле конфигурации сети она может иметь гораздо более длинное имя. Это имя может выглядеть примерно следующим образом: Group ClassicRG1 ClassicVNet1. Виртуальные названия сетей перечислены как **"VirtualNetworkSite имя q"**. При выполнении командлетов PowerShell используйте имена из файла конфигурации сети.
+Откройте файл в текстовом редакторе и просмотрите имя для классической виртуальной сети. При создании виртуальной сети на портале Azure полное имя, которое используется Azure, не отображается на портале. Например, если виртуальной сеть отображается на портале Azure с именем ClassicVNet1, то в файле конфигурации сети она может иметь гораздо более длинное имя. Это имя может выглядеть примерно следующим образом: Group ClassicRG1 ClassicVNet1. Имена виртуальных сетей перечислены как **"VirtualNetworkSite Name ="**. При выполнении командлетов PowerShell используйте имена из файла конфигурации сети.
 
 ## <a name="step-3-delete-the-virtual-network-gateway"></a><a name="delete"></a>Шаг 3. Удаление шлюза виртуальной сети
 
@@ -80,7 +80,7 @@ Status : Successful
 
 ### <a name="local-network-site-references"></a><a name="lnsref"></a>Ссылки на сайты локальной сети
 
-Чтобы удалить данные ссылок на сайты, внесите изменения в элемент **ConnectionsToLocalNetwork/LocalNetworkSiteRef**. Удаление ссылки на локальный сайт Azure инициирует удаление туннеля. В зависимости от созданной конфигурации, вы можете не иметь **LocalNetworkSiteRef** в списке.
+Чтобы удалить данные ссылок на сайты, внесите изменения в элемент **ConnectionsToLocalNetwork/LocalNetworkSiteRef**. Удаление ссылки на локальный сайт Azure инициирует удаление туннеля. В зависимости от созданной конфигурации у вас может не быть **LocalNetworkSiteRef** в списке.
 
 ```
 <Gateway>
@@ -92,7 +92,7 @@ Status : Successful
  </Gateway>
 ```
 
-Пример
+Пример:
 
 ```
 <Gateway>
@@ -101,7 +101,7 @@ Status : Successful
  </Gateway>
 ```
 
-### <a name="local-network-sites"></a><a name="lns"></a>Местные сетевые сайты
+### <a name="local-network-sites"></a><a name="lns"></a>Сайты локальной сети
 
 Удалите все локальные сайты, которые больше не используются. В зависимости от созданной конфигурации элемент **LocalNetworkSite** может отсутствовать.
 
@@ -137,7 +137,7 @@ Status : Successful
 
 ### <a name="client-addresspool"></a><a name="clientaddresss"></a>Пул адресов клиента
 
-Если у вас есть подключение P2S к вашему VNet, у вас будет **VPNClientAddressPool.** Удалите пулы адресов клиента, которые соответствуют удаленному шлюзу виртуальной сети.
+Если вы P2S подключение к виртуальной сети, то у вас будет **VPNClientAddressPool**. Удалите пулы адресов клиента, которые соответствуют удаленному шлюзу виртуальной сети.
 
 ```
 <Gateway>
@@ -148,7 +148,7 @@ Status : Successful
  </Gateway>
 ```
 
-Пример
+Пример:
 
 ```
 <Gateway>
@@ -158,7 +158,7 @@ Status : Successful
 
 ### <a name="gatewaysubnet"></a><a name="gwsub"></a>Подсеть шлюза
 
-Удалите **GatewaySubnet,** который соответствует VNet.
+Удалите **GatewaySubnet** , соответствующий виртуальной сети.
 
 ```
 <Subnets>
@@ -171,7 +171,7 @@ Status : Successful
  </Subnets>
 ```
 
-Пример
+Пример:
 
 ```
 <Subnets>

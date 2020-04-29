@@ -1,34 +1,34 @@
 ---
-title: Элемент uI IdentitySelector
-description: Описывает элемент uI Microsoft.ManagedIdentity.IdentitySelector для портала Azure. Используется для присвоения управляемым идентификаторам ресурсу.
+title: Элемент пользовательского интерфейса Идентитиселектор
+description: Описывает элемент пользовательского интерфейса Microsoft. ManagedIdentity. Идентитиселектор для портал Azure. Используется для назначения управляемых удостоверений ресурсу.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tomfitz
 ms.openlocfilehash: cb66a2684e0b83f4f0cc01a07cc724f6beab4d68
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77087548"
 ---
-# <a name="microsoftmanagedidentityidentityselector-ui-element"></a>Элемент uI Microsoft.ManagedIdentity.IdentitySelector
+# <a name="microsoftmanagedidentityidentityselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft. ManagedIdentity. Идентитиселектор
 
-Контроль для присвоения [управляемых идентификаторов](../../active-directory/managed-identities-azure-resources/overview.md) для ресурса в развертывании.
+Элемент управления для назначения [управляемых удостоверений](../../active-directory/managed-identities-azure-resources/overview.md) для ресурса в развертывании.
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 
-Элементы управления состоят из следующих элементов:
+Элемент управления состоит из следующих элементов:
 
-![Microsoft.ManagedIdentity.IdentitySelector первый шаг](./media/managed-application-elements/microsoft.managedidentity.identityselector1.png)
+![Первый шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft.managedidentity.identityselector1.png)
 
-Когда пользователь выбирает **Добавить,** следующая форма открывается. Пользователь может выбрать один или несколько пользовательских идентификаторов для ресурса.
+Когда пользователь нажимает кнопку **Добавить**, открывается следующая форма. Пользователь может выбрать одно или несколько назначенных пользователю удостоверений для ресурса.
 
-![Microsoft.ManagedIdentity.IdentitySelector второй шаг](./media/managed-application-elements/microsoft.managedidentity.identityselector2.png)
+![Второй шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft.managedidentity.identityselector2.png)
 
-Выбранные идентификаторы отображаются в таблице. Пользователь может добавлять или удалять элементы из этой таблицы.
+Выбранные удостоверения отображаются в таблице. Пользователь может добавлять или удалять элементы из этой таблицы.
 
-![Microsoft.ManagedIdentity.IdentitySelector третий шаг](./media/managed-application-elements/microsoft.managedidentity.identityselector3.png)
+![Третий шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft.managedidentity.identityselector3.png)
 
 ## <a name="schema"></a>схема
 
@@ -69,16 +69,16 @@ ms.locfileid: "77087548"
 
 ## <a name="remarks"></a>Remarks
 
-- Используйте **defaultValue.systemAssignedIdentity** для установки начального значения для системы, назначенной контролем параметров идентификации. Значение по умолчанию **выключено.** Разрешены следующие значения:
-  - **On** - К ресурсу присваивается система, назначенная идентификация.
-  - **Off** - Система, назначенная идентификация не назначена ресурсу.
-  - **OnOnly** - К ресурсу присваивается система, назначенная идентификационным данным. Пользователи не могут отсеивать это значение во время развертывания.
-  - **OffOnly** - Система, назначенная идентификация не присваивается ресурсу. Пользователи не могут отсеивать это значение во время развертывания.
+- Используйте **DefaultValue. системассигнедидентити** , чтобы задать начальное значение для элемента управления параметрами идентификации, назначенного системой. Значение по умолчанию — **Off**. Допустимы следующие значения:
+  - **On** — назначенное системой удостоверение назначается ресурсу.
+  - **Off** — назначенное системой удостоверение не назначается ресурсу.
+  - **Только** ononly назначенное системой удостоверение назначается ресурсу. Пользователи не могут изменять это значение во время развертывания.
+  - **Оффонли** — назначенное системой удостоверение не назначено ресурсу. Пользователи не могут изменять это значение во время развертывания.
 
-- Если **options.hideSystemAssignedIdentity** установлен к **истине,** то UI для настройки установленной идентификации системы не отображается. Значение по умолчанию для этой опции **является ложным.**
-- Если **options.hideUserAssignedidentity** установлен в **истину,** пользовательский интерфейс для настройки назначенного пользователя удостоверения не отображается. Ресурсне присваивается удостоверению, назначенному пользователю. Значение по умолчанию для этой опции **является ложным.**
+- Если **параметр options. хидесистемассигнедидентити** имеет значение **true**, Пользовательский интерфейс для настройки назначенного системой удостоверения не отображается. Значение по умолчанию для этого параметра — **false**.
+- Если **параметр options. хидеусерассигнедидентити** имеет значение **true**, Пользовательский интерфейс для настройки назначенного пользователю удостоверения не отображается. Ресурсу не назначено удостоверение, назначенное пользователем. Значение по умолчанию для этого параметра — **false**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 - Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

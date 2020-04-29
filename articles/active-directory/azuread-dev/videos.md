@@ -1,6 +1,6 @@
 ---
-title: Видео миграции Azure ADAL к MSAL Azure
-description: Видео, которые помогают перейти с платформы разработчика Active Directory Azure на платформу идентификационных данных Майкрософт
+title: Видео о миграции Azure ADAL для MSAL | Службы
+description: Видеоматериалы, помогающие переходить с платформы Azure Active Directory Developer на платформу Microsoft Identity
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -14,29 +14,29 @@ ms.custom: aaddev
 ms.reviewer: celested
 titleSuffix: Microsoft identity platform
 ms.openlocfilehash: e71f555f7a9cefef3aeada79031db3a07e3db49a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77202064"
 ---
-# <a name="azure-active-directory-developer-platform-videos"></a>Видео платформы разработчиков платформы разработчиков Azure Active Directory
+# <a name="azure-active-directory-developer-platform-videos"></a>Видео о платформе Azure Active Directory разработчиков
 
-Узнайте о новой платформе идентификации Майкрософт и о том, как перейти на нее с платформы разработчиков Azure Active Directory (Azure AD). Видео, как правило, 1-2 минут.
+Узнайте о новой платформе Microsoft Identity и о том, как перейти на нее с помощью платформы разработчика Azure Active Directory (Azure AD). Обычно видео — 1-2 минут.
 
-## <a name="migrate-from-v10-to-v20"></a>Миграция из v1.0 в v2.0
+## <a name="migrate-from-v10-to-v20"></a>Миграция с версии 1.0 на v 2.0
 
-**Подробнее о переходе на последнюю версию платформы майкрософт**
+**Сведения о переходе на последнюю версию платформы Microsoft Identity**
 
 :::row:::
     :::column:::
-        Новый обзор платформы идентификации Майкрософт
+        Обзор новой платформы идентификации Майкрософт
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/bNlcFuIo3r8]
     :::column-end:::
     :::column:::
-        Введение в библиотеки MSAL
+        Общие сведения о библиотеках MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/apbbx2n4tnU]
@@ -44,13 +44,13 @@ ms.locfileid: "77202064"
 :::row-end:::
 :::row:::
     :::column:::
-        Конечные точки и преимущества перехода на v2.0
+        Конечные точки и преимущества перехода на v 2.0
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
     :::column-end:::
      :::column:::
-        Миграция кодовой базы ADAL в MSAL
+        Перенос базы кода ADAL в MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/xgL_z9yCnrE]
@@ -58,19 +58,19 @@ ms.locfileid: "77202064"
 :::row-end:::
 :::row:::
     :::column:::
-        Зачем мигрировать из ADAL в MSAL
+        Зачем выполнять миграцию из ADAL в MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
     :::column-end:::
     :::column:::
-        Преимущества MSAL над ADAL
+        Преимущества MSAL через ADAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/q-TDszj2O-4]
     :::column-end:::
 :::row-end:::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Узнайте о новой [платформе идентификации Майкрософт](https://docs.microsoft.com/azure/active-directory/develop)
+Сведения о новой [платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop)

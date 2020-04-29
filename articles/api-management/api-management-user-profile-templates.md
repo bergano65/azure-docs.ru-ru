@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 4e3e430874f9d5b64f717b6ebb1cacb0eae46b1f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79243956"
 ---
 # <a name="user-profile-templates-in-azure-api-management"></a>Шаблоны профилей пользователей в службе управления API Azure
@@ -31,7 +31,7 @@ ms.locfileid: "79243956"
   
 -   [Приложения](#Applications)  
   
--   [Обновленная информация об учетной записи](#UpdateAccountInfo)  
+-   [Обновить сведения об учетной записи](#UpdateAccountInfo)  
   
 > [!NOTE]
 >  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
@@ -40,7 +40,7 @@ ms.locfileid: "79243956"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="profile"></a><a name="Profile"></a>Профиль  
+##  <a name="profile"></a><a name="Profile"></a>Профиля  
  Шаблон **профиля** позволяет настроить раздел профиля пользователя на странице профиля пользователя на портале разработчика.  
   
  ![Страница профиля пользователя](./media/api-management-user-profile-templates/APIM-User-Profile-Page.png "Страница профиля пользователя APIM")  
@@ -98,14 +98,14 @@ ms.locfileid: "79243956"
 ```  
   
 ### <a name="controls"></a>Элементы управления  
- Этот шаблон не может использовать [элементы управления страницой.](api-management-page-controls.md)  
+ Этот шаблон не может использовать какие [-либо элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
   
 > [!NOTE]
 >  Шаблоны [профиля](#Profile), [приложений](#Applications) и [подписок](#Subscriptions) используют одинаковую модель данных и получают одни и те же данные шаблона.  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
 |`firstName`|строка|Имя текущего пользователя.|  
 |`lastName`|строка|Фамилия текущего пользователя.|  
@@ -185,7 +185,7 @@ ms.locfileid: "79243956"
 }  
 ```  
   
-##  <a name="subscriptions"></a><a name="Subscriptions"></a>Подписки  
+##  <a name="subscriptions"></a><a name="Subscriptions"></a>Оформления  
  Шаблон **подписок** позволяет настроить раздел подписок на странице профиля пользователя на портале разработчика.  
   
  ![Страница подписки пользователя](./media/api-management-user-profile-templates/APIM-User-Subscription-Page.png "Страница подписки пользователя APIM")  
@@ -317,16 +317,16 @@ ms.locfileid: "79243956"
 ```  
   
 ### <a name="controls"></a>Элементы управления  
- Этот шаблон может использовать следующие [элементы управления страницой.](api-management-page-controls.md)  
+ Этот шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [отмена подписки](api-management-page-controls.md#subscription-cancel)  
+-   [подписка — Отмена](api-management-page-controls.md#subscription-cancel)  
   
 ### <a name="data-model"></a>Модель данных  
   
 > [!NOTE]
 >  Шаблоны [профиля](#Profile), [приложений](#Applications) и [подписок](#Subscriptions) используют одинаковую модель данных и получают одни и те же данные шаблона.  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
 |`firstName`|строка|Имя текущего пользователя.|  
 |`lastName`|строка|Фамилия текущего пользователя.|  
@@ -409,7 +409,7 @@ ms.locfileid: "79243956"
 ##  <a name="applications"></a><a name="Applications"></a>Приложений  
  Шаблон **приложений** позволяет настроить раздел приложений на странице профиля пользователя на портале разработчика.  
   
- ![Страница приложений учетной записи пользователя](./media/api-management-user-profile-templates/APIM-User-Account-Applications-Page.png "Страница приложений для пользователей APIM")  
+ ![Страница "приложения учетной записи пользователя"](./media/api-management-user-profile-templates/APIM-User-Account-Applications-Page.png "Страница приложений учетной записи пользователя APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -480,16 +480,16 @@ ms.locfileid: "79243956"
 ```  
   
 ### <a name="controls"></a>Элементы управления  
- Этот шаблон может использовать следующие [элементы управления страницой.](api-management-page-controls.md)  
+ Этот шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [приложение-действия](api-management-page-controls.md#app-actions)  
+-   [App-действия](api-management-page-controls.md#app-actions)  
   
 ### <a name="data-model"></a>Модель данных  
   
 > [!NOTE]
 >  Шаблоны [профиля](#Profile), [приложений](#Applications) и [подписок](#Subscriptions) используют одинаковую модель данных и получают одни и те же данные шаблона.  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
 |`firstName`|строка|Имя текущего пользователя.|  
 |`lastName`|строка|Фамилия текущего пользователя.|  
@@ -572,7 +572,7 @@ ms.locfileid: "79243956"
 ##  <a name="update-account-info"></a><a name="UpdateAccountInfo"></a> Обновление сведений об учетной записи  
  Шаблон **обновления сведений об учетной записи** позволяет настраивать страницу **обновления сведений об учетной записи** на портале разработчика.  
   
- ![Шаблоны портала веб-порталов веб-порталов веб-страницы веб-страницы веб-страницы пользователя](./media/api-management-user-profile-templates/APIM-User-Account-Info-Page-Developer-Portal-Templates.png "ApIM Пользователь учетная запись Информация Страница Страницы Шаблоны портала")  
+ ![Шаблоны портала разработчика страницы сведений об учетной записи пользователя](./media/api-management-user-profile-templates/APIM-User-Account-Info-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика на странице сведений об учетной записи пользователя APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -607,7 +607,7 @@ ms.locfileid: "79243956"
 ```  
   
 ### <a name="controls"></a>Элементы управления  
- Этот шаблон не может использовать [элементы управления страницой.](api-management-page-controls.md)  
+ Этот шаблон не может использовать какие [-либо элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
  Сущность [сведений об учетной записи пользователя](api-management-template-data-model-reference.md#UserAccountInfo).  
@@ -626,5 +626,5 @@ ms.locfileid: "79243956"
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

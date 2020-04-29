@@ -1,7 +1,7 @@
 ---
-title: Используйте идентификацию AAD с помощью веб-сервиса
+title: Использование удостоверения AAD с веб-службой
 titleSuffix: Azure Machine Learning
-description: Используйте aAD-идентификацию с помощью веб-сервиса в службе Azure Kubernetes для доступа к облачным ресурсам во время подсчета очков.
+description: Используйте удостоверение AAD с веб-службой в службе Kubernetes Azure для доступа к облачным ресурсам во время оценки.
 services: machine-learning
 author: trevorbye
 ms.author: trbye
@@ -11,49 +11,49 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.openlocfilehash: f997aef59e91bed325b84af855a84f43cd639d83
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77122848"
 ---
-# <a name="use-azure-ad-identity-with-your-machine-learning-web-service-in-azure-kubernetes-service"></a>Используйте иноеудостоверения Azure AD с помощью веб-службы машинного обучения в службе Azure Kubernetes
+# <a name="use-azure-ad-identity-with-your-machine-learning-web-service-in-azure-kubernetes-service"></a>Использование удостоверения Azure AD с веб-службой машинного обучения в службе Kubernetes Azure
 
-В этом виде, как вы узнаете, как назначить идентификацию Active Directory (AAD) для развернутой модели машинного обучения в службе Azure Kubernetes. Проект [AAD Pod Identity](https://github.com/Azure/aad-pod-identity) позволяет приложениям безопасно получать доступ к облачным ресурсам с помощью AAD с помощью примитивов [управляемой идентификации](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) и Kubernetes. Это позволяет веб-службе безопасно получить доступ к ресурсам Azure без необходимости встраивать учетные данные или управлять токенами непосредственно внутри `score.py` скрипта. В этой статье объясняются шаги по созданию и установке идентификатора Azure в кластере службы Azure Kubernetes и присвоению идентификатора развернутому веб-службе.
+В этом пошаговом окне вы узнаете, как назначить удостоверение Azure Active Directory (AAD) для развернутой модели машинного обучения в службе Azure Kubernetes. Проект [удостоверения Pod для AAD](https://github.com/Azure/aad-pod-identity) позволяет приложениям безопасно получать доступ к облачным ресурсам с помощью AAD, используя [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) и примитивы Kubernetes. Это позволяет веб-службе безопасно получать доступ к ресурсам Azure без необходимости внедрять учетные данные или управлять маркерами непосредственно `score.py` внутри скрипта. В этой статье объясняется, как создать и установить удостоверение Azure в кластере службы Azure Kubernetes и назначить удостоверение для развернутой веб-службы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- [Расширение Azure CLI для службы машинного обучения,](reference-azure-machine-learning-cli.md) [SDK для машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или расширение кода Visual Studio [Azure Machine Learning.](tutorial-setup-vscode-extension.md)
+- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
-- Доступ к кластеру AKS с помощью `kubectl` команды. Для получения дополнительной [информации см.](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)
+- Доступ к кластеру AKS с помощью `kubectl` команды. Дополнительные сведения см. в разделе [Подключение к кластеру](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) .
 
-- Веб-служба Azure Machine Learning, развернутая в кластере AKS.
+- Машинное обучение Azure веб-службы, развернутой в кластере AKS.
 
-## <a name="create-and-install-an-azure-identity-in-your-aks-cluster"></a>Создание и установка идентификации Azure в кластере AKS
+## <a name="create-and-install-an-azure-identity-in-your-aks-cluster"></a>Создание и установка удостоверения Azure в кластере AKS
 
-1. Чтобы определить, включен ли кластер AKS rBAC, используйте следующую команду:
+1. Чтобы определить, включен ли в кластере AKS RBAC, используйте следующую команду:
 
     ```azurecli-interactive
     az aks show --name <AKS cluster name> --resource-group <resource group name> --subscription <subscription id> --query enableRbac
     ```
 
-    Эта команда возвращает `true` значение включения RBAC. Это значение определяет команду для использования на следующем этапе.
+    Эта команда возвращает значение, `true` если RBAC включен. Это значение определяет команду, которая будет использоваться на следующем шаге.
 
-1. Чтобы установить [aAD Pod Identity](https://github.com/Azure/aad-pod-identity#getting-started) в кластер akS, используйте одну из следующих команд:
+1. Чтобы установить [удостоверение для AAD Pod](https://github.com/Azure/aad-pod-identity#getting-started) в кластере AKS, выполните одну из следующих команд:
 
-    * Если кластер AKS **имеет включенную RBAC** используйте следующую команду:
+    * Если в кластере AKS **включен RBAC** , используйте следующую команду:
     
         ```azurecli-interactive
         kubectl apply -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
         ```
     
-    * Если в кластере AKS **нет включенного RBAC,** используйте следующую команду:
+    * Если в кластере AKS **не включен RBAC**, используйте следующую команду:
     
         ```azurecli-interactive
         kubectl apply -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
         ```
     
-        Выход команды аналогичен следующему тексту:
+        Выходные данные команды похожи на следующий текст:
 
         ```text
         customresourcedefinition.apiextensions.k8s.io/azureassignedidentities.aadpodidentity.k8s.io created
@@ -64,25 +64,25 @@ ms.locfileid: "77122848"
         deployment.apps/mic created
         ```
 
-1. [Создайте итог Azure](https://github.com/Azure/aad-pod-identity#2-create-an-azure-identity) после шагов, показанных на странице проекта AAD Pod Identity.
+1. [Создайте удостоверение Azure](https://github.com/Azure/aad-pod-identity#2-create-an-azure-identity) , выполнив действия, показанные на странице проекта удостоверения Pod AAD.
 
-1. [Установите итог Azure](https://github.com/Azure/aad-pod-identity#3-install-the-azure-identity) после шагов, показанных на странице проекта AAD Pod Identity.
+1. [Установите удостоверение Azure](https://github.com/Azure/aad-pod-identity#3-install-the-azure-identity) , выполнив действия, показанные на странице проекта удостоверения Pod AAD.
 
-1. [Установите связывание идентичности Azure](https://github.com/Azure/aad-pod-identity#5-install-the-azure-identity-binding) после шагов, показанных на странице проекта AAD Pod Identity.
+1. [Установите привязку удостоверений Azure](https://github.com/Azure/aad-pod-identity#5-install-the-azure-identity-binding) , выполнив действия, показанные на странице проекта удостоверения Pod AAD.
 
-1. Если идентификация Azure, созданная на предыдущем этапе, не входит в ту же группу ресурсов, что и кластер AKS, следуйте [разрешениям Set Permissions для MIC](https://github.com/Azure/aad-pod-identity#6-set-permissions-for-mic) после шагов, показанных на странице проекта AAD Pod Identity.
+1. Если удостоверение Azure, созданное на предыдущем шаге, находится не в той же группе ресурсов, что и кластер AKS, следуйте указаниям в разделе [Настройка разрешений для MIC](https://github.com/Azure/aad-pod-identity#6-set-permissions-for-mic) , следуя шагам, приведенным на странице проекта удостоверений AAD Pod.
 
-## <a name="assign-azure-identity-to-machine-learning-web-service"></a>Присвоить Итог Azure веб-службе машинного обучения
+## <a name="assign-azure-identity-to-machine-learning-web-service"></a>Назначение удостоверения Azure веб-службе машинного обучения
 
-Следующие шаги используют идентификатор Azure, созданный в предыдущем разделе, и присваивают ее веб-службе AKS через **метку селектора.**
+Следующие шаги используют удостоверение Azure, созданное в предыдущем разделе, и назначение его веб-службе AKS с помощью **метки Selector**.
 
-Во-первых, определите имя и пространство имени развертывания в кластере AKS, который необходимо назначить идентификатору Azure. Вы можете получить эту информацию, запустив следующую команду. Область имен должна быть вашим рабочим пространством Azure Machine Learning, а имя развертывания должно быть вашим конечным именем, как показано на портале.
+Сначала укажите имя и пространство имен развертывания в кластере AKS, которому требуется назначить удостоверение Azure. Эти сведения можно получить, выполнив следующую команду. Пространства имен должны быть Машинное обучение Azure именем рабочей области, а имя развертывания должно быть именем конечной точки, как показано на портале.
 
 ```azurecli-interactive
 kubectl get deployment --selector=isazuremlapp=true --all-namespaces --show-labels
 ```
 
-Добавьте в развертывание метку селектора итога «Лазурный узел», отредактировав спецификацию развертывания. Значение селектора должно быть тем, которое вы определили в шаге 5 [установки связывания идентичности Azure.](https://github.com/Azure/aad-pod-identity#5-install-the-azure-identity-binding)
+Добавьте метку селектора удостоверения Azure в развертывание, изменив спецификацию развертывания. Значение селектора должно быть задано на шаге 5 [установки привязки удостоверений Azure](https://github.com/Azure/aad-pod-identity#5-install-the-azure-identity-binding).
 
 ```yaml
 apiVersion: "aadpodidentity.k8s.io/v1"
@@ -94,7 +94,7 @@ spec:
   Selector: <label value to match>
 ```
 
-Отспособьте развертывание для добавления метки селектора итога Azure. Перейти к следующему разделу под `/spec/template/metadata/labels`. Вы должны увидеть такие `isazuremlapp: “true”`значения, как . Добавьте ярлык aad-pod-identity, как показано ниже.
+Измените развертывание, чтобы добавить метку селектора удостоверений Azure. Перейдите к следующему разделу в `/spec/template/metadata/labels`разделе. Вы должны увидеть такие значения, `isazuremlapp: “true”`как. Добавьте метку AAD-Pod-Identity, как показано ниже.
 
 ```azurecli-interactive
     kubectl edit deployment/<name of deployment> -n azureml-<name of workspace>
@@ -109,31 +109,31 @@ spec:
       ...
 ```
 
-Чтобы убедиться, что метка была правильно добавлена, запустите следующую команду.
+Чтобы проверить правильность добавления метки, выполните следующую команду.
 
 ```azurecli-interactive
    kubectl get deployment <name of deployment> -n azureml-<name of workspace> --show-labels
 ```
 
-Чтобы увидеть все статусы стручка, запустите следующую команду.
+Чтобы просмотреть все состояния Pod, выполните следующую команду.
 
 ```azurecli-interactive
     kubectl get pods -n azureml-<name of workspace>
 ```
 
-После запуска стручков веб-службы для этого развертывания смогут получать доступ к ресурсам Azure через идентификатор Azure без необходимости встраивать учетные данные в код. 
+После того как модули Pod будут работать, веб-службы для этого развертывания смогут получить доступ к ресурсам Azure через удостоверение Azure без необходимости внедрять учетные данные в код. 
 
-## <a name="assign-the-appropriate-roles-to-your-azure-identity"></a>Назначить соответствующие роли вашей идентификации Azure
+## <a name="assign-the-appropriate-roles-to-your-azure-identity"></a>Назначение соответствующих ролей удостоверению Azure
 
-[Назначьте управляемое удостоверение Azure с соответствующими ролями](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal) для доступа к другим ресурсам Azure. Убедитесь, что присваиваемые роли имеют правильные **действия данных.** Например, [в роли чтения данных хранилища Blob](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader) будут считываться разрешения на хранение Blob, в то время как общая [роль чтения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) может не быть.
+[Назначьте управляемое удостоверение Azure с соответствующими ролями](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal) для доступа к другим ресурсам Azure. Убедитесь, что назначенные роли имеют правильные действия с **данными**. Например, [роль читателя данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader) будет иметь разрешения на чтение BLOB-объекта хранилища, а универсальная [роль читателя](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) — нет.
 
-## <a name="use-azure-identity-with-your-machine-learning-web-service"></a>Используйте Итог Azure с помощью веб-службы машинного обучения
+## <a name="use-azure-identity-with-your-machine-learning-web-service"></a>Использование удостоверения Azure в веб-службе машинного обучения
 
-Развертывание модели в кластер AKS. Скрипт `score.py` может содержать операции, указывающие на ресурсы Azure, к которым имеет доступ ими Azure Identity. Убедитесь, что вы установили необходимые зависимости библиотеки клиентов для ресурса, к который вы пытаетесь получить доступ. Ниже приведены несколько примеров того, как можно использовать итог Azure для доступа к различным ресурсам Azure из службы.
+Разверните модель в кластере AKS. `score.py` Скрипт может содержать операции, указывающие на ресурсы Azure, к которым имеет доступ удостоверение Azure. Убедитесь, что установлены необходимые зависимости клиентской библиотеки для ресурса, к которому вы пытаетесь получить доступ. Ниже приведено несколько примеров того, как можно использовать удостоверение Azure для доступа к различным ресурсам Azure из службы.
 
-### <a name="access-key-vault-from-your-web-service"></a>Доступ к Key Vault из веб-сервиса
+### <a name="access-key-vault-from-your-web-service"></a>Доступ к Key Vault из веб-службы
 
-Если вы предоставили доступ к секрету Вашего **Убежища,** вы `score.py` можете получить к нему доступ с помощью следующего кода.
+Если вы предоставили удостоверению Azure доступ на чтение к секрету в **Key Vault**, `score.py` вы можете получить к нему доступ, используя следующий код.
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -151,9 +151,9 @@ secret_client = SecretClient(
 secret = secret_client.get_secret(my_secret_name)
 ```
 
-### <a name="access-blob-from-your-web-service"></a>Доступ к Blob из веб-сервиса
+### <a name="access-blob-from-your-web-service"></a>Доступ к большому двоичному объекту из веб-службы
 
-Если вы предоставили доступ к данным Azure Identity, `score.py` в хранилище **Blob,** можно получить к нему доступ с помощью следующего кода.
+Если вы задаете удостоверению Azure доступ на чтение данных внутри **большого двоичного объекта хранилища**, вы `score.py` можете получить к нему доступ, используя следующий код.
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -173,7 +173,7 @@ blob_data = blob_client.download_blob()
 blob_data.readall()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Для получения дополнительной информации о том, как использовать клиентскую библиотеку Python Azure Identity, можно [ознакомиться с репозиторием](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity#azure-identity-client-library-for-python) gitHub.
-* Подробное руководство по развертыванию моделей в кластерах служб [how-to](how-to-deploy-azure-kubernetes-service.md)Azure Kubernetes можно, см.
+* Дополнительные сведения об использовании клиентской библиотеки удостоверений Azure для Python см. в [репозитории](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity#azure-identity-client-library-for-python) на сайте GitHub.
+* Подробное руководство по развертыванию моделей в кластерах службы Kubernetes Azure [см. в](how-to-deploy-azure-kubernetes-service.md)этом разделе.

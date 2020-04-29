@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: ec716924d3cebf8e78b0505b95837b91c568813a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78898149"
 ---
 # <a name="supported-data-sources-in-azure-data-catalog"></a>Источники данных, поддерживаемые в каталоге данных Azure
@@ -23,13 +23,13 @@ ms.locfileid: "78898149"
     <tr>
        <td><b>Объект источника данных</b></td>
        <td><b>API</b></td>
-       <td><b>Ручная запись</b></td>
-       <td><b>Инструмент регистрации</b></td>
-       <td><b>Инструменты открытого весят</b></td>
-       <td><b>Примечания</b></td>
+       <td><b>Ручной ввод</b></td>
+       <td><b>Средство регистрации</b></td>
+       <td><b>Средства с открытым входом</b></td>
+       <td><b>Примечания</b>.</td>
     </tr>
     <tr>
-      <td>Каталог Azure Data Lake Store (только Gen 1)</td>
+      <td>Azure Data Lake Store Directory (только Gen 1)</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -151,7 +151,7 @@ ms.locfileid: "78898149"
       <td></td>
     </tr>
     <tr>
-      <td>Представление хранилища данных Azure S'L</td>
+      <td>Представление хранилища данных SQL Azure</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -164,7 +164,7 @@ ms.locfileid: "78898149"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop</td>
-      <td>Сервер 2008 и более поздние версии.</td>
+      <td>SQL Server 2008 и более поздних версий.</td>
     </tr>
     <tr>
       <td>Ключевые показатели эффективности SQL Server Analysis Services</td>
@@ -172,7 +172,7 @@ ms.locfileid: "78898149"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop</td>
-      <td>Сервер 2008 и более поздние версии.</td>
+      <td>SQL Server 2008 и более поздних версий.</td>
     </tr>
     <tr>
       <td>Измерение SQL Server Analysis Services</td>
@@ -180,7 +180,7 @@ ms.locfileid: "78898149"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop</td>
-      <td>Сервер 2008 и более поздние версии.</td>
+      <td>SQL Server 2008 и более поздних версий.</td>
     </tr>
     <tr>
       <td>Таблица SQL Server Analysis Services</td>
@@ -188,7 +188,7 @@ ms.locfileid: "78898149"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop</td>
-      <td>Сервер 2008 и более поздние версии.</td>
+      <td>SQL Server 2008 и более поздних версий.</td>
     </tr>
     <tr>
       <td>Отчет для служб SQL Server Reporting Services</td>
@@ -196,7 +196,7 @@ ms.locfileid: "78898149"
       <td>✓</td>
       <td>✓</td>
       <td>Браузер</td>
-      <td>Только серверы в основном режиме. Режим SharePoint не поддерживается. Сервер 2008 года и только более поздние версии</td>
+      <td>Только серверы в основном режиме. Режим SharePoint не поддерживается. Только SQL Server 2008 и более поздних версий</td>
     </tr>
     <tr>
       <td>Таблица SQL Server</td>
@@ -204,7 +204,7 @@ ms.locfileid: "78898149"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop, SQL Server Data Tools</td>
-      <td>Сервер 2008 и более поздние версии.</td>
+      <td>SQL Server 2008 и более поздних версий.</td>
     </tr>
     <tr>
       <td>Представление SQL Server</td>
@@ -212,7 +212,7 @@ ms.locfileid: "78898149"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop, SQL Server Data Tools</td>
-      <td>Сервер 2008 и более поздние версии.</td>
+      <td>SQL Server 2008 и более поздних версий.</td>
     </tr>
     <tr>
       <td>Таблица Teradata</td>
@@ -450,7 +450,7 @@ ms.locfileid: "78898149"
 <table>
     <tr>
        <td><b>Тип источника</b></td>
-       <td><b>Тип активов</b></td>
+       <td><b>Тип ресурса</b></td>
        <td><b>Типы объектов</b></td>
        <td><b>Структура DSL<b></td>
     </tr>

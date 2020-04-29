@@ -1,7 +1,7 @@
 ---
-title: Получить тип учетной записи хранилища и имя SKU с .NET
+title: Получение имени типа учетной записи хранения и номера SKU с помощью .NET
 titleSuffix: Azure Storage
-description: Узнайте, как получить тип учетной записи хранилища Azure и имя SKU с помощью клиентской библиотеки .NET.
+description: Узнайте, как получить имя типа учетной записи хранения Azure и номера SKU с помощью клиентской библиотеки .NET.
 services: storage
 author: mhopkins-msft
 ms.author: mhopkins
@@ -10,29 +10,29 @@ ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.openlocfilehash: 1495ed55c24a0f94b911d60d1db0f32940ea134a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79137064"
 ---
-# <a name="get-storage-account-type-and-sku-name-with-net"></a>Получить тип учетной записи хранилища и имя SKU с .NET
+# <a name="get-storage-account-type-and-sku-name-with-net"></a>Получение имени типа учетной записи хранения и номера SKU с помощью .NET
 
-В этой статье показано, как получить тип учетной записи Хранилища Azure и имя SKU для капли, используя [библиотеку клиентов Azure Storage для .NET.](/dotnet/api/overview/azure/storage?view=azure-dotnet)
+В этой статье показано, как получить имя типа учетной записи хранения Azure и номер SKU для большого двоичного объекта с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
 
-Информация о счетах доступна в служебных версиях, начиная с версии 2018-03-28.
+Сведения об учетной записи доступны в версиях служб, начиная с версии 2018-03-28.
 
-## <a name="about-account-type-and-sku-name"></a>О типе учетной записи и имени SKU
+## <a name="about-account-type-and-sku-name"></a>Сведения о типе учетной записи и имени SKU
 
-**Тип учетной записи** `BlockBlobStorage`: `FileStorage`Допустимые типы учетных записей `Storage`включают, `StorageV2` `BlobStorage`, , и . [Обзор учетной записи хранения Azure](storage-account-overview.md) имеет больше информации, включая описания различных учетных записей хранения.
+**Тип учетной записи**: допустимые `BlobStorage`типы `BlockBlobStorage`учетных `Storage`записей включают `StorageV2`,, `FileStorage`, и. В разделе [Общие сведения об учетной записи хранения Azure](storage-account-overview.md) содержится дополнительная информация, включая описания различных учетных записей хранения.
 
-**SKU имя**: Действительные `Premium_LRS` `Premium_ZRS`имена `Standard_GRS` `Standard_GZRS`SKU `Standard_RAGZRS`включают `Standard_ZRS`, , , `Standard_LRS`, `Standard_RAGRS`, и . Имена SKU чувствительны к случаям и являются полями строк в [классе SkuName.](/dotnet/api/microsoft.azure.management.storage.models.skuname?view=azure-dotnet)
+**Имя SKU**: допустимые имена SKU `Premium_LRS`включают `Premium_ZRS`, `Standard_GRS`, `Standard_GZRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_RAGZRS`, и `Standard_ZRS`. Имена SKU учитывают регистр и являются строковыми полями в [классе SkuName](/dotnet/api/microsoft.azure.management.storage.models.skuname?view=azure-dotnet).
 
-## <a name="retrieve-account-information"></a>Извлечение информации об учетной записи
+## <a name="retrieve-account-information"></a>Получение сведений об учетной записи
 
-Чтобы получить тип учетной записи хранилища и имя SKU, связанные с blob, позвоните в [метод GetAccountProperties](/dotnet/api/microsoft.azure.storage.blob.cloudblob.getaccountproperties?view=azure-dotnet) или [GetAccountPropertiesAsync.](/dotnet/api/microsoft.azure.storage.blob.cloudblob.getaccountpropertiesasync?view=azure-dotnet)
+Чтобы получить тип учетной записи хранения и имя SKU, связанные с большим двоичным объектом, вызовите метод [жетаккаунтпропертиес](/dotnet/api/microsoft.azure.storage.blob.cloudblob.getaccountproperties?view=azure-dotnet) или [жетаккаунтпропертиесасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblob.getaccountpropertiesasync?view=azure-dotnet) .
 
-Следующий пример кода извлекает и отображает свойства учетной записи только для чтения.
+В следующем примере кода извлекаются и отображаются свойства учетной записи только для чтения.
 
 ```csharp
 private static async Task GetAccountInfoAsync(CloudBlob blob)
@@ -60,8 +60,8 @@ private static async Task GetAccountInfoAsync(CloudBlob blob)
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Узнайте о других операциях, которые можно выполнить на учетной записи хранилища через [портал Azure](https://portal.azure.com) и API Azure REST.
+Узнайте о других операциях, которые можно выполнять с учетной записью хранения, используя [портал Azure](https://portal.azure.com) и REST API Azure.
 
-- [Получить информационную операцию по учету (REST)](/rest/api/storageservices/get-account-information)
+- [Операция получения сведений об учетной записи (ОСТАВШАЯся)](/rest/api/storageservices/get-account-information)
