@@ -1,6 +1,6 @@
 ---
-title: Лакстарт облачной оболочки Квикстарт - Bash
-description: Узнайте, как использовать командную строку Bash в браузере с помощью Azure Cloud Shell.
+title: Краткое руководство по Azure Cloud Shell-bash
+description: Узнайте, как использовать командную строку Bash в браузере с Azure Cloud Shell.
 author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/12/2018
 ms.author: damaerte
 ms.openlocfilehash: 58d795a5aee79e4149864a79a923ce34950b31d6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79458075"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
@@ -25,7 +25,7 @@ ms.locfileid: "79458075"
 > Также вы можете ознакомиться с кратким руководством по использованию [PowerShell в Azure Cloud Shell](quickstart-powershell.md).
 
 ## <a name="start-cloud-shell"></a>Запуск Cloud Shell
-1. Запуск **облачной оболочки** с верхней навигации портала Azure. <br>
+1. Запустите **Cloud Shell** в верхней области навигации портал Azure. <br>
 ![](media/quickstart/shell-icon.png)
 
 2. Выберите подписку для создания учетной записи хранения и общей папки для службы файлов Microsoft Azure.
@@ -94,7 +94,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
    az group delete -n MyRG
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Дополнительные сведения о сохранении файлов для Bash в Cloud Shell.](persisting-shell-storage.md) <br>
 [Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Общие сведения о службе файлов Azure](../storage/files/storage-files-introduction.md) <br>

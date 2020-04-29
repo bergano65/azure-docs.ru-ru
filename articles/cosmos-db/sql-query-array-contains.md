@@ -1,6 +1,6 @@
 ---
-title: ARRAY_CONTAINS на языке запросов Запроса Azure Cosmos DB
-description: Узнайте о том, как функция системы Array Contains S'L в Azure Cosmos DB возвращает Boolean, указывая, содержит ли массив указанное значение
+title: ARRAY_CONTAINS языка запросов Azure Cosmos DB
+description: Сведения о том, как массив содержит системную функцию SQL в Azure Cosmos DB возвращает логическое значение, показывающее, содержит ли массив указанное значения.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 47fe20888aa546e414b268b30c2e03580750a040
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "78303483"
 ---
 # <a name="array_contains-azure-cosmos-db"></a>ARRAY_CONTAINS (Azure Cosmos DB)
@@ -26,13 +26,13 @@ ARRAY_CONTAINS (<arr_expr>, <expr> [, bool_expr])
 ## <a name="arguments"></a>Аргументы
   
 *arr_expr*  
-   Является ли выражение массива для поиска.  
+   Выражение массива для поиска.  
   
 *expr*  
-   Это выражение, чтобы быть найденным.  
+   Выражение, которое должно быть найдено.  
 
 *bool_expr*  
-   Это булеан выражение. Если он оценивается как "истинный" и если указанное значение поиска является объектом, команда проверяет частичное соответствие (объект поиска является подмножеством одного из объектов). Если он оценивается как "ложный", команда проверяет полное соответствие всех объектов в массиве. Если не задано, по умолчанию используется значение false. 
+   Выражение типа Boolean. Если результатом вычисления является значение true, а для указанного значения поиска — объект, команда проверяет наличие частичного совпадения (объект поиска является подмножеством одного из объектов). Если значение равно false, команда проверяет полное совпадение всех объектов в массиве. Если не задано, по умолчанию используется значение false. 
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -40,7 +40,7 @@ ARRAY_CONTAINS (<arr_expr>, <expr> [, bool_expr])
   
 ## <a name="examples"></a>Примеры
   
-  Следующий пример, как проверить наличие `ARRAY_CONTAINS`членства в массиве с помощью .  
+  В следующем примере показано, как проверить членство в массиве с `ARRAY_CONTAINS`помощью.  
   
 ```sql
 SELECT   
@@ -75,10 +75,10 @@ SELECT
 
 ## <a name="remarks"></a>Remarks
 
-Эта функция системы будет пользоваться [индексом диапазона.](index-policy.md#includeexclude-strategy)
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Array функции Azure Космос DB](sql-query-array-functions.md)
-- [Система работает Azure Космос DB](sql-query-system-functions.md)
-- [Введение в Azure Космос DB](introduction.md)
+- [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
+- [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

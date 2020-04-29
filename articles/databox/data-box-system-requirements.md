@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/11/2019
 ms.author: alkohli
 ms.openlocfilehash: e232ad131b1c0930afcf5e7e78b386aba2c9490b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79259959"
 ---
 # <a name="azure-data-box-system-requirements"></a>Требования к системе для Azure Data Box
@@ -55,11 +55,11 @@ ms.locfileid: "79259959"
 
 ### <a name="port-requirements"></a>Требования к порту
 
-В следующей таблице перечислены порты, которые должны быть открыты в брандмауэре, чтобы обеспечить трафик SMB или NFS. В этой таблице значение *в* или *входящий* относится к направлению, из которого клиент запрашивает доступ к вашему устройству. *Выход* или *выход* относится к направлению, в котором устройство Data Box отправляет данные извне, помимо развертывания: например, выход в Интернет.
+В следующей таблице перечислены порты, которые необходимо открыть в брандмауэре, чтобы разрешить трафик SMB или NFS. В этой таблице значение *в* или *входящий* относится к направлению, из которого клиент запрашивает доступ к вашему устройству. *Out* или *Outbound* — это направление, в котором устройство Data Box отправляет данные извне, помимо развертывания: например, исходящий трафик в Интернете.
 
 [!INCLUDE [data-box-port-requirements](../../includes/data-box-port-requirements.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание Azure Data Box](data-box-deploy-ordered.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: схемы и пиринг'
+title: 'Azure ExpressRoute: цепи и пиринг'
 description: Общие сведения о каналах ExpressRoute и доменах маршрутизации (пиринге).
 services: expressroute
 author: mialdrid
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: mialdrid
 ms.openlocfilehash: c68ffd019937f902567c3deda8d879448dc082da
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79281357"
 ---
 # <a name="expressroute-circuits-and-peering"></a>Каналы и пиринг ExpressRoute
@@ -21,7 +21,7 @@ ms.locfileid: "79281357"
 ![](./media/expressroute-circuit-peerings/expressroute-basic.png)
 
 > [!IMPORTANT]
-> Публичное пиринг Azure был унизан и недоступен для новых схем ExpressRoute. Новые схемы поддерживают пиринг и приватную внизирование Майкрософт.  
+> Общедоступный пиринг Azure является устаревшим и недоступен для новых каналов ExpressRoute. Новые каналы поддерживают пиринг Майкрософт и частный пиринг.  
 >
 
 ## <a name="expressroute-circuits"></a><a name="circuits"></a>Каналы ExpressRoute
@@ -40,7 +40,7 @@ ms.locfileid: "79281357"
 
 ## <a name="expressroute-peering"></a><a name="routingdomains"></a>Пиринг ExpressRoute
 
-Схема ExpressRoute имеет несколько доменов маршрутики/пирингов, связанных с ней: Azure public, Azure private и Microsoft. Каждый пиринг настраивается одинаково в паре маршрутизаторов (в конфигурации "активный — активный" или с разделением нагрузки) для обеспечения высокой доступности. Службы Azure классифицируются как *общедоступные* и *частные*, отражая схемы IP-адресации.
+С каналом ExpressRoute связаны несколько доменов маршрутизации и пирингов: Azure Public, Azure private и Майкрософт. Каждый пиринг настраивается одинаково в паре маршрутизаторов (в конфигурации "активный — активный" или с разделением нагрузки) для обеспечения высокой доступности. Службы Azure классифицируются как *общедоступные* и *частные*, отражая схемы IP-адресации.
 
 ![](./media/expressroute-circuit-peerings/expressroute-peerings.png)
 
@@ -50,11 +50,11 @@ ms.locfileid: "79281357"
 
 Вы можете подключать к домену частного пиринга несколько виртуальных сетей. Сведения о пределах и ограничениях см. на [странице вопросов и ответов](expressroute-faqs.md). Актуальные сведения об ограничениях см. на странице [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).  Подробные сведения о настройке маршрутизации см. на странице [Маршрутизация](expressroute-routing.md).
 
-### <a name="microsoft-peering"></a><a name="microsoftpeering"></a>Microsoft пиринг
+### <a name="microsoft-peering"></a><a name="microsoftpeering"></a>Пиринг Майкрософт
 
 [!INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]
 
-Подключение к онлайн-сервисам Майкрософт (Office 365 и Услуги Azure PaaS) происходит через пиринг Корпорации Майкрософт. Мы разрешаем двунаправленное подключение между вашей глобальной сетью и облачными службами Майкрософт через домен маршрутизации пиринга Майкрософт. Вы должны подключаться к облачным службам Майкрософт только через общедоступные IP-адреса, принадлежащие вам или вашему поставщику услуг подключения, и должны соблюдать все установленные правила. Дополнительные сведения см. в статье [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
+Подключение к Microsoft веб-службы (Office 365 и службы PaaS Azure) осуществляется через пиринг Майкрософт. Мы разрешаем двунаправленное подключение между вашей глобальной сетью и облачными службами Майкрософт через домен маршрутизации пиринга Майкрософт. Вы должны подключаться к облачным службам Майкрософт только через общедоступные IP-адреса, принадлежащие вам или вашему поставщику услуг подключения, и должны соблюдать все установленные правила. Дополнительные сведения см. в статье [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 
 Дополнительные сведения о поддерживаемых службах, ценах и конфигурации см. на [странице вопросов и ответов](expressroute-faqs.md). Сведения о списке поставщиков услуг размещения, предлагающих поддержку пиринга Майкрософт, см. на странице [расположений ExpressRoute](expressroute-locations.md).
 
@@ -74,7 +74,7 @@ ms.locfileid: "79281357"
 
 NPM отслеживает работоспособность частного пиринга Azure и пиринга Майкрософт. Дополнительные сведения см. [здесь](https://azure.microsoft.com/blog/monitoring-of-azure-expressroute-in-preview/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Найти поставщика услуг. Ознакомьтесь с разделом [Поставщики услуг и расположения ExpressRoute](expressroute-locations.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).

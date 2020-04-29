@@ -1,5 +1,5 @@
 ---
-title: Расширения и функции Azure VM для Linux
+title: Расширения и компоненты виртуальной машины Azure для Linux
 description: Узнайте о расширениях, доступных для виртуальных машин Azure. Расширения сгруппированы по предоставляемым функциям или улучшениям.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
 ms.openlocfilehash: 67df46742be52b03bd91af19654fbfac5df29646
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79250521"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Обзор расширений и компонентов виртуальных машин под управлением Linux
@@ -37,7 +37,7 @@ ms.locfileid: "79250521"
 
 Помимо расширений, созданных для конкретных процессов, существует расширение пользовательских сценариев для виртуальных машин под управлением Windows и Linux. Расширение пользовательских сценариев для Linux позволяет запустить на виртуальной машине любой сценарий Bash. Пользовательские сценарии могут пригодиться при проектировании развертывания Azure, для которого требуется дополнительная настройка, ее невозможно выполнить собственными средствами Azure. Дополнительные сведения см. в статье [Использование расширения пользовательских сценариев Azure на виртуальных машинах Linux](custom-script-linux.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы расширения работали на виртуальной машине, на ней нужно установить агент Linux для Azure. Некоторые расширения имеют дополнительные требования, например доступ к определенным ресурсам или зависимости.
 
@@ -45,7 +45,7 @@ ms.locfileid: "79250521"
 
 Агент виртуальной машины Azure управляет взаимодействием виртуальной машины с контроллером структуры Azure. Агент отвечает за многие функциональные аспекты развертывания виртуальных машин Azure и управления ими, включая запуск расширений виртуальной машины. Агент виртуальной машины Azure предварительно установлен во всех образах Azure Marketplace. Его также можно установить вручную в поддерживаемых операционных системах. Агент виртуальных машин Azure для Linux часто называют агентом Linux.
 
-Для получения информации о поддерживаемых [Azure virtual machine agent](agent-linux.md)операционных системах и инструкциях по установке см.
+Сведения о поддерживаемых операционных системах и инструкции по установке см. в статье [Агент виртуальной машины Azure](agent-linux.md).
 
 #### <a name="supported-agent-versions"></a>Поддерживаемые версии агента
 
@@ -71,7 +71,7 @@ ms.locfileid: "79250521"
 
 ## <a name="discover-vm-extensions"></a>Поиск расширений ВМ
 
-Существует множество разных расширений виртуальных машин, которые можно использовать с виртуальными машинами Azure. Чтобы просмотреть полный список, выполните команду [az vm extension image list](/cli/azure/vm/extension/image#az-vm-extension-image-list). В следующем примере перечислены все доступные расширения в месте *westus:*
+Существует множество разных расширений виртуальных машин, которые можно использовать с виртуальными машинами Azure. Чтобы просмотреть полный список, выполните команду [az vm extension image list](/cli/azure/vm/extension/image#az-vm-extension-image-list). В следующем примере перечисляются все доступные расширения в расположении *westus* :
 
 ```azurecli
 az vm extension image list --location westus --output table
@@ -85,7 +85,7 @@ az vm extension image list --location westus --output table
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). Следующий пример выполняет расширение пользовательского скрипта против VM под названием *myVM* в группе ресурсов под названием *myResourceGroup.* Замените имя группы ресурсов, имя VM и\/скрипт для запуска (https: /raw.githubusercontent.com/me/project/hello.sh) с вашей собственной информацией. 
+Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). В следующем примере выполняется запуск расширения пользовательского скрипта для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup*. Замените пример имени группы ресурсов, имя виртуальной машины и скрипт для запуска (HTTPS:\//RAW.githubusercontent.com/Me/Project/Hello.sh) собственными сведениями. 
 
 ```azurecli
 az vm extension set `
@@ -336,7 +336,7 @@ INFO [Microsoft.OSTCExtensions.LinuxDiagnostic-2.3.9027] Launch command:diagnost
 
 1. Чтобы проверить журнал агента Linux, найдите в файле */var/log/waagent.log* действия, которые выполнялись при подготовке расширения.
 
-2. Проверьте фактические журналы расширения для получения более подробной информации в */var/log/azure/extensionName\<>*
+2. Дополнительные сведения см. в журналах фактического расширения для *\</Вар/лог/Азуре/extensionName>*
 
 3. Коды ошибок, известные проблемы и другие данные для устранения неполадок вы найдете в документации по конкретному расширению.
 
@@ -407,9 +407,9 @@ az vm extension delete \
 | --- | --- | --- |
 | Расширение пользовательских сценариев для Linux |Выполняет сценарии на виртуальных машинах Azure. |[Расширение пользовательских сценариев для Linux](custom-script-linux.md) |
 | Расширение для доступа к виртуальной машине |Восстанавливает доступ к виртуальной машине Azure. |[Расширение для доступа к виртуальной машине](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) |
-| Расширение службы "Диагностика Azure" |Управляет системой диагностики Azure |[Расширение Azure Diagnostics](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
+| Расширение службы "Диагностика Azure" |Управляет системой диагностики Azure |[Расширение службы "Диагностика Azure"](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение VM Access для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

@@ -1,26 +1,26 @@
 ---
-title: Частная ссылка - Azure CLI - База данных Azure для MyS'L
-description: Узнайте, как настроить приватную ссылку для базы данных Azure для MyS'L из Azure CLI
+title: Частная ссылка — Azure CLI — база данных Azure для MySQL
+description: Узнайте, как настроить закрытую ссылку для базы данных Azure для MySQL с Azure CLI
 author: kummanish
 ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.openlocfilehash: f83f52f1c1800803c5e1d47f1931f7b13b2c11de
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79368015"
 ---
-# <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MyS'L с помощью CLI
+# <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-cli"></a>Создание и управление частной связью для базы данных Azure для MySQL с помощью интерфейса командной строки
 
-Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания VM в виртуальной сети Azure и базу данных Azure для сервера MyS'L с частной конечной точкой Azure.
+Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания виртуальной машины в виртуальной сети Azure и сервера базы данных Azure для MySQL с помощью частной конечной точки Azure.
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где база данных Azure для MyS'L поддерживает уровни ценообразования общего назначения и памяти.
+> Эта функция доступна во всех регионах Azure, где база данных Azure для MySQL поддерживает общего назначения и оптимизированные для памяти ценовые категории.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -28,14 +28,14 @@ ms.locfileid: "79368015"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Перед созданием любого ресурса необходимо создать группу ресурсов, которая будет содержать эту виртуальную сеть. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Этот пример создает группу ресурсов под названием *myResourceGroup* в *западноевропейских* местах:
+Перед созданием любого ресурса необходимо создать группу ресурсов, которая будет содержать эту виртуальную сеть. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В этом примере создается группа ресурсов с именем *myResourceGroup* в расположении *westeurope* :
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -65,7 +65,7 @@ az vm create \
 Запишите общедоступный IP-адрес виртуальной машины. Этот адрес используется на следующем шаге, чтобы подключиться к виртуальной машине из Интернета.
 
 ## <a name="create-an-azure-database-for-mysql-server"></a>Создайте сервер базы данных Azure для MySQL. 
-Создайте базу данных Azure для MyS'L с помощью сервера az mysql, создающего команду. Помните, что имя вашего сервера MyS'L должно быть уникальным в Azure, поэтому замените значение заполнителя в скобках на ваше собственное уникальное значение: 
+Создайте базу данных Azure для MySQL с помощью команды AZ MySQL Server Create. Помните, что имя сервера MySQL должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением: 
 
 ```azurecli-interactive
 # Create a logical server in the resource group 
@@ -78,10 +78,10 @@ az mysql server create \
 --sku-name GP_Gen5_2
 ```
 
-Обратите внимание, что идентификатор сервера MyS'L похож на ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforMySQL/servers/servername.``` идентификатор сервера MyS'L на следующем этапе. 
+Примечание. идентификатор сервера MySQL аналогичен ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforMySQL/servers/servername.``` использованию идентификатора сервера MySQL на следующем шаге. 
 
 ## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
-Создайте в виртуальной сети частную конечную точку для сервера MyS'L: 
+Создайте частную конечную точку для сервера MySQL в виртуальной сети. 
 ```azurecli-interactive
 az network private-endpoint create \  
     --name myPrivateEndpoint \  
@@ -94,7 +94,7 @@ az network private-endpoint create \
  ```
 
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
-Создайте частную DNS-зону для домена сервера MyS'L и создайте связующее звено с виртуальной сетью. 
+Создайте зону Частная зона DNS для домена сервера MySQL и создайте связь связи с виртуальной сетью. 
 ```azurecli-interactive
 az network private-dns zone create --resource-group myResourceGroup \ 
    --name  "privatelink.mysql.database.azure.com" 
@@ -118,7 +118,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 ```
 
 > [!NOTE] 
-> Настройка F'DN в настройках DNS клиента не решается с закрытым IP настроенным. Вам придется настроить зону DNS для настроенного F-DN, как показано [здесь.](../dns/dns-operations-recordsets-portal.md)
+> Полное доменное имя в параметре DNS клиента не разрешается в настроенный частный IP-адрес. Вам потребуется настроить зону DNS для настроенного FQDN, как показано [ниже](../dns/dns-operations-recordsets-portal.md).
 
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
@@ -128,7 +128,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Выберите **Скачать RDP файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
+1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
 1. Откройте файл *downloaded.rdp*.
 
@@ -137,15 +137,15 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
-        > Возможно, вам придется выбрать **Дополнительные варианты** > **Используйте другую учетную запись,** чтобы указать учетные данные, которые вы ввели при создании VM.
+        > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
-## <a name="access-the-mysql-server-privately-from-the-vm"></a>Доступ к серверу MyS'L в частном порядке с VM
+## <a name="access-the-mysql-server-privately-from-the-vm"></a>Доступ к серверу MySQL в частном порядке с виртуальной машины
 
 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
 
@@ -160,26 +160,26 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     Address:  10.1.3.4
     ```
 
-3. Проверьте частное соединение ссылки на сервер MyS'L с помощью любого доступного клиента. В приведенном ниже примере я использовал [MyS'L Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) для проведения операции.
+3. Проверьте подключение к частному каналу для сервера MySQL с помощью любого доступного клиента. В примере ниже я использовал [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) для выполнения этой операции.
 
 
-4. В **Новом подключении**введите или выберите эту информацию:
+4. В окне **новое подключение**введите или выберите следующие сведения:
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя подключения| Выберите имя соединения по вашему выбору.|
-    | Имя узла | Выберите *mydemoserver.privatelink.mysql.database.azure.com* |
-    | Имя пользователя | Введите *username@servername* имя пользователя, как это предусмотрено во время создания сервера MyS'L. |
-    | Пароль | Введите пароль, предоставленный при создании сервера MyS'L. |
+    | Имя подключения| Выберите нужное имя подключения.|
+    | Имя узла | Выбор *mydemoserver.privatelink.MySQL.Database.Azure.com* |
+    | Имя пользователя | Введите имя пользователя *username@servername* , которое предоставляется при создании сервера MySQL. |
+    | Пароль | Введите пароль, предоставленный при создании сервера MySQL. |
     ||
 
 5. Выберите Подключиться.
 
 6. Просмотр баз данных из левого меню.
 
-7. (По желанию) Создание или запрос информации из базы данных MyS'L.
+7. При необходимости Создание или запрос сведений из базы данных MySQL.
 
-8. Закройте удаленное подключение к рабочему столу на myVm.
+8. Закройте подключение к удаленному рабочему столу myVm.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
 Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду "az group delete". 
@@ -188,5 +188,5 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте больше о [том, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)
+## <a name="next-steps"></a>Дальнейшие шаги
+- Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)
