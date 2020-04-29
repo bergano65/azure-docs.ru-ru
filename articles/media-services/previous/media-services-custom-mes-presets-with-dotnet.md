@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: juliako
 ms.openlocfilehash: 39a1dd5c3d26eeb6545a96aa35f9457bd9859c21
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79251249"
 ---
 # <a name="customizing-media-encoder-standard-presets"></a>Настройка предустановок Media Encoder Standard  
@@ -30,7 +30,7 @@ ms.locfileid: "79251249"
 В этой статье показано, как настроить предустановку. Для примера взята предустановка [H264 Multiple Bitrate 720p](media-services-mes-preset-H264-Multiple-Bitrate-720p.md), в которой уменьшается количество уровней. В статье [Настройка предустановок MES для расширенного кодирования](media-services-advanced-encoding-with-mes.md) показаны пользовательские предустановки, которые могут использоваться для выполнения расширенных задач кодирования.
 
 > [!NOTE]
-> Пользовательские пресеты, описанные в этой статье, не могут быть использованы в преобразованиях [Media Services V3](https://docs.microsoft.com/azure/media-services/latest/) или в командах CLI. Более подробную информацию можно узнать из руководства по [миграции от v2 до v3.](../latest/migrate-from-v2-to-v3.md)
+> Пользовательские предустановки, описанные в этой статье, нельзя использовать в преобразованиях [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/) или командах CLI. Дополнительные сведения см. в [руководстве по миграции с версии 2 на v3](../latest/migrate-from-v2-to-v3.md) .
 
 ## <a name="customizing-a-mes-preset"></a><a id="customizing_presets"></a> Настройка предустановки MES
 
@@ -132,7 +132,7 @@ ms.locfileid: "79251249"
    
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл app.config информацией о подключении, как описано в [разработке Media Services с .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример   
 
@@ -266,11 +266,11 @@ namespace CustomizeMESPresests
 
 ## <a name="see-also"></a>См. также
 
-- [Как закодировать с помощью пользовательского преобразования с помощью CLI](../latest/custom-preset-cli-howto.md)
+- [Как кодировать с пользовательским преобразованием с помощью интерфейса командной строки](../latest/custom-preset-cli-howto.md)
 - [Кодирование с помощью Служб мультимедиа версии 3](../latest/encoding-concept.md)
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

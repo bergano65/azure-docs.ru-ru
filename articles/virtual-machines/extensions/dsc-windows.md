@@ -1,5 +1,5 @@
 ---
-title: Обработка желаемого состояния для расширения состояния
+title: Обработчик расширения настройки требуемого состояния Azure
 description: С помощью расширения DSC вы можете отправлять и применять конфигурацию DSC PowerShell к виртуальной машине Azure.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,10 +14,10 @@ ms.workload: ''
 ms.date: 03/26/2018
 ms.author: robreed
 ms.openlocfilehash: 592c731d1851ac36cf9b57864750df0603b6c3fd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79253966"
 ---
 # <a name="powershell-dsc-extension"></a>Расширение PowerShell DSC
@@ -26,17 +26,17 @@ ms.locfileid: "79253966"
 
 Расширение DSC PowerShell для Windows публикуется и поддерживается корпорацией Майкрософт. Расширение отправляет и применяет конфигурацию DSC PowerShell к виртуальной машине Azure. Расширение DSC вызывает DSC PowerShell, чтобы применить полученную конфигурацию DSC к виртуальной машине. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины DSC для Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 ### <a name="operating-system"></a>Операционная система
 
 Расширение DSC поддерживает следующие операционные системы:
 
-Windows Server 2019, Windows Server 2016, Windows Server 2012R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10
+Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 с пакетом обновления 1 (SP1), Windows Client 7/8.1/10
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
-Расширение DSC для Windows требует, чтобы целевая виртуальная машина могла связываться с Azure и расположением пакета конфигурации (файл zip), если он хранится в месте за пределами Azure. 
+Для расширения DSC для Windows требуется, чтобы Целевая виртуальная машина могла взаимодействовать с Azure и расположением пакета конфигурации (ZIP-файл), если он хранится в расположении за пределами Azure. 
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -97,7 +97,7 @@ Windows Server 2019, Windows Server 2016, Windows Server 2012R2, Windows Server 
 
 ### <a name="property-values"></a>Значения свойств
 
-| name | Значение и пример | Тип данных |
+| Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2018-10-01 | Дата |
 | publisher | Microsoft.Powershell.DSC | строка |
@@ -106,7 +106,7 @@ Windows Server 2019, Windows Server 2016, Windows Server 2012R2, Windows Server 
 
 ### <a name="settings-property-values"></a>Значения свойства параметров
 
-| name | Тип данных | Описание
+| Имя | Тип данных | Описание
 | ---- | ---- | ---- |
 | settings.wmfVersion | строка | Указывает версию Windows Management Framework, которую необходимо установить на виртуальной машине. Если задать для этого свойства значение latest, будет установлена последняя версия Windows Management Framework. Для этого свойства доступны только такие значения: 4.0, 5.0 и latest. Возможные значения зависят от обновлений. По умолчанию используется значение latest. |
 | settings.configuration.url | строка | Указывает URL-адрес расположения, из которого можно скачать ZIP-файл конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationUrlSasToken будет необходимо задать значение маркера SAS. Это свойство обязательное, если заданы свойства settings.configuration.script и (или) settings.configuration.function.
@@ -115,12 +115,12 @@ Windows Server 2019, Windows Server 2016, Windows Server 2012R2, Windows Server 
 | settings.configurationArguments | Collection | Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство не будет зашифровано.
 | settings.configurationData.url | строка | Указывает URL-адрес расположения, из которого можно скачать файл данных конфигурации (в формате PDS1), используемый в качестве входных данных для вашей конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationDataUrlSasToken будет необходимо задать значение маркера SAS.
 | settings.privacy.dataEnabled | строка | Включает или отключает сбор данных телеметрии. Для этого свойства доступны только такие значения: Enable, Disable, '' или $null. Если для этого свойства не задано значение или задано значение NULL, сбор данных телеметрии будет выполняться.
-| settings.advancedOptions.forcePullAndApply | Bool | Эта настройка предназначена для повышения эффективности работы с расширением для регистрации узлов с Azure Automation DSC.  Если `$true`значение, расширение будет ждать первого запуска конфигурации вытащил из службы, прежде чем вернуть успех / неудачу.  Если значение настроено на $false, то статус, возвращенный расширением, будет относиться только к тому, был ли узел успешно зарегистрирован в государственной конфигурации Azure Automation и конфигурация узла не будет запущена во время регистрации.
+| settings.advancedOptions.forcePullAndApply | Bool | Этот параметр предназначен для улучшения работы с расширением для регистрации узлов в Automation DSC Azure.  Если значение равно, `$true`расширение будет ожидать первого запуска конфигурации, извлеченного из службы, прежде чем будет возвращено сообщение об успешном выполнении или сбое.  Если задано значение $false, то состояние, возвращаемое расширением, будет указывать только на то, был ли узел зарегистрирован в конфигурации состояния службы автоматизации Azure, и конфигурация узла не будет выполняться во время регистрации.
 | settings.advancedOptions.downloadMappings | Collection | Определяет альтернативные расположения для скачивания зависимостей, таких как WMF и .NET.
 
 ### <a name="protected-settings-property-values"></a>Значения свойств защищенных параметров
 
-| name | Тип данных | Описание
+| Имя | Тип данных | Описание
 | ---- | ---- | ---- |
 | protectedSettings.configurationArguments | строка | Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство будет зашифровано. |
 | protectedSettings.configurationUrlSasToken | строка | Указывает маркер SAS для доступа к URL-адресу, определенному в свойстве configuration.url. Это свойство будет зашифровано. |
@@ -131,11 +131,11 @@ Windows Server 2019, Windows Server 2016, Windows Server 2012R2, Windows Server 
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager.
 Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания.
-Шаблон менеджера ресурсов, включающий расширение DSC для Windows, можно найти в [галерее быстрого запуска Azure.](https://github.com/Azure/azure-quickstart-templates/blob/master/101-automation-configuration/nested/provisionServer.json#L91)
+Пример шаблона диспетчер ресурсов, включающий расширение DSC для Windows, можно найти в [коллекции быстрое начало Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-automation-configuration/nested/provisionServer.json#L91).
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертывания расширения можно получить на портале Azure, а также использовав Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure CLI.
 
@@ -148,7 +148,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 C:\Packages\Plugins\{Extension_Name}\{Extension_Version}
 ```
 
-Файл состояния расширения содержит коды успеха/ошибки состояния и состояния, а также подробную ошибку и описание для каждого запуска расширения.
+В файле состояния расширения содержатся коды подсостояния и ошибок состояния, а также подробные сведения об ошибке и описание для каждого запуска расширения.
 ```
 C:\Packages\Plugins\{Extension_Name}\{Extension_Version}\Status\{0}.Status  -> {0} being the sequence number
 ```
@@ -172,4 +172,4 @@ C:\WindowsAzure\Logs\Plugins\{Extension_Name}\{Extension_Version}
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в какой-либо момент этой статьи, вы можете связаться с экспертами Azure на [форумах MSDN Azure и Stack Overflow.](https://azure.microsoft.com/support/forums/) Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите Получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

@@ -13,10 +13,10 @@ ms.topic: troubleshooting
 ms.date: 11/16/2018
 ms.author: genli
 ms.openlocfilehash: a8bd12d98b76d5848753987c4f7bcb76d4e2266d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79250079"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows 
@@ -90,7 +90,7 @@ ms.locfileid: "79250079"
 
 #### <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
-1. Убедитесь, что у вас есть [последние Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) установлен.
+1. Убедитесь, что у вас установлена [Последняя версия Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) .
 2. Откройте расширенный сеанс Azure PowerShell (Запуск от имени администратора). Выполните следующие команды:
 
     ```powershell
@@ -117,10 +117,10 @@ ms.locfileid: "79250079"
 После подключения к компьютеру с помощью удаленного рабочего стола необходимо удалить устарелые сетевые интерфейсы во избежание возможных проблем.
 
 1.  Откройте диспетчер устройств.
-2.  Выберите **Просмотр** > **Показать скрытые устройства**.
+2.  Выберите **вид** > **Показать скрытые устройства**.
 3.  Выберите **Сетевые адаптеры**. 
 4.  Найдите адаптеры с именем "Сетевой адаптер Hyper-V (Майкрософт)".
-5.  Вы можете увидеть недоступный адаптер, который поседен. Нажмите на адаптер справа, а затем выберите Uninstall.
+5.  Вы можете увидеть недоступный адаптер, который неактивен. Щелкните адаптер правой кнопкой мыши и выберите Удалить.
 
     ![изображение сетевого интерфейса](media/reset-network-interface/nicpage.png)
 

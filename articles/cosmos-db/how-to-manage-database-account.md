@@ -1,16 +1,16 @@
 ---
 title: Сведения об управлении учетными записями базы данных в Azure Cosmos DB
-description: Узнайте, как управлять dB-ресурсами Azure Cosmos, используя шаблоны портала Azure, PowerShell, CLI и менеджера ресурсов Azure
+description: Узнайте, как управлять ресурсами Azure Cosmos DB с помощью шаблонов портал Azure, PowerShell, CLI и Azure Resource Manager
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mjbrown
 ms.openlocfilehash: 61670d757611bd0c1dd11c389282b18edb3d7fa1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79247388"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
@@ -23,27 +23,27 @@ ms.locfileid: "79247388"
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
-### <a name="azure-cli"></a><a id="create-database-account-via-cli"></a>Лазурный CLI
+### <a name="azure-cli"></a><a id="create-database-account-via-cli"></a>Azure CLI
 
-Пожалуйста, смотрите [создать учетную запись Azure Cosmos DB с Azure CLI](manage-with-cli.md#create-an-azure-cosmos-db-account)
+См. статью [Создание учетной записи Azure Cosmos DB с помощью Azure CLI](manage-with-cli.md#create-an-azure-cosmos-db-account)
 
-### <a name="azure-powershell"></a><a id="create-database-account-via-ps"></a>Лазурная силаШелл
+### <a name="azure-powershell"></a><a id="create-database-account-via-ps"></a>Azure PowerShell
 
-Пожалуйста, смотрите [создать учетную запись Azure Cosmos DB с Powershell](manage-with-powershell.md#create-account)
+См. статью [Создание учетной записи Azure Cosmos DB с помощью PowerShell](manage-with-powershell.md#create-account) .
 
-### <a name="azure-resource-manager-template"></a><a id="create-database-account-via-arm-template"></a>Шаблон менеджера ресурсов Azure
+### <a name="azure-resource-manager-template"></a><a id="create-database-account-via-arm-template"></a>Шаблон Azure Resource Manager
 
-Этот шаблон менеджера ресурсов Azure создаст учетную запись Azure Cosmos для API СЗЛ, настроенной с двумя областями и вариантами выбора уровня согласованности, автоматического сбоя и мультимастера. Чтобы развернуть этот шаблон, нажмите кнопку "Deploy to Azure" (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-sql).
+Этот шаблон Azure Resource Manager создаст учетную запись Azure Cosmos для API SQL, настроенную с двумя регионами и параметрами для выбора уровня согласованности, автоматической отработки отказа и нескольких хозяев. Чтобы развернуть этот шаблон, нажмите кнопку "Deploy to Azure" (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-sql).
 
 ## <a name="addremove-regions-from-your-database-account"></a>Добавление и удаление регионов из учетной записи базы данных
 
 ### <a name="azure-portal"></a><a id="add-remove-regions-via-portal"></a>Портал Azure
 
-1. Войти на [портал Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. Перейдите к учетной записи Azure Cosmos и откройте меню **Глобальная репликация данных**.
 
-1. Чтобы добавить регионы, выберите шестиугольники **+** на карте с этикеткой, которая соответствует желаемой области (ы). Кроме того, вы можете добавить регион, щелкнув параметр **+ Добавить регион** и выбрав регион из раскрывающегося меню.
+1. Чтобы добавить регионы, выберите шестиугольники на карте с **+** меткой, которая соответствует нужным регионам. Кроме того, вы можете добавить регион, щелкнув параметр **+ Добавить регион** и выбрав регион из раскрывающегося меню.
 
 1. Чтобы удалить регионы, очистите один или несколько регионов на карте, выбрав синие шестиугольники с флажками. Или выберите "мусорной" значок (🗑) рядом с регионом с правой стороны.
 
@@ -55,13 +55,13 @@ ms.locfileid: "79247388"
 
 В режиме записи в нескольких регионах вы можете добавлять и удалять любой регион при условии, что останется по крайней мере один регион.
 
-### <a name="azure-cli"></a><a id="add-remove-regions-via-cli"></a>Лазурный CLI
+### <a name="azure-cli"></a><a id="add-remove-regions-via-cli"></a>Azure CLI
 
-Пожалуйста, [просмотрите добавление или удаление регионов с помощью Azure CLI](manage-with-cli.md#add-or-remove-regions)
+См. раздел [Добавление и удаление регионов с Azure CLI](manage-with-cli.md#add-or-remove-regions)
 
-### <a name="azure-powershell"></a><a id="add-remove-regions-via-ps"></a>Лазурная силаШелл
+### <a name="azure-powershell"></a><a id="add-remove-regions-via-ps"></a>Azure PowerShell
 
-Пожалуйста, [просмотрите Добавление или удаление регионов с Помощью Powershell](manage-with-powershell.md#update-account)
+См. раздел [Добавление и удаление регионов с помощью PowerShell](manage-with-powershell.md#update-account) .
 
 ## <a name="configure-multiple-write-regions"></a><a id="configure-multiple-write-regions"></a>Настройка нескольких регионов записи
 
@@ -71,13 +71,13 @@ ms.locfileid: "79247388"
 
 ![Снимок экрана: настройка нескольких источников в учетной записи Azure Cosmos](./media/how-to-manage-database-account/single-to-multi-master.png)
 
-### <a name="azure-cli"></a><a id="configure-multiple-write-regions-cli"></a>Лазурный CLI
+### <a name="azure-cli"></a><a id="configure-multiple-write-regions-cli"></a>Azure CLI
 
-Пожалуйста, [ознакомьтесь с несколькими регионами записи с Azure CLI](manage-with-cli.md#enable-multiple-write-regions)
+См. раздел [Включение нескольких регионов записи с помощью Azure CLI](manage-with-cli.md#enable-multiple-write-regions)
 
-### <a name="azure-powershell"></a><a id="configure-multiple-write-regions-ps"></a>Лазурная силаШелл
+### <a name="azure-powershell"></a><a id="configure-multiple-write-regions-ps"></a>Azure PowerShell
 
-Пожалуйста, [см. Включить несколько регионов записи с Powershell](manage-with-powershell.md#multi-master)
+См. раздел [Включение нескольких регионов записи с помощью PowerShell](manage-with-powershell.md#multi-master) .
 
 ### <a name="resource-manager-template"></a><a id="configure-multiple-write-regions-arm"></a>Шаблон Resource Manager
 
@@ -157,13 +157,13 @@ ms.locfileid: "79247388"
 
    ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
 
-### <a name="azure-cli"></a><a id="enable-automatic-failover-via-cli"></a>Лазурный CLI
+### <a name="azure-cli"></a><a id="enable-automatic-failover-via-cli"></a>Azure CLI
 
-Пожалуйста, [см. Автоматическое сбой с Azure CLI](manage-with-cli.md#enable-automatic-failover)
+См. раздел [Включение автоматической отработки отказа с помощью Azure CLI](manage-with-cli.md#enable-automatic-failover)
 
-### <a name="azure-powershell"></a><a id="enable-automatic-failover-via-ps"></a>Лазурная силаШелл
+### <a name="azure-powershell"></a><a id="enable-automatic-failover-via-ps"></a>Azure PowerShell
 
-Пожалуйста, [см.](manage-with-powershell.md#enable-automatic-failover)
+См. раздел [Включение автоматической отработки отказа с помощью PowerShell](manage-with-powershell.md#enable-automatic-failover) .
 
 ## <a name="set-failover-priorities-for-your-azure-cosmos-account"></a>Настройка приоритетов при отработке отказа для учетной записи Azure Cosmos
 
@@ -188,15 +188,15 @@ ms.locfileid: "79247388"
 
    ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
 
-### <a name="azure-cli"></a><a id="set-failover-priorities-via-cli"></a>Лазурный CLI
+### <a name="azure-cli"></a><a id="set-failover-priorities-via-cli"></a>Azure CLI
 
-Пожалуйста, [см. Приоритет сбоя set с Azure CLI](manage-with-cli.md#set-failover-priority)
+См. раздел [Установка приоритета отработки отказа с помощью Azure CLI](manage-with-cli.md#set-failover-priority)
 
-### <a name="azure-powershell"></a><a id="set-failover-priorities-via-ps"></a>Лазурная силаШелл
+### <a name="azure-powershell"></a><a id="set-failover-priorities-via-ps"></a>Azure PowerShell
 
-Пожалуйста, [см. Приоритет сбоя с комплектом с Powershell](manage-with-powershell.md#modify-failover-priority)
+См. раздел [Установка приоритета отработки отказа с помощью PowerShell](manage-with-powershell.md#modify-failover-priority)
 
-## <a name="perform-manual-failover-on-an-azure-cosmos-account"></a><a id="manual-failover"></a>Выполнение ручного сбоя на учетной записи Azure Cosmos
+## <a name="perform-manual-failover-on-an-azure-cosmos-account"></a><a id="manual-failover"></a>Выполнение отработки отказа вручную в учетной записи Azure Cosmos
 
 > [!IMPORTANT]
 > Для успеха этой операции учетная запись Azure Cosmos должна быть настроена на переход на другой ресурс вручную.
@@ -220,15 +220,15 @@ ms.locfileid: "79247388"
 
    ![Меню перехода на другой ресурс вручную на портале](./media/how-to-manage-database-account/manual-failover.png)
 
-### <a name="azure-cli"></a><a id="enable-manual-failover-via-cli"></a>Лазурный CLI
+### <a name="azure-cli"></a><a id="enable-manual-failover-via-cli"></a>Azure CLI
 
-Пожалуйста, [см. сбой руководства триггера с Azure CLI](manage-with-cli.md#trigger-manual-failover)
+См. статью [Активация перехода на другой ресурс вручную с помощью Azure CLI](manage-with-cli.md#trigger-manual-failover)
 
-### <a name="azure-powershell"></a><a id="enable-manual-failover-via-ps"></a>Лазурная силаШелл
+### <a name="azure-powershell"></a><a id="enable-manual-failover-via-ps"></a>Azure PowerShell
 
-Пожалуйста, [см. Триггер руководство failover с Powershell](manage-with-powershell.md#trigger-manual-failover)
+См. раздел [Активация перехода на другой ресурс вручную с помощью PowerShell](manage-with-powershell.md#trigger-manual-failover) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения и примеры по управлению учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 

@@ -16,10 +16,10 @@ ms.date: 03/18/2019
 ms.author: xpouyat
 ms.reviewer: anilmur;juliako
 ms.openlocfilehash: 27bdf82d4515678e28eadf07fe325860fe5df063
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79251002"
 ---
 # <a name="using-multiple-input-files-and-component-properties-with-premium-encoder"></a>Использование нескольких входных файлов и свойств компонентов в кодировщике Premium
@@ -83,7 +83,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 
 **setRuntimeProperties** используется для переопределения свойства в компонентах рабочего процесса.
 
-Пример
+Пример:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -99,7 +99,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 ### <a name="property-with-an-xml-value"></a>Свойство со значением XML
 Для задания свойства, которое ожидает значение XML, необходима инкапсуляция с использованием синтаксиса `<![CDATA[ and ]]>`.
 
-Пример
+Пример:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -331,7 +331,7 @@ XML-файл со списком клипов можно указать в ра�
 
 ![Компоненты "Обновление типа видеоданных" и "Конвертер форматов видео"](./media/media-services-media-encoder-premium-workflow-multiplefilesinput/capture12_formatconverter.png)
 
-*Обновление типа видео данных и преобразователь формата*
+*Средство обновления типа данных видео и преобразователь формата*
 
 ![Тип макета — Configurable Planar (Настраиваемый переключатель)](./media/media-services-media-encoder-premium-workflow-multiplefilesinput/capture12_formatconverter2.png)
 
@@ -468,14 +468,14 @@ public ITask AddNew(string taskName, IMediaProcessor mediaProcessor, string conf
 
 ## <a name="see-also"></a>См. также
 * [Знакомство со Службой кодирования категории "Премиум" в службах мультимедиа Azure](https://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
-* [Как использовать Premium Кодирование в медиа-сервисах Azure](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
-* [Кодирование контента по требованию с помощью медиаслужб Azure](media-services-encode-asset.md#media-encoder-premium-workflow)
-* [Форматы и кодеки рабочего процесса Premium Media Encoder](media-services-premium-workflow-encoder-formats.md)
+* [Использование кодирования уровня "Премиум" в службах мультимедиа Azure](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
+* [Кодирование содержимого по запросу с помощью служб мультимедиа Azure](media-services-encode-asset.md#media-encoder-premium-workflow)
+* [Форматы и кодеки Media Encoder Premium Workflow](media-services-premium-workflow-encoder-formats.md)
 * [Примеры файлов рабочего процесса](https://github.com/Azure/azure-media-services-samples)
 * [Обозреватель Служб мультимедиа Azure](https://aka.ms/amse)
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

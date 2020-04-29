@@ -1,5 +1,5 @@
 ---
-title: SAP ASCS/SCS multi-SID HA с WSFC&общим диском на Azure Документы Майкрософт
+title: Уровень доступности SAP ASCS/SCS с несколькими ИД безопасности с WSFC&общим диском в Azure | Документация Майкрософт
 description: Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
@@ -17,10 +17,10 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 446091263596a1fd5503f38c6a60316f9b0b6843
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79245178"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
@@ -208,7 +208,7 @@ ms.locfileid: "79245178"
 > ![Windows][Logo_Windows] Windows
 >
 
-В сентябре 2016 года корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [баланса внутренней нагрузки Azure.][load-balancer-multivip-overview] Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
+В сентябре 2016 Корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [внутреннего балансировщика нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
 
 Если у вас есть развертывание SAP, чтобы создать конфигурацию кластера Windows для экземпляров SAP Central Services (ASCS/SCS), необходимо использовать внутреннюю подсистему балансировки нагрузки.
 
@@ -226,7 +226,7 @@ ms.locfileid: "79245178"
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, с помощью **файлового ресурса**, как показано на этой схеме.
 
@@ -405,10 +405,10 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 Основные действия:
 
-1. [Установите SAP с высокой доступностью экземпляра ASCS/SCS.][sap-high-availability-installation-wsfc-shared-disk-install-ascs]  
+1. [Установите SAP с экземпляром ASCS/SCS высокого уровня доступности][sap-high-availability-installation-wsfc-shared-disk-install-ascs].  
  На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 1 кластера WSFC.
 
-2. [Измените профиль SAP экземпляра ASCS/SCS.][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile]
+2. [Измените профиль SAP экземпляра ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile].
 
 3. [Настройка порта пробы][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].  
  На этом шаге настраивается порт пробы SAP-SID2-IP кластерного ресурса SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS.
@@ -432,9 +432,9 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 9. Установите дополнительный сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.
 
-10. [Проверьте сбой экземпляра SAP ASCS/SCS и репликацию SIOS.][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl]
+10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]

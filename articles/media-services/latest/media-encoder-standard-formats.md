@@ -1,5 +1,5 @@
 ---
-title: Форматы и кодерики Standard Encoder - Azure
+title: Стандартные форматы и кодеки кодировщика — Azure
 description: В этой статье содержится список наиболее распространенных форматов для импорта и экспорта файлов, которые можно использовать с StandardEncoderPreset.
 services: media-services
 documentationcenter: ''
@@ -15,13 +15,13 @@ ms.date: 02/10/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: f1d4d4f4006702ebe0d057e56cf24a022e73b83e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79251366"
 ---
-# <a name="standard-encoder-formats-and-codecs"></a>Форматы и кодерики Standard Encoder
+# <a name="standard-encoder-formats-and-codecs"></a>Стандартные форматы и кодеки кодировщика
 
 В этой статье содержится список наиболее распространенных форматов для импорта и экспорта файлов, которые можно использовать с [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). Сведения о создании настраиваемых предустановок с помощью **StandardEncoderPreset** см. в разделе [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md).
 
@@ -43,7 +43,7 @@ ms.locfileid: "79251366"
 
 ### <a name="audio-formats-in-input-containers"></a>Форматы аудио во входных контейнерах
 
-Стандартный encoder поддерживает проведение следующих аудио форматов в входных контейнерах:
+Стандартный кодировщик поддерживает следующие звуковые форматы во входных контейнерах:
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
@@ -62,7 +62,7 @@ ms.locfileid: "79251366"
 | MPEG-2 (до 422 Profile и High Level, включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs® и D10) |До 422 Profile |
 | MPEG-1 |Да |
 | VC-1/WMV9 |Да |
-| Canopus HQ/HQX |нет |
+| Canopus HQ/HQX |Нет |
 | MPEG-4, часть 2 |Да |
 | [Theora](https://en.wikipedia.org/wiki/Theora) |Да |
 | YUV420 без сжатия или мезонинный файл |Да |
@@ -82,14 +82,14 @@ ms.locfileid: "79251366"
 | MP3 (MPEG-1 Audio Layer 3) |Да |
 | Windows Media Audio |Да |
 | WAV/PCM |Да |
-| [Flac](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
+| [FLAC](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Да |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Да |
 | AMR (adaptive multi-rate) |Да |
-| AES (SMPTE 331M и 302M, AES3-2003) |нет |
-| Dolby® E |нет |
-| Dolby® Digital (AC3) |нет |
-| Dolby® Digital Plus (E-AC3) |нет |
+| AES (SMPTE 331M и 302M, AES3-2003) |Нет |
+| Dolby® E |Нет |
+| Dolby® Digital (AC3) |Нет |
+| Dolby® Digital Plus (E-AC3) |Нет |
 
 ## <a name="output-formats-and-codecs"></a>Выходные форматы и кодеки
 В следующей таблице перечислены кодеки и форматы файлов, поддерживаемые для экспорта.
@@ -99,6 +99,6 @@ ms.locfileid: "79251366"
 | MP4 <br/><br/>(включая контейнеры MP4 с несколькими скоростями) |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 | MPEG2-TS |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md)

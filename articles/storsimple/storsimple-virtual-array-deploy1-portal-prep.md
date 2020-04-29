@@ -9,10 +9,10 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 7f2c7a6f9c1146627f81dc20386c59a91724b245
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79254538"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Развертывание виртуального массива StorSimple. Подготовка портала Azure
@@ -40,7 +40,7 @@ ms.locfileid: "79254538"
 | **#** | **Шаг** | **Выполняемые действия** | **Справочная документация** |
 | --- | --- | --- | --- |
 | 1. |**Настройка портала Azure** |Перед подготовкой виртуального массива StorSimple к работе создайте и настройте службу диспетчера устройств StorSimple. |[Развертывание виртуального массива StorSimple — подготовка портала](storsimple-virtual-array-deploy1-portal-prep.md) |
-| 2. |**Подготовка виртуального массива к работе** |Для Hyper-V: подготовьте виртуальный массив StorSimple в главной системе, в которой выполняется Hyper-V на платформе Windows Server 2012 R2, Windows Server 2012 или Windows Server 2008 R2, и подключитесь к нему. <br></br> <br></br> В случае с VMware подготовьте виртуальный массив StorSimple в главной системе под управлением VMware ESXi 5.0, 5.5, 6.0 или 6.5 и установите подключение к нему.<br></br> |[Предоставление виртуального массива в Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md) <br></br> <br></br> [Развертывание виртуального массива StorSimple — подготовка виртуального массива в VMware](storsimple-virtual-array-deploy2-provision-vmware.md) |
+| 2. |**Подготовка виртуального массива к работе** |Для Hyper-V: подготовьте виртуальный массив StorSimple в главной системе, в которой выполняется Hyper-V на платформе Windows Server 2012 R2, Windows Server 2012 или Windows Server 2008 R2, и подключитесь к нему. <br></br> <br></br> В случае с VMware подготовьте виртуальный массив StorSimple в главной системе под управлением VMware ESXi 5.0, 5.5, 6.0 или 6.5 и установите подключение к нему.<br></br> |[Подготавливает виртуальный массив в Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md) <br></br> <br></br> [Развертывание виртуального массива StorSimple — подготовка виртуального массива в VMware](storsimple-virtual-array-deploy2-provision-vmware.md) |
 | 3. |**Настройка виртуального массива** |Выполните начальную установку файлового сервера StorSimple, зарегистрируйте его и настройте устройство. Затем подготовьте к работе общие папки SMB. <br></br> <br></br> Выполните начальную установку сервера iSCSI, зарегистрируйте его и настройте устройство. Затем подготовьте к работе тома iSCSI. |[Развертывание виртуального массива StorSimple — установка в качестве файлового сервера](storsimple-virtual-array-deploy3-fs-setup.md)<br></br> <br></br>[Развертывание виртуального массива StorSimple — настройка виртуального устройства в качестве сервера iSCSI](storsimple-virtual-array-deploy3-iscsi-setup.md) |
 
 Теперь можно приступать к настройке портала Azure.
@@ -52,7 +52,7 @@ ms.locfileid: "79254538"
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве файлового сервера](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayFileServerConfigurationChecklist.pdf).
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве сервера iSCSI](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayiSCSIServerConfigurationChecklist.pdf).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Ниже приведены предварительные требования для настройки службы диспетчера устройств StorSimple, виртуального массива StorSimple и сети центра обработки данных.
 
@@ -105,7 +105,7 @@ ms.locfileid: "79254538"
 
 После запуска и настройки службы диспетчера устройств StorSimple вам необходимо будет получить ключ регистрации службы. Этот ключ используется для регистрации вашего устройства StorSimple в службе и подключения к ней.
 
-Выполните следующие шаги на [портале Azure](https://portal.azure.com/).
+В [портал Azure](https://portal.azure.com/)выполните следующие действия.
 
 [!INCLUDE [storsimple-virtual-array-get-service-registration-key](../../includes/storsimple-virtual-array-get-service-registration-key.md)]
 
@@ -123,11 +123,11 @@ ms.locfileid: "79254538"
 > 
 > 
 
-Выполните следующие шаги на [портале Azure](https://portal.azure.com/).
+В [портал Azure](https://portal.azure.com/)выполните следующие действия.
 
 #### <a name="to-get-the-virtual-array-image"></a>Получение образа виртуального массива
 
-1. Войти на [портал Azure](https://portal.azure.com/). 
+1. Войдите на [портал Azure](https://portal.azure.com/). 
 2. На портале Azure щелкните **Больше служб > Диспетчеры устройств StorSimple**.
 3. Выберите имеющуюся службу диспетчера устройств StorSimple. В колонке **Диспетчеры устройств StorSimple** щелкните **Быстрый запуск**. 
 4. Щелкните ссылку на образ, который вы хотите скачать из Центра загрузки Майкрософт. Размер файла образа составляет около 4,8 ГБ.
@@ -162,7 +162,7 @@ ms.locfileid: "79254538"
    
       ![Добавление учетных данных имеющейся учетной записи хранения](./media/storsimple-virtual-array-manage-storage-accounts/ova-add-storageacct.png)
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 Далее необходимо подготовить виртуальную машину для виртуального массива StorSimple. Инструкции зависят от используемой ОС сервера виртуальных машин.
 

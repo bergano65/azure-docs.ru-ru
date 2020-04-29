@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: ce56c406c884471c445b25343d5c42f9edcbe4c4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79249546"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Шаблоны страниц в службе управления API Azure
@@ -41,7 +41,7 @@ ms.locfileid: "79249546"
 ##  <a name="sign-in"></a><a name="SignIn"></a>Войти  
  Шаблон **входа** позволяет настроить страницу входа на портале разработчика.  
   
- ![Войти в страницу](./media/api-management-page-templates/APIM-Sign-In-Page-Developer-Portal-Templates.png "APIM Подпишитев в шаблонах портала портала разработчика страницы")  
+ ![Страница входа](./media/api-management-page-templates/APIM-Sign-In-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для страницы входа в APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -102,9 +102,9 @@ ms.locfileid: "79249546"
 ### <a name="controls"></a>Элементы управления  
  Шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [базовый-сизин](api-management-page-controls.md#basic-signin)  
+-   [Базовый — вход](api-management-page-controls.md#basic-signin)  
   
--   [providers](api-management-page-controls.md#providers)  
+-   [поставщик](api-management-page-controls.md#providers)  
   
 ### <a name="data-model"></a>Модель данных  
  Сущность [входа пользователя](api-management-template-data-model-reference.md#UseSignIn).  
@@ -140,7 +140,7 @@ ms.locfileid: "79249546"
 ##  <a name="sign-up"></a><a name="SignUp"></a>Регистрация  
  Шаблон **регистрации** позволяет настроить страницу регистрации на портале разработчика.  
   
- ![Зарегистрируйтесь на странице](./media/api-management-page-templates/APIM-Sign-Up-Page-Developer-Portal-Templates.png "APIM Зарегистрируйтеся Шаблоны портала разработчиков страниц")  
+ ![Страница регистрации](./media/api-management-page-templates/APIM-Sign-Up-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика страницы регистрации APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -188,7 +188,7 @@ ms.locfileid: "79249546"
 ##  <a name="page-not-found"></a><a name="PageNotFound"></a> Страница не найдена  
  Шаблон страницы с ошибкой **Страница не найдена** позволяет настроить страницу с ошибкой "Страница не найдена" на портале разработчика.  
   
- ![Не найдена страница](./media/api-management-page-templates/APIM-Not-Found-Page-Developer-Portal-Templates.png "APIM не найдено шаблонов портала разработчиков страниц")  
+ ![Страница "не найдено"](./media/api-management-page-templates/APIM-Not-Found-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для APIM не найденных страниц")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -227,7 +227,7 @@ ms.locfileid: "79249546"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
 |referenceCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
 |errorCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
@@ -247,5 +247,5 @@ ms.locfileid: "79249546"
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

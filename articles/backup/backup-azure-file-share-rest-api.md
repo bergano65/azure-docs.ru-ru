@@ -1,54 +1,54 @@
 ---
-title: Резервное копирование акций файлов Azure с помощью REST API
-description: Узнайте, как использовать REST API для резервного копирования акций файлов Azure в Хранилище служб восстановления
+title: Резервное копирование файловых ресурсов Azure с помощью REST API
+description: Узнайте, как использовать REST API для резервного копирования файловых ресурсов Azure в хранилище служб восстановления.
 ms.topic: conceptual
 ms.date: 02/16/2020
 ms.openlocfilehash: 2cf385830ec1be17cb62432e6ef9cba7d82a9db1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79248103"
 ---
-# <a name="backup-azure-file-share-using-azure-backup-via-rest-api"></a>Резервное копирование файла Azure совместное использование резервного копирования Azure через Rest API
+# <a name="backup-azure-file-share-using-azure-backup-via-rest-api"></a>Резервное копирование файлового ресурса Azure с помощью Azure Backup через API-интерфейс.
 
-В этой статье описывается, как создать резервную связь с разделом azure File с помощью резервного копирования Azure через REST API.
+В этой статье описывается, как создать резервную копию файлового ресурса Azure с помощью Azure Backup с помощью REST API.
 
-В этой статье предполагается, что вы уже создали хранилище служб восстановления и политику для настройки резервного копирования для вашей доли файлов. Если вы этого не сможете, обратитесь к [хранилищу и](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatevault) [создайте](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatepolicy) учебники по политике REST API для создания новых хранилищ и политик.
+В этой статье предполагается, что вы уже создали хранилище служб восстановления и политику для настройки резервного копирования для общей папки. Если вы этого не сделали, см. руководства по созданию [хранилища](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatevault) и [созданию](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatepolicy) политик REST API для создания новых хранилищ и политик.
 
-Для этой статьи мы будем использовать следующие ресурсы:
+В этой статье мы будем использовать следующие ресурсы:
 
-- **RecoveryServicesVault**: *лазуриции*
+- **RecoveryServicesVault**: *азурефилесваулт*
 
 - **Политика:** *schedule1*
 
-- **Группа ресурсов**: *лазуриты*
+- **Группа ресурсов**: *azurefiles*
 
 - **Учетная запись хранения**: *testvault2*
 
-- **Доля файлов**: *тест-шеринг*
+- **Общая папка**: *тестшаре*
 
-## <a name="configure-backup-for-an-unprotected-azure-file-share-using-rest-api"></a>Настройка резервного копирования для незащищенного раздела файлов Azure с помощью REST API
+## <a name="configure-backup-for-an-unprotected-azure-file-share-using-rest-api"></a>Настройка резервного копирования для незащищенного файлового ресурса Azure с помощью REST API
 
-### <a name="discover-storage-accounts-with-unprotected-azure-file-shares"></a>Откройте для себя учетных записей хранения с незащищенными файлами Azure
+### <a name="discover-storage-accounts-with-unprotected-azure-file-shares"></a>Обнаружение учетных записей хранения с незащищенными файловыми ресурсами Azure
 
-Хранилище должно обнаружить все учетные записи хранения Azure в подписке с файлами, которые могут быть резервироваться в Хранилище служб восстановления. Это можно сделать с помощью [операции обновления](https://docs.microsoft.com/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST,* которая гарантирует, что хранилище получает последний список всех незащищенных акций Azure File в текущей подписке и "кэширует" их. После "кэша" доли файла службы восстановления могут получить доступ к кадоле файла и защитить ее.
+Хранилищу необходимо найти все учетные записи хранения Azure в подписке с общими папками, которые можно архивировать в хранилище служб восстановления. Это можно сделать с помощью [операции обновления](https://docs.microsoft.com/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST* , которая гарантирует, что хранилище получает последний список всех незащищенных файловых ресурсов Azure в текущей подписке и кэширует их. После кэширования общей папки службы восстановления могут получить доступ к общей папке и защитить ее.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{vaultresourceGroupname}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers?api-version=2016-12-01&$filter={$filter}
 ```
 
-POST URI `{subscriptionId}`имеет `{vaultName}` `{vaultresourceGroupName}`, `{fabricName}` , и параметры. В нашем примере значение для различных параметров будет следующим:
+URI Post имеет `{subscriptionId}`параметры, `{vaultName}` `{vaultresourceGroupName}`, и `{fabricName}` . В нашем примере значения для различных параметров будут выглядеть следующим образом:
 
 - `{fabricName}`является *Azure*
 
-- `{vaultName}`является *лазурныйfilesvault*
+- `{vaultName}`*азурефилесваулт*
 
-- `{vaultresourceGroupName}`*лазурофайлов*
+- `{vaultresourceGroupName}`*azurefiles*
 
-- $filter-backupManagementType eq 'AzureStorage'
+- $filter = Баккупманажементтипе EQ ' AzureStorage '
 
-Поскольку все необходимые параметры приведены в URI, нет необходимости в отдельном органе запроса.
+Так как все необходимые параметры указаны в универсальном коде ресурса (URI), нет необходимости в отдельном тексте запроса.
 
 ```http
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/refreshContainers?api-version=2016-12-01&$filter=backupManagementType eq 'AzureStorage'
@@ -58,7 +58,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Операция обновления — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Он возвращает два ответа: 202 (Принято) при создании другой операции и 200 (OK) при завершении операции.
+Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
 
 ##### <a name="example-responses"></a>Примеры ответов
 
@@ -89,7 +89,7 @@ cca47745-12d2-42f9-b3a4-75335f18fdf6?api-version=2016-12-01’
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/operationResults/cca47745-12d2-42f9-b3a4-75335f18fdf6?api-version=2016-12-01
 ```
 
-После обнаружения всех учетных записей хранилища Azure команда GET возвращает 200 (без содержимого). Хранилище теперь может обнаружить любую учетную запись хранения с файлами, которые могут быть подкреплены в подписке.
+После обнаружения всех учетных записей хранения Azure команда GET возвращает ответ 200 (без содержимого). Теперь хранилище может обнаружить любую учетную запись хранения с общими папками, которые можно архивировать в рамках подписки.
 
 ```http
 HTTP/1.1 200 NoContent
@@ -106,9 +106,9 @@ x-ms-routing-request-id  : CENTRALUSEUAP:20200127T105304Z:d9bdb266-8349-4dbd-968
 Date   : Mon, 27 Jan 2020 10:53:04 GMT
 ```
 
-### <a name="get-list-of-storage-accounts-that-can-be-protected-with-recovery-services-vault"></a>Получите список учетных записей хранения, которые могут быть защищены хранилищем служб восстановления
+### <a name="get-list-of-storage-accounts-that-can-be-protected-with-recovery-services-vault"></a>Получение списка учетных записей хранения, которые можно защитить с помощью хранилища служб восстановления
 
-Чтобы подтвердить, что "кэширование" сделано, перечислите все защищенные учетные записи хранения по подписке. Затем найдите желаемую учетную запись хранения в ответе. Это делается с помощью операции [GET ProtectableContainers.](https://docs.microsoft.com/rest/api/backup/protectablecontainers/list)
+Чтобы убедиться в том, что выполняется кэширование, перечислите все защищенные учетные записи хранения в подписке. Затем найдите нужную учетную запись хранения в ответе. Это делается с помощью операции [Get протектаблеконтаинерс](https://docs.microsoft.com/rest/api/backup/protectablecontainers/list) .
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectableContainers?api-version=2016-12-01&$filter=backupManagementType eq 'AzureStorage'
@@ -116,7 +116,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 URI *GET* имеет все необходимые параметры. Для этой операции текст запроса также не требуется.
 
-Пример органа реагирования:
+Пример текста ответа:
 
 ```json
 {
@@ -156,26 +156,26 @@ protectableContainers/StorageContainer;Storage;AzureFiles;testvault2",
 }
 ```
 
-Так как мы можем найти учетную запись хранения *testvault2* в органе реагирования с дружественным названием, операция обновления, выполненная выше, была успешной. Хранилище служб восстановления теперь может успешно обнаружить учетные записи хранения с незащищенными файлами, долями в той же подписке.
+Так как мы можем разместить в тексте ответа учетную запись хранения *testvault2* с понятным именем, операция обновления, выполненная выше, была успешной. Теперь хранилище служб восстановления может успешно обнаружить учетные записи хранения с незащищенными файлами в одной подписке.
 
-### <a name="register-storage-account-with-recovery-services-vault"></a>Регистрация учетной записи хранения в хранилище услуг восстановления
+### <a name="register-storage-account-with-recovery-services-vault"></a>Регистрация учетной записи хранения в хранилище служб восстановления
 
-Этот шаг необходим только в том случае, если вы не зарегистрировали учетную запись хранилища в хранилище ранее. Вы можете зарегистрировать хранилище через [операцию ProtectionContainers-Register.](https://docs.microsoft.com/rest/api/backup/protectioncontainers/register)
+Этот шаг необходим, только если вы не зарегистрировали учетную запись хранения в хранилище ранее. Хранилище можно зарегистрировать с помощью [операции протектионконтаинерс-Register](https://docs.microsoft.com/rest/api/backup/protectioncontainers/register).
 
 ```http
 PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}?api-version=2016-12-01
 ```
 
-Установите переменные для URI следующим образом:
+Задайте переменные для URI следующим образом:
 
-- «ресурсGroupName» - *лазурные файлы*
-- (fabricName) - *Azure*
-- (vaultName) - *лазурификаций*
-- «containerName» - Это атрибут имени в корпусе ответа операции GET ProtectableContainers.
-   В нашем примере это *StorageContainer; Хранение; AzureFiles;testvault2*
+- {resourceGroupName} — *azurefiles*
+- {fabricName} — *Azure*
+- {vaultName} — *азурефилесваулт*
+- {containerName} — это атрибут Name в тексте ответа операции GET Протектаблеконтаинерс.
+   В нашем примере это *StorageContainer; Объема AzureFiles; testvault2*
 
 >[!NOTE]
-> Всегда возьмите атрибут имени ответа и заполните его в этом запросе. Не жестко закодивайте или создавайте формат контейнерного имени. При создании или жестком кодировании вызов API не удастся, если формат тар-имя изменится в будущем.
+> Всегда Возьмите атрибут имени ответа и заполните его в этом запросе. НЕ следует жестко кодировать или создавать формат имени контейнера. Если вы создаете или жестко назначите его, вызов API завершится ошибкой, если формат имени контейнера изменяется в будущем.
 
 <br>
 
@@ -183,7 +183,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/AzureFiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;Storage;AzureFiles;testvault2?api-version=2016-12-01
 ```
 
-Тело запроса создания следующим образом:
+Текст запроса создания выглядит следующим образом:
 
 ```json
 {
@@ -209,15 +209,15 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
  }
 ```
 
-Для получения полного перечня определений органа запроса и других деталей, обратитесь к [ProtectionContainers-Register](https://docs.microsoft.com/rest/api/backup/protectioncontainers/register#azurestoragecontainer).
+Полный список определений текста запроса и другие сведения см. в разделе [протектионконтаинерс-Register](https://docs.microsoft.com/rest/api/backup/protectioncontainers/register#azurestoragecontainer).
 
-Это асинхронная операция и возвращает два ответа: "202 Принято", когда операция будет принята и "200 OK", когда операция завершена.  Чтобы отследить состояние операции, используйте заголовок местоположения, чтобы получить последний статус операции.
+Это асинхронная операция, которая возвращает два ответа: "202 Accepted", когда операция принята, и "200 ОК" после завершения операции.  Чтобы отвести состояние операции, используйте заголовок Location для получения последнего состояния операции.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/AzureFiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;Storage;AzureFiles;testvault2/operationresults/1a3c8ee7-e0e5-43ed-b8b3-73cc992b6db9?api-version=2016-12-01
 ```
 
-Пример органа реагирования при завершении операции:
+Пример текста ответа после завершения операции:
 
 ```json
 {
@@ -237,27 +237,27 @@ protectionContainers/StorageContainer;Storage;AzureFiles;testvault2",
 }
 ```
 
-Вы можете проверить, была ли регистрация успешной, из значения параметра *регистрационного статуса* в органе ответа. В нашем случае он показывает статус зарегистрированного для *testvault2,* поэтому операция регистрации прошла успешно.
+Можно проверить успешность регистрации по значению параметра *регистратионстатус* в тексте ответа. В нашем случае он показывает состояние, зарегистрированное для *testvault2*, поэтому операция регистрации прошла успешно.
 
-### <a name="inquire-all-unprotected-files-shares-under-a-storage-account"></a>Запрос всех незащищенных файлов акций под счетом хранения
+### <a name="inquire-all-unprotected-files-shares-under-a-storage-account"></a>Запрос всех незащищенных файлов, общих для учетной записи хранения
 
-Вы можете узнать о защитных товарах в учетной записи хранения с помощью операции [Protection Containers-Inquire.](https://docs.microsoft.com/rest/api/backup/protectioncontainers/inquire) Это асинхронная операция, и результаты должны отслеживаться с помощью заголовка местоположения.
+Сведения о защищенных элементах в учетной записи хранения можно запросить с помощью операции " [контейнеры защиты — запрос](https://docs.microsoft.com/rest/api/backup/protectioncontainers/inquire) ". Это асинхронная операция, и результаты должны быть отслеживаниются с помощью заголовка Location.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/inquire?api-version=2016-12-01
 ```
 
-Установите переменные для вышеуказанных URI следующим образом:
+Задайте переменные для указанного выше URI следующим образом:
 
-- (vaultName) - *лазурификаций*
-- (fabricName) - *Azure*
-- «КонтейнерНоеимя» - Обратитесь к атрибуту имени в органе реагирования операции GET ProtectableContainers. В нашем примере это *StorageContainer; Хранение; AzureFiles;testvault2*
+- {vaultName} — *азурефилесваулт*
+- {fabricName} — *Azure*
+- {containerName} — см. атрибут Name в тексте ответа операции GET Протектаблеконтаинерс. В нашем примере это *StorageContainer; Объема AzureFiles; testvault2*
 
 ```http
 https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;Storage;AzureFiles;testvault2/inquire?api-version=2016-12-01
 ```
 
-Как только запрос успешен, он возвращает код статуса "OK"
+После успешного выполнения запроса возвращается код состояния "ОК".
 
 ```http
 Cache-Control : no-cache
@@ -274,18 +274,18 @@ x-ms-routing-request-id   : CENTRALUSEUAP:20200127T105305Z:68727f1e-b8cf-4bf1-bf
 Date  : Mon, 27 Jan 2020 10:53:05 GMT
 ```
 
-### <a name="select-the-file-share-you-want-to-back-up"></a>Выберите общий файл, который необходимо создать для резервного копирования
+### <a name="select-the-file-share-you-want-to-back-up"></a>Выберите общую папку для резервного копирования
 
-Вы можете перечислить все защищенные элементы под подпиской и найти нужную долю файла для резервного копирования с помощью операции [GET backupprotectableItems.](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list)
+Вы можете получить список всех защищаемых элементов в подписке и найти нужную общую папку для резервного копирования с помощью операции [Get баккуппротектаблеитемс](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list) .
 
 ```http
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectableItems?api-version=2016-12-01&$filter={$filter}
 ```
 
-Постройте URI следующим образом:
+Создайте URI следующим образом:
 
-- (vaultName) - *лазурификаций*
-- ($filter- - *резервное копированиеManagementType eq 'AzureStorage'*
+- {vaultName} — *азурефилесваулт*
+- {$filter}- *баккупманажементтипе EQ ' AzureStorage '*
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupProtectableItems?$filter=backupManagementType eq 'AzureStorage'&api-version=2016-12-01
@@ -347,33 +347,33 @@ Status Code:200
 }
 ```
 
-Ответ содержит список всех незащищенных файлов и содержит всю информацию, требуемую службой восстановления Azure для настройки резервной системы.
+Ответ содержит список всех незащищенных файловых ресурсов и содержит все сведения, необходимые службе восстановления Azure для настройки резервного копирования.
 
-### <a name="enable-backup-for-the-file-share"></a>Включить резервную капроверкасается для общего обмена файлами
+### <a name="enable-backup-for-the-file-share"></a>Включить резервное копирование для общей папки
 
-После того, как соответствующая доля файлов "отождествляется" с дружественным именем, выберите политику для защиты. Чтобы узнать больше о существующих политиках в хранилище, обратитесь к [aPI-списку политики.](https://docs.microsoft.com/rest/api/backup/backuppolicies/list) Ссылаясь на имя политики, выберите [соответствующую политику](https://docs.microsoft.com/rest/api/backup/protectionpolicies/get). См. дополнительные сведения о [создании политик](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatepolicy).
+После определения соответствующей общей папки с понятным именем выберите политику для защиты. Дополнительные сведения о существующих политиках в хранилище см. в разделе [API политики списка](https://docs.microsoft.com/rest/api/backup/backuppolicies/list). Ссылаясь на имя политики, выберите [соответствующую политику](https://docs.microsoft.com/rest/api/backup/protectionpolicies/get). См. дополнительные сведения о [создании политик](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatepolicy).
 
-Включение защиты является асинхронной операцией *PUT,* которая создает "защищенный элемент".
+Включение защиты — это асинхронная операция *размещения* , которая создает "защищенный элемент".
 
 ```http
 PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{vaultresourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}?api-version=2019-05-13
 ```
 
-Установите переменные **контейнерного имени** и **защищенного элемента,** используя атрибут Идентификатора, в корпусе отклика операции GET backupprotectable.
+Задайте переменные **containername** и **протектедитемнаме** , используя атрибут ID в тексте ответа операции Get баккуппротектаблеитемс.
 
-В нашем примере идентификатор общего файла, который мы хотим защитить, заключается в:
+В нашем примере идентификатор общей папки, которую мы хотим защитить:
 
 ```output
 "/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/storagecontainer;storage;azurefiles;testvault2/protectableItems/azurefileshare;testshare
 ```
 
-- «контейнерное имя» - *контейнер для хранения;хранение;лазуриты;testvault2*
-- «ЗащищенныйДеталь» - *лазуридой;тестшеринг*
+- {containername} — *storagecontainer; хранилище; azurefiles; testvault2*
+- {Протектедитемнаме} — *azurefileshare; тестшаре*
 
-Или вы можете сослаться на атрибут **имени** защитного контейнера и защищенные ответы на элементы.
+Также можно обратиться к атрибуту **Name** контейнера защиты и ответам на защищенные элементы.
 
 >[!NOTE]
->Всегда возьмите атрибут имени ответа и заполните его в этом запросе. Не жестко закодивайте или создавайте формат тар-имя или защищенный формат имени элемента. При создании или жестком кодировании вызов API не удастся, если формат названия контейнера или формат защищенного названия элемента изменится в будущем.
+>Всегда Возьмите атрибут имени ответа и заполните его в этом запросе. НЕ следует жестко кодировать или создать формат имени контейнера или защищенного элемента. Если вы создаете или жестко назначите его, вызов API завершится ошибкой, если в будущем изменяется формат имени контейнера или защищенного элемента.
 
 <br>
 
@@ -381,7 +381,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;Storage;AzureFiles;testvault2/protectedItems/azurefileshare;testshare?api-version=2016-12-01
 ```
 
-Создание органа запроса:
+Создайте текст запроса:
 
 Следующий текст запроса определяет свойства, необходимые для создания защищенного элемента.
 
@@ -395,13 +395,13 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-**ИсточникResourceId** является **parentcontainerFabricID** в ответ на GET резервного защитыItems.
+**Значение sourceresourceid** — это **парентконтаинерфабриЦид** в ответ на Get баккуппротектаблеитемс.
 
 Пример ответа
 
-Создание защищенного элемента является асинхронной операцией, которая создает еще одну операцию, которую необходимо отслеживать. Он возвращает два ответа: 202 (Принято) при создании другой операции и 200 (OK) при завершении операции.
+Создание защищенного элемента — это асинхронная операция, которая создает другую операцию, которую необходимо отслеживанию. Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
 
-После отправки запроса *PUT* на создание или обновление защищенного элемента первоначальный ответ составляет 202 (принято) с заголовком местоположения.
+После отправки запроса на *Размещение* для создания или обновления защищенного элемента начальный ответ — 202 (принято) с заголовком Location.
 
 ```http
 HTTP/1.1 202 Accepted
@@ -421,7 +421,7 @@ x-ms-routing-request-id  : CENTRALUSEUAP:20200127T105412Z:b55527fa-f473-4f09-b16
 Date : Mon, 27 Jan 2020 10:54:12 GMT
 ```
 
-Затем отслеживайте полученную операцию с помощью заголовка местоположения или заголовка Azure-AsyncOperation с помощью команды *GET.*
+Затем отследите итоговую операцию с помощью заголовка Location или Azure-AsyncOperation с командой *Get* .
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupOperations/c3a52d1d-0853-4211-8141-477c65740264?api-version=2016-12-01
@@ -429,7 +429,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Завершенная операция возвращает код 200 (ОК) с содержимым защищенного элемента в тексте ответа.
 
-Пример органа реагирования:
+Образец текста ответа:
 
 ```json
 {
@@ -445,11 +445,11 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-Это подтверждает, что защита включена для общего файла и первая резервная часть будет запущена в соответствии с графиком политики.
+Это подтверждает, что защита для общей папки включена, и первая резервная копия будет активирована в соответствии с расписанием политики.
 
-## <a name="trigger-an-on-demand-backup-for-file-share"></a>Триггер резервного копирования по требованию для общего элемента файла
+## <a name="trigger-an-on-demand-backup-for-file-share"></a>Активация резервной копии по запросу для файлового ресурса
 
-После настройки элемента файла Azure для резервного копирования резервные ожидания запускаются в соответствии с графиком политики. Вы можете дождаться первого запланированного резервного копирования или активировать эту операцию по требованию в любое время.
+После настройки общего файлового ресурса Azure резервные копии выполняются в соответствии с расписанием политики. Вы можете дождаться первого запланированного резервного копирования или активировать эту операцию по требованию в любое время.
 
 Активация резервного копирования по запросу — это операция POST.
 
@@ -457,7 +457,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/backup?api-version=2016-12-01
 ```
 
-«containerName» и «protectedItemName» построены выше при включении резервного копирования. В нашем примере мы получим следующее:
+{containerName} и {Протектедитемнаме} созданы ранее при включении резервного копирования. В нашем примере мы получим следующее:
 
 ```http
 POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectionContainers/StorageContainer;storage;azurefiles;testvault2/protectedItems/AzureFileShare;testshare/backup?api-version=2017-07-01
@@ -467,13 +467,13 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-| name       | Тип                       | Описание                       |
+| Имя       | Type                       | Описание                       |
 | ---------- | -------------------------- | --------------------------------- |
-| Свойства | AzurefilesharebackupReques | Свойства резервного копированияRequestResource |
+| Элемент Property | азурефилешаребаккупрекуес | Свойства Баккупрекуестресаурце |
 
 Полный список определений в тексте запроса и другие сведения см. в [документации по активации резервного копирования для защищенных элементов для REST API](https://docs.microsoft.com/rest/api/backup/backups/trigger#request-body).
 
-Пример органа запроса
+Пример текста запроса
 
 ```json
 {
@@ -491,7 +491,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 Активация резервного копирования по запросу — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Он возвращает два ответа: 202 (Принято) при создании другой операции и 200 (OK) при завершении операции.
+Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
 
 ### <a name="example-responses"></a>Примеры ответов
 
@@ -516,7 +516,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 'Content-Length': '0'
 ```
 
-Затем отслеживайте полученную операцию с помощью заголовка местоположения или заголовка Azure-AsyncOperation с помощью команды *GET.*
+Затем отследите итоговую операцию с помощью заголовка Location или Azure-AsyncOperation с командой *Get* .
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupOperations/dc62d524-427a-4093-968d-e951c0a0726e?api-version=2016-12-01
@@ -542,6 +542,6 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Так как задание резервного копирования — это длительная операция, оно должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-managejobs#tracking-the-job).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Узнайте, как [восстановить файлы Azure с помощью Rest API.](restore-azure-file-share-rest-api.md)
+- Узнайте, как [восстановить файловые ресурсы Azure с помощью API-интерфейса](restore-azure-file-share-rest-api.md).

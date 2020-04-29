@@ -1,5 +1,5 @@
 ---
-title: Позвоните в веб-крюк с классическим метриканным оповещением в Azure Monitor
+title: Вызов веб-перехватчика с классическим оповещением метрики в Azure Monitor
 description: Узнайте, как перенаправлять оповещения метрик Azure в другие системы за пределами Azure.
 author: harelbr
 ms.author: harelbr
@@ -7,13 +7,13 @@ ms.topic: conceptual
 ms.date: 04/03/2017
 ms.subservice: alerts
 ms.openlocfilehash: 27510871f9a022cb27c6b03b812ce1d37b47312c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79248987"
 ---
-# <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Позвоните в веб-крюк с классическим метриканным оповещением в Azure Monitor
+# <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Вызов веб-перехватчика с классическим оповещением метрики в Azure Monitor
 
 С помощью веб-перехватчика можно направлять уведомления об оповещениях Azure в другие системы для постобработки или выполнения настраиваемых действий. Веб-перехватчик можно использовать, чтобы направить оповещение к службам, которые отправляют SMS-сообщения, ведут журналы об ошибках, уведомляют членов команды в чате или службах обмена сообщениями либо выполняют другие действия. 
 
@@ -29,7 +29,7 @@ ms.locfileid: "79248987"
 Вы также можете настроить оповещение так, чтобы при его активации в URI веб-перехватчика добавлялись соответствующие сведения. Для этого можно использовать [командлеты Azure PowerShell](../../azure-monitor/platform/powershell-quickstart-samples.md#create-metric-alerts), [кроссплатформенный интерфейс командной строки](../../azure-monitor/platform/cli-samples.md#work-with-alerts) или [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn933805.aspx).
 
 ## <a name="authenticate-the-webhook"></a>Аутентификация веб-перехватчика
-Для веб-перехватчика может использоваться аутентификация на основе маркеров. Универсальный код ресурса (URI) веб-перехватчика сохраняется вместе с идентификатором маркера. Например: `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
+Для веб-перехватчика может использоваться аутентификация на основе маркеров. Универсальный код ресурса (URI) веб-перехватчика сохраняется вместе с идентификатором маркера. Пример: `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
 
 ## <a name="payload-schema"></a>Схема полезных данных
 Операция POST содержит следующие полезные данные и схему JSON для всех оповещений, связанных с метриками.
@@ -99,8 +99,8 @@ ms.locfileid: "79248987"
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Подробнее о оповещениях и веб-крючках Azure читайте в [видео«Интеграция предупреждений Azure» с помощью PagerDuty.](https://go.microsoft.com/fwlink/?LinkId=627080)
+## <a name="next-steps"></a>Дальнейшие шаги
+* Дополнительные сведения об оповещениях и веб-перехватчиках Azure см. в видео [Интеграция оповещений Azure с PagerDuty](https://go.microsoft.com/fwlink/?LinkId=627080).
 * Узнайте больше о [выполнении скриптов службы автоматизации Azure для оповещений Azure](https://go.microsoft.com/fwlink/?LinkId=627081).
 * Узнайте, как [использовать приложение логики для отправки сообщения SMS с помощью Twilio из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения Slack из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).

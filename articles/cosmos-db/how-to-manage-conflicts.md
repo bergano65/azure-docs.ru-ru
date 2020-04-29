@@ -1,16 +1,16 @@
 ---
 title: Управление конфликтами между регионами в Azure Cosmos DB
-description: Узнайте, как управлять конфликтами в Azure Cosmos DB, создавая последние победы в авторе или пользовательскую политику разрешения конфликтов
+description: Узнайте, как управлять конфликтами в Azure Cosmos DB путем создания последней или пользовательской политики разрешения конфликтов.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: mjbrown
 ms.openlocfilehash: 6d364f1a9974d6d638bb0f824e88ed3866644c15
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79247414"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Управление политиками разрешения конфликтов в Azure Cosmos DB
@@ -36,7 +36,7 @@ DocumentCollection lwwCollection = await createClient.CreateDocumentCollectionIf
   });
 ```
 
-### <a name="net-sdk-v3"></a><a id="create-custom-conflict-resolution-policy-lww-dotnet-v3"></a>.NET SDK V3
+### <a name="net-sdk-v3"></a><a id="create-custom-conflict-resolution-policy-lww-dotnet-v3"></a>ПАКЕТ SDK ДЛЯ .NET V3
 
 ```csharp
 Container container = await createClient.GetDatabase(this.databaseName)
@@ -107,10 +107,10 @@ udp_collection = self.try_create_document_collection(
 
 Пользовательские хранимые процедуры для устранения конфликтов нужно реализовать с помощью сигнатуры функции, представленной ниже. Имя функции не обязательно должно совпадать с именем, используемым при регистрации хранимой процедуры с использованием контейнера, но такой подход упрощает именование. Ниже описаны параметры, которые нужно реализовать для этой хранимой процедуры.
 
-- **incomingItem**: Элемент, вставленный или обновляемый в коммите, генерирующем конфликты. Имеет значение NULL для операций удаления.
-- **existingItem**: В настоящее время зафиксированный элемент. Значение NULL не устанавливается при обновлении и устанавливается при вставке или удалении.
-- **isTombstone**: Boolean, указывающий, противоречит ли входящий элемент ранее удаленному элементу. При значении true existingItem также имеет значение NULL.
-- **conflictingItems**: Массив зафиксированной версии всех элементов в контейнере, которые противоречат incomingItem on ID или любым другим уникальным свойствам индекса.
+- **инкомингитем**: элемент, вставляемый или обновляемый при фиксации, который создает конфликты. Имеет значение NULL для операций удаления.
+- **ексистингитем**: текущий зафиксированный элемент. Значение NULL не устанавливается при обновлении и устанавливается при вставке или удалении.
+- a- **захоронение**: логическое значение, указывающее, конфликтует ли инкомингитем с ранее удаленным элементом. При значении true existingItem также имеет значение NULL.
+- **конфликтингитемс**: массив зафиксированной версии всех элементов в контейнере, конфликтующих с ИНКОМИНГИТЕМ по идентификатору или любым другим уникальным свойствам индекса.
 
 > [!IMPORTANT]
 > Так же, как и любая хранимая процедура, пользовательская процедура разрешения конфликтов может обращаться к данным с одним ключом секции. Процедура позволяет выполнять любые операции вставки, обновления или удаления для устранения конфликтов.
@@ -194,7 +194,7 @@ UriFactory.CreateStoredProcedureUri(this.databaseName, this.udpCollectionName, "
 });
 ```
 
-### <a name="net-sdk-v3"></a><a id="create-custom-conflict-resolution-policy-stored-proc-dotnet-v3"></a>.NET SDK V3
+### <a name="net-sdk-v3"></a><a id="create-custom-conflict-resolution-policy-stored-proc-dotnet-v3"></a>ПАКЕТ SDK ДЛЯ .NET V3
 
 ```csharp
 Container container = await createClient.GetDatabase(this.databaseName)
@@ -290,7 +290,7 @@ DocumentCollection manualCollection = await createClient.CreateDocumentCollectio
   });
 ```
 
-### <a name="net-sdk-v3"></a><a id="create-custom-conflict-resolution-policy-dotnet-v3"></a>.NET SDK V3
+### <a name="net-sdk-v3"></a><a id="create-custom-conflict-resolution-policy-dotnet-v3"></a>ПАКЕТ SDK ДЛЯ .NET V3
 
 ```csharp
 Container container = await createClient.GetDatabase(this.databaseName)
@@ -360,7 +360,7 @@ manual_collection = client.CreateContainer(database['_self'], collection)
 FeedResponse<Conflict> conflicts = await delClient.ReadConflictFeedAsync(this.collectionUri);
 ```
 
-### <a name="net-sdk-v3"></a><a id="read-from-conflict-feed-dotnet-v3"></a>.NET SDK V3
+### <a name="net-sdk-v3"></a><a id="read-from-conflict-feed-dotnet-v3"></a>ПАКЕТ SDK ДЛЯ .NET V3
 
 ```csharp
 FeedIterator<ConflictProperties> conflictFeed = container.Conflicts.GetConflictQueryIterator();
@@ -422,7 +422,7 @@ while conflict:
     conflict = next(conflicts_iterator, None)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о следующих понятиях Azure Cosmos DB.
 
@@ -430,6 +430,6 @@ while conflict:
 - [Настройка нескольких источников в приложениях](how-to-multi-master.md)
 - [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-multiple-write-regions)
 - [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
-- [Как настроить мультимастер в приложениях.](how-to-multi-master.md)
+- [Настройка нескольких хозяев в приложениях](how-to-multi-master.md).
 - [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
 - [Индексирование в Azure Cosmos DB](indexing-policies.md)

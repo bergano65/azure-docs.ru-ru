@@ -1,6 +1,6 @@
 ---
-title: Классические команды Azure CLI
-description: Интерфейс командной строки Azure (CLI) командует для управления ресурсами.
+title: Классические команды интерфейса командной строки Azure
+description: Команды интерфейса командной строки Azure (CLI) для управления ресурсами.
 author: cynthn
 manager: gwallace
 ms.service: virtual-machines
@@ -9,21 +9,21 @@ ms.topic: article
 ms.date: 04/18/2017
 ms.author: cynthn
 ms.openlocfilehash: ad213cc02f707609a837ea66b79e51c6f2a617f8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79250885"
 ---
-# <a name="azure-classic-cli-commands"></a>Классические команды Azure CLI 
+# <a name="azure-classic-cli-commands"></a>Классические команды интерфейса командной строки Azure 
 
 [!INCLUDE [classic-vm-deprecation](../../includes/classic-vm-deprecation.md)]
 
-В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI.](https://docs.microsoft.com/cli/azure/)
+В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/).
 
-В этой статье представлены синтаксис и опции для классических командных интерфейсов Azure (CLI), которые обычно используются для создания и управления ресурсами Azure. Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. 
+Эта статья содержит синтаксис и параметры для классических команд интерфейса командной строки Azure, которые обычно используются для создания ресурсов Azure и управления ими. Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. 
 
-Для начала сначала [установите классический CLI Azure](../cli-install-nodejs.md) и [подключитесь к подписке Azure.](/cli/azure/authenticate-azure-cli)
+Чтобы приступить к работе, сначала [установите классический интерфейс командной строки Azure](../cli-install-nodejs.md) и [подключитесь к подписке Azure](/cli/azure/authenticate-azure-cli).
 
 Чтобы просмотреть текущий синтаксис и параметры команд в командной строке в режиме диспетчера ресурсов, введите `azure help`. Для получения справки по определенной команде введите `azure help [command]`. Вы также найдете примеры для командной строки в документации по созданию отдельных служб Azure и управлению ими.
 
@@ -112,7 +112,7 @@ ms.locfileid: "79250885"
 
     availset delete [options] <resource-group> <name>
 
-## <a name="local-settings"></a>Локальные настройки
+## <a name="local-settings"></a>Локальные параметры
 **Выводит параметры конфигурации Azure CLI**
 
     config list [options]
@@ -301,7 +301,7 @@ ms.locfileid: "79250885"
 
     hdinsight cluster disable-rdp-access [options] <clusterName>
 
-## <a name="insights-events-alert-rules-autoscale-settings-metrics"></a>Исследования (события, правила оповещения, настройки автомасштаба, метрики)
+## <a name="insights-events-alert-rules-autoscale-settings-metrics"></a>Аналитика (события, правила генерации оповещений, параметры автомасштабирования, метрики)
 **Получение журналов операций для подписки, идентификатор correlationId, группы ресурсов, ресурса или поставщика ресурсов**
 
     insights logs list [options]
@@ -1330,7 +1330,7 @@ ms.locfileid: "79250885"
 <br>
 
     network public-ip list [options] <resource-group>
-Перечисляет все общедоступные ресурсы ИС в группе ресурсов.
+Список всех общедоступных IP-ресурсов в группе ресурсов.
 
     azure network public-ip list -g myresourcegroup
 
@@ -1503,7 +1503,7 @@ ms.locfileid: "79250885"
 
     network gateway list [options] <resource-group>
 
-## <a name="resource-provider-registrations"></a>Регистрация поставщика ресурсов
+## <a name="resource-provider-registrations"></a>Регистрация поставщиков ресурсов
 **Список зарегистрированных поставщиков в Resource Manager**
 
     provider list [options]

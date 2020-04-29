@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: c3b6123c63bf530463379a175745ef86baf2c5a3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79249507"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
@@ -46,28 +46,28 @@ ms.locfileid: "79249507"
   
 ```  
   
-Поддерживаются следующие варианты локализации:
+Поддерживаются следующие варианты локализации.
 
 | Локаль    | Язык               |
 |-----------|------------------------|
-| en      | "Английский"              |
-| "cs"      | "Шештина"              |
-| "de"      | "Дойч"              |
-| "es"      | "Эспаньол"              |
-| "fr"      | "Франсуа"             |
-| "ху"      | "Магьяр"               |
-| "это"      | "Итальяно"             |
-| "ja-JP"   | "Я"                |
-| ko      | "Я"                |
-| "nl"      | "Недерленды"           |
-| "pl"      | "Польский"               |
-| "pt-br"   | "Португус (Бразилия)"   |
-| "pt-pt"   | "Португус (Португалия)" |
-| "ru"      | "Зенит"              |
-| "sv"      | "Свенска"              |
-| "tr"      | "Тюркче"               |
-| "zh-hans" | "Я (я)           |
-| "zh-hant" | "Я (я)           |
+| en      | English              |
+| сложных      | Čeština              |
+| ru      | Deutsch              |
+| требуем      | Espaсol              |
+| французский      | Franзais             |
+| HU      | Magyar               |
+| им      | Italiano             |
+| ja-JP   | 日本語                |
+| ko      | 한국어                |
+| NL      | Nederlands           |
+| Папка      | Polski               |
+| "pt-br"   | "Portuguкs (Brasil)"   |
+| "PT-PT"   | "Portuguкs (Португалия)" |
+| ru      | Русский              |
+| календар      | Svenska              |
+| ТС      | Tьrkзe               |
+| "zh-Ханс" | "中文 (简体)"           |
+| "zh-Hant" | "中文 (繁體)"           |
 
  Строковые ресурсы, доступные для использования в шаблонах портала разработчика, см. в таблицах ниже. Используйте имя таблицы в качестве префикса для строковых ресурсов в этой таблице.  
   
@@ -111,46 +111,46 @@ ms.locfileid: "79249507"
   
 -   [UserProfile](#UserProfile)  
   
-###  <a name="apisstrings"></a><a name="ApisStrings"></a>ApisStrings  
+###  <a name="apisstrings"></a><a name="ApisStrings"></a>аписстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |PageTitleApis|Программные интерфейсы|  
   
-###  <a name="appdetailsstrings"></a><a name="AppDetailsStrings"></a>AppDetailsStringsСт  
+###  <a name="appdetailsstrings"></a><a name="AppDetailsStrings"></a>аппдетаилсстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |WebApplicationsDetailsTitle|Предварительная версия приложения|  
-|WebApplicationsRequirementsHeader|Требования|  
+|WebApplicationsRequirementsHeader|Requirements (Требования)|  
 |WebApplicationsScreenshotAlt|Снимок экрана|  
 |WebApplicationsScreenshotsHeader|Снимки экрана|  
   
-###  <a name="applicationliststrings"></a><a name="ApplicationListStrings"></a>ApplicationListStrings  
+###  <a name="applicationliststrings"></a><a name="ApplicationListStrings"></a>аппликатионлистстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |WebDevelopersAppDeleteConfirmation|Вы действительно хотите удалить приложение?|  
 |WebDevelopersAppNotPublished|Не опубликовано|  
 |WebDevelopersAppNotSubmitted|Не отправлено|  
 |WebDevelopersAppTableCategoryHeader|Категория|  
-|WebDevelopersAppTableNameHeader|name|  
-|WebDevelopersAppTableStateHeader|Штат|  
-|WebDevelopersEditLink|Изменить|  
+|WebDevelopersAppTableNameHeader|Имя|  
+|WebDevelopersAppTableStateHeader|Состояние|  
+|WebDevelopersEditLink|Правка|  
 |WebDevelopersRegisterAppLink|Регистрация приложения|  
 |WebDevelopersRemoveLink|Удалить|  
 |WebDevelopersSubmitLink|Submit|  
 |WebDevelopersYourApplicationsHeader|Ваши приложения|  
   
-###  <a name="appstrings"></a><a name="AppStrings"></a>AppStrings  
+###  <a name="appstrings"></a><a name="AppStrings"></a>аппстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |WebApplicationsHeader|Приложения|  
   
-###  <a name="commonresources"></a><a name="CommonResources"></a>Общиересурсы  
+###  <a name="commonresources"></a><a name="CommonResources"></a>коммонресаурцес  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |NoItemsToDisplay|Результаты отсутствуют.|  
 |GeneralExceptionMessage|Возникла проблема. Возможно, это временный сбой или ошибка. Повторите попытку позже.|  
@@ -159,9 +159,9 @@ ms.locfileid: "79249507"
 |AzureActiveDirectory|Azure Active Directory|  
 |HttpLargeRequestMessage|Текст HTTP-запроса слишком длинный.|  
   
-###  <a name="commonstrings"></a><a name="CommonStrings"></a>CommonStrings  
+###  <a name="commonstrings"></a><a name="CommonStrings"></a>коммонстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |ButtonLabelCancel|Отмена|  
 |ButtonLabelSave|Сохранять|  
@@ -169,7 +169,7 @@ ms.locfileid: "79249507"
 |NoItemsToDisplay|Нет элементов для отображения|  
 |PagerButtonLabelFirst|Первый|  
 |PagerButtonLabelLast|Последний|  
-|PagerButtonLabelNext|Далее|  
+|PagerButtonLabelNext|Дальше|  
 |PagerButtonLabelPrevious|Предыдущий|  
 |PagerLabelPageNOfM|Страница {0} из {1}|  
 |PasswordTooShort|Пароль слишком короткий|  
@@ -183,9 +183,9 @@ ms.locfileid: "79249507"
 |TablePlaceholderNothingToDisplay|Нет данных для выбранного периода и области|  
 |ButtonLabelClose|Закрыть|  
   
-###  <a name="documentation"></a><a name="Documentation"></a>Документации  
+###  <a name="documentation"></a><a name="Documentation"></a>По  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |WebDocumentationInvalidHeaderErrorMessage|Недопустимый заголовок {0}|  
 |WebDocumentationInvalidRequestErrorMessage|Недопустимый URL-адрес запроса|  
@@ -326,14 +326,14 @@ ms.locfileid: "79249507"
 |SectionHeadingRequestParameters|Параметры запроса|  
 |SectionHeadingRequestUrl|Request URL (URL-адрес запроса)|  
 |SectionHeadingResponse|Ответ|  
-|SectionHeadingRequestHeaders|Заголовки запросов|  
-|FormLabelSubtextOptional|необязательный|  
+|SectionHeadingRequestHeaders|Заголовки запроса|  
+|FormLabelSubtextOptional|необязательно|  
 |SectionHeadingCodeSamples|Примеры кода|  
-|TextblockOpenidConnectHeaderDescription|Токен OpenID Connect ID,\> {0} полученный\>от <i</i . Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
+|TextblockOpenidConnectHeaderDescription|Маркер OpenID Connect Connect ID получен от <i\> {0}</i\>. Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
   
-###  <a name="errorpagestrings"></a><a name="ErrorPageStrings"></a>ErrorPageStrings  
+###  <a name="errorpagestrings"></a><a name="ErrorPageStrings"></a>еррорпажестрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |LinkLabelBack|Назад|  
 |LinkLabelHomePage|домашняя страница|  
@@ -349,9 +349,9 @@ ms.locfileid: "79249507"
 |TitlePotentialCause|Возможная причина|  
 |TitlePotentialSolution|Возможно, это временная проблема. Ниже приведено несколько способов ее исправить.|  
   
-###  <a name="issuesstrings"></a><a name="IssuesStrings"></a>ВопросыСт  
+###  <a name="issuesstrings"></a><a name="IssuesStrings"></a>иссуесстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |WebIssuesIndexTitle|Проблемы|  
 |WebIssuesNoActiveSubscriptions|У вас нет активных подписок. Чтобы сообщить о проблеме, необходимо подписаться на продукт.|  
@@ -360,9 +360,9 @@ ms.locfileid: "79249507"
 |WebIssuesSignIn|войти|  
 |WebIssuesStatusReportedBy|Состояние: {0} &#124; сообщение от {1}.|  
   
-###  <a name="notfoundstrings"></a><a name="NotFoundStrings"></a>NotFoundStrings  
+###  <a name="notfoundstrings"></a><a name="NotFoundStrings"></a>нотфаундстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |LinkLabelHomePage|домашняя страница|  
 |LinkLabelSendUsEmail|Отправьте нам сообщение электронной почты.|  
@@ -375,9 +375,9 @@ ms.locfileid: "79249507"
 |TitlePotentialCause|Возможная причина|  
 |TitlePotentialSolution|Возможное решение|  
   
-###  <a name="productdetailsstrings"></a><a name="ProductDetailsStrings"></a>ProductDetailsStringsStrings  
+###  <a name="productdetailsstrings"></a><a name="ProductDetailsStrings"></a>продуктдетаилсстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |WebProductsAgreement|Подписавшись на продукт `<a data-toggle='modal' href='#legal-terms'\>Terms of Use</a\>`, я принимаю {0}.|  
 |WebProductsLegalTermsLink|Условия использования|  
@@ -397,23 +397,23 @@ ms.locfileid: "79249507"
 |TextblockSubscriptionDescription|Новая подписка будет создана следующим образом.|  
 |TextblockSubscriptionLimitReached|Достигнуто максимальное ограничение количества подписок.|  
   
-###  <a name="productsstrings"></a><a name="ProductsStrings"></a>ProductsStrings  
+###  <a name="productsstrings"></a><a name="ProductsStrings"></a>продуктсстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |PageTitleProducts|Продукты|  
   
-###  <a name="providerinfostrings"></a><a name="ProviderInfoStrings"></a>ПровайдерИнфоСтринги  
+###  <a name="providerinfostrings"></a><a name="ProviderInfoStrings"></a>провидеринфострингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |TextboxExternalIdentitiesDisabled|В данный момент вход отключен администратором.|  
 |TextboxExternalIdentitiesSigninInvitation|Вход можно выполнить с помощью|  
 |TextboxExternalIdentitiesSigninInvitationPrimary|Вход с помощью:|  
   
-###  <a name="signinresources"></a><a name="SigninResources"></a>СигинРесурсы  
+###  <a name="signinresources"></a><a name="SigninResources"></a>сигнинресаурцес  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |PrincipalNotFound|Субъект не найден или недопустимая подпись.|  
 |ErrorSsoAuthenticationFailed|Сбой проверки подлинности SSO.|  
@@ -432,9 +432,9 @@ ms.locfileid: "79249507"
 |WebAuthenticationEmailHasBeenRevertedNotice|Ваш адрес электронной почты уже существует. Запрос отменен.|  
 |ValidationErrorEmailAlreadyExists|Адрес электронной почты уже существует.|  
 |ValidationErrorEmailInvalid|Недопустимый адрес электронной почты.|  
-|TextboxLabelEmail|Email|  
+|TextboxLabelEmail|Электронная почта|  
 |ValidationErrorEmailRequired|Требуется указать адрес электронной почты.|  
-|WebAuthenticationErrorNoticeHeader|Error|  
+|WebAuthenticationErrorNoticeHeader|Ошибка|  
 |WebAuthenticationFieldLengthErrorMessage|Максимальная длина {0} — {1}.|  
 |TextboxLabelEmailFirstName|Имя|  
 |ValidationErrorFirstNameRequired|Имя — обязательное поле.|  
@@ -483,7 +483,7 @@ ms.locfileid: "79249507"
 |WebAuthenticationUserIsNotConfirm|Прежде чем войти, подтвердите регистрацию.|  
 |WebAuthenticationInvalidEmailFormated|Адрес электронной почты {0} недопустимый.|  
 |WebAuthenticationUserNotFound|Не удалось найти пользователя.|  
-|WebAuthenticationTenantNotRegistered|Ваша учетная запись принадлежит арендатору Active Directory Azure, который не имеет права на доступ к этому порталу.|  
+|WebAuthenticationTenantNotRegistered|Ваша учетная запись принадлежит клиенту Azure Active Directory, который не имеет прав доступа к этому порталу.|  
 |WebAuthenticationAuthenticationFailed|Сбой проверки подлинности.|  
 |WebAuthenticationGooglePlusNotEnabled|Сбой проверки подлинности. Если приложение авторизовано, обратитесь к администратору, чтобы убедиться, что проверка подлинности Google настроена надлежащим образом.|  
 |ValidationErrorAllowedTenantIsRequired|Требуется разрешенный клиент.|  
@@ -507,9 +507,9 @@ ms.locfileid: "79249507"
 |DialogHeadingTermsOfUse|Условия использования|  
 |ValidationMessageConsentNotAccepted|Прежде чем продолжить, необходимо принять условия использования.|  
   
-###  <a name="signinstrings"></a><a name="SigninStrings"></a>SigninStrings  
+###  <a name="signinstrings"></a><a name="SigninStrings"></a>сигнинстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |WebAuthenticationForgotPassword|Забыли пароль?|  
 |WebAuthenticationIfAdministrator|Если вы являетесь администратором, войдите `<a href="{0}"\>here</a\>`.|  
@@ -519,9 +519,9 @@ ms.locfileid: "79249507"
 |WebAuthenticationSigninTitle|Вход|  
 |WebAuthenticationSignUpNow|Зарегистрируйтесь сейчас|  
   
-###  <a name="signupstrings"></a><a name="SignupStrings"></a>SignupStrings  
+###  <a name="signupstrings"></a><a name="SignupStrings"></a>сигнупстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |PageTitleSignup|Регистрация|  
 |WebAuthenticationAlreadyAMember|Уже являетесь участником?|  
@@ -529,9 +529,9 @@ ms.locfileid: "79249507"
 |WebAuthenticationSigninNow|Войдите сейчас.|  
 |ButtonLabelSignup|Регистрация|  
   
-###  <a name="subscriptionliststrings"></a><a name="SubscriptionListStrings"></a>SubscriptionListStrings  
+###  <a name="subscriptionliststrings"></a><a name="SubscriptionListStrings"></a>субскриптионлистстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |SubscriptionCancelConfirmation|Вы действительно хотите отменить эту подписку?|  
 |SubscriptionRenewConfirmation|Вы действительно хотите обновить эту подписку?|  
@@ -543,8 +543,8 @@ ms.locfileid: "79249507"
 |ButtonLabelRenewSubscription|Возобновление|  
 |WebDevelopersSubscriptionRequested|Дата запроса: {0}.|  
 |WebDevelopersSubscriptionRequestedState|Запрошено|  
-|WebDevelopersSubscriptionTableNameHeader|name|  
-|WebDevelopersSubscriptionTableStateHeader|Штат|  
+|WebDevelopersSubscriptionTableNameHeader|Имя|  
+|WebDevelopersSubscriptionTableStateHeader|Состояние|  
 |WebDevelopersUsageStatisticsLink|Аналитические отчеты|  
 |WebDevelopersYourSubscriptions|Ваши подписки|  
 |SubscriptionPropertyLabelRequestedDate|Дата запроса|  
@@ -552,9 +552,9 @@ ms.locfileid: "79249507"
 |PageTitleRenameSubscription|Переименовать подписку|  
 |SubscriptionPropertyLabelName|имя подписки;|  
   
-###  <a name="subscriptionstrings"></a><a name="SubscriptionStrings"></a>ПодпискаСтл  
+###  <a name="subscriptionstrings"></a><a name="SubscriptionStrings"></a>субскриптионстрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |SectionHeadingCloseAccount|Хотите закрыть учетную запись?|  
 |PageTitleDeveloperProfile|Профиль|  
@@ -563,21 +563,21 @@ ms.locfileid: "79249507"
 |InformationMessageKeyWasRegenerated|Вы действительно хотите повторно создать этот ключ?|  
 |ButtonLabelShowKey|Показать|  
   
-###  <a name="updateprofilestrings"></a><a name="UpdateProfileStrings"></a>UpdateProfileStrings  
+###  <a name="updateprofilestrings"></a><a name="UpdateProfileStrings"></a>упдатепрофилестрингс  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |ButtonLabelUpdateProfile|Обновить профиль|  
 |PageTitleUpdateProfile|Обновить сведения об учетной записи|  
   
-###  <a name="userprofile"></a><a name="UserProfile"></a>Userprofile  
+###  <a name="userprofile"></a><a name="UserProfile"></a>Филе  
   
-|name|Text|  
+|Имя|Text|  
 |----------|----------|  
 |ButtonLabelChangeAccountInfo|Изменение сведений об учетной записи|  
 |ButtonLabelChangePassword|Изменить пароль|  
 |ButtonLabelCloseAccount|Закрыть учетную запись|  
-|TextboxLabelEmail|Email|  
+|TextboxLabelEmail|Электронная почта|  
 |TextboxLabelEmailFirstName|Имя|  
 |TextboxLabelEmailLastName|Фамилия|  
 |TextboxLabelNotificationsSenderEmail|Электронная почта отправителя уведомлений|  
@@ -594,7 +594,7 @@ ms.locfileid: "79249507"
 |ValidationMessageSubscriptionNameRequired|Имя подписки не может быть пустым.|  
 |ApiManagementUserLimitReached|В этой службе достигнуто максимальное число разрешенных пользователей. Выполните обновление до более высокой ценовой категории.|  
   
-##  <a name="glyph-resources"></a><a name="glyphs"></a>Глиф ресурсы  
+##  <a name="glyph-resources"></a><a name="glyphs"></a>Ресурсы глифов  
  В шаблонах портала разработчика управления API можно использовать глифы со страницы с [Glyphicons на сайте Bootstrap](https://getbootstrap.com/components/#glyphicons). Этот набор глифов содержит более 250 глифов в формате шрифта из набора Halflings [Glyphicon](https://glyphicons.com/). Чтобы использовать глиф из этого набора, используйте следующий синтаксис.  
   
 ```html  
@@ -603,5 +603,5 @@ ms.locfileid: "79249507"
   
  Полный список глифов см. на странице с [Glyphicons на сайте Bootstrap](https://getbootstrap.com/components/#glyphicons).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

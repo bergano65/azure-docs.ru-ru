@@ -1,6 +1,6 @@
 ---
 title: Архитектура сети v1
-description: Архитектурный обзор сетевой топологии сред службы приложений. Этот документ предоставляется только для клиентов, которые используют наследие v1 ASE.
+description: Обзор архитектуры топологии сети в средах службы приложений. Этот документ предоставляется только для клиентов, использующих устаревшую версию V1 ASE.
 author: stefsch
 ms.assetid: 13d03a37-1fe2-4e3e-9d57-46dfb330ba52
 ms.topic: article
@@ -8,10 +8,10 @@ ms.date: 10/04/2016
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: b1b866f3be789c59eea38c5c22b5557d557440be
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79243852"
 ---
 # <a name="network-architecture-overview-of-app-service-environments"></a>Общие сведения об архитектуре сетевых сред службы приложений

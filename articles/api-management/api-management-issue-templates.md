@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 1dac90053797caf66af79e458b9dbb95b682cd17
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79249585"
 ---
 # <a name="issue-templates-in-azure-api-management"></a>Шаблоны проблем в службе управления API Azure
@@ -34,10 +34,10 @@ ms.locfileid: "79249585"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="issue-list"></a><a name="IssueList"></a>Список вопросов  
+##  <a name="issue-list"></a><a name="IssueList"></a>Список проблем  
  Шаблон **списка проблем** позволяет настроить текст страницы со списком проблем на портале разработчика.  
   
- ![Портал разработчика списка вопросов](./media/api-management-issue-templates/APIM-Issue-List-Developer-Portal.png "ApIM Список вопросов Разработчик Портал")  
+ ![Портал разработчика списка проблем](./media/api-management-issue-templates/APIM-Issue-List-Developer-Portal.png "Портал разработчика списка проблем APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -94,11 +94,11 @@ ms.locfileid: "79249585"
 ### <a name="controls"></a>Элементы управления  
  В шаблоне `Issue list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [контроль над paging](api-management-page-controls.md#paging-control)  
+-   [Управление разбиением на страницы](api-management-page-controls.md#paging-control)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
 |`Issues`|Коллекция сущностей [проблем](api-management-template-data-model-reference.md#Issue).|Проблемы, которые отображаются для текущего пользователя.|  
 |`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
@@ -137,5 +137,5 @@ ms.locfileid: "79249585"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

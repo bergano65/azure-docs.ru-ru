@@ -1,6 +1,6 @@
 ---
 title: Форматы и кодеки Media Encoder Standard — Azure
-description: В этой статье представлен обзор форматов и кодеков Media Encoder Standard.
+description: В этой статье приводятся общие сведения о форматах Media Encoder Standard и кодеках.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -15,15 +15,15 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: e2ccce13e4ef09426d0f3a02dcbce2f330b0ead8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79251028"
 ---
 # <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки Media Encoder Standard
 
-> [!div class="op_single_selector" title1="Выберите версию медиа-услуг, которые вы используете:"]
+> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, которую вы используете:"]
 > * [Версия 2](media-services-media-encoder-standard-formats.md)
 > * [Версия 3](../latest/media-encoder-standard-formats.md)
 
@@ -69,7 +69,7 @@ ms.locfileid: "79251028"
 | MPEG-2 (до 422 Profile и High Level, включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs® и D10) |До 422 Profile |
 | MPEG-1 |Да |
 | VC-1/WMV9 |Да |
-| Canopus HQ/HQX |нет |
+| Canopus HQ/HQX |Нет |
 | MPEG-4, часть 2 |Да |
 | [Theora](https://en.wikipedia.org/wiki/Theora) |Да |
 | YUV420 без сжатия или мезонинный файл |Да |
@@ -89,14 +89,14 @@ ms.locfileid: "79251028"
 | MP3 (MPEG-1 Audio Layer 3) |Да |
 | Windows Media Audio |Да |
 | WAV/PCM |Да |
-| [Flac](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
+| [FLAC](https://en.wikipedia.org/wiki/FLAC)</a> |Да |
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Да |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Да |
 | AMR (adaptive multi-rate) |Да |
-| AES (SMPTE 331M и 302M, AES3-2003) |нет |
-| Dolby® E |нет |
-| Dolby® Digital (AC3) |нет |
-| Dolby® Digital Plus (E-AC3) |нет |
+| AES (SMPTE 331M и 302M, AES3-2003) |Нет |
+| Dolby® E |Нет |
+| Dolby® Digital (AC3) |Нет |
+| Dolby® Digital Plus (E-AC3) |Нет |
 
 ## <a name="output-formats-and-codecs"></a>Выходные форматы и кодеки
 В следующей таблице перечислены кодеки и форматы файлов, поддерживаемые для экспорта.
@@ -109,7 +109,7 @@ ms.locfileid: "79251028"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

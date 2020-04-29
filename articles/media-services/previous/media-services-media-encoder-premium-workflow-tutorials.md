@@ -16,10 +16,10 @@ ms.date: 03/18/2019
 ms.author: christoc
 ms.reviewer: xpouyat; juliako
 ms.openlocfilehash: 1ab70d56bd3def58d0e814035070cf027a88cd3d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79251015"
 ---
 # <a name="advanced-media-encoder-premium-workflow-tutorials"></a>Руководства по расширенному рабочему процессу кодировщика мультимедиа
@@ -27,7 +27,7 @@ ms.locfileid: "79251015"
 Этот документ содержит пошаговые инструкции, описывающие способы настройки рабочих процессов с помощью **конструктора рабочих процессов**. Файлы фактического рабочего процесса можно найти [здесь](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows/PremiumEncoderWorkflowSamples).  
 
 ## <a name="toc"></a>ОГЛАВЛЕНИЕ
-Рассмотрены следующие вопросы:
+Рассматриваются следующие темы.
 
 * [Кодирование MXF в файл MP4 с одной скоростью](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4)
   * [Запуск нового рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_start_new)
@@ -35,38 +35,38 @@ ms.locfileid: "79251015"
   * [Проверка потоков мультимедиа](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_streams)
   * [Добавление видеокодировщика для создания файла MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_file_generation)
   * [Кодирование аудиопотока](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio)
-  * [Мультиплексирование аудио и видео потоков в контейнер MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio_and_fideo)
-  * [Написание файла MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_writing_mp4)
+  * [Мультиплексирование потоков аудио и видео в контейнер MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio_and_fideo)
+  * [Запись файла MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_writing_mp4)
   * [Создание ресурса-контейнера служб мультимедиа из выходного файла](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_asset_from_output)
-  * [Тестготового рабочего процесса локально](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_test)
+  * [Локальное тестирование завершенного рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_test)
 * [Кодирование MXF в файлы MP4 с несколькими скоростями со включенной динамической упаковкой](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging)
   * [Добавление одного или нескольких дополнительных выходных файлов MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_more_outputs)
-  * [Настройка имен вывода файлов](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_conf_output_names)
-  * [Добавление отдельного звукового трека](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_audio_tracks)
+  * [Настройка имен выходных файлов](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_conf_output_names)
+  * [Добавление отдельной звуковой дорожки](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_audio_tracks)
   * [Добавление ISM-файла SMIL](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_ism_file)
 * [Расширенная схема кодирования файла MXF в файл MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4)
   * Обзор улучшения рабочего процесса
   * [Соглашения об именовании файлов](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_file_naming)
-  * [Публикация свойств компонентов на корне рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_publishing)
+  * [Публикация свойств компонента в корне рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_publishing)
   * [Создание зависимости имен созданных выходных файлов от значений опубликованных свойств](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_output_files)
-* [Добавление эскизов к многобитному выходу MP4](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4)
+* [Добавление эскизов в формат выходных данных MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4)
   * Обзор рабочего процесса с добавлением эскизов
   * [Добавление кодировки JPG](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4__with_jpg)
   * [Работа с преобразованием цветового пространства](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_color_space)
   * [Создание эскизов](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_writing_thumbnails)
   * [Обнаружение ошибок в рабочем процессе](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_errors)
   * [Завершенный рабочий процесс](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_finish)
-* [Time-based trimming of multibitrate MP4 output](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim)
+* [Обрезка выходных данных MP4 с несколькими скоростями по времени](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim)
   * [Обзор рабочего процесса, в котором будет выполняться обрезка](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_start)
-  * [Использование триммера потока](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_use_stream_trimmer)
+  * [Использование средства обрезки потока](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_use_stream_trimmer)
   * [Завершенный рабочий процесс](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_finish)
-* [Представляем компонент сценарий](media-services-media-encoder-premium-workflow-tutorials.md#scripting)
-  * [Сценарий в рамках рабочего процесса: мир привет](media-services-media-encoder-premium-workflow-tutorials.md#scripting_hello_world)
+* [Знакомство с компонентом сценариев](media-services-media-encoder-premium-workflow-tutorials.md#scripting)
+  * [Создание сценариев в рабочем процессе: Hello World](media-services-media-encoder-premium-workflow-tutorials.md#scripting_hello_world)
 * [Обрезка выходных файлов MP4 с несколькими скоростями по кадрам](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim)
-  * [Обзор чертежа для начала добавления обрезки к](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_start)
+  * [Обзор схемы для начала добавления обрезки в](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_start)
   * [Использование XML-файла со списком клипов](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_clip_list)
   * [Изменение списка клипов из компонента сценария](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_modify_clip_list)
-  * [Добавление свойства удобства ClippingEnabled](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_clippingenabled_prop)
+  * [Добавление удобного свойства ClippingEnabled](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_clippingenabled_prop)
 
 ## <a name="encoding-mxf-into-a-single-bitrate-mp4"></a><a id="MXF_to_MP4"></a>Кодирование MXF в файл MP4 с одной скоростью
 В этом разделе показано, как из входного файла MXF создать аудиофайл MP4 с одной скоростью, используя кодирование AAC-HE.
@@ -145,7 +145,7 @@ ms.locfileid: "79251015"
 
 *Несоединенный кодировщик AAC*
 
-Получается неувязка: в кодировщике AAC есть только одна входная точка несжатого аудиопотока, тогда как во входном файле мультимедиа, скорее всего, будет два несжатых аудиопотока (по одному для левого и правого аудиоканалов). (Если вы имеете дело с объемным звуком, это шесть каналов.) Таким образом, невозможно напрямую подключить звук из источника ввода файлов Media в аудиокодер AAC. Для компонента AAC требуется так называемый "чередующийся" аудиопоток, т. е. один поток, в котором чередуются левый и правый каналы. Когда мы узнаем позицию звуковых дорожек в исходном файле мультимедиа, мы сможем создать чередующийся аудиопоток, в котором будут правильно назначены правый и левый динамики.
+Получается неувязка: в кодировщике AAC есть только одна входная точка несжатого аудиопотока, тогда как во входном файле мультимедиа, скорее всего, будет два несжатых аудиопотока (по одному для левого и правого аудиоканалов). (Если вы работаете с окружающим звуком, это шесть каналов.) Поэтому невозможно напрямую подключить звук из входного источника файла мультимедиа в кодировщик AAC Audio. Для компонента AAC требуется так называемый "чередующийся" аудиопоток, т. е. один поток, в котором чередуются левый и правый каналы. Когда мы узнаем позицию звуковых дорожек в исходном файле мультимедиа, мы сможем создать чередующийся аудиопоток, в котором будут правильно назначены правый и левый динамики.
 
 Сначала нужно создать чередующийся поток из необходимых исходных аудиоканалов. Для этого можно использовать компонент чередования аудиопотоков. Добавьте его в рабочий процесс и соедините с ним аудиопотоки из входного файла мультимедиа.
 
@@ -293,7 +293,7 @@ ms.locfileid: "79251015"
 
 *Мультиплексор звука создает выходной файл*
 
-### <a name="adding-the-ism-smil-file"></a><a id="MXF_to_MP4_with_dyn_packaging_ism_file"></a>Добавление . Файл ISM SMIL
+### <a name="adding-the-ism-smil-file"></a><a id="MXF_to_MP4_with_dyn_packaging_ism_file"></a>Добавление. ISM SMIL File
 Чтобы обеспечить работу динамической упаковки в сочетании с обоими файлами MP4 (и отдельным аудиофайлом MP4) в ресурсе-контейнере служб мультимедиа, нам также потребуется файл манифеста. Его еще называют файлом SMIL (Synchronized Multimedia Integration Language — язык интеграции синхронизированных мультимедийных данных). Этот файл указывает службам мультимедиа Azure, какие файлы MP4 доступны для динамической упаковки и какие из них необходимо использовать для потоковой передачи звука. Типичный файл манифеста для набора файлов MP4 с одним звуковым потоком выглядит так:
 
 ```xml
@@ -513,7 +513,7 @@ ms.locfileid: "79251015"
 *Рабочий процесс, в котором будет выполняться обрезка*
 
 ### <a name="using-the-stream-trimmer"></a><a id="time_based_trim_use_stream_trimmer"></a>Использование компонента обрезки потока
-Компонент Stream Trimmer позволяет обрезать начало и окончание базы вхотворного потока на информацию о времени (секунды, минуты, ...). Триммер не поддерживает обрезку на основе рамы.
+Компонент "обрезка потока" позволяет обрезать начало и конец входного потока данных на основе сведений о времени (секунды, минуты,...). Обрезка не поддерживает обрезку на основе кадров.
 
 ![Компонент обрезки потока](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-stream-trimmer.png)
 
@@ -599,9 +599,9 @@ ms.locfileid: "79251015"
 
 *Запись "hello world" в журнале*
 
-Объект узла, для которого вызывается метод журнала, ссылается на текущий узел или компонент, в котором создается сценарий. Каждый компонент как таковой имеет возможность вывода данных журнала, доступных через вкладку системы. В этом случае мы выходим строку буквально "привет мир". Важно понимать, что это может быть ценным средством отладки, которое предоставляет подробные сведения о том, какие действия фактически выполняет сценарий.
+Объект узла, для которого вызывается метод журнала, ссылается на текущий узел или компонент, в котором создается сценарий. Каждый компонент имеет возможность вывода данных журнала, доступных на вкладке «система». В этом случае мы выводим строковый литерал "Hello World". Важно понимать, что это может быть ценным средством отладки, которое предоставляет подробные сведения о том, какие действия фактически выполняет сценарий.
 
-Среда написания сценариев может получить также свойства других компонентов. Попробуйте выполните следующее.
+Среда написания сценариев может получить также свойства других компонентов. Попробуйте выполнить следующий код:
 
 ```java
     //inspect current node:
@@ -761,7 +761,7 @@ ms.locfileid: "79251015"
 
 *Записи в журнале о полученном списке клипов*
 
-Выполните тестовый запуск, чтобы проверить, как обрезаются потоки аудио и видео. Выполняя несколько тестовых запусков с различными значениями для точек обрезки, вы заметите, что они не учитываются. Причина заключается в том, что конструктор, в отличие от среды выполнения Azure, НЕ перезаписывает XML-файл при каждом выполнении. Это означает, что только в первый раз, когда вы установили точки ввода и выходе, приведет`clipListXML.indexOf("<trim>") == -1`к xml для преобразования, все другие времена, наш охранник положение (если)) будет препятствовать рабочий процесс от добавления другого элемента отделки, когда уже есть один подарок.
+Выполните тестовый запуск, чтобы проверить, как обрезаются потоки аудио и видео. Выполняя несколько тестовых запусков с различными значениями для точек обрезки, вы заметите, что они не учитываются. Причина заключается в том, что конструктор, в отличие от среды выполнения Azure, НЕ перезаписывает XML-файл при каждом выполнении. Это означает, что только в первый раз, когда вы задали точки in и out, это приведет к преобразованию XML-кода, а все остальные моменты, наше предложение`clipListXML.indexOf("<trim>") == -1`Guard (if ()) не позволит рабочему процессу добавить другой элемент обрезки, если он уже существует.
 
 Чтобы нам было удобно тестировать рабочий процесс локально, мы добавим служебный код, проверяющий наличие элемента обрезки. Если элемент обрезки уже есть, прежде чем продолжить, мы можем удалить его, внеся в XML-файл новые значения. Чтобы не использовать простые операции со строками, безопаснее будет сделать это с помощью анализа модели реального объекта XML.
 
@@ -946,7 +946,7 @@ ms.locfileid: "79251015"
 
 [Обзор и сравнение кодировщиков мультимедиа Azure по запросу](media-services-encode-asset.md#media-encoder-premium-workflow)
 
-[Форматы и кодеки медиа-кодера Premium](media-services-premium-workflow-encoder-formats.md)
+[Форматы и кодеки Media Encoder Premium Workflow](media-services-premium-workflow-encoder-formats.md)
 
 [Примеры файлов рабочего процесса](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows)
 
@@ -955,5 +955,5 @@ ms.locfileid: "79251015"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
