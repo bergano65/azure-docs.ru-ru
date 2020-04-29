@@ -1,6 +1,6 @@
 ---
 title: Общие сведения об интеграции служебной шины Azure со службой "Сетка событий" | Документация Майкрософт
-description: В этой статье приводится описание того, как обмен сообщениями Azure Service Bus интегрируется с Azure Event Grid.
+description: В этой статье содержится описание интеграции обмена сообщениями служебной шины Azure со службой "Сетка событий Azure".
 services: service-bus-messaging
 documentationcenter: .net
 author: axisc
@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 01/27/2020
 ms.author: aschhab
 ms.openlocfilehash: 1e514e2856afae4ff6f877bb193935da1bc5d623
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76773479"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
@@ -38,7 +38,7 @@ ms.locfileid: "76773479"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ### <a name="verify-that-you-have-contributor-access"></a>Проверка наличия доступа с правами участника
-Перейдите в пространство имен Service Bus, а затем выберите **элемент управления доступом (IAM)** и выберите **вкладку "Назначения ролей".** 
+Перейдите к пространству имен служебной шины, выберите **Управление доступом (IAM)** и перейдите на вкладку **назначения ролей** . Убедитесь, что у вас есть доступ к пространству имен. 
 
 ### <a name="events-and-event-schemas"></a>События и схемы событий
 
@@ -111,7 +111,7 @@ ms.locfileid: "76773479"
 
 ### <a name="use-filters-to-limit-where-you-get-events-from"></a>Использование фильтров для ограничения источников получения событий
 
-Если нужно получать события, например только из одной очереди или одной подписки в пространстве имен, используйте в службе "Сетка событий" фильтры *Начинается с* или *Оканчивается на*. В некоторых интерфейсах фильтры называются фильтрами *Pre* и *Suffix.* Если требуется получить события для нескольких, но не всех очередей и подписок, создайте несколько подписок на службу "Сетка событий" и укажите для каждой из них фильтр.
+Если нужно получать события, например только из одной очереди или одной подписки в пространстве имен, используйте в службе "Сетка событий" фильтры *Начинается с* или *Оканчивается на*. В некоторых интерфейсах фильтры называются *префиксами* и фильтрами *суффиксов* . Если требуется получить события для нескольких, но не всех очередей и подписок, создайте несколько подписок на службу "Сетка событий" и укажите для каждой из них фильтр.
 
 ## <a name="create-event-grid-subscriptions-for-service-bus-namespaces"></a>Создание подписок на службу "Сетка событий" для пространств имен служебной шины
 
@@ -126,7 +126,7 @@ ms.locfileid: "76773479"
 Чтобы создать подписку на службу "Сетка событий", выполните следующие действия:
 1. На портале Azure перейдите к своему пространству имен.
 2. В области слева щелкните **Сетка событий**. 
-3. Выберите **подписку на события**.  
+3. Выберите **Подписка на события**.  
 
    На следующем изображении показано пространство имен, которое содержит подписку на службу "Сетка событий":
 
@@ -138,7 +138,7 @@ ms.locfileid: "76773479"
 
 ## <a name="azure-cli-instructions"></a>Инструкции по работе в Azure CLI
 
-Для начала установите Azure CLI 2.0 или более поздней версии. [Скачайте установщик](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Выберите **Windows и X**, а затем откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
+Для начала установите Azure CLI 2.0 или более поздней версии. [Скачайте установщик](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Выберите **Windows + X**, а затем откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
 
 Выполните следующий код.
 
@@ -174,7 +174,7 @@ New-AzEVentGridSubscription -EventSubscriptionName "<YOUR EVENT GRID SUBSCRIPTIO
 
 Здесь вы можете просмотреть остальные параметры установки или выполнить тестирование поступления событий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Примеры](service-bus-to-event-grid-integration-example.md) использования служебной шины со службой "Сетка событий".
 * Дополнительные сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/).
@@ -183,8 +183,8 @@ New-AzEVentGridSubscription -EventSubscriptionName "<YOUR EVENT GRID SUBSCRIPTIO
 * Дополнительные сведения о [служебной шине](https://docs.microsoft.com/azure/service-bus/).
 
 [1]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgrid1.png
-[19]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgriddiagram.png
+[стр]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgriddiagram.png
 [8]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgrid8.png
 [9]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgrid9.png
 [20]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgridportal.png
-[21]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgridportal2.png
+[открыт]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgridportal2.png

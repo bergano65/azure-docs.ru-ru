@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: iot-hub
 author: robinsh
@@ -9,12 +9,12 @@ ms.date: 07/30/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 1cdf8495ed0e8ffab32b5fa66b03dc196c98ac54
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73591292"
 ---
 > [!NOTE]
-> IoT Концентратор имеет поддержку SDK для многих платформ и языков устройств (включая C, Java, Javascript и Python) через [SDK-устройства Azure IoT.](https://github.com/azure/azure-iot-sdks) Для получения инструкций о том, как использовать Python для подключения устройства к коду этого [Azure IoT Python SDK](https://github.com/Azure/azure-iot-sdk-python)учебника, и, как правило, к концентратору Azure IoT, см.
+> В центре Интернета вещей предусмотрена поддержка пакетов SDK для многих платформ и языков устройств (включая C, Java, JavaScript и Python) с помощью [пакетов SDK для устройств Azure IOT](https://github.com/azure/azure-iot-sdks). Инструкции по использованию Python для подключения устройства к коду этого руководства и, как правило, к центру Интернета вещей Azure см. в [пакете SDK для Python для Azure IOT](https://github.com/Azure/azure-iot-sdk-python).
 >

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 980cbe17e982edb3aa72c3b58908f13a3d63a639
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76021182"
 ---
 #### <a name="to-create-a-new-service"></a>Создание новой службы
@@ -19,7 +19,7 @@ ms.locfileid: "76021182"
 
     ![Создание диспетчера устройств StorSimple](./media/storsimple-8000-create-new-service/createssdevman1.png)
 
-    Найдите _физическое устройство StorSimple_. Выберите **Серия физического устройства StorSimple** и щелкните **Создать**. Кроме того, на портале **+** Azure нажмите кнопку, а затем под **хранением,** нажмите **StorSimple Физические устройства серии**.
+    Найдите _физическое устройство StorSimple_. Выберите **Серия физического устройства StorSimple** и щелкните **Создать**. Кроме того, в портал Azure щелкните **+** , а затем в разделе **хранилище**выберите **серия физических устройств StorSimple**.
 
     ![Создание диспетчера устройств StorSimple](./media/storsimple-8000-create-new-service/createssdevman11.png)
 

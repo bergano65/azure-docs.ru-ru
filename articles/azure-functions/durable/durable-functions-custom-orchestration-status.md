@@ -5,26 +5,26 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 31b7d51293878c9d0e8567b6b4bd58c48d75ec63
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76766273"
 ---
 # <a name="custom-orchestration-status-in-durable-functions-azure-functions"></a>Состояние пользовательской оркестрации в устойчивых функциях (Функции Azure)
 
-Эта возможность позволяет задать настраиваемое значение состояния для функции оркестратора. Этот статус предоставляется через [HTTP GetStatus API](durable-functions-http-api.md#get-instance-status) или [ `GetStatusAsync` API](durable-functions-instance-management.md#query-instances) на клиенте оркестровки.
+Эта возможность позволяет задать настраиваемое значение состояния для функции оркестратора. Это состояние предоставляется через [API-интерфейс HTTP](durable-functions-http-api.md#get-instance-status) или [ `GetStatusAsync` API](durable-functions-instance-management.md#query-instances) в клиенте оркестрации.
 
 ## <a name="sample-use-cases"></a>Примеры вариантов использования
 
 > [!NOTE]
-> Следующие примеры показывают, как использовать пользовательскую функцию статуса в C и JavaScript. Примеры C's написаны для функций Durable 2.x и не совместимы с durable Functions 1.x. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
+> В следующих примерах показано, как использовать пользовательскую функцию состояния в C# и JavaScript. Примеры C# написаны для Устойчивые функции 2. x и не совместимы с Устойчивые функции 1. x. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 ### <a name="visualize-progress"></a>Визуализация прогресса
 
 Клиенты могут выполнять опрос конечной точки состояния и просматривать пользовательский интерфейс, визуализирующий текущий этап выполнения. В следующем примере демонстрируется предоставление доступа к данным о ходе выполнения.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("E1_HelloSequence")]
@@ -51,9 +51,9 @@ public static string SayHello([ActivityTrigger] string name)
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-`E1_HelloSequence`функция оркестратора:
+`E1_HelloSequence`Функция Orchestrator:
 
 ```javascript
 const df = require("durable-functions");
@@ -73,7 +73,7 @@ module.exports = df.orchestrator(function*(context){
 });
 ```
 
-`E1_SayHello`функция активности:
+`E1_SayHello`Функция действия:
 
 ```javascript
 module.exports = async function(context, name) {
@@ -85,7 +85,7 @@ module.exports = async function(context, name) {
 
 Затем клиент получает выходные данные оркестрации, только если в поле `CustomStatus` задано "Лондон".
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("HttpStart")]
@@ -118,7 +118,7 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -156,7 +156,7 @@ module.exports = async function(context, req) {
 
 Другим интересным сценарием является сегментирование пользователей путем возврата настроенных выходных данных на основе уникальных характеристик или взаимодействий. С помощью пользовательских оркестраций состояния код на стороне клиента остается универсальным. Все основные изменения произойдут на стороне сервера, как показано в следующем примере.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("CityRecommender")]
@@ -194,7 +194,7 @@ public static void Run(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -233,7 +233,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Оркестратор может передать уникальные инструкции для клиентов с помощью пользовательского состояния. Инструкции по пользовательскому состоянию будут сопоставлены с действиями в коде оркестрации.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("ReserveTicket")]
@@ -261,7 +261,7 @@ public static async Task<bool> Run(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -294,7 +294,7 @@ module.exports = df.orchestrator(function*(context) {
 
 В следующем примере пользовательское состояние показано первым.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 public static async Task SetStatusTest([OrchestrationTrigger] IDurableOrchestrationContext context)
@@ -309,7 +309,7 @@ public static async Task SetStatusTest([OrchestrationTrigger] IDurableOrchestrat
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -347,9 +347,9 @@ GET /runtime/webhooks/durabletask/instances/instance123
 ```
 
 > [!WARNING]
-> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец Хранилища таблиц Azure. Мы рекомендуем использовать внешнее хранилище, если вам нужна большая полезная нагрузка.
+> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец Хранилища таблиц Azure. Если требуются большие полезные данные, рекомендуется использовать внешнее хранилище.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Узнайте больше о прочных таймерых](durable-functions-timers.md)
+> [Сведения о устойчивых таймерах](durable-functions-timers.md)

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 ms.topic: include
 ms.custom: include file
@@ -10,21 +10,21 @@ ms.author: dpalled
 manager: cshankar
 ms.date: 02/03/2020
 ms.openlocfilehash: 5be6e7937a6e1f710b8e2576a9058963413fb6c2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76984595"
 ---
 1. На [портале Azure](https://ms.portal.azure.com/) последовательно выберите **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.
 
-   [![Новая регистрация заявок в Active Directory Azure](media/time-series-insights-aad-registration/active-directory-new-application-registration.png)](media/time-series-insights-aad-registration/active-directory-new-application-registration.png#lightbox)
+   [![Регистрация нового приложения в Azure Active Directory](media/time-series-insights-aad-registration/active-directory-new-application-registration.png)](media/time-series-insights-aad-registration/active-directory-new-application-registration.png#lightbox)
 
     Приложение будет указано здесь после его регистрации.
 
 1. Присвойте приложению имя и выберите пункт **Accounts in this organizational directory only** (Учетные записи только в этом каталоге организации),чтобы указать **поддерживаемые типы учетных записей**, с помощью которых можно получить доступ к API. Выберите допустимый URI для перенаправления пользователей после аутентификации, а затем нажмите кнопку **Зарегистрировать**.
 
-   [![Создание приложения в active-каталоге Azure](media/time-series-insights-aad-registration/active-directory-registration.png)](media/time-series-insights-aad-registration/active-directory-registration.png#lightbox)
+   [![Создание приложения в Azure Active Directory](media/time-series-insights-aad-registration/active-directory-registration.png)](media/time-series-insights-aad-registration/active-directory-registration.png#lightbox)
 
 1. Важная информация о приложении Azure Active Directory отображается в колонке **Обзор** указанного приложения. Выберите приложение в разделе **Собственные приложения** и щелкните **Обзор**.
 
@@ -36,11 +36,11 @@ ms.locfileid: "76984595"
 
     1. Добавьте **URI перенаправления** и настройте **Маркеры доступа**, выбрав **+ Add a platform** (+ Добавить платформу).
 
-    1. Определите, является ли приложение **публичным клиентом** или нет, выбрав **«Да»** или **«Нет».**
+    1. Определите, является ли приложение **общедоступным клиентом** или нет, выбрав **Да** или **нет**.
 
-    1. Проверьте, какие учетные записи и арендаторы поддерживаются.
+    1. Проверьте, какие учетные записи и клиенты поддерживаются.
 
-    [![Настройка неявного гранта](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
+    [![Настройка неявного предоставления](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
 
 1. Выбрав нужную платформу, настройте **URI перенаправления** и **Маркеры доступа** на боковой панели справа от пользовательского интерфейса.
 
@@ -53,25 +53,25 @@ ms.locfileid: "76984595"
 
     1. Включите поток неявного предоставления разрешения, проверив **маркеры доступа** или **токены идентификатора**.
 
-    [![Создание перенаправить URIs](media/time-series-insights-aad-registration/active-directory-auth-redirect-uri.png)](media/time-series-insights-aad-registration/active-directory-auth-redirect-uri.png#lightbox)
+    [![Создание URI перенаправления](media/time-series-insights-aad-registration/active-directory-auth-redirect-uri.png)](media/time-series-insights-aad-registration/active-directory-auth-redirect-uri.png#lightbox)
 
     Щелкните **Настроить**, а затем **Сохранить**.
 
-1. Выберите **Сертификаты & секреты,** то **Новый секрет клиента,** чтобы создать пароль приложения, что ваш клиент приложение может использовать, чтобы доказать свою личность.
+1. Выберите **сертификаты & секреты** , а затем **новый секрет клиента** , чтобы создать пароль приложения, который ваше клиентское приложение может использовать для подтверждения его подлинности.
 
-   [![Создание нового клиента секрет](media/time-series-insights-aad-registration/active-directory-application-keys-save.png)](media/time-series-insights-aad-registration/active-directory-application-keys-save.png#lightbox)
+   [![Создать новый секрет клиента](media/time-series-insights-aad-registration/active-directory-application-keys-save.png)](media/time-series-insights-aad-registration/active-directory-application-keys-save.png#lightbox)
 
    После этого будет отображен секретный пароль клиента. Скопируйте ключ в предпочитаемый текстовый редактор.
 
    > [!NOTE]
    > Вместо этого вы можете импортировать сертификат. Для повышения безопасности мы рекомендуем использовать сертификат. Для этого щелкните **Отправить сертификат**.
 
-1. Свяжите приложение Azure Active Directory с Аналитикой временных рядов Azure. Выберите **разрешения** > API Добавление APIs**разрешений,** > **которые использует моя организация.** 
+1. Свяжите приложение Azure Active Directory с Аналитикой временных рядов Azure. Выберите **разрешения** > **Добавить API разрешений** > , которые**использует Моя организация**. 
 
-    [![Связать API с приложением Active Directory Azure](media/time-series-insights-aad-registration/active-directory-app-api-permission.png)](media/time-series-insights-aad-registration/active-directory-app-api-permission.png#lightbox)
+    [![Связывание API с приложением Azure Active Directory](media/time-series-insights-aad-registration/active-directory-app-api-permission.png)](media/time-series-insights-aad-registration/active-directory-app-api-permission.png#lightbox)
 
    Введите `Azure Time Series Insights` в строке поиска, а затем выберите `Azure Time Series Insights`.
 
 1. Затем укажите тип разрешения API, необходимый для приложения. По умолчанию будет выделен тип **Делегированные разрешения**. Выберите тип разрешения и щелкните **Добавить разрешения**.
 
-    [![Указать тип разрешения API, необходимого приложению](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png)](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png#lightbox)
+    [![Укажите тип разрешения API, требуемого для приложения](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png)](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png#lightbox)

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 1cf5bbdad555c50c418851904f36a578522843b2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185349"
 ---
 #### <a name="to-create-public-endpoints-on-the-cloud-appliance"></a>Создание общедоступных конечных точек на облачном устройстве
@@ -31,7 +31,7 @@ ms.locfileid: "67185349"
 
         В колонке "Добавление правила безопасности для входящего трафика" сделайте следующее:
 
-        1. Для **имени,** введите следующее имя для конечной точки: WinRMHttps.
+        1. В поле **имя**введите следующее имя конечной точки: WinRMHttps.
         
         2. В поле **Приоритет** выберите число меньше 1000 (которое является приоритетом для правила по умолчанию). Чем выше значение, тем ниже приоритет.
 
@@ -39,7 +39,7 @@ ms.locfileid: "67185349"
 
         4. В поле **Служба** выберите **WinRM**. Для параметра **Протокол** автоматически задается значение **TCP**, а для параметра **Диапазон портов** — значение **5986**.
 
-        5. Нажмите **OK,** чтобы создать правило.
+        5. Нажмите кнопку **ОК** , чтобы создать правило.
 
             ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt5.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "67185349"
         ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt7.png)
 
     3. Выберите виртуальную сеть, а затем — соответствующую подсеть.
-    4. Нажмите **OK,** чтобы создать правило.
+    4. Нажмите кнопку **ОК** , чтобы создать правило.
 
         ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt11.png)
 

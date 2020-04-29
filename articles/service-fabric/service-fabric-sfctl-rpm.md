@@ -1,15 +1,15 @@
 ---
-title: Azure Сервис Ткань CLI- sfctl об / мин
-description: Узнайте о sfctl, интерфейсе командной строки Azure Service Fabric. Включает список команд для службы менеджера по ремонту.
+title: Azure Service Fabric CLI — sfctl RPM
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для службы Repair Manager.
 author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 1787c0c8a8d5994ce1f1e9e4c55f155bbca6934c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76904943"
 ---
 # <a name="sfctl-rpm"></a>sfctl rpm
@@ -20,7 +20,7 @@ ms.locfileid: "76904943"
 |Команда|Описание|
 | --- | --- |
 | approve-force | Вызывает принудительное утверждение заданной задачи исправления. |
-| удалить | Удаляет завершенную задачу исправления. |
+| "Удалить" | Удаляет завершенную задачу исправления. |
 | list | Возвращает список задач исправления, соответствующих заданным фильтрам. |
 
 ## <a name="sfctl-rpm-approve-force"></a>sfctl rpm approve-force
@@ -77,7 +77,7 @@ ms.locfileid: "76904943"
 |Аргумент|Описание|
 | --- | --- |
 | --executor-filter | Имя исполнителя исправления, запрошенные задачи которого должны быть включены в список. |
-| --state-filter | Битовая операция "ИЛИ" с приведенными ниже значениями, результат которой указывает, какие задачи должны быть включены в список результатов. <ul><li>1 — Created</li><li>2 - Заявлено</li><li>4 - Подготовка</li><li>8 - Утверждено</li><li>16 - Выполнение</li><li>32 - Восстановление</li><li>64 — Completed</li></ul>
+| --state-filter | Битовая операция "ИЛИ" с приведенными ниже значениями, результат которой указывает, какие задачи должны быть включены в список результатов. <ul><li>1 — Created</li><li>2 — затребовано</li><li>4. Подготовка</li><li>8 — утверждено</li><li>16. исполнение</li><li>32 — восстановление</li><li>64 — Completed</li></ul>
 | --task-id-filter | Префикс идентификатора задачи исправления для сравнения. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
@@ -91,6 +91,6 @@ ms.locfileid: "76904943"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
