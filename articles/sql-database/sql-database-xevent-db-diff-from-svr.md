@@ -12,10 +12,10 @@ ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
 ms.openlocfilehash: cb4eb4474ad074a3e69dc146c97b48d54343595b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79213949"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
@@ -31,14 +31,14 @@ ms.locfileid: "79213949"
 
 Дополнительные сведения о расширенных событиях для Базы данных SQL Azure и Microsoft SQL Server доступны в следующих разделах.
 
-- [Быстрый запуск: Расширенные события в сервере S'L](https://msdn.microsoft.com/library/mt733217.aspx)
+- [Быстрое начало: Расширенные события в SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В данной статье предполагается, чтобы вы уже ознакомились со следующими компонентами:
 
-- [Служба баз данных Azure S'L](https://azure.microsoft.com/services/sql-database/).
+- [Служба базы данных SQL Azure](https://azure.microsoft.com/services/sql-database/).
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx) в Microsoft SQL Server.
 
 - Большинство документации о расширенных событиях относится и к SQL Server, и к Базе данных SQL.
@@ -100,12 +100,12 @@ ms.locfileid: "79213949"
 | **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях сеанса событий. |
 | **sys.dm_xe_database_session_events** |Возвращает сведения о событиях сеанса. |
 | **sys.dm_xe_database_session_object_columns** |Отображает значения конфигурации объектов, привязанных к сеансу. |
-| **sys.dm_xe_database_session_targets** |Возвращает сведения о целевых объектах сеанса. |
+| **sys. dm_xe_database_session_targets** |Возвращает сведения о целевых объектах сеанса. |
 | **sys.dm_xe_database_sessions** |Возвращает строку для каждого сеанса событий, относящегося к текущей базе данных. |
 
-В сервере Microsoft S'L Server аналогичные представления каталога называются без части имени * \_базы данных,* например:
+В Microsoft SQL Server аналогичные представления каталога именуются без части имени * \_базы данных* , например:
 
-- **sys.dm_xe_sessions** вместо имени<br/>**sys.dm_xe_database_sessions**.
+- **sys.dm_xe_sessions** вместо имени<br/>**sys. dm_xe_database_sessions**.
 
 ### <a name="dmvs-common-to-both"></a>Общие DMV
 Для расширенных событий существуют дополнительные DMV, которые являются общими и для Базы данных SQL Azure, и для Microsoft SQL Server:
@@ -190,7 +190,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Использование Azure PowerShell с лазурным хранилищем.](../storage/common/storage-powershell-guide-full.md)
+- [Использование Azure PowerShell с хранилищем Azure](../storage/common/storage-powershell-guide-full.md).
 - [Командлеты службы хранилища Azure](https://docs.microsoft.com/powershell/module/Azure.Storage)
 - [Использование Azure PowerShell с хранилищем Azure](../storage/common/storage-powershell-guide-full.md) — статья содержит полную информацию о PowerShell и службе хранилища Azure.
 - [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)

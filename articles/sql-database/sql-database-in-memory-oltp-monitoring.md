@@ -1,5 +1,5 @@
 ---
-title: Монитор XTP В памяти хранения
+title: Мониторинг хранилища XTP в памяти
 description: Сведения об оценке и мониторинге использования и емкости хранилища XTP в памяти и об устранении нехватки памяти 41823
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: jrasnick
 ms.reviewer: genemi
 ms.date: 01/25/2019
 ms.openlocfilehash: 22ff83b1ccd009624082e45073123a45006df70f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79209435"
 ---
 # <a name="monitor-in-memory-oltp-storage"></a>Мониторинг хранилища выполняющейся в памяти OLTP
@@ -59,5 +59,5 @@ ms.locfileid: "79209435"
 > [!NOTE] 
 > В редких случаях ошибки 41823 и 41840 могут оказаться временными, то есть имеется достаточный объем хранилища выполняющейся в памяти OLTP, и повторное выполнение операции завершается успешно. Поэтому рекомендуется отслеживать общий доступный объем хранилища выполняющейся в памяти OLTP и повторять операцию при первом возникновении ошибки 41823 или 41840. Дополнительные сведения о логике повтора см. в разделе [Обнаружение конфликтов и логика повторных попыток](https://docs.microsoft.com/sql/relational-databases/In-memory-oltp/transactions-with-memory-optimized-tables#conflict-detection-and-retry-logic).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Инструкции по мониторингу см. в разделе [Мониторинг базы данных SQL Azure с помощью динамических представлений управления](sql-database-monitoring-with-dmvs.md).

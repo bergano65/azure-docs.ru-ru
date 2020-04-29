@@ -1,5 +1,5 @@
 ---
-title: Управление захватами пакетов - Azure PowerShell
+title: Управление захватом пакетов — Azure PowerShell
 titleSuffix: Azure Network Watcher
 description: На этой странице объясняется, как управлять функцией записи пакетов службы наблюдения за сетями с помощью PowerShell
 services: network-watcher
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 06263f85f7d6ad6cc80724baab01124833498739
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79129656"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-powershell"></a>Управление записью пакетов с помощью Наблюдателя за сетями Azure в PowerShell
@@ -24,7 +24,7 @@ ms.locfileid: "79129656"
 > [!div class="op_single_selector"]
 > - [Портал Azure](network-watcher-packet-capture-manage-portal.md)
 > - [PowerShell](network-watcher-packet-capture-manage-powershell.md)
-> - [Лазурный CLI](network-watcher-packet-capture-manage-cli.md)
+> - [Azure CLI](network-watcher-packet-capture-manage-cli.md)
 > - [REST API Azure](network-watcher-packet-capture-manage-rest.md)
 
 Возможность записи пакетов Наблюдателя за сетями позволяет создавать сеансы записи для отслеживания входящего и исходящего трафика виртуальной машины. Для сеанса записи предоставляются фильтры, которые позволяют убедиться, что записывается только требуемый трафик. Записи пакетов помогают выявить аномалии в работе сети по факту или заранее. Они также помогают выполнять сбор сетевой статистики, получать сведения о сетевых вторжениях, выполнять отладку передачи данных между клиентом и сервером и многое другое. Так как запись пакетов активируется удаленно, ее не нужно запускать вручную. К тому же она сразу выполняется на требуемой виртуальной машине, что также позволяет сэкономить ценное время.
@@ -39,7 +39,7 @@ ms.locfileid: "79129656"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В данной статье предполагается, что у вас есть следующие ресурсы:
 
@@ -274,7 +274,7 @@ Remove-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCapt
 https://{storageAccountName}.blob.core.windows.net/network-watcher-logs/subscriptions/{subscriptionId}/resourcegroups/{storageAccountResourceGroup}/providers/microsoft.compute/virtualmachines/{VMName}/{year}/{month}/{day}/packetCapture_{creationTime}.cap
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 

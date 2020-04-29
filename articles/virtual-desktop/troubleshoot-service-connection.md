@@ -1,6 +1,6 @@
 ---
-title: Устранение проблем сервисного подключения Windows Virtual Desktop - Azure
-description: Как решить проблемы при настройке клиентских подключений в среде для арендаторов Windows Virtual Desktop.
+title: Устранение неполадок подключения к службе виртуальный рабочий стол Windows — Azure
+description: Устранение проблем при настройке клиентских подключений в среде клиента виртуальных рабочих столов Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -9,45 +9,45 @@ ms.date: 12/13/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 57d5198cb54dc096fb09bb52d76539b1e4bbc1f2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79127458"
 ---
-# <a name="windows-virtual-desktop-service-connections"></a>Соединения службы Windows Virtual Desktop
+# <a name="windows-virtual-desktop-service-connections"></a>Подключения к службе виртуальных рабочих столов Windows
 
-Используйте эту статью для решения проблем с подключением клиентов Windows Virtual Desktop.
+Используйте эту статью для устранения проблем с подключением клиентов к виртуальным рабочим столам Windows.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 
-Вы можете дать нам обратную связь и обсудить Windows Virtual Desktop Service с командой продуктов и другими активными членами сообщества в [Windows Virtual Desktop Tech Community.](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)
+Вы можете придать нам отзыв и обсудить службу виртуальных рабочих столов Windows с группой разработчиков и другими активными членами сообщества, входящими в состав [сообщества виртуальных рабочих столов Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 
-## <a name="user-connects-but-nothing-is-displayed-no-feed"></a>Пользователь подключается, но ничего не отображается (без канала)
+## <a name="user-connects-but-nothing-is-displayed-no-feed"></a>Пользователь подключается, но ничего не отображается (канал отсутствует)
 
-Пользователь может запускать удаленных настольных клиентов и может проверить подлинность, однако пользователь не видит никаких иконок в ленте обнаружения веб.
+Пользователь может запускать удаленный рабочий стол клиентов и выполнять проверку подлинности, однако пользователь не увидит значки в веб-канале обнаружения.
 
-Подтвердите, что пользователь, сообщающий о проблемах, был назначен группам приложений с помощью этой командной строки:
+Убедитесь, что пользователь, сообщающий о проблемах, назначен группам приложений с помощью следующей командной строки:
 
 ```PowerShell
 Get-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname>
 ```
 
-Подтвердите, что пользователь входит в систему с правильными учетными данными.
+Убедитесь, что пользователь входит в систему с использованием правильных учетных данных.
 
-Если веб-клиент используется, подтвердите, что нет проблем с кэшированными учетными данными.
+Если используется веб-клиент, убедитесь в отсутствии проблем с кэшированными учетными данными.
 
-## <a name="windows-10-enterprise-multi-session-virtual-machines-dont-respond"></a>Многосессионные виртуальные машины Windows 10 Enterprise не отвечают
+## <a name="windows-10-enterprise-multi-session-virtual-machines-dont-respond"></a>Виртуальные машины Windows 10 Корпоративная с несколькими сеансами не отвечают
 
-Если виртуальная машина не реагирует и вы не можете получить к ней доступ через RDP, вам нужно устранить ее с помощью функции диагностики, проверив состояние хоста.
+Если виртуальная машина не отвечает и вы не можете получить к ней доступ через RDP, вам потребуется устранить неполадки с помощью функции диагностики, проверив состояние узла.
 
-Чтобы проверить состояние хоста, запустите этот cmdlet:
+Чтобы проверить состояние узла, выполните следующий командлет:
 
 ```powershell
 Get-RdsSessionHost -TenantName $TenantName -HostPoolName $HostPool | ft SessionHostName, LastHeartBeat, AllowNewSession, Status
 ```
 
-Если статус хоста, `NoHeartBeat`это означает, что VM не отвечает, и агент не может общаться с службой Windows Virtual Desktop.
+Если узел имеет `NoHeartBeat`состояние, то это означает, что виртуальная машина не отвечает и агент не может взаимодействовать со службой виртуальных рабочих столов Windows.
 
 ```powershell
 SessionHostName          LastHeartBeat     AllowNewSession    Status 
@@ -59,27 +59,27 @@ WVDHost4.contoso.com     21-Nov-19 5:21:35            True     NoHeartBeat
 WVDHost5.contoso.com     21-Nov-19 5:21:35            True     NoHeartBeat 
 ```
 
-Есть несколько вещей, которые вы можете сделать, чтобы исправить статус NoHeartBeat.
+Существует несколько вещей, которые можно выполнить для исправления состояния неподтверждения.
 
-### <a name="update-fslogix"></a>Обновление FSLogix
+### <a name="update-fslogix"></a>Обновление Фслогикс
 
-Если FSLogix не в курсе, особенно если это версия 2.9.7205.27375 frxdrvvt.sys, это может привести к тупику. Убедитесь в том, чтобы [обновить FSLogix до последней версии](https://go.microsoft.com/fwlink/?linkid=2084562).
+Если ваш Фслогикс не является актуальным, особенно если он имеет версию 2.9.7205.27375 файла фрксдрввт. sys, это может привести к взаимоблокировке. Не забудьте [Обновить фслогикс до последней версии](https://go.microsoft.com/fwlink/?linkid=2084562).
 
-### <a name="disable-bgtaskregistrationmaintenancetask"></a>Отключить BgTaskРегистрацияОбслуживание
+### <a name="disable-bgtaskregistrationmaintenancetask"></a>Отключить Бгтаскрегистратионмаинтенанцетаск
 
-Если обновление FSLogix не работает, проблема может заключаться в том, что компонент BiSrv истощает ресурсы системы во время еженедельной задачи обслуживания. Временно отключить задачу обслуживания, отключив BgTaskMaintenanceMaintenanceTask одним из этих двух методов:
+Если обновление Фслогикс не работает, это может быть вызвано тем, что компонент Бисрв исчерпал системные ресурсы в ходе еженедельного обслуживания. Временно отключите задачу обслуживания, отключив Бгтаскрегистратионмаинтенанцетаск с помощью одного из следующих двух методов:
 
-- Перейдите в меню «Пуск» и ищите **список задач.** Перейдите к **библиотеке** > task Scheduler**Microsoft** > **Windows** > **BrokerInfrastructure.** Ищите задачу под названием **BgTaskРегистрацияОбслуживание.** Когда вы найдете его, правой кнопкой мыши и выбрать **отключить** из выпадающих меню.
-- Откройте меню командной строки в качестве администратора и запустите следующую команду:
+- Перейдите в меню "Пуск" и выполните поиск по **планировщик задач**. Перейдите к **библиотеке** > **планировщик задач Microsoft** > **Windows** > **брокеринфраструктуре**. Найдите задачу с именем **бгтаскрегистратионмаинтенанцетаск**. Если он найден, щелкните его правой кнопкой мыши и выберите в раскрывающемся меню пункт **Отключить** .
+- Откройте меню командной строки от имени администратора и выполните следующую команду:
     
     ```cmd
     schtasks /change /tn "\Microsoft\Windows\BrokerInfrastructure\BgTaskRegistrationMaintenanceTask" /disable 
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Для обзора устранения неполадок Windows Virtual Desktop и треков эскалации [см.](troubleshoot-set-up-overview.md)
-- Для устранения неполадок при создании пула арендатора и хоста в среде Windows Virtual Desktop [см.](troubleshoot-set-up-issues.md)
-- Для устранения неполадок при настройке виртуальной машины (VM) в Windows Virtual Desktop [см.](troubleshoot-vm-configuration.md)
-- Для устранения неполадок при использовании [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md)PowerShell с Windows Virtual Desktop см.
-- Чтобы пройти через учебник по устранению неполадок, [см.](../azure-resource-manager/templates/template-tutorial-troubleshoot.md)
+- Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
+- Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
+- Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
+- Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
+- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).

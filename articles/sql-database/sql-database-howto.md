@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 11/14/2019
 ms.openlocfilehash: c3f7b33e4b42b08334cfb687024985c878dc3713
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79209423"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Использование Базы данных SQL Azure
@@ -34,8 +34,8 @@ ms.locfileid: "79209423"
 
 - [Синхронизация данных SQL](sql-database-sync-data.md)
 - [Data Sync Agent](sql-database-data-sync-agent.md)
-- [Повторите изменения схемы](sql-database-update-sync-schema.md)
-- [Отслеживание с помощью OMS](sql-database-sync-monitor-oms.md)
+- [Реплицировать изменения схемы](sql-database-update-sync-schema.md)
+- [Мониторинг с помощью OMS](sql-database-sync-monitor-oms.md)
 - [Рекомендации по Синхронизации данных](sql-database-best-practices-data-sync.md)
 - [Устранение ошибок Синхронизации данных](sql-database-troubleshoot-data-sync.md)
 
@@ -64,14 +64,14 @@ ms.locfileid: "79209423"
 - [Настройка BYOK для TDE](transparent-data-encryption-byok-azure-sql-configure.md)
 - [Смена ключей BYOK для TDE](transparent-data-encryption-byok-azure-sql-key-rotation.md)
 - [Удаление предохранителя TDE](transparent-data-encryption-byok-azure-sql-remove-tde-protector.md)
-- [Настройка In-Memory OLTP](sql-database-in-memory-oltp-migration.md)
+- [Настройка выполняющейся в памяти OLTP](sql-database-in-memory-oltp-migration.md)
 - [Настройка службы автоматизации Azure](sql-database-manage-automation.md)
 
 ## <a name="develop-applications"></a>Разработка приложений
 
-- [Подключения](sql-database-libraries.md)
+- [Соединение](sql-database-libraries.md)
 - [Использование соединителя Spark](sql-database-spark-connector.md)
-- [Приложение authenticate](sql-database-client-id-keys.md)
+- [Аутентификация приложения](sql-database-client-id-keys.md)
 - [Использование пакетной обработки для лучшей производительности](sql-database-use-batching-to-improve-performance.md)
 - [Руководство по настройке подключений](sql-database-connectivity-issues.md)
 - [Псевдонимы DNS](dns-alias-overview.md)
@@ -88,11 +88,11 @@ ms.locfileid: "79209423"
 
 ### <a name="design-multi-tenant-saas-applications"></a>Разработка мультитенантных приложений SaaS
 
-- [Конструктивные шаблоны SaaS](saas-tenancy-app-design-patterns.md)
+- [Шаблоны проектирования SaaS](saas-tenancy-app-design-patterns.md)
 - [Индексатор видео SaaS](saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Использование Управляемого экземпляра](sql-database-howto-managed-instance.md).
 - [Использование отдельной базы данных](sql-database-howto-single-database.md).

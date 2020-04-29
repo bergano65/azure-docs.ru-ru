@@ -1,6 +1,6 @@
 ---
-title: Публикация встроенных приложений в виртуальном рабочем столе Windows - Azure
-description: Как публиковать встроенные приложения в Windows Virtual Desktop.
+title: Публикация встроенных приложений в виртуальных рабочих столах Windows в Azure
+description: Как опубликовать встроенные приложения в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -9,45 +9,45 @@ ms.date: 12/03/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: a697c9a62e52e82a550969e1852abd1489ed59b9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79127737"
 ---
-# <a name="publish-built-in-apps-in-windows-virtual-desktop"></a>Публикация встроенных приложений в Windows Virtual Desktop
+# <a name="publish-built-in-apps-in-windows-virtual-desktop"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows
 
-Эта статья расскажет вам, как публиковать приложения в среде Windows Virtual Desktop.
+В этой статье рассказывается, как опубликовать приложения в среде виртуальных рабочих столов Windows.
 
 ## <a name="publish-built-in-apps"></a>Публикация встроенных приложений
 
-Чтобы опубликовать встроенное приложение:
+Чтобы опубликовать встроенное приложение, выполните следующие действия.
 
-1. Подключитесь к одной из виртуальных машин в пуле хоста.
-2. Получите **PackageFamilyName** приложения, которое вы хотите опубликовать, следуя инструкциям в [этой статье.](/powershell/module/appx/get-appxpackage?view=win10-ps/)
-3. Наконец, запустите следующий `<PackageFamilyName>` cmdlet с заменой **PackageFamilyName** вы нашли в предыдущем шаге:
+1. Подключитесь к одной из виртуальных машин в пуле узлов.
+2. Получите **паккажефамилинаме** приложения, которое вы хотите опубликовать, выполнив инструкции в [этой статье](/powershell/module/appx/get-appxpackage?view=win10-ps/).
+3. Наконец, выполните следующий командлет с `<PackageFamilyName>` замещенным **паккажефамилинаме** , найденным на предыдущем шаге:
    
    ```powershell
    New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -FriendlyName <remoteappname> -FilePath "shell:appsFolder\<PackageFamilyName>!App"
    ```
 
 >[!NOTE]
-> Windows Virtual Desktop поддерживает только публикацию `C:\Program Files\Windows Apps`приложений с установкой мест, которые начинаются с .
+> Виртуальный рабочий стол Windows поддерживает публикацию приложений только с расположениями установки `C:\Program Files\Windows Apps`, начинающимися с.
 
-## <a name="update-app-icons"></a>Обновление значков приложений
+## <a name="update-app-icons"></a>Обновить значки приложений
 
-После публикации приложения у него появится значок приложения Windows по умолчанию вместо обычного изображения значка. Чтобы изменить значок на свой обычный значок, поместите изображение иконки, которая вы хотите, в сети. Поддерживаемые форматы изображений: PNG, BMP, GIF, JPG, JPEG и ICO.
+После публикации приложение будет иметь значок приложения Windows по умолчанию вместо обычного изображения значка. Чтобы изменить значок на обычный значок, следует поместить изображение значка в общую сетевую папку. Поддерживаются форматы изображений PNG, BMP, GIF, JPG, JPEG и ICO.
 
-## <a name="publish-microsoft-edge"></a>Публикация Microsoft Edge
+## <a name="publish-microsoft-edge"></a>Публикация Microsoft ребра
 
-Процесс публикации Microsoft Edge немного отличается от процесса публикации для других приложений. Чтобы опубликовать Microsoft Edge с домашней страницей по умолчанию, запустите этот cmdlet:
+Процесс, используемый для публикации Microsoft ребра, немного отличается от процесса публикации для других приложений. Чтобы опубликовать Microsoft ребро с домашней страницей по умолчанию, выполните следующий командлет:
 
 ```powershell
 New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -FriendlyName <remoteappname> -FilePath "shell:Appsfolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Узнайте о том, как настроить каналы для организации отображения приложений для пользователей в [настраиваемом канале для пользователей Windows Virtual Desktop.](customize-feed-for-virtual-desktop-users.md)
-- Узнайте о функции присоединения приложения MSIX при [настройке приложения MSIX.](app-attach.md)
+- Узнайте, как настроить веб-каналы, чтобы организовать отображение приложений для пользователей в [настраиваемом веб-канале для пользователей виртуальных рабочих столов Windows](customize-feed-for-virtual-desktop-users.md).
+- Дополнительные сведения о функции присоединения приложения MSIX см. в статье Настройка присоединения приложения [MSIX](app-attach.md).
 

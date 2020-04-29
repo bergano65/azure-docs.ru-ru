@@ -9,10 +9,10 @@ ms.date: 01/10/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: dac17da4aa3d3d73ccbbc101cba4326a17fec9b1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79127782"
 ---
 # <a name="deploy-a-management-tool-with-an-azure-resource-manager-template"></a>Развертывание средства управления с помощью шаблона Azure Resource Manager
@@ -102,10 +102,10 @@ ms.locfileid: "79127782"
   > [!NOTE]
   > Если у вас есть настраиваемая группа клиентов, введите имя вручную вместо выбора из раскрывающегося списка.
 
-## <a name="report-issues"></a>Сообщение о проблемах
+## <a name="report-issues"></a>Сообщить о проблеме
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы научились развертывать средство управления и подключаться к нему, ознакомьтесь со сведениями об использовании справки по службам Azure для мониторинга проблем служб и рекомендаций по работоспособности. Дополнительные сведения см. в руководстве [Настройка оповещений служб](./set-up-service-alerts.md).

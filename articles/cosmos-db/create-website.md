@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: sngun
 ms.openlocfilehash: 2306dbe234e171ac613c33458df1990b767637df
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79128370"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-web-apps-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и веб-приложений службы приложений Azure с помощью шаблона Azure Resource Manager
-В этом учебнике показано, как использовать шаблон Azure Resource Manager для развертывания и интеграции [DB-приложений Microsoft Azure Cosmos,](https://azure.microsoft.com/services/cosmos-db/)веб-приложения [Azure App Service](https://go.microsoft.com/fwlink/?LinkId=529714) и примера веб-приложения.
+В этом руководстве показано, как использовать шаблон Azure Resource Manager для развертывания и интеграции [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), веб-приложения [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) и примера веб-приложения.
 
 С помощью шаблонов Azure Resource Manager можно легко автоматизировать развертывание и настройку ресурсов Azure.  В этом руководстве показано, как развернуть веб-приложение и автоматически задать сведения о подключении учетной записи Azure Cosmos DB.
 
@@ -25,7 +25,7 @@ ms.locfileid: "79128370"
 
 <a id="Prerequisites"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 > [!TIP]
 > Хотя это руководство не требует наличия опыта работы с шаблонами Azure Resource Manager или JSON, если возникнет необходимость изменить ссылки шаблонов или варианты развертывания, потребуются знания в каждой из этих областей.
 > 
@@ -56,7 +56,7 @@ ms.locfileid: "79128370"
    ![Снимок экрана пользовательского интерфейса развертывания шаблона](./media/create-website/TemplateDeployment3.png)
 4. Нажмите кнопку **Изменить параметры**, укажите значения для всех обязательных параметров и нажмите кнопку **ОК**.  Он принимает перечисленные ниже параметры.
    
-   1. SITENAME: Укажите имя веб-приложения Службы App Service и используется для создания URL-адреса, который вы используете для доступа к веб-приложению (например, `mydemodocdbwebapp.azurewebsites.net`если вы укажете "mydemodocdbwebapp", то URL, по которому вы получаете доступ к веб-приложению).
+   1. Имя сайта: указывает имя веб-приложения службы приложений и используется для создания URL-адреса, используемого для доступа к приложению (например, если указать "mydemodocdbwebapp"), то URL-адрес, по которому вы обращаетесь к этому приложению `mydemodocdbwebapp.azurewebsites.net`, — это.
    2. HOSTINGPLANNAME: задает имя создаваемого плана размещения службы приложений.
    3. LOCATION: задает расположение Azure, в котором будут создаваться ресурсы Azure Cosmos DB и веб-приложения.
    4. DATABASEACCOUNTNAME: задает имя создаваемой учетной записи Azure Cosmos DB.   
@@ -69,7 +69,7 @@ ms.locfileid: "79128370"
    ![Снимок экрана пользовательского интерфейса развертывания шаблона](./media/create-website/TemplateDeployment6.png)
 7. По завершении развертывания откроется область группы ресурсов.
    ![Снимок экрана области группы ресурсов](./media/create-website/TemplateDeployment7.png)  
-8. Чтобы использовать приложение, перейдите на URL-адрес веб-приложения (в приведенном выше ПРИМЕРе URL будет). `http://mydemodocdbwebapp.azurewebsites.net`  Вы увидите следующее веб-приложение.
+8. Чтобы использовать приложение, перейдите по URL-адресу Web App (в приведенном выше примере URL-адрес `http://mydemodocdbwebapp.azurewebsites.net`будет).  Вы увидите следующее веб-приложение.
    
    ![Пример приложения Todo](./media/create-website/image2.png)
 9. Теперь создайте несколько задач в веб-приложении и вернитесь в область группы ресурсов на портале Azure. Выберите ресурс учетной записи Azure Cosmos DB в списке ресурсов и нажмите кнопку **Обозреватель данных**.
@@ -122,7 +122,7 @@ ms.locfileid: "79128370"
 * Дополнительные сведения о шаблонах Azure Resource Manager см. [здесь](https://msdn.microsoft.com/library/azure/dn790549.aspx).
 
 ## <a name="whats-changed"></a>Изменения
-* Руководство по изменению веб-сайтов к [Azure App Service and Its Impact on Existing Azure Services](https://go.microsoft.com/fwlink/?LinkId=529714) службе приложений см.
+* Руководство по переходу от веб-сайтов к службе приложений см. в статье [служба приложений Azure и ее влияние на существующие службы Azure](https://go.microsoft.com/fwlink/?LinkId=529714) .
 
 > [!NOTE]
 > Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://go.microsoft.com/fwlink/?LinkId=523751), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.

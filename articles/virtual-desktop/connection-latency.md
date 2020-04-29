@@ -1,6 +1,6 @@
 ---
-title: Windows Virtual Desktop пользовательские задержки подключения - Azure
-description: Задержка подключения для пользователей виртуального рабочего стола Windows.
+title: Задержка подключения пользователей виртуальных рабочих столов Windows — Azure
+description: Задержка подключения для пользователей виртуальных рабочих столов Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -9,24 +9,24 @@ ms.date: 10/30/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: a4210947d771768943775a3e62c2558fa2883bd5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79128190"
 ---
-# <a name="determine-user-connection-latency-in-windows-virtual-desktop"></a>Определить задержку подключения пользователей в Windows Virtual Desktop
+# <a name="determine-user-connection-latency-in-windows-virtual-desktop"></a>Определение задержки подключения пользователей в виртуальном рабочем столе Windows
 
-Windows Virtual Desktop доступен во всем мире. Администраторы могут создавать виртуальные машины (Виртуальные технологии) в любом заговорном регионе Azure. Задержка подключения будет варьироваться в зависимости от местоположения пользователей и виртуальных машин. Службы Windows Virtual Desktop будут постоянно внедряться в новые географические регионы для улучшения задержки. 
+Виртуальный рабочий стол Windows является глобально доступным. Администраторы могут создавать виртуальные машины в любом требуемом регионе Azure. Задержка подключения будет зависеть от расположения пользователей и виртуальных машин. Службы виртуальных рабочих столов Windows будут непрерывно выдвигаться на новые географические регионы для повышения задержки. 
  
-Инструмент [оценки опыта windows Virtual Desktop](https://azure.microsoft.com/services/virtual-desktop/assessment/) может помочь вам определить наилучшее местоположение для оптимизации задержки ваших виртуальных технологий. Мы рекомендуем использовать инструмент каждые два-три месяца, чтобы убедиться, что оптимальное местоположение не изменилось по мере того, как Windows Virtual Desktop выкатывается в новые области. 
+[Средство оценки возможностей виртуальных рабочих столов Windows](https://azure.microsoft.com/services/virtual-desktop/assessment/) помогает определить лучшее расположение для оптимизации задержки виртуальных машин. Мы рекомендуем использовать средство каждые два – три месяца, чтобы убедиться, что оптимальное расположение не изменилось, так как виртуальный рабочий стол Windows разворачивается в новые области. 
 
-## <a name="azure-traffic-manager"></a>Azure Traffic Manager
+## <a name="azure-traffic-manager"></a>Диспетчер трафика Azure
 
-Windows Virtual Desktop использует Azure Traffic Manager, который проверяет местоположение DNS-сервера пользователя, чтобы найти ближайший экземпляр службы Windows Virtual Desktop. Мы рекомендуем администраторам просмотреть местоположение DNS-сервера пользователя, прежде чем выбрать местоположение для VMs.
+Виртуальный рабочий стол Windows использует диспетчер трафика Azure, который проверяет расположение DNS-сервера пользователя, чтобы найти ближайший экземпляр службы виртуальных рабочих столов Windows. Перед выбором расположения для виртуальных машин мы рекомендуем администраторам проверить расположение DNS-сервера пользователя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Чтобы проверить лучшее место для оптимальной задержки, см. [Windows Virtual Desktop Experience Estimator tool](https://azure.microsoft.com/services/virtual-desktop/assessment/)
-- Для ценообразования планы, см [Windows Виртуальный настольный цены](https://azure.microsoft.com/pricing/details/virtual-desktop/).
-- Чтобы начать работу с развертыванием Windows Virtual Desktop, ознакомьтесь с [нашим учебником.](tenant-setup-azure-active-directory.md)
+- Чтобы проверить лучшее расположение для оптимальной задержки, см. раздел [средство оценки возможностей виртуального рабочего стола Windows](https://azure.microsoft.com/services/virtual-desktop/assessment/).
+- Ценовые планы см. на странице [цены на виртуальные рабочие столы Windows](https://azure.microsoft.com/pricing/details/virtual-desktop/).
+- Чтобы приступить к работе с развертыванием виртуальных рабочих столов Windows, ознакомьтесь с [нашим руководством](tenant-setup-azure-active-directory.md).

@@ -1,7 +1,7 @@
 ---
-title: Эксперименты кикстарта на примерах
+title: Kickstart эксперименты из примеров
 titleSuffix: ML Studio (classic) - Azure
-description: Узнайте, как использовать примеры экспериментов машинного обучения для создания новых экспериментов с Галереей ИИ Azure и Azure Machine Learning Studio (классика).
+description: Узнайте, как использовать примеры экспериментов машинного обучения для создания экспериментов с помощью Коллекция решений ИИ Azure и Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -11,19 +11,19 @@ ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
 ms.openlocfilehash: 1a913e714565ffb99237357e331ef5cf0189c40f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79204227"
 ---
-# <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Создание экспериментов По созданию студии машинного обучения Azure на рабочих примерах в галерее Azure AI
+# <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Создавайте эксперименты Машинное обучение Azure Studio (классические) на основе рабочих примеров в Коллекция решений ИИ Azure
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Узнайте, как использовать примеры экспериментов машинного обучения из [коллекции решений Azure AI](https://gallery.azure.ai/), чтобы не создавать собственные решения с нуля. Эти примеры помогут вам создать решение машинного обучения.
 
-В галерее есть примерные эксперименты команды Microsoft Azure Machine Learning Studio (классическая), а также примеры, которыми делится сообщество машинного обучения. Также можно задавать вопросы и публиковать комментарии об экспериментах.
+В галерее представлены эксперименты с помощью Студия машинного обучения Microsoft Azureной (классической) группы, а также примеры совместного использования сообщества Машинное обучение. Также можно задавать вопросы и публиковать комментарии об экспериментах.
 
 Чтобы узнать, как использовать коллекцию, просмотрите 3-минутное видео [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) из серии [Обработка и анализ данных для начинающих](data-science-for-beginners-the-5-questions-data-science-answers.md).
 
@@ -51,14 +51,14 @@ ms.locfileid: "79204227"
     ![Пример эксперимента](./media/sample-experiments/example-experiment.png)
 
 ## <a name="create-a-new-experiment-using-an-example-as-a-template"></a>Создание эксперимента, используя в качестве шаблона пример
-Вы также можете создать новый эксперимент в машинном обучении Studio (классический) с помощью примера Галереи в качестве шаблона.
+Вы также можете создать новый эксперимент в Машинное обучение Studio (классическая модель), используя пример из коллекции в качестве шаблона.
 
 1. Войдите в [Студию](https://studio.azureml.net) с использованием учетной записи Майкрософт, после чего щелкните **Создать**, чтобы создать эксперимент.
 2. Просмотрите примеры содержимого и выберите то, что вам подходит.
 
-Новый эксперимент создается в рабочем пространстве студии машинного обучения (классическое) с использованием примера эксперимента в качестве шаблона.
+Новый эксперимент создается в рабочей области Машинное обучение Studio (классическая модель) с помощью примера эксперимента в качестве шаблона.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Импорт обучающих данных в Студию машинного обучения Azure из разных источников данных](import-data.md)
 * [Краткое руководство по языку программирования R для службы машинного обучения Azure](r-quickstart.md)
 * [Развертывание веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md)
