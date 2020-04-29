@@ -1,6 +1,6 @@
 ---
-title: Прозрачное шифрование данных (Портал)
-description: Прозрачное шифрование данных (TDE) в аналитике Azure Synapse
+title: Прозрачное шифрование данных (портал)
+description: Прозрачное шифрование данных (TDE) в Azure синапсе Analytics
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -12,10 +12,10 @@ ms.author: jrasnick
 ms.reviewer: rortloff
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 247691326e3aa2c8027dd0318b23a2cbfcba1efe
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80745224"
 ---
 # <a name="get-started-with-transparent-data-encryption-tde"></a>Начало работы с прозрачным шифрованием данных (TDE)
@@ -23,7 +23,7 @@ ms.locfileid: "80745224"
 > [!div class="op_single_selector"]
 >
 > * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Проверка подлинности](sql-data-warehouse-authentication.md)
+> * [Аутентификация](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 
@@ -33,25 +33,25 @@ ms.locfileid: "80745224"
 
 ## <a name="enabling-encryption"></a>Включение шифрования
 
-Для включения TDE выполните ниже:
+Чтобы включить TDE, выполните следующие действия:
 
 1. Откройте базу данных на [портале Azure](https://portal.azure.com)
 2. В колонке базы данных нажмите кнопку **Параметры** .
-3. Выберите параметры ![портала **системы шифрования данных Transparent**](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings.png)
-4. Выберите настройки ![портала **настройки на**](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-on.png)
-5. Выберите параметры портала **Сохранить**
-   ![](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-save.png)  
+3. Выберите ![параметр **прозрачное шифрование данных** параметры портала](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings.png)
+4. Выберите ![параметр **On** Portal Settings (вкл.) на](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-on.png)
+5. Выберите **сохранить**
+   ![параметры портала сохранить](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-save.png)  
 
 ## <a name="disabling-encryption"></a>Отключение шифрования
 
-Чтобы отключить TDE, выполните ниже:
+Чтобы отключить TDE, выполните следующие действия:
 
 1. Откройте базу данных на [портале Azure](https://portal.azure.com)
 2. В колонке базы данных нажмите кнопку **Параметры** .
-3. Выберите параметры ![портала **системы шифрования данных Transparent**](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings.png)
-4. Выберите настройки ![ **портала Off**](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-off.png)
-5. Выберите **Настройка портала Сохранить**
-   ![2](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-save2.png)  
+3. Выберите ![параметр **прозрачное шифрование данных** параметры портала](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings.png)
+4. Установите флажок **выкл** . ![, чтобы отключить установку параметров портала.](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-off.png)
+5. Выберите параметр **сохранить**
+   ![параметры портала сохранить 2.](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-save2.png)  
 
 ## <a name="encryption-dmvs"></a>Динамические административные представления шифрования
 

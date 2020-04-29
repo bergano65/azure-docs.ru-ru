@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: 80481bc11933b0404079221f23b5054024f00acb
-ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80811356"
 ---
 # <a name="manage-cloud-services-in-the-azure-portal"></a>Управление облачными службами с помощью портала Azure
@@ -81,7 +81,7 @@ ms.locfileid: "80811356"
 
 Обратите внимание, что обновления гостевой ОС и операции восстановления службы также могут быть причиной сбоя переключения развертывания. Дополнительные сведения см. в статье [Устранение неполадок, которые могут возникнуть при развертывании облачной службы](cloud-services-troubleshoot-deployment-problems.md).
 
-**Навлекнет ли своп время простоя для моего приложения? Как я должен справиться с этим?**
+**Переключается ли время простоя приложения? Как мне справиться?**
 
 Как описано в предыдущем разделе, переключение развертывания обычно происходит быстро, потому что это просто изменение конфигурации в Azure Load Balancer. В некоторых случаях это может занять около 10 секунд и привести к временному сбою подключения. Чтобы ограничить воздействие на клиентов, рассмотрите возможность реализации [логики повтора для клиента](../best-practices-retry-general.md).
 
@@ -119,11 +119,11 @@ ms.locfileid: "80811356"
 
 [Azure portal]: https://portal.azure.com
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).
-* Настройка [сертификатов TLS/SSL.](cloud-services-configure-ssl-certificate-portal.md)
+* Настройте [сертификаты TLS/SSL](cloud-services-configure-ssl-certificate-portal.md).
 
 
 

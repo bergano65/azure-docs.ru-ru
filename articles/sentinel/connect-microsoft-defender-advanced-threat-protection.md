@@ -1,6 +1,6 @@
 ---
-title: Подключите данные Microsoft Defender ATP к Azure Sentinel Документы Майкрософт
-description: Узнайте, как подключить данные Microsoft Defender Advanced Threat Protection к Azure Sentinel.
+title: Подключение данных ATP в защитнике Майкрософт к Azure Sentinel | Документация Майкрософт
+description: Узнайте, как подключить данные Microsoft защитника Advanced Threat protection к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,42 +15,42 @@ ms.workload: na
 ms.date: 10/13/2019
 ms.author: yelevin
 ms.openlocfilehash: 831baabcc26130d9b2c730afd85f2ed4b3842690
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80756354"
 ---
-# <a name="connect-alerts-from-microsoft-defender-advanced-threat-protection"></a>Подключение предупреждений от Microsoft Defender Advanced Threat Protection 
+# <a name="connect-alerts-from-microsoft-defender-advanced-threat-protection"></a>Подключайтесь к оповещениям из Microsoft защитника Advanced Threat protection 
 
 
 > [!IMPORTANT]
-> В настоящее время в открытом доступе находится заглатывается оповещение о защите расширенных угроз Microsoft Defender Advanced Threat Protection.
-> Эта функция предоставляется без соглашения об уровне обслуживания, и она не рекомендуется для производственных нагрузок.
+> В настоящее время в общедоступной предварительной версии оповещения о повышении защиты от угроз Microsoft Defender
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
  
 
-Разъем [Microsoft Defender Advanced Threat Protection](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) позволяет передавать оповещения из Microsoft Defender Advanced Threat Protection в Azure Sentinel. Это позволит вам более тщательно анализировать события безопасности в вашей организации и создавать игровые книги для эффективного и немедленного реагирования.
+Соединитель [Advanced Threat protection (Майкрософт](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) ) позволяет выполнять потоковую передачу предупреждений из Advanced Threat Protection в защитнике Майкрософт в Azure Sentinel. Это позволит вам более детально анализировать события безопасности в Организации и создавать модули PlayBook для эффективного и немедленного реагирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Вы должны иметь действительную лицензию для Microsoft Defender Advanced Threat Protection, как описано в [развертывании Microsoft Defender ATP.](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/licensing) 
-- Вы должны быть администратором или администратором безопасности в арендаторе Azure Sentinel.
-
-
-## <a name="connect-to-microsoft-defender-advanced-threat-protection"></a>Подключение к Microsoft Defender Расширенная защита от угроз
-
-Если корпорация Майкрософт защитник расширенной защиты от угроз развернута и попадает в ваши данные, оповещения могут быть легко переданы в Azure Sentinel.
+- У вас должна быть действительная лицензия для Advanced Threat Protection в защитнике Майкрософт, как описано в разделе [Настройка развертывания ATP в защитнике Майкрософт](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/licensing). 
+- Вы должны быть администратором или администратором безопасности в клиенте Sentinel Azure.
 
 
-1. В Azure Sentinel выберите **разъемы данных,** щелкните плитку **Microsoft Defender Advanced Threat Protection** и выберите **страницу Open connector.**
-1. Нажмите кнопку **Подключить**. 
-1. Чтобы использовать соответствующую схему в журнале Analytics для предупреждений Defender ATP, поиск **SecurityAlert** и **имя поставщика** **MDATP**.
+## <a name="connect-to-microsoft-defender-advanced-threat-protection"></a>Подключение к Advanced Threat Protection в защитнике Майкрософт
+
+Если вы разворачиваете и принимаете ваши данные, вы можете легко перепотокировать оповещения в Azure Sentinel, если вы развернете расширенную защиту от угроз Microsoft Defender.
+
+
+1. В поле Sentinel Azure выберите **соединители данных**, щелкните плитку **Advanced Threat Protection в защитнике (Майкрософт** ) и выберите **открыть страницу соединителя**.
+1. Нажмите кнопку **Соединить**. 
+1. Чтобы использовать соответствующую схему в Log Analytics оповещений ATP в защитнике, выполните поиск по запросу **секуритялерт** , а **имя поставщика** — **мдатп**.
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы узнали, как подключить АТФ Microsoft Defender к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
+## <a name="next-steps"></a>Дальнейшие шаги
+В этом документе вы узнали, как подключить ATP Microsoft Defender к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

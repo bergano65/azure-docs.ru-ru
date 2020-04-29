@@ -1,6 +1,6 @@
 ---
-title: Подключение к бассейну Synapse S'L
-description: Подключайтесь к пулу S'L.
+title: Подключение к пулу SQL синапсе
+description: Подключитесь к пулу SQL.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -12,30 +12,30 @@ ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: e5c015751e8b0aeed7bd84086cc4f65c234fdb41
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80745310"
 ---
-# <a name="connect-to-synapse-sql-pool"></a>Подключение к бассейну Synapse S'L
+# <a name="connect-to-synapse-sql-pool"></a>Подключение к пулу SQL синапсе
 
-Подключайтесь к пулу S'L.
+Подключитесь к пулу SQL.
 
 ## <a name="find-your-server-name"></a>Поиск имени сервера
 
-Имя сервера в следующем примере sqlpoolservername.database.windows.net. Чтобы найти полное имя сервера, сделайте следующее.
+Имя сервера в следующем примере — sqlpoolservername.database.windows.net. Чтобы найти полное имя сервера, сделайте следующее.
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
-2. Нажмите на **аналитику Azure Synapse**.
-3. Нажмите на пул, к который вы хотите подключиться.
+2. Щелкните **Azure синапсе Analytics**.
+3. Щелкните пул SQL, к которому необходимо подключиться.
 4. Найдите полное имя сервера.
 
    ![Полное имя сервера](media/sql-data-warehouse-connect-overview/server-connect.PNG)
 
 ## <a name="supported-drivers-and-connection-strings"></a>Поддерживаемые драйверы и строки подключения
 
-Бассейн S'L поддерживает [ADO.NET,](/dotnet/framework/data/adonet?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) [ODBC](/sql/connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [PHP](/sql/connect/php/overview-of-the-php-sql-driver?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)и [JDBC.](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) Щелкните один из указанных типов драйверов для получения информации об обновлениях и документации.
+Пул SQL поддерживает [ADO.NET](/dotnet/framework/data/adonet?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), [ODBC](/sql/connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [PHP](/sql/connect/php/overview-of-the-php-sql-driver?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)и [JDBC](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Щелкните один из указанных типов драйверов для получения информации об обновлениях и документации.
 
 Чтобы автоматически создать строку подключения используемого драйвера на портале Azure, щелкните **Показать строки подключения к базам данных** на странице из предыдущего примера. Ниже приведены примеры синтаксиса строк подключения для каждого драйвера.
 
@@ -68,7 +68,7 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 ## <a name="connection-settings"></a>Параметры подключения
 
-Пул сsL стандартизирует некоторые настройки во время соединения и создания объектов. Такие параметры нельзя переопределить. К ним относятся следующие:
+Пул SQL стандартизует некоторые параметры во время соединения и создания объектов. Такие параметры нельзя переопределить. К ним относятся следующие:
 
 | Параметр базы данных | Значение |
 |:--- |:--- |
@@ -79,4 +79,4 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы подключиться и отправить запрос с помощью Visual Studio, см. инструкции в статье [Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT](sql-data-warehouse-query-visual-studio.md). Чтобы узнать больше о вариантах аутентификации, смотрите [в azure Synapse Analytics.](sql-data-warehouse-authentication.md)
+Чтобы подключиться и отправить запрос с помощью Visual Studio, см. инструкции в статье [Подключение к Azure Synapse Analytics с помощью Visual Studio и SSDT](sql-data-warehouse-query-visual-studio.md). Дополнительные сведения о параметрах проверки подлинности см. в статье [Аутентификация в Azure синапсе Analytics](sql-data-warehouse-authentication.md).

@@ -8,10 +8,10 @@ ms.date: 03/20/2020
 author: LuisBosquez
 ms.author: lbosq
 ms.openlocfilehash: c683ec0c4b3a536b0627a7c1c8abf28ee4f83663
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80757030"
 ---
 # <a name="use-mongodb-compass-to-connect-to-azure-cosmos-dbs-api-for-mongodb"></a>Подключение к API Azure Cosmos DB для MongoDB с помощью MongoDB Compass
@@ -22,13 +22,13 @@ Cosmos DB — это глобально распределенная мног�
 
 ## <a name="pre-requisites"></a>Предварительные требования
 
-Чтобы подключиться к учетной записи Cosmos DB с помощью MongoDB Compass, необходимо:
+Чтобы подключиться к учетной записи Cosmos DB с помощью MongoDB компаса, необходимо:
 
 * Скачайте и установите [Compass](https://www.mongodb.com/download-center/compass?jmp=hero).
 * Получите сведений о [строке подключения](connect-mongodb-account.md) Cosmos DB.
 
 > [!NOTE]
-> В настоящее время API API Azure Cosmos DB для версии MongoDB Server 3.2 поддерживается MongoDB Compass.
+> В настоящее время API Azure Cosmos DB для сервера MongoDB версии 3,2 поддерживается с помощью MongoDB компаса.
 
 ## <a name="connect-to-cosmos-dbs-api-for-mongodb"></a>Подключение к API Cosmos DB для MongoDB
 
@@ -54,7 +54,7 @@ Cosmos DB — это глобально распределенная мног�
 
 6. В нижней части страницы щелкните **Подключиться**. Базы данных и учетная запись Cosmos DB теперь должны отображаться в MongoDB Compass.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [использовать Studio 3T](mongodb-mongochef.md) с API Azure Cosmos DB для MongoDB.
 - Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.

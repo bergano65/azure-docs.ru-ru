@@ -1,6 +1,6 @@
 ---
-title: Вместо ETL, дизайн ELT
-description: Реализация гибких стратегий загрузки данных для пула Synapse S'L в Azure Synapse Analytics
+title: В отличие от ETL, проектный ELT
+description: Реализуйте гибкие стратегии загрузки данных для пула SQL синапсе в Azure синапсе Analytics.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -12,83 +12,83 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: e99fd898956e11a4827d023691111a47e5a790c0
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80744957"
 ---
-# <a name="data-loading-strategies-for-synapse-sql-pool"></a>Стратегии загрузки данных для пула Synapse S'L
+# <a name="data-loading-strategies-for-synapse-sql-pool"></a>Стратегии загрузки данных для пула SQL синапсе
 
-Традиционные пулы SMP S'L используют процесс экстракта, преобразования и загрузки (ETL) для загрузки данных. В пуле Synapse S'L, входящих в Azure Synapse Analytics, имеется массивно параллельная обработка (MPP), которая использует масштабируемость и гибкость вычислительных и складских ресурсов.
+Традиционные пулы SQL для SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Синапсе пул SQL в Azure синапсе Analytics имеет архитектуру с массовой параллельной обработкой (MPP), которая использует преимущества масштабируемости и гибкости ресурсов вычислений и хранилища.
 
-Использование процесса extract, Load, and Transform (ELT) использует MPP и устраняет ресурсы, необходимые для преобразования данных до загрузки.
+Используя процесс извлечения, загрузки и преобразования (ELT), вы используете MPP и устраняете ресурсы, необходимые для преобразования данных до загрузки.
 
-В то время как пул S'L поддерживает многие методы загрузки, в том числе популярные варианты сервера S'L, такие как [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [API SqlBulkCopy,](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)самый быстрый и масштабируемый способ загрузки данных — через внешние таблицы PolyBase и [заявление COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (предварительный просмотр).
+Хотя пул SQL поддерживает множество методов загрузки, включая популярные параметры SQL Server, такие как [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [API SqlBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), самый быстрый и наиболее масштабируемый способ загрузки данных — внешние таблицы polybase и [инструкция Copy](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (Предварительная версия).
 
-С помощью PolyBase и оператора COPY вы можете получить доступ к внешним данным, хранящимся в хранилище Azure Blob или в магазине Azure Data Lake Store на языке T-S'L. Для максимальной гибкости при загрузке мы рекомендуем использовать выписку COPY.
+С помощью Polybase и инструкции COPY можно получить доступ к внешним данным, хранящимся в хранилище BLOB-объектов Azure, или Azure Data Lake Store с помощью языка T-SQL. Для наибольшей гибкости при загрузке рекомендуется использовать инструкцию COPY.
 
 > [!NOTE]  
-> Сейчас инструкция COPY находится на этапе общедоступной предварительной версии. Чтобы обеспечить обратную связь, отправьте электронное письмо в следующий список рассылки: sqldwcopypreview@service.microsoft.com.
+> Сейчас инструкция COPY находится на этапе общедоступной предварительной версии. Чтобы оставить отзыв, отправьте сообщение электронной почты по следующему списку рассылки sqldwcopypreview@service.microsoft.com:.
 
 > [!VIDEO https://www.youtube.com/embed/l9-wP7OdhDk]
 
 ## <a name="what-is-elt"></a>Что такое ELT?
 
-Extract, Load, and Transform (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в пул S'L, а затем преобразуются.
+Извлечение, Загрузка и преобразование (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в пул SQL, а затем преобразуются.
 
-Основными шагами для внедрения ELT являются:
+Ниже приведены основные шаги для реализации ELT.
 
 1. Извлеките исходные данные в текстовые файлы.
 2. Поместите данные в хранилище BLOB-объектов Azure или Azure Data Lake Store.
 3. Подготовьте данные для загрузки.
-4. Загрузите данные в промежуточные таблицы с командой PolyBase или COPY.
+4. Загрузите данные в промежуточные таблицы с помощью Polybase или команды COPY.
 5. Преобразуйте данные.
 6. Вставьте данные в рабочие таблицы.
 
-В учебнике по загрузке PolyBase [см.](load-data-from-azure-blob-storage-using-polybase.md)
+Руководство по загрузке в Polybase см. [в статье Загрузка данных из хранилища BLOB-объектов Azure с помощью polybase](load-data-from-azure-blob-storage-using-polybase.md).
 
 Дополнительные сведения см. в записи блога о [стратегиях и шаблонах загрузки в хранилище данных SQL Azure](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-loading-patterns-and-strategies/).
 
-## <a name="1-extract-the-source-data-into-text-files"></a>1. Извлеките исходные данные в текстовые файлы
+## <a name="1-extract-the-source-data-into-text-files"></a>1. Извлечение исходных данных в текстовые файлы
 
-Получение данных за пределами исходной системы зависит от расположения хранилища.  Цель состоит в том, чтобы переместить данные в PolyBase и COPY поддерживается делимитированных текста или CSV файлов.
+Получение данных за пределами исходной системы зависит от расположения хранилища.  Целью является перемещение данных в Polybase и копирование поддерживаемых текстовых или CSV-файлов с разделителями.
 
-### <a name="polybase-and-copy-external-file-formats"></a>Внешние форматы файлов PolyBase и COPY
+### <a name="polybase-and-copy-external-file-formats"></a>Polybase и копирование форматов внешних файлов
 
-С помощью PolyBase и оператора COPY можно загрузить данные из закодированных файлов UTF-8 и UTF-16. В дополнение к делимитировавану текст или CSV файлы, он загружается из форматов файлов Hadoop, таких как ORC и Паркет. PolyBase и заявление COPY также могут загружать данные из сжатых файлов Gzip и Snappy.
+С помощью Polybase и инструкции COPY можно загружать данные из текстовых или CSV-файлов с разделителями в кодировке UTF-8 и кодировке UTF – 16. Помимо текстовых или CSV-файлов, он загружается из форматов файлов Hadoop, таких как ORC и Parquet. Polybase и инструкция COPY также могут загружать данные из файлов gzip и привязывают сжатые файлы.
 
-Расширенный ASCII, формат с фиксированной шириной и вложенные форматы, такие как Win'ip или XML, не поддерживаются. Если вы экспортируете с сервера S'L, вы можете использовать [инструмент командной строки bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для экспорта данных в делимитированные текстовые файлы.
+Расширенные символы ASCII, формат с фиксированной шириной и вложенные форматы, такие как WinZip или XML, не поддерживаются. При экспорте из SQL Server можно использовать [программу командной строки bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для экспорта данных в текстовые файлы с разделителями.
 
-## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Поземляй данные в хранилище Azure Blob или магазин Azure Data Lake Store
+## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Наземный данные в хранилище BLOB-объектов Azure или Azure Data Lake Store
 
-Чтобы приземлить данные в хранилище Azure, можно переместить их в [хранилище Azure Blob](../../storage/blobs/storage-blobs-introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) или [хранилище Azure Data Lake Store Gen2.](../../data-lake-store/data-lake-store-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) В любом расположении данные должны храниться в текстовых файлах. PolyBase и заявление COPY могут загружаться из любого места.
+Чтобы разместить данные в службе хранилища Azure, можно переместить их в [хранилище BLOB-объектов Azure](../../storage/blobs/storage-blobs-introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) или [Azure Data Lake Store Gen2](../../data-lake-store/data-lake-store-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). В любом расположении данные должны храниться в текстовых файлах. Polybase и инструкция COPY могут загружаться из любого расположения.
 
 Ниже приведены средства и службы, которые можно использовать для перемещения данных в службу хранилища Azure.
 
 - Служба [Azure ExpressRoute](../../expressroute/expressroute-introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) повышает пропускную способность сети, производительность, а также предсказуемое поведение. ExpressRoute — это служба, которая направляет данные с помощью выделенного частного подключения в Azure. Подключения ExpressRoute не направляют данные через общедоступный Интернет. Они отличаются повышенной надежностью, более высокой скоростью, меньшей задержкой и дополнительной безопасностью по сравнению с обычными подключениями через общедоступный Интернет.
 - [Служебная программа AZCopy](../../storage/common/storage-choose-data-transfer-solution.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) перемещает данные в службу хранилища Azure через общедоступный Интернет. Этот способ оптимален, если размер данных не превышает 10 ТБ. Для выполнения загрузок на регулярной основе с помощью AZCopy проверьте скорость сети, чтобы просмотреть, подходит ли она.
-- [Фабрика данных Azure (ADF)](../../data-factory/introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) включает шлюз, который можно установить на локальном сервере. Затем можно создать конвейер для перемещения данных из локального сервера в службу хранилища Azure. Для использования фабрики данных [Loading data for SQL Analytics](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)с помощью аналитики S'L см.
+- [Фабрика данных Azure (ADF)](../../data-factory/introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) включает шлюз, который можно установить на локальном сервере. Затем можно создать конвейер для перемещения данных из локального сервера в службу хранилища Azure. Сведения об использовании фабрики данных с SQL Analytics см. в статье [Загрузка данных для SQL Analytics](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 ## <a name="3-prepare-the-data-for-loading"></a>3. Подготовка данных к загрузке
 
-Возможно, вам потребуется подготовить и очистить данные в учетной записи хранения перед загрузкой. Подготовить данные можно, пока они хранятся в источнике, при экспорте данных в текстовые файлы или после того, как данные окажутся в службе хранилища Azure.  Лучше всего как можно раньше начать работу с данными.  
+Перед загрузкой может потребоваться подготовить и очистить данные в учетной записи хранения. Подготовить данные можно, пока они хранятся в источнике, при экспорте данных в текстовые файлы или после того, как данные окажутся в службе хранилища Azure.  Лучше всего как можно раньше начать работу с данными.  
 
 ### <a name="define-external-tables"></a>Определение внешних таблиц
 
-Если вы используете PolyBase, вам необходимо определить внешние таблицы в вашем пуле S'L перед загрузкой. Внешние таблицы не требуются в выписке COPY. PolyBase использует внешние таблицы для определения данных и доступа к ним в службе хранилища Azure.
+Если вы используете Polybase, перед загрузкой необходимо определить внешние таблицы в пуле SQL. В инструкции COPY внешние таблицы не требуются. PolyBase использует внешние таблицы для определения данных и доступа к ним в службе хранилища Azure.
 
-Внешняя таблица аналогична представлению базы данных. Внешняя таблица содержит схему таблицы и указывает на данные, которые хранятся за пределами пула S'L.
+Внешняя таблица аналогична представлению базы данных. Внешняя таблица содержит схему таблицы и указывает на данные, хранящиеся за пределами пула SQL.
 
-Определение внешних таблиц включает указание источника данных, формата текстовых файлов и определений таблицы. Ссылки на синтаксисные статьи T-S'L, которые вам понадобятся:
+Определение внешних таблиц включает указание источника данных, формата текстовых файлов и определений таблицы. Ниже приведены справочные статьи по синтаксису T-SQL.
 
 - [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [СОЗДАНИЕ ВНЕШНЕГО ФОРМАТА ФАЙЛА](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [СОЗДАНИЕ ВНЕШНЕЙ ТАБЛИЦЫ](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-При загрузке паркета отображение типа данных S'L:
+При загрузке Parquet сопоставление типов данных SQL:
 
-| **Тип данных паркета** | **Тип данных SQL** |
+| **Тип данных Parquet** | **Тип данных SQL** |
 | :-------------------: | :---------------: |
 |        tinyint        |      tinyint      |
 |       smallint        |     smallint      |
@@ -117,42 +117,42 @@ Extract, Load, and Transform (ELT) — это процесс, с помощью 
 
 ### <a name="format-text-files"></a>Форматирование текстовых файлов
 
-Если вы используете PolyBase, внешние объекты, определенные должны привести строки текстовых файлов с внешним определением таблицы и формата файлов. Данные в каждой строке текстового файла должны совпадать с определением таблицы.
+При использовании Polybase внешние объекты должны выстроить строки текстовых файлов с определением внешней таблицы и формата файла. Данные в каждой строке текстового файла должны совпадать с определением таблицы.
 Для форматирования текстовых файлов сделайте следующее:
 
 - Если данные поступают из нереляционного источника, необходимо преобразовать их в строки и столбцы. Независимо от того, поступают ли данные из реляционного или нереляционного источника, их необходимо преобразовать для соответствия определениям столбцов таблицы, в которую вы планируете загрузить данные.
-- Формат данных в текстовом файле для согласования с столбцов и типовми данных в таблице назначения. Несогласованность типов данных во внешних текстовых файлах и таблице пула S'L приводит к отклонению строк во время нагрузки.
-- Отделите поля в текстовом файле символом завершения.  Обязательно используйте символ или последовательность символов, которые не найдены в исходных данных. Используйте указанный символ завершения для [создания формата внешнего файла](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Форматирование данных в текстовом файле для согласования с столбцами и типами данных в целевой таблице. Неправильное выравнивание типов данных во внешних текстовых файлах и в таблице пула SQL приводит к тому, что строки будут отклонены во время загрузки.
+- Отделите поля в текстовом файле символом завершения.  Не забудьте использовать символ или последовательность символов, которые не найдены в исходных данных. Используйте указанный символ завершения для [создания формата внешнего файла](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-## <a name="4-load-the-data-using-polybase-or-the-copy-statement"></a>4. Загрузите данные с помощью PolyBase или оператора COPY
+## <a name="4-load-the-data-using-polybase-or-the-copy-statement"></a>4. Загрузка данных с помощью Polybase или инструкции COPY
 
-Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. Постановочная таблица также дает вам возможность использовать MPP пула S'L для преобразования данных перед вставкой данных в производственные таблицы.
+Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. Промежуточная таблица также дает возможность использовать MPP-пул SQL для преобразований данных перед вставкой данных в рабочие таблицы.
 
-Таблица должна быть предварительно создана при загрузке в таблицу с COPY.
+Таблица должна быть предварительно создана при загрузке в промежуточную таблицу с КОПИРОВАНИЕм.
 
-### <a name="options-for-loading-with-polybase-and-copy-statement"></a>Варианты загрузки с помощью полибазы и copy
+### <a name="options-for-loading-with-polybase-and-copy-statement"></a>Параметры загрузки с помощью инструкций Polybase и COPY
 
 Чтобы загрузить данные с помощью PolyBase, можно использовать любые из приведенных ниже вариантов загрузки.
 
 - [PolyBase с использованием T-SQL](load-data-from-azure-blob-storage-using-polybase.md) хорошо работает, когда данные хранятся в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот вариант предоставляет наибольший контроль над процессом загрузки, но также требует определения объектов внешних данных. Другие методы определяют эти объекты в фоновом режиме, когда вы сопоставляете исходные таблицы с целевыми.  Для оркестрации загрузок T-SQL можно использовать фабрику данных Azure, службы SSIS или функции Azure.
 - [PolyBase со службами SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) является оптимальным выбором, когда исходные данные хранятся в SQL Server — локально или в облаке. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных.
-- [Заявление PolyBase и COPY с Azure Data Factory (ADF)](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) является еще одним инструментом оркестровки.  Оно определяет конвейер и планирует расписания заданий.
-- [PolyBase с Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) передает данные из таблицы в кадр данных Databricks и/или записывает данные из кадра данных Databricks в таблицу с помощью PolyBase.
+- [Polybase и инструкция Copy с фабрикой данных Azure (ADF)](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) — еще одно средство оркестрации.  Оно определяет конвейер и планирует расписания заданий.
+- [Polybase с Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) передает данные из таблицы в стек данных и (или) записывает данные из стека данных DataTables в таблицу с помощью polybase.
 
-### <a name="other-loading-options"></a>Другие варианты загрузки
+### <a name="other-loading-options"></a>Другие параметры загрузки
 
-В дополнение к PolyBase и выписке COPY, вы можете использовать [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) или [API SqlBulkCopy.](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) bcp загружается непосредственно в базу данных, не проходя через хранилище Azure Blob, и предназначен только для небольших нагрузок.
+Помимо Polybase и инструкции COPY можно использовать [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) или [API SqlBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Программа bcp загружается непосредственно в базу данных без помощи хранилища BLOB-объектов Azure и предназначена только для небольших нагрузок.
 
 > [!NOTE]
-> Производительность нагрузки этих опций ниже, чем PolyBase и заявление COPY.
+> Производительность загрузки этих параметров ниже, чем у Polybase и инструкции COPY.
 
 ## <a name="5-transform-the-data"></a>5. Преобразование данных
 
 Пока данные находятся в промежуточной таблице, выполните преобразования, необходимые для рабочей нагрузки. Затем переместите данные в рабочую таблицу.
 
-## <a name="6-insert-the-data-into-production-tables"></a>6. Вставьте данные в производственные таблицы
+## <a name="6-insert-the-data-into-production-tables"></a>6. Вставка данных в рабочие таблицы
 
-INSERT INTO ... Заявление SELECT перемещает данные из таблицы постановки в постоянную таблицу.
+Вставка в... Инструкция SELECT перемещает данные из промежуточной таблицы в постоянную таблицу.
 
 При разработке процесса ETL попробуйте запустить его для небольшого тестового примера. Попробуйте извлечь 1000 строк из таблицы в файл, переместить его в Azure, а затем загрузить в промежуточную таблицу.
 
@@ -160,6 +160,6 @@ INSERT INTO ... Заявление SELECT перемещает данные из
 
 Многие из наших партнеров предлагают решения для загрузки. Дополнительные сведения см. в статье [Партнеры по бизнес-аналитике хранилища данных SQL](sql-data-warehouse-partner-business-intelligence.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Инструкции по загрузке см. [здесь](guidance-for-loading-data.md).

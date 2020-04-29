@@ -1,15 +1,15 @@
 ---
-title: 'Быстрый запуск: Опубликовать базу знаний, REST, Go - NA Maker'
+title: Краткое руководство. Публикация базы знаний, RESTFUL, Go-QnA Maker
 description: В этом кратком руководстве по началу работы с Go и REST описывается, как опубликовать базу знаний и создать конечную точку, которую можно вызвать в приложении или чат-боте.
 ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: conceptual
 ms.openlocfilehash: 4ce655bdc7a913ecb281ce8a75e7ec4f2009a2ea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78851699"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-go"></a>Краткое руководство: публикация базы знаний в QnA Maker с использованием Go
@@ -31,7 +31,7 @@ ms.locfileid: "78851699"
     Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-csharp.md).
 
 > [!NOTE]
-> Полный файл решения (ы) можно получить в [репозитории **Azure-Samples/cognitive-services-qnamaker-go** GitHub.](https://github.com/Azure-Samples/cognitive-services-qnamaker-go/tree/master/documentation-samples/quickstarts/publish-knowledge-base)
+> Полный файл решения можно найти в [репозитории **Azure-Samples/qnamaker-Services--Go** GitHub](https://github.com/Azure-Samples/cognitive-services-qnamaker-go/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
 
 ## <a name="create-a-go-file"></a>Создание файла Go
 
@@ -90,7 +90,7 @@ go build publish-kb.go
 
 [!INCLUDE [Clean up files and knowledge base](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Опубликовав базу знаний, вам нужно использовать [URL-адрес конечной точки для создания ответа](./get-answer-from-knowledge-base-go.md).
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 12/07/2016
 ms.author: tagore
 ms.openlocfilehash: e862818a4fe2471af574d153d43f0096af7847b8
-ms.sourcegitcommit: 98e79b359c4c6df2d8f9a47e0dbe93f3158be629
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80811413"
 ---
 # <a name="how-to-configure-cloud-services"></a>Настройка облачных служб
@@ -44,9 +44,9 @@ ms.locfileid: "80811413"
 >[!IMPORTANT]
 > В случае выбора конкретной версии ОС автоматические обновления операционной системы отключаются, а ответственность за установку исправлений ложится на вас. Вы должны обеспечить установку обновлений в экземплярах роли, иначе система безопасности вашего приложения будет уязвима.
 
-## <a name="monitoring"></a>Наблюдение
+## <a name="monitoring"></a>Мониторинг
 
-Вы можете включить оповещения в облачной службе. Нажмите > Параметры**оповещений** **настройки** > **Добавить оповещения**.
+Вы можете включить оповещения в облачной службе. Щелкните **Параметры** >  > **правила генерации оповещений****Добавить оповещение**.
 
 ![](./media/cloud-services-how-to-configure-portal/cs-alerts.png)
 
@@ -62,7 +62,7 @@ ms.locfileid: "80811413"
 
 ### <a name="configure-monitoring-from-a-metric-tile"></a>Настройка мониторинга с использованием плиток метрик
 
-Вместо того, чтобы использовать**правила оповещения** **настроек,** > вы можете нажать на одну из метрических плиток в разделе **Мониторинг** облачного сервиса.
+Вместо использования **параметров** > **Правила оповещений**можно щелкнуть одну из плиток метрик в разделе **мониторинг** облачной службы.
 
 ![Мониторинг облачной службы](./media/cloud-services-how-to-configure-portal/cs-monitoring.png)
 
@@ -92,18 +92,18 @@ ms.locfileid: "80811413"
     ![Колонка «Конфигурация»](./media/cloud-services-how-to-configure-portal/cs-settings-config.png)
 3. Нажмите кнопку **Загрузить** .
 
-    ![Скачивание](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
+    ![Скачать](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
 4. Чтобы применить обновления конфигурации, передайте новый файл в службу:
 
     ![Передать](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
 5. Выберите файл .cscfg и нажмите **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).
 * [Управляйте облачной службой](cloud-services-how-to-manage-portal.md).
-* Настройка [сертификатов TLS/SSL.](cloud-services-configure-ssl-certificate-portal.md)
+* Настройте [сертификаты TLS/SSL](cloud-services-configure-ssl-certificate-portal.md).
 
 
 

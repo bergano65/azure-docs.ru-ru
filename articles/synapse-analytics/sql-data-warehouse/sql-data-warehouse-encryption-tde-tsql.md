@@ -1,6 +1,6 @@
 ---
-title: Прозрачное шифрование данных (Т-СЗЛ)
-description: Прозрачное шифрование данных (TDE) в аналитике Azure Synapse (Т-СЗЛ)
+title: Прозрачное шифрование данных (T-SQL)
+description: Прозрачное шифрование данных (TDE) в Azure синапсе Analytics (T-SQL)
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -12,10 +12,10 @@ ms.author: jrasnick
 ms.reviewer: rortloff
 ms.custom: seo-lt-2019
 ms.openlocfilehash: ae751cc5b8e3ab67f3e65757724d0ebae1c45e02
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80745246"
 ---
 # <a name="get-started-with-transparent-data-encryption-tde"></a>Начало работы с прозрачным шифрованием данных (TDE)
@@ -23,7 +23,7 @@ ms.locfileid: "80745246"
 > [!div class="op_single_selector"]
 >
 > * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Проверка подлинности](sql-data-warehouse-authentication.md)
+> * [Аутентификация](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "80745246"
 
 ## <a name="enabling-encryption"></a>Включение шифрования
 
-Выполните следующие действия, чтобы включить TDE:
+Чтобы включить TDE, выполните следующие действия.
 
 1. Подключитесь к *главной* базе данных на сервере, где находится база данных, указав логин администратора или члена роли **dbmanager** в главной базе данных.
 2. Выполните следующий оператор для шифрования базы данных:
@@ -44,7 +44,7 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 ## <a name="disabling-encryption"></a>Отключение шифрования
 
-Выполните следующие действия, чтобы отключить TDE:
+Чтобы отключить TDE, выполните следующие действия.
 
 1. Подключитесь к *главной* базе данных, указав логин администратора или члена роли **dbmanager** в главной базе данных.
 2. Выполните следующий оператор для шифрования базы данных:
@@ -54,11 +54,11 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION OFF;
 ```
 
 > [!NOTE]
-> Перед внесением изменений в настройки TDE необходимо возобновить приощёте пул S'L.
+> Приостановленный пул SQL необходимо возобновить перед внесением изменений в параметры TDE.
 
 ## <a name="verifying-encryption"></a>Проверка шифрования
 
-Чтобы проверить состояние шифрования, выполните ниже:
+Чтобы проверить состояние шифрования, выполните следующие действия:
 
 1. Подключитесь к *главной* базе данных или к базе данных экземпляра, указав логин администратора или члена роли **dbmanager** в главной базе данных.
 2. Выполните следующий оператор для шифрования базы данных:

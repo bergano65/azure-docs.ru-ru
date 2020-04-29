@@ -6,13 +6,13 @@ ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: conceptual
 ms.openlocfilehash: 78608d3acdfea07f21ccc42e8d530ff502fbb0b4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78851930"
 ---
-# <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-c-with-rest"></a>Быстрый старт: Создайте базу знаний в «NA Maker» с помощью C» с REST
+# <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-c-with-rest"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью C# и функции "ОСТАВШАЯся"
 
 В этом кратком руководстве описано, как программным способом создать и опубликовать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/knowledge-base.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
 
@@ -20,7 +20,7 @@ ms.locfileid: "78851930"
 * [Создание базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create)
 * [Получение сведений об операции](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails)
 
-[Эталонная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [СЗ Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/create-knowledge-base/QnaQuickstartCreateKnowledgebase/Program.cs)
+[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | —[пример C#](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/create-knowledge-base/QnaQuickstartCreateKnowledgebase/Program.cs)
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -33,7 +33,7 @@ ms.locfileid: "78851930"
 
 Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или редакторе.
 
-В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `qna-maker-quickstart`. Эта команда создает простой проект "Hello World" с одним исходным файлом: *Program.cs*.
+В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `qna-maker-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*.
 
 ```dotnetcli
 dotnet new console -n qna-maker-quickstart
@@ -138,7 +138,7 @@ Build succeeded.
 
 ## <a name="add-createkb-method"></a>Добавление метода CreateKB
 
-Следующий метод создает базу знаний и повторяет проверки состояния.  **Идентификатор** _операции_ возвращается в **поле**заголовка ответа POST, а затем используется как часть маршрута в запросе GET. Так как создание базы знаний может занять некоторое время, необходимо повторять вызовы, чтобы проверить состояние, пока не вернется успешный или неудачный ответ. Когда операция завершается успешно, идентификатор базы знаний возвращается в **resourceLocation**.
+Следующий метод создает базу знаний и повторяет проверки состояния.  **Идентификатор операции** _создания_ возвращается в **расположении**поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. Так как создание базы знаний может занять некоторое время, необходимо повторять вызовы, чтобы проверить состояние, пока не вернется успешный или неудачный ответ. Когда операция завершается успешно, идентификатор базы знаний возвращается в **resourceLocation**.
 
 [!code-csharp[Add CreateKB method](~/samples-qnamaker-csharp/documentation-samples/quickstarts/create-knowledge-base/QnaQuickstartCreateKnowledgebase/Program.cs?range=189-254 "Add CreateKB method")]
 

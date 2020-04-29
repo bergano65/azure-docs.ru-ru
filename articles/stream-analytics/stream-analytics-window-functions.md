@@ -8,17 +8,17 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.openlocfilehash: 872eec62e7a629d76533aa6c9906cbdb64c32236
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80745560"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Общие сведения о функциях управления окнами Stream Analytics
 
 При использовании потоковой передачи в реальном времени необходимо выполнять операции с теми данными, которые содержатся во временных окнах. В Stream Analytics имеется встроенная поддержка функций управления окнами. Это позволяет разработчикам выполнять сложные задания по обработке потоков с минимальными усилиями.
 
-Есть четыре типа временных окон: [**переворачивающиеся**](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics), [**прыгающие**](https://docs.microsoft.com/stream-analytics-query/hopping-window-azure-stream-analytics), [**скользящие**](https://docs.microsoft.com/stream-analytics-query/sliding-window-azure-stream-analytics)окна и окна [**сеансов**](https://docs.microsoft.com/stream-analytics-query/session-window-azure-stream-analytics).  Функции управления окнами используются в предложении [**GROUP BY**](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics. Вы также можете агрегировать события через несколько окон с помощью [функции **Windows()** ](https://docs.microsoft.com/stream-analytics-query/windows-azure-stream-analytics).
+Есть четыре типа временных окон: [**переворачивающиеся**](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics), [**прыгающие**](https://docs.microsoft.com/stream-analytics-query/hopping-window-azure-stream-analytics), [**скользящие**](https://docs.microsoft.com/stream-analytics-query/sliding-window-azure-stream-analytics)окна и окна [**сеансов**](https://docs.microsoft.com/stream-analytics-query/session-window-azure-stream-analytics).  Функции управления окнами используются в предложении [**GROUP BY**](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics. Можно также выполнять статистическую обработку событий в нескольких окнах с помощью [функции **Windows ()** ](https://docs.microsoft.com/stream-analytics-query/windows-azure-stream-analytics).
 
 Все операции [управления окнами](https://docs.microsoft.com/stream-analytics-query/windowing-azure-stream-analytics) выводят результаты в **конце** окна. Результатом для окна будет единичное событие, полученное на основе выбранной статистической функции. Метка времени для выходного события соответствует времени завершения окна, и все функции управления окнами выполняются с фиксированной длительностью. 
 
@@ -35,7 +35,7 @@ ms.locfileid: "80745560"
 !["Прыгающее" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png)
 
 ## <a name="sliding-window"></a>"Скользящее" окно
-Функции раздвижных окон, в отличие от Tumbling или Прыжковые окна, производят выход **только** в случае события. Каждое окно будет иметь по крайней мере одно событие, и окно постоянно движется вперед по (epsilon). Как и в случае с "прыгающими" окнами, каждое событие может принадлежать к нескольким "скользящим" окнам.
+Функции скользящего окна, в отличие от окон "переворачивающегося" или прыгающее», выдают выходные данные **только** при возникновении события. Каждое окно будет иметь по крайней мере одно событие, и окно постоянно перемещается вперед с помощью ε (Эпсилон). Как и в случае с "прыгающими" окнами, каждое событие может принадлежать к нескольким "скользящим" окнам.
 
 !["Скользящее" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
 
@@ -51,9 +51,9 @@ ms.locfileid: "80745560"
 Если указан ключ секции, то события группируются по ключу, и "сеансовое" окно применяется отдельно к каждой группе. Такое секционирование удобно в случаях, когда требуются разные "сеансовые" окна для различных пользователей или устройств.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Начало использования аналитики потоков Azure](stream-analytics-real-time-fraud-detection.md)
+* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

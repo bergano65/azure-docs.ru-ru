@@ -5,19 +5,19 @@ ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
 ms.openlocfilehash: dc5e251fee00ee22edb2261c1abd8404714834ba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78668509"
 ---
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
-Каждый запрос требует заголовка авторизации. В этой таблице показано, какие заголовки поддерживаются для каждой службы:
+Для каждого запроса требуется заголовок Authorization. В этой таблице показано, какие заголовки поддерживаются для каждой службы:
 
 | Поддерживаемые заголовки авторизации | Преобразование речи в текст | Преобразование текста в речь |
 |------------------------|----------------|----------------|
-| Ocp-Apim-Subscription-Key | Да | нет |
+| Ocp-Apim-Subscription-Key | Да | Нет |
 | Authorization: Bearer | Да | Да |
 
 При использовании заголовка `Ocp-Apim-Subscription-Key` необходимо предоставить только ключ подписки. Пример:
@@ -26,19 +26,19 @@ ms.locfileid: "78668509"
 'Ocp-Apim-Subscription-Key': 'YOUR_SUBSCRIPTION_KEY'
 ```
 
-При использовании заголовка `Authorization: Bearer` необходимо выполнять запрос к конечной точке `issueToken`. В этом запросе ключ подписки обменивается на маркер доступа, действительный в течение 10 минут. В следующих нескольких разделах вы узнаете, как получить маркер, и использовать маркер.
+При использовании заголовка `Authorization: Bearer` необходимо выполнять запрос к конечной точке `issueToken`. В этом запросе ключ подписки обменивается на маркер доступа, действительный в течение 10 минут. В следующих нескольких разделах вы узнаете, как получить маркер и использовать маркер.
 
 ### <a name="how-to-get-an-access-token"></a>Как получить маркер доступа
 
 Чтобы получить маркер доступа, необходимо отправить запрос в конечную точку `issueToken`, используя заголовок `Ocp-Apim-Subscription-Key` и ключ подписки.
 
-Конечная `issueToken` точка имеет этот формат:
+`issueToken` Конечная точка имеет следующий формат:
 
 ```http
 https://<REGION_IDENTIFIER>.api.cognitive.microsoft.com/sts/v1.0/issueToken
 ```
 
-Замените `<REGION_IDENTIFIER>` идентификатор, соответствующий области подписки из этой таблицы:
+Замените `<REGION_IDENTIFIER>` идентификатором, соответствующим региону подписки, из следующей таблицы:
 
 [!INCLUDE [](cognitive-services-speech-service-region-identifier.md)]
 

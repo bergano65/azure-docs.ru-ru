@@ -1,6 +1,6 @@
 ---
 title: Строки подключения
-description: Строки подключения для бассейна Synapse S'L
+description: Строки подключения для пула SQL синапсе
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -12,15 +12,15 @@ ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: aad65c112bfc5a6a80f481fe3748e0f4d5c52f74
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80745285"
 ---
-# <a name="connection-strings-for-synapse-sql-pool"></a>Строки подключения для бассейна Synapse S'L
+# <a name="connection-strings-for-synapse-sql-pool"></a>Строки подключения для пула SQL синапсе
 
-Вы можете подключиться к пулу S'L с несколькими различными протоколами приложений, такими как, [ADO.NET,](/dotnet/framework/data/adonet?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) [ODBC,](/sql/connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) [PHP](/sql/connect/php/overview-of-the-php-sql-driver?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)и [JDBC.](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) Ниже приведены некоторые примеры строк подключения для каждого протокола.  Кроме того, для формирования строки подключения можно использовать портал Azure.  
+Вы можете подключиться к пулу SQL с помощью нескольких различных протоколов приложений, таких как, [ADO.NET](/dotnet/framework/data/adonet?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), [ODBC](/sql/connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [PHP](/sql/connect/php/overview-of-the-php-sql-driver?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)и [JDBC](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Ниже приведены некоторые примеры строк подключения для каждого протокола.  Кроме того, для формирования строки подключения можно использовать портал Azure.  
 
 Чтобы создать строку подключения с помощью портала Azure, перейдите к колонке своей базы данных и в разделе *Основное* щелкните *Показать строки подключения к базам данных*.
 
@@ -51,6 +51,6 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 > [!NOTE]
 > Попробуйте установить время ожидания подключения в 300 секунд, чтобы короткие периоды недоступности были допустимы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы начать запрос на пул S'L с помощью Visual Studio и других приложений, [см.](sql-data-warehouse-query-visual-studio.md)
+Чтобы начать запрос к пулу SQL с помощью Visual Studio и других приложений, см. статью создание [запросов с помощью Visual Studio](sql-data-warehouse-query-visual-studio.md).

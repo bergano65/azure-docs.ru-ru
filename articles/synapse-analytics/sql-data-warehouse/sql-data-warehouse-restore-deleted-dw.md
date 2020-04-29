@@ -1,6 +1,6 @@
 ---
-title: Восстановление удаленного пула S'L
-description: Как руководство для восстановления удаленного пула S'L.
+title: Восстановление удаленного пула SQL
+description: Руководство по восстановлению удаленного пула SQL.
 services: synapse-analytics
 author: anumjs
 manager: craigg
@@ -12,36 +12,36 @@ ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: d2e2fdb181b553d330368b043b75159e211dd0d2
-ms.sourcegitcommit: bd5fee5c56f2cbe74aa8569a1a5bce12a3b3efa6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80745126"
 ---
-# <a name="restore-a-deleted-sql-pool-using-azure-synapse-analytics"></a>Восстановление удаленного пула S'L с помощью аналитики Azure Synapse
+# <a name="restore-a-deleted-sql-pool-using-azure-synapse-analytics"></a>Восстановление удаленного пула SQL с помощью Azure синапсе Analytics
 
-В этой статье вы научитесь восстанавливать S'L с помощью портала Azure или PowerShell.
+Из этой статьи вы узнаете, как восстановить SQL с помощью портал Azure или PowerShell.
 
 ## <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-**Проверьте ресурсы DTU.** Каждый пул S'L размещается сервером S'L (например, myserver.database.windows.net), который имеет по умолчанию квоту DTU.  Удостоверьте, что сервер S'L имеет достаточно оставшихся квот DTU для восстановления базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
+**Проверьте ресурсы DTU.** Каждый пул SQL размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию.  Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
-## <a name="restore-a-deleted-data-warehouse-through-powershell"></a>Восстановление удаленного хранилища данных через PowerShell
+## <a name="restore-a-deleted-data-warehouse-through-powershell"></a>Восстановление удаленного хранилища данных с помощью PowerShell
 
-Для восстановления удаленного пула S'L используйте cmdlet [Restore-AzSqlDatabase.](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) Если соответствующий логический сервер также был удален, вы не можете восстановить этот хранилище данных.
+Чтобы восстановить удаленный пул SQL, используйте командлет [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) . Если соответствующий логический сервер также был удален, вы не сможете восстановить это хранилище данных.
 
-1. Перед тем, как начать, не забудьте [установить Azure PowerShell.](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
+1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Откройте PowerShell.
 3. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
-4. Выберите подписку, содержащую удаленный хранилище данных, который будет восстановлен.
-5. Получите специальный удаленный хранилище данных.
+4. Выберите подписку, содержащую удаленное хранилище данных для восстановления.
+5. Получение конкретного удаленного хранилища данных.
 6. Восстановление удаленного хранилища данных
-    1. Чтобы восстановить удаленный хранилище данных S'L на другом логическом сервере, не забудьте указать другое логическое имя сервера.  Этот логический сервер также может находиться в другой группе ресурсов и регионе.
-    1. Чтобы восстановить другую подписку, используйте кнопку [Move](../../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#use-the-portal) для перемещения логического сервера в другую подписку.
-7. Убедитесь, что восстановленный хранилище данных находится в режиме онлайн.
-8. После завершения восстановления можно настроить восстановленный хранилище данных, после [настройки базы данных после восстановления.](../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery)
+    1. Чтобы восстановить удаленное хранилище данных SQL на другой логический сервер, убедитесь, что указано другое имя логического сервера.  Этот логический сервер также может находиться в другой группе ресурсов и регионе.
+    1. Чтобы выполнить восстановление в другую подписку, используйте кнопку [переместить](../../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#use-the-portal) , чтобы переместить логический сервер в другую подписку.
+7. Убедитесь, что восстановленное хранилище данных подключено.
+8. После завершения восстановления можно настроить восстановленное хранилище данных, следуя [настройке базы данных после восстановления](../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
 
 ```Powershell
 $SubscriptionName="<YourSubscriptionName>"
@@ -72,20 +72,20 @@ $RestoredDatabase.status
 ## <a name="restore-a-deleted-database-using-the-azure-portal"></a>Восстановление удаленной базы данных на портале Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Перейдите на сервер S'L, на котором размещался удаленный хранилище данных.
-3. Выберите значок **удаленных баз данных** в таблице содержимого.
+2. Перейдите к серверу SQL Server, на котором размещено удаленное хранилище данных.
+3. Выберите значок **Удаленные базы данных** в содержании.
 
     ![Удаленные базы данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-01.png)
 
-4. Выберите удаленный хранилище данных S'L, который необходимо восстановить.
+4. Выберите удаленное хранилище данных SQL, которое необходимо восстановить.
 
     ![Выбор удаленных баз данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-11.png)
 
-5. Указать новое **имя базы данных** и нажмите **OK**
+5. Укажите новое **имя базы данных** и нажмите кнопку **ОК** .
 
     ![Указание нового имени базы данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-21.png)
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Восстановление существующего пула S'L](sql-data-warehouse-restore-active-paused-dw.md)
-- [Восстановление из пула георезервного копирования S'L](sql-data-warehouse-restore-from-geo-backup.md)
+- [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)

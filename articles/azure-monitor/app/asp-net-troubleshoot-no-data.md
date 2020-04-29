@@ -4,13 +4,13 @@ description: Не отображаются данные в Azure Application Ins
 ms.topic: conceptual
 ms.date: 07/23/2018
 ms.openlocfilehash: 34fc51f8f656ec0f630bd984ac1b28fbaa5e4dae
-ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80802592"
 ---
-# <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение проблем без данных - Исследования приложений для .NET/.NET Core
+# <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок без Application Insights данных для .NET и .NET Core
 
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
 *В Application Insights отображается только часть событий, создаваемых приложением.*
@@ -18,15 +18,15 @@ ms.locfileid: "80802592"
 * Если постоянно отображается одна и та же часть, это может быть связано с адаптивной [выборкой](../../azure-monitor/app/sampling.md). Чтобы проверить это, откройте область поиска (из колонки "Обзор") и посмотрите на экземпляр запроса или другого события. В нижней части раздела свойств нажмите кнопку "...", чтобы отобразить все сведения свойств. Если число запросов > 1, то выборка работает.
 * В противном случае, возможно, превышено [ограничение на скорость передачи данных](../../azure-monitor/app/pricing.md#limits-summary) для вашего плана ценообразования. Эти ограничения применяются в пропорционально по минутам.
 
-*Я испытываю потерю данных случайным образом.*
+*Я столкнулся с потерей данных случайным образом.*
 
-* Проверьте, если вы испытываете потерю данных в [Telemetry Channel](telemetry-channels.md#does-the-application-insights-channel-guarantee-telemetry-delivery-if-not-what-are-the-scenarios-in-which-telemetry-can-be-lost)
+* Проверьте, возникают ли потери данных в [канале телеметрии](telemetry-channels.md#does-the-application-insights-channel-guarantee-telemetry-delivery-if-not-what-are-the-scenarios-in-which-telemetry-can-be-lost)
 
-* Проверьте наличие известных проблем в Репо Telemetry Channel [GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet/issues)
+* Проверьте наличие известных проблем в [репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet/issues) канала телеметрии.
 
-*Я испытываю потерю данных в console App или в Web App, когда приложение вот-вот прекратится.*
+*Я столкнулся с потерей данных в консольном приложении или в веб-приложении, когда приложение собирается закончить работу.*
 
-* Канал SDK сохраняет телеметрию в буфере и отправляет их партиями. Если приложение закрывается, возможно, потребуется явно вызвать [флеш()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от используемого [канала.](telemetry-channels.md#built-in-telemetry-channels)
+* Канал пакета SDK хранит данные телеметрии в буфере и отправляет их в пакетах. Если приложение завершает работу, может потребоваться явно вызвать метод [flush ()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от фактического используемого [канала](telemetry-channels.md#built-in-telemetry-channels) .
 
 ## <a name="no-data-from-my-server"></a>Нет данных с моего сервера
 *На моем веб-сервере установлено приложение, но данные телеметрии сервера не отображаются. На компьютере разработки все работало хорошо.*
@@ -34,7 +34,7 @@ ms.locfileid: "80802592"
 * Возможно, проблема в брандмауэре. [Установите исключения брандмауэра для отправки данных Application Insights](../../azure-monitor/app/ip-addresses.md).
 * На сервере IIS могут отсутствовать некоторые предварительные условия: расширяемость .NET 4.5 и ASP.NET 4.5.
 
-*Я [установил status Monitor](../../azure-monitor/app/monitor-performance-live-website-now.md) на своем веб-сервере для мониторинга существующих приложений. Я не вижу никаких результатов.*
+*Я [установил монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md) на моем веб-сервере для мониторинга существующих приложений. Результаты не отображаются.*
 
 * См. раздел [Устранение неполадок](../../azure-monitor/app/monitor-performance-live-website-now.md#troubleshoot).
 
@@ -44,7 +44,7 @@ ms.locfileid: "80802592"
 * Средства Application Insights поддерживают не все типы проектов .NET. Проекты WCF и веб-проекты поддерживаются. В проекты других типов, например в приложения-службы и классические приложения, можно [вручную добавить пакет SDK службы Application Insights](../../azure-monitor/app/windows-desktop.md).
 * Убедитесь в том, что установлена версия [Visual Studio 2013 с обновлением 3 или более поздним](https://docs.microsoft.com/visualstudio/releasenotes/vs2013-update3-rtm-vs). Решение поставляется предварительно установленным с аналитическими средствами для разработчиков в рамках пакета Application Insights SDK.
 * Выберите элементы **Сервис**, **Расширения и обновления** и убедитесь, что пакет **Аналитические средства для разработчиков** установлен и включен. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
-* Откройте диалоговое окно "Новый проект" и выберите "Веб-приложение ASP.NET". Если параметр Application Insights отображается, соответствующие средства установлены. Если нет, попробуйте установить, а затем переустановить инструменты для аналитики разработчиков.
+* Откройте диалоговое окно "Новый проект" и выберите "Веб-приложение ASP.NET". Если параметр Application Insights отображается, соответствующие средства установлены. В противном случае попробуйте удалить и повторно установить Developer Analytics Tools.
 
 ## <a name="adding-application-insights-failed"></a><a name="q02"></a>Сбой при добавлении Application Insights
 *При попытке добавить Application Insights в существующий проект я вижу сообщение об ошибке.*
@@ -83,10 +83,10 @@ ms.locfileid: "80802592"
 Исправление:
 
 * Обновите Visual Studio до версии 2013 с обновлением 3 или более поздней.
-* Выберите **инструменты,** **расширения и обновления** и убедитесь, что **инструменты Developer Analytics** установлены и включены. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
+* Выберите **инструменты**, **расширения и обновления** и убедитесь, что **средства анализа для разработчиков** установлены и включены. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
 * В обозревателе решений щелкните проект правой кнопкой мыши. Если вы видите команду **Application Insights > Настроить Application Insights**, используйте ее, чтобы подключить проект к ресурсу в службе Application Insights.
 
-В противном случае тип проекта не поддерживается напрямую инструментами аналитики разработчиков. Для просмотра данных телеметрии войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
+В противном случае тип проекта не поддерживается напрямую средствами аналитики для разработчиков. Для просмотра данных телеметрии войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
 
 ## <a name="access-denied-on-opening-application-insights-from-visual-studio"></a>При открытии Application Insights из Visual Studio возникает ошибка "Доступ запрещен"
 *При выборе команды меню "Открыть Application Insights" выполняется переход на портал Azure, но при этом появляется сообщение об ошибке "Доступ запрещен".*
@@ -94,7 +94,7 @@ ms.locfileid: "80802592"
 При вводе учетных данных Майкрософт, которые вы в последний раз использовали в стандартном браузере, отсутствует доступ к [ресурсу, который был создан при добавлении Application Insights в это приложение](../../azure-monitor/app/asp-net.md). Есть две вероятные причины:
 
 * Возможно, у вас не одна учетная запись Майкрософт, а несколько — например, рабочая и личная. В последний раз вы использовали в браузере по умолчанию не ту учетную запись, с помощью которой [добавляли Application Insights в проект](../../azure-monitor/app/asp-net.md).
-  * Исправление: Нажмите на свое имя в правом верхнем ряде с окном браузера и выйти. Затем вопием со счетом, который имеет доступ. Затем на панели навигации слева щелкните Application Insights и выберите приложение.
+  * Исправление. Щелкните свое имя в правом верхнем углу окна браузера и выйдите из него. Затем войдите в систему, используя учетную запись с доступом. Затем на панели навигации слева щелкните Application Insights и выберите приложение.
 * Кто-то другой добавил Application Insights в проект и забыл предоставить вам [доступ к группе ресурсов](../../azure-monitor/app/resources-roles-access-control.md) , в которой он был создан.
   * Исправление: если этот пользователь использовал рабочую или учебную учетную запись, возможно, он добавил вас в группу или предоставил вам индивидуальный доступ к группе ресурсов.
 
@@ -114,7 +114,7 @@ ms.locfileid: "80802592"
 * Откройте ресурс напрямую. Войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
 
 ## <a name="where-do-i-find-my-telemetry"></a>Где найти мои данные телеметрии
-*Я вписался на [портал Microsoft Azure](https://portal.azure.com)и смотрю на домашнюю панель мониторинга Azure. Так где же я могу найти данные application Insights?*
+*Я вошел в [портал Microsoft Azure](https://portal.azure.com), и я ищу панель мониторинга домашней панели Azure. Итак, где найти данные Application Insights?*
 
 * На панели навигации слева щелкните Application Insights и выберите имя приложения. Если проекты не отображаются, [добавьте или настройте Application Insights в своем веб-проекте](../../azure-monitor/app/asp-net.md).  
   Вы увидите несколько сводных диаграмм. Щелкните любую из них, чтобы увидеть более подробные данные.
@@ -159,10 +159,10 @@ ms.locfileid: "80802592"
 
 ## <a name="i-used-to-see-data-but-it-has-stopped"></a>Ранее видимые данные перестали отображаться
 * Проверьте [блог состояний](https://blogs.msdn.com/b/applicationinsights-status/).
-* Вы достигли месячной квоты точек данных? Откройте настройки /квоты и цены, чтобы узнать. Если это так, вы можете обновить свой план, или платить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
+* Вы достигли месячной квоты точек данных? Чтобы узнать, откройте параметры, квоту и цены. Если это так, вы можете обновить план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
 
 ## <a name="i-dont-see-all-the-data-im-expecting"></a>Не отображаются все данные, которые ожидалось увидеть
-Если ваше приложение отправляет много данных, и вы используете Application Insights SDK для ASP.NET версии 2.0.0-beta3 или позже, функция [адаптивной выборки](../../azure-monitor/app/sampling.md) может работать и отправлять только процент от вашей телеметрии.
+Если приложение отправляет большой объем данных и вы используете Application Insights SDK для ASP.NET версии 2.0.0-beta3 или более поздней, функция [адаптивной выборки](../../azure-monitor/app/sampling.md) может выполнять работу и отправлять только процент данных телеметрии.
 
 Ее можно отключить, но это не рекомендуется. Выборка разработана таким образом, чтобы связанные данные телеметрии правильно передавались для диагностических целей.
 
@@ -209,7 +209,7 @@ ms.locfileid: "80802592"
 
 1. Установите пакет [Microsoft.AspNet.ApplicationInsights.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNet.ApplicationInsights.HostingStartup) из NuGet. Устанавливаемая версия должна соответствовать текущей установленной версии `Microsoft.ApplicationInsights`
 
-Последняя версия Microsoft.ApplicationInsights.AspNetCore составляет 2.8.2, и это относится к версии Microsoft.ApplicationInsights 2.11.2. Таким образом, версия Microsoft.AspNet.ApplicationInsights.HostingStartup, который будет установлен должен быть 2.11.2
+Последняя версия Microsoft. ApplicationInsights. AspNetCore — 2.8.2, и она ссылается на Microsoft. ApplicationInsights версии 2.11.2. Таким образом, устанавливаемая версия Microsoft. AspNet. ApplicationInsights. Хостингстартуп должна быть 2.11.2
 
 2. Изменить `ConfigureServices` метод в вашем `Startup.cs` классе:
 
@@ -228,29 +228,29 @@ ms.locfileid: "80802592"
 4. Когда вы закончите, отмените эти изменения.
 
 
-## <a name="collect-logs-with-perfview"></a><a name="PerfView"></a>Сбор журналов с Помощью PerfView
-[PerfView](https://github.com/Microsoft/perfview) — это бесплатный инструмент диагностики и анализа производительности, который помогает изолировать процессор, память и другие проблемы, собирая и визуализируя информацию о диагностике из многих источников.
+## <a name="collect-logs-with-perfview"></a><a name="PerfView"></a>Получение журналов с помощью PerfView
+[PerfView](https://github.com/Microsoft/perfview) — это бесплатное средство диагностики и анализа производительности, которое помогает изолировать ресурсы ЦП, памяти и другие проблемы, собирая и визуализируя диагностические сведения из многих источников.
 
-Приложение Insights SDK журналevent EventSource самоустранения журналов, которые могут быть захвачены PerfView.
+Журнал Application Insights SDK регистрирует журналы самостоятельного устранения неполадок, которые можно записать с помощью PerfView.
 
-Чтобы собрать журналы, загрузите PerfView и запустите эту команду:
+Чтобы получить журналы, скачайте PerfView и выполните следующую команду:
 ```cmd
 PerfView.exe collect -MaxCollectSec:300 -NoGui /onlyProviders=*Microsoft-ApplicationInsights-Core,*Microsoft-ApplicationInsights-Data,*Microsoft-ApplicationInsights-WindowsServer-TelemetryChannel,*Microsoft-ApplicationInsights-Extensibility-AppMapCorrelation-Dependency,*Microsoft-ApplicationInsights-Extensibility-AppMapCorrelation-Web,*Microsoft-ApplicationInsights-Extensibility-DependencyCollector,*Microsoft-ApplicationInsights-Extensibility-HostingStartup,*Microsoft-ApplicationInsights-Extensibility-PerformanceCollector,*Microsoft-ApplicationInsights-Extensibility-EventCounterCollector,*Microsoft-ApplicationInsights-Extensibility-PerformanceCollector-QuickPulse,*Microsoft-ApplicationInsights-Extensibility-Web,*Microsoft-ApplicationInsights-Extensibility-WindowsServer,*Microsoft-ApplicationInsights-WindowsServer-Core,*Microsoft-ApplicationInsights-Extensibility-EventSourceListener,*Microsoft-ApplicationInsights-AspNetCore
 ```
 
-Вы можете изменить эти параметры по мере необходимости:
-- **MaxCollectSec**. Установите этот параметр, чтобы предотвратить бессрочное запуск PerfView и повлиять на производительность сервера.
-- **Толькопоставщики**. Установите этот параметр, чтобы собирать только журналы из SDK. Вы можете настроить этот список на основе ваших конкретных исследований. 
-- **NoGui**. Установите этот параметр для сбора журналов без графического интерфейса.
+При необходимости эти параметры можно изменить.
+- **Максколлектсек**. Задайте этот параметр, чтобы предотвратить неограниченный запуск PerfView и влияние на производительность сервера.
+- **Онлипровидерс**. Установите этот параметр, чтобы получать только журналы из пакета SDK. Этот список можно настроить в соответствии с конкретным расследованиям. 
+- **Ногуи**. Установите этот параметр, чтобы получать журналы без графического пользовательского интерфейса.
 
 
 Дополнительные сведения
-- [Запись следов производительности с PerfView](https://github.com/dotnet/roslyn/wiki/Recording-performance-traces-with-PerfView).
+- [Запись трассировок производительности с помощью PerfView](https://github.com/dotnet/roslyn/wiki/Recording-performance-traces-with-PerfView).
 - [Источники событий Application Insights](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/ETW)
 
-## <a name="how-to-remove-application-insights"></a>Как удалить исследования приложений
+## <a name="how-to-remove-application-insights"></a>Удаление Application Insights
 
-Узнайте, как удалить Application Insights в Visual Studio, выстраивая следующие действия, приведенные в [статье](../../azure-monitor/app/remove-application-insights.md)удаления.
+Узнайте, как удалить Application Insights в Visual Studio, выполнив действия, приведенные в [статье](../../azure-monitor/app/remove-application-insights.md)удаление.
 
 ## <a name="still-not-working"></a>По-прежнему не работает...
 * [Форум Application Insights](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
