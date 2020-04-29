@@ -1,5 +1,5 @@
 ---
-title: Функции функции Azure в фабрике данных Azure
+title: Действие функции Azure в фабрике данных Azure
 description: Узнайте, как с помощью действия функции Azure запускать функцию Azure в конвейере Фабрики данных
 services: data-factory
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.openlocfilehash: ee2e59e794cf34a8fd5043a56867a81c2537f1ae
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81415310"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
@@ -28,47 +28,47 @@ ms.locfileid: "81415310"
 
 ## <a name="azure-function-linked-service"></a>Связанные службы функции Azure
 
-Тип возвращаемого значения функции Azure должен быть допустимым объектом `JObject`. (Имейте в виду, *not* что `JObject` [JArray](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm) не .) Любой тип `JObject` возврата, кроме сбоев и повышает пользовательскую ошибку *Response Content, не является допустимым JObject.*
+Тип возвращаемого значения функции Azure должен быть допустимым объектом `JObject`. (Помните, что [жаррай](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm) *не* является `JObject`.) Любой тип возвращаемого значения `JObject` , отличный от, не дает ошибки и создает содержимое ответа об ошибке пользователя *, не является допустимым JObject*.
 
-| **Свойство** | **Описание** | **Обязательно** |
+| **Свойство** | **Описание** | **Обязательное** |
 | --- | --- | --- |
-| type   | Свойство типа должно быть установлено: **AzureFunction** | да |
+| type   | Для свойства Type необходимо задать значение **азурефунктион** . | да |
 | function app url | URL-адрес для приложения-функции Azure. Формат – `https://<accountname>.azurewebsites.net`. Этот URL-адрес – это значение в разделе **URL** при просмотре приложения-функции на портале Azure  | да |
-| function key | Ключ доступа для функции Azure. Щелкните раздел **Управление** для соответствующей функции и скопируйте **Function Key** (ключ функции) или **Host key** (ключ хоста). Узнайте больше здесь: [Azure Функции HTTP триггеры и привязки](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys) | да |
+| function key | Ключ доступа для функции Azure. Щелкните раздел **Управление** для соответствующей функции и скопируйте **Function Key** (ключ функции) или **Host key** (ключ хоста). Дополнительные сведения см. здесь: [триггеры и привязки HTTP для функций Azure](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys) . | да |
 |   |   |   |
 
 ## <a name="azure-function-activity"></a>Действие функции Azure
 
-| **Свойство**  | **Описание** | **Разрешенные значения** | **Обязательно** |
+| **Свойство**  | **Описание** | **Допустимые значения** | **Обязательное** |
 | --- | --- | --- | --- |
 | name  | Имя действия в конвейере.  | Строка | да |
 | type  | Тип действия – "AzureFunctionActivity" | Строка | да |
 | linked service | Связанная служба функции Azure для соответствующего приложения-функции Azure  | Ссылка на связанную службу | да |
 | имя функции  | Имя функции, которую вызывает это действие в приложении-функции Azure | Строка | да |
-| method  | Метод REST API для вызова функции | Типы поддержки строки: "GET", "POST", "PUT"   | да |
-| Верхний колонтитул  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | нет |
+| method  | Метод REST API для вызова функции | Поддерживаемые строковые типы: "GET", "POST", "постановка"   | да |
+| Верхний колонтитул  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | Нет |
 | текст  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка") или объект.   | Необходимо для методов PUT или POST |
 |   |   |   | |
 
-Просмотреть схему полезной нагрузки запроса в разделе [Схема полезной нагрузки Запроса.](control-flow-web-activity.md#request-payload-schema) 
+См. схему полезные данные запроса в разделе [схема полезных данных запроса](control-flow-web-activity.md#request-payload-schema).
 
-## <a name="routing-and-queries"></a>Реуктораинг и запросы
+## <a name="routing-and-queries"></a>Маршрутизация и запросы
 
-Действие функции Azure поддерживает **маршрутизацию**. Например, если функция Azure имеет `https://functionAPP.azurewebsites.net/api/<functionName>/<value>?code=<secret>`конечную `functionName` точку, то для `<functionName>/<value>`использования в функции Azure — это средство. Можно параметризировать эту функцию, чтобы обеспечить желаемое `functionName` во время выполнения.
+Действие функции Azure поддерживает **маршрутизацию**. Например, если у функции Azure есть конечная точка `https://functionAPP.azurewebsites.net/api/<functionName>/<value>?code=<secret>`, то `functionName` для использования в действии функции Azure используется `<functionName>/<value>`. Эту функцию можно параметризовать, чтобы обеспечить требуемую `functionName` среду выполнения.
 
-Действие функции Azure поддерживает **запросы**. Запрос должен быть включен в состав `functionName`. Например, когда имя `HttpTriggerCSharp` функции и `name=hello`запрос, который вы хотите включить, `functionName` таков, можно `HttpTriggerCSharp?name=hello`построить функцию функции Azure как Эта функция может быть параметризирована, так что значение может быть определено во время выполнения.
+Действие функции Azure поддерживает **запросы**. Запрос должен быть включен в состав `functionName`. Например, если `HttpTriggerCSharp` имя функции —, а запрос, который требуется включить, — `name=hello`, то можно создать `functionName` в действии функции Azure как. `HttpTriggerCSharp?name=hello` Эта функция может быть параметризована, чтобы значение можно было определить во время выполнения.
 
-## <a name="timeout-and-long-running-functions"></a>Тайм-аут и длительные функции
+## <a name="timeout-and-long-running-functions"></a>Время ожидания и длительные функции
 
-Функции Azure выходят через 230 секунд, независимо от `functionTimeout` настройки, настроенной в настройках. Дополнительные сведения см. в [этой статье](../azure-functions/functions-versions.md#timeout). Чтобы обойти это поведение, следуйте шаблону async или используйте долгосрочные функции. Преимущество функций durable заключается в том, что они предлагают свой собственный механизм отслеживания состояния, так что вам не придется реализовывать свой собственный.
+Время ожидания функций Azure истекает через 230 секунд независимо от `functionTimeout` параметра, настроенного в параметрах. Дополнительные сведения см. в [этой статье](../azure-functions/functions-versions.md#timeout). Чтобы обойти это поведение, выполните шаблон асинхронного режима или используйте Устойчивые функции. Преимуществом Устойчивые функции является то, что они предлагают собственный механизм отслеживания состояния, поэтому вам не придется реализовывать собственные.
 
-Подробнее о функциях длительного пользования читайте в [этой статье](../azure-functions/durable/durable-functions-overview.md). Можно настроить функцию функции Azure для вызова функции durable, которая вернет ответ с другим URI, [например, в этом примере.](../azure-functions/durable/durable-functions-http-features.md#http-api-url-discovery) Поскольку `statusQueryGetUri` при запуске функции HTTP Status 202 можно опросить состояние функции с помощью Web Activity. Просто навяжните `url` веб-активность с набором `@activity('<AzureFunctionActivityName>').output.statusQueryGetUri`поля. Когда функция durable завершается, выход функции будет выходом Web-активности.
+Дополнительные сведения о Устойчивые функции см. в [этой статье](../azure-functions/durable/durable-functions-overview.md). Вы можете настроить действие функции Azure для вызова устойчивой функции, которая вернет ответ с другим URI, например в [этом примере](../azure-functions/durable/durable-functions-http-features.md#http-api-url-discovery). Так `statusQueryGetUri` как функция ВОЗВРАЩАЕТ состояние HTTP 202 во время выполнения функции, можно опросить состояние функции с помощью веб-действия. Просто настройте веб-действие с полем, `url` для `@activity('<AzureFunctionActivityName>').output.statusQueryGetUri`которого задано значение. После завершения устойчивой функции выходные данные функции будут выходом веб-действия.
 
 
 ## <a name="sample"></a>Пример
 
-Вы можете найти образец фабрики данных, которая использует функцию Azure для извлечения содержимого файла смолы [здесь.](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction)
+Образец фабрики данных, который использует функцию Azure для извлечения содержимого tar-файла, можно найти [здесь](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о действиях в Фабрике данных см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md).

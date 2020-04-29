@@ -5,22 +5,22 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc
 ms.openlocfilehash: a9026e46f2fd386892af5a3d8f4ec8d7e0c9f649
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81411012"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
 Из этой статьи вы узнаете как развернуть кластер Service Fabric на платформе Linux в [виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md) с помощью Azure CLI и шаблона. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установка [сервисной ткани CLI](service-fabric-cli.md)
+* Установка [Service Fabric CLI](service-fabric-cli.md)
 * Установка [Azure CLI](/cli/azure/install-azure-cli)
 * Чтобы узнать об основных понятиях кластеров, прочитайте статью [Общие сведения о кластерах Service Fabric в Azure](service-fabric-azure-clusters-overview.md).
 * [Спланируйте и подготовьте](service-fabric-cluster-azure-deployment-preparation.md) развертывание рабочего кластера.
@@ -31,19 +31,19 @@ ms.locfileid: "81411012"
 
 Скачайте следующие файлы шаблона Resource Manager:
 
-Для Ubuntu 16.04 LTS:
+Для Ubuntu 16,04 LTS:
 
-* [AzureDeploy.json][template]
-* [AzureDeploy.Parameters.json][parameters]
+* [AzureDeploy. JSON][template]
+* [AzureDeploy. parameters. JSON][parameters]
 
-Для Ubuntu 18.04 LTS:
+Для Ubuntu 18,04 LTS:
 
-* [AzureDeploy.json][template2]
-* [AzureDeploy.Parameters.json][parameters2]
+* [AzureDeploy. JSON][template2]
+* [AzureDeploy. parameters. JSON][parameters2]
 
-Разница между двумя шаблонами заключается в том, что атрибут **vmImageSku** устанавливается на "18.04-LTS", а **typeHandlerVersion** каждого узла устанавливается до 1.1.
+Разница между двумя шаблонами — атрибут **вмимажеску** , для которого задано значение "18,04-LTS", а **typeHandlerVersion** каждого узла устанавливается в 1,1.
 
-Этот шаблон позволяет развернуть безопасный кластер семи виртуальных машин и трех типов узлов в виртуальную сеть.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). [AzureDeploy.json][template] развертывает ряд ресурсов, включая следующие.
+Этот шаблон позволяет развернуть безопасный кластер семи виртуальных машин и трех типов узлов в виртуальную сеть.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). [AzureDeploy. JSON][template] развертывает числовые ресурсы, включая следующие.
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
@@ -51,11 +51,11 @@ ms.locfileid: "81411012"
 
 * три типа узлов;
 * пять узлов на первичном типе узла (можно настроить в параметрах шаблона), по одном узлу на каждый тип узла;
-* ОС: (Ubuntu 16.04 LTS / Ubuntu 18.04 LTS) (настраиваемый в параметрах шаблона)
+* ОС: (Ubuntu 16,04 LTS/Ubuntu 18,04 LTS) (можно настроить в параметрах шаблона)
 * защищенный сертификат (можно настроить в параметрах шаблона);
-* [Услуга DNS](service-fabric-dnsservice.md) включена
-* [Уровень прочности](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) бронзы (настраиваемый по параметрам шаблона)
-* [Уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) серебра (настраиваемый по параметрам шаблона)
+* [Служба DNS](service-fabric-dnsservice.md) включена
+* [Уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) бронзовой (настраиваемый в параметрах шаблона)
+* [Уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) серебристого (можно настроить в параметрах шаблона)
 * конечная точка подключения клиента: 19000 (можно настроить в параметрах шаблона);
 * конечная точка HTTP-шлюза: 19080 (можно настроить в параметрах шаблона).
 
@@ -79,7 +79,7 @@ ms.locfileid: "81411012"
 
 ## <a name="set-template-parameters"></a>Установка параметров шаблона
 
-Файл **AzureDeploy.Parameters** декларирует множество значений, используемых для развертывания кластера и связанных с ними ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
+В файле **AzureDeploy. parameters** объявляются многие значения, используемые для развертывания кластера и связанных с ним ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
 
 |Параметр|Пример значения|Примечания|
 |---|---||
@@ -97,7 +97,7 @@ ms.locfileid: "81411012"
 
 Настройте топологию сети и разверните кластер Service Fabric. Шаблон Resource Manager **AzureDeploy.json** создает виртуальную сеть и подсеть для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
 
-Шаблон в этой статье развертывает кластер, использующий отпечаток сертификата для идентификации сертификата кластера.  Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет управление сертификатами. Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им.  Чтобы узнать, как обновить кластер, чтобы использовать общие имена сертификатов для управления сертификатами, прочитайте [кластер изменений для управления общими именами](service-fabric-cluster-change-cert-thumbprint-to-cn.md)сертификатов.
+Шаблон в этой статье развертывает кластер, использующий отпечаток сертификата для идентификации сертификата кластера.  Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет управление сертификатами. Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им.  Чтобы узнать, как обновить кластер, чтобы использовать общие имена сертификатов для управления сертификатами, прочтите статью [изменение кластера на общее имя сертификата](service-fabric-cluster-change-cert-thumbprint-to-cn.md).
 
 ### <a name="create-a-cluster-using-an-existing-certificate"></a>Создание кластера с помощью имеющегося сертификата
 
@@ -168,7 +168,7 @@ sfctl cluster health
 
 Узнайте, как [масштабировать кластер](service-fabric-tutorial-scale-cluster.md).
 
-Шаблон в этой статье развертывает кластер, использующий отпечаток сертификата для идентификации сертификата кластера.  Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет управление сертификатами. Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им.  Чтобы узнать, как обновить кластер, чтобы использовать общие имена сертификатов для управления сертификатами, прочитайте [кластер изменений для управления общими именами](service-fabric-cluster-change-cert-thumbprint-to-cn.md)сертификатов.
+Шаблон в этой статье развертывает кластер, использующий отпечаток сертификата для идентификации сертификата кластера.  Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет управление сертификатами. Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им.  Чтобы узнать, как обновить кластер, чтобы использовать общие имена сертификатов для управления сертификатами, прочтите статью [изменение кластера на общее имя сертификата](service-fabric-cluster-change-cert-thumbprint-to-cn.md).
 
 [template]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/7-VM-Ubuntu-3-NodeTypes-Secure/AzureDeploy.json
 [parameters]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/7-VM-Ubuntu-3-NodeTypes-Secure/AzureDeploy.Parameters.json

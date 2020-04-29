@@ -12,10 +12,10 @@ manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 01/04/2019
 ms.openlocfilehash: 14f1d3b58996d438279bfa2a234c754a6d840c79
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81414736"
 ---
 # <a name="templates"></a>Шаблоны
@@ -31,7 +31,7 @@ ms.locfileid: "81414736"
 
     ![Открытие коллекции шаблонов на странице Overview (Обзор)](media/solution-templates-introduction/templates-intro-image1.png)
 
-1.  На вкладке Автора в **+** Resource Explorer выберите, затем **Pipeline из шаблона,** чтобы открыть галерею шаблонов.
+1.  На вкладке автор в обозреватель ресурсов выберите **+**, затем выберите **конвейер из шаблона** , чтобы открыть галерею шаблонов.
 
     ![Открытие коллекции шаблонов на вкладке Author (Автор)](media/solution-templates-introduction/templates-intro-image2.png)
 
@@ -41,11 +41,11 @@ ms.locfileid: "81414736"
 
 ### <a name="out-of-the-box-data-factory-templates"></a>Готовые шаблоны Фабрики данных
 
-Фабрика данных использует шаблоны Azure Resource Manager для сохранения шаблонов конвейера фабрики данных. Вы можете увидеть все шаблоны менеджера ресурсов, а также файл manifest, используемый для шаблонов box Data Factory, в [официальном репо Azure Data Factory GitHub.](https://github.com/Azure/Azure-DataFactory/tree/master/templates) Предварительно определенные шаблоны, предоставляемые корпорацией Майкрософт, включают, в частности, следующие элементы:
+Фабрика данных использует шаблоны Azure Resource Manager для сохранения шаблонов конвейера фабрики данных. Вы можете просмотреть все шаблоны диспетчер ресурсов, а также файл манифеста, используемый для использования шаблонов фабрики данных, в [официальном репозитории GitHub фабрики данных Azure](https://github.com/Azure/Azure-DataFactory/tree/master/templates). Предварительно определенные шаблоны, предоставляемые корпорацией Майкрософт, включают, в частности, следующие элементы:
 
 -   Шаблоны копирования:
 
-    -   [Массовая копия из базы данных](solution-template-bulk-copy-with-control-table.md)
+    -   [Групповое копирование из базы данных](solution-template-bulk-copy-with-control-table.md)
     
     -   [Копирование новых файлов с использованием параметра LastModifiedDate](solution-template-copy-new-files-lastmodifieddate.md)
 
@@ -53,7 +53,7 @@ ms.locfileid: "81414736"
 
     -   [Перемещение файлов](solution-template-move-files.md)
 
-    -   [Копия Дельты из базы данных](solution-template-delta-copy-with-control-table.md)
+    -   [Разностное копирование из базы данных](solution-template-delta-copy-with-control-table.md)
 
     -   Копирование из \<источника\> в \<назначение\>
 

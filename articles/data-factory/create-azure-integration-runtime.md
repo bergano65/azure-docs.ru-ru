@@ -1,5 +1,5 @@
 ---
-title: Создание времени выполнения интеграции Azure в фабрике данных Azure
+title: Создание среды выполнения интеграции Azure в фабрике данных Azure
 description: Узнайте, как создать среду выполнения интеграции Azure в фабрике данных Azure, используемую для копирования данных и подготовки к отправке действий преобразования.
 services: data-factory
 documentationcenter: ''
@@ -11,10 +11,10 @@ author: nabhishek
 ms.author: abnarain
 manager: anandsub
 ms.openlocfilehash: e32530ece3626807b199850a2b4af5461ff51cde
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81414076"
 ---
 # <a name="how-to-create-and-configure-azure-integration-runtime"></a>Создание и настройка среды выполнения интеграции Azure
@@ -33,38 +33,38 @@ ms.locfileid: "81414076"
 
 ## <a name="create-azure-ir"></a>Создание среды выполнения интеграции Azure
 
-Для создания и настройки ИК Azure можно использовать следующие процедуры.
+Чтобы создать и настроить Azure IR, можно использовать следующие процедуры.
 
-### <a name="create-an-azure-ir-via-azure-powershell"></a>Создание ИК Azure через Azure PowerShell
-Интеграция Runtime может быть создана с помощью **Set-AzDataFactoryV2IntegrationRuntime** PowerShell cmdlet. Чтобы создать ИК Azure, вы укажете имя, местоположение и тип команды. Ниже приведен пример команды для создания среды выполнения интеграции Azure с заданным расположением "Западная Европа":
+### <a name="create-an-azure-ir-via-azure-powershell"></a>Создание Azure IR с помощью Azure PowerShell
+Integration Runtime можно создать с помощью командлета PowerShell **Set-AzDataFactoryV2IntegrationRuntime** . Чтобы создать Azure IR, укажите имя, расположение и тип команды. Ниже приведен пример команды для создания среды выполнения интеграции Azure с заданным расположением "Западная Европа":
 
 ```powershell
 Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName "SampleV2DataFactory1" -Name "MySampleAzureIR" -ResourceGroupName "ADFV2SampleRG" -Type Managed -Location "West Europe"
 ```  
 Для типа среды выполнения интеграции Azure необходимо задать значение **Управляемый**. Указывать детальные сведения вычисления не нужно, так как служба эластично полностью управляется в облаке. Если нужно создать среду выполнения интеграции Azure SSIS, укажите такие сведения о вычислении, как размер и число узлов. Дополнительные сведения см. в статье [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 
-Можно настроить существующую ИК Azure, чтобы изменить его местоположение с помощью cmdlet Set-AzDataFactoryV2IntegrationRuntime PowerShell. Дополнительные сведения о расположении среды выполнения интеграции Azure см. в статье [Integration runtime in Azure Data Factory](concepts-integration-runtime.md) (Среда выполнения интеграции в фабрике данных Azure).
+Вы можете настроить существующую Azure IR, чтобы изменить ее расположение с помощью командлета PowerShell Set-AzDataFactoryV2IntegrationRuntime. Дополнительные сведения о расположении среды выполнения интеграции Azure см. в статье [Integration runtime in Azure Data Factory](concepts-integration-runtime.md) (Среда выполнения интеграции в фабрике данных Azure).
 
-### <a name="create-an-azure-ir-via-azure-data-factory-ui"></a>Создание ИК-иК Azure через uI-иноматизм Azure Data Factory
-Используйте следующие шаги для создания ИК-иК Azure с помощью ui-мотоисвязи Azure Data Factory.
+### <a name="create-an-azure-ir-via-azure-data-factory-ui"></a>Создание Azure IR с помощью пользовательского интерфейса фабрики данных Azure
+Чтобы создать Azure IR с помощью пользовательского интерфейса фабрики данных Azure, выполните следующие действия.
 
-1. На странице **«Давайте начнем»** в uI Azure Data Factory выберите вкладку **Автора** на левой панели.
+1. На странице Приступая к **работе** в пользовательском интерфейсе фабрики данных Azure выберите вкладку **Автор** в области слева.
 
-   ![Кнопка "Автор домашней страницы"](media/doc-common-process/get-started-page-author-button.png)
+   ![Кнопка "Автор" домашней страницы](media/doc-common-process/get-started-page-author-button.png)
 
-1. Выберите **соединения** в нижней части левой панели и выберите **время выполнения интеграции** в окне **соединения.** Выберите **новый .**
+1. В нижней части левой панели выберите **подключения** , а затем в окне **подключения** выберите пункт **среды выполнения интеграции** . Выберите **+ создать**.
 
    ![Создание среды выполнения интеграции](media/create-azure-integration-runtime/new-integration-runtime.png)
 
-1. На странице **настройки времени запуска интеграции** выберите **Azure, Self-Hosted,** а затем выберите **Продолжить**. 
+1. На странице **Настройка среды выполнения интеграции** выберите **Azure,** локальное размещение и нажмите кнопку **продолжить**. 
 
-1. На следующей странице выберите **Azure** для создания ИК Azure, а затем выберите **Продолжить**—
+1. На следующей странице выберите **Azure** , чтобы создать Azure IR, а затем нажмите кнопку **продолжить**.
    ![Создание среды выполнения интеграции](media/create-azure-integration-runtime/new-azure-ir.png)
 
-1. Введите имя для ИК Azure и выберите **«Создать».**
-   ![Создание ИК Azure](media/create-azure-integration-runtime/create-azure-ir.png)
+1. Введите имя Azure IR и нажмите кнопку **создать**.
+   ![Создание Azure IR](media/create-azure-integration-runtime/create-azure-ir.png)
 
-1. По завершении создания появится всплывающее уведомление. На странице **«Время выполнения интеграции»** убедитесь, что вы видите вновь созданный ИК в списке.
+1. После завершения создания появится всплывающее уведомление. На странице **среды выполнения интеграции** убедитесь, что в списке отображается только что созданный IR.
 
 ## <a name="use-azure-ir"></a>Использование среды выполнения интеграции Azure
 
@@ -87,9 +87,9 @@ Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName "SampleV2DataFactory1" -N
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о создании других типов среды выполнения интеграции см. в следующих статьях:
 
-- [Создание автономного времени выполнения интеграции](create-self-hosted-integration-runtime.md)
+- [Создание локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md)
 - [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md)
  

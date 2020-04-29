@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью Databricks Python
+title: Преобразование данных с помощью кирпичей Python
 description: Сведения об обработке или преобразовании данных с помощью Databricks Python.
 services: data-factory
 documentationcenter: ''
@@ -12,17 +12,17 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: anandsub
 ms.openlocfilehash: e102b14d8471a19564f66edc27cc328c2a789c98
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81414599"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 
-Действие Python в Azure Databricks в [конвейере фабрики данных](concepts-pipelines-activities.md) позволяет запустить файл Python в кластере Azure Databricks. Эта статья основывается на статье, в которой представлены действия по преобразованию [данных,](transform-data.md)в котором представлен общий обзор трансформации данных и поддерживаемых мероприятий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
+Действие Python в Azure Databricks в [конвейере фабрики данных](concepts-pipelines-activities.md) позволяет запустить файл Python в кластере Azure Databricks. Эта статья посвящена [действиям преобразования данных](transform-data.md), в которых представлен общий обзор преобразования данных и поддерживаемых действий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
 
 Уделите 11 минут вашего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции:
 
@@ -63,15 +63,15 @@ ms.locfileid: "81414599"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|Описание|Обязательно|
+|Свойство|Описание|Обязательный|
 |---|---|---|
 |name|Имя действия в конвейере.|Да|
-|description|Описание действия.|нет|
+|description|Описание действия.|Нет|
 |type|Тип действия Python в Databricks — DatabricksSparkPython.|Да|
-|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Чтобы узнать об этой связанной службе, смотрите статью о  [подключенных службах Compute.](compute-linked-services.md)|Да|
+|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье [связанные службы](compute-linked-services.md) вычислений.|Да|
 |pythonFile|URI файла Python, который будет выполнен. Поддерживаются только пути DBFS.|Да|
-|параметры|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|нет|
-|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|нет|
+|параметры|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
+|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Нет|
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
 
@@ -117,7 +117,7 @@ ms.locfileid: "81414599"
 
 Чтобы получить путь к dbfs библиотеке, добавленной с помощью пользовательского интерфейса, можно использовать [интерфейс командной строки Databricks (установка)](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html#install-the-cli). 
 
-Обычно библиотеки Jar, добавленные с помощью пользовательского интерфейса, хранятся в каталоге dbfs:/FileStore/jars. Вы можете перечислить все через CLI: *databricks fs ls dbfs:/FileStore/jars* 
+Обычно библиотеки Jar, добавленные с помощью пользовательского интерфейса, хранятся в каталоге dbfs:/FileStore/jars. Вы можете вывести список всех с помощью интерфейса командной строки: *dbfss FS Ls:/хранилище файлов/JAR* 
 
 
 
