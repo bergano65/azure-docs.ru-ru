@@ -1,5 +1,5 @@
 ---
-title: "Учебник: Мигрируйте MyS'L онлайн в базу данных Azure для MyS'L"
+title: Руководство. Перенос MySQL Online в базу данных Azure для MySQL
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить интерактивную миграцию из MySQL в локальной среде в Базу данных Azure для MySQL с помощью Azure Database Migration Service.
 services: dms
@@ -13,10 +13,10 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
 ms.openlocfilehash: 7c8087a01bb71657e816be89b6a562dd4783b271
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80240739"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью DMS
@@ -38,16 +38,16 @@ Azure Database Migration Service можно использовать для пе
 > [!IMPORTANT]
 > Чтобы процесс миграции был выполнен без проблем, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством вам потребуется следующее:
 
 * Скачайте и установите [MySQL Community Edition](https://dev.mysql.com/downloads/mysql/) версии 5.6 или 5.7. Локальная версия MySQL должна соответствовать версии Базы данных Azure для MySQL. Например, MySQL версии 5.6 можно перенести только в Базу данных Azure для MySQL версии 5.6, но не версии 5.7.
 * [Создайте экземпляр в Базе данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal). Ознакомьтесь со статьей [База данных Azure для MySQL: подключение и запрос данных с помощью MySQL Workbench](https://docs.microsoft.com/azure/mysql/connect-workbench), чтобы узнать, как подключить и создать базу данных с помощью портала Azure.  
-* Создайте виртуальную сеть Microsoft Azure для миграционной службы лазурных данных с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение к исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) Для получения дополнительной информации о создании виртуальной сети, см [Виртуальная сеть Документация](https://docs.microsoft.com/azure/virtual-network/), и особенно быстро начать статьи с пошаговой детали.
+* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
 
     > [!NOTE]
-    > Во время виртуальной настройки networkNet, если вы используете ExpressRoute с помощью сети, вглядывающейся в Microsoft, добавьте следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) службы в подсеть, в которой будет предоставляться услуга:
+    > Если при установке Virtual Нетворкнет вы используете ExpressRoute с пирингом сети в корпорацию Майкрософт, добавьте следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) службы в подсеть, в которой будет подготовлена служба:
     >
     > * целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
     > * конечную точку службы хранилища;
@@ -55,11 +55,11 @@ Azure Database Migration Service можно использовать для пе
     >
     > Такая конфигурация вызвана тем, что у Azure Database Migration Service нет подключения к Интернету.
 
-* Убедитесь, что правила виртуальной сетевой группы безопасности не блокируют следующие входящие порты связи в службу миграции базы данных Azure: 443, 53, 9354, 445, 12000. Для получения более подробной информации о виртуальной сети NSG фильтрации трафика, [см.](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm)
+* Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
 * Настройте [брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу MySQL Server. По умолчанию это TCP-порт 3306.
 * Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
-* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для Базы данных Azure для MySQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Предоставьте диапазон подсетей виртуальной сети, используемой для миграционной службы базы данных Azure.
+* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для Базы данных Azure для MySQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Укажите диапазон подсети виртуальной сети, используемый для Azure Database Migration Service.
 * Исходный экземпляр MySQL должен находиться в поддерживаемой версии MySQL Community Edition. Чтобы определить версию экземпляра MySQL, в служебной программе MySQL или MySQL Workbench выполните следующую команду:
 
     ```
@@ -87,7 +87,7 @@ Azure Database Migration Service можно использовать для пе
 
 Чтобы подготовить все объекты базы данных, такие как схемы таблицы, индексы и хранимые процедуры, нам нужно извлечь схему из исходной базы данных и применить ее к нужной базе данных. Чтобы извлечь схему, можно использовать mysqldump с параметром `--no-data`.
 
-Предполагая, что в предварительной системе есть образец базы данных **сотрудников** MyS'L, команда для миграции схем с помощью mysqldump:
+Предположим, что в локальной системе имеется образец базы данных **Employees** MySQL, команда для миграции схемы с помощью mysqldump:
 
 ```
 mysqldump -h [servername] -u [username] -p[password] --databases [db name] --no-data > [schema file path]
@@ -154,7 +154,7 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
     ![Отображение поставщиков ресурсов](media/tutorial-mysql-to-azure-mysql-online/portal-select-resource-provider.png)
 
-3. Поиск миграции, а затем справа **от Microsoft.DataMigration**, выберите **Регистр**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-mysql-to-azure-mysql-online/portal-register-resource-provider.png)
 
@@ -172,13 +172,13 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
 4. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет миграционной службе базы данных Azure доступ к исходным серверам S'L и целевому экземпляру базы данных Azure S'L.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходным SQL Server и целевому экземпляру базы данных SQL Azure.
 
-    Для получения дополнительной информации о том, как создать виртуальную сеть на портале Azure, смотрите статью [Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
 5. Выберите ценовую категорию.
 
-    Для получения дополнительной информации о затратах и уровнях [ценообразования,](https://aka.ms/dms-pricing)см.
+    Дополнительные сведения о затратах и ценовых категориях см. на [странице с ценами](https://aka.ms/dms-pricing).
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mysql-to-azure-mysql-online/dms-settings3.png)
 
@@ -225,7 +225,7 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
     ![Сопоставление с целевыми базами данных](media/tutorial-mysql-to-azure-mysql-online/dms-map-target-details.png)
    > [!NOTE] 
-   > Хотя на этом этапе можно выбрать несколько баз данных, каждый экземпляр службы миграции базы данных Azure поддерживает до четырех баз данных для одновременной миграции. Кроме того, в подписке существует ограничение в два экземпляра миграционной службы базы данных Azure в каждом регионе. Например, если у вас 40 баз данных для миграции, можно мигрировать только восемь из них одновременно, и только если вы создали два экземпляра службы миграции базы данных Azure.
+   > Хотя на этом шаге можно выбрать несколько баз данных, каждый экземпляр Azure Database Migration Service поддерживает до четырех баз данных для параллельной миграции. Кроме того, существует ограничение в двух экземплярах Azure Database Migration Service на регион в подписке. Например, если у вас есть 40 баз данных для миграции, можно одновременно выполнить миграцию только восьми из них и только в том случае, если вы создали два экземпляра Azure Database Migration Service.
 
 3. Нажмите кнопку **Сохранить** в окне **Migration summary** (Сводка по миграции) и в поле **Имя действия** введите имя действия миграции, а затем проверьте соответствие сведениям о целевом и исходном сервере, которые вы указали ранее.
 
@@ -263,7 +263,7 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 3. Выберите **Подтвердить**, а затем — **Применить**.
 4. Когда состояние миграции базы данных изменится на **Завершено**, подключите свои приложения к новой целевой базе данных SQL Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об известных проблемах, ограничениях при выполнении интерактивной миграции в Базу данных Azure для MySQL и их решении см. в [этой](known-issues-azure-mysql-online.md) статье.
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).

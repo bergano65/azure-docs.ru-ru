@@ -1,5 +1,5 @@
 ---
-title: Создание, изменение или удаление VNet TAP - Azure CLI
+title: Создание, изменение или удаление виртуальной сети TAP — Azure CLI
 description: Узнайте, как создать, изменить или удалить TAP виртуальной сети с помощью Azure CLI.
 services: virtual-network
 documentationcenter: na
@@ -16,19 +16,19 @@ ms.workload: infrastructure-services
 ms.date: 03/18/2018
 ms.author: kaanan
 ms.openlocfilehash: 56288a65dc9e5b12a12393965b9670e394146181
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80234977"
 ---
 # <a name="work-with-a-virtual-network-tap-using-the-azure-cli"></a>Работа с TAP виртуальной сети с помощью Azure CLI
 
-TAP (точка доступа к терминалу) виртуальной сети Azure позволяет непрерывно передавать сетевой трафик виртуальной машины в сборщик сетевых пакетов или средство аналитики. Инструмент для коллектора или аналитики предоставляется [партнером по виртуальному прибору сети.](https://azure.microsoft.com/solutions/network-appliances/) Список партнерских решений, работающих с TAP виртуальной сети, см. в разделе о [партнерских решениях](virtual-network-tap-overview.md#virtual-network-tap-partner-solutions). 
+TAP (точка доступа к терминалу) виртуальной сети Azure позволяет непрерывно передавать сетевой трафик виртуальной машины в сборщик сетевых пакетов или средство аналитики. Средство сбора данных или анализа предоставляется партнером по [сетевым виртуальным устройствам](https://azure.microsoft.com/solutions/network-appliances/) . Список партнерских решений, работающих с TAP виртуальной сети, см. в разделе о [партнерских решениях](virtual-network-tap-overview.md#virtual-network-tap-partner-solutions). 
 
 ## <a name="create-a-virtual-network-tap-resource"></a>Создание ресурса TAP виртуальной сети
 
-Ознакомьтесь с [предварительными требованиями](virtual-network-tap-overview.md#prerequisites) перед созданием ресурса TAP виртуальной сети. Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/bash) или Azure CLI на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, которая не требует установки Azure CLI на компьютере. Вам потребуется войти в Azure с учетной записью, имеющей соответствующие [разрешения](virtual-network-tap-overview.md#permissions). Для этой статьи требуется Azure CLI 2.0.46 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Виртуальная сеть TAP в настоящее время доступна в качестве расширения. Для установки расширения необходимо `az extension add -n virtual-network-tap`запустить. Если Azure CLI запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
+Ознакомьтесь с [предварительными требованиями](virtual-network-tap-overview.md#prerequisites) перед созданием ресурса TAP виртуальной сети. Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/bash) или Azure CLI на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, которая не требует установки Azure CLI на компьютере. Вам потребуется войти в Azure с учетной записью, имеющей соответствующие [разрешения](virtual-network-tap-overview.md#permissions). Для этой статьи требуется Azure CLI 2.0.46 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). В настоящее время в качестве расширения можно выбрать виртуальную сеть. Для установки расширения необходимо запустить `az extension add -n virtual-network-tap`. Если Azure CLI запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 
 1. Извлеките идентификатор подписки в переменную, которая используется позднее:
 

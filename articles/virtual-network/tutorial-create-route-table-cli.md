@@ -18,10 +18,10 @@ ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: ''
 ms.openlocfilehash: 5fa94b93e081ab6334c39b848068f50682f5f1f0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80235057"
 ---
 # <a name="route-network-traffic-with-a-route-table-using-the-azure-cli"></a>Маршрутизация сетевого трафика с помощью таблицы маршрутов и Azure CLI
@@ -40,7 +40,7 @@ ms.locfileid: "80235057"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli) 
+Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
 
 ## <a name="create-a-route-table"></a>Создание таблицы маршрутов
 
@@ -210,7 +210,7 @@ az vm create \
 
 ## <a name="route-traffic-through-an-nva"></a>Перенаправление трафика через виртуальный сетевой модуль
 
-Используйте следующую команду для создания сеанса SSH с виртуальной машиной *myVmPrivate*. Замените * \<publicIpAddress>* общедоступным IP-адресом вашего VM. В примере выше используется IP-адрес *13.90.242.231*.
+Используйте следующую команду для создания сеанса SSH с виртуальной машиной *myVmPrivate*. Замените * \<publicIpAddress>* общедоступным IP-адресом виртуальной машины. В примере выше используется IP-адрес *13.90.242.231*.
 
 ```bash
 ssh azureuser@<publicIpAddress>
@@ -277,7 +277,7 @@ traceroute to myVmPrivate (10.0.1.4), 30 hops max, 60 byte packets
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 При работе с этой статьей вы создали таблицу маршрутов и связали ее с подсетью. Вы также создали простой виртуальный сетевой модуль, который направляет трафик из общедоступной подсети в частную подсеть. [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking) предоставляет широкий выбор предварительно настроенных виртуальных сетевых модулей для разных сетевых функций, например модули брандмауэра и оптимизация доступа к глобальной сети. См. дополнительные сведения о [маршрутизации](virtual-networks-udr-overview.md) и [управлении таблицей маршрутов](manage-route-table.md).
 

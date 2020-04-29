@@ -1,7 +1,7 @@
 ---
-title: Образец сценария Azure CLI - Наконфигурируйте фронтенд IPv6 - Балансер стандартной нагрузки
+title: Azure CLI пример скрипта. Настройка внешнего интерфейса IPv6 Load Balancer (цен. категория "Стандартный")
 titlesuffix: Azure Virtual Network
-description: Включить конечные точки IPv6 с помощью Azure CLI в виртуальной сети Azure
+description: Включение конечных точек IPv6 с помощью Azure CLI в виртуальной сети Azure
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -13,29 +13,29 @@ ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
 ms.openlocfilehash: 5f5856a89a04b58b138ee23a5f289ceff0915acf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80235036"
 ---
-# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-using-standard-load-balancerpreview"></a>Налаживание конечных точек IPv6 в образе виртуального сетевого сценария с помощью Standard Load Balancer (предварительный просмотр)
+# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-using-standard-load-balancerpreview"></a>Настройка конечных точек IPv6 в примере сценария виртуальной сети с помощью Load Balancer (цен. категория "Стандартный") (Предварительная версия)
 
-В этой статье показано, как развернуть двойной стек (IPv4 - IPv6) приложение в Azure, которое включает в себя двойной стек виртуальной сети с двойным стеком подсети, балансер стандартной нагрузки с двойной (IPv4 iPv6) передние конфигурации, VMs с NICs, которые имеют двойной IP конфигурации, правил группы двойной сетевой безопасности и двухоткрытых испытое.
+В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя виртуальную сеть с двумя стеками, Load Balancer (цен. категория "Стандартный") с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с сетевыми картами с двумя сетевыми конфигурациями, двумя правилами группы безопасности сети и двумя общедоступными IP-адресами.
 
 Вы можете выполнить скрипт из Azure [Cloud Shell](https://shell.azure.com/bash) или из локальной установки Azure CLI. Если вы используете CLI локально, для этого скрипта требуется версия 2.0.28 или выше. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). Если интерфейс командной строки запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
-Чтобы использовать функцию виртуальной сети Azv6 для Azure, необходимо настроить подписку только один раз следующим образом:
+## <a name="prerequisites"></a>Предварительные условия
+Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку только один раз следующим образом.
 
 ```azurecli
 az feature register --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
 az feature register --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```
 
-Регистрация функции занимает до 30 минут. Проверить свой регистрационный статус можно, запустив следующую команду Azure CLI:
+Регистрация функции занимает до 30 минут. Состояние регистрации можно проверить, выполнив следующую команду Azure CLI:
 
 ```azurecli
 az feature show --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
@@ -282,13 +282,13 @@ az vm create \
 --image MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest 
 ```
 
-## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Просмотр виртуальной сети IPv6 с двойным стеком на портале Azure
-Виртуальную сеть IPv6 с двойным стеком можно просмотреть следующим образом:
-1. В панели поиска портала введите *dsVnet*.
-2. Когда в результатах поиска появится пункт **myVirtualNetwork**, выберите его. Это запускает **Обзор** страницы двойного стека виртуальной сети под названием *dsVnet*. Виртуальная сеть двойного стека показывает два NICs с конфигурациями IPv4 и IPv6, расположенными в подсетевом сдвойном стеке под названием *dsSubnet.* 
+## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Просмотр двух виртуальных сетей IPv6 с двумя стеками в портал Azure
+Виртуальную сеть с двумя стеками IPv6 можно просмотреть в портал Azure следующим образом:
+1. На панели поиска портала введите *дсвнет*.
+2. Когда в результатах поиска появится пункт **myVirtualNetwork**, выберите его. Откроется страница **обзора** для виртуальной сети с двумя стеками с именем *дсвнет*. В виртуальной сети с двумя стеками показаны две сетевые карты с конфигурациями IPv4 и IPv6, расположенными в подсети с двойным стеком с именем *дссубнет*. 
 
 > [!NOTE]
-> Виртуальная сеть IPv6 для Azure доступна на портале Azure только для этого предварительного просмотра.
+> Виртуальная сеть IPv6 для виртуальной сети Azure доступна в портал Azure в режиме только для чтения для этой предварительной версии.
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
@@ -302,7 +302,7 @@ az group delete --name <resourcegroupname> --yes
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az-network-vnet-create) | Создает виртуальную сеть и подсеть Azure. |

@@ -1,5 +1,5 @@
 ---
-title: Подключение виртуальных сетей с помощью пиринга VNet - Azure CLI
+title: Подключение виртуальных сетей с помощью пиринга виртуальной сети — Azure CLI
 description: В этой статье вы узнаете, как подключить виртуальные сети между собой с помощью пиринга, используя Azure CLI.
 services: virtual-network
 documentationcenter: virtual-network
@@ -16,10 +16,10 @@ ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: ''
 ms.openlocfilehash: aa2d75173b14e768a207336b54b3dc10a8c3ea5c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80235169"
 ---
 # <a name="connect-virtual-networks-with-virtual-network-peering-using-the-azure-cli"></a>Подключение виртуальных сетей с помощью пиринговой связи с использованием Azure CLI
@@ -35,7 +35,7 @@ ms.locfileid: "80235169"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам нужно установить или обновить, [см.](/cli/azure/install-azure-cli) 
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
 
 ## <a name="create-virtual-networks"></a>Создание виртуальных сетей
 
@@ -45,7 +45,7 @@ ms.locfileid: "80235169"
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте виртуальную сеть с [az сети Vnet создать](/cli/azure/network/vnet). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork1* и префиксом адреса *10.0.0.0/16*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork1* и префиксом адреса *10.0.0.0/16*.
 
 ```azurecli-interactive 
 az network vnet create \
@@ -56,7 +56,7 @@ az network vnet create \
   --subnet-prefix 10.0.0.0/24
 ```
 
-Создайте виртуальную сеть под названием *myVirtualNetwork2* с адресной приставкой *10.1.0.0/16*:
+Создайте виртуальную сеть с именем *myVirtualNetwork2* и префиксом адреса *10.1.0.0/16*:
 
 ```azurecli-interactive 
 az network vnet create \
@@ -97,7 +97,7 @@ az network vnet peering create \
   --allow-vnet-access
 ```
 
-В выводе, возвращенном после выполнения предыдущей команды, вы видите, что **состояние пиринга** *инициировано.* Состояние *Инициировано* не изменится, пока не будет создан пиринг сети *myVirtualNetwork2* с сетью *myVirtualNetwork1*. Установите пиринговую связь сети *myVirtualNetwork2* с сетью *myVirtualNetwork1*. 
+В выходных данных, возвращаемых после выполнения предыдущей команды, вы увидите, что **состояние пиринга** *инициируется*. Состояние *Инициировано* не изменится, пока не будет создан пиринг сети *myVirtualNetwork2* с сетью *myVirtualNetwork1*. Установите пиринговую связь сети *myVirtualNetwork2* с сетью *myVirtualNetwork1*. 
 
 ```azurecli-interactive
 az network vnet peering create \
@@ -108,7 +108,7 @@ az network vnet peering create \
   --allow-vnet-access
 ```
 
-В выводе, возвращенном после выполнения предыдущей команды, видно, что **состояние визирования** *подключено*к выводу. Одновременно с этим Azure установит значение *Подключено* и для первого пиринга *myVirtualNetwork1-myVirtualNetwork2*. Убедитесь, что для пиринга *myVirtualNetwork1-myVirtualNetwork2* установилось состояние *Подключено*, выполнив команду [az network vnet peering show](/cli/azure/network/vnet/peering).
+В выходных данных, возвращаемых после выполнения предыдущей команды, вы увидите, что **состояние пиринга** *подключен*. Одновременно с этим Azure установит значение *Подключено* и для первого пиринга *myVirtualNetwork1-myVirtualNetwork2*. Убедитесь, что для пиринга *myVirtualNetwork1-myVirtualNetwork2* установилось состояние *Подключено*, выполнив команду [az network vnet peering show](/cli/azure/network/vnet/peering).
 
 ```azurecli-interactive
 az network vnet peering show \
@@ -118,7 +118,7 @@ az network vnet peering show \
   --query peeringState
 ```
 
-Ресурсы в одной виртуальной сети не могут общаться с ресурсами в другой виртуальной сети до тех пор, пока **peeringState** для пиринга в обеих виртуальных сетях не *будет подключен.* 
+Ресурсы в одной виртуальной сети не могут взаимодействовать с ресурсами в другой виртуальной сети, пока не будет *подключен* **состояние пиринга** для пиринга в обеих виртуальных сетях. 
 
 ## <a name="create-virtual-machines"></a>Создание виртуальных машин
 
@@ -126,7 +126,7 @@ az network vnet peering show \
 
 ### <a name="create-the-first-vm"></a>Создание первой виртуальной машины
 
-Создайте VM с [az vm создать.](/cli/azure/vm) В приведенном ниже примере в виртуальной сети *myVirtualNetwork1* создается виртуальная машина с именем *myVm1*. Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`. Чтобы можно было перейти к следующему шагу, параметр `--no-wait` позволяет создать виртуальную машину в фоновом режиме.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). В приведенном ниже примере в виртуальной сети *myVirtualNetwork1* создается виртуальная машина с именем *myVm1*. Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`. Чтобы можно было перейти к следующему шагу, параметр `--no-wait` позволяет создать виртуальную машину в фоновом режиме.
 
 ```azurecli-interactive
 az vm create \
@@ -196,7 +196,7 @@ ping 10.0.0.4 -c 4
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этой статьи вы узнали, как с помощью пиринга соединить две виртуальные сети в одном регионе Azure. Пиринг можно использовать и для подключения виртуальных сетей из разных [поддерживаемых регионов](virtual-network-manage-peering.md#cross-region) или [разных подписок Azure](create-peering-different-subscriptions.md#cli), а также для создания [звездообразной топологии сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke#virtual-network-peering). Чтобы узнать больше о пиринге виртуальных сетей, ознакомьтесь с разделами [Пиринг между виртуальными сетями](virtual-network-peering-overview.md) и [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md).
 

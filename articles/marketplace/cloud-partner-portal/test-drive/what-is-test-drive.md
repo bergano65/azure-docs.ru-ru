@@ -1,5 +1,5 @@
 ---
-title: Что такое тестовый выпуск? | Лазурный рынок
+title: Что такое тестовый выпуск? | Azure Marketplace
 description: Объяснение возможностей тестового выпуска Marketplace
 author: dsindona
 ms.service: marketplace
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: dsindona
 ms.openlocfilehash: bdfadf359195464c4024b28c5e597c571305481a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80278235"
 ---
 <a name="what-is-test-drive"></a>Что такое тестовый выпуск?
@@ -58,12 +58,12 @@ ms.locfileid: "80278235"
 
 После настройки конфигураций для тестового выпуска он становится управляемым экземпляром, который будет развернут по запросу клиента. После назначения экземпляр тестового выпуска доступен для использования в течение определенного периода времени, по истечении которого он удаляется, освобождая место для другого клиента.
 
-<a name="next-steps"></a>Дальнейшие действия
+<a name="next-steps"></a>Дальнейшие шаги
 ----------
 
 Теперь когда вы ознакомились со всей информацией о тестовом выпуске, прочитайте об определенном типе тестового выпуска, который хотите опубликовать, чтобы узнать об обязательных полях.
 
-- **[Менеджер ресурсов Azure](./azure-resource-manager-test-drive.md)**
-- **[Логика App](./logic-app-test-drive.md)**
+- **[Azure Resource Manager](./azure-resource-manager-test-drive.md)**
+- **[Приложение логики](./logic-app-test-drive.md)**
 
 Если у вас есть дополнительные вопросы, вы хотите получить рекомендации по устранению неполадок или сделать ваш тестовый выпуск успешным, перейдите к статье [Тестовый выпуск: рекомендации по маркетингу](./marketing-and-best-practices.md).

@@ -1,5 +1,5 @@
 ---
-title: Преобразование примеров для тест-драйва (ru) Лазурный рынок
+title: Преобразование примеров для тестового диска | Azure Marketplace
 description: Список примеров в том, как реализовать тестовый выпуск.
 author: dsindona
 ms.service: marketplace
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: dsindona
 ms.openlocfilehash: 60de5a54e608588873a9be966f5fb1b62065c73e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80278218"
 ---
 <a name="transforming-examples-for-test-drive"></a>Примеры преобразования для тестового выпуска

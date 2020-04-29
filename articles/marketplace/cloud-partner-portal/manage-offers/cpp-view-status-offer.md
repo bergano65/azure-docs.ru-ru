@@ -1,5 +1,5 @@
 ---
-title: Посмотреть состояние предложений на рынке Лазурный рынок
+title: Просмотр состояния предложений Marketplace | Azure Marketplace
 description: Просмотр состояния предложений в AppSource и Azure Marketplace с помощью Портала Cloud Partner
 author: dsindona
 ms.service: marketplace
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: dsindona
 ms.openlocfilehash: 0cbe6a45ba205f32a764bdadb021dc0dcf5bf0cc
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80275974"
 ---
 # <a name="view-the-publishing-status-of-azure-marketplace-and-appsource-offers"></a>Просмотр состояния публикации предложений в Azure Marketplace и AppSource
@@ -22,7 +22,7 @@ ms.locfileid: "80275974"
 |            ------              |   -----------                                                           |
 | **-**                          | Предложение создано, но процесс публикации еще не начался.            |
 | **Publish in progress** (Публикация выполняется)        | Предложение проходит процесс публикации.   |
-| **Опубликовать не удалось**             | Обнаружена критическая ошибка во время проверки корпорацией Майкрософт. |
+| **Сбой публикации**             | Обнаружена критическая ошибка во время проверки корпорацией Майкрософт. |
 | **Publish canceled** (Публикация отменена)           | Издатель отменил процесс публикации предложения.  Если отображается это состояние, это не означает, что имеющееся предложение удалено из списка в Marketplace. | 
 | **Awaiting publisher sign out** (Ожидание выхода издателя) | Предложение проверено корпорацией Майкрософт и теперь ожидает окончательной проверки издателем. |
 | **Delisted** (Удалено из списка)                   | Ранее опубликованное предложение в Marketplace было удалено.      | 
@@ -39,11 +39,11 @@ ms.locfileid: "80275974"
 
 ![Ошибка на вкладке состояния службы консультирования](./media/consulting-service-error.png)
 
-В последнем примере состояния приложения Azure показана критическая проблема, обнаруженная при проверке корпорацией Майкрософт.  Он содержит горячую ссылку на элемент Azure DevOps, содержащий подробную информацию об этой проблеме обзора.  Дополнительную информацию см. в статье [Publish Azure Marketplace and AppSource offers](cpp-publish-offer.md) (Публикация предложений Azure Marketplace и AppSource).
+В последнем примере состояния приложения Azure показана критическая проблема, обнаруженная при проверке корпорацией Майкрософт.  Он содержит горячую ссылку на элемент Azure DevOps, содержащий подробные сведения об этой ошибке проверки.  Дополнительную информацию см. в статье [Publish Azure Marketplace and AppSource offers](cpp-publish-offer.md) (Публикация предложений Azure Marketplace и AppSource).
 
 ![Вкладка состояния приложения Azure с проблемой проверки](../azure-applications/media/status-tab-ms-review.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы исправить нерешенные проблемы или изменить параметры предложения, необходимо [обновить предложение](./cpp-update-offer.md). 

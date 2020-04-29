@@ -1,7 +1,7 @@
 ---
-title: Образец сценария Azure CLI - Настройка IPv6
+title: Azure CLI пример скрипта. Настройка внешнего интерфейса IPv6
 titlesuffix: Azure Virtual Network
-description: Включить конечные точки IPv6 с помощью Azure CLI в виртуальной сети Azure
+description: Включение конечных точек IPv6 с помощью Azure CLI в виртуальной сети Azure
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -13,29 +13,29 @@ ms.workload: infrastructure-services
 ms.date: 04/23/2019
 ms.author: kumud
 ms.openlocfilehash: 1ef8742bc4f8de2d08d9bb4fc98b3df6f9420737
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80235028"
 ---
-# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Настройка конечных точек IPv6 в образец виртуального сетевого сценария (предварительный просмотр)
+# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Пример настройки конечных точек IPv6 в сценарии виртуальной сети (Предварительная версия)
 
-В этой статье показано, как развернуть двойной стек (IPv4 - IPv6) приложение в Azure, которое включает в себя двойной стек виртуальной сети с двойным стеком подсети, балансом нагрузки с двойной (IPv4 iPv6) передние конфигурации, VMs с NICs, которые имеют двойную конфигурацию IP, правила двойной группы безопасности сети, и двойной общественных IPs.
+В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя двойную виртуальную сеть с двумя подсетями стека, подсистему балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), ВМ с сетевыми картами с двумя сетевыми конфигурациями, двумя правилами группы безопасности сети и двумя общедоступными IP
 
 Вы можете выполнить скрипт из Azure [Cloud Shell](https://shell.azure.com/bash) или из локальной установки Azure CLI. Если вы используете CLI локально, для этого скрипта требуется версия 2.0.28 или выше. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). Если интерфейс командной строки запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
-Чтобы использовать функцию виртуальной сети Azv6 для Azure, необходимо настроить подписку только один раз следующим образом:
+## <a name="prerequisites"></a>Предварительные условия
+Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку только один раз следующим образом.
 
 ```azurecli
 az feature register --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
 az feature register --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```
 
-Регистрация функции занимает до 30 минут. Проверить свой регистрационный статус можно, запустив следующую команду Azure CLI:
+Регистрация функции занимает до 30 минут. Состояние регистрации можно проверить, выполнив следующую команду Azure CLI:
 
 ```azurecli
 az feature show --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
@@ -276,7 +276,7 @@ az group delete --name <resourcegroupname> --yes
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az-network-vnet-create) | Создает виртуальную сеть и подсеть Azure. |

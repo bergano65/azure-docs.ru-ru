@@ -11,10 +11,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 01/16/2018
 ms.author: menchi
 ms.openlocfilehash: 88c3d1f4213b161d5e322349a7f0e1bc1dd952e7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80239644"
 ---
 # <a name="use-the-iot-extension-for-azure-cli-for-azure-iot-hub-device-management"></a>Управление устройствами центра Интернета вещей Azure с помощью расширения Интернета вещей для Azure CLI
@@ -23,7 +23,7 @@ ms.locfileid: "80239644"
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
-[Расширение IoT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) — это расширение IoT с открытым исходным кодом, которое добавляет возможности [Azure CLI.](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest) ClI Azure включает в себя команды для взаимодействия с менеджером ресурсов Azure и конечными точками управления. Например, Azure CLI можно использовать для создания центра Интернета вещей или виртуальной машины Azure. Расширение CLI включает службу Azure для ускорения работы Azure CLI, за счет чего вы получаете доступ к дополнительным определенным функциям службы. Расширение IoT предоставляет разработчикам IoT командный доступ ко всем возможностям IoT Hub, IoT Edge и службе обеспечения устройств IoT.
+[Расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) — это расширение IOT с открытым кодом, которое добавляет к возможностям [Azure CLI](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest). Azure CLI включает команды для взаимодействия с конечными точками Azure Resource Manager и управления. Например, Azure CLI можно использовать для создания центра Интернета вещей или виртуальной машины Azure. Расширение CLI включает службу Azure для ускорения работы Azure CLI, за счет чего вы получаете доступ к дополнительным определенным функциям службы. Расширение IoT предоставляет разработчикам Интернета вещей доступ для командной строки ко всем центрам Интернета вещей, IoT Edge и возможностям службы подготовки устройств для центра Интернета вещей.
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "80239644"
 | Требуемые свойства двойников    | Перевод устройства в определенные состояния, например включение зеленого светодиодного индикатора или установка 30-минутного интервала отправки данных телеметрии.         |
 | Сообщаемые свойства двойника   | Получение зарегистрированного состояния устройства, например данных о том, что сейчас на устройстве мигает индикатор.                                    |
 | Теги двойников                  | Хранение метаданных для конкретного устройства в облаке. Например, расположение развертывания торгового автомата.                         |
-| Запросы двойника устройства        | Запрос всех близнецов устройств для получения этих близнецов с произвольными условиями, такими как идентификация устройств, которые доступны для использования. |
+| Запросы двойника устройства        | Запросите все двойникови устройств, чтобы получить эти двойников с произвольными условиями, такими как идентификация доступных устройств для использования. |
 
 Более подробное объяснение различий и рекомендации по использованию этих параметров см. в статьях [Руководство по обмену данными между устройством и облаком](iot-hub-devguide-d2c-guidance.md) и [Руководство по обмену данными между облаком и устройством](iot-hub-devguide-c2d-guidance.md).
 
@@ -43,7 +43,7 @@ ms.locfileid: "80239644"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-Вы научитесь использовать расширение IoT для Azure CLI с различными вариантами управления на машине разработки.
+Вы узнаете, как использовать расширение Интернета вещей для Azure CLI с различными вариантами управления на компьютере разработки.
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
@@ -51,7 +51,7 @@ ms.locfileid: "80239644"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-* Завершите [учебник онлайн симулятор Raspberry Pi](iot-hub-raspberry-pi-web-simulator-get-started.md) или один из учебников по устройству; например, [Raspberry Pi с node.js](iot-hub-raspberry-pi-kit-node-get-started.md). Эти элементы охватывают следующие требования:
+* Заполните учебник [Raspberry Pi Online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) или одно из учебников по устройствам. Например, [Raspberry Pi с Node. js](iot-hub-raspberry-pi-kit-node-get-started.md). Эти элементы охватывают следующие требования.
 
   - Активная подписка Azure.
   - Центр Интернета вещей Azure в подписке;
@@ -61,7 +61,7 @@ ms.locfileid: "80239644"
 
 * [Python 2.7x или Python 3.x](https://www.python.org/downloads/)
 
-* Azure CLI. Если вам необходимо выполнить установку, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Как минимум, ваша версия Azure CLI должна быть 2.0.70 или выше. Для проверки используйте `az –version`.
+* Azure CLI. Если вам необходимо выполнить установку, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az –version`.
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
@@ -103,7 +103,7 @@ az iot hub device-twin update -n <your hub name> \
 az iot hub device-twin show -n <your hub name> -d <your device id>
 ```
 
-Одним из двух зарегистрированных свойств является $metadata.$lastUpdated, который показывает последний раз, когда приложение устройства обновило свой набор свойств.
+Одно из сообщаемых свойств двойника — $metadata. $lastUpdated, в котором показано время последнего обновления приложением устройства набора сообщаемых свойств.
 
 ## <a name="device-twin-tags"></a>Теги двойника устройства
 
@@ -138,7 +138,7 @@ az iot hub query --hub-name <your hub name> \
   --query-command "SELECT * FROM devices WHERE tags.role != 'temperature&humidity'"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 
