@@ -1,7 +1,7 @@
 ---
-title: Отладить и устранить неполадки конвейеров машинного обучения в Application Insights
+title: Отладка и устранение неполадок конвейеров машинного обучения в Application Insights
 titleSuffix: Azure Machine Learning
-description: Добавьте журналирование в конвейеры обучения и пакетного скоринга и просмотреданных результатов в Application Insights.
+description: Добавьте ведение журнала в конвейеры обучения и пакетной оценки и просмотрите записанные результаты в Application Insights.
 services: machine-learning
 author: sanpil
 ms.author: sanpil
@@ -12,34 +12,34 @@ ms.topic: conceptual
 ms.date: 01/16/2020
 ms.custom: seodec18
 ms.openlocfilehash: b3e4bf19a7ec153f85483f3c5028e468e06ed7f0
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80982367"
 ---
-# <a name="debug-and-troubleshoot-machine-learning-pipelines-in-application-insights"></a>Отладить и устранить неполадки конвейеров машинного обучения в Application Insights
+# <a name="debug-and-troubleshoot-machine-learning-pipelines-in-application-insights"></a>Отладка и устранение неполадок конвейеров машинного обучения в Application Insights
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Библиотека python [OpenCensus](https://opencensus.io/quickstart/python/) может использоваться для маршрутизании журналов в Application Insights из ваших скриптов. Агрегирование журналов из конвейера работает в одном месте позволяет создавать запросы и диагностировать проблемы. Использование Application Insights позволит отслеживать журналы с течением времени и сравнивать журналы конвейеров между пробегами.
+Библиотеку [опенценсус](https://opencensus.io/quickstart/python/) Python можно использовать для маршрутизации журналов в Application Insights из скриптов. Объединение журналов из конвейеров в одном месте позволяет создавать запросы и диагностировать проблемы. Использование Application Insights позволяет вести мониторинг журналов и сравнивать журналы конвейера во время выполнения.
 
-Наличие журналов в некогда емместе обеспечит историю исключений и сообщений об ошибках. Поскольку Application Insights интегрируется с Azure Alerts, можно также создавать оповещения на основе запросов Application Insights.
+Если журналы будут находиться в однократном месте, будет представлена история исключений и сообщений об ошибках. Поскольку Application Insights интегрируется с оповещениями Azure, можно также создавать оповещения на основе запросов Application Insights.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Выполните последующие действия по созданию рабочего пространства [Azure Machine Learning](./how-to-manage-workspace.md) и [созданию первого конвейера](./how-to-create-your-first-pipeline.md)
+* Выполните действия, чтобы создать рабочую область [машинное обучение Azure](./how-to-manage-workspace.md) и [создать первый конвейер](./how-to-create-your-first-pipeline.md) .
 * [Настройте среду разработки](./how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
-* Установите пакет [экспортеров OpenCensus Azure Monitor](https://pypi.org/project/opencensus-ext-azure/) на месте:
+* Установите пакет [опенценсус Azure Monitor Export](https://pypi.org/project/opencensus-ext-azure/) локально:
   ```python
   pip install opencensus-ext-azure
   ```
-* Создайте [экземпляр Application Insights](../azure-monitor/app/opencensus-python.md) (этот документ также содержит информацию о получении строки соединения для ресурса)
+* Создание [экземпляра Application Insights](../azure-monitor/app/opencensus-python.md) (этот документ также содержит сведения о получении строки подключения для ресурса).
 
 ## <a name="getting-started"></a>Приступая к работе
 
-Данный раздел представляет собой введение, специфичное для использования OpenCensus из конвейера машинного обучения Azure. Подробную информацию о [экспортерах OpenCensus Azure Monitor можно](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) узнать на примере OpenCensus
+В этом разделе представлены общие сведения об использовании Опенценсус из конвейера Машинное обучение Azure. Подробное руководство см. в разделе [опенценсус Azure Monitor EXPORTS](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) .
 
-Добавьте PythonScriptStep в свой конвейер Azure ML. Наверстируйте [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) с помощью зависимости от opencensus-ext-azure. Настройка `APPLICATIONINSIGHTS_CONNECTION_STRING` переменной среды.
+Добавьте Писонскриптстеп в конвейер машинного обучения Azure. Настройте [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) с зависимостью от опенценсус-ext-Azure. Настройте переменную `APPLICATIONINSIGHTS_CONNECTION_STRING` среды.
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies
@@ -72,14 +72,14 @@ pipeline = Pipeline(workspace=ws, steps=[sample_step])
 pipeline.submit(experiment_name="Logging_Experiment")
 ```
 
-Создайте файл с именем `sample_step.py`. Импортируйте класс AzureLogHandler для маршрутизаторов в Application Insights. Также необходимо импортировать библиотеку Python Logging.
+Создайте файл с именем `sample_step.py`. Импортируйте класс Азурелогхандлер, чтобы направить журналы в Application Insights. Также необходимо импортировать библиотеку ведения журнала Python.
 
 ```python
 from opencensus.ext.azure.log_exporter import AzureLogHandler
 import logging
 ```
 
-Затем добавьте AzureLogHandler в регистратор python.
+Затем добавьте Азурелогхандлер в средство ведения журнала Python.
 
 ```python
 logger = logging.getLogger(__name__)
@@ -91,32 +91,32 @@ logger.addHandler(AzureLogHandler())
 logger.warning("I will be sent to Application Insights")
 ```
 
-## <a name="logging-with-custom-dimensions"></a>Регистрация с пользовательскими размерами
+## <a name="logging-with-custom-dimensions"></a>Ведение журнала с пользовательскими измерениями
  
-По умолчанию журналы, переадресованные в Application Insights, не будут иметь достаточного контекста для отслеживания выполнения или эксперимента. Для того чтобы журналы были пригодны для диагностики проблем, необходимы дополнительные поля. 
+По умолчанию журналы, пересылаемые в Application Insights, не имеют достаточного контекста для трассировки выполнения или эксперимента. Чтобы журналы были доступны для диагностики проблем, требуются дополнительные поля. 
 
-Чтобы добавить эти поля, пользовательские размеры могут быть добавлены, чтобы обеспечить контекст для сообщения журнала. Одним из примеров является, когда кто-то хочет просматривать журналы на нескольких этапах в одном и том же запуске конвейера.
+Чтобы добавить эти поля, можно добавить пользовательские измерения, чтобы предоставить контекст для сообщения журнала. Одним из примеров является то, что кто-то хочет просматривать журналы в течение нескольких шагов в одном и том же запуске конвейера.
 
-Пользовательские размеры составляют словарь ключевых значений (хранится как строка, строка) пар. Словарь затем отправляется в Application Insights и отображается в качестве столбца в результатах запроса. Его индивидуальные размеры могут быть использованы в качестве [параметров запроса.](#additional-helpful-queries)
+Пользовательские измерения составляют словарь пар "ключ-значение" (хранимых как строковые, строковые). Затем словарь отправляется в Application Insights и отображается как столбец в результатах запроса. Его отдельные измерения можно использовать в качестве [параметров запроса](#additional-helpful-queries).
 
 ### <a name="helpful-context-to-include"></a>Полезный контекст для включения
 
-| Поле                          | Рассуждения/Пример                                                                                                                                                                       |
+| Поле                          | Причины и примеры                                                                                                                                                                       |
 |--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| parent_run_id                  | Могут ли журналы запросов для тех, у кого parent_run_id, чтобы видеть журналы с течением времени для всех шагов, вместо того, чтобы погрузиться в каждый отдельный шаг                                        |
-| step_id                        | Могут ли журналы запросов для тех, у кого step_id, чтобы увидеть, где возникла проблема с узким охватом только для индивидуального шага                                                        |
-| step_name                      | Можно заставить журналы запросов видеть производительность шага с течением времени. Также помогает найти step_id для недавних пробежек без погружения в портал UI                                          |
-| experiment_name                | Можно задать запрос в журналах, чтобы увидеть производительность эксперимента с течением времени. Также помогает найти parent_run_id или step_id для недавних пробежек без погружения в uI портала                   |
-| run_url                 | Может предоставить ссылку непосредственно на бег для расследования. |
+| parent_run_id                  | Может запрашивать журналы для тех же parent_run_id, чтобы просматривать журналы с течением времени для всех шагов, вместо того чтобы углубляться в каждый отдельный шаг.                                        |
+| step_id                        | Может запрашивать журналы для с тем же step_id, чтобы узнать, где возникла ошибка, а не только на отдельном шаге.                                                        |
+| step_name                      | Может запрашивать журналы для просмотра производительности по времени. Также помогает найти step_id для последних запусков без погружения в пользовательский интерфейс портала                                          |
+| experiment_name                | Может выполнять запросы к журналам для просмотра производительности экспериментов с течением времени. Также помогает найти parent_run_id или step_id для последних запусков без погружения в пользовательский интерфейс портала                   |
+| run_url                 | Может напрямую предоставить ссылку на запуск для расследования. |
 
 **Другие полезные поля**
 
-Эти поля могут потребовать дополнительных приборов кода и не предусмотрены контекстом выполнения.
+Эти поля могут потребовать дополнительного инструментирования кода и не предоставляются контекстом выполнения.
 
-| Поле                   | Рассуждения/Пример                                                                                                                                                                                                           |
+| Поле                   | Причины и примеры                                                                                                                                                                                                           |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| build_url/build_version | При развертывании CI/CD это поле может соотнести журналы с код-версией, которая предоставила логику шага и конвейера. Эта ссылка может помочь в дальнейшем диагностировать проблемы или идентифицировать модели с определенными чертами (значения журнала/метрики) |
-| run_type                       | Может различать различные типы моделей, или обучение против скоринга работает |
+| build_url и build_version | При использовании CI/CD для развертывания это поле может сопоставлять журналы с версией кода, которая предоставляет логику этапа и конвейера. Эта ссылка может помочь в диагностике проблем или выявлять модели с конкретными характеристиками (значения журнала/метрики). |
+| run_type                       | Может различаться между различными типами моделей, а также с циклами обучения и оценки |
 
 ### <a name="creating-a-custom-dimensions-dictionary"></a>Создание словаря пользовательских измерений
 
@@ -138,33 +138,33 @@ custom_dimensions = {
 logger.info("I will be sent to Application Insights with Custom Dimensions", custom_dimensions)
 ```
 
-## <a name="opencensus-python-logging-considerations"></a>OpenCensus Python регистрации соображений
+## <a name="opencensus-python-logging-considerations"></a>Вопросы ведения журнала Опенценсус Python
 
-OpenCensus AzureLogHandler используется для маршрутизации журналов Python в Application Insights. В результате следует учитывать нюансы регистрации Python. При создании регистратора он имеет уровень журнала по умолчанию и будет отображать журналы, превышаюющие или равные этому уровню. Хорошей ссылкой для использования Python лесозаготовительные функции [является журнал Cookbook](https://docs.python.org/3/howto/logging-cookbook.html).
+Опенценсус Азурелогхандлер используется для перенаправления журналов Python в Application Insights. В результате следует учитывать особенности ведения журнала Python. При создании средства ведения журнала оно имеет уровень ведения журнала по умолчанию и отображает журналы, которые больше или равны этому уровню. Хорошим справочником по использованию возможностей ведения журнала Python является [Cookbook ведения журнала](https://docs.python.org/3/howto/logging-cookbook.html).
 
-Переменная `APPLICATIONINSIGHTS_CONNECTION_STRING` среды необходима для библиотеки OpenCensus. Мы рекомендуем установить эту переменную среды вместо того, чтобы передавать ее в качестве параметра конвейера, чтобы избежать прохождения по струнам простого соединения.
+Для `APPLICATIONINSIGHTS_CONNECTION_STRING` Библиотеки опенценсус требуется переменная среды. Рекомендуется задавать эту переменную среды вместо передачи ее в качестве параметра конвейера, чтобы избежать передачи строк соединения в виде открытого текста.
 
-## <a name="querying-logs-in-application-insights"></a>Запрос журналов в приложениях Исследования
+## <a name="querying-logs-in-application-insights"></a>Запрос журналов в Application Insights
 
-В журналах, направляемых в Application Insights, будут отображаться под "следами" или "исключениями". Обязательно отрегулируйте свое временное окно, чтобы включить ваш запуск конвейера.
+Журналы, направляемые в Application Insights, будут отображаться в разделе "трассировки" или "исключения". Не забудьте настроить временное окно, включив в него выполнение конвейера.
 
-![Результат запроса на анализ приложений](./media/how-to-debug-pipelines-application-insights/traces-application-insights-query.png)
+![Результат запроса Application Insights](./media/how-to-debug-pipelines-application-insights/traces-application-insights-query.png)
 
-В результате в Application Insights будут отображаться сообщение и уровень входа, траектория файла и номер строки кода. Он также будет показывать любые пользовательские размеры включены. На этом изображении словарь customDimensions показывает пары ключей/значений из предыдущего [образца кода.](#creating-a-custom-dimensions-dictionary)
+В результате в Application Insights будут показаны сообщение журнала и уровень, путь к файлу и номер строки кода. В нем также будут показаны все пользовательские измерения. На этом рисунке в словаре customDimensions показаны пары "ключ-значение" из предыдущего [примера кода](#creating-a-custom-dimensions-dictionary).
 
 ### <a name="additional-helpful-queries"></a>Дополнительные полезные запросы
 
-Некоторые из приведенных ниже запросов используют 'customDimensions.Level'. Эти уровни серьезности соответствуют уровню, с тем, с чем изначально был отправлен журнал Python. Для получения дополнительной информации о запросе смотрите [запросы журнала Azure Monitor.](https://docs.microsoft.com/azure/azure-monitor/log-query/query-language)
+В некоторых запросах ниже используется "customDimensions. Level". Эти уровни серьезности соответствуют уровню, с которым был первоначально отправлен журнал Python. Дополнительные сведения о запросах см. в разделе [Azure Monitor запросы журналов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-language).
 
-| Вариант использования                                                               | Запрос                                                                                              |
+| Вариант использования                                                               | query                                                                                              |
 |------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| Результаты журнала для конкретного пользовательского измерения, например "parent_run_id" | <pre>traces \| <br>where customDimensions.parent_run_id == '931024c2-3720-11ea-b247-c49deda841c1</pre> |
-| Результаты регистрации для всех учебных запусков за последние 7 дней                     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.run_type == 'training'</pre>           |
-| Результаты журнала с серьезностьюLevel Ошибка за последние 7 дней              | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR'                     |
-| Подсчет результатов журнала с серьезностьюLevel Ошибка за последние 7 дней     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR' \| <br>summarize count()</pre> |
+| Заносить в журнал результаты для конкретного пользовательского измерения, например "parent_run_id" | <pre>traces \| <br>where customDimensions.parent_run_id == '931024c2-3720-11ea-b247-c49deda841c1</pre> |
+| Записывать результаты всех обучающих запусков за последние семь дней                     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.run_type == 'training'</pre>           |
+| Регистрировать результаты с ошибкой Северитилевел за последние семь дней              | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR'                     |
+| Число результатов журнала с Северитилевел ошибкой за последние семь дней     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR' \| <br>summarize count()</pre> |
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
-После того, как журналы есть в экземпляре Application Insights, их можно использовать для [установки предупреждений Azure Monitor](../azure-monitor/platform/alerts-overview.md#what-you-can-alert-on) на основе результатов запроса.
+После получения журналов в экземпляре Application Insights их можно использовать для установки [предупреждений Azure Monitor](../azure-monitor/platform/alerts-overview.md#what-you-can-alert-on) на основе результатов запроса.
 
-Вы также можете добавить результаты запросов в [панель мониторинга Azure](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards#add-logs-analytics-query) для получения дополнительных сведений.
+Вы также можете добавлять результаты из запросов на [панель мониторинга Azure](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards#add-logs-analytics-query) для получения дополнительных сведений.

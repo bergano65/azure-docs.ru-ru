@@ -1,5 +1,5 @@
 ---
-title: Используйте графовый объем исполнителя .NET библиотеки с Azure Космос DB Gremlin API
+title: Использование библиотеки NET выполнителя .NET Graph с Azure Cosmos DB API Gremlin
 description: Узнайте, как использовать библиотеку массового исполнителя, чтобы массово импортировать данные графа в контейнер API Gremlin в Azure Cosmos DB.
 author: luisbosquez
 ms.service: cosmos-db
@@ -9,10 +9,10 @@ ms.date: 05/28/2019
 ms.author: lbosq
 ms.reviewer: sngun
 ms.openlocfilehash: adf512fc521ef553f0bbd6ef6dd8ee19e398b37b
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80982709"
 ---
 # <a name="using-the-graph-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db-gremlin-api"></a>Использование библиотеки массового исполнителя .NET для выполнения массовых операций с графами в API Gremlin в Azure Cosmos DB
@@ -77,7 +77,7 @@ catch (Exception e)
 
 Необходимо создать экземпляры полезных данных в объектах `GremlinVertex` и `GremlinEdge`. Ниже показан способ их создания:
 
-**Вертики**:
+**Вершины**:
 ```csharp
 // Creating a vertex
 GremlinVertex v = new GremlinVertex(
@@ -113,7 +113,7 @@ e.AddProperty("customProperty", "value");
 
 ## <a name="sample-application"></a>Пример приложения
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 * Visual Studio 2019 с рабочей нагрузкой разработки Azure. Вы можете бесплатно начать работу в [выпуске Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/).
 * Подписка Azure. Вы можете создать [бесплатную учетную запись Azure здесь](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cosmos-db). Кроме того, можно создать учетную запись базы данных Cosmos в [бесплатной пробной версии Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure.
 * База данных API Gremlin в Azure Cosmos DB с **неограниченной коллекцией**. В этом руководстве объясняется, как начать работу с [Gremlin API в Azure Cosmos DB в .NET](https://docs.microsoft.com/azure/cosmos-db/create-graph-dotnet).
@@ -154,7 +154,7 @@ git clone https://github.com/Azure-Samples/azure-cosmosdb-graph-bulkexecutor-dot
 2. Запустите приложение. `BulkImportAsync` будет вызываться дважды: при первом вызове импортируются вершины, при втором — ребра. Если вставка каких-либо объектов приводит к ошибке, они будут добавлены в `.\BadVertices.txt` или `.\BadEdges.txt`.
 3. Оцените результаты, отправив запрос в базу данных графа. Если `ShouldCleanupOnFinish` имеет значение true, база данных будет автоматически удалена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о пакете Nuget и заметки о выпуске библиотеки .NET массового исполнителя см. в статье [о пакете SDK массового исполнителя](sql-api-sdk-bulk-executor-dot-net.md). 
 * Ознакомьтесь с [советами по повышению производительности](https://docs.microsoft.com/azure/cosmos-db/bulk-executor-dot-net#performance-tips) при использовании библиотеки массового исполнителя.
 * Прочитайте [справочную статью о BulkExecutor.Graph](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph?view=azure-dotnet) с дополнительными сведениями о классах и методах, указанных в этом пространстве имен.
