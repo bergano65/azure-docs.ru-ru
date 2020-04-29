@@ -1,6 +1,6 @@
 ---
 title: Управление сущностями служб мультимедиа с помощью REST | Документация Майкрософт
-description: В этой статье показано, как управлять объектами медиа-услуг с ПОМОЩЬю REST API.
+description: В этой статье показано, как управлять сущностями служб мультимедиа с помощью REST API.
 author: juliako
 manager: femila
 editor: ''
@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: a03bc24b689df342be40536c26149a7611fc5176
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79283320"
 ---
 # <a name="managing-media-services-entities-with-rest"></a>Управление сущностями служб мультимедиа с помощью REST  
 
 > [!div class="op_single_selector"]
-> * [Остальные](media-services-rest-manage-entities.md)
+> * [REST](media-services-rest-manage-entities.md)
 > * [.NET](media-services-dotnet-manage-entities.md)
 > 
 > 
@@ -172,6 +172,6 @@ ms.locfileid: "79283320"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

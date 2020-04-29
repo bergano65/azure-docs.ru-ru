@@ -5,47 +5,47 @@ tags: top-support-issue
 ms.topic: conceptual
 ms.date: 11/26/2019
 ms.openlocfilehash: b0f196f86bed05094b04bfc20c7cef2248a91c65
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79460302"
 ---
-# <a name="view-deployment-history-with-azure-resource-manager"></a>Просмотр истории развертывания с помощью менеджера ресурсов Azure
+# <a name="view-deployment-history-with-azure-resource-manager"></a>Просмотр журнала развертывания с помощью Azure Resource Manager
 
-Диспетчер ресурсов Azure позволяет просматривать историю развертывания и изучать конкретные операции в прошлых развертываниях. Вы можете увидеть ресурсы, которые были развернуты, и получить информацию о любых ошибках.
+Azure Resource Manager позволяет просматривать журнал развертывания и проверять конкретные операции в прошлых развертываниях. Можно просмотреть развернутые ресурсы и получить сведения об ошибках.
 
 Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
 
-## <a name="get-deployments-and-correlation-id"></a>Получить развертывание и идентификатор корреляции
+## <a name="get-deployments-and-correlation-id"></a>Получение развертываний и идентификатора корреляции
 
-Вы можете просматривать сведения о развертывании через портал Azure, PowerShell, Azure CLI или REST API. Каждое развертывание имеет идентификатор корреляции, который используется для отслеживания связанных событий. Это может быть полезно при работе с технической поддержкой для устранения неполадок в развертывании.
+Сведения о развертывании можно просмотреть с помощью портал Azure, PowerShell, Azure CLI или REST API. Каждое развертывание имеет идентификатор корреляции, который используется для наблюдения за связанными событиями. Это может быть полезно при работе с технической поддержкой для устранения неполадок при развертывании.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. Выберите группу ресурсов, которые вы хотите изучить.
+1. Выберите группу ресурсов, которую необходимо проверить.
 
-1. Выберите ссылку под **развертыванием.**
+1. Выберите ссылку в разделе **развертывания**.
 
-   ![Выберите историю развертывания](./media/deployment-history/select-deployment-history.png)
+   ![Выбор журнала развертывания](./media/deployment-history/select-deployment-history.png)
 
-1. Выберите одно из развертываний из истории развертывания.
+1. Выберите одно из развертываний из журнала развертывания.
 
    ![Выбор развертывания](./media/deployment-history/select-details.png)
 
-1. Отображается резюме развертывания, включая идентификатор корреляции.
+1. Отобразится сводка развертывания, включая идентификатор корреляции.
 
     ![Сводка по развертыванию](./media/deployment-history/show-correlation-id.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы перечислить все развертывания для группы ресурсов, используйте команду [Get-AzResourceGroupDeployment.](/powershell/module/az.resources/Get-AzResourceGroupDeployment)
+Чтобы получить список всех развертываний для группы ресурсов, используйте команду [Get-азресаурцеграупдеплоймент](/powershell/module/az.resources/Get-AzResourceGroupDeployment) .
 
 ```azurepowershell-interactive
 Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup
 ```
 
-Чтобы получить определенное развертывание из группы ресурсов, добавьте параметр **DeploymentName.**
+Чтобы получить конкретное развертывание из группы ресурсов, добавьте параметр **DeploymentName** .
 
 ```azurepowershell-interactive
 Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment
@@ -57,15 +57,15 @@ Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName Ex
 (Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment).CorrelationId
 ```
 
-# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы перечислить развертывание для группы ресурсов, используйте [список групп развертывания az.](/cli/azure/group/deployment?view=azure-cli-latest#az-deployment-group-list)
+Чтобы получить список развертывания для группы ресурсов, используйте команду [AZ Deployment Group List](/cli/azure/group/deployment?view=azure-cli-latest#az-deployment-group-list).
 
 ```azurecli-interactive
 az deployment group list --resource-group ExampleGroup
 ```
 
-Чтобы получить конкретное развертывание, используйте [шоу группы развертывания az.](/cli/azure/group/deployment?view=azure-cli-latest#az-deployment-group-show)
+Чтобы получить конкретное развертывание, используйте команду [AZ Deployment Group показывать](/cli/azure/group/deployment?view=azure-cli-latest#az-deployment-group-show).
 
 ```azurecli-interactive
 az deployment group show --resource-group ExampleGroup --name ExampleDeployment
@@ -79,19 +79,19 @@ az deployment group show --resource-group ExampleGroup --name ExampleDeployment 
 
 # <a name="http"></a>[HTTP](#tab/http)
 
-Чтобы перечислить развертывания для группы ресурсов, используйте следующую операцию. Для последнего номера версии API, [Deployments - List By Resource Group](/rest/api/resources/deployments/listbyresourcegroup)который можно использовать в запросе, см.
+Чтобы получить список развертываний для группы ресурсов, используйте следующую операцию. Последний номер версии API, используемый в запросе, см. в разделе [развертывания — список по группам ресурсов](/rest/api/resources/deployments/listbyresourcegroup).
 
 ```
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/?api-version={api-version}
 ```
 
-Для получения конкретного развертывания. использовать следующую операцию. Для последнего номера версии API, [Deployments - Get](/rest/api/resources/deployments/get)который можно использовать в запросе, см.
+Для получения конкретного развертывания. Используйте следующую операцию. Последний номер версии API, используемый в запросе, см. в разделе [deployments-Get](/rest/api/resources/deployments/get).
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
 ```
 
-Ответ включает идентификатор корреляции.
+Ответ содержит идентификатор корреляции.
 
 ```json
 {
@@ -109,29 +109,29 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 
 ---
 
-## <a name="get-deployment-operations-and-error-message"></a>Получайте операции развертывания и сообщение об ошибке
+## <a name="get-deployment-operations-and-error-message"></a>Получить операции развертывания и сообщение об ошибке
 
-Каждое развертывание может включать в себя несколько операций. Чтобы узнать больше о развертывании, просмотрите операции развертывания. При сходе развертывания в эксплуатацию в операции развертывания содержится сообщение об ошибке.
+Каждое развертывание может включать несколько операций. Чтобы просмотреть дополнительные сведения о развертывании, просмотрите операции развертывания. При сбое развертывания операции развертывания включают в себя сообщение об ошибке.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. В резюме для развертывания выберите **детали операции.**
+1. На странице Сводка по развертыванию выберите **сведения об операции**.
 
-    ![Выберите операции развертывания](./media/deployment-history/get-operation-details.png)
+    ![Выбор операций развертывания](./media/deployment-history/get-operation-details.png)
 
-1. Вы видите детали для этого шага развертывания. При возникновении ошибки в детали входит сообщение об ошибке.
+1. Вы увидите сведения об этом шаге развертывания. При возникновении ошибки сведения включают в себя сообщение об ошибке.
 
-    ![Отображить детали операции](./media/deployment-history/see-operation-details.png)
+    ![Отобразить сведения об операции](./media/deployment-history/see-operation-details.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Для просмотра операций развертывания для развертывания в группе ресурсов используйте команду [Get-AzResourceGroupDeploymentOperation.](/powershell/module/az.resources/get-azdeploymentoperation)
+Чтобы просмотреть операции развертывания для развертывания в группе ресурсов, используйте команду [Get-азресаурцеграупдеплойментоператион](/powershell/module/az.resources/get-azdeploymentoperation) .
 
 ```azurepowershell-interactive
 Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName ExampleDeploy
 ```
 
-Для просмотра сбой операций фильтрует операции с **неудавшимся** состоянием.
+Чтобы просмотреть операции с ошибками, отфильтруйте операции с **неудачным** состоянием.
 
 ```azurepowershell-interactive
 (Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName ExampleDeploy).Properties | Where-Object ProvisioningState -eq Failed
@@ -143,15 +143,15 @@ Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -Deployme
 ((Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName ExampleDeploy ).Properties | Where-Object ProvisioningState -eq Failed).StatusMessage.error
 ```
 
-# <a name="azure-cli"></a>[Лазурный CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Для просмотра операций развертывания для развертывания в группе ресурсов используйте команду [списка операций группы аз.](/cli/azure/group/deployment/operation?view=azure-cli-latest#az-deployment-group-operation-list)
+Чтобы просмотреть операции развертывания для развертывания в группе ресурсов, используйте команду [AZ Deployment Group Operation List](/cli/azure/group/deployment/operation?view=azure-cli-latest#az-deployment-group-operation-list) .
 
 ```azurecli-interactive
 az deployment group operation list --resource-group ExampleGroup --name ExampleDeployment
 ```
 
-Для просмотра сбой операций фильтрует операции с **неудавшимся** состоянием.
+Чтобы просмотреть операции с ошибками, отфильтруйте операции с **неудачным** состоянием.
 
 ```azurecli-interactive
 az deployment group operation list --resource-group ExampleGroup --name ExampleDeploy --query "[?properties.provisioningState=='Failed']"
@@ -165,13 +165,13 @@ az deployment group operation list --resource-group ExampleGroup --name ExampleD
 
 # <a name="http"></a>[HTTP](#tab/http)
 
-Для выполнения операций развертывания используйте следующую операцию. Для последнего номера версии API, [Deployment Operations - List](/rest/api/resources/deploymentoperations/list)который можно использовать в запросе, см.
+Чтобы получить операции развертывания, используйте следующую операцию. Последний номер версии API, используемый в запросе, см. в разделе [операции развертывания — список](/rest/api/resources/deploymentoperations/list).
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
 ```
 
-Ответ включает сообщение об ошибке.
+Ответ содержит сообщение об ошибке.
 
 ```json
 {
@@ -207,7 +207,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
 * Дополнительные сведения об использовании журналов действий для мониторинга других типов действий см. в статье [Операции аудита с помощью диспетчера ресурсов](../management/view-activity-logs.md).

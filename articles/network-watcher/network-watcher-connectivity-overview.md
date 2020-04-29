@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: damendo
 ms.openlocfilehash: cae3072a3468b232e95d7c1949948b71059695ea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79283281"
 ---
 # <a name="introduction-to-connection-troubleshoot-in-azure-network-watcher"></a>Общие сведения об устранении неполадок подключения в службе "Наблюдатель за сетями Azure"
@@ -46,7 +46,7 @@ ms.locfileid: "79283281"
 |Hops[].Issues | Набор проблем, возникших во время проверки этого прыжка. Если проблем не обнаружено, значение будет пустым.|
 |Hops[].Issues[].Origin | Текущий прыжок, где возникла проблем. Возможны следующие значения:<br/> **Inbound**. Проблема обнаружена в пути от предыдущего прыжка к текущему.<br/>**Outbound**. Проблема обнаружена в пути от текущего прыжка к следующему.<br/>**Local**. Проблема возникла на текущем прыжке.|
 |Hops[].Issues[].Severity | Степень серьезности обнаруженной проблемы. Возможные значения: **Error** и **Warning**. |
-|Hops[].Issues[].Type |Тип обнаруженной проблемы. Возможны следующие значения: <br/>**Процессора**<br/>**Память**<br/>**GuestFirewall**<br/>**DnsResolution**<br/>**NetworkSecurityRule**<br/>**UserDefinedRoute** |
+|Hops[].Issues[].Type |Тип обнаруженной проблемы. Возможны следующие значения: <br/>**ЗАГРУЗКИ**<br/>**Память**<br/>**GuestFirewall**<br/>**днсресолутион**<br/>**NetworkSecurityRule**<br/>**UserDefinedRoute** |
 |Hops[].Issues[].Context |Сведения об обнаруженной проблеме.|
 |Hops[].Issues[].Context[].key |Возвращенный ключ из пары "ключ — значение".|
 |Hops[].Issues[].Context[].value |Возвращенное значение из пары "ключ — значение".|
@@ -72,7 +72,7 @@ ms.locfileid: "79283281"
 
 Устранение неполадок подключения возвращает типы ошибок подключения. Следующая таблица предоставляет список возвращаемых типов текущих ошибок.
 
-|Тип  |Описание  |
+|Type  |Описание  |
 |---------|---------|
 |ЦП     | Высокая загрузка ЦП.       |
 |Память     | Высокий уровень использования памяти.       |
@@ -81,6 +81,6 @@ ms.locfileid: "79283281"
 |NetworkSecurityRule    | Трафик блокируется правилом группы безопасности сети (возвращается правило).        |
 |UserDefinedRoute|Трафик сбрасывается из-за определенного пользователем или системой маршрута. |
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как устранить неполадки подключения с помощью [портала Azure](network-watcher-connectivity-portal.md), [PowerShell](network-watcher-connectivity-powershell.md), [Azure CLI](network-watcher-connectivity-cli.md) или [REST API](network-watcher-connectivity-rest.md).

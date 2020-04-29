@@ -1,6 +1,6 @@
 ---
-title: Ограничения общественного предварительного просмотра - Azure Digital Twins Документы Майкрософт
-description: Узнайте об общедоступном сервисе предварительного просмотра, примере подписки и ограничениях ставок для Azure Digital Twins.
+title: Ограничения общедоступной предварительной версии службы Azure Digital двойников | Документация Майкрософт
+description: Сведения о службе общедоступной предварительной версии, подписке, экземпляре и ограничениях скорости для цифровых двойников Azure.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -9,17 +9,17 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/17/2020
 ms.openlocfilehash: 5e323d8faa19ceb0712aa6183df17740ce2a0a1d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79370391"
 ---
 # <a name="public-preview-service-limits"></a>Ограничения в общедоступной предварительной версии службы
 
 [!INCLUDE [digital-twins-preview-limit-alert](../../includes/digital-twins-preview-limit-alert.md)]
 
-Во время публичного предварительного просмотра Azure Digital Twins имеет следующие временные ограничения подписки, например, и ограничения скорости для существующих клиентов. Эти ограничения существуют, чтобы помочь упростить изучение новой службы и ее многочисленных функций, и будут увеличены или удалены в целом (GA).
+В общедоступной предварительной версии Azure Digital двойников имеет следующие временные ограничения подписки, экземпляра и скорости для существующих клиентов. Эти ограничения помогают упростить изучение новой службы и ее многих функций, а также будут увеличиваться или удаляться общедоступной версией.
 
 ## <a name="per-subscription-limits"></a>Ограничения для подписок
 
@@ -67,6 +67,6 @@ ms.locfileid: "79370391"
 - 100 сообщений в секунду на всех устройствах
 -    25 сообщений в секунду на устройство
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md).

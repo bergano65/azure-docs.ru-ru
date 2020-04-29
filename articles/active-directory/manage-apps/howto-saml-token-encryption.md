@@ -17,13 +17,13 @@ ms.author: mimart
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0082d841faf22745e609d38444f4a97553b3c867
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79365872"
 ---
-# <a name="how-to-configure-azure-ad-saml-token-encryption"></a>Как настроить шифрование токенов Azure AD SAML
+# <a name="how-to-configure-azure-ad-saml-token-encryption"></a>Как настроить шифрование маркеров SAML в Azure AD
 
 > [!NOTE]
 > Шифрование токенов — это функция уровня "Премиум" в Azure Active Directory (Azure AD). Дополнительные сведения о выпусках, функциях и ценах на Azure AD см. на странице [цен на Azure AD](https://azure.microsoft.com/pricing/details/active-directory/).
@@ -67,7 +67,7 @@ ms.locfileid: "79365872"
     > [!NOTE]
     > Параметр **Шифрование токенов** доступен только для приложений SAML, настроенных в колонке **Корпоративные приложения** на портале Azure (из коллекции приложений или из приложения, не входящего в коллекцию). Для других приложений этот пункт меню отключен. Для приложений, зарегистрированных с помощью функции **Регистрация приложений** на портале Azure, можно настроить шифрование токенов SAML с использованием манифеста приложения, Microsoft Graph или PowerShell.
 
-1. На странице **шифрования токенов** выберите **Сертификат импорта** для импорта файла .cer, содержащего общедоступный сертификат X.509.
+1. На странице **Шифрование токенов** выберите **импортировать сертификат** , чтобы импортировать CER-файл, содержащий общедоступный сертификат X. 509.
 
     ![Импорт CER-файла, содержащего сертификат X.509](./media/howto-saml-token-encryption/import-certificate-small.png)
 
@@ -123,15 +123,15 @@ ms.locfileid: "79365872"
 
 ### <a name="to-configure-token-encryption-using-powershell"></a>Настройка шифрования токенов с помощью PowerShell
 
-1. Используйте новейший модуль Azure AD PowerShell для подключения к арендатору.
+1. Используйте последнюю версию модуля Azure AD PowerShell для подключения к вашему клиенту.
 
-1. Установите настройки шифрования маркеров с помощью команды **[Set-AzureApplication.](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)**
+1. Задайте параметры шифрования маркеров с помощью команды **[Set-азуреаппликатион](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** .
 
     ```
     Set-AzureADApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>
     ```
 
-1. Прочитайте настройки шифрования токенов, используя следующие команды.
+1. Прочтите параметры шифрования маркеров с помощью следующих команд.
 
     ```powershell
     $app=Get-AzureADApplication -ObjectId <ApplicationObjectId>
@@ -218,7 +218,7 @@ ms.locfileid: "79365872"
     }  
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Как в Azure AD используется протокол SAML](../develop/active-directory-saml-protocol-reference.md)
 * Узнайте о формате, характеристиках безопасности и содержимом в статье [Справочник по токенам SAML в Azure AD](../develop/reference-saml-tokens.md).

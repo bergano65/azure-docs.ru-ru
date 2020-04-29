@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: roygara
@@ -9,10 +9,10 @@ ms.date: 03/05/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 3eec6583ebdff35d7e40d2eec305a947de0cb87c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79299467"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
@@ -26,17 +26,17 @@ ms.locfileid: "79299467"
 
 ## <a name="powershell"></a>PowerShell
 
-Для создания дополнительного снимка можно использовать Azure PowerShell. Вам понадобится последняя версия Azure PowerShell, следующая команда будет либо установить его или обновить существующую установку до последней:
+Для создания добавочного моментального снимка можно использовать Azure PowerShell. Вам потребуется последняя версия Azure PowerShell. Следующая команда либо установит ее, либо обновит существующую установку до последней версии:
 
 ```PowerShell
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
 ```
 
-Как только это будет установлено, войдите в сеанс PowerShell с `az login`помощью .
+После установки войдите в сеанс PowerShell с помощью `az login`.
 
-Чтобы создать дополнительный снимок с Azure PowerShell, установите конфигурацию с `-Incremental` [New-AzSnapShotConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с параметром, `-Snapshot` а затем передайте его в качестве переменной [New-AzSnapshot](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) через параметр.
+Чтобы создать добавочный моментальный снимок с Azure PowerShell, настройте конфигурацию с помощью командлета [New-азснапшотконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с `-Incremental` параметром, а затем передайте эту переменную в `-Snapshot` командлет [New-азснапшот](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) с помощью параметра.
 
-`<yourDiskNameHere>`Заменить `<yourResourceGroupNameHere>`, `<yourDesiredSnapShotNameHere>` и с значениями, то вы можете использовать следующий сценарий для создания инкрементного снимка:
+Замените `<yourDiskNameHere>`, `<yourResourceGroupNameHere>`и `<yourDesiredSnapShotNameHere>` значениями, чтобы создать добавочный моментальный снимок, можно использовать следующий скрипт:
 
 ```PowerShell
 # Get the disk that you need to backup by creating an incremental snapshot
@@ -47,9 +47,9 @@ $snapshotConfig=New-AzSnapshotConfig -SourceUri $yourDisk.Id -Location $yourDisk
 New-AzSnapshot -ResourceGroupName <yourResourceGroupNameHere> -SnapshotName <yourDesiredSnapshotNameHere> -Snapshot $snapshotConfig 
 ```
 
-Вы можете определить дополнительные снимки с `SourceResourceId` одного `SourceUniqueId` диска с свойствами снимков. `SourceResourceId`— это идентификатор ресурса Azure Manager родительского диска. `SourceUniqueId`это значение, унаследованное от `UniqueId` свойства диска. Если вы удалили диск, а затем создали новый диск с `UniqueId` тем же именем, значение свойства изменяется.
+Можно выявление добавочных моментальных снимков с того же диска `SourceResourceId` со `SourceUniqueId` свойствами и моментальными снимками. `SourceResourceId`Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId`значение, унаследованное от `UniqueId` свойства диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение `UniqueId` свойства изменится.
 
-Можно использовать `SourceResourceId` `SourceUniqueId` и создавать список всех снимков, связанных с определенным диском. Замените `<yourResourceGroupNameHere>` значение, а затем вы можете использовать следующий пример, чтобы перечислить существующие дополнительные снимки:
+Для создания списка `SourceResourceId` всех `SourceUniqueId` моментальных снимков, связанных с определенным диском, можно использовать и. Замените `<yourResourceGroupNameHere>` на свое значение, а затем можно использовать следующий пример для создания списка существующих добавочных моментальных снимков:
 
 ```PowerShell
 $snapshots = Get-AzSnapshot -ResourceGroupName <yourResourceGroupNameHere>
@@ -69,7 +69,7 @@ $incrementalSnapshots
 
 ## <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-Вы также можете использовать шаблоны менеджерресурсов Azure для создания дополнительного снимка. Вы должны убедиться, что apiVersion установлен на **2019-03-01** и что инкрементное свойство также установлен на истину. Следующий фрагмент является примером того, как создать дополнительный снимок с шаблонами resource Manager:
+Можно также использовать шаблоны Azure Resource Manager для создания добавочного моментального снимка. Необходимо убедиться, что для apiVersion задано значение **2019-03-01** и для свойства инкремента задано значение true. В следующем фрагменте кода приведен пример создания добавочного моментального снимка с помощью шаблонов диспетчер ресурсов.
 
 ```json
 {
@@ -103,6 +103,6 @@ $incrementalSnapshots
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Если вы хотите увидеть пример кода, демонстрирующий дифференциальную возможность дополнительных снимков, с помощью .NET, см. [Copy Azure Managed Disks в другой регион с дифференциальной возможностью дополнительных снимков.](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots)
+Если вы хотите просмотреть пример кода, демонстрирующий возможность создания добавочных моментальных снимков с помощью .NET, см. статью [копирование резервных копий управляемых дисков Azure в другой регион с помощью разностных моментальных снимков](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots).

@@ -1,6 +1,6 @@
 ---
-title: SSH доступ для контейнеров Linux
-description: Вы можете открыть сеанс SSH в контейнере Linux в службе приложений Azure. Пользовательские контейнеры Linux поддерживаются с некоторыми изменениями в пользовательском изображении.
+title: Доступ по протоколу SSH для контейнеров Linux
+description: Вы можете открыть сеанс SSH для контейнера Linux в службе приложений Azure. Настраиваемые контейнеры Linux поддерживаются с некоторыми изменениями пользовательского образа.
 keywords: служба приложений azure, веб-приложение, linux, oss
 author: msangapu-msft
 ms.assetid: 66f9988f-8ffa-414a-9137-3a9b15a5573c
@@ -9,17 +9,17 @@ ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
 ms.openlocfilehash: dab13f222b441c7415a8d09d0d91ab3af5aaf836
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79280187"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
-[Secure Shell (SSH)](https://wikipedia.org/wiki/Secure_Shell) широко используется для удаленного выполнения административных команд из терминала командной строки. Служба приложений на Linux предоставляет поддержку SSH в контейнер приложения. 
+[Secure Shell (SSH)](https://wikipedia.org/wiki/Secure_Shell) широко используется для удаленного выполнения административных команд из терминала командной строки. Служба приложений в Linux обеспечивает поддержку SSH в контейнере приложения. 
 
-![Служба приложений Linux SSH](./media/app-service-linux-ssh-support/app-service-linux-ssh.png)
+![SSH службы приложений Linux](./media/app-service-linux-ssh-support/app-service-linux-ssh.png)
 
 Вы также можете подключиться к контейнеру непосредственно из локального компьютера, где ведется разработка, используя SSH и SFTP.
 
@@ -29,7 +29,7 @@ ms.locfileid: "79280187"
 
 ## <a name="use-ssh-support-with-custom-docker-images"></a>Применение поддержки SSH в пользовательских образах Docker
 
-[См. Настройка SSH в пользовательском контейнере.](configure-custom-container.md#enable-ssh)
+См. раздел [Настройка SSH в пользовательском контейнере](configure-custom-container.md#enable-ssh).
 
 ## <a name="open-ssh-session-from-remote-shell"></a>Открытие сеанса SSH из удаленной оболочки
 
@@ -41,7 +41,7 @@ ms.locfileid: "79280187"
 
 Чтобы начать работу, нужно установить [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы ознакомиться с принципами работы без установки Azure CLI, перейдите к статье [Обзор Azure Cloud Shell](../../cloud-shell/overview.md). 
 
-Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите \_ \< _ \<для _приложения>подписки, _ \<>и_>_ имени приложения.
+Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите _ \<>с идентификатором подписки _, _ \<имя группы>_ и \_ \<имя приложения>_ для своего приложения.
 
 ```azurecli-interactive
 az webapp create-remote-connection --subscription <subscription-id> --resource-group <resource-group-name> -n <app-name> &
@@ -111,7 +111,7 @@ Load average: 0.07 0.04 0.08 4/765 45738
 45738     1 root     Z        0   0%   0   0% [init]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если у вас возникли вопросы, опубликуйте их на [форуме Azure](https://docs.microsoft.com/answers/topics/azure-webapps.html).
 
@@ -121,4 +121,4 @@ Load average: 0.07 0.04 0.08 4/765 45738
 * [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](quickstart-docker-go.md).
 * [Использование .NET Core в службе приложений Azure на платформе Linux](quickstart-dotnetcore.md).
 * [Использование Ruby в службе приложений Azure на платформе Linux](quickstart-ruby.md).
-* [Веб-приложение Службы приложений Azure для часто задаваемых вопросов для контейнеров](app-service-linux-faq.md)
+* [Часто задаваемые вопросы о службе приложений Azure Веб-приложение для контейнеров](app-service-linux-faq.md)

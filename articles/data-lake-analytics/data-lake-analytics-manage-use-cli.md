@@ -1,5 +1,5 @@
 ---
-title: Управление аналитикой озер данных Azure с помощью Azure CLI
+title: Управление Azure Data Lake Analytics с помощью Azure CLI
 description: В этой статье описано, как с помощью Azure CLI управлять источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
 author: jasonwhowell
@@ -9,10 +9,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.openlocfilehash: 69a48952ef273acb8cf7eb0ec5968e12b962b622
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79454369"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-command-line-interface-cli"></a>Управление Azure Data Lake Analytics с помощью интерфейса командной строки (CLI) Azure
@@ -213,7 +213,7 @@ az dla job recurrence show --account "<Data Lake Analytics Account Name>" --recu
 
 ## <a name="see-also"></a>См. также
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
-* [Начало работы с Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)
-* [Управление аналитикой озер данных Azure с помощью портала Azure](data-lake-analytics-manage-use-portal.md)
-* [Мониторинг и устранение неполадок задания Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+* [Приступая к работе с Data Lake Analytics с помощью портал Azure](data-lake-analytics-get-started-portal.md)
+* [Управление Azure Data Lake Analytics с помощью портал Azure](data-lake-analytics-manage-use-portal.md)
+* [Мониторинг и устранение неполадок Azure Data Lake Analytics заданий с помощью портал Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 

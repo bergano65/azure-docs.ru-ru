@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 08/29/2016
 ms.custom: seodec18
 ms.openlocfilehash: 3305cfb81980984574961b2a84a056f5d1879ead
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79280057"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
@@ -33,7 +33,7 @@ ms.locfileid: "79280057"
 
 В этом учебнике приводятся примеры кода для веб-приложения C# MVC, однако в приложениях Visual Basic и веб-форм применяются те же процедуры устранения неполадок.
 
-Учебник предполагает, что вы используете Visual Studio 2019. 
+В учебнике предполагается, что вы используете Visual Studio 2019. 
 
 Журналы потоковой передачи работают только для приложений, которые предназначены для .NET Framework 4 и выше.
 
@@ -61,14 +61,14 @@ Visual Studio обеспечивает доступ к сокращенному 
 
     В этом руководстве используются раскрывающиеся списки ведения журналов и трассировки. Для удаленной отладки вы будете использовать другой метод.
 
-    Для получения информации о настройках приложений и [Azure App Service: How Application Strings and Connection Strings Work](https://azure.microsoft.com/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)строках подключения в этом окне см.
+    Сведения о полях параметры приложения и строки подключения в этом окне см. в разделе [служба приложений Azure: как работают строки приложения и строки подключения](https://azure.microsoft.com/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/).
 
     Если необходимо выполнить задачу по управлению приложением, которую невозможно выполнить в этом окне, щелкните **Открыть на портале управления**, чтобы открыть портал Azure в браузере.
 
 ## <a name="access-app-files-in-server-explorer"></a><a name="remoteview"></a>Доступ к файлам приложения в обозревателе серверов
 Как правило, при развертывании веб-проекта флагу `customErrors` в файле Web.config присваивается значение `On` или `RemoteOnly`, поэтому вы не видите сообщения о возникающих ошибках. В большинстве случаев при ошибке отображается страница следующего вида.
 
-**Ошибка сервера в '/' Приложении:**
+**Ошибка сервера в приложении "/":**
 
 ![Неинформативная страница ошибки](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror.png)
 
@@ -76,7 +76,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 ![Неинформативная страница ошибки](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror1.png)
 
-**Веб-сайт не может отображать страницу**
+**Веб-сайту не удается отобразить страницу**
 
 ![Неинформативная страница ошибки](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror2.png)
 
@@ -127,7 +127,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 1. [Задайте точку останова](https://docs.microsoft.com/visualstudio/debugger/) в строке `ViewBag.Message`.
 
-1. В **Solution Explorer**, правой кнопкой мыши проекта, и нажмите **Опубликовать**.
+1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите команду **опубликовать**.
 
 1. Из раскрывающегося списка **Профиль** выберите профиль, который вы использовали при выполнении инструкций из статьи [Создание веб-приложения ASP.NET Framework в Azure](app-service-web-get-started-dotnet-framework.md). Затем щелкните "Параметры".
 
@@ -250,7 +250,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 * **Журналы трассировки приложения**<br/>
   Приложение создает эти журналы, вызывая методы класса [System.Diagnostics.Trace](/dotnet/api/system.diagnostics.trace) .
-* **Веб-сервер журналы**<br/>
+* **Журналы веб-сервера**<br/>
   Веб-сервер создает запись журнала для каждого HTTP-запроса в приложение.
 * **Подробные журналы сообщений об ошибках**<br/>
   Веб-сервер создает страницу HTML с некоторой дополнительной информацией об ошибочных HTTP-запросах (это запросы, которые приводят к появлению кода состояния 400 и выше).
@@ -271,7 +271,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 Сведения о том, как создавать журналы приложений в веб-заданиях, см. в разделе [Работа с хранилищем очередей Azure с помощью пакета SDK веб-заданий — создание записей в журналах](https://github.com/Azure/azure-webjobs-sdk/wiki). Следующие инструкции для просмотра журналов и управления их хранением в Azure также применяются для журналов приложений, созданных с помощью Azure.
 
 ### <a name="add-tracing-statements-to-the-application"></a>Добавление инструкций трассировки в приложение
-1. Открыть *контроллеры»HomeController.cs*, `Index`и `About`заменить `Contact` , и методы со `Trace` следующим `using` кодом `System.Diagnostics`для того, чтобы добавить заявления и заявление для:
+1. Откройте *Controllers\HomeController.CS*и замените `Index`методы, `About`и `Contact` следующим кодом, чтобы добавить `Trace` инструкции и `using` инструкцию для: `System.Diagnostics`
 
     ```csharp
     public ActionResult Index()
@@ -337,7 +337,7 @@ Visual Studio обеспечивает доступ к сокращенному 
     ```
 
 1. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
-1. В адресной строке окна браузера добавьте *trace.axd* к URL, а `http://localhost:53370/trace.axd`затем нажмите Enter (URL аналогичен).
+1. В адресной строке окна браузера добавьте *Trace. axd* к URL-адресу и нажмите клавишу ВВОД (URL-адрес похож на `http://localhost:53370/trace.axd`).
 1. На странице **Трассировка приложения** щелкните **Просмотр сведений** в первой строке (не в строке BrowserLink).
 
     ![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png)
@@ -577,11 +577,11 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 5. В новом окне браузера перейдите по URL-адресу, показанному в поле **Имя узла FTP** или **Имя узла FTPS** на странице **Обзор** для вашего приложения.
 
-6. Восвай тесьсна с помощью созданных ранее учетных данных FTP (включая префикс имени приложения для имени пользователя).
+6. Выполните вход с использованием учетных данных FTP, созданных ранее (включая префикс имени приложения для имени пользователя).
 
     В браузере отображается корневая папка приложения.
 
-7. Откройте папку *LogFiles* .
+7. Откройте папку *LogFiles*.
 
     ![Откройте папку LogFiles](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilesfolder.png)
 
@@ -599,7 +599,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
     ![Трассировка неудачно завершенных запросов в браузере](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-failedrequestinbrowser.png)
 
-## <a name="next-steps"></a><a name="nextsteps"></a>Следующие шаги
+## <a name="next-steps"></a><a name="nextsteps"></a>Дальнейшие действия
 Вы видели, как Visual Studio позволяет легко просматривать журналы, созданные приложением Службы приложений. В следующих разделах содержатся ссылки на дополнительные ресурсы на связанные темы:
 
 * Устранение неполадок Службы приложений
@@ -613,14 +613,14 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 ### <a name="app-service-troubleshooting"></a>Устранение неполадок Службы приложений
 Дополнительную информацию об устранении неполадок, связанных с приложениями в Службе приложений Azure, см. в следующих ресурсах:
 
-* [Практическое руководство: Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
+* [Мониторинг приложений](web-sites-monitor.md)
 * [Исследование проблемы утечки памяти в Службе приложений Azure с использованием Visual Studio 2013](https://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Запись блога Microsoft ALM о функциях Visual Studio для анализа проблем с управляемой памятью.
 * [Онлайн-инструменты Службы приложений Azure, о которых вам следует знать](https://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/). Запись в блоге Амита Эппла (Amit Apple).
 
 Справочные данные об определенном вопросе, связанном с устранением неполадок, можно получить, начав беседу на одном из следующих форумов:
 
 * [Форум Azure на веб-сайте ASP.NET](https://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET).
-* [Форум Azure на Microsoft s&A](https://docs.microsoft.com/answers/topics/azure-webapps.html).
+* [Форум Azure в Microsoft Q&а](https://docs.microsoft.com/answers/topics/azure-webapps.html).
 * [StackOverflow.com](https://www.stackoverflow.com).
 
 ### <a name="debugging-in-visual-studio"></a>Отладка в Visual Studio
@@ -676,13 +676,13 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 * [LogParser](https://www.microsoft.com/download/details.aspx?id=24659)<br/>
   Инструмент для просмотра данных в журналах веб-сервера (*LOG* -файлов).
-* [Устранение неполадок IIS Производительности или ошибки приложений с помощью LogParser](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
+* [Устранение проблем производительности IIS или ошибок приложений с помощью LogParser](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
    Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
 * [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](https://support.microsoft.com/kb/943891)
 
 ### <a name="analyzing-failed-request-tracing-logs"></a>Анализ журналов трассировки неудачно завершенных запросов
-Веб-сайт Microsoft TechNet содержит раздел [«Отслеживание неудавшихся](https://www.iis.net/learn/troubleshoot/using-failed-request-tracing) запросов», который может быть полезен для понимания того, как использовать эти журналы. Но эта документация посвящена преимущественно настройке трассировки неудачно завершенных запросов в IIS, которую невозможно выполнить в Службе приложений Azure.
+На веб-сайте Microsoft TechNet имеется раздел [Использование трассировки неудачно завершенных запросов](https://www.iis.net/learn/troubleshoot/using-failed-request-tracing) , который может быть полезен для понимания того, как использовать эти журналы. Но эта документация посвящена преимущественно настройке трассировки неудачно завершенных запросов в IIS, которую невозможно выполнить в Службе приложений Azure.
 
 [GetStarted]: app-service-web-get-started-dotnet.md
 [GetStartedWJ]: https://github.com/Azure/azure-webjobs-sdk/wiki

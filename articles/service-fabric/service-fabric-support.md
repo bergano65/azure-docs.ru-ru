@@ -1,15 +1,15 @@
 ---
-title: Узнайте о вариантах поддержки ткани службы Azure
+title: Дополнительные сведения о вариантах поддержки Service Fabric Azure
 description: Поддерживаемые версии кластера Service Fabric и ссылки для отправки запросов в службу поддержки.
 author: pkcsf
 ms.topic: troubleshooting
 ms.date: 8/24/2018
 ms.author: pkc
 ms.openlocfilehash: 7494f0072f27f2c9b00db7070f19dfc05627eacf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79282098"
 ---
 # <a name="azure-service-fabric-support-options"></a>Варианты поддержки Azure Service Fabric
@@ -20,15 +20,15 @@ ms.locfileid: "79282098"
 
 Чтобы сообщить о проблемах в кластере Service Fabric, развернутом в Azure, откройте запрос в службу поддержки [на портале Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) или [портале службы поддержки Майкрософт](https://support.microsoft.com/oas/default.aspx?prid=16146).
 
-См. также:
+Дополнительные сведения
  
 - [Поддержка корпорации Майкрософт для клиентов Azure](https://azure.microsoft.com/support/plans/?b=16.44).
 - [Поддержка Premier](https://support.microsoft.com/en-us/premier).
 
 > [!Note]
-> Кластеры, работающие на бронзовом уровне надежности или кластере одного узла, позволят вам запускать только тестовые рабочие нагрузки. Если возникли проблемы с кластером, работающим на бронзовом надежности или кластере одного узла, группа поддержки Майкрософт поможет вам в устранении проблемы, но не будет выполнять анализ корневых причин. Для более подробной информации о [характеристиках надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-reliability-characteristics-of-the-cluster) обратитесь.
+> Кластеры, работающие на уровне бронзовой надежности или кластере с одним узлом, позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером, работающим на основе бронзовой надежности или кластера с одним узлом, Группа поддержки Майкрософт поможет вам устранить эту неполадку, но не выполнит анализ основных причин. Дополнительные сведения см. в разделе [характеристики надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-reliability-characteristics-of-the-cluster) .
 >
-> Для получения дополнительной информации о том, что требуется для производственного готового кластера, пожалуйста, обратитесь к [контрольному списку готовности к производству.](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist)
+> Дополнительные сведения о том, что требуется для готового к работе кластера, см. в [контрольном списке готовности к рабочей среде](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist).
 
 <a id="getlivesitesupportonprem"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "79282098"
 
 Чтобы сообщить о проблемах в кластере Service Fabric, развернутом в локальной среде или облаке стороннего производителя, откройте запрос в профессиональную службу поддержки на [портале службы поддержки Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 
-См. также:
+Дополнительные сведения
 
 - [Professional Support Options](https://support.microsoft.com/en-us/gp/offerprophone?wa=wsignin1.0) (Варианты профессиональной поддержки).
 - [Поддержка Premier](https://support.microsoft.com/en-us/premier).
@@ -62,7 +62,7 @@ ms.locfileid: "79282098"
 Время от времени мы выпускаем версии с важными функциями, доступными в виде предварительных версий, отзывы по которым мы хотим получить. Эти предварительные версии следует использовать только для целей тестирования. На производственном кластере всегда должна быть запущена поддерживаемая стабильная версия Service Fabric. Предварительная версия всегда начинается с номера основной и вспомогательной версии, равного 255. Например, если отображается версия Service Fabric 255.255.5703.949, она является предварительной и ее следует использовать в тестовых кластерах. О выходе этих предварительных выпусков также объявляется в [блоге группы Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric) и приводятся сведения о функциях, включенных в их состав.
 Возможность платной технической поддержки для этих предварительных выпусков отсутствует. Чтобы задать вопросы или отправить отзыв, воспользуйтесь одной из возможностей в разделе [Сообщение о проблемах Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-support#report-azure-service-fabric-issues).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Поддерживаемые версии Service Fabric](service-fabric-versions.md)
 

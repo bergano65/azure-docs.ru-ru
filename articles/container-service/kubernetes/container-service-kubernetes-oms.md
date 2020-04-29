@@ -8,10 +8,10 @@ ms.date: 12/09/2016
 ms.author: bburns
 ms.custom: mvc
 ms.openlocfilehash: 02d04076ccc41d243a493838667f5e8cc6bfa5ac
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79371160"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-cluster-with-log-analytics"></a>Мониторинг кластера службы контейнеров Azure с помощью Log Analytics (не рекомендуется)
@@ -21,7 +21,7 @@ ms.locfileid: "79371160"
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 В этом пошаговом руководстве предполагается, что вы [создали кластер Kubernetes с помощью службы контейнеров Azure](container-service-kubernetes-walkthrough.md).
 
 Также предполагается, что у вас установлен интерфейс командной строки Azure `az` и инструменты `kubectl`.
@@ -92,7 +92,7 @@ kubectl create -f oms-daemonset.yaml
 ### <a name="installing-the-log-analytics-agent-using-a-kubernetes-secret"></a>Установка агента Log Analytics с помощью секрета Kubernetes
 Для защиты идентификатора и ключа рабочей области Log Analytics можно использовать секрет Kubernetes как часть YAML-файла DaemonSet.
 
-- Копируйте скрипт, секретный файл шаблонов и файл DaemonSet YAML (из [репозитория)](https://github.com/Microsoft/OMS-docker/tree/master/Kubernetes)и убедитесь, что они находятся в одном каталоге.
+- Скопируйте скрипт, секретный файл шаблона и файл демона YAML (из [репозитория](https://github.com/Microsoft/OMS-docker/tree/master/Kubernetes)) и убедитесь, что они находятся в одном каталоге.
   - Сценарий создания секретов — secret-gen.sh.
   - Шаблон секретов — secret-template.yaml
     - YAML-файл DaemonSet — omsagent-ds-secrets.yaml.
@@ -132,7 +132,7 @@ kubectl create -f oms-daemonset.yaml
   KEY:    88 bytes
   ```
 
-  - Создайте свой omsagent daemon-набор, запустив следующее:
+  - Создайте набор управляющей программы omsagent, выполнив следующую команду:
   
   ```console
   kubectl create -f omsagent-ds-secrets.yaml

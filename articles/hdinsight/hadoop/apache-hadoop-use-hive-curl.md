@@ -1,6 +1,6 @@
 ---
 title: Использование Apache Hadoop Hive с Curl в HDInsight — Azure
-description: Узнайте, как удаленно отправлять задания Apache Pig в Azure HDInsight с помощью Curl.
+description: Узнайте, как удаленно отправлять задания Apache Pig в Azure HDInsight с помощью функции фигурного обучения.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/06/2020
 ms.openlocfilehash: 10a2f413142124db7547e68280a0d5e9abac9b98
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79298756"
 ---
 # <a name="run-apache-hive-queries-with-apache-hadoop-in-hdinsight-using-rest"></a>Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST
@@ -21,28 +21,28 @@ ms.locfileid: "79298756"
 
 Узнайте, как с помощью REST API WebHCat выполнять запросы Apache Hive с Apache Hadoop в кластере Azure HDInsight.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
-* Клиент REST. Этот документ использует [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) на Windows PowerShell и [Curl](https://curl.haxx.se/) на [Bash](https://docs.microsoft.com/windows/wsl/install-win10).
+* Клиент REST. В этом документе используется [командлет Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) [в Windows PowerShell и](https://curl.haxx.se/) функция [Bash](https://docs.microsoft.com/windows/wsl/install-win10).
 
-* Если вы используете Bash, вам также понадобится jq, командный процессор JSON.  Смотрите [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
+* При использовании Bash также потребуется JQ, процессор командной строки JSON.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 
-## <a name="base-uri-for-rest-api"></a>Базовый URI для API отдыха
+## <a name="base-uri-for-rest-api"></a>Базовый URI для API-интерфейса RESTful
 
-Базовый единый идентификатор ресурсов (URI) `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`для `CLUSTERNAME` REST API на HDInsight — это место, где находится название вашего кластера.  Названия кластеров в URIs **чувствительны к случаям.**  В то время как название кластера в полностью квалифицированном`CLUSTERNAME.azurehdinsight.net`доменном имени (ФЗДН) части URI () является нечувствительным к случаям, другие случаи в URI чувствительны к случаям.
+Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI (`CLUSTERNAME.azurehdinsight.net`) в полном доменном имени () не учитывает регистр, другие ВХОЖДЕНИЯ в URI учитывают регистр.
 
 ## <a name="authentication"></a>Проверка подлинности
 
 При использовании Curl или любых других средств связи REST с WebHCat нужно выполнять аутентификацию запросов с помощью пароля и имени пользователя администратора кластера HDInsight. REST API защищен с помощью [обычной проверки подлинности](https://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, все запросы следует отправлять с помощью протокола HTTPS.
 
-### <a name="setup-preserve-credentials"></a>Настройка (Сохранение учетных данных)
+### <a name="setup-preserve-credentials"></a>Установка (сохранение учетных данных)
 
-Сохраните свои учетные данные, чтобы избежать повторного ввода их для каждого примера.  Название кластера будет сохранено в отдельном шаге.
+Сохраните свои учетные данные, чтобы избежать их повторного ввода для каждого примера.  Имя кластера будет сохранено на отдельном шаге.
 
-**А. Баш**  
-Отоверьте сценарий ниже, заменив `PASSWORD` фактический пароль.  Затем введите команду.
+**A. bash**  
+Измените приведенный ниже сценарий, `PASSWORD` заменив его фактическим паролем.  Затем введите команду.
 
 ```bash
 export password='PASSWORD'
@@ -54,11 +54,11 @@ export password='PASSWORD'
 $creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"
 ```
 
-### <a name="identify-correctly-cased-cluster-name"></a>Определение правильного кейсированного названия кластера
+### <a name="identify-correctly-cased-cluster-name"></a>Выявление правильного имени кластера с учетом регистра
 
-Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  Шаги здесь будут отображать фактический корпус, а затем хранить его в переменной для всех более поздних примеров.
+Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  В этих шагах будет показан фактический регистр, а затем сохранен в переменной для всех последующих примеров.
 
-Отспособьте приведенные ниже `CLUSTERNAME` сценарии, чтобы заменить имя кластера. Затем введите команду. (Название кластера для ФЗДН не является чувствительным к случаям.)
+Измените приведенные ниже сценарии, `CLUSTERNAME` чтобы они заменили имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
 
 ```bash
 export clusterName=$(curl -u admin:$password -sS -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters" | jq -r '.items[].Clusters.cluster_name')
@@ -146,7 +146,7 @@ $clusterName
 
    Эти операторы выполняют следующие действия:
 
-   * `DROP TABLE`- Если таблица уже существует, она удаляется.
+   * `DROP TABLE`— Если таблица уже существует, она удаляется.
    * `CREATE EXTERNAL TABLE` — создает "внешнюю" таблицу в Hive. Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
 
      > [!NOTE]  
@@ -155,8 +155,8 @@ $clusterName
      > Удаление внешней таблицы **не** приводит к удалению данных, будет удалено только определение таблицы.
 
    * `ROW FORMAT` — настройка форматирования данных. Поля всех журналов разделены пробелами.
-   * `STORED AS TEXTFILE LOCATION`- Где хранятся данные (пример/каталог данных) и что они хранятся в виде текста.
-   * `SELECT`- Выберите количество всех строк, где столбец **t4** содержит значение **«ERROR».** Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
+   * `STORED AS TEXTFILE LOCATION`— Где хранятся данные (каталог example/Data) и хранятся в виде текста.
+   * `SELECT`— Выбирает количество строк, в которых столбец **T4** содержит значение **[Error]**. Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
 
      > [!NOTE]  
      > Обратите внимание, что при использовании Curl пробелы между операторами HiveQL заменяются знаком `+`. Заключенные в кавычки значения, содержащие пробелы в качестве разделителя, заменять на `+`не нужно.
@@ -187,7 +187,7 @@ $clusterName
 
     Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI со службой хранилища Azure см. в документе [Использование Azure CLI со службой хранилища Azure](https://docs.microsoft.com/azure/storage/storage-azure-cli).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight.
 

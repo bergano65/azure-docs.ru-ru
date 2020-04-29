@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: pepogors
 ms.openlocfilehash: 31095a619fc4d756fa4ef9c29691d1d511d59ece
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79282280"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Диагностика и мониторинг производительности в модели Reliable Service Remoting
@@ -36,7 +36,7 @@ ms.locfileid: "79282280"
 
 `ServiceFabricPartitionID_ServiceReplicaOrInstanceId_ServiceRuntimeInternalID`
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора раздела Service Fabric, с которым связан контрэкземпляр производительности. Идентификатор раздела — это GUID, а [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) его представление строкгенерируется методом с помощью спецификации формата «D».
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) метода с описателем формата "D".
 
 *ServiceReplicaOrInstanceId* — это строковое представление идентификатора реплики или экземпляра Service Fabric, c которой связан экземпляр счетчика производительности.
 
@@ -57,7 +57,7 @@ ms.locfileid: "79282280"
 
 *ServiceRuntimeMethodId* — это строковое представление 32-разрядного целого числа. Оно создается средой выполнения Fabric Service для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора раздела Service Fabric, с которым связан контрэкземпляр производительности. Идентификатор раздела — это GUID, а [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) его представление строкгенерируется методом с помощью спецификации формата «D».
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) метода с описателем формата "D".
 
 *ServiceReplicaOrInstanceId* — это строковое представление идентификатора реплики или экземпляра Service Fabric, c которой связан экземпляр счетчика производительности.
 
@@ -90,6 +90,6 @@ ms.locfileid: "79282280"
 | Service Fabric Service |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса службы при получении его службой (мс) |
 | Service Fabric Service |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения службы в службе до отправки ответа клиенту (мс) |
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Пример кода](https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Образец кода](https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0)
 * [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

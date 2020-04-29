@@ -5,10 +5,10 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 2/14/2018
 ms.openlocfilehash: 9f039f71954998ef561d1efd1e559318740c86ab
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79274324"
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Примеры для быстрого запуска Azure Monitor с помощью PowerShell
@@ -38,7 +38,7 @@ Connect-AzAccount
 Get-AzSubscription
 ```
 
-Чтобы увидеть рабочий контекст (с которой выходят ваши команды по подписке), используйте следующую команду:
+Чтобы просмотреть рабочий контекст (подписку на которой выполняются команды), используйте следующую команду:
 
 ```powershell
 Get-AzContext
@@ -51,9 +51,9 @@ Set-AzContext -SubscriptionId <subscriptionid>
 
 
 ## <a name="retrieve-activity-log-for-a-subscription"></a>Получение журнала действий для подписки
-Используйте cmdlet [Get-AzLog.](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog)  Ниже приведено несколько типичных примеров. В журнале activity Log проводятся последние 90 дней операций. Использование дат до этого времени приводит к сообщению об ошибке.  
+Используйте командлет [Get-AzLog](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog) .  Ниже приведено несколько типичных примеров. Журнал действий содержит последние 90 дней операций. При использовании дат до этого времени выдается сообщение об ошибке.  
 
-Узнайте, какую дату/время можно проверить, в какое время использовать команды ниже:
+Ознакомьтесь с текущими значениями даты и времени, чтобы проверить, какое время следует использовать в командах ниже:
 ```powershell
 Get-Date
 ```
@@ -97,7 +97,7 @@ Get-AzLog -MaxRecord 10
 `Get-AzLog` поддерживает много других параметров. Дополнительные сведения см. в справке по `Get-AzLog`.
 
 > [!NOTE]
-> `Get-AzLog` предоставляет данные журнала только за 15 дней. Использование параметра **-MaxRecords** позволяет задать запрос последних событий N, за 15 дней. Чтобы получить события старше 15 дней, используйте REST API или пакет SDK (пример на C# с использованием пакета SDK). Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
+> `Get-AzLog` предоставляет данные журнала только за 15 дней. Использование параметра **-maxRecords** позволяет запрашивать последние N событий, не превышающие 15 дней. Чтобы получить события старше 15 дней, используйте REST API или пакет SDK (пример на C# с использованием пакета SDK). Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
 > 
 > 
 
@@ -148,7 +148,7 @@ Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resou
 
 | параметр | значение |
 | --- | --- |
-| name |simpletestdiskwrite |
+| Имя |simpletestdiskwrite |
 | Расположение этого правила генерации оповещений |Восточная часть США |
 | ResourceGroup |montest |
 | TargetResourceId |/subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig |

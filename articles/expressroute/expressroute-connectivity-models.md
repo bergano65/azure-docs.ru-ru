@@ -1,6 +1,6 @@
 ---
-title: 'Azure ExpressRoute: Модели подключения'
-description: В этой статье описаны различные режимы подключения между сетью клиента и службами Microsoft Azure, а также службы Office 365. Клиенты могут использовать поставщиков MPLS, поставщиков облачных служб Exchange и поставщиков Ethernet.
+title: Azure ExpressRoute. модели подключения
+description: В этой статье описываются различные режимы подключения между сетью клиента и Microsoft Azure и службами Office 365. Клиенты могут использовать поставщиков MPLS, поставщиков облачных служб Exchange и поставщиков Ethernet.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: cherylmc
 ms.openlocfilehash: 375d2f9d3b455c0495c69f2b23d62b1ab6522710
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79280889"
 ---
 # <a name="expressroute-connectivity-models"></a>Модели подключения ExpressRoute
@@ -29,13 +29,13 @@ ms.locfileid: "79280889"
 ## <a name="any-to-any-ipvpn-networks"></a><a name="IPVPN"></a>Сети типа "любой к любому" (IPVPN)
 Глобальную вычислительную сеть можно интегрировать с облаком Майкрософт. Поставщики IP VPN (обычно это MPLS VPN) предлагают подключение между филиалами и центрами обработки данных типа "любой к любому". Облако Майкрософт можно связать с вашей глобальной вычислительной сетью, так чтобы оно выглядело как любой другой филиал. Обычно поставщики глобальных вычислительных сетей предлагают управляемые подключения третьего уровня. Возможности и функции ExpressRoute одинаковы для всех описанных выше моделей. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше о подключениях ExpressRoute и доменах маршрутизации. См. статью [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md).
 * Узнайте о функциях ExpressRoute. См. статью [Технический обзор ExpressRoute](expressroute-introduction.md).
 * Найти поставщика услуг. См. статью [Партнеры и одноранговые расположения ExpressRoute](expressroute-locations.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
-* Ссылайтесь на требования к [реутирование,](expressroute-routing.md) [NAT](expressroute-nat.md), и [ЗОС](expressroute-qos.md).
+* См. требования к [маршрутизации](expressroute-routing.md), [NAT](expressroute-nat.md)и [качеству обслуживания](expressroute-qos.md).
 * Настройте подключение ExpressRoute.
-  * [Создание схемы ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md)
+  * [Создание канала ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md)
   * [Настройка маршрутизации](expressroute-howto-routing-portal-resource-manager.md)
   * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md)

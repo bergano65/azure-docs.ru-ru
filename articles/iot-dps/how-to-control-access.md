@@ -1,6 +1,6 @@
 ---
 title: Конечные точки безопасности в службе подготовки устройств Интернета вещей | Документация Майкрософт
-description: Понятия - как контролировать доступ к IoT устройств Службы обеспечения (DPS) для бэкэнд-приложений. Эта статья включает сведения о маркерах безопасности.
+description: Основные понятия. Управление доступом к службе подготовки устройств Интернета вещей (DPS) для серверных приложений. Эта статья включает сведения о маркерах безопасности.
 author: wesmc7777
 manager: philmea
 ms.service: iot-dps
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: wesmc
 ms.openlocfilehash: 2a7e0932d226b1533c039b8529c2c11de06cf525
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79285153"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
@@ -30,9 +30,9 @@ ms.locfileid: "79285153"
 
 ## <a name="access-control-and-permissions"></a>Контроль доступа и разрешений
 
-Вы можете выдавать [разрешения](#device-provisioning-service-permissions) следующим образом:
+Предоставить [разрешения](#device-provisioning-service-permissions) можно следующими способами.
 
-* **Общие политики авторизации доступа.** Политики общего доступа могут предоставлять любое сочетание [разрешений](#device-provisioning-service-permissions). Политики можно задавать на [портале Azure][lnk-management-portal] или программными средствами, используя [интерфейсы REST API службы подготовки устройств][lnk-resource-provider-apis]. По умолчанию для только что созданной службы подготовки задана следующая политика по умолчанию:
+* **Политики авторизации общего доступа**. Политики общего доступа могут предоставлять любое сочетание [разрешений](#device-provisioning-service-permissions). Политики можно задавать на [портале Azure][lnk-management-portal] или программными средствами, используя [интерфейсы REST API службы подготовки устройств][lnk-resource-provider-apis]. По умолчанию для только что созданной службы подготовки задана следующая политика по умолчанию:
 
 * **provisioningserviceowner.** Политика со всеми разрешениями.
 

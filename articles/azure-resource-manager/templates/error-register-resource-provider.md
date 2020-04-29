@@ -1,13 +1,13 @@
 ---
 title: Ошибки регистрации поставщика ресурсов
-description: Описывает, как устранить ошибки регистрации поставщиков ресурсов Azure при развертывании ресурсов с помощью менеджера ресурсов Azure.
+description: В этой статье описывается, как устранить ошибки регистрации поставщика ресурсов Azure при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 02/15/2019
 ms.openlocfilehash: a9182be53cc91240a62ab201efc53d674f7cf427
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79273778"
 ---
 # <a name="resolve-errors-for-resource-provider-registration"></a>Устранение ошибок регистрации поставщика ресурсов
@@ -105,7 +105,7 @@ az provider show -n Microsoft.Web --query "resourceTypes[?resourceType=='sites']
 
    ![Выбор всех служб](./media/error-register-resource-provider/select-all-services.png)
 
-1. Выберите **Подписку**.
+1. Выберите **подписки**.
 
    ![Выбор пункта "Подписки"](./media/error-register-resource-provider/select-subscriptions.png)
 
