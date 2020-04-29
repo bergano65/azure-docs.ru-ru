@@ -5,16 +5,16 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.reviewer: olegan
 ms.openlocfilehash: 3375c24739da8663aa6a40deeb53e02e65d1f9bf
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81537565"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>Настройка пакета SDK для Application Insights с использованием файла ApplicationInsights.config или ApplicationInsights.xml
-Пакет SDK .NET Application Insights состоит из нескольких пакетов NuGet. [Основной пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights) предоставляет API для отправки телеметрии в Application Insights. [Дополнительные пакеты](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) предоставляют *модули* и *инициализаторы* телеметрии для автоматического отслеживания телеметрии вашего приложения и его контекста. Регулируя файл конфигурации, можно включить или отключить модули телеметрии и инициализаторы, а также установить параметры для некоторых из них.
+Пакет SDK .NET Application Insights состоит из нескольких пакетов NuGet. [Основной пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights) предоставляет API для отправки телеметрии в Application Insights. [Дополнительные пакеты](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) предоставляют *модули* и *инициализаторы* телеметрии для автоматического отслеживания телеметрии вашего приложения и его контекста. Настроив файл конфигурации, можно включить или отключить модули телеметрии и инициализаторы, а также задать параметры для некоторых из них.
 
-Имя файла конфигурации – `ApplicationInsights.config` или `ApplicationInsights.xml` в зависимости от типа приложения. Он добавляется в проект автоматически при [установке большинства версий пакета SDK][start]. По умолчанию при использовании автоматизированного опыта из шаблонных проектов Visual Studio, поддерживающих **> телеметрию Application Insights,** файл ApplicationInsights.config создается в корневой папке проекта и при выполнении скопирован в папку бен. Он также добавляется в веб-приложение [Status Monitor на сервере IIS.][redfield] Файл конфигурации игнорируется, если используется [расширение для веб-сайта Azure](azure-web-apps.md) или [расширение для Azure VM и виртуального набора масштабов машин.](azure-vm-vmss-apps.md)
+Имя файла конфигурации – `ApplicationInsights.config` или `ApplicationInsights.xml` в зависимости от типа приложения. Он добавляется в проект автоматически при [установке большинства версий пакета SDK][start]. По умолчанию при использовании автоматизированного интерфейса проектов шаблонов Visual Studio, поддерживающих **добавление > телеметрия Application Insights**, файл ApplicationInsights. config создается в корневой папке проекта и при его выполнении копируется в папку bin. Он также добавляется в веб-приложение с [Монитор состояния на сервере IIS][redfield]. Файл конфигурации не учитывается, если используется [расширение для веб-сайта](azure-web-apps.md) или [расширения Azure для виртуальной машины Azure и масштабируемого набора виртуальных машин](azure-vm-vmss-apps.md) .
 
 Эквивалентного файла для управления [пакетом SDK на веб-странице][client] не существует.
 
@@ -24,7 +24,7 @@ ms.locfileid: "81537565"
 > ApplicationInsights.config и XML-файлы инструкций не применяются к пакету SDK для .NET Core. Для настройки приложений .NET Core следуйте [этому](../../azure-monitor/app/asp-net-core.md) руководству.
 
 ## <a name="telemetry-modules-aspnet"></a>Модули телеметрии (ASP.NET)
-Каждый модуль телеметрии собирает определенный тип данных и использует основной API для отправки данных. Модули устанавливаются разными пакетами NuGet, что также добавляет необходимые строки в CONFIG-файл.
+Каждый модуль телеметрии собирает данные определенного типа и использует основной API для отправки данных. Модули устанавливаются разными пакетами NuGet, что также добавляет необходимые строки в CONFIG-файл.
 
 В файле конфигурации есть узел для каждого модуля. Чтобы удалить модуль, удалите узел или закомментируйте его.
 
@@ -36,10 +36,10 @@ ms.locfileid: "81537565"
 * `Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule`
 * [Microsoft.ApplicationInsights.DependencyCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector) .
 
-Зависимости могут быть автоматически собраны без изменения кода с помощью прилагаемого на основе агента (без кода). Чтобы использовать его в веб-приложениях Azure, включите [расширение Application Insights.](azure-web-apps.md) Использовать его в наборе виртуальной машины Azure VM или Azure позволяет [расширить мониторинг приложений для VM и виртуального набора масштабов машин.](azure-vm-vmss-apps.md)
+Зависимости можно собирать в автоматическом виде, не изменяя код с помощью присоединения на основе агента (без кода). Чтобы использовать его в веб-приложениях Azure, включите [расширение Application Insights](azure-web-apps.md). Чтобы использовать его в ВИРТУАЛЬНОЙ машине Azure или в масштабируемом наборе виртуальных машин Azure, включите [расширение мониторинга приложений для виртуальных машин и масштабируемых наборов виртуальных машин](azure-vm-vmss-apps.md).
 
 ### <a name="performance-collector"></a>Сборщик данных производительности
-[Собирает счетчики производительности системы,](../../azure-monitor/app/performance-counters.md) такие как процессор, память и сетевая нагрузка с установок IIS. Можно указать конкретные счетчики для сбора данных, включая счетчики производительности, настроенные самостоятельно.
+[Сбор данных счетчиков производительности системы](../../azure-monitor/app/performance-counters.md) , таких как ЦП, память и сетевая нагрузка при установке IIS. Можно указать конкретные счетчики для сбора данных, включая счетчики производительности, настроенные самостоятельно.
 
 * `Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule`
 * [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector) .
@@ -71,7 +71,7 @@ ms.locfileid: "81537565"
 * [Microsoft.ApplicationInsights.Web](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web)
 * `Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule` отслеживает [незамеченные исключения задач](https://blogs.msdn.com/b/pfxteam/archive/2011/09/28/task-exception-handling-in-net-4-5.aspx).
 * `Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule` отслеживает необработанные исключения для рабочих ролей, служб Windows и консольных приложений.
-* [Приложение Исследования Windows Server](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/) Пакет NuGet.
+* [Application Insights Windows Server](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/) Пакет NuGet.
 
 ### <a name="eventsource-tracking"></a>Отслеживание EventSource
 `EventSourceTelemetryModule` позволяет настроить отправку событий EventSource в Application Insights в качестве трассировок. Сведения об отслеживании событий EventSource см. в разделе [Использование событий EventSource](../../azure-monitor/app/asp-net-trace-logs.md#use-eventsource-events).
@@ -86,19 +86,19 @@ ms.locfileid: "81537565"
 * [Microsoft.ApplicationInsights.EtwCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector) 
 
 ### <a name="microsoftapplicationinsights"></a>Microsoft.ApplicationInsights
-Пакет Microsoft.ApplicationInsights предоставляет [основной API](https://msdn.microsoft.com/library/mt420197.aspx) пакета SDK. Другие модули телеметрии используют это, и вы также можете [использовать его для определения вашей собственной телеметрии.](../../azure-monitor/app/api-custom-events-metrics.md)
+Пакет Microsoft.ApplicationInsights предоставляет [основной API](https://msdn.microsoft.com/library/mt420197.aspx) пакета SDK. Другие модули телеметрии используют это, и его также можно [использовать для определения собственных данных телеметрии](../../azure-monitor/app/api-custom-events-metrics.md).
 
 * Нет записей в файле ApplicationInsights.config.
 * [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights) . Если просто установить этот пакет NuGet, CONFIG-файл не создается.
 
 ## <a name="telemetry-channel"></a>Канал телеметрии
-[Телеметрический канал](telemetry-channels.md) управляет буферизацией и передачей телеметрии в службу Application Insights.
+[Канал телеметрии](telemetry-channels.md) управляет буферизацией и передачей данных телеметрии в службу Application Insights.
 
-* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`является каналом по умолчанию для веб-приложений. Он буферизирует данные в памяти и использует механизмы повторной работы и локальное хранилище дисков для более надежной доставки телеметрии.
-* `Microsoft.ApplicationInsights.InMemoryChannel`это легкий канал телеметрии, который используется, если нет другого канала настроен. 
+* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`— Это канал по умолчанию для веб-приложений. Он помещает данные в память и использует механизмы повтора и хранилище локального диска для более надежной доставки телеметрии.
+* `Microsoft.ApplicationInsights.InMemoryChannel`— Это упрощенный канал телеметрии, который используется, если другие каналы не настроены. 
 
 ## <a name="telemetry-initializers-aspnet"></a>Инициализаторы телеметрии (ASP.NET)
-Телеметрические инициали устанавливают контекстные свойства, которые отправляются вместе с каждым элементом телеметрии.
+Инициализаторы телеметрии устанавливают свойства контекста, которые отправляются вместе с каждым элементом телеметрии.
 
 Вы можете [написать собственные инициализаторы](../../azure-monitor/app/api-filtering-sampling.md#add-properties) для задания свойств контекста.
 
@@ -124,17 +124,17 @@ ms.locfileid: "81537565"
 
     `<Filters>` задает идентификационные свойства запросов.
 * `UserTelemetryInitializer` обновляет свойства `Id` и `AcquisitionDate` контекста `User` для всех элементов телеметрии со значениями, извлеченными из файла cookie `ai_user`, созданного кодом JavaScript инструментирования Application Insights, который выполняется в браузере пользователя.
-* `WebTestTelemetryInitializer`устанавливает идентификатор пользователя, идентификатор сеанса и синтетические исходные свойства для запросов HTTP, которые приходят из [тестов доступности.](../../azure-monitor/app/monitor-web-app-availability.md)
+* `WebTestTelemetryInitializer`Задает идентификатор пользователя, идентификатор сеанса и свойства искусственного источника для HTTP-запросов, поступающих из [тестов доступности](../../azure-monitor/app/monitor-web-app-availability.md).
   `<Filters>` задает идентификационные свойства запросов.
 
 Для приложений .NET, работающих в Service Fabric, можно добавить пакет NuGet `Microsoft.ApplicationInsights.ServiceFabric`. Данный пакет содержит компонент `FabricTelemetryInitializer`, который добавляет свойства Service Fabric в элементы телеметрии. Дополнительные сведения см. на [странице GitHub](https://github.com/Microsoft/ApplicationInsights-ServiceFabric/blob/master/README.md), посвященной свойствам, добавляемым пакетом NuGet.
 
 ## <a name="telemetry-processors-aspnet"></a>Обработчики данных телеметрии (ASP.NET)
-Телеметрические процессоры могут фильтровать и изменять каждый элемент телеметрии непосредственно перед отправкой из SDK на портал.
+Обработчики данных телеметрии могут фильтровать и изменять каждый элемент телеметрии непосредственно перед его отправкой из пакета SDK на портал.
 
-Вы можете [написать свой собственный Телеметрия Процессоры](../../azure-monitor/app/api-filtering-sampling.md#filtering).
+Вы можете [создавать собственные обработчики данных телеметрии](../../azure-monitor/app/api-filtering-sampling.md#filtering).
 
-#### <a name="adaptive-sampling-telemetry-processor-from-200-beta3"></a>Адаптивная выборка Телеметрия Процессор (от 2.0.0-beta3)
+#### <a name="adaptive-sampling-telemetry-processor-from-200-beta3"></a>Обработчик данных телеметрии адаптивной выборки (из 2.0.0 — beta3)
 Эта функция включена по умолчанию. Если приложение отправляет слишком много телеметрических данных, обработчик удаляет часть из них.
 
 ```xml
@@ -149,10 +149,10 @@ ms.locfileid: "81537565"
 
 С помощью параметра можно задать целевой показатель, которого алгоритм будет пытаться достичь. Каждый экземпляр пакета SDK работает независимо от других, поэтому если сервер представляет собой кластер из нескольких машин, фактический объем телеметрических данных будет кратен их количеству.
 
-[Подробнее о выборке](../../azure-monitor/app/sampling.md).
+Дополнительные [сведения о выборки](../../azure-monitor/app/sampling.md).
 
-#### <a name="fixed-rate-sampling-telemetry-processor-from-200-beta1"></a>Процессор телеметрии с фиксированной ставкой (от 2.0.0-beta1)
-Существует также стандартный [процессор телеметрии выборки](../../azure-monitor/app/api-filtering-sampling.md) (от 2.0.1):
+#### <a name="fixed-rate-sampling-telemetry-processor-from-200-beta1"></a>Обработчик данных телеметрии с фиксированной частотой (из 2.0.0-beta1)
+Кроме того, существует стандартный [обработчик данных телеметрии с выборкой](../../azure-monitor/app/api-filtering-sampling.md) (от 2.0.1):
 
 ```XML
 
@@ -172,7 +172,7 @@ ms.locfileid: "81537565"
 
 Если необходимо задать ключ динамически, например если вам нужно отправлять результаты из приложения в различные ресурсы, можно удалить ключ в файле конфигурации и задать его в коде.
 
-Установить ключ для всех экземпляров TelemetryClient, включая стандартные модули телеметрии. Задайте ключ в методе инициализации, таком как global.aspx.cs, в службе ASP.NET:
+Чтобы задать ключ для всех экземпляров TelemetryClient, включая стандартные модули телеметрии. Задайте ключ в методе инициализации, таком как global.aspx.cs, в службе ASP.NET:
 
 ```csharp
 using Microsoft.ApplicationInsights.Extensibility;
@@ -284,7 +284,7 @@ TelemetryConfiguration.Active.ApplicationIdProvider = new DictionaryApplicationI
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 [Узнайте больше об API.][api]
 
 <!--Link references-->

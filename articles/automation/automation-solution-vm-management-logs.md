@@ -1,20 +1,20 @@
 ---
-title: Как заставить журналы запросов из решения Start/Stop VMs
-description: В этой статье описывается, как заставить журнал данных журналов, генерируемых решением Start/Stop VMs из Azure Monitor.
+title: Запрос журналов из решения "Запуск и завершение ВМ"
+description: В этой статье описывается, как запрашивать данные журнала, созданные решением "запуск/завершение виртуальных машин", с Azure Monitor.
 services: automation
 ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
 ms.openlocfilehash: 472f3762ca18f71ba95053576daf025d8477fee9
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81604726"
 ---
-# <a name="how-to-query-logs-from-startstop-vms-solution"></a>Как заставить журналы запросов из решения Start/Stop VMs
+# <a name="how-to-query-logs-from-startstop-vms-solution"></a>Запрос журналов из решения "Запуск и завершение ВМ"
 
-Azure Automation перенаправляет два типа записей в связанное рабочее пространство Log Analytics: журналы заданий и потоки заданий. Эти данные доступны для [запроса](../azure-monitor/log-query/log-query-overview.md) в Azure Monitor.
+Служба автоматизации Azure перенаправляет два типа записей в связанную рабочую область Log Analytics: журналы заданий и потоки заданий. Эти данные доступны для [запроса](../azure-monitor/log-query/log-query-overview.md) в Azure Monitor.
 
 ## <a name="job-logs"></a>Журналы заданий
 
@@ -35,7 +35,7 @@ Azure Automation перенаправляет два типа записей в 
 |SourceSystem | Указывает исходную систему для отправленных данных. Для службы автоматизации значением является OpsManager.|
 |StreamType | Задает тип события. Возможны следующие значения:<br>- Verbose.<br>Выходные данные<br>error<br>Предупреждение|
 |SubscriptionId | Указывает идентификатор подписки задания.
-|Time | Дата и время выполнения задания Runbook.|
+|Время | Дата и время выполнения задания Runbook.|
 
 ## <a name="job-streams"></a>Потоки заданий
 
@@ -54,7 +54,7 @@ Azure Automation перенаправляет два типа записей в 
 |RunbookName | Имя Runbook.|
 |SourceSystem | Указывает исходную систему для отправленных данных. Для службы автоматизации значением является OpsManager.|
 |StreamType | Тип потока задания. Возможны следующие значения:<br>- Progress<br>Выходные данные<br>Предупреждение<br>error<br>debug<br>- Verbose.|
-|Time | Дата и время выполнения задания Runbook.|
+|Время | Дата и время выполнения задания Runbook.|
 
 При выполнении поиска по журналам, в результате которого возвращаются записи категории **JobLogs** или **JobStreams**, можно выбрать представление **JobLogs** или **JobStreams**. Эти представления отображают набор элементов с перечнем обновлений, возвращенных в результатах поиска.
 
@@ -65,10 +65,10 @@ Azure Automation перенаправляет два типа записей в 
 |query | Описание|
 |----------|----------|
 |Поиск успешно выполненных заданий runbook ScheduledStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
-|Поиск заданий для ScheduledStartStop_Parent runbook, которые не завершили успешно | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
+|Поиск заданий для ScheduledStartStop_Parent Runbook, которые не были успешно выполнены | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
 |Поиск успешно выполненных заданий runbook SequencedStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" ) <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
-|Поиск вакансий для SequencedStartStop_Parent, которые не завершили успешно | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" ) <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
+|Поиск заданий для SequencedStartStop_Parent Runbook, которые не были успешно выполнены | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" ) <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Решение **Start/Stop VMs в нерабочее время** не включает заранее определенный набор оповещений. Просмотрите [оповещения о создании журнала](../azure-monitor/platform/alerts-log.md) с помощью Azure Monitor, чтобы узнать, как создавать невыполненные оповещения о работе для поддержки ваших DevOps или операционных процессов и процедур.
+**Запуск и остановка виртуальных машин в нерабочее время** решение не включает предопределенный набор предупреждений. Дополнительные сведения о создании оповещений о сбое задания для поддержки DevOps или рабочих процессов и процедур см. в статье [Создание оповещений журнала](../azure-monitor/platform/alerts-log.md) с помощью Azure Monitor.

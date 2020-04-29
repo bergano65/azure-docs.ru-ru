@@ -4,10 +4,10 @@ description: Осуществляйте непрерывный экспорт д
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.openlocfilehash: e67365038b9a481bc0cacf079e5d197cc3139a5f
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81536919"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
@@ -153,13 +153,13 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 
 #### <a name="set-path-prefix-pattern"></a>Установка шаблона префикса пути
 
-**Обязательно установите формат Даты для YYYY-MM-DD (с тире).**
+**Не забудьте задать формат даты гггг-мм-дд (с тире).**
 
 Шаблон префикса пути указывает, как Stream Analytics находит входные файлы в хранилище. Вам необходимо настроить это поле в соответствии с тем, как функция непрерывного экспорта сохраняет данные. Задайте следующее значение:
 
     webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
-В данном примере:
+В этом примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**). 
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 
@@ -239,7 +239,7 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
     FROM [dbo].[PageViewsTable]
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 * [Экспорт в Power BI с использованием Stream Analytics](../../azure-monitor/app/export-power-bi.md )
 * [Подробный справочник по модели данных типов и значений свойств.](../../azure-monitor/app/export-data-model.md)
 * [Непрерывный экспорт в Application Insights](../../azure-monitor/app/export-telemetry.md)

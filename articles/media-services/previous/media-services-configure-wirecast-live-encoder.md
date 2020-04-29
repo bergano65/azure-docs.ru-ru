@@ -16,10 +16,10 @@ ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: cenkdin;anilmur
 ms.openlocfilehash: 8e3705aaecb0760513f0605aece89b7ffc0044a8
-ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81641644"
 ---
 # <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока 
@@ -32,15 +32,15 @@ ms.locfileid: "81641644"
 В этом учебнике показано, как управлять службами мультимедиа Azure (AMS) с помощью Обозревателя служб мультимедиа Azure. Это средство запускается только на компьютерах с ОС Windows. Если вы используете Mac или Linux, воспользуйтесь классическим порталом Azure для создания [каналов](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) и [программ](media-services-portal-creating-live-encoder-enabled-channel.md).
 
 > [!NOTE]
-> При использовании протоколов RTMPS кодеры должны поддерживать TLS 1.2. Используйте версию Wirecast 13.0.2 или выше из-за требования TLS 1.2.
+> Кодировщики должны поддерживать TLS 1,2 при использовании протоколов РТМПС. Используйте Wirecast версии 13.0.2 или выше из-за требования TLS 1,2.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * [Создание учетной записи служб мультимедиа Azure](media-services-portal-create-account.md)
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
 * Установите последнюю версию средства [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) .
 * Запустите его и подключитесь к учетной записи AMS.
 
-## <a name="tips"></a>Советы
+## <a name="tips"></a>"Советы"
 * По возможности используйте проводное подключение к Интернету.
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
@@ -63,7 +63,7 @@ ms.locfileid: "81641644"
 >
 >
 
-Пока канал запускается, можно [настроить коделер.](media-services-configure-wirecast-live-encoder.md#configure_wirecast_rtmp)
+При запуске канала можно [настроить кодировщик](media-services-configure-wirecast-live-encoder.md#configure_wirecast_rtmp).
 
 > [!IMPORTANT]
 > Тарификация начинается сразу же после перехода канала в состояние готовности. Дополнительные сведения см. в разделе о [состояниях каналов](media-services-manage-live-encoder-enabled-channels.md#states).
@@ -81,7 +81,7 @@ ms.locfileid: "81641644"
 * Опорный кадр: 2 секунды (60 секунд)
 * Частота кадров: 30
 
-**Аудио**:
+**Звук**:
 
 * Кодек: AAC (LC)
 * Скорость: 192 Кбит/с
@@ -102,7 +102,7 @@ ms.locfileid: "81641644"
 
     Задайте имя набора параметров и проверьте следующие рекомендуемые параметры:
 
-    **Видео**
+    **Роли**
 
    * Кодировщик: MainConcept H.264
    * Кадров в секунду: 30
@@ -132,7 +132,7 @@ ms.locfileid: "81641644"
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast5.png)
 
-1. Нажмите кнопку **ОК**.
+1. Нажмите кнопку **OK**.
 2. На главном экране **Wirecast** подтвердите готовность источников ввода для видео и звука, а затем щелкните **Stream** (Потоковая передача) в верхнем левом углу.
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast7.png)
@@ -154,7 +154,7 @@ ms.locfileid: "81641644"
 При получении сообщения об ошибке необходимо сбросить канал и настроить параметры кодировщика. Дополнительные сведения см. в руководстве по [устранению неполадок](media-services-troubleshooting-live-streaming.md).  
 
 ## <a name="create-a-program"></a>Создание программы
-1. После проверки воспроизведения канала создайте программу. Под вкладкой **Live** в инструменте AMSE, правой кнопкой мыши в области программы и выберите **Создать новую программу**.  
+1. После проверки воспроизведения канала создайте программу. На вкладке **Live (динамический** ) в СРЕДСТВе AMSE щелкните правой кнопкой мыши в области программы и выберите команду **создать новую программу**.  
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast9.png)
 2. Укажите имя программы и при необходимости измените параметр **Archive Window Length** (Длительность периода архивации); по умолчанию она составляет четыре часа. Также можно указать расположение для хранения или оставить значение по умолчанию.  
@@ -175,5 +175,5 @@ ms.locfileid: "81641644"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

@@ -13,36 +13,36 @@ ms.workload: tbd
 ms.date: 04/17/2020
 ms.author: raiye
 ms.openlocfilehash: a271eca3c3b6e7cd364f2bc87f2e15006874fa08
-ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81617696"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для того [семейства][family-explain], в котором они были введены.
 
-## <a name="april-2020-guest-os"></a>Апрель 2020 Гостевая ОС
+## <a name="april-2020-guest-os"></a>Гостевая ОС с апреля 2020
 
 >[!NOTE]
->В настоящее время внедряется апрельская ОС для гостей, настроенных на облачные сервисы, настроенные для автоматического обновления. После завершения выпуска эта версия будет доступна для обновления вручную через портал Azure и файлы конфигурации. Следующие патчи включены в оС в апреле гость. Этот список подлежит изменению.
+>В настоящее время выполняется развертывание гостевой ОС на виртуальных машинах облачных служб, настроенных для автоматического обновления. После завершения выпуска эта версия будет доступна для обновления вручную через портал Azure и файлы конфигурации. Следующие исправления включены в систему гостевой ОС в апреле. Этот список подлежит изменению.
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
 |  Rel 20-04  |  [4550965]  |  Безопасность Windows  | 2,97 | 14 апреля 2020 г. |
-|  Rel 20-04  |  [4550905]  |  Internet Explorer  | 2.97, 3.84, 4.77 | 14 апреля 2020 г. |
+|  Rel 20-04  |  [4550905]  |  Internet Explorer  | 2,97, 3,84, 4,77 | 14 апреля 2020 г. |
 |  Rel 20-04  |  [4550971]  |  Безопасность Windows  | 3.84 | 14 апреля 2020 г. |
-|  Rel 20-04  |  [4550970]  |  Безопасность Windows  | 4.77 | 14 апреля 2020 г. |
-|  Rel 20-04  |  [4550929]  |  Последнее кумулятивное обновление (LCU)  | 5.42 | 14 апреля 2020 г. |
-|  Rel 20-04  |  [4549949]  |  Последнее кумулятивное обновление (LCU)  | 6,18 | 14 апреля 2020 г. |
-|  Rel 20-04  |  [4540688]  |  Ежемесячный ролл-ап  | 2,97 | 10 марта 2020 г. |
-|  Rel 20-04  |  [4550735]  |  Обновление стеков обслуживания  | 2,97 | 10 марта 2020 г. |
-|  Rel 20-04  |  [4540726]  |  Обновление стеков обслуживания  | 3.84 | 10 марта 2020 г. |
-|  Rel 20-04  |  [4541510]  |  Ежемесячный ролл-ап  | 3.84 | 10 марта 2020 г. |
-|  Rel 20-04  |  [4541509]  |  Ежемесячный ролл-ап  | 4.77 | 10 марта 2020 г. |
-|  Rel 20-04  |  [4540725]  |  Обновление стеков обслуживания  | 4.77 | 10 марта 2020 г. |
-|  Rel 20-04  |  [4540723]  |  Обновление стеков обслуживания  | 5.42 | 10 марта 2020 г. |
-|  Rel 20-04  |  [4539571]  |  Обновление стеков обслуживания  | 6,18 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4550970]  |  Безопасность Windows  | 4,77 | 14 апреля 2020 г. |
+|  Rel 20-04  |  [4550929]  |  Последнее накопительное обновление (ЛКУ)  | 5,42 | 14 апреля 2020 г. |
+|  Rel 20-04  |  [4549949]  |  Последнее накопительное обновление (ЛКУ)  | 6,18 | 14 апреля 2020 г. |
+|  Rel 20-04  |  [4540688]  |  Ежемесячное сведение  | 2,97 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4550735]  |  Обновление стека обслуживания  | 2,97 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4540726]  |  Обновление стека обслуживания  | 3.84 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4541510]  |  Ежемесячное сведение  | 3.84 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4541509]  |  Ежемесячное сведение  | 4,77 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4540725]  |  Обновление стека обслуживания  | 4,77 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4540723]  |  Обновление стека обслуживания  | 5,42 | 10 марта 2020 г. |
+|  Rel 20-04  |  [4539571]  |  Обновление стека обслуживания  | 6,18 | 10 марта 2020 г. |
 
 [4550965]: https://support.microsoft.com/kb/4550965
 [4550905]: https://support.microsoft.com/kb/4550905
@@ -60,19 +60,19 @@ ms.locfileid: "81617696"
 [4539571]: https://support.microsoft.com/kb/4539571
 
 
-## <a name="march-2020-guest-os"></a>Март 2020 Гостевая ОС
+## <a name="march-2020-guest-os"></a>Гостевая ОС (март 2020)
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
 |  Rel 20-03  |  [4541500]  |  Безопасность Windows  | [2.96] | 10 марта 2020 г. |
-|  Rel 20-03  |  [4540671]  |  Internet Explorer  | [2.96], [3.83], [4.76] | 10 марта 2020 г. |
-|  Rel 20-03  |  [4540694]  |  Безопасность Windows  | [3.83] | 10 марта 2020 г. |
-|  Rel 20-03  |  [4541505]  |  Безопасность Windows  | [4.76] | 10 марта 2020 г. |
-|  Rel 20-03  |  [4540670]  |  Последнее кумулятивное обновление (LCU)  | [5.41] | 10 марта 2020 г. |
-|  Rel 20-03  |  [4538461]  |  Последнее кумулятивное обновление (LCU)  | [6.17] | 10 марта 2020 г. |
-|  Rel 20-03  |  [4537820]  |  Ежемесячный ролл-ап  | [2.96] | 11 февраля 2020 г. |
-|  Rel 20-03  |  [4537814]  |  Ежемесячный ролл-ап  | [3.83] | 11 февраля 2020 г. |
-|  Rel 20-03  |  [4537821]  |  Ежемесячный ролл-ап  | [4.76] | 11 февраля 2020 г. |
+|  Rel 20-03  |  [4540671]  |  Internet Explorer  | [2,96], [3,83], [4,76] | 10 марта 2020 г. |
+|  Rel 20-03  |  [4540694]  |  Безопасность Windows  | [3,83] | 10 марта 2020 г. |
+|  Rel 20-03  |  [4541505]  |  Безопасность Windows  | [4,76] | 10 марта 2020 г. |
+|  Rel 20-03  |  [4540670]  |  Последнее накопительное обновление (ЛКУ)  | [5,41] | 10 марта 2020 г. |
+|  Rel 20-03  |  [4538461]  |  Последнее накопительное обновление (ЛКУ)  | [6,17] | 10 марта 2020 г. |
+|  Rel 20-03  |  [4537820]  |  Ежемесячное сведение  | [2.96] | 11 февраля, 2020 |
+|  Rel 20-03  |  [4537814]  |  Ежемесячное сведение  | [3,83] | 11 февраля, 2020 |
+|  Rel 20-03  |  [4537821]  |  Ежемесячное сведение  | [4,76] | 11 февраля, 2020 |
 
 [4541500]: https://support.microsoft.com/kb/4541500 
 [4540671]: https://support.microsoft.com/kb/4540671 
@@ -84,32 +84,32 @@ ms.locfileid: "81617696"
 [4537814]: https://support.microsoft.com/kb/4537814 
 [4537821]: https://support.microsoft.com/kb/4537821 
 
-[6.17]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.41]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.76]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.83]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[6,17]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[5,41]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,76]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,83]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
 [2.96]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
-## <a name="february-2020-guest-os"></a>Февраль 2020 Гостевая ОС
+## <a name="february-2020-guest-os"></a>Гостевая ОС (Февраль 2020)
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Рель 20-02  |  [4537767]  |  Internet Explorer  |  [2.95], [3.82], [4.75]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4537813]  |  Безопасность Windows  |  [2.95]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4537794]  |  Безопасность Windows  |  [3.82]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4537803]  |  Безопасность Windows  |  [4.75]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4537764]  |  Последнее кумулятивное обновление (LCU)  |  [5.40]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4532691]  |  Последнее кумулятивное обновление (LCU)  |  [6.16]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4534310]  |  Ежемесячный ролл-ап  |  [2.95]  |  14 января 2020 г.  |
-|  Рель 20-02  |  [4536952]  |  Обновление стеков (SSU)  |  [2.95]  |  14 января 2020 г.  |
-|  Рель 20-02  |  [4537829]  |  Обновление стеков (SSU)  |  [2.95]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4538483]  |  Расширенные обновления безопасности (ESU)  |  [2.95]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4537820]  |  Ежемесячный ролл-ап  |  [2.95]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4537759]  |  Обновление безопасности (Flash)  |  [3.82], [4.75]  |  11 февраля 2020 г.  |
-|  Рель 20-02  |  [4534283]  |  Ежемесячный ролл-ап  |  [3.82]  |  14 января 2020 г.  |
-|  Рель 20-02  |  [4532920]  |  Обновление стеков (SSU)  |  [3.82]  |  10 декабря 2020 г.  |
-|  Рель 20-02  |  [4534297]  |  Небезопасность  |  [4.75]  |  14 января 2020 г.  |
+|  Rel 20-02  |  [4537767]  |  Internet Explorer  |  [2,95], [3,82], [4,75]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4537813]  |  Безопасность Windows  |  [2,95]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4537794]  |  Безопасность Windows  |  [3,82]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4537803]  |  Безопасность Windows  |  [4,75]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4537764]  |  Последнее накопительное обновление (ЛКУ)  |  [5,40]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4532691]  |  Последнее накопительное обновление (ЛКУ)  |  [6,16]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4534310]  |  Ежемесячное сведение  |  [2,95]  |  14 января 2020 г.  |
+|  Rel 20-02  |  [4536952]  |  Обновление стека обслуживания (SSU)  |  [2,95]  |  14 января 2020 г.  |
+|  Rel 20-02  |  [4537829]  |  Обновление стека обслуживания (SSU)  |  [2,95]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4538483]  |  Расширенные обновления системы безопасности (ЕСУ)  |  [2,95]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4537820]  |  Ежемесячное сведение  |  [2,95]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4537759]  |  Обновление для системы безопасности (Flash)  |  [3,82], [4,75]  |  11 февраля, 2020  |
+|  Rel 20-02  |  [4534283]  |  Ежемесячное сведение  |  [3,82]  |  14 января 2020 г.  |
+|  Rel 20-02  |  [4532920]  |  Обновление стека обслуживания (SSU)  |  [3,82]  |  10 декабря 2020 г.  |
+|  Rel 20-02  |  [4534297]  |  Без безопасности  |  [4,75]  |  14 января 2020 г.  |
 
 [4537767]: https://support.microsoft.com/kb/4537767
 [4537813]: https://support.microsoft.com/kb/4537813
@@ -127,36 +127,36 @@ ms.locfileid: "81617696"
 [4532920]: https://support.microsoft.com/kb/4532920
 [4534297]: https://support.microsoft.com/kb/4534297
 
-[6.16]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.40]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.75]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.82]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2.95]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,16]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[5,40]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,75]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,82]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[2,95]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
-## <a name="january-2020-guest-os"></a>Январь 2020 Гостевая ОС
+## <a name="january-2020-guest-os"></a>Гостевая ОС за январь 2020
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Рель 20-01  |  [4532960]  |  Безопасность Windows  | [2.94] | 14 января 2020 г. |
-|  Рель 20-01  |  [4534251]  |  Internet Explorer  | [2.94] | 14 января 2020 г. |
-|  Рель 20-01  |  [4534314]  |  Безопасность Windows  | [2.94] | 14 января 2020 г. |
-|  Рель 20-01  |  [4532958]  |  Безопасность Windows  | [3.81] | 14 января 2020 г. |
-|  Рель 20-01  |  [4532963]  |  Безопасность Windows  | [3.81] | 14 января 2020 г. |
-|  Рель 20-01  |  [4534251]  |  Internet Explorer  | [3.81] | 14 января 2020 г. |
-|  Рель 20-01  |  [4534288]  |  Безопасность Windows  | [3.81] | 14 января 2020 г. |
-|  Рель 20-01  |  [4532961]  |  Безопасность Windows  | [4.74] | 14 января 2020 г. |
-|  Рель 20-01  |  [4532962]  |  Безопасность Windows  | [4.74] | 14 января 2020 г. |
-|  Рель 20-01  |  [4534251]  |  Internet Explorer  | [4.74] | 14 января 2020 г. |
-|  Рель 20-01  |  [4534309]  |  Безопасность Windows  | [4.74] | 14 января 2020 г. |
-|  Рель 20-01  |  [4494175]  |  Микрокод v3  | [5.39] | 29 августа 2019 г. |
-|  Рель 20-01  |  [4534271]  |  LCU  | [5.39] | 14 января 2020 г. |
-|  Рель 20-01  |  [4494174]  |  Микрокод v4  | [6.15] | 29 августа 2019 г. |
-|  Рель 20-01  |  [4532947]  |  Безопасность Windows  | [6.15] | 14 января 2020 г. |
-|  Рель 20-01  |  [4534273]  |  LCU  | [6.15] | 14 января 2020 г. |
-|  Рель 20-01  |  [4530734]  |  Ежемесячный ролл-ап  | [2.94] | 10 декабря 2019 г. |
-|  Рель 20-01  |  [4530691]  |  Ежемесячный ролл-ап   | [3.81] | 10 декабря 2019 г. |
-|  Рель 20-01  |  [4530702]  |  Ежемесячный ролл-ап  | [4.74] | 10 декабря 2019 г. |
+|  Rel 20-01  |  [4532960]  |  Безопасность Windows  | [2,94] | 14 января 2020 г. |
+|  Rel 20-01  |  [4534251]  |  Internet Explorer  | [2,94] | 14 января 2020 г. |
+|  Rel 20-01  |  [4534314]  |  Безопасность Windows  | [2,94] | 14 января 2020 г. |
+|  Rel 20-01  |  [4532958]  |  Безопасность Windows  | [3,81] | 14 января 2020 г. |
+|  Rel 20-01  |  [4532963]  |  Безопасность Windows  | [3,81] | 14 января 2020 г. |
+|  Rel 20-01  |  [4534251]  |  Internet Explorer  | [3,81] | 14 января 2020 г. |
+|  Rel 20-01  |  [4534288]  |  Безопасность Windows  | [3,81] | 14 января 2020 г. |
+|  Rel 20-01  |  [4532961]  |  Безопасность Windows  | [4,74] | 14 января 2020 г. |
+|  Rel 20-01  |  [4532962]  |  Безопасность Windows  | [4,74] | 14 января 2020 г. |
+|  Rel 20-01  |  [4534251]  |  Internet Explorer  | [4,74] | 14 января 2020 г. |
+|  Rel 20-01  |  [4534309]  |  Безопасность Windows  | [4,74] | 14 января 2020 г. |
+|  Rel 20-01  |  [4494175]  |  Микрокодовая Версия V3  | [5,39] | 29 августа 2019 г. |
+|  Rel 20-01  |  [4534271]  |  лку  | [5,39] | 14 января 2020 г. |
+|  Rel 20-01  |  [4494174]  |  Микрокод v4  | [6,15] | 29 августа 2019 г. |
+|  Rel 20-01  |  [4532947]  |  Безопасность Windows  | [6,15] | 14 января 2020 г. |
+|  Rel 20-01  |  [4534273]  |  лку  | [6,15] | 14 января 2020 г. |
+|  Rel 20-01  |  [4530734]  |  Ежемесячное сведение  | [2,94] | 10 декабря 2019 г. |
+|  Rel 20-01  |  [4530691]  |  Ежемесячное сведение   | [3,81] | 10 декабря 2019 г. |
+|  Rel 20-01  |  [4530702]  |  Ежемесячное сведение  | [4,74] | 10 декабря 2019 г. |
 
 [4532960]: https://support.microsoft.com/kb/4532960
 [4534251]: https://support.microsoft.com/kb/4534251
@@ -177,33 +177,33 @@ ms.locfileid: "81617696"
 [4530734]: https://support.microsoft.com/kb/4530734
 [4530691]: https://support.microsoft.com/kb/4530691
 [4530702]: https://support.microsoft.com/kb/4530702
-[6.15]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.39]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.74]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.81]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2.94]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,15]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[5,39]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,74]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,81]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[2,94]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
-## <a name="december-2019-guest-os"></a>Декабрь 2019 Гостевая ОС
+## <a name="december-2019-guest-os"></a>Декабрь 2019 гостевая ОС
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
 |  Rel 19-12  |  [4530692]  |  Безопасность Windows  | [2,93] | 10 декабря 2019 г. |
 |  Rel 19-12  |  [4530677]  |  Internet Explorer  | [2,93] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4530677]  |  Internet Explorer  | [3.80] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4530698]  |  Безопасность Windows  | [3.80] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4530730]  |  Безопасность Windows  | [4.73] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4530677]  |  Internet Explorer  | [4.73] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4530689]  |  Последнее кумулятивное обновление  | [5.38] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4530715]  |  Последнее кумулятивное обновление  | [6.14] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4525235]  |  Небезопасность  | [2,93] | 12 ноября 2019 г. |
+|  Rel 19-12  |  [4530677]  |  Internet Explorer  | [3,80] | 10 декабря 2019 г. |
+|  Rel 19-12  |  [4530698]  |  Безопасность Windows  | [3,80] | 10 декабря 2019 г. |
+|  Rel 19-12  |  [4530730]  |  Безопасность Windows  | [4,73] | 10 декабря 2019 г. |
+|  Rel 19-12  |  [4530677]  |  Internet Explorer  | [4,73] | 10 декабря 2019 г. |
+|  Rel 19-12  |  [4530689]  |  Последнее накопительное обновление  | [5,38] | 10 декабря 2019 г. |
+|  Rel 19-12  |  [4530715]  |  Последнее накопительное обновление  | [6,14] | 10 декабря 2019 г. |
+|  Rel 19-12  |  [4525235]  |  Без безопасности  | [2,93] | 12 ноября 2019 г. |
 |  Rel 19-12  |  [4531786]  |  Обновление стека обслуживания  | [2,93] | 10 декабря 2019 г. |
-|  Rel 19-12  |  [4525246]  |  Небезопасность  | [3.80] | 12 ноября 2019 г. |
-|  Rel 19-12  |  [4523208]  |  Обновление стека обслуживания  | [3.80] | 12 ноября 2019 г. |
-|  Rel 19-12  |  [4525243]  |  Небезопасность  | [4.73] | 12 ноября 2019 г. |
-|  Rel 19-12  |  [4524445]  |  Обновление стека обслуживания  | [4.73] | 12 ноября 2019 г. |
-|  Rel 19-12  |  [4520724]  |  Обновление стека обслуживания  | [5.38] | 12 ноября 2019 г. |
-|  Rel 19-12  |  [4523204]  |  ОбслуживаниеStackUpdate  | [6.14] | 12 ноября 2019 г. |
+|  Rel 19-12  |  [4525246]  |  Без безопасности  | [3,80] | 12 ноября 2019 г. |
+|  Rel 19-12  |  [4523208]  |  Обновление стека обслуживания  | [3,80] | 12 ноября 2019 г. |
+|  Rel 19-12  |  [4525243]  |  Без безопасности  | [4,73] | 12 ноября 2019 г. |
+|  Rel 19-12  |  [4524445]  |  Обновление стека обслуживания  | [4,73] | 12 ноября 2019 г. |
+|  Rel 19-12  |  [4520724]  |  Обновление стека обслуживания  | [5,38] | 12 ноября 2019 г. |
+|  Rel 19-12  |  [4523204]  |  сервиЦингстаккупдате  | [6,14] | 12 ноября 2019 г. |
 
 [4530692]: https://support.microsoft.com/kb/4530692
 [4530677]: https://support.microsoft.com/kb/4530677
@@ -221,33 +221,33 @@ ms.locfileid: "81617696"
 [4524445]: https://support.microsoft.com/kb/4524445
 [4520724]: https://support.microsoft.com/kb/4520724
 [4523204]: https://support.microsoft.com/kb/4523204
-[6.14]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.38]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.73]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.80]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[6,14]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[5,38]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,73]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,80]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
 [2,93]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
 
-## <a name="november-2019-guest-os"></a>Ноябрь 2019 Гостевая ОС
+## <a name="november-2019-guest-os"></a>Ноябрь 2019 гостевая ОС
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 19-11   |  [4525106]  |  Internet Explorer   |  [2.92]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4525233]  |  Безопасность Windows   |  [2.92]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4525106]  |  Internet Explorer   |  [3.79]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4525253]  |  Безопасность Windows   |  [3.79]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4525106]  |  Internet Explorer   |  [4.72]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4525250]  |  Безопасность Windows   |  [4.72]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4525236]  |  Последнее кумулятивное обновление   |  [5.37]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4523205]  |  Последнее кумулятивное обновление   |  [6.13]  |  12 ноября 2019 г.  |
-|  Rel 19-11   |  [4519976]  |  Небезопасность   |  [2.92]  |  8 октября 2019 г.  |
-|  Rel 19-11   |  [4520007]  |  Небезопасность   |  [3.79]  |  8 октября 2019 г.  |
-|  Rel 19-11   |  [4521857]  |  ОбслуживаниеStackUpdate   |  [3.79]  |  8 октября 2019 г.  |
-|  Rel 19-11   |  [4520005]  |  Небезопасность   |  [4.72]  |  8 октября 2019 г.  |
-|  Rel 19-11   |  [4521864]  |  ОбслуживаниеStackUpdate   |  [4.72]  |  8 октября 2019 г.  |
-|  Rel 19-11   |  [4521858]  |  ОбслуживаниеStackUpdate   |  [5.37]  |  8 октября 2019 г.  |
-|  Rel 19-11   |  [4521862]  |  ОбслуживаниеStackUpdate   |  [6.13]  |  8 октября 2019 г.  |
+|  Rel 19-11   |  [4525106]  |  Internet Explorer   |  [2,92]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4525233]  |  Безопасность Windows   |  [2,92]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4525106]  |  Internet Explorer   |  [3,79]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4525253]  |  Безопасность Windows   |  [3,79]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4525106]  |  Internet Explorer   |  [4,72]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4525250]  |  Безопасность Windows   |  [4,72]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4525236]  |  Последнее накопительное обновление   |  [5,37]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4523205]  |  Последнее накопительное обновление   |  [6,13]  |  12 ноября 2019 г.  |
+|  Rel 19-11   |  [4519976]  |  Без безопасности   |  [2,92]  |  8 октября 2019 г.  |
+|  Rel 19-11   |  [4520007]  |  Без безопасности   |  [3,79]  |  8 октября 2019 г.  |
+|  Rel 19-11   |  [4521857]  |  сервиЦингстаккупдате   |  [3,79]  |  8 октября 2019 г.  |
+|  Rel 19-11   |  [4520005]  |  Без безопасности   |  [4,72]  |  8 октября 2019 г.  |
+|  Rel 19-11   |  [4521864]  |  сервиЦингстаккупдате   |  [4,72]  |  8 октября 2019 г.  |
+|  Rel 19-11   |  [4521858]  |  сервиЦингстаккупдате   |  [5,37]  |  8 октября 2019 г.  |
+|  Rel 19-11   |  [4521862]  |  сервиЦингстаккупдате   |  [6,13]  |  8 октября 2019 г.  |
 
 [4525106]: https://support.microsoft.com/kb/4525106
 [4525233]: https://support.microsoft.com/kb/4525233
@@ -264,35 +264,35 @@ ms.locfileid: "81617696"
 [4521864]: https://support.microsoft.com/kb/4521864
 [4521858]: https://support.microsoft.com/kb/4521858
 [4521862]: https://support.microsoft.com/kb/4521862
-[6.13]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.37]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.72]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.79]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2.92]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,13]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[5,37]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,72]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,79]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[2,92]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
-## <a name="october-2019-guest-os"></a>Октябрь 2019 Гостевая ОС
+## <a name="october-2019-guest-os"></a>2019 — Октябрь, гостевая ОС
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 19-10   |  [4520003]  |  Безопасность Windows   |  [2.91]  |  8 октября 2019 г.  |
-|  Rel 19-10   |  [4519985]  |  Безопасность Windows   |  [3.78]  |  8 октября 2019 г.  |
-|  Rel 19-10   |  [4519990]  |  Безопасность Windows   |  [4.71]  |  8 октября 2019 г.  |
-|  Rel 19-10   |  [4519998]  |  Последнее кумулятивное обновление   |  [5.36]  |  8 октября 2019 г.  |
-|  Rel 19-10   |  [4519338]  |  Последнее кумулятивное обновление   |  [6.12]  |  8 октября 2019 г.  |
-|  Rel 19-10   |  [4519974]  |  Internet Explorer   |  [2.91], [3.78], [4.71]  |  8 октября 2019 г.  |
-|  Rel 19-10   |  [4516065]  |  Небезопасность   |  [2.91]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4516655]  |  Ssu   |  [2.91]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4516055]  |  Небезопасность   |  [3.78]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4512939]  |  Ssu   |  [3.78]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4514370]  |  рамочная программа .Net 3.5   |  [3.78]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4514368]  |  .Net Framework 4.5.2   |  [3.78]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4516067]  |  Небезопасность   |  [4.71]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4512938]  |  Ssu   |  [4.71]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4514371]  |  рамочная программа .Net 3.5   |  [4.71]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4514367]  |  .Net Framework 4.5.2   |  [4.71]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4512574]  |  Ssu   |  [5.36]  |  10 сентября 2019 г.  |
-|  Rel 19-10   |  [4512577]  |  Ssu   |  [6.12]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4520003]  |  Безопасность Windows   |  [2,91]  |  8 октября 2019 г.  |
+|  Rel 19-10   |  [4519985]  |  Безопасность Windows   |  [3,78]  |  8 октября 2019 г.  |
+|  Rel 19-10   |  [4519990]  |  Безопасность Windows   |  [4,71]  |  8 октября 2019 г.  |
+|  Rel 19-10   |  [4519998]  |  Последнее накопительное обновление   |  [5,36]  |  8 октября 2019 г.  |
+|  Rel 19-10   |  [4519338]  |  Последнее накопительное обновление   |  [6,12]  |  8 октября 2019 г.  |
+|  Rel 19-10   |  [4519974]  |  Internet Explorer   |  [2,91], [3,78], [4,71]  |  8 октября 2019 г.  |
+|  Rel 19-10   |  [4516065]  |  Без безопасности   |  [2,91]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4516655]  |  САМООБСЛУЖИВАНИЯ   |  [2,91]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4516055]  |  Без безопасности   |  [3,78]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4512939]  |  САМООБСЛУЖИВАНИЯ   |  [3,78]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4514370]  |  .NET Framework 3,5   |  [3,78]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4514368]  |  4.5.2 .NET Framework   |  [3,78]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4516067]  |  Не безопасность   |  [4,71]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4512938]  |  САМООБСЛУЖИВАНИЯ   |  [4,71]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4514371]  |  .NET Framework 3,5   |  [4,71]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4514367]  |  4.5.2 .NET Framework   |  [4,71]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4512574]  |  САМООБСЛУЖИВАНИЯ   |  [5,36]  |  10 сентября 2019 г.  |
+|  Rel 19-10   |  [4512577]  |  САМООБСЛУЖИВАНИЯ   |  [6,12]  |  10 сентября 2019 г.  |
 
 [4520003]: https://support.microsoft.com/kb/4520003
 [4519985]: https://support.microsoft.com/kb/4519985
@@ -313,32 +313,32 @@ ms.locfileid: "81617696"
 [4512574]: https://support.microsoft.com/kb/4512574
 [4512577]: https://support.microsoft.com/kb/4512577
 
-[6.12]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.36]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.71]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.78]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2.91]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[6,12]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
+[5,36]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,71]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,78]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[2,91]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
-## <a name="september-2019-guest-os"></a>Сентябрь 2019 Гостевая ОС
+## <a name="september-2019-guest-os"></a>2019 сентября, гостевая ОС
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 19-09   |  [4516046]  |  Internet Explorer   |  [2.90], [3.77], [4.70]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4516115]  |  Мигание   |  [2.90], [3.77], [4.70], [5.35], [6.11]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4512578]  |  Последнее кумулятивное обновление   |  [6.11]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4514366]  |  .NET Рамочная 3.5 и 4.7.2   |  [6.11]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4516044]  |  Последнее кумулятивное обновление   |  [5.35]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4516064]  |  Безопасность Windows   |  [4.70]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4514350]  |  .NET Framework 3,5   |  [4.70]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4514341]  |  .NET Framework 4.5.2   |  [4.70]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4516062]  |  Безопасность Windows   |  [3.77]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4514349]  |  .NET Framework 3,5   |  [3.77]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4514342]  |  .NET Framework 4.5.2   |  [3.77]  |  10 сентября 2019 г.  |
-|  Rel 19-09   |  [4516033]  |  Безопасность Windows   |  [2.90]  |  12 сентября 2019 г.  |
-|  Rel 19-09   |  [4512488]  |  Небезопасность   |  [4.70]  |  13 августа 2019 г.  |
-|  Rel 19-09   |  [4512518]  |  Небезопасность   |  [3.77]  |  13 августа 2019 г.  |
-|  Rel 19-09   |  [4512506]  |  Небезопасность   |  [2.90]  |  13 августа 2019 г.  |
+|  Rel 19-09   |  [4516046]  |  Internet Explorer   |  [2,90], [3,77], [4,70]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516115]  |  Мигание   |  [2,90], [3,77], [4,70], [5,35], [6,11]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4512578]  |  Последнее накопительное обновление   |  [6.11]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514366]  |  .NET Framework 3,5 и 4.7.2   |  [6.11]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516044]  |  Последнее накопительное обновление   |  [5,35]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516064]  |  Безопасность Windows   |  [4,70]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514350]  |  .NET Framework 3.5   |  [4,70]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514341]  |  .NET Framework 4.5.2   |  [4,70]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516062]  |  Безопасность Windows   |  [3,77]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514349]  |  .NET Framework 3.5   |  [3,77]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514342]  |  .NET Framework 4.5.2   |  [3,77]  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516033]  |  Безопасность Windows   |  [2,90]  |  12 сентября 2019 г.  |
+|  Rel 19-09   |  [4512488]  |  Без безопасности   |  [4,70]  |  13 августа 2019 г.  |
+|  Rel 19-09   |  [4512518]  |  Без безопасности   |  [3,77]  |  13 августа 2019 г.  |
+|  Rel 19-09   |  [4512506]  |  Без безопасности   |  [2,90]  |  13 августа 2019 г.  |
 
 [4516046]: https://support.microsoft.com/kb/4516046
 [4516115]: https://support.microsoft.com/kb/4516115
@@ -356,38 +356,38 @@ ms.locfileid: "81617696"
 [4512518]: https://support.microsoft.com/kb/4512518
 [4512506]: https://support.microsoft.com/kb/4512506
 [6.11]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.35]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.70]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.77]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2.90]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[5,35]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,70]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,77]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[2,90]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
-## <a name="august-2019-guest-os"></a>Август 2019 Гостевая ОС
+## <a name="august-2019-guest-os"></a>Гостевая ОС 2019 августа
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 19-08   |  [4512482]  |  Безопасность Windows   |  [3.76]  |  13 августа 2019 г.  |
-|  Rel 19-08   |  [4494175]  |  Обновление микрокода   |  [5.34]  |  18 июня 2019 г.  |
-|  Rel 19-08   |  [4512517]  |  Последнее кумулятивное обновление   |  [5.34]  |  13 августа 2019 г.  |
+|  Rel 19-08   |  [4512482]  |  Безопасность Windows   |  [3,76]  |  13 августа 2019 г.  |
+|  Rel 19-08   |  [4494175]  |  Обновление микрокода   |  [5,34]  |  18 июня 2019 г.  |
+|  Rel 19-08   |  [4512517]  |  Последнее накопительное обновление   |  [5,34]  |  13 августа 2019 г.  |
 |  Rel 19-08   |  [4494174]  |  Обновление микрокода   |  [6.1]  |  18 июня 2019 г.  |
-|  Rel 19-08   |  [4511553]  |  Последнее кумулятивное обновление   |  [6.1]  |  13 августа 2019 г.  |
-|  Rel 19-08   |  [4512486]  |  Безопасность Windows   |  [2.89]  |  13 августа 2019 г.  |
-|  Rel 19-08   |  [4512489]  |  Безопасность Windows   |  [4.69]  |  13 августа 2019 г.  |
-|  Rel 19-08   |  [4511872]  |  Internet Explorer    |  [2.89], [3.76], [4.69]  |  15 августа 2019 г.  |
-|  Rel 19-08   |  [4507449]  |  Небезопасность   |  [2.89]  |  9 июля 2019 г.  |
-|  Rel 19-08   |  [4507000]  |  .NET 4.5.2 Небезопасность   |  [3.76]  |  12 августа 2019 г.  |
-|  Rel 19-08   |  [4507002]  |  .NET 3.5 Небезопасность   |  [3.76]  |  12 августа 2019 г.  |
-|  Rel 19-08   |  [4507462]  |  Небезопасность   |  [3.76]  |  9 июля 2019 г.  |
-|  Rel 19-08   |  [4506999]  |  .NET 4.5.2 Небезопасность    |  [4.69]  |  12 августа 2019 г.  |
-|  Rel 19-08   |  [4507005]  |  .NET 3.5 Небезопасность    |  [4.69]  |  12 августа 2019 г.  |
-|  Rel 19-08   |  [4507448]  |  Небезопасность   |  [4.69]  |  9 июля 2019 г.  |
-|  Rel 19-08   |  [4509091]  |  Обновление стека обслуживания   |  [5.34]  |  9 июля 2019 г.  |
+|  Rel 19-08   |  [4511553]  |  Последнее накопительное обновление   |  [6.1]  |  13 августа 2019 г.  |
+|  Rel 19-08   |  [4512486]  |  Безопасность Windows   |  [2,89]  |  13 августа 2019 г.  |
+|  Rel 19-08   |  [4512489]  |  Безопасность Windows   |  [4,69]  |  13 августа 2019 г.  |
+|  Rel 19-08   |  [4511872]  |  Internet Explorer    |  [2,89], [3,76], [4,69]  |  15 августа 2019 г.  |
+|  Rel 19-08   |  [4507449]  |  Без безопасности   |  [2,89]  |  9 июля 2019 г.  |
+|  Rel 19-08   |  [4507000]  |  .NET 4.5.2 без безопасности   |  [3,76]  |  12 августа 2019 г.  |
+|  Rel 19-08   |  [4507002]  |  .NET 3,5 без безопасности   |  [3,76]  |  12 августа 2019 г.  |
+|  Rel 19-08   |  [4507462]  |  Без безопасности   |  [3,76]  |  9 июля 2019 г.  |
+|  Rel 19-08   |  [4506999]  |  .NET 4.5.2 без безопасности    |  [4,69]  |  12 августа 2019 г.  |
+|  Rel 19-08   |  [4507005]  |  .NET 3,5 без безопасности    |  [4,69]  |  12 августа 2019 г.  |
+|  Rel 19-08   |  [4507448]  |  Без безопасности   |  [4,69]  |  9 июля 2019 г.  |
+|  Rel 19-08   |  [4509091]  |  Обновление стека обслуживания   |  [5,34]  |  9 июля 2019 г.  |
 |  Rel 19-08   |  [4509095]  |  Обновление стека обслуживания   |  [6.1]  |  9 июля 2019 г.  |
 |  Rel 19-08   |  [4512937]  |  Обновление стека обслуживания   |  [6.1]  |  29 июля 2019 г.  |
-|  Rel 19-08   |  [4507004]  |  .NET 3.5.1 Небезопасность    |  [2.89]  |  12 августа 2019 г.  |
+|  Rel 19-08   |  [4507004]  |  .NET 3.5.1 без безопасности    |  [2,89]  |  12 августа 2019 г.  |
 |  Rel 19-08   |  [4504418]  |  Обновление стека обслуживания   |  [3,76], [4,69]  |  11 июля 2019 г.  |
-|  Rel 19-08   |  [4507001]  |  .NET 4.5.2 Небезопасность   |  [2.89]  |  12 августа 2019 г.  |
-|  Rel 19-08   |  [4507704]  |  Настройка dST в Windows для Бразилии и Марокко   |  [2.89], [3.76], [4.69], [5.34]  |  13 августа 2019 г.  |
+|  Rel 19-08   |  [4507001]  |  .NET 4.5.2 без безопасности   |  [2,89]  |  12 августа 2019 г.  |
+|  Rel 19-08   |  [4507704]  |  Параметр летнего времени в Windows для Бразилии и Марокко   |  [2,89], [3,76], [4,69], [5,34]  |  13 августа 2019 г.  |
 
 [4512482]: https://support.microsoft.com/kb/4512482
 [4494175]: https://support.microsoft.com/kb/4494175
@@ -413,34 +413,34 @@ ms.locfileid: "81617696"
 [4507704]: https://support.microsoft.com/kb/4507704
 
 [6.1]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
-[5.34]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
-[4.69]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
-[3.76]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
-[2.89]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[5,34]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[4,69]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[3,76]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[2,89]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
 
 
-## <a name="july-2019-guest-os"></a>Июль 2019 Гостевая ОС
+## <a name="july-2019-guest-os"></a>Гостевая ОС 2019 июля
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 19-07   |  [4507434]  |  Internet Explorer   |  2.88, 3.75, 4.68  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506966]  |  .NET 4.5.2 Безопасность   |  2.88  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506976]  |  .NET 3.5.1 Безопасность   |  2.88  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4507456]  |  Безопасность Windows   |  2.88  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506965]  |  .NET 4.5.2 Безопасность   |  3,75  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506974]  |  .NET 3.5 Безопасность   |  3,75  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4507434]  |  Internet Explorer   |  2,88, 3,75, 4,68  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4506966]  |  Безопасность .NET 4.5.2   |  2,88  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4506976]  |  Безопасность .NET 3.5.1   |  2,88  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4507456]  |  Безопасность Windows   |  2,88  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4506965]  |  Безопасность .NET 4.5.2   |  3,75  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4506974]  |  Безопасность .NET 3,5   |  3,75  |  9 июля 2019 г.  |
 |  Rel 19-07   |  [4507464]  |  Безопасность Windows   |  3,75  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506964]  |  .NET 4.5.2 Безопасность   |  4.68  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506977]  |  .NET 3.5 Безопасность   |  4.68  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4507457]  |  Безопасность Windows   |  4.68  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4506964]  |  Безопасность .NET 4.5.2   |  4,68  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4506977]  |  Безопасность .NET 3,5   |  4,68  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4507457]  |  Безопасность Windows   |  4,68  |  9 июля 2019 г.  |
 |  Rel 19-07   |  [4507460]  |  Безопасность Windows   |  5.33  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506998]  |  .NET 3.5 & 4.7.2 Безопасность   |  6.9  |  9 июля 2019 г.  |
+|  Rel 19-07   |  [4506998]  |  .NET 3,5 & безопасность 4.7.2   |  6.9  |  9 июля 2019 г.  |
 |  Rel 19-07   |  [4507469]  |  Безопасность Windows   |  6.9  |  9 июля 2019 г.  |
-|  Недоступно  |  [4503537]  |  Июнь '19 Обслуживание Стек Обновление для (Сервер 2016)   |  5.33  |  14 мая 2019 г.  |
-|  Недоступно  |  [4504369]  |  Июнь '19 Обслуживание Стек Обновление для (Сервер 2019)   |  6.9  |  14 мая 2019 г.  |
-|  Недоступно  |  [4503292]  |  Июнь '19 Non-Security (Сервер 2008 R2)   |  2.88  |  20 мая 2019 г.  |
-|  Недоступно  |  [4503285]  |  Июнь '19 Non-Security (Сервер 2012)   |  3,75  |  14 мая 2019 г.  |
-|  Недоступно  |  [4503276]  |  Июнь '19 Non-Security (Сервер 2012 R2)   |  4.68  |  14 мая 2019 г.  |
+|  Недоступно  |  [4503537]  |  Июнь "19. обновление стека обслуживания для (сервер 2016)   |  5.33  |  14 мая 2019 г.  |
+|  Недоступно  |  [4504369]  |  Июнь "19. обновление стека обслуживания для (сервер 2019)   |  6.9  |  14 мая 2019 г.  |
+|  Недоступно  |  [4503292]  |  19 июня, без безопасности (сервер 2008 R2)   |  2,88  |  20 мая 2019 г.  |
+|  Недоступно  |  [4503285]  |  19 июня, без безопасности (сервер 2012)   |  3,75  |  14 мая 2019 г.  |
+|  Недоступно  |  [4503276]  |  19 июня, без безопасности (сервер 2012 R2)   |  4,68  |  14 мая 2019 г.  |
 
 [4507434]: https://support.microsoft.com/kb/4507434
 [4506621]: https://support.microsoft.com/kb/4506621
@@ -463,32 +463,32 @@ ms.locfileid: "81617696"
 [4503276]: https://support.microsoft.com/kb/4503276
 
 
-## <a name="june-2019-guest-os"></a>Июнь 2019 Гостевая ОС
+## <a name="june-2019-guest-os"></a>Гостевая ОС (июнь 2019)
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
 |  Rel 19-06   |  [4503327]  |  Система безопасности Windows 10   |  6,8  |  11 июня 2019 г.  |
-|  Rel 19-06   |  [4503267]  |  Система безопасности Windows 10   |  5.32  |  11 июня 2019 г.  |
+|  Rel 19-06   |  [4503267]  |  Система безопасности Windows 10   |  5,32  |  11 июня 2019 г.  |
 |  Rel 19-06   |  [4503290]  |  Безопасность Windows   |  4,67  |  11 июня 2019 г.  |
-|  Rel 19-06   |  [4503263]  |  Безопасность Windows   |  3.74  |  11 июня 2019 г.  |
+|  Rel 19-06   |  [4503263]  |  Безопасность Windows   |  3,74  |  11 июня 2019 г.  |
 |  Rel 19-06   |  [4503269]  |  Безопасность Windows   |  2,87  |  11 июня 2019 г.  |
 |  Rel 19-06   |  [4494174]  |  Обновление микрокода   |  6,8  |  11 июня 2019 г.  |
-|  Rel 19-06   |  [4494175]  |  Обновление микрокода   |  5.32  |  3 июня 2019 г.  |
-|  Rel 19-06   |  [4503308]  |  Мигание   |  3.74, 4.67, 5.32, 6.8  |  11 июня 2019 г.  |
-|  Rel 19-06   |  [4503259]  |  Internet Explorer   |  2.87, 3.74, 4.67  |  13 июня 2019 года  |
-|  Недоступно  |  [4499164]  |  Май '19 Не-безопасность  |  2,87  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495606]  |  Май '19 .NET 3.5 Не-безопасность  |  2,87  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495596]  |  Май '19 .NET 4.5 Не-безопасность  |  2,87  |  20 мая 2019 г.  |
-|  Недоступно  |  [4499171]  |  Май '19 Не-безопасность  |  3.74  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495602]  |  Май '19 .NET 3.5 Не-безопасность  |  3.74  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495594]  |  Май '19 .NET 4.x Не-безопасность  |  4,67  |  14 мая 2019 г.  |
-|  Недоступно  |  [4499151]  |  Май '19 Не-безопасность  |  4,67  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495608]  |  Май '19 .NET 3.5 Не-безопасность  |  4,67  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495592]  |  Май '19 .NET 4.5.2 Не-безопасность  |  4,67  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495610]  |  Май '19 .NET 4.8 Совокупный  |  6,8  |  14 мая 2019 г.  |
-|  Недоступно  |  [4495618]  |  May'19 .NET 4.8 Совокупный  |  6,8  |  14 мая 2019 г.  |
-|  Недоступно  |  [4501226]  |  Обновления часового пояса DST для Марокко и Палестинского органа  |  2.87, 3.74, 4.67  |  23 мая 2019 года  |
-|  Недоступно  |  [4490128]  |  Обновления часового пояса DST для Сан-Томе и Пренсипе и Зизылорда  |  2.87, 3.74, 4.67  |  17 апреля 2019 года  |
+|  Rel 19-06   |  [4494175]  |  Обновление микрокода   |  5,32  |  3 июня 2019 г.  |
+|  Rel 19-06   |  [4503308]  |  Мигание   |  3,74, 4,67, 5,32, 6,8  |  11 июня 2019 г.  |
+|  Rel 19-06   |  [4503259]  |  Internet Explorer   |  2,87, 3,74, 4,67  |  13 июня 2019 г.  |
+|  Недоступно  |  [4499164]  |  Май ' 19 без безопасности  |  2,87  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495606]  |  Май ' 19 .NET 3,5 без безопасности  |  2,87  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495596]  |  Май ' 19 .NET 4,5 без безопасности  |  2,87  |  20 мая 2019 г.  |
+|  Недоступно  |  [4499171]  |  Май ' 19 без безопасности  |  3,74  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495602]  |  Май ' 19 .NET 3,5 без безопасности  |  3,74  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495594]  |  19 мая, не безопасность .NET 4. x  |  4,67  |  14 мая 2019 г.  |
+|  Недоступно  |  [4499151]  |  Май ' 19 без безопасности  |  4,67  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495608]  |  Май ' 19 .NET 3,5 без безопасности  |  4,67  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495592]  |  Май ' 19 .NET 4.5.2 без безопасности  |  4,67  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495610]  |  Май ' 19 .NET 4,8, накопительный  |  6,8  |  14 мая 2019 г.  |
+|  Недоступно  |  [4495618]  |  Май ' 19 .NET 4,8, накопительный  |  6,8  |  14 мая 2019 г.  |
+|  Недоступно  |  [4501226]  |  Обновления часового пояса летнего времени для Марокко и палестинского автономного органа  |  2,87, 3,74, 4,67  |  23 мая 2019 г.  |
+|  Недоступно  |  [4490128]  |  Обновления часового пояса летнего времени для Сан Томе и Принсипи и Кизилорда  |  2,87, 3,74, 4,67  |  17 апреля, 2019  |
 
 [4503327]: https://support.microsoft.com/kb/4503327
 [4503267]: https://support.microsoft.com/kb/4503267
@@ -513,30 +513,30 @@ ms.locfileid: "81617696"
 [4501226]: https://support.microsoft.com/kb/KB4501226
 [4490128]: https://support.microsoft.com/kb/KB4490128
 
-## <a name="may-2019-guest-os"></a>Май 2019 Гостевая ОС
+## <a name="may-2019-guest-os"></a>2019. Май, гостевая ОС
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 19-05   |  [4498206]  |  Май IE Rollup   |  2.86, 3.73, 4.66  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4505050]  |  Май IE Rollup   |  2.86, 3.73, 4.66  |  18 мая 2019 года  |
-|  Rel 19-05   |  [4497932]  |  Май Flash обновление   |  3.73, 4.66, 5.31  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4499175]  |  Май безопасности Rollup   |  2.86  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4495612]  |  Май Безопасности Rollup .NET 3.5   |  2.86  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4495593]  |  Майский свертывание безопасности .NET 4.5.2   |  2.86  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4499158]  |  Май безопасности Rollup   |  3.73  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4495607]  |  Май Безопасности Rollup .NET 3.5   |  3.73  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4495591]  |  Майский свертывание безопасности .NET 4.5.2   |  3.73  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4492872]  |  IE Rollup   |  3.73  |  16 апреля 2019 г.  |
-|  Rel 19-05   |  [4499165]  |  Мартовский свертывание безопасности   |  4.66  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4495615]  |  Май Безопасности Rollup .NET 3.5   |  4.66  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4495589]  |  Майский свертывание безопасности .NET 4.5.2   |  4.66  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4498947]  |  SSU за май   |  5.31  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4494175]  |  Май Обновление микрокода   |  5.31  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4505052]  |  Май безопасности Rollup   |  5.31  |  19 мая 2019 г.  |
+|  Rel 19-05   |  [4498206]  |  Сводный показатель "Май IE"   |  2,86, 3,73, 4,66  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4505050]  |  Сводный показатель "Май IE"   |  2,86, 3,73, 4,66  |  18 мая 2019 г.  |
+|  Rel 19-05   |  [4497932]  |  Обновление может быть Flash   |  3,73, 4,66, 5,31  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4499175]  |  Сводный показатель безопасности может   |  2,86  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4495612]  |  Сводный показатель безопасности для .NET 3,5   |  2,86  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4495593]  |  Сводный показатель безопасности для .NET 4.5.2   |  2,86  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4499158]  |  Сводный показатель безопасности может   |  3.73  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4495607]  |  Сводный показатель безопасности для .NET 3,5   |  3.73  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4495591]  |  Сводный показатель безопасности для .NET 4.5.2   |  3.73  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4492872]  |  Сводный монитор IE   |  3.73  |  16 апреля 2019 г.  |
+|  Rel 19-05   |  [4499165]  |  Свертка безопасности в марте   |  4,66  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4495615]  |  Сводный показатель безопасности для .NET 3,5   |  4,66  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4495589]  |  Сводный показатель безопасности для .NET 4.5.2   |  4,66  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4498947]  |  SSU за май   |  5,31  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4494175]  |  Может обновить микропрограмму   |  5,31  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4505052]  |  Сводный показатель безопасности может   |  5,31  |  19 мая 2019 г.  |
 |  Rel 19-05   |  [4499728]  |  SSU за май   |  6.7  |  19 мая 2019 г.  |
-|  Rel 19-05   |  [4505056]  |  Май безопасности Rollup   |  6.7  |  19 мая 2019 г.  |
-|  Rel 19-05   |  [4494174]  |  Май Обновление микрокода   |  6.7  |  14 мая 2019 г.  |
-|  Rel 19-05   |  [4495590]  |  Май безопасности Rollup .NET   |  6.7  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4505056]  |  Сводный показатель безопасности может   |  6.7  |  19 мая 2019 г.  |
+|  Rel 19-05   |  [4494174]  |  Может обновить микропрограмму   |  6.7  |  14 мая 2019 г.  |
+|  Rel 19-05   |  [4495590]  |  Сводный показатель безопасности для .NET   |  6.7  |  14 мая 2019 г.  |
 
 [4498206]: https://support.microsoft.com/kb/4498206
 [4505050]: https://support.microsoft.com/kb/4505050
@@ -560,22 +560,22 @@ ms.locfileid: "81617696"
 [4495590]: https://support.microsoft.com/kb/4495590
 
 
-## <a name="april-2019-guest-os"></a>Апрель 2019 Гостевая ОС
+## <a name="april-2019-guest-os"></a>Гостевая ОС с апреля 2019
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
 | Rel 19-04 | [4493509] | Система безопасности Windows 10 | 6.6 | 9 апреля 2019 г. |
-| Rel 19-04 | [4493470] | Система безопасности Windows 10 | 5.30 | 9 апреля 2019 г. |
-| Rel 19-04 | [4493467] | Безопасность Windows | 4.65 | 9 апреля 2019 г. |
-| Rel 19-04 | [4493450] | Безопасность Windows | 3.72 | 9 апреля 2019 г. |
-| Rel 19-04 | [4493448] | Безопасность Windows | 2.85 | 9 апреля 2019 г. |
-| Rel 19-04 | [4493478] | Мигание | 3.72, 4.65, 5.30, 6.6 | 9 апреля 2019 г. |
-| Rel 19-04 | [4493435] | Internet Explorer | 2.85, 3.72, 4.65 | 9 апреля 2019 г. |
-| Rel 19-04 | [4490628] | Обновление стека обслуживания | 2.85 | 12 марта 2019 г. |
-| Rel 19-04 | [4474419] | Поддержка SHA2 | 2.85 | 12 марта 2019 г. |
-| Rel 19-04 | [4489878] | Мартневский не-безопасность Rollup | 2.85 | 12 марта 2019 г. |
-| Rel 19-04 | [4489891] | Мартневский не-безопасность Rollup | 3.72 | 12 марта 2019 г. |
-| Rel 19-04 | [4489881] | Мартневский не-безопасность Rollup | 4.65 | 12 марта 2019 г. |
+| Rel 19-04 | [4493470] | Система безопасности Windows 10 | 5,30 | 9 апреля 2019 г. |
+| Rel 19-04 | [4493467] | Безопасность Windows | 4,65 | 9 апреля 2019 г. |
+| Rel 19-04 | [4493450] | Безопасность Windows | 3,72 | 9 апреля 2019 г. |
+| Rel 19-04 | [4493448] | Безопасность Windows | 2,85 | 9 апреля 2019 г. |
+| Rel 19-04 | [4493478] | Мигание | 3,72, 4,65, 5,30, 6,6 | 9 апреля 2019 г. |
+| Rel 19-04 | [4493435] | Internet Explorer | 2,85, 3,72, 4,65 | 9 апреля 2019 г. |
+| Rel 19-04 | [4490628] | Обновление стека обслуживания | 2,85 | 12 марта 2019 г. |
+| Rel 19-04 | [4474419] | Поддержка SHA2 | 2,85 | 12 марта 2019 г. |
+| Rel 19-04 | [4489878] | Свертка, не относящаяся к безопасности, Март | 2,85 | 12 марта 2019 г. |
+| Rel 19-04 | [4489891] | Свертка, не относящаяся к безопасности, Март | 3,72 | 12 марта 2019 г. |
+| Rel 19-04 | [4489881] | Свертка, не относящаяся к безопасности, Март | 4,65 | 12 марта 2019 г. |
 
 [4493509]: https://support.microsoft.com/kb/4493509
 [4493470]: https://support.microsoft.com/kb/4493470
@@ -590,28 +590,28 @@ ms.locfileid: "81617696"
 [4489891]: https://support.microsoft.com/kb/KB4489891
 [4489881]: https://support.microsoft.com/kb/KB4489881
 
-## <a name="march-2019-guest-os"></a>Март 2019 Гостевая ОС
+## <a name="march-2019-guest-os"></a>Гостевая ОС (март 2019)
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-| Rel 19-03 | [4489873] | Internet Explorer | 2.84, 3.71, 4.64 | 12 марта 2019 г. |
-| Rel 19-03 | [4489907] | Мигание | 3.71, 4.64, 5.29, 6.5 | 12 марта 2019 г. |
-| Rel 19-03 | [4489885] | Безопасность Windows | 2.84 | 12 марта 2019 г. |
-| Rel 19-03 | [4489884] | Безопасность Windows | 3.71 | 12 марта 2019 г. |
+| Rel 19-03 | [4489873] | Internet Explorer | 2,84, 3,71, 4,64 | 12 марта 2019 г. |
+| Rel 19-03 | [4489907] | Мигание | 3,71, 4,64, 5,29, 6,5 | 12 марта 2019 г. |
+| Rel 19-03 | [4489885] | Безопасность Windows | 2,84 | 12 марта 2019 г. |
+| Rel 19-03 | [4489884] | Безопасность Windows | 3,71 | 12 марта 2019 г. |
 | Rel 19-03 | [4489883] | Безопасность Windows | 4,64 | 12 марта 2019 г. |
-| Rel 19-03 | [4489882] | Система безопасности Windows 10 | 5.29 | 12 марта 2019 г. |
+| Rel 19-03 | [4489882] | Система безопасности Windows 10 | 5,29 | 12 марта 2019 г. |
 | Rel 19-03 | [4489899] | Система безопасности Windows 10 | 6,5 | 12 марта 2019 г. |
-| Rel 19-03 | [4486563] | Февраль не-безопасность свертывание | 2.84 | 12 февраля 2019 г. |
-| Rel 19-03 | [4483458] | Февраль Не-безопасность скатки .NET 3.x | 2.84 | 12 февраля 2019 г. |
-| Rel 19-03 | [4483455] | Февраль Не-безопасность свертывания .NET 4.x | 2.84 | 12 февраля 2019 г. |
-| Rel 19-03 | [4487025] | Февраль не-безопасность свертывание | 3.71 | 12 февраля 2019 г. |
-| Rel 19-03 | [4483456] | Февраль Не-безопасность скатки .NET 3.x | 3.71 | 12 февраля 2019 г. |
-| Rel 19-03 | [4483454] | Февраль Не-безопасность свертывания .NET 4.x | 3.71 | 12 февраля 2019 г. |
-| Rel 19-03 | [4487000] | Февраль не-безопасность свертывание | 4,64 | 12 февраля 2019 г. |
-| Rel 19-03 | [4483459] | Февраль Не-безопасность скатки .NET 3.x | 4,64 | 12 февраля 2019 г. |
-| Rel 19-03 | [4483453] | Февраль Не-безопасность свертывания .NET 4.x | 4,64 | 12 февраля 2019 г. |
-| Rel 19-03 | [4485447] | Февраль Обслуживание Стек Обновление | 5.29 | 12 февраля 2019 г. |
-| Rel 19-03 | [4486459] | Обновление часового пояса | 2.84, 3.71, 4.64 | 12 февраля 2019 г. |
+| Rel 19-03 | [4486563] | Свертка за Февраль, не относящийся к безопасности | 2,84 | 12 февраля 2019 г. |
+| Rel 19-03 | [4483458] | Накопительный пакет .NET 3. x, не относящийся к безопасности | 2,84 | 12 февраля 2019 г. |
+| Rel 19-03 | [4483455] | Накопительный пакет .NET 4. x, не относящийся к безопасности | 2,84 | 12 февраля 2019 г. |
+| Rel 19-03 | [4487025] | Свертка за Февраль, не относящийся к безопасности | 3,71 | 12 февраля 2019 г. |
+| Rel 19-03 | [4483456] | Накопительный пакет .NET 3. x, не относящийся к безопасности | 3,71 | 12 февраля 2019 г. |
+| Rel 19-03 | [4483454] | Накопительный пакет .NET 4. x, не относящийся к безопасности | 3,71 | 12 февраля 2019 г. |
+| Rel 19-03 | [4487000] | Свертка за Февраль, не относящийся к безопасности | 4,64 | 12 февраля 2019 г. |
+| Rel 19-03 | [4483459] | Накопительный пакет .NET 3. x, не относящийся к безопасности | 4,64 | 12 февраля 2019 г. |
+| Rel 19-03 | [4483453] | Накопительный пакет .NET 4. x, не относящийся к безопасности | 4,64 | 12 февраля 2019 г. |
+| Rel 19-03 | [4485447] | Обновление стека февральского обслуживания | 5,29 | 12 февраля 2019 г. |
+| Rel 19-03 | [4486459] | Обновление часового пояса | 2,84, 3,71, 4,64 | 12 февраля 2019 г. |
 
 [4489873]: https://support.microsoft.com/kb/4489873
 [4489907]: https://support.microsoft.com/kb/4489907
@@ -632,33 +632,33 @@ ms.locfileid: "81617696"
 [4485447]: https://support.microsoft.com/kb/4485447
 [4486459]: https://support.microsoft.com/kb/4486459
 
-## <a name="february-2019-guest-os"></a>Февраль 2019 Гостевая ОС
+## <a name="february-2019-guest-os"></a>Гостевая ОС (Февраль 2019)
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-| Rel 19-02 | [4486474] | Internet Explorer | 2.83, 3.70, 4.63 | 12 февраля 2019 г. |
-| Rel 19-02 | [4487038] | Мигание | 3.70, 4.63, 5.28, 6.4 | 12 февраля 2019 г. |
-| Rel 19-02 | [4486564] | Безопасность Windows | 2.83 | 12 февраля 2019 г. |
-| Rel 19-02 | [4483483] | .NET 3.5.1 Безопасность | 2.83 | 12 февраля 2019 г. |
-| Rel 19-02 | [4483474] | .NET 4.5.2 Безопасность | 2.83 | 12 февраля 2019 г. |
+| Rel 19-02 | [4486474] | Internet Explorer | 2,83, 3,70, 4,63 | 12 февраля 2019 г. |
+| Rel 19-02 | [4487038] | Мигание | 3,70, 4,63, 5,28, 6,4 | 12 февраля 2019 г. |
+| Rel 19-02 | [4486564] | Безопасность Windows | 2,83 | 12 февраля 2019 г. |
+| Rel 19-02 | [4483483] | Безопасность .NET 3.5.1 | 2,83 | 12 февраля 2019 г. |
+| Rel 19-02 | [4483474] | Безопасность .NET 4.5.2 | 2,83 | 12 февраля 2019 г. |
 | Rel 19-02 | [4486993] | Безопасность Windows | 3,70 | 12 февраля 2019 г. |
-| Rel 19-02 | [4483481] | .NET 3.5 Безопасность | 3,70 | 12 февраля 2019 г. |
-| Rel 19-02 | [4483473] | .NET 4.5.2 Безопасность | 3,70 | 12 февраля 2019 г. |
+| Rel 19-02 | [4483481] | Безопасность .NET 3,5 | 3,70 | 12 февраля 2019 г. |
+| Rel 19-02 | [4483473] | Безопасность .NET 4.5.2 | 3,70 | 12 февраля 2019 г. |
 | Rel 19-02 | [4487028] | Безопасность Windows | 4,63 | 12 февраля 2019 г. |
-| Rel 19-02 | [4483484] | .NET 3.5 Безопасность | 4,63 | 12 февраля 2019 г. |
-| Rel 19-02 | [4483472] | .NET 4.5.2 Безопасность | 4,63 | 12 февраля 2019 г. |
+| Rel 19-02 | [4483484] | Безопасность .NET 3,5 | 4,63 | 12 февраля 2019 г. |
+| Rel 19-02 | [4483472] | Безопасность .NET 4.5.2 | 4,63 | 12 февраля 2019 г. |
 | Rel 19-02 | [4487026] | Безопасность Windows | 5.28 | 12 февраля 2019 г. |
 | Rel 19-02 | [4487044] | Безопасность Windows | 6.4 | 12 февраля 2019 г. |
-| Rel 19-02 | [4483452] | .NET 3.5, 4.7.2 Безопасность | 6.4 | 12 февраля 2019 г. |
-| Недоступно | [4480970] | Январь не-безопасность свертывание | 2.83 | 8 января 2019 г. |
-| Недоступно | [4483483] | Январь Не-безопасность свертывания .NET 3.5.1  | 2.83 | 8 января 2019 г. |
-| Недоступно | [4480059] | Январь Не-безопасность свертывания .NET 4.5.2  | 2.83 | 8 января 2019 г. |
-| Недоступно | [4480975] | Январь не-безопасность свертывание | 3,70 | 8 января 2019 г. |
-| Недоступно | [4480061] | Январь Не-безопасность свертывания .NET 3.5 | 3,70 | 8 января 2019 г. |
-| Недоступно | [4480058] | Январь Не-безопасность свертывания .NET 4.5.2 | 3,70 | 8 января 2019 г. |
-| Недоступно | [4480963] | Январь не-безопасность свертывание | 4,63 | 8 января 2019 г. |
-| Недоступно | [4480064] | Январь Не-безопасность свертывания .NET 3.5 | 4,63 | 8 января 2019 г. |
-| Недоступно | [4480057] | Январь Не-безопасность свертывания .NET 4.5.2 | 4,63 | 8 января 2019 г. |
+| Rel 19-02 | [4483452] | .NET 3,5, 4.7.2 безопасность | 6.4 | 12 февраля 2019 г. |
+| Недоступно | [4480970] | Свертка за январь без защиты | 2,83 | 8 января 2019 г. |
+| Недоступно | [4483483] | Накопительный пакет .NET 3.5.1 за Январь, не относящийся к безопасности  | 2,83 | 8 января 2019 г. |
+| Недоступно | [4480059] | Накопительный пакет .NET 4.5.2 за Январь, не относящийся к безопасности  | 2,83 | 8 января 2019 г. |
+| Недоступно | [4480975] | Свертка за январь без защиты | 3,70 | 8 января 2019 г. |
+| Недоступно | [4480061] | Накопительный пакет .NET 3,5 за Январь, не относящийся к безопасности | 3,70 | 8 января 2019 г. |
+| Недоступно | [4480058] | Накопительный пакет .NET 4.5.2 за Январь, не относящийся к безопасности | 3,70 | 8 января 2019 г. |
+| Недоступно | [4480963] | Свертка за январь без защиты | 4,63 | 8 января 2019 г. |
+| Недоступно | [4480064] | Накопительный пакет .NET 3,5 за Январь, не относящийся к безопасности | 4,63 | 8 января 2019 г. |
+| Недоступно | [4480057] | Накопительный пакет .NET 4.5.2 за Январь, не относящийся к безопасности | 4,63 | 8 января 2019 г. |
 
 [4486474]: https://support.microsoft.com/kb/4486474
 [4487038]: https://support.microsoft.com/kb/4487038
@@ -694,12 +694,12 @@ ms.locfileid: "81617696"
 | Выпуск 19-01 | [4480972] | Безопасность Windows | 3.69 | 8 января 2019 г. |
 | Выпуск 19-01 | [4480960] | Безопасность Windows | 2.82 | 8 января 2019 г. |
 | Выпуск 19-01 | [4480056] | Безопасность .NET | 6.3 | 8 января 2019 г. |
-| Выпуск 19-01 | [4480074] | .NET 4.x Безопасность | 4.62 | 8 января 2019 г. |
-| Выпуск 19-01 | [4480075] | .NET 4.x Безопасность | 3.69 | 8 января 2019 г. |
-| Выпуск 19-01 | [4480076] | .NET 4.x Безопасность | 2.82 | 8 января 2019 г. |
-| Выпуск 19-01 | [4480086] | .NET 3.x Безопасность | 4.62 | 8 января 2019 г. |
-| Выпуск 19-01 | [4480083] | .NET 3.x Безопасность | 3.69 | 8 января 2019 г. |
-| Выпуск 19-01 | [4480085] | .NET 3.x Безопасность | 2.82 | 8 января 2019 г. |
+| Выпуск 19-01 | [4480074] | Безопасность .NET 4. x | 4.62 | 8 января 2019 г. |
+| Выпуск 19-01 | [4480075] | Безопасность .NET 4. x | 3.69 | 8 января 2019 г. |
+| Выпуск 19-01 | [4480076] | Безопасность .NET 4. x | 2.82 | 8 января 2019 г. |
+| Выпуск 19-01 | [4480086] | Безопасность .NET 3. x | 4.62 | 8 января 2019 г. |
+| Выпуск 19-01 | [4480083] | Безопасность .NET 3. x | 3.69 | 8 января 2019 г. |
+| Выпуск 19-01 | [4480085] | Безопасность .NET 3. x | 2.82 | 8 января 2019 г. |
 | Выпуск 19-01 | [4480979] | Мигание | 3.69, 4.62, 5.27, 6.3 | 8 января 2019 г. |
 | Выпуск 19-01 | [4480965] | Internet Explorer | 2.82; 3.69; 4.62 | 8 января 2019 г. |
 | Недоступно | [4471318] | Накопительный пакет обновления, не связанный с безопасностью, за декабрь | 2.82 | 11 декабря 2018 г. |
@@ -744,12 +744,12 @@ ms.locfileid: "81617696"
 | Выпуск 18-12 | [4471328] | Безопасность Windows   | 2.81 | 11 декабря 2018 г. |
 | Выпуск 18-12 | [4471326] | Безопасность Windows   | 3.68 | 11 декабря 2018 г. |
 | Выпуск 18-12 | [4471322] | Безопасность Windows   | 4.61 | 11 декабря 2018 г. |
-| Выпуск 18-12 | [4470600] | .NET 3.x Безопасность  | 2.81 | 11 декабря 2018 г. |
-| Выпуск 18-12 | [4470601] | .NET 3.x Безопасность  | 3.68 | 11 декабря 2018 г.|
-| Выпуск 18-12 | [4470602] | .NET 3.x Безопасность  | 4.61 | 11 декабря 2018 г. |
-| Выпуск 18-12 | [4470493] | .NET 4.x Безопасность  | 2.81 | 11 декабря 2018 г. |
-| Выпуск 18-12 | [4470492] | .NET 4.x Безопасность  | 3.68 | 11 декабря 2018 г. |
-| Выпуск 18-12 | [4470491] | .NET 4.x Безопасность  | 4.61| 11 декабря 2018 г. |
+| Выпуск 18-12 | [4470600] | Безопасность .NET 3. x  | 2.81 | 11 декабря 2018 г. |
+| Выпуск 18-12 | [4470601] | Безопасность .NET 3. x  | 3.68 | 11 декабря 2018 г.|
+| Выпуск 18-12 | [4470602] | Безопасность .NET 3. x  | 4.61 | 11 декабря 2018 г. |
+| Выпуск 18-12 | [4470493] | Безопасность .NET 4. x  | 2.81 | 11 декабря 2018 г. |
+| Выпуск 18-12 | [4470492] | Безопасность .NET 4. x  | 3.68 | 11 декабря 2018 г. |
+| Выпуск 18-12 | [4470491] | Безопасность .NET 4. x  | 4.61| 11 декабря 2018 г. |
 | Выпуск 18-12 | [4471331] | Мигание  | 3.68, 4.61, 5.26 | 5 декабря 2018 г.  |
 | Выпуск 18-12 | [4470199] | Internet Explorer  | 2.81, 3.68, 4.61 | 11 декабря 2018 г. |
 | Недоступно | [4468323] | Обновление часового пояса    | 2.81, 3.68, 4.61 | 13 декабря 2018 г. |
@@ -1126,7 +1126,7 @@ ms.locfileid: "81617696"
 | Выпуск 17-05 | [4010323] |Советы по SHA1 |2.62, 4.42, 5.7 | 9 мая 2017 г. |
 | Выпуск 17-05 | [4022344] |Советы по безопасности корпорации Майкрософт |5.7 | 9 мая 2017 г. |
 | Выпуск 17-05 | [4022345] |Советы по безопасности корпорации Майкрософт |5.7 | 9 мая 2017 г. |
-| Выпуск 17-05 | [4021279] |.NET /ASP.NET Основные консультации |2.62, 3.49, 4.42, 5.7 | 9 мая 2017 г. |
+| Выпуск 17-05 | [4021279] |Рекомендации .NET и ASP.NET Core |2.62, 3.49, 4.42, 5.7 | 9 мая 2017 г. |
 | Недоступно | [4012864] |Обновление часового пояса |2.62, 3.49, 4.42 | 9 мая 2017 г. |
 | Недоступно | [4014565] |Накопительный пакет обновления .NET, не связанный с безопасностью, за апрель |2.62 | 11 апреля 2017 г. |
 | Недоступно | [4014559] |Накопительный пакет обновления .NET, не связанный с безопасностью, за апрель |2.62 | 11 апреля 2017 г. |
@@ -1186,15 +1186,15 @@ ms.locfileid: "81617696"
 | Идентификатор бюллетеня | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
 | MS16-144 |[3204059] |Накопительный пакет обновлений безопасности для Internet Explorer |2.58, 3.46, 4.39 |13 декабря 2016 г. |
-| MS16-145 |[3204062] |Накопительный пакет обновления системы безопасности для Microsoft Edge. |5.4 |13 декабря 2016 г. |
+| MS16-145 |[3204062] |Накопительный пакет обновления системы безопасности для Microsoft Edge. |5,4 |13 декабря 2016 г. |
 | MS16-146 |[3204066]   |Обновление безопасности для компонента Microsoft Graphics|2.58, 3.46, 4.39, 5.4 |13 декабря 2016 г. |
 | MS16-147 |[3204063]   |Обновление безопасности для Microsoft Uniscribe|2.58, 3.46, 4.39, 5.4 |13 декабря 2016 г. |
 | MS16-149 |[3205655]   |Обновление безопасности для Microsoft Windows.|2.58, 3.46, 4.39, 5.4 |13 декабря 2016 г. |
-| MS16-150 |[3205642]   |Обновление безопасности для режима безопасного ядра |5.4 |13 декабря 2016 г. |
+| MS16-150 |[3205642]   |Обновление безопасности для режима безопасного ядра |5,4 |13 декабря 2016 г. |
 | MS16-151 |[3205651]   |Обновление безопасности для работающих в режиме ядра драйверов|2.58, 3.46, 4.39, 5.4 |13 декабря 2016 г. |
-| MS16-152 |[3199709]   |Обновление безопасности для ядра Windows |5.4 |13 декабря 2016 г. |
+| MS16-152 |[3199709]   |Обновление безопасности для ядра Windows |5,4 |13 декабря 2016 г. |
 | MS16-153 |[3207328] |Обновление безопасности для драйвера файловой системы CLFS.|2.58, 3.46, 4.39, 5.4 |13 декабря 2016 г. |
-| MS16-155 |[3205640]   |Обновление безопасности для .NET Framework |5.4 |13 декабря 2016 г. |
+| MS16-155 |[3205640]   |Обновление безопасности для .NET Framework |5,4 |13 декабря 2016 г. |
 | Недоступно |[3197868] |Ежемесячный накопительный пакет обновления, повышающий безопасность и качество, для Windows 7 с пакетом обновления 1 (SP1) и Windows Server 2008 R2 с пакетом обновления 1 (SP1): ноябрь 2016 года |2.58 |13 декабря 2016 г. |
 | Недоступно |[3197877] |Ежемесячный накопительный пакет обновления, повышающий безопасность и качество, для Windows Server 2012: ноябрь 2016 года |3,46 |13 декабря 2016 г. |
 | Недоступно |[3197874] |Ежемесячный накопительный пакет обновления, повышающий безопасность и качество, для Windows 8.1 и Windows Server 2012 R2: ноябрь 2016 года |4.39 |13 декабря 2016 г. |

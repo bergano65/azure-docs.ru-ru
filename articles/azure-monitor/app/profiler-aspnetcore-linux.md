@@ -7,15 +7,15 @@ ms.author: cweining
 ms.date: 02/23/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: d845e245a242a88d16a2597f0144a0ae4a727cb0
-ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81640970"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler
 
-Эта функция в настоящее время находится на стадии предварительной версии.
+Сейчас эта функция доступна в предварительной версии.
 
 Узнайте, сколько времени выполняется каждый метод в динамическом веб-приложении с помощью [Application Insights](../../azure-monitor/app/app-insights-overview.md). Application Insights Profiler теперь доступен для веб-приложений ASP.NET Core, размещенных в службах приложений Azure для Linux. В этом руководстве описано, как выполнить сбор трассировок профилировщика для веб-приложений ASP.NET Core для Linux.
 
@@ -23,7 +23,7 @@ ms.locfileid: "81640970"
 
 ![Трассировки профилировщика](./media/profiler-aspnetcore-linux/profiler-traces.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Приведенные ниже инструкции применяются ко всем средам разработки для Windows, Linux и Mac:
 
 * Установите [пакет SDK для .NET Core 2.1.2 или более поздней версии](https://dotnet.microsoft.com/download/archives).
@@ -47,7 +47,7 @@ ms.locfileid: "81640970"
     dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
     ```
 
-1. Включите анализ приложений в Program.cs:
+1. Включить Application Insights в Program.cs:
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -56,7 +56,7 @@ ms.locfileid: "81640970"
             .UseStartup<Startup>();
     ```
     
-1. Включить профиль в Startup.cs:
+1. Включить профилировщик в Startup.cs:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -150,7 +150,7 @@ ms.locfileid: "81640970"
 
 ## <a name="add-application-insights-to-monitor-your-web-apps"></a>Добавление Application Insights для мониторинга веб-приложений
 
-1. [Создайте ресурс Application Insights.](./../../azure-monitor/app/create-new-resource.md )
+1. [Создайте ресурс Application Insights](./../../azure-monitor/app/create-new-resource.md ).
 
 2. Скопируйте значение **iKey** ресурса Application Insights и задайте следующие параметры в веб-приложениях.
 
@@ -170,7 +170,7 @@ ms.locfileid: "81640970"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Если вы используете пользовательские контейнеры, размещенные в Службе приложений Azure, чтобы включить Application Insights Profiler, следуйте инструкциям из статьи [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerForContainerApp) (Включение профилировщика службы для контейнерного приложения ASP.NET Core).
 
 О каких-либо проблемах или предложениях сообщайте в репозиторий Github: [ApplicationInsights-Profiler-AspNetCore: Issues](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues) (ApplicationInsights-Profiler-AspNetCore: вопросы)

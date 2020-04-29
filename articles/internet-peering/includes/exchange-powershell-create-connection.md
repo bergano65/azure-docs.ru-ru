@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -9,17 +9,17 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: f8e93cf34ac56344ff7e3d145ce8c7c3529767b7
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81678636"
 ---
-Ниже приводится следующий пример, как создать соединение Exchange на Интернет-бирже Equinix в Сиэтле. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
+В следующем примере показано, как создать подключение к Exchange в Equinix Internet Exchange в Сиэтле. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
 
-Для создания объектов подключения PowerShell используйте смдлет PowerShell **New-AzPeeringExchangeConnectionObject** для создания объектов подключения PowerShell, которые будут использоваться для генерации нового запроса на пиринг.
+Используйте командлет PowerShell **New-азпиринжексчанжеконнектионобжект** , чтобы создать объекты подключения PowerShell, которые будут использоваться для создания нового запроса пиринга.
 
-В этом примере показано, как создать соединение Exchange.
+В этом примере показано, как создать подключение к Exchange.
 
 ```powershell
 $connection1 = New-AzPeeringExchangeConnectionObject `
@@ -30,7 +30,7 @@ $connection1 = New-AzPeeringExchangeConnectionObject `
     -MaxPrefixesAdvertisedIPv6 2000 `
 ```
 
-Создайте другое соединение в случае необходимости избыточности в данном месте пиринга.
+Создайте другое подключение на случай, если требуется избыточность в данном одноранговом расположении.
 
 ```powershell
 $connection2 = New-AzPeeringExchangeConnectionObject `
@@ -41,7 +41,7 @@ $connection2 = New-AzPeeringExchangeConnectionObject `
     -MaxPrefixesAdvertisedIPv6 2000 `
 ```
 
-Смдлет PowerShell **New-AzPeering** может быть использован для создания нового пиринга Exchange.
+Командлет PowerShell **New-азпиринг** можно использовать для создания нового пиринга Exchange.
 
 ```powershell
 $asn = Get-AzPeerAsn
@@ -73,10 +73,10 @@ Tags              : {}
 ```
 
 > [!IMPORTANT]
-> Корпорация Майкрософт начинает подготовку запрошенного пиринга и `ConnectionState` отражает прогресс.
-> Для получения дополнительной информации о шагах, связанных с подготовкой, см. [Exchange peering walkthrough](../walkthrough-exchange-all.md)
+> Корпорация Майкрософт начинает подготовку запрошенного пиринга и `ConnectionState` отражает ход выполнения.
+> Дополнительные сведения о подготовительных действиях см. в [руководстве по пирингу Exchange](../walkthrough-exchange-all.md).
 
-Вы можете проверить состояние соединения, как показано здесь.
+Вы можете проверить состояние подключения, как показано здесь.
 
 ```powershell
 

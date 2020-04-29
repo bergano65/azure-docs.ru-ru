@@ -1,5 +1,5 @@
 ---
-title: Установка лицензированных компонентов для выполнения интеграции Azure-SSIS
+title: Установка лицензированных компонентов для среды выполнения интеграции Azure SSIS
 description: Узнайте, как независимый поставщик программного обеспечения может разрабатывать и устанавливать платные или лицензионные пользовательские компоненты для среды выполнения интеграции Azure–SSIS
 services: data-factory
 ms.service: data-factory
@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
 ms.openlocfilehash: b7079262dc7db4f4a00a9dc79193da1574c7153a
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81605855"
 ---
 # <a name="install-paid-or-licensed-custom-components-for-the-azure-ssis-integration-runtime"></a>Установка платных или лицензионных пользовательских компонентов для среды выполнения интеграции Azure–SSIS
@@ -79,7 +79,7 @@ ms.locfileid: "81605855"
 
 Список независимых партнеров-поставщиков программного обеспечения, которые адаптировали свои компоненты и расширения для среды выполнения интеграции Azure–SSIS, можно найти в конце этого блога — [Enterprise Edition, пользовательская установка и сторонние расширения для служб SSIS в ADF](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Enterprise-Edition-Custom-Setup-and-3rd-Party-Extensibility-for/ba-p/388360).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   [Пользовательская установка для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-custom-setup.md)
 

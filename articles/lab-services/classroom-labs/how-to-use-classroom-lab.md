@@ -15,10 +15,10 @@ ms.custom: mvc
 ms.date: 03/17/2020
 ms.author: spelluru
 ms.openlocfilehash: db1e60ccd7e05cb8b6923d6b2ec008cdfb76eaa1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79501934"
 ---
 # <a name="how-to-access-a-classroom-lab-in-azure-lab-services"></a>Как войти в лабораторию для аудитории в Службах лабораторий Azure
@@ -26,7 +26,7 @@ ms.locfileid: "79501934"
 
 ## <a name="register-to-the-lab"></a>Регистрация в лаборатории
 
-1. Перейдите по **URL-адресу регистрации**, который вам предоставил преподаватель или методист. Не нужно использовать URL-адрес регистрации после завершения регистрации. Вместо этого используйте [https://labs.azure.com](https://labs.azure.com)URL: . Internet Explorer 11 сейчас не поддерживается. 
+1. Перейдите по **URL-адресу регистрации**, который вам предоставил преподаватель или методист. Не нужно использовать URL-адрес регистрации после завершения регистрации. Вместо этого используйте URL-адрес [https://labs.azure.com](https://labs.azure.com):. Internet Explorer 11 сейчас не поддерживается. 
 1. Войдите в службу, используя учебную учетную запись, чтобы завершить процесс регистрации. 
 
     > [!NOTE]
@@ -80,14 +80,14 @@ ms.locfileid: "79501934"
 ## <a name="view-all-the-classroom-labs"></a>Просмотр всех лабораторий для аудитории
 После регистрации в лабораториях вы можете просмотреть все классы, выполнив следующие действия: 
 
-1. Перейдите [https://labs.azure.com](https://labs.azure.com)к . Internet Explorer 11 сейчас не поддерживается. 
+1. Перейдите по адресу [https://labs.azure.com](https://labs.azure.com). Internet Explorer 11 сейчас не поддерживается. 
 2. Войдите в службу с помощью учетной записи пользователя, которая использовалась для регистрации в лаборатории. 
 3. Убедитесь, что вы видите все лаборатории, к которым у вас есть доступ. 
 
     ![Просмотр всех лабораторий](../media/how-to-manage-classroom-labs/all-labs.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующие статьи:
 
 - [Создание и администрирование учетных записей лаборатории (для администраторов)](how-to-manage-lab-accounts.md)

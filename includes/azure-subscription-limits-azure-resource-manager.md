@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: azure-resource-manager
 author: tfitzmac
@@ -9,22 +9,22 @@ ms.date: 03/26/2020
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: 94fd7e692be31ba247e3342246d3940ed08ef9b7
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80334980"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
-| Подписка на арендатора active каталога Azure | Без ограничений. |
-| [Коадминистраторы](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) за подписку |Без ограничений. |
-| [Группы ресурсов](../articles/azure-resource-manager/management/overview.md) на подписку |980 |
-| Размер запроса API-запроса на aPI-запроса API |4 194 304 байта. |
-| Теги за подписку<sup>1</sup> |50 |
-| Уникальные расчеты тегов за подписку<sup>1</sup> | 10 000 |
-| [Развертывание на уровне подписки](../articles/azure-resource-manager/templates/deploy-to-subscription.md) на место | 800<sup>2</sup> |
+| Подписки на Azure Active Directory клиент | Без ограничений. |
+| [Соадминистраторов](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) на подписку |Без ограничений. |
+| [Групп ресурсов](../articles/azure-resource-manager/management/overview.md) на подписку |980 |
+| Размер запроса API Azure Resource Manager |4 194 304 байт. |
+| Теги на подписку<sup>1</sup> |50 |
+| Вычисление уникальных тегов на подписку<sup>1</sup> | 10 000 |
+| [Развертывания на уровне подписки](../articles/azure-resource-manager/templates/deploy-to-subscription.md) на расположение | 800<sup>2</sup> |
 
-<sup>1</sup> Вы можете применить до 50 тегов непосредственно к подписке. Однако подписка может содержать неограниченное количество тегов, применяемых к группам ресурсов и ресурсам в рамках подписки. Количество тегов на ресурс или группу ресурсов ограничено 50. Менеджер ресурсов возвращает [список уникальных имен и значений тегов](/rest/api/resources/tags) в подписке только тогда, когда количество тегов составляет 10 000 или меньше. Вы все еще можете найти ресурс по тегу, когда число превышает 10000.  
+<sup>1</sup> К подписке можно напрямую применить до 50 тегов. Однако подписка может содержать неограниченное количество тегов, применяемых к группам ресурсов и ресурсам в рамках подписки. Число тегов на ресурс или группу ресурсов ограничено 50. Диспетчер ресурсов возвращает [список уникальных имен и значений тегов](/rest/api/resources/tags) в подписке, только если число тегов 10 000 или меньше. По-прежнему можно найти ресурс по тегу, если число превышает 10 000.  
 
-<sup>2</sup> Если вы достигнете предела 800 развертываний, удалите развертывания из истории, которые больше не нужны. Чтобы удалить развертывания уровня подписки, используйте [удалить-AzDeployment](/powershell/module/az.resources/Remove-AzDeployment) или [аз-развертывания суб-удалить](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-delete).
+<sup>2</sup> Если достигнут предел в 800 развертывания, удалите из журнала развертывания, которые больше не нужны. Чтобы удалить развертывания уровня подписки, используйте командлет [Remove-аздеплоймент](/powershell/module/az.resources/Remove-AzDeployment) или [AZ Deployment redelete](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-delete).

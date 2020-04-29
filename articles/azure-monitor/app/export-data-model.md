@@ -4,10 +4,10 @@ description: Описание свойств, экспортируемых с п
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.openlocfilehash: 9891bea1d52c61197fa32fa5c0764df5450b563c
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81536851"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
@@ -105,14 +105,14 @@ ms.locfileid: "81536851"
 ## <a name="context"></a>Контекст
 Для каждого типа данных телеметрии приведен пример с разделом контекста. Не все эти поля передаются со всеми точками данных.
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | context.custom.dimensions [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских свойств. Максимальная длина ключа — 100, максимальная длина значения —1024. Более 100 уникальных значений. Свойства можно использовать для поиска, но не для сегментации. Максимальное количество — 200 ключей на ключ ikey. |
 | context.custom.metrics [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских измерений и метриками TrackMetric. Максимальная длина ключа — 100. Значения могут быть числовыми. |
 | context.data.eventTime |строка |Формат UTC. |
 | context.data.isSynthetic |Логическое |Запрос поступает от программы-робота или веб-теста. |
 | context.data.samplingRate |number |Процентная доля данных телеметрии, созданных с помощью пакета SDK, отправленного на портал. Диапазон 0,0–100,0. |
-| context.device |объект |Устройство клиента |
+| context.device |object |Устройство клиента |
 | context.device.browser |строка |IE, Chrome… |
 | context.device.browserVersion |строка |Chrome 48.0… |
 | context.device.deviceModel |строка | |
@@ -127,16 +127,16 @@ ms.locfileid: "81536851"
 | context.device.roleName |строка | |
 | context.device.screenResolution |строка | |
 | context.device.type |строка |ПК, браузер… |
-| context.location |объект |Производное от `clientip`. |
-| context.location.city |строка |Произведено `clientip`из , если известно |
+| context.location |object |Производное от `clientip`. |
+| context.location.city |строка |Производный `clientip`от, если известен |
 | context.location.clientip |строка |Последний восьмиугольник анонимизирован и имеет значение 0. |
 | context.location.continent |строка | |
 | context.location.country |строка | |
 | context.location.province |строка |Страна или область |
-| context.operation.id |строка |Элементы, имеющие `operation id` те же элементы, отображаются на портале. Обычно `request id`. |
+| context.operation.id |строка |Элементы, имеющие одинаковые `operation id` , отображаются на портале как связанные элементы. Обычно `request id`. |
 | context.operation.name |строка |URL-адрес или имя запроса |
 | context.operation.parentId |строка |Разрешает использование вложенных связанных элементов. |
-| context.session.id |строка |`Id`группы операций из того же источника. 30-минутный период без операций указывает на завершение сеанса. |
+| context.session.id |строка |`Id`группы операций из одного источника. 30-минутный период без операций указывает на завершение сеанса. |
 | context.session.isFirst |Логическое | |
 | context.user.accountAcquisitionDate |строка | |
 | context.user.accountId |строка | |
@@ -147,12 +147,12 @@ ms.locfileid: "81536851"
 | context.user.isAuthenticated |Логическое | |
 | context.user.storeRegion |строка | |
 | internal.data.documentVersion |строка | |
-| internal.data.id |строка | `Unique id`который назначается при пойме элемента в Application Insights |
+| internal.data.id |строка | `Unique id`, который назначается при приеме элемента в Application Insights |
 
 ## <a name="events"></a>События
 Пользовательские события, создаваемые элементом [TrackEvent()](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | event [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | event [0] name |строка |Имя события.  Максимальная длина: 250 |
@@ -163,7 +163,7 @@ ms.locfileid: "81536851"
 ## <a name="exceptions"></a>Исключения
 Отправляются сведения об [исключениях](../../azure-monitor/app/asp-net-exceptions.md) на сервере и в браузере.
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | basicException [0] assembly |строка | |
 | basicException [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
@@ -173,7 +173,7 @@ ms.locfileid: "81536851"
 | basicException [0] failedUserCodeAssembly |строка | |
 | basicException [0] handledAt |строка | |
 | basicException [0] hasFullStack |Логическое | |
-| basicException`id` |строка | |
+| Басицексцептион [0]`id` |строка | |
 | basicException [0] method |строка | |
 | basicException [0] message |строка |Сообщение об исключении. Максимальная длина: 10 000 |
 | basicException [0] outerExceptionMessage |строка | |
@@ -192,7 +192,7 @@ ms.locfileid: "81536851"
 ## <a name="trace-messages"></a>Сообщения трассировки
 Отправитель: [TrackTrace](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) и [адаптеры ведения журналов](../../azure-monitor/app/asp-net-trace-logs.md).
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | message [0] loggerName |строка | |
 | message [0] parameters |строка | |
@@ -202,7 +202,7 @@ ms.locfileid: "81536851"
 ## <a name="remote-dependency"></a>Удаленная зависимость
 Отправитель: TrackDependency. Используется для создания отчетов о производительности и использовании [вызовов к зависимостям](../../azure-monitor/app/asp-net-dependencies.md) на сервере, а также вызовов AJAX в браузере.
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | remoteDependency [0] async |Логическое | |
 | remoteDependency [0] baseName |строка | |
@@ -210,7 +210,7 @@ ms.locfileid: "81536851"
 | remoteDependency [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | remoteDependency [0] dependencyTypeName |строка |HTTP, SQL, … |
 | remoteDependency [0] durationMetric.value |number |Время от вызова до завершения отклика зависимостью. |
-| удаленнаяЗависимость`id` |строка | |
+| Ремотедепенденци [0]`id` |строка | |
 | remoteDependency [0] name |строка |URL-адрес. Максимальная длина: 250 |
 | remoteDependency [0] resultCode |строка |Из зависимости HTTP. |
 | remoteDependency [0] success |Логическое | |
@@ -223,11 +223,11 @@ ms.locfileid: "81536851"
 ## <a name="requests"></a>Requests
 Отправитель: [TrackRequest](../../azure-monitor/app/api-custom-events-metrics.md#trackrequest). Используется стандартными модулями для создания отчетов о времени отклика сервера (измеряется на сервере).
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | request [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например: 4 =&gt; 25 %. |
 | request [0] durationMetric.value |number |Время от поступления запроса до отклика. 1e7 = 1 с. |
-| запрос`id` |строка |`Operation id` |
+| запрос [0]`id` |строка |`Operation id` |
 | request [0] name |строка |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
 | request [0] responseCode |Целое число |HTTP-отклик, отправленный клиенту. |
 | request [0] success |Логическое |Значение по умолчанию == (responseCode &lt; 400) |
@@ -241,7 +241,7 @@ ms.locfileid: "81536851"
 
 Контекстные значения показывают версию клиентской ОС и версию браузера.
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | clientPerformance [0] clientProcess.value |Целое число |Время от завершения получения HTML до отображения страницы. |
 | clientPerformance [0] name |строка | |
@@ -258,7 +258,7 @@ ms.locfileid: "81536851"
 ## <a name="page-views"></a>Просмотры страницы
 Отправитель: trackPageView() или [stopTrackPage](../../azure-monitor/app/api-custom-events-metrics.md#page-views)
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | view [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | view [0] durationMetric.value |Целое число |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
@@ -271,7 +271,7 @@ ms.locfileid: "81536851"
 ## <a name="availability"></a>Доступность
 Это свойство создает отчеты о [веб-тестах на доступность](../../azure-monitor/app/monitor-web-app-availability.md).
 
-| путь | Тип | Примечания |
+| Path | Тип | Примечания |
 | --- | --- | --- |
 | availability [0] availabilityMetric.name |строка |availability |
 | availability [0] availabilityMetric.value |number |1,0 или 0,0. |

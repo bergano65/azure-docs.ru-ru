@@ -1,20 +1,20 @@
 ---
-title: Предложения по обеспечению резервного копирования Azure
-description: Резюме предложений по комплаенсу для резервного копирования Azure
+title: Предложения соответствия Azure Backup
+description: Сводка предложений по соответствию требованиям для Azure Backup
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.openlocfilehash: da25c6b9b8206ebd2e7ca1a3d90ec88a6efe04b8
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80423123"
 ---
-# <a name="azure-backup-compliance-offerings"></a>Предложения по обеспечению резервного копирования Azure
+# <a name="azure-backup-compliance-offerings"></a>Предложения соответствия Azure Backup
 
-Чтобы помочь организациям соответствовать национальным, региональным и отраслевым требованиям, регулирующим сбор и использование данных отдельных лиц, Microsoft Azure & Резервное копирование Azure предлагает полный набор сертификатов и свидетельств.
+Чтобы помочь организациям соответствовать национальным, региональным и отраслевым требованиям, регулирующим сбор и использование данных пользователей, Microsoft Azure & Azure Backup предлагают исчерпывающий набор сертификатов и аттестаций.
 
-Вы можете найти ниже предложения по комплаенсу для резервного копирования Azure, чтобы гарантировать, что ваша служба регулируется при использовании службы резервного копирования Azure.
+Вы можете найти следующие предложения соответствия требованиям для Azure Backup, чтобы обеспечить соблюдение требований к службе при использовании службы Azure Backup.
 
 ## <a name="global"></a>Global
 
@@ -27,9 +27,9 @@ ms.locfileid: "80423123"
 * [ISO 27017](https://docs.microsoft.com/microsoft-365/compliance/offering-iso-27017)
 * [ISO 27018](https://docs.microsoft.com/microsoft-365/compliance/offering-iso-27018)
 * [ISO 9001](https://docs.microsoft.com/microsoft-365/compliance/offering-iso-9001)
-* [SOC 1,2,3](https://docs.microsoft.com/microsoft-365/compliance/offering-soc)
+* [SOC 1, 2, 3](https://docs.microsoft.com/microsoft-365/compliance/offering-soc)
 
-## <a name="us-government"></a>US (США)
+## <a name="us-government"></a>US Government
 
 * [DoD DISA L2, L4, L5](https://docs.microsoft.com/microsoft-365/compliance/offering-dod-disa-l2-l4-l5?view=o365-worldwide)
 * [FedRAMP](https://docs.microsoft.com/microsoft-365/compliance/offering-fedramp)
@@ -46,6 +46,6 @@ ms.locfileid: "80423123"
 * [CCSL/IRAP (Австралия)](https://docs.microsoft.com/microsoft-365/compliance/offering-ccsl-irap-australia)
 * [GDPR (ЕС)](https://www.microsoft.com/trustcenter/privacy/gdpr)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Найти последние сведения о соответствии требованиям в [Microsoft TrustCenter.](https://www.microsoft.com/TrustCenter/Compliance/default.aspx)
+Ознакомьтесь с последним покрытием и сведениями о соответствии в [Microsoft трустцентер](https://www.microsoft.com/TrustCenter/Compliance/default.aspx).

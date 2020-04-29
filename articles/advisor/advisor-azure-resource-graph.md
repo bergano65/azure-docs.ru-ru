@@ -1,38 +1,38 @@
 ---
-title: Данные советников в графике ресурсов Azure
-description: Делайте запросы для данных советников в графике ресурсов Azure
+title: Данные Advisor в графе ресурсов Azure
+description: Создание запросов для данных Advisor в графе ресурсов Azure
 ms.topic: article
 ms.date: 03/12/2020
 ms.author: sagupt
 ms.openlocfilehash: f8ad8fd450bc004d9caa2699922717f38d38b482
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79502455"
 ---
-# <a name="query-for-advisor-data-in-resource-graph-explorer-azure-resource-graph"></a>Запрос данных советника в Исследователе графиков ресурсов (Azure Resource Graph)
+# <a name="query-for-advisor-data-in-resource-graph-explorer-azure-resource-graph"></a>Запрос данных Advisor в обозревателе графа ресурсов (граф ресурсов Azure)
 
-Ресурсы советника теперь приведены в комплекте для [графика ресурсов Azure.](https://azure.microsoft.com/features/resource-graph/) Это закладывает основу для многих сценариев клиентов в масштабе для рекомендаций консультантов. Немногие сценарии, которые раньше не было возможности сделать в масштабе и теперь могут быть достигнуты с помощью Resource Graph являются:
-* Предоставляет возможность выполнения сложного запроса для всех ваших подписок на портале Azure
-* Рекомендации, обобщенные по типам категорий (например, высокая доступность, производительность) и типы воздействия (высокие, средние, низкие)
-* Все рекомендации по конкретному типу рекомендаций
-* Количество ресурсов по рекомендациям
+Ресурсы Advisor теперь подключены к [графу ресурсов Azure](https://azure.microsoft.com/features/resource-graph/). Это размещает основу для многих масштабируемых сценариев клиентов для рекомендаций Advisor. В некоторых сценариях, которые раньше не выполнялись в масштабе, может быть достигнуто использование графа ресурсов:
+* Предоставляет возможность выполнять сложные запросы для всех подписок в портал Azure
+* Рекомендации, итоговые по типам категорий (например, высокая доступность, производительность) и типы влияния (высокий, средний, низкий)
+* Все рекомендации для конкретного типа рекомендации
+* Количество затронутых ресурсов по категориям рекомендаций
 
-![Советник в исследователе графиков ресурсов Azure](./media/azure-resource-graph-1.png)  
-
-
-## <a name="advisor-resource-types-in-azure-graph"></a>Типы ресурсов советников в Графике Azure
-
-Доступные типы ресурсов советника в [графике ресурсов](https://docs.microsoft.com/azure/governance/resource-graph/): Для запроса под ресурсами Советника доступно 3 типа ресурсов. Вот список ресурсов, которые теперь доступны для запроса в графике ресурсов.
-* Microsoft.Advisor/конфигурации
-* Microsoft.Advisor/рекомендации
-* Microsoft.Advisor/подавления
-
-Эти типы ресурсов перечислены в новой таблице, названной AdvisorResources, которую вы также можете задать в ресурсном graph Explorer в портале Azure.
+![Помощник в обозревателе графа ресурсов Azure](./media/azure-resource-graph-1.png)  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="advisor-resource-types-in-azure-graph"></a>Типы ресурсов Advisor в Azure Graph
+
+Доступные типы ресурсов Advisor в [графе ресурсов](https://docs.microsoft.com/azure/governance/resource-graph/). для запросов к ресурсам Advisor доступно 3 типа ресурсов. Ниже приведен список ресурсов, которые теперь доступны для запросов в графе ресурсов.
+* Microsoft. Advisor и конфигурации
+* Microsoft. Advisor/рекомендации
+* Microsoft. Advisor и подавления
+
+Эти типы ресурсов перечислены под новой таблицей с именем Адвисорресаурцес, которую можно также запрашивать в обозревателе графа ресурсов в портал Azure.
+
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
@@ -40,5 +40,5 @@ ms.locfileid: "79502455"
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
-* [Рекомендации советника по операционному совершенству](advisor-operational-excellence-recommendations.md)
-* [Советник REST API](https://docs.microsoft.com/rest/api/advisor/)
+* [Рекомендации для оперативной работы Advisor](advisor-operational-excellence-recommendations.md)
+* [REST API Advisor](https://docs.microsoft.com/rest/api/advisor/)

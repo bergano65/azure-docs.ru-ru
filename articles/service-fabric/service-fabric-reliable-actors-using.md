@@ -1,15 +1,15 @@
 ---
-title: Реализация функций в элементах Azure Service Fabric
+title: Реализация функций в Azure Service Fabric Actors
 description: В статье описано, как написать собственную службу субъекта, которая реализует функции на уровне службы так же, как это делается при наследовании StatefulService.
 author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: vturecek
-ms.openlocfilehash: 55ee4c7498dcda3060d4e4221711793b80132bdf
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 9f5f9e00c374b16026f22d4efdee51ec94d2902a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79502284"
 ---
 # <a name="implement-service-level-features-in-your-actor-service"></a>Реализация функций уровня службы в службе субъектов
@@ -143,7 +143,7 @@ public class Program
 
 ## <a name="implement-actor-backup-and-restore"></a>Реализация резервного копирования и восстановления субъектов
 
-Пользовательская служба субъектов предоставляет метод для резервного копирования данных субъектов с использованием прослушивателя удаленных взаимодействий, уже присутствующего в `ActorService`. См. дополнительные сведения о [резервном копировании и восстановлении субъектов](../synapse-analytics/sql-data-warehouse/backup-and-restore.md).
+Пользовательская служба субъектов предоставляет метод для резервного копирования данных субъектов с использованием прослушивателя удаленных взаимодействий, уже присутствующего в `ActorService`. См. дополнительные сведения о [резервном копировании и восстановлении субъектов](service-fabric-reliable-actors-backup-and-restore.md).
 
 ## <a name="actor-that-uses-a-remoting-v2-interface-compatible-stack"></a>Субъект, использующий стек удаленного взаимодействия версии 2 (с совместимым интерфейсом)
 
@@ -172,7 +172,7 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2_1.
 
-3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Этот шаг является необязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1,RemotingClientVersion = RemotingClientVersion.V2_1)]
@@ -205,18 +205,18 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2.
 
-3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Этот шаг является необязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
-* [Актер жизненный цикл и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
+* [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
-* [Код образца .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 
 <!--Image references-->

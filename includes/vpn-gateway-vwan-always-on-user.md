@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,21 +9,21 @@ ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 17df5dca584b760cc52ddc171e92fb26b418c347
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79500200"
 ---
-1. Установите сертификаты клиентов на Windows 10 клиента, как показано в этой [точке к сайту VPN клиентской](../articles/vpn-gateway/point-to-site-how-to-vpn-client-install-azure-cert.md) статьи. Сертификат должен находиться в текущем магазине пользователя.
+1. Установите клиентские сертификаты на клиенте Windows 10, как показано в статье [клиент VPN типа "точка — сеть](../articles/vpn-gateway/point-to-site-how-to-vpn-client-install-azure-cert.md) ". Сертификат должен находиться в хранилище текущего пользователя.
 
-1. Настройте всегда на VPN клиента через PowerShell, Configuration Manager, или Intune, следуя инструкциям в [Настройка Windows 10 клиент всегда на VPN соединения.](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections)
+1. Настройте Always On VPN-клиента с помощью PowerShell, Configuration Manager или Intune, следуя инструкциям в разделе [Настройка клиента Windows 10 Always on VPN-подключения](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections).
 
-### <a name="example-configuration-for-the-user-tunnel"></a>Пример конфигурации для туннеля пользователя
+### <a name="example-configuration-for-the-user-tunnel"></a>Пример конфигурации для пользовательского туннеля
 
-После настройки виртуального сетевого шлюза и установки сертификата клиента в локальном магазине машин на клиенте Windows 10 настроите туннель клиентского устройства, используя следующие примеры:
+После настройки шлюза виртуальной сети и установки сертификата клиента в хранилище локального компьютера на клиенте Windows 10 настройте туннель клиентского устройства, используя следующие примеры:
 
-1. Скопируйте следующий текст и сохраните его как *usercert.ps1:*
+1. Скопируйте следующий текст и сохраните его как *усерцерт. ps1*:
 
    ```
    Param(
@@ -75,7 +75,7 @@ ms.locfileid: "79500200"
    $Message = "Complete."
    Write-Host "$Message"
    ```
-1. Скопируйте следующий текст и сохраните его как *VPNProfile.xml* в той же папке, что и *usercert.ps1*. Отспособьте следующий текст в соответствии с вашей средой:
+1. Скопируйте приведенный ниже текст и сохраните его как *впнпрофиле. XML* в той же папке, что и *усерцерт. ps1*. Измените следующий текст в соответствии с вашей средой:
 
    * `<Servers>azuregateway-1234-56-78dc.cloudapp.net</Servers>  <= Can be found in the VpnSettings.xml in the downloaded profile zip file`
    * `<Address>192.168.3.5</Address>  <= IP of resource in the vnet or the vnet address space`
@@ -121,13 +121,13 @@ ms.locfileid: "79500200"
    ```
 1. Откройте сеанс PowerShell от имени администратора.
 
-1. В PowerShell переключитесь на папку, в которой расположены *usercert.ps1* и *VPNProfile.xml,* и запустите следующую команду:
+1. В PowerShell перейдите в папку, где находятся *усерцерт. ps1* и *впнпрофиле. XML* , и выполните следующую команду:
 
    ```powershell
    C:\> .\usercert.ps1 .\VPNProfile.xml UserTest
    ```
    
-   ![MachineCertTest](./media/vpn-gateway-vwan-always-on-user/p2s2.jpg)
-1. В **настройках VPN**ищите запись **UserTest,** а затем выберите **Connect.**
+   ![мачинецерттест](./media/vpn-gateway-vwan-always-on-user/p2s2.jpg)
+1. В разделе **параметры VPN**найдите запись **усертест** и нажмите кнопку **подключить**.
 
-1. Если соединение успешно удается, вы успешно настроили туннель Always On user.
+1. Если подключение установлено успешно, вы успешно настроили Always On пользовательский туннель.

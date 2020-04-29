@@ -1,7 +1,7 @@
 ---
-title: Преобразование устаревшего прямого вонючего в ресурс Azure с помощью портала Azure
+title: Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портал Azure
 titleSuffix: Azure
-description: Преобразование устаревшего прямого вонючего в ресурс Azure с помощью портала Azure
+description: Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портал Azure
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,44 +9,44 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: e49e4d5debe63b99039bbafbc14f7788367314f3
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81678827"
 ---
-# <a name="convert-a-legacy-direct-peering-to-an-azure-resource-by-using-the-azure-portal"></a>Преобразование устаревшего прямого вонючего в ресурс Azure с помощью портала Azure
+# <a name="convert-a-legacy-direct-peering-to-an-azure-resource-by-using-the-azure-portal"></a>Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портал Azure
 
-В этой статье описывается, как преобразовать существующее устаревшем вглядывание в ресурс Azure с помощью портала Azure.
+В этой статье описывается, как преобразовать существующий прямой пиринг в ресурс Azure с помощью портал Azure.
 
-Если вы предпочитаете, вы можете завершить это руководство с помощью [PowerShell](howto-legacy-direct-powershell.md).
+При желании вы можете пройти это руководством с помощью [PowerShell](howto-legacy-direct-powershell.md).
 
 ## <a name="before-you-begin"></a>Подготовка к работе
-* Просмотрите [предпосылки](prerequisites.md) и [пошаговое руководство Direct peering](walkthrough-direct-all.md) перед началом конфигурации.
+* Прежде чем начать настройку, ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по непосредственному пирингу](walkthrough-direct-all.md) .
 
 
-## <a name="convert-a-legacy-direct-peering-to-an-azure-resource"></a>Преобразование устаревшего вонючего в ресурс Azure
+## <a name="convert-a-legacy-direct-peering-to-an-azure-resource"></a>Преобразование устаревшего прямого пиринга в ресурс Azure
 
-### <a name="sign-in-to-the-portal-and-select-your-subscription"></a>Вопийте на портале и выберите подписку
+### <a name="sign-in-to-the-portal-and-select-your-subscription"></a>Войдите на портал и выберите свою подписку.
 [!INCLUDE [Account](./includes/account-portal.md)]
 
 ### <a name="convert-a-legacy-direct-peering"></a><a name=create></a>Преобразование устаревшего прямого пиринга
 
-Вы можете преобразовать устаревшие пиринговые соединения с помощью ресурса **Peering.**
+Можно преобразовать устаревшие соединения пиринга с помощью ресурса **пиринга** .
 
-#### <a name="launch-the-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка базовых настроек
+#### <a name="launch-the-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка основных параметров
 [!INCLUDE [direct-peering-basic](./includes/direct-portal-basic.md)]
 
-#### <a name="configure-connections-and-submit"></a>Настройка соединений и отправка
+#### <a name="configure-connections-and-submit"></a>Настройка подключений и отправка
 [!INCLUDE [direct-peering-configuration](./includes/direct-portal-configuration-legacy.md)]
 
-### <a name="verify-direct-peering"></a><a name=get></a>Проверить прямой пиринг
+### <a name="verify-direct-peering"></a><a name=get></a>Проверка прямого пиринга
 [!INCLUDE [peering-direct-get-portal](./includes/direct-portal-get.md)]
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Для получения дополнительной информации, см [Интернет пиринг часто задаваемые вопросы](faqs.md).
+Дополнительные сведения см. в разделе [часто задаваемые вопросы об пиринга через Интернет](faqs.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание или изменение прямого пиринга с помощью портала](howto-direct-portal.md)

@@ -1,6 +1,6 @@
 ---
-title: Подключите Raspberry Pi к концентратору Azure IoT в облаке (Node.js)
-description: Узнайте, как настроить и подключить Raspberry Pi к центру Azure IoT для Raspberry Pi для отправки данных на облачную платформу Azure в этом учебнике.
+title: Подключение Raspberry Pi к центру Интернета вещей Azure в облаке (Node. js)
+description: Узнайте, как настроить и подключить Raspberry Pi к центру Интернета вещей Azure для Raspberry Pi, чтобы отправить данные на облачную платформу Azure в этом руководстве.
 author: wesmc7777
 manager: eliotgra
 keywords: Raspberry Pi и Центр Интернета вещей Azure, Raspberry Pi и Центр Интернета вещей, отправка данных с Raspberry Pi в облако, подключение Raspberry Pi к облаку
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: wesmc
 ms.openlocfilehash: 3175956e35603cc4ad3a938f3d316c0af8f2d227
-ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81640533"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
@@ -94,13 +94,13 @@ ms.locfileid: "81640533"
 
 1. Скачайте ОС Raspbian.
 
-   а. [Распбиан Бастер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (файл .zip).
+   a. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
 
    b. Извлеките образ ОС Raspbian в папку на компьютере.
 
 2. Установите ОС Raspbian на карту microSD.
 
-   а. [Скачать и установить Etcher SD карты горелки утилиты](https://etcher.io/).
+   a. [Скачайте и установите служебную программу для записи SD Card](https://etcher.io/).
 
    b. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
 
@@ -116,9 +116,9 @@ ms.locfileid: "81640533"
 
 1. Подключите Pi к монитору, клавиатуре и мыши.
 
-2. Запустите Pi, а затем войти `pi` в Raspbian, используя в качестве имени пользователя и `raspberry` в качестве пароля.
+2. Запустите PI, а затем войдите в Raspbian, `pi` используя в качестве имени пользователя `raspberry` и пароля.
 
-3. Нажмите значок малины > **Предпочтений** > **Малина Pi Конфигурация**.
+3. Щелкните значок Raspberry > **настройки** > **Raspberry Pi**.
 
    ![Меню параметров Raspbian](./media/iot-hub-raspberry-pi-kit-node-get-started/1-raspbian-preferences-menu.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "81640533"
 
 ### <a name="connect-the-sensor-to-pi"></a>Подключение датчика к Pi
 
-Подключите светодиодный индикатор и датчик BME280 к Pi с помощью монтажной платы и оптоволоконных кабелей, как показано ниже. Если у вас нет датчика, [пропустите этот раздел.](#connect-pi-to-the-network)
+Подключите светодиодный индикатор и датчик BME280 к Pi с помощью монтажной платы и оптоволоконных кабелей, как показано ниже. Если у вас нет датчика, [пропустите этот раздел](#connect-pi-to-the-network).
 
 ![Подключение Raspberry Pi и датчика](./media/iot-hub-raspberry-pi-kit-node-get-started/3-raspberry-pi-sensor-connection.png)
 
@@ -148,7 +148,7 @@ ms.locfileid: "81640533"
 | LED VDD (вывод 18F)        | GPIO 24 (вывод 18)       | Белый кабель   |
 | LED GND (вывод 17F)        | GND (вывод 20)           | Черный кабель   |
 
-Нажмите, чтобы просмотреть [Raspberry Pi 2 & 3 контактные отображения](/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsrpi) для вашей ссылки.
+Щелкните для просмотра [Raspberry Pi 2 & 3 сопоставления ПИН-кода](/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsrpi) для вашей ссылки.
 
 После успешного подключения датчика BME280 к Raspberry Pi схема должна выглядеть так, как на изображении ниже.
 
@@ -171,7 +171,7 @@ ms.locfileid: "81640533"
 
    **Пользователи Windows**
 
-   а. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
+   a. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
 
    b. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
@@ -192,7 +192,7 @@ ms.locfileid: "81640533"
    node -v
    ```
 
-   Если версия ниже 10,x, или если на Pi нет Node.js, установите последнюю версию.
+   Если версия меньше 10. x или если на устройстве PI отсутствует Node. js, установите последнюю версию.
 
    ```bash
    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
@@ -229,7 +229,7 @@ ms.locfileid: "81640533"
 
    Если у вас **нет датчика**, задайте для параметра `simulatedData` значение `true`, чтобы пример приложения создал и использовал смоделированные данные датчика.
 
-   *Примечание: адрес i2c, используемый в этом учебнике, по умолчанию 0x77. В зависимости от конфигурации он также может быть 0x76: если вы столкнулись с ошибкой i2c, попробуйте изменить значение до 118 и посмотреть, если это работает лучше. Чтобы увидеть, какой адрес используется `sudo i2cdetect -y 1` вашим датчиком, запустите в оболочке на малиновый пи*
+   *Примечание. адрес I2C, используемый в этом руководстве, по умолчанию — 0x77. В зависимости от конфигурации это также может быть 0x76: Если возникла ошибка I2C, попробуйте изменить значение на 118 и убедитесь, что это работает лучше. Чтобы узнать, какой адрес используется датчиком, выполните `sudo i2cdetect -y 1` команду в оболочке на устройстве Raspberry Pi.*
 
 2. Сохраните изменения и закройте окно, нажав клавиши CTRL+O > ВВОД > CTRL+X.
 
@@ -248,14 +248,14 @@ ms.locfileid: "81640533"
 
 ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](./media/iot-hub-raspberry-pi-kit-node-get-started/8-run-output.png)
 
-## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, полученные концентратором
+## <a name="read-the-messages-received-by-your-hub"></a>Чтение сообщений, полученных центром
 
-Одним из способов мониторинга сообщений, получаемых концентратором IoT с вашего устройства, является использование инструментов Azure IoT для визуального кода studio. Чтобы узнать больше, [см.](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)
+Одним из способов мониторинга сообщений, полученных центром Интернета вещей с устройства, является использование средств Azure IoT для Visual Studio Code. Дополнительные сведения см. в статье [использование средств Azure IOT для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
 
-Дополнительные способы обработки данных, отправляемых устройством, переследуйте на следующий раздел.
+Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Вы запробовали пример приложения для сбора данных датчиков и отправки в концентратор IoT.
+Вы запустили пример приложения для регистрации данных датчика и их отправки в центр Интернета вещей.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]
