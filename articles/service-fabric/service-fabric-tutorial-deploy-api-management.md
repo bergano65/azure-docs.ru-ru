@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: mvc
 ms.openlocfilehash: 7bd781a21a32ca29fe3f5dd2f4432dbf1e5ca411
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80292140"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
@@ -25,11 +25,11 @@ ms.locfileid: "80292140"
 > [!IMPORTANT]
 > Эта функция доступна в ценовой категории **Премиум** и **Разработка** управления API, так как необходима поддержка виртуальной сети.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы
 
-* Если у вас нет подписки НаAz, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в группе безопасности сети.
 * Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2019](https://www.visualstudio.com), а также рабочие нагрузки **Разработка для Azure**, **ASP.NET и разработка веб-приложений** и **Кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
@@ -66,7 +66,7 @@ az account set --subscription <guid>
  1. В Visual Studio выберите последовательно «Файл» -> «Создать проект».
  2. Выберите шаблон приложения Service Fabric в облаке и присвойте ему имя **ApiApplication**.
  3. Выберите шаблон службы ASP.NET Core без отслеживания состояния и присвойте проекту имя **WebApiService**.
- 4. Выберите шаблон проекта Web API ASP.NET Core 2.1.
+ 4. Выберите шаблон проекта веб-API ASP.NET Core 2,1.
  5. После создания проекта откройте файл `PackageRoot\ServiceManifest.xml` и удалите атрибут `Port` из конфигурации ресурса конечной точки:
 
     ```xml
@@ -77,7 +77,7 @@ az account set --subscription <guid>
     </Resources>
     ```
 
-    Удаление порта позволяет Service Fabric динамически определить порт из диапазона портов приложений, открытый через группу сетевой безопасности в шаблоне cluster Resource Manager, что позволяет трафику перетекать к нему из API Management.
+    Удаление порта позволяет Service Fabric указать порт динамически из диапазона портов приложения, который открывается через группу безопасности сети в шаблоне диспетчер ресурсов кластера, что позволяет передавать трафик в него из управления API.
 
  6. Нажмите клавишу F5 в Visual Studio, чтобы убедиться, что веб-API доступен локально.
 
@@ -134,7 +134,7 @@ az account set --subscription <guid>
 
 * Для параметра **displayName** можно указать любое имя API-интерфейса. Для этой статьи используйте имя Service Fabric App.
 * Параметр **name** содержит уникальное описательное имя для API-интерфейса, например service-fabric-app. Оно выводится на порталах разработчика и издателя.
-* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи, например, "http:\//servicefabric".
+* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи, например "http:\//сервицефабрик".
 * Значение **path** добавляется к основному URL-адресу вашей службы управления API. Основной URL-адрес является общим для всех интерфейсов API, размещенных в экземпляре службы API Management. API Management отличает интерфейсы API по их суффиксу. Следовательно, суффикс должен быть уникальным для каждого API для заданного издателя.
 * Параметр **protocols** определяет, какие протоколы можно использовать для доступа к API. Для этой статьи укажите протоколы **http** и **https**.
 * Параметр **path** содержит суффикс для API-интерфейса. Для этой статьи используйте суффикс myapp.
@@ -190,7 +190,7 @@ az account set --subscription <guid>
 |---|---|
 |apimInstanceName|sf-apim|
 |apimPublisherEmail|myemail@contosos.com|
-|apimSku|Разработчик|
+|apimSku|Разработка|
 |serviceFabricCertificateName|sfclustertutorialgroup320171031144217|
 |certificatePassword|q6D7nN%6ck@6|
 |serviceFabricCertificateThumbprint|C4C1E541AD512B8065280292A8BA6079C3F26F10 |
@@ -277,7 +277,7 @@ az group deployment create --name ApiMgmtDeployment --resource-group $ResourceGr
 
 Помимо собственных ресурсов кластер содержит другие ресурсы Azure. Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
 
-Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно найти, войдя на [портал Azure.](https://portal.azure.com) Удалите группу ресурсов и все ресурсы кластера с помощью [cmdlet Remove-AzResourceGroup.](/en-us/powershell/module/az.resources/remove-azresourcegroup)
+Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно найти, войдя в [портал Azure](https://portal.azure.com). Удалите группу ресурсов и все ресурсы кластера с помощью [командлета Remove-азресаурцеграуп](/en-us/powershell/module/az.resources/remove-azresourcegroup).
 
 ```powershell
 $ResourceGroupName = "sfclustertutorialgroup"
@@ -289,7 +289,7 @@ ResourceGroupName="sfclustertutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании [управления API](/azure/api-management/import-and-publish).
 
@@ -303,7 +303,7 @@ az group delete --name $ResourceGroupName
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png
-vice-fabric-scripts-and-templates/blob/master/templates/service-integration/network-apim.parameters.jsonn
+вице-фабрик-скриптс-Анд-темплатес/BLOB/Master/Templates/сервице-интегратион/Нетворк-апим. parameters. JSONn
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png

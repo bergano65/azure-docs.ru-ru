@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 615a6afb0f7a3e133603db10e7c79add3322070c
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80476709"
 ---
 # <a name="publish-media-services-content-using-net"></a>Публикация содержимого Служб мультимедиа с помощью .NET  
@@ -108,7 +108,7 @@ ms.locfileid: "80476709"
 
 
 > [!NOTE]
-> Вы также можете передавать содержимое через соединение TLS. Для этого убедитесь, что URL-адреса потоковой передачи начинаются с HTTPS. В настоящее время AMS не поддерживает TLS с пользовательскими доменами.
+> Вы также можете выполнять потоковую передачу содержимого через TLS-подключение. Для этого убедитесь, что URL-адреса потоковой передачи начинаются с HTTPS. В настоящее время AMS не поддерживает TLS с пользовательскими доменами.
 > 
 > 
 
@@ -175,10 +175,10 @@ ms.locfileid: "80476709"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
-* [Скачивание файлов](media-services-deliver-asset-download.md)
-* [Настройка политики доставки активов](media-services-dotnet-configure-asset-delivery-policy.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Скачивание ресурсов](media-services-deliver-asset-download.md)
+* [Настройка политики доставки ресурсов](media-services-dotnet-configure-asset-delivery-policy.md)
 

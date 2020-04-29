@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Analysis Services с помощью Excel | Документы Майкрософт
-description: Сведения о подключении к серверу Azure Analysis Services с помощью Excel. После подключения пользователи могут создавать PivotTables для изучения данных.
+description: Сведения о подключении к серверу Azure Analysis Services с помощью Excel. После подключения пользователи могут создавать сводные таблицы для просмотра данных.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: b5c46c8b85af59efaf611300e2ab7129b3ef3cde
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80411383"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
@@ -20,7 +20,7 @@ ms.locfileid: "80411383"
 
 ## <a name="before-you-begin"></a>Подготовка к работе
 
-Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Чтобы узнать больше, смотрите [аутентификацию и пользовательские разрешения.](analysis-services-manage-users.md) 
+Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md). 
 
 ## <a name="connect-in-excel"></a>Подключение в Excel
 
@@ -42,7 +42,7 @@ ms.locfileid: "80411383"
 
 ## <a name="see-also"></a>См. также
 
-[Библиотеки клиентов](analysis-services-data-providers.md)   
+[Клиентские библиотеки](analysis-services-data-providers.md)   
 [Управление службами Analysis Services](analysis-services-manage.md)     
 
 

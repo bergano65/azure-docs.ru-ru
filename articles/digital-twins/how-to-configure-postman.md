@@ -1,6 +1,6 @@
 ---
-title: Как настроить Почтальона - Azure Цифровые Близнецы (ru) Документы Майкрософт
-description: Узнайте, как настроить и использовать Postman для тестирования AA-иадоминиумов Azure Digital Twins.
+title: Как настроить пост-Azure Digital двойников | Документация Майкрософт
+description: Узнайте, как настроить и использовать POST для тестирования интерфейсов API цифровых двойников Azure.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -9,10 +9,10 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.openlocfilehash: ffcfb4f6ec5f6c654d0b243af85034ab575e0d88
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80297168"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
@@ -29,25 +29,25 @@ ms.locfileid: "80297168"
 
 [Postman](https://www.getpostman.com/) — это средство тестирования REST, которое размещает ключевые возможности HTTP-запроса в полезном графическом пользовательском интерфейсе на основе плагина для настольных систем.
 
-Через клиента Postman разработчики решений могут указать вид запроса HTTP *(POST*, *GET*, *UPDATE,* *PATCH*, и *DELETE*), API конечная точка вызова, и использование TLS. Postman также поддерживает добавление заголовков, параметров, данных форм и текста HTTP-запросов.
+С помощью клиента posts разработчики решений могут указать тип HTTP-запроса (*POST*, *Get*, *Update*, *Patch*и *Delete*), конечной точки API для вызова и использования протокола TLS. Postman также поддерживает добавление заголовков, параметров, данных форм и текста HTTP-запросов.
 
 ## <a name="configure-azure-active-directory-to-use-the-oauth-20-implicit-grant-flow"></a>Настройка Azure Active Directory для использования потока неявного предоставления разрешений OAuth 2.0
 
-1. Выполните последующие действия в [квикстарте,](quickstart-view-occupancy-dotnet.md#set-permissions-for-your-app) чтобы создать и настроить приложение Azure Active Directory. Кроме того, можно повторно использовать существующую регистрацию приложений.
+1. Выполните действия, описанные в [кратком руководстве](quickstart-view-occupancy-dotnet.md#set-permissions-for-your-app) , чтобы создать и настроить приложение Azure Active Directory. Кроме того, можно повторно использовать существующую регистрацию приложения.
 
-    [![Налажить новый почтальон перенаправить URI](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
+    [![Настройка нового URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
 
-1. Теперь добавьте **перенаправление URI** в `https://www.getpostman.com/oauth2/callback`.
+1. Теперь добавьте **URI перенаправления** в `https://www.getpostman.com/oauth2/callback`.
 
-1. Выберите флажок**для токенов** **Implicit grant** > Access, чтобы можно было использовать неявный поток грантов OAuth 2.0. Выберите **настройку,** затем **сохранить**.
+1. Установите флажок **неявные** > **маркеры доступа** GRANT, чтобы разрешить использование потока неявного предоставления OAuth 2,0. Выберите **Настройка**, а затем **сохранить**.
 
-1. Копируйте **идентификатор клиента** в приложении Active Directory Azure.
+1. Скопируйте **идентификатор клиента** приложения Azure Active Directory.
 
 ## <a name="obtain-an-oauth-20-token"></a>Получение маркера OAuth 2.0
 
 [!INCLUDE [digital-twins-management-api](../../includes/digital-twins-management-api.md)]
 
-Настройка и настройка Почтальона для получения маркера Active Directory Azure. После этого выполните HTTP-запрос с проверкой подлинности к Azure Digital Twins, используя полученный токен:
+Настройте и настройте POST, чтобы получить маркер Azure Active Directory. После этого выполните HTTP-запрос с проверкой подлинности к Azure Digital Twins, используя полученный токен:
 
 1. Убедитесь, что ваш **URL-адрес авторизации** указан правильно. Его формат должен быть следующим:
 
@@ -55,27 +55,27 @@ ms.locfileid: "80297168"
     https://login.microsoftonline.com/YOUR_AZURE_TENANT.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0
     ```
 
-    | name  | Заменить на | Пример |
+    | Имя  | Заменить на | Пример |
     |---------|---------|---------|
-    | YOUR_AZURE_TENANT | Имя вашего арендатора или организации. Используйте имя, удобное для человека, вместо алфавитного **идентификатора арендатора** регистрации приложения Azure Active Directory. | `microsoft` |
+    | YOUR_AZURE_TENANT | Имя клиента или организации. Используйте понятное имя вместо буквенно-цифрового **идентификатора клиента** регистрации Azure Active Directory приложения. | `microsoft` |
 
 1. Скачайте приложение, перейдя по адресу [www.getpostman.com](https://www.getpostman.com/).
 
-1. Мы хотим сделать запрос GET. Выберите вкладку **Авторизация,** выберите OAuth 2.0, а затем выберите **Получить новый токен доступа.**
+1. Мы хотим сделать запрос GET. Перейдите на вкладку **авторизация** , выберите OAuth 2,0 и щелкните **получить новый маркер доступа**.
 
     | Поле  | Значение |
     |---------|---------|
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
-    | URL-адрес аутентификации | Используйте **URL-адрес авторизации** со **шага 1** |
-    | Идентификатор клиента | Используйте **идентификатор приложения** для приложения Active Directory Azure, которое было создано или повторно использовано из предыдущего раздела |
+    | URL-адрес аутентификации | Используйте **URL-адрес авторизации** из **шага 1** . |
+    | ИД клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
     | Область | Не указывайте |
-    | Штат | Не указывайте |
+    | Состояние | Не указывайте |
     | Аутентификация клиента | `Send as Basic Auth header` |
 
 1. Теперь клиент должен выглядеть следующим образом.
 
-    [![Пример токена клиента Почтальона](media/how-to-configure-postman/configure-postman-oauth-token.png)](media/how-to-configure-postman/configure-postman-oauth-token.png#lightbox)
+    [![Пример токена клиента POST](media/how-to-configure-postman/configure-postman-oauth-token.png)](media/how-to-configure-postman/configure-postman-oauth-token.png#lightbox)
 
 1. Выберите **Request Token** (Токен запроса).
   
@@ -85,31 +85,31 @@ ms.locfileid: "80297168"
 
 После выполнения предыдущих шагов настройте Postman на выполнение аутентифицированного HTTP-запроса POST, состоящего из нескольких частей.
 
-1. Под вкладкой **Заголовки** добавьте ключ заголовка запроса `multipart/mixed`HTTP **Content-Type** со значением.
+1. На вкладке **заголовки** добавьте содержимое ключа заголовка HTTP **-** запроса со значением `multipart/mixed`.
 
-   [![Указать тип содержимого многокомпонентный/смешанный](media/how-to-configure-postman/configure-postman-content-type.png)](media/how-to-configure-postman/configure-postman-content-type.png#lightbox)
+   [![Указание типа содержимого multipart/Mixed](media/how-to-configure-postman/configure-postman-content-type.png)](media/how-to-configure-postman/configure-postman-content-type.png#lightbox)
 
 1. Сериализируйте текстовые данные в файлы. Данные JSON будут сохранены в качестве JSON-файла.
-1. Под **Body** вкладкой Тела `form-data`выберите . 
-1. Добавьте каждый файл, назначив `File` **ключевое** имя, выбрав.
+1. На вкладке **текст** выберите `form-data`. 
+1. Добавьте каждый файл, назначив имя **ключа** , выбрав `File`.
 1. Далее выберите каждый файл, используя кнопку **Выберите файл**.
 
-   [![Почтальон клиент форме тела пример](media/how-to-configure-postman/configure-postman-form-body.png)](media/how-to-configure-postman/configure-postman-form-body.png#lightbox)
+   [![Пример тела формы клиента POST](media/how-to-configure-postman/configure-postman-form-body.png)](media/how-to-configure-postman/configure-postman-form-body.png#lightbox)
 
    >[!NOTE]
    > * Клиент Postman не требует, чтобы составные части имели назначенный вручную **Content-Type** или **Content-Disposition**.
    > * Необходимо указать эти заголовки для каждой части.
    > * Вы должны выбрать `multipart/mixed` или другой подходящий **Content-Type** для всего запроса.
 
-1. Наконец, выберите **Отправить,** чтобы отправить свой многокомпонентный запрос HTTP POST. Код состояния `200` или `201` указывает на успешный запрос. Соответствующее сообщение отклика появится в клиентском интерфейсе.
+1. Наконец, выберите **Отправить** , чтобы отправить многокомпонентный запрос HTTP POST. Код состояния `200` или `201` указывает на Успешный запрос. В интерфейсе клиента появится соответствующее ответное сообщение.
 
-1. Проверка данных запроса HTTP POST, позвонив в конечную точку API: 
+1. Проверьте данные запроса HTTP POST, вызвав конечную точку API: 
 
    ```URL
    YOUR_MANAGEMENT_API_URL/spaces/blobs?includes=description
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об API управления Digital Twins и их использовании см. в статье [How to use Azure Digital Twins management APIs](how-to-navigate-apis.md) (Как использовать API управления Azure Digital Twins).
 

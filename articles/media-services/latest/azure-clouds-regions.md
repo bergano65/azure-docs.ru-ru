@@ -1,5 +1,5 @@
 ---
-title: Облака и регионы, в которых доступны услуги Azure Media Services v3
+title: Облака и регионы, в которых доступны службы мультимедиа Azure v3
 description: В этой статье рассказывается об облаках Azure и регионах, в которых доступны Службы мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 01/21/2020
 ms.author: juliako
 ms.openlocfilehash: 1257bf4dfb0d5b2c4995cac760290f97293a0c0f
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80382976"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
@@ -35,7 +35,7 @@ ms.locfileid: "80382976"
 
 ## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 
-[Регионы, в которых развернута служба медиаслужбы Azure](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)
+[Регионы, в которых развернута служба служб мультимедиа Azure](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)
 
 ### <a name="region-code-name"></a>Кодовое имя региона
 
@@ -98,10 +98,10 @@ az account list-locations
 
 ## <a name="see-also"></a>См. также
 
-* [Лазурные регионы](https://azure.microsoft.com/global-infrastructure/regions/)
+* [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
 * [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
 * [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Что такое Службы мультимедиа Azure версии 3?](media-services-overview.md)

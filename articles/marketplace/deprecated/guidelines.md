@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 06/13/2018
 ms.author: dsindona
 ms.openlocfilehash: 9156126ff2a3dbe936dc426c6f5097c6bba7b7b7
-ms.sourcegitcommit: d0fd35f4f0f3ec71159e9fb43fcd8e89d653f3f2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80387616"
 ---
 # <a name="guidelines"></a>Рекомендации  
@@ -66,7 +66,7 @@ ms.locfileid: "80387616"
 
 1.  Правило пересылки отправляет все электронные письма и другие сообщения, полученные в учетной записи электронной почты Outlook, на другой адрес электронной почты в домене, зарегистрированном на вашу компанию. Для аутентификации в Центре разработчиков и на Портале Cloud Partner используется адрес электронной почты `outlook.com`.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 *   Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide). 
  

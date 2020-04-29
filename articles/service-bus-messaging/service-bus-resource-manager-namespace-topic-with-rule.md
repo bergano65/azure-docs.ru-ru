@@ -1,5 +1,5 @@
 ---
-title: Создание подписки и правила темы «Сервисный автобус» с помощью шаблона Azure
+title: Создание подписки и правила раздела служебной шины с помощью шаблона Azure
 description: Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager.
 services: service-bus-messaging
 documentationcenter: .net
@@ -15,17 +15,17 @@ ms.workload: na
 ms.date: 11/27/2019
 ms.author: spelluru
 ms.openlocfilehash: 6cbaf447dfcf06ae11f2282d7d847978297af8b8
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80384897"
 ---
 # <a name="create-a-service-bus-namespace-with-topic-subscription-and-rule-using-an-azure-resource-manager-template"></a>Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager
 
 В этой статье показывается, как использовать шаблон Azure Resource Manager, создающий пространство имен служебной шины с разделом, подпиской и правилом (фильтром). Здесь объясняется, как указать развертываемые ресурсы и определить параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или изменить его в соответствии с вашими требованиями.
 
-Для получения дополнительной информации [Authoring Azure Resource Manager templates][Authoring Azure Resource Manager templates]о создании шаблонов см.
+Дополнительные сведения о создании шаблонов см. в разделе [authoring Azure Resource Manager Templates][Authoring Azure Resource Manager templates].
 
 Дополнительные сведения о практиках и шаблонах соглашений об именовании ресурсов Azure см. в разделе [Recommended naming conventions for Azure resources][Recommended naming conventions for Azure resources] (Рекомендуемые соглашения об именовании ресурсов Azure).
 
@@ -36,10 +36,10 @@ ms.locfileid: "80384897"
 > 
 > * [Создание пространства имен служебной шины с очередью и правилом авторизации](service-bus-resource-manager-namespace-auth-rule.md)
 > * [Создание пространства имен служебной шины с очередью](service-bus-resource-manager-namespace-queue.md)
-> * [Создание пространства имен сервисного автобуса](service-bus-resource-manager-namespace.md)
+> * [Создайте пространство имен служебной шины](service-bus-resource-manager-namespace.md)
 > * [Создание пространства имен служебной шины с разделом и подпиской](service-bus-resource-manager-namespace-topic.md)
 > 
-> Чтобы проверить последние шаблоны, посетите галерею [шаблонов Azure и][Azure Quickstart Templates] поиск сервисного автобуса.
+> Чтобы узнать о новых шаблонах, в коллекции [шаблонов быстрого запуска Azure][Azure Quickstart Templates] выполните поиск "Service Bus".
 
 ## <a name="what-do-you-deploy"></a>Какой объект развертывается?
 
@@ -188,7 +188,7 @@ azure config mode arm
 azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-topic-subscription-rule/azuredeploy.json>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как управлять этими ресурсами, просмотрев следующие статьи:
 

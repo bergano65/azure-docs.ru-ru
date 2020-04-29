@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/05/2018
 ms.author: dsindona
 ms.openlocfilehash: b41a29fb3548937e9071cfb9f065dd46f63df83e
-ms.sourcegitcommit: d0fd35f4f0f3ec71159e9fb43fcd8e89d653f3f2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80387620"
 ---
 # <a name="enable-lead-sharing"></a>Возможность общего доступа к данным о потенциальных клиентах
@@ -39,7 +39,7 @@ ms.locfileid: "80387620"
 | Онлайн-магазин | Вывод списка |
 |:--- |:--- |
 | AppSource | <table> <tr><td>Приложение</td></tr> <tr><td>Консультационные услуги</td></tr> </table> |
-| Azure Marketplace | <table> <tr><td>ПРЕДЛОЖЕНИЕ</td></tr> <tr><td>Технология</td></tr> </table> |
+| Azure Marketplace | <table> <tr><td>Предложение</td></tr> <tr><td>Технология</td></tr> </table> |
 
 У вас должен быть налажен процесс для работы с потенциальными клиентами, как описано в следующей таблице:
 
@@ -52,5 +52,5 @@ ms.locfileid: "80387620"
 
 Дополнительные сведения о получении доступа к программе совместных продаж см. в статье [Развитие бизнеса с помощью Майкрософт](./promote-your-business-with-microsoft.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Просмотрите [Руководство по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).

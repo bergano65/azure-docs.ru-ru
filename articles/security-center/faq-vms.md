@@ -1,6 +1,6 @@
 ---
-title: Часто задаваемые вопросы Центра безопасности Azure — вопросы о виртуальных машинах
-description: Часто задаваемые вопросы о виртуальных машинах в Azure Security Center, продукте, который помогает предотвращать, обнаруживать и реагировать на угрозы
+title: Вопросы и ответы по центру безопасности Azure — вопросы о виртуальных машинах
+description: Часто задаваемые вопросы о виртуальных машинах в центре безопасности Azure — это продукт, который помогает предотвращать, обнаруживать угрозы и реагировать на них.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -14,13 +14,13 @@ ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
 ms.openlocfilehash: 0b7817539a26b7ebfa24efd086edf8b0ef82eae3
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80436009"
 ---
-# <a name="faq---questions-about-virtual-machines"></a>Часто задаваемые вопросы - Вопросы о виртуальных машинах
+# <a name="faq---questions-about-virtual-machines"></a>Часто задаваемые вопросы о виртуальных машинах
 
 
 ## <a name="what-types-of-virtual-machines-are-supported"></a>Какие типы виртуальных машин поддерживаются?
@@ -42,7 +42,7 @@ ms.locfileid: "80436009"
 
 ## <a name="how-often-does-security-center-scan-for-operating-system-vulnerabilities-system-updates-and-endpoint-protection-issues"></a>Как часто центр безопасности проверяет наличие уязвимостей операционной системы, системных обновлений и проблем защиты конечной точки?
 
-Ниже приведены время задержки для сканирования уязвимостей, обновлений и проблем Центра безопасности:
+Ниже приведены времена задержки для проверки уязвимостей, обновлений и проблем центра безопасности.
 
 - Настройки безопасности операционной системы: данные обновляются в течение 48 часов.
 - Системные обновления — данные обновляются в течение 24 часов.
@@ -51,7 +51,7 @@ ms.locfileid: "80436009"
 Обычно центр безопасности проверяет наличие новых данных каждый час и обновляет рекомендации соответствующим образом. 
 
 > [!NOTE]
-> Центр безопасности использует агент Log Analytics для сбора и хранения данных. Дополнительные сведения см. в статье [Миграция платформы центра безопасности Azure](security-center-platform-migration.md).
+> Центр безопасности использует агент Log Analytics для получения и хранения данных. Дополнительные сведения см. в статье [Миграция платформы центра безопасности Azure](security-center-platform-migration.md).
 
 
 ## <a name="why-do-i-get-the-message-vm-agent-is-missing"></a>Почему я получаю сообщение "Агент виртуальной машины отсутствует"?

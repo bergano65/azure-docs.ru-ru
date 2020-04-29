@@ -1,6 +1,6 @@
 ---
 title: Высокая доступность служб Azure Analysis Services | Документы Майкрософт
-description: В этой статье описывается, как службы анализа Azure обеспечивают высокую доступность во время сбоя в работе службы.
+description: В этой статье описывается, как Azure Analysis Services обеспечивает высокий уровень доступности во время прерывания работы службы.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 78a6d41b638d79111a58830f0cb0d5190ea0796c
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80408684"
 ---
 # <a name="analysis-services-high-availability"></a>Высокая доступность служб Analysis Services
@@ -33,6 +33,6 @@ ms.locfileid: "80408684"
 ## <a name="related-information"></a>Дополнительные сведения
 
 [Резервное копирование и восстановление](analysis-services-backup.md)   
-[Управление аналитическими службами Azure](analysis-services-manage.md)   
+[Управление Azure Analysis Services](analysis-services-manage.md)   
 [Псевдонимы сервера](analysis-services-server-alias.md) 
 

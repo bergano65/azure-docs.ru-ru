@@ -1,5 +1,5 @@
 ---
-title: Как подключиться к VM-сервису Azure Lab от Mac Документы Майкрософт
+title: Подключение к виртуальной машине служб лаборатории Azure из Mac | Документация Майкрософт
 description: Эта статья
 services: devtest-lab, lab-services, virtual-machines
 documentationcenter: na
@@ -14,14 +14,14 @@ ms.topic: article
 ms.date: 03/17/2020
 ms.author: spelluru
 ms.openlocfilehash: 0d3484c1008e00bcfde3adb399e925c0e054f49e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79503092"
 ---
 # <a name="connect-to-a-vm-using-rdp-on-a-mac"></a>Подключение к виртуальной машине с помощью RDP на компьютере Mac
-В этом разделе показано, как студент может подключиться к классной лаборатории VM с Mac с помощью RDP.
+В этом разделе показано, как учащийся может подключиться к виртуальной машине лаборатории из компьютера Mac с помощью RDP.
 
 ## <a name="install-microsoft-remote-desktop-on-a-mac"></a>Установка удаленного рабочего стола (Майкрософт) на компьютере Mac
 1. Откройте App Store на компьютере Mac и выполните поиск по запросу **удаленный рабочий стол (Майкрософт)**.
@@ -41,10 +41,10 @@ ms.locfileid: "79503092"
     > [!NOTE]
     > Ниже приведен пример для виртуальной машины Linux CentOS. 
 
-    ![ВМ](../media/how-to-use-classroom-lab/vm-ui.png)
+    ![Виртуальная машина](../media/how-to-use-classroom-lab/vm-ui.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-Чтобы узнать, как подключиться к Linux VMs с помощью RDP, [см.](how-to-use-remote-desktop-linux-student.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+Сведения о подключении к виртуальным машинам Linux с помощью RDP см. в статье [Использование удаленного рабочего стола для виртуальных машин Linux](how-to-use-remote-desktop-linux-student.md) .
 
 

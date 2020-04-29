@@ -1,6 +1,6 @@
 ---
-title: Мониторинг медиа-служб диагностических журналов с помощью Azure Monitor Документы Майкрософт
-description: В этой статье показано, как направлять и просматривать диагностические журналы через Azure Monitor.
+title: Мониторинг журналов диагностики служб мультимедиа с помощью Azure Monitor | Документация Майкрософт
+description: В этой статье показано, как маршрутизировать и просматривать журналы диагностики с помощью Azure Monitor.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,27 +14,27 @@ ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
 ms.openlocfilehash: 4d4587c701a054828fc34785e2ae680fef47625d
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80382925"
 ---
-# <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг медиа-услуг диагностических журналов
+# <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
 
-[Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и диагностические журналы, которые помогают понять, как работают приложения. Подробное описание этой функции и подробные данные об этой функции и о [Monitor Media Services metrics and diagnostic logs](media-services-metrics-diagnostic-logs.md)том, почему вы хотите использовать метрики и журналы диагностики Media Services Azure Media, см.
+[Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Подробное описание этой функции и сведения о том, почему вы хотите использовать метрики и журналы диагностики служб мультимедиа Azure, см. в статье [мониторинг метрик служб мультимедиа и журналов диагностики](media-services-metrics-diagnostic-logs.md).
 
-В этой статье показано, как направлять данные в учетную запись хранилища, а затем просматривать данные.
+В этой статье показано, как перенаправлять данные в учетную запись хранения и просматривать их.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
-- Просмотрите [метрики медиаслужб и диагностические журналы Monitor Media Services.](media-services-metrics-diagnostic-logs.md)
+- Ознакомьтесь с разделом [мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md).
 
-## <a name="route-data-to-the-storage-account-using-the-portal"></a>Данные о маршруте на счет хранения с помощью портала
+## <a name="route-data-to-the-storage-account-using-the-portal"></a>Маршрутизация данных в учетную запись хранения с помощью портала
 
 1. Войдите на портал Azure по адресу https://portal.azure.com.
-1. Перейдите к учетной записи Media Services и нажмите **Диагностические настройки** под **монитором.** Здесь можно увидеть список всех ресурсов в подписке, создающих данные мониторинга с помощью Azure Monitor.
+1. Перейдите к учетной записи служб мультимедиа в и щелкните **параметры диагностики** в разделе **монитор**. Здесь можно увидеть список всех ресурсов в подписке, создающих данные мониторинга с помощью Azure Monitor.
 
     ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs01.png)
 
@@ -44,18 +44,18 @@ ms.locfileid: "80382925"
 
 1. В открывшемся разделе назначьте параметру **Имя** и установите флажок **Архивировать в учетной записи хранения**.
 
-    Выберите учетную запись хранилища, на которую вы хотите отправить журналы и **нажмите OK.**
+    Выберите учетную запись хранения, в которую нужно отправить журналы, и нажмите кнопку **ОК**.
 1. Установите все флажки в разделе **Журнал** и **Метрика**. В зависимости от типа ресурса у вас может быть только один из этих вариантов. Эти флажки определяют, какие категории журналов и данных метрик, доступные для этого типа ресурса, отправляются в выбранное место назначения (в данном случае в учетную запись хранения).
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. Нажмите **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 
-## <a name="route-data-to-the-storage-account-using-the-azure-cli"></a>Данные о маршруте к учетной записи хранилища с помощью Azure CLI
+## <a name="route-data-to-the-storage-account-using-the-azure-cli"></a>Перенаправление данных в учетную запись хранения с помощью Azure CLI
 
-Для обеспечения хранения диагностических журналов в учетной `az monitor diagnostic-settings` записи хранения выполняется следующая команда Azure CLI:
+Чтобы включить хранение журналов диагностики в учетной записи хранения, выполните следующую `az monitor diagnostic-settings` команду Azure CLI:
 
 ```azurecli-interactive
 az monitor diagnostic-settings create --name <diagnostic name> \
@@ -83,7 +83,7 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
     --logs '[{"category": "KeyDeliveryRequests",  "enabled": true, "retentionPolicy": {"days": 3, "enabled": true }}]'
 ```
 
-## <a name="view-data-in-the-storage-account-using-the-portal"></a>Просмотр данных в учетной записи хранилища с помощью портала
+## <a name="view-data-in-the-storage-account-using-the-portal"></a>Просмотр данных в учетной записи хранения с помощью портала
 
 Если выполнены предыдущие шаги, данные будут поступать в учетную запись хранения.
 
@@ -91,12 +91,12 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 
 1. На портале перейдите к разделу **Учетные записи хранения**, который можно найти в области навигации слева.
 1. Идентифицируйте учетную запись хранения, созданную в предыдущем разделе, и щелкните ее.
-1. Нажмите на **Blobs**, а затем на контейнере **помечены идеи-журналы-keydeliveryrequests**. Это контейнер, в который есть ваши журналы в нем. Данные мониторинга разбиваются в контейнеры по идентификатору ресурсов, затем по дате и времени.
+1. Щелкните **BLOB-объекты**, а затем в контейнере с меткой **Insights — Logs-кэйделиверирекуестс**. Это контейнер, в котором находятся журналы. Данные мониторинга разбиваются на контейнеры по ИДЕНТИФИКАТОРу ресурса, а затем по дате и времени.
 1. Перейдите к файлу PT1H.json, щелкнув контейнеры, чтобы получить идентификаторы ресурса, дату и время. Щелкните файл PT1H.json, а затем — **Скачать**.
 
  Теперь можно просмотреть событие JSON, сохраненное в учетной записи хранения.
 
-### <a name="examples-of-pt1hjson"></a>Примеры PT1H.json
+### <a name="examples-of-pt1hjson"></a>Примеры PT1H. JSON
 
 #### <a name="clear-key-delivery-log"></a>Очистить журнал доставки ключей
 
@@ -136,7 +136,7 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 }
 ```
 
-#### <a name="widevine-encrypted-key-delivery-log"></a>Зашифрованный журнал доставки ключей Widevine
+#### <a name="widevine-encrypted-key-delivery-log"></a>Журнал доставки зашифрованного ключа Widevine
 
 ```json
 {
@@ -174,16 +174,16 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 }
 ```
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="see-also"></a>См. также
 
-* [Метрика azure Monitor](../../azure-monitor/platform/data-platform.md)
-* [Диагностические журналы Azure Monitor](../../azure-monitor/platform/platform-logs-overview.md)
-* [Как собирать и потреблять данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
+* [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
+* [Журналы диагностики Azure Monitor](../../azure-monitor/platform/platform-logs-overview.md)
+* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Метрики мониторинга](media-services-metrics-howto.md)

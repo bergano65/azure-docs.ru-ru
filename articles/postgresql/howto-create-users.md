@@ -1,23 +1,23 @@
 ---
-title: Создание пользователей - База данных Azure для PostgreS-L - Единый сервер
-description: В этой статье описывается, как можно создавать новые учетные записи пользователей для взаимодействия с базой данных Azure для PostgreS-L - Single Server.
+title: Создание пользователей — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается создание новых учетных записей пользователей для взаимодействия с базой данных Azure для PostgreSQL-Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2019
 ms.openlocfilehash: 127d484d6cfc35368803069f9c3d602e787baa56
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80384353"
 ---
-# <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Создание пользователей в базе данных Azure для PostgreS-L - Единый сервер
+# <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Создание пользователей в базе данных Azure для PostgreSQL — один сервер
 
-В этой статье описывается, как можно создавать пользователей в базе данных Azure для сервера PostgreS'L.
+В этой статье описывается создание пользователей на сервере базы данных Azure для PostgreSQL.
 
-Если вы хотите узнать о том, как создавать и управлять пользователями подписки Azure и их привилегиями, вы можете посетить [статью управления доступом на основе роли Azure (RBAC)](../role-based-access-control/built-in-roles.md) или просмотреть, [как настроить роли.](../role-based-access-control/custom-roles.md)
+Если вы хотите узнать о том, как создавать и администрировать пользователей подписки Azure и их привилегии, вы можете посетить [статью об управлении доступом на основе ролей (RBAC) Azure](../role-based-access-control/built-in-roles.md) или ознакомиться с разрешениями по [настройке ролей](../role-based-access-control/custom-roles.md).
 
 ## <a name="the-server-admin-account"></a>Учетная запись администратора сервера
 
@@ -82,7 +82,7 @@ ms.locfileid: "80384353"
    psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=db_user@mydemoserver --dbname=newdb
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [Azure CLI](howto-manage-firewall-using-cli.md).
 

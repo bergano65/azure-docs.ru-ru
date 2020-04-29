@@ -1,5 +1,5 @@
 ---
-title: Выполнение действий хранения очереди Azure в PowerShell
+title: Выполнение действий хранилища очередей Azure в PowerShell
 description: Как выполнять операции с хранилищем очередей Azure при помощи PowerShell
 author: mhopkins-msft
 ms.author: mhopkins
@@ -9,15 +9,15 @@ ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
 ms.openlocfilehash: 96828a854c340b89c26023ce60f9c85dd1bb4cdd
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80473914"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
 
-Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ по протоколам HTTP или HTTPS практически из любой точки мира. Дополнительные сведения см. в статье [Общие сведения об очередях](storage-queues-introduction.md). В этом практическом руководстве рассматриваются распространенные операции с хранилищем очередей. Вы узнаете, как выполнять следующие задачи:
+Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ по протоколам HTTP или HTTPS практически из любой точки мира. Дополнительные сведения см. в статье [Общие сведения об очередях](storage-queues-introduction.md). В этом практическом руководстве рассматриваются распространенные операции с хранилищем очередей. Вы научитесь:
 
 > [!div class="checklist"]
 >
@@ -78,7 +78,7 @@ $ctx = $storageAccount.Context
 
 ## <a name="create-a-queue"></a>Создание очереди
 
-Сначала в этом примере устанавливается соединение со службой хранилища Azure, используя контекст учетной записи хранения, который включает имя учетной записи хранения и ее ключ доступа. Далее он вызывает [New-AzStorageQueue](/powershell/module/az.storage/New-AzStorageQueue) cmdlet, чтобы создать очередь под названием 'howtoqueue'.
+Сначала в этом примере устанавливается соединение со службой хранилища Azure, используя контекст учетной записи хранения, который включает имя учетной записи хранения и ее ключ доступа. Затем вызывается командлет [New-азсторажекуеуе](/powershell/module/az.storage/New-AzStorageQueue) для создания очереди с именем "ховтокуеуе".
 
 ```powershell
 $queueName = "howtoqueue"
@@ -103,7 +103,7 @@ Get-AzStorageQueue -Context $ctx | Select-Object Name
 
 ## <a name="add-a-message-to-a-queue"></a>Добавление сообщения в очередь
 
-Для операций с фактическими сообщениями в очереди используйте клиентскую библиотеку хранилища .NET, предоставленную в PowerShell. Чтобы добавить сообщение в очередь, создайте новый экземпляр объекта сообщения — класс [Microsoft.Azure.Storage.Queue.Cloud'UeeMessage.](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue.cloudqueuemessage) Затем позвоните в метод [AddMessage.](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue.cloudqueue.addmessage) Для создания CloudQueueMessage можно использовать строку (в формате UTF-8) или массив байтов.
+Для операций с фактическими сообщениями в очереди используйте клиентскую библиотеку хранилища .NET, предоставленную в PowerShell. Чтобы добавить сообщение в очередь, создайте новый экземпляр объекта Message, класс [Microsoft. Azure. Storage. Queue. CloudQueueMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue.cloudqueuemessage) . Затем вызовите метод [AddMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue.cloudqueue.addmessage) . Для создания CloudQueueMessage можно использовать строку (в формате UTF-8) или массив байтов.
 
 В следующем примере демонстрируется добавление сообщений в очередь.
 
@@ -130,7 +130,7 @@ $queue.CloudQueue.AddMessageAsync($QueueMessage)
 
 Это **время ожидания невидимости** определяет, как долго сообщение остается невидимым, прежде чем снова станет доступным для обработки. По умолчанию это 30 секунд.
 
-Ваш код считывает сообщение из очереди в два этапа. При вызове метода [Microsoft.Azure.Storage.Квочередь.Cloud'Uee.GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage) вы получите следующее сообщение в очереди. Сообщение, возвращенное из **GetMessage,** становится невидимым для любого другого кода, читающего сообщения из этой очереди. Чтобы закончить удаление сообщения из очереди, вы позвоните в метод [Microsoft.Azure.Storage.Queue.Cloud'Uee.DeleteMessage.](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage)
+Ваш код считывает сообщение из очереди в два этапа. При вызове метода [Microsoft. Azure. Storage. Queue. CloudQueue.](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage) GetNext вы получаете следующее сообщение в очереди. Сообщение, возвращенное методом **onmessage** , станет невидимым для любого другого кода, считывающего сообщения из этой очереди. Чтобы завершить удаление сообщения из очереди, вызовите метод [Microsoft. Azure. Storage. Queue. CloudQueue. DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage) .
 
 В следующем примере можно прочитать три сообщения в очереди, после чего следует время ожидания 10 секунд (время ожидания невидимости). Затем можно снова прочитать три сообщения и удалить их после прочтения, вызвав **DeleteMessage**. При попытке чтения очереди после удаления сообщений $queueMessage будет возвращаться как значение NULL.
 
@@ -178,7 +178,7 @@ Remove-AzStorageQueue –Name $queueName –Context $ctx
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этого практического руководства вы узнали о базовом управлении хранилищем очередей с помощью PowerShell, включая выполнение следующих задач:
 

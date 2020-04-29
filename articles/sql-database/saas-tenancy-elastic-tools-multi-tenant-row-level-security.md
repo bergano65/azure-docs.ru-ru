@@ -1,5 +1,5 @@
 ---
-title: Мультитенантные приложения с RLS и эластичными инструментами базы данных
+title: Приложения с несколькими клиентами с помощью инструментов RLS и эластичных баз данных
 description: Средства эластичных баз данных в сочетании с безопасностью на уровне строк позволяют создать приложение с высокой масштабируемостью уровня данных.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: vanto
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: 4cf260620d4e907fdb9190a052155fa22f1c7985
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80398328"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Мультитенантные приложения со средствами эластичных баз данных и безопасностью на уровне строк
@@ -36,7 +36,7 @@ ms.locfileid: "80398328"
 
 ## <a name="download-the-sample-project"></a>Загрузка примера проекта
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 - Используйте Visual Studio 2012 или более поздней версии.
 - Создайте три базы данных SQL Azure.
@@ -56,7 +56,7 @@ ms.locfileid: "80398328"
 1. **Уровень приложений.** Измените код приложения, чтобы после создания подключения в SESSION\_CONTEXT всегда хранилось текущее значение идентификатора клиента. В нашем примере идентификатор клиента уже хранится таким образом.
 2. **Уровень данных.** Создайте в каждой базе данных сегмента политику безопасности на уровне строк, чтобы фильтровать строки по значению идентификатора клиента из SESSION\_CONTEXT. Политику необходимо создать для каждой базы данных сегмента, иначе строки в мультитенантных сегментах не будут фильтроваться.
 
-## <a name="1-application-tier-set-tenantid-in-the-session_context"></a>1. Уровень применения: Установить\_TenantId в SESSION CONTEXT
+## <a name="1-application-tier-set-tenantid-in-the-session_context"></a>1. уровень приложения: задайте значение TenantId в контексте\_сеанса.
 
 Прежде всего, подключитесь к базе данных сегмента, используя API-интерфейсы маршрутизации на основе данных из клиентской библиотеки эластичной базы данных. Теперь приложение должно сообщить базе данных, для какого идентификатора клиента создано это подключение. Политика безопасности на уровне строк использует этот идентификатор клиента, чтобы исключать все строки, принадлежащие другим клиентам. Сохраните текущий идентификатор клиента в [SESSION\_CONTEXT](https://docs.microsoft.com/sql/t-sql/functions/session-context-transact-sql) для созданного подключения.
 
@@ -212,7 +212,7 @@ All blogs for TenantId {0} (using ADO.NET SqlClient):", tenantId4);
 
 ```
 
-## <a name="2-data-tier-create-row-level-security-policy"></a>2. Уровень данных: Создание политики безопасности на уровне строки
+## <a name="2-data-tier-create-row-level-security-policy"></a>2. уровень данных: Создание политики безопасности на уровне строк
 
 ### <a name="create-a-security-policy-to-filter-the-rows-each-tenant-can-access"></a>Создание политики безопасности для фильтрации строк, доступных для всех клиентов
 

@@ -9,10 +9,10 @@ ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: jamesbak
 ms.openlocfilehash: fa0f67e0d72ee5710a42b6de744ddae98e20220a
-ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80437128"
 ---
 # <a name="use-the-azure-data-lake-storage-gen2-uri"></a>Использование URI в Azure Data Lake Storage Gen2
@@ -27,7 +27,7 @@ ms.locfileid: "80437128"
 
 <pre>abfs[s]<sup>1</sup>://&lt;file_system&gt;<sup>2</sup>@&lt;account_name&gt;<sup>3</sup>.dfs.core.windows.net/&lt;path&gt;<sup>4</sup>/&lt;file_name&gt;<sup>5</sup></pre>
 
-1. **Scheme identifier** (Идентификатор схемы) — указывает протокол `abfs`. У вас есть возможность подключиться к или без безопасности транспортного слоя (TLS), ранее известного как Безопасный слой розеток (SSL), подключение. Используйте `abfss` для подключения к подключению TLS.
+1. **Scheme identifier** (Идентификатор схемы) — указывает протокол `abfs`. Можно установить соединение с протоколом TLS или без него, ранее известное как SSL (SSL), Connection. Используйте `abfss` для подключения с помощью TLS-подключения.
 
 2. **File system** (Файловая система) — указывает на родительское расположение, в котором хранятся все файлы и папки. Этот параметр аналогичен контейнерам в службе Azure Storage Blob.
 
@@ -35,7 +35,7 @@ ms.locfileid: "80437128"
 
 4. **Paths** (Пути) — содержит представление структуры каталогов, в котором сегменты разделяются косыми чертами (`/`).
 
-5. **Имя файла**: Имя отдельного файла. Этот параметр можно не указывать, если вы обращаетесь к каталогу.
+5. **Имя файла**: имя отдельного файла. Этот параметр можно не указывать, если вы обращаетесь к каталогу.
 
 Если при создании учетной записи, к которой нужно обратиться, эта файловая система была настроена как файловая система по умолчанию, используется сокращенный URI со следующим синтаксисом:
 
@@ -46,6 +46,6 @@ ms.locfileid: "80437128"
 2. **File Name** (Имя файла) — содержит имя конкретного файла.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Используйте хранилище данных Azure Data Lake Gen2 с кластерами Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+- [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

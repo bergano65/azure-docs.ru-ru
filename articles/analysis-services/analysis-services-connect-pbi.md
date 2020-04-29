@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Analysis Services с помощью Power BI | Документы Майкрософт
-description: Сведения о подключении к серверу Azure Analysis Services с помощью Power BI. После подключения пользователи могут изучать данные модели.
+description: Сведения о подключении к серверу Azure Analysis Services с помощью Power BI. После подключения пользователи смогут просматривать данные модели.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
@@ -8,10 +8,10 @@ ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 6205c4189abfefc2ee9c4a273ebfd6773ea609b6
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80411360"
 ---
 # <a name="connect-with-power-bi"></a>Подключение с помощью Power BI
@@ -25,7 +25,7 @@ ms.locfileid: "80411360"
   
 ## <a name="connect-in-power-bi-desktop"></a>Подключение в Power BI Desktop
 
-1. В power BI Desktop нажмите **Кнопка Получить данные** > **Azure** > **Анализ служб**анализа .
+1. В Power BI Desktop щелкните **получить данные** > **Azure** > **Azure Analysis Services база данных**Azure.
 
 2. В поле **Сервер** укажите имя сервера. Обязательно включите полный URL-адрес, например asazure://westcentralus.asazure.windows.net/advworks.
 
@@ -47,6 +47,6 @@ ms.locfileid: "80411360"
 2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)** > **Файлы**, а затем найдите и выберите PBIX-файл.
 
 ## <a name="see-also"></a>См. также
-[Подключение к службам анализа Azure](analysis-services-connect.md)   
+[Подключение к Azure Analysis Services](analysis-services-connect.md)   
 [Клиентские библиотеки](analysis-services-data-providers.md)
 

@@ -1,30 +1,30 @@
 ---
-title: Частная ссылка - Azure CLI - База данных Azure для MariaDB
-description: Узнайте, как настроить частную ссылку для базы данных Azure для MariaDB из Azure CLI
+title: Частная ссылка — Azure CLI — база данных Azure для MariaDB
+description: Узнайте, как настроить частную ссылку на базу данных Azure для MariaDB из Azure CLI
 author: kummanish
 ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.openlocfilehash: c28c5494c1cff2c198a94ea6b92003ae74ee2c8e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79371806"
 ---
-# <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью CLI
+# <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью интерфейса командной строки
 
-Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания VM в виртуальной сети Azure и базу данных Azure для сервера MariaDB с частной конечной точкой Azure.
+Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания виртуальной машины в виртуальной сети Azure и сервера базы данных Azure для MariaDB с частной конечной точкой Azure.
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где база данных Azure для MariaDB поддерживает уровни ценообразования общего назначения и памяти.
+> Эта функция доступна во всех регионах Azure, где база данных Azure для MariaDB поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
-- [База данных Azure для сервера MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md).
+- [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -32,14 +32,14 @@ ms.locfileid: "79371806"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Перед созданием любого ресурса необходимо создать группу ресурсов, которая будет содержать эту виртуальную сеть. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Этот пример создает группу ресурсов под названием *myResourceGroup* в *западноевропейских* местах:
+Перед созданием любого ресурса необходимо создать группу ресурсов, которая будет содержать эту виртуальную сеть. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В этом примере создается группа ресурсов с именем *myResourceGroup* в расположении *westeurope* :
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -69,7 +69,7 @@ az vm create \
  Запишите общедоступный IP-адрес виртуальной машины. Этот адрес используется на следующем шаге, чтобы подключиться к виртуальной машине из Интернета.
 
 ## <a name="create-an-azure-database-for-mariadb-server"></a>Создание сервера Базы данных Azure для MariaDB 
-Создайте базу данных Azure для MariaDB с помощью сервера az mariadb. Помните, что имя вашего Сервера MariaDB должно быть уникальным в Azure, поэтому замените значение заполнителя в скобках на ваше собственное уникальное значение: 
+Создайте базу данных Azure для MariaDB с помощью команды AZ MariaDB Server Create. Помните, что имя сервера MariaDB должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением: 
 
 ```azurecli-interactive
 # Create a logical server in the resource group 
@@ -82,10 +82,10 @@ az mariadb server create \
 --sku-name GP_Gen5_2
 ```
 
-Обратите внимание, что идентификатор MariaDB Server похож на ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforMariaDB/servers/servername.``` идентификатор MariaDB Server ID на следующем этапе. 
+Обратите внимание, что идентификатор сервера MariaDB ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforMariaDB/servers/servername.``` аналогичен идентификатору сервера MariaDB на следующем шаге. 
 
 ## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
-Создайте частную конечную точку для сервера MariaDB в вашей виртуальной сети: 
+Создайте частную конечную точку для сервера MariaDB в виртуальной сети. 
 ```azurecli-interactive
 az network private-endpoint create \  
     --name myPrivateEndpoint \  
@@ -98,7 +98,7 @@ az network private-endpoint create \
  ```
 
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
-Создайте частную DNS-зону для домена сервера MariDB и создайте связующее звено с виртуальной сетью. 
+Создайте Частная зона DNS зону для домена сервера Маридб и создайте связь связи с виртуальной сетью. 
 ```azurecli-interactive
 az network private-dns zone create --resource-group myResourceGroup \ 
    --name  "privatelink.mariadb.database.azure.com" 
@@ -122,7 +122,7 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 ```
 
 > [!NOTE] 
-> Настройка F'DN в настройках DNS клиента не решается с закрытым IP настроенным. Вам придется настроить зону DNS для настроенного F-DN, как показано [здесь.](../dns/dns-operations-recordsets-portal.md)
+> Полное доменное имя в параметре DNS клиента не разрешается в настроенный частный IP-адрес. Вам потребуется настроить зону DNS для настроенного FQDN, как показано [ниже](../dns/dns-operations-recordsets-portal.md).
 
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
@@ -132,7 +132,7 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 
 1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Выберите **Скачать RDP файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
+1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
 1. Откройте файл *downloaded.rdp*.
 
@@ -141,15 +141,15 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
-        > Возможно, вам придется выбрать **Дополнительные варианты** > **Используйте другую учетную запись,** чтобы указать учетные данные, которые вы ввели при создании VM.
+        > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
-## <a name="access-the-mariadb-server-privately-from-the-vm"></a>Доступ к серверу MariaDB в частном порядке с VM
+## <a name="access-the-mariadb-server-privately-from-the-vm"></a>Доступ к серверу MariaDB в частном порядке с виртуальной машины
 
 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
 
@@ -164,23 +164,23 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
     Address:  10.1.3.4
     ```
 
-3. Проверьте частное соединение ссылки для сервера MariaDB с помощью любого доступного клиента. В приведенном ниже примере я использовал [MyS'L Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) для проведения операции.
+3. Проверьте подключение к частной ссылке для сервера MariaDB, используя любой доступный клиент. В примере ниже я использовал [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) для выполнения этой операции.
 
-4. В **Новом подключении**введите или выберите эту информацию:
+4. В окне **новое подключение**введите или выберите следующие сведения:
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя подключения| Выберите имя соединения по вашему выбору.|
-    | Имя узла | Выберите *mydemoserver.privatelink.mariadb.database.azure.com* |
-    | Имя пользователя | Введите *username@servername* имя пользователя, как это предусмотрено во время создания сервера MariaDB. |
-    | Пароль | Введите пароль, предоставленный при создании сервера MariaDB. |
+    | Имя подключения| Выберите нужное имя подключения.|
+    | Имя узла | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
+    | Имя пользователя | Введите имя пользователя *username@servername* , которое предоставляется во время создания сервера MariaDB. |
+    | Пароль | Введите пароль, указанный при создании сервера MariaDB. |
     ||
 
-5. Выберите **подключение к тесту** или **OK**.
+5. Выберите **проверить подключение** или **ОК**.
 
-6. (По желанию) Просмотр баз данных из левого меню и создание или запрос информации из базы данных MariaDB
+6. При необходимости Просмотр баз данных из левого меню и создание или запрос информации из базы данных MariaDB
 
-8. Закройте удаленное подключение к рабочему столу на myVm.
+8. Закройте подключение к удаленному рабочему столу myVm.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
 Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду "az group delete". 
@@ -189,5 +189,5 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше о [том, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)
+## <a name="next-steps"></a>Дальнейшие шаги
+Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)

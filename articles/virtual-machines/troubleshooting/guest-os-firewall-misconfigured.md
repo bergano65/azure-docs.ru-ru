@@ -1,6 +1,6 @@
 ---
 title: Брандмауэр гостевой ОС виртуальной машины Azure настроен неправильно | Документация Майкрософт
-description: Узнайте, как использовать метод Serial Console или оффлайн для диагностики и исправления неправильно настроенного брандмауэра гостевой операционной системы на удаленном VM Azure.
+description: Узнайте, как использовать последовательную консоль или метод Offline для диагностики и исправления неправильно настроенного брандмауэра гостевой операционной системы на удаленной виртуальной машине Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
 ms.openlocfilehash: e6f42bdf462ac5261f77bc05c62e50500345fe37
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80422535"
 ---
 # <a name="azure-vm-guest-os-firewall-is-misconfigured"></a>Брандмауэр гостевой ОС виртуальной машины Azure настроен неправильно
@@ -98,7 +98,7 @@ ms.locfileid: "80422535"
 
 ### <a name="offline-mitigations"></a>Автономные способы решения
 
-1.  Чтобы включить или отключить правила брандмауэра, обратитесь к [правилу включить или отключить правило брандмауэра на ОС Azure VM Guest.](enable-disable-firewall-rule-guest-os.md)
+1.  Чтобы включить или отключить правила брандмауэра, см. статью [Включение или отключение правила брандмауэра в гостевой ОС виртуальной машины Azure](enable-disable-firewall-rule-guest-os.md).
 
 2.  Проверьте, не [блокирует ли брандмауэр гостевой ОС входящий трафик](guest-os-firewall-blocking-inbound-traffic.md).
 

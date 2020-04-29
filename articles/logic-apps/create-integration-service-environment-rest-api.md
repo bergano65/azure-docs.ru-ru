@@ -1,62 +1,62 @@
 ---
-title: Создание сред интеграции служб (ISE) с помощью API logic Apps REST
-description: Создайте среду интеграционных служб (ISE) с помощью Logic Apps REST API, чтобы вы могли получить доступ к виртуальным сетям Azure (VNETs) из приложений Azure Logic Apps
+title: Создание сред службы интеграции (Исес) с помощью Logic Apps REST API
+description: Создайте среду службы интеграции (ISE) с помощью Logic Apps REST API, чтобы получить доступ к виртуальным сетям Azure (виртуальных сетей) из Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.openlocfilehash: 0670331d2338b4b6419ffbff1452b5fbac91029f
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80478829"
 ---
-# <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Создание среды интеграционных служб (ISE) с помощью Logic Apps REST API
+# <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Создание среды службы интеграции (ISE) с помощью Logic Apps REST API
 
-В этой статье показано, как создать [ *среду интеграционных служб* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) через Logic Apps REST API для сценариев, где ваши логические приложения и учетные записи интеграции нуждаются в доступе к [виртуальной сети Azure.](../virtual-network/virtual-networks-overview.md) ISE — это изолированная среда, использующая специализированное хранилище и другие ресурсы, которые хранятся отдельно от «глобального» мультитенантного сервиса Logic Apps. Такое разделение помогает уменьшить любое влияние других клиентов Azure на производительность вашего приложения. ISE также предоставляет вам свои собственные статические IP-адреса. Эти IP-адреса отделены от статических IP-адресов, которые используются логическими приложениями в общедоступной мультитенантной службе.
+В этой статье показано, как создать [ *среду службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) с помощью Logic Apps REST API для сценариев, где приложениям логики и учетным записям интеграции требуется доступ к [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md). ISE — это изолированная среда, использующая выделенное хранилище и другие ресурсы, которые хранятся отдельно от "глобальной" многоклиентской Logic Apps службы. Такое разделение помогает уменьшить любое влияние других клиентов Azure на производительность вашего приложения. Интегрированная среда сценариев также предоставляет собственные статические IP-адреса. Эти IP-адреса отделены от статических IP-адресов, которые совместно используются приложениями логики в общедоступной службе с несколькими клиентами.
 
-Вы также можете создать ISE, используя [шаблон быстрого запуска ресурсов Azure Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-integration-service-environment) или используя портал [Azure.](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
+Вы также можете создать интегрированную среду сценариев с помощью шаблона быстрого запуска [Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-integration-service-environment) или с помощью [портал Azure](../logic-apps/connect-virtual-network-vnet-isolated-environment.md).
 
 > [!IMPORTANT]
-> Логические приложения, встроенные триггеры, встроенные действия и разъемы, которые работают в ISE, используют план ценообразования, отличный от плана ценообразования на основе потребления. Чтобы узнать, как ценообразование и выставление счетов для ISEs, [см.](../logic-apps/logic-apps-pricing.md#fixed-pricing) Для ценообразования цены, см [Логика Apps ценообразования](../logic-apps/logic-apps-pricing.md).
+> Приложения логики, встроенные триггеры, встроенные действия и соединители, работающие в интегрированной среде сценариев, используют тарифный план, отличный от плана ценообразования на основе потребления. Чтобы узнать, как цены и данные о выставлении счетов для Исес, см. [Logic Apps модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing). Цены см. на странице [цен на Logic Apps](../logic-apps/logic-apps-pricing.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Те же [предпосылки](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) и [требования для обеспечения доступа к ВАШЕМу ISE,](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) как при создании ISE на портале Azure
+* Те же [условия](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) и [требования, необходимые для обеспечения доступа к интегрированной среде сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) , как при создании интегрированной среды сценариев в портал Azure
 
-* Инструмент, который можно использовать для создания ISE, позвонив в API Logic Apps REST с запросом HTTPS PUT. Например, можно использовать [Postman](https://www.getpostman.com/downloads/)или создать логическое приложение, выполняя задачу.
+* Средство, которое можно использовать для создания интегрированной среды сценариев путем вызова REST API Logic Apps с запросом HTTPS-размещения. Например, можно использовать [POST](https://www.getpostman.com/downloads/)или создать приложение логики, которое будет выполнять эту задачу.
 
 ## <a name="send-the-request"></a>Отправка запроса
 
-Чтобы создать ISE, позвонив в Logic Apps REST API, сделайте этот запрос HTTPS PUT:
+Чтобы создать интегрированную среду сценариев, вызвав REST API Logic Apps, сделайте запрос HTTPS to:
 
 `PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01`
 
 > [!IMPORTANT]
-> Логика Apps REST API 2019-05-01 версия требует, чтобы вы сделали свой собственный запрос HTTP PUT для разъемов ISE.
+> Для Logic Apps REST API версии 2019-05-01 необходимо сделать собственный запрос HTTP-размещения для соединителей ISE.
 
-Развертывание обычно занимает в течение двух часов. Иногда развертывание может занять до четырех часов. Чтобы проверить состояние развертывания, на [портале Azure](https://portal.azure.com)на панели инструментов Azure выберите значок уведомлений, который открывает панель уведомлений.
+Для завершения развертывания обычно требуется два часа. Иногда развертывание может занять до четырех часов. Чтобы проверить состояние развертывания, в [портал Azure](https://portal.azure.com)на панели инструментов Azure щелкните значок уведомления, чтобы открыть панель уведомлений.
 
 > [!NOTE]
-> Если развертывание завершится ошибкой или вы удалите среду службы интеграции, освобождение подсетей в Azure может занять до одного часа. Эта задержка означает, что вам, возможно, придется подождать, прежде чем повторно использовать эти подсети в другом ISE.
+> Если развертывание завершится ошибкой или вы удалите среду службы интеграции, освобождение подсетей в Azure может занять до одного часа. Эта задержка означает, что может потребоваться подождать, прежде чем повторно использовать эти подсети в другой интегрированной среде сценариев.
 >
-> Если вы удалите виртуальную сеть, Azure обычно занимает до двух часов, прежде чем выпустить ваши подсети, но эта операция может занять больше времени. 
-> При удалянии виртуальных сетей убедитесь, что ресурсы по-прежнему не подключены. 
-> Смотрите [Удалить виртуальную сеть](../virtual-network/manage-virtual-network.md#delete-a-virtual-network).
+> При удалении виртуальной сети Azure, как правило, занимает до двух часов, прежде чем выпустить подсети, но эта операция может занять больше времени. 
+> При удалении виртуальных сетей убедитесь, что все ресурсы не подключены. 
+> См. раздел [Удаление виртуальной сети](../virtual-network/manage-virtual-network.md#delete-a-virtual-network).
 
 ## <a name="request-header"></a>Заголовок запроса
 
-В заголовке запроса включите следующие свойства:
+В заголовок запроса включите следующие свойства:
 
-* `Content-type`: Установите это `application/json`значение свойства для .
+* `Content-type`: Задайте для `application/json`этого свойства значение.
 
-* `Authorization`: Установите это значение свойства маркеру носителя для клиента, который имеет доступ к подписной или ресурсной группе Azure, которую вы хотите использовать.
+* `Authorization`: Задайте для этого свойства токен носителя для клиента, который имеет доступ к подписке Azure или группе ресурсов, которые вы хотите использовать.
 
 ### <a name="request-body-syntax"></a>Синтаксис текста запроса
 
-Вот синтаксис тела запроса, который описывает свойства, которые можно использовать при создании ISE:
+Ниже приведен синтаксис текста запроса, описывающий свойства, используемые при создании интегрированной среды сценариев.
 
 ```json
 {
@@ -93,9 +93,9 @@ ms.locfileid: "80478829"
 }
 ```
 
-### <a name="request-body-example"></a>Пример тела запроса
+### <a name="request-body-example"></a>Пример текста запроса
 
-В этом корпусе запроса пример аудируется значения выборки:
+В этом примере текста запроса показаны примеры значений:
 
 ```json
 {
@@ -132,8 +132,8 @@ ms.locfileid: "80478829"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Добавление ресурсов в среды служб интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)
+* [Добавление ресурсов в среды службы интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)
 * [Управление средами службы интеграции](../logic-apps/ise-manage-integration-service-environment.md#check-network-health)
 
