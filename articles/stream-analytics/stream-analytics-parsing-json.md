@@ -7,18 +7,18 @@ ms.author: mamccrea
 ms.topic: conceptual
 ms.date: 01/29/2020
 ms.openlocfilehash: 73905483850a47a9d036bef1b9e1ee60d3484555
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77484593"
 ---
 # <a name="parse-json-and-avro-data-in-azure-stream-analytics"></a>Анализ данных JSON и AVRO в Azure Stream Analytics
 
-Аналитика Azure Stream поддерживает обработку событий в форматах данных CSV, JSON и Avro. Данные JSON и Avro могут быть структурированы и содержать некоторые сложные типы, такие как вложенные объекты (записи) и массивы. 
+Azure Stream Analytics поддерживают обработку событий в форматах данных CSV, JSON и Avro. Данные JSON и Avro могут быть структурированы и содержать некоторые сложные типы, такие как вложенные объекты (записи) и массивы. 
 
 >[!NOTE]
->Файлы AVRO, созданные Event Hub Capture, используют определенный формат, который требует использования *пользовательского функции десериализатора.* Для получения дополнительной информации [см. Ввод в любом формате с помощью пользовательских десериализаторов .NET.](https://docs.microsoft.com/azure/stream-analytics/custom-deserializer-examples)
+>Файлы AVRO, созданные функцией записи концентратора событий, используют конкретный формат, который требует использования *пользовательского средства десериализации* . Дополнительные сведения см. [в статье чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET](https://docs.microsoft.com/azure/stream-analytics/custom-deserializer-examples).
 
 
 
@@ -49,7 +49,7 @@ ms.locfileid: "77484593"
 ```
 
 ### <a name="access-nested-fields-in-known-schema"></a>Доступ к вложенным полям в известной схеме
-Используйте обозначение точек (.) для легкого доступа к вложенным полям непосредственно из запроса. Например, этот запрос выбирает координаты широты и долготы под свойством Расположение в предыдущих данных JSON. Обозначение точек может быть использовано для навигации по нескольким уровням, как показано ниже.
+Используйте точечную нотацию (.) для простого доступа к вложенным полям непосредственно из запроса. Например, этот запрос выбирает координаты широты и долготы в свойстве Location в предыдущих данных JSON. Точечную нотацию можно использовать для навигации на нескольких уровнях, как показано ниже.
 
 ```SQL
 SELECT
@@ -68,8 +68,8 @@ FROM input
 |12345|47|122|80|1.2.45|
 
 
-### <a name="select-all-properties"></a>Выберите все свойства
-Все свойства вложенной записи можно выбрать с помощью подстановочного знака "*". Рассмотрим следующий пример:
+### <a name="select-all-properties"></a>Выбрать все свойства
+Все свойства вложенной записи можно выбрать с помощью подстановочного знака "*". Рассмотрим следующий пример.
 
 ```SQL
 SELECT
@@ -85,11 +85,11 @@ FROM input
 |12345|47|122|
 
 
-### <a name="access-nested-fields-when-property-name-is-a-variable"></a>Доступ к вложенным полям, когда имя свойства является переменной
+### <a name="access-nested-fields-when-property-name-is-a-variable"></a>Доступ к вложенным полям, если имя свойства является переменной
 
-Используйте функцию [GetRecordPropertyValue,](https://docs.microsoft.com/stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics) если имя свойства является переменной. Это позволяет строить динамические запросы без имен свойств хардкодирования.
+Если имя свойства является переменной, используйте функцию [GetRecordPropertyValue](https://docs.microsoft.com/stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics) . Это позволяет создавать динамические запросы без имен свойств прописано.
 
-Например, представьте себе, что поток выборочных данных должен **быть соединен с справочными данными,** содержащими пороговые значения для каждого датчика устройства. Фрагмент таких справочных данных показан ниже.
+Например, представьте, что образец потока данных должен **быть соединен с эталонными данными,** содержащими пороговые значения для каждого датчика устройства. Ниже приведен фрагмент данных с такими справочными данными.
 
 ```json
 {
@@ -104,7 +104,7 @@ FROM input
 }
 ```
 
-Цель здесь состоит в том, чтобы присоединиться к нашему набору выборочных данных из верхней части статьи к этим справочным данным и вывести одно событие для каждого датчика выше своего порога. Это означает, что наше единственное событие выше может генерировать несколько событий вывода, если несколько датчиков выше своих пороговых значений, благодаря соединению. Для достижения аналогичных результатов без соединения, см.
+Цель этого примера — присоединить наш образец набора данных из верхней части статьи к этим эталонным данным и вывести одно событие для каждой меры датчика выше порогового значения. Это означает, что наше одно событие, описанное выше, может создать несколько выходных событий, если несколько датчиков выше соответствующих порогов, благодаря соединению. Чтобы получить аналогичные результаты без объединения, см. раздел ниже.
 
 ```SQL
 SELECT
@@ -119,19 +119,19 @@ WHERE
     GetRecordPropertyValue(input.SensorReadings, thresholds.SensorName) > thresholds.Value
 ```
 
-**GetRecordPropertyValue** выбирает свойство в *SensorReadings,* название которого совпадает с именем свойства, исходящем из справочных данных. Затем извлекается связанное значение из *SensorReadings.*
+**GetRecordPropertyValue** выбирает свойство в *сенсорреадингс*, имя которого совпадает с именем свойства, поступающего от ссылочных данных. Затем извлекается связанное значение из *сенсорреадингс* .
 
 Результат:
 
-|DeviceID|СенсорНамяэ|AlertMessage|
+|DeviceID|сенсорнаме|AlertMessage|
 |-|-|-|
-|12345|влажность.|Предупреждение : Датчик выше порога|
+|12345|влажность.|Предупреждение: датчик выше порогового значения|
 
-### <a name="convert-record-fields-into-separate-events"></a>Преобразование полей записи в отдельные события
+### <a name="convert-record-fields-into-separate-events"></a>Преобразование полей записей в отдельные события
 
 Чтобы преобразовать поля записей в отдельные события, используйте оператор [APPLY](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics) вместе с функцией [GetRecordProperties](https://docs.microsoft.com/stream-analytics-query/getrecordproperties-azure-stream-analytics).
 
-С исходными данными образца следующий запрос может быть использован для извлечения свойств в различные события.
+С исходными примерами данных можно использовать следующий запрос для извлечения свойств в различные события.
 
 ```SQL
 SELECT
@@ -144,15 +144,15 @@ CROSS APPLY GetRecordProperties(event.SensorReadings) AS sensorReading
 
 Результат:
 
-|DeviceID|СенсорНамяэ|AlertMessage|
+|DeviceID|сенсорнаме|AlertMessage|
 |-|-|-|
 |12345|температура;|80|
 |12345|влажность.|70|
 |12345|CustomSensor01|5|
 |12345|CustomSensor02|99|
-|12345|СенсорМетадата|«Объект объекта»|
+|12345|сенсорметадата|[объект Object]|
 
-Используя [WITH,](https://docs.microsoft.com/stream-analytics-query/with-azure-stream-analytics)можно направить эти события в различные пункты назначения:
+С помощью [с](https://docs.microsoft.com/stream-analytics-query/with-azure-stream-analytics)можно перенаправлять эти события в разные места назначения:
 
 ```SQL
 WITH Stage0 AS
@@ -169,15 +169,15 @@ SELECT DeviceID, PropertyValue AS Temperature INTO TemperatureOutput FROM Stage0
 SELECT DeviceID, PropertyValue AS Humidity INTO HumidityOutput FROM Stage0 WHERE PropertyName = 'Humidity'
 ```
 
-### <a name="parse-json-record-in-sql-reference-data"></a>Запись Parse JSON в справочных данных S'L
-При использовании базы данных Azure S'L в качестве справочных данных в вашей работе можно иметь столбец с данными в формате JSON. Ниже приведен пример такого файла.
+### <a name="parse-json-record-in-sql-reference-data"></a>Анализ записи JSON в ссылочных данных SQL
+При использовании базы данных SQL Azure в качестве ссылочных данных в задании может существовать столбец, содержащий данные в формате JSON. Ниже приведен пример такого файла.
 
 |DeviceID|Данные|
 |-|-|
-|12345|«ключ» : «стоимость1»»|
-|54321|«ключ» : «стоимость2»»|
+|12345|{"ключ": "значение1"}|
+|54321|{"ключ": "value2"}|
 
-Запись JSON можно разбирать в колонке *Data,* написав простую функцию, определяемую пользователем JavaScript.
+Можно выполнить синтаксический анализ записи JSON в столбце *данных* , написав простую определяемую пользователем функцию JavaScript.
 
 ```javascript
 function parseJson(string) {
@@ -185,7 +185,7 @@ return JSON.parse(string);
 }
 ```
 
-Затем можно создать шаг в запросе Stream Analytics, показанный ниже, чтобы получить доступ к полям записей JSON.
+Затем можно создать шаг в Stream Analytics запросе, как показано ниже, чтобы получить доступ к полям записей JSON.
 
  ```SQL
  WITH parseJson as
@@ -205,7 +205,7 @@ return JSON.parse(string);
 
 Тип данных "массив" представляет собой упорядоченную коллекцию значений. Ниже приведены типичные операции со значениями массивов. В этих примерах используются функции [GetArrayElement](https://docs.microsoft.com/stream-analytics-query/getarrayelement-azure-stream-analytics), [GetArrayElements](https://docs.microsoft.com/stream-analytics-query/getarrayelements-azure-stream-analytics), [GetArrayLength](https://docs.microsoft.com/stream-analytics-query/getarraylength-azure-stream-analytics) и оператор [APPLY](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics).
 
-Вот пример одного события. Оба `CustomSensor03` `SensorMetadata` и имеют **массив**типа:
+Ниже приведен пример одного события. Оба `CustomSensor03` типа `SensorMetadata` и имеют **массив**типов:
 
 ```json
 {
@@ -231,7 +231,7 @@ return JSON.parse(string);
 }
 ```
 
-### <a name="working-with-a-specific-array-element"></a>Работа с определенным элементом массива
+### <a name="working-with-a-specific-array-element"></a>Работа с конкретным элементом массива
 
 Выберите элемент массива по указанному индексу (первый элемент массива):
 
@@ -243,7 +243,7 @@ FROM input
 
 Результат:
 
-|firstElement|
+|фирстелемент|
 |-|
 |12|
 
@@ -277,7 +277,7 @@ CROSS APPLY GetArrayElements(SensorReadings.CustomSensor03) AS CustomSensor03Rec
 
 Результат:
 
-|deviceId|ArrayIndex|ArrayValue|
+|DeviceId|ArrayIndex|ArrayValue|
 |-|-|-|
 |12345|0|12|
 |12345|1|-5|
@@ -294,12 +294,12 @@ CROSS APPLY GetArrayElements(SensorMetadata) AS SensorMetadataRecords
  
 Результат:
 
-|deviceId|smKey|smValue|
+|DeviceId|смкэй|смвалуе|
 |-|-|-|
-|12345|Производитель|ABC|
+|12345|Изготовитель|ABC|
 |12345|Версия|1.2.45|
 
-Если извлеченные поля должны отображаться в столбцах, можно поворачивать набор данных с помощью синтаксиса [WITH](https://docs.microsoft.com/stream-analytics-query/with-azure-stream-analytics) в дополнение к операции [JOIN.](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics) Это соединение потребует временной [границы](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics#BKMK_DateDiff) условие, которое предотвращает дублирование:
+Если извлеченные поля должны появиться в столбцах, можно выполнить сведение набора данных с помощью синтаксиса [with](https://docs.microsoft.com/stream-analytics-query/with-azure-stream-analytics) в дополнение к операции [Join](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics) . Для этого объединения потребуется условие [временных границ](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics#BKMK_DateDiff) , которое предотвращает дублирование:
 
 ```SQL
 WITH DynamicCTE AS (
@@ -323,9 +323,9 @@ LEFT JOIN DynamicCTE M ON M.smKey = 'Manufacturer' and M.DeviceId = i.DeviceId A
 
 Результат:
 
-|deviceId|Lat|Long|smVersion|smManufacturer|
+|DeviceId|Lat|Long|смверсион|сммануфактурер|
 |-|-|-|-|-|
 |12345|47|122|1.2.45|ABC|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Типы данных в Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics)

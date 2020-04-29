@@ -17,10 +17,10 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 68aa62ad34f8db531d439a581ef024862da0f90c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77162316"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Настройка журналов диагностики для центра событий Azure
@@ -48,7 +48,7 @@ ms.locfileid: "77162316"
 
     ![Изменение состояния журналов диагностики](./media/event-hubs-diagnostic-logs/image3.png)
 
-5.  Установите цель архива, которую вы хотите; например, учетная запись хранения, концентратор событий или журналы Azure Monitor.
+5.  Задайте нужный целевой объект архива. Например, учетная запись хранения, концентратор событий или журналы Azure Monitor.
 
 6.  Сохраните новые параметры диагностики.
 
@@ -71,7 +71,7 @@ ms.locfileid: "77162316"
 
 Строки JSON архивных журналов содержат элементы, перечисленные в следующей таблице.
 
-name | Описание
+Имя | Описание
 ------- | -------
 TaskName | Описание задачи, завершившейся сбоем.
 ActivityId | Внутренний идентификатор, используемый для отслеживания.
@@ -83,7 +83,7 @@ archiveStep | ArchiveFlushWriter
 startTime | Время начала сбоя.
 failures | Количество произошедших сбоев.
 durationInSeconds | Продолжительность сбоя.
-message | Сообщение об ошибке.
+сообщение | Сообщение об ошибке.
 категория | ArchiveLogs
 
 Ниже приведен пример строки JSON журнала архивирования.
@@ -109,7 +109,7 @@ message | Сообщение об ошибке.
 
 Строки JSON операционного журнала содержат элементы, перечисленные в приведенной ниже таблице.
 
-name | Описание
+Имя | Описание
 ------- | -------
 ActivityId | Внутренний идентификатор, используемый для отслеживания.
 EventName | Имя операции.  
@@ -138,11 +138,11 @@ Example:
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
 - [Общие сведения об API Центров событий](event-hubs-api-overview.md)
 - Приступая к работе с Центрами событий
     - [.NET Core](get-started-dotnet-standard-send-v2.md)
     - [Java](get-started-java-send-v2.md)
     - [Python](get-started-python-send-v2.md)
-    - [Javascript](get-started-java-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)

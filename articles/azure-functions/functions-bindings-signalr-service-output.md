@@ -1,33 +1,33 @@
 ---
-title: Связывание выходной службы функций Azure Функции СигналR
-description: Научитесь отправлять сообщения службы SignalR из функций Azure.
+title: Выходная привязка службы SignalR для функций Azure
+description: Узнайте, как отправить сообщения службы SignalR из функций Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/20/2020
 ms.author: cshoe
 ms.openlocfilehash: d3ba9183cdea752c3e69a41770b6a5319a4a601d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77530254"
 ---
-# <a name="signalr-service-output-binding-for-azure-functions"></a>Привязка выпуска службы SignalR для функций Azure
+# <a name="signalr-service-output-binding-for-azure-functions"></a>Выходная привязка службы SignalR для функций Azure
 
-Выходная привязка *SignalR* используется для отправки одного или нескольких сообщений с помощью службы Azure SignalR. Вы можете транслировать сообщение по:
+Выходная привязка *SignalR* используется для отправки одного или нескольких сообщений с помощью службы Azure SignalR. Сообщение можно транслировать следующим образом:
 
 - Все подключенные клиенты
-- Подключенные клиенты, проверенные на определенный пользователь
+- Подключенные клиенты прошли проверку подлинности для определенного пользователя
 
 Выходная привязка также позволяет управлять группами.
 
-Для получения информации о настройке и деталях конфигурации, [см.](functions-bindings-signalr-service.md)
+Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](functions-bindings-signalr-service.md).
 
 ## <a name="broadcast-to-all-clients"></a>Широковещательная передача для всех клиентов
 
-В следующем примере показана функция, которая отправляет сообщение с помощью выходной привязки для всех подключенных клиентов. *Целью* является имя метода, на который следует ссылаться на каждого клиента. Свойство *Аргументы* — это массив ноль или более объектов, которые должны быть переданы методу клиента.
+В следующем примере показана функция, которая отправляет сообщение, используя выходную привязку для всех подключенных клиентов. *Целевым объектом* является имя метода, вызываемого на каждом клиенте. Свойство *arguments* является массивом из нуля или более объектов, передаваемых в клиентский метод.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```cs
 [FunctionName("SendMessage")]
@@ -60,7 +60,7 @@ public static Task SendMessage(
 }
 ```
 
-Вот код сценария C':
+Вот код сценария C#:
 
 ```cs
 #r "Microsoft.Azure.WebJobs.Extensions.SignalRService"
@@ -79,7 +79,7 @@ public static Task Run(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Данные привязки в файле *function.json*:
 
@@ -155,9 +155,9 @@ public SignalRMessage sendMessage(
 
 ## <a name="send-to-a-user"></a>Отправка пользователю
 
-Вы можете отправить сообщение только на соединения, которые были проверены на пользователя, установив *идентификатор пользователя* в сообщении SignalR.
+Сообщение можно отправить только для подключений, которые прошли проверку подлинности для пользователя, задав *идентификатор пользователя* в сообщении SignalR.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```cs
 [FunctionName("SendMessage")]
@@ -190,7 +190,7 @@ public static Task SendMessage(
 }
 ```
 
-Вот код сценария C':
+Вот код сценария C#:
 
 ```cs
 #r "Microsoft.Azure.WebJobs.Extensions.SignalRService"
@@ -211,7 +211,7 @@ public static Task Run(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Пример файла function.json:
 
@@ -290,9 +290,9 @@ public SignalRMessage sendMessage(
 
 ## <a name="send-to-a-group"></a>Отправить в группу
 
-Сообщение можно отправить только соединениям, которые были добавлены в группу, установив *имя группы* в сообщении SignalR.
+Сообщение можно отправить только подключениям, добавленным в группу, задавая *имя группы* в сообщении SignalR.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```cs
 [FunctionName("SendMessage")]
@@ -325,7 +325,7 @@ public static Task SendMessage(
 }
 ```
 
-Вот код сценария C':
+Вот код сценария C#:
 
 ```cs
 #r "Microsoft.Azure.WebJobs.Extensions.SignalRService"
@@ -346,7 +346,7 @@ public static Task Run(
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Пример файла function.json:
 
@@ -425,13 +425,13 @@ public SignalRMessage sendMessage(
 
 ## <a name="group-management"></a>Управление группами
 
-Служба SignalR позволяет добавлять пользователей в группы. Сообщения могут быть отправлены группе. Можно использовать `SignalR` связующее решение для управления членством пользователя в группе.
+Служба SignalR позволяет добавлять пользователей в группы. Затем сообщения могут быть отправлены в группу. `SignalR` Выходную привязку можно использовать для управления членством пользователя в группе.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
 ```csharp
 [FunctionName("addToGroup")]
@@ -452,9 +452,9 @@ public static Task AddToGroup(
 }
 ```
 
-### <a name="remove-user-from-a-group"></a>Удалить пользователя из группы
+### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
 ```csharp
 [FunctionName("removeFromGroup")]
@@ -476,15 +476,15 @@ public static Task RemoveFromGroup(
 ```
 
 > [!NOTE]
-> Для правильной `ClaimsPrincipal` привязки необходимо настроить настройки аутентификации в функции Azure.
+> Чтобы получить `ClaimsPrincipal` правильную привязку, необходимо настроить параметры проверки подлинности в функциях Azure.
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 ### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
-Пример *функции.json*
+Пример *Function. JSON*
 
 ```json
 {
@@ -496,7 +496,7 @@ public static Task RemoveFromGroup(
 }
 ```
 
-*Run.csx*
+*Run. CSX*
 
 ```cs
 #r "Microsoft.Azure.WebJobs.Extensions.SignalRService"
@@ -518,11 +518,11 @@ public static Task Run(
 }
 ```
 
-### <a name="remove-user-from-a-group"></a>Удалить пользователя из группы
+### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
-Пример *функции.json*
+Пример *Function. JSON*
 
 ```json
 {
@@ -534,7 +534,7 @@ public static Task Run(
 }
 ```
 
-*Run.csx*
+*Run. CSX*
 
 ```cs
 #r "Microsoft.Azure.WebJobs.Extensions.SignalRService"
@@ -557,15 +557,15 @@ public static Task Run(
 ```
 
 > [!NOTE]
-> Для правильной `ClaimsPrincipal` привязки необходимо настроить настройки аутентификации в функции Azure.
+> Чтобы получить `ClaimsPrincipal` правильную привязку, необходимо настроить параметры проверки подлинности в функциях Azure.
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
-Пример *функции.json*
+Пример *Function. JSON*
 
 ```json
 {
@@ -589,11 +589,11 @@ module.exports = async function (context, req) {
 };
 ```
 
-### <a name="remove-user-from-a-group"></a>Удалить пользователя из группы
+### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
-Пример *функции.json*
+Пример *Function. JSON*
 
 ```json
 {
@@ -621,9 +621,9 @@ module.exports = async function (context, req) {
 
 ### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
-Пример *функции.json*
+Пример *Function. JSON*
 
 ```json
 {
@@ -635,7 +635,7 @@ module.exports = async function (context, req) {
 }
 ```
 
-*\_\_init.py__*
+*\_\_Инициализация py__*
 
 ```python
 def main(req: func.HttpRequest, action: func.Out[str]) -> func.HttpResponse:
@@ -646,11 +646,11 @@ def main(req: func.HttpRequest, action: func.Out[str]) -> func.HttpResponse:
     }))
 ```
 
-### <a name="remove-user-from-a-group"></a>Удалить пользователя из группы
+### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
-Пример *функции.json*
+Пример *Function. JSON*
 
 ```json
 {
@@ -662,7 +662,7 @@ def main(req: func.HttpRequest, action: func.Out[str]) -> func.HttpResponse:
 }
 ```
 
-*\_\_init.py__*
+*\_\_Инициализация py__*
 
 ```python
 def main(req: func.HttpRequest, action: func.Out[str]) -> func.HttpResponse:
@@ -677,7 +677,7 @@ def main(req: func.HttpRequest, action: func.Out[str]) -> func.HttpResponse:
 
 ### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
 ```java
 @FunctionName("addToGroup")
@@ -697,9 +697,9 @@ public SignalRGroupAction addToGroup(
 }
 ```
 
-### <a name="remove-user-from-a-group"></a>Удалить пользователя из группы
+### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
 ```java
 @FunctionName("removeFromGroup")
@@ -725,31 +725,31 @@ public SignalRGroupAction removeFromGroup(
 
 ### <a name="signalrconnectioninfo"></a>SignalRConnectionInfo
 
-В следующей таблице объясняется свойства связывающей конфигурации, `SignalRConnectionInfo` установленные в файле *function.json* и атрибуте.
+В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `SignalRConnectionInfo` атрибуте.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**тип**| Недоступно | Нужно задать значение `signalRConnectionInfo`.|
-|**direction**| Недоступно | Нужно задать значение `in`.|
-|**name**| Недоступно | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
-|**hubName**|**ХабНамь**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
-|**Userid**|**Userid**| Необязательно: значение утверждения идентификатора пользователя, которое следует задать в маркере доступа. |
-|**подключениеСтнетНастройка**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
+|**type**| н/д | Нужно задать значение `signalRConnectionInfo`.|
+|**двух**| н/д | Нужно задать значение `in`.|
+|**name**| н/д | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
+|**hubName**|**HubName**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
+|**userId**|**UserId**| Необязательно: значение утверждения идентификатора пользователя, которое следует задать в маркере доступа. |
+|**коннектионстрингсеттинг**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
 
 ### <a name="signalr"></a>SignalR
 
-В следующей таблице объясняется свойства связывающей конфигурации, `SignalR` установленные в файле *function.json* и атрибуте.
+В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `SignalR` атрибуте.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**тип**| Недоступно | Нужно задать значение `signalR`.|
-|**direction**| Недоступно | Нужно задать значение `out`.|
-|**name**| Недоступно | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
-|**hubName**|**ХабНамь**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
-|**подключениеСтнетНастройка**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
+|**type**| н/д | Нужно задать значение `signalR`.|
+|**двух**| н/д | Нужно задать значение `out`.|
+|**name**| н/д | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
+|**hubName**|**HubName**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
+|**коннектионстрингсеттинг**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Верните URL-адрес и токен доступа (связывание входных данных)](./functions-bindings-signalr-service-input.md)
+- [Возврат URL-адреса конечной точки службы и маркера доступа (входная привязка)](./functions-bindings-signalr-service-input.md)

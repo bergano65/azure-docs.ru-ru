@@ -1,21 +1,21 @@
 ---
-title: Пункт SELECT в Azure Cosmos DB
-description: Узнайте о статье S'L SELECT для Azure Cosmos DB. Используйте s'L в качестве языка запросов Azure Cosmos DB JSON.
+title: Предложение SELECT в Azure Cosmos DB
+description: Дополнительные сведения о предложении SQL SELECT для Azure Cosmos DB. Используйте SQL в качестве языка запросов JSON Azure Cosmos DB.
 author: ginarobinson
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.author: girobins
 ms.openlocfilehash: 013ebdcdbac41825c10a1362f73ab4c94052400d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77469941"
 ---
-# <a name="select-clause-in-azure-cosmos-db"></a>Пункт SELECT в Azure Cosmos DB
+# <a name="select-clause-in-azure-cosmos-db"></a>Предложение SELECT в Azure Cosmos DB
 
-Каждый запрос состоит из положения SELECT и дополнительных положений [FROM](sql-query-from.md) и [WHERE,](sql-query-where.md) в соответствии со стандартами ANSI S'L. Как правило, источник в оговорке FROM перечисляется, и пункт WHERE применяет фильтр на источник для получения подмножества элементов JSON. Затем положение SELECT проецирует запрашиваемые значения JSON в список выбора.
+Каждый запрос состоит из предложения SELECT и необязательных предложений [from](sql-query-from.md) и [WHERE](sql-query-where.md) для стандартов ANSI SQL. Как правило, источник в предложении FROM является перечислимым, а предложение WHERE применяет фильтр к источнику для получения подмножества элементов JSON. Затем предложение SELECT проецирует запрошенные значения JSON в списке выбора.
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -52,7 +52,7 @@ SELECT <select_specification>
  
 - `DISTINCT`
   
-  Уточняется, что дубликаты прогнозируемых свойств должны быть удалены.  
+  Указывает, что необходимо удалить дубликаты проецируемых свойств.  
 
 - `<scalar_expression>`  
 
@@ -78,7 +78,7 @@ SELECT <select_specification>
   
 ## <a name="examples"></a>Примеры
 
-Следующий пример запроса `address` `Families` SELECT `id` `AndersenFamily`возвращается из совпадений:
+Следующий пример запроса SELECT `address` возвращает из `Families` , чьи `id` соответствия `AndersenFamily`:
 
 ```sql
     SELECT f.address
@@ -99,7 +99,7 @@ SELECT <select_specification>
 ```
 
 ### <a name="quoted-property-accessor"></a>Метод доступа к свойству, заключенному в кавычки
-Вы можете получить доступ к свойствам с помощью указанного оператора свойств. Например, выражение `SELECT c.grade` and `SELECT c["grade"]` являются эквивалентными. Этот синтаксис полезен для избежания свойства, содержащего пробелы, специальные символы или с тем же названием, что и ключевое слово или зарезервированное слово.
+Доступ к свойствам можно получить с помощью оператора заключенного в кавычки свойства []. Например, выражение `SELECT c.grade` and `SELECT c["grade"]` являются эквивалентными. Этот синтаксис полезен для экранирования свойства, которое содержит пробелы, Специальные символы или имеет то же имя, что и ключевое слово SQL или зарезервированное слово.
 
 ```sql
     SELECT f["lastName"]
@@ -109,7 +109,7 @@ SELECT <select_specification>
 
 ### <a name="nested-properties"></a>Вложенные свойства
 
-Следующий пример проецирует `f.address.state` два `f.address.city`вложенных свойства, и .
+В следующем примере проецируется два вложенных `f.address.state` свойства `f.address.city`, и.
 
 ```sql
     SELECT f.address.state, f.address.city
@@ -147,7 +147,7 @@ SELECT <select_specification>
     }]
 ```
 
-В предыдущем примере оговорке SELECT необходимо создать объект JSON, и, поскольку в выборке нет ключа, в оговорке используется переменное имя `$1`неявного аргумента. Следующий запрос возвращает две неявные переменные аргумента: `$1` и `$2`.
+В предыдущем примере предложение SELECT должно создать объект JSON, а поскольку в примере нет ключа, предложение использует неявное имя `$1`переменной аргумента. Следующий запрос возвращает две неявные переменные `$1` аргумента `$2`: и.
 
 ```sql
     SELECT { "state": f.address.state, "city": f.address.city },
@@ -171,9 +171,9 @@ SELECT <select_specification>
 ```
 ## <a name="reserved-keywords-and-special-characters"></a>Зарезервированные ключевые слова и специальные символы
 
-Если ваши данные содержат свойства с теми же именами, что и зарезервированные ключевые слова, такие как "заказ" или "Группа", то запросы против этих документов приведут к ошибкам синтаксиса. Для успешного выполнения запроса необходимо учесть свойство в `[]` характере.
+Если данные содержат свойства с теми же именами, что и зарезервированные ключевые слова, например "Order" или "Group", запросы к этим документам приведут к синтаксическим ошибкам. Чтобы успешно выполнить запрос, необходимо явно `[]` включить свойство в символ.
 
-Например, вот документ с именем `order` свойства `price($)` и свойством, содержащим специальные символы:
+Например, вот документ со свойством с именем `order` и свойством `price($)` , содержащим специальные символы:
 
 ```json
 {
@@ -190,7 +190,7 @@ SELECT <select_specification>
 }
 ```
 
-Если вы запустите запросы, включающие `order` свойство или `price($)` свойство, вы получите ошибку синтаксиса.
+При выполнении запросов, включающих `order` свойство или `price($)` свойство, вы получите синтаксическую ошибку.
 
 ```sql
 SELECT * FROM c where c.order.orderid = "12345"
@@ -214,8 +214,8 @@ SELECT * FROM c WHERE c["order"].orderId = "12345"
 SELECT * FROM c WHERE c["order"]["price($)"] > 50
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
-- [ПОЛОЖЕНИЕ WHERE](sql-query-where.md)
+- [Предложение WHERE](sql-query-where.md)

@@ -1,32 +1,32 @@
 ---
-title: Привязка концентратора Azure IoT для функций Azure
-description: Научитесь использовать триггер и связывание Концентратора IoT в функциях Azure.
+title: Привязки центра Интернета вещей Azure для функций Azure
+description: Узнайте, как использовать триггер и привязку центра Интернета вещей в функциях Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/21/2020
 ms.author: cshoe
 ms.openlocfilehash: 1c25543b16c3486a8f6a445427346382faaaa09a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77586141"
 ---
-# <a name="azure-iot-hub-bindings-for-azure-functions"></a>Привязка концентратора Azure IoT для функций Azure
+# <a name="azure-iot-hub-bindings-for-azure-functions"></a>Привязки центра Интернета вещей Azure для функций Azure
 
-В этом наборе статей объясняется, как работать с привязками функций Azure для Концентратора IoT. Поддержка концентратора IoT основана на [связывании концентраторов событий Azure.](functions-bindings-event-hubs.md)
+В этом наборе статей объясняется, как работать с привязками функций Azure для центра Интернета вещей. Поддержка центра Интернета вещей основана на [привязке концентраторов событий Azure](functions-bindings-event-hubs.md).
 
 > [!IMPORTANT]
-> В то время как следующие образцы кода используют API концентратора событий, данный синтаксис применим к функциям IoT Hub.
+> Хотя в следующих примерах кода используется API концентратора событий, заданный синтаксис применим к функциям центра Интернета вещей.
 
-| Действие | Тип |
+| Действие | Type |
 |--------|------|
-| Реагировать на события, отправленные в поток событий концентратора IoT. | [Триггер](./functions-bindings-event-iot-trigger.md) |
-| Запись событий в поток событий IoT | [Выходная привязка](./functions-bindings-event-iot-output.md) |
+| Реагирование на события, отправляемые в поток событий центра Интернета вещей. | [Триггер](./functions-bindings-event-iot-trigger.md) |
+| Запись событий в поток событий Интернета вещей | [Выходная привязка](./functions-bindings-event-iot-output.md) |
 
 [!INCLUDE [functions-bindings-event-hubs](../../includes/functions-bindings-event-hubs.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Реагирование на события, отправленные в поток событийного центра событий (Trigger)](./functions-bindings-event-iot-trigger.md)
-- [Запись событий в поток событий (связка вывода)](./functions-bindings-event-iot-output.md)
+- [Реагирование на события, отправленные в поток событий концентратора событий (триггер)](./functions-bindings-event-iot-trigger.md)
+- [Запись событий в поток событий (Выходная привязка)](./functions-bindings-event-iot-output.md)

@@ -1,5 +1,5 @@
 ---
-title: Apache Hadoop & безопасное хранилище передачи - Azure HDInsight
+title: Apache Hadoop & безопасное хранение данных в Azure HDInsight
 description: Узнайте, как создать кластеры HDInsight с помощью учетных записей хранения Azure с включенной безопасной передачей.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,38 +9,38 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/18/2020
 ms.openlocfilehash: c1e5ca8b0bb828e5e8ce896bba6a5278266b118e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77560088"
 ---
-# <a name="apache-hadoop-clusters-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Кластеры Apache Hadoop с защищенными учетными записями хранения данных о передаче в Azure HDInsight
+# <a name="apache-hadoop-clusters-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Apache Hadoop кластеры с учетными записями хранения с безопасной переносю в Azure HDInsight
 
 Функция [Secure transfer required](../storage/common/storage-require-secure-transfer.md) (Необходима безопасная передача) усиливает безопасность учетной записи хранения Azure путем принудительной передачи всех запросов к вашей учетной записи через безопасное подключение. Эта функция и схема wasbs поддерживаются только кластером HDInsight версии 3.6 или более новым.
 
 > [!IMPORTANT]
-> Включение безопасной передачи хранилища после создания кластера может привести к ошибкам с помощью учетной записи хранилища и не рекомендуется. Лучше создать новый кластер, используя учетную запись хранилища с уже включенной безопасной передачей.
+> Включение безопасного обмена хранилищами после создания кластера может привести к ошибкам с помощью учетной записи хранения и не рекомендуется. Лучше создать новый кластер с использованием учетной записи хранения с уже включенной безопасной защитой.
 
 ## <a name="storage-accounts"></a>Учетные записи хранения
 
 ### <a name="azure-portal"></a>Портал Azure
 
-По умолчанию требуемое свойство передачи включено при создании учетной записи хранилища на портале Azure.
+По умолчанию при создании учетной записи хранения в портал Azure включается свойство Обязательное безопасное перемещение.
 
-Чтобы обновить существующую учетную запись хранения на портале Azure, [см.](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-for-an-existing-storage-account)
+Сведения об обновлении существующей учетной записи хранения с портал Azure см. в разделе [Обязательное безопасное перемещение с помощью портал Azure](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-for-an-existing-storage-account).
 
 ### <a name="powershell"></a>PowerShell
 
-Для PowerShell cmdlet [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount) `-EnableHttpsTrafficOnly` , убедитесь, что параметр установлен на `1`.
+Для командлета PowerShell [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)убедитесь, что `-EnableHttpsTrafficOnly` параметр имеет значение `1`.
 
-Чтобы обновить существующую учетную запись хранения с PowerShell, [см. Требуют безопасной передачи с PowerShell.](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-powershell)
+Сведения об обновлении существующей учетной записи хранения с помощью PowerShell см. в статье [требование безопасной пересылки с помощью PowerShell](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-powershell).
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Для создания [учетной записи](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)хранилища Az, `--https-only` обеспечивающей `true`настройку параметра, убедитесь, что параметр установлен.
+Для команды Azure CLI [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create), убедитесь, что `--https-only` параметр имеет значение `true`.
 
-Чтобы обновить существующую учетную запись хранения с помощью Azure CLI, [см.](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-azure-cli)
+Сведения об обновлении существующей учетной записи хранения с Azure CLI см. в разделе [Обязательное безопасное перемещение с помощью Azure CLI](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-azure-cli).
 
 ## <a name="add-additional-storage-accounts"></a>Добавление дополнительных учетных записей хранения
 
@@ -50,7 +50,7 @@ ms.locfileid: "77560088"
 * Создайте кластер с помощью [портала Azure](https://portal.azure.com) и укажите связанную учетную запись хранения.
 * Используйте действия скриптов для добавления дополнительных учетных записей хранения с включенной безопасной передачей в имеющийся кластер HDInsight. Дополнительные сведения см. в статье [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * использование службы хранилища Azure (WASB) вместо [Apache Hadoop HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html) в качестве хранилища данных по умолчанию.
 * Сведения о том, как HDInsight использует службу хранилища Azure, см. в статье [Использование службы хранилища Azure в HDInsight](hdinsight-hadoop-use-blob-storage.md).

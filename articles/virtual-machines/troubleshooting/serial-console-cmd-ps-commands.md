@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: 493340764f507c4fa364a5000f65cc232630b243
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77167030"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
@@ -117,7 +117,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="disable-windows-firewall"></a>Отключение брандмауэра Windows
 `netsh advfirewall set allprofiles state off`
 
-Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включаться при следующем перезапуске или при его использовании команды ниже. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
+Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включен при следующей перезагрузке или при включении с помощью приведенной ниже команды. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
 ### <a name="enable-windows-firewall"></a>Включение брандмауэра Windows
 `netsh advfirewall set allprofiles state on`
 ## <a name="manage-users-and-groups"></a>Управление пользователями и группами
@@ -320,7 +320,7 @@ SAC позволяет подключаться к вашей операцион
 `test-netconnection`
 
 > [!NOTE]
-> Cmdlet Write-Progress может не работать с этой командой. В качестве меры по смягчению последствий можно запустить `$ProgressPreference = "SilentlyContinue"` в PowerShell, чтобы отключить планку прогресса.
+> Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно использовать `$ProgressPreference = "SilentlyContinue"` PowerShell в качестве меры по устранению рисков.
 
 или диспетчер конфигурации служб
 
@@ -477,7 +477,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="mac-address-instance-metadata"></a>MAC-адрес (метаданные экземпляра)
 `$im.network.interface.macAddress`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Страницу основной документации по работе с последовательной консолью Windows см. [здесь](serial-console-windows.md).
 * Последовательная консоль также доступна для виртуальных машин [Linux](serial-console-linux.md).
-* Подробнее о [диагностике ботинок.](boot-diagnostics.md)
+* Дополнительные сведения о [диагностике загрузки](boot-diagnostics.md).

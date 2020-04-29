@@ -1,6 +1,6 @@
 ---
-title: Моделирование данных в средах предварительного просмотра - Исследования серии времени Azure Документы Майкрософт
-description: Узнайте о моделировании данных в обзоре Azure Time Series Insights Preview.
+title: Моделирование данных в средах предварительного просмотра — служба "аналитика временных рядов Azure" | Документация Майкрософт
+description: Сведения о моделировании данных в предварительной версии службы "аналитика временных рядов Azure".
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -11,165 +11,165 @@ ms.topic: conceptual
 ms.date: 02/18/2020
 ms.custom: seodec18
 ms.openlocfilehash: 39ebbf99ad31cce20eabc20fbdc056c889235713
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77470757"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 
-В этой статье описывается, как работать с моделью временных рядов в Azure Time Series Insights Preview. Здесь подробно рассматриваются несколько распространенных сценариев данных.
+В этой статье описывается работа с моделью временных рядов в предварительной версии службы "аналитика временных рядов Azure". Здесь подробно рассматриваются несколько распространенных сценариев данных.
 
 > [!TIP]
-> * Читайте о [модели серии предварительного](time-series-insights-update-tsm.md)просмотра .
-> * Подробнее о навигации по uI Preview в [Azure Time Series Исследования Предварительный исследователь](./time-series-insights-update-explorer.md).
+> * Ознакомьтесь с [моделью временных рядов](time-series-insights-update-tsm.md)предварительной версии.
+> * Дополнительные сведения о навигации по пользовательскому интерфейсу просмотра в [обозревателе предварительного просмотра службы "аналитика временных рядов Azure](./time-series-insights-update-explorer.md)".
 
 ## <a name="instances"></a>Экземпляры
 
-Исследователь Azure Time Series Insights поддерживает операции Instance **CREATE,** **READ,** **UPDATE**и **DELETE** в браузере. 
+Обозреватель службы "аналитика временных рядов Azure" поддерживает операции **создания**, **чтения**, **обновления**и **удаления** экземпляров в браузере. 
 
-Для начала выберите представление **модели** из **обзора** исследования Time Series Insights.
+Чтобы начать, выберите представление **модели** в представлении **анализ** обозревателя аналитики временных рядов.
 
 ### <a name="create-a-single-instance"></a>Создание одного экземпляра
 
-1. Перейдите к панели селектора модели time Series и выберите **инстанции** из меню. Будут отображаться все экземпляры, связанные с выбранной средой Time Series Insights.
+1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **экземпляры** . Будут отображены все экземпляры, связанные с выбранной средой "аналитика временных рядов".
 
-    [![Создайте единый экземпляр, сначала выбрав Инстанции.](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png#lightbox)
+    [![Создайте отдельный экземпляр, выбрав экземпляры.](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png#lightbox)
 
 1. Выберите **+ Добавить**.
 
-    [![Добавьте экземпляр, выбрав кнопку «Добавить».](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png#lightbox)
+    [![Добавьте экземпляр, нажав кнопку + Добавить.](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png#lightbox)
 
 1. Введите сведения об экземпляре, выберите связь типа и иерархии, а затем щелкните **Создать**.
 
 ### <a name="bulk-upload-one-or-more-instances"></a>Массовая отправка одного или нескольких экземпляров
 
 > [!TIP]
-> Вы можете сохранить свои экземпляры на рабочем столе в JSON. Загруженный файл JSON может быть загружен следующими шагами.
+> Вы можете сохранить экземпляры на рабочем столе в формате JSON. Скачанный файл JSON затем можно отправить, выполнив следующие действия.
 
 1. Выберите **Отправка файла JSON**.
 1. Выберите файл, который содержит полезные данные экземпляра.
 
-    [![Массовая загрузка экземпляров через JSON.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png#lightbox)
+    [![Выполнить групповую отправку экземпляров через JSON.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png#lightbox)
 
 1. Выберите команду **Отправить**.
 
 ### <a name="edit-a-single-instance"></a>Изменение одного экземпляра
 
-1. Выберите экземпляр и выберите значок **для отсылки** или **значка карандаша.** 
+1. Выберите экземпляр и щелкните значок **редактирования** или **карандаша**. 
 1. Внесите необходимые изменения и выберите **Сохранить**.
 
-    [![Отсеяните один экземпляр.](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png#lightbox)
+    [![Изменение одного экземпляра.](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png#lightbox)
 
 ### <a name="delete-an-instance"></a>Удаление экземпляра
 
-1. Выберите экземпляр и выберите значок **«удалить** или **мусорное ведро».**
+1. Выберите экземпляр и щелкните значок **Удалить** или **мусорную ячейку**.
 
    [![Удалите экземпляр, выбрав Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png#lightbox)
 
-1. Подтвердите удаление, выбрав **Удаление.**
+1. Подтвердите удаление, выбрав **Удалить**.
 
 > [!NOTE]
 > Экземпляр должен успешно пройти проверку поля для удаления.
 
 ## <a name="hierarchies"></a>Иерархии
 
-Исследователь Azure Time Series Insights поддерживает операции Hierarchy **CREATE,** **READ,** **UPDATE**и **DELETE** в браузере. 
+Обозреватель службы "аналитика временных рядов Azure" поддерживает операции **создания**, **чтения**, **обновления**и **удаления** иерархии в браузере. 
 
-Для начала выберите представление **модели** из **обзора** исследования Time Series Insights.
+Чтобы начать, выберите представление **модели** в представлении **анализ** обозревателя аналитики временных рядов.
 
 ### <a name="create-a-single-hierarchy"></a>Создание одной иерархии
 
-1. Перейдите на панель селекторов модели серии времени и выберите **иерархии** из меню. Будут отображаться все иерархии, связанные с выбранной средой Time Series Insights.
+1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **иерархии** . Будут отображены все иерархии, связанные с выбранной средой "аналитика временных рядов".
 
-    [![Создайте иерархию через панель.](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png#lightbox)
+    [![Создайте иерархию с помощью панели.](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png#lightbox)
 
 1. Выберите **+ Добавить**.
 
-    [![Иерархия и кнопка добавления.](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png#lightbox)
+    [![Кнопка "иерархия + добавить".](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png#lightbox)
 
-1. Выберите **уровень добавления** в правую панель.
+1. Выберите **+ Добавить уровень** в правой области.
 
     [![Добавьте уровень в иерархию.](media/v2-update-how-to-tsm/how-to-tsm-save-hierarchy-levels.png)](media/v2-update-how-to-tsm/how-to-tsm-save-hierarchy-levels.png#lightbox)
 
-1. Введите сведения об иерархии и выберите **Сохранить**.
+1. Введите сведения об иерархии и нажмите кнопку **сохранить**.
 
-    [![Укажите детали иерархии.](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png)](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png#lightbox)
+    [![Укажите сведения об иерархии.](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png)](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png#lightbox)
 
 ### <a name="bulk-upload-one-or-more-hierarchies"></a>Массовая отправка одной или нескольких иерархий
 
 > [!TIP]
-> Иерархии можно сохранить на рабочем столе в JSON. Загруженный файл JSON может быть загружен следующими шагами.
+> Вы можете сохранить иерархии на рабочем столе в формате JSON. Скачанный файл JSON затем можно отправить, выполнив следующие действия.
 
 1. Выберите **Отправка файла JSON**.
 1. Выберите файл, который содержит полезные данные иерархии.
 1. Выберите команду **Отправить**.
 
-    [![Выбор для массовой загрузки иерархий.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png#lightbox)
+    [![Выбор для выполнения групповой отправки иерархий.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png#lightbox)
 
 ### <a name="edit-a-single-hierarchy"></a>Изменение одной иерархии
 
-1. Выберите иерархию и выберите **значок** **для отображать** или карандаш.
+1. Выберите иерархию и щелкните значок **редактирования** или **карандаша**.
 1. Внесите необходимые изменения и выберите **Сохранить**.
 
-    [![Выбор для редактирования одной иерархии.](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png#lightbox)
+    [![Варианты редактирования отдельной иерархии.](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png#lightbox)
 
 ### <a name="delete-a-hierarchy"></a>Удаление иерархии
 
-1. Выберите иерархию и выберите значок **ячейки удаления** или **мусора.** 
+1. Выберите иерархию и щелкните значок **Удалить** или **мусорную ячейку**. 
 
-    [![Удалите иерархию, выбрав кнопку «Удалить».](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png#lightbox)
+    [![Удалите иерархию, нажав кнопку Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png#lightbox)
 
-1. Подтвердите удаление, выбрав **Удаление.**
+1. Подтвердите удаление, выбрав **Удалить**.
 
 ## <a name="types"></a>Типы
 
-Исследователь Azure Time Series Insights поддерживает операции Type **CREATE,** **READ,** **UPDATE**и **DELETE** в браузере. 
+Обозреватель службы "аналитика временных рядов Azure" поддерживает операции **создания**, **чтения**, **обновления**и **удаления** в браузере. 
 
-Для начала выберите представление **модели** из **обзора** исследования Time Series Insights.
+Чтобы начать, выберите представление **модели** в представлении **анализ** обозревателя аналитики временных рядов.
 
 ### <a name="create-a-single-type"></a>Создание одного типа
 
-1. Перейдите на панель селекторов модели time Series и выберите **типы** из меню. Будут отображаться все типы, связанные с выбранной средой Time Series Insights.
+1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **типы** . Будут отображены все типы, связанные с выбранной средой "аналитика временных рядов".
 
-    [![Типы типов таймсерий.](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png#lightbox)
+    [![Панель типов моделей временных рядов.](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png#lightbox)
 
-1. Выберите **и добавьте** для отображения **Добавить новый тип** всплывающих модально.
-1. Введите свойства и переменные для вашего типа. После ввода выберите **Сохранить**. 
+1. Выберите **+ Добавить** , чтобы отобразить всплывающее окно **Добавить новый тип** модальным.
+1. Введите свойства и переменные для типа. После входа нажмите кнопку **сохранить**. 
 
-    [![Настройки конфигурации для добавления типа.](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png#lightbox)
+    [![Параметры конфигурации для добавления типа.](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png#lightbox)
 
 ### <a name="bulk-upload-one-or-more-types"></a>Массовая отправка одного или нескольких типов
 
 > [!TIP]
-> Вы можете сохранить ваши типы на рабочем столе в JSON. Загруженный файл JSON может быть загружен следующими шагами.
+> Вы можете сохранить типы на рабочем столе в формате JSON. Скачанный файл JSON затем можно отправить, выполнив следующие действия.
 
 1. Выберите **Отправка файла JSON**.
 1. Выберите файл, который содержит полезные данные типа.
 1. Выберите команду **Отправить**.
 
-    [![Массовые типы загрузки параметров.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png#lightbox)
+    [![Параметры отправки с массовыми типами.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png#lightbox)
 
 ### <a name="edit-a-single-type"></a>Изменение одного типа
 
-1. Выберите тип и выберите **значок** **для отображать** или карандаш.
+1. Выберите тип и щелкните значок **редактирования** или **карандаша**.
 1. Внесите необходимые изменения и выберите **Сохранить**.
 
-    [![Отображите тип в панели.](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png#lightbox)
+    [![Изменение типа на панели.](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png#lightbox)
 
 ### <a name="delete-a-type"></a>Удаление типа
 
-1. Выберите тип и выберите значок **«удалить** или **мусорное ведро».** .
+1. Выберите тип и щелкните значок **Удалить** или **мусорную ячейку**. .
 
    [![Удалите тип, выбрав Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png#lightbox)
 
-1. Подтвердите удаление, выбрав **Удаление.**
+1. Подтвердите удаление, выбрав **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Для получения дополнительной информации о модели временных рядов, прочитайте [моделирование данных](./time-series-insights-update-tsm.md).
+- Дополнительные сведения о модели временных рядов см. в статье [моделирование данных](./time-series-insights-update-tsm.md).
 
 - Дополнительные сведения о возможностях предварительной версии см. в статье [Visualize data in the explorer Preview](./time-series-insights-update-explorer.md) (Визуализация данных в обозревателе предварительной версии службы).
 
-- Чтобы узнать о поддерживаемых формах JSON, прочитайте [поддерживаемые формы JSON.](./time-series-insights-send-events.md#supported-json-shapes)
+- Дополнительные сведения о поддерживаемых фигурах JSON см. в статье [поддерживаемые фигуры JSON](./time-series-insights-send-events.md#supported-json-shapes).

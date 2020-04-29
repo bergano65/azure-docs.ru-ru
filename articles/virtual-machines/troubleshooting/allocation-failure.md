@@ -13,10 +13,10 @@ ms.topic: troubleshooting
 ms.date: 04/13/2018
 ms.author: cjiang
 ms.openlocfilehash: b4750ad9fdfa214aa4d7b6a0355c319e7eb1d9c3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77484406"
 ---
 # <a name="troubleshoot-allocation-failures-when-you-create-restart-or-resize-vms-in-azure"></a>Устранение ошибок выделения ресурсов при создании, перезагрузке или изменении размера виртуальных машин в Azure
@@ -25,11 +25,11 @@ ms.locfileid: "77484406"
 
 **Код ошибки**: AllocationFailed или ZonalAllocationFailed.
 
-**Сообщение об ошибке**: "Сбой выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Подробнее об улучшении вероятности успеха\/распределения на https: /aka.ms/allocation-guidance"
+**Сообщение об ошибке**: "Сбой выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Узнайте больше о том, как повысить вероятность успеха при выделении по протоколу HTTPS:/aka.ms/allocation-guidance.\/
 
 В этой статье объясняются причины возникновения некоторых распространенных ошибок выделения, а также представлены возможные способы их устранения.
 
-Если проблема Azure не рассматривается в этой статье, посетите [форумы Azure на MSDN и Stack Overflow.](https://azure.microsoft.com/support/forums/) Проблему можно разместить на этих форумах или отправить по адресу @AzureSupport в Twitter. Кроме того, можно отправить запрос в службу поддержки Azure, выбрав "Получить поддержку" на сайте [службы поддержки Azure](https://azure.microsoft.com/support/options/).
+Если проблема с Azure не устранена в этой статье, посетите [форумы Azure на веб-сайте MSDN и Stack overflow](https://azure.microsoft.com/support/forums/). Проблему можно разместить на этих форумах или отправить по адресу @AzureSupport в Twitter. Кроме того, можно отправить запрос в службу поддержки Azure, выбрав "Получить поддержку" на сайте [службы поддержки Azure](https://azure.microsoft.com/support/options/).
 
 Пока предпочитаемый размер виртуальной машины недоступен в выбранном вами регионе, мы советуем клиентам, столкнувшимся с проблемами при развертывании, изучить рекомендации, приведенные в таблице ниже, в качестве временного решения. 
 
@@ -79,7 +79,7 @@ ms.locfileid: "77484406"
 
 Если вы выполняете большой запрос на выделение (содержащий более 500 ядер), ознакомьтесь с рекомендациями в приведенных ниже разделах, чтобы разделить этот запрос на развертывания меньшего размера.
 
-Попробуйте [передислоцировать VM](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/redeploy-to-new-node-windows). Передислокация ВМ выделяет ВМ в новый кластер в регионе.
+Попробуйте [повторно развернуть виртуальную машину](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/redeploy-to-new-node-windows). При повторном развертывании виртуальная машина выделяется в новом кластере в регионе.
 
 ## <a name="allocation-failures-for-older-vm-sizes-av1-dv1-dsv1-d15v2-ds15v2-etc"></a>Сбои при выделении ресурсов для размеров виртуальных машин прежних версий (Av1, Dv1, DSv1, D15v2, DS15v2 и т. д.)
 

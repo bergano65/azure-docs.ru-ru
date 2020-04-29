@@ -1,28 +1,28 @@
 ---
-title: Привязка ввода службы СигналЕр функций Azure функций
-description: Научитесь возвращать URL-адрес конечных точек службы SignalR и токен доступа в Azure Functions.
+title: Входная привязка службы SignalR для функций Azure
+description: Узнайте, как получить URL-адрес конечной точки службы SignalR и маркер доступа в функциях Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/20/2020
 ms.author: cshoe
 ms.openlocfilehash: 53d336aff3177a76c5e02266ffb8484bd9945119
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77530267"
 ---
-# <a name="signalr-service-input-binding-for-azure-functions"></a>Привязка ввода службы SignalR для функций Azure
+# <a name="signalr-service-input-binding-for-azure-functions"></a>Входная привязка службы SignalR для функций Azure
 
 Прежде чем клиент сможет подключиться к службе Azure SignalR, необходимо получить URL-адрес конечной точки службы и действительный маркер доступа. Входная привязка *SignalRConnectionInfo* создает URL-адрес конечной точки службы SignalR и допустимый маркер, которые используются для подключения к службе. Так как маркер ограничен по времени и может использоваться для идентификации конкретного пользователя при подключении, не следует его кэшировать или передавать в совместное пользование между клиентами. С помощью этой привязки клиенты могут использовать триггер HTTP для получения сведений о подключении.
 
-Для получения дополнительной информации о том, как эта привязка используется для создания функции «переговоры», которая может быть использована клиентом SignalR SDK, см. [Azure Functions development and configuration article](../azure-signalr/signalr-concept-serverless-development-config.md)
+Дополнительные сведения о том, как эта привязка используется для создания функции "Negotiate", которая может использоваться клиентским пакетом SDK для SignalR, см. в [статье о разработке и настройке функций Azure](../azure-signalr/signalr-concept-serverless-development-config.md) в документации по основным понятиям службы SignalR.
 
-Для получения информации о настройке и деталях конфигурации, [см.](functions-bindings-signalr-service.md)
+Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](functions-bindings-signalr-service.md).
 
 ## <a name="example"></a>Пример
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), получающая сведения о подключении SignalR с помощью входной привязки и возвращающая их по протоколу HTTP.
 
@@ -38,7 +38,7 @@ public static SignalRConnectionInfo Negotiate(
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-В следующем примере показана привязка ввода информации о входе связи signalR в файле *function.json* и [функция С- Скрипт,](functions-reference-csharp.md) использующая привязку для возврата информации о подключении.
+В следующем примере показана входная привязка SignalR в файле *Function. JSON* и [функция сценария C#](functions-reference-csharp.md) , которая использует привязку для возврата сведений о соединении.
 
 Данные привязки в файле *function.json*:
 
@@ -54,7 +54,7 @@ public static SignalRConnectionInfo Negotiate(
 }
 ```
 
-Вот код сценария C':
+Вот код сценария C#:
 
 ```cs
 #r "Microsoft.Azure.WebJobs.Extensions.SignalRService"
@@ -66,7 +66,7 @@ public static SignalRConnectionInfo Run(HttpRequest req, SignalRConnectionInfo c
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана входная привязка для сведений о подключении SignalR в файле *function.json* и [функция JavaScript](functions-reference-node.md), использующая привязку для возврата сведений о подключении.
 
@@ -94,7 +94,7 @@ module.exports = async function (context, req, connectionInfo) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показана привязка ввода информации о входе связи соединения SignalR в файле *function.json* и [функция Python,](functions-reference-python.md) использующая привязку для возврата информации о подключении.
+В следующем примере показана входная привязка SignalR в файле *Function. JSON* и [функция Python](functions-reference-python.md) , которая использует привязку для возврата сведений о соединении.
 
 Данные привязки в файле *function.json*:
 
@@ -125,7 +125,7 @@ def main(req: func.HttpRequest, connectionInfoJson: str) -> func.HttpResponse:
 
 # <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показана [функция Java,](functions-reference-java.md) которая приобретает информацию о подключении SignalR с помощью связывания ввода и возвращает ее через HTTP.
+В следующем примере показана [функция Java](functions-reference-java.md) , которая получает сведения о соединении SignalR с помощью входной привязки и возвращает ее по протоколу HTTP.
 
 ```java
 @FunctionName("negotiate")
@@ -145,13 +145,13 @@ public SignalRConnectionInfo negotiate(
 
 ## <a name="authenticated-tokens"></a>Прошедшие проверку подлинности маркеры
 
-Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Вы можете легко добавить аутентификацию в функциональное приложение с помощью [аутентификации Службы App.](../app-service/overview-authentication-authorization.md)
+Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Вы можете легко добавить проверку подлинности в приложение-функцию с помощью [проверки подлинности службы приложений](../app-service/overview-authentication-authorization.md).
 
 Проверка подлинности службы приложений задает заголовки HTTP `x-ms-client-principal-id` и `x-ms-client-principal-name`, содержащие имя и идентификатор субъекта клиента прошедшего проверку подлинности пользователя соответственно.
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
-Вы можете `UserId` установить свойство привязки к значению `{headers.x-ms-client-principal-id}` из `{headers.x-ms-client-principal-name}`заголовка с помощью [связывающего выражения](./functions-bindings-expressions-patterns.md): или .
+Можно задать для `UserId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
 
 ```cs
 [FunctionName("negotiate")]
@@ -168,7 +168,7 @@ public static SignalRConnectionInfo Negotiate(
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Вы можете `userId` установить свойство привязки к значению `{headers.x-ms-client-principal-id}` из `{headers.x-ms-client-principal-name}`заголовка с помощью [связывающего выражения](./functions-bindings-expressions-patterns.md): или .
+Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
 
 Пример файла function.json:
 
@@ -183,7 +183,7 @@ public static SignalRConnectionInfo Negotiate(
 }
 ```
 
-Вот код сценария C':
+Вот код сценария C#:
 
 ```cs
 #r "Microsoft.Azure.WebJobs.Extensions.SignalRService"
@@ -197,9 +197,9 @@ public static SignalRConnectionInfo Run(HttpRequest req, SignalRConnectionInfo c
 }
 ```
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Вы можете `userId` установить свойство привязки к значению `{headers.x-ms-client-principal-id}` из `{headers.x-ms-client-principal-name}`заголовка с помощью [связывающего выражения](./functions-bindings-expressions-patterns.md): или .
+Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
 
 Пример файла function.json:
 
@@ -226,7 +226,7 @@ module.exports = async function (context, req, connectionInfo) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Вы можете `userId` установить свойство привязки к значению `{headers.x-ms-client-principal-id}` из `{headers.x-ms-client-principal-name}`заголовка с помощью [связывающего выражения](./functions-bindings-expressions-patterns.md): или .
+Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
 
 Пример файла function.json:
 
@@ -258,7 +258,7 @@ def main(req: func.HttpRequest, connectionInfoJson: str) -> func.HttpResponse:
 
 # <a name="java"></a>[Java](#tab/java)
 
-Вы можете `userId` установить свойство привязки к значению `{headers.x-ms-client-principal-id}` из `{headers.x-ms-client-principal-name}`заголовка с помощью [связывающего выражения](./functions-bindings-expressions-patterns.md): или .
+Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
 
 ```java
 @FunctionName("negotiate")
@@ -277,6 +277,6 @@ public SignalRConnectionInfo negotiate(
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Отправка сообщений службы SignalR (связывание выходов)](./functions-bindings-signalr-service-output.md) 
+- [Отправка сообщений службы SignalR (Выходная привязка)](./functions-bindings-signalr-service-output.md) 

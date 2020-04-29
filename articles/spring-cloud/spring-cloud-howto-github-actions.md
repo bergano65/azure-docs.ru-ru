@@ -1,36 +1,36 @@
 ---
-title: Облачный CI/CD Azure Spring с действиями GitHub
-description: Как создать рабочий процесс CI/CD для весеннего облака Azure с помощью действий GitHub
+title: Azure весны CI/CD в облаке с действиями GitHub
+description: Создание рабочего процесса CI/CD для Azure Веснного облака с помощью действий GitHub
 author: MikeDodaro
 ms.author: barbkess
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/15/2019
 ms.openlocfilehash: 559c894a2212466761de820de7486ae203337802
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77538470"
 ---
-# <a name="azure-spring-cloud-cicd-with-github-actions"></a>Облачный CI/CD Azure Spring с действиями GitHub
+# <a name="azure-spring-cloud-cicd-with-github-actions"></a>Azure весны CI/CD в облаке с действиями GitHub
 
-GitHub Actions поддерживает автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. С помощью GitHub Actions для Spring Cloud можно создавать рабочие процессы в репозитории для создания, тестирования, обновления, выпуска и развертывания в Azure. 
+Действия GitHub поддерживают автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. С помощью действий GitHub для Azure "пружинное облако" вы можете создавать рабочие процессы в репозитории для создания, тестирования, упаковки, выпуска и развертывания в Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
-Этот пример требует [Azure CLI.](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+## <a name="prerequisites"></a>Предварительные условия
+Для этого примера требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-## <a name="set-up-github-repository-and-authenticate"></a>Настройка репозитория GitHub и аутентификация
-Для авторизации действия входа в Azure требуется учетный учетный элемент принципа службы Azure. Чтобы получить учетные данные Azure, выполните следующие команды на локальной машине:
+## <a name="set-up-github-repository-and-authenticate"></a>Настройка репозитория GitHub и проверка подлинности
+Для авторизации действия входа в Azure требуются учетные данные участника службы Azure. Чтобы получить учетные данные Azure, выполните следующие команды на локальном компьютере:
 ```
 az login
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID> --sdk-auth 
 ```
-Чтобы получить доступ к определенной группе ресурсов, можно уменьшить область действия:
+Для доступа к определенной группе ресурсов можно уменьшить область:
 ```
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP> --sdk-auth
 ```
-Команда должна выдвить объект JSON:
+Команда должна вывести объект JSON:
 ```JSON
 {
     "clientId": "<GUID>",
@@ -41,18 +41,18 @@ az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTIO
 }
 ```
 
-В этом примере используется образец [Piggy Metrics](https://github.com/Azure-Samples/piggymetrics) на GitHub.  Вилка образца, открыть страницу репозитория GitHub, и нажмите **Настройки вкладке.** Открытые **секреты** меню, и нажмите **Добавить новый секрет:**
+В этом примере используется пример [метрик свинка](https://github.com/Azure-Samples/piggymetrics) на GitHub.  Разветвление образца, откройте страницу репозитория GitHub и щелкните вкладку **Параметры** . Откройте меню **секреты** и выберите команду **Добавить новый секрет**:
 
  ![Добавить новый секрет](./media/github-actions/actions1.png)
 
-Установите секретное `AZURE_CREDENTIALS` имя и его значение строке JSON, найденной под заголовком *Настройка репозитория GitHub и проверка подлинности.*
+Задайте в качестве имени секрета `AZURE_CREDENTIALS` и его значение в строке JSON, которую вы нашли в заголовке, *настройте репозиторий GitHub и пройдите проверку подлинности*.
 
- ![Установка секретных данных](./media/github-actions/actions2.png)
+ ![Настройка секретных данных](./media/github-actions/actions2.png)
 
-Вы также можете получить учетные данные для входа в Azure из Key Vault в действиях GitHub, как это объясняется в [Authenticate Azure Spring с Key Vault в действиях GitHub.](./spring-cloud-github-actions-key-vault.md)
+Вы также можете получить учетные данные для входа в Azure из Key Vault в действиях GitHub, как описано в статьях [Проверка подлинности Azure с помощью Key Vault в действиях GitHub](./spring-cloud-github-actions-key-vault.md).
 
-## <a name="provision-service-instance"></a>Экземпляр предоставления услуг
-Чтобы предоставить экземпляр службы облака Azure Spring, запустите следующие команды с помощью Azure CLI.
+## <a name="provision-service-instance"></a>Инициализация экземпляра службы
+Для подготовки экземпляра облачной службы Azure весны выполните следующие команды с помощью Azure CLI.
 ```
 az extension add --name spring-cloud
 az group create --location eastus --name <resource group name>
@@ -63,9 +63,9 @@ az spring-cloud config-server git set -n <service instance name> --uri https://g
 Рабочий процесс определяется с помощью следующих параметров.
 
 ### <a name="prepare-for-deployment-with-azure-cli"></a>Подготовка к развертыванию с помощью Azure CLI
-Команда `az spring-cloud app create` в настоящее время не идемпотент.  Мы рекомендуем этот рабочий процесс для существующих приложений и экземпляров Cloud Azure Spring.
+В настоящее `az spring-cloud app create` время команда не идемпотентными.  Этот рабочий процесс рекомендуется для существующих облачных приложений и экземпляров Azure весны.
 
-Используйте следующие команды Azure CLI для подготовки:
+Для подготовки используйте следующие Azure CLI команды:
 ```
 az configure --defaults group=<service group name>
 az configure --defaults spring-cloud=<service instance name>
@@ -74,7 +74,7 @@ az spring-cloud app create --name auth-service
 az spring-cloud app create --name account-service
 ```
 
-### <a name="deploy-with-azure-cli-directly"></a>Развертывание с Azure CLI напрямую
+### <a name="deploy-with-azure-cli-directly"></a>Прямое развертывание с помощью Azure CLI
 Создайте `.github/workflow/main.yml` файл в репозитории:
 
 ```
@@ -117,13 +117,13 @@ jobs:
         az spring-cloud app deploy -n account-service --jar-path ${{ github.workspace }}/account-service/target/account-service.jar
         az spring-cloud app deploy -n auth-service --jar-path ${{ github.workspace }}/auth-service/target/auth-service.jar
 ```
-### <a name="deploy-with-azure-cli-action"></a>Развертывание с помощью действия Azure CLI
-Команда `run` az будет использовать последнюю версию Azure CLI. При нарушении изменений можно также использовать конкретную версию Azure CLI с azure/CLI. `action` 
+### <a name="deploy-with-azure-cli-action"></a>Развертывание с действием Azure CLI
+Команда AZ `run` будет использовать последнюю версию Azure CLI. При наличии критических изменений можно также использовать определенную версию Azure CLI с помощью Azure или CLI `action`. 
 
 > [!Note] 
-> Эта команда будет работать в `env` новом контейнере, поэтому не будет работать, и перекрестный доступ к файлам действия может иметь дополнительные ограничения.
+> Эта команда будет выполняться в новом контейнере, поэтому `env` не будет работать, а доступ к файлам для кросс-действий может иметь дополнительные ограничения.
 
-Создайте файл .github/workflow/main.yml в репозитории:
+Создайте файл. GitHub/Workflow/Main. yml в репозитории:
 ```
 name: AzureSpringCloud
 on: push
@@ -162,8 +162,8 @@ jobs:
           az spring-cloud app deploy -n auth-service --jar-path $GITHUB_WORKSPACE/auth-service/target/auth-service.jar
 ```
 
-## <a name="deploy-with-maven-plugin"></a>Развертывание с Maven Plugin
-Другой вариант заключается в использовании [Maven Plugin](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-maven) для развертывания Jar и обновления настроек приложения. Команда `mvn azure-spring-cloud:deploy` является идемпотентной и автоматически создает приложения, если это необходимо. Вам не нужно создавать соответствующие приложения заранее.
+## <a name="deploy-with-maven-plugin"></a>Развертывание с помощью подключаемого модуля Maven
+Другой вариант — использовать [подключаемый модуль Maven](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-maven) для развертывания JAR-файла и обновления параметров приложения. Команда `mvn azure-spring-cloud:deploy` идемпотентными и автоматически создаст приложения, если это необходимо. Создавать соответствующие приложения заранее не требуется.
 
 ```
 name: AzureSpringCloud
@@ -198,17 +198,17 @@ jobs:
 ```
 
 ## <a name="run-the-workflow"></a>Запуск рабочего процесса
-**Действия** GitHub должны быть включены автоматически после нажатия `.github/workflow/main.yml` на GitHub. Действие будет срабатывать при нажатии нового коммита. Если вы создаете этот файл в браузере, ваше действие должно быть уже запущено.
+**Действия** GitHub должны быть включены автоматически после отправки `.github/workflow/main.yml` в GitHub. Действие будет активировано при отправке новой фиксации. При создании этого файла в браузере действие должно быть уже запущено.
 
-Чтобы убедиться в включении действия, щелкните вкладку **«Действия»** на странице репозитория GitHub:
+Чтобы убедиться, что действие включено, щелкните вкладку **действия** на странице репозитория GitHub:
 
- ![Проверка включенных действий](./media/github-actions/actions3.png)
+ ![Проверка включения действия](./media/github-actions/actions3.png)
 
-Если действие выполняется по ошибке, например, если вы не установили учетные данные Azure, можно повторно выполнить проверки после исправления ошибки. На странице репозитория GitHub щелкните **«Действия»,** выберите конкретную задачу рабочего процесса, а затем нажмите кнопку **«Перезапуск»** для повторного выполнения проверок:
+Если действие выполняется в случае ошибки, например, если вы не задали учетные данные Azure, вы можете повторно выполнить проверку после исправления ошибки. На странице репозиторий GitHub щелкните **действия**, выберите конкретную задачу рабочего процесса, а затем нажмите кнопку **Повторное** выполнение проверок, чтобы повторно запустить проверки:
 
- ![Повторная проверка](./media/github-actions/actions4.png)
+ ![Повторить проверку](./media/github-actions/actions4.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Key Vault для действий весеннего облака GitHub](./spring-cloud-github-actions-key-vault.md)
-* [Принципы активных служб каталогов Azure](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Key Vault для действий в облаке GitHub](./spring-cloud-github-actions-key-vault.md)
+* [Субъекты-службы Azure Active Directory](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac)
 * [Действия GitHub для Azure](https://github.com/Azure/actions/)

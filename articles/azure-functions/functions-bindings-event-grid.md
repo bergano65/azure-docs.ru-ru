@@ -1,5 +1,5 @@
 ---
-title: Привязки Azure Event Grid для функций Azure
+title: Привязки службы "Сетка событий Azure" для функций Azure
 description: Узнайте, как обрабатывать события службы "Сетка событий" в службе "Функции Azure".
 author: craigshoemaker
 ms.topic: reference
@@ -7,51 +7,51 @@ ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 21654a3b325e8b8f0a3e49ee64b7624c8540d0d5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77461085"
 ---
-# <a name="azure-event-grid-bindings-for-azure-functions"></a>Привязки Azure Event Grid для функций Azure
+# <a name="azure-event-grid-bindings-for-azure-functions"></a>Привязки службы "Сетка событий Azure" для функций Azure
 
-В этой ссылке объясняется, как обрабатывать события [Event Grid](../event-grid/overview.md) в Azure Functions. Подробную информацию о том, как обрабатывать сообщения Event Grid в конце http, можно узнать о том, как обрабатывать сообщения Event Grid в конечном [пункте HTTP.](../event-grid/receive-events.md)
+В этом справочнике объясняется, как управлять событиями службы " [Сетка событий](../event-grid/overview.md) " в функциях Azure. Дополнительные сведения о том, как управлять сообщениями сетки событий в конечной точке HTTP, см. в разделе [получение событий в конечной точке](../event-grid/receive-events.md)HTTP.
 
 Служба "Сетка событий" — это служба Azure, которая отправляет HTTP-запросы для уведомления о событиях, которые происходят в *издателях*. Издатель — это служба или ресурс, в котором происходит событие. Например, учетная запись хранения больших двоичных объектов Azure является издателем, а [отправка или удаление большого двоичного объекта — это событие](../storage/blobs/storage-blob-event-overview.md). Некоторые [службы Azure имеют встроенную поддержку публикации событий в службу "Сетка событий"](../event-grid/overview.md#event-sources).
 
-*Обработчики* событий получают и обрабатывают события. Служба "Функции Azure" является одной из нескольких [служб Azure, в которых есть встроенная поддержка обработки событий Сетки событий](../event-grid/overview.md#event-handlers). В этой ссылке вы научитесь использовать триггер Event Grid для вызова функции при получении события из Event Grid и использования привязки вывода для отправки событий в [пользовательскую тему Event Grid.](../event-grid/post-to-custom-topic.md)
+*Обработчики* событий получают и обрабатывают события. Служба "Функции Azure" является одной из нескольких [служб Azure, в которых есть встроенная поддержка обработки событий Сетки событий](../event-grid/overview.md#event-handlers). В этом справочнике вы узнаете, как использовать триггер сетки событий для вызова функции при получении события из сетки событий, а также использовать выходную привязку для отправки событий в [пользовательский раздел сетки событий](../event-grid/post-to-custom-topic.md).
 
-Если вы предпочитаете, вы можете использовать триггер HTTP для обработки событий Сетки событий; [видеть события в конечную точку HTTP.](../event-grid/receive-events.md) В настоящее время вы не можете использовать триггер Event Grid для приложения Azure Functions, когда событие выполняется в [схеме CloudEvents.](../event-grid/cloudevents-schema.md#azure-functions) В этом случае необходимо использовать триггер HTTP.
+При желании можно использовать триггер HTTP для управления событиями сетки событий. см. раздел [получение событий для конечной точки HTTP](../event-grid/receive-events.md). В настоящее время нельзя использовать триггер службы "Сетка событий" для приложения "функции Azure", когда событие доставляется в [схему клаудевентс](../event-grid/cloudevents-schema.md#azure-functions). В этом случае необходимо использовать триггер HTTP.
 
-| Действие | Тип |
+| Действие | Type |
 |---------|---------|
-| Выполнить функцию при отправке события Event Grid | [Триггер](./functions-bindings-event-grid-trigger.md) |
-| Отправка события Сетки Событий |[Выходная привязка](./functions-bindings-event-grid-output.md) |
+| Выполнение функции при диспетчеризации события сетки событий | [Триггер](./functions-bindings-event-grid-trigger.md) |
+| Отправляет событие сетки событий |[Выходная привязка](./functions-bindings-event-grid-output.md) |
 
-Код в этой ссылке по умолчанию является синтаксисом .NET Core, используемым в версии Функции 2.x и выше. Сведения о синтаксисе версии 1.x см. на странице с [соответствующими шаблонами функций](https://github.com/Azure/azure-functions-templates/tree/v1.x/Functions.Templates/Templates).
+Код в этой ссылке по умолчанию использует синтаксис .NET Core, используемый в функциях версии 2. x и более поздних. Сведения о синтаксисе версии 1.x см. на странице с [соответствующими шаблонами функций](https://github.com/Azure/azure-functions-templates/tree/v1.x/Functions.Templates/Templates).
 
-## <a name="add-to-your-functions-app"></a>Добавление в приложение Функции
+## <a name="add-to-your-functions-app"></a>Добавление в приложение функций
 
-### <a name="functions-2x-and-higher"></a>Функции 2.x и выше
+### <a name="functions-2x-and-higher"></a>Функции 2. x и более поздних версий
 
-Работа с триггером и привязками требует, чтобы вы ссылали соответствующий пакет. Пакет NuGet используется для библиотек класса .NET, в то время как пакет расширения используется для всех других типов приложений.
+Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
 | Язык                                        | Добавить по...                                   | Remarks 
 |-------------------------------------------------|---------------------------------------------|-------------|
-| C#                                              | Установка [пакета NuGet,]версия 3.x | |
-| Си-скрипт, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширения]          | [Расширение Azure Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) рекомендуется использовать с помощью Visual Studio Code. |
-| Си-скрипт (онлайн-портал Azure)         | Добавление связывания                            | Чтобы обновить существующие обязательные расширения без необходимости переиздания приложения функции, [см.] |
+| C#                                              | Установка [пакета NuGet], версия 3. x | |
+| Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) " рекомендуется использовать с Visual Studio Code. |
+| Скрипт C# (только в сети портал Azure)         | Добавление привязки                            | Чтобы обновить существующие расширения привязки без повторной публикации приложения функции, см. статью [Обновление расширений]. |
 
 [core tools]: ./functions-run-local.md
-[расширение расслоение]: ./functions-bindings-register.md#extension-bundles
+[Пакет расширений]: ./functions-bindings-register.md#extension-bundles
 [Пакет NuGet]: https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventGrid
 [Обновление расширений]: ./install-update-binding-extensions-manual.md
 [Azure Tools extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack
 
 ### <a name="functions-1x"></a>Функции 1.x
 
-Функции 1.x приложения автоматически имеют ссылку на пакет [Microsoft.Azure.WebJobs](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) NuGet, версия 2.x.
+Функции 1. x автоматически имеют ссылку на пакет NuGet [Microsoft. Azure. веб-задания](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) , версия 2. x.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Выполнить функцию при отправке события Event Grid](./functions-bindings-event-grid-trigger.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Выполнение функции при диспетчеризации события сетки событий](./functions-bindings-event-grid-trigger.md)
 * [Отправка события сетки событий](./functions-bindings-event-grid-trigger.md)
