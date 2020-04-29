@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines-windows
 author: cynthn
@@ -9,10 +9,10 @@ ms.date: 11/01/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 4559a49a64688545e519f6172798997c2d695672
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81461950"
 ---
 При создании виртуальной машины Azure вам потребуется [виртуальная сеть](../articles/virtual-network/virtual-networks-overview.md). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как в этой виртуальной сети будет предоставляться доступ к виртуальным машинам. Очень важно [спланировать это перед созданием ресурсов](../articles/virtual-network/virtual-network-vnet-plan-design-arm.md), а также ознакомиться с [ограничениями, применяемыми к сетевым ресурсам](../articles/azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
@@ -38,7 +38,7 @@ ms.locfileid: "81461950"
 
 Вы можете создать виртуальную машину с несколькими сетевыми интерфейсами и добавлять или удалять их на протяжении жизненного цикла виртуальной машины. При наличии нескольких сетевых адаптеров виртуальная машина может подключаться к разным подсетям и отправлять или получать трафик через наиболее подходящий интерфейс. В одной группе доступности могут находиться виртуальные машины с любым количеством сетевых интерфейсов (в пределах количества, поддерживаемого размером виртуальной машины). 
 
-Каждый сетевой интерфейс, подключенный к виртуальной машине, должен находиться в том же расположении и в той же подписке, что и виртуальная машина. Сетевые интерфейсы необходимо подключить к виртуальной сети, созданной в том же расположении Azure и в той же подписке, что и сам сетевой интерфейс. После создания виртуальной машины вы можете изменить подсеть, к которой она подключена, но изменить виртуальную сеть невозможно. Каждому NIC, приложенному к VM, присваивается MAC-адрес, который не изменяется до тех пор, пока VM не будет удален.
+Каждый сетевой интерфейс, подключенный к виртуальной машине, должен находиться в том же расположении и в той же подписке, что и виртуальная машина. Сетевые интерфейсы необходимо подключить к виртуальной сети, созданной в том же расположении Azure и в той же подписке, что и сам сетевой интерфейс. После создания виртуальной машины вы можете изменить подсеть, к которой она подключена, но изменить виртуальную сеть невозможно. Каждой сетевой карте, подключенной к виртуальной машине, назначается MAC-адрес, который не изменяется, пока виртуальная машина не будет удалена.
 
 В таблице ниже перечислены методы создания сетевого интерфейса.
 
@@ -79,7 +79,7 @@ ms.locfileid: "81461950"
 
 При настройке виртуальной сети вы указываете топологию, в том числе доступные адресные пространства и подсети. Если виртуальная сеть будет подключаться к другим виртуальным или локальным сетям, необходимо выбрать неперекрывающиеся диапазоны адресов. Эти IP-адреса частные, и доступ к ним нельзя было получить через Интернет. Это касалось только IP-адресов, не поддерживающих маршрутизацию (например, 10.0.0.0/8, 172.16.0.0/12 или 192.168.0.0/16). Теперь Azure обрабатывает любой диапазон адресов как часть закрытого пространства IP-адресов виртуальной сети, доступного только в пределах виртуальной сети, взаимосвязанных виртуальных сетей и из локального расположения. 
 
-Если вы работаете в организации, где за внутренние сети отвечает другой сотрудник, выбор адресного пространства необходимо обсудить с ним. Убедитесь, что нет перекрытия и дайте им знать пространство, вы хотите использовать, чтобы они не пытаются использовать тот же диапазон IP-адресов. 
+Если вы работаете в организации, где за внутренние сети отвечает другой сотрудник, выбор адресного пространства необходимо обсудить с ним. Убедитесь, что нет перекрытия и сообщите им о пространстве, которое вы хотите использовать, чтобы не пытаться использовать тот же диапазон IP-адресов. 
 
 По умолчанию между подсетями отсутствует периметр безопасности, поэтому виртуальные машины, которые находятся в них, могут взаимодействовать. Однако вы можете настроить группы безопасности сети (NSG), которые позволяют управлять входящим и исходящим потоком трафика в подсетях и на виртуальных машинах. 
 
@@ -90,7 +90,7 @@ ms.locfileid: "81461950"
 | [Портал Azure](../articles/virtual-network/quick-create-portal.md) | Если виртуальная сеть создана при создании виртуальной машины, то ее имя состоит из имени группы ресурсов, в которой находится виртуальная сеть, и части **-vnet**. Адресное пространство — 10.0.0.0/24, обязательное имя подсети — **default**, а диапазон адресов подсети — 10.0.0.0/24. |
 | [Azure PowerShell](../articles/virtual-network/quick-create-powershell.md) | Чтобы создать подсеть и виртуальную сеть, используйте командлеты [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkSubnetConfig) и [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork). Вы также можете добавить подсеть в существующую виртуальную сеть с помощью командлета [Add-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/Az.Network/Add-AzVirtualNetworkSubnetConfig). |
 | [Azure CLI](../articles/virtual-network/quick-create-cli.md) | Подсеть и виртуальная сеть создаются одновременно. В команду [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) добавьте параметр **--subnet-name** с именем подсети. |
-| Шаблон | Самый простой способ создать VNet и подсети — загрузить существующий шаблон, [например, Virtual Network с двумя подсетями,](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)и изменить его для ваших нужд. |
+| Шаблон | Самый простой способ создания виртуальной сети и подсетей — скачать существующий шаблон, например [виртуальную сеть с двумя подсетями](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets), и изменить их в соответствии с вашими потребностями. |
 
 ## <a name="network-security-groups"></a>Группы безопасности сети
 
@@ -121,18 +121,18 @@ ms.locfileid: "81461950"
 
 При создании балансировщика нагрузки необходимо также учитывать следующие элементы конфигурации.
 
-- **Конфигурация IP-адреса front-end** - балансомер нагрузки может включать один или несколько фронтовых IP-адресов. Такие IP-адреса обеспечивают поступление трафика.
+- **IP-конфигурация внешнего** интерфейса — балансировщик нагрузки может включать один или несколько внешних IP-адресов. Такие IP-адреса обеспечивают поступление трафика.
 - **Пул внутренних адресов.** Это IP-адреса, связанные с сетевым интерфейсом, на который передается нагрузка.
-- **[Port Forwarding](../articles/load-balancer/tutorial-load-balancer-port-forwarding-portal.md)** - Определяет, как входящий трафик течет через передний IP и распределяется по бэк-энду IP с использованием входящих правил NAT.
+- **[Пересылка портов](../articles/load-balancer/tutorial-load-balancer-port-forwarding-portal.md)** — определяет, как входящий трафик проходит через интерфейсный IP-адрес и распространяется на серверный IP-адрес, использующий правила NAT для входящего трафика.
 - **Правила балансировщика нагрузки.** Сопоставляют указанное сочетание внешнего IP-адреса и порта с набором внутренних IP-адресов и портов. Отдельный балансировщик нагрузки может применять несколько правил балансировки нагрузки. Каждое правило представляет собой сочетание интерфейсных IP-адреса и порта и внутренних IP-адреса и порта, связанных с виртуальными машинами.
 - **[Пробы.](../articles/load-balancer/load-balancer-custom-probe-overview.md)** Пробы позволяют отслеживать работоспособность виртуальных машин. Если проба не отвечает, балансировщик нагрузки прекращает отправлять новые подключения неработоспособным виртуальным машинам. Это не влияет на имеющиеся подключения, а новые подключения отправляются на работоспособные виртуальные машины.
-- **[Правила исходящего](../articles/load-balancer/load-balancer-outbound-rules-overview.md)** - Исходящие правила настраивают исходящий сетевой адресный перевод (NAT) для всех виртуальных машин или экземпляров, идентифицированных бэкэнд-пулом вашего standard Load Balancer, который будет переведен на передний.
+- **[Правила исходящего](../articles/load-balancer/load-balancer-outbound-rules-overview.md)** трафика — правило для исходящего трафика настраивает преобразование исходящего сетевого адреса (NAT) для всех виртуальных машин или экземпляров, идентифицируемых внутренним пулом Load Balancer (цен. Категория "Стандартный") для перевода на интерфейсный сервер.
 
 В таблице ниже перечислены методы создания балансировщика нагрузки с выходом в Интернет.
 
 | Метод | Описание |
 | ------ | ----------- |
-| Портал Azure |  Вы можете [загрузить баланс интернет-трафика на ВМ с помощью портала Azure](../articles/load-balancer/tutorial-load-balancer-standard-manage-portal.md). |
+| Портал Azure |  [Для балансировки нагрузки трафика Интернета на виртуальные машины можно использовать портал Azure](../articles/load-balancer/tutorial-load-balancer-standard-manage-portal.md). |
 | [Azure PowerShell](/azure/load-balancer/load-balancer-get-started-ilb-arm-ps) | Используйте командлет [New-AzLoadBalancerFrontendIpConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig) с параметром **-PublicIpAddress**, чтобы указать идентификатор созданного ранее общедоступного IP-адреса. Используйте командлет [New-AzLoadBalancerBackendAddressPoolConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig), чтобы создать конфигурацию пула внутренних адресов. Используйте командлет [New-AzLoadBalancerInboundNatRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig), чтобы создать правила преобразования сетевых адресов для входящих подключений, связанные с созданной конфигурацией внешних IP-адресов. Используйте командлет [New-AzLoadBalancerProbeConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerprobeconfig), чтобы создать необходимые пробы. Используйте командлет [New-AzLoadBalancerRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerruleconfig), чтобы создать конфигурацию балансировщика нагрузки. Используйте командлет [New-AzLoadBalancer](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancer), чтобы создать балансировщик нагрузки.|
 | [Azure CLI](../articles/load-balancer/load-balancer-get-started-internet-arm-cli.md) | Используйте команду [az network lb create](https://docs.microsoft.com/cli/azure/network/lb), чтобы создать начальную конфигурацию балансировщика нагрузки. Команда [az network lb frontend-ip create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip) позволяет добавить созданный ранее общедоступный IP-адрес, Команда [az network lb address-pool create](https://docs.microsoft.com/cli/azure/network/lb/address-pool) позволяет добавить конфигурацию пула внутренних адресов, команда [az network lb inbound-nat-rule create](https://docs.microsoft.com/cli/azure/network/lb/inbound-nat-rule) — правила преобразования сетевых адресов, команда [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule) — правила балансировщика нагрузки, а команда [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe) — пробы. |
 | [Шаблон](../articles/load-balancer/quickstart-load-balancer-standard-public-template.md) | Используйте шаблон [2 VMs in a Load Balancer and configure NAT rules on the LB](https://github.com/Azure/azure-quickstart-templates/tree/master/101-load-balancer-standard-create) (2 виртуальные машины в балансировщике нагрузки и настройка правил преобразования сетевых адресов для балансировки нагрузки) в качестве руководства по развертыванию балансировщика нагрузки с помощью шаблона. |
@@ -141,14 +141,14 @@ ms.locfileid: "81461950"
 
 | Метод | Описание |
 | ------ | ----------- |
-| Портал Azure | Можно [сбалансировать внутреннюю нагрузку трафика с балансом омителем нагрузки на портале Azure.](../articles/load-balancer/tutorial-load-balancer-standard-internal-portal.md) |
+| Портал Azure | Вы можете [сбалансировать нагрузку внутреннего трафика с подсистемой балансировки нагрузки в портал Azure](../articles/load-balancer/tutorial-load-balancer-standard-internal-portal.md). |
 | [Azure PowerShell](../articles/load-balancer/load-balancer-get-started-ilb-arm-ps.md) | Используйте командлет [New-AzLoadBalancerFrontendIpConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig) с параметром **-PrivateIpAddress**, чтобы указать частный IP-адрес в подсети сети. Используйте командлет [New-AzLoadBalancerBackendAddressPoolConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig), чтобы создать конфигурацию пула внутренних адресов. Используйте командлет [New-AzLoadBalancerInboundNatRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig), чтобы создать правила преобразования сетевых адресов для входящих подключений, связанные с созданной конфигурацией внешних IP-адресов. Используйте командлет [New-AzLoadBalancerProbeConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerprobeconfig), чтобы создать необходимые пробы. Используйте командлет [New-AzLoadBalancerRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerruleconfig), чтобы создать конфигурацию балансировщика нагрузки. Используйте командлет [New-AzLoadBalancer](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancer), чтобы создать балансировщик нагрузки.|
 | [Azure CLI](../articles/load-balancer/load-balancer-get-started-ilb-arm-cli.md) | Используйте команду [az network lb create](https://docs.microsoft.com/cli/azure/network/lb), чтобы создать начальную конфигурацию балансировщика нагрузки, и команду [az network lb frontend-ip create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip) с параметром **--private-ip-address**, чтобы определить частный IP-адрес. Команда [az network lb address-pool create](https://docs.microsoft.com/cli/azure/network/lb/address-pool) позволяет добавить конфигурацию пула внутренних адресов, команда [az network lb inbound-nat-rule create](https://docs.microsoft.com/cli/azure/network/lb/inbound-nat-rule) — правила преобразования сетевых адресов, команда [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule) — правила балансировщика нагрузки, а команда [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe) — пробы.|
 | [Шаблон](../articles/load-balancer/load-balancer-get-started-ilb-arm-template.md) | Используйте шаблон [2 VMs in a Load Balancer and configure NAT rules on the LB](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer) (2 виртуальные машины в балансировщике нагрузки и настройка правил преобразования сетевых адресов для балансировки нагрузки) в качестве руководства по развертыванию балансировщика нагрузки с помощью шаблона. |
 
 ### <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин
 
-Для получения дополнительной информации о наборах [Networking for Azure virtual machine scale sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-networking)сальдо груза и виртуальных наборах машин см.
+Дополнительные сведения о подсистеме балансировки нагрузки и масштабируемых наборах виртуальных машин см. в статье [Сетевые подключения для масштабируемых наборов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-networking).
 
 ## <a name="vms"></a>Виртуальные машины
 
@@ -167,7 +167,7 @@ ms.locfileid: "81461950"
 | [Azure CLI](../articles/virtual-machines/linux/create-cli-complete.md) | Создайте виртуальную машину и подключите ее к виртуальной сети, подсети и сетевому адаптеру, созданным на отдельных шагах. |
 | [Шаблон](../articles/virtual-machines/windows/ps-template.md) | Используйте шаблон [Very simple deployment of a Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows) (Простое развертывание виртуальной машины Windows) в качестве руководства по развертыванию виртуальной машины с помощью шаблона. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Действия по управлению виртуальными сетями Azure для виртуальных машин см. в руководствах для [Windows](../articles/virtual-machines/windows/tutorial-virtual-network.md) или [Linux](../articles/virtual-machines/linux/tutorial-virtual-network.md).
 
 Также ознакомьтесь с руководствами по распределению нагрузки виртуальных машин и созданию приложений с высоким уровнем доступности для [Windows](../articles/virtual-machines/windows/tutorial-load-balancer.md) или [Linux](../articles/virtual-machines/linux/tutorial-load-balancer.md).
@@ -175,4 +175,4 @@ ms.locfileid: "81461950"
 - Дополнительные сведения об [определяемых пользователем маршрутах и IP-пересылке](../articles/virtual-network/virtual-networks-udr-overview.md). 
 - Дополнительные сведения о [настройке подключения между виртуальными сетями](../articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md).
 - Дополнительные сведения об [устранении проблем с маршрутами](../articles/virtual-network/diagnose-network-routing-problem.md).
-- Узнайте больше о [пропускной способности сети виртуальной машины.](../articles/virtual-network/virtual-machine-network-throughput.md)
+- Дополнительные сведения о [пропускной способности сети виртуальной машины](../articles/virtual-network/virtual-machine-network-throughput.md).

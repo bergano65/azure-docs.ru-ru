@@ -1,6 +1,6 @@
 ---
-title: Массовый список групп скачать - Портал Активный каталог Azure (ru) Документы Майкрософт
-description: Добавляйте пользователей оптом в центр админ-центра Azure.
+title: Групповое скачивание списка членов группы — Azure Active Directory портала | Документация Майкрософт
+description: Добавление пользователей в центре администрирования Azure.
 services: active-directory
 author: curtand
 ms.author: curtand
@@ -14,36 +14,36 @@ ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3faca8d1a2538ed03a917d6db8d54323fe626369
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81533698"
 ---
-# <a name="bulk-download-members-of-a-group-in-azure-active-directory"></a>Массовые загрузки членов группы в Active Directory Azure
+# <a name="bulk-download-members-of-a-group-in-azure-active-directory"></a>Пакетная загрузка членов группы в Azure Active Directory
 
-Используя портал Azure Active Directory (Azure AD), можно сбольшой суммой загрузить членов группы в организации в файл, разделенный на запятую (CSV).
+С помощью портала Azure Active Directory (Azure AD) можно выполнить пакетную загрузку членов группы в Организации в файл значений с разделителями-запятыми (CSV).
 
-## <a name="to-bulk-download-group-membership"></a>Для массового загрузки членства группы
+## <a name="to-bulk-download-group-membership"></a>Для пакетного скачивания членства в группе
 
-1. Вопием на [портал Azure](https://portal.azure.com) с учетной записью администратора пользователя в организации. Владельцы групп также могут скачивать членов групп, которые им принадлежат.
-1. В Azure AD выберите **группы** > **все группы.**
-1. Откройте группу, членство которой вы хотите скачать, а затем выберите **участников.**
-1. На странице **Участников** выберите **Скачать членов** скачать файл CSV с указанием членов группы.
+1. Войдите в [портал Azure](https://portal.azure.com) с помощью учетной записи администратора пользователя в Организации. Владельцы групп также могут выполнять пакетное скачивание членов групп, которыми они владеют.
+1. В Azure AD выберите **группы** > **все группы**.
+1. Откройте группу, членство в которой необходимо скачать, а затем выберите **члены**.
+1. На странице **члены** выберите **скачать элементы** , чтобы скачать CSV-файл с перечнем членов группы.
 
-   ![Команда Скачать Члены на странице профиля для группы](./media/groups-bulk-download-members/download-panel.png)
+   ![Команда скачать элементы находится на странице профиля группы.](./media/groups-bulk-download-members/download-panel.png)
 
-## <a name="check-download-status"></a>Проверка состояния загрузки
+## <a name="check-download-status"></a>Проверить состояние скачивания
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
+Состояние всех ожидающих выполнения незавершенных запросов можно просмотреть на странице **результатов групповой операции** .
 
 [![](media/groups-bulk-download-members/bulk-center.png "Check status in the Bulk Operations Results page")](media/groups-bulk-download-members/bulk-center.png#lightbox)
 
-## <a name="bulk-download-service-limits"></a>Ограничения обслуживания массовых скачиваний
+## <a name="bulk-download-service-limits"></a>Ограничения службы пакетного скачивания
 
-Каждое массовое мероприятие для загрузки списка членов группы может работать до одного часа. Это позволяет загрузить список не менее 500 000 участников.
+Каждое групповое действие для загрузки списка членов группы может выполняться в течение одного часа. Это позволяет скачать список по крайней мере 500 000 членов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Члены группы массовых импорта](groups-bulk-import-members.md)
-- [Массовое удаление членов группы](groups-bulk-download-members.md)
+- [Элементы группы группового импорта](groups-bulk-import-members.md)
+- [Групповое удаление членов группы](groups-bulk-download-members.md)

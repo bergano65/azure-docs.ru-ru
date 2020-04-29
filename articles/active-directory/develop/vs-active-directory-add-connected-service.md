@@ -1,5 +1,5 @@
 ---
-title: Использование службы подключения Active Directory (Visual Studio)
+title: Использование подключенной службы Active Directory (Visual Studio)
 description: Добавление Azure Active Directory с помощью диалогового окна "Добавление подключенных служб" в Visual Studio
 author: ghogen
 manager: jillfra
@@ -11,24 +11,24 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.openlocfilehash: d5b6452684757aead684356fd9bb032b90c58c4a
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81535831"
 ---
-# <a name="add-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавьте активный каталог Azure, используя подключенные службы в Visual Studio
+# <a name="add-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавление Azure Active Directory с помощью Подключенные службы в Visual Studio
 
-Используя Active Directory Azure (Azure AD), можно поддерживать единый знак (SSO) для ASP.NET веб-приложений MVC или active Directory Authentication в службах Web API. Благодаря аутентификации Azure AD пользователи смогут подключаться к вашим веб-приложениям, используя свои учетные записи Azure Active Directory. Преимущества azure AD Authentication с веб-API включают повышенную безопасность данных при разоблачении API из веб-приложения. С Azure AD вам не придется управлять отдельной системой проверки подлинности с отдельным управлением пользователями и учетными записями.
+С помощью Azure Active Directory (Azure AD) можно поддерживать единый вход (SSO) для веб-приложений ASP.NET MVC или Active Directory проверку подлинности в службах веб-API. Благодаря аутентификации Azure AD пользователи смогут подключаться к вашим веб-приложениям, используя свои учетные записи Azure Active Directory. Преимущества аутентификация Azure AD с веб-API включают повышенную безопасность данных при предоставлении API из веб-приложения. С Azure AD вам не придется управлять отдельной системой проверки подлинности с отдельным управлением пользователями и учетными записями.
 
-В этой статье и других статьях этой серии приводятся сведения об использовании подключенной службы Visual Studio в Active Directory. Возможность доступна в Visual Studio 2015 и позже.
+В этой статье и других статьях этой серии приводятся сведения об использовании подключенной службы Visual Studio в Active Directory. Эта возможность доступна в Visual Studio 2015 и более поздних версиях.
 
 Сейчас подключенная служба Active Directory не поддерживает приложения ASP.NET Core.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Учетная запись Azure. Если у вас ее нет, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) или [активируйте преимущества для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
-- **Визуальная студия 2015** или более поздней. [Скачать Visual Studio сейчас](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
+- **Visual Studio 2015** или более поздней версии. [Скачайте Visual Studio прямо сейчас](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
 
 ### <a name="connect-to-azure-active-directory-using-the-connected-services-dialog"></a>Подключение к Azure Active Directory с помощью диалогового окна подключенных служб
 
@@ -44,7 +44,7 @@ ms.locfileid: "81535831"
 
     ![Страница "Введение"](./media/vs-azure-active-directory/configure-azure-ad-wizard-1.png)
 
-1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Список содержит все домены, доступные по счетам, перечисленным в диалоге настройки учетной записи Visual Studio **(Файл > настройки учетной записи ...**). В качестве альтернативы, вы можете ввести доменное имя, если вы не `mydomain.onmicrosoft.com`найдете тот, который вы ищете, например, . Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
+1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Список содержит все домены, доступные для учетных записей, перечисленных в диалоговом окне "Параметры учетной записи" Visual Studio (**Параметры учетной записи > файлов...**). В качестве альтернативы можно ввести имя домена, если вы не нашли искомый домен, например `mydomain.onmicrosoft.com`. Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
 
     ![Страница "Единый вход"](./media/vs-azure-active-directory/configure-azure-ad-wizard-2.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "81535831"
 - [Что произошло с моим проектом .NET MVC?](vs-active-directory-dotnet-what-happened.md)
 - [Что произошло с моим проектом веб-API?](vs-active-directory-webapi-what-happened.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Сценарии аутентификации для активного каталога Azure](authentication-scenarios.md)
+- [Сценарии проверки подлинности для Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

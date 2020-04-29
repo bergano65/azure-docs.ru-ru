@@ -4,10 +4,10 @@ description: Stream Analytics может непрерывно преобразо
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.openlocfilehash: 15d1efa3a632024429d41f27fc23c569cd85bec2
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81536885"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
@@ -89,13 +89,13 @@ ms.locfileid: "81536885"
 
 ### <a name="set-path-prefix-pattern"></a>Установка шаблона префикса пути
 
-**Обязательно установите формат Даты для YYYY-MM-DD (с тире).**
+**Не забудьте задать формат даты гггг-мм-дд (с тире).**
 
 Шаблон префикса пути указывает, где Stream Analytics находит входные файлы в хранилище. Вам необходимо настроить это поле в соответствии с тем, как функция непрерывного экспорта сохраняет данные. Задайте следующее значение:
 
     webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
-В данном примере:
+В этом примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**).
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 
@@ -107,7 +107,7 @@ ms.locfileid: "81536885"
 > 
 
 ## <a name="add-new-output"></a>Добавление новых выходных данных
-Теперь выберите работу > **выходы** > **Добавить**.
+Теперь выберите свое задание > **выходные данные** > **добавить**.
 
 ![](./media/export-stream-analytics/SA006.png)
 
@@ -211,7 +211,7 @@ ms.locfileid: "81536885"
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Непрерывный экспорт](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
