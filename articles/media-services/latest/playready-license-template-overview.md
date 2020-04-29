@@ -1,5 +1,5 @@
 ---
-title: Azure Media Services v3 с шаблоном лицензии Microsoft PlayReady
+title: Шаблон лицензии служб мультимедиа Azure v3 с Microsoft PlayReady
 description: В этом разделе содержится обзор шаблонов лицензий PlayReady, которые используются для настройки лицензий PlayReady.
 author: juliako
 manager: femila
@@ -14,13 +14,13 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: juliako
 ms.openlocfilehash: 6b12dcee2303632c4ec2ccc3602348a4e17fcd05
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76705893"
 ---
-# <a name="media-services-v3-with-playready-license-template"></a>Медиа Сервисы v3 с шаблоном лицензии PlayReady 
+# <a name="media-services-v3-with-playready-license-template"></a>Шаблон лицензии служб мультимедиа v3 с PlayReady 
 
 Службы мультимедиа Azure позволяют шифровать содержимое с помощью **Microsoft PlayReady**. Службы мультимедиа также обеспечивают доставку лицензий PlayReady. Интерфейсы API Служб мультимедиа можно использовать для настройки лицензий PlayReady. Когда проигрыватель пытается воспроизвести содержимое, защищенное с помощью PlayReady, в службу доставки лицензий отправляется запрос на получение лицензии. Если служба лицензий утверждает запрос, она выдает лицензию, которая отправляется клиенту и используется для расшифровки и воспроизведения указанного содержимого.
 
@@ -311,6 +311,6 @@ objContentKeyPolicyPlayReadyLicense = new ContentKeyPolicyPlayReadyLicense
     </xs:schema>
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте о возможностях [защиты с помощью технологии DRM](protect-with-drm.md).

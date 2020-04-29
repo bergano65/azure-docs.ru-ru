@@ -1,5 +1,5 @@
 ---
-title: Настройка аварийного восстановления Hyper-V (с VMM) на вторичном сайте с Azure Site Recovery/PowerShell
+title: Настройка аварийного восстановления Hyper-V (с VMM) на дополнительный сайт с помощью Azure Site Recovery или PowerShell
 description: В этой статье описана настройка аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт VMM с помощью Azure Site Recovery и PowerShell.
 services: site-recovery
 author: sujayt
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 1/10/2020
 ms.author: sutalasi
 ms.openlocfilehash: deef7bfdbc28d744cb81da59d3ffc13a1abee54d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77048613"
 ---
 # <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
@@ -20,10 +20,10 @@ ms.locfileid: "77048613"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Ознакомьтесь с [архитектурой и компонентами сценария](hyper-v-vmm-architecture.md).
-- Просмотрите [требования к поддержке](site-recovery-support-matrix-to-sec-site.md) всех компонентов.
+- Ознакомьтесь с [требованиями к поддержке](site-recovery-support-matrix-to-sec-site.md) для всех компонентов.
 - Убедитесь, что серверы Virtual Machine Manager и узлы Hyper-V соответствуют [требованиям поддержки](site-recovery-support-matrix-to-sec-site.md).
 - Убедитесь, что виртуальные машины, которые следует реплицировать, соответствуют [требованиям поддержки реплицируемых машин](site-recovery-support-matrix-to-sec-site.md).
 
@@ -89,7 +89,7 @@ ms.locfileid: "77048613"
    $vault = New-AzRecoveryServicesVault -Name #vaultname -ResourceGroupName #ResourceGroupName -Location #location
    ```
 
-   Вы можете получить объект хранилища после его `Get-AzRecoveryServicesVault` создания с помощью cmdlet.
+   Объект хранилища можно получить после его создания с помощью `Get-AzRecoveryServicesVault` командлета.
 
 ## <a name="set-the-vault-context"></a>Задание контекста хранилища
 
@@ -210,7 +210,7 @@ ms.locfileid: "77048613"
 
 ##  <a name="configure-network-mapping"></a>Настройка сетевого сопоставления
 
-1. Используйте эту команду, чтобы получить серверы для текущего хранилища. Команда хранит серверы восстановления `$Servers` сайта в переменной массива.
+1. Используйте эту команду, чтобы получить серверы для текущего хранилища. Команда сохраняет Site Recovery серверы в переменной `$Servers` массива.
 
    ```azurepowershell
    $Servers = Get-AzRecoveryServicesAsrFabric
@@ -227,7 +227,7 @@ ms.locfileid: "77048613"
    > [!NOTE]
    > Исходный сервер Virtual Machine Manager может быть первым или вторым в массиве серверов. Проверьте имена серверов Virtual Machine Manager и получите сети соответствующим образом.
 
-1. Этот командлет создает сопоставление между основной сетью и сетью восстановления. Он определяет первичную сеть в качестве `$PrimaryNetworks`первого элемента . Он определяет сеть восстановления в качестве `$RecoveryNetworks`первого элемента .
+1. Этот командлет создает сопоставление между основной сетью и сетью восстановления. Он указывает основную сеть в качестве первого элемента `$PrimaryNetworks`. В нем указывается сеть восстановления в качестве первого элемента `$RecoveryNetworks`.
 
    ```azurepowershell
    New-AzRecoveryServicesAsrNetworkMapping -PrimaryNetwork $PrimaryNetworks[0] -RecoveryNetwork $RecoveryNetworks[0]
@@ -256,12 +256,12 @@ ms.locfileid: "77048613"
    ```
 
 > [!NOTE]
-> Если вы хотите воспроизвести управляемые диски CMK в Azure, сделайте следующие шаги с помощью Az PowerShell 3.3.0 далее:
+> Если вы хотите выполнить репликацию на управляемые диски с поддержкой CMK в Azure, выполните следующие действия с помощью команды AZ PowerShell 3.3.0/назад:
 >
-> 1. Включить отказ в управляемых дисках путем обновления свойств VM
-> 1. Используйте `Get-AzRecoveryServicesAsrReplicationProtectedItem` cmdlet для получения идентификатора диска для каждого диска защищенного элемента
-> 1. Создайте объект словаря, используя `New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"` cmdlet, чтобы содержать отображение идентификатора диска в набор шифрования диска. Эти наборы шифрования дисков должны быть предварительно созданы вами в целевом регионе.
-> 1. Обновление свойств VM `Set-AzRecoveryServicesAsrReplicationProtectedItem` с помощью cmdlet путем передачи словарного объекта в параметре **DiskIdToDiskEncryptionSetMap.**
+> 1. Включение отработки отказа на управляемые диски путем обновления свойств виртуальной машины
+> 1. Используйте командлет `Get-AzRecoveryServicesAsrReplicationProtectedItem` , чтобы получить идентификатор диска для каждого диска защищенного элемента.
+> 1. Создайте объект Dictionary с помощью `New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"` командлета, который будет содержать сопоставление идентификатора диска с набором шифрования диска. Эти наборы шифрования дисков должны быть предварительно созданы в целевом регионе.
+> 1. Обновите свойства виртуальной машины `Set-AzRecoveryServicesAsrReplicationProtectedItem` с помощью командлета, передав объект Dictionary в параметре **дискидтодискенкриптионсетмап** .
 
 ## <a name="run-a-test-failover"></a>Запуск тестовой отработки отказа
 
@@ -359,6 +359,6 @@ if($isJobLeftForProcessing)
 }While($isJobLeftForProcessing)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Узнайте больше](/powershell/module/az.recoveryservices) об использовании командлетов PowerShell Resource Manager для службы Site Recovery.

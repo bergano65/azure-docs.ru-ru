@@ -1,6 +1,6 @@
 ---
-title: Проекты сообщества Azure Maps с открытым исходным кодом Карты Microsoft Azure
-description: Проекты с открытым исходным кодом координируются для платформы Microsoft Azure Maps.
+title: Проекты Azure Maps Community Open-Source | Карты Microsoft Azure
+description: Проекты с открытым исходным кодом, которые координируются для платформы карт Microsoft Azure.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 12/17/2019
@@ -10,43 +10,43 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: 5782f07167f72be2ea7b148ad1b0a61d8cb710e2
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77048894"
 ---
-# <a name="azure-maps-community---open-source-projects"></a>Сообщество Azure Maps - проекты с открытым исходным кодом
+# <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
 
-Эти инициативы с открытым исходным кодом и сообществом создаются и поддерживаются командой Azure Maps. Они не являются частью стандартных продуктов или услуг.
+Эти инициативы, управляемые сообществом с открытым кодом, создаются и обслуживаются группой Azure Maps. Они не являются частью стандартных предложений продуктов или услуг.
 
-Ниже перечислены некоторые из наиболее популярных проектов и образцов Azure Maps с открытым исходным кодом.
+Ниже перечислены некоторые из наиболее популярных Azure Maps проектов с открытым исходным кодом и примеров.
 
 | Имя проекта | Описание |
 |-|-|
-| [Образцы кода Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция образцов кода для использования Azure Maps в веб-приложениях. |
-| [Образцы облачных кодов Azure Maps Gov](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция образцов кода для использования Azure Maps через облако правительства Azure. |
-| [Карты Azure & образцы активных каталогов Azure](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples) | Коллекция образцов, которые показывают, как использовать активный каталог Azure с Azure Maps. | 
+| [Примеры кода Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в веб-приложениях. |
+| [Azure Maps примеры кода gov Cloud](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в облаке Azure для государственных организаций. |
+| [Примеры Azure Active Directory & Azure Maps](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples) | Коллекция примеров, демонстрирующих использование Azure Active Directory с Azure Maps. | 
 | [Реализация пространственной аналитики Интернета вещей с помощью Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. |
-| [Лазурные Карты Jupyter Ноутбук образцов](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook) | Коллекция образцов питона с использованием служб Azure Maps REST. |
-| [Bot Framework - Навыки точки интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык «Точка интереса» предоставляет возможности, связанные с POI, виртуальному помощнику, использующему Карты Azure, сервис Azure Bot и рамки Bot. |
+| [Примеры Jupyter Notebook Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook) | Коллекция примеров Python, использующих службы Azure Maps RESTFUL. |
+| [Платформа Bot — навык интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык по интересам предоставляет виртуальному помощнику возможности, связанные с достопримечательности, с помощью Azure Maps со службой Azure Bot и Bot Framework. |
 
-Более длинный список, включающий созданные сообществами проекты с открытым исходным кодом, доступен [здесь](https://github.com/microsoft/Maps/blob/master/AzureMaps.md)
+Более длинный список, включающий созданные сообщества проекты с открытым кодом, доступен [здесь](https://github.com/microsoft/Maps/blob/master/AzureMaps.md) .
 
 ## <a name="supportability-of-open-source-projects"></a>Поддержка проектов с открытым исходным кодом
 
-Следующие операторы применяются во всех созданных и поддерживаемых проектах и образцах с открытым исходным кодом:
+Следующие инструкции применяются ко всем Azure Maps, созданным и поддерживаемым проектами с открытым исходным кодом и примерами.
 
-- Проекты и образцы Azure Maps с открытым исходным кодом создаются корпорацией Майкрософт и сообществом.
-- Проекты и образцы Azure Maps с открытым исходным кодом обслуживаются корпорацией Майкрософт и сообществом.
-- Проекты и образцы Azure Maps с открытым исходным кодом используют поддерживаемые и рекомендуемые методы.
-- Проекты и образцы Azure Maps с открытым исходным кодом — это инициатива сообщества – люди, которые работают над инициативой на благо других людей, а также имеют обычную дневную работу.
-- Проекты и образцы Azure Maps с открытым исходным кодом не являются продуктом, и поэтому он не поддерживается поддержкой Premier Support или другими официальными каналами поддержки.
-- Проекты и образцы Azure Maps с открытым исходным кодом поддерживаются так же, как и другие проекты с открытым исходным кодом, выполненные корпорацией Майкрософт при поддержке сообщества сообществом.
+- Azure Maps проекты с открытым исходным кодом и примеры создаются корпорацией Майкрософт и сообществом.
+- Azure Maps проекты с открытым исходным кодом и примеры поддерживаются корпорацией Майкрософт и сообществом.
+- Azure Maps проекты с открытым исходным кодом и примеры используют поддерживаемые и рекомендуемые методы.
+- Azure Maps проекты с открытым исходным кодом и примеры — это инициатива сообщества — люди, которые работают над инициативой по работе с другими пользователями и имеют свое стандартное дневное задание.
+- Azure Maps проекты с открытым исходным кодом и примеры не являются продуктом, поэтому они не поддерживаются поддержка Premier или другими официальными каналами поддержки.
+- Azure Maps проекты с открытым исходным кодом и примеры поддерживаются аналогично другим проектам с открытым исходным кодом, осуществляемым корпорацией Майкрософт вместе со службой поддержки сообщества.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Найдите другие проекты Azure Maps с открытым исходным кодом.
+Найдите другие проекты Azure Maps с открытым кодом.
 
 > [!div class="nextstepaction"]
 > [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)

@@ -1,6 +1,6 @@
 ---
-title: Обработка исключений & сценарии регистрации ошибок
-description: Реальный случай использования и сценарий для расширенной обработки исключений и регистрации ошибок в приложениях логики Azure
+title: Обработка исключений & сценарий регистрации ошибок
+description: Реальный вариант использования и сценарий для расширенной обработки исключений и ведения журнала ошибок в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: hedidin
@@ -8,10 +8,10 @@ ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 07/29/2016
 ms.openlocfilehash: 1bb6e28c9dcae01f3233178706d2a24156fa509a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76902701"
 ---
 # <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий обработки исключений и ведения журнала ошибок для приложений логики
@@ -37,9 +37,9 @@ ms.locfileid: "76902701"
 
 ## <a name="how-we-solved-the-problem"></a>Решение проблемы
 
-Мы выбрали [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/ "Azure Cosmos DB") в качестве репозитория для записей журналов и ошибок (Cosmos DB называет записи документами). В Azure Logic Apps используется стандартный шаблон для всех ответов, поэтому нам не пришлось создавать настраиваемую схему. Чтобы **добавлять** и **запрашивать** записи журнала и записи об ошибках, можно было создать приложение API. В нем мы могли определить схему выполнения каждой из этих операций.  
+Мы выбрали [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/ "Azure Cosmos DB") в качестве репозитория для записей журнала и ошибок (Cosmos DB ссылается на записи в виде документов). В Azure Logic Apps используется стандартный шаблон для всех ответов, поэтому нам не пришлось создавать настраиваемую схему. Чтобы **добавлять** и **запрашивать** записи журнала и записи об ошибках, можно было создать приложение API. В нем мы могли определить схему выполнения каждой из этих операций.  
 
-Но существовало еще одно требование: автоматическое удаление записей через определенное время. Cosmos DB имеет свойство под названием [Time to Live](https://azure.microsoft.com/blog/documentdb-now-supports-time-to-live-ttl/ "Время жить") (TTL), что позволило нам установить значение Time to **Live** для каждой записи или коллекции. Эта возможность избавляет от необходимости вручную удалять записи из Cosmos DB.
+Но существовало еще одно требование: автоматическое удаление записей через определенное время. Cosmos DB имеет свойство с названием срок [жизни](https://azure.microsoft.com/blog/documentdb-now-supports-time-to-live-ttl/ "Срок жизни") (TTL), которое позволило нам задать значение **времени** жизни для каждой записи или коллекции. Эта возможность избавляет от необходимости вручную удалять записи из Cosmos DB.
 
 > [!IMPORTANT]
 > Для работы с этим руководством необходимо создать базу данных Cosmos DB и две коллекции ("Ведение журнала" и "Ошибки").
@@ -118,7 +118,7 @@ ms.locfileid: "76902701"
 > [!NOTE]
 > Приведенные ниже фрагменты кода используется только в качестве примера. Так как в этом руководстве используется пример из реальной жизни, который уже реализован в рабочей среде, значения свойств **исходного узла**, связанные с планированием приемов, могут не отображаться. 
 
-### <a name="logging"></a>Ведение журнала
+### <a name="logging"></a>Logging
 
 В следующем примере кода приложения логики показано, как обрабатывать ведение журналов.
 
@@ -431,7 +431,7 @@ ms.locfileid: "76902701"
 
 Каждый документ в Azure Cosmos DB должен иметь уникальный идентификатор. Мы используем идентификатор `PatientId` , к которому добавляем метку времени, преобразованную в значение в формате Unix (значение с двойной точностью). Чтобы удалить дробное значение, мы обрежем метку времени.
 
-Вы можете просмотреть исходный код нашего API контроллера ошибок с [GitHub.](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi/blob/master/LogicAppsExceptionManagementApi/Controllers/LogController.cs)
+Исходный код API контроллера ошибок можно просмотреть на сайте [GitHub](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi/blob/master/LogicAppsExceptionManagementApi/Controllers/LogController.cs).
 
 Для вызова API из приложения логики используется следующий синтаксис:
 
@@ -476,9 +476,9 @@ ms.locfileid: "76902701"
 
 ### <a name="source-code"></a>Исходный код
 
-Исходный код приложения управления aPI для управления исключениями Logic Apps доступен в этом [репозитории GitHub.](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi "Логика App App Управление исключением API")
+Исходный код приложения API управления исключениями Logic Apps доступен в этом [репозитории GitHub](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi "API управления исключениями приложений логики").
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Примеры приложений логики и распространенные сценарии](../logic-apps/logic-apps-examples-and-scenarios.md)
 * [Мониторинг приложений логики](../logic-apps/monitor-logic-apps.md)

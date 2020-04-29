@@ -1,6 +1,6 @@
 ---
-title: Реальные измерения пользователей с помощью веб-страниц - Менеджер трафика Azure
-description: В этой статье узнайте, как настроить веб-страницы для отправки реальных измерений пользователей менеджеру трафика Azure.
+title: Измерения на стороне пользователей с веб-страницами — диспетчер трафика Azure
+description: Из этой статьи вы узнаете, как настроить веб-страницы для отправки Измерения на стороне пользователей в диспетчер трафика Azure.
 services: traffic-manager
 documentationcenter: traffic-manager
 author: rohinkoul
@@ -14,10 +14,10 @@ ms.date: 03/16/2018
 ms.author: rohink
 ms.custom: ''
 ms.openlocfilehash: 927d774ee30a291607a8a47fc2fd6878c1bc6fee
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76938700"
 ---
 # <a name="how-to-send-real-user-measurements-to-azure-traffic-manager-using-web-pages"></a>Как отправить измерения на стороне пользователей в диспетчер трафика Azure с использованием веб-страниц
@@ -64,7 +64,7 @@ ms.locfileid: "76938700"
 4. При следующем отображении этой страницы в веб-браузере загрузится соответствующий код JavaScript и с его помощью будут выполнены операции измерения и создания отчетов.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Узнайте больше об [измерениях на стороне пользователей](traffic-manager-rum-overview.md).
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
 - Узнайте больше о [методах маршрутизации трафика](traffic-manager-routing-methods.md) , поддерживаемых в диспетчере трафика.

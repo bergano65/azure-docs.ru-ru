@@ -15,18 +15,18 @@ ms.workload: infrastructure-services
 ms.date: 12/21/2016
 ms.author: rohink
 ms.openlocfilehash: b9244d9b2bdc9cb20195bbc103c0b1eb48a9de63
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76932531"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-azure-powershell"></a>Управление записями и наборами записей DNS в службе DNS Azure с помощью Azure PowerShell
 
 > [!div class="op_single_selector"]
 > * [Портал Azure](dns-operations-recordsets-portal.md)
-> * [Лазурный классический CLI](dns-operations-recordsets-cli-nodejs.md)
-> * [Лазурный CLI](dns-operations-recordsets-cli.md)
+> * [Классический интерфейс командной строки Azure](dns-operations-recordsets-cli-nodejs.md)
+> * [Azure CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье описывается, как управлять записями DNS для зоны DNS с помощью Azure PowerShell. Записями DNS также можно управлять с помощью кроссплатформенного [интерфейса командной строки Azure](dns-operations-recordsets-cli.md) или [портала Azure](dns-operations-recordsets-portal.md).
@@ -35,7 +35,7 @@ ms.locfileid: "76932531"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 Чтобы создавать записи DNS в Azure DNS, нужно понимать, как Azure DNS организует записи DNS в соответствующие наборы записей.
 
@@ -46,7 +46,7 @@ ms.locfileid: "76932531"
 
 ## <a name="create-a-new-dns-record"></a>Создание записи DNS
 
-Если новая запись имеет то же имя и тип, что и существующая запись, необходимо [добавить ее в существующий набор записей.](#add-a-record-to-an-existing-record-set) Если имя и тип новой и существующих записей отличаются, вам нужно создать другой набор записей. 
+Если новая запись имеет то же имя и тип, что и существующая запись, необходимо [добавить ее в существующий набор записей](#add-a-record-to-an-existing-record-set). Если имя и тип новой и существующих записей отличаются, вам нужно создать другой набор записей. 
 
 ### <a name="create-a-records-in-a-new-record-set"></a>Создание записей А в новом наборе записей
 
@@ -392,7 +392,7 @@ Get-AzDnsRecordSet -Name www -RecordType A -ZoneName "contoso.com" -ResourceGrou
 
 Дополнительные сведения об элементах `-Confirm` и `$ConfirmPreference` см. в статье о [привилегированных переменных](/powershell/module/microsoft.powershell.core/about/about_preference_variables).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. дополнительные сведения о [зонах и записях в Azure DNS](dns-zones-records.md).
 <br>

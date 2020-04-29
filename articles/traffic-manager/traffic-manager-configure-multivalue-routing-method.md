@@ -1,5 +1,5 @@
 ---
-title: Налаживание мультивалодорожной трафика - Менеджер движения Azure
+title: Настройка многофакторной маршрутизации трафика с несколькими диспетчерами трафика Azure
 description: В этой статье объясняется, как настроить диспетчер трафика для маршрутизации трафика в конечные точки A/AAAA.
 services: traffic-manager
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: rohink
 ms.openlocfilehash: daf7d09916d276130e337f7acea738228ee23707
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76938782"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
@@ -38,12 +38,12 @@ ms.locfileid: "76938782"
 ## <a name="create-a-traffic-manager-profile"></a>Создание профиля диспетчера трафика
 Создайте профиль диспетчера трафика, который направляет трафик пользователя к конечной точке с минимальной задержкой.
 
-1. В верхней левой части экрана выберите Создать**Create**профиль > **менеджера сетевого** >  **движения.** > **Traffic Manager profile**
+1. В верхней левой части экрана выберите **создать ресурс** > **Сетевые подключения** > **профиль** > диспетчера трафика**создать**.
 2. В разделе **Создание профиля диспетчера трафика** введите или выберите следующие сведения, примите значения по умолчанию для остальных параметров и нажмите кнопку **Создать**:
     
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | name                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
+    | Имя                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
     | Метод маршрутизации          | Выберите метод маршрутизации **MultiValue**.                                       |
     | Подписка            | Выберите свою подписку.                          |
     | Группа ресурсов          | Выберите *myResourceGroupTM1*. |
@@ -63,7 +63,7 @@ ms.locfileid: "76938782"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | Тип                    | Внешняя конечная точка                                   |
-    | name           | myEndpoint1                                        |
+    | Имя           | myEndpoint1                                        |
     | Полное доменное имя (FQDN) или IP-адрес           | Введите общедоступный IP-адрес конечной точки, которую необходимо добавить в этот профиль диспетчера трафика.                         |
     |        |           |
 
@@ -72,11 +72,11 @@ ms.locfileid: "76938782"
 
    ![Добавление конечной точки диспетчера трафика](./media/traffic-manager-multivalue-routing-method/add-endpoint.png)
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).
-- Подробнее о [методе производительность для разгрома](traffic-manager-configure-performance-routing-method.md)
+- Дополнительные сведения о [методе маршрутизации производительности](traffic-manager-configure-performance-routing-method.md)
 - Узнайте о [методе географической маршрутизации](traffic-manager-configure-geographic-routing-method.md).
 
 

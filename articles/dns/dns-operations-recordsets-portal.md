@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/6/2018
 ms.author: rohink
 ms.openlocfilehash: 4012b32eb2684126b8dc64b9e86bf35a016e9fba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76936844"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
@@ -107,7 +107,7 @@ ms.locfileid: "76936844"
 
 Вы не можете удалять наборы записей типа SOA и NS на вершине зоны (имя = "\@"), которые создаются автоматически вместе с зоной. Они удаляются автоматически при удалении зоны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об Azure DNS см. в статье [Обзор Azure DNS](dns-overview.md).
 * Дополнительные сведения об автоматизации DNS см. в статье [Создание зон и наборов записей DNS с помощью пакета SDK для .NET](dns-sdk.md).

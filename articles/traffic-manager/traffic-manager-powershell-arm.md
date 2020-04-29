@@ -1,6 +1,6 @@
 ---
 title: Использование PowerShell для управления диспетчером трафика в Azure
-description: С помощью этого пути обучения начинайте использовать Azure PowerShell для менеджера трафика.
+description: По этому пути обучения приступайте к использованию Azure PowerShell для диспетчера трафика.
 services: traffic-manager
 documentationcenter: na
 author: rohinkoul
@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: rohink
 ms.openlocfilehash: 7886764a69eefa68be071a801bea65ae995fbdc3
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76938499"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
@@ -61,7 +61,7 @@ $TmProfile = New-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
 
 | Параметр | Описание |
 | --- | --- |
-| name |Имя ресурса профиля диспетчера трафика. У профилей в одной группе ресурсов должны быть уникальные имена. Это имя отличается от имени DNS, которое используется в запросах DNS. |
+| Имя |Имя ресурса профиля диспетчера трафика. У профилей в одной группе ресурсов должны быть уникальные имена. Это имя отличается от имени DNS, которое используется в запросах DNS. |
 | ResourceGroupName |Имя группы ресурсов, которая содержит ресурс профиля. |
 | TrafficRoutingMethod |Задает метод маршрутизации трафика, который определяет конечную точку, возвращаемую в ответ на запрос DNS. Возможные значения: Performance (производительность), Weighted (взвешенный) и Priority (приоритетный). |
 | RelativeDnsName |Задает часть DNS-имени с именем узла, которое предоставляется этим профилем диспетчера трафика. Это значение объединяется с DNS-именем домена, с помощью которого диспетчер трафика Azure формирует полное доменное имя профиля. Например, если задать значение contoso, полное доменное имя будет contoso.trafficmanager.net. |
@@ -125,7 +125,7 @@ Set-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile
 * Указывать Weight необязательно. Параметр Weight используется только в том случае, если профиль настроен для использования взвешенного (weighted) метода маршрутизации трафика. В остальных случаях этот параметр игнорируется. Если этот параметр указывается, его значение должно быть числом в диапазоне от 1 до 1000. Значение по умолчанию — 1.
 * Указывать Priority необязательно. Параметр Priority используется только в том случае, если профиль настроен для использования приоритетного (priority) метода маршрутизации. В остальных случаях этот параметр игнорируется. Допускаются значения от 1 до 1000 (чем меньше число, тем выше приоритет). Если приоритет указан для одной конечной точки, он должен указываться и для всех остальных конечных точек. Если значения не указаны, конечным точкам в порядке очереди присваиваются значения по умолчанию: 1 и т. д.
 
-### <a name="example-1-adding-app-service-endpoints-using-add-aztrafficmanagerendpointconfig"></a>Пример 1: Добавление конечных точек службы app с использованием`Add-AzTrafficManagerEndpointConfig`
+### <a name="example-1-adding-app-service-endpoints-using-add-aztrafficmanagerendpointconfig"></a>Пример 1. Добавление конечных точек службы приложений с помощью`Add-AzTrafficManagerEndpointConfig`
 
 В этом примере мы создадим профиль диспетчера трафика и добавим две конечные точки службы приложений с помощью командлета `Add-AzTrafficManagerEndpointConfig`.
 
@@ -210,7 +210,7 @@ New-AzTrafficManagerEndpoint -Name child-endpoint -ProfileName parent -ResourceG
 
 ## <a name="adding-endpoints-from-another-subscription"></a>Добавление конечных точек из другой подписки
 
-Диспетчер трафика может работать с конечными точками из нескольких подписок. Вам нужно переключиться на подписку с конечной точкой, которую вы хотите добавить для получения необходимых входных данных для диспетчера трафика. Затем вам нужно переключиться на подписку с профилем менеджера трафика и добавить конечную точку к нему. В примере ниже показано, как это сделать с помощью общедоступного IP-адреса.
+Диспетчер трафика может работать с конечными точками из нескольких подписок. Вам нужно переключиться на подписку с конечной точкой, которую вы хотите добавить для получения необходимых входных данных для диспетчера трафика. Затем необходимо переключиться на подписки с помощью профиля диспетчера трафика и добавить в нее конечную точку. В примере ниже показано, как это сделать с помощью общедоступного IP-адреса.
 
 ```powershell
 Set-AzContext -SubscriptionId $EndpointSubscription
@@ -321,7 +321,7 @@ Remove-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile [-Force]
 Get-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzTrafficManagerProfile [-Force]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Мониторинг диспетчера трафика](traffic-manager-monitoring.md)
 

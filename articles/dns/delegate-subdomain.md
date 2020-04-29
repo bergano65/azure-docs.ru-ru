@@ -1,6 +1,6 @@
 ---
-title: Делегируйте поддомен - Azure DNS
-description: С помощью этого пути обучения начинайте делегирование поддомена Azure DNS.
+title: Делегирование поддомена — Azure DNS
+description: По этой схеме обучения приступайте к делегированию поддомена Azure DNS.
 services: dns
 author: rohinkoul
 ms.service: dns
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: rohink
 ms.openlocfilehash: cd1443a9ca8ccf7172072078734f21d789d36194
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76937430"
 ---
 # <a name="delegate-an-azure-dns-subdomain"></a>Делегирование поддомена Azure DNS
@@ -20,7 +20,7 @@ ms.locfileid: "76937430"
 
 При необходимости вы можете делегировать поддомен с помощью [Azure PowerShell](delegate-subdomain-ps.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы делегировать поддомен Azure DNS, сначала вам следует делегировать общедоступный домен службе Azure DNS. Дополнительные сведения о настройке делегирования в серверах имен см. в статье [Руководство. Размещение домена в Azure DNS](./dns-delegate-domain-azure-dns.md). После делегирования домена в зону Azure DNS вы можете делегировать поддомен.
 
@@ -31,9 +31,9 @@ ms.locfileid: "76937430"
 
 Сначала создайте зону для поддомена **engineering**.
 
-1. На портале Azure выберите **Создать ресурс.**
+1. В портал Azure выберите **создать ресурс**.
 2. В поле поиска введите **DNS** и выберите **зону DNS**.
-3. Выберите **Создать**.
+3. Щелкните **Создать**.
 4. В области **Создание зоны DNS** введите **engineering.contoso.com** в текстовое поле **Имя**.
 5. Выберите группу ресурсов для своей зоны. Вам может потребоваться использовать ту же группу ресурсов, что и в родительской зоне, для размещения одинаковых ресурсов вместе.
 6. Нажмите кнопку **Создать**.
@@ -68,6 +68,6 @@ ms.locfileid: "76937430"
 2. В командной строке введите `nslookup www.engineering.contoso.com.`
 3. Вы должны получить ответ, исходящий не из полномочного источника и содержащий адрес **10.10.10.10**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [настроить обратный просмотр DNS для размещенных в Azure служб](dns-reverse-dns-for-azure-services.md).

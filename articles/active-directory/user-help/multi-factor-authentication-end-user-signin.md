@@ -1,6 +1,6 @@
 ---
-title: Восподписание с помощью аутентификации с помощью рабочей или школьной учетной записи - Azure AD
-description: Узнайте, как войти в свою учетную запись с помощью различных двухфакторных методов проверки.
+title: Вход с использованием рабочей или учебной учетной записи Azure AD с помощью проверки подлинности
+description: Узнайте, как войти в рабочую или учебную учетную запись с помощью различных методов двухфакторной проверки подлинности.
 services: active-directory
 author: curtand
 manager: daveba
@@ -14,13 +14,13 @@ ms.author: curtand
 ms.reviewer: librown
 ms.custom: end-user, seo-update-azuread-jan
 ms.openlocfilehash: 33cf9e284d2206ea497af7a5da7c3cf4a890cc87
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77064093"
 ---
-# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Войти на работу или в школу с помощью двухфакторного метода проверки
+# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Вход в рабочую или учебную учетную запись с помощью метода двухфакторной проверки подлинности
 
 > [!NOTE]
 > В этой статье рассматривается стандартная процедура входа. Если у вас возникают проблемы со входом в систему см. статью [об устранении неполадок при двухфакторной проверке подлинности](multi-factor-authentication-end-user-troubleshoot.md).
@@ -82,7 +82,7 @@ ms.locfileid: "77064093"
 
    ![Использовать другой метод](./media/multi-factor-authentication-end-user-signin/alt.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Если у вас возникли проблемы при входе в систему с помощью двухфакторной проверки подлинности, см. статью [Проблемы с использованием Многофакторной идентификации Azure](multi-factor-authentication-end-user-troubleshoot.md).
 
 - Узнайте, как [управлять параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).

@@ -1,6 +1,6 @@
 ---
-title: 'Azure ExpressRoute: Настройка ExpressRoute Прямая'
-description: Эта страница поможет вам настроить ExpressRoute Direct.
+title: 'Azure ExpressRoute: Настройка Direct ExpressRoute'
+description: Эта страница поможет настроить функцию ExpressRoute Direct.
 services: expressroute
 author: jaredr80
 ms.service: expressroute
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 01/22/2020
 ms.author: jaredro
 ms.openlocfilehash: 2722a852b1119ef619bc414bce5cb3a8ff6f8f00
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77031618"
 ---
-# <a name="how-to-configure-expressroute-direct"></a>Как настроить ExpressRoute Прямая
+# <a name="how-to-configure-expressroute-direct"></a>Настройка Direct для ExpressRoute
 
 ExpressRoute Direct дает возможность подключения непосредственно в глобальной сети корпорации Майкрософт в стратегически распределенных по всему миру расположениях пиринга. См. дополнительные сведения об [ExpressRoute Direct](expressroute-erdirect-about.md).
 
@@ -28,7 +28,7 @@ ExpressRoute Direct дает возможность подключения не�
    Select-AzSubscription -Subscription "<SubscriptionID or SubscriptionName>"
    ```
    
-2. Перерегистрация подписки на Microsoft.Network для доступа к apIs expressrouteportsи и экспресс-маршруту.
+2. Повторно зарегистрируйте подписку в Microsoft. Network, чтобы получить доступ к API-интерфейсам експрессраутепортслокатион и експрессраутепорт.
 
    ```powershell
    Register-AzResourceProvider -ProviderNameSpace "Microsoft.Network"
@@ -39,7 +39,7 @@ ExpressRoute Direct дает возможность подключения не�
    Get-AzExpressRoutePortsLocation
    ```
 
-   **Вывод примера**
+   **Пример выходных данных**
   
    ```powershell
    Name                : Equinix-Ashburn-DC2
@@ -72,7 +72,7 @@ ExpressRoute Direct дает возможность подключения не�
    Get-AzExpressRoutePortsLocation -LocationName "Equinix-San-Jose-SV1"
    ```
 
-   **Вывод примера**
+   **Пример выходных данных**
 
    ```powershell
    Name                : Equinix-San-Jose-SV1
@@ -106,7 +106,7 @@ ExpressRoute Direct дает возможность подключения не�
    > Атрибуту инкапсуляции также можно присвоить значение Dot1Q. 
    >
 
-   **Вывод примера:**
+   **Выходные данные примера:**
 
    ```powershell
    Name                       : Contoso-Direct
@@ -174,7 +174,7 @@ ExpressRoute Direct дает возможность подключения не�
    $ERDirect.Links[1].AdminState = "Enabled"
    Set-AzExpressRoutePort -ExpressRoutePort $ERDirect
    ```
-   **Вывод примера:**
+   **Выходные данные примера:**
 
    ```powershell
    Name                       : Contoso-Direct
@@ -231,9 +231,9 @@ ExpressRoute Direct дает возможность подключения не�
 
 Существуют дополнительные пропускные способности каналов, которые могут использоваться на ExpressRoute Direct только для поддержки сценариев, описанных выше. А именно: 40 Гбит/с и 100 Гбит/с.
 
-**SkuTier** может быть местным, стандартным или премиум.
+**Скутиер** может быть локальным, стандартным или Premium.
 
-**SkuFamily** должен быть MeteredData только в качестве неограниченного не поддерживается на ExpressRoute Direct.
+**Скуфамили** должен быть MeteredData только как неограниченный. в ExpressRoute Direct не поддерживается.
 
 Создайте канал в ресурсе ExpressRoute Direct.
 
@@ -243,7 +243,7 @@ ExpressRoute Direct дает возможность подключения не�
 
   Другие значения пропускной способности включают в себя: 5.0, 10.0 и 40.0
 
-  **Вывод примера:**
+  **Выходные данные примера:**
 
   ```powershell
   Name                             : ExpressRoute-Direct-ckt
@@ -275,6 +275,6 @@ ExpressRoute Direct дает возможность подключения не�
   GatewayManagerEtag     
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения дополнительной информации о ExpressRoute Direct, смотрите [Обзор](expressroute-erdirect-about.md).
+Дополнительные сведения об использовании ExpressRoute Direct см. в [обзоре](expressroute-erdirect-about.md).

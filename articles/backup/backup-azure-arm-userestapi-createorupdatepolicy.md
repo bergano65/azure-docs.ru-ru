@@ -1,14 +1,14 @@
 ---
-title: Создание политик резервного копирования с помощью REST API
-description: В этой статье вы узнаете, как создавать и управлять политиками резервного копирования (расписание и удержание) с помощью REST API.
+title: Создание политик архивации с помощью REST API
+description: В этой статье вы узнаете, как создавать политики резервного копирования и управлять ими (расписанием и хранением) с помощью REST API.
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
 ms.openlocfilehash: 0718ebc3612f53f1c2cc279096dd92de69bb5ef6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76963858"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
@@ -29,7 +29,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Например, чтобы создать политику для восстановления диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|name  |Обязательно  |Тип  |Описание  |
+|Имя  |Обязательно  |Type  |Описание  |
 |---------|---------|---------|---------|
 |properties     |   True      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
 |tags     |         | Объект        |  Теги ресурсов       |
@@ -135,9 +135,9 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Создание и обновление политики резервного копирования является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Он возвращает два ответа: 202 (Принято) при создании другой операции, а затем 200 (OK) при завершении операции.
+Он возвращает два ответа: 202 (принято) при создании другой операции, а затем 200 (ОК) после завершения этой операции.
 
-|name  |Тип  |Описание  |
+|Имя  |Type  |Описание  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectionPolicyResource](/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  OK       |
 |202 — принято     |         |     Принято    |
@@ -260,7 +260,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Если политика уже используется для защиты элемента, любое обновление в политике приведет к [изменению защиты](backup-azure-arm-userestapi-backupazurevms.md#changing-the-policy-of-protection) всех связанных элементов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Включите защиту для незащищенной виртуальной машины Azure](backup-azure-arm-userestapi-backupazurevms.md).
 

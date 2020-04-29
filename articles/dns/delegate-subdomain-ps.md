@@ -1,6 +1,6 @@
 ---
-title: Делегируйте поддомен - Azure PowerShell - Azure DNS
-description: С помощью этого пути обучения начинайте делегирование поддона Azure DNS с помощью Azure PowerShell.
+title: Делегирование поддомена — Azure PowerShell — Azure DNS
+description: По этой схеме обучения приступайте к делегированию Azure DNS поддомена с помощью Azure PowerShell.
 services: dns
 author: rohinkoul
 ms.service: dns
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: rohink
 ms.openlocfilehash: 7e019afaae98422b8d5a3c8fa7a5f79e26c6a149
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76937714"
 ---
 # <a name="delegate-an-azure-dns-subdomain-using-azure-powershell"></a>Делегирование поддомена Azure DNS с помощью Azure PowerShell
@@ -23,7 +23,7 @@ ms.locfileid: "76937714"
 > [!NOTE]
 > В этой статье веб-сайт contoso.com используется в качестве примера. Подставьте собственное доменное имя вместо contoso.com.
 
-Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -70,6 +70,6 @@ $RecordSet = New-AzDnsRecordSet -Name engineering -RecordType NS -ResourceGroupN
 2. В командной строке введите `nslookup www.engineering.contoso.com.`
 3. Вы должны получить ответ, исходящий не из полномочного источника и содержащий адрес **10.10.10.10**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [настроить обратный просмотр DNS для размещенных в Azure служб](dns-reverse-dns-for-azure-services.md).

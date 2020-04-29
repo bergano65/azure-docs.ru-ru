@@ -1,6 +1,6 @@
 ---
-title: Автоматизация задач управления с расширением агента IaaS
-description: В этой статье описывается, как управлять расширением агента S'L Server IaaS, которое автоматизирует выполнение конкретных задач администрирования сервера S'L Server. К ним относятся автоматическое резервное копирование, автоматическое исправление и интеграция Azure Key Vault.
+title: Автоматизация задач управления с помощью расширения агента IaaS
+description: В этой статье описывается, как управлять расширением агента IaaS SQL Server, которое автоматизирует определенные задачи администрирования SQL Server. К ним относятся автоматическая архивация, автоматическая установка исправлений и интеграция Azure Key Vault.
 services: virtual-machines-windows
 documentationcenter: ''
 author: MashaMSFT
@@ -18,22 +18,22 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 3d16c1950cbae0bcc7dd858e5520eb8bfc6e496d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77030784"
 ---
-# <a name="automate-management-tasks-on-azure-virtual-machines-by-using-the-sql-server-iaas-agent-extension"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента S'L Server IaaS
+# <a name="automate-management-tasks-on-azure-virtual-machines-by-using-the-sql-server-iaas-agent-extension"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server IaaS
 > [!div class="op_single_selector"]
-> * [Менеджер ресурсов](virtual-machines-windows-sql-server-agent-extension.md)
-> * [Классический](../sqlclassic/virtual-machines-windows-classic-sql-server-agent-extension.md)
+> * [Resource Manager](virtual-machines-windows-sql-server-agent-extension.md)
+> * [Классические](../sqlclassic/virtual-machines-windows-classic-sql-server-agent-extension.md)
 
-Расширение агента IaaS для SQL Server (SqlIaasExtension) запускается на виртуальных машинах Azure для автоматизации задач администрирования. В этой статье содержится обзор служб, поддерживающих расширение. В этой статье также содержатся инструкции по установке, статусу и удалению расширения.
+Расширение агента IaaS для SQL Server (SqlIaasExtension) запускается на виртуальных машинах Azure для автоматизации задач администрирования. В этой статье представлен обзор служб, поддерживаемых расширением. В этой статье также приводятся инструкции по установке, состоянию и удалению расширения.
 
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-rm-include.md)]
 
-Для просмотра классической версии этой статьи, [см.](../sqlclassic/virtual-machines-windows-classic-sql-server-agent-extension.md)
+Чтобы просмотреть классическую версию этой статьи, см. раздел [SQL Server расширение агента IaaS для SQL Server виртуальных машин (классическая модель)](../sqlclassic/virtual-machines-windows-classic-sql-server-agent-extension.md).
 
 
 ## <a name="supported-services"></a>Поддерживаемые службы
@@ -41,27 +41,27 @@ ms.locfileid: "77030784"
 
 | Функция администрирования | Описание |
 | --- | --- |
-| **Автоматизированное резервное копирование сервера S'L** |Автоматизирует планирование резервных ups для всех баз данных для экземпляра по умолчанию или [правильно установленного](virtual-machines-windows-sql-server-iaas-faq.md#administration) названного экземпляра сервера S'L на VM. Для получения дополнительной информации [см. Автоматизированное резервное копирование для сервера S'L в виртуальных машинах Azure (менеджер ресурсов).](virtual-machines-windows-sql-automated-backup.md) |
-| **Автоматизированное исправление сервера S'L** |Настраивает период обслуживания, во время которого можно установить на виртуальную машину важные обновления ОС Windows. Таким образом можно избежать установки обновлений в пиковые периоды рабочей нагрузки. Для получения дополнительной информации [см. Автоматизированное исправление сервера S'L в виртуальных машинах Azure (менеджер ресурсов).](virtual-machines-windows-sql-automated-patching.md) |
-| **Интеграция Azure Key Vault** |Автоматически устанавливает и настраивает хранилище ключей Azure на виртуальной машине SQL Server. Для получения дополнительной информации см. [Нанастройку интеграции Azure Key Vault для сервера S'L на виртуальных машинах Azure (менеджер ресурсов)](virtual-machines-windows-ps-sql-keyvault.md). |
+| **Автоматическая архивация SQL Server** |Автоматизирует планирование резервного копирования для всех баз данных либо для экземпляра по умолчанию, либо [правильно установленного](virtual-machines-windows-sql-server-iaas-faq.md#administration) именованного экземпляра SQL Server на виртуальной машине. Дополнительные сведения см. [в статье Автоматическое резервное копирование для SQL Server на виртуальных машинах Azure (диспетчер ресурсов)](virtual-machines-windows-sql-automated-backup.md). |
+| **SQL Server автоматизированной установки исправлений** |Настраивает период обслуживания, во время которого можно установить на виртуальную машину важные обновления ОС Windows. Таким образом можно избежать установки обновлений в пиковые периоды рабочей нагрузки. Дополнительные сведения см. [в статье автоматическая установка исправлений для SQL Server на виртуальных машинах Azure (диспетчер ресурсов)](virtual-machines-windows-sql-automated-patching.md). |
+| **Интеграция с хранилищем ключей Azure** |Автоматически устанавливает и настраивает хранилище ключей Azure на виртуальной машине SQL Server. Дополнительные сведения см. [в статье Настройка интеграции Azure Key Vault для SQL Server на виртуальных машинах Azure (диспетчер ресурсов)](virtual-machines-windows-ps-sql-keyvault.md). |
 
-После установки и запуска агента сервера Iaas, это делает функции администрирования доступными:
+После установки и запуска расширения агента SQL Server IaaS становятся доступны функции администрирования:
 
-* На панели сервера s'L виртуальной машины на портале Azure и через Azure PowerShell для изображений сервера S'L на Azure Marketplace.
-* Через Azure PowerShell для ручных установок расширения. 
+* На панели SQL Server виртуальной машины в портал Azure и Azure PowerShell для образов SQL Server в Azure Marketplace.
+* С помощью Azure PowerShell для установки расширения вручную. 
 
-## <a name="prerequisites"></a>Предварительные требования
-Вот требования к использованию расширения агента Сервера IaaS на вашем VM:
+## <a name="prerequisites"></a>Предварительные условия
+Ниже приведены требования к использованию расширения агента SQL Server IaaS на виртуальной машине.
 
 **Операционная система**:
 
-* Windows Server 2008 R2
-* Windows Server 2012
+* Windows Server 2008 R2
+* Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
-* Windows Server 2019 
+* Windows Server 2019 
 
-**Версия сервера S'L**:
+**Версия SQL Server**:
 
 * SQL Server 2008 
 * SQL Server 2008 R2
@@ -73,13 +73,13 @@ ms.locfileid: "77030784"
 
 **Azure PowerShell**:
 
-* [Скачать и настроить последние команды Azure PowerShell](/powershell/azure/overview)
+* [Скачивание и настройка последних Azure PowerShell команд](/powershell/azure/overview)
 
 [!INCLUDE [updated-for-az.md](../../../../includes/updated-for-az.md)]
 
 
 ##  <a name="installation"></a>Установка
-Расширение S'L Server IaaS устанавливается при регистрации ВМ сервера S'L с [поставщиком ресурсов S'L VM.](virtual-machines-windows-sql-register-with-resource-provider.md) При необходимости можно установить агент S'L Server IaaS вручную, используя нижеприведенную команду PowerShell: 
+Расширение SQL Server IaaS устанавливается при регистрации SQL Server виртуальной машины с помощью [поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md). При необходимости можно установить агент SQL Server IaaS вручную с помощью следующей команды PowerShell: 
 
   ```powershell-interactive
     Set-AzVMSqlServerExtension -VMName "sql2017" `
@@ -88,32 +88,32 @@ ms.locfileid: "77030784"
   ```
 
 > [!NOTE]
-> Установка расширения перезапускает службу сервера S'L. 
+> При установке расширения перезапускается служба SQL Server. 
 
 
-### <a name="install-on-a-vm-with-a-single-named-sql-server-instance"></a>Установка на VM с одним экземпляром под названием S'L Server
-Расширение S'L Server IaaS будет работать с указанным экземпляром на сервере S'L, если экземпляр по умолчанию не установлен и расширение IaaS будет переустановлено.
+### <a name="install-on-a-vm-with-a-single-named-sql-server-instance"></a>Установка на виртуальной машине с одним именованным экземпляром SQL Server
+Расширение SQL Server IaaS будет работать с именованным экземпляром на SQL Server, если экземпляр по умолчанию удален, а расширение IaaS будет переустановлено.
 
-Чтобы использовать именованный экземпляр сервера S'L, выполните следующие действия:
-   1. Развертывание VM сервера S'L от Azure Marketplace. 
-   1. Удалите расширение IaaS с [портала Azure](https://portal.azure.com).
-   1. Полностью удалите сервер S'L в рамках VM сервера S'L.
-   1. Установка сервера S'L с именованным экземпляром в VM сервера S'L. 
-   1. Установите расширение IaaS с портала Azure.  
+Чтобы использовать именованный экземпляр SQL Server, выполните следующие действия.
+   1. Развертывание SQL Server виртуальной машины из Azure Marketplace. 
+   1. Удалите расширение IaaS из [портал Azure](https://portal.azure.com).
+   1. Полностью удалите SQL Server в SQL Server виртуальной машине.
+   1. Установите SQL Server с именованным экземпляром в виртуальной машине SQL Server. 
+   1. Установите расширение IaaS из портал Azure.  
 
 
-## <a name="get-the-status-of-the-sql-server-iaas-extension"></a>Получите статус расширения сервера IaaS
-Одним из способов проверки того, что расширение установлено, является просмотр состояния агента на портале Azure. Выберите **все настройки** в окне виртуальной машины, а затем выберите **расширения.** В списке будет указано расширение **SqlIaasExtension**.
+## <a name="get-the-status-of-the-sql-server-iaas-extension"></a>Получение состояния расширения IaaS SQL Server
+Одним из способов проверки того, что расширение установлено, является просмотр состояния агента на портале Azure. Выберите **все параметры** в окне виртуальной машины, а затем щелкните **расширения**. В списке будет указано расширение **SqlIaasExtension**.
 
-![Статус расширения агента сервера IaaS на портале Azure](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-portal.png)
+![Состояние расширения агента IaaS SQL Server в портал Azure](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-portal.png)
 
-Вы также можете использовать **Get-AzVMSqlServerExtension** Azure PowerShell cmdlet:
+Можно также использовать командлет **Get-азвмсклсерверекстенсион** Azure PowerShell.
 
    ```powershell-interactive
    Get-AzVMSqlServerExtension -VMName "vmname" -ResourceGroupName "resourcegroupname"
    ```
 
-Предыдущая команда подтверждает, что агент установлен, и предоставляет общую информацию о состоянии. Вы можете получить конкретную информацию о состоянии автоматического резервного копирования и исправления с помощью следующих команд:
+Предыдущая команда подтверждает, что агент установлен и предоставляет общие сведения о состоянии. Вы можете получить конкретные сведения о состоянии автоматизированного резервного копирования и исправлений с помощью следующих команд:
 
    ```powershell-interactive
     $sqlext = Get-AzVMSqlServerExtension -VMName "vmname" -ResourceGroupName "resourcegroupname"
@@ -122,17 +122,17 @@ ms.locfileid: "77030784"
    ```
 
 ## <a name="removal"></a>Удаление
-На портале Azure можно удалить расширение, выбрав эллипсис в окне **расширения** свойств виртуальной машины. Затем выберите **Удалить**.
+В портал Azure можно удалить расширение, нажав кнопку с многоточием в окне **расширения** свойств виртуальной машины. Затем выберите **Удалить**.
 
-![Установка расширения агента сервера IaaS на портале Azure](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-uninstall.png)
+![Удаление расширения агента IaaS SQL Server в портал Azure](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-uninstall.png)
 
-Вы также можете использовать **Remove-AzVMSqlServerExtension** PowerShell cmdlet:
+Вы также можете использовать командлет PowerShell **Remove-азвмсклсерверекстенсион** :
 
    ```powershell-interactive
     Remove-AzVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmname" -Name "SqlIaasExtension"
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-Начните использовать одну из служб, которую поддерживает расширение. Для получения дополнительной информации смотрите статьи, упомянутые в разделе [Поддерживаемые службы](#supported-services) этой статьи.
+## <a name="next-steps"></a>Дальнейшие шаги
+Начните использовать одну из служб, которую поддерживает расширение. Дополнительные сведения см. в статьях, указанных в разделе " [Поддерживаемые службы](#supported-services) " этой статьи.
 
-Для получения более подробной информации о запуске [What is SQL Server on Azure Virtual Machines?](virtual-machines-windows-sql-server-iaas-overview.md)сервера S'L на виртуальных машинах Azure см.
+Дополнительные сведения о запуске SQL Server на виртуальных машинах Azure см. в разделе [что такое SQL Server на виртуальных машинах Azure?](virtual-machines-windows-sql-server-iaas-overview.md).

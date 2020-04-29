@@ -1,22 +1,22 @@
 ---
-title: Изменение набора доступности вс-миноносов
-description: Узнайте, как изменить набор доступности для виртуальной машины с помощью Azure PowerShell.
+title: Изменение группы доступности виртуальных машин
+description: Узнайте, как изменить группу доступности для виртуальной машины с помощью Azure PowerShell.
 ms.service: virtual-machines
 author: cynthn
 ms.topic: article
 ms.date: 01/31/2020
 ms.author: cynthn
 ms.openlocfilehash: 092dafff6622d3402322eb96d0fe4215e52e16b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76964929"
 ---
 # <a name="change-the-availability-set-for-a-vm"></a>Изменение группы доступности для виртуальной машины
 Ниже приведены инструкции по изменению группы доступности виртуальной машины с помощью Azure PowerShell. Виртуальную машину можно добавить в группу доступности только при ее создании. Чтобы изменить группу доступности, необходимо удалить и повторно создать виртуальную машину. 
 
-Эта статья относится как к Linux и Windows VMs.
+Эта статья относится к виртуальным машинам Linux и Windows.
 
 Последнее тестирование этой статьи выполнялось 12.02.2019 г. с помощью [Azure Cloud Shell](https://shell.azure.com/powershell) и [модуля Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.2.0.
 
@@ -102,7 +102,7 @@ ms.locfileid: "76964929"
        -DisableBginfoExtension
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Увеличьте емкость хранилища для виртуальной машины, добавив дополнительный [диск данных](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

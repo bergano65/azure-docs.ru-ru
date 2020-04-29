@@ -1,6 +1,6 @@
 ---
-title: Обратный DNS для служб Azure - Azure DNS
-description: С помощью этого пути обучения начинайте настраивать обратный поиск DNS для служб, размещенных в Azure.
+title: Обратная DNS для служб Azure — Azure DNS
+description: По этой схеме обучения приступайте к настройке обратного просмотра DNS для служб, размещенных в Azure.
 services: dns
 documentationcenter: na
 author: rohinkoul
@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
 ms.openlocfilehash: 073e84ece11f6817bfe2c5a94735ec6e16dac4fe
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76932371"
 ---
 # <a name="configure-reverse-dns-for-services-hosted-in-azure"></a>Настройка обратного просмотра DNS для размещенных в Azure служб
@@ -61,7 +61,7 @@ ms.locfileid: "76932371"
 
 #### <a name="powershell"></a>PowerShell
 
-Для обновления обратного DNS на существующий PublicIpAddress:
+Чтобы изменить обратную DNS на существующую PublicIpAddress, выполните следующие действия.
 
 ```powershell
 $pip = Get-AzPublicIpAddress -Name "PublicIp" -ResourceGroupName "MyResourceGroup"
@@ -250,7 +250,7 @@ Set-AzureService –ServiceName "contosoapp1" –Description "App1 with Reverse 
 
 Техническая возможность непосредственной отправки по электронной почте из развертывания Azure зависит от типа подписки. Независимо от типа подписки корпорация Майкрософт рекомендует использовать доверенные службы ретрансляции для отправки исходящей почты. Дополнительные сведения см. в [обновлении за ноябрь 2017 г. для усиленной безопасности Azure для отправки электронных сообщений](https://blogs.msdn.microsoft.com/mast/2017/11/15/enhanced-azure-security-for-sending-emails-november-2017-update/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. [в статье Википедии об обратном просмотре DNS](https://en.wikipedia.org/wiki/Reverse_DNS_lookup).
 <br>

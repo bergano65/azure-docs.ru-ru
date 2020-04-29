@@ -1,6 +1,6 @@
 ---
-title: Сценарии для частных зон - Azure DNS
-description: В этой статье узнайте об общих сценариях использования частных зон Azure DNS.
+title: Сценарии для частных зон — Azure DNS
+description: В этой статье описаны распространенные сценарии использования Частные зоны Azure DNS.
 services: dns
 author: rohinkoul
 ms.service: dns
@@ -8,13 +8,13 @@ ms.topic: article
 ms.date: 10/05/2019
 ms.author: rohink
 ms.openlocfilehash: ab850adb2e9a25778d5f44ba711eb0762fe562c8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76939344"
 ---
-# <a name="azure-dns-private-zones-scenarios"></a>Сценарии частных зон Azure DNS
+# <a name="azure-dns-private-zones-scenarios"></a>Сценарии использования частных зон Azure DNS
 
 Частные зоны Azure DNS обеспечивают разрешение имен внутри виртуальной сети и между виртуальными сетями. В этой статье мы рассмотрим несколько распространенных сценариев, которые можно реализовать с помощью этой функции.
 
@@ -47,12 +47,12 @@ ms.locfileid: "76939344"
 
 ![Разрешение имен с "расщеплением горизонта"](./media/private-dns-scenarios/split-brain-resolution.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов).
 
 Узнайте, как создать [частную зону DNS](./private-dns-getstarted-powershell.md) в Azure DNS.
 
-Узнайте о зонах ИБП ИДН, посетив: [DNS зоны и обзор записей.](dns-zones-records.md)
+Сведения о зонах и записях DNS см. в разделе [Общие сведения о зонах и записях DNS](dns-zones-records.md).
 
-Узнайте о других ключевых [сетевых возможностях](../networking/networking-overview.md) Azure.
+Дополнительные сведения о некоторых других ключевых [сетевых возможностях](../networking/networking-overview.md) Azure.
 

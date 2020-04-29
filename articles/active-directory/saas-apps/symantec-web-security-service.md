@@ -1,6 +1,6 @@
 ---
-title: 'Учебник: Настройте службу веб-безопасности Symantec (WSS) для автоматического предоставления пользовательских данных с помощью Active Directory Azure (ru) Документы Майкрософт'
-description: Узнайте, как настроить Active Directory Azure для автоматического предоставления и де-предоставления учетных записей пользователей Symantec Web Security Service (WSS).
+title: Учебник. Настройка Symantec Web Security Service (WSS) для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Symantec Web Security Service (WSS).
 services: active-directory
 documentationcenter: ''
 author: zchia
@@ -16,110 +16,110 @@ ms.topic: article
 ms.date: 07/23/2019
 ms.author: Zhchia
 ms.openlocfilehash: fbd105ca1623512a3c16f3b609374f5c4055898b
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77063124"
 ---
-# <a name="tutorial-configure-symantec-web-security-service-wss-for-automatic-user-provisioning"></a>Учебник: Настройте Службу веб-безопасности Symantec (WSS) для автоматического подготовки пользователей
+# <a name="tutorial-configure-symantec-web-security-service-wss-for-automatic-user-provisioning"></a>Учебник. Настройка Symantec Web Security Service (WSS) для автоматической подготовки пользователей
 
-Цель этого руководства состоит в том, чтобы продемонстрировать шаги, которые будут выполнены в Symantec Web Security Service (WSS) и Azure Active Directory (Azure AD) для настройки Azure AD для автоматического предоставления и де-предоставления пользователей и/или групп ВSymantec Web Security Service (WSS).
+Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить в Symantec Web Security Service (WSS) и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и/или групп в Symantec Web Security Service (WSS).
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения об общих условиях использования продуктов в предварительной версии см. в документе [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * клиент Azure AD;
-* [Арендатор службы веб-безопасности Symantec (WSS)](https://www.websecurity.symantec.com/buy-renew?inid=brmenu_nav_brhome)
-* Учетная запись пользователя в Symantec Web Security Service (WSS) с разрешениями админа.
+* [Клиент Symantec Web Security Service (WSS)](https://www.websecurity.symantec.com/buy-renew?inid=brmenu_nav_brhome)
+* Учетная запись пользователя в Symantec Web Security Service (WSS) с разрешениями администратора.
 
-## <a name="assigning-users-to-symantec-web-security-service-wss"></a>Назначение пользователей службой веб-безопасности Symantec (WSS)
+## <a name="assigning-users-to-symantec-web-security-service-wss"></a>Назначение пользователей в Symantec Web Security Service (WSS)
 
-Активный каталог Azure использует концепцию, называемую *назначениями,* чтобы определить, какие пользователи должны получить доступ к выбранным приложениям. В контексте автоматической подготовки пользователей синхронизируются только пользователи и/или группы, назначенные приложению azure AD.
+Azure Active Directory использует концепцию, называемую *назначениями* , чтобы определить, какие пользователи должны получать доступ к выбранным приложениям. В контексте автоматической подготовки учетных записей пользователей синхронизируются только пользователи и группы, назначенные приложению в Azure AD.
 
-Прежде чем настроить и включить автоматическую подготовку пользователей, необходимо решить, какие пользователи и/или группы в Azure AD нуждаются в доступе к Службе веб-безопасности Symantec (WSS). После решения вы можете назначить этих пользователей и/или групп в Службу веб-безопасности Symantec (WSS), следуя инструкциям здесь:
+Перед настройкой и включением автоматической подготовки пользователей следует решить, каким пользователям и (или) группам в Azure AD требуется доступ к Symantec Web Security Service (WSS). После этого вы можете назначить этих пользователей и (или) группы для Symantec Web Security Service (WSS), следуя приведенным ниже инструкциям.
 * [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
-##  <a name="important-tips-for-assigning-users-to-symantec-web-security-service-wss"></a>Важные советы по назначению пользователей службе веб-безопасности Symantec (WSS)
+##  <a name="important-tips-for-assigning-users-to-symantec-web-security-service-wss"></a>Важные советы по назначению пользователей в Symantec Web Security Service (WSS)
 
-* Для тестирования автоматической конфигурации подготовки пользователей рекомендуется назначить одного пользователя Azure AD службе веб-безопасности Symantec Web Security Service (WSS). Дополнительные пользователи и/или группы можно назначить позднее.
+* Для проверки конфигурации автоматической подготовки пользователей рекомендуется назначить одного пользователя Azure AD в Symantec Web Security Service (WSS). Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя службе web-безопасности Symantec (WSS) необходимо выбрать любую действительную роль приложения (если она имеется) в диалоге о назначении. Пользователи с ролью **доступа по умолчанию** исключены из подготовки.
+* При назначении пользователя в Symantec Web Security Service (WSS) необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="setup-symantec-web-security-service-wss-for-provisioning"></a>Настройка Symantec Web Security Service (WSS) для подготовки
 
-Прежде чем настроить Службу веб-безопасности Symantec (WSS) для автоматического предоставления пользовательских данных с Azure AD, необходимо включить SCIM-подготовку на Службе веб-безопасности Symantec (WSS).
+Перед настройкой Symantec Web Security Service (WSS) для автоматической подготовки пользователей с помощью Azure AD необходимо включить подготовку SCIM в Symantec Web Security Service (WSS).
 
-1. Восвай на [консоль Symantec Web Security Service.](https://portal.threatpulse.com/login.jsp) Перейдите к**службе** **решений** > .
+1. Войдите в [консоль администратора службы веб-безопасности Symantec](https://portal.threatpulse.com/login.jsp). Перейдите к **Solutions** > **службе**решений.
 
-    ![Служба веб-безопасности Symantec (WSS)](media/symantec-web-security-service/service.png)
+    ![Symantec Web Security Service (WSS)](media/symantec-web-security-service/service.png)
 
-2. Перейдите к интеграции > обслуживания**учетной записи** > **Новая интеграция.** **Account Maintenance**
+2. Последовательно выберите пункты >  **Управление учетной записью****Интеграция** > **Новая интеграция**.
 
     ![Symantec Web Security Service (WSS)](media/symantec-web-security-service/acount.png)
 
-3.  Выберите **сторонних пользователей & синхронизации групп.** 
+3.  Выберите сторонние **пользователи & группы синхронизация**. 
 
     ![Symantec Web Security Service](media/symantec-web-security-service/third-party-users.png)
 
-4.  Копирование **URL-адреса SCIM** и **маркера**. Эти значения будут введены в поле **URL-адреса арендатора** и **Secret Token** в вкладке «Обеспечение безопасности веб-службы Symantec» (WSS) на портале Azure.
+4.  Скопируйте **URL-адрес** и **токен**scim. Эти значения будут указаны в поле **URL-адрес клиента** и **секретный токен** на вкладке Подготовка приложения Symantec Web Security Service (WSS) в портал Azure.
 
     ![Symantec Web Security Service](media/symantec-web-security-service/scim.png)
 
-## <a name="add-symantec-web-security-service-wss-from-the-gallery"></a>Добавить Службу веб-безопасности Symantec (WSS) из галереи
+## <a name="add-symantec-web-security-service-wss-from-the-gallery"></a>Добавление Symantec Web Security Service (WSS) из коллекции
 
-Чтобы настроить Службу веб-безопасности Symantec Web Security Service (WSS) для автоматической подготовки пользователей с помощью Azure AD, необходимо добавить службу web-безопасности Symantec Web Security Service (WSS) из галереи приложений Azure AD в список управляемых приложений SaaS.
+Чтобы настроить Symantec Web Security Service (WSS) для автоматической подготовки пользователей с помощью Azure AD, необходимо добавить Symantec Web Security Service (WSS) из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить службу веб-безопасности Symantec (WSS) из галереи приложений Azure AD, выполните следующие действия:**
+**Чтобы добавить Symantec Web Security Service (WSS) из коллекции приложений Azure AD, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** на левой навигационной панели выберите **Active Directory Azure.**
+1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к **корпоративным приложениям,** а затем выберите **все приложения.**
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, выберите кнопку **Нового приложения** в верхней части панели.
+3. Чтобы добавить новое приложение, нажмите кнопку **новое приложение** в верхней части области.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Symantec Web Security Service,** выберите **Службу безопасности Web Symantec** в панели результатов, а затем нажмите кнопку **Добавить,** чтобы добавить приложение.
+4. В поле поиска введите **Symantec Web Security Service**, выберите **Symantec Web Security Service** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![Служба Symantec Web Security Service (WSS) в списке результатов](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-symantec-web-security-service-wss"></a>Настройка автоматической подготовки пользователей к Службе веб-безопасности Symantec (WSS)
+## <a name="configuring-automatic-user-provisioning-to-symantec-web-security-service-wss"></a>Настройка автоматической подготовки пользователей в Symantec Web Security Service (WSS)
 
-В этом разделе вы проведет шаги по настройке службы предоставления AD Azure AD для создания, обновления и отработки пользователей и/или групп в Symantec Web Security Service (WSS) на основе пользовательских и/или групповых назначений в Azure AD.
+В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в Symantec Web Security Service (WSS) на основе назначений пользователей и групп в Azure AD.
 
 > [!TIP]
-> Вы также можете включить SAML на основе одного включения для Symantec Web Security Service (WSS), следуя инструкциям, представленным в [Symantec Web Security Service (WSS) Единый учебник по регистрации.](symantec-tutorial.md) Единый набор может быть настроен независимо от автоматического подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете включить единый вход на основе SAML для Symantec Web Security Service (WSS), следуя инструкциям, приведенным в [руководстве по единому входу в Symantec Web Security Service (WSS)](symantec-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
 
-### <a name="to-configure-automatic-user-provisioning-for-symantec-web-security-service-wss-in-azure-ad"></a>Для настройки автоматической подготовки пользователей для Службы веб-безопасности Symantec (WSS) в Azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-symantec-web-security-service-wss-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для Symantec Web Security Service (WSS) в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения,** затем выберите **все приложения.**
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **службу веб-безопасности Symantec.**
+2. В списке приложений выберите **Symantec Web Security Service**.
 
     ![Ссылка на Symantec Web Security Service (WSS) в списке приложений](common/all-applications.png)
 
-3. Выберите вкладку **«Подготовка».**
+3. Перейдите на вкладку **Подготовка** .
 
-    ![Вкладка подготовки](common/provisioning.png)
+    ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Установите **режим обеспечения** **автоматического.**
+4. Установите для **режима подготовки** значение **автоматически**.
 
-    ![Вкладка подготовки](common/provisioning-automatic.png)
+    ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе "Учетные данные админа" введомые значения **URL-адреса SCIM** и **маркеров,** полученные ранее в **URL-адресе Tenant** и **Secret Token** соответственно. Нажмите **на тестовое соединение,** чтобы обеспечить подключение Azure AD к службе веб-безопасности Symantec. Если соединение не удается, убедитесь, что ваша учетная запись Symantec Web Security Service (WSS) имеет разрешения Admin и повторите попытку.
+5. В разделе Учетные данные администратора введите **URL-адрес scim** и значения **токена** , полученные ранее в поле **URL-адрес клиента** и **секретный токен** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к службе веб-безопасности Symantec. Если подключение не выполняется, убедитесь, что учетная запись Symantec Web Security Service (WSS) имеет разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -127,31 +127,31 @@ ms.locfileid: "77063124"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
-8. В разделе **Картпинги** выберите **синхронизацию активных пользователей каталога Azure в Symantec Web Security Service (WSS).**
+8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Symantec Web Security Service (WSS)**.
 
-    ![Symantec Web Security Service (WSS) Пользовательские картографы](media/symantec-web-security-service/usermapping.png)
+    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/usermapping.png)
 
-9. Просмотрите атрибуты пользователя, синхронизированные с Azure AD с службой веб-безопасности Symantec (WSS) в разделе **«Отображение атрибутов».** Атрибуты, выбранные в качестве свойств **соответствия,** используются для сопоставления учетных записей пользователей в Службе веб-безопасности Symantec (WSS) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Symantec Web Security Service (WSS) в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Symantec Web Security Service (WSS) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Symantec Web Security Service (WSS) Пользовательские картографы](media/symantec-web-security-service/userattribute.png)
+    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/userattribute.png)
 
-10. В разделе **Картпинги** выберите **синхронизацию активных групп каталогов Azure для службы веб-безопасности Symantec.**
+10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Symantec Web Security Service**.
 
-    ![Symantec Web Security Service (WSS) Пользовательские картографы](media/symantec-web-security-service/groupmapping.png)
+    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/groupmapping.png)
 
-11. Просмотрите атрибуты группы, синхронизированные с Azure AD с службой веб-безопасности Symantec (WSS) в разделе **«Отображение атрибутов».** Атрибуты, выбранные в качестве свойств **соответствия,** используются для соответствия группам службы веб-безопасности Symantec (WSS) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **сопоставление атрибутов** Проверьте атрибуты группы, которые синхронизированы из Azure AD в Symantec Web Security Service (WSS). Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Symantec Web Security Service (WSS) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Symantec Web Security Service (WSS) Пользовательские картографы](media/symantec-web-security-service/groupattribute.png)
+    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/groupattribute.png)
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Чтобы включить службу предоставления Услуг Azure AD для Службы веб-безопасности Symantec, измените **статус обеспечения** **в** разделе **«Настройки».**
+13. Чтобы включить службу подготовки Azure AD для Symantec Web Security Service, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-14. Определите пользователей и/или группы, которые вы хотели бы предоставить Службе веб-безопасности Symantec (WSS), выбрав желаемые значения в **разделе Область** в разделе **Параметры.**
+14. Определите пользователей и (или) группы, которые вы хотите подготавливать в Symantec Web Security Service (WSS), выбрав нужные значения в **области** в разделе **Параметры** .
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -159,15 +159,15 @@ ms.locfileid: "77063124"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие синхронизации. Для получения дополнительной информации о том, сколько времени потребуется для пользователей и / или групп для предоставления, посмотреть, [сколько времени потребуется для предоставления пользователям](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
+После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Дополнительные сведения о том, как долго будет выполняться для пользователей и (или) групп, см. в разделе [время, необходимое для предоставления пользователям](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
 
-Вы можете использовать раздел **Текущее состояние** для мониторинга прогресса и отслеживания ссылок на отчет о деятельности, в котором описаны все действия, выполняемые службой предоставления AD Azure AD в Службе веб-безопасности Symantec (WSS). Для получения дополнительной [информации, см.](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) Чтобы прочитать журналы подготовки Azure AD, [см.](../app-provisioning/check-status-user-account-provisioning.md)
+Вы можете использовать **Текущий раздел состояния** для отслеживания хода выполнения и перехода по ссылкам к отчету о действиях по подготовке, в котором описаны все действия, выполняемые службой подготовки Azure AD в Symantec Web Security Service (WSS). Дополнительные сведения см. [в разделе Проверка состояния подготовки пользователей](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). Чтобы прочитать журналы подготовки Azure AD, см. раздел [Создание отчетов об автоматической подготовке учетных записей пользователей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [Что такое доступ к приложениям и единый вход в каталог Azure Active?](../manage-apps/what-is-single-sign-on.md)
+* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
