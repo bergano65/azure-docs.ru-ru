@@ -8,14 +8,14 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/02/2020
 ms.openlocfilehash: ce58aae3b1db1f0f338d353025d4f277aeb6944f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77137492"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
-В этой статье описывается, как запросить и просмотреть все данные журнала Application Insights в одном месте, даже если они находятся в разных подписках Azure, в качестве замены для амортизации разъема Application Insights. Количество ресурсов Application Insights, которые можно включить в один запрос, ограничено 100.
+В этой статье описывается, как запрашивать и просматривать все данные журнала Application Insights в одном месте, даже если они находятся в разных подписках Azure, в качестве замены нерекомендуемых Соединитель Application Insights. Количество Application Insights ресурсов, которые можно включить в один запрос, ограничено 100.
 
 ## <a name="recommended-approach-to-query-multiple-application-insights-resources"></a>Рекомендуемый подход для запроса нескольких ресурсов Application Insights 
 Перечисление нескольких ресурсов Application Insights в запросе может быть весьма трудоемким и трудным в поддержке процессом. Вместо этого вы можете использовать функции для отделения логики запросов и области приложений.  
@@ -27,9 +27,9 @@ ms.locfileid: "77137492"
 Вы можете в любое время изменить список приложений на портале, перейдя к обозревателю запросов в рабочей области и выбрав функцию для редактирования с последующим сохранением, или с помощью командлета PowerShell `SavedSearch`. 
 
 >[!NOTE]
->Этот метод не может использоваться с оповещениями о журналах, поскольку проверка доступа ресурсов правила оповещения, включая рабочие области и приложения, выполняется во время создания оповещения. Добавление новых ресурсов в функцию после того, как создание оповещения не поддерживается. Если вы предпочитаете использовать функцию для отслеживания ресурсов в оповещениях о журналах, необходимо отсеивать правило оповещения на портале или с помощью шаблона Resource Manager для обновления ресурсов. Кроме того, можно включить список ресурсов в запрос оповещения о журналах.
+>Этот метод нельзя использовать с оповещениями журнала, так как проверка доступа к ресурсам правила генерации оповещений, включая рабочие области и приложения, выполняется во время создания предупреждения. Добавление новых ресурсов в функцию после создания предупреждения не поддерживается. Если вы предпочитаете использовать функцию для определения области ресурсов в оповещениях журнала, необходимо изменить правило генерации оповещений на портале или с помощью шаблона диспетчер ресурсов, чтобы обновить ресурсы с областью действия. Кроме того, можно включить список ресурсов в запрос оповещения журнала.
 
-Команда `withsource= SourceApp` позволяет добавить в результаты столбец, который обозначает приложение, отправившее журнал. Оператор разбора неявляется в этом примере и использует для извлечения имени приложения из свойства SourceApp. 
+Команда `withsource= SourceApp` позволяет добавить в результаты столбец, который обозначает приложение, отправившее журнал. Оператор Parse необязателен в этом примере и использует для извлечения имени приложения из свойства Саурцеапп. 
 
 ```
 union withsource=SourceApp 
@@ -70,7 +70,7 @@ applicationsScoping
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
 | AvailabilityDuration | длительность |
-| AvailabilityMessage | message |
+| AvailabilityMessage | сообщение |
 | AvailabilityRunLocation | location |
 | AvailabilityTestId | идентификатор |
 | AvailabilityTestName | name |
@@ -87,11 +87,11 @@ applicationsScoping
 | DeviceType | client_Type | 
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
-| ExceptionMessage | message | 
+| ExceptionMessage | сообщение | 
 | ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| OS | client_OS | 
+| ОС | client_OS | 
 | PageViewCount | itemCount |
 | PageViewDuration | длительность | 
 | PageViewName | name | 
@@ -110,6 +110,6 @@ applicationsScoping
 | URL-адрес | url |
 | UserAccountId | user_AccountId |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

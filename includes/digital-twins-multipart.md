@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: digital-twins
 ms.author: alinast
@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 02/07/2020
 ms.custom: include file
 ms.openlocfilehash: 0e7cb7e4aaa9862a2b4af51593c29793ea54dd14
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77111235"
 ---
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "77111235"
 > * Заголовок **Content-Type**:
 >   * `application/json; charset=utf-8`
 >   * `multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`
-> * **Содержание-Диспозиция**:
+> * **Расстановка содержимого**:
 >   * `form-data; name="metadata"`
 > * Содержимое файла для отправки.
 >

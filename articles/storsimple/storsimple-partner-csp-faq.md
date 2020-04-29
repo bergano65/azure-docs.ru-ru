@@ -1,5 +1,5 @@
 ---
-title: 'Часто задаваемые вопросы для партнеров: StorSimple для программы поставщиков облачных решений'
+title: 'Вопросы и ответы для партнеров: StorSimple для программы поставщика облачных решений'
 description: Ответы на некоторые распространенные вопросы о StorSimple и партнерской программе CSP.
 services: storsimple
 documentationcenter: NA
@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
 ms.openlocfilehash: eaf22773e581f0b7557a64917e183573039d1cef
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77116167"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple для программы поставщиков облачных решений — часто задаваемые вопросы
@@ -63,7 +63,7 @@ ms.locfileid: "77116167"
 - Также партнеры могут разработать новые бизнес-модели предоставления управляемых служб.
 
 ### <a name="what-are-the-incentives-available-for-storsimple-csp-partners-do-i-qualify-for-any-csp-program-incentives"></a>Какие вознаграждения предлагаются для партнеров StorSimple CSP? Могу ли я получить вознаграждения по программе CSP?
-Для получения информации о стимулах, перейдите на [программы CSP стимулы](https://partner.microsoft.com/en-US/cloud-solution-provider/program-details).
+Сведения о поощрениях см. на странице [поощрения программы CSP](https://partner.microsoft.com/en-US/cloud-solution-provider/program-details).
 
 
 ## <a name="deploy-and-manage-storsimple-as-a-partner"></a>Развертывание решений StorSimple и управление ими в качестве партнера
@@ -94,8 +94,8 @@ ms.locfileid: "77116167"
 Дополнительные сведения о StorSimple по программе CSP вы найдете на следующих страницах.
 
 - [Программа поставщиков облачных решений корпорации Майкрософт](https://partner.microsoft.com/Membership)
-- [Партнерский центр](https://partnercenter.microsoft.com/) 
+- [Центр партнеров](https://partnercenter.microsoft.com/) 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).
