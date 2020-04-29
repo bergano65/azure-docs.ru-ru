@@ -1,15 +1,15 @@
 ---
-title: 'Быстрый запуск: Опубликовать базу знаний, REST, Python - NA Maker'
+title: Краткое руководство. Публикация базы знаний, RESTFUL, Python — QnA Maker
 description: В этом кратком руководстве по началу работы с Python и REST описывается, как опубликовать базу знаний и создать конечную точку, которую можно вызвать в приложении или чат-боте.
 ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: conceptual
 ms.openlocfilehash: 6f053ecbd58d3c2527c1b904437dcc4715c76af1
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78851655"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-python"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью Python
@@ -68,7 +68,7 @@ python publish-kb-3x.py
 
 [!INCLUDE [Clean up files and knowledge base](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Опубликовав базу знаний, вам нужно использовать [URL-адрес конечной точки для создания ответа](./get-answer-from-knowledge-base-python.md).
 

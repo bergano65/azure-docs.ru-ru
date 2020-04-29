@@ -1,7 +1,7 @@
 ---
-title: Настройка туннеля пользователя Always-On VPN
+title: Настройка постоянного туннеля VPN-пользователя
 titleSuffix: Azure VPN Gateway
-description: В этой статье описывается, как настроить всегда на VPN пользовательского туннеля для вашего VPN шлюза
+description: В этой статье описывается, как настроить туннель VPN пользователя Always On для VPN-шлюза.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/12/2020
 ms.author: cherylmc
 ms.openlocfilehash: 56934dd13661d8f623e673e2817e87618675c7ed
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79502274"
 ---
 # <a name="configure-an-always-on-vpn-user-tunnel"></a>Настройка туннеля Always On VPN для пользователя
@@ -21,7 +21,7 @@ ms.locfileid: "79502274"
 
 ## <a name="configure-the-gateway"></a>Настройка шлюза
 
- Используйте инструкции в [статье Настройка VPN-соединения от точки к сайту](vpn-gateway-howto-point-to-site-resource-manager-portal.md) для настройки VPN шлюза для использования IKEv2 и проверки подлинности на основе сертификатов.
+ Используйте инструкции из статьи [Настройка VPN-подключения типа "точка — сеть](vpn-gateway-howto-point-to-site-resource-manager-portal.md) ", чтобы настроить VPN-шлюз для использования проверки подлинности IKEv2 и на основе сертификата.
 
 ## <a name="configure-a-user-tunnel"></a>Настройка пользовательского туннеля
 
@@ -29,7 +29,7 @@ ms.locfileid: "79502274"
 
 ## <a name="to-remove-a-profile"></a>Удаление профиля
 
-Чтобы удалить профиль, используйте следующие действия:
+Чтобы удалить профиль, выполните следующие действия.
 
 1. Выполните следующую команду:
 
@@ -37,10 +37,10 @@ ms.locfileid: "79502274"
    C:\> Remove-VpnConnection UserTest  
    ```
 
-1. Отключите соединение и автоматически очистите флажок **Connect.**
+1. Отключите подключение и снимите флажок **подключиться автоматически** .
 
    ![Очистка](./media/vpn-gateway-howto-always-on-user-tunnel/disconnect.jpg)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы устранить любые проблемы [Azure point-to-site connection problems](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)с подключением, которые могут возникнуть, см.
+Сведения об устранении проблем с подключением, которые могут возникнуть, см. в статье [проблемы с подключением "точка — сеть](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)" в Azure.

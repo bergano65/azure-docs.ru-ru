@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
 ms.openlocfilehash: 1805f6f7a61f7e0b0a6e4d5bd6931c0a7d1f1b6f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79220317"
 ---
 # <a name="searching-for-entities-with-the-bing-entity-api"></a>Поиск сущностей с помощью API Bing для сущностей
@@ -331,6 +331,6 @@ ms.locfileid: "79220317"
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы приступить к поиску сущностей с помощью API Поиска сущностей Bing, ознакомьтесь с [этим кратким руководством](../quickstarts/csharp.md).

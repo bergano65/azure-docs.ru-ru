@@ -1,7 +1,7 @@
 ---
 title: Обнаружение торговых марок с помощью API компьютерного зрения
 titleSuffix: Azure Cognitive Services
-description: В этой статье обсуждается специализированный режим обнаружения объектов; обнаружения бренда и/или логотипа с помощью API компьютерного зрения.
+description: В этой статье рассматривается специализированный режим обнаружения объектов. определение торговой марки и/или логотипа с помощью API компьютерного зрения.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: pafarley
 ms.openlocfilehash: 50e4fe1e2573c8566bbdf5697bb81b025a00935c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80131741"
 ---
-# <a name="detect-popular-brands-in-images"></a>Обнаружение популярных брендов в изображениях
+# <a name="detect-popular-brands-in-images"></a>Обнаружение популярных торговых марок в изображениях
 
 Обнаружение торговых марок — это специализированный режим [обнаружения объектов](concept-object-detection.md), который использует базу данных тысяч международных логотипов для идентификации коммерческих торговых марок на изображениях или видео. Вы можете использовать эту функцию, например, чтобы узнать, какие торговые марки наиболее популярны в социальных сетях или наиболее распространены при размещении медиа-продуктов.
 
@@ -74,7 +74,7 @@ ms.locfileid: "80131741"
 
 ## <a name="use-the-api"></a>Использование API
 
-Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включить `Brands` в параметр запроса **visualFeatures.** Затем, когда вы получите полный ответ JSON, просто разогнайте строку для содержимого раздела. `"brands"`
+Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Brands` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"brands"` раздела.
 
-* [Быстрый запуск: Компьютерное зрение .NET SDK](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-* [Быстрый запуск: Проанализируйте изображение (REST API)](./quickstarts/csharp-analyze.md)
+* [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+* [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

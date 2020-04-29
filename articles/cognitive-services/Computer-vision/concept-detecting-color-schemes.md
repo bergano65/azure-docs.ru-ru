@@ -1,5 +1,5 @@
 ---
-title: Обнаружение цветовой схемы - Компьютерное зрение
+title: Обнаружение цветовых схем — Компьютерное зрение
 titleSuffix: Azure Cognitive Services
 description: Понятия, связанные с определением цветовых схем на изображениях с помощью API компьютерного зрения.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: af0c39ed8211ac2041d143112437ad5d6b384259
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80244738"
 ---
 # <a name="detect-color-schemes-in-images"></a>Обнаружение цветовых схем на изображениях
@@ -30,7 +30,7 @@ ms.locfileid: "80244738"
 
 В приведенном ниже примере показан ответ JSON, возвращаемый компьютерным зрением при определении цветовой схемы на образце изображения. В этом случае изображение не является черно-белым, но преобладающий цвет переднего плана и фона — черный, а преобладающие цвета изображения в целом — черный и белый.
 
-![Гора на открытом воздухе на закате, с силуэтом человека](./Images/mountain_vista.png)
+![Наружный Mountain на закате с силуэтом человека](./Images/mountain_vista.png)
 
 ```json
 {
@@ -80,7 +80,7 @@ ms.locfileid: "80244738"
 
 ## <a name="use-the-api"></a>Использование API
 
-Функция обнаружения цветовой гаммы является частью API [анализа изображений.](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включить `Color` в параметр запроса **visualFeatures.** Затем, когда вы получите полный ответ JSON, просто разогнайте строку для содержимого раздела. `"color"`
+Функция обнаружения цветовых схем является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Color` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"color"` раздела.
 
-* [Быстрый запуск: Компьютерное зрение .NET SDK](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-* [Быстрый запуск: Проанализируйте изображение (REST API)](./quickstarts/csharp-analyze.md)
+* [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+* [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

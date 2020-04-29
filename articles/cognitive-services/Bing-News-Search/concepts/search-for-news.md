@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: scottwhi
 ms.openlocfilehash: 6fa12febe99e77efde45bcd2d538de78f618e641
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79220328"
 ---
 # <a name="search-for-news-with-the-bing-news-search-api"></a>Поиск новостей с помощью API Bing для поиска новостей
@@ -261,7 +261,7 @@ Host: api.cognitive.microsoft.com
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Разбивка на страницы результатов, возвращаемых Поиском новостей Bing](../paging-news.md)

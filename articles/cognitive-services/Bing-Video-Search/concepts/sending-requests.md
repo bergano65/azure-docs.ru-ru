@@ -1,5 +1,5 @@
 ---
-title: Отправка запросов на поиск в API поиска Bing
+title: Отправка поисковых запросов в API Bing для поиска видео
 titleSuffix: Azure Cognitive Services
 description: В этой статье описаны параметры и атрибуты запросов, отправляемых в API Bing для поиска видео, а также возвращаемый объект ответа в формате JSON.
 services: cognitive-services
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: aahi
 ms.openlocfilehash: b27aa1409d543c157069d2701c49ef54a097e552
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79220295"
 ---
 # <a name="sending-search-requests-to-the-bing-video-search-api"></a>Отправка поисковых запросов в API Bing для поиска видео
@@ -46,10 +46,10 @@ https://api.cognitive.microsoft.com/bing/v7.0/videos/search
   
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:  
   
--   [Пользователь-агент](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#useragent)  
+-   [Агент пользователя](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#useragent)  
 -   [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientid)  
 -   [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientip)  
--   [X-Поиск-Местоположение](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#location)  
+-   [X-Search-расположение](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#location)  
 
 Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.  
 
@@ -145,7 +145,7 @@ BingAPIs-Market: en-US
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Проверьте, как работает API. Перейдите на страницу [консоли тестирования API для поиска видео](https://dev.cognitive.microsoft.com/docs/services/56b43f3ccf5ff8098cef3809/operations/58113fe5e31dac0a1ce6b0a8). 
 

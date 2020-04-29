@@ -1,7 +1,7 @@
 ---
-title: Регионы - Речевая служба
+title: Регионы — служба речи
 titleSuffix: Azure Cognitive Services
-description: Список доступных регионов и конечных точек для речевой службы, включая речевой текст, текст к речи и речевой перевод.
+description: Список доступных регионов и конечных точек для службы речи, включая преобразование речи в текст, озвучивание текста в речь и перевод речи.
 services: cognitive-services
 author: mahilleb-msft
 manager: nitinme
@@ -12,33 +12,33 @@ ms.date: 11/05/2019
 ms.author: panosper
 ms.custom: seodec18
 ms.openlocfilehash: 560575ca7f51218e472abecb4319f4a3db69b1ff
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79220471"
 ---
-# <a name="speech-service-supported-regions"></a>Речевая служба поддерживает регионы
+# <a name="speech-service-supported-regions"></a>Регионы, поддерживаемые речевыми службами
 
 Служба "Речь" позволяет приложению преобразовывать звук в текст, а также выполнять перевод речи и преобразование текста в речь. Служба доступна в нескольких регионах с использованием уникальных конечных точек для REST API и пакета SDK службы "Речь".
 
-Портал Речи для выполнения пользовательских конфигураций для вашего речевого опыта для всех регионов доступен здесь:https://speech.microsoft.com
+Портал речевого ввода для выполнения пользовательских конфигураций в речевом интерфейсе для всех регионов доступен здесь:https://speech.microsoft.com
 
-Для вызовов службы Speech убедитесь, что вызов соответствует региону для вашей подписки.
+Для вызовов службы речи убедитесь, что вызов соответствует региону для вашей подписки.
 
 ## <a name="speech-sdk"></a>Пакет SDK для службы "Речь"
 
 В [пакете SDK для службы "Речь"](speech-sdk.md) регионы указанны в виде строки (например, в качестве параметра `SpeechConfig.FromSubscription` в пакете SDK службы "Речь" для C#).
 
-### <a name="speech-to-text-text-to-speech-and-translation"></a>От речи к тексту, тексту к речи и переводу
+### <a name="speech-to-text-text-to-speech-and-translation"></a>Преобразование речи в текст, преобразования текста в речь и перевода
 
-Портал речевой настройки доступен здесь:https://speech.microsoft.com
+Портал настройки речи доступен здесь:https://speech.microsoft.com
 
-Служба речевой речи доступна в этих регионах для **распознавания речи,** **текст к речи**, и **перевод**:
+Служба распознавания речи доступна в этих регионах для **распознавания речи**, преобразования **текста в речь**и **перевода**:
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-region-identifier.md)]
 
-При использовании [речи SDK](speech-sdk.md)регионы определяются **идентификатором** Региона `SpeechConfig.FromSubscription`(например, в качестве параметра). Убедитесь, что регион соответствует региону вашей подписки.
+Если используется [речевой пакет SDK](speech-sdk.md), регионы задаются с помощью **идентификатора региона** (например, в качестве параметра `SpeechConfig.FromSubscription`). Убедитесь, что регион соответствует региону подписки.
 
 ### <a name="intent-recognition"></a>Распознавание намерений
 
@@ -63,7 +63,7 @@ ms.locfileid: "79220471"
 
 ### <a name="voice-assistants"></a>Голосовые помощники
 
-[Speech SDK](speech-sdk.md) поддерживает возможности **голосового помощника** в следующих регионах:
+[Пакет SDK для распознавания речи](speech-sdk.md) поддерживает возможности **голосового помощника** в следующих регионах:
 
 | Регион         | Идентификатор региона |
 | -------------- | -------------------- |
@@ -81,15 +81,15 @@ ms.locfileid: "79220471"
 
 ### <a name="speech-to-text"></a>Преобразование речи в текст
 
-Для справочной документации от [Speech-to-text REST API](rest-speech-to-text.md)речи к тексту см.
+Справочную документацию по голосовым документам см. [в разделе REST API преобразования речи в текст](rest-speech-to-text.md).
 
-Конечная точка для REST API имеет такой формат:
+Конечная точка для REST API имеет следующий формат:
 
 ```
 https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1
 ```
 
-Замените `<REGION_IDENTIFIER>` идентификатор, соответствующий области подписки из этой таблицы:
+Замените `<REGION_IDENTIFIER>` идентификатором, соответствующим региону подписки, из следующей таблицы:
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-region-identifier.md)]
 
@@ -98,6 +98,6 @@ https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversa
 
 ### <a name="text-to-speech"></a>Преобразование текста в речь
 
-Для справочной документации по [Text-to-speech REST API](rest-text-to-speech.md)тексту к речи см.
+Справочную документацию по тексту в речь см. [в разделе REST API преобразования текста в речь](rest-text-to-speech.md).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-text-to-speech.md)]

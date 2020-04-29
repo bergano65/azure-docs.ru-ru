@@ -1,7 +1,7 @@
 ---
-title: Перевод речи с речевой службой
+title: Трансляция речи с помощью речевых служб
 titleSuffix: Azure Cognitive Services
-description: Служба речи позволяет добавлять сквозной многоязычный перевод речи в приложения, инструменты и устройства в режиме реального времени. Один API можно использовать как для преобразования речи в речь, так и для преобразования речи в текст.
+description: Служба распознавания речи позволяет добавлять в приложения, средства и устройства в реальном времени многоязыковый перевод речи. Один API можно использовать как для преобразования речи в речь, так и для преобразования речи в текст.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -11,63 +11,63 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: erhopf
 ms.openlocfilehash: f51288da6af3580ba7592950cde4f17d7adad529
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80052621"
 ---
 # <a name="what-is-speech-translation"></a>Что такое перевод речи?
 
 [!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
-Перевод речи с речевого сервиса позволяет в режиме реального времени, многоязычный речевой перевод и перевод аудиопотоков в режиме реального времени. С помощью Speech SDK ваши приложения, инструменты и устройства имеют доступ к исходным транскрипциям и выводам перевода для предоставленного аудио. Промежуточные результаты транскрипции и перевода возвращаются по мере обнаружения речи, а результаты финала могут быть преобразованы в синтезированную речь.
+Трансляция речи из службы распознавания речи обеспечивает преобразование речевых потоков в реальном времени, многоязыковую речь и преобразования речи в текст. С помощью пакета SDK для распознавания речи приложения, средства и устройства имеют доступ к транскрипции источника и выходам перевода для предоставленного звука. Промежуточные записи и результаты перевода возвращаются при обнаружении речи, а окончательные результаты могут быть преобразованы в синтезированный речевой режим.
 
-Механизм перевода Microsoft работает на двух различных подходах: статистический машинный перевод (SMT) и нейронный машинный перевод (NMT). СМТ использует передовой статистический анализ для оценки наилучших возможных переводов с учетом контекста нескольких слов. С NMT нейронные сети используются для обеспечения более точного, естественного звучания переводов, используя полный контекст предложений для перевода слов.
+Модуль перевода Майкрософт работает на основе двух разных подходов: статистического преобразования машин (SMT) и машинного перевода (НМТ). SMT использует расширенный статистический анализ для оценки лучших возможных переводов, учитывая контекст нескольких слов. С помощью НМТ нейронные сети используются для предоставления более точных и естественных переводов с помощью полного контекста предложений для перевода слов.
 
-Сегодня корпорация Майкрософт использует NMT для перевода на самые популярные языки. Все [языки, доступные для преобразования речи в речь](language-support.md#speech-translation), обрабатываются на платформе NMT. Преобразование речи в текст может выполняться на SMT или NMT в зависимости от конкретной пары языков. Когда целевой язык поддерживается NMT, полный перевод работает на базе NMT. Когда целевой язык не поддерживается NMT, перевод представляет собой гибрид NMT и SMT, используя английский язык в качестве "поворота" между двумя языками.
+Сегодня Корпорация Майкрософт использует НМТ для перевода на большинство популярных языков. Все [языки, доступные для преобразования речи в речь](language-support.md#speech-translation), обрабатываются на платформе NMT. Преобразование речи в текст может выполняться на SMT или NMT в зависимости от конкретной пары языков. Если целевой язык поддерживается НМТ, то полный перевод НМТ. Если целевой язык не поддерживается НМТ, перевод является гибридом НМТ и SMT с использованием английского языка в качестве "Pivot" между двумя языками.
 
-## <a name="core-features"></a>Основные функции
+## <a name="core-features"></a>Основные компоненты
 
-Вот функции, доступные через речь SDK и REST AIS:
+Ниже приведены функции, доступные через пакет SDK для распознавания речи и интерфейсы API-интерфейсов.
 
 | Вариант использования | SDK | REST |
 |----------|-----|------|
-| Перевод речи к тексту с результатами распознавания. | Да | нет |
-| Перевод речи к речи. | Да | нет |
-| Промежуточные результаты распознавания и перевода. | Да | нет |
+| Преобразование речи в текст с результатами распознавания. | Да | Нет |
+| Преобразование речи в речь. | Да | Нет |
+| Промежуточные результаты распознавания и перевода. | Да | Нет |
 
-## <a name="get-started-with-speech-translation"></a>Начало с речевого перевода
+## <a name="get-started-with-speech-translation"></a>Начало работы с переводом речи
 
-Мы предлагаем quickstarts разработан, чтобы вы работаете код менее чем за 10 минут. Эта таблица включает в себя список речевого перевода quickstarts организованы по языку.
+Мы предлагаем краткие руководства, предназначенные для выполнения кода менее чем через 10 минут. В этой таблице содержится список кратких руководств по языку для перевода речи.
 
-| Краткое руководство | Платформа | Справочник по интерфейсам API |
+| Краткое руководство | Платформа | Справочник по API |
 |------------|----------|---------------|
-| [C, Ядро .NET](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [СЗ, Рамочная программа .NET](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnet) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [СЗ, UWP](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=uwp) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, .NET Core](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, .NET Framework](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnet) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, UWP](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=uwp) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
 | [C++](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-cpp&tabs=windows) | Windows | [Обзор](https://aka.ms/csspeech/cppref)|
 | [Java](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-java&tabs=jre) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
 
 ## <a name="sample-code"></a>Образец кода
 
-Пример кода для речи SDK доступен на GitHub. Эти образцы охватывают общие сценарии, такие как чтение аудио из файла или потока, непрерывное распознавание/перевод с одним выстрелом и работа с пользовательскими моделями.
+Пример кода для пакета SDK для распознавания речи доступен на сайте GitHub. В этих примерах рассматриваются распространенные сценарии, такие как чтение звука из файла или потока, непрерывное распознавание и преобразование с одним снимком, а также работа с пользовательскими моделями.
 
-* [Образцы речи к тексту и перевода (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
+* [Примеры преобразования речи в текст и перевода (пакет SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
 
 ## <a name="migration-guides"></a>Руководства по переносу
 
-Если приложения, инструменты или продукты используют [API-сообщение Translator Speech,](https://docs.microsoft.com/azure/cognitive-services/translator-speech/overview)мы создали руководства, которые помогут вам перейти на службу speech.
+Если приложения, средства или продукты используют [API перевода речи](https://docs.microsoft.com/azure/cognitive-services/translator-speech/overview), мы создали руководства, которые помогут вам перейти на службу речи.
 
-* [Миграция из API речи переводчика в службу речи](how-to-migrate-from-translator-speech-api.md)
+* [Миграция из API перевода речи в службу речи](how-to-migrate-from-translator-speech-api.md)
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [Пакет SDK для службы "Речь"](speech-sdk-reference.md)
-* [Пакет SDK для устройств, подключаемых к службе "Речь"](speech-devices-sdk.md)
-* [REST API: От речи к тексту](rest-speech-to-text.md)
-* [REST API: Текст к речи](rest-text-to-speech.md)
-* [REST API: Транскрипция и настройка пакета](https://westus.cris.ai/swagger/ui/index)
+* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
+* [Пакет SDK для речевых устройств](speech-devices-sdk.md)
+* [REST API: Преобразование речи в текст](rest-speech-to-text.md)
+* [REST API: Преобразование текста в речь](rest-text-to-speech.md)
+* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

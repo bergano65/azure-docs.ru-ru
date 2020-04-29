@@ -11,23 +11,23 @@ ms.topic: reference
 ms.date: 09/24/2019
 ms.author: diberry
 ms.openlocfilehash: 96440bf0e9c26e6f222f3bc94c8fabb0bc8f488d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79220559"
 ---
-# <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Языковая поддержка ресурсов и баз знаний NA Maker
+# <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Поддержка языков для QnA Maker ресурсов и баз знаний
 
-Язык службы выбирается при создании первой базы знаний в ресурсе. Все дополнительные базы знаний в ресурсе должны быть на одном языке. 
+Язык для службы выбирается при создании первой базы знаний в ресурсе. Все дополнительные базы знаний в ресурсе должны быть на одном языке. 
 
-Язык определяет релевантность результатов, которые предоставляет компания «NA Maker» в ответ на запросы пользователей.
+Язык определяет релевантность результатов QnA Maker предоставляемых в ответ на запросы пользователя.
 
-Узнайте больше о [влиянии выбора языка.](../how-to/language-knowledge-base.md)
+Дополнительные сведения о [влиянии выбора языка](../how-to/language-knowledge-base.md).
 
 ## <a name="languages-supported"></a>Поддерживаемые языки
 
-Следующий список содержит языки, поддерживаемые для ресурса NA Maker. 
+В следующем списке содержатся языки, поддерживаемые для ресурса QnA Maker. 
 
 |Язык|
 |--|
@@ -85,7 +85,7 @@ ms.locfileid: "79220559"
 |Урду|
 |Вьетнамский|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Выбор языка](../how-to/language-knowledge-base.md)

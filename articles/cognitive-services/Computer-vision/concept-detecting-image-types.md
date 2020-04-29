@@ -1,5 +1,5 @@
 ---
-title: Обнаружение типа изображения - Компьютерное зрение
+title: Обнаружение типа изображения — Компьютерное зрение
 titleSuffix: Azure Cognitive Services
 description: Понятия, связанные с функцией определения типа изображений API компьютерного зрения.
 services: cognitive-services
@@ -12,21 +12,21 @@ ms.date: 03/11/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 4e6c2db5333962d7ae43534998ffc1c48b0dba45
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80244568"
 ---
 # <a name="detecting-image-types-with-computer-vision"></a>Определение типов изображений с помощью API компьютерного зрения
 
-С помощью [API-анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) Computer Vision может анализировать тип содержимого изображений, указывая, является ли изображение искусством клипа или рисунком линии.
+С помощью API [анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) компьютерное зрение может анализировать тип содержимого изображений, указывая, является ли изображение картинкой или графиком.
 
 ## <a name="detecting-clip-art"></a>Определение картинки
 
 Компьютерное зрение анализирует изображение и оценивает вероятность того, что оно является картинкой, по шкале от 0 до 3, как показано в таблице ниже.
 
-| Значение | Значение |
+| Применение | Значение |
 |-------|---------|
 | 0 | не картинка |
 | 1 | Неоднозначно |
@@ -115,7 +115,7 @@ ms.locfileid: "80244568"
 
 ## <a name="use-the-api"></a>Использование API
 
-Функция обнаружения типа изображения является частью API [анализа изображений.](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включить `ImageType` в параметр запроса **visualFeatures.** Затем, когда вы получите полный ответ JSON, просто разогнайте строку для содержимого раздела. `"imageType"`
+Функция обнаружения типов изображений является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `ImageType` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"imageType"` раздела.
 
-* [Быстрый запуск: Компьютерное зрение .NET SDK](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-* [Быстрый запуск: Проанализируйте изображение (REST API)](./quickstarts/csharp-analyze.md)
+* [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+* [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

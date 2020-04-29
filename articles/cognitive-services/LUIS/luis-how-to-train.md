@@ -1,5 +1,5 @@
 ---
-title: Поезд приложение - LUIS
+title: Обучение App-LUIS
 titleSuffix: Azure Cognitive Services
 description: Обучение версии приложения Интеллектуальной службы распознавания речи (LUIS) позволяет улучшить распознавание естественного языка. Следует обучать приложение LUIS после обновления модели, например добавления, изменения, пометки или удаления сущностей, намерений или фраз.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: diberry
 ms.openlocfilehash: 1da8ab3015730c6b3e1962301a34b1ad43b1aad6
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79219866"
 ---
 # <a name="train-your-active-version-of-the-luis-app"></a>Обучение активной версии приложения LUIS 
@@ -34,19 +34,19 @@ ms.locfileid: "79219866"
 
 1. В приложении выберите **Обучить** на панели сверху. 
 
-1. По завершении обучения в верхней части браузера появляется уведомление.
+1. По завершении обучения в верхней части браузера появится уведомление.
 
 ## <a name="training-date-and-time"></a>Дата и время обучения
 
-Дата и время обучения GMT No 2. 
+Дата и время обучения — GMT + 2. 
 
 ## <a name="train-with-all-data"></a>Обучение на основе всех данных
 
-При обучении используется небольшой процент отрицательных выборок. Если вы хотите использовать все данные вместо небольшой отрицательной выборки, используйте [API.](#version-settings-api-use-of-usealltrainingdata)
+При обучении используется небольшой процент отрицательных выборок. Если вы хотите использовать все данные вместо небольшой отрицательной выборки, используйте [API](#version-settings-api-use-of-usealltrainingdata).
 
-### <a name="version-settings-api-use-of-usealltrainingdata"></a>Настройки настройки версии API использования UseAllTrainingData
+### <a name="version-settings-api-use-of-usealltrainingdata"></a>Параметры версии API использования Усеаллтраинингдата
 
-Используйте [API параметров версии](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с набором `UseAllTrainingData` для того, чтобы отключить эту функцию. 
+Используйте [API параметров версии](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с параметром `UseAllTrainingData` , имеющим значение true, чтобы отключить эту функцию. 
 
 ## <a name="unnecessary-training"></a>Необязательное обучение
 
@@ -58,7 +58,7 @@ ms.locfileid: "79219866"
 
 Чтобы узнать о завершении обучения, необходимо выполнять опрос состояния до тех пор, пока все модели не будут успешно обучены. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Интерактивное тестирование](luis-interactive-test.md)
 * [Пакетное тестирование](luis-how-to-batch-test.md)
