@@ -1,6 +1,6 @@
 ---
 title: Схема NetworkConfiguration для облачных служб Azure | Документация Майкрософт
-description: Узнайте о элементах детской конфигурации NetworkConfiguration файла конфигурации службы, который определяет значения виртуальной сети и DNS.
+description: Сведения о дочерних элементах элемента NetworkConfiguration в файле конфигурации службы, который указывает виртуальную сеть и значения DNS.
 ms.custom: ''
 ms.date: 12/07/2016
 services: cloud-services
@@ -10,10 +10,10 @@ caps.latest.revision: 28
 author: tgore03
 ms.author: tagore
 ms.openlocfilehash: 695ba3acfd5af8797de6e6f7454e493d7863627c
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79529294"
 ---
 # <a name="azure-cloud-services-config-networkconfiguration-schema"></a>Схема элемента конфигурации NetworkConfiguration для облачных служб Azure
@@ -73,5 +73,5 @@ ms.locfileid: "79529294"
 | Подсеть | Необязательный параметр. Указывает подсеть, которая определена в файле конфигурации сети. Имя подсети определяется строковым значением атрибута `name`.|
 | ReservedIP | Необязательный параметр. Указывает зарезервированный IP-адрес, который должен быть связан с этим развертыванием. Чтобы использовать зарезервированный IP-адрес, его необходимо создать. Каждое развертывание в облачной службе можно связать с одним зарезервированным IP-адресом. Имя зарезервированного IP-адреса определяется строковым значением атрибута `name`.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Схема конфигурации облачных служб (классических)](schema-cscfg-file.md)

@@ -1,6 +1,6 @@
 ---
-title: 'Azure VPN Gateway: О профилях клиентов P2S VPN'
-description: Это поможет вам работать с файлом профиля клиента
+title: 'VPN-шлюз Azure: Общие сведения о профилях VPN-клиента P2S'
+description: Это поможет вам работать с файлом клиентского профиля.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -8,20 +8,20 @@ ms.topic: article
 ms.date: 03/17/2020
 ms.author: cherylmc
 ms.openlocfilehash: b78d32dbb7b4e0d9a3b13ff741e6e38c12be0e62
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79528512"
 ---
-# <a name="about-p2s-vpn-client-profiles"></a>О профилях клиентов P2S VPN
+# <a name="about-p2s-vpn-client-profiles"></a>О профилях VPN-клиента P2S
 
-Загруженный файл профиля содержит информацию, необходимую для настройки VPN-соединения. Эта статья поможет вам получить и понять информацию, необходимую для профиля клиента VPN.
+Скачанный файл профиля содержит сведения, необходимые для настройки VPN-подключения. Эта статья поможет вам получить и понять сведения, необходимые для профиля клиента VPN.
 
 [!INCLUDE [client profiles](../../includes/vpn-gateway-vwan-vpn-profile-download.md)]
 
-* **Папка OpenVPN** содержит профиль *ovpn,* который необходимо модифицировать, чтобы включить ключ и сертификат. Для получения дополнительной [Configure OpenVPN clients for Azure VPN Gateway](vpn-gateway-howto-openvpn-clients.md#windows)информации см. Эта папка не будет присутствовать в почтовом файле, если аутентификация Azure AD выбрана на шлюзе VPN. Вместо этого, azurevpnconfig.xml будет в папке AzureVPN.
+* **Папка опенвпн** содержит профиль *ОВПН* , который необходимо изменить, чтобы включить ключ и сертификат. Дополнительные сведения см. в статье [Настройка клиентов опенвпн для VPN-шлюза Azure](vpn-gateway-howto-openvpn-clients.md#windows). Если на VPN-шлюзе выбрана проверка подлинности Azure AD, эта папка не будет находиться в файле zip. Вместо этого азуревпнконфиг. XML будет находиться в папке AzureVPN.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения дополнительной информации о пункте к сайту, [см.](point-to-site-about.md)
+Дополнительные сведения о "точка — сеть" см. в разделе [сведения о точках на](point-to-site-about.md)узел.

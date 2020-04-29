@@ -1,6 +1,6 @@
 ---
 title: Схема определения облачных служб Azure (CSFEF-файл) | Документация Майкрософт
-description: Файл определения службы (.csdef) определяет модель службы для приложения, содержащий доступные роли, конечные точки и значения конфигурации для службы.
+description: Файл определения службы (. CSDEF) определяет модель службы для приложения, содержащую доступные роли, конечные точки и значения конфигурации для службы.
 ms.custom: ''
 ms.date: 04/14/2015
 services: cloud-services
@@ -10,10 +10,10 @@ caps.latest.revision: 42
 author: tgore03
 ms.author: tagore
 ms.openlocfilehash: dadb50bd0663f47e6a1bf3d58b5187c8b466964d
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79528376"
 ---
 # <a name="azure-cloud-services-definition-schema-csdef-file"></a>Схема определения облачных служб Azure (CSFEF-файл)
@@ -68,4 +68,4 @@ ms.locfileid: "79528376"
 | name                    |Обязательный элемент. Имя службы. Имя должно быть уникальным в пределах учетной записи службы.|
 | topologyChangeDiscovery | Необязательный параметр. Указывает тип уведомления об изменении топологии. Возможны следующие значения:<br /><br /> -   `Blast` — как можно быстрее отправляет обновление всем экземплярам роли. Чтобы вы могли использовать этот параметр, роль должна иметь возможность обработать обновление топологии без перезапуска.<br />-   `UpgradeDomainWalk` — отправляет обновление каждому экземпляру роли в последовательном режиме после того, как предыдущий экземпляр успешно принял обновление.|
 | schemaVersion           | Необязательный параметр. Указывает версию схемы определения службы. Версия схемы позволяет Visual Studio выбрать правильные средства пакета SDK для использования при проверке схемы, если установлено одновременно несколько версий пакета SDK.|
-| upgradeDomainCount      | Необязательный параметр. Указывает число доменов обновления, между которыми распределены роли в этой службе. Экземпляры ролей назначаются домену обновления при развертывании службы. Для получения дополнительной информации [Manage the availability of virtual machines](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability) [What is a Cloud Service Model](https://docs.microsoft.com/azure/cloud-services/cloud-services-model-and-package)см. [Update a cloud service role or deployment](cloud-services-how-to-manage-portal.md#update-a-cloud-service-role-or-deployment)<br /><br /> Можно указать до 20 доменов обновления. Если число доменов обновления не указано, по умолчанию оно равно 5.|
+| upgradeDomainCount      | Необязательный параметр. Указывает число доменов обновления, между которыми распределены роли в этой службе. Экземпляры ролей назначаются домену обновления при развертывании службы. Дополнительные сведения см. в статьях [Обновление роли или развертывания облачной службы](cloud-services-how-to-manage-portal.md#update-a-cloud-service-role-or-deployment), [Управление доступностью виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability) и [модель облачной службы](https://docs.microsoft.com/azure/cloud-services/cloud-services-model-and-package).<br /><br /> Можно указать до 20 доменов обновления. Если число доменов обновления не указано, по умолчанию оно равно 5.|

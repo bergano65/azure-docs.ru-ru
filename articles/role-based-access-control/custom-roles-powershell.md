@@ -1,6 +1,6 @@
 ---
 title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
-description: Узнайте, как перечислить, создать, обновить или удалить пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure с помощью Azure PowerShell.
+description: Узнайте, как перечислять, создавать, обновлять и удалять пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure, используя Azure PowerShell.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,26 +15,26 @@ ms.date: 03/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 3c72e04ff7a08fecc2ef352a5879898c4c6d41c9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80062279"
 ---
 # <a name="create-or-update-custom-roles-for-azure-resources-using-azure-powershell"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
 
 > [!IMPORTANT]
-> Добавление группы `AssignableScopes` управления в настоящее время находится в предварительном просмотре.
+> Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Если [встроенные роли для ресурсов Azure](built-in-roles.md) не отвечают конкретным потребностям организации, можно создать собственные пользовательские роли. В этой статье описывается, как перечислять, создавать, обновлять или удалять пользовательские роли с помощью Azure PowerShell.
+Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью Azure PowerShell.
 
-Для поэтапного руководства о том, как создать пользовательскую роль, можно ознакомиться на специальном [примере: «Создайте пользовательскую роль для ресурсов Azure с помощью Azure PowerShell».](tutorial-custom-role-powershell.md)
+Пошаговое руководство по созданию настраиваемой роли см. в разделе [учебник. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md).
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для создания пользовательских ролей в Azure требуются:
 
@@ -74,9 +74,9 @@ Virtual Machine Operator     True
 
 Если выбранная подписка не указана в `AssignableScopes` роли, пользовательская роль не будет отображаться.
 
-## <a name="list-a-custom-role-definition"></a>Перечислите пользовательское определение роли
+## <a name="list-a-custom-role-definition"></a>Вывод определения пользовательской роли
 
-Чтобы перечислить пользовательское определение роли, используйте [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition). Это та же команда, что и для встроенной роли.
+Чтобы получить список пользовательских определений ролей, используйте [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition). Это та же команда, которая используется для встроенной роли.
 
 ```azurepowershell
 Get-AzRoleDefinition <role_name> | ConvertTo-Json
@@ -111,7 +111,7 @@ PS C:\> Get-AzRoleDefinition "Virtual Machine Operator" | ConvertTo-Json
 }
 ```
 
-В следующем примере перечислены только действия роли:
+В следующем примере перечисляются только действия роли:
 
 ```azurepowershell
 (Get-AzRoleDefinition <role_name>).Actions
@@ -133,7 +133,7 @@ PS C:\> (Get-AzRoleDefinition "Virtual Machine Operator").Actions
 "Microsoft.Support/*"
 ```
 
-## <a name="create-a-custom-role"></a>Создание настраиваемой роли
+## <a name="create-a-custom-role"></a>Создание пользовательской роли
 
 Чтобы создать пользовательскую роль, используется команда [New-AzRoleDefinition](/powershell/module/az.resources/new-azroledefinition). Существует два способа структурирования роли: с помощью объекта `PSRoleDefinition` или шаблона JSON. 
 
@@ -302,7 +302,7 @@ AssignableScopes : {/subscriptions/00000000-0000-0000-0000-000000000000,
                    /subscriptions/22222222-2222-2222-2222-222222222222}
 ```
 
-Следующий пример добавляет группу управления к `AssignableScopes` пользовательской роли *виртуального оператора машин.* Добавление группы `AssignableScopes` управления в настоящее время находится в предварительном просмотре.
+В следующем примере добавляется группа управления в `AssignableScopes` настраиваемую роль *оператора виртуальной машины* . Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
 
 ```azurepowershell
 Get-AzManagementGroup
@@ -399,8 +399,8 @@ Are you sure you want to remove role definition with name 'Virtual Machine Opera
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Учебник: Создайте пользовательскую роль для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Руководство. Создание настраиваемой роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
-- [Операции поставщика ресурсов ресурсов менеджера ресурсов Azure](resource-provider-operations.md)
+- [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)
