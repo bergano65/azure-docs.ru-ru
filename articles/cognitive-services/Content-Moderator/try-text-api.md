@@ -11,15 +11,15 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 05/29/2019
 ms.openlocfilehash: ad365c2d4c171105d8dec89d818ef481361d1ff8
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81272599"
 ---
 # <a name="moderate-text-from-the-api-console"></a>Модерация текста с помощью консоли API
 
-Используйте [API-изветрий text Moderation](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) в Azure Content Moderator для сканирования текстового содержимого на ненормативную лексику и сравнения его с пользовательскими и общими списками.
+Используйте [API-интерфейс](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) для контроля текста в Azure Content Moderator, чтобы проверить текстовое содержимое на ненормативную лексику и сравнить его с настраиваемыми и общими списками.
 
 ## <a name="get-your-api-key"></a>Получение ключа API
 
@@ -69,7 +69,7 @@ Is this a grabage or crap email abcdef@abcd.com, phone: 4255550111, IP:
 
 ## <a name="analyze-the-response"></a>Анализ ответа
 
-Приведенный ниже ответ показывает различные важные сведения из API. Он содержит потенциальную ненормативную лексику, персональные данные, классификацию (предварительный просмотр) и автоматически исправленную версию.
+Приведенный ниже ответ показывает различные важные сведения из API. Она содержит потенциально ненормативную лексику, персональные данные, классификацию (Предварительная версия) и автоматическую исправленную версию.
 
 > [!NOTE]
 > Функция машинной классификации находится в режиме предварительной версии и поддерживает только английский язык.
@@ -133,8 +133,8 @@ Is this a grabage or crap email abcdef@abcd.com, phone: 4255550111, IP:
 }
 ```
 
-Для подробного разъяснения всех разделов ответа JSON обратитесь к концептуальному руководству [по модерации текста.](text-moderation-api.md)
+Подробное описание всех разделов в ответе JSON см. в концептуальном руководстве по поиску [текста](text-moderation-api.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Используйте REST API в коде или следуйте [быстрому запуску .NET SDK](dotnet-sdk-quickstart.md) для интеграции с вашим приложением.
+Используйте REST API в коде или следуйте инструкциям в [кратком руководстве по пакету SDK для .NET](dotnet-sdk-quickstart.md) , чтобы интегрировать его с приложением.

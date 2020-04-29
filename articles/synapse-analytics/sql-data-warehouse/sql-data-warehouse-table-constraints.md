@@ -1,6 +1,6 @@
 ---
-title: Первичные, иностранные и уникальные ключи
-description: Поддержка ограничений таблицы в пуле Synapse S'L в Azure Synapse Analytics
+title: Первичные, внешние и уникальные ключи
+description: Поддержка табличных ограничений в пуле SQL синапсе в Azure синапсе Analytics
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -12,32 +12,32 @@ ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: f97163d02836442430037e18439bcf0724046332
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80990775"
 ---
-# <a name="primary-key-foreign-key-and-unique-key-in-synapse-sql-pool"></a>Первичный ключ, иностранный ключ и уникальный ключ в бассейне Synapse S'L
+# <a name="primary-key-foreign-key-and-unique-key-in-synapse-sql-pool"></a>Первичный ключ, внешний ключ и уникальный ключ в пуле SQL синапсе
 
-Узнайте об ограничениях таблиц в пуле Synapse S-L, включая основной ключ, иностранный ключ и уникальный ключ.
+Сведения об ограничениях таблиц в пуле синапсе SQL, включая первичный ключ, внешний ключ и уникальный ключ.
 
 ## <a name="table-constraints"></a>Ограничения таблиц
 
-Бассейн Synapse S'L поддерживает следующие ограничения таблицы: 
-- PRIMARY KEY поддерживается только тогда, когда используются NONCLUSTERED и NOT ENFORCED.    
-- Ограничение УНИКУЕ поддерживается только с помощью NOT ENFORCED используется.
+Пул SQL синапсе поддерживает следующие ограничения таблицы: 
+- ПЕРВИЧный ключ поддерживается только в том случае, если используются некластеризованные и непринудительные.    
+- Ограничение UNIQUE поддерживается только при использовании не применяется.
 
-Для синтаксиса проверьте [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) и [CREATE TABLE.](https://docs.microsoft.com/sql/t-sql/statements/create-table-azure-sql-data-warehouse) 
+Для синтаксиса установите флажок [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) и [CREATE TABLE](https://docs.microsoft.com/sql/t-sql/statements/create-table-azure-sql-data-warehouse). 
 
-Ограничение FOREIGN KEY не поддерживается в пуле Synapse S'L.  
+Ограничение внешнего ключа не поддерживается в пуле SQL синапсе.  
 
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
 
-Наличие основного ключа и/или уникального ключа позволяет движку пула Synapse s'L создать оптимальный план выполнения запроса.  Все значения в основной колонке ключа или уникальном столбце ограничения должны быть уникальными.
+Наличие первичного ключа и (или) уникального ключа позволяет синапсе подсистеме пула SQL создать оптимальный план выполнения для запроса.  Все значения в первичном ключевом столбце или столбце уникального ограничения должны быть уникальными.
 
-После создания таблицы с основным ключом или уникальным ограничением в пуле Synapse S'L пользователи должны убедиться, что все значения в этих столбцах уникальны.  Нарушение этого правила может привести к тому, что запрос вернет неточный результат.  Этот пример показывает, как запрос может вернуть неточный результат, если основной столбец ограничения ключа или уникальный элемент ограничения включает дублирующие значения.  
+После создания таблицы с ограничением PRIMARY KEY или UNIQUE в пуле синапсе SQL пользователи должны убедиться, что все значения в этих столбцах уникальны.  Нарушение этого запроса может привести к возврату неточного результата.  В этом примере показано, как запрос может вернуть неточный результат, если столбец первичного ключа или уникального ограничения содержит повторяющиеся значения.  
 
 ```sql
  -- Create table t1
@@ -164,17 +164,17 @@ a1          total
 
 ## <a name="examples"></a>Примеры
 
-Создайте бильярдный стол Synapse S'L с основным ключом: 
+Создайте таблицу пула SQL синапсе с первичным ключом: 
 
 ```sql 
 CREATE TABLE mytable (c1 INT PRIMARY KEY NONCLUSTERED NOT ENFORCED, c2 INT);
 ```
-Создайте бильярдный стол Synapse S'L с уникальным ограничением:
+Создайте таблицу пула SQL синапсе с ограничением UNIQUE:
 
 ```sql
 CREATE TABLE t6 (c1 INT UNIQUE NOT ENFORCED, c2 INT);
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-После создания таблиц для пула Synapse S'L следующим шагом является загрузка данных в таблицу. Для руководства по [Loading data to Synapse SQL pool](load-data-wideworldimportersdw.md)загрузке см.
+Следующим шагом после создания таблиц для пула SQL синапсе является загрузка данных в таблицу. Руководство по загрузке см. [в разделе Загрузка данных в пул SQL синапсе](load-data-wideworldimportersdw.md).

@@ -1,16 +1,16 @@
 ---
 title: Поставщик состояний сеансов ASP.NET кэша
-description: Узнайте, как хранить в ASP.NET состояния в памяти с помощью кэша Azure для Redis.
+description: Узнайте, как хранить состояние сеанса ASP.NET в памяти с помощью кэша Azure для Redis.
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 05/01/2017
 ms.openlocfilehash: 8083efe833ec80290713fc14d9cb89acd8263fa2
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81010908"
 ---
 # <a name="aspnet-session-state-provider-for-azure-cache-for-redis"></a>Поставщик состояний сеансов ASP.NET для кэша Azure для Redis
@@ -82,10 +82,10 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 Задайте для атрибутов значения из колонки своего кэша на портале Microsoft Azure и настройте другие параметры по своему усмотрению. Инструкции по доступу к свойствам кэша см. в разделе [Настройка параметров кэша Azure для Redis](cache-configure.md#configure-azure-cache-for-redis-settings).
 
 * **host** — укажите конечную точку кэша.
-* **порт** — используйте либо ваш порт, не относящийся к TLS/SSL, либо порт TLS/SSL, в зависимости от настроек TLS.
+* **порт** — используйте либо порт, не поддерживающий TLS/SSL, либо порт TLS/SSL в зависимости от параметров TLS.
 * **accessKey** — используйте для кэша первичный или вторичный ключ.
-* **ssl** - верно, если вы хотите обеспечить кэш / клиент связи с TLS; в противном случае ложно. Обязательно укажите правильный порт.
-  * Порт, не отключаемый TLS, по умолчанию отключен для новых кэшов. Укажите истинное для этого параметра для использования порта TLS. Для получения дополнительной информации о включении порта, не являваемого TLS, см. раздел [«Порты доступа»](cache-configure.md#access-ports) в разделе [«Настройка темы кэша».](cache-configure.md)
+* **SSL** — true, если требуется защитить обмен данными между клиентом и кэшем с помощью TLS; в противном случае — false. Обязательно укажите правильный порт.
+  * Порт, отличный от TLS, по умолчанию отключен для новых кэшей. Укажите true для этого параметра, чтобы использовать порт TLS. Дополнительные сведения о включении порта без TLS см. в разделе [порты доступа](cache-configure.md#access-ports) статьи [Настройка кэша](cache-configure.md) .
 * **throwOnError** — укажите значение true, если в случае сбоя следует вызывать исключение, или укажите значение false, если вы не хотите получать уведомления о сбоях операций. Наличие сбоя можно обнаружить путем проверки статического свойства Microsoft.Web.Redis.RedisSessionStateProvider.LastException. Значение по умолчанию — true.
 * **retryTimeoutInMilliseconds** — в течение этого интервала (указывается в миллисекундах) для неудачных операций выполняются повторные попытки. Первая повторная попытка происходит через 20 миллисекунд, а затем попытки повторяются каждую секунду до истечения интервала retryTimeoutInMilliseconds. Сразу после этого интервала операция повторяется еще один последний раз. Если операция по-прежнему заканчивается сбоем, вызывающему объекту отправляется исключение (в зависимости от значения параметра throwOnError). Значение по умолчанию — 0, что означает нулевое количество попыток.
 * **databaseId** — этот параметр указывает базу данных, которую необходимо использовать для выходных данных кэша. Если значение в этом поле не задано, по умолчанию используется значение 0.
@@ -126,11 +126,11 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 
 Дополнительные сведения о состоянии сеанса и другие рекомендации см. в статье [Рекомендации по веб-разработке (создание реальных облачных приложений с помощью Azure)](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices).
 
-## <a name="third-party-session-state-providers"></a>Поставщики государств-сеансов сторонних сторон
+## <a name="third-party-session-state-providers"></a>Сторонние поставщики состояний сеансов
 
 * [NCache](https://www.alachisoft.com/ncache/session-index.html)
-* [Апач воспламенился](https://apacheignite-net.readme.io/docs/aspnet-session-state-caching)
+* [Apache Ignite](https://apacheignite-net.readme.io/docs/aspnet-session-state-caching)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со статьей [ASP.NET Output Cache Provider for Azure Cache for Redis](cache-aspnet-output-cache-provider.md) (Поставщик кэша вывода ASP.NET для кэша Azure для Redis).

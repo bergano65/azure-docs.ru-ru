@@ -9,10 +9,10 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
 ms.openlocfilehash: f7c6829d858e36b55f079f8ee03e431f67995e66
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81272582"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и .NET Standard. Скачивание и заметки о выпуске
@@ -26,38 +26,38 @@ ms.locfileid: "81272582"
 
 |   |   |
 |---|---|
-|**Загрузка SDK**|[Nuget](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
-|**Образец**|[Космос DB Таблица API .NET Пример](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
+|**Загрузка пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
+|**Пример**|[Пример Cosmos DB API таблиц .NET](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
 |**Краткое руководство**|[Краткое руководство](create-table-dotnet.md)|
-|**Учебник**|[Учебник](tutorial-develop-table-dotnet.md)|
+|**Руководство**|[Руководство](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
 |**Сообщить о проблеме**|[Сообщить о проблеме](https://github.com/Azure/azure-cosmos-table-dotnet/issues)|
 
-## <a name="release-notes-for-200-series"></a>Примечания к выпуску серии 2.0.0
-Серия 2.0.0 получает зависимость от [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)с улучшением производительности и консолидацией пространства имен в конечную точку Cosmos DB.
+## <a name="release-notes-for-200-series"></a>Заметки о выпуске для ряда 2.0.0
+2.0.0 Series использует зависимость от [Microsoft. Azure. Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)с улучшенной производительностью и консолидацией пространства имен для Cosmos DB конечной точки.
 
 ### <a name="200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
-* первоначальный предварительный просмотр 2.0.0 Таблица SDK, который принимает зависимость от [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/), с улучшением производительности и консолидации пространства имен в конечную точку Космос DB. Общественный API остается прежним.
+* Первоначальный предварительный просмотр пакета SDK для таблиц 2.0.0, который принимает зависимость от [Microsoft. Azure. Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)с повышением производительности и консолидации пространства имен для Cosmos DB конечной точки. Открытый API остается прежним.
 
-## <a name="release-notes-for-100-series"></a>Примечания к выпуску серии 1.0.0
-Серия 1.0.0 получает зависимость от [Microsoft.Azure.DocumentDB.Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
+## <a name="release-notes-for-100-series"></a>Заметки о выпуске для серии 1.0.0
+Серия 1.0.0 использует зависимость от [Microsoft. Azure. DocumentDB. Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
 
 ### <a name="107"></a><a name="1.0.7"/>1.0.7
-* Улучшение производительности путем установки уровня трассировки по умолчанию таблицы SDK на SourceLevels.Off, который можно выбрать через app.config
+* Повышение производительности путем настройки уровня трассировки по умолчанию для пакета SDK таблицы на SourceLevels. Off, который можно использовать с помощью App. config
 
 ### <a name="105"></a><a name="1.0.5"/>1.0.5
-* Ввести новую конфигурацию под TableClientConfiguration для использования Rest Executor для связи с Cosmos DB Table API
+* Познакомьтесь с новой конфигурацией в разделе Таблеклиентконфигуратион, чтобы использовать исполнитель RESTful для взаимодействия с Cosmos DB API таблиц
 
-### <a name="105-preview"></a><a name="1.0.5-preview"/>1.0.5-предварительный просмотр
+### <a name="105-preview"></a><a name="1.0.5-preview"/>1.0.5 — Предварительная версия
 * Исправления ошибок
 
 ### <a name="104"></a><a name="1.0.4"/>1.0.4
 * Исправления ошибок
-* Предоставьте опцию HttpClientTimeout для RestExecutorConfiguration.
+* Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
-### <a name="104-preview"></a><a name="1.0.4-preview"/>1.0.4-предварительный просмотр
+### <a name="104-preview"></a><a name="1.0.4-preview"/>1.0.4 — Предварительная версия
 * Исправления ошибок
-* Предоставьте опцию HttpClientTimeout для RestExecutorConfiguration.
+* Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
 ### <a name="101"></a><a name="1.0.1"/>1.0.1
 * Исправления ошибок
@@ -65,10 +65,10 @@ ms.locfileid: "81272582"
 ### <a name="100"></a><a name="1.0.0"/>1.0.0
 * Выпуск общедоступной версии
 
-### <a name="0110-preview"></a><a name="0.11.0-preview"/>0.11.0-предварительный просмотр
-* Были внесены изменения в способ настройки CloudTableClient. Теперь он принимает объект TableClientConfiguration во время строительства. TableClientConfiguration предоставляет различные свойства для настройки поведения клиента в зависимости от того, является ли конечная точка Cosmos DB Table API или API таблицы хранения Azure.
-* Добавлена поддержка таблицы, чтобы вернуть результаты в отсортированном порядке на пользовательском столбце. Эта функция поддерживается только на конечных точках таблицы Cosmos DB Table.
-* Добавлена поддержка для выявления запросов на различные типы результатов. Эта функция поддерживается только на конечных точках таблицы Cosmos DB Table.
+### <a name="0110-preview"></a><a name="0.11.0-preview"/>0.11.0 — Предварительная версия
+* В то, как можно настроить CloudTableClient, были внесены изменения. Теперь он принимает объект Таблеклиентконфигуратион во время создания. Таблеклиентконфигуратион предоставляет различные свойства для настройки поведения клиента в зависимости от того, является ли Целевая конечная точка Cosmos DB API таблиц или API таблиц хранилища Azure.
+* Добавлена поддержка TableQuery, которая возвращает результаты в отсортированном порядке по пользовательскому столбцу. Эта функция поддерживается только в конечных точках таблицы Cosmos DB.
+* Добавлена поддержка предоставления Рекуестчаржес для различных типов результатов. Эта функция поддерживается только в конечных точках таблицы Cosmos DB.
 
 ### <a name="0101-preview"></a><a name="0.10.1-preview"/>0.10.1-preview
 * Добавлена поддержка для маркера SAS, операций TablePermissions, ServiceProperties и ServiceStats относительно конечных точек таблицы службы хранилища Azure. 
@@ -88,32 +88,32 @@ ms.locfileid: "81272582"
 ## <a name="release-and-retirement-dates"></a>Даты выпуска и вывода из эксплуатации
 Корпорация Майкрософт отправляет уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
 
-Эта кросс-платформа .NET Стандартная библиотека [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) заменит рамочную библиотеку .NET [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table).
+Эта кросс-платформенная библиотека .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) заменит библиотеку .NET Framework [Microsoft. Azure. CosmosDB. Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table).
 
 ### <a name="200-series"></a>Серия 2.0.0
-| Version | Дата выпуска | Дата вывода |
+| Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
-| [2.0.0-preview](#2.0.0-preview) |Auguest 22, 2019 |--- |
+| [2.0.0-preview](#2.0.0-preview) |Аугуест 22, 2019 |--- |
 
 ### <a name="100-series"></a>Серия 1.0.0
-| Version | Дата выпуска | Дата вывода |
+| Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [1.0.5](#1.0.5) |13 сентября 2019 г. |--- |
-| [1.0.5-предварительный просмотр](#1.0.5-preview) |Auguest 20, 2019 |--- |
-| [1.0.4](#1.0.4) |Auguest 12, 2019 |--- |
-| [1.0.4-предварительный просмотр](#1.0.4-preview) |26 июля 2019 г. |--- |
-| 1.0.2-предварительный просмотр |2 мая 2019 г. |--- |
-| [1.0.1](#1.0.1) |19 апреля 2019 года |--- |
+| [1.0.5 — Предварительная версия](#1.0.5-preview) |Аугуест 20, 2019 |--- |
+| [1.0.4](#1.0.4) |Аугуест 12, 2019 |--- |
+| [1.0.4 — Предварительная версия](#1.0.4-preview) |26 июля 2019 г. |--- |
+| 1.0.2 — Предварительная версия |2 мая 2019 г. |--- |
+| [1.0.1](#1.0.1) |19 апреля 2019 г. |--- |
 | [1.0.0](#1.0.0) |13 марта 2019 г. |--- |
-| [0.11.0-предварительный просмотр](#0.11.0-preview) |5 марта 2019 г. |--- |
+| [0.11.0 — Предварительная версия](#0.11.0-preview) |5 марта 2019 г. |--- |
 | [0.10.1-preview](#0.10.1-preview) |22 января 2019 г. |--- |
 | [0.10.0-preview](#0.10.0-preview) |18 декабря 2018 г. |--- |
-| [0.9.1-предварительный просмотр](#0.9.1-preview) |18 октября 2018 г. |--- |
+| [0.9.1 — Предварительная версия](#0.9.1-preview) |18 октября 2018 г. |--- |
 
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>часто задаваемые вопросы
 
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 Дополнительные сведения об API таблицы для базы данных Azure Cosmos DB см. в [этой статье](table-introduction.md).

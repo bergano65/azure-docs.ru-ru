@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: cfe450972acda3affbea6cbe3d262bc4b1956dc9
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81262865"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Передача больших наборов данных со средней или высокой пропускной способностью сети
@@ -69,11 +69,11 @@ ms.locfileid: "81262865"
 |    Форм-фактор                      |    Не более 5 SSD в одном заказе             |    1 x 23 кг одно устройство в заказе размером с настольный компьютер    |    1 X ~227 кг большое устройство в заказе    |    До 10 жестких дисков или твердотельных накопителей в одном заказе        |
 |    Время начальной настройки               |    Низкий <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средний<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
 |    Отправка данных в Azure               |    Да                          |    Да                                           |    Да                                   |    Да                                 |
-|    Экспорт данных из Azure           |    нет                           |    нет                                            |    нет                                    |    Да                                 |
-|    Шифрование                       |    AES, 128-битное                  |    AES, 256-битное                                   |    AES, 256-битное                           |    AES, 128-битное                         |
+|    Экспорт данных из Azure           |    Нет                           |    Нет                                            |    Нет                                    |    Да                                 |
+|    Encryption                       |    AES, 128-битное                  |    AES, 256-битное                                   |    AES, 256-битное                           |    AES, 128-битное                         |
 |    Оборудование                         |     Предоставляется корпорацией Майкрософт          |    Предоставляется корпорацией Майкрософт                            |    Предоставляется корпорацией Майкрософт                    |    Предоставляется пользователем                   |
 |    сетевому интерфейсу                |    USB 3.1 или SATA                 |    RJ 45, SFP+                                   |    RJ45, QSFP+                           |    SATA II или SATA III                    |
-|    Интеграция партнеров              |    Некоторые                         |    [Высокой](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureExpressPod)                                          |    [Высокой](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureExpressPod)                                  |    Некоторые                                |
+|    Интеграция партнеров              |    Некоторые                         |    [Высоком](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureExpressPod)                                          |    [Высоком](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureExpressPod)                                  |    Некоторые                                |
 |    Отправка                         |    Организуется корпорацией Майкрософт            |    Организуется корпорацией Майкрософт                             |    Организуется корпорацией Майкрософт                     |    Организуется пользователем                    |
 | Используется при перемещении данных         |В пределах коммерческого региона|В пределах коммерческого региона|В пределах коммерческого региона|Между любыми географическими регионами, например из США в ЕС|
 |    Цены                          |    [Цены](https://azure.microsoft.com/pricing/details/databox/disk/)                    |   [Цены](https://azure.microsoft.com/pricing/details/storage/databox/)                                      |  [Цены](https://azure.microsoft.com/pricing/details/storage/databox/heavy/)                               |   [Цены](https://azure.microsoft.com/pricing/details/storage-import-export/)                            |
@@ -83,24 +83,24 @@ ms.locfileid: "81262865"
 
 ### <a name="high-network-bandwidth"></a>Большая пропускная способность сети
 
-|                                     |    Средства AzCopy, <br>Azure PowerShell, <br>Azure CLI             |    Интерфейсы REST API и пакеты SDK для службы хранилища Azure                   |    Шлюз коробки данных или край коробки данных          |    Фабрика данных Azure                                            |
+|                                     |    Средства AzCopy, <br>Azure PowerShell, <br>Azure CLI             |    Интерфейсы REST API и пакеты SDK для службы хранилища Azure                   |    Шлюз Data Box или Data Box Edge          |    Фабрика данных Azure                                            |
 |-------------------------------------|------------------------------------|----------------------------------------------|----------------------------------|-----------------------------------------------------------------------|
 |    Тип данных                  |    Большие двоичные объекты Azure, Файлы Azure, Таблицы Azure    |    Большие двоичные объекты Azure, Файлы Azure, Таблицы Azure    |    Большие двоичные объекты Azure, Файлы Azure                           |   Поддерживает более 70 соединителей данных для разных хранилищ и форматов    |
 |    Форм-фактор                |    Программы командной строки                        |    Программный интерфейс                    |    Корпорация Майкрософт предоставляет виртуальное <br>или физическое устройство     |    Служба на портале Azure                                            |
 |    Начальная однократная настройка     |    Низкий уровень сложности               |    Средний                       |    От низкого (менее 30 мин) до среднего (1–2 часа) уровня сложности            |    Значительный уровень сложности                                                          |
-|    Предварительная обработка данных              |    нет                                        |    нет                                        |    Да (с пограничными вычислениями)                               |    Да                                                                |
-|    Перенос из других облаков       |    нет                                        |    нет                                        |    нет                                                    |    Да                                                                |
+|    Предварительная обработка данных              |    Нет                                        |    Нет                                        |    Да (с пограничными вычислениями)                               |    Да                                                                |
+|    Перенос из других облаков       |    Нет                                        |    Нет                                        |    Нет                                                    |    Да                                                                |
 |    Тип пользователя                        |    ИТ-специалист или разработчик                                       |    Разработка                                       |    ИТ-специалист                                                |    ИТ-специалист                                                             |
 |    Цены                          |    Бесплатно, с обычной оплатой исходящего трафика         |    Бесплатно, с обычной оплатой исходящего трафика         |    [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Сведения о передаче данных с помощью службы "Импорт и экспорт"](/azure/storage/common/storage-import-export-data-to-blobs).
 - Практические руководства по:
 
     - [передаче данных с помощью Диска Data Box](https://docs.microsoft.com/azure/databox/data-box-disk-quickstart-portal);
     - [передаче данных с помощью Data Box](https://docs.microsoft.com/azure/databox/data-box-quickstart-portal).
-- [Передача данных с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10).
+- [Перенесите данные с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10).
 - Практические руководства по:
     - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares).
     - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](https://docs.microsoft.com/azure/databox-online/data-box-edge-deploy-configure-compute).

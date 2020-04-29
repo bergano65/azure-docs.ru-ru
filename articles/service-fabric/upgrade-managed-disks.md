@@ -1,50 +1,50 @@
 ---
-title: Обновление кластерных узлов для использования дисков управления Azure
-description: Вот как обновить существующий кластер Service Fabric для использования управляемых дисков Azure практически без простоя кластера.
+title: Обновление узлов кластера для использования управляемых дисков Azure
+description: Вот как можно обновить существующий кластер Service Fabric, чтобы использовать управляемые диски Azure с минимальным временем простоя кластера.
 ms.topic: how-to
 ms.date: 4/07/2020
 ms.openlocfilehash: 5f4698718a35970e47de2a0ee6d053802c8ef919
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80991217"
 ---
-# <a name="upgrade-cluster-nodes-to-use-azure-managed-disks"></a>Обновление кластерных узлов для использования дисков управления Azure
+# <a name="upgrade-cluster-nodes-to-use-azure-managed-disks"></a>Обновление узлов кластера для использования управляемых дисков Azure
 
-[Управляемые диски Azure](../virtual-machines/windows/managed-disks-overview.md) являются рекомендуемыми дисковыми хранилищами для использования с виртуальными машинами Azure для постоянного хранения данных. Вы можете улучшить устойчивость рабочих нагрузок Service Fabric, модернизируя наборы виртуальной шкалы машин, лежащие в основе типов узлов для использования управляемых дисков. Вот как обновить существующий кластер Service Fabric для использования управляемых дисков Azure практически без простоя кластера.
+[Управляемые диски Azure](../virtual-machines/windows/managed-disks-overview.md) являются рекомендуемым предложением дискового хранилища для использования с виртуальными машинами Azure для постоянного хранения данных. Повысить устойчивость рабочих нагрузок Service Fabric можно, обновив масштабируемые наборы виртуальных машин, которые лежат в качестве типов узлов для использования управляемых дисков. Вот как можно обновить существующий кластер Service Fabric, чтобы использовать управляемые диски Azure с минимальным временем простоя кластера.
 
-Общая стратегия модернизации кластерного узла Service Fabric для использования управляемых дисков заключается в:
+Общая стратегия обновления Service Fabric узла кластера для использования управляемых дисков состоит в следующих целях:
 
-1. Развертывание в противном случае дублировать виртуальный набор масштаба машины этого `osDisk` типа узла, но с [управляемым объектомDisk](https://docs.microsoft.com/azure/templates/microsoft.compute/2019-07-01/virtualmachinescalesets/virtualmachines#ManagedDiskParameters) добавленвы в раздел виртуальной шкалы шаблона развертывания набора машины. Новый набор масштабов должен привязываться к тому же балансеру нагрузки / IP, что и оригинал, так что ваши клиенты не испытывают сбой в обслуживании во время миграции.
+1. Разверните другой дубликат масштабируемого набора виртуальных машин для этого типа узла, но с помощью объекта [манажеддиск](https://docs.microsoft.com/azure/templates/microsoft.compute/2019-07-01/virtualmachinescalesets/virtualmachines#ManagedDiskParameters) , добавленного `osDisk` в раздел шаблона развертывания масштабируемого набора виртуальных машин. Новый масштабируемый набор должен быть привязан к тому же подсистеме балансировки нагрузки или IP-адресу, что и исходный, поэтому во время миграции клиенты не сталкиваются со сбоями в работе службы.
 
-2. После того, как исходные и модернизированные наборы масштабов работают бок о бок, отменяем исходные экземпляры узлов по одному, чтобы системные службы (или реплики служб состояния) мигрировали в новый набор масштабов.
+2. После того как исходные и обновленные масштабируемые наборы работают параллельно, отключите экземпляры исходного узла по одному за раз, чтобы системные службы (или реплики служб с отслеживанием состояния) переводились в новый масштабируемый набор.
 
-3. Проверить кластер и новые узлы являются здоровыми, а затем удалить исходный набор масштаба и состояние узлов для удаленных узлов.
+3. Убедитесь, что кластер и новые узлы работоспособны, а затем удалите исходный масштабируемый набор и состояние узла для удаленных узлов.
 
-В этой статье вы проведете этапы обновления типа первичного узла примерного кластера для использования управляемых дисков, избегая при этом какого-либо простоя кластера (см. примечание ниже). Начальное состояние испытательного кластера примера состоит из одного типа узла [Silver,](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster)подкрепленного одним набором масштаба с пятью узлами.
+В этой статье описано, как обновить тип первичного узла в примере кластера, чтобы использовать управляемые диски, избегая простоя кластера (см. Примечание ниже). Начальное состояние примера тестового кластера состоит из одного типа узла " [Серебряная устойчивость](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster)", поддерживаемого одним масштабируемым набором с пятью узлами.
 
 > [!CAUTION]
-> Вы будете испытывать сбой с этой процедурой только в том случае, если у вас есть зависимости от кластера DNS (например, при доступе к [Service Fabric Explorer).](service-fabric-visualizing-your-cluster.md) Архитектурная [лучшая практика для фронт-энд-сервисов](https://docs.microsoft.com/azure/architecture/microservices/design/gateway) заключается в том, чтобы иметь какой-то [баланселизатор нагрузки](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) перед типами узлов, чтобы сделать возможным замена узлов без простоя.
+> При выполнении этой процедуры будет возникать сбой, если у вас есть зависимости от DNS кластера (например, при доступе к [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)). [Оптимальной архитектурой для интерфейсных служб](https://docs.microsoft.com/azure/architecture/microservices/design/gateway) является наличие какого-либо [подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) перед типами узлов, чтобы сделать возможным переключение узлов без сбоя.
 
-Ниже [приведены шаблоны и cmdlets](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) для менеджера ресурсов Azure, которые мы будем использовать для завершения сценария обновления. Изменения шаблона будут объяснены в [развертывании обновленного набора шкалы для типа основного узла](#deploy-an-upgraded-scale-set-for-the-primary-node-type) ниже.
+Ниже приведены [шаблоны и командлеты](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) для Azure Resource Manager, которые будут использоваться для завершения сценария обновления. Изменения в шаблоне будут объяснены в [развертывании обновленного масштабируемого набора для первичного типа узла](#deploy-an-upgraded-scale-set-for-the-primary-node-type) .
 
 ## <a name="set-up-the-test-cluster"></a>Настройка тестового кластера
 
-Давайте навескажем начальный кластер тестирования Service Fabric. Во-первых, [загрузите](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) шаблоны шаблонов управления ресурсами Azure, которые мы будем использовать для завершения этого сценария.
+Давайте создадим начальный тестовый кластер Service Fabric. Сначала [Скачайте](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) примеры шаблонов Azure Resource Manager, которые будут использоваться для выполнения этого сценария.
 
-Затем вопийте на свою учетную запись Azure.
+Затем войдите в свою учетную запись Azure.
 
 ```powershell
 # Sign in to your Azure account
 Login-AzAccount -SubscriptionId "<subscription ID>"
 ```
 
-Следующие команды помогут вам создать новый самоподписанный сертификат и развернуть кластер тестирования. Если у вас уже есть сертификат, который вы хотели бы использовать, перейдите к [использованию существующего сертификата для развертывания кластера.](#use-an-existing-certificate-to-deploy-the-cluster)
+Следующие команды помогут создать новый самозаверяющий сертификат и развернуть тестовый кластер. Если у вас уже есть сертификат, который вы хотите использовать, перейдите к [использованию существующего сертификата для развертывания кластера](#use-an-existing-certificate-to-deploy-the-cluster).
 
-### <a name="generate-a-self-signed-certificate-and-deploy-the-cluster"></a>Создание самоподписанного сертификата и развертывание кластера
+### <a name="generate-a-self-signed-certificate-and-deploy-the-cluster"></a>Создание самозаверяющего сертификата и развертывание кластера
 
-Во-первых, назначаем переменные, необходимые для развертывания кластера Service Fabric. Отрегулируйте значения `resourceGroupName` `certSubjectName`для, `parameterFilePath` `templateFilePath` и для вашей конкретной учетной записи и среды:
+Сначала назначьте переменные, необходимые для развертывания кластера Service Fabric. Измените значения для `resourceGroupName`параметров, `certSubjectName`, `parameterFilePath`и `templateFilePath` для конкретной учетной записи и среды.
 
 ```powershell
 # Assign deployment variables
@@ -57,11 +57,11 @@ $parameterFilePath = "C:\Initial-1NodeType-UnmanagedDisks.parameters.json"
 ```
 
 > [!NOTE]
-> Убедитесь, `certOutputFolder` что местоположение существует в локальной машине перед запуском команды для развертывания нового кластера Service Fabric.
+> Перед выполнением `certOutputFolder` команды для развертывания нового кластера Service Fabric убедитесь, что расположение существует на локальном компьютере.
 
-Затем откройте [*файл Initial-1NodeType-UnmanagedDisks.parameters.json*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) и `clusterName` направьте значения и `dnsName` соответсь динамическим значениям, установленным в PowerShell, и сохраните свои изменения.
+Затем откройте файл [*Initial-1NodeType-унманажеддискс. parameters. JSON*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) и измените значения для `clusterName` параметров и `dnsName` , чтобы они соответствовали динамическим значениям, заданным в PowerShell, и сохраните изменения.
 
-Затем развернуть кластер тестирования Service Fabric:
+Затем разверните Service Fabric тестовый кластер.
 
 ```powershell
 # Deploy the initial test cluster
@@ -74,7 +74,7 @@ New-AzServiceFabricCluster `
     -ParameterFile $parameterFilePath
 ```
 
-После завершения развертывания найдите файл *.pfx* ()`$certPfx`на локальной машине и импортируйте его в магазин сертификатов:
+После завершения развертывания укажите *PFX* -файл (`$certPfx`) на локальном компьютере и импортируйте его в хранилище сертификатов:
 
 ```powershell
 cd c:\certificates
@@ -86,11 +86,11 @@ Import-PfxCertificate `
      -Password (ConvertTo-SecureString Password!1 -AsPlainText -Force)
 ```
 
-Операция вернет отпечаток пальца сертификата, который вы будете использовать для [подключения к новому кластеру](#connect-to-the-new-cluster-and-check-health-status) и проверки его состояния работоспособности. (Пропустить следующий раздел, который является альтернативным подходом к развертыванию кластеров.)
+Операция вернет отпечаток сертификата, который будет использоваться для [подключения к новому кластеру](#connect-to-the-new-cluster-and-check-health-status) и проверки его состояния работоспособности. (Пропустите следующий раздел, который является альтернативным подходом к развертыванию кластера.)
 
-### <a name="use-an-existing-certificate-to-deploy-the-cluster"></a>Используйте существующий сертификат для развертывания кластера
+### <a name="use-an-existing-certificate-to-deploy-the-cluster"></a>Использование существующего сертификата для развертывания кластера
 
-Для развертывания тестового кластера можно также использовать существующий сертификат Azure Key Vault Vault. Для этого вам необходимо [получить ссылки на ваш ключ Vault](#obtain-your-key-vault-references) и отпечаток пальца сертификата.
+Для развертывания тестового кластера можно также использовать существующий сертификат Azure Key Vault. Для этого необходимо [получить ссылки на Key Vault](#obtain-your-key-vault-references) и отпечаток сертификата.
 
 ```powershell
 # Key Vault variables
@@ -99,12 +99,12 @@ $sourceVaultValue = "/subscriptions/########-####-####-####-############/resourc
 $thumb = "BB796AA33BD9767E7DA27FE5182CF8FDEE714A70"
 ```
 
-Откройте файл [*Initial-1NodeType-UnmanagedDisks.parameters.json*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) и измените значения для `clusterName` и `dnsName` чего-то уникального.
+Откройте файл [*Initial-1NodeType-унманажеддискс. parameters. JSON*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) и измените значения для `clusterName` и `dnsName` на что-то уникальное.
 
-Наконец, обозначьте название группы `templateFilePath` ресурсов `parameterFilePath` для кластера и установите и расположение файлов *Initial-1NodeType-UnmanagedDisks:*
+Наконец, назначьте имя группы ресурсов для кластера и задайте расположение `templateFilePath` и `parameterFilePath` расположения файлов *начального 1NodeType-унманажеддискс* :
 
 > [!NOTE]
-> Назначенная группа ресурсов уже должна существовать и находиться в том же регионе, что и ваше ключевое хранилище.
+> Указанная группа ресурсов должна уже существовать и находиться в том же регионе, что и Key Vault.
 
 ```powershell
 # Deploy the new scale set (upgraded to use managed disks) into the primary node type.
@@ -113,7 +113,7 @@ $templateFilePath = "C:\Upgrade-1NodeType-2ScaleSets-ManagedDisks.json"
 $parameterFilePath = "C:\Upgrade-1NodeType-2ScaleSets-ManagedDisks.parameters.json"
 ```
 
-Наконец, запустите следующую команду для развертывания исходного кластера тестирования:
+Наконец, выполните следующую команду, чтобы развернуть исходный тестовый кластер:
 
 ```powershell
 New-AzResourceGroupDeployment `
@@ -128,7 +128,7 @@ New-AzResourceGroupDeployment `
 
 ### <a name="connect-to-the-new-cluster-and-check-health-status"></a>Подключение к новому кластеру и проверка состояния работоспособности
 
-Подключитесь к кластеру и убедитесь, что все `clusterName` пять `thumb` его узлов являются здоровыми (замена и переменных для кластера):
+Подключитесь к кластеру и убедитесь, что все пять его узлов работоспособны (замените `clusterName` переменные `thumb` и для кластера):
 
 ```powershell
 # Connect to the cluster
@@ -149,25 +149,25 @@ Connect-ServiceFabricCluster `
 Get-ServiceFabricClusterHealth
 ```
 
-С этим мы готовы приступить к процедуре обновления.
+После этого мы готовы начать процедуру обновления.
 
-## <a name="deploy-an-upgraded-scale-set-for-the-primary-node-type"></a>Развертывание обновленного набора шкалы для типа основного узла
+## <a name="deploy-an-upgraded-scale-set-for-the-primary-node-type"></a>Развертывание обновленного масштабируемого набора для типа первичного узла
 
-Для обновления или *вертикального масштаба*типа узлов нам необходимо развернуть копию виртуального набора масштабов машины этого типа узла, который в противном `nodeTypeRef`случае `subnet`идентичен исходной набору масштабов (включая ссылку на тот же , и), `loadBalancerBackendAddressPools`за исключением того, что он включает в себя желаемое обновление/изменения и свой собственный отдельный подсеть и входящий пул адресов NAT. Поскольку мы модернизируем тип основного узла, новый`isPrimary: true`набор масштабов будет помечен как основной (), как и исходный набор масштаба. (Для непервичных обновлений типа узлов просто опустите это.)
+Чтобы обновить или *вертикально масштабировать*тип узла, необходимо развернуть копию масштабируемого набора виртуальных машин этого типа, который в противном случае идентичен исходному масштабируемому набору (включая ссылку на те же `nodeTypeRef`, и `subnet` `loadBalancerBackendAddressPools`), за исключением того, что он включает в себя требуемое обновление, изменения и собственную отдельную подсеть и пул адресов входящего трафика NAT. Так как мы обновляем тип первичного узла, новый масштабируемый набор будет помечен как основной (`isPrimary: true`), как и исходный масштабируемый набор. (Для обновлений типа узла, не являющегося первичным, просто пропустите это.)
 
-Для удобства необходимые для вас изменения уже внесены в [шаблон](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.json) и [файлы параметров](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.parameters.json) *Upgrade-1NodeType-2ScaleSets-ManagedDisks.*
+Для удобства необходимые изменения уже внесены в файлы [шаблонов](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.json) *Upgrade-1NodeType-2ScaleSets-манажеддискс* и [Parameters](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.parameters.json) .
 
-В следующих разделах подробно будут описаны изменения шаблона. Если вы предпочитаете, вы можете пропустить объяснение и продолжить [следующий шаг процедуры обновления.](#obtain-your-key-vault-references)
+В следующих разделах подробно рассматриваются изменения шаблонов. При желании вы можете пропустить объяснение и перейти к [следующему шагу процедуры обновления](#obtain-your-key-vault-references).
 
-### <a name="update-the-cluster-template-with-the-upgraded-scale-set"></a>Обновление шаблона кластера с обновленным набором масштабов
+### <a name="update-the-cluster-template-with-the-upgraded-scale-set"></a>Обновление шаблона кластера с помощью обновленного масштабируемого набора
 
-Ниже приведены изменения исходного шаблона развертывания кластеров для добавления обновленного набора шкалы для типа основного узла.
+Ниже приведены изменения в разделе шаблона развертывания исходного кластера для добавления обновленного масштабируемого набора для типа первичного узла.
 
 #### <a name="parameters"></a>Параметры
 
-Добавьте параметры для имени экземпляра, количества и размера нового набора шкалы. Обратите `vmNodeType1Name` внимание, что он уникален для нового набора шкалы, в то время как значения количества и размера идентичны исходным набором шкалы.
+Добавьте параметры для имени экземпляра, количества и размера нового масштабируемого набора. Обратите `vmNodeType1Name` внимание, что уникален для нового масштабируемого набора, а значения Count и size идентичны исходному масштабируемому набору.
 
-**Шаблон файла**
+**Файл шаблона**
 
 ```json
 "vmNodeType1Name": {
@@ -204,9 +204,9 @@ Get-ServiceFabricClusterHealth
 
 ### <a name="variables"></a>Переменные
 
-В разделе `variables` шаблона развертывания добавьте запись для входящего пула адресов NAT нового набора шкалы.
+В разделе шаблон `variables` развертывания добавьте запись для пула адресов ВХОДЯЩЕГО трафика NAT для нового масштабируемого набора.
 
-**Шаблон файла**
+**Файл шаблона**
 
 ```json
 "lbNatPoolID1": "[concat(variables('lbID0'),'/inboundNatPools/LoadBalancerBEAddressNatPool1')]", 
@@ -214,15 +214,15 @@ Get-ServiceFabricClusterHealth
 
 ### <a name="resources"></a>Ресурсы
 
-В разделе *ресурсов* шаблона развертывания добавьте новый набор виртуальной шкалы машин, имея в виду следующие вещи:
+В разделе *ресурсы* шаблона развертывания добавьте новый масштабируемый набор виртуальных машин, учитывая следующие моменты.
 
-* Новый набор шкалы ссылается на тот же тип узла, что и исходный:
+* Новый масштабируемый набор ссылается на тот же тип узла, что и исходный:
 
     ```json
     "nodeTypeRef": "[parameters('vmNodeType0Name')]",
     ```
 
-* Новая шкала устанавливает ссылки на тот же адрес бэкэнда и подсети балансового баланса нагрузки (но использует другой балансоровую нагрузку, входящий в пул NAT):
+* Новый масштабируемый набор ссылается на один и тот же внутренний адрес подсистемы балансировки нагрузки и подсеть (но использует другой пул NAT входящего балансировщика нагрузки):
 
    ```json
     "loadBalancerBackendAddressPools": [
@@ -240,13 +240,13 @@ Get-ServiceFabricClusterHealth
     }
    ```
 
-* Как и исходный набор шкалы, новый набор шкалы помечается как основной тип узла. (При обновлении типов непервичных узлов опустите это изменение.)
+* Как и в исходном масштабируемом наборе, новый масштабируемый набор помечается как тип первичного узла. (При обновлении типов, не являющихся первичными узлами, пропустите это изменение.)
 
     ```json
     "isPrimary": true,
     ```
 
-* В отличие от исходного набора масштабов, новый набор масштабов обновляется для использования управляемых дисков.
+* В отличие от исходного масштабируемого набора, новый масштабируемый набор обновляется для использования управляемых дисков.
 
     ```json
     "managedDisk": {
@@ -254,25 +254,25 @@ Get-ServiceFabricClusterHealth
     }
     ```
 
-После того, как вы внедрили все изменения в файлах шаблонов и параметров, перейдите к следующему разделу, чтобы получить ссылки Key Vault и развернуть обновления в кластере.
+После реализации всех изменений в файлах шаблонов и параметров перейдите к следующему разделу, чтобы получить ссылки на Key Vault и развернуть обновления в кластере.
 
-### <a name="obtain-your-key-vault-references"></a>Получите ссылки на Key Vault
+### <a name="obtain-your-key-vault-references"></a>Получение ссылок на Key Vault
 
-Для развертывания обновленной конфигурации сначала можно получить несколько ссылок на сертификат кластера, хранящийся в Хранилище ключей. Самый простой способ найти эти значения через портал Azure. Что вам понадобится:
+Чтобы развернуть обновленную конфигурацию, сначала необходимо получить несколько ссылок на сертификат кластера, хранящийся в Key Vault. Самый простой способ найти эти значения — с помощью портал Azure. Что вам понадобится:
 
-* **URL-адрес Ключевого Убежища сертификата кластера.** На портале Key Vault in Azure выберите **Сертификаты** > Ваш**желаемый***сертификат* > Secret Secret:
+* **URL-адрес Key Vault сертификата кластера.** Из Key Vault в портал Azure выберите **Сертификаты** > для**идентификатора секрета***нужного сертификата* > :
 
     ```powershell
     $certUrlValue="https://sftestupgradegroup.vault.azure.net/secrets/sftestupgradegroup20200309235308/dac0e7b7f9d4414984ccaa72bfb2ea39"
     ```
 
-* **Отпечаток пальца сертификата кластера.** (Вы, вероятно, уже есть это, если вы [подключены к первоначальному кластеру,](#connect-to-the-new-cluster-and-check-health-status) чтобы проверить его состояние здоровья.) Из того же лезвия**сертификата (Сертификаты** > *Ваш желаемый сертификат)* на портале Azure, копия **X.509 SHA-1 Thumbprint (в гексе)**:
+* **Отпечаток сертификата кластера.** (Возможно, у вас уже есть [Подключение к первоначальному кластеру](#connect-to-the-new-cluster-and-check-health-status) , чтобы проверить его состояние работоспособности.) В той же колонке сертификата (**Сертификаты** > , для которой*нужен нужный сертификат*) в портал Azure скопируйте **отпечаток X. 509 SHA-1 (в шестнадцатеричном формате)**:
 
     ```powershell
     $thumb = "BB796AA33BD9767E7DA27FE5182CF8FDEE714A70"
     ```
 
-* **Идентификатор ресурсов вашего ключевого убежища.** На портале Key Vault in Azure выберите**идентификатор ресурсов** **свойств:** > 
+* **Идентификатор ресурса Key Vault.** В Key Vault в портал Azure выберите **Свойства** > **идентификатор ресурса**:
 
     ```powershell
     $sourceVaultValue = "/subscriptions/########-####-####-####-############/resourceGroups/sftestupgradegroup/providers/Microsoft.KeyVault/vaults/sftestupgradegroup"
@@ -280,7 +280,7 @@ Get-ServiceFabricClusterHealth
 
 ### <a name="deploy-the-updated-template"></a>Развертывание обновленного шаблона
 
-`parameterFilePath` Отрегулируйте `templateFilePath` и по мере необходимости, а затем запустите следующую команду:
+Внесите необходимые `parameterFilePath` изменения `templateFilePath` и выполните следующую команду:
 
 ```powershell
 # Deploy the new scale set (upgraded to use managed disks) into the primary node type.
@@ -297,15 +297,15 @@ New-AzResourceGroupDeployment `
     -Verbose
 ```
 
-Когда развертывание завершится, проверьте работу кластера снова и убедитесь, что все десять узлов (пять в исходном и пять в новом наборе шкалы) являются здоровыми.
+После завершения развертывания снова проверьте работоспособность кластера и убедитесь, что все десять узлов (на исходном и пять в новом масштабируемом наборе) работоспособны.
 
 ```powershell
 Get-ServiceFabricClusterHealth
 ```
 
-## <a name="migrate-seed-nodes-to-the-new-scale-set"></a>Мигрировать семенные узлы в новый набор масштаба
+## <a name="migrate-seed-nodes-to-the-new-scale-set"></a>Перенос начальных узлов в новый масштабируемый набор
 
-Теперь мы готовы начать отключение узлов исходного набора масштаба. По мере того, как эти узлы отключаются, системные службы и семенные узлы мигрируют на визы нового набора шкалы, поскольку они также помечены как основной тип узла.
+Теперь можно приступить к отключению узлов исходного масштабируемого набора. При отключении этих узлов системные службы и начальные узлы переносятся на виртуальные машины нового масштабируемого набора, так как он также помечен как тип первичного узла.
 
 ```powershell
 # Disable the nodes in the original scale set.
@@ -317,16 +317,16 @@ foreach($name in $nodeNames){
 }
 ```
 
-Используйте Service Fabric Explorer для мониторинга миграции семенных узлов в новый набор масштабов и прогрессирования узлов в исходной шкале, от *отключать* до *статуса инвалидов.*
+Используйте Service Fabric Explorer для мониторинга миграции начальных узлов в новый масштабируемый набор и хода выполнения узлов в исходном масштабируемом наборе от *отключения* к *отключенному* состоянию.
 
-![Сервис Fabric Explorer показывает состояние отключенных узлов](./media/upgrade-managed-disks/service-fabric-explorer-node-status.png)
+![Service Fabric Explorer отображение состояния отключенных узлов](./media/upgrade-managed-disks/service-fabric-explorer-node-status.png)
 
 > [!NOTE]
-> Для завершения операции отключения во всех узлах исходного набора шкалы может потребоваться некоторое время. Чтобы гарантировать согласованность данных, только один узлы семян может изменяться одновременно. Каждое изменение узла семян требует обновления кластера; таким образом, замена семенного узла требует двух обновлений кластера (по одному для добавления и удаления узлов). Обновление пяти семенных узлов в этом сценарии выборочного варианта приведет к десяти обновлениям кластеров.
+> Выполнение операции отключения для всех узлов исходного масштабируемого набора может занять некоторое время. Для обеспечения согласованности данных в каждый момент времени может измениться только один начальный узел. Для каждого изменения начального узла требуется обновление кластера. Таким же путем замены начального узла требуется два обновления кластера (по одному для добавления и удаления узла). Обновление пяти начальных узлов в этом примере сценария приведет к 10 обновлениям кластера.
 
-## <a name="remove-the-original-scale-set"></a>Удалить исходный набор масштабов
+## <a name="remove-the-original-scale-set"></a>Удалить исходный масштабируемый набор
 
-Как только операция отключения завершена, удалите набор шкалы.
+После завершения операции отключения удалите масштабируемый набор.
 
 ```powershell
 # Remove the original scale set
@@ -340,11 +340,11 @@ Remove-AzVmss `
 Write-Host "Removed scale set $scaleSetName"
 ```
 
-В Service Fabric Explorer удаленные узлы (и, следовательно, *состояние кластерного состояния здоровья)* теперь будут отображаться в состоянии *ошибки.*
+В Service Fabric Explorer удаленные узлы (и, таким как *состояние работоспособности кластера*) теперь будут отображаться в состоянии *ошибки* .
 
-![Служба Fabric Explorer показывает отключенные узлы в состоянии ошибки](./media/upgrade-managed-disks/service-fabric-explorer-disabled-nodes-error-state.png)
+![Service Fabric Explorer отображения отключенных узлов в состоянии ошибки](./media/upgrade-managed-disks/service-fabric-explorer-disabled-nodes-error-state.png)
 
-Удалите устаревшие узлы из кластера Service Fabric для восстановления состояния кластерного состояния работы в *OK.*
+Удалите устаревшие узлы из кластера Service Fabric, чтобы восстановить состояние работоспособности кластера в значение *ОК*.
 
 ```powershell
 # Remove node states for the deleted scale set
@@ -354,22 +354,22 @@ foreach($name in $nodeNames){
 }
 ```
 
-![Служба Fabric Explorer с вниз узлы в состоянии ошибки удалены](./media/upgrade-managed-disks/service-fabric-explorer-healthy-cluster.png)
+![Service Fabric Explorer с отключенными узлами в состоянии ошибки "удалено"](./media/upgrade-managed-disks/service-fabric-explorer-healthy-cluster.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-В этом пошаговом шаге вы узнали, как обновить наборы виртуальной шкалы машин кластера Service Fabric для использования управляемых дисков, избегая при этом перебоев в обслуживании во время процесса. Для получения дополнительной информации по смежным темам ознакомьтесь со следующими ресурсами.
+В этом пошаговом руководстве вы узнали, как обновить масштабируемые наборы виртуальных машин кластера Service Fabric, чтобы использовать управляемые диски, избегая простоев службы во время процесса. Дополнительные сведения по связанным темам см. в следующих ресурсах.
 
 Вы узнаете, как выполнять следующие задачи:
 
 * [Масштабирование типа первичного узла кластера Service Fabric](service-fabric-scale-up-node-type.md)
 
-* [Преобразование шаблона набора масштабов для использования управляемых дисков](../virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md.md)
+* [Преобразование шаблона масштабируемого набора для использования управляемых дисков](../virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md.md)
 
 * [Удаление типа узла Service Fabric](service-fabric-how-to-remove-node-type.md)
 
-См. также:
+См. также
 
-* [Пример: Обновление кластерных узлов для использования дисков с управлением Azure](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage)
+* [Пример. обновление узлов кластера для использования управляемых дисков Azure](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage)
 
 * [Рекомендации по вертикальному масштабированию](service-fabric-best-practices-capacity-scaling.md#vertical-scaling-considerations)

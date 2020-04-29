@@ -1,5 +1,5 @@
 ---
-title: Контроль параллелизма Лазурный рынок
+title: Управление параллелизмом | Azure Marketplace
 description: Стратегии управления параллелизмом для API-интерфейсов публикации на портале Cloud Partner.
 author: dsindona
 ms.service: marketplace
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.author: dsindona
 ms.openlocfilehash: 302ba8d550f5e91efe12c620d766550958d3bf68
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81256405"
 ---
 # <a name="concurrency-control"></a>Управление параллелизмом
 
 > [!NOTE]
-> AA-аДИ облачного partner Portal интегрированы с Партнерским центром и продолжат работать после того, как ваши предложения будут перенесены в Партнерский центр. Интеграция вносит небольшие изменения. Просмотрите изменения, перечисленные в [Справочнике API портала Cloud Partner,](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview) чтобы убедиться, что ваш код продолжает работать после миграции в Центр Партнеров.
+> Портал Cloud Partner API интегрированы с центром партнеров и продолжат работать после переноса ваших предложений в центр партнеров. Интеграция содержит небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview) , чтобы убедиться, что код будет продолжать работать после перехода в центр партнеров.
 
 При каждом вызове API-интерфейсов публикации на портале Cloud Partner необходимо явно указать, какую стратегию управления параллелизмом использовать. Если заголовок **If-Match** не предоставлен, это приведет к появлению сообщения об ошибке HTTP 400. Мы предлагаем две стратегии для управления параллелизмом.
 

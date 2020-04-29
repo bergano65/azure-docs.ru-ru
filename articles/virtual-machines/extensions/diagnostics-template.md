@@ -1,6 +1,6 @@
 ---
-title: Добавление диагностики мониторинга & в виртуальную машину Azure
-description: Используйте шаблон Azure Resource Manager для создания новой виртуальной машины Windows с расширением диагностики Azure.
+title: Добавление диагностической & диагностики в виртуальную машину Azure
+description: Используйте шаблон Azure Resource Manager, чтобы создать новую виртуальную машину Windows с расширением системы диагностики Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: mimckitt
@@ -16,10 +16,10 @@ ms.date: 05/31/2017
 ms.author: mimckitt
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d100f054da5f82bc4dea51e054a28cca07f5de7b
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81258836"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager
@@ -167,7 +167,7 @@ ms.locfileid: "81258836"
 
 Каждая таблица WADMetrics содержит следующие столбцы.
 
-* **PartitionKey** — ключ секции создается на основе значения *resourceID*, которое используется для определения ресурса виртуальной машины уникальным образом. Например: `002Fsubscriptions:<subscriptionID>:002FresourceGroups:002F<ResourceGroupName>:002Fproviders:002FMicrosoft:002ECompute:002FvirtualMachines:002F<vmName>`  
+* **PartitionKey** — ключ секции создается на основе значения *resourceID*, которое используется для определения ресурса виртуальной машины уникальным образом. Пример: `002Fsubscriptions:<subscriptionID>:002FresourceGroups:002F<ResourceGroupName>:002Fproviders:002FMicrosoft:002ECompute:002FvirtualMachines:002F<vmName>`  
 * **RowKey** — указывается в формате `<Descending time tick>:<Performance Counter Name>`. Такты времени вычисляются в порядке убывания следующим образом: от максимального количества тактов времени отнимается время начала периода агрегирования. Например, если период выборки начался 10 ноября 2015 г. в 00:00 часов в формате UTC, то вычисления будут иметь следующий вид: `DateTime.MaxValue.Ticks - (new DateTime(2015,11,10,0,0,0,DateTimeKind.Utc).Ticks)`. Для счетчиков производительности байтов, доступных в памяти, ключ строки будет выглядеть следующим образом: `2519551871999999999__:005CMemory:005CAvailable:0020Bytes`
 * **CounterName** — имя счетчика производительности. Это значение соответствует *counterSpecifier* , определенному в XML-файле конфигурации.
 * **Maximum** — максимальное значение счетчика производительности в течение периода сбора.
@@ -176,7 +176,7 @@ ms.locfileid: "81258836"
 * **Count** — общее количество значений, переданных для счетчика производительности.
 * **Average** — среднее значение (сумма значений, деленная на общее количество значений) счетчика производительности в течение периода сбора.
 
-## <a name="next-steps"></a>Next Steps
-* Для полного шаблона образца виртуальной машины [201-vm-monitoring-diagnostics-extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension) Windows с расширением диагностики см.   
+## <a name="next-steps"></a>Дальнейшие шаги
+* Полный пример шаблона виртуальной машины Windows с расширением диагностики см. в статье [201-VM-Monitoring-Diagnostics-Extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension) .   
 * Разверните шаблон Azure Resource Manager с использованием [Azure PowerShell](../windows/ps-template.md) или [командной строки Azure](../linux/create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-* Подробнее об [авторизации шаблонов управления ресурсами Azure](../../resource-group-authoring-templates.md)
+* Дополнительные сведения о [создании шаблонов Azure Resource Manager](../../resource-group-authoring-templates.md)

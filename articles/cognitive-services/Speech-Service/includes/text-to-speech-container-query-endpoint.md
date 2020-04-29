@@ -1,5 +1,5 @@
 ---
-title: Конечная точка контейнера «Текст к речи»
+title: Запрос к конечной точке контейнера текста для речи
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,15 +9,15 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: b2a621a23a81e4fb4f47e7c99d780211973e30a0
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81275003"
 ---
-Контейнер предоставляет [APIs на основе REST.](../rest-text-to-speech.md) Существует множество [проектов исходного кода образца](https://github.com/Azure-Samples/Cognitive-Speech-TTS) для платформы, фреймворка и языковых вариаций.
+Контейнер предоставляет [интерфейсы API конечной точки на основе интерфейса RESTful](../rest-text-to-speech.md). Существует множество [примеров проектов исходного кода](https://github.com/Azure-Samples/Cognitive-Speech-TTS) для платформ, платформ и языковых вариантов.
 
-С контейнером *«Стандартный текст к речи»* следует полагаться на местность и голос скачатого тега изображений. Например, если вы `latest` загрузили тег, `en-US` локаль по умолчанию есть и `JessaRUS` голос. Аргумент `{VOICE_NAME}` будет [`en-US-JessaRUS`](../language-support.md#standard-voices). Смотрите пример SSML ниже:
+Используя стандартный контейнер преобразования *текста в речь* , вы должны полагаться на языковой стандарт и голоса скачанного тега образа. Например, если вы загрузили `latest` тег, язык по умолчанию `en-US` — `JessaRUS` и Voice. Затем `{VOICE_NAME}` аргумент будет иметь [`en-US-JessaRUS`](../language-support.md#standard-voices)значение. См. пример SSML ниже:
 
 ```xml
 <speak version="1.0" xml:lang="en-US">
@@ -27,11 +27,11 @@ ms.locfileid: "81275003"
 </speak>
 ```
 
-Тем не менее, для *пользовательских Текст к речи* вам нужно получить **голос / модель** из [пользовательского голосового портала](https://aka.ms/custom-voice-portal). Пользовательское название модели является синонимом названия голоса. Перейдите на страницу **Обучения** и скопируйте `{VOICE_NAME}` **голосовую / модель** для использования в качестве аргумента.
+Однако для *пользовательского преобразования текста в речь* необходимо получить **голос или модель** с [настраиваемого голосового портала](https://aka.ms/custom-voice-portal). Имя пользовательской модели является синонимом имени голоса. Перейдите на страницу **обучения** и скопируйте **голосовое или модель** для использования в качестве `{VOICE_NAME}` аргумента.
 <br><br>
-:::image type="content" source="../media/custom-voice/custom-voice-model-voice-name.png" alt-text="Пользовательская голосовая модель - имя голоса":::
+:::image type="content" source="../media/custom-voice/custom-voice-model-voice-name.png" alt-text="Настраиваемая Voice-модель — имя голоса":::
 
-Смотрите пример SSML ниже:
+См. пример SSML ниже:
 
 ```xml
 <speak version="1.0" xml:lang="en-US">
@@ -41,7 +41,7 @@ ms.locfileid: "81275003"
 </speak>
 ```
 
-Давайте построим запрос HTTP POST, предоставив несколько заголовков и полезную нагрузку данных. Замените `{VOICE_NAME}` заполнитель на собственную стоимость.
+Давайте создадим запрос HTTP POST, предоставляя несколько заголовков и полезных данных. Замените `{VOICE_NAME}` заполнитель своим собственным значением.
 
 ```curl
 curl -s -v -X POST http://localhost:5000/speech/synthesize/cognitiveservices/v1 \
@@ -53,8 +53,8 @@ curl -s -v -X POST http://localhost:5000/speech/synthesize/cognitiveservices/v1 
 
 Эта команда:
 
-* Строит запрос HTTP POST `speech/synthesize/cognitiveservices/v1` для конечных точек.
-* Определяет `Accept` заголовок`audio/*`
-* Углянут `Content-Type` заголовок, для получения дополнительной информации, `application/ssml+xml`см. [request body](../rest-text-to-speech.md#request-body)
-* Определяет `X-Microsoft-OutputFormat` заголовок `riff-16khz-16bit-mono-pcm`, для более вариантов см аудио [выход.](../rest-text-to-speech.md#audio-outputs)
-* Отправляет запрос на [язык разметки синтеза речи (SSML)](../speech-synthesis-markup.md) с учетом конечных `{VOICE_NAME}` точек.
+* Конструирует запрос HTTP POST для `speech/synthesize/cognitiveservices/v1` конечной точки.
+* Задает `Accept` заголовок`audio/*`
+* Задает заголовок `Content-Type` `application/ssml+xml`для более подробной информации см. в разделе [текст запроса](../rest-text-to-speech.md#request-body).
+* Задает `X-Microsoft-OutputFormat` заголовок `riff-16khz-16bit-mono-pcm`для дополнительных параметров см. [звуковые выходные данные](../rest-text-to-speech.md#audio-outputs).
+* Отправляет запрос на [языке разметки речи (SSML)](../speech-synthesis-markup.md) , `{VOICE_NAME}` заданный в конечной точке.

@@ -1,5 +1,5 @@
 ---
-title: Используйте Azure PowerShell для диагностики на Windows VM
+title: Использование Azure PowerShell для включения диагностики на виртуальной машине Windows
 services: virtual-machines-windows
 documentationcenter: ''
 description: Описание процедуры включения системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell.
@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 12/15/2015
 ms.author: mimckitt
 ms.openlocfilehash: 16e1dba8c430a5c1e1d1d69910b8ed2c8d0b8138
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81262848"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell
@@ -42,9 +42,9 @@ ms.locfileid: "81262848"
 
 Если файл конфигурации диагностики содержит элемент **StorageAccount** с именем учетной записи хранения, сценарий *Set-AzVMDiagnosticsExtension* автоматически настраивает для расширения диагностики отправку диагностических данных в эту учетную запись. Для этого учетная запись хранения должна входить в ту же подписку, что и виртуальная машина.
 
-Если в конфигурации диагностики нет элемента **StorageAccount** , в командлет необходимо передать параметр *StorageAccountName* . Если указан параметр *StorageAccountName,* то cmdlet всегда будет использовать учетную запись хранилища, указанную в параметре, а не ту, которая указана в файле конфигурации диагностики.
+Если в конфигурации диагностики нет элемента **StorageAccount** , в командлет необходимо передать параметр *StorageAccountName* . Если указан параметр *StorageAccountName* , то командлет всегда будет использовать учетную запись хранения, указанную в параметре, а не ту, которая указана в файле конфигурации диагностики.
 
-Если учетная запись хранения диагностики и виртуальная машина относятся к разным подпискам, то в командлет необходимо явно передать параметры *StorageAccountName* и *StorageAccountKey*. Параметр *StorageAccountKey* не нужен, когда учетная запись хранения диагностики находится в той же подписке, так как cmdlet может автоматически задать запрос и установить ключевое значение при включении расширения диагностики. Однако, если учетная запись хранения диагностики находится в другой подписке, то cmdlet не сможет получить ключ автоматически, и вам нужно явно указать ключ через параметр *StorageAccountKey.*  
+Если учетная запись хранения диагностики и виртуальная машина относятся к разным подпискам, то в командлет необходимо явно передать параметры *StorageAccountName* и *StorageAccountKey*. Параметр *StorageAccountKey* не требуется, если учетная запись хранения диагностических данных находится в той же подписке, так как командлет может автоматически запрашивать и задавать значение ключа при включении расширения диагностики. Однако если учетная запись хранения диагностики находится в другой подписке, командлет не сможет получить ключ автоматически, и необходимо явно указать ключ с помощью параметра *StorageAccountKey* .  
 
     Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name -DiagnosticsConfigurationPath $diagnosticsconfig_path -StorageAccountName $diagnosticsstorage_name -StorageAccountKey $diagnosticsstorage_key
 
@@ -198,7 +198,7 @@ ms.locfileid: "81262848"
     </PublicConfig>
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные рекомендации по использованию системы диагностики Azure и других методов для устранения неполадок см. в статье [Включение системы диагностики Azure в облачных службах Azure](../../cloud-services/cloud-services-dotnet-diagnostics.md).
 * Пояснение различных параметров XML-конфигураций для расширения диагностики см. в статье, посвященной [схеме конфигураций диагностики](https://msdn.microsoft.com/library/azure/mt634524.aspx).
 

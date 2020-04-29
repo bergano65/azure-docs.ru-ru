@@ -12,10 +12,10 @@ ms.author: vanto
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: a5ea0fd252d1792d4c40cc6d7869f4ba57edc1ad
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81011367"
 ---
 # <a name="split-merge-security-configuration"></a>Настройка параметров безопасности для службы разделения и объединения
@@ -51,24 +51,24 @@ ms.locfileid: "81011367"
 
 ## <a name="to-configure-the-tlsssl-certificate"></a>Настройка сертификата TLS/SSL
 
-Для шифрования сообщения и проверки подлинности сервера требуется сертификат TLS/SSL. Выберите наиболее подходящий из этих трех сценариев и выполните все шаги.
+Для шифрования связи и проверки подлинности сервера требуется сертификат TLS/SSL. Выберите наиболее подходящий из этих трех сценариев и выполните все шаги.
 
 ### <a name="create-a-new-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
 1. [Создание самозаверяющего сертификата](#create-a-self-signed-certificate)
-2. [Создание файла PFX для самостоятельно подписанного сертификата TLS/SSL](#create-pfx-file-for-self-signed-tlsssl-certificate)
-3. [Загрузка сертификата TLS/SSL в облачную службу](#upload-tlsssl-certificate-to-cloud-service)
-4. [Обновление сертификата TLS/SSL в файле конфигурации обслуживания](#update-tlsssl-certificate-in-service-configuration-file)
-5. [Импорт TLS / SSL сертификации органа](#import-tlsssl-certification-authority)
+2. [Создание PFX-файла для самозаверяющего TLS/SSL-сертификата](#create-pfx-file-for-self-signed-tlsssl-certificate)
+3. [Отправка TLS/SSL-сертификата в облачную службу](#upload-tlsssl-certificate-to-cloud-service)
+4. [Обновление сертификата TLS/SSL в файле конфигурации службы](#update-tlsssl-certificate-in-service-configuration-file)
+5. [Импорт центра сертификации TLS/SSL](#import-tlsssl-certification-authority)
 
 ### <a name="to-use-an-existing-certificate-from-the-certificate-store"></a>Использование существующего сертификата из хранилища сертификатов
-1. [Экспортный сертификат TLS/SSL из магазина сертификатов](#export-tlsssl-certificate-from-certificate-store)
-2. [Загрузка сертификата TLS/SSL в облачную службу](#upload-tlsssl-certificate-to-cloud-service)
-3. [Обновление сертификата TLS/SSL в файле конфигурации обслуживания](#update-tlsssl-certificate-in-service-configuration-file)
+1. [Экспорт сертификата TLS/SSL из хранилища сертификатов](#export-tlsssl-certificate-from-certificate-store)
+2. [Отправка TLS/SSL-сертификата в облачную службу](#upload-tlsssl-certificate-to-cloud-service)
+3. [Обновление сертификата TLS/SSL в файле конфигурации службы](#update-tlsssl-certificate-in-service-configuration-file)
 
 ### <a name="to-use-an-existing-certificate-in-a-pfx-file"></a>Использование существующего сертификата в PFX-файле
-1. [Загрузка сертификата TLS/SSL в облачную службу](#upload-tlsssl-certificate-to-cloud-service)
-2. [Обновление сертификата TLS/SSL в файле конфигурации обслуживания](#update-tlsssl-certificate-in-service-configuration-file)
+1. [Отправка TLS/SSL-сертификата в облачную службу](#upload-tlsssl-certificate-to-cloud-service)
+2. [Обновление сертификата TLS/SSL в файле конфигурации службы](#update-tlsssl-certificate-in-service-configuration-file)
 
 ## <a name="to-configure-client-certificates"></a>Настройка сертификатов клиентов
 Для проверки подлинности запросов к службе требуются сертификаты клиентов. Выберите наиболее подходящий из этих трех сценариев и выполните все шаги.
@@ -107,7 +107,7 @@ ms.locfileid: "81011367"
 4. [Обновление сертификата шифрования в файле конфигурации службы](#update-encryption-certificate-in-service-configuration-file)
 
 ### <a name="use-an-existing-certificate-from-the-certificate-store"></a>Использование существующего сертификата из хранилища сертификатов
-1. [Экспортный сертификат шифрования из магазина сертификатов](#export-encryption-certificate-from-certificate-store)
+1. [Экспорт сертификата шифрования из хранилища сертификатов](#export-encryption-certificate-from-certificate-store)
 2. [Передача сертификата шифрования в облачную службу](#upload-encryption-certificate-to-cloud-service)
 3. [Обновление сертификата шифрования в файле конфигурации службы](#update-encryption-certificate-in-service-configuration-file)
 
@@ -120,7 +120,7 @@ ms.locfileid: "81011367"
 В конфигурации по умолчанию разрешен доступ к конечной точке HTTPS. Этот параметр в дальнейшем может быть ограничен.
 
 ### <a name="changing-the-configuration"></a>Изменение конфигурации
-Правила управления доступом, которые применяются к конечным точкам, настроены в разделе ** \<EndpointAcls>** в **файле конфигурации службы.**
+Группа правил управления доступом, применяемых к и конечной точке, настраивается в разделе ** \<ендпоинтаклс>** в **файле конфигурации службы**.
 
 ```xml
 <EndpointAcls>
@@ -129,7 +129,7 @@ ms.locfileid: "81011367"
 </EndpointAcls>
 ```
 
-Правила в группе управления доступом \<настроены в названии AccessControl"> разделе файла конфигурации службы. 
+Правила в группе управления доступом настраиваются в разделе \<AccessControl Name = "" > файла конфигурации службы. 
 
 Описание формата содержится в документации по спискам управления сетевым доступом.
 Например, правила, позволяющие разрешить получение доступа к конечной точке HTTPS только IP-адресам в диапазоне от 100.100.0.0 до 100.100.255.255, будут выглядеть следующим образом:
@@ -204,7 +204,7 @@ ms.locfileid: "81011367"
 * -n с URL-адресом службы. Поддерживаются подстановочные знаки ("CN=*.cloudapp.net") и альтернативные имена ("CN=myservice1.cloudapp.net, CN=myservice2.cloudapp.net").
 * -e со сроком действия сертификата Создайте надежный пароль и укажите его при появлении запроса.
 
-## <a name="create-pfx-file-for-self-signed-tlsssl-certificate"></a>Создание файла PFX для самостоятельно подписанного сертификата TLS/SSL
+## <a name="create-pfx-file-for-self-signed-tlsssl-certificate"></a>Создание PFX-файла для самозаверяющего TLS/SSL-сертификата
 Выполните:
 
         pvk2pfx -pvk MySSL.pvk -spc MySSL.cer
@@ -214,24 +214,24 @@ ms.locfileid: "81011367"
 * Да, экспортировать закрытый ключ
 * Экспортировать все расширенные свойства.
 
-## <a name="export-tlsssl-certificate-from-certificate-store"></a>Экспортный сертификат TLS/SSL из магазина сертификатов
+## <a name="export-tlsssl-certificate-from-certificate-store"></a>Экспорт сертификата TLS/SSL из хранилища сертификатов
 * Поиск сертификата
 * Выберите «Действия > Все задачи > Экспортировать…»
 * Экспортируйте сертификат в PFX-файл со следующими параметрами.
   * Да, экспортировать закрытый ключ
   * По возможности включите все сертификаты в путь сертификации *Экспортировать все расширенные свойства.
 
-## <a name="upload-tlsssl-certificate-to-cloud-service"></a>Загрузка сертификата TLS/SSL в облачный сервис
-Загрузить сертификат с существующим или генерируемым . Файл PFX с парой ключей TLS:
+## <a name="upload-tlsssl-certificate-to-cloud-service"></a>Отправка TLS/SSL-сертификата в облачную службу
+Отправьте сертификат с существующим или созданным. PFX-файл с парой ключей TLS:
 
 * Введите пароль, защищающий данные закрытого ключа
 
-## <a name="update-tlsssl-certificate-in-service-configuration-file"></a>Обновление сертификата TLS/SSL в файле конфигурации обслуживания
+## <a name="update-tlsssl-certificate-in-service-configuration-file"></a>Обновление сертификата TLS/SSL в файле конфигурации службы
 Обновите значения отпечатка следующего параметра в файле конфигурации службы значением отпечатка сертификата, отправленного в облачную службу.
 
     <Certificate name="SSL" thumbprint="" thumbprintAlgorithm="sha1" />
 
-## <a name="import-tlsssl-certification-authority"></a>Орган по сертификации импорта TLS/SSL
+## <a name="import-tlsssl-certification-authority"></a>Импорт центра сертификации TLS/SSL
 Выполните эти шаги на всех учетных записях или компьютерах, которые будут взаимодействовать со службой.
 
 * Дважды нажмите файл .CER в проводнике Windows
@@ -248,7 +248,7 @@ ms.locfileid: "81011367"
 <Setting name="SetupWebserverForClientCertificates" value="false" />
 ```
 
-Затем скопируйте тот же отпечаток пальца, что и сертификат TLS/SSL в настройках сертификата CA:
+Затем скопируйте тот же отпечаток, что и в сертификате TLS/SSL, в параметре сертификата ЦС:
 
 ```xml
 <Certificate name="CA" thumbprint="" thumbprintAlgorithm="sha1" />
@@ -357,8 +357,8 @@ ms.locfileid: "81011367"
 * В открывшемся диалоговом окне сертификата перейдите на вкладку "Подробности"
 * Убедитесь, что в разделе "Показать" выбран вариант "Все"
 * Выберите в списке поле с именем "Отпечаток"
-* Копирование значения отпечатка пальца
-  * Удаление невидимых символов Unicode перед первой цифрой
+* Скопируйте значение отпечатка
+  * Удалить невидимые символы Юникода перед первой цифрой
   * Удалить все пробелы
 
 ## <a name="configure-allowed-clients-in-the-service-configuration-file"></a>Настройка разрешенных клиентов в файле конфигурации службы
@@ -424,7 +424,7 @@ ms.locfileid: "81011367"
 5. Выберите расположение хранилища сертификатов.
 6. Нажмите кнопку **Готово**.
 7. Нажмите кнопку **ОК**.
-8. Разверните узел **Сертификаты**.
+8. Разверните элемент **Сертификаты**.
 9. Разверните хранилище сертификатов.
 10. Разверните дочерний узел сертификата.
 11. Выберите сертификат из списка.
@@ -466,7 +466,7 @@ ms.locfileid: "81011367"
 9. Нажмите кнопку **ОК** во всех диалоговых окнах.
 
 ## <a name="upload-certificate"></a>Передача сертификата
-На [портале Azure](https://portal.azure.com/)
+В [портал Azure](https://portal.azure.com/)
 
 1. Выберите **Облачные службы**.
 2. Выберите облачную службу.
@@ -477,7 +477,7 @@ ms.locfileid: "81011367"
 7. После завершения скопируйте отпечаток сертификата из новой записи в списке.
 
 ## <a name="other-security-considerations"></a>Прочие вопросы по безопасности
-Настройки TLS, описанные в этом документе, шифруют связь между службой и ее клиентами при использовании конечной точки HTTPS. Это важно, поскольку учетные данные для доступа к базе данных и другие конфиденциальные сведения передаются по каналу связи. Обратите внимание, что служба сохраняет внутренний статус, включая учетные данные, в своих внутренних таблицах базы данных SQL Microsoft Azure, предоставленной вам для хранения метаданных при получении подписки на Microsoft Azure. База данных была определена как часть следующего параметра в вашем файле конфигурации службы (файл .CSCFG): 
+Параметры TLS, описанные в этом документе, шифруют обмен данными между службой и ее клиентами при использовании конечной точки HTTPS. Это важно, поскольку учетные данные для доступа к базе данных и другие конфиденциальные сведения передаются по каналу связи. Обратите внимание, что служба сохраняет внутренний статус, включая учетные данные, в своих внутренних таблицах базы данных SQL Microsoft Azure, предоставленной вам для хранения метаданных при получении подписки на Microsoft Azure. База данных была определена как часть следующего параметра в вашем файле конфигурации службы (файл .CSCFG): 
 
 ```xml
 <Setting name="ElasticScaleMetadata" value="Server=…" />

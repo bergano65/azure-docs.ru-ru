@@ -1,5 +1,5 @@
 ---
-title: Управление наборами виртуальной шкалы машин с помощью Azure CLI
+title: Управление масштабируемыми наборами виртуальных машин с помощью Azure CLI
 description: Стандартные команды Azure CLI для управления масштабируемыми наборами виртуальных машин, в том числе команды для запуска и остановки экземпляра, а также для изменения емкости масштабируемого набора.
 author: ju-shim
 tags: azure-resource-manager
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: jushiman
 ms.openlocfilehash: ad07a237dd40d836705b332c6c10356720901481
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81011588"
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-the-azure-cli"></a>Управление масштабируемым набором виртуальных машин с помощью Azure CLI
@@ -129,5 +129,5 @@ az vmss delete-instances --resource-group myResourceGroup --name myScaleSet --in
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 К другим типичным задачам управления масштабируемым набором относятся [развертывание приложения](virtual-machine-scale-sets-deploy-app.md) и [обновление экземпляров виртуальных машин](virtual-machine-scale-sets-upgrade-scale-set.md). Можно также использовать Azure CLI для [настройки правил автомасштабирования](virtual-machine-scale-sets-autoscale-overview.md).

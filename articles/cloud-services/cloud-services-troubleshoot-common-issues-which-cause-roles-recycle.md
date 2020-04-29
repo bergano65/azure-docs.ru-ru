@@ -15,10 +15,10 @@ ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
 ms.openlocfilehash: a644e211cc933ca686f0bd6a13b0d2ba8ae20162
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81114110"
 ---
 # <a name="common-issues-that-cause-roles-to-recycle"></a>Распространенные проблемы, вызывающие перезапуск ролей
@@ -51,16 +51,16 @@ Azure является 64-разрядной средой. Таким образ
 
 * Параметр `DiagnosticsConnectionString` указывает на действительную учетную запись хранения в Azure.  
   По умолчанию этот параметр указывает на эмулированную учетную запись хранения, поэтому необходимо явным образом изменить его перед развертыванием пакета приложения. Если этого не сделать, то при попытке экземпляра роли запустить монитор диагностики возникает исключение. Это может вызвать бесконечный перезапуск экземпляра роли.
-* Строку подключения следует указывать в определенном [формате](../storage/common/storage-configure-connection-string.md). (Протокол должен быть указан как HTTPS.) Замените *MyAccountName* с именем вашей учетной записи хранения, и *MyAccountKey* с ключом доступа:    
+* Строку подключения следует указывать в определенном [формате](../storage/common/storage-configure-connection-string.md). (Протокол должен быть указан как HTTPS.) Замените *MyAccountName* именем вашей учетной записи хранения, а *MyAccountKey* — ключом доступа:    
 
         DefaultEndpointsProtocol=https;AccountName=MyAccountName;AccountKey=MyAccountKey
 
   Если вы разрабатываете приложение с помощью инструментов Azure для Microsoft Visual Studio, чтобы задать это значение, можно использовать страницы свойств.
 
 ## <a name="exported-certificate-does-not-include-private-key"></a>Экспортированный сертификат не содержит закрытый ключ.
-Чтобы запустить веб-роль в TLS, необходимо убедиться, что ваш экспортированный сертификат управления включает в себя закрытый ключ. При использовании *диспетчера сертификатов Windows* для экспорта сертификата обязательно выберите **Да** в качестве значения параметра **Экспорт закрытого ключа**. Сертификат следует экспортировать в формате PFX, так как в настоящее время поддерживается только он.
+Чтобы запустить веб-роль с помощью TLS, необходимо убедиться, что экспортированный сертификат управления включает закрытый ключ. При использовании *диспетчера сертификатов Windows* для экспорта сертификата обязательно выберите **Да** в качестве значения параметра **Экспорт закрытого ключа**. Сертификат следует экспортировать в формате PFX, так как в настоящее время поддерживается только он.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Просмотрите дополнительные [статьи об устранении неполадок](https://azure.microsoft.com/documentation/articles/?tag=top-support-issue&product=cloud-services) в облачных службах.
 
 Дополнительные сценарии перезапуска ролей см. в [серии статей в блоге Кевина Уильямсона](https://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).
@@ -68,4 +68,4 @@ Azure является 64-разрядной средой. Таким образ
 [RoleEntryPoint]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx
 [OnStart]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx
 [OnStop]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
-[Запустить]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx
+[Запуска]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx

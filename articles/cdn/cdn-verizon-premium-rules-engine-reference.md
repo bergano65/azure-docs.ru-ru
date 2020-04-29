@@ -8,13 +8,13 @@ ms.topic: article
 ms.date: 05/31/2019
 ms.author: allensu
 ms.openlocfilehash: bda817712faf1f54287e880dc62ef2b08273ff42
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81253396"
 ---
-# <a name="azure-cdn-from-verizon-premium-rules-engine-reference"></a>Azure CDN от Verizon Premium правила двигателя ссылки
+# <a name="azure-cdn-from-verizon-premium-rules-engine-reference"></a>Azure CDN из справочника по обработчику правил Verizon Premium
 
 В этой статье подробно описаны доступные условия соответствия и компоненты для [обработчика правил](cdn-verizon-premium-rules-engine.md) сети доставки содержимого (CDN) Azure.
 
@@ -37,8 +37,8 @@ ms.locfileid: "81253396"
 
 Методы обработки специальных символов могут отличаться в зависимости от того, как условие соответствия или функция обрабатывает текстовые значения. Условие соответствия или функция может использовать следующие способы обработки текста:
 
-1. [**Литературные значения**](#literal-values)
-2. [**Значения Wildcard**](#wildcard-values)
+1. [**Литеральные значения**](#literal-values)
+2. [**Подстановочные знаки**](#wildcard-values)
 3. [**Регулярные выражения**](#regular-expressions)
 
 ### <a name="literal-values"></a>Литеральные значения
@@ -71,12 +71,12 @@ ms.locfileid: "81253396"
 Пробел | Символ пробела обычно рассматривается как литеральный символ.
 'значение' | Одинарные кавычки рассматриваются как литеральные символы. Набор одинарных кавычек не имеет специального значения.
 
-Условия соответствия и функции, поддерживающие регулярные выражения, принимают шаблоны, определенные Perl Compatible Regular Expressions (PCRE).
+Условия соответствия и функции, поддерживающие регулярные выражения, принимают шаблоны, определенные с помощью Perl-совместимых регулярных выражений (PCRE).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Условия соответствия двигателя правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
-- [Правила двигателя условных выражений](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
-- [Функции движка правил](cdn-verizon-premium-rules-engine-reference-features.md)
+- [Условия соответствия обработчика правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Условные выражения обработчика правил](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
+- [Функции обработчика правил](cdn-verizon-premium-rules-engine-reference-features.md)
 - [Переопределение режима HTTP с помощью обработчика правил Azure CDN](cdn-verizon-premium-rules-engine.md)
 - [Общие сведения о сети доставки содержимого Azure](cdn-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: Службы Azure, поддерживающие управляемые идентификаторы - Azure AD
+title: Службы Azure, поддерживающие управляемые удостоверения — Azure AD
 description: Список служб, которые поддерживают управляемые удостоверения для ресурсов Azure и аутентификацию Azure AD.
 services: active-directory
 author: MarkusVi
@@ -11,10 +11,10 @@ ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 45a248300cd61a0e57b9f35c8905d7c335069a27
-ms.sourcegitcommit: a53fe6e9e4a4c153e9ac1a93e9335f8cf762c604
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80991285"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
@@ -32,8 +32,8 @@ ms.locfileid: "80991285"
 
 | Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | ![Доступно][check] | ![Доступно][check] | Предварительный просмотр | Предварительный просмотр | 
-| Назначено пользователем | ![Доступно][check] | ![Доступно][check] | Предварительный просмотр | Предварительный просмотр |
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | 
+| Назначено пользователем | ![Доступно][check] | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) |
 
 Чтобы настроить управляемые удостоверения для виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
 
@@ -47,8 +47,8 @@ ms.locfileid: "80991285"
 
 |Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | ![Доступно][check] | Предварительный просмотр | Предварительный просмотр | Предварительный просмотр |
-| Назначено пользователем | ![Доступно][check] | Предварительный просмотр | Предварительный просмотр | Предварительный просмотр |
+| Назначено системой | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) |
+| Назначено пользователем | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) |
 
 Чтобы настроить управляемые удостоверения для масштабируемых наборов виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
 
@@ -79,10 +79,10 @@ ms.locfileid: "80991285"
 | Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | Недоступно |
 | Назначено пользователем | ![Доступно][check] | ![Доступно][check] | Недоступно | Недоступно |
 
-Обратитесь к следующему списку, чтобы использовать управляемый итог с [помощью чертежей Azure:](../../governance/blueprints/overview.md)
+Чтобы использовать управляемое удостоверение с помощью проектов [Azure](../../governance/blueprints/overview.md), см. следующий список:
 
-- [Портал Azure - назначение чертежа](../../governance/blueprints/create-blueprint-portal.md#assign-a-blueprint)
-- [REST API - назначение чертежа](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
+- [Портал Azure-назначение чертежей](../../governance/blueprints/create-blueprint-portal.md#assign-a-blueprint)
+- [REST API-назначение чертежей](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
 
 ### <a name="azure-functions"></a>Функции Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "80991285"
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
 | Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] |
-| Назначено пользователем | Предварительный просмотр | Предварительный просмотр | Недоступно | Предварительный просмотр |
+| Назначено пользователем | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | Недоступно | Preview (Предварительный просмотр) |
 
 Чтобы настроить управляемые удостоверения для Управления API Azure версии 2 (в регионах, где они доступны), см. следующий список.
 
@@ -154,21 +154,21 @@ ms.locfileid: "80991285"
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
 | Назначено системой | ![Доступно][check] | Недоступно | Недоступно | Недоступно |
-| Назначено пользователем | Предварительный просмотр | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно |
 
-Обратитесь к следующему списку для настройки управляемой идентификации для задач реестра контейнеров Azure (в регионах, где это возможно):
+См. следующий список, чтобы настроить управляемое удостоверение для задач реестра контейнеров Azure (в регионах, где это возможно):
 
 - [Azure CLI](~/articles/container-registry/container-registry-tasks-authentication-managed-identity.md)
 
 ### <a name="azure-service-fabric"></a>Azure Service Fabric
-[Управляемая идентификация для приложений Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity) находится в предварительном просмотре и доступна во всех регионах.
+[Управляемое удостоверение для Service Fabric приложений](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity) доступно в предварительной версии и доступно во всех регионах.
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
 | Назначено системой | ![Доступно][check] | Недоступно | Недоступно | недоступно |
 | Назначено пользователем | ![Доступно][check] | Недоступно | Недоступно |Недоступно |
 
-Обратитесь к следующему списку для настройки управляемых интизантов для приложений Azure Service Fabric во всех регионах:
+Чтобы настроить управляемое удостоверение для приложений Azure Service Fabric во всех регионах, см. следующий список:
 - [Шаблон Azure Resource Manager](https://github.com/Azure-Samples/service-fabric-managed-identity/tree/anmenard-docs)
 
 ## <a name="azure-services-that-support-azure-ad-authentication"></a>Службы Azure, поддерживающие аутентификацию Azure AD
@@ -177,12 +177,12 @@ ms.locfileid: "80991285"
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 
-Обратитесь к следующему списку, чтобы настроить доступ к менеджеру ресурсов Azure:
+Чтобы настроить доступ к Azure Resource Manager, обратитесь к следующему списку:
 
-- [Назначить доступ через портал Azure](howto-assign-access-portal.md)
-- [Назначить доступ через PowerShell](howto-assign-access-powershell.md)
-- [Назначить доступ через Azure CLI](howto-assign-access-CLI.md)
-- [Назначить доступ через шаблон менеджера ресурсов Azure](../../role-based-access-control/role-assignments-template.md)
+- [Назначение доступа через портал Azure](howto-assign-access-portal.md)
+- [Назначение доступа с помощью PowerShell](howto-assign-access-powershell.md)
+- [Назначение доступа через Azure CLI](howto-assign-access-CLI.md)
+- [Назначение доступа с помощью шаблона Azure Resource Manager](../../role-based-access-control/role-assignments-template.md)
 
 | Облако | Идентификатор ресурса | Состояние |
 |--------|------------|:-:|
@@ -200,7 +200,7 @@ ms.locfileid: "80991285"
 | Azure для Германии |  `https://vault.microsoftazure.de` | ![Доступно][check] |
 | Azure China 21Vianet | `https://vault.azure.cn` | ![Доступно][check] |
 
-### <a name="azure-data-lake"></a>Azure Data Lake; 
+### <a name="azure-data-lake"></a>Azure Data Lake 
 
 | Облако | Идентификатор ресурса | Состояние |
 |--------|------------|:-:|
@@ -244,7 +244,7 @@ ms.locfileid: "80991285"
 
 
 
-### <a name="azure-storage-blobs-and-queues"></a>Капли и очереди для хранения azure
+### <a name="azure-storage-blobs-and-queues"></a>Большие двоичные объекты и очереди службы хранилища Azure
 
 | Облако | Идентификатор ресурса | Состояние |
 |--------|------------|:-:|
@@ -262,7 +262,7 @@ ms.locfileid: "80991285"
 
 
 
-### <a name="azure-analysis-services"></a>Службы Azure Analysis Services
+### <a name="azure-analysis-services"></a>Azure Analysis Services
 
 | Облако | Идентификатор ресурса | Состояние |
 |--------|------------|:-:|
@@ -272,7 +272,7 @@ ms.locfileid: "80991285"
 | Azure China 21Vianet | `https://*.asazure.chinacloudapi.cn` | ![Доступно][check] |
 
 > [!Note]
-> Microsoft Power BI также [поддерживает управляемые идентификаторы.](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity)
+> Microsoft Power BI также [поддерживает управляемые удостоверения](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity).
 
 
-[check]: media/services-support-managed-identities/check.png "Доступны"
+[check]: media/services-support-managed-identities/check.png "Имеющ"

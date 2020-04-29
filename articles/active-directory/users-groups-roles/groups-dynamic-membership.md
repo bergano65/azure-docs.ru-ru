@@ -1,5 +1,5 @@
 ---
-title: Правила для членства в динамически населенных группах - Azure AD Документы Майкрософт
+title: Правила для динамически заполняемого членства в группах — Azure AD | Документация Майкрософт
 description: Сведения о создании правил членства для автоматического заполнения групп и о ссылках на эти правила.
 services: active-directory
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d6f8237ac13744e56baa8551f8cced12b2785a48
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81114738"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
@@ -32,23 +32,23 @@ ms.locfileid: "81114738"
 
 > [!NOTE]
 > Этот компонент требует наличия лицензии Azure AD Premium P1 для каждого уникального пользователя, добавленного хотя бы в одну из динамических групп. Вам необязательно назначать лицензии пользователям, чтобы внести их в динамическую группу. Но минимальное число лицензий в клиенте должно быть достаточным для всех пользователей. Например, если общее число уникальных пользователей во всех динамических группах в клиенте составляет 1000, чтобы обеспечить соответствие требованиям лицензирования, необходимо не менее 1000 лицензий для Azure AD Premium P1.
-> Лицензия не требуется для устройств, внеедных в группу динамических устройств.
+> Для устройств, входящих в группу динамических устройств, лицензия не требуется.
 
-## <a name="rule-builder-in-the-azure-portal"></a>Строитель правил на портале Azure
+## <a name="rule-builder-in-the-azure-portal"></a>Построитель правил в портал Azure
 
-Azure AD обеспечивает создание правил для более быстрого создания и обновления важных правил. Строитель правила поддерживает конструкцию до 5 выражений. Строитель правил упрощает формирование правила с помощью нескольких простых выражений, однако его нельзя использовать для воспроизведения каждого правила. Если создатель правил не поддерживает правило, которое вы хотите создать, можно использовать текстовое поле.
+Azure AD предоставляет построитель правил для более быстрого создания и обновления важных правил. Построитель правил поддерживает построение до пяти выражений. Построитель правил упрощает формирование правила с помощью нескольких простых выражений, однако его нельзя использовать для воспроизведения каждого правила. Если построитель правил не поддерживает правило, которое необходимо создать, можно использовать текстовое поле.
 
-Вот несколько примеров передовых правил или синтаксиса, для которых мы рекомендуем построить с помощью текстового поля:
+Ниже приведены некоторые примеры расширенных правил или синтаксиса, для которых рекомендуется создавать текст с помощью текстового поля.
 
 - Правило с более чем пятью выражениями
-- Правило Прямые отчеты
-- Установка [приоритета оператора](groups-dynamic-membership.md#operator-precedence)
+- Правило Direct Reports
+- Установка [приоритета операторов](groups-dynamic-membership.md#operator-precedence)
 - [Правила со сложными выражениями](groups-dynamic-membership.md#rules-with-complex-expressions); Например`(user.proxyAddresses -any (_ -contains "contoso"))`
 
 > [!NOTE]
-> Строитель правил может быть не в состоянии отображать некоторые правила, построенные в текстовом поле. Вы можете увидеть сообщение, когда строитель правил не может отобразить правило. Строитель правил никоим образом не изменяет поддерживаемый синтаксис, проверку или обработку динамических правил группы.
+> Построитель правил может не отображать некоторые правила, созданные в текстовом поле. Если построитель правил не может отобразить правило, может появиться сообщение. Построитель правил не изменяет поддерживаемый синтаксис, проверку или обработку правил динамической группы каким бы то ни было.
 
-Для получения дополнительных пошаговых инструкций [см.](groups-create-rule.md)
+Дополнительные пошаговые инструкции см. [в разделе Создание или обновление динамической группы](groups-create-rule.md).
 
 ![Добавление правила членства для динамической группы](./media/groups-dynamic-membership/update-dynamic-group-rule.png)
 
@@ -78,7 +78,7 @@ user.department -eq "Sales"
 
 Существует три типа свойств, которые можно использовать для создания правил членства.
 
-- Логическое
+- Логическое значение
 - Строка
 - Коллекция строк
 
@@ -86,45 +86,45 @@ user.department -eq "Sales"
 
 ### <a name="properties-of-type-boolean"></a>Свойства логического типа
 
-| Свойства | Допустимые значения | Использование |
+| Элемент Property | Допустимые значения | Использование |
 | --- | --- | --- |
 | AccountEnabled |true, false |user.accountEnabled -eq true |
 | dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
 ### <a name="properties-of-type-string"></a>Свойства строкового типа
 
-| Свойства | Допустимые значения | Использование |
+| Элемент Property | Допустимые значения | Использование |
 | --- | --- | --- |
-| city |Любое значение строки или *нулевое* |(user.city -eq "value") |
-| country |Любое значение строки или *нулевое* |(user.country -eq "value") |
-| companyName | Любое значение строки или *нулевое* | (user.companyName -eq "value") |
-| department |Любое значение строки или *нулевое* |(user.department -eq "value") |
+| city |Любое строковое значение или *значение NULL* |(user.city -eq "value") |
+| country |Любое строковое значение или *значение NULL* |(user.country -eq "value") |
+| companyName | Любое строковое значение или *значение NULL* | (user.companyName -eq "value") |
+| department |Любое строковое значение или *значение NULL* |(user.department -eq "value") |
 | displayName |Любое строковое значение |(user.displayName -eq "value") |
 | employeeId |Любое строковое значение |(user.employeeId -eq "value")<br>(user.employeeId -ne *null*) |
-| facsimileTelephoneNumber |Любое значение строки или *нулевое* |(user.facsimileTelephoneNumber -eq "value") |
-| givenName |Любое значение строки или *нулевое* |(user.givenName -eq "value") |
-| jobTitle |Любое значение строки или *нулевое* |(user.jobTitle -eq "value") |
-| mail |Любое значение строки или *null* (адрес SMTP пользователя) |(user.mail -eq "value") |
+| facsimileTelephoneNumber |Любое строковое значение или *значение NULL* |(user.facsimileTelephoneNumber -eq "value") |
+| givenName |Любое строковое значение или *значение NULL* |(user.givenName -eq "value") |
+| jobTitle |Любое строковое значение или *значение NULL* |(user.jobTitle -eq "value") |
+| почта |Любое строковое значение или *null* (SMTP-адрес пользователя) |(user.mail -eq "value") |
 | mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
-| mobile |Любое значение строки или *нулевое* |(user.mobile -eq "value") |
+| mobile |Любое строковое значение или *значение NULL* |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
-| onPremisesSecurityIdentifier; | Локальный идентификатор безопасности (SID) для пользователей, которые были синхронизированы из локальной среды в облако. |(user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111") |
+| onPremisesSecurityIdentifier | Локальный идентификатор безопасности (SID) для пользователей, которые были синхронизированы из локальной среды в облако. |(user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111") |
 | passwordPolicies |None, DisableStrongPassword, DisablePasswordExpiration, DisablePasswordExpiration, DisableStrongPassword |(user.passwordPolicies -eq "DisableStrongPassword") |
-| physicalDeliveryOfficeName |Любое значение строки или *нулевое* |(user.physicalDeliveryOfficeName -eq "value") |
-| postalCode |Любое значение строки или *нулевое* |(user.postalCode -eq "value") |
+| physicalDeliveryOfficeName |Любое строковое значение или *значение NULL* |(user.physicalDeliveryOfficeName -eq "value") |
+| postalCode |Любое строковое значение или *значение NULL* |(user.postalCode -eq "value") |
 | preferredLanguage |Код ISO 639-1. |(user.preferredLanguage -eq "en-US") |
-| sipProxyAddress |Любое значение строки или *нулевое* |(user.sipProxyAddress -eq "value") |
-| state |Любое значение строки или *нулевое* |(user.state -eq "value") |
-| streetAddress |Любое значение строки или *нулевое* |(user.streetAddress -eq "value") |
-| surname |Любое значение строки или *нулевое* |(user.surname -eq "value") |
-| TelephoneNumber |Любое значение строки или *нулевое* |(user.telephoneNumber -eq "value") |
+| sipProxyAddress |Любое строковое значение или *значение NULL* |(user.sipProxyAddress -eq "value") |
+| state |Любое строковое значение или *значение NULL* |(user.state -eq "value") |
+| streetAddress |Любое строковое значение или *значение NULL* |(user.streetAddress -eq "value") |
+| surname |Любое строковое значение или *значение NULL* |(user.surname -eq "value") |
+| TelephoneNumber |Любое строковое значение или *значение NULL* |(user.telephoneNumber -eq "value") |
 | usageLocation |Двухбуквенный код страны. |(user.usageLocation -eq "US") |
 | userPrincipalName |Любое строковое значение |(user.userPrincipalName -eq "alias@domain") |
-| userType |член гость *нулю* |(user.userType -eq "Member") |
+| userType |гость участника *null* |(user.userType -eq "Member") |
 
 ### <a name="properties-of-type-string-collection"></a>Свойства типа коллекции строк
 
-| Свойства | Допустимые значения | Использование |
+| Элемент Property | Допустимые значения | Использование |
 | --- | --- | --- |
 | otherMails |Любое строковое значение |(user.otherMails -contains "alias@domain") |
 | proxyAddresses |SMTP: alias@domain, smtp: alias@domain |(user.proxyAddresses -contains "SMTP: alias@domain") |
@@ -144,7 +144,7 @@ user.department -eq "Sales"
 | Не содержит |-notContains |
 | Содержит |-contains |
 | Не соответствует |-notMatch |
-| Соответствует |-match |
+| Сопоставление |-match |
 | В | -in |
 | Не входит | -notIn |
 
@@ -160,7 +160,7 @@ user.department -eq "Sales"
 
 
 ### <a name="using-the--match-operator"></a>Используйте оператор -match 
-Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры:
+Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры
 
 ```
 user.displayName -match "Da.*"   
@@ -249,7 +249,7 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 Многозначные свойства являются коллекциями объектов того же типа. Их можно использовать для создания правил членства с помощью логических операторов -any и (или) -all.
 
-| Свойства | Значения | Использование |
+| Элемент Property | Значения | Использование |
 | --- | --- | --- |
 | assignedPlans | Каждый объект в коллекции предоставляет следующие строковые параметры: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled") |
 | proxyAddresses| SMTP: alias@domain, smtp: alias@domain | (user.proxyAddresses -any (\_ -contains "contoso")) |
@@ -301,7 +301,7 @@ user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabi
 Direct Reports for "{objectID_of_manager}"
 ```
 
-Вот пример действующего правила, где "62e19b97-8b3d-4d4a-a106-4ce66896a863" является objectID менеджера:
+Ниже приведен пример допустимого правила, где "62e19b97-8b3d-4d4a-A106-4ce66896a863" является objectID руководителя:
 
 ```
 Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
@@ -318,22 +318,22 @@ Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
 
 С помощью правила членства вы можете создать группу, содержащую всех пользователей в клиенте. Если в будущем пользователи будут добавлены в клиент или удалены из него, членство в группе скорректируется автоматически.
 
-Правило "Все пользователи" построено с использованием одного выражения с использованием оператора -ne и нулевого значения. Это правило добавляет в группу гостевых пользователей B2B, а также пользователей-участников.
+Правило "все пользователи" создается с помощью одного выражения с помощью оператора-Ne и значения NULL. Это правило добавляет в группу гостевых пользователей B2B, а также пользователей-участников.
 
 ```
 user.objectId -ne null
 ```
-Если вы хотите, чтобы ваша группа исключила гостевых пользователей и включила только членов вашего арендатора, вы можете использовать следующий синтаксис:
+Если вы хотите, чтобы группа содержала гостевых пользователей и включала только членов клиента, можно использовать следующий синтаксис:
 
 ```
 (user.objectId -ne null) -and (user.userType -eq "Member")
 ```
 
-### <a name="create-an-all-devices-rule"></a>Создание правила "Все устройства"
+### <a name="create-an-all-devices-rule"></a>Создание правила "все устройства"
 
 С помощью правила членства вы можете создать группу, содержащую все устройства в клиенте. Если в будущем устройства будут добавлены в клиент или удалены из него, членство в группе скорректируется автоматически.
 
-Правило "Все устройства" построено с использованием одного выражения с использованием оператора -ne и нулевого значения:
+Правило "все устройства" создается с помощью одного выражения с помощью оператора-Ne и значения NULL:
 
 ```
 device.objectId -ne null
@@ -341,13 +341,13 @@ device.objectId -ne null
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>Свойства расширения и пользовательские свойства расширения
 
-Атрибуты расширения и пользовательские свойства расширения поддерживаются как свойства строкви в динамических правилах членства. [Атрибуты расширения](https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0) синхронизируются с on-premises Window Server AD и принимают формат "ExtensionAttributeX", где X равен 1 - 15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
+Атрибуты расширения и пользовательские свойства расширения поддерживаются в качестве строковых свойств в правилах динамического членства. [Атрибуты расширения](https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0) синхронизируются из локального окна сервера AD и имеют формат "ExtensionAttributeX", где X равняется 1-15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
 
 ```
 (user.extensionAttribute15 -eq "Marketing")
 ```
 
-[Пользовательские свойства расширения](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions) синхронизируются с предприимченной Windows Server AD или с `user.extension_[GUID]_[Attribute]`подключенным приложением SaaS и имеют формат , где:
+[Пользовательские свойства модуля](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions) синхронизируются из локальной среды Windows Server AD или из подключенного приложения SaaS и имеют формат `user.extension_[GUID]_[Attribute]`, где:
 
 * [GUID] — уникальный идентификатор Azure AD для приложения, которое создало это свойство в Azure AD;
 * [Attribute] — имя свойства, с которым оно было создано.
@@ -368,34 +368,34 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 > Атрибут **organizationalUnit** больше не доступен в списке, и его не следует использовать. Эту строку Intune задает в определенных случаях, но она не распознается службой Azure AD. Поэтому устройства не будут добавляться в группы на основе этого атрибута.
 
 > [!NOTE]
-> системные метки — это атрибут только для чтения, который не может быть установлен с Помощью Intune.
+> системлабелс — это атрибут, предназначенный только для чтения и не может быть установлен в Intune.
 >
-> Для Windows 10 правильный формат атрибута устройства является следующим: (device.deviceOSVersion -eq "10.0.17763"). Форматирование может быть проверено с помощью cmdlet Get-MsolDevice PowerShell.
+> Для Windows 10 правильный формат атрибута deviceOSVersion выглядит следующим образом: (Device. deviceOSVersion-EQ "10.0.17763"). Форматирование можно проверить с помощью командлета PowerShell Get-MsolDevice.
 
 Можно использовать следующие атрибуты устройства.
 
  Атрибут устройства  | Значения | Пример
  ----- | ----- | ----------------
  AccountEnabled | true, false | (device.accountEnabled -eq true)
- displayName | Любое строковое значение |(device.displayName -eq "Rob iPhone")
- deviceOSType | Любое строковое значение | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>(device.deviceOSType -содержит "AndroidEnterprise")<br>(устройство.deviceOSType-eq "AndroidForWork")
+ displayName | Любое строковое значение |(Device. displayName-EQ "Вадим iPhone")
+ deviceOSType | Любое строковое значение | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>(Device. deviceOSType — содержит "Андроидентерприсе")<br>(Device. deviceOSType-EQ "Андроидфорворк")
  deviceOSVersion | Любое строковое значение | (device.deviceOSVersion -eq "9.1")
  deviceCategory | Допустимое имя категории устройств. | (device.deviceCategory -eq "BYOD")
  deviceManufacturer | Любое строковое значение | (device.deviceManufacturer -eq "Samsung")
  deviceModel | Любое строковое значение | (device.deviceModel -eq "iPad Air")
  deviceOwnership | Personal, Company, Unknown | (device.deviceOwnership -eq "Company")
- enrollmentProfileName | Профиль регистрации устройств Apple, регистрация устройств - Корпоративные идентификаторы устройств (Android - Kiosk), или имя профиля Автопилота Windows | (device.enrollmentProfileName -eq "DEP iPhones")
+ enrollmentProfileName | Профиль регистрации устройств Apple, регистрация устройств — идентификаторы корпоративных устройств (Android-киоск) или имя профиля Windows автопилота. | (device.enrollmentProfileName -eq "DEP iPhones")
  isRooted | true, false | (device.isRooted -eq true)
  managementType | MDM (для мобильных устройств).<br>PC (для компьютеров, управляемых агентом Intune PC). | (device.managementType -eq "MDM")
  deviceId | Допустимый идентификатор устройства Azure AD. | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
  objectId | Допустимый идентификатор объекта Azure AD. |  (device.objectId -eq "76ad43c9-32c5-45e8-a272-7b58b58f596d")
- devicePhysicalIds | любое значение строки, используемое Автопилотом, например, все устройства автопилота, OrderID или PurchaseOrderID  | (устройство.devicePhysicalIDs-любой - содержит "TDId") (устройство.devicePhysicalIds-any -eq "(OrderID):179887111881) (устройство.devicePhysicalIds-any -eq "PurchaseOrderId":76222342242)
- systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (device.systemLabels -содержит "M365Managed")
+ devicePhysicalIds | любое строковое значение, используемое автопилотом, например все устройства автопилота, OrderID или PurchaseOrderID  | (Device. Девицефисикалидс-Any _-содержит "[Зтдид]") (Device. Девицефисикалидс-Any _-EQ "[OrderID]: 179887111881") (Device. Девицефисикалидс-Any _-EQ "[PurchaseOrderId]: 76222342342")
+ systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (Device. Системлабелс — содержит "M365Managed")
 
 > [!Note]  
 > При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

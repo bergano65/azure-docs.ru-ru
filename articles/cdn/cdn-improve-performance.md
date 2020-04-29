@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/28/2018
 ms.author: allensu
 ms.openlocfilehash: 7124dd40d4510674014afe012a8f40dcb5bb6153
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81253770"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>Повышение производительности за счет сжатия файлов в Azure CDN
@@ -101,9 +101,9 @@ ms.locfileid: "81253770"
 ### <a name="azure-cdn-standard-from-microsoft-profiles"></a>Профили Azure CDN уровня "Стандартный" от Майкрософт
 
 Для профилей **Azure CDN уровня "Стандартный" от Майкрософт** сжимаются только соответствующие файлы. Сжатие допускается для следующих файлов:
-- Будьте типа MIME, который был [настроен для сжатия.](#enabling-compression)
-- Быть больше, чем 1 КБ
-- Быть меньше, чем 8 МБ
+- Иметь тип MIME, [настроенный для сжатия](#enabling-compression).
+- Больше 1 КБ
+- Должно быть меньше 8 МБ
 
 Эти профили поддерживают следующие алгоритмы сжатия:
 - gzip (GNU zip)
@@ -117,7 +117,7 @@ ms.locfileid: "81253770"
 
 Для профилей **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon** будут сжаты только подходящие файлы. Сжатие допускается для следующих файлов:
 - более 128 байт;
-- Быть меньше, чем 3 МБ
+- Меньше 3 МБ
 
 Эти профили поддерживают следующие алгоритмы сжатия:
 - gzip (GNU zip)
@@ -139,7 +139,7 @@ ms.locfileid: "81253770"
 В приведенных ниже таблицах описан принцип работы сжатия CDN Azure для всех сценариев.
 
 ### <a name="compression-is-disabled-or-file-is-ineligible-for-compression"></a>Сжатие отключено или для файла сжатие недопустимо
-| Запрошенный клиентом формат (через заголовок Accept-Encoding) | Формат кэшированного файла | Ответ CDN клиенту | &nbsp; &nbsp; Заметки&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+| Запрошенный клиентом формат (через заголовок Accept-Encoding) | Формат кэшированного файла | Ответ CDN клиенту | &nbsp; &nbsp; Примечания&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | --- | --- | --- | --- |
 | Compressed |Compressed |Compressed | |
 | Compressed |Без сжатия |Без сжатия | |
@@ -165,6 +165,6 @@ ms.locfileid: "81253770"
 - application/vnd.apple.mpegurl;
 - application/f4m+xml 
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 * [Устранение неполадок со сжатием файлов CDN](cdn-troubleshoot-compression.md)    
 

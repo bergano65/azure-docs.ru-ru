@@ -1,5 +1,5 @@
 ---
-title: Управление кэшем Azure для Redis с помощью классического CLI Azure
+title: Управление кэшем Azure для Redis с помощью классической инфраструктуры интерфейса командной строки Azure
 description: Узнайте, как установить классический Azure CLI на любой платформе, как использовать его для подключения к учетной записи Azure и как с его помощью создать кэш Azure для Redis и управлять им.
 author: yegu-ms
 ms.service: cache
@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: yegu
 ms.openlocfilehash: f71476d7d41ae45d2f1014ed1b257870622487e6
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81010840"
 ---
 # <a name="how-to-create-and-manage-azure-cache-for-redis-using-the-azure-classic-cli"></a>Создание кэша Azure для Redis и управление им с помощью классического Azure CLI
 > [!div class="op_single_selector"]
 > * [PowerShell](cache-how-to-manage-redis-cache-powershell.md)
-> * [Лазурный классический CLI](cache-manage-cli.md)
+> * [Классический интерфейс командной строки Azure](cache-manage-cli.md)
 >
 
 Классический Azure CLI позволяет управлять инфраструктурой Azure с любой платформы. В этой статье показано, как создавать экземпляры кэша Azure для Redis и управлять ими с помощью классического Azure CLI.
@@ -25,11 +25,11 @@ ms.locfileid: "81010840"
 > [!NOTE]
 > Последние примеры сценариев Azure CLI для кэша Azure для Redis см. в [этой статье](cli-samples.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для создания экземпляров кэша Azure для Redis и управления ими с помощью классического Azure CLI необходимо выполнить следующие действия.
 
 * Необходимо иметь учетную запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за пару минут.
-* [Установите классический CLI Azure.](../cli-install-nodejs.md)
+* [Установите классический интерфейс командной строки Azure](../cli-install-nodejs.md).
 * Подключите установленный Azure CLI к личной либо рабочей или учебной учетной записи Azure, а затем выполните вход из классического Azure CLI с помощью команды `azure login`.
 * Перед выполнением любой из указанных ниже команд переключите классический Azure CLI в режим диспетчера ресурсов, выполнив команду `azure config mode arm`. Дополнительные сведения см. в разделе [Управление ресурсами и группами ресурсов Azure с помощью классического Azure CLI](../xplat-cli-azure-resource-manager.md).
 
@@ -41,17 +41,17 @@ ms.locfileid: "81010840"
 | name |-n, --name |Имя кэша Azure для Redis. |
 | resource group |-g, --resource-group |Имя группы ресурсов. |
 | location |-l, --location |Расположение для создания кэша. |
-| size |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
+| размер; |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
 | sku |-x, --sku |Номер SKU Redis. Должен иметь одно из этих значений: [Basic, Standard, Premium] |
-| EnableNonSslPort |-e, --enable-non-ssl-port |Свойство EnableNonSslPort кэша Azure для Redis. Добавьте этот флаг, если вы хотите включить порт, не относясь к кэшу, не является TLS/SSL |
+| EnableNonSslPort |-e, --enable-non-ssl-port |Свойство EnableNonSslPort кэша Azure для Redis. Добавьте этот флаг, если вы хотите включить для кэша порт, не поддерживающий протокол TLS/SSL. |
 | Конфигурация Redis |-c, --redis-configuration |Конфигурация Redis. Введите строку ключей и значений конфигурации в формате JSON. Формат:"{"":"","":""}" |
 | Конфигурация Redis |-f, --redis-configuration-file |Конфигурация Redis. Введите путь к файлу, содержащему ключи и значения. Формат записи в файле: {"":"","":""} |
 | Число сегментов |-r, --shard-count |Число сегментов, которые будут созданы при создании кэша уровня "Премиум" с включенной кластеризацией. |
 | Виртуальная сеть |-v, --virtual-network |При размещении кэша в виртуальной сети определяет точный идентификатор ресурса ARM виртуальной сети, в которой будет развернут кэш Azure для Redis. Пример формата: /subscriptions/{идентификатор_подписки}/resourceGroups/{имя_группы_ресурсов}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 |
 | key type |-t, --key-type |Тип обновляемого ключа. Допустимые значения: [Primary, Secondary]. |
-| StaticIP |-p, --статическая-IP \<статическая-IP\> |При размещении кэша в виртуальной сети определяет уникальный IP-адрес подсети для кэша. Если IP-адрес не указан, он автоматически выбирается из подсети. |
-| Подсеть |t, --субнет \<субнет субнет\> |При размещении кэша в виртуальной сети определяет имя подсети, в которой будет развернут кэш. |
-| Виртуальная сеть |-v, --виртуальная \<сеть виртуальной сети\> |При размещении кэша в виртуальной сети определяет точный идентификатор ресурса ARM виртуальной сети, в которой будет развернут кэш Azure для Redis. Пример формата: /subscriptions/{идентификатор_подписки}/resourceGroups/{имя_группы_ресурсов}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 |
+| StaticIP |-p,--Static-IP \<Static-IP\> |При размещении кэша в виртуальной сети определяет уникальный IP-адрес подсети для кэша. Если IP-адрес не указан, он автоматически выбирается из подсети. |
+| Подсеть |t,--подсеть подсети \<\> |При размещении кэша в виртуальной сети определяет имя подсети, в которой будет развернут кэш. |
+| Виртуальная сеть |-v,--виртуальная сеть \<, виртуальная сеть\> |При размещении кэша в виртуальной сети определяет точный идентификатор ресурса ARM виртуальной сети, в которой будет развернут кэш Azure для Redis. Пример формата: /subscriptions/{идентификатор_подписки}/resourceGroups/{имя_группы_ресурсов}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 |
 | Подписка |-s, --subscription |Идентификатор подписки. |
 
 ## <a name="see-all-azure-cache-for-redis-commands"></a>Просмотр всех команд кэша Azure для Redis

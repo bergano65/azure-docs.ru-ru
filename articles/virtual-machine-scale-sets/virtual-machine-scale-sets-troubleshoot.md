@@ -1,5 +1,5 @@
 ---
-title: Устранить неполадки автомасштаб с виртуальными наборами шкалы машин
+title: Устранение неполадок автомасштабирования с помощью масштабируемых наборов виртуальных машин
 description: Устранение неполадок при автомасштабировании масштабируемых наборов виртуальных машин. Описание типичных проблем и способов их устранения.
 author: mimckitt
 tags: azure-resource-manager
@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/16/2017
 ms.author: mimckitt
 ms.openlocfilehash: 4bc5e66f5b0759bdb5fe34276369161200bd5442
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81273381"
 ---
 # <a name="troubleshooting-autoscale-with-virtual-machine-scale-sets"></a>Устранение неполадок при автомасштабировании масштабируемых наборов виртуальных машин

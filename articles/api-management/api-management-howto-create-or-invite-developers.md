@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
 ms.openlocfilehash: 672f145b638fa6b85f7139f2edb4fc41bb2855d9
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81260978"
 ---
 # <a name="how-to-manage-user-accounts-in-azure-api-management"></a>Управление учетными записями пользователей в службе управления API Azure
@@ -25,7 +25,7 @@ ms.locfileid: "81260978"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Выполните задачи из статьи [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 
@@ -36,7 +36,7 @@ ms.locfileid: "81260978"
 Чтобы добавить нового пользователя, выполните инструкции в этом разделе:
 
 1. В левой части экрана выберите вкладку **Пользователи**.
-2. Нажмите **на пресс-службу**.
+2. Нажмите кнопку **+ Добавить**.
 3. Введите соответствующую информацию для пользователя.
 4. Нажмите кнопку **Добавить**.
 
@@ -56,7 +56,7 @@ ms.locfileid: "81260978"
 
 После принятия приглашения учетная запись становится активной.
 
-## <a name="deactivate-or-reactivate-a-developer-account"></a><a name="block-developer"> </a> Деактивация или реактивация учетной записи разработчика
+## <a name="deactivate-or-reactivate-a-developer-account"></a><a name="block-developer"> </a> Отключение или повторная активация учетной записи разработчика
 
 По умолчанию недавно созданные или приглашенные учетные записи разработчика являются **активными**. Для деактивации учетной записи разработчика щелкните **Блокировать**. Для повторной активации блокированной учетной записи разработчика щелкните **Активировать**. Для блокированной учетной записи разработчика запрещен доступ к порталу разработчика и вызов любых интерфейсов API. Чтобы удалить учетную запись пользователя, щелкните **Удалить**.
 
@@ -68,9 +68,9 @@ ms.locfileid: "81260978"
 
 ## <a name="reset-a-user-password"></a>Сброс пароля пользователя
 
-Чтобы программно работать с учетными записями пользователей, см. документацию сущности пользователя в справке [API Management REST API.](/rest/api/apimanagement/) Чтобы сбросить пароль учетной записи пользователя до определенного значения, можно использовать операцию [обновления пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity#UpdateUser) и указать нужный пароль.
+Сведения о программной работе с учетными записями пользователей см. в документации по сущности пользователя в справочнике по службе [управления API REST API](/rest/api/apimanagement/) . Чтобы сбросить пароль учетной записи пользователя до определенного значения, можно использовать операцию [обновления пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity#UpdateUser) и указать нужный пароль.
 
-## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие шаги
 После создания учетной записи разработчика ее можно связать с ролями и подписать ее на продукты и интерфейсы API. Дополнительные сведения см. в статье [Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API][How to create and use groups].
 
 [api-management-management-console]: ./media/api-management-howto-create-or-invite-developers/api-management-management-console.png

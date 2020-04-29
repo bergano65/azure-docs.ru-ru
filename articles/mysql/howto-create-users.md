@@ -1,5 +1,5 @@
 ---
-title: Создание пользователей - База данных Azure для MyS'L
+title: Создание пользователей с базой данных Azure для MySQL
 description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером базы данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 4/2/2020
 ms.openlocfilehash: f8c020da72e9cdf8777a3eefac266e97e4a312bd
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81263477"
 ---
 # <a name="create-users-in-azure-database-for-mysql-server"></a>Создание пользователей на сервере базы данных Azure для MySQL
@@ -24,7 +24,7 @@ ms.locfileid: "81263477"
 После создания сервера базы данных Azure для MySQL с помощью первой учетной записи администратора сервера можно создать дополнительных пользователей и предоставить им права администратора. Кроме того, учетная запись администратора сервера может использоваться для создания менее привилегированных пользователей, имеющих доступ к отдельным схемам базы данных.
 
 > [!NOTE]
-> Привилегия SUPER и роль DBA не поддерживаются. Просмотрите [привилегии](concepts-limits.md#privilege-support) в статье об ограничениях, чтобы понять, что не поддерживается в службе.
+> Роль SUPER Privilege и DBA не поддерживаются. Проверьте [права](concepts-limits.md#privilege-support) в статье ограничения, чтобы понять, что не поддерживается в службе.
 
 ## <a name="how-to-create-additional-admin-users-in-azure-database-for-mysql"></a>Как создать дополнительных администраторов в базе данных Azure для MySQL
 
@@ -88,7 +88,7 @@ ms.locfileid: "81263477"
    mysql --host mydemoserver.mysql.database.azure.com --database testdb --user db_user@mydemoserver -p
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [Azure CLI](howto-manage-firewall-using-cli.md).
 

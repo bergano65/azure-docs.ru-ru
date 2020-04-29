@@ -1,6 +1,6 @@
 ---
-title: Условные выражения для Azure CDN - движок правил Verizon Premium
-description: Справочная документация для Azure CDN от Verizon Premium правила двигателя соответствуют условиям и функциям.
+title: Условные выражения для обработчика правил Azure CDN-Verizon Premium
+description: Справочная документация по Azure CDN из обработчика правил Verizon Premium, соответствующих условиям и функциям.
 services: cdn
 author: asudbring
 ms.service: azure-cdn
@@ -8,34 +8,34 @@ ms.topic: article
 ms.date: 05/31/2019
 ms.author: allensu
 ms.openlocfilehash: 25b3c1a011e39adea651a6daa1d4ab9aa3a9d186
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81253515"
 ---
-# <a name="azure-cdn-from-verizon-premium-rules-engine-conditional-expressions"></a>Azure CDN от Verizon Premium правила двигателя условных выражений
+# <a name="azure-cdn-from-verizon-premium-rules-engine-conditional-expressions"></a>Azure CDN из условных выражений обработчика правил Verizon Premium
 
-В этой статье перечислены подробные описания условных выражений для [движков правил](cdn-verizon-premium-rules-engine.md)доставки содержимого Azure (CDN).
+В этой статье приведены подробные описания условных выражений для [обработчика правил](cdn-verizon-premium-rules-engine.md)сети доставки содержимого (CDN) Azure.
 
 Первая часть правила — это условное выражение.
 
 Условное выражение | Описание
 -----------------------|-------------
-IF | Выражение IF всегда входит в первую инструкцию в правиле. Как и другие условные выражения, инструкция IF должна быть связана с соответствием. Если дополнительные условные выражения не определены, этот совпадение определяет критерий, который должен быть выполнен до того, как к запросу может быть применен набор функций.
+IF | Выражение IF всегда входит в первую инструкцию в правиле. Как и другие условные выражения, инструкция IF должна быть связана с соответствием. Если дополнительные условные выражения не определены, это сопоставление определяет критерий, который должен быть удовлетворен, прежде чем к запросу можно будет применить набор функций.
 AND IF | Выражение AND IF можно добавлять только после таких условных выражений, как IF и AND IF. Оно указывает на наличие другого условия, которое должно быть выполнено для первоначальной инструкции IF.
 ELSE IF| Выражение ELSE IF указывает альтернативное условие, которое должно быть выполнено до выполнения набора определенных функций для этой инструкции ELSE IF. Инструкция ELSE IF указывает на конец предыдущей инструкции. После инструкции ELSE IF можно добавить только инструкцию ELSE IF. Это означает, что эту инструкцию можно использовать только для указания одного дополнительного условия, которое должно быть выполнено.
 
-**Пример** ![: Состояние соответствия CDN](./media/cdn-rules-engine-reference/cdn-rules-engine-conditional-expression.png)
+**Пример**: ![условие соответствия CDN](./media/cdn-rules-engine-reference/cdn-rules-engine-conditional-expression.png)
 
  > [!TIP]
    > Последующее правило может переопределить действия, заданные предыдущим правилом.
    > Например, универсальное правило защищает все запросы путем аутентификации на основе маркеров. Под ним можно создать другое правило, чтобы сделать исключение для некоторых типов запросов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о сети доставки содержимого Azure](cdn-overview.md)
 - [Справочник по обработчику правил](cdn-verizon-premium-rules-engine-reference.md)
-- [Условия соответствия двигателя правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
-- [Функции движка правил](cdn-verizon-premium-rules-engine-reference-features.md)
+- [Условия соответствия обработчика правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Функции обработчика правил](cdn-verizon-premium-rules-engine-reference-features.md)
 - [Переопределение стандартного поведения через HTTP с помощью обработчика правил](cdn-verizon-premium-rules-engine.md)

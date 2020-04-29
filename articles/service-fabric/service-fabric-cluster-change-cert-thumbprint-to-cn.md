@@ -4,10 +4,10 @@ description: Сведения о переключении кластера Servi
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.openlocfilehash: 1926b0501766eb0a5fe086ceada0c9bf45e3dcf6
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81272633"
 ---
 # <a name="change-cluster-from-certificate-thumbprint-to-common-name"></a>Переход с отпечатка на общее имя сертификата для кластера
@@ -91,7 +91,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
 > Так как каждый секрет является уникальным ресурсом с контролем версий, секреты масштабируемого набора не поддерживают один идентификатор ресурса для двух отдельных секретов. 
 
 ## <a name="download-and-update-the-template-from-the-portal"></a>Скачивание и обновление шаблона с портала
-Сертификат установлен в базовом масштабируемом наборе, но вам также необходимо обновить кластер Service Fabric для использования этого сертификата и его общего имени.  Теперь загрузите шаблон для развертывания кластера.  Войдите на [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, худившей кластер.  В разделе **Настройки** выберите **Развертывания**.  Выберите последние развертывания и щелкните **Просмотреть шаблон**.
+Сертификат установлен в базовом масштабируемом наборе, но вам также необходимо обновить кластер Service Fabric для использования этого сертификата и его общего имени.  Теперь загрузите шаблон для развертывания кластера.  Войдите в [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, в которой размещен кластер.  В разделе **Настройки** выберите **Развертывания**.  Выберите последние развертывания и щелкните **Просмотреть шаблон**.
 
 ![Просмотр шаблонов][image1]
 
@@ -116,9 +116,9 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
     },
     ```
 
-    Также рассмотрите возможность удаления *сертификатаThumbprint,* на него больше не может быть ссылки в шаблоне менеджера ресурсов.
+    Также рассмотрите возможность удаления *certificateThumbprint*, но на него больше нельзя ссылаться в шаблоне диспетчер ресурсов.
 
-2. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В **virtualMachineProfile**->**расширения**->**extensions**->**свойства настройки**->**settings**->**сертификата,** добавить `"commonNames": ["[parameters('certificateCommonName')]"],` и удалить. `"thumbprint": "[parameters('certificateThumbprint')]",`
+2. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В **virtualMachineProfile**->**extensionProfile**->**свойствах****settings**->**certificate** `"commonNames": ["[parameters('certificateCommonName')]"],` **extensions**->virtualMachineProfile extensionProfile Extensions (параметры сертификата) добавьте и удалите `"thumbprint": "[parameters('certificateThumbprint')]",`->
     ```json
         "virtualMachineProfile": {
         "extensionProfile": {
@@ -179,7 +179,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
         ...
     ```
 
-Для получения дополнительной информации [см. Развертывание кластера Service Fabric, в который вместо отпечатков пальцев используется общее имя сертификата.](https://docs.microsoft.com/azure/service-fabric/service-fabric-create-cluster-using-cert-cn)
+Дополнительные сведения см [. в статье развертывание Service Fabric кластера, в котором вместо отпечатка используется общее имя сертификата.](https://docs.microsoft.com/azure/service-fabric/service-fabric-create-cluster-using-cert-cn)
 
 ## <a name="deploy-the-updated-template"></a>Развертывание обновленного шаблона
 Повторно разверните обновленный шаблон после внесения изменений.
@@ -191,8 +191,8 @@ New-AzResourceGroupDeployment -ResourceGroupName $groupname -Verbose `
     -TemplateParameterFile "C:\temp\cluster\parameters.json" -TemplateFile "C:\temp\cluster\template.json" 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте о [безопасности кластеров.](service-fabric-cluster-security.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+* Сведения о [безопасности кластера](service-fabric-cluster-security.md).
 * Дополнительные сведения о [выделении сертификата кластера](service-fabric-cluster-rollover-cert-cn.md).
 * [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)
 

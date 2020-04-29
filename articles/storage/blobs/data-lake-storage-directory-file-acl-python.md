@@ -1,6 +1,6 @@
 ---
-title: Лазурное хранилище озер Gen2 Python SDK для файлов & ACLs
-description: Используйте Python управлять каталогами и списками управления доступом файлов и каталогов (ACL) в учетных записях хранения с включенным иерархическим пространством имен (HNS).
+title: Azure Data Lake Storage 2-го поколения пакета SDK для Python для файлов & ACL
+description: Использование Python для управления каталогами и файлами и списками управления доступом к каталогам (ACL) в учетных записях хранения, в которых включено иерархическое пространство имен (HNS).
 author: normesta
 ms.service: storage
 ms.date: 04/10/2020
@@ -9,33 +9,33 @@ ms.topic: article
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.openlocfilehash: a79f3110206a01b9b974952f0ec0d299644be11f
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81262355"
 ---
-# <a name="use-python-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Используйте Python для управления каталогами, файлами и ACL в Azure Data Lake Storage 2
+# <a name="use-python-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Python для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
-В этой статье показано, как использовать Python для создания и управления каталогами, файлами и разрешениями в учетных записях хранения с включенным иерархическим пространством имен (HNS). 
+В этой статье показано, как использовать Python для создания каталогов, файлов и разрешений в учетных записях хранения с включенным иерархическое пространством имен (HNS) и управления ими. 
 
-[Пакет (Python Package Index)](https://pypi.org/project/azure-storage-file-datalake/) | [Образцы](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples) | [API ссылка](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-storage-file-datalake/12.0.0/azure.storage.filedatalake.html) | [Gen1 на Gen2 отображение](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/GEN1_GEN2_MAPPING.md) | Дать[обратную связь](https://github.com/Azure/azure-sdk-for-python/issues)
+[Package (Python Package Index)](https://pypi.org/project/azure-storage-file-datalake/) | [Samples](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples)Пример | пакета (индекс пакета Python)[Справочник](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-storage-file-datalake/12.0.0/azure.storage.filedatalake.html) | [по API для Gen1 к сопоставлению](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/GEN1_GEN2_MAPPING.md) | Gen2[Отправить отзыв](https://github.com/Azure/azure-sdk-for-python/issues)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * Учетная запись хранилища с включенным иерархическим пространством имен (HNS). Следуйте [этим](data-lake-storage-quickstart-create-account.md) инструкциям, чтобы создать один.
+> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его [, выполните следующие](data-lake-storage-quickstart-create-account.md) инструкции.
 
 ## <a name="set-up-your-project"></a>Настройка проекта
 
-Установите клиентскую библиотеку Azure Data Lake Storage для Python с помощью [пипсов.](https://pypi.org/project/pip/)
+Установите клиентскую библиотеку Azure Data Lake Storage для Python с помощью [PIP](https://pypi.org/project/pip/).
 
 ```
 pip install azure-storage-file-datalake
 ```
 
-Добавьте эти инструкции по импорту в верхнюю часть файла кода.
+Добавьте эти операторы импорта в начало файла кода.
 
 ```python
 import os, uuid, sys
@@ -46,13 +46,13 @@ from azure.storage.filedatalake._models import ContentSettings
 
 ## <a name="connect-to-the-account"></a>Подключение к учетной записи
 
-Чтобы использовать фрагменты в этой статье, необходимо создать экземпляр **DataLakeServiceClient,** представляющий учетную запись хранилища. 
+Чтобы использовать фрагменты кода в этой статье, необходимо создать экземпляр **даталакесервицеклиент** , представляющий учетную запись хранения. 
 
 ### <a name="connect-by-using-an-account-key"></a>Подключение с помощью ключа учетной записи
 
 Это самый простой способ подключения к учетной записи. 
 
-Этот пример создает экземпляр **DataLakeServiceClient** с помощью ключа учетной записи.
+В этом примере создается экземпляр **даталакесервицеклиент** с помощью ключа учетной записи.
 
 ```python
 try:  
@@ -67,13 +67,13 @@ except Exception as e:
  
 - Замените значение заполнителя `storage_account_name` именем вашей учетной записи хранения.
 
-- Замените `storage_account_key` значение заполнителя ключом доступа к учетной записи хранилища.
+- Замените значение `storage_account_key` заполнителя ключом доступа к учетной записи хранения.
 
-### <a name="connect-by-using-azure-active-directory-ad"></a>Подключение с помощью активного каталога Azure (AD)
+### <a name="connect-by-using-azure-active-directory-ad"></a>Подключение с помощью Azure Active Directory (AD)
 
-Для проверки подлинности приложения с помощью Azure AD можно использовать [библиотеку клиентов итога Azure](https://pypi.org/project/azure-identity/) для Python.
+Для проверки подлинности приложения в Azure AD можно использовать [клиентскую библиотеку удостоверений Azure для Python](https://pypi.org/project/azure-identity/) .
 
-Этот пример создает экземпляр **DataLakeServiceClient,** используя идентификатор клиента, секрет клиента и идентификатор клиента.  Чтобы получить эти значения, [см. Приобрести токен из Azure AD для авторизации запросов из клиентского приложения.](../common/storage-auth-aad-app.md)
+В этом примере создается экземпляр **даталакесервицеклиент** с использованием идентификатора клиента, секрета клиента и идентификатора клиента.  Чтобы получить эти значения, см. статью [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](../common/storage-auth-aad-app.md).
 
 ```python
 def initialize_storage_account_ad(storage_account_name, client_id, client_secret, tenant_id):
@@ -91,13 +91,13 @@ def initialize_storage_account_ad(storage_account_name, client_id, client_secret
 ```
 
 > [!NOTE]
-> Для получения дополнительных примеров можно найти [в библиотеке клиентов итога Azure для](https://pypi.org/project/azure-identity/) документации Python.
+> Дополнительные примеры см. в документации по [клиентской библиотеке Azure Identity для Python](https://pypi.org/project/azure-identity/) .
 
 ## <a name="create-a-file-system"></a>Создание файловой системы
 
-Файловая система действует как контейнер для файлов. Вы можете создать его, позвонив в **метод FileSystemDataLakeServiceClient.create_file_system.**
+Файловая система выступает в качестве контейнера для файлов. Его можно создать, вызвав метод **филесистемдаталакесервицеклиент. create_file_system** .
 
-Этот пример создает файловую систему под названием `my-file-system`.
+В этом примере создается файловая система `my-file-system`с именем.
 
 ```python
 def create_file_system():
@@ -113,9 +113,9 @@ def create_file_system():
 
 ## <a name="create-a-directory"></a>Создание каталога
 
-Создайте ссылку на каталог, позвонив в метод **FileSystemClient.create_directory.**
+Создайте ссылку на каталог, вызвав метод **филесистемклиент. create_directory** .
 
-Этот пример добавляет каталог, названный `my-directory` в файловую систему. 
+В этом примере в файловую `my-directory` систему добавляется каталог с именем. 
 
 ```python
 def create_directory():
@@ -128,9 +128,9 @@ def create_directory():
 
 ## <a name="rename-or-move-a-directory"></a>Переименование или перемещение каталога
 
-Переименуй или переместите каталог, позвонив в метод **DataLakeDirectoryClient.rename_directory.** Передайте путь желаемого каталога параметру. 
+Переименуйте или переместите каталог, вызвав метод **даталакедиректориклиент. rename_directory** . Передайте путь к нужному каталогу параметру. 
 
-Этот пример переименовывает подкаталог `my-subdirectory-renamed`к имени .
+В этом примере подкаталог переименовывается в имя `my-subdirectory-renamed`.
 
 ```python
 def rename_directory():
@@ -148,9 +148,9 @@ def rename_directory():
 
 ## <a name="delete-a-directory"></a>Удаление каталога
 
-Удалить каталог, позвонив в **DataLakeDirectoryClient.delete_directory** метод.
+Удалите каталог, вызвав метод **даталакедиректориклиент. delete_directory** .
 
-Этот пример удаляет каталог `my-directory`с именем .  
+В этом примере удаляется каталог `my-directory`с именем.  
 
 ```python
 def delete_directory():
@@ -165,12 +165,12 @@ def delete_directory():
 
 ## <a name="manage-directory-permissions"></a>Управление разрешениями каталога
 
-Получить список управления доступом (ACL) каталога, позвонив **dataLakeDirectoryClient.get_access_control** метод и установить ACL, позвонив **DataLakeDirectoryClient.set_access_control** метод.
+Получите список управления доступом (ACL) каталога, вызвав метод **даталакедиректориклиент. get_access_control** и ЗАДАВ список ACL, вызвав метод **даталакедиректориклиент. set_access_control** .
 
 > [!NOTE]
-> Если приложение разрешает доступ с помощью Active Directory Azure (Azure AD), убедитесь, что принципбезопасности, который приложение использует для авторизации доступа, был назначен [роль владельца данных Storage Blob.](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) Чтобы узнать больше о том, как применяются разрешения [Access control in Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)ACL и о последствиях их изменения, см.
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и их влиянии на их изменение см. в разделе [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
-Этот пример получает и устанавливает ACL `my-directory`каталога с именем . Строка `rwxr-xrw-` дает пользователю-владельцеу читать, писать и выполнять разрешения, дает группе владельцев только читать и выполнять разрешения, а также дает всем остальным разрешение на чтение и запись.
+Этот пример возвращает и задает список ACL для каталога с именем `my-directory`. Эта строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
 
 ```python
 def manage_directory_permissions():
@@ -195,11 +195,11 @@ def manage_directory_permissions():
      print(e) 
 ```
 
-## <a name="upload-a-file-to-a-directory"></a>Загрузить файл в каталог 
+## <a name="upload-a-file-to-a-directory"></a>Передача файла в каталог 
 
-Во-первых, создайте ссылку на файл в целевом каталоге, создав экземпляр класса **DataLakeFileClient.** Загрузите файл, позвонив в **метод DataLakeFileClient.append_data.** Убедитесь в том, чтобы завершить загрузку, позвонив **dataLakeFileClient.flush_data** метод.
+Сначала создайте ссылку на файл в целевом каталоге, создав экземпляр класса **даталакефилеклиент** . Отправьте файл, вызвав метод **даталакефилеклиент. append_data** . Обязательно завершите передачу, вызвав метод **даталакефилеклиент. flush_data** .
 
-Этот пример загружает текстовый `my-directory`файл в каталог с именем .   
+В этом примере текстовый файл перегружается в каталог с именем `my-directory`.   
 
 ```python
 def upload_file_to_directory():
@@ -223,11 +223,11 @@ def upload_file_to_directory():
 ```
 
 > [!TIP]
-> Если размер файла большой, код должен будет сделать несколько звонков на метод **DataLakeFileClient.append_data.** Вместо этого рассмотрим метод **DataLakeFileClient.upload_data.** Таким образом, вы можете загрузить весь файл в один вызов. 
+> Если размер файла большой, код должен выполнить несколько вызовов метода **даталакефилеклиент. append_data** . Вместо этого рекомендуется использовать метод **даталакефилеклиент. upload_data** . Таким образом, вы можете передать весь файл в одном вызове. 
 
-## <a name="upload-a-large-file-to-a-directory"></a>Загрузить большой файл в каталог
+## <a name="upload-a-large-file-to-a-directory"></a>Отправка большого файла в каталог
 
-Используйте метод **DataLakeFileClient.upload_data** для загрузки больших файлов без необходимости совершать несколько звонков на метод **DataLakeFileClient.append_data.**
+Используйте метод **даталакефилеклиент. upload_data** для отправки больших файлов без выполнения нескольких вызовов метода **даталакефилеклиент. append_data** .
 
 ```python
 def upload_file_to_directory_bulk():
@@ -249,14 +249,14 @@ def upload_file_to_directory_bulk():
       print(e) 
 ```
 
-## <a name="manage-file-permissions"></a>Управление разрешениями файлов
+## <a name="manage-file-permissions"></a>Управление разрешениями для файлов
 
-Получить список управления доступом (ACL) файла, позвонив **dataLakeFileClient.get_access_control** метод и установить ACL, позвонив **DataLakeFileClient.set_access_control** метод.
+Получите список управления доступом (ACL) файла, вызвав метод **даталакефилеклиент. get_access_control** и ЗАДАВ список ACL, вызвав метод **даталакефилеклиент. set_access_control** .
 
 > [!NOTE]
-> Если приложение разрешает доступ с помощью Active Directory Azure (Azure AD), убедитесь, что принципбезопасности, который приложение использует для авторизации доступа, был назначен [роль владельца данных Storage Blob.](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) Чтобы узнать больше о том, как применяются разрешения [Access control in Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)ACL и о последствиях их изменения, см.
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и их влиянии на их изменение см. в разделе [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
-Этот пример получает и устанавливает ACL `my-file.txt`файла с именем. Строка `rwxr-xrw-` дает пользователю-владельцеу читать, писать и выполнять разрешения, дает группе владельцев только читать и выполнять разрешения, а также дает всем остальным разрешение на чтение и запись.
+Этот пример возвращает и задает список управления доступом для файла с `my-file.txt`именем. Эта строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
 
 ```python
 def manage_file_permissions():
@@ -285,7 +285,7 @@ def manage_file_permissions():
 
 ## <a name="download-from-a-directory"></a>Скачать из каталога 
 
-Откройте локальный файл для записи. Затем создайте экземпляр **DataLakeFileClient,** представляющий файл, который вы хотите загрузить. Позвоните **DataLakeFileClient.read_file** читать байты из файла, а затем написать эти байты в местный файл. 
+Откройте локальный файл для записи. Затем создайте экземпляр **даталакефилеклиент** , представляющий файл, который требуется скачать. Вызовите **даталакефилеклиент. read_file** , чтобы прочитать байты из файла, а затем запишите эти байты в локальный файл. 
 
 ```python
 def download_file_from_directory():
@@ -311,9 +311,9 @@ def download_file_from_directory():
 ```
 ## <a name="list-directory-contents"></a>Вывод содержимого каталогов
 
-Перечислите содержимое каталога, позвонив в метод **FileSystemClient.get_paths,** а затем перечислив результаты.
+Перечислите содержимое каталога, вызвав метод **филесистемклиент. get_paths** , а затем перечислить результаты.
 
-Этот пример печатает путь каждого субдиректора и файла, который `my-directory`находится в каталоге с именем .
+В этом примере выводится путь к каждому подкаталогу и файлу, расположенному в каталоге с `my-directory`именем.
 
 ```python
 def list_directory_contents():
@@ -330,11 +330,11 @@ def list_directory_contents():
      print(e) 
 ```
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочная документация по API](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-storage-file-datalake/12.0.0b5/index.html)
-* [Пакет (Индекс упаковки Python)](https://pypi.org/project/azure-storage-file-datalake/)
+* [Пакет (индекс пакета Python)](https://pypi.org/project/azure-storage-file-datalake/)
 * [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples)
-* [Отображение Gen1 до Gen2](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/GEN1_GEN2_MAPPING.md)
+* [Сопоставление Gen1 с Gen2](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/GEN1_GEN2_MAPPING.md)
 * [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
-* [Дайте обратную связь](https://github.com/Azure/azure-sdk-for-python/issues)
+* [Отправить отзыв](https://github.com/Azure/azure-sdk-for-python/issues)

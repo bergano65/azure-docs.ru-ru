@@ -1,5 +1,5 @@
 ---
-title: Azure Network Watcher Agent виртуальное расширение машины для Linux
+title: Расширение виртуальной машины агента наблюдателя за сетями Azure для Linux
 description: Развертывание агента Наблюдателя за сетями на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: mimckitt
 ms.openlocfilehash: 476241ad3d4077f2da0c513e3c989218701232ba
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81255759"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Linux
@@ -29,13 +29,13 @@ ms.locfileid: "81255759"
 
 В этой статье подробно описаны поддерживаемые платформы и параметры развертывания для расширения виртуальной машины для агента службы "Наблюдатель за сетями" для Linux. Установка агента не прерывает работу и не требует перезагрузки виртуальной машины. Расширение можно развернуть на развертываемой виртуальной машине. Если виртуальная машина развернута службой Azure, необходимо проверить документацию службы на наличие разрешения на установку расширения для виртуальной машины.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 ### <a name="operating-system"></a>Операционная система
 
 Расширение виртуальной машины для агента службы "Наблюдатель за сетями" можно настроить для следующих дистрибутивов Linux.
 
-| Distribution | Version |
+| Distribution | Версия |
 |---|---|
 | Ubuntu | 12+ |
 | Debian | 7 и 8 |
@@ -119,4 +119,4 @@ az vm extension show --name NetworkWatcherAgentLinux --resource-group myResource
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в какой-либо момент этой статьи, вы можете обратиться к [документации Network Watcher](/azure/network-watcher/)или связаться с экспертами Azure на [форумах MSDN Azure и Stack Overflow.](https://azure.microsoft.com/support/forums/) Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, см. [документацию к наблюдателю за сетями](/azure/network-watcher/)или обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
