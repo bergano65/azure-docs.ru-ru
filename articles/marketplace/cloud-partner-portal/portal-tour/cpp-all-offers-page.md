@@ -1,6 +1,6 @@
 ---
-title: Все предложения страницы для Azure Marketplace
-description: Обзор страницы «Все предложения» на веб-портале облачных партнеров для Azure Marketplace.
+title: Страница "все предложения" для Azure Marketplace
+description: Обзор страницы все предложения в Портал Cloud Partner для Azure Marketplace.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: dsindona
 ms.openlocfilehash: e4001651d422d9197a849be5e7985107f9bf43dd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80288994"
 ---
 # <a name="all-offers-page"></a>Страница "Все предложения"
@@ -26,6 +26,6 @@ ms.locfileid: "80288994"
 ![Страница "Все предложения"](./media/all-offers-page1.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующий элемент в строке навигационного меню открывает страницу [Утверждения](./cpp-approvals-page.md), на которой перечислены утвержденные предложения.  Утвержденные предложения либо уже опубликованы, либо еще публикуются.

@@ -1,6 +1,6 @@
 ---
-title: Запрос данных в предварительный просмотр - Исследования серии времени Azure Документы Майкрософт
-description: Концепции запроса данных и обзор HTTP REST API в Azure Time Series Insights Preview.
+title: Запросы данных в предварительной версии — служба "аналитика временных рядов Azure" | Документация Майкрософт
+description: Основные понятия запросов данных и общие сведения о REST API HTTP в предварительной версии службы "аналитика временных рядов Azure".
 author: shreyasharmamsft
 ms.author: shresha
 manager: dpalled
@@ -11,62 +11,62 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.custom: seodec18
 ms.openlocfilehash: 23094ec71dac5780def10e16b90de0b818ef3c68
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80284897"
 ---
-# <a name="data-querying-in-azure-time-series-insights-preview"></a>Запрос данных в Azure Time Series Обзор
+# <a name="data-querying-in-azure-time-series-insights-preview"></a>Запросы данных в предварительной версии службы "аналитика временных рядов Azure"
 
-Azure Time Series Insights позволяет задать запрос данных о событиях и метаданных, хранящихся в среде через общедоступные AIS. Эти AA также используются [Time Series Insights Explorer.](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)
+Служба "аналитика временных рядов Azure" позволяет выполнять запросы данных по событиям и метаданным, хранящимся в среде, через API-интерфейсы общедоступной поверхности. Эти API-интерфейсы также используются [обозревателем "аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".
 
 Доступны три основные категории API в службе "Аналитика временных рядов":
 
-* **AIS среды**: Эти AAP позволяют запрашивать запросы в самой среде Time Series Insights. Они могут быть использованы для сбора списка сред, к которой абонент имеет доступ, и метаданных среды.
-* **AI-класса модели серии времени (TSM-q)**: Включает в себя создание, чтение, обновление и удаление (CRUD) операций на метаданных, хранящихся в модели временных рядов среды. Они могут использоваться для доступа к экземплярам, типам и иерархиям и их отсвазанию.
-* **AAИ time Series Query (TS':** Позволяет получить данные телеметрии или событий в том виде, в каком они записаны у поставщика-источника, и позволяют выполнять вычисления и агрегации данных с использованием расширенных функций scalar и агрегатных.
+* **API**-интерфейсы среды. Эти API-интерфейсы позволяют выполнять запросы в самой среде "аналитика временных рядов". Их можно использовать для сбора списка сред, к которым у вызывающего объекта есть доступ, и метаданных среды.
+* **API-интерфейсы модели временных рядов (ТСМ-Q)**. обеспечивает выполнение операций создания, чтения, обновления и удаления (CRUD) с метаданными, хранящимися в модели временных рядов среды. Их можно использовать для доступа к экземплярам, типам и иерархиям, а также для их изменения.
+* **API-интерфейсы запросов временных рядов (ТСК)**: позволяют получать данные телеметрии или событий, так как они записываются из поставщика источника и позволяют выполнять вычисления и агрегирование данных с помощью расширенных скалярных и агрегатных функций.
 
-Time Series Insights использует для выражения вычислений богатый язык выражения на основе [строки, Выражение временных рядов (TSX).](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)
+Аналитика временных рядов использует язык выражений на основе строки с богатыми строками, [выражение временных рядов (целевой сервер)](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)для выражения вычислений.
 
-## <a name="azure-time-series-insights-core-apis"></a>ApIs,cinaina Azure Time Series Insights
+## <a name="azure-time-series-insights-core-apis"></a>Основные API-интерфейсы службы "аналитика временных рядов Azure"
 
 Поддерживаются следующие основные программные интерфейсы.
 
-[![Обзор запросов временных рядов](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
+[![Общие сведения о запросе временных рядов](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
 
 ## <a name="environment-apis"></a>Программные интерфейсы среды
 
-* [Получите API среды](https://docs.microsoft.com/rest/api/time-series-insights/management/environments/get): Возвращает список сред, к которым абонент имеет право получить доступ.
-* [Получите API доступности среды](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability): Возвращает распределение количества `$ts`событий по метке времени события. Этот API помогает определить, есть ли какие-либо события в среде, вернув количество событий, разбитых на промежутки времени, если таковые имеются.
-* [Получите API schema:](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/geteventschema)Возвращает метаданные схемы событий для заданного диапазона поиска. Этот API позволяет получить все метаданные и свойства, доступные в схеме для заданной области поиска.
+* [Получить API окружений](https://docs.microsoft.com/rest/api/time-series-insights/management/environments/get): Возвращает список сред, к которым вызывающему объекту разрешен доступ.
+* [Получение API доступности сред](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability): Возвращает распределение количества событий по метке времени `$ts`события. Этот API помогает определить, есть ли в среде какие-либо события, возвращая количество событий, разбитых на интервалы времени, если таковые существуют.
+* [Получение API схемы событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/geteventschema): Возвращает метаданные схемы событий для заданного диапазона поиска. Этот API позволяет получить все метаданные и свойства, доступные в схеме для заданной области поиска.
 
 ## <a name="time-series-model-query-tsm-q-apis"></a>API запросов модели временных рядов (TSM-Q)
 
-Большинство из этих AA поддерживают операцию пакетного выполнения для включения пакетных операций CRUD на нескольких объектах модели Time Series:
+Большинство этих API поддерживают операцию пакетного выполнения для включения операций пакетной обработки команд CRUD в нескольких сущностях модели временных рядов:
 
-* [Параметры моделей API:](https://docs.microsoft.com/rest/api/time-series-insights/preview#model-settings-api)Включает *GET* и *PATCH* по типу по умолчанию и названию среды модели.
-* [Типы API](https://docs.microsoft.com/rest/api/time-series-insights/preview#types-api): Включает CRUD на типах временных рядов и связанных с ними переменных.
-* [Иерархии API](https://docs.microsoft.com/rest/api/time-series-insights/preview#hierarchies-api): Включает CRUD в иерархиях временных рядов и связанных с ними полевых путей.
-* [Экземпляры API:](https://docs.microsoft.com/rest/api/time-series-insights/preview#instances-api)Включает CRUD на экземплярах временных рядов и связанных с ними полях экземпляров. Кроме того, API Instances поддерживает следующие операции:
-  * [Поиск:](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriesinstances/search)Извлекает частичный список хитов в поисках экземпляров временных рядов на основе атрибутов экземпляра.
-  * [Предложите](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriesinstances/suggest): Поиск и предлагает частичный список хитов в поисках экземпляров временных рядов на основе атрибутов экземпляра.
+* [API параметров модели](https://docs.microsoft.com/rest/api/time-series-insights/preview#model-settings-api): включает *Получение* и *исправление* для типа по умолчанию и имя модели среды.
+* [API типов](https://docs.microsoft.com/rest/api/time-series-insights/preview#types-api): включает CRUD на типах временных рядов и связанных с ними переменных.
+* [API иерархий](https://docs.microsoft.com/rest/api/time-series-insights/preview#hierarchies-api): включает CRUD в иерархиях временных рядов и связанные с ними пути к полям.
+* [API экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/preview#instances-api): включает CRUD на экземплярах временных рядов и связанных с ними полях экземпляров. Кроме того, API экземпляров поддерживает следующие операции:
+  * [Поиск](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriesinstances/search): получает частичный список попаданий в поиск экземпляров временных рядов на основе атрибутов экземпляра.
+  * [Предложение](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriesinstances/suggest). ищет и предлагает частичный список попаданий в поиск экземпляров временных рядов на основе атрибутов экземпляра.
 
 ## <a name="time-series-query-tsq-apis"></a>API запросов временных рядов (TSQ)
 
-Эти AA доступны во всех магазинах в нашем многослойном решении для хранения данных в Time Series Insights. Параметры URL-адреса запроса используются для указания [типа хранилища,](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#uri-parameters) который должен выполняться запросом:
+Эти API-интерфейсы доступны во всех магазинах в решении с многоуровневой аналитикой в хранилище временных рядов. Параметры URL-адреса запроса используются для указания [типа хранилища](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#uri-parameters) , в котором должен выполняться запрос:
 
-* [Получение API событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#getevents): Включает запрос и поиск необработанных событий и связанных с ними меток времени, поскольку они записаны в Time Series Insights от поставщика-источника. Этот API позволяет получать исходные события для заданного идентификатора Time Series и диапазона поиска. Этот API поддерживает pagination для получения полного набора данных отклика для выбранного ввода. 
+* [API получения событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#getevents): позволяет выполнять запросы и получать необработанные события и связанные метки времени событий, так как они записываются в службе "аналитика временных рядов" от поставщика источника. Этот API позволяет получать необработанные события для заданного идентификатора временного ряда и диапазона поиска. Этот API поддерживает разбивку на страницы для получения полного набора данных ответа для выбранного входа. 
 
-* [Получите API серии:](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#getseries)Включает запрос и поиск вычисляемых значений и связанных с ними меток времени событий, применяя расчеты, определяемые переменными на необработанных событиях. Эти переменные могут быть определены в модели временных рядов или приведены в строке запроса. Этот API поддерживает pagination для получения полного набора данных отклика для выбранного ввода. 
+* [Получить API серии](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#getseries): позволяет выполнять запросы и получать вычисляемые значения и связанные метки времени событий, применяя вычисления, определенные переменными для необработанных событий. Эти переменные могут быть определены либо в модели временных рядов, либо в строке запроса. Этот API поддерживает разбивку на страницы для получения полного набора данных ответа для выбранного входа. 
 
-* [Агрегированный API серии:](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#aggregateseries)Включает запрос и поиск агрегированных значений и связанных с ними временных меток, применяя расчеты, определяемые переменными на необработанных событиях. Эти переменные могут быть определены в модели временных рядов или приведены в строке запроса. Этот API поддерживает pagination для получения полного набора данных отклика для выбранного ввода. 
+* [API-интерфейс агрегатной серии](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#aggregateseries): включает запросы и получение агрегированных значений и связанных меток времени, применяя вычисления, определенные переменными для необработанных событий. Эти переменные могут быть определены либо в модели временных рядов, либо в строке запроса. Этот API поддерживает разбивку на страницы для получения полного набора данных ответа для выбранного входа. 
   
-  Для заданного диапазона поиска и интервала этот API возвращает агрегированный ответ на переменную за интервал для идентификатора Time Series. Количество интервалов в наборе данных ответов рассчитывается путем подсчета теков эпохи (количество миллисекунд, прошедшее со времен эпохи Unix - 1 января 1970 года) и деления тиков на размер интервала, указанный в запросе.
+  Для указанного диапазона поиска и интервала этот API возвращает агрегированный ответ на переменную за интервал для идентификатора временного ряда. Количество интервалов в наборе данных ответа вычисляется тактами эпохи счетчика (число миллисекунд, истекших с момента UNIX — 1 января, 1970) и деление тактов на размер интервала, указанный в запросе.
 
-  Метки времени, возвращенные в наборе ответов, относятся к левым интервалным границам, а не к отобранным событиям из интервала. 
+  Метки времени, возвращаемые в наборе ответов, имеют левые границы интервала, а не события выборки из интервала. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о различных переменных, которые могут быть определены в [модели временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-tsm).
-- Узнайте больше о том, как загонять данные из [Time Series Insights Explorer](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer).
+- Узнайте больше о том, как запрашивать данные из [обозревателя "аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".

@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: rohink
 ms.openlocfilehash: 4863ffd383cfcd46bad462156e26293d145fd418
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80294867"
 ---
 # <a name="how-traffic-manager-works"></a>Как работает диспетчер трафика
@@ -60,7 +60,7 @@ ms.locfileid: "80294867"
 
     - состояние каждой конечной точки (отключенные конечные точки не возвращаются);
     - работоспособность каждой конечной точки, определенная с помощью средства проверки работоспособности диспетчера трафика. Дополнительные сведения см. в статье [Мониторинг и отработка отказов конечной точки диспетчера трафика](traffic-manager-monitoring.md).
-    - выбранный метод маршрутизации трафика. Для получения дополнительной [информации см.](traffic-manager-routing-methods.md)
+    - выбранный метод маршрутизации трафика. Дополнительные сведения см. в разделе [методы маршрутизации диспетчера трафика](traffic-manager-routing-methods.md).
 
 5. Возвращается запись DNS CNAME с именем выбранной конечной точки. В нашем примере это — contoso-us.cloudapp.net.
 6. Теперь рекурсивная служба DNS находит серверы доменных имен для домена cloudapp.net. Она обращается к этим серверам доменных имен и запрашивает запись DNS для contoso-us.cloudapp.net. Возвращается запись DNS A, которая содержит IP-адрес конечной точки службы, размещенной в США.
@@ -69,13 +69,13 @@ ms.locfileid: "80294867"
 
 Рекурсивная служба DNS кэширует все полученные ответы DNS. Сопоставитель DNS на клиентском устройстве также кэширует результат. Это позволяет быстрее отвечать на последующие запросы DNS, используя данные из кэша, а не результаты запросов к другим серверам доменных имен. Длительность хранения записей DNS в кэше определяется свойством time-to-live (срок жизни, TTL). Чем меньше это значение, тем быстрее запись в кэше будет считаться истекшей, следовательно, сервера доменных имен, используемые диспетчером трафика, будут получать больше запросов. Более высокие значения приведут к тому, что при сбое конечной точки потребуется больше времени, чтобы переключить трафик на другие конечные точки. Диспетчер трафика позволяет настраивать срок жизни, используемый в ответах службы доменных имен (DNS) диспетчера трафика, в диапазоне от 0 до 2 147 483 647 секунд (максимальный диапазон в соответствии с [RFC-1035](https://www.ietf.org/rfc/rfc1035.txt)), позволяя вам выбрать значение, которое лучше всего соответствует требованиям приложения.
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>Частые вопросы
 
 * [Какой IP-адрес использует диспетчер трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-ip-address-does-traffic-manager-use)
 
 * [Какого типа трафик можно маршрутизировать с помощью диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-traffic-can-be-routed-using-traffic-manager)
 
-* [Поддерживает ли диспетчер трафика «липкие» сеансы?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-sticky-sessions)
+* [Поддерживает ли диспетчер трафика "прикрепленные" сеансы?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-sticky-sessions)
 
 * [Почему при использовании диспетчера трафика отображается HTTP-ошибка?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-seeing-an-http-error-when-using-traffic-manager)
 
@@ -83,7 +83,7 @@ ms.locfileid: "80294867"
 
 * [Какие протоколы приложения пригодны для использования с диспетчером трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-application-protocols-can-i-use-with-traffic-manager)
 
-* [Могу ли я использовать traffic Manager с «голым» доменным именем?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-a-naked-domain-name)
+* [Можно ли использовать диспетчер трафика с именем домена "naked"?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-a-naked-domain-name)
 
 * [Учитывает ли диспетчер трафика адрес подсети клиента при обработке запросов DNS?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-consider-the-client-subnet-address-when-handling-dns-queries)
 
@@ -93,7 +93,7 @@ ms.locfileid: "80294867"
 
 * [Что подразумевается под объемом запросов, поступающих в мой профиль?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-understand-the-volume-of-queries-coming-to-my-profile)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. дополнительные сведения в статье [Мониторинг и отработка отказов конечной точки диспетчера трафика](traffic-manager-monitoring.md).
 

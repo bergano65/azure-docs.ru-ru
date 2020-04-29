@@ -1,6 +1,6 @@
 ---
-title: Настройка руководства управления в Marketo (ru) Лазурный рынок
-description: Направляй руководство для Marketo для клиентов рынка Azure.
+title: Настройка управления интересами в Marketo | Azure Marketplace
+description: Настройка управления интересами для Marketo для клиентов Azure Marketplace.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: dsindona
 ms.openlocfilehash: 9fa05eae2d297cbd6ae7243d191cae5a7a3f990e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80288535"
 ---
 # <a name="configure-lead-management-in-marketo"></a>Настройка управления интересами в Marketo

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
 ms.openlocfilehash: 36a77d49b507d3d0158d1b4b492d0141350de50f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80240643"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
@@ -226,7 +226,7 @@ _hdiManagementClient.Clusters.ConfigureHttpSettings("<Resource Group Name>, <Clu
 > [!NOTE]  
 > Предоставляя или отменяя доступ, вы сбрасываете имя пользователя и пароль кластера.
 
-Это также можно сделать через портал. [См. Кластеры Apache Hadoop в HDInsight с помощью портала Azure.](hdinsight-administer-use-portal-linux.md)
+Это также можно сделать через портал. См. раздел [Управление кластерами Apache Hadoop в HDInsight с помощью портал Azure](hdinsight-administer-use-portal-linux.md).
 
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
 
@@ -266,14 +266,14 @@ foreach (var key in results.Configuration.Keys)
 
 Ознакомьтесь со статьей [Отправка данных в HDInsight][hdinsight-upload-data].
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 * [Справочная документация к пакету SDK для HDInsight .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight)
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Администрирование HDInsight с помощью интерфейса командной строки][hdinsight-admin-cli]
 * [Создание кластеров HDInsight][hdinsight-provision]
-* [Загрузка данных в HDInsight][hdinsight-upload-data]
-* [Начало работы с Azure HDInsight][hdinsight-get-started]
+* [Отправка данных в HDInsight][hdinsight-upload-data]
+* [Приступая к работе с Azure HDInsight][hdinsight-get-started]
 
 [azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/

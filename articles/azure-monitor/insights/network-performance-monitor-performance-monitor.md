@@ -1,5 +1,5 @@
 ---
-title: Монитор производительности в мониторе производительности сети
+title: Системный монитор в Монитор производительности сети
 description: Функции системного монитора в службе "Монитор производительности сети" помогают отслеживать сетевые подключения в разных точках сети. Можно отслеживать подключения в облачных развертываниях и локальных расположениях, нескольких центрах обработки данных и филиалах, критически важных многоуровневых приложениях или микрослужбах.
 ms.subservice: logs
 ms.topic: conceptual
@@ -7,10 +7,10 @@ author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
 ms.openlocfilehash: 126cca9d3606b378e59e4f4e1c5b52d985d19d94
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80055691"
 ---
 # <a name="network-performance-monitor-solution-performance-monitoring"></a>Решение "Монитор производительности сети": мониторинг производительности
@@ -26,7 +26,7 @@ ms.locfileid: "80055691"
 
 ![Монитор производительности сети](media/network-performance-monitor-performance-monitor/npm-performance-monitor.png)
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Чтобы открыть конфигурацию Монитора производительности сети, откройте решение [Монитор производительности сети](network-performance-monitor.md) и нажмите кнопку **Настройка**.
 
 ![Настройка Монитора производительности сети](media/network-performance-monitor-performance-monitor/npm-configure-button.png)
@@ -94,7 +94,7 @@ ms.locfileid: "80055691"
 
 Если во время развертывания вы выбрали протокол ICMP, то для его смены на TCP можно в любое время изменить правило мониторинга по умолчанию.
 
-1. Перейти к **сетевому** > **монитору** >производительности **настраивать** > **монитор.** Выберите  **Правило по умолчанию**. 
+1.  Выберите> **монитор**> **Monitor** **Network Performance**> **Configure**производительности сети Настройка монитора.  Выберите  **Правило по умолчанию**. 
 2. Прокрутите страницу до раздела **Протокол** и выберите протокол, который хотите использовать. 
 3. Чтобы применить настройку, нажмите кнопку **Сохранить**. 
 
@@ -127,5 +127,5 @@ ms.locfileid: "80055691"
  
 ![Карта топологии с выбранными свойствами узла](media/network-performance-monitor-performance-monitor/topology-dashboard-root-cause.png) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

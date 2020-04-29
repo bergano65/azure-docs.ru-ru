@@ -1,5 +1,5 @@
 ---
-title: Управляйте предложениями Azure и AppSource Marketplace (ru) Лазурный рынок
+title: Управление предложениями Azure и AppSource Marketplace | Azure Marketplace
 description: Управление предложениями в Azure Marketplace и AppSource Marketplace
 author: dsindona
 ms.service: marketplace
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: dsindona
 ms.openlocfilehash: 8b964075a7ad38cae43b8f3bda15f7d8c76318ea
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80286444"
 ---
 # <a name="manage-azure-and-appsource-marketplace-offers"></a>Управление предложениями Azure и AppSource Marketplace
@@ -33,6 +33,6 @@ ms.locfileid: "80286444"
 |  |  |
   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите статью [Знакомство с Порталом Cloud Partner](../portal-tour/cpp-portal-tour.md), если еще не знаете о возможностях и пользовательском интерфейсе Портала Cloud Partner.  После чего ознакомьтесь со статьей [Create Azure Marketplace and AppSource offers](./cpp-create-offer.md) (Создание предложений Azure Marketplace and AppSource).

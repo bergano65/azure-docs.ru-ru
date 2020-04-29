@@ -1,5 +1,5 @@
 ---
-title: Руководство по SEO Azure Marketplace
+title: Руководство по SEO для Azure Marketplace
 description: Дополнительные сведения по улучшению оптимизация для поисковых систем (SEO).
 author: dsindona
 ms.service: marketplace
@@ -8,20 +8,20 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: dsindona
 ms.openlocfilehash: 761cdc2233bce3619d4c2c9ce1d7d7177d3bc407
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80280156"
 ---
-# <a name="azure-marketplace-seo-guidance"></a>Руководство по SEO Azure Marketplace
+# <a name="azure-marketplace-seo-guidance"></a>Руководство по SEO для Azure Marketplace
 
-В этой статье объясняется, как максимизировать возможности вашего предложения с помощью функции поиска в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [AppSource.](https://appsource.microsoft.com) 
+В этой статье объясняется, как обеспечить возможность обнаружения вашего предложения с помощью функций поиска в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [AppSource](https://appsource.microsoft.com). 
 
 
 ## <a name="general-explanation-of-algorithm"></a>Общие сведения об алгоритме
 
-Рынки Майкрософт используют Azure Cognitive Search для питания возможностей поиска сайта. Алгоритм основывается на частоте условия или инверсной частота в документе ([TF/IDF](https://en.wikipedia.org/wiki/Tf–idf)). Используется стандартный [анализатор Lucene](https://lucene.apache.org/core/).
+Microsoft Marketplace использует Azure Когнитивный поиск для включения возможностей поиска сайта. Алгоритм основывается на частоте условия или инверсной частота в документе ([TF/IDF](https://en.wikipedia.org/wiki/Tf–idf)). Используется стандартный [анализатор Lucene](https://lucene.apache.org/core/).
 
 В общем, все текстовые поля, категории и отрасли включены в релевантность весомости связей. Чтобы получить более высокие результаты поиска можно использовать определенные термины, редко используемые для приложения, но часто используемые самим приложением. Поэтому, включение таких терминов, как виртуальная машина, позволит получить небольшое преимущество, в то время, как использование поиска Azure является более определенным.
 Далее приведены наиболее важные поля, которые следует рассмотреть.

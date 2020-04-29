@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: dsindona
 ms.openlocfilehash: 57bc370fd160b8b3d6d7941ea28cd460c99f3d96
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80285373"
 ---
 <a name="store-your-appsource-package-to-azure-storage-and-generate-a-url-with-sas-key"></a>Хранение пакета AppSource в хранилище Azure и создание URL-адреса с ключом SAS
@@ -23,7 +23,7 @@ ms.locfileid: "80285373"
 
 1. Перейдите по ссылке <https://azure.microsoft.com> и создайте бесплатную пробную версию или учетную запись выставления счетов.
 
-2. Войти на [портал Azure](https://portal.azure.com/).
+2. Войдите на [портал Azure](https://portal.azure.com/).
 
 3. Создайте новую учетную запись хранения нажав кнопку **+ Создать** и переместитесь к учетной записи **Данные + Хранилище**.
 

@@ -1,7 +1,7 @@
 ---
 title: Поддерживаемые платформы данных
 titleSuffix: Azure Data Science Virtual Machine
-description: Узнайте о поддерживаемых платформах и инструментах для виртуальной машины Azure Data Science.
+description: Сведения о поддерживаемых платформах данных и средствах для виртуальной машины Azure для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
 ms.service: machine-learning
@@ -11,70 +11,70 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
 ms.openlocfilehash: cd787881957d78f179107e46b2650de4618c7724
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80282330"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
 
-С помощью виртуальной машины Data Science (DSVM) вы можете создавать аналитику на широком диапазоне платформ данных. Кроме интерфейсов для платформ удаленных данных DSVM предоставляет локальный экземпляр для быстрой разработки и создания прототипов.
+С помощью виртуальной машины для обработки и анализа данных (DSVM) можно создать аналитику для широкого спектра платформ данных. Кроме интерфейсов для платформ удаленных данных DSVM предоставляет локальный экземпляр для быстрой разработки и создания прототипов.
 
-Следующие инструменты платформы данных поддерживаются на DSVM.
+В DSVM поддерживаются следующие инструменты платформы данных.
 
 ## <a name="sql-server-developer-edition"></a>SQL Server Developer Edition
 
 | | |
 | ------------- | ------------- |
 | Что это такое?   | Экземпляр локальной реляционной базы данных      |
-| Поддерживаемые издания DSVM      | Windows 2016: Сервер S'L 2017, Windows 2019: Сервер S'L 2019      |
+| Поддерживаемые выпуски DSVM      | Windows 2016: SQL Server 2017, Windows 2019: SQL Server 2019      |
 | Распространенные способы применения      | Быстрая локальная разработка приложений с меньшим набором данных <br/> Запуск R внутри базы данных   |
-| Ссылки на примеры      |    Небольшая выборка набора данных в Нью-йорке загружается в базу данных S'L:<br/>  `nyctaxi` <br/> Образец Jupyter, показывающий Microsoft Machine Learning Server и аналитику в базе данных, можно найти по адресу:<br/> `~notebooks/SQL_R_Services_End_to_End_Tutorial.ipynb`  |
-| Похожие инструменты на DSVM       | SQL Server Management Studio <br/> Драйверы ODBC и JDBC<br/> pyodbc, RODBC<br />Apache Drill      |
+| Ссылки на примеры      |    Небольшой пример набора данных о городе Нью-Йорка загружается в базу данных SQL:<br/>  `nyctaxi` <br/> Образец Jupyter, отображающий Microsoft Machine Learning Server и аналитическую аналитику в базе данных, можно найти по адресу:<br/> `~notebooks/SQL_R_Services_End_to_End_Tutorial.ipynb`  |
+| Связанные средства на DSVM       | SQL Server Management Studio <br/> Драйверы ODBC и JDBC<br/> pyodbc, RODBC<br />Apache Drill      |
 
 > [!NOTE]
-> Издание разработчика серверов S'L может использоваться только для целей разработки и тестирования. Для запуска в рабочей среде вам потребуется лицензия или одна из виртуальных машин SQL Server.
+> SQL Server Developer Edition можно использовать только в целях разработки и тестирования. Для запуска в рабочей среде вам потребуется лицензия или одна из виртуальных машин SQL Server.
 
 
 ### <a name="setup"></a>Настройка
 
-Сервер базы данных уже настроен на настройку, и `SQL Server (MSSQLSERVER)`службы Windows, связанные с сервером S'L (например), настроены на автоматическое запуск. Единственный ручной шаг включает в себя включение аналитики в базе данных с помощью Microsoft Machine Learning Server. Вы можете включить аналитику, запустив следующую команду в качестве одноразового действия в студии управления серверами S'L (SSMS). Запустите эту команду после входа в систему в качестве администратора машины, откройте новый запрос в SSMS и убедитесь, что выбранная `master`база данных:
+Сервер базы данных уже предварительно настроен, а службы Windows, связанные с SQL Server (например `SQL Server (MSSQLSERVER)`,), настроены для автоматического запуска. Только ручной шаг включает в себя включение аналитической аналитики базы данных с помощью Microsoft Machine Learning Server. Вы можете включить аналитику, выполнив следующую команду в качестве однократного действия в SQL Server Management Studio (SSMS). Выполните эту команду после входа в систему от имени администратора компьютера, откройте новый запрос в SSMS и убедитесь, что выбранная база данных `master`:
 
         CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS 
 
         (Replace %COMPUTERNAME% with your VM name.)
        
-Для запуска студии управления серверами S'L можно найти «Студию управления серверами» в списке программ или использовать поиск Windows для его поиска и запуска. При запросе для учетных данных выберите ```localhost``` **аутентификацию Windows** и используйте имя машины или в поле имени **сервера S'L.**
+Для запуска SQL Server Management Studio можно выполнить поиск по слову "SQL Server Management Studio" в списке программ или воспользоваться поиском Windows для поиска и запуска. При появлении запроса на ввод учетных данных выберите **Проверка подлинности Windows** и используйте имя компьютера или ```localhost``` в поле **SQL Server имя** .
 
-### <a name="how-to-use-and-run-it"></a>Как использовать и запустить его
+### <a name="how-to-use-and-run-it"></a>Использование и запуск
 
-По умолчанию сервер базы данных с экземпляром базы данных по умолчанию работает автоматически. Чтобы получить доступ к базе данных SQL Server локально, на виртуальной машине можно использовать такие средства, как SQL Server Management Studio. Учетные записи локальных администраторов имеют доступ к администратору в базе данных.
+По умолчанию сервер базы данных с экземпляром базы данных по умолчанию запускается автоматически. Чтобы получить доступ к базе данных SQL Server локально, на виртуальной машине можно использовать такие средства, как SQL Server Management Studio. Учетные записи локального администратора имеют административный доступ к базе данных.
 
-Кроме того, DSVM поставляется с драйверами ODBC и JDBC для разговоров с базами данных S'L Server, базами данных Azure S'L и хранилищем данных Azure S'L из приложений, написанных на нескольких языках, включая Python и Machine Learning Server.
+Кроме того, DSVM поставляется с драйверами ODBC и JDBC для взаимодействия с SQL Server, базами данных SQL Azure и хранилищем данных SQL Azure из приложений, написанных на нескольких языках, включая Python и Machine Learning Server.
 
-### <a name="how-is-it-configured-and-installed-on-the-dsvm"></a>Как он настроен и устанавливается на DSVM? 
+### <a name="how-is-it-configured-and-installed-on-the-dsvm"></a>Как она настраивается и устанавливается на DSVM? 
 
- Сервер S'L устанавливается стандартным способом. Его можно найти в `C:\Program Files\Microsoft SQL Server`. Экземпляр Машинного сервера в базе `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES`данных находится по адресу . DSVM также имеет отдельный автономный экземпляр Machine Learning `C:\Program Files\Microsoft\R Server\R_SERVER`Server, который устанавливается на . Эти два экземпляра Machine Learning Server не являются обменом библиотеками.
+ SQL Server устанавливается стандартным способом. Его можно найти в `C:\Program Files\Microsoft SQL Server`. Экземпляр Machine Learning Server в базе данных находится по адресу `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES`. DSVM также имеет отдельный изолированный экземпляр Machine Learning Server, который устанавливается в `C:\Program Files\Microsoft\R Server\R_SERVER`. Эти два экземпляра Machine Learning Server не используют общие библиотеки.
 
 
 ## <a name="apache-spark-2x-standalone"></a>Экземпляр Apache Spark 2.x (изолированный)
 
 | | |
 | ------------- | ------------- |
-| Что это такое?   | Отдельный (один узла в процессе) экземпляр популярной платформы Apache Spark; система быстрой, крупномасштабной обработки данных и машинного обучения     |
-| Поддерживаемые издания DSVM      | Linux     |
-| Распространенные способы применения      | Быстрая разработка приложений Spark/PySpark локально с меньшим набором данных и более поздним развертыванием на больших кластерах Spark, таких как Azure HDInsight<br/> Тест Microsoft машинного обучения сервера Spark контекст <br />Используйте SparkML или библиотеку [MMLSpark](https://github.com/Azure/mmlspark) корпорации Майкрософт с открытым исходным кодом для создания приложений ML |
-| Ссылки на примеры      |    Пример Jupyter: <br />&nbsp;&nbsp;* ~/notebooks/SparkML/pySpark <br /> &nbsp;&nbsp;* ~/notebooks/MMLSpark <br /> Сервер машинного обучения Microsoft (контекст spark): /dsvm/образцы/MRS/MRSSparkContextSample.R |
-| Похожие инструменты на DSVM       | PySpark, Scala<br/>Jupyter (ядра Spark/PySpark)<br/>Сервер машинного обучения Microsoft, SparkR, Sparklyr <br />Apache Drill      |
+| Что это такое?   | Изолированный экземпляр (один узел в процессе) популярной платформы Apache Spark; система для быстрой и крупномасштабной обработки данных и машинного обучения     |
+| Поддерживаемые выпуски DSVM      | Linux     |
+| Распространенные способы применения      | * Быстрая разработка приложений Spark/PySpark локально с меньшим набором данных и более поздним развертыванием в крупных кластерах Spark, таких как Azure HDInsight<br/> * Тестовый Microsoft Machine Learning Server контекст Spark <br />* Создание приложений ML с помощью SparkML или библиотеки [MMLSpark](https://github.com/Azure/mmlspark) с открытым кодом Майкрософт |
+| Ссылки на примеры      |    Пример Jupyter: <br />&nbsp;&nbsp;* ~/notebooks/SparkML/pySpark <br /> &nbsp;&nbsp;* ~/notebooks/MMLSpark <br /> Microsoft Machine Learning Server (контекст Spark):/Дсвм/самплес/МРС/мрсспаркконтекстсампле.р |
+| Связанные средства на DSVM       | PySpark, Scala<br/>Jupyter (ядра Spark/PySpark)<br/>Microsoft Machine Learning Server, Spark, Sparklyr <br />Apache Drill      |
 
-### <a name="how-to-use-it"></a>Использование
-Задания Spark можно отправить на командную строку, запустив `spark-submit` или `pyspark` команду. Вы можете также создать записную книжку Jupyter с ядром Spark.
+### <a name="how-to-use-it"></a>Способ использования
+Вы можете отправить задания Spark в командной строке, выполнив команду `spark-submit` или `pyspark` . Вы можете также создать записную книжку Jupyter с ядром Spark.
 
-Вы можете использовать Spark от R, используя такие библиотеки, как SparkR, Sparklyr и Microsoft Machine Learning Server, которые доступны на DSVM. См. указатели на примеры в предыдущей таблице.
+Вы можете использовать Spark из R с помощью таких библиотек, как Spark, Sparklyr и Microsoft Machine Learning Server, доступных в DSVM. См. указатели на примеры в предыдущей таблице.
 
 ### <a name="setup"></a>Настройка
-Перед запуском в контексте Spark в Microsoft Machine Learning Server на Ubuntu Linux DSVM издание, вы должны завершить одноразовый шаг установки, чтобы локальный один узла Hadoop HDFS и Yarn экземпляр. По умолчанию на виртуальной машине для обработки и анализа данных службы Hadoop установлены, но отключены. Чтобы включить их, запустите следующие команды в качестве корня в первый раз:
+Перед запуском в контексте Spark в Microsoft Machine Learning Server в Ubuntu Linux DSVM Edition необходимо выполнить однократную настройку, чтобы включить локальный одноузловой экземпляр Hadoop HDFS и Yarn. По умолчанию на виртуальной машине для обработки и анализа данных службы Hadoop установлены, но отключены. Чтобы включить их, выполните следующие команды с правами root в первый раз:
 
     echo -e 'y\n' | ssh-keygen -t rsa -P '' -f ~hadoop/.ssh/id_rsa
     cat ~hadoop/.ssh/id_rsa.pub >> ~hadoop/.ssh/authorized_keys
@@ -84,20 +84,20 @@ ms.locfileid: "80282330"
     chown hadoop:hadoop ~hadoop/.ssh/authorized_keys
     systemctl start hadoop-namenode hadoop-datanode hadoop-yarn
 
-Вы можете остановить услуги, связанные с Hadoop, когда они вам больше не нужны, запустив ```systemctl stop hadoop-namenode hadoop-datanode hadoop-yarn```.
+Вы можете отключить службы, связанные с Hadoop, если они больше не нужны, выполнив ```systemctl stop hadoop-namenode hadoop-datanode hadoop-yarn```.
 
-Образец, демонстрирующие, как разрабатывать и тестировать MRS в удаленном контексте Spark (который является автономным экземпляром Spark на DSVM), предоставляется и доступен в каталоге. `/dsvm/samples/MRS`
+Пример, демонстрирующий разработку и тестирование MRS в удаленном контексте Spark (который является автономным экземпляром Spark в DSVM) предоставляется и доступен в `/dsvm/samples/MRS` каталоге.
 
 
-### <a name="how-is-it-configured-and-installed-on-the-dsvm"></a>Как он настроен и устанавливается на DSVM? 
+### <a name="how-is-it-configured-and-installed-on-the-dsvm"></a>Как она настраивается и устанавливается на DSVM? 
 |Платформа|Размещение установки ($SPARK_HOME)|
 |:--------|:--------|
 |Linux   | /dsvm/tools/spark-X.X.X-bin-hadoopX.X|
 
 
-Библиотеки для доступа к данным из хранилища Azure Blob или Хранилища озер данных Azure, использующие библиотеки машинного обучения Microsoft MMLSpark, предустановлены в $SPARK/HOME/jars. Эти JAR-файлы автоматически загружаются при запуске Spark. По умолчанию Spark использует данные на локальном диске. 
+Библиотеки для доступа к данным из хранилища BLOB-объектов Azure или Azure Data Lake Storage с помощью библиотек машинного обучения Microsoft MMLSpark, предустановленных в $SPARK _HOME/жарс. Эти JAR-файлы автоматически загружаются при запуске Spark. По умолчанию Spark использует данные на локальном диске. 
 
-Для экземпляра Spark в DSVM для доступа к данным, хранящимся в хранилище `core-site.xml` Blob или Хранилище озер Лазурных данных, необходимо создать и настроить файл на основе шаблона, найденного в $SPARK»HOME/conf/core-site.xml.template. Вы также должны иметь соответствующие учетные данные для доступа к хранилищу Blob и хранению озер данных Azure. (Обратите внимание, что файлы шаблонов используют заполнители для конфигураций хранения памяти Blob и Azure Data Lake.)
+Чтобы экземпляр Spark в DSVM для доступа к данным, хранящимся в хранилище BLOB-объектов или Azure Data Lake Storage, необходимо создать и `core-site.xml` настроить файл на основе шаблона, найденного в $Spark _HOME/конф/коре-Сите.ксмл.Темплате. Кроме того, необходимо иметь соответствующие учетные данные для доступа к хранилищу BLOB-объектов и Azure Data Lake Storage. (Обратите внимание, что файлы шаблонов используют заполнители для хранилища BLOB-объектов и конфигураций Azure Data Lake Storage.)
 
-Для получения более подробной информации о создании [Authentication with Azure Data Lake Storage Gen1](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-authenticate-using-active-directory)учетных данных службы хранения озер Лазурных данных см. После того, как учетные данные для хранения Blob или Хранилища озер Лазурных данных будут введены в файл core-site.xml, можно ссылаться на данные, хранящиеся в этих источниках, через префикс URI wasb:// или adl://.
+Более подробные сведения о создании учетных данных Azure Data Lake Storage служб см. [в статье Проверка подлинности с помощью Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-authenticate-using-active-directory). После ввода учетных данных для хранилища BLOB-объектов или Azure Data Lake Storage в файл Core-site. XML можно ссылаться на данные, хранящиеся в этих источниках, с помощью префикса URI wasb://или adl://.
 

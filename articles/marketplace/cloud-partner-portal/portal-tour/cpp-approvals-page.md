@@ -1,6 +1,6 @@
 ---
-title: Страница утверждений для Azure Marketplace
-description: Обзор страницы утверждений на облачном партнерской портале Azure Marketplace.
+title: Страница "утверждения" для Azure Marketplace
+description: Обзор страницы "утверждения" в Портал Cloud Partner для Azure Marketplace.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: dsindona
 ms.openlocfilehash: 8bd00e3b71e74775697a615152885e55703a41fb
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80288943"
 ---
 # <a name="approvals-page"></a>Страница "Утверждения"
@@ -26,6 +26,6 @@ ms.locfileid: "80288943"
 ![Страница утвержденных предложений](./media/approvals-page1.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующий элемент в строке навигационного меню открывает страницу [Все издатели](./cpp-all-publishers-page.md), на которой перечислены все зарегистрированные издатели.

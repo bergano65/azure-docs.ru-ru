@@ -1,6 +1,6 @@
 ---
-title: Автомасштабирование стручков AKS с метриками шлюза приложений Azure
-description: В этой статье содержатся инструкции по масштабу пакетов бэкэнда AKS с помощью метрик Портала приложений и метческого адаптера Azure Kubernetes
+title: Автоматическое масштабирование модулей AKS с помощью метрик шлюза приложений Azure
+description: В этой статье приведены инструкции по масштабированию модулей AKS серверной части с помощью метрик шлюза приложений и адаптера метрик Azure Kubernetes.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -8,26 +8,26 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 1169ed0e9a2b970ee0e30d73ea20c87001b62786
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80239451"
 ---
-# <a name="autoscale-your-aks-pods-using-application-gateway-metrics-beta"></a>Автомасштабирование стручков AKS с помощью метрик ипой ных атримы приложений (бета)
+# <a name="autoscale-your-aks-pods-using-application-gateway-metrics-beta"></a>Автоматическое масштабирование модулей AKS с помощью метрик шлюза приложений (бета-версия)
 
-По мере увеличения входящего трафика становится важным масштабировать сяобирание приложений в зависимости от спроса.
+При увеличении входящего трафика становится крайне важным, чтобы масштабировать приложения в зависимости от спроса.
 
-В следующем уроке мы объясним, как `AvgRequestCountPerHealthyHost` вы можете использовать метрику прикладного шлюза для расширения приложения. `AvgRequestCountPerHealthyHost`измеряет средние запросы, отправленные в определенный пул бэкэнда, и комбинацию параметров бэкэнда HTTP.
+В следующем руководстве объясняется, как можно использовать `AvgRequestCountPerHealthyHost` метрику шлюза приложений для масштабирования приложения. `AvgRequestCountPerHealthyHost`измеряет среднее число запросов, отправленных в определенный серверный пул и сочетание параметров HTTP серверной части.
 
 Мы будем использовать следующие два компонента:
 
-* [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter)- Мы будем использовать метрический адаптер для разоблачения метрик Application Gateway через метрический сервер. Метрический адаптер Azure Kubernetes — это проект с открытым исходным кодом в Azure, аналогичный контроллеру входа в шлюз приложений. 
-* [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler)- Мы будем использовать HPA для использования метрик Application Gateway и таргетинга развертывания для масштабирования.
+* [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter)— Мы будем использовать адаптер метрики для предоставления метрик шлюза приложений через сервер метрик. Адаптер метрик Azure Kubernetes — это проект с открытым исходным кодом в Azure, аналогичный контроллеру входящего трафика шлюза приложений. 
+* [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler)— Мы будем использовать HPA для использования метрик шлюза приложений и нацелены на развертывание для масштабирования.
 
-## <a name="setting-up-azure-kubernetes-metric-adapter"></a>Настройка метеоада Azure Kubernetes
+## <a name="setting-up-azure-kubernetes-metric-adapter"></a>Настройка адаптера метрик Azure Kubernetes
 
-1. Сначала мы создадим директор службы Azure `Monitoring Reader` AAD и назначим ему доступ по группе ресурсов Application Gateway. 
+1. Сначала необходимо создать субъект-службу Azure AAD и назначить ему `Monitoring Reader` доступ к группе ресурсов шлюза приложений. 
 
     ```azurecli
         applicationGatewayGroupName="<application-gateway-group-id>"
@@ -35,7 +35,7 @@ ms.locfileid: "80239451"
         az ad sp create-for-rbac -n "azure-k8s-metric-adapter-sp" --role "Monitoring Reader" --scopes applicationGatewayGroupId
     ```
 
-1. Теперь мы разместим с помощью [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter) основного сервиса AAD, созданного выше.
+1. Теперь мы развернемся [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter) с помощью созданного выше субъекта-службы AAD.
 
     ```bash
     kubectl create namespace custom-metrics
@@ -47,7 +47,7 @@ ms.locfileid: "80239451"
     kubectl apply -f kubectl apply -f https://raw.githubusercontent.com/Azure/azure-k8s-metrics-adapter/master/deploy/adapter.yaml -n custom-metrics
     ```
 
-1. Мы создадим `ExternalMetric` ресурс `appgw-request-count-metric`с именем . Этот ресурс будет инструктировать метрический адаптер для разоблачения `AvgRequestCountPerHealthyHost` метрики для `myApplicationGateway` ресурса в `myResourceGroup` группе ресурсов. Вы можете `filter` использовать поле для целевой конкретной пулбэк и бэкэнд арены HTTP настройки в приложении шлюз.
+1. Мы создадим `ExternalMetric` ресурс с именем `appgw-request-count-metric`. Этот ресурс попросит адаптеру метрик предоставить `AvgRequestCountPerHealthyHost` метрику для `myApplicationGateway` ресурса в `myResourceGroup` группе ресурсов. Это `filter` поле можно использовать для назначения определенного внутреннего пула и параметра HTTP серверной части в шлюзе приложений.
 
     ```yaml
     apiVersion: azure.com/v1alpha2
@@ -67,7 +67,7 @@ ms.locfileid: "80239451"
             filter: BackendSettingsPool eq '<backend-pool-name>~<backend-http-setting-name>' # optional
     ```
 
-Теперь вы можете сделать запрос на метрический сервер, чтобы увидеть, если наша новая метрика становится подвержены:
+Теперь можно выполнить запрос к серверу метрик, чтобы узнать, предоставлена ли нам новая метрика:
 ```bash
 kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1/namespaces/default/appgw-request-count-metric"
 # Sample Output
@@ -90,13 +90,13 @@ kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1/namespaces/default/appg
 # }
 ```
 
-## <a name="using-the-new-metric-to-scale-up-the-deployment"></a>Использование новой метрики для расширения развертывания
+## <a name="using-the-new-metric-to-scale-up-the-deployment"></a>Использование новой метрики для увеличения масштаба развертывания
 
-Как только мы `appgw-request-count-metric` сможем разоблачить через метрический сервер, мы готовы использовать [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler) для расширения нашего целевого развертывания.
+После того как мы сможем предоставить `appgw-request-count-metric` доступ через сервер метрик, мы готовы к использованию [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler) для масштабирования целевого развертывания.
 
-В следующем примере мы нацелимся на развертывание `aspnet`выборки. Мы будем масштабировать `appgw-request-count-metric` стручки, когда > 200 `10` за стручка до максимума стручков.
+В следующем примере мы будем ориентироваться на пример развертывания `aspnet`. Мы будем масштабировать модули Pod при `appgw-request-count-metric` > 200 на каждый модуль до максимального числа `10` модулей.
 
-Замените имя целевого развертывания и примените следующую конфигурацию автоматического масштаба:
+Замените имя целевого развертывания и примените следующую конфигурацию автоматического масштабирования:
 ```yaml
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
@@ -116,10 +116,10 @@ spec:
       targetAverageValue: 200
 ```
 
-Проверьте настройку с помощью инструмента нагрузоза, такого как скамейка apache:
+Протестируйте настройку с помощью средства нагрузочного тестирования, например Apache Bench:
 ```bash
 ab -n10000 http://<applicaiton-gateway-ip-address>/
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [**Проблема Ingress Контроллер вопросы:**](ingress-controller-troubleshoot.md)Устранение любых проблем с контроллером ingress.
+## <a name="next-steps"></a>Дальнейшие шаги
+- [**Устранение неполадок с контроллером**](ingress-controller-troubleshoot.md)входящего трафика. Устраните неполадки с контроллером входящего трафика.

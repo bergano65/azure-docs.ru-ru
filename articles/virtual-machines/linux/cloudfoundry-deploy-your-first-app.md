@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/14/2017
 ms.author: seanmck
 ms.openlocfilehash: 793a8f291be4fcca6fad19d486849253dddc089f
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80294790"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Развертывание первого приложения в Cloud Foundry в Microsoft Azure
@@ -27,11 +27,11 @@ ms.locfileid: "80294790"
 - [Разверните пакеты Cloud Foundry напрямую][oss-cf-bosh], настроив директор [BOSH](https://bosh.io), виртуальную машину, координирующую развертывание среды Cloud Foundry.
 
 > [!IMPORTANT] 
-> Если вы развертываете PCF из Azure Marketplace, запишите SYSTEMDOMAINURL и учетные данные администратора, необходимые для доступа к Pivotal Apps Manager (описано в руководстве по развертыванию Marketplace). Эти значения необходимы для работы с этим руководством. Для развертывания на рынке SYSTEMDOMAINURL находится `https://system.*ip-address*.cf.pcfazure.com`в форме.
+> Если вы развертываете PCF из Azure Marketplace, запишите SYSTEMDOMAINURL и учетные данные администратора, необходимые для доступа к Pivotal Apps Manager (описано в руководстве по развертыванию Marketplace). Эти значения необходимы для работы с этим руководством. Для развертываний Marketplace SYSTEMDOMAINURL имеет форму `https://system.*ip-address*.cf.pcfazure.com`.
 
 ## <a name="connect-to-the-cloud-controller"></a>Подключение к Cloud Controller
 
-Cloud Controller — основная точка входа в среду Cloud Foundry для развертывания приложений и управления ими. Основной API Cloud Controller — это REST API. Доступ к нему можно получить с помощью различных средств. В этом случае взаимодействие с ним осуществляется с помощью [интерфейса командной строки Cloud Foundry][cf-cli]. Вы можете установить CLI на Linux, macOS или Windows, но если вы предпочитаете не устанавливать его вообще, он доступен предварительно установлен в [Лазурной облачной оболочке.][cloudshell-docs]
+Cloud Controller — основная точка входа в среду Cloud Foundry для развертывания приложений и управления ими. Основной API Cloud Controller — это REST API. Доступ к нему можно получить с помощью различных средств. В этом случае взаимодействие с ним осуществляется с помощью [интерфейса командной строки Cloud Foundry][cf-cli]. Вы можете установить интерфейс командной строки в Linux, macOS или Windows, но если вы предпочитаете не устанавливать его вообще, то он будет доступен предварительно установленным в [Azure Cloud Shell][cloudshell-docs].
 
 Для входа добавьте `api` перед SYSTEMDOMAINURL, полученным из развертывания Marketplace. Так как развертывание по умолчанию использует самозаверяющий сертификат, следует также добавить параметр `skip-ssl-validation`.
 
@@ -79,7 +79,7 @@ git clone https://github.com/cloudfoundry-samples/hello-spring-cloud
 cd hello-spring-cloud
 ```
 
-### <a name="build-the-application"></a>создание приложения;
+### <a name="build-the-application"></a>Построение приложения
 
 Создайте приложение с помощью [Apache Maven](https://maven.apache.org).
 
@@ -133,7 +133,7 @@ cf scale -i 2 hello-spring-cloud
 Если выполнить команду `cf app` в приложении, мы увидим, что Cloud Foundry создает другой экземпляр приложения. После запуска приложения Cloud Foundry автоматически запускает балансировку нагрузки по трафику к нему.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Ознакомьтесь с документацией по Cloud Foundry][cloudfoundry-docs]
 - [Настройте подключаемый модуль Azure DevOps Services для Cloud Foundry][vsts-plugin]

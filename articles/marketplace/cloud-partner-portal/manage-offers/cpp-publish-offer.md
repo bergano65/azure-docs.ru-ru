@@ -1,5 +1,5 @@
 ---
-title: Опубликовать Предложения Marketplace Лазурный рынок
+title: Опубликовать предложения Marketplace | Azure Marketplace
 description: Публикация предложений в Azure Marketplace и AppSource Marketplace с помощью Портала Cloud Partner
 author: dsindona
 ms.service: marketplace
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/12/2019
 ms.author: dsindona
 ms.openlocfilehash: ab75afd2278433dc36c3d1280b41edfa1e34ddce
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80286410"
 ---
 # <a name="publish-azure-marketplace-and-appsource-offers"></a>Публикация предложений Azure Marketplace и AppSource
@@ -37,6 +37,6 @@ ms.locfileid: "80286410"
 Возможно, у вас возникнет желание отменить публикацию уже после того, как вы запустите этот процесс. Запрос на публикацию можно отменить только тогда, когда процесс достигнет шага *Выход издателя*. Чтобы отменить публикацию, щелкните **Отменить публикацию**. Состояние публикации будет сброшено на шаг 1. Чтобы повторно выполнить публикацию, щелкните **Опубликовать** и выполняйте следующие действия на вкладке **Состояние**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Во время процесса публикации полезно наблюдать за состоянием предложения до момента активации предложения. Дополнительные сведения см. в [этой статье](./cpp-view-status-offer.md). 

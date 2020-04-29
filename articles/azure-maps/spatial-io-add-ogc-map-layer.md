@@ -1,6 +1,6 @@
 ---
-title: Добавить открытый слож карты Геопространственного Консорциума (OGC) Карты Microsoft Azure
-description: Узнайте, как наложить слой карты OGC на карту и как использовать различные параметры в классе OgcMapLayer.
+title: Добавление слоя-схемы Открытый геопространственный консорциум (OGC) | Карты Microsoft Azure
+description: Узнайте, как наложение слоя карт OGC на карте и использование различных параметров в классе Огкмаплайер.
 author: philmea
 ms.author: philmea
 ms.date: 03/02/2020
@@ -9,92 +9,92 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: b753ecfc07cfb3806838f8a05dbe33ef0bb92730
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80334283"
 ---
-# <a name="add-a-map-layer-from-the-open-geospatial-consortium-ogc"></a>Добавьте слой карты из Открытого геопространственного консорциума (OGC)
+# <a name="add-a-map-layer-from-the-open-geospatial-consortium-ogc"></a>Добавление слоя карт из Открытый геопространственный консорциум (OGC)
 
-Класс `atlas.layer.OgcMapLayer` может накладывать изображения Web Map Services (WMS) и веб-карты Tile Services (WMTS) на карте. WMS является стандартным протоколом, разработанным OGC для обслуживания геоссылки изображения карты через Интернет. Геоссылка изображений — это процессы привязки изображения к географическому местоположению. WMTS также является стандартным протоколом, разработанным OGC. Он предназначен для обслуживания предварительно оказанных и геоссылки картплитки.
+`atlas.layer.OgcMapLayer` Класс может накладывать образы служб веб-карты (WMS) и изображения служб веб-карты (ВМТС) на карте. WMS — это стандартный протокол, разработанный OGC для обслуживания географических изображений карт через Интернет. Географические ссылки на изображения — это процессы связывания изображения с географическим расположением. ВМТС также является стандартным протоколом, разработанным OGC. Он предназначен для обслуживания предварительно подготовленных и геоссылок плиток карт.
 
-В следующих разделах описаны функции `OgcMapLayer` службы веб-карт, которые поддерживаются классом.
+В следующих разделах описаны функции службы веб-карт, поддерживаемые `OgcMapLayer` классом.
 
 **Служба веб-карт (WMS)**
 
-- Поддерживаемые `1.0.0`версии: , `1.1.0`, `1.1.1`и`1.3.0`
-- Служба должна поддерживать `EPSG:3857` проекционную систему или обрабатывать репроекции.
-- GetFeatureInfo требует, чтобы `EPSG:4326` служба поддерживала или обрабатывала репроекции. 
+- Поддерживаемые версии: `1.0.0`, `1.1.0`, `1.1.1`и`1.3.0`
+- Служба должна поддерживать систему `EPSG:3857` проекции или обработку репроекций.
+- Жетфеатуреинфо требует, чтобы служба поддерживала `EPSG:4326` или обрабатывал РЕПРОЕКЦИИ. 
 - Поддерживаемые операции:
 
     | | |
     | :-- | :-- |
-    | GetCapabilities | Получение метаданных об услуге с поддерживаемыми возможностями |
-    | GetMap | Извлекает изображение карты для определенного региона |
-    | GetFeatureInfo | Извлекает, `feature_info`который содержит базовые данные о функции |
+    | Возможности | Извлекает метаданные о службе с поддерживаемыми возможностями |
+    | жетмап | Извлекает изображение схемы для указанной области. |
+    | жетфеатуреинфо | Возвращает `feature_info`, который содержит базовые данные о компоненте |
 
-**Веб-карта плитки службы (WMTS)**
+**Служба плиток веб-карты (ВМТС)**
 
 - Поддерживаемые версии:`1.0.0`
-- Плитки должны быть квадратными, такими, чтобы. `TileWidth == TileHeight`
-- CRS поддерживается: `EPSG:3857` или`GoogleMapsCompatible` 
-- Идентификатор TileMatrix должен быть универсальным значением, которое соответствует уровню масштабирования на карте. На лазурной карте уровень зума `"0"` является `"22"`значением между и . Таким `"0"` образом, поддерживается, но `"00"` не поддерживается.
+- Плитки должны быть квадратными, то `TileWidth == TileHeight`есть.
+- Поддерживаемые CR: `EPSG:3857` или`GoogleMapsCompatible` 
+- Идентификатор Тилематрикс должен быть целочисленным значением, соответствующим уровню масштабирования на карте. На карте Azure уровень масштабирования — это значение в диапазоне от `"0"` до. `"22"` Таким образом `"0"` , поддерживается, но `"00"` не поддерживается.
 - Поддерживаемые операции:
 
     | | |
     | :-- | :-- |
-    | GetCapabilities | Извлекает поддерживаемые операции и функции |
-    | GetTile | Извлекает изображения для конкретной плитки |
+    | Возможности | Извлекает поддерживаемые операции и функции |
+    | GetTile | Извлекает изображения для определенной плитки |
 
-## <a name="overlay-an-ogc-map-layer"></a>Наложение слоя карты OGC
+## <a name="overlay-an-ogc-map-layer"></a>Наложение слоя OGC Map
 
-Базовым `url` URL-адресом службы может быть или полный URL-адрес с запросом для получения возможностей службы. В зависимости от предоставленных деталей клиент WFS может попробовать несколько стандартных форматов URL, чтобы определить, как получить доступ к службе.
+`url` Может быть базовым URL-адресом для службы или полным URL-адресом с запросом для получения возможностей службы. В зависимости от предоставленных сведений клиент ВФС может испытать несколько стандартных форматов URL-адресов, чтобы определить, как изначально получить доступ к службе.
 
-Следующий код показывает, как наложить слой карты OGC на карте.
-
-<br/>
-
-<iframe height='700' scrolling='no' title='Пример слоя карты OGC' src='//codepen.io/azuremaps/embed/xxGLZWB/?height=700&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите <a href='https://codepen.io/azuremaps/pen/xxGLZWB/'>пример слоя Pen OGC Map</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>по картам Azure Maps () на <a href='https://codepen.io'>CodePen.</a>
-</iframe>
-
-## <a name="ogc-map-layer-options"></a>Параметры слоя карты OGC
-
-Ниже приведена выборка, демонстрирующие различные параметры слоя карты OGC. Вы можете нажать на кнопку ручки кода в правом верхнем углу, чтобы отсеивать кодовое перо.
+В следующем коде показано, как наложить слой OGC Map на карте.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Параметры слоя карты OGC' src='//codepen.io/azuremaps/embed/abOyEVQ/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите <a href='https://codepen.io/azuremaps/pen/abOyEVQ/'>параметры слоя карты Pen OGC</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a>по картам Azure Maps () на <a href='https://codepen.io'>CodePen.</a>
+<iframe height='700' scrolling='no' title='Пример слоя OGC Map' src='//codepen.io/azuremaps/embed/xxGLZWB/?height=700&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/xxGLZWB/'>Пример OGC</a> () в <a href='https://codepen.io'>CodePen</a>с помощью<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps ().
 </iframe>
 
-## <a name="ogc-web-map-service-explorer"></a>OGC Веб-Карта Службы исследователь
+## <a name="ogc-map-layer-options"></a>Параметры слоя карт OGC
 
-Следующие инструменты накладывают изображения из служб Web Map Services (WMS) и Web Map Tile Services (WMTS) в слои. Можно выбрать, какие слои в службе отображаются на карте. Вы также можете просмотреть связанные легенды для этих слоев.
+В приведенном ниже примере показаны различные параметры слоя карт OGC. Вы можете нажать кнопку с пером Code в правом верхнем углу, чтобы изменить перо кода.
 
 <br/>
 
-<iframe height='750' style='width: 100%;' scrolling='no' title='OGC Веб-Карта Службы исследователь' src='//codepen.io/azuremaps/embed/YzXxYdX/?height=750&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Смотрите <a href='https://codepen.io/azuremaps/pen/YzXxYdX/'>Pen OGC Web Map Service</a> Explorer<a href='https://codepen.io/azuremaps'>@azuremaps</a>по Azure Maps ( ) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Параметры слоя карт OGC' src='//codepen.io/azuremaps/embed/abOyEVQ/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Дополнительные сведения о Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a> <a href='https://codepen.io/azuremaps/pen/abOyEVQ/'>параметрах слоя OGC на карте</a> пера см. в разделе <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Вы также можете указать настройки карты для использования прокси-сервиса. Прокси-сервис позволяет загружать ресурсы, размещенные на доменах, в которых нет CORS включен.
+## <a name="ogc-web-map-service-explorer"></a>Обозреватель службы веб-карт OGC
 
-## <a name="next-steps"></a>Дальнейшие действия
+Следующие средства накладывают изображения из служб веб-карт (WMS) и службы веб-карты (ВМТС) как уровни. Вы можете выбрать, какие слои в службе будут подготавливаться к просмотру на карте. Вы также можете просмотреть связанные условные обозначения для этих слоев.
+
+<br/>
+
+<iframe height='750' style='width: 100%;' scrolling='no' title='Обозреватель службы веб-карт OGC' src='//codepen.io/azuremaps/embed/YzXxYdX/?height=750&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Ознакомьтесь с разAzure Maps () в <a href='https://codepen.io'>CodePen</a>с помощью <a href='https://codepen.io/azuremaps/pen/YzXxYdX/'>OGC</a> (<a href='https://codepen.io/azuremaps'>@azuremaps</a>).
+</iframe>
+
+Можно также указать параметры отображения для использования прокси-службы. Прокси-служба позволяет загружать ресурсы, размещенные в доменах, для которых не включена технология CORS.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [OgcMapLayer](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.layer.ogcmaplayer)
+> [огкмаплайер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.layer.ogcmaplayer)
 
 > [!div class="nextstepaction"]
-> [OgcMapLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.ogcmaplayeroptions)
+> [огкмаплайероптионс](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.ogcmaplayeroptions)
 
-Смотрите следующие статьи, которые содержат образцы кода, которые можно добавить на свои карты:
-
-> [!div class="nextstepaction"]
-> [Подключение к службе WFS](spatial-io-connect-wfs-service.md)
+См. следующие статьи, содержащие примеры кода, которые можно добавить в карты:
 
 > [!div class="nextstepaction"]
-> [Кредитное использование основных операций](spatial-io-core-operations.md)
+> [Подключение к службе ВФС](spatial-io-connect-wfs-service.md)
 
 > [!div class="nextstepaction"]
-> [Детали формата поддерживаемых данных](spatial-io-supported-data-format-details.md)
+> [Использование основных операций](spatial-io-core-operations.md)
+
+> [!div class="nextstepaction"]
+> [Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)

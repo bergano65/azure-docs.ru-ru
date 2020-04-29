@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: dsindona
 ms.openlocfilehash: ac1e4fa541e945f20904ced114a36b58d14585ba
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80278592"
 ---
 # <a name="dynamics-365-solution-preparation"></a>Подготовка решения Dynamics 365
@@ -24,7 +24,7 @@ ms.locfileid: "80278592"
 
 _**Примечание**. В следующем примере пакета предполагается, что имя решения — "SampleSolution.zip"_
 
-Если вы новый ISV, вы можете получить более подробную информацию о создании решения здесь:[https://msdn.microsoft.com/library/gg334530.aspx](https://msdn.microsoft.com/library/gg334530.aspx)
+Если вы являетесь новым независимым поставщиком программного обеспечения, дополнительные сведения о создании решения можно получить здесь:[https://msdn.microsoft.com/library/gg334530.aspx](https://msdn.microsoft.com/library/gg334530.aspx)
 
 Если ваше решение требует поддержки данных выполните следующие действия.
 
