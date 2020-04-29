@@ -1,6 +1,6 @@
 ---
-title: Подключите веб-клиент Windows Virtual Desktop - Azure
-description: Как подключиться к Windows Virtual Desktop с помощью веб-клиента.
+title: Подключение веб-клиента виртуальных рабочих столов Windows — Azure
+description: Как подключиться к виртуальному рабочему столу Windows с помощью веб-клиента.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -9,40 +9,40 @@ ms.date: 09/24/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: b8023c0927c05d3952bd9f3a51e99e85154552fd
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80656376"
 ---
 # <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
 
-Веб-клиент позволяет получить доступ к ресурсам Windows Virtual Desktop из веб-браузера без длительного процесса установки.
+Веб-клиент позволяет получать доступ к ресурсам виртуальных рабочих столов Windows из веб-браузера без продолжительного процесса установки.
 
 >[!NOTE]
->Веб-клиент в настоящее время не имеет поддержки мобильной ОС.
+>В настоящее время веб-клиент не поддерживает мобильные ОС.
 
 ## <a name="supported-operating-systems-and-browsers"></a>Поддерживаемые операционные системы и браузеры
 
-В то время как любой браузер, способный к HTML5, должен работать, мы официально поддерживаем следующие операционные системы и браузеры.
+Хотя любой браузер, поддерживающий HTML5, должен работать, корпорация Майкрософт официально поддерживает следующие операционные системы и браузеры.
 
 | Браузер           | Поддерживаемая ОС                     | Примечания               |
 |-------------------|----------------------------------|---------------------|
 | Microsoft Edge    | Windows                          |                     |
 | Internet Explorer | Windows                          |                     |
-| Apple Safari;      | macOS                            |                     |
-| Mozilla Firefox   | Windows, macOS, Linux            | Версия 55 или позже |
-| Google Chrome     | Windows, macOS, Linux, Chrome OS |                     |
+| Apple Safari;      | MacOS                            |                     |
+| Mozilla Firefox   | Windows, macOS, Linux            | Версия 55 или более поздняя |
+| Google Chrome     | Windows, macOS, Linux, ОС Chrome |                     |
 
-## <a name="access-remote-resources-feed"></a>Доступ к каналу удаленных ресурсов
+## <a name="access-remote-resources-feed"></a>Доступ к веб-каналу удаленных ресурсов
 
-В браузере перейдите к [веб-клиенту Windows Virtual Desktop](https://rdweb.wvd.microsoft.com/webclient) и войдите в систему с помощью учетной записи пользователя.
+В браузере перейдите к [веб-клиенту виртуальных рабочих столов Windows](https://rdweb.wvd.microsoft.com/webclient) и выполните вход с помощью учетной записи пользователя.
 
 >[!NOTE]
->Если вы уже зарегистрировались в другой учетной записи Active Directory Azure, чем та, которая вы хотите использовать для Windows Virtual Desktop, вам следует либо зарегистрироваться, либо использовать окно частного браузера.
+>Если вы уже вошли с учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуальных рабочих столов Windows, необходимо выйти из системы или использовать частное окно браузера.
 
-После вхлых в систему, теперь вы должны увидеть список ресурсов. Вы можете запустить ресурсы, выбрав их, как обычное приложение во вкладке **"Все ресурсы".**
+После входа в систему вы увидите список ресурсов. Чтобы запустить ресурсы, выберите их, как обычное приложение, на вкладке **все ресурсы** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы узнать больше о том, как использовать веб-клиента, проверить [Получить начали с веб-клиента](/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client).
+Дополнительные сведения об использовании веб-клиента см. в статье [Приступая к работе с веб-клиентом](/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client).

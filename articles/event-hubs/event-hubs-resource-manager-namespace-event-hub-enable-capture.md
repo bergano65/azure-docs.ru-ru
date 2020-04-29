@@ -15,19 +15,19 @@ ms.workload: na
 ms.date: 02/12/2020
 ms.author: shvija
 ms.openlocfilehash: 0b20c73ed0590f3afc19db43b4b55dd3ff6bde8e
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79453876"
 ---
 # <a name="create-a-namespace-with-event-hub-and-enable-capture-using-a-template"></a>Создание пространства имен с концентратором событий и включение записи с помощью шаблона
 
-В этой статье показано, как использовать шаблон Azure Resource Manager, который создает пространство имен [концентраторов событий](event-hubs-what-is-event-hubs.md) с одним экземпляром концентратора событий, а также позволяет [функцию захвата](event-hubs-capture-overview.md) в концентраторе событий. Здесь вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
+В этой статье показано, как использовать шаблон Azure Resource Manager, который создает пространство имен [концентраторов событий](event-hubs-what-is-event-hubs.md) с одним экземпляром концентратора событий, а также включает [функцию записи](event-hubs-capture-overview.md) в концентраторе событий. Здесь вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
 
 В этой статье также показано, как настроить запись событий в хранилище BLOB-объектов Azure или Azure Data Lake Store в зависимости от выбранного назначения.
 
-Для получения дополнительной информации [Authoring Azure Resource Manager templates][Authoring Azure Resource Manager templates]о создании шаблонов см. Синтаксис и свойства JSON, используемые в шаблоне, см. в статье о [типах ресурсов Microsoft.EventHub](/azure/templates/microsoft.eventhub/allversions).
+Дополнительные сведения о создании шаблонов см. в разделе [authoring Azure Resource Manager Templates][Authoring Azure Resource Manager templates]. Синтаксис и свойства JSON, используемые в шаблоне, см. в статье о [типах ресурсов Microsoft.EventHub](/azure/templates/microsoft.eventhub/allversions).
 
 Дополнительные сведения о шаблонах и рекомендациях по соглашениям об именовании ресурсов Azure см. в статье [Naming conventions][Azure Resources naming conventions] (Соглашения об именовании).
 
@@ -235,7 +235,7 @@ ms.locfileid: "79453876"
 }
 ```
 
-Используйте следующие параметры, если вы выбираете Azure Data Lake Store Gen 1 в качестве пункта назначения. Необходимо назначить разрешения для пути к хранилищу Data Lake Store, в которое необходимо записывать события. Для установки разрешений просм. [Данные захвата в Azure Data Lake Storage Gen 1.](event-hubs-capture-enable-through-portal.md#capture-data-to-azure-data-lake-storage-gen-1)
+Если в качестве назначения выбрать Azure Data Lake Store Gen 1, используйте следующие параметры. Необходимо назначить разрешения для пути к хранилищу Data Lake Store, в которое необходимо записывать события. Чтобы задать разрешения, см. раздел [Capture Data to Azure Data Lake Storage Gen 1](event-hubs-capture-enable-through-portal.md#capture-data-to-azure-data-lake-storage-gen-1).
 
 ### <a name="subscriptionid"></a>subscriptionId
 
@@ -423,7 +423,7 @@ Azure Data Lake Store в качестве места назначения:
 az group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture-for-adls/azuredeploy.json][]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Функцию "Сбор" в Центрах событий можно включить с помощью [портала Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Включение функции "Сбор" в Центрах событий с помощью портала Azure](event-hubs-capture-enable-through-portal.md).
 

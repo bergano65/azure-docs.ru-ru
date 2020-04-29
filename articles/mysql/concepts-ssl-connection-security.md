@@ -1,5 +1,5 @@
 ---
-title: SSL-соединение - База данных Azure для MyS'L
+title: SSL-подключение. база данных Azure для MySQL
 description: Сведения о настройке базы данных Azure для MySQL и связанных приложений для правильного использования SSL-соединений.
 author: kummanish
 ms.author: manishku
@@ -7,17 +7,17 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.openlocfilehash: 6a12ef851823ab5eff2b11905d05be1950c82ef0
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79474277"
 ---
 # <a name="ssl-connectivity-in-azure-database-for-mysql"></a>SSL-соединения в базе данных Azure для MySQL
 
 База данных Azure для MySQL поддерживает подключение сервера базы данных к клиентским приложениям с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
-## <a name="ssl-default-settings"></a>Настройки SSL по умолчанию
+## <a name="ssl-default-settings"></a>Параметры SSL по умолчанию
 
 По умолчанию в службе базы данных должно быть настроено обязательное использование SSL-соединений при подключении к MySQL.  Мы рекомендуем не отключать параметр SSL без необходимости.
 
@@ -27,6 +27,6 @@ ms.locfileid: "79474277"
 
 Чтобы узнать, как включить или отключить SSL-соединение при разработке приложения, ознакомьтесь со [статьей, посвященной настройке SSL](howto-configure-ssl.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Библиотеки подключения для базы данных Azure для MyS'L](concepts-connection-libraries.md)
+[Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md)

@@ -9,13 +9,13 @@ ms.topic: article
 ms.date: 05/08/2019
 ms.author: alkohli
 ms.openlocfilehash: e8932097bcdef782b1a551d386c2872e02d8abfd
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79260193"
 ---
-# <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure Data Box Gateway
+# <a name="azure-data-box-gateway-system-requirements"></a>Шлюз Azure Data Box требования к системе
 
 В этой статье описаны важные требования к системе и рекомендации для решения на основе шлюза Microsoft Azure Data Box и для клиентов, подключающихся к нему. Прежде чем развертывать шлюз Data Box, внимательно ознакомьтесь с приведенной ниже информацией и по мере необходимости возвращайтесь к ней во время развертывания и последующих действий.
 
@@ -48,7 +48,7 @@ ms.locfileid: "79260193"
 
 ## <a name="supported-virtualization-platforms-for-device"></a>Поддерживаемые платформы виртуализации для устройства
 
-| **Операционная система и (или) платформа**  |**Версии**   |**Примечания**  |
+| **Операционная система и (или) платформа**  |**Версии**   |**Примечания**.  |
 |---------|---------|---------|
 |Hyper-V  |  2012 R2 <br> 2016 <br> 2019 |         |
 |VMware ESXi     | 6,0 <br> 6,5 <br> 6.7       |Средства VMware не поддерживаются.         |
@@ -85,7 +85,7 @@ ms.locfileid: "79260193"
 
 [!INCLUDE [URL patterns for firewall](../../includes/data-box-edge-gateway-url-patterns-firewall.md)]
 
-### <a name="url-patterns-for-azure-government"></a>Шаблоны URL для правительства Azure
+### <a name="url-patterns-for-azure-government"></a>Шаблоны URL-адресов для Azure для государственных организаций
 
 [!INCLUDE [Azure Government URL patterns for firewall](../../includes/data-box-edge-gateway-gov-url-patterns-firewall.md)]
 
@@ -93,7 +93,7 @@ ms.locfileid: "79260193"
 
 [!INCLUDE [Internet bandwidth](../../includes/data-box-edge-gateway-internet-bandwidth.md)]
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 * [Tutorial: Prepare to deploy Azure Data Box Gateway (Preview)](data-box-gateway-deploy-prep.md) (Руководство. Подготовка к развертыванию шлюза Azure Data Box)
 

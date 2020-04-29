@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: Настройка глобального охвата'
+title: 'Azure ExpressRoute: Настройка Global Reach'
 description: В этой статье содержатся сведения о том, как связать каналы ExpressRoute, чтобы настроить частную сеть между локальными сетями и включить Global Reach.
 services: expressroute
 author: jaredr80
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: jaredro
 ms.openlocfilehash: 587a17659a412d6f894faf5a744a7d9c444935c8
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80656745"
 ---
 # <a name="configure-expressroute-global-reach"></a>Настройка ExpressRoute Global Reach
@@ -22,10 +22,10 @@ ms.locfileid: "80656745"
 
 Прежде чем начать настройку, проверьте следующее:
 
-* Вы понимаете, ExpressRoute цепи подготовки [рабочих процессов](expressroute-workflows.md).
-* Ваши схемы ExpressRoute находятся в подготовленном состоянии.
-* Частное пиринг Azure настроен на схемах ExpressRoute.
-* Если вы хотите запустить PowerShell локально, убедитесь, что последняя версия Azure PowerShell установлена на вашем компьютере.
+* Вы понимаете [рабочие процессы](expressroute-workflows.md)подготовки канала ExpressRoute.
+* Каналы ExpressRoute находятся в подготовленном состоянии.
+* Частный пиринг Azure настроен для каналов ExpressRoute.
+* Если вы хотите запустить PowerShell локально, убедитесь, что на компьютере установлена последняя версия Azure PowerShell.
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
@@ -33,21 +33,21 @@ ms.locfileid: "80656745"
 
 [!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
-## <a name="identify-circuits"></a>Определение схем
+## <a name="identify-circuits"></a>Выявление цепей
 
-1. Чтобы запустить конфигурацию, вопийте в учетную запись Azure и выберите подписку, которую вы хотите использовать.
+1. Чтобы начать настройку, войдите в учетную запись Azure и выберите подписку, которую хотите использовать.
 
    [!INCLUDE [sign in](../../includes/expressroute-cloud-shell-connect.md)]
-2. Определите схемы ExpressRoute, которые вы хотите использовать. Вы можете включить ExpressRoute Global Reach между частным пирингом любых двух схем ExpressRoute, если они расположены в поддерживаемых странах/регионах и были созданы в разных местах для пиринга. 
+2. Укажите каналы ExpressRoute, которые вы хотите использовать. Можно включить ExpressRoute Global Reach между частным пирингом двух каналов ExpressRoute, если они находятся в поддерживаемых странах и регионах и были созданы в разных расположениях пиринга. 
 
    * Если подписке принадлежат оба канала, вы можете выбрать канал для выполнения конфигурации в следующих разделах.
    * Если два канала находятся в разных подписках Azure, может потребоваться выполнить авторизацию из одной подписки Azure. Затем необходимо передать ключ авторизации при выполнении команды конфигурации в другой подписке Azure.
 
 ## <a name="enable-connectivity"></a>Включение соединения
 
-Включите подключение между вашими сетей. Существуют отдельные наборы инструкций для схем, которые находятся в той же подписке Azure, и схемы, которые являются различными подписками.
+Обеспечение подключения между локальными сетями. Существуют отдельные наборы инструкций для каналов, которые находятся в одной подписке Azure, и цепи, которые являются разными подписками.
 
-### <a name="expressroute-circuits-in-the-same-azure-subscription"></a>Схемы ExpressRoute в той же подписке Azure
+### <a name="expressroute-circuits-in-the-same-azure-subscription"></a>Каналы ExpressRoute в одной подписке Azure
 
 1. Используйте следующие команды, чтобы получить каналы 1 и 2. Эти два канала содержатся в одной подписке.
 
@@ -73,7 +73,7 @@ ms.locfileid: "80656745"
    Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt_1
    ```
 
-Когда предыдущая операция завершится, у вас будет подключение между вашими сетей с обеих сторон через две схемы ExpressRoute.
+По завершении предыдущей операции вы получите подключение между локальными сетями на обеих сторонах через две цепи ExpressRoute.
 
 ### <a name="expressroute-circuits-in-different-azure-subscriptions"></a>Каналы ExpressRoute в разных подписках Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "80656745"
    Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt_1
    ```
 
-Когда предыдущая операция завершится, у вас будет подключение между вашими сетей с обеих сторон через две схемы ExpressRoute.
+По завершении предыдущей операции вы получите подключение между локальными сетями на обеих сторонах через две цепи ExpressRoute.
 
 ## <a name="verify-the-configuration"></a>Проверка конфигурации
 
@@ -112,7 +112,7 @@ $ckt1 = Get-AzExpressRouteCircuit -Name "Your_circuit_1_name" -ResourceGroupName
 
 ## <a name="disable-connectivity"></a>Отключение возможности подключения
 
-Чтобы отключить подключение между вашими сетей, запустите команды по схеме, где была сделана конфигурация (например, схема 1 в предыдущем примере).
+Чтобы отключить подключение между локальными сетями, выполните команды для канала, в котором была выполнена конфигурация (например, цепь 1 в предыдущем примере).
 
 ```azurepowershell-interactive
 $ckt1 = Get-AzExpressRouteCircuit -Name "Your_circuit_1_name" -ResourceGroupName "Your_resource_group"
@@ -124,7 +124,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt_1
 
 После завершения предыдущей операции вы потеряете подключение к локальной сети через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 1. [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
-2. [Проверить подключение ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
+2. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 3. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).

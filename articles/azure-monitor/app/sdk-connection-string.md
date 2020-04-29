@@ -1,83 +1,83 @@
 ---
-title: Строки подключения в Azure Application Insights (ru) Документы Майкрософт
-description: Как использовать строки соединения.
+title: Строки подключения в Application Insights Azure | Документация Майкрософт
+description: Как использовать строки подключения.
 ms.topic: conceptual
 author: timothymothra
 ms.author: tilee
 ms.date: 01/17/2020
 ms.reviewer: mbullwin
 ms.openlocfilehash: 25eda0ae2b0d873fe9850e5b886489a5f2590e69
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80410613"
 ---
 # <a name="connection-strings"></a>Строки подключения
 
 ## <a name="overview"></a>Обзор
 
-Строки подключения предоставляют пользователям Application Insight единую настройку конфигурации, устраняя необходимость в нескольких настройках прокси. Очень полезно для веб-серверов интрасети, суверенных или гибридных облачных сред, желающих отправить данные в службу мониторинга.
+Строки подключения предоставляют пользователям Application Insights один параметр конфигурации, устраняя необходимость в нескольких параметрах прокси-сервера. Очень полезна для веб-серверов в интрасети, независимых или гибридных облачных сред, которые ищут передачу данных в службу мониторинга.
 
-Пары ключевых значений обеспечивают пользователям простой способ определить комбинацию суффиксов префикса для каждого сервиса/продукта Application Insights (AI).
+Пары "ключ-значение" предоставляют пользователям простой способ определения префикса суффикса для каждой службы Application Insights (AI) или продукта.
 
 > [!IMPORTANT]
-> Мы не рекомендуем устанавливать ключ подключения и инструментария. В случае, если пользователь устанавливает оба, в зависимости от того, что было установлено последним, будет иметь приоритет. 
+> Не рекомендуется задавать как строку подключения, так и ключ инструментирования. В случае, если пользователь установил оба значения, приоритет будет задается в зависимости от того, какое значение было задано последним. 
 
 
 ## <a name="scenario-overview"></a>Обзор сценария 
 
-Сценарии клиентов, где мы визуализировать это, имеющие наибольшее влияние:
+Сценарии клиентов, в которых мы видим, что это имеет наибольшее влияние:
 
-- Исключения брандмауэра или перенаправления прокси 
+- Исключения брандмауэра или перенаправления прокси-сервера 
 
-    В тех случаях, когда требуется мониторинг веб-сервера интрасети, наше предыдущее решение просило клиентов добавить в конфигурацию отдельные конечные точки обслуживания. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/azure-monitor/app/troubleshoot-faq#can-i-monitor-an-intranet-web-server). 
-    Строки подключения предлагают лучшую альтернативу, сократив эти усилия до одного параметра. Простая приставка, поправка суффикса позволяет автоматически население и перенаправление всех конечных точек на правильные услуги. 
+    В тех случаях, когда требуется мониторинг веб-сервера интрасети, наше более раннее решение попросило пользователей добавить в конфигурацию отдельные конечные точки служб. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/azure-monitor/app/troubleshoot-faq#can-i-monitor-an-intranet-web-server). 
+    Строки подключения предлагают лучшую альтернативу, уменьшая эти усилия на один параметр. Простой префикс, поправку суффиксов позволяет автоматически выполнять заполнение и перенаправление всех конечных точек в нужные службы. 
 
-- Суверенные или гибридные облачные среды
+- Независимых или гибридные облачные среды
 
-    Пользователи могут отправлять данные в определенный [правительственный регион Azure.](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights)
-    Строки подключения позволяют определить настройки конечных точек для серверов интрасети или гибридных настроек облака. 
+    Пользователи могут передавать данные в определенный [регион Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights).
+    Строки подключения позволяют определить параметры конечной точки для серверов интрасети или параметров гибридного облака. 
 
 ## <a name="getting-started"></a>Начало работы
 
-### <a name="finding-my-connection-string"></a>Поиск строки связи?
+### <a name="finding-my-connection-string"></a>Найти строку подключения?
 
-Строка соединения отображается на лезвии «Обзор» ресурса Application Insights.
+Строка подключения отобразится в колонке обзора ресурса Application Insights.
 
-![строка соединения на лезвии обзора](media/overview-dashboard/overview-connection-string.png)
+![Строка подключения в колонке "Обзор"](media/overview-dashboard/overview-connection-string.png)
 
 ### <a name="schema"></a>схема
 
 #### <a name="max-length"></a>Максимальная длина
 
-Соединение имеет максимальную поддерживаемую длину 4096 символов.
+Максимальная поддерживаемая длина подключения — 4096 символов.
 
 #### <a name="key-value-pairs"></a>Пары "ключ-значение"
 
-Строка соединения состоит из списка параметров, представленных в виде пар ключей, разделенных запятой:`key1=value1;key2=value2;key3=value3`
+Строка подключения состоит из списка параметров, представленных парами "ключ-значение", разделенных точкой с запятой.`key1=value1;key2=value2;key3=value3`
 
 #### <a name="syntax"></a>Синтаксис
 
-- `InstrumentationKey`(наве: 00000000-0000-0000-0000-0000000000000000000000000000)  Строка соединения является **необходимым** полем.
-- `Authorization`(напротив: ikey) (Эта настройка не является обязательной, потому что сегодня мы поддерживаем только разрешение ikey.)
-- `EndpointSuffix`(напротив: applicationinsights.azure.cn) Установка суффикса конечных точек поручает SDK, к которому облако Azure подключиться. SDK соберет остальную конечную точку для отдельных служб.
+- `InstrumentationKey`(пример: 00000000-0000-0000-0000-000000000000)  Строка подключения является **обязательным** полем.
+- `Authorization`(пример: iKey) (Этот параметр является необязательным, так как сегодня поддерживается только ikeyная авторизация.)
+- `EndpointSuffix`(пример: applicationinsights.azure.cn) При настройке суффикса конечной точки будет указано, к какому пакету SDK подключается облако Azure. Пакет SDK будет собирать оставшуюся часть конечной точки для отдельных служб.
 - Явные конечные точки.
-  Любая служба может быть явно переопределена в строке соединения.
-   - `IngestionEndpoint`(наве- напротив:https://dc.applicationinsights.azure.com)
-   - `LiveEndpoint`(наве- напротив:https://live.applicationinsights.azure.com)
-   - `ProfilerEndpoint`(наве- напротив:https://profiler.applicationinsights.azure.com)
-   - `SnapshotEndpoint`(наве- напротив:https://snapshot.applicationinsights.azure.com)
+  Любая служба может быть явно переопределена в строке подключения.
+   - `IngestionEndpoint`символаhttps://dc.applicationinsights.azure.com)
+   - `LiveEndpoint`символаhttps://live.applicationinsights.azure.com)
+   - `ProfilerEndpoint`символаhttps://profiler.applicationinsights.azure.com)
+   - `SnapshotEndpoint`символаhttps://snapshot.applicationinsights.azure.com)
 
-#### <a name="endpoint-schema"></a>Схема конечных точек
+#### <a name="endpoint-schema"></a>Схема конечной точки
 
 `<prefix>.<suffix>`
-- Префикс: Определяет службу. 
-- Суффикс: Определяет общее доменное имя.
+- Префикс: определяет службу. 
+- Суффикс: определяет общее доменное имя.
 
-##### <a name="valid-suffixes"></a>Действительные суффиксы
+##### <a name="valid-suffixes"></a>Допустимые суффиксы
 
-Вот список действительных суффиксов 
+Ниже приведен список допустимых суффиксов. 
 - applicationinsights.azure.cn
 - applicationinsights.us
 
@@ -85,75 +85,75 @@ ms.locfileid: "80410613"
 Дополнительные сведения см. по ссылке https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification
 
 
-##### <a name="valid-prefixes"></a>Действительные префиксы
+##### <a name="valid-prefixes"></a>Допустимые префиксы
 
-- [Телеметрическая проглатка](./app-insights-overview.md):`dc`
-- [Прямая метрики](./live-stream.md):`live`
-- [Профайлер](./profiler-overview.md):`profiler`
+- Прием [телеметрии](./app-insights-overview.md):`dc`
+- [Динамические метрики](./live-stream.md):`live`
+- [Профилировщик](./profiler-overview.md):`profiler`
 - [Моментальный снимок](./snapshot-debugger.md):`snapshot`
 
 
 
-## <a name="connection-string-examples"></a>Примеры строки подключения
+## <a name="connection-string-examples"></a>Примеры строк подключения
 
 
-### <a name="minimal-valid-connection-string"></a>Минимальная допустимая строка соединения
+### <a name="minimal-valid-connection-string"></a>Минимальная допустимая строка подключения
 
 `InstrumentationKey=00000000-0000-0000-0000-000000000000;`
 
-В этом примере был установлен только ключ инструментария.
+В этом примере задан только ключ инструментирования.
 
-- Схема авторизации по умолчанию "ikey" 
-- Ключ прибора: 00000000-0000-0000-0000-000000000000000000000000000
-- Региональные сервисы URIs основаны на [по умолчанию SDK](https://github.com/microsoft/ApplicationInsights-dotnet/blob/e50d569cebf485e72e98f4a08a0bc0e30cdf42bc/BASE/src/Microsoft.ApplicationInsights/Extensibility/Implementation/Endpoints/Constants.cs#L6) и будут подключаться к общедоступному глобальному Azure:
-   - Приеме внутрь:https://dc.services.visualstudio.com/
-   - Показатели в реальном времени:https://rt.services.visualstudio.com/
-   - Профилировщик:https://agent.azureserviceprofiler.net/
-   - Отладчик:https://agent.azureserviceprofiler.net/  
+- По умолчанию используется схема авторизации "iKey" 
+- Ключ инструментирования: 00000000-0000-0000-0000-000000000000
+- Коды URI региональных служб основаны на [стандартах SDK](https://github.com/microsoft/ApplicationInsights-dotnet/blob/e50d569cebf485e72e98f4a08a0bc0e30cdf42bc/BASE/src/Microsoft.ApplicationInsights/Extensibility/Implementation/Endpoints/Constants.cs#L6) и будут подключаться к общедоступному глобальному серверу Azure:
+   - Приемаhttps://dc.services.visualstudio.com/
+   - Динамические метрики:https://rt.services.visualstudio.com/
+   - Profilerhttps://agent.azureserviceprofiler.net/
+   - Отладчикhttps://agent.azureserviceprofiler.net/  
 
 
 
-### <a name="connection-string-with-endpoint-suffix"></a>Строка соединения с суффиксом конечных точек
+### <a name="connection-string-with-endpoint-suffix"></a>Строка подключения с суффиксом конечной точки
 
 `InstrumentationKey=00000000-0000-0000-0000-000000000000;EndpointSuffix=ai.contoso.com;`
 
-В этом примере эта строка соединения определяет суффикс конечных точек, а SDK будет строить конечные точки обслуживания.
+В этом примере в этой строке подключения указывается суффикс конечной точки, и пакет SDK конструирует конечные точки службы.
 
-- Схема авторизации по умолчанию "ikey" 
-- Ключ прибора: 00000000-0000-0000-0000-000000000000000000000000000
-- Региональные услуги URIs основаны на предоставленных конечных суффиксов: 
-   - Приеме внутрь:https://dc.ai.contoso.com
-   - Показатели в реальном времени:https://live.ai.contoso.com
-   - Профилировщик:https://profiler.ai.contoso.com 
-   - Отладчик:https://snapshot.ai.contoso.com   
+- По умолчанию используется схема авторизации "iKey" 
+- Ключ инструментирования: 00000000-0000-0000-0000-000000000000
+- Коды URI региональных служб основаны на указанном суффиксе конечной точки: 
+   - Приемаhttps://dc.ai.contoso.com
+   - Динамические метрики:https://live.ai.contoso.com
+   - Profilerhttps://profiler.ai.contoso.com 
+   - Отладчикhttps://snapshot.ai.contoso.com   
 
 
 
-### <a name="connection-string-with-explicit-endpoint-overrides"></a>Строка соединения с явными переопределениями конечных точек 
+### <a name="connection-string-with-explicit-endpoint-overrides"></a>Строка подключения с явными переопределениями конечной точки 
 
 `InstrumentationKey=00000000-0000-0000-0000-000000000000;IngestionEndpoint=https://custom.com:111/;LiveEndpoint=https://custom.com:222/;ProfilerEndpoint=https://custom.com:333/;SnapshotEndpoint=https://custom.com:444/;`
 
-В этом примере эта строка соединения определяет явные переопределения для каждой службы. SDK будет использовать точные конечные точки, предоставляемые без изменений.
+В этом примере эта строка подключения указывает явные переопределения для каждой службы. Пакет SDK будет использовать точные указанные конечные точки без изменения.
 
-- Схема авторизации по умолчанию "ikey" 
-- Ключ прибора: 00000000-0000-0000-0000-000000000000000000000000000
-- Региональные сервисные URIs основаны на явных значениях переопределения: 
-   - Заглатывает: https:\//custom.com:111/
-   - Показатели в реальном\/времени: https: /custom.com:222/
-   - Профиль: https:\//custom.com:333/ 
-   - Отладчик: https:\//custom.com:444/   
+- По умолчанию используется схема авторизации "iKey" 
+- Ключ инструментирования: 00000000-0000-0000-0000-000000000000
+- Региональные URI служб основаны на явных значениях переопределения: 
+   - Прием: https:\//Custom.com:111/
+   - Динамические метрики: https:\//Custom.com:222/
+   - Профилировщик: https:\//Custom.com:333/ 
+   - Отладчик: https:\//Custom.com:444/   
 
 
-## <a name="how-to-set-a-connection-string"></a>Как установить строку соединения
+## <a name="how-to-set-a-connection-string"></a>Как задать строку подключения
 
-Строки подключения поддерживаются в следующих версиях SDK:
-- .NET и .NET Core v2.12.0
-- Java v2.5.1 и Java 3.0
-- Javascript v2.3.0
-- NodeJS v1.5.0
-- Python v1.0.0
+Строки подключения поддерживаются в следующих версиях пакета SDK:
+- .NET и .NET Core v 2.12.0
+- Java v 2.5.1 и Java 3,0
+- JavaScript v 2.3.0
+- NodeJS v 1.5.0
+- Версия Python версии 1.0.0
 
-Строка соединения может быть установлена либо в коде, переменной среды или файле конфигурации.
+Строку подключения можно задать в коде, переменной среды или файле конфигурации.
 
 
 
@@ -161,11 +161,11 @@ ms.locfileid: "80410613"
 
 - Строка подключения: `APPLICATIONINSIGHTS_CONNECTION_STRING`
 
-# <a name="netnetcore"></a>[.NET/.NetCore](#tab/net)
+# <a name="netnetcore"></a>[.NET/. NetCore](#tab/net)
 
-ТелеметрияКонфигурация.ConnectionString:https://github.com/microsoft/ApplicationInsights-dotnet/blob/add45ceed35a817dc7202ec07d3df1672d1f610d/BASE/src/Microsoft.ApplicationInsights/Extensibility/TelemetryConfiguration.cs#L271-L274
+Телеметриконфигуратион. ConnectionString:https://github.com/microsoft/ApplicationInsights-dotnet/blob/add45ceed35a817dc7202ec07d3df1672d1f610d/BASE/src/Microsoft.ApplicationInsights/Extensibility/TelemetryConfiguration.cs#L271-L274
 
-.Net Явно установить:
+.NET явным образом задается:
 ```csharp
 var configuration = new TelemetryConfiguration
 {
@@ -173,7 +173,7 @@ var configuration = new TelemetryConfiguration
 };
 ```
 
-Файл config .Net:
+Файл конфигурации .NET:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -183,7 +183,7 @@ var configuration = new TelemetryConfiguration
 ```
 
 
-NetCore config.json: 
+NetCore config. JSON: 
 
 ```json
 {
@@ -197,7 +197,7 @@ NetCore config.json:
 # <a name="java"></a>[Java](#tab/java)
 
 
-Java (v2.5.x) Явно установите:
+Java (версия 2.5. x) явно задано:
 ```java
 TelemetryConfiguration.getActive().setConnectionString("InstrumentationKey=00000000-0000-0000-0000-000000000000");
 ```
@@ -212,9 +212,9 @@ ApplicationInsights.xml
 
 # <a name="javascript"></a>[JavaScript](#tab/js)
 
-Важно: Javascript не поддерживает использование переменных среды.
+Важно. JavaScript не поддерживает использование переменных среды.
 
-Использование фрагмента:
+Использование фрагмента кода:
 
 ```javascript
 <script type="text/javascript">
@@ -249,9 +249,9 @@ appInsights.start();
 
 # <a name="python"></a>[Python](#tab/python)
 
-Мы рекомендуем пользователям установить переменную среды.
+Мы рекомендуем пользователям задать переменную среды.
 
-Для четкого настройки строки соединения:
+Чтобы явно задать строку подключения, сделайте следующее:
 
 ```python
 from opencensus.ext.azure.trace_exporter import AzureExporter
@@ -262,7 +262,7 @@ tracer = Tracer(exporter=AzureExporter(connection_string='InstrumentationKey=000
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Приступите к работе во время выполнения с помощью:
 

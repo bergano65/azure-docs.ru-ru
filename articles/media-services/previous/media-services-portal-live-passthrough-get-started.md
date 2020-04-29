@@ -1,5 +1,5 @@
 ---
-title: Прямая трансляция с помощью локтевых кодеров с помощью портала Azure Документы Майкрософт
+title: Динамический поток с локальными кодировщиками с помощью портал Azure | Документация Майкрософт
 description: В этом руководстве рассматривается создание канала, настроенного для сквозной доставки.
 services: media-services
 documentationcenter: ''
@@ -15,30 +15,30 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: a83d6ae2e3ed13f0d03e0fdc87a3b45a4119ba88
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77162758"
 ---
-# <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Выполняйте прямую трансляцию с помощью локтевых кодеров с помощью портала Azure
+# <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Проведите динамическую потоковую передачу с помощью локальных кодировщиков, используя портал Azure
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-live-passthrough-get-started.md)
 > * [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
-> * [Остальные](https://docs.microsoft.com/rest/api/media/operations/channel)
+> * [REST](https://docs.microsoft.com/rest/api/media/operations/channel)
 > 
 > 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Заканчивать связь самая последняя версия, [обслуживания средств v3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см [миграционное руководство от v2 до v3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 В этом руководстве рассматривается создание **канала** , настроенного для сквозной доставки, с помощью портала Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
-* Учетная запись Azure. Для получения подробной информации [см.](https://azure.microsoft.com/pricing/free-trial/) 
-* Учетная запись служб мультимедиа. Чтобы создать учетную запись [How to Create a Media Services Account](media-services-portal-create-account.md)Media Services, см.
+* Учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
+* Учетная запись служб мультимедиа. Сведения о создании учетной записи служб мультимедиа см. в разделе [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
 * Веб-камера, например [кодировщик Telestream Wirecast](media-services-configure-wirecast-live-encoder.md). 
 
 Настоятельно рекомендуется ознакомиться со следующими статьями:
@@ -55,7 +55,7 @@ ms.locfileid: "77162758"
 > Убедитесь, что конечная точка потоковой передачи, из которой нужно передавать содержимое потоком, находится в состоянии **Выполняется**. 
     
 1. Подключите видеокамеру к компьютеру. <br/>Чтобы установить оборудование, ознакомьтесь с записью блога [Simple and portable event video gear setup]( https://link.medium.com/KNTtiN6IeT) (Настройка простого портативного оборудования для сьемки).
-1. Запустите и настройте локальный динамический кодировщик, который выводит поток с разными скоростями RTMP или фрагментированный поток MP4. Дополнительные сведения см. в статье о [поддержке протокола RTMP в службах мультимедиа Azure и о динамических кодировщиках](https://go.microsoft.com/fwlink/?LinkId=532824).<br/>Кроме того, проверить этот блог: [Live потокового производства с OBS](https://link.medium.com/ttuwHpaJeT).
+1. Запустите и настройте локальный динамический кодировщик, который выводит поток с разными скоростями RTMP или фрагментированный поток MP4. Дополнительные сведения см. в статье о [поддержке протокола RTMP в службах мультимедиа Azure и о динамических кодировщиках](https://go.microsoft.com/fwlink/?LinkId=532824).<br/>Кроме того, ознакомьтесь с этим блогом: [потоковая передача в реальном времени с помощью OBS](https://link.medium.com/ttuwHpaJeT).
    
     Это действие также можно выполнить после создания канала.
 1. Создайте и запустите сквозной канал.
@@ -125,7 +125,7 @@ ms.locfileid: "77162758"
 1. Выберите канал, в который нужно добавить событие.
 2. Нажмите кнопку **Интерактивное событие** .
 
-![Событие](./media/media-services-portal-passthrough-get-started/media-services-create-events.png)
+![событие](./media/media-services-portal-passthrough-get-started/media-services-create-events.png)
 
 ## <a name="get-ingest-urls"></a>Получение URL-адресов приема
 После создания канала можно получить URL-адреса приема, которые необходимо передать динамическому кодировщику. Он использует эти адреса для передачи динамического потока на вход.
@@ -150,13 +150,13 @@ ms.locfileid: "77162758"
 
 Для управления ресурсами последовательно выберите **Параметры** и **Ресурсы**.
 
-![Активы](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
+![Ресурсы](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

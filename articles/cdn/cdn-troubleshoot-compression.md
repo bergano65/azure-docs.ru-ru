@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: aff2dadee365fcdc7e14070714aa1d2cbba901ff
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79476429"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Устранение неполадок со сжатием файлов CDN
@@ -42,7 +42,7 @@ ms.locfileid: "79476429"
 * Запрошенное содержимое не подходит для сжатия.
 * Сжатие не включено для запрошенного типа файла.
 * В запросе HTTP не было заголовка, запрашивающего допустимый тип сжатия.
-* Origin отправляет фрагментированное содержимое.
+* Источник отправляет поблочное содержимое.
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 > [!TIP]

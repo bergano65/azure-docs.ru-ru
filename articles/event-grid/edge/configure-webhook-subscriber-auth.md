@@ -1,5 +1,5 @@
 ---
-title: Налаживание аутентификации абонента веб-хука - Azure Event Grid IoT Edge Документы Майкрософт
+title: Настройка проверки подлинности подписчика веб-перехватчика IoT Edge службы "Сетка событий Azure" | Документация Майкрософт
 description: Настройка аутентификации подписчика веб-перехватчика
 author: VidyaKukke
 manager: rajarv
@@ -10,17 +10,17 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 101dcae5870322878cec48098f2efae32cc68c14
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76841736"
 ---
 # <a name="configure-webhook-subscriber-authentication"></a>Настройка аутентификации подписчика веб-перехватчика
 
-В этом руководстве приводятся примеры возможных конфигураций абонентов веб-крючка для модуля Event Grid. По умолчанию для подписчиков webhook принимаются только конечные точки HTTPS. Модуль Event Grid отклонится, если абонент представит сертификат, подписанный самостоятельно.
+В этом разделе приведены примеры возможных конфигураций подписчиков веб-перехватчиков для модуля сетки событий. По умолчанию для подписчиков веб-перехватчика принимаются только конечные точки HTTPS. Модуль сетки событий будет отклонен, если подписчик представляет самозаверяющий сертификат.
 
-## <a name="allow-only-https-subscriber"></a>Разрешить только абоненту HTTPS
+## <a name="allow-only-https-subscriber"></a>Разрешить только подписчик HTTPS
 
 ```json
  {
@@ -32,7 +32,7 @@ ms.locfileid: "76841736"
 }
  ```
 
-## <a name="allow-https-subscriber-with-self-signed-certificate"></a>Разрешить абоненту HTTPS с самоподписанным сертификатом
+## <a name="allow-https-subscriber-with-self-signed-certificate"></a>Разрешить подписчику HTTPS с самозаверяющим сертификатом
 
 ```json
  {
@@ -45,9 +45,9 @@ ms.locfileid: "76841736"
  ```
 
 >[!NOTE]
->Установите `outbound__webhook__allowUnknownCA` свойство `true` только в тестовых средах, так как обычно можно использовать сертификаты, подписанные самостоятельно. Для производственных нагрузок мы рекомендуем их установить на **ложные.**
+>Задайте для `true` свойства `outbound__webhook__allowUnknownCA` значение только в тестовых средах, так как обычно можно использовать самозаверяющие сертификаты. Для рабочих нагрузок рекомендуется установить для них значение **false**.
 
-## <a name="allow-https-subscriber-but-skip-certificate-validation"></a>Разрешить httpS абонента, но пропустить проверку сертификата
+## <a name="allow-https-subscriber-but-skip-certificate-validation"></a>Разрешить подписчику HTTPS, но пропустить проверку сертификата
 
 ```json
  {
@@ -60,9 +60,9 @@ ms.locfileid: "76841736"
  ```
 
 >[!NOTE]
->Установите `outbound__webhook__skipServerCertValidation` свойство `true` только в тестовых средах, так как вы не можете представлять сертификат, который должен быть проверен. Для производственных нагрузок мы рекомендуем установить их на **ложные**
+>Задайте для `true` свойства `outbound__webhook__skipServerCertValidation` значение только в тестовых средах, так как вы можете не представлять сертификат, для которого требуется проверка подлинности. Для рабочих нагрузок рекомендуется установить для них значение **false** .
 
-## <a name="allow-both-http-and-https-with-self-signed-certificates"></a>Разрешить как HTTP, так и HTTPS с самоподписанными сертификатами
+## <a name="allow-both-http-and-https-with-self-signed-certificates"></a>Разрешить как HTTP, так и HTTPS с самозаверяющими сертификатами
 
 ```json
  {
@@ -75,4 +75,4 @@ ms.locfileid: "76841736"
  ```
 
 >[!NOTE]
->Установите `outbound__webhook__httpsOnly` свойство `false` только в тестовых средах, как вы можете воспитывать http абонента в первую очередь. Для производственных нагрузок мы рекомендуем их установить на **истину**
+>Задайте для `false` свойства `outbound__webhook__httpsOnly` значение только в тестовых средах, так как может ПОТРЕБОВАТЬСЯ сначала открыть подписчик HTTP. Для рабочих нагрузок рекомендуется установить для них значение **true** .

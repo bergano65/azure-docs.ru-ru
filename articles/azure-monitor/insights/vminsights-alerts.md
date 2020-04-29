@@ -1,47 +1,47 @@
 ---
-title: Оповещения от Azure Monitor для VMs
-description: Описывает, как создавать правила оповещения из данных о производительности, собранных Azure Monitor для VMs.
+title: Оповещения от Azure Monitor для виртуальных машин
+description: Описывает создание правил генерации оповещений на основе данных о производительности, собранных Azure Monitor для виртуальных машин.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/23/2020
 ms.openlocfilehash: 987537d8497b3d8f2728941334d8328320ec6997
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80289606"
 ---
-# <a name="how-to-create-alerts-from-azure-monitor-for-vms"></a>Как создать оповещения от Azure Monitor для VMs
-[Оповещения в Azure Monitor](../platform/alerts-overview.md) упреждающе уведомляют вас об интересных данных и шаблонах в данных мониторинга. Azure Monitor для виртуальных вывешиней не включает предварительно настроенные правила оповещения, но вы можете создать свои собственные данные, которые он собирает. В этой статье содержатся рекомендации по созданию правил оповещения, включая набор выборочных запросов.
+# <a name="how-to-create-alerts-from-azure-monitor-for-vms"></a>Создание предупреждений из Azure Monitor для виртуальных машин
+[Оповещения в Azure Monitor](../platform/alerts-overview.md) заранее уведомляют Вас о интересных данных и закономерностях в данных мониторинга. Azure Monitor для виртуальных машин не содержит предварительно настроенные правила генерации оповещений, но вы можете создать свой собственный на основе собираемых данных. В этой статье приводятся рекомендации по созданию правил генерации оповещений, включая набор образцов запросов.
 
 
-## <a name="alert-rule-types"></a>Типы правил оповещения
-Azure Monitor имеет [различные типы правил оповещения,](../platform/alerts-overview.md#what-you-can-alert-on) основанные на данных, используемых для создания оповещения. Все данные, собранные Azure Monitor для ВМ, хранятся в журналах Azure Monitor, [поддерживающих оповещения о журналах.](../platform/alerts-log.md) В настоящее время нельзя использовать [метрические оповещения](../platform/alerts-log.md) с данными о производительности, собранными из Azure Monitor для ВМ, поскольку данные не собираются в azure Monitor Metrics. Для сбора данных для метрических оповещений установите [расширение диагностики](../platform/diagnostics-extension-overview.md) для Windows VMs или [агента Telegraf](../platform/collect-custom-metrics-linux-telegraf.md) для Linux VMs для сбора данных о производительности в метрики.
+## <a name="alert-rule-types"></a>Типы правил генерации оповещений
+Azure Monitor имеет [различные типы правил генерации оповещений](../platform/alerts-overview.md#what-you-can-alert-on) на основе данных, используемых для создания предупреждения. Все данные, собранные Azure Monitor для виртуальных машин, хранятся в журналах Azure Monitor, которые поддерживают [оповещения журнала](../platform/alerts-log.md). В настоящее время вы не можете использовать [оповещения метрик](../platform/alerts-log.md) с данными о производительности, собранными из Azure Monitor для виртуальных машин, так как данные не собираются в метрики Azure Monitor. Чтобы получить данные для оповещений метрик, установите [расширение системы диагностики](../platform/diagnostics-extension-overview.md) для виртуальных машин Windows или [Агент Telegraf](../platform/collect-custom-metrics-linux-telegraf.md) для виртуальных машин Linux, чтобы получить данные о производительности в метриках.
 
-В Azure Monitor есть два типа оповещений о журналах:
+Существует два типа оповещений журнала в Azure Monitor:
 
-- [Количество оповещений о результатах](../platform/alerts-unified-log.md#number-of-results-alert-rules) создает одно оповещение, когда запрос возвращает по крайней мере определенное количество записей. Они идеально подходят для нецифровых данных, таких как и windows и Syslog событий, собранных [агентом log Analytics](../platform/log-analytics-agent.md) или для анализа тенденций производительности на нескольких компьютерах.
-- [Предупреждения о измерениях](../platform/alerts-unified-log.md#metric-measurement-alert-rules) метриксоздают отдельное оповещение для каждой записи в запросе, которое имеет значение, превышающем порог, определенный в правиле оповещения. Эти правила оповещения идеально подходят для данных о производительности, собранных Azure Monitor для вс-бай-инов, поскольку они могут создавать индивидуальные оповещения для каждого компьютера.
-
-
-## <a name="alert-rule-walkthrough"></a>Пошагза правила оповещения
-В этом разделе используется правило предупреждения измерения метрики с использованием данных о производительности из Azure Monitor для VMs. Этот базовый процесс можно использовать с различными запросами журналов для оповещения на различных счетчиках производительности.
-
-Начните с создания нового правила оповещения после процедуры в [Create, view and manage log alerts с помощью Azure Monitor.](../platform/alerts-log.md) Для **ресурса**выберите рабочее пространство для аналитики журналов, которое используют в подписке vMs Azure Monitor. Поскольку целевой ресурс для правил оповещения о журнале всегда является рабочим пространством Log Analytics, запрос журнала должен включать любой фильтр для определенных виртуальных машин или виртуальных наборов масштабов машин. 
-
-Для правила **«Состояние** оповещения» используйте один из запросов в [разделе ниже](#sample-alert-queries) в качестве **поискового запроса.** Запрос должен вернуть числовое свойство под названием *AggregatedValue.* Он должен обобщить данные с помощью компьютера, чтобы можно было создать отдельное оповещение для каждой виртуальной машины, превышающей порог.
-
-В **логике оповещения**выберите **метрическое измерение,** а затем предоставьте значение **Порога.** В **триггерном оповещении на основе**, укажите, сколько раз порог должен быть превышен до создания оповещения. Например, вам, вероятно, все равно, если процессор превышает порог один раз, а затем возвращается к нормальной жизни, но вы заботитесь, если он продолжает превышать порог в течение нескольких последовательных измерений.
-
-**Оценка на основе** раздела определяет частоту выполнения запроса и временное окно для запроса. В приведенном ниже примере запрос будет работать каждые 15 минут и оценивать значения производительности, собранные за предыдущие 15 минут.
+- [Оповещение о количестве результатов](../platform/alerts-unified-log.md#number-of-results-alert-rules) создает одно предупреждение, когда запрос возвращает хотя бы указанное число записей. Они идеально подходят для нецифровых данных, таких как события Windows и syslog, собираемые [агентом log Analytics](../platform/log-analytics-agent.md) или для анализа тенденций производительности на нескольких компьютерах.
+- [Оповещения измерения метрик](../platform/alerts-unified-log.md#metric-measurement-alert-rules) создают отдельное оповещение для каждой записи в запросе со значением, превышающим пороговое значение, определенное в правиле генерации оповещений. Эти правила генерации оповещений идеально подходят для данных о производительности, собираемых Azure Monitor для виртуальных машин, так как они могут создавать отдельные предупреждения для каждого компьютера.
 
 
-![Правило предупреждения измерения измерения](media/vminsights-alerts/metric-measurement-alert.png)
+## <a name="alert-rule-walkthrough"></a>Пошаговое руководство по правилу оповещения
+В этом разделе рассматривается создание правила генерации оповещений измерения метрик с помощью данных о производительности из Azure Monitor для виртуальных машин. Этот базовый процесс можно использовать с различными запросами журнала для оповещения о различных счетчиках производительности.
 
-## <a name="sample-alert-queries"></a>Примеры запросов оповещения
-Следующие запросы могут быть использованы с правилом предупреждения измерения метрики с использованием данных о производительности, собранных Azure Monitor для VMs. Каждый суммирует данные с помощью компьютера, так что оповещение создается для каждого компьютера со значением, превышающее порог.
+Начните с создания нового правила генерации оповещений, следуя процедуре [Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor](../platform/alerts-log.md). Для **ресурса**выберите рабочую область log Analytics, в которой Azure Monitor виртуальные машины используются в вашей подписке. Так как целевой ресурс для правил генерации оповещений журнала всегда является Log Analytics рабочей областью, запрос журнала должен включать любой фильтр для определенных виртуальных машин или масштабируемых наборов виртуальных машин. 
+
+Для **условия** правила генерации оповещений используйте один из запросов в [разделе ниже](#sample-alert-queries) в качестве **поискового запроса**. Запрос должен возвращать числовое свойство с именем *AggregatedValue*. Он должен суммировать данные по компьютерам, чтобы можно было создать отдельное оповещение для каждой виртуальной машины, которая превышает пороговое значение.
+
+В **логике оповещений**выберите **измерение метрик** , а затем укажите **пороговое значение**. В поле **активировать оповещение на основе**укажите, сколько раз должно быть превышено пороговое значение, прежде чем будет создано оповещение. Например, вы, вероятно, не следите за тем, что процессор превышает пороговое значение, а затем возвращается к обычному, но вы следите за тем, чтобы он продолжал превысить пороговое значение для нескольких последовательных измерений.
+
+В разделе, **основанном на оценке** , определяется, как часто выполняется запрос, и окно времени для запроса. В приведенном ниже примере запрос будет выполняться каждые 15 минут и оценивать значения производительности, собранные за предыдущие 15 минут.
+
+
+![Правило генерации оповещений для измерения метрик](media/vminsights-alerts/metric-measurement-alert.png)
+
+## <a name="sample-alert-queries"></a>Примеры запросов предупреждений
+Следующие запросы можно использовать с правилом генерации оповещений измерения метрик с помощью данных о производительности, собранных Azure Monitor для виртуальных машин. Каждый из них обобщает данные по компьютерам, чтобы создать оповещение для каждого компьютера со значением, превышающим пороговое значение.
 
 ### <a name="cpu-utilization"></a>загрузка ЦП;
 
@@ -52,7 +52,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), Computer, _ResourceId
 ```
 
-### <a name="available-memory-in-mb"></a>Доступная память в МБ
+### <a name="available-memory-in-mb"></a>Доступная память (МБ)
 
 ```kusto
 InsightsMetrics
@@ -61,7 +61,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), Computer, _ResourceId
 ```
 
-### <a name="available-memory-in-percentage"></a>Доступная память в процентах
+### <a name="available-memory-in-percentage"></a>Объем доступной памяти в процентах
 
 ```kusto
 InsightsMetrics 
@@ -72,7 +72,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(AvailableMemoryPercentage) by bin(TimeGenerated, 15m), Computer, _ResourceId 
 ```
 
-### <a name="logical-disk-used---all-disks-on-each-computer"></a>Логический используемый диск - все диски на каждом компьютере
+### <a name="logical-disk-used---all-disks-on-each-computer"></a>Используемый логический диск — все диски на каждом компьютере
 
 ```kusto
 InsightsMetrics
@@ -81,7 +81,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), Computer, _ResourceId 
 ```
 
-### <a name="logical-disk-used---individual-disks"></a>Логический используемый диск - индивидуальные диски
+### <a name="logical-disk-used---individual-disks"></a>Используемый логический диск — отдельные диски
 
 ```kusto
 InsightsMetrics
@@ -91,7 +91,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), Computer, _ResourceId, Disk
 ```
 
-### <a name="logical-disk-iops"></a>Логический диск IOPS
+### <a name="logical-disk-iops"></a>Логические диски, операций ввода-вывода
 
 ```kusto
 InsightsMetrics
@@ -101,7 +101,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m) ), Computer, _ResourceId, Disk
 ```
 
-### <a name="logical-disk-data-rate"></a>Скорость обработки логических дисков
+### <a name="logical-disk-data-rate"></a>Скорость данных логического диска
 
 ```kusto
 InsightsMetrics
@@ -111,7 +111,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m) , Computer, _ResourceId, Disk
 ```
 
-### <a name="network-interfaces-bytes-received---all-interfaces"></a>Сетевые интерфейсы байты получены - все интерфейсы
+### <a name="network-interfaces-bytes-received---all-interfaces"></a>Получено байт сетевых интерфейсов — все интерфейсы
 
 ```kusto
 InsightsMetrics
@@ -120,7 +120,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), Computer, _ResourceId 
 ```
 
-### <a name="network-interfaces-bytes-received---individual-interfaces"></a>Сетевые интерфейсы байты получили - индивидуальные интерфейсы
+### <a name="network-interfaces-bytes-received---individual-interfaces"></a>Полученные байты сетевых интерфейсов — индивидуальные интерфейсы
 
 ```kusto
 InsightsMetrics
@@ -130,7 +130,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), Computer, _ResourceId, NetworkInterface
 ```
 
-### <a name="network-interfaces-bytes-sent---all-interfaces"></a>Сетевые интерфейсы байты отправлены - все интерфейсы
+### <a name="network-interfaces-bytes-sent---all-interfaces"></a>Отправлено байт сетевых интерфейсов-все интерфейсы
 
 ```kusto
 InsightsMetrics
@@ -139,7 +139,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), Computer, _ResourceId
 ```
 
-### <a name="network-interfaces-bytes-sent---individual-interfaces"></a>Сетевые интерфейсы байты отправлены - индивидуальные интерфейсы
+### <a name="network-interfaces-bytes-sent---individual-interfaces"></a>Отправлено байт сетевых интерфейсов — индивидуальные интерфейсы
 
 ```kusto
 InsightsMetrics
@@ -150,7 +150,7 @@ InsightsMetrics
 ```
 
 ### <a name="virtual-machine-scale-set"></a>Набор масштабирования виртуальных машин
-Измените с помощью идентификатора подписки, группы ресурсов и названия виртуальной шкалы машин.
+Измените с помощью идентификатора подписки, группы ресурсов и имени масштабируемого набора виртуальных машин.
 
 ```kusto
 InsightsMetrics
@@ -161,7 +161,7 @@ InsightsMetrics
 ```
 
 ### <a name="specific-virtual-machine"></a>Конкретная виртуальная машина
-Измените с помощью идентификатора подписки, группы ресурсов и имени VM.
+Измените с помощью идентификатора подписки, группы ресурсов и имени виртуальной машины.
 
 ```kusto
 InsightsMetrics
@@ -171,8 +171,8 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m)
 ```
 
-### <a name="cpu-utilization-for-all-compute-resources-in-a-subscription"></a>Использование процессора для всех вычислительных ресурсов в подписке
-Измените с идентификатором подписки.
+### <a name="cpu-utilization-for-all-compute-resources-in-a-subscription"></a>Загрузка ЦП для всех вычислительных ресурсов в подписке
+Измените с помощью идентификатора подписки.
 
 ```kusto
 InsightsMetrics
@@ -182,7 +182,7 @@ InsightsMetrics
 | summarize AggregatedValue = avg(Val) by bin(TimeGenerated, 15m), _ResourceId
 ```
 
-### <a name="cpu-utilization-for-all-compute-resources-in-a-resource-group"></a>Использование процессора для всех вычислительных ресурсов в группе ресурсов
+### <a name="cpu-utilization-for-all-compute-resources-in-a-resource-group"></a>Загрузка ЦП для всех вычислительных ресурсов в группе ресурсов
 Измените с помощью идентификатора подписки и группы ресурсов.
 
 ```kusto
@@ -195,7 +195,7 @@ or _ResourceId startswith "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/r
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Подробнее о [предупреждениях в Azure Monitor](../platform/alerts-overview.md).
-- Узнайте больше о [запросах журналов, используя данные Azure Monitor для vMs.](vminsights-log-search.md)
+- Дополнительные сведения об [оповещениях см. в Azure Monitor](../platform/alerts-overview.md).
+- Дополнительные сведения о [журналах запросов с использованием данных из Azure Monitor для виртуальных машин](vminsights-log-search.md).

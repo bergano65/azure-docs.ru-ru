@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: Настройка ExpressRoute Глобальный охват: CLI'
+title: 'Azure ExpressRoute: Настройка Global Reach ExpressRoute: CLI'
 description: В этой статье содержатся сведения о том, как связать каналы ExpressRoute, чтобы настроить частную сеть между локальными сетями и включить Global Reach.
 services: expressroute
 author: jaredr80
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 12/12/2018
 ms.author: jaredro
 ms.openlocfilehash: a39cf4e09a70ca2b1225d699c84abf0e7f1d2eab
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79476412"
 ---
-# <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Налажить ExpressRoute Global Reach с помощью Azure CLI
+# <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка Global Reach ExpressRoute с помощью Azure CLI
 
 Эта статья поможет вам настроить Azure ExpressRoute Global Reach путем использования Azure CLI. См. дополнительные сведения об [ExpressRoute Global Reach](expressroute-global-reach.md).
  
@@ -47,7 +47,7 @@ az account set --subscription <your subscription ID>
 
 ### <a name="identify-your-expressroute-circuits-for-configuration"></a>Определение каналов ExpressRoute для конфигурации
 
-Вы можете включить ExpressRoute Global Reach между любыми двумя схемами ExpressRoute, если они расположены в поддерживаемых странах/регионах и были созданы в разных местах. Если подписке принадлежат оба канала, вы можете выбрать канал для выполнения конфигурации, как описано далее в этой статье. Если два канала находятся в разных подписках Azure, вам необходимо будет выполнить авторизацию из одной подписки Azure и передать ключ авторизации при выполнении команды конфигурации в другой подписке Azure.
+Можно включить ExpressRoute Global Reach между любыми двумя каналами ExpressRoute, если они находятся в поддерживаемых странах и регионах и были созданы в различных расположениях пиринга. Если подписке принадлежат оба канала, вы можете выбрать канал для выполнения конфигурации, как описано далее в этой статье. Если два канала находятся в разных подписках Azure, вам необходимо будет выполнить авторизацию из одной подписки Azure и передать ключ авторизации при выполнении команды конфигурации в другой подписке Azure.
 
 ## <a name="enable-connectivity-between-your-on-premises-networks"></a>Настройка подключения между локальными сетями
 
@@ -57,7 +57,7 @@ az account set --subscription <your subscription ID>
 
   > /subscriptions/{идентификатор_вашей_подписки}/resourceGroups/{ваша_группа_ресурсов}/providers/Microsoft.Network/expressRouteCircuits/{имя_вашего_канала}
 
-* *адрес-префикс* должен быть подсетью IPv4 "/29" (например, "10.0.0.0/29"). Мы используем IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Не следует использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
+* *префикс адреса* должен быть подсетью IPv4 "/29" (например, "10.0.0.0/29"). Мы используем IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Не следует использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
 
 Запустите следующую команду CLI для подключения двух каналов ExpressRoute.
 
@@ -148,8 +148,8 @@ az network express-route peering connection delete -g <ResourceGroupName> --circ
 
 После завершения этой операции вы потеряете подключение к локальным сетям через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
-* [Проверить подключение ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
+* [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 * [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md)

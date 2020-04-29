@@ -1,6 +1,6 @@
 ---
-title: Разработка и интеграция API API Azure ExpressRoute CrossConnnections
-description: В этой статье содержится подробный обзор для партнеров ExpressRoute о типе ресурса expressRouteCrossConnections.
+title: Разработка и интеграция API Azure ExpressRoute Кроссконннектионс
+description: В этой статье содержатся подробные сведения о типе ресурса Експрессраутекроссконнектионс для партнеров ExpressRoute.
 services: expressroute
 author: mialdrid
 ms.service: expressroute
@@ -8,80 +8,80 @@ ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: mialdrid
 ms.openlocfilehash: b4a83013d2cbeb2871a3963ec0c95144c02f4d66
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77187014"
 ---
-# <a name="expressroute-crossconnnections-api-development-and-integration"></a>Разработка и интеграция API API ExpressRoute CrossConnnections
+# <a name="expressroute-crossconnnections-api-development-and-integration"></a>Разработка и интеграция API Кроссконннектионс ExpressRoute
 
-API-менеджер ресурсов партнеров ExpressRoute позволяет партнерам ExpressRoute управлять конфигурацией схем экспресс-маршрута с слоем-2 и слоем-3. Менеджер ресурсов партнеров ExpressRoute представляет новый тип ресурса, **expressRouteCrossConnections.** Партнеры используют этот ресурс для управления контурами ЭкспрессРута.
+API-интерфейс диспетчер ресурсов для партнеров expressroute позволяет партнерам ExpressRoute управлять конфигурацией каналов ExpressRoute уровня 2 и уровня 3. В диспетчер ресурсов API партнера ExpressRoute появился новый тип ресурса **експрессраутекроссконнектионс**. Партнеры используют этот ресурс для управления каналами ExpressRoute клиента.
 
 ## <a name="workflow"></a>Рабочий процесс
 
-Ресурс ExpressRouteCrossConnections является теневым ресурсом для схемы ExpressRoute. Когда клиент Azure создает схему ExpressRoute и выбирает конкретного партнера ExpressRoute, корпорация Майкрософт создает ресурс expressRouteCrossConnections в подписке на управление Azure ExpressRoute. При этом корпорация Майкрософт определяет группу ресурсов для создания ресурса expressRouteCrossConnections. Стандартом именования для группы ресурсов является *«CrossConnection-* PeeringLocation»; где PeeringLocation - Расположение ExpressRoute. Например, если клиент создает схему ExpressRoute в Денвере, CrossConnection будет создан в подписке на Azure партнера в следующей группе ресурсов: **CrossConnnection-Denver.**
+Ресурс Експрессраутекроссконнектионс является теневым ресурсом для канала ExpressRoute. Когда клиент Azure создает канал ExpressRoute и выбирает конкретного партнера ExpressRoute, корпорация Майкрософт создает ресурс Експрессраутекроссконнектионс в подписке управления Azure ExpressRoute партнера. При этом Microsoft определяет группу ресурсов для создания ресурса Експрессраутекроссконнектионс в. Стандарт именования для группы ресурсов — **кроссконнектион-* пиринглокатион * * *; где Пиринглокатион = расположение ExpressRoute. Например, если клиент создает канал ExpressRoute в Денвер, Кроссконнектион будет создан в подписке Azure партнера в следующей группе ресурсов: **кроссконннектион-Денвер**.
 
-Партнеры ExpressRoute управляют конфигурацией уровня-2 и уровня-3, выпуская операции REST на ресурсе expressRouteCrossConnections.
+Партнеры ExpressRoute управляют конфигурацией уровня 2 и уровня 3, выдавая операции RESTFUL для ресурса Експрессраутекроссконнектионс.
 
 ## <a name="benefits"></a>Преимущества
 
-Преимущества перехода на ресурс expressRouteCrossConnections:
+Преимущества перехода на ресурс Експрессраутекроссконнектионс:
 
-* Любые будущие усовершенствования для партнеров ExpressRoute будут доступны на ресурсе ExpressRouteCrossConnection.
+* Все будущие улучшения для партнеров ExpressRoute будут доступны в ресурсе Експрессраутекроссконнектион.
 
-* Партнеры могут применять [элементы управления доступом на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) к ресурсу expressRouteCrossConnection. Эти элементы управления могут определить разрешения, для которых учетные записи пользователей могут изменять ресурс expressRouteCrossConnection и добавлять/обновлять/удалять конфигурации пиринга.
+* Партнеры могут применять [Управление доступом на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) к ресурсу експрессраутекроссконнектион. Эти элементы управления могут определять разрешения, для которых учетные записи пользователей могут изменять ресурс Експрессраутекроссконнектион, а также добавлять, обновлять и удалять конфигурации пиринга.
 
-* Ресурс ExpressRouteCrossConnection предоставляет AIS, которые могут быть полезны при устранении неполадок подключений ExpressRoute. Это включает таблицу ARP, резюме таблицы BGP Route И таблице BGP и детали таблицы BGP Route Table. Эта возможность не поддерживается классическими ABY развертывания.
+* Ресурс Експрессраутекроссконнектион предоставляет интерфейсы API, которые могут быть полезны при устранении неполадок подключений ExpressRoute. Сюда входят таблица ARP, сводка таблицы маршрутов BGP и таблица маршрутов BGP. Эта возможность не поддерживается классическими API развертывания.
 
-* Партнеры также могут найти рекламируемые сообщества в пиринге Майкрософт с помощью ресурса *RouteFilter.*
+* Партнеры также могут искать объявленные сообщества на пиринге Майкрософт с помощью ресурса *RouteFilter* .
 
-## <a name="api-development-and-integration-steps"></a>Шаги развития ИПИ и интеграции
+## <a name="api-development-and-integration-steps"></a>Этапы разработки и интеграции API
 
-Чтобы развиваться в отношении API-партнера партнера по partner, партнеры ExpressRoute используют тестового клиента и установку тестового партнера. Установка тестового клиента будет использоваться для создания схем ExpressRoute в местах тестирования пиринга, которые отображают на фиктивные устройства и порты. Настройка тестового партнера используется для управления схемами ExpressRoute, созданными в месте тестирования.
+Для разработки с помощью API-интерфейса партнеров Партнеры ExpressRoute используют тестовую настройку клиента и тестового партнера. Тестовая Настройка клиента будет использоваться для создания каналов ExpressRoute в тестовых расположениях, которые сопоставляются с фиктивными устройствами и портами. Программа установки партнера по тестированию используется для управления каналами ExpressRoute, созданными в расположении тестового пиринга.
 
-### <a name="1-enlist-subscriptions"></a>1. Заручитесь подпиской
+### <a name="1-enlist-subscriptions"></a>1. Прикрепление подписок
 
-Чтобы запросить тестовый партнер и настроить настройку клиента, зарегистрируйтесь в инженерном контакте ExpressRoute с двумя подписками Pay-As-You-Go На ваш инженерный контакт:
-* **ExpressRoute_API_Dev_Provider_Sub:** Эта подписка будет использоваться для управления схемами ExpressRoute, созданными в тестовых местах для тестирования на фиктивных устройствах и портах.
+Чтобы запросить тестового партнера и проверить настройку клиента, прикрепите две подписки Azure с оплатой по мере использования к вашему контакту по техническому проектированию ExpressRoute:
+* **ExpressRoute_API_Dev_Provider_Sub:** Эта подписка будет использоваться для управления каналами ExpressRoute, созданными при тестировании расположения пиринга на фиктивных устройствах и портах.
 
-* **ExpressRoute_API_Dev_Customer_Sub:** Эта подписка будет использоваться для создания схем ExpressRoute в тестовых местах пиринга, которые отображают на фиктивные устройства и порты.
+* **ExpressRoute_API_Dev_Customer_Sub:** Эта подписка будет использоваться для создания каналов ExpressRoute в тестовых расположениях, которые сопоставляются с фиктивными устройствами и портами.
 
-Местоположения тестовых пирингов: фиктивные устройства и порты по умолчанию не подвергаются воздействию производственных клиентов. Для создания схем ExpressRoute, которые отображают на тестовую установку, необходимо создать флаг функции подписки.
+Расположения для тестирования пиринга: фиктивные устройства и порты по умолчанию не предоставляются рабочим клиентам. Чтобы создать каналы ExpressRoute, сопоставленные с программой установки тестов, необходимо включить флаг функции подписки.
 
-### <a name="2-register-the-dev_provider-subscription-to-access-the-expressroutecrossconnections-api"></a>2. Зарегистрируйте подписку Dev_Provider для доступа к API expressRouteCrossConnections
+### <a name="2-register-the-dev_provider-subscription-to-access-the-expressroutecrossconnections-api"></a>2. Зарегистрируйте Dev_Provider подписку для доступа к API Експрессраутекроссконнектионс.
 
-Для доступа к API expressRouteCrossConnections партнерская подписка должна быть зарегистрирована в **провайдере ресурсов Microsoft.Network.** Выполните действия в [поставщиках ресурсов Azure и нанизим](/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) статью для завершения процесса регистрации.
+Чтобы получить доступ к API Експрессраутекроссконнектионс, необходимо зарегистрировать партнерскую подписку в **поставщике ресурсов Microsoft. Network**. Выполните действия, описанные в статье [поставщики ресурсов Azure и типы](/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) , чтобы завершить процесс регистрации.
 
-### <a name="3-set-up-authentication-for-azure-resource-manager-rest-api-calls"></a>3. Настройка аутентификации для вызовов REST API-ам-центра ресурсного отдела ресурсов Azure
+### <a name="3-set-up-authentication-for-azure-resource-manager-rest-api-calls"></a>3. Настройка проверки подлинности для вызовов Azure Resource Manager REST API
 
-Большинство служб Azure требуют проверки подлинности кода клиента с помощью менеджера ресурсов, используя действительные учетные данные, до вызова AIS службы. Аутентификация координируется между различными субъектами Azure AD и предоставляет клиенту токен доступа в качестве доказательства проверки подлинности.
+Большинству служб Azure требуется клиентский код для проверки подлинности в диспетчер ресурсов с использованием действительных учетных данных перед вызовом API-интерфейсов службы. Служба проверки подлинности координирует связь между различными субъектами в Azure AD и предоставляет клиенту маркер доступа в качестве подтверждения проверки подлинности.
 
-Процесс аутентификации включает в себя два основных шага:
+Процесс проверки подлинности состоит из двух основных этапов:
 
-1. [Регистрация клиента](https://docs.microsoft.com/rest/api/azure/#register-your-client-application-with-azure-ad).
-2. [Создайте запрос доступа.](https://docs.microsoft.com/rest/api/azure/#create-the-request)
+1. [Зарегистрируйте клиент](https://docs.microsoft.com/rest/api/azure/#register-your-client-application-with-azure-ad).
+2. [Создайте запрос на доступ](https://docs.microsoft.com/rest/api/azure/#create-the-request).
 
-### <a name="4-provide-network-contributor-permission-to-the-client-application"></a>4. Предоставить автору сетевого приложения
+### <a name="4-provide-network-contributor-permission-to-the-client-application"></a>4. Предоставьте клиентскому приложению разрешение на доступ к участнику сети.
 
-После успешной настройки аутентификации необходимо предоставить пользователю сети доступ к клиенту- ит-приложению в соответствии с Dev_Provider_Sub. Чтобы получить разрешение, войдите на [портал Azure](https://ms.portal.azure.com/#home) и выполните следующие действия:
+После успешной настройки проверки подлинности необходимо предоставить участнику сети доступ к клиентскому приложению в Dev_Provider_Sub. Чтобы предоставить разрешение, войдите в [портал Azure](https://ms.portal.azure.com/#home) и выполните следующие действия.
 
-1. Перейдите к подпискам и выберите Dev_Provider_Sub
-2. Перейдите к управлению доступом (IAM)
-3. Добавление назначения ролей
-4. Выберите роль сетевого вкладчика
-5. Назначить доступ к пользователю, группе или службе Azure
+1. Перейдите к разделу подписки и выберите Dev_Provider_Sub
+2. Перейти к контролю доступа (IAM)
+3. Добавить назначение ролей
+4. Выбор роли "участник сети"
+5. Назначение доступа пользователю Azure AD, группе или субъекту-службе
 6. Выберите клиентское приложение
 7. Сохранение изменений
 
 ### <a name="5-develop"></a>5. Разработка
 
-Развивайся против [API expressRouteCrossConnections.](https://docs.microsoft.com/rest/api/expressroute/expressroutecrossconnections)
+Разработка с помощью [API експрессраутекроссконнектионс](https://docs.microsoft.com/rest/api/expressroute/expressroutecrossconnections).
 
 ## <a name="rest-api"></a>REST API
 
-Смотрите [API ExpressRoute CrossConnections REST](https://docs.microsoft.com/rest/api/expressroute/expressroutecrossconnections) для документации REST API.
+См. раздел [ExpressRoute кроссконнектионс REST API](https://docs.microsoft.com/rest/api/expressroute/expressroutecrossconnections) для REST APIной документации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения дополнительной информации обо всех AA- инотах [ExpressRoute](https://docs.microsoft.com/rest/api/expressroute/)REST см.
+Дополнительные сведения о всех API-интерфейсах RESTFUL для ExpressRoute см. в разделе [API-интерфейсы RESTful для expressroute](https://docs.microsoft.com/rest/api/expressroute/).

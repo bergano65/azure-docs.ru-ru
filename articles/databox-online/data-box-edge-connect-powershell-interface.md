@@ -1,6 +1,6 @@
 ---
-title: Подключение к устройству Microsoft Azure Data Box Edge и управление имеющее его с помощью интерфейса Windows PowerShell Документы Майкрософт
-description: Описывает, как подключиться к Data Box Edge и затем управлять ими с помощью интерфейса Windows PowerShell.
+title: Подключение к устройству Microsoft Azure Data Box Edge и управление им с помощью интерфейса Windows PowerShell | Документация Майкрософт
+description: Описывает подключение к Data Box Edge и управление им с помощью интерфейса Windows PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,27 +9,27 @@ ms.topic: article
 ms.date: 06/25/2019
 ms.author: alkohli
 ms.openlocfilehash: f49396331a31f7ca9eaf453dc8bf6880da2e0da8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79265484"
 ---
 # <a name="manage-an-azure-data-box-edge-device-via-windows-powershell"></a>Управление устройством Azure Data Box Edge с помощью Windows PowerShell
 
-Решение Azure Data Box Edge позволяет обрабатывать данные и отправлять их по сети в Azure. В этой статье описаны некоторые задачи конфигурации и управления для устройства Data Box Edge. Для управления устройством можно использовать портал Azure, локальный веб-интерфейс или интерфейс Windows PowerShell.
+Azure Data Box Edge решение позволяет обрабатывать данные и передавать их по сети в Azure. В этой статье описаны некоторые задачи по настройке и управлению для устройства Data Box Edge. Для управления устройством можно использовать портал Azure, локальный веб-интерфейс или интерфейс Windows PowerShell.
 
-В этой статье основное внимание уделяется задачам, которые вы делаете с помощью интерфейса PowerShell.
+В этой статье рассматриваются задачи, выполняемые с помощью интерфейса PowerShell.
 
-Эта статья включает в себя следующие процедуры:
+Эта статья содержит следующие процедуры.
 
 - Подключение к интерфейсу PowerShell
 - Создать пакет поддержки.
 - Передача сертификата
-- Сбросить устройство
-- Просмотр информации об устройстве
-- Получить журналы вычислений
-- Монитор и устранение неполадок вычислили модули
+- Сброс устройства
+- Просмотр сведений об устройстве
+- Получение журналов вычислений
+- Мониторинг и устранение неполадок модулей вычислений
 
 ## <a name="connect-to-the-powershell-interface"></a>Подключение к интерфейсу PowerShell
 
@@ -43,22 +43,22 @@ ms.locfileid: "79265484"
 
 [!INCLUDE [Upload certificate](../../includes/data-box-edge-gateway-upload-certificate.md)]
 
-Вы также можете загрузить сертификаты IoT Edge, чтобы обеспечить безопасное соединение между устройством IoT Edge и устройствами ниже по течению, которые могут подключиться к нему. Есть три сертификата IoT Edge *(формат .pem),* которые необходимо установить:
+Можно также отправить сертификаты IoT Edge, чтобы обеспечить безопасное подключение между устройством IoT Edge и подчиненными устройствами, которые могут подключаться к нему. Необходимо установить три IoT Edge сертификатов (формат*PEM* ):
 
-- Сертификат Root CA или владелец CA
+- Сертификат корневого ЦС или ЦС владельца
 - Сертификат ЦС устройства
 - Сертификат ключа устройства
 
-Следующий пример показывает использование этого cmdlet для установки сертификатов IoT Edge:
+В следующем примере показано использование этого командлета для установки сертификатов IoT Edge:
 
 ```
 Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cert.pem" -DeviceCertificateFilePath "\\hcfs\device-ca-cert.pem\" -DeviceKeyFilePath "\\hcfs\device-key-cert.pem" -Credential "username"
 ```
-Когда вы запустите этот cmdlet, вам будет предложено предоставить пароль для сети доля.
+При запуске этого командлета вам будет предложено ввести пароль для сетевой папки.
 
-Для получения дополнительной информации о сертификатах перейдите на [сертификаты Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-certs) или [установите сертификаты на шлюзе.](https://docs.microsoft.com/azure/iot-edge/how-to-create-transparent-gateway)
+Дополнительные сведения о сертификатах см. в [подAzure IoT Edge сертификаты](https://docs.microsoft.com/azure/iot-edge/iot-edge-certs) или [Установка сертификатов на шлюзе](https://docs.microsoft.com/azure/iot-edge/how-to-create-transparent-gateway).
 
-## <a name="view-device-information"></a>Просмотр информации об устройстве
+## <a name="view-device-information"></a>Просмотр сведений об устройстве
  
 [!INCLUDE [View device information](../../includes/data-box-edge-gateway-view-device-info.md)]
 
@@ -66,25 +66,25 @@ Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cer
 
 [!INCLUDE [Reset your device](../../includes/data-box-edge-gateway-deactivate-device.md)]
 
-## <a name="get-compute-logs"></a>Получить журналы вычислений
+## <a name="get-compute-logs"></a>Получение журналов вычислений
 
-Если роль вычисления настроена на устройстве, вы также можете получить журналы вычислений через интерфейс PowerShell.
+Если на устройстве настроена роль вычислений, можно также получить журналы вычислений с помощью интерфейса PowerShell.
 
-1. [Подключение к интерфейсу PowerShell.](#connect-to-the-powershell-interface)
-2. `Get-AzureDataBoxEdgeComputeRoleLogs` Используйте, чтобы получить журналы вычислений для вашего устройства.
+1. [Подключитесь к интерфейсу PowerShell](#connect-to-the-powershell-interface).
+2. Используйте `Get-AzureDataBoxEdgeComputeRoleLogs` для получения журналов вычислений для устройства.
 
-    Следующий пример показывает использование этого cmdlet:
+    В следующем примере показано использование этого командлета:
 
     ```powershell
     Get-AzureDataBoxEdgeComputeRoleLogs -Path "\\hcsfs\logs\myacct" -Credential "username" -FullLogCollection
     ```
 
-    Вот описание параметров, используемых для cmdlet:
-    - `Path`: Предоставьте сетевой путь к доле, где требуется создать пакет журналов вычислений.
-    - `Credential`: Укажите имя пользователя для совместной акции сети. При запуске этого cmdlet, вам нужно будет предоставить пароль общего обмена.
-    - `FullLogCollection`: Этот параметр гарантирует, что пакет журналов будет содержать все журналы вычислений. По умолчанию пакет журналов содержит только подмножество журналов.
+    Ниже приведено описание параметров, используемых для командлета.
+    - `Path`: Укажите сетевой путь к общей папке, в которой нужно создать пакет журнала вычислений.
+    - `Credential`: Укажите имя пользователя для сетевой папки. При выполнении этого командлета необходимо указать пароль для общей папки.
+    - `FullLogCollection`: Этот параметр гарантирует, что пакет журнала будет содержать все журналы вычислений. По умолчанию пакет журналов содержит только подмножество журналов.
 
-## <a name="monitor-and-troubleshoot-compute-modules"></a>Монитор и устранение неполадок вычислили модули
+## <a name="monitor-and-troubleshoot-compute-modules"></a>Мониторинг и устранение неполадок модулей вычислений
 
 [!INCLUDE [Monitor and troubleshoot compute modules](../../includes/data-box-edge-monitor-troubleshoot-compute.md)]
 
@@ -92,6 +92,6 @@ Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cer
 
 Чтобы выйти из удаленного сеанса PowerShell, закройте окно PowerShell.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Разверните [Azure Data Box Edge](data-box-edge-deploy-prep.md) на портале Azure.

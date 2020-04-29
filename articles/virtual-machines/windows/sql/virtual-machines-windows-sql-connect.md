@@ -15,10 +15,10 @@ ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: deb337d989a3658e909cefa7a9ab028e37792562
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79243176"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
@@ -39,10 +39,10 @@ ms.locfileid: "79243176"
 
 Варианты подключения:
 
-| Параметр | Описание |
+| Параметр | Описание: |
 |---|---|
-| **Общественного** | Подключение к SQL Server через Интернет |
-| **Частная** | Подключение к SQL Server в пределах одной виртуальной сети |
+| **Открытый** | Подключение к SQL Server через Интернет |
+| **Частное** | Подключение к SQL Server в пределах одной виртуальной сети |
 | **Локальная** | Локальное подключение к SQL Server на одной и той же виртуальной машине | 
 
 В следующих разделах более подробно описаны типы подключения **Общедоступное** и **Частное**.
@@ -97,11 +97,11 @@ Server=mysqlvm;Integrated Security=true
 
 Можно изменить параметры подключения для вашей виртуальной машины SQL Server на портале Azure.
 
-1. На портале Azure выберите **виртуальные машины s'L.**
+1. В портал Azure выберите **виртуальные машины SQL**.
 
 2. Выберите виртуальную машину SQL Server.
 
-3. Под **настройками**выберите **безопасность.**
+3. В разделе **Параметры**выберите **Безопасность**.
 
 4. Измените **уровень подключения SQL**, выбрав необходимый параметр. Эту область можно при необходимости использовать, чтобы изменить порт SQL Server или параметры аутентификации SQL.
 
@@ -111,7 +111,7 @@ Server=mysqlvm;Integrated Security=true
 
    ![Уведомление об обновлении виртуальной машины SQL](./media/virtual-machines-windows-sql-connect/sql-vm-updating-notification.png)
 
-## <a name="enable-tcpip-for-developer-and-express-editions"></a><a id="manualtcp"></a>Включить TCP/IP для разработчиков и экспресс-изданий
+## <a name="enable-tcpip-for-developer-and-express-editions"></a><a id="manualtcp"></a>Включение TCP/IP для выпусков Developer и Express
 
 При изменении параметров подключения к SQL Server Azure не включает протокол TCP/IP для выпусков SQL Server Developer и Express автоматически. Ниже описано, как вручную включить TCP/IP для удаленного подключения по IP-адресу.
 
@@ -137,7 +137,7 @@ Server=mysqlvm;Integrated Security=true
 
 | Требование | Описание |
 |---|---|
-| [Включить режим аутентификации сервера S'L](/sql/database-engine/configure-windows/change-server-authentication-mode#use-ssms) | Для удаленного подключения к виртуальной машине требуется аутентификация SQL Server, если только не настроена служба Active Directory в виртуальной сети. |
+| [Включите режим аутентификации SQL Server](/sql/database-engine/configure-windows/change-server-authentication-mode#use-ssms) | Для удаленного подключения к виртуальной машине требуется аутентификация SQL Server, если только не настроена служба Active Directory в виртуальной сети. |
 | [Создание имени для входа SQL](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) | При использовании аутентификации SQL требуется имя входа SQL с именем пользователя и паролем, у которого также имеются разрешения для целевой базы данных. |
 | [Включите протокол TCP/IP](#manualtcp) | SQL Server должен разрешать подключения по протоколу TCP. |
 | [Включите правило брандмауэра для порта SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) | Брандмауэр на виртуальной машине должен разрешать входящий трафик на порту SQL Server (по умолчанию 1433). |
@@ -146,7 +146,7 @@ Server=mysqlvm;Integrated Security=true
 > [!TIP]
 > Действия, описанные в таблице выше, уже выполнены при настройке подключения на портале. Эти действия следует использовать только для проверки конфигурации или настройки подключения к SQL Server вручную.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Инструкции по подготовке и действия по подключению приведены в статье [Подготовка виртуальной машины SQL Server на портале Azure](virtual-machines-windows-portal-sql-server-provision.md).
 

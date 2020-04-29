@@ -1,7 +1,7 @@
 ---
-title: Настройка всегда-на VPN туннель
+title: Настройка постоянного VPN-туннеля
 titleSuffix: Azure Virtual WAN
-description: Шаги для настройки Всегда на VPN туннель устройства для виртуального WAN
+description: Действия по настройке туннеля VPN-устройства Always On для виртуальной глобальной сети
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -9,22 +9,22 @@ ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: cherylmc
 ms.openlocfilehash: e3eea639eaa52c07e877476e9215144e916618d4
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79502858"
 ---
-# <a name="configure-an-always-on-vpn-device-tunnel-for-virtual-wan"></a>Назначайте туннель устройства ВСЕГДА на VPN для виртуального WAN
+# <a name="configure-an-always-on-vpn-device-tunnel-for-virtual-wan"></a>Настройка туннеля VPN-устройства Always On для виртуальной глобальной сети
 
 [!INCLUDE [intro](../../includes/vpn-gateway-vwan-always-on-intro.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-Необходимо создать конфигурацию от точки к сайту и отсеить виртуальное назначение концентратора. Смотрите следующие разделы для инструкций:
+Необходимо создать конфигурацию типа "точка — сеть" и изменить назначение виртуального концентратора. Инструкции см. в следующих разделах:
 
-* [Создание конфигурации подключения "точка — сеть"](virtual-wan-point-to-site-portal.md#p2sconfig)
-* [Отсечение назначения концентратора](virtual-wan-point-to-site-portal.md#edit)
+* [Создание конфигурации P2S](virtual-wan-point-to-site-portal.md#p2sconfig)
+* [Изменение назначения концентратора](virtual-wan-point-to-site-portal.md#edit)
 
 ## <a name="configure-the-device-tunnel"></a>Настройка туннеля устройства
 
@@ -32,10 +32,10 @@ ms.locfileid: "79502858"
 
 ## <a name="to-remove-a-profile"></a>Удаление профиля
 
-Чтобы удалить профиль, запустите следующую команду:
+Чтобы удалить профиль, выполните следующую команду:
 
 ![Очистка](./media/howto-always-on-device-tunnel/cleanup.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения дополнительной информации [FAQ](virtual-wan-faq.md)о виртуальном WAN, см.
+Дополнительные сведения о виртуальной глобальной сети см. в разделе [часто задаваемые вопросы](virtual-wan-faq.md).
