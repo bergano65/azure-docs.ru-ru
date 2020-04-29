@@ -1,6 +1,6 @@
 ---
-title: Пауза, резюме, масштаб с REST AIS
-description: Управление вычислительной мощностью в хранилище данных Azure Synapse Analytics через REST AIS.
+title: Приостановка, возобновление и масштабирование с помощью интерфейсов API
+description: Управление возможностями вычислений в хранилище данных аналитики Azure синапсе с помощью интерфейсов API RESTFUL.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -12,15 +12,15 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: 4efd5c63af9f09d41733e8e172270410245977ec
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80633205"
 ---
 # <a name="rest-apis-for-azure-sql-data-warehouse"></a>REST API для хранилища данных Azure SQL
 
-REST AIS для управления вычислениями в хранилище данных Azure Synapse Analytics.
+Интерфейсы API для управления расчетами в хранилище данных аналитики Azure синапсе.
 
 ## <a name="scale-compute"></a>Масштабирование вычислительных ресурсов
 
@@ -56,24 +56,24 @@ POST https://management.azure.com/subscriptions/{subscription-id}/resourceGroups
 ## <a name="check-database-state"></a>Проверка состояния базы данных
 
 > [!NOTE]
-> В настоящее время состояние базы данных Check может вернуться online, пока база данных завершает рабочий процесс в Режиме онлайн, что приводит к ошибкам соединения. Возможно, потребуется добавить задержку от 2 до 3 минут в код приложения, если вы используете этот вызов API для запуска попыток подключения.
+> В настоящее время проверка состояния базы данных может вернуть значение "в сети", пока база данных завершает рабочий процесс в сети, что приводит к ошибкам подключения. Может потребоваться добавить в код приложения задержку в 2 – 3 минуты, если вы используете этот вызов API для активации попыток подключения.
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}?api-version=2014-04-01 HTTP/1.1
 ```
 
-## <a name="get-maintenance-schedule"></a>Получить график обслуживания
+## <a name="get-maintenance-schedule"></a>Получение расписания обслуживания
 
-Проверьте график обслуживания, установленный для хранилища данных.
+Проверьте расписание обслуживания, установленное для хранилища данных.
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1
 
 ```
 
-## <a name="set-maintenance-schedule"></a>Установка графика обслуживания
+## <a name="set-maintenance-schedule"></a>Задать расписание обслуживания
 
-Установить и обновить график обслуживания в существующем хранилище данных.
+Установка и обновление расписания обслуживания в существующем хранилище данных.
 
 ```
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1
@@ -97,6 +97,6 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Управление вычислительными ресурсами в хранилище данных SQL Azure](sql-data-warehouse-manage-compute-overview.md).

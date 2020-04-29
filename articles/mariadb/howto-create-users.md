@@ -1,5 +1,5 @@
 ---
-title: Создание пользователей - База данных Azure для MariaDB
+title: Создание пользователей с базой данных Azure для MariaDB
 description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером базы данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 4/2/2020
 ms.openlocfilehash: 1b79a49b2fb87ebf180aaaa40447f40c5a982c2e
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80632290"
 ---
 # <a name="create-users-in-azure-database-for-mariadb"></a>Создание пользователей в базе данных Azure для MariaDB 
@@ -23,7 +23,7 @@ ms.locfileid: "80632290"
 После создания сервера базы данных Azure для MariaDB с помощью первой учетной записи администратора сервера можно создать дополнительных пользователей и предоставить им права администратора. Кроме того, учетная запись администратора сервера может использоваться для создания менее привилегированных пользователей, имеющих доступ к отдельным схемам базы данных.
 
 > [!NOTE]
-> Привилегия SUPER и роль DBA не поддерживаются. Просмотрите [привилегии](concepts-limits.md#privilege-support) в статье об ограничениях, чтобы понять, что не поддерживается в службе.
+> Роль SUPER Privilege и DBA не поддерживаются. Проверьте [права](concepts-limits.md#privilege-support) в статье ограничения, чтобы понять, что не поддерживается в службе.
 
 ## <a name="create-additional-admin-users"></a>Создание дополнительных администраторов
 1. Получите сведения о подключении и имя пользователя администратора.
@@ -85,7 +85,7 @@ ms.locfileid: "80632290"
    ```
    Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [управлением учетными записями пользователей](https://mariadb.com/kb/en/library/user-account-management/), [синтаксисом GRANT](https://mariadb.com/kb/en/library/grant/) и [привилегиями](https://mariadb.com/kb/en/library/grant/#privilege-levels) в документации по MariaDB.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими с помощью портала Azure](howto-manage-firewall-portal.md).  
 
 <!--or [Azure CLI](howto-manage-firewall-using-cli.md).-->

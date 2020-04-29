@@ -1,16 +1,16 @@
 ---
-title: Развертывание приложений с шаблонами
-description: Найдите рекомендации по созданию шаблонов Управления ресурсами Azure для предоставления и развертывания приложений Службы приложений.
+title: Развертывание приложений с помощью шаблонов
+description: Ознакомьтесь с руководством по созданию шаблонов Azure Resource Manager для предоставления и развертывания приложений службы приложений.
 author: tfitzmac
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
 ms.openlocfilehash: 0a282a412823207e5f662441158000e8c6121796
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80637926"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
@@ -22,7 +22,7 @@ ms.locfileid: "80637926"
 Определение зависимостей веб-приложений требует понимания того, как ресурсы взаимодействуют в пределах веб-приложения. Если указать зависимости в неверном порядке, это может привести к возникновению ошибок при развертывании или к наличию состояния гонки, что, в свою очередь, приводит к зависанию развертывания.
 
 > [!WARNING]
-> Если вы включили в шаблон расширение сайта MSDeploy, необходимо установить все ресурсы настройки как зависимые от ресурса MSDeploy. Изменение конфигурации приводит к асинхронной перезагрузке сайта. Если сделать ресурсы настройки зависимыми от MSDeploy, работа MSDeploy будет завершаться до перезагрузки сайта. Без этих зависимостей сайт может перезагрузиться в процессе развертывания MSDeploy. Для примера шаблона см. [шаблон WordPress с зависимостей веб-развертывания.](https://github.com/davidebbo/AzureWebsitesSamples/blob/master/ARMTemplates/WordpressTemplateWebDeployDependency.json)
+> Если вы включили в шаблон расширение сайта MSDeploy, необходимо установить все ресурсы настройки как зависимые от ресурса MSDeploy. Изменение конфигурации приводит к асинхронной перезагрузке сайта. Если сделать ресурсы настройки зависимыми от MSDeploy, работа MSDeploy будет завершаться до перезагрузки сайта. Без этих зависимостей сайт может перезагрузиться в процессе развертывания MSDeploy. Пример шаблона см. в разделе [шаблон WordPress с зависимостью веб-развертывание](https://github.com/davidebbo/AzureWebsitesSamples/blob/master/ARMTemplates/WordpressTemplateWebDeployDependency.json).
 
 На следующем изображении показан порядок зависимостей для различных ресурсов службы приложений:
 
@@ -41,7 +41,7 @@ ms.locfileid: "80637926"
 **Уровень 3**
 * Система управления версиями — зависит от веб-приложения.
 * Расширение сайта MSDeploy — зависит от веб-приложения.
-* Пример Azure Application Insights, нацеленный на веб-приложение, зависит от веб-приложения.
+* Экземпляр Application Insights Azure, предназначенный для веб-приложения, зависит от веб-приложения.
 
 **Уровень 4**
 * Сертификат службы приложений — зависит от системы управления версиями или MSDeploy (если не имеется одной из этих служб). В противном случае зависит от веб-приложения.
@@ -90,7 +90,7 @@ ms.locfileid: "80637926"
 
 1. Перейдите на [консоль Kudu](https://github.com/projectkudu/kudu/wiki/Kudu-console) сайта.
 2. Перейдите в папку по следующему пути: D:\home\LogFiles\SiteExtensions\MSDeploy.
-3. Найдите файлы appManagerStatus.xml и appManagerLog.xml. В первом файле указано состояние. Во втором файле содержатся сведения об ошибке. Если ошибка не ясна для вас, вы можете включить его, когда вы просите о помощи на [форуме](https://docs.microsoft.com/answers/topics/azure-webapps.html).
+3. Найдите файлы appManagerStatus.xml и appManagerLog.xml. В первом файле указано состояние. Во втором файле содержатся сведения об ошибке. Если ошибка не устранена, ее можно включить при запросе справки на [форуме](https://docs.microsoft.com/answers/topics/azure-webapps.html).
 
 ## <a name="choose-a-unique-web-app-name"></a>Выбор уникального имени веб-приложения
 
@@ -109,7 +109,7 @@ ms.locfileid: "80637926"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Если ваш шаблон включает ресурс [Microsoft.Web/сертификаты](/azure/templates/microsoft.web/certificates) для привязки TLS/SSL, а сертификат хранится в Хранилище ключей, необходимо убедиться, что идентификатор Службы Приложения может получить доступ к сертификату.
+Если шаблон содержит ресурс [Microsoft. Web/Certificates](/azure/templates/microsoft.web/certificates) для привязки TLS/SSL, а сертификат хранится в Key Vault, необходимо убедиться, что удостоверение службы приложений имеет доступ к сертификату.
 
 В глобальной среде Azure субъект-служба службы приложений имеет идентификатор **abfa0a7c-a6b6-4736-8310-5855508787cd**. Чтобы предоставить доступ к Key Vault для субъекта-службы службы приложений, используйте:
 
@@ -131,7 +131,7 @@ Set-AzKeyVaultAccessPolicy `
 
 Пример шаблона см. в разделе [Развертывание сертификата веб-приложения из секрета Key Vault и его использование для создания SSL-привязки](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Руководство по развертыванию веб-приложений с помощью шаблона см. [здесь](deploy-complex-application-predictably.md).
 * Сведения о синтаксисе JSON и свойствах типов ресурсов в шаблонах см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

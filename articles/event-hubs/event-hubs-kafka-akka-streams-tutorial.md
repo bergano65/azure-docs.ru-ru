@@ -1,6 +1,6 @@
 ---
 title: Использование Akka Streams для Apache Kafka с Центрами событий Azure | Документация Майкрософт
-description: В этой статье приводится информация о том, как подключить Потоки Akka к центру событий Azure.
+description: В этой статье содержатся сведения о подключении потоков Akka Streams к концентратору событий Azure.
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -12,16 +12,16 @@ ms.topic: how-to
 ms.date: 04/02/2020
 ms.author: shvija
 ms.openlocfilehash: 0b96f1448fd223aae2dde77c5c05a8c9bd74ee9b
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80632844"
 ---
 # <a name="using-akka-streams-with-event-hubs-for-apache-kafka"></a>Использование Akka Streams с Центрами событий для Apache Kafka
-В этом учебнике показано, как подключить Akka Streams к центру событий без изменения клиентских протоколов или запуска собственных кластеров. Центры событий Azure для Kafka поддерживают [версию Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
+В этом руководстве показано, как подключить потоки Akka Streams к концентратору событий, не изменяя Клиенты протокола или не запуская собственные кластеры. Концентраторы событий Azure для Kafka поддерживают [Apache Kafka версии 1,0.](https://kafka.apache.org/10/documentation.html)
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 > * Создание пространства имен в Центрах событий
 > * Клонирование примера проекта
@@ -40,18 +40,18 @@ ms.locfileid: "80632844"
 * [Комплект разработчика Java (JDK) 1.8+](https://aka.ms/azure-jdks).
     * В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
-* [Скачать](https://maven.apache.org/download.cgi) и [установить](https://maven.apache.org/install.html) двоичный архив Maven
+* [Скачивание](https://maven.apache.org/download.cgi) и [Установка](https://maven.apache.org/install.html) двоичного архива Maven
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
-* [Git](https://www.git-scm.com/downloads);
+* [Git](https://www.git-scm.com/downloads)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
 
 ## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 
-Для отправки и получения данных из любой службы концентраторов событий требуется пространство имен концентраторов событий. Для получения подробной информации смотрите [возможность создания концентратора событий.](event-hubs-create.md) Скопируйте строку подключения к Центрам событий для дальнейшего использования.
+Для отправки и получения данных из любой службы концентраторов событий требуется пространство имен концентраторов событий. Подробные сведения см. [в разделе Создание концентратора событий](event-hubs-create.md) . Скопируйте строку подключения к Центрам событий для дальнейшего использования.
 
 ## <a name="clone-the-example-project"></a>Клонирование примера проекта
 
-Теперь, когда у вас есть строка подключения концентраторов событий, клоните концентратор azure Event для репозитория Kafka и перейдите к `akka` подфондеру:
+Теперь, когда у вас есть строка подключения концентраторов событий, выполните Клонирование репозитория концентраторов событий Azure для Kafka `akka` и перейдите к вложенной папке:
 
 ```shell
 git clone https://github.com/Azure/azure-event-hubs-for-kafka.git
@@ -93,11 +93,11 @@ mvn clean package
 mvn exec:java -Dexec.mainClass="AkkaTestProducer"
 ```
 
-Производитель начинает отправлять события в концентратор событий по теме, `test`и печатает события, чтобы stdout.
+Производитель начинает отправлять события в концентратор событий в разделе `test`и выводит события в stdout.
 
 ## <a name="run-akka-streams-consumer"></a>Запуск потребителя Akka Streams
 
-Используя предоставленный пример потребителя, получайте сообщения из концентратора событий.
+Используя предоставленный пример потребителя, вы получаете сообщения из концентратора событий.
 
 ### <a name="provide-an-event-hubs-kafka-endpoint"></a>Предоставление конечной точки Kafka в Центрах событий
 
@@ -133,16 +133,16 @@ mvn clean package
 mvn exec:java -Dexec.mainClass="AkkaTestConsumer"
 ```
 
-Если в концентраторе событий есть события (например, если ваш `test`производитель также работает), то потребитель начинает получать события из темы . 
+Если концентратор событий имеет события (например, если производитель также работает), потребитель начинает получать события из раздела `test`. 
 
 Дополнительные сведения об Akka Streams см. в руководстве по [Akka Streams Kafka](https://doc.akka.io/docs/akka-stream-kafka/current/home.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
-Чтобы узнать больше о событиях концентраторов для Кафки, смотрите следующие статьи:  
+## <a name="next-steps"></a>Дальнейшие шаги
+Дополнительные сведения о концентраторах событий для Kafka см. в следующих статьях:  
 
 - [Зеркальное отображение брокера Kafka в концентраторе событий](event-hubs-kafka-mirror-maker-tutorial.md)
 - [Подключение Apache Spark к концентратору событий](event-hubs-kafka-spark-tutorial.md)
 - [Подключение Apache Flink к концентратору событий](event-hubs-kafka-flink-tutorial.md)
-- [Интеграция Kafka Connect с центром событий](event-hubs-kafka-connect-tutorial.md)
+- [Интеграция Kafka Connect с концентратором событий](event-hubs-kafka-connect-tutorial.md)
 - [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)
-- [Руководство разработчиков Apache Kafka для центров событий Azure](apache-kafka-developer-guide.md)
+- [Apache Kafka Guide для разработчиков концентраторов событий Azure](apache-kafka-developer-guide.md)

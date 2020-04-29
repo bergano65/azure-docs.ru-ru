@@ -1,6 +1,6 @@
 ---
-title: 'Учебник: Управление вычислением с помощью функций Azure'
-description: Как использовать функции Azure для управления вычислением пула S'L в Azure Synapse Analytics.
+title: Руководство. Управление средами вычислений с помощью функций Azure
+description: Как использовать функции Azure для управления вычислением пула SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -12,25 +12,25 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: aa2cff552b49bceeaf6fd46510bf78384f0e7bfb
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80631967"
 ---
-# <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Используйте функции Azure для управления ресурсами вычислений в пуле Azure Synapse Analytics
+# <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Использование функций Azure для управления ресурсами вычислений в пуле SQL Azure синапсе Analytics
 
-В этом обучаемом используется azure Functions для управления вычислительными ресурсами для пула S'L в Azure Synapse Analytics.
+В этом руководстве используются функции Azure для управления ресурсами вычислений для пула SQL в Azure синапсе Analytics.
 
-Для того, чтобы использовать приложение Azure Function App с пулом S'L, необходимо создать [основную учетную запись службы](../../active-directory/develop/howto-create-service-principal-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) с доступом к вкладчикам по той же подписке, что и экземпляр пула S'L.
+Чтобы использовать Azure приложение-функция с пулом SQL, необходимо создать [учетную запись субъекта-службы](../../active-directory/develop/howto-create-service-principal-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) с доступом участника в той же подписке, что и экземпляр пула SQL.
 
 ## <a name="deploy-timer-based-scaling-with-an-azure-resource-manager-template"></a>Развертывание масштабирования по таймеру с помощью шаблона Azure Resource Manager
 
 Чтобы развернуть шаблон, понадобится следующая информация:
 
-- Имя группы ресурсов, в ней находится экземпляр пула S'L
-- Имя логического сервера, в которого находится экземпляр пула S'L
-- Имя экземпляра пула S'L
+- Имя группы ресурсов, в которой находится экземпляр пула SQL
+- Имя логического сервера, в котором находится экземпляр пула SQL
+- Имя экземпляра пула SQL
 - идентификатор клиента (идентификатор каталога) Azure Active Directory;
 - Идентификатор подписки
 - идентификатор приложения субъекта-службы;
@@ -97,7 +97,7 @@ ms.locfileid: "80631967"
 
 Сейчас в шаблоне содержатся только две функции масштабирования. С помощью этих функций в течение дня можно только один раз уменьшить масштаб и один раз увеличить его. Для более детального контроля, например для уменьшения масштаба несколько раз в день или настройки другого режима масштабирования на выходные дни, нужно добавить еще один триггер.
 
-1. Создайте пустую функцию. Выберите *+* кнопку рядом с местоположением функций, чтобы показать панель шаблона функции.
+1. Создайте пустую функцию. Нажмите *+* кнопку рядом с расположением функций, чтобы отобразить панель шаблон функции.
 
    ![Создание функции](./media/manage-compute-with-azure-functions/create-new-function.png)
 
@@ -167,8 +167,8 @@ ms.locfileid: "80631967"
 | Функция 3 | 0 0 23 * * 5   | `var operation = {"operationType": "PauseDw"}` |
 | Функция 4 | 0 0 7 * * 0    | `var operation = {"operationType": "ResumeDw"}` |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о функциях Azure триггера с таймером см. [здесь](../../azure-functions/functions-create-scheduled-function.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
-Опробуйте [репозиторий образцов](https://github.com/Microsoft/sql-data-warehouse-samples)пула S'L.
+Извлеките [репозиторий образцов](https://github.com/Microsoft/sql-data-warehouse-samples)пула SQL.

@@ -1,6 +1,6 @@
 ---
-title: Рекомендации Synapse S'L
-description: Узнайте о рекомендациях Synapse S'L и о том, как они создаются
+title: Рекомендации по SQL синапсе
+description: Узнайте о рекомендациях по синапсе SQL и способах их создания
 services: synapse-analytics
 author: kevinvngo
 manager: craigg-msft
@@ -12,35 +12,35 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: 17877a1ef5d949fbbee080b6157844ac5b516fe7
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80633681"
 ---
-# <a name="synapse-sql-recommendations"></a>Рекомендации Synapse S'L
+# <a name="synapse-sql-recommendations"></a>Рекомендации по SQL синапсе
 
-В этой статье описаны рекомендации Synapse S'L, подаваемые через Azure Advisor.  
+В этой статье описываются рекомендации синапсе SQL, предоставляемые помощником по Azure.  
 
-В аналитической компании «S'L Analytics» содержатся рекомендации по обеспечению последовательной оптимизации рабочей нагрузки хранилища данных для производительности. Рекомендации тесно интегрированы с [Azure Advisor,](../../advisor/advisor-performance-recommendations.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) чтобы предоставить вам лучшие практики непосредственно на [портале Azure.](https://aka.ms/Azureadvisor) Аналитика s'L собирает телеметрию и всплывает рекомендации для вашей активной рабочей нагрузки на ежедневной каденции. Ниже описаны сценарии рекомендаций с поддержкой, а также как применять рекомендуемые действия.
+SQL Analytics предоставляет рекомендации для обеспечения согласованности рабочей нагрузки хранилища данных в целях повышения производительности. Рекомендации тесно интегрированы с [помощником по Azure](../../advisor/advisor-performance-recommendations.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) для предоставления рекомендаций непосредственно в [портал Azure](https://aka.ms/Azureadvisor). SQL Analytics собирает сведения о телеметрии и поверхностях для активной рабочей нагрузки в течение ежедневного ритма. Поддерживаемые сценарии рекомендации приведены ниже, а также способы применения рекомендуемых действий.
 
 Вы можете [проверить свои рекомендации](https://aka.ms/Azureadvisor) сегодня! Сейчас эта функция применяется только к хранилищам данных 2-го поколения.
 
-## <a name="data-skew"></a>Перекос данных
+## <a name="data-skew"></a>Неравномерное распределение данных
 
 Неравномерное распределение данных может привести к дополнительному перемещению данных или к возникновению узких мест в ресурсах при выполнении рабочей нагрузки. В следующем документе описывается, как выявить неравномерное распределение данных и избежать его, выбрав оптимальный принцип распределения.
 
 - [Обнаружение и устранение неравномерного распределения](sql-data-warehouse-tables-distribute.md#how-to-tell-if-your-distribution-column-is-a-good-choice)
 
-## <a name="no-or-outdated-statistics"></a>Нет или устаревшая статистика
+## <a name="no-or-outdated-statistics"></a>Статистика отсутствует или устарела
 
-Наличие неоптимальной статистики может серьезно повлиять на производительность запроса, так как это может привести к тому, что оптимизатор запросов S'L генерирует неоптимальные планы запросов. В следующем документе приводятся рекомендации по созданию и обновлению статистики:
+Наличие неоптимальной статистики может существенно повлиять на производительность запросов, так как может привести к тому, что оптимизатор запросов SQL создаст неоптимальные планы запросов. В следующем документе приводятся рекомендации по созданию и обновлению статистики:
 
 - [Создание и обновление статистики для таблицы](sql-data-warehouse-tables-statistics.md)
 
-Чтобы увидеть список затронутых таблиц этими рекомендациями, запустите следующий [скрипт T-S'L.](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/samples/sqlops/MonitoringScripts/ImpactedTables) Для создания этих рекомендаций Помощник непрерывно выполняет один и тот же скрипт T-SQL.
+Чтобы просмотреть список затронутых таблиц с помощью этих рекомендаций, выполните следующий [скрипт T-SQL](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/samples/sqlops/MonitoringScripts/ImpactedTables). Для создания этих рекомендаций Помощник непрерывно выполняет один и тот же скрипт T-SQL.
 
-## <a name="replicate-tables"></a>Таблицы репликации
+## <a name="replicate-tables"></a>Репликация таблиц
 
 Для рекомендаций реплицированной таблицы Помощник определяет варианты таблиц на основе следующих физических характеристик.
 

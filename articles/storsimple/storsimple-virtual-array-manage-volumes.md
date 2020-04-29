@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
 ms.openlocfilehash: 2dbbe6bcd4957a108cc3eae4d41816b130cf8f07
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80633868"
 ---
 # <a name="use-storsimple-device-manager-service-to-manage-volumes-on-the-storsimple-virtual-array"></a>Управление томами в виртуальном массиве StorSimple с помощью службы диспетчера устройств StorSimple
@@ -137,7 +137,7 @@ ms.locfileid: "80633868"
 3. Проверьте состояние тома, который требуется удалить. Если требуется удалить том, который не отключен, сначала отключите его, а затем выполните указания в разделе [Отключение тома](#take-a-volume-offline).
 4. При появлении запроса на подтверждение в колонке **Удалить** подтвердите операцию и щелкните **Удалить**. Том будет удален, и в колонке **Тома** будет отображаться обновленный список томов в виртуальном массиве.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Информация о [Клонировании тома StorSimple](storsimple-virtual-array-clone.md).
 

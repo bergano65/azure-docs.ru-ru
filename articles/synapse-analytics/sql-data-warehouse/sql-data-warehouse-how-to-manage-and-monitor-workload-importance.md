@@ -1,6 +1,6 @@
 ---
 title: Администрирование и мониторинг уровня важности рабочей нагрузки
-description: Узнайте, как управлять и контролировать значение уровня запросов в Azure Synapse Analytics.
+description: Узнайте, как управлять и отслеживать важность уровня запросов в Azure синапсе Analytics.
 services: synapse-analytics
 author: ronortloff
 manager: craigg
@@ -12,20 +12,20 @@ ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
 ms.openlocfilehash: 3efd8a776542616a9ceefba331b06406540905a8
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80633318"
 ---
-# <a name="manage-and-monitor-workload-importance-in-azure-synapse-analytics"></a>Управление и мониторинг важности рабочей нагрузки в Azure Synapse Analytics
+# <a name="manage-and-monitor-workload-importance-in-azure-synapse-analytics"></a>Управление и мониторинг важности рабочей нагрузки в Azure синапсе Analytics
 
-Управление и мониторинг важности уровня запроса Synapse S'L в Azure Synapse с помощью DMV и представлений каталогов.
+Управление и отслеживание важности синапсе SQL на уровне запросов в синапсе Azure с помощью динамических административных представлений и представления каталога.
 
-## <a name="monitor-importance"></a>Важность мониторинга
+## <a name="monitor-importance"></a>Мониторинг важности
 
-Мониторинг важности с использованием новой колонки важности в [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) динамическом представлении управления.
-Ниже мониторинговый запрос показывает время отправки и время начала запросов. Просмотрите время отправки и время начала, а также важно, чтобы увидеть, как важность влияет на планирование.
+Следите за важностью с помощью столбца New важности в динамическом административном представлении [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
+В приведенном ниже запросе наблюдения показано время и время начала отправки запросов. Просмотрите время отправки и время начала, а также важность, чтобы увидеть, как важно планирование.
 
 ```sql
 SELECT s.login_name, r.status, r.importance, r.submit_time, r.start_time
@@ -35,11 +35,11 @@ SELECT s.login_name, r.status, r.importance, r.submit_time, r.start_time
 ORDER BY r.start_time
 ```
 
-Чтобы углубиться в расписание запросов, используйте представления каталога.
+Чтобы просмотреть дальнейшие сведения о расписании запросов, используйте представления каталога.
 
-## <a name="manage-importance-with-catalog-views"></a>Управление значением с представлениями каталога
+## <a name="manage-importance-with-catalog-views"></a>Управление важностью с помощью представлений каталога
 
-Представление каталога sys.workload_management_workload_classifiers содержит информацию о классификаторах. Чтобы исключить системные классификаторы, которые накартеили для классов ресурсов, выполнить следующий код:
+Представление каталога sys. workload_management_workload_classifiers содержит сведения о классификаторах. Чтобы исключить определенные системой классификаторы, которые сопоставляются с классами ресурсов, выполните следующий код:
 
 ```sql
 SELECT *
@@ -47,7 +47,7 @@ SELECT *
   WHERE classifier_id > 12
 ```
 
-Представление каталога, [sys.workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), содержит информацию о параметрах, используемых при создании классификатора.  Ниже приведенный запрос показывает, что ExecReportsClassifier был создан по параметру ```membername``` значений с ExecutiveReports:
+Представление каталога [sys. workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)содержит сведения о параметрах, используемых при создании классификатора.  В приведенном ниже запросе показано, что Ексекрепортсклассифиер был ```membername``` создан в параметре для значений с ексекутиверепортс:
 
 ```sql
 SELECT c.name,cd.classifier_type, classifier_value
@@ -59,8 +59,8 @@ SELECT c.name,cd.classifier_type, classifier_value
 
 ![результаты запроса](./media/sql-data-warehouse-how-to-manage-and-monitor-workload-importance/wlm-query-results.png)
 
-Чтобы упростить неправильное устранение неполадок, мы рекомендуем удалить отображение ролей класса ресурсов при создании классификаторов рабочей нагрузки. Приведенный ниже код возвращает существующие членские роли класса ресурсов. Выполнить sp_droprolemember ```membername``` для каждого возвращенного из соответствующего класса ресурсов.
-Ниже приведен пример проверки существования перед падением классификатора рабочей нагрузки:
+Чтобы упростить устранение неполадок классификации, рекомендуется удалить сопоставления ролей класса ресурсов при создании классификаторов рабочей нагрузки. Приведенный ниже код возвращает членство в роли существующего класса ресурсов. Запустите sp_droprolemember для каждого ```membername``` из соответствующих классов ресурсов.
+Ниже приведен пример проверки существования перед удалением классификатора рабочей нагрузки.
 
 ```sql
 IF EXISTS (SELECT 1 FROM sys.workload_management_workload_classifiers WHERE name = 'ExecReportsClassifier')
@@ -68,10 +68,10 @@ IF EXISTS (SELECT 1 FROM sys.workload_management_workload_classifiers WHERE name
 GO
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Для получения дополнительной информации о классификации [см.](sql-data-warehouse-workload-classification.md)
-- Для получения дополнительной информации о важности [см.](sql-data-warehouse-workload-importance.md)
+- Дополнительные сведения о классификации см. в разделе [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md).
+- Дополнительные сведения о важности см. в статье [важность рабочей нагрузки](sql-data-warehouse-workload-importance.md) .
 
 > [!div class="nextstepaction"]
-> [Перейти к настройке важности рабочей нагрузки](sql-data-warehouse-how-to-configure-workload-importance.md)
+> [Перейдите к разделу Настройка важности рабочей нагрузки](sql-data-warehouse-how-to-configure-workload-importance.md)

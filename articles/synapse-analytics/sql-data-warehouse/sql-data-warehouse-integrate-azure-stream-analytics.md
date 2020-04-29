@@ -1,6 +1,6 @@
 ---
-title: Используйте аналитику потоков Azure
-description: Советы по использованию Azure Stream Analytics с хранилищем данных в Azure Synapse для разработки решений в режиме реального времени.
+title: Использование Azure Stream Analytics
+description: Советы по использованию Azure Stream Analytics с хранилищем данных в Azure синапсе для разработки решений в режиме реального времени.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -12,59 +12,59 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: e281f8a1fb3959256d836134b4c59f5399deb9bd
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80633286"
 ---
-# <a name="use-azure-stream-analytics-with-azure-synapse-analytics"></a>Используйте аналитику потоков Azure с помощью аналитики Azure Synapse
+# <a name="use-azure-stream-analytics-with-azure-synapse-analytics"></a>Использование Azure Stream Analytics с Azure синапсе Analytics
 
 Azure Stream Analytics является полностью управляемой службой, которая обеспечивает низкую задержку, высокий уровень доступности и масштабируемую обработку сложных событий посредством потоковой передачи данных в облако. Основные сведения см. в статье [Что такое Stream Analytics?](../../stream-analytics/stream-analytics-introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) Вы также можете узнать о создании комплексного решения с помощью Stream Analytics в руководстве [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](../../stream-analytics/stream-analytics-real-time-fraud-detection.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
-В этой статье вы узнаете, как использовать хранилище данных в качестве поглотителя для заданий Azure Stream Analytics.
+В этой статье вы узнаете, как использовать хранилище данных в качестве приемника вывода для заданий Azure Stream Analytics.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Вакансия аналитики потока Azure - Для создания задания Azure Stream Analytics выполните последующие действия в начале работы с помощью учебника [Azure Stream Analytics:](../../stream-analytics/stream-analytics-real-time-fraud-detection.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)  
+* Azure Stream Analytics задание. чтобы создать задание Azure Stream Analytics, выполните действия, описанные в руководстве [Приступая к работе с Azure Stream Analytics](../../stream-analytics/stream-analytics-real-time-fraud-detection.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .  
 
     1. Создание ввода концентратора событий
     2. Настройка и запуск приложения генератора событий
     3. Подготовка задания Stream Analytics
     4. Указание входных данных задания и запроса
-* Хранилище данных пула Azure Synapse S'L - Для создания нового хранилища данных выполните последующие шаги в [квикстарте для создания нового хранилища данных.](create-data-warehouse-portal.md)
+* Хранилище данных пула SQL Azure синапсе. чтобы создать новое хранилище данных, выполните действия, описанные в [кратком руководстве по созданию нового хранилища данных](create-data-warehouse-portal.md).
 
-## <a name="specify-streaming-output-to-point-to-your-data-warehouse"></a>Указать выход потоковой передачи, чтобы указать на ваш хранилище данных
+## <a name="specify-streaming-output-to-point-to-your-data-warehouse"></a>Указание потокового вывода для указания на хранилище данных
 
 ### <a name="step-1"></a>Шаг 1
 
-С портала Azure перейдите на работу Stream Analytics и нажмите на **результаты** в меню **топологии вакансий.**
+В портал Azure перейдите к заданию Stream Analytics и щелкните **выходные данные** в меню **топология задания** .
 
 ### <a name="step-2"></a>Шаг 2
 
-Нажмите на кнопку **Добавить** и выберите **базу данных S'L** из меню drop down.
+Нажмите кнопку **Добавить** и выберите в раскрывающемся меню пункт **база данных SQL** .
 
-![Выберите базу данных S'L](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asaoutput.png)
+![Выбор базы данных SQL](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asaoutput.png)
 
 ### <a name="step-3"></a>Шаг 3.
 
 Введите следующие значения.
 
-* *Выход Alias*: Введите дружественное название для этого вывода задания.
+* *Выходной псевдоним*. Введите понятное имя для выходных данных задания.
 * *Подписка*:
-  * Если хранилище данных находится в той же подписке, что и задание Stream Analytics, нажмите на ***базу данных Select S'L из подписки.***
-  * Если база данных находится в другой подписке, нажмите на настройки базы данных Provide S'L вручную.
-* *База данных*: Выберите базу данных назначения из списка выпадающих.
+  * Если хранилище данных находится в той же подписке, что и Stream Analytics задание, щелкните ***выбрать базу данных SQL из подписок***.
+  * Если база данных находится в другой подписке, нажмите кнопку указать параметры базы данных SQL вручную.
+* *База данных*: Выберите целевую базу данных из раскрывающегося списка.
 * *Имя пользователя*: укажите имя пользователя учетной записи, который имеет разрешение на запись в базе данных.
 * *Пароль*: укажите пароль для учетной записи указанного пользователя.
 * *Таблица*: укажите имя целевой таблицы в базе данных.
-* нажмите на кнопку **Сохранить**
+* Нажмите кнопку " **сохранить** "
 
-![Завершенная форма базы данных S'L](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asaoutputdbsettings.png)
+![Заполненная форма базы данных SQL](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asaoutputdbsettings.png)
 
 ### <a name="step-4"></a>Шаг 4.
 
-Прежде чем вы сможете выполнить тест, необходимо создать таблицу в хранилище данных.  Запустите следующий сценарий создания таблицы с помощью s'L Server Management Studio (SSMS) или на выбор инструмента запроса.
+Прежде чем можно будет выполнить тест, необходимо создать таблицу в хранилище данных.  Запустите следующий скрипт создания таблицы с помощью SQL Server Management Studio (SSMS) или средства запроса.
 
 ```sql
 CREATE TABLE SensorLog
@@ -100,27 +100,27 @@ WITH (DISTRIBUTION = ROUND_ROBIN)
 
 ### <a name="step-5"></a>Шаг 5
 
-На портале Azure для работы Stream Analytics нажмите на имя вакансии.  Нажмите на кнопку ***"Тест"*** в панели ***сведений.***
+На портал Azure для задания Stream Analytics щелкните имя задания.  Нажмите кнопку " ***тест*** " в области ***сведений о выходных данных*** .
 
-![Кнопка тестирования на](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asatest.png) деталях Outpout Когда подключение к базе данных удается, вы увидите уведомление на портале.
+![Кнопка "тест" на](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asatest.png) странице аутпаут сведения о том, что после завершения подключения к базе данных на портале отображается уведомление.
 
 ### <a name="step-6"></a>Шаг 6
 
-Нажмите на меню ***запроса*** в ***топологии вакансий*** и измените запрос, чтобы вставить данные в созданный поток.  Нажмите на выбранную ***кнопку запроса Test,*** чтобы протестировать запрос.  Нажмите кнопку ***«Сохранить запрос»,*** когда тест запроса будет успешным.
+Щелкните меню " ***запрос*** " в разделе " ***топология задания*** " и измените запрос, чтобы вставить данные в созданный потоковый выход.  Нажмите кнопку ***проверить выбранный запрос*** , чтобы проверить запрос.  Нажмите кнопку ***Сохранить запрос*** при успешном завершении теста запроса.
 
 ![Сохранение запроса](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asaquery.png)
 
 ### <a name="step-7"></a>Шаг 7
 
-Запустите задание аналитики потоков Azure.  Нажмите на кнопку ***«Пуск»*** в меню ***«Обзор».***
+Запустите задание Azure Stream Analytics.  Нажмите кнопку ***Пуск*** в меню ***Обзор*** .
 
 ![Запуск задания Stream Analytics](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asastart.png)
 
-Нажмите кнопку ***"Пуск"*** на панели работы.
+Нажмите кнопку ***Пуск*** в области запустить задание.
 
 ![Нажмите кнопку Пуск](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asastartconfirm.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для обзора интеграции [см.](sql-data-warehouse-overview-integrate.md)
-Дополнительные советы [Design decisions and coding techniques for data warehouses](sql-data-warehouse-overview-develop.md)по разработке см.
+Общие сведения об интеграции см. в разделе [Интеграция других служб](sql-data-warehouse-overview-integrate.md).
+Дополнительные советы по разработке см. в разделе [решения по проектированию и приемы программирования для хранилищ данных](sql-data-warehouse-overview-develop.md).

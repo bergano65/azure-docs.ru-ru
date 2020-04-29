@@ -1,6 +1,6 @@
 ---
-title: Установка обновления 5.1 на storSimple 8000 серии устройства (ru) Документы Майкрософт
-description: Объясняет, как установить StorSimple 8000 Серии Обновление 5.1 на вашем StorSimple 8000 серии устройства.
+title: Установка обновления 5,1 на устройство StorSimple 8000 Series | Документация Майкрософт
+description: В этой статье объясняется, как установить обновление 5,1 для серии StorSimple 8000 на устройство StorSimple 8000 Series.
 services: storsimple
 documentationcenter: NA
 author: priestlg
@@ -13,25 +13,25 @@ ms.workload: TBD
 ms.date: 03/05/2020
 ms.author: v-grpr
 ms.openlocfilehash: b90f0f35f908d16b0746075e638fe66769939a64
-ms.sourcegitcommit: 62c5557ff3b2247dafc8bb482256fef58ab41c17
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "80658044"
 ---
-# <a name="install-update-51-on-your-storsimple-device"></a>Установите обновление 5.1 на устройстве StorSimple
+# <a name="install-update-51-on-your-storsimple-device"></a>Установка обновления 5,1 на устройстве StorSimple
 
 ## <a name="overview"></a>Обзор
 
-В этом уроке объясняется, как установить обновление 5.1 на устройстве StorSimple, работающее в более ранней версии программного обеспечения через портал Azure. <!--The hotfix method is used when you are trying to install Update 5.1 on a device running pre-Update 3 versions. The hotfix method is also used when a gateway is configured on a network interface other than DATA 0 of the StorSimple device and you are trying to update from a pre-Update 1 software version.-->
+В этом учебнике объясняется, как установить обновление 5,1 на устройстве StorSimple с более ранней версией программного обеспечения с помощью портал Azure. <!--The hotfix method is used when you are trying to install Update 5.1 on a device running pre-Update 3 versions. The hotfix method is also used when a gateway is configured on a network interface other than DATA 0 of the StorSimple device and you are trying to update from a pre-Update 1 software version.-->
 
-Обновление 5.1 включает в себя ненарушающих обновления безопасности. Ненарушающее или регулярное обновление может быть применено через портал Azure <!--or by the hotfix method-->.
+Обновление 5,1 включает в себя обновления для системы безопасности без сбоев. Непостоянное или регулярное обновление можно применить с помощью портал Azure <!--or by the hotfix method-->.
 
 > [!IMPORTANT]
 >
-> * Обновление 5.1 является обязательным обновлением и должно быть установлено немедленно. Для получения дополнительной информации [см.](storsimple-update51-release-notes.md)
-> * Набор предварительных проверок (выполняются вручную и автоматически перед установкой), которые позволяют определить работоспособность устройства, то есть состояние его оборудования и качество сетевого подключения. Эти предварительные проверки выполняются только в том случае, если вы применяете обновления с портала Azure.
-> * Если вы хотите установить метод hotfix, обратитесь в [службу поддержки Майкрософт.](mailto:support@microsoft.com)
+> * Обновление 5,1 является обязательным и должно быть установлено немедленно. Дополнительные сведения см. в разделе [обновление 5,1. заметки о выпуске](storsimple-update51-release-notes.md).
+> * Набор предварительных проверок (выполняются вручную и автоматически перед установкой), которые позволяют определить работоспособность устройства, то есть состояние его оборудования и качество сетевого подключения. Эти предварительные проверки выполняются только при применении обновлений из портал Azure.
+> * Если вы хотите установить с помощью метода исправления, обратитесь в [Служба поддержки Майкрософт](mailto:support@microsoft.com).
 
 <!--
 > * We strongly recommend that when updating a device running versions prior to Update 3, you install the updates using hotfix method. If you encounter any issues, [log a support ticket](storsimple-8000-contact-microsoft-support.md). 
@@ -45,9 +45,9 @@ ms.locfileid: "80658044"
 
 [!INCLUDE [storsimple-preparing-for-update](../../includes/storsimple-preparing-for-updates.md)]
 
-## <a name="install-update-51-through-the-azure-portal"></a>Установите обновление 5.1 через портал Azure
+## <a name="install-update-51-through-the-azure-portal"></a>Установите обновление 5,1 с помощью портал Azure
 
-Выполните следующие шаги для обновления устройства до [обновления 5.1](storsimple-update51-release-notes.md).
+Чтобы обновить устройство до [обновления 5,1](storsimple-update51-release-notes.md), выполните следующие действия.
 
 > [!NOTE]
 > Майкрософт получает дополнительную диагностическую информацию от устройства. Поэтому при обнаружении нашей операционной группой проблем на устройствах мы имеем более широкие возможности для сбора информации с устройства и диагностики проблем.
@@ -58,7 +58,7 @@ ms.locfileid: "80658044"
 
     ![Выбор устройства](./media/storsimple-8000-install-update-51/update1.png)
 
-2. Перейдите к **настройкам** > устройства**Обновления устройства**.
+2. Выберите **Параметры** > устройства**обновления устройства**.
 
     ![Выбор параметра "Обновления устройства"](./media/storsimple-8000-install-update-51/update2.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "80658044"
 10. После завершения задания выберите **Параметры устройства > Обновления устройства**. Теперь версия программного обеспечения должна быть обновлена.
 
 
-Убедитесь, что ваше устройство работает **StorSimple 8000 Серия Обновление 5.1 (6.3.9600.17885)**. Также должна измениться **дата последнего обновления**.
+Убедитесь, что на устройстве установлено **обновление 5,1 для серии StorSimple 8000 (6.3.9600.17885)**. Также должна измениться **дата последнего обновления**.
 <!-- 5.1 - KB 4542887-->
 
 <!--You will now see that the Maintenance mode updates are available (this message might continue to be displayed for up to 24 hours after you install the updates). The steps to install maintenance mode update are detailed in the next section.
@@ -166,6 +166,6 @@ Perform the following steps to download and install the hotfixes.
 [!INCLUDE [storsimple-8000-install-troubleshooting](../../includes/storsimple-8000-install-troubleshooting.md)]
 -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Подробнее об [обновлении 5.1.](storsimple-update51-release-notes.md)
+Дополнительные сведения о [выпуске обновления 5,1](storsimple-update51-release-notes.md).
