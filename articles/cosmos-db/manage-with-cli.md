@@ -7,15 +7,15 @@ ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: mjbrown
 ms.openlocfilehash: 3f86468bcafe3d7ce78827aba761bb4e1bf920fa
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81273636"
 ---
 # <a name="manage-azure-cosmos-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos с помощью Azure CLI
 
-В этом руководстве приведены команды Azure CLI, позволяющие автоматизировать управление учетными записями, базами данных и контейнерами Azure Cosmos DB. Справочные страницы для всех команд Azure Cosmos DB CLI доступны в [справке Azure CLI.](https://docs.microsoft.com/cli/azure/cosmosdb) Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
+В этом руководстве приведены команды Azure CLI, позволяющие автоматизировать управление учетными записями, базами данных и контейнерами Azure Cosmos DB. Справочные страницы для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb). Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -23,10 +23,10 @@ ms.locfileid: "81273636"
 
 ## <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
 
-Создайте учетную запись Azure Cosmos DB с помощью API S'L, согласованность сеансов в 2 регионах Западной США и Восточной США:
+Создание учетной записи Azure Cosmos DB с помощью API SQL, согласованности сеансов в Западная часть США 2 и Восточная часть США 2.
 
 > [!IMPORTANT]
-> Имя учетной записи Azure Cosmos должно быть ниже регистра и менее 31 символа.
+> Имя учетной записи Azure Cosmos должно содержать только строчные буквы и менее 31 символов.
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -42,12 +42,12 @@ az cosmosdb create \
 
 ## <a name="add-or-remove-regions"></a>Добавление и удаление регионов
 
-Создайте учетную запись Azure Cosmos с двумя областями, добавьте область и удалите область.
+Создайте учетную запись Azure Cosmos с двумя регионами, добавьте регион и удалите регион.
 
 > [!NOTE]
 > Вы не можете одновременно добавлять или удалять регионы `locations` и изменять другие свойства для учетной записи Azure Cosmos. Изменение регионов нужно выполнять как отдельную операцию, не объединяя ее с другими изменениями в ресурсе учетной записи.
 > [!NOTE]
-> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа или активировать отработку отказа вручную. [См. Приоритет сбоя и](#set-failover-priority) [сбой руководства триггера.](#trigger-manual-failover)
+> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа или активировать отработку отказа вручную. См. раздел [Установка приоритета](#set-failover-priority) отработки отказа и [триггера вручную](#trigger-manual-failover).
 
 ```azurecli-interactive
 resourceGroupName='myResourceGroup'
@@ -72,7 +72,7 @@ az cosmosdb update --name $accountName --resource-group $resourceGroupName \
 
 ## <a name="enable-multiple-write-regions"></a>Включить несколько регионов записи
 
-Включить мультимастер для учетной записи Космос
+Включение нескольких хозяев для учетной записи Cosmos
 
 ```azurecli-interactive
 # Update an Azure Cosmos account from single to multi-master
@@ -85,9 +85,9 @@ accountId=$(az cosmosdb show -g $resourceGroupName -n $accountName --query id -o
 az cosmosdb update --ids $accountId --enable-multiple-write-locations true
 ```
 
-## <a name="set-failover-priority"></a>Установить приоритет failover
+## <a name="set-failover-priority"></a>Задать приоритет отработки отказа
 
-Установите приоритет сбоя для учетной записи Azure Cosmos, настроенной для автоматического сбоя
+Задайте приоритет отработки отказа для учетной записи Azure Cosmos, настроенной для автоматического перехода на другой ресурс
 
 ```azurecli-interactive
 # Assume region order is initially 'West US 2'=0 'East US 2'=1 'South Central US'=2 for account
@@ -115,10 +115,10 @@ accountId=$(az cosmosdb show -g $resourceGroupName -n $accountName --query id -o
 az cosmosdb update --ids $accountId --enable-automatic-failover true
 ```
 
-## <a name="trigger-manual-failover"></a>Сбой руководства триггера
+## <a name="trigger-manual-failover"></a>Запустить отработку отказа вручную
 
 > [!CAUTION]
-> Изменение региона с приоритетом No 0 вызовет сбой в руководстве для учетной записи Azure Cosmos. Любые другие изменения приоритета не приведут к активации отработки отказа.
+> Изменение региона с приоритетом 0 приведет к запуску отработки отказа вручную для учетной записи Azure Cosmos. Любые другие изменения приоритета не приведут к активации отработки отказа.
 
 ```azurecli-interactive
 # Assume region order is initially 'West US 2'=0 'East US 2'=1 'South Central US'=2 for account
@@ -133,9 +133,9 @@ az cosmosdb failover-priority-change --ids $accountId \
     --failover-policies 'East US 2'=0 'South Central US'=1 'West US 2'=2
 ```
 
-## <a name="list-all-account-keys"></a><a id="list-account-keys"></a>Перечислите все ключи учетной записи
+## <a name="list-all-account-keys"></a><a id="list-account-keys"></a>Вывод всех ключей учетной записи
 
-Получите все ключи для учетной записи Космос.
+Получение всех ключей для учетной записи Cosmos.
 
 ```azurecli-interactive
 # List all account keys
@@ -147,9 +147,9 @@ az cosmosdb keys list \
    -g $resourceGroupName
 ```
 
-## <a name="list-read-only-account-keys"></a>Список ключей только для чтения
+## <a name="list-read-only-account-keys"></a>Список ключей учетной записи только для чтения
 
-Получите только для чтения ключи для учетной записи «Космос».
+Получите ключи только для чтения для учетной записи Cosmos.
 
 ```azurecli-interactive
 # List read-only account keys
@@ -164,7 +164,7 @@ az cosmosdb keys list \
 
 ## <a name="list-connection-strings"></a>Вывод строк подключения
 
-Получите строки соединения для учетной записи Cosmos.
+Получение строк подключения для учетной записи Cosmos.
 
 ```azurecli-interactive
 # List connection strings
@@ -179,7 +179,7 @@ az cosmosdb keys list \
 
 ## <a name="regenerate-account-key"></a>Повторное создание ключей учетных записей
 
-Регенерировать новый ключ для учетной записи Космос.
+Повторное создание нового ключа для учетной записи Cosmos.
 
 ```azurecli-interactive
 # Regenerate secondary account keys
@@ -192,7 +192,7 @@ az cosmosdb keys regenerate \
 
 ## <a name="create-a-database"></a>Создание базы данных
 
-Создайте базу данных «Космос».
+Создайте базу данных Cosmos.
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -205,9 +205,9 @@ az cosmosdb sql database create \
     -n $databaseName
 ```
 
-## <a name="create-a-database-with-shared-throughput"></a>Создание базы данных с общей пропускной системой
+## <a name="create-a-database-with-shared-throughput"></a>Создание базы данных с общей пропускной способностью
 
-Создайте базу данных Cosmos с общей пропускной воткой.
+Создайте базу данных Cosmos с общей пропускной способностью.
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -222,9 +222,9 @@ az cosmosdb sql database create \
     --throughput $throughput
 ```
 
-## <a name="change-the-throughput-of-a-database"></a>Изменение пропускной системы базы данных
+## <a name="change-the-throughput-of-a-database"></a>Изменение пропускной способности базы данных
 
-Увеличьте пропускную стоимость базы данных «Космос» на 1000 руб./с.
+Увеличьте пропускную способность базы данных Cosmos на 1000 единиц запросов в секунду.
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -250,7 +250,7 @@ az cosmosdb sql database throughput update \
 
 ## <a name="create-a-container"></a>Создание контейнера
 
-Создайте контейнер Cosmos с политикой индекса по умолчанию, ключом раздела и RU/s 400.
+Создайте контейнер Cosmos с политикой индексов по умолчанию, ключом секции и единицами запросов в секунду 400.
 
 ```azurecli-interactive
 # Create a SQL API container
@@ -286,9 +286,9 @@ az cosmosdb sql container update \
     --ttl=86400
 ```
 
-## <a name="create-a-container-with-a-custom-index-policy"></a>Создание контейнера с пользовательской политикой индекса
+## <a name="create-a-container-with-a-custom-index-policy"></a>Создание контейнера с настраиваемой политикой индексов
 
-Создайте контейнер Cosmos с пользовательской политикой индекса, пространственным индексом, составным индексом, ключом раздела и RU/s 400.
+Создайте контейнер Cosmos с пользовательской политикой индексов, пространственным индексом, составным индексом, ключом секции и единицами запросов в секунду (400).
 
 ```azurecli-interactive
 # Create a SQL API container
@@ -340,7 +340,7 @@ rm -f "idxpolicy-$uniqueId.json"
 
 ## <a name="change-the-throughput-of-a-container"></a>Изменение пропускной способности контейнера
 
-Увеличьте пропускную стоимость контейнера Cosmos на 1000 руб./с.
+Увеличьте пропускную способность контейнера Cosmos на 1000 единиц запросов в секунду.
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -366,10 +366,10 @@ az cosmosdb sql container throughput update \
     --throughput $newRU
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure CLI см.:
 
 - [Установка Azure CLI](/cli/azure/install-azure-cli)
-- [Ссылка Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb)
+- [Справочник по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb)
 - [Дополнительные примеры Azure CLI для Azure Cosmos DB](cli-samples.md)
