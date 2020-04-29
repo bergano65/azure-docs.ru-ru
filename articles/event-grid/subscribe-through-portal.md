@@ -1,6 +1,6 @@
 ---
 title: Подписки на службу "Сетка событий Azure" через портал
-description: В этой статье описывается, как создавать подписки Event Grid для поддерживаемых источников, таких как Хранилище Azure Blob, с помощью портала Azure.
+description: В этой статье описывается, как создать подписки на сетку событий для поддерживаемых источников, таких как хранилище BLOB-объектов Azure, с помощью портал Azure.
 services: event-grid
 author: spelluru
 ms.service: event-grid
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: spelluru
 ms.openlocfilehash: 599f48ed241010d8551bd110c7f778c9ef508eac
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81393176"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Подписка на события через портал
@@ -28,7 +28,7 @@ ms.locfileid: "81393176"
 
 1. Выполните поиск по словосочетанию **подписки на Сетку событий** и выберите ее из доступных вариантов.
 
-   ![Поиск](./media/subscribe-through-portal/search.png)
+   ![Система поиска](./media/subscribe-through-portal/search.png)
 
 1. Выберите **+ Event Subscription** (+ Подписка на события).
 
@@ -64,7 +64,7 @@ ms.locfileid: "81393176"
 
 Портал предоставляет параметры для создания подписки на события, относящиеся к этому источнику.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

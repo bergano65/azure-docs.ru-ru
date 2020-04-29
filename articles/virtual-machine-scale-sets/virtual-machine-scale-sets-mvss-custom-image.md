@@ -1,5 +1,5 @@
 ---
-title: Ссылка на пользовательское изображение в шаблоне набора маштабов Azure
+title: Создание ссылки на пользовательский образ в шаблоне масштабируемого набора Azure
 description: Узнайте, как добавить настраиваемый образ в существующий шаблон масштабируемого набора виртуальных машин Azure
 author: mimckitt
 tags: azure-resource-manager
@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: mimckitt
 ms.openlocfilehash: 3965090239949b5e1116ceebe427728e49ffafe4
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81273704"
 ---
 # <a name="add-a-custom-image-to-an-azure-scale-set-template"></a>Добавление настраиваемого образа в шаблон масштабируемого набора Azure
 
-В этой статье показано, как изменить [базовый шаблон набора масштабов](virtual-machine-scale-sets-mvss-start.md) для развертывания из пользовательского изображения.
+В этой статье показано, как изменить [шаблон базового масштабируемого набора](virtual-machine-scale-sets-mvss-start.md) для развертывания из пользовательского образа.
 
 ## <a name="change-the-template-definition"></a>Изменение определения шаблона
-В [предыдущей статье](virtual-machine-scale-sets-mvss-start.md) мы создали базовый шаблон набора масштабов. Теперь мы будем использовать этот предыдущий шаблон и изменить его для создания шаблона, который развертывает набор масштаба из пользовательского изображения.  
+В [предыдущей статье](virtual-machine-scale-sets-mvss-start.md) мы создали шаблон базового масштабируемого набора. Теперь мы будем использовать этот шаблон и изменим его для создания шаблона, который развертывает масштабируемый набор из пользовательского образа.  
 
 ### <a name="creating-a-managed-disk-image"></a>Создание образа управляемого диска
 

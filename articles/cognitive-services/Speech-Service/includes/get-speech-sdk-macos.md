@@ -5,30 +5,30 @@ ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
 ms.openlocfilehash: 57de7f1e7c37fec66cda666d3f144e52849a026f
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81399971"
 ---
-При разработке для macOS, Есть три речи SDKs доступны.
+При разработке для macOS доступно три пакета SDK для распознавания речи.
 
-- Объектив-C Речи SDK доступна на родине в качестве пакета CocoaPod
-- SDK речи .NET может быть использован с **Xamarin.Mac,** как он реализует .NET Стандарт 2.0
-- Python Speech SDK доступен в виде модуля PyPI
+- Пакет SDK цели-C для распознавания речи доступен в виде пакета Кокоапод.
+- Пакет SDK для .NET для распознавания речи можно использовать с **Xamarin. Mac** , так как он реализует .NET Standard 2,0
+- Пакет SDK для распознавания речи Python доступен в виде модуля PyPI
 
 > [!TIP]
-> Для получения подробной информации, используя объектив-C речи SDK с Swift, см <a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift" target="_blank">Импортирование объективных-C в Swift <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>.
+> Дополнительные сведения об использовании речевого пакета "объектив-C" с помощью SWIFT см. в разделе <a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift" target="_blank">Импорт цели-c в SWIFT <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>.
 
 ### <a name="system-requirements"></a>Требования к системе
 
-- MacOS версия 10.13 или позже
+- MacOS версии 10,13 или более поздней.
 
 # <a name="xcode"></a>[Xcode](#tab/mac-xcode)
 
 :::row:::
     :::column span="3":::
-        Пакет macOS CocoaPod доступен для скачивания и использования с <a href="https://apps.apple.com/us/app/xcode/id497799835" target="_blank">Xcode <span class="docon docon-navigate-external x-hidden-focus"></span> 9.4.1 (или позже)</a> интегрированной средой разработки (IDE). Во-первых, <a href="https://aka.ms/csspeech/macosbinary" target="_blank">скачать двоичный CocoaPod <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>. Извлеките стручок в том же каталоге для его `pod` предполагаемого использования, создайте *Podfile* и перечислите как . `target`
+        Пакет macOS кокоапод доступен для загрузки и использования в интегрированной среде разработки (IDE) <a href="https://apps.apple.com/us/app/xcode/id497799835" target="_blank">Xcode 9.4.1 <span class="docon docon-navigate-external x-hidden-focus"></span> (или более поздней версии)</a> . Сначала <a href="https://aka.ms/csspeech/macosbinary" target="_blank">Скачайте двоичный кокоапод <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>. Извлеките модуль Pod в том же каталоге, в котором он использовался, создайте *Podfile* и `pod` перечислите его как `target`.
     :::column-end:::
     :::column:::
         <br>
@@ -47,11 +47,11 @@ target 'MyApp' do
 end
 ```
 
-# <a name="xamarinmac"></a>[Xamarin.Mac](#tab/mac-xamarin)
+# <a name="xamarinmac"></a>[Xamarin. Mac](#tab/mac-xamarin)
 
 :::row:::
     :::column span="3":::
-        Xamarin. Mac предоставляет полный пакет SDK для macOS для разработчиков .NET, позволяющий создавать собственные приложения Mac на C#. Для получения дополнительной информации <a href="https://docs.microsoft.com/xamarin/mac/" target="_blank">см. <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>
+        Xamarin. Mac предоставляет полный пакет SDK для macOS для разработчиков .NET, позволяющий создавать собственные приложения Mac на C#. Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/xamarin/mac/" target="_blank">Xamarin. <span class="docon docon-navigate-external x-hidden-focus"> </span>Mac </a>.
     :::column-end:::
     :::column:::
         <br>
@@ -71,5 +71,5 @@ end
 
 #### <a name="additional-resources"></a>Дополнительные ресурсы
 
-- <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/objectivec/macos" target="_blank">macOS Речь SDK быстрый запуск Объективный-C исходный код<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/swift/macos" target="_blank">macOS речи SDK быстрый запуск Swift исходный код<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/objectivec/macos" target="_blank">Краткий пример пакета SDK для macOS для распознавания речи — исходный код на языке C<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/swift/macos" target="_blank">исходный код руководства по пакету SDK для macOS для распознавания речи<span class="docon docon-navigate-external x-hidden-focus"></span></a>

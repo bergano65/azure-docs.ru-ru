@@ -1,7 +1,7 @@
 ---
-title: HTTP TO HTTPS перенаправление с помощью CLI
+title: Перенаправление HTTP в HTTPS с помощью интерфейса командной строки
 titleSuffix: Azure Application Gateway
-description: Узнайте, как создать шлюз приложения и добавить сертификат для прекращения TLS с помощью Azure CLI.
+description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения TLS с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -9,15 +9,15 @@ ms.topic: article
 ms.date: 11/15/2019
 ms.author: victorh
 ms.openlocfilehash: 6bf8f3b7bfb446db78f0c97a246977fec6cd54cb
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81312139"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-cli"></a>Создание шлюза приложений с сертификатом с помощью Azure CLI
 
-Вы можете использовать Azure CLI для создания [шлюза приложения](overview.md) с сертификатом для прекращения TLS/SSL. Правило маршрутизации используется для перенаправления трафика HTTP в HTTPS-порт в шлюзе приложений. В этом примере также создается [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) с двумя экземплярами виртуальных машин, предназначенный для внутреннего пула шлюза приложений.
+Вы можете использовать Azure CLI для создания [шлюза приложений](overview.md) с сертификатом для завершения TLS/SSL. Правило маршрутизации используется для перенаправления трафика HTTP в HTTPS-порт в шлюзе приложений. В этом примере также создается [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) с двумя экземплярами виртуальных машин, предназначенный для внутреннего пула шлюза приложений.
 
 Вы узнаете, как выполнять следующие задачи:
 

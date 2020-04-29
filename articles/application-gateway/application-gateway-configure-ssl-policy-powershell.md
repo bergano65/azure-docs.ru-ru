@@ -1,7 +1,7 @@
 ---
 title: Настройка политики TLS с помощью PowerShell
 titleSuffix: Azure Application Gateway
-description: В этой статье содержатся инструкции по настройке политики TLS на шлюзе приложений Azure
+description: В этой статье приводятся инструкции по настройке политики TLS в шлюзе приложений Azure.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -9,19 +9,19 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: 3804059fdd818f10663d14bde72da2c6773fa53f
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81312678"
 ---
-# <a name="configure-tls-policy-versions-and-cipher-suites-on-application-gateway"></a>Настройка версий политики TLS и наборов шифров на шлюзе приложений
+# <a name="configure-tls-policy-versions-and-cipher-suites-on-application-gateway"></a>Настройка версий политик TLS и комплектов шифров в шлюзе приложений
 
-Узнайте, как настроить версии политики TLS/SSL и наборы шифров на шлюзе приложений. Вы можете выбрать из списка предопределенных политик, которые содержат различные конфигурации версий политики TLS и наборы включенных шифров. У вас также есть возможность определить [пользовательскую политику TLS](#configure-a-custom-tls-policy) на основе ваших требований.
+Узнайте, как настроить версии политик TLS/SSL и комплекты шифров в шлюзе приложений. Можно выбрать из списка стандартных политик, которые содержат различные конфигурации версий политик TLS и включенных комплектов шифров. Вы также можете определить [пользовательскую политику TLS](#configure-a-custom-tls-policy) в соответствии с вашими требованиями.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="get-available-tls-options"></a>Получите доступные опции TLS
+## <a name="get-available-tls-options"></a>Получить доступные параметры TLS
 
 Командлет `Get-AzApplicationGatewayAvailableSslOptions` позволяет получить список доступных стандартных политик, доступных комплектов шифров и версий протокола, которые можно настроить. Ниже приведен пример результата выполнения командлета.
 
@@ -71,9 +71,9 @@ AvailableProtocols:
     TLSv1_2
 ```
 
-## <a name="list-pre-defined-tls-policies"></a>Список заранее определенных политик TLS
+## <a name="list-pre-defined-tls-policies"></a>Список предварительно определенных политик TLS
 
-В составе шлюза приложений содержится 3 стандартные политики, которыми можно воспользоваться. Командлет `Get-AzApplicationGatewaySslPredefinedPolicy` извлекает эти политики. В каждой политике включены разные версии протокола SSL и комплекты шифров. Эти заранее определенные политики могут быть использованы для быстрой настройки политики TLS на шлюзе приложения. По умолчанию **AppGwSslPolicy20150501** выбирается, если не определена конкретная политика TLS.
+В составе шлюза приложений содержится 3 стандартные политики, которыми можно воспользоваться. Командлет `Get-AzApplicationGatewaySslPredefinedPolicy` извлекает эти политики. В каждой политике включены разные версии протокола SSL и комплекты шифров. Эти предварительно определенные политики можно использовать для быстрой настройки политики TLS в шлюзе приложений. По умолчанию выбран параметр **AppGwSslPolicy20150501** , если не определена определенная политика TLS.
 
 Ниже приведен пример выходных данных запуска `Get-AzApplicationGatewaySslPredefinedPolicy`.
 
@@ -106,17 +106,17 @@ CipherSuites:
 ...
 ```
 
-## <a name="configure-a-custom-tls-policy"></a>Настройка пользовательской политики TLS
+## <a name="configure-a-custom-tls-policy"></a>Настройка настраиваемой политики TLS
 
-При настройке пользовательской политики TLS вы проходите следующие параметры: PolicyType, MinProtocolVersion, CipherSuite и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений. 
+При настройке настраиваемой политики TLS передаются следующие параметры: PolicyType, MinProtocolVersion, CipherSuite и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений. 
 
-Следующий пример устанавливает пользовательскую политику TLS на шлюзе приложения. В качестве минимальной версии протокола она задает версию `TLSv1_1` и включает следующие комплекты шифров.
+В следующем примере задается настраиваемая политика TLS для шлюза приложений. В качестве минимальной версии протокола она задает версию `TLSv1_1` и включает следующие комплекты шифров.
 
 * TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
 * TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
 
 > [!IMPORTANT]
-> TLS_RSA_WITH_AES_256_CBC_SHA256 должны быть выбраны при настройке пользовательской политики TLS. Портал приложений использует этот набор шифров для управления бэкэндом. Вы можете использовать это в сочетании с любыми другими люксами, но этот также должен быть выбран. 
+> При настройке настраиваемой политики TLS необходимо выбрать TLS_RSA_WITH_AES_256_CBC_SHA256. Шлюз приложений использует этот комплект шифров для управления серверной частью. Его можно использовать в сочетании с любыми другими наборами, но этот параметр также должен быть выбран. 
 
 ```powershell
 # get an application gateway resource
@@ -132,11 +132,11 @@ Get-AzApplicationGatewaySslPolicy -ApplicationGateway $gw
 Set-AzApplicationGateway -ApplicationGateway $gw
 ```
 
-## <a name="create-an-application-gateway-with-a-pre-defined-tls-policy"></a>Создание шлюза приложения с заранее определенной политикой TLS
+## <a name="create-an-application-gateway-with-a-pre-defined-tls-policy"></a>Создание шлюза приложений с предварительно определенной политикой TLS
 
-При настройке политики TLS, предопределенной, вы проходите следующие параметры: PolicyType, PolicyName и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений.
+При настройке предопределенной политики TLS передаются следующие параметры: PolicyType, PolicyName и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений.
 
-Следующий пример создает новый шлюз приложения с заранее определенной политикой TLS.
+В следующем примере создается новый шлюз приложений с предварительно определенной политикой TLS.
 
 ```powershell
 # Create a resource group
@@ -189,9 +189,9 @@ $policy = New-AzApplicationGatewaySslPolicy -PolicyType Predefined -PolicyName A
 $appgw = New-AzApplicationGateway -Name appgwtest -ResourceGroupName $rg.ResourceGroupName -Location "East US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SslCertificates $cert -SslPolicy $policy
 ```
 
-## <a name="update-an-existing-application-gateway-with-a-pre-defined-tls-policy"></a>Обновление существующего шлюза приложений с помощью заранее определенной политики TLS
+## <a name="update-an-existing-application-gateway-with-a-pre-defined-tls-policy"></a>Обновление существующего шлюза приложений с помощью предварительно определенной политики TLS
 
-Чтобы установить пользовательскую политику TLS, передайте следующие параметры: **PolicyType,** **MinProtocolVersion,** **CipherSuite**и **ApplicationGateway.** Чтобы установить предопределенный tLS-политики, передайте следующие параметры: **PolicyType,** **PolicyName**и **ApplicationGateway**. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений.
+Чтобы задать пользовательскую политику TLS, передайте следующие параметры: **PolicyType**, **MinProtocolVersion**, **CipherSuite**и **ApplicationGateway**. Чтобы задать стандартную политику TLS, передайте следующие параметры: **PolicyType**, **PolicyName**и **ApplicationGateway**. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений.
 
 Ниже приводятся примеры кода для настраиваемой и предопределенной политик. Раскомментируйте политику, которую нужно использовать.
 
@@ -215,6 +215,6 @@ $AppGw = get-Azapplicationgateway -Name $AppGWname -ResourceGroupName $RG
 $SetGW = Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о перенаправлении трафика HTTP на конечную точку HTTPS см. в статье [Общие сведения о перенаправлении для шлюза приложений](application-gateway-redirect-overview.md).

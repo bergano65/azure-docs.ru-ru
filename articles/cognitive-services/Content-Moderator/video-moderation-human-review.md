@@ -1,7 +1,7 @@
 ---
 title: Модерация видео с помощью пользовательских проверок — Content Moderator
 titleSuffix: Azure Cognitive Services
-description: Используйте режим видеосотечная помощь с помощью машины и инструмент «Обзор» для умерить неуместный контент
+description: Использование управляемого видеоролика и средства проверки на умеренное неприемлемое содержимое
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.openlocfilehash: 0c031a890efc7fad7e5d9caefce3b0e66c515d90
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81404238"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
 
-Используйте инструмент [модератора с](video-moderation-api.md) помощью машины и [обзора](Review-Tool-User-Guide/human-in-the-loop.md) контента, чтобы умерить видео и стенограммы для взрослых (явных) и колоритный (предлагательный) контент, чтобы получить наилучшие результаты для вашего бизнеса.
+Для получения лучших результатов для вашего бизнеса Используйте средство контроля и [просмотра](Review-Tool-User-Guide/human-in-the-loop.md) [видео](video-moderation-api.md) Content Moderator с машинным сопровождением и проверки на умеренные видео и записи для взрослых (предполагающее определенную).
 
 ## <a name="video-trained-classifier-preview"></a>Классификатор, обученный с помощью видео, (предварительная версия)
 
@@ -100,7 +100,7 @@ ms.locfileid: "81404238"
 
 ![Представление расшифровки инструмента проверки видео](images/video-review-transcript-view.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Приступите к работе с помощью [краткого руководства по модерации видео](video-moderation-api.md).
 - Узнайте, как создать [проверки видео](video-reviews-quickstart-dotnet.md) на основе прошедших модерацию выходных данных для рецензентов-пользователей.

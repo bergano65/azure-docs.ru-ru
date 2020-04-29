@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.author: trbye
 ms.openlocfilehash: 73e6e117428808aae39e361a3b119e9b2af1ac27
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81399678"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
@@ -17,11 +17,11 @@ ms.locfileid: "81399678"
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от вашей платформы, следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получить речь <span class="docon docon-navigate-external x-hidden-focus"></span> SDK</a> статьи речи SDK.
+Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span> </a> статьи о пакете SDK для распознавания речи.
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
-Чтобы выполнить примеры в этой `import` статье, включите следующие утверждения в верхней части*q . *Файл кода Java.
+Чтобы выполнить примеры в этой статье, включите следующие `import` инструкции в начало **. *Файл кода Java.
 
 ```java
 package speech;
@@ -34,9 +34,9 @@ import com.microsoft.cognitiveservices.speech.audio.*;
 import com.microsoft.cognitiveservices.speech.translation.*;
 ```
 
-## <a name="sensitive-data-and-environment-variables"></a>Чувствительные данные и переменные среды
+## <a name="sensitive-data-and-environment-variables"></a>Конфиденциальные данные и переменные среды
 
-Пример исходного кода в этой статье зависит от переменных среды для хранения конфиденциальных данных, таких как ключ подписки ресурса Speech и регион. Файл кода Java `static final String` содержит два значения, которые присваиваются `SPEECH__SUBSCRIPTION__KEY` переменным среды хоста, а именно: и `SPEECH__SERVICE__REGION`. Оба этих поля находятся в области класса, что делает их доступными в телах метода класса. Для получения дополнительной информации [environment variables and application configuration](../../../../cognitive-services-security.md#environment-variables-and-application-configuration)о переменных среды см.
+Пример исходного кода в этой статье зависит от переменных среды для хранения конфиденциальных данных, таких как ключ и регион подписки на речевые ресурсы. Файл кода Java содержит два `static final String` значения, которые назначаются из переменных среды хоста машин, `SPEECH__SUBSCRIPTION__KEY` а именно и `SPEECH__SERVICE__REGION`. Оба эти поля находятся в области класса, делая их доступными в теле метода класса. Дополнительные сведения о переменных среды см. в разделе [переменные среды и конфигурация приложения](../../../../cognitive-services-security.md#environment-variables-and-application-configuration).
 
 ```java
 public class App {
@@ -48,7 +48,7 @@ public class App {
 }
 ```
 
-## <a name="create-a-speech-translation-configuration"></a>Создание конфигурации речевого перевода
+## <a name="create-a-speech-translation-configuration"></a>Создание конфигурации перевода речи
 
 Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechTranslationConfig`][config]. Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
@@ -89,7 +89,7 @@ public class App {
 
 ## <a name="change-source-language"></a>Изменение исходного языка
 
-Одной из распространенных задач речевого перевода является определение языка ввода (или источника). Давайте посмотрим, как изменить язык ввода на итальянский. В коде взаимодействуйте с [`SpeechTranslationConfig`][config] `setSpeechRecognitionLanguage` экземпляром, вызывая метод.
+Одной из распространенных задач перевода речи является указание языка ввода (или исходного кода). Давайте посмотрим, как изменить язык ввода на итальянский. В коде Взаимодействуйте с [`SpeechTranslationConfig`][config] экземпляром, вызвав `setSpeechRecognitionLanguage` метод.
 
 ```java
 static void translateSpeech() {
@@ -101,11 +101,11 @@ static void translateSpeech() {
 }
 ```
 
-Функция [`setSpeechRecognitionLanguage`][recognitionlang] ожидает строку формата языкового локализации. Вы можете указать любое значение в столбце **Языковой стандарт** в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
+[`setSpeechRecognitionLanguage`][recognitionlang] Функция принимает строку формата языкового стандарта. Вы можете указать любое значение в столбце **Языковой стандарт** в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
 
-## <a name="add-translation-language"></a>Добавление языка перевода
+## <a name="add-translation-language"></a>Добавить язык перевода
 
-Еще одна общая задача речевого перевода заключается в указании целевых языков перевода, по крайней мере один требуется, но кратные поддерживаются. В следующем фрагменте кода, как французский, так и немецкий язык в качестве языка перевода цели.
+Другой распространенной задачей перевода речи является указание целевых языков перевода, хотя по крайней мере один является обязательным, но поддерживаются множественные. В следующем фрагменте кода в качестве целей языка перевода — французский и немецкий.
 
 ```java
 static void translateSpeech() {
@@ -120,11 +120,11 @@ static void translateSpeech() {
 }
 ```
 
-С каждым [`addTargetLanguage`][addlang]вызовом на, новый язык целевого перевода указан. Другими словами, когда речь распознается из исходного языка, каждый целевой перевод доступен как часть полученной операции перевода.
+При каждом вызове [`addTargetLanguage`][addlang]метода указывается новый целевой язык перевода. Иными словами, когда речь распознается от исходного языка, каждый целевой перевод доступен как часть результирующей операции преобразования.
 
-## <a name="initialize-a-translation-recognizer"></a>Инициализация распознавания перевода
+## <a name="initialize-a-translation-recognizer"></a>Инициализация распознавателя трансляции
 
-После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. При инициализации [`TranslationRecognizer`][recognizer]ему необходимо передать `translationConfig`. Объект конфигурации предоставляет учетные данные, необходимые службе речи для проверки запроса.
+После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. При инициализации [`TranslationRecognizer`][recognizer]ему необходимо передать `translationConfig`. Объект конфигурации предоставляет учетные данные, необходимые службе распознавания речи для проверки запроса.
 
 Если вы распознаете речь с помощью стандартного микрофона вашего устройства, вот как должен выглядеть [`TranslationRecognizer`][recognizer]:
 
@@ -150,7 +150,7 @@ static void translateSpeech() {
 > [!TIP]
 > [Узнайте, как получить идентификатор устройства для входного аудиоустройства](../../../how-to-select-audio-input-devices.md).
 
-Во-первых, вы `AudioConfig` будете ссылаться на объект следующим образом:
+Во первых, вы будете ссылаться `AudioConfig` на объект следующим образом:
 
 ```java
 static void translateSpeech() {
@@ -194,7 +194,7 @@ static void translateSpeech() {
 
 ## <a name="translate-speech"></a>Преобразование текста
 
-Для перевода речи, речь SDK опирается на микрофон или аудио ввод файла. Распознавание речи происходит перед переводом речи. После того, как все объекты были инициализированы, позвоните функции распознавания и получите результат.
+Чтобы перевести речь, речевой пакет SDK использует микрофон или входные звуковые файлы. Распознавание речи выполняется перед переводом речи. После инициализации всех объектов вызовите функцию "распознать один раз" и получите результат.
 
 ```java
 static void translateSpeech() throws ExecutionException, InterruptedException {
@@ -222,18 +222,18 @@ static void translateSpeech() throws ExecutionException, InterruptedException {
 }
 ```
 
-Для получения дополнительной информации о речи к тексту, см [основы распознавания речи](../../../speech-to-text-basics.md).
+Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../speech-to-text-basics.md).
 
-## <a name="synthesize-translations"></a>Синтез переводов
+## <a name="synthesize-translations"></a>Синтезирование переводов
 
-После успешного распознавания речи и перевода результат содержит все переводы в словаре. Функция [`getTranslations`][translations] возвращает словарь с ключом в качестве языка целевого перевода, а значение — переводным текстом. Признанная речь может быть переведена, а затем синтезирована на другом языке (речь к речи).
+После успешного распознавания речи и перевода результат содержит все переводы в словаре. [`getTranslations`][translations] Функция возвращает словарь с ключом в качестве целевого языка перевода, а значение — переведенный текст. Распознавание речи может быть переведено, а затем синтезировано на другом языке (преобразование речи в речь).
 
 ### <a name="event-based-synthesis"></a>Синтез на основе событий
 
-Объект `TranslationRecognizer` разоблачает `synthesizing` событие. Событие запускается несколько раз и обеспечивает механизм для извлечения синтезированного звука из результата распознавания перевода. Если вы переводите на несколько языков, [см.](#manual-synthesis) Укажите голос синтеза, [`setVoiceName`][voicename] назначив обработчик `synthesizing` а также предоставив обработчик ановийку событий, получите звук. Следующий пример сохраняет переведенный звук как файл *.wav.*
+`TranslationRecognizer` Объект предоставляет `synthesizing` событие. Событие срабатывает несколько раз и предоставляет механизм для получения синтезированного звука из результатов распознавания перевода. Если вы выполняете перевод на несколько языков, см. статью [Ручное синтез](#manual-synthesis). Укажите голосовой голос путем назначения [`setVoiceName`][voicename] и предоставления обработчика событий для `synthesizing` события, получения звука. В следующем примере переведенный звук сохраняется в виде *WAV* -файла.
 
 > [!IMPORTANT]
-> Синтез на основе событий работает только с одним переводом, **не** добавляя несколько языков целевого перевода. Кроме того, [`setVoiceName`][voicename] например, язык должен быть таким же, как и на языке целевого перевода; `"de"` может накарте `"de-DE-Hedda"`.
+> Синтез на основе событий работает только с одним переводом, не **добавляя** несколько целевых языков преобразования. Кроме того, [`setVoiceName`][voicename] должен быть тот же язык, что и целевой язык перевода, например. `"de"` может сопоставляться `"de-DE-Hedda"`с.
 
 ```java
 static void translateSpeech() throws ExecutionException, FileNotFoundException, InterruptedException, IOException {
@@ -278,9 +278,9 @@ static void translateSpeech() throws ExecutionException, FileNotFoundException, 
 }
 ```
 
-### <a name="manual-synthesis"></a>Ручной синтез
+### <a name="manual-synthesis"></a>Ручное синтез
 
-Функция [`getTranslations`][translations] возвращает словарь, который может быть использован для синтеза аудио из текста перевода. Итерировать каждый перевод и синтезировать перевод. При создании `SpeechSynthesizer` экземпляра `SpeechConfig` объект должен [`setSpeechSynthesisVoiceName`][speechsynthesisvoicename] иметь свойство, настроенное на нужный голос. Следующий пример переводится на пять языков, и каждый перевод затем синтезируется в аудио файл на соответствующем нейронном языке.
+[`getTranslations`][translations] Функция возвращает словарь, который можно использовать для синтезирования звука из текста перевода. Перебирает каждый перевод и синтезированный перевод. При создании `SpeechSynthesizer` экземпляра `SpeechConfig` объект должен иметь [`setSpeechSynthesisVoiceName`][speechsynthesisvoicename] свойство со значением требуемого голоса. Следующий пример преобразуется в пять языков, и каждый перевод затем синтезирован в звуковой файл на соответствующем языке нейрона.
 
 ```java
 static void translateSpeech() throws ExecutionException, InterruptedException {
@@ -327,7 +327,7 @@ static void translateSpeech() throws ExecutionException, InterruptedException {
 }
 ```
 
-Для получения дополнительной информации о синтезе речи, см [основы синтеза речи](../../../text-to-speech-basics.md).
+Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../text-to-speech-basics.md).
 
 [config]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.translation.SpeechTranslationConfig?view=azure-java-stable
 [audioconfig]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.audio.AudioConfig?view=azure-java-stable

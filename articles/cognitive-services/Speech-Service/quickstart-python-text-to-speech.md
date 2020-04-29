@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 04/13/2020
 ms.author: trbye
 ms.openlocfilehash: 171fdb033cba422d8ba580da3ab54db88ca20872
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81400830"
 ---
 # <a name="convert-text-to-speech-using-python"></a>Преобразование текста в речь с использованием Python
@@ -26,7 +26,7 @@ ms.locfileid: "81400830"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Python 2.7.x или 3.x;
-* <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Визуальная студия <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>, <a href="https://code.visualstudio.com/download" target="_blank">Визуальный код <span class="docon docon-navigate-external x-hidden-focus"> </span>студии </a>, или ваш любимый текстовый редактор
+* <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio <span class="docon docon-navigate-external x-hidden-focus"></span></a>, <a href="https://code.visualstudio.com/download" target="_blank"> Visual Studio Code <span class="docon docon-navigate-external x-hidden-focus"></span></a> или другой редактор кода;
 * ключ подписки Azure для службы "Речь".
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
@@ -173,4 +173,4 @@ python tts.py
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Quickstart: Synthesize speech with the Speech SDK for Python](quickstarts/speech-to-text-from-microphone.md) (Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Python)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
-* [Запись образцов голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)
+* [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

@@ -7,10 +7,10 @@ ms.date: 03/16/2018
 ms.topic: conceptual
 keywords: powershell, runbook, json, служба автоматизации azure
 ms.openlocfilehash: 2a6652c988eb77a1c5c7dbf800586b1c5fb756c4
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81392211"
 ---
 # <a name="deploy-an-azure-resource-manager-template-in-an-azure-automation-powershell-runbook"></a>Развертывание шаблона Azure Resource Manager в runbook PowerShell службы автоматизации Azure
@@ -22,16 +22,16 @@ ms.locfileid: "81392211"
 В этой статье мы создадим runbook PowerShell, использующий шаблон Resource Manager, который расположен в [службе хранилища Azure](../storage/common/storage-introduction.md), для развертывания новой учетной записи хранения Azure.
 
 >[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](automation-update-azure-modules.md)
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется следующее.
 
-* Подписка Azure. Если у вас его еще нет, вы можете [активировать льготы для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [подписаться на бесплатную учетную запись.](https://azure.microsoft.com/free/)
+* Подписка Azure. Если у вас ее еще нет, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрироваться для использования бесплатной учетной записи](https://azure.microsoft.com/free/).
 * [Учетная запись службы автоматизации](automation-sec-configure-azure-runas-account.md) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure.  Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
 * [Учетная запись хранения Azure](../storage/common/storage-create-storage-account.md) для хранения шаблона Resource Manager.
-* Azure PowerShell установлена на локальной машине. Узнайте, как получить Azure PowerShell [модуль Azure PowerShell.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0)
+* Azure PowerShell, установленные на локальном компьютере. Сведения о том, как получить Azure PowerShell, см. [в разделе Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) .
 
 ## <a name="create-the-resource-manager-template"></a>Создание шаблона Resource Manager
 
@@ -91,11 +91,11 @@ ms.locfileid: "81392211"
 }
 ```
 
-Сохранить файл локально как **TemplateTest.json**.
+Сохраните файл локально как **темплатетест. JSON**.
 
 ## <a name="save-the-resource-manager-template-in-azure-storage"></a>Сохранение шаблона Resource Manager в службе хранилища Azure
 
-Теперь мы используем PowerShell для создания общего объема файлов хранения Azure и загрузки файла **TemplateTest.json.**
+Теперь мы используем PowerShell для создания общей папки службы хранилища Azure и отправки файла **темплатетест. JSON** .
 Инструкции по созданию файлового ресурса и передаче файла на портал Azure см. в разделе [Приступая к работе с хранилищем файлов Azure в Windows](../storage/files/storage-dotnet-how-to-use-files.md).
 
 Запустите PowerShell на локальном компьютере и выполните приведенные команды, чтобы создать файловый ресурс и передать в него шаблон Resource Manager.
@@ -121,7 +121,7 @@ Set-AzStorageFileContent -ShareName $fileShare.Name -Context $context -Source $t
 
 ## <a name="create-the-powershell-runbook-script"></a>Создание сценария runbook PowerShell
 
-Теперь мы создаем скрипт PowerShell, который получает файл **TemplateTest.json** из Azure Storage и развертывает шаблон для создания новой учетной записи хранения Azure.
+Теперь создадим сценарий PowerShell, который получает файл **темплатетест. JSON** из службы хранилища Azure и развертывает шаблон для создания новой учетной записи хранения Azure.
 
 Вставьте приведенный ниже текст в текстовый редактор.
 
@@ -168,13 +168,13 @@ $TemplateFile = Join-Path -Path 'C:\Temp' -ChildPath $StorageFileName
 New-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName -TemplateFile $TemplateFile -TemplateParameterObject $Parameters 
 ``` 
 
-Сохранить файл локально как **DeployTemplate.ps1**.
+Сохраните файл локально как **деплойтемплате. ps1**.
 
 ## <a name="import-and-publish-the-runbook-into-your-azure-automation-account"></a>Импорт runbook в учетную запись службы автоматизации Azure и его публикация
 
 Теперь мы используем PowerShell, чтобы импортировать runbook в учетную запись службы автоматизации Azure, а затем опубликовать его. Сведения о том, как импортировать и опубликовать runbook на портале Azure, см. в статье [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
 
-Чтобы импортировать **DeployTemplate.ps1** в учетную запись автоматизации в качестве runbook PowerShell, запустите следующие команды PowerShell:
+Чтобы импортировать **деплойтемплате. ps1** в учетную запись службы автоматизации в качестве модуля Runbook PowerShell, выполните следующие команды PowerShell:
 
 ```powershell
 # MyPath is the path where you saved DeployTemplate.ps1
@@ -199,8 +199,8 @@ Publish-AzAutomationRunbook @publishParams
 
 ## <a name="start-the-runbook"></a>Запуск модуля runbook
 
-Теперь мы начинаем runbook, позвонив [в Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0
-) cmdlet. Сведения о том, как запустить runbook на портале Azure, см. в разделе [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
+Теперь запустите модуль Runbook, вызвав командлет [Start-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0
+) . Сведения о том, как запустить runbook на портале Azure, см. в разделе [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 
 В консоли PowerShell выполните следующие команды.
 
@@ -236,13 +236,13 @@ Get-AzStorageAccount
 
 ## <a name="summary"></a>Сводка
 
-Вот и все! Теперь вы можете использовать систему автоматизации Azure и хранилище Azure с шаблонами диспетчера ресурсов для развертывания всех ресурсов Azure.
+Вот и все! Теперь вы можете использовать службу автоматизации Azure и службу хранилища Azure с шаблонами диспетчер ресурсов для развертывания всех ресурсов Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Чтобы узнать больше о шаблонах управления ресурсами, смотрите [обзор менеджера ресурсов Azure.](../azure-resource-manager/management/overview.md)
+* Дополнительные сведения о диспетчер ресурсов шаблонах см. в разделе [Общие сведения о Azure Resource Manager](../azure-resource-manager/management/overview.md).
 * Чтобы приступить к работе со службой хранилища Azure, изучите раздел [Введение в хранилище Microsoft Azure](../storage/common/storage-introduction.md).
 * Другие полезные runbook службы автоматизации Azure приведены в разделе [Коллекции модулей Runbook и других модулей для службы автоматизации Azure](automation-runbook-gallery.md).
-* Чтобы найти другие полезные [Azure Quickstart Templates](https://azure.microsoft.com/resources/templates/)шаблоны менеджера ресурсов, см.
-* Для справки PowerShell cmdlet [см.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-)
+* Чтобы найти другие полезные шаблоны диспетчер ресурсов, ознакомьтесь с [шаблонами](https://azure.microsoft.com/resources/templates/)быстрого запуска Azure.
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+).

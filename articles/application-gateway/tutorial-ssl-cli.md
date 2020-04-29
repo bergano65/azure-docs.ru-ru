@@ -1,6 +1,6 @@
 ---
-title: Прекращение TLS с помощью CLI - Шлюз приложений Azure
-description: Узнайте, как создать шлюз приложения и добавить сертификат для прекращения TLS с помощью Azure CLI.
+title: Завершение работы TLS с помощью интерфейса командной строки — шлюз приложений Azure
+description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения TLS с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -9,15 +9,15 @@ ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
 ms.openlocfilehash: 6cd8cca65762de3da6a0e69e93c8d79bbe498dde
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81311973"
 ---
-# <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Создание шлюза приложений с окончанием TLS с помощью Azure CLI
+# <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Создание шлюза приложений с завершением TLS с помощью Azure CLI
 
-Вы можете использовать Azure CLI для создания [шлюза приложения](overview.md) с сертификатом для [прекращения TLS.](ssl-overview.md) Для серверов бэкэнда можно использовать [набор виртуального масштаба машины.](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
+Вы можете использовать Azure CLI для создания [шлюза приложений](overview.md) с сертификатом для [завершения TLS](ssl-overview.md). Для внутренних серверов можно использовать [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) . В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -165,7 +165,7 @@ az network public-ip show \
   --output tsv
 ```
 
-Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Для этого примера URL-адрес: **https://52.170.203.149**.
+Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. В этом примере URL-адрес: **https://52.170.203.149**.
 
 ![Предупреждение системы безопасности](./media/tutorial-ssl-cli/application-gateway-secure.png)
 
@@ -181,6 +181,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG --location eastus
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-cli.md)

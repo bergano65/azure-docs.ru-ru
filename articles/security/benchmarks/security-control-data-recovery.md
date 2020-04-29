@@ -1,6 +1,6 @@
 ---
-title: Контроль безопасности Azure - Восстановление данных
-description: Восстановление данных управления безопасностью Azure
+title: Управление безопасностью Azure — восстановление данных
+description: Восстановление данных управления безопасностью в Azure
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
@@ -8,67 +8,67 @@ ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 4f3e8540902809f951a441aa2fe8d00026c44d82
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81408589"
 ---
-# <a name="security-control-data-recovery"></a>Контроль безопасности: Восстановление данных
+# <a name="security-control-data-recovery"></a>Управление безопасностью: восстановление данных
 
-Убедитесь, что все системные данные, конфигурации и секреты автоматически резервируются на регулярной основе.
+Убедитесь, что все системные данные, конфигурации и секреты автоматически архивируются на регулярной основе.
 
-## <a name="91-ensure-regular-automated-back-ups"></a>9.1: Обеспечить регулярные автоматизированные резервные истектоли
+## <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярную автоматическую архивацию
 
-| Идентификатор Azure | Идоты СНГ | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 9.1 | 10.1 | Customer |
 
-Включите резервное копирование Azure и наконструировать источник резервного копирования (Azure VMs, S'L Server или Файл-шеринг), а также желаемый период частоты и удержания.
+Включите Azure Backup и настройте источник резервного копирования (виртуальные машины Azure, SQL Server или файловые ресурсы), а также нужную частоту и срок хранения.
 
-- [Как включить резервное копирование Azure](https://docs.microsoft.com/azure/backup/)
+- [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
 
-## <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2: Выполните полное резервное копирование системы и резервное копирование любых ключей, управляемых клиентом
+## <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: выполните полное резервное копирование системы и резервное копирование ключей, управляемых клиентом.
 
-| Идентификатор Azure | Идоты СНГ | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 9.2 | 10.2 | Customer |
 
-Включите резервное копирование Azure и таргет инг VM (ы), а также желаемые периоды частоты и удержания. Клиент резервного копирования управлял ключами в Azure Key Vault.
+Включите Azure Backup и целевые виртуальные машины, а также желаемую частоту и сроки хранения. Резервное копирование управляемых пользователем ключей в Azure Key Vault.
 
-- [Как включить резервное копирование Azure](https://docs.microsoft.com/azure/backup/)
+- [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
 
-- [Как создать резервную связь с ключами хранилища в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Резервное копирование ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
-## <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3: Проверка всех резервных ups, включая управляемые ключей клиента
+## <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: Проверьте все резервные копии, включая управляемые клиентом ключи.
 
-| Идентификатор Azure | Идоты СНГ | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 9.3 | 10.3 | Customer |
 
-Обеспечьте возможность периодически выполнять восстановление содержимого в azure Backup. Тест-восстановление резервных ключей, управляемых клиентом.
+Обеспечение возможности периодически выполнять восстановление данных в Azure Backup. Проверка восстановления резервных копий ключей, управляемых клиентом.
 
-- [Как восстановить файлы из резервного копирования виртуальной машины Azure](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm)
+- [Как восстановить файлы из резервной копии виртуальной машины Azure](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm)
 
-- [Как восстановить ключи хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Восстановление ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-## <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4: Обеспечить защиту резервных и управляемых ключей клиента
+## <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и управляемых клиентом ключей
 
-| Идентификатор Azure | Идоты СНГ | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 9.4 | 10.4 | Customer |
+| 9.4 | 10,4 | Customer |
 
-Для резервных копий локальных данных шифрование выполняется с использованием парольной фразы, которую вы указываете при настройке резервного копирования в Azure. Для виртуальных машин Azure шифрование выполняется с помощью функции "Шифрование службы хранилища" (SSE). Используйте элемент управления доступом на основе ролей для защиты резервных и управляемых клиентами ключей.  
+Для резервных копий локальных данных шифрование выполняется с использованием парольной фразы, которую вы указываете при настройке резервного копирования в Azure. Для виртуальных машин Azure шифрование выполняется с помощью функции "Шифрование службы хранилища" (SSE). Используйте управление доступом на основе ролей для защиты резервных копий и управляемых клиентом ключей.  
 
-Включите защиту от мягкого удаления и очистки в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.  Если Хранилище Azure используется для хранения резервных копий, включите мягкое удаление для сохранения и восстановления данных при удалении снимков кабы или кабли. 
+Включите обратимое удаление и очистку защиты в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.  Если хранилище Azure используется для хранения резервных копий, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
 
-- [Понять Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-- [Как включить защиту от мягкого удаления и очистки в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
 
 - [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Смотрите следующий контроль безопасности: [реагирование на инциденты](security-control-incident-response.md)
+- См. следующий контроль безопасности: [реагирование на инциденты](security-control-incident-response.md)

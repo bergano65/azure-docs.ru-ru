@@ -1,5 +1,5 @@
 ---
-title: Создайте пользовательский зонд с помощью PowerShell - Azure Application Gateway
+title: Создание пользовательской пробы с помощью PowerShell — шлюза приложений Azure
 description: Узнайте, как создавать пользовательские проверки для шлюза приложений с помощью PowerShell в классической модели развертывания.
 services: application-gateway
 author: vhorne
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/13/2019
 ms.author: victorh
 ms.openlocfilehash: 0ba3e9ae7b5075d1f5457cb2960423ad1c737e94
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81312553"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-classic-by-using-powershell"></a>Создание пользовательской проверки для шлюза приложений (классического) Azure с помощью PowerShell
@@ -19,12 +19,12 @@ ms.locfileid: "81312553"
 > [!div class="op_single_selector"]
 > * [Портал Azure](application-gateway-create-probe-portal.md)
 > * [PowerShell и диспетчер ресурсов Azure](application-gateway-create-probe-ps.md)
-> * [Azure Классический PowerShell](application-gateway-create-probe-classic-ps.md)
+> * [Классическая оболочка Azure](application-gateway-create-probe-classic-ps.md)
 
 Следуя инструкциям этой статьи вы добавите пользовательскую пробу в имеющийся шлюз приложений с помощью PowerShell. Пользовательские пробы полезны в приложениях с конкретной страницей проверки работоспособности или приложениях, не предоставляющих успешный ответ веб-приложению по умолчанию.
 
 > [!IMPORTANT]
-> Azure имеет две различные модели развертывания для создания и работы с ресурсами: [менеджер ресурсов и Classic.](../azure-resource-manager/management/deployment-models.md) В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Узнайте, как [выполнить эти действия с помощью модели Resource Manager](application-gateway-create-probe-ps.md).
+> В Azure предусмотрены две различные модели развертывания для создания ресурсов и работы с ними: [Диспетчер ресурсов и Classic](../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Узнайте, как [выполнить эти действия с помощью модели Resource Manager](application-gateway-create-probe-ps.md).
 
 [!INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
@@ -53,11 +53,11 @@ Get-AzureApplicationGateway AppGwTest
 ```
 
 > [!NOTE]
-> Значение по умолчанию для *InstanceCount* составляет 2, а максимальное значение 10. Значение *GatewaySize* (Размер шлюза) по умолчанию — Medium (Средний). Можно выбрать значения Small, Medium или Large.
+> Значение по умолчанию для *InstanceCount* — 2, максимальное значение — 10. Значение *GatewaySize* (Размер шлюза) по умолчанию — Medium (Средний). Можно выбрать значения Small, Medium или Large.
 > 
 > 
 
-*VirtualIPs* и *DnsName* отображаются как пустые, потому что шлюз еще не запущен. Эти значения будут определены после запуска шлюза.
+*Параметры virtualips* и *dnsName* отображаются пустыми, так как шлюз еще не запущен. Эти значения будут определены после запуска шлюза.
 
 ### <a name="configure-an-application-gateway-by-using-xml"></a>Настройка шлюза приложений с помощью XML-файла
 
@@ -143,10 +143,10 @@ Get-AzureApplicationGateway AppGwTest
 |Параметр|Описание|
 |---|---|
 |**имя**; |Имя пользовательской пробы. |
-| **Протокол** | Используемый протокол (возможные значения: HTTP или HTTPS).|
-| **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас\/есть веб-сайт http: /contoso.com/, то\/пользовательский зонд может быть настроен для "http: /contoso.com/path/custompath.htm" для проверки зонда, чтобы иметь успешный ответ HTTP.|
-| **Интервал** | Задает интервал между пробами в секундах.|
-| **Времени ожидания** | Определяет время ожидания для проверки ответа HTTP.|
+| **протокол**; | Используемый протокол (возможные значения: HTTP или HTTPS).|
+| **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас есть веб-сайт http\/:/contoso.com/, то пользовательская пробная проверка может быть настроена\/для "http:/contoso.com/Path/custompath.htm", чтобы проверки зонда имели успешный ответ HTTP.|
+| **Пределах** | Задает интервал между пробами в секундах.|
+| **Timeout** | Определяет время ожидания для проверки ответа HTTP.|
 | **UnhealthyThreshold** | Количество неудачных ответов HTTP, по достижении которого серверный экземпляр считается *неработоспособным*.|
 
 Имя пробы указывается в конфигурации \<BackendHttpSettings\> для назначения пула серверной части, который будет использовать параметры пользовательской пробы.
@@ -198,9 +198,9 @@ Get-AzureApplicationGateway AppGwTest
 Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Если вы хотите настроить систему безопасности транспортного слоя (TLS), ранее известную как [Configure an application gateway for TLS offload](application-gateway-ssl.md)разгрузка Безопасных разновидностя sockets layer (SSL), см.
+Если вы хотите настроить протокол TLS, который ранее назывался разгрузкой SSL (SSL), см. раздел [Настройка шлюза приложений для разгрузки TLS](application-gateway-ssl.md).
 
 Указания по настройке шлюза приложений для использования с внутренним балансировщиком нагрузки см. в статье [Создание шлюза приложений с внутренней подсистемой балансировщика нагрузки (ILB)](application-gateway-ilb.md).
 

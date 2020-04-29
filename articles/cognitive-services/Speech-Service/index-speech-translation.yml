@@ -1,8 +1,8 @@
 ### YamlMime:Landing
 title: Документация по переводу речи
-summary: Перевод речи с речевого сервиса позволяет в режиме реального времени, многоязычный речевой перевод и перевод аудиопотоков в текст
+summary: Трансляция речи из службы распознавания речи обеспечивает преобразование речевых потоков в режиме реального времени и преобразования речи в текст в речь
 metadata:
-  title: Документация по переводу речи - Учебники, Справка API - Когнитивные услуги Azure (ru) Документы Майкрософт
+  title: Документация по переводу речи. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
   titleSuffix: Azure Cognitive Services
   services: cognitive-services
   author: trevorbye
@@ -12,13 +12,13 @@ metadata:
   ms.date: 04/13/2020
   ms.author: trbye
   ms.openlocfilehash: 5d5c1cdae695b68f45d55b51b76d88c2f93c50d1
-  ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+  ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/16/2020
+  ms.lasthandoff: 04/29/2020
   ms.locfileid: "81401418"
 landingContent:
-- title: О речевом переводе
+- title: О переводе речи
   linkLists:
   - linkListType: overview
     links:
@@ -34,7 +34,7 @@ landingContent:
       url: quickstarts/translate-speech-to-text-multiple-languages.md
     - text: Перевод речи в речь
       url: quickstarts/translate-speech-to-speech.md
-- title: Разработка с речевого перевода
+- title: Разработка с помощью перевода речи
   linkLists:
   - linkListType: learn
     links:

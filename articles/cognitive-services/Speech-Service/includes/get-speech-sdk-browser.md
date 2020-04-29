@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
 ms.openlocfilehash: 5545b10a4228448d49849e7cd52728febf14ce2d
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81399914"
 ---
 :::row:::
     :::column span="3":::
-        JavaScript речи SDK доступен в качестве пакета npm, см <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">Microsoft-когнитивных-речевой-sdk <span class="docon docon-navigate-external x-hidden-focus"></span> </a> и его компаньон GitHub репозиторий <a href="https://github.com/Microsoft/cognitive-services-speech-sdk-js" target="_blank">когнитивных услуг-речи-sdk-js <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>.
+        Пакет SDK для распознавания речи JavaScript доступен в виде пакета NPM, см. в разделе <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">Microsoft-cognitiveservices <span class="docon docon-navigate-external x-hidden-focus"></span> -Speech-SDK</a> и его сопутствующий репозиторий GitHub <a href="https://github.com/Microsoft/cognitive-services-speech-sdk-js" target="_blank">-Services-Speech <span class="docon docon-navigate-external x-hidden-focus"> </span>-SDK-JS </a>.
     :::column-end:::
     :::column:::
         <br>
@@ -24,23 +24,23 @@ ms.locfileid: "81399914"
 :::row-end:::
 
 > [!TIP]
-> Хотя JavaScript Speech SDK доступен в виде пакета npm, таким образом, оба веб-браузера и Node.js могут потреблять его - рассмотреть различные архитектурные последствия каждой среды. Например, <a href="https://en.wikipedia.org/wiki/Document_Object_Model" target="_blank">модель объекта документа <span class="docon docon-navigate-external x-hidden-focus"></span> (DOM)</a> недоступна для приложений на стороне сервера так же, как <a href="https://nodejs.org/api/fs.html" target="_blank">файловая система <span class="docon docon-navigate-external x-hidden-focus"></span> </a> недоступна для клиентских приложений.
+> Несмотря на то, что пакет SDK для распознавания речи доступен в виде пакета NPM, таким образом, клиентские веб-браузеры и Node. js могут использовать его, рассмотрите различные архитектурные аспекты каждой среды. Например, <a href="https://en.wikipedia.org/wiki/Document_Object_Model" target="_blank">объектная модель документов (DOM) <span class="docon docon-navigate-external x-hidden-focus"></span> </a> недоступна для приложений на стороне сервера, так как <a href="https://nodejs.org/api/fs.html" target="_blank">Файловая система <span class="docon docon-navigate-external x-hidden-focus"></span> </a> недоступна для клиентских приложений.
 
-### <a name="nodejs-package-manager-npm"></a>Менеджер пакета node.js (NPM)
+### <a name="nodejs-package-manager-npm"></a>Диспетчер пакетов Node. js (NPM)
 
-Чтобы установить SDK речи JavaScript, запустите следующую `npm install` команду ниже.
+Чтобы установить пакет SDK для распознавания речи JavaScript, выполните `npm install` следующую команду ниже.
 
 ```nodejs
 npm install microsoft-cognitiveservices-speech-sdk
 ```
 
-### <a name="html-script-tag"></a>Тег скрипта HTML
+### <a name="html-script-tag"></a>Тег HTML-скрипта
 
-Кроме того, можно напрямую включить `<script>` тег `<head>` в элемент HTMLs, опираясь на <a href="https://www.jsdelivr.com/package/npm/microsoft-cognitiveservices-speech-sdk" target="_blank">синдикат <span class="docon docon-navigate-external x-hidden-focus"> </span> **JSDelivr** NPM. </a>
+Кроме того, можно напрямую включить `<script>` тег в `<head>` элемент HTML, используя <a href="https://www.jsdelivr.com/package/npm/microsoft-cognitiveservices-speech-sdk" target="_blank"> **жсделивр** NPM синдикации <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@1.10.1/distrib/lib/microsoft.cognitiveservices.speech.sdk.min.js">
 </script>
 ```
 
-Для получения дополнительной информации, см <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/browser" target="_blank">веб-браузер <span class="docon docon-navigate-external x-hidden-focus"> </span>речи SDK quickstart </a>.
+Дополнительные сведения см. в <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/browser" target="_blank">кратком руководстве <span class="docon docon-navigate-external x-hidden-focus"> </span>по речевому пакету SDK для веб-браузера </a>.

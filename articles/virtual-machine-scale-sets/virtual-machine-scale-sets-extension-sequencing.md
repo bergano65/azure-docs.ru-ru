@@ -1,5 +1,5 @@
 ---
-title: Используйте секвенирование расширения с наборами виртуальных машин Azure
+title: Использование виртуализации расширения с масштабируемыми наборами виртуальных машин Azure
 description: Узнайте, как упорядочить подготовку расширений при развертывании нескольких расширений в масштабируемых наборах виртуальных машин.
 author: mimckitt
 tags: azure-resource-manager
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: mimckitt
 ms.openlocfilehash: 737040699dd62d722b9a9ad4d8915ccb270c2d06
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81273755"
 ---
 # <a name="sequence-extension-provisioning-in-virtual-machine-scale-sets"></a>Подготовка последовательности расширений в масштабируемых наборах виртуальных машин
@@ -21,9 +21,9 @@ ms.locfileid: "81273755"
 
 В этой статье описывается порядок настройки расширений для экземпляров виртуальных машин в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для работы с этой статьей нужны знания в следующих областях:
--   [Расширения виртуальных](../virtual-machines/extensions/overview.md) машин Azure
+-   [Расширения](../virtual-machines/extensions/overview.md) виртуальной машины Azure
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
 
 ## <a name="when-to-use-extension-sequencing"></a>Когда следует использовать последовательность расширений
@@ -237,15 +237,15 @@ az vmss extension set \
 ```
 
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 ### <a name="not-able-to-add-extension-with-dependencies"></a>Не удается добавить расширение с зависимостями
 1. Убедитесь, что расширения, указанные в provisionAfterExtensions, определены в модели масштабируемого набора.
-2. Убедитесь в отсутствии циклических зависимостей. Например, не допускается следующая последовательность: ExtensionA -> ExtensionB -> ExtensionC -> ExtensionA
+2. Убедитесь в отсутствии циклических зависимостей. Например, следующая последовательность не допускается: Extension a-> Екстенсионб-> Екстенсионк-> Extension a
 3. Убедитесь, что для всех расширений с зависимостями свойство "settings" указано под полем "properties" расширения. Например, если расширение ExtentionB должно быть подготовлено после ExtensionA, то для ExtensionA поле "settings" должно быть указано под полем "properties" этого же расширения. Вы можете указать пустое свойство "settings", если для расширения не требуются какие-либо обязательные параметры.
 
 ### <a name="not-able-to-remove-extensions"></a>Не удается удалить расширения
 Убедитесь, что удаляемые расширения не перечислены в разделе provisionAfterExtensions для других расширений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

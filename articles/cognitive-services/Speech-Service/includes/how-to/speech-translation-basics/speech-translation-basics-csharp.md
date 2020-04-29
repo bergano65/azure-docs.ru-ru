@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.author: trbye
 ms.openlocfilehash: bac2ed447c9055f095e604725591c487378f5091
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81399636"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
@@ -17,11 +17,11 @@ ms.locfileid: "81399636"
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от вашей платформы, следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получить речь <span class="docon docon-navigate-external x-hidden-focus"></span> SDK</a> статьи речи SDK.
+Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span> </a> статьи о пакете SDK для распознавания речи.
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
-Чтобы выполнить примеры в этой `using` статье, включите следующие инструкции в верхней части *файла Program.cs.*
+Чтобы выполнить примеры в этой статье, включите следующие `using` инструкции в начало файла *Program.CS* .
 
 ```csharp
 using System;
@@ -34,9 +34,9 @@ using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.CognitiveServices.Speech.Translation;
 ```
 
-## <a name="sensitive-data-and-environment-variables"></a>Чувствительные данные и переменные среды
+## <a name="sensitive-data-and-environment-variables"></a>Конфиденциальные данные и переменные среды
 
-Пример исходного кода в этой статье зависит от переменных среды для хранения конфиденциальных данных, таких как ключ подписки ресурса Speech и регион. Класс `Program` содержит `static readonly string` два значения, которые присваиваются переменным `SPEECH__SUBSCRIPTION__KEY` `SPEECH__SERVICE__REGION`среды хоста, а именно: и . Оба этих поля находятся в области класса, что делает их доступными в телах метода класса. Для получения дополнительной информации [environment variables and application configuration](../../../../cognitive-services-security.md#environment-variables-and-application-configuration)о переменных среды см.
+Пример исходного кода в этой статье зависит от переменных среды для хранения конфиденциальных данных, таких как ключ и регион подписки на речевые ресурсы. Класс содержит два `static readonly string` значения, которые назначаются из переменных среды хоста машин, `SPEECH__SUBSCRIPTION__KEY` а именно и `SPEECH__SERVICE__REGION` `Program` Оба эти поля находятся в области класса, делая их доступными в теле метода класса. Дополнительные сведения о переменных среды см. в разделе [переменные среды и конфигурация приложения](../../../../cognitive-services-security.md#environment-variables-and-application-configuration).
 
 ```csharp
 public class Program
@@ -51,7 +51,7 @@ public class Program
 }
 ```
 
-## <a name="create-a-speech-translation-configuration"></a>Создание конфигурации речевого перевода
+## <a name="create-a-speech-translation-configuration"></a>Создание конфигурации перевода речи
 
 Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechTranslationConfig`][config]. Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
@@ -88,7 +88,7 @@ public class Program
 
 ## <a name="change-source-language"></a>Изменение исходного языка
 
-Одной из распространенных задач речевого перевода является определение языка ввода (или источника). Давайте посмотрим, как изменить язык ввода на итальянский. В коде взаимодействуйте с экземпляром, [`SpeechTranslationConfig`][config] назначая свойство. `SpeechRecognitionLanguage`
+Одной из распространенных задач перевода речи является указание языка ввода (или исходного кода). Давайте посмотрим, как изменить язык ввода на итальянский. В коде Взаимодействуйте с [`SpeechTranslationConfig`][config] экземпляром, назначив ему `SpeechRecognitionLanguage` свойство.
 
 ```csharp
 static async Task TranslateSpeechAsync()
@@ -103,9 +103,9 @@ static async Task TranslateSpeechAsync()
 
 Свойство [`SpeechRecognitionLanguage`][recognitionlang] принимает строку формата языкового стандарта. Вы можете указать любое значение в столбце **Языковой стандарт** в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
 
-## <a name="add-translation-language"></a>Добавление языка перевода
+## <a name="add-translation-language"></a>Добавить язык перевода
 
-Еще одна общая задача речевого перевода заключается в указании целевых языков перевода, по крайней мере один требуется, но кратные поддерживаются. В следующем фрагменте кода, как французский, так и немецкий язык в качестве языка перевода цели.
+Другой распространенной задачей перевода речи является указание целевых языков перевода, хотя по крайней мере один является обязательным, но поддерживаются множественные. В следующем фрагменте кода в качестве целей языка перевода — французский и немецкий.
 
 ```csharp
 static async Task TranslateSpeechAsync()
@@ -121,11 +121,11 @@ static async Task TranslateSpeechAsync()
 }
 ```
 
-С каждым [`AddTargetLanguage`][addlang]вызовом на, новый язык целевого перевода указан. Другими словами, когда речь распознается из исходного языка, каждый целевой перевод доступен как часть полученной операции перевода.
+При каждом вызове [`AddTargetLanguage`][addlang]метода указывается новый целевой язык перевода. Иными словами, когда речь распознается от исходного языка, каждый целевой перевод доступен как часть результирующей операции преобразования.
 
-## <a name="initialize-a-translation-recognizer"></a>Инициализация распознавания перевода
+## <a name="initialize-a-translation-recognizer"></a>Инициализация распознавателя трансляции
 
-После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. При инициализации [`TranslationRecognizer`][recognizer]ему необходимо передать `translationConfig`. Объект конфигурации предоставляет учетные данные, необходимые службе речи для проверки запроса.
+После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. При инициализации [`TranslationRecognizer`][recognizer]ему необходимо передать `translationConfig`. Объект конфигурации предоставляет учетные данные, необходимые службе распознавания речи для проверки запроса.
 
 Если вы распознаете речь с помощью стандартного микрофона вашего устройства, вот как должен выглядеть [`TranslationRecognizer`][recognizer]:
 
@@ -149,7 +149,7 @@ static async Task TranslateSpeechAsync()
 > [!TIP]
 > [Узнайте, как получить идентификатор устройства для входного аудиоустройства](../../../how-to-select-audio-input-devices.md).
 
-Во-первых, вы `AudioConfig` будете ссылаться на объект следующим образом:
+Во первых, вы будете ссылаться `AudioConfig` на объект следующим образом:
 
 ```csharp
 static async Task TranslateSpeechAsync()
@@ -187,7 +187,7 @@ static async Task TranslateSpeechAsync()
 
 ## <a name="translate-speech"></a>Преобразование текста
 
-Для перевода речи, речь SDK опирается на микрофон или аудио ввод файла. Распознавание речи происходит перед переводом речи. После того, как все объекты были инициализированы, позвоните функции распознавания и получите результат.
+Чтобы перевести речь, речевой пакет SDK использует микрофон или входные звуковые файлы. Распознавание речи выполняется перед переводом речи. После инициализации всех объектов вызовите функцию "распознать один раз" и получите результат.
 
 ```csharp
 static async Task TranslateSpeechAsync()
@@ -217,18 +217,18 @@ static async Task TranslateSpeechAsync()
 }
 ```
 
-Для получения дополнительной информации о речи к тексту, см [основы распознавания речи](../../../speech-to-text-basics.md).
+Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../speech-to-text-basics.md).
 
-## <a name="synthesize-translations"></a>Синтез переводов
+## <a name="synthesize-translations"></a>Синтезирование переводов
 
-После успешного распознавания речи и перевода результат содержит все переводы в словаре. Ключом [`Translations`][translations] словаря является язык целевого перевода, а значением является переведенный текст. Признанная речь может быть переведена, а затем синтезирована на другом языке (речь к речи).
+После успешного распознавания речи и перевода результат содержит все переводы в словаре. Ключ [`Translations`][translations] словаря — это целевой язык перевода, а значение — переведенный текст. Распознавание речи может быть переведено, а затем синтезировано на другом языке (преобразование речи в речь).
 
 ### <a name="event-based-synthesis"></a>Синтез на основе событий
 
-Объект `TranslationRecognizer` разоблачает `Synthesizing` событие. Событие запускается несколько раз и обеспечивает механизм для извлечения синтезированного звука из результата распознавания перевода. Если вы переводите на несколько языков, [см.](#manual-synthesis) Укажите голос синтеза, [`VoiceName`][voicename] назначив обработчик `Synthesizing` а также предоставив обработчик ановийку событий, получите звук. Следующий пример сохраняет переведенный звук как файл *.wav.*
+`TranslationRecognizer` Объект предоставляет `Synthesizing` событие. Событие срабатывает несколько раз и предоставляет механизм для получения синтезированного звука из результатов распознавания перевода. Если вы выполняете перевод на несколько языков, см. статью [Ручное синтез](#manual-synthesis). Укажите голосовой голос путем назначения [`VoiceName`][voicename] и предоставления обработчика событий для `Synthesizing` события, получения звука. В следующем примере переведенный звук сохраняется в виде *WAV* -файла.
 
 > [!IMPORTANT]
-> Синтез на основе событий работает только с одним переводом, **не** добавляя несколько языков целевого перевода. Кроме того, [`VoiceName`][voicename] например, язык должен быть таким же, как и на языке целевого перевода; `"de"` может накарте `"de-DE-Hedda"`.
+> Синтез на основе событий работает только с одним переводом, не **добавляя** несколько целевых языков преобразования. Кроме того, [`VoiceName`][voicename] должен быть тот же язык, что и целевой язык перевода, например. `"de"` может сопоставляться `"de-DE-Hedda"`с.
 
 ```csharp
 static async Task TranslateSpeechAsync()
@@ -269,9 +269,9 @@ static async Task TranslateSpeechAsync()
 }
 ```
 
-### <a name="manual-synthesis"></a>Ручной синтез
+### <a name="manual-synthesis"></a>Ручное синтез
 
-Словарь [`Translations`][translations] может быть использован для синтеза аудио из текста перевода. Итерировать каждый перевод и синтезировать перевод. При создании `SpeechSynthesizer` экземпляра `SpeechConfig` объект должен [`SpeechSynthesisVoiceName`][speechsynthesisvoicename] иметь свойство, настроенное на нужный голос. Следующий пример переводится на пять языков, и каждый перевод затем синтезируется в аудио файл на соответствующем нейронном языке.
+[`Translations`][translations] Словарь можно использовать для синтезирования звука из текста перевода. Перебирает каждый перевод и синтезированный перевод. При создании `SpeechSynthesizer` экземпляра `SpeechConfig` объект должен иметь [`SpeechSynthesisVoiceName`][speechsynthesisvoicename] свойство со значением требуемого голоса. Следующий пример преобразуется в пять языков, и каждый перевод затем синтезирован в звуковой файл на соответствующем языке нейрона.
 
 ```csharp
 static async Task TranslateSpeechAsync()
@@ -322,7 +322,7 @@ static async Task TranslateSpeechAsync()
 }
 ```
 
-Для получения дополнительной информации о синтезе речи, см [основы синтеза речи](../../../text-to-speech-basics.md).
+Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../text-to-speech-basics.md).
 
 [config]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig?view=azure-dotnet
 [audioconfig]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audio.audioconfig?view=azure-dotnet

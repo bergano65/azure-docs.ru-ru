@@ -1,7 +1,7 @@
 ---
-title: Основы перевода речи - Служба речи
+title: Основы перевода речи — служба речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать speech SDK для перевода речи. В этой статье вы узнаете о конструкции объектов, поддерживаемых форматах ввода звука и вариантах конфигурации для перевода речи.
+description: Узнайте, как использовать речевой пакет SDK для перевода речи. В этой статье вы узнаете о создании объектов, поддерживаемых форматах входных аудио и параметрах конфигурации для перевода речи.
 services: cognitive-services
 author: trevorbye
 manager: nitinme
@@ -12,18 +12,18 @@ ms.date: 04/13/2020
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
 ms.openlocfilehash: 04ece5ccf91056af02bd450eb760534b82de5959
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81399615"
 ---
-# <a name="learn-the-basics-of-speech-translation"></a>Изучите основы речевого перевода
+# <a name="learn-the-basics-of-speech-translation"></a>Основные сведения о переводе речи
 
-Одной из основных особенностей речевой службы является способность распознавать человеческую речь и переводить ее на другие языки. В этой статье вы узнаете, как использовать Speech SDK в своих приложениях и продуктах для выполнения высококачественного речевого перевода.
+Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этой статье вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для высококачественного перевода речи.
 
 > [!TIP]
-> Если у вас не было возможности завершить один из наших quickstarts, мы рекомендуем вам удар шины и попробовать речи перевод для себя.
+> Если вы еще не смогли выполнить одно из наших кратких руководств, мы рекомендуем вам начать работу и попробовать самостоятельное преобразование речи.
 > * [Преобразование речи в текст](quickstarts/translate-speech-to-text.md)
 > * [Перевод речи на несколько языков](quickstarts/translate-speech-to-text-multiple-languages.md)
 > * [Перевод речи в речь](quickstarts/translate-speech-to-speech.md)
@@ -48,6 +48,6 @@ ms.locfileid: "81399615"
 [!INCLUDE [More languages include](includes/how-to/speech-translation-basics/more.md)]
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Используйте форматы сжатого звука](how-to-use-codec-compressed-audio-input-streams.md)
+* [Использовать сжатые звуковые форматы кодеков](how-to-use-codec-compressed-audio-input-streams.md)

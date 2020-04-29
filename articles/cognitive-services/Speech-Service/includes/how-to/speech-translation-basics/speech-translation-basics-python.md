@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.author: trbye
 ms.openlocfilehash: 17d8c0157fcd478d01452167d240fb67daeeda5b
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81399611"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
@@ -17,26 +17,26 @@ ms.locfileid: "81399611"
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от вашей платформы, следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получить речь <span class="docon docon-navigate-external x-hidden-focus"></span> SDK</a> статьи речи SDK.
+Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span> </a> статьи о пакете SDK для распознавания речи.
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
-Чтобы запустить примеры в этой `import` статье, включите следующие операторы в верхней части файла кода python.
+Чтобы выполнить примеры в этой статье, включите следующие `import` инструкции в начало файла кода Python.
 
 ```python
 import os
 import azure.cognitiveservices.speech as speechsdk
 ```
 
-## <a name="sensitive-data-and-environment-variables"></a>Чувствительные данные и переменные среды
+## <a name="sensitive-data-and-environment-variables"></a>Конфиденциальные данные и переменные среды
 
-Пример исходного кода в этой статье зависит от переменных среды для хранения конфиденциальных данных, таких как ключ подписки ресурса Speech и регион. Файл кода Python содержит два значения, которые назначаются из переменных `SPEECH__SUBSCRIPTION__KEY` `SPEECH__SERVICE__REGION`среды хоста, а именно: и . Обе эти переменные находятся в глобальной области, что делает их доступными в рамках функционального определения файла кода. Для получения дополнительной информации [environment variables and application configuration](../../../../cognitive-services-security.md#environment-variables-and-application-configuration)о переменных среды см.
+Пример исходного кода в этой статье зависит от переменных среды для хранения конфиденциальных данных, таких как ключ и регион подписки на речевые ресурсы. Файл кода Python содержит два значения, которые назначаются из переменных среды хоста машин, `SPEECH__SUBSCRIPTION__KEY` а именно и `SPEECH__SERVICE__REGION`. Обе эти переменные находятся в глобальной области видимости, делая их доступными в определении функции файла кода. Дополнительные сведения о переменных среды см. в разделе [переменные среды и конфигурация приложения](../../../../cognitive-services-security.md#environment-variables-and-application-configuration).
 
 ```python
 speech_key, service_region = os.environ['SPEECH__SUBSCRIPTION__KEY'], os.environ['SPEECH__SERVICE__REGION']
 ```
 
-## <a name="create-a-speech-translation-configuration"></a>Создание конфигурации речевого перевода
+## <a name="create-a-speech-translation-configuration"></a>Создание конфигурации перевода речи
 
 Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechTranslationConfig`][config]. Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
@@ -62,7 +62,7 @@ def translate_speech_to_text():
 
 ## <a name="change-source-language"></a>Изменение исходного языка
 
-Одной из распространенных задач речевого перевода является определение языка ввода (или источника). Давайте посмотрим, как изменить язык ввода на итальянский. В коде взаимодействуйте с экземпляром, [`SpeechTranslationConfig`][config] назначая свойство. `speech_recognition_language`
+Одной из распространенных задач перевода речи является указание языка ввода (или исходного кода). Давайте посмотрим, как изменить язык ввода на итальянский. В коде Взаимодействуйте с [`SpeechTranslationConfig`][config] экземпляром, назначив ему `speech_recognition_language` свойство.
 
 ```python
 def translate_speech_to_text():
@@ -75,9 +75,9 @@ def translate_speech_to_text():
 
 Свойство [`speech_recognition_language`][recognitionlang] принимает строку формата языкового стандарта. Вы можете указать любое значение в столбце **Языковой стандарт** в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
 
-## <a name="add-translation-language"></a>Добавление языка перевода
+## <a name="add-translation-language"></a>Добавить язык перевода
 
-Еще одна общая задача речевого перевода заключается в указании целевых языков перевода, по крайней мере один требуется, но кратные поддерживаются. В следующем фрагменте кода, как французский, так и немецкий язык в качестве языка перевода цели.
+Другой распространенной задачей перевода речи является указание целевых языков перевода, хотя по крайней мере один является обязательным, но поддерживаются множественные. В следующем фрагменте кода в качестве целей языка перевода — французский и немецкий.
 
 ```python
 def translate_speech_to_text():
@@ -91,11 +91,11 @@ def translate_speech_to_text():
     translation_config.add_target_language("de")
 ```
 
-С каждым [`add_target_language`][addlang]вызовом на, новый язык целевого перевода указан. Другими словами, когда речь распознается из исходного языка, каждый целевой перевод доступен как часть полученной операции перевода.
+При каждом вызове [`add_target_language`][addlang]метода указывается новый целевой язык перевода. Иными словами, когда речь распознается от исходного языка, каждый целевой перевод доступен как часть результирующей операции преобразования.
 
-## <a name="initialize-a-translation-recognizer"></a>Инициализация распознавания перевода
+## <a name="initialize-a-translation-recognizer"></a>Инициализация распознавателя трансляции
 
-После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. При инициализации [`TranslationRecognizer`][recognizer]ему необходимо передать `translation_config`. Объект конфигурации предоставляет учетные данные, необходимые службе речи для проверки запроса.
+После создания [`SpeechTranslationConfig`][config], следующим шагом является инициализация [`TranslationRecognizer`][recognizer]. При инициализации [`TranslationRecognizer`][recognizer]ему необходимо передать `translation_config`. Объект конфигурации предоставляет учетные данные, необходимые службе распознавания речи для проверки запроса.
 
 Если вы распознаете речь с помощью стандартного микрофона вашего устройства, вот как должен выглядеть [`TranslationRecognizer`][recognizer]:
 
@@ -116,7 +116,7 @@ def translate_speech_to_text():
 > [!TIP]
 > [Узнайте, как получить идентификатор устройства для входного аудиоустройства](../../../how-to-select-audio-input-devices.md).
 
-Во-первых, вы `AudioConfig` будете ссылаться на объект следующим образом:
+Во первых, вы будете ссылаться `AudioConfig` на объект следующим образом:
 
 ```python
 def translate_speech_to_text():
@@ -132,7 +132,7 @@ def translate_speech_to_text():
             translation_config=translation_config, audio_config=audio_config)
 ```
 
-Если вы хотите предоставить звуковой файл, а не использовать микрофон, вам по-прежнему потребуется предоставить `audioConfig`. Однако, когда [`AudioConfig`][audioconfig]вы создаете, `use_default_microphone=True`вместо вызова с `filename="path-to-file.wav"` , `filename` вы будете звонить с и предоставить параметр.
+Если вы хотите предоставить звуковой файл, а не использовать микрофон, вам по-прежнему потребуется предоставить `audioConfig`. Однако при [`AudioConfig`][audioconfig]создании вместо вызова `use_default_microphone=True`с необходимо вызвать метод с `filename="path-to-file.wav"` параметром и указать его. `filename`
 
 ```python
 def translate_speech_to_text():
@@ -150,7 +150,7 @@ def translate_speech_to_text():
 
 ## <a name="translate-speech"></a>Преобразование текста
 
-Для перевода речи, речь SDK опирается на микрофон или аудио ввод файла. Распознавание речи происходит перед переводом речи. После того, как все объекты были инициализированы, позвоните функции распознавания и получите результат.
+Чтобы перевести речь, речевой пакет SDK использует микрофон или входные звуковые файлы. Распознавание речи выполняется перед переводом речи. После инициализации всех объектов вызовите функцию "распознать один раз" и получите результат.
 
 ```python
 import os
@@ -187,18 +187,18 @@ def get_result_text(reason, result):
 translate_speech_to_text()
 ```
 
-Для получения дополнительной информации о речи к тексту, см [основы распознавания речи](../../../speech-to-text-basics.md).
+Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../speech-to-text-basics.md).
 
-## <a name="synthesize-translations"></a>Синтез переводов
+## <a name="synthesize-translations"></a>Синтезирование переводов
 
-После успешного распознавания речи и перевода результат содержит все переводы в словаре. Ключом [`translations`][translations] словаря является язык целевого перевода, а значением является переведенный текст. Признанная речь может быть переведена, а затем синтезирована на другом языке (речь к речи).
+После успешного распознавания речи и перевода результат содержит все переводы в словаре. Ключ [`translations`][translations] словаря — это целевой язык перевода, а значение — переведенный текст. Распознавание речи может быть переведено, а затем синтезировано на другом языке (преобразование речи в речь).
 
 ### <a name="event-based-synthesis"></a>Синтез на основе событий
 
-Объект `TranslationRecognizer` разоблачает `Synthesizing` событие. Событие запускается несколько раз и обеспечивает механизм для извлечения синтезированного звука из результата распознавания перевода. Если вы переводите на несколько языков, [см.](#manual-synthesis) Укажите голос синтеза, [`voice_name`][voicename] назначив обработчик `Synthesizing` а также предоставив обработчик ановийку событий, получите звук. Следующий пример сохраняет переведенный звук как файл *.wav.*
+`TranslationRecognizer` Объект предоставляет `Synthesizing` событие. Событие срабатывает несколько раз и предоставляет механизм для получения синтезированного звука из результатов распознавания перевода. Если вы выполняете перевод на несколько языков, см. статью [Ручное синтез](#manual-synthesis). Укажите голосовой голос путем назначения [`voice_name`][voicename] и предоставления обработчика событий для `Synthesizing` события, получения звука. В следующем примере переведенный звук сохраняется в виде *WAV* -файла.
 
 > [!IMPORTANT]
-> Синтез на основе событий работает только с одним переводом, **не** добавляя несколько языков целевого перевода. Кроме того, [`voice_name`][voicename] например, язык должен быть таким же, как и на языке целевого перевода; `"de"` может накарте `"de-DE-Hedda"`.
+> Синтез на основе событий работает только с одним переводом, не **добавляя** несколько целевых языков преобразования. Кроме того, [`voice_name`][voicename] должен быть тот же язык, что и целевой язык перевода, например. `"de"` может сопоставляться `"de-DE-Hedda"`с.
 
 ```python
 import os
@@ -250,9 +250,9 @@ def get_result_text(reason, result):
 translate_speech_to_text()
 ```
 
-### <a name="manual-synthesis"></a>Ручной синтез
+### <a name="manual-synthesis"></a>Ручное синтез
 
-Словарь [`translations`][translations] может быть использован для синтеза аудио из текста перевода. Итерировать каждый перевод и синтезировать перевод. При создании `SpeechSynthesizer` экземпляра `SpeechConfig` объект должен [`speech_synthesis_voice_name`][speechsynthesisvoicename] иметь свойство, настроенное на нужный голос. Следующий пример переводится на пять языков, и каждый перевод затем синтезируется в аудио файл на соответствующем нейронном языке.
+[`translations`][translations] Словарь можно использовать для синтезирования звука из текста перевода. Перебирает каждый перевод и синтезированный перевод. При создании `SpeechSynthesizer` экземпляра `SpeechConfig` объект должен иметь [`speech_synthesis_voice_name`][speechsynthesisvoicename] свойство со значением требуемого голоса. Следующий пример преобразуется в пять языков, и каждый перевод затем синтезирован в звуковой файл на соответствующем языке нейрона.
 
 ```python
 import os
@@ -300,7 +300,7 @@ def synthesize_translations(result):
 translate_speech_to_text()
 ```
 
-Для получения дополнительной информации о синтезе речи, см [основы синтеза речи](../../../text-to-speech-basics.md).
+Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../text-to-speech-basics.md).
 
 [config]: https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.translation.speechtranslationconfig?view=azure-python
 [audioconfig]: https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audio.audioconfig?view=azure-python

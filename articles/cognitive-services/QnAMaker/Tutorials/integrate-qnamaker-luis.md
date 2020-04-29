@@ -1,7 +1,7 @@
 ---
-title: LUIS и NAMaker - интеграция ботов
+title: Интеграция LUIS и QnAMaker-Bot
 titleSuffix: Azure Cognitive Services
-description: По мере того, как ваша база знаний «NA Maker» становится больше, становится трудно поддерживать ее в качестве единого монолитного набора. Разделите базу знаний на более мелкие, логические куски.
+description: По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор. Разделите базу знаний на логические фрагменты меньшего размера.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -12,56 +12,56 @@ ms.date: 09/26/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: b0d28c77966668f919cdf1265f8cc63b4931d5fd
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81402719"
 ---
-# <a name="use-a-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Используйте ботс аиМу и LUIS для распространения базы знаний
-По мере того, как ваша база знаний «NA Maker» становится больше, становится трудно поддерживать ее в качестве единого монолитного набора. Разделите базу знаний на более мелкие, логические куски.
+# <a name="use-a-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Использование программы Bot с QnA Maker и LUIS для распространения базы знаний
+По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор. Разделите базу знаний на логические фрагменты меньшего размера.
 
-Несмотря на то, что создание нескольких баз знаний в Компании Зна-Чайник упростится, вам понадобится некоторая логика, чтобы направить поступающий вопрос в соответствующую базу знаний. Это можно сделать с помощью API распознавания речи.
+Хотя создание нескольких баз знаний в QnA Maker несложно, вам потребуется логика для направления входящего вопроса в соответствующую базу знаний. Это можно сделать с помощью API распознавания речи.
 
-В этой статье используется Bot Framework v3 SDK. Если вас интересует версия этой информации Bot Framework v4 SDK, [см.](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csharp)
+В этой статье используется пакет SDK для Bot Framework версии 3. Если вы заинтересованы в версии пакета SDK для Bot Framework версии 4, см. раздел [Использование нескольких моделей Luis и QnA](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=csharp).
 
 ## <a name="architecture"></a>Architecture
 
-![Графический показ архитектуры NA Maker с пониманием языка](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
+![График, иллюстрирующий архитектуру QnA Maker с Language Understanding](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
 
-Предыдущая графика показывает, что впервые nA Maker получает намерение входящего вопроса от модели LUIS. Затем, NA Maker использует это намерение, чтобы направить вопрос к правильной базе знаний nA Maker.
+На предыдущем рисунке показано, что QnA Maker сначала получает цель входящего вопроса из модели LUIS. Затем QnA Maker использует эту цель для направления вопроса в правильную базу знаний QnA Maker.
 
 ## <a name="create-a-luis-app"></a>Создание приложения LUIS
 
-1. Войти на портал [LUIS.](https://www.luis.ai/)
+1. Войдите на портал [Luis](https://www.luis.ai/) .
 1. [Создайте приложение](https://docs.microsoft.com/azure/cognitive-services/luis/create-new-app).
 1. [Добавьте намерение](https://docs.microsoft.com/azure/cognitive-services/luis/add-intents) к каждой базе знаний QnA Maker. Примеры высказываний должны соответствовать вопросам в базе знаний QnA Maker.
-1. [Поезд приложение LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [опубликовать приложение LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/publishapp).
-1. В разделе **Управление** обратите внимание на идентификатор приложения LUIS, клавишу конечной точки LUIS и [пользовательское доменное имя.](../../cognitive-services-custom-subdomains.md) Эти значения потребуются позже.
+1. [Обучить приложение Luis](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [опубликуйте приложение Luis](https://docs.microsoft.com/azure/cognitive-services/luis/publishapp).
+1. В разделе **Управление** запишите идентификатор приложения Luis, ключ КОНЕЧНОЙ точки Luis и [имя пользовательского домена](../../cognitive-services-custom-subdomains.md). Эти значения потребуются позже.
 
 ## <a name="create-qna-maker-knowledge-bases"></a>Создание баз знаний QnA Maker
 
-1. Вопием в [компании «NA Maker».](https://qnamaker.ai)
-1. [Создайте](https://www.qnamaker.ai/Create) базу знаний для каждого намерения в приложении LUIS.
-1. Проверьте и опубликуйте базы знаний. При публикации каждого из них обратите внимание на идентификатор, имя ресурса (пользовательский поддомен до _.azurewebsites.net/qnamaker),_ и ключ конечной точки авторизации. Эти значения потребуются позже.
+1. Войдите в [QnA Maker](https://qnamaker.ai).
+1. [Создайте](https://www.qnamaker.ai/Create) базу знаний для каждой цели в приложении Luis.
+1. Проверьте и опубликуйте базы знаний. При публикации каждого из них запишите идентификатор, имя ресурса (пользовательский поддомен до _. azurewebsites.NET/qnamaker_) и ключ конечной точки авторизации. Эти значения потребуются позже.
 
-    В этой статье предполагается, что все базы знаний созданы в той же подписке Azure nA Maker.
+    В этой статье предполагается, что базы знаний созданы в одной и той же подписке Azure QnA Maker.
 
-    ![Скриншот запроса NA Maker HTTP](../media/qnamaker-tutorials-qna-luis/qnamaker-http-request.png)
+    ![Снимок экрана QnA Maker HTTP-запроса](../media/qnamaker-tutorials-qna-luis/qnamaker-http-request.png)
 
 ## <a name="web-app-bot"></a>Бот веб-приложения
 
-1. [Создайте бота «Основной» с помощью сервиса Azure Bot,](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0)который автоматически включает в себя приложение LUIS. Выберите язык программирования СЗ.
+1. [Создайте "Basic" Bot с помощью службы Azure Bot](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0), которая автоматически включает приложение Luis. Выберите язык программирования C#.
 
-1. После создания веб-приложения бот на портале Azure выберите бота веб-приложений.
-1. В навигации по обслуживанию ботов веб-приложений выберите **Настройки приложений.** Затем прокрутите вниз в разделе **настроек приложения** доступных настроек.
-1. Измените **LuisAppId** на значение приложения LUIS, созданного в предыдущем разделе. Затем выберите **Сохранить**.
+1. После создания робота веб-приложения в портал Azure выберите робот веб-приложения.
+1. В области навигации службы веб-приложения Bot выберите **Параметры приложения**. Затем прокрутите вниз до раздела **Параметры приложения** доступных параметров.
+1. Измените **луисаппид** на значение приложения Luis, созданного в предыдущем разделе. Затем нажмите кнопку **Save** (Сохранить).
 
 
 ## <a name="change-the-code-in-the-basicluisdialogcs-file"></a>Изменение кода в файле BasicLuisDialog.cs
 1. В разделе **Управление ботом** на странице навигации бота веб-приложения портала Azure выберите **Сборка**.
 2. Выберите **Открыть сетевой редактор кода**. Откроется новая вкладка браузера со средой для редактирования в сети.
-3. В разделе **WWWROOT** выберите каталог **Dialogs,** а затем откройте **BasicLuisDialog.cs.**
+3. В разделе **wwwroot** выберите каталог **диалоговых окон** , а затем откройте **BasicLuisDialog.CS**.
 4. Добавьте зависимости в верхнюю часть файла **BasicLuisDialog.cs**.
 
     ```csharp
@@ -76,7 +76,7 @@ ms.locfileid: "81402719"
     using System.Text;
     ```
 
-5. Добавьте следующие классы для десеризации ответа nA Maker:
+5. Добавьте следующие классы для десериализации QnA Maker ответа:
 
     ```csharp
     public class Metadata
@@ -103,7 +103,7 @@ ms.locfileid: "81402719"
     ```
 
 
-6. Чтобы выполнить HTTP-запрос в службу QnA Maker, добавьте следующие классы. Обратите внимание, что значение заголовка **авторизации** включает в себя слово, `EndpointKey`с пространством, следующим за словом. Результат JSON десериалифицируется в предыдущие классы, и первый ответ возвращается.
+6. Чтобы выполнить HTTP-запрос в службу QnA Maker, добавьте следующие классы. Обратите внимание, что значение заголовка **авторизации** включает слово, `EndpointKey`и пробел после слова. Результат JSON десериализуется в предыдущие классы, и возвращается первый ответ.
 
     ```csharp
     [Serializable]
@@ -155,7 +155,7 @@ ms.locfileid: "81402719"
     ```
 
 
-7. Измените `BasicLuisDialog` класс. Каждое намерение LUIS должно содержать метод, снабженный префиксом **LuisIntent**. Оформленный параметр является актуальным именем намерения LUIS. Имя метода, которое оформлено, _должно_ быть значением намерения LUIS для читаемости и обслуживания, но не должно быть одинаковым при проектировании или времени выполнения.
+7. Измените `BasicLuisDialog` класс. Каждое намерение LUIS должно содержать метод, снабженный префиксом **LuisIntent**. Оформленный параметр является актуальным именем намерения LUIS. Декорированное имя метода _должно_ быть именем цели Luis для удобства чтения и сопровождения, но не обязательно должно совпадать со структурой или средой выполнения.
 
     ```csharp
     [Serializable]
@@ -224,20 +224,20 @@ ms.locfileid: "81402719"
 
 
 ## <a name="build-the-bot"></a>Сборка бота
-1. В редакторе кода, правой кнопкой **мыши build.cmd**, и выберите **Выполнить из консоли**.
+1. В редакторе кода щелкните правой кнопкой мыши **сборку. cmd**и выберите команду **запустить из консоли**.
 
-    ![Скриншот run from Console в редакторе кода](../media/qnamaker-tutorials-qna-luis/run-from-console.png)
+    ![Снимок экрана с параметром "запустить из консоли" в редакторе кода](../media/qnamaker-tutorials-qna-luis/run-from-console.png)
 
-2. Представление кода заменяется окном терминала, отображая ход и результаты сборки.
+2. Представление кода заменяется окном терминала, которое показывает ход выполнения и результаты сборки.
 
-    ![Скриншот сборки консоли](../media/qnamaker-tutorials-qna-luis/console-build.png)
+    ![Снимок экрана: построение консоли](../media/qnamaker-tutorials-qna-luis/console-build.png)
 
 ## <a name="test-the-bot"></a>Тестирование бота
 На портале Azure выберите **Test in Web Chat** (Тестировать в веб-чате), чтобы протестировать бот. Введите сообщения с разными намерениями, чтобы получить ответ соответствующей базы знаний.
 
-![Скриншот теста веб-чата](../media/qnamaker-tutorials-qna-luis/qnamaker-web-chat.png)
+![Снимок экрана теста веб-чата](../media/qnamaker-tutorials-qna-luis/qnamaker-web-chat.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Интегрируйте свою базу знаний с агентом в Power Virtual Agents](integrate-with-power-virtual-assistant-fallback-topic.md)
+> [Интеграция базы знаний с агентом в виртуальные агенты питания](integrate-with-power-virtual-assistant-fallback-topic.md)

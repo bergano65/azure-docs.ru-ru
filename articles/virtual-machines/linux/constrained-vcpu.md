@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 03/09/2018
 ms.author: mimckitt
 ms.openlocfilehash: 70e6d043b3ad033e1a43c566e5d1da49a1447c6b
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81273568"
 ---
 # <a name="constrained-vcpu-capable-vm-sizes"></a>Размеры виртуальных машин, поддерживающие ограниченное число виртуальных ЦП
@@ -21,11 +21,11 @@ ms.locfileid: "81273568"
 
 ## <a name="other-sizes"></a>Остальные размеры
 - [Оптимизированные для вычислений](../windows/sizes-compute.md)
-- [Оптимизированные для операций в памяти](sizes-memory.md)
-- [Оптимизированные для операций в хранилище](sizes-storage.md)
-- [Графический процессор](sizes-gpu.md)
+- [Оптимизированные для памяти](sizes-memory.md)
+- [Оптимизированные для хранилища](sizes-storage.md)
+- [GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

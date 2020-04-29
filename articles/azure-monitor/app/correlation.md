@@ -7,33 +7,33 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.openlocfilehash: 2e862410e2bf12e09e1a6388bbb6f7105b5b2edf
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81405264"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
-В мире микрослужб для каждой логической операции требуется выполнение действий в различных компонентах службы. Вы можете контролировать каждый из этих компонентов отдельно с помощью [Application Insights](../../azure-monitor/app/app-insights-overview.md). Application Insights поддерживает распределенную корреляцию данных телеметрии, позволяющую определить, какой компонент отвечает за сбой или снижение производительности.
+В мире микрослужб для каждой логической операции требуется выполнение действий в различных компонентах службы. Каждый из этих компонентов можно отслеживать отдельно с помощью [Application Insights](../../azure-monitor/app/app-insights-overview.md). Application Insights поддерживает распределенную корреляцию данных телеметрии, позволяющую определить, какой компонент отвечает за сбой или снижение производительности.
 
-В этой статье описывается модель данных, используемая службой Application Insights для корреляции данных телеметрии, отправляемых несколькими компонентами. Рассматриваются методы и протоколы распространения контекста. Он также охватывает внедрение тактики корреляции на различных языках и платформах.
+В этой статье описывается модель данных, используемая службой Application Insights для корреляции данных телеметрии, отправляемых несколькими компонентами. Рассматриваются методы и протоколы распространения контекста. Он также охватывает реализацию тактики корреляции на разных языках и платформах.
 
 ## <a name="data-model-for-telemetry-correlation"></a>Модель корреляции для данных телеметрии
 
-Application Insights определяет [модель данных](../../azure-monitor/app/data-model.md) для распределенной корреляции данных телеметрии. Чтобы связать телеметрию с логической операцией, каждый `operation_Id`элемент телеметрии имеет контекстное поле под названием . Этот идентификатор совместно используется каждым элементом телеметрии в распределенной трассировке. Таким образом, даже если вы потеряете телеметрию из одного слоя, вы все равно можете связать телеметрию, о которых сообщают другие компоненты.
+Application Insights определяет [модель данных](../../azure-monitor/app/data-model.md) для распределенной корреляции данных телеметрии. Чтобы связать данные телеметрии с логической операцией, каждый элемент телеметрии имеет поле контекста с `operation_Id`именем. Этот идентификатор совместно используется каждым элементом телеметрии в распределенной трассировке. Поэтому даже если вы потеряли данные телеметрии из одного слоя, вы по-прежнему можете связать данные телеметрии, сообщаемые другими компонентами.
 
-Распределенная логическая операция обычно состоит из набора небольших операций, которые обрабатываются одним из компонентов. Эти операции определяются [телеметрией запросов](../../azure-monitor/app/data-model-request-telemetry.md). Каждый элемент телеметрии `id` запроса имеет свой собственный элемент, который идентифицирует его однозначно и глобально. И все элементы телеметрии (например, следы и исключения), которые связаны с запросом, должны установить `operation_parentId` значение запроса. `id`
+Распределенная логическая операция обычно состоит из набора небольших операций, которые являются запросами, обрабатываемыми одним из компонентов. Эти операции определяются [телеметрией запросов](../../azure-monitor/app/data-model-request-telemetry.md). Каждый элемент телеметрии запроса имеет собственный `id` идентификатор, однозначно определяющий его. Все элементы телеметрии (такие как трассировки и исключения), связанные с запросом, должны устанавливать `operation_parentId` в значение запроса. `id`
 
-Каждая исходящая операция (например, вызов HTTP к другому компоненту) представлена [телеметрией зависимостей](../../azure-monitor/app/data-model-dependency-telemetry.md). Телеметрия зависимостей также `id` определяет свою собственную, которая является глобально уникальной. Телеметрия запросов, инициированная этим вызовом зависимостей, использует `id` в качестве `operation_parentId`.
+Каждая исходящая операция (например, вызов HTTP к другому компоненту) представлена [телеметрией зависимостей](../../azure-monitor/app/data-model-dependency-telemetry.md). Данные телеметрии зависимостей также определяют собственный `id` глобально уникальный. Телеметрия запросов, инициированная этим вызовом зависимостей, использует `id` в качестве `operation_parentId`.
 
 Вы можете создать представление распределенной логической операции, используя `operation_Id`, `operation_parentId` и `request.id` с `dependency.id`. Эти поля также определяют причинно-следственную связь вызовов телеметрии.
 
-В среде микрослужб трассировки компонентов могут отправляться в разные хранилища. Каждый компонент может иметь собственный ключ инструментирования в Application Insights. Чтобы получить телеметрию для логической операции, Application Insights запрашивает данные из каждого элемента хранения. Когда количество элементов хранения велико, вам понадобится подсказка о том, где искать дальше. Модель данных Application Insights определяет два поля (`request.source` и `dependency.target`) для решения этой проблемы. Первое поле определяет компонент, инициировавав запрос зависимости. Второе поле определяет, какой компонент вернул ответ вызова зависимости.
+В среде микрослужб трассировки компонентов могут отправляться в разные хранилища. Каждый компонент может иметь собственный ключ инструментирования в Application Insights. Для получения данных телеметрии для логической операции Application Insights запрашивает данные из каждого элемента хранилища. Если количество элементов хранения велико, вам потребуется подсказка о том, где будет выглядеть следующее. Модель данных Application Insights определяет два поля (`request.source` и `dependency.target`) для решения этой проблемы. Первое поле определяет компонент, который инициировал запрос зависимости. Второе поле определяет, какой компонент вернул ответ на вызов зависимости.
 
 ## <a name="example"></a>Пример
 
-Давайте рассмотрим пример. Приложение под названием Цены на акции показывает текущую рыночную цену акции с помощью внешнего API под названием Stock. Приложение Stock Prices имеет страницу под названием Фондовая `GET /Home/Stock`страница, которую клиент веб-браузер открывает с помощью . Приложение запрашивает Фондовый API с `GET /api/stock/value`помощью вызова HTTP .
+Давайте рассмотрим пример. Приложение под названием «цены на акции» показывает текущую стоимость рынка акций с помощью внешнего API, который называется «склад». В приложении "цены на акции" есть страница "акции", которая открывается веб-браузером клиента с помощью `GET /Home/Stock`. Приложение запрашивает стандартный API-интерфейс с помощью вызова `GET /api/stock/value`HTTP.
 
 Вы можете проанализировать итоговые данные телеметрии, выполнив запрос:
 
@@ -43,7 +43,7 @@ Application Insights определяет [модель данных](../../azur
 | project timestamp, itemType, name, id, operation_ParentId, operation_Id
 ```
 
-Обратите внимание, что в результатах все элементы телеметрии используют корневой `operation_Id`. При вызове Ajax со страницы назначается`qJSXU`новый уникальный идентификатор () телеметрии зависимости, а идентификатор страницыView используется как `operation_ParentId`. Запрос сервера затем использует идентификатор Ajax как `operation_ParentId`.
+Обратите внимание, что в результатах все элементы телеметрии используют корневой `operation_Id`. При вызове Ajax из страницы новый уникальный идентификатор (`qJSXU`) назначается телеметрии зависимости, а идентификатор pageView используется как. `operation_ParentId` Запрос сервера затем использует идентификатор Ajax как `operation_ParentId`.
 
 | itemType   | name                      | ID           | operation_ParentId | operation_Id |
 |------------|---------------------------|--------------|--------------------|--------------|
@@ -52,45 +52,45 @@ Application Insights определяет [модель данных](../../azur
 | запрос    | GET Home/Stock            | KqKwlrSt9PA= | qJSXU              | STYz         |
 | dependency | GET /api/stock/value      | bBrf2L7mm2g= | KqKwlrSt9PA=       | STYz         |
 
-При вызове `GET /api/stock/value` во внешнюю службу необходимо знать личность этого сервера, `dependency.target` чтобы можно было соответствующим образом установить поле. Если внешняя служба не поддерживает мониторинг, то в качестве имени узла службы задается `target` (например, `stock-prices-api.com`). Но если служба идентифицирует себя, вернув заранее определенный заголовок HTTP, содержит идентификатор службы, `target` который позволяет Application Insights создавать распределенный след, задав вопрос телеметрии из этой службы.
+При вызове `GET /api/stock/value` внешней службы необходимо знать удостоверение этого сервера, чтобы можно было правильно задать `dependency.target` поле. Если внешняя служба не поддерживает мониторинг, то в качестве имени узла службы задается `target` (например, `stock-prices-api.com`). Но если служба идентифицирует себя, возвращая предопределенный заголовок HTTP, `target` содержит удостоверение службы, которое позволяет Application Insights создавать распределенную трассировку, запрашивая данные телеметрии из этой службы.
 
 ## <a name="correlation-headers"></a>Заголовки корреляции
 
-Приложение Исследования переходит на [W3C Trace-Контекст](https://w3c.github.io/trace-context/), который определяет:
+Application Insights переходит в [консорциум W3C Trace-context](https://w3c.github.io/trace-context/), который определяет:
 
-- `traceparent`: Носит глобально уникальный идентификатор операции и уникальный идентификатор вызова.
-- `tracestate`: Носит контекст отслеживания системы.
+- `traceparent`: Содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
+- `tracestate`: Содержит контекст трассировки, зависящий от системы.
 
-Последняя версия SDK Application Insights поддерживает протокол Trace-Context, но, возможно, вам придется выбрать его. (Обратная совместимость с предыдущим протоколом корреляции, поддерживаемым SDK Application Insights, будет сохранена.)
+Последняя версия пакета SDK Application Insights поддерживает протокол контекста Trace, но может потребоваться согласие на него. (Будет поддерживаться обратная совместимость с предыдущим протоколом корреляции, поддерживаемым пакетом SDK для Application Insights.)
 
-Корреляция [HTTP протокол, также называемый Запрос-Id](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md), в настоящее время удаляется. Этот протокол определяет два заголовка:
+[Протокол HTTP корреляции, также называемый Request-ID](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md), является устаревшим. Этот протокол определяет два заголовка:
 
-- `Request-Id`: Носит глобально уникальный идентификатор вызова.
-- `Correlation-Context`: Осуществляет коллекцию пар именоемных значений распределенных свойств трассировки.
+- `Request-Id`: Содержит глобальный уникальный идентификатор вызова.
+- `Correlation-Context`: Содержит коллекцию пар "имя-значение" для свойств распределенной трассировки.
 
-Приложение Исследования также определяет [расширение](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v2.md) для корреляции HTTP протокола. Она использует пары "имя — значение" `Request-Context` для распространения коллекции свойств, используемых непосредственным вызывающим или вызываемым. Приложение Insights SDK использует этот заголовок `request.source` для настройки и полей. `dependency.target`
+Application Insights также определяет [расширение](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v2.md) для протокола HTTP корреляции. Она использует пары "имя — значение" `Request-Context` для распространения коллекции свойств, используемых непосредственным вызывающим или вызываемым. Пакет SDK для Application Insights использует этот заголовок для задания `dependency.target` полей `request.source` и.
 
 ### <a name="enable-w3c-distributed-tracing-support-for-classic-aspnet-apps"></a>Включение поддержки распределенной трассировки W3C для классических приложений ASP.NET
  
   > [!NOTE]
-  >  Начиная `Microsoft.ApplicationInsights.Web` с `Microsoft.ApplicationInsights.DependencyCollector`и , не требуется конфигурация.
+  >  Начиная с `Microsoft.ApplicationInsights.Web` и `Microsoft.ApplicationInsights.DependencyCollector`, настройка не требуется.
 
-Поддержка W3C Trace-Context реализуется в обратном порядке. Корреляция, как ожидается, будет работать с приложениями, которые оснащены предыдущими версиями SDK (без поддержки W3C).
+W3C Trace — поддержка контекста реализована с обратной совместимостью. Корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C).
 
-Если вы хотите продолжать `Request-Id` использовать устаревший протокол, можно отключить Trace-Context с помощью этой конфигурации:
+Если вы хотите использовать устаревший `Request-Id` протокол, можно отключить контекст трассировки, используя следующую конфигурацию:
 
 ```csharp
   Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
   Activity.ForceDefaultIdFormat = true;
 ```
 
-При запуске старой версии SDK мы рекомендуем обновить ее или применить следующую конфигурацию для включения Trace-Context.
-Эта функция доступна `Microsoft.ApplicationInsights.Web` в `Microsoft.ApplicationInsights.DependencyCollector` пакетах, начиная с версии 2.8.0-beta1.
-Она отключена по умолчанию. Чтобы включить его, внести эти изменения в: `ApplicationInsights.config`
+При запуске более старой версии пакета SDK рекомендуется обновить или применить следующую конфигурацию, чтобы включить контекст Trace.
+Эта функция доступна в пакетах `Microsoft.ApplicationInsights.Web` и `Microsoft.ApplicationInsights.DependencyCollector` , начиная с версии 2.8.0-Beta1.
+Она отключена по умолчанию. Чтобы включить его, внесите следующие изменения `ApplicationInsights.config`:
 
-- Под, `RequestTrackingTelemetryModule`добавить `EnableW3CHeadersExtraction` элемент и `true`установить его значение .
-- Под, `DependencyTrackingTelemetryModule`добавить `EnableW3CHeadersInjection` элемент и `true`установить его значение .
-- `W3COperationCorrelationTelemetryInitializer` Добавить `TelemetryInitializers`под . Он будет выглядеть как на этом примере:
+- В `RequestTrackingTelemetryModule`разделе добавьте `EnableW3CHeadersExtraction` элемент и задайте для `true`него значение.
+- В `DependencyTrackingTelemetryModule`разделе добавьте `EnableW3CHeadersInjection` элемент и задайте для `true`него значение.
+- Добавьте `W3COperationCorrelationTelemetryInitializer` в `TelemetryInitializers`. Он будет выглядеть, как в следующем примере:
 
 ```xml
 <TelemetryInitializers>
@@ -102,18 +102,18 @@ Application Insights определяет [модель данных](../../azur
 ### <a name="enable-w3c-distributed-tracing-support-for-aspnet-core-apps"></a>Включение поддержки распределенной трассировки W3C для приложений ASP.NET Core
 
  > [!NOTE]
-  > Начиная `Microsoft.ApplicationInsights.AspNetCore` с версии 2.8.0, конфигурация не требуется.
+  > Начиная с `Microsoft.ApplicationInsights.AspNetCore` версии 2.8.0, настройка не требуется.
  
-Поддержка W3C Trace-Context реализуется в обратном порядке. Корреляция, как ожидается, будет работать с приложениями, которые оснащены предыдущими версиями SDK (без поддержки W3C).
+W3C Trace — поддержка контекста реализована с обратной совместимостью. Корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C).
 
-Если вы хотите продолжать `Request-Id` использовать устаревший протокол, можно отключить Trace-Context с помощью этой конфигурации:
+Если вы хотите использовать устаревший `Request-Id` протокол, можно отключить контекст трассировки, используя следующую конфигурацию:
 
 ```csharp
   Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
   Activity.ForceDefaultIdFormat = true;
 ```
 
-При запуске старой версии SDK мы рекомендуем обновить ее или применить следующую конфигурацию для включения Trace-Context.
+При запуске более старой версии пакета SDK рекомендуется обновить или применить следующую конфигурацию, чтобы включить контекст Trace.
 
 Эта функция доступна в `Microsoft.ApplicationInsights.AspNetCore` версии 2.5.0-beta1 и в `Microsoft.ApplicationInsights.DependencyCollector` версии 2.8.0-beta1.
 Она отключена по умолчанию. Чтобы ее включить, задайте для `ApplicationInsightsServiceOptions.RequestCollectionOptions.EnableW3CDistributedTracing` значение `true`:
@@ -129,14 +129,14 @@ public void ConfigureServices(IServiceCollection services)
 
 ### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
 
-#### <a name="java-30-agent"></a>Агент Java 3.0
+#### <a name="java-30-agent"></a>Агент Java 3,0
 
-  Агент Java 3.0 поддерживает W3C из коробки, и дополнительная конфигурация не требуется. 
+  Агент Java 3,0 поддерживает стандарт W3C и не требует дополнительной настройки. 
 
 #### <a name="java-sdk"></a>Пакет SDK для Java
 - **Входящая конфигурация**
 
-  - Для приложений Java EE добавьте следующее в `<TelemetryModules>` тег в ApplicationInsights.xml:
+  - Для приложений Java EE добавьте следующий код в `<TelemetryModules>` тег в ApplicationInsights. XML:
 
     ```xml
     <Add type="com.microsoft.applicationinsights.web.extensibility.modules.WebRequestTrackingTelemetryModule>
@@ -145,7 +145,7 @@ public void ConfigureServices(IServiceCollection services)
     </Add>
     ```
     
-  - Для приложений Spring Boot добавьте следующие свойства:
+  - Для приложений с пружинной загрузкой добавьте следующие свойства:
 
     - `azure.application-insights.web.enable-W3C=true`
     - `azure.application-insights.web.enable-W3C-backcompat-mode=true`
@@ -168,13 +168,13 @@ public void ConfigureServices(IServiceCollection services)
   > В идеале его можно отключить, когда все ваши службы обновлены до новой версии пакетов SDK, поддерживающих протокол консорциума W3C. Мы настоятельно рекомендуем перейти к этим новым пакетам SDK как можно скорее.
 
 > [!IMPORTANT]
-> Убедитесь, что входящие и исходящие конфигурации точно такие же.
+> Убедитесь, что входящие и исходящие конфигурации совпадают.
 
-### <a name="enable-w3c-distributed-tracing-support-for-web-apps"></a>Включить поддержку отслеживания W3C для веб-приложений
+### <a name="enable-w3c-distributed-tracing-support-for-web-apps"></a>Включить поддержку распределенной трассировки W3C для веб-приложений
 
-Эта функция `Microsoft.ApplicationInsights.JavaScript`находится в . Она отключена по умолчанию. Чтобы включить его, используйте `distributedTracingMode` конфигурацию. AI_AND_W3C обеспечивается для обратной совместимости с любыми устаревшими услугами, оперированными Application Insights.
+Эта функция находится в `Microsoft.ApplicationInsights.JavaScript`. Она отключена по умолчанию. Чтобы включить его, используйте `distributedTracingMode` конфигурацию. AI_AND_W3C предоставляется для обеспечения обратной совместимости со всеми устаревшими службами, оснащенными Application Insights.
 
-- **npm настройки (игнорировать при использовании установки Фрагмент)**
+- **Установка NPM (пропуск при использовании программы установки фрагмента кода)**
 
   ```javascript
   import { ApplicationInsights, DistributedTracingModes } from '@microsoft/applicationinsights-web';
@@ -187,7 +187,7 @@ public void ConfigureServices(IServiceCollection services)
   appInsights.loadAppInsights();
   ```
   
-- **Установка фрагмента (игнорировать при использовании npm установки)**
+- **Настройка фрагмента кода (не учитывать при использовании программы установки NPM)**
 
   ```
   <script type="text/javascript">
@@ -215,17 +215,17 @@ public void ConfigureServices(IServiceCollection services)
 | `Operation_Id`                         | `TraceId`                                           |
 | `Operation_ParentId`                   | `Reference` типа `ChildOf` (родительский диапазон)     |
 
-Для получения дополнительной [Application Insights telemetry data model](../../azure-monitor/app/data-model.md)информации см.
+Дополнительные сведения см. в разделе [Application Insightsная модель данных телеметрии](../../azure-monitor/app/data-model.md).
 
-Для определения концепций OpenTracing см. [specification](https://github.com/opentracing/specification/blob/master/specification.md) [semantic conventions](https://github.com/opentracing/specification/blob/master/semantic_conventions.md)
+Определения концепций ОпентраЦинг см. в описании [спецификации](https://github.com/opentracing/specification/blob/master/specification.md) опентраЦинг и [семантических соглашений](https://github.com/opentracing/specification/blob/master/semantic_conventions.md).
 
-## <a name="telemetry-correlation-in-opencensus-python"></a>Телеметрическая корреляция в OpenCensus Python
+## <a name="telemetry-correlation-in-opencensus-python"></a>Корреляция телеметрии в Опенценсус Python
 
-OpenCensus Python `OpenTracing` следует спецификациям модели данных, изложенным ранее. Он также поддерживает [W3C Trace-Context,](https://w3c.github.io/trace-context/) не требуя никакой конфигурации.
+Опенценсус Python соответствует спецификациям модели данных, `OpenTracing` описанным выше. Она также поддерживает [контекст трассировки W3C](https://w3c.github.io/trace-context/) , не требуя настройки.
 
-### <a name="incoming-request-correlation"></a>Входящие корреляции запроса
+### <a name="incoming-request-correlation"></a>Корреляция входящих запросов
 
-OpenCensus Python соотносит заголовки W3C Trace-Context от входящих запросов к диапазонам, генерируемым из самих запросов. OpenCensus будет делать это автоматически с интеграцией для этих популярных инфраструктур веб-приложений: Flask, Django и Pyramid. Вам просто нужно заполнить W3C Trace-Context заголовки с [правильным форматом](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format) и отправить их с запросом. Вот пример приложения Флоска, который демонстрирует это:
+Опенценсус Python сопоставляет заголовки контекста W3C Trace и context из входящих запросов с диапазонами, созданными из самих запросов. Опенценсус сделает это автоматически с интеграцией для этих популярных платформ веб-приложений: Flask, Django и пирамидальная. Необходимо просто заполнить заголовки W3C Trace-контекста [правильным форматом](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format) и отправить их вместе с запросом. Вот пример приложения Flask, которое демонстрирует это:
 
 ```python
 from flask import Flask
@@ -248,11 +248,11 @@ if __name__ == '__main__':
     app.run(host='localhost', port=8080, threaded=True)
 ```
 
-Этот код запускает пример приложения Флога на `8080`локальной машине, слушая порт. Чтобы соотнести контекст трассировки, вы отправляете запрос в конечную точку. В этом примере можно `curl` использовать команду:
+Этот код запускает пример приложения Flask на локальном компьютере, прослушиваемый портом `8080`. Для корреляции контекста трассировки вы отправляете запрос в конечную точку. В этом примере можно использовать `curl` команду:
 ```
 curl --header "traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01" localhost:8080
 ```
-Посмотрев [на формат заголовка Trace-Context,](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format)можно получить следующую информацию:
+Просмотрев [Формат заголовка Trace-контекст](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format), вы можете получить следующие сведения:
 
 `version`: `00`
 
@@ -262,17 +262,17 @@ curl --header "traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7
 
 `trace-flags`: `01`
 
-Если вы посмотрите на запись запроса, отправленную в Azure Monitor, можно увидеть поля, заполненные информацией о заголовке трассировки. Вы можете найти эти данные в журнале Журналы (Аналитика) в ресурсе Azure Monitor Application Insights.
+Если взглянуть на запись запроса, отправленную на Azure Monitor, можно увидеть поля, заполненные данными заголовка трассировки. Эти данные можно найти в разделе журналы (аналитика) в ресурсе Azure Monitor Application Insights.
 
-![Запрос телеметрии в журналах (аналитика)](./media/opencensus-python/0011-correlation.png)
+![Запросить данные телеметрии в журналах (аналитика)](./media/opencensus-python/0011-correlation.png)
 
-Поле `id` находится в `<trace-id>.<span-id>`формате, `trace-id` где берется из заголовка трассировки, `span-id` который был пройден в запросе, и является генерируемым массивом 8 байт для этого диапазона.
+`id` Поле имеет формат `<trace-id>.<span-id>`, где объект `trace-id` берется из заголовка трассировки, переданного в запросе, и `span-id` является сгенерированным 8-байтовым массивом для этого диапазона.
 
-Поле `operation_ParentId` находится в `<trace-id>.<parent-id>`формате, `trace-id` где `parent-id` и и взяты из заголовка трассировки, который был пройден в запросе.
+`operation_ParentId` Поле имеет формат `<trace-id>.<parent-id>`, где `trace-id` и, и `parent-id` , взятые из заголовка трассировки, переданного в запросе.
 
 ### <a name="log-correlation"></a>Корреляция журналов
 
-OpenCensus Python позволяет соотнести журналы, добавив идентификатор трассировки, идентификатор диапазона и флаг выборки для записей журналов. Вы добавляете эти атрибуты, установив [интеграцию регистрации](https://pypi.org/project/opencensus-ext-logging/)OpenCensus. Следующие атрибуты будут добавлены `traceId`к `spanId`объектам `traceSampled`Python: `LogRecord` , и . Обратите внимание, что это вступает в силу только для регистраторов, которые создаются после интеграции.
+Опенценсус Python позволяет сопоставлять журналы, добавляя идентификатор трассировки, идентификатор диапазона и флаг выборки в записи журнала. Чтобы добавить эти атрибуты, установите [интеграцию с ведением журнала](https://pypi.org/project/opencensus-ext-logging/)опенценсус. Следующие атрибуты будут добавлены в объекты `LogRecord` Python: `traceId`, `spanId`и. `traceSampled` Обратите внимание, что это вступает в силу только для средств ведения журнала, созданных после интеграции.
 
 Вот пример приложения, которое демонстрирует это:
 
@@ -293,53 +293,53 @@ with tracer.span(name='hello'):
     logger.warning('In the span')
 logger.warning('After the span')
 ```
-При запуске этого кода в консоли приводятся следующие отпечатки:
+При выполнении этого кода на консоли выводятся следующие печатные строки:
 ```
 2019-10-17 11:25:59,382 traceId=c54cb1d4bbbec5864bf0917c64aeacdc spanId=0000000000000000 Before the span
 2019-10-17 11:25:59,384 traceId=c54cb1d4bbbec5864bf0917c64aeacdc spanId=70da28f5a4831014 In the span
 2019-10-17 11:25:59,385 traceId=c54cb1d4bbbec5864bf0917c64aeacdc spanId=0000000000000000 After the span
 ```
-Обратите внимание, что `spanId` есть подарок для сообщения журнала, которое находится в пределах диапазона. Это то `spanId` же самое, что `hello`принадлежит к диапазону имени .
+Обратите внимание, что `spanId` имеется сообщение журнала, находящиеся в пределах диапазона. Это то же самое `spanId` , что принадлежит диапазону с `hello`именем.
 
-Вы можете экспортировать данные журнала с помощью `AzureLogHandler`. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python#logs).
+Данные журнала можно экспортировать с помощью `AzureLogHandler`. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python#logs).
 
 ## <a name="telemetry-correlation-in-net"></a>Корреляция данных телеметрии в .NET
 
-Со временем .NET определил несколько способов корреляции телеметрии и журналов диагностики:
+Со временем .NET определил несколько способов корреляции журналов телеметрии и диагностики:
 
 - `System.Diagnostics.CorrelationManager`позволяет отслеживать [LogicalOperationStack и ActivityId](https://msdn.microsoft.com/library/system.diagnostics.correlationmanager.aspx).
 - `System.Diagnostics.Tracing.EventSource` и трассировка событий Windows(ETW) определяет метод [SetCurrentThreadActivityId](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.setcurrentthreadactivityid.aspx).
 - `ILogger`использует [области журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging#log-scopes).
 - Windows Communication Foundation (WCF) и HTTP подключают распространение "текущего" контекста.
 
-Но эти методы не позволяют автоматически распределить поддержку трассировки. `DiagnosticSource`поддерживает автоматическую кросс-машинную корреляцию. Библиотеки .NET поддерживают `DiagnosticSource` и позволяют автоматически распространять контекст корреляции через транспорт, например HTTP.
+Но эти методы не включают автоматическую поддержку распределенной трассировки. `DiagnosticSource`поддерживает автоматическую корреляцию между компьютерами. Библиотеки .NET поддерживают `DiagnosticSource` и разрешают автоматическое распространение контекста корреляции между компьютерами с помощью транспорта, например HTTP.
 
-[Руководство пользователя](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) активности `DiagnosticSource` в объясняет основы отслеживания деятельности.
+`DiagnosticSource` В [этом разделе](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) объясняются основные сведения о действиях по отслеживанию.
 
-ASP.NET Core 2.0 поддерживает извлечение заголовков HTTP и начало новых действий.
+ASP.NET Core 2,0 поддерживает извлечение заголовков HTTP и запуск новых действий.
 
-`System.Net.Http.HttpClient`, начиная с версии 4.1.0, поддерживает автоматическое впрыскивание корреляционных заголовков HTTP и отслеживание http-вызовов как действий.
+`System.Net.Http.HttpClient`, начиная с версии 4.1.0, поддерживает автоматическое внедрение заголовков HTTP корреляции и отслеживание вызовов HTTP в качестве действий.
 
-Там в новый модуль HTTP, [Microsoft.AspNet.TelemetryCorrelation](https://www.nuget.org/packages/Microsoft.AspNet.TelemetryCorrelation/), для классических ASP.NET. Этот модуль реализует корреляцию данных телеметрии с помощью `DiagnosticSource`. Он запускает действие, исходя из заголовков входящего запроса. Он также коррелирует телеметрию с различных этапов обработки запросов, даже когда каждый этап обработки Интернет-информации (IIS) выполняется по другому управляемому потоку.
+Для классической ASP.NET существует новый модуль HTTP ( [Microsoft. AspNet. телеметрикоррелатион](https://www.nuget.org/packages/Microsoft.AspNet.TelemetryCorrelation/)). Этот модуль реализует корреляцию данных телеметрии с помощью `DiagnosticSource`. Он запускает действие, исходя из заголовков входящего запроса. Он также сопоставляет данные телеметрии от различных стадий обработки запросов, даже если каждый этап обработки службы IIS (IIS) выполняется в другом управляемом потоке.
 
 Пакет SDK для Application Insights, начиная с версии 2.4.0-beta1, использует `DiagnosticSource` и `Activity` для сбора данных телеметрии и их связывания с текущим действием.
 
 <a name="java-correlation"></a>
-## <a name="telemetry-correlation-in-java"></a>Телеметрия корреляции в Java
+## <a name="telemetry-correlation-in-java"></a>Корреляция телеметрии в Java
 
-[Java-агент,](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) а также [Java SDK](../../azure-monitor/app/java-get-started.md) версия 2.0.0 или позже поддерживает автоматическую корреляцию телеметрии. Он автоматически `operation_id` заполняется для всех телеметрии (например, следов, исключений и пользовательских событий), выданных в рамках запроса. Он также распространяет заголовки корреляций (описанные ранее) для вызовов службы в службу через HTTP, если настроен [агент Java SDK.](../../azure-monitor/app/java-agent.md)
-
-> [!NOTE]
-> Агент Application Insights Java автоматически собирает запросы и зависимости для JMS, Kafka, Netty/Webflux и многое другое. Для Java SDK только звонки, сделанные через Apache HttpClient поддерживаются для функции корреляции. Автоматическое распространение контекста в технологиях обмена сообщениями (таких как Kafka, RabbitM и Azure Service Bus) не поддерживается в SDK. 
+[Агент Java](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) , а также [пакет SDK для Java](../../azure-monitor/app/java-get-started.md) версии 2.0.0 или более поздней поддерживают автоматическую корреляцию телеметрии. Он автоматически заполняется `operation_id` всеми данными телеметрии (например, трассировками, исключениями и пользовательскими событиями), выданными в области запроса. Он также распространяет заголовки корреляции (описанные выше) для вызовов между службами по протоколу HTTP, если настроен [Агент пакета SDK для Java](../../azure-monitor/app/java-agent.md) .
 
 > [!NOTE]
-> Для сбора пользовательской телеметрии необходимо инструментировать приложение с Java 2.6 SDK. 
+> Application Insights агент Java Auto собирает запросы и зависимости для JMS, Kafka, NETTY/Вебфлукс и т. д. Для функции корреляции поддерживаются только вызовы пакета SDK для Java, выполненные через Apache HttpClient. Автоматическое распространение контекста по технологиям обмена сообщениями (например, Kafka, RabbitMQ и служебная шина Azure) не поддерживается в пакете SDK. 
+
+> [!NOTE]
+> Для сбора пользовательских данных телеметрии необходимо инструментировать приложение с помощью пакета SDK для Java 2,6. 
 
 ### <a name="role-names"></a>Имена ролей
 
-Возможно, вы захотите настроить способ отображения имен компонентов в [application Map.](../../azure-monitor/app/app-map.md) Для этого можно вручную установить `cloud_RoleName` одно из следующих действий:
+Может потребоваться настроить способ отображения имен компонентов в [схеме приложения](../../azure-monitor/app/app-map.md). Для этого можно вручную настроить `cloud_RoleName` , выполнив одно из следующих действий.
 
-- Для агента Application Insights Java 3.0 установите имя роли облака следующим образом:
+- Для Application Insights агента Java 3,0 задайте имя роли облака следующим образом:
 
     ```json
     {
@@ -350,9 +350,9 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк�
       }
     }
     ```
-    Вы также можете установить имя роли `APPLICATIONINSIGHTS_ROLE_NAME`облака с помощью переменной среды.
+    Вы также можете задать имя роли облака с помощью переменной `APPLICATIONINSIGHTS_ROLE_NAME`среды.
 
-- С Application Insights Java SDK 2.5.0 и `cloud_RoleName` позже, вы можете указать, добавив `<RoleName>` в файл ApplicationInsights.xml:
+- С помощью Application Insights пакета SDK для Java 2.5.0 и более поздних `cloud_RoleName` версий можно `<RoleName>` указать, добавив в файл ApplicationInsights. XML:
 
   ```XML
   <?xml version="1.0" encoding="utf-8"?>
@@ -363,16 +363,16 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк�
   </ApplicationInsights>
   ```
 
-- Если вы используете Spring Boot с приложением Insights Spring Boot Starter, вам просто нужно установить пользовательское имя для приложения в файле application.properties:
+- Если вы используете пружинную загрузку с Application Insights пружинной загрузкой, необходимо просто задать пользовательское имя для приложения в файле Application. Properties:
 
   `spring.application.name=<name-of-app>`
 
-  Стартер Весенней загрузки `cloudRoleName` автоматически присваивает значение, вписанное для `spring.application.name` свойства.
+  Начальная загрузочная загрузка автоматически присваивает `cloudRoleName` значение, введенное для `spring.application.name` свойства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Напишите [пользовательские телеметрии](../../azure-monitor/app/api-custom-events-metrics.md).
-- Для продвинутых сценариев корреляции [Track custom operations](custom-operations-tracking.md)в ASP.NET Core и ASP.NET см.
+- Запись [пользовательской телеметрии](../../azure-monitor/app/api-custom-events-metrics.md).
+- Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в разделе [Track Custom Operations](custom-operations-tracking.md).
 - Узнайте об [установке свойства cloud_RoleName](../../azure-monitor/app/app-map.md#set-cloud-role-name) для других пакетов SDK.
 - Подключите все компоненты своей микрослужбы с помощью Application Insights. Ознакомьтесь со сведениями о [поддерживаемых платформах](../../azure-monitor/app/platforms.md).
 - В [этой статье](../../azure-monitor/app/data-model.md) представлена модель данных для Application Insights.

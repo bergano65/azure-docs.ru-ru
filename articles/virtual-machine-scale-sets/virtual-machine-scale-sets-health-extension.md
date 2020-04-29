@@ -1,5 +1,5 @@
 ---
-title: Используйте расширение работоспособности приложений с наборами виртуальных машин Azure
+title: Использование расширения работоспособности приложений с масштабируемыми наборами виртуальных машин Azure
 description: Узнайте, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
 author: mimckitt
 tags: azure-resource-manager
@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: mimckitt
 ms.openlocfilehash: cb5f1d48bb1a95db004d9da553e19a35071c73b0
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81273738"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
@@ -19,9 +19,9 @@ ms.locfileid: "81273738"
 
 В этой статье описывается, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 В данной статье предполагается, что вы знакомы с:
--   [Расширения виртуальных](../virtual-machines/extensions/overview.md) машин Azure
+-   [Расширения](../virtual-machines/extensions/overview.md) виртуальной машины Azure
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
 
 ## <a name="when-to-use-the-application-health-extension"></a>Когда использовать расширение "Работоспособность приложения"
@@ -62,7 +62,7 @@ ms.locfileid: "81273738"
 | type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
 | typeHandlerVersion | `1.0` | INT |
 
-### <a name="settings"></a>Параметры
+### <a name="settings"></a>"Настройки"
 
 | Имя | Значение и пример | Тип данных
 | ---- | ---- | ----
@@ -141,7 +141,7 @@ Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
 
 Используйте команду [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set), чтобы добавить расширение "Работоспособность приложения" в определение модели масштабируемого набора.
 
-Следующий пример добавляет расширение работоспособности приложения к модели масштабирования набора масштаба на основе Linux.
+В следующем примере расширение работоспособности приложения добавляется в модель масштабируемого набора для масштабируемого набора на основе Linux.
 
 ```azurecli-interactive
 az vmss extension set \
@@ -152,7 +152,7 @@ az vmss extension set \
   --vmss-name <myVMScaleSet> \
   --settings ./extension.json
 ```
-Содержимое файла extension.json.
+Содержимое файла Extension. JSON.
 
 ```json
 {
@@ -163,7 +163,7 @@ az vmss extension set \
 ```
 
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 Выходные данные выполнения расширения регистрируются в файле, расположенном в следующих каталогах:
 
 ```Windows
@@ -176,5 +176,5 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.ManagedServices.ApplicationHealthWindows\
 
 Журналы также периодически записывают состояние работоспособности приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.
