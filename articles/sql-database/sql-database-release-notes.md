@@ -7,14 +7,14 @@ ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 04/28/2020
 ms.author: sstein
-ms.openlocfilehash: 27a62223970b0f697465ce9aa050f3fccbcae464
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.openlocfilehash: c3dc5b26435f6d876e5eaea943e359055018913b
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82106429"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82201318"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -49,7 +49,7 @@ ms.locfileid: "82106429"
 | <a href="https://aka.ms/managed-instance-aadlogins">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена входа на уровне сервера, используя инструкцию <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Create login из внешнего поставщика</a> . |
 | [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Репликация изменений из таблиц в другие базы данных, размещенные на управляемых экземплярах, отдельных базах данных или SQL Server экземплярах, или при изменении некоторых строк в других управляемых экземплярах или экземплярах SQL Server. Дополнительные сведения см. [в статье Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md). |
 | Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-threat-detection.md).|
-| Долгосрочное хранение резервных копий | Дополнительные сведения см. [в статье Настройка долгосрочного резервного копирования в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-long-term-backup-retention-configure.md). | 
+| Долгосрочное хранение резервных копий | Дополнительные сведения см. в статье [Настройка долгосрочного резервного копирования в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-long-term-backup-retention-configure.md), который в настоящее время ограничен общедоступной предварительной версией. | 
 
 ---
 
@@ -69,19 +69,19 @@ ms.locfileid: "82106429"
   - Поддержка <a href="https://docs.microsoft.com/sharepoint/administration/deploy-azure-sql-managed-instance-with-sharepoint-servers-2016-2019">SharePoint 2016 и SharePoint 2019</a>, а также <a href="https://docs.microsoft.com/business-applications-release-notes/october18/dynamics365-business-central/support-for-azure-sql-database-managed-instance">Dynamics 365 Business Central</a>.
   - Создайте экземпляры с <a href="https://aka.ms/managed-instance-collation">параметрами сортировки на уровне сервера</a> и <a href="https://azure.microsoft.com/updates/managed-instance-time-zone-ga/">часовым поясом</a> по своему усмотрению.
   - Управляемые экземпляры теперь защищены <a href="sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md">встроенным брандмауэром</a>.
-  - Настройте экземпляры на использование [общедоступных конечных точек](sql-database-managed-instance-public-endpoint-configure.md), [Переопределение прокси-сервера](sql-database-connectivity-architecture.md#connection-policy) , чтобы повысить производительность сети, <a href="https://aka.ms/four-cores-sql-mi-update">4 виртуальных ядер на го поколения поколение оборудования</a> или <a href="https://aka.ms/managed-instance-configurable-backup-retention">настройте срок хранения резервных копий до 35 дней</a> для восстановления на момент времени. Долгосрочное хранение резервных копий (до 10 лет) по-прежнему не включено, поэтому в качестве альтернативы можно использовать <a href="https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server">резервные копии только для копирования</a> .
+  - Настройте экземпляры на использование [общедоступных конечных точек](sql-database-managed-instance-public-endpoint-configure.md), [Переопределение прокси-сервера](sql-database-connectivity-architecture.md#connection-policy) , чтобы повысить производительность сети, <a href="https://aka.ms/four-cores-sql-mi-update">4 виртуальных ядер на го поколения поколение оборудования</a> или <a href="https://aka.ms/managed-instance-configurable-backup-retention">настройте срок хранения резервных копий до 35 дней</a> для восстановления на момент времени. [Долгосрочное хранение резервных копий](sql-database-long-term-retention.md#managed-instance-support) (до 10 лет) сейчас ограничено общедоступной предварительной версией.  
   - Новые возможности позволяют выполнять <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">геовосстановление базы данных в другом центре обработки данных с помощью PowerShell</a>, [переименования базы данных](https://azure.microsoft.com/updates/azure-sql-database-managed-instance-database-rename-is-supported/), [удаления виртуального кластера](sql-database-managed-instance-delete-virtual-cluster.md).
   - Новая встроенная [роль участника «экземпляр](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-managed-instance-contributor) » обеспечивает соответствие требованиям к разделению (разделения обязанностей) с учетом принципов безопасности и соответствия стандартам предприятия.
   - Управляемый экземпляр доступен в следующих регионах Azure для государственных организаций (US Gov (Техас), US Gov (Аризона)), а также в Северный Китай 2 и Восточный Китай 2. Она также доступна в следующих общедоступных регионах: Центральная Австралия, Центральная Австралия 2, Южная Бразилия, Юго-Восточная часть Франции, Центральная ОАЭ, Северная Народно-Восточная, Южная Африка, Северная Африка, Юго-Африканская Республика.
 
 ### <a name="known-issues"></a>Известные проблемы
 
-|Проблема  |Дата обнаружения  |Status  |Дата разрешения  |
+|Проблема  |Дата обнаружения  |Состояние  |Дата разрешения  |
 |---------|---------|---------|---------|
 |[Разрешения для группы ресурсов, которые не применяются к Управляемый экземпляр](#permissions-on-resource-group-not-applied-to-managed-instance)|Фев 2020|Есть обходной путь||
 |[Ограничение отработки отказа вручную с помощью портала для групп отработки отказа](#limitation-of-manual-failover-via-portal-for-failover-groups)|Янв 2020|Есть обходной путь||
 |[Ролям агента SQL требуются явные разрешения на выполнение для имен входа, отличных от sysadmin](#in-memory-oltp-memory-limits-are-not-applied)|Dec 2019|Есть обходной путь||
-|[Задания агента SQL Server могут быть прерваны с помощью перезапуска процесса агента](#sql-agent-jobs-can-be-interrupted-by-agent-process-restart)|Dec 2019|Обходной путь отсутствует|Мар 2020|
+|[Задания агента SQL Server могут быть прерваны с помощью перезапуска процесса агента](#sql-agent-jobs-can-be-interrupted-by-agent-process-restart)|Dec 2019|"Разрешено"|Мар 2020|
 |[Имена входа и пользователи AAD не поддерживаются в SSDT](#aad-logins-and-users-are-not-supported-in-ssdt)|2019 ноября|Обходной путь отсутствует||
 |[Ограничения памяти выполняющейся в памяти OLTP не применяются](#in-memory-oltp-memory-limits-are-not-applied)|Октябрь 2019|Есть обходной путь||
 |[При попытке удаления непустого файла возвращена неверная ошибка](#wrong-error-returned-while-trying-to-remove-a-file-that-is-not-empty)|Октябрь 2019|Есть обходной путь||
@@ -96,7 +96,7 @@ ms.locfileid: "82106429"
 |[Превышение дискового пространства с небольшими файлами баз данных](#exceeding-storage-space-with-small-database-files)||Есть обходной путь||
 |[Значения GUID, отображаемые вместо имен баз данных](#guid-values-shown-instead-of-database-names)||Есть обходной путь||
 |[Журналы ошибок не сохраняются](#error-logs-arent-persisted)||Обходной путь отсутствует||
-|[Область транзакций в двух базах данных в одном и том же экземпляре не поддерживается](#transaction-scope-on-two-databases-within-the-same-instance-isnt-supported)||Есть обходной путь|Март 2020 г.|
+|[Область транзакций в двух базах данных в одном и том же экземпляре не поддерживается](#transaction-scope-on-two-databases-within-the-same-instance-isnt-supported)||Есть обходной путь|Мар 2020|
 |[Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес.](#clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address)||Есть обходной путь||
 |Согласованность базы данных не проверена с помощью инструкции DBCC CHECKDB после восстановления базы данных из хранилища BLOB-объектов Azure.||"Разрешено"|2019 ноября|
 |Восстановление базы данных на момент времени с уровня критически важный для бизнеса на уровень общего назначения не будет выполняться, если база данных-источник содержит объекты OLTP в памяти.||"Разрешено"|Октябрь 2019|
@@ -133,7 +133,7 @@ GRANT EXECUTE ON master.dbo.xp_sqlagent_notify TO [login_name]
 
 ### <a name="sql-agent-jobs-can-be-interrupted-by-agent-process-restart"></a>Задания агента SQL Server могут быть прерваны с помощью перезапуска процесса агента
 
-Агент SQL создает новый сеанс при каждом запуске задания, постепенно увеличивая потребление памяти. Чтобы избежать попадания в пределы внутренней памяти, которая может блокировать выполнение запланированных заданий, процесс агента будет перезапущен после достижения порогового значения потребления памяти. Это может привести к прерыванию выполнения заданий, выполняемых в момент перезапуска.
+**(Разрешено в марте 2020)** Агент SQL создает новый сеанс при каждом запуске задания, постепенно увеличивая потребление памяти. Чтобы избежать попадания в пределы внутренней памяти, которая может блокировать выполнение запланированных заданий, процесс агента будет перезапущен после достижения порогового значения потребления памяти. Это может привести к прерыванию выполнения заданий, выполняемых в момент перезапуска.
 
 ### <a name="in-memory-oltp-memory-limits-are-not-applied"></a>Ограничения памяти выполняющейся в памяти OLTP не применяются
 

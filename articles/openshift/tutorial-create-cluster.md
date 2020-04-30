@@ -1,236 +1,207 @@
 ---
-title: Руководство. Создание кластера Azure Red Hat OpenShift
+title: Руководство по созданию кластера Azure Red Hat OpenShift 4
 description: Узнайте, как создать кластер Microsoft Azure Red Hat OpenShift с помощью Azure CLI.
-author: jimzim
-ms.author: jzim
+author: sakthi-vetrivel
+ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
-ms.date: 11/04/2019
-ms.openlocfilehash: 58fc695707995aafe4d804ffab8beee7c52b4320
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 04/24/2020
+ms.openlocfilehash: 32069d9594d4579bd18ec3fd0e76af7bdc69f4d0
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79455304"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82232161"
 ---
-# <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство по Создание кластера Azure Red Hat OpenShift
+# <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Учебник. Создание кластера Azure Red Hat OpenShift 4
 
-Это руководство представляет первую часть цикла. Из него вы узнаете, как создать кластер Microsoft Azure Red Hat OpenShift с помощью Azure CLI, выполнить его масштабирование, а затем удалить, чтобы очистить ресурсы.
-
-В первой части цикла вы узнаете, как выполнять такие задачи:
-
+В этом руководстве (часть 3) вы подготовите среду для создания кластера Azure Red Hat OpenShift с OpenShift 4 и создания кластера. Вы научитесь:
 > [!div class="checklist"]
-> * Создание кластера Azure Red Hat OpenShift
+> * Настройте необходимые компоненты и создайте необходимую виртуальную сеть и подсети.
+> * Развертывание кластера
 
-Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
-> [!div class="checklist"]
-> * Создание кластера Azure Red Hat OpenShift
-> * [Масштабирование кластера Azure Red Hat OpenShift](tutorial-scale-cluster.md)
-> * [Удаление кластера Azure Red Hat OpenShift](tutorial-delete-cluster.md)
+## <a name="before-you-begin"></a>Подготовка к работе
 
-## <a name="prerequisites"></a>Предварительные требования
+Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.0.75 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-> [!IMPORTANT]
-> Для этого учебника требуется Azure CLI 2.0.65.
+### <a name="install-the-az-aro-extension"></a>Установка `az aro` расширения
+`az aro` Расширение позволяет создавать, получать доступ и удалять кластеры OpenShift для Azure Red Hat непосредственно из командной строки с помощью Azure CLI.
 
-Перед началом работы с этим руководством выполните следующие действия:
+Выполните следующую команду, чтобы установить `az aro` расширение.
 
-Убедитесь в том, что вы [настроили среду разработки](howto-setup-environment.md), в том числе:
-- установили последнюю версию интерфейса командной строки (версию 2.0.65 или более позднюю версию);
-- создали клиент, если у вас его еще нет;
-- создали объект приложения Azure, если у вас его еще нет;
-- Создание группы безопасности
-- создали пользователя Active Directory для входа в кластер.
-
-## <a name="step-1-sign-in-to-azure"></a>Шаг 1. Вход в Azure
-
-Если интерфейс Azure CLI запущен локально, откройте оболочку Bash и выполните команду `az login`, чтобы войти в Azure.
-
-```azurecli
-az login
+```azurecli-interactive
+az extension add -n aro --index https://az.aroapp.io/stable
 ```
 
- Если у вас есть доступ к нескольким подпискам, выполните команду `az account set -s {subscription ID}`, заменив `{subscription ID}` необходимой подпиской.
+Если расширение уже установлено, его можно обновить, выполнив следующую команду.
 
-## <a name="step-2-create-an-azure-red-hat-openshift-cluster"></a>Шаг 2. Создание кластера Azure Red Hat OpenShift
-
-В окне командной строки Bash задайте следующие переменные:
-
-> [!IMPORTANT]
-> Выберите уникальное имя для кластера (в нижнем регистре) или создание кластера завершится сбоем.
-
-```bash
-CLUSTER_NAME=<cluster name in lowercase>
+```azurecli-interactive
+az extension update -n aro --index https://az.aroapp.io/stable
 ```
 
-Выберите расположение для создания кластера. Список регионов Azure, в которых поддерживается OpenShift в Azure, см. в списке [поддерживаемых регионов](supported-resources.md#azure-regions). Например: `LOCATION=eastus`.
+### <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 
-```bash
-LOCATION=<location>
+Затем необходимо зарегистрировать поставщик `Microsoft.RedHatOpenShift` ресурсов в подписке.
+
+```azurecli-interactive
+az provider register -n Microsoft.RedHatOpenShift --wait
 ```
 
-Присвойте параметру `APPID` значение, которое вы сохранили на шаге 5 процедуры [создания регистрации приложения Azure AD](howto-aad-app-configuration.md#create-an-azure-ad-app-registration).
+Убедитесь, что расширение зарегистрировано.
 
-```bash
-APPID=<app ID value>
+```azurecli-interactive
+az -v
 ```
 
-Присвойте параметру GROUPID значение, которое вы сохранили на шаге 10 процедуры [создания группы безопасности Azure AD](howto-aad-app-configuration.md#create-an-azure-ad-security-group).
+  Вы должны получить выходные данные, аналогичные приведенным ниже.
 
-```bash
-GROUPID=<group ID value>
+```output
+...
+Extensions:
+aro                                1.0.0
+...
 ```
 
-Присвойте параметру `SECRET` значение, которое вы сохранили на шаге 8 процедуры [создания секрета клиента](howto-aad-app-configuration.md#create-a-client-secret).
+### <a name="get-a-red-hat-pull-secret-optional"></a>Получение секрета по запросу Red Hat (необязательно)
 
-```bash
-SECRET=<secret value>
+Секретный ключ Red Hat позволяет вашему кластеру получать доступ к реестрам контейнеров Red Hat вместе с дополнительным содержимым. Этот шаг необязателен, но мы рекомендуем его выполнить.
+
+Получите секрет опрашивающего запроса, перейдя по https://cloud.redhat.com/openshift/install/azure/aro-provisioned адресу и щелкнув *скачать опрашивающий секрет*.
+
+Вам потребуется войти в учетную запись Red Hat или создать новую учетную запись Red Hat с бизнес-почтой и принять условия.
+
+Сохранить сохраненный `pull-secret.txt` файл в безопасном месте — он будет использоваться при каждом создании кластера.
+
+### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Создание виртуальной сети, содержащей две пустые подсети
+
+Далее вы создадите виртуальную сеть, содержащую две пустые подсети.
+
+1. **Задайте следующие переменные.**
+
+   ```console
+   LOCATION=eastus                 # the location of your cluster
+   RESOURCEGROUP="v4-$LOCATION"    # the name of the resource group where you want to create your cluster
+   CLUSTER=cluster                 # the name of your cluster
+   ```
+
+1. **Создание группы ресурсов**
+
+    Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [AZ Group Create] [AZ-Group-Create].
+
+    ```azurecli-interactive
+    az group create --name $CLUSTER --location $LOCATION
+    ```
+
+    В следующем примере выходных данных показано, что группа ресурсов успешно создана:
+
+    ```json
+    {
+    "id": "/subscriptions/<guid>/resourceGroups/aro-rg",
+    "location": "eastus",
+    "managedBy": null,
+    "name": "aro-rg",
+    "properties": {
+        "provisioningState": "Succeeded"
+    },
+    "tags": null
+    }
+    ```
+
+2. **Создайте виртуальную сеть.**
+
+    Для кластеров Azure Red Hat OpenShift с OpenShift 4 требуется виртуальная сеть с двумя пустыми подсетями для главного и рабочего узлов.
+
+    Создайте новую виртуальную сеть в той же группе ресурсов, которая была создана ранее.
+
+    ```azurecli-interactive
+    az network vnet create \
+    --resource-group $RESOURCEGROUP \
+    --name aro-vnet \
+    --address-prefixes 10.0.0.0/22
+    ```
+
+    В следующем примере выходных данных показано, что виртуальная сеть успешно создана:
+
+    ```json
+    {
+    "newVNet": {
+        "addressSpace": {
+        "addressPrefixes": [
+            "10.0.0.0/22"
+        ]
+        },
+        "id": "/subscriptions/<guid>/resourceGroups/aro-rg/providers/Microsoft.Network/virtualNetworks/aro-vnet",
+        "location": "eastus",
+        "name": "aro-vnet",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "aro-rg",
+        "type": "Microsoft.Network/virtualNetworks"
+    }
+    }
+    ```
+
+3. **Добавьте пустую подсеть для главных узлов.**
+
+    ```azurecli-interactive
+    az network vnet subnet create \
+    --resource-group $RESOURCEGROUP \
+    --vnet-name aro-vnet \
+    --name master-subnet \
+    --address-prefixes 10.0.0.0/23 \
+    --service-endpoints Microsoft.ContainerRegistry
+    ```
+
+4. **Добавьте пустую подсеть для рабочих узлов.**
+
+    ```azurecli-interactive
+    az network vnet subnet create \
+    --resource-group $RESOURCEGROUP \
+    --vnet-name aro-vnet \
+    --name worker-subnet \
+    --address-prefixes 10.0.2.0/23 \
+    --service-endpoints Microsoft.ContainerRegistry
+    ```
+
+5. **[Отключите политики частной конечной точки подсети](https://docs.microsoft.com/azure/private-link/disable-private-link-service-network-policy) в главной подсети.** Это необходимо для подключения к кластеру и управления им.
+
+    ```azurecli-interactive
+    az network vnet subnet update \
+    --name master-subnet \
+    --resource-group $RESOURCEGROUP \
+    --vnet-name aro-vnet \
+    --disable-private-link-service-network-policies true
+    ```
+
+## <a name="create-the-cluster"></a>Создайте кластер.
+
+Выполните следующую команду, чтобы создать кластер. При необходимости можно передать опрашивающий секрет, который позволяет кластеру получать доступ к реестрам контейнеров Red Hat вместе с дополнительным содержимым. Чтобы получить доступ к запросу на получение секрета, перейдите к [диспетчеру кластеров Red Hat OpenShift](https://cloud.redhat.com/openshift/install/azure/installer-provisioned) и щелкните **Копировать опрашивающий секрет**.
+
+```azurecli-interactive
+az aro create \
+  --resource-group $RESOURCEGROUP \
+  --name $CLUSTER \
+  --vnet aro-vnet \
+  --master-subnet master-subnet \
+  --worker-subnet worker-subnet
+  # --domain foo.example.com # [OPTIONAL] custom domain
+  # --pull-secret '$(< pull-secret.txt)' # [OPTIONAL]
 ```
+>[!NOTE]
+> Для создания кластера обычно требуется около 35 минут.
 
-Параметру `TENANT` присвойте значение идентификатора клиента, которое вы сохранили на шаге 7 процедуры [создание клиента](howto-create-tenant.md#create-a-new-azure-ad-tenant).
-
-```bash
-TENANT=<tenant ID>
-```
-
-Создайте группу ресурсов для кластера. Выполните следующую команду из той же оболочки Bash, в которой вы ранее определили переменные:
-
-```azurecli
-az group create --name $CLUSTER_NAME --location $LOCATION
-```
-
-### <a name="optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network"></a>Необязательное действие: подключение виртуальной сети кластера к существующей виртуальной сети
-
-Если вам не нужно подключать виртуальную сеть создаваемого кластера к существующей виртуальной сети с помощью пиринга, пропустите этот шаг.
-
-Если пиринг сети находится за пределами подписки по умолчанию, то в этой подписке также понадобится зарегистрировать поставщик Microsoft.ContainerService. Для этого выполните указанную ниже команду в этой подписке. В противном случае если виртуальная сеть, пиринг которой выполняется, находится в той же подписке, шаг регистрации можно пропустить.
-
-`az provider register -n Microsoft.ContainerService --wait`
-
-Для начала получите идентификатор существующей виртуальной сети. Этот идентификатор имеет такой формат: `/subscriptions/{subscription id}/resourceGroups/{resource group of VNET}/providers/Microsoft.Network/virtualNetworks/{VNET name}`.
-
-Если вы не знаете имя сети или группу ресурсов, к которой относится существующая виртуальная сеть, перейдите на [колонку виртуальной сети](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Network%2FvirtualNetworks) и щелкните нужную виртуальную сеть. Откроется страница виртуальной сети, на которой указаны имя сети и группа ресурсов, к которой она принадлежит.
-
-Определите переменную VNET_ID с помощью следующей команды CLI в оболочке BASH:
-
-```azurecli
-VNET_ID=$(az network vnet show -n {VNET name} -g {VNET resource group} --query id -o tsv)
-```
-
-Например: `VNET_ID=$(az network vnet show -n MyVirtualNetwork -g MyResourceGroup --query id -o tsv`
-
-### <a name="optional-connect-the-cluster-to-azure-monitoring"></a>Необязательное действие: подключение кластера к мониторингу Azure
-
-Сначала получите идентификатор **имеющейся** рабочей области Log Analytics. Этот идентификатор имеет такой формат:
-
-`/subscriptions/{subscription}/resourceGroups/{resourcegroup}/providers/Microsoft.OperationalInsights/workspaces/{workspace-id}`.
-
-Если вам неизвестно имя рабочей области Log Analytics или группы ресурсов, к которой принадлежит имеющаяся рабочая область, перейдите в раздел [Рабочая область Log Analytics](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.OperationalInsights%2Fworkspaces) и щелкните рабочие области Log Analytics. Откроется страница рабочей области Log Analytics, на которой указаны имя рабочей области и группа ресурсов, к которой она принадлежит.
-
-_Сведения о создании рабочей области Log Analytics см. в [этой статье](../azure-monitor/learn/quick-create-workspace-cli.md)_ .
-
-Определите переменную WORKSPACE_ID с помощью следующей команды CLI в оболочке BASH:
-
-```azurecli
-WORKSPACE_ID=$(az monitor log-analytics workspace show -g {RESOURCE_GROUP} -n {NAME} --query id -o tsv)
-```
-
-### <a name="create-the-cluster"></a>Создайте кластер.
-
-Теперь можно создать новый кластер. Далее будет создан кластер в указанном клиенте Azure AD, указан объект приложения Azure AD и секрет для использования в качестве субъекта безопасности, а также группа безопасности, содержащая участников, у которых есть доступ администратора к кластеру.
-
-> [!IMPORTANT]
-> Перед созданием кластера проверьте, правильно ли вы добавили соответствующие разрешения для приложения Azure AD, как [описано здесь](howto-aad-app-configuration.md#add-api-permissions).
-
-Если вы **не выполняете** пиринг кластера к виртуальной сети **или не хотите выполнять** мониторинг Azure, используйте следующую команду:
-
-```azurecli
-az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID
-```
-
-Если вы **выполняете** пиринг кластера к виртуальной сети, используйте следующую команду, которая добавит флаг `--vnet-peer`:
-
-```azurecli
-az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID --vnet-peer $VNET_ID
-```
-
-Если вы **хотите выполнять** мониторинг Azure для кластера, выполните приведенную ниже команду, которая добавит флаг `--workspace-id`:
-
-```azurecli
-az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID --workspace-id $WORKSPACE_ID
-```
-
-> [!NOTE]
-> Если вы получите ошибку с сообщением о том, что имя узла недоступно, это может означать, что указанное имя кластера уже существует. Попробуйте удалить исходную регистрацию приложения и повторить все действия с другим именем кластера из раздела о [регистрации приложения](howto-aad-app-configuration.md#create-an-azure-ad-app-registration), пропустив шаг создания пользователя и группы безопасности.
-
-
-
-
-Через несколько минут операция `az openshift create` выполнится.
-
-### <a name="get-the-sign-in-url-for-your-cluster"></a>Получение URL-адреса входа для кластера
-
-Получите URL-адрес входа для своего кластера, выполнив следующую команду:
-
-```azurecli
-az openshift show -n $CLUSTER_NAME -g $CLUSTER_NAME
-```
-
-Найдите `publicHostName` в выходных данных, например: `"publicHostname": "openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io"`.
-
-URL-адрес входа для кластера будет `https://`, за которым следует значение `publicHostName`.  Например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io`.  Этот URI будет использоваться на следующем шаге как часть URI-перенаправления регистрации приложения.
-
-## <a name="step-3-update-your-app-registration-redirect-uri"></a>Шаг 3. Обновление URI-перенаправления регистрации приложения
-
-Теперь, когда у вас есть URL-адрес входа для кластера, установите URI перенаправления регистрации приложения:
-
-1. Откройте колонку [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview).
-2. Щелкните объект регистрации своего приложения.
-3. Щелкните **Добавить URI перенаправления**.
-4. Убедитесь, что для параметра **Тип** установлено значение **Веб** и задайте **URI перенаправления**, используя следующий шаблон: `https://<public host name>/oauth2callback/Azure%20AD`. Например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io/oauth2callback/Azure%20AD`
-5. Щелкните **Сохранить**.
-
-## <a name="step-4-sign-in-to-the-openshift-console"></a>Шаг 4. Войдите в консоль OpenShift
-
-Теперь вы готовы войти в консоль OpenShift для нового кластера. [Веб-консоль OpenShift](https://docs.openshift.com/aro/architecture/infrastructure_components/web_console.html) позволяет визуализировать, просматривать содержимое проектов OpenShift и управлять им.
-
-Вам потребуется новый экземпляр браузера, в кэше которого нет удостоверения, с которым вы обычно входите на портал Azure.
-
-1. Откройте окно *инкогнито* (Chrome) или *InPrivate* (Microsoft Edge).
-2. Перейдите к полученному выше URL-адресу входа, например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io`
-
-Выполните вход с использованием имени пользователя, созданного на шаге 3 процедуры [создания пользователя Azure Active Directory](howto-aad-app-configuration.md#create-a-new-azure-active-directory-user).
-
-Появится диалоговое окно **Запрошенные разрешения**. Выберите **Согласие от имени вашей организации**, а затем щелкните **Принять**.
-
-Итак, вы вошли в консоль кластера.
-
-![Снимок экрана с консолью кластера OpenShift](./media/aro-console.png)
-
- Узнайте больше [об использовании консоли OpenShift](https://docs.openshift.com/aro/getting_started/developers_console.html) для создания и сборки образов, ознакомившись с [документацией по Red Hat OpenShift](https://docs.openshift.com/aro/welcome/index.html).
-
-## <a name="step-5-install-the-openshift-cli"></a>Шаг 5. Установка интерфейса командной строки OpenShift
-
-[Интерфейс командной строки OpenShift](https://docs.openshift.com/aro/cli_reference/get_started_cli.html) (или *OC Tools*) предоставляет команды для управления приложениями и служебные программы низкого уровня для взаимодействия с разными компонентами кластера OpenShift.
-
-В консоли OpenShift щелкните вопросительный знак в правом верхнем углу, рядом с именем текущего пользователя, и выберите **Command Line Tools** (Средства командной строки).  Перейдите по ссылке **Latest Release** (Последний выпуск), чтобы скачать и установить поддерживаемые версии интерфейса командной строки OC для Linux, MacOS или Windows.
-
-> [!NOTE]
-> Если вы не видите в правом верхнем углу значка с вопросительным знаком, выберите *Service Catalog* (Каталог служб) или *Application Console* (Консоль приложения) в раскрывающемся списке слева вверху.
+>[!IMPORTANT]
+> Если вы решили указать личный домен, например **foo.example.com**, консоль OpenShift будет доступна по URL-адресу `https://console-openshift-console.apps.foo.example.com`, например, вместо встроенного домена. `https://console-openshift-console.apps.<random>.<location>.aroapp.io`
 >
-> Кроме того, вы можете использовать прямую ссылку [на скачивание CLI OC](https://www.okd.io/download.html).
-
-Страница **Command Line Tools** (Средства командной строки) содержит команду формата `oc login https://<your cluster name>.<azure region>.cloudapp.azure.com --token=<token value>`.  Нажмите кнопку *Копировать в буфер обмена*, чтобы скопировать эту команду.  В окне терминала [задайте переменную path](https://docs.okd.io/latest/cli_reference/openshift_cli/getting-started-cli.html#installing-the-cli), чтобы она включала локальный каталог установки средств OC. Затем войдите в кластер с помощью команды CLI OC, которую скопировали ранее.
-
-Если описанные выше шаги не позволили получить значение токена, получите это значение с помощью `https://<your cluster name>.<azure region>.cloudapp.azure.com/oauth/token/request`.
+> По умолчанию OpenShift использует самозаверяющие сертификаты для всех маршрутов, созданных в `*.apps.<random>.<location>.aroapp.io`.  Если вы решили использовать настраиваемую службу DNS после подключения к кластеру, необходимо следовать документации по OpenShift, чтобы [настроить пользовательский ЦС для контроллера](https://docs.openshift.com/container-platform/4.3/authentication/certificates/replacing-default-ingress-certificate.html) входящего трафика и [Пользовательский ЦС для сервера API](https://docs.openshift.com/container-platform/4.3/authentication/certificates/api-server.html).
+>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
-
 > [!div class="checklist"]
-> * Создание кластера Azure Red Hat OpenShift
+> * Настройте необходимые компоненты и создайте необходимую виртуальную сеть и подсети.
+> * Развертывание кластера
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]
-> [Масштабирование кластера Azure Red Hat OpenShift](tutorial-scale-cluster.md)
+> [Подключение к кластеру OpenShift для Azure Red Hat](tutorial-connect-cluster.md)

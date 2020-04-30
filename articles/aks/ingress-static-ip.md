@@ -5,12 +5,12 @@ description: Сведения об установке и настройке ко
 services: container-service
 ms.topic: article
 ms.date: 05/24/2019
-ms.openlocfilehash: 27b80b1f0b6728b5ad69edae51f0d42bfac351d0
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
-ms.translationtype: MT
+ms.openlocfilehash: f0a8f1f1e1b724745e69aef30e2e6404ff6a5484
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82145498"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82207366"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
 
@@ -56,7 +56,7 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 1. Добавьте `--set controller.service.loadBalancerIP` параметр. Укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге.
 1. Добавьте `--set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"` параметр. Укажите метку DNS-имени, которая будет применяться к общедоступному IP-адресу, созданному на предыдущем шаге.
 
-Контроллер Ingress также необходимо запланировать на узле Linux. Узлы Windows Server (в настоящее время в предварительной версии в AKS) не должны запускать входной контроллер. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера NGINX Ingress на узле под управлением Linux.
+Контроллер Ingress также необходимо запланировать на узле Linux. Узлы Windows Server не должны запускать контроллер Ingress. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера NGINX Ingress на узле под управлением Linux.
 
 > [!TIP]
 > В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды. Если в кластере AKS не включен RBAC, добавьте `--set rbac.create=false` к командам Helm.
@@ -285,7 +285,7 @@ certificate.cert-manager.io/tls-secret created
 
 ## <a name="test-the-ingress-configuration"></a>Проверка конфигурации входящего трафика
 
-Откройте в веб-браузере полное доменное имя контроллера входящего трафика Kubernetes, например *https://demo-aks-ingress.eastus.cloudapp.azure.com*.
+Откройте в веб-браузере полное доменное имя контроллера входящего трафика Kubernetes, например *`https://demo-aks-ingress.eastus.cloudapp.azure.com`*.
 
 Как и в этих `letsencrypt-staging`примерах используется, выданный сертификат TLS/SSL не является доверенным для браузера. Чтобы продолжить работу с приложением, примите предупреждение. Информация о сертификате свидетельствует о том, что этот сертификат *Fake LE Intermediate X1* выдан Let's Encrypt. Этот поддельный сертификат указывает на то, что `cert-manager` правильно обработал запрос и получил сертификат от поставщика.
 
@@ -299,7 +299,7 @@ certificate.cert-manager.io/tls-secret created
 
 ![Первый пример приложения](media/ingress/app-one.png)
 
-Теперь добавьте к FQDN путь */hello-world-two*, например *https://demo-aks-ingress.eastus.cloudapp.azure.com/hello-world-two*. Отобразится второе демонстрационное приложение с пользовательским заголовком:
+Теперь добавьте к FQDN путь */hello-world-two*, например *`https://demo-aks-ingress.eastus.cloudapp.azure.com/hello-world-two`*. Отобразится второе демонстрационное приложение с пользовательским заголовком:
 
 ![Второй пример приложения](media/ingress/app-two.png)
 

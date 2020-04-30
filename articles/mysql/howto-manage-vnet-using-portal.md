@@ -1,17 +1,17 @@
 ---
 title: Управление конечными точками виртуальной сети. портал Azure — база данных Azure для MySQL
 description: Создание правил и конечных точек службы виртуальной сети базы данных Azure для MySQL и управление ими с помощью портала Azure
-author: bolzmj
-ms.author: mbolz
+author: kummanish
+ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: fec85f7d87bbfe0039744b9ea63239083ff1c8a0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ba63c65c2b0d7abda089c3dfd315bfe499632cc0
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80063535"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509233"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-vnet-service-endpoints-and-vnet-rules-by-using-the-azure-portal"></a>Создание правил виртуальных сетей и конечных точек службы виртуальной сети базы данных Azure для MySQL и управление ими с помощью портала Azure
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для MySQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для MySQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах Базы данных Azure для MySQL.
@@ -56,7 +56,7 @@ ms.locfileid: "80063535"
 
    ![Включенные конечные точки службы виртуальной сети и созданное правило виртуальной сети](./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 - Аналогичным образом можно создать сценарий для [включения конечных точек службы виртуальной сети и создания правила виртуальной сети для базы данных Azure для MySQL с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 - Справка по подключению к серверу базы данных Azure для MySQL доступна в разделе [Библиотеки подключений для базы данных Azure для MySQL](./concepts-connection-libraries.md).
 

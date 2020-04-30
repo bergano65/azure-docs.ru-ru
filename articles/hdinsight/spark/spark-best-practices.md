@@ -1,20 +1,20 @@
 ---
-title: Apache Spark рекомендации по Azure HDInsight
+title: Рекомендации по Apache Spark в Azure HDInsight
 description: Ознакомьтесь с рекомендациями по использованию Apache Spark в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 09/18/2019
-ms.openlocfilehash: 20033e52e862f086d1491c06d38cdf4f2c57ba8d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 04/28/2020
+ms.openlocfilehash: 424a0cfd02cfce9fb87bc3e21d7b067740df8218
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71106129"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509420"
 ---
-# <a name="apache-spark-best-practices"></a>Рекомендации по Apache Spark
+# <a name="apache-spark-guidelines"></a>Рекомендации по Apache Spark
 
 В этой статье приводятся различные рекомендации по использованию Apache Spark в Azure HDInsight.
 
@@ -28,6 +28,10 @@ ms.locfileid: "71106129"
 | IntelliJ | [Руководство по Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ](./apache-spark-create-standalone-application.md) |
 | Записные книжки Zeppelin | [Use Apache Zeppelin notebooks with Apache Spark cluster on Azure HDInsight](./apache-spark-zeppelin-notebook.md) (Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight) |
 | Отправка удаленных заданий с помощью Livy | [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](./apache-spark-livy-rest-interface.md) |
+|[Apache Oozie](../hdinsight-use-oozie-linux-mac.md)|Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop.|
+|[Apache Livy](./apache-spark-livy-rest-interface.md)|Вы можете использовать Livy для выполнения интерактивных оболочек Spark или отправки пакетных заданий для запуска в кластере Spark.|
+|[Фабрика данных Azure для Apache Spark](/../data-factory/transform-data-using-spark.md)|Действие Spark в конвейере фабрики данных выполняет программу Spark в собственном или [кластере HDInsight по запросу.|
+|[Фабрика данных Azure для Apache Hive](/../data-factory/transform-data-using-hadoop-hive.md)|Действие Hive в HDInsight в конвейере фабрики данных выполняет запросы Hive к собственному кластеру HDInsight или по запросу.|
 
 ## <a name="how-do-i-monitor-and-debug-spark-jobs"></a>Разделы справки отслеживать задания Spark и выполнять их отладку?
 
@@ -62,7 +66,7 @@ ms.locfileid: "71106129"
 | Data Lake Storage 1-го поколения | [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-store.md) |
 | хранилище BLOB-объектов Azure | [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка параметров Apache Spark](apache-spark-settings.md)
 * [Оптимизация заданий Apache Spark в HDInsight](apache-spark-perf.md)

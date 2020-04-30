@@ -3,12 +3,12 @@ title: Мониторинг приложений Java в любой среде �
 description: Мониторинг производительности приложений Java, выполняющихся в любой среде, без инструментирования приложения. Распределенная трассировка и схема приложения.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: b9c1a52051e63beee9a784714a7bb1a6a79e8759
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 591cfad0f4719595835f212b9205354aad7cb9e8
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81687713"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82508077"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights---public-preview"></a>Azure Monitor Мониторинг приложений Java с поддержкой кода Application Insights — общедоступная Предварительная версия
 
@@ -24,11 +24,11 @@ ms.locfileid: "81687713"
 
 **1. Скачайте агент**
 
-Скачайте [аппликатионинсигхтс-ажент-3.0.0-превиев. 3. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.3/applicationinsights-agent-3.0.0-PREVIEW.3.jar)
+Скачайте [аппликатионинсигхтс-ажент-3.0.0-превиев. 4. jar.](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.4/applicationinsights-agent-3.0.0-PREVIEW.4.jar)
 
 **2. Указание ВИРТУАЛЬНОЙ машины Java агенту**
 
-Добавить `-javaagent:path/to/applicationinsights-agent-3.0.0-PREVIEW.3.jar` в виртуальной машины Java argss вашего приложения
+Добавить `-javaagent:path/to/applicationinsights-agent-3.0.0-PREVIEW.4.jar` в виртуальной машины Java argss вашего приложения
 
 Стандартные аргументы ВИРТУАЛЬНОЙ машины Java включают `-Xmx512m` и `-XX:+UseG1GC`. Итак, если вы узнаете, куда добавить эти данные, вы уже знакомы с их добавлением.
 
@@ -44,7 +44,7 @@ ms.locfileid: "81687713"
 APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=00000000-0000-0000-0000-000000000000
 ```
 
-Или создайте файл конфигурации с именем `ApplicationInsights.json`и поместите его в тот же каталог, что `applicationinsights-agent-3.0.0-PREVIEW.3.jar`и, со следующим содержимым:
+Или создайте файл конфигурации с именем `ApplicationInsights.json`и поместите его в тот же каталог, что `applicationinsights-agent-3.0.0-PREVIEW.4.jar`и, со следующим содержимым:
 
 ```json
 {
@@ -117,7 +117,7 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=00000000-0000-0000-0000
 
 ### <a name="metrics"></a>Метрики
 
-* Micrometer
+* Микрометер (включая метрики огнетушителя пружинной загрузки)
 * Метрики JMX
 
 ## <a name="sending-custom-telemetry-from-your-application"></a>Отправка пользовательских данных телеметрии из приложения

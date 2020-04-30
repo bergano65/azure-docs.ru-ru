@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 82e42580f5d934af96b4fad57dde1573b9c30ef5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: f4989f8dce32e2340357e30541548b3e7e9d8a44
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82098770"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82508893"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -310,7 +310,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 #### <a name="configuring-java-agent"></a>Настройка агента Java
 
-1. Скачайте [аппликатионинсигхтс-ажент-3.0.0-превиев. 3. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.3/applicationinsights-agent-3.0.0-PREVIEW.3.jar)
+1. Скачайте [аппликатионинсигхтс-ажент-3.0.0-превиев. 4. jar.](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.4/applicationinsights-agent-3.0.0-PREVIEW.4.jar)
 
 1. Чтобы включить выборку, добавьте в `ApplicationInsights.json` файл следующее:
 
@@ -583,7 +583,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 До версии 2.5.0-2 пакета SDK ASP.NET и v 2.2.0-beta3 ASP.NET Core SDK решение выборки было основано на хэш-коде пользователя для приложений, определяющих "User" (то есть наиболее типичных веб-приложений). Для типов приложений, не определяющих пользователей (например, веб-служб), решение выборки было основано на ИДЕНТИФИКАТОРе операции запроса. Последние версии пакетов SDK для ASP.NET и ASP.NET Core используют идентификатор операции для решения выборки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Фильтрация](../../azure-monitor/app/api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.
 * Прочтите статью "сеть разработчика", чтобы [оптимизировать телеметрию с помощью Application Insights](https://msdn.microsoft.com/magazine/mt808502.aspx).

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b28390dba009226d493f5bfc6a5270b067f5bba0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 731ed4664d10d3957be160bf9e8001d5470a6f38
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73570469"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82201391"
 ---
 # <a name="tutorial-integrate-sage-intacct-with-azure-active-directory"></a>Руководство по интеграции Sage Intacct с Azure Active Directory
 
@@ -94,7 +94,7 @@ ms.locfileid: "73570469"
     | ---------------| --------------- |
     | Название организации | **Идентификатор компании Sage Intacct** |
     | name | Значение должно совпадать со значением **идентификатора клиента** Sage Intacct, которое вы вводите в разделе **Создание тестового пользователя Sage Intacct**, что объясняется в руководстве позже. |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier | Значение должно совпадать со значением **идентификатора клиента федеративного единого входа** Sage Intacct, которое вы вводите в разделе **Создание тестового пользователя Sage Intacct**, что объясняется в руководстве позже. |
+    | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier` | Значение должно совпадать со значением **идентификатора клиента федеративного единого входа** Sage Intacct, которое вы вводите в разделе **Создание тестового пользователя Sage Intacct**, что объясняется в руководстве позже. |
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 

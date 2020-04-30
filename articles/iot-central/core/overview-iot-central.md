@@ -8,13 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-manager: timlt
-ms.openlocfilehash: 38152889ad43b41aeb345f59963cbfb869964b98
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.openlocfilehash: 05d73ae09d95879c37e86f5f3e73e35ed4607296
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82025243"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82560967"
 ---
 # <a name="what-is-azure-iot-central"></a>Сведения об Azure IoT Central
 
@@ -157,11 +156,11 @@ DPS позволяет следующее:
 
 Встроенные [панели мониторинга](./howto-set-up-template.md#generate-default-views) предоставляют настраиваемый пользовательский интерфейс для отслеживания работоспособности и телеметрии устройств. Начните с предварительно созданной панели мониторинга в [шаблоне приложения](howto-use-app-templates.md) или создайте собственные панели, адаптированные к потребностям операторов. Доступ к панелям мониторинга можно предоставить всем пользователям в приложении или оставить их закрытыми.
 
-### <a name="rules-and-actions"></a>Правила и действия 
+### <a name="rules-and-actions"></a>Правила и действия
 
 Создайте [пользовательские правила](tutorial-create-telemetry-rules.md) на основе состояния устройства и телеметрии для идентификации устройств, требующих внимания. Настройте действия, чтобы уведомить нужных пользователей и обеспечить своевременное получение мер по исправлению.
 
-### <a name="jobs"></a>Задания 
+### <a name="jobs"></a>Задания
 
 [Задания](howto-run-a-job.md) позволяют применять отдельные или групповые обновления к устройствам путем настройки свойств или вызова команд. 
 

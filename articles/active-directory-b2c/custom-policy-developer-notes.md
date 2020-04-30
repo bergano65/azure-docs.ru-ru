@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/30/2020
+ms.date: 04/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 403ca480bcf0743d81e375c122c888db96bbf543
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 471c2d45e28e634adde78c2d96d407ec219be68c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "80408715"
+ms.locfileid: "82229669"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Примечания разработчика для пользовательских политик в Azure Active Directory B2C
 
@@ -62,7 +62,7 @@ ms.locfileid: "80408715"
 
 ### <a name="protocols-and-authorization-flows"></a>Протоколы и потоки авторизации
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 |-------- | :-----------: | :-------: | :--: | ----- |
 | [Код авторизации OAuth2](authorization-code-flow.md) |  |  | X |  |
 | Код авторизации OAuth2 с PKCE |  |  | X | Только мобильные приложения  |
@@ -75,18 +75,18 @@ ms.locfileid: "80408715"
 
 ### <a name="identify-providers-federation"></a>Выявление Федерации поставщиков 
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 |-------- | :-----------: | :-------: | :--: | ----- |
 | [OpenID Connect](openid-connect-technical-profile.md) |  |  | X | Например, Google +.  |
 | [OAuth2](oauth2-technical-profile.md) |  |  | X | Например, Facebook.  |
 | [OAuth1](oauth1-technical-profile.md) |  | X |  | Например, Twitter. |
-| [SAML2](saml-technical-profile.md) |  |   | X | Например, Salesforce, ADFS. |
+| [SAML2](saml-identity-provider-technical-profile.md) |  |   | X | Например, Salesforce, ADFS. |
 | WSFED| X |  |  |  |
 
 
 ### <a name="rest-api-integration"></a>Интеграция REST API
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 |-------- | :-----------: | :-------: | :--: | ----- |
 | [REST API с обычной проверкой подлинности](secure-rest-api.md#http-basic-authentication) |  |  | X |  |
 | [REST API с проверкой подлинности сертификата клиента](secure-rest-api.md#https-client-certificate-authentication) |  |  | X |  |
@@ -94,7 +94,7 @@ ms.locfileid: "80408715"
 
 ### <a name="component-support"></a>Поддержка компонентов
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
 | [Аутентификация по телефонному фактору](phone-factor-technical-profile.md) |  |  | X |  |
 | [Проверка подлинности Azure MFA](multi-factor-auth-technical-profile.md) |  | X |  |  |
@@ -109,7 +109,7 @@ ms.locfileid: "80408715"
 
 ### <a name="page-layout-versions"></a>Версии макета страницы
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
 | [2.0.0](page-layout.md#200) |  | X |  |  |
 | [1.2.0](page-layout.md#120) |  | X |  |  |
@@ -119,7 +119,7 @@ ms.locfileid: "80408715"
 
 ### <a name="app-ief-integration"></a>Интеграция приложения с Identity Experience Framework
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
 | Параметр строки запроса`domain_hint` |  |  | X | Доступно как утверждение, может быть передано в IDP. |
 | Параметр строки запроса`login_hint` |  |  | X | Доступно как утверждение, может быть передано в IDP. |
@@ -129,16 +129,17 @@ ms.locfileid: "80408715"
 
 ### <a name="session-management"></a>Управление сеансом
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
 | [Поставщик сеанса единого входа по умолчанию](custom-policy-reference-sso.md#defaultssosessionprovider) |  |  | X |  |
 | [Поставщик сеанса внешнего входа](custom-policy-reference-sso.md#externalloginssosessionprovider) |  |  | X |  |
 | [Поставщик сеанса единого входа SAML](custom-policy-reference-sso.md#samlssosessionprovider) |  |  | X |  |
-
+| [оаусссосессионпровидер](custom-policy-reference-sso.md#oauthssosessionprovider)  |  | X |  |  |
+| [Единый выход](session-overview.md#sign-out)  |  | X |  |  |
 
 ### <a name="security"></a>Безопасность
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 |-------- | :-----------: | :-------: | :--: | ----- |
 | Ключи политики — создание, смена вручную и передача |  |  | X |  |
 | Ключи политики — RSA или сертификаты, секреты |  |  | X |  |
@@ -146,7 +147,7 @@ ms.locfileid: "80408715"
 
 ### <a name="developer-interface"></a>Интерфейс разработчика
 
-| Функция | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
 | Пользовательский интерфейс Identity Experience Framework на портале Azure |  |  | X |  |
 | Отправка политики |  |  | X |  |
@@ -154,7 +155,7 @@ ms.locfileid: "80408715"
 | [Application Insights журналов событий](application-insights-technical-profile.md) |  | X |  | Используется для мониторинга потоков пользователей в рабочей среде. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Проверьте [Microsoft Graph операции, доступные для Azure AD B2C](microsoft-graph-operations.md)
 - Дополнительные сведения о [пользовательских политиках и различиях между потоками пользователей](custom-policy-overview.md).

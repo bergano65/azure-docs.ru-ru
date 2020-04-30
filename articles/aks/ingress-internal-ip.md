@@ -5,12 +5,12 @@ description: Сведения об установке и настройке ко
 services: container-service
 ms.topic: article
 ms.date: 05/24/2019
-ms.openlocfilehash: d6533434fc053427ae26a28879af18aed73f40aa
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
-ms.translationtype: MT
+ms.openlocfilehash: 75db0a9bc5089ef652e05841eb9f8d3971770650
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82145426"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82207451"
 ---
 # <a name="create-an-ingress-controller-to-an-internal-virtual-network-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика для внутренней виртуальной сети в Службе Azure Kubernetes (AKS)
 
@@ -47,7 +47,7 @@ controller:
 
 Разверните диаграмму *nginx ingress* с помощью Helm. Чтобы использовать файл манифеста, созданный на предыдущем шаге, добавьте параметр `-f internal-ingress.yaml`. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
-Контроллер Ingress также необходимо запланировать на узле Linux. Узлы Windows Server (в настоящее время в предварительной версии в AKS) не должны запускать входной контроллер. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера NGINX Ingress на узле под управлением Linux.
+Контроллер Ingress также необходимо запланировать на узле Linux. Узлы Windows Server не должны запускать контроллер Ingress. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера NGINX Ingress на узле под управлением Linux.
 
 > [!TIP]
 > В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды. Если в кластере AKS не включен RBAC, добавьте `--set rbac.create=false` к командам Helm.
@@ -216,10 +216,10 @@ helm repo remove azure-samples
 ```
 $ helm list
 
-NAME                REVISION    UPDATED                     STATUS      CHART                   APP VERSION NAMESPACE
-kissing-ferret      1           Tue Oct 16 17:13:39 2018    DEPLOYED    nginx-ingress-0.22.1    0.15.0      kube-system
-intended-lemur      1           Tue Oct 16 17:20:59 2018    DEPLOYED    aks-helloworld-0.1.0                default
-pioneering-wombat   1           Tue Oct 16 17:21:05 2018    DEPLOYED    aks-helloworld-0.1.0                default
+NAME                 REVISION    UPDATED                     STATUS      CHART                   APP VERSION    NAMESPACE
+kissing-ferret       1           Tue Oct 16 17:13:39 2018    DEPLOYED    nginx-ingress-0.22.1    0.15.0         kube-system
+intended-lemur       1           Tue Oct 16 17:20:59 2018    DEPLOYED    aks-helloworld-0.1.0                   default
+pioneering-wombat    1           Tue Oct 16 17:21:05 2018    DEPLOYED    aks-helloworld-0.1.0                   default
 ```
 
 Удалить выпуски командой `helm delete`. В следующем примере удаляются развертывание контроллера входящего трафика NGINX и два примера приложений hello world для AKS.

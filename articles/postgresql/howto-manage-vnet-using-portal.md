@@ -1,17 +1,17 @@
 ---
 title: Использование правил виртуальной сети — портал Azure — "база данных Azure для PostgreSQL" — "один сервер"
 description: Создание конечных точек службы виртуальной сети и правил для базы данных Azure для PostgreSQL-Single Server и управление ими с помощью портал Azure
-author: bolzmj
-ms.author: mbolz
+author: rachel-msft
+ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 413c3a7b6fdcda996d3db548fb53f358eb8c71e0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 04084aa2a86c6faab40884446d108d49861cf79e
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75978292"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509335"
 ---
 # <a name="create-and-manage-vnet-service-endpoints-and-vnet-rules-in-azure-database-for-postgresql---single-server-by-using-the-azure-portal"></a>Создание конечных точек службы виртуальной сети и правил виртуальной сети в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью портал Azure
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.

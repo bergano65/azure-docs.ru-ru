@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 85992224edd10c0a0f233de9f6274cc77e109b22
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9cf012df65560a921f2c9f12f6c0362a033300be
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "60757746"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561637"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-vmware"></a>Руководство по Подготовка Шлюза Azure Data Box в VMware
 
@@ -21,7 +21,7 @@ ms.locfileid: "60757746"
 
 В этом руководстве описана подготовка и подключение Шлюза Data Box в главной системе под управлением VMware ESXi 6.0, 6.5 или 6.7. 
 
-Чтобы подготовить виртуальное устройство и подключиться к нему, требуются права администратора. Подготовка и начальная настройка могут занять около 10 минут.
+Чтобы подготовить виртуальное устройство и подключиться к нему, требуются права администратора. Подготовка и начальная настройка могут занять около 10 минут. 
 
 В этом руководстве описано следующее:
 

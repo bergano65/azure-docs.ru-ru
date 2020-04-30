@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: overview
 ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: b8c6b4085f56bc12b67bf87177ba33b82c6a6db9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8911c1099db36b7e4e6d568ea64ae4afa3cc826e
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "69900586"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561062"
 ---
 # <a name="what-is-azure-data-box-gateway"></a>Что такое Шлюз Azure Data Box?
 
@@ -89,7 +89,7 @@ ms.locfileid: "69900586"
 
 Физическое устройство Шлюза Data Box, ресурс Azure и целевая учетная запись хранения, в которую вы передаете данные, необязательно должны находиться в одном и том же регионе.
 
-- **Доступность ресурсов**. Список всех регионов, в которых доступны ресурсы Data Box Edge, см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=databox). Шлюз Data Box также можно развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
+- **Доступность ресурсов**. Список всех регионов, в которых доступны ресурсы Azure Stack Edge, приведен на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=databox). Шлюз Data Box также можно развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
 
 - **Целевые учетные записи хранения**. Учетные записи хранения, в которых хранятся данные, доступны во всех регионах Azure.
 
