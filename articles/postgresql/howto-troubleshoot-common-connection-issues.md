@@ -8,10 +8,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 771d7f5b037fde1144b18dc4ed0dee7aecac6744
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100215"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql---single-server"></a>Устранение проблем с подключением к базе данных Azure для PostgreSQL — один сервер
@@ -57,6 +57,6 @@ ms.locfileid: "82100215"
 3. Проверьте строку подключения и другие параметры подключения.
 4. Проверьте работоспособность службы на панели мониторинга. Если присутствует региональный сбой, см. статью [Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для MySQL"](concepts-business-continuity.md), чтобы выполнить инструкции по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Handling of transient connectivity errors for Azure Database for PostgreSQL](concepts-connectivity.md) (Обработка временных ошибок подключения для Базы данных Azure для PostgreSQL)

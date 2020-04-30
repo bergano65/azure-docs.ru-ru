@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.author: labrenne
 ms.openlocfilehash: 4268c9d840aa9dfadd785d74811e9d12ac32ec31
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115896"
 ---
 # <a name="pool-resize-complete-event"></a>Событие завершения изменения размера пула
@@ -44,7 +44,7 @@ ms.locfileid: "82115896"
 |`targetLowPriorityNodes`|Int32|Количество расчетных узлов с низким приоритетом, запрошенных для пула.|
 |`enableAutoScale`|Bool|Указывает, корректируется ли размер пула автоматически с течением времени.|
 |`isAutoPool`|Bool|Определяет, создан ли пул с помощью механизма AutoPool задания.|
-|`startTime`|Дата и время|Время, когда было начато изменение размера пула.|
-|`endTime`|Дата и время|Время, когда изменение размера пула было завершено.|
+|`startTime`|DateTime|Время, когда было начато изменение размера пула.|
+|`endTime`|DateTime|Время, когда изменение размера пула было завершено.|
 |`resultCode`|Строка|Результат изменения размера.|
 |`resultMessage`|Строка| Подробное сообщение о результате.<br /><br /> Если размер успешно изменен, сообщается, что операция выполнена.|

@@ -1,32 +1,25 @@
 ---
 title: Краткое руководство. Создание виртуальной машины Windows с помощью Azure PowerShell
 description: Из этого краткого руководства вы узнаете, как создать виртуальную машину Windows с помощью Azure PowerShell.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.topic: quickstart
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/02/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 607ad17af42b88737d8ca4ebc379504d9b0b40df
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 45160e8bc406318f3b3924142899e33640ee6b73
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74073458"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82097954"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-in-azure-with-powershell"></a>Краткое руководство. Создание виртуальной машины Windows в Azure с помощью PowerShell
 
 Модуль PowerShell используется для создания ресурсов Azure и управления ими с помощью командной строки PowerShell или сценариев. В этом кратком руководстве показано, как с помощью Azure PowerShell развернуть в Azure виртуальную машину под управлением Windows Server 2016. Вы также подключитесь к виртуальной машине по протоколу удаленного рабочего стола (RDP) и установите веб-сервер IIS, чтобы проверить работу виртуальной машины.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 

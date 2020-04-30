@@ -4,10 +4,10 @@ description: Узнайте, как создавать резервные коп
 ms.topic: conceptual
 ms.date: 03/05/2020
 ms.openlocfilehash: c79100724b882c0682c86070ee74a8726d6b049f
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82105749"
 ---
 # <a name="about-azure-file-share-backup"></a>Общие сведения о резервном копировании файлового ресурса Azure
@@ -49,7 +49,7 @@ ms.locfileid: "82105749"
 
 В настоящее время вам придется оплатить только моментальные снимки, так как резервное копирование файлового ресурса Azure является решением на основе моментального снимка. Плата за хранилище, оплачиваемая за моментальные снимки, оплачивается вместе с использованием файлов Azure в соответствии со сведениями о ценах, указанными [здесь](https://azure.microsoft.com/pricing/details/storage/files/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о [резервном копировании файловых ресурсов Azure](backup-afs.md)
 * Поиск ответов на [вопросы о резервном копировании файлов Azure](backup-azure-files-faq.md)

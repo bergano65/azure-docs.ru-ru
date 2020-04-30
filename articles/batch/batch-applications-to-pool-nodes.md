@@ -4,10 +4,10 @@ description: Узнайте, как копировать приложения и
 ms.topic: article
 ms.date: 02/17/2020
 ms.openlocfilehash: 700e9b80f8420266c0300b47bdd30bc271f8421c
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115590"
 ---
 # <a name="copying-applications-and-data-to-pool-nodes"></a>Копирование приложений и данных в узлы пула
@@ -16,7 +16,7 @@ ms.locfileid: "82115590"
 
 - **Файлы ресурсов задачи "начало пула**": для приложений или данных, которые необходимо установить на каждом узле в пуле. Используйте этот метод вместе с пакетом приложения или коллекцией файлов ресурсов задачи запуска, чтобы выполнить команду install.  
 
-Примеры: 
+Примеры 
 - Использование командной строки запуска задачи для перемещения или установки приложений
 
 - Укажите список конкретных файлов или контейнеров в учетной записи хранения Azure. Дополнительные сведения см. [в разделе Добавление # ResourceFile в документации по RESTful](https://docs.microsoft.com/rest/api/batchservice/pool/add#resourcefile) .

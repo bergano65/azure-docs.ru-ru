@@ -6,10 +6,10 @@ ms.date: 10/24/2019
 ms.author: labrenne
 ms.custom: H1Hack27Feb2017,fasttrack-edit
 ms.openlocfilehash: b790ee286d9edd8cee04ef1db719be6395509be2
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82113567"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание автоматической формулы для масштабирования вычисляемых узлов в пуле пакетной службы
@@ -191,7 +191,7 @@ $NodeDeallocationOption = taskcompletion;
 ## <a name="functions"></a>Функции
 Для определения формулы автомасштабирования доступны следующие предопределенные **функции** .
 
-| Компонент | Возвращаемый тип | Описание |
+| Функция | Возвращаемый тип | Описание |
 | --- | --- | --- |
 | avg(doubleVecList) |double |Среднее значение для всех значений в doubleVecList. |
 | len(doubleVecList) |double |Возвращает длину вектора, созданного из doubleVecList. |
@@ -213,7 +213,7 @@ $NodeDeallocationOption = taskcompletion;
 | time(string dateTime="") |TIMESTAMP |Возвращает отметку времени для текущего времени, если параметр не передан, и отметку времени для строки dateTime, если параметр передан. Поддерживаемые форматы даты и времени: W3C-DTF и RFC 1123. |
 | val(doubleVec v, double i) |double |Возвращает значение элемента с индексом i в векторе v с начальным индексом 0. |
 
-Некоторые функции, описанные в предыдущей таблице, могут принимать список в качестве аргумента. Список значений, разделенных запятыми, — это любая комбинация типов *double* и *doubleVec*. Например:
+Некоторые функции, описанные в предыдущей таблице, могут принимать список в качестве аргумента. Список значений, разделенных запятыми, — это любая комбинация типов *double* и *doubleVec*. Пример:
 
 `doubleVecList := ( (double | doubleVec)+(, (double | doubleVec) )* )?`
 
@@ -233,7 +233,7 @@ $CPUPercent.GetSample(TimeInterval_Minute * 5)
 | GetSamplePeriod() |Возвращает период выборок, которые были получены в историческом наборе данных выборок. |
 | Count() |Возвращает общее количество выборок в журнале метрик. |
 | HistoryBeginTime() |Возвращает метку времени самой старой доступной выборки данных метрики. |
-| GetSamplePercent() |Возвращает процент выборок, которые доступны для заданного интервала времени. Например:<br/><br/>`doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )`<br/><br/>Так как метод `GetSample` завершается сбоем, то если процент возвращаемых выборок меньше указанного в параметре `samplePercent`, можно сначала воспользоваться методом `GetSamplePercent` для проверки. Затем при недостаточном количестве выборок можно выполнить другое действие без прерывания оценки автоматического масштабирования. |
+| GetSamplePercent() |Возвращает процент выборок, которые доступны для заданного интервала времени. Пример:<br/><br/>`doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )`<br/><br/>Так как метод `GetSample` завершается сбоем, то если процент возвращаемых выборок меньше указанного в параметре `samplePercent`, можно сначала воспользоваться методом `GetSamplePercent` для проверки. Затем при недостаточном количестве выборок можно выполнить другое действие без прерывания оценки автоматического масштабирования. |
 
 ### <a name="samples-sample-percentage-and-the-getsample-method"></a>Выборки, процент выборок и метод *GetSample()*
 Основной операцией формулы автоматического масштабирования является получение данных метрик для задач и ресурсов и изменение размера пула на основе этих данных. Поэтому важно иметь четкое представление о том, как формулы автоматического масштабирования взаимодействуют с данными метрик (выборками).
@@ -258,7 +258,7 @@ $CPUPercent.GetSample(TimeInterval_Minute * 5)
 $runningTasksSample = $RunningTasks.GetSample(1 * TimeInterval_Minute, 6 * TimeInterval_Minute);
 ```
 
-Когда пакетная служба вычисляет приведенную выше строку, она возвращает диапазон выборок в виде вектора значений. Например:
+Когда пакетная служба вычисляет приведенную выше строку, она возвращает диапазон выборок в виде вектора значений. Пример:
 
 ```
 $runningTasksSample=[1,1,1,1,1,1,1,1,1,1];
@@ -463,7 +463,7 @@ response = batch_service_client.pool.enable_auto_scale(pool_id, auto_scale_formu
 
 ## <a name="enable-autoscaling-on-an-existing-pool"></a>Включение автомасштабирования в имеющемся пуле
 
-Каждый пакет SDK пакетной службы предоставляет способ включения автомасштабирования. Например:
+Каждый пакет SDK пакетной службы предоставляет способ включения автомасштабирования. Пример:
 
 * [BatchClient.PoolOperations.EnableAutoScaleAsync][net_enableautoscaleasync] (библиотека .NET пакетной службы)
 * [Включение автомасштабирования пула][rest_enableautoscale] (REST API)

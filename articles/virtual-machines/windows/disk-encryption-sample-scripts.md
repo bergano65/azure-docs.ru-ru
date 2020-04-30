@@ -1,6 +1,6 @@
 ---
 title: Примеры скриптов шифрования дисков Azure
-description: Эта статья является приложением для шифрования дисков Microsoft Azure для Windows VMs.
+description: В этой статье приводятся сведения о Microsoft Azure шифровании дисков для виртуальных машин Windows.
 author: msmbaldwin
 ms.service: virtual-machines-windows
 ms.subservice: security
@@ -9,34 +9,34 @@ ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
 ms.openlocfilehash: e5e0a970df680df43a7bd303636b3d81bda3e141
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82085711"
 ---
 # <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
 
-В этой статье приведены примеры скриптов для подготовки предварительно зашифрованных VHD и других задач.
+В этой статье приводятся примеры сценариев для подготовки предварительно зашифрованных виртуальных жестких дисков и других задач.
 
  
 
-## <a name="list-vms-and-secrets"></a>Список VMs и секреты
+## <a name="list-vms-and-secrets"></a>Вывод списка виртуальных машин и секретов
 
-Перечислите все зашифрованные VMs в подписке:
+Перечисление всех зашифрованных виртуальных машин в подписке:
 
 ```azurepowershell-interactive
 $osVolEncrypted = {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).OsVolumeEncrypted}
 $dataVolEncrypted= {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).DataVolumesEncrypted}
 Get-AzVm | Format-Table @{Label="MachineName"; Expression={$_.Name}}, @{Label="OsVolumeEncrypted"; Expression=$osVolEncrypted}, @{Label="DataVolumesEncrypted"; Expression=$dataVolEncrypted}
 ```
-Перечислите все секреты шифрования дисков, используемые для шифрования VMs в хранилище ключей:
+Список всех секретов шифрования дисков, используемых для шифрования виртуальных машин в хранилище ключей:
 
 ```azurepowershell-interactive
 Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('DiskEncryptionKeyFileName')} | format-table @{Label="MachineName"; Expression={$_.Tags['MachineName']}}, @{Label="VolumeLetter"; Expression={$_.Tags['VolumeLetter']}}, @{Label="EncryptionKeyURL"; Expression={$_.Id}}
 ```
 
-## <a name="the-azure-disk-encryption-prerequisites-scripts"></a>Сценарии предпосылок шифрования дисков Azure
+## <a name="the-azure-disk-encryption-prerequisites-scripts"></a>Сценарии предварительных требований для шифрования дисков Azure
 Если вы уже знакомы с предварительными требованиями для шифрования дисков Azure, можно использовать [соответствующий сценарий PowerShell предварительных требований](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Пример использования этого сценария PowerShell см. в статье [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md). Вы можете удалить комментарии из раздела сценария, начиная со строки 211, чтобы шифровать все диски имеющихся виртуальных машин в имеющейся группе ресурсов. 
 
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
@@ -55,13 +55,13 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
 
 ### <a name="encrypt-or-decrypt-vms-without-an-azure-ad-app"></a>Шифрование или расшифровка виртуальных машин без приложения Azure AD
 
-- [Включить шифрование диска на существующей или подходящей Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-windows-vm-without-aad)  
-- [Отключить шифрование на подходящей Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-windows-vm-without-aad) 
+- [Включение шифрования дисков на существующей или работающей виртуальной машине Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-windows-vm-without-aad)  
+- [Отключение шифрования на работающей виртуальной машине Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-windows-vm-without-aad) 
 
 ### <a name="encrypt-or-decrypt-vms-with-an-azure-ad-app-previous-release"></a>Шифрование или расшифровка виртуальных машин с приложением Azure AD (предыдущий выпуск) 
  
-- [Включить шифрование диска на существующей или подходящей Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-windows-vm)    
-- [Отключить шифрование на подходящей Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-windows-vm) 
+- [Включение шифрования дисков на существующей или работающей виртуальной машине Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-windows-vm)    
+- [Отключение шифрования на работающей виртуальной машине Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-windows-vm) 
 - [Создание нового зашифрованного управляемого диска из предварительно зашифрованного виртуального жесткого диска или большого двоичного объекта хранилища](https://github.com/Azure/azure-quickstart-templates/tree/master/201-create-encrypted-managed-disk)
     - Создает зашифрованный управляемый диск на основе предварительно зашифрованного виртуального жесткого диска и его соответствующих параметров шифрования.
 
@@ -69,7 +69,7 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
 В следующем разделе приведены инструкции по подготовке предварительно зашифрованного виртуального жесткого диска Windows к развертыванию в качестве зашифрованного виртуального жесткого диска в IaaS Azure. Используйте эти сведения, чтобы подготовить и загрузить новую виртуальную машину Windows (VHD) в Azure Site Recovery Azure или Azure. Дополнительные сведения о подготовке и отправке виртуального жесткого диска см. в статье [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](upload-generalized-managed.md).
 
 ### <a name="update-group-policy-to-allow-non-tpm-for-os-protection"></a>Обновление групповой политики с целью разрешить защиту ОС без TPM
-Настройте параметр групповой политики BitLocker, который называется **Шифрование дисков BitLocker**. Для этого выберите **Политика локального компьютера** > **Конфигурация компьютера** > **Административные шаблоны** > **Компоненты Windows**. Изменение этой настройки на >  **диски операционной системы****Требуется дополнительная аутентификация при запуске** > **Разрешить BitLocker без совместимого TPM**, как показано на следующей цифре:
+Настройте параметр групповой политики BitLocker, который называется **Шифрование дисков BitLocker**. Для этого выберите **Политика локального компьютера** > **Конфигурация компьютера** > **Административные шаблоны** > **Компоненты Windows**. Измените этот параметр > на **диски операционной системы**,**требующие дополнительной проверки подлинности при запуске** > ,**Разрешить BitLocker без совместимого доверенного платформенного модуля**, как показано на следующем рисунке:
 
 ![Антивредоносное ПО Майкрософт в Azure](../media/disk-encryption/disk-encryption-fig8.png)
 
@@ -88,7 +88,7 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
     bdehdcfg -target c: shrink -quiet 
 
 ### <a name="protect-the-os-volume-by-using-bitlocker"></a>Защита тома операционной системы с помощью BitLocker
-Используйте [`manage-bde`](https://technet.microsoft.com/library/ff829849.aspx) команду для включения шифрования на громкости загрузки с помощью внешнего протектора ключа. Можно также поместить внешний ключ (BEK-файл) на внешний диск или том. Шифрование будет включено для системного или загрузочного тома после перезагрузки.
+Используйте [`manage-bde`](https://technet.microsoft.com/library/ff829849.aspx) команду, чтобы включить шифрование загрузочного тома с помощью внешнего предохранителя ключа. Можно также поместить внешний ключ (BEK-файл) на внешний диск или том. Шифрование будет включено для системного или загрузочного тома после перезагрузки.
 
     manage-bde -on %systemdrive% -sk [ExternalDriveOrVolume]
     reboot
@@ -97,13 +97,13 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
 > Чтобы получить внешний ключ с использованием BitLocker, подготовьте виртуальную машину с отдельным виртуальным жестким диском для данных и ресурсов.
 
 ## <a name="upload-encrypted-vhd-to-an-azure-storage-account"></a>Передача зашифрованного виртуального жесткого диска в учетную запись хранения Azure
-После включения шифрования DM-Crypt необходимо загрузить на ваш аккаунт хранения.
+После включения шифрования с помощью DM-Encryption локальный зашифрованный виртуальный жесткий диск необходимо отправить в учетную запись хранения.
 ```powershell
     Add-AzVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo> [[-NumberOfUploaderThreads] <Int32> ] [[-BaseImageUriToPatch] <Uri> ] [[-OverWrite]] [ <CommonParameters>]
 ```
 
 ## <a name="upload-the-secret-for-the-pre-encrypted-vm-to-your-key-vault"></a> Передача секрета для предварительно зашифрованной виртуальной машины в хранилище ключей
-Секрет шифрования диска, полученный ранее, должен быть загружен в качестве секрета в хранилище ключей.  Для этого требуется предоставление секретного разрешения и разрешения на обертку для учетной записи, которая будет загружать секреты.
+Полученный ранее секрет шифрования диска должен быть отправлен в качестве секрета в хранилище ключей.  Для этого необходимо предоставить разрешение Set Secret и разрешение wrapkey учетной записи, которая будет отправлять секреты.
 
 ```powershell 
 # Typically, account Id is the user principal name (in user@domain.com format)
@@ -122,7 +122,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $kvname -UserPrincipalName $acctid -Permis
 ```
 
 ### <a name="disk-encryption-secret-not-encrypted-with-a-kek"></a>Секрет дискового шифрования не шифруется с помощью KEK
-Чтобы настроить секрет в хранилище ключей, используйте [Set-AzKeyVaultSecret.](/powershell/module/az.keyvault/set-azkeyvaultsecret) Пароль закодирован как строка base64, а затем загружен в хранилище ключей. Убедитесь также, что при создании секрета в хранилище ключей были установлены следующие теги.
+Чтобы настроить секрет в хранилище ключей, используйте [Set-азкэйваултсекрет](/powershell/module/az.keyvault/set-azkeyvaultsecret). Парольная фраза кодируется как строка Base64, а затем передается в хранилище ключей. Убедитесь также, что при создании секрета в хранилище ключей были установлены следующие теги.
 
 ```powershell
 
@@ -142,7 +142,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $kvname -UserPrincipalName $acctid -Permis
 На следующем шаге используйте `$secretUrl`, чтобы [подключить диск ОС, не применяя ключ шифрования ключей](#without-using-a-kek).
 
 ### <a name="disk-encryption-secret-encrypted-with-a-kek"></a>Секрет дискового шифрования, зашифрованный с помощью KEK
-Перед передачей секрета в хранилище ключей его можно дополнительно зашифровать с помощью ключа шифрования ключей. Используйте [API](https://msdn.microsoft.com/library/azure/dn878066.aspx) для создания оболочки, чтобы сначала зашифровать секрет с использованием ключа шифрования ключей. Выход этой операции обертывания является base64 URL закодирован строки, которые [`Set-AzKeyVaultSecret`](/powershell/module/az.keyvault/set-azkeyvaultsecret) затем можно загрузить в качестве секрета с помощью cmdlet.
+Перед передачей секрета в хранилище ключей его можно дополнительно зашифровать с помощью ключа шифрования ключей. Используйте [API](https://msdn.microsoft.com/library/azure/dn878066.aspx) для создания оболочки, чтобы сначала зашифровать секрет с использованием ключа шифрования ключей. Выходными данными этой операции по переносу является строка в кодировке Base64, которую можно затем передать в качестве секрета с помощью [`Set-AzKeyVaultSecret`](/powershell/module/az.keyvault/set-azkeyvaultsecret) командлета.
 
 ```powershell
     # This is the passphrase that was provided for encryption during the distribution installation

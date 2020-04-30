@@ -4,10 +4,10 @@ description: Как подключить общую папку с помощью
 ms.topic: article
 ms.date: 05/24/2018
 ms.openlocfilehash: 666ee6bd0e6287545c107427dffcc9f2ccde900a
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115454"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Использование общей папки Azure с пулом пакетной службы

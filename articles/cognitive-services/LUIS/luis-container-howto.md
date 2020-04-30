@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: 2df36d80aea34da1693cecde524d239abd2bb04a
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82100249"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
@@ -32,7 +32,7 @@ ms.locfileid: "82100249"
 
 Чтобы запустить контейнер LUIS, обратите внимание на следующие предварительные требования.
 
-|Обязательный|Описание|
+|Обязательный|Назначение|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
@@ -118,7 +118,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 
 Перед упаковкой приложения LUIS потребуется следующее:
 
-|Требования к упаковке|Подробности|
+|Требования к упаковке|Сведения|
 |--|--|
 |Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (`westus`)<br>Западная Европа (`westeurope`)<br>Восточная Австралия (`australiaeast`)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей][unsupported-dependencies]. |
@@ -252,7 +252,7 @@ ApiKey={API_KEY}
 
 Параметры запроса определяют содержимое ответа на запрос и способ его получения:
 
-|Параметр запроса|Тип|Описание|
+|Параметр запроса|Тип|Назначение|
 |--|--|--|
 |`query`|строка|Фраза пользователя.|
 |`verbose`|Логическое|Логическое значение, указывающее, следует ли возвращать все метаданные для прогнозируемых моделей. Значение по умолчанию — false.|
@@ -268,7 +268,7 @@ ApiKey={API_KEY}
 
 Параметры запроса определяют содержимое ответа на запрос и способ его получения:
 
-|Параметр запроса|Тип|Описание|
+|Параметр запроса|Тип|Назначение|
 |--|--|--|
 |`q`|строка|Фраза пользователя.|
 |`timezoneOffset`|number|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
@@ -385,7 +385,7 @@ curl -X GET \
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Проверьте настройки [контейнеров](luis-container-configuration.md) на наличие параметров конфигурации.
 * См. раздел [ограничения контейнера Luis](luis-container-limitations.md) для известных ограничений возможностей.

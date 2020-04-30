@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 04/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 5b3dbee7d0ac928c4f18f25348e714aba9c1cd13
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100776"
 ---
 # <a name="use-powershell-to-set-allowed-vm-sizes-in-azure-lab-services"></a>Задание допустимых размеров виртуальных машин в службе "Службы лабораторий Azure" с помощью PowerShell
@@ -27,7 +27,7 @@ ms.locfileid: "82100776"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта

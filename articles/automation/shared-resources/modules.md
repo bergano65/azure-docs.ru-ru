@@ -9,10 +9,10 @@ ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: c8d22e63be880c0cef0c4072e99ab85bf3250a1c
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82114280"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Администрирование модулей в службе автоматизации Azure
@@ -33,7 +33,7 @@ ms.locfileid: "82114280"
 >Не забудьте импортировать только модули, которые действительно необходимы для модулей Runbook и конфигураций DSC. Мы не рекомендуем импортировать корневой модуль AZ, так как он включает множество других модулей, которые могут не потребоваться, что может вызвать проблемы с производительностью. Вместо этого импортируйте отдельные модули, например AZ. COMPUTE.
 
 >[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
 
 ## <a name="default-modules"></a>Модули по умолчанию
 
@@ -334,7 +334,7 @@ New-AzAutomationModule -AutomationAccountName <AutomationAccountName> -ResourceG
 
 1. Перейдите в https://www.powershellgallery.com раздел и найдите модуль для импорта.
 2. Щелкните **развернуть в службе автоматизации Azure** на вкладке Служба **автоматизации Azure** в разделе **Параметры установки**. Это действие открывает портал Azure. 
-3. На странице Импорт выберите учетную запись службы автоматизации и нажмите кнопку **ОК**.
+3. На странице "Импорт" выберите учетную запись службы автоматизации и нажмите кнопку **ОК**.
 
 ![Модуль импорта коллекция PowerShell](../media/modules/powershell-gallery.png)
 

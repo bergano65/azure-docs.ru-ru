@@ -4,10 +4,10 @@ description: В этой статье вы найдете ответы на ча
 ms.date: 04/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: d7b19fd11e6784a188a18f6a613eef5ff4f77764
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82105647"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
@@ -84,7 +84,7 @@ ms.locfileid: "82105647"
 
 Если к файловым ресурсам применяется новая политика, также применяется ее расписание и период хранения. Если период хранения продлевается, существующие точки восстановления отмечаются для хранения в соответствии с новой политикой. Если период хранения сокращается, они помечаются для удаления при следующей очистке, а затем удаляются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать больше о других областях службы Azure Backup, см. следующие разделы с часто задаваемыми вопросами:
 

@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/27/2020
 ms.openlocfilehash: 545c1720ef379ec74bd2e7c0bc68f6a2fcbba789
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115505"
 ---
 # <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -88,7 +88,7 @@ ms.locfileid: "82115505"
    | **AS2 в** | Идентификатор получателя сообщений, указанный в соглашении AS2 |
    |||
 
-   Например:
+   Пример:
 
    ![Свойства кодирования сообщений](./media/logic-apps-enterprise-integration-as2/as2-message-encoding-details.png)
 

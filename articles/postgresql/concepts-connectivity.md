@@ -8,10 +8,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 026a0edf24d349c4b445d6229d3b1ad73decf87d
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82097835"
 ---
 # <a name="handling-transient-connectivity-errors-for-azure-database-for-postgresql---single-server"></a>Handling transient connectivity errors for Azure Database for PostgreSQL —Single Server (Обработка временных ошибок подключения к Базе данных Azure для PostgreSQL — одиночный сервер)
@@ -44,6 +44,6 @@ ms.locfileid: "82097835"
 
 Не забудьте проверить логику повторных попыток. Например, попробуйте выполнить свой код, увеличивая или уменьшая число вычислительных ресурсов сервера Базы данных Azure для PostgreSQL. Ваше приложение должно без каких-либо проблем справиться с небольшим простоем во время этой операции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок подключения к Базе данных Azure для PostgreSQL](howto-troubleshoot-common-connection-issues.md)

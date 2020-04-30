@@ -4,10 +4,10 @@ description: Ответ по умолчанию возвращается в сл
 ms.topic: how-to
 ms.date: 04/22/2020
 ms.openlocfilehash: db5a79ec612a73066ac37365a1815841fafb3862
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82097104"
 ---
 # <a name="change-default-answer-for-a-qna-maker-resource"></a>Изменить ответ по умолчанию для ресурса QnA Maker
@@ -30,6 +30,6 @@ ms.locfileid: "82097104"
 
     ![Перезапуск службы приложений QnA Maker после изменения значения в поле DefaultAnswer](../media/qnamaker-faq/qnamaker-appservice-restart.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание базы знаний](../How-to/manage-knowledge-bases.md)

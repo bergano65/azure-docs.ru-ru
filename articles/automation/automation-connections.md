@@ -6,10 +6,10 @@ ms.subservice: shared-capabilities
 ms.date: 01/13/2020
 ms.topic: conceptual
 ms.openlocfilehash: 39a41a60f4cabe995ebd458c4b906438d1e31bde
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82097121"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Управление подключениями в службе автоматизации Azure
@@ -22,7 +22,7 @@ ms.locfileid: "82097121"
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Этот ключ хранится в хранилище ключей, управляемом системой. Перед сохранением защищенного ресурса ключ загружается из Key Vault, а затем используется для шифрования ресурса. Этим процессом управляет служба автоматизации Azure.
 
 >[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="connection-types"></a>Типы подключений
 
@@ -60,7 +60,7 @@ ms.locfileid: "82097121"
 
 Функция, приведенная в следующей таблице, используется для доступа к соединениям в модуле Runbook Python 2.
 
-| Компонент | Описание |
+| Функция | Описание |
 |:---|:---|
 | `automationassets.get_automation_connection` | Извлекает подключение. Возвращает словарь со свойствами подключения. |
 
@@ -105,7 +105,7 @@ Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.
 ```
 
 > [!NOTE]
-> Для неграфических модулей Runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Вам может потребоваться обновить модули, даже если вы только что создали новую учетную запись службы автоматизации.
+> Для неграфических модулей Runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
 
 ### <a name="graphical-runbook-samples"></a>Графические примеры для модуля Runbook
 
@@ -162,9 +162,9 @@ runas_connection = automationassets.get_automation_connection(
 azure_credential = get_automation_runas_credential(runas_connection)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Изучите, как использовать [связи в графическом редакторе](automation-graphical-authoring-intro.md#links-and-workflow), которые позволяют направлять и контролировать поток логики в Runbook.
-* Справочник по командлетам PowerShell см. в разделе [AZ. Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
 ).
 - В статье [Модули интеграции службы автоматизации Azure](automation-integration-modules.md) описывается использование модулей PowerShell в службе автоматизации Azure и рекомендации по созданию модулей PowerShell в качестве модулей интеграции для службы автоматизации Azure.

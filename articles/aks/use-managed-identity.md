@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/02/2020
 ms.author: saudas
 ms.openlocfilehash: 00ecc077ba55ab9f91fc58f8a47fcdf7440deea6
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82112972"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Использование управляемых удостоверений в службе Kubernetes Azure
@@ -27,7 +27,7 @@ AKS создает два управляемых удостоверения:
 
 Надстройки также проходят проверку подлинности с помощью управляемого удостоверения. Для каждой надстройки управляемое удостоверение создается AKS и продолжается в течение жизненного цикла надстройки. 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Необходимо установить следующий ресурс:
 

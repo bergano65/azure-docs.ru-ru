@@ -13,10 +13,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7704a758f53b6ba26b1c9cf9e9e2811f533601f0
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82112207"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
@@ -26,11 +26,11 @@ ms.locfileid: "82112207"
 
 В таблице ниже приведен список связанных разделов.
 
-Раздел |  Подробности
+Раздел |  Сведения
 --------- | --------- |
 Действия по переходу с Azure AD Connect | Различные методы [обновления предыдущей версии до последней версии](how-to-upgrade-previous-version.md) Azure AD Connect.
 Необходимые разрешения | Разрешения, необходимые для применения обновления, см. в разделе [учетные записи и разрешения](reference-connect-accounts-permissions.md#upgrade).
-Скачивание| [Скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
+Скачать| [Скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
 
 >[!NOTE]
 >Выпуск новой версии Azure AD Connect — это процесс, для которого требуется несколько шагов контроля качества, чтобы обеспечить функционирование службы, а в ходе этого процесса номер версии нового выпуска, а также состояние выпуска будет обновлен для отражения последнего состояния.
@@ -554,7 +554,7 @@ ms.locfileid: "82112207"
 *   Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF. При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
 *   Назначение указанных ниже специальных разрешений.
 
-Тип     | Название                          | Доступ               | Применяется к
+Type     | Имя                          | Доступ               | Применяется к
 ---------|-------------------------------|----------------------|--------------|
 Allow    | SYSTEM                        | Полный доступ         | этому объекту  |
 Allow    | Администраторы предприятия             | Полный доступ         | этому объекту  |
@@ -579,7 +579,7 @@ Allow    | Прошедшие проверку пользователи         
 Set-ADSyncRestrictedPermissions -ObjectDN <$ObjectDN> -Credential <$Credential>
 ```
 
-Где 
+Where 
 
 **$ObjectDN** — это учетная запись Active Directory, для которой нужно настроить разрешения.
 
@@ -588,7 +588,7 @@ Set-ADSyncRestrictedPermissions -ObjectDN <$ObjectDN> -Credential <$Credential>
 >[!NOTE] 
 >$credential.UserName необходимо указывать в формате "FQDN\имя_пользователя". Пример: contoso.com\admin. 
 
-##### <a name="example"></a>Пример.
+##### <a name="example"></a>Пример:
 
 ```powershell
 Set-ADSyncRestrictedPermissions -ObjectDN "CN=TestAccount1,CN=Users,DC=bvtadwbackdc,DC=com" -Credential $credential 
@@ -898,7 +898,7 @@ CBool(
     |CertFormat|CertNotAfter|CertPublicKeyOid|
     |CertSerialNumber|CertNotBefore|CertPublicKeyParametersOid|
     |CertVersion|CertSignatureAlgorithmOid|Выберите пункт|
-    |CertKeyAlgorithmParams|CertHashString|Где|
+    |CertKeyAlgorithmParams|CertHashString|Where|
     |||With|
 
 * Чтобы разрешить пользователям создавать пользовательские правила синхронизации для потока sAMAccountName, domainNetBios и domainFQDN для объектов-групп, а также distinguishedName для объектов-пользователей, были введены следующие изменения схемы:

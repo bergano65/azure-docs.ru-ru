@@ -1,23 +1,19 @@
 ---
 title: Руководство. Управление виртуальными машинами с помощью PowerShell
 description: Из этого руководства вы узнаете, как управлять виртуальными машинами Azure с применением RBAC, политик, блокировок и тегов с помощью Azure PowerShell
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: tfitzmac
-manager: gwallace
 ms.service: virtual-machines-windows
 ms.workload: infrastructure
-ms.tgt_pltfrm: vm-windows
 ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: d8cb1895c980fa9f84983ea8364cb2f0f5dcb982
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: b4ce4cd53f9dda3d0f96e892128d543e59c83b26
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81456028"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82100368"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-management-with-azure-powershell"></a>Руководство. Управление виртуальными машинами Windows с помощью Azure PowerShell
 

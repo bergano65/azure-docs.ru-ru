@@ -10,10 +10,10 @@ ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: 92957bd078c04a9bb7ac35f9d30f042a44e10764
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100640"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
@@ -33,7 +33,7 @@ ms.locfileid: "82100640"
 6. Выберите **расположение** центра обработки данных Azure.  
 7. В поле **Исходный диск** выберите управляемый диск, моментальный снимок которого необходимо создать.
 8. Выберите **тип учетной записи**, которая будет использоваться для хранения моментального снимка. Выберите **Standard_HDD**, если вам не нужно хранить моментальный снимок на высокопроизводительном диске.
-9. Нажмите кнопку **создания**.
+9. Щелкните **Создать**.
 
 ## <a name="use-powershell"></a>Использование PowerShell
 
@@ -80,6 +80,6 @@ ms.locfileid: "82100640"
    ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создайте виртуальную машину из моментального снимка, преобразовав его в управляемый диск, а затем подключив этот диск как диск ОС. Дополнительные сведения см. в статье [Создание виртуальной машины из моментального снимка с помощью PowerShell](./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md?toc=%2fpowershell%2fmodule%2ftoc.json).

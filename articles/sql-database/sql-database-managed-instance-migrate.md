@@ -12,10 +12,10 @@ ms.author: bonova
 ms.reviewer: douglas, carlrab
 ms.date: 07/11/2019
 ms.openlocfilehash: 1af0161edb0f833cdd14d8157e6edd9644e21467
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100283"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure
@@ -196,7 +196,7 @@ ms.locfileid: "82100283"
 
 Помимо функций расширенного управления и безопасности Управляемый экземпляр предоставляет набор дополнительных средств, которые могут помочь в [мониторинге и настройке рабочей нагрузки](sql-database-monitor-tune-overview.md). [Аналитика SQL Azure](https://docs.microsoft.com/azure/azure-monitor/insights/azure-sql) позволяет отслеживать большой набор управляемых экземпляров и централизовать мониторинг большого количества экземпляров и баз данных. [Автоматическая настройка](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning#automatic-plan-correction) в управляемый экземпляр постоянно отслеживать производительность статистики выполнения плана SQL и автоматически устранять выявленные проблемы с производительностью.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об управляемом экземпляре см. в статье [Использование Управляемого экземпляра Базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).
 - Руководство со сведениями о восстановлении из резервной копии см. в статье [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).

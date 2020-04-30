@@ -12,10 +12,10 @@ ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: seodec18
 ms.openlocfilehash: 0b6fea381bd6b4aa8ad3e7061e6f632176c41033
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82113839"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Поддержка языка и голоса для службы речи
@@ -52,7 +52,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | `en-IN` | Английский (Индия)                   | Да       | Акустическая модель<br>Языковая модель                  |
 | `en-NZ` | Английский (Новая Зеландия)             | Да       | Акустическая модель<br>Языковая модель                  |
 | `en-US` | Английский (США)           | Да       | Акустическая модель<br>Языковая модель<br>Произношение |
-| `es-ES` | испанский (Испания)                   | Да       | Акустическая модель<br>Языковая модель                  |
+| `es-ES` | Испанский (Испания)                   | Да       | Акустическая модель<br>Языковая модель                  |
 | `es-MX` | Испанский (Мексика)                  | Да       | Акустическая модель<br>Языковая модель                  |
 | `fi-FI` | Финский (Финляндия)                 | Да       | Языковая модель                                    |
 | `fr-CA` | Французский (Канада)                   | Да       | Акустическая модель<br>Языковая модель                  |
@@ -143,7 +143,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 |  |  | Жен. | "Microsoft Server Speech Преобразование текста в речь Voice (EN-US, Ариарус)" | "en-US-Ариарус" |
 |  |  | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, BenjaminRUS)" | "en-US-Бенжаминрус" |
 |  |  | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, Guy24kRUS)" | "en-US-Guy24kRUS" |
-| `es-ES` | испанский (Испания) | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (es-ES, Laura, Apollo)" | "es-ES-Мария-Apollo" |
+| `es-ES` | Испанский (Испания) | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (es-ES, Laura, Apollo)" | "es-ES-Мария-Apollo" |
 |  |  | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (es-ES, HelenaRUS)" | "es-ES-Хеленарус" |
 |  |  | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (es-ES, Pablo, Apollo)" | "es-ES-Пабло-Apollo" |
 | `es-MX` | Испанский (Мексика) | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (es-MX, HildaRUS)" | "es-MX-Хилдарус" |
@@ -170,7 +170,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | `ko-KR` | Корейский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ko-KR, HeamiRUS)" | "ko-KR-Хеамирус" |
 | `ms-MY` | Малайский | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ms-MY, Rizwan)" | "MS-MY-Ризван" |
 | `nb-NO` | Норвежский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (nb-NO, HuldaRUS)" | "NetBIOS-NO-Хулдарус" |
-| `nl-NL` | Голландский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (nl-NL, HannaRUS)" | "nl-NL-Ханнарус" |
+| `nl-NL` | Нидерландский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (nl-NL, HannaRUS)" | "nl-NL-Ханнарус" |
 | `pl-PL` | Польский | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (pl-PL, PaulinaRUS)" | "PL-PL-Паулинарус" |
 | `pt-BR` | Португальский (Бразилия) | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (pt-BR, HeloisaRUS)" | "PT-BR-Хелоисарус" |
 |  |  | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (pt-BR, Daniel, Apollo)" | "PT-BR-Даниэль-Apollo" |
@@ -232,7 +232,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Хорватский                | `hr`          |
 | Чешский                   | `cs`          |
 | Датский                  | `da`          |
-| Голландский                   | `nl`          |
+| Нидерландский                   | `nl`          |
 | Английский                 | `en`          |
 | Эстонский                | `et`          |
 | Фиджийский                  | `fj`          |
@@ -292,7 +292,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Валлийский                   | `cy`          |
 | Юкатекский майя            | `yua`         |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Получите пробную подписку на службу распознавания речи](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-chsarp)

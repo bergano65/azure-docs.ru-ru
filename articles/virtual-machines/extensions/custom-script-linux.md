@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
 ms.openlocfilehash: 959e473cb52e23c9d04586f0b24da34537f4e660
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115607"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
@@ -110,7 +110,7 @@ ms.locfileid: "82115607"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример | Тип данных | 
+| Имя | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
 | версия_API | 2019-03-01 | Дата |
 | publisher | Microsoft.Compute.Extensions | строка |
@@ -218,7 +218,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 
 Чтобы использовать назначенное системой удостоверение на целевой виртуальной машине или VMSS, задайте для поля "managedidentity" пустой объект JSON. 
 
-> Пример.
+> Пример:
 >
 > ```json
 > {
@@ -230,7 +230,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 
 Чтобы использовать назначенное пользователем удостоверение на целевой виртуальной машине или VMSS, настройте в поле "managedidentity" идентификатор клиента или идентификатор объекта управляемого удостоверения.
 
-> Примеры:
+> Примеры
 >
 > ```json
 > {

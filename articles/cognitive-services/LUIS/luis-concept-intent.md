@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: diberry
 ms.openlocfilehash: f2e4f91dbc03853d6f1a5240f693ea8ff510e8c4
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82101082"
 ---
 # <a name="intents-in-your-luis-app"></a>Целей в приложении LUIS
@@ -29,7 +29,7 @@ ms.locfileid: "82101082"
  BookFlight     |   "Book me a flight to Rio next week" ("Забронировать авиаперелет в Рио на следующей неделе") <br/> "Fly me to Rio on the 24th" ("Найти авиаперелет в Рио 24-го числа") <br/> "I need a plane ticket next Sunday to Rio de Janeiro" ("Мне нужен билет на самолет в Рио-де-Жанейро на следующее воскресенье")    |
  Greeting     |   "Hi" ("Привет") <br/>"Hello" <br/>"Good morning" ("Доброе утро")  |
  CheckWeather | "What's the weather like in Boston?" ("Какая сейчас погода в Бостоне?") <br/> "Show me the forecast for this weekend" ("Покажите мне прогноз на эту неделю") |
- Отсутствуют         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
+ Нет         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
 
 Все приложения поставляются с предопределенной намерением «None» ([нет](#none-intent)), что является резервным условием.
 
@@ -53,7 +53,7 @@ ms.locfileid: "82101082"
 
  Создайте намерение в том случае, когда _намерение_ пользователя вызывает выполнения действия в вашем клиентском приложении, например вызов функции checkweather(). Затем создайте сущности для представления параметров, необходимых для выполнения действия.
 
-|Блокировка с намерением   | Сущность | Пример фразы   |
+|Блокировка с намерением   | Объект | Пример фразы   |
 |------------------|------------------------------|------------------------------|
 | CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | Что такое Погода, как в `Seattle` `tomorrow`? |
 | CheckWeather | { "type": "date_range", "entity": "this weekend" } | Show me the forecast for (Покажите мне прогноз на) `this weekend` |
@@ -100,7 +100,7 @@ ms.locfileid: "82101082"
 ### <a name="request-help-for-apps-with-significant-number-of-intents"></a>Если намерений слишком много, обратитесь в службу поддержки
 Если уменьшение числа намерений или разделение намерений на несколько приложений не помогает добиться цели, обратитесь в службу поддержки. Если ваша подписка Azure включает службы поддержки, обратитесь в службу [технической поддержки Azure](https://azure.microsoft.com/support/options/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь с дополнительными сведениями о [сущностях](luis-concept-entity-types.md), важных словах, относящихся к намерениям
 * Узнайте, как [добавить намерения в приложение LUIS и управлять ими](luis-how-to-add-intents.md).

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/20/2020
 ms.author: rogarana
 ms.openlocfilehash: b2dd501344e1ea799db58ea749395aaed05d05f8
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82106562"
 ---
 # <a name="enable-on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Включение проверки подлинности локальных служб домен Active Directory Services по протоколу SMB для файловых ресурсов Azure
@@ -40,7 +40,7 @@ ms.locfileid: "82106562"
 > - Замена локальных файловых серверов файлами Azure (включая установку на частном канале для файлов и аутентификации Active Directory)
 > - Использование файлов Azure в качестве контейнера профилей для виртуальных рабочих столов Windows (включая установку на основе проверки подлинности AD и конфигурации Фслогикс)
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 
 Перед включением проверки подлинности AD DS для файловых ресурсов Azure убедитесь, что выполнены следующие предварительные требования: 
 
@@ -162,7 +162,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 > [!NOTE]
 > Если вы уже выполнили приведенный выше `Join-AzStorageAccountForAuth` сценарий, перейдите к следующему разделу "1,3. Убедитесь, что эта функция включена". Операции, приведенные ниже, выполнять не нужно.
 
-#### <a name="a-checking-environment"></a>а. Проверка среды
+#### <a name="a-checking-environment"></a>a. Проверка среды
 
 Во первых, сценарий проверяет вашу среду. В частности, он проверяет, установлен ли [Active Directory PowerShell](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps) и выполняется ли оболочка с правами администратора. Затем он проверяет, установлен ли [модуль AZ. Storage 1.11.1-Preview](https://www.powershellgallery.com/packages/Az.Storage/1.11.1-preview) , и устанавливает его, если это не так. Если эти проверки пройдены, то проверяется AD DS, чтобы узнать, есть ли [учетная запись компьютера](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) (по умолчанию) или [учетная запись входа службы](https://docs.microsoft.com/windows/win32/ad/about-service-logon-accounts) , которая уже создана с именем субъекта-службы или UPN, как CIFS/My-Storage-Account-Name-here. File. Core. Windows. NET. Если учетная запись не существует, она будет создана, как описано в разделе b ниже.
 
@@ -232,7 +232,7 @@ Update-AzStorageAccountADObjectPassword `
         -StorageAccountName "<your-storage-account-name-here>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о службе файлов Azure и использовании AD через SMB см. в следующих ресурсах:
 

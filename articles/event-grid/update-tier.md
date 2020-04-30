@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/22/2020
 ms.author: spelluru
 ms.openlocfilehash: caea8d515964510fce432eb0497e3af19ecc1369
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82101643"
 ---
 # <a name="update-pricing-tier"></a>Обновление ценовой категории 
@@ -57,7 +57,7 @@ ms.locfileid: "82101643"
 ## <a name="use-azure-cli"></a>Использование Azure CLI
 В этом разделе показано, как использовать команды Azure CLI для изменения ценовой категории раздела. Чтобы обновить ценовую категорию домена, используйте `az eventgrid domain update` команду аналогичным образом.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 Обновите расширение службы "Сетка событий Azure" для интерфейса командной строки, выполнив следующую команду: 
 
 ```azurecli-interactive
@@ -161,5 +161,5 @@ Invoke-RestMethod -Method 'Patch' `
     | ConvertTo-Json -Depth 5
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Для разделов и доменов уровня "Премиум" можно настроить частные конечные точки, чтобы ограничить доступ только из выбранных виртуальных сетей. Пошаговые инструкции см. в разделе [Настройка частных конечных точек](configure-private-endpoints.md).

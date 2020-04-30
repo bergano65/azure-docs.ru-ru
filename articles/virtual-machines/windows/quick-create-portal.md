@@ -1,25 +1,19 @@
 ---
 title: Краткое руководство. Создание виртуальной машины Windows с помощью портала Azure
 description: Из этого краткого руководства вы узнаете, как с помощью портала Azure создать виртуальную машину Windows.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.topic: quickstart
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/05/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 002d374f5be606688121ef4a3952383567c43e85
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 5cf23a9c66c76f778dbd5d2b126b28a5a577c978
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79214752"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82098005"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Windows на портале Azure
 
@@ -59,7 +53,7 @@ ms.locfileid: "79214752"
 
 ## <a name="connect-to-virtual-machine"></a>Подключение к виртуальной машине
 
-Создайте подключение удаленного рабочего стола к виртуальной машине. Ниже представлены инструкции для подключения к виртуальной машине с компьютера Windows. На компьютере Mac вам понадобится клиент RDP, например [Remote Desktop Client](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12) из Mac App Store.
+Создайте подключение удаленного рабочего стола к виртуальной машине. Ниже представлены инструкции для подключения к виртуальной машине с компьютера Windows. На компьютере Mac вам понадобится клиент RDP, например [Remote Desktop Client](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) из Mac App Store.
 
 1. Нажмите кнопку **Подключиться** на странице обзора виртуальной машины. 
 

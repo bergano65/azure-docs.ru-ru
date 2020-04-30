@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 10/25/2019
 ms.author: diberry
 ms.openlocfilehash: f764b0d42e08e68b45d49a5aae8542f05707ccde
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82099365"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Основные понятия и определения глоссария Интеллектуальной службы распознавания речи (LUIS)
@@ -38,7 +38,7 @@ ms.locfileid: "82099365"
 
 См. также
 * [Основные понятия](luis-concept-batch-test.md)
-* [Практическое руководство](luis-how-to-batch-test.md)
+* [Практические руководства](luis-how-to-batch-test.md)
 * [Руководство](luis-tutorial-batch-testing.md)
 
 ## <a name="collaborator"></a><a name="collaborator"></a>Участник совместной работы
@@ -53,7 +53,7 @@ ms.locfileid: "82099365"
 
 Дескриптор — это [функция](#features) , применяемая к модели во время обучения, включая [списки фраз](#phrase-list) и [сущности](#entity).
 
-## <a name="domain"></a><a name="domain"></a>Поддомен
+## <a name="domain"></a><a name="domain"></a>Домен
 
 В контексте LUIS **предметная область** — это область знаний. Предметная область относится к области знаний приложения. Это может быть общая область, например приложение для туристического агентства. Приложение для туристического агентства также может быть предназначено только для работы с определенной информацией, используемой в компании, например с конкретными географическими расположениями, языками и услугами.
 
@@ -61,7 +61,7 @@ ms.locfileid: "82099365"
 
 На URL-адрес [конечной точки LUIS](https://go.microsoft.com/fwlink/?linkid=2092356) отправляются запросы LUIS после разработки и публикации [приложения LUIS](#luis-app). В URL-адресе конечной точки содержится регион опубликованного приложения, а также идентификатор приложения. Конечную точку можно найти на странице **[Keys and endpoints](luis-how-to-azure-subscription.md)** (Ключи и конечные точки) вашего приложения. Кроме того, URL-адрес конечной точки можно получить из API [получения сведений о приложении](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c37).
 
-## <a name="entity"></a><a name="entity"></a>Объекта
+## <a name="entity"></a><a name="entity"></a>Объект
 
 [Сущности](luis-concept-entity-types.md) — это важные слова в [высказываниях](luis-concept-utterance.md), которые описывают информацию, относящуюся к [намерению](luis-concept-intent.md), и иногда они необходимы для намерения. Сущность фактически является типом данных в LUIS.
 
@@ -77,7 +77,7 @@ ms.locfileid: "82099365"
 
 В [пакетном тестировании](luis-interactive-test.md#batch-testing) точка данных представляет высказывания, в которых приложение неверно спрогнозировало наличие целевого намерения или сущности.
 
-## <a name="features"></a><a name="features"></a>Компоненты
+## <a name="features"></a><a name="features"></a>Функции
 
 В машинном обучении [свойство](luis-concept-feature.md) — это отличительный признак или атрибут данных, наблюдаемых системой.
 
@@ -93,7 +93,7 @@ ms.locfileid: "82099365"
 
 LUIS приложение — это набор языковых моделей для обработки естественного языка, включая [удержания](#intent), [сущности](#entity)и помеченные [фразы продолжительностью](#utterance).
 
-## <a name="owner"></a><a name="owner"></a>Владелец
+## <a name="owner"></a><a name="owner"></a>Владельцев
 
 У каждого приложения есть один владелец. Это человек, создавший приложение. Владелец может добавлять [участников совместной работы](#collaborator).
 
@@ -119,7 +119,7 @@ LUIS приложение — это набор языковых моделей 
 
 Переименован в [ключ разработки](#authoring-key).
 
-## <a name="publish"></a><a name="publish"></a>Публикация
+## <a name="publish"></a><a name="publish"></a>Отменить
 
 Публикация означает предоставление доступа к активной версии LUIS в промежуточной или рабочей [конечной точке](#endpoint).
 

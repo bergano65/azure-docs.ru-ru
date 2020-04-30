@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/26/2019
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 7824d3e2d8cfb7b52041e59a9007688c4ef1cafa
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115624"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы
@@ -248,7 +248,7 @@ Windows:
 AZ_BATCH_APP_PACKAGE_APPLICATIONID#version
 ```
 
-На узлах Linux формат немного отличается. Точки (.), дефисы (-) и символы решетки (#) в переменной среды преобразовываются в символы подчеркивания. Кроме того, обратите внимание, что регистр идентификатора приложения сохраняется. Например:
+На узлах Linux формат немного отличается. Точки (.), дефисы (-) и символы решетки (#) в переменной среды преобразовываются в символы подчеркивания. Кроме того, обратите внимание, что регистр идентификатора приложения сохраняется. Пример:
 
 ```
 Linux:

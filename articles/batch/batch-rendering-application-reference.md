@@ -6,10 +6,10 @@ ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
 ms.openlocfilehash: 6610724cd2ecb14d165b587f9df31353e8eb8e41
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115811"
 ---
 # <a name="rendering-applications"></a>Приложения для рендеринга
@@ -31,7 +31,7 @@ ms.locfileid: "82115811"
 
 Вызовите приложение `3dsmaxcmdio.exe` для выполнения рендеринга в узле пула в командной строке.  Это приложение размещается в том пути, откуда выполняется задача. Приложение `3dsmaxcmdio.exe` поддерживает те же параметры, что и приложение `3dsmaxcmd.exe`, как описано в [справочной документации по 3ds Max](https://help.autodesk.com/view/3DSMAX/2018/ENU/) (в разделе, посвященному рендерингу из командной строки).
 
-Например:
+Пример:
 
 ```
 3dsmaxcmdio.exe -v:5 -rfw:0 -start:{0} -end:{0} -bitmapPath:"%AZ_BATCH_JOB_PREP_WORKING_DIR%\sceneassets\images" -outputName:dragon.jpg -w:1280 -h:720 "%AZ_BATCH_JOB_PREP_WORKING_DIR%\scenes\dragon.max"

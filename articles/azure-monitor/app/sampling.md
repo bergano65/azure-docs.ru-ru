@@ -6,10 +6,10 @@ ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 82e42580f5d934af96b4fad57dde1573b9c30ef5
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82098770"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
@@ -34,10 +34,10 @@ ms.locfileid: "82098770"
 |-|-|-|-|
 | ASP.NET | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-applications) | Только если не действует ни одна другая выборка |
 | ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
-| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | нет | Только если не действует ни одна другая выборка |
-| Java | нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
-| Python | нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
-| Все остальные | нет | нет | [Да](#ingestion-sampling) |
+| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
+| Java | Нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
+| Python | Нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
+| Все остальные | Нет | Нет | [Да](#ingestion-sampling) |
 
 > [!NOTE]
 > Сведения, приведенные на этой странице, относятся к текущим версиям пакетов SDK для Application Insights. Сведения о более ранних версиях пакетов SDK [см. в разделе ниже](#older-sdk-versions).
@@ -583,7 +583,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 До версии 2.5.0-2 пакета SDK ASP.NET и v 2.2.0-beta3 ASP.NET Core SDK решение выборки было основано на хэш-коде пользователя для приложений, определяющих "User" (то есть наиболее типичных веб-приложений). Для типов приложений, не определяющих пользователей (например, веб-служб), решение выборки было основано на ИДЕНТИФИКАТОРе операции запроса. Последние версии пакетов SDK для ASP.NET и ASP.NET Core используют идентификатор операции для решения выборки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Фильтрация](../../azure-monitor/app/api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.
 * Прочтите статью "сеть разработчика", чтобы [оптимизировать телеметрию с помощью Application Insights](https://msdn.microsoft.com/magazine/mt808502.aspx).

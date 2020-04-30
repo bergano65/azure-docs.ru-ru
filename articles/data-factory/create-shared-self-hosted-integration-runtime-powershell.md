@@ -12,10 +12,10 @@ manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 10/31/2018
 ms.openlocfilehash: 0f018d6b94d1c5b9d9002a767b3ebceb6c9c746c
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82106633"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в фабрике данных Azure
@@ -99,7 +99,7 @@ ms.locfileid: "82106633"
 1. Создайте группу ресурсов и фабрику данных.
 
     > [!NOTE]  
-    > Это необязательный шаг. Если у вас уже есть фабрика данных, пропустите этот шаг. 
+    > Этот шаг является необязательным. Если у вас уже есть фабрика данных, пропустите этот шаг. 
 
     Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
 
@@ -118,7 +118,7 @@ ms.locfileid: "82106633"
 ### <a name="create-a-self-hosted-integration-runtime"></a>Создание локальной среды выполнения интеграции
 
 > [!NOTE]  
-> Это необязательный шаг. Если у вас уже есть локальная среда выполнения интеграции, которую вы хотите использовать совместно с другими фабриками данных, пропустите этот шаг.
+> Этот шаг является необязательным. Если у вас уже есть локальная среда выполнения интеграции, которую вы хотите использовать совместно с другими фабриками данных, пропустите этот шаг.
 
 Выполните следующую команду, чтобы создать локальную среду выполнения интеграции.
 
@@ -157,7 +157,7 @@ Get-AzDataFactoryV2IntegrationRuntimeKey `
 #### <a name="create-another-data-factory"></a>Создание другой фабрикой данных
 
 > [!NOTE]  
-> Это необязательный шаг. Если у вас уже есть фабрика данных, которой вы хотите предоставить общий доступ, пропустите этот шаг.
+> Этот шаг является необязательным. Если у вас уже есть фабрика данных, которой вы хотите предоставить общий доступ, пропустите этот шаг.
 
 ```powershell
 $factory = Set-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName `
@@ -216,7 +216,7 @@ Remove-AzDataFactoryV2IntegrationRuntime `
     -LinkedDataFactoryName $LinkedDataFactoryName
 ```
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [основными понятиями среды выполнения интеграции в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-integration-runtime).
 

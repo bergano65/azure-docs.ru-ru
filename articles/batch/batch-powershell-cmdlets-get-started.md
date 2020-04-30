@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 01/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 79473c5fb63a5f5ad29194c65cd8094ea444dbd8
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115845"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Управление ресурсами пакетной службы с помощью командлетов PowerShell
@@ -39,13 +39,13 @@ ms.locfileid: "82115845"
 
 ### <a name="create-a-batch-account"></a>Создание учетной записи Пакетной службы
 
-Командлет **New-AzBatchAccount** создает учетную запись пакетной службы в указанной группе ресурсов. Если у вас еще нет группы ресурсов, создайте ее, выполнив командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Укажите один из регионов Azure в параметре **Location**, например Central US. Например:
+Командлет **New-AzBatchAccount** создает учетную запись пакетной службы в указанной группе ресурсов. Если у вас еще нет группы ресурсов, создайте ее, выполнив командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Укажите один из регионов Azure в параметре **Location**, например Central US. Пример:
 
 ```powershell
 New-AzResourceGroup –Name MyBatchResourceGroup –Location "Central US"
 ```
 
-Далее создайте учетную запись пакетной службы в новой группе ресурсов. Укажите имя учетной записи вместо <*account_name*>, а также расположение и имя группы ресурсов. Создание учетной записи пакетной службы может занять некоторое время. Например:
+Далее создайте учетную запись пакетной службы в новой группе ресурсов. Укажите имя учетной записи вместо <*account_name*>, а также расположение и имя группы ресурсов. Создание учетной записи пакетной службы может занять некоторое время. Пример:
 
 ```powershell
 New-AzBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName <res_group_name>
@@ -79,7 +79,7 @@ New-AzBatchAccountKey -AccountName <account_name> -KeyType Primary
 
 ### <a name="delete-a-batch-account"></a>Удаление учетной записи Пакетной службы
 
-**Remove-AzBatchAccount** удаляет учетную запись пакетной службы. Например:
+**Remove-AzBatchAccount** удаляет учетную запись пакетной службы. Пример:
 
 ```powershell
 Remove-AzBatchAccount -AccountName <account_name>
@@ -164,7 +164,7 @@ Get-AzBatchPool -Id "myPool" -BatchContext $context
 
 ### <a name="use-the-maxcount-parameter"></a>Использование параметра MaxCount
 
-По умолчанию каждый командлет возвращает максимум 1000 объектов. Если этот предел достигнут, уточните параметры фильтра, чтобы он возвращал меньшее количество объектов, или явно задайте максимальное значение с помощью параметра **MaxCount** . Например:
+По умолчанию каждый командлет возвращает максимум 1000 объектов. Если этот предел достигнут, уточните параметры фильтра, чтобы он возвращал меньшее количество объектов, или явно задайте максимальное значение с помощью параметра **MaxCount** . Пример:
 
 ```powershell
 Get-AzBatchTask -MaxCount 2500 -BatchContext $context

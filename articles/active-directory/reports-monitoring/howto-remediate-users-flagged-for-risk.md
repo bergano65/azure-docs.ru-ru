@@ -16,10 +16,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ea1360499c4f4f9b2f6cfa07e81d8f692d0353d3
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100793"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Применение защитных мер к пользователям, находящимся в группе риска на портале Azure Active Directory
@@ -63,7 +63,7 @@ ms.locfileid: "82100793"
 2.  [Включите многофакторную проверку подлинности](https://aka.ms/MFAuth) для всех пользователей. 
 3.  Используйте этот [сценарий исправления](https://aka.ms/remediate) для каждой затронутой учетной записи, чтобы автоматически выполнить действия ниже: 
 
-    а. Сбросить пароль, чтобы защитить учетную запись и прервать активные сеансы.
+    a. Сбросить пароль, чтобы защитить учетную запись и прервать активные сеансы.
 
     b. Удалить делегаты почтовых ящиков.
 
@@ -89,7 +89,7 @@ ms.locfileid: "82100793"
 - [Включите конвейер аудита](https://aka.ms/improvesecurity) для анализа действий в своем клиенте. После завершения анализа журналы действий в хранилище аудита начнут заполняться соответствующими данными. На этом этапе вы также можете использовать [ресурс поиска и исследования в центре безопасности и соответствия требованиям](https://aka.ms/sccsearch). 
 - Просмотрите делегированные разрешения и правила переадресации сообщений для всех почтовых ящиков. Чтобы выполнить эту задачу, можно использовать этот [сценарий PowerShell](https://aka.ms/delegateforwardrules). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md)
 * [Пользователи, находящиеся в группе риска](concept-user-at-risk.md)

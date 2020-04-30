@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: diberry
 ms.openlocfilehash: 3c7e191ab64d30ddb64f1c3ff4e31b9c20c87b5c
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82101116"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
@@ -329,7 +329,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 * [Как использовать службу искусственного интеллекта Azure для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: cynthn
 ms.openlocfilehash: f456af143ac6ec21bcb9b0c3ec75635c51f748ef
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82099892"
 ---
 # <a name="resize-a-windows-vm"></a>Изменение размера виртуальной машины Windows
@@ -124,7 +124,7 @@ $vmIds = $as.VirtualMachinesReferences
     }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для повышения масштабируемости запустите несколько экземпляров виртуальных машин и выполните горизонтальное масштабирование. Дополнительные сведения см. [в статье Автоматическое масштабирование компьютеров Windows в масштабируемом наборе виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md).
 

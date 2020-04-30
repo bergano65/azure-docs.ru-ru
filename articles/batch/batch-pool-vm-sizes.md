@@ -6,10 +6,10 @@ ms.date: 09/12/2019
 ms.author: labrenne
 ms.custom: seodec18
 ms.openlocfilehash: d33b97790d2ce9a276a552fd02fe28c796234b15
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115862"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
@@ -32,8 +32,8 @@ ms.locfileid: "82115862"
 | Basic A | Все размеры, *кроме* Basic_A0 (a0) |
 | Объект | Все размеры, *кроме* Standard_A0 |
 | Av2 | Все размеры |
-| B | Отсутствуют |
-| DC | Отсутствуют |
+| B | Нет |
+| DC | Нет |
 | Dv2, DSv2 | Все размеры |
 | Dv3, Dsv3 | Все размеры |
 | Dav4, Dasv4 | Нет — пока недоступно |
@@ -57,8 +57,8 @@ ms.locfileid: "82115862"
 | NDv2<sup>1</sup> | Нет — пока недоступно |
 | NV | Все размеры |
 | NVv3<sup>1</sup> | Все размеры |
-| NVv4 | Отсутствуют |
-| SAP HANA | Отсутствуют |
+| NVv4 | Нет |
+| SAP HANA | Нет |
 
 <sup>1</sup> эти размеры виртуальных машин можно выделить в пулах пакетной службы в конфигурации виртуальной машины, но необходимо создать новую учетную запись пакета и запросить определенное [увеличение квоты](batch-quota-limit.md#increase-a-quota). Это ограничение будет удалено, когда для учетных записей пакетной службы будет полностью поддерживается квота виртуальных ЦП на серию виртуальных машин.
 

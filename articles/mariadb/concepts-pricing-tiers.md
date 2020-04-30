@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: f00d93a639bacd1d0862fed7b6b003302bb2920e
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82097665"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Ценовые категории службы "База данных Azure для MariaDB"
@@ -95,7 +95,7 @@ ms.locfileid: "82097665"
 
 Наиболее актуальные сведения о стоимости см. в статье [Цены на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/mariadb/). Расходы на вашу конфигурацию можно посмотреть на [портале Azure](https://portal.azure.com/#create/Microsoft.MariaDBServer). На вкладке **Ценовая категория** отображается ежемесячная стоимость выбранных параметров. Если у вас нет подписки Azure, для расчета цены можно воспользоваться калькулятором цен Azure. На сайте с [калькулятором цен Azure](https://azure.microsoft.com/pricing/calculator/) нажмите кнопку **Добавить элементы**, разверните категорию **Базы данных** и выберите **База данных Azure для MariaDB**, чтобы настроить параметры.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Сведения об [ограничениях службы](concepts-limits.md).
 - Узнайте, как [создать сервер MariaDB на портале Azure](quickstart-create-mariadb-server-database-using-azure-portal.md).
 

@@ -6,10 +6,10 @@ ms.subservice: shared-capabilities
 ms.date: 04/23/2020
 ms.topic: conceptual
 ms.openlocfilehash: 5cb3752e5a74f26936efcbb9dba5cdcda76e01f4
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82113312"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
@@ -63,9 +63,9 @@ ms.locfileid: "82113312"
 
 |Задача|Командлет  |Минимальные разрешения  |Где необходимо установить разрешения|
 |---|---------|---------|---|
-|Создание приложения Azure AD|[New-Азадаппликатион](https://docs.microsoft.com/powershell/module/az.resources/new-azadapplication)     | Роль разработчика<sup>1</sup> для приложения        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>Главная > регистрация приложений > Azure AD |
-|Добавление учетных данных приложения|[New-Азадаппкредентиал](https://docs.microsoft.com/powershell/module/az.resources/new-azadappcredential)     | Администратор приложения или глобальный администратор<sup>1</sup>         |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>Главная > регистрация приложений > Azure AD|
-|Создание и получение субъекта-службы Azure AD|[New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal)</br>[Get-АзадсервицепринЦипал](https://docs.microsoft.com/powershell/module/az.resources/get-azadserviceprincipal)     | Администратор приложения или глобальный администратор<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>Главная > регистрация приложений > Azure AD|
+|Создание приложения Azure AD|[New-Азадаппликатион](https://docs.microsoft.com/powershell/module/az.resources/new-azadapplication)     | Роль разработчика<sup>1</sup> для приложения        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>Главная > регистрация приложений > Azure AD |
+|Добавление учетных данных приложения|[New-Азадаппкредентиал](https://docs.microsoft.com/powershell/module/az.resources/new-azadappcredential)     | Администратор приложения или глобальный администратор<sup>1</sup>         |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>Главная > регистрация приложений > Azure AD|
+|Создание и получение субъекта-службы Azure AD|[New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal)</br>[Get-АзадсервицепринЦипал](https://docs.microsoft.com/powershell/module/az.resources/get-azadserviceprincipal)     | Администратор приложения или глобальный администратор<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>Главная > регистрация приложений > Azure AD|
 |Назначение или получение роли RBAC для указанного субъекта|[New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment)</br>[Get-AzRoleAssignment](https://docs.microsoft.com/powershell/module/Az.Resources/Get-AzRoleAssignment)      | Администратор доступа пользователей или владелец или иметь следующие разрешения:</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br> | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>"Начальная страница > Подписки > \<имя подписки\> — Управление доступом (IAM)"|
 |Создание или удаление сертификата службы автоматизации|[New-Азаутоматионцертификате](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationCertificate)</br>[Remove-Азаутоматионцертификате](https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationcertificate)     | Участник группы ресурсов         |Группа ресурсов учетной записи службы автоматизации|
 |Создание или удаление подключения службы автоматизации|[New-Азаутоматионконнектион](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationconnection)</br>[Remove-Азаутоматионконнектион](https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationconnection)|Участник группы ресурсов |Группа ресурсов учетной записи службы автоматизации|
@@ -310,7 +310,7 @@ if ($CreateClassicRunAsAccount) {
 ```
 
 >[!NOTE]
->`Add-AzAccount`и `Add-AzureRMAccount` являются псевдонимами для [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Вам может потребоваться обновить модули, даже если вы только что создали новую учетную запись службы автоматизации.
+>`Add-AzAccount`и `Add-AzureRMAccount` являются псевдонимами для [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
 
 ### <a name="execute-the-powershell-script"></a>Выполнение скрипта PowerShell
 
@@ -415,7 +415,7 @@ if ($CreateClassicRunAsAccount) {
    ```
 
 2. Опубликуйте модуль Runbook.
-3. Запустите модуль runbook.
+3. Запустите модуль Runbook.
 4. Проверьте успешность обновления с помощью следующего кода:
 
    ```powershell

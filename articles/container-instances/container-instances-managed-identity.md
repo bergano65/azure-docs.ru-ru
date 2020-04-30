@@ -4,10 +4,10 @@ description: Узнайте, как включить управляемое уд
 ms.topic: article
 ms.date: 04/15/2020
 ms.openlocfilehash: 31dc198bfb2023684f3a9022bec5a5f50f0d9a72
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82115726"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"

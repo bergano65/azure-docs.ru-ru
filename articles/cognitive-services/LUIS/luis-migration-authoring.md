@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: diberry
 ms.openlocfilehash: 679073715588a4a81e69e3e7ba2d18341b1bab4b
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82096628"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
@@ -82,7 +82,7 @@ Language Understanding (LUIS) создание аутентификации из
 
 Вы можете добавить участников в ресурс разработки из _портал Azure_на странице **управления доступом (IAM)** для этого ресурса. Дополнительные сведения см. в разделе [Добавление доступа к участнику](luis-migration-authoring-steps.md#after-the-migration-process-add-contributors-to-your-authoring-resource).
 
-|Портал|Описание|
+|Портал|Назначение|
 |--|--|
 |[Azure](https://azure.microsoft.com/free/)|* Создайте ресурсы для прогнозирования и создания ресурсов.<br>* Назначение участников.|
 |[LUIS](https://www.luis.ai)|* Переход на новые ресурсы для разработки.<br>* Назначение и отмена назначения ресурсов для прогнозирования и разработки приложений на странице **ресурсов Azure "Управление" >** .|
@@ -119,6 +119,6 @@ Language Understanding (LUIS) создание аутентификации из
 
 `https://www.luis.ai/applications/REPLACE-WITH-YOUR-APP-ID/versions/REPLACE-WITH-YOUR-VERSION-ID/manage/resources`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Перенос приложения в ресурс разработки](luis-migration-authoring-steps.md)

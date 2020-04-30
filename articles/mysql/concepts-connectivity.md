@@ -8,10 +8,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: cb5adb3787176e3bdbfb7897aa7d7deb9cc2dae7
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100147"
 ---
 # <a name="handle-transient-errors-and-connect-efficiently-to-azure-database-for-mysql"></a>Обрабатывайте временные ошибки и эффективно Подключайтесь к базе данных Azure для MySQL
@@ -110,6 +110,6 @@ public class SimpleTestOnBorrowExample {
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте, как устранить проблемы с подключением к Базе данных Azure для MySQL](howto-troubleshoot-common-connection-issues.md)

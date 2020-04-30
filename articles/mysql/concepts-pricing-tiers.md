@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.openlocfilehash: f633c33d0d90715a940129d62cee6472d33d2106
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100963"
 ---
 # <a name="azure-database-for-mysql-pricing-tiers"></a>Ценовые категории службы "База данных Azure для MySQL"
@@ -99,7 +99,7 @@ ms.locfileid: "82100963"
 
 Наиболее актуальные сведения о стоимости см. в статье [Цены на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/mysql/). Расходы на вашу конфигурацию можно посмотреть на [портале Azure](https://portal.azure.com/#create/Microsoft.MySQLServer). На вкладке **Ценовая категория** отображается ежемесячная стоимость выбранных параметров. Если у вас нет подписки Azure, для расчета цены можно воспользоваться калькулятором цен Azure. На сайте с [калькулятором цен Azure](https://azure.microsoft.com/pricing/calculator/) нажмите кнопку **Добавить элементы**, разверните категорию **Базы данных** и выберите **База данных Azure для MySQL**, чтобы настроить параметры.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [создать сервер MySQL на портале](howto-create-manage-server-portal.md).
 - Дополнительные сведения см. в статье [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md).
