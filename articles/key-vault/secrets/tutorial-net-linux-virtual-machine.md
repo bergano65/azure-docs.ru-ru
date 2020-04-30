@@ -11,10 +11,10 @@ ms.date: 12/21/2018
 ms.author: mbaldwin
 ms.custom: mvc
 ms.openlocfilehash: 50810dd1fbf2d97989df47b537ef5c574be059d2
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81426173"
 ---
 # <a name="tutorial-use-a-linux-vm-and-a-net-app-to-store-secrets-in-azure-key-vault"></a>Руководство по использованию виртуальной машины Linux и приложения .NET для хранения секретов в Azure Key Vault

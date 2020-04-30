@@ -1,5 +1,5 @@
 ---
-title: Настройка параметров сервера - Портал Azure - База данных Azure для MyS'L
+title: Настройка параметров сервера — портал Azure — база данных Azure для MySQL
 description: В этой статье описывается, как настроить параметры MySQL сервера в базе данных Azure для MySQL с помощью портала Azure.
 author: ajlam
 ms.author: andrela
@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 4/16/2020
 ms.openlocfilehash: bd0a867cce9b2a9ad793b491b9042034ef5810f5
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81605159"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure
@@ -24,7 +24,7 @@ ms.locfileid: "81605159"
 ![Страница параметров сервера на портале Azure](./media/howto-server-parameters/auzre-portal-server-parameters.png)
 3. Найдите все параметры, которые необходимо настроить. Просмотрите столбец **Описание**, чтобы понять назначение и допустимые значения.
 ![Раскрывающийся список для перечисляемого типа](./media/howto-server-parameters/3-toggle_parameter.png)
-4. Нажмите **Сохранить,** чтобы сохранить изменения.
+4. Нажмите кнопку **сохранить** , чтобы сохранить изменения.
 ![Сохранение или отмена изменений](./media/howto-server-parameters/4-save_parameters.png)
 5. Если вы сохранили новые значения параметров, всегда можно восстановить значения по умолчанию, выбрав **Сбросить все к значениям по умолчанию**.
 ![Сбросить все к значениям по умолчанию](./media/howto-server-parameters/5-reset_parameters.png)
@@ -35,9 +35,9 @@ ms.locfileid: "81605159"
 
 ## <a name="non-configurable-server-parameters"></a>Ненастраиваемые параметры сервера
 
-Размер пула InnoDB не настраивается и привязан к вашему [уровню ценообразования.](concepts-service-tiers.md)
+Размер пула буферов InnoDB нельзя настроить и привязать к [ценовой категории](concepts-service-tiers.md).
 
-|**Уровень цен**|**Виртуальные ядра**|**Размер буферного пула InnoDB в МБ <br>(серверы, поддерживающие до 4 ТБ-хранилища)**| **Размер буферного пула InnoDB в МБ <br>(серверы, поддерживающие до 16 ТБ-хранилища)**|
+|**Ценовая категория**|**Виртуальные ядра**|**Размер пула буферов InnoDB в <br>МБ (серверы, поддерживающие до 4 ТБ хранилища)**| **Размер пула буферов InnoDB в <br>МБ (серверы, поддерживающие до 16 ТБ хранилища)**|
 |:---|---:|---:|---:|
 |Basic| 1| 832| |
 |Basic| 2| 2560| |
@@ -60,7 +60,7 @@ ms.locfileid: "81605159"
 |innodb_file_per_table для уровня "Базовый"|OFF|
 |innodb_flush_log_at_trx_commit|1|
 |sync_binlog|1|
-|innodb_log_file_size|256MB|
+|innodb_log_file_size|МБ|
 |innodb_log_files_in_group|2|
 
 Для остальных параметров сервера, которые не перечислены выше, устанавливаются значения MySQL по умолчанию для версий [5.7](https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html) и [5.6](https://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html).
@@ -79,7 +79,7 @@ CALL mysql.az_load_timezone();
 ```
 
 > [!IMPORTANT]
-> Необходимо перезапустить сервер, чтобы обеспечить правильное заселение столиков часового пояса. Для перезагрузки сервера используйте [портал Azure](howto-restart-server-portal.md) или [CLI.](howto-restart-server-cli.md)
+> Необходимо перезапустить сервер, чтобы убедиться, что таблицы часовых поясов заполнены правильно. Чтобы перезапустить сервер, используйте [портал Azure](howto-restart-server-portal.md) или [CLI](howto-restart-server-cli.md).
 
 Чтобы просмотреть доступные значения часового пояса, выполните следующую команду.
 
@@ -103,6 +103,6 @@ SET time_zone = 'US/Pacific';
 
 Описание [функций даты и времени](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_convert-tz) можно прочитать в документации по MySQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 03/12/2019
 ms.openlocfilehash: 3547062f100eeb4dfa741a0566d737a0eac776a0
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81605098"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-powershell"></a>Создание рабочей области Log Analytics с помощью Azure PowerShell
@@ -19,7 +19,7 @@ ms.locfileid: "81605098"
 
 * ресурсы Azure в подписке;  
 * локальные компьютеры, которые отслеживает System Center Operations Manager;  
-* Коллекции устройств от менеджера конфигурации  
+* Коллекции устройств из Configuration Manager  
 * Данные диагностики и журнала из службы хранилища Azure  
  
 Сведения о других источниках, таких как виртуальные машины Azure и виртуальные машины Windows или Linux в вашей среде, см. в статьях ниже.
@@ -28,18 +28,18 @@ ms.locfileid: "81605098"
 * [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../learn/quick-collect-linux-computer.md)
 * [Настройка агента Log Analytics для компьютеров Windows в гибридной среде](quick-collect-windows-computer.md)
 
-Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом.
+Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решите установить и использовать PowerShell локально, этот учебник требует модуля Azure PowerShell Az. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, для работы с этим руководством требуется модуль Azure PowerShell AZ. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
-Создайте рабочее пространство с [помощью New-AzResourceGroupDeployment.](/powershell/module/az.resources/new-azresourcegroupdeployment) Следующий пример создает рабочее пространство в *восточном* месте с помощью шаблона Resource Manager из локальной машины. Шаблон в формате JSON настроен так, чтобы осталось только указать имя рабочей области и задать значения по умолчанию для других параметров, которые скорее всего будут использоваться в качестве стандартной конфигурации в вашей среде. 
+Создайте рабочую область с помощью [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment). В следующем примере создается рабочая область в расположении *eastus* с помощью шаблона диспетчер ресурсов на локальном компьютере. Шаблон в формате JSON настроен так, чтобы осталось только указать имя рабочей области и задать значения по умолчанию для других параметров, которые скорее всего будут использоваться в качестве стандартной конфигурации в вашей среде. 
 
-Для получения информации об поддерживаемых регионах см. [регионы, в которые можно ознакомиться, доступна система «Аналитика журналов»](https://azure.microsoft.com/regions/services/) и поиск Azure Monitor из поля **поиска продукта.** 
+Сведения о поддерживаемых регионах см. [в разделе регионы log Analytics доступны в](https://azure.microsoft.com/regions/services/) и выполните поиск Azure Monitor в поле **поиска по полю продукта** . 
 
 Для следующих параметров задаются значения по умолчанию.
 
@@ -110,7 +110,7 @@ ms.locfileid: "81605098"
 
 2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/2015-11-01-preview/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.   
-4. Теперь вы можете развернуть этот шаблон. Используйте следующие команды из папки, содержащей шаблон. Когда вам будет предложено назвать рабочее пространство, укажите имя, которое является уникальным во всем мире во всех подписках Azure.
+4. Теперь вы можете развернуть этот шаблон. Используйте следующие команды из папки, содержащей шаблон. При запросе имени рабочей области Укажите имя, которое глобально уникально для всех подписок Azure.
 
     ```powershell
         New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile deploylaworkspacetemplate.json
@@ -120,10 +120,10 @@ ms.locfileid: "81605098"
 
 ![Пример результатов по завершении развертывания](media/quick-create-workspace-posh/template-output-01.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда рабочая область доступна, вы можете настроить сбор данных телеметрии для мониторинга, выполнять поиск по журналам для анализа этих данных, а также добавить решение по управлению для предоставления дополнительных данных и аналитических сведений.  
 
 * Сведения о том, как включить сбор данных из ресурсов Azure с помощью системы диагностики Azure или хранилища Azure, см. в статье [Сбор журналов и метрик для служб Azure для использования в Azure Monitor](../platform/collect-azure-metrics-logs.md).  
-* Добавьте [менеджера по операциям System Center в качестве источника данных](../platform/om-agents.md) для сбора данных от агентов, сообщающих об управлении группой управления операциями, и их хранения в рабочей области Log Analytics.  
+* Добавьте [System Center Operations Manager в качестве источника данных для получения](../platform/om-agents.md) данных от агентов, сообщающих группу управления Operations Manager, и сохраните ее в рабочей области log Analytics.  
 * Подключите [Configuration Manager](../platform/collect-sccm.md) для импорта данных с компьютеров, которые являются элементами коллекций в иерархии.  
 * Просмотрите список доступных [решений для мониторинга](../insights/solutions.md) и узнайте, как добавить решение в рабочую область или удалить его из нее.

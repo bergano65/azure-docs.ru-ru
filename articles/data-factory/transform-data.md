@@ -11,25 +11,25 @@ manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 07/31/2018
 ms.openlocfilehash: fdb10894ab9d1c6b805b8b43c90e54126d67b8dd
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81606613"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
 
 > [!div class="op_single_selector"]
-> * [Картирование потока данных](data-flow-create.md)
+> * [Поток данных сопоставления](data-flow-create.md)
 > * [Hive](transform-data-using-hadoop-hive.md)  
 > * [Pig,](transform-data-using-hadoop-pig.md)  
-> * [Mapreduce](transform-data-using-hadoop-map-reduce.md)  
+> * [MapReduce](transform-data-using-hadoop-map-reduce.md)  
 > * [Потоковая передача HDInsight](transform-data-using-hadoop-streaming.md)
 > * [HDInsight Spark](transform-data-using-spark.md)
 > * [Машинное обучение](transform-data-using-machine-learning.md) 
-> * [Сохраненная процедура](transform-data-using-stored-procedure.md)
+> * [Хранимая процедура](transform-data-using-stored-procedure.md)
 > * [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md)
-> * [Блокнот Databricks](transform-data-databricks-notebook.md)
+> * [Записная книжка кирпичей](transform-data-databricks-notebook.md)
 > * [Databricks Jar](transform-data-databricks-jar.md)
 > * [Databricks Python](transform-data-databricks-python.md)
 > * [Пользовательские действия .NET](transform-data-using-dotnet-custom-activity.md)
@@ -37,23 +37,23 @@ ms.locfileid: "81606613"
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 ## <a name="overview"></a>Обзор
-В этой статье объясняется деятельность по преобразованию данных на фабрике данных Azure, которые можно использовать для преобразования и обработки необработанных данных в прогнозы и аналитические данные в масштабе. Действие преобразования выполняется в вычислительной среде, такой как Azure Databricks или Azure HDInsight. Статья содержит ссылки на статьи с подробными сведениями о каждом действии преобразования.
+В этой статье описываются действия по преобразованию данных в фабрике данных Azure, которые можно использовать для преобразования и обработки необработанных данных в прогнозы и аналитические сведения в масштабе. Действие преобразования выполняется в вычислительной среде, например Azure Databricks или Azure HDInsight. Статья содержит ссылки на статьи с подробными сведениями о каждом действии преобразования.
 
 Фабрика данных поддерживает указанные ниже действия преобразования, которые вы можете добавлять в [конвейеры](concepts-pipelines-activities.md) как по отдельности, так и в цепочке с другим действием.
 
-## <a name="transform-natively-in-azure-data-factory-with-data-flows"></a>Преобразование в Azure Data Factory с потоками данных
+## <a name="transform-natively-in-azure-data-factory-with-data-flows"></a>Встроенное преобразование в фабрике данных Azure с помощью потоков данных
 
 ### <a name="mapping-data-flows"></a>Сопоставление потоков данных
 
-Потоки картданных данных визуально разработаны преобразованиями данных в Azure Data Factory. Потоки данных позволяют инженерам обработки графических данных развивать логику преобразования данных без написания кода. Полученные потоки данных выполняются как действия в конвейерах Azure Data Factory, которые используют кластеры spark с масштабом. Деятельность потока данных может быть оперативной через существующие возможности планирования, управления, потока и мониторинга Data Factory. Для получения дополнительной [mapping data flows](concepts-data-flow-overview.md)информации см.
+Сопоставление потоков данных — это визуально спроектированные преобразования данных в фабрике данных Azure. Потоки данных позволяют инженерам данных разрабатывать логику преобразования графических данных без написания кода. Результирующие потоки данных выполняются в виде действий в конвейерах фабрики данных Azure, использующих масштабируемые кластеры Spark. Действия потока данных могут быть реализованы с помощью существующих возможностей планирования фабрики данных, управления, потоков и мониторинга. Дополнительные сведения см. в разделе [сопоставление потоков данных](concepts-data-flow-overview.md).
 
-### <a name="wrangling-data-flows"></a>Потоки данных по вине
+### <a name="wrangling-data-flows"></a>Потоки данных структурирование
 
-Потоки данных в Azure Data Factory позволяют осуществлять подготовку данных без кода в облачном масштабе. Потоки данных, разрушающиеся, интегрируются с [Power Query Online](https://docs.microsoft.com/power-query/) и делают функции Power Query M доступными для обработки данных в облачном масштабе с помощью выполнения искры. Для получения дополнительной [wrangling data flows](wrangling-data-flow-overview.md)информации см.
+Потоки данных структурирование в фабрике данных Azure позволяют итеративно выполнять подготовку данных без кода в масштабе облака. Потоки данных структурирование интегрируются с [Power Query Online](https://docs.microsoft.com/power-query/) и делают функции Power Query M доступными для структурирование данных в облачном масштабировании с помощью выполнения Spark. Дополнительные сведения см. в разделе [структурирование Data](wrangling-data-flow-overview.md)Flows.
 
 ## <a name="external-transformations"></a>Внешние преобразования
 
-В качестве опционов можно самостоятельно управлять преобразованиями ручного кода и управлять внешней вычислительной средой.
+При необходимости можно вручную преобразовать код и управлять внешней средой вычислений самостоятельно.
 
 ### <a name="hdinsight-hive-activity"></a>Действие Hive HDInsight
 Действие Hive HDInsight в конвейере фабрики данных выполняет запросы Hive к вашему собственному кластеру HDInsight или кластеру HDInsight по запросу под управлением Windows или Linux. Дополнительные сведения об этом действии см. в статье [Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure](transform-data-using-hadoop-hive.md). 
@@ -85,7 +85,7 @@ C помощью действия хранимой процедуры SQL Serve
 
 ### <a name="databricks-notebook-activity"></a>Действие Notebook в Databricks
 
-Деятельность ноутбука Azure Databricks в конвейере Data Factory запускает блокнот Databricks в рабочем пространстве Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью записной книжки Databricks](transform-data-databricks-notebook.md).
+Действие Azure Databricks записной книжке в конвейере фабрики данных запускает записную книжку "кирпичы" в рабочей области Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью записной книжки Databricks](transform-data-databricks-notebook.md).
 
 ### <a name="databricks-jar-activity"></a>Действие JAR в Databricks
 
@@ -108,5 +108,5 @@ C помощью действия хранимой процедуры SQL Serve
 
 В статье [Связанные службы вычислений](compute-linked-services.md) описывается, какие службы вычислений поддерживает фабрика данных. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Пример использования действия преобразования см. в руководстве [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md).
