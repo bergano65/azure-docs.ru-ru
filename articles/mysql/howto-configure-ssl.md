@@ -1,5 +1,5 @@
 ---
-title: Настройка SSL - База данных Azure для MyS'L
+title: Настройка SSL — база данных Azure для MySQL
 description: Инструкции по настройке базы данных Azure для MySQL и связанных приложений для правильного использования SSL-соединений.
 author: ajlam
 ms.author: andrela
@@ -7,35 +7,35 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 4/21/2020
 ms.openlocfilehash: a68b63fa190aa67125b2bf8c09ae7f31aedc3905
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81770270"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mysql"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL
 База данных Azure для MySQL поддерживает подключение сервера базы данных Azure для MySQL к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
 ## <a name="step-1-obtain-ssl-certificate"></a>Шаг 1. Получение SSL-сертификата
-Загрузите сертификат, необходимый для связи по SSL с [https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) вашей базой данных Azure для сервера MyS'L, и сохраните файл сертификата на локальном диске (например, в этом учебнике используется c:ssl).
+Скачайте сертификат, необходимый для обмена данными по протоколу SSL с сервером базы данных Azure [https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) для MySQL, и сохраните файл сертификата на локальном диске (например, в этом руководстве используется используем c:\ssl).
 **Для браузеров Microsoft Internet Explorer и Microsoft Edge:** по завершении скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
 
 ## <a name="step-2-bind-ssl"></a>Шаг 2. Привязка SSL
 
-Для конкретных строк соединения языка программирования, пожалуйста, обратитесь к [примеру кода](howto-configure-ssl.md#sample-code) ниже.
+Сведения о строках подключения для конкретных языков программирования см. в приведенном ниже [образце кода](howto-configure-ssl.md#sample-code) .
 
-### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MyS'L Workbench над SSL
+### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MySQL Workbench по протоколу SSL
 Настройте MySQL Workbench, чтобы безопасно подключаться по протоколу SSL. 
 
 1. В диалоговом окне Setup New Connection (Настройка нового подключения) откройте вкладку **SSL**. 
 
-1. Обновление поля **использования SSL** до "Требовать".
+1. Обновите поле " **использовать SSL** " для "обязательно".
 
 1. Введите расположение файла **BaltimoreCyberTrustRoot.crt.pem** в поле **SSL CA File:** (Файл центра сертификации SSL-сертификата). 
     
     ![Сохранить конфигурацию SSL](./media/howto-configure-ssl/mysql-workbench-ssl.png)
 
-Для существующих соединений можно связать SSL, нажав правой кнопкой на значок соединения и выбрать исправление. Откройте вкладку **SSL** и привяжите файл сертификата.
+Для существующих подключений можно привязать SSL, щелкнув правой кнопкой мыши значок подключения и выбрав пункт изменить. Откройте вкладку **SSL** и привяжите файл сертификата.
 
 ### <a name="connecting-to-server-using-the-mysql-cli-over-ssl"></a>Подключение к серверу с помощью интерфейса командной строки MySQL по протоколу SSL
 Кроме того, можно привязать SSL-сертификат при помощи интерфейса командной строки MySQL, выполнив следующие команды. 
@@ -68,7 +68,7 @@ mysql> status
 ## <a name="sample-code"></a>Образец кода
 Чтобы установить безопасное подключение приложения к Базе данных Azure для MySQL по протоколу SSL, изучите приведенные ниже примеры кода.
 
-Ссылайтесь на список [совместимых драйверов,](concepts-compatibility.md) поддерживаемых базой данных Azure для службы MyS'L.
+См. список [совместимых драйверов](concepts-compatibility.md) , поддерживаемых службой "база данных Azure для MySQL".
 
 ### <a name="php"></a>PHP
 ```php
@@ -79,7 +79,7 @@ if (mysqli_connect_errno($conn)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 ```
-### <a name="php-using-pdo"></a>PHP (использование PDO)
+### <a name="php-using-pdo"></a>PHP (с использованием PDO)
 ```phppdo
 $options = array(
     PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'
@@ -107,7 +107,7 @@ conn = pymysql.connect(user='myadmin@mydemoserver',
                        ssl={'ssl': {'ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}})
 ```
 
-### <a name="django-pymysql"></a>Джанго (ПимыСЗЛ)
+### <a name="django-pymysql"></a>Django (Пимискл)
 ```python
 DATABASES = {
     'default': {
@@ -147,7 +147,7 @@ var connectionString string
 connectionString = fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?allowNativePasswords=true&tls=custom",'myadmin@mydemoserver' , 'yourpassword', 'mydemoserver.mysql.database.azure.com', 'quickstartdb')   
 db, _ := sql.Open("mysql", connectionString)
 ```
-### <a name="java-mysql-connector-for-java"></a>Java (MyS'L Коннектор для Java)
+### <a name="java-mysql-connector-for-java"></a>Java (соединитель MySQL для Java)
 ```java
 # generate truststore and keystore in code
 String importCert = " -import "+
@@ -174,7 +174,7 @@ properties.setProperty("user", 'myadmin@mydemoserver');
 properties.setProperty("password", 'yourpassword');
 conn = DriverManager.getConnection(url, properties);
 ```
-### <a name="java-mariadb-connector-for-java"></a>Java (Разъем MariaDB для Java)
+### <a name="java-mariadb-connector-for-java"></a>Java (соединитель MariaDB для Java)
 ```java
 # generate truststore and keystore in code
 String importCert = " -import "+
@@ -219,5 +219,5 @@ using (var connection = new MySqlConnection(builder.ConnectionString))
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Сведения о вариантах подключения приложений см. в статье [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

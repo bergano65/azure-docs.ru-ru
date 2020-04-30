@@ -1,6 +1,6 @@
 ---
-title: Создание контроллера входа с существующим шлюзом приложений
-description: В этой статье содержится информация о том, как развернуть контроллер входа в шлюз приложений с существующим шлюзом приложений.
+title: Создание контроллера входящего трафика с помощью существующего шлюза приложений
+description: В этой статье содержатся сведения о развертывании контроллера входящего трафика шлюза приложений с помощью существующего шлюза приложений.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -8,45 +8,45 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 949f1b3ee3db72e1c541c3dd4c5f74f364f1b514
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81869897"
 ---
-# <a name="install-an-application-gateway-ingress-controller-agic-using-an-existing-application-gateway"></a>Установка контроллера входа в шлюз приложений (AGIC) с помощью существующего шлюза приложений
+# <a name="install-an-application-gateway-ingress-controller-agic-using-an-existing-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью существующего шлюза приложений
 
-Контроллер входа в приложение (AGIC) — это стручок в вашем кластере Kubernetes.
-AGIC отслеживает ресурсы Kubernetes [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) и создает и применяет конфигурацию Application Gateway в зависимости от статуса кластера Kubernetes.
+Контроллер входящего трафика шлюза приложений (АГИК) — это Pod в кластере Kubernetes.
+АГИК отслеживает [Входящие ресурсы Kubernetes](https://kubernetes.io/docs/concepts/services-networking/ingress/) и создает и применяет конфигурацию шлюза приложений в зависимости от состояния кластера Kubernetes.
 
-## <a name="outline"></a>Контур:
+## <a name="outline"></a>Обзор
 - [Предварительные требования](#prerequisites)
-- [Аутентификация менеджера ресурсов Azure (ARM)](#azure-resource-manager-authentication)
-    - Вариант 1: [Настройка aad-pod-identity](#set-up-aad-pod-identity) и создание идентификационных данных Azure на ARMs
-    - Вариант 2: [Использование директора службы](#using-a-service-principal)
-- [Установка контроллера Ingress с помощью helm](#install-ingress-controller-as-a-helm-chart)
-- [Многокластерный / общий шлюз приложений](#multi-cluster--shared-application-gateway): Установка AGIC в среде, где шлюз приложения распределяется между одним или несколькими кластерами AKS и/или другими компонентами Azure.
+- [Проверка подлинности Azure Resource Manager (ARM)](#azure-resource-manager-authentication)
+    - Вариант 1. [Настройка AAD-Pod-Identity](#set-up-aad-pod-identity) и создание удостоверения Azure в подлокотниках
+    - Вариант 2. [Использование субъекта-службы](#using-a-service-principal)
+- [Установка контроллера входящего трафика с помощью Helm](#install-ingress-controller-as-a-helm-chart)
+- [Шлюз приложений с несколькими кластерами и общим доступом](#multi-cluster--shared-application-gateway). Установите агик в среде, где шлюз приложений является общим для одного или нескольких кластеров AKS и (или) других компонентов Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
-Этот документ предполагает, что у вас уже установлены следующие инструменты и инфраструктура:
-- [AKS](https://azure.microsoft.com/services/kubernetes-service/) с помощью [расширенной сети](https://docs.microsoft.com/azure/aks/configure-azure-cni)
-- [Приложение Gateway v2](https://docs.microsoft.com/azure/application-gateway/create-zone-redundant) в той же виртуальной сети, что и AKS
-- [Идентификация AAD Pod](https://github.com/Azure/aad-pod-identity) установлена на кластере AKS
-- [Обупотечная оболочка](https://shell.azure.com/) — `az` это среда `kubectl`оболочки Azure, которая имеет CLI и `helm` устанавливается. Эти инструменты необходимы для команд ниже.
+## <a name="prerequisites"></a>Предварительные условия
+В этом документе предполагается, что у вас уже установлены следующие средства и инфраструктура:
+- [AKS](https://azure.microsoft.com/services/kubernetes-service/) с включенной поддержкой [расширенных сетей](https://docs.microsoft.com/azure/aks/configure-azure-cni)
+- [Шлюз приложений версии 2](https://docs.microsoft.com/azure/application-gateway/create-zone-redundant) в той же виртуальной сети, что и AKS
+- [Удостоверение Pod AAD](https://github.com/Azure/aad-pod-identity) , установленное в КЛАСТЕРе AKS
+- [Cloud Shell](https://shell.azure.com/) — это среда оболочки Azure, которая имеет `az` интерфейс командной `kubectl`строки, `helm` и установлен. Эти средства необходимы для приведенных ниже команд.
 
-Пожалуйста, __резервное копирование конфигурации вашего приложения шлюза__ перед установкой AGIC:
-  1. с помощью [портала Azure](https://portal.azure.com/) перейти к экземпляру `Application Gateway`
-  2. от `Export template` клика`Download`
+Перед установкой АГИК создайте __резервную копию конфигурации шлюза приложений__ :
+  1. с помощью [портал Azure](https://portal.azure.com/) перейдите к `Application Gateway` своему экземпляру
+  2. из `Export template` Click`Download`
 
-Заспрозагруженный файл на молнии будет иметь шаблоны JSON, скрипты bash и PowerShell, которые можно использовать для восстановления App Gateway, если это станет необходимым
+Скачанный ZIP-файл будет содержать шаблоны JSON, bash и скрипты PowerShell, которые можно использовать для восстановления шлюза приложений, если это необходимо.
 
 ## <a name="install-helm"></a>Установка Helm
-[Хельм](https://docs.microsoft.com/azure/aks/kubernetes-helm) является менеджером пакетов для Kubernetes. Мы будем использовать его `application-gateway-kubernetes-ingress` для установки пакета.
-Используйте [облачную оболочку](https://shell.azure.com/) для установки Helm:
+[Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) — это диспетчер пакетов для Kubernetes. Мы будем использовать его для установки `application-gateway-kubernetes-ingress` пакета.
+Для установки Helm используйте [Cloud Shell](https://shell.azure.com/) :
 
-1. Установите [шлем](https://docs.microsoft.com/azure/aks/kubernetes-helm) и запустите следующие, чтобы добавить `application-gateway-kubernetes-ingress` пакет руля:
+1. Установите [Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) и выполните следующую команду, чтобы `application-gateway-kubernetes-ingress` добавить пакет Helm:
 
-    - *RBAC включен* Кластер АКС
+    - *RBAC включен* Кластер AKS
 
     ```bash
     kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -54,7 +54,7 @@ AGIC отслеживает ресурсы Kubernetes [Ingress](https://kubernet
     helm init --tiller-namespace kube-system --service-account tiller-sa
     ```
 
-    - *RBAC отключен* Кластер АКС
+    - *RBAC отключен* Кластер AKS
 
     ```bash
     helm init
@@ -66,34 +66,34 @@ AGIC отслеживает ресурсы Kubernetes [Ingress](https://kubernet
     helm repo update
     ```
 
-## <a name="azure-resource-manager-authentication"></a>Аутентификация менеджера ресурсов Azure
+## <a name="azure-resource-manager-authentication"></a>Проверка подлинности Azure Resource Manager
 
-AGIC общается с сервером API Kubernetes и менеджером ресурсов Azure. Для доступа к этим AAP требуется идентификация.
+АГИК взаимодействует с сервером API Kubernetes и Azure Resource Manager. Для доступа к этим API-интерфейсам требуется удостоверение.
 
-## <a name="set-up-aad-pod-identity"></a>Настройка идентичности AAD Pod
+## <a name="set-up-aad-pod-identity"></a>Настройка удостоверения Pod для AAD
 
-[AAD Pod Identity](https://github.com/Azure/aad-pod-identity) — это контроллер, похожий на AGIC, который также работает на вашем AKS. Он связывает идентификаторы Azure Active Directory с вашими стручками Kubernetes. Identity необходим для того, чтобы приложение в стручке Kubernetes могло общаться с другими компонентами Azure. В данном конкретном случае нам нужно разрешение для стручка AGIC, чтобы сделать http запросы [на ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+[Удостоверение типа POD AAD](https://github.com/Azure/aad-pod-identity) — это контроллер, аналогичный агик, который также работает на AKS. Он привязывает Azure Active Directory удостоверения к модулям Pod Kubernetes. Удостоверение требуется для того, чтобы приложение в Kubernetes Pod могло взаимодействовать с другими компонентами Azure. В конкретном случае для модуля АГИК требуется авторизация для выполнения HTTP-запросов к [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
 
-Следуйте инструкциям по [установке AAD Pod Identity,](https://github.com/Azure/aad-pod-identity#deploy-the-azure-aad-identity-infra) чтобы добавить этот компонент в AKS.
+Чтобы добавить этот компонент в AKS, следуйте [инструкциям по установке удостоверения Pod AAD](https://github.com/Azure/aad-pod-identity#deploy-the-azure-aad-identity-infra) .
 
-Далее нам необходимо создать идентификатор Azure и дать ей разрешения ARM.
-Используйте [Cloud Shell](https://shell.azure.com/) для выполнения всех следующих команд и создания идентификации:
+Далее нам нужно создать удостоверение Azure и дать ему права на ARM.
+Используйте [Cloud Shell](https://shell.azure.com/) , чтобы выполнить все приведенные ниже команды и создать удостоверение.
 
-1. Создайте иноеудостоверения Azure **в той же группе ресурсов, что и узлы AKS.** Важно выбрать правильную группу ресурсов. Ресурсная группа, требуемая в команде ниже, *не* является той, на что ссылается на панели портала AKS. Это ресурсная группа `aks-agentpool` виртуальных машин. Обычно эта группа `MC_` ресурсов начинается с и содержит имя вашего AKS. Например:`MC_resourceGroup_aksABCD_westus`
+1. Создайте удостоверение Azure **в той же группе ресурсов, что и узлы AKS**. Важно выбрать правильную группу ресурсов. Группа ресурсов, необходимая в приведенной ниже команде, *не* является ссылкой на область портала AKS. Это группа ресурсов `aks-agentpool` виртуальных машин. Обычно эта группа ресурсов начинается с `MC_` и содержит имя AKS. Например:`MC_resourceGroup_aksABCD_westus`
 
     ```azurecli
     az identity create -g <agent-pool-resource-group> -n <identity-name>
     ```
 
-1. Для команды назначения ролей ниже нам `principalId` нужно получить для вновь созданного удостоверения:
+1. Для приведенных ниже команд назначения ролей необходимо получить `principalId` для вновь созданного удостоверения:
 
     ```azurecli
     az identity show -g <resourcegroup> -n <identity-name>
     ```
 
-1. Предоставьте `Contributor` identity-доступ к шлюзу приложения. Для этого вам нужен идентификатор шлюза приложения, который будет выглядеть примерно так:`/subscriptions/A/resourceGroups/B/providers/Microsoft.Network/applicationGateways/C`
+1. Предоставьте удостоверению `Contributor` доступ к шлюзу приложений. Для этого вам потребуется идентификатор шлюза приложений, который будет выглядеть примерно так:`/subscriptions/A/resourceGroups/B/providers/Microsoft.Network/applicationGateways/C`
 
-    Получите список идов шлюза приложения в подписке с:`az network application-gateway list --query '[].id'`
+    Получите список идентификаторов шлюзов приложений в подписке с помощью:`az network application-gateway list --query '[].id'`
 
     ```azurecli
     az role assignment create \
@@ -102,7 +102,7 @@ AGIC общается с сервером API Kubernetes и менеджером
         --scope <App-Gateway-ID>
     ```
 
-1. Предоставь `Reader` идентификационный доступ к группе ресурсов Application Gateway. Идентификатор группы `/subscriptions/A/resourceGroups/B`ресурсов будет выглядеть следующим: . Вы можете получить все группы ресурсов с:`az group list --query '[].id'`
+1. Предоставьте удостоверению `Reader` доступ к группе ресурсов шлюза приложений. Идентификатор группы ресурсов будет выглядеть следующим образом: `/subscriptions/A/resourceGroups/B`. Все группы ресурсов можно получить с помощью:`az group list --query '[].id'`
 
     ```azurecli
     az role assignment create \
@@ -111,37 +111,37 @@ AGIC общается с сервером API Kubernetes и менеджером
         --scope <App-Gateway-Resource-Group-ID>
     ```
 
-## <a name="using-a-service-principal"></a>Использование директора службы
-Кроме того, можно предоставить AGIC доступ к ARM через секрет Kubernetes.
+## <a name="using-a-service-principal"></a>Использование субъекта-службы
+Также можно предоставить АГИК доступ к ARM через секрет Kubernetes.
 
-1. Создайте принцип службы активного каталога и закодивите с помощью base64. Кодирование base64 необходимо для того, чтобы капля JSON была сохранена в Кубернете.
+1. Создайте субъект-службу Active Directory и закодировать его с помощью Base64. Для сохранения большого двоичного объекта JSON в Kubernetes требуется кодировка Base64.
 
 ```azurecli
 az ad sp create-for-rbac --sdk-auth | base64 -w0
 ```
 
-2. Добавьте в `helm-config.yaml` файл закодированную d'Sda JSON blob. Более подробная информация о `helm-config.yaml` следующем разделе.
+2. Добавьте в `helm-config.yaml` файл большой двоичный объект JSON в кодировке Base64. Дополнительные сведения о `helm-config.yaml` параметре см. в следующем разделе.
 ```yaml
 armAuth:
     type: servicePrincipal
     secretJSON: <Base64-Encoded-Credentials>
 ```
 
-## <a name="install-ingress-controller-as-a-helm-chart"></a>Установка контроллера Ingress как диаграмма helm
-В первые несколько шагов мы устанавливаем Helm's Tiller в кластер Еберунете. Используйте [Cloud Shell](https://shell.azure.com/) для установки пакета AGIC Helm:
+## <a name="install-ingress-controller-as-a-helm-chart"></a>Установка контроллера входящего трафика как Helm диаграммы
+В первых нескольких шагах мы устанавливаем Helm в кластере Kubernetes. Для установки пакета Helm АГИК используйте [Cloud Shell](https://shell.azure.com/) :
 
-1. Добавить `application-gateway-kubernetes-ingress` репо руля и выполнить обновление руля
+1. Добавление репозитория `application-gateway-kubernetes-ingress` Helm и выполнение обновления Helm
 
     ```bash
     helm repo add application-gateway-kubernetes-ingress https://appgwingress.blob.core.windows.net/ingress-azure-helm-package/
     helm repo update
     ```
 
-1. Скачать рулевой-config.yaml, который будет настроить AGIC:
+1. Скачайте Helm-config. YAML, который будет настраивать АГИК:
     ```bash
     wget https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/master/docs/examples/sample-helm-config.yaml -O helm-config.yaml
     ```
-    Или скопите файл YAML ниже: 
+    Или скопируйте файл YAML ниже: 
     
     ```yaml
     # This file contains the essential configs for the ingress controller helm chart
@@ -196,21 +196,21 @@ armAuth:
         apiServerAddress: <aks-api-server-address>
     ```
 
-1. Оторите рулевой-config.yaml и `appgw` заполните в значениях для и `armAuth`.
+1. Измените Helm-config. YAML и заполните значения для `appgw` и `armAuth`.
     ```bash
     nano helm-config.yaml
     ```
 
     > [!NOTE] 
-    > `<identity-client-id>` Свойства `<identity-resource-id>` идентификатора Azure AD Identity, который вы установили в предыдущем разделе. Вы можете получить эту информацию, `az identity show -g <resourcegroup> -n <identity-name>`запустив следующую команду: , где `<resourcegroup>` находится группа ресурсов, в которой развернуты объект кластера AKS верхнего уровня, шлюз приложений и Управляемое определение.
+    > Свойства `<identity-resource-id>` и `<identity-client-id>` являются свойствами удостоверения Azure AD, настроенного в предыдущем разделе. Эти сведения можно получить, выполнив следующую команду: `az identity show -g <resourcegroup> -n <identity-name>`, где `<resourcegroup>` — это группа ресурсов, в которой развернуты объект кластера AKS верхнего уровня, шлюз приложений и управляемая оценка.
 
-1. Установка диаграммы `application-gateway-kubernetes-ingress` `helm-config.yaml` helm с конфигурацией предыдущего шага
+1. Установите диаграмму `application-gateway-kubernetes-ingress` Helm с `helm-config.yaml` конфигурацией из предыдущего шага.
 
     ```bash
     helm install -f <helm-config.yaml> application-gateway-kubernetes-ingress/ingress-azure
     ```
 
-    Кроме того, вы `helm-config.yaml` можете объединить команду Helm в одном шаге:
+    Кроме того, можно объединить `helm-config.yaml` команду и Helm в одном шаге:
     ```bash
     helm install ./helm/ingress-azure \
          --name ingress-azure \
@@ -228,29 +228,29 @@ armAuth:
          --set aksClusterConfiguration.apiServerAddress=aks-abcdefg.hcp.westus2.azmk8s.io
     ```
 
-1. Проверьте журнал вновь созданного стручка, чтобы проверить, правильно ли он начался
+1. Проверьте журнал созданного модуля, чтобы проверить, правильно ли он запущен.
 
-Обратитесь к [этому руководству,](ingress-controller-expose-service-over-http-https.md) чтобы понять, как можно разоблачить службу AKS через HTTP или HTTPS в Интернете, используя шлюз приложения Azure.
+Ознакомьтесь с [этим руководством](ingress-controller-expose-service-over-http-https.md) , чтобы понять, как можно предоставить службу AKS через HTTP или HTTPS в Интернете с помощью шлюза приложений Azure.
 
 
 
-## <a name="multi-cluster--shared-application-gateway"></a>Многокластерный / общий шлюз приложений
-По умолчанию AGIC берет на себя полное владение шлюзом приложения, с которым он связан. ВЕРСИЯ AGIC 0.8.0 и позже может совместно с другими компонентами Azure делиться одним шлюзом приложений. Например, мы могли бы использовать тот же шлюз приложений для приложения, размещенного на наборе виртуальной шкалы машин, а также кластера AKS.
+## <a name="multi-cluster--shared-application-gateway"></a>Шлюз приложений с несколькими кластерами или общим доступом
+По умолчанию АГИК предполагает полное владение шлюзом приложений, с которым он связан. АГИК версии 0.8.0 и более поздних версий могут совместно использовать один шлюз приложений с другими компонентами Azure. Например, можно использовать один и тот же шлюз приложений для приложения, размещенного в масштабируемом наборе виртуальных машин, а также в кластере AKS.
 
-Пожалуйста, __резервное копирование конфигурации вашего шлюза приложения,__ прежде чем включить эту настройку:
-  1. с помощью [портала Azure](https://portal.azure.com/) перейти к экземпляру `Application Gateway`
-  2. от `Export template` клика`Download`
+Перед включением этого параметра создайте __резервную копию конфигурации шлюза приложений__ :
+  1. с помощью [портал Azure](https://portal.azure.com/) перейдите к `Application Gateway` своему экземпляру
+  2. из `Export template` Click`Download`
 
-Заспрозагруженный файл на молнии будет иметь шаблоны JSON, скрипты bash и PowerShell, которые можно использовать для восстановления шлюза приложения
+Скачанный ZIP-файл будет содержать шаблоны JSON, bash и сценарии PowerShell, которые можно использовать для восстановления шлюза приложений.
 
 ### <a name="example-scenario"></a>Пример сценария
-Давайте посмотрим на воображаемый шлюз приложений, который управляет трафиком для двух веб-сайтов:
-  - `dev.contoso.com`- размещенный на новом AKS, используя шлюз приложений и AGIC
-  - `prod.contoso.com`- размещение на [Azure Виртуальный набор масштабов машины](https://azure.microsoft.com/services/virtual-machine-scale-sets/)
+Рассмотрим воображаемый шлюз приложений, который управляет трафиком для двух веб-сайтов:
+  - `dev.contoso.com`— размещается в новом AKS с использованием шлюза приложений и АГИК
+  - `prod.contoso.com`— размещено в [масштабируемом наборе виртуальных машин Azure](https://azure.microsoft.com/services/virtual-machine-scale-sets/) ;
 
-С настройками по умолчанию AGIC предполагает 100% владение шлюзом приложения, на который указывается. AGIC перезаписывает всю конфигурацию App Gateway. Если бы мы вручную создали `prod.contoso.com` слушателя для (на портале приложений), не определив `prod.contoso.com` его в Kubernetes Ingress, AGIC удалит конфигурацию в течение нескольких секунд.
+При использовании параметров по умолчанию АГИК предполагает владение шлюзом приложений на 100%, на который указывает. АГИК перезаписывает все настройки шлюза приложений. Если необходимо вручную создать прослушиватель для `prod.contoso.com` (в шлюзе приложений), не определяя его в Kubernetes входящих данных, агик удалит `prod.contoso.com` конфигурацию в течение нескольких секунд.
 
-Чтобы установить AGIC, а также подавать из `prod.contoso.com` наших виртуальных машин `dev.contoso.com` машины шкалы набор машин, мы должны ограничить AGIC для настройки только. Этому способствует мгновенное выполнение следующих [CRD:](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
+Чтобы установить АГИК, а также `prod.contoso.com` выполнить обслуживание на виртуальных машинах с масштабируемыми наборами, необходимо ограничить `dev.contoso.com` агик только конфигурацией. Это упрощается путем создания экземпляра следующих [CRD](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/):
 
 ```bash
 cat <<EOF | kubectl apply -f -
@@ -263,12 +263,12 @@ spec:
 EOF
 ```
 
-Приведенная выше `AzureIngressProhibitedTarget` команда создает объект. Это делает AGIC (версия 0.8.0 и более поздно) осведомленным о существовании конфигурации Gateway приложения и `prod.contoso.com` явно поручает ему избегать изменения любой конфигурации, связанной с этим хост-именем.
+Приведенная выше команда создает `AzureIngressProhibitedTarget` объект. Это делает АГИК (версии 0.8.0 и более поздней) осведомленной о существовании конфигурации шлюза приложений для `prod.contoso.com` и явно инструктирует его, чтобы избежать изменения конфигурации, связанной с этим именем узла.
 
 
-### <a name="enable-with-new-agic-installation"></a>Включить новую установку AGIC
-Ограничить AGIC (версия 0.8.0 и более далее) подмножеством `helm-config.yaml` конфигурации gateway приложения изменить шаблон.
-Под `appgw:` разделом, `shared` добавить ключ `true`и установить его на .
+### <a name="enable-with-new-agic-installation"></a>Включить при установке новой АГИК
+Чтобы ограничить АГИК (Version 0.8.0 и более поздние версии) подмножеством конфигурации шлюза приложений `helm-config.yaml` , измените шаблон.
+В `appgw:` разделе добавьте `shared` раздел и задайте для него значение. `true`
 
 ```yaml
 appgw:
@@ -278,12 +278,12 @@ appgw:
     shared: true                        # <<<<< Add this field to enable shared Application Gateway >>>>>
 ```
 
-Применить изменения руля:
-  1. Убедитесь, что `AzureIngressProhibitedTarget` CRD установлен с:
+Применить изменения Helm:
+  1. Убедитесь, `AzureIngressProhibitedTarget` что CRD установлен с помощью:
       ```bash
       kubectl apply -f https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/ae695ef9bd05c8b708cedf6ff545595d0b7022dc/crds/AzureIngressProhibitedTarget.yaml
       ```
-  2. Обновление шлем:
+  2. Обновление Helm:
       ```bash
       helm upgrade \
           --recreate-pods \
@@ -291,20 +291,20 @@ appgw:
           ingress-azure application-gateway-kubernetes-ingress/ingress-azure
       ```
 
-В результате ваш AKS будет иметь `AzureIngressProhibitedTarget` `prohibit-all-targets`новый экземпляр называется:
+В результате в AKS будет создан новый экземпляр с `AzureIngressProhibitedTarget` именем: `prohibit-all-targets`
 ```bash
 kubectl get AzureIngressProhibitedTargets prohibit-all-targets -o yaml
 ```
 
-Объект, `prohibit-all-targets`как следует из названия, запрещает AGIC изменять конфигурацию для *любого* узла и пути.
-Установка helm `appgw.shared=true` с развернуть AGIC, но не будет вносить никаких изменений в приложение шлюз.
+Объект `prohibit-all-targets`, как и предполагает имя, запрещает агик изменять конфигурацию для *любого* узла и пути.
+Helm install с `appgw.shared=true` выполнит развертывание агик, но не внесет никаких изменений в шлюз приложений.
 
 
-### <a name="broaden-permissions"></a>Расширение разрешений
-С Helm `appgw.shared=true` с `prohibit-all-targets` и по умолчанию блокирует AGIC от применения любой конфигурации.
+### <a name="broaden-permissions"></a>Расширить разрешения
+Так как Helm `appgw.shared=true` с и блоки `prohibit-all-targets` по умолчанию агик от применения любой конфигурации.
 
-Расширить разрешения AGIC с:
-1. Создайте `AzureIngressProhibitedTarget` новую с помощью конкретной настройки:
+Расширить разрешения АГИК с помощью:
+1. Создайте новый `AzureIngressProhibitedTarget` с помощью конкретной настройки:
     ```bash
     cat <<EOF | kubectl apply -f -
     apiVersion: "appgw.ingress.k8s.io/v1"
@@ -316,18 +316,18 @@ kubectl get AzureIngressProhibitedTargets prohibit-all-targets -o yaml
     EOF
     ```
 
-2. Только после того, как вы создали свой собственный пользовательский запрет, вы можете удалить по умолчанию, который является слишком широким:
+2. Вы можете удалить значение по умолчанию, которое является слишком широким, только после создания собственного пользовательского запрета.
 
     ```bash
     kubectl delete AzureIngressProhibitedTarget prohibit-all-targets
     ```
 
-### <a name="enable-for-an-existing-agic-installation"></a>Включить для существующей установки AGIC
-Предположим, что в нашем кластере уже есть работающий AKS, Application Gateway и настроен AGIC. У нас есть `prod.contosor.com` Ingress для и успешно обслуживая трафик для него от AKS. Мы хотим `staging.contoso.com` добавить к нашему существующему шлюзу приложений, но нам нужно разместить его на [VM.](https://azure.microsoft.com/services/virtual-machines/) Мы собираемся повторно использовать существующий шлюз приложения и вручную настроить `staging.contoso.com`слушателя и бэкэнд бассейны для . Но вручную настройки приложения gateway конфигурации (через [портал,](https://portal.azure.com) [ARM AIS](https://docs.microsoft.com/rest/api/resources/) или [Terraform](https://www.terraform.io/)) будет противоречить предположениям AGIC о полной собственности. Вскоре после того, как мы применяем изменения, AGIC перезаписывает или удаляет их.
+### <a name="enable-for-an-existing-agic-installation"></a>Включить для существующей установки АГИК
+Предположим, что у нас уже есть рабочий AKS, шлюз приложений и настроенный АГИК в нашем кластере. У нас есть входящий трафик для `prod.contosor.com` и успешно обслуживать его в AKS. Мы хотим добавить `staging.contoso.com` к нашему существующему шлюзу приложений, но необходимо разместить его на [виртуальной машине](https://azure.microsoft.com/services/virtual-machines/). Мы будем повторно использовать существующий шлюз приложений и вручную настроить прослушиватель и серверные пулы для `staging.contoso.com`. Но Настройка конфигурации шлюза приложений вручную (через [портал](https://portal.azure.com), [API ARM](https://docs.microsoft.com/rest/api/resources/) или [terraform](https://www.terraform.io/)) противоречит предположениям полного владения агик. Вскоре после применения изменений АГИК будет перезаписывать или удалять их.
 
-Мы можем запретить AGIC вносить изменения в подмножество конфигурации.
+Мы можем запретить АГИК внесение изменений в подмножество конфигурации.
 
-1. Создание `AzureIngressProhibitedTarget` объекта:
+1. Создайте `AzureIngressProhibitedTarget` объект:
     ```bash
     cat <<EOF | kubectl apply -f -
     apiVersion: "appgw.ingress.k8s.io/v1"
@@ -339,9 +339,9 @@ kubectl get AzureIngressProhibitedTargets prohibit-all-targets -o yaml
     EOF
     ```
 
-2. Просмотр вновь созданного объекта:
+2. Просмотрите только что созданный объект:
     ```bash
     kubectl get AzureIngressProhibitedTargets
     ```
 
-3. Изменение приложения шлюз конфигурации через портал - добавить слушателей, правила разгрома, бэкэнды и т.д. Новый объект,`manually-configured-staging-environment`который мы создали () запретит AGIC `staging.contoso.com`переписать конфигурацию application Gateway, связанную с .
+3. Изменение конфигурации шлюза приложений с помощью портала — Добавление прослушивателей, правил маршрутизации, серверной точки и т. д. Новый объект, который мы создали`manually-configured-staging-environment`(), не позволит агик перезаписывать конфигурацию шлюза приложений `staging.contoso.com`, связанную с.

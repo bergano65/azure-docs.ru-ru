@@ -1,6 +1,6 @@
 ---
-title: Используйте хранилище Blob в качестве хранилища контрольной точки на azure Stack Hub (предварительный просмотр)
-description: В этой статье описывается, как использовать Blob Storage в качестве хранилища в концентрах событий в azure Stack Hub (предварительный просмотр).
+title: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек в концентраторе Azure Stack (Предварительная версия)
+description: В этой статье описывается, как использовать хранилище BLOB-объектов в качестве хранилища контрольных точек в концентраторах событий в концентраторе Azure Stack (Предварительная версия).
 services: event-hubs
 documentationcenter: na
 author: spelluru
@@ -9,32 +9,32 @@ ms.topic: how-to
 ms.date: 03/18/2020
 ms.author: spelluru
 ms.openlocfilehash: 2938099383c32eac493e4b4bb620f03c76ca5c44
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82023671"
 ---
-# <a name="use-blob-storage-as-checkpoint-store---event-hubs-on-azure-stack-hub-preview"></a>Используйте Хранилище Blob в качестве хранилища контрольной точки - Концентраторы событий на azure Stack Hub (предварительный просмотр)
-Если вы используете Хранилище Azure Blob Storage в качестве хранилища в среде, поддерживающей другую версию Storage Blob SDK, чем те, которые обычно доступны в Azure, необходимо использовать код для изменения aPI-версии службы хранения данных на конкретную версию, поддерживаемую этой средой. Например, если вы работаете с [концентраторами событий в версии Azure Stack Hub 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview)года, наивысшей доступной версией для службы хранения является версия 2017-11-09. В этом случае необходимо использовать код для таргетинга на версию API службы хранения данных на 2017-11-09 годы. Для примера таргетинга на конкретную версию API хранилища см. 
+# <a name="use-blob-storage-as-checkpoint-store---event-hubs-on-azure-stack-hub-preview"></a>Использование хранилища BLOB-объектов в качестве хранилища контрольных точек — концентраторов событий в концентраторе Azure Stack (Предварительная версия)
+Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем те, которые обычно доступны в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
 
 - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs)
 - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorWithCustomStorageVersion.java). 
 - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript/receiveEventsWithApiSpecificStorage.js) или [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript/src/receiveEventsWithApiSpecificStorage.ts) 
-- Python - [синхронный,](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob/samples/receive_events_using_checkpoint_store_storage_api_version.py) [асинхронный](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/receive_events_using_checkpoint_store_storage_api_version_async.py)
+- Python — [синхронный](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob/samples/receive_events_using_checkpoint_store_storage_api_version.py), [асинхронный](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/receive_events_using_checkpoint_store_storage_api_version_async.py)
 
 > [!IMPORTANT]
-> Концентраторы событий в azure Stack Hub в настоящее время находятся в [предварительном просмотре](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) и бесплатны. 
+> Концентраторы событий в концентраторе Azure Stack в настоящее время находятся на [этапе предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) и бесплатно. 
 
-Если вы запустите приемник Event Hubs, который использует Хранилище Blob в качестве хранилища контрольной точки без таргетинга на версию, поддерживаемую Azure Stack Hub, вы получите следующее сообщение об ошибке:
+Если вы запускаете приемник концентраторов событий, который использует хранилище BLOB-объектов в качестве хранилища контрольных точек, не нацеливание на версию, которую поддерживает Azure Stack концентратора, вы получите следующее сообщение об ошибке:
 
 ```
 The value for one of the HTTP headers is not in the correct format
 ```
 
 
-## <a name="sample-error-message-in-python"></a>Сообщение об ошибке образца в Python
-Для Python ошибка `azure.core.exceptions.HttpResponseError` передается обработчику ошибок `on_error(partition_context, error)` `EventHubConsumerClient.receive()`. Но метод `receive()` не вызывает исключения. `print(error)`распечатать следующую информацию об исключении:
+## <a name="sample-error-message-in-python"></a>Пример сообщения об ошибке в Python
+Для Python ошибка `azure.core.exceptions.HttpResponseError` передается обработчику `on_error(partition_context, error)` ошибок. `EventHubConsumerClient.receive()` Но метод `receive()` не вызывает исключение. `print(error)`выводит следующие сведения об исключении:
 
 ```bash
 The value for one of the HTTP headers is not in the correct format.
@@ -47,7 +47,7 @@ HeaderName:x-ms-version
 HeaderValue:2019-07-07
 ```
 
-Регистратор будет регистрировать два предупреждения, как следующие из них:
+Средство ведения журнала регистрирует два предупреждения, подобные следующим:
 
 ```bash
 WARNING:azure.eventhub.extensions.checkpointstoreblobaio._blobstoragecsaio: 
@@ -62,6 +62,6 @@ The exception is HttpResponseError('The value for one of the HTTP headers is not
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Смотрите следующую статью, узнать о разделении и контрольной точки: [Баланс нагрузки раздела в нескольких экземплярах приложения](event-processor-balance-partition-load.md)
+Сведения о секционировании и создании контрольных точек см. в следующей статье: [Балансировка нагрузки секций между несколькими экземплярами приложения](event-processor-balance-partition-load.md)

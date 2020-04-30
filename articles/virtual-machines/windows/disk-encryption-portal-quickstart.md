@@ -8,10 +8,10 @@ ms.subservice: security
 ms.topic: quickstart
 ms.date: 10/02/2019
 ms.openlocfilehash: 3a5fb354ab32dd560a94875dd84d891ce0b9d68c
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82081750"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-virtual-machine-with-the-azure-portal"></a>Краткое руководство. Создание и шифрование виртуальной машины Windows на портале Azure

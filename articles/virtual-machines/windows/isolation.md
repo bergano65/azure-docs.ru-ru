@@ -1,6 +1,6 @@
 ---
-title: Изоляция для Вымотов Windows в Azure
-description: Узнайте о работах изоляции VM в Azure.
+title: Изоляция для виртуальных машин Windows в Azure
+description: Узнайте, как работает изоляция виртуальных машин в Azure.
 author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
@@ -8,21 +8,21 @@ ms.workload: infrastructure-services
 ms.date: 08/01/2019
 ms.author: cynthn
 ms.openlocfilehash: e03f31d8a78a0d327278768c3f0b66d2119f8dc8
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81870067"
 ---
-# <a name="virtual-machine-isolation-in-azure"></a>Виртуальная изоляция машины в Azure
+# <a name="virtual-machine-isolation-in-azure"></a>Изоляция виртуальных машин в Azure
 
 [!INCLUDE [virtual-machines-common-isolation](../../../includes/virtual-machines-common-isolation.md)]
 
 [!INCLUDE [virtual-machines-common-isolation](../../../includes/virtual-machines-common-isolation-migration.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Вы можете развернуть специальный хост с помощью [Azure PowerShell,](dedicated-hosts-powershell.md) [портала](dedicated-hosts-portal.md)и [Azure CLI.](../linux/dedicated-hosts-cli.md) Для получения дополнительной информации смотрите обзор [выделенных хостов.](dedicated-hosts.md)
+- Выделенный узел можно развернуть с помощью [Azure PowerShell](dedicated-hosts-powershell.md), [портала](dedicated-hosts-portal.md)и [Azure CLI](../linux/dedicated-hosts-cli.md). Дополнительные сведения см. в разделе Общие сведения о [выделенных узлах](dedicated-hosts.md) .
 
 
 

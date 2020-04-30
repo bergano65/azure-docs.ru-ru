@@ -1,5 +1,5 @@
 ---
-title: Расширить диск ОС Windows VM в Azure
+title: Расширение диска операционной системы виртуальной машины Windows в Azure
 description: Увеличение размера диска ОС виртуальной машины с использованием Azure PowerShell в модели развертывания с помощью Resource Manager.
 author: mimckitt
 manager: vashan
@@ -10,10 +10,10 @@ ms.date: 07/05/2018
 ms.author: mimckitt
 ms.subservice: disks
 ms.openlocfilehash: e69b041a2e4c8a0715adb6ab126a3aede42f7dde
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81869685"
 ---
 # <a name="how-to-expand-the-os-drive-of-a-virtual-machine"></a>Расширение диска ОС виртуальной машины
@@ -25,7 +25,7 @@ ms.locfileid: "81869685"
 
 
 > [!IMPORTANT]
-> Изменяя диск ОС виртуальной машины Azure требует, чтобы виртуальная машина была локализована.
+> Чтобы изменить размер диска операционной системы виртуальной машины Azure, необходимо освободить виртуальную машину.
 >
 > После расширения диска необходимо [расширить том ОС](#expand-the-volume-within-the-os), чтобы использовать преимущества диска большего размера.
 > 
@@ -208,6 +208,6 @@ $vm.StorageProfile.DataDisks[0].DiskSizeGB = 1023
 4.  В командной строке **DISKPART** введите `extend [size=<size>]`. Эта команда расширяет выбранный том на указанный *размер* в МБ.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Диски также можно подключить на [портале Azure](attach-managed-disk-portal.md).

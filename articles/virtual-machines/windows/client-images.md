@@ -1,5 +1,5 @@
 ---
-title: Используйте изображения клиентов Windows в Azure
+title: Использование образов клиентов Windows в Azure
 description: Узнайте, как использовать преимущества подписки Visual Studio для развертывания Windows 7, Windows 8 или Windows 10 в Azure в сценариях разработки и тестирования.
 author: cynthn
 ms.subservice: imaging
@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: cynthn
 ms.openlocfilehash: 51e4862fe55428f112841ef7176cdb916653de0b
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82083280"
 ---
 # <a name="use-windows-client-in-azure-for-devtest-scenarios"></a>Использование клиента Windows в Azure для сценариев разработки и тестирования
@@ -21,8 +21,8 @@ ms.locfileid: "82083280"
 ![Сведения об образах на портале Azure](./media/client-images/windows-client-msdn-images.png) 
 
 > [!NOTE]
-> Для Windows 10 Pro и Windows 10 Pro N изображения в галерее Azure, пожалуйста, обратитесь к [Как развернуть Windows 10 на Azure с Multitenant Хостинг прав](windows-desktop-multitenant-hosting-deployment.md)
->![Pro Image подробную информацию с портала Azure](./media/client-images/windows-client-pro-images.png) 
+> Дополнительные сведения об образе Windows 10 Pro и Windows 10 Pro N в коллекции Azure см. в статье [развертывание Windows 10 в Azure с использованием многоклиентской службы siteing Rights](windows-desktop-multitenant-hosting-deployment.md)
+>![Pro с помощью портал Azure](./media/client-images/windows-client-pro-images.png) 
 >
 
 ## <a name="subscription-eligibility"></a>Доступность в зависимости от подписки
@@ -57,6 +57,6 @@ ms.locfileid: "82083280"
 
 ![Сведения об идентификаторе предложения на портале учетных записей Azure](./media/client-images/offer-id-azure-account-portal.png) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь вы можете развернуть виртуальные машины с помощью [PowerShell](quick-create-powershell.md), [шаблонов Resource Manager](ps-template.md) или [Visual Studio](../../vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
 

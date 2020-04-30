@@ -8,10 +8,10 @@ ms.workload: infrastructure-services
 ms.date: 4/22/2018
 ms.author: xujing
 ms.openlocfilehash: f84d4fcd85f1e718f414e63bbe76fd29fa32427d
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81869567"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Преимущество гибридного использования Azure для Windows Server
@@ -24,7 +24,7 @@ ms.locfileid: "81869567"
 
 ## <a name="classic-vms"></a>классические виртуальные машины;
 
-Для классических VMs поддерживается только развертывание новых VM из помещений пользовательских изображений. Чтобы воспользоваться преимуществами возможностей, предоставляемых в этой статье, сначала необходимо перенести классическую виртуальную машину в модель Resource Manager.
+Для классических виртуальных машин поддерживается только развертывание новой виртуальной машины из локальных пользовательских образов. Чтобы воспользоваться преимуществами возможностей, предоставляемых в этой статье, сначала необходимо перенести классическую виртуальную машину в модель Resource Manager.
 
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
  
@@ -162,7 +162,7 @@ az vm list --query "[?licenseType=='Windows_Server']" -o table
 ```
 
 ## <a name="deploy-a-virtual-machine-scale-set-with-azure-hybrid-benefit-for-windows-server"></a>Развертывание масштабируемого набора виртуальных машин с помощью Преимущества гибридного использования Azure для Windows Server
-В шаблонах Resource Manager для масштабируемого набора виртуальных машин нужно указывать дополнительный параметр `licenseType` в свойстве VirtualMachineProfile. Вы можете сделать это во время создания или обновления для вашего масштаба, установленного через шаблон ARM, PowerShell, Azure CLI или REST.
+В шаблонах Resource Manager для масштабируемого набора виртуальных машин нужно указывать дополнительный параметр `licenseType` в свойстве VirtualMachineProfile. Это можно сделать во время создания или обновления для масштабируемого набора с помощью шаблона ARM, PowerShell, Azure CLI или RESTFUL.
 
 В следующем примере используется шаблон ARM с образом Windows Server 2016 Datacenter:
 ```json
@@ -187,10 +187,10 @@ az vm list --query "[?licenseType=='Windows_Server']" -o table
 ```
 Сведения о дополнительных возможностях изменения масштабируемого набора см. в статье [Изменение масштабируемого набора виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте больше о [том, как сэкономить деньги с помощью гибридной льготы Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
+## <a name="next-steps"></a>Дальнейшие шаги
+- Узнайте больше о [том, как сэкономить деньги с помощью преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
 - Ознакомьтесь с [часто задаваемыми вопросами о Преимуществе гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/faq/).
 - См. дополнительные сведения о [программе "Преимущество гибридного использования Azure" для Windows Server](https://docs.microsoft.com/windows-server/get-started/azure-hybrid-benefit).
 - Узнайте больше о том, как [программа "Преимущество гибридного использования Azure" для Windows Server и Azure Site Recovery делает перенос приложений в Azure еще более экономичным](https://azure.microsoft.com/blog/hybrid-use-benefit-migration-with-asr/).
 - Узнайте больше о том, как [развернуть Windows 10 в Azure с правами на мультитенантное размещение](https://docs.microsoft.com/azure/virtual-machines/windows/windows-desktop-multitenant-hosting-deployment).
-- Подробнее об [использовании шаблонов «Менеджер ресурсов»](../../azure-resource-manager/management/overview.md)
+- Дополнительные сведения об [использовании шаблонов диспетчер ресурсов](../../azure-resource-manager/management/overview.md)
