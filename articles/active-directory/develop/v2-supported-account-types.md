@@ -1,5 +1,5 @@
 ---
-title: Поддерживаемые типы учетных записей - платформа идентификации Майкрософт Azure
+title: Поддерживаемые типы учетных записей — платформа Microsoft Identity | Службы
 description: Концептуальная документация по аудиториям и поддерживаемым типам учетных записей в приложениях
 services: active-directory
 author: jmprieur
@@ -13,15 +13,15 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
 ms.openlocfilehash: b3b0114bb5d545755fe59c49605d6def341d2275
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81535780"
 ---
 # <a name="supported-account-types"></a>Поддерживаемые типы учетных записей
 
-В этой статье объясняется, какие типы учетных записей (иногда именуемых аудиторий) поддерживаются в приложениях.
+В этой статье объясняется, какие типы учетных записей (иногда называемые аудиторами) поддерживаются в приложениях.
 
 <!-- This section can be in an include for many of the scenarios (SPA, web app signing-in users, protecting a web API, Desktop (depending on the flows), Mobile -->
 
@@ -53,7 +53,7 @@ ms.locfileid: "81535780"
 
  С помощью приложений также можно войти в системы в [национальных облаках](authentication-national-cloud.md). Однако личные учетные записи Майкрософт в этих облаках не поддерживаются (определениями этих облаков). Вот почему поддерживаемые типы учетных записей для этих облаков настроены или для одной организации (для одного клиента) или многих организаций (приложения для нескольких клиентов).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Подробнее об [аренде в Azure Active Directory](./single-and-multi-tenant-apps.md)
 - Подробнее о [национальных облаках](./authentication-national-cloud.md)

@@ -4,10 +4,10 @@ description: Анализ использования и производител
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.openlocfilehash: eb9e0fc480098478a3a68265ac85e0d5450e27fe
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81537395"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
@@ -15,7 +15,7 @@ ms.locfileid: "81537395"
 Все приложения, размещенные на локальном компьютере, в Azure и в других облаках могут воспользоваться преимуществами Application Insights. Все, что нужно — это [разрешить обмен данными](../../azure-monitor/app/ip-addresses.md) со службой Application Insights. Для мониторинга приложений универсальной платформы Windows (UWP) мы рекомендуем использовать [Центр приложений Visual Studio](../../azure-monitor/learn/mobile-center-quickstart.md).
 
 ## <a name="to-send-telemetry-to-application-insights-from-a-classic-windows-application"></a>Отправка данных телеметрии в Application Insights из классического приложения для Windows
-1. На [портале Azure](https://portal.azure.com) [создайте ресурс Application Insights.](../../azure-monitor/app/create-new-resource.md ) Для параметра типа приложения выберите приложение ASP.NET.
+1. В [портал Azure](https://portal.azure.com) [Создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ). Для параметра типа приложения выберите приложение ASP.NET.
 2. Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке "Основные компоненты" нового ресурса, который вы только что создали. 
 3. В Visual Studio измените пакеты NuGet вашего проекта приложения и добавьте Microsoft.ApplicationInsights.WindowsServer. (Выберите Microsoft.ApplicationInsights, если нужен чистый API без модулей сбора стандартной телеметрии.)
 4. Задайте ключ инструментирования в коде.
@@ -24,11 +24,11 @@ ms.locfileid: "81537395"
    
     Можно также задать его в файле ApplicationInsights.config (если установлен один из пакетов стандартной телеметрии).
    
-    `<InstrumentationKey>`*ваш ключ*`</InstrumentationKey>` 
+    `<InstrumentationKey>`*Ваш ключ*`</InstrumentationKey>` 
    
     Если используется файл ApplicationInsights.config, убедитесь, что его свойства в обозревателе решений имеют следующие значения: **"Действие сборки = содержимое", "Копировать в выходной каталог = копировать"**.
 5. [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки данных телеметрии.
-6. Запустите приложение и просмотрите телеметрию в ресурсе, созданном на портале Azure.
+6. Запустите приложение и просмотрите данные телеметрии в ресурсе, созданном в портал Azure.
 
 ## <a name="example-code"></a><a name="telemetry"></a>Пример кода
 ```csharp
@@ -68,11 +68,11 @@ using Microsoft.ApplicationInsights;
 
 ```
 
-## <a name="override-storage-of-computer-name"></a>Переопределение системы хранения имени компьютера
+## <a name="override-storage-of-computer-name"></a>Переопределить хранилище имени компьютера
 
-По умолчанию этот SDK будет собирать и хранить имя компьютера системы, испускающей телеметрию. Для переопределения коллекции необходимо использовать телеметрический инициатор:
+По умолчанию этот пакет SDK будет выполнять сбор и хранение имени компьютера, порожденного системой телеметрии. Чтобы переопределить коллекцию, необходимо использовать инициализатор телеметрии:
 
-**Напишите пользовательские Телеметрия Initializer как унаситритель, как ниже.**
+**Напишите пользовательский TelemetryInitializer, как показано ниже.**
 
 ```csharp
 using Microsoft.ApplicationInsights.Channel;
@@ -93,7 +93,7 @@ namespace CustomInitializer.Telemetry
     }
 }
 ```
-Мгновенное инициатора `Program.cs` `Main()` в методе ниже, устанавливая ключ приборов:
+Создайте экземпляр инициализатора в `Program.cs` `Main()` приведенном ниже методе, указав ключ инструментирования:
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -106,9 +106,9 @@ namespace CustomInitializer.Telemetry
         }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
-* [Диагностический поиск](../../azure-monitor/app/diagnostic-search.md)
-* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
+* [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
+* [Просмотр метрик](../../azure-monitor/platform/metrics-charts.md)
 * [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
 

@@ -11,24 +11,24 @@ ms.date: 03/31/2020
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: d103b22338672f031fa4f91349a8376f86b703c8
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81530982"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Поддержка естественного языка в Azure Cognitive Services
 
-Когнитивные службы Azure позволяют создавать приложения, которые видят, слышат, говорят и понимают пользователей. Эти службы поддерживают более трех десятков языков, предоставляя пользователям возможность общения с вашим приложением естественным образом. Используйте ссылки ниже, чтобы просмотреть доступность языка по службе.
+Azure Cognitive Services позволяет создавать приложения, которые могут просматривать, слышать, говорить с пользователями и понимать их. Эти службы поддерживают более трех десятков языков, предоставляя пользователям возможность общения с вашим приложением естественным образом. Используйте приведенные ниже ссылки для просмотра доступности языков по службе.
 
-Эти когнитивные службы являются языковыми агностиками и не имеют ограничений, основанных на человеческом языке.
+Эти Cognitive Services не зависят от языка и не имеют ограничений, основанных на языке человека.
 
 * [Детектор аномалий (предварительная версия)](./anomaly-detector/index.yml)
 * [Custom Vision](./Custom-Vision-Service/index.yml)
 * [Распознавание лиц](./face/index.yml)
 * [Персонализатор](./personalizer/index.yml)
 
-## <a name="vision"></a>Зрение
+## <a name="vision"></a>Концепция
 
 * [API Компьютерного зрения](./computer-vision/language-support.md)
 * [Распознаватель документов (предварительная версия)](./form-recognizer/language-support.md)
@@ -65,5 +65,5 @@ ms.locfileid: "81530982"
 
 ## <a name="see-also"></a>См. также
 
-* [Что такое когнитивные услуги?](welcome.md)
+* [Что такое Cognitive Services?](welcome.md)
 * [Создание учетной записи](cognitive-services-apis-create-account.md)

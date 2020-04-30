@@ -1,5 +1,5 @@
 ---
-title: Управляемый экземпляр подключить приложение
+title: Приложение для подключения к управляемому экземпляру
 description: В этой статье описывается, как подключить приложение к Управляемому экземпляру Базы данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -12,10 +12,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
 ms.openlocfilehash: 8d920fb7815e5a9fe30d8f3b4e40f36133d83222
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81538092"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Connect your application to Azure SQL Database managed instance (Подключение приложения к управляемому экземпляру Базы данных SQL Azure)
@@ -44,7 +44,7 @@ ms.locfileid: "81538092"
 Лучше использовать пиринговую связь, поскольку она использует магистральную сеть корпорации Майкрософт и не добавляет существенных задержек по сравнению с подключением виртуальных машин в одной виртуальной сети. Пиринг виртуальной сети ограничен сетями в том же регионе.  
 
 > [!IMPORTANT]
-> Сценарий пиринга виртуальной сети для службы "Управляемый экземпляр" ограничен сетями в том же регионе из-за [ограничений пиринга глобальной виртуальной сети](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Более подробную информацию смотрите также в соответствующем разделе статьи о [часто задаваемых](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) вопросах Azure Virtual Networks. 
+> Сценарий пиринга виртуальной сети для службы "Управляемый экземпляр" ограничен сетями в том же регионе из-за [ограничений пиринга глобальной виртуальной сети](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
 
 ## <a name="connect-an-on-premises-application"></a>Подключение локального приложения
 
@@ -55,7 +55,7 @@ ms.locfileid: "81538092"
 - VPN-подключение типа "сеть — сеть" ([Портал Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md), [Azure CLI](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md)).
 - Подключение [ExpressRoute](../expressroute/expressroute-introduction.md).  
 
-Если вы успешно установили подключение к Azure и не можете установить подключение к Управляемому экземпляру, проверьте, имеет ли брандмауэр открытое исходящие соединения в порту 1433, а также 11000-1199 диапазон портов для перенаправления.
+Если локальное подключение к Azure установлено и вы не можете установить подключение к Управляемый экземпляр, проверьте, имеет ли брандмауэр открытое исходящее подключение через порт SQL 1433, а также диапазон портов 11000-11999 для перенаправления.
 
 ## <a name="connect-an-application-on-the-developers-box"></a>Подключение приложения через окно разработчика
 
@@ -95,7 +95,7 @@ ms.locfileid: "81538092"
 
 Для устранения проблем с подключением просмотрите следующие сведения:
 
-- Если вы не можете подключиться к управляемой инстанции из виртуальной машины Azure в той же VNet, но другой подсети, проверьте, есть ли у вас группа сетевой безопасности, установленная в подсети VM, которая может блокировать доступ. Кроме того, обратите внимание, что вам необходимо открыть исходящие соединения на порте 1433, а также в портах в диапазоне 11000-11999, так как они необходимы для подключения через перенаправление внутри границы Azure.
+- Если не удается подключиться к Управляемый экземпляр из виртуальной машины Azure в той же виртуальной сети, но другой подсеть, проверьте, установлен ли в подсети виртуальной машины набор групп безопасности сети, который может блокировать доступ. Кроме того, обратите внимание, что необходимо открыть исходящее подключение на порте SQL 1433, а также порты в диапазоне 11000-11999, так как они необходимы для подключения через перенаправление в границах Azure.
 - Убедитесь, что распространение BGP **включено** для таблицы маршрутов, которая связана с виртуальной сетью.
 - Если используется VPN-подключение типа "точка — сеть", в конфигурации на портале Azure проверьте, отображаются ли числа для **входящего и исходящего трафика**. Ненулевые значения указывают, что Azure направляет трафик в локальную сеть и из нее.
 
@@ -133,7 +133,7 @@ ms.locfileid: "81538092"
 
 - Если используете пиринговую связь между виртуальными сетями, убедитесь, что вы следовали инструкциям по настройке [разрешения транзитов шлюзов и использования удаленных шлюзов](#connect-from-on-premises-with-vnet-peering).
 
-- При использовании VNet для подключения приложения Azure App Service и управляемой инстанции VNet имеет общедоступный диапазон IP-адресов, убедитесь, что настройки размещенных приложений позволяют направлять исходящий трафик в общедоступные IP-сети. Следуйте инструкциям в [региональной интеграции VNet](../app-service/web-sites-integrate-with-vnet.md#regional-vnet-integration).
+- Если для подключения размещенного приложения службы приложений Azure используется пиринг виртуальной сети, а в Управляемый экземпляр виртуальной сети есть диапазон общедоступных IP-адресов, убедитесь, что параметры размещенного приложения позволяют маршрутизировать исходящий трафик в общедоступные IP-сети. Следуйте инструкциям в разделе [интеграция региональной виртуальной сети](../app-service/web-sites-integrate-with-vnet.md#regional-vnet-integration).
 
 ## <a name="required-versions-of-drivers-and-tools"></a>Необходимые версии драйверов и средств
 
@@ -147,10 +147,10 @@ ms.locfileid: "81538092"
 |Драйвер JDBC| 6.4.0 |
 |Драйвер Node.js| 2.1.1 |
 |Драйвер OLEDB| 18.0.2.0 |
-|SSMS| 18.0 или [выше](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
-|[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или выше |
+|SSMS| 18,0 или [более поздней версии](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
+|[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или более поздней версии |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об Управляемом экземпляре см. в [обзоре Управляемого экземпляра](sql-database-managed-instance.md).
 - См. инструкцию по [созданию Управляемого экземпляра](sql-database-managed-instance-get-started.md).

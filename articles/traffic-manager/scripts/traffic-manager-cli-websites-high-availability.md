@@ -1,5 +1,5 @@
 ---
-title: Трафик маршрута для HA приложений - Azure CLI - Менеджер трафика
+title: Маршрутизация трафика для обеспечения высокой доступности приложений — Azure CLI — диспетчер трафика
 description: Пример сценария Azure CLI для маршрутизации трафика для обеспечения высокого уровня доступности приложений.
 services: traffic-manager
 documentationcenter: traffic-manager
@@ -15,10 +15,10 @@ ms.workload: traffic-manager
 ms.date: 04/26/2018
 ms.author: rohink
 ms.openlocfilehash: e108fbe54ce67d4eb354319450259fc410462c53
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81460619"
 ---
 # <a name="route-traffic-for-high-availability-of-applications-using-azure-cli"></a>Маршрутизация трафика для обеспечения высокого уровня доступности приложений с помощью Azure CLI
@@ -55,7 +55,7 @@ az group delete --name myResourceGroup2 --yes
 | [az network traffic-manager profile create](https://docs.microsoft.com/cli/azure/network/traffic-manager/profile) | Создает профиль диспетчера трафика Azure. |
 | [az network traffic-manager endpoint create](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint) | Добавление конечной точки в профиль диспетчера трафика Azure. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

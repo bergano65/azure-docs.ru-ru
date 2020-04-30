@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
 ms.openlocfilehash: 7c93c1f525713a90abd71c30a21401b9d1cfcb9f
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81460908"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Синхронизация времени для виртуальных машин Linux в Azure
@@ -26,7 +26,7 @@ ms.locfileid: "81460908"
 Платформа Azure основана на инфраструктуре, работающей под управлением Windows Server 2016. В Windows Server 2016 реализованы улучшенные алгоритмы коррекции времени и синхронизации локальных часов с временем в формате UTC.  Функция "Точное время" в Windows Server 2016 значительно улучшила работу службы VMICTimeSync, которая регулирует точность времени в виртуальных машинах и на сервере. К числу улучшений относится более точное исходное время при запуске или восстановлении виртуальной машины, а также коррекция задержки при прерывании. 
 
 >[!NOTE]
->Краткий обзор службы времени в Windows можно получить в [этом видео](https://aka.ms/WS2016TimeVideo).
+>Краткий обзор службы времени Windows см. в этом [видео](https://aka.ms/WS2016TimeVideo).
 >
 > Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time). 
 
@@ -48,7 +48,7 @@ ms.locfileid: "81460908"
 
 
 
-## <a name="configuration-options"></a>Варианты настройки
+## <a name="configuration-options"></a>Параметры конфигурации
 
 В целом есть три способа настроить синхронизацию времени для виртуальных машин Linux, размещенных в Azure:
 
@@ -70,7 +70,7 @@ ms.locfileid: "81460908"
 
 ### <a name="host-only"></a>Только от узла 
 
-Так как NTP-серверы, такие как time.windows.com и ntp.ubuntu.com, являются общедоступными, синхронизация времени с ними требует передачи трафика через Интернет. Изменение задержек пакетов может негативно повлиять на качество синхронизации времени. Удаление NTP путем переключения на синхронизацию только для хоста иногда может улучшить результаты синхронизации времени.
+Так как NTP-серверы, такие как time.windows.com и ntp.ubuntu.com, являются общедоступными, синхронизация времени с ними требует передачи трафика через Интернет. Различные задержки пакетов могут негативно повлиять на качество синхронизации времени. Удаление NTP путем переключения на синхронизацию только между узлами иногда может улучшить результаты синхронизации времени.
 
 Переход на синхронизацию времени только с узлом имеет смысл, если возникают проблемы при использовании конфигурации синхронизации по умолчанию. Попробуйте использовать синхронизацию только с узлом и посмотрите, улучшится ли синхронизация времени в виртуальной машине. 
 
@@ -132,27 +132,27 @@ cat /sys/class/ptp/ptp0/clock_name
 
 ### <a name="chrony"></a>chrony
 
-На Ubuntu 19.10 и более поздних версиях, Red Hat Enterprise Linux и CentOS 7.x, [chrony](https://chrony.tuxfamily.org/) настроен айосдля для использования часы источника PTP. Вместо chrony, старые релизы Linux используют daemon Network Time Protocol (ntpd), который не поддерживает источники PTP. Для включения PTP в эти релизы chrony должна быть установлена вручную и настроена (в chrony.conf) с помощью следующего кода:
+В Ubuntu 19,10 и более поздних версиях Red Hat Enterprise Linux и CentOS 7. x, [чрони](https://chrony.tuxfamily.org/) настроены на использование часового источника PTP. Вместо чрони в старых выпусках Linux используется управляющая программа сетевого времени (НТПД), которая не поддерживает источники PTP. Чтобы включить PTP в этих выпусках, чрони необходимо установить и настроить вручную (в чрони. conf) с помощью следующего кода:
 
 ```bash
 refclock PHC /dev/ptp0 poll 3 dpoll -2 offset 0
 ```
 
-Для получения дополнительной информации о Ubuntu и NTP, [см.](https://help.ubuntu.com/lts/serverguide/NTP.html)
+Дополнительные сведения об Ubuntu и NTP см. в статье [Синхронизация времени](https://help.ubuntu.com/lts/serverguide/NTP.html).
 
-Для получения дополнительной информации о Red Hat и NTP, [см.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/s1-configure_ntp) 
+Дополнительные сведения о Red Hat и NTP см. в статье [Настройка NTP](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/s1-configure_ntp). 
 
-Для получения дополнительной информации о chrony, [см.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony)
+Дополнительные сведения о чрони см. [в разделе Использование чрони](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony).
 
-Если оба источника chrony и TimeSync включены одновременно, вы можете отметить один как **предпочтительный,** который устанавливает другой источник в качестве резервного копирования. Так как службы NTP корректируют часы через большие периоды времени, служба VMICTimeSync восстанавливает показания часов после приостановки виртуальных машин гораздо быстрее, чем средства на основе NTP, используемые отдельно.
+Если источники чрони и Тимесинк включены одновременно, можно пометить один из них как **предпочтительный**, который задает другой источник в качестве резервной копии. Так как службы NTP корректируют часы через большие периоды времени, служба VMICTimeSync восстанавливает показания часов после приостановки виртуальных машин гораздо быстрее, чем средства на основе NTP, используемые отдельно.
 
-По умолчанию chronyd ускоряет или замедляет системные часы, чтобы исправить любое время дрейфа. Если дрейф становится слишком большим, chrony не может исправить дрейф. Чтобы преодолеть `makestep` это, параметр в **/etc/chrony.conf** может быть изменен, чтобы заставить timesync, если дрейф превышает указанный порог.
+По умолчанию чронид ускоряет или снижает производительность системных часов для устранения любого смещения времени. Если смещение станет слишком большим, чрони не сможет исправить смещение. Чтобы преодолеть это, `makestep` параметр в **/ЕТК/чрони.конф** можно изменить, чтобы принудительно тимесинк, если смещение превышает заданное пороговое значение.
 
  ```bash
 makestep 1.0 -1
 ```
 
-Здесь, chrony заставит обновление времени, если дрейф больше, чем 1 секунда. Чтобы применить изменения, перезапустите услугу chronyd:
+Здесь чрони будет принудительно обновлять время, если смещение больше 1 секунды. Чтобы применить изменения, перезапустите службу чронид:
 
 ```bash
 systemctl restart chronyd
@@ -160,9 +160,9 @@ systemctl restart chronyd
 
 ### <a name="systemd"></a>systemd 
 
-На SUSE и Ubuntu релизы до 19.10, синхронизация времени настроена с помощью [системного](https://www.freedesktop.org/wiki/Software/systemd/). Для получения дополнительной информации о Ubuntu [см.](https://help.ubuntu.com/lts/serverguide/NTP.html) Для получения дополнительной информации о SUSE, см. Раздел 4.5.8 в [SUSE Linux Enterprise Server 12 SP3 Release Notes](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP3/#InfraPackArch.ArchIndependent.SystemsManagement).
+В версиях SUSE и Ubuntu до 19,10, синхронизация времени настраивается с использованием [системы](https://www.freedesktop.org/wiki/Software/systemd/). Дополнительные сведения о Ubuntu см. в статье [Синхронизация времени](https://help.ubuntu.com/lts/serverguide/NTP.html). Дополнительные сведения о SUSE см. в разделе 4.5.8 статьи [заметки о Выпуске SUSE Linux Enterprise Server 12 SP3](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP3/#InfraPackArch.ArchIndependent.SystemsManagement).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time).
 

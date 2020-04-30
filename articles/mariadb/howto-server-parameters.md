@@ -1,5 +1,5 @@
 ---
-title: Настройка параметров сервера - Портал Azure - База данных Azure для MariaDB
+title: Настройка параметров сервера — портал Azure — база данных Azure для MariaDB
 description: В этой статье описывается, как настроить параметры сервера MariaDB в базе данных Azure для MariaDB с помощью портала Azure.
 author: ajlam
 ms.author: andrela
@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 4/16/2020
 ms.openlocfilehash: f39e9450fb922e5b93d7b4b809df73cf5ab007c1
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81602403"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mariadb-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MariaDB с помощью портала Azure
@@ -24,7 +24,7 @@ ms.locfileid: "81602403"
 ![Страница параметров сервера на портале Azure](./media/howto-server-parameters/azure-portal-server-parameters.png)
 3. Найдите все параметры, которые необходимо настроить. Просмотрите столбец **Описание**, чтобы понять назначение и допустимые значения.
 ![Раскрывающийся список для перечисляемого типа](./media/howto-server-parameters/3-toggle_parameter.png)
-4. Нажмите **Сохранить,** чтобы сохранить изменения.
+4. Нажмите кнопку **сохранить** , чтобы сохранить изменения.
 ![Сохранение или отмена изменений](./media/howto-server-parameters/4-save_parameters.png)
 5. Если вы сохранили новые значения параметров, всегда можно восстановить значения по умолчанию, выбрав **Сбросить все к значениям по умолчанию**.
 ![Сбросить все к значениям по умолчанию](./media/howto-server-parameters/5-reset_parameters.png)
@@ -37,7 +37,7 @@ ms.locfileid: "81602403"
 
 Буферный пул InnoDB и максимальное число подключений не подлежат настройке и привязаны к [ценовой категории](concepts-pricing-tiers.md).
 
-|**Уровень цен**| **Виртуальные ядра**|**Буферный пул InnoDB**|
+|**Ценовая категория**| **Виртуальные ядра**|**Буферный пул InnoDB**|
 |---|---|---|
 |Basic| 1| 1024|
 |Basic| 2| 2560|
@@ -60,7 +60,7 @@ ms.locfileid: "81602403"
 |innodb_file_per_table для уровня "Базовый"|OFF|
 |innodb_flush_log_at_trx_commit|1|
 |sync_binlog|1|
-|innodb_log_file_size|256MB|
+|innodb_log_file_size|МБ|
 |innodb_log_files_in_group|2|
 
 Для остальных параметров сервера, которые не перечислены выше, устанавливаются значения MariaDB по умолчанию для [MariaDB](https://mariadb.com/kb/en/library/xtradbinnodb-server-system-variables/).
@@ -79,7 +79,7 @@ CALL mysql.az_load_timezone();
 ```
 
 > [!IMPORTANT]
-> Необходимо перезапустить сервер, чтобы обеспечить правильное заселение столиков часового пояса. Для перезагрузки сервера используйте [портал Azure](howto-restart-server-portal.md) или [CLI.](howto-restart-server-cli.md)
+> Необходимо перезапустить сервер, чтобы убедиться, что таблицы часовых поясов заполнены правильно. Чтобы перезапустить сервер, используйте [портал Azure](howto-restart-server-portal.md) или [CLI](howto-restart-server-cli.md).
 Чтобы просмотреть доступные значения часового пояса, выполните следующую команду.
 
 ```sql

@@ -1,6 +1,6 @@
 ---
-title: Загрузите список групп на портале Active Directory Azure (ru) Документы Майкрософт
-description: Загрузка групповых свойств оптом в центре админ-центра Azure в Active Directory Azure.
+title: Скачайте список групп на портале Azure Active Directory | Документация Майкрософт
+description: Пакетная служба скачивает свойства группы в центре администрирования Azure в Azure Active Directory.
 services: active-directory
 author: curtand
 ms.author: curtand
@@ -14,35 +14,35 @@ ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 59983678c1b14d6aa87a7b500605e3abeb6a9b85
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81533550"
 ---
-# <a name="bulk-download-a-list-of-groups-in-azure-active-directory"></a>Массовый скачивание списка групп в Active Directory Azure
+# <a name="bulk-download-a-list-of-groups-in-azure-active-directory"></a>Выполнить пакетную загрузку списка групп в Azure Active Directory
 
-Используя портал Azure Active Directory (Azure AD), можно загрузить список всех групп в организации в файл, разделенный на запятую (CSV).
+С помощью портала Azure Active Directory (Azure AD) можно выполнить пакетную загрузку списка всех групп в Организации в файл значений с разделителями-запятыми (CSV).
 
-## <a name="to-download-a-list-of-groups"></a>Загрузить список групп
+## <a name="to-download-a-list-of-groups"></a>Загрузка списка групп
 
-1. Вопием [на портал Azure](https://portal.azure.com) с учетной записью администратора в организации.
-1. В Azure AD выберите **группы** > **загрузки.**
-1. На странице **загрузки групп** выберите **Начало** получения файла CSV с указанием ваших групп.
+1. Войдите в [портал Azure](https://portal.azure.com) с помощью учетной записи администратора в Организации.
+1. В Azure AD выберите **группы** > **скачать группы**.
+1. На странице **загрузки групп** выберите **начать** , чтобы получить CSV-файл со списком ваших групп.
 
-   ![Команда групп загрузки находится на странице All Groups](./media/groups-bulk-download/bulk-download.png)
+   ![Команда скачать группы находится на странице все группы.](./media/groups-bulk-download/bulk-download.png)
 
-## <a name="check-download-status"></a>Проверка состояния загрузки
+## <a name="check-download-status"></a>Проверить состояние скачивания
 
-Вы можете увидеть состояние всех ожидающих натковых запросов на странице **результатов операции Bulk.**
+Состояние всех ожидающих выполнения незавершенных запросов можно просмотреть на странице **результатов групповой операции** .
 
 [![](media/groups-bulk-download/bulk-center.png "Check status in the Bulk Operations Results page")](media/groups-bulk-download/bulk-center.png#lightbox)
 
-## <a name="bulk-download-service-limits"></a>Ограничения обслуживания массовых скачиваний
+## <a name="bulk-download-service-limits"></a>Ограничения службы пакетного скачивания
 
-Каждое массовое действие для загрузки списка групп может длиться до одного часа. Это позволяет загрузить список не менее 300 000 групп.
+Каждое групповое действие по скачиванию списка групп может выполняться в течение одного часа. Это позволяет скачать список по крайней мере 300 000 групп.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Массовое удаление членов группы](groups-bulk-remove-members.md)
+- [Групповое удаление членов группы](groups-bulk-remove-members.md)
 - [Скачать членов группы](groups-bulk-download-members.md)
