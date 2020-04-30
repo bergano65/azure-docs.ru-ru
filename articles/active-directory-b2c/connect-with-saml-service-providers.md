@@ -12,12 +12,12 @@ ms.date: 03/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: a72b5b50daaae33336de9caab5202c2bf42f5c15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 38c98a65ac0b0f95a9a6e111a79b5dede04912c5
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "80051623"
+ms.locfileid: "82229754"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Регистрация приложения SAML в Azure AD B2C
 
@@ -43,7 +43,7 @@ Azure AD B2C достигает взаимодействия SAML одним и�
 | Мое приложение предполагает утверждение SAML для завершения проверки подлинности. | **Azure AD B2C выступает в качестве поставщика удостоверений (IdP)**<br />Azure AD B2C выступает в качестве IdPа SAML для приложений. | Эта статья |
 | Моим пользователям требуется единый вход с помощью соответствующего SAML поставщика удостоверений, такого как ADFS, Salesforce или Shibboleth.  | **Azure AD B2C выступает в качестве поставщика услуг (SP)**<br />Azure AD B2C выступает в качестве поставщика услуг при подключении к поставщику удостоверений SAML. Это прокси-сервер федерации между приложением и поставщиком удостоверений SAML.  | <ul><li>[Настройка входа с помощью ADFS в качестве IdP SAML с помощью настраиваемых политик](identity-provider-adfs2016-custom.md)</li><li>[Настройка входа с помощью поставщика SAML SalesForce с помощью настраиваемых политик](identity-provider-salesforce-custom.md)</li></ul> |
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Выполните действия, описанные в разделе [Приступая к работе с пользовательскими политиками в Azure AD B2C](custom-policy-get-started.md). Вам потребуется настраиваемая политика *SocialAndLocalAccounts* из начального пакета настраиваемой политики, описанного в этой статье.
 * Основные сведения о протоколе язык разметки зявлений системы безопасности (SAML) (SAML).
@@ -129,7 +129,7 @@ Azure AD B2C достигает взаимодействия SAML одним и�
     <!-- SAML Token Issuer technical profile -->
     <TechnicalProfile Id="Saml2AssertionIssuer">
       <DisplayName>Token Issuer</DisplayName>
-      <Protocol Name="None"/>
+      <Protocol Name="SAML2"/>
       <OutputTokenFormat>SAML2</OutputTokenFormat>
       <Metadata>
         <!-- The issuer contains the policy name; it should be the same name as configured in the relying party application. B2C_1A_signup_signin_SAML is used below. -->
@@ -142,11 +142,11 @@ Azure AD B2C достигает взаимодействия SAML одним и�
       </CryptographicKeys>
       <InputClaims/>
       <OutputClaims/>
-      <UseTechnicalProfileForSessionManagement ReferenceId="SM-Saml-sp"/>
+      <UseTechnicalProfileForSessionManagement ReferenceId="SM-Saml-issuer"/>
     </TechnicalProfile>
 
     <!-- Session management technical profile for SAML based tokens -->
-    <TechnicalProfile Id="SM-Saml-sp">
+    <TechnicalProfile Id="SM-Saml-issuer">
       <DisplayName>Session Management Provider</DisplayName>
       <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
     </TechnicalProfile>
@@ -373,7 +373,7 @@ Azure AD B2C политика IDP метаданные — сведения, и�
 * Укажите ключ шифрования маркера в объекте приложения или субъекта-службы.
 * Имена входа, инициированные поставщиком удостоверений, в настоящее время не поддерживаются в предварительной версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [протоколе SAML можно найти на веб-сайте Oasis](https://www.oasis-open.org/).
 - Получите тестовое веб-приложение SAML из [репозитория сообщества GitHub Azure AD B2C](https://github.com/azure-ad-b2c/saml-sp-tester).

@@ -1,17 +1,17 @@
 ---
 title: Расширенная защита от угроз — портал Azure — база данных Azure для MySQL
 description: Узнайте, как настроить расширенную защиту от угроз для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности для базы данных.
-author: bolzmj
-ms.author: mbolz
+author: ajlam
+ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 8eec40006a280b69387e14a5841360da65616ca5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4936f765052d6993e5a372bde6336e00b19a24f6
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062342"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509267"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -61,7 +61,7 @@ ms.locfileid: "80062342"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для MySQL](https://azure.microsoft.com/pricing/details/mysql/).  

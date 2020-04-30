@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 04/23/2020
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a816f2235fa5356f2300255ec9d2fb2b315acf7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 0fa43eae906c918cad940b8f5efafeea07020098
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "82190322"
+ms.locfileid: "82201641"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по настройке Workday для автоматической подготовки пользователей
 
@@ -87,13 +87,13 @@ ms.locfileid: "82190322"
 
 В этом разделе описываются следующие аспекты планирования:
 
-* [Предварительные условия](#prerequisites)
+* [Предварительные требования](#prerequisites)
 * [Выбор развертываемых приложений соединителей подготовки](#selecting-provisioning-connector-apps-to-deploy).
 * [Планирование развертывания агента подготовки Azure AD Connect](#planning-deployment-of-azure-ad-connect-provisioning-agent).
 * [Интеграция с несколькими доменами Active Directory](#integrating-with-multiple-active-directory-domains)
 * [Планирование трансформации и сопоставления атрибутов пользователей Workday и Active Directory](#planning-workday-to-active-directory-user-attribute-mapping-and-transformations)
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -369,7 +369,7 @@ ms.locfileid: "82190322"
 
 **Настройка подготовки Workday в Active Directory.**
 
-1. Перейдите к <https://portal.azure.com>.
+1. Перейдите в расположение <https://portal.azure.com>.
 
 2. На портале Azure найдите и выберите **Azure Active Directory**.
 
@@ -458,11 +458,11 @@ ms.locfileid: "82190322"
 
    * **Пароль Workday —** Введите пароль учетной записи системы интеграции Workday
 
-   * **URL-адрес API для Workday Web Services —** Введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Это значение должно выглядеть следующим образом https://wd3-impl-services1.workday.com/ccx/service/contoso4:, где *contoso4* заменяется правильным именем клиента, а *wd3-Impl* заменяется правильной строкой среды.
+   * **URL-адрес API для Workday Web Services —** Введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Это значение должно выглядеть следующим образом `https://wd3-impl-services1.workday.com/ccx/service/contoso4`:, где *contoso4* заменяется правильным именем клиента, а *wd3-Impl* заменяется правильной строкой среды.
 
      > [!NOTE]
      > По умолчанию приложение использует веб-службы Workday (WWS) v 21.1, если в URL-адресе не указаны сведения о версии. Чтобы использовать определенную версию API WWS, используйте формат URL-адреса:https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# <br>
-     > Например, https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0. <br>
+     > Пример: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0` <br>
      
      > [!NOTE]
      > Если вы используете API WWS v 30,0 и более поздней версии, перед включением задания подготовки обновите **выражения API XPath** в разделе **сопоставление атрибутов — > дополнительные параметры-> изменить список атрибутов для Workday** , ссылающегося на раздел [Управление конфигурацией](#managing-your-configuration) и ссылкой на [атрибут workday](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
@@ -601,7 +601,7 @@ ms.locfileid: "82190322"
 
 **Настройка подготовки только облачных пользователей Workday в Azure Active Directory**
 
-1. Перейдите к <https://portal.azure.com>.
+1. Перейдите в расположение <https://portal.azure.com>.
 
 2. На портале Azure найдите и выберите **Azure Active Directory**.
 
@@ -621,11 +621,11 @@ ms.locfileid: "82190322"
 
    * **Пароль Workday —** Введите пароль учетной записи системы интеграции Workday
 
-   * **URL-адрес API для Workday Web Services —** Введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Значение должно иметь следующий вид: https://wd3-impl-services1.workday.com/ccx/service/contoso4, где *contoso4* заменяется правильным именем клиента, а *wd3-impl* — правильной строкой среды. Если этот URL-адрес неизвестен, свяжитесь с вашим партнером по интеграции Workday или представителем службы поддержки, чтобы определить правильный URL-адрес для использования.
+   * **URL-адрес API для Workday Web Services —** Введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Значение должно иметь следующий вид: `https://wd3-impl-services1.workday.com/ccx/service/contoso4`, где *contoso4* заменяется правильным именем клиента, а *wd3-impl* — правильной строкой среды. Если этот URL-адрес неизвестен, свяжитесь с вашим партнером по интеграции Workday или представителем службы поддержки, чтобы определить правильный URL-адрес для использования.
 
      > [!NOTE]
      > По умолчанию приложение использует Workday Web Services v 21.1, если в URL-адресе не указаны сведения о версии. Чтобы использовать определенную версию API веб-служб Workday, используйте формат URL-адреса:https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# <br>
-     > Например, https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0.
+     > Пример: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v31.0`
 
 
    * **Уведомление по электронной почте —** Введите свой адрес электронной почты и установите флажок "отправлять сообщение, если происходит сбой".
@@ -703,7 +703,7 @@ ms.locfileid: "82190322"
 
 **Настройка соединителя обратной записи Workday:**
 
-1. Перейдите к <https://portal.azure.com>.
+1. Перейдите в расположение <https://portal.azure.com>.
 
 2. На портале Azure найдите и выберите **Azure Active Directory**.
 
@@ -723,7 +723,7 @@ ms.locfileid: "82190322"
 
    * **Пароль администратора —** Введите пароль учетной записи системы интеграции Workday
 
-   * **URL-адрес клиента —** Введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Значение должно иметь следующий вид: https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources, где *contoso4* заменяется правильным именем клиента, а *wd3-impl* — правильной строкой среды (если необходимо).
+   * **URL-адрес клиента —** Введите URL-адрес конечной точки веб-служб Workday для вашего клиента. Значение должно иметь следующий вид: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources`, где *contoso4* заменяется правильным именем клиента, а *wd3-impl* — правильной строкой среды (если необходимо).
 
    * **Уведомление по электронной почте —** Введите свой адрес электронной почты и установите флажок "отправлять сообщение, если происходит сбой".
 
@@ -752,7 +752,7 @@ ms.locfileid: "82190322"
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. Выберите команду **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 3. Будет запущена начальная синхронизация, которая может длиться переменное число часов в зависимости от количества пользователей в клиенте Workday. 
 
@@ -1276,7 +1276,7 @@ SelectUniqueValue(
 
     ![Workday Studio](./media/workday-inbound-tutorial/wdstudio2.png)
 
-9. Щелкните **ОК**.
+9. Нажмите кнопку **OK**.
 
 10. В области **запроса** вставьте приведенный ниже XML-код. Присвойте **EMPLOYEE_ID** идентификатору сотрудника реального пользователя в клиенте Workday. Задайте **версию WD: Version** для версии WWS, которую вы планируете использовать. Выберите пользователя, у которого заполнен атрибут, который вы хотите извлечь.
 
@@ -1347,7 +1347,7 @@ SelectUniqueValue(
 
 8. В поле **Тип** выберите тип, соответствующий атрибуту (чаще всего это **строка**).
 
-9. В поле **Выражение API** введите выражение XPath, скопированное из Workday Studio. Например, `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`.
+9. В поле **Выражение API** введите выражение XPath, скопированное из Workday Studio. Пример: `wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Birth_Date/text()`
 
 10. Выберите **Добавить атрибут**.
 
@@ -1379,7 +1379,7 @@ SelectUniqueValue(
 
 Что касается хранения данных, служба подготовки Azure AD не создает отчеты, не выполняет аналитику и не предоставляет аналитику более чем за 30 дней. Таким образом, в службе подготовки Azure AD не хранятся и не обрабатываются данные за период более 30 дней. Такой подход является совместимым с нормами GDPR, требованиями соответствия нормативам корпорации Майкрософт о конфиденциальности и политике хранения данных Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).

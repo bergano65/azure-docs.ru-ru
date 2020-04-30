@@ -1,6 +1,6 @@
 ---
-title: 'Подключение Azure AD: Миграция групп из одного леса в другой Документы Майкрософт'
-description: В этой статье описаны шаги, необходимые для успешного переноса групп из одного леса в другой для Azure AD Connect.
+title: 'Azure AD Connect: Миграция групп из одного леса в другой'
+description: В этой статье описываются шаги, необходимые для успешной миграции групп из одного леса в другой для Azure AD Connect.
 services: active-directory
 author: billmath
 manager: daveba
@@ -11,29 +11,31 @@ ms.date: 04/02/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 602c60de392afbff18bc141605a936636e48dbfe
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: da2328674fd601f2e04684e8a9af1ae242ff6106
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81729701"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82229805"
 ---
-# <a name="migrate-groups-from-one-forest-to-another-for-azure-ad-connect"></a>Мигрируйте группы из одного леса в другой для подключения Azure AD
+# <a name="migrate-groups-from-one-forest-to-another-for-azure-ad-connect"></a>Миграция групп из одного леса в другой для Azure AD Connect
 
-В этой статье описаны шаги, необходимые для успешного переноса групп из одного леса в другой, чтобы мигрированные объекты группы соответствовали существующим объектам в облаке.
+В этой статье описывается, как выполнить миграцию групп из одного леса в другой, чтобы перенесенные объекты группы соответствовали существующим объектам в облаке.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Версия Azure AD Connect 1.5.18.0 или выше
-- Атрибут исходного якоря`mS-DS-ConsistencyGuid`
+- Azure AD Connect версии 1.5.18.0 или более поздней
+- Для атрибута привязки к источнику задано значение`mS-DS-ConsistencyGuid`
 
-Начиная с версии 1.5.18.0 Azure AD Connect `mS-DS-ConsistencyGuid` начал поддерживать использование для групп. Если `mS-DS-ConsistencyGuid` выбран в качестве исходного якорного атрибута и значение заселены в `mS-DS-ConsistencyGuid` AD, Azure AD Connect использует значение как immutableId. В противном случае, `objectGUID`он падает обратно к использованию . Однако обратите внимание, что **DOES NOT** Azure AD Connect `mS-DS-ConsistencyGuid` НЕ записывает значение в атрибут в AD.
+## <a name="migrate-groups"></a>Миграция групп
 
-Во время сценария перемещения кросс-фосного движения, когда групповой объект перемещается из одного леса (скажем F1) в другой лес (скажем F2), нам нужно будет скопировать либо `mS-DS-ConsistencyGuid` значение (Если PRESENT) или `objectGUID` значение от объекта в лесу F1 к `mS-DS-ConsistencyGuid` атрибуту объекта в F2. 
+Начиная с версии 1.5.18.0, Azure AD Connect поддерживает использование `mS-DS-ConsistencyGuid` атрибута для групп. Если вы выбираете `mS-DS-ConsistencyGuid` в качестве атрибута привязки источника и значение заполняется в Active Directory, Azure AD Connect использует значение в `mS-DS-ConsistencyGuid` качестве. `immutableId` В противном случае он возвращается к `objectGUID`использованию. Но обратите внимание, что Azure AD Connect не записывает значение `mS-DS-ConsistencyGuid` обратно в атрибут в Active Directory.
 
-Пожалуйста, используйте следующие сценарии в качестве руководства, чтобы увидеть, как можно перенести одну группу из леса F1 в лес F2. Пожалуйста, не стесняйтесь использовать это в качестве ориентира для миграции для нескольких групп.
+При перемещении между лесами при перемещении объекта группы из одного леса (скажем, F1) в другой лес (скажем, F2) необходимо скопировать `mS-DS-ConsistencyGuid` значение (если оно имеется) или `objectGUID` значение из объекта в лесу F1 в `mS-DS-ConsistencyGuid` атрибут объекта в F2.
 
-Во-первых, `objectGUID` мы `mS-DS-ConsistencyGuid` получаем и групповой объект в лесу F1. Эти атрибуты экспортируются в файл CSV.
+Используйте приведенные ниже сценарии в качестве руководства, чтобы узнать, как перенести одну группу из одного леса в другой. Эти сценарии также можно использовать в качестве руководств по переносу нескольких групп. Скрипты используют имя леса F1 для исходного леса и F2 для целевого леса.
+
+Сначала мы получаем `objectGUID` и `mS-DS-ConsistencyGuid` объект группы в лесу F1. Эти атрибуты экспортируются в CSV-файл.
 ```
 <#
 DESCRIPTION
@@ -41,7 +43,7 @@ DESCRIPTION
 This script will take DN of a group as input.
 It then copies the objectGUID and mS-DS-ConsistencyGuid values along with other attributes of the given group to a CSV file.
 
-This CSV file can then be used as input to Export-Group script
+This CSV file can then be used as input to the Export-Group script.
 #>
 Param(
        [ValidateNotNullOrEmpty()]
@@ -81,15 +83,15 @@ $results | Export-Csv "$outputCsv" -NoTypeInformation
 
 ```
 
-Далее мы используем генерируемый файл `mS-DS-ConsistencyGuid` CSV для штампа атрибута на целевом объекте в лесу F2.
+Далее мы используем созданный выходной CSV-файл для отметки `mS-DS-ConsistencyGuid` атрибута в целевом объекте в лесу F2:
 
 
 ```
 <#
 DESCRIPTION
 ============
-This script will take DN of a group as input and the CSV file that was generated by Import-Group script
-It copies either the objectGUID or mS-DS-ConsistencyGuid value from CSV file to the given object.
+This script will take DN of a group as input and the CSV file that was generated by the Import-Group script.
+It copies either the objectGUID or the mS-DS-ConsistencyGuid value from the CSV file to the given object.
 
 #>
 Param(
@@ -123,4 +125,4 @@ Set-ADGroup -Identity $dn -Replace @{'mS-DS-ConsistencyGuid'=$targetGuid} -Error
 ```
 
 ## <a name="next-steps"></a>Следующие шаги
-Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
+Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md).

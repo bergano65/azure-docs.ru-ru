@@ -8,12 +8,12 @@ ms.author: magoedte
 ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c8d22e63be880c0cef0c4072e99ab85bf3250a1c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: d036733c023417af3ef038bb9abc278ec91e665c
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82114280"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82508961"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Администрирование модулей в службе автоматизации Azure
 
@@ -21,8 +21,9 @@ ms.locfileid: "82114280"
 
 * [Azure PowerShell AZ. Automation](/powershell/azure/new-azureps-module-az?view=azps-1.1.0)
 * [Azure PowerShell AzureRM. Automation](https://docs.microsoft.com/powershell/module/azurerm.automation/?view=azurermps-6.13.0)
-* Внутренний `Orchestrator.AssetManagement.Cmdlets` модуль для агента log Analytics для Windows
 * Другие модули PowerShell
+* Внутренний `Orchestrator.AssetManagement.Cmdlets` модуль
+* Модули Python 2
 * Создаваемые пользовательские модули 
 
 При создании учетной записи службы автоматизации Azure по умолчанию импортирует некоторые модули. См. раздел [модули по умолчанию](#default-modules).
@@ -96,9 +97,13 @@ ms.locfileid: "82114280"
 
 Мы рекомендуем использовать командлеты az или AzureRM для управления ресурсами службы автоматизации Azure вне контекста модуля Runbook. 
 
-## <a name="module-supporting-get-automationpscredential"></a>Модуль, поддерживающий Get-AutomationPSCredential
+## <a name="orchestratorassetmanagementcmdlets-module"></a>Модуль Orchestrator. Ассетманажемент. командлеты
 
-`Get-AutomationPSCredential` Командлет является частью модуля `Orchestrator.AssetManagement.Cmdlets`. Этот командлет возвращает `PSCredential` объект, который ожидается большинством командлетов PowerShell, работающих с учетными данными. Дополнительные сведения об использовании учетных данных в службе автоматизации Azure см. в статье [ресурсы учетных данных в службе автоматизации Azure](credentials.md).
+Служба автоматизации Azure поддерживает внутренний `Orchestrator.AssetManagement.Cmdlets` модуль для агента log Analytics для Windows, установленного по умолчанию. `Get-AutomationPSCredential` Командлет в этом модуле обычно используется в модулях Runbook для получения `PSCredential` объекта, который ожидается большинством командлетов PowerShell, работающих с учетными данными. Дополнительные сведения об использовании учетных данных в службе автоматизации Azure см. в статье [ресурсы учетных данных в службе автоматизации Azure](credentials.md).
+
+## <a name="python-modules"></a>Модули Python
+
+Модули Runbook Python 2 можно создавать в службе автоматизации Azure. Сведения о модуле Python см. [в статье Управление пакетами Python 2 в службе автоматизации Azure](../python-packages.md).
 
 ## <a name="migrating-to-az-modules"></a>Переход к модулям Az
 
@@ -117,7 +122,7 @@ ms.locfileid: "82114280"
 * Когда модуль Runbook вызывает командлет из модуля
 * Когда Runbook импортирует модуль явным образом с помощью командлета [Import-Module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7)
 * Когда модуль Runbook импортирует другой зависимый модуль
-    
+
 #### <a name="testing-for-your-runbooks-and-dsc-configurations-prior-to-module-migration"></a>Тестирование модулей Runbook и конфигураций DSC до миграции модулей
 
 Прежде чем переходить на модули AZ, тщательно протестируйте все модули Runbook и конфигурации DSC в отдельной учетной записи службы автоматизации. 
@@ -396,7 +401,7 @@ Remove-AzAutomationModule -Name <moduleName> -AutomationAccountName <automationA
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об использовании модулей Azure PowerShell см. в статье [Приступая к работе с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azps-3.7.0).
 * Дополнительные сведения о создании модулей PowerShell см. в разделе [написание модуля Windows PowerShell](https://docs.microsoft.com/powershell/scripting/developer/module/writing-a-windows-powershell-module?view=powershell-7).
