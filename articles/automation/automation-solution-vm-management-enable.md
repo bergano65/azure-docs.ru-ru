@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
 ms.openlocfilehash: d47daa29c65f847fdeb33b9e24a892ac1f31b52a
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82096968"
 ---
 # <a name="enable-azure-automation-startstop-vms-solution"></a>Включение решения "Запуск и завершение работы службы автоматизации Azure"
@@ -92,6 +92,6 @@ ms.locfileid: "82096968"
 > [!NOTE]
 > Если у вас есть подписка поставщика облачных решений Azure (Azure CSP), после завершения развертывания в учетной записи службы автоматизации перейдите к **переменным** в разделе **Общие ресурсы** и задайте для переменной [External_EnableClassicVMs](automation-solution-vm-management.md#variables) **значение false**. Это предотвратит поиск ресурсов в классической виртуальной машине со стороны решения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда решение включено, его можно [настроить](automation-solution-vm-management-config.md) для поддержки требований управления виртуальной машиной.

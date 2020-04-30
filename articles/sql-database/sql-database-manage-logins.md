@@ -13,10 +13,10 @@ ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 03/23/2020
 ms.openlocfilehash: 0f1611e6d3524cc78fc20fed9d1aac6f3fd453fa
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82106446"
 ---
 # <a name="authorizing-database-access-to-authenticated-users-to-sql-database-and-azure-synapse-analytics-using-logins-and-user-accounts"></a>Авторизация доступа к базе данных для пользователей, прошедших аутентификацию, в базе данных SQL и Azure синапсе Analytics с помощью имен входа и учетных записей пользователей
@@ -40,7 +40,7 @@ ms.locfileid: "82106446"
 - [Проверка подлинности SQL](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication).
 
   При использовании этого метода проверки подлинности пользователь отправляет имя учетной записи пользователя и связанный пароль для установления соединения. Этот пароль хранится в базе данных master для учетных записей пользователей, связанных с именем входа, или хранится в базе данных, содержащей учетные записи пользователей, *не* связанные с именем входа.
-- [Проверка подлинности Azure Active Directory](sql-database-aad-authentication.md)
+- [Аутентификация Azure Active Directory](sql-database-aad-authentication.md)
 
   При использовании этого метода проверки подлинности пользователь отправляет имя учетной записи пользователя и запрашивает, что служба использует учетные данные, хранящиеся в Azure Active Directory.
 
@@ -167,6 +167,6 @@ ms.locfileid: "82106446"
 - [Маскирование данных](sql-database-dynamic-data-masking-get-started.md) позволяет снизить уязвимость конфиденциальных данных.
 - [хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Обзор всех функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md).

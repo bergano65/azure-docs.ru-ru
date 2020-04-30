@@ -1,40 +1,40 @@
 ---
-title: Клиентские библиотеки Azure Analysis Services Документы Майкрософт
+title: Клиентские библиотеки Azure Analysis Services | Документация Майкрософт
 description: Описываются клиентские библиотеки, необходимые для подключения клиентских приложений и средств к службам Azure Analysis Services
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/19/2020
+ms.date: 04/28/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: be6ee594896384bce86d892c9a7811e09a0f4efd
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 5ee3de593e7795f155e8ca38ffac02cfaa80d171
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81676577"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82232961"
 ---
-# <a name="client-libraries-for-connecting-to-analysis-services"></a>Библиотеки клиентов для подключения к аналитическим службам
+# <a name="client-libraries-for-connecting-to-analysis-services"></a>Клиентские библиотеки для подключения к Analysis Services
 
-Клиентские библиотеки требуются клиентским приложениям и средствам для подключения к серверам служб Analysis Services. Клиентские приложения Microsoft, такие как Power BI Desktop, Excel, S'L Server Management Studio (SSMS), а также расширение аналитических служб для Visual Studio установить все три клиентские библиотеки и обновить их вместе с регулярными обновлениями приложений. В некоторых случаях может потребоваться установка новых версий клиентских библиотек. Пользовательские клиентские приложения также требуют установки клиентских библиотек.
+Клиентские библиотеки требуются клиентским приложениям и средствам для подключения к серверам служб Analysis Services. Клиентские приложения Майкрософт, такие как Power BI Desktop, Excel, SQL Server Management Studio (SSMS) и Analysis Services Projects для Visual Studio, устанавливают все три клиентские библиотеки и обновляют их вместе с обычными обновлениями приложений. В некоторых случаях может потребоваться установить более новые версии клиентских библиотек. Для пользовательских клиентских приложений также должны быть установлены клиентские библиотеки.
 
 ## <a name="download-the-latest-client-libraries-windows-installer"></a>Скачивание последних версий клиентских библиотек (установщик Windows)  
 
 |Скачать  |Версия продукта  | 
 |---------|---------|
-|[MSOLAP (amd64)](https://go.microsoft.com/fwlink/?linkid=829576)    |    15.1.36.38    |
-|[MSOLAP (x86)](https://go.microsoft.com/fwlink/?linkid=829575)     |     15.1.36.38       |
-|[Объекты AMO](https://go.microsoft.com/fwlink/?linkid=829578)     |   18.6.0.1    |
-|[ADOMD](https://go.microsoft.com/fwlink/?linkid=829577)     |    18.6.0.1     |
+|[MSOLAP (amd64)](https://go.microsoft.com/fwlink/?linkid=829576)    |    15.1.37.40    |
+|[MSOLAP (x86)](https://go.microsoft.com/fwlink/?linkid=829575)     |     15.1.37.40       |
+|[Объекты AMO](https://go.microsoft.com/fwlink/?linkid=829578)     |   18.7.0.1    |
+|[ADOMD](https://go.microsoft.com/fwlink/?linkid=829577)     |    18.7.0.1     |
 
 ## <a name="amo-and-adomd-nuget-packages"></a>AMO и ADOMD (пакеты NuGet)
 
-Объекты управления аналитическими службами (AMO) и клиентские библиотеки ADOMD доступны в виде установить пакеты из [NuGet.org.](https://www.nuget.org/) Рекомендуется переходить на ссылки NuGet вместо использования Установки Windows. 
+Клиентские библиотеки объектов Analysis Services Management (AMO) и ADOMD доступны в виде устанавливаемых пакетов из [NuGet.org](https://www.nuget.org/). Рекомендуется перейти на ссылку NuGet вместо использования установщик Windows. 
 
 |Пакет  | Версия продукта  | 
 |---------|---------|
-|[Объекты AMO](https://www.nuget.org/packages/Microsoft.AnalysisServices.retail.amd64/)    |    18.6.0.1     |
-|[ADOMD](https://www.nuget.org/packages/Microsoft.AnalysisServices.AdomdClient.retail.amd64/)     |   18.6.0.1      |
+|[Объекты AMO](https://www.nuget.org/packages/Microsoft.AnalysisServices.retail.amd64/)    |    18.7.0.1     |
+|[ADOMD](https://www.nuget.org/packages/Microsoft.AnalysisServices.AdomdClient.retail.amd64/)     |   18.7.0.1      |
 
 Сборки пакетов NuGet AssemblyVersion следуют семантической организации номера версии — "Главная.Второстепенная.Исправление". Ссылки на пакеты NuGet загружают ожидаемую версию, даже при наличии другой версии в глобальном кэше сборок (в результате установки MSI). Номер исправления увеличивается с каждым выпуском. Версии ADOMD и AMO синхронизируются.
 
@@ -44,7 +44,7 @@ ms.locfileid: "81676577"
 
 Клиентские приложения Майкрософт, в частности Power BI Desktop и Excel, устанавливают все три клиентские библиотеки и обновляют их незамедлительно при выходе новых версий. Но в зависимости от версии или частоты обновлений могут устанавливаться устаревшие, а не новые версии клиентских библиотек, необходимые для служб Azure Analysis Services. Это же касается и пользовательских приложений или других интерфейсов, таких как AsCmd, TOM, ADOMD.NET. Для этих приложений клиентские библиотеки требуется устанавливать вручную или программным способом. Клиентские библиотеки, устанавливаемые вручную, включены в пакеты дополнительных компонентов SQL Server в качестве распространяемых пакетов. Однако они зависят от версии SQL Server, поэтому версия в пакетах может быть не последней.  
 
-Клиентские библиотеки для клиентских подключений отличаются от поставщиков данных, требуемых для подключения с сервера служб Azure Analysis Services к источнику данных. Чтобы узнать больше о [Data source connections](analysis-services-datasource.md)соединениях источника данных, см.
+Клиентские библиотеки для клиентских подключений отличаются от поставщиков данных, требуемых для подключения с сервера служб Azure Analysis Services к источнику данных. Дополнительные сведения о соединениях с источниками данных см. в разделе [подключения к источникам данных](analysis-services-datasource.md).
 
 ## <a name="client-library-types"></a>Типы клиентских библиотек
 
@@ -58,7 +58,7 @@ ms.locfileid: "81676577"
 
 ### <a name="amo"></a>AMO  
 
- AMO — это управляемая клиентская библиотека, которая используется для администрирования сервера и определения данных. Она устанавливается и используется средствами и клиентскими приложениями. Например, SQL Server Management Studio (SSMS) использует AMO для подключения к службам Analysis Services. Подключение с помощью объектов AMO предельно просто. Достаточно лишь указать `"data source=\<servername>"`. Когда подключение будет установлено, этот API можно использовать для работы с коллекциями баз данных и основными объектами. Visual Studio и SSMS используют AMO для подключения к экземпляру аналитических служб.  
+ AMO — это управляемая клиентская библиотека, которая используется для администрирования сервера и определения данных. Она устанавливается и используется средствами и клиентскими приложениями. Например, SQL Server Management Studio (SSMS) использует AMO для подключения к службам Analysis Services. Подключение с помощью объектов AMO предельно просто. Достаточно лишь указать `"data source=\<servername>"`. Когда подключение будет установлено, этот API можно использовать для работы с коллекциями баз данных и основными объектами. Как Visual Studio, так и SSMS используют объекты AMO для подключения к экземпляру Analysis Services.  
 
   
 ### <a name="adomd"></a>ADOMD
@@ -72,24 +72,24 @@ ms.locfileid: "81676577"
   
 ### <a name="oleddb-msolap"></a>OLEDDB (MSOLAP)  
   
-1.  Перейдите к `C:\Program Files\Microsoft Analysis Services\AS OLEDB\`. Если здесь несколько папок, выберите папку с самым большим номером.
+1.  Перейдите в расположение `C:\Program Files\Microsoft Analysis Services\AS OLEDB\`. Если здесь несколько папок, выберите папку с самым большим номером.
   
-2.  Право нажмите **msolap.dll** > **Свойства** > **Подробная информация**. Если файл называется msolap140.dll, это более ранняя версия. Его необходимо обновить.
+2.  Щелкните правой кнопкой мыши элемент**Свойства** >  **MSOLAP. dll** > **сведения**. Если файл называется msolap140.dll, это более ранняя версия. Его необходимо обновить.
     
     ![Сведения о клиентской библиотеке](media/analysis-services-data-providers/aas-msolap-details.png)
     
   
 ### <a name="amo"></a>AMO
 
-1. Перейдите к `C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.AnalysisServices\`. Если здесь несколько папок, выберите папку с самым большим номером.
-2. Право нажмите **Microsoft.AnalysisServices** > **Свойства** > **Подробная информация**.  
+1. Перейдите в расположение `C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.AnalysisServices\`. Если здесь несколько папок, выберите папку с самым большим номером.
+2. Щелкните правой кнопкой мыши**сведения о****свойствах** >  **Microsoft. AnalysisServices** > .  
 
 ### <a name="adomd"></a>ADOMD
 
-1. Перейдите к `C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.AnalysisServices.AdomdClient\`. Если здесь несколько папок, выберите папку с самым большим номером.
-2. Право нажмите **Microsoft.AnalysisServices.AdomdClient** > **Свойства** > **Подробная информация**.  
+1. Перейдите в расположение `C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.AnalysisServices.AdomdClient\`. Если здесь несколько папок, выберите папку с самым большим номером.
+2. Щелкните правой кнопкой мыши **Microsoft. AnalysisServices. AdomdClient** > **Properties** > **Details**.  
 
 
 ## <a name="next-steps"></a>Следующие шаги
-[Связь с Excel](analysis-services-connect-excel.md)    
+[Подключение к Excel](analysis-services-connect-excel.md)    
 [Подключение с помощью Power BI](analysis-services-connect-pbi.md)

@@ -8,10 +8,10 @@ ms.date: 06/24/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: a5fc469c3db7da45f818230909026cedf6c71a4c
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82101745"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Параметры брандмауэра и прокси-сервера службы "Синхронизация файлов Azure"
@@ -39,7 +39,7 @@ ms.locfileid: "82101745"
 
 Служба "Синхронизация файлов Azure" будет использовать все доступные средства связи с Azure, автоматически адаптируясь к различным характеристикам сетей (пропускной способности, задержке и т. д.). Кроме того, она предоставляет административный контроль для точной настройки. Некоторые возможности сейчас недоступны. Если вы хотите настроить определенное поведение, свяжитесь с нами с помощью сайта [UserVoice для службы файлов Azure](https://feedback.azure.com/forums/217298-storage?category_id=180670).
 
-## <a name="proxy"></a>Прокси-сервер
+## <a name="proxy"></a>Прокси
 Служба "Синхронизация файлов Azure" поддерживает параметры прокси-сервера для конкретных приложений и для всего компьютера.
 
 **Параметры прокси-сервера для конкретных приложений** позволяют настроить прокси-сервер специально для трафика службы "Синхронизация файлов Azure". Параметры прокси-сервера для конкретных приложений поддерживаются в версии агента 4.0.1.0 и более поздних версиях. Их можно настроить во время установки агента или с помощью командлета PowerShell Set-StorageSyncProxyConfiguration.
@@ -96,7 +96,7 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 | **Azure Active Directory** | https://graph.microsoft.com/ | https://graph.microsoft.com/ | В ходе развертывания службы "Синхронизация файлов Azure" в подписке Azure Active Directory будет создан субъект-служба. Для этого используется данный URL-адрес. Этот субъект используется для делегирования минимального набора прав службе "Синхронизация файлов Azure". Пользователь, выполняющий начальную настройку службы "Синхронизация файлов Azure", должен иметь привилегии владельца подписки. |
 | **Azure Active Directory** | https://secure.aadcdn.microsoftonline-p.com | Используйте URL-адрес общедоступной конечной точки. | Доступ к этому URL-адресу предоставляется библиотекой проверки подлинности Active Directory, которую пользовательский интерфейс регистрации Синхронизация файлов Azure Server использует для входа в систему администратора. |
 | **Хранилище Azure** | &ast;.core.windows.net | &ast;. core.usgovcloudapi.net | Когда сервер скачивает файл, он эффективнее перемещает данные, если напрямую обращается к файловому ресурсу Azure в учетной записи хранения. Сервер имеет ключ SAS, предоставляющий доступ только к целевому файловому ресурсу. |
-| **Служба синхронизации файлов Azure** | &ast;.one.microsoft.com<br>&ast;. afs.azure.net | &ast;. afs.azure.us | После начальной регистрации сервер получает URL-адрес экземпляра службы "Синхронизация файлов Azure" в этом регионе. Сервер может использовать этот URL-адрес для прямого и эффективного взаимодействия с экземпляром, выполняющим его синхронизацию. |
+| **Синхронизация файлов Azure** | &ast;.one.microsoft.com<br>&ast;. afs.azure.net | &ast;. afs.azure.us | После начальной регистрации сервер получает URL-адрес экземпляра службы "Синхронизация файлов Azure" в этом регионе. Сервер может использовать этот URL-адрес для прямого и эффективного взаимодействия с экземпляром, выполняющим его синхронизацию. |
 | **Microsoft PKI** | https://www.microsoft.com/pki/mscorp/cps<br><http://ocsp.msocsp.com> | https://www.microsoft.com/pki/mscorp/cps<br><http://ocsp.msocsp.com> | После установки агента службы "Синхронизация файлов Azure" с помощью URL-адреса PKI загружаются промежуточные сертификаты, обеспечивающие обмен данными между службой "Синхронизация файлов Azure" и файловым ресурсом Azure. С помощью URL-адреса OCSP проверяется состояние сертификата. |
 
 > [!Important]
@@ -108,31 +108,31 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 | Облако  | Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
 |--------|--------|----------------------|---------------|---------------|
-| Public |Восточная Австралия | HTTPS:\//kailani-Aue.One.Microsoft.com | Юго-Восточная часть Австралии | HTTPS:\//TM-kailani-Aue.One.Microsoft.com |
-| Public |Юго-Восточная часть Австралии | HTTPS:\//kailani-AUS.One.Microsoft.com | Восточная Австралия | HTTPS:\//TM-kailani-AUS.One.Microsoft.com |
-| Public | Южная Бразилия | HTTPS:\//brazilsouth01.AFS.Azure.NET | Центрально-южная часть США | HTTPS:\//TM-brazilsouth01.AFS.Azure.NET |
-| Public | Центральная Канада | HTTPS:\//kailani-CAC.One.Microsoft.com | Восточная Канада | HTTPS:\//TM-kailani-CAC.One.Microsoft.com |
-| Public | Восточная Канада | HTTPS:\//kailani-CAE.One.Microsoft.com | Центральная Канада | HTTPS:\//TM-kailani.CAE.One.Microsoft.com |
-| Public | Центральная Индия | HTTPS:\//kailani-cIn.One.Microsoft.com | Южная Индия | HTTPS:\//TM-kailani-cIn.One.Microsoft.com |
-| Public | Центральная часть США | HTTPS:\//kailani-CUS.One.Microsoft.com | восточная часть США 2 | HTTPS:\//TM-kailani-CUS.One.Microsoft.com |
-| Public | Восточная Азия | HTTPS:\//kailani11.One.Microsoft.com | Юго-Восточная Азия | HTTPS:\//TM-kailani11.One.Microsoft.com |
-| Public | Восточная часть США | HTTPS:\//kailani1.One.Microsoft.com | западная часть США | HTTPS:\//TM-kailani1.One.Microsoft.com |
-| Public | восточная часть США 2 | HTTPS:\//kailani-ESS.One.Microsoft.com | Центральная часть США | HTTPS:\//TM-kailani-ESS.One.Microsoft.com |
-| Public | Восточная Япония | HTTPS:\//japaneast01.AFS.Azure.NET | Западная Япония | HTTPS:\//TM-japaneast01.AFS.Azure.NET |
-| Public | Западная Япония | HTTPS:\//japanwest01.AFS.Azure.NET | Восточная Япония | HTTPS:\//TM-japanwest01.AFS.Azure.NET |
-| Public | Республика Корея, центральный регион | HTTPS:\//koreacentral01.AFS.Azure.NET/ | Республика Корея, южный регион | HTTPS:\//TM-koreacentral01.AFS.Azure.NET/ |
-| Public | Республика Корея, южный регион | HTTPS:\//koreasouth01.AFS.Azure.NET/ | Республика Корея, центральный регион | HTTPS:\//TM-koreasouth01.AFS.Azure.NET/ |
-| Public | Центрально-северная часть США | HTTPS:\//northcentralus01.AFS.Azure.NET | Центрально-южная часть США | HTTPS:\//TM-northcentralus01.AFS.Azure.NET |
-| Public | Северная Европа | HTTPS:\//kailani7.One.Microsoft.com | Западная Европа | HTTPS:\//TM-kailani7.One.Microsoft.com |
-| Public | Центрально-южная часть США | HTTPS:\//southcentralus01.AFS.Azure.NET | Центрально-северная часть США | HTTPS:\//TM-southcentralus01.AFS.Azure.NET |
-| Public | Южная Индия | HTTPS:\//kailani-Sin.One.Microsoft.com | Центральная Индия | HTTPS:\//TM-kailani-Sin.One.Microsoft.com |
-| Public | Юго-Восточная Азия | HTTPS:\//kailani10.One.Microsoft.com | Восточная Азия | HTTPS:\//TM-kailani10.One.Microsoft.com |
-| Public | южная часть Соединенного Королевства | HTTPS:\//kailani-UKS.One.Microsoft.com | западная часть Соединенного Королевства | HTTPS:\//TM-kailani-UKS.One.Microsoft.com |
-| Public | западная часть Соединенного Королевства | HTTPS:\//kailani-UKW.One.Microsoft.com | южная часть Соединенного Королевства | HTTPS:\//TM-kailani-UKW.One.Microsoft.com |
-| Public | центрально-западная часть США | HTTPS:\//westcentralus01.AFS.Azure.NET | западная часть США 2 | HTTPS:\//TM-westcentralus01.AFS.Azure.NET |
-| Public | Западная Европа | HTTPS:\//kailani6.One.Microsoft.com | Северная Европа | HTTPS:\//TM-kailani6.One.Microsoft.com |
-| Public | западная часть США | HTTPS:\//kailani.One.Microsoft.com | Восточная часть США | HTTPS:\//TM-kailani.One.Microsoft.com |
-| Public | западная часть США 2 | HTTPS:\//westus201.AFS.Azure.NET | центрально-западная часть США | HTTPS:\//TM-westus201.AFS.Azure.NET |
+| Открытый |Восточная Австралия | HTTPS:\//kailani-Aue.One.Microsoft.com | Юго-Восточная часть Австралии | HTTPS:\//TM-kailani-Aue.One.Microsoft.com |
+| Открытый |Юго-Восточная часть Австралии | HTTPS:\//kailani-AUS.One.Microsoft.com | Восточная Австралия | HTTPS:\//TM-kailani-AUS.One.Microsoft.com |
+| Открытый | Южная Бразилия | HTTPS:\//brazilsouth01.AFS.Azure.NET | Центрально-южная часть США | HTTPS:\//TM-brazilsouth01.AFS.Azure.NET |
+| Открытый | Центральная Канада | HTTPS:\//kailani-CAC.One.Microsoft.com | Восточная Канада | HTTPS:\//TM-kailani-CAC.One.Microsoft.com |
+| Открытый | Восточная Канада | HTTPS:\//kailani-CAE.One.Microsoft.com | Центральная Канада | HTTPS:\//TM-kailani.CAE.One.Microsoft.com |
+| Открытый | Центральная Индия | HTTPS:\//kailani-cIn.One.Microsoft.com | Южная Индия | HTTPS:\//TM-kailani-cIn.One.Microsoft.com |
+| Открытый | Центральная часть США | HTTPS:\//kailani-CUS.One.Microsoft.com | восточная часть США 2 | HTTPS:\//TM-kailani-CUS.One.Microsoft.com |
+| Открытый | Восточная Азия | HTTPS:\//kailani11.One.Microsoft.com | Юго-Восточная Азия | HTTPS:\//TM-kailani11.One.Microsoft.com |
+| Открытый | Восточная часть США | HTTPS:\//kailani1.One.Microsoft.com | западная часть США | HTTPS:\//TM-kailani1.One.Microsoft.com |
+| Открытый | восточная часть США 2 | HTTPS:\//kailani-ESS.One.Microsoft.com | Центральная часть США | HTTPS:\//TM-kailani-ESS.One.Microsoft.com |
+| Открытый | Восточная Япония | HTTPS:\//japaneast01.AFS.Azure.NET | Западная Япония | HTTPS:\//TM-japaneast01.AFS.Azure.NET |
+| Открытый | Западная Япония | HTTPS:\//japanwest01.AFS.Azure.NET | Восточная Япония | HTTPS:\//TM-japanwest01.AFS.Azure.NET |
+| Открытый | Республика Корея, центральный регион | HTTPS:\//koreacentral01.AFS.Azure.NET/ | Республика Корея, южный регион | HTTPS:\//TM-koreacentral01.AFS.Azure.NET/ |
+| Открытый | Республика Корея, южный регион | HTTPS:\//koreasouth01.AFS.Azure.NET/ | Республика Корея, центральный регион | HTTPS:\//TM-koreasouth01.AFS.Azure.NET/ |
+| Открытый | Центрально-северная часть США | HTTPS:\//northcentralus01.AFS.Azure.NET | Центрально-южная часть США | HTTPS:\//TM-northcentralus01.AFS.Azure.NET |
+| Открытый | Северная Европа | HTTPS:\//kailani7.One.Microsoft.com | Западная Европа | HTTPS:\//TM-kailani7.One.Microsoft.com |
+| Открытый | Центрально-южная часть США | HTTPS:\//southcentralus01.AFS.Azure.NET | Центрально-северная часть США | HTTPS:\//TM-southcentralus01.AFS.Azure.NET |
+| Открытый | Южная Индия | HTTPS:\//kailani-Sin.One.Microsoft.com | Центральная Индия | HTTPS:\//TM-kailani-Sin.One.Microsoft.com |
+| Открытый | Юго-Восточная Азия | HTTPS:\//kailani10.One.Microsoft.com | Восточная Азия | HTTPS:\//TM-kailani10.One.Microsoft.com |
+| Открытый | южная часть Соединенного Королевства | HTTPS:\//kailani-UKS.One.Microsoft.com | западная часть Соединенного Королевства | HTTPS:\//TM-kailani-UKS.One.Microsoft.com |
+| Открытый | западная часть Соединенного Королевства | HTTPS:\//kailani-UKW.One.Microsoft.com | южная часть Соединенного Королевства | HTTPS:\//TM-kailani-UKW.One.Microsoft.com |
+| Открытый | центрально-западная часть США | HTTPS:\//westcentralus01.AFS.Azure.NET | западная часть США 2 | HTTPS:\//TM-westcentralus01.AFS.Azure.NET |
+| Открытый | Западная Европа | HTTPS:\//kailani6.One.Microsoft.com | Северная Европа | HTTPS:\//TM-kailani6.One.Microsoft.com |
+| Открытый | западная часть США | HTTPS:\//kailani.One.Microsoft.com | Восточная часть США | HTTPS:\//TM-kailani.One.Microsoft.com |
+| Открытый | западная часть США 2 | HTTPS:\//westus201.AFS.Azure.NET | центрально-западная часть США | HTTPS:\//TM-westus201.AFS.Azure.NET |
 | Государственные организации | US Gov (Аризона) | HTTPS:\//usgovarizona01.AFS.Azure.US | US Gov (Техас) | HTTPS:\//TM-usgovarizona01.AFS.Azure.US |
 | Государственные организации | US Gov (Техас) | HTTPS:\//usgovtexas01.AFS.Azure.US | US Gov (Аризона) | HTTPS:\//TM-usgovtexas01.AFS.Azure.US |
 
@@ -276,7 +276,7 @@ Test-StorageSyncNetworkConnectivity
 
 Настройка домена с ограничивающими правилами брандмауэра может служить мерой повышения безопасности. Если используются такие конфигурации брандмауэров, необходимо помнить, что URL-адреса со временем добавляются и могут измениться. Периодически просматривайте эту статью.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)
 - [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)
 - [Мониторинг службы "Синхронизация файлов Azure"](storage-sync-files-monitoring.md)

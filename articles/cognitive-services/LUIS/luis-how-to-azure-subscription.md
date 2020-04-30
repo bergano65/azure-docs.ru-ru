@@ -5,10 +5,10 @@ services: cognitive-services
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.openlocfilehash: d9235b6ef1c7cddbfbbd36f8382439d781af6d5f
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82101031"
 ---
 # <a name="create-luis-resources"></a>Создание ресурсов LUIS
@@ -189,7 +189,7 @@ ms.locfileid: "82101031"
 
 Добавьте оповещение для метрики **общее число вызовов** за определенный период времени. Добавьте адреса электронной почты всех пользователей, которые должны получать оповещение. Добавьте веб-привязки для всех систем, которые должны получать оповещения. При запуске оповещения также может выполняться приложение логики.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.

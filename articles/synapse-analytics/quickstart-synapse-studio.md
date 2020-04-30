@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 294f53fe929343708bdbb9564b23c46865cf02ac
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: a29fd66cf264b09cc5e0db7ac1a329be3f297bb8
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81419818"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82096339"
 ---
 # <a name="quickstart-using-synapse-studio-preview"></a>Краткое руководство. Использование Synapse Studio (предварительная версия)
 
@@ -52,7 +52,7 @@ ms.locfileid: "81419818"
 > Чтобы иметь возможность запрашивать файлы, необходимо быть членом роли `Storage Blob Reader` в базовом хранилище. Узнайте, как [назначить для **Модуля чтения данных BLOB-объектов хранилища** или **Участника для данных BLOB-объектов хранилища** разрешения RBAC в службе хранилища Azure](../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#assign-a-built-in-rbac-role).
 
 1. Отправьте некоторые файлы `PARQUET`.
-2. Выберите один или несколько файлов, а затем создайте новый скрипт SQL или записную книжку Spark, чтобы просмотреть содержимое файлов. Если вы хотите создать записную книжку, необходимо создать [пул Apache Spark в рабочей области](spark/apache-spark-notebook-create-spark-use-sql.md).
+2. Выберите один или несколько файлов, а затем создайте новый скрипт SQL или записную книжку Spark, чтобы просмотреть содержимое файлов. Если вы хотите создать записную книжку, необходимо создать [пул Apache Spark в рабочей области](quickstart-create-apache-spark-pool.md).
 
    ![Файлы запросов в хранилище](./media/quickstart-synapse-studio/query-files-on-storage.png)
 
@@ -66,5 +66,5 @@ ms.locfileid: "81419818"
 
 - Включение пользователей Azure AD для запроса файлов [путем назначения для **Модуля чтения данных BLOB-объектов хранилища** или **Участника для данных BLOB-объектов хранилища** разрешений RBAC в службе хранилища Azure](../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#assign-a-built-in-rbac-role)
 - [Запросы к файлам в службе хранилища Azure с помощью SQL по запросу](sql/on-demand-workspace-overview.md)
-- [Создание пула Apache Spark](spark/apache-spark-notebook-create-spark-use-sql.md)
+- [Создание пула Apache Spark](quickstart-create-apache-spark-pool.md)
 - [Создание отчета Power BI о файлах, хранящихся в службе хранилища Azure](sql/tutorial-connect-power-bi-desktop.md)

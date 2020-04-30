@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
 ms.openlocfilehash: 04dba192488744d1b54b0a0e2d885c0b1766bdc6
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100538"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
@@ -367,7 +367,7 @@ Resource Manager параллельно развертывает все ресу
 ],
 ```
 
-## <a name="extensions"></a>Модули
+## <a name="extensions"></a>Расширения
 
 Хотя функции [расширения](extensions-features.md) являются отдельным ресурсом, они тесно связаны с виртуальными машинами. Расширения можно добавить как дочерний ресурс виртуальной машины или как отдельный ресурс. В примере показано добавление [расширения системы диагностики](extensions-diagnostics-template.md) к виртуальным машинам.
 
@@ -449,7 +449,7 @@ Resource Manager параллельно развертывает все ресу
     
 Один и тот же шаблон можно использовать для создания или для обновления существующих ресурсов. При использовании команд для развертывания шаблонов вы сможете выбрать, какой [режим](../../resource-group-template-deploy.md) хотите использовать. Можно задать **полный** или **добавочный** режим. По умолчанию выполняются добавочные обновления. Будьте внимательны при использовании режима **Полный**, так как можно случайно удалить ресурсы. Если выбран режим **Завершить**, Resource Manager удаляет все ресурсы в группе ресурсов, которых нет в шаблоне.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о создании собственного шаблона см. в статье [Создание шаблонов Azure Resource Manager](../../resource-group-authoring-templates.md).
 - Сведения о развертывании созданного шаблона см. в статье [Создание виртуальной машины Windows с использованием шаблона Resource Manager](ps-template.md).

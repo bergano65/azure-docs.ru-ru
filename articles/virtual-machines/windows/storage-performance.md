@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: joelpell
 ms.openlocfilehash: cd15df2a7074463789bcf4a2d4de3c41bd012bbb
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82100555"
 ---
 # <a name="optimize-performance-on-the-lsv2-series-virtual-machines"></a>Оптимизация производительности виртуальных машин серии Lsv2
@@ -94,6 +94,6 @@ ms.locfileid: "82100555"
 * **Можно ли настроить параметры опроса в Windows Server 2019?**  
    Параметры опроса не регулируемы пользователем.
    
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. спецификации для всех [виртуальных машин, оптимизированных для производительности хранилища](sizes-storage.md) в Azure.

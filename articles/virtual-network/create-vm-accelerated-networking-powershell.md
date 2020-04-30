@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 01/04/2018
 ms.author: gsilva
 ms.openlocfilehash: 3807c1434e3758eafe299da7b30769b41d3ede87
-ms.sourcegitcommit: 354a302d67a499c36c11cca99cce79a257fe44b0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82106310"
 ---
 # <a name="create-a-windows-virtual-machine-with-accelerated-networking-using-azure-powershell"></a>Создание виртуальной машины Windows с ускоренной сетью с помощью Azure PowerShell
@@ -43,7 +43,7 @@ ms.locfileid: "82106310"
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 Без дополнительной настройки из коллекции Azure поддерживаются следующие дистрибутивы:
 * **Windows Server 2016 Datacenter** 
-* **Windows Server 2012 R2 Datacenter**
+* **Windows Server 2012 R2 Datacenter**
 * **Windows Server 2019 Datacenter**
 
 ### <a name="supported-vm-instances"></a>Поддерживаемые экземпляры виртуальных машин

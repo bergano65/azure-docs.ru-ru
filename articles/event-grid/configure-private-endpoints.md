@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 04/22/2020
 ms.author: spelluru
 ms.openlocfilehash: 97f08bf0f89fdb65f0ffef7d18557f210e45a8d3
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82101014"
 ---
 # <a name="configure-private-endpoints-for-azure-event-grid-topics-or-domains-preview"></a>Настройка частных конечных точек для разделов и доменов службы "Сетка событий Azure" (Предварительная версия)
@@ -50,7 +50,7 @@ ms.locfileid: "82101014"
 
             ![Частная конечная точка — страница ресурсов](./media/configure-private-endpoints/resource-page.png)
     2. При выборе **подключения к ресурсу с помощью идентификатора ресурса или псевдонима**выполните следующие действия.
-        1. Введите идентификатор ресурса. Например, `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
+        1. Введите идентификатор ресурса. Например: `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
         2. Для **ресурса**введите **раздел** или **домен**. 
         3. используемых Добавление сообщения запроса. 
         4. Нажмите кнопку **Далее: >конфигурации** в нижней части страницы. 
@@ -157,7 +157,7 @@ az network private-endpoint delete --resource-group <RESOURECE GROUP NAME> --nam
 
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 Обновите расширение службы "Сетка событий Azure" для интерфейса командной строки, выполнив следующую команду: 
 
 ```azurecli-interactive
@@ -487,5 +487,5 @@ Invoke-RestMethod -Method 'Get'
 
 Вы можете одобрить подключение даже после его отклонения через API. При использовании портал Azure нельзя утвердить конечную точку, которая была отклонена. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о настройке параметров брандмауэра IP см. в разделе [Настройка брандмауэра IP для разделов и доменов службы "Сетка событий Azure](configure-firewall.md)".

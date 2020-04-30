@@ -5,10 +5,10 @@ author: diberry
 ms.topic: conceptual
 ms.date: 01/23/2020
 ms.openlocfilehash: 3cea4a46564210ad8c37fdeda68e24337091d0bb
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82100300"
 ---
 # <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Извлечение данных из utterance текста с помощью целей и сущностей
@@ -1266,6 +1266,6 @@ LUIS возвращает все сущности, обнаруженные в �
 
 * * *
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о добавлении сущностей в приложение LUIS см. в статье [Добавление сущностей](luis-how-to-add-entities.md).
