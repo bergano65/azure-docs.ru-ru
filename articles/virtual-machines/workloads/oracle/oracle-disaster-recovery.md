@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: borisb
 ms.openlocfilehash: adf4c54d4f43f806ae985f7c1523303cf574b4c1
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81687462"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
@@ -103,7 +103,7 @@ ms.locfileid: "81687462"
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

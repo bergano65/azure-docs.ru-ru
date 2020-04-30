@@ -1,5 +1,5 @@
 ---
-title: Создание снимка VHD в Azure
+title: Создание моментального снимка виртуального жесткого диска в Azure
 description: Узнайте, как создать копию виртуального жесткого диска (VHD) в Azure в качестве резервной копии или для устранения неполадок.
 author: roygara
 manager: twooley
@@ -10,10 +10,10 @@ ms.date: 07/11/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: f2d905d041198bd35c4657052bf18d981904dc44
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81758404"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка 
@@ -68,7 +68,7 @@ az snapshot list \
 9. Нажмите кнопку **Создать**.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
  Создайте виртуальную машину из моментального снимка, создав из него управляемый диск, а затем подключив этот диск как диск ОС. См. дополнительные сведения о скрипте для [создания виртуальной машины из моментального снимка](./../scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot.md?toc=%2fcli%2fmodule%2ftoc.json).
 

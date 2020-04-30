@@ -1,7 +1,7 @@
 ---
-title: Включить службу пиринга Azure при прямом пиринге с помощью PowerShell
+title: Включение службы пиринга Azure на прямом одноранговом узле с помощью PowerShell
 titleSuffix: Azure
-description: Включить службу пиринга Azure при прямом пиринге с помощью PowerShell
+description: Включение службы пиринга Azure на прямом одноранговом узле с помощью PowerShell
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,23 +9,23 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: c029b822d00ce545e3623a6212421a55b2d1971f
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81686965"
 ---
-# <a name="enable-azure-peering-service-on-a-direct-peering-by-using-powershell"></a>Включить службу пиринга Azure при прямом пиринге с помощью PowerShell
+# <a name="enable-azure-peering-service-on-a-direct-peering-by-using-powershell"></a>Включение службы пиринга Azure на прямом одноранговом узле с помощью PowerShell
 
-В этой статье описывается, как включить [службу пиринга](overview-peering-service.md) Azure при прямой вглядывающей с помощью cmdlets PowerShell и модели развертывания ресурсов Azure.
+В этой статье описывается, как включить [службу пиринга](overview-peering-service.md) Azure на непосредственном одноранговом пиринге с помощью командлетов PowerShell и модели развертывания Azure Resource Manager.
 
-Если вы предпочитаете, вы можете заполнить это руководство с помощью [портала](howto-peering-service-portal.md)Azure .
+При желании вы можете выполнить это пошаговое руководством с помощью [портала](howto-peering-service-portal.md)Azure.
 
 ## <a name="before-you-begin"></a>Подготовка к работе
-* Просмотрите [предпосылки](prerequisites.md) перед началом конфигурации.
-* Выберите прямую вонючую в подписке, для которой вы хотите включить Peering Service. Если у вас его нет, либо конвертировать устаревшее прямое пиринг или создать новый прямой пиринг:
-    * Чтобы преобразовать устаревшую вонючесть Direct, следуйте инструкциям в [Convert a legacy Direct, вглядываясь в ресурс Azure с помощью PowerShell.](howto-legacy-direct-powershell.md)
-    * Чтобы создать новый Прямой пиринг, следуйте инструкциям в [Создать или изменить прямой пиринг с помощью PowerShell](howto-direct-powershell.md).
+* Прежде чем приступить к настройке, ознакомьтесь с [предварительными требованиями](prerequisites.md) .
+* Выберите прямой пиринг в подписке, для которой требуется включить службу пиринга. Если у вас ее нет, преобразуйте устаревший прямой пиринг или создайте новый прямой пиринг:
+    * Чтобы преобразовать устаревший прямой пиринг, следуйте инструкциям в статье [Преобразование устаревшего прямого пиринга в ресурс Azure с помощью PowerShell](howto-legacy-direct-powershell.md).
+    * Чтобы создать новый прямой пиринг, следуйте инструкциям в статье [Создание или изменение прямого пиринга с помощью PowerShell](howto-direct-powershell.md).
 
 ### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
@@ -35,19 +35,19 @@ ms.locfileid: "81686965"
 ### <a name="view-direct-peering"></a><a name= get></a>Просмотр прямого пиринга
 [!INCLUDE [peering-direct-get](./includes/direct-powershell-get.md)]
 
-### <a name="enable-the-direct-peering-for-peering-service"></a><a name= get></a>Включить прямое пиринговое обслуживание для peering Service
+### <a name="enable-the-direct-peering-for-peering-service"></a><a name= get></a>Включение прямого пиринга для службы пиринга
 
-После того, как вы получите Прямой пиринг на предыдущем этапе, включите его для Peering Service.
+После получения прямого пиринга на предыдущем шаге включите его для службы пиринга.
 [!INCLUDE [peering-direct-modify](./includes/peering-service-direct-powershell.md)]
 
-## <a name="modify-a-direct-peering-connection"></a>Изменение прямого пирингового соединения
+## <a name="modify-a-direct-peering-connection"></a>Изменение соединения с прямым пирингом
 
-Если вам нужно изменить настройки соединения, см. раздел "Изменить прямое пиринг" в [create или изменить прямое пиринг с помощью PowerShell.](howto-direct-powershell.md)
+Если необходимо изменить параметры подключения, см. раздел "изменение прямого пиринга" статьи [Создание или изменение прямого пиринга с помощью PowerShell](howto-direct-powershell.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание или изменение пиринга Exchange с помощью PowerShell](howto-exchange-powershell.md)
-* [Преобразование наследного вглядывания в ресурс Azure с помощью PowerShell](howto-legacy-exchange-powershell.md)
+* [Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью PowerShell](howto-legacy-exchange-powershell.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 Подробное описание всех параметров можно получить, выполнив следующую команду.
@@ -56,4 +56,4 @@ ms.locfileid: "81686965"
 Get-Help Get-AzPeering -detailed
 ```
 
-Для часто задаваемых вопросов, [см.](service-faqs.md)
+Часто задаваемые вопросы см. в статье [часто ЗАдаваемые вопросы о службе пиринга](service-faqs.md).

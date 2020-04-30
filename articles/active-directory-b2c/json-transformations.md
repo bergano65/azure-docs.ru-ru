@@ -1,7 +1,7 @@
 ---
-title: JSON утверждает примеры трансформации для пользовательских политик
+title: Примеры преобразования утверждений JSON для пользовательских политик
 titleSuffix: Azure AD B2C
-description: JSON утверждает примеры трансформации для схемы интерфейса identity Experience (IEF) Active Directory B2C.
+description: Примеры преобразования утверждений JSON для схемы Azure Active Directory B2C (инфраструктура процедур идентификации).
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,29 +12,29 @@ ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: b42c2a414333e7ed262441321a808fc45425fc3b
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81756756"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приводятся примеры использования преобразований системы интерфейса «Опыт идентификации» в S2C Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приведены примеры использования преобразований утверждений JSON схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
-## <a name="generatejson"></a>GenerateJson
+## <a name="generatejson"></a>женератежсон
 
-Используйте значения претензий или константы для создания строки JSON. Строка пути после обозначения точек используется для обозначения того, где вставить данные в строку JSON. После разделения по точкам все целые числа интерпретируются как индекс массива JSON, а нецелые интерпретируются как индекс объекта JSON.
+Чтобы создать строку JSON, используйте либо значения утверждения, либо константы. Строка пути, следующая за точкой, используется для указания места вставки данных в строку JSON. После разделения по точкам любые целые числа интерпретируется как индекс массива JSON, а Нецелочисленные значения — как индекс объекта JSON.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | Любая строка после обозначения точек | строка | JsonPath JSON, где значение претензии будет вставлено в. |
-| InputParameter | Любая строка после обозначения точек | строка | JsonPath JSON, где будет вставлено постоянное значение строки. |
-| outputClaim | outputClaim | строка | Генерируемая строка JSON. |
+| InputClaim | Любая строка в следующей нотации с точкой | строка | JsonPath JSON, в который будет вставлено значение утверждения. |
+| InputParameter | Любая строка в следующей нотации с точкой | строка | JsonPath JSON, в который будет вставлено строковое значение константы. |
+| outputClaim | outputClaim | строка | Созданная строка JSON. |
 
-Следующий пример генерирует строку JSON, основанную на значении претензии "электронная почта" и "otp", а также постоянных строках.
+В следующем примере создается строка JSON на основе значения утверждения "Email" и "OTP", а также константных строк.
 
 ```XML
 <ClaimsTransformation Id="GenerateRequestBody" TransformationMethod="GenerateJson">
@@ -55,17 +55,17 @@ ms.locfileid: "81756756"
 
 ### <a name="example"></a>Пример
 
-Следующие преобразования претензий выводит строку JSON претензии, которые будут тело запроса, отправленного в SendGrid (сторонний поставщик электронной почты). Структура объекта JSON определяется идентифицироваться в dot-нотировании параметров ввода и TransformationClaimTypes InputClaims. Числа в обозначении точки подразумевают массивы. Значения происходят из значений InputClaims и свойств "Значение" Ввода Параметров.
+В следующем преобразовании утверждений выводится строковый запрос JSON, который будет являться телом запроса, отправленного в SendGrid (поставщик электронной почты стороннего поставщика). Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Числа в точечной нотации подразумевают массивы. Значения берутся из значений Inputclaim и свойств InputParameters "" value ".
 
-- Претензии ввода:
-  - **электронная почта**, **преобразование претензии типа personalizations.0.to.0.email**: "someone@example.com
-  - **otp**, трансформация типа **персонализации.0.dynamic_template_data.otp** "346349"
+- Входные утверждения:
+  - **адрес электронной почты**, персонализации для типа утверждения **. 0. в. 0. Электронная почта**: "someone@example.com"
+  - **OTP**, персонализации типа утверждения преобразования **. 0. dynamic_template_data. OTP** "346349"
 - Входной параметр:
-  - **template_id**: "d-4c56ffb40fa648b1a682283df94f60"
-  - **from.email**:service@contoso.com"
-  - **personalizations.0.subject** "Код проверки электронной почты учетной записи Contoso"
+  - **template_id**: "d-4c56ffb40fa648b1aa6822283df94f60"
+  - **из. адрес электронной почты**: "service@contoso.com"
+  - **Личные настройки. 0. Тема** "код проверки электронной почты учетной записи Contoso"
 - Исходящее утверждение:
-  - **requestBody**: Значение JSON
+  - **requestBody**: значение JSON
 
 ```JSON
 {
@@ -123,7 +123,7 @@ ms.locfileid: "81756756"
 - Входной параметр:
     - **claimToExtract**: emailAddress.
 - Исходящие утверждения:
-  - **извлеченныеПретензии**:someone@example.com
+  - **екстрактедклаим**:someone@example.com
 
 
 ## <a name="getclaimsfromjsonarray"></a>GetClaimsFromJsonArray
@@ -174,7 +174,7 @@ ms.locfileid: "81756756"
     - **jsonSourceKeyName**: key.
     - **jsonSourceValueName**: value.
 - Исходящие утверждения:
-  - **электронная**someone@example.comпочта : " "
+  - **адрес электронной почты**: "someone@example.com"
   - **displayName**: "Someone".
   - **membershipNum**: 6353399.
   - **active**: true.
@@ -223,17 +223,17 @@ ms.locfileid: "81756756"
 - Исходящие утверждения:
     - **extractedClaim**: 6353399.
 
-## <a name="getsingleitemfromjson"></a>GetSingleItemFromJson
+## <a name="getsingleitemfromjson"></a>жетсинглеитемфромжсон
 
-Получает первый элемент из данных JSON.
+Возвращает первый элемент из данных JSON.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputJson | строка | ClaimTypes, используемые в преобразовании претензий для получения элемента из данных JSON. |
-| outputClaim | ключ | строка | Первый элемент ключа в JSON. |
+| InputClaim | inputJson | строка | ClaimTypes, используемые преобразованием «утверждения» для получения элемента из данных JSON. |
+| outputClaim | ключ | строка | Первый ключ элемента в JSON. |
 | outputClaim | value | строка | Значение первого элемента в JSON. |
 
-В следующем примере преобразование требований извлекает первый элемент (данное имя) из данных JSON.
+В следующем примере преобразование «утверждения» извлекает первый элемент (с заданным именем) из данных JSON.
 
 ```XML
 <ClaimsTransformation Id="GetGivenNameFromResponse" TransformationMethod="GetSingleItemFromJson">
@@ -250,10 +250,10 @@ ms.locfileid: "81756756"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputJson**: «givenName»: «Emilty», «lastName»: «Smith»»
+  - **инпутжсон**: {"givenName": "емилти", "LastName": "Иванов"}
 - Исходящие утверждения:
   - **ключ**: givenName
-  - **значение**: Эмильти
+  - **значение**: емилти
 
 
 ## <a name="getsinglevaluefromjsonarray"></a>GetSingleValueFromJsonArray
@@ -281,9 +281,9 @@ ms.locfileid: "81756756"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputJsonClaim**:someone@example.com:", "Кто-то", 6353399
+  - **инпутжсонклаим**: ["someone@example.com", "кто", 6353399]
 - Исходящие утверждения:
-  - **извлеченныеПретензии**:someone@example.com
+  - **екстрактедклаим**:someone@example.com
 
 ## <a name="xmlstringtojsonstring"></a>XmlStringToJsonString
 

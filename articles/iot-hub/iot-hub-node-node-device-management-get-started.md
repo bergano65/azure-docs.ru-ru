@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.custom: mqtt
 ms.openlocfilehash: a7814970d4ffb051ab54c965d27394f925d79e59
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81732328"
 ---
-# <a name="get-started-with-device-management-nodejs"></a>Начало работы с управлением устройствами (Node.js)
+# <a name="get-started-with-device-management-nodejs"></a>Начало работы с управлением устройствами (Node. js)
 
 [!INCLUDE [iot-hub-selector-dm-getstarted](../../includes/iot-hub-selector-dm-getstarted.md)]
 
-В этом учебнике описаны следующие процедуры.
+В этом учебнике демонстрируется выполнение следующих действий:
 
-* Используйте [портал Azure](https://portal.azure.com) для создания концентратора IoT и создания идентификации устройства в концентраторе IoT.
+* Используйте [портал Azure](https://portal.azure.com) , чтобы создать центр Интернета вещей и создать удостоверение устройства в центре Интернета вещей.
 
 * Создание приложения для имитации устройства с прямым методом, который позволяет выполнить перезагрузку устройства. Прямые методы вызываются из облака.
 
@@ -34,13 +34,13 @@ ms.locfileid: "81732328"
 
 * **dmpatterns_getstarted_service.js**, которое вызывает прямой метод в приложении для имитации устройства, выводит ответ и отображает обновленные сообщаемые свойства.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Версия node.js 10.0.x или позже. В статье [Prepare your development environment](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) (Подготовка среды разработки) описывается, как установить Node.js для работы с этим учебником в ОС Windows или Linux.
+* Node. js версии 10.0. x или более поздней. В статье [Prepare your development environment](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) (Подготовка среды разработки) описывается, как установить Node.js для работы с этим учебником в ОС Windows или Linux.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
-* Убедитесь, что в брандмауэре открыт порт 8883. Образец устройства в этой статье использует протокол МЗТТ, который общается по порту 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -83,7 +83,7 @@ ms.locfileid: "81732328"
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  Замените `{yourdeviceconnectionstring}` значение заполнителя строкой подключения устройства, скопировавшей ранее в [Регистрации нового устройства в концентраторе IoT.](#register-a-new-device-in-the-iot-hub)  
+5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  Замените значение `{yourdeviceconnectionstring}` заполнителя строкой подключения устройства, скопированной ранее в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).  
 
     ```javascript
     var connectionString = '{yourdeviceconnectionstring}';
@@ -150,7 +150,7 @@ ms.locfileid: "81732328"
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 
-## <a name="get-the-iot-hub-connection-string"></a>Получите строку соединения концентратора IoT
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
 
 [!INCLUDE [iot-hub-howto-device-management-shared-access-policy-text](../../includes/iot-hub-howto-device-management-shared-access-policy-text.md)]
 
@@ -183,7 +183,7 @@ ms.locfileid: "81732328"
     var Client = require('azure-iothub').Client;
     ```
 
-5. Добавьте следующие переменные `{iothubconnectionstring}` декларации и замените значение заполнителя строкой подключения концентратора IoT, скопированной ранее в [строке подключения концентратора YouT:](#get-the-iot-hub-connection-string)
+5. Добавьте следующие объявления переменных и замените значение `{iothubconnectionstring}` заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';
@@ -247,7 +247,7 @@ ms.locfileid: "81732328"
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
-Теперь вы готовы к запуску приложений.
+Теперь все готово для запуска приложений.
 
 1. В командной строке в папке **manageddevice** выполните следующую команду, чтобы начать прослушивание прямого метода перезагрузки.
 
@@ -261,14 +261,14 @@ ms.locfileid: "81732328"
     node dmpatterns_getstarted_service.js
     ```
 
-3. Вы видите реакцию устройства на метод перезагрузки и состояние перезагрузки в консоли.
+3. Вы увидите ответ устройства на прямой метод перезагрузки и состояние перезагрузки в консоли.
 
-   Ниже показан ответ устройства на метод перезагрузки, отправленный службой:
+   Ниже показан ответ устройства на прямой метод перезагрузки, отправленный службой.
 
-   ![выход приложения управляемого устройства](./media/iot-hub-node-node-device-management-get-started/device.png)
+   ![выходные данные приложения manageddevice](./media/iot-hub-node-node-device-management-get-started/device.png)
 
-   Ниже приводится служба запуска перезагрузки и опроса устройства близнеца за последнее время перезагрузки:
+   Ниже показана служба, которая запускает перезагрузку и опрашивает двойника устройства на время последней перезагрузки:
 
-   ![вывод приложения triggerrebootondevice](./media/iot-hub-node-node-device-management-get-started/service.png)
+   ![выходные данные приложения triggerrebootondevice](./media/iot-hub-node-node-device-management-get-started/service.png)
 
 [!INCLUDE [iot-hub-dm-followup](../../includes/iot-hub-dm-followup.md)]

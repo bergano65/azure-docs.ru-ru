@@ -1,5 +1,5 @@
 ---
-title: Откройте и сохраните файлы с пакетами SSIS, развернутыми в Azure
+title: Открытие и сохранение файлов с помощью пакетов SSIS, развернутых в Azure
 description: Узнайте, как открывать и сохранять файлы в локальной среде и в Azure при переносе пакетов SSIS, использующих локальные файловые системы, в службы SSIS в Azure.
 ms.date: 06/27/2018
 ms.topic: conceptual
@@ -9,10 +9,10 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: maghan
 ms.openlocfilehash: 630a8ead409ad60b9146838f062210a3301b43b5
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81760203"
 ---
 # <a name="open-and-save-files-on-premises-and-in-azure-with-ssis-packages-deployed-in-azure"></a>Открытие и сохранение файлов в локальной среде и в Azure с помощью пакетов SSIS, развернутых в Azure
@@ -47,8 +47,8 @@ ms.locfileid: "81760203"
 
 3. Измените локальные пути к файлам в пакетах на UNC-пути, указывающие на службу файлов Azure. Например, измените `C:\abc.txt` на `\\<storage-account-name>.file.core.windows.net\<share-name>\abc.txt`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Развертывание пакетов. Дополнительные сведения см. в статье [Развертывание проекта служб SSIS с помощью SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/integration-services/ssis-quickstart-deploy-ssms).
 - Запуск пакетов. Дополнительные сведения см. в статье [Выполнение пакета служб SSIS с помощью SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/integration-services/ssis-quickstart-run-ssms).
-- Планирование выполнения пакетов. Для получения дополнительной информации смотрите [Пакеты Расписание SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15).
+- Планирование выполнения пакетов. Дополнительные сведения см. [в разделе Планирование пакетов служб SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15).

@@ -10,17 +10,17 @@ ms.workload: infrastructure
 ms.date: 10/15/2019
 ms.author: haroldw
 ms.openlocfilehash: d7d251370aefdfadc0b77a67f6dad1be2dcb9e9a
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81759436"
 ---
 # <a name="deploy-okd-in-azure"></a>Развертывание OKD в Azure
 
 Существует два способа развертывания OKD (ранее OpenShift Origin) в Azure.
 
-- Можно вручную развернуть все необходимые компоненты инфраструктуры Azure, а затем следовать [документации OKD.](https://docs.okd.io)
+- Вы можете вручную развернуть все необходимые компоненты инфраструктуры Azure, а затем следовать документации по [ОКД](https://docs.okd.io).
 - Вы можете воспользоваться [шаблоном Resource Manager](https://github.com/Microsoft/openshift-origin), который упрощает развертывание кластера OKD.
 
 ## <a name="deploy-using-the-okd-template"></a>Развертывание с помощью шаблона OKD
@@ -156,7 +156,7 @@ $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift](./openshift-container-platform-3x-troubleshooting.md)

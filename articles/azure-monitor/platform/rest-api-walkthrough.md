@@ -5,10 +5,10 @@ ms.subservice: metrics
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.openlocfilehash: 6b0e321747e0f84be5a75ab96749311ff0071e8d
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81687419"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
@@ -84,7 +84,7 @@ $authHeader = @{
 2. получение значений метрик.
 
 > [!NOTE]
-> Для получения дополнительной информации о проверке подлинности с помощью API Azure REST, пожалуйста, обратитесь к [API-справке Azure REST.](https://docs.microsoft.com/rest/api/azure/)
+> Дополнительные сведения о проверке подлинности в Azure REST API см. в [справочнике по azure REST API](https://docs.microsoft.com/rest/api/azure/).
 >
 >
 
@@ -94,7 +94,7 @@ $authHeader = @{
 
 **Метод**: GET
 
-**Запрос URI**:\/\/https: management.azure.com/subscriptions/*«subscriptionId»*(ресурсгруппы/*«ресурсGroup' /ресурсGroupName»*/провайдеры /*«ресурсА» (ресурсА)*/*(ресурс)»)/провайдеры/microsoft.insights/metricDefinitions?api-version»**{resourceType}*/*(apiVersion)*
+**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}*/*{ResourceType}*/*{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
 
 Например, запрос на получение определений метрик для учетной записи хранения Azure будет выглядеть следующим образом:
 
@@ -238,7 +238,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**Запрос URI**:\:https //management.azure.com/subscriptions/*«подписка-id»*/resourceGroups/*«ресурс-группа-имя»*/провайдеры */поставщики ресурсов-имен»*/*(ресурс-тип) (ресурс-имя)*/*{resource-name}*/провайдеры/microsoft.insights/metrics?metricnames»*(метрика) «метрика»*&время*запуска/конца*&*{apiVersion}*&*&* $filter»
+**URI запроса**: HTTPS\://Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}*/*{ресурс-тип}*/*{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&resultType = метаданные&API-Version =*{apiVersion}*
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -311,7 +311,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**Запрос URI**:\/https: /management.azure.com/subscriptions/*«подписка-id»*/ресурсгруппы/«ресурс-группа-имя» /провайдеры */ресурс-поставщик-имя)*/*(ресурс-тип) (ресурс-имя)*/*{resource-name}*/провайдеры/microsoft.insights/metric s?metricnames *»&* timespan»*(время запуска/энд-время)*&$filter *»фильтр»*&интервал »*»времяГрейн»*&агрегации»*&* api-версии»*(apiVersion)* *{resource-group-name}*
+**URI запроса**: https:\//Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}*/*{Resource-Type}*/*{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&интервал =*{timeGrain}*&агрегат =*{агрегирование}*&API-Version =*{apiVersion}*
 
 Например, чтобы вывести первые 3 API-интерфейса в убывающем порядке по величине показателя "Транзакции" в течение 5-минутного диапазона, где для GeoType установлено значение "Primary", используйте следующий запрос:
 
@@ -390,7 +390,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**Запрос URI**:\/\/https: management.azure.com/subscriptions/*«subscriptionId»*(ресурсгруппы/*«ресурсGroup' /ресурсGroupName»*/провайдеры /*«ресурсА» (ресурсА)*/*(ресурс)»)/провайдеры/microsoft.insights/metricDefinitions?api-version»**{resourceType}*/*(apiVersion)*
+**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}*/*{ResourceType}*/*{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
 
 Например, чтобы получить определения метрик для приложения логики Azure, запрос будет выглядеть следующим образом:
 
@@ -463,7 +463,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**Запрос URI**:`https:\//management.azure.com/subscriptions/\*{subscription-id}*/resourceGroups/*{resource-group-name}*/providers/*{resource-provider-namespace}*/*{resource-type}*/*{resource-name}*/providers/microsoft.insights/metrics?$filter=*{filter}*&api-version=*{apiVersion}*`
+**URI запроса**:`https:\//management.azure.com/subscriptions/\*{subscription-id}*/resourceGroups/*{resource-group-name}*/providers/*{resource-provider-namespace}*/*{resource-type}*/*{resource-name}*/providers/microsoft.insights/metrics?$filter=*{filter}*&api-version=*{apiVersion}*`
 
 Например, запрос для получения точек данных метрики RunsSucceeded в заданном диапазоне времени с интервалом в 1 час будет выглядеть следующим образом.
 
@@ -653,7 +653,7 @@ Version        : 08586982649483762729
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Чтобы получить идентификатор ресурсов для учетной записи хранилища `az storage account show` Azure с помощью CLI Azure, выполните команду, как показано в следующем примере:
+Чтобы получить идентификатор ресурса для учетной записи хранения Azure с помощью Azure CLI, выполните `az storage account show` команду, как показано в следующем примере:
 
 ```azurecli
 az storage account show -g azmon-rest-api-walkthrough -n contosotweets2017
@@ -716,7 +716,7 @@ Invoke-RestMethod -Uri $request `
     -Verbose
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Прочитайте [общие сведения о мониторинге](../../azure-monitor/overview.md).
 * Ознакомьтесь с разделом [Метрики, поддерживаемые Azure Monitor](metrics-supported.md).

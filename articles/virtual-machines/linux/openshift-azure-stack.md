@@ -10,17 +10,17 @@ ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.openlocfilehash: 51abfd1cbb438d0987554040867625f7fb71630b
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81758239"
 ---
 # <a name="deploy-openshift-container-platform-or-okd-in-azure-stack"></a>Развертывание платформы контейнеров OpenShift (OKD) в Azure Stack
 
 Вы можете развернуть OpenShift в Azure Stack. Есть несколько важных различий между Azure и Azure Stack, из-за которых процесс развертывания и функции также будут немного отличаться.
 
-Сейчас поставщик облачных служб Azure не работает в Azure Stack. Это означает, что вы не сможете присоединить диск для организации постоянного хранения в Azure Stack. Вместо этого можно настроить другие варианты хранения, такие как NFS, iSCSI, GlusterFS и т.д. В качестве альтернативы можно включить ЦНС и использовать GlusterFS для постоянного хранения. Если включить CNS, для GlusterFS развертываются три дополнительных узла с дополнительным хранилищем.
+Сейчас поставщик облачных служб Azure не работает в Azure Stack. Это означает, что вы не сможете присоединить диск для организации постоянного хранения в Azure Stack. Вместо этого можно настроить другие параметры хранилища, такие как NFS, iSCSI, Глустерфс и т. д. В качестве альтернативы можно включить CNS и использовать Глустерфс для постоянного хранения. Если включить CNS, для GlusterFS развертываются три дополнительных узла с дополнительным хранилищем.
 
 Для развертывания платформы OpenShift Container Platform (OKD) в Azure Stack можно использовать один из нескольких способов.
 
@@ -63,7 +63,7 @@ ms.locfileid: "81758239"
 
 Инструкции по развертыванию с помощью Azure CLI вы найдете в соответствующем разделе документации по [платформе контейнеров OpenShift](./openshift-container-platform-3x.md) или [OKD](./openshift-okd.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

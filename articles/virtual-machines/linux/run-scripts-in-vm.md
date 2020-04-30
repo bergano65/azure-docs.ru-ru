@@ -8,10 +8,10 @@ ms.author: robreed
 ms.date: 05/02/2018
 ms.topic: article
 ms.openlocfilehash: 9dbfb3e76fe1c0e80dd8020b79f4edd6d32a24a3
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81758583"
 ---
 # <a name="run-scripts-in-your-linux-vm"></a>Запуск сценариев в виртуальной машине Linux
@@ -63,7 +63,7 @@ ms.locfileid: "81758583"
 * Войдите в систему с помощью учетной записи локального пользователя.
 * Можно использовать, когда доступ к виртуальной машине необходим независимо от состояния сети или операционной системы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о различных доступных возможностях, для выполнения сценариев и команд в виртуальных машинах.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/12/2018
 ms.author: guybo
 ms.openlocfilehash: 032b49631c6adb30d4b25f8b82d35dab49ffd3a2
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81757671"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Подготовка виртуальной машины SLES или openSUSE для Azure
@@ -23,7 +23,7 @@ ms.locfileid: "81757671"
 ## <a name="sles--opensuse-installation-notes"></a>Замечания по установке SLES и openSUSE
 * Дополнительные сведения о подготовке Linux для Azure см. в разделе [Общие замечания по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 * Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd.
-* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) могут быть использованы на дисках данных, если предпочтительнее.
+* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) могут использоваться на дисках данных, если они предпочтительны.
 * Не настраивайте раздел подкачки на диске с ОС. Можно настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны далее.
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. См. дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 
@@ -92,7 +92,7 @@ ms.locfileid: "81757671"
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
-16. Нажмите **Action -> Выключите** в Hyper-V Manager. Виртуальный жесткий диск Linux готов к передаче в Azure.
+16. В диспетчере Hyper-V щелкните **действие-> завершить работу** . Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ---
 ## <a name="prepare-opensuse-131"></a>Подготовка openSUSE 13.1+
@@ -156,7 +156,7 @@ ms.locfileid: "81757671"
 12. Убедитесь, что агент Linux для Azure запускается при загрузке:
     
         # sudo systemctl enable waagent.service
-13. Нажмите **Action -> Выключите** в Hyper-V Manager. Виртуальный жесткий диск Linux готов к передаче в Azure.
+13. В диспетчере Hyper-V щелкните **действие-> завершить работу** . Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь виртуальный жесткий диск SUSE Linux можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).

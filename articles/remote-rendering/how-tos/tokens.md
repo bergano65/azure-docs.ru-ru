@@ -1,56 +1,56 @@
 ---
 title: Получение маркеров доступа к службе
-description: Описывает, как создать токены для доступа к ARR REST AIS
+description: Описание создания маркеров для доступа к интерфейсам API служб ARR.
 author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: how-to
 ms.openlocfilehash: fd510f90887353d7486908ee076d5308db72c59d
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81687071"
 ---
 # <a name="get-service-access-tokens"></a>Получение маркеров доступа к службе
 
-Доступ к ARR REST AIS предоставляется только авторизованным пользователям. Чтобы доказать свою авторизацию, необходимо отправить *токен доступа* вместе с запросами REST. Эти токены выдаются *Службой безопасных токенов* (STS) в обмен на ключ к учетной записи. Токены имеют **срок службы 24 часа** и, таким образом, могут быть выданы пользователям, не предоставляя им полный доступ к сервису.
+Доступ к API-интерфейсам служб ARR () предоставляется только для полномочных пользователей. Чтобы доказать свою авторизацию, необходимо отправить *маркер доступа* вместе с запросами на другие запросы. Эти маркеры выдаются *службой маркеров безопасности* (STS) в Exchange для ключа учетной записи. Токены имеют **время существования 24 часов** и поэтому могут выдаваться пользователям без предоставления им полного доступа к службе.
 
 В этой статье описывается, как создать такой маркер доступа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-[Создайте учетную запись ARR,](create-an-account.md)если у вас ее еще нет.
+[Создайте учетную запись arr](create-an-account.md), если она еще не создана.
 
-## <a name="token-service-rest-api"></a>Сервис токенов REST API
+## <a name="token-service-rest-api"></a>REST API службы маркеров
 
-Для создания токенов доступа *служба Secure Token* предоставляет один API REST. URL-адрес службы ARR STS:\//sts.mixedreality.azure.com.
+Для создания маркеров доступа *Служба маркеров безопасности* предоставляет один REST API. URL-адрес для службы STS-обслуживания — HTTPS\/:/STS.mixedreality.Azure.com.
 
-### <a name="get-token-request"></a>Запрос 'Получить токен'
+### <a name="get-token-request"></a>Запрос "получение токена"
 
 | URI | Метод |
 |-----------|:-----------|
-| /счета/**accountId**/token | GET |
+| /аккаунтс/**accountId**/Token | GET |
 
 | Заголовок | Значение |
 |--------|:------|
-| Авторизация | "Bearer **accountId**:**accountKey**" |
+| Авторизация | "Bearer, **accountId**:**accountKey**" |
 
-Замените *accountId* и *accountKey* с соответствующими данными.
+Замените *accountId* и *accountKey* соответствующими данными.
 
-### <a name="get-token-response"></a>Ответ «Получить токен»
+### <a name="get-token-response"></a>Ответ "получить токен"
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 200 | AccessToken: строка | Успешно |
+| 200 | AccessToken: строка | Успех |
 
 | Заголовок | Назначение |
 |--------|:------|
-| МС-CV | Это значение можно использовать для отслеживания вызова в службе |
+| MS-КП | Это значение можно использовать для трассировки вызова в службе |
 
-## <a name="getting-a-token-using-powershell"></a>Получение токена с помощью PowerShell
+## <a name="getting-a-token-using-powershell"></a>Получение маркера с помощью PowerShell
 
-Приведенный ниже код PowerShell демонстрирует, как отправить необходимый запрос REST в STS. Затем он печатает маркер в запросе PowerShell.
+В следующем примере кода PowerShell показано, как отправить в STS необходимый запрос на ОСТАВШУЮся работу. Затем он выводит маркер в командную строку PowerShell.
 
 ```PowerShell
 $accountId = "<account_id_from_portal>"
@@ -63,10 +63,10 @@ $response = ConvertFrom-Json -InputObject $webResponse.Content
 Write-Output "Token: $($response.AccessToken)"
 ```
 
-Скрипт просто печатает маркер на выходе, откуда можно скопировать & вставить его. Для реального проекта, вы должны автоматизировать этот процесс.
+Сценарий просто выводит маркер в выход, откуда его можно скопировать & вставить. Для реальных проектов этот процесс следует автоматизировать.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)
-* [AIS Azure Frontend](../how-tos/frontend-apis.md)
-* [Управление сеансом REST API](../how-tos/session-rest-api.md)
+* [Интерфейсные API Azure](../how-tos/frontend-apis.md)
+* [REST API управления сеансами](../how-tos/session-rest-api.md)

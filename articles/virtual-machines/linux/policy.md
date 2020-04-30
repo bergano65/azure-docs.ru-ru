@@ -1,5 +1,5 @@
 ---
-title: Обеспечение безопасности с помощью политик linux VMs в Azure
+title: Обеспечение безопасности с помощью политик на виртуальных машинах Linux в Azure
 description: Как применить политику к виртуальной машине Azure Resource Manager на основе Linux
 author: mimckitt
 ms.service: virtual-machines-linux
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 08/02/2017
 ms.author: mimckitt
 ms.openlocfilehash: 6eb571ccc8c996a06d3bdf2dda25860df4dc930f
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81759367"
 ---
 # <a name="apply-policies-to-linux-vms-with-azure-resource-manager"></a>Применение политик к виртуальным машинам Linux с помощью Azure Resource Manager
@@ -202,7 +202,7 @@ ms.locfileid: "81759367"
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * После определения правила политики (как показано в приведенных выше примерах) необходимо создать определение политики и назначить ей область. Областью может быть подписка, группа ресурсов или ресурс. Чтобы узнать, как назначать политики, изучите статью о [назначении политик ресурсов и управлении ими с помощью портала Azure](../../governance/policy/assign-policy-portal.md), о [назначении политик с помощью PowerShell](../../governance/policy/assign-policy-powershell.md) или [назначении политик с помощью Azure CLI](../../governance/policy/assign-policy-azurecli.md).
 * Общие сведения о политиках ресурсов см. в статье [Что такое служба "Политика Azure"](../../governance/policy/overview.md).
 * Инструкции по использованию Resource Manager для эффективного управления подписками в организациях см. в статье [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance).

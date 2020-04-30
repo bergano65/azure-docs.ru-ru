@@ -1,21 +1,21 @@
 ---
-title: Как-то подготовьте приложение Java Spring для развертывания в облачности Azure Spring
-description: В этой теме вы подготовьте приложение Java Spring для развертывания в Облачном Облаке Azure Spring.
+title: Как подготовить пружинное приложение Java для развертывания в Azure Веснного облака
+description: В этом разделе вы подготовите пружинное приложение Java для развертывания в Azure Веснного облака.
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 02/03/2020
 ms.author: brendm
 ms.openlocfilehash: 16cee333d52765755b732c4de4dd8a6e092a130d
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81731181"
 ---
 # <a name="prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>подготовке приложения Java Spring для развертывания в Azure Spring Cloud
 
-В этой теме показано, как подготовить существующее приложение Java Spring для развертывания в облачном окноду Azure Spring. При правильной настройке Azure Spring Cloud предоставляет надежные службы для мониторинга, масштабирования и обновления приложения Java Spring Cloud.
+В этом разделе показано, как подготовить существующее пружинное приложение Java для развертывания в Azure Веснного облака. При правильной настройке Azure Spring Cloud предоставляет надежные службы для мониторинга, масштабирования и обновления приложения Java Spring Cloud.
 
 В других примерах объясняется, как развернуть приложение в Azure Spring Cloud, если настроен файл POM. 
 * [Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart-launch-app-portal.md)
@@ -225,7 +225,7 @@ public class GatewayApplication {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой теме вы узнали, как настроить приложение Java Spring для развертывания в облаке Azure Spring. Чтобы узнать, как настроить экземпляр Config Server, смотрите следующую статью.
+В этом разделе вы узнали, как настроить пружинное приложение Java для развертывания в Azure Веснного облака. Сведения о настройке экземпляра сервера конфигурации см. в следующей статье.
 
 > [!div class="nextstepaction"]
 > [Сведения о настройке экземпляра сервера конфигурации](spring-cloud-tutorial-config-server.md).

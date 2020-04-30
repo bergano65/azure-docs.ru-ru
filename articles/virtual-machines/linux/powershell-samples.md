@@ -8,10 +8,10 @@ ms.workload: infrastructure
 ms.date: 03/01/2019
 ms.author: cynthn
 ms.openlocfilehash: 8d7db5fe88890b7f807263e50757e637ad808eb1
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81759323"
 ---
 # <a name="azure-virtual-machine-powershell-samples"></a>Примеры PowerShell для виртуальной машины Azure
@@ -37,5 +37,5 @@ ms.locfileid: "81759323"
 |**Мониторинг виртуальных машин**||
 | [Мониторинг виртуальной машины с помощью журналов Azure Monitor](./../scripts/virtual-machines-linux-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Создает виртуальную машину, устанавливает агент Log Analytics и регистрирует виртуальную машину в рабочей области Log Analytics.  |
 | [Копирование управляемого диска в ту же или другую подписку](../scripts/virtual-machines-linux-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Копирует управляемый диск в ту же или другую подписку, расположенную в том же регионе, что и родительский управляемый диск.
-| [Сбор информации обо всех вс-маховикв в подписке с PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Создает csv, содержащий имя VM, название группы ресурсов, регион, виртуальную сеть, Subnet, частный IP-адрес, тип ОС и публичный IP-адрес виртуальных адресов в предоставленной подписке.
+| [Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Создает CSV-файл, содержащий имя виртуальной машины, имя группы ресурсов, регион, виртуальную сеть, подсеть, частный IP-адрес, тип ОС и общедоступный IP-адрес виртуальных машин в указанной подписке.
 | | |

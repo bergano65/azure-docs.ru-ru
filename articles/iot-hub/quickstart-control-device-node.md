@@ -15,10 +15,10 @@ ms.custom:
 - mqtt
 ms.date: 06/21/2019
 ms.openlocfilehash: 39d136815e3808c907e190773b9303075a5093e6
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81769363"
 ---
 # <a name="quickstart-use-nodejs-to-control-a-device-connected-to-an-azure-iot-hub"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Node.js

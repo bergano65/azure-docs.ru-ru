@@ -1,5 +1,5 @@
 ---
-title: Своп между дисками ОС с помощью CLI '
+title: Переключение между дисками ОС с помощью интерфейса командной строки
 description: Изменение диска операционной системы, используемого виртуальной машиной Azure, с помощью интерфейса командной строки.
 author: cynthn
 ms.service: virtual-machines
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/24/2018
 ms.author: cynthn
 ms.openlocfilehash: a8c879ae56eb22d9817841667d33e37109a4f63d
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81759404"
 ---
 # <a name="change-the-os-disk-used-by-an-azure-vm-using-the-cli"></a>Изменение диска ОС виртуальной машины Azure с помощью интерфейса командной строки

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -9,13 +9,13 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 526d8a6a103e7623bac459004bf9ac79e4927541
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81686982"
 ---
-1. Просмотр соединений в выбранном прямом пиринге.
+1. Просмотр подключений для выбранного прямого пиринга.
     ```powershell
     $directPeering.Connections
 
@@ -31,7 +31,7 @@ ms.locfileid: "81686982"
     SessionStateV6              : None
     ConnectionState             : Active
     ```
-1. Выберите соединение, подключаемым для Peering Service. В этом примере мы будем использовать единственное доступное соединение.
+1. Выберите подключение, которое требуется включить для службы пиринга. В этом примере мы будем использовать только доступное подключение.
     ```powershell
     $directPeering.Connections[1] = $directPeering.Connections[1] | Set-AzPeeringDirectConnectionObject -UseForPeeringService $true
 
@@ -47,12 +47,12 @@ ms.locfileid: "81686982"
     SessionStateV6              : None
     ConnectionState             : Active
     ```
-1. Теперь сохраните изменения, внесенные в прямой пиринг, используя эту команду:
+1. Теперь сохраните изменения, внесенные в прямой пиринг, с помощью следующей команды:
     ```powershell
     $directPeering | Update-AzPeering
     ```
     
-    Вот пример выход:
+    Ниже приведен пример выходных данных:
     
     ```powershell
         Name                 : SeattleDirectPeering

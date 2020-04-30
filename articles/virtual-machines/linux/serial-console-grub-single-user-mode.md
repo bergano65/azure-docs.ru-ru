@@ -1,5 +1,5 @@
 ---
-title: Серийная консоль Azure для GRUB и единого пользовательского режима
+title: Последовательная консоль Azure для GRUB и однопользовательский режим
 description: Использование последовательной консоли Azure для GRUB на виртуальных машинах Azure.
 services: virtual-machines-linux
 author: asinn826
@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: 2aa7110ab4e52fdc5c3804bd27be5f41081fb435
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81758504"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательскому режиму
@@ -177,8 +177,8 @@ SLES автоматически переключается в аварийную
 ### <a name="single-user-mode-in-oracle-linux"></a>Однопользовательский режим в Oracle Linux
 Чтобы включить однопользовательский режим в Oracle Linux, выполните предложенные выше инструкции для RHEL.
 
-## <a name="next-steps"></a>Следующие шаги
-* Основная страница серийной консоли Linux документации находится [здесь](serial-console.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+* Основная страница документации по последовательной консоли для Linux находится [здесь](serial-console.md).
 * Используйте последовательную консоль для [вызовов SysRq и NMI](serial-console-nmi-sysrq.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](../windows/serial-console.md).
 * См. дополнительные сведения о [диагностике загрузки](boot-diagnostics.md).

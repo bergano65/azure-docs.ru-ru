@@ -1,5 +1,5 @@
 ---
-title: Мониторинг операций Azure IoT концентратора (унипраченный) Документы Майкрософт
+title: Мониторинг операций в центре Интернета вещей Azure (не рекомендуется) | Документация Майкрософт
 description: Использование мониторинга операций Центра Интернета вещей Azure для отслеживания состояния операций Центра Интернета вещей в реальном времени.
 author: nberdy
 manager: briz
@@ -10,18 +10,18 @@ ms.date: 03/11/2019
 ms.author: nberdy
 ms.custom: amqp
 ms.openlocfilehash: edbc3431c860794c7cd1dd8e5011c0d7d11d692d
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81732233"
 ---
-# <a name="iot-hub-operations-monitoring-deprecated"></a>Мониторинг операций IoT Hub (унипраженный)
+# <a name="iot-hub-operations-monitoring-deprecated"></a>Мониторинг операций в центре Интернета вещей (не рекомендуется)
 
 Мониторинг операций Центра Интернета вещей позволяет отслеживать состояние операций в Центре Интернета вещей в режиме реального времени. Центр Интернета вещей отслеживает события по нескольким категориям операций. Вы можете выбрать отправку событий из одной или нескольких категорий в конечную точку Центра Интернета вещей для обработки. Вы можете отслеживать данные на наличие ошибок или настроить более сложную обработку на основе закономерностей в данных.
 
 >[!NOTE]
->Мониторинг операций IoT Hub **аунулирован и удален из IoT Hub 10 марта 2019 года.** Сведения о мониторинге операций и работоспособности Центра Интернета вещей см. в статье [Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок](iot-hub-monitor-resource-health.md). Дополнительные сведения о графике удаления функции см. в статье [Monitor your Azure IoT solutions with Azure Monitor and Azure Resource Health](https://azure.microsoft.com/blog/monitor-your-azure-iot-solutions-with-azure-monitor-and-azure-resource-health) (Мониторинг решений Интернета вещей Azure с помощью служб Azure Monitor и "Работоспособность ресурсов Azure").
+>Мониторинг операций центра Интернета вещей **является устаревшим и был удален из центра Интернета вещей 10 марта 2019**. Сведения о мониторинге операций и работоспособности Центра Интернета вещей см. в статье [Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок](iot-hub-monitor-resource-health.md). Дополнительные сведения о графике удаления функции см. в статье [Monitor your Azure IoT solutions with Azure Monitor and Azure Resource Health](https://azure.microsoft.com/blog/monitor-your-azure-iot-solutions-with-azure-monitor-and-azure-resource-health) (Мониторинг решений Интернета вещей Azure с помощью служб Azure Monitor и "Работоспособность ресурсов Azure").
 
 Центр Интернета вещей отслеживает шесть категорий событий:
 
@@ -265,7 +265,7 @@ class Program
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 

@@ -7,18 +7,18 @@ ms.topic: reference
 ms.date: 11/1/2019
 ms.author: brendm
 ms.openlocfilehash: 36e9b272bb4648853829364b22881ab8bec1ff70
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81733044"
 ---
-# <a name="azure-spring-cloud-developer-resources"></a>Ресурсы разработчиков Azure Spring Cloud
+# <a name="azure-spring-cloud-developer-resources"></a>Ресурсы для разработчиков Azure весны в облаке
 
-Как разработчик, вы можете найти следующие ресурсы Azure Spring Cloud полезными:
+Как разработчику, вы можете найти следующие полезные ресурсы Azure весны в облаке:
 
-* [Дорожная карта Azure](https://azure.microsoft.com/updates)
-* [Часто задаваемые вопросы](spring-cloud-faq.md)
+* [Стратегия Azure](https://azure.microsoft.com/updates)
+* [Вопросы и ответы](spring-cloud-faq.md)
 * [Руководство по устранению неполадок](spring-cloud-troubleshoot.md)
 * [Форум MSDN](https://social.msdn.microsoft.com/Forums/home)
 * [Веб-сайт Java Spring Cloud](https://spring.io/)

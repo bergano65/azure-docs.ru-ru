@@ -10,17 +10,17 @@ ms.date: 01/17/2020
 ms.author: robinsh
 ms.custom: mqtt
 ms.openlocfilehash: f376831175840284fdfd15f367542d33ad9f7177
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81759761"
 ---
 # <a name="get-started-with-device-management-python"></a>Начало работы с управлением устройствами (Python)
 
 [!INCLUDE [iot-hub-selector-dm-getstarted](../../includes/iot-hub-selector-dm-getstarted.md)]
 
-В этом учебнике описаны следующие процедуры.
+В этом учебнике демонстрируется выполнение следующих действий:
 
 * Создание экземпляра Центра Интернета вещей на портале Azure и удостоверения устройства в экземпляре Центра Интернета вещей.
 
@@ -36,11 +36,11 @@ ms.locfileid: "81759761"
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-v2-installation-notes.md)]
 
-* Убедитесь, что в брандмауэре открыт порт 8883. Образец устройства в этой статье использует протокол МЗТТ, который общается по порту 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -60,13 +60,13 @@ ms.locfileid: "81759761"
 
 * используете сообщаемые свойства в запросах двойника устройства для определения устройств и времени последней перезагрузки.
 
-1. В запросе команды выполнить следующую команду для установки пакета **azure-iot-устройства:**
+1. В командной строке выполните следующую команду, чтобы установить пакет **Azure-IOT-Device** :
 
     ```cmd/sh
     pip install azure-iot-device
     ```
 
-2. С помощью текстового редактора создайте файл под названием **dmpatterns_getstarted_device.py** в рабочем каталоге.
+2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_device. копировать** в рабочем каталоге.
 
 3. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_device.js**.
 
@@ -77,7 +77,7 @@ ms.locfileid: "81759761"
     from azure.iot.device import IoTHubDeviceClient, MethodResponse
     ```
 
-4. Добавьте **CONNECTION_STRING** переменную. Замените `{deviceConnectionString}` значение заполнителя строкой подключения устройства. Вы скопировали эту строку соединения ранее в [Регистрации нового устройства в концентраторе IoT](#register-a-new-device-in-the-iot-hub).  
+4. Добавьте переменную **CONNECTION_STRING** . Замените значение `{deviceConnectionString}` заполнителя строкой подключения устройства. Вы скопировали эту строку подключения ранее в раздел [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).  
 
     ```python
     CONNECTION_STRING = "{deviceConnectionString}"
@@ -143,7 +143,7 @@ ms.locfileid: "81759761"
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 
-## <a name="get-the-iot-hub-connection-string"></a>Получите строку соединения концентратора IoT
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
 
 [!INCLUDE [iot-hub-howto-device-management-shared-access-policy-text](../../includes/iot-hub-howto-device-management-shared-access-policy-text.md)]
 
@@ -153,13 +153,13 @@ ms.locfileid: "81759761"
 
 В этом разделе вы создадите консольное приложение Python, которое инициирует удаленное обновление устройства с помощью прямого метода. Приложение использует запросы двойника устройства для определения времени последней перезагрузки этого устройства.
 
-1. В запросе команды выполнить следующую команду для установки пакета **azure-iot-hub:**
+1. В командной строке выполните следующую команду, чтобы установить пакет **Azure-IOT-Hub** :
 
     ```cmd/sh
     pip install azure-iot-hub
     ```
 
-2. С помощью текстового редактора создайте файл под названием **dmpatterns_getstarted_service.py** в рабочем каталоге.
+2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_service. копировать** в рабочем каталоге.
 
 3. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_service.py**.
 
@@ -170,7 +170,7 @@ ms.locfileid: "81759761"
     from azure.iot.hub.models import CloudToDeviceMethod, CloudToDeviceMethodResult, Twin
     ```
 
-4. Добавьте следующие объявления переменных. Замените `{IoTHubConnectionString}` значение заполнителя строкой подключения концентратора IoT, скопированной ранее в [строке подключения концентратора YouT.](#get-the-iot-hub-connection-string) Замените `{deviceId}` значение заполнителя идентификатором устройства, зарегистрированным в [Регистрации нового устройства в концентраторе IoT.](#register-a-new-device-in-the-iot-hub)
+4. Добавьте следующие объявления переменных. Замените значение `{IoTHubConnectionString}` заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string). Замените значение `{deviceId}` заполнителя идентификатором устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
 
     ```python
     CONNECTION_STRING = "{IoTHubConnectionString}"
@@ -239,7 +239,7 @@ ms.locfileid: "81759761"
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
-Теперь вы готовы к запуску приложений.
+Теперь все готово для запуска приложений.
 
 1. В командной строке выполните следующую команду, чтобы начать прослушивание прямого метода перезагрузки.
 
@@ -255,12 +255,12 @@ ms.locfileid: "81759761"
 
 3. В консоли отобразится ответ устройства на прямой метод.
 
-   Ниже показан актак устройства на метод перезагрузки:
+   Ниже показан ответ устройства на прямой метод reboot:
 
-   ![Вывод приложения с моделируемым устройством](./media/iot-hub-python-python-device-management-get-started/device.png)
+   ![Выходные данные приложения имитации устройства](./media/iot-hub-python-python-device-management-get-started/device.png)
 
-   Ниже показана служба вызова перезагрузки прямого метода и опроса устройства близнеца для статуса:
+   Ниже показана служба, вызывающая прямой метод перезагрузки и выполняющая опрос двойникаа устройства для состояния:
 
-   ![Выход службы перезагрузки триггера](./media/iot-hub-python-python-device-management-get-started/service.png)
+   ![Вывод запуска службы перезагрузки](./media/iot-hub-python-python-device-management-get-started/service.png)
 
 [!INCLUDE [iot-hub-dm-followup](../../includes/iot-hub-dm-followup.md)]

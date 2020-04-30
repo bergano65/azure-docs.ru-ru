@@ -1,6 +1,6 @@
 ---
 title: Рекомендации по безопасности для виртуальных машин Linux в Azure
-description: Применяйте эти рекомендации для выполнения обязательств по обеспечению безопасности, описанных в модели общей ответственности, и для повышения общей безопасности ваших развертываний.
+description: Используйте эти рекомендации для удовлетворения обязательств по безопасности, описанных в модели общей ответственности, и для повышения общей безопасности развертываний.
 author: msmbaldwin
 manager: RKarlin
 ms.service: virtual-machines
@@ -11,10 +11,10 @@ ms.author: mbaldwin
 ms.custom: security-recommendations
 ms.reviewer: cynthn
 ms.openlocfilehash: 8a0d43c4401fa3fd2bb8ba504e42edc6324675e8
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81758518"
 ---
 # <a name="security-recommendations-for-linux-virtual-machines-in-azure"></a>Рекомендации по безопасности для виртуальных машин Linux в Azure

@@ -1,6 +1,6 @@
 ---
-title: Используйте внутренние DNS для разрешения имени VM с помощью Azure CLI
-description: Как создать виртуальные карты сетевого интерфейса и использовать внутренние DNS для разрешения имени VM в Azure с Azure CLI.
+title: Использование внутренней службы DNS для разрешения имен виртуальных машин с помощью Azure CLI
+description: Как создать виртуальные сетевые карты и использовать внутренние DNS для разрешения имен виртуальных машин в Azure с помощью Azure CLI.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: networking
@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/16/2017
 ms.author: cynthn
 ms.openlocfilehash: 07a78e4987a844627824ac5034046cf6a393ad8d
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81757849"
 ---
 # <a name="create-virtual-network-interface-cards-and-use-internal-dns-for-vm-name-resolution-on-azure"></a>Создание виртуальных сетевых карт и использование внутренних DNS-имен для разрешения имен виртуальных машин в Azure
@@ -21,11 +21,11 @@ ms.locfileid: "81757849"
 
 Для этого необходимы следующие компоненты:
 
-* [учетная запись Azure](https://azure.microsoft.com/pricing/free-trial/)
+* [Учетная запись Azure;](https://azure.microsoft.com/pricing/free-trial/)
 * [файлы открытого и закрытого ключа SSH](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="quick-commands"></a>Быстрые команды
-Если вам необходимо быстро выполнить задачу, в следующем разделе описаны нужные команды. Более подробную информацию и контекст для каждого шага можно найти в остальной части документа, [начиная здесь](#detailed-walkthrough). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
+Если вам необходимо быстро выполнить задачу, в следующем разделе описаны нужные команды. Более подробные сведения и контекст для каждого шага можно найти в оставшейся части документа, начиная с [этой статьи](#detailed-walkthrough). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
 Предварительные требования: группа ресурсов, виртуальная сеть и подсеть, группа безопасности сети с разрешенными входящими подключениями SSH.
 
@@ -156,6 +156,6 @@ az vm create \
 
 Используя флаги командной строки для вызова существующих ресурсов, мы укажем среде Azure развернуть виртуальную машину в существующей сети. После развертывания виртуальную сеть и подсеть можно оставить в качестве статических или постоянных ресурсов в регионе Azure для повторного развертывания.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание полной среды Linux с помощью интерфейса командной строки Azure](create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Создание Linux VM на Azure с помощью шаблонов](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Создание виртуальной машины Linux в Azure с помощью шаблонов](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

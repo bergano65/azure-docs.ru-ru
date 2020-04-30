@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: dsindona
 ms.openlocfilehash: 2fa67d81546db86535c179a9c59d0602c1175cba
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81687492"
 ---
 # <a name="virtual-machine-offer-publishing-guide"></a>Руководство по публикации предложения "Виртуальная машина"
@@ -31,7 +31,7 @@ ms.locfileid: "81687492"
 
 Чтобы приступить к работе, свяжитесь с нами по адресу [amp-testdrive](mailto:amp-testdrive@microsoft.com). 
 
-|Требования  |Сведения |
+|Requirements (Требования)  |Сведения |
 |---------|---------|
 | У вас есть приложение Marketplace   |    Одна или несколько виртуальных машин, развернутых через приложения IaaS или SaaS.      |
 
@@ -56,15 +56,15 @@ ms.locfileid: "81687492"
 | Совместимый с Azure виртуальный жесткий диск (VHD) | Виртуальные машины должны быть созданы на платформе Windows или Linux. <ul> <li>Дополнительные сведения о создании виртуального жесткого диска Linux см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).</li> <li>Дополнительные сведения о создании виртуального жесткого диска Windows см. в статье [Создание виртуального жесткого диска, совместимого с Azure](./partner-center-portal/azure-vm-create-offer.md).</li> </ul> |  
 
 >[!Note]
->Поставщики облачных решений (CSP) партнеров канала отказ в 100 000.  Пожалуйста, ознакомьтесь с информацией о компании [Cloud Solution Providers,](./cloud-solution-providers.md) чтобы получить дополнительную информацию о маркетинге вашего предложения по каналам партнеров Microsoft CSP.
+>Вы можете получить доступ к партнерским каналам поставщика облачных решений (CSP).  Дополнительные сведения о маркетинге вашего предложения с помощью партнерских каналов Microsoft CSP см. в статье [поставщики облачных решений](./cloud-solution-providers.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если это еще не сделано, 
 
-- [Узнайте](https://azuremarketplace.microsoft.com/sell) больше о рынке.
+- [Сведения](https://azuremarketplace.microsoft.com/sell) о Marketplace.
 
 Если вы зарегистрированы и создаете предложение или работаете над существующим,
 
-- [Войдите в Центр Партнеров,](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) чтобы создать или завершить свое предложение.
-- Смотрите [создать виртуальное предложение машины](./partner-center-portal/azure-vm-create-offer.md) для получения дополнительной информации.
+- [Войдите в центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать или завершить свое предложение.
+- Дополнительные сведения см. [в разделе Создание предложения виртуальной машины](./partner-center-portal/azure-vm-create-offer.md) .
