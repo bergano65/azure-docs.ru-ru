@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 03/05/2020
 ms.author: hahamil
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: c3c12f78118734c31641b90e6fcb8469ddda30b0
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: c645ab45711698e4a6f582678e2a850e15dea62a
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81678007"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181602"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-angular-single-page-application"></a>Руководство по входу пользователей в систему и вызову API Microsoft Graph из одностраничного приложения Angular
 
@@ -36,16 +36,12 @@ ms.locfileid: "81678007"
 
 ![Схема работы примера приложения, создаваемого в этом учебнике](media/active-directory-develop-guidedsetup-javascriptspa-introduction/javascriptspa-intro.svg)
 
-<!--start-collapse-->
 ### <a name="more-information"></a>Дополнительные сведения
 
 Пример приложения, созданный по инструкциям из этого руководства, позволяет одностраничному приложению Angular выполнять запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки платформы удостоверений Майкрософт. MSAL для библиотеки Angular является программой-оболочкой базовой библиотеки MSAL.js. Она позволяет приложениям Angular (6 и более поздних версий) выполнять проверку подлинности корпоративных пользователей с помощью Microsoft Azure Active Directory (AAD), пользователей учетных записей Microsoft (MSA) и пользователей социальных сетей (Facebook, Google, LinkedIn и т. п.). Библиотека также позволяет приложениям получать доступ к облачным службам (Майкрософт) или Microsoft Graph.
 
 В этом сценарии после входа пользователя в систему маркер доступа запрашивается и добавляется в HTTP-запросы с использованием заголовка авторизации. Получение и обновление маркера выполняются MSAL.
 
-<!--end-collapse-->
-
-<!--start-collapse-->
 ### <a name="libraries"></a>Библиотеки
 
 В этом учебнике используется следующая библиотека:
@@ -55,9 +51,6 @@ ms.locfileid: "81678007"
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|Библиотека проверки подлинности Майкрософт для программы-оболочки JavaScript Angular|
 
 Исходный код библиотеки msal.js можно найти в репозитории [AzureAD/microsoft-authentication-library-for-js](https://github.com/AzureAD/microsoft-authentication-library-for-js) на сайте GitHub.
-
-<!--end-collapse-->
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -335,10 +328,7 @@ logout() {
 
 ![Окно "Запрошенные разрешения"](media/active-directory-develop-guidedsetup-javascriptspa-test/javascriptspaconsent.png)
 
-
-
-<!--start-collapse-->
-### <a name="add-scopes-and-delegated-permissions"></a>Добавление областей и делегированных разрешений
+## <a name="add-scopes-and-delegated-permissions"></a>Добавление областей и делегированных разрешений
 
 Для чтения профиля пользователя API Microsoft Graph требуется область *user.read*. По умолчанию эта область автоматически добавляется в каждое приложение, зарегистрированное на портале регистрации. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера, могут потребоваться дополнительные области. Например, для отображения списка календарей пользователя для API Microsoft Graph требуется область *Calendars.Read*.
 
@@ -348,8 +338,6 @@ logout() {
 >При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
 
 Если серверному API не требуется область (мы не рекомендуем использовать такую конфигурацию), вы можете применять в вызовах *clientId* в качестве области для получения маркеров.
-
-<!--end-collapse-->
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 

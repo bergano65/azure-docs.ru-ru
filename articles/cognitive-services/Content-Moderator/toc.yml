@@ -10,14 +10,8 @@
   items:
     - name: Пробная версия Content Moderator в Интернете
       href: quick-start.md
-    - name: С помощью клиентского пакета SDK
-      items:
-        - name: С помощью пакета SDK для .NET
-          href: dotnet-sdk-quickstart.md
-        - name: С помощью пакета SDK для Python
-          href: python-sdk-quickstart.md
-        - name: Использование пакета SDK для Java
-          href: java-sdk-quickstart.md
+    - name: Использование клиентской библиотеки
+      href: client-libraries.md
 - name: Учебники
   items:
     - name: Модерация изображений для электронной коммерции

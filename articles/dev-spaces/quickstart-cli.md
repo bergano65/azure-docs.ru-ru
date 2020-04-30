@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве показано, как использовать Azure Dev Spaces и командную строку для разработки приложения в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 8ee5cba06d9a526640d9057ee88a681d46392f4f
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 337c3cb139e1fe0c35344e49271503b98a59fa7b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80239696"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166008"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Разработка приложения в Kubernetes с помощью Azure Dev Spaces
 Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -107,12 +107,12 @@ Step 7/8 : COPY . .
 Step 8/8 : CMD ["npm", "start"]
 Built container image in 6m 17s
 Waiting for container...13s
-Service 'webfrontend' port 'http' is available at http://webfrontend.1234567890abcdef1234.eus.azds.io/
+Service 'webfrontend' port 'http' is available at `http://webfrontend.1234567890abcdef1234.eus.azds.io/`
 Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
+Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *`http://webfrontend.1234567890abcdef1234.eus.azds.io/`* .
 
 > [!NOTE]
 > При переходе к службе во время выполнения `azds up` сведения о трассировке HTTP-запросов также отображаются в выходных данных команды `azds up`. Такая трассировка поможет вам в устранении проблем и отладке службы. Ее можно отключить с помощью команды `--disable-http-traces` при запуске `azds up`.

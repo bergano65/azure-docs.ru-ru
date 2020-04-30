@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: overview
-ms.custom: hdinsightactive,hdiseo17may2017
+ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: e977d4d68a330f57c4b53da4270e4515d4e69ee0
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: afbf9aff09999a34a84d55634a868250fbb6d1ff
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81729825"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82188966"
 ---
 # <a name="what-is-apache-hbase-in-azure-hdinsight"></a>Общие сведения об Apache HBase в Azure HDInsight
 

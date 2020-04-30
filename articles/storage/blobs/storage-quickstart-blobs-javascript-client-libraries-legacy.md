@@ -9,12 +9,12 @@ ms.author: mhopkins
 ms.date: 01/24/2020
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 5219af0ec343a6e7f87a07e4a7280ac5f4e85cd3
-ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
+ms.openlocfilehash: 920d3d6c1cfc928efa5daa2d6c0aa3a6b4e81375
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80619114"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82161131"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -28,7 +28,7 @@ ms.locfileid: "80619114"
 - Учетная запись хранения Azure. [Создание учетной записи хранения](../common/storage-account-create.md).
 - Локальный веб-сервер. В примере из этой статьи для открытия основного сервера используется [Node.js](https://nodejs.org).
 - [Visual Studio Code](https://code.visualstudio.com).
-- Расширение VS Code для отладки в браузере, например [отладчик для Chrome](vscode:extension/msjsdiag.debugger-for-chrome) или [отладчик для Microsoft Edge](vscode:extension/msjsdiag.debugger-for-edge).
+- Расширение VS Code для отладки в браузере, например [отладчик для Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) или [отладчик для Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge).
 
 ## <a name="setting-up-storage-account-cors-rules"></a>Настройка учетных записей хранения CORS
 
@@ -94,7 +94,7 @@ az storage account generate-sas \
 
 ## <a name="implement-the-html-page"></a>Реализация страницы HTML
 
-В этом разделе вы создадите базовую веб-страницу и настроите VS Code для запуска и отладки этой страницы. Перед запуском, тем не менее, необходимо будет использовать Node.js, чтобы запустить локальный веб-сервер и обслуживать страницу, когда браузер ее запрашивает. Далее вы добавите код JavaScript для вызова различных интерфейсов API хранилища BLOB-объектов и отображения результатов на странице. Также вы сможете просмотреть результаты этих вызовов на [портале Azure](https://portal.azure.com), в [Обозревателе службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer) и [расширении службы хранилища Azure](vscode:extension/ms-azuretools.vscode-azurestorage) для VS Code.
+В этом разделе вы создадите базовую веб-страницу и настроите VS Code для запуска и отладки этой страницы. Перед запуском, тем не менее, необходимо будет использовать Node.js, чтобы запустить локальный веб-сервер и обслуживать страницу, когда браузер ее запрашивает. Далее вы добавите код JavaScript для вызова различных интерфейсов API хранилища BLOB-объектов и отображения результатов на странице. Также вы сможете просмотреть результаты этих вызовов на [портале Azure](https://portal.azure.com), в [Обозревателе службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer) и [расширении службы хранилища Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage) для VS Code.
 
 ### <a name="set-up-the-web-application"></a>Настройка веб-приложения
 

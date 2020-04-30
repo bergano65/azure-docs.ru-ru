@@ -8,12 +8,12 @@ keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, 
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: 5d0d1541600f4c10b021d5d7f7f435f1aa5ae589
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e6fa490285582c827b8704496fb7a20a7eb9cfbc
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80239718"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166025"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio--net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -89,12 +89,12 @@ Built container image in 39s
 Waiting for container...
 36s
 
-Service 'webfrontend' port 'http' is available at http://default.webfrontend.1234567890abcdef1234.eus.azds.io/
+Service 'webfrontend' port 'http' is available at `http://default.webfrontend.1234567890abcdef1234.eus.azds.io/`
 Service 'webfrontend' port 80 (http) is available at http://localhost:62266
 Completed warmup for project 'webfrontend' in 125 seconds.
 ```
 
-В нашем примере используется такой общедоступный URL-адрес: http://default.webfrontend.1234567890abcdef1234.eus.azds.io/. 
+В нашем примере используется такой общедоступный URL-адрес: `http://default.webfrontend.1234567890abcdef1234.eus.azds.io/`. 
 
 Выберите **Отладка** затем **Начать отладку**. Через несколько секунд служба запустится, и Visual Studio откроет браузер с общедоступным URL-адресом службы. Если браузер не открывается автоматически, перейдите в браузер по общедоступному URL-адресу службы, запущенной в вашем пространстве разработки, и проверьте ее работу.
 

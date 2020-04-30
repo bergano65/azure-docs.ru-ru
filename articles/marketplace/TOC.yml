@@ -38,9 +38,9 @@
               href: ./marketplace-containers.md
             - name: Модули IoT Edge
               href: ./iot-edge-module.md
-            - name: Консультационная услуга
+            - name: Консультационные услуги
               href: ./consulting-services.md
-            - name: "Руководство по публикации в Office\_365, Dynamics\_365 и Power\_BI"
+            - name: "Office\_365, Dynamics\_365 и Power BI"
               href: ./appsource-offer-publishing-guide.md
             - name: Включение описания в AppSource и Marketplace с помощью Azure Active Directory
               href: ./enable-appsource-marketplace-using-azure-ad.md
@@ -69,7 +69,7 @@
         - name: Поддержка коммерческой платформы
           href: ./support-azure-marketplace.md
           items:
-            - name: Вопросы и ответы о Marketplace
+            - name: Часто задаваемые вопросы о Marketplace
               href: ./marketplace-faq-publisher-guide.md
             - name: Географическая доступность и валюты
               href: ./marketplace-geo-availability-currencies.md
@@ -559,6 +559,8 @@
       href: ./partner-center-portal/publishing-status.md
     - name: Обновление существующих предложений
       href: ./partner-center-portal/update-existing-offer.md
+    - name: Активация преимуществ
+      href: ./partner-center-portal/marketplace-rewards.md
     - name: Варианты поддержки
       href: ./partner-center-portal/support.md
     - name: Аналитика Центра партнеров

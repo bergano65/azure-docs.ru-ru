@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 52b7c582848dd24f6d9963a9d37c8f12c5db6149
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 6f0253490d39e69d491dd5fd3ab0d0d0a32d47bb
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81678026"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181568"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -32,14 +32,10 @@ ms.locfileid: "81678026"
 
 ![Схема работы примера приложения, создаваемого в этом кратком руководстве](media/active-directory-develop-guidedsetup-javascriptspa-introduction/javascriptspa-intro.svg)
 
-<!--start-collapse-->
 ### <a name="more-information"></a>Дополнительные сведения
 
 Пример приложения, созданный с помощью этого руководства, позволяет одностраничному приложению JavaScript выполнять запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки платформы удостоверений Майкрософт. В этом сценарии после входа пользователя в систему маркер доступа запрашивается и добавляется в HTTP-запросы с использованием заголовка авторизации. Этот маркер будет использоваться для получения профиля пользователя и почтовых сообщений через **API Microsoft Graph**. Получение маркера и его обновление выполняет **библиотека проверки подлинности Майкрософт** (MSAL).
 
-<!--end-collapse-->
-
-<!--start-collapse-->
 ### <a name="libraries"></a>Библиотеки
 
 В этом руководстве используется следующая библиотека:
@@ -47,8 +43,6 @@ ms.locfileid: "81678026"
 |Библиотека|Описание|
 |---|---|
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|MSAL для JavaScript|
-
-<!--end-collapse-->
 
 ## <a name="set-up-your-web-server-or-project"></a>Настройка веб-сервера или проекта
 
@@ -400,7 +394,6 @@ ms.locfileid: "81678026"
    }
    ```
 
-<!--start-collapse-->
 ### <a name="more-information"></a>Дополнительные сведения
 
 Когда пользователь впервые нажимает кнопку **Войти**, метод `signIn` вызывает `loginPopup`, чтобы пользователь мог выполнить вход. Этот метод открывает всплывающее окно с *конечной точкой платформы удостоверений Майкрософт*, чтобы запросить и проверить учетные данные пользователя. После успешного входа пользователь перенаправляется обратно на исходную страницу *index.html*. Полученный маркер обрабатывается в `msal.js`, а сведения из него кэшируются. Этот маркер известен как *маркер идентификатора*. Он содержит основные сведения о пользователе, такие как отображаемое имя пользователя. Если вы планируете использовать какие-либо данные, предоставляемые этим маркером, то необходимо убедиться, что маркер проверен внутренним сервером. Это позволит гарантировать, что маркер был выдан допустимому пользователю для вашего приложения.
@@ -427,7 +420,6 @@ ms.locfileid: "81678026"
 
 > [!NOTE]
 > В этом кратком руководстве по умолчанию используются методы `loginPopup` и `acquireTokenPopup`. Если в качестве браузера вы используете Internet Explorer, мы рекомендуем использовать методы `loginRedirect` и `acquireTokenRedirect` в связи с [известной проблемой](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues) со способом работы всплывающих окон Internet Explorer. Если вы хотите узнать, как добиться того же результата с помощью `Redirect methods`, см. [эту страницу](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/blob/quickstart/JavaScriptSPA/authRedirect.js).
-<!--end-collapse-->
 
 ## <a name="call-the-microsoft-graph-api-by-using-the-token-you-just-acquired"></a>Вызов API Microsoft Graph с помощью полученного маркера
 
@@ -466,13 +458,9 @@ ms.locfileid: "81678026"
    }
    ```
 
-<!--start-collapse-->
-
 ### <a name="more-information-about-making-a-rest-call-against-a-protected-api"></a>Дополнительные сведения о вызове REST через защищенный API
 
 В примере приложения, созданном с помощью этого руководства, метод `callMSGraph()` выполняет HTTP-запрос `GET` к защищенному ресурсу, которому требуется маркер. Затем метод возвращает содержимое вызывающему объекту. Этот метод добавляет полученный маркер в *заголовок авторизации HTTP*. Для примера приложения, созданного с помощью этого руководства, ресурсом является конечная точка *me* из API Microsoft Graph, которая отображает сведения о профиле пользователя.
-
-<!--end-collapse-->
 
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -502,7 +490,6 @@ ms.locfileid: "81678026"
 
 ![Результаты после вызова Microsoft API Graph](media/active-directory-develop-guidedsetup-javascriptspa-test/javascriptsparesults.png)
 
-<!--start-collapse-->
 ### <a name="more-information-about-scopes-and-delegated-permissions"></a>Дополнительные сведения об областях и делегированных разрешениях
 
 Для чтения профиля пользователя API Microsoft Graph требуется область *user.read*. По умолчанию эта область автоматически добавляется в каждое приложение, зарегистрированное на портале регистрации. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера, могут потребоваться дополнительные области. Например, для отображения почтового списка пользователя API Microsoft Graph требуется область *Mail.Read*.
@@ -511,7 +498,5 @@ ms.locfileid: "81678026"
 > При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
 
 Если серверному API не требуется область (мы не рекомендуем использовать такую конфигурацию), вы можете применять в вызовах *clientId* в качестве области для получения маркеров.
-
-<!--end-collapse-->
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

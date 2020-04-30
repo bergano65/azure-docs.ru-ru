@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: aahi
 ms.reviewer: sumeh, assafi
-ms.openlocfilehash: 0cfe651a91cc16e7d4b58af67dac29fe5106a48c
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 8bcc919aee7548e8596d1f44c8a357d3f84dfb14
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80986731"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82096016"
 ---
 <a name="HOLTop"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "80986731"
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [Node.js](https://nodejs.org/).
-* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank">созданию ресурса Анализа текста<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
@@ -61,7 +61,7 @@ npm init
 Установите пакеты NPM `@azure/ai-text-analytics`:
 
 ```console
-npm install --save @azure/ai-text-analytics@1.0.0-preview.3
+npm install --save @azure/ai-text-analytics@1.0.0-preview.4
 ```
 
 > [!TIP]
@@ -88,7 +88,7 @@ npm install --save @azure/cognitiveservices-textanalytics
 ```javascript
 "use strict";
 
-const { TextAnalyticsClient, TextAnalyticsApiKeyCredential } = require("@azure/ai-text-analytics");
+const { TextAnalyticsClient, AzureKeyCredential } = require("@azure/ai-text-analytics");
 ```
 
 #### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
@@ -106,7 +106,7 @@ const { TextAnalyticsClient, CognitiveServicesCredential } = require("@azure/cog
 
 ```javascript
 const key = '<paste-your-text-analytics-key-here>';
-const endpoint = `<paste-your-text-analytics-endpoint-here>`;
+const endpoint = '<paste-your-text-analytics-endpoint-here>';
 ```
 
 ## <a name="object-model"></a>Объектная модель
@@ -133,7 +133,7 @@ const endpoint = `<paste-your-text-analytics-endpoint-here>`;
 Создайте новый объект `TextAnalyticsClient`, используя в качестве параметров ключ и конечную точку.
 
 ```javascript
-const textAnalyticsClient = new TextAnalyticsClient(endpoint,  new TextAnalyticsApiKeyCredential(key));
+const textAnalyticsClient = new TextAnalyticsClient(endpoint,  new AzureKeyCredential(key));
 ```
 
 #### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
@@ -266,7 +266,6 @@ Document ID: 3 , Language: Chinese_Simplified
 
 > [!NOTE]
 > В версии `3.0-preview`:
-> * NER содержит отдельные методы для обнаружения персональных данных. 
 > * Связывание сущностей — это отдельный запрос, отличный от NER.
 
 Создайте массив строк, содержащий документ, который следует проанализировать. Вызовите метод клиента `recognizeEntities()` и получите объект `RecognizeEntitiesResult`. Выполните итерацию по списку результатов и выведите имя сущности, тип, подтип, смещение, длину и оценку.
@@ -318,40 +317,6 @@ Document ID: 1
         Score: 0.8
         Name: Seattle   Category: Location      Subcategory: GPE
         Score: 0.31
-```
-
-## <a name="using-ner-to-detect-personal-information"></a>Использование NER для обнаружения персональных данных
-
-Создайте массив строк, содержащий документ, который следует проанализировать. Вызовите метод клиента `recognizePiiEntities()` и получите объект `EntitiesBatchResult`. Выполните итерацию по списку результатов и выведите имя сущности, тип, подтип, смещение, длину и оценку.
-
-
-```javascript
-async function entityPiiRecognition(client){
-
-    const entityPiiInput = [
-        "Insurance policy for SSN on file 123-12-1234 is here by approved."
-    ];
-    const entityPiiResults = await client.recognizePiiEntities(entityPiiInput);
-
-    entityPiiResults.forEach(document => {
-        console.log(`Document ID: ${document.id}`);
-        document.entities.forEach(entity => {
-            console.log(`\tName: ${entity.text} \tCategory: ${entity.category} \tSubcategory: ${entity.subCategory ? entity.subCategory : "N/A"}`);
-            console.log(`\tScore: ${entity.score}`);
-        });
-    });
-}
-entityPiiRecognition(textAnalyticsClient);
-```
-
-Выполните код с помощью `node index.js` в окне консоли.
-
-### <a name="output"></a>Выходные данные
-
-```console
-Document ID: 0
-        Name: 123-12-1234       Category: U.S. Social Security Number (SSN)     Subcategory: N/A
-        Score: 0.85
 ```
 
 ## <a name="entity-linking"></a>Связывание сущностей

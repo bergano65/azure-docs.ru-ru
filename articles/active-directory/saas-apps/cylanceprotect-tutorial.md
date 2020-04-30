@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/10/2020
+ms.date: 04/27/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1df0a295cb48925587e9741fa29d4d02376441a8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4a6ec5896a1bb6ae723d84ef6453522861f83d16
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76983509"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82183965"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cylanceprotect"></a>Руководство по Интеграция единого входа Azure Active Directory с CylancePROTECT
 
@@ -148,7 +148,7 @@ ms.locfileid: "76983509"
 
 ## <a name="configure-cylanceprotect-sso"></a>Настройка единого входа в CylancePROTECT
 
-Чтобы настроить единый вход на стороне **CylancePROTECT**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки CylancePROTECT](mailto:Ibrahim.nafea@toyota.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах. Дополнительные сведения см. в документации по Cylance: [https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4](https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4).
+Чтобы настроить единый вход на стороне **CylancePROTECT**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки CylancePROTECT](https://www.cylance.com/resources/support/support-overview.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах. Дополнительные сведения см. в документации по Cylance: [https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4](https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4).
 
 ### <a name="create-cylanceprotect-test-user"></a>Создание тестового пользователя CylancePROTECT
 

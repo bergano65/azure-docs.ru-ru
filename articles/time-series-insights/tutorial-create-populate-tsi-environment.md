@@ -7,20 +7,21 @@ ms.author: dpalled
 manager: cshankar
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 02/03/2020
+ms.date: 04/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7bebc9e682f5156fa235b77ff020e502695a28be
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 47cee660114ba0b19b952015b1fecff8c85d2c25
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76981197"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189221"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство по Создание среды службы "Аналитика временных рядов Azure"
 
 Это руководство поможет создать среду Аналитики временных рядов Azure, заполненную данными из имитированных устройств. В этом руководстве описано следующее.
 
 > [!div class="checklist"]
+>
 > * Создайте среду "Аналитика временных рядов".
 > * Создание решения для имитации устройств, содержащего Центр Интернета вещей.
 > * Подключение среды Аналитики временных рядов к центру Интернета вещей.
@@ -59,7 +60,7 @@ ms.locfileid: "76981197"
 
    [![Запуск акселератора "Имитация устройств"](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-landing-page.png)](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-landing-page.png#lightbox)
 
-1.  Щелкните **Попробовать сейчас**. Затем введите необходимые параметры на странице **Создание решения для имитации устройств**.
+1. Щелкните **Попробовать сейчас**. Затем введите необходимые параметры на странице **Создание решения для имитации устройств**.
 
    Параметр|Описание
    ---|---
@@ -72,7 +73,7 @@ ms.locfileid: "76981197"
 
    [![Подготовка решения для имитации устройств](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-configuration.png)](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-configuration.png#lightbox)
 
-1. Когда подготовка завершится, вы увидите два обновления со сведениями о том, что состояние развертывания изменилось с **Подготовка** на **Готово**. 
+1. Когда подготовка завершится, вы увидите два обновления со сведениями о том, что состояние развертывания изменилось с **Подготовка** на **Готово**.
 
    >[!IMPORTANT]
    > Пока не используйте акселератор решений! Оставьте эту веб-страницу открытой, так как она вам понадобится позже.
@@ -87,9 +88,9 @@ ms.locfileid: "76981197"
 
 Затем создайте среду Аналитики временных рядов в подписке Azure, сделав следующее.
 
-1. Войдите на [портал Azure](https://portal.azure.com), используя учетную запись подписки Azure. 
-1. Щелкните **+ Создать ресурс** слева вверху. 
-1. Выберите категорию **Интернет вещей**, а затем щелкните **Аналитика временных рядов**. 
+1. Войдите на [портал Azure](https://portal.azure.com), используя учетную запись подписки Azure.
+1. Щелкните **+ Создать ресурс** слева вверху.
+1. Выберите категорию **Интернет вещей**, а затем щелкните **Аналитика временных рядов**.
 
    [![Выбор ресурса среды Time Series Insights](media/tutorial-create-populate-tsi-environment/tsi-create-new-environment.png)](media/tutorial-create-populate-tsi-environment/tsi-create-new-environment.png#lightbox)
 
@@ -114,7 +115,7 @@ ms.locfileid: "76981197"
 
    Наконец, выберите **Просмотр + создание**.
 
-1. Используйте панель **Уведомления**, чтобы отслеживать выполнение развертывания. 
+1. Используйте панель **Уведомления**, чтобы отслеживать выполнение развертывания.
 
    [![Успешное развертывание среды Аналитики временных рядов](media/tutorial-create-populate-tsi-environment/create-resource-tsi-deployment-succeeded.png)](media/tutorial-create-populate-tsi-environment/create-resource-tsi-deployment-succeeded.png#lightbox)
 
@@ -142,7 +143,7 @@ ms.locfileid: "76981197"
    **Частота получения телеметрии** | Введите `10` секунд.
    **Длительность имитации** | Выберите **End in:** (Завершается через) и введите `5` минут.
 
-   По завершении выберите **Start Simulation** (Запустить имитацию). Имитация выполняется в течение 5 минут. Каждые 10 секунд создаются данные из 1000 имитированных устройств. 
+   По завершении выберите **Start Simulation** (Запустить имитацию). Имитация выполняется в течение 5 минут. Каждые 10 секунд создаются данные из 1000 имитированных устройств.
 
    [![Настройка имитация устройств](media/tutorial-create-populate-tsi-environment/sawa-simulation-setup.png)](media/tutorial-create-populate-tsi-environment/sawa-simulation-setup.png#lightbox)
 
@@ -189,6 +190,7 @@ ms.locfileid: "76981197"
 В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
+>
 > * Создайте среду "Аналитика временных рядов".
 > * Создание решения для имитации устройств, содержащего Центр Интернета вещей.
 > * Подключение среды Аналитики временных рядов к центру Интернета вещей.

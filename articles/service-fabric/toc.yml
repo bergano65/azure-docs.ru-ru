@@ -138,6 +138,8 @@
           href: service-fabric-security-controls.md
         - name: Проверка подлинности на основе сертификата в Service Fabric
           href: cluster-security-certificates.md
+        - name: Управление сертификатами в Service Fabric
+          href: cluster-security-certificate-management.md
     - name: Терминология
       href: service-fabric-technical-overview.md
     - name: Создание приложений

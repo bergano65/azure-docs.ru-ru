@@ -91,6 +91,8 @@
       href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
 - name: Основные понятия
   items:
+    - name: Планирование затрат и управление ими
+      href: concept-plan-manage-cost.md
     - name: Рабочая область
       href: concept-workspace.md
     - name: Среды
@@ -156,6 +158,8 @@
               href: how-to-use-azure-ad-identity.md
             - name: Повторное создание ключей доступа к хранилищу
               href: how-to-change-storage-access-key.md
+            - name: Использование Брандмауэра Azure
+              href: how-to-access-azureml-behind-firewall.md
         - name: Настройка проверки подлинности
           displayName: 'authentication, auth, oauth'
           href: how-to-setup-authentication.md
