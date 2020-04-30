@@ -1,6 +1,6 @@
 ---
-title: Общие сведения об Azure DevOps Projects | Документация Майкрософт
-description: Сведения о преимуществах Azure DevOps Projects
+title: Обзор Azure DevOps Starter | Документация Майкрософт
+description: Общие сведения о значении для Azure DevOps Starter
 services: devops-project
 documentationcenter: ''
 author: mlearned
@@ -12,37 +12,37 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: ''
-ms.date: 05/03/2018
+ms.date: 03/24/2020
 ms.author: mlearned
-ms.openlocfilehash: d39702f8e30046dd3cf634fc67ed7095471cd629
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: 99a1fdb8caff9953041c996d0f5581318ce11c66
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "71971473"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82233692"
 ---
-# <a name="overview-of-azure-devops-projects"></a>Общие сведения об Azure DevOps Projects
+# <a name="overview-of-azure-devops-starter"></a>Обзор Azure DevOps Starter
 
- Azure DevOps Projects упрощает начало работы с Azure. Она позволяет запустить любое приложение в выбранной службе Azure, выполнив всего несколько действий на портале Azure. 
+ Azure DevOps Starter позволяет легко начать работу в Azure. Она позволяет запустить любое приложение в выбранной службе Azure, выполнив всего несколько действий на портале Azure. 
 
- DevOps Projects устанавливает все компоненты, необходимые для разработки, развертывания и мониторинга приложения. Панель мониторинга DevOps Projects позволяет отслеживать фиксации кода, операции сборки и развертывания в едином представлении на портале Azure.
+ DevOps Starter настраивает все необходимое для разработки, развертывания и мониторинга приложения. Панель мониторинга DevOps Starter можно использовать для наблюдения за фиксацией кода, сборками и развертываниями из одного представления в портал Azure.
 
-## <a name="why-should-i-use-devops-projects"></a>Зачем использовать Azure DevOps Projects?
+## <a name="advantages-of-using-devops-starter"></a>Преимущества использования DevOps Starter
 
-  DevOps Projects автоматизирует настройку всего конвейера непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.  Можно начать работу, используя собственный код или один из предлагаемых примеров приложений. Затем приложение можно быстро развернуть в различных службах Azure, таких как "Виртуальные машины", Служба приложений, Служба Azure Kubernetes (AKS), База данных SQL Azure и Azure Service Fabric.  
+  DevOps Starter автоматизирует установку всего конвейера непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.  Можно начать работу, используя собственный код или один из предлагаемых примеров приложений. Затем приложение можно быстро развернуть в различных службах Azure, таких как "Виртуальные машины", Служба приложений, Служба Azure Kubernetes (AKS), База данных SQL Azure и Azure Service Fabric.  
 
-  Служба DevOps Projects выполняет всю работу по начальной настройке конвейера DevOps, включая настройку начального репозитория Git, настройку конвейера CI/CD и создание ресурса Application Insights для мониторинга. Кроме того, она обеспечивает единое представление всего решения, создавая панель мониторинга DevOps Projects на портале Azure.
+  DevOps Starter выполняет всю работу по начальной настройке конвейера DevOps, включая все настройки начального репозитория Git, настройку конвейера CI/CD, создание Application Insightsного ресурса для мониторинга и предоставление единого представления всего решения с созданием панели мониторинга DevOps Projects в портал Azure.
 
-Служба DevOps Projects позволяет:
+DevOps Starter можно использовать для:
 
 * быстро развернуть приложение в Azure;
 * автоматизировать настройку конвейера CI/CD;
 * просматривать и анализировать параметры конвейера CI/CD для его оптимальной настройки;
 * выполнять индивидуальную настройку конвейеров выпуска для конкретных сценариев.
 
-## <a name="how-do-i-use-devops-projects"></a>Как использовать службу DevOps Projects?
+## <a name="how-to-use-devops-starter"></a>Как использовать DevOps Starter?
 
-  Служба DevOps Projects доступна на портале Azure. Ресурс DevOps Projects можно создать на портале, как и любой другой ресурс Azure. Служба DevOps Projects предоставляет пошаговые мастеры для настройки различных параметров конфигурации.  
+  DevOps Starter доступна на портал Azure. DevOps начальный ресурс создается так же, как и любой другой ресурс Azure на портале. Служба DevOps Projects предоставляет пошаговые мастеры для настройки различных параметров конфигурации.  
 
 В процессе начальной настройки можно выбрать несколько параметров конфигурации. Вот какие параметры доступны:
 
@@ -55,27 +55,27 @@ ms.locfileid: "71971473"
 * выбор расположения служб Azure;
 * выбор разных ценовых категорий для служб Azure.
 
-Завершив использование DevOps Projects, все ресурсы можно централизованно удалить на панели мониторинга DevOps Projects на портале Azure.
+После использования DevOps Starter можно также удалить все ресурсы из одного места с панели мониторинга DevOps Starter на портал Azure.
 
-## <a name="devops-projects-and-azure-devops-integration"></a>Служба DevOps Projects и интеграция с Azure DevOps
+## <a name="devops-starter-and-azure-devops-integration"></a>Интеграция DevOps Starter и Azure DevOps
 
-Служба DevOps Projects работает на базе Azure DevOps. DevOps Projects автоматизирует все задачи, выполняемые в Azure Pipelines для настройки конвейера CI/CD. Эта служба создает репозиторий Git в новой или существующей организации Azure DevOps, а затем фиксирует пример приложения или существующий код в новом репозитории Git.  
+DevOps Starter работает на базе Azure DevOps. DevOps Starter автоматизирует всю работу, необходимую в Azure Pipelines для настройки конвейера CI/CD. Эта служба создает репозиторий Git в новой или существующей организации Azure DevOps, а затем фиксирует пример приложения или существующий код в новом репозитории Git.  
 
-Служба автоматизации также задает триггер непрерывной интеграции для сборки, поэтому после каждой фиксации нового кода инициируется выполнение сборки. Служба DevOps Projects создает триггер CD и развертывает каждую новую успешную сборку в выбранной службе Azure.  
+Служба автоматизации также задает триггер непрерывной интеграции для сборки, поэтому после каждой фиксации нового кода инициируется выполнение сборки. DevOps Starter создает триггер CD и развертывает все новые успешные сборки в службе Azure по своему усмотрению.  
 
 Конвейеры сборки и выпуска можно настроить для реализации дополнительных сценариев, Кроме того, можно клонировать сборку и конвейеры выпуска для использования в других проектах.
 
-После создания проекта DevOps можно:
+После создания DevOps Starter вы можете:
 
 * настраивать конвейер сборки и выпуска;
 * отправлять запросы на вытягивание для управления потоком кода и обеспечения высокого уровня качества;
 * тестировать все фиксируемые изменения и выполнять их сборку, прежде чем добавлять их в код, чтобы повысить качество;
 * отслеживать невыполненную работу и проблемы вместе с приложением.
 
-## <a name="how-do-i-start-using-devops-projects"></a>Как начать использование службы DevOps Projects?
+## <a name="getting-started-with-devops-starter"></a>Начало работы с DevOps Starter
 
-* [Начало работы с DevOps Projects](https://docs.microsoft.com/azure/devops-project/azure-devops-project-github)
+* [Начало работы с DevOps Starter](https://docs.microsoft.com/azure/devops-project/azure-devops-project-github)
 
-##  <a name="devops-projects-videos"></a>Видео о DevOps Projects
+##  <a name="devops-starter-videos"></a>Видео DevOps Starter
 
-* [Creating your CI/CD Pipeline with VSTS into Azure](https://www.youtube.com/watch?v=NuYDAs3kNV8) (Создание конвейера CI/CD с помощью VSTS в Azure)
+* [Создание CI/CD с помощью Azure DevOps Starter](https://www.youtube.com/watch?v=NuYDAs3kNV8)

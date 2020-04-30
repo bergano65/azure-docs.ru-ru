@@ -4,12 +4,12 @@ description: Узнайте о том, как вызывать бизнес-пр
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: mvc
-ms.openlocfilehash: 4073b49a134356943bd7da8d54bf574f2e0d5eea
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: a8b94d626916b00d75eea3fea0567fa33df3382c
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81604851"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82562310"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Руководство по Отправка сообщений электронной почты и вызов других бизнес-процессов из Службы приложений
 
@@ -26,27 +26,27 @@ ms.locfileid: "81604851"
 
 Разверните приложение в Службе приложений с помощью любой удобной языковой платформы. Инструкции по развертыванию примера приложения см. ниже.
 
-# <a name="aspnet"></a>[ASP.NET](#tab/dotnet)
+### <a name="aspnet"></a>[ASP.NET](#tab/dotnet)
 
 [Руководство. Создание приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)
 
-# <a name="aspnet-core"></a>[ASP.NET Core](#tab/dotnetcore)
+### <a name="aspnet-core"></a>[ASP.NET Core](#tab/dotnetcore)
 
 [Руководство. Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md)
 
-# <a name="nodejs"></a>[Node.js](#tab/node)
+### <a name="nodejs"></a>[Node.js](#tab/node)
 
 [Руководство. Разработка приложения на основе Node.js и MongoDB в Azure](app-service-web-tutorial-nodejs-mongodb-app.md)
 
-# <a name="php"></a>[PHP](#tab/php)
+### <a name="php"></a>[PHP](#tab/php)
 
 [Руководство. Разработка приложения на основе PHP и MySQL в Azure](app-service-web-tutorial-php-mysql.md)
 
-# <a name="python"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 [Руководство. Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure](containers/tutorial-python-postgresql-app.md)
 
-# <a name="ruby"></a>[Ruby](#tab/ruby)
+### <a name="ruby"></a>[Ruby](#tab/ruby)
 
 [Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux](containers/tutorial-ruby-postgres-app.md)
 
@@ -150,7 +150,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 Щелкните вкладку для используемого языка и платформы ниже, чтобы просмотреть пример.
 
-# <a name="aspnet"></a>[ASP.NET](#tab/dotnet)
+### <a name="aspnet"></a>[ASP.NET](#tab/dotnet)
 
 В ASP.NET можно отправить HTTP-запрос POST с помощью класса [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient). Пример:
 
@@ -175,7 +175,7 @@ var statusCode = result.StatusCode.ToString();
 
 Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе ASP.NET и Базы данных SQL в Azure](app-service-web-tutorial-dotnet-sqldatabase.md), вы можете с его помощью отправить подтверждение по электронной почте в [действии Create](https://github.com/Azure-Samples/dotnet-sqldb-tutorial/blob/master/DotNetAppSqlDb/Controllers/TodosController.cs#L52-L63) после добавления элемента `Todo`. Чтобы использовать приведенный выше асинхронный код, преобразуйте действие Create в асинхронное.
 
-# <a name="aspnet-core"></a>[ASP.NET Core](#tab/dotnetcore)
+### <a name="aspnet-core"></a>[ASP.NET Core](#tab/dotnetcore)
 
 В ASP.NET Core можно отправить HTTP-запрос POST с помощью класса [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient). Пример:
 
@@ -203,7 +203,7 @@ var statusCode = result.StatusCode.ToString();
 
 Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе ASP.NET Core с базой данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md), вы можете с его помощью отправить подтверждение по электронной почте в [действии Create](https://github.com/Azure-Samples/dotnetcore-sqldb-tutorial/blob/master/Controllers/TodosController.cs#L56-L65) после добавления элемента `Todo`.
 
-# <a name="nodejs"></a>[Node.js](#tab/node)
+### <a name="nodejs"></a>[Node.js](#tab/node)
 
 В Node.js можно легко отправлять HTTP-сообщения с помощью пакета npm, например [axios](https://www.npmjs.com/package/axios). Пример:
 
@@ -230,7 +230,7 @@ var jsonData = {
 
 Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе Node.js и MongoDB в Azure](app-service-web-tutorial-nodejs-mongodb-app.md), вы можете с его помощью отправить подтверждение по электронной почте в [функции create](https://github.com/Azure-Samples/meanjs/blob/master/modules/articles/server/controllers/articles.server.controller.js#L14-L27) после [успешного сохранения статьи](https://github.com/Azure-Samples/meanjs/blob/master/modules/articles/server/controllers/articles.server.controller.js#L24).
 
-# <a name="php"></a>[PHP](#tab/php)
+### <a name="php"></a>[PHP](#tab/php)
 
 В PHP можно легко отправлять HTTP-сообщения с помощью [Guzzle](http://docs.guzzlephp.org/en/stable/index.html). Пример:
 
@@ -262,7 +262,7 @@ Log::info(print_r($response, TRUE));
 
 Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе PHP и MySQL в Azure](app-service-web-tutorial-php-mysql.md), вы можете с его помощью отправлять подтверждение по электронной почте из [функции Route::post](https://github.com/Azure-Samples/laravel-tasks/blob/master/routes/web.php#L30-L48) непосредственно перед оператором return.
 
-# <a name="python"></a>[Python](#tab/python)
+### <a name="python"></a>[Python](#tab/python)
 
 В Python можно легко отправлять HTTP-сообщения с помощью [requests](https://pypi.org/project/requests/). Пример:
 
@@ -293,7 +293,7 @@ async with aiohttp.post('http://httpbin.org/post', data=json.dump(payload)) as r
 
 Если вы тестируете этот код в примере приложения для руководства по [ разработке веб-приложения на основе Python (Django) и PostgreSQL в Службе приложений Azure](containers/tutorial-python-postgresql-app.md), вы можете с его помощью отправлять подтверждение по электронной почте из [функции Route::post](https://github.com/Azure-Samples/laravel-tasks/blob/master/routes/web.php#L30-L48) непосредственно перед оператором return.
 
-# <a name="ruby"></a>[Ruby](#tab/ruby)
+### <a name="ruby"></a>[Ruby](#tab/ruby)
 
 В Ruby можно легко отправлять HTTP-сообщения с помощью [JSONClient](https://www.rubydoc.info/gems/httpclient/JSONClient). Пример:
 
@@ -312,7 +312,7 @@ connection = clnt.post_async(ENV['LOGIC_APP_URL'], body)
 
 ---
 
-# <a name="more-resources"></a>Дополнительные ресурсы
+## <a name="more-resources"></a>Дополнительные ресурсы
 
 [Руководство. Размещение API RESTful с поддержкой CORS в Службе приложений Azure](app-service-web-tutorial-rest-api.md)  
 [Справочник по HTTP-запросам и ответам для Logic Apps](../connectors/connectors-native-reqres.md)  
