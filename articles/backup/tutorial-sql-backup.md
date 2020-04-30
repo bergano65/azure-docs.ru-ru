@@ -4,10 +4,10 @@ description: В этом руководстве вы узнаете, как со
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.openlocfilehash: f1d76fe0dfa428688714b8383c3974ac63195681
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81680727"
 ---
 # <a name="back-up-a-sql-server-database-in-an-azure-vm"></a>Резервное копирование Базы данных SQL Server на виртуальную машину Azure

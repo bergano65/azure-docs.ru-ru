@@ -1,6 +1,6 @@
 ---
-title: Подключите Azure ExpressRoute с облачной инфраструктурой Oracle (ru) Документы Майкрософт
-description: Подключите Azure ExpressRoute с помощью Oracle Cloud Infrastructure (OCI) FastConnect для включения кросс-облачных решений приложений Oracle
+title: Подключение Azure ExpressRoute к облачной инфраструктуре Oracle | Документация Майкрософт
+description: Подключение Azure ExpressRoute с помощью Oracle Cloud Infrastructure (OCI) Фастконнект для включения решений для приложений Oracle в разных облаках
 documentationcenter: virtual-machines
 author: BorisB2015
 manager: gwallace
@@ -14,95 +14,95 @@ ms.workload: infrastructure
 ms.date: 03/16/2020
 ms.author: borisb
 ms.openlocfilehash: 70556cbbfefd6ad22ef96ee16065209031ea456c
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81683754"
 ---
-# <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого соединения между Azure и облачной инфраструктурой Oracle  
+# <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого взаимодействия между Azure и облачной инфраструктурой Oracle  
 
-Для создания [интегрированного мультиобуладора](oracle-oci-overview.md)Microsoft и Oracle предлагают прямую взаимосвязь между Azure и облачной инфраструктурой Oracle (OCI) через [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [FastConnect.](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm) Благодаря взаимодействию ExpressRoute и FastConnect клиенты могут испытывать низкую задержку, высокую пропускную связь, частную прямую связь между двумя облаками.
+Чтобы создать [интегрированную среду с несколькими облаками](oracle-oci-overview.md), корпорация Майкрософт и Oracle предлагают прямое взаимодействие между Azure и облачной инфраструктурой Oracle (OCI) через [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [фастконнект](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm). Благодаря взаимосвязи ExpressRoute и Фастконнект клиенты могут столкнуться с низкой задержкой, высокой пропускной способностью и частным прямым подключением между двумя облаками.
 
 > [!IMPORTANT]
-> Oracle сертифицирует эти приложения для запуска в Azure при использовании решения для интерконнекта Azure /Oracle Cloud к маю 2020 года.
-> * E-Бизнес Люкс
-> * JD Эдвардс EnterpriseOne
-> * Peoplesoft
-> * Приложения Oracle Retail
-> * Oracle Гиперион Финансовое управление
+> Oracle будет сертифицировать эти приложения для запуска в Azure при использовании решения Azure/Oracle Cloud Interconnect с 2020 мая.
+> * Набор E-Business
+> * JD Edwards EnterpriseOne
+> * PeopleSoft
+> * Розничные приложения Oracle
+> * Oracle Hyperion Financial Management
 
-Следующее изображение показывает обзор взаимосвязи на высоком уровне:
+На следующем рисунке показан общий обзор соединения:
 
-![Кросс-облачное сетевое соединение](media/configure-azure-oci-networking/azure-oci-connect.png)
+![Сетевое подключение между облаками](media/configure-azure-oci-networking/azure-oci-connect.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Чтобы установить связь между Azure и OCI, необходимо иметь активную подписку Azure и активную аренду OCI.
+* Чтобы установить подключение между Azure и OCI, необходимо иметь активную подписку Azure и активную службу OCI.
 
-* Связь возможна только в том случае, если место пиринга Azure ExpressRoute находится в непосредственной близости от или в том же месте, что и OCI FastConnect. См [Доступность региона](oracle-oci-overview.md#region-availability).
+* Подключение возможно только в том случае, если расположение пиринга Azure ExpressRoute находится в том же расположении, что и Фастконнект OCI. См. сведения о [доступности регионов](oracle-oci-overview.md#region-availability).
 
-## <a name="configure-direct-connectivity-between-expressroute-and-fastconnect"></a>Налаживание прямого соединения между ExpressRoute и FastConnect
+## <a name="configure-direct-connectivity-between-expressroute-and-fastconnect"></a>Настройка прямого подключения ExpressRoute и Фастконнект
 
-1. Создайте стандартную схему ExpressRoute в подписке Azure под группой ресурсов. 
-    * Создавая ExpressRoute, выберите **Oracle Cloud FastConnect** в качестве поставщика услуг. Чтобы создать схему ExpressRoute, см. [step-by-step guide](../../../expressroute/expressroute-howto-circuit-portal-resource-manager.md)
-    * Схема Azure ExpressRoute предоставляет возможности гранулированной пропускной способности, в то время как FastConnect поддерживает 1, 2, 5 или 10 Гбит/с. Поэтому рекомендуется выбрать один из этих вариантов соответствия пропускной способности в ExpressRoute.
+1. Создайте стандартный канал ExpressRoute для подписки Azure в группе ресурсов. 
+    * При создании ExpressRoute выберите **Oracle Cloud фастконнект** в качестве поставщика услуг. Чтобы создать канал ExpressRoute, ознакомьтесь с пошаговым [руководством](../../../expressroute/expressroute-howto-circuit-portal-resource-manager.md).
+    * Канал ExpressRoute Azure обеспечивает детализированные параметры пропускной способности, тогда как Фастконнект поддерживает 1, 2, 5 или 10 Гбит/с. Поэтому рекомендуется выбрать один из этих параметров для соответствующей пропускной способности в ExpressRoute.
 
-    ![Создание схемы ExpressRoute](media/configure-azure-oci-networking/exr-create-new.png)
-1. Запишите ключ **службы**ExpressRoute. При настройке трассы FastConnect необходимо предоставить ключ.
+    ![Создание канала ExpressRoute](media/configure-azure-oci-networking/exr-create-new.png)
+1. Запишите **ключ службы**ExpressRoute. При настройке канала Фастконнект необходимо указать ключ.
 
     ![Ключ службы ExpressRoute](media/configure-azure-oci-networking/exr-service-key.png)
 
     > [!IMPORTANT]
-    > Вам будет выставлен счет за экспрессRoute, как только схема ExpressRoute будет подготовлена (даже если **статус поставщика** **не предусмотрен).**
+    > Плата за ExpressRoute будет взиматься сразу после подготовки канала ExpressRoute (даже если **состояние поставщика** **не подготовлено**).
 
-1. Вырезать два частных IP-адреса пространства /30 каждый, которые не пересекаются с вашей виртуальной сети Azure или OCI виртуальной облачной сети IP-адрес пространстве. Мы будем называть первое ip-адресное пространство основным адресное пространство, а второе ip-адресное пространство — второстепенным адресное пространство. Запишите адреса, которые вам нужны при настройке схемы FastConnect.
-1. Создайте динамический шлюз для routing (DRG). Это понадобится при создании схемы FastConnect. Для получения дополнительной информации ознакомьтесь с документацией [Dynamic Routing Gateway.](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm)
-1. Создайте схему FastConnect под арендатором Oracle. Для получения дополнительной [информации](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm)см.
+1. Выделить два пространства частных IP-адресов (/30), которые не пересекаются с пространством IP-адресов виртуальной сети Azure или сетевого адреса OCI. Мы будем ссылаться на первое пространство IP-адресов в качестве основного адресного пространства и второго пространства IP-адресов в качестве дополнительного адресного пространства. Запишите адреса, которые понадобятся при настройке канала Фастконнект.
+1. Создайте шлюз динамической маршрутизации (ДРГ). Он понадобится при создании канала Фастконнект. Дополнительные сведения см. в документации по [шлюзу динамической маршрутизации](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm) .
+1. Создайте цепь Фастконнект в клиенте Oracle. Дополнительные сведения см. в [документации Oracle](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm).
   
-    * В рамках конфигурации FastConnect выберите в качестве поставщика **Microsoft Azure: ExpressRoute.**
-    * Выберите динамический шлюз, который вы приковали на предыдущем этапе.
-    * Выберите пропускную способность, которая будет подготовлена. Для оптимальной производительности пропускная способность должна соответствовать выбранной пропускной способности при создании схемы ExpressRoute.
-    * В **ключе обслуживания поставщика**, вставьте ключ обслуживания ExpressRoute.
-    * Используйте первое пространство для частных IP-адресов/30, вырезанное на предыдущем этапе для **IP-адреса Primary BGP,** и второе место для частного IP-адреса /30 для **вторичного IP-адреса BGP.**
-        * Назначить первый адрес двух диапазонов для IP-адреса Oracle BGP (первичный и вторичный) и второй адрес для IP-адреса клиента BGP (с точки зрения FastConnect). Первый использоваемый IP-адрес — второй IP-адрес в адресном пространстве /30 (первый IP-адрес зарезервирован корпорацией Майкрософт).
+    * В разделе Конфигурация Фастконнект выберите **Microsoft Azure: ExpressRoute** в качестве поставщика.
+    * Выберите шлюз динамической маршрутизации, подготовленный на предыдущем шаге.
+    * Выберите пропускную способность для подготовки. Для оптимальной производительности пропускная способность должна соответствовать пропускной способности, выбранной при создании канала ExpressRoute.
+    * В поле **ключ службы поставщика**вставьте ключ службы ExpressRoute.
+    * Используйте пространство частных IP-адресов First/30, отрезать пространство на предыдущем шаге для **основного IP-адреса BGP** и второго/30-адресного пространства для **дополнительного IP-адреса BGP** .
+        * Назначьте первый пригодный для использования адрес из двух диапазонов для IP-адреса Oracle BGP (первичного и вторичного) и второго адреса для IP-адреса клиента BGP (с точки зрения Фастконнект). Первый пригодный IP-адрес — это второй IP-адрес в адресном пространстве/30 (первый IP-адрес зарезервирован корпорацией Майкрософт).
     * Нажмите кнопку **Создать**.
-1. Полная связь FastConnect с виртуальной облачной сетью под вашим клиентом Oracle через динамический шлюз маршрутизаний, используя Route Table.
-1. Перейдите в Azure и убедитесь, что **статус поставщика** для вашей схемы ExpressRoute был изменен на **Provisioned** и что был подготовлен приранженый тип **Azure private.** Это предварительная необходимость для следующих шагов.
+1. Завершите связывание Фастконнект с виртуальной облачной сетью в клиенте Oracle через шлюз динамической маршрутизации, используя таблицу маршрутов.
+1. Перейдите в Azure и убедитесь, что **состояние поставщика** для канала ExpressRoute изменилось на " **подготовлено** " и что пиринг типа "частный" **Azure** был подготовлен. Это предварительные требования для следующих шагов.
 
-    ![Статус поставщика ExpressRoute](media/configure-azure-oci-networking/exr-provider-status.png)
-1. Нажмите на приватное пиринг **Azure.** Вы увидите, что детали вpeering автоматически настроены на основе информации, введенной при настройке схемы FastConnect.
+    ![Состояние поставщика ExpressRoute](media/configure-azure-oci-networking/exr-provider-status.png)
+1. Щелкните частный пиринг **Azure** . Вы увидите, что сведения об пиринга автоматически были настроены на основе информации, введенной при настройке канала Фастконнект.
 
-    ![Настройки приватного пиринга](media/configure-azure-oci-networking/exr-private-peering.png)
+    ![Частные параметры пиринга](media/configure-azure-oci-networking/exr-private-peering.png)
 
 ## <a name="connect-virtual-network-to-expressroute"></a>Подключение виртуальной сети к ExpressRoute
 
-1. Создайте виртуальную сеть и виртуальный сетевой шлюз, если вы еще не сделали. Для получения подробной информации смотрите [пошаговое руководство.](../../../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md)
-1. Навлажьте соединение между виртуальным сетевым шлюзом и схемой ExpressRoute, выявив [сценарий Terraform](https://github.com/microsoft/azure-oracle/tree/master/InterConnect-2) или выдвинув команду PowerShell для [настройки ExpressRoute FastPath.](../../../expressroute/expressroute-howto-linkvnet-arm.md#configure-expressroute-fastpath)
+1. Создайте виртуальную сеть и шлюз виртуальной сети, если вы еще этого не сделали. Дополнительные сведения см. в пошаговом [руководств](../../../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md).
+1. Настройте подключение между шлюзом виртуальной сети и каналом ExpressRoute, выполнив [сценарий terraform](https://github.com/microsoft/azure-oracle/tree/master/InterConnect-2) или выполнив команду PowerShell для [настройки фастпас ExpressRoute](../../../expressroute/expressroute-howto-linkvnet-arm.md#configure-expressroute-fastpath).
 
-После завершения конфигурации сети можно проверить достоверность конфигурации, нажав на **Get ARP Records** и **получить таблицу маршрутов** под лезвием приватного лезвия ExpressRoute Private на портале Azure.
+После завершения настройки сети можно проверить допустимость конфигурации, щелкнув ссылку **получить записи ARP** и **получить таблицу маршрутов** в колонке частного пиринга ExpressRoute в портал Azure.
 
 ## <a name="automation"></a>Служба автоматизации
 
-Корпорация Майкрософт создала скрипты Terraform для автоматического развертывания сетевого интерсоединения. Скрипты Terraform должны быть проверены с помощью Azure перед выполнением, поскольку для этого требуются соответствующие разрешения на подписку Azure. Аутентификация может быть выполнена с помощью [основного сервиса Azure Active Directory](../../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) или с помощью Azure CLI. Для получения дополнительной информации [см.](https://www.terraform.io/docs/providers/azurerm/auth/azure_cli.html)
+Корпорация Майкрософт создала сценарии terraform, чтобы включить автоматическое развертывание сетевого соединения. Перед выполнением скрипты terraform должны пройти проверку подлинности в Azure, так как для них требуются соответствующие разрешения в подписке Azure. Проверку подлинности можно выполнить с помощью [субъекта-службы Azure Active Directory](../../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) или с помощью Azure CLI. Дополнительные сведения см. в [документации по terraform](https://www.terraform.io/docs/providers/azurerm/auth/azure_cli.html).
 
-Скрипты Terraform и связанная с ними документация для развертывания взаимосвязей можно найти в этом [репозитории GitHub.](https://aka.ms/azureociinterconnecttf)
+Сценарии terraform и связанная документация по развертыванию межподключения можно найти в этом [репозитории GitHub](https://aka.ms/azureociinterconnecttf).
 
-## <a name="monitoring"></a>Наблюдение
+## <a name="monitoring"></a>Мониторинг
 
-Устанавливая агенты в обоих облаках, можно использовать Azure [Network Performance Monitor (NPM)](../../../expressroute/how-to-npm.md) для мониторинга производительности сквозной сети. NPM помогает легко выявлять сетевые проблемы и устранять их.
+Установив агенты в обоих облаках, вы можете использовать Azure [Монитор производительности сети (NPM)](../../../expressroute/how-to-npm.md) для мониторинга производительности сквозной сети. NPM помогает легко выявление сетевых проблем и помогает устранить их.
 
-## <a name="delete-the-interconnect-link"></a>Удалить ссылку на взаимосвязанные соединения
+## <a name="delete-the-interconnect-link"></a>Удаление связи Interconnect
 
-Чтобы удалить интерконнект, следующие шаги должны быть соблюдены, в конкретном порядке. Невыполнение этого требования приведет к "неудавому состоянию" схемы ExpressRoute.
+Чтобы удалить соединение, необходимо выполнить следующие действия в указанном порядке. Несоблюдение этого действия приведет к появлению канала ExpressRoute "состояние сбоя".
 
-1. Удалить соединение ExpressRoute. Удалите соединение, нажав значок **Удалить** на странице для подключения. Для получения дополнительной информации смотрите [документацию ExpressRoute](../../../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md#delete-a-connection-to-unlink-a-vnet).
-1. Удалите Oracle FastConnect с облачной консоли Oracle.
-1. После удаления схемы Oracle FastConnect можно удалить схему Azure ExpressRoute.
+1. Удалите подключение ExpressRoute. Удалите подключение, щелкнув значок **удаления** на странице для подключения. Дополнительные сведения см. в [документации по ExpressRoute](../../../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md#delete-a-connection-to-unlink-a-vnet).
+1. Удалите Фастконнект Oracle из облачной консоли Oracle.
+1. После удаления канала Фастконнект для Oracle можно удалить канал Azure ExpressRoute.
 
-На этом этапе процесс удаления и деобеспечения завершен.
+На этом этапе процесс удаления и отмены инициализации завершен.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Для получения дополнительной информации о кросс-облачной связи [Oracle documentation](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm)между OCI и Azure см.
-* Используйте [скрипты Terraform](https://aka.ms/azureociinterconnecttf) для развертывания инфраструктуры для целевых приложений Oracle через Azure и настройки сетевого интерсоединения. 
+* Дополнительные сведения о межоблачном подключении между OCI и Azure см. в [документации Oracle](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm).
+* Используйте [сценарии terraform](https://aka.ms/azureociinterconnecttf) для развертывания инфраструктуры для целевых приложений Oracle в Azure и настройки сетевого соединения. 

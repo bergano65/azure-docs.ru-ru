@@ -10,10 +10,10 @@ ms.date: 03/08/2019
 ms.topic: conceptual
 ms.custom: mqtt
 ms.openlocfilehash: d31e520dac1c7e2a13fbd9e24a0cd3167f69e904
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81682003"
 ---
 # <a name="create-and-test-a-new-simulated-device"></a>Создание и тестирование нового имитированного устройства
@@ -33,7 +33,7 @@ ms.locfileid: "81682003"
 
 | Имя                     | Значения                      |
 | ------------------------ | --------------------------- |
-| Color                    | Белый, красный, синий            |
+| Цвет                    | Белый, красный, синий            |
 | Яркость               | 0–100                    |
 | Ожидаемое время работы | Обратный отсчет, начиная с 10 000 часов |
 
@@ -43,7 +43,7 @@ ms.locfileid: "81682003"
 
 | Имя   | Значения      |
 | ------ | ----------- |
-| Status | on, off |
+| Состояние | on, off |
 | температура; | Градусы по Фаренгейту |
 | в сети | true, false |
 
@@ -100,7 +100,7 @@ ms.locfileid: "81682003"
 
 ### <a name="download-the-microservices"></a>Загрузка микрослужб
 
-Загрузите и распакуйте [микрослужбы удаленного мониторинга](https://github.com/Azure/remote-monitoring-services-dotnet/archive/master.zip) с GitHub в подходящее место на локальной машине. В этой статье предполагается, что эта папка называется **remote-monitoring-services-dotnet-master**.
+Скачайте и распакуйте [микрослужбы удаленного мониторинга](https://github.com/Azure/remote-monitoring-services-dotnet/archive/master.zip) из GitHub в подходящее расположение на локальном компьютере. В этой статье предполагается, что эта папка называется **remote-monitoring-services-dotnet-master**.
 
 Скачайте и распакуйте [микрослужбу моделирования устройств](https://github.com/Azure/device-simulation-dotnet/archive/master.zip) из GitHub в подходящее место на вашем локальном компьютере. В этой статье предполагается, что эта папка называется **device-simulation-dotnet-master**.
 
@@ -108,7 +108,7 @@ ms.locfileid: "81682003"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **для хранения-адаптер/WebService/appsettings.ini** и назначьте строку подключения Cosmos DB переменной **documentDBConnectionString.**
+Откройте файл **стораже-адаптер/WebService/appSettings. ini** и назначьте строку подключения Cosmos DB переменной **документдбконнектионстринг** .
 
 Чтобы запустить микрослужбу локально, нажмите **Отладка > Начать отладку**.
 
@@ -425,7 +425,7 @@ ms.locfileid: "81682003"
 
 Откройте папку **​​device-simulation-dotnet-master**, загруженную с GitHub, в новом экземпляре Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **WebService/appsettings.ini** и назначьте строку соединения Cosmos DB **documentdb_connstring** переменной, а также измените настройки следующим образом:
+Откройте файл **WebService/appSettings. ini** и назначьте строку подключения Cosmos DB **documentdb_connstring** переменной, а также измените параметры следующим образом:
 
 ```ini
 device_models_folder = C:\temp\devicemodels\
@@ -499,7 +499,7 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 Если вы больше не нуждаетесь в экземплярах Центра Интернета вещей и Cosmos DB, удалите их из подписки Azure, чтобы избежать ненужных расходов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководстве показано, как создавать пользовательские типы имитированных устройств и проверять их, запустив микрослужбу имитации устройств в локальной среде.
 

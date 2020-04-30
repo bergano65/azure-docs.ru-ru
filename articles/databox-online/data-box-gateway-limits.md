@@ -9,13 +9,13 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: alkohli
 ms.openlocfilehash: 641d7410e414be2adae2a83840c90a680aedd2fc
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81683349"
 ---
-# <a name="azure-data-box-gateway-limits"></a>Ограничения шлюза azure Data Box
+# <a name="azure-data-box-gateway-limits"></a>Ограничения Шлюз Azure Data Box
 
 Учитывайте эти ограничения, когда развертываете и используете решение шлюза Microsoft Azure Data Box. 
 
@@ -29,7 +29,7 @@ ms.locfileid: "81683349"
 
 | Описание | Значение |
 |---|---|
-|Нет. файлов на каждом устройстве |100 млн <br> На каждые 25 миллионов файлов, которые добавляются (с максимальным ограничением в 100 миллионов), следует добавить 2 ТБ дискового пространства, 8 ГБ оперативной памяти и 4 ядра процессора. |
+|Нет. файлов на каждом устройстве |100 млн <br> Для каждого добавляемого 25 000 000-файла (с максимальным ограничением в 100 000 000) следует добавить 2 ТБ дискового пространства, 8 ГБ ОЗУ и 4 ядра ЦП. |
 |Нет. общих папок на каждом устройстве |24 |
 |Нет. общих папок в каждом контейнере службы хранилища Azure |1 |
 |Максимальный размер файла, записанного в общую папку|Для виртуального устройства объемом в 2 ТБ максимальный размер файла составляет 500 ГБ. <br> Максимальный размер файла пропорционально увеличивается в соответствии с размером диска данных, пока не достигнет 5 ТБ. |
@@ -50,6 +50,6 @@ ms.locfileid: "81683349"
 
 [!INCLUDE [data-box-edge-gateway-storage-object-limits](../../includes/data-box-edge-gateway-storage-object-limits.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Подготовка к развертыванию шлюза ящика данных Azure](data-box-gateway-deploy-prep.md)
+- [Подготовка к развертыванию Шлюз Azure Data Box](data-box-gateway-deploy-prep.md)

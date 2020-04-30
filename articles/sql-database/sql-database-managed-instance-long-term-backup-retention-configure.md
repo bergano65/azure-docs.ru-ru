@@ -1,6 +1,6 @@
 ---
-title: 'Управляемый экземпляр: Долгосрочное удержание резервного копирования (PowerShell)'
-description: Узнайте, как хранить и восстанавливать автоматические резервные копии в отдельных контейнерах для хранения Azure Blob для управляемого экземпляра базы данных Azure S'L с помощью PowerShell.
+title: 'Управляемый экземпляр: долгосрочное хранение резервных копий (PowerShell)'
+description: Узнайте, как хранить и восстанавливать автоматические резервные копии в отдельных контейнерах хранилища BLOB-объектов Azure для управляемого экземпляра базы данных SQL Azure с помощью PowerShell.
 services: sql-database
 ms.service: sql-database
 ms.subservice: backup-restore
@@ -13,43 +13,43 @@ ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 04/19/2020
 ms.openlocfilehash: 24eacb555704593fe44bc2d949de44de163345bc
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81677108"
 ---
-# <a name="manage-azure-sql-database-managed-instance-long-term-backup-retention-powershell"></a>Управление базой данных Azure S'L управляемого долгосрочного резервного удержания (PowerShell)
+# <a name="manage-azure-sql-database-managed-instance-long-term-backup-retention-powershell"></a>Управление долгосрочным сроком хранения резервных копий управляемого экземпляра базы данных SQL Azure (PowerShell)
 
-В управляемом экземпляре базы данных Azure S'L можно настроить долгосрочную политику [хранения резервного копирования](sql-database-long-term-retention.md#managed-instance-support) (LTR) в качестве ограниченной общедоступной функции предварительного просмотра. Это позволяет автоматически сохранять резервные копии баз данных в отдельных контейнерах для хранения Azure Blob на срок до 10 лет. Затем можно восстановить базу данных, используя эти резервные данные с помощью PowerShell.
+В управляемом экземпляре базы данных SQL Azure можно настроить политику [долгосрочного хранения резервных копий](sql-database-long-term-retention.md#managed-instance-support) (LTR) как ограниченную общедоступную функцию предварительной версии. Это позволяет автоматически хранить резервные копии баз данных в отдельных контейнерах хранилища BLOB-объектов Azure до 10 лет. Затем можно восстановить базу данных, используя эти резервные копии с помощью PowerShell.
 
    > [!IMPORTANT]
-   > LTR для управляемых экземпляров в настоящее время находится в ограниченном предварительном просмотре и доступен для подписок EA и CSP на индивидуальной основе. Чтобы запросить регистрацию, пожалуйста, создайте [билет поддержки Azure](https://azure.microsoft.com/support/create-ticket/) под темой поддержки **Резервное копирование, восстановление и непрерывность бизнеса/долгосрочное сохранение резервного копирования.** 
+   > LTR для управляемых экземпляров в настоящее время ограничен предварительной версией и доступен для подписок EA и CSP в зависимости от регистра. Чтобы запросить регистрацию, создайте запрос в [службу поддержки Azure](https://azure.microsoft.com/support/create-ticket/) в разделе поддержки **резервное копирование, восстановление и непрерывность бизнес-процессов, долгосрочное хранение резервных копий**. 
 
 
 В следующем разделе показано, как настроить долгосрочное хранение резервных копий, просматривать резервные копии в хранилище SQL Azure и выполнять восстановление из резервной копии в хранилище SQL Azure с помощью PowerShell.
 
 ## <a name="rbac-roles-to-manage-long-term-retention"></a>Роли RBAC для управления долгосрочным хранением
 
-Для **Get-AzSqlInstanceDatabaseLongTermRetentionBackup** и **Restore-AzSqlInstanceDatabase**, вам нужно будет иметь одну из следующих ролей:
+Для **Get-азсклинстанцедатабаселонгтермретентионбаккуп** и **RESTORE-азсклинстанцедатабасе**необходимо иметь одну из следующих ролей:
 
 - Роль владельца подписки или
-- Роль автора управляемых экземпляров или
+- Роль участника Управляемый экземпляр или
 - Пользовательская роль со следующими разрешениями:
   - `Microsoft.Sql/locations/longTermRetentionManagedInstanceBackups/read`
   - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionManagedInstanceBackups/read`
   - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/read`
 
-Для **удаления-AzSqlInstanceDatabaseLongTermRetentionBackup**, вам нужно будет иметь одну из следующих ролей:
+Для **Remove-азсклинстанцедатабаселонгтермретентионбаккуп**необходимо иметь одну из следующих ролей:
 
 - Роль владельца подписки или
 - Пользовательская роль со следующим разрешением:
   - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/delete`
 
 > [!NOTE]
-> Роль автора управляемых экземпляров не имеет разрешения на удаление резервных копий LTR.
+> Роль участника Управляемый экземпляр не имеет разрешения на удаление резервных копий слева направо.
 
-Разрешения RBAC могут быть предоставлены в области *подписки* или *ресурсной группы.* Однако для доступа к резервным кажам LTR, которые относятся к упавшей экземпляру, разрешение должно быть предоставлено в области *подписки* этого экземпляра.
+Разрешения RBAC можно предоставить в *подписке* или области *группы ресурсов* . Однако для доступа к резервным копиям LTR, принадлежащим удаленному экземпляру, разрешение должно быть предоставлено в области действия *подписки* этого экземпляра.
 
 - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/delete`
 
@@ -78,7 +78,7 @@ Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy -InstanceName $instanceNa
 
 ## <a name="view-ltr-policies"></a>Просмотр политик LTR
 
-В этом примере показано, как перечислить политики LTR в экземпляре
+В этом примере показано, как вывести список политик LTR в экземпляре.
 
 ```powershell
 # gets the current version of LTR policy for the database
@@ -97,7 +97,7 @@ Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy -InstanceName $instanceNa
 
 ## <a name="view-ltr-backups"></a>Просмотр резервных копий LTR
 
-В этом примере показано, как перечислить резервные данные LTR в экземпляре.
+В этом примере показано, как перечислить резервные копии на LTR в пределах экземпляра.
 
 ```powershell
 # get the list of all LTR backups in a specific Azure region
@@ -128,7 +128,7 @@ Remove-AzSqlInstanceDatabaseLongTermRetentionBackup -ResourceId $ltrBackup.Resou
 ```
 
 > [!IMPORTANT]
-> Удаление резервной копии LTR отменить нельзя. Для удаления резервной копирования LTR после удаления экземпляра необходимо получить разрешение на область подписки. Вы можете настроить уведомления о каждом удалении в Azure Monitor, отфильтровав для операции "Удаляет резервное копирование долгосрочного удержания". В журнале действий содержатся сведения о том, кто и когда выполнил запрос. Подробные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../azure-monitor/platform/alerts-activity-log.md).
+> Удаление резервной копии LTR отменить нельзя. Чтобы удалить резервную копию LTR после удаления экземпляра, необходимо иметь разрешение на область действия подписки. Вы можете настроить уведомления о каждом удалении в Azure Monitor путем фильтрации для операции "Удаление резервной копии долгосрочного хранения". В журнале действий содержатся сведения о том, кто и когда выполнил запрос. Подробные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../azure-monitor/platform/alerts-activity-log.md).
 
 ## <a name="restore-from-ltr-backups"></a>Восстановление из резервных копий LTR
 
@@ -141,12 +141,12 @@ Restore-AzSqlInstanceDatabase -FromLongTermRetentionBackup -ResourceId $ltrBacku
 ```
 
 > [!IMPORTANT]
-> Для восстановления резервной копирования LTR после удаления экземпляра необходимо иметь разрешения, применяемые к подписке экземпляра, и что подписка должна быть активной. Вы также должны пропустить дополнительный параметр -ResourceGroupName.
+> Для восстановления из резервной копии LTR после удаления экземпляра необходимо иметь разрешения, ограниченные подпиской на экземпляр, и эта подписка должна быть активной. Необходимо также опустить необязательный параметр-ResourceGroupName.
 
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания, например извлечь часть данных из восстановленной базы данных, чтобы скопировать их в имеющуюся базу данных или удалить имеющуюся базу данных и присвоить ее имя восстановленной базе данных. Ознакомьтесь с [восстановлением до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о резервных копиях базы данных, создаваемых автоматически службой, см. в [этой статье](sql-database-automated-backups.md).
 - Дополнительные сведения о долгосрочном хранении резервных копий см. в статье [Хранение резервных копий базы данных SQL Azure до 10 лет](sql-database-long-term-retention.md).

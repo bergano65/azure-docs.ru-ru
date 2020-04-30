@@ -1,7 +1,7 @@
 ---
-title: Создание или изменение прямого пиринга с помощью портала Azure
+title: Создание или изменение прямого пиринга с помощью портал Azure
 titleSuffix: Azure
-description: Создание или изменение прямого пиринга с помощью портала Azure
+description: Создание или изменение прямого пиринга с помощью портал Azure
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,51 +9,51 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: dcd6aaf584691005dd071a7aba5958070f598978
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81681061"
 ---
-# <a name="create-or-modify-a-direct-peering-by-using-the-azure-portal"></a>Создание или изменение прямого пиринга с помощью портала Azure
+# <a name="create-or-modify-a-direct-peering-by-using-the-azure-portal"></a>Создание или изменение прямого пиринга с помощью портал Azure
 
-В этой статье описывается, как создать пиринг Microsoft Direct с помощью портала Azure. В этой статье также показано, как проверить состояние ресурса, обновить его или удалить и дезавуировать его.
+В этой статье описывается, как создать прямой пиринг Майкрософт с помощью портал Azure. В этой статье также показано, как проверить состояние ресурса, обновить его или удалить и отменить его предоставление.
 
-Если вы предпочитаете, вы можете завершить это руководство с помощью Azure [PowerShell](howto-direct-powershell.md).
+При желании вы можете выполнить это пошаговое руководством с помощью Azure [PowerShell](howto-direct-powershell.md).
 
 ## <a name="before-you-begin"></a>Подготовка к работе
-* Просмотрите [предпосылки](prerequisites.md) и [пошаговое руководство Direct peering](walkthrough-direct-all.md) перед началом конфигурации.
-* Если у вас уже есть прямые вглядовые связи с корпорацией Майкрософт, которые не преобразованы в ресурсы Azure, [см. Преобразовать устаревающее прямое использование ресурса Azure с помощью портала.](howto-legacy-direct-portal.md)
+* Прежде чем начать настройку, ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по непосредственному пирингу](walkthrough-direct-all.md) .
+* Если у вас уже есть прямые пиринга с Майкрософт, которые не преобразованы в ресурсы Azure, см. статью [Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портала](howto-legacy-direct-portal.md).
 
 ## <a name="create-and-provision-a-direct-peering"></a>Создание и предоставление прямого пиринга
 
-### <a name="sign-in-to-the-portal-and-select-your-subscription"></a>Вопийте на портале и выберите подписку
+### <a name="sign-in-to-the-portal-and-select-your-subscription"></a>Войдите на портал и выберите свою подписку.
 [!INCLUDE [Account](./includes/account-portal.md)]
 
 ### <a name="create-a-direct-peering"></a><a name=create></a>Создание прямого пиринга
 
-Вы можете создать новый запрос на пиринг с помощью ресурса **Peering.**
+Новый запрос пиринга можно создать с помощью ресурса **пиринга** .
 
-#### <a name="launch-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка базовых настроек
+#### <a name="launch-resource-and-configure-basic-settings"></a>Запуск ресурса и настройка основных параметров
 [!INCLUDE [direct-peering-basic](./includes/direct-portal-basic.md)]
 
-#### <a name="configure-connections-and-submit"></a>Настройка соединений и отправка
+#### <a name="configure-connections-and-submit"></a>Настройка подключений и отправка
 [!INCLUDE [direct-peering-configuration](./includes/direct-portal-configuration.md)]
 
-### <a name="verify-direct-peering"></a><a name=get></a>Проверить прямой пиринг
+### <a name="verify-direct-peering"></a><a name=get></a>Проверка прямого пиринга
 [!INCLUDE [peering-direct-get-portal](./includes/direct-portal-get.md)]
 
 ## <a name="modify-a-direct-peering"></a><a name="modify"></a>Изменение прямого пиринга
 [!INCLUDE [peering-direct-modify-portal](./includes/direct-portal-modify.md)]
 
-## <a name="deprovision-a-direct-peering"></a><a name="delete"></a>Деобеспечение прямого пиринга
+## <a name="deprovision-a-direct-peering"></a><a name="delete"></a>Отменить подготовку прямого пиринга
 [!INCLUDE [peering-direct-delete-portal](./includes/delete.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание или изменение пиринга Exchange с помощью портала](howto-exchange-portal.md)
-* [Преобразование устаревшего вонючего Внеся в ресурс Azure с помощью портала](howto-legacy-exchange-portal.md)
+* [Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью портала](howto-legacy-exchange-portal.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Для получения дополнительной информации, см [Интернет пиринг часто задаваемые вопросы](faqs.md).
+Дополнительные сведения см. в разделе [часто задаваемые вопросы об пиринга через Интернет](faqs.md).

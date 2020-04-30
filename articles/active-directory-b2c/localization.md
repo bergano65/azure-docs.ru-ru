@@ -1,5 +1,5 @@
 ---
-title: Локализация - Активный каталог Azure B2C
+title: Локализация — Azure Active Directory B2C
 description: Использование элемента Localization в настраиваемой политике для Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
@@ -11,10 +11,10 @@ ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 94ff7ddda41f2df2634d927a7dbf8a5a0d4fc1d8
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81681412"
 ---
 # <a name="localization"></a>Локализация
@@ -39,9 +39,9 @@ ms.locfileid: "81681412"
 
 Элемент **Localization** содержит следующие атрибуты:
 
-| attribute | Обязательно | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| Активировано | нет | Возможные значения: `true` или `false`. |
+| Активировано | Нет | Возможные значения: `true` или `false`. |
 
 Элемент **Localization** содержит следующие элементы XML:
 
@@ -54,10 +54,10 @@ ms.locfileid: "81681412"
 
 Элемент **SupportedLanguages** содержит следующие атрибуты.
 
-| attribute | Обязательно | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | DefaultLanguage | Да | Язык, который будет использоваться по умолчанию для локализованных ресурсов. |
-| MergeBehavior | нет | Перечисление значений, которые объединяются с любым элементом ClaimType с таким же идентификатором в родительской политике. Используйте этот атрибут, чтобы переопределить определенное в базовой политике утверждение. Возможные значения: `Append`, `Prepend` или `ReplaceAll`. Значение `Append` означает, что указанная коллекция данных должна добавляться в конец коллекции, указанной в родительской политике. Значение `Prepend` означает, что указанная коллекция данных должна добавляться в начало коллекции, указанной в родительской политике. Значение `ReplaceAll` означает, что определенную в родительской политике коллекцию данных нужно игнорировать и заменить данными, определенными в текущей политике. |
+| MergeBehavior | Нет | Перечисление значений, которые объединяются с любым элементом ClaimType с таким же идентификатором в родительской политике. Используйте этот атрибут, чтобы переопределить определенное в базовой политике утверждение. Возможные значения: `Append`, `Prepend` или `ReplaceAll`. Значение `Append` означает, что указанная коллекция данных должна добавляться в конец коллекции, указанной в родительской политике. Значение `Prepend` означает, что указанная коллекция данных должна добавляться в начало коллекции, указанной в родительской политике. Значение `ReplaceAll` означает, что определенную в родительской политике коллекцию данных нужно игнорировать и заменить данными, определенными в текущей политике. |
 
 ### <a name="supportedlanguages"></a>SupportedLanguages
 
@@ -71,7 +71,7 @@ ms.locfileid: "81681412"
 
 Элемент **LocalizedResources** содержит следующие атрибуты:
 
-| attribute | Обязательно | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | Идентификатор | Да | Идентификатор, который используется для уникальной идентификации локализованных ресурсов. |
 
@@ -94,7 +94,7 @@ ms.locfileid: "81681412"
 
 Элемент **LocalizedCollections** содержит следующие атрибуты:
 
-| attribute | Обязательно | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | ElementType | Да | Ссылается на элемент ClaimType или элемент пользовательского интерфейса в файле политики. |
 | ElementId | Да | Строка, содержащая ссылку на тип утверждения, который уже определен в разделе ClaimsSchema и используется, если **ElementType** имеет значение ClaimType. |
@@ -108,11 +108,11 @@ ms.locfileid: "81681412"
 
 Элемент **Item** содержит следующие атрибуты:
 
-| attribute | Обязательно | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| текст | Да | Понятная для пользователя отображаемая строка, которая размещается в пользовательском интерфейсе для этого параметра. |
+| Text | Да | Понятная для пользователя отображаемая строка, которая размещается в пользовательском интерфейсе для этого параметра. |
 | Значение | Да | Строковое значение утверждения, связанное с этим вариантом. |
-| SelectByDefault | нет | Указывает, следует ли по умолчанию выбирать этот параметр в пользовательском интерфейсе. Возможные значения: True или False. |
+| SelectByDefault | Нет | Указывает, следует ли по умолчанию выбирать этот параметр в пользовательском интерфейсе. Возможные значения: True или False. |
 
 Следующий пример демонстрирует использование элемента **LocalizedCollections**. Он содержит два элемента **LocalizedCollection** по одному для английского и испанского языков. Оба они устанавливают для утверждения `Gender` коллекцию **Restriction** со списком элементов на английском и испанском языках.
 
@@ -144,31 +144,31 @@ ms.locfileid: "81681412"
 
 Элемент **LocalizedStrings** содержит следующие атрибуты:
 
-| attribute | Обязательно | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| ElementType | Да | Возможные значения: [ClaimsProvider](#claimsprovider), [ClaimType](#claimtype), [ErrorMessage](#errormessage), [GetLocalizedStringsTransformationClaimType](#getlocalizedstringstransformationclaimtype), [Предикат](#predicate), [Входная валидация](#inputvalidation), или [UxElement](#uxelement).   | 
-| ElementId | Да | Если **ElementType** настроен `ClaimType` `Predicate`на `InputValidation`, или, этот элемент содержит ссылку на тип претензии, уже определенный в разделе ClaimsSchema. |
+| ElementType | Да | Возможны следующие значения: [поставщика утверждений](#claimsprovider) [, с](#claimtype), назначением, [ErrorMessage](#errormessage), [жетлокализедстрингстрансформатионклаимтипе](#getlocalizedstringstransformationclaimtype), [predicate](#predicate), [инпутвалидатион](#inputvalidation)или [укселемент](#uxelement).   | 
+| ElementId | Да | Если **ElementType** для `ClaimType`ElementType задано значение `Predicate`, или `InputValidation`, этот элемент содержит ссылку на тип утверждения, уже определенный в разделе ClaimsSchema. |
 | StringId | Да | Если **ElementType** имеет значение `ClaimType`, этот элемент содержит ссылку на атрибут типа утверждения. Возможные значения: `DisplayName`, `AdminHelpText` или `PatternHelpText`. Значение `DisplayName` задает отображаемое имя утверждения. Значение `AdminHelpText` задает имя текста справки для пользователя утверждения. Значение `PatternHelpText` задает текста справки по шаблону утверждения. Если **ElementType** имеет значение `UxElement`, этот элемент содержит ссылку на атрибут элемента пользовательского интерфейса. Если **ElementType** имеет значение `ErrorMessage`, этот элемент задает идентификатор сообщения об ошибке. Полный список идентификаторов `UxElement` для строк локализации можно найти на [этой странице](localization-string-ids.md).|
 
 ## <a name="elementtype"></a>ElementType
 
-Ссылка ElementType на тип претензии, преобразование претензии или элемент пользовательского интерфейса в политике, который будет локализован.
+Ссылка ElementType на тип утверждения, преобразование утверждения или элемент пользовательского интерфейса в политике для локализации.
 
 | Элемент для локализации | ElementType | ElementId |StringId |
 | --------- | -------- | ----------- |----------- |
-| Имя поставщика идентификационных данных |`ClaimsProvider`| | Идентификатор элемента ClaimsExchange|
-| Атрибуты типа претензий|`ClaimType`|Название типа претензии| Атрибут претензии будет локализован. Возможные `AdminHelpText`значения: `DisplayName` `PatternHelpText`, `UserHelpText`, и .|
+| Имя поставщика удостоверений |`ClaimsProvider`| | Идентификатор элемента ClaimsExchange|
+| Атрибуты типа утверждения|`ClaimType`|Имя типа утверждения| Атрибут для локализованного утверждения. Возможные значения: `AdminHelpText`, `DisplayName`, `PatternHelpText`и `UserHelpText`.|
 |Сообщение об ошибке|`ErrorMessage`||Идентификатор сообщения об ошибке |
-|Копии локализованных строк в претензии|`GetLocalizedStringsTra nsformationClaimType`||Название претензии на вывод|
-|Предиката юношного сообщения|`Predicate`|Название предиката| Атрибут предиката, который будет локализован. Возможные значения: `HelpText`.|
-|Предикат групповое сообщение пользователя|`InputValidation`|Идентификатор элемента PredicateValidation.|Идентификатор элемента PredicateGroup. Предикатная группа должна быть ребенком элемента предикатной проверки, как это определено в ElementId.|
-|Элементы пользовательского интерфейса |`UxElement` | | Идентификатор элемента пользовательского интерфейса, который будет локализован.|
+|Копирует локализованные строки в утверждения|`GetLocalizedStringsTra nsformationClaimType`||Имя выходного утверждения|
+|Сообщение пользователя предиката|`Predicate`|Имя предиката| Атрибут для локализованного предиката. Возможные значения: `HelpText`.|
+|Сообщение пользователя группы предикатов|`InputValidation`|Идентификатор элемента Предикатевалидатион.|Идентификатор элемента Предикатеграуп. Группа предикатов должна быть дочерним элементом элемента проверки предиката, как определено в ElementId.|
+|Элементы пользовательского интерфейса |`UxElement` | | Идентификатор элемента пользовательского интерфейса для локализации.|
 
 ## <a name="examples"></a>Примеры
 
 ### <a name="claimsprovider"></a>ClaimsProvider
 
-Значение ClaimsProvider используется для локализации имени одного из поставщиков заявок. 
+Значение поставщика утверждений используется для локализации одного из отображаемых имен поставщиков утверждений. 
 
 ```xml
 <OrchestrationStep Order="2" Type="ClaimsExchange">
@@ -182,7 +182,7 @@ ms.locfileid: "81681412"
 
 ```
 
-В следующем примере показано, как локализовать имя поставщика претензий.
+В следующем примере показано, как локализовать отображаемое имя поставщиков утверждений.
 
 ```xml
 <LocalizedString ElementType="ClaimsProvider" StringId="FacebookExchange">Facebook</LocalizedString>
@@ -192,7 +192,7 @@ ms.locfileid: "81681412"
 
 ### <a name="claimtype"></a>ClaimType
 
-Значение ClaimType используется для локализации одного из атрибутов претензии. 
+Значение параметра с + + используется для локализации одного из атрибутов утверждения. 
 
 ```xml
 <ClaimType Id="email">
@@ -203,7 +203,7 @@ ms.locfileid: "81681412"
 </ClaimType>
 ```
 
-В следующем примере показано, как локализовать атрибуты DisplayName, UserHelpText и PatternHelpText типа запроса электронной почты.
+В следующем примере показано, как локализовать атрибуты DisplayName, Усерхелптекст и Паттернхелптекст типа утверждения сообщения электронной почты.
 
 ```XML
 <LocalizedString ElementType="ClaimType" ElementId="email" StringId="DisplayName">Email</LocalizedString>
@@ -213,7 +213,7 @@ ms.locfileid: "81681412"
 
 ### <a name="errormessage"></a>ErrorMessage
 
-Значение ErrorMessage используется для локализации одного из сообщений системных ошибок. 
+Значение ErrorMessage используется для локализации одного из системных сообщений об ошибках. 
 
 ```xml
 <TechnicalProfile Id="AAD-UserWriteUsingAlternativeSecurityId">
@@ -225,16 +225,16 @@ ms.locfileid: "81681412"
 </TechnicalProfile>
 ```
 
-В следующем примере показано, как локализовать сообщение об ошибке UserMessageIfClaimsPrincipalAlreadyExists.
+В следующем примере показано, как локализовать сообщение об ошибке УсермессажеифклаимспринЦипалалреадексистс.
 
 
 ```XML
 <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalAlreadyExists">The account you are trying to create already exists, please sign-in.</LocalizedString>
 ```
 
-### <a name="getlocalizedstringstransformationclaimtype"></a>GetLocalizedStringsTransformationClaimType
+### <a name="getlocalizedstringstransformationclaimtype"></a>жетлокализедстрингстрансформатионклаимтипе
 
-Значение GetLocalizedStringsTransformationClaimType используется для копирования локализованных строк в заявки. Для получения дополнительной информации см. [Преобразование заявок GetLocalizedStringsTransformation](string-transformations.md#getlocalizedstringstransformation)
+Значение Жетлокализедстрингстрансформатионклаимтипе используется для копирования локализованных строк в утверждения. Дополнительные сведения см. в разделе [Преобразование утверждений жетлокализедстрингстрансформатион](string-transformations.md#getlocalizedstringstransformation) .
 
 
 ```xml
@@ -248,7 +248,7 @@ ms.locfileid: "81681412"
 </ClaimsTransformation>
 ```
 
-В следующем примере показано, как локализовать притязания на выводные данные преобразования требований GetLocalizedStringsTransformation.
+В следующем примере показано, как локализовать утверждения вывода преобразования Жетлокализедстрингстрансформатион Claims.
 
 ```xml
 <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_subject">Contoso account email verification code</LocalizedString>
@@ -259,7 +259,7 @@ ms.locfileid: "81681412"
 
 ### <a name="predicate"></a>Predicate
 
-Значение Predicate используется для локализации одного из сообщений об ошибках [Predicate.](predicates.md) 
+Значение предиката используется для локализации одного из сообщений об ошибках [предиката](predicates.md) . 
 
 ```xml
 <Predicates>
@@ -282,7 +282,7 @@ ms.locfileid: "81681412"
 </Predicates>
 ```
 
-Следующий пример показывает, как локализовать предикаты помогают текст.
+В следующем примере показано, как локализовать текст справки предикатов.
 
 ```xml
 <LocalizedString ElementType="Predicate" ElementId="LengthRange" StringId="HelpText">The password must be between 6 and 64 characters.</LocalizedString>
@@ -290,9 +290,9 @@ ms.locfileid: "81681412"
 <LocalizedString ElementType="Predicate" ElementId="Uppercase" StringId="HelpText">an uppercase letter</LocalizedString>
 ```
 
-### <a name="inputvalidation"></a>Входная валидация
+### <a name="inputvalidation"></a>инпутвалидатион
 
-Значение ВводаВалиса используется для локализации одного из сообщений ошибок группы [PredicateValidation.](predicates.md) 
+Значение Инпутвалидатион используется для локализации одного из сообщений об ошибках группы [предикатевалидатион](predicates.md) . 
 
 ```xml
 <PredicateValidations>
@@ -317,24 +317,24 @@ ms.locfileid: "81681412"
 </PredicateValidations>
 ```
 
-В следующем примере показано, как локализовать текст справки группы справки о проверке предиката.
+В следующем примере показано, как локализовать текст справки по группе проверки предиката.
 
 ```XML
 <LocalizedString ElementType="InputValidation" ElementId="CustomPassword" StringId="CharacterClasses">The password must have at least 3 of the following:</LocalizedString>
 ```
 
-### <a name="uxelement"></a>UxElement
+### <a name="uxelement"></a>укселемент
 
-Значение UxElement используется для локализации одного из элементов пользовательского интерфейса. В следующем примере показано, как локализовать продолжение и отменить кнопки.
+Значение Укселемент используется для локализации одного из элементов пользовательского интерфейса. В следующем примере показано, как локализовать кнопки продолжить и Отмена.
 
 ```XML
 <LocalizedString ElementType="UxElement" StringId="button_continue">Create new account</LocalizedString>
 <LocalizedString ElementType="UxElement" StringId="button_cancel">Cancel</LocalizedString>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Смотрите следующие статьи для примеров локализации:
+Примеры локализации см. в следующих статьях:
 
-- [Настройка языка с пользовательской политикой в Azure Active Directory B2C](custom-policy-localization.md)
-- [Настройка языка с потоками пользователей в Azure Active Directory B2C](user-flow-language-customization.md)
+- [Настройка языка с помощью настраиваемой политики в Azure Active Directory B2C](custom-policy-localization.md)
+- [Настройка языка с помощью потоков пользователя в Azure Active Directory B2C](user-flow-language-customization.md)

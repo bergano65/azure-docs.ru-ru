@@ -12,10 +12,10 @@ ms.custom:
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: c49745b30d2c4acc115a72af095f3e941dc4d509
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81683991"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
@@ -34,13 +34,13 @@ ms.locfileid: "81683991"
 1. формировать классы Protobuf.
 1. Локальное тестирование
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Выполните следующие шаги для изучения данного руководства:
 
-* Visual Studio Code. Вы можете скачать [визуальный код студии для Mac, Linux и Windows](https://code.visualstudio.com/download).
+* Visual Studio Code. Вы можете загрузить [Visual Studio Code для Mac, Linux и Windows](https://code.visualstudio.com/download).
 * .NET Core. Вы можете скачать [.NET Core для Mac, Linux и Windows](https://www.microsoft.com/net/download).
-* Postman. Вы можете скачать [Postman для Mac, windows или Linux](https://www.getpostman.com/apps).
+* Postman. Вы можете загрузить [POST для Mac, Windows или Linux](https://www.getpostman.com/apps).
 * [Центр Интернета вещей для вашей подписки Azure](../iot-hub/iot-hub-create-through-portal.md). Для выполнения шагов этого руководства вам понадобится строка подключения Центра Интернета вещей. Вы можете получить строку подключения с портала Azure.
 * [База данных Cosmos DB, развернутая в подписке Azure](../cosmos-db/create-sql-api-dotnet.md#create-account), которая использует SQL API и которая настроена на [строгую согласованность](../cosmos-db/manage-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
 * [Учетная запись хранения Azure, развернутая в подписке Azure.](../storage/common/storage-account-create.md) Для выполнения шагов этого руководства вам понадобится строка подключения учетной записи хранения. Вы можете получить строку подключения с портала Azure.
@@ -65,7 +65,7 @@ ms.locfileid: "81683991"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, нажмите кнопку **Восстановить**.
 
-Откройте файл **.vscode/launch.json** и назначьте строку соединения Cosmos DB переменной среды **PCS\_STORAGEADAPTER\_DOCUMENTDB\_CONNSTRING.**
+Откройте файл **. vscode/Launch. JSON** и назначьте строку подключения Cosmos DB компьютерам **\_\_сторажеадаптер DOCUMENTDB\_CONNSTRING** среды.
 
 > [!NOTE]
 > При запуске микрослужбы локально на компьютере ей по прежнему требуется экземпляр Cosmos DB в Azure для правильной работы.
@@ -202,11 +202,11 @@ ms.locfileid: "81683991"
 * Строка подключения учетной записи хранения для переменной среды **PCS\_AZURE\_ХРАНИЛИЩЕ\_УЧЕТНАЯ ЗАПИСЬ**.
 * Назначьте строку подключения Cosmos DB для переменной среды **PCS\_STORAGEADAPTER\_DOCUMENTDB\_CONNSTRING**.
 
-Откройте файл **WebService-appsettings.ini** и измените настройки следующим образом:
+Откройте файл **вебсервице\аппсеттингс.ини** и измените параметры следующим образом:
 
 #### <a name="configure-the-solution-to-include-your-new-device-model-files"></a>Настройка решения для включения файлов новой модели устройства
 
-По умолчанию новые файлы устройства JSON и JS не будут скопированы в встроенное решение. Необходимо явно включить их.
+По умолчанию новые файлы JSON и JS модели устройства не копируются в созданное решение. Необходимо явно включить их.
 
 Добавьте запись в файл **services\services.csproj** для каждого файла, который требуется включить. Пример:
 
@@ -251,11 +251,11 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 1. Выберите **Файл \> Импорт**. Затем нажмите **Выбор файлов**.
 
-1. Выберите **azure IoT Device Simulation решения accelerator.postman\_collection** и **Azure IoT\_Device Simulation решения accelerator.postman окружающей среды** и нажмите **Открыть**.
+1. Выберите **решение "моделирование устройств Интернета вещей Azure". Опубликуйте\_коллекцию** и **решение "моделирование устройств Azure IOT\_** ". После этого выполните команду " **Открыть**".
 
 1. Разверните **Акселератор решений имитации устройств Azure loT** для просмотра запросов, которые вы можете отправить.
 
-1. Нажмите **No Environment** и выберите **ускоритель решений для моделирования устройств Azure IoT.**
+1. Щелкните **нет среды** и выберите средство **моделирования устройств Интернета вещей Azure**.
 
 Теперь у вас есть коллекция и среда, загруженные в рабочее пространство Postman, которые вы можете использовать для взаимодействия с микрослужбой моделирования устройств.
 
@@ -277,6 +277,6 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 Многие функции Центра Интернета вещей изначально не поддерживают Protobuf или другие двоичные форматы. Например, нельзя настроить маршрутизацию в зависимости от полезных данных сообщения, так как Центр Интернета вещей не может обработать их. Однако данные можно маршрутизировать на основе заголовков сообщений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь вы узнали, как настроить имитацию устройства для использования Protobuf и отправки данных телеметрии. Теперь ознакомьтесь с тем, как [развернуть пользовательский образ в облако](iot-accelerators-device-simulation-deploy-image.md).

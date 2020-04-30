@@ -1,7 +1,7 @@
 ---
 title: Обучение моделей машинного обучения с использованием средства оценки
 titleSuffix: Azure Machine Learning
-description: Узнайте, как выполнять одноузловое и распределенное обучение традиционным моделям машинного обучения и глубокого обучения с помощью класса Azure Machine Learning Estimator
+description: Узнайте, как выполнять централизованное и распределенное обучение традиционных моделей машинного обучения и модели глубокого обучения с помощью класса оценщик Машинное обучение Azure
 ms.author: maxluk
 author: maxluk
 services: machine-learning
@@ -12,25 +12,25 @@ ms.reviewer: sgilley
 ms.date: 03/09/2020
 ms.custom: seodec18
 ms.openlocfilehash: a9a3c10687b92d946fccb282f2eda4af637cf2ab
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81686774"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-С помощью Машинного обучения Azure вы можете легко отправлять свой обучаемый скрипт [различным вычислительным целям,](how-to-set-up-training-targets.md#compute-targets-for-training)используя [объект RunConfiguration](how-to-set-up-training-targets.md#whats-a-run-configuration) и [объект ScriptRunConfig.](how-to-set-up-training-targets.md#submit) Этот шаблон обеспечивает высокую гибкость и максимальный контроль.
+С помощью Машинное обучение Azure можно легко отправить обучающий сценарий в [различные целевые объекты вычислений](how-to-set-up-training-targets.md#compute-targets-for-training), используя [объект RunConfiguration](how-to-set-up-training-targets.md#whats-a-run-configuration) и [объект скриптрунконфиг](how-to-set-up-training-targets.md#submit). Этот шаблон обеспечивает высокую гибкость и максимальный контроль.
 
-Чтобы облегчить работу с моделью глубокого обучения, в пакете SDK Машинного обучения Azure для Python предоставляется альтернативная высокоуровневая абстракция — класс оценщика, который позволяет пользователям легко создавать конфигурации запуска. Можно создать и использовать общий [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки обучаемого скрипта с использованием выбранной вами инфраструктуры обучения (например, scikit-learn) на любой выбранной вами вычислительной цели, будь то локальная машина, единый VM в Azure или кластер графического процессора в Azure. Для задач PyTorch, TensorFlow и Chainer Azure Machine Learning также предоставляет соответствующие оценки [PyTorch,](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py) [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)и [Chainer](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) для упрощения использования этих инфраструктур.
+Чтобы облегчить работу с моделью глубокого обучения, в пакете SDK Машинного обучения Azure для Python предоставляется альтернативная высокоуровневая абстракция — класс оценщика, который позволяет пользователям легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценария обучения, используя любую выбранную платформу обучения (например, scikit-learning) на любом выбранном целевом объекте вычислений, будь то ваш локальный компьютер, одна виртуальная машина в Azure или кластер GPU в Azure. Для задач PyTorch, TensorFlow и Chain Машинное обучение Azure также предоставляет соответствующие средства оценки [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)и [формирователя цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) для упрощения использования этих платформ.
 
 ## <a name="train-with-an-estimator"></a>Обучение с оценщиком
 
 После создания [рабочей области](concept-workspace.md) и настройки вашей [среды разработки](how-to-configure-environment.md) для обучения модели в Машинном обучении Azure необходимо выполнить следующие действия:  
 1. Создайте [удаленный целевой объект вычислений](how-to-set-up-training-targets.md) (обратите внимание, что в качестве целевого объекта вычислений также можно использовать локальный компьютер).
 2. Отправьте [данные для обучения](how-to-access-data.md) в хранилище данных (необязательно).
-3. Создайте [сценарий обучения](tutorial-train-models-with-aml.md#create-a-training-script)
+3. Создание [сценария обучения](tutorial-train-models-with-aml.md#create-a-training-script)
 4. создать объект `Estimator`;
 5. Отправьте класс оценщика в объект эксперимента в рабочей области.
 
@@ -38,7 +38,7 @@ ms.locfileid: "81686774"
 
 ### <a name="single-node-training"></a>Одноузловое обучение
 
-Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. Вы должны были уже создать `compute_target` [объект вычислительной техники](how-to-set-up-training-targets.md#amlcompute) и объект `ds` [FileDataset.](how-to-create-register-datasets.md)
+Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. Вы должны уже создали [целевой](how-to-set-up-training-targets.md#amlcompute) объект `compute_target` вычислений и объект `ds` [филедатасет](how-to-create-register-datasets.md) .
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -60,13 +60,13 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 Параметр | Описание
 --|--
-`source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка скопируется с локальной машины на удаленный компьютер.
-`script_params`| Словарь с указанием аргументов командной строки `entry_script`для передачи `<command-line argument, value>` на ваш обучающий сценарий в виде пар. Чтобы указать многословный `script_params`флаг `<command-line argument, "">`в, используйте .
-`compute_target`| Дистанционная вычислительная цель, на которую будет работать ваш обучаемый скрипт, в данном случае кластер Azure Machine Learning Compute[(AmlCompute).](how-to-set-up-training-targets.md#amlcompute) (Обратите внимание, что кластер AmlCompute является обычно используемой целью, можно также выбрать другие типы вычислительных целей, такие как Azure VMs или даже локальный компьютер.)
-`entry_script`| Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. Этот файл и все дополнительные файлы, от которых он зависит, должны быть расположены в этой папке.
+`source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленное вычисление.
+`script_params`| Словарь, указывающий аргументы командной строки для передачи в сценарий `entry_script`обучения в виде `<command-line argument, value>` пар. Чтобы задать флаг verbose в `script_params`, используйте. `<command-line argument, "">`
+`compute_target`| Удаленный целевой объект вычислений, на котором будет выполняться сценарий обучения, в данном случае кластер Машинное обучение Azure Compute ([амлкомпуте](how-to-set-up-training-targets.md#amlcompute)). (Примечание. Несмотря на то, что кластер Амлкомпуте является часто используемым целевым объектом, можно также выбрать другие типы целевых объектов вычислений, например виртуальные машины Azure или даже локальный компьютер.)
+`entry_script`| Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. Этот файл и все дополнительные файлы, от которых он зависит, должны находиться в этой папке.
 `conda_packages`| Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda.  
 
-Конструктор имеет другой параметр, называемый, `pip_packages` который вы используете для любых необходимых пакетов пипсов.
+Конструктор имеет другой параметр с именем `pip_packages` , который используется для всех необходимых пакетов PIP.
 
 Теперь, когда вы создали объект `Estimator`, можно выполнить задание обучения в удаленной вычислительной среде посредством вызова функции `submit` в объекте `experiment`[Эксперимента](concept-azure-machine-learning-architecture.md#experiments). 
 
@@ -110,12 +110,12 @@ estimator = Estimator(source_directory='./my-keras-proj',
 
 В приведенном выше коде показаны следующие новые параметры конструктора `Estimator`:
 
-Параметр | Описание | Значение по умолчанию
+Параметр | Описание | По умолчанию
 --|--|--
 `custom_docker_image`| Имя используемого образа. Можно предоставлять только те образы, которые доступны в публичных хранилищах Docker (в данном случае в центре Docker). Чтобы выбрать образ из частного репозитория Docker, используйте параметр конструктора `environment_definition`. [Ознакомьтесь с примером ниже](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb). | `None`
 `node_count`| Количество узлов, которые будут использоваться для задания обучения. | `1`
 `process_count_per_node`| Количество процессов (или рабочих ролей), запускаемых на каждом узле. В этом случае используется `2` графических процессора, доступных на каждом узле.| `1`
-`distributed_training`| [MpIConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py) объект для запуска распределенного обучения с использованием MPI бэкэнд.  | `None`
+`distributed_training`| Объект [мпиконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py) для запуска распределенного обучения с помощью внутреннего сервера MPI.  | `None`
 
 
 И наконец, отправьте задание обучения, выполнив такую команду.
@@ -126,9 +126,9 @@ print(run.get_portal_url())
 
 ## <a name="registering-a-model"></a>регистрация модели;
 
-После того как вы обучили модель, вы можете сохранить и зарегистрировать его в рабочее пространство. Регистрация моделей позволяет хранить и отстраивать модели в рабочем пространстве для упрощения [управления и развертывания моделей.](concept-model-management-and-deployment.md)
+После обучения модели ее можно сохранить и зарегистрировать в рабочей области. Регистрация модели позволяет хранить и отменять версии моделей в рабочей области, чтобы упростить [Управление моделями и их развертывание](concept-model-management-and-deployment.md).
 
-Запуск следующего кода зарегистрирует модель в рабочем пространстве и сделает ее доступной для ссылки по имени в контекстах удаленных вычислений или сценариях развертывания. Дополнительную информацию и дополнительные параметры можно узнать [`register_model`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#register-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none----kwargs-) в справочных документах.
+Выполнение следующего кода приведет к регистрации модели в рабочей области и сделает ее доступной для ссылки по имени в удаленных контекстах вычислений или скриптах развертывания. Дополнительные [`register_model`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#register-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none----kwargs-) сведения и дополнительные параметры см. в разделе Справочная документация.
 
 ```python
 model = run.register_model(model_name='sklearn-sample', model_path=None)
@@ -136,26 +136,26 @@ model = run.register_model(model_name='sklearn-sample', model_path=None)
 
 ## <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
 
-При запуске обучаемого запуска, в котором исходный каталог является локальным репозиторием Git, информация о репозитории хранится в истории выполнения. Для получения дополнительной информации см. [интеграция Git для машинного обучения Azure.](concept-train-model-git-integration.md)
+При запуске обучающего запуска, в котором исходный каталог является локальным репозиторием Git, сведения о репозитории хранятся в журнале выполнения. Дополнительные сведения см. в статье [Интеграция Git для машинное обучение Azure](concept-train-model-git-integration.md).
 
 ## <a name="examples"></a>Примеры
-Для ноутбука, который показывает основы шаблона оценщика, см.:
+Для записной книжки, в которой показаны основные сведения о шаблоне средства оценки, см.:
 * [how-to-use-azureml/training-with-deep-learning/how-to-use-estimator](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb)
 
-Для ноутбука, который тренирует scikit-узнать модель с помощью оценщика, см.:
+Для записной книжки, которая обучает модель scikit-учиться с помощью средства оценки, см.:
 * [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb)
 
-Для тетрадей на обучающих моделях с помощью конкретных оценщиков глубокого обучения см.:
+Для записных книжек по обучающим моделям, использующих средства оценки, относящиеся к инфраструктуре глубокого обучения, см.:
 
-* [как-к-использованию-лазурит/мл-рамки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks)
+* [Использование-azureml/ML-Frameworks](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Обучение моделей PyTorch](how-to-train-pytorch.md)
 * [Обучение моделей TensorFlow](how-to-train-tensorflow.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)
-* [Создание и управление средами для обучения и развертывания](how-to-use-environments.md)
+* [Создание сред для обучения и развертывания и управление ими](how-to-use-environments.md)

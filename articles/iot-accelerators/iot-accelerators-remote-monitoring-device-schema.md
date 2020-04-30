@@ -12,10 +12,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: ac681bb13ccea49c7a2f566a6fcdb6adb8cec5bb
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81683747"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
@@ -117,7 +117,7 @@ ms.locfileid: "81683747"
 
 Служба моделирования запускает файл **chiller-01-state.js** каждые 5 секунд, чтобы обновить состояние устройства. Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-state**. Это позволяет отличить их от файлов, которые реализуют метод реакции на события.
 
-## <a name="properties"></a>Свойства
+## <a name="properties"></a>Элемент Property
 
 Раздел `Properties` схемы определяет значения свойств, которые устройство передает в решение. Пример:
 
@@ -166,11 +166,11 @@ ms.locfileid: "81683747"
 
 * Object — можно сериализовать с помощью JSON.
 * Binary — можно сериализовать с помощью Base64.
-* текст
-* Логическое
+* Text
+* Логическое значение
 * Целое число
 * Double
-* Дата и время
+* DateTime
 
 Чтобы отправить сообщения телеметрии с разными интервалами, добавьте несколько типов телеметрии к массиву `Telemetry`. В следующем примере данные температуры и влажности отправляются каждые 10 секунд, а сведения о состоянии освещения — каждую минуту.
 
@@ -236,7 +236,7 @@ ms.locfileid: "81683747"
 
 Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-method**. Это позволяет отличить их от файлов, которые реализуют поведение состояния.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описано, как создать пользовательскую модель имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -9,23 +9,23 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: b2609a069872ec55ac9068fadcbb3f312d68a630
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81680767"
 ---
-В этом разделе описывается, как выполнять следующие операции модификации для прямого пиринга:
+В этом разделе описывается выполнение следующих операций изменения для прямого пиринга.
 
-* Добавить прямые вpeering соединения.
-* Удалите прямые вглядывающиеся соединения.
-* Обновление или понижение пропускной способности на активных соединениях.
-* Добавьте сеансы IPv4 или IPv6 на активных соединениях.
-* Удалите сеансы IPv4 или IPv6 на активных соединениях.
+* Добавление соединений с прямым пирингом.
+* Удалите прямые соединения пиринга.
+* Обновление или понижение пропускной способности для активных соединений.
+* Добавьте сеансы IPv4 или IPv6 на активные соединения.
+* Удалите сеансы IPv4 или IPv6 на активных подключениях.
 
-### <a name="add-direct-peering-connections"></a>Добавление прямых пиринговых соединений
+### <a name="add-direct-peering-connections"></a>Добавление соединений с прямыми пиринга
 
-В этом примере описывается, как добавить соединения к существующему прямому пирингу.
+В этом примере описывается добавление подключений к существующему прямому пиринг.
 
 ```powershell
 
@@ -44,9 +44,9 @@ $directPeering.Connections.Add($connection)
 $directPeering | Update-AzPeering
 ```
 
-### <a name="remove-direct-peering-connections"></a>Удалить прямые соединения пиринга
+### <a name="remove-direct-peering-connections"></a>Удаление подключений прямого пиринга
 
-Удаление соединения в настоящее время не поддерживается на PowerShell. Для получения дополнительной информации обратитесь в [грансь-наВеркинг е.](mailto:peeringexperience@microsoft.com)
+Удаление подключения в настоящее время не поддерживается в PowerShell. Для получения дополнительных сведений обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
 
 <!--
 ```powershell
@@ -56,9 +56,9 @@ $directPeering | Update-AzPeering
 ```
 -->
 
-### <a name="upgrade-or-downgrade-bandwidth-on-active-connections"></a>Обновление или понижение пропускной способности на активных соединениях
+### <a name="upgrade-or-downgrade-bandwidth-on-active-connections"></a>Обновление или понижение пропускной способности для активных соединений
 
-В этом примере описывается, как добавить 10 Гбит/с в существующее прямое соединение.
+В этом примере описывается добавление 10 Гбит/с для существующего прямого подключения.
 
 ```powershell
 
@@ -68,9 +68,9 @@ $directPeering | Update-AzPeering
 
 ```
 
-### <a name="add-ipv4-or-ipv6-sessions-on-active-connections"></a>Добавление сеансов IPv4 или IPv6 на активных соединениях
+### <a name="add-ipv4-or-ipv6-sessions-on-active-connections"></a>Добавление сеансов IPv4 или IPv6 для активных соединений
 
-В этом примере описывается, как добавить сеанс IPv6 в существующую прямую связь только с сеансом IPv4. 
+В этом примере описывается добавление сеанса IPv6 в существующее прямое соединение только с сеансом IPv4. 
 
 ```powershell
 
@@ -80,6 +80,6 @@ $directPeering | Update-AzPeering
 
 ```
 
-### <a name="remove-ipv4-or-ipv6-sessions-on-active-connections"></a>Удаление сеансов IPv4 или IPv6 на активных соединениях
+### <a name="remove-ipv4-or-ipv6-sessions-on-active-connections"></a>Удаление сеансов IPv4 или IPv6 на активных подключениях
 
-Удаление сеанса IPv4 или IPv6 из существующего соединения в настоящее время не поддерживается на PowerShell. Для получения дополнительной информации обратитесь в [грансь-наВеркинг е.](mailto:peeringexperience@microsoft.com)
+Удаление сеанса IPv4 или IPv6 из существующего подключения сейчас не поддерживается в PowerShell. Для получения дополнительных сведений обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).

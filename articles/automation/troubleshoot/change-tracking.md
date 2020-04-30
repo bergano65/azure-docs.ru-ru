@@ -1,6 +1,6 @@
 ---
-title: Проблемы устранения неполадок с отслеживанием изменений и инвентаризацией
-description: Узнайте, как устранить неполадки и устранить проблемы с решением отслеживания и инвентаризации изменений автоматизации Azure.
+title: Устранение проблем с Отслеживание изменений и инвентаризацией
+description: Узнайте, как устранять неполадки и решать проблемы с помощью решения службы автоматизации Azure Отслеживание изменений и инвентаризации.
 services: automation
 ms.service: automation
 ms.subservice: change-inventory-management
@@ -10,39 +10,39 @@ ms.date: 01/31/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 11c1fd05055922b07801c20d525d852d5360b069
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81679354"
 ---
-# <a name="troubleshoot-change-tracking-and-inventory-issues"></a>Проблемы отслеживания и инвентаризации неполадок
+# <a name="troubleshoot-change-tracking-and-inventory-issues"></a>Устранение неполадок Отслеживание изменений и инвентаризации
 
-В этой статье описывается, как устранить проблемы отслеживания изменений и инвентаризации.
+В этой статье описывается, как устранять неполадки Отслеживание изменений и инвентаризации.
 
 >[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Для инструкций по установке модуля Az на гибридном Runbook Worker [см.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0) Для учетной записи Автоматизация вы можете обновить свои модули до последней версии, используя [как обновить модули Azure PowerShell в Azure Automation.](../automation-update-azure-modules.md)
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
 
 ## <a name="windows"></a>Windows
 
-### <a name="scenario-change-tracking-and-inventory-records-arent-showing-for-windows-machines"></a><a name="records-not-showing-windows"></a>Сценарий: Записи отслеживания и инвентаризации изменений не отображаются для машин Windows
+### <a name="scenario-change-tracking-and-inventory-records-arent-showing-for-windows-machines"></a><a name="records-not-showing-windows"></a>Сценарий: Отслеживание изменений и записи инвентаризации не отображаются для компьютеров под Windows
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
-Вы не видите результатов отслеживания изменений и инвентаризации для компьютеров Windows, которые находятся на борту.
+Вы не видите никаких Отслеживание изменений и результатов инвентаризации для подключенных компьютеров Windows.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
-Эта ошибка может иметь следующие причины:
+Эта ошибка может быть вызвана следующими причинами.
 
 * Агент Log Analytics для Windows не работает.
-* Связь с учетной записью Automation блокируется.
-* Пакеты отслеживания изменений и управления запасами не загружаются.
-* VM время на борту, возможно, пришли из клонированной машины, которая не была sysprepped с агентом журнала Analytics для Windows установлен.
+* Подключение к учетной записи службы автоматизации блокируется.
+* Пакеты управления Отслеживание изменений и Inventory не скачаны.
+* Подключаемая виртуальная машина может быть взята с клонированного компьютера, который не Sysprep с установленным агентом Log Analytics для Windows.
 
 #### <a name="resolution"></a>Решение
 
-На машине агента Log Analytics перейдите на **C: «Файлы программы»-«Агент мониторинга Майкрософт» и** запустите следующие команды:
+На компьютере агента Log Analytics перейдите к папке **C:\Program Files\Microsoft Monitoring ажент\ажент\тулс** и выполните следующие команды:
 
 ```cmd
 net stop healthservice
@@ -51,76 +51,76 @@ StartTracing.cmd VER
 net start healthservice
 ```
 
-Если вам все еще нужна помощь, вы можете собрать информацию о диагностике и связаться с нами. 
+Если вам по-прежнему нужна помощь, можно получить сведения о диагностике и обратиться в службу поддержки. 
 
 > [!NOTE]
-> Агент Log Analyticss позволяет отслеживать ошибки по умолчанию. Для включения многословных сообщений об ошибках, как в предыдущем примере, `VER` используйте параметр. Для трассировки информации используйте `INF` при вызове `StartTracing.cmd`.
+> Агент log Analytics по умолчанию включает трассировку ошибок. Чтобы включить подробные сообщения об ошибках, как в предыдущем примере, используйте `VER` параметр. Для трассировки информации используйте `INF` при вызове `StartTracing.cmd`.
 
-##### <a name="log-analytics-agent-for-windows-not-running"></a>Агент аналитики журнала для Windows не работает
+##### <a name="log-analytics-agent-for-windows-not-running"></a>Агент Log Analytics для Windows не работает
 
-Убедитесь, что агент Log Analytics для Windows **(HealthService.exe)** работает на машине.
+Убедитесь, что на компьютере выполняется агент Log Analytics для Windows (**HealthService. exe**).
 
-##### <a name="communication-to-automation-account-blocked"></a>Заблокирована связь с аккаунтом Автоматизации
+##### <a name="communication-to-automation-account-blocked"></a>Обмен данными с учетной записью службы автоматизации заблокирован
 
 Проверьте компонент Просмотр событий на компьютере, а также найдите любые события, которые содержат слово `changetracking`.
 
-Просматривайте [ресурсы автоматизации в центре обработки данных или в облаке, используя Hybrid Runbook Worker,](../automation-hybrid-runbook-worker.md#network-planning) чтобы узнать об адресах и портах, которые должны быть разрешены для отслеживания изменений и инвентаризации для работы.
+Сведения об адресах и портах, которые должны быть разрешены для Отслеживание изменений и инвентаризации, см. в статье [Автоматизация ресурсов в центре обработки данных или в облаке с помощью гибридной рабочей роли Runbook](../automation-hybrid-runbook-worker.md#network-planning) .
 
-##### <a name="management-packs-not-downloaded"></a>Пакеты управления не загружены
+##### <a name="management-packs-not-downloaded"></a>Пакеты управления не скачаны
 
-Убедитесь, что следующие пакеты отслеживания изменений и управления запасами установлены локально:
+Убедитесь, что следующие пакеты управления Отслеживание изменений и Inventory установлены локально:
 
 * `Microsoft.IntelligencePacks.ChangeTrackingDirectAgent.*`
 * `Microsoft.IntelligencePacks.InventoryChangeTracking.*`
 * `Microsoft.IntelligencePacks.SingletonInventoryCollection.*`
 
-##### <a name="vm-from-cloned-machine-that-has-not-been-sysprepped"></a>VM из клонированной машины, которая не была sysprepped
+##### <a name="vm-from-cloned-machine-that-has-not-been-sysprepped"></a>ВИРТУАЛЬная машина на клонированном компьютере, не Sysprep
 
-При использовании клонированного изображения сначала установите изображение, а затем установите агент Log Analytics для Windows.
+При использовании клонированного образа сначала выполните Sysprep, а затем установите агент Log Analytics для Windows.
 
 ## <a name="linux"></a>Linux
 
-### <a name="scenario-no-change-tracking-and-inventory-results-on-linux-machines"></a>Сценарий: Нет результатов отслеживания изменений и инвентаризации на машинах Linux
+### <a name="scenario-no-change-tracking-and-inventory-results-on-linux-machines"></a>Сценарий: нет результатов Отслеживание изменений и инвентаризации на компьютерах Linux
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
-Вы не видите результатов отслеживания запасов и изменений для машин Linux, которые находятся на борту решения. 
+Вы не видите никаких результатов инвентаризации и Отслеживание изменений для компьютеров Linux, подключенных к решению. 
 
-#### <a name="cause"></a>Причина:
-Вот возможные причины, специфические для этой проблемы:
+#### <a name="cause"></a>Причина
+Ниже приведены возможные причины, связанные с этой проблемой.
 * Агент Log Analytics для Linux не работает.
 * Агент Log Analytics для Linux настроен неправильно.
-* Существуют конфликты по мониторингу целостности файлов (FIM).
+* Существуют конфликты мониторинга целостности файлов (FIM).
 
 #### <a name="resolution"></a>Решение 
 
-##### <a name="log-analytics-agent-for-linux-not-running"></a>Агент журналной аналитики для Linux не работает
+##### <a name="log-analytics-agent-for-linux-not-running"></a>Агент Log Analytics для Linux не работает
 
-Убедитесь, что daemon для агента Log Analytics для Linux **(omsagent**) работает на вашей машине. Выполнить следующий запрос в рабочей области Log Analytics, который связан с вашей учетной записью Automation.
+Убедитесь, что управляющая программа для агента Log Analytics для Linux (**omsagent**) запущена на компьютере. Выполните следующий запрос в рабочей области Log Analytics, связанной с учетной записью службы автоматизации.
 
 ```loganalytics Copy
 Heartbeat
 | summarize by Computer, Solutions
 ```
 
-Если вы не видите свою машину в результатах запроса, она недавно зарегистрировалась. Вероятно, есть проблема локальной конфигурации, и вы должны переустановить агент. Для получения информации об установке и конфигурации [см.](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent) 
+Если компьютер не отображается в результатах запроса, он не был недавно возвращен. Возможно, существует ошибка локальной конфигурации, и необходимо переустановить агент. Сведения об установке и настройке см. [в разделе "получение данных журнала с помощью агента log Analytics"](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent). 
 
-Если машина отображается в результатах запроса, проверьте конфигурацию области. Смотрите [решения для мониторинга таргетинга в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/solution-targeting).
+Если компьютер отображается в результатах запроса, проверьте конфигурацию области. См. раздел [нацеленность на решения мониторинга в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/solution-targeting).
 
-Для более устранения неполадок этой проблемы [см.](https://docs.microsoft.com/azure/azure-monitor/platform/agent-linux-troubleshoot#issue-you-are-not-seeing-any-linux-data)
+Дополнительные сведения об устранении этой проблемы см. в разделе [проблема. данные Linux не отображаются](https://docs.microsoft.com/azure/azure-monitor/platform/agent-linux-troubleshoot#issue-you-are-not-seeing-any-linux-data).
 
-##### <a name="log-analytics-agent-for-linux-not-configured-correctly"></a>Агент журналной аналитики для Linux не настроен правильно
+##### <a name="log-analytics-agent-for-linux-not-configured-correctly"></a>Агент Log Analytics для Linux настроен неправильно
 
-Агент Log Analytics для Linux может быть неправильно настроен для сбора данных журнала и командной строки с помощью инструмента OMS Log Collector. Просматривайте [изменения в среде с помощью решения отслеживания и инвентаризации изменений.](../change-tracking.md)
+Возможно, агент Log Analytics для Linux неправильно настроен для сбора выходных данных журнала и командной строки с помощью средства сбора журналов OMS. [В статье мониторинг изменений в среде с помощью решения отслеживание изменений и инвентаризации](../change-tracking.md).
 
 ##### <a name="fim-conflicts"></a>Конфликты FIM
 
-Функция FIM центра безопасности Azure может быть неправильной проверкой целостности файлов Linux. Убедитесь, что FIM работает и правильно настроен для мониторинга файлов Linux. Просматривайте [изменения в среде с помощью решения отслеживания и инвентаризации изменений.](../change-tracking.md)
+Возможно, функция FIM центра безопасности Azure неправильно проверяет целостность файлов Linux. Убедитесь, что FIM работает и правильно настроен для мониторинга файлов Linux. [В статье мониторинг изменений в среде с помощью решения отслеживание изменений и инвентаризации](../change-tracking.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Если вы не видите проблему выше или не можете решить вашу проблему, попробуйте один из следующих каналов для дополнительной поддержки:
+Если вы не видите проблему выше или не можете устранить проблему, воспользуйтесь одним из следующих каналов для получения дополнительной поддержки:
 
-* Получите ответы от экспертов Azure через [форумы Azure.](https://azure.microsoft.com/support/forums/)
-* Связаться [@AzureSupport](https://twitter.com/azuresupport)с официальной учетной записью Microsoft Azure для улучшения обслуживания клиентов, подключив сообщество Azure к нужным ресурсам: ответам, поддержке и экспертам.
-* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **«Получите поддержку».**
+* Получите ответы от экспертов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
+* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport)помощью официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **получить поддержку**.

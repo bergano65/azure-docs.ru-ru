@@ -12,10 +12,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: c664d4859a306387b4eafa2f19ab5877ccf6eb1b
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81686960"
 ---
 # <a name="run-opc-publisher"></a>Выполнение издателя OPC
@@ -372,7 +372,7 @@ docker run mcr.microsoft.com/iotedge/opc-publisher <applicationname> [<IoT Hubco
 Чтобы добавить издателя OPC в виде модуля в развертывание IoT Edge, перейдите к параметрам Центра Интернета вещей на портале Azure и выполните следующие действия:
 
 1. Откройте **IoT Edge**, создайте или выберите устройство IoT Edge.
-1. Выберите **набор модулей.**
+1. Выберите **задать модули**.
 1. В разделе **Модули развертывания** выберите **Добавить**, а затем **Модуль IoT Edge**.
 1. В поле **Имя** введите **publisher** (издатель).
 1. В поле **URI образа** введите `mcr.microsoft.com/iotedge/opc-publisher:<tag>`.
@@ -713,6 +713,6 @@ current working set in MB: 90
 
 Он реализует несколько тегов, которые генерируют случайные данные и теги с аномальными результатами. Этот пример можно расширить, если потребуется имитировать значения других тегов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как запускать издателя OPC, мы рекомендуем перейти к изучению [двойника OPC](overview-opc-twin.md) и [хранилища OPC](overview-opc-vault.md).

@@ -8,10 +8,10 @@ ms.date: 05/22/2017
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: f195a5c05c6c95dac898b2d471747952a3446d52
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81681715"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-kubernetes-cluster-with-coscale"></a>Мониторинг кластера Kubernetes в Службе контейнеров Azure с помощью CoScale (не рекомендуется)
@@ -30,7 +30,7 @@ CoScale представляет собой платформу для монит
 Как показано в этой статье, вы можете установить агенты в кластер Kubernetes для выполнения CoScale в качестве решения SaaS. CoScale также можно установить локально, если необходимо хранить данные на месте.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Сначала потребуется [создать учетную запись CoScale](https://web.archive.org/web/20170507123133/https://www.coscale.com/free-trial).
 
@@ -59,7 +59,7 @@ az acs kubernetes install-cli
 ```
 
 ## <a name="installing-the-coscale-agent-with-a-daemonset"></a>Установка агента CoScale с помощью DaemonSet
-[DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) используются Kubernetes для выполнения одного экземпляра контейнера на каждом узлах в кластере.
+[Daemonset](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) используются Kubernetes для запуска одного экземпляра контейнера на каждом узле в кластере.
 Они идеально подходят для выполнения агентов мониторинга, таких как CoScale.
 
 После входа в CoScale перейдите на [страницу агента](https://developer.newrelic.com/), чтобы установить в кластер агенты CoScale с помощью DaemonSet. Пользовательский интерфейс CoScale содержит пошаговые инструкции настройки по созданию агента и запуску мониторинга всего кластера Kubernetes.
@@ -77,7 +77,7 @@ az acs kubernetes install-cli
 На новых компьютерах в кластере агент CoScale устанавливается автоматически. Он автоматически обновляется при выпуске новой версии.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о решениях CoScale для мониторинга см. в [документации по CoScale](https://web.archive.org/web/20180415164304/http://docs.coscale.com:80/) и в [блоге](https://web.archive.org/web/20170501021344/http://www.coscale.com:80/blog). 
 

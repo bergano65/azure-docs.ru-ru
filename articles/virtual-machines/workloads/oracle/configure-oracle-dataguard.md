@@ -15,17 +15,17 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: borisb
 ms.openlocfilehash: 96528dc34305e77602634110a0153f7623a15c96
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81676765"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью сценариев. В этой статье описывается, как с помощью Azure CLI развернуть базу данных Oracle Database 12c из образа Azure Marketplace. В этой статье представлено пошаговое руководство по установке и настройке Data Guard на виртуальной машине Azure.
 
-Прежде чем начать, убедитесь, что установлен интерфейс командной строки Azure CLI. Для получения дополнительной информации смотрите [руководство по установке Azure CLI.](https://docs.microsoft.com/cli/azure/install-azure-cli)
+Прежде чем начать, убедитесь, что установлен интерфейс командной строки Azure CLI. Дополнительные сведения см. в разделе [руководства по установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
 ### <a name="assumptions"></a>Предположения
@@ -282,7 +282,7 @@ SQL> ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/cdb1/standby_r
 SQL> ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/cdb1/standby_redo04.log') SIZE 50M;
 ```
 
-Включите Flashback (что делает восстановление намного\_\_проще) и установить STANDBY FILE MANAGEMENT на авто. После этого выйти из состава компании «СЗЛПлюс».
+Включите воспоминаний (что значительно упрощает восстановление) и задайте для параметра Управление\_резервными\_файлами значение авто. Выйдите из SQL * Plus после этого.
 
 ```bash
 SQL> ALTER DATABASE FLASHBACK ON;
@@ -512,7 +512,7 @@ SQL> EXIT;
 
 ### <a name="configure-data-guard-broker-on-myvm1-primary"></a>Настройка брокера Data Guard на myVM1 (основная)
 
-Запустите диспетчер Data Guard и войдите, используя SYS и пароль. (Не используйте аутентификацию ОС.) Выполните следующее:
+Запустите диспетчер Data Guard и войдите, используя SYS и пароль. (Не использовать проверку подлинности ОС.) Выполните следующие действия.
 
 ```bash
 $ dgmgrl sys/OraPasswd1@cdb1
@@ -699,7 +699,7 @@ SQL>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание полной среды Linux с помощью Azure CLI 2.0](../../linux/create-cli-complete.md)
 
