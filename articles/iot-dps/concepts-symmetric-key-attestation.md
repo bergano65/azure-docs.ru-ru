@@ -1,6 +1,6 @@
 ---
 title: Служба подготовки устройств к добавлению в Центр Интернета вещей. Аттестация симметричных ключей
-description: В этой статье представлен концептуальный обзор симметричного key attestation с помощью службы обеспечения устройств IoT (DPS).
+description: В этой статье приводятся общие сведения о аттестации симметричных ключей с помощью службы подготовки устройств Интернета вещей (DPS).
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/04/2019
@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.openlocfilehash: 0e3d343c0a68dd527e4e8e8d23e5b3843a216a78
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79271516"
 ---
 # <a name="symmetric-key-attestation"></a>Аттестация симметричных ключей
@@ -110,7 +110,7 @@ String deviceKey = Utils.ComputeDerivedSymmetricKey(Convert.FromBase64String(mas
 
 Если ключи устройств не установлены на этапе производства, для безопасного хранения удостоверения устройства необходимо использовать [аппаратный модуль безопасности (HSM)](concepts-security.md#hardware-security-module).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучив все сведения об аттестации симметричных ключей, вы можете приступить к работе со следующими статьями:
 

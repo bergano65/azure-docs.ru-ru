@@ -1,6 +1,6 @@
 ---
 title: Управление кластерами Azure HDInsight с помощью Azure CLI
-description: Узнайте, как использовать Azure CLI для управления кластерами Azure HDInsight. Типы кластеров включают Apache Hadoop, Spark, HBase, Storm, Kafka, Интерактивный запрос и ML-сервисы.
+description: Узнайте, как использовать Azure CLI для управления кластерами Azure HDInsight. К типам кластеров относятся Apache Hadoop, Spark, HBase, Kafka, Интерактивные запросы и службы ML.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/26/2020
 ms.openlocfilehash: 2c6495454e5ba2449d4b3c74a096681f74610813
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79272777"
 ---
 # <a name="manage-azure-hdinsight-clusters-using-azure-cli"></a>Управление кластерами Azure HDInsight с помощью Azure CLI
@@ -31,7 +31,7 @@ ms.locfileid: "79272777"
 
 ## <a name="connect-to-azure"></a>Подключение к Azure
 
-Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, **попробуйте ее** в правом верхнем углу блока кода. В противном случае введите следующую команду:
+Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, щелкните **Попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
 
 ```azurecli-interactive
 az login
@@ -42,7 +42,7 @@ az login
 
 ## <a name="list-clusters"></a>список кластеров
 
-Используйте [список az hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-list) для списка кластеров. Отоверьте приведенные ниже `RESOURCE_GROUP_NAME` команды, заменив название группы ресурсов, а затем введите команды:
+Список кластеров можно получить с помощью команды [AZ hdinsight List](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-list) . Измените приведенные ниже команды, `RESOURCE_GROUP_NAME` заменив именем своей группы ресурсов, а затем введите команды:
 
 ```azurecli-interactive
 # List all clusters in the current subscription
@@ -60,7 +60,7 @@ az hdinsight list --resource-group RESOURCE_GROUP_NAME --query "[].{clusterName:
 
 ## <a name="show-cluster"></a>Отображение кластеров
 
-Используйте [шоу az hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-show) для отображаемой информации для указанного кластера. Отодеть команду ниже, `RESOURCE_GROUP_NAME` `CLUSTER_NAME` заменив, и с соответствующей информацией, а затем введите команду:
+Чтобы отобразить сведения об указанном кластере, используйте команду [AZ hdinsight демонстрация](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-show) . Измените приведенную ниже команду, `RESOURCE_GROUP_NAME`заменив `CLUSTER_NAME` и соответствующей информацией, а затем введите команду:
 
 ```azurecli-interactive
 az hdinsight show --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
@@ -68,13 +68,13 @@ az hdinsight show --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
 
 ## <a name="delete-clusters"></a>Удаление кластеров
 
-Используйте [удаление az hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-delete) для удаления указанного кластера. Отодеть команду ниже, `RESOURCE_GROUP_NAME` `CLUSTER_NAME` заменив, и с соответствующей информацией, а затем введите команду:
+Чтобы удалить указанный кластер, используйте команду [AZ hdinsight Delete](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-delete) . Измените приведенную ниже команду, `RESOURCE_GROUP_NAME`заменив `CLUSTER_NAME` и соответствующей информацией, а затем введите команду:
 
 ```azurecli-interactive
 az hdinsight delete --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
 ```
 
-Можно также удалить кластер, удалив группу ресурсов, которая содержит этот кластер. Обратите внимание, что это удалит все ресурсы группы, включая учетную запись хранения по умолчанию.
+Можно также удалить кластер, удалив группу ресурсов, которая содержит этот кластер. Обратите внимание, что это приведет к удалению всех ресурсов в группе, включая учетную запись хранения по умолчанию.
 
 ```azurecli-interactive
 az group delete --name RESOURCE_GROUP_NAME
@@ -82,17 +82,17 @@ az group delete --name RESOURCE_GROUP_NAME
 
 ## <a name="scale-clusters"></a>Масштабирование кластеров
 
-Используйте [ahdinsight,](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) чтобы изменить размер указанного кластера HDInsight до указанного размера. Отодеть команду ниже, `RESOURCE_GROUP_NAME` `CLUSTER_NAME` заменив, и с соответствующей информацией. Замените `WORKERNODE_COUNT` нужное количество рабочих узлов для кластера. Для получения дополнительной информации о [Scale HDInsight clusters](./hdinsight-scaling-best-practices.md)кластерах масштабирования см. Введите команду:
+Чтобы изменить размер указанного кластера HDInsight до указанного размера, используйте команду [AZ hdinsight изменить](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) размер. Измените приведенную ниже команду, `RESOURCE_GROUP_NAME`заменив `CLUSTER_NAME` и соответствующими данными. Замените `WORKERNODE_COUNT` требуемым числом рабочих узлов для кластера. Дополнительные сведения о масштабировании кластеров см. в статье [масштабирование кластеров HDInsight](./hdinsight-scaling-best-practices.md). Введите команду:
 
 ```azurecli-interactive
 az hdinsight resize --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME --workernode-count WORKERNODE_COUNT
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-В этой статье вы узнали, как выполнять различные административные задачи кластера HDInsight. Дополнительные сведения см. в следующих статьях:
+В этой статье вы узнали, как выполнять различные задачи администрирования кластера HDInsight. Дополнительные сведения см. в следующих статьях:
 
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell](hdinsight-administer-use-powershell.md)
-* [Начало работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
+* [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
 * [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)

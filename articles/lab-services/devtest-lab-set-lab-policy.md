@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: aa0ffbd69e73ddbef72e0eabf79f2736079c3d23
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79270723"
 ---
 # <a name="manage-all-policies-for-a-lab-in-azure-devtest-labs"></a>Управление всеми политиками лаборатории в Azure DevTest Labs
@@ -130,7 +130,7 @@ Azure DevTest Labs позволяет контролировать расход�
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После определения и применения различных параметров политики виртуальных машин для лаборатории можно выполнить следующие задачи.
 
 * [Общие IP-адреса в Azure DevTest Labs](devtest-lab-shared-ip.md). Объясняется, как с помощью общих IP-адресов в DevTest Labs минимизировать количество общедоступных IP-адресов, необходимых для подключения к виртуальным машинам лаборатории.
