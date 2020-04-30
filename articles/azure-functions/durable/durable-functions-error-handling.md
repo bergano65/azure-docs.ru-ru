@@ -5,23 +5,23 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 447b3dcf5040835f5a853beff68bde794ece51f5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79277860"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
-Прочеденная оркестровка функций реализована в коде и может использовать встроенные функции обработки ошибок на языке программирования. Там действительно нет каких-либо новых концепций, вам нужно научиться добавлять обработки ошибок и компенсации в оркестровки. Однако следует помнить о некоторых особенностях поведения.
+Согласованность устойчивых функций реализована в коде и может использовать встроенные функции обработки ошибок языка программирования. В действительности нет никаких новых концепций, которые необходимо изучить, чтобы добавить в согласование обработку ошибок и компенсацию. Однако следует помнить о некоторых особенностях поведения.
 
 ## <a name="errors-in-activity-functions"></a>Ошибки в функциях действий
 
-Любое исключение, которое брошено в функции действия, возвращается `FunctionFailedException`к функции оркестратора и выбрасывается как . Вы можете написать код для обработки и компенсации ошибок, соответствующий вашим потребностям в функции оркестратора.
+Любое исключение, которое вызывается в функции действия, передается обратно в функцию Orchestrator и выдается `FunctionFailedException`как. Вы можете написать код для обработки и компенсации ошибок, соответствующий вашим потребностям в функции оркестратора.
 
 Например, рассмотрим следующую функцию оркестратора, которая перемещает средства с одного счета на другой:
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("TransferFunds")]
@@ -60,9 +60,9 @@ public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext
 ```
 
 > [!NOTE]
-> Предыдущие примеры СЗ относятся к долгосрочным функциям 2.x. Для долгосрочных функций 1.x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
+> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -100,13 +100,13 @@ module.exports = df.orchestrator(function*(context) {
 
 ---
 
-Если первый вызов функции **CreditAccount** не удается, функция оркестратора компенсируется за счет зачисления средств обратно на исходный счет.
+Если первый вызов функции **кредитаккаунт** завершается неудачно, функция Orchestrator компенсирует денежные средства в исходной учетной записи.
 
 ## <a name="automatic-retry-on-failure"></a>Автоматическое повторение попыток при сбое
 
 При вызове функций действий или функций суборкестрации можно указать автоматическую политику повтора. В следующем примере предпринимается попытка вызова функции до трех раз с ожиданием в течение 5 секунд между попытками:
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("TimerOrchestratorWithRetry")]
@@ -123,9 +123,9 @@ public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext
 ```
 
 > [!NOTE]
-> Предыдущие примеры СЗ относятся к долгосрочным функциям 2.x. Для долгосрочных функций 1.x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
+> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -145,20 +145,20 @@ module.exports = df.orchestrator(function*(context) {
 
 ---
 
-Вызов функции действия в предыдущем примере использует параметр для настройки политики автоматической повторной попытки. Существует несколько вариантов настройки политики автоматической повторной попытки:
+Вызов функции действия в предыдущем примере принимает параметр для настройки политики автоматической повторной попытки. Существует несколько вариантов настройки политики автоматического повтора.
 
 * **Max number of attempts** (Максимальное число попыток): максимальное число повторных попыток.
 * **First retry interval** (Интервал до первого повтора): время ожидания перед первой повторной попыткой.
 * **Backoff coefficient** (Коэффициент отсрочки): коэффициент, позволяющий определить степень увеличения отсрочки. По умолчанию равен 1.
 * **Max retry interval** (Максимальный интервал повтора): максимальное время ожидания между повторными попытками.
 * **Retry timeout** (Время ожидания повтора): максимальное время, отведенное на выполнение повторных попыток. Поведение по умолчанию — бесконечное повторение.
-* **Ручка**: Можно указать обратный вызов, определяемый пользователем, чтобы определить, следует ли повторить функцию.
+* **Handle**: можно указать определяемый пользователем обратный вызов, чтобы определить, следует ли повторить попытку выполнения функции.
 
 ## <a name="function-timeouts"></a>Время ожидания функций
 
-Вы можете отказаться от вызова функции в функции оркестратора, если это занимает слишком много времени, чтобы завершить. Правильный способ сделать это в настоящее время — создать [устойчивый таймер](durable-functions-timers.md), используя `context.CreateTimer` (.NET) или `context.df.createTimer` (JavaScript) в сочетании с `Task.WhenAny` (.NET) или `context.df.Task.any` (JavaScript), как показано в следующем примере:
+Может потребоваться отменить вызов функции в функции Orchestrator, если выполнение займет слишком много времени. Правильный способ сделать это в настоящее время — создать [устойчивый таймер](durable-functions-timers.md), используя `context.CreateTimer` (.NET) или `context.df.createTimer` (JavaScript) в сочетании с `Task.WhenAny` (.NET) или `context.df.Task.any` (JavaScript), как показано в следующем примере:
 
-# <a name="c"></a>[C #](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("TimerOrchestrator")]
@@ -189,9 +189,9 @@ public static async Task<bool> Run([OrchestrationTrigger] IDurableOrchestrationC
 ```
 
 > [!NOTE]
-> Предыдущие примеры СЗ относятся к долгосрочным функциям 2.x. Для долгосрочных функций 1.x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Для получения дополнительной информации о [Durable Functions versions](durable-functions-versions.md) различиях между версиями см.
+> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-# <a name="javascript"></a>[Javascript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -224,10 +224,10 @@ module.exports = df.orchestrator(function*(context) {
 
 Если функция оркестратора завершается сбоем с необработанным исключением, сведения об этом исключении регистрируются в журнале, и экземпляр завершает работу с состоянием `Failed`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Узнайте о вечных оркестровке](durable-functions-eternal-orchestrations.md)
+> [Сведения об оркестрации нескончаемые](durable-functions-eternal-orchestrations.md)
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения для диагностики неполадок](durable-functions-diagnostics.md)

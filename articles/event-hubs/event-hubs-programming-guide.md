@@ -1,5 +1,5 @@
 ---
-title: Руководство по программированию .NET - Концентраторы событий Azure (наследие) Документы Майкрософт
+title: Руководством по программированию для .NET — концентраторы событий Azure (устаревший) | Документация Майкрософт
 description: В этой статье приводятся сведения о том, как писать код для службы "Центры событий Azure" с помощью пакета Azure SDK для .NET.
 services: event-hubs
 documentationcenter: na
@@ -10,24 +10,24 @@ ms.topic: article
 ms.date: 01/15/2020
 ms.author: shvija
 ms.openlocfilehash: d958c2d32c16874676f46bb216067fe2d7bbe784
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79280980"
 ---
-# <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>Руководство по программированию .NET для концентраторов событий Azure (устаревший пакет Microsoft.Azure.EventHubs)
+# <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>Руководством по программированию .NET для концентраторов событий Azure (устаревший пакет Microsoft. Azure. EventHubs)
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](event-hubs-what-is-event-hubs.md).
 
 > [!WARNING]
-> Это руководство предназначено для старого пакета **Microsoft.Azure.EventHubs.** Мы рекомендуем [перенести](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md) свой код, чтобы использовать последний пакет [Azure.Messaging.EventHubs.](get-started-dotnet-standard-send-v2.md)  
+> Это краткое справочное по для старого пакета **Microsoft. Azure. EventHubs** . Мы рекомендуем [перенести](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md) код, чтобы использовать последний пакет [Azure. Messaging. EventHubs](get-started-dotnet-standard-send-v2.md) .  
 
 
 ## <a name="event-publishers"></a>Издатели событий
 
 Отправка событий в концентратор событий осуществляется с использованием HTTP POST или через подключение AMQP 1.0. Выбор способа и времени зависит от определенного сценария, к которому выполняется обращение. Подключения AMQP 1.0 измеряются как подключения через посредника по служебной шине. Они больше всего подходят для сценариев с большими объемами сообщений и менее строгими требованиями к задержке, так как такие подключения обеспечивают постоянный канал обмена сообщениями.
 
-При использовании управляемых API .NET основными конструктивными элементами для публикации данных в Центрах событий являются классы [EventHubClient][] и [EventData][]. [EventHubClient][] предоставляет канал связи АМЗП, по которому события отправляются в центр событий. Класс [EventData][] представляет собой событие и используется для публикации сообщений в концентраторе событий. Этот класс включает в себя тело, некоторые метаданные (Свойства) и информацию заголовка (SystemProperties) о событии. По мере перемещения объекта [EventData][] через концентратор событий к объекту добавляются другие свойства.
+При использовании управляемых API .NET основными конструктивными элементами для публикации данных в Центрах событий являются классы [EventHubClient][] и [EventData][]. [EventHubClient][] предоставляет канал связи AMQP, по которому события отправляются в концентратор событий. Класс [EventData][] представляет собой событие и используется для публикации сообщений в концентраторе событий. Этот класс включает тело, некоторые метаданные (свойства) и сведения о заголовке (Системпропертиес) о событии. По мере перемещения объекта [EventData][] через концентратор событий к объекту добавляются другие свойства.
 
 ## <a name="get-started"></a>Начало работы
 Классы .NET, поддерживающие Центры событий, входят в пакет NuGet [Microsoft.Azure.EventHubs](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Центр событий можно установить с помощью обозревателя решений Visual Studio или [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) в Visual Studio. Для этого выполните следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) :
@@ -76,7 +76,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 ## <a name="partition-key"></a>Ключ секции
 
 > [!NOTE]
-> Если вы не знакомы с разделами, смотрите [эту статью](event-hubs-features.md#partitions). 
+> Если вы не знакомы с секциями, см. [эту статью](event-hubs-features.md#partitions). 
 
 При отправке данных событий можно указать значение, которое хэшируется для создания назначения секции. Укажите свойство секции, используя [PartitionSender.PartitionID](/dotnet/api/microsoft.azure.eventhubs.partitionsender.partitionid). Кроме того, решение об использовании секций подразумевает выбор между доступностью и целостностью. 
 
@@ -114,10 +114,10 @@ for (var i = 0; i < numMessagesToSend; i++)
 * [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync)
 * [ProcessErrorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processerrorasync);
 
-Чтобы начать обработку событий, мгновенно [eventProcessorHost][], предоставляя соответствующие параметры для вашего концентратора событий. Пример:
+Чтобы начать обработку событий, создайте экземпляр [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Пример:
 
 > [!NOTE]
-> EventProcessorHost и связанные с ним классы представлены в пакете **Microsoft.Azure.EventHubs.Processor.** Добавьте пакет в проект Visual Studio, следуя инструкциям в [этой статье](event-hubs-dotnet-framework-getstarted-send.md#add-the-event-hubs-nuget-package) или выпустив следующую команду в окне [консоли менеджера пакетов:](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) `Install-Package Microsoft.Azure.EventHubs.Processor`.
+> EventProcessorHost и связанные с ним классы предоставляются в пакете **Microsoft. Azure. EventHubs. Processor** . Добавьте пакет в проект Visual Studio, следуя инструкциям в [этой статье](event-hubs-dotnet-framework-getstarted-send.md#add-the-event-hubs-nuget-package) или выполнив следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) :`Install-Package Microsoft.Azure.EventHubs.Processor`.
 
 ```csharp
 var eventProcessorHost = new EventProcessorHost(
@@ -128,7 +128,7 @@ var eventProcessorHost = new EventProcessorHost(
         StorageContainerName);
 ```
 
-Затем позвоните [в RegisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync) для регистрации реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) с временем выполнения:
+Затем вызовите [регистеревентпроцессорасинк](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync) , чтобы зарегистрировать реализацию [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) в среде выполнения:
 
 ```csharp
 await eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>();
@@ -144,25 +144,25 @@ await eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>();
 
 ## <a name="publisher-revocation"></a>Отзыв издателя
 
-В дополнение к расширенным функциям запуска Event Processor Host, служба Event Hubs позволяет [отзыву издателя,](/rest/api/eventhub/revoke-publisher) чтобы заблокировать отправку события в концентратор событий. Эти функции полезны, если маркер издателя скомпрометирован или после обновления программного обеспечения эти функции перестали работать должным образом. В этих случаях для идентификатора издателя, который является частью маркера SAS, можно заблокировать возможность публикации событий.
+В дополнение к расширенным функциям, выполняемым узлом обработчика событий, служба концентраторов событий включает [отзыв издателя](/rest/api/eventhub/revoke-publisher) , чтобы запретить конкретным издателям отправлять события в концентратор событий. Эти функции полезны, если маркер издателя скомпрометирован или после обновления программного обеспечения эти функции перестали работать должным образом. В этих случаях для идентификатора издателя, который является частью маркера SAS, можно заблокировать возможность публикации событий.
 
 > [!NOTE]
-> В настоящее время только REST API поддерживает эту функцию[(отзыв издателя).](/rest/api/eventhub/revoke-publisher)
+> В настоящее время эта функция поддерживается только REST API ([отзыв издателя](/rest/api/eventhub/revoke-publisher)).
 
 Дополнительные сведения об отзыве издателя и отправке в Центры событий в качестве издателя см. в примере, приведенном в статье [Event Hubs Large Scale Secure Publishing](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) (Крупномасштабная безопасная публикация Центров событий).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о сценариях Центров событий см. в разделах, ссылки на которые указаны ниже.
 
 * [Общие сведения об API Центров событий](event-hubs-api-overview.md)
-* [Что такое Центры событий?](event-hubs-what-is-event-hubs.md)
+* [Что такое концентраторы событий](event-hubs-what-is-event-hubs.md)
 * [Доступность и согласованность в Центрах событий](event-hubs-availability-and-consistency.md)
-* [Ссылка на размещение процессора событий API](/dotnet/api/microsoft.servicebus.messaging.eventprocessorhost)
+* [Справочник по API узла обработчика событий](/dotnet/api/microsoft.servicebus.messaging.eventprocessorhost)
 
 [NamespaceManager]: /dotnet/api/microsoft.servicebus.namespacemanager
 [EventHubClient]: /dotnet/api/microsoft.azure.eventhubs.eventhubclient
-[Eventdata]: /dotnet/api/microsoft.azure.eventhubs.eventdata
+[EventData]: /dotnet/api/microsoft.azure.eventhubs.eventdata
 [CreateEventHubIfNotExists]: /dotnet/api/microsoft.servicebus.namespacemanager.createeventhubifnotexists
 [PartitionKey]: /dotnet/api/microsoft.servicebus.messaging.eventdata#Microsoft_ServiceBus_Messaging_EventData_PartitionKey
 [EventProcessorHost]: /dotnet/api/microsoft.azure.eventhubs.processor
