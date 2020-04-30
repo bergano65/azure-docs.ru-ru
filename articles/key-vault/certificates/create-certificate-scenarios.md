@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 02e13ce81ed2f11c0bb69015a4864c4a1ad55593
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81430972"
 ---
 # <a name="monitor-and-manage-certificate-creation"></a>Мониторинг и администрирование процесса создания сертификатов
@@ -36,7 +36,7 @@ ms.locfileid: "81430972"
 
 ## <a name="request-a-kv-certificate-with-a-supported-issuer"></a>Запрос сертификата Key Vault с помощью поддерживаемого издателя 
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
@@ -79,14 +79,14 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ## <a name="get-pending-request---request-status-is-inprogress"></a>Получение ожидающего запроса (состояние запроса "Выполняется").
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-OR
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
@@ -115,13 +115,13 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ### <a name="request"></a>Запрос
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-OR
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
@@ -147,13 +147,13 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ### <a name="request"></a>Запрос
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-OR
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
@@ -185,14 +185,14 @@ StatusCode: 200, ReasonPhrase: 'OK'
 ## <a name="get-pending-request---pending-request-status-is-deleted-or-overwritten"></a>Получение ожидающих запросов (состояние ожидающего запроса "Удалено" или "Перезаписано").
 Если ожидающий объект не находится в состоянии "Выполняется", он может быть удален или перезаписан при выполнении операции создания или импорта.
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-OR
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
@@ -223,7 +223,7 @@ StatusCode: 404, ReasonPhrase: 'Not Found'
 > [!NOTE]
 > Удаление ожидающего объекта может отменить запрос сертификата x509 с помощью поставщика.
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
@@ -260,7 +260,7 @@ StatusCode: 409, ReasonPhrase: 'Conflict'
 
 Если запрос на создание сертификата x509 завершается сбоем или отменяется по некоторым причинам и если сертификат x509 можно получить другим способом, для завершения создания сертификата Key Vault можно выполнить операцию слияния.
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
 
@@ -289,14 +289,14 @@ StatusCode: 403, ReasonPhrase: 'Forbidden'
 ## <a name="request-a-cancellation-while-the-pending-request-status-is-inprogress"></a>Запрос отмены при состоянии ожидающего запроса "Выполняется".
 Отмену можно только запросить. При необходимости запрос можно отменить. Если запрос не выполняется, возвращается код состояния HTTP 400 (недопустимый запрос).
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |PATCH|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-OR
+ИЛИ
 
 PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
@@ -329,14 +329,14 @@ StatusCode: 200, ReasonPhrase: 'OK'
 > [!NOTE]
 > Удаление ожидающего объекта может отменить запрос сертификата x509 с помощью поставщика.
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |DELETE|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-OR
+ИЛИ
 
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
@@ -359,7 +359,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 ## <a name="create-a-kv-certificate-manually"></a>Создание сертификата Key Vault вручную.
 Вы можете вручную создать сертификат, выданный в центре сертификации. В качестве имени издателя укажите Unknown либо оставьте поле издателя пустым.
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
@@ -399,7 +399,7 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ## <a name="merge-when-a-pending-request-is-created---manual-certificate-creation"></a>Слияние при создании ожидающего запроса (создание сертификата вручную).
 
-|Метод|URI запроса|
+|Метод|Универсальный код ресурса (URI) запроса|
 |------------|-----------------|
 |POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
 

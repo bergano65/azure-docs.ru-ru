@@ -1,6 +1,6 @@
 ---
 title: Непрерывная интеграция и развертывание
-description: Опыт devOps корпоративного класса для складирования данных со встроенной поддержкой для непрерывной интеграции и развертывания с помощью azure Pipelines.
+description: DevOps базы данных корпоративного класса для хранения данных благодаря встроенной поддержке непрерывной интеграции и развертывания с помощью Azure Pipelines.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -12,17 +12,17 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: ddd24eb510405d49465ca4e0e0f326f7260e2ed1
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81416228"
 ---
-# <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание для складирования данных
+# <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание хранилищ данных
 
-В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Этот учебник является вторым шагом в создании непрерывной интеграции и развертывания конвейера для складирования данных.
+В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Это руководство является вторым шагом в создании конвейера непрерывной интеграции и развертывания для хранения данных.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 - Изучите [учебник по интеграции системы управления версиями](sql-data-warehouse-source-control-integration.md).
 
@@ -32,7 +32,7 @@ ms.locfileid: "81416228"
 
 1. Перейдите к Azure Pipelines и создайте конвейер сборки.
 
-      ![Новый трубопровод](./media/sql-data-warehouse-continuous-integration-and-deployment/1-new-build-pipeline.png "Новый конвейер")
+      ![Новый конвейер](./media/sql-data-warehouse-continuous-integration-and-deployment/1-new-build-pipeline.png "Новый конвейер")
 
 2. Выберите репозиторий исходного кода (Azure Repos Git) и шаблон классического приложения .NET.
 
@@ -52,15 +52,15 @@ ms.locfileid: "81416228"
 
 2. При использовании локального агента убедитесь, что для переменной среды задано использование правильного файла SqlPackage.exe для Хранилища данных SQL. Путь должен выглядеть следующим образом:
 
-      ![Переменная среда](./media/sql-data-warehouse-continuous-integration-and-deployment/5-environment-variable-preview.png "Переменная среды")
+      ![Переменная среды](./media/sql-data-warehouse-continuous-integration-and-deployment/5-environment-variable-preview.png "Переменная среды")
 
    C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150  
 
    Запустите и проверьте свой конвейер. Вы можете вносить изменения локально и возвращать изменения в системе управления версиями, в результате чего должна выполняться автоматическая сборка и развертывание.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Исследуйте [архитектуру MPP пула MPP synapse S'L](massively-parallel-processing-mpp-architecture.md)
+- Изучение [архитектуры MPP пула SQL синапсе](massively-parallel-processing-mpp-architecture.md)
 - Быстрое создание [пула SQL](create-data-warehouse-portal.md)
-- [Данные образца нагрузки](load-data-from-azure-blob-storage-using-polybase.md)
+- [Загрузить образец данных](load-data-from-azure-blob-storage-using-polybase.md)
 - Просмотрите [видео](sql-data-warehouse-videos.md).

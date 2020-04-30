@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
 ms.openlocfilehash: 09c911838d34a083de8450145ce849fc966eb0e8
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81459157"
 ---
 # <a name="viewing-and-modifying-hostnames"></a>Просмотр и изменение имен узлов
@@ -41,7 +41,7 @@ ms.locfileid: "81459157"
 
 1. Убедитесь, что у вас есть сертификат клиента для подключения к порталу Azure. Чтобы получить сертификат клиента, выполните действия, описанные в разделе [Пошаговое руководство. Скачивание и импорт параметров публикации и информации о подписке](https://msdn.microsoft.com/library/dn385850.aspx). 
 2. Задайте запись заголовка с именем x-ms-version и значением 2013-11-01.
-3. Отправить запрос в следующем формате:\/https: /management.core.windows.net/\<\>subscrition-id/services/hostedservices/\<service-name\>?embed-detail-true
+3. Отправьте запрос в следующем формате:\/HTTPS:/Management.Core.Windows.NET/\<subscrition-ID\>/Services/hostedservices/\<Service-Name\>? embed-Detail = true
 4. Найдите элемент **HostName** для каждого элемента **RoleInstance**.
 
 > [!WARNING]
@@ -52,7 +52,7 @@ ms.locfileid: "81459157"
 ## <a name="modifying-a-hostname"></a>Изменение имени узла
 Вы можете изменить имя узла для любой виртуальной машины или экземпляра роли, отправив измененный файл конфигурации службы или переименовав компьютер из сеанса удаленного рабочего стола.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 [Разрешение имен (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances.md)
 
 [Схема конфигурации службы Azure (CSCFG-файл)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)

@@ -1,6 +1,6 @@
 ---
-title: Учебные данные о загрузке из хранилища озер данных Azure
-description: Используйте внешние таблицы PolyBase для загрузки данных из хранилища озер данных Azure для Synapse S'L.
+title: Руководство по загрузке данных из Azure Data Lake Storage
+description: Используйте внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage синапсе SQL.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -12,45 +12,45 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: 9713d73ee132f743ceea98cbaca6a83f36fd3a45
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81416118"
 ---
-# <a name="load-data-from-azure-data-lake-storage-for-sql-analytics"></a>Загрузка данных из хранилища озер данных Azure для аналитики S'L
+# <a name="load-data-from-azure-data-lake-storage-for-sql-analytics"></a>Загрузка данных из Azure Data Lake Storage для SQL Analytics
 
-В этом руководстве излагается, как использовать внешние таблицы PolyBase для загрузки данных из хранилища озер данных Azure Data. Несмотря на то, что можно запускать запросы на данные, хранящиеся в Data Lake Storage, мы рекомендуем импортировать данные для наилучшей производительности.
+В этом руководство описано, как использовать внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage. Несмотря на то, что можно выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, рекомендуется импортировать данные для лучшей производительности.
 
 > [!NOTE]  
-> Альтернативой загрузке является [заявление COPY,](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) наиболее публичное предварительное просмотр.  Заявление COPY обеспечивает максимальную гибкость. Чтобы предоставить обратную связь по заявлению COPY, sqldwcopypreview@service.microsoft.comотправьте электронное письмо в следующий список рассылки: .
+> Альтернативой загрузке является [инструкция копирования](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) , которая сейчас находится в общедоступной предварительной версии.  Инструкция COPY обеспечивает наибольшую гибкость. Чтобы оставить отзыв о инструкции COPY, отправьте сообщение электронной почты по следующему списку рассылки: sqldwcopypreview@service.microsoft.com.
 >
 > [!div class="checklist"]
 >
-> * Создание объектов базы данных, необходимых для загрузки из хранилища data Lake.
-> * Подключение к каталогу хранения данных озера.
-> * Загрузите данные в хранилище данных.
+> * Создание объектов базы данных, необходимых для загрузки из Data Lake Storage.
+> * Подключитесь к каталогу Data Lake Storage.
+> * Загрузка данных в хранилище данных.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Бассейн СЗЛ. [Прослежите Создать пул и данные запросов.](create-data-warehouse-portal.md)
-* Учетная запись хранения озера данных. Смотрите [Начало с Azure хранения озера данных](../../data-lake-store/data-lake-store-get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Для этой учетной записи хранилища необходимо настроить или указать один из следующих учетных данных для загрузки: ключ учетной записи хранилища, пользователь приложения Каталог Azure или пользователь AAD, который имеет соответствующую роль RBAC для учетной записи хранилища.
+* Пул SQL. См. раздел [Создание пула SQL и запрос данных](create-data-warehouse-portal.md).
+* Учетная запись Data Lake Storage. См. статью [Приступая к работе с Azure Data Lake Storage](../../data-lake-store/data-lake-store-get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Для этой учетной записи хранения необходимо настроить или указать один из следующих учетных данных для загрузки: ключ учетной записи хранения, пользователь приложения Azure Directory или пользователь AAD с соответствующей ролью RBAC для учетной записи хранения.
 
 ## <a name="create-a-credential"></a>Создание учетных данных
 
-Вы можете пропустить этот раздел и перейти к "Создать внешний источник данных" при проверке подлинности с помощью AAD сквозной. Учетные данные с учетом базы данных не должны создаваться или указываться при использовании сквозного aAD, но убедитесь, что ваш пользователь AAD имеет соответствующую роль RBAC (Хранение Blob Data Reader, Contributor, или Роль владельца) для учетной записи хранилища. Более подробная информация изложена [здесь](https://techcommunity.microsoft.com/t5/Azure-SQL-Data-Warehouse/How-to-use-PolyBase-by-authenticating-via-AAD-pass-through/ba-p/862260).
+Вы можете пропустить этот раздел и перейти к статье "Создание внешнего источника данных" при проверке подлинности с помощью команды AAD Pass. Учетные данные для базы данных не обязательно создавать или указывать при использовании транзитного агента AAD, но убедитесь, что у пользователя AAD есть соответствующая роль RBAC (читатель данных BLOB-объекта хранилища, участник или роль владельца) в учетной записи хранения. Дополнительные сведения см. [здесь](https://techcommunity.microsoft.com/t5/Azure-SQL-Data-Warehouse/How-to-use-PolyBase-by-authenticating-via-AAD-pass-through/ba-p/862260).
 
-Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать Master Key базы данных для шифрования секрета учетных данных. Затем вы создаете учетные данные с областью данных scoped для хранения вашего секрета. При аутентификации с помощью основ службы (пользователь Приложения Каталог Azure) база данных Scoped Credential хранит основные учетные данные службы, настроенные в AAD. Вы также можете использовать учетные данные Базы данных scoped для хранения ключа учетной записи хранилища для Gen2.
+Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать главный ключ базы данных для шифрования секрета учетных данных. Затем создайте учетные данные для базы данных, чтобы сохранить секрет. При проверке подлинности с помощью субъектов-служб (пользователь приложения Azure Directory) учетные данные субъекта базы данных хранят учетные данные участника-службы, настроенные в AAD. Для хранения ключа учетной записи хранения для Gen2 можно также использовать учетные данные уровня базы данных.
 
-Чтобы подключиться к хранилищам озер данных с помощью основ службы, необходимо **сначала** создать приложение Active Directory, создать ключ доступа и предоставить приложению доступ к учетной записи Data Lake Storage. Для получения инструкций [см. Authenticate to Azure Data Lake Storage с помощью active Directory.](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
+Чтобы подключиться к Data Lake Storage с помощью субъектов-служб, необходимо **сначала** создать приложение Azure Active Directory, создать ключ доступа и предоставить приложению доступ к учетной записи Data Lake Storage. Инструкции см. [в разделе аутентификация в Azure Data Lake Storage с помощью Active Directory](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
-Войти в свой пул СЗЛ с пользователем, имеющим разрешения уровня CONTROL, и выполнить следующие инструкции по S'L в вашей базе данных:
+Войдите в пул SQL с помощью пользователя, имеющего разрешения на уровне элемента управления, и выполните следующие инструкции SQL для базы данных:
 
 ```sql
 -- A: Create a Database Master Key.
@@ -93,7 +93,7 @@ WITH
 
 ## <a name="create-the-external-data-source"></a>Создание внешнего источника данных
 
-Используйте команду [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы сохранить расположение данных. Если вы проверяете подлинность с помощью aAD-проходной, параметр CREDENTIAL не требуется. Если вы проверяете подлинность с помощью Управляемой идентификации для конечных точек обслуживания, следуйте этой [документации,](../../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#azure-sql-data-warehouse-polybase) чтобы настроить внешний источник данных.
+Используйте команду [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы сохранить расположение данных. Если выполняется проверка подлинности в AAD, параметр CREDENTIAL не требуется. При проверке подлинности с помощью управляемого удостоверения для конечных точек службы следуйте этой [документации](../../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#azure-sql-data-warehouse-polybase) , чтобы настроить внешний источник данных.
 
 ```sql
 -- C (for Gen1): Create an external data source
@@ -123,7 +123,7 @@ WITH (
 
 ## <a name="configure-data-format"></a>Настройка формата данных
 
-Чтобы импортировать данные из хранилища data Lake, необходимо указать формат внешнего файла. Этот объект определяет, как файлы записываются в Хранилище озера данных.
+Чтобы импортировать данные из Data Lake Storage, необходимо указать формат внешнего файла. Этот объект определяет, как файлы записываются в Data Lake Storage.
 Полный список форматов, доступных для команды [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), см. в документации по T-SQL.
 
 ```sql
@@ -187,7 +187,7 @@ WITH
 
 ## <a name="load-the-data"></a>Загрузка данных
 
-Для загрузки данных из Data Lake Storage используйте заявление [CREATE TABLE AS SELECT (Transact-S'L).](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+Чтобы загрузить данные из Data Lake Storage используйте инструкцию [CREATE TABLE как SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
 
 Компонент CTAS создает новую таблицу и заполняет ее результатам инструкции Select. CTAS определяет новую таблицу так, чтобы в ней содержались те же столбцы и типы данных, которые были выведены инструкцией Select. Если вы выбираете все столбцы из внешней таблицы, новая таблица получает точную копию всех столбцов и типов данных этой внешней таблицы.
 
@@ -204,7 +204,7 @@ OPTION (LABEL = 'CTAS : Load [dbo].[DimProduct]');
 
 ## <a name="optimize-columnstore-compression"></a>Оптимизация сжатия columnstore
 
-По умолчанию таблицы определяются как кластерный индекс магазина столбцов. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может происходить по ряду причин. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
+По умолчанию таблицы определяются как кластеризованный индекс columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может происходить по ряду причин. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
 
 Чтобы оптимизировать производительность запросов и сжатие columnstore после загрузки, перестройте таблицу, чтобы настроить принудительное сжатие всех строк таблиц индексом columnstore.
 
@@ -224,21 +224,21 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 
 ## <a name="achievement-unlocked"></a>Победа!
 
-Вы успешно загрузили данные в свой хранилище данных. Отличная работа!
+Вы успешно загрузили данные в хранилище данных. Отличная работа!
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководстве вы создали внешние таблицы для определения структуры данных, хранящихся в Data Lake Storage 1-го поколения, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных.
 
 Вы выполнили такие действия:
 > [!div class="checklist"]
 >
-> * Созданные объекты базы данных, необходимые для загрузки из хранилища Data Lake.
-> * Подключен к каталогу хранения данных озера.
+> * Созданы объекты базы данных, необходимые для загрузки из Data Lake Storage.
+> * Подключено к каталогу Data Lake Storage.
 > * Загруженные данные в хранилище данных.
 >
 
-Загрузка данных является первым шагом к разработке решения для склада данных с помощью Azure Synapse Analytics. Ознакомьтесь с нашими ресурсами разработки.
+Загрузка данных — это первый этап разработки решения хранилища данных с помощью Azure синапсе Analytics. Ознакомьтесь с нашими ресурсами разработки.
 
 > [!div class="nextstepaction"]
-> [Узнайте, как разработать таблицы для складирования данных](sql-data-warehouse-tables-overview.md)
+> [Узнайте, как разрабатывать таблицы для хранения данных](sql-data-warehouse-tables-overview.md)

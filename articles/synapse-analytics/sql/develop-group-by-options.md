@@ -1,6 +1,6 @@
 ---
-title: Используйте варианты GROUP BY в Synapse S'L
-description: Синапсе S'L позволяет разрабатывать решения путем реализации различных вариантов GROUP BY.
+title: Использование параметров GROUP BY в синапсе SQL
+description: Синапсе SQL позволяет разрабатывать решения путем реализации различных параметров GROUP BY.
 services: synapse-analytics
 author: filippopovic
 manager: craigg
@@ -12,24 +12,24 @@ ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
 ms.openlocfilehash: 261f75344d250ae8a8d9687f4bcd80535d11716b
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81429048"
 ---
-# <a name="group-by-options-in-synapse-sql"></a>Варианты GROUP BY в Synapse S'L
-Синапсе S'L позволяет разрабатывать решения путем реализации различных вариантов GROUP BY. 
+# <a name="group-by-options-in-synapse-sql"></a>ГРУППИРОВАНие по параметрам в синапсе SQL
+Синапсе SQL позволяет разрабатывать решения путем реализации различных параметров GROUP BY. 
 
 ## <a name="what-does-group-by-do"></a>Что делает GROUP BY
 
 Предложение T-SQL [GROUP BY](/sql/t-sql/queries/select-group-by-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) используется для объединения данных в сводный набор строк.
 
-По требованию S'L поддерживает весь спектр опций GROUP BY. Пул спомощьи поддерживает ограниченное количество вариантов GROUP BY.
+SQL по запросу поддерживает весь диапазон параметров GROUP BY. Пул SQL поддерживает ограниченное число вариантов GROUP BY.
 
-## <a name="group-by-options-supported-in-sql-pool"></a>Варианты GROUP BY, поддерживаемые в пуле S'L
+## <a name="group-by-options-supported-in-sql-pool"></a>Параметры GROUP BY, поддерживаемые в пуле SQL
 
-Group BY имеет несколько вариантов, которые бассейн S'L не поддерживает. Эти варианты имеют обходные пути, которые являются следующими:
+GROUP BY имеет некоторые параметры, которые не поддерживаются пулом SQL. Эти параметры имеют следующие обходные пути:
 
 * GROUP BY с ROLLUP;
 * GROUPING SETS
@@ -37,9 +37,9 @@ Group BY имеет несколько вариантов, которые бас
 
 ### <a name="rollup-and-grouping-sets-options"></a>Параметры Rollup и Grouping Sets
 
-Самый простой вариант здесь заключается в использовании UNION ALL для выполнения свертывания, а не полагаться на явный синтаксис. Результат будет точно таким же.
+Самый простой вариант — использовать UNION ALL для выполнения свертки, а не полагаться на явный синтаксис. Результат будет точно таким же.
 
-В следующем примере используется заявление GROUP BY с опцией ROLLUP:
+В следующем примере инструкция GROUP BY используется с параметром ROLLUP:
 
 ```sql
 SELECT [SalesTerritoryCountry]
@@ -91,9 +91,9 @@ JOIN  dbo.DimSalesTerritory t     ON s.SalesTerritoryKey       = t.SalesTerritor
 
 ### <a name="cube-options"></a>Параметры Cube
 
-С помощью подхода UNION ALL можно создать GROUP BY WITH CUBE. Проблема в том, что в этом случае код может быстро разрастись и стать слишком громоздким. Чтобы смягчить эту проблему, можно использовать этот более продвинутый подход.
+Можно создать группу с КУБОМ с помощью метода UNION ALL. Проблема в том, что в этом случае код может быстро разрастись и стать слишком громоздким. Для устранения этой проблемы можно использовать более сложный подход.
 
-Для начала нужно задать «куб», определяющий все уровни группирования данных, которые нам нужно создать. Обратите внимание на CROSS JOIN из двух производных таблиц, поскольку он генерирует все уровни. Остальная часть кода предназначена для форматирования.
+Для начала нужно задать «куб», определяющий все уровни группирования данных, которые нам нужно создать. Обратите внимание на перекрестное соединение двух производных таблиц при формировании всех уровней. Остальная часть кода содержит текст для форматирования.
 
 ```sql
 CREATE TABLE #Cube
@@ -124,11 +124,11 @@ SELECT Cols
 FROM GrpCube;
 ```
 
-Следующее изображение показывает результаты [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest):
+На следующем рисунке показаны результаты [CREATE TABLE как SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest):
 
 ![GROUP BY с CUBE](./media/develop-group-by-options/develop-group-by-cube.png)
 
-Вторым шагом является определение целевой таблицы для хранения промежуточных результатов:
+Вторым шагом является указание целевой таблицы для хранения промежуточных результатов:
 
 ```sql
 DECLARE
@@ -151,7 +151,7 @@ WITH
 ;
 ```
 
-Третий шаг заключается в цикле над кубом столбцов, выполняющих агрегацию. Запрос будет работать один раз для каждой строки в #Cube временной таблице. Результаты хранятся в таблице #Results темпа:
+Третий шаг — цикл по Кубу столбцов, выполняющих статистическую обработку. Запрос будет выполнен один раз для каждой строки во временной таблице #Cube. Результаты хранятся во временной таблице #Results:
 
 ```sql
 SET @nbr =(SELECT MAX(Seq) FROM #Cube);
@@ -175,7 +175,7 @@ BEGIN
 END
 ```
 
-Наконец, вы можете вернуть результаты, прочитав с #Results временную таблицу:
+Наконец, результаты можно вернуть, читая из #Results временной таблицы:
 
 ```sql
 SELECT *
@@ -184,8 +184,8 @@ ORDER BY 1,2,3
 ;
 ```
 
-Разбивая код на разделы и создавая конструкцию циклов, код становится более управляемым и обслуживаемым.
+Разбивая код на разделы и создавая циклическую конструкцию, код станет более управляемым и обслуживаемым.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](develop-overview.md).

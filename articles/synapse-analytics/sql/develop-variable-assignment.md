@@ -1,6 +1,6 @@
 ---
-title: Присваивай переменные с помощью Synapse S'L
-description: В этой статье вы найдете советы по назначению переменных T-S'L с помощью Synapse S'L.
+title: Назначение переменных с помощью синапсе SQL
+description: В этой статье вы найдете советы по назначению переменных T-SQL с помощью синапсе SQL.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -10,26 +10,26 @@ ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
 ms.openlocfilehash: b2a596b71ee7e5f58e01d5bc10b330f6f54a69d2
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81428671"
 ---
-# <a name="assigning-variables-with-synapse-sql"></a>Назначение переменных с помощью Synapse S'L
+# <a name="assigning-variables-with-synapse-sql"></a>Назначение переменных с помощью синапсе SQL
 
-В этой статье вы найдете советы по назначению переменных T-S'L с помощью Synapse S'L.
+В этой статье вы найдете советы по назначению переменных T-SQL с помощью синапсе SQL.
 
 ## <a name="setting-variables-with-declare"></a>Задание переменных с помощью DECLARE
 
-Переменные в Synapse S'L `DECLARE` устанавливаются `SET` с помощью оператора или оператора. Инициализация переменных с ПОМОЩЬю DECLARE является одним из наиболее гибких способов установки переменного значения в Synapse S'L.
+Переменные в синапсе SQL задаются с `DECLARE` помощью инструкции или `SET` инструкции. Инициализация переменных с помощью DECLARE является одним из наиболее гибких способов установки значения переменной в синапсе SQL.
 
 ```sql
 DECLARE @v  int = 0
 ;
 ```
 
-С помощью DECLARE можно задать одновременно несколько переменных. Вы не можете использовать SELECT или UPDATE, чтобы сделать следующее:
+С помощью DECLARE можно задать одновременно несколько переменных. Нельзя использовать SELECT или UPDATE для следующих задач:
 
 ```sql
 DECLARE @v  INT = (SELECT TOP 1 c_customer_sk FROM Customer where c_last_name = 'Smith')
@@ -37,7 +37,7 @@ DECLARE @v  INT = (SELECT TOP 1 c_customer_sk FROM Customer where c_last_name = 
 ;
 ```
 
-Вы не можете инициализировать и использовать переменную в той же ан-нет DECLARE. Чтобы проиллюстрировать, следующий пример *@p1* не допускается, так как инициализирован ы и используется в одном и том же заявлении DECLARE. Следующий пример приводит к возникновению ошибки.
+Нельзя инициализировать и использовать переменную в одной и той же инструкции DECLARE. Для иллюстрации следующий пример не допускается, так как *@p1* инициализируется и используется в одной и той же инструкции DECLARE. Следующий пример приводит к возникновению ошибки.
 
 ```sql
 DECLARE @p1 int = 0
@@ -62,8 +62,8 @@ SET     @v +=1;
 
 ## <a name="limitations"></a>Ограничения
 
-Вы не можете использовать UPDATE для переменного назначения.
+Нельзя использовать UPDATE для назначения переменных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные советы по разработке можно ознакомьтесь со статьей [обзора разработки Synapse S'L.](develop-overview.md)
+Дополнительные советы по разработке см. в статье [Общие сведения о разработке СИНАПСЕ SQL](develop-overview.md) .

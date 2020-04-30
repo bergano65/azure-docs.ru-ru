@@ -1,6 +1,6 @@
 ---
-title: Как выдавать разрешения на управляемое удостоверение в рабочем пространстве Azure Synapse
-description: Статья, объясняя, как настроить разрешения для управляемых идентификационных данных в рабочем пространстве Azure Synapse.
+title: Предоставление разрешений управляемому удостоверению в рабочей области Azure синапсе
+description: Статья, в которой объясняется, как настроить разрешения для управляемого удостоверения в рабочей области Azure синапсе.
 author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: how-to
@@ -8,114 +8,114 @@ ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
 ms.openlocfilehash: 9f519022fffe98c565c3b2d30f6578b9ebb70c57
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81428021"
 ---
-# <a name="grant-permissions-to-workspace-managed-identity-preview"></a>Разрешение на получение разрешения на идентировать рабочую область (предварительный просмотр)
+# <a name="grant-permissions-to-workspace-managed-identity-preview"></a>Предоставление разрешений управляемому удостоверению рабочей области (Предварительная версия)
 
-Эта статья научит вас, как выдавать разрешения на управляемое удостоверение в рабочей области synapse Azure. Разрешения, в свою очередь, позволяют получить доступ к пулам S'L в рабочей области и учетной записи хранения ADLS gen2 через портал Azure.
+В этой статье описывается, как предоставить разрешения управляемому удостоверению в рабочей области Azure синапсе. Разрешения, в свою очередь, разрешают доступ к пулам SQL в рабочей области и учетной записи хранения ADLS Gen2 с помощью портал Azure.
 
 >[!NOTE]
->Эта управляемая рабочая область будет называться управляемой идентификацией через остальную часть этого документа.
+>Это управляемое удостоверение рабочей области будет называться управляемым удостоверением далее в этом документе.
 
-## <a name="grant-the-managed-identity--permissions-to-the-sql-pool"></a>Предоставление разрешений на получение управляемой идентификации пулу S'L
+## <a name="grant-the-managed-identity--permissions-to-the-sql-pool"></a>Предоставление управляемому удостоверению разрешений для пула SQL
 
-Управляемая идентификация предоставляет разрешения пулам S'L в рабочей области. С разрешениями можно организовать конвейеры, выполняющие действия, связанные с пулом S'L. При создании рабочего пространства Azure Synapse с помощью портала Azure можно предоставить управляемые разрешения CONTROL на пулах S'L.
+Управляемое удостоверение предоставляет разрешения для пулов SQL в рабочей области. С предоставленными разрешениями можно управлять конвейерами, выполняющими действия, связанные с пулом SQL. При создании рабочей области синапсе для Azure с помощью портал Azure можно предоставить управляемые разрешения для управления удостоверениями в пулах SQL.
 
-Выберите **сеть безопасности и сети** при создании рабочего пространства Azure Synapse. Затем выберите **Grant CONTROL для управляемой идентификации рабочего пространства в пулах S'L.**
+Выберите **безопасность и сеть** при создании рабочей области Azure синапсе. Затем выберите **предоставить управление управляемому удостоверению рабочей области в ПУЛАХ SQL**.
 
-![Разрешение CONTROL на пулы S'L](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-16.png)
+![Разрешение CONTROL для пулов SQL](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-16.png)
 
-## <a name="grant-the-managed-identity-permissions-to-adls-gen2-storage-account"></a>Предоставление разрешений на получение управляемой идентификации на учетную запись хранения ADLS gen2
+## <a name="grant-the-managed-identity-permissions-to-adls-gen2-storage-account"></a>Предоставление разрешений управляемого удостоверения учетной записи хранения ADLS Gen2
 
-Для создания рабочего пространства Azure Synapse требуется учетная запись хранения ADLS gen2. Для успешного запуска пулов Spark в рабочем пространстве Azure Synapse управляемой идентификации Azure Synapse требуется роль *вкладчика хранилища данных в* этом аккаунте хранения. Оркестрирование трубопровода в Azure Synapse также выигрывает от этой роли.
+Для создания рабочей области синапсе Azure требуется учетная запись хранения ADLS Gen2. Чтобы успешно запустить пулы Spark в рабочей области Azure синапсе, управляемому удостоверению Azure синапсе требуется роль *участника данных BLOB-объекта хранилища* в этой учетной записи хранения. Механизм оркестрации в Azure синапсе также дает преимущества от этой роли.
 
-### <a name="grant-permissions-to-managed-identity-during-workspace-creation"></a>Разрешение на получение управляемой идентификации при создании рабочего пространства
+### <a name="grant-permissions-to-managed-identity-during-workspace-creation"></a>Предоставление разрешений управляемому удостоверению во время создания рабочей области
 
-Azure Synapse попытается предоставить роль вкладчика хранилища данных управляемому итогу после создания рабочего пространства Azure Synapse с помощью портала Azure. Вы предоставляете данные учетной записи хранилища ADLS gen2 во вкладке **Основы.**
+Azure синапсе будет пытаться предоставить управляемому удостоверению роль участника данных BLOB-объекта хранилища после создания рабочей области Azure синапсе с помощью портал Azure. Сведения об учетной записи хранения ADLS Gen2 можно указать на вкладке " **основы** ".
 
-![Вкладка Основы в потоке создания рабочего пространства](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-1.png)
+![Вкладка "Основные сведения" в последовательности создания рабочей области](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-1.png)
 
-Выберите учетную запись хранения ADLS gen2 и файловую систему в **имени учетной записи** и **имени файловой системы.**
+Выберите учетную запись хранения ADLS Gen2 и файловую систему в поле **имя учетной записи** и **имя файловой системы**.
 
-![Предоставление сведений о хранении aDLS gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-2.png)
+![Предоставление сведений об учетной записи хранения ADLS Gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-2.png)
 
-Если создатель рабочего пространства также является **владельцем** учетной записи хранения ADLS gen2, то Azure Synapse присвоит роль *вкладчика хранилища данных для* управляемого итога. Вы увидите следующее сообщение ниже ввода учетной записи хранилища.
+Если создатель рабочей области также является **владельцем** учетной записи хранения ADLS Gen2, Azure синапсе присвоит управляемому удостоверению роль *участника данных BLOB-объекта хранилища* . После введенных данных учетной записи хранения вы увидите следующее сообщение.
 
-![Успешное назначение вкладчика хранилища данных](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-3.png)
+![Успешное назначение участника данных BLOB-объекта хранилища](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-3.png)
 
-Если создатель рабочего пространства не является владельцем учетной записи хранения ADLS gen2, то Azure Synapse не присваивает роль *вкладчика хранилища данных Blob.* Сообщение, появляющееся ниже сведения об учетной записи хранилища, уведомляет создателя рабочего пространства о том, что у него нет достаточных разрешений на предоставление роли *вкладчика хранилища данных Вашего* сведения.
+Если создатель рабочей области не является владельцем учетной записи хранения ADLS Gen2, Azure синапсе не назначает роль *участника данных BLOB-объекта хранилища* управляемому удостоверению. Сообщение, которое отображается под данными учетной записи хранения, уведомляет создателя рабочей области о том, что у него нет достаточных разрешений для предоставления роли *участника данных BLOB-объекта хранилища* управляемому удостоверению.
 
-![Неудачное назначение вкладчика хранилища данных](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-4.png)
+![Неудачное назначение участника данных BLOB-объекта хранилища](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-4.png)
 
-Как говорится в сообщении, нельзя создавать пулы Spark, если *автор данных Хранилища Blob* не назначен управляемому итору.
+Как указано в сообщении, нельзя создавать пулы Spark, если только *участник данных BLOB-объектов хранилища* не назначен управляемому удостоверению.
 
-### <a name="grant-permissions-to-managed-identity-after-workspace-creation"></a>Разрешение на получение разрешения на управление идентификацией после создания рабочего пространства
+### <a name="grant-permissions-to-managed-identity-after-workspace-creation"></a>Предоставление разрешений управляемому удостоверению после создания рабочей области
 
-Во время создания рабочего пространства, если вы не присвоите *вкладчику Хранилища Blob Data* управляемой идентификации, то **владелец** учетной записи хранения ADLS gen2 вручную присваивает эту роль иждиц. Следующие шаги помогут вам выполнить ручное задание.
+Если при создании рабочей области *участник данных BLOB-объекта хранилища* не назначается управляемому удостоверению, **владелец** учетной записи хранения ADLS Gen2 вручную назначает эту роль удостоверению. Следующие шаги помогут выполнить назначение вручную.
 
-#### <a name="step-1-navigate-to-the-adls-gen2-storage-account-in-azure-portal"></a>Шаг 1: Перейдите к учетной записи хранения ADLS gen2 на портале Azure
+#### <a name="step-1-navigate-to-the-adls-gen2-storage-account-in-azure-portal"></a>Шаг 1. Перейдите к учетной записи хранения ADLS Gen2 в портал Azure
 
-На портале Azure откройте учетную запись хранения ADLS gen2 и выберите **обзор** левой навигации. Вам нужно будет только назначить роль *вкладчика хранилища данных* на уровне контейнера или файловой системы. Выберите **Контейнеры**.  
-![Обзор учетной записи хранения ADLS gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-5.png)
+В портал Azure откройте учетную запись хранения ADLS Gen2 и выберите **Обзор** в левой области навигации. Вам потребуется назначить роль *участника данных большого двоичного объекта хранилища* на уровне контейнера или файловой системы. Выберите **Контейнеры**.  
+![Обзор учетной записи хранения ADLS Gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-5.png)
 
-#### <a name="step-2-select-the-container"></a>Шаг 2: Выберите контейнер
+#### <a name="step-2-select-the-container"></a>Шаг 2. Выбор контейнера
 
-Управляемый имитатор должен иметь доступ к данным к контейнеру (файловой системе), который был предоставлен при создании рабочего пространства. Этот контейнер или файловую систему можно найти на портале Azure. Откройте рабочее пространство Azure Synapse на портале Azure и выберите вкладку **«Обзор»** из левой навигации.
-![Контейнер для хранения данных ADLS gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-7.png)
+Управляемое удостоверение должно иметь доступ к данным контейнера (файловой системы), который был предоставлен при создании рабочей области. Этот контейнер или файловую систему можно найти в портал Azure. Откройте рабочую область Azure синапсе в портал Azure и выберите вкладку **Обзор** в левой области навигации.
+![Контейнер учетной записи хранения ADLS Gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-7.png)
 
 
-Выберите тот же контейнер или файловую систему, чтобы предоставить роль *вкладчика хранилища данных* управляемому итоему.
-![Выбор контейнеров для хранения aDLS gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-6.png)
+Выберите тот же контейнер или файловую систему, чтобы предоставить управляемому удостоверению роль *участника данных BLOB-объекта хранилища* .
+![Выбор контейнера учетной записи хранения ADLS Gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-6.png)
 
-#### <a name="step-3-navigate-to-access-control"></a>Шаг 3: Перейдите к управлению доступом
+#### <a name="step-3-navigate-to-access-control"></a>Шаг 3. Переход к контролю доступа
 
-Выберите **элемент управления доступом (IAM)**.
+Выберите **Управление доступом (IAM)**.
 
-![Контроль доступа (IAM)](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-8.png)
+![Управление доступом (IAM)](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-8.png)
 
-#### <a name="step-4-add-a-new-role-assignment"></a>Шаг 4: Добавить новое назначение ролей
+#### <a name="step-4-add-a-new-role-assignment"></a>Шаг 4. Добавление нового назначения роли
 
 Выберите **+ Добавить**.
 
-![Добавление нового назначения ролей](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-9.png)
+![Добавить новое назначение роли](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-9.png)
 
-#### <a name="step-5-select-the-rbac-role"></a>Шаг 5: Выберите роль RBAC
+#### <a name="step-5-select-the-rbac-role"></a>Шаг 5. Выбор роли RBAC
 
-Выберите роль **вкладчика хранилища данных.**
+Выберите роль **участника данных BLOB-объекта хранилища** .
 
-![Выберите роль RBAC](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-10.png)
+![Выбор роли RBAC](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-10.png)
 
-#### <a name="step-6-select-the-azure-ad-security-principal"></a>Шаг 6: Выберите принцип безопасности Azure AD
+#### <a name="step-6-select-the-azure-ad-security-principal"></a>Шаг 6. Выбор субъекта безопасности Azure AD
 
-Выберите **пользователя, группу или услугу Azure AD** из **доступа Assign для** отсева.
+Выберите **пользователя Azure AD, группу или субъект-службу** в раскрывающемся списке **назначить доступ** .
 
-![Выберите директор по безопасности AAD](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-11.png)
+![Выбор субъекта безопасности AAD](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-11.png)
 
-#### <a name="step-7-search-for-the-managed-identity"></a>Шаг 7: Поиск управляемой личности
+#### <a name="step-7-search-for-the-managed-identity"></a>Шаг 7. Поиск управляемого удостоверения
 
-Имя управляемого удостоверения также является именем рабочего пространства. Поиск управляемой идентификации, введя имя рабочего пространства Azure Synapse в **Select.** Вы должны увидеть в списке управляемых удостоверений.
+Имя управляемого удостоверения также является именем рабочей области. Найдите управляемое удостоверение, введя имя рабочей области Azure синапсе в окне **выбора**. В списке должно отобразиться управляемое удостоверение.
 
-![Поиск управляемой идентификации](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-12.png)
+![Поиск управляемого удостоверения](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-12.png)
 
-#### <a name="step-8-select-the-managed-identity"></a>Шаг 8: Выберите управляемую идентификацию
+#### <a name="step-8-select-the-managed-identity"></a>Шаг 8. Выбор управляемого удостоверения
 
-Выберите управляемую идентификацию **для выбранных членов.** Выберите **Сохранить,** чтобы добавить назначение роли.
+Выберите управляемое удостоверение для **выбранных элементов**. Нажмите кнопку **сохранить** , чтобы добавить назначение ролей.
 
-![Выберите управляемую идентификацию](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-13.png)
+![Выбор управляемого удостоверения](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-13.png)
 
-#### <a name="step-9-verify-that-the-storage-blob-data-contributor-role-is-assigned-to-the-managed-identity"></a>Шаг 9: Проверить, что роль вкладчика хранилища данных присваивается управляемой идентификации
+#### <a name="step-9-verify-that-the-storage-blob-data-contributor-role-is-assigned-to-the-managed-identity"></a>Шаг 9. Проверка назначения роли участника данных BLOB-объекта хранилища управляемому удостоверению
 
-Выберите **контроль доступа (IAM),** а затем выберите **назначения ролей.**
+Выберите **Управление доступом (IAM)** , а затем выберите **назначения ролей**.
 
-![Проверка назначения ролей](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-14.png)
+![Проверка назначения роли](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-14.png)
 
-Вы должны увидеть, что ваша управляемая личность указана в разделе **Вкладчик данных хранилища с** ролью *вкладчика хранилища данных Blob,* назначенной ему. 
-![Выбор контейнеров для хранения aDLS gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-15.png)
+Управляемое удостоверение должно отображаться в разделе **участник данных BLOB-объекта хранилища** с назначенной ему ролью *участника данных BLOB-объекта хранилища* . 
+![Выбор контейнера учетной записи хранения ADLS Gen2](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-15.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Подробнее об [иждипове управляемого рабочего пространства](./synapse-workspace-managed-identity.md)
+Дополнительные сведения об [управляемом удостоверении рабочей области](./synapse-workspace-managed-identity.md)

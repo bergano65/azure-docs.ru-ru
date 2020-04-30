@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 03/09/2020
 ms.author: trbye
 ms.openlocfilehash: ccc7fcd748323e05f21edcfff1535085d2cdbdc7
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81421814"
 ---
-Обработка сжатого звука осуществляется с помощью [GStreamer.](https://gstreamer.freedesktop.org) По причинам лицензирования бинарные файлы GStreamer не компилируются и не связаны с Speech SDK. Вместо этого вам нужно будет использовать готовые файлы для Android. Чтобы загрузить готовые библиотеки, [см.](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c)
+Обработка сжатого аудио-сигнала реализуется с помощью [гстреамер](https://gstreamer.freedesktop.org). По соображениям лицензирования двоичные файлы Гстреамер не компилируются и не связываются с пакетом SDK для распознавания речи. Вместо этого необходимо использовать предварительно созданные двоичные файлы для Android. Сведения о загрузке предварительно созданных библиотек см. в разделе [Установка для разработки Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c).
 
-`libgstreamer_android.so` является обязательным. Убедитесь, что ваши плагины GStreamer связаны с `libgstreamer_android.so`.
+`libgstreamer_android.so` является обязательным. Убедитесь, что подключаемые модули Гстреамер связаны в `libgstreamer_android.so`.
 
 ```makefile
 GSTREAMER_PLUGINS := coreelements app audioconvert mpg123 \
@@ -21,7 +21,7 @@ GSTREAMER_PLUGINS := coreelements app audioconvert mpg123 \
     opus wavparse alaw mulaw flac
 ```
 
-Приведенпример `Android.mk` `Application.mk` и файл приведены ниже. Выполните следующие `gstreamer` действия,`libgstreamer_android.so`чтобы создать общий объект: .
+Ниже приведен `Android.mk` пример `Application.mk` и файл. Выполните следующие действия, чтобы создать `gstreamer` общий объект:`libgstreamer_android.so`.
 
 ```makefile
 # Android.mk
@@ -76,7 +76,7 @@ APP_PLATFORM = android-21
 APP_BUILD_SCRIPT = Android.mk
 ```
 
-Вы можете `libgstreamer_android.so` построить, используя следующую команду на Ubuntu 16.04 или 18.04. Следующие командные строки были протестированы только для [GStreamer Android версии 1.14.4](https://gstreamer.freedesktop.org/data/pkg/android/1.14.4/gstreamer-1.0-android-universal-1.14.4.tar.bz2) с [Android NDK b16b.](https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip)
+Вы можете выполнить `libgstreamer_android.so` сборку с помощью следующей команды в Ubuntu 16,04 или 18,04. Следующие командные строки были протестированы только для [Гстреамер Android версии 1.14.4](https://gstreamer.freedesktop.org/data/pkg/android/1.14.4/gstreamer-1.0-android-universal-1.14.4.tar.bz2) с [Android NDK b16b.](https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip)
 
 ```sh
 # Assuming wget and unzip already installed on the system
@@ -108,4 +108,4 @@ ndk-build -C $(pwd)/gstreamer "NDK_APPLICATION_MK=Application.mk" APP_ABI=armeab
 #ndk-build -C $(pwd)/gstreamer "NDK_APPLICATION_MK=Application.mk" APP_ABI=x86 NDK_LIBS_OUT=$(pwd)
 ```
 
-После того,`libgstreamer_android.so`как общий объект () построен разработчик приложения должен поместить общий объект в приложение Android, так что он может быть загружен речью SDK.
+После создания общего объекта (`libgstreamer_android.so`) разработчик приложения должен поместить общий объект в приложение Android, чтобы его можно было загрузить с помощью РЕЧЕВОГО пакета SDK.

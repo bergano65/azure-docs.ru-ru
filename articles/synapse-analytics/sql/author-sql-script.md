@@ -1,6 +1,6 @@
 ---
-title: Скрипты СЗЛ в студии Azure Synapse (предварительный просмотр)
-description: Введение Azure Synapse Studio (предварительный просмотр) скриптов S'L
+title: Скрипты SQL в Azure синапсе Studio (Предварительная версия)
+description: Введение в скрипты SQL для Azure синапсе Studio (Предварительная версия)
 services: synapse-analytics
 author: pimorano
 ms.service: synapse-analytics
@@ -9,84 +9,84 @@ ms.date: 04/15/2020
 ms.author: pimorano
 ms.reviewer: omafnan
 ms.openlocfilehash: 940c6d6d96c5c1aa062397d21ea96dace2c09bae
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81431076"
 ---
-# <a name="using-sql-script-in-azure-synapse-studio-preview"></a>Использование скрипта S'L в студии Azure Synapse (предварительный просмотр)
+# <a name="using-sql-script-in-azure-synapse-studio-preview"></a>Использование скрипта SQL в Azure синапсе Studio (Предварительная версия)
 
-Azure Synapse Studio (предварительный просмотр) предоставляет веб-интерфейс скрипта для автора запросов. Вы можете подключиться к пулу S'L (предварительный просмотр) или по запросу (предварительный просмотр). 
+Azure синапсе Studio (Предварительная версия) предоставляет веб-интерфейс скрипта SQL для создания запросов SQL. Вы можете подключиться к пулу SQL (Предварительная версия) или SQL по запросу (Предварительная версия). 
 
-## <a name="begin-authoring-in-sql-script"></a>Начало авторизации в скрипте S'L 
+## <a name="begin-authoring-in-sql-script"></a>Начало разработки в скрипте SQL 
 
-Существует несколько способов запуска авторского опыта в скрипте S'L. Вы можете создать новый скрипт S'L с помощью одного из следующих методов.
+Существует несколько способов запуска процесса разработки в скрипте SQL. Создать новый скрипт SQL можно одним из следующих способов.
 
-1. Выберите значок «К» и выберите скрипт S'L.
-
-    > [!div class="mx-imgBorder"] 
-    >![newsqlscript](./media/author-sql-script/newsqlscript.png)
-
-2. Из меню «Действия» под разработкой сценариев S'L выберите «Новый скрипт» из меню «Действия» под сценарием «Разработка» в рамках разработки скриптов. 
+1. Щелкните значок "+" и выберите Скрипт SQL.
 
     > [!div class="mx-imgBorder"] 
-    > ![newsqlscript](./media/author-sql-script/newsqlscript2actions.png)
+    >![невсклскрипт](./media/author-sql-script/newsqlscript.png)
 
-or 
-
-3. Выберите "Импорт" из меню "Действия" в соответствии со сценариями разработки S'L и выберите существующий скрипт S'L из локального хранилища.
+2. В меню действия в разделе Разработка скриптов SQL выберите пункт "создать скрипт SQL" в меню "действия" в разделе "Разработка скриптов SQL". 
 
     > [!div class="mx-imgBorder"] 
-    > ![newsqlscript](./media/author-sql-script/newsqlscript3actions.png)
+    > ![невсклскрипт](./media/author-sql-script/newsqlscript2actions.png)
 
-## <a name="create-your-sql-script"></a>Создайте свой скрипт S'L
+или диспетчер конфигурации служб 
 
-1. Выберите имя для скрипта S'L, выбрав кнопку «Свойство» и заменив имя по умолчанию, назначенное скрипту S'L.
-
-    > [!div class="mx-imgBorder"] 
-    > ![newsqlscript](./media/author-sql-script/newsqlscriptrename.png)
-
-1. Выберите конкретный пул S'L или s-L по требованию из меню «Подключение к» выпадающим. Или при необходимости выберите базу данных из "Использовать базу данных".
+3. Выберите "Импорт" в меню "действия" в разделе "Разработка скриптов SQL" и выберите существующий скрипт SQL из локального хранилища.
 
     > [!div class="mx-imgBorder"] 
-    > ![newsqlscript](./media/author-sql-script/newsqlchoosepool.png)
+    > ![невсклскрипт](./media/author-sql-script/newsqlscript3actions.png)
 
-1. Начните наполнять свой скрипт S'L с помощью функции intellisense.
+## <a name="create-your-sql-script"></a>Создание скрипта SQL
+
+1. Выберите имя для скрипта SQL, нажав кнопку "свойство" и заменив имя по умолчанию, присвоенное сценарию SQL.
 
     > [!div class="mx-imgBorder"] 
-    > ![newsqlscript](./media/author-sql-script/newsqlintellisense.png)
+    > ![невсклскрипт](./media/author-sql-script/newsqlscriptrename.png)
 
-## <a name="run-your-sql-script"></a>Запустите скрипт S'L
+1. Выберите в раскрывающемся меню "подключение к" конкретный пул SQL или SQL по запросу. При необходимости выберите базу данных в поле "использовать базу данных".
 
-Выберите кнопку "Бег" для выполнения сценария S'L. Результаты отображаются по умолчанию в таблице.
+    > [!div class="mx-imgBorder"] 
+    > ![невсклскрипт](./media/author-sql-script/newsqlchoosepool.png)
+
+1. Приступите к созданию скрипта SQL с помощью функции IntelliSense.
+
+    > [!div class="mx-imgBorder"] 
+    > ![невсклскрипт](./media/author-sql-script/newsqlintellisense.png)
+
+## <a name="run-your-sql-script"></a>Выполнение скрипта SQL
+
+Нажмите кнопку "выполнить", чтобы выполнить скрипт SQL. Результаты по умолчанию отображаются в таблице.
 
 > [!div class="mx-imgBorder"] 
-> ![newsqlscript](./media/author-sql-script/newsqlscriptresultstable.png)
+> ![невсклскрипт](./media/author-sql-script/newsqlscriptresultstable.png)
 
-## <a name="export-your-results"></a>Экспортировать свои результаты
+## <a name="export-your-results"></a>Экспорт результатов
 
-Результаты можно экспортировать в локальное хранилище в различных форматах (включая CSV, Excel, JSON, XML), выбрав "Результаты экспорта" и выбрав расширение.
+Результаты можно экспортировать в локальное хранилище в различных форматах (включая CSV, Excel, JSON, XML), выбрав "Экспорт результатов" и выбрав расширение.
 
-Вы также можете визуализировать результаты сценария S'L на диаграмме, выбрав кнопку "Chart". Выберите "Тип диаграммы" и "Колонка категории". Вы можете экспортировать диаграмму в картинку, выбрав "Сохранить как изображение". 
-
-> [!div class="mx-imgBorder"] 
-> ![newsqlscript](./media/author-sql-script/newsqlscriptresultschart.png)
-
-## <a name="explore-data-from-a-parquet-file"></a>Исследуйте данные из файла Паркета.
-
-Вы можете исследовать файлы Паркета в учетной записи хранилища с помощью сценария S'L для предварительного просмотра содержимого файла. 
+Можно также визуализировать результаты скрипта SQL в диаграмме, нажав кнопку "Диаграмма". Выберите "тип диаграммы" и "столбец категории". Можно экспортировать диаграмму в рисунок, выбрав команду "Сохранить как изображение". 
 
 > [!div class="mx-imgBorder"] 
-> ![newsqlscript](./media/author-sql-script/newscriptsqlodparquet.png)
+> ![невсклскрипт](./media/author-sql-script/newsqlscriptresultschart.png)
 
-## <a name="sql-tables-external-tables-views"></a>Таблицы СЗЛ, внешние таблицы, представления
+## <a name="explore-data-from-a-parquet-file"></a>Просмотр данных из файла Parquet.
 
-Выбрав меню «Действия» по данным, можно выбрать несколько действий, таких как: «Новый скрипт S'L», «Выберите топ-1000 строк», «CREATE», «DROP и CREATE». Изучите доступный жест, нажав на узлы бассейна S'L и S'L по требованию.
+Вы можете исследовать файлы Parquet в учетной записи хранения с помощью скрипта SQL, чтобы просмотреть содержимое файла. 
 
 > [!div class="mx-imgBorder"] 
-> ![newsqlscript](./media/author-sql-script/newscriptdatabase.png)
+> ![невсклскрипт](./media/author-sql-script/newscriptsqlodparquet.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="sql-tables-external-tables-views"></a>Таблицы SQL, внешние таблицы, представления
 
-Для получения более подробной информации [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)об авторе сценария S'L см.
+Выбрав меню "действия" в разделе "данные", можно выбрать несколько таких действий: "создать скрипт SQL", "выбрать первые 1000 строк", "создать", "удалить и создать". Просмотрите доступный жест, щелкнув правой кнопкой мыши узлы пула SQL и SQL по запросу.
+
+> [!div class="mx-imgBorder"] 
+> ![невсклскрипт](./media/author-sql-script/newscriptdatabase.png)
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+Дополнительные сведения о создании скрипта SQL см. в статье [Azure синапсе Analytics](https://docs.microsoft.com/azure/synapse-analytics).

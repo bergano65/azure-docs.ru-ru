@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/12/2018
 ms.openlocfilehash: e6158938d01b6e5da74ed046d2a74e0dfd827f47
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81417918"
 ---
-# <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнение действия ожидания на фабрике данных Azure
+# <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнение действия Wait в фабрике данных Azure
 Если в конвейере используется действие Wait, он приостанавливает обработку на указанный период, прежде чем возобновить выполнение последующих действий. 
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "81417918"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательно
+Свойство | Описание | Допустимые значения | Обязательный
 -------- | ----------- | -------------- | --------
 name | Имя действия `Wait`. | Строка | Да
 type | Для этого свойства необходимо задать значение **Wait**. | Строка | Да
@@ -101,7 +101,7 @@ waitTimeInSeconds | Период ожидания в секундах перед
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие условия If](control-flow-if-condition-activity.md)

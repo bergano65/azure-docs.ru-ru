@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью ноутбука Databricks
+title: Преобразование данных с помощью записной книжки кирпичей
 description: Узнайте, как обрабатывать и преобразовывать данные с помощью записной книжки Databricks.
 services: data-factory
 documentationcenter: ''
@@ -12,16 +12,16 @@ ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d3c9f0df0d834ffe75d0b56e3c80a432c27ea38
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81419023"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Деятельность ноутбука Azure Databricks в [конвейере Data Factory](concepts-pipelines-activities.md) запускает блокнот Databricks в рабочем пространстве Azure Databricks. Эта статья основывается на статье, в которой представлены действия по преобразованию [данных,](transform-data.md)в котором представлен общий обзор трансформации данных и поддерживаемых мероприятий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
+Действие Azure Databricks записной книжке в [конвейере фабрики данных](concepts-pipelines-activities.md) запускает записную книжку "кирпичы" в рабочей области Azure Databricks. Эта статья посвящена [действиям преобразования данных](transform-data.md), в которых представлен общий обзор преобразования данных и поддерживаемых действий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
 
 ## <a name="databricks-notebook-activity-definition"></a>Определение действия Databricks Notebook
 
@@ -57,20 +57,20 @@ ms.locfileid: "81419023"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|Описание|Обязательно|
+|Свойство|Описание|Обязательный|
 |---|---|---|
 |name|Имя действия в конвейере.|Да|
-|description|Описание действия.|нет|
+|description|Описание действия.|Нет|
 |type|Тип действия Databricks Notebook — DatabricksNotebook.|Да|
-|linkedServiceName|Имя связанной службы Databricks, в которой запускается записная книжка Databricks. Чтобы узнать об этой связанной службе, смотрите статью о  [подключенных службах Compute.](compute-linked-services.md)|Да|
+|linkedServiceName|Имя связанной службы Databricks, в которой запускается записная книжка Databricks. Дополнительные сведения об этой связанной службе см. в статье [связанные службы](compute-linked-services.md) вычислений.|Да|
 |notebookPath|Абсолютный путь записной книжки, которая будет запущена в рабочей области Databricks. Этот путь должен начинаться с косой черты.|Да|
-|baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|нет|
-|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов \<строка, объект>.|нет|
+|baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Нет|
+|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов \<строка, объект>.|Нет|
 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
 
-В приведенном выше определении активности Databricks вы указываете эти типы библиотеки: *банку,* *яйцо,* *whl,* *maven,* *pypi,* *кран.*
+В приведенном выше определении действия "кирпичы данных" указываются следующие типы библиотек: *JAR*, *Egg*, *WHL*, *Maven*, *PyPI*, *Cran*.
 
 ```json
 {
@@ -112,18 +112,18 @@ ms.locfileid: "81419023"
 
 Дополнительные сведения см. в [документации Databricks](https://docs.azuredatabricks.net/api/latest/libraries.html#managedlibrarieslibrary) по типам библиотек.
 
-## <a name="passing-parameters-between-notebooks-and-data-factory"></a>Прохождение параметров между ноутбуками и фабрикой данных
+## <a name="passing-parameters-between-notebooks-and-data-factory"></a>Передача параметров между записными книжками и фабрикой данных
 
-Параметры фабрики данных можно передавать в блокноты с помощью свойства *baseParameters* в деятельности databricks. 
+Параметры фабрики данных можно передать в записные книжки с помощью свойства *басепараметерс* в действии модуля данных. 
 
-В некоторых случаях может потребоваться вернуть определенные значения из блокнота обратно на фабрику данных, которые могут быть использованы для управления потоком (условные проверки) на фабрике данных или потреблены деятельностью ниже по течению (ограничение размера составляет 2 МБ). 
+В некоторых случаях может потребоваться передача определенных значений из записной книжки обратно в фабрику данных, которую можно использовать для потока управления (условные проверки) в фабрике данных или для использования нисходящими действиями (ограничение размера — 2 МБ). 
 
-1. В блокноте вы можете вызвать [dbutils.notebook.exit ("returnValue")](https://docs.azuredatabricks.net/user-guide/notebooks/notebook-workflows.html#notebook-workflows-exit) и соответствующие "returnValue" будут возвращены на фабрику данных.
+1. В записной книжке вы можете вызвать [дбутилс. Notebook. Exit ("ReturnValue")](https://docs.azuredatabricks.net/user-guide/notebooks/notebook-workflows.html#notebook-workflows-exit) , и в фабрике данных будет возвращен соответствующий результат "ReturnValue".
 
-2. Вы можете использовать выход на фабрике `'@activity('databricks notebook activity name').output.runOutput'`данных, используя такие выражения, как . 
+2. Выходные данные в фабрике данных можно использовать с помощью выражения, такого `'@activity('databricks notebook activity name').output.runOutput'`как. 
 
    > [!IMPORTANT]
-   > Если вы проходите объект JSON, вы можете получить значения, применяя имена свойств. Например, `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`.
+   > При передаче объекта JSON значения можно получить, добавив имена свойств. Пример: `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`
 
 ## <a name="how-to-upload-a-library-in-databricks"></a>Отправка библиотеки в Databricks
 

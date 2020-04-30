@@ -1,6 +1,6 @@
 ---
-title: 'Azure ExpressRoute: Налажнете MACsec'
-description: Эта статья поможет настроить MACsec для обеспечения связи между маршрутизаторами и маршрутизаторами Microsoft.
+title: 'Azure ExpressRoute: Настройка Максек'
+description: Эта статья поможет вам настроить Максек для защиты подключений между граничным маршрутизатором и граничным маршрутизатором Майкрософт.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,23 +8,23 @@ ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: cherylmc
 ms.openlocfilehash: 572147ca43e9a4dea9d9601dfa1dac8ba1c97ed0
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81458238"
 ---
-# <a name="configure-macsec-on-expressroute-direct-ports"></a>Направьте MACsec на прямые порты ExpressRoute
+# <a name="configure-macsec-on-expressroute-direct-ports"></a>Настройка Максек для прямого порта ExpressRoute
 
-Эта статья поможет настроить MACsec для обеспечения связи между маршрутизаторами края и маршрутизаторами Microsoft с помощью PowerShell.
+Эта статья поможет вам настроить Максек для защиты подключений между граничным маршрутизатором и граничным маршрутизатором Майкрософт с помощью PowerShell.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Прежде чем начать настройку, проверьте следующее:
 
-* Вы [понимаете, ExpressRoute Прямая подготовка рабочих процессов](expressroute-erdirect-about.md).
-* Вы создали [ресурс порта ExpressRoute Direct.](expressroute-howto-erdirect.md)
-* Если вы хотите запустить PowerShell локально, убедитесь, что последняя версия Azure PowerShell установлена на вашем компьютере.
+* Вы понимаете [рабочие процессы прямой подготовки ExpressRoute](expressroute-erdirect-about.md).
+* Вы создали [ресурс прямого порта ExpressRoute](expressroute-howto-erdirect.md).
+* Если вы хотите запустить PowerShell локально, убедитесь, что на компьютере установлена последняя версия Azure PowerShell.
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
@@ -32,39 +32,39 @@ ms.locfileid: "81458238"
 
 [!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
-### <a name="sign-in-and-select-the-right-subscription"></a>Вопийте и выберите правильную подписку
+### <a name="sign-in-and-select-the-right-subscription"></a>Войдите и выберите подходящую подписку.
 
-Чтобы запустить конфигурацию, вопийте в учетную запись Azure и выберите подписку, которую вы хотите использовать.
+Чтобы начать настройку, войдите в учетную запись Azure и выберите подписку, которую хотите использовать.
 
    [!INCLUDE [sign in](../../includes/expressroute-cloud-shell-connect.md)]
 
-## <a name="1-create-azure-key-vault-macsec-secrets-and-user-identity"></a>1. Создайте Убежище ключей Azure, секреты MACsec и идентификацию пользователя
+## <a name="1-create-azure-key-vault-macsec-secrets-and-user-identity"></a>1. Создание Azure Key Vault, секретов Максек и удостоверения пользователя
 
-1. Создайте экземпляр Key Vault для хранения секретов MACsec в новой группе ресурсов.
+1. Создайте Key Vault экземпляр для хранения секретов Максек в новой группе ресурсов.
 
     ```azurepowershell-interactive
     New-AzResourceGroup -Name "your_resource_group" -Location "resource_location"
     $keyVault = New-AzKeyVault -Name "your_key_vault_name" -ResourceGroupName "your_resource_group" -Location "resource_location" -EnableSoftDelete 
     ```
 
-    Если у вас уже есть хранилище ключей или группа ресурсов, вы можете повторно использовать их. Тем не менее, очень важно включить [функцию **«мягкого удаления»** ](../key-vault/general/overview-soft-delete.md) в существующем хранилище ключей. Если мягкое удаление не включено, можно использовать следующие команды для включения:
+    Если у вас уже есть хранилище ключей или группа ресурсов, их можно использовать повторно. Однако очень важно включить [функцию **обратимого удаления** ](../key-vault/general/overview-soft-delete.md) в существующем хранилище ключей. Если обратимое удаление не включено, для его включения можно использовать следующие команды:
 
     ```azurepowershell-interactive
     ($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName "your_existing_keyvault").ResourceId).Properties | Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"
     Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
     ```
-2. Создание иждивественности пользователя.
+2. Создайте удостоверение пользователя.
 
     ```azurepowershell-interactive
     $identity = New-AzUserAssignedIdentity  -Name "identity_name" -Location "resource_location" -ResourceGroupName "your_resource_group"
     ```
 
-    Если New-AzUserAssignedIdentity не признан действительным PowerShell cmdlet, установите следующий модуль (в режиме администратора) и перезапустите приведенную выше команду.
+    Если New-Азусерассигнедидентити не распознан как допустимый командлет PowerShell, установите следующий модуль (в режиме администратора) и повторно выполните указанную выше команду.
 
     ```azurepowershell-interactive
     Install-Module -Name Az.ManagedServiceIdentity
     ```
-3. Создайте ключ ассоциации подключения (CAK) и ключевое имя ассоциации подключения (CKN) и храните их в хранилище ключей.
+3. Создайте ключ связи подключения (как) и имя ключа связи подключения (ККН) и сохраните их в хранилище ключей.
 
     ```azurepowershell-interactive
     $CAK = ConvertTo-SecureString "your_key" -AsPlainText -Force
@@ -72,26 +72,26 @@ ms.locfileid: "81458238"
     $MACsecCAKSecret = Set-AzKeyVaultSecret -VaultName "your_key_vault_name" -Name "CAK_name" -SecretValue $CAK
     $MACsecCKNSecret = Set-AzKeyVaultSecret -VaultName "your_key_vault_name" -Name "CKN_name" -SecretValue $CKN
     ```
-4. Назначайте разрешение GET на идентификацию пользователя.
+4. Назначьте разрешение GET для удостоверения пользователя.
 
     ```azurepowershell-interactive
     Set-AzKeyVaultAccessPolicy -VaultName "your_key_vault_name" -PermissionsToSecrets get -ObjectId $identity.PrincipalId
     ```
 
-   Теперь эта личность может получить секреты, например CAK и CKN, из хранилища ключей.
-5. Установите этот иждивественность пользователя для использования ExpressRoute.
+   Теперь это удостоверение может получить секреты, например как и ККН, из хранилища ключей.
+5. Настройте этот идентификатор пользователя для использования ExpressRoute.
 
     ```azurepowershell-interactive
     $erIdentity = New-AzExpressRoutePortIdentity -UserAssignedIdentityId $identity.Id
     ```
  
-## <a name="2-configure-macsec-on-expressroute-direct-ports"></a>2. Направьте MACsec на прямые порты ExpressRoute
+## <a name="2-configure-macsec-on-expressroute-direct-ports"></a>2. Настройка Максек для прямого порта ExpressRoute
 
-### <a name="to-enable-macsec"></a>Для включения В нее MACsec
+### <a name="to-enable-macsec"></a>Включение Максек
 
-Каждый экземпляр ExpressRoute Direct имеет два физических порта. Вы можете включить MACsec на обоих портах в то же время или включить MACsec на одном порту за один раз. Это один порт в то время (путем переключения трафика в активный порт при обслуживании другого порта) может помочь свести к минимуму перерыв, если ваш ExpressRoute Direct уже в эксплуатации.
+Каждый прямой экземпляр ExpressRoute имеет два физических порта. Вы можете включить Максек на обоих портах одновременно или включить Максек на одном порту за раз. Поочередное выполнение этого порта (путем переключения трафика на активный порт при обслуживании другого порта) может снизить перерыв в работе, если служба ExpressRoute Direct уже находится в службе.
 
-1. Установите секреты и шифр MACsec и связывай идентификацию пользователя с портом, чтобы код управления ExpressRoute мог при необходимости получить доступ к секретам MACsec.
+1. Задайте секреты Максек и шифр и свяжите удостоверение пользователя с портом, чтобы код управления ExpressRoute мог получить доступ к секретам Максек при необходимости.
 
     ```azurepowershell-interactive
     $erDirect = Get-AzExpressRoutePort -ResourceGroupName "your_resource_group" -Name "your_direct_port_name"
@@ -104,7 +104,7 @@ ms.locfileid: "81458238"
     $erDirect.identity = $erIdentity
     Set-AzExpressRoutePort -ExpressRoutePort $erDirect
     ```
-2. (Необязательно) Если порты находятся в состоянии административного вниз, вы можете запустить следующие команды для создания портов.
+2. Используемых Если порты находятся в состоянии администрирования, можно выполнить следующие команды, чтобы отобразить порты.
 
     ```azurepowershell-interactive
     $erDirect = Get-AzExpressRoutePort -ResourceGroupName "your_resource_group" -Name "your_direct_port_name"
@@ -113,11 +113,11 @@ ms.locfileid: "81458238"
     Set-AzExpressRoutePort -ExpressRoutePort $erDirect
     ```
 
-    На данный момент, MACsec включен на ExpressRoute Прямые порты на стороне Microsoft. Если вы еще не настроили его на устройствах края, вы можете приступить к настройке их с теми же секретами и шифром MACsec.
+    На этом этапе Максек включен на непосредственных портах ExpressRoute на стороне Майкрософт. Если вы еще не настроили его на пограничных устройствах, можно приступить к настройке с помощью одних и тех же секретов и шифров Максек.
 
-### <a name="to-disable-macsec"></a>Чтобы отключить MACsec
+### <a name="to-disable-macsec"></a>Отключение Максек
 
-Если MACsec больше не желается в экземпляре ExpressRoute Direct, вы можете запустить следующие команды, чтобы отключить его.
+Если в экземпляре ExpressRoute Direct больше не требуется Максек, можно выполнить следующие команды, чтобы отключить ее.
 
 ```azurepowershell-interactive
 $erDirect = Get-AzExpressRoutePort -ResourceGroupName "your_resource_group" -Name "your_direct_port_name"
@@ -129,12 +129,12 @@ $erDirect.identity = $null
 Set-AzExpressRoutePort -ExpressRoutePort $erDirect
 ```
 
-На данный момент MACsec отключен в портах ExpressRoute Direct на стороне Microsoft.
+На этом этапе Максек отключен на непосредственных портах ExpressRoute на стороне Майкрософт.
 
 ### <a name="test-connectivity"></a>Проверка подключения
-После настройки MACsec (включая обновление ключа MACsec) в портах ExpressRoute Direct [проверьте,](expressroute-troubleshooting-expressroute-overview.md) запущены ли и запущены сеансы BGP цепей. Если у вас пока нет схемы в портах, пожалуйста, создайте одну первую и навяжните Azure Private Peering или Microsoft Peering of the circuit. Если MACsec неправильно настроен, включая несоответствие ключа MACsec, между вашими сетевыми устройствами и сетевыми устройствами Майкрософт, вы не увидите разрешение ARP на уровне 2 и создание BGP на уровне 3. Если все настроено правильно, вы должны увидеть маршруты BGP, рекламируемые правильно в обоих направлениях, и поток данных приложения соответственно через ExpressRoute.
+После настройки Максек (включая обновление ключа Максек) на портах с прямым подключением ExpressRoute [Проверьте](expressroute-troubleshooting-expressroute-overview.md) , работают ли сеансы BGP для каналов. Если у вас еще нет канала, создайте его сначала и настройте частный пиринг Azure или пиринг Майкрософт. Если Максек настроен неправильно, в том числе несовпадение ключей Максек, между сетевыми устройствами и сетевыми устройствами Майкрософт, разрешение ARP не будет отображаться на уровне 2 и на компьютере с установленным BGP на уровне 3. Если все настроено правильно, вы должны увидеть маршруты BGP, объявляемые правильно в обоих направлениях, и поток данных приложения в соответствии с ExpressRoute.
 
-## <a name="next-steps"></a>Следующие шаги
-1. [Создание схемы ExpressRoute на ЭкспрессРут Прямая](expressroute-howto-erdirect.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+1. [Создание канала ExpressRoute в ExpressRoute Direct](expressroute-howto-erdirect.md)
 2. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).
-3. [Проверить подключение ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
+3. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)

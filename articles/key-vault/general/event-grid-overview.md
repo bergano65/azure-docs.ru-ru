@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: mbaldwin
 ms.openlocfilehash: cc12cc9a4828404e960aee239bd388af5b1ea3b7
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81431908"
 ---
 # <a name="monitoring-key-vault-with-azure-event-grid-preview"></a>мониторингу Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)
@@ -44,7 +44,7 @@ ms.locfileid: "81431908"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обзор Убежища ключей Azure)](overview.md)
+- [Общие сведения об Azure Key Vault](overview.md)
 - [Обзор службы "Сетка событий Azure"](../../event-grid/overview.md)
 - Руководство. [Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)](event-grid-tutorial.md).
 - Руководство. [Получение сообщения электронной почты при изменении секрета в хранилище ключей](event-grid-logicapps.md)

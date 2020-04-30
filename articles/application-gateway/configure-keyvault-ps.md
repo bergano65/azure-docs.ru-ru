@@ -1,7 +1,7 @@
 ---
-title: Настройка прекращения TLS с сертификатами Key Vault - PowerShell
+title: Настройка завершения TLS с помощью сертификатов Key Vault — PowerShell
 titleSuffix: Azure Application Gateway
-description: Узнайте, как можно интегрировать шлюз приложений Azure с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS.
+description: Узнайте, как интегрировать шлюз приложений Azure с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -9,27 +9,27 @@ ms.topic: article
 ms.date: 02/27/2020
 ms.author: victorh
 ms.openlocfilehash: ffda4b41497a9fd84db5fcee36202eb1c1dca2c0
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81457847"
 ---
-# <a name="configure-tls-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Налажить окончание TLS с помощью key Vault с помощью Сертификатов Ключей PowerShell
+# <a name="configure-tls-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Настройка завершения TLS с использованием Key Vault сертификатов с помощью Azure PowerShell
 
-[Azure Key Vault](../key-vault/general/overview.md) — это секретный магазин, управляемый платформой, который можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Azure Application Gateway поддерживает интеграцию с Key Vault для серверных сертификатов, которые прикрепляются к слушателям с поддержкой HTTPS. Эта поддержка ограничена Application Gateway v2 SKU.
+[Azure Key Vault](../key-vault/general/overview.md) — это хранилище секретов, управляемое платформой, которое можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Шлюз приложений Azure поддерживает интеграцию с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS. Эта поддержка ограничена SKU шлюза приложений версии 2.
 
-Для получения дополнительной [TLS termination with Key Vault certificates](key-vault-certs.md)информации см.
+Дополнительные сведения см. [в статье завершение TLS с использованием сертификатов Key Vault](key-vault-certs.md).
 
-В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложения для сертификатов прекращения TLS/SSL.
+В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложений для сертификатов завершения TLS/SSL.
 
-Эта статья требует версии модуля Azure PowerShell версии 1.0.0 или позже. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Для выполнения команд в этой статье необходимо создать соединение с Azure, запустив `Connect-AzAccount`вас.
+Для работы с этой статьей требуется Azure PowerShell Module версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Чтобы выполнить команды в этой статье, необходимо также создать подключение к Azure, выполнив `Connect-AzAccount`команду.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать, необходимо установить модуль ManagedServiceIdentity:
+Перед началом необходимо установить модуль Манажедсервицеидентити:
 
 ```azurepowershell
 Install-Module -Name Az.ManagedServiceIdentity
@@ -48,7 +48,7 @@ $kv = "TestKeyVaultAppGw"
 $appgwName = "AppGwKVIntegration"
 ```
 
-### <a name="create-a-resource-group-and-a-user-managed-identity"></a>Создание группы ресурсов и идентификации, управляемой пользователем
+### <a name="create-a-resource-group-and-a-user-managed-identity"></a>Создание группы ресурсов и удостоверения, управляемого пользователем
 
 ```azurepowershell
 $resourceGroup = New-AzResourceGroup -Name $rgname -Location $location
@@ -56,7 +56,7 @@ $identity = New-AzUserAssignedIdentity -Name "appgwKeyVaultIdentity" `
   -Location $location -ResourceGroupName $rgname
 ```
 
-### <a name="create-a-key-vault-policy-and-certificate-to-be-used-by-the-application-gateway"></a>Создание хранилища ключей, политики и сертификата, которые будут использоваться шлюзом приложения
+### <a name="create-a-key-vault-policy-and-certificate-to-be-used-by-the-application-gateway"></a>Создание хранилища ключей, политики и сертификата для использования шлюзом приложений
 
 ```azurepowershell
 $keyVault = New-AzKeyVault -Name $kv -ResourceGroupName $rgname -Location $location -EnableSoftDelete 
@@ -71,7 +71,7 @@ $certificate = Get-AzKeyVaultCertificate -VaultName $kv -Name "cert1"
 $secretId = $certificate.SecretId.Replace($certificate.Version, "")
 ```
 > [!NOTE]
-> Флаг -EnableSoftDelete должен использоваться для правильного функционирования прекращения TLS. При настройке [мягкого удаления Key Vault через Portal](../key-vault/general/overview-soft-delete.md#soft-delete-behavior)период хранения должен быть сохранен на уровне 90 дней, значение по умолчанию. Приложение Gateway еще не поддерживает другой период хранения. 
+> Для правильной работы функции завершения TLS необходимо использовать флаг-Енаблесофтделете. Если вы настраиваете [Key Vault обратимое удаление с помощью портала](../key-vault/general/overview-soft-delete.md#soft-delete-behavior), срок хранения должен храниться в 90 дней, то есть в значении по умолчанию. Шлюз приложений еще не поддерживает другой срок хранения. 
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -89,7 +89,7 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName $rgname -name "AppGwIP" `
   -location $location -AllocationMethod Static -Sku Standard
 ```
 
-### <a name="create-pool-and-front-end-ports"></a>Создание портов пула и переднего конца
+### <a name="create-pool-and-front-end-ports"></a>Создание пулов и интерфейсных портов
 
 ```azurepowershell
 $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "appgwSubnet" -VirtualNetwork $vnet
@@ -102,13 +102,13 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port1" -Port 443
 $fp02 = New-AzApplicationGatewayFrontendPort -Name "port2" -Port 80
 ```
 
-### <a name="point-the-tlsssl-certificate-to-your-key-vault"></a>Направьте сертификат TLS/SSL на хранилище ключей
+### <a name="point-the-tlsssl-certificate-to-your-key-vault"></a>Наведите сертификат TLS/SSL в хранилище ключей.
 
 ```azurepowershell
 $sslCert01 = New-AzApplicationGatewaySslCertificate -Name "SSLCert1" -KeyVaultSecretId $secretId
 ```
 
-### <a name="create-listeners-rules-and-autoscale"></a>Создание слушателей, правил и автомасштабирования
+### <a name="create-listeners-rules-and-autoscale"></a>Создание прослушивателей, правил и автомасштабирования
 
 ```azurepowershell
 $listener01 = New-AzApplicationGatewayHttpListener -Name "listener1" -Protocol Https `
@@ -125,7 +125,7 @@ $autoscaleConfig = New-AzApplicationGatewayAutoscaleConfiguration -MinCapacity 3
 $sku = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2
 ```
 
-### <a name="assign-the-user-managed-identity-to-the-application-gateway"></a>Назначить удостоверение, управляемое пользователем, шлюзу приложения
+### <a name="assign-the-user-managed-identity-to-the-application-gateway"></a>Назначение управляемого пользователем удостоверения шлюзу приложений
 
 ```azurepowershell
 $appgwIdentity = New-AzApplicationGatewayIdentity -UserAssignedIdentityId $identity.Id
@@ -142,6 +142,6 @@ $appgw = New-AzApplicationGateway -Name $appgwName -Identity $appgwIdentity -Res
   -SslCertificates $sslCert01 -AutoscaleConfiguration $autoscaleConfig
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Подробнее о прекращении TLS](ssl-overview.md)
+[Дополнительные сведения об увольнении TLS](ssl-overview.md)

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: dsindona
 ms.openlocfilehash: bd6d6375b19689c582c0f129378c76936e624e04
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81416281"
 ---
 <a name="web-analytics"></a>Веб-аналитика
@@ -70,7 +70,7 @@ ms.locfileid: "81416281"
     2.  URL-адрес целевой страницы = ```https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName```
 3. Пользователь щелкает ссылку \"пробной версии продукта\" и переходит в AppSource.
     1. URL-адрес реферрала = ```https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName```
-    2. Посадка страницы URL (**Убедитесь,\_что\_этот URL имеет utm кампании и utm источник, добавленный к этому URL**)```https://appsource.microsoft.com/product/dynamics-365/contoso.offername?**utm\_campaign=MyCampaignAdName&utm\_source=MySourceAdName**```
+    2. URL-адрес целевой страницы (**Убедитесь, что этот\_URL-адрес\_содержит УТМ кампанию и источник УТМ, добавленные по этому URL-адресу**) =```https://appsource.microsoft.com/product/dynamics-365/contoso.offername?**utm\_campaign=MyCampaignAdName&utm\_source=MySourceAdName**```
 
 <a name="how-to-evaluate-the-success-of-a-campaign"></a>Как оценить успех кампании
 -----------------------------------------
@@ -93,7 +93,7 @@ ms.locfileid: "81416281"
 
 Подобно тому как мы смотрим на домены ваших клиентов, эта диаграмма позволяет вам видеть распределение ваших данных по кампаниям, с помощью которых пользователи попадают в marketplace. \_NoCampaign означает, что у клиента не было идентификатора кампании в URL-адресе, когда он переходил в marketplace.
 
-<a name="next-steps"></a>**Следующие шаги**
+<a name="next-steps"></a>**Дальнейшие действия**
 --------------
 
 Теперь, когда у вас есть возможность отслеживать успех ваших предложений, можно приступить к созданию дополнительных кампаний.

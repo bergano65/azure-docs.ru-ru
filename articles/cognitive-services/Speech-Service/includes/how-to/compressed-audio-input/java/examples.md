@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 03/09/2020
 ms.author: trbye
 ms.openlocfilehash: 666decfe3982ea58f5db3561eb9fb6e96965df5c
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81422133"
 ---
-Для потоковой передачи в сжатом аудиоформате на службу Speech создайте `PullAudioInputStream` или `PushAudioInputStream`. Затем создайте `AudioConfig` из экземпляра вашего класса потока, указав формат сжатия потока.
+Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи `PullAudioInputStream` , `PushAudioInputStream`Создайте или. Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
 
-Предположим, что у вас есть класс `pullStream` потока ввода называется и используете OPUS/OGG. Ваш код может выглядеть следующим образом:
+Предположим, что у вас есть класс входного потока с `pullStream` именем и используется опус/OGG. Код может выглядеть следующим образом:
 
 ```java
 import com.microsoft.cognitiveservices.speech.audio.AudioConfig;

@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Динамики AX
+title: Копирование данных из Dynamics AX
 description: Узнайте, как копировать данные из Dynamics AX на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере Фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
 ms.openlocfilehash: 4dd82eea0a80ef81a0f972d1964a62e6c17a80c0
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81417368"
 ---
 # <a name="copy-data-from-dynamics-ax-by-using-azure-data-factory"></a>Копирование данных из Dynamics AX с помощью фабрики данных Azure
@@ -27,10 +27,10 @@ ms.locfileid: "81417368"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Этот разъем Dynamics AX поддерживается для следующих действий:
+Этот соединитель Dynamics AX поддерживается для следующих действий:
 
-- [Копирование активности](copy-activity-overview.md) с [помощью поддерживаемой матрицы источника/раковины](copy-activity-overview.md)
-- [Активность поиска](control-flow-lookup-activity.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из Dynamics AX можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, приведен в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -45,7 +45,7 @@ ms.locfileid: "81417368"
 
 В разделах ниже приведены сведения о свойствах, которые используются для определения сущностей Фабрики данных, относящихся к соединителю Dynamics AX.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы использовать проверку подлинности субъекта-службы, выполните следующие действия.
 
@@ -53,7 +53,7 @@ ms.locfileid: "81417368"
 
     - Идентификатор приложения
     - Ключ приложения
-    - Tenant ID
+    - Идентификатор клиента
 
 2. Перейдите к Dynamics AX и предоставьте субъекту-службе правильное разрешение для доступа к Dynamics AX.
 
@@ -61,7 +61,7 @@ ms.locfileid: "81417368"
 
 Для связанной службы Dynamics AX поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
 | type | Для свойства**type** необходимо задать значение **DynamicsAX**. |Да |
 | url | Конечная точка OData экземпляра Dynamics AX (или Dynamics 365 Finance and Operations). |Да |
@@ -69,7 +69,7 @@ ms.locfileid: "81417368"
 | servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Да |
 | aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация. Например, если Dynamics имеет URL-адрес `https://sampledynamics.sandbox.operations.dynamics.com/data/`, то обычно соответствующий ресурс AAD имеет адрес `https://sampledynamics.sandbox.operations.dynamics.com`. | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете выбрать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете выбрать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
 
 **Пример**
 
@@ -105,7 +105,7 @@ ms.locfileid: "81417368"
 
 Чтобы скопировать данные из Dynamics, установите для свойства **type** набора данных значение **DynamicsAXResource**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
 | type | Свойство **type** набора данных должно быть со значением **DynamicsAXResource**. | Да |
 | path | Путь к сущности OData Dynamics AX. | Да |
@@ -137,12 +137,12 @@ ms.locfileid: "81417368"
 
 ### <a name="dynamics-ax-as-source"></a>Использование Dynamics AX в качестве источника
 
-Чтобы копировать данные из Dynamics AX, установите для типа **источника** в действии копирования значение **DynamicsAXSource**. Следующие свойства поддерживаются в **разделе источник** копирования активности:
+Чтобы копировать данные из Dynamics AX, установите для типа **источника** в действии копирования значение **DynamicsAXSource**. В разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
 | type | Свойство **type** источника действия копирования должно быть со значением **DynamicsAXSource**. | Да |
-| query | Параметры запроса OData для фильтрации данных. Например, `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание.** Соединитель копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | нет |
+| query | Параметры запроса OData для фильтрации данных. Например, `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание.** Соединитель копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 **Пример**
 
@@ -177,10 +177,10 @@ ms.locfileid: "81417368"
 ```
 
 
-## <a name="lookup-activity-properties"></a>Свойства активности поиска
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
-Чтобы узнать подробности о свойствах, проверьте [активность поиска.](control-flow-lookup-activity.md)
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

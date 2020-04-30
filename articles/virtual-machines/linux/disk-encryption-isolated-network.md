@@ -1,6 +1,6 @@
 ---
-title: Шифрование azure disk в изолированной сети
-description: В этой статье содержатся советы по устранению неполадок для шифрования дисков Microsoft Azure для Linux VMs.
+title: Шифрование дисков Azure в изолированной сети
+description: В этой статье содержатся советы по устранению неполадок Microsoft Azure шифровании дисков для виртуальных машин Linux.
 author: msmbaldwin
 ms.service: virtual-machines-linux
 ms.subservice: security
@@ -9,47 +9,47 @@ ms.author: mbaldwin
 ms.date: 02/27/2020
 ms.custom: seodec18
 ms.openlocfilehash: f2b84427b9aad2d18368d808fc618f3bfbe774ec
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81460126"
 ---
-# <a name="azure-disk-encryption-on-an-isolated-network"></a>Шифрование azure disk в изолированной сети
+# <a name="azure-disk-encryption-on-an-isolated-network"></a>Шифрование дисков Azure в изолированной сети
 
 Если подключение ограничивается брандмауэром, требованиями прокси-сервера или параметрами группы безопасности сети (NGS), способности расширения выполнять необходимые задачи могут быть нарушены. В результате может появиться такое сообщение о состоянии: "Сведения о состоянии расширения недоступны на виртуальной машине".
 
 ## <a name="package-management"></a>Управление пакетами
 
-Шифрование azure Disk зависит от ряда компонентов, которые обычно устанавливаются как часть aDE-возможности, если они еще не присутствуют. Когда за брандмауэром или иным образом изолированы от Интернета, эти пакеты должны быть предварительно установлены или доступны локально.
+Шифрование дисков Azure зависит от ряда компонентов, которые обычно устанавливаются как часть включения ADE, если они еще не установлены. Если за брандмауэром или иным способом изолировано от Интернета, эти пакеты должны быть предварительно установлены или доступны локально.
 
-Вот пакеты, необходимые для каждого распределения. Полный список поддерживаемых дистро и [supported VMs and operating systems](disk-encryption-overview.md#supported-vms-and-operating-systems)типов громкости см.
+Ниже приведены пакеты, необходимые для каждого распределения. Полный список поддерживаемых дистрибутивов и типов томов см. в статье [Поддерживаемые виртуальные машины и операционные системы](disk-encryption-overview.md#supported-vms-and-operating-systems).
 
-- **Ubuntu 14.04, 16.04, 18.04**: lsscsi, psmisc, at, cryptsetup-bin, python-parted, python-six, procps
-- **CentOS 7.2 - 7.7**: lsscsi, psmisc, lvm2, uuid, at, патч, cryptsetup, cryptsetup-reencrypt, pyparted, procps-ng, util-linux
-- **CentOS 6.8**: lsscsi, psmisc, lvm2, uuid, at, cryptsetup-reencrypt, pyparted, python-six
-- **RedHat 7.2 - 7.7**: lsscsi, psmisc, lvm2, uuid, at, патч, cryptsetup, cryptsetup-reencrypt, procps-ng, util-linux
-- **RedHat 6.8**: lsscsi, psmisc, lvm2, uuid, at, патч, криптоустановка-решифровка
-- **openSUSE 42.3, SLES 12-SP4, 12-SP3**: lsscsi, cryptsetup
+- **Ubuntu 14,04, 16,04, 18,04**: lsscsi, псмиск, at, криптсетуп-bin, Python — часть, Python-шесть, прокпс
+- **CentOS 7,2-7,7**: lsscsi, псмиск, lvm2, UUID, at, исправление, криптсетуп, криптсетуп-reencrypt, пипартед, прокпс-NG, util-Linux
+- **CentOS 6,8**: lsscsi, псмиск, lvm2, UUID, в, криптсетуп-reencrypt, пипартед, Python-Six
+- **RedHat 7,2-7,7**: lsscsi, псмиск, lvm2, UUID, at, исправление, криптсетуп, криптсетуп-reencrypt, прокпс-NG, util-Linux
+- **RedHat 6,8**: lsscsi, псмиск, lvm2, UUID, в, Patch, криптсетуп — повторное шифрование
+- **openSUSE 42,3, SLES 12 — SP4, 12-SP3**: lsscsi, криптсетуп
 
 В Red Hat, когда требуется прокси-сервер, необходимо убедиться в правильности настроек диспетчера подписок и yum. Дополнительные сведения см. в статье [How to troubleshoot subscription-manager and yum problems](https://access.redhat.com/solutions/189533) (Устранение неполадок диспетчера подписки и yum).  
 
-Когда пакеты устанавливаются вручную, они также должны быть обновлены вручную по мере выпуска новых версий.
+Если пакеты устанавливаются вручную, их также необходимо обновить вручную по мере выпуска новых версий.
 
 ## <a name="network-security-groups"></a>Группы безопасности сети
-Любые применяемые параметры группы безопасности сети должны позволять конечной точке соответствовать предусмотренным предварительным требованиям к конфигурации сети для шифрования диска.  Посмотреть [шифрование дисков Azure: Требования к сети](disk-encryption-overview.md#networking-requirements)
+Любые применяемые параметры группы безопасности сети должны позволять конечной точке соответствовать предусмотренным предварительным требованиям к конфигурации сети для шифрования диска.  См [. раздел шифрование дисков Azure: требования к сети](disk-encryption-overview.md#networking-requirements)
 
-## <a name="azure-disk-encryption-with-azure-ad-previous-version"></a>Шифрование диска Azure с Azure AD (предыдущая версия)
+## <a name="azure-disk-encryption-with-azure-ad-previous-version"></a>Шифрование дисков Azure с помощью Azure AD (Предыдущая версия)
 
-При использовании [Azure Disk Encryption с Azure AD (предыдущая версия)](disk-encryption-overview-aad.md) [библиотека Active Directory Library Должна](../../active-directory/azuread-dev/active-directory-authentication-libraries.md) быть установлена вручную для всех дистрибутивов (в дополнение к пакетам, подходящим для дистрибутива, как [указано выше).](#package-management)
+При использовании [шифрования дисков Azure с Azure AD (Предыдущая версия)](disk-encryption-overview-aad.md)необходимо вручную установить [библиотеку Azure Active Directory](../../active-directory/azuread-dev/active-directory-authentication-libraries.md) для всех дистрибутивов (в дополнение к пакетам, подходящим для дистрибутив, как [указано выше](#package-management)).
 
 При включении шифрования [учетных данных Azure AD](disk-encryption-linux-aad.md) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
 
-Виртуальная машина должна иметь доступ к конечному пункту [службы Metadata Azure Instance,](instance-metadata-service.md) `169.254.169.254`которая использует известный IP-адрес non-routable , доступ к которому можно получить только из ВМ.  Прокси-конфигурации, изменяющие локальный трафик HTTP на этот адрес (например, добавление X-Forwarded-For заголовка), не поддерживаются.
+Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляра Azure](instance-metadata-service.md) , которая использует известный IP-адрес без поддержки маршрутизации (`169.254.169.254`), доступ к которому возможен только из виртуальной машины.  Конфигурации прокси-сервера, которые изменяют локальный трафик HTTP к этому адресу (например, Добавление заголовка X-Forwardd-for), не поддерживаются.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Посмотреть дополнительные шаги для [устранения неполадок шифрования дисков Azure](disk-encryption-troubleshooting.md)
+- См. дополнительные шаги по [устранению неполадок шифрования дисков Azure](disk-encryption-troubleshooting.md)
 - [Шифрование неактивных данных в Azure](../../security/fundamentals/encryption-atrest.md)

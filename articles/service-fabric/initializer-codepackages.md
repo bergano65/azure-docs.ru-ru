@@ -1,34 +1,34 @@
 ---
-title: Инициайзер CodePackages в сервисной ткани
-description: Описывает Инициализатор CodePackages в сервисной ткани.
+title: Инициализатор содержащиеся в Service Fabric
+description: Описывает инициализатор содержащиеся в Service Fabric.
 author: shsha-msft
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: shsha
 ms.openlocfilehash: 8483e00f55d0dd49ba57db58b99b237ce0a169e5
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81430634"
 ---
-# <a name="initializer-codepackages"></a>Инициайзер CodePackages
+# <a name="initializer-codepackages"></a>Initializer Code Packages
 
-Начиная с версии 7.1, Service Fabric поддерживает **Инициайзер CodePackages** для [контейнеров][containers-introduction-link] и [экспоненируемых][guest-executables-introduction-link] приложений для гостей. Инициайзер CodePackages предоставляет возможность выполнять инициализации в сфере ServicePackage до начала выполнения других CodePackages. Их отношение к ServicePackage аналогично тому, что [SetupEntryPoint][setup-entry-point-link] для CodePackage.
+Начиная с версии 7,1, Service Fabric поддерживает **инициализаторы содержащиеся** для [контейнеров][containers-introduction-link] и [гостевых исполняемых][guest-executables-introduction-link] приложений. Инициализатор содержащиеся предоставляет возможность выполнять инициализации в области ServicePackage до начала выполнения других содержащиеся. Их связь с ServicePackage является аналогом [SetupEntryPoint][setup-entry-point-link] для CodePackage.
 
-Прежде чем приступить к этой статье, мы рекомендуем ознакомиться с [моделью приложения Service Fabric][application-model-link] и [моделью хостинга Service Fabric.][hosting-model-link]
+Прежде чем продолжить работу с этой статьей, мы рекомендуем ознакомиться с [моделью Service Fabric приложения][application-model-link] и [моделью размещения Service Fabric][hosting-model-link].
 
 > [!NOTE]
-> В настоящее время CodePackages Initializer не поддерживается для служб, написанных с использованием модели программирования [Надежных Услуг.][reliable-services-link]
+> Инициализаторы содержащиеся в настоящее время не поддерживаются для служб, написанных с помощью модели программирования [Reliable Services][reliable-services-link] .
  
 ## <a name="semantics"></a>Семантика
 
-Ожидается, что Инициайзер CodePackage будет успешно **завершен (код выхода 0).** Неудачный Инициайзер CodePackage перезапускается до тех пор, пока он успешно не завершится. Несколько Инициайзер CodePackages разрешены и выполняются до **успешного завершения,** **последовательно**, **в определенном порядке,** прежде чем другие CodePackages в ServicePackage начать выполнение.
+Для успешного выполнения ожидается CodePackage инициализатора **(код выхода 0)**. Сбой CodePackage инициализатора перезапускается до успешного завершения. Несколько содержащиеся инициализатора разрешены и выполняются для **успешного завершения**, **последовательно** **в указанном порядке** до начала выполнения других содержащиеся в ServicePackage.
 
-## <a name="specifying-initializer-codepackages"></a>Указание Кодпакетов инициатора
-Вы можете пометить CodePackage как инициатор, установив атрибут **Инициализатора** на **истину** в ServiceManifest. При наличии нескольких CodePackages Инициайзера их порядок выполнения может быть указан через атрибут **ExecOrder.** **ExecOrder** должен быть неотрицательным рядом и действителен только для Инициайзера CodePackages. Первоначальный кодпакеты с более низкими значениями **ExecOrder** выполняются в первую очередь. Если **ExecOrder** не указан для CodePackage Инициайзера, предполагается значение по умолчанию 0. Относительный порядок исполнения Инициайзера CodePackages с той же стоимостью **ExecOrder** не указан.
+## <a name="specifying-initializer-codepackages"></a>Указание содержащиеся инициализатора
+Можно пометить CodePackage как инициализатор, задав атрибуту **инициализатора** **значение true** в ServiceManifest. При наличии нескольких содержащиеся инициализатора их порядок выполнения можно указать с помощью атрибута **ексекордер** . **Ексекордер** должно быть неотрицательным целым числом и допустимым только для инициализатора содержащиеся. Сначала выполняются инициализаторы содержащиеся с более низкими значениями **ексекордер** . Если **ексекордер** не задан для инициализатора CodePackage, предполагается значение по умолчанию 0. Не задан относительный порядок выполнения инициализатора содержащиеся с тем же значением **ексекордер** .
 
-Следующий фрагмент ServiceManifest описывает три CodePackages, два из которых помечены как инициаторы. Когда этот Пакет услуг активирован, *InitCodePackage0* выполняется сначала, так как он имеет наименьшее значение **ExecOrder.** При успешном завершении (код выхода 0) *InitCodePackage0*, *InitCodePackage1* выполняется. Наконец, при успешном завершении *InitCodePackage1,* *WorkloadCodePackage* выполняется.
+Следующий фрагмент ServiceManifest описывает три содержащиеся, которые помечены как инициализаторы. При активации ServicePackage выполняется сначала *InitCodePackage0* , так как он имеет наименьшее значение **ексекордер**. При успешном завершении (код выхода 0) для *InitCodePackage0*выполняется *InitCodePackage1* . Наконец, при успешном завершении *InitCodePackage1*выполняется *ворклоадкодепаккаже* .
 
 ```xml
 <CodePackage Name="InitCodePackage0" Version="1.0" Initializer="true" ExecOrder="0">
@@ -43,16 +43,16 @@ ms.locfileid: "81430634"
   ...
 </CodePackage>
 ```
-## <a name="complete-example-using-initializer-codepackages"></a>Полный пример с использованием CodePackages Инициайзера
+## <a name="complete-example-using-initializer-codepackages"></a>Полный пример с использованием инициализатора содержащиеся
 
-Давайте рассмотрим полный пример с помощью Инициайзер CodePackages.
+Рассмотрим полный пример с помощью инициализатора содержащиеся.
 
 > [!IMPORTANT]
-> Следующий пример предполагает знакомство с [созданием контейнерных приложений Windows с использованием Service Fabric и Docker.][containers-getting-started-link]
+> В следующем примере предполагается знание создания [приложений контейнера Windows с помощью Service Fabric и DOCKER][containers-getting-started-link].
 >
-> Этот пример ссылается mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
+> Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-Следующий ServiceManifest.xml основывается на фрагменте ServiceManifest, описанном ранее. *InitCodePackage0*, *InitCodePackage1* и *WorkloadCodePackage* являются CodePackages, которые представляют контейнеры. После *активации, InitCodePackage0* выполняется первым. Он регистрирует сообщение в файл и выходит. Далее выполняется *InitCodePackage1,* который также регистрирует сообщение в файл и выходит. Наконец, *WorkloadCodePackage* начинает выполнение. Он также регистрирует сообщение в файл, выводит содержимое файла для **stdout,** а затем пинги навсегда.
+Следующий ServiceManifest. XML строится на основе фрагмента ServiceManifest, описанного ранее. *InitCodePackage0*, *InitCodePackage1* и *ворклоадкодепаккаже* — содержащиеся, которые представляют контейнеры. После активации сначала выполняется *InitCodePackage0* . Он записывает сообщение в файл и завершает работу. Затем выполняется *InitCodePackage1* , который также записывает сообщение в файл и завершает работу. Наконец, *ворклоадкодепаккаже* начинает выполнение. Он также записывает сообщение в файл, выводит содержимое файла в **stdout** , а затем выполняет проверку связи бессрочно.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +93,7 @@ ms.locfileid: "81430634"
 </ServiceManifest>
 ```
 
-Следующее ApplicationManifest.xml описывает приложение на основе упомянутого выше ServiceManifest.xml. Обратите внимание, что он определяет одно и то же крепление **объема** для всех контейнеров, т.е. **C:'WorkspaceOnHost** устанавливается на **C:'WorkspaceOnContainer** на всех трех контейнерах. Чистый эффект заключается в том, что все контейнеры пишут в один и тот же файл журнала в том порядке, в котором они активированы.
+В следующем ApplicationManifest. XML описывается приложение на основе файла ServiceManifest. XML, описанного выше. Обратите внимание, что он задает один и тот же **том** для всех контейнеров, т. е. **к:\воркспацеонхост** подключается по адресу **к:\воркспацеонконтаинер** во всех трех контейнерах. В результате все контейнеры записываются в один и тот же файл журнала в том порядке, в котором они были активированы.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,7 +127,7 @@ ms.locfileid: "81430634"
   </DefaultServices>
 </ApplicationManifest>
 ```
-После успешной активации ServicePackage содержимое **C: «WorkspaceOnHost»log.txt** должно быть следующим.
+После успешной активации ServicePackage содержимое **к:\воркспацеонхост\лог.ткст** должно быть следующим.
 
 ```console
 C:\Users\test>type C:\WorkspaceOnHost\log.txt
@@ -136,12 +136,12 @@ Hi from InitCodePackage1.
 Hi from WorkloadCodePackage.
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Смотрите следующие статьи для соответствующей информации.
+Дополнительные сведения см. в следующих статьях.
 
-* [Сервисная ткань и контейнеры.][containers-introduction-link]
-* [СервисНая ткань и гостевые исполнители.][guest-executables-introduction-link]
+* [Service Fabric и контейнеры.][containers-introduction-link]
+* [Service Fabric и гостевые исполняемые файлы.][guest-executables-introduction-link]
 
 <!-- Links -->
 [containers-introduction-link]: service-fabric-containers-overview.md

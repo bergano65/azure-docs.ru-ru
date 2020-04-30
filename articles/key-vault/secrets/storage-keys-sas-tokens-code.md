@@ -1,6 +1,6 @@
 ---
 title: 'Версия PowerShell: учетная запись хранения, управляемая с помощью Azure Key Vault'
-description: Функция управляемой учетной записи хранилища обеспечивает бесшовную интеграцию между Хранилищем ключей Azure и учетной записью хранения Azure.
+description: Функция управляемой учетной записи хранения обеспечивает тесную интеграцию между Azure Key Vault и учетной записью хранения Azure.
 ms.topic: conceptual
 ms.service: key-vault
 ms.subservice: secrets
@@ -9,19 +9,19 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
 ms.openlocfilehash: 7307741e56c7fc912f60d0496979243eb4be77a4
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81431271"
 ---
 # <a name="fetch-shared-access-signature-tokens-in-code"></a>Получение маркеров подписанного URL-адреса в коде
 
-Вы можете управлять учетной записью хранилища с [помощью маркеров общей подписи доступа](../../storage/common/storage-dotnet-shared-access-signature-part-1.md) в хранилище ключей. В этой статье приводятся примеры кода C,, который получает токен SAS и выполняет с ним операции.  Для получения информации о том, как создавать и хранить токены SAS, можно узнать [ключи учетной записи Управления с помощью Key Vault и ключей учетной](overview-storage-keys.md) записи Azure CLI или [управлять ключами хранения с помощью Key Vault и Azure PowerShell.](overview-storage-keys-powershell.md)
+Вы можете управлять учетной записью хранения с помощью [маркеров подписанного](../../storage/common/storage-dotnet-shared-access-signature-part-1.md) URL в хранилище ключей. В этой статье приводятся примеры кода C#, который извлекает маркер SAS и выполняет с ним операции.  Сведения о создании и хранении маркеров SAS см. в разделах [Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI](overview-storage-keys.md) или [Управление ключами учетной записи хранения с помощью Key Vault и Azure PowerShell](overview-storage-keys-powershell.md).
 
 ## <a name="code-samples"></a>Примеры кода
 
-В этом примере код извлекает токен SAS из хранилища ключей, использует его для создания новой учетной записи хранения и создает новый клиент службы Blob.  
+В этом примере код извлекает маркер SAS из хранилища ключей, использует его для создания новой учетной записи хранения и создает новый клиент службы BLOB-объектов.  
 
 ```cs
 // After you get a security token, create KeyVaultClient with vault credentials.
@@ -40,7 +40,7 @@ var accountWithSas = new CloudStorageAccount(accountSasCredential, new Uri ("htt
 var blobClientWithSas = accountWithSas.CreateCloudBlobClient();
 ```
 
-Если срок действия маркера общей подписи доступа истекает, можно получить токен подписи общего доступа из хранилища ключей и обновить код.
+Если срок действия маркера подписанного URL-доступа скоро истечет, вы можете получить маркер подписи общего доступа из хранилища ключей и обновить код.
 
 ```cs
 // If your shared access signature token is about to expire,
@@ -50,7 +50,7 @@ accountSasCredential.UpdateSASToken(sasToken);
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте, как [управлять ключами учетной записи хранилища с помощью Key Vault и Azure CLI](overview-storage-keys.md) или [Azure PowerShell.](overview-storage-keys-powershell.md)
-- Посмотреть [примеры ключей учетной записи управляемого хранилища](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=key+vault+storage&type=&language=)
+## <a name="next-steps"></a>Дальнейшие шаги
+- Узнайте, как [управлять ключами учетной записи хранения с помощью Key Vault, а также Azure CLI](overview-storage-keys.md) или [Azure PowerShell](overview-storage-keys-powershell.md).
+- См. [Примеры ключей управляемой учетной записи хранения](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=key+vault+storage&type=&language=)
 - [Ссылка на PowerShell для Key Vault](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault)

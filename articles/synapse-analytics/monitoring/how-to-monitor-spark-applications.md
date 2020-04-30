@@ -1,6 +1,6 @@
 ---
-title: Мониторинг приложений Apache Spark
-description: Используйте студию Azure Synapse для мониторинга приложений Apache Spark.
+title: Мониторинг Apache Spark приложений
+description: Используйте Azure синапсе Studio для мониторинга приложений Apache Spark.
 services: synapse-analytics
 author: matt1883
 ms.service: synapse-analytics
@@ -10,40 +10,40 @@ ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
 ms.openlocfilehash: f231693fdcf3519e29eed38e47db52d92acc00fa
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81430751"
 ---
-# <a name="use-the-azure-synapse-studio-preview-to-monitor-your-apache-spark-applications"></a>Используйте студию Azure Synapse (предварительный просмотр) для мониторинга приложений Apache Spark
+# <a name="use-the-azure-synapse-studio-preview-to-monitor-your-apache-spark-applications"></a>Использование Azure синапсе Studio (Предварительная версия) для мониторинга приложений Apache Spark
 
-С помощью Azure Synapse Analytics вы можете использовать Spark для запуска ноутбуков, заданий и других типов приложений в пулах Spark в рабочем пространстве.
+С помощью Azure синапсе Analytics вы можете использовать Spark для запуска записных книжек, заданий и других видов приложений в пулах Spark в рабочей области.
 
-В этой статье объясняется, как контролировать приложения Spark, что позволяет следить за последнимсостоянием, проблемами и прогрессом.
+В этой статье объясняется, как отслеживать приложения Spark, позволяющие следить за последним состоянием, проблемами и ходом выполнения.
 
 ## <a name="accessing-the-list-of-spark-applications"></a>Доступ к списку приложений Spark
 
-Чтобы увидеть список приложений Spark в рабочем пространстве, сначала [откройте студию Azure Synapse](https://web.azuresynapse.net/) и выберите рабочее пространство.
+Чтобы просмотреть список приложений Spark в рабочей области, сначала [откройте Azure синапсе Studio](https://web.azuresynapse.net/) и выберите рабочую область.
 
   > [!div class="mx-imgBorder"]
-  > ![Вход в рабочее пространство](./media/common/login-workspace.png)
+  > ![Войти в рабочую область](./media/common/login-workspace.png)
 
-После открытия рабочего пространства выберите раздел **Монитор** слева.
-
-  > [!div class="mx-imgBorder"]
-  > ![Выберите концентратор монитора](./media/common/left-nav.png)
-
-Выберите **приложения Spark** для просмотра списка приложений Spark.
+Открыв рабочую область, выберите раздел **монитор** слева.
 
   > [!div class="mx-imgBorder"]
-  > ![Выберите приложения Spark](./media/how-to-monitor-spark-applications/monitor-hub-nav-sparkapplications.png)
+  > ![Выбор концентратора мониторинга](./media/common/left-nav.png)
+
+Выберите **приложения Spark** , чтобы просмотреть список приложений Spark.
+
+  > [!div class="mx-imgBorder"]
+  > ![Выбор приложений Spark](./media/how-to-monitor-spark-applications/monitor-hub-nav-sparkapplications.png)
 
 ## <a name="filtering-your-spark-applications"></a>Фильтрация приложений Spark
 
-Список приложений Spark можно отфильтровать на интересующие вас приложения Spark. Фильтры в верхней части экрана позволяют указать поле, на котором вы хотите отфильтровать.
+Вы можете отфильтровать список приложений Spark на тех, которые вас интересуют. Фильтры в верхней части экрана позволяют указать поле, по которому вы хотите выполнить фильтрацию.
 
-Например, можно отфильтровать представление, чтобы увидеть только приложения Spark, содержащие имя "продажи":
+Например, можно отфильтровать представление, чтобы просмотреть только приложения Spark, содержащие имя "Sales":
 
   > [!div class="mx-imgBorder"]
   > ![Кнопка фильтра](./media/common/filter-button.png)
@@ -53,8 +53,8 @@ ms.locfileid: "81430751"
 
 ## <a name="viewing-details-about-a-specific-spark-application"></a>Просмотр сведений о конкретном приложении Spark
 
-Чтобы просмотреть сведения об одном из приложений Spark, выберите приложение Spark и просмотрите детали. Если приложение Spark все еще работает, можно следить за ходом работы.
+Чтобы просмотреть сведения об одном из приложений Spark, выберите приложение Spark и просмотрите сведения. Если приложение Spark все еще выполняется, можно отслеживать ход выполнения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Для получения дополнительной информации о [Monitor pipeline runs Azure Synapse Studio](how-to-monitor-pipeline-runs.md) мониторинге запусков конвейеров см.  
+Дополнительные сведения о выполнении конвейера мониторинга см. в статье запуск конвейера мониторинга в [Azure синапсе Studio](how-to-monitor-pipeline-runs.md) .  

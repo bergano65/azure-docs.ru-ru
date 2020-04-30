@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 9b491c4f0cc99395c44d989bf19fa2a7b03da696
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81417172"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Действие условия If в фабрике данных Azure
@@ -65,7 +65,7 @@ ms.locfileid: "81417172"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательно
+Свойство | Описание | Допустимые значения | Обязательный
 -------- | ----------- | -------------- | --------
 name | Имя действия условия If. | Строка | Да
 type | Для этого свойства необходимо задать значение **IfCondition**. | Строка | Да
@@ -287,7 +287,7 @@ Write-Host "\nActivity 'Error' section:" -foregroundcolor "Yellow"
 $result.Error -join "`r`n"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)

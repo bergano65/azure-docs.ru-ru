@@ -1,28 +1,28 @@
 ---
-title: Семантика RunToCompletion в сервисной ткани
-description: Описывает семантику RunToCompletion в сервисной ткани.
+title: Семантика Рунтокомплетион в Service Fabric
+description: Описывает семантику Рунтокомплетион в Service Fabric.
 author: shsha-msft
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: shsha
 ms.openlocfilehash: adf4b11412aa752144d4ed4fef06d2de1d76598d
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81431297"
 ---
-# <a name="runtocompletion"></a>RuntoCompletion
+# <a name="runtocompletion"></a>RunToCompletion
 
-Начиная с версии 7.1, Service Fabric поддерживает семантику **RunToCompletion** для [контейнеров][containers-introduction-link] и [исполняемых приложений.][guest-executables-introduction-link] Эти семантики позволяют приложенияи и службы, которые выполняют задачу и выходят, в отличие от всегда работающих приложений и служб.
+Начиная с версии 7,1 Service Fabric поддерживает семантику **рунтокомплетион** для [контейнеров][containers-introduction-link] и [гостевых исполняемых][guest-executables-introduction-link] приложений. Эти семантики позволяют приложениям и службам, которые завершают задачу и завершать работу, в отличие от всегда запуска приложений и служб.
 
-Прежде чем приступить к этой статье, мы рекомендуем ознакомиться с [моделью приложения Service Fabric][application-model-link] и [моделью хостинга Service Fabric.][hosting-model-link]
+Прежде чем продолжить работу с этой статьей, мы рекомендуем ознакомиться с [моделью Service Fabric приложения][application-model-link] и [моделью размещения Service Fabric][hosting-model-link].
 
 > [!NOTE]
-> Семантика RunToCompletion в настоящее время не поддерживается для служб, написанных с помощью модели программирования [Надежных Служб.][reliable-services-link]
+> Семантика Рунтокомплетион в настоящее время не поддерживается для служб, написанных с помощью модели программирования [Reliable Services][reliable-services-link] .
  
-## <a name="runtocompletion-semantics-and-specification"></a>Семантика и спецификация RunToCompletion
-Семантика RunToCompletion может быть указана как **executionPolicy** при [импорте ServiceManifest.][application-and-service-manifests-link] Указанная политика наследуется всеми CodePackages, включающими ServiceManifest. Следующий фрагмент ApplicationManifest.xml приводит пример.
+## <a name="runtocompletion-semantics-and-specification"></a>Семантика и спецификация Рунтокомплетион
+Семантику Рунтокомплетион можно указать как **ExecutionPolicy** при [импорте ServiceManifest][application-and-service-manifests-link]. Указанная политика наследуется всеми содержащиеся, составляющими ServiceManifest. В следующем фрагменте кода ApplicationManifest. XML приведен пример.
 
 ```xml
 <ServiceManifestImport>
@@ -33,21 +33,21 @@ ms.locfileid: "81431297"
 </ServiceManifestImport>
 ```
 **ExecutionPolicy** допускает следующие два атрибута:
-* **Тип:** **RunToCompletion** в настоящее время является единственным допустимое значение для этого атрибута.
-* **Перезагрузка:** Этот атрибут определяет политику перезагрузки, которая применяется к CodePackages, включающим ServicePackage, на сбой. CodePackage, выход из него с **ненулевым кодом выхода,** считается неудачным. Разрешенные значения для этого атрибута **OnFailure** и **Никогда не** с **OnFailure** является по умолчанию.
+* **Тип:** **рунтокомплетион** в настоящее время является единственным допустимым значением для этого атрибута.
+* **Перезапустить:** Этот атрибут указывает политику перезапуска, которая применяется к содержащиеся, включающей в себя ServicePackage, при сбое. CodePackage выход с **ненулевым кодом завершения** считается неудачным. Допустимыми значениями для этого атрибута являются **onFailure** и **Never** — значение по умолчанию — **onFailure** .
 
-При перезагрузке политики, установленной **на OnFailure,** если какой-либо CodePackage выходит из строя **(ненулевой код выхода),** он перезапускается, с откатами между повторными сбоями. При перезагрузке **политики,** установленной never , если какой-либо CodePackage не удается, состояние развертывания DeployedServicePackage помечается как **неудавшийся,** но другие CodePackages могут продолжить выполнение. Если все пакеты CodePackages, включающие в себя запуск ServicePackage, успешно **завершены (код выхода 0),** статус развертывания deployedServicePackage помечается как **RanToCompletion.** 
+Если для политики перезапуска задано значение **onFailure**, то при сбое любого CodePackage **(ненулевой код выхода)** он перезапускается с использованием обратных компромиссов между повторными сбоями. Если политика перезапуска имеет значение **Never**, то в случае сбоя какого-либо CodePackage состояние развертывания DeployedServicePackage помечается как **Failed** , но другие содержащиеся могут продолжать выполнение. Если все содержащиеся, включающие в себя выполнение ServicePackage для успешного завершения **(код выхода 0)**, состояние развертывания DeployedServicePackage помечается как **рантокомплетион**. 
 
-## <a name="complete-example-using-runtocompletion-semantics"></a>Полный пример с помощью семантики RunToCompletion
+## <a name="complete-example-using-runtocompletion-semantics"></a>Полный пример с использованием семантики Рунтокомплетион
 
-Давайте рассмотрим полный пример с помощью семантики RunToCompletion.
+Рассмотрим полный пример с использованием семантики Рунтокомплетион.
 
 > [!IMPORTANT]
-> Следующий пример предполагает знакомство с [созданием контейнерных приложений Windows с использованием Service Fabric и Docker.][containers-getting-started-link]
+> В следующем примере предполагается знание создания [приложений контейнера Windows с помощью Service Fabric и DOCKER][containers-getting-started-link].
 >
-> Этот пример ссылается mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
+> Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-Следующий ServiceManifest.xml описывает ServicePackage, состоящий из двух CodePackages, которые представляют контейнеры. *RunToCompletionCodePackage1* просто регистрирует сообщение для **stdout** и выходов. *RunToCompletionCodePackage2* пинги loopback адрес на некоторое время, а затем выходит с выходом код либо **0**, **1** или **2**.
+В следующем ServiceManifest. XML описывается ServicePackage, состоящий из двух содержащиеся, которые представляют контейнеры. *RunToCompletionCodePackage1* просто записывает сообщение в **stdout** и завершает работу. *RunToCompletionCodePackage2* проверяет связь с адресом замыкания на себя через некоторое время, а затем завершается кодом выхода **0**, **1** или **2**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +78,7 @@ ms.locfileid: "81431297"
 </ServiceManifest>
 ```
 
-Следующее ApplicationManifest.xml описывает приложение на основе упомянутого выше ServiceManifest.xml. Он определяет **RunToCompletion** **ExecutionPolicy** для *WindowsRunToCompletionServicePackage* с политикой перезапуска **OnFailure**. После активации *WindowsRunToCompletionServicePackage,* его составные CodePackages будут запущены. *RunToCompletionCodePackage1* должен успешно выйти при первой активации. Тем не менее, *RunToCompletionCodePackage2* может выйти из строя **(ненулевой код выхода),** и в этом случае он будет перезапущен, так как политика перезагрузки **OnFailure.**
+В следующем ApplicationManifest. XML описывается приложение на основе файла ServiceManifest. XML, описанного выше. Он указывает **рунтокомплетион** **ExecutionPolicy** для *виндовсрунтокомплетионсервицепаккаже* с политикой перезапуска **onFailure**. После активации *виндовсрунтокомплетионсервицепаккаже*будет запущено его составное содержащиеся. *RunToCompletionCodePackage1* должен успешно выйти при первой активации. Однако *RunToCompletionCodePackage2* может завершиться неудачно **(ненулевой код выхода)**. в этом случае он будет перезапущен, так как политика перезапуска находится в **onFailure**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -102,22 +102,22 @@ ms.locfileid: "81431297"
   </DefaultServices>
 </ApplicationManifest>
 ```
-## <a name="querying-deployment-status-of-a-deployedservicepackage"></a>Запрос состояния развертывания развернутогоServiceпакета
-Статус развертывания развернутогоServiceпакета можно запрашивать у PowerShell с помощью [Get-ServiceFabricDeployedServicePackage][deployed-service-package-link] или с помощью [API FabricClient][fabric-client-link] [GetDeployedServicePackageListAsync (String, Uri, String)][deployed-service-package-fabricclient-link]
+## <a name="querying-deployment-status-of-a-deployedservicepackage"></a>Запрос состояния развертывания DeployedServicePackage
+Состояние развертывания DeployedServicePackage можно запрашивать из PowerShell с помощью [Get-сервицефабрикдеплойедсервицепаккаже][deployed-service-package-link] или C# с помощью [FabricClient][fabric-client-link] API [жетдеплойедсервицепаккажелистасинк (строка, URI, строка)][deployed-service-package-fabricclient-link] .
 
-## <a name="considerations-when-using-runtocompletion-semantics"></a>Рассмотрение при использовании семантики RunToCompletion
+## <a name="considerations-when-using-runtocompletion-semantics"></a>Рекомендации по использованию семантики Рунтокомплетион
 
-Следующие моменты следует отметить для текущей поддержки RunToCompletion.
-* Эти семантики поддерживаются только для [контейнеров][containers-introduction-link] и [экспонесоваемых][guest-executables-introduction-link] приложений.
-* Сценарии обновления приложений с семантикой RunToCompletion не допускаются. При необходимости пользователи должны удалять и воссоздавать такие приложения.
-* События Failover могут привести к повторному выполнению CodePackages после успешного завершения на том же узлах или других узлах кластера. Примерами событий сбоя являются перезагрузка узлов и обновление времени выполнения Service Fabric на узлах.
+Для текущей поддержки Рунтокомплетион следует отметить следующие моменты.
+* Эти семантики поддерживаются только для [контейнеров][containers-introduction-link] и [гостевых исполняемых][guest-executables-introduction-link] приложений.
+* Сценарии обновления для приложений с семантикой Рунтокомплетион не допускаются. При необходимости пользователи должны удалять и повторно создавать такие приложения.
+* События отработки отказа могут привести к повторному выполнению содержащиеся после успешного завершения, на том же узле или на других узлах кластера. Примерами событий отработки отказа являются перезапуски узлов и обновление среды выполнения Service Fabric на узле.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Смотрите следующие статьи для соответствующей информации.
+Дополнительные сведения см. в следующих статьях.
 
-* [Сервисная ткань и контейнеры.][containers-introduction-link]
-* [СервисНая ткань и гостевые исполнители.][guest-executables-introduction-link]
+* [Service Fabric и контейнеры.][containers-introduction-link]
+* [Service Fabric и гостевые исполняемые файлы.][guest-executables-introduction-link]
 
 <!-- Links -->
 [containers-introduction-link]: service-fabric-containers-overview.md

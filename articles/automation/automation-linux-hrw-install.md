@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 03/02/2020
 ms.topic: conceptual
 ms.openlocfilehash: f2584a8d4e68b7c16b3acdc29f64f0a19d83d735
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "81457677"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
@@ -27,7 +27,7 @@ ms.locfileid: "81457677"
 * Oracle Linux 5, 6 и 7 (x86/x64)
 * Red Hat Enterprise Linux Server 5, 6 и 7 (x86/x64)
 * Debian GNU/Linux 6, 7 и 8 (x86/x64)
-* Ubuntu 12.04 LTS, 14.04 LTS, 16.04 LTS, и 18.04 (x86/x64)
+* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS и 18,04 (x86/x64)
 * SUSE Linux Enterprise Server 11 и 12 (x86/x64)
 
 ## <a name="supported-runbook-types"></a>Поддерживаемые типы runbook
@@ -50,7 +50,7 @@ ms.locfileid: "81457677"
 
 ## <a name="installing-a-linux-hybrid-runbook-worker"></a>Установка гибридной рабочей роли Runbook для Linux
 
-Чтобы установить и настроить гибридный Runbook Worker на вашем компьютере Linux, следуйте простому ручному процессу. Для этого необходимо включить решение гибридной рабочей роли службы автоматизации в рабочей области Azure Log Analytics, а затем выполнить несколько команд для регистрации компьютера в качестве рабочей роли и его добавления в имеющуюся группу.
+Чтобы установить и настроить гибридную рабочую роль Runbook на компьютере Linux, выполните простой ручной процесс. Для этого необходимо включить решение гибридной рабочей роли службы автоматизации в рабочей области Azure Log Analytics, а затем выполнить несколько команд для регистрации компьютера в качестве рабочей роли и его добавления в имеющуюся группу.
 
 Минимальные требования для гибридной рабочей роли Runbook Linux:
 
@@ -65,7 +65,7 @@ ms.locfileid: "81457677"
 |Glibc |Библиотека C GNU| 2.5-12 |
 |Openssl| Библиотеки OpenSSL | 1.0 (поддерживается TLS 1.1 и TLS 1.2)|
 |Curl | Веб-клиент cURL | 7.15.5|
-|Python-ctypes | Python 2.x требуется |
+|Python-ctypes | Требуется Python 2. x |
 |PAM | Подключаемые модули аутентификации|
 | **Дополнительный пакет** | **Описание** | **Минимальная версия**|
 | PowerShell Core | Для запуска модулей runbook необходимо установить PowerShell (дополнительные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux)).  | 6.0.0 |
@@ -76,7 +76,7 @@ ms.locfileid: "81457677"
 
 1. Включите решение Гибридная рабочая роль службы автоматизации в Azure одним из следующих методов:
 
-   * Добавьте в подписку решение Automation Hybrid Worker, используя процедуру в [решениях для журнала Add Azure Monitor в рабочее пространство.](../log-analytics/log-analytics-add-solutions.md)
+   * Добавьте решение гибридная рабочая роль службы автоматизации в подписку с помощью процедуры, описанной в разделе [Добавление решений для журналов Azure Monitor в рабочую область](../log-analytics/log-analytics-add-solutions.md).
    * Выполните следующий командлет:
 
         ```azurepowershell-interactive
@@ -100,17 +100,17 @@ ms.locfileid: "81457677"
 1. После завершения выполнения команды на странице Группы гибридных рабочих ролей на портале Azure отображается новая группа и количество элементов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице Группы гибридных рабочих ролей и щелкнуть плитку **Гибридные рабочие роли**. На странице Гибридные рабочие роли отображается список элементов группы.
 
 > [!NOTE]
-> Если вы используете расширение виртуальной машины Azure Monitor для Linux `autoUpgradeMinorVersion` для Azure VM, мы рекомендуем установить ложные, так как версии автоматического обновления могут вызвать проблемы у гибридного Runbook Worker. Чтобы узнать, как обновить расширение [Azure CLI deployment](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment)вручную, см.
+> Если вы используете Azure Monitor расширение виртуальной машины для Linux для виртуальной машины Azure, мы рекомендуем задать `autoUpgradeMinorVersion` значение false в качестве версии автоматического обновления, которая может вызвать проблемы гибридной рабочей роли Runbook. Сведения об обновлении расширения вручную см. в разделе [Azure CLI Deployment](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
 
 ## <a name="turning-off-signature-validation"></a>Отключение проверки подписи
 
-По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. Если вы запустите неподписанную книгу запуска `Signature validation failed` против работника, вы увидите ошибку. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр идентификатором вашей рабочей области Log Analytics.
+По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При запуске неподписанного модуля Runbook для рабочей роли отображается `Signature validation failed` сообщение об ошибке. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр идентификатором вашей рабочей области Log Analytics.
 
  ```bash
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <LogAnalyticsworkspaceId>
  ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".
