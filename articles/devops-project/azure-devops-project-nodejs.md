@@ -1,30 +1,28 @@
 ---
-title: Создание конвейера CI/CD для PWA с помощью GatsbyJS и Azure DevOps Projects
-description: Служба DevOps Projects позволяет быстро приступить к работе с Azure. Это поможет вам запустить приложение в службе Azure по вашему выбору за несколько быстрых шагов.
+title: Создание конвейера CI/CD для PWA с помощью Гатсбижс и Azure DevOps Starter
+description: DevOps Starter позволяет легко начать работу в Azure. Это поможет вам запустить приложение в службе Azure по вашему выбору за несколько быстрых шагов.
 ms.prod: devops
 ms.technology: devops-cicd
 services: vsts
 documentationcenter: vs-devops-build
 author: arob98
 manager: angrobe
-editor: ''
-ms.assetid: ''
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.topic: quickstart
-ms.date: 02/24/2020
+ms.date: 03/24/2020
 ms.author: angrobe
 ms.custom: mvc
-monikerRange: vsts
-ms.openlocfilehash: 508a61d6bbb00692855e09601aed67ab3be9cc8d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: 7db4fa2a780a3a1f53ecd73a40c247583cb6a79a
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78209073"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82233878"
 ---
-#  <a name="quickstart-create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-projects"></a>Краткое руководство. Создание конвейера CI/CD в Azure Pipelines для Node.js с помощью Azure DevOps Projects
-В этом кратком руководстве объясняется, как создать последовательное веб-приложение (PWA) NodeJS с помощью [GatsbyJS](https://www.gatsbyjs.org/) и упрощенного процесса создания проектов Azure DevOps. По завершении вы получите полнофункциональный конвейер непрерывной интеграции (CI) и непрерывной доставки (CD) для прогрессивного веб-приложения в Azure Pipelines. Azure DevOps Projects устанавливает все компоненты, необходимые для разработки, развертывания и мониторинга.
+# <a name="create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-starter"></a>Создание конвейера CI/CD в Azure Pipelines для Node. js с помощью Azure DevOps Starter
+
+В этом кратком руководстве вы создадите NodeJS последовательное веб-приложение (PWA) с помощью [гатсбижс](https://www.gatsbyjs.org/) и упрощенного процесса создания Azure DevOps Starter. По завершении вы получите полнофункциональный конвейер непрерывной интеграции (CI) и непрерывной доставки (CD) для прогрессивного веб-приложения в Azure Pipelines. Azure DevOps Starter настраивает, что необходимо для разработки, развертывания и мониторинга.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,161 +31,164 @@ ms.locfileid: "78209073"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-DevOps Projects позволяет создать конвейер CI/CD в Azure Pipelines. Вы можете создать новую организацию Azure DevOps или использовать существующую. DevOps Projects также создает ресурсы Azure в требуемой подписке Azure.
+DevOps Starter создает конвейер CI/CD в Azure Pipelines. Вы можете создать новую организацию Azure DevOps или использовать существующую. DevOps Starter также создает ресурсы Azure в вашей подписке Azure по своему усмотрению.
 
 1. Войдите на [портал Azure](https://portal.azure.com) и на панели слева выберите элемент **Создать ресурс**. 
 
    ![Создание ресурса Azure на портале Azure](_img/azure-devops-project-nodejs/create-azure-resource.png)
 
-2. Найдите и выберите пункт **DevOps Projects**, а затем щелкните элемент **Создать**.
+1. В поле поиска введите **DevOps Starter**, а затем выберите. Нажмите кнопку **Добавить** , чтобы создать новый.
 
- ![Создание проекта DevOps](_img/azure-devops-project-nodejs/create-devops-project.png) 
+    ![Панель мониторинга DevOps Starter](_img/azure-devops-starter-aks/search-devops-starter.png)
 
 ## <a name="select-a-sample-application-and-azure-service"></a>Выбор примера приложения и службы Azure
 
 1. Выберите пример приложения Node.js.   
 
- ![Выбор примера Node.js](_img/azure-devops-project-nodejs/select-nodejs-devops-project.png) 
+    ![Выбор примера Node. js](_img/azure-devops-project-nodejs/select-nodejs.png) 
 
-2. Платформа примера по умолчанию — **Express.js**. Измените это значение, выбрав вариант **Простое приложение Node.js** и щелкните **Далее**. 
+1. Платформа примера по умолчанию — **Express.js**. Измените выделенный фрагмент на **простое приложение Node. js** и нажмите кнопку **Далее**. 
 
- ![Выбор варианта "Простое приложение Node.js"](_img/azure-devops-project-nodejs/simple-nodejs-project.png) 
+    ![Выбор простого приложения Node. js](_img/azure-devops-project-nodejs/select-nodejs-framework.png) 
 
-3. Целевые объекты развертывания, доступные на этом шаге, зависят от выбора платформы приложений на шаге 2.  В нашем примере целевым объектом развертывания по умолчанию является **Веб-приложение в Windows**.  Оставьте значение **Веб-приложение для контейнеров** и щелкните **Далее**.
+1. Целевые объекты развертывания, доступные на этом шаге, определяются платформой приложений, выбранной на шаге 2. В этом примере **Windows Web App** является целью развертывания по умолчанию. Оставьте **веб-приложение для контейнеров** набор и нажмите кнопку **Далее**.
 
- ![Выбор целевого объекта развертывания](_img/azure-devops-project-nodejs/select-web-server.png) 
+    ![Выбор целевого объекта развертывания](_img/azure-devops-project-nodejs/select-web-server.png)
 
-## <a name="configure-a-project-name-and-an-azure-subscription"></a>Присвоение проекту имени и выбор подписки Azure
+## <a name="configure-a-project-name-and-an-azure-subscription"></a>Настройка имени проекта и подписки Azure
 
-1. На последнем шаге рабочего процесса создания проекта DevOps назначьте проекту имя, выберите подписку Azure и щелкните **Готово**.  
+1. На последнем шаге рабочего процесса создания DevOps Starter вы назначаете имя проекта, выберите подписку Azure и нажмите кнопку **Готово**.  
 
- ![Присвоение проекту имени и выбор подписки](_img/azure-devops-project-nodejs/assign-project-name.png) 
+    ![Назначение имени проекта и выбор подписки](_img/azure-devops-project-nodejs/assign-project-name.png)
 
-2. Во время сборки проекта и развертывания приложения в Azure отображается страница сводных данных. Через некоторое время в [организации Azure DevOps](https://dev.azure.com/) появится новый проект, который содержит репозиторий Git, канбан-доску, конвейер развертывания, планы тестирования и все необходимые приложению артефакты.  
+1. Страница Сводка отображается во время сборки проекта и развертывания приложения в Azure. После краткого периода в [Организации Azure DevOps](https://dev.azure.com/) создается проект, который включает репозиторий Git, доску Канбан, конвейер развертывания, планы тестирования и артефакты, необходимые для приложения.  
 
 ## <a name="managing-your-project"></a>Управление проектом
 
-1. Перейдите к разделу **Все ресурсы** и найдите свой проект DevOps. Выберите этот **проект DevOps**.
+1. Перейдите ко **всем ресурсам** и найдите DevOps Starter. Выберите **DevOps Starter**.
 
-![Панель мониторинга Azure DevOps в списке ресурсов](_img/azure-devops-project-nodejs/azure-devops-project-in-resource-list.png)
+    ![Панель мониторинга DevOps для Azure в списке ресурсов](_img/azure-devops-project-nodejs/devops-starter-list.png)
 
-2. Откроется панель мониторинга со сведениями о главной странице приложения, репозитории кода, конвейере CI/CD и ссылкой на работающее приложение. Щелкните ссылку **Домашняя страница проекта**, чтобы открыть приложение в **Azure DevOps**, а в другой вкладке браузера щелкните ссылку **Конечная точка приложения**, чтобы просмотреть пример работающего приложения.  Позже мы добавим в этот пример использование PWA, созданного в GatsbyJS.
+1. Вы направляетесь на панель мониторинга, которая предоставляет сведения о домашней странице проекта, репозитории кода, конвейере CI/CD и ссылку на работающее приложение. Выберите **домашнюю страницу проекта** , чтобы просмотреть приложение в **Azure DevOps** , а затем на другой вкладке браузера выберите **конечную точку приложения** , чтобы просмотреть пример приложения в реальном времени. Далее мы изменим этот пример, чтобы использовать Гатсбижс, созданный PWA.
 
-![Панели мониторинга Azure DevOps](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
+    ![Панель мониторинга DevOps Azure](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
 
-3. На странице проекта Azure DevOps вы можете пригласить сотрудников для участия в проекте, а также создать канбан-доску для отслеживания выполняемых действий.  Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/devops/user-guide/what-is-azure-devops?view=azure-devops).
+1. В проекте Azure DevOps вы можете пригласить членов команды для совместной работы и создания доски Канбан, чтобы начать отслеживание работы. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/devops/user-guide/what-is-azure-devops?view=azure-devops).
 
 ![Обзор Azure DevOps](_img/azure-devops-project-nodejs/azure-devops-overview.png)
 
-## <a name="clone-the-repo-and-install-your-gatsby-pwa"></a>Клонирование репозитория и установка Gatsby PWA
+## <a name="clone-the-repo-and-install-your-gatsby-pwa"></a>Клонирование репозитория и установка Гатсби PWA
 
-DevOps Projects создает репозиторий Git в Azure Repos или на сайте GitHub. В нашем примере создается репозиторий Azure Repos.  На следующем шаге мы клонируем этот репозиторий и внесем изменения в приложение.
+DevOps Starter создает репозиторий Git в Azure Repos или GitHub. В этом примере создан репозиторий Azure. Следующим шагом является Клонирование репозитория и внесение изменений.
 
-1. На панели **Проект DevOps** щелкните **Репозитории** и выберите **Клонировать**.  Есть несколько способов, позволяющих клонировать репозиторий Git на рабочий стол.  Выберите любой из них в соответствии со сценарием разработки.  
+1. Выберите **репозиториев** из **проекта DevOps** , а затем нажмите кнопку **клонировать**.  Существует несколько механизмов клонирования репозитория Git на Рабочий стол.  Выберите тот, который подходит для разработки.  
 
-![Клонирование репозитория](_img/azure-devops-project-nodejs/clone-the-repo.png)
+    ![Клонирование репозитория](_img/azure-devops-project-nodejs/clone-the-repo.png)
 
-2. Завершив клонирование репозитория на рабочий стол, внесите некоторые изменения в начальный шаблон. Прежде всего установите GatsbyJS CLI из окна терминала.
-```powershell
-npm install -g gatsby
-```
+1. После клонирования репозитория на Рабочий стол Внесите некоторые изменения в начальный шаблон. Начните с установки Гатсбижс CLI из терминала.
 
-3. В окне терминала перейдите к корневой папке репозитория. Здесь должны располагаться следующие три папки:
-```powershell
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----        2/23/2020  10:42 PM                Application
-d-----        2/23/2020   3:05 PM                ArmTemplates
-d-----        2/23/2020   3:05 PM                Tests
-```
+   ```powershell
+    npm install -g gatsby
+   ```
 
-4. Нам не нужны все файлы из папки Application, так как мы намерены вместо них использовать начальный пример Gatsby. Последовательно выполните следующие команды, чтобы усечь лишнее.
-```powershell
-cp .\Application\Dockerfile .
-rmdir Application
-```
+1. В окне терминала перейдите к корню репозитория. Он должен содержать три папки, которые выглядят следующим образом:
 
-5. С помощью Gatsby CLI создайте пример PWA. Выполните `gatsby new` в окне терминала, чтобы открыть мастер создания PWA, и выберите начальный шаблон `gatsby-starter-blog`. Он должен выглядеть примерно так:
-```powershell
-c:\myproject> gatsby new
-√ What is your project called? ... my-gatsby-project
-? What starter would you like to use? » - Use arrow-keys. Return to submit.
-    gatsby-starter-default
-    gatsby-starter-hello-world
->   gatsby-starter-blog
-    (Use a different starter)
-```
+    ```powershell
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    d-----        2/23/2020  10:42 PM                Application
+    d-----        2/23/2020   3:05 PM                ArmTemplates
+    d-----        2/23/2020   3:05 PM                Tests
+    ```
+    
+1. Мы не хотим, чтобы все файлы в папке приложения были заменены на Гатсби Starter. Выполните следующие команды последовательно, чтобы обрезать ее.
+    
+    ```powershell
+    cp .\Application\Dockerfile .
+    rmdir Application
+    ```
 
-6. Теперь у вас есть папка с именем `my-gatsby-project`. Присвойте ей новое имя `Application` и скопируйте в нее `Dockerfile`.
-```powershell
-mv my-gatsby-project Application
-mv Dockerfile Application
-```
+1. Используйте интерфейс командной строки Гатсби для создания примера PWA. Запустите `gatsby new` программу из терминала, чтобы запустить мастер PWA и выбрать `gatsby-starter-blog` шаблон для начального шаблона. Этот пример должен выглядеть примерно так:
 
-7. В любом удобном редакторе откройте файл Dockerfile и замените первую строку `FROM node:8` на `FROM node:12`. Это изменение означает, что контейнер будет использовать Node.js версии 12.x вместо версии 8.x. Для GatsbyJS требуется более новая версия Node.js.
+    ```powershell
+    c:\myproject> gatsby new
+    √ What is your project called? ... my-gatsby-project
+    ? What starter would you like to use? » - Use arrow-keys. Return to submit.
+        gatsby-starter-default
+        gatsby-starter-hello-world
+    >   gatsby-starter-blog
+        (Use a different starter)
+    ```
+    
+1. Теперь у вас есть папка с `my-gatsby-project`именем. Переименуйте его `Application` в и скопируйте `Dockerfile` в него.
+    
+    ```powershell
+    mv my-gatsby-project Application
+    mv Dockerfile Application
+    ```
+    
+1. В любимом редакторе откройте Dockerfile и измените первую строку с `FROM node:8` на. `FROM node:12` Это изменение гарантирует, что контейнер использует Node. js версии 12. x вместо версии 8. x. Гатсбижс требует более современных версий Node. js.
 
-8. После этого откройте файл package.json из папки Application и измените [поле scripts](https://docs.npmjs.com/files/package.json#scripts) так, чтобы сервер разработки и рабочий сервер прослушивали все доступные сетевые интерфейсы (например, 0.0.0.0) на порту 80. Без этих настроек контейнерная служба приложения не сможет передавать трафик в приложение Node.js, работающее внутри контейнера. Значение поля `scripts` должно выглядеть примерно так, как показано ниже. В частности, вам нужно изменить значения по умолчанию для `develop`, `serve` и `start`.
-```json
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop  -H 0.0.0.0 -p 80",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run serve",
-    "serve": "npm run build && gatsby serve -H 0.0.0.0 -p 80",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  }
-```
+1. Затем откройте файл Package. JSON в папке приложения и измените [поле сценарии](https://docs.npmjs.com/files/package.json#scripts) , чтобы убедиться в том, что серверы разработки и рабочих серверов прослушивают все доступные сетевые интерфейсы (например, 0.0.0.0) и порт 80. Без этих параметров служба приложений контейнеров не может маршрутизировать трафик к приложению Node. js, выполняющемуся в контейнере. `scripts` Поле должно выглядеть примерно так, как показано ниже. В `develop`частности, необходимо изменить целевые объекты `serve`, и `start` , используя значения по умолчанию.
 
+    ```json
+      "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop  -H 0.0.0.0 -p 80",
+        "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+        "start": "npm run serve",
+        "serve": "npm run build && gatsby serve -H 0.0.0.0 -p 80",
+        "clean": "gatsby clean",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+      }
+    ```
+    
 ## <a name="edit-your-cicd-pipelines"></a>Изменение конвейеров CI/CD
 
-1. Прежде чем фиксировать код, созданный в предыдущем разделе, внесите несколько изменений в конвейеры сборки и выпуска. Измените конвейер сборки так, чтобы задача Node использовала версию Node.js 12.x. В поле **Версия задачи** укажите значение 1.x, а в поле **Версия** — значение 12.x.
-![Обновление Node.js до версии 12.x](_img/azure-devops-project-nodejs/build-pipeline-update-node.png)
+1. Перед фиксацией кода в предыдущем разделе Внесите некоторые изменения в конвейеры сборки и выпуска. Измените "конвейер сборки" и обновите задачу Node, чтобы она использовала Node. js версии 12. x. Задайте в поле **Версия задачи** значение 1. x, а в поле **версия** — 12. x.
 
-2. В этом кратком руководстве не рассматривается создание модульных тестов, поэтому эти шаги в конвейере сборки следует отключить. Когда вы напишете эти тесты, снова включите соответствующие шаги. Щелкните правой кнопкой мыши задачи **Install test dependencies** (Установка зависимостей тестов) и **Run unit tests** (Выполнение модульных тестов), чтобы выбрать их, а затем отключите.
+    ![Обновление Node. js до 12. x](_img/azure-devops-project-nodejs/build-pipeline-update-node.png)
 
-![Отключение тестов сборки](_img/azure-devops-project-nodejs/disable-build-unittests.png)
+1. В этом кратком руководстве мы не создаем модульные тесты, и мы отключим эти шаги в нашем конвейере сборки. При написании тестов можно снова включить эти шаги. Щелкните правой кнопкой мыши, чтобы выбрать задачи с меткой **установить зависимости теста** и **запустить модульные тесты** и отключить их.
 
-3. Изменение конвейера выпуска.
-![Изменение конвейера выпуска](_img/azure-devops-project-nodejs/edit-release-pipeline.png)
+    ![Отключение тестов сборки](_img/azure-devops-project-nodejs/disable-build-unittests.png)
 
-4. Как и для конвейера сборки, для задачи Node укажите версию 12.x и отключите две задачи тестирования. Теперь конвейер выпуска должен выглядеть примерно так:
+1. Измените конвейер выпуска.
 
-![Готовая версия конвейера выпуска](_img/azure-devops-project-nodejs/release-pipeline-complete.png)
+    ![Изменение конвейера выпуска](_img/azure-devops-project-nodejs/edit-release-pipeline.png)
+
+1. Как и в случае с конвейером сборки, измените задачу узла на использование 12. x и отключите две задачи тестирования. Ваш выпуск должен быть похож на этот снимок экрана.
+
+    ![Завершенный конвейер выпуска](_img/azure-devops-project-nodejs/release-pipeline-complete.png)
 
 1. В области слева в браузере перейдите к файлу **views/index.pug**.
 
-1. Выберите **Изменить** и внесите изменения в заголовок h2.  
-    Например, введите **Начало работы с Azure DevOps Projects** или внесите другие изменения.
+1. Выберите **Изменить** и внесите изменения в заголовок h2.  Например, введите **Начало работы прямо сейчас с помощью Azure DevOps Starter** или внесите другие изменения.
 
 1. Выберите **Зафиксировать** и сохраните изменения.
 
-1. В браузере откройте панель мониторинга DevOps Projects.   
-Теперь вы должны увидеть, что сборка выполняется. Через конвейер CI/CD выполняется автоматическая сборка и развертывание внесенных изменений.
+1. В браузере перейдите на панель мониторинга DevOps Starter.   
+Теперь вы должны увидеть, что сборка выполняется. Внесенные изменения автоматически создаются и развертываются с помощью конвейера CI/CD.
 
-## <a name="commit-your-changes-and-examine-the-azure-cicd-pipeline"></a>Фиксация изменений и проверка конвейера Azure CI/CD
+## <a name="commit-your-changes-and-examine-the-azure-cicd-pipeline"></a>Зафиксируйте изменения и изучите конвейер Azure CI/CD
 
-На двух предыдущих шагах вы добавили приложение PWA, созданное в Gatsby, в репозиторий Git, а также изменили конвейеры сборки и развертывания кода. Теперь мы можем зафиксировать изменения кода и проверить его прохождение через конвейер сборки и выпуска.
+В предыдущих двух шагах вы добавили в репозиторий Git созданный Гатсби PWA и изменили конвейеры для создания и развертывания кода. Мы можем зафиксировать код и следить за его ходом с помощью конвейера сборки и выпуска.
 
-1. В корневой репозитории проекта выполните из окна терминала следующие команды для отправки кода в проект Azure DevOps.
-```powershell
-git add .
-git commit -m "My first Gatsby PWA"
-git push
-```
+1. В корне репозитория Git проекта в терминале выполните следующие команды, чтобы отправить код в проект Azure DevOps:
 
-2. Сборка начинается сразу после завершения команды `git push`. Вы можете следить за ходом ее выполнения на **панели мониторинга Azure DevOps**.
-
-![Панель мониторинга Azure DevOps в списке ресурсов](_img/azure-devops-project-nodejs/azure-devops-project-in-resource-list.png)
+    ```powershell
+    git add .
+    git commit -m "My first Gatsby PWA"
+    git push
+    ```
+    
+1. Сборка запускается сразу после `git push` завершения. Вы можете выполнить ход выполнения на **панели мониторинга DevOps для Azure**.
 
 3. Через несколько минут завершится работа конвейеров сборки и выпуска, и PWA будет развернуто в конвейере. Щелкните ссылку **Конечная точка приложения** на панели мониторинга, и вы увидите готовый начальный проект Gatsby для блогов.
 
-
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Ненужную Службу приложений Azure и связанные ресурсы можно удалить. Для этого воспользуйтесь функцией **Удалить** на панели мониторинга DevOps Projects.
-
+Ненужную Службу приложений Azure и связанные ресурсы можно удалить. Используйте функцию **удаления** на панели мониторинга DevOps Starter.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
