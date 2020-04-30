@@ -9,10 +9,10 @@ ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 01/13/2019
 ms.openlocfilehash: b1f4feab9587fb77089be265801c71f5b23b26ab
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82146799"
 ---
 # <a name="connect-to-on-premises-file-systems-with-azure-logic-apps"></a>Подключение к локальной файловой системе с помощью Azure Logic Apps
@@ -68,7 +68,7 @@ ms.locfileid: "82146799"
 
    ![Создание подключения](media/logic-apps-using-file-connector/file-system-connection.png)
 
-   | Свойство | Обязательно | Применение | Описание |
+   | Свойство | Обязательно | Значение | Описание |
    | -------- | -------- | ----- | ----------- |
    | **Имя подключения** | Да | <*имя соединения*> | Имя, которое нужно использовать для подключения. |
    | **Корневая папка** | Да | <*имя корневой папки*> | Корневая папка для вашей файловой системы, если вы установили локальный шлюз данных (например, локальная папка на компьютере, где установлен локальный шлюз данных), или папка для сетевой папки, доступ к которой может получить компьютер. <p>Пример: `\\PublicShare\\DropboxFiles` <p>Корневая папка является основной родительской папкой, которая используется для относительных путей всех действий с файлами. |

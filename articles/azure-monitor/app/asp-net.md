@@ -4,10 +4,10 @@ description: Настройка средств аналитики произво
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.openlocfilehash: d3181c3d43f07c7cb920b9fe265a8420c1417a56
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82145283"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
@@ -135,7 +135,7 @@ ms.locfileid: "82145283"
 * **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Содержит сведения об отладке с помощью телеметрии, о поиске по журналу диагностики и детализации кода.
 * **[Аналитика](../../azure-monitor/log-query/get-started-portal.md)**  — эффективный язык запросов.
 
-### <a name="alerts"></a>видны узлы
+### <a name="alerts"></a>Предупреждения
 
 * [Тесты доступности.](../../azure-monitor/app/monitor-web-app-availability.md) Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
 * [Интеллектуальная диагностика.](../../azure-monitor/app/proactive-diagnostics.md) Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.

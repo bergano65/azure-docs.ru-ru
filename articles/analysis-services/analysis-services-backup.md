@@ -8,10 +8,10 @@ ms.date: 04/24/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 2866ec860cbc9037aa6b57389b35f17ec71a7c9d
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82145454"
 ---
 # <a name="backup-and-restore"></a>Резервное копирование и восстановление
@@ -40,7 +40,7 @@ ms.locfileid: "82145454"
 
 2.  Щелкните **Включено**, а затем — **Параметры хранилища**.
 
-    ![Включить](./media/analysis-services-backup/aas-backup-enable.png)
+    ![Включите параметр](./media/analysis-services-backup/aas-backup-enable.png)
 
 3. Выберите имеющуюся учетную запись хранения или создайте новую.
 

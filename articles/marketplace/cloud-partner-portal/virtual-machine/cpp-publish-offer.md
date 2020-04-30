@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: dsindona
 ms.openlocfilehash: f66ce0c15e976898d5022bf5705a82fe0969ec07
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82147663"
 ---
 # <a name="publish-a-virtual-machine-offer"></a>Публикация предложения "Виртуальная машина"
@@ -27,7 +27,7 @@ ms.locfileid: "82147663"
 <!-- we need to tell them that if an offer seems stuck in a step, to know that they should file a support ticket (link to support ticket doc) -->
 
 
-|  **Шаг публикации**           | **Время**    | **Описание**                                                            |
+|  **Шаг публикации**           | **Таймаут**    | **Описание**                                                            |
 |  -------------------           | --------    | ---------------                                                            |
 | Проверка необходимых компонентов         | 15 мин.   | Информация и параметры предложения — проверенные.                        |
 | Проверка тестового выпуска (дополнительно) | 2 часа | Если выбрано включение тестового диска, корпорация Майкрософт проверяет его конфигурацию, развертывание и репликацию в выбранных регионах. |

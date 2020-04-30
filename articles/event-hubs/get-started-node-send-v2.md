@@ -8,12 +8,12 @@ ms.workload: core
 ms.topic: quickstart
 ms.date: 01/30/2020
 ms.author: spelluru
-ms.openlocfilehash: 42c58a84c71b6573814e82517373db6900a83658
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.openlocfilehash: 71c50e8efdf26f2a7d3f270a774b08e49c92faa7
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82025022"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82159426"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs-version-5"></a>Отправка событий или получение событий из концентраторов событий с помощью JavaScript (azure/event-hubs версии 5)
 В этом кратком руководстве показано, как отправлять и получать события через концентратор событий с помощью пакета JavaScript **azure/event-hubs версии 5**. 
@@ -119,7 +119,7 @@ npm install @azure/eventhubs-checkpointstore-blob
 
 1. [Create an Azure Storage account](../storage/common/storage-account-create.md?tabs=azure-portal) (Создание учетной записи хранения Azure)  
 2. [Создание контейнера](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)  
-3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string).
+3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
 
 Обязательно запишите строку подключения и имя контейнера для последующего использования в коде получения.
 

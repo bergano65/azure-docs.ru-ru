@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: radeltch
 ms.openlocfilehash: 15cdd4c53105998488d2ae1f544e34c1e07a157a
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82147129"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-suse-linux-enterprise-server"></a>Развертывание SAP HANA масштабируемой системы с резервным узлом на виртуальных машинах Azure с помощью Azure NetApp Files на SUSE Linux Enterprise Server 
@@ -248,7 +248,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
     d. Выберите **сеть**, а затем подключите сетевой интерфейс. В раскрывающемся списке **Подключить сетевой интерфейс** выберите уже созданные сетевые интерфейсы для подсетей `storage` и. `hana`  
     
-    e. Щелкните **Сохранить**. 
+    д) Нажмите кнопку **Сохранить**. 
  
     е) Повторите шаги с b по e для оставшихся виртуальных машин (в нашем примере это **hanadb2** и **hanadb3**).
  
@@ -635,8 +635,8 @@ Azure NetApp Files доступен в нескольких [регионах Az
 6. Чтобы оптимизировать SAP HANA для базового хранилища Azure NetApp Files, задайте следующие параметры SAP HANA.
 
    - `max_parallel_io_requests`**128**
-   - `async_read_submit` **on**
-   - `async_write_submit_active` **on**
+   - `async_read_submit`**на**
+   - `async_write_submit_active`**на**
    - `async_write_submit_blocks`**все**
 
    Дополнительные сведения см. [в статье NETAPP SAP Applications on Microsoft Azure using Azure NetApp Files][anf-sap-applications-azure]. 
@@ -821,7 +821,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     | hanadb3 | no     | ignore |          |        |         0 |         0 | default  | default  | master 3   | slave      | standby     | standby     | standby | standby | default | -       |
    </code></pre>
 
-   e. Запустите SAP HANA в **hanadb3**, который будет готов к работе в качестве резервного узла.  
+   д) Запустите SAP HANA в **hanadb3**, который будет готов к работе в качестве резервного узла.  
 
    <pre><code>
     hn1adm@hanadb3:/usr/sap/HN1/HDB03> HDB start

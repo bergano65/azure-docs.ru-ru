@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 01/30/2020
 ms.author: spelluru
-ms.openlocfilehash: 34583ef49b2f919391af3fe5700a558b2dc40700
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 191a2246afdc60953d8c353f9ccdc2339130f910
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77187242"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82159341"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub-version-5"></a>Запись данных Центров событий в Хранилище Azure и их чтение с помощью Python (azure-eventhub версии 5)
 
@@ -46,7 +46,7 @@ ms.locfileid: "77187242"
 - Учетная запись хранения Azure, контейнер больших двоичных объектов в учетной записи хранения и строка подключения к учетной записи хранения. Выполните действия в приведенных ниже ресурсах, если эти элементы отсутствуют.  
     1. [Create an Azure Storage account](../storage/common/storage-quickstart-create-account.md?tabs=azure-portal) (Создание учетной записи хранения Azure)  
     1. [Создание контейнера](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)  
-    1. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md#view-and-copy-a-connection-string).
+    1. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
 
     Обязательно запишите строку подключения и имя контейнера для последующего использования в кратком руководстве.  
 - Включите функцию "Сбор" для концентратора событий. Для этого следуйте инструкциям в разделе [Enable capturing of events streaming through Azure Event Hubs](event-hubs-capture-enable-through-portal.md) (Включение функции "Сбор" в Центрах событий с помощью портала Azure). Выберите учетную запись хранения и контейнер BLOB-объектов, созданные на предыдущем шаге. Эту функцию можно включить при создании концентратора событий.  
