@@ -136,10 +136,10 @@
         - name: Обеспечение необходимой пропускной способности для контейнеров и баз данных
           displayName: 'request units, RUs, RU, limits, database throughput, shared throughput, container throughput'
           href: set-throughput.md
-        - name: "Подготовка к пропускной способности\_— режим \"Автопилот\""
-          href: provision-throughput-autopilot.md
-        - name: Часто задаваемые вопросы о модели "Автопилот"
-          href: autopilot-faq.md
+        - name: "Подготовка пропускной способности\_— режим автомасштабирования"
+          href: provision-throughput-autoscale.md
+        - name: Вопросы и ответы об автомасштабировании
+          href: autoscale-faq.md
     - name: SQL-запрос
       items:
         - name: Начало работы
@@ -518,6 +518,7 @@
         - name: Совокупная стоимость владения
           href: total-cost-ownership.md
         - name: Интерпретация счета
+          displayName: free tier
           href: understand-your-bill.md
         - name: Оптимизация затрат на подготовленную пропускную способность
           displayName: 'request units, RUs, RU'
@@ -531,6 +532,7 @@
         - name: Оптимизация затрат на развертывание в нескольких регионах
           href: optimize-cost-regions.md
         - name: Оптимизация затрат на разработку и тестирование
+          displayName: free tier
           href: optimize-dev-test.md
         - name: Оптимизация затрат за счет резервной мощности
           href: cosmos-db-reserved-capacity.md

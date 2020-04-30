@@ -3,22 +3,98 @@ title: Функции шаблонов — сравнение
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для сравнения значений.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: a9b7b32475695e5222b87c8fe75e8982f34ebb21
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 15afc4d721c6577de9fe3e78483fdbfae5b493c6
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192337"
+ms.locfileid: "82203783"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Функции сравнения для шаблонов ARM
 
 Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблонах Azure Resource Manager (ARM).
 
+* [объединение](#coalesce)
 * [equals](#equals)
 * [greater](#greater)
 * [greaterOrEquals](#greaterorequals)
 * [столь](#less)
 * [lessOrEquals](#lessorequals)
+
+## <a name="coalesce"></a>coalesce
+
+`coalesce(arg1, arg2, arg3, ...)`
+
+Возвращает из параметров первое значение, отличное от null. Пустые строки, пустые массивы и пустые объекты не имеют значение null.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно | Type | Описание |
+|:--- |:--- |:--- |:--- |
+| arg1 |Да |целое число, строка, массив или объект |Первое значение, которое проверяется на соответствие значению null. |
+| дополнительные аргументы |Нет |целое число, строка, массив или объект |Дополнительные значения, которые проверяются на соответствие значению null. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Значение первых параметров, отличных от null, которое может быть строкой, целым числом, массивом или объектом. Null, если все параметры имеют значение null.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/coalesce.json) показаны выходные данные для разных случаев использования coalesce.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "objectToTest": {
+            "type": "object",
+            "defaultValue": {
+                "null1": null,
+                "null2": null,
+                "string": "default",
+                "int": 1,
+                "object": {"first": "default"},
+                "array": [1]
+            }
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "stringOutput": {
+            "type": "string",
+            "value": "[coalesce(parameters('objectToTest').null1, parameters('objectToTest').null2, parameters('objectToTest').string)]"
+        },
+        "intOutput": {
+            "type": "int",
+            "value": "[coalesce(parameters('objectToTest').null1, parameters('objectToTest').null2, parameters('objectToTest').int)]"
+        },
+        "objectOutput": {
+            "type": "object",
+            "value": "[coalesce(parameters('objectToTest').null1, parameters('objectToTest').null2, parameters('objectToTest').object)]"
+        },
+        "arrayOutput": {
+            "type": "array",
+            "value": "[coalesce(parameters('objectToTest').null1, parameters('objectToTest').null2, parameters('objectToTest').array)]"
+        },
+        "emptyOutput": {
+            "type": "bool",
+            "value": "[empty(coalesce(parameters('objectToTest').null1, parameters('objectToTest').null2))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| stringOutput | Строка | default |
+| intOutput | Int | 1 |
+| objectOutput | Объект | {"first": "default"} |
+| arrayOutput | Массив | [1] |
+| emptyOutput | Bool | True |
 
 ## <a name="equals"></a>equals (равно)
 
@@ -413,6 +489,6 @@ ms.locfileid: "82192337"
 | checkInts | Bool | True |
 | checkStrings | Bool | False |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

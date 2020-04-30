@@ -243,11 +243,13 @@
             - name: Автономные (любая среда)
               items:
                 - name: Java (предварительная версия)
-                  href: app/java-in-process-agent.md
-                - name: Настройка JVM
-                  href: app/java-standalone-arguments.md
-                - name: Варианты настройки для Java
-                  href: app/java-standalone-config.md
+                  items:
+                    - name: Обзор
+                      href: app/java-in-process-agent.md
+                    - name: Варианты настройки
+                      href: app/java-standalone-config.md
+                    - name: Настройка аргументов виртуальной машины Java
+                      href: app/java-standalone-arguments.md
             - name: Локальные серверы
               items:
                 - name: ASP.NET
@@ -690,8 +692,10 @@
                   href: insights/container-insights-enable-existing-clusters.md
                 - name: Включение для гибридного кластера
                   href: insights/container-insights-hybrid-setup.md
-                - name: Включение для Azure Red Hat OpenShift
+                - name: "Включение для Azure Red Hat OpenShift версии\_3"
                   href: insights/container-insights-azure-redhat-setup.md
+                - name: "Включение для Azure Red Hat OpenShift версии\_4"
+                  href: insights/container-insights-azure-redhat4-setup.md
                 - name: Сопоставления регионов
                   href: insights/container-insights-region-mapping.md
             - name: Мониторинг производительности
@@ -724,10 +728,16 @@
               href: insights/container-insights-update-metrics.md
             - name: Настройка мониторинга работоспособности
               href: insights/container-insights-health-monitors-config.md
-            - name: Отключение мониторинга AKS
-              href: insights/container-insights-optout.md
-            - name: Отключение мониторинга Red Hat OpenShift
-              href: insights/container-insights-optout-openshift.md
+            - name: Отключение мониторинга
+              items:
+                - name: Отключение мониторинга AKS
+                  href: insights/container-insights-optout.md
+                - name: "Отключение мониторинга Red Hat OpenShift версии\_3"
+                  href: insights/container-insights-optout-openshift-v3.md
+                - name: "Отключение мониторинга Red Hat OpenShift версии\_4"
+                  href: insights/container-insights-optout-openshift-v4.md
+                - name: Отключение мониторинга гибридного кластера
+                  href: insights/container-insights-optout-hybrid.md
             - name: Устранение неполадок
               href: insights/container-insights-troubleshoot.md
         - name: Мониторинг контейнеров Docker и Windows

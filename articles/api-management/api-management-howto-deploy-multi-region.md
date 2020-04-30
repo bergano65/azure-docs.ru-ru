@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 08/12/2019
+ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 5c71f37741de06b8633e7eafaae2f29823214f74
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0f8d9d7d90e88b4e43721dac274833a3b0df275e
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "75442668"
+ms.locfileid: "82203154"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
 
@@ -31,36 +31,23 @@ ms.locfileid: "75442668"
 
 [!INCLUDE [premium.md](../../includes/api-management-availability-premium.md)]
 
-## <a name="deploy-an-api-management-service-instance-to-a-new-region"></a><a name="add-region"> </a>Создание экземпляра службы управления API в новом регионе
+## <a name="deploy-api-management-service-to-a-new-region"></a><a name="add-region"> </a>Развертывание службы управления API в новом регионе
 
 > [!NOTE]
 > Если экземпляр службы управления API еще не создан, выполните инструкции в статье [Создание экземпляра службы управления API Azure][create an api management service instance].
 
-На портале Azure перейдите на страницу **Scale and pricing** (Масштаб и цены) для своего экземпляра службы управления API.
+1. В портал Azure перейдите к службе управления API и щелкните запись **Locations (расположения** ) в меню.
+2. Щелкните **+ Добавить** на верхней панели.
+3. Выберите расположение из раскрывающегося списка и задайте число единиц с помощью ползунка.
+4. Нажмите кнопку **Добавить** , чтобы подтвердить.
+5. Повторите эту процедуру, пока не будут настроены все расположения.
+6. Нажмите кнопку **сохранить** на верхней панели, чтобы начать процесс развертывания.
 
-![Вкладка "Масштаб"][api-management-scale-service]
+## <a name="delete-an-api-management-service-location"></a><a name="remove-region"> </a>Удаление расположения службы управления API
 
-Чтобы развернуть службу в новом регионе, щелкните **+ Add region** (+ Добавить регион) на панели инструментов.
-
-![Добавление региона][api-management-add-region]
-
-Выберите расположение из раскрывающегося списка и задайте число единиц с помощью ползунка.
-
-![Указание единиц][api-management-select-location-units]
-
-Щелкните **Добавить**, чтобы разместить выбранные ресурсы в таблице "Расположения".
-
-Повторите этот процесс, пока не будут настроены все расположения, затем щелкните **Сохранить** на панели инструментов, чтобы начать процесс развертывания.
-
-## <a name="delete-an-api-management-service-instance-from-a-location"></a><a name="remove-region"> </a>Удаление экземпляра службы управления API из расположения
-
-На портале Azure перейдите на страницу **Scale and pricing** (Масштаб и цены) для своего экземпляра службы управления API.
-
-![Вкладка "Масштаб"][api-management-scale-service]
-
-Для расположения, которое нужно удалить, откройте контекстное меню с помощью кнопки **…** в правой части таблицы. Щелкните **Удалить**.
-
-Подтвердите удаление и нажмите кнопку **Сохранить**, чтобы применить изменения.
+1. В портал Azure перейдите к службе управления API и щелкните запись **Locations (расположения** ) в меню.
+2. Для расположения, которое нужно удалить, откройте контекстное меню с помощью кнопки **…** в правой части таблицы. Щелкните **Удалить**.
+3. Подтвердите удаление и нажмите кнопку **Сохранить**, чтобы применить изменения.
 
 ## <a name="route-api-calls-to-regional-backend-services"></a><a name="route-backend"> </a>Маршрутизация вызовов API в региональных серверных службах
 
@@ -119,11 +106,6 @@ ms.locfileid: "75442668"
 1. [Настройка конечных точек регионального состояния управления API в диспетчере трафика](../traffic-manager/traffic-manager-monitoring.md). Конечные точки регионального состояния следуют шаблону URL `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`-адреса, `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`например.
 1. Укажите [метод маршрутизации](../traffic-manager/traffic-manager-routing-methods.md) диспетчера трафика.
 
-[api-management-management-console]: ./media/api-management-howto-deploy-multi-region/api-management-management-console.png
-[api-management-scale-service]: ./media/api-management-howto-deploy-multi-region/api-management-scale-service.png
-[api-management-add-region]: ./media/api-management-howto-deploy-multi-region/api-management-add-region.png
-[api-management-select-location-units]: ./media/api-management-howto-deploy-multi-region/api-management-select-location-units.png
-[api-management-remove-region]: ./media/api-management-howto-deploy-multi-region/api-management-remove-region.png
 [create an api management service instance]: get-started-create-service-instance.md
 [get started with azure api management]: get-started-create-service-instance.md
 [deploy an api management service instance to a new region]: #add-region

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 895fb0d83e383618818325263ac80c5919a0ee7b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 167d682bb5ce1266ba6b677f6223c38dd34af9bb
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "65406954"
+ms.locfileid: "82202402"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
 
@@ -101,7 +101,7 @@ ms.locfileid: "65406954"
 
     ![Сведения о домене и URL-адресах единого входа для E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_url.png)
 
-    а. В поле **URL-адрес входа** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/esales-pc*.
+    a. В поле **URL-адрес входа** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/esales-pc*.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/*.
 
@@ -132,7 +132,7 @@ ms.locfileid: "65406954"
 
 1. Из раздела **Краткий справочник** скопируйте URL-адрес выхода и URL-адрес службы единого входа SAML.
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
     ![Кнопка "Сохранить"](./media/esalesmanagerremix-tutorial/tutorial_general_400.png)
 
@@ -154,11 +154,11 @@ ms.locfileid: "65406954"
 
     ![Раздел "SAML authentication setting" (Настройка аутентификации SAML)](./media/esalesmanagerremix-tutorial/configure3.png)
     
-    а. Установите флажок **PC version** (Версия для компьютера).
+    a. Установите флажок **PC version** (Версия для компьютера).
     
     b. Из раскрывающегося списка в разделе **Collaboration item** (Элемент совместной работы) выберите значение **email** (Электронная почта).
 
-    c. В поле **Collaboration item** (Элемент совместной работы) вставьте значение утверждения, которое вы ранее скопировали на портале Azure (**http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**).
+    c. В поле **Collaboration item** (Элемент совместной работы) вставьте значение утверждения, которое вы ранее скопировали на портале Azure (**`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`**).
 
     d. В текстовое поле **Issuer (entity ID)** (Издатель или идентификатор сущности) вставьте значение идентификатора, скопированное ранее из раздела **Домены и URL-адреса приложения E Sales Manager Remix** на портале Azure.
 
@@ -198,13 +198,13 @@ ms.locfileid: "65406954"
 
     ![Окно пользователя](./media/paloaltoadmin-tutorial/create_aaduser_04.png)
 
-    а. В поле **Имя** введите **BrittaSimon**.
+    a. В поле **Имя** введите **BrittaSimon**.
 
     b. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
     c. Установите флажок **Показать пароль** и обратите внимание на значение, отображаемое в поле **пароль** .
 
-    d. Нажмите кнопку **создания**.
+    d. Щелкните **Создать**.
  
 ### <a name="create-an-e-sales-manager-remix-test-user"></a>Создание тестового пользователя E Sales Manager Remix
 
@@ -222,7 +222,7 @@ ms.locfileid: "65406954"
     
     ![Раздел "New employee registration" (Регистрация нового сотрудника)](./media/esalesmanagerremix-tutorial/user2.png)
 
-    а. В поле **Employee Name** (Имя сотрудника) введите имя пользователя (например, **Britta**).
+    a. В поле **Employee Name** (Имя сотрудника) введите имя пользователя (например, **Britta**).
 
     b. Заполните остальные обязательные поля.
     

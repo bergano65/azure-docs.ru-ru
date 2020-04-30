@@ -16,12 +16,12 @@ ms.date: 05/31/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18b5f19e3e994aa05fa99caf360d0c1be69ec7a5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 0775e717c0610e122bb31f752beecd2c97599053
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80049772"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82201046"
 ---
 # <a name="multiple-domain-support-for-federating-with-azure-ad"></a>Поддержка нескольких доменов для федерации с Azure AD
 В следующей документации представлено руководство по использованию нескольких доменов верхнего уровня и поддоменов в федерации с Office 365 или доменами Azure AD.
@@ -137,7 +137,7 @@ ms.locfileid: "80049772"
 ## <a name="support-for-subdomains"></a>Поддержка поддоменов
 При добавлении поддомена он унаследует параметры родительского домена из-за особенностей обработки доменов Azure AD.  Поэтому значение IssuerUri должно совпадать со значением этого параметра у родительских элементов.
 
-Давайте предположим, что у меня был домен bmcontoso.com, а затем я добавил поддомен corp.bmcontoso.com.  IssuerUri для пользователя из corp.bmcontoso.com должны быть ** http://bmcontoso.com/adfs/services/trust.**  Однако стандартное правило, реализованное выше для Azure AD, будет генерировать токен с эмитентом как ** http://corp.bmcontoso.com/adfs/services/trust.** , который не будет соответствовать необходимому значению для домена, и аутентификация завершится неудачно.
+Давайте предположим, что у меня был домен bmcontoso.com, а затем я добавил поддомен corp.bmcontoso.com.  IssuerUri для пользователя из corp.bmcontoso.com должен быть **`http://bmcontoso.com/adfs/services/trust`**.  Однако стандартное правило, реализованное выше для Azure AD, создаст маркер с издателем как **`http://corp.bmcontoso.com/adfs/services/trust`**. , который не будет соответствовать необходимому значению для домена, и аутентификация завершится неудачно.
 
 ### <a name="how-to-enable-support-for-subdomains"></a>Как включить поддержку для поддоменов
 Чтобы обойти это поведение, необходимо обновить отношение доверия проверяющей стороны AD FS для Microsoft Online.  Для этого необходимо настроить пользовательское правило утверждения так, чтобы оно удаляло поддомены из суффикса UPN пользователя при создании настраиваемого значения элемента Issuer.
@@ -166,11 +166,11 @@ ms.locfileid: "80049772"
 
 5. Нажмите кнопку "ОК".  Нажмите кнопку "Применить".  Нажмите кнопку "ОК".  Откройте оснастку управления AD FS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 
 Дополнительные сведения о функциях, которые были включены в процессе установки, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
 
 Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 
-Подробнее об [интеграции личных данных с помощью Active Directory Azure Active.](whatis-hybrid-identity.md)
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 2149b8410104b39652b176895a31b42e094265f5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4278f00b1026fe4d1b95634540d6d035d43ca5ab
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67100089"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202457"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство по Интеграция Azure Active Directory с InsideView
 
@@ -143,13 +143,13 @@ ms.locfileid: "67100089"
 
     1. Откройте необработанный сертификат, скачанный с портала Azure. Скопируйте содержимое сертификата в буфер обмена, а затем вставьте его в поле **STS Certificate** (Сертификат службы токенов безопасности).
 
-    1. В поле **Crm User Id Mapping** (Сопоставление ИД пользователя CRM) введите **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** .
+    1. В поле **Crm User Id Mapping** (Сопоставление ИД пользователя CRM) введите **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`** .
 
-    1. В поле **Crm Email Mapping** (Сопоставление электронной почты в CRM) введите **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** .
+    1. В поле **Crm Email Mapping** (Сопоставление электронной почты в CRM) введите **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`** .
 
-    1. В поле **Crm First Name Mapping** (Сопоставление имени в CRM) введите **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** .
+    1. В поле **Crm First Name Mapping** (Сопоставление имени в CRM) введите **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`** .
 
-    1. В поле **Crm lastName Mapping** (Сопоставление фамилии в CRM) введите **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** .  
+    1. В поле **Crm lastName Mapping** (Сопоставление фамилии в CRM) введите **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`** .  
 
     1. Щелкните **Сохранить**.
 

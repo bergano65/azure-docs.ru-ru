@@ -16,12 +16,12 @@ ms.date: 10/20/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d98a1aabef2de505e66b2127226b9e89cd791e20
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 89de1495dc6bb411d5d43986177f11abb016cf15
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "60244828"
+ms.locfileid: "82200893"
 ---
 # <a name="renew-federation-certificates-for-office-365-and-azure-active-directory"></a>Обновление сертификатов федерации для Office 365 и Azure AD
 ## <a name="overview"></a>Обзор
@@ -120,7 +120,7 @@ https://(ваше_имя_FS)/federationmetadata/2007-06/federationmetadata.xml
 
 где `(your_FS_name)` заменяется именем узла службы федерации, используемым вашей организацией, например FS.contoso.com.  Если проверка двух этих параметров оказалась успешной, вам больше не нужно ничего делать.  
 
-Например, https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml.
+Пример: `https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`
 ## <a name="renew-the-token-signing-certificate-manually"></a>Возобновление действия сертификата для подписи маркера вручную <a name="manualrenew"></a>
 Сертификаты для подписи маркеров можно обновить вручную. Например, в следующих сценариях лучше выполнять ручное обновление.
 

@@ -1,0 +1,7 @@
+- name: Документация по обеспечению надежности информационных систем
+  href: ../index.yml
+- name: Часто задаваемые вопросы
+  expanded: true
+  items:
+    - name: SRE и DevOps
+      href: devops.md

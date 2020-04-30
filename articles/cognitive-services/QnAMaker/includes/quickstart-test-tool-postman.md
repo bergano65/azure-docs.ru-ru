@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.subservice: luis
 ms.topic: include
 ms.custom: include file
-ms.date: 02/08/2020
+ms.date: 04/27/2020
 ms.author: diberry
-ms.openlocfilehash: dd44d9cb01ff072d89afeb4efc4a59071c621315
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: 97dfe175a609ab336206098948b4e3fcc401d8bc
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80758715"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82203981"
 ---
 В этом кратком руководстве описывается, как получить ответ из базы знаний с помощью Postman.
 
@@ -40,7 +40,7 @@ ms.locfileid: "80758715"
     |Имя|Параметр|Цель и значение|
     |--|--|--|
     |`POST`| `/knowledgebases/replace-with-your-knowledge-base-id/generateAnswer`|Это метод HTTP и маршрут для URL-адреса.|
-    |`Host`|`https://diberry-qna-s0-s.azurewebsites.net/qnamaker`|Это узел URL-адреса. Объедините значения Host и Post, чтобы получить полный URL-адрес generateAnswer.|
+    |`Host`|`https://YOUR-RESOURCE_NAME.azurewebsites.net/qnamaker`|Это узел URL-адреса. Объедините значения Host и Post, чтобы получить полный URL-адрес generateAnswer.|
     |`Authorization`|`EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`|Значение заголовка для авторизации запроса в Azure. |
     |`Content-type`|`application/json`|Значение заголовка для содержимого.|
     ||`{"question":"<Your question>"}`|Текст запроса POST в формате объекта JSON. Это значение будет изменяться в каждом из следующих разделов в зависимости от того, для чего предназначен очередной запрос.|

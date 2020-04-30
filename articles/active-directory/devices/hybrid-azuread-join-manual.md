@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 878960738830dbe2f94b977e98215a681c4a79d2
-ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
+ms.openlocfilehash: f23520bd724d2f7ed5a9422a0541e717c800dee2
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80802558"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82201029"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -140,7 +140,7 @@ Azure AD Connect выполняет следующие функции:
 Командлет `Initialize-ADSyncDomainJoinedComputerSync`:
 
 * Использует модуль PowerShell для Active Directory и средства доменных служб Azure Active Directory (Azure AD DS). Эти средства зависят от веб-служб Active Directory, работающих на контроллере домена. Поддержку веб-служб Active Directory выполняют контроллеры домена под управлением Windows Server 2008 R2 и более поздних версий.
-* Он поддерживается только модулем MSOnline PowerShell версии 1.1.166.0. Чтобы скачать этот модуль, используйте эту [ссылку](https://msconfiggallery.cloudapp.net/packages/MSOnline/1.1.166.0/).
+* Он поддерживается только модулем MSOnline PowerShell версии 1.1.166.0. Чтобы скачать этот модуль, используйте эту [ссылку](https://www.powershellgallery.com/packages/MSOnline/1.1.166.0).
 * Если не установить средства AD DS, выполнение командлета `Initialize-ADSyncDomainJoinedComputerSync` завершится ошибкой. Средства AD DS можно установить с помощью диспетчера сервера в разделе **Компоненты** > **Средства удаленного администрирования сервера** > **Средства администрирования ролей**.
 
 Если вы используете контроллер домена под управлением Windows Server 2008 или более ранних версий, для создания точки подключения службы используйте приведенный ниже сценарий. В конфигурации с несколькими лесами следует использовать следующий сценарий, чтобы создать точку подключения службы в каждом лесу, где существуют компьютеры.
@@ -185,7 +185,7 @@ Azure AD Connect выполняет следующие функции:
 - `/adfs/services/trust/13/certificatemixed`
 
 > [!WARNING]
-> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
+> Также нужно включить **adfs/services/trust/2005/windowstransport** и **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
 
 > [!NOTE]
 >Если вы не используете AD FS в качестве локальной службы федерации, обратитесь к своему поставщику за инструкциями и убедитесь, что система поддерживает конечные точки WS-Trust 1.3 или 2005 и что эти конечные точки публикуются с использованием файла обмена метаданными (MEX-файла).

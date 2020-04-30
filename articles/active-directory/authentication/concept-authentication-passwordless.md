@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe602972cb16bf24b1c35b2aadfe25c499bce69f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: f4de359f60b556390b8271b728580ef66ae53ffa
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181857"
+ms.locfileid: "82201726"
 ---
 # <a name="passwordless-authentication-options-for-azure-active-directory"></a>Параметры проверки подлинности с паролем для Azure Active Directory
 
@@ -119,7 +119,7 @@ Windows Hello для бизнеса идеально подходит для и�
 | евбм | [https://www.ewbm.com/support](https://www.ewbm.com/support) |
 | аусентренд | [https://authentrend.com/about-us/#pg-35-3](https://authentrend.com/about-us/#pg-35-3) |
 | Gemalto (Группа Thales) | [https://safenet.gemalto.com/multi-factor-authentication/authenticators/passwordless-authentication/](https://safenet.gemalto.com/multi-factor-authentication/authenticators/passwordless-authentication/) |
-| Онеспан Inc. | [https://www.onespan.com/sites/default/files/2019-01/OneSpan-FIDO-Authentication.pdf](https://www.onespan.com/sites/default/files/2019-01/OneSpan-FIDO-Authentication.pdf) |
+| Онеспан Inc. | [https://www.onespan.com/products/fido](https://www.onespan.com/products/fido) |
 | Технологии Идмелон Inc. | [https://www.idmelon.com/#idmelon](https://www.idmelon.com/#idmelon) | 
 
 > [!NOTE]
@@ -160,7 +160,7 @@ Windows Hello для бизнеса идеально подходит для и�
 |**Информационный работник**|Продуктивность работы| Мобильное или не Windows-устройство|Вход без пароля с помощью приложения Microsoft Authenticator|
 |**Оказался Worker**|Киоски в фабрике, растения, розничной торговле или вводе данных|Общие устройства с Windows 10|Ключи безопасности FIDO2|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Включение параметров безпарольного ключа безопасности FIDO2 в Организации](howto-authentication-passwordless-security-key.md)
 
