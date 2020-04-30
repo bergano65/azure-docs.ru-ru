@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/25/2019
 ms.author: thvankra
 ms.openlocfilehash: 167d9fc68cb075a2cf96d9079131be9e5a510c08
-ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82137422"
 ---
 # <a name="change-feed-in-the-azure-cosmos-db-api-for-cassandra"></a>Веб-канал изменений в Azure Cosmos DB API для Cassandra
@@ -131,6 +131,6 @@ ms.locfileid: "82137422"
 
 * **Код ошибки HTTP 429** — если частота веб-канала изменений ограничена, она возвращает пустую страницу.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление Azure Cosmos DB API Cassandra ресурсами с помощью шаблонов Azure Resource Manager](manage-cassandra-with-resource-manager.md)

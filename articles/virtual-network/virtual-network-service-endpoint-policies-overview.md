@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 02/21/2020
 ms.author: rdhillon
 ms.openlocfilehash: 495d0bce905a980f840527f4cc8cd9e2116e3e66
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82133752"
 ---
 # <a name="virtual-network-service-endpoint-policies-for-azure-storage"></a>Политики конечной точки службы виртуальной сети в службе хранилища Azure
@@ -141,7 +141,7 @@ ms.locfileid: "82133752"
  |Количество политик конечных точек служб на подсеть|100 |
  |Ресурсы служб на определение политики конечных точек служб|200 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [настроить политики конечных точек служб для виртуальной сети](virtual-network-service-endpoint-policies-portal.md).
 - Дополнительные сведения о [конечных точках службы виртуальной сети](virtual-network-service-endpoints-overview.md)

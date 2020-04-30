@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.openlocfilehash: 99c8d4e7e5263b8a7caf30833a899976d3cc829b
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82133703"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---single-server"></a>мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
@@ -33,8 +33,8 @@ ms.locfileid: "82133703"
 |serverlog_storage_percent|Процент хранилища для журнала сервера|Процент|Процент использованного объема хранилища журнала сервера (от максимального объема).|
 |serverlog_storage_usage|Используемый объем хранилища для журнала сервера|Байты|Используемый объем хранилища журнала сервера.|
 |serverlog_storage_limit|Максимальный объем хранилища для журнала сервера|Байты|Максимальный объем хранилища журнала сервера для этого сервера.|
-|active_connections|Активные подключения|Count|Число активных подключений к серверу.|
-|connections_failed|Неудачные подключения|Count|Число неудачных попыток подключения к серверу.|
+|active_connections|Активные подключения|Счетчик|Число активных подключений к серверу.|
+|connections_failed|Неудачные подключения|Счетчик|Число неудачных попыток подключения к серверу.|
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
 |backup_storage_used|Используемое хранилище резервных копий|Байты|Объем используемого хранилища резервных копий.|
@@ -76,7 +76,7 @@ ms.locfileid: "82133703"
 > [!IMPORTANT]
 > Уведомления о плановом обслуживании сейчас доступны в предварительной версии
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. раздел [Настройка оповещений](howto-alert-on-metric.md) для получения рекомендаций по созданию оповещения для метрики.
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
 - Читайте наш блог, чтобы ознакомиться с [рекомендациями по мониторингу сервера](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-postgresql-monitoring/).

@@ -8,10 +8,10 @@ ms.date: 11/14/2019
 ms.author: ant
 ms.topic: conceptual
 ms.openlocfilehash: 9cfb44fbf84ad85f3e2684dfec21cc83d4aaa666
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82131254"
 ---
 # <a name="troubleshoot-web-application-firewall-waf-for-azure-application-gateway"></a>Устранение неполадок брандмауэра веб-приложения (WAF) для шлюза приложений Azure
@@ -332,6 +332,6 @@ Fiddler — это удобное средство для поиска имен 
      
 Чтобы включить метрики, выберите на портале вкладку **метрики** и выберите одну из трех метрик.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. раздел [Настройка брандмауэра веб-приложения в шлюзе приложений](tutorial-restrict-web-traffic-powershell.md).

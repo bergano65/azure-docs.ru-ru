@@ -10,13 +10,13 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: cc7c1fd1dff85908c96e2fd7b2276df3d833e37f
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82134316"
 ---
-# <a name="monitor-iot-edge-deployments"></a>Мониторинг IoT Edge развертываний
+# <a name="monitor-iot-edge-deployments"></a>Мониторинг развертываний IoT Edge
 
 Azure IoT Edge предоставляет отчеты, позволяющие отслеживать сведения о модулях, развернутых на IoT Edge устройствах, в режиме реального времени. Служба центра Интернета вещей получает состояние с устройств и делает их доступными для оператора. Мониторинг также важен для [развертываний, выполняемых в масштабе](module-deployment-monitoring.md) , включая автоматические развертывания и многоуровневые развертывания.
 
@@ -99,6 +99,6 @@ az iot edge deployment show-metric --deployment-id [deployment id] --metric-id [
 
 Сведения о внесении изменений в развертывание см. в разделе [изменение развертывания](how-to-deploy-cli-at-scale.md#modify-a-deployment).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [взаимодействовать с EdgeAgent с помощью встроенных прямых методов](how-to-edgeagent-direct-method.md).

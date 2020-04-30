@@ -9,10 +9,10 @@ ms.date: 8/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
 ms.openlocfilehash: af0c95c197a70291e0fc863f3256be0e9a1da7f1
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82133213"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок фабрики данных Azure
@@ -1045,7 +1045,7 @@ ms.locfileid: "82133213"
 
 Дополнительные сведения см. в статье [Приступая к работе с Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

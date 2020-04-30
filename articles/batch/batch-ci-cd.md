@@ -6,10 +6,10 @@ ms.author: chredd
 ms.date: 03/28/2019
 ms.topic: conceptual
 ms.openlocfilehash: 79c4e74086acc0f74bcc43f6b4543afe12916364
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82117392"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Использование Azure Pipelines для создания и развертывания решений HPC
@@ -24,7 +24,7 @@ Azure Pipelines предоставляет ряд современных про�
 
 ![Схема, показывающая поток развертывания в нашем конвейере](media/batch-ci-cd/DeploymentFlow.png)
 
-### <a name="setup"></a>Установка
+### <a name="setup"></a>Настройка
 
 Для выполнения действий, описанных в этой статье, требуется организация Azure DevOps и командный проект.
 

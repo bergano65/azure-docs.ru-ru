@@ -5,10 +5,10 @@ ms.subservice: logs
 ms.topic: reference
 ms.date: 10/22/2019
 ms.openlocfilehash: 7183c0b268342d08fe7c0ed79c7fa589e3e28afe
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82128471"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-resource-logs"></a>Поддерживаемые службы, схемы и категории для журналов ресурсов Azure
@@ -22,7 +22,7 @@ ms.locfileid: "82128471"
 
 ## <a name="top-level-resource-logs-schema"></a>Схема журналов ресурсов верхнего уровня
 
-| Название | Обязательный/необязательный | Описание |
+| Имя | Обязательный/необязательный | Описание |
 |---|---|---|
 | time | Обязательный | Метка времени события (UTC). |
 | resourceId | Обязательный | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
@@ -68,13 +68,13 @@ ms.locfileid: "82128471"
 | Центр Интернета вещей | [Использование Azure Monitor](../../iot-hub/iot-hub-monitor-resource-health.md#use-azure-monitor) |
 | Key Vault |[Ведение журнала Azure Key Vault](../../key-vault/general/logging.md) |
 | Служба Kubernetes |[Ведение журнала Kubernetes для Azure](../../aks/view-master-logs.md#log-event-schema) |
-| Подсистема балансировки нагрузки |[Служба анализа журналов для балансировщика нагрузки Azure](../../load-balancer/load-balancer-monitor-log.md) |
+| Load Balancer |[Служба анализа журналов для балансировщика нагрузки Azure](../../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Настраиваемая схема отслеживания Logic Apps B2B](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | группы сетевой безопасности; |[Аналитика журналов для групп безопасности сети](../../virtual-network/virtual-network-nsg-manage-log.md) |
 | Защита от атак DDoS | [Управление службой "Защита от атак DDoS Azure" уровня "Стандартный"](../../virtual-network/manage-ddos-protection.md) |
 | Power BI (цен. категория "Выделенный") | [Ведение журнала для Power BI Embedded в Azure](https://docs.microsoft.com/power-bi/developer/azure-pbie-diag-logs) |
 | Службы восстановления | [Модель данных для Azure Backup](../../backup/backup-azure-reports-data-model.md)|
-| Поиск |[Включение и использование аналитики поискового трафика](../../search/search-traffic-analytics.md) |
+| Система поиска |[Включение и использование аналитики поискового трафика](../../search/search-traffic-analytics.md) |
 | Служебная шина |[Журналы служебной шины Azure](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
 | База данных SQL | [Ведение журнала базы данных SQL Azure](../../sql-database/sql-database-metrics-diag-logging.md) |
 | Stream Analytics |[Журналы заданий](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |
@@ -110,7 +110,7 @@ ms.locfileid: "82128471"
 |Microsoft. BatchAI/рабочие области|баиклустернодивент|баиклустернодивент|
 |Microsoft. BatchAI/рабочие области|баижобевент|баижобевент|
 |Microsoft. Блокчейн/Блоккчаинмемберс|блоккчаинаппликатион|Приложение блокчейн|
-|Microsoft. Блокчейн/Блоккчаинмемберс|Proxy (Прокси)|Proxy (Прокси)|
+|Microsoft. Блокчейн/Блоккчаинмемберс|Прокси|Прокси|
 |Microsoft.Cdn/profiles/endpoints|CoreAnalytics|Возвращает метрики конечной точки, например пропускную способность, исходящий трафик и т. д.|
 |Microsoft.ClassicNetwork/networksecuritygroups|Событие потока правил группы безопасности сети|Событие потока правил группы безопасности сети|
 |Microsoft.CognitiveServices/accounts|Аудит|Журналы аудита|
@@ -124,7 +124,7 @@ ms.locfileid: "82128471"
 |Microsoft.ContainerService/managedClusters|cluster-autoscaler|Средство автомасштабирования кластера Kubernetes|
 |Microsoft. кирпичы и рабочие области|dBFS|Файловая система Databricks|
 |Microsoft. кирпичы и рабочие области|clusters|Кластеры кирпичей|
-|Microsoft. кирпичы и рабочие области|accounts|Учетные записи кирпичей|
+|Microsoft. кирпичы и рабочие области|учетные записи;|Учетные записи кирпичей|
 |Microsoft. кирпичы и рабочие области|jobs|Задания кирпичей|
 |Microsoft. кирпичы и рабочие области|записная книжка|Записная книжка Databricks|
 |Microsoft. кирпичы и рабочие области|ssh|SSH-сеансы|
@@ -199,7 +199,7 @@ ms.locfileid: "82128471"
 |Microsoft.Insights/AutoscaleSettings|AutoscaleEvaluations|Оценки автомасштабирования|
 |Microsoft.Insights/AutoscaleSettings|AutoscaleScaleActions|Действия автоматического увеличения масштаба|
 |Microsoft.IoTSpaces/Graph|Трассировка|Трассировка|
-|Microsoft.IoTSpaces/Graph|Операционный|Операционный|
+|Microsoft.IoTSpaces/Graph|Оперативный|Оперативный|
 |Microsoft.IoTSpaces/Graph|Аудит|Аудит|
 |Microsoft.IoTSpaces/Graph|UserDefinedFunction|UserDefinedFunction|
 |Microsoft.IoTSpaces/Graph|Входящий трафик|Входящий трафик|
@@ -311,7 +311,7 @@ ms.locfileid: "82128471"
 |microsoft.web/sites/slots|аппсервицефилеаудитлогс|Журналы аудита изменения содержимого сайта|
 |microsoft.web/sites/slots|аппсервицеаудитлогс|Доступ к журналам аудита|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Дополнительные сведения о журналах ресурсов](../../azure-monitor/platform/platform-logs-overview.md)
 * [Потоковая передача журналов ресурсов в **концентраторы событий**](../../azure-monitor/platform/resource-logs-stream-event-hubs.md)

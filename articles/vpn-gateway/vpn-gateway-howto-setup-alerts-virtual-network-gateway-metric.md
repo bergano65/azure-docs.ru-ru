@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: alzam
 ms.openlocfilehash: 01704030ee3142cac9a328e1a3edc024651919a0
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82127909"
 ---
 # <a name="set-up-alerts-on-vpn-gateway-metrics"></a>Настройка оповещений для метрик VPN-шлюза
@@ -23,14 +23,14 @@ ms.locfileid: "82127909"
 |---       | ---        | ---       | ---            | ---       |
 |**AverageBandwidth**| Байт/с  | 5 мин| Среднее использование пропускной способности для всех подключений типа "сеть — сеть" в шлюзе.     |
 |**P2SBandwidth**| Байт/с  | 1 минута  | Среднее использование пропускной способности всех подключений типа "точка — сеть" в шлюзе.    |
-|**P2SConnectionCount**| Count  | 1 минута  | Число подключений типа "точка — сеть" в шлюзе.   |
+|**P2SConnectionCount**| Счетчик  | 1 минута  | Число подключений типа "точка — сеть" в шлюзе.   |
 |**TunnelAverageBandwidth** | Байт/с    | 5 мин  | Среднее использование пропускной способности туннелей, созданных на шлюзе. |
 |**TunnelEgressBytes** | Байты | 5 мин | Исходящий трафик по туннелям, созданным на шлюзе.   |
-|**TunnelEgressPackets** | Count | 5 мин | Число исходящих пакетов в туннелях, созданных на шлюзе.   |
-|**TunnelEgressPacketDropTSMismatch** | Count | 5 мин | Число исходящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
+|**TunnelEgressPackets** | Счетчик | 5 мин | Число исходящих пакетов в туннелях, созданных на шлюзе.   |
+|**TunnelEgressPacketDropTSMismatch** | Счетчик | 5 мин | Число исходящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
 |**TunnelIngressBytes** | Байты | 5 мин | Входящий трафик по туннелям, созданным на шлюзе.   |
-|**TunnelIngressPackets** | Count | 5 мин | Число входящих пакетов на туннели, созданных на шлюзе.   |
-|**TunnelIngressPacketDropTSMismatch** | Count | 5 мин | Число входящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
+|**TunnelIngressPackets** | Счетчик | 5 мин | Число входящих пакетов на туннели, созданных на шлюзе.   |
+|**TunnelIngressPacketDropTSMismatch** | Счетчик | 5 мин | Число входящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
 
 
 ## <a name="set-up-azure-monitor-alerts-based-on-metrics-by-using-the-azure-portal"></a><a name="setup"></a>Настройка оповещений Azure Monitor на основе метрик с помощью портал Azure
@@ -69,6 +69,6 @@ ms.locfileid: "82127909"
 
    ![Кнопка для управления правилами оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert8.png "Выберите пункт")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о настройке оповещений в журналах ресурсов туннеля см. в разделе [Настройка оповещений в журналах ресурсов VPN-шлюза](vpn-gateway-howto-setup-alerts-virtual-network-gateway-log.md).

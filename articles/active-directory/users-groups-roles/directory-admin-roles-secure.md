@@ -15,10 +15,10 @@ ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 512efa959ccb78533845cd1f376318394b5c377b
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82129166"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD
@@ -425,7 +425,7 @@ MCAS позволяет вам анализировать файлы и уста
 
 **Ответ.** Используйте непривилегированные учетные записи для всех пользователей и большинства администраторов. Начните с разработки схемы сотрудников организации, чтобы определить, какие из немногих учетных записей администратора должны быть привилегированными. Отслеживайте создаваемых администраторов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Центр управления безопасностью Майкрософт. Безопасность продуктов](https://www.microsoft.com/trustcenter/security). Функции безопасности облачных продуктов и служб Майкрософт.
 

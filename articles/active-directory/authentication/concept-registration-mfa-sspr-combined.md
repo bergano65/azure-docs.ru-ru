@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d4caaf8704f2ee49f8f094ad22065ae462154be
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82143921"
 ---
 # <a name="combined-security-information-registration-overview"></a>Общие сведения о общей регистрации сведений о безопасности
@@ -46,7 +46,7 @@ ms.locfileid: "82143921"
 
 Объединенная регистрация поддерживает следующие методы и действия проверки подлинности:
 
-|   | Зарегистрировать | Изменение | DELETE |
+|   | Зарегистрировать | Изменение | Удалить |
 | --- | --- | --- | --- |
 | Microsoft Authenticator | Да (максимум 5) | Нет | Да |
 | Другое приложение для проверки подлинности | Да (максимум 5) | Нет | Да |

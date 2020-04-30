@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/27/2020
 ms.openlocfilehash: 40b57af95f9ea4d4212756634c721ddd55f85d7b
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82127753"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Устранение неполадок Azure Stream Analytics с помощью журналов ресурсов
@@ -140,7 +140,7 @@ Type | Тип ошибки. Например **DataConversionError**, **CsvParse
 Type | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
 Идентификатор корреляции | Идентификатор [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Начало работы со Stream Analytics](stream-analytics-real-time-fraud-detection.md)

@@ -1,18 +1,16 @@
 ---
 title: Преобразование для просмотра сцены Blender с помощью пакетной службы Azure и Batch Explorer
 description: Руководство. Преобразование для просмотра нескольких кадров из сцены Blender с помощью пакетной службы Azure и клиентского приложения Batch Explorer
-services: batch
-ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 8a512676ab0e56f51c0fb9c59f2e530cfcf73333
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ca23bbc2b53eaaaf1848a7a98228be23c9ffed0c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "60617681"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82117086"
 ---
 # <a name="tutorial-render-a-blender-scene-using-batch-explorer"></a>Руководство. Преобразование для просмотра сцены Blender с помощью Batch Explorer
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/24/2020
 ms.author: cherylmc
 ms.openlocfilehash: 4c326a556530fd778c1178f11b79d2aba613b4c1
-ms.sourcegitcommit: 1ed0230c48656d0e5c72a502bfb4f53b8a774ef1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82136589"
 ---
 # <a name="expressroute-global-reach"></a>Global Reach ExpressRoute
@@ -48,7 +48,7 @@ ExpressRoute Global Reach предназначен для дополнения �
 
 Каналы ExpressRoute необходимо создавать в [расположениях пиринга ExpressRoute](expressroute-locations.md) в странах или регионах, указанных выше. Чтобы включить ExpressRoute Global Reach между [разными геополитическими регионами](expressroute-locations.md), у каналов должен быть номер SKU уровня "Премиум".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 1. [Просмотр Global Reach часто задаваемых вопросов](expressroute-faqs.md#globalreach)
 2. [Узнайте, как включить Global Reach](expressroute-howto-set-global-reach.md)
 3. [Узнайте, как связать канал ExpressRoute с виртуальной сетью.](expressroute-howto-linkvnet-arm.md)

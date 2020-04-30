@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/13/2020
 ms.author: v-grpr
 ms.openlocfilehash: 526f0ae21ac0c49d8c5fd984b09b7a2252afb606
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82129356"
 ---
 # <a name="azure-stack-edge-and-azure-data-box-gateway-1911-release-notes"></a>Заметки о выпуске Azure Stack и Шлюз Azure Data Box 1911
@@ -37,7 +37,7 @@ ms.locfileid: "82129356"
 
 В этом выпуске не указаны новые проблемы. Все указанные в выпуске проблемы были перенесены из предыдущих выпусков. Чтобы просмотреть список известных проблем, перейдите к разделу [Известные проблемы в общедоступном выпуске](data-box-gateway-release-notes.md#known-issues-in-ga-release).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подготовка к развертыванию Azure Stack пограничных устройств](data-box-edge-deploy-prep.md)
 - [Подготовка к развертыванию Шлюз Azure Data Box](data-box-gateway-deploy-prep.md)

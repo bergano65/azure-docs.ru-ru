@@ -14,10 +14,10 @@ ms.date: 04/15/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: bfe0c6fcc0d1d22807bfb59b146050fb307892a0
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
-ms.translationtype: MT
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82133163"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
@@ -687,7 +687,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft.Authorization/operations/read | Получает список операций. |
 > |  | **разрешения** |  |
 > | Действие | Microsoft.Authorization/permissions/read | Выводит список всех разрешений, которые есть у вызывающего в заданной области. |
-> |  | **политике** |  |
+> |  | **политики** |  |
 > | Действие | Microsoft. Authorization/политики, аудит/действие | Действие, предпринимаемое в результате оценки политики Azure с результатом "Audit" |
 > | Действие | Microsoft. Authorization/Policies/помощью параметров auditifnotexists/действие | Действие, выполняемое в результате оценки политики Azure с результатом "помощью параметров auditifnotexists" |
 > | Действие | Microsoft. Authorization/политики/Deny/Action | Действие, выполняемое в результате оценки политики Azure с результатом "отказ" |
@@ -1776,7 +1776,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft.CognitiveServices/register/action | Регистрация подписки для Cognitive Services. |
 > | Действие | Microsoft. CognitiveServices/Чеккдомаинаваилабилити/действие | Считывает доступные номера SKU для подписки. |
 > | Действие | Microsoft.CognitiveServices/register/action | Регистрация подписки для Cognitive Services. |
-> |  | **организаций** |  |
+> |  | **учетные записи;** |  |
 > | Действие | Microsoft.CognitiveServices/accounts/read | Считывает учетные записи API. |
 > | Действие | Microsoft.CognitiveServices/accounts/write | Записывает учетные записи API. |
 > | Действие | Microsoft.CognitiveServices/accounts/delete | Удаляет учетные записи API. |
@@ -2852,7 +2852,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft. кирпичы/расположения/оператионстатусес/чтение | Считывает состояние операции ресурса. |
 > |  | **Operations** |  |
 > | Действие | Microsoft. кирпичы/операции/чтение | Получает список операций. |
-> |  | **workspaces** |  |
+> |  | **рабочие области** |  |
 > | Действие | Microsoft.Databricks/workspaces/read | Извлечение списка рабочих областей Databricks. |
 > | Действие | Microsoft.Databricks/workspaces/write | Создание рабочей области Databricks. |
 > | Действие | Microsoft.Databricks/workspaces/delete | Удаление рабочей области Databricks. |
@@ -3076,7 +3076,7 @@ ms.locfileid: "82133163"
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataLakeAnalytics/register/action | Регистрация подписки для Data Lake Analytics. |
-> |  | **организаций** |  |
+> |  | **учетные записи;** |  |
 > | Действие | Microsoft.DataLakeAnalytics/accounts/read | Получение сведений о существующей учетной записи Data Lake Analytics. |
 > | Действие | Microsoft.DataLakeAnalytics/accounts/write | Создание или обновление учетной записи Data Lake Analytics. |
 > | Действие | Microsoft.DataLakeAnalytics/accounts/delete | Удаление учетной записи Data Lake Analytics. |
@@ -3126,7 +3126,7 @@ ms.locfileid: "82133163"
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataLakeStore/register/action | Регистрация подписки для Data Lake Store. |
-> |  | **организаций** |  |
+> |  | **учетные записи;** |  |
 > | Действие | Microsoft.DataLakeStore/accounts/read | Получение сведений о существующей учетной записи Data Lake Store. |
 > | Действие | Microsoft.DataLakeStore/accounts/write | Создание или обновление учетной записи Data Lake Store. |
 > | Действие | Microsoft.DataLakeStore/accounts/delete | Удаление учетной записи Data Lake Store. |
@@ -4655,7 +4655,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft. Insights/базовый/чтение | Чтение базового показателя метрики (Предварительная версия) |
 > |  | **калкулатебаселине** |  |
 > | Действие | Microsoft. Insights/Калкулатебаселине/чтение | Вычисление базового показателя для значений метрик (Предварительная версия) |
-> |  | **Components** |  |
+> |  | **Компоненты** |  |
 > | Действие | Microsoft.Insights/Components/AnalyticsTables/Action | Действие таблицы аналитики Application Insights. |
 > | Действие | Microsoft.Insights/Components/ApiKeys/Action | Создание ключа API Application Insights. |
 > | Действие | Microsoft.Insights/Components/Purge/Action | Очистка данных Application Insights. |
@@ -5121,7 +5121,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft.Insights/ScheduledQueryRules/Write | Запись запланированного правила запроса. |
 > | Действие | Microsoft.Insights/ScheduledQueryRules/Read | Считывание запланированного правила запроса. |
 > | Действие | Microsoft.Insights/ScheduledQueryRules/Delete | Удаление запланированного правила запроса. |
-> |  | **Клиенты** |  |
+> |  | **Клиентов** |  |
 > | Действие | Microsoft.Insights/Tenants/Register/Action | Инициализирует поставщик Microsoft Insights. |
 > |  | **Веб-тестов** |  |
 > | Действие | Microsoft.Insights/Webtests/Write | Запись конфигурации веб-теста. |
@@ -5402,7 +5402,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft.LabServices/labAccounts/sharedImages/write | Добавление или изменение общих образов. |
 > |  | **расположения и операции** |  |
 > | Действие | Microsoft.LabServices/locations/operations/read | Считывает операции. |
-> |  | **пользователей** |  |
+> |  | **пользователи** |  |
 > | Действие | Microsoft.LabServices/users/Register/action | Регистрация пользователя в управляемой лаборатории. |
 > | Действие | Microsoft. Лабсервицес/Users/Листалленвиронментс/Action | Список всех сред для пользователя |
 > | Действие | Microsoft.LabServices/users/StartEnvironment/action | Запускает среду, запустив все ресурсы в ней. |
@@ -5620,7 +5620,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft.MachineLearningServices/locations/vmsizes/read | Возвращает поддерживаемые размеры виртуальных машин. |
 > |  | **расположения и Воркспацеоператионсстатус** |  |
 > | Действие | Microsoft.MachineLearningServices/locations/workspaceOperationsStatus/read | Получает состояние определенной операции рабочей области. |
-> |  | **workspaces** |  |
+> |  | **рабочие области** |  |
 > | Действие | Microsoft.MachineLearningServices/workspaces/read | Получает рабочие области служб машинного обучения. |
 > | Действие | Microsoft.MachineLearningServices/workspaces/write | Создает или обновляет рабочие области служб машинного обучения. |
 > | Действие | Microsoft.MachineLearningServices/workspaces/delete | Удаляет рабочие области служб машинного обучения. |
@@ -5816,7 +5816,7 @@ ms.locfileid: "82133163"
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Maps/register/action | Регистрация поставщика. |
-> |  | **организаций** |  |
+> |  | **учетные записи;** |  |
 > | Действие | Microsoft.Maps/accounts/write | Создание или обновление учетной записи Maps. |
 > | Действие | Microsoft.Maps/accounts/read | Получение учетной записи Maps. |
 > | Действие | Microsoft.Maps/accounts/delete | Удаление учетной записи Maps. |
@@ -7204,7 +7204,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft. operationalinsights/Locations/Оператионстатусес/Read | Получение состояния асинхронной операции Azure Log Analytics. |
 > |  | **Operations** |  |
 > | Действие | microsoft.operationalinsights/operations/read | Отображение списка всех доступных операций REST API OperationalInsights. |
-> |  | **workspaces** |  |
+> |  | **рабочие области** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/write | Создает новую рабочую область или устанавливает связь с существующей рабочей областью с помощью указанного идентификатора клиента, полученного из нее. |
 > | Действие | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
 > | Действие | Microsoft.OperationalInsights/workspaces/delete | Удаляет рабочую область. Если при создании рабочая область была связана с существующей рабочей областью, то эта связанная рабочая область не удаляется. |
@@ -8554,7 +8554,7 @@ ms.locfileid: "82133163"
 > | Действие | Microsoft.Security/locations/tasks/resolve/action | Разрешение рекомендации по безопасности. |
 > | Действие | Microsoft.Security/locations/tasks/activate/action | Активирует рекомендацию по безопасности. |
 > | Действие | Microsoft.Security/locations/tasks/dismiss/action | Закрывает рекомендацию по безопасности. |
-> |  | **политике** |  |
+> |  | **политики** |  |
 > | Действие | Microsoft.Security/policies/read | Возвращает политику безопасности. |
 > | Действие | Microsoft.Security/policies/write | Обновляет политику безопасности. |
 > |  | **pricings** |  |
@@ -10854,7 +10854,7 @@ ms.locfileid: "82133163"
 > |  | **Operations** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Встроенные роли Azure](built-in-roles.md)

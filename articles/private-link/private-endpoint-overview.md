@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: allensu
 ms.openlocfilehash: a4117acb2fada5c4422e177e9e6b84d7a0a51b69
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82129321"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
@@ -52,7 +52,7 @@ ms.locfileid: "82129321"
  
 |Имя ресурса частной ссылки  |Тип ресурса   |Подресурсы  |
 |---------|---------|---------|
-|**Служба частной связи** (собственная служба)   |  Microsoft. Network/Привателинксервицес       | empty |
+|**Служба частной связи** (собственная служба)   |  Microsoft. Network/Привателинксервицес       | пустых |
 |**База данных SQL Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
 |**Azure Synapse Analytics** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        | 
 |**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Интернет (веб, web_secondary)        |
@@ -68,7 +68,7 @@ ms.locfileid: "82129321"
 |**Конфигурация приложений Azure** | Microsoft. Аппконфигуратион/Конфигуратионсторес    | configurationStore |
 |**Azure Backup** | Microsoft.RecoveryServices/vaults    | Хранилище |
 |**концентратору событий Azure** | Microsoft.EventHub/namespaces    | namespace |
-|**служебной шине Azure** | Microsoft.ServiceBus/namespaces | namespace |
+|**Служебная шина Azure** | Microsoft.ServiceBus/namespaces | namespace |
 |**Ретранслятор Azure** | Microsoft.Relay/namespaces | namespace |
 |**Сетка событий Azure** | Microsoft.EventGrid/topics    | Раздел |
 |**Сетка событий Azure** | Microsoft. EventGrid/Domains    | домен |
@@ -120,7 +120,7 @@ ms.locfileid: "82129321"
 |Правила группы безопасности сети (NSG) и определяемые пользователем маршруты не применяются к частной конечной точке    |NSG не поддерживается в частных конечных точках. В то время как подсети, содержащие закрытую конечную точку, могут связываться с NSG, правила не будут действовать для трафика, обрабатываемого частной конечной точкой. Для развертывания частных конечных точек в подсети необходимо [Отключить принудительное применение политик сети](disable-private-endpoint-network-policy.md) . NSG по-прежнему применяется к другим рабочим нагрузкам, размещенным в той же подсети. Маршруты в любой подсети клиента будут использовать префикс/32, изменение поведения маршрутизации по умолчанию требует аналогичного UDR  | Управление трафиком с помощью правил NSG для исходящего трафика на исходных клиентах. Развертывайте отдельные маршруты с префиксом/32 для переопределения маршрутов частных конечных точек. Журналы потоков NSG и данные мониторинга для исходящих соединений по-прежнему поддерживаются и могут использоваться.        |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Create a Private Endpoint using Azure portal ](create-private-endpoint-portal.md) (Создание частной конечной точки для сервера базы данных SQL с помощью портала)
 - [Создание частной конечной точки для сервера базы данных SQL с помощью портала PowerShell ](create-private-endpoint-powershell.md)
 - [Создание частной конечной точки для сервера базы данных SQL с помощью портала CLI ](create-private-endpoint-cli.md)

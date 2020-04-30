@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: overview
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: bdb2b31ee3abb30e6e7339f641b778ff5dc522b0
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 79ecb801e1b4d0fa96ca7ae06223fc231cbf12e6
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81403806"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82129873"
 ---
 # <a name="what-is-custom-vision"></a>Что собой представляет Пользовательское визуальное распознавание
 
@@ -49,4 +49,4 @@ ms.locfileid: "81403806"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Перейдите к руководству по [созданию классификатора](getting-started-build-a-classifier.md), чтобы начать использовать службу в Интернете, или прочитайте краткое руководство по [классификации изображений](csharp-tutorial.md), чтобы реализовать основной сценарий в коде.
+Перейдите к руководству по [созданию классификатора](getting-started-build-a-classifier.md), чтобы начать использовать службу в Интернете, или прочитайте краткое руководство по [классификации изображений](quickstarts/image-classification.md), чтобы реализовать основной сценарий в коде.

@@ -16,10 +16,10 @@ ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
 ms.openlocfilehash: 6baa83037d51e850a9f3535be3cc365e7c35e0a4
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82131441"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Устранение неполадок в Azure RBAC
@@ -214,7 +214,7 @@ Azure Resource Manager иногда кэширует конфигурации и
 
 Пользователь с ролью читателя может щелкнуть вкладку **Функции платформы** и выбрать **Все параметры**, чтобы просмотреть некоторые параметры, связанные с приложением-функцией (так же, как для веб-приложения), но не может изменить эти параметры. Для доступа к этим возможностям потребуется роль [участника](built-in-roles.md#contributor) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Устранение неполадок для гостевых пользователей](role-assignments-external-users.md#troubleshoot)
 - [Управление доступом с помощью RBAC и портала Azure](role-assignments-portal.md)

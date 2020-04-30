@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89431c2bf1838d3264b03c8a5f2ce62cd6df3631
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82127844"
 ---
 # <a name="how-does-self-service-password-reset-writeback-work-in-azure-active-directory"></a>Каким способом самостоятельная обратная запись паролей работает в Azure Active Directory?
@@ -145,7 +145,7 @@ Azure Active Directory (Azure AD) самостоятельный сброс па
 > [!WARNING]
 > Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных AD DS средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье о [реализации синхронизации хэша паролей с помощью службы синхронизации Azure AD Connect](../hybrid/how-to-connect-password-hash-synchronization.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к работе с обратной записью SSPR, выполните следующие действия.
 

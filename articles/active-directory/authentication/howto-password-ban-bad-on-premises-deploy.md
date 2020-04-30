@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7870b62dea01f680126f5b4aac3dc2328407cd61
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82143225"
 ---
 # <a name="plan-and-deploy-on-premises-azure-active-directory-password-protection"></a>Планирование и развертывание локальной Azure Active Directory защита паролем
@@ -88,7 +88,7 @@ ms.locfileid: "82143225"
     * По умолчанию порт сервера RPC является динамическим портом RPC, но его можно настроить для [использования статического порта](#static).
 * Все компьютеры, на которых будет установлена прокси-служба защиты паролей Azure AD, должны иметь сетевой доступ к следующим конечным точкам:
 
-    |**Конечная точка**|**Цель**|
+    |**Конечная точка**|**Назначение**|
     | --- | --- |
     |`https://login.microsoftonline.com`|Запросы на аутентификацию|
     |`https://enterpriseregistration.windows.net`|Функция защиты паролем Azure AD|

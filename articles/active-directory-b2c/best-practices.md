@@ -12,17 +12,17 @@ ms.date: 03/03/2020
 ms.author: vigunase
 ms.subservice: B2C
 ms.openlocfilehash: b16c60130836cf0e3b38092b894129f503ee6e83
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82141666"
 ---
 # <a name="recommendations-and-best-practices-for-azure-active-directory-b2c"></a>Рекомендации и рекомендации для Azure Active Directory B2C
 
 Следующие рекомендации и рекомендации охватывают некоторые основные аспекты интеграции Azure Active Directory (Azure AD) с B2C в существующие или новые среды приложений.
 
-## <a name="fundamentals"></a>Основные сведения
+## <a name="fundamentals"></a>Основы
 
 |  |  |
 |--|--|
@@ -43,7 +43,7 @@ ms.locfileid: "82141666"
 | Создание плана миграции |Заблаговременное планирование может привести к более плавной миграции. Дополнительные сведения о [миграции пользователей](user-migration.md).|
 | Удобство использования и безопасность | Решение должно подвергнуться оптимальному балансу между удобством использования приложений и приемлемым уровнем риска организации. |
 | Перемещение локальных зависимостей в облако | Чтобы обеспечить устойчивое решение, попробуйте переместить существующие зависимости приложений в облако. |
-| Перенос существующих приложений в b2clogin.com | Прекращение использования login.microsoftonline.com вступит в действие для всех клиентов Azure AD B2C 4 декабря 2020. [Подробнее.](b2clogin.md) |
+| Перенос существующих приложений в b2clogin.com | Прекращение использования login.microsoftonline.com вступит в действие для всех клиентов Azure AD B2C 4 декабря 2020. [Подробнее](b2clogin.md). |
 
 ## <a name="implementation"></a>Реализация
 

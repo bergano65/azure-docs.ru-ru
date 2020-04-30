@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.openlocfilehash: 27afbafcadb4c482e97e1d003706e7d2712e63c9
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82117273"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
@@ -123,6 +123,6 @@ az container create \
 
 Средство OCR с метками также доступно в виде проекта с открытым исходным кодом на сайте GitHub. Средство — это веб-приложение, созданное с помощью команды React + Redux и написанное в TypeScript. Чтобы узнать больше или внести свой вклад, см. статью [Средство маркировки документов OCR](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте краткое руководство [обучение с метками](./quickstarts/label-tool.md) , чтобы узнать, как использовать средство для ручной маркировки обучающих данных и выполнения контролируемого обучения.

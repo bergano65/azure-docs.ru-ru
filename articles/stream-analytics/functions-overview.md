@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.openlocfilehash: 45e766c624ee96f7faa06fb07d00349e620a4c0a
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82133485"
 ---
 # <a name="user-defined-functions-in-azure-stream-analytics"></a>Определяемые пользователем функции в Azure Stream Analytics
@@ -48,7 +48,7 @@ Azure Stream Analytics не сохраняет запись о всех вызо
 Любые ошибки времени выполнения считаются неустранимыми и отображаются с помощью журналов действий и ресурсов. Рекомендуется, чтобы функция обрабатывала все исключения и ошибки и возвращала в запрос допустимый результат. Это предотвратит переход задания в [состояние сбоя](job-states.md).  
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
 * [Azure Stream Analytics определяемые пользователем статистические функции JavaScript](stream-analytics-javascript-user-defined-aggregates.md)

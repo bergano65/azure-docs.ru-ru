@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 04/08/2019
 ms.openlocfilehash: 4cb2159b02635e659a8ca7236523e899bf01550c
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82133236"
 ---
 # <a name="what-is-the-azure-sql-database-service"></a>Функции службы Базы данных SQL Azure
@@ -258,7 +258,7 @@ Azure предоставляет [встроенные средства мони
 - [Отзывы](https://aka.ms/sqlfeedback)об ошибках и функциях запросов.
 - [Reddit](https://www.reddit.com/r/SQLServer/). обсудите SQL Server.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - На [странице цен](https://azure.microsoft.com/pricing/details/sql-database/) приведены сравнительные затраты и калькуляторы, касающиеся отдельных баз данных и эластичных пулов.
 - Чтобы приступить к работе, ознакомьтесь с этими краткими руководствами.

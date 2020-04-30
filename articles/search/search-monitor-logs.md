@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.openlocfilehash: 192591dedb0b5519fdcecde8c8683be87237c828
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82127830"
 ---
 # <a name="collect-and-analyze-log-data-for-azure-cognitive-search"></a>Собирайте и анализируйте данные журналов для Когнитивный поиск Azure
@@ -23,7 +23,7 @@ ms.locfileid: "82127830"
 
 В следующей таблице перечисляются параметры для сбора и сохранения данных.
 
-| Ресурс | Используется для |
+| Ресурс | Назначение |
 |----------|----------|
 | [Отправить в Log Analytics рабочую область](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-resource-logs) | События и метрики отправляются в рабочую область Log Analytics, которая может быть запрошена на портале для получения подробных сведений. Общие сведения см. в статье Начало [работы с журналами Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata) . |
 | [Архив с хранилищем BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) | События и метрики архивируются в контейнер больших двоичных объектов и хранятся в JSON-файлах. Журналы могут быть достаточно детализированы (час в минуту), что полезно для повторного поиска конкретного инцидента, но не для исследования с открытым окончанием. Используйте редактор JSON для просмотра необработанного файла журнала или Power BI для агрегирования и визуализации данных журнала.|
@@ -99,7 +99,7 @@ ms.locfileid: "82127830"
 
 В следующей таблице приведен неполный список полей, общих для ведения журнала ресурсов.
 
-| Название | Type | Пример | Примечания |
+| Имя | Type | Пример | Примечания |
 | --- | --- | --- | --- |
 | timeGenerated |DATETIME |"2018-12-07T00:00:43.6872559Z" |Метка времени операции |
 | resourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>  MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
@@ -109,13 +109,13 @@ ms.locfileid: "82127830"
 | resultType |строка |Success |Возможные значения: Success или Failure |
 | resultSignature |INT |200 |Код результата HTTP |
 | durationMS |INT |50 |Время выполнения операции в миллисекундах |
-| properties |Объект |См. следующую таблицу |Объект, содержащий данные об операции |
+| properties |object |См. следующую таблицу |Объект, содержащий данные об операции |
 
 ### <a name="properties-schema"></a>Схема свойств
 
 Ниже перечислены свойства, характерные для Azure Когнитивный поиск.
 
-| Название | Type | Пример | Примечания |
+| Имя | Type | Пример | Примечания |
 | --- | --- | --- | --- |
 | Description_s |строка |"GET /indexes('content')/docs" |Конечная точка операции |
 | Documents_d |INT |42 |Количество обработанных документов |
@@ -126,7 +126,7 @@ ms.locfileid: "82127830"
 
 Метрики записываются для запросов запросов и измеряются через одну минуту. Каждая метрика отражает минимальное, максимальное и среднее значения за минуту. Дополнительные сведения см. в разделе [мониторинг запросов запросов](search-monitor-queries.md).
 
-| Название | Type | Пример | Примечания |
+| Имя | Type | Пример | Примечания |
 | --- | --- | --- | --- |
 | resourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор ресурса |
 | metricName |строка |"Latency" |имя метрики |
@@ -156,7 +156,7 @@ ms.locfileid: "82127830"
 
 Откройте скачанный файл в редакторе JSON, чтобы просмотреть содержимое.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы еще не сделали этого, ознакомьтесь с основами мониторинга службы поиска, чтобы узнать о полном диапазоне возможностей.
 

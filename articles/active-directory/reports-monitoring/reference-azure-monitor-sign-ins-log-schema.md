@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6d7c9713f27643e792ea381e1a2419cbc4b67a99
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82129200"
 ---
 # <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Анализ схемы журналов входа в Azure AD в Azure Monitor
@@ -165,9 +165,9 @@ ms.locfileid: "82129200"
 | Идентификация | Удостоверение из маркера, предоставленное при выполнении запроса. Это может быть учетная запись пользователя, системная учетная запись или субъект-служба. |
 | Level | Предоставляет тип сообщения. Для операций аудита это поле всегда имеет значение *Informational*. |
 | Расположение | Содержит сведения о местонахождении, в котором выполнялась операция входа. |
-| Свойства | Список всех свойств, связанных с входом. Дополнительные сведения см. в статье [Справочник по API Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Для удобства чтения в этой схеме используются имена атрибутов, отображаемые в ресурсе входа.
+| Элемент Property | Список всех свойств, связанных с входом. Дополнительные сведения см. в статье [Справочник по API Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Для удобства чтения в этой схеме используются имена атрибутов, отображаемые в ресурсе входа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Анализ схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
 * [Подробнее о журналах платформы Azure](../../azure-monitor/platform/platform-logs-overview.md)

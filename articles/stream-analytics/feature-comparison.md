@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.openlocfilehash: b169a067f05de422b714e18a4d7ebb9c9e7f0428
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82133501"
 ---
 # <a name="azure-stream-analytics-feature-comparison"></a>Сравнение возможностей Azure Stream Analytics
@@ -18,12 +18,12 @@ ms.locfileid: "82133501"
 С помощью Azure Stream Analytics можно создавать решения потоковой передачи в облаке и в IoT Edge с использованием [портал Azure](stream-analytics-quick-create-portal.md), [Visual Studio](stream-analytics-quick-create-vs.md)и [Visual Studio Code](quick-create-vs-code.md). В таблицах этой статьи показано, какие функции поддерживаются каждой платформой для обоих типов заданий.
 
 > [!NOTE]
-> Средства Visual Studio и Visual Studio Code не поддерживают задания в регионах Восточный Китай, Северный Китай, центрального и Германии.
+> Средства Visual Studio и Visual Studio Code не поддерживают выполнение заданий в регионах "Восточный Китай", "Северный Китай", "Центральная Германия" и "Северо-Восточная Германия".
 
 ## <a name="cloud-job-features"></a>Функции облачных заданий
 
 
-|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
+|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Кроссплатформенные     |Mac</br>Linux</br>Windows         |Windows        |Mac</br>Linux</br>Windows          |
 |Создание скриптов     |Да         |Да         |Да         |
@@ -53,7 +53,7 @@ ms.locfileid: "82133501"
 
 ## <a name="iot-edge-job-features"></a>Функции задания IoT Edge
 
-|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
+|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Создание заданий     |Да         |Да         |Нет         |
 |Система управления версиями     |Нет         |Да         |Нет         |
@@ -68,7 +68,7 @@ ms.locfileid: "82133501"
 |Поддержка CI/CD     |Нет         |Нет         |Нет         |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Azure Stream Analytics в IoT Edge](stream-analytics-edge.md)
 * [Руководство. Написание определяемой пользователем функции C# для задания Azure Stream Analytics IoT Edge (Предварительная версия)](stream-analytics-edge-csharp-udf.md)

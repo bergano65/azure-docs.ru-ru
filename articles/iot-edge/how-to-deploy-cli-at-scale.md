@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: ff6bb9e4d4e40c02b52f35bd56bf065a8804a43a
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82134381"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью Azure CLI
@@ -196,7 +196,7 @@ az iot edge deployment create --deployment-id [deployment id] --hub-name [hub na
 * **--deployment-id** — имя развертывания, которое будет создано в центре IoT. Присвойте своему развертыванию уникальное имя, содержащее до 128 букв в нижнем регистре. Не используйте пробелы и следующие недопустимые символы: `& ^ [ ] { } \ | " < > /`. Обязательный параметр.
 * **--content** — путь к файлу манифеста развертывания JSON. Обязательный параметр.
 * **--hub-name** — имя центра IoT, в котором будет создано развертывание. Центр должен быть в текущей подписке. Измените текущую подписку с помощью `az account set -s [subscription name]` команды.
-* **--labels** — добавление меток для отслеживания развертываний. Метка представляет собой пару имя и значение, которые описывают развертывание. Метки имеют формат JSON для имен и значений. Например, `{"HostPlatform":"Linux", "Version:"3.0.1"}`
+* **--labels** — добавление меток для отслеживания развертываний. Метка представляет собой пару имя и значение, которые описывают развертывание. Метки имеют формат JSON для имен и значений. Например `{"HostPlatform":"Linux", "Version:"3.0.1"}`.
 * **--target-condition** — введите целевое условие, чтобы определить, для каких устройств будет предназначено это развертывание.Условие основано на тегах двойника устройства или его сообщаемых свойствах и должно соответствовать формату выражения.Например, `tags.environment='test' and properties.reported.devicemodel='4000x'`.
 * **--Priority** — положительное целое число. Если одному устройству назначены два или более развертывания, будет применяться развертывание с самым высоким числовым значением параметра Priority.
 * **--метрики** — создание метрик, которые запрашивают сообщаемые свойства edgeHub для отслеживания состояния развертывания. Метрики принимают входные данные JSON или путь к файлу. Например, `'{"queries": {"mymetric": "SELECT deviceId FROM devices WHERE properties.reported.lastDesiredStatus.code = 200"}}'`.
@@ -247,6 +247,6 @@ az iot edge deployment delete --deployment-id [deployment id] --hub-name [hub na
 * **--deployment-id** — имя существующего развертывания в центре IoT.
 * **--Hub-Name** — имя центра Интернета вещей, в котором существует развертывание. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [развертывании модулей на IOT Edge устройствах](module-deployment-monitoring.md).

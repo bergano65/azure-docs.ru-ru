@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: dsindona
 ms.openlocfilehash: e9116e5cdb3bd9ed61205ceabd4d51c96c6aadc2
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82144670"
 ---
 # <a name="iot-edge-module-offer-publishing-overview"></a>Общие сведения о публикации предложения модуля IoT Edge
@@ -37,7 +37,7 @@ ms.locfileid: "82144670"
 
 В статьях по следующих ссылках рассматриваются основные части предложения модуля IoT Edge.
 
-- [Предварительные условия](./cpp-prerequisites.md) <br>В этой статье перечислены технические и бизнес-требования, необходимые для создания и публикации предложения модуля IoT Edge.
+- [Предварительные требования](./cpp-prerequisites.md) <br>В этой статье перечислены технические и бизнес-требования, необходимые для создания и публикации предложения модуля IoT Edge.
 - [Подготовка технических ресурсов для модуля IoT Edge](./cpp-create-technical-assets.md) <br>В этой статье описывается подготовка технических ресурсов для модуля IoT Edge. Эти ресурсы должны соответствовать всем необходимым техническим критериям, которые нужно выполнить для публикации модуля IoT Edge в Azure Marketplace.
 - [Создание предложения модуля IoT Edge](./cpp-create-offer.md) <br>В этой статье перечислены шаги, необходимые для создания записи предложения модуля IoT Edge с использованием [Портала Cloud Partner](https://cloudpartner.azure.com).
 - [Публикация предложения модуля IoT Edge](./cpp-publish-offer.md)<br> В этой статье описывается отправка предложения для публикации в Azure Marketplace.

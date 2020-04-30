@@ -5,10 +5,10 @@ ms.reviewer: saurse
 ms.topic: conceptual
 ms.date: 05/23/2018
 ms.openlocfilehash: 4089815f8f76d9868f8fa56f8b2eab3de89541d9
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82128139"
 ---
 # <a name="back-up-windows-system-state-in-resource-manager-deployment"></a>Резервное копирование состояния системы Windows с использованием модели развертывания Resource Manager
@@ -193,7 +193,7 @@ ms.locfileid: "82128139"
 
 5. Выберите **Состояние системы** и нажмите кнопку **ОК**.
 
-6. Нажмите кнопку **Далее**.
+6. Щелкните **Далее**.
 
 7. Выберите нужную частоту резервного копирования и политику хранения для резервного копирования состояния системы на последующих страницах.
 
@@ -226,7 +226,7 @@ ms.locfileid: "82128139"
 
 Если вы хотите задать вопрос или предложить добавить какие-либо функции, [отправьте нам свой отзыв](https://feedback.azure.com/forums/258995-azure-backup).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения об [архивации компьютеров Windows](backup-windows-with-mars-agent.md).
 * Теперь, когда вы выполнили резервное копирование состояния системы Windows Server, вы можете [управлять хранилищами и серверами](backup-azure-manage-windows-server.md).

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: yinhew
 ms.openlocfilehash: 005824b0953be741f47c027d121dbe073adca3ba
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "82131283"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API преобразования речи в текст;
@@ -180,7 +180,7 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 Результаты предоставляются в формате JSON. Формат `simple` включает эти поля верхнего уровня.
 
-| Параметр | Описание  |
+| Параметр | Описание:  |
 |-----------|--------------|
 |`RecognitionStatus`|Состояние, например, `Success` в случае успешного распознавания. Ознакомьтесь со следующей таблицей.|
 |`DisplayText`|Распознанный текст после капитализации, пунктуации, обратная нормализация текста (преобразование речевого текста в более короткие формы, например 200 для "200" или "Dr. Иванов" для "врач Смит") и маскировка ненормативной лексики. Появляется только в случае успешного распознавания.|
@@ -204,7 +204,7 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 Каждый объект в списке `NBest` включает:
 
-| Параметр | Описание |
+| Параметр | Описание: |
 |-----------|-------------|
 | `Confidence` | Оценка достоверности записи, от 0,0 (недостоверно) до 1,0 (полная достоверность) |
 | `Lexical` | Лексическая форма распознанного текста: конкретные распознанные слова. |
@@ -295,7 +295,7 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
