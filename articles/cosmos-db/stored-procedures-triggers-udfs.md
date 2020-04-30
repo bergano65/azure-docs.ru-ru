@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 13256377b8a8aaebf59196df57eef67d3b960cb8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 5fc74c554cbb283bc6bbfee737ef98e59dd4b0ea
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81010551"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509675"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Хранимые процедуры, триггеры и определяемые пользователем функции
 
@@ -65,6 +65,9 @@ Azure Cosmos DB обеспечивает транзакционное выпол
 
 Хранимые процедуры и триггеры всегда выполняются на основной реплике контейнера Azure Cosmos. Эта возможность гарантирует, что операции чтения в хранимых процедурах обеспечивают [сильную согласованность](consistency-levels-tradeoffs.md). Запросы с использованием пользовательских функций могут выполняться на первичной либо на любой вторичной реплике. Хранимые процедуры и триггеры предназначены для поддержки транзакционных записей, в то время как логика только для чтения лучше всего реализована в виде логики на стороне приложения и запросов с использованием [пакетов SDK API SQL Azure Cosmos DB](sql-api-dotnet-samples.md), которые помогут вам насыщать пропускную способность базы данных. 
 
+> [!TIP]
+> Запросы, выполняемые в хранимой процедуре или триггере, могут не видеть изменения элементов, внесенных в одну и ту же транзакцию скрипта. Эта инструкция применяется к запросам SQL, таким как `getContent().getCollection.queryDocuments()`, а также к запросам на языке LINQ, `getContext().getCollection().filter()`таким как.
+
 ## <a name="bounded-execution"></a>Ограниченное выполнение
 
 Все операции Azure Cosmos DB должны завершаться за определенный период времени. Это ограничение относится к функциям JavaScript: хранимым процедурам, триггерам и определяемым пользователем функциям. Если операция не завершается в течение этого периода времени, транзакция откатывается.
@@ -96,7 +99,7 @@ Azure Cosmos DB предоставляет триггеры, которые мо
 
 Кроме выдачи запросов с использованием синтаксиса запросов API SQL, [серверный пакет SDK](https://azure.github.io/azure-cosmosdb-js-server) позволяет создавать запросы с помощью интерфейса JavaScript без знания языка SQL. API запросов JavaScript позволяет программно создавать запросы, передавая функции предикатов в последовательность вызовов функций. Запросы анализируются средой выполнения JavaScript и эффективно выполняются в Azure Cosmos DB. Дополнительные сведения о поддержке API запросов JavaScript см. в статье [Working with JavaScript language integrated query API](javascript-query-api.md) (Как работать с API запросов с интегрированным языком JavaScript). Примеры см. в статье [How to write stored procedures and triggers using Javascript Query API](how-to-write-javascript-query-api.md) (Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о том, как записать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в этих статьях:
 

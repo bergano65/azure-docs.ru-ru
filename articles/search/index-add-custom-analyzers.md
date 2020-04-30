@@ -7,7 +7,7 @@ author: Yahnoosh
 ms.author: jlembicz
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 04/27/2020
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 9bf0fb1a33a98031a78155a3956ac6d6abe33029
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f0d9576f5275bcfc061ce29740f8d85aff4ccfff
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74113629"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82231090"
 ---
 # <a name="add-custom-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Добавление пользовательских анализаторов в строковые поля в индексе Azure Когнитивный поиск
 
@@ -215,7 +215,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |-|-|  
 |Имя|Название должно содержать только буквы, цифры, тире или знаки подчеркивания. Оно может начинаться и заканчиваться только буквенно-цифровыми знаками, и его длина не должна превышать 128 знаков.|  
 |Тип|Тип анализатора из списка поддерживаемых анализаторов. См. столбец **analyzer_type** в таблице [Анализаторы](#AnalyzerTable), приведенной ниже.|  
-|Параметры|Это должны быть допустимые параметры стандартного анализатора, указанные в таблице [Анализаторы](#AnalyzerTable), приведенной ниже.|  
+|Элемент Options|Это должны быть допустимые параметры стандартного анализатора, указанные в таблице [Анализаторы](#AnalyzerTable), приведенной ниже.|  
 
 #### <a name="custom-analyzers"></a>Пользовательские анализаторы
 
@@ -240,7 +240,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |-|-|  
 |Имя|Название должно содержать только буквы, цифры, тире или знаки подчеркивания. Оно может начинаться и заканчиваться только буквенно-цифровыми знаками, и его длина не должна превышать 128 знаков.|  
 |Тип|Тип фильтра знаков из списка поддерживаемых фильтров знаков. См. столбец **char_filter_type** в таблице [Фильтры знаков](#char-filters-reference), приведенной ниже.|  
-|Параметры|Это должны быть допустимые параметры заданного типа [фильтра знаков](#char-filters-reference).|  
+|Элемент Options|Это должны быть допустимые параметры заданного типа [фильтра знаков](#char-filters-reference).|  
 
 ### <a name="tokenizers"></a>Токенизаторы
 
@@ -253,7 +253,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |-|-|  
 |Имя|Название должно содержать только буквы, цифры, тире или знаки подчеркивания. Оно может начинаться и заканчиваться только буквенно-цифровыми знаками, и его длина не должна превышать 128 знаков.|  
 |Тип|Название создателя маркеров из списка поддерживаемых создателей маркеров. См. столбец **tokenizer_type** в таблице [Создатели маркеров](#Tokenizers), приведенной ниже.|  
-|Параметры|Это должны быть допустимые параметры данного типа создателя маркеров, перечисленные в таблице [Создатели маркеров](#Tokenizers), приведенной ниже.|  
+|Элемент Options|Это должны быть допустимые параметры данного типа создателя маркеров, перечисленные в таблице [Создатели маркеров](#Tokenizers), приведенной ниже.|  
 
 ### <a name="token-filters"></a>Фильтры токенов
 
@@ -264,7 +264,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |-|-|  
 |Имя|Название должно содержать только буквы, цифры, тире или знаки подчеркивания. Оно может начинаться и заканчиваться только буквенно-цифровыми знаками, и его длина не должна превышать 128 знаков.|  
 |Тип|Название фильтра маркеров из списка поддерживаемых фильтров маркеров. См. столбец **token_filter_type** в таблице [Фильтры маркеров](#TokenFilters), приведенной ниже.|  
-|Параметры|Это должны быть [фильтры маркеров](#TokenFilters) заданного типа.|  
+|Элемент Options|Это должны быть [фильтры маркеров](#TokenFilters) заданного типа.|  
 
 <a name="PropertyReference"></a>  
 
@@ -279,9 +279,9 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 |**Название анализатора**|**Тип анализатора**  <sup>1</sup>|**Описание и параметры**|  
 |-|-|-|  
 |[This](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html)| (тип применяется только при наличии параметров) |Обрабатывает все содержимое поля как один маркер. Это полезно для данных некоторых типов, таких как почтовые индексы, идентификаторы и названия продуктов.|  
-|[pattern](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/PatternAnalyzer.html)|PatternAnalyzer|Гибко разделяет текст на термины с помощью шаблона регулярного выражения.<br /><br /> **Параметры**<br /><br /> lowercase (тип: логическое значение) — определяет, являются ли термины строчными. Значение по умолчанию — true.<br /><br /> [pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true) (тип: строка) — шаблон регулярного выражения для сопоставления разделителей маркеров. Значение по умолчанию — \w+.<br /><br /> [flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (тип: строка) — флаги регулярных выражений. Значением по умолчанию является пустая строка. Допустимые значения: CANON_EQ, CASE_INSENSITIVE, COMMENTs, ДОТАЛЛ, LITERAL, MULTILINE, UNICODE_CASE, UNIX_LINES<br /><br /> stopwords (тип: массив строк) — список стоп-слов. Значение по умолчанию — пустой список.|  
+|[pattern](https://lucene.apache.org/core/4_10_3/analyzers-common/org/apache/lucene/analysis/miscellaneous/PatternAnalyzer.html)|PatternAnalyzer|Гибко разделяет текст на термины с помощью шаблона регулярного выражения.<br /><br /> **Параметры**<br /><br /> lowercase (тип: логическое значение) — определяет, являются ли термины строчными. Значение по умолчанию — true.<br /><br /> [pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true) (тип: строка) — шаблон регулярного выражения для сопоставления разделителей маркеров. Значение по умолчанию — `\W+`, которое соответствует символам, отличным от слов.<br /><br /> [flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (тип: строка) — флаги регулярных выражений. Значением по умолчанию является пустая строка. Допустимые значения: CANON_EQ, CASE_INSENSITIVE, COMMENTs, ДОТАЛЛ, LITERAL, MULTILINE, UNICODE_CASE, UNIX_LINES<br /><br /> stopwords (тип: массив строк) — список стоп-слов. Значение по умолчанию — пустой список.|  
 |[простого](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/SimpleAnalyzer.html)|(тип применяется только при наличии параметров) |Разбивает текст по небуквенным знакам и преобразует его в нижний регистр. |  
-|[Standard](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html) <br />(также называется standard.lucene)|StandardAnalyzer|Стандартный анализатор Lucene, состоящий из стандартного создателя маркеров, фильтра, преобразующего знаки в нижний регистр, и фильтра стоп-слов.<br /><br /> **Параметры**<br /><br /> maxTokenLength (тип: целое число) — максимальная длина маркера. Значение по умолчанию — 255. Маркеры, размер которых превышает максимальную длину, разделяются. Максимальная допустимая длина маркера — 300 знаков.<br /><br /> stopwords (тип: массив строк) — список стоп-слов. Значение по умолчанию — пустой список.|  
+|[standard](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html) <br />(также называется standard.lucene)|StandardAnalyzer|Стандартный анализатор Lucene, состоящий из стандартного создателя маркеров, фильтра, преобразующего знаки в нижний регистр, и фильтра стоп-слов.<br /><br /> **Параметры**<br /><br /> maxTokenLength (тип: целое число) — максимальная длина маркера. Значение по умолчанию — 255. Маркеры, размер которых превышает максимальную длину, разделяются. Максимальная допустимая длина маркера — 300 знаков.<br /><br /> stopwords (тип: массив строк) — список стоп-слов. Значение по умолчанию — пустой список.|  
 |standardasciifolding.lucene|(тип применяется только при наличии параметров) |Стандартный анализатор с фильтром приведения к ASCII. |  
 |[stop](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/StopAnalyzer.html)|StopAnalyzer|Разбивает текст по небуквенным знакам, применяет фильтр преобразования в знаки нижнего регистра и фильтр стоп-слов.<br /><br /> **Параметры**<br /><br /> stopwords (тип: массив строк) — список стоп-слов. Значение по умолчанию представляет собой стандартный список для английского языка. |  
 |[Бель](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/WhitespaceAnalyzer.html)|(тип применяется только при наличии параметров) |Анализатор, использующий создатель маркеров пробелов. Маркеры длиной более 255 знаков разделяются.|  
@@ -322,7 +322,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 | microsoft_language_stemming_tokenizer | MicrosoftLanguageStemmingTokenizer| Делит текст на основе правил определенного языка и сокращает слова до их базовых форм.<br /><br /> **Параметры**<br /><br />Макстокенленгс (тип: int) — максимальная длина маркера, по умолчанию — 255, максимум: 300. Маркеры, размер которых превышает максимальную длину, разделяются. Маркеры длиной более 300 знаков сначала разбиваются на маркеры длиной 300 знаков, а затем каждый из них разбивается на основе параметра maxTokenLength.<br /><br /> isSearchTokenizer (тип: логическое значение) — задайте значение true, если используется как создатель маркеров поиска, или false, если используется в качестве создателя маркеров индексации.<br /><br /> language (тип: строка) — используемый язык. Значение по умолчанию: "english". Допустимые значения:<br />"arabic", "bangla", "bulgarian", "catalan", "croatian", "czech", "danish", "dutch", "english", "estonian", "finnish", "french", "german", "greek", "gujarati", "hebrew", "hindi", "hungarian", "icelandic", "indonesian", "italian", "kannada", "latvian", "lithuanian", "malay", "malayalam", "marathi", "norwegianBokmaal", "polish", "portuguese", "portugueseBrazilian", "punjabi", "romanian", "russian", "serbianCyrillic", "serbianLatin", "slovak", "slovenian", "spanish", "swedish", "tamil", "telugu", "turkish", "ukrainian", "urdu". |
 |[nGram](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/ngram/NGramTokenizer.html)|NGramTokenizer|Размечает входные данные на N-граммы заданного размера.<br /><br /> **Параметры**<br /><br /> Минграм (тип: int) — по умолчанию: 1, максимум: 300.<br /><br /> Максграм (тип: int) — по умолчанию: 2, максимум: 300. Значение должно превышать minGram. <br /><br /> tokenChars (тип: массив строк) — классы знаков, которые нужно оставить в маркерах. Допустимые значения: "letter", "digit", "whitespace", "punctuation" и "symbol". По умолчанию используется пустой массив — все знаки сохраняются. |  
 |[path_hierarchy_v2](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/path/PathHierarchyTokenizer.html)|PathHierarchyTokenizerV2|Создатель маркеров для иерархий в виде пути.<br /><br /> **Параметры**<br /><br /> delimiter (тип: строка). Значение по умолчанию: '/.<br /><br /> replacement (тип: строка) — если задано, заменяет знак-разделитель. Значение по умолчанию соответствует значению параметра delimiter.<br /><br /> maxTokenLength (тип: целое число) — максимальная длина маркера. Значение по умолчанию: 300, максимум: 300. Пути длиннее, чем значение maxTokenLength, игнорируются.<br /><br /> reverse (тип: логическое значение) — если задано значение true, создает маркер в обратном порядке. По умолчанию: false.<br /><br /> skip (тип: логическое значение) — начальные маркеры, которые следует пропустить. Значение по умолчанию — 0.|  
-|[pattern](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/pattern/PatternTokenizer.html)|PatternTokenizer|Этот создатель маркеров использует сопоставление шаблонов регулярных выражений для создания различных маркеров.<br /><br /> **Параметры**<br /><br /> [pattern](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html) (тип: строка) — шаблон регулярного выражения. Значение по умолчанию — \w +. <br /><br /> [flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (тип: строка) — флаги регулярных выражений. Значением по умолчанию является пустая строка. Допустимые значения: CANON_EQ, CASE_INSENSITIVE, COMMENTs, ДОТАЛЛ, LITERAL, MULTILINE, UNICODE_CASE, UNIX_LINES<br /><br /> group (тип: целое число) — указывает группу, которую нужно извлекать в маркеры. Значение по умолчанию: "-1" (разделение).|
+|[pattern](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/pattern/PatternTokenizer.html)|PatternTokenizer|Этот создатель маркеров использует сопоставление шаблонов регулярных выражений для создания различных маркеров.<br /><br /> **Параметры**<br /><br /> [pattern](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html) (тип: строка) — шаблон регулярного выражения для сопоставления разделителей токенов. Значение по умолчанию — `\W+`, которое соответствует символам, отличным от слов. <br /><br /> [flags](https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#field_summary) (тип: строка) — флаги регулярных выражений. Значением по умолчанию является пустая строка. Допустимые значения: CANON_EQ, CASE_INSENSITIVE, COMMENTs, ДОТАЛЛ, LITERAL, MULTILINE, UNICODE_CASE, UNIX_LINES<br /><br /> group (тип: целое число) — указывает группу, которую нужно извлекать в маркеры. Значение по умолчанию: "-1" (разделение).|
 |[standard_v2](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardTokenizer.html)|StandardTokenizerV2|Разбивает текст по правилам [сегментации текста в формате Юникод](https://unicode.org/reports/tr29/).<br /><br /> **Параметры**<br /><br /> maxTokenLength (тип: целое число) — максимальная длина маркера. Значение по умолчанию: 255, максимум: 300. Маркеры, размер которых превышает максимальную длину, разделяются.|  
 |[uax_url_email](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/standard/UAX29URLEmailTokenizer.html)|UaxUrlEmailTokenizer|Размечает URL-адреса и сообщения электронной почты как один маркер.<br /><br /> **Параметры**<br /><br /> maxTokenLength (тип: целое число) — максимальная длина маркера. Значение по умолчанию: 255, максимум: 300. Маркеры, размер которых превышает максимальную длину, разделяются.|  
 |[Бель](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/WhitespaceTokenizer.html)|(тип применяется только при наличии параметров) |Разбивает текст по пробелам. Маркеры длиной более 255 знаков разделяются.|  

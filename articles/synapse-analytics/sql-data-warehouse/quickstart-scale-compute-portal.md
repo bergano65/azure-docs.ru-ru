@@ -7,16 +7,16 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: ''
-ms.date: 04/17/2018
+ms.date: 04/28/2020
 ms.author: anvang
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: f92152658b9db83740ffc2de2dc6956003849e06
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
-ms.translationtype: HT
+ms.openlocfilehash: 96c3c05fea912433731dc7a6a8ab705ab76d3058
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80350822"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82232229"
 ---
 # <a name="quickstart-scale-compute-for-synapse-sql-pool-with-the-azure-portal"></a>Краткое руководство. Масштабирование вычислительных ресурсов пула SQL Synapse с помощью портала Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "80350822"
 
 ## <a name="scale-compute"></a>Масштабирование вычислительных ресурсов
 
-Вычислительные ресурсы пула SQL можно масштабировать путем увеличения или уменьшения единиц использования хранилища данных. В статье "Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных" мы создали хранилище **mySampleDataWarehouse** и инициализировали его со значением 400 DWU. Ниже описаны шаги по изменению числа единиц DWU для **mySampleDataWarehouse**.
+Вычислительные ресурсы пула SQL можно масштабировать путем увеличения или уменьшения единиц использования хранилища данных. В [руководстве по созданию и подключению портала](create-data-warehouse-portal.md) создается **mySampleDataWarehouse** и инициализируется с помощью 400 DWU. Ниже описаны шаги по изменению числа единиц DWU для **mySampleDataWarehouse**.
 
 Изменить число единиц использования хранилища данных можно так:
 
