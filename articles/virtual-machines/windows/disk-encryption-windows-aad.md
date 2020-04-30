@@ -1,5 +1,5 @@
 ---
-title: Шифрование дисков Azure с Azure AD для Windows VMs (предыдущий релиз)
+title: Шифрование дисков Azure с помощью Azure AD для виртуальных машин Windows (предыдущий выпуск)
 description: В этой статье приведены инструкции по включению шифрования дисков Microsoft Azure для виртуальных машин IaaS под управлением Windows.
 author: msmbaldwin
 ms.service: virtual-machines
@@ -9,24 +9,24 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 8677fa2620c1edc646dcffe120938f03fd13a0e5
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82085627"
 ---
-# <a name="azure-disk-encryption-with-azure-ad-for-windows-vms-previous-release"></a>Шифрование дисков Azure с Azure AD для Windows VMs (предыдущий релиз)
+# <a name="azure-disk-encryption-with-azure-ad-for-windows-vms-previous-release"></a>Шифрование дисков Azure с помощью Azure AD для виртуальных машин Windows (предыдущий выпуск)
 
-**Новый выпуск шифрования Azure Disk устраняет необходимость предоставления параметра приложения Azure AD для включения шифрования дисков VM. С новым выпуском на этапе шифрования больше не требуется предоставлять учетные данные Azure AD. Все новые VMs должны быть зашифрованы без параметров приложения Azure AD с помощью нового релиза. Для просмотра инструкций для включения шифрования диска [Azure Disk Encryption for Windows VMS](disk-encryption-windows.md)VM с помощью нового релиза см. VMs, которые уже были зашифрованы параметрами приложения Azure AD, по-прежнему поддерживаются и должны продолжать поддерживаться синтаксисом AAD.**
+**Новый выпуск шифрования дисков Azure исключает необходимость предоставления параметра приложения Azure AD для включения шифрования дисков виртуальной машины. В новом выпуске больше не требуется предоставлять учетные данные Azure AD на этапе включения шифрования. Все новые виртуальные машины должны быть зашифрованы без параметров приложения Azure AD с помощью нового выпуска. Инструкции по включению шифрования дисков виртуальной машины с помощью нового выпуска см. в статье [Шифрование дисков Azure для виртуальных машин Windows](disk-encryption-windows.md). Виртуальные машины, которые уже были зашифрованы с помощью параметров приложения Azure AD, по-прежнему поддерживаются и должны продолжать поддерживаться с использованием синтаксиса AAD.**
 
 
 Возможно несколько сценариев включения шифрования дисков, и последовательность действий для каждого может отличаться. В следующих разделах сценарии для виртуальных машин IaaS под управлением Windows описаны более подробно. Чтобы использовать шифрование дисков Azure, нужно выполнить [эти предварительные требования](disk-encryption-overview-aad.md). 
 
 
 >[!IMPORTANT]
-> - Перед шифрованием дисков следует [сделать снимок](snapshot-copy-managed-disk.md) и/или создать резервную резервную. Резервные копии обеспечивают возможность восстановления в случае любого непредвиденного сбоя во время шифрования. Для виртуальных машин с управляемыми дисками необходимо создать резервную копию до начала шифрования. После создания резервного копирования можно использовать [cmdlet Set-AzVMDiskEncryptionExtension](/powershell/module/az.compute/set-azvmdiskencryptionextension) для шифрования управляемых дисков, указав параметр -skipVmBackup. Для получения дополнительной информации о том, как создать резервную связь и восстановить зашифрованные [VM, см.](../../backup/backup-azure-vms-encryption.md) 
+> - Перед шифрованием дисков следует создать [моментальный снимок](snapshot-copy-managed-disk.md) и (или) выполнить резервное копирование. Резервные копии обеспечивают возможность восстановления в случае любого непредвиденного сбоя во время шифрования. Для виртуальных машин с управляемыми дисками необходимо создать резервную копию до начала шифрования. После создания резервной копии можно использовать [командлет Set-азвмдискенкриптионекстенсион](/powershell/module/az.compute/set-azvmdiskencryptionextension) для шифрования управляемых дисков, указав параметр-skipVmBackup. Дополнительные сведения о резервном копировании и восстановлении зашифрованных виртуальных машин см. в статье [резервное копирование и восстановление зашифрованной виртуальной машины Azure](../../backup/backup-azure-vms-encryption.md). 
 >
-> - Шифрование или отключение шифрования может привести к перезагрузке VM.
+> - Шифрование или отключение шифрования может привести к перезагрузке виртуальной машины.
 
 ## <a name="enable-encryption-on-new-iaas-vms-created-from-the-marketplace"></a>Включение шифрования в новых виртуальных машинах IaaS, созданных с помощью Marketplace
 Включить шифрование дисков на новой виртуальной машине IaaS под управлением Windows, созданной из образа Marketplace в Azure, можно с помощью шаблона Resource Manager. Этот шаблон создает зашифрованную виртуальную машину Windows на основе образа из коллекции Windows Server 2012.
@@ -42,14 +42,14 @@ ms.locfileid: "82085627"
          az vm encryption show --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup"
          ```
 
-     - Проверить с Azure PowerShell с помощью [Get-AzVmDiskEncryptionStatus](/powershell/module/az.compute/get-azvmdiskencryptionstatus) cmdlet. 
+     - Проверьте с Azure PowerShell с помощью командлета [Get-азвмдискенкриптионстатус](/powershell/module/az.compute/get-azvmdiskencryptionstatus) . 
 
          ```azurepowershell-interactive
          Get-AzVmDiskEncryptionStatus -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM'
          ```
 
      -  Выберите виртуальную машину, а затем щелкните **Диски** под заголовком **Параметры**, чтобы проверить состояние шифрования на портале. На диаграмме в разделе **Шифрование** вы увидите, включено ли оно. 
-           ![Портал Azure - Включено шифрование дисков](../media/disk-encryption/disk-encryption-fig2.png)
+           ![Портал Azure — шифрование дисков включено](../media/disk-encryption/disk-encryption-fig2.png)
 
 В следующей таблице перечислены параметры шаблона Resource Manager для новых виртуальных машин, создаваемых с помощью Marketplace, которые используют идентификатор клиента Azure AD.
 
@@ -74,9 +74,9 @@ ms.locfileid: "82085627"
 
 
 ### <a name="enable-encryption-on-existing-or-running-vms-with-azure-powershell"></a><a name="bkmk_RunningWinVMPSH"></a> Включение шифрования на существующих или работающих виртуальных машинах с помощью Azure PowerShell 
-Используйте [cmdlet Set-AzVMDiskEncryptionExtension,](/powershell/module/az.compute/set-azvmdiskencryptionextension) чтобы включить шифрование на работающей виртуальной машине IaaS в Azure. Сведения о включении шифрования дисков Azure с помощью командлетов PowerShell см. в статьях [Explore Azure Disk Encryption with Azure Powershell](https://blogs.msdn.com/b/azuresecurity/archive/2015/11/17/explore-azure-disk-encryption-with-azure-powershell.aspx) (Изучение возможностей шифрования дисков Azure с помощью PowerShell) и [Explore Azure Disk Encryption with Azure PowerShell – Part 2](https://blogs.msdn.com/b/azuresecurity/archive/2015/11/21/explore-azure-disk-encryption-with-azure-powershell-part-2.aspx) (Изучение возможностей шифрования дисков Azure с помощью PowerShell. Часть 2).
+Используйте командлет [Set-азвмдискенкриптионекстенсион](/powershell/module/az.compute/set-azvmdiskencryptionextension) , чтобы включить шифрование на работающей виртуальной машине IaaS в Azure. Сведения о включении шифрования дисков Azure с помощью командлетов PowerShell см. в статьях [Explore Azure Disk Encryption with Azure Powershell](https://blogs.msdn.com/b/azuresecurity/archive/2015/11/17/explore-azure-disk-encryption-with-azure-powershell.aspx) (Изучение возможностей шифрования дисков Azure с помощью PowerShell) и [Explore Azure Disk Encryption with Azure PowerShell – Part 2](https://blogs.msdn.com/b/azuresecurity/archive/2015/11/21/explore-azure-disk-encryption-with-azure-powershell-part-2.aspx) (Изучение возможностей шифрования дисков Azure с помощью PowerShell. Часть 2).
 
--  **Шифрование запущенного VM с помощью секрета клиента:** Приведенный ниже сценарий инициализирует переменные и запускает cmdlet Set-AzVMDiskEncryptionExtension. Группа ресурсов, виртуальная машина, хранилище ключей, приложение AAD и секрет клиента должны быть уже созданы в качестве необходимых компонентов. Замените MyKeyVaultResourceGroup, MyVirtualMachineResourceGroup, MySecureVM, MySecureVault, My-AAD-client-ID и My-AAD-client-secret на ваши ценности.
+-  **Зашифруйте работающую виртуальную машину с помощью секрета клиента:** Приведенный ниже скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина, хранилище ключей, приложение AAD и секрет клиента должны быть уже созданы в качестве необходимых компонентов. Замените Микэйваултресаурцеграуп, Мивиртуалмачинересаурцеграуп, Мисекуревм, Мисекуреваулт, My-AAD-Client-ID, а мой-AAD-Client-Secret значениями.
      ```azurepowershell
       $KVRGname = 'MyKeyVaultResourceGroup';
       $VMRGName = 'MyVirtualMachineResourceGroup';
@@ -112,7 +112,7 @@ ms.locfileid: "82085627"
    >[!NOTE]
    > Синтаксис значения параметра disk-encryption-keyvault — это полная строка идентификатора: /subscriptions/[ИД или GUID подписки]/resourceGroups/[имя группы ресурсов]/providers/Microsoft.KeyVault/vaults/[имя хранилища ключей].</br> Синтаксис значения параметра key-encryption-key —это полный универсальный код ресурса (URI) для ключа шифрования ключей: https://[имя хранилища ключей].vault.azure.net/keys/[имя KEK]/[ИД KEK]. 
 
-- **Проверка дисков зашифрованы:** Чтобы проверить состояние шифрования IaaS VM, используйте [Get-AzVmDiskEncryptionStatus](/powershell/module/az.compute/get-azvmdiskencryptionstatus) cmdlet. 
+- **Убедитесь, что диски зашифрованы:** Чтобы проверить состояние шифрования виртуальной машины IaaS, используйте командлет [Get-азвмдискенкриптионстатус](/powershell/module/az.compute/get-azvmdiskencryptionstatus) . 
      ```azurepowershell-interactive
      Get-AzVmDiskEncryptionStatus -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM'
      ```
@@ -140,7 +140,7 @@ ms.locfileid: "82085627"
      >[!NOTE]
      > Синтаксис значения параметра disk-encryption-keyvault — это полная строка идентификатора: /subscriptions/[ИД или GUID подписки]/resourceGroups/[имя группы ресурсов]/providers/Microsoft.KeyVault/vaults/[имя хранилища ключей]. </br> Синтаксис значения параметра key-encryption-key —это полный универсальный код ресурса (URI) для ключа шифрования ключей: https://[имя хранилища ключей].vault.azure.net/keys/[имя KEK]/[ИД KEK]. 
 
-- **Проверка дисков зашифрованы:** Чтобы проверить состояние шифрования IaaS VM, используйте команду [шоу-шоу-шоу az vm.](/cli/azure/vm/encryption#az-vm-encryption-show) 
+- **Убедитесь, что диски зашифрованы:** Чтобы проверить состояние шифрования виртуальной машины IaaS, используйте команду [AZ VM Encryption демонстрация](/cli/azure/vm/encryption#az-vm-encryption-show) . 
 
      ```azurecli-interactive
      az vm encryption show --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup"
@@ -173,7 +173,7 @@ ms.locfileid: "82085627"
 | vmName | Имя виртуальной машины, для которой будет выполняться шифрование. |
 
 
-## <a name="new-iaas-vms-created-from-customer-encrypted-vhd-and-encryption-keys"></a><a name="bkmk_VHDpre"> </a>Новые VMs IaaS, созданные из шифрования клиентов VHD и ключей шифрования
+## <a name="new-iaas-vms-created-from-customer-encrypted-vhd-and-encryption-keys"></a><a name="bkmk_VHDpre"> </a>Новые виртуальные машины IaaS, созданные на основе зашифрованных клиентом виртуальных жестких дисков и ключей шифрования
 В этом сценарии шифрование можно включить с помощью шаблона Resource Manager, командлетов PowerShell или команд интерфейса командной строки. В следующих разделах более подробно описаны шаблон Resource Manager и команды интерфейса командной строки. 
 
 Следуйте инструкциям, приведенным в приложении к этой статье, чтобы подготовить предварительно зашифрованные образы, которые можно использовать в Azure. После создания образа выполните действия, описанные в следующем разделе, чтобы создать зашифрованную виртуальную машину Azure.
@@ -182,7 +182,7 @@ ms.locfileid: "82085627"
 
 
 ### <a name="encrypt-vms-with-pre-encrypted-vhds-with-azure-powershell"></a><a name="bkmk_VHDprePSH"> </a> Шифрование виртуальных машин с предварительно зашифрованными виртуальными жесткими дисками с помощью Azure PowerShell
-Вы можете включить шифрование диска на зашифрованном VHD с помощью Смдлета PowerShell [Set-AzVMOSDisk.](/powershell/module/az.compute/set-azvmosdisk#examples) Приведенный ниже пример имеет некоторые общие параметры. 
+Вы можете включить шифрование дисков на зашифрованном виртуальном жестком диске с помощью командлета PowerShell [Set-азвмосдиск](/powershell/module/az.compute/set-azvmosdisk#examples). Приведенный ниже пример имеет некоторые общие параметры. 
 
 ```powershell
 $VirtualMachine = New-AzVMConfig -VMName "MySecureVM" -VMSize "Standard_A1"
@@ -194,10 +194,10 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 [Добавить новый диск на виртуальную машину Windows можно с помощью PowerShell](attach-disk-ps.md) или [портала Azure](attach-managed-disk-portal.md). 
 
 ### <a name="enable-encryption-on-a-newly-added-disk-with-azure-powershell"></a>Включение шифрования на добавленном диске данных с помощью Azure PowerShell
- При использовании Powershell для шифрования нового диска для виртуальных машин Windows необходимо указать новую версию последовательности. Версия последовательности должна быть уникальной. Приведенный ниже сценарий создает GUID для версии последовательности. В некоторых случаях новый добавленный диск данных может быть зашифрован автоматически с помощью расширения шифрования дисков Azure. Автоматическое шифрование обычно происходит, когда виртуальная машина перезапускается после включения нового диска. Обычно это происходит, так как для типа тома указано значение "Все", если ранее на виртуальной машине использовалось шифрование дисков. Если автоматическое шифрование происходит на недавно добавленном диске данных, мы рекомендуем снова запустить смдлет Set-AzVmDiskEncryptionExtension с новой версией последовательности. Если для нового диска данных включено автоматическое шифрование и вы хотите отказаться от шифрования, сначала расшифруйте все диски, а затем повторите шифрование с новой версией последовательности, указав соответствующую операционную систему для типа тома. 
+ При использовании Powershell для шифрования нового диска для виртуальных машин Windows необходимо указать новую версию последовательности. Версия последовательности должна быть уникальной. Приведенный ниже сценарий создает GUID для версии последовательности. В некоторых случаях новый добавленный диск данных может быть зашифрован автоматически с помощью расширения шифрования дисков Azure. Автоматическое шифрование обычно происходит, когда виртуальная машина перезапускается после включения нового диска. Обычно это происходит, так как для типа тома указано значение "Все", если ранее на виртуальной машине использовалось шифрование дисков. Если автоматическое шифрование выполняется на вновь добавленном диске данных, рекомендуется снова запустить командлет Set-Азвмдискенкриптионекстенсион с новой версией последовательности. Если для нового диска данных включено автоматическое шифрование и вы хотите отказаться от шифрования, сначала расшифруйте все диски, а затем повторите шифрование с новой версией последовательности, указав соответствующую операционную систему для типа тома. 
  
 
--  **Шифрование запущенного VM с помощью секрета клиента:** Приведенный ниже сценарий инициализирует переменные и запускает cmdlet Set-AzVMDiskEncryptionExtension. Группа ресурсов, виртуальная машина, хранилище ключей, приложение AAD и секрет клиента должны быть уже созданы в качестве необходимых компонентов. Замените MyKeyVaultResourceGroup, MyVirtualMachineResourceGroup, MySecureVM, MySecureVault, My-AAD-client-ID и My-AAD-client-secret на ваши ценности. В этом примере в качестве значения параметра VolumeType используется значение "All", что включает тома операционной системы и тома данных. Если требуется шифрование только томов операционной системы, используйте "OS" в качестве значения параметра VolumeType. 
+-  **Зашифруйте работающую виртуальную машину с помощью секрета клиента:** Приведенный ниже скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина, хранилище ключей, приложение AAD и секрет клиента должны быть уже созданы в качестве необходимых компонентов. Замените Микэйваултресаурцеграуп, Мивиртуалмачинересаурцеграуп, Мисекуревм, Мисекуреваулт, My-AAD-Client-ID, а мой-AAD-Client-Secret значениями. В этом примере в качестве значения параметра VolumeType используется значение "All", что включает тома операционной системы и тома данных. Если требуется шифрование только томов операционной системы, используйте "OS" в качестве значения параметра VolumeType. 
 
      ```azurepowershell
       $sequenceVersion = [Guid]::NewGuid();
@@ -322,13 +322,13 @@ Set-AzVMDiskEncryptionExtension -ResourceGroupName $VMRGName -VMName $VMName -Aa
      ```azurecli-interactive
      az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type [ALL, DATA, OS]
      ```
-- **Отключить шифрование с помощью шаблона менеджера ресурсов:** 
+- **Отключите шифрование с помощью шаблона диспетчер ресурсов:** 
 
-    1. Нажмите **Развертывание в Azure** из [шифрования диска отключить на подключили шаблон Windows VM.](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-windows-vm)
+    1. Щелкните **развернуть в Azure** на странице [отключение шифрования дисков на работающем шаблоне виртуальной машины Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-windows-vm) .
     2. Выберите подписку, группу ресурсов, расположение, виртуальную машину, условия использования и соглашение.
     3.  Нажмите кнопку **покупка**, чтобы отключить шифрование дисков на работающей виртуальной машине Windows. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
